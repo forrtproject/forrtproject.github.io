@@ -3,7 +3,7 @@
     "title": "Use of the Journal Impact Factor in academic review, promotion, and tenure evaluations",
     "link_to_resource": "https://peerj.com/preprints/27638/",
     "creators": [
-        "Carol Mu\u00c3\u00b1oz Nieves",
+        "Carol Mu\u00f1oz Nieves",
         "Erin C. McKiernan",
         "Juan Pablo Alperin",
         "Lesley A. Schimanski",
@@ -48,5 +48,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-01-01"
+    "lastmod": "2026-11-08"
 }

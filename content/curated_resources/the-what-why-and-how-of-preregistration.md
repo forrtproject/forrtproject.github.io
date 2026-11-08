@@ -34,7 +34,7 @@
         "Materials",
         "Open Scholarship Tools and Technologies",
         "OSF",
-        "Preregistation",
+        "Preregistration",
         "Publishing",
         "Reproducibility",
         "Research Data Management Tools",
@@ -46,5 +46,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-01-01"
+    "lastmod": "2026-11-08"
 }

@@ -9,7 +9,7 @@
         "Greg Tananbaum"
     ],
     "material_type": [
-        "Asssessment"
+        "Assessment"
     ],
     "education_level": [
         "College / Upper Division (Undergraduates)",
@@ -41,5 +41,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-10-29"
+    "lastmod": "2026-11-08"
 }

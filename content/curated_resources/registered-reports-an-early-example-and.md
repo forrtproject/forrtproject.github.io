@@ -31,7 +31,7 @@
     ],
     "tags": [
         "Data",
-        "Preregistation",
+        "Preregistration",
         "Publishing",
         "Registered Reports"
     ],
@@ -41,5 +41,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-01-01"
+    "lastmod": "2026-11-08"
 }

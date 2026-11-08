@@ -3,7 +3,7 @@
     "title": "Sample Size Planning for the Standardized Mean Difference: Accuracy in Parameter Estimation via Narrow Confidence Intervals",
     "link_to_resource": "https://doi.org/10.1037/1082-989X.11.4.363",
     "creators": [
-        "Ken Kelley 1",
+        "Ken Kelley",
         "Joseph R Rausch"
     ],
     "material_type": [
@@ -36,5 +36,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-06-07"
+    "lastmod": "2026-11-08"
 }

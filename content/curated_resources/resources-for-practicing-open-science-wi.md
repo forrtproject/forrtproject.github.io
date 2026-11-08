@@ -38,7 +38,7 @@
         "Methodology",
         "Open Science",
         "Open Science Training",
-        "Posititionality",
+        "Positionality",
         "Qualitative",
         "Research",
         "Transparency"
@@ -49,5 +49,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-11-07"
+    "lastmod": "2026-11-08"
 }

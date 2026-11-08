@@ -9,7 +9,7 @@
     ],
     "material_type": [
         "Activity/Lab",
-        "Asssessment"
+        "Assessment"
     ],
     "education_level": [
         "College / Upper Division (Undergraduates)"
@@ -37,5 +37,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-10-29"
+    "lastmod": "2026-11-08"
 }

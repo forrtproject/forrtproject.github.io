@@ -34,7 +34,7 @@
     "education_level": [
         "Graduate / Professional"
     ],
-    "abstract": "The goal of this lesson is to provide an introduction to R for learners working with geospatial data. It is intended as a pre-requisite for the R for Raster and Vector Data lesson for learners who have no prior experience using R. This lesson can be taught in approximately 4 hours and covers the following topics: Working with R in the RStudio GUI Project management and file organization Importing data into R Introduction to R\u2019s core data types and data structures Manipulation of data frames (tabular data) in R Introduction to visualization Writing data to a file The the R for Raster and Vector Data lesson provides a more in-depth introduction to visualization (focusing on geospatial data), and working with data structures unique to geospatial data.",
+    "abstract": "The goal of this lesson is to provide an introduction to R for learners working with geospatial data. It is intended as a pre-requisite for the R for Raster and Vector Data lesson for learners who have no prior experience using R. This lesson can be taught in approximately 4 hours and covers the following topics: Working with R in the RStudio GUI Project management and file organization Importing data into R Introduction to R\u2019s core data types and data structures Manipulation of data frames (tabular data) in R Introduction to visualization Writing data to a file The R for Raster and Vector Data lesson provides a more in-depth introduction to visualization (focusing on geospatial data), and working with data structures unique to geospatial data.",
     "language": [
         "English"
     ],
@@ -68,5 +68,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-01-01"
+    "lastmod": "2026-11-08"
 }

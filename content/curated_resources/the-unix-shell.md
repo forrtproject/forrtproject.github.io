@@ -170,7 +170,7 @@
     "education_level": [
         "Graduate / Professional"
     ],
-    "abstract": "Software Carpentry lesson on how to use the shell to navigate the filesystem and write simple loops and scripts. The Unix shell has been around longer than most of its users have been alive. It has survived so long because it's a power tool that allows people to do complex things with just a few keystrokes. More importantly, it helps them combine existing programs in new ways and automate repetitive tasks so they aren't typing the same things over and over again. Use of the shell is fundamental to using a wide range of other powerful tools and computing resources (including \u00e2\u20ac\u0153high-performance computing\u00e2\u20ac\u009d supercomputers). These lessons will start you on a path towards using these resources effectively.",
+    "abstract": "Software Carpentry lesson on how to use the shell to navigate the filesystem and write simple loops and scripts. The Unix shell has been around longer than most of its users have been alive. It has survived so long because it's a power tool that allows people to do complex things with just a few keystrokes. More importantly, it helps them combine existing programs in new ways and automate repetitive tasks so they aren't typing the same things over and over again. Use of the shell is fundamental to using a wide range of other powerful tools and computing resources (including \u201chigh-performance computing\u201d supercomputers). These lessons will start you on a path towards using these resources effectively.",
     "language": [
         "English"
     ],
@@ -202,5 +202,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-10-29"
+    "lastmod": "2026-11-08"
 }

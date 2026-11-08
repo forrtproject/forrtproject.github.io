@@ -1,6 +1,6 @@
 {
     "timestamp": "1/12/2025 9:37:53",
-    "title": "Understanding the provenance and qualityof methods is essential for responsible reuseof FAIR data",
+    "title": "Understanding the provenance and quality of methods is essential for responsible reuse of FAIR data",
     "link_to_resource": "https://doi.org/10.1038/s41591-024-02879-x",
     "creators": [
         "Tracey L. Weissgerber",
@@ -57,5 +57,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-10-29"
+    "lastmod": "2026-11-08"
 }
