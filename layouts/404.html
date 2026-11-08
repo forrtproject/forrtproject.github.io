@@ -79,7 +79,7 @@
         // append the literal string "undefined" to the target.
         target = target.replace('$' + j, match[j] || '');
       }
-      window.location.replace(target);
+      window.location.replace(target + window.location.search + window.location.hash);
       return;
     }
   }

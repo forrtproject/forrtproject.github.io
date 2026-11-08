@@ -1,0 +1,12 @@
+{{/* Format conversion only: preserve the selected image, dimensions and alpha.
+     Keep an undecodable original rather than substituting a different image. */}}
+{{ $image := . }}
+{{ if not (in (slice "image/png" "image/jpeg") .MediaType.Type) }}
+  {{ $converted := try (.Process "png") }}
+  {{ if $converted.Err }}
+    {{ warnf "Cannot generate a PNG social image from %q; keeping the original image." .Name }}
+  {{ else }}
+    {{ $image = $converted.Value }}
+  {{ end }}
+{{ end }}
+{{ return $image }}
