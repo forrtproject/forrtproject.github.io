@@ -4,13 +4,15 @@
 /* The opened chat goes above everything, which its own z-index cannot do from in here. */
 #just-os-widget:has(#just-os-window[style*="flex"]){z-index:10000}
 .just-os-fullpage{position:relative;font-family:var(--text)}
-#just-os-btn{position:relative;z-index:2;display:inline-block;padding:0;background:#fff;border:1.5px solid var(--ink);border-radius:50%;box-shadow:0 2px 10px rgba(38,45,53,.2);cursor:pointer;text-decoration:none;transition:transform .2s ease}
-#just-os-btn:hover{transform:scale(1.05)}
-#just-os-img{display:block;width:58px;height:58px;border-radius:50%}
+#just-os-btn{position:relative;z-index:2;display:inline-block;padding:0;background:#fff;border:1.5px solid var(--ink);border-radius:50%;box-shadow:0 1px 4px rgba(38,45,53,.25);cursor:pointer;text-decoration:none;transition:transform .2s ease}
+/* At 1440 px the margin beside .wrap is 80 px, so the button (55 px, 20 px from the edge) clears the page by 5 px.
+   Nothing may reach past it: no growth on hover, a shadow within 4 px, and the focus ring drawn inside. */
+#just-os-btn:focus-visible{outline:3px solid var(--ink);outline-offset:-6px}
+#just-os-img{display:block;width:52px;height:52px;border-radius:50%}
 #just-os-dismiss{position:absolute;top:-6px;inset-inline-end:-6px;z-index:3;width:22px;height:22px;padding:0;background:#fff;border:1.5px solid var(--ink);border-radius:50%;color:var(--ink);font-size:14px;line-height:18px;text-align:center;cursor:pointer;opacity:0;transition:opacity .2s ease}
 #just-os-widget:hover #just-os-dismiss,#just-os-dismiss:focus-visible{opacity:1}
 #just-os-dismiss:hover{background:var(--ink);color:#fff}
-#just-os-bubble{position:absolute;inset-inline-end:70px;top:14px;padding:6px 12px;background:#fff;border:1.5px solid var(--ink);border-radius:999px;color:var(--ink);font-size:15px;font-weight:600;line-height:1.3;white-space:nowrap;opacity:0;transform:translateX(-6px);transition:opacity .25s ease,transform .25s ease;pointer-events:none}
+#just-os-bubble{position:absolute;inset-inline-end:64px;top:11px;padding:6px 12px;background:#fff;border:1.5px solid var(--ink);border-radius:999px;color:var(--ink);font-size:15px;font-weight:600;line-height:1.3;white-space:nowrap;opacity:0;transform:translateX(-6px);transition:opacity .25s ease,transform .25s ease;pointer-events:none}
 /* The bubble never covers the page. The invitation shows only where site.js finds empty space under it,
    and the hover or focus label only where the margin holds it beside the button: from 1800 px, as .wrap is at most 1280 px wide. */
 .bubble-visible{opacity:1!important;transform:none!important}
