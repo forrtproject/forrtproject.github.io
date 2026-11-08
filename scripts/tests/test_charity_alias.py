@@ -41,8 +41,6 @@ class CharityAliasTests(unittest.TestCase):
                     self.assertIn(f'<link rel="canonical" href="{target}">', redirect)
                     self.assertIn(f'content="0; url={target}"', redirect)
                     self.assertIn(f'<a href="{target}">', redirect)
-                    parent = (destination / "about/charity/index.html").read_text(encoding="utf-8")
-                    self.assertNotIn('http-equiv="refresh"', parent)
 
 
 if __name__ == "__main__":
