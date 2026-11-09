@@ -32,4 +32,4 @@ ai-metascience/featured_hu.png   # The same
 coc/index.html  # Its title was empty (" | FORRT"), and it now says Code of Conduct
 about/charity/gep/index.html  # #973: redirect from the address printed in the GEP PDF to /about/charity/, not a page
 data/glossary-terms.*.json  # Build-time English glossary lookup, fetched on first term interaction (#227); not a page
-cv/index.html  # Retitled as a CV template for members in the content review (#1079)
+cv/index.html  # Retitled as a CV template in the content review (#1079). Exempts all its SEO tags: remove once main has the new title
