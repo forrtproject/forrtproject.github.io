@@ -148,6 +148,8 @@ We invite several specific contributions: _original draft preparation_, and _rev
 
 6. Template & Example
 
+The first block below is the blank format for an entry (XXX marks each field to fill in); the CRediT entry after it is a completed example.
+
 **Term: XXX**
 
 **Definition:**  XXX
@@ -185,17 +187,15 @@ We completely filled the original G-doc with comments and so have moved the proj
 * [Terms beginning A – L](https://docs.google.com/document/d/1IpkueFstVauvKrvgd-0OddAeAr2YGReY2IiSJILmY2I)
 * [Terms beginning M – Z](https://docs.google.com/document/d/1OV1WKyLMmCvcrHaO9iVCdxOGVxoEza4yjvdT6Q5ZBKE)
 
-This was unplanned, we didn’t know G-docs had a limit.
-
 <br>
 
 **Part C**
 
-We are now working on our [manuscript](https://docs.google.com/document/d/1N1xQzWxYVW1Nbdv4vG3T56xwoOJH1ZwMgvqr7Mlslyw) as well as its implementation in [FORRT’s website](https://forrt.org/glossary).
+We then worked on our manuscript, published in [*Nature Human Behaviour*](https://doi.org/10.1038/s41562-021-01269-4) in 2022, as well as its implementation in [FORRT’s website](https://forrt.org/glossary).
 
 Editorial advice was given to us and it suggested us to choose 50 items to go into a 'box' (a sort of a table that doesn't have word limits). However, it is of fundamental importance to note that these 50 terms are not the community's conception —or leading authors'— of 'main' terms, or 'core' terms, or 'most important terms'. We tried as much as possible —and in line with FORRT's [mission](https://forrt.org/about/mission/), FORRT's [Code of Conduct](https://forrt.org/coc/), and FORRT's [Manuscript](https://forrt.org/manuscript/)— to choose items that give representation to a variety of past, present and future issue of Open Scholarship. The chosen 50 terms reflect the diversity and plurality of terms for the broader OS, not only for this or that discipline, or this or that view of what Open Scholarship is. Now, that's not to say these 50 comprise a perfect list. It is not, and we are bound to disagree on which terms should have made the list and which shouldn't have. And that's both normal and OK 😊
 
-After the manuscript's submission and the display of defined terms in FORRT's Glossary webpage, we will proceed to Phase 2, which aims to improve upon existing definitions, extend the scope of terms defined, and translate it to other languages to increase access.
+After the manuscript's submission and the display of defined terms in FORRT's Glossary webpage, we proceeded to Phase 2, which aims to improve upon existing definitions, extend the scope of terms defined, and translate it to other languages to increase access.
 
 #### Feedback
 
