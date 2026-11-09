@@ -1,5 +1,6 @@
-{{/* A page title as plain text for <title>, og:title and JSON-LD. Glossary titles may carry inline
-     Markdown (an italic *p*), which is rendered and then stripped; other titles pass through. */}}
-{{ $title := .LinkTitle | default .Title }}
-{{ if eq .Type "glossary" }}{{ $title = $title | htmlEscape | markdownify | plainify | htmlUnescape }}{{ end }}
-{{ return $title }}
+{{/* Plain text of a page's title (or link title) for <title>, og:title, breadcrumbs and JSON-LD.
+     Input: dict "page" and "text". Glossary titles may carry inline Markdown (an italic *p*),
+     which is rendered and then stripped; other pages' text passes through unchanged. */}}
+{{ $text := .text }}
+{{ if eq .page.Type "glossary" }}{{ $text = $text | htmlEscape | markdownify | plainify | htmlUnescape }}{{ end }}
+{{ return $text }}

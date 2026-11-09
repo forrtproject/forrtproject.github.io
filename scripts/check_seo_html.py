@@ -37,6 +37,7 @@ Hard checks (exit 1 if any fails):
      separate file the page fetches when it needs it.
   15. Every citation links to its reference on the same page (#200).
   16. Every glossary term link points to an existing English glossary page (#227).
+  18. No glossary page's <title> or <h1> shows Markdown emphasis as typed, e.g. "(*p*)".
 
 Report-only sections (never fail): pages with no <h1>, the
 site-wide share of images that carry both width and height, pages whose

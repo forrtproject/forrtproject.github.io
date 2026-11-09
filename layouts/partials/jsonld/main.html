@@ -58,7 +58,7 @@
       "@type" "ListItem"
       "position" (add $i 1)
       "url" $item.Permalink
-      "name" (partial "functions/plain_title.html" $item)
+      "name" (partial "functions/plain_title.html" (dict "page" $item "text" $item.LinkTitle))
     ) }}
   {{ end }}
 

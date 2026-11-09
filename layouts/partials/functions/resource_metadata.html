@@ -3,8 +3,10 @@
 {{ $description := partialCached "functions/page_description.html" . .RelPermalink }}
 {{ $metadata := dict "url" .Permalink "title" .Title "breadcrumb_title" (.LinkTitle | default .Title) "description" $description "pages" .Pages }}
 {{ if eq .Type "glossary" }}
-  {{ $plain := partial "functions/plain_title.html" . }}
-  {{ $metadata = merge $metadata (dict "title" $plain "breadcrumb_title" $plain) }}
+  {{ $metadata = merge $metadata (dict
+    "title" (partial "functions/plain_title.html" (dict "page" . "text" .Title))
+    "breadcrumb_title" (partial "functions/plain_title.html" (dict "page" . "text" (.LinkTitle | default .Title)))
+  ) }}
 {{ end }}
 {{ if and .IsSection (eq .Section "resources") }}
   {{ $index := partialCached "doors/resource_index" . "resources" }}

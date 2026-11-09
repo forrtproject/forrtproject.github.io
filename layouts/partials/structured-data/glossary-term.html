@@ -18,7 +18,7 @@
   {{- $term := dict
       "@context" "https://schema.org"
       "@type" "DefinedTerm"
-      "name" (partial "functions/plain_title.html" .)
+      "name" (partial "functions/plain_title.html" (dict "page" . "text" .Title))
       "description" $desc
       "url" .Permalink
       "inLanguage" $lang
