@@ -5,7 +5,7 @@
     "sort_key": "opsiyonel durdurma [optional stopping]",
     "definition": "Veri toplama süreci sırasında (tekrar tekrar) verilerin analiz edilmesi ve istatistiksel bir ölçütün (örn., p-değeri veya Bayes faktörü) belirli bir eşiğe ulaşması durumunda veri toplamayı durdurmaya karar verilmesi uygulamasıdır. Eğer Tip I hata oranını kontrol altına almak için uygun metodolojik önlemler alınırsa, bu yöntem verimli bir analiz süreci olabilir (örn., Lakens, 2014). Ancak, şeffaf raporlama yapılmadığında veya uygun hata kontrolü sağlanmadığında Tip I hata oranı önemli ölçüde artabilir ve bu tür opsiyonel durdurma uygulaması Şüpheli Araştırma Uygulaması (QRP; Questionable Research Practice) ya da bir tür p-hackleme olarak değerlendirilebilir.",
     "related_terms": [
-        "p-hacking",
+        "*p*-hacking",
         "Questionable Research Practices or Questionable Reporting Practices (QRPs)",
         "Sequential testing"
     ],
@@ -34,5 +34,5 @@
     "translation_reviewed_by": [
         "Nihan Selin Soylu-Konak"
     ],
-    "lastmod": "2026-11-08"
+    "lastmod": "2026-11-09"
 }

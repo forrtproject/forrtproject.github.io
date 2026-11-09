@@ -11,14 +11,14 @@
         "Garden of forking paths",
         "HARKing",
         "Nonpublication of data",
-        "p-hacking",
-        "p-value fishing",
+        "*p*-hacking",
+        "*p*-value fishing",
         "Partial publication of data",
         "Post-hoc storytelling",
         "Preregistration",
         "Questionable Measurement Practices (QMP)",
         "Researcher degrees of freedom",
-        "Reverse p-hacking",
+        "Reverse *p*-hacking",
         "Salami slicing"
     ],
     "references": [
@@ -55,5 +55,5 @@
         "Asma Alzahrani",
         "Mohammed Mohsen"
     ],
-    "lastmod": "2026-11-08"
+    "lastmod": "2026-11-09"
 }
