@@ -46,6 +46,12 @@ class FeaturedReferences(unittest.TestCase):
         for raw, clean in cases.items():
             self.assertEqual(featured.clean_markup_text(raw), clean)
 
+    def test_group_author_short_ref_has_no_stray_full_stop(self):
+        self.assertEqual(
+            featured.make_short_ref("Open Science Collaboration. (2015). Estimating the reproducibility."),
+            "Open Science Collaboration (2015)",
+        )
+
     def test_apa_entities_are_decoded(self):
         self.assertEqual(
             featured.clean_apa_reference("Doe, A. (2024). Title. Theory &amp; Psychology, 34(5), 1–2."),

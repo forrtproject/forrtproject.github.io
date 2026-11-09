@@ -131,7 +131,7 @@ def make_short_ref(apa: str) -> str:
     m = re.match(r"^(.+?)\((\d{4})\)", apa)
     if not m:
         return apa[:60]
-    authors_part = m.group(1).strip().rstrip(",").strip()
+    authors_part = m.group(1).strip().rstrip(",.").strip()
     year = m.group(2)
     amp_count = authors_part.count("&")
     if amp_count == 0:
