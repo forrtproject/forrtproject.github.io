@@ -251,6 +251,17 @@ def check_glossary_links(pages):
     return failures
 
 
+# Paired asterisks around text: Markdown emphasis shown as typed. A lone one ("G*Power") is fine.
+LITERAL_EMPHASIS = re.compile(r"\*[^*\s][^*]*\*")
+
+
+def check_glossary_title_markdown(pages):
+    """Glossary titles such as "Research Contribution Metric (*p*)" must render, not show asterisks."""
+    return [p.path for p in pages
+            if p.path.replace(os.sep, "/").startswith("glossary/")
+            and any(LITERAL_EMPHASIS.search(text) for text in [p.title, *p.h1_texts])]
+
+
 def check_no_search_heading(pages):
     return [p.path for p in pages if any(t.lower() == "search" for t in p.h1_texts)]
 
@@ -564,6 +575,7 @@ def main(public_dir):
         "14. no inline <script> over 200 KB": check_inline_scripts(pages),
         "15. every citation has a local reference target": check_citation_targets(pages),
         "16. glossary links reach existing English terms": check_glossary_links(pages),
+        "17. glossary titles show no Markdown asterisks": check_glossary_title_markdown(pages),
     }
     conditional = check_conditional_assets(pages)
     results["3. conditional highlight.js / mermaid loading"] = [

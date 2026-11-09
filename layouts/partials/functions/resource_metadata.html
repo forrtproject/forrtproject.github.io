@@ -2,6 +2,11 @@
      pagination on other lists: their templates choose their own collections. */}}
 {{ $description := partialCached "functions/page_description.html" . .RelPermalink }}
 {{ $metadata := dict "url" .Permalink "title" .Title "breadcrumb_title" (.LinkTitle | default .Title) "description" $description "pages" .Pages }}
+{{/* Glossary titles may carry inline Markdown (an italic *p*); plain text for <title>, og:title and JSON-LD. */}}
+{{ if eq .Type "glossary" }}
+  {{ $plain := .Title | htmlEscape | markdownify | plainify | htmlUnescape }}
+  {{ $metadata = merge $metadata (dict "title" $plain "breadcrumb_title" $plain) }}
+{{ end }}
 {{ if and .IsSection (eq .Section "resources") }}
   {{ $index := partialCached "doors/resource_index" . "resources" }}
   {{ $pager := .Paginate $index.pages 24 }}
