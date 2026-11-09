@@ -59,7 +59,7 @@ clusters = [
   values = ["podcast", "podcast and transcript", "podcast episodes"]
 [[type_groups]]
   label = "Activity"
-  values = ["activity/lab", "homework/assignment", "asssessment", "case study", "game", "workshop", "workshop guide"]
+  values = ["activity/lab", "homework/assignment", "assessment", "case study", "game", "workshop", "workshop guide"]
 [[type_groups]]
   label = "Interactive"
   values = ["interactive", "simulation"]
@@ -78,7 +78,7 @@ clusters = [
   values = ["graduate / professional", "graduate/professional"]
 [[level_groups]]
   label = "Career / Technical"
-  values = ["career /technical"]
+  values = ["career / technical", "career /technical"]
 [[level_groups]]
   label = "Adult education"
   values = ["adult education", "adult-education"]
