@@ -532,7 +532,7 @@
                     "STRANGE"
                 ],
                 "references": [
-                    "Percie du Sert, N., Hurst, V., Ahluwalia, A., Alam, S., Avey, M. T., Baker, M., Browne, W. J., Clark, A., Cuthill, I. C., Dirnagl, U., Emerson, M., Garner, P., Holgate, S. T., Howells, D. W., Karp, N. A., Lazic, S. E., Lidster, K., MacCallum, C. J., Macleod, M., & others. (2020). The ARRIVE guidelines 2.0: Updated guidelines for reporting animal research. <i>PLOS Biology</i>, <i>18</i>(7), e3000410. https://doi.org/10.1371/journal.pbio.3000410"
+                    "Percie du Sert, N., Hurst, V., Ahluwalia, A., Alam, S., Avey, M. T., Baker, M., Browne, W. J., Clark, A., Cuthill, I. C., Dirnagl, U., Emerson, M., Garner, P., Holgate, S. T., Howells, D. W., Karp, N. A., Lazic, S. E., Lidster, K., MacCallum, C. J., Macleod, M., et al. (2020). The ARRIVE guidelines 2.0: Updated guidelines for reporting animal research. <i>PLOS Biology</i>, <i>18</i>(7), e3000410. https://doi.org/10.1371/journal.pbio.3000410"
                 ],
                 "drafted_by": [
                     "Ben Farrar"
@@ -560,7 +560,7 @@
                     "Hala Alghamdi",
                     "Mohammed Mohsen"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -705,7 +705,7 @@
                     "Triple badge"
                 ],
                 "references": [
-                    "Hardwicke, T. E., Bohn, M., MacDonald, K., Hembacher, E., Nuijten, M. B., Peloquin, B. N., & others. (2020). Analytic reproducibility in articles receiving open data badges at the journal Psychological Science: an observational study. <i>Royal Society Open Science</i>, <i>8</i>(1), 201494. https://doi.org/10.1098/rsos.201494",
+                    "Hardwicke, T. E., Bohn, M., MacDonald, K., Hembacher, E., Nuijten, M. B., Peloquin, B. N., et al. (2020). Analytic reproducibility in articles receiving open data badges at the journal Psychological Science: an observational study. <i>Royal Society Open Science</i>, <i>8</i>(1), 201494. https://doi.org/10.1098/rsos.201494",
                     "Kidwell, M. C., Lazarević, L. B., Baranski, E., Hardwicke, T. E., Piechowski, S., Falkenberg, L. S., & Nosek, B. A. (2016). Badges to acknowledge open practices: A simple, low-cost, effective method for increasing transparency. <i>PLoS Biology</i>, <i>14</i>(5), e1002456. https://doi.org/10.1371/journal.pbio.1002456",
                     "Rowhani-Farid, A., Aldcroft, A., & Barnett, A. G. (2020). Did awarding badges increase data sharing in BMJ Open? A randomized controlled trial. <i>Royal Society Open Science</i>, <i>7</i>(3), 191818. https://doi.org/10.1098/rsos.191818",
                     "Science, C. (n.d.). <i>Open science badges</i>. https://www.cos.io/initiatives/badges"
@@ -738,7 +738,7 @@
                 "aliases": [
                     "/glossary/arabic/open_science_الش_ارات_العلم_المفتوح"
                 ],
-                "lastmod": "2026-11-08"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -800,7 +800,7 @@
                     "Dienes, Z. (2011). Bayesian versus orthodox statistics: Which side are you on? <i>Perspectives on Psychological Science</i>, <i>6</i>(3), 274–290. https://doi.org/10.1177/1745691611406920",
                     "Dienes, Z. (2014). Using Bayes to get the most out of non-significant results. <i>Frontiers in Psychology</i>, <i>5</i>, 781. https://doi.org/10.3389/fpsyg.2014.00781",
                     "Dienes, Z. (2016). How Bayes factors change scientific practice. <i>Journal of Mathematical Psychology</i>, <i>72</i>, 78–89. https://doi.org/10.1016/j.jmp.2015.10.003",
-                    "Etz, A., Gronau, Q. F., Dablander, F., & others. (2018). How to become a Bayesian in eight easy steps: An annotated reading list. <i>Psychonomic Bulletin & Review</i>, <i>25</i>, 219–234. https://doi.org/10.3758/s13423-017-1317-5",
+                    "Etz, A., Gronau, Q. F., Dablander, F., et al. (2018). How to become a Bayesian in eight easy steps: An annotated reading list. <i>Psychonomic Bulletin & Review</i>, <i>25</i>, 219–234. https://doi.org/10.3758/s13423-017-1317-5",
                     "Kruschke, J. K. (2015). <i>Doing Bayesian data analysis: A tutorial with R, JAGS, and Stan</i> (2nd ed.). Academic Press.",
                     "McElreath, R. (2020). <i>Statistical rethinking: A Bayesian course with examples in R and Stan</i> (2nd ed.). Taylor.",
                     "Wagenmakers, E.-J., Marsman, M., Jamil, T., Ly, A., Verhagen, J., Love, J., Selker, R., Gronau, Q. F., Šmíra, M., Epskamp, S., Matzke, D., Rouder, J. N., & Morey, R. D. (2018). Bayesian inference for psychology. Part I: Theoretical advantages and practical ramifications. <i>Psychonomic Bulletin & Review</i>, <i>25</i>(1), 35–57. https://doi.org/10.3758/s13423-017-1343-3"
@@ -829,7 +829,7 @@
                     "Ali H. Al-Hoorie",
                     "Mohammed Mohsen"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -885,7 +885,7 @@
                     "Open Data"
                 ],
                 "references": [
-                    "Gorgolewski, K., Auer, T., Calhoun, V., & others. (2016). The brain imaging data structure, a format for organizing and describing outputs of neuroimaging experiments. <i>Scientific Data</i>, <i>3</i>, 160044. https://doi.org/10.1038/sdata.2016.44",
+                    "Gorgolewski, K., Auer, T., Calhoun, V., et al. (2016). The brain imaging data structure, a format for organizing and describing outputs of neuroimaging experiments. <i>Scientific Data</i>, <i>3</i>, 160044. https://doi.org/10.1038/sdata.2016.44",
                     "BIDS. (2020). <i>About BIDS</i>. Retrieved from https://bids.neuroimaging.io",
                     "Pernet, C. R., Appelhoff, S., Gorgolewski, K. J., Flandin, G., Phillips, C., Delorme, A., & Oostenveld, R. (2019). EEG-BIDS, an extension to the brain imaging data structure for electroencephalography. <i>Scientific Data</i>, <i>6</i>(1), 103. https://doi.org/10.1038/s41597-019-0104-8"
                 ],
@@ -1055,8 +1055,8 @@
                     "Guest, O. [@o_guest]. (2017). <i>Thanks! Hopefully this thread & many other similar discussions & blogs will help make it less Bropen Science and more Open Science. *hides* </i>. Twitter. Retrieved from https://twitter.com/o_guest/status/871675631062458368",
                     "Whitaker, K., & Guest, O. (2020).  #bropenscience is broken science. <i>The Psychologist</i>, <i>33</i>, 34–37.",
                     "Pownall, M., Talbot, C. V., Henschel, A., Lautarescu, A., Lloyd, K. E., Hartmann, H., Darda, K. M., Tang, K. T. Y., Carmichael-Murphy, P., & Siegel, J. A. (2021). Navigating Open Science as Early Career Feminist Researchers. <i>Psychology of Women Quarterly</i>, <i>45</i>(4), 526–539. https://doi.org/10.1177/03616843211029255",
-                    "Bahlai, C., Bartlett, L. J., Burgio, K. R., & others. (2019). Open science isn’t always open to all scientists. <i>American Scientist</i>, <i>107</i>(2), 78.",
-                    "Onie, S. (2020). Redesign open science for Asia, Africa and Latin America. <i>Nature</i>, <i>587</i>, 5–37. https://doi.org/10.1038/d41586-020-03052-3"
+                    "Bahlai, C., Bartlett, L. J., Burgio, K. R., et al. (2019). Open science isn’t always open to all scientists. <i>American Scientist</i>, <i>107</i>(2), 78.",
+                    "Onie, S. (2020). Redesign open science for Asia, Africa and Latin America. <i>Nature</i>, <i>587</i>, 35–37. https://doi.org/10.1038/d41586-020-03052-3"
                 ],
                 "drafted_by": [
                     "Zoe Flack"
@@ -1463,7 +1463,7 @@
                     "Exact replication"
                 ],
                 "references": [
-                    "Wagge, J. R., Baciu, C., Banas, K., Nadler, J. T., Schwarz, S., Weisberg, Y., & others. (2019). A demonstration of the collaborative replication and education project: Replication attempts of the red-romance effect. <i>Collabra: Psychology</i>, <i>5</i>(1). https://doi.org/10.1525/collabra.177"
+                    "Wagge, J. R., Baciu, C., Banas, K., Nadler, J. T., Schwarz, S., Weisberg, Y., et al. (2019). A demonstration of the collaborative replication and education project: Replication attempts of the red-romance effect. <i>Collabra: Psychology</i>, <i>5</i>(1). https://doi.org/10.1525/collabra.177"
                 ],
                 "drafted_by": [
                     "Connor Keating"
@@ -1488,7 +1488,7 @@
                     "Ali H. Al-Hoorie",
                     "Mohammed Mohsen"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -1498,8 +1498,8 @@
                 "definition": "طور مجتمع التَّصوير العصبي التابع لمنظمة رسم خرائط الدِّماغ البشري دليلًا لأفضل الممارسات في جمع بيانات التَّصوير العصبي، وتحليلها وإعداد التَّقارير الخاصّة بها، ومشاركة كلّ من البيانات والنَّص البرمجي للتَّحليل.  يتضمن هذا المبدأ ثمانية عناصر يجب استيفاؤها عند كتابة أو تقديم مخطوطة من أجل تحسين طرق إعداد التَّقارير، والصُّور العصبيَّة النَّاتجة لتحقيق أقصى درجات الشَّفافيَّة وإعادة الإنتاج.  **تعريف بديل: (إن أمكن)** قائمة مرجعية لتحليل البيانات ومشاركتها.",
                 "related_terms": [],
                 "references": [
-                    "Nichols, T. E., Das, S., Eickhoff, S. B., Evans, A. C., Glatard, T., Hanke, M., & others. (2017). Best practices in data analysis and sharing in neuroimaging using MRI. <i>Nature Neuroscience</i>, <i>20</i>(3), 299–303. https://doi.org/10.1038/nn.4500",
-                    "Pernet, C., Garrido, M. I., Gramfort, A., Maurits, N., Michel, C. M., Pang, E., & others. (2020). Issues and recommendations from the OHBM COBIDAS MEEG committee for reproducible EEG and MEG research. <i>Nature Neuroscience</i>, <i>23</i>(12), 1473–1483. https://doi.org/10.1038/s41593-020-00709-0"
+                    "Nichols, T. E., Das, S., Eickhoff, S. B., Evans, A. C., Glatard, T., Hanke, M., et al. (2017). Best practices in data analysis and sharing in neuroimaging using MRI. <i>Nature Neuroscience</i>, <i>20</i>(3), 299–303. https://doi.org/10.1038/nn.4500",
+                    "Pernet, C., Garrido, M. I., Gramfort, A., Maurits, N., Michel, C. M., Pang, E., et al. (2020). Issues and recommendations from the OHBM COBIDAS MEEG committee for reproducible EEG and MEG research. <i>Nature Neuroscience</i>, <i>23</i>(12), 1473–1483. https://doi.org/10.1038/s41593-020-00709-0"
                 ],
                 "drafted_by": [
                     "Yu-Fang Yang"
@@ -1524,7 +1524,7 @@
                     "Ali H. Al-Hoorie",
                     "Mohammed Mohsen"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -1879,8 +1879,8 @@
                 ],
                 "references": [
                     "Open Science Collaboration. (2015). Estimating the reproducibility of psychological science. <i>Science</i>, <i>349</i>(6251), aac4716. https://doi.org/10.1126/science.aac4716",
-                    "Tierney, W., Hardy III, J. H., Ebersole, C. R., Leavitt, K., Viganola, D., Clemente, E. G., & others. (2020). Creative destruction in science. <i>Organizational Behavior and Human Decision Processes</i>, <i>161</i>, 291–309. https://doi.org/10.1016/j.obhdp.2020.07.002",
-                    "Tierney, W., Hardy III, J., Ebersole, C. R., Viganola, D., Clemente, E. G., Gordon, M., & others. (2021). A creative destruction approach to replication: Implicit work and sex morality across cultures. <i>Journal of Experimental Social Psychology</i>, <i>93</i>, 104060. https://doi.org/10.1016/j.jesp.2020.104060"
+                    "Tierney, W., Hardy III, J. H., Ebersole, C. R., Leavitt, K., Viganola, D., Clemente, E. G., et al. (2020). Creative destruction in science. <i>Organizational Behavior and Human Decision Processes</i>, <i>161</i>, 291–309. https://doi.org/10.1016/j.obhdp.2020.07.002",
+                    "Tierney, W., Hardy III, J., Ebersole, C. R., Viganola, D., Clemente, E. G., Gordon, M., et al. (2021). A creative destruction approach to replication: Implicit work and sex morality across cultures. <i>Journal of Experimental Social Psychology</i>, <i>93</i>, 104060. https://doi.org/10.1016/j.jesp.2020.104060"
                 ],
                 "drafted_by": [
                     "Yuki Yamada"
@@ -1905,7 +1905,7 @@
                     "Ali H. Al-Hoorie",
                     "Mohammed Mohsen"
                 ],
-                "lastmod": "2026-11-08"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -1926,7 +1926,7 @@
                 ],
                 "references": [
                     "Busse, C., Kach, A. P., & Wagner, S. M. (2017). Boundary Conditions: What They Are, How to Explore Them, Why We Need Them, and When to Consider Them. <i>Organizational Research Methods</i>, <i>20</i>(4), 574–609. https://doi.org/10.1177/1094428116641191",
-                    "Brandt, M. J., IJzerman, H., Dijksterhuis, A., Farach, F. J., Geller, J., Giner-Sorolla, R., & others. (2014). The replication recipe: What makes for a convincing replication? <i>Journal of Experimental Social Psychology</i>, <i>50</i>, 217–224. https://doi.org/10.1016/j.jesp.2013.10.005",
+                    "Brandt, M. J., IJzerman, H., Dijksterhuis, A., Farach, F. J., Geller, J., Giner-Sorolla, R., et al. (2014). The replication recipe: What makes for a convincing replication? <i>Journal of Experimental Social Psychology</i>, <i>50</i>, 217–224. https://doi.org/10.1016/j.jesp.2013.10.005",
                     "Simons, D. J., Shoda, Y., & Lindsay, D. S. (2017). Constraints on generality (COG): A proposed addition to all empirical papers. <i>Perspectives on Psychological Science</i>, <i>12</i>(6), 1123–1128. https://doi.org/10.1177/1745691617708630",
                     "Yarkoni, T. (2020). The generalizability crisis. <i>Behavioral and Brain Sciences</i>, 1–37. https://doi.org/10.1017/S0140525X20001685"
                 ],
@@ -1954,7 +1954,7 @@
                     "Ali H. Al-Hoorie",
                     "Mohammed Mohsen"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -2270,8 +2270,8 @@
                     "Theory"
                 ],
                 "references": [
-                    "Tierney, W., Hardy III, J. H., Ebersole, C. R., Leavitt, K., Viganola, D., Clemente, E. G., & others. (2020). Creative destruction in science. <i>Organizational Behavior and Human Decision Processes</i>, <i>161</i>, 291–309. https://doi.org/10.1016/j.obhdp.2020.07.002",
-                    "Tierney, W., Hardy III, J., Ebersole, C. R., Viganola, D., Clemente, E. G., Gordon, M., & others. (2021). A creative destruction approach to replication: Implicit work and sex morality across cultures. <i>Journal of Experimental Social Psychology</i>, <i>93</i>, 104060. https://doi.org/10.1016/j.jesp.2020.104060"
+                    "Tierney, W., Hardy III, J. H., Ebersole, C. R., Leavitt, K., Viganola, D., Clemente, E. G., et al. (2020). Creative destruction in science. <i>Organizational Behavior and Human Decision Processes</i>, <i>161</i>, 291–309. https://doi.org/10.1016/j.obhdp.2020.07.002",
+                    "Tierney, W., Hardy III, J., Ebersole, C. R., Viganola, D., Clemente, E. G., Gordon, M., et al. (2021). A creative destruction approach to replication: Implicit work and sex morality across cultures. <i>Journal of Experimental Social Psychology</i>, <i>93</i>, 104060. https://doi.org/10.1016/j.jesp.2020.104060"
                 ],
                 "drafted_by": [
                     "Mahmoud Elsherif"
@@ -2298,7 +2298,7 @@
                     "Ali H. Al-Hoorie",
                     "Mohammed Mohsen"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -2400,7 +2400,7 @@
                     "Lind, F., Gruber, M., & Boomgaarden, H. G. (2017). Content analysis by the crowd: Assessing the usability of crowdsourcing for coding latent constructs. <i>Communication Methods and Measures</i>, <i>11</i>(3), 191–209. https://doi.org/10.1080/19312458.2017.1317338",
                     "Moshontz, H., Campbell, L., Ebersole, C. R., IJzerman, H., Urry, H. L., Forscher, P. S., & Chartier, C. R. (2018). The Psychological Science Accelerator: Advancing psychology through a distributed collaborative network. <i>Advances in Methods and Practices in Psychological Science</i>, <i>1</i>(4), 501–515. https://doi.org/10.1177/2515245918797607",
                     "Peer, E., Brandimarte, L., Samat, S., & Acquisti, A. (2017). Beyond the Turk: Alternative platforms for crowdsourcing behavioral research. <i>Journal of Experimental Social Psychology</i>, <i>70</i>, 153–163. https://doi.org/10.1016/j.jesp.2017.01.006",
-                    "Silberzahn, R., Uhlmann, E. L., Martin, D. P., Anselmi, P., Aust, F., Awtrey, E., Bahník, Š., Bai, F., Bannard, C., Bonnier, E., & others. (2018). Many Analysts, One Data Set: Making Transparent How Variations in Analytic Choices Affect Results. <i>Advances in Methods and Practices in Psychological Science</i>, 337–356. https://doi.org/10.1177/2515245917747646",
+                    "Silberzahn, R., Uhlmann, E. L., Martin, D. P., Anselmi, P., Aust, F., Awtrey, E., Bahník, Š., Bai, F., Bannard, C., Bonnier, E., et al. (2018). Many Analysts, One Data Set: Making Transparent How Variations in Analytic Choices Affect Results. <i>Advances in Methods and Practices in Psychological Science</i>, 337–356. https://doi.org/10.1177/2515245917747646",
                     "Stewart, N., Chandler, J., & Paolacci, G. (2017). Crowdsourcing samples in cognitive science. <i>Trends in Cognitive Sciences</i>, <i>21</i>(10), 736–748. https://doi.org/10.1016/j.tics.2017.06.007",
                     "Tennant, J., Bielczyk, N. Z., Cheplygina, V., Greshake Tzovaras, B., Hartgerink, C. H. J., Havemann, J., Masuzzo, P., & Steiner, T. (2019). Ten simple rules for researchers collaborating on Massively Open Online Papers (MOOPs). <i>MetaArXiv</i>. https://doi.org/10.31222/osf.io/et8ak",
                     "Uhlmann, E. L., Ebersole, C. R., Chartier, C. R., Errington, T. M., Kidwell, M. C., Lai, C. K., McCarthy, R. J., Riegelman, A., Silberzahn, R., & Nosek, B. A. (2019). Scientific utopia III: Crowdsourcing science. <i>Perspectives on Psychological Science</i>, <i>14</i>(5), 711–733. https://doi.org/10.1177/1745691619850561",
@@ -2431,7 +2431,7 @@
                     "Ali H. Al-Hoorie",
                     "Mohammed Mohsen"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -3514,7 +3514,7 @@
                 ],
                 "references": [
                     "Crüwell, S., van Doorn, J., Etz, A., Makel, M. C., Moshontz, H., Niebaum, J. C., Orben, A., Parsons, S., & Schulte-Mecklenbeck, M. (2019). Seven Easy Steps to Open Science: An Annotated Reading List. <i>Zeitschrift Für Psychologie</i>, <i>227</i>(4), 237–248. https://doi.org/10.1027/2151-2604/a000387",
-                    "Wilkinson, M. D., Dumontier, M., Aalbersberg, I. J., Appleton, G., Axton, M., Baak, A., & others. (2016). The FAIR Guiding Principles for scientific data management and stewardship. <i>Scientific Data</i>, <i>3</i>(1), 1–9. https://doi.org/10.1038/sdata.2016.18",
+                    "Wilkinson, M. D., Dumontier, M., Aalbersberg, I. J., Appleton, G., Axton, M., Baak, A., et al. (2016). The FAIR Guiding Principles for scientific data management and stewardship. <i>Scientific Data</i>, <i>3</i>(1), 1–9. https://doi.org/10.1038/sdata.2016.18",
                     "GO FAIR Initiative. (2025). <i>FAIR Principles</i>. https://www.go-fair.org/fair-principles/"
                 ],
                 "drafted_by": [
@@ -3539,7 +3539,7 @@
                     "Asma Alzahrani",
                     "Mohammed Mohsen"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -3916,7 +3916,7 @@
                 "en_title": "Gift (or Guest) Authorship",
                 "title": "التَّأليف المُهدى أو المؤلف الضّيف [Gift (or Guest) Authorship]",
                 "sort_key": "التَّأليف المُهدى أو المؤلف الضّيف [gift (or guest) authorship]",
-                "definition": "هي حزمة برامج لتتبع التَّغييرات في مجموعة محليَّة من الملفات (التَّحكُّم في الإصدار المحليّ)، طورها في البداية لينوس تورفالدس. وبشكل عام يستخدمه المبرمجون لتتبع وتطوير النُّصوص البرمجيَّة داخل دليل، أو مجلَّد، أو نظام ملفات.  يمكن للمتتبِّع الدُّولي العالميّ الوصول (Git) إلى خدمات استضافة المستودعات عن بُعد (مثل GitHub) للتّحكم في الإصدار عن بُعد الذي يتيح تطوير البرامج التَّعاونيَّة عن طريق تحميل المساهمات من نظام محلي. وجدت هذه العمليَّة طريقها إلى العمليَّة العلميَّة لتمكين البيانات المفتوحة، والنُّصوص البرمجيَّة المفتوحة، والتَّحليلات القابلة للتِّكرار. **المصطلحات ذات الصِّلة:**  Github،مستودع البيانات، التحكم في الإصدار.",
+                "definition": "إضافة أفراد كمؤلفين لمقالة وهم لا يستوفون معايير التَّأليف؛ نظرًا لأنَّ التَّأليف يرتبط بمزايا كتقدير الأقران، ومكافآت ماليَّة، فهناك حوافز للإدراج كمؤلف في البحوث المنشورة.  قد يهدف إهداء التَّأليف إلى فرد لا يستحق هذا الاعتراف لمساعدة متلقي الهديّة، أو رد لجميل (بما في ذلك الإهداء المتبادل للتَّأليف)، أو الحفاظ على العلاقات الشَّخصيَّة، والمهنيَّة، أو تعزيز فرص النَّشر.  يعد إهداء التَّأليف ممارسة غير أخلاقيَّة على نطاق واسع.  **المصطلحات ذات الصِّلة:** التَّأليف، تصنيف أدوار المؤلفين.",
                 "related_terms": [
                     "Authorship",
                     "CRediT"
@@ -3940,26 +3940,26 @@
                 ],
                 "language": "arabic",
                 "translated_by": [
-                    "Asma Alzahrani"
+                    "Mahdi Aben Ahmed"
                 ],
                 "translation_reviewed_by": [
                     "Ali H. Al-Hoorie",
                     "Alaa M. Saleh",
-                    "Hiba Alomary",
                     "Ahlam Ahmed",
+                    "Hala Alghamdi",
                     "Mohammed Mohsen"
                 ],
                 "aliases": [
                     "/glossary/arabic/or_guest_authorship_الت_اليف_الم_هدى_او_المولف_الض_يف"
                 ],
-                "lastmod": "2026-11-08"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
                 "en_title": "Git",
                 "title": "المتتبع الدُّولي العالميّ [Git]",
                 "sort_key": "المتتبع الدُّولي العالميّ [git]",
-                "definition": "هي حزمة برامج لتتبع التَّغييرات في مجموعة محليَّة من الملفات (التَّحكُّم في الإصدار المحليّ)، طورها في البداية لينوس تورفالدس. وبشكل عام يستخدمه المبرمجون لتتبع وتطوير النُّصوص البرمجيَّة داخل دليل، أو مجلَّد، أو نظام ملفات.  يمكن للمتتبِّع الدُّولي العالميّ الوصول (Git) إلى خدمات استضافة المستودعات عن بُعد (مثل GitHub) للتّحكم في الإصدار عن بُعد الذي يتيح تطوير البرامج التَّعاونيَّة عن طريق تحميل المساهمات من نظام محلي. وجدت هذه العمليَّة طريقها إلى العمليَّة العلميَّة لتمكين البيانات المفتوحة، والنُّصوص البرمجيَّة المفتوحة، والتَّحليلات القابلة للتِّكرار.  **المصطلحات ذات الصِّلة:** Github، مستودع البيانات، التحكم في الإصدار.",
+                "definition": "هي حزمة برامج لتتبع التَّغييرات في مجموعة محليَّة من الملفات (التَّحكُّم في الإصدار المحليّ)، طورها في البداية لينوس تورفالدس. وبشكل عام يستخدمه المبرمجون لتتبع وتطوير النُّصوص البرمجيَّة داخل دليل، أو مجلَّد، أو نظام ملفات.  يمكن للمتتبِّع الدُّولي العالميّ الوصول (Git) إلى خدمات استضافة المستودعات عن بُعد (مثل GitHub) للتّحكم في الإصدار عن بُعد الذي يتيح تطوير البرامج التَّعاونيَّة عن طريق تحميل المساهمات من نظام محلي. وجدت هذه العمليَّة طريقها إلى العمليَّة العلميَّة لتمكين البيانات المفتوحة، والنُّصوص البرمجيَّة المفتوحة، والتَّحليلات القابلة للتِّكرار.  **المصطلحات ذات الصِّلة:** GitHub، مستودع البيانات، التحكم في الإصدار.",
                 "related_terms": [
                     "GitHub",
                     "Repository",
@@ -5490,7 +5490,7 @@
                 ],
                 "references": [
                     "Aczel, B., Szaszi, B., Nilsonne, G., Van den Akker, O., Albers, C. J., van Assen, M. A. L. M., ..., & Wagenmakers, E. (2021). <i>Guidance for Multi-Analyst Studies</i>. https://doi.org/10.31222/osf.io/5ecnh",
-                    "Silberzahn, R., Uhlmann, E. L., Martin, D. P., Anselmi, P., Aust, F., Awtrey, E., Bahník, Š., Bai, F., Bannard, C., Bonnier, E., & others. (2018). Many Analysts, One Data Set: Making Transparent How Variations in Analytic Choices Affect Results. <i>Advances in Methods and Practices in Psychological Science</i>, 337–356. https://doi.org/10.1177/2515245917747646"
+                    "Silberzahn, R., Uhlmann, E. L., Martin, D. P., Anselmi, P., Aust, F., Awtrey, E., Bahník, Š., Bai, F., Bannard, C., Bonnier, E., et al. (2018). Many Analysts, One Data Set: Making Transparent How Variations in Analytic Choices Affect Results. <i>Advances in Methods and Practices in Psychological Science</i>, 337–356. https://doi.org/10.1177/2515245917747646"
                 ],
                 "drafted_by": [
                     "Sam Parsons"
@@ -5516,7 +5516,7 @@
                     "Ali H. Al-Hoorie",
                     "Mohammed Mohsen"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -5687,7 +5687,7 @@
                     "Systematic Review Protocol"
                 ],
                 "references": [
-                    "Topor, M., Pickering, J. S., Barbosa Mendes, A., Bishop, D. V. M., Büttner, F. C., Elsherif, M. M., & others. (2021). <i>An integrative framework for planning and conducting Non-Intervention, Reproducible, and Open Systematic Reviews (NIRO-SR)</i>. https://doi.org/10.31222/osf.io/8gu5z"
+                    "Topor, M., Pickering, J. S., Barbosa Mendes, A., Bishop, D. V. M., Büttner, F. C., Elsherif, M. M., et al. (2021). <i>An integrative framework for planning and conducting Non-Intervention, Reproducible, and Open Systematic Reviews (NIRO-SR)</i>. https://doi.org/10.31222/osf.io/8gu5z"
                 ],
                 "drafted_by": [
                     "Asma Assaneea"
@@ -5711,7 +5711,7 @@
                     "Ali H. Al-Hoorie",
                     "Mohammed Mohsen"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -6103,7 +6103,7 @@
                     "Transparency"
                 ],
                 "references": [
-                    "Blohowiak, B. B., Cohoon, J., de Wit, L., Eich, E., Farach, F. J., Hasselman, F., & others. (2020). <i>Badges to Acknowledge Open Practices</i>. Retrieved from https://osf.io/tvyxz",
+                    "Blohowiak, B. B., Cohoon, J., de Wit, L., Eich, E., Farach, F. J., Hasselman, F., et al. (2020). <i>Badges to Acknowledge Open Practices</i>. Retrieved from https://osf.io/tvyxz",
                     "Kidwell, M. C., Lazarević, L. B., Baranski, E., Hardwicke, T. E., Piechowski, S., Falkenberg, L. S., & Nosek, B. A. (2016). Badges to acknowledge open practices: A simple, low-cost, effective method for increasing transparency. <i>PLoS Biology</i>, <i>14</i>(5), e1002456. https://doi.org/10.1371/journal.pbio.1002456"
                 ],
                 "drafted_by": [
@@ -6129,7 +6129,7 @@
                     "Asma Alzahrani",
                     "Mohammed Mohsen"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -6854,13 +6854,13 @@
                     "Transformative paradigm"
                 ],
                 "references": [
+                    "Andersson, N. (2018). Participatory research—a modernizing science for primary health care. <i>Journal of General and Family Medicine</i>, <i>19</i>(5), 154–159. https://doi.org/10.1002/jgf2.187",
                     "Cornwall, A., & Jewkes, R. (1995). What is participatory research? <i>Social Science & Medicine</i>, <i>41</i>(12), 1667–1676. https://doi.org/10.1016/0277-9536(95)00127-S",
                     "Fletcher-Watson, S., Adams, J., Brook, K., Charman, T., Crane, L., Cusack, J., Leekam, S., Milton, D., Parr, J. R., & Pellicano, E. (2019). Making the Future Together: Shaping Autism Research Through Meaningful Participation. <i>Autism</i>, <i>23</i>(4), 943–953.",
                     "Kiernan, C. (1999). Participation in research by people with learning disability: Origins and issues. <i>British Journal of Learning Disabilities</i>, <i>27</i>(2), 43–47. https://doi.org/10.1111/j.1468-3156.1999.tb00084.x",
                     "Leavy, P. (2017). <i>Research Design: Quantitative, Qualitative, Mixed Methods, Arts-Based, and Community-Based Participatory Research Approaches</i>. The Guilford Press.",
                     "Ottmann, G., Laragy, C., Allen, J., & Feldman, P. (2011). Coproduction in practice: Participatory action research to develop a model of community aged care. <i>Systemic Practice and Action Research</i>, <i>24</i>, 413–427. https://doi.org/10.1007/s11213-011-9192-x",
-                    "Rose, D. (2018). Participatory research: Real or imagined. <i>Social Psychiatry and Psychiatric Epidemiology</i>, <i>53</i>, 765–771. https://doi.org/10.1007/s00127-018-1549-3",
-                    "Andersson, N. (2018). Participatory research—a modernizing science for primary health care. <i>Journal of General and Family Medicine</i>, <i>19</i>(5), 154–159. https://doi.org/10.1002/jgf2.187"
+                    "Rose, D. (2018). Participatory research: Real or imagined. <i>Social Psychiatry and Psychiatric Epidemiology</i>, <i>53</i>, 765–771. https://doi.org/10.1007/s00127-018-1549-3"
                 ],
                 "drafted_by": [
                     "Tamara Kalandadze"
@@ -8404,11 +8404,11 @@
                 ],
                 "references": [
                     "Barba, L. A. (2018). Terminologies for reproducible research. <i>arXiv Preprint arXiv:1802.03311</i>.",
+                    "Claerbout, J. F., & Karrenbach, M. (1992). Electronic documents give reproducible research a new meaning. <i>SEG Technical Program Expanded Abstracts 1992</i>, 601–604. http://sepwww.stanford.edu/doku.php?id=sep:research:reproducible:seg92",
                     "Crüwell, S., van Doorn, J., Etz, A., Makel, M. C., Moshontz, H., Niebaum, J. C., Orben, A., Parsons, S., & Schulte-Mecklenbeck, M. (2019). Seven Easy Steps to Open Science: An Annotated Reading List. <i>Zeitschrift Für Psychologie</i>, <i>227</i>(4), 237–248. https://doi.org/10.1027/2151-2604/a000387",
                     "King, G. (1995). Replication, replication. <i>PS: Political Science & Politics</i>, <i>28</i>(3), 444–452. https://doi.org/10.2307/420301",
                     "National Academies of Sciences, Engineering, and Medicine. (2019). <i>Reproducibility and Replicability in Science. In Understanding Reproducibility and Replicability</i> [Techreport]. National Academies Press (US). https://www.ncbi.nlm.nih.gov/books/NBK547546/",
-                    "Nosek, B. A., & Errington, T. M. (2020). What is replication? <i>PLOS Biology</i>, <i>18</i>(3), e3000691. https://doi.org/10.1371/journal.pbio.3000691",
-                    "Claerbout, J. F., & Karrenbach, M. (1992). Electronic documents give reproducible research a new meaning. <i>SEG Technical Program Expanded Abstracts 1992</i>, 601–604. http://sepwww.stanford.edu/doku.php?id=sep:research:reproducible:seg92"
+                    "Nosek, B. A., & Errington, T. M. (2020). What is replication? <i>PLOS Biology</i>, <i>18</i>(3), e3000691. https://doi.org/10.1371/journal.pbio.3000691"
                 ],
                 "drafted_by": [
                     "Mahmoud Elsherif"
@@ -8452,8 +8452,8 @@
                 ],
                 "references": [
                     "Liu, Y., Gordon, M., Wang, J., Bishop, M., Chen, Y., Pfeiffer, T., Twardy, C., & Viganola, D. (2020). Replication Markets: Results, Lessons, Challenges and Opportunities in AI Replication. <i>ArXiv:2005.04543 </i>. http://arxiv.org/abs/2005.04543",
-                    "Tierney, W., Hardy III, J. H., Ebersole, C. R., Leavitt, K., Viganola, D., Clemente, E. G., & others. (2020). Creative destruction in science. <i>Organizational Behavior and Human Decision Processes</i>, <i>161</i>, 291–309. https://doi.org/10.1016/j.obhdp.2020.07.002",
-                    "Tierney, W., Hardy III, J., Ebersole, C. R., Viganola, D., Clemente, E. G., Gordon, M., & others. (2021). A creative destruction approach to replication: Implicit work and sex morality across cultures. <i>Journal of Experimental Social Psychology</i>, <i>93</i>, 104060. https://doi.org/10.1016/j.jesp.2020.104060",
+                    "Tierney, W., Hardy III, J. H., Ebersole, C. R., Leavitt, K., Viganola, D., Clemente, E. G., et al. (2020). Creative destruction in science. <i>Organizational Behavior and Human Decision Processes</i>, <i>161</i>, 291–309. https://doi.org/10.1016/j.obhdp.2020.07.002",
+                    "Tierney, W., Hardy III, J., Ebersole, C. R., Viganola, D., Clemente, E. G., Gordon, M., et al. (2021). A creative destruction approach to replication: Implicit work and sex morality across cultures. <i>Journal of Experimental Social Psychology</i>, <i>93</i>, 104060. https://doi.org/10.1016/j.jesp.2020.104060",
                     "Replication Markets. (n.d.). <i>Replication Markets – Reliable research replicates…you can bet on it</i>. Replication Markets. https://www.replicationmarkets.org/",
                     "[www.replicationmarkets.com](http://www.replicationmarkets.com)"
                 ],
@@ -8478,7 +8478,7 @@
                     "Hiba Alomary",
                     "Mohammed Mohsen"
                 ],
-                "lastmod": "2026-11-08"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -8497,7 +8497,7 @@
                     "Schulz, K. F., Altman, D. G., & Moher, D. (2010). CONSORT 2010 statement: updated guidelines for reporting parallel group randomised trials. <i>Trials</i>, <i>11</i>(1), 32. https://doi.org/10.1186/1745-6215-11-32",
                     "Von Elm, E., Altman, D. G., Egger, M., Pocock, S. J., Gøtzsche, P. C., & Vandenbroucke, J. P. (2007). The Strengthening the Reporting of Observational Studies in Epidemiology (STROBE) statement: guidelines for reporting observational studies. <i>Annals of Internal Medicine</i>, <i>147</i>(8), 573–577. https://doi.org/10.1136/bmj.39335.541782.AD",
                     "The EQUATOR Network. (n.d.). <i>What is a reporting guideline?</i> Retrieved 10 July 2021. https://www.equator-network.org/about-us/what-is-a-reporting-guideline/",
-                    "Topor, M., Pickering, J. S., Barbosa Mendes, A., Bishop, D. V. M., Büttner, F. C., Elsherif, M. M., & others. (2021). <i>An integrative framework for planning and conducting Non-Intervention, Reproducible, and Open Systematic Reviews (NIRO-SR)</i>. https://doi.org/10.31222/osf.io/8gu5z"
+                    "Topor, M., Pickering, J. S., Barbosa Mendes, A., Bishop, D. V. M., Büttner, F. C., Elsherif, M. M., et al. (2021). <i>An integrative framework for planning and conducting Non-Intervention, Reproducible, and Open Systematic Reviews (NIRO-SR)</i>. https://doi.org/10.31222/osf.io/8gu5z"
                 ],
                 "drafted_by": [
                     "Aidan Cashin"
@@ -8520,7 +8520,7 @@
                     "Asma Alzahrani",
                     "Mohammed Mohsen"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -9037,7 +9037,7 @@
                     "Trustworthiness"
                 ],
                 "references": [
-                    "Fraser, H., Bush, M., Wintle, B., Mody, F., Smith, E., Hanea, A., & others. (2021). <i>Predicting reliability through structured expert elicitation with repliCATS (Collaborative Assessments for Trustworthy Science)</i>.",
+                    "Fraser, H., Bush, M., Wintle, B., Mody, F., Smith, E., Hanea, A., et al. (2021). <i>Predicting reliability through structured expert elicitation with repliCATS (Collaborative Assessments for Trustworthy Science)</i>.",
                     "RepliCATS project. (2020). <i>Collaborative Assessment for Trustworthy Science</i>. The University of Melbourne. https://replicats.research.unimelb.edu.au/"
                 ],
                 "drafted_by": [
@@ -9062,7 +9062,7 @@
                     "Ali H. Al-Hoorie",
                     "Mohammed Mohsen"
                 ],
-                "lastmod": "2026-11-08"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -10016,7 +10016,7 @@
                     "Higgins, J. P. T., Thomas, J., Chandler, J., Cumpston, M., Li, T., Page, M. J., & Welch, V. A. (Eds.). (2019). <i>Cochrane Handbook for Systematic Reviews of Interventions. 2nd Edition</i>. John Wiley & Sons.",
                     "Moher, D., Liberati, A., Tetzlaff, J., & Altman, D. (2009). Preferred Reporting Items for Systematic Reviews and Meta-Analyses: The PRISMA Statement. <i>PLoS Medicine</i>, <i>6</i>(7), e1000097. https://doi.org/10.1371/journal.pmed.1000097",
                     "Page, M. J., Moher, D., Bossuyt, P. M., Boutron, I., Hoffmann, T. C., Mulrow, C. D., & McKenzie, J. E. (2021). PRISMA 2020 explanation and elaboration: updated guidance and exemplars for reporting systematic reviews. <i>British Medical Journal</i>, <i>372</i>. https://doi.org/10.1136/bmj.n160",
-                    "Topor, M., Pickering, J. S., Barbosa Mendes, A., Bishop, D. V. M., Büttner, F. C., Elsherif, M. M., & others. (2021). <i>An integrative framework for planning and conducting Non-Intervention, Reproducible, and Open Systematic Reviews (NIRO-SR)</i>. https://doi.org/10.31222/osf.io/8gu5z"
+                    "Topor, M., Pickering, J. S., Barbosa Mendes, A., Bishop, D. V. M., Büttner, F. C., Elsherif, M. M., et al. (2021). <i>An integrative framework for planning and conducting Non-Intervention, Reproducible, and Open Systematic Reviews (NIRO-SR)</i>. https://doi.org/10.31222/osf.io/8gu5z"
                 ],
                 "drafted_by": [
                     "Jade Pickering"
@@ -10043,7 +10043,7 @@
                     "Asma Alzahrani",
                     "Mohammed Mohsen"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -11441,7 +11441,7 @@
                     "STRANGE"
                 ],
                 "references": [
-                    "Percie du Sert, N., Hurst, V., Ahluwalia, A., Alam, S., Avey, M. T., Baker, M., Browne, W. J., Clark, A., Cuthill, I. C., Dirnagl, U., Emerson, M., Garner, P., Holgate, S. T., Howells, D. W., Karp, N. A., Lazic, S. E., Lidster, K., MacCallum, C. J., Macleod, M., & others. (2020). The ARRIVE guidelines 2.0: Updated guidelines for reporting animal research. <i>PLOS Biology</i>, <i>18</i>(7), e3000410. https://doi.org/10.1371/journal.pbio.3000410"
+                    "Percie du Sert, N., Hurst, V., Ahluwalia, A., Alam, S., Avey, M. T., Baker, M., Browne, W. J., Clark, A., Cuthill, I. C., Dirnagl, U., Emerson, M., Garner, P., Holgate, S. T., Howells, D. W., Karp, N. A., Lazic, S. E., Lidster, K., MacCallum, C. J., Macleod, M., et al. (2020). The ARRIVE guidelines 2.0: Updated guidelines for reporting animal research. <i>PLOS Biology</i>, <i>18</i>(7), e3000410. https://doi.org/10.1371/journal.pbio.3000410"
                 ],
                 "drafted_by": [
                     "Ben Farrar"
@@ -11467,7 +11467,7 @@
                     "Ruoting Liu",
                     "Shuxian Jin"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -11611,7 +11611,7 @@
                     "Triple badge"
                 ],
                 "references": [
-                    "Hardwicke, T. E., Bohn, M., MacDonald, K., Hembacher, E., Nuijten, M. B., Peloquin, B. N., & others. (2020). Analytic reproducibility in articles receiving open data badges at the journal Psychological Science: an observational study. <i>Royal Society Open Science</i>, <i>8</i>(1), 201494. https://doi.org/10.1098/rsos.201494",
+                    "Hardwicke, T. E., Bohn, M., MacDonald, K., Hembacher, E., Nuijten, M. B., Peloquin, B. N., et al. (2020). Analytic reproducibility in articles receiving open data badges at the journal Psychological Science: an observational study. <i>Royal Society Open Science</i>, <i>8</i>(1), 201494. https://doi.org/10.1098/rsos.201494",
                     "Kidwell, M. C., Lazarević, L. B., Baranski, E., Hardwicke, T. E., Piechowski, S., Falkenberg, L. S., & Nosek, B. A. (2016). Badges to acknowledge open practices: A simple, low-cost, effective method for increasing transparency. <i>PLoS Biology</i>, <i>14</i>(5), e1002456. https://doi.org/10.1371/journal.pbio.1002456",
                     "Rowhani-Farid, A., Aldcroft, A., & Barnett, A. G. (2020). Did awarding badges increase data sharing in BMJ Open? A randomized controlled trial. <i>Royal Society Open Science</i>, <i>7</i>(3), 191818. https://doi.org/10.1098/rsos.191818",
                     "Science, C. (n.d.). <i>Open science badges</i>. https://www.cos.io/initiatives/badges"
@@ -11640,7 +11640,7 @@
                     "Ruoting Liu",
                     "Shuxian Jin"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -11701,7 +11701,7 @@
                     "Dienes, Z. (2011). Bayesian versus orthodox statistics: Which side are you on? <i>Perspectives on Psychological Science</i>, <i>6</i>(3), 274–290. https://doi.org/10.1177/1745691611406920",
                     "Dienes, Z. (2014). Using Bayes to get the most out of non-significant results. <i>Frontiers in Psychology</i>, <i>5</i>, 781. https://doi.org/10.3389/fpsyg.2014.00781",
                     "Dienes, Z. (2016). How Bayes factors change scientific practice. <i>Journal of Mathematical Psychology</i>, <i>72</i>, 78–89. https://doi.org/10.1016/j.jmp.2015.10.003",
-                    "Etz, A., Gronau, Q. F., Dablander, F., & others. (2018). How to become a Bayesian in eight easy steps: An annotated reading list. <i>Psychonomic Bulletin & Review</i>, <i>25</i>, 219–234. https://doi.org/10.3758/s13423-017-1317-5",
+                    "Etz, A., Gronau, Q. F., Dablander, F., et al. (2018). How to become a Bayesian in eight easy steps: An annotated reading list. <i>Psychonomic Bulletin & Review</i>, <i>25</i>, 219–234. https://doi.org/10.3758/s13423-017-1317-5",
                     "Kruschke, J. K. (2015). <i>Doing Bayesian data analysis: A tutorial with R, JAGS, and Stan</i> (2nd ed.). Academic Press.",
                     "McElreath, R. (2020). <i>Statistical rethinking: A Bayesian course with examples in R and Stan</i> (2nd ed.). Taylor.",
                     "Wagenmakers, E.-J., Marsman, M., Jamil, T., Ly, A., Verhagen, J., Love, J., Selker, R., Gronau, Q. F., Šmíra, M., Epskamp, S., Matzke, D., Rouder, J. N., & Morey, R. D. (2018). Bayesian inference for psychology. Part I: Theoretical advantages and practical ramifications. <i>Psychonomic Bulletin & Review</i>, <i>25</i>(1), 35–57. https://doi.org/10.3758/s13423-017-1343-3"
@@ -11730,7 +11730,7 @@
                     "Ruoting Liu",
                     "Shuxian Jin"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -11786,7 +11786,7 @@
                     "Open Data"
                 ],
                 "references": [
-                    "Gorgolewski, K., Auer, T., Calhoun, V., & others. (2016). The brain imaging data structure, a format for organizing and describing outputs of neuroimaging experiments. <i>Scientific Data</i>, <i>3</i>, 160044. https://doi.org/10.1038/sdata.2016.44",
+                    "Gorgolewski, K., Auer, T., Calhoun, V., et al. (2016). The brain imaging data structure, a format for organizing and describing outputs of neuroimaging experiments. <i>Scientific Data</i>, <i>3</i>, 160044. https://doi.org/10.1038/sdata.2016.44",
                     "BIDS. (2020). <i>About BIDS</i>. Retrieved from https://bids.neuroimaging.io",
                     "Pernet, C. R., Appelhoff, S., Gorgolewski, K. J., Flandin, G., Phillips, C., Delorme, A., & Oostenveld, R. (2019). EEG-BIDS, an extension to the brain imaging data structure for electroencephalography. <i>Scientific Data</i>, <i>6</i>(1), 103. https://doi.org/10.1038/s41597-019-0104-8"
                 ],
@@ -11951,8 +11951,8 @@
                     "Guest, O. [@o_guest]. (2017). <i>Thanks! Hopefully this thread & many other similar discussions & blogs will help make it less Bropen Science and more Open Science. *hides* </i>. Twitter. Retrieved from https://twitter.com/o_guest/status/871675631062458368",
                     "Whitaker, K., & Guest, O. (2020).  #bropenscience is broken science. <i>The Psychologist</i>, <i>33</i>, 34–37.",
                     "Pownall, M., Talbot, C. V., Henschel, A., Lautarescu, A., Lloyd, K. E., Hartmann, H., Darda, K. M., Tang, K. T. Y., Carmichael-Murphy, P., & Siegel, J. A. (2021). Navigating Open Science as Early Career Feminist Researchers. <i>Psychology of Women Quarterly</i>, <i>45</i>(4), 526–539. https://doi.org/10.1177/03616843211029255",
-                    "Bahlai, C., Bartlett, L. J., Burgio, K. R., & others. (2019). Open science isn’t always open to all scientists. <i>American Scientist</i>, <i>107</i>(2), 78.",
-                    "Onie, S. (2020). Redesign open science for Asia, Africa and Latin America. <i>Nature</i>, <i>587</i>, 5–37. https://doi.org/10.1038/d41586-020-03052-3"
+                    "Bahlai, C., Bartlett, L. J., Burgio, K. R., et al. (2019). Open science isn’t always open to all scientists. <i>American Scientist</i>, <i>107</i>(2), 78.",
+                    "Onie, S. (2020). Redesign open science for Asia, Africa and Latin America. <i>Nature</i>, <i>587</i>, 35–37. https://doi.org/10.1038/d41586-020-03052-3"
                 ],
                 "drafted_by": [
                     "Zoe Flack"
@@ -12350,7 +12350,7 @@
                     "Exact replication"
                 ],
                 "references": [
-                    "Wagge, J. R., Baciu, C., Banas, K., Nadler, J. T., Schwarz, S., Weisberg, Y., & others. (2019). A demonstration of the collaborative replication and education project: Replication attempts of the red-romance effect. <i>Collabra: Psychology</i>, <i>5</i>(1). https://doi.org/10.1525/collabra.177"
+                    "Wagge, J. R., Baciu, C., Banas, K., Nadler, J. T., Schwarz, S., Weisberg, Y., et al. (2019). A demonstration of the collaborative replication and education project: Replication attempts of the red-romance effect. <i>Collabra: Psychology</i>, <i>5</i>(1). https://doi.org/10.1525/collabra.177"
                 ],
                 "drafted_by": [
                     "Connor Keating"
@@ -12374,7 +12374,7 @@
                     "Ruoting Liu",
                     "Shuxian Jin"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -12384,8 +12384,8 @@
                 "definition": "人类脑成像组织（Organization for Human Brain Mapping，简称OHBM）的神经影像学社区制定了一份关于神经影像数据采集、分析、报告以及数据与分析代码共享的最佳实践指南。该指南包含八个在撰写或提交论文时应该包含的关键要素，旨在提升报告方法和神经影像结果的透明度和可重复性。",
                 "related_terms": [],
                 "references": [
-                    "Nichols, T. E., Das, S., Eickhoff, S. B., Evans, A. C., Glatard, T., Hanke, M., & others. (2017). Best practices in data analysis and sharing in neuroimaging using MRI. <i>Nature Neuroscience</i>, <i>20</i>(3), 299–303. https://doi.org/10.1038/nn.4500",
-                    "Pernet, C., Garrido, M. I., Gramfort, A., Maurits, N., Michel, C. M., Pang, E., & others. (2020). Issues and recommendations from the OHBM COBIDAS MEEG committee for reproducible EEG and MEG research. <i>Nature Neuroscience</i>, <i>23</i>(12), 1473–1483. https://doi.org/10.1038/s41593-020-00709-0"
+                    "Nichols, T. E., Das, S., Eickhoff, S. B., Evans, A. C., Glatard, T., Hanke, M., et al. (2017). Best practices in data analysis and sharing in neuroimaging using MRI. <i>Nature Neuroscience</i>, <i>20</i>(3), 299–303. https://doi.org/10.1038/nn.4500",
+                    "Pernet, C., Garrido, M. I., Gramfort, A., Maurits, N., Michel, C. M., Pang, E., et al. (2020). Issues and recommendations from the OHBM COBIDAS MEEG committee for reproducible EEG and MEG research. <i>Nature Neuroscience</i>, <i>23</i>(12), 1473–1483. https://doi.org/10.1038/s41593-020-00709-0"
                 ],
                 "drafted_by": [
                     "Yu-Fang Yang"
@@ -12409,7 +12409,7 @@
                     "Ruoting Liu",
                     "Shuxian Jin"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -12759,8 +12759,8 @@
                 ],
                 "references": [
                     "Open Science Collaboration. (2015). Estimating the reproducibility of psychological science. <i>Science</i>, <i>349</i>(6251), aac4716. https://doi.org/10.1126/science.aac4716",
-                    "Tierney, W., Hardy III, J. H., Ebersole, C. R., Leavitt, K., Viganola, D., Clemente, E. G., & others. (2020). Creative destruction in science. <i>Organizational Behavior and Human Decision Processes</i>, <i>161</i>, 291–309. https://doi.org/10.1016/j.obhdp.2020.07.002",
-                    "Tierney, W., Hardy III, J., Ebersole, C. R., Viganola, D., Clemente, E. G., Gordon, M., & others. (2021). A creative destruction approach to replication: Implicit work and sex morality across cultures. <i>Journal of Experimental Social Psychology</i>, <i>93</i>, 104060. https://doi.org/10.1016/j.jesp.2020.104060"
+                    "Tierney, W., Hardy III, J. H., Ebersole, C. R., Leavitt, K., Viganola, D., Clemente, E. G., et al. (2020). Creative destruction in science. <i>Organizational Behavior and Human Decision Processes</i>, <i>161</i>, 291–309. https://doi.org/10.1016/j.obhdp.2020.07.002",
+                    "Tierney, W., Hardy III, J., Ebersole, C. R., Viganola, D., Clemente, E. G., Gordon, M., et al. (2021). A creative destruction approach to replication: Implicit work and sex morality across cultures. <i>Journal of Experimental Social Psychology</i>, <i>93</i>, 104060. https://doi.org/10.1016/j.jesp.2020.104060"
                 ],
                 "drafted_by": [
                     "Yuki Yamada"
@@ -12785,7 +12785,7 @@
                     "Ruoting Liu",
                     "Shuxian Jin"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -12806,7 +12806,7 @@
                 ],
                 "references": [
                     "Busse, C., Kach, A. P., & Wagner, S. M. (2017). Boundary Conditions: What They Are, How to Explore Them, Why We Need Them, and When to Consider Them. <i>Organizational Research Methods</i>, <i>20</i>(4), 574–609. https://doi.org/10.1177/1094428116641191",
-                    "Brandt, M. J., IJzerman, H., Dijksterhuis, A., Farach, F. J., Geller, J., Giner-Sorolla, R., & others. (2014). The replication recipe: What makes for a convincing replication? <i>Journal of Experimental Social Psychology</i>, <i>50</i>, 217–224. https://doi.org/10.1016/j.jesp.2013.10.005",
+                    "Brandt, M. J., IJzerman, H., Dijksterhuis, A., Farach, F. J., Geller, J., Giner-Sorolla, R., et al. (2014). The replication recipe: What makes for a convincing replication? <i>Journal of Experimental Social Psychology</i>, <i>50</i>, 217–224. https://doi.org/10.1016/j.jesp.2013.10.005",
                     "Simons, D. J., Shoda, Y., & Lindsay, D. S. (2017). Constraints on generality (COG): A proposed addition to all empirical papers. <i>Perspectives on Psychological Science</i>, <i>12</i>(6), 1123–1128. https://doi.org/10.1177/1745691617708630",
                     "Yarkoni, T. (2020). The generalizability crisis. <i>Behavioral and Brain Sciences</i>, 1–37. https://doi.org/10.1017/S0140525X20001685"
                 ],
@@ -12833,7 +12833,7 @@
                     "Ruoting Liu",
                     "Shuxian Jin"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -13149,8 +13149,8 @@
                     "Theory"
                 ],
                 "references": [
-                    "Tierney, W., Hardy III, J. H., Ebersole, C. R., Leavitt, K., Viganola, D., Clemente, E. G., & others. (2020). Creative destruction in science. <i>Organizational Behavior and Human Decision Processes</i>, <i>161</i>, 291–309. https://doi.org/10.1016/j.obhdp.2020.07.002",
-                    "Tierney, W., Hardy III, J., Ebersole, C. R., Viganola, D., Clemente, E. G., Gordon, M., & others. (2021). A creative destruction approach to replication: Implicit work and sex morality across cultures. <i>Journal of Experimental Social Psychology</i>, <i>93</i>, 104060. https://doi.org/10.1016/j.jesp.2020.104060"
+                    "Tierney, W., Hardy III, J. H., Ebersole, C. R., Leavitt, K., Viganola, D., Clemente, E. G., et al. (2020). Creative destruction in science. <i>Organizational Behavior and Human Decision Processes</i>, <i>161</i>, 291–309. https://doi.org/10.1016/j.obhdp.2020.07.002",
+                    "Tierney, W., Hardy III, J., Ebersole, C. R., Viganola, D., Clemente, E. G., Gordon, M., et al. (2021). A creative destruction approach to replication: Implicit work and sex morality across cultures. <i>Journal of Experimental Social Psychology</i>, <i>93</i>, 104060. https://doi.org/10.1016/j.jesp.2020.104060"
                 ],
                 "drafted_by": [
                     "Mahmoud Elsherif"
@@ -13176,7 +13176,7 @@
                     "Ruoting Liu",
                     "Shuxian Jin"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -13278,7 +13278,7 @@
                     "Lind, F., Gruber, M., & Boomgaarden, H. G. (2017). Content analysis by the crowd: Assessing the usability of crowdsourcing for coding latent constructs. <i>Communication Methods and Measures</i>, <i>11</i>(3), 191–209. https://doi.org/10.1080/19312458.2017.1317338",
                     "Moshontz, H., Campbell, L., Ebersole, C. R., IJzerman, H., Urry, H. L., Forscher, P. S., & Chartier, C. R. (2018). The Psychological Science Accelerator: Advancing psychology through a distributed collaborative network. <i>Advances in Methods and Practices in Psychological Science</i>, <i>1</i>(4), 501–515. https://doi.org/10.1177/2515245918797607",
                     "Peer, E., Brandimarte, L., Samat, S., & Acquisti, A. (2017). Beyond the Turk: Alternative platforms for crowdsourcing behavioral research. <i>Journal of Experimental Social Psychology</i>, <i>70</i>, 153–163. https://doi.org/10.1016/j.jesp.2017.01.006",
-                    "Silberzahn, R., Uhlmann, E. L., Martin, D. P., Anselmi, P., Aust, F., Awtrey, E., Bahník, Š., Bai, F., Bannard, C., Bonnier, E., & others. (2018). Many Analysts, One Data Set: Making Transparent How Variations in Analytic Choices Affect Results. <i>Advances in Methods and Practices in Psychological Science</i>, 337–356. https://doi.org/10.1177/2515245917747646",
+                    "Silberzahn, R., Uhlmann, E. L., Martin, D. P., Anselmi, P., Aust, F., Awtrey, E., Bahník, Š., Bai, F., Bannard, C., Bonnier, E., et al. (2018). Many Analysts, One Data Set: Making Transparent How Variations in Analytic Choices Affect Results. <i>Advances in Methods and Practices in Psychological Science</i>, 337–356. https://doi.org/10.1177/2515245917747646",
                     "Stewart, N., Chandler, J., & Paolacci, G. (2017). Crowdsourcing samples in cognitive science. <i>Trends in Cognitive Sciences</i>, <i>21</i>(10), 736–748. https://doi.org/10.1016/j.tics.2017.06.007",
                     "Tennant, J., Bielczyk, N. Z., Cheplygina, V., Greshake Tzovaras, B., Hartgerink, C. H. J., Havemann, J., Masuzzo, P., & Steiner, T. (2019). Ten simple rules for researchers collaborating on Massively Open Online Papers (MOOPs). <i>MetaArXiv</i>. https://doi.org/10.31222/osf.io/et8ak",
                     "Uhlmann, E. L., Ebersole, C. R., Chartier, C. R., Errington, T. M., Kidwell, M. C., Lai, C. K., McCarthy, R. J., Riegelman, A., Silberzahn, R., & Nosek, B. A. (2019). Scientific utopia III: Crowdsourcing science. <i>Perspectives on Psychological Science</i>, <i>14</i>(5), 711–733. https://doi.org/10.1177/1745691619850561",
@@ -13309,7 +13309,7 @@
                     "Ruoting Liu",
                     "Shuxian Jin"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -14394,7 +14394,7 @@
                 ],
                 "references": [
                     "Crüwell, S., van Doorn, J., Etz, A., Makel, M. C., Moshontz, H., Niebaum, J. C., Orben, A., Parsons, S., & Schulte-Mecklenbeck, M. (2019). Seven Easy Steps to Open Science: An Annotated Reading List. <i>Zeitschrift Für Psychologie</i>, <i>227</i>(4), 237–248. https://doi.org/10.1027/2151-2604/a000387",
-                    "Wilkinson, M. D., Dumontier, M., Aalbersberg, I. J., Appleton, G., Axton, M., Baak, A., & others. (2016). The FAIR Guiding Principles for scientific data management and stewardship. <i>Scientific Data</i>, <i>3</i>(1), 1–9. https://doi.org/10.1038/sdata.2016.18",
+                    "Wilkinson, M. D., Dumontier, M., Aalbersberg, I. J., Appleton, G., Axton, M., Baak, A., et al. (2016). The FAIR Guiding Principles for scientific data management and stewardship. <i>Scientific Data</i>, <i>3</i>(1), 1–9. https://doi.org/10.1038/sdata.2016.18",
                     "GO FAIR Initiative. (2025). <i>FAIR Principles</i>. https://www.go-fair.org/fair-principles/"
                 ],
                 "drafted_by": [
@@ -14418,7 +14418,7 @@
                     "Ruoting Liu",
                     "Shuxian Jin"
                 ],
-                "lastmod": "2026-11-08"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -16313,7 +16313,7 @@
                 ],
                 "references": [
                     "Aczel, B., Szaszi, B., Nilsonne, G., Van den Akker, O., Albers, C. J., van Assen, M. A. L. M., ..., & Wagenmakers, E. (2021). <i>Guidance for Multi-Analyst Studies</i>. https://doi.org/10.31222/osf.io/5ecnh",
-                    "Silberzahn, R., Uhlmann, E. L., Martin, D. P., Anselmi, P., Aust, F., Awtrey, E., Bahník, Š., Bai, F., Bannard, C., Bonnier, E., & others. (2018). Many Analysts, One Data Set: Making Transparent How Variations in Analytic Choices Affect Results. <i>Advances in Methods and Practices in Psychological Science</i>, 337–356. https://doi.org/10.1177/2515245917747646"
+                    "Silberzahn, R., Uhlmann, E. L., Martin, D. P., Anselmi, P., Aust, F., Awtrey, E., Bahník, Š., Bai, F., Bannard, C., Bonnier, E., et al. (2018). Many Analysts, One Data Set: Making Transparent How Variations in Analytic Choices Affect Results. <i>Advances in Methods and Practices in Psychological Science</i>, 337–356. https://doi.org/10.1177/2515245917747646"
                 ],
                 "drafted_by": [
                     "Sam Parsons"
@@ -16340,7 +16340,7 @@
                     "Ruoting Liu",
                     "Shuxian Jin"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -16513,7 +16513,7 @@
                     "Systematic Review Protocol"
                 ],
                 "references": [
-                    "Topor, M., Pickering, J. S., Barbosa Mendes, A., Bishop, D. V. M., Büttner, F. C., Elsherif, M. M., & others. (2021). <i>An integrative framework for planning and conducting Non-Intervention, Reproducible, and Open Systematic Reviews (NIRO-SR)</i>. https://doi.org/10.31222/osf.io/8gu5z"
+                    "Topor, M., Pickering, J. S., Barbosa Mendes, A., Bishop, D. V. M., Büttner, F. C., Elsherif, M. M., et al. (2021). <i>An integrative framework for planning and conducting Non-Intervention, Reproducible, and Open Systematic Reviews (NIRO-SR)</i>. https://doi.org/10.31222/osf.io/8gu5z"
                 ],
                 "drafted_by": [
                     "Asma Assaneea"
@@ -16538,7 +16538,7 @@
                     "Ruoting Liu",
                     "Shuxian Jin"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -16928,7 +16928,7 @@
                     "Transparency"
                 ],
                 "references": [
-                    "Blohowiak, B. B., Cohoon, J., de Wit, L., Eich, E., Farach, F. J., Hasselman, F., & others. (2020). <i>Badges to Acknowledge Open Practices</i>. Retrieved from https://osf.io/tvyxz",
+                    "Blohowiak, B. B., Cohoon, J., de Wit, L., Eich, E., Farach, F. J., Hasselman, F., et al. (2020). <i>Badges to Acknowledge Open Practices</i>. Retrieved from https://osf.io/tvyxz",
                     "Kidwell, M. C., Lazarević, L. B., Baranski, E., Hardwicke, T. E., Piechowski, S., Falkenberg, L. S., & Nosek, B. A. (2016). Badges to acknowledge open practices: A simple, low-cost, effective method for increasing transparency. <i>PLoS Biology</i>, <i>14</i>(5), e1002456. https://doi.org/10.1371/journal.pbio.1002456"
                 ],
                 "drafted_by": [
@@ -16954,7 +16954,7 @@
                     "Ruoting Liu",
                     "Shuxian Jin"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -17678,13 +17678,13 @@
                     "Transformative paradigm"
                 ],
                 "references": [
+                    "Andersson, N. (2018). Participatory research—a modernizing science for primary health care. <i>Journal of General and Family Medicine</i>, <i>19</i>(5), 154–159. https://doi.org/10.1002/jgf2.187",
                     "Cornwall, A., & Jewkes, R. (1995). What is participatory research? <i>Social Science & Medicine</i>, <i>41</i>(12), 1667–1676. https://doi.org/10.1016/0277-9536(95)00127-S",
                     "Fletcher-Watson, S., Adams, J., Brook, K., Charman, T., Crane, L., Cusack, J., Leekam, S., Milton, D., Parr, J. R., & Pellicano, E. (2019). Making the Future Together: Shaping Autism Research Through Meaningful Participation. <i>Autism</i>, <i>23</i>(4), 943–953.",
                     "Kiernan, C. (1999). Participation in research by people with learning disability: Origins and issues. <i>British Journal of Learning Disabilities</i>, <i>27</i>(2), 43–47. https://doi.org/10.1111/j.1468-3156.1999.tb00084.x",
                     "Leavy, P. (2017). <i>Research Design: Quantitative, Qualitative, Mixed Methods, Arts-Based, and Community-Based Participatory Research Approaches</i>. The Guilford Press.",
                     "Ottmann, G., Laragy, C., Allen, J., & Feldman, P. (2011). Coproduction in practice: Participatory action research to develop a model of community aged care. <i>Systemic Practice and Action Research</i>, <i>24</i>, 413–427. https://doi.org/10.1007/s11213-011-9192-x",
-                    "Rose, D. (2018). Participatory research: Real or imagined. <i>Social Psychiatry and Psychiatric Epidemiology</i>, <i>53</i>, 765–771. https://doi.org/10.1007/s00127-018-1549-3",
-                    "Andersson, N. (2018). Participatory research—a modernizing science for primary health care. <i>Journal of General and Family Medicine</i>, <i>19</i>(5), 154–159. https://doi.org/10.1002/jgf2.187"
+                    "Rose, D. (2018). Participatory research: Real or imagined. <i>Social Psychiatry and Psychiatric Epidemiology</i>, <i>53</i>, 765–771. https://doi.org/10.1007/s00127-018-1549-3"
                 ],
                 "drafted_by": [
                     "Tamara Kalandadze"
@@ -19219,11 +19219,11 @@
                 ],
                 "references": [
                     "Barba, L. A. (2018). Terminologies for reproducible research. <i>arXiv Preprint arXiv:1802.03311</i>.",
+                    "Claerbout, J. F., & Karrenbach, M. (1992). Electronic documents give reproducible research a new meaning. <i>SEG Technical Program Expanded Abstracts 1992</i>, 601–604. http://sepwww.stanford.edu/doku.php?id=sep:research:reproducible:seg92",
                     "Crüwell, S., van Doorn, J., Etz, A., Makel, M. C., Moshontz, H., Niebaum, J. C., Orben, A., Parsons, S., & Schulte-Mecklenbeck, M. (2019). Seven Easy Steps to Open Science: An Annotated Reading List. <i>Zeitschrift Für Psychologie</i>, <i>227</i>(4), 237–248. https://doi.org/10.1027/2151-2604/a000387",
                     "King, G. (1995). Replication, replication. <i>PS: Political Science & Politics</i>, <i>28</i>(3), 444–452. https://doi.org/10.2307/420301",
                     "National Academies of Sciences, Engineering, and Medicine. (2019). <i>Reproducibility and Replicability in Science. In Understanding Reproducibility and Replicability</i> [Techreport]. National Academies Press (US). https://www.ncbi.nlm.nih.gov/books/NBK547546/",
-                    "Nosek, B. A., & Errington, T. M. (2020). What is replication? <i>PLOS Biology</i>, <i>18</i>(3), e3000691. https://doi.org/10.1371/journal.pbio.3000691",
-                    "Claerbout, J. F., & Karrenbach, M. (1992). Electronic documents give reproducible research a new meaning. <i>SEG Technical Program Expanded Abstracts 1992</i>, 601–604. http://sepwww.stanford.edu/doku.php?id=sep:research:reproducible:seg92"
+                    "Nosek, B. A., & Errington, T. M. (2020). What is replication? <i>PLOS Biology</i>, <i>18</i>(3), e3000691. https://doi.org/10.1371/journal.pbio.3000691"
                 ],
                 "drafted_by": [
                     "Mahmoud Elsherif"
@@ -19267,8 +19267,8 @@
                 ],
                 "references": [
                     "Liu, Y., Gordon, M., Wang, J., Bishop, M., Chen, Y., Pfeiffer, T., Twardy, C., & Viganola, D. (2020). Replication Markets: Results, Lessons, Challenges and Opportunities in AI Replication. <i>ArXiv:2005.04543 </i>. http://arxiv.org/abs/2005.04543",
-                    "Tierney, W., Hardy III, J. H., Ebersole, C. R., Leavitt, K., Viganola, D., Clemente, E. G., & others. (2020). Creative destruction in science. <i>Organizational Behavior and Human Decision Processes</i>, <i>161</i>, 291–309. https://doi.org/10.1016/j.obhdp.2020.07.002",
-                    "Tierney, W., Hardy III, J., Ebersole, C. R., Viganola, D., Clemente, E. G., Gordon, M., & others. (2021). A creative destruction approach to replication: Implicit work and sex morality across cultures. <i>Journal of Experimental Social Psychology</i>, <i>93</i>, 104060. https://doi.org/10.1016/j.jesp.2020.104060",
+                    "Tierney, W., Hardy III, J. H., Ebersole, C. R., Leavitt, K., Viganola, D., Clemente, E. G., et al. (2020). Creative destruction in science. <i>Organizational Behavior and Human Decision Processes</i>, <i>161</i>, 291–309. https://doi.org/10.1016/j.obhdp.2020.07.002",
+                    "Tierney, W., Hardy III, J., Ebersole, C. R., Viganola, D., Clemente, E. G., Gordon, M., et al. (2021). A creative destruction approach to replication: Implicit work and sex morality across cultures. <i>Journal of Experimental Social Psychology</i>, <i>93</i>, 104060. https://doi.org/10.1016/j.jesp.2020.104060",
                     "Replication Markets. (n.d.). <i>Replication Markets – Reliable research replicates…you can bet on it</i>. Replication Markets. https://www.replicationmarkets.org/",
                     "[www.replicationmarkets.com](http://www.replicationmarkets.com)"
                 ],
@@ -19293,7 +19293,7 @@
                     "Ruoting Liu",
                     "Shuxian Jin"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -19312,7 +19312,7 @@
                     "Schulz, K. F., Altman, D. G., & Moher, D. (2010). CONSORT 2010 statement: updated guidelines for reporting parallel group randomised trials. <i>Trials</i>, <i>11</i>(1), 32. https://doi.org/10.1186/1745-6215-11-32",
                     "Von Elm, E., Altman, D. G., Egger, M., Pocock, S. J., Gøtzsche, P. C., & Vandenbroucke, J. P. (2007). The Strengthening the Reporting of Observational Studies in Epidemiology (STROBE) statement: guidelines for reporting observational studies. <i>Annals of Internal Medicine</i>, <i>147</i>(8), 573–577. https://doi.org/10.1136/bmj.39335.541782.AD",
                     "The EQUATOR Network. (n.d.). <i>What is a reporting guideline?</i> Retrieved 10 July 2021. https://www.equator-network.org/about-us/what-is-a-reporting-guideline/",
-                    "Topor, M., Pickering, J. S., Barbosa Mendes, A., Bishop, D. V. M., Büttner, F. C., Elsherif, M. M., & others. (2021). <i>An integrative framework for planning and conducting Non-Intervention, Reproducible, and Open Systematic Reviews (NIRO-SR)</i>. https://doi.org/10.31222/osf.io/8gu5z"
+                    "Topor, M., Pickering, J. S., Barbosa Mendes, A., Bishop, D. V. M., Büttner, F. C., Elsherif, M. M., et al. (2021). <i>An integrative framework for planning and conducting Non-Intervention, Reproducible, and Open Systematic Reviews (NIRO-SR)</i>. https://doi.org/10.31222/osf.io/8gu5z"
                 ],
                 "drafted_by": [
                     "Aidan Cashin"
@@ -19335,7 +19335,7 @@
                     "Ruoting Liu",
                     "Shuxian Jin"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -19848,7 +19848,7 @@
                     "Trustworthiness"
                 ],
                 "references": [
-                    "Fraser, H., Bush, M., Wintle, B., Mody, F., Smith, E., Hanea, A., & others. (2021). <i>Predicting reliability through structured expert elicitation with repliCATS (Collaborative Assessments for Trustworthy Science)</i>.",
+                    "Fraser, H., Bush, M., Wintle, B., Mody, F., Smith, E., Hanea, A., et al. (2021). <i>Predicting reliability through structured expert elicitation with repliCATS (Collaborative Assessments for Trustworthy Science)</i>.",
                     "RepliCATS project. (2020). <i>Collaborative Assessment for Trustworthy Science</i>. The University of Melbourne. https://replicats.research.unimelb.edu.au/"
                 ],
                 "drafted_by": [
@@ -19874,7 +19874,7 @@
                     "Ruoting Liu",
                     "Shuxian Jin"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -20853,7 +20853,7 @@
                     "Higgins, J. P. T., Thomas, J., Chandler, J., Cumpston, M., Li, T., Page, M. J., & Welch, V. A. (Eds.). (2019). <i>Cochrane Handbook for Systematic Reviews of Interventions. 2nd Edition</i>. John Wiley & Sons.",
                     "Moher, D., Liberati, A., Tetzlaff, J., & Altman, D. (2009). Preferred Reporting Items for Systematic Reviews and Meta-Analyses: The PRISMA Statement. <i>PLoS Medicine</i>, <i>6</i>(7), e1000097. https://doi.org/10.1371/journal.pmed.1000097",
                     "Page, M. J., Moher, D., Bossuyt, P. M., Boutron, I., Hoffmann, T. C., Mulrow, C. D., & McKenzie, J. E. (2021). PRISMA 2020 explanation and elaboration: updated guidance and exemplars for reporting systematic reviews. <i>British Medical Journal</i>, <i>372</i>. https://doi.org/10.1136/bmj.n160",
-                    "Topor, M., Pickering, J. S., Barbosa Mendes, A., Bishop, D. V. M., Büttner, F. C., Elsherif, M. M., & others. (2021). <i>An integrative framework for planning and conducting Non-Intervention, Reproducible, and Open Systematic Reviews (NIRO-SR)</i>. https://doi.org/10.31222/osf.io/8gu5z"
+                    "Topor, M., Pickering, J. S., Barbosa Mendes, A., Bishop, D. V. M., Büttner, F. C., Elsherif, M. M., et al. (2021). <i>An integrative framework for planning and conducting Non-Intervention, Reproducible, and Open Systematic Reviews (NIRO-SR)</i>. https://doi.org/10.31222/osf.io/8gu5z"
                 ],
                 "drafted_by": [
                     "Jade Pickering"
@@ -20881,7 +20881,7 @@
                     "Xiujuan Wen",
                     "Shuxian Jin"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -22270,7 +22270,7 @@
                     "STRANGE"
                 ],
                 "references": [
-                    "Percie du Sert, N., Hurst, V., Ahluwalia, A., Alam, S., Avey, M. T., Baker, M., Browne, W. J., Clark, A., Cuthill, I. C., Dirnagl, U., Emerson, M., Garner, P., Holgate, S. T., Howells, D. W., Karp, N. A., Lazic, S. E., Lidster, K., MacCallum, C. J., Macleod, M., & others. (2020). The ARRIVE guidelines 2.0: Updated guidelines for reporting animal research. <i>PLOS Biology</i>, <i>18</i>(7), e3000410. https://doi.org/10.1371/journal.pbio.3000410"
+                    "Percie du Sert, N., Hurst, V., Ahluwalia, A., Alam, S., Avey, M. T., Baker, M., Browne, W. J., Clark, A., Cuthill, I. C., Dirnagl, U., Emerson, M., Garner, P., Holgate, S. T., Howells, D. W., Karp, N. A., Lazic, S. E., Lidster, K., MacCallum, C. J., Macleod, M., et al. (2020). The ARRIVE guidelines 2.0: Updated guidelines for reporting animal research. <i>PLOS Biology</i>, <i>18</i>(7), e3000410. https://doi.org/10.1371/journal.pbio.3000410"
                 ],
                 "drafted_by": [
                     "Ben Farrar"
@@ -22294,7 +22294,7 @@
                     "Susanne Vogel",
                     "Jennifer Mattschey"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -22432,7 +22432,7 @@
                     "Triple badge"
                 ],
                 "references": [
-                    "Hardwicke, T. E., Bohn, M., MacDonald, K., Hembacher, E., Nuijten, M. B., Peloquin, B. N., & others. (2020). Analytic reproducibility in articles receiving open data badges at the journal Psychological Science: an observational study. <i>Royal Society Open Science</i>, <i>8</i>(1), 201494. https://doi.org/10.1098/rsos.201494",
+                    "Hardwicke, T. E., Bohn, M., MacDonald, K., Hembacher, E., Nuijten, M. B., Peloquin, B. N., et al. (2020). Analytic reproducibility in articles receiving open data badges at the journal Psychological Science: an observational study. <i>Royal Society Open Science</i>, <i>8</i>(1), 201494. https://doi.org/10.1098/rsos.201494",
                     "Kidwell, M. C., Lazarević, L. B., Baranski, E., Hardwicke, T. E., Piechowski, S., Falkenberg, L. S., & Nosek, B. A. (2016). Badges to acknowledge open practices: A simple, low-cost, effective method for increasing transparency. <i>PLoS Biology</i>, <i>14</i>(5), e1002456. https://doi.org/10.1371/journal.pbio.1002456",
                     "Rowhani-Farid, A., Aldcroft, A., & Barnett, A. G. (2020). Did awarding badges increase data sharing in BMJ Open? A randomized controlled trial. <i>Royal Society Open Science</i>, <i>7</i>(3), 191818. https://doi.org/10.1098/rsos.191818",
                     "Science, C. (n.d.). <i>Open science badges</i>. https://www.cos.io/initiatives/badges"
@@ -22459,7 +22459,7 @@
                     "Helena Hartmann",
                     "Jennifer Mattschey"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -22518,7 +22518,7 @@
                     "Dienes, Z. (2011). Bayesian versus orthodox statistics: Which side are you on? <i>Perspectives on Psychological Science</i>, <i>6</i>(3), 274–290. https://doi.org/10.1177/1745691611406920",
                     "Dienes, Z. (2014). Using Bayes to get the most out of non-significant results. <i>Frontiers in Psychology</i>, <i>5</i>, 781. https://doi.org/10.3389/fpsyg.2014.00781",
                     "Dienes, Z. (2016). How Bayes factors change scientific practice. <i>Journal of Mathematical Psychology</i>, <i>72</i>, 78–89. https://doi.org/10.1016/j.jmp.2015.10.003",
-                    "Etz, A., Gronau, Q. F., Dablander, F., & others. (2018). How to become a Bayesian in eight easy steps: An annotated reading list. <i>Psychonomic Bulletin & Review</i>, <i>25</i>, 219–234. https://doi.org/10.3758/s13423-017-1317-5",
+                    "Etz, A., Gronau, Q. F., Dablander, F., et al. (2018). How to become a Bayesian in eight easy steps: An annotated reading list. <i>Psychonomic Bulletin & Review</i>, <i>25</i>, 219–234. https://doi.org/10.3758/s13423-017-1317-5",
                     "Kruschke, J. K. (2015). <i>Doing Bayesian data analysis: A tutorial with R, JAGS, and Stan</i> (2nd ed.). Academic Press.",
                     "McElreath, R. (2020). <i>Statistical rethinking: A Bayesian course with examples in R and Stan</i> (2nd ed.). Taylor.",
                     "Wagenmakers, E.-J., Marsman, M., Jamil, T., Ly, A., Verhagen, J., Love, J., Selker, R., Gronau, Q. F., Šmíra, M., Epskamp, S., Matzke, D., Rouder, J. N., & Morey, R. D. (2018). Bayesian inference for psychology. Part I: Theoretical advantages and practical ramifications. <i>Psychonomic Bulletin & Review</i>, <i>25</i>(1), 35–57. https://doi.org/10.3758/s13423-017-1343-3"
@@ -22545,7 +22545,7 @@
                     "Helena Hartmann",
                     "Jennifer Mattschey"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -22599,7 +22599,7 @@
                     "Open Data"
                 ],
                 "references": [
-                    "Gorgolewski, K., Auer, T., Calhoun, V., & others. (2016). The brain imaging data structure, a format for organizing and describing outputs of neuroimaging experiments. <i>Scientific Data</i>, <i>3</i>, 160044. https://doi.org/10.1038/sdata.2016.44",
+                    "Gorgolewski, K., Auer, T., Calhoun, V., et al. (2016). The brain imaging data structure, a format for organizing and describing outputs of neuroimaging experiments. <i>Scientific Data</i>, <i>3</i>, 160044. https://doi.org/10.1038/sdata.2016.44",
                     "BIDS. (2020). <i>About BIDS</i>. Retrieved from https://bids.neuroimaging.io",
                     "Pernet, C. R., Appelhoff, S., Gorgolewski, K. J., Flandin, G., Phillips, C., Delorme, A., & Oostenveld, R. (2019). EEG-BIDS, an extension to the brain imaging data structure for electroencephalography. <i>Scientific Data</i>, <i>6</i>(1), 103. https://doi.org/10.1038/s41597-019-0104-8"
                 ],
@@ -22756,8 +22756,8 @@
                     "Guest, O. [@o_guest]. (2017). <i>Thanks! Hopefully this thread & many other similar discussions & blogs will help make it less Bropen Science and more Open Science. *hides* </i>. Twitter. Retrieved from https://twitter.com/o_guest/status/871675631062458368",
                     "Whitaker, K., & Guest, O. (2020).  #bropenscience is broken science. <i>The Psychologist</i>, <i>33</i>, 34–37.",
                     "Pownall, M., Talbot, C. V., Henschel, A., Lautarescu, A., Lloyd, K. E., Hartmann, H., Darda, K. M., Tang, K. T. Y., Carmichael-Murphy, P., & Siegel, J. A. (2021). Navigating Open Science as Early Career Feminist Researchers. <i>Psychology of Women Quarterly</i>, <i>45</i>(4), 526–539. https://doi.org/10.1177/03616843211029255",
-                    "Bahlai, C., Bartlett, L. J., Burgio, K. R., & others. (2019). Open science isn’t always open to all scientists. <i>American Scientist</i>, <i>107</i>(2), 78.",
-                    "Onie, S. (2020). Redesign open science for Asia, Africa and Latin America. <i>Nature</i>, <i>587</i>, 5–37. https://doi.org/10.1038/d41586-020-03052-3"
+                    "Bahlai, C., Bartlett, L. J., Burgio, K. R., et al. (2019). Open science isn’t always open to all scientists. <i>American Scientist</i>, <i>107</i>(2), 78.",
+                    "Onie, S. (2020). Redesign open science for Asia, Africa and Latin America. <i>Nature</i>, <i>587</i>, 35–37. https://doi.org/10.1038/d41586-020-03052-3"
                 ],
                 "drafted_by": [
                     "Zoe Flack"
@@ -23135,7 +23135,7 @@
                     "Exact replication"
                 ],
                 "references": [
-                    "Wagge, J. R., Baciu, C., Banas, K., Nadler, J. T., Schwarz, S., Weisberg, Y., & others. (2019). A demonstration of the collaborative replication and education project: Replication attempts of the red-romance effect. <i>Collabra: Psychology</i>, <i>5</i>(1). https://doi.org/10.1525/collabra.177"
+                    "Wagge, J. R., Baciu, C., Banas, K., Nadler, J. T., Schwarz, S., Weisberg, Y., et al. (2019). A demonstration of the collaborative replication and education project: Replication attempts of the red-romance effect. <i>Collabra: Psychology</i>, <i>5</i>(1). https://doi.org/10.1525/collabra.177"
                 ],
                 "drafted_by": [
                     "Connor Keating"
@@ -23157,7 +23157,7 @@
                     "Susanne Vogel",
                     "Jennifer Mattschey"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -23167,8 +23167,8 @@
                 "definition": "Die Organization for Human Brain Mapping (OHBM; dt. Organisation für menschliche Hirnbildgebung) hat einen Leitfaden für optimale Verfahren (best practices) bei der Erhebung und Analyse von Bildgebungsdaten, der Veröffentlichung und der gemeinsamen Nutzung von Daten und Analysecodes entwickelt. Er enthält acht Elemente, die beim Verfassen oder Einreichen eines Manuskripts berücksichtigt werden sollten, um die Veröffentlichung der Methodik und die daraus resultierenden Bildgebungsdaten zu verbessern und so die Transparenz und Reproduzierbarkeit zu optimieren. **Alternative definition:** (if applicable) Checklist for data analysis and sharing",
                 "related_terms": [],
                 "references": [
-                    "Nichols, T. E., Das, S., Eickhoff, S. B., Evans, A. C., Glatard, T., Hanke, M., & others. (2017). Best practices in data analysis and sharing in neuroimaging using MRI. <i>Nature Neuroscience</i>, <i>20</i>(3), 299–303. https://doi.org/10.1038/nn.4500",
-                    "Pernet, C., Garrido, M. I., Gramfort, A., Maurits, N., Michel, C. M., Pang, E., & others. (2020). Issues and recommendations from the OHBM COBIDAS MEEG committee for reproducible EEG and MEG research. <i>Nature Neuroscience</i>, <i>23</i>(12), 1473–1483. https://doi.org/10.1038/s41593-020-00709-0"
+                    "Nichols, T. E., Das, S., Eickhoff, S. B., Evans, A. C., Glatard, T., Hanke, M., et al. (2017). Best practices in data analysis and sharing in neuroimaging using MRI. <i>Nature Neuroscience</i>, <i>20</i>(3), 299–303. https://doi.org/10.1038/nn.4500",
+                    "Pernet, C., Garrido, M. I., Gramfort, A., Maurits, N., Michel, C. M., Pang, E., et al. (2020). Issues and recommendations from the OHBM COBIDAS MEEG committee for reproducible EEG and MEG research. <i>Nature Neuroscience</i>, <i>23</i>(12), 1473–1483. https://doi.org/10.1038/s41593-020-00709-0"
                 ],
                 "drafted_by": [
                     "Yu-Fang Yang"
@@ -23190,7 +23190,7 @@
                     "Helena Hartmann",
                     "Jennifer Mattschey"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -23524,8 +23524,8 @@
                 ],
                 "references": [
                     "Open Science Collaboration. (2015). Estimating the reproducibility of psychological science. <i>Science</i>, <i>349</i>(6251), aac4716. https://doi.org/10.1126/science.aac4716",
-                    "Tierney, W., Hardy III, J. H., Ebersole, C. R., Leavitt, K., Viganola, D., Clemente, E. G., & others. (2020). Creative destruction in science. <i>Organizational Behavior and Human Decision Processes</i>, <i>161</i>, 291–309. https://doi.org/10.1016/j.obhdp.2020.07.002",
-                    "Tierney, W., Hardy III, J., Ebersole, C. R., Viganola, D., Clemente, E. G., Gordon, M., & others. (2021). A creative destruction approach to replication: Implicit work and sex morality across cultures. <i>Journal of Experimental Social Psychology</i>, <i>93</i>, 104060. https://doi.org/10.1016/j.jesp.2020.104060"
+                    "Tierney, W., Hardy III, J. H., Ebersole, C. R., Leavitt, K., Viganola, D., Clemente, E. G., et al. (2020). Creative destruction in science. <i>Organizational Behavior and Human Decision Processes</i>, <i>161</i>, 291–309. https://doi.org/10.1016/j.obhdp.2020.07.002",
+                    "Tierney, W., Hardy III, J., Ebersole, C. R., Viganola, D., Clemente, E. G., Gordon, M., et al. (2021). A creative destruction approach to replication: Implicit work and sex morality across cultures. <i>Journal of Experimental Social Psychology</i>, <i>93</i>, 104060. https://doi.org/10.1016/j.jesp.2020.104060"
                 ],
                 "drafted_by": [
                     "Yuki Yamada"
@@ -23548,7 +23548,7 @@
                     "Helena Hartmann",
                     "Jennifer Mattschey"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -23569,7 +23569,7 @@
                 ],
                 "references": [
                     "Busse, C., Kach, A. P., & Wagner, S. M. (2017). Boundary Conditions: What They Are, How to Explore Them, Why We Need Them, and When to Consider Them. <i>Organizational Research Methods</i>, <i>20</i>(4), 574–609. https://doi.org/10.1177/1094428116641191",
-                    "Brandt, M. J., IJzerman, H., Dijksterhuis, A., Farach, F. J., Geller, J., Giner-Sorolla, R., & others. (2014). The replication recipe: What makes for a convincing replication? <i>Journal of Experimental Social Psychology</i>, <i>50</i>, 217–224. https://doi.org/10.1016/j.jesp.2013.10.005",
+                    "Brandt, M. J., IJzerman, H., Dijksterhuis, A., Farach, F. J., Geller, J., Giner-Sorolla, R., et al. (2014). The replication recipe: What makes for a convincing replication? <i>Journal of Experimental Social Psychology</i>, <i>50</i>, 217–224. https://doi.org/10.1016/j.jesp.2013.10.005",
                     "Simons, D. J., Shoda, Y., & Lindsay, D. S. (2017). Constraints on generality (COG): A proposed addition to all empirical papers. <i>Perspectives on Psychological Science</i>, <i>12</i>(6), 1123–1128. https://doi.org/10.1177/1745691617708630",
                     "Yarkoni, T. (2020). The generalizability crisis. <i>Behavioral and Brain Sciences</i>, 1–37. https://doi.org/10.1017/S0140525X20001685"
                 ],
@@ -23594,7 +23594,7 @@
                     "Susanne Vogel",
                     "Jennifer Mattschey"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -23896,8 +23896,8 @@
                     "Theory"
                 ],
                 "references": [
-                    "Tierney, W., Hardy III, J. H., Ebersole, C. R., Leavitt, K., Viganola, D., Clemente, E. G., & others. (2020). Creative destruction in science. <i>Organizational Behavior and Human Decision Processes</i>, <i>161</i>, 291–309. https://doi.org/10.1016/j.obhdp.2020.07.002",
-                    "Tierney, W., Hardy III, J., Ebersole, C. R., Viganola, D., Clemente, E. G., Gordon, M., & others. (2021). A creative destruction approach to replication: Implicit work and sex morality across cultures. <i>Journal of Experimental Social Psychology</i>, <i>93</i>, 104060. https://doi.org/10.1016/j.jesp.2020.104060"
+                    "Tierney, W., Hardy III, J. H., Ebersole, C. R., Leavitt, K., Viganola, D., Clemente, E. G., et al. (2020). Creative destruction in science. <i>Organizational Behavior and Human Decision Processes</i>, <i>161</i>, 291–309. https://doi.org/10.1016/j.obhdp.2020.07.002",
+                    "Tierney, W., Hardy III, J., Ebersole, C. R., Viganola, D., Clemente, E. G., Gordon, M., et al. (2021). A creative destruction approach to replication: Implicit work and sex morality across cultures. <i>Journal of Experimental Social Psychology</i>, <i>93</i>, 104060. https://doi.org/10.1016/j.jesp.2020.104060"
                 ],
                 "drafted_by": [
                     "Mahmoud Elsherif"
@@ -23921,7 +23921,7 @@
                     "Susanne Vogel",
                     "Jennifer Mattschey"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -24019,7 +24019,7 @@
                     "Lind, F., Gruber, M., & Boomgaarden, H. G. (2017). Content analysis by the crowd: Assessing the usability of crowdsourcing for coding latent constructs. <i>Communication Methods and Measures</i>, <i>11</i>(3), 191–209. https://doi.org/10.1080/19312458.2017.1317338",
                     "Moshontz, H., Campbell, L., Ebersole, C. R., IJzerman, H., Urry, H. L., Forscher, P. S., & Chartier, C. R. (2018). The Psychological Science Accelerator: Advancing psychology through a distributed collaborative network. <i>Advances in Methods and Practices in Psychological Science</i>, <i>1</i>(4), 501–515. https://doi.org/10.1177/2515245918797607",
                     "Peer, E., Brandimarte, L., Samat, S., & Acquisti, A. (2017). Beyond the Turk: Alternative platforms for crowdsourcing behavioral research. <i>Journal of Experimental Social Psychology</i>, <i>70</i>, 153–163. https://doi.org/10.1016/j.jesp.2017.01.006",
-                    "Silberzahn, R., Uhlmann, E. L., Martin, D. P., Anselmi, P., Aust, F., Awtrey, E., Bahník, Š., Bai, F., Bannard, C., Bonnier, E., & others. (2018). Many Analysts, One Data Set: Making Transparent How Variations in Analytic Choices Affect Results. <i>Advances in Methods and Practices in Psychological Science</i>, 337–356. https://doi.org/10.1177/2515245917747646",
+                    "Silberzahn, R., Uhlmann, E. L., Martin, D. P., Anselmi, P., Aust, F., Awtrey, E., Bahník, Š., Bai, F., Bannard, C., Bonnier, E., et al. (2018). Many Analysts, One Data Set: Making Transparent How Variations in Analytic Choices Affect Results. <i>Advances in Methods and Practices in Psychological Science</i>, 337–356. https://doi.org/10.1177/2515245917747646",
                     "Stewart, N., Chandler, J., & Paolacci, G. (2017). Crowdsourcing samples in cognitive science. <i>Trends in Cognitive Sciences</i>, <i>21</i>(10), 736–748. https://doi.org/10.1016/j.tics.2017.06.007",
                     "Tennant, J., Bielczyk, N. Z., Cheplygina, V., Greshake Tzovaras, B., Hartgerink, C. H. J., Havemann, J., Masuzzo, P., & Steiner, T. (2019). Ten simple rules for researchers collaborating on Massively Open Online Papers (MOOPs). <i>MetaArXiv</i>. https://doi.org/10.31222/osf.io/et8ak",
                     "Uhlmann, E. L., Ebersole, C. R., Chartier, C. R., Errington, T. M., Kidwell, M. C., Lai, C. K., McCarthy, R. J., Riegelman, A., Silberzahn, R., & Nosek, B. A. (2019). Scientific utopia III: Crowdsourcing science. <i>Perspectives on Psychological Science</i>, <i>14</i>(5), 711–733. https://doi.org/10.1177/1745691619850561",
@@ -24048,7 +24048,7 @@
                     "Susanne Vogel",
                     "Jennifer Mattschey"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -25081,7 +25081,7 @@
                 ],
                 "references": [
                     "Crüwell, S., van Doorn, J., Etz, A., Makel, M. C., Moshontz, H., Niebaum, J. C., Orben, A., Parsons, S., & Schulte-Mecklenbeck, M. (2019). Seven Easy Steps to Open Science: An Annotated Reading List. <i>Zeitschrift Für Psychologie</i>, <i>227</i>(4), 237–248. https://doi.org/10.1027/2151-2604/a000387",
-                    "Wilkinson, M. D., Dumontier, M., Aalbersberg, I. J., Appleton, G., Axton, M., Baak, A., & others. (2016). The FAIR Guiding Principles for scientific data management and stewardship. <i>Scientific Data</i>, <i>3</i>(1), 1–9. https://doi.org/10.1038/sdata.2016.18",
+                    "Wilkinson, M. D., Dumontier, M., Aalbersberg, I. J., Appleton, G., Axton, M., Baak, A., et al. (2016). The FAIR Guiding Principles for scientific data management and stewardship. <i>Scientific Data</i>, <i>3</i>(1), 1–9. https://doi.org/10.1038/sdata.2016.18",
                     "GO FAIR Initiative. (2025). <i>FAIR Principles</i>. https://www.go-fair.org/fair-principles/"
                 ],
                 "drafted_by": [
@@ -25103,7 +25103,7 @@
                     "Helena Hartmann",
                     "Jennifer Mattschey"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -26910,7 +26910,7 @@
                 ],
                 "references": [
                     "Aczel, B., Szaszi, B., Nilsonne, G., Van den Akker, O., Albers, C. J., van Assen, M. A. L. M., ..., & Wagenmakers, E. (2021). <i>Guidance for Multi-Analyst Studies</i>. https://doi.org/10.31222/osf.io/5ecnh",
-                    "Silberzahn, R., Uhlmann, E. L., Martin, D. P., Anselmi, P., Aust, F., Awtrey, E., Bahník, Š., Bai, F., Bannard, C., Bonnier, E., & others. (2018). Many Analysts, One Data Set: Making Transparent How Variations in Analytic Choices Affect Results. <i>Advances in Methods and Practices in Psychological Science</i>, 337–356. https://doi.org/10.1177/2515245917747646"
+                    "Silberzahn, R., Uhlmann, E. L., Martin, D. P., Anselmi, P., Aust, F., Awtrey, E., Bahník, Š., Bai, F., Bannard, C., Bonnier, E., et al. (2018). Many Analysts, One Data Set: Making Transparent How Variations in Analytic Choices Affect Results. <i>Advances in Methods and Practices in Psychological Science</i>, 337–356. https://doi.org/10.1177/2515245917747646"
                 ],
                 "drafted_by": [
                     "Sam Parsons"
@@ -26935,7 +26935,7 @@
                     "Helena Hartmann",
                     "Jennifer Mattschey"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -27099,7 +27099,7 @@
                     "Systematic Review Protocol"
                 ],
                 "references": [
-                    "Topor, M., Pickering, J. S., Barbosa Mendes, A., Bishop, D. V. M., Büttner, F. C., Elsherif, M. M., & others. (2021). <i>An integrative framework for planning and conducting Non-Intervention, Reproducible, and Open Systematic Reviews (NIRO-SR)</i>. https://doi.org/10.31222/osf.io/8gu5z"
+                    "Topor, M., Pickering, J. S., Barbosa Mendes, A., Bishop, D. V. M., Büttner, F. C., Elsherif, M. M., et al. (2021). <i>An integrative framework for planning and conducting Non-Intervention, Reproducible, and Open Systematic Reviews (NIRO-SR)</i>. https://doi.org/10.31222/osf.io/8gu5z"
                 ],
                 "drafted_by": [
                     "Asma Assaneea"
@@ -27122,7 +27122,7 @@
                     "Susanne Vogel",
                     "Jennifer Mattschey"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -27494,7 +27494,7 @@
                     "Transparency"
                 ],
                 "references": [
-                    "Blohowiak, B. B., Cohoon, J., de Wit, L., Eich, E., Farach, F. J., Hasselman, F., & others. (2020). <i>Badges to Acknowledge Open Practices</i>. Retrieved from https://osf.io/tvyxz",
+                    "Blohowiak, B. B., Cohoon, J., de Wit, L., Eich, E., Farach, F. J., Hasselman, F., et al. (2020). <i>Badges to Acknowledge Open Practices</i>. Retrieved from https://osf.io/tvyxz",
                     "Kidwell, M. C., Lazarević, L. B., Baranski, E., Hardwicke, T. E., Piechowski, S., Falkenberg, L. S., & Nosek, B. A. (2016). Badges to acknowledge open practices: A simple, low-cost, effective method for increasing transparency. <i>PLoS Biology</i>, <i>14</i>(5), e1002456. https://doi.org/10.1371/journal.pbio.1002456"
                 ],
                 "drafted_by": [
@@ -27518,7 +27518,7 @@
                     "Susanne Vogel",
                     "Jennifer Mattschey"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -28207,13 +28207,13 @@
                     "Transformative paradigm"
                 ],
                 "references": [
+                    "Andersson, N. (2018). Participatory research—a modernizing science for primary health care. <i>Journal of General and Family Medicine</i>, <i>19</i>(5), 154–159. https://doi.org/10.1002/jgf2.187",
                     "Cornwall, A., & Jewkes, R. (1995). What is participatory research? <i>Social Science & Medicine</i>, <i>41</i>(12), 1667–1676. https://doi.org/10.1016/0277-9536(95)00127-S",
                     "Fletcher-Watson, S., Adams, J., Brook, K., Charman, T., Crane, L., Cusack, J., Leekam, S., Milton, D., Parr, J. R., & Pellicano, E. (2019). Making the Future Together: Shaping Autism Research Through Meaningful Participation. <i>Autism</i>, <i>23</i>(4), 943–953.",
                     "Kiernan, C. (1999). Participation in research by people with learning disability: Origins and issues. <i>British Journal of Learning Disabilities</i>, <i>27</i>(2), 43–47. https://doi.org/10.1111/j.1468-3156.1999.tb00084.x",
                     "Leavy, P. (2017). <i>Research Design: Quantitative, Qualitative, Mixed Methods, Arts-Based, and Community-Based Participatory Research Approaches</i>. The Guilford Press.",
                     "Ottmann, G., Laragy, C., Allen, J., & Feldman, P. (2011). Coproduction in practice: Participatory action research to develop a model of community aged care. <i>Systemic Practice and Action Research</i>, <i>24</i>, 413–427. https://doi.org/10.1007/s11213-011-9192-x",
-                    "Rose, D. (2018). Participatory research: Real or imagined. <i>Social Psychiatry and Psychiatric Epidemiology</i>, <i>53</i>, 765–771. https://doi.org/10.1007/s00127-018-1549-3",
-                    "Andersson, N. (2018). Participatory research—a modernizing science for primary health care. <i>Journal of General and Family Medicine</i>, <i>19</i>(5), 154–159. https://doi.org/10.1002/jgf2.187"
+                    "Rose, D. (2018). Participatory research: Real or imagined. <i>Social Psychiatry and Psychiatric Epidemiology</i>, <i>53</i>, 765–771. https://doi.org/10.1007/s00127-018-1549-3"
                 ],
                 "drafted_by": [
                     "Tamara Kalandadze"
@@ -29674,11 +29674,11 @@
                 ],
                 "references": [
                     "Barba, L. A. (2018). Terminologies for reproducible research. <i>arXiv Preprint arXiv:1802.03311</i>.",
+                    "Claerbout, J. F., & Karrenbach, M. (1992). Electronic documents give reproducible research a new meaning. <i>SEG Technical Program Expanded Abstracts 1992</i>, 601–604. http://sepwww.stanford.edu/doku.php?id=sep:research:reproducible:seg92",
                     "Crüwell, S., van Doorn, J., Etz, A., Makel, M. C., Moshontz, H., Niebaum, J. C., Orben, A., Parsons, S., & Schulte-Mecklenbeck, M. (2019). Seven Easy Steps to Open Science: An Annotated Reading List. <i>Zeitschrift Für Psychologie</i>, <i>227</i>(4), 237–248. https://doi.org/10.1027/2151-2604/a000387",
                     "King, G. (1995). Replication, replication. <i>PS: Political Science & Politics</i>, <i>28</i>(3), 444–452. https://doi.org/10.2307/420301",
                     "National Academies of Sciences, Engineering, and Medicine. (2019). <i>Reproducibility and Replicability in Science. In Understanding Reproducibility and Replicability</i> [Techreport]. National Academies Press (US). https://www.ncbi.nlm.nih.gov/books/NBK547546/",
-                    "Nosek, B. A., & Errington, T. M. (2020). What is replication? <i>PLOS Biology</i>, <i>18</i>(3), e3000691. https://doi.org/10.1371/journal.pbio.3000691",
-                    "Claerbout, J. F., & Karrenbach, M. (1992). Electronic documents give reproducible research a new meaning. <i>SEG Technical Program Expanded Abstracts 1992</i>, 601–604. http://sepwww.stanford.edu/doku.php?id=sep:research:reproducible:seg92"
+                    "Nosek, B. A., & Errington, T. M. (2020). What is replication? <i>PLOS Biology</i>, <i>18</i>(3), e3000691. https://doi.org/10.1371/journal.pbio.3000691"
                 ],
                 "drafted_by": [
                     "Mahmoud Elsherif"
@@ -29720,8 +29720,8 @@
                 ],
                 "references": [
                     "Liu, Y., Gordon, M., Wang, J., Bishop, M., Chen, Y., Pfeiffer, T., Twardy, C., & Viganola, D. (2020). Replication Markets: Results, Lessons, Challenges and Opportunities in AI Replication. <i>ArXiv:2005.04543 </i>. http://arxiv.org/abs/2005.04543",
-                    "Tierney, W., Hardy III, J. H., Ebersole, C. R., Leavitt, K., Viganola, D., Clemente, E. G., & others. (2020). Creative destruction in science. <i>Organizational Behavior and Human Decision Processes</i>, <i>161</i>, 291–309. https://doi.org/10.1016/j.obhdp.2020.07.002",
-                    "Tierney, W., Hardy III, J., Ebersole, C. R., Viganola, D., Clemente, E. G., Gordon, M., & others. (2021). A creative destruction approach to replication: Implicit work and sex morality across cultures. <i>Journal of Experimental Social Psychology</i>, <i>93</i>, 104060. https://doi.org/10.1016/j.jesp.2020.104060",
+                    "Tierney, W., Hardy III, J. H., Ebersole, C. R., Leavitt, K., Viganola, D., Clemente, E. G., et al. (2020). Creative destruction in science. <i>Organizational Behavior and Human Decision Processes</i>, <i>161</i>, 291–309. https://doi.org/10.1016/j.obhdp.2020.07.002",
+                    "Tierney, W., Hardy III, J., Ebersole, C. R., Viganola, D., Clemente, E. G., Gordon, M., et al. (2021). A creative destruction approach to replication: Implicit work and sex morality across cultures. <i>Journal of Experimental Social Psychology</i>, <i>93</i>, 104060. https://doi.org/10.1016/j.jesp.2020.104060",
                     "Replication Markets. (n.d.). <i>Replication Markets – Reliable research replicates…you can bet on it</i>. Replication Markets. https://www.replicationmarkets.org/",
                     "[www.replicationmarkets.com](http://www.replicationmarkets.com)"
                 ],
@@ -29744,7 +29744,7 @@
                     "Susanne Vogel",
                     "Jennifer Mattschey"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -29763,7 +29763,7 @@
                     "Schulz, K. F., Altman, D. G., & Moher, D. (2010). CONSORT 2010 statement: updated guidelines for reporting parallel group randomised trials. <i>Trials</i>, <i>11</i>(1), 32. https://doi.org/10.1186/1745-6215-11-32",
                     "Von Elm, E., Altman, D. G., Egger, M., Pocock, S. J., Gøtzsche, P. C., & Vandenbroucke, J. P. (2007). The Strengthening the Reporting of Observational Studies in Epidemiology (STROBE) statement: guidelines for reporting observational studies. <i>Annals of Internal Medicine</i>, <i>147</i>(8), 573–577. https://doi.org/10.1136/bmj.39335.541782.AD",
                     "The EQUATOR Network. (n.d.). <i>What is a reporting guideline?</i> Retrieved 10 July 2021. https://www.equator-network.org/about-us/what-is-a-reporting-guideline/",
-                    "Topor, M., Pickering, J. S., Barbosa Mendes, A., Bishop, D. V. M., Büttner, F. C., Elsherif, M. M., & others. (2021). <i>An integrative framework for planning and conducting Non-Intervention, Reproducible, and Open Systematic Reviews (NIRO-SR)</i>. https://doi.org/10.31222/osf.io/8gu5z"
+                    "Topor, M., Pickering, J. S., Barbosa Mendes, A., Bishop, D. V. M., Büttner, F. C., Elsherif, M. M., et al. (2021). <i>An integrative framework for planning and conducting Non-Intervention, Reproducible, and Open Systematic Reviews (NIRO-SR)</i>. https://doi.org/10.31222/osf.io/8gu5z"
                 ],
                 "drafted_by": [
                     "Aidan Cashin"
@@ -29784,7 +29784,7 @@
                     "Helena Hartmann",
                     "Jennifer Mattschey"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -30273,7 +30273,7 @@
                     "Trustworthiness"
                 ],
                 "references": [
-                    "Fraser, H., Bush, M., Wintle, B., Mody, F., Smith, E., Hanea, A., & others. (2021). <i>Predicting reliability through structured expert elicitation with repliCATS (Collaborative Assessments for Trustworthy Science)</i>.",
+                    "Fraser, H., Bush, M., Wintle, B., Mody, F., Smith, E., Hanea, A., et al. (2021). <i>Predicting reliability through structured expert elicitation with repliCATS (Collaborative Assessments for Trustworthy Science)</i>.",
                     "RepliCATS project. (2020). <i>Collaborative Assessment for Trustworthy Science</i>. The University of Melbourne. https://replicats.research.unimelb.edu.au/"
                 ],
                 "drafted_by": [
@@ -30297,7 +30297,7 @@
                     "Susanne Vogel",
                     "Jennifer Mattschey"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -31215,7 +31215,7 @@
                     "Higgins, J. P. T., Thomas, J., Chandler, J., Cumpston, M., Li, T., Page, M. J., & Welch, V. A. (Eds.). (2019). <i>Cochrane Handbook for Systematic Reviews of Interventions. 2nd Edition</i>. John Wiley & Sons.",
                     "Moher, D., Liberati, A., Tetzlaff, J., & Altman, D. (2009). Preferred Reporting Items for Systematic Reviews and Meta-Analyses: The PRISMA Statement. <i>PLoS Medicine</i>, <i>6</i>(7), e1000097. https://doi.org/10.1371/journal.pmed.1000097",
                     "Page, M. J., Moher, D., Bossuyt, P. M., Boutron, I., Hoffmann, T. C., Mulrow, C. D., & McKenzie, J. E. (2021). PRISMA 2020 explanation and elaboration: updated guidance and exemplars for reporting systematic reviews. <i>British Medical Journal</i>, <i>372</i>. https://doi.org/10.1136/bmj.n160",
-                    "Topor, M., Pickering, J. S., Barbosa Mendes, A., Bishop, D. V. M., Büttner, F. C., Elsherif, M. M., & others. (2021). <i>An integrative framework for planning and conducting Non-Intervention, Reproducible, and Open Systematic Reviews (NIRO-SR)</i>. https://doi.org/10.31222/osf.io/8gu5z"
+                    "Topor, M., Pickering, J. S., Barbosa Mendes, A., Bishop, D. V. M., Büttner, F. C., Elsherif, M. M., et al. (2021). <i>An integrative framework for planning and conducting Non-Intervention, Reproducible, and Open Systematic Reviews (NIRO-SR)</i>. https://doi.org/10.31222/osf.io/8gu5z"
                 ],
                 "drafted_by": [
                     "Jade Pickering"
@@ -31240,7 +31240,7 @@
                     "Susanne Vogel",
                     "Joris Frese    ###"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -32523,7 +32523,7 @@
                     "STRANGE"
                 ],
                 "references": [
-                    "Percie du Sert, N., Hurst, V., Ahluwalia, A., Alam, S., Avey, M. T., Baker, M., Browne, W. J., Clark, A., Cuthill, I. C., Dirnagl, U., Emerson, M., Garner, P., Holgate, S. T., Howells, D. W., Karp, N. A., Lazic, S. E., Lidster, K., MacCallum, C. J., Macleod, M., & others. (2020). The ARRIVE guidelines 2.0: Updated guidelines for reporting animal research. <i>PLOS Biology</i>, <i>18</i>(7), e3000410. https://doi.org/10.1371/journal.pbio.3000410"
+                    "Percie du Sert, N., Hurst, V., Ahluwalia, A., Alam, S., Avey, M. T., Baker, M., Browne, W. J., Clark, A., Cuthill, I. C., Dirnagl, U., Emerson, M., Garner, P., Holgate, S. T., Howells, D. W., Karp, N. A., Lazic, S. E., Lidster, K., MacCallum, C. J., Macleod, M., et al. (2020). The ARRIVE guidelines 2.0: Updated guidelines for reporting animal research. <i>PLOS Biology</i>, <i>18</i>(7), e3000410. https://doi.org/10.1371/journal.pbio.3000410"
                 ],
                 "drafted_by": [
                     "Ben Farrar"
@@ -32543,7 +32543,7 @@
                 "aliases": [
                     "/glossary/arrive_guidelines"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -32669,7 +32669,7 @@
                     "Triple badge"
                 ],
                 "references": [
-                    "Hardwicke, T. E., Bohn, M., MacDonald, K., Hembacher, E., Nuijten, M. B., Peloquin, B. N., & others. (2020). Analytic reproducibility in articles receiving open data badges at the journal Psychological Science: an observational study. <i>Royal Society Open Science</i>, <i>8</i>(1), 201494. https://doi.org/10.1098/rsos.201494",
+                    "Hardwicke, T. E., Bohn, M., MacDonald, K., Hembacher, E., Nuijten, M. B., Peloquin, B. N., et al. (2020). Analytic reproducibility in articles receiving open data badges at the journal Psychological Science: an observational study. <i>Royal Society Open Science</i>, <i>8</i>(1), 201494. https://doi.org/10.1098/rsos.201494",
                     "Kidwell, M. C., Lazarević, L. B., Baranski, E., Hardwicke, T. E., Piechowski, S., Falkenberg, L. S., & Nosek, B. A. (2016). Badges to acknowledge open practices: A simple, low-cost, effective method for increasing transparency. <i>PLoS Biology</i>, <i>14</i>(5), e1002456. https://doi.org/10.1371/journal.pbio.1002456",
                     "Rowhani-Farid, A., Aldcroft, A., & Barnett, A. G. (2020). Did awarding badges increase data sharing in BMJ Open? A randomized controlled trial. <i>Royal Society Open Science</i>, <i>7</i>(3), 191818. https://doi.org/10.1098/rsos.191818",
                     "Science, C. (n.d.). <i>Open science badges</i>. https://www.cos.io/initiatives/badges"
@@ -32692,7 +32692,7 @@
                 "aliases": [
                     "/glossary/badges_open_science_"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -32747,7 +32747,7 @@
                     "Dienes, Z. (2011). Bayesian versus orthodox statistics: Which side are you on? <i>Perspectives on Psychological Science</i>, <i>6</i>(3), 274–290. https://doi.org/10.1177/1745691611406920",
                     "Dienes, Z. (2014). Using Bayes to get the most out of non-significant results. <i>Frontiers in Psychology</i>, <i>5</i>, 781. https://doi.org/10.3389/fpsyg.2014.00781",
                     "Dienes, Z. (2016). How Bayes factors change scientific practice. <i>Journal of Mathematical Psychology</i>, <i>72</i>, 78–89. https://doi.org/10.1016/j.jmp.2015.10.003",
-                    "Etz, A., Gronau, Q. F., Dablander, F., & others. (2018). How to become a Bayesian in eight easy steps: An annotated reading list. <i>Psychonomic Bulletin & Review</i>, <i>25</i>, 219–234. https://doi.org/10.3758/s13423-017-1317-5",
+                    "Etz, A., Gronau, Q. F., Dablander, F., et al. (2018). How to become a Bayesian in eight easy steps: An annotated reading list. <i>Psychonomic Bulletin & Review</i>, <i>25</i>, 219–234. https://doi.org/10.3758/s13423-017-1317-5",
                     "Kruschke, J. K. (2015). <i>Doing Bayesian data analysis: A tutorial with R, JAGS, and Stan</i> (2nd ed.). Academic Press.",
                     "McElreath, R. (2020). <i>Statistical rethinking: A Bayesian course with examples in R and Stan</i> (2nd ed.). Taylor.",
                     "Wagenmakers, E.-J., Marsman, M., Jamil, T., Ly, A., Verhagen, J., Love, J., Selker, R., Gronau, Q. F., Šmíra, M., Epskamp, S., Matzke, D., Rouder, J. N., & Morey, R. D. (2018). Bayesian inference for psychology. Part I: Theoretical advantages and practical ramifications. <i>Psychonomic Bulletin & Review</i>, <i>25</i>(1), 35–57. https://doi.org/10.3758/s13423-017-1343-3"
@@ -32770,7 +32770,7 @@
                 "aliases": [
                     "/glossary/bayesian_inference"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -32820,7 +32820,7 @@
                     "Open Data"
                 ],
                 "references": [
-                    "Gorgolewski, K., Auer, T., Calhoun, V., & others. (2016). The brain imaging data structure, a format for organizing and describing outputs of neuroimaging experiments. <i>Scientific Data</i>, <i>3</i>, 160044. https://doi.org/10.1038/sdata.2016.44",
+                    "Gorgolewski, K., Auer, T., Calhoun, V., et al. (2016). The brain imaging data structure, a format for organizing and describing outputs of neuroimaging experiments. <i>Scientific Data</i>, <i>3</i>, 160044. https://doi.org/10.1038/sdata.2016.44",
                     "BIDS. (2020). <i>About BIDS</i>. Retrieved from https://bids.neuroimaging.io",
                     "Pernet, C. R., Appelhoff, S., Gorgolewski, K. J., Flandin, G., Phillips, C., Delorme, A., & Oostenveld, R. (2019). EEG-BIDS, an extension to the brain imaging data structure for electroencephalography. <i>Scientific Data</i>, <i>6</i>(1), 103. https://doi.org/10.1038/s41597-019-0104-8"
                 ],
@@ -32961,8 +32961,8 @@
                     "Guest, O. [@o_guest]. (2017). <i>Thanks! Hopefully this thread & many other similar discussions & blogs will help make it less Bropen Science and more Open Science. *hides* </i>. Twitter. Retrieved from https://twitter.com/o_guest/status/871675631062458368",
                     "Whitaker, K., & Guest, O. (2020).  #bropenscience is broken science. <i>The Psychologist</i>, <i>33</i>, 34–37.",
                     "Pownall, M., Talbot, C. V., Henschel, A., Lautarescu, A., Lloyd, K. E., Hartmann, H., Darda, K. M., Tang, K. T. Y., Carmichael-Murphy, P., & Siegel, J. A. (2021). Navigating Open Science as Early Career Feminist Researchers. <i>Psychology of Women Quarterly</i>, <i>45</i>(4), 526–539. https://doi.org/10.1177/03616843211029255",
-                    "Bahlai, C., Bartlett, L. J., Burgio, K. R., & others. (2019). Open science isn’t always open to all scientists. <i>American Scientist</i>, <i>107</i>(2), 78.",
-                    "Onie, S. (2020). Redesign open science for Asia, Africa and Latin America. <i>Nature</i>, <i>587</i>, 5–37. https://doi.org/10.1038/d41586-020-03052-3"
+                    "Bahlai, C., Bartlett, L. J., Burgio, K. R., et al. (2019). Open science isn’t always open to all scientists. <i>American Scientist</i>, <i>107</i>(2), 78.",
+                    "Onie, S. (2020). Redesign open science for Asia, Africa and Latin America. <i>Nature</i>, <i>587</i>, 35–37. https://doi.org/10.1038/d41586-020-03052-3"
                 ],
                 "drafted_by": [
                     "Zoe Flack"
@@ -33300,7 +33300,7 @@
                     "Exact replication"
                 ],
                 "references": [
-                    "Wagge, J. R., Baciu, C., Banas, K., Nadler, J. T., Schwarz, S., Weisberg, Y., & others. (2019). A demonstration of the collaborative replication and education project: Replication attempts of the red-romance effect. <i>Collabra: Psychology</i>, <i>5</i>(1). https://doi.org/10.1525/collabra.177"
+                    "Wagge, J. R., Baciu, C., Banas, K., Nadler, J. T., Schwarz, S., Weisberg, Y., et al. (2019). A demonstration of the collaborative replication and education project: Replication attempts of the red-romance effect. <i>Collabra: Psychology</i>, <i>5</i>(1). https://doi.org/10.1525/collabra.177"
                 ],
                 "drafted_by": [
                     "Connor Keating"
@@ -33318,7 +33318,7 @@
                 "aliases": [
                     "/glossary/collaborative_replication_and_education_project_crep_"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -33328,8 +33328,8 @@
                 "definition": "The Organization for Human Brain Mapping (OHBM) neuroimaging community has developed a guideline for best practices in neuroimaging data acquisition, analysis, reporting, and sharing of both data and analysis code. It contains eight elements that should be included when writing up or submitting a manuscript, and when sharing neuroimages, in order to optimize transparency and reproducibility.",
                 "related_terms": [],
                 "references": [
-                    "Nichols, T. E., Das, S., Eickhoff, S. B., Evans, A. C., Glatard, T., Hanke, M., & others. (2017). Best practices in data analysis and sharing in neuroimaging using MRI. <i>Nature Neuroscience</i>, <i>20</i>(3), 299–303. https://doi.org/10.1038/nn.4500",
-                    "Pernet, C., Garrido, M. I., Gramfort, A., Maurits, N., Michel, C. M., Pang, E., & others. (2020). Issues and recommendations from the OHBM COBIDAS MEEG committee for reproducible EEG and MEG research. <i>Nature Neuroscience</i>, <i>23</i>(12), 1473–1483. https://doi.org/10.1038/s41593-020-00709-0"
+                    "Nichols, T. E., Das, S., Eickhoff, S. B., Evans, A. C., Glatard, T., Hanke, M., et al. (2017). Best practices in data analysis and sharing in neuroimaging using MRI. <i>Nature Neuroscience</i>, <i>20</i>(3), 299–303. https://doi.org/10.1038/nn.4500",
+                    "Pernet, C., Garrido, M. I., Gramfort, A., Maurits, N., Michel, C. M., Pang, E., et al. (2020). Issues and recommendations from the OHBM COBIDAS MEEG committee for reproducible EEG and MEG research. <i>Nature Neuroscience</i>, <i>23</i>(12), 1473–1483. https://doi.org/10.1038/s41593-020-00709-0"
                 ],
                 "drafted_by": [
                     "Yu-Fang Yang"
@@ -33347,7 +33347,7 @@
                 "aliases": [
                     "/glossary/committee_on_best_practices_in_data_analysis_and_sharing_cobidas_"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -33649,8 +33649,8 @@
                 ],
                 "references": [
                     "Open Science Collaboration. (2015). Estimating the reproducibility of psychological science. <i>Science</i>, <i>349</i>(6251), aac4716. https://doi.org/10.1126/science.aac4716",
-                    "Tierney, W., Hardy III, J. H., Ebersole, C. R., Leavitt, K., Viganola, D., Clemente, E. G., & others. (2020). Creative destruction in science. <i>Organizational Behavior and Human Decision Processes</i>, <i>161</i>, 291–309. https://doi.org/10.1016/j.obhdp.2020.07.002",
-                    "Tierney, W., Hardy III, J., Ebersole, C. R., Viganola, D., Clemente, E. G., Gordon, M., & others. (2021). A creative destruction approach to replication: Implicit work and sex morality across cultures. <i>Journal of Experimental Social Psychology</i>, <i>93</i>, 104060. https://doi.org/10.1016/j.jesp.2020.104060"
+                    "Tierney, W., Hardy III, J. H., Ebersole, C. R., Leavitt, K., Viganola, D., Clemente, E. G., et al. (2020). Creative destruction in science. <i>Organizational Behavior and Human Decision Processes</i>, <i>161</i>, 291–309. https://doi.org/10.1016/j.obhdp.2020.07.002",
+                    "Tierney, W., Hardy III, J., Ebersole, C. R., Viganola, D., Clemente, E. G., Gordon, M., et al. (2021). A creative destruction approach to replication: Implicit work and sex morality across cultures. <i>Journal of Experimental Social Psychology</i>, <i>93</i>, 104060. https://doi.org/10.1016/j.jesp.2020.104060"
                 ],
                 "drafted_by": [
                     "Yuki Yamada"
@@ -33669,7 +33669,7 @@
                 "aliases": [
                     "/glossary/consortium_authorship"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -33690,7 +33690,7 @@
                 ],
                 "references": [
                     "Busse, C., Kach, A. P., & Wagner, S. M. (2017). Boundary Conditions: What They Are, How to Explore Them, Why We Need Them, and When to Consider Them. <i>Organizational Research Methods</i>, <i>20</i>(4), 574–609. https://doi.org/10.1177/1094428116641191",
-                    "Brandt, M. J., IJzerman, H., Dijksterhuis, A., Farach, F. J., Geller, J., Giner-Sorolla, R., & others. (2014). The replication recipe: What makes for a convincing replication? <i>Journal of Experimental Social Psychology</i>, <i>50</i>, 217–224. https://doi.org/10.1016/j.jesp.2013.10.005",
+                    "Brandt, M. J., IJzerman, H., Dijksterhuis, A., Farach, F. J., Geller, J., Giner-Sorolla, R., et al. (2014). The replication recipe: What makes for a convincing replication? <i>Journal of Experimental Social Psychology</i>, <i>50</i>, 217–224. https://doi.org/10.1016/j.jesp.2013.10.005",
                     "Simons, D. J., Shoda, Y., & Lindsay, D. S. (2017). Constraints on generality (COG): A proposed addition to all empirical papers. <i>Perspectives on Psychological Science</i>, <i>12</i>(6), 1123–1128. https://doi.org/10.1177/1745691617708630",
                     "Yarkoni, T. (2020). The generalizability crisis. <i>Behavioral and Brain Sciences</i>, 1–37. https://doi.org/10.1017/S0140525X20001685"
                 ],
@@ -33711,7 +33711,7 @@
                 "aliases": [
                     "/glossary/constraints_on_generality_cog_"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -33985,8 +33985,8 @@
                     "Theory"
                 ],
                 "references": [
-                    "Tierney, W., Hardy III, J. H., Ebersole, C. R., Leavitt, K., Viganola, D., Clemente, E. G., & others. (2020). Creative destruction in science. <i>Organizational Behavior and Human Decision Processes</i>, <i>161</i>, 291–309. https://doi.org/10.1016/j.obhdp.2020.07.002",
-                    "Tierney, W., Hardy III, J., Ebersole, C. R., Viganola, D., Clemente, E. G., Gordon, M., & others. (2021). A creative destruction approach to replication: Implicit work and sex morality across cultures. <i>Journal of Experimental Social Psychology</i>, <i>93</i>, 104060. https://doi.org/10.1016/j.jesp.2020.104060"
+                    "Tierney, W., Hardy III, J. H., Ebersole, C. R., Leavitt, K., Viganola, D., Clemente, E. G., et al. (2020). Creative destruction in science. <i>Organizational Behavior and Human Decision Processes</i>, <i>161</i>, 291–309. https://doi.org/10.1016/j.obhdp.2020.07.002",
+                    "Tierney, W., Hardy III, J., Ebersole, C. R., Viganola, D., Clemente, E. G., Gordon, M., et al. (2021). A creative destruction approach to replication: Implicit work and sex morality across cultures. <i>Journal of Experimental Social Psychology</i>, <i>93</i>, 104060. https://doi.org/10.1016/j.jesp.2020.104060"
                 ],
                 "drafted_by": [
                     "Mahmoud Elsherif"
@@ -34006,7 +34006,7 @@
                 "aliases": [
                     "/glossary/creative_destruction_approach_to_replication"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -34096,7 +34096,7 @@
                     "Lind, F., Gruber, M., & Boomgaarden, H. G. (2017). Content analysis by the crowd: Assessing the usability of crowdsourcing for coding latent constructs. <i>Communication Methods and Measures</i>, <i>11</i>(3), 191–209. https://doi.org/10.1080/19312458.2017.1317338",
                     "Moshontz, H., Campbell, L., Ebersole, C. R., IJzerman, H., Urry, H. L., Forscher, P. S., & Chartier, C. R. (2018). The Psychological Science Accelerator: Advancing psychology through a distributed collaborative network. <i>Advances in Methods and Practices in Psychological Science</i>, <i>1</i>(4), 501–515. https://doi.org/10.1177/2515245918797607",
                     "Peer, E., Brandimarte, L., Samat, S., & Acquisti, A. (2017). Beyond the Turk: Alternative platforms for crowdsourcing behavioral research. <i>Journal of Experimental Social Psychology</i>, <i>70</i>, 153–163. https://doi.org/10.1016/j.jesp.2017.01.006",
-                    "Silberzahn, R., Uhlmann, E. L., Martin, D. P., Anselmi, P., Aust, F., Awtrey, E., Bahník, Š., Bai, F., Bannard, C., Bonnier, E., & others. (2018). Many Analysts, One Data Set: Making Transparent How Variations in Analytic Choices Affect Results. <i>Advances in Methods and Practices in Psychological Science</i>, 337–356. https://doi.org/10.1177/2515245917747646",
+                    "Silberzahn, R., Uhlmann, E. L., Martin, D. P., Anselmi, P., Aust, F., Awtrey, E., Bahník, Š., Bai, F., Bannard, C., Bonnier, E., et al. (2018). Many Analysts, One Data Set: Making Transparent How Variations in Analytic Choices Affect Results. <i>Advances in Methods and Practices in Psychological Science</i>, 337–356. https://doi.org/10.1177/2515245917747646",
                     "Stewart, N., Chandler, J., & Paolacci, G. (2017). Crowdsourcing samples in cognitive science. <i>Trends in Cognitive Sciences</i>, <i>21</i>(10), 736–748. https://doi.org/10.1016/j.tics.2017.06.007",
                     "Tennant, J., Bielczyk, N. Z., Cheplygina, V., Greshake Tzovaras, B., Hartgerink, C. H. J., Havemann, J., Masuzzo, P., & Steiner, T. (2019). Ten simple rules for researchers collaborating on Massively Open Online Papers (MOOPs). <i>MetaArXiv</i>. https://doi.org/10.31222/osf.io/et8ak",
                     "Uhlmann, E. L., Ebersole, C. R., Chartier, C. R., Errington, T. M., Kidwell, M. C., Lai, C. K., McCarthy, R. J., Riegelman, A., Silberzahn, R., & Nosek, B. A. (2019). Scientific utopia III: Crowdsourcing science. <i>Perspectives on Psychological Science</i>, <i>14</i>(5), 711–733. https://doi.org/10.1177/1745691619850561",
@@ -34121,7 +34121,7 @@
                 "aliases": [
                     "/glossary/crowdsourced_research"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -35050,7 +35050,7 @@
                 ],
                 "references": [
                     "Crüwell, S., van Doorn, J., Etz, A., Makel, M. C., Moshontz, H., Niebaum, J. C., Orben, A., Parsons, S., & Schulte-Mecklenbeck, M. (2019). Seven Easy Steps to Open Science: An Annotated Reading List. <i>Zeitschrift Für Psychologie</i>, <i>227</i>(4), 237–248. https://doi.org/10.1027/2151-2604/a000387",
-                    "Wilkinson, M. D., Dumontier, M., Aalbersberg, I. J., Appleton, G., Axton, M., Baak, A., & others. (2016). The FAIR Guiding Principles for scientific data management and stewardship. <i>Scientific Data</i>, <i>3</i>(1), 1–9. https://doi.org/10.1038/sdata.2016.18",
+                    "Wilkinson, M. D., Dumontier, M., Aalbersberg, I. J., Appleton, G., Axton, M., Baak, A., et al. (2016). The FAIR Guiding Principles for scientific data management and stewardship. <i>Scientific Data</i>, <i>3</i>(1), 1–9. https://doi.org/10.1038/sdata.2016.18",
                     "GO FAIR Initiative. (2025). <i>FAIR Principles</i>. https://www.go-fair.org/fair-principles/"
                 ],
                 "drafted_by": [
@@ -35068,7 +35068,7 @@
                 "aliases": [
                     "/glossary/fair_principles"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -36681,7 +36681,7 @@
                 ],
                 "references": [
                     "Aczel, B., Szaszi, B., Nilsonne, G., Van den Akker, O., Albers, C. J., van Assen, M. A. L. M., ..., & Wagenmakers, E. (2021). <i>Guidance for Multi-Analyst Studies</i>. https://doi.org/10.31222/osf.io/5ecnh",
-                    "Silberzahn, R., Uhlmann, E. L., Martin, D. P., Anselmi, P., Aust, F., Awtrey, E., Bahník, Š., Bai, F., Bannard, C., Bonnier, E., & others. (2018). Many Analysts, One Data Set: Making Transparent How Variations in Analytic Choices Affect Results. <i>Advances in Methods and Practices in Psychological Science</i>, 337–356. https://doi.org/10.1177/2515245917747646"
+                    "Silberzahn, R., Uhlmann, E. L., Martin, D. P., Anselmi, P., Aust, F., Awtrey, E., Bahník, Š., Bai, F., Bannard, C., Bonnier, E., et al. (2018). Many Analysts, One Data Set: Making Transparent How Variations in Analytic Choices Affect Results. <i>Advances in Methods and Practices in Psychological Science</i>, 337–356. https://doi.org/10.1177/2515245917747646"
                 ],
                 "drafted_by": [
                     "Sam Parsons"
@@ -36702,7 +36702,7 @@
                 "aliases": [
                     "/glossary/multi_analyst_studies"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -36851,7 +36851,7 @@
                     "Systematic Review Protocol"
                 ],
                 "references": [
-                    "Topor, M., Pickering, J. S., Barbosa Mendes, A., Bishop, D. V. M., Büttner, F. C., Elsherif, M. M., & others. (2021). <i>An integrative framework for planning and conducting Non-Intervention, Reproducible, and Open Systematic Reviews (NIRO-SR)</i>. https://doi.org/10.31222/osf.io/8gu5z"
+                    "Topor, M., Pickering, J. S., Barbosa Mendes, A., Bishop, D. V. M., Büttner, F. C., Elsherif, M. M., et al. (2021). <i>An integrative framework for planning and conducting Non-Intervention, Reproducible, and Open Systematic Reviews (NIRO-SR)</i>. https://doi.org/10.31222/osf.io/8gu5z"
                 ],
                 "drafted_by": [
                     "Asma Assaneea"
@@ -36870,7 +36870,7 @@
                 "aliases": [
                     "/glossary/non_intervention_reproducible_and_open_systematic_reviews_niro_sr_"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -37206,7 +37206,7 @@
                     "Transparency"
                 ],
                 "references": [
-                    "Blohowiak, B. B., Cohoon, J., de Wit, L., Eich, E., Farach, F. J., Hasselman, F., & others. (2020). <i>Badges to Acknowledge Open Practices</i>. Retrieved from https://osf.io/tvyxz",
+                    "Blohowiak, B. B., Cohoon, J., de Wit, L., Eich, E., Farach, F. J., Hasselman, F., et al. (2020). <i>Badges to Acknowledge Open Practices</i>. Retrieved from https://osf.io/tvyxz",
                     "Kidwell, M. C., Lazarević, L. B., Baranski, E., Hardwicke, T. E., Piechowski, S., Falkenberg, L. S., & Nosek, B. A. (2016). Badges to acknowledge open practices: A simple, low-cost, effective method for increasing transparency. <i>PLoS Biology</i>, <i>14</i>(5), e1002456. https://doi.org/10.1371/journal.pbio.1002456"
                 ],
                 "drafted_by": [
@@ -37226,7 +37226,7 @@
                 "aliases": [
                     "/glossary/open_material"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -37848,13 +37848,13 @@
                     "Transformative paradigm"
                 ],
                 "references": [
+                    "Andersson, N. (2018). Participatory research—a modernizing science for primary health care. <i>Journal of General and Family Medicine</i>, <i>19</i>(5), 154–159. https://doi.org/10.1002/jgf2.187",
                     "Cornwall, A., & Jewkes, R. (1995). What is participatory research? <i>Social Science & Medicine</i>, <i>41</i>(12), 1667–1676. https://doi.org/10.1016/0277-9536(95)00127-S",
                     "Fletcher-Watson, S., Adams, J., Brook, K., Charman, T., Crane, L., Cusack, J., Leekam, S., Milton, D., Parr, J. R., & Pellicano, E. (2019). Making the Future Together: Shaping Autism Research Through Meaningful Participation. <i>Autism</i>, <i>23</i>(4), 943–953.",
                     "Kiernan, C. (1999). Participation in research by people with learning disability: Origins and issues. <i>British Journal of Learning Disabilities</i>, <i>27</i>(2), 43–47. https://doi.org/10.1111/j.1468-3156.1999.tb00084.x",
                     "Leavy, P. (2017). <i>Research Design: Quantitative, Qualitative, Mixed Methods, Arts-Based, and Community-Based Participatory Research Approaches</i>. The Guilford Press.",
                     "Ottmann, G., Laragy, C., Allen, J., & Feldman, P. (2011). Coproduction in practice: Participatory action research to develop a model of community aged care. <i>Systemic Practice and Action Research</i>, <i>24</i>, 413–427. https://doi.org/10.1007/s11213-011-9192-x",
-                    "Rose, D. (2018). Participatory research: Real or imagined. <i>Social Psychiatry and Psychiatric Epidemiology</i>, <i>53</i>, 765–771. https://doi.org/10.1007/s00127-018-1549-3",
-                    "Andersson, N. (2018). Participatory research—a modernizing science for primary health care. <i>Journal of General and Family Medicine</i>, <i>19</i>(5), 154–159. https://doi.org/10.1002/jgf2.187"
+                    "Rose, D. (2018). Participatory research: Real or imagined. <i>Social Psychiatry and Psychiatric Epidemiology</i>, <i>53</i>, 765–771. https://doi.org/10.1007/s00127-018-1549-3"
                 ],
                 "drafted_by": [
                     "Tamara Kalandadze"
@@ -39167,11 +39167,11 @@
                 ],
                 "references": [
                     "Barba, L. A. (2018). Terminologies for reproducible research. <i>arXiv Preprint arXiv:1802.03311</i>.",
+                    "Claerbout, J. F., & Karrenbach, M. (1992). Electronic documents give reproducible research a new meaning. <i>SEG Technical Program Expanded Abstracts 1992</i>, 601–604. http://sepwww.stanford.edu/doku.php?id=sep:research:reproducible:seg92",
                     "Crüwell, S., van Doorn, J., Etz, A., Makel, M. C., Moshontz, H., Niebaum, J. C., Orben, A., Parsons, S., & Schulte-Mecklenbeck, M. (2019). Seven Easy Steps to Open Science: An Annotated Reading List. <i>Zeitschrift Für Psychologie</i>, <i>227</i>(4), 237–248. https://doi.org/10.1027/2151-2604/a000387",
                     "King, G. (1995). Replication, replication. <i>PS: Political Science & Politics</i>, <i>28</i>(3), 444–452. https://doi.org/10.2307/420301",
                     "National Academies of Sciences, Engineering, and Medicine. (2019). <i>Reproducibility and Replicability in Science. In Understanding Reproducibility and Replicability</i> [Techreport]. National Academies Press (US). https://www.ncbi.nlm.nih.gov/books/NBK547546/",
-                    "Nosek, B. A., & Errington, T. M. (2020). What is replication? <i>PLOS Biology</i>, <i>18</i>(3), e3000691. https://doi.org/10.1371/journal.pbio.3000691",
-                    "Claerbout, J. F., & Karrenbach, M. (1992). Electronic documents give reproducible research a new meaning. <i>SEG Technical Program Expanded Abstracts 1992</i>, 601–604. http://sepwww.stanford.edu/doku.php?id=sep:research:reproducible:seg92"
+                    "Nosek, B. A., & Errington, T. M. (2020). What is replication? <i>PLOS Biology</i>, <i>18</i>(3), e3000691. https://doi.org/10.1371/journal.pbio.3000691"
                 ],
                 "drafted_by": [
                     "Mahmoud Elsherif"
@@ -39209,8 +39209,8 @@
                 ],
                 "references": [
                     "Liu, Y., Gordon, M., Wang, J., Bishop, M., Chen, Y., Pfeiffer, T., Twardy, C., & Viganola, D. (2020). Replication Markets: Results, Lessons, Challenges and Opportunities in AI Replication. <i>ArXiv:2005.04543 </i>. http://arxiv.org/abs/2005.04543",
-                    "Tierney, W., Hardy III, J. H., Ebersole, C. R., Leavitt, K., Viganola, D., Clemente, E. G., & others. (2020). Creative destruction in science. <i>Organizational Behavior and Human Decision Processes</i>, <i>161</i>, 291–309. https://doi.org/10.1016/j.obhdp.2020.07.002",
-                    "Tierney, W., Hardy III, J., Ebersole, C. R., Viganola, D., Clemente, E. G., Gordon, M., & others. (2021). A creative destruction approach to replication: Implicit work and sex morality across cultures. <i>Journal of Experimental Social Psychology</i>, <i>93</i>, 104060. https://doi.org/10.1016/j.jesp.2020.104060",
+                    "Tierney, W., Hardy III, J. H., Ebersole, C. R., Leavitt, K., Viganola, D., Clemente, E. G., et al. (2020). Creative destruction in science. <i>Organizational Behavior and Human Decision Processes</i>, <i>161</i>, 291–309. https://doi.org/10.1016/j.obhdp.2020.07.002",
+                    "Tierney, W., Hardy III, J., Ebersole, C. R., Viganola, D., Clemente, E. G., Gordon, M., et al. (2021). A creative destruction approach to replication: Implicit work and sex morality across cultures. <i>Journal of Experimental Social Psychology</i>, <i>93</i>, 104060. https://doi.org/10.1016/j.jesp.2020.104060",
                     "Replication Markets. (n.d.). <i>Replication Markets – Reliable research replicates…you can bet on it</i>. Replication Markets. https://www.replicationmarkets.org/",
                     "[www.replicationmarkets.com](http://www.replicationmarkets.com)"
                 ],
@@ -39229,7 +39229,7 @@
                 "aliases": [
                     "/glossary/replication_markets"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -39248,7 +39248,7 @@
                     "Schulz, K. F., Altman, D. G., & Moher, D. (2010). CONSORT 2010 statement: updated guidelines for reporting parallel group randomised trials. <i>Trials</i>, <i>11</i>(1), 32. https://doi.org/10.1186/1745-6215-11-32",
                     "Von Elm, E., Altman, D. G., Egger, M., Pocock, S. J., Gøtzsche, P. C., & Vandenbroucke, J. P. (2007). The Strengthening the Reporting of Observational Studies in Epidemiology (STROBE) statement: guidelines for reporting observational studies. <i>Annals of Internal Medicine</i>, <i>147</i>(8), 573–577. https://doi.org/10.1136/bmj.39335.541782.AD",
                     "The EQUATOR Network. (n.d.). <i>What is a reporting guideline?</i> Retrieved 10 July 2021. https://www.equator-network.org/about-us/what-is-a-reporting-guideline/",
-                    "Topor, M., Pickering, J. S., Barbosa Mendes, A., Bishop, D. V. M., Büttner, F. C., Elsherif, M. M., & others. (2021). <i>An integrative framework for planning and conducting Non-Intervention, Reproducible, and Open Systematic Reviews (NIRO-SR)</i>. https://doi.org/10.31222/osf.io/8gu5z"
+                    "Topor, M., Pickering, J. S., Barbosa Mendes, A., Bishop, D. V. M., Büttner, F. C., Elsherif, M. M., et al. (2021). <i>An integrative framework for planning and conducting Non-Intervention, Reproducible, and Open Systematic Reviews (NIRO-SR)</i>. https://doi.org/10.31222/osf.io/8gu5z"
                 ],
                 "drafted_by": [
                     "Aidan Cashin"
@@ -39265,7 +39265,7 @@
                 "aliases": [
                     "/glossary/reporting_guideline"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -39706,7 +39706,7 @@
                     "Trustworthiness"
                 ],
                 "references": [
-                    "Fraser, H., Bush, M., Wintle, B., Mody, F., Smith, E., Hanea, A., & others. (2021). <i>Predicting reliability through structured expert elicitation with repliCATS (Collaborative Assessments for Trustworthy Science)</i>.",
+                    "Fraser, H., Bush, M., Wintle, B., Mody, F., Smith, E., Hanea, A., et al. (2021). <i>Predicting reliability through structured expert elicitation with repliCATS (Collaborative Assessments for Trustworthy Science)</i>.",
                     "RepliCATS project. (2020). <i>Collaborative Assessment for Trustworthy Science</i>. The University of Melbourne. https://replicats.research.unimelb.edu.au/"
                 ],
                 "drafted_by": [
@@ -39726,7 +39726,7 @@
                 "aliases": [
                     "/glossary/replicats_project"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -40548,7 +40548,7 @@
                     "Higgins, J. P. T., Thomas, J., Chandler, J., Cumpston, M., Li, T., Page, M. J., & Welch, V. A. (Eds.). (2019). <i>Cochrane Handbook for Systematic Reviews of Interventions. 2nd Edition</i>. John Wiley & Sons.",
                     "Moher, D., Liberati, A., Tetzlaff, J., & Altman, D. (2009). Preferred Reporting Items for Systematic Reviews and Meta-Analyses: The PRISMA Statement. <i>PLoS Medicine</i>, <i>6</i>(7), e1000097. https://doi.org/10.1371/journal.pmed.1000097",
                     "Page, M. J., Moher, D., Bossuyt, P. M., Boutron, I., Hoffmann, T. C., Mulrow, C. D., & McKenzie, J. E. (2021). PRISMA 2020 explanation and elaboration: updated guidance and exemplars for reporting systematic reviews. <i>British Medical Journal</i>, <i>372</i>. https://doi.org/10.1136/bmj.n160",
-                    "Topor, M., Pickering, J. S., Barbosa Mendes, A., Bishop, D. V. M., Büttner, F. C., Elsherif, M. M., & others. (2021). <i>An integrative framework for planning and conducting Non-Intervention, Reproducible, and Open Systematic Reviews (NIRO-SR)</i>. https://doi.org/10.31222/osf.io/8gu5z"
+                    "Topor, M., Pickering, J. S., Barbosa Mendes, A., Bishop, D. V. M., Büttner, F. C., Elsherif, M. M., et al. (2021). <i>An integrative framework for planning and conducting Non-Intervention, Reproducible, and Open Systematic Reviews (NIRO-SR)</i>. https://doi.org/10.31222/osf.io/8gu5z"
                 ],
                 "drafted_by": [
                     "Jade Pickering"
@@ -40569,7 +40569,7 @@
                 "aliases": [
                     "/glossary/systematic_review"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -41799,7 +41799,7 @@
                     "STRANGE"
                 ],
                 "references": [
-                    "Percie du Sert, N., Hurst, V., Ahluwalia, A., Alam, S., Avey, M. T., Baker, M., Browne, W. J., Clark, A., Cuthill, I. C., Dirnagl, U., Emerson, M., Garner, P., Holgate, S. T., Howells, D. W., Karp, N. A., Lazic, S. E., Lidster, K., MacCallum, C. J., Macleod, M., & others. (2020). The ARRIVE guidelines 2.0: Updated guidelines for reporting animal research. <i>PLOS Biology</i>, <i>18</i>(7), e3000410. https://doi.org/10.1371/journal.pbio.3000410"
+                    "Percie du Sert, N., Hurst, V., Ahluwalia, A., Alam, S., Avey, M. T., Baker, M., Browne, W. J., Clark, A., Cuthill, I. C., Dirnagl, U., Emerson, M., Garner, P., Holgate, S. T., Howells, D. W., Karp, N. A., Lazic, S. E., Lidster, K., MacCallum, C. J., Macleod, M., et al. (2020). The ARRIVE guidelines 2.0: Updated guidelines for reporting animal research. <i>PLOS Biology</i>, <i>18</i>(7), e3000410. https://doi.org/10.1371/journal.pbio.3000410"
                 ],
                 "drafted_by": [
                     "Ben Farrar"
@@ -41822,7 +41822,7 @@
                 "translation_reviewed_by": [
                     "Elif Baştan"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -41957,7 +41957,7 @@
                     "Triple badge"
                 ],
                 "references": [
-                    "Hardwicke, T. E., Bohn, M., MacDonald, K., Hembacher, E., Nuijten, M. B., Peloquin, B. N., & others. (2020). Analytic reproducibility in articles receiving open data badges at the journal Psychological Science: an observational study. <i>Royal Society Open Science</i>, <i>8</i>(1), 201494. https://doi.org/10.1098/rsos.201494",
+                    "Hardwicke, T. E., Bohn, M., MacDonald, K., Hembacher, E., Nuijten, M. B., Peloquin, B. N., et al. (2020). Analytic reproducibility in articles receiving open data badges at the journal Psychological Science: an observational study. <i>Royal Society Open Science</i>, <i>8</i>(1), 201494. https://doi.org/10.1098/rsos.201494",
                     "Kidwell, M. C., Lazarević, L. B., Baranski, E., Hardwicke, T. E., Piechowski, S., Falkenberg, L. S., & Nosek, B. A. (2016). Badges to acknowledge open practices: A simple, low-cost, effective method for increasing transparency. <i>PLoS Biology</i>, <i>14</i>(5), e1002456. https://doi.org/10.1371/journal.pbio.1002456",
                     "Rowhani-Farid, A., Aldcroft, A., & Barnett, A. G. (2020). Did awarding badges increase data sharing in BMJ Open? A randomized controlled trial. <i>Royal Society Open Science</i>, <i>7</i>(3), 191818. https://doi.org/10.1098/rsos.191818",
                     "Science, C. (n.d.). <i>Open science badges</i>. https://www.cos.io/initiatives/badges"
@@ -41983,7 +41983,7 @@
                 "translation_reviewed_by": [
                     "Elif Baştan"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -42041,7 +42041,7 @@
                     "Dienes, Z. (2011). Bayesian versus orthodox statistics: Which side are you on? <i>Perspectives on Psychological Science</i>, <i>6</i>(3), 274–290. https://doi.org/10.1177/1745691611406920",
                     "Dienes, Z. (2014). Using Bayes to get the most out of non-significant results. <i>Frontiers in Psychology</i>, <i>5</i>, 781. https://doi.org/10.3389/fpsyg.2014.00781",
                     "Dienes, Z. (2016). How Bayes factors change scientific practice. <i>Journal of Mathematical Psychology</i>, <i>72</i>, 78–89. https://doi.org/10.1016/j.jmp.2015.10.003",
-                    "Etz, A., Gronau, Q. F., Dablander, F., & others. (2018). How to become a Bayesian in eight easy steps: An annotated reading list. <i>Psychonomic Bulletin & Review</i>, <i>25</i>, 219–234. https://doi.org/10.3758/s13423-017-1317-5",
+                    "Etz, A., Gronau, Q. F., Dablander, F., et al. (2018). How to become a Bayesian in eight easy steps: An annotated reading list. <i>Psychonomic Bulletin & Review</i>, <i>25</i>, 219–234. https://doi.org/10.3758/s13423-017-1317-5",
                     "Kruschke, J. K. (2015). <i>Doing Bayesian data analysis: A tutorial with R, JAGS, and Stan</i> (2nd ed.). Academic Press.",
                     "McElreath, R. (2020). <i>Statistical rethinking: A Bayesian course with examples in R and Stan</i> (2nd ed.). Taylor.",
                     "Wagenmakers, E.-J., Marsman, M., Jamil, T., Ly, A., Verhagen, J., Love, J., Selker, R., Gronau, Q. F., Šmíra, M., Epskamp, S., Matzke, D., Rouder, J. N., & Morey, R. D. (2018). Bayesian inference for psychology. Part I: Theoretical advantages and practical ramifications. <i>Psychonomic Bulletin & Review</i>, <i>25</i>(1), 35–57. https://doi.org/10.3758/s13423-017-1343-3"
@@ -42067,7 +42067,7 @@
                 "translation_reviewed_by": [
                     "Elif Baştan"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -42120,7 +42120,7 @@
                     "Open Data"
                 ],
                 "references": [
-                    "Gorgolewski, K., Auer, T., Calhoun, V., & others. (2016). The brain imaging data structure, a format for organizing and describing outputs of neuroimaging experiments. <i>Scientific Data</i>, <i>3</i>, 160044. https://doi.org/10.1038/sdata.2016.44",
+                    "Gorgolewski, K., Auer, T., Calhoun, V., et al. (2016). The brain imaging data structure, a format for organizing and describing outputs of neuroimaging experiments. <i>Scientific Data</i>, <i>3</i>, 160044. https://doi.org/10.1038/sdata.2016.44",
                     "BIDS. (2020). <i>About BIDS</i>. Retrieved from https://bids.neuroimaging.io",
                     "Pernet, C. R., Appelhoff, S., Gorgolewski, K. J., Flandin, G., Phillips, C., Delorme, A., & Oostenveld, R. (2019). EEG-BIDS, an extension to the brain imaging data structure for electroencephalography. <i>Scientific Data</i>, <i>6</i>(1), 103. https://doi.org/10.1038/s41597-019-0104-8"
                 ],
@@ -42273,8 +42273,8 @@
                     "Guest, O. [@o_guest]. (2017). <i>Thanks! Hopefully this thread & many other similar discussions & blogs will help make it less Bropen Science and more Open Science. *hides* </i>. Twitter. Retrieved from https://twitter.com/o_guest/status/871675631062458368",
                     "Whitaker, K., & Guest, O. (2020).  #bropenscience is broken science. <i>The Psychologist</i>, <i>33</i>, 34–37.",
                     "Pownall, M., Talbot, C. V., Henschel, A., Lautarescu, A., Lloyd, K. E., Hartmann, H., Darda, K. M., Tang, K. T. Y., Carmichael-Murphy, P., & Siegel, J. A. (2021). Navigating Open Science as Early Career Feminist Researchers. <i>Psychology of Women Quarterly</i>, <i>45</i>(4), 526–539. https://doi.org/10.1177/03616843211029255",
-                    "Bahlai, C., Bartlett, L. J., Burgio, K. R., & others. (2019). Open science isn’t always open to all scientists. <i>American Scientist</i>, <i>107</i>(2), 78.",
-                    "Onie, S. (2020). Redesign open science for Asia, Africa and Latin America. <i>Nature</i>, <i>587</i>, 5–37. https://doi.org/10.1038/d41586-020-03052-3"
+                    "Bahlai, C., Bartlett, L. J., Burgio, K. R., et al. (2019). Open science isn’t always open to all scientists. <i>American Scientist</i>, <i>107</i>(2), 78.",
+                    "Onie, S. (2020). Redesign open science for Asia, Africa and Latin America. <i>Nature</i>, <i>587</i>, 35–37. https://doi.org/10.1038/d41586-020-03052-3"
                 ],
                 "drafted_by": [
                     "Zoe Flack"
@@ -42642,7 +42642,7 @@
                     "Exact replication"
                 ],
                 "references": [
-                    "Wagge, J. R., Baciu, C., Banas, K., Nadler, J. T., Schwarz, S., Weisberg, Y., & others. (2019). A demonstration of the collaborative replication and education project: Replication attempts of the red-romance effect. <i>Collabra: Psychology</i>, <i>5</i>(1). https://doi.org/10.1525/collabra.177"
+                    "Wagge, J. R., Baciu, C., Banas, K., Nadler, J. T., Schwarz, S., Weisberg, Y., et al. (2019). A demonstration of the collaborative replication and education project: Replication attempts of the red-romance effect. <i>Collabra: Psychology</i>, <i>5</i>(1). https://doi.org/10.1525/collabra.177"
                 ],
                 "drafted_by": [
                     "Connor Keating"
@@ -42663,7 +42663,7 @@
                 "translation_reviewed_by": [
                     "Elif Baştan"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -42673,8 +42673,8 @@
                 "definition": "İnsan Beyin Haritalama Örgütü (OHBM; The Organization for Human Brain Mapping) nörogörüntüleme topluluğu, nörogörüntüleme verilerinin toplanması, analizi, raporlanması ve hem verilerin hem de analiz kodunun paylaşımında en iyi uygulamalar için bir kılavuz geliştirmiştir. Bu kılavuz, şeffaflığı ve tekrarlanabilirliği optimize etmek amacıyla raporlama yöntemlerini ve elde edilen nörogörüntüleri iyileştirmek için bir makale yazılırken veya bir dergiye gönderilirken dahil edilmesi gereken sekiz unsuru içermektedir.",
                 "related_terms": [],
                 "references": [
-                    "Nichols, T. E., Das, S., Eickhoff, S. B., Evans, A. C., Glatard, T., Hanke, M., & others. (2017). Best practices in data analysis and sharing in neuroimaging using MRI. <i>Nature Neuroscience</i>, <i>20</i>(3), 299–303. https://doi.org/10.1038/nn.4500",
-                    "Pernet, C., Garrido, M. I., Gramfort, A., Maurits, N., Michel, C. M., Pang, E., & others. (2020). Issues and recommendations from the OHBM COBIDAS MEEG committee for reproducible EEG and MEG research. <i>Nature Neuroscience</i>, <i>23</i>(12), 1473–1483. https://doi.org/10.1038/s41593-020-00709-0"
+                    "Nichols, T. E., Das, S., Eickhoff, S. B., Evans, A. C., Glatard, T., Hanke, M., et al. (2017). Best practices in data analysis and sharing in neuroimaging using MRI. <i>Nature Neuroscience</i>, <i>20</i>(3), 299–303. https://doi.org/10.1038/nn.4500",
+                    "Pernet, C., Garrido, M. I., Gramfort, A., Maurits, N., Michel, C. M., Pang, E., et al. (2020). Issues and recommendations from the OHBM COBIDAS MEEG committee for reproducible EEG and MEG research. <i>Nature Neuroscience</i>, <i>23</i>(12), 1473–1483. https://doi.org/10.1038/s41593-020-00709-0"
                 ],
                 "drafted_by": [
                     "Yu-Fang Yang"
@@ -42695,7 +42695,7 @@
                 "translation_reviewed_by": [
                     "Elif Baştan"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -43021,8 +43021,8 @@
                 ],
                 "references": [
                     "Open Science Collaboration. (2015). Estimating the reproducibility of psychological science. <i>Science</i>, <i>349</i>(6251), aac4716. https://doi.org/10.1126/science.aac4716",
-                    "Tierney, W., Hardy III, J. H., Ebersole, C. R., Leavitt, K., Viganola, D., Clemente, E. G., & others. (2020). Creative destruction in science. <i>Organizational Behavior and Human Decision Processes</i>, <i>161</i>, 291–309. https://doi.org/10.1016/j.obhdp.2020.07.002",
-                    "Tierney, W., Hardy III, J., Ebersole, C. R., Viganola, D., Clemente, E. G., Gordon, M., & others. (2021). A creative destruction approach to replication: Implicit work and sex morality across cultures. <i>Journal of Experimental Social Psychology</i>, <i>93</i>, 104060. https://doi.org/10.1016/j.jesp.2020.104060"
+                    "Tierney, W., Hardy III, J. H., Ebersole, C. R., Leavitt, K., Viganola, D., Clemente, E. G., et al. (2020). Creative destruction in science. <i>Organizational Behavior and Human Decision Processes</i>, <i>161</i>, 291–309. https://doi.org/10.1016/j.obhdp.2020.07.002",
+                    "Tierney, W., Hardy III, J., Ebersole, C. R., Viganola, D., Clemente, E. G., Gordon, M., et al. (2021). A creative destruction approach to replication: Implicit work and sex morality across cultures. <i>Journal of Experimental Social Psychology</i>, <i>93</i>, 104060. https://doi.org/10.1016/j.jesp.2020.104060"
                 ],
                 "drafted_by": [
                     "Yuki Yamada"
@@ -43044,7 +43044,7 @@
                 "translation_reviewed_by": [
                     "Elif Baştan"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -43065,7 +43065,7 @@
                 ],
                 "references": [
                     "Busse, C., Kach, A. P., & Wagner, S. M. (2017). Boundary Conditions: What They Are, How to Explore Them, Why We Need Them, and When to Consider Them. <i>Organizational Research Methods</i>, <i>20</i>(4), 574–609. https://doi.org/10.1177/1094428116641191",
-                    "Brandt, M. J., IJzerman, H., Dijksterhuis, A., Farach, F. J., Geller, J., Giner-Sorolla, R., & others. (2014). The replication recipe: What makes for a convincing replication? <i>Journal of Experimental Social Psychology</i>, <i>50</i>, 217–224. https://doi.org/10.1016/j.jesp.2013.10.005",
+                    "Brandt, M. J., IJzerman, H., Dijksterhuis, A., Farach, F. J., Geller, J., Giner-Sorolla, R., et al. (2014). The replication recipe: What makes for a convincing replication? <i>Journal of Experimental Social Psychology</i>, <i>50</i>, 217–224. https://doi.org/10.1016/j.jesp.2013.10.005",
                     "Simons, D. J., Shoda, Y., & Lindsay, D. S. (2017). Constraints on generality (COG): A proposed addition to all empirical papers. <i>Perspectives on Psychological Science</i>, <i>12</i>(6), 1123–1128. https://doi.org/10.1177/1745691617708630",
                     "Yarkoni, T. (2020). The generalizability crisis. <i>Behavioral and Brain Sciences</i>, 1–37. https://doi.org/10.1017/S0140525X20001685"
                 ],
@@ -43089,7 +43089,7 @@
                 "translation_reviewed_by": [
                     "Elif Baştan"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -43344,8 +43344,8 @@
                     "Theory"
                 ],
                 "references": [
-                    "Tierney, W., Hardy III, J. H., Ebersole, C. R., Leavitt, K., Viganola, D., Clemente, E. G., & others. (2020). Creative destruction in science. <i>Organizational Behavior and Human Decision Processes</i>, <i>161</i>, 291–309. https://doi.org/10.1016/j.obhdp.2020.07.002",
-                    "Tierney, W., Hardy III, J., Ebersole, C. R., Viganola, D., Clemente, E. G., Gordon, M., & others. (2021). A creative destruction approach to replication: Implicit work and sex morality across cultures. <i>Journal of Experimental Social Psychology</i>, <i>93</i>, 104060. https://doi.org/10.1016/j.jesp.2020.104060"
+                    "Tierney, W., Hardy III, J. H., Ebersole, C. R., Leavitt, K., Viganola, D., Clemente, E. G., et al. (2020). Creative destruction in science. <i>Organizational Behavior and Human Decision Processes</i>, <i>161</i>, 291–309. https://doi.org/10.1016/j.obhdp.2020.07.002",
+                    "Tierney, W., Hardy III, J., Ebersole, C. R., Viganola, D., Clemente, E. G., Gordon, M., et al. (2021). A creative destruction approach to replication: Implicit work and sex morality across cultures. <i>Journal of Experimental Social Psychology</i>, <i>93</i>, 104060. https://doi.org/10.1016/j.jesp.2020.104060"
                 ],
                 "drafted_by": [
                     "Mahmoud Elsherif"
@@ -43368,7 +43368,7 @@
                 "translation_reviewed_by": [
                     "Ege Emek"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -43464,7 +43464,7 @@
                     "Lind, F., Gruber, M., & Boomgaarden, H. G. (2017). Content analysis by the crowd: Assessing the usability of crowdsourcing for coding latent constructs. <i>Communication Methods and Measures</i>, <i>11</i>(3), 191–209. https://doi.org/10.1080/19312458.2017.1317338",
                     "Moshontz, H., Campbell, L., Ebersole, C. R., IJzerman, H., Urry, H. L., Forscher, P. S., & Chartier, C. R. (2018). The Psychological Science Accelerator: Advancing psychology through a distributed collaborative network. <i>Advances in Methods and Practices in Psychological Science</i>, <i>1</i>(4), 501–515. https://doi.org/10.1177/2515245918797607",
                     "Peer, E., Brandimarte, L., Samat, S., & Acquisti, A. (2017). Beyond the Turk: Alternative platforms for crowdsourcing behavioral research. <i>Journal of Experimental Social Psychology</i>, <i>70</i>, 153–163. https://doi.org/10.1016/j.jesp.2017.01.006",
-                    "Silberzahn, R., Uhlmann, E. L., Martin, D. P., Anselmi, P., Aust, F., Awtrey, E., Bahník, Š., Bai, F., Bannard, C., Bonnier, E., & others. (2018). Many Analysts, One Data Set: Making Transparent How Variations in Analytic Choices Affect Results. <i>Advances in Methods and Practices in Psychological Science</i>, 337–356. https://doi.org/10.1177/2515245917747646",
+                    "Silberzahn, R., Uhlmann, E. L., Martin, D. P., Anselmi, P., Aust, F., Awtrey, E., Bahník, Š., Bai, F., Bannard, C., Bonnier, E., et al. (2018). Many Analysts, One Data Set: Making Transparent How Variations in Analytic Choices Affect Results. <i>Advances in Methods and Practices in Psychological Science</i>, 337–356. https://doi.org/10.1177/2515245917747646",
                     "Stewart, N., Chandler, J., & Paolacci, G. (2017). Crowdsourcing samples in cognitive science. <i>Trends in Cognitive Sciences</i>, <i>21</i>(10), 736–748. https://doi.org/10.1016/j.tics.2017.06.007",
                     "Tennant, J., Bielczyk, N. Z., Cheplygina, V., Greshake Tzovaras, B., Hartgerink, C. H. J., Havemann, J., Masuzzo, P., & Steiner, T. (2019). Ten simple rules for researchers collaborating on Massively Open Online Papers (MOOPs). <i>MetaArXiv</i>. https://doi.org/10.31222/osf.io/et8ak",
                     "Uhlmann, E. L., Ebersole, C. R., Chartier, C. R., Errington, T. M., Kidwell, M. C., Lai, C. K., McCarthy, R. J., Riegelman, A., Silberzahn, R., & Nosek, B. A. (2019). Scientific utopia III: Crowdsourcing science. <i>Perspectives on Psychological Science</i>, <i>14</i>(5), 711–733. https://doi.org/10.1177/1745691619850561",
@@ -43492,7 +43492,7 @@
                 "translation_reviewed_by": [
                     "Ege Emek"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -44499,7 +44499,7 @@
                 ],
                 "references": [
                     "Crüwell, S., van Doorn, J., Etz, A., Makel, M. C., Moshontz, H., Niebaum, J. C., Orben, A., Parsons, S., & Schulte-Mecklenbeck, M. (2019). Seven Easy Steps to Open Science: An Annotated Reading List. <i>Zeitschrift Für Psychologie</i>, <i>227</i>(4), 237–248. https://doi.org/10.1027/2151-2604/a000387",
-                    "Wilkinson, M. D., Dumontier, M., Aalbersberg, I. J., Appleton, G., Axton, M., Baak, A., & others. (2016). The FAIR Guiding Principles for scientific data management and stewardship. <i>Scientific Data</i>, <i>3</i>(1), 1–9. https://doi.org/10.1038/sdata.2016.18",
+                    "Wilkinson, M. D., Dumontier, M., Aalbersberg, I. J., Appleton, G., Axton, M., Baak, A., et al. (2016). The FAIR Guiding Principles for scientific data management and stewardship. <i>Scientific Data</i>, <i>3</i>(1), 1–9. https://doi.org/10.1038/sdata.2016.18",
                     "GO FAIR Initiative. (2025). <i>FAIR Principles</i>. https://www.go-fair.org/fair-principles/"
                 ],
                 "drafted_by": [
@@ -44520,7 +44520,7 @@
                 "translation_reviewed_by": [
                     "Ege Emek"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -46198,7 +46198,7 @@
                 ],
                 "references": [
                     "Aczel, B., Szaszi, B., Nilsonne, G., Van den Akker, O., Albers, C. J., van Assen, M. A. L. M., ..., & Wagenmakers, E. (2021). <i>Guidance for Multi-Analyst Studies</i>. https://doi.org/10.31222/osf.io/5ecnh",
-                    "Silberzahn, R., Uhlmann, E. L., Martin, D. P., Anselmi, P., Aust, F., Awtrey, E., Bahník, Š., Bai, F., Bannard, C., Bonnier, E., & others. (2018). Many Analysts, One Data Set: Making Transparent How Variations in Analytic Choices Affect Results. <i>Advances in Methods and Practices in Psychological Science</i>, 337–356. https://doi.org/10.1177/2515245917747646"
+                    "Silberzahn, R., Uhlmann, E. L., Martin, D. P., Anselmi, P., Aust, F., Awtrey, E., Bahník, Š., Bai, F., Bannard, C., Bonnier, E., et al. (2018). Many Analysts, One Data Set: Making Transparent How Variations in Analytic Choices Affect Results. <i>Advances in Methods and Practices in Psychological Science</i>, 337–356. https://doi.org/10.1177/2515245917747646"
                 ],
                 "drafted_by": [
                     "Sam Parsons"
@@ -46222,7 +46222,7 @@
                 "translation_reviewed_by": [
                     "Merve Öztürk"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -46383,7 +46383,7 @@
                     "Systematic Review Protocol"
                 ],
                 "references": [
-                    "Topor, M., Pickering, J. S., Barbosa Mendes, A., Bishop, D. V. M., Büttner, F. C., Elsherif, M. M., & others. (2021). <i>An integrative framework for planning and conducting Non-Intervention, Reproducible, and Open Systematic Reviews (NIRO-SR)</i>. https://doi.org/10.31222/osf.io/8gu5z"
+                    "Topor, M., Pickering, J. S., Barbosa Mendes, A., Bishop, D. V. M., Büttner, F. C., Elsherif, M. M., et al. (2021). <i>An integrative framework for planning and conducting Non-Intervention, Reproducible, and Open Systematic Reviews (NIRO-SR)</i>. https://doi.org/10.31222/osf.io/8gu5z"
                 ],
                 "drafted_by": [
                     "Asma Assaneea"
@@ -46405,7 +46405,7 @@
                 "translation_reviewed_by": [
                     "Merve Öztürk"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -46730,7 +46730,7 @@
                     "Transparency"
                 ],
                 "references": [
-                    "Blohowiak, B. B., Cohoon, J., de Wit, L., Eich, E., Farach, F. J., Hasselman, F., & others. (2020). <i>Badges to Acknowledge Open Practices</i>. Retrieved from https://osf.io/tvyxz",
+                    "Blohowiak, B. B., Cohoon, J., de Wit, L., Eich, E., Farach, F. J., Hasselman, F., et al. (2020). <i>Badges to Acknowledge Open Practices</i>. Retrieved from https://osf.io/tvyxz",
                     "Kidwell, M. C., Lazarević, L. B., Baranski, E., Hardwicke, T. E., Piechowski, S., Falkenberg, L. S., & Nosek, B. A. (2016). Badges to acknowledge open practices: A simple, low-cost, effective method for increasing transparency. <i>PLoS Biology</i>, <i>14</i>(5), e1002456. https://doi.org/10.1371/journal.pbio.1002456"
                 ],
                 "drafted_by": [
@@ -46753,7 +46753,7 @@
                 "translation_reviewed_by": [
                     "Merve Öztürk"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -47426,13 +47426,13 @@
                     "Transformative paradigm"
                 ],
                 "references": [
+                    "Andersson, N. (2018). Participatory research—a modernizing science for primary health care. <i>Journal of General and Family Medicine</i>, <i>19</i>(5), 154–159. https://doi.org/10.1002/jgf2.187",
                     "Cornwall, A., & Jewkes, R. (1995). What is participatory research? <i>Social Science & Medicine</i>, <i>41</i>(12), 1667–1676. https://doi.org/10.1016/0277-9536(95)00127-S",
                     "Fletcher-Watson, S., Adams, J., Brook, K., Charman, T., Crane, L., Cusack, J., Leekam, S., Milton, D., Parr, J. R., & Pellicano, E. (2019). Making the Future Together: Shaping Autism Research Through Meaningful Participation. <i>Autism</i>, <i>23</i>(4), 943–953.",
                     "Kiernan, C. (1999). Participation in research by people with learning disability: Origins and issues. <i>British Journal of Learning Disabilities</i>, <i>27</i>(2), 43–47. https://doi.org/10.1111/j.1468-3156.1999.tb00084.x",
                     "Leavy, P. (2017). <i>Research Design: Quantitative, Qualitative, Mixed Methods, Arts-Based, and Community-Based Participatory Research Approaches</i>. The Guilford Press.",
                     "Ottmann, G., Laragy, C., Allen, J., & Feldman, P. (2011). Coproduction in practice: Participatory action research to develop a model of community aged care. <i>Systemic Practice and Action Research</i>, <i>24</i>, 413–427. https://doi.org/10.1007/s11213-011-9192-x",
-                    "Rose, D. (2018). Participatory research: Real or imagined. <i>Social Psychiatry and Psychiatric Epidemiology</i>, <i>53</i>, 765–771. https://doi.org/10.1007/s00127-018-1549-3",
-                    "Andersson, N. (2018). Participatory research—a modernizing science for primary health care. <i>Journal of General and Family Medicine</i>, <i>19</i>(5), 154–159. https://doi.org/10.1002/jgf2.187"
+                    "Rose, D. (2018). Participatory research: Real or imagined. <i>Social Psychiatry and Psychiatric Epidemiology</i>, <i>53</i>, 765–771. https://doi.org/10.1007/s00127-018-1549-3"
                 ],
                 "drafted_by": [
                     "Tamara Kalandadze"
@@ -48856,11 +48856,11 @@
                 ],
                 "references": [
                     "Barba, L. A. (2018). Terminologies for reproducible research. <i>arXiv Preprint arXiv:1802.03311</i>.",
+                    "Claerbout, J. F., & Karrenbach, M. (1992). Electronic documents give reproducible research a new meaning. <i>SEG Technical Program Expanded Abstracts 1992</i>, 601–604. http://sepwww.stanford.edu/doku.php?id=sep:research:reproducible:seg92",
                     "Crüwell, S., van Doorn, J., Etz, A., Makel, M. C., Moshontz, H., Niebaum, J. C., Orben, A., Parsons, S., & Schulte-Mecklenbeck, M. (2019). Seven Easy Steps to Open Science: An Annotated Reading List. <i>Zeitschrift Für Psychologie</i>, <i>227</i>(4), 237–248. https://doi.org/10.1027/2151-2604/a000387",
                     "King, G. (1995). Replication, replication. <i>PS: Political Science & Politics</i>, <i>28</i>(3), 444–452. https://doi.org/10.2307/420301",
                     "National Academies of Sciences, Engineering, and Medicine. (2019). <i>Reproducibility and Replicability in Science. In Understanding Reproducibility and Replicability</i> [Techreport]. National Academies Press (US). https://www.ncbi.nlm.nih.gov/books/NBK547546/",
-                    "Nosek, B. A., & Errington, T. M. (2020). What is replication? <i>PLOS Biology</i>, <i>18</i>(3), e3000691. https://doi.org/10.1371/journal.pbio.3000691",
-                    "Claerbout, J. F., & Karrenbach, M. (1992). Electronic documents give reproducible research a new meaning. <i>SEG Technical Program Expanded Abstracts 1992</i>, 601–604. http://sepwww.stanford.edu/doku.php?id=sep:research:reproducible:seg92"
+                    "Nosek, B. A., & Errington, T. M. (2020). What is replication? <i>PLOS Biology</i>, <i>18</i>(3), e3000691. https://doi.org/10.1371/journal.pbio.3000691"
                 ],
                 "drafted_by": [
                     "Mahmoud Elsherif"
@@ -48904,7 +48904,7 @@
                     "Schulz, K. F., Altman, D. G., & Moher, D. (2010). CONSORT 2010 statement: updated guidelines for reporting parallel group randomised trials. <i>Trials</i>, <i>11</i>(1), 32. https://doi.org/10.1186/1745-6215-11-32",
                     "Von Elm, E., Altman, D. G., Egger, M., Pocock, S. J., Gøtzsche, P. C., & Vandenbroucke, J. P. (2007). The Strengthening the Reporting of Observational Studies in Epidemiology (STROBE) statement: guidelines for reporting observational studies. <i>Annals of Internal Medicine</i>, <i>147</i>(8), 573–577. https://doi.org/10.1136/bmj.39335.541782.AD",
                     "The EQUATOR Network. (n.d.). <i>What is a reporting guideline?</i> Retrieved 10 July 2021. https://www.equator-network.org/about-us/what-is-a-reporting-guideline/",
-                    "Topor, M., Pickering, J. S., Barbosa Mendes, A., Bishop, D. V. M., Büttner, F. C., Elsherif, M. M., & others. (2021). <i>An integrative framework for planning and conducting Non-Intervention, Reproducible, and Open Systematic Reviews (NIRO-SR)</i>. https://doi.org/10.31222/osf.io/8gu5z"
+                    "Topor, M., Pickering, J. S., Barbosa Mendes, A., Bishop, D. V. M., Büttner, F. C., Elsherif, M. M., et al. (2021). <i>An integrative framework for planning and conducting Non-Intervention, Reproducible, and Open Systematic Reviews (NIRO-SR)</i>. https://doi.org/10.31222/osf.io/8gu5z"
                 ],
                 "drafted_by": [
                     "Aidan Cashin"
@@ -48924,7 +48924,7 @@
                 "translation_reviewed_by": [
                     "Neslihan Özhan"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -50242,7 +50242,7 @@
                     "Higgins, J. P. T., Thomas, J., Chandler, J., Cumpston, M., Li, T., Page, M. J., & Welch, V. A. (Eds.). (2019). <i>Cochrane Handbook for Systematic Reviews of Interventions. 2nd Edition</i>. John Wiley & Sons.",
                     "Moher, D., Liberati, A., Tetzlaff, J., & Altman, D. (2009). Preferred Reporting Items for Systematic Reviews and Meta-Analyses: The PRISMA Statement. <i>PLoS Medicine</i>, <i>6</i>(7), e1000097. https://doi.org/10.1371/journal.pmed.1000097",
                     "Page, M. J., Moher, D., Bossuyt, P. M., Boutron, I., Hoffmann, T. C., Mulrow, C. D., & McKenzie, J. E. (2021). PRISMA 2020 explanation and elaboration: updated guidance and exemplars for reporting systematic reviews. <i>British Medical Journal</i>, <i>372</i>. https://doi.org/10.1136/bmj.n160",
-                    "Topor, M., Pickering, J. S., Barbosa Mendes, A., Bishop, D. V. M., Büttner, F. C., Elsherif, M. M., & others. (2021). <i>An integrative framework for planning and conducting Non-Intervention, Reproducible, and Open Systematic Reviews (NIRO-SR)</i>. https://doi.org/10.31222/osf.io/8gu5z"
+                    "Topor, M., Pickering, J. S., Barbosa Mendes, A., Bishop, D. V. M., Büttner, F. C., Elsherif, M. M., et al. (2021). <i>An integrative framework for planning and conducting Non-Intervention, Reproducible, and Open Systematic Reviews (NIRO-SR)</i>. https://doi.org/10.31222/osf.io/8gu5z"
                 ],
                 "drafted_by": [
                     "Jade Pickering"
@@ -50266,7 +50266,7 @@
                 "translation_reviewed_by": [
                     "Neslihan Özhan"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
