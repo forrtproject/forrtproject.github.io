@@ -562,6 +562,7 @@ def main(public_dir):
 
     results = {
         '1. no <h1>Search</h1>': check_no_search_heading(pages),
+        "18. glossary titles show no Markdown asterisks": check_glossary_title_markdown(pages),
         "2. homepage free of mermaid/highlight.js assets": check_homepage_assets(home),
         "4. every <img> has an alt attribute": check_img_alt(pages),
         "5. every homepage <img> has width and height": check_homepage_img_dims(home),
@@ -575,7 +576,6 @@ def main(public_dir):
         "14. no inline <script> over 200 KB": check_inline_scripts(pages),
         "15. every citation has a local reference target": check_citation_targets(pages),
         "16. glossary links reach existing English terms": check_glossary_links(pages),
-        "17. glossary titles show no Markdown asterisks": check_glossary_title_markdown(pages),
     }
     conditional = check_conditional_assets(pages)
     results["3. conditional highlight.js / mermaid loading"] = [
