@@ -59,7 +59,8 @@ clusters = [
   values = ["podcast", "podcast and transcript", "podcast episodes"]
 [[type_groups]]
   label = "Activity"
-  values = ["activity/lab", "homework/assignment", "assessment", "case study", "game", "workshop", "workshop guide"]
+  # "asssessment" matches a misspelt material type in the FORRT Database; drop it once the sheet is corrected.
+  values = ["activity/lab", "homework/assignment", "assessment", "asssessment", "case study", "game", "workshop", "workshop guide"]
 [[type_groups]]
   label = "Interactive"
   values = ["interactive", "simulation"]
