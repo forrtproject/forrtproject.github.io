@@ -28,8 +28,9 @@
 .article-layout-wide .article-style p,.article-layout-wide .article-style li{max-width:29em}
 .article-layout .article-style p{margin:0 0 18px;max-width:28.4em}
 /* Old pages put <br> on its own line between blocks to add space under the previous theme. Between
-   blocks it only opens a gap (up to 1,600px on a page), so drop it; a <br> inside a paragraph is untouched. */
-.article-layout .article-style>br,.article-layout .article-style>.doc-section>br{display:none}
+   blocks it only opens a gap (up to 1,600px on a page), so drop it. A <br> inside a paragraph, or one that
+   clears floats (Awards), is untouched. */
+.article-layout .article-style>br:not([clear],[style*="clear"]),.article-layout .article-style>.doc-section>br:not([clear],[style*="clear"]){display:none}
 .article-layout .article-style ul,.article-layout .article-style ol{margin:0 0 18px;padding-inline-start:1.4em}
 .article-layout .article-style li{margin-bottom:6px}
 .article-layout .article-style :is(h2,h3,h4){line-height:1.15;margin:34px 0 12px;text-align:start}
