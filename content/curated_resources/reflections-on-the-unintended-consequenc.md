@@ -1,6 +1,6 @@
 {
-    "timestamp": "12/19/2024 9:32:11",
-    "title": "Reflections on the Unintended\nConsequences of the Science\nReform Movement",
+    "timestamp": "2/6/2025 4:42:33",
+    "title": "Reflections on the Unintended Consequences of the Science Reform Movement",
     "link_to_resource": "https://doi.org/10.36850/ed4",
     "creators": [
         "Sarahanne Field",
@@ -14,7 +14,7 @@
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional"
     ],
-    "abstract": "n.a.",
+    "abstract": "The scientific community has entered a challenging era, as originally noted by Wagenmakers . High-profile instances of fraud, failures to replicate foundational studies in psychology, and admissions of research misconduct  cast a shadow over the field of psychology initially, and the broader enterprise of science over the decade that has passed. In response to these concerns, a movement aimed at reforming scientific practices has emerged . This movement has introduced various initiatives to enhance research methods, reduce misconduct, and increase transparency . Direct replications and articles reporting null results and errors  have become more accessible for publication. Concepts like preregistration and registered reports have gained significant popularity. Additionally, various aspects of science are now more \"open,\" encompassing preprints, open-access publications, open peer review, and openly accessible data and code.",
     "language": [
         "English"
     ],
@@ -24,12 +24,11 @@
         "Teacher"
     ],
     "subject_areas": [
+        "Arts and Humanities",
         "Social Science"
     ],
     "FORRT_clusters": [
-        "Reproducibility and Replicability Knowledge",
-        "Conceptual and Statistical Knowledge",
-        "Preregistration"
+        "Academic Life and Culture"
     ],
     "tags": [
         "Metascience",
@@ -37,11 +36,11 @@
         "Methodology",
         "Philosophy of Science"
     ],
-    "forrt_clusters_new": "Conceptual and Statistical Knowledge, Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "Philosophy of science, Ongoing debates (e.g., incentives for and against open science practices)",
+    "forrt_clusters_new": "Academic Structures and Institutions, Conceptual and Statistical Knowledge, Replication Crisis and Credibility Revolution",
+    "forrt_sub_clusters": "Research assessment, proposals, and reforms, Structures and incentives in academia, Philosophy of science, Ongoing debates (e.g., incentives for and against open science practices)",
     "doi": "10.36850/ed4",
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-09-15"
+    "lastmod": "2026-11-09"
 }

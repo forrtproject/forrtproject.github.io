@@ -3,7 +3,13 @@
     "title": "Logical and methodological issues affecting genetic studies of humans reported in top neuroscience journals. ",
     "link_to_resource": "https://doi.org/10.1162/jocn_a_01192",
     "creators": [
-        "C. R. Grabitz et al."
+        "Clara R. Grabitz",
+        "Katherine S. Button",
+        "Marcus R. Munaf\u00f2",
+        "Dianne F. Newbury",
+        "Cyril R. Pernet",
+        "Paul A. Thompson",
+        "Dorothy V. M. Bishop"
     ],
     "material_type": [
         "Primary Source",
@@ -41,5 +47,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-10-29"
+    "lastmod": "2026-11-09"
 }

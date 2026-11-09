@@ -3,7 +3,12 @@
     "title": "Data Sharing in Psychology: A Survey on Barriers and Preconditions",
     "link_to_resource": "https://doi.org/10.1177/2515245917751886",
     "creators": [
-        "Houtkoop et al."
+        "Bobby Lee Houtkoop",
+        "Chris Chambers",
+        "Malcolm Macleod",
+        "Dorothy V. M. Bishop",
+        "Thomas E. Nichols",
+        "Eric-Jan Wagenmakers"
     ],
     "material_type": [
         "Primary Source",
@@ -35,5 +40,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-06-07"
+    "lastmod": "2026-11-09"
 }

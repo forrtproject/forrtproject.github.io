@@ -12,7 +12,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "We provide a novel articulation of the epistemic peril of p-hacking using three resources from philosophy: predictivism, Bayesian confirmation theory, and model selection theory. We defend a nuanced position on p-hacking: p-hacking is sometimes, but not always, epistemically pernicious. Our argument requires a novel understanding of Bayesianism, since a standard criticism of Bayesian confirmation theory is that it cannot represent the influence of biased methods. We then turn to pre-analysis plans, a methodological device used to mitigate p-hacking. Some say that pre-analysis plans are epistemically meritorious while others deny this, and in practice pre-analysis plans are often violated. We resolve this debate with a modest defence of pre-analysis plans. Further, we argue that pre-analysis plans can be epistemically relevant even if the plan is not strictly followed\u2014and suggest that allowing for flexible pre-analysis plans may be the best available policy option.",
@@ -45,5 +45,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-10-29"
+    "lastmod": "2026-11-09"
 }

@@ -3,7 +3,24 @@
     "title": "Defining Effect Sizes",
     "link_to_resource": "https://matthewbjane.quarto.pub/Defining-Effect-Sizes.html",
     "creators": [
-        "Matthew B. Jane et al."
+        "Matthew B. Jan\u00e9",
+        "Qinyu Xiao",
+        "Siu Kit Yeung",
+        "Flavio Azevedo",
+        "Mattan S. Ben-Shachar",
+        "Aaron R. Caldwell",
+        "Denis Cousineau",
+        "Daniel J. Dunleavy",
+        "Mahmoud Elsherif",
+        "Tylor J. Harlow",
+        "Blair T. Johnson",
+        "David Moreau",
+        "Paul Riesthuis",
+        "Lukas R\u00f6seler",
+        "James Steele",
+        "Felipe F. Vieira",
+        "Mircea Zloteanu",
+        "Gilad Feldman"
     ],
     "material_type": [
         "Lesson"
@@ -42,5 +59,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-04-17"
+    "lastmod": "2026-11-09"
 }

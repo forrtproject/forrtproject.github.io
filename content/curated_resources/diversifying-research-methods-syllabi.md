@@ -3,7 +3,15 @@
     "title": "Diversifying Research Methods Syllabi",
     "link_to_resource": "https://osf.io/y5gr9/",
     "creators": [
-        "Kane et al."
+        "Michael J. Kane",
+        "Rogier Kievit",
+        "Daniel Lakens",
+        "Jessica Logan",
+        "Brian A. Nosek",
+        "Sanjay Srivastava",
+        "Simine Vazire",
+        "Kirstie Whitaker",
+        "Madeline Harms"
     ],
     "material_type": [
         "Syllabus"
@@ -42,5 +50,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2021-10-14"
+    "lastmod": "2026-11-09"
 }

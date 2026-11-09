@@ -14,7 +14,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "In order to reduce barriers to entry and understanding, we present a Glossary of terms relating to open scholarship. We aim that the glossary will help clarify terminologies, including where terms are used differently/interchangeably or where terms are less known in some fields or among students. We also hope that this glossary will be a welcome resource for those new to these concepts, and that it helps grow their confidence in navigating discussions of open scholarship. We also hope that this glossary aids in mentoring and teaching, and allows newcomers and experts to communicate efficiently.",
@@ -49,5 +49,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-09-15"
+    "lastmod": "2026-11-09"
 }

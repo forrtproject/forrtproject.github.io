@@ -12,7 +12,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical"
+        "Career / Technical"
     ],
     "abstract": "This course is developed for students in research master programs and PhD candidates in the social and behavioral sciences broadly conceived, including psychology, neuroscience, data science, computational social science, sociology, political science, public administration, organization science, social geography, epidemiology, human health and life sciences, economics, marketing, management and business administration. You will find this course useful if you seek to uncover regularities or test hypotheses using empirical data on human cognition and behavior.",
     "language": [
@@ -45,5 +45,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-09-15"
+    "lastmod": "2026-11-09"
 }

@@ -13,7 +13,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "The purpose of this document is to provide an aggregated list of games and game-related resources that are relevant to research support services. The term \"research support games\" is here defined to mean any game- or play-based experience that is intended for use as an educational tool for training either researchers or researcher-supporting staff (e.g. librarians and research office teams). These games typically aim to improve research skills or to provide awareness of a topic that is relevant to working as a researcher, such as research data management, open access or copyright.",
@@ -59,5 +59,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-10-29"
+    "lastmod": "2026-11-09"
 }

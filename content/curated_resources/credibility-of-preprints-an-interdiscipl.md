@@ -3,7 +3,9 @@
     "title": "Credibility of preprints: an interdisciplinary survey of researchers",
     "link_to_resource": "https://doi.org/10.1098/rsos.201520",
     "creators": [
-        "Courtney K. Soderberg et al."
+        "Courtney K. Soderberg",
+        "Timothy M. Errington",
+        "Brian A. Nosek"
     ],
     "material_type": [
         "Reading"
@@ -39,5 +41,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-10-28"
+    "lastmod": "2026-11-09"
 }

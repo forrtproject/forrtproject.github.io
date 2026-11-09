@@ -12,7 +12,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "This team is responsible for discussing how open scholarship can be used to support the neurodiversity movement and enhance connections between open scholarship and neurodiversity; and how neurodiversity and open scholarship can intersect to make higher education more inclusive and accessible.",
@@ -42,5 +42,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-04-08"
+    "lastmod": "2026-11-09"
 }

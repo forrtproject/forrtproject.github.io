@@ -3,7 +3,21 @@
     "title": "Best practices in data analysis and sharing in neuroimaging using MRI",
     "link_to_resource": "https://doi.org/10.1038/nn.4500",
     "creators": [
-        "Thomas E. Nichols et al."
+        "Thomas E Nichols",
+        "Samir Das",
+        "Simon B Eickhoff",
+        "Alan C Evans",
+        "Tristan Glatard",
+        "Michael Hanke",
+        "Nikolaus Kriegeskorte",
+        "Michael P Milham",
+        "Russell A Poldrack",
+        "Jean-Baptiste Poline",
+        "Erika Proal",
+        "Bertrand Thirion",
+        "David C Van Essen",
+        "Tonya White",
+        "B T Thomas Yeo"
     ],
     "material_type": [
         "Primary Source",
@@ -38,5 +52,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-06-07"
+    "lastmod": "2026-11-09"
 }

@@ -3,7 +3,23 @@
     "title": "Berlin|Oxford Summer School 2020",
     "link_to_resource": "https://osf.io/9qy6s/",
     "creators": [
-        "Toelch et al."
+        "Ulf Toelch",
+        "Verena Heise",
+        "Dirk Ostwald",
+        "Malika Ihle",
+        "Laura Fortunato",
+        "Dorothy Bishop",
+        "Cassandra Gould van Praag",
+        "Patricia Logullo",
+        "Michael Bosnjak",
+        "Jennifer Anne de Beyer",
+        "Evgeny Bobrov",
+        "Daniel Strech",
+        "Ulrich Dirnagl",
+        "Michael Schlussel",
+        "Johanna Gereke",
+        "Benedikt Fecher",
+        "Tracey L Weissgerber"
     ],
     "material_type": [
         "Lesson",
@@ -42,5 +58,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2021-05-24"
+    "lastmod": "2026-11-09"
 }

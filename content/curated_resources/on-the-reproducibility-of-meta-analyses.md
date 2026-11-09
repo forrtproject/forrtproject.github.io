@@ -3,7 +3,9 @@
     "title": "On the reproducibility of meta-analyses: six practical recommendations",
     "link_to_resource": "https://doi.org/10.1186/s40359-016-0126-3",
     "creators": [
-        "Daniel Lakens et al."
+        "Dani\u00ebl Lakens",
+        "Joe Hilgard",
+        "Janneke Staaks"
     ],
     "material_type": [
         "Primary Source",
@@ -39,5 +41,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-31"
+    "lastmod": "2026-11-09"
 }

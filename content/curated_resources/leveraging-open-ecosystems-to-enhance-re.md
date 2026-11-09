@@ -3,7 +3,7 @@
     "title": "Leveraging Open Ecosystems to Enhance Reproducible Workflows",
     "link_to_resource": "https://www.youtube.com/watch?v=z9QpLYMM1aQ",
     "creators": [
-        ""
+        "Center for Open Science"
     ],
     "material_type": [
         "Lesson"
@@ -47,5 +47,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-01-01"
+    "lastmod": "2026-11-09"
 }

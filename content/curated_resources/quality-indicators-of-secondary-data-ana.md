@@ -13,7 +13,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "Secondary data analyses occur when new analyses are proposed for existing data. Although they are prevalent in special education research, there is little guidance on how to prepare secondary data analyses studies. Preregistration of secondary data analyses studies provides a nice opportunity and structure for fellow researchers to share innovative questions and analytic approaches to existing data sets as well as increase transparency. In this manuscript, we (a) describe quality indicators of secondary data analyses consistent with open science practices and (b) provide applied examples of these indicators from a sampling of published studies based on two iterations of data from the National Longitudinal Transition Study (NLTS2 and NLTS2012) with the overall goals to provide guidance to authors and peer reviewers and promote collaboration among fellow researchers engaged in secondary analyses for a range of purposes.",
@@ -42,5 +42,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-27"
+    "lastmod": "2026-11-09"
 }

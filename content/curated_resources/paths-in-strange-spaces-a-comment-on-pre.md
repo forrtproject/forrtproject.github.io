@@ -11,7 +11,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "This is an archived version of a blog post on preregistration. The first half of the post argues that there is not a strong justification for preregistration as a tool to solve problems with statistical inference (p-hacking); the second half argues that preregistration has a stronger justification as one tool (among many) that can aid scientists in documenting our projects. [Note that this archival version exists only because the blog itself no longer does, and as the original has been cited multiple times there is value in ensuring that some version of the blog post remains accessible.]",
@@ -50,5 +50,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-10"
+    "lastmod": "2026-11-09"
 }

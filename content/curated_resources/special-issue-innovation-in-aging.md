@@ -11,7 +11,7 @@
     "education_level": [
         "Graduate / Professional"
     ],
-    "abstract": "<p>Special Issue: Innovation in Aging</p>",
+    "abstract": "Abstracts from Innovation in Aging, Volume 3, Supplement 1 (November 2019), on open science in aging research. Topics include preregistering qualitative research, preregistration with secondary or longitudinal data, transparent research practices in gerontology, and implications for publishing.",
     "language": [
         "English"
     ],
@@ -34,5 +34,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-01-01"
+    "lastmod": "2026-11-09"
 }

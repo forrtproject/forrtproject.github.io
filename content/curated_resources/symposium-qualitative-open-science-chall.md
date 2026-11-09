@@ -11,7 +11,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical"
+        "Career / Technical"
     ],
     "abstract": "The Qualitative Open Science symposium, organised on the 28th of March 2025 at the Vrije Universiteit Amsterdam featured plenaries and workshops dedicated to a wide range of qualitative OS topics with the aim of facilitating knowledge exchange and community building. This resource incorporates the materials generated for and during this event: plenary presentations (slides), recordings of plenary talks, workshop presentations (slides), shared notes from the event (Google Doc), co-creation materials (slides), and a list of Open Science initiatives (Padlet).",
     "language": [
@@ -43,5 +43,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-04-19"
+    "lastmod": "2026-11-09"
 }

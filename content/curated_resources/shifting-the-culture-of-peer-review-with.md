@@ -10,7 +10,7 @@
     ],
     "education_level": [
         "Graduate / Professional",
-        "Career /Technical"
+        "Career / Technical"
     ],
     "abstract": "Reviewer Zero is a collective founded in 2020 to take concrete, data-driven, anti-racist action to improve the culture of scientific peer review. We were formed with guidance from SPARK Society \u2014 an organization that improves visibility and provides mentorship opportunities for cognitive scientists of color. Our broad aim is to change cultural norms in the peer review process, in order to improve the recruitment, retention, and advancement of minoritized scholars in psychology. Collectively, we are a group who has experienced hundreds of rejections and written hundreds of reviews. We\u2019ve received decision letters accepting and rejecting our work, and we have written decision letters accepting or rejecting others\u2019 work.",
     "language": [
@@ -43,5 +43,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-09-15"
+    "lastmod": "2026-11-09"
 }

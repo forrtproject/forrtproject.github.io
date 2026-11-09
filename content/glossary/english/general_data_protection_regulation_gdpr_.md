@@ -32,5 +32,6 @@
     "language": "english",
     "aliases": [
         "/glossary/general_data_protection_regulation_gdpr_"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

@@ -14,7 +14,7 @@
     ],
     "education_level": [
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "The US Food and Drug Administration (FDA) has developed a framework to use data gathered outside of clinical trials (eg, electronic health record [EHR] and insurance claims data) for evaluations of medical product safety and effectiveness. These methods, typically characterized as target trial emulations, are expected to be most useful for evaluating new clinical indications for authorized drugs and postmarketing trial requirements. Previous studies found that few trials can be feasibly emulated using claims and/or structured EHR data. Accordingly, we examined the feasibility of using contemporary data gathered outside clinical trials to emulate the pivotal trials supporting supplemental new drug applications (sNDAs) and supplemental biologics license applications (sBLAs) approved by the FDA from 2017 to 2019.",
@@ -47,5 +47,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-09"
+    "lastmod": "2026-11-09"
 }

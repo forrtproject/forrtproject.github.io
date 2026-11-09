@@ -11,7 +11,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "Preregistration is a tool to enhance the reliability of science that has been promoted as a normative requirement for the award of grants or the acceptance of publications. I argue that: (a) preregistration addresses an important need, (b) it offers considerable benefits, (c) those benefits partially cover the need, (d) they are accompanied by costs and side effects. The decision to make preregistration a normative requirement should be carefully assessed for its potential side-effects, and alternative models and norms should be considered. I discuss factors that affect the reliability of science and how preregistration can influence them, and I make a few suggestions to enhance its efficacy while limiting its risks.",
@@ -53,5 +53,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-09-15"
+    "lastmod": "2026-11-09"
 }

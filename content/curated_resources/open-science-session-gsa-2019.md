@@ -11,7 +11,7 @@
     "education_level": [
         "Graduate / Professional"
     ],
-    "abstract": "Open Science Session GSA 2019",
+    "abstract": "Slides from an open science session at the Gerontological Society of America 2019 meeting. The talks cover open science and publishing in gerontology (Derek Isaacowitz), preregistration with secondary or longitudinal data (Daniel Mroczek), preregistering qualitative research (Barbara Bowers) and a preregistration case study (Walter Boot).",
     "language": [
         "English"
     ],
@@ -38,5 +38,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-01-01"
+    "lastmod": "2026-11-09"
 }

@@ -3,7 +3,7 @@
     "title": "Advocating for Change in How Science is Conducted to Level the Playing Field",
     "link_to_resource": "https://www.youtube.com/watch?v=3WX0gXXztlE",
     "creators": [
-        ""
+        "Center for Open Science"
     ],
     "material_type": [
         "Lecture"
@@ -39,5 +39,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-09-15"
+    "lastmod": "2026-11-09"
 }

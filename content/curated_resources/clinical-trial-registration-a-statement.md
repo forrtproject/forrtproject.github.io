@@ -23,7 +23,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "Altruism and trust lie at the heart of research on human subjects. Altruistic individuals volunteer for research because they trust that their participation will contribute to improved health for others and that researchers will minimise risks to participants. In return for the altruism and trust that make clinical research possible, the research enterprise has an obligation to conduct research ethically and to report it honestly. Honest reporting begins with revealing the existence of all clinical studies, even those that reflect unfavourably on a research sponsor\u2019s product. Unfortunately, selective reporting of trials does occur, and it distorts the body of evidence available for clinical decision-making. Researchers (and journal editors) are generally most enthusiastic about the publication of trials that show either a large effect of a new treatment (positive trials) or equivalence of two approaches to treatment (non-inferiority trials). Researchers (and journals) typically are less excited about trials that show that a new treatment is inferior to standard treatment (negative trials) and even less interested in trials that are neither clearly positive nor clearly negative, since inconclusive trials will not in themselves change practice. Irrespective of their scientific interest, trial results that place financial interests at risk are particularly likely to remain unpublished and hidden from public view. The interests of the sponsor or authors notwithstanding, anyone should be able to learn of any trial\u2019s existence and its important characteristics.",
@@ -54,5 +54,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-30"
+    "lastmod": "2026-11-09"
 }

@@ -11,7 +11,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "\u201cThe problem is the way policing was built,\u201d historian Khalil Muhammad says.",
@@ -43,5 +43,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2021-03-14"
+    "lastmod": "2026-11-09"
 }

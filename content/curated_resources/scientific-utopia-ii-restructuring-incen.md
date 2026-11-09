@@ -33,10 +33,10 @@
         "Reproducibility"
     ],
     "forrt_clusters_new": "Academic Structures and Institutions, Replication Crisis and Credibility Revolution",
-    "forrt_sub_clusters": "Ongoing debates (e.g., incentives for and against open science practices), Structures and incentives in academia",
+    "forrt_sub_clusters": "Ongoing debates (e.g., incentives for and against open science practices), Structures and incentives in academia, History of the replication crisis & credibility revolution",
     "doi": "10.1177/1745691612459058",
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-01-01"
+    "lastmod": "2026-11-09"
 }

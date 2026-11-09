@@ -11,7 +11,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "The guidelines in this Library Guide give an in-depth, but limited first look at how you can find and engage with Open Educational Resources (OER). This section provides lists detailing where to find specific types of OER, tools you can use to create your own OER, and reading suggestions to learn more about all aspects of OER.",
@@ -41,5 +41,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-02-13"
+    "lastmod": "2026-11-09"
 }

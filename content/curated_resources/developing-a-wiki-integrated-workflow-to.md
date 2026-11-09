@@ -12,7 +12,7 @@
     ],
     "education_level": [
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "This research project focuses on developing a living literature review methodology relying on the Wikimedia ecosystem, notably Wikidata and Wikiversity. The project page includes resources (presentations, technical documentation) around bibliographic data and knowledge modelling within the Wikimedia ecosystem and with a linked open data perspective. Content is relevant for making literature reviews replicable and compatible with open science principles.",
@@ -49,5 +49,5 @@
     "in-clusters": "",
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-09-16"
+    "lastmod": "2026-11-09"
 }

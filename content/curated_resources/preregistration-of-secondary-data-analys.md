@@ -24,7 +24,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "Preregistration has been lauded as one of the solutions to the so-called \u2018crisis of confidence\u2019 in the social sciences and has therefore gained popularity in recent years. However, the current guidelines for preregistration have been developed primarily for studies where new data will be collected. Yet, preregistering secondary data analyses--- where new analyses are proposed for existing data---is just as important, given that researchers\u2019 hypotheses and analyses may be biased by their prior knowledge of the data. The need for proper guidance in this area is especially desirable now that data is increasingly shared publicly. In this tutorial, we present a template specifically designed for the preregistration of secondary data analyses and provide comments and a worked example that may help with using the template effectively. Through this illustration, we show that completing such a template is feasible, helps limit researcher degrees of freedom, and may make researchers more deliberate in their data selection and analysis efforts.",
@@ -63,5 +63,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-27"
+    "lastmod": "2026-11-09"
 }

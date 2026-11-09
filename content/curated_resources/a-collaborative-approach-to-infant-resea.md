@@ -3,7 +3,24 @@
     "title": "A collaborative approach to infant research: Promoting reproducibility, best practices, and theory-building. ",
     "link_to_resource": "https://doi.org/10.1111/infa.12182",
     "creators": [
-        "Frank et al."
+        "Michael C. Frank",
+        "Elika Bergelson",
+        "Christina Bergmann",
+        "Alejandrina Cristia",
+        "Caroline Floccia",
+        "Judit Gervain",
+        "J. Kiley Hamlin",
+        "Erin E. Hannon",
+        "Melissa Kline",
+        "Claartje Levelt",
+        "Casey Lew\u2010Williams",
+        "Thierry Nazzi",
+        "Robin Panneton",
+        "Hugh Rabagliati",
+        "Melanie Soderstrom",
+        "Jessica Sullivan",
+        "Sandra Waxman",
+        "Daniel Yurovsky"
     ],
     "material_type": [
         "Primary Source",
@@ -39,5 +56,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-06-04"
+    "lastmod": "2026-11-09"
 }

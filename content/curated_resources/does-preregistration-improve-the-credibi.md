@@ -11,7 +11,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "Preregistration entails researchers registering their planned research hypotheses, methods, and analyses in a time-stamped document before they undertake their data collection and analyses. This document is then made available with the published research report to allow readers to identify discrepancies between what the researchers originally planned to do and what they actually ended up doing. This historical transparency is supposed to facilitate judgments about the credibility of the research findings. The present article provides a critical review of 17 of the reasons behind this argument. The article covers issues such as HARKing, multiple testing, p-hacking, forking paths, optional stopping, researchers' biases, selective reporting, test severity, publication bias, and replication rates. It is concluded that preregistration's historical transparency does not facilitate judgments about the credibility of research findings when researchers provide contemporary transparency in the form of (a) clear rationales for current hypotheses and analytical approaches, (b) public access to research data, materials, and code, and (c) demonstrations of the robustness of research conclusions to alternative interpretations and analytical approaches.",
@@ -56,5 +56,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-09-15"
+    "lastmod": "2026-11-09"
 }

@@ -11,7 +11,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "Many view preregistration as a promising way to improve research credibility. However, scholars have argued that using pre-analysis plans in Experimental Economics has limited benefits. This paper argues that preregistration of studies is likely to improve research credibility. I show that in a setting with selective reporting and low statistical power, effect sizes are highly inflated, and this translates into low reproducibility. Preregistering the original studies could avoid such inflation of effect sizes\u2014through increasing the share of \u201cfrequentist\u201d researchers\u2014and would lead to more credible power analyses for replication studies. Numerical applications of the model indicate that the inflation bias could be very large in practice, and available empirical evidence is in line with the central assumptions of the model.",
@@ -42,5 +42,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-30"
+    "lastmod": "2026-11-09"
 }

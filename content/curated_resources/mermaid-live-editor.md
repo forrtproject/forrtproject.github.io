@@ -9,7 +9,7 @@
         "Interactive"
     ],
     "education_level": [
-        "Career /Technical"
+        "Career / Technical"
     ],
     "abstract": "A free browser-based tool for writing Mermaid diagram syntax with a live preview and PNG, SVG and Markdown export. It can be used to document research workflows, software sequences and entity relationships as editable text alongside project materials. This is a general-purpose diagram tool rather than a course on open science or a statistical analysis package. The independent deployment is not the upstream Mermaid project. Keeping diagram source with documentation can make the steps depicted easier to inspect and revise; it does not itself establish the reproducibility of a study.",
     "language": [
@@ -38,5 +38,5 @@
     "in-clusters": "",
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-10-10"
+    "lastmod": "2026-11-09"
 }

@@ -33,5 +33,6 @@
     "language": "english",
     "aliases": [
         "/glossary/publish_or_perish"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

@@ -13,7 +13,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "In July 2020, Journal of Women and Minorities in Science and Engineering (JWM)\nstarted requiring a positionality statement in each paper published. To the best of our\nknowledge, requiring a positionality statement at JWM is a first for a journal in science,\ntechnology, engineering, and mathematics (STEM) education, although some other\njournals are beginning to encourage authors to include one.\n\nWith this editorial, we, the JWM editorial staff, want to clarify several aspects about\npositionality statements. We understand positionality statements to be only one part of\na larger process of reflexivity. We also understand that for many JWM authors, professional and personal risks are associated with revealing identities in positionality statements. It is our hope that positionality statements\u2014when understood in these more\ncomplex ways\u2014will result in higher quality, more socially just research. And that is\nwhy JWM has committed to them.",
@@ -58,5 +58,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-09-06"
+    "lastmod": "2026-11-09"
 }

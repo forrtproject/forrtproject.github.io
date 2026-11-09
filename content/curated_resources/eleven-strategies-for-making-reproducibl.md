@@ -1,24 +1,24 @@
 {
-    "timestamp": "10/4/2023 11:36:38",
-    "title": "Eleven Strategies for Making Reproducible Research and Open Science Training the Norm at Research Institutions",
-    "link_to_resource": "https://doi.org/10.31219/osf.io/kcvra",
+    "timestamp": "2/6/2025 4:35:21",
+    "title": "Eleven strategies for making reproducible research and open science training the norm at research institutions",
+    "link_to_resource": "https://doi.org/10.7554/eLife.89736",
     "creators": [
-        "Friederike E. Kohrs",
+        "Friederike E Kohrs",
         "Susann Auer",
         "Alexandra Bannach-Brown",
         "Susann Fiedler",
-        "Tamarinde Haven",
+        "Tamarinde Laura Haven",
         "Verena Heise",
         "Constance Holman",
         "Flavio Azevedo",
         "Ren\u00e9 Bernard",
         "Arnim Bleier",
         "Nicole B\u00f6ssel",
-        "Brian Cahill",
+        "Brian Patrick Cahill",
         "Leyla Jael Castro",
         "Adrian Ehrenhofer",
         "Kristina Eichel",
-        "Maximilian Frank",
+        "Maximillian Frank",
         "Claudia Frick",
         "Malte Friese",
         "Anne G\u00e4rtner",
@@ -33,80 +33,66 @@
         "Louisa Kulke",
         "Anton Kutlin",
         "Fritjof Lammers",
-        "David M.A. Mehler",
+        "David MA Mehler",
         "Christoph Miehl",
         "Anett M\u00fcller-Alcazar",
         "Claudia Neuendorf",
         "Helen Niemeyer",
         "Florian Pargent",
         "Aaron Peikert",
-        "Christina U. Pfeuffer",
+        "Christina U Pfeuffer",
         "Robert Reinecke",
         "Jan Philipp R\u00f6er",
-        "Jessica L. Rohmann",
+        "Jessica L Rohmann",
         "Alfredo S\u00e1nchez-T\u00f3jar",
         "Stefan Scherbaum",
         "Elena Sixtus",
         "Lisa Spitzer",
         "Vera Maren Stra\u00dfburger",
         "Marcel Weber",
-        "Clarissa Whitmire",
+        "Clarissa J Whitmire",
         "Josephine Zerna",
         "Dilara Zorbek",
         "Philipp Zumstein",
-        "Tracey L. Weissgerber"
+        "Tracey L Weissgerber"
     ],
     "material_type": [
-        "Teaching/Learning Strategy"
+        "Reading"
     ],
     "education_level": [
         "College / Upper Division (Undergraduates)",
-        "Graduate / Professional",
-        "Career /Technical",
-        "Adult Education"
+        "Graduate / Professional"
     ],
-    "abstract": "Across disciplines, researchers increasingly recognize that open science and reproducible research practices may accelerate scientific progress by allowing others to reuse research outputs and by promoting rigorous research that is more likely to yield trustworthy results. While initiatives, training programs, and funder policies encourage researchers to adopt reproducible research and open science practices, these practices are uncommon in many fields. Researchers need training to integrate these practices into their daily work. We organized a virtual brainstorming event, in collaboration with the German Reproducibility Network, to discuss strategies for making reproducible research and open science training the norm at research institutions. Here, we outline eleven strategies, concentrated in three areas: (1) offering training, (2) adapting research assessment criteria and program requirements, and (3) building communities. We provide a brief overview of each strategy, offer tips for implementation, and provide links to resources. Our goal is to encourage members of the research community to think creatively about the many ways they can contribute and collaborate to build communities, and make reproducible research and open science training the norm. Researchers may act in their roles as scientists, supervisors, mentors, instructors, and members of curriculum, hiring or evaluation committees. Institutional leadership and research administration and support staff can accelerate progress by implementing change across their institutions.",
+    "abstract": "Reproducible research and open science practices have the potential to accelerate scientific progress by allowing others to reuse research outputs, and by promoting rigorous research that is more likely to yield trustworthy results. However, these practices are uncommon in many fields, so there is a clear need for training that helps and encourages researchers to integrate reproducible research and open science practices into their daily work. Here, we outline eleven strategies for making training in these practices the norm at research institutions. The strategies, which emerged from a virtual brainstorming event organized in collaboration with the German Reproducibility Network, are concentrated in three areas: (i) adapting research assessment criteria and program requirements; (ii) training; (iii) building communities. We provide a brief overview of each strategy, offer tips for implementation, and provide links to resources. We also highlight the importance of allocating resources and monitoring impact. Our goal is to encourage researchers \u2013 in their roles as scientists, supervisors, mentors, instructors, and members of curriculum, hiring or evaluation committees \u2013 to think creatively about the many ways they can promote reproducible research and open science practices in their institutions.",
     "language": [
         "English"
     ],
     "conditions_of_use": "CC BY",
     "primary_user": [
-        "Teacher",
-        "Librarian"
+        "Student",
+        "Teacher"
     ],
     "subject_areas": [
         "Applied Science",
-        "Arts and Humanities",
         "Business and Communication",
-        "Career and Technical Education",
-        "Education",
-        "English Language Arts",
-        "History",
-        "Law",
-        "Life Science",
-        "Math & Statistics",
-        "Physical Science",
         "Social Science"
     ],
     "FORRT_clusters": [
+        "Reproducibility and Replicability Knowledge",
+        "Reproducible Analyses",
         "Academic Life and Culture"
     ],
     "tags": [
-        "Curriculum Design",
-        "Higher Education",
-        "Hiring",
-        "Open Science",
         "Reproducible Research",
-        "Research Institutions",
-        "Scientific Rigor",
-        "Teaching",
-        "Transparency"
+        "Open Science",
+        "Open Science Strategies",
+        "Training"
     ],
-    "forrt_clusters_new": "Academic Structures and Institutions",
-    "forrt_sub_clusters": "Structures and incentives in academia, Research assessment, proposals, and reforms",
-    "doi": "10.31219/osf.io/kcvra",
+    "forrt_clusters_new": "Research Integrity, FAIR data and materials, Academic Structures and Institutions",
+    "forrt_sub_clusters": "FAIR principles applied to Education & Training, Education and Training in Research Integrity, Structures and incentives in academia, Research assessment, proposals, and reforms",
+    "doi": "10.7554/eLife.89736",
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-04"
+    "lastmod": "2026-11-09"
 }

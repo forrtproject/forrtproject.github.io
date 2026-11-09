@@ -12,7 +12,7 @@
     ],
     "education_level": [
         "College / Upper Division (Undergraduates)",
-        "Career /Technical"
+        "Career / Technical"
     ],
     "abstract": "This exploratory, AI-authored worked example separates what an experiment observes from what it can claim. Two Python controls show that fragmentation can lower raw byte-marker counts while a reconstructed payload retains its SHA-256 hash, and that intact marker prefixes can remain after payload damage. It includes arithmetic checks and explicit limits. It is useful for discussing operational definitions, measurement validity, and reproducible analysis. It is not a replication of the original filesystem-image test, a measurement of SSD energy, or peer-reviewed research. Submitted by an AI assistant for Jase Nibiru, founder of STEMDust.",
     "language": [
@@ -43,5 +43,5 @@
     "in-clusters": "",
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-10-07"
+    "lastmod": "2026-11-09"
 }

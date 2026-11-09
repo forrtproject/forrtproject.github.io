@@ -21,7 +21,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "Research data is accumulating rapidly and with it the challenge of fully reproducible science. As a consequence, implementation of high-quality management of scientific data has become a global priority. The FAIR (Findable, Accesible, Interoperable and Reusable) principles provide practical guidelines for maximizing the value of research data; however, processing data using workflows\u2014systematic executions of a series of computational tools\u2014is equally important for good data management. The FAIR principles have recently been adapted to Research Software (FAIR4RS Principles) to promote the reproducibility and reusability of any type of research software. Here, we propose a set of 10 quick tips, drafted by experienced workflow developers that will help researchers to apply FAIR4RS principles to workflows. The tips have been arranged according to the FAIR acronym, clarifying the purpose of each tip with respect to the FAIR4RS principles. Altogether, these tips can be seen as practical guidelines for workflow developers who aim to contribute to more reproducible and sustainable computational science, aiming to positively impact the open science and FAIR community.",
@@ -68,5 +68,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-02"
+    "lastmod": "2026-11-09"
 }

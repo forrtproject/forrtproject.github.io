@@ -25,7 +25,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "In 2005, the International Committee of Medical Journal Editors (ICMJE) initiated a policy requiring investigators to deposit information about trial design into an accepted clinical trials registry before the onset of patient enrolment. 1 This policy aimed to ensure that information about the existence and design of clinically directive trials was publicly available, an ideal that leaders in evidence-based medicine have advocated for decades. 2 The policy precipitated much angst among research investigators and sponsors, who feared that registration would be burdensome and would stifle competition. Yet, the response to this policy has been overwhelming. The ICMJE promised to re-evaluate the policy 2 years after implementation. Here, we summarise that re-evaluation, specifically commenting on registries that meet the policy requirements, the types of studies that require registration, and the registration of trial results. As is always the case, the ICMJE establishes policy only for the 12 member journals, but many other journals have adopted our initial trial registration recommendations, and we hope that they will also adopt the modifications discussed in this update.",
@@ -57,5 +57,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-30"
+    "lastmod": "2026-11-09"
 }

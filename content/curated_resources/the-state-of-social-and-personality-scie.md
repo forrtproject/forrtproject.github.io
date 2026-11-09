@@ -3,7 +3,18 @@
     "title": "The State of Social and Personality Science: Rotten to the Core, Not So Bad, Getting Better, or Getting Worse?",
     "link_to_resource": "https://doi.org/10.1037/pspa0000084",
     "creators": [
-        "Motyl et al."
+        "Matt Motyl",
+        "Alexander P. Demos",
+        "Timothy S. Carsel",
+        "Brittany E. Hanson",
+        "Zachary J. Melton",
+        "Allison B. Mueller",
+        "J. P. Prims",
+        "Jiaqing Sun",
+        "Anthony N. Washburn",
+        "Kendal M. Wong",
+        "Caitlyn Yantis",
+        "Linda J. Skitka"
     ],
     "material_type": [
         "Primary Source",
@@ -39,5 +50,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-06-04"
+    "lastmod": "2026-11-09"
 }

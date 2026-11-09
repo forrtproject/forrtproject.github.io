@@ -15,7 +15,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "SMAAT (Sensor-based Mobile Application for Assessment and Tracking) lets you design studies, schedule experience sampling, and collect encrypted survey and sensor data from iOS and Android participants \u2014 with real-time compliance dashboards, participant engagement tools, and a validated item library built in.",
@@ -45,5 +45,5 @@
     "in-clusters": "",
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-11-08"
+    "lastmod": "2026-11-09"
 }

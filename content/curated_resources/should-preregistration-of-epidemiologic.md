@@ -12,7 +12,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "There is an ongoing debate regarding preregistration of epidemiologic study protocols. We examine the basic idea that preregistration of study protocols and their associated hypotheses would enhance the reliability of observational research. We define instances in which preregistration would be useful, and we support a counter-proposal: a public registry containing descriptions of collected epidemiologic data.",
@@ -41,5 +41,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-23"
+    "lastmod": "2026-11-09"
 }

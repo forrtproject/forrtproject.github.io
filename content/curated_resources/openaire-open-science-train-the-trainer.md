@@ -22,7 +22,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "Open Science being a fast-moving area, the programme of the bootcamp is revised for each iteration. The bootcamp is designed around three axes: presentations from experts, exchanges of individual experiences and independent learning assignments. \n\nShort presentations from experts cover the latest 'hot topics' and more in-depth knowledge of lesser-known subjects (e.g. pedagogy theory) and useful tips and tools. The course is meant as a student-centered learning experience and a horizontal knowledge exchange. The presentations are there to encourage participants to engage in group discussions and share their individual experiences as trainers throughout the week. The conversations usually continue beyond the live sessions through the text forum provided on OpenPlato to participants. The networking dimension is also fostered through the platform and additional optional gamified activities, demos and informal get-together. Mandatory assignments ensure every participants engage in peer-to-peer exchange and use the week for self-reflection on the design of a training plan.",
@@ -51,5 +51,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-02-27"
+    "lastmod": "2026-11-09"
 }

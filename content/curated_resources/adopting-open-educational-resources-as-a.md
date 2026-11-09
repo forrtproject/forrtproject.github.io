@@ -11,7 +11,7 @@
     ],
     "education_level": [
         "Graduate / Professional",
-        "Career /Technical"
+        "Career / Technical"
     ],
     "abstract": "Social determinants of learning (SDOL) impact students\u2019 abilities to successfully complete their courses. An economic barrier for vulnerable students is the skyrocketing cost of textbooks. An innovative strategy to promote equity in educational delivery is the adoption of open educational resources (OER). The Open Resources for Nursing (Open RN) project published five OER textbooks with input from over 65 contributors and 300 reviewers. Open RN textbooks have received widespread national and international usage. Analysis of student outcomes indicates similar successful course completion rates by all students in OER course sections and increased rates of successful course completion by non-White students.",
     "language": [
@@ -41,5 +41,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-10-29"
+    "lastmod": "2026-11-09"
 }

@@ -3,7 +3,16 @@
     "title": "The Replication Recipe: What makes for a convincing replication? ",
     "link_to_resource": "https://doi.org/10.1016/j.jesp.2013.10.005",
     "creators": [
-        "Brandt et al."
+        "Mark J. Brandt",
+        "Hans IJzerman",
+        "Ap Dijksterhuis",
+        "Frank J. Farach",
+        "Jason Geller",
+        "Roger Giner-Sorolla",
+        "James A. Grange",
+        "Marco Perugini",
+        "Jeffrey R. Spies",
+        "Anna van 't Veer"
     ],
     "material_type": [
         "Primary Source",
@@ -39,5 +48,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-06-01"
+    "lastmod": "2026-11-09"
 }

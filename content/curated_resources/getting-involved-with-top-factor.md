@@ -3,7 +3,7 @@
     "title": "Getting Involved with TOP Factor",
     "link_to_resource": "https://www.youtube.com/watch?v=keKBIyx38XI",
     "creators": [
-        ""
+        "Center for Open Science"
     ],
     "material_type": [
         "Lecture"
@@ -48,5 +48,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-01-01"
+    "lastmod": "2026-11-09"
 }

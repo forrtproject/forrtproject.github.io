@@ -11,7 +11,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "Preregistering study designs is broadly supported as improving scientific credibility but criticized for limiting the scope of what can be learned. The paper investigates this tradeoff in a model where a researcher conducts a study and aims to convince an evaluator that the results are worth publishing. When both begin equally informed, the aim to publish is closely aligned with producing informative research, leaving preregistration redundant. When better informed, the researcher can credibly signal confidence by committing to a hypothesis. Thus, whether preregistration should be the norm in a field depends on how critically private information plays in designing studies.",
@@ -51,5 +51,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-30"
+    "lastmod": "2026-11-09"
 }

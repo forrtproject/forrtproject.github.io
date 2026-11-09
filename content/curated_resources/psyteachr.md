@@ -3,7 +3,8 @@
     "title": "PsyTeachR",
     "link_to_resource": "https://psyteachr.github.io/",
     "creators": [
-        ""
+        "PsyTeachR team",
+        "University of Glasgow School of Psychology and Neuroscience"
     ],
     "material_type": [
         "Textbook"
@@ -41,5 +42,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-01-01"
+    "lastmod": "2026-11-09"
 }

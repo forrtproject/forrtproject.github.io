@@ -14,7 +14,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "In response to a crisis of confidence, several methodological initiatives have been launched to improve the robustness of psychological science. Given its real-world implications, personality disorders research is all too important to not follow suit. The authors offer a plea for preregistration in personality disorders research, using psychopathic personality (psychopathy) as a prominent case example. To suit action to word, the authors report on a preregistered study and use it to help refute common misconceptions about preregistration as well as to illustrate that the key strength of preregistration: transparency outweighs its (perceived) disadvantages. Although preregistration will not conclusively settle the many debates roiling the field of psychopathy and other personality disorders, it can help to verify the robustness of empirical observations that inform such debates.",
@@ -44,5 +44,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-27"
+    "lastmod": "2026-11-09"
 }

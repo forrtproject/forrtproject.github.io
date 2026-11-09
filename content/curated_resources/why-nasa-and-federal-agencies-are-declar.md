@@ -11,7 +11,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "I\u2019m thrilled to be the Transform to Open Science lead for NASA, which has a 60-year legacy of pushing the limits of how science is used to understand the Universe, planetary systems and life on Earth. Much of NASA\u2019s success can be attributed to a culture of openness for the public good. Since the 1990s, the agency has been a leading advocate for full and open access to data and algorithms.\n\nThat culture is needed now more than ever. Humanity is facing many intersecting challenges, from the COVID-19 pandemic to climate change and food and water insecurity. To combat them, we must find breakthroughs faster, increase interdisciplinary expertise and improve how we translate research findings into action. This will require a fundamental shift: from simply sharing results in journal articles to collaborating openly, publishing reproducible results and implementing full inclusivity and transparency.\n\nTo catalyse this shift, on 11 January the US White House \u2014 joined by 10 federal agencies, a coalition of more than 85 universities, and other organizations \u2014 declared 2023 to be the Year of Open Science.",
@@ -45,5 +45,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-09"
+    "lastmod": "2026-11-09"
 }

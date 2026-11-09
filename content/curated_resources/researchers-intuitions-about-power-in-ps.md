@@ -3,7 +3,10 @@
     "title": "Researchers\u2019 Intuitions About Power in Psychological Research",
     "link_to_resource": "https://doi.org/10.1177/0956797616647519",
     "creators": [
-        "Bakker et al."
+        "Marjan Bakker",
+        "Chris H. J. Hartgerink",
+        "Jelte M. Wicherts",
+        "Han L. J. van der Maas"
     ],
     "material_type": [
         "Primary Source",
@@ -36,5 +39,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-06-07"
+    "lastmod": "2026-11-09"
 }

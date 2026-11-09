@@ -11,7 +11,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "I must admit that when I first heard of the effort to get psychological scientists to preregister their studies (that is, to submit to a journal a study\u2019s hypotheses and a plan for how the data will be analyzed before that study has been run), I had a moment of panic. It seemed, on the surface, entirely too regulated for my tastes. I have since calmed down and now see the usefulness of preregistration \u2014 indeed, APS has been at the forefront of encouraging preregistration to make our science more transparent and reliable. ",
@@ -51,5 +51,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-10"
+    "lastmod": "2026-11-09"
 }

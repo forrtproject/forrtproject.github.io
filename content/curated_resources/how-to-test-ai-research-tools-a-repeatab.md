@@ -15,7 +15,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "A free teaching activity for evaluating AI literature-search assistants through repeated use rather than one polished response. Learners run the same scholarly-search task three times, preserve visible sources, log test conditions and access failures, verify selected claims and classify results as stable, partially repeatable or unstable. The page includes a reusable five-page worksheet and a public 15-run example dataset covering ResearchRabbit, Elicit, Scite, Consensus and Undermind. The example is explicitly a small, dated free-tier observation set, not a universal product ranking.",
@@ -55,5 +55,5 @@
     "in-clusters": "",
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-08-27"
+    "lastmod": "2026-11-09"
 }

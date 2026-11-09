@@ -11,7 +11,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical"
+        "Career / Technical"
     ],
     "abstract": "This practical guide provides more than 150 recipes to help you generate high-quality graphs quickly, without having to comb through all the details of R\u2019s graphing systems. Each recipe tackles a specific problem with a solution you can apply to your own project, and includes a discussion of how and why the recipe works.",
     "language": [
@@ -44,5 +44,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-19"
+    "lastmod": "2026-11-09"
 }

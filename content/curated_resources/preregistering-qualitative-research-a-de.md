@@ -19,7 +19,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "Preregistrations\u2014records made a priori about study designs and analysis plans and placed in open repositories\u2014are thought to strengthen the credibility and transparency of research. Different authors have put forth arguments in favor of introducing this practice in qualitative research and made suggestions for what to include in a qualitative preregistration form. The goal of this study was to gauge and understand what parts of preregistration templates qualitative researchers would find helpful and informative. We used an online Delphi study design consisting of two rounds with feedback reports in between. In total, 48 researchers participated (response rate: 16%). In round 1, panelists considered 14 proposed items relevant to include in the preregistration form, but two items had relevance scores just below our predefined criterion (68%) with mixed argument and were put forth again. We combined items where possible, leading to 11 revised items. In round 2, panelists agreed on including the two remaining items. Panelists also converged on suggested terminology and elaborations, except for two terms for which they provided clear arguments. The result is an agreement-based form for the preregistration of qualitative studies that consists of 13 items. The form will be made available as a registration option on Open Science Framework (osf.io). We believe it is important to assure that the strength of qualitative research, which is its flexibility to adapt, adjust and respond, is not lost in preregistration. The preregistration should provide a systematic starting point.",
@@ -56,5 +56,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-30"
+    "lastmod": "2026-11-09"
 }

@@ -28,5 +28,6 @@
     "language": "english",
     "aliases": [
         "/glossary/positionality_map"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

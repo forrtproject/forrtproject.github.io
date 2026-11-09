@@ -2,7 +2,7 @@
   "projects": [
     {
       "order": 10,
-      "name": "FLoRA - FORRT Library of Replication and Reproduction Attempts",
+      "name": "FLoRA - FORRT Library of Reproduction and Replication Attempts",
       "link": "/replication-hub/flora/",
       "description": "FLoRA tracks attempts to repeatedly test published findings across the sciences and humanities. As an open, crowd-sourced project we are always looking for collaborators to help curate replications and reproductions and to put the data to use.",
       "slack": "",
@@ -38,7 +38,7 @@
     },
     {
       "order": 50,
-      "name": "Mapping Open Science Initiatives",
+      "name": "Mapping Open Science Communities",
       "link": "/mapping_os/",
       "description": "A global effort to systematically identify, map, and connect Open Science organisations across disciplines and regions. Volunteers help with desk research, taxonomy work, and visualisation.",
       "slack": "",
@@ -69,7 +69,7 @@
       "link": "",
       "description": "Team Feedback is developing a community-maintained e-book mapping and critically evaluating feedback mechanisms across disciplines and regions.",
       "slack": "",
-      "contact_name": "Thomas Rhys-Evans",
+      "contact_name": "Thomas Rhys Evans",
       "contact_email": "thomas.evans@greenwich.ac.uk"
     },
     {

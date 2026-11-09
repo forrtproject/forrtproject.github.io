@@ -12,7 +12,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical"
+        "Career / Technical"
     ],
     "abstract": "The main methods, techniques and issues for carrying out multilevel modeling and analysis are covered in this book. The book is an applied introduction to the topic, providing a clear conceptual understanding of the issues involved in multilevel analysis and will be a useful reference tool. Information on designing multilevel studies, sampling, testing and model specification and interpretation of models is provided. A comprehensive guide to the software available is included. Multilevel Analysis is the ideal guide for researchers and applied statisticians in the social sciences, including education, but will also interest researchers in economics, and biological, medical and health disciplines.",
     "language": [
@@ -41,5 +41,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-19"
+    "lastmod": "2026-11-09"
 }

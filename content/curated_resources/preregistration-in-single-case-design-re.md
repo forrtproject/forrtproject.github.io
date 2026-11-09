@@ -12,7 +12,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "To draw informed conclusions from research studies, research consumers need full and accurate descriptions of study methods and procedures. Preregistration has been proposed as a means to clarify reporting of research methods and procedures, with the goal of reducing bias in research. However, preregistration has been applied primarily to research studies utilizing group designs. In this article, we discuss general issues in preregistration and consider the use of preregistration in single-case design research, particularly as it relates to differing applications of this methodology. We then provide a rationale and make specific recommendations for preregistering single-case design research, including guidelines for preregistering basic descriptive information, research questions, participant characteristics, baseline conditions, independent and dependent variables, hypotheses, and phase-change decisions.",
@@ -51,5 +51,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-27"
+    "lastmod": "2026-11-09"
 }

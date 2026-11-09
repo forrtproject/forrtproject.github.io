@@ -11,7 +11,7 @@
     "education_level": [
         "Graduate / Professional"
     ],
-    "abstract": "Registered Reports Factsheet for Editors",
+    "abstract": "Question-and-answer factsheet for journal editors on Registered Reports. It explains how the two-stage review works, what the format adds to other forms of pre-study assessment, which research it suits, and how it handles common concerns about exploration, risk and implementation.",
     "language": [
         "English"
     ],
@@ -34,5 +34,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-01-01"
+    "lastmod": "2026-11-09"
 }

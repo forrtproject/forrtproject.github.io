@@ -7,7 +7,7 @@
     "related_terms": [
         "Incentive structure",
         "Journal Impact Factor",
-        "*P*\\-hacking"
+        "p-hacking"
     ],
     "references": [
         "Moher, D., Naudet, F., Cristea, I. A., Miedema, F., Ioannidis, J. P. A., & Goodman, S. N. (2018). Assessing scientists for hiring, promotion, and tenure. <i>PLOS Biology</i>, <i>16</i>(3), e2004089. https://doi.org/10.1371/journal.pbio.2004089",
@@ -31,5 +31,6 @@
     ],
     "translation_reviewed_by": [
         "Ege Emek"
-    ]
+    ],
+    "lastmod": "2026-11-08"
 }

@@ -12,7 +12,7 @@
     "education_level": [
         "Graduate / Professional"
     ],
-    "abstract": "Applied Open Science Talk GSA 2020",
+    "abstract": "Slides from Jennifer Lodi-Smith's talk 'Applied Open Science for Secondary Data Analysis and Meta-Analysis' at the Gerontological Society of America 2020 meeting. They cover preregistering meta-analyses and secondary data analyses, transparent documentation and sharing sensitive data, with links to resources and examples.",
     "language": [
         "English"
     ],
@@ -39,5 +39,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-01-01"
+    "lastmod": "2026-11-09"
 }

@@ -15,7 +15,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "Scientific progress, including in evidence-based medicine, requires all available evidence to be accessed, scrutinised, interpreted and used. Missing or incomplete evidence creates biases and errors in later research. Open science practices are movements and procedures that aim to increase transparency in science production. They aim to make scientific knowledge available, accessible and reusable, benefitting scientific collaboration and all society. Open access is a core component of open science that aims to help solve the problem of accessibility.\n\nTraditional publication behind a paywall can hide evidence from the public, clinicians, policymakers and other researchers. Whether online or print, traditional scientific journals maintain their content behind a paywall, with only abstracts freely available to read. Readers access articles by purchasing the individual article, the entire journal issue or through a subscription. These journal subscriptions are purchased by institutions like universities and libraries. However, readers whose institutions cannot afford these subscriptions or who are not affiliated to an institution are often unable to pay to access every article they need. Members of the public and readers in low-resourced countries are disproportionately affected.\n\nOpen access is defined as making a document freely available for anyone to read and, depending on the license model, share and use. Scholarly publishers now offer open access routes for publishing journal articles such as protocols, commentaries, reviews and result articles. The academic community expects these publishers to adhere to the same quality standards as in traditional closed access publication, such as peer review, indexing and permanent archiving. Biomedical research has progressively adopted open access, with yearly increases in the percentage of articles available as open access publications and the number of countries and policies mandating open access. Online supplemental text 1 summarizes national and international open access mandates.",
@@ -46,5 +46,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-02"
+    "lastmod": "2026-11-09"
 }

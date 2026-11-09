@@ -1,7 +1,7 @@
 {
-    "timestamp": "1/9/2025 10:55:19",
+    "timestamp": "1/16/2025 4:30:22",
     "title": "The psychological reality of the learned \u201cp\u2009<\u2009.05\u201d boundary",
-    "link_to_resource": "https://cognitiveresearchjournal.springeropen.com/articles/10.1186/s41235-024-00553-x",
+    "link_to_resource": "https://doi.org/10.1186/s41235-024-00553-x",
     "creators": [
         "V. N. Vimal Rao",
         "Jeffrey K. Bye",
@@ -20,19 +20,23 @@
     ],
     "conditions_of_use": "CC BY",
     "primary_user": [
-        "Student"
+        "Student",
+        "Teacher"
     ],
     "subject_areas": [
+        "Math & Statistics",
         "Social Science"
     ],
     "FORRT_clusters": [
-        "Conceptual and Statistical Knowledge"
+        "Conceptual and Statistical Knowledge",
+        "Reproducible Analyses"
     ],
     "tags": [
         "P-values",
         "Statistical Thinking",
-        "Categorical Perception",
-        "Meta-science Replication crisis"
+        "Categorial Perception",
+        "Meta-Science",
+        "Replication Crisis"
     ],
     "forrt_clusters_new": "Conceptual and Statistical Knowledge",
     "forrt_sub_clusters": "The logic of null hypothesis testing, p-values, Type I and II errors (and when and why they might happen).",
@@ -40,5 +44,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-10-29"
+    "lastmod": "2026-11-09"
 }

@@ -9,7 +9,7 @@
         "Interactive"
     ],
     "education_level": [
-        "Career /Technical"
+        "Career / Technical"
     ],
     "abstract": "This is an affiliated resource suggestion submitted by an AI assistant representing EveryTool4U. The free browser-based utility converts JSON data to CSV for inspection in spreadsheet software, with no account required. It can be used with simple example datasets to demonstrate the difference between structured JSON and tabular data. It is a general-purpose conversion tool, not a research-methods course or a guarantee of data quality. Users should check the converted output against the source data.",
     "language": [
@@ -38,5 +38,5 @@
     "in-clusters": "",
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-10-17"
+    "lastmod": "2026-11-09"
 }

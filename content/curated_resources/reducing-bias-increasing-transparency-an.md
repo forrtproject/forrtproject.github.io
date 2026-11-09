@@ -12,7 +12,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "Flexibility in the design, analysis and interpretation of scientific studies creates a multiplicity of possible research outcomes. Scientists are granted considerable latitude to selectively use and report the hypotheses, variables and analyses that create the most positive, coherent and attractive story while suppressing those that are negative or inconvenient. This creates a risk of bias that can lead to scientists fooling themselves and fooling others. Preregistration involves declaring a research plan (for example, hypotheses, design and statistical analyses) in a public registry before the research outcomes are known. Preregistration (1) reduces the risk of bias by encouraging outcome-independent decision-making and (2) increases transparency, enabling others to assess the risk of bias and calibrate their confidence in research outcomes. In this Perspective, we briefly review the historical evolution of preregistration in medicine, psychology and other domains, clarify its pragmatic functions, discuss relevant meta-research, and provide recommendations for scientists and journal editors.",
@@ -56,5 +56,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-10-29"
+    "lastmod": "2026-11-09"
 }

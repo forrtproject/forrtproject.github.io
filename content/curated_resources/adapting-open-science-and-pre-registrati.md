@@ -14,7 +14,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "Open science practices, such as pre-registration and data sharing, increase transparency and may improve the replicability of developmental science. However, developmental science has lagged behind other fields in implementing open science practices. This lag may arise from unique challenges and considerations of longitudinal research. In this paper, preliminary guidelines are provided for adapting open science practices to longitudinal research to facilitate researchers' use of these practices. The guidelines propose a serial and modular approach to registration that includes an initial pre-registration of the methods and focal hypotheses of the longitudinal study, along with subsequent pre- or co-registered questions, hypotheses, and analysis plans associated with specific papers. Researchers are encouraged to share their research materials and relevant data with associated papers and to report sufficient information for replicability. In addition, there should be careful consideration of requirements regarding the timing of data sharing, to avoid disincentivizing longitudinal research.",
@@ -50,5 +50,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-10-29"
+    "lastmod": "2026-11-09"
 }

@@ -21,7 +21,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical"
+        "Career / Technical"
     ],
     "abstract": "Research data is optimized when it can be freely accessed and reused. To maximize research equity, transparency, and reproducibility, policymakers should take concrete steps to ensure that research software is openly accessible and reusable.",
     "language": [
@@ -52,5 +52,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-09-15"
+    "lastmod": "2026-11-09"
 }

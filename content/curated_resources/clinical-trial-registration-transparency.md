@@ -15,7 +15,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "All parties associated in clinical trials\u2014patients, doctors, scientists, industry\u2014share a common desire for a vigorous clinical research enterprise that brings innovations to patients as quickly as possible. However, recent scandals in the UK  and elsewhere have diminished public trust in the clinical research industry. This distrust is worrisome because industry funds an increasing proportion of clinical trials, and distrust might result in lower enrolment in trials and slower innovation.",
@@ -46,5 +46,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-30"
+    "lastmod": "2026-11-09"
 }

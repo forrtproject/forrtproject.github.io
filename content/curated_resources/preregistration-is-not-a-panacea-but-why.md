@@ -1,7 +1,7 @@
 {
     "timestamp": "2/27/2025 4:58:14",
     "title": "Preregistration is not a panacea, but why? A rejoinder to Chen & Li's (2024) \u201cinfusing preregistration into tourism research\u201d",
-    "link_to_resource": "https://doi.org/10.1017/can.2024.44",
+    "link_to_resource": "https://doi.org/10.1016/j.tourman.2024.105061",
     "creators": [
         "Val\u00e9rio Souza-Neto",
         "Brent Moyle"
@@ -40,9 +40,9 @@
     ],
     "forrt_clusters_new": "FAIR data and materials",
     "forrt_sub_clusters": "Reasons to share data and materials",
-    "doi": "10.1017/can.2024.44",
+    "doi": "10.1016/j.tourman.2024.105061",
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-09-15"
+    "lastmod": "2026-11-09"
 }

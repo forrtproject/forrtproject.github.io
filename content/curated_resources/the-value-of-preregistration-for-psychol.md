@@ -11,7 +11,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "For over two centuries researchers have been criticized for using research practices that makes it easier to present data in line with what they wish to be true. With the rise of the internet it has become easier to preregister the theoretical and empirical basis for predictions, the experimental design, the materials, and the analysis code. Whether the practice of preregistration is valuable depends on your philosophy of science. Here, I provide a conceptual analysis of the value of preregistration for psychological science from an error statistical philosophy (Mayo, 2018). Preregistration has the goal to allow others to transparently evaluate the capacity of a test to falsify a prediction, or the severity of a test. Researchers who aim to test predictions with severity should find value in the practice of preregistration. I differentiate the goal of preregistration from positive externalities, discuss how preregistration itself does not make a study better or worse compared to a non-preregistered study, and highlight the importance of evaluating the usefulness of a tool such as preregistration based on an explicit consideration of your philosophy of science.",
@@ -42,5 +42,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-27"
+    "lastmod": "2026-11-09"
 }

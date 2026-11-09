@@ -12,7 +12,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "Preregistration of research plans is becoming an increasingly popular and common tool to enhance the transparency of a study\u2019s methodology. In a preregistration, researchers document their research plans and register them to a public repository prior to conducting their research. In this chapter, we provide arguments for why preregistration can protect scientific findings against questionable research practices (QRPs), such as outcome swapping, selective reporting of conditions, unwarranted data exclusions, and post hoc changing of hypotheses. Furthermore, we place particular emphasis on preregistering research plans when using existing data, and we give an overview of preregistration templates and public repositories for different types of research designs. We conclude this chapter with highlighting some of the common criticisms of preregistration and our counter-arguments and provide future reflections.",
@@ -56,5 +56,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-27"
+    "lastmod": "2026-11-09"
 }

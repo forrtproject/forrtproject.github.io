@@ -1,6 +1,6 @@
 {
     "timestamp": "2020-05-11T10:29:40.604Z",
-    "title": "The t-distritbution and its normal approximation",
+    "title": "The t-distribution and its normal approximation",
     "link_to_resource": "http://rpsychologist.com/new-d3-js-visualization-t-distribution",
     "creators": [
         "Kristoffer Magnusson"
@@ -42,5 +42,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-11"
+    "lastmod": "2026-11-09"
 }

@@ -11,7 +11,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "Pre-registration has become an increasingly popular proposal to address concerns regarding questionable research practices. Yet preregistration does not necessarily solve these problems. It also causes additional problems, including raising costs for more junior and less resourced scholars. In addition, pre-registration restricts creativity and diminishes the broader scientific enterprise. In this way, pre-registration neither solves the problems it is intended to address, nor does it come without costs. Pre-registration is neither necessary nor sufficient for producing novel or ethical work. In short, pre-registration represents a form of virtue signaling that is more performative than actual.",
@@ -51,5 +51,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-23"
+    "lastmod": "2026-11-09"
 }

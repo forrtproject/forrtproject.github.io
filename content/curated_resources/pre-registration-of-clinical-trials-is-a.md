@@ -12,7 +12,7 @@
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional"
     ],
-    "abstract": "Pre-registration of clinical trials is associated with fewer positive findings",
+    "abstract": "Blog post by Bill Gardner (The Incidental Economist, August 2015) on a study by Robert Kaplan and Veronica Irvin of large NHLBI-funded cardiovascular trials. Of the trials published before 2000, 57% reported a significant benefit on the primary outcome, compared with 8% of those published after 2000, by which time all were prospectively registered on ClinicalTrials.gov.",
     "language": [
         "English"
     ],
@@ -41,5 +41,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-07"
+    "lastmod": "2026-11-09"
 }

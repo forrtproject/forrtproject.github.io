@@ -11,9 +11,9 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical"
+        "Career / Technical"
     ],
-    "abstract": "N.A.",
+    "abstract": "Q&A from Quanta Magazine (May 2024) in which the topologist Danny Calegari discusses the inevitability of disappointment in mathematics, how to learn from it, and why mathematicians should be more transparent about how their results are made.",
     "language": [
         "English"
     ],
@@ -38,5 +38,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-01-09"
+    "lastmod": "2026-11-09"
 }

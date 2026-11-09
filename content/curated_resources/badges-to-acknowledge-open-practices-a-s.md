@@ -3,7 +3,19 @@
     "title": "Badges to Acknowledge Open Practices: A Simple, Low-Cost, Effective Method for Increasing Transparency",
     "link_to_resource": "https://doi.org/10.1371/journal.pbio.1002456",
     "creators": [
-        "Mallory C. Kidwell et al."
+        "Mallory C. Kidwell",
+        "Ljiljana B. Lazarevi\u0107",
+        "Erica Baranski",
+        "Tom E. Hardwicke",
+        "Sarah Piechowski",
+        "Lina-Sophia Falkenberg",
+        "Curtis Kennett",
+        "Agnieszka Slowik",
+        "Carina Sonnleitner",
+        "Chelsey Hess-Holden",
+        "Timothy M. Errington",
+        "Susann Fiedler",
+        "Brian A. Nosek"
     ],
     "material_type": [
         "Primary Source",
@@ -41,5 +53,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-06-05"
+    "lastmod": "2026-11-09"
 }

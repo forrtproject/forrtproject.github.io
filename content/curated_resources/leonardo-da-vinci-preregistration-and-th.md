@@ -11,7 +11,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "There has been much talk of psychological science undergoing a renaissance with recent years being marked by dramatic changes in research practices and to the publishing landscape. This article briefly summarises a number of the ways in which psychological science can improve its rigor, lessen use of questionable research practices and reduce publication bias. The importance of preregistration as a useful tool to increase transparency of science and improve the robustness of our evidence base, especially in COVID-19 times, is presented. Moreover, the benefits of using Registered Reports, the article format that allows peer review of research studies before the results are known, are outlined. Finally, the article argues that the scientific architecture and the academic reward structure need to change with a move towards \u201cslow science\u201d and away from the \u201cpublish or perish\u201d culture.",
@@ -39,5 +39,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-27"
+    "lastmod": "2026-11-09"
 }

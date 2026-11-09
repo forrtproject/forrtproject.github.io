@@ -11,7 +11,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "This editorial note is an \u201caction-based\u201d follow-up to the previous PBFJ Editorial published in September 2021 \u2026 \u201cA Declaration about Responsible Science\u201d (Faff, 2021a). In that prior editorial, I made a very clear statement that \u201cPBFJ is moving on a pathway toward more effectively embracing and fostering the principles of responsible science, captured by three central pillars: (1) Credible research; (2) Relevant research; and (3) Independent research.\u201d To be very clear, this new initiative is designed to both complement and augment our well-established and traditional process of publication PBFJ. In my view, now it is time for real action \u2026 we invite expressions of interest, as the first step in a 4-phase process of \u201cpre-registration\u201d studies, as outlined in this Editorial.",
@@ -42,5 +42,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-30"
+    "lastmod": "2026-11-09"
 }

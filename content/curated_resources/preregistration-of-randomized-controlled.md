@@ -14,7 +14,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "Randomized controlled trials (RCTs) are designed to answer causal questions with internal validity. However, threats to internal validity exist for even well-designed RCTs. In this article, we focus on how preregistration can help address some specific threats to internal validity related to the reporting of results. Preregistration involves researchers publicly posting critical decision points in a study prior to conducting it for the purpose of making researcher plans transparent, making deviations from those plans discoverable, and improving the validity of tests of significance. We provide a brief overview of null-hypothesis significance testing; consider how questionable research practices (e.g., p-hacking) and conducting data-dependent analysis threaten the validity of significance tests; discuss how preregistration can help address these threats and how preregistration works for RCTs; note limitations and challenges to preregistration; and provide recommendations for increasing the use of preregistration by researchers conducting RCTs in social work, education, and related fields.",
@@ -54,5 +54,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-27"
+    "lastmod": "2026-11-09"
 }

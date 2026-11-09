@@ -11,7 +11,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical"
+        "Career / Technical"
     ],
     "abstract": "An Open-Access repository of psychological measures, scales, tests, and other research instruments in Serbian. Documented are psychological instruments that have been translated into Serbian and/or adapted for the Serbian population. Hosted on the Open Science Framework and maintained by researchers at the Laboratory for Research of Individual Differences (LIRA) at the University of Belgrade, Serbia.",
     "language": [
@@ -46,5 +46,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2021-09-13"
+    "lastmod": "2026-11-09"
 }

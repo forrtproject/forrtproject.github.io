@@ -11,7 +11,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "Qualitative training rarely acknowledges the role of emotions in both data collection and analysis. While bracketing emotions is an important part of reflexivity, emotions are both a source of data and a source of \u2018work\u2019 (Hochschild, Citation1983). Accordingly, mentoring junior qualitative scholars also requires emotion work. Issues of race, gender, and power come into play when we think critically about the role and importance of recognizing emotion work in the field and the academy. This piece draws on data from a year-long ethnographic multicase study of three schools using restorative practices, focusing on one interview with one participant that raised significant emotions for the principal investigator. I demonstrate and propose a framework for what I call \u2018emotional coding\u2019: noting data that give rise to strong emotions, and then identifying what these emotions say about our positionally; our participants; and the research topic. Implications for scholarship and mentorship are discussed.",
@@ -52,5 +52,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-23"
+    "lastmod": "2026-11-09"
 }

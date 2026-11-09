@@ -11,7 +11,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "Meta-analysis synthesizes a body of research investigating a common research question. Outcomes from meta-analyses provide a more objective and transparent summary of a research area than traditional narrative reviews. Moreover, they are often used to support research grant applications, guide clinical practice, and direct health policy. The aim of this article is to provide a practical and non-technical guide for psychological scientists that outlines the steps involved in planning and performing a meta-analysis of correlational datasets. I provide a supplementary R script to demonstrate each analytical step described in the paper, which is readily adaptable for researchers to use for their analyses. While the worked example is the analysis of a correlational dataset, the general meta-analytic process described in this paper is applicable for all types of effect sizes. I also emphasize the importance of meta-analysis protocols and pre-registration to improve transparency and help avoid unintended duplication. An improved understanding this tool will not only help scientists to conduct their own meta-analyses but also improve their evaluation of published meta-analyses.",
@@ -54,5 +54,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-09-15"
+    "lastmod": "2026-11-09"
 }

@@ -11,7 +11,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "The idea for the registration of observational epidemiologic studies (with their protocols, hypotheses, and analysis plans) is modeled on the registration of randomized clinical trials (RCTs). The movement that led to the registration of RCTs was fed by distrust that important findings would be withheld\u2014against the best interests of future patients. Randomized controlled trials test the end-product of a scientific process: whether a therapy should be applied to patients. Indeed, the application of a new therapy to hundreds of thousands of future patients should not depend on the whim of whomever decides what to publish and not to publish.",
@@ -40,5 +40,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-23"
+    "lastmod": "2026-11-09"
 }

@@ -31,7 +31,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "OBJECTIVE: To investigate open science practices in research published in the top five sports medicine journals from 01 May 2022 and 01 October 2022.\n\nDESIGN: A meta-research systematic review\n\nLITERATURE SEARCH: Open science practices were searched in MEDLINE.\n\nSTUDY SELECTION CRITERIA: We included original scientific research published in one of the identified top-five sports medicine journals in 2022 as ranked by Clarivate ((1) British Journal of Sports Medicine, (2) Journal of Sport and Health Science, (3) American Journal of Sports Medicine, (4) Medicine Science Sport and Exercise, and (5) Sports Medicine-Open). Studies were excluded if they were systematic reviews, qualitative research, grey literature, or animal or cadaver models.\n\nDATA SYNTHESIS: Open science practices were extracted in accordance with the Transparency and Openness Promotion (TOP) guidelines and patient and public involvement (PPI).\n\nRESULTS: 243 studies were included. The median number of open science practices in each study was 2, out of a maximum of 12 (Range: 0-8; IQR: 2). 234 studies (96%, 95% CI: 94-99%) provided an author conflict of interest statement and 163 (67%, 95% CI: 62-73%) reported funding. 21 studies (9%, 95% CI: 5-12%) provided open access data. Fifty-four studies (22%, 95% CI: 17-27%) included a data availability statement and 3 (1%, 95% CI: 0-3%) made code available. Seventy-six studies (32%, 95% CI: 25-37%) had transparent materials and 30 (12%, 95% CI: 8-16) used a reporting guideline. Twenty-eight studies (12%, 95% CI: 8-16%) were pre-registered. Six studies (3%, 95% CI: 1-4%) published a protocol. Four studies (2%, 95% CI: 0-3%) reported an analysis plan a priori. Seven studies (3%, 95% CI: 1-5%) reported patient and public involvement.\n\nCONCLUSION: Open science practices in the sports medicine field are extremely limited. The least followed practices were sharing code, data, and analysis plans.",
@@ -63,5 +63,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-23"
+    "lastmod": "2026-11-09"
 }

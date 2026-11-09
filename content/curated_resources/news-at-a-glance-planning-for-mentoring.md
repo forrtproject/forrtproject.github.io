@@ -11,7 +11,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)"
     ],
-    "abstract": "N.A.",
+    "abstract": "",
     "language": [
         "English"
     ],
@@ -36,5 +36,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-01-09"
+    "lastmod": "2026-11-09"
 }

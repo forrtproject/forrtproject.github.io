@@ -11,7 +11,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "This first issue of 2022 marks the transition of Psychology and Aging in adopting a transparency and openness promotion (TOP) framework. The journal has always had high standards for theoretically meaningful research conducted with methodological and analytic rigor. As the Open Science movement has gathered steam, authors are increasingly submitting papers that fully meet TOP standards at Levels 1 or 2, and those who do not, have generally been quite happy to respond to the gentle nudges of the journal's editors. Thus, in practical terms, the changes at this point are actually quite modest. In what follows, Stine-Morrow addresses questions about the new standards: (a) Why now? and (b) What are they?",
@@ -39,5 +39,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-27"
+    "lastmod": "2026-11-09"
 }

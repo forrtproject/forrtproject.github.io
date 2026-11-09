@@ -14,7 +14,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "Few dementia care interventions have been translated to healthcare contexts for those who need them. Embedded pragmatic clinical trials (ePCTs) are one design that can expedite the timeframe of research translation to clinical practice. As the National Institutes of Health (NIH) and other funders commit immense new resources to increasing the nation\u2019s capacity to conduct dementia care ePCTs, we call on psychologists to employ their extensive expertise in open science to improve the quality of dementia care ePCTs. This article provides several recommendations to enhance the transparency and reporting rigor of ePCTs in dementia care and other chronic disease contexts. We illustrate these recommendations in the context of a recent pilot pragmatic trial known as the Porchlight Project. Porchlight provided training to volunteers who serve clients and caregivers to help them provide more \u201cdementia capable\u201d support. Notably this trial did not include a special effort to make use of open science practices. We discuss the benefits and costs had the Porchlight Project incorporated open science principles.",
@@ -44,5 +44,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-27"
+    "lastmod": "2026-11-09"
 }

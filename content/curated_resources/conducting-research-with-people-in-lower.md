@@ -14,7 +14,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "In recent years, the field of psychology has increasingly recognized the importance of conducting research with lower-socioeconomic-status (SES) participants. Given that SES can powerfully shape people\u2019s thoughts and actions, socioeconomically diverse samples are necessary for rigorous, generalizable research. However, even when researchers aim to collect data with these samples, they often encounter methodological and practical challenges to recruiting and retaining lower-SES participants in their studies. We propose that there are two key factors to consider when trying to recruit and retain lower-SES participants\u2014trust and accessibility. Researchers can build trust by creating personal connections with participants and communities, paying participants fairly, and considering how participants will view their research. Researchers can enhance accessibility by recruiting in participants\u2019 own communities, tailoring study administration to participants\u2019 circumstances, and being flexible in payment methods. Our goal is to provide recommendations that can help to build a more inclusive science.",
@@ -54,5 +54,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-11-03"
+    "lastmod": "2026-11-09"
 }

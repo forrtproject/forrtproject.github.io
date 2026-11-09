@@ -3,7 +3,22 @@
     "title": "Oxford-Berlin Open Research summer school 2019",
     "link_to_resource": "https://osf.io/6ytne/",
     "creators": [
-        "Heise et al."
+        "Verena Heise",
+        "Ulf Toelch",
+        "Dirk Ostwald",
+        "Dorothy Bishop",
+        "Ulrich Dirnagl",
+        "Sally Rumsey",
+        "Christina Riesenweber",
+        "Laura Fortunato",
+        "Susanna-Assunta Sansone",
+        "Sam Parsons",
+        "Paul Andrew Thompson",
+        "Matt Jaquiery",
+        "Meggie Danziger",
+        "Jacqueline Thompson",
+        "Martin Poulter",
+        "Elena Pavlenko"
     ],
     "material_type": [
         "Module"
@@ -41,5 +56,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2021-05-24"
+    "lastmod": "2026-11-09"
 }

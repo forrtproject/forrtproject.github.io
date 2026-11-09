@@ -12,7 +12,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "To address widespread perceptions of a reproducibility crisis in the social sciences, a growing number of scholars recommend the systematic preregistration of empirical studies. The purpose of this article is to contribute to an epistemological dialogue on the value of preregistration in consumer research by identifying the limitations, drawbacks, and potential adverse effects of a preregistration system. After a brief review of some of the implementation challenges that commonly arise with preregistration, we raise three levels of issues with a system of preregistration. First, we identify its limitations as a means of advancing consumer knowledge, thus questioning the sufficiency of preregistration in promoting good consumer science. Second, we elaborate on why consumer science can progress even in the absence of preregistration, thereby also questioning the necessity of preregistration in promoting good consumer science. Third, we discuss serious potential adverse effects of preregistration, both at the individual researcher level and at the level of the field as a whole. We conclude by offering a broader perspective on the narrower role that preregistration can play within the general pursuit of building robust and useful knowledge about consumers.",
@@ -56,5 +56,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-06"
+    "lastmod": "2026-11-09"
 }

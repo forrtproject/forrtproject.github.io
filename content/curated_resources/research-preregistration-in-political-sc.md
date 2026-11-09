@@ -11,7 +11,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "This article describes the current debate on the practice of preregistration in political science\u2014that is, publicly releasing a research design before observing outcome data. The case in favor of preregistration maintains that it can restrain four potential causes of publication bias, clearly distinguish deductive and inductive studies, add transparency regarding a researcher\u2019s motivation, and liberate researchers who may be pressured to find specific results. Concerns about preregistration maintain that it is less suitable for the study of historical data, could reduce data exploration, may not allow for contextual problems that emerge in field research, and may increase the difficulty of finding true positive results. This article makes the case that these concerns can be addressed in preregistered studies, and it offers advice to those who would like to pursue study registration in their own work.",
@@ -39,5 +39,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-30"
+    "lastmod": "2026-11-09"
 }

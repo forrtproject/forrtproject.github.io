@@ -13,7 +13,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "The credibility revolution in social science has led to the recommendation and adoption of practices to increase the replicability of scientific findings. Many of the recommended practices, such as replication and preregistration, present unique challenges for aging research given its reliance on long-term longitudinal data. In this tutorial, we propose preregistered coordinated data analysis as a promising approach that involves both replication and preregistration, but that overcomes the aforementioned challenges by using existing data. We discuss the benefits of preregistering coordinated data analysis and provide an add-on template to be used in conjunction with existing preregistration templates for preregistering coordinated data analysis.",
@@ -53,5 +53,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-27"
+    "lastmod": "2026-11-09"
 }

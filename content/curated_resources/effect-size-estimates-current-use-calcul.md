@@ -3,7 +3,9 @@
     "title": "Effect Size Estimates: Current Use, Calculations, and Interpretation",
     "link_to_resource": "https://doi.org/10.1037/a0024338",
     "creators": [
-        "Catherine O. Fritz et al."
+        "Catherine O. Fritz",
+        "Peter E. Morris",
+        "Jennifer J. Richler"
     ],
     "material_type": [
         "Primary Source",
@@ -34,5 +36,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-31"
+    "lastmod": "2026-11-09"
 }

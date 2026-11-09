@@ -3,7 +3,9 @@
     "title": "Overcoming the Knowledge Barrier in Open Science",
     "link_to_resource": "https://osf.io/bk6r7/",
     "creators": [
-        "Mellor et al."
+        "David Thomas Mellor",
+        "Zachary Loomas",
+        "Olivia Miske"
     ],
     "material_type": [
         "Syllabus"
@@ -40,5 +42,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2021-10-14"
+    "lastmod": "2026-11-09"
 }

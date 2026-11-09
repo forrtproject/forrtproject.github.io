@@ -11,7 +11,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "Academic journals have been publishing the results of biomedical research for more than 350 years. Reviewing their history reveals that the ways in which journals vet submissions have changed over time, culminating in the relatively recent appearance of the current peer-review process. Journal brand and Impact Factor have meanwhile become quality proxies that are widely used to filter articles and evaluate scientists in a hypercompetitive prestige economy. The Web created the potential for a more decoupled publishing system in which articles are initially disseminated by preprint servers and then undergo evaluation elsewhere. To build this future, we must first understand the roles journals currently play and consider what types of content screening and review are necessary and for which papers. A new, open ecosystem involving preprint servers, journals, independent content-vetting initiatives, and curation services could provide more multidimensional signals for papers and avoid the current conflation of trust, quality, and impact. Academia should strive to avoid the alternative scenario, however, in which stratified publisher silos lock in submissions and simply perpetuate this conflation.",
@@ -43,5 +43,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-05"
+    "lastmod": "2026-11-09"
 }

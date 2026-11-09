@@ -3,7 +3,21 @@
     "title": "Point of View: How open science helps researchers succeed",
     "link_to_resource": "https://doi.org/10.7554/eLife.16800",
     "creators": [
-        "Erin C McKiernan et al."
+        "Erin C McKiernan",
+        "Philip E Bourne",
+        "C Titus Brown",
+        "Stuart Buck",
+        "Amye Kenall",
+        "Jennifer Lin",
+        "Damon McDougall",
+        "Brian A Nosek",
+        "Karthik Ram",
+        "Courtney K Soderberg",
+        "Jeffrey R Spies",
+        "Kaitlin Thaney",
+        "Andrew Updegrove",
+        "Kara H Woo",
+        "Tal Yarkoni"
     ],
     "material_type": [
         "Primary Source",
@@ -40,5 +54,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-29"
+    "lastmod": "2026-11-09"
 }

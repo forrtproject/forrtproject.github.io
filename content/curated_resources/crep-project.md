@@ -3,7 +3,38 @@
     "title": "CREP project",
     "link_to_resource": "https://osf.io/wfc6u/",
     "creators": [
-        "Jon Grahe et al."
+        "Jon Grahe",
+        "Mark Brandt",
+        "Lili Lazarevic",
+        "Jordan Wagge",
+        "Nicole Legate",
+        "Bradford J. Wiggins",
+        "Cody D. Christopherson",
+        "Yanna Weisberg",
+        "Katherine S. Corker",
+        "Christopher R. Chartier",
+        "Marianne Fallon",
+        "Lea Hildebrandt",
+        "Michelle A Hurst",
+        "Carmel Levitan",
+        "Joseph McFall",
+        "Heidi McLaughlin",
+        "Adam Pazda",
+        "Hans IJzerman",
+        "Brian A. Nosek",
+        "Cong Peng",
+        "Hale Gervais",
+        "Kaylis Hase",
+        "Tayler Peck",
+        "Megan Raddatz",
+        "Tiana Wamba",
+        "Cristina Baciu",
+        "Sara LePine",
+        "Kiersten Baughman",
+        "Allie VanBenschoten",
+        "Michael Andreychik",
+        "Adeyemi Adetula",
+        "Holly France"
     ],
     "material_type": [
         "Primary Source",
@@ -41,5 +72,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-11"
+    "lastmod": "2026-11-09"
 }

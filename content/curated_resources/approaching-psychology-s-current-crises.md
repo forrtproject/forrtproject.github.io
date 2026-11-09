@@ -35,11 +35,11 @@
         "Theoretical and Philosophical Psychology",
         "Methodological Pluralism"
     ],
-    "forrt_clusters_new": "Conceptual and Statistical Knowledge, Replication and meta-research",
-    "forrt_sub_clusters": "Direct vs. conceptual replications, Philosophy of science, Questionable measurement practices (QMPs), validity & reliability issues.",
+    "forrt_clusters_new": "Conceptual and Statistical Knowledge, Replication and meta-research, Replication Crisis and Credibility Revolution",
+    "forrt_sub_clusters": "Direct vs. conceptual replications, Philosophy of science, Questionable measurement practices (QMPs), validity & reliability issues., History of the replication crisis & credibility revolution",
     "doi": "10.1037/amp0001300",
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2024-12-18"
+    "lastmod": "2026-11-09"
 }

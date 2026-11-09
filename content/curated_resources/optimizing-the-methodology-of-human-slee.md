@@ -29,7 +29,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical"
+        "Career / Technical"
     ],
     "abstract": "Understanding the complex relationship between sleep and memory consolidation is a major challenge in cognitive neuroscience and psychology. Many studies suggest that sleep triggers off-line memory processes, resulting in less forgetting of declarative memory and performance stabilization in non-declarative memory. However, the role of sleep in human memory consolidation is still under considerable debate, and numerous contradictory and non-replicable findings have been reported. Methodological issues related to experimental designs, task characteristics and measurements, and data-analysis practices all influence the effects that are observed and their interpretation. In this Perspective, we review methodological issues in sleep and memory studies and suggest constructive solutions to address them. We believe that implementing these solutions in future sleep and memory research will substantially advance the field and improve understanding of the specific role of sleep in memory consolidation.",
     "language": [
@@ -61,5 +61,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-10-29"
+    "lastmod": "2026-11-09"
 }

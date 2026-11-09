@@ -11,7 +11,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "Recent decades have witnessed tremendous progress in artificial intelligence and in the development of autonomous systems that rely on artificial intelligence. Critics, however, have pointed to the difficulty of allocating responsibility for the actions of an autonomous system, especially when the autonomous system causes harm or damage. The highly autonomous behavior of such systems, for which neither the programmer, the manufacturer, nor the operator seems to be responsible, has been suspected to generate responsibility gaps. This has been the cause of much concern. In this article, I propose a more optimistic view on artificial intelligence, raising two challenges for responsibility gap pessimists. First, proponents of responsibility gaps must say more about when responsibility gaps occur. Once we accept a difficult-to-reject plausibility constraint on the emergence of such gaps, it becomes apparent that the situations in which responsibility gaps occur are unclear. Second, assuming that responsibility gaps occur, more must be said about why we should be concerned about such gaps in the first place. I proceed by defusing what I take to be the two most important concerns about responsibility gaps, one relating to the consequences of responsibility gaps and the other relating to violations of jus in bello.",
@@ -54,5 +54,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-04"
+    "lastmod": "2026-11-09"
 }

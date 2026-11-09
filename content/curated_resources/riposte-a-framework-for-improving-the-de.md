@@ -3,7 +3,30 @@
     "title": "RIPOSTE: A Framework for Improving the Design and Analysis of Laboratory-Based Research",
     "link_to_resource": "https://doi.org/10.7554/eLife.05519",
     "creators": [
-        "Masca et al."
+        "Nicholas GD Masca",
+        "Elizabeth MA Hensor",
+        "Victoria R Cornelius",
+        "Francesca M Buffa",
+        "Helen M Marriott",
+        "James M Eales",
+        "Michael P Messenger",
+        "Amy E Anderson",
+        "Chris Boot",
+        "Catey Bunce",
+        "Robert D Goldin",
+        "Jessica Harris",
+        "Rod F Hinchliffe",
+        "Hiba Junaid",
+        "Shaun Kingston",
+        "Carmen Martin-Ruiz",
+        "Christopher P Nelson",
+        "Janet Peacock",
+        "Paul T Seed",
+        "Bethany Shinkins",
+        "Karl J Staples",
+        "Jamie Toombs",
+        "Adam KA Wright",
+        "M Dawn Teare"
     ],
     "material_type": [
         "Primary Source",
@@ -38,5 +61,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-06-08"
+    "lastmod": "2026-11-09"
 }

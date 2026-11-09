@@ -12,7 +12,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "In this commentary on Simmons, Nelson, and Simonsohn (this issue), we examine their rationale for pre-registration within the broader perspective of what good science is. We agree that there is potential benefit in a system of pre-registration if implemented selectively. However, we believe that other tools of open science such as the full sharing of study materials and open access to underlying data, provide most of the same benefits\u2014and more (i.e., the prevention of outright fraud)\u2014without risking the potential adverse consequences of a system of pre-registration. This is why we favor these other means of controlling type I error and fostering transparency. Direct replication, as opposed to conceptual replication, should be encouraged as well.",
@@ -55,5 +55,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-06"
+    "lastmod": "2026-11-09"
 }

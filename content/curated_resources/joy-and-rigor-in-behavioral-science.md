@@ -3,7 +3,9 @@
     "title": "Joy and rigor in behavioral science",
     "link_to_resource": "https://doi.org/10.1016/j.obhdp.2021.03.002",
     "creators": [
-        "Hanne K. Collins et al."
+        "Hanne K. Collins",
+        "Ashley V. Whillans",
+        "Leslie K. John"
     ],
     "material_type": [
         "Reading"
@@ -37,5 +39,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-10-29"
+    "lastmod": "2026-11-09"
 }

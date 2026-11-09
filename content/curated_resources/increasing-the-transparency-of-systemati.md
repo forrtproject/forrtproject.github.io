@@ -27,7 +27,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "This paper presents a generalized registration form for systematic reviews that can be used when currently available forms are not adequate. The form is designed to be applicable across disciplines (i.e., psychology, economics, law, physics, or any other field) and across review types (i.e., scoping review, review of qualitative studies, meta-analysis, or any other type of review). That means that the reviewed records may include research reports as well as archive documents, case law, books, poems, etc. Items were selected and formulated to optimize broad applicability instead of specificity, forgoing some benefits afforded by a tighter focus. This PRISMA 2020 compliant form is a fallback for more specialized forms and can be used if no specialized form or registration platform is available. When accessing this form on the Open Science Framework website, users will therefore first be guided to specialized forms when they exist. In addition to this use case, the form can also serve as a starting point for creating registration forms that cater to specific fields or review types.",
@@ -73,5 +73,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-09-15"
+    "lastmod": "2026-11-09"
 }

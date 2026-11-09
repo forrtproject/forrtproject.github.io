@@ -12,7 +12,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "Science progresses by finding and correcting problems in theories. Good theories are those that help facilitate this process by being hard to vary: They explain what they are supposed to explain, they are consistent with other good theories, and they are not easily adaptable to explain anything. Here we argue that, rather than a lack of distinction between exploratory and confirmatory research, an abundance of flexible theories is a better explanation for the current replicability problems of psychology. We also explain why popular methods-oriented solutions fail to address the real problem of flexibility. Instead, we propose that a greater emphasis on theory criticism by argument might improve replicability.",
@@ -57,5 +57,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-23"
+    "lastmod": "2026-11-09"
 }

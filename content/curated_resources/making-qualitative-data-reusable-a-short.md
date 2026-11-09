@@ -14,7 +14,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "This guidebook aims to give an overview of the challenges associated with making qualitative data reusable as well as providing guidance on how reusability can be improved and addressed at all stages of the research data life cycle.\n\nThe guide includes a decision tree that researchers and data stewards can use to evaluate the options for making qualitative data reusable that are most suited for their projects.",
@@ -46,5 +46,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-10-29"
+    "lastmod": "2026-11-09"
 }

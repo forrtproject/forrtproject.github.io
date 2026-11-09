@@ -12,7 +12,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "This is a commentary on Lee et al.\u2019s (2019) article encouraging preregistration of model development, fitting, and evaluation. While we are in general agreement with Lee et al.\u2019s characterization of the modeling process, we disagree on whether preregistration of this process will move the scientific enterprise forward. We emphasize the subjective and exploratory nature of model development, and point out that \u201cunder-modeling\u201d of data (relying on black-box approaches applied to data without data exploration) is as big a problem as \u201cover-modeling\u201d (fitting noise, resulting in models that generalize poorly). We also note the potential long-run negative impact of preregistration on future generations of cognitive scientists. It is our opinion that preregistration of model development will lead to less, and to less creative, exploratory analysis (i.e., to more under-modeling), and that Lee at al.\u2019s primary goals can be achieved by requiring publication of raw data and code. We conclude our commentary with suggestions on how to move forward.",
@@ -56,5 +56,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-23"
+    "lastmod": "2026-11-09"
 }

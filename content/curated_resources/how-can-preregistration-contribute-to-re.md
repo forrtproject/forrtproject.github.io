@@ -12,7 +12,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "Comprehensive Results in Social Psychology (CRSP) is a novel journal for preregistered research (so-called registered reports, RR) in the field of social psychology. It offers RR-only publications, with the possibility of adding exploratory analysis and data as well. After submission of introduction, hypotheses, methods, procedure, and analysis plan, submitted manuscripts are reviewed prior to data collection. If the peer review process results in a positive evaluation of the manuscript, an initial publication agreement (IPA) is issued upon which publication of the manuscript (given adherence to the registered protocol) independent of the obtained results is possible. CRSP seeks to complement the publication options in our field by making transparent confirmatory and exploratory research possible.",
@@ -41,5 +41,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-27"
+    "lastmod": "2026-11-09"
 }

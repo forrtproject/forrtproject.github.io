@@ -3,7 +3,13 @@
     "title": "Improving the Dependability of Research in Personality and Social Psychology: Recommendations for Research and Educational Practice",
     "link_to_resource": "https://doi.org/10.1177/1088868313507536",
     "creators": [
-        "Funder et al."
+        "David C. Funder",
+        "John M. Levine",
+        "Diane M. Mackie",
+        "Carolyn C. Morf",
+        "Carol Sansone",
+        "Simine Vazire",
+        "Stephen G. West"
     ],
     "material_type": [
         "Primary Source",
@@ -36,5 +42,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-27"
+    "lastmod": "2026-11-09"
 }

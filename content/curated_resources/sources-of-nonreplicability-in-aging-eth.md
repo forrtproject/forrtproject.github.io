@@ -15,7 +15,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "The older adult population in the U.S. is becoming increasingly diverse across a constellation of factors including ethnoracial group, socioeconomic status, and immigration status. However, our understanding of the consequences of this diversity for cognitive and mental health is masked by the lack of inclusion of diverse sample characteristics, the use of assessments that might hold a different meaning for different groups of people, and analytical choices that do not probe the impact of diverse characteristics or assume an unwarranted degree of homogeneity within groups. Each of these factors not only hinders our ability to understand various psychological mechanisms that differ as a function of age but also threatens the likelihood of replicability across aging research studies. This article provides our perspective on three key sources of nonreplicability in ethnoracial health disparities research among older adults: (a) what is lost in creating monolithic groups rather than identifying subgroups of minorities, (b) understanding aging from the perspective of intersecting identities, and (c) biases of research materials. We also provide recommendations to increase replicability in aging research with respect to the challenges outlined. Approaching questions on aging from a health disparities lens can both increase the generalizability of research outcomes and improve initiatives of social justice that are long overdue.",
@@ -49,5 +49,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-10-29"
+    "lastmod": "2026-11-09"
 }

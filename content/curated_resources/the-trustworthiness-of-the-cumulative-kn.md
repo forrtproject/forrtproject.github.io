@@ -13,7 +13,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "The goal of industrial/organizational (IO) psychology, is to build and organize trustworthy knowledge about people-related phenomena in the workplace. Unfortunately, as with other scientific disciplines, our discipline may be experiencing a \u201ccrisis of confidence\u201d stemming from the lack of reproducibility and replicability of many of our field's research findings, which would suggest that much of our research may be untrustworthy. If a scientific discipline's research is deemed untrustworthy, it can have dire consequences, including the withdraw of funding for future research. In this focal article, we review the current state of reproducibility and replicability in IO psychology and related fields. As part of this review, we discuss factors that make it less likely that research findings will be trustworthy, including the prevalence of scientific misconduct, questionable research practices (QRPs), and errors. We then identify some root causes of these issues and provide several potential remedies. In particular, we highlight the need for improved research methods and statistics training as well as a re-alignment of the incentive structure in academia. To accomplish this, we advocate for changes in the reward structure, improvements to the peer review process, and the implementation of open science practices. Overall, addressing the current \u201ccrisis of confidence\u201d in IO psychology requires individual researchers, academic institutions, and publishers to embrace system-wide change.",
@@ -47,5 +47,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-08-28"
+    "lastmod": "2026-11-09"
 }

@@ -11,7 +11,7 @@
     ],
     "education_level": [
         "Graduate / Professional",
-        "Career /Technical"
+        "Career / Technical"
     ],
     "abstract": "10 Things for Curating Reproducible and FAIR Research (CURE-FAIR) provides standards-based guidelines to follow CURE-FAIR best practices with regards to publishing and archiving computationally reproducible studies, including the associated computational methods and materials. The 10 Things are modular (users can select which Thing is relevant to their needs as well as the level of guidance they prefer: 'Get started', 'Learn more', and 'Go deeper') and customizable. While focusing on social science research that relies on quantitative data, it can be adapted for broader use in life sciences and other long tail small scale research relying on data analysis. See also https://curating4reproducibility.org/10things/ ",
     "language": [
@@ -41,5 +41,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-06-27"
+    "lastmod": "2026-11-09"
 }

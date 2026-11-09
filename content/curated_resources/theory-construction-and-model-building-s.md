@@ -12,7 +12,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical"
+        "Career / Technical"
     ],
     "abstract": "Meeting a crucial need for graduate students and newly minted researchers, this innovative text provides hands-on tools for generating ideas and translating them into formal theories. It is illustrated with numerous practical examples drawn from multiple social science disciplines and research settings. The authors offer clear guidance for defining constructs, thinking through relationships and processes that link constructs, and deriving new theoretical models (or building on existing ones) based on those relationships. Step by step, they show readers how to use causal analysis, mathematical modeling, simulations, and grounded and emergent approaches to theory construction. A chapter on writing about theories contains invaluable advice on crafting effective papers and grant applications. ",
     "language": [
@@ -43,5 +43,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-19"
+    "lastmod": "2026-11-09"
 }

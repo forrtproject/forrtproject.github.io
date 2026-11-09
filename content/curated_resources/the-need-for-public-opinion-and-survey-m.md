@@ -13,7 +13,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "Survey researchers take great care to measure respondents\u2019 answers in an unbiased way; but, how successful are we as a field at remedying unintended and intended biases in our research? The validity of inferences drawn from studies has been found to be improved by the implementation of preregistration practices. Despite this, only 3 of the 83 published articles in POQ and IJPOR in 2020 feature explicitly stated preregistered hypotheses or analyses. This manuscript aims to show survey methodologists how preregistration and replication (where possible) are in service to the broader mission of survey methodology. To that end, we present a practical example of how unknown biases in analysis strategies without preregistration or replication inflate type I errors. In an initial data collection, our analysis showed that the visual layout of battery-type questions significantly decreased data quality. But after committing to replicating and preregistering the hypotheses and analysis plans, none of the results replicated successfully, despite keeping the procedure, sample provider, and analyses identical. This manuscript illustrates how preregistration and replication practices might, in the long term, likely help unburden the academic literature from follow-up publications relying on type I errors.",
@@ -43,5 +43,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-30"
+    "lastmod": "2026-11-09"
 }

@@ -3,7 +3,19 @@
     "title": "The Peer Reviewers\u2019 Openness Initiative: incentivizing open research practices through peer review. ",
     "link_to_resource": "https://doi.org/10.1098/rsos.150547",
     "creators": [
-        "Richard Morey et al."
+        "Richard D. Morey",
+        "Christopher D. Chambers",
+        "Peter J. Etchells",
+        "Christine R. Harris",
+        "Rink Hoekstra",
+        "Dani\u00ebl Lakens",
+        "Stephan Lewandowsky",
+        "Candice Coker Morey",
+        "Daniel P. Newman",
+        "Felix D. Sch\u00f6nbrodt",
+        "Wolf Vanpaemel",
+        "Eric-Jan Wagenmakers",
+        "Rolf A. Zwaan"
     ],
     "material_type": [
         "Primary Source",
@@ -38,5 +50,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-06-07"
+    "lastmod": "2026-11-09"
 }

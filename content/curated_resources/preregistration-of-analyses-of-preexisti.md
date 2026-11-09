@@ -12,7 +12,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "The preregistration of a study\u2019s hypotheses, methods, and data-analyses steps is becoming a popular psychological research practice. To date, most of the discussion on study preregistration has focused on the preregistration of studies that include the collection of original data. However, much of the research in psychology relies on the (re-)analysis of preexisting data. Importantly, this type of studies is different from original studies as researchers cannot change major aspects of the study (e.g., experimental manipulations, sample size). Here, we provide arguments as to why it is useful to preregister analyses of preexisting data, discuss practical considerations, consider potential concerns, and introduce a preregistration template tailored for studies focused on the analyses of preexisting data. We argue that the preregistration of hypotheses and data-analyses for analyses of preexisting data is an important step towards more transparent psychological research.",
@@ -54,5 +54,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-27"
+    "lastmod": "2026-11-09"
 }

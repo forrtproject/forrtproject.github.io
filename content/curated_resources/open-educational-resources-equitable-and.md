@@ -12,7 +12,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "This research report describes findings from a study conducted to learn students\u2019 experiences using open educational resources (OER) in an online nursing research course. Twenty-three students participated in a pilot study in which traditional textbooks were replaced with OER as the primary course material. Data were collected by administering open-ended and closed-ended questions about students\u2019 experiences and demographic characteristics. Findings indicated that OER were cost-effective, accessible, easy to navigate, and interesting. The resources were adequate to meet student learning outcomes. Challenges experienced were related to poor Internet access for a few students.",
@@ -44,5 +44,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-10-29"
+    "lastmod": "2026-11-09"
 }

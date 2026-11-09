@@ -21,7 +21,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "In an attempt to increase the reliability of empirical findings, psychological scientists have recently proposed a number of changes in the practice of experimental psychology. Most current reform efforts have focused on the analysis of data and the reporting of findings for empirical studies. However, a large contingent of psychologists build models that explain psychological processes and test psychological theories using formal psychological models. Some, but not all, recommendations borne out of the broader reform movement bear upon the practice of behavioral or cognitive modeling. In this article, we consider which aspects of the current reform movement are relevant to psychological modelers, and we propose a number of techniques and practices aimed at making psychological modeling more transparent, trusted, and robust.",
@@ -63,5 +63,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-10-29"
+    "lastmod": "2026-11-09"
 }

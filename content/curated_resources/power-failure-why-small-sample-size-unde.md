@@ -3,7 +3,13 @@
     "title": "Power failure: why small sample size undermines the reliability of neuroscience",
     "link_to_resource": "https://doi.org/10.1038/nrn3475",
     "creators": [
-        "Katherine Button et al."
+        "Katherine S. Button",
+        "John P. A. Ioannidis",
+        "Claire Mokrysz",
+        "Brian A. Nosek",
+        "Jonathan Flint",
+        "Emma S. J. Robinson",
+        "Marcus R. Munaf\u00f2"
     ],
     "material_type": [
         "Primary Source",
@@ -41,5 +47,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-22"
+    "lastmod": "2026-11-09"
 }

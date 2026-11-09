@@ -10,7 +10,7 @@
     ],
     "education_level": [
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "Several researchers have recently argued that p values lose their meaning in exploratory analyses due to an unknown inflation of the alpha level (e.g., Nosek & Lakens, 2014; Wagenmakers, 2016). For this argument to be tenable, the familywise error rate must be defined in relation to the number of hypotheses that are tested in the same study or article. Under this conceptualization, the familywise error rate is usually unknowable in exploratory analyses because it is usually unclear how many hypotheses have been tested on a spontaneous basis and then omitted from the final research report. In the present article, I argue that it is inappropriate to conceptualize the familywise error rate in relation to the number of hypotheses that are tested. Instead, it is more appropriate to conceptualize familywise error in relation to the number of different tests that are conducted on the same null hypothesis in the same study. Under this conceptualization, alpha-level adjustments in exploratory analyses are (a) less necessary and (b) objectively verifiable. As a result, p values do not lose their meaning in exploratory analyses.",
@@ -53,5 +53,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-10"
+    "lastmod": "2026-11-09"
 }

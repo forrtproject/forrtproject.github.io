@@ -11,7 +11,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "Digital archivists are already experts at tackling the complex challenges of making research data open and accessible. We can help to smooth the transition.",
@@ -56,5 +56,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-12-13"
+    "lastmod": "2026-11-09"
 }

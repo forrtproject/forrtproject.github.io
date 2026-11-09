@@ -11,7 +11,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "These are our recommendations for the papers to cover in the first term of your new \nReproducibiliTea journal club! These ten papers were selected to provide an overview of the reproducibility crisis and introduction to the many aspects of Open Science. They are \nseparated by themes that your journal club may choose to explore in further detail in following meetings! We have also provided a summary, keywords and online resources to help inform your discussions.",
@@ -42,5 +42,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-09-15"
+    "lastmod": "2026-11-09"
 }

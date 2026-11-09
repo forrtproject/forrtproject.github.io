@@ -11,7 +11,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "This article addresses aggregation as a fundamental practice in educational psychology and ties it into the idiographic/nomothetic distinction, that is, distinguishing between studying what once was and studying what always is. I address the underlying assumptions of seminal educational research (OECD\u2019s large-scales assessment and Hattie\u2019s synthesizing meta-analyses). I argue that educational psychologists assume a priori general educational principles akin to nomothetic laws without sufficiently scrutinizing the limitations of aggregation. I then contextualize this assumption within the history of psychology, and address how these assumptions shape how educational psychologists view, collect, and examine data. Furthermore, I contextualize this assumption with an example showing a peculiarity of educational research: the existence of multiple perspectives on constructs. Finally, I argue that investing time and resources in the debate on aggregation and the epistemic nature of the insights that educational psychologists generate will ultimately advance the field and help bridge the theory\u2013practice gap.",
@@ -46,5 +46,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-04"
+    "lastmod": "2026-11-09"
 }

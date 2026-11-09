@@ -12,7 +12,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "Data curators are uniquely positioned to help improve access not just to individual datasets, but to the world of research data at large. As guides to and stewards of data, curators can counsel researchers on how to build accessibility into data planning, collection, analysis, and archiving. This primer is intended as a starting point for data curators who are invested in improving the accessibility of individual files or datasets, rather than as definitive guide. There is far more work to be done than can be addressed in the scope of this primer. Disability is also a complex concept with a diversity of possible presentations, which will present varying (sometimes even conflicting) accessibility needs.",
@@ -55,5 +55,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-09-15"
+    "lastmod": "2026-11-09"
 }

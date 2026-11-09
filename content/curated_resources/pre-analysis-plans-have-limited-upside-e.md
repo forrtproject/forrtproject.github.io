@@ -12,7 +12,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "The social sciences\u2014including economics\u2014have long called for transparency in research to counter threats to producing robust and replicable results. In this paper, we discuss the pros and cons of three of the more prominent proposed approaches: pre-analysis plans, hypothesis registries, and replications. They have been primarily discussed for experimental research, both in the field including randomized control trials and the laboratory, so we focus on these areas. A pre-analysis plan is a credibly fixed plan of how a researcher will collect and analyze data, which is submitted before a project begins. Though pre-analysis plans have been lauded in the popular press and across the social sciences, we will argue that enthusiasm for pre-analysis plans should be tempered for several reasons. Hypothesis registries are a database of all projects attempted; the goal of this promising mechanism is to alleviate the \"file drawer problem,\" which is that statistically significant results are more likely to be published, while other results are consigned to the researcher's \"file drawer.\" Finally, we evaluate the efficacy of replications. We argue that even with modest amounts of researcher bias\u2014either replication attempts bent on proving or disproving the published work, or poor replication attempts\u2014replications correct even the most inaccurate beliefs within three to five replications. We offer practical proposals for how to increase the incentives for researchers to carry out replications.",
@@ -52,5 +52,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-23"
+    "lastmod": "2026-11-09"
 }

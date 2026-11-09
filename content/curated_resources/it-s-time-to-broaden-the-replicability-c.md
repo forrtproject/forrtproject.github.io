@@ -3,7 +3,14 @@
     "title": "It\u2019s Time to Broaden the Replicability Conversation: Thoughts for and From Clinical Psychological Science",
     "link_to_resource": "https://doi.org/10.1177/1745691617690042",
     "creators": [
-        "Jennifer L. Tackett et al."
+        "Jennifer L. Tackett",
+        "Scott O. Lilienfeld",
+        "Christopher J. Patrick",
+        "Sheri L. Johnson",
+        "Robert F. Krueger",
+        "Joshua D. Miller",
+        "Thomas F. Oltmanns",
+        "Patrick E. Shrout"
     ],
     "material_type": [
         "Primary Source",
@@ -39,5 +46,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-06-04"
+    "lastmod": "2026-11-09"
 }

@@ -13,7 +13,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "Experimental preregistration is required for publication in many scientific disciplines and venues. When experimental intentions are preregistered, reviewers and readers can be confident that experimental evidence in support of reported hypotheses is not the result of HARKing, which stands for Hypothesising After the Results are Known. We review the motivation and outcomes of experimental preregistration across a variety of disciplines, as well as previous work commenting on the role of evaluation in HCI research. We then discuss how experimental preregistration could be adapted to the distinctive characteristics of Human-Computer Interaction empirical research, to the betterment of the discipline.",
@@ -43,5 +43,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-27"
+    "lastmod": "2026-11-09"
 }

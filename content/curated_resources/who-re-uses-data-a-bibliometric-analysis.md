@@ -14,7 +14,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "Open data is receiving increased attention and support in academic environments, with one justification being that shared data may be re-used in further research. But what evidence exists for such re-use, and what is the relationship between the producers of shared datasets and researchers who use them? Using a sample of data citations from OpenAlex, this study investigates the relationship between creators and citers of datasets at the individual, institutional, and national levels. We find that the vast majority of datasets have no recorded citations, and that most cited datasets only have a single citation. Rates of self-citation by individuals and institutions tend towards the low end of previous findings and vary widely across disciplines. At the country level, the United States is by far the most prominent exporter of re-used datasets, while importation is more evenly distributed. Understanding where and how the sharing of data between researchers, institutions, and countries takes place is essential to developing open research practices.",
@@ -55,5 +55,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-18"
+    "lastmod": "2026-11-09"
 }

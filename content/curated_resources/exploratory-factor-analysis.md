@@ -12,7 +12,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical"
+        "Career / Technical"
     ],
     "abstract": "This book provides a non-mathematical introduction to the underlying theory of Efa and reviews the key decisions that must be made in its implementation. Among the issues discussed are the use of confirmatory versus exploratory factor analysis, the use of principal components analysis versus common factor analysis, procedures for determining the appropriate number of factors, and methods for rotating factor solutions. Explanations and illustrations of the application of different factor analytic procedures are provided for analyses using common statistical packages (Spss and Sas), as well as a free package available on the web (Comprehensive Exploratory Factor Analysis). In addition, practical instructions are provided for conducting a number of useful factor analytic procedures not included in the statistical packages.",
     "language": [
@@ -42,5 +42,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-19"
+    "lastmod": "2026-11-09"
 }

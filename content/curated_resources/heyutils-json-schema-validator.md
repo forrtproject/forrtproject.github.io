@@ -10,7 +10,7 @@
     ],
     "education_level": [
         "Graduate / Professional",
-        "Career /Technical"
+        "Career / Technical"
     ],
     "abstract": "A free browser-based utility for checking JSON instances against JSON Schema. It supports Draft 7, 2019-09 and 2020-12, imports local reference files, shows validation errors with paths, offers optional format checking and exports a validation report. It can be used in research-data teaching to demonstrate required fields, data types and structural constraints before JSON is reused or shared. Processing occurs in the browser, with no account or installation required. It checks declared structural constraints; it does not establish the scientific accuracy, provenance or completeness of a dataset. Submitted on behalf of HeyUtils for independent consideration.",
     "language": [
@@ -41,5 +41,5 @@
     "in-clusters": "",
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-10-15"
+    "lastmod": "2026-11-09"
 }

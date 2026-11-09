@@ -12,7 +12,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "Economists have recently adopted pre-analysis plans in response to concerns about robustness and transparency in research. The increased use of registered pre-analysis plans has raised competing concerns that detailed plans are costly to create, overly restrictive, and limit the type of inspiration that stems from exploratory analysis. We consider these competing views of pre-analysis plans, and make a careful distinction between the roles of pre-analysis plans and registries, which provide a record of all planned research. We propose a flexible \u201cpackraft\u201d pre-analysis plan approach that offers benefits for a wide variety of experimental and nonexperimental applications in applied economics.",
@@ -44,5 +44,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-30"
+    "lastmod": "2026-11-09"
 }

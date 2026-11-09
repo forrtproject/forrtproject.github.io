@@ -20,7 +20,7 @@
     ],
     "education_level": [
         "College / Upper Division (Undergraduates)",
-        "Career /Technical"
+        "Career / Technical"
     ],
     "abstract": "The biomedical sciences must maintain and enhance a research culture that prioritizes rigour and transparency. The US National Institute of Neurological Disorders and Stroke convened a workshop entitled \u2018Catalyzing Communities of Research Rigor Champions\u2019 that brought together a diverse group of leaders in promoting research rigour and transparency (identified as \u2018rigour champions\u2019) to discuss strategies, barriers and resources for catalyzing technical, cultural and educational changes in the biomedical sciences. This article summarizes 2 days of panels and discussions and provides an overview of critical barriers to research rigour, perspectives behind reform initiatives and considerations for stakeholders across science. Additionally, we describe applications of network science to foster, maintain and expand cultural changes related to scientific rigour and opportunities to embed rigourous practices into didactic courses, training experiences and degree programme requirements. We hope this piece provides a primer for the wider research community on current discussions and actions and inspires individuals to build, join or expand collaborative networks within their own institutions that prioritize rigourous research practices.",
     "language": [
@@ -49,5 +49,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2024-12-19"
+    "lastmod": "2026-11-09"
 }

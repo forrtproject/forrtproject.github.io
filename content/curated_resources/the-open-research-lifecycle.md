@@ -3,7 +3,7 @@
     "title": "The Open Research Lifecycle",
     "link_to_resource": "https://www.youtube.com/watch?v=9YuNGB3vNOw",
     "creators": [
-        ""
+        "Center for Open Science"
     ],
     "material_type": [
         "Lecture"
@@ -45,5 +45,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-01-01"
+    "lastmod": "2026-11-09"
 }

@@ -37,5 +37,6 @@
     "language": "english",
     "aliases": [
         "/glossary/authorship"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

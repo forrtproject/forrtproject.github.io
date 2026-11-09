@@ -12,7 +12,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "Like performance-enhancing drugs inflating apparent athletic achievements, several common social science practices contribute to the production of illusory results. In this article, we examine the processes that lead to illusory findings and describe their consequences. We borrow from an approach used increasingly by other disciplines\u2014the norm of preregistering studies. Specifically, we examine how this practice of publicly posting documentation of one's prespecified hypotheses and other key decisions of a study prior to study implementation or data analysis could improve scientific integrity within education. In an attempt to develop initial guidelines to facilitate preregistrations in education, we discuss the types of studies that ought to be preregistered and the logistics of how educational researchers might execute preregistrations. We conclude with ideas for how researchers, reviewers, and the field of education more broadly might speed the adoption of this new norm.",
@@ -44,5 +44,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-27"
+    "lastmod": "2026-11-09"
 }

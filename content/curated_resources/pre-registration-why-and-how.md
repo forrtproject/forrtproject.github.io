@@ -13,7 +13,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "In this article, we (1) discuss the reasons why pre-registration is a good idea, both for the field and individual researchers, (2) respond to arguments against pre-registration, (3) describe how to best write and review a pre-registration, and (4) comment on pre-registration\u2019s rapidly accelerating popularity. Along the way, we describe the (big) problem that pre-registration can solve (i.e., false positives caused by p-hacking), while also offering viable solutions to the problems that pre-registration cannot solve (e.g., hidden confounds or fraud). Pre-registration does not guarantee that every published finding will be true, but without it you can safely bet that many more will be false. It is time for our field to embrace pre-registration, while taking steps to ensure that it is done right.",
@@ -42,5 +42,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-30"
+    "lastmod": "2026-11-09"
 }

@@ -13,7 +13,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "The Open Lab platform empowers researchers to collect rich datasets by combining lab.js tasks with Open Lab's own study-building logic and participant-management system: lab.js provides the interactive tasks and surveys, while Open Lab adds the study flow and logic that ties them together and the tools to recruit and manage participants. With features like study flow customization, collaboration tools, and end-to-end encryption, Open Lab streamlines the research process while ensuring data security and participant privacy. ",
@@ -43,5 +43,5 @@
     "in-clusters": "",
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-07-22"
+    "lastmod": "2026-11-09"
 }

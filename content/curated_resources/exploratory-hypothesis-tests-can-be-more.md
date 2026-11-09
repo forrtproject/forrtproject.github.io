@@ -12,7 +12,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "Preregistration has been proposed as a useful method for making a publicly verifiable distinction between confirmatory hypothesis tests, which involve planned tests of ante hoc hypotheses, and exploratory hypothesis tests, which involve unplanned tests of post hoc hypotheses. This distinction is thought to be important because it has been proposed that confirmatory hypothesis tests provide more compelling results (less uncertain, less tentative, less open to bias) than exploratory hypothesis tests. In this article, we challenge this proposition and argue that there are several advantages of exploratory hypothesis tests that can make their results more compelling than those of confirmatory hypothesis tests. We also consider some potential disadvantages of exploratory hypothesis tests and conclude that their advantages can outweigh the disadvantages. We conclude that exploratory hypothesis tests avoid researcher commitment and researcher prophecy biases, reduce the probability of data fraud, are more appropriate in the context of unplanned deviations, facilitate inference to the best explanation, and allow peer reviewers to make additional contributions at the data analysis stage. In contrast, confirmatory hypothesis tests may lead to an inappropriate level of confidence in research conclusions, less appropriate analyses in the context of unplanned deviations, and greater bias and errors in theoretical inferences.",
@@ -46,5 +46,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-10-29"
+    "lastmod": "2026-11-09"
 }

@@ -3,7 +3,15 @@
     "title": "Psychological testing and psychological assessment: A review of evidence and issues.",
     "link_to_resource": "https://doi.org/10.1037/0003-066X.56.2.128",
     "creators": [
-        "Meyer et al."
+        "Gregory J. Meyer",
+        "Stephen E. Finn",
+        "Lorraine D. Eyde",
+        "Gary G. Kay",
+        "Kevin L. Moreland",
+        "Robert R. Dies",
+        "Elena J. Eisman",
+        "Tom W. Kubiszyn",
+        "Geoffrey M. Reed"
     ],
     "material_type": [
         "Primary Source",
@@ -33,5 +41,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-22"
+    "lastmod": "2026-11-09"
 }

@@ -3,7 +3,7 @@
     "title": "The Preregistration Challenge: A How To Guide",
     "link_to_resource": "https://www.youtube.com/watch?v=QAr2-3IdG4Q",
     "creators": [
-        ""
+        "Center for Open Science"
     ],
     "material_type": [
         "Lesson"
@@ -45,5 +45,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-01-01"
+    "lastmod": "2026-11-09"
 }

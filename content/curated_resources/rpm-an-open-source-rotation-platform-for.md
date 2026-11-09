@@ -13,7 +13,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "Head fixation allows the recording and presentation of controlled stimuli and is used to study neural processes underlying spatial navigation. However, it disrupts the head direction system because of the lack of vestibular stimulation. To overcome this limitation, we developed a novel rotation platform which can be driven by the experimenter (open-loop) or by animal movement (closed-loop). The platform is modular, affordable, easy to build and open source. Additional modules presented here include cameras for monitoring eye movements, visual virtual reality, and a micro-manipulator for positioning various probes for recording or optical interference. We demonstrate the utility of the platform by recording eye movements and showing the robust activation of head-direction cells. This novel experimental apparatus combines the advantages of head fixation and intact vestibular activity in the horizontal plane. The open-loop mode can be used to study e.g., vestibular sensory representation and processing, while the closed-loop mode allows animals to navigate in rotational space, providing a better substrate for 2-D navigation in virtual environments. The full build documentation is maintained at https://ranczlab.github.io/RPM/.",
@@ -49,5 +49,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-11-06"
+    "lastmod": "2026-11-09"
 }

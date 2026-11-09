@@ -3,7 +3,7 @@
     "title": "Pubcompare : The largest database of trusted experimental protocols",
     "link_to_resource": "https://www.pubcompare.ai/",
     "creators": [
-        "."
+        ""
     ],
     "material_type": [
         "AI-search engine"
@@ -12,7 +12,7 @@
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional"
     ],
-    "abstract": "n.a.",
+    "abstract": "",
     "language": [
         "English"
     ],
@@ -36,5 +36,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2024-12-12"
+    "lastmod": "2026-11-09"
 }

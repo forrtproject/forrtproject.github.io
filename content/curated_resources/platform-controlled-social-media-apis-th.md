@@ -20,7 +20,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "Social media data enable insights into human behaviour. Researchers can access these data via platform-provided application programming interfaces (APIs), but these come with restrictive usage terms that mean studies cannot be reproduced or replicated. Platform-owned APIs hinder access, transparency and scientific knowledge.",
@@ -63,5 +63,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-11-06"
+    "lastmod": "2026-11-09"
 }

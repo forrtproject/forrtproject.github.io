@@ -11,7 +11,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical"
+        "Career / Technical"
     ],
     "abstract": "Millions of research papers at risk of disappearing from the Internet: An analysis of DOIs suggests that digital preservation is not keeping up with burgeoning scholarly knowledge.",
     "language": [
@@ -41,5 +41,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-01-09"
+    "lastmod": "2026-11-09"
 }

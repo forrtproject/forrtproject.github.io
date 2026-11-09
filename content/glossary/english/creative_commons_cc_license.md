@@ -27,5 +27,6 @@
     "language": "english",
     "aliases": [
         "/glossary/creative_commons_cc_license"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

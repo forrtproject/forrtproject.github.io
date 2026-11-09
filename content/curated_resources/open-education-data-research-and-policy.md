@@ -10,7 +10,7 @@
         "Positions"
     ],
     "education_level": [
-        "Career /Technical"
+        "Career / Technical"
     ],
     "abstract": "I\u2019ve started a Google Doc to share open education or social science data, research, evaluation, and policy positions. Feel free to add to it and help keep it updated and growing. Let\u2019s support each other and build this resource together during these difficult times!\nhttps://docs.google.com/spreadsheets/d/1pr93GdCZmEifptRGP0eZnPnk5GkYvtDwUMAEB5bzlQc/edit?pli=1&gid=0#gid=0",
     "language": [
@@ -41,5 +41,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-10-29"
+    "lastmod": "2026-11-09"
 }

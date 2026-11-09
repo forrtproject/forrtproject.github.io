@@ -12,7 +12,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "Research-data availability contributes to the transparency of the research process and the credibility of educational-psychology research and science in general. Recently, there have been many initiatives to increase the availability and quality of research data. Many research institutions have adopted research-data policies. This increased awareness might have raised the sharing of research data in empirical articles. To test this idea, we coded 1,242 publications from six educational-psychology journals and the psychological journal Cognition (as a baseline) published in 2018 and 2020. Research-data availability was low (3.85% compared with 62.74% in Cognition) but has increased from 0.32% (2018) to 7.16% (2020). However, neither the data-transparency level of the journal nor the existence of an official research-data policy on the level of the corresponding author\u2019s institution was related to research-data availability. We discuss the consequences of these findings for institutional research-data-management processes.",
@@ -46,5 +46,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-04"
+    "lastmod": "2026-11-09"
 }

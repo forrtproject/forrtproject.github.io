@@ -12,7 +12,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "We describe what is a pre-analysis plan (PAP) and why you should use one. We emphasize the potential political uses of PAPs and, in particular, how the PAP is in this respect a uniquely powerful tool for increasing the likelihood that evidence informs policy-making.",
@@ -43,5 +43,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-09-15"
+    "lastmod": "2026-11-09"
 }

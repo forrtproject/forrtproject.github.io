@@ -13,7 +13,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical"
+        "Career / Technical"
     ],
     "abstract": "Today, we are releasing DataCite\u2019s first public data file with metadata for over 52 million DOIs. ",
     "language": [
@@ -46,5 +46,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-01-12"
+    "lastmod": "2026-11-09"
 }

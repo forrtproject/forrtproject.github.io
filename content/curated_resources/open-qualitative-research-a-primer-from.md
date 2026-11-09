@@ -13,7 +13,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "The UNESCO Recommendations for Open Science define it as an inclusive framework that integrates movements and practices aimed at making multilingual scientific knowledge openly accessible, reusable, and collaborative for the benefit of science and society. This approach emphasizes transparency, collaboration, rigor, and accessibility, principles that align closely with qualitative research methodologies. In the health and social sciences, qualitative methods explore the meanings, experiences, and perspectives of individuals and groups. Open qualitative research encompasses diverse practices, including transparency in design and analysis, enabling meaningful scrutiny, and fostering collaboration through stakeholder engagement and co-production. The application of openness in qualitative research varies based on the context and specific project needs.",
@@ -49,5 +49,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-09-15"
+    "lastmod": "2026-11-09"
 }

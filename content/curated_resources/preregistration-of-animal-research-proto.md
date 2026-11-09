@@ -17,7 +17,7 @@
     "education_level": [
         "College / Upper Division (Undergraduates)",
         "Graduate / Professional",
-        "Career /Technical",
+        "Career / Technical",
         "Adult Education"
     ],
     "abstract": "Open, prospective registration of a study protocol can improve research rigour in a number of ways. Through preregistration, key features of the study\u2019s methodology are recorded and maintained as a permanent record, enabling comparison of the completed study with what was planned. By recording the study hypothesis and planned outcomes a priori, preregistration creates transparency and can reduce the risk of several common biases, such as hypothesising after results are known and outcome switching or selective outcome reporting. Second, preregistration raises awareness of measures to reduce bias, such as randomisation and blinding. Third, preregistration provides a comprehensive listing of planned studies, which can prevent unnecessary duplication and reduce publication bias. Although commonly acknowledged and applied in clinical research since 2000, preregistration of animal studies is not yet the norm. In 2018 we launched the first dedicated, open, online register for animal study protocols: www.preclinicaltrials.eu. Here, we provide insight in the development of preclinicaltrials.eu (PCT) and evaluate its use during the first 3 years after its launch. Furthermore, we elaborate on ongoing developments such as the rise of comparable registries, increasing support for preregistration in the Netherlands\u2014which led to the funding of PCT by the Dutch government\u2014and pilots of mandatory preregistration by several funding bodies. We show the international coverage of currently registered protocols but with the overall low number of (pre)registered protocols.",
@@ -45,5 +45,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2023-10-27"
+    "lastmod": "2026-11-09"
 }
