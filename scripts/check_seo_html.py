@@ -251,8 +251,9 @@ def check_glossary_links(pages):
     return failures
 
 
-# Paired asterisks around text: Markdown emphasis shown as typed. A lone one ("G*Power") is fine.
-LITERAL_EMPHASIS = re.compile(r"\*[^*\s][^*]*\*")
+# Paired asterisks around text: Markdown emphasis shown as typed. Asterisks inside a word
+# ("G*Power", "P*Hack") are not delimiters.
+LITERAL_EMPHASIS = re.compile(r"(?<!\w)\*[^*\s](?:[^*]*[^*\s])?\*(?!\w)")
 
 
 def check_glossary_title_markdown(pages):

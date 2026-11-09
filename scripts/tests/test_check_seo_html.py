@@ -201,10 +201,12 @@ class GlossaryTitleMarkdownCheck(unittest.TestCase):
         self.assertEqual(self.check("Research Contribution Metric (p) | FORRT",
                                     "Research Contribution Metric (<em>p</em>)"), [])
         self.assertEqual(self.check("G*Power | FORRT", "G*Power"), [])
+        self.assertEqual(self.check("G*Power and P*Hack | FORRT", "G*Power and P*Hack"), [])
 
     def test_literal_emphasis_fails_on_glossary_pages_only(self):
         self.assertEqual(len(self.check("Research Contribution Metric (*p*) | FORRT", "x")), 1)
         self.assertEqual(len(self.check("x", "Research Contribution Metric (*p*)")), 1)
+        self.assertEqual(len(self.check("x", "*p*-value")), 1)
         self.assertEqual(self.check("x", "*p*", path="post/x/index.html"), [])
 
 
