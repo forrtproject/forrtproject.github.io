@@ -34,5 +34,8 @@
         "Helena Hartmann",
         "Jennifer Mattschey"
     ],
+    "aliases": [
+        "/glossary/german/statistical_statistisches_modell"
+    ],
     "lastmod": "2026-11-09"
 }
