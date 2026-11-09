@@ -4,9 +4,12 @@
 {{ range where site.RegularPages "Section" "glossary" }}
   {{ if hasPrefix .File.Dir "glossary/english/" }}
     {{ $definition := .Params.definition | default "" | markdownify | plainify | htmlUnescape }}
-    {{ $definition = replaceRE `\s+` " " $definition | strings.TrimSpace }}
+    {{/* Drop unbalanced bold markers that markdownify leaves behind, and hide the full stop
+         in common abbreviations so "(e.g." or "et al." does not end the summary. */}}
+    {{ $definition = replace $definition "**" "" | replaceRE `\s+` " " | strings.TrimSpace }}
+    {{ $definition = replaceRE `(?i)\b(e\.g|i\.e|et al|cf|vs|etc|ca|approx)\.` "${1}\uE000" $definition }}
     {{ $sentences := findRE `(?s).+?(?:[.!?]["’”)]*(?:\s+|$)|$)` $definition 2 }}
-    {{ $summary := delimit $sentences "" | strings.TrimSpace }}
+    {{ $summary := replace (delimit $sentences "") "\uE000" "." | strings.TrimSpace }}
     {{ if gt (strings.RuneCount $summary) 300 }}
       {{ $summary = printf "%s…" (substr $summary 0 299 | replaceRE `\s+\S*$` "" | strings.TrimSpace) }}
     {{ end }}

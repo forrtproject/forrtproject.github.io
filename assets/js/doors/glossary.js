@@ -41,7 +41,7 @@ async function show(trigger, mode, data = loadIndex()) {
     const term = terms[trigger.dataset.term];
     if (!term) return;
     const content = document.createElement('div');
-    const title = document.createElement('h2');
+    const title = document.createElement('p');
     title.className = 'gloss-popover-title';
     title.textContent = term.title;
     const summary = document.createElement('div');
