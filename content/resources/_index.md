@@ -59,7 +59,7 @@ clusters = [
   values = ["podcast", "podcast and transcript", "podcast episodes"]
 [[type_groups]]
   label = "Activity"
-  values = ["activity/lab", "homework/assignment", "asssessment", "case study", "game", "workshop", "workshop guide"]
+  values = ["activity/lab", "homework/assignment", "assessment", "case study", "game", "workshop", "workshop guide"]
 [[type_groups]]
   label = "Interactive"
   values = ["interactive", "simulation"]
