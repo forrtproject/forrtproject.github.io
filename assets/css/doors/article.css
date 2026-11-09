@@ -25,11 +25,11 @@
 .article-layout .article-style{font-size:18px;line-height:1.6;color:var(--ink);text-align:start;overflow-wrap:break-word}
 .article-layout .article-style p,.article-layout .article-style li{font-size:inherit;line-height:inherit}
 /* Wide pages keep the reading width for their prose, and give the rest of the page to tables and charts. */
-.article-layout-wide .article-style p,.article-layout-wide .article-style li{max-width:560px}
-.article-layout .article-style p{margin:0 0 16px;max-width:560px}
-/* About 70 characters a line at 18px. The column is wider so pictures, tables and embeds get the room. */
-.article-layout .article-style :is(ul,ol){max-width:560px}
-.article-layout .article-style p:has(>img:only-child){max-width:none}
+.article-layout-wide .article-style p,.article-layout-wide .article-style li{max-width:29em}
+.article-layout .article-style p{margin:0 0 16px;max-width:28.4em}
+/* Under 80 characters a line (checked by check_design.py). The column is wider so pictures, tables and
+   embeds get the room; plain lists and reference lists keep to the text's measure plus their indent. */
+.article-layout:not(.article-layout-wide) .article-style :is(ul:not([class]),ol:not([class]),.references-list){max-width:29.8em}
 /* Old pages put <br> on its own line between blocks to add space under the previous theme. Between
    blocks it only opens a gap (up to 1,600px on a page), so drop it. A <br> inside a paragraph, or one that
    clears floats (Awards), is untouched. */
@@ -84,9 +84,9 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
    pair is centred, so spare width goes to the outer margins. It may come after the text in the page;
    the grid places it all the same. */
 @media(min-width:1001px){
-  .article-layout:not(.article-layout-wide){grid-template-columns:220px minmax(0,640px);column-gap:48px}
-  .article-layout.article-layout-single:not(.article-layout-wide){grid-template-columns:minmax(0,640px)}
-  .article-layout:not(.article-layout-wide):not(.article-layout-single)>.reading{grid-column:2;grid-row:1}
+  .article-layout:not(.article-layout-wide){grid-template-columns:minmax(0,640px)}
+  .article-layout:not(.article-layout-wide):has(>.article-card){grid-template-columns:220px minmax(0,640px);column-gap:48px}
+  .article-layout:not(.article-layout-wide):has(>.article-card)>.reading{grid-column:2;grid-row:1}
   .article-layout:not(.article-layout-wide)>.article-card{grid-column:1;grid-row:1;box-sizing:border-box;width:220px;padding:18px}
 }
 @media(max-width:1000px){
@@ -108,7 +108,8 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .article-layout .article-style .callout>:last-child{margin-bottom:0}
 .article-layout .article-style .callout-title{font:500 21px/1.2 var(--display)}
 @media(min-width:1240px){
-  .article-layout.article-layout-callouts{grid-template-columns:220px minmax(0,600px) 260px;column-gap:40px}
+  .article-layout.article-layout-callouts{grid-template-columns:minmax(0,600px) 260px;column-gap:40px}
+  .article-layout.article-layout-callouts:has(>.article-card){grid-template-columns:220px minmax(0,600px) 260px}
   .article-layout-callouts .callout{float:right;float:inline-end;clear:right;clear:inline-end;width:260px;margin:4px -300px 18px 0;margin-inline:0 -300px}
   .article-layout-callouts .doc-section-tinted .callout{margin-inline-end:-324px}
 }
