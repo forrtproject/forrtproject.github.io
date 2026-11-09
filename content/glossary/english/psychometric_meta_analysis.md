@@ -32,5 +32,6 @@
     "language": "english",
     "aliases": [
         "/glossary/psychometric_meta_analysis"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

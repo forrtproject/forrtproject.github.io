@@ -35,5 +35,6 @@
     ],
     "translation_reviewed_by": [
         "Nihan Selin Soylu-Konak"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

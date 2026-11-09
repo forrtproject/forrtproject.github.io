@@ -30,5 +30,6 @@
     "language": "english",
     "aliases": [
         "/glossary/single_blind_peer_review"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

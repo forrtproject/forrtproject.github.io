@@ -38,5 +38,6 @@
     "language": "english",
     "aliases": [
         "/glossary/replicability"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

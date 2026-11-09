@@ -54,5 +54,6 @@
         "Helena Hartmann",
         "Susanne Vogel",
         "Joris Frese"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

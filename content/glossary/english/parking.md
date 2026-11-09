@@ -29,5 +29,6 @@
     "language": "english",
     "aliases": [
         "/glossary/parking"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

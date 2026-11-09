@@ -31,5 +31,6 @@
     "language": "english",
     "aliases": [
         "/glossary/auxiliary_hypothesis"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

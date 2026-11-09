@@ -27,11 +27,12 @@
     ],
     "language": "arabic",
     "translated_by": [
-        "Mai Helmy."
+        "Mai Helmy"
     ],
     "translation_reviewed_by": [
         "Alaa M. Saleh",
         "Ali H. Al-Hoorie",
         "Mohammed Mohsen"
-    ]
+    ],
+    "lastmod": "2026-11-08"
 }

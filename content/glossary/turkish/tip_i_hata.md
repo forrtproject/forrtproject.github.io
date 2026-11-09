@@ -8,7 +8,7 @@
         "Frequentist statistics",
         "Null Hypothesis Significance Testing (NHST)",
         "Null Result",
-        "*P* value",
+        "p-value",
         "Questionable Research Practices or Questionable Reporting Practices (QRPs)",
         "Reproducibility crisis (aka Replicability or replication crisis)",
         "Scientific integrity",
@@ -42,5 +42,6 @@
     ],
     "translation_reviewed_by": [
         "Neslihan Özhan"
-    ]
+    ],
+    "lastmod": "2026-11-08"
 }

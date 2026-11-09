@@ -33,5 +33,6 @@
     "language": "english",
     "aliases": [
         "/glossary/center_for_open_science_cos_"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

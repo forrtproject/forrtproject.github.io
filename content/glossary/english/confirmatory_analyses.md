@@ -33,5 +33,6 @@
     "language": "english",
     "aliases": [
         "/glossary/confirmatory_analyses"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }
