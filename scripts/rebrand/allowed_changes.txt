@@ -35,7 +35,8 @@ data/glossary-terms.*.json  # Build-time English glossary lookup, fetched on fir
 # Content-review changes made on rebrand-doors only. Each entry exempts all of that page's SEO tags: remove it once main has the change (at the latest at launch).
 about/index.html           # Content review (ha-about-redirect-text): /about/ is now an alias redirect to /about/us/, not a list page
 about/index.xml            # The same: the unrendered About section has no feed
-about/page/*/index.html    # The same: the About list page and its pager are gone
+about/page/1/index.html    # The same: the About list page and its pager are gone
+about/page/2/index.html    # The same
 equityinos/index.html      # Content review (init-eq-04): title is now "Equity in Open Scholarship"
 impact/index.html          # Content review (nexus-impact-recently): description no longer opens with "Recently"
 mapping_os/index.html      # Content review (init-mo-03): description uses the name "Mapping Open Science Communities"
