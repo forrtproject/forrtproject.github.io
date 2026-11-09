@@ -15,6 +15,7 @@ from generated_lastmod import load_previous, resolve_lastmod, git_commit_dates
 language_map = {
     'EN': 'english',
     'AR': 'arabic',
+    'BG': 'bulgarian',
     'CN': 'chinese',
     'DE': 'german',
     'TR': 'turkish',
@@ -197,11 +198,23 @@ def clean_filename(title, max_length=200):
     # Truncate to avoid filesystem limits
     if len(file_name) > max_length:
         file_name = file_name[:max_length].rstrip("_")
+    # Filesystem limits count UTF-8 bytes; long Cyrillic titles use two bytes
+    # per character. Leave room for the .md suffix.
+    while len(file_name.encode('utf-8')) > 240:
+        file_name = file_name[:-1]
+    file_name = file_name.rstrip('_')
     return file_name
 
 # Process languages
 formatted_data = {}
 languages_to_process = [lang for lang in languages if lang in language_map]
+# Allow a new translation to be released without regenerating other languages.
+requested_languages = os.getenv('GLOSSARY_LANGUAGES', '').upper().split()
+if requested_languages:
+    unknown = set(requested_languages) - set(languages_to_process)
+    if unknown:
+        raise ValueError(f'Unknown or unavailable glossary languages: {sorted(unknown)}')
+    languages_to_process = [lang for lang in languages_to_process if lang in requested_languages]
 missing_refs = set()  # Track missing references
 
 for language_code in languages_to_process:
@@ -210,7 +223,7 @@ for language_code in languages_to_process:
     language_name = language_map.get(language_code, language_code.lower())
     
     # Get relevant columns
-    language_columns = [col for col in df.columns if col.startswith(f'{language_code}_') and '_hide' not in col]
+    language_columns = [col for col in df.columns if col.startswith(f'{language_code}_')]
     common_columns = [
         'Related_terms', 
         'Reference', 
@@ -226,6 +239,15 @@ for language_code in languages_to_process:
     for _, row in language_df.iterrows():
         en_title = safe_get(row, "EN_title")
         if not en_title:  # Skip empty titles
+            continue
+
+        # Bulgarian entries without the translators' publishing approval stay
+        # in the master sheet with BG_hide set until that approval is recorded.
+        if language_code == 'BG' and safe_get(row, 'BG_hide').lower() == 'true':
+            continue
+
+        definition = safe_get(row, f"{language_code}_definition" if language_code == "EN" else f"{language_code}_def")
+        if not definition:
             continue
 
         # Generate title based on language
@@ -247,14 +269,16 @@ for language_code in languages_to_process:
         # Process references: always combine the generic shared column with any
         # language-specific column (e.g. AR_refs, CN_refs), generic first. Both use
         # the same [@citekey] format resolved via apa_lookup; dedupe across them.
-        processed_references = process_references(safe_get(row, "Reference"), apa_lookup, missing_refs, context=f"{title} (Reference)")
-        lang_refs = process_references(safe_get(row, f"{language_code}_refs"), apa_lookup, missing_refs, context=f"{title} ({language_code}_refs)")
-        processed_references = list(dict.fromkeys(processed_references + lang_refs))
+        # The Bulgarian source supplies author/year notes, not citekeys. Keep
+        # those notes verbatim rather than silently dropping or rewriting them.
+        if language_code == 'BG' and safe_get(row, 'BG_refs'):
+            processed_references = [fix_bare_urls_in_parens(safe_get(row, 'BG_refs'))]
+        else:
+            processed_references = process_references(safe_get(row, "Reference"), apa_lookup, missing_refs, context=f"{title} (Reference)")
+            lang_refs = process_references(safe_get(row, f"{language_code}_refs"), apa_lookup, missing_refs, context=f"{title} ({language_code}_refs)")
+            processed_references = list(dict.fromkeys(processed_references + lang_refs))
 
         # Build entry
-        definition = safe_get(row, f"{language_code}_definition" if language_code == "EN" else f"{language_code}_def")
-        if not definition:
-            continue
         definition = fix_bare_urls_in_parens(definition)
 
         entry = {
@@ -275,6 +299,14 @@ for language_code in languages_to_process:
             "alt_related_terms": [None],
             "language": language_name
         }
+
+        # Preserve the translators' related-term wording and punctuation. Some
+        # lists mix English and Bulgarian, so splitting on commas is unsafe.
+        if language_code == 'BG':
+            entry['related_terms'] = []
+            related_text = safe_get(row, 'BG_rel')
+            if related_text:
+                entry['related_terms_text'] = related_text
 
         # Add translation credits for non-English entries
         if language_code != 'EN':
@@ -342,6 +374,13 @@ print("Markdown files successfully generated.")
 # Save combined JSON
 merged_data = [{language: entries} for language, entries in formatted_data.items()]
 output_file = os.path.join(script_dir, '_glossaries.json')
+if requested_languages:
+    with open(output_file, encoding='utf-8') as f:
+        previous_data = json.load(f)
+    replaced = set(formatted_data)
+    merged_data = [item for item in previous_data if not replaced.intersection(item)] + merged_data
+    language_codes = {name: code for code, name in language_map.items()}
+    merged_data.sort(key=lambda item: language_codes[next(iter(item))])
 with open(output_file, 'w') as outfile:
     json.dump(merged_data, outfile, ensure_ascii=False, indent=4)
 

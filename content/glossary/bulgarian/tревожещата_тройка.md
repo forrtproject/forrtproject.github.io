@@ -1,0 +1,32 @@
+{
+    "type": "glossary",
+    "en_title": "The Troubling Trio",
+    "title": "Tревожещата тройка [The Troubling Trio]",
+    "sort_key": "tревожещата тройка [the troubling trio]",
+    "definition": "Описана като комбинация от ниска статистическа мощност, неочакван резултат и р-стойност, която е съвсем малко по-ниска от 0.05.",
+    "related_terms": [],
+    "references": [
+        "Lindsay (2015)"
+    ],
+    "drafted_by": [
+        "Halil Emre Kocalar"
+    ],
+    "reviewed_by": [
+        "",
+        "Catia M. Oliveira",
+        "Adam Parker",
+        "Sam Parsons;Charlotte R. Pennington"
+    ],
+    "alt_related_terms": [
+        null
+    ],
+    "language": "bulgarian",
+    "related_terms_text": "тестване на нулева хипотеза (NHST), P-hacking, Questionable Research Practices or Questionable Reporting Practices (QRPs), репликация; възпроизводимост",
+    "translated_by": [
+        "Мария Доковова"
+    ],
+    "translation_reviewed_by": [
+        "Златомира Илчовска"
+    ],
+    "lastmod": "2026-11-09"
+}
