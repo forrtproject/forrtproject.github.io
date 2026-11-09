@@ -16,6 +16,7 @@ Please follow the [FORRT Code of Conduct](https://forrt.org/coc/) in issues, rev
 
 - [Questions, Ideas & Suggestions](#questions-ideas--suggestions)
 - [Edit content in your browser](#edit-content-in-your-browser)
+  - [Linking glossary terms](#linking-glossary-terms)
 - [Local Development Setup](#local-development-setup)
   - [Standard Setup](#standard-setup-git--hugo)
   - [RStudio Setup](#rstudio-setup)
@@ -49,6 +50,10 @@ You do not need to install Git or Hugo to fix text or a broken link. Find the re
 Preserve the YAML/TOML front matter at the top of the file and existing Hugo shortcodes. Describe the affected page and link to it in your PR. Generated paths include `content/curated_resources/` (except `_index.md`), `content/glossary/`, `content/contributors/tenzing.md`, `content/contributor-analysis/`, `content/publications/citation_chart.webp`, announcement bundles in `content/post/`, the citation block between `<!-- flora-citation-start -->` and `<!-- flora-citation-end -->` in `content/replication-hub/flora/_index.md`, `static/data/fred_citation.txt`, and generated files in `data/`. The remaining prose on the FLoRA page is hand-maintained. The manually maintained `data/publications.yaml` is editable; follow the [publication instructions](content/publications/README). Generated content is refreshed during deployment. Use the source submission form/sheet linked from the public page or open an issue rather than editing the generated output. Local previews use committed copies and can differ from production. For layout or code changes, use the local setup below.
 
 To set a short note beside the text, put `{{% callout title="A title" %}}Your note{{% /callout %}}` just before the paragraph it goes with. On articles and most other text pages it sits in the right-hand column on wide screens, and in the text on phones and on pages set to full width. `title` is optional, and `tone="example"` or `tone="warning"` changes its colour. Keep it short: a long note runs on past the text it goes with.
+
+### Linking glossary terms
+
+On hand-written pages, use `{{< term "Preregistration" >}}` to link an English glossary term. To match an existing inflection, use `{{< term "Preregistration" "preregistered" >}}`. Preserve the author's exact wording and spelling; add markup only, and skip an occurrence if it cannot be marked without changing the text. Titles are matched without regard to case. Mark only the first occurrence of each term on a page, and keep existing resource links intact. Hover, keyboard focus, or a first touch tap shows a short definition; the popover links to the full entry. A repeat tap on the open trigger, mouse clicks, and Enter follow the term link, which also works without JavaScript. Unknown terms render as plain text and produce a Hugo build warning; check the [English glossary](https://forrt.org/glossary/english/) for the exact title. Do not add these shortcodes to generated content.
 
 ## Local Development Setup
 

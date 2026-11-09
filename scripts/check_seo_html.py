@@ -36,6 +36,7 @@ Hard checks (exit 1 if any fails):
   14. No page inlines more than 200 KB in one <script> (#993). Large data belongs in a
      separate file the page fetches when it needs it.
   15. Every citation links to its reference on the same page (#200).
+  16. Every glossary term link points to an existing English glossary page (#227).
 
 Report-only sections (never fail): pages with no <h1>, the
 site-wide share of images that carry both width and height, pages whose
@@ -51,7 +52,7 @@ import sys
 from collections import Counter
 from html.entities import html5
 from html.parser import HTMLParser
-from urllib.parse import unquote, urlparse
+from urllib.parse import unquote, urljoin, urlparse
 
 MAX_LISTED = 20
 MAX_INLINE_SCRIPT = 200_000  # bytes in one inline <script> (#993)
@@ -81,6 +82,7 @@ class PageParser(HTMLParser):
         self.resource_links = []
         self._in_title = False
         self._in_resource_heading = False
+        self.gloss_terms = []
         self._jsonld_buffer = None
         self.largest_inline_script = 0
         self._inline_script = None
@@ -113,6 +115,8 @@ class PageParser(HTMLParser):
                 self.urls.append(url)
         elif tag == "img":
             self.imgs.append(attrs)
+        elif tag == "a" and "gloss-term" in (attrs.get("class") or "").split():
+            self.gloss_terms.append(attrs.get("href") or "")
         elif tag == "meta":
             self.metas.append(attrs)
             key = attrs.get("property") or attrs.get("name")
@@ -189,6 +193,7 @@ class Page:
         self.largest_inline_script = parser.largest_inline_script
         self.ids = parser.ids
         self.citations = parser.citations
+        self.gloss_terms = parser.gloss_terms
 
     def loads(self, needle):
         return any(needle in url for url in self.urls)
@@ -226,6 +231,24 @@ def load_pages(public_dir):
             pages.append(Page(os.path.relpath(full, public_dir), parser))
     pages.sort(key=lambda page: page.path)
     return pages
+
+
+def check_glossary_links(pages):
+    # Canonical URLs include a preview subfolder when built with --baseURL.
+    english = set()
+    for page in pages:
+        path = page.path.replace(os.sep, "/")
+        if path.startswith("glossary/english/") and path != "glossary/english/index.html":
+            url = urlparse(page.canonical or "/" + path.removesuffix("index.html"))
+            english.add((url.netloc, unquote(url.path)))
+    failures = []
+    for page in pages:
+        path = page.path.replace(os.sep, "/")
+        for href in page.gloss_terms:
+            url = urlparse(urljoin(page.canonical or "/" + path, href))
+            if not href or url.scheme not in ("", "http", "https") or (url.netloc, unquote(url.path)) not in english:
+                failures.append("%s (%s)" % (page.path, href or "missing href"))
+    return failures
 
 
 def check_no_search_heading(pages):
@@ -540,6 +563,7 @@ def main(public_dir):
         "13. compatible social images have type, dimensions and matching URLs": check_share_image_metadata(pages),
         "14. no inline <script> over 200 KB": check_inline_scripts(pages),
         "15. every citation has a local reference target": check_citation_targets(pages),
+        "16. glossary links reach existing English terms": check_glossary_links(pages),
     }
     conditional = check_conditional_assets(pages)
     results["3. conditional highlight.js / mermaid loading"] = [
