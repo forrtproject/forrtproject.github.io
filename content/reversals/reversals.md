@@ -65,7 +65,7 @@ Replications of previous scientific work are at the core of the Open Scholarship
 
 Data for this project were crowdsourced and not yet consistently validated. Researchers who contributed to this project did so voluntarily and are listed at <a href="http://forrt.org/contributors">forrt.org/contributors</a>. This page can give a good orientation regarding the state of evidence regarding various claims, but you should check specific claims before you rely on them.
 
-Please report errors you spot <a href="https://github.com/forrtproject/forrtproject.github.io/issues/612">here</a>. If you need validated data on replications, we would encourage you to use the FORRT Replication Database (<a href="https://forrt.org/explorer">FReD</a>, with effect sizes) or the more comprehensive FORRT Library of Replication Attempts (<a href="https://forrt.org/annotator">FLoRA</a>).
+Please report errors you spot <a href="https://github.com/forrtproject/forrtproject.github.io/issues/612">here</a>. If you need validated data on replications, we would encourage you to use the FORRT Replication Database (<a href="https://forrt.org/explorer">FReD</a>, with effect sizes) or the more comprehensive FORRT Library of Reproduction and Replication Attempts (<a href="https://forrt.org/annotator">FLoRA</a>).
 
 Please cite this source as Hartmann H, Azevedo F, Röseler L, Wallrich L, Aldoh A, Elsherif MM, et al. Tracking and mainstreaming replications in the social, cognitive, and behavioral sciences. MetaArXiv. https://doi.org/10.31222/osf.io/ad2w6_v1
 
@@ -128,7 +128,7 @@ The original project was organized in five stages:
 
 ## **How to contribute?**
 
-This specific reversals project has concluded, and its work has been integrated into the broader [FORRT Replication Hub](https://forrt.org/replication-hub/). To contribute replication data, please submit new entries to the [FORRT Replication Database (FReD)](/explorer/) or contact Lukas Röseler at lukas.roeseler@uni-muenster.de for any questions.
+This specific reversals project has concluded, and its work has been integrated into the broader [FORRT Replication Hub](https://forrt.org/replication-hub/). To contribute replication data, please submit new entries through the [Replication Hub](/replication-hub/submit/) or contact Lukas Röseler at lukas.roeseler@uni-muenster.de for any questions.
 
 All **past or current project contributors** are listed at the [bottom of this page](#contributors).
 

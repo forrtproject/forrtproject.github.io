@@ -74,4 +74,4 @@ Disseminate the program, elicit user feedback and engage in sustainable revision
 
 <strong>Development teams</strong>: Educators interested in actively helping to develop the modules of the self-guided course (~2-3 per module). Contributors will be included in the self-guided course in line with CRediT taxonomy. 
 
-The spots for these roles are limited and members will be selected by the core team. For more information, feel free to reach out to Team Curriculum (Leticia Micheli, Madeleine Pownall, Helena Hartmann, Thomas Rhys Evans, Karen Matvienko-Sikar & Flavio Azevedo).
+Recruitment for these roles has closed. For more information, feel free to reach out to Team Curriculum (Leticia Micheli, Madeleine Pownall, Helena Hartmann, Thomas Rhys Evans, Karen Matvienko-Sikar & Flavio Azevedo).

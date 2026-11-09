@@ -4,7 +4,7 @@
 title: "Accessible Feedback in Research"
 subtitle: "Can you help us transform research with more inclusive feedback practices?"
 summary: "Systemic underrepresentation of marginalised groups plagues academia, with existing feedback mechanisms often reinforcing these disparities. Our Leverhulme Trust-funded project aims to tackle this issue by mapping out inclusive feedback opportunities at each stage of the research cycle. Partnering with FORRT, we hope to evaluate the emerging opportunities for feedback, including those driven by the open scholarship movement, and create a community-maintained e-book to help researchers identify opportunities to receive better feedback."
-authors: ['Dr Thomas Evans, Roksana Sobolak, Magda Skubera, FORRT']
+authors: ['Thomas Rhys Evans', 'Roksana Sobolak', 'Magda Skubera', 'FORRT']
 tags: []
 categories: []
 date: 2024-09-03T15:30:59-04:00
@@ -64,7 +64,7 @@ Want to get started? The easiest first step is to take part in our survey: [Onli
 
 ### Contact information:
 
-Project Lead: Dr Thomas Evans, thomas.evans@greenwich.ac.uk 
+Project Lead: Dr Thomas Rhys Evans, thomas.evans@greenwich.ac.uk 
 
 Research Fellow: Roksana Sobolak, r.a.sobolak@greenwich.ac.uk 
 

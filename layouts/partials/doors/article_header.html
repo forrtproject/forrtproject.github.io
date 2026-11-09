@@ -7,7 +7,7 @@
     <a href="{{ "" | relLangURL }}">Home</a>
     {{ with .Parent }}{{ if not .IsHome }}
     {{ $label := index (partialCached "doors/menu_labels" . "menu-labels") (strings.Trim .Path "/") | default .LinkTitle }}
-    <span aria-hidden="true">/</span> <a href="{{ .RelPermalink }}">{{ $label }}</a>
+    <span aria-hidden="true">/</span> <a href="{{ .RelPermalink | default (printf "/%s/" (strings.Trim .Path "/") | relLangURL) }}">{{ $label }}</a>
     {{ end }}{{ end }}
   </nav>
   {{ with .Params.categories }}<div class="article-meta">{{ range . }}<span>{{ . }}</span>{{ end }}</div>{{ end }}

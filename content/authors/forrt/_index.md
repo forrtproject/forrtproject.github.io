@@ -67,7 +67,7 @@ In a nutshell, FORRT is a ***F***ramework for ***O***pen and ***R***eproducible 
 
 ### The problem
 
-* Recently, the scientific community took steps to reflect a widespread awareness of, and call for, improved practices ushering in the “credibility revolution” including higher standards of evidence, preregistration, direct replication, transparency, and openness.
+* Since the 2010s, the scientific community has taken steps to reflect a widespread awareness of, and call for, improved practices ushering in the “credibility revolution” including higher standards of evidence, preregistration, direct replication, transparency, and openness.
 * Structurally, three pillars were proposed to carry social sciences towards academic utopia:  opening scientific communication, restructuring incentives and practices, and collaborative and crowdsourced science. 
 
 However, ongoing attempts have neglected an essential aspect of the academic machinery: students. And indeed, current norms for the teaching and mentoring in higher-education are rooted in obsolete practices of bygone eras. Improving transparency and rigor of science is the responsibility of all who engage in it.
