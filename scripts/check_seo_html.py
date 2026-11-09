@@ -39,7 +39,8 @@ Hard checks (exit 1 if any fails):
   16. Every glossary term link points to an existing English glossary page (#227).
   17. Every link in a visible breadcrumb trail (nav.crumbs) has a non-empty href,
      so a section that is not rendered cannot leave an empty link in the trail.
-  18. Cluster pages render publication-title markup (<i>, <em>, <scp>) instead of
+  18. No glossary page's <title> or <h1> shows Markdown emphasis as typed, e.g. "(*p*)".
+  19. Cluster pages render publication-title markup (<i>, <em>, <scp>) instead of
      showing it as literal or escaped text, and at least one cluster page exists.
 
 Report-only sections (never fail): pages with no <h1>, the
@@ -262,6 +263,18 @@ def check_glossary_links(pages):
             if not href or url.scheme not in ("", "http", "https") or (url.netloc, unquote(url.path)) not in english:
                 failures.append("%s (%s)" % (page.path, href or "missing href"))
     return failures
+
+
+# Paired asterisks around text: Markdown emphasis shown as typed. Asterisks inside a word
+# ("G*Power", "P*Hack") are not delimiters.
+LITERAL_EMPHASIS = re.compile(r"(?<!\w)\*[^*\s](?:[^*]*[^*\s])?\*(?!\w)")
+
+
+def check_glossary_title_markdown(pages):
+    """Glossary titles such as "Research Contribution Metric (*p*)" must render, not show asterisks."""
+    return [p.path for p in pages
+            if p.path.replace(os.sep, "/").startswith("glossary/")
+            and any(LITERAL_EMPHASIS.search(text) for text in [p.title, *p.h1_texts])]
 
 
 def check_no_search_heading(pages):
@@ -584,6 +597,7 @@ def main(public_dir):
 
     results = {
         '1. no <h1>Search</h1>': check_no_search_heading(pages),
+        "18. glossary titles show no Markdown asterisks": check_glossary_title_markdown(pages),
         "2. homepage free of mermaid/highlight.js assets": check_homepage_assets(home),
         "4. every <img> has an alt attribute": check_img_alt(pages),
         "5. every homepage <img> has width and height": check_homepage_img_dims(home),
@@ -598,7 +612,7 @@ def main(public_dir):
         "15. every citation has a local reference target": check_citation_targets(pages),
         "16. glossary links reach existing English terms": check_glossary_links(pages),
         "17. every breadcrumb link has a target": [p.path for p in pages if any(not h.strip() for h in p.crumb_links)],
-        "18. cluster pages show no literal <i>/<em>/<scp> title markup": check_cluster_title_markup(public_dir),
+        "19. cluster pages show no literal <i>/<em>/<scp> title markup": check_cluster_title_markup(public_dir),
     }
     conditional = check_conditional_assets(pages)
     results["3. conditional highlight.js / mermaid loading"] = [

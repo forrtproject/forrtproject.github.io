@@ -195,6 +195,24 @@ class CitationTargetCheck(unittest.TestCase):
         self.assertEqual(self.check('<a href="#elsewhere">Link</a>'), [])
 
 
+class GlossaryTitleMarkdownCheck(unittest.TestCase):
+    def check(self, title, h1, path="glossary/english/term/index.html"):
+        html = "<title>%s</title><h1>%s</h1>" % (title, h1)
+        return seo.check_glossary_title_markdown([page_from_html(html, path)])
+
+    def test_rendered_emphasis_and_lone_asterisk_pass(self):
+        self.assertEqual(self.check("Research Contribution Metric (p) | FORRT",
+                                    "Research Contribution Metric (<em>p</em>)"), [])
+        self.assertEqual(self.check("G*Power | FORRT", "G*Power"), [])
+        self.assertEqual(self.check("G*Power and P*Hack | FORRT", "G*Power and P*Hack"), [])
+
+    def test_literal_emphasis_fails_on_glossary_pages_only(self):
+        self.assertEqual(len(self.check("Research Contribution Metric (*p*) | FORRT", "x")), 1)
+        self.assertEqual(len(self.check("x", "Research Contribution Metric (*p*)")), 1)
+        self.assertEqual(len(self.check("x", "*p*-value")), 1)
+        self.assertEqual(self.check("x", "*p*", path="post/x/index.html"), [])
+
+
 class GlossaryLinkCheck(unittest.TestCase):
     def check_links(self, hrefs, base="https://forrt.org/"):
         with tempfile.TemporaryDirectory() as public:
@@ -251,3 +269,4 @@ class ClusterTitleMarkupCheck(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+

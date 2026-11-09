@@ -30,6 +30,12 @@ post/*/featured_hu.jpg           # The page's resized image is now WebP, so its 
 post/*/featured_hu.png           # The same
 ai-metascience/featured_hu.png   # The same
 coc/index.html  # Its title was empty (" | FORRT"), and it now says Code of Conduct
+glossary/english/research_contribution_metric__p_/index.html  # #1085: glossary titles render their Markdown, so the <title>, og:title and JSON-LD name read "(p)" instead of "(*p*)"
+glossary/german/p/index.html  # #1085: glossary titles render their Markdown, so the <title>, og:title and JSON-LD name read "(p)" instead of "(*p*)"
+glossary/arabic/مقياس_المساهمة_البحثي_ة_نشر/index.html  # #1085: glossary titles render their Markdown, so the <title>, og:title and JSON-LD name read "(p)" instead of "(*p*)"
+glossary/arabic/p_مقياس_المساهمة_البحثي_ة_نشر/index.html  # #1085: the same Arabic page under the older slug that the content committed on this branch still uses
+glossary/chinese/研究贡献指标_p_/index.html  # #1085: glossary titles render their Markdown, so the <title>, og:title and JSON-LD name read "(p)" instead of "(*p*)"
+glossary/turkish/bilimsel_katkı_olcutu_p_/index.html  # #1085: glossary titles render their Markdown, so the <title>, og:title and JSON-LD name read "(p)" instead of "(*p*)"
 about/charity/gep/index.html  # #973: redirect from the address printed in the GEP PDF to /about/charity/, not a page
 data/glossary-terms.*.json  # Build-time English glossary lookup, fetched on first term interaction (#227); not a page
 cv/index.html  # Retitled as a CV template in the content review (#1079). Exempts all its SEO tags: remove once main has the new title
