@@ -225,7 +225,7 @@ def check_articles(browser, base, root, failures):
 
 
 def check_callouts(browser, base, root, failures):
-    """Call-outs sit in the right-hand column on wide screens, clear of each other, and in the text on narrow ones."""
+    """Call-outs sit in the right-hand column from 1240px, clear of each other, and in the text below that."""
     paths = []
     for directory, _, files in os.walk(root):
         if "index.html" in files:
@@ -254,26 +254,29 @@ CALLOUTS = """() => {
   const notes = [...reading.querySelectorAll('.callout')].map((el) => el.getBoundingClientRect());
   const card = document.querySelector('.article-layout>.article-card')?.getBoundingClientRect();
   const problems = [];
-  if (innerWidth > 1000) {
+  if (innerWidth >= 1240) {
     const boxes = card ? [card, ...notes] : notes;
     if (notes.some((box) => box.left < area.right)) problems.push('over the text');
     if (notes.some((box) => box.right > innerWidth)) problems.push('off the screen');
     if (boxes.some((a, i) => boxes.slice(i + 1).some((b) => a.left < b.right && b.left < a.right && a.top < b.bottom && b.top < a.bottom))) problems.push('overlaps the card or another call-out');
   } else {
     if (notes.some((box) => box.left < area.left - 1 || box.right > area.right + 1)) problems.push('outside the text column');
-    if (card && card.height && card.top < area.bottom) problems.push('card comes before the text');
+    if (innerWidth <= 1000 && card && card.height && card.top < area.bottom) problems.push('card comes before the text');
   }
   return problems;
 }"""
 
 
-# From a page's text to the card beside it, when they are side by side.
+# Between a page's text and the card beside it, when they are side by side.
 CARD_GAP = """() => {
   const reading = document.querySelector('.article-layout>.reading');
   const card = document.querySelector('.article-layout>.article-card');
   if (!reading || !card) return 0;
   const box = card.getBoundingClientRect();
-  if (box.top > reading.getBoundingClientRect().bottom) return 0;
+  const text = reading.getBoundingClientRect();
+  if (box.top > text.bottom) return 0;
+  // The card sits left of the text on a desktop (right in right-to-left pages).
+  if (box.right <= text.left) return text.left - box.right;
   const lines = [...reading.querySelectorAll('.article-style p')].filter((p) => p.getClientRects().length);
   const right = Math.max(...(lines.length ? lines : [reading]).map((el) => el.getBoundingClientRect().right));
   return box.left < right ? 0 : box.left - right;

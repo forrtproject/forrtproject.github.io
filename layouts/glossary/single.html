@@ -84,6 +84,7 @@
 <div class="wrap">
   {{ $hasTerms := where (where (where site.RegularPages "Type" "glossary") "File.Dir" .File.Dir) "Params.definition" "!=" nil }}
   <div class="article-layout glossary-layout{{ if not $hasTerms }} article-layout-single{{ end }}">
+    {{ if $hasTerms }}{{ partial "doors/glossary_terms" (dict "page" . "labels" $dict "defined_only" true) }}{{ end }}
     <article class="reading">
       <header class="article-head">
         <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ "" | relLangURL }}">Home</a> <span aria-hidden="true">/</span> {{ with .Parent }}<a href="{{ .RelPermalink }}">{{ .Title }}</a> <span aria-hidden="true">/</span> {{ end }}<span aria-current="page">{{ partial "doors/term_title" .Title }}</span></nav>
@@ -250,7 +251,6 @@
         {{ if and site.Params.docs_section_pager (ne .Params.docs_section_pager false) }}{{ partial "section_pager" . }}{{ end }}
       </div>
     </article>
-    {{ if $hasTerms }}{{ partial "doors/glossary_terms" (dict "page" . "labels" $dict "defined_only" true) }}{{ end }}
   </div>
 </div>
 

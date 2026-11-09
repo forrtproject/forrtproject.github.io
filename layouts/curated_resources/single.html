@@ -16,6 +16,15 @@
 }}
 <div class="wrap">
   <div class="article-layout">
+    <section class="article-card" aria-label="About this resource">
+      <h2>About this resource</h2>
+      <dl>
+        {{ range $details }}{{ if .values }}<dt>{{ .label }}</dt><dd>{{ delimit .values ", " }}</dd>{{ end }}{{ end }}
+        {{/* The clusters the directory filters by, from forrt_clusters_new; none when that is empty. */}}
+        {{ with index (partialCached "doors/resource_index" (site.GetPage "/resources") "resources").items .RelPermalink }}{{ with .clusters }}<dt>Cluster</dt><dd>{{ delimit . ", " }}</dd>{{ end }}{{ end }}
+        <dt>Last updated</dt><dd>{{ .Lastmod.Format "2 January 2006" }}</dd>
+      </dl>
+    </section>
     <article class="reading">
       <header class="article-head">
         <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ "" | relLangURL }}">Home</a> <span aria-hidden="true">/</span> <a href="{{ relref . "/resources" }}">Resources</a> <span aria-hidden="true">/</span> <span aria-current="page">{{ .Title }}</span></nav>
@@ -35,15 +44,6 @@
         {{ partial "page_related" . }}
       </div>
     </article>
-    <section class="article-card" aria-label="About this resource">
-      <h2>About this resource</h2>
-      <dl>
-        {{ range $details }}{{ if .values }}<dt>{{ .label }}</dt><dd>{{ delimit .values ", " }}</dd>{{ end }}{{ end }}
-        {{/* The clusters the directory filters by, from forrt_clusters_new; none when that is empty. */}}
-        {{ with index (partialCached "doors/resource_index" (site.GetPage "/resources") "resources").items .RelPermalink }}{{ with .clusters }}<dt>Cluster</dt><dd>{{ delimit . ", " }}</dd>{{ end }}{{ end }}
-        <dt>Last updated</dt><dd>{{ .Lastmod.Format "2 January 2006" }}</dd>
-      </dl>
-    </section>
   </div>
 </div>
 {{- end -}}

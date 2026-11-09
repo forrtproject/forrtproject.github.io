@@ -11,22 +11,25 @@
 .article-layout .article-meta span{background:var(--surface);padding:3px 10px;border-radius:var(--r-small)}
 .article-layout .reading h1{font-size:clamp(36px,4.2vw,58px);line-height:1.06;letter-spacing:-.01em;margin:0;text-wrap:balance}
 /* In the narrow column a bigger screen must not mean a taller stack of title lines. */
-.article-layout:not(.article-layout-wide) .reading h1{font-size:clamp(34px,3.2vw,46px);line-height:1.1}
-.article-layout .reading h1.long-title{font-size:clamp(28px,3vw,42px);line-height:1.12}
+.article-layout:not(.article-layout-wide) .reading h1{font-size:clamp(34px,3.2vw,44px);line-height:1.1}
+.article-layout .reading h1.long-title{font-size:clamp(28px,3vw,40px);line-height:1.12}
 /* For long compounds. Not in English, where Safari hyphenates any word at a line end. */
 .article-layout .reading h1:lang(de),.article-layout .reading h1:lang(tr){hyphens:auto}
-.article-layout .standfirst{font:500 clamp(21px,1.9vw,25px)/1.4 var(--display);margin:18px 0 0;max-width:30em;color:var(--ink)}
+.article-layout .standfirst{font:500 clamp(21px,1.9vw,23px)/1.4 var(--display);margin:18px 0 0;max-width:30em;color:var(--ink)}
 .article-layout .byline{display:flex;flex-wrap:wrap;gap:4px 18px;margin:16px 0 0;font-size:16px}
 .article-layout .byline a{color:var(--link);text-underline-offset:3px;text-decoration:underline}
 .article-layout .byline-authors>*{display:inline}
 .article-layout .article-image{margin:0 0 28px}
 .article-layout .article-image img{display:block;width:100%;height:auto;border-radius:var(--r-small)}
 .article-layout figcaption{margin-top:10px;font-size:15px;text-align:center}
-.article-layout .article-style{font-size:20px;line-height:1.7;color:var(--ink);text-align:start;overflow-wrap:break-word}
+.article-layout .article-style{font-size:18px;line-height:1.6;color:var(--ink);text-align:start;overflow-wrap:break-word}
 .article-layout .article-style p,.article-layout .article-style li{font-size:inherit;line-height:inherit}
 /* Wide pages keep the reading width for their prose, and give the rest of the page to tables and charts. */
 .article-layout-wide .article-style p,.article-layout-wide .article-style li{max-width:29em}
-.article-layout .article-style p{margin:0 0 18px;max-width:28.4em}
+.article-layout .article-style p{margin:0 0 16px;max-width:28.4em}
+/* Under 80 characters a line (checked by check_design.py). The column is wider so pictures, tables and
+   embeds get the room; plain lists and reference lists keep to the text's measure plus their indent. */
+.article-layout:not(.article-layout-wide) .article-style :is(ul:not([class]),ol:not([class]),.references-list){max-width:29.8em}
 /* Old pages put <br> on its own line between blocks to add space under the previous theme. Between
    blocks it only opens a gap (up to 1,600px on a page), so drop it. A <br> inside a paragraph, or one that
    clears floats (Awards), is untouched. */
@@ -34,12 +37,12 @@
 .article-layout .article-style ul,.article-layout .article-style ol{margin:0 0 18px;padding-inline-start:1.4em}
 .article-layout .article-style li{margin-bottom:6px}
 .article-layout .article-style :is(h2,h3,h4){line-height:1.15;margin:34px 0 12px;text-align:start}
-.article-layout .article-style h2{font-size:30px}
-.article-layout .article-style h3{font-size:24px}
+.article-layout .article-style h2{font-size:28px}
+.article-layout .article-style h3{font-size:23px}
 .article-layout .article-style h4{font-size:20px}
 .article-layout .article-style a:not([class]){color:var(--link);text-decoration:underline;text-underline-offset:3px}
 .article-layout .article-style a:not([class]):hover{color:var(--ink)}
-.article-layout .article-style blockquote{margin:28px 0;padding:18px 22px;background:var(--edu-bg);border:0;border-radius:var(--r-large);color:var(--ink);font-size:19px!important}
+.article-layout .article-style blockquote{margin:28px 0;padding:18px 22px;background:var(--edu-bg);border:0;border-radius:var(--r-large);color:var(--ink);font-size:18px!important;max-width:600px}
 .article-layout .article-style blockquote p:last-child{margin-bottom:0}
 .article-layout .article-style figure{margin:28px 0}
 .article-layout .article-style img{max-width:100%;height:auto}
@@ -53,7 +56,7 @@
 .article-layout .article-style th,.article-layout .article-style td{padding:6px 10px;border-bottom:1px solid var(--line);text-align:start}
 .article-layout .article-style pre{max-width:100%;overflow-x:auto;font-size:15px}
 .article-layout .article-style code{font-size:max(15px,.9em)}
-main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .article-style p,main:lang(ar) .article-layout .article-style li{font-size:23px}
+main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .article-style p,main:lang(ar) .article-layout .article-style li{font-size:21px}
 /* The theme's root size shrinks on phones, so rem and small-text rules from it and from older
    Markdown come out as low as 10 px. */
 .article-layout .article-style :is(small,.small,[style*="font-size:."],[style*="font-size:0."]),.article-layout .article-style .btn:not([style*="font-size"]),.article-layout .btn-links .btn{font-size:15px!important;line-height:1.35}
@@ -77,8 +80,17 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .article-layout .article-toc ul{list-style:none;margin:0;padding:0}
 .article-layout .article-toc ul ul{padding-inline-start:12px}
 .article-layout .article-toc #TableOfContents a{display:block;padding:5px 0;font-size:16px;line-height:1.35;color:var(--link);text-underline-offset:3px;text-decoration:underline}
+/* On a desktop the side card (contents, date, term list, profile) sits to the left of the text and the
+   pair is centred, so spare width goes to the outer margins. It may come after the text in the page;
+   the grid places it all the same. */
+@media(min-width:1001px){
+  .article-layout:not(.article-layout-wide){grid-template-columns:minmax(0,640px)}
+  .article-layout:not(.article-layout-wide):has(>.article-card){grid-template-columns:220px minmax(0,640px);column-gap:48px}
+  .article-layout:not(.article-layout-wide):has(>.article-card)>.reading{grid-column:2;grid-row:1}
+  .article-layout:not(.article-layout-wide)>.article-card{grid-column:1;grid-row:1;box-sizing:border-box;width:220px;padding:18px}
+}
 @media(max-width:1000px){
-  .article-layout{grid-template-columns:minmax(0,580px);gap:36px}
+  .article-layout{grid-template-columns:minmax(0,640px);gap:36px}
   .article-layout-wide{grid-template-columns:minmax(0,1fr)}
   .article-layout .article-card{position:static;max-height:none}
 }
@@ -87,23 +99,21 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
   .article-layout .article-style{font-size:17px}
   main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .article-style p,main:lang(ar) .article-layout .article-style li{font-size:20px}
 }
-/* Call-outs: in the text on narrow screens. On wide screens they float into the right-hand column,
-   where clear keeps them under the side card and under each other. The card comes first in the
-   page so that it can do this, which means it can't stay in view while reading. */
+/* Call-outs: in the text up to 1240px. On wider screens they float into a third column on the right,
+   where clear keeps them under each other; the contents card stays on the left and in view. */
 .article-layout .callout{box-sizing:border-box;margin:28px 0;padding:18px 20px;background:var(--res-bg);border-radius:var(--r-large);font-size:17px;line-height:1.5;color:var(--ink)}
 .article-layout .callout-example{background:var(--edu-bg)}
 .article-layout .callout-warning{background:var(--com-bg)}
 .article-layout .article-style .callout p,.article-layout .article-style .callout ul,.article-layout .article-style .callout ol{margin:0 0 10px;max-width:none}
 .article-layout .article-style .callout>:last-child{margin-bottom:0}
 .article-layout .article-style .callout-title{font:500 21px/1.2 var(--display)}
-@media(min-width:1001px){
-  .article-layout-callouts{display:flow-root;max-width:944px;margin-inline:auto}
-  .article-layout-callouts .reading{width:min(580px,calc(100% - 364px))}
-  .article-layout-callouts .article-card{float:right;float:inline-end;box-sizing:border-box;width:300px;margin-bottom:18px;position:static;max-height:none;overflow:visible}
-  .article-layout-callouts .callout{float:right;float:inline-end;clear:right;clear:inline-end;width:300px;margin:4px -364px 18px 0;margin-inline:0 -364px}
-  .article-layout-callouts .doc-section-tinted .callout{margin-inline-end:-388px}
+@media(min-width:1240px){
+  .article-layout.article-layout-callouts{grid-template-columns:minmax(0,600px) 260px;column-gap:40px}
+  .article-layout.article-layout-callouts:has(>.article-card){grid-template-columns:220px minmax(0,600px) 260px}
+  .article-layout-callouts .callout{float:right;float:inline-end;clear:right;clear:inline-end;width:260px;margin:4px -300px 18px 0;margin-inline:0 -300px}
+  .article-layout-callouts .doc-section-tinted .callout{margin-inline-end:-324px}
 }
-@media(max-width:1000px){.article-layout-callouts .article-card{order:1}}
+@media(max-width:1000px){.article-layout .article-card{order:1}}
 /* Sections that open: the spoiler and expand shortcodes. */
 .article-layout .article-style .spoiler{margin:0 0 12px;background:var(--surface);border-radius:var(--r-small)}
 .article-layout .article-style .spoiler>summary{padding:10px 14px;font-weight:600;font-size:18px;line-height:1.35;color:var(--link);cursor:pointer}
@@ -126,8 +136,8 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .glossary-layout .language-switcher{margin:10px 0 14px;font-size:16px}
 .glossary-layout .language-switcher a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
 .glossary-layout .term-definition{padding:0 0 14px;border-bottom:1px solid var(--line)}
-.glossary-layout .article-style .term-line{margin-bottom:8px;font-size:19px;line-height:1.5}
-.glossary-layout .references-list,.glossary-layout .references-list li{font-size:19px!important}
+.glossary-layout .article-style .term-line{margin-bottom:8px;font-size:18px;line-height:1.5}
+.glossary-layout .references-list,.glossary-layout .references-list li{font-size:18px!important}
 .glossary-layout .article-style .btn-group{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 18px}
 .glossary-layout .article-style .btn-group .btn{margin:0!important;padding:7px 14px!important;background:#fff;border-radius:999px!important;font-size:16px!important;color:var(--link)}
 .glossary-layout .article-style .btn-group .btn.active{background:var(--ink);border-color:var(--ink);color:#fff}
