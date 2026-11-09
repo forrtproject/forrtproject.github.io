@@ -78,7 +78,7 @@ clusters = [
   values = ["graduate / professional", "graduate/professional"]
 [[level_groups]]
   label = "Career / Technical"
-  values = ["career /technical"]
+  values = ["career / technical", "career /technical"]
 [[level_groups]]
   label = "Adult education"
   values = ["adult education", "adult-education"]
