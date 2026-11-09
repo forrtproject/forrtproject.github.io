@@ -39,7 +39,7 @@ JUST-OS writes its answers with [OpenScholar](https://huggingface.co/OpenSciLM/L
 
 If you use or write about JUST-OS, please also cite OpenScholar:
 
-> Asai, A., He, J., Shao, R., Shi, W., Singh, A., Chang, J. C., Lo, K., Soldaini, L., Feldman, S., D’Arcy, M., Wadden, D., Latzke, M., Sparks, J., Hwang, J. D., Kishore, V., Tian, M., Ji, P., Liu, S., Tong, H., ... Hajishirzi, H. (2026). Synthesizing scientific literature with retrieval-augmented language models. *Nature*, *650*(8103), 857–863. [https://doi.org/10.1038/s41586-025-10072-4](https://doi.org/10.1038/s41586-025-10072-4)
+> Asai, A., He, J., Shao, R., et al. (2026). Synthesizing scientific literature with retrieval-augmented language models. *Nature*, *650*(8103), 857–863. [https://doi.org/10.1038/s41586-025-10072-4](https://doi.org/10.1038/s41586-025-10072-4)
 
 
 --- 

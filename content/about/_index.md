@@ -4,4 +4,6 @@ title: "About FORRT"
 build:
   render: never
   list: always
+# Breadcrumb data still names this section; the address serves the redirect (structured-data/breadcrumbs.html).
+breadcrumb_url: "about/"
 ---

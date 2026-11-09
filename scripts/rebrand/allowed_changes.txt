@@ -32,3 +32,13 @@ ai-metascience/featured_hu.png   # The same
 coc/index.html  # Its title was empty (" | FORRT"), and it now says Code of Conduct
 about/charity/gep/index.html  # #973: redirect from the address printed in the GEP PDF to /about/charity/, not a page
 data/glossary-terms.*.json  # Build-time English glossary lookup, fetched on first term interaction (#227); not a page
+about/index.html           # Content review (ha-about-redirect-text): /about/ is now an alias redirect to /about/us/, not a list page
+about/index.xml            # The same: the unrendered About section has no feed
+about/page/*/index.html    # The same: the About list page and its pager are gone
+equityinos/index.html      # Content review (init-eq-04): title is now "Equity in Open Scholarship"
+impact/index.html          # Content review (nexus-impact-recently): description no longer opens with "Recently"
+mapping_os/index.html      # Content review (init-mo-03): description uses the name "Mapping Open Science Communities"
+pedagogies/004-thomas-rhys-evans/index.html  # Content review (nexus-pedagogies-evan-name): summary spells "Evans" correctly
+welcome/index.html         # Content review (sol-welcome-counters): description drops the outdated list of teams
+about/teams/index.html     # Content review (community-teams-intro-grammar): description's list of purposes made grammatical
+educators-corner/018-accessible-feedback-in-research/index.html  # Review of #1078: its authors are listed one per entry, so its author data changes
