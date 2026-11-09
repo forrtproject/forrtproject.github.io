@@ -32,6 +32,26 @@ class FeaturedReferences(unittest.TestCase):
             with self.subTest(apa=apa):
                 self.assertEqual(featured.clean_apa_reference(apa), apa)
 
+    def test_titles_keep_italics_and_small_caps_with_entities_decoded(self):
+        cases = {
+            "Celebrating 30 years of <i>Feminism &amp; Psychology</i>":
+                "Celebrating 30 years of <i>Feminism & Psychology</i>",
+            "Registered Reports at &lt;em&gt;AIMS Neuroscience&lt;/em&gt; and beyond":
+                "Registered Reports at <i>AIMS Neuroscience</i> and beyond",
+            "The earth is round (p\u2002&lt;\u2002.05).": "The earth is round (p < .05).",
+            "Promoting Research Integrity in <scp>A</scp>frica": "Promoting Research Integrity in <scp>A</scp>frica",
+            "psychology departments in the\n                    <scp>UK</scp>\n                    and Ireland":
+                "psychology departments in the <scp>UK</scp> and Ireland",
+        }
+        for raw, clean in cases.items():
+            self.assertEqual(featured.clean_markup_text(raw), clean)
+
+    def test_apa_entities_are_decoded(self):
+        self.assertEqual(
+            featured.clean_apa_reference("Doe, A. (2024). Title. Theory &amp; Psychology, 34(5), 1–2."),
+            "Doe, A. (2024). Title. Theory & Psychology, 34(5), 1–2.",
+        )
+
     def test_both_outputs_use_cleaned_publication_reference(self):
         doi = "10.1002/cpz1.70299"
         publication = ["Sub-cluster", doi, self.APA] + [""] * 15

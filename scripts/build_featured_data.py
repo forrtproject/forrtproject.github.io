@@ -14,6 +14,7 @@ Usage:
 
 import csv
 import hashlib
+import html
 import io
 import json
 import os
@@ -100,10 +101,27 @@ def extract_doi(url: str) -> str | None:
     return None
 
 
+def clean_markup_text(text: str) -> str:
+    """Store a title or reference as plain text plus <i>/<scp> markup.
+
+    Crossref metadata in the Publications sheet carries HTML entities ('&amp;'),
+    sometimes escaped twice ('&lt;em&gt;'), and the inline tags <i>, <em> and
+    <scp>. Entities are decoded, <em> becomes <i>, and whitespace is collapsed.
+    The templates render <i> and <scp> and escape everything else.
+    """
+    for _ in range(2):
+        decoded = html.unescape(text)
+        if decoded == text:
+            break
+        text = decoded
+    text = re.sub(r'<(/?)em>', r'<\1i>', text, flags=re.IGNORECASE)
+    return ' '.join(text.split())
+
+
 def clean_apa_reference(apa: str) -> str:
     """Remove the Portico archive-provider artefact immediately before a DOI URL."""
     # Same narrow repair as parse_clusters_to_sheet.tidy_lookup_citation (#984).
-    return re.sub(r'\. Portico\. (?=https://doi\.org/)', '. ', apa.strip())
+    return re.sub(r'\. Portico\. (?=https://doi\.org/)', '. ', clean_markup_text(apa))
 
 
 def make_short_ref(apa: str) -> str:
@@ -284,7 +302,7 @@ def main():
         apa = clean_apa_reference(row[COL_APA])
 
         card = {
-            "title": row[COL_TITLE].strip(),
+            "title": clean_markup_text(row[COL_TITLE]),
             "summary": row[COL_SUMMARY].strip(),
             "focus": row[COL_FOCUS].strip().lower(),
             "specificity": row[COL_SPECIFICITY].strip(),
