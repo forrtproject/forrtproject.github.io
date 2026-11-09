@@ -2,6 +2,13 @@
 {{/* A glossary's language index: the introduction beside the list of its terms. */}}
 <div class="wrap">
   <div class="article-layout glossary-layout glossary-index">
+    {{ $labels := dict
+      "english" (dict "list_of_terms" "List of terms" "filter_terms" "Filter terms...")
+      "german" (dict "list_of_terms" "Liste der Begriffe" "filter_terms" "Begriffe filtern...")
+      "arabic" (dict "list_of_terms" "قائمة المصطلحات" "filter_terms" "تصفية المصطلحات...")
+      "turkish" (dict "list_of_terms" "Terimler listesi" "filter_terms" "Terimleri filtrele...")
+      "chinese" (dict "list_of_terms" "术语列表" "filter_terms" "筛选术语...") }}
+    {{ partial "doors/glossary_terms" (dict "page" . "labels" (index $labels (.Params.language | default "english")) "defined_only" false) }}
     <article class="reading">
       <header class="article-head">
         {{ partial "doors/crumbs" (dict "page" .) }}
@@ -14,13 +21,6 @@
         <p>{{ i18n "last_updated" }} {{ $.Lastmod.Format site.Params.date_format }}</p>
       </div>
     </article>
-    {{ $labels := dict
-      "english" (dict "list_of_terms" "List of terms" "filter_terms" "Filter terms...")
-      "german" (dict "list_of_terms" "Liste der Begriffe" "filter_terms" "Begriffe filtern...")
-      "arabic" (dict "list_of_terms" "قائمة المصطلحات" "filter_terms" "تصفية المصطلحات...")
-      "turkish" (dict "list_of_terms" "Terimler listesi" "filter_terms" "Terimleri filtrele...")
-      "chinese" (dict "list_of_terms" "术语列表" "filter_terms" "筛选术语...") }}
-    {{ partial "doors/glossary_terms" (dict "page" . "labels" (index $labels (.Params.language | default "english")) "defined_only" false) }}
   </div>
 </div>
 {{- end -}}
