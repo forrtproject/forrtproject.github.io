@@ -131,7 +131,7 @@
     group = "Governance"
 
 [[main]]
-  name = "Curriculum Vitae"
+  name = "CV template"
   url = "cv"
   weight = 26
   parent = "about"
