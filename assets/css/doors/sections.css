@@ -104,8 +104,8 @@
 .reading:has(.pub-intro) .doc-section>hr:first-child{margin:0 0 20px}
 
 /* Get Involved: its project cards take the reading column and the call-out column together. */
-@media(min-width:1001px){
-  .article-layout-callouts .article-style .get-involved-projects{clear:both;width:calc(100% + 364px);grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(min-width:1240px){
+  .article-layout-callouts .article-style .get-involved-projects{clear:both;width:calc(100% + 300px);grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 
 /* PDFs and the booklet are for looking at, so they take the width; their introductions do not. */

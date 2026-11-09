@@ -43,7 +43,8 @@
 
 <div class="wrap">
   <div class="article-layout{{ if $hasCallouts }} article-layout-callouts{{ else if not $hasCard }} article-layout-single{{ end }}{{ if $wide }} article-layout-wide{{ end }}">
-    {{ if $hasCallouts }}{{ $card }}{{ end }}
+    {{/* First in the page, so keyboard order follows the layout: contents, then text. */}}
+    {{ $card }}
     <article class="reading">
       <header class="article-head">
         {{ partial "doors/crumbs" (dict "page" .) }}
@@ -70,6 +71,5 @@
         {{ end }}
       </div>
     </article>
-    {{ if not $hasCallouts }}{{ $card }}{{ end }}
   </div>
 </div>

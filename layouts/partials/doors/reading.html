@@ -17,7 +17,8 @@
 {{ if $hasCard }}{{ $card = partial "doors/reading_card" (dict "page" . "hasDates" $hasDates "headings" $headings "contents" $contents "written" $written) }}{{ end }}
 <div class="wrap">
   <div class="article-layout{{ if $hasCallouts }} article-layout-callouts{{ else if not $hasCard }} article-layout-single{{ end }}{{ if $wide }} article-layout-wide{{ end }}">
-    {{ if $hasCallouts }}{{ $card }}{{ end }}
+    {{/* First in the page, so keyboard order follows the layout: contents, then text. */}}
+    {{ $card }}
     <article class="reading">
       {{ if not .Params.hide_page_header }}
         {{ partial "doors/article_header" . }}
@@ -39,6 +40,5 @@
         {{ partial "page_footer" . }}
       </div>
     </article>
-    {{ if not $hasCallouts }}{{ $card }}{{ end }}
   </div>
 </div>
