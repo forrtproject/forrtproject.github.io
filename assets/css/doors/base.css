@@ -21,6 +21,8 @@ em,i:not([class]),dfn,cite,var{font-weight:600}
 .references-list :is(em,i),.references-page .article-style :is(em,i),
 :is(h2,h3,h4)[id^=references i]~:is(ul,ol,p) :is(em,i),.csl-bib-body :is(em,i),
 .ref-apa :is(em,i),.rl-detail-apa :is(em,i){font-style:italic!important;font-weight:400}
+/* Publication titles from those lists keep their journal names and species in italics, at the title's weight. */
+:is(.fr-title,.fc-title,.ref-popup-title,.rl-panel-item-title) i{font-style:italic!important;font-weight:inherit}
 
 .wrap{width:min(1280px,calc(100% - 96px));margin-inline:auto}
 .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}

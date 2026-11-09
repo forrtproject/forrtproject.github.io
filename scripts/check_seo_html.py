@@ -309,6 +309,21 @@ def check_img_alt(pages):
             for p in pages if p.imgs_without_alt]
 
 
+LITERAL_TITLE_MARKUP = re.compile(r"&lt;/?(?:i|em|scp)&gt;|</?scp>", re.IGNORECASE)
+
+
+def check_cluster_title_markup(public_dir):
+    """Cluster pages render publication-title markup (clusters/rich_text.html), never show it."""
+    found = []
+    for root, _dirs, files in os.walk(os.path.join(public_dir, "clusters")):
+        if "index.html" in files:
+            full = os.path.join(root, "index.html")
+            with open(full, encoding="utf-8", errors="replace") as handle:
+                if LITERAL_TITLE_MARKUP.search(handle.read()):
+                    found.append(os.path.relpath(full, public_dir))
+    return sorted(found)
+
+
 def check_citation_targets(pages):
     return ["%s (%s)" % (p.path, href or "missing href")
             for p in pages for href in p.citations
@@ -564,6 +579,7 @@ def main(public_dir):
         "14. no inline <script> over 200 KB": check_inline_scripts(pages),
         "15. every citation has a local reference target": check_citation_targets(pages),
         "16. glossary links reach existing English terms": check_glossary_links(pages),
+        "17. cluster pages show no literal <i>/<em>/<scp> title markup": check_cluster_title_markup(public_dir),
     }
     conditional = check_conditional_assets(pages)
     results["3. conditional highlight.js / mermaid loading"] = [
