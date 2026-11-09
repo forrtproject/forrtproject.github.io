@@ -91,7 +91,7 @@
                 {{ with $card.focus }}<span class="tag tag-focus">{{ . }}</span>{{ end }}
                 {{ with $card.resource_type }}<span class="tag tag-type">{{ . }}</span>{{ end }}
               </div>
-              <div class="fr-title">{{ $card.title }}</div>
+              <div class="fr-title">{{ partial "clusters/rich_text.html" $card.title }}</div>
               {{ with $card.summary }}<div class="fr-summary">{{ . }}</div>{{ end }}
               <div class="fr-actions">
                 <button class="fr-ref-trigger" data-doi="{{ .doi }}">
@@ -152,7 +152,7 @@
                   {{ with $card.focus }}<span class="tag tag-focus">{{ . }}</span>{{ end }}
                   {{ with $card.resource_type }}<span class="tag tag-type">{{ . }}</span>{{ end }}
                 </div>
-                <div class="fc-title">{{ $card.title }}</div>
+                <div class="fc-title">{{ partial "clusters/rich_text.html" $card.title }}</div>
               </div>
               {{ with $card.summary }}
               <div class="fc-summary">{{ . }}</div>

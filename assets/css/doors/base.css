@@ -19,10 +19,13 @@ main:lang(zh){--display:'Noto Serif CJK SC','Songti SC','STSong',SimSun,serif;--
 *,*::before,*::after,.font-italic{font-style:normal!important}
 em,i:not([class]),dfn,cite,var{font-weight:600}
 .references-list :is(em,i),.references-page .article-style :is(em,i),
-:is(h2,h3,h4)[id^=references i]~:is(ul,ol,p) :is(em,i),.csl-bib-body :is(em,i){font-style:italic!important;font-weight:400}
+:is(h2,h3,h4)[id^=references i]~:is(ul,ol,p) :is(em,i),.csl-bib-body :is(em,i),
+.ref-apa :is(em,i),.rl-detail-apa :is(em,i){font-style:italic!important;font-weight:400}
 
 .wrap{width:min(1280px,calc(100% - 96px));margin-inline:auto}
 .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+/* Small capitals in publication titles from Crossref (<scp>), see clusters/rich_text.html */
+.scp{font-variant:small-caps}
 .skip{position:fixed;top:-100px;inset-inline-start:12px;z-index:1100;background:var(--ink);color:#fff;padding:12px 16px}
 .skip:focus,.skip:hover{top:8px;color:#fff}
 .crumbs{font-size:15px;line-height:1.4;color:var(--ink)}

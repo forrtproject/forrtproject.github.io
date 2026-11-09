@@ -1,0 +1,7 @@
+{{- /* Publication titles from Crossref: plain text plus <i>, <em> and <scp> markup, sometimes
+       with HTML entities. Escape everything, then restore only those tags (scp as small caps).
+       static/js/featured-resources.js has the same rule (richText). */ -}}
+{{- $s := . | default "" | htmlUnescape | replaceRE `\s+` " " | strings.TrimSpace | htmlEscape -}}
+{{- $s = replaceRE `&lt;(?:i|em)&gt;(.*?)&lt;/(?:i|em)&gt;` "<i>$1</i>" $s -}}
+{{- $s = replaceRE `&lt;scp&gt;(.*?)&lt;/scp&gt;` `<span class="scp">$1</span>` $s -}}
+{{- return ($s | safeHTML) -}}
