@@ -38,7 +38,7 @@ type: welcome
 
 {{< welcome 
     title="Explore Our Teams"
-    description="Explore projects, Slack channels and teams and join any of your preferences. The Teams page lists all our current teams."
+    description="Explore projects, Slack channels and teams and join any that match your interests. The Teams page lists all our current teams."
     url="/about/teams"
     button="Explore the Teams page"
     icon="fas fa-users"

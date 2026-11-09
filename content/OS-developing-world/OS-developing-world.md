@@ -200,7 +200,7 @@ The paper also directly informs FORRT’s ongoing work on:
 
 ****Contributors****
 
-- 49 contributors covered Open Science related topics from the perspective of 12 developing countries.
+- 49 contributors covered Open Science-related topics from the perspective of 12 developing countries.
 
 <center>
 
