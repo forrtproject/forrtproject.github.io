@@ -9,7 +9,8 @@
     ],
     "references": [
         "Gorgolewski, K., Auer, T., Calhoun, V., & others. (2016). The brain imaging data structure, a format for organizing and describing outputs of neuroimaging experiments. <i>Scientific Data</i>, <i>3</i>, 160044. https://doi.org/10.1038/sdata.2016.44",
-        "BIDS. (2020). <i>About BIDS</i>. Retrieved from https://bids.neuroimaging.io"
+        "BIDS. (2020). <i>About BIDS</i>. Retrieved from https://bids.neuroimaging.io",
+        "Pernet, C. R., Appelhoff, S., Gorgolewski, K. J., Flandin, G., Phillips, C., Delorme, A., & Oostenveld, R. (2019). EEG-BIDS, an extension to the brain imaging data structure for electroencephalography. <i>Scientific Data</i>, <i>6</i>(1), 103. https://doi.org/10.1038/s41597-019-0104-8"
     ],
     "drafted_by": [
         "Tina Lonsdorf"
@@ -30,5 +31,5 @@
     "translation_reviewed_by": [
         "Elif Baştan"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-09"
 }

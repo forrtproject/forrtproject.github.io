@@ -1,8 +1,8 @@
 {
     "type": "glossary",
     "en_title": "Model (computational)",
-    "title": "computational Rechenmodell [Model (computational)]",
-    "sort_key": "computational rechenmodell [model (computational)]",
+    "title": "Rechenmodell [Model (computational)]",
+    "sort_key": "rechenmodell [model (computational)]",
     "definition": "Rechenmodelle zielen darauf ab, untersuchte Phänomene mathematisch zu übersetzen, um komplexe Verhaltensweisen besser zu verstehen, zu vermitteln und vorherzusagen.",
     "related_terms": [
         "algorithms",
@@ -36,5 +36,5 @@
         "Helena Hartmann",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-09"
 }

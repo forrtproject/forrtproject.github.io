@@ -102,7 +102,7 @@
                 "references": [
                     "Brown, N., Thompson, P., & Leigh, J. S. (2018). Making academia more accessible. <i>Journal of Perspectives in Applied Academic Practice</i>, <i>6</i>(2), 82–90. https://doi.org/10.14297/jpaap.v6i2.348",
                     "Pollet, I. L., & Bond, A. L. (2021). Evaluation and recommendations for greater accessibility of colour figures in ornithology. <i>Ibis</i>, <i>163</i>, 292–295. https://doi.org/10.1111/ibi.12887",
-                    "Suber, P. (2004). The primacy of authors in achieving Open Access. In <i>Nature</i>. Retrieved from http://dash.harvard.edu/handle/1/4391161)",
+                    "Suber, P. (2004). The primacy of authors in achieving Open Access. In <i>Nature</i>. Retrieved from http://dash.harvard.edu/handle/1/4391161",
                     "World Wide Web Consortium. (2021). <i>Web Accessibility Initiative</i>. https://www.w3.org/WAI/",
                     "Pownall, M., Talbot, C. V., Henschel, A., Lautarescu, A., Lloyd, K. E., Hartmann, H., Darda, K. M., Tang, K. T. Y., Carmichael-Murphy, P., & Siegel, J. A. (2021). Navigating Open Science as Early Career Feminist Researchers. <i>Psychology of Women Quarterly</i>, <i>45</i>(4), 526–539. https://doi.org/10.1177/03616843211029255"
                 ],
@@ -136,7 +136,7 @@
                     "Asma Alzahrani",
                     "Mohammed Mohsen"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -886,7 +886,8 @@
                 ],
                 "references": [
                     "Gorgolewski, K., Auer, T., Calhoun, V., & others. (2016). The brain imaging data structure, a format for organizing and describing outputs of neuroimaging experiments. <i>Scientific Data</i>, <i>3</i>, 160044. https://doi.org/10.1038/sdata.2016.44",
-                    "BIDS. (2020). <i>About BIDS</i>. Retrieved from https://bids.neuroimaging.io"
+                    "BIDS. (2020). <i>About BIDS</i>. Retrieved from https://bids.neuroimaging.io",
+                    "Pernet, C. R., Appelhoff, S., Gorgolewski, K. J., Flandin, G., Phillips, C., Delorme, A., & Oostenveld, R. (2019). EEG-BIDS, an extension to the brain imaging data structure for electroencephalography. <i>Scientific Data</i>, <i>6</i>(1), 103. https://doi.org/10.1038/s41597-019-0104-8"
                 ],
                 "drafted_by": [
                     "Tina Lonsdorf"
@@ -911,7 +912,7 @@
                     "Asma Alzahrani",
                     "Mohammed Mohsen"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -1053,7 +1054,9 @@
                 "references": [
                     "Guest, O. [@o_guest]. (2017). <i>Thanks! Hopefully this thread & many other similar discussions & blogs will help make it less Bropen Science and more Open Science. *hides* </i>. Twitter. Retrieved from https://twitter.com/o_guest/status/871675631062458368",
                     "Whitaker, K., & Guest, O. (2020).  #bropenscience is broken science. <i>The Psychologist</i>, <i>33</i>, 34–37.",
-                    "Pownall, M., Talbot, C. V., Henschel, A., Lautarescu, A., Lloyd, K. E., Hartmann, H., Darda, K. M., Tang, K. T. Y., Carmichael-Murphy, P., & Siegel, J. A. (2021). Navigating Open Science as Early Career Feminist Researchers. <i>Psychology of Women Quarterly</i>, <i>45</i>(4), 526–539. https://doi.org/10.1177/03616843211029255"
+                    "Pownall, M., Talbot, C. V., Henschel, A., Lautarescu, A., Lloyd, K. E., Hartmann, H., Darda, K. M., Tang, K. T. Y., Carmichael-Murphy, P., & Siegel, J. A. (2021). Navigating Open Science as Early Career Feminist Researchers. <i>Psychology of Women Quarterly</i>, <i>45</i>(4), 526–539. https://doi.org/10.1177/03616843211029255",
+                    "Bahlai, C., Bartlett, L. J., Burgio, K. R., & others. (2019). Open science isn’t always open to all scientists. <i>American Scientist</i>, <i>107</i>(2), 78.",
+                    "Onie, S. (2020). Redesign open science for Asia, Africa and Latin America. <i>Nature</i>, <i>587</i>, 5–37. https://doi.org/10.1038/d41586-020-03052-3"
                 ],
                 "drafted_by": [
                     "Zoe Flack"
@@ -1081,7 +1084,7 @@
                     "Asma Alzahrani",
                     "Mohammed Mohsen"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -1831,7 +1834,7 @@
                 "en_title": "Conflict of interest",
                 "title": "تعارض المصالح [Conflict of interest]",
                 "sort_key": "تعارض المصالح [conflict of interest]",
-                "definition": "تعارض المصالح ويطلق عليه أيضًا \"المصالح المتنافسة\": هو علاقة ماليَّة، أو غير ماليَّة أو نشاط، أو مصلحة أخرى قد تضعف الموضوعية أو الحكم المهني من جانب المؤلِّف، أو المراجع، أو المحرِّر، أو فريق التَّحرير.  تنصُّ مبادئ الشَّفافيَّة \\_وأفضل الممارسات في النَّشر العلميّ التي وضعتها لجنة أخلاقيَّات النَّشر، ودليل المجلَّات المفتوحة، وجمعيَّة النَّاشرين الأكاديميين بالوصول المفتوح، وجمعيَّة محرِّري الطِّب العالميَّة\\_ على أنَّ الدَّوريّات يجب أنْ تتبنَّى سياسات حول أخلاقيَّات النَّشر، بما في ذلك سياسات حول تعارض المصالح (DOA, 2018). يجب أن يتم الإفصاح عن تعارضات المصالح بشفافية حتى يتمكَّن القراء من تقييم البحث بشكل صحيح، وتقييم الانحياز المحتمل أو الفعلي،  بالإضافة إلى النَّشر، يجب أيضًا على مقدمي العروض الأكاديميَّة وأعضاء اللِّجان والمعلِّمين أن يعلنوا عن تعارضات المصالح.  يمكن اعتبار عدم الكشف عن تعارض المصالح عمدًا شكلًا من أشكال سوء السُّلوك.  **المصطلحات ذات الصِّلة**: الموضوعية، تحكيم الأقران، ثقة الجمهور في العلوم، أخلاقيَّات النَّشر، الشَّفافية",
+                "definition": "تعارض المصالح ويطلق عليه أيضًا \"المصالح المتنافسة\": هو علاقة ماليَّة، أو غير ماليَّة أو نشاط، أو مصلحة أخرى قد تضعف الموضوعية أو الحكم المهني من جانب المؤلِّف، أو المراجع، أو المحرِّر، أو فريق التَّحرير.  تنصُّ مبادئ الشَّفافيَّة \\_وأفضل الممارسات في النَّشر العلميّ التي وضعتها لجنة أخلاقيَّات النَّشر، ودليل المجلَّات المفتوحة، وجمعيَّة النَّاشرين الأكاديميين بالوصول المفتوح، وجمعيَّة محرِّري الطِّب العالميَّة\\_ على أنَّ الدَّوريّات يجب أنْ تتبنَّى سياسات حول أخلاقيَّات النَّشر، بما في ذلك سياسات حول تعارض المصالح (DOAJ, n.d.). يجب أن يتم الإفصاح عن تعارضات المصالح بشفافية حتى يتمكَّن القراء من تقييم البحث بشكل صحيح، وتقييم الانحياز المحتمل أو الفعلي،  بالإضافة إلى النَّشر، يجب أيضًا على مقدمي العروض الأكاديميَّة وأعضاء اللِّجان والمعلِّمين أن يعلنوا عن تعارضات المصالح.  يمكن اعتبار عدم الكشف عن تعارض المصالح عمدًا شكلًا من أشكال سوء السُّلوك.  **المصطلحات ذات الصِّلة**: الموضوعية، تحكيم الأقران، ثقة الجمهور في العلوم، أخلاقيَّات النَّشر، الشَّفافية",
                 "related_terms": [
                     "Objectivity",
                     "Peer review",
@@ -1862,7 +1865,7 @@
                     "Hala Alghamdi",
                     "Mohammed Mohsen"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -2053,7 +2056,8 @@
                 "references": [
                     "Knoth, P., & Herrmannova, D. (2014). Towards semantometrics: A new semantic similarity based measure for assessing a research publication’s contribution. <i>D-Lib Magazine</i>, <i>20</i>(11), 8. https://doi.org/10.1045/november2014-knoth",
                     "Larivière, V., Desrochers, N., Macaluso, B., Mongeon, P., Paul-Hus, A., & Sugimoto, C. R. (2016). Contributorship and division of labor in knowledge production. <i>Social Studies of Science</i>, <i>46</i>(3), 417–435. https://doi.org/10.1177/0306312716650046",
-                    "Holcombe, A. O. (2019). Contributorship, not authorship: Use CRediT to indicate who did what. <i>Publications</i>, <i>7</i>(3), 48. https://doi.org/10.3390/publications7030048"
+                    "Holcombe, A. O. (2019). Contributorship, not authorship: Use CRediT to indicate who did what. <i>Publications</i>, <i>7</i>(3), 48. https://doi.org/10.3390/publications7030048",
+                    "Harris, C. R., Millman, K. J., van der Walt, S. J., Gommers, R., Virtanen, P., Cournapeau, D., Wieser, E., Taylor, J., Berg, S., Smith, N. J., Kern, R., Picus, M., Hoyer, S., van Kerkwijk, M. H., Brett, M., Haldane, A., del Río, J. F., Wiebe, M., Peterson, P., & Gérard-Marchant, P. (2020). Array programming with NumPy. <i>Nature</i>, <i>585</i>(7825), 357–362. https://doi.org/10.1038/s41586-020-2649-2"
                 ],
                 "drafted_by": [
                     "Micah Vandegrift"
@@ -2079,7 +2083,7 @@
                     "Ali H. Al-Hoorie",
                     "Mohammed Mohsen"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -2840,7 +2844,9 @@
                 "references": [
                     "Albayrak, N., & Okoroji, C. (2019). Facing the challenges of postgraduate study as a minority student. <i>A Guide for Psychology Postgraduates</i>, 63.",
                     "Du Bois, W. E. B. (1968). <i>The souls of black folk; essays and sketches</i>. Johnson Reprint Corp.",
-                    "Gilroy, P. (1993). <i>The black Atlantic: Modernity and double consciousness</i>. Harvard University Press."
+                    "Gilroy, P. (1993). <i>The black Atlantic: Modernity and double consciousness</i>. Harvard University Press.",
+                    "Rubin, M. (2021). Explaining the association between subjective social status and mental health among university students using an impact ratings approach. <i>SN Social Sciences</i>, <i>1</i>(1), 1–21. https://doi.org/10.1007/s43545-020-00031-3",
+                    "Rubin, M., Evans, O., & McGuffog, R. (2019). Social class differences in social integration at university: Implications for academic outcomes and mental health. In J. Jetten & K. Peters (Eds.), <i>The social psychology of inequality</i> (pp. 87–102). Springer. https://doi.org/10.1007/978-3-030-28856-3_6"
                 ],
                 "drafted_by": [
                     "Nihan Albayrak-Aydemir"
@@ -2864,7 +2870,7 @@
                     "Ahlam Ahmed",
                     "Mohammed Mohsen"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -3236,7 +3242,7 @@
                 "en_title": "Equivalence Testing",
                 "title": "اختبار التَّكافؤ [Equivalence Testing]",
                 "sort_key": "اختبار التَّكافؤ [equivalence testing]",
-                "definition": "تقوم اختبارات التَّكافؤ بتقييم الفرضيَّة الصِّفريَّة إحصائيًا، وهل  لها تأثير معين يتجاوز الحد الأدنى من المعايير التي تعدُّ ذات معنى، وبالتَّالي فإنَّ رفض الفرضيَّة الصِّفرية يعدُّ دليلًا على عدم وجود تأثير (ذي معنى). بناءً على الإحصائيات المتكرِّرة.  تعمل اختبارات التَّكافؤ عبر تحديد حدود التكافؤ، قيمة دنيا وعليا تعكس أصغر حجم تأثير محل الاهتمام.  يتم بعد ذلك إجراء اختبارين \"تي\" أحادي الجانب مقابل كل من حدود التَّكافؤ هذه؛ لتقييم ما إذا كان من الممكن رفض التَّأثيرات التي تعدُّ ذات معنى (Schuirmann, 1972; Lakens et al., 2018; 2020).  **المصطلحات ذات الصِّلة:** حدود التَّكافؤ، التَّزوير، التَّحليلات المتكرِّرة، الاستدلال بفترات الثِّقة، اختبار دلالةالفرضيَّة الصِّفريَّة، أصغر حجم تأثير موضع اهتمام (SESOI)، (TOSTER)، إجراء TOST.",
+                "definition": "تقوم اختبارات التَّكافؤ بتقييم الفرضيَّة الصِّفريَّة إحصائيًا، وهل  لها تأثير معين يتجاوز الحد الأدنى من المعايير التي تعدُّ ذات معنى، وبالتَّالي فإنَّ رفض الفرضيَّة الصِّفرية يعدُّ دليلًا على عدم وجود تأثير (ذي معنى). بناءً على الإحصائيات المتكرِّرة.  تعمل اختبارات التَّكافؤ عبر تحديد حدود التكافؤ، قيمة دنيا وعليا تعكس أصغر حجم تأثير محل الاهتمام.  يتم بعد ذلك إجراء اختبارين \"تي\" أحادي الجانب مقابل كل من حدود التَّكافؤ هذه؛ لتقييم ما إذا كان من الممكن رفض التَّأثيرات التي تعدُّ ذات معنى (Schuirmann, 1987; Lakens et al., 2018; 2020).  **المصطلحات ذات الصِّلة:** حدود التَّكافؤ، التَّزوير، التَّحليلات المتكرِّرة، الاستدلال بفترات الثِّقة، اختبار دلالةالفرضيَّة الصِّفريَّة، أصغر حجم تأثير موضع اهتمام (SESOI)، (TOSTER)، إجراء TOST.",
                 "related_terms": [
                     "Equivalence bounds",
                     "Falsification",
@@ -3275,7 +3281,7 @@
                     "Ahlam Ahmed",
                     "Mohammed Mohsen"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -3787,7 +3793,7 @@
                     "Specification Curve Analysis"
                 ],
                 "references": [
-                    "Gelman, A., & Loken, E. (n.d.). <i>The garden of forking paths: Why multiple comparisons can be a problem, even when there is no “fishing expedition” or “p-hacking” and the research hypothesis was posited ahead of time</i>. Retrieved from http://www.stat.columbia.edu/"
+                    "Gelman, A., & Loken, E. (2013). <i>The garden of forking paths: Why multiple comparisons can be a problem, even when there is no “fishing expedition” or “p-hacking” and the research hypothesis was posited ahead of time</i>. http://www.stat.columbia.edu/~gelman/research/unpublished/p_hacking.pdf"
                 ],
                 "drafted_by": [
                     "Flávio Azevedo; Mahmoud Elsherif"
@@ -3812,7 +3818,7 @@
                     "Hala Alghamdi",
                     "Mohammed Mohsen"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -3947,6 +3953,48 @@
                     "/glossary/arabic/or_guest_authorship_الت_اليف_الم_هدى_او_المولف_الض_يف"
                 ],
                 "lastmod": "2026-11-08"
+            },
+            {
+                "type": "glossary",
+                "en_title": "Git",
+                "title": "المتتبع الدُّولي العالميّ [Git]",
+                "sort_key": "المتتبع الدُّولي العالميّ [git]",
+                "definition": "هي حزمة برامج لتتبع التَّغييرات في مجموعة محليَّة من الملفات (التَّحكُّم في الإصدار المحليّ)، طورها في البداية لينوس تورفالدس. وبشكل عام يستخدمه المبرمجون لتتبع وتطوير النُّصوص البرمجيَّة داخل دليل، أو مجلَّد، أو نظام ملفات.  يمكن للمتتبِّع الدُّولي العالميّ الوصول (Git) إلى خدمات استضافة المستودعات عن بُعد (مثل GitHub) للتّحكم في الإصدار عن بُعد الذي يتيح تطوير البرامج التَّعاونيَّة عن طريق تحميل المساهمات من نظام محلي. وجدت هذه العمليَّة طريقها إلى العمليَّة العلميَّة لتمكين البيانات المفتوحة، والنُّصوص البرمجيَّة المفتوحة، والتَّحليلات القابلة للتِّكرار.  **المصطلحات ذات الصِّلة:** Github، مستودع البيانات، التحكم في الإصدار.",
+                "related_terms": [
+                    "GitHub",
+                    "Repository",
+                    "Version control"
+                ],
+                "references": [
+                    "Kalliamvakou, E., Gousios, G., Blincoe, K., Singer, L., German, D. M., & Damian, D. (2014). The promises and perils of mining github. <i>Proceedings of the 11th Working Conference on Mining Software Repositories</i>, 92–101.",
+                    "Scopatz, A. M., & Huff, K. D. (2015). <i>Effective Computation in Physics: Field Guide to Research with Python</i> (1st ed.). O’Reilly Media. http://shop.oreilly.com/product/0636920033424.do",
+                    "Vuorre, M., & Curley, J. P. (2018). Curating research assets: A tutorial on the Git version control system. <i>Advances in Methods and Practices in Psychological Science</i>, <i>1</i>(2), 219–236. https://doi.org/10.1177/2515245918754826",
+                    "git/git. (n.d.). <i>Initial revision of ‘git’, the information manager from hell</i>. GitHub. https://github.com/git/git/commit/e83c5163316f89bfbde7d9ab23ca2e25604af290"
+                ],
+                "drafted_by": [
+                    "Emma Norris"
+                ],
+                "reviewed_by": [
+                    "Adrien Fillon",
+                    "Bettina M.J. Kern",
+                    "Dominik Kiersz",
+                    "Robert M. Ross"
+                ],
+                "alt_related_terms": [
+                    null
+                ],
+                "language": "arabic",
+                "translated_by": [
+                    "Asma Alzahrani"
+                ],
+                "translation_reviewed_by": [
+                    "Ali H. Al-Hoorie",
+                    "Alaa M. Saleh",
+                    "Hiba Alomary",
+                    "Ahlam Ahmed",
+                    "Mohammed Mohsen"
+                ],
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -5221,7 +5269,7 @@
                     "Ali H. Al-Hoorie",
                     "MOhammed Mohsen"
                 ],
-                "lastmod": "2026-11-08"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -6811,7 +6859,8 @@
                     "Kiernan, C. (1999). Participation in research by people with learning disability: Origins and issues. <i>British Journal of Learning Disabilities</i>, <i>27</i>(2), 43–47. https://doi.org/10.1111/j.1468-3156.1999.tb00084.x",
                     "Leavy, P. (2017). <i>Research Design: Quantitative, Qualitative, Mixed Methods, Arts-Based, and Community-Based Participatory Research Approaches</i>. The Guilford Press.",
                     "Ottmann, G., Laragy, C., Allen, J., & Feldman, P. (2011). Coproduction in practice: Participatory action research to develop a model of community aged care. <i>Systemic Practice and Action Research</i>, <i>24</i>, 413–427. https://doi.org/10.1007/s11213-011-9192-x",
-                    "Rose, D. (2018). Participatory research: Real or imagined. <i>Social Psychiatry and Psychiatric Epidemiology</i>, <i>53</i>, 765–771. https://doi.org/10.1007/s00127-018-1549-3"
+                    "Rose, D. (2018). Participatory research: Real or imagined. <i>Social Psychiatry and Psychiatric Epidemiology</i>, <i>53</i>, 765–771. https://doi.org/10.1007/s00127-018-1549-3",
+                    "Andersson, N. (2018). Participatory research—a modernizing science for primary health care. <i>Journal of General and Family Medicine</i>, <i>19</i>(5), 154–159. https://doi.org/10.1002/jgf2.187"
                 ],
                 "drafted_by": [
                     "Tamara Kalandadze"
@@ -6835,7 +6884,7 @@
                     "Asma Alzahrani",
                     "Mohammed Mohsen"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -7706,14 +7755,14 @@
                 "en_title": "Public Trust in Science",
                 "title": "ثقة الجمهور في العلوم [Public Trust in Science]",
                 "sort_key": "ثقة الجمهور في العلوم [public trust in science]",
-                "definition": "الثِّقة في المعرفة والمبادئ التَّوجيهيَّة، والتَّوصيات التي أنتجها العلماء، أو قدَّموها للمجتمع المدني (Hendriks et al., 2016). وقد تشير أيضًا إلى الثِّقة في التَّوصيات القائمة على أساس علمي  بشأن الصِّحة العامّة (كالرِّعاية الصِّحيَّة الشَّاملة، وبحوث الخلايا الجذعيَّة، والصَّناديق الفيدراليَّة المخصَّصة للحقوق الإنجابيَّة للمرأة، والتَّدابير الوقائيَّة للأمراض المعدية، والتَّطعيم)، وتغيُّر المناخ، والسِّياسات الاقتصاديَّة ( مثل الرَّفاهيَّة، وعدم المساواة، ومكافحة الفقر) وتقاطعاتها.  ولقد تبيّن أن ثقة الجمهور في العلم تتأثَّر بعدد كبير من العوامل مثل العمر (Anderson et al., 2012\\) ، والجنس (Von Roten, 2004\\) ، ورفض المعايير العلميَّة (Lewandowsky & Oberauer, 2021\\) ، والأيديولوجيَّة السِّياسيَّة (Azevedo & Jost, 2021; Brewer & Ley, 2012; Leiserowitz et al., 2010\\) ، والاستبداد اليميني والهيمنة الاجتماعيَّة (Kerr & Wilson, 2021\\) ، والتَّعليم (Bak, 2001; Hayes & Tariq, 2000\\) والدَّخل (Anderson et al., 2012\\) والمعرفة العلميَّة (Evans & Durant, 1995; Nisbet et al., 2002\\) واستخدام وسائل التَّواصل الاجتماعي (Huber et al., 2019\\) والتدين (Azevedo, 2021; Brewer & Ley, 2013; Liu & Priest, 2009).  **المصطلحات ذات الصِّلة:** مصداقية الادِّعاءات العلميَّة، الثِّقة المعرفيَّة",
+                "definition": "الثِّقة في المعرفة والمبادئ التَّوجيهيَّة، والتَّوصيات التي أنتجها العلماء، أو قدَّموها للمجتمع المدني (Hendriks et al., 2016). وقد تشير أيضًا إلى الثِّقة في التَّوصيات القائمة على أساس علمي  بشأن الصِّحة العامّة (كالرِّعاية الصِّحيَّة الشَّاملة، وبحوث الخلايا الجذعيَّة، والصَّناديق الفيدراليَّة المخصَّصة للحقوق الإنجابيَّة للمرأة، والتَّدابير الوقائيَّة للأمراض المعدية، والتَّطعيم)، وتغيُّر المناخ، والسِّياسات الاقتصاديَّة ( مثل الرَّفاهيَّة، وعدم المساواة، ومكافحة الفقر) وتقاطعاتها.  ولقد تبيّن أن ثقة الجمهور في العلم تتأثَّر بعدد كبير من العوامل مثل العمر (Anderson et al., 2012\\) ، والجنس (Crettaz von Roten, 2004\\) ، ورفض المعايير العلميَّة (Lewandowsky & Oberauer, 2021\\) ، والأيديولوجيَّة السِّياسيَّة (Azevedo & Jost, 2021; Brewer & Ley, 2013; Leiserowitz et al., 2010\\) ، والاستبداد اليميني والهيمنة الاجتماعيَّة (Kerr & Wilson, 2021\\) ، والتَّعليم (Bak, 2001; Hayes & Tariq, 2000\\) والدَّخل (Anderson et al., 2012\\) والمعرفة العلميَّة (Evans & Durant, 1995; Nisbet et al., 2002\\) واستخدام وسائل التَّواصل الاجتماعي (Huber et al., 2019\\) والتدين (Azevedo, 2021; Brewer & Ley, 2013; Liu & Priest, 2009).  **المصطلحات ذات الصِّلة:** مصداقية الادِّعاءات العلميَّة، الثِّقة المعرفيَّة",
                 "related_terms": [
                     "Credibility of scientific claims",
                     "Epistemic Trust"
                 ],
                 "references": [
                     "Anderson, M. S., Ronning, E. A., Devries, R., & Martinson, B. C. (2010). Extending the Mertonian norms: Scientists’ subscription to norms of research. <i>Journal of Higher Education</i>, <i>81</i>(3), 366–393. https://doi.org/10.1353/jhe.0.0095",
-                    "Azevedo, F. (n.d.). <i>Ideology May Help Explain Anti-Scientific Attitudes | Psychology Today</i>. https://www.psychologytoday.com/us/blog/social-justice-pacifists/202107/ideology-may-help-explain-anti-scientific-attitudes",
+                    "Azevedo, F. (2021). <i>Ideology May Help Explain Anti-Scientific Attitudes | Psychology Today</i>. https://www.psychologytoday.com/us/blog/social-justice-pacifists/202107/ideology-may-help-explain-anti-scientific-attitudes",
                     "Azevedo, F., & Jost, J. T. (2021). The ideological basis of antiscientific attitudes: Effects of authoritarianism, conservatism, religiosity, social dominance, and system justification. <i>Group Processes & Intergroup Relations</i>, <i>24</i>(4), 518–549. https://doi.org/10.1177/1368430221990104",
                     "Bak, H.-J. (2001). Education and Public Attitudes toward Science: Implications for the ‘Deficit Model’ of Education and Support for Science and Technology. <i>Social Science Quarterly</i>, <i>82</i>(4), 779–795. https://www.jstor.org/stable/42955760",
                     "Brewer, P. R., & Ley, B. L. (2013). Whose Science Do You Believe? Explaining Trust in Sources of Scientific Information About the Environment. <i>Science Communication</i>, <i>35</i>(1), 115–137. https://doi.org/10.1177/1075547012441691",
@@ -7727,7 +7776,8 @@
                     "Nisbet, M. C., Scheufele, D. A., Shanahan, J., Moy, P., Brossard, D., & Lewenstein, B. V. (2002). Knowledge, Reservations, or Promise?: A Media Effects Model for Public Perceptions of Science and Technology. <i>Communication Research</i>, <i>29</i>(5), 584–608. https://doi.org/10.1177/009365002236196",
                     "Schneider, J., Merk, S., & Rosman, T. (2019). <i>(Re)Building Trust? Investigating the effects of open science badges on perceived trustworthiness in journal articles</i>. https://doi.org/10.17605/OSF.IO/VGBRS",
                     "Wingen, T., Berkessel, J. B., & Englich, B. (2020). No Replication, No Trust? How Low Replicability Influences Trust in Psychology. <i>Social Psychological and Personality Science</i>, <i>11</i>(4). https://doi.org/10.1177/1948550619877412",
-                    "Anderson, A. A., Scheufele, D. A., Brossard, D., & Corley, E. A. (2012). The Role of Media and Deference to Scientific Authority in Cultivating Trust in Sources of Information about Emerging Technologies. <i>International Journal of Public Opinion Research</i>, <i>24</i>(2), 225–237. https://doi.org/10.1093/ijpor/edr032"
+                    "Anderson, A. A., Scheufele, D. A., Brossard, D., & Corley, E. A. (2012). The Role of Media and Deference to Scientific Authority in Cultivating Trust in Sources of Information about Emerging Technologies. <i>International Journal of Public Opinion Research</i>, <i>24</i>(2), 225–237. https://doi.org/10.1093/ijpor/edr032",
+                    "Crettaz von Roten, F. (2004). Gender differences in attitudes toward science in Switzerland. <i>Public Understanding of Science</i>, <i>13</i>(2), 191–199. https://doi.org/10.1177/0963662504043870"
                 ],
                 "drafted_by": [
                     "Tobias Wingen; Flávio Azevedo"
@@ -7751,7 +7801,7 @@
                     "Asma Alzahrani",
                     "Mohammed Mohsen"
                 ],
-                "lastmod": "2026-11-08"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -8305,13 +8355,14 @@
                 "en_title": "Repeatability",
                 "title": "التِّكرار [Repeatability]",
                 "sort_key": "التِّكرار [repeatability]",
-                "definition": "مرادف لثبات إعادة الاختبار، ويشير إلى الاتِّفاق بين نتائج القياسات المتتالية لنفس المقياس، يتطلّب التِّكرار نفس الأدوات التَّجريبيَّة، ونفس المراقب، ونفس أداة القياس التي تدار في ظل نفس الظُّروف، ونفس الموقع، والتِّكرار على مدى فترة زمنيَّة قصيرة، ونفس الأهداف (Joint Committee for Guidelines in Metrology, 2008).  **المصطلحات ذات الصِّلة:** الثَّبات",
+                "definition": "مرادف لثبات إعادة الاختبار، ويشير إلى الاتِّفاق بين نتائج القياسات المتتالية لنفس المقياس، يتطلّب التِّكرار نفس الأدوات التَّجريبيَّة، ونفس المراقب، ونفس أداة القياس التي تدار في ظل نفس الظُّروف، ونفس الموقع، والتِّكرار على مدى فترة زمنيَّة قصيرة، ونفس الأهداف (Joint Committee for Guides in Metrology, 2008).  **المصطلحات ذات الصِّلة:** الثَّبات",
                 "related_terms": [
                     "Reliability"
                 ],
                 "references": [
                     "ISO. (1993). <i>Guide to the Expression of Uncertainty in Measurement</i> (1st ed.). International Organization for Standardization.",
-                    "Stodden, V. C. (2011). <i>Trust your science? Open your data and code</i>."
+                    "Stodden, V. C. (2011). <i>Trust your science? Open your data and code</i>.",
+                    "Working Group 1 of the Joint Committee for Guides in Metrology JCGM. (2008). <i>Evaluation of measurement data—Guide to the expression of uncertainty in measurement</i> (pp. 1–120). JCGM. https://www.bipm.org/documents/20126/2071204/JCGM_100_2008_E.pdf/cb0ef43f-baa5-11cf-3f85-4dcd86f77bd6"
                 ],
                 "drafted_by": [
                     "Mahmoud Elsherif, Adam Parker"
@@ -8335,7 +8386,7 @@
                     "Asma Alzahrani",
                     "Mohammed Mohsen"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -8355,8 +8406,9 @@
                     "Barba, L. A. (2018). Terminologies for reproducible research. <i>arXiv Preprint arXiv:1802.03311</i>.",
                     "Crüwell, S., van Doorn, J., Etz, A., Makel, M. C., Moshontz, H., Niebaum, J. C., Orben, A., Parsons, S., & Schulte-Mecklenbeck, M. (2019). Seven Easy Steps to Open Science: An Annotated Reading List. <i>Zeitschrift Für Psychologie</i>, <i>227</i>(4), 237–248. https://doi.org/10.1027/2151-2604/a000387",
                     "King, G. (1995). Replication, replication. <i>PS: Political Science & Politics</i>, <i>28</i>(3), 444–452. https://doi.org/10.2307/420301",
-                    "National Academies of Sciences, Engineering, Medicine, & others. (2019). <i>Reproducibility and Replicability in Science. In Understanding Reproducibility and Replicability</i> [Techreport]. National Academies Press (US). https://www.ncbi.nlm.nih.gov/books/NBK547546/",
-                    "Nosek, B. A., & Errington, T. M. (2020). What is replication? <i>PLOS Biology</i>, <i>18</i>(3), e3000691. https://doi.org/10.1371/journal.pbio.3000691"
+                    "National Academies of Sciences, Engineering, and Medicine. (2019). <i>Reproducibility and Replicability in Science. In Understanding Reproducibility and Replicability</i> [Techreport]. National Academies Press (US). https://www.ncbi.nlm.nih.gov/books/NBK547546/",
+                    "Nosek, B. A., & Errington, T. M. (2020). What is replication? <i>PLOS Biology</i>, <i>18</i>(3), e3000691. https://doi.org/10.1371/journal.pbio.3000691",
+                    "Claerbout, J. F., & Karrenbach, M. (1992). Electronic documents give reproducible research a new meaning. <i>SEG Technical Program Expanded Abstracts 1992</i>, 601–604. http://sepwww.stanford.edu/doku.php?id=sep:research:reproducible:seg92"
                 ],
                 "drafted_by": [
                     "Mahmoud Elsherif"
@@ -8384,7 +8436,7 @@
                     "Hiba Alomary",
                     "Mohammed Mohsen"
                 ],
-                "lastmod": "2026-11-08"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -8573,7 +8625,7 @@
                     "Peng, R. D. (2011). Reproducible Research in Computational Science. <i>Science</i>, <i>334</i>(6060), 1226–1227. https://doi.org/10.1126/science.1213847",
                     "Stodden, V. C. (2011). <i>Trust your science? Open your data and code</i>.",
                     "Syed, M. (2019). The Open Science Movement is for all of us. <i>PsyArXiv</i>.",
-                    "National Academies of Sciences, Engineering, Medicine, & others. (2019). <i>Reproducibility and Replicability in Science. In Understanding Reproducibility and Replicability</i> [Techreport]. National Academies Press (US). https://www.ncbi.nlm.nih.gov/books/NBK547546/"
+                    "National Academies of Sciences, Engineering, and Medicine. (2019). <i>Reproducibility and Replicability in Science. In Understanding Reproducibility and Replicability</i> [Techreport]. National Academies Press (US). https://www.ncbi.nlm.nih.gov/books/NBK547546/"
                 ],
                 "drafted_by": [
                     "Mahmoud Elsherif"
@@ -8599,7 +8651,7 @@
                     "Asma Alzahrani",
                     "Mohammed Mohsen"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -8946,7 +8998,7 @@
                     "Specification curve analysis"
                 ],
                 "references": [
-                    "Gelman, A., & Loken, E. (n.d.). <i>The garden of forking paths: Why multiple comparisons can be a problem, even when there is no “fishing expedition” or “p-hacking” and the research hypothesis was posited ahead of time</i>. Retrieved from http://www.stat.columbia.edu/",
+                    "Gelman, A., & Loken, E. (2013). <i>The garden of forking paths: Why multiple comparisons can be a problem, even when there is no “fishing expedition” or “p-hacking” and the research hypothesis was posited ahead of time</i>. http://www.stat.columbia.edu/~gelman/research/unpublished/p_hacking.pdf",
                     "Simmons, J. P., Nelson, L. D., & Simonsohn, U. (2011). False-positive psychology: Undisclosed flexibility in data collection and analysis allows presenting anything as significant. <i>Psychological Science</i>, <i>22</i>(11), 1359–1366. https://doi.org/10.1177/0956797611417632",
                     "Wicherts, J. M., Veldkamp, C. L., Augusteijn, H. E., Bakker, M., Van Aert, R., & Van Assen, M. A. (2016). Degrees of freedom in planning, running, analyzing, and reporting psychological studies: A checklist to avoid p-hacking. <i>Frontiers in Psychology</i>, <i>7</i>, 1832. https://doi.org/10.3389/fpsyg.2016.01832"
                 ],
@@ -8972,7 +9024,7 @@
                     "Ali H. Al-Hoorie",
                     "Mohammed Mohsen"
                 ],
-                "lastmod": "2026-11-08"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -10588,7 +10640,8 @@
                 "references": [
                     "Hitchcock, C., Meyer, A., Rose, D., & Jackson, R. (2002). Providing new access to the general curriculum: Universal design for learning. <i>Teaching Exceptional Children</i>, <i>35</i>(2), 8–17. https://www.proquest.com/scholarly-journals/providing-new-access-general-curriculum/docview/201139970/se-2?accountid=8630",
                     "Rose, D. (2000). Universal design for learning. <i>Journal of Special Education Technology</i>, <i>15</i>(3), 45–49. https://doi.org/10.1177/016264340001500307",
-                    "Rose, D. H., & Meyer, A. (2002). Teaching every student in the digital age: Universal design for learning. In <i>The Corsini Encyclopedia of Psychology</i>. Association for Supervision."
+                    "Rose, D. H., & Meyer, A. (2002). Teaching every student in the digital age: Universal design for learning. In <i>The Corsini Encyclopedia of Psychology</i>. Association for Supervision.",
+                    "Edyburn, D. L. (2010). Would you recognize universal design for learning if you saw it? Ten propositions for new directions for the second decade of UDL. <i>Learning Disability Quarterly</i>, <i>33</i>(1), 33–41. https://doi.org/10.1177/073194871003300103"
                 ],
                 "drafted_by": [
                     "Charlotte R. Pennington"
@@ -10612,7 +10665,7 @@
                     "Hiba Alomary",
                     "Mohammed Mohsen"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -10753,10 +10806,33 @@
                 "title": "وِيرد [WEIRD]",
                 "sort_key": "وِيرد [weird]",
                 "definition": "التَّعريف: يشير هذا الاختصار إلى المجتمعات الغربيَّة، والمتعلِّمة، والصِّناعيَّة، والغنيَّة، والدِّيمقراطية. يتم إجراء معظم البحوث على، وبواسطة، عيِّنات متجانسة نسبيًا من مجتمعات ويرد، وهذا ما يحد من قابليَّة تعميم عدد كبير من نتائج البحوث، لا سيما بالنَّظر إلى أنَّ الأشخاص الغريبين غالبًا ما يكونون متطرِّفين نفسيًا. لقد قيل أنَّ \"علم نفس ويرد\" بدأ في التَّطور ثقافيًا نتيجة للتَّغيُّرات المجتمعيَّة، والمعتقدات الدِّينيَّة في العصور الوسطى في أوروبا. يقترح نقّاد هذا المصطلح أنَّه يقدِّم وجهة نظر ثنائيَّة لسكان العالم، ويمحو التَّباين الموجود بين وداخل المجتمعات .وأنَّ الجوانب الأخرى للتَّنوُّع لا يتم التقاطها.\nالمصطلحات ذات الصِّلة: التَّحيُّز، بيزار، التَّنوع، القابليَّة للتَّعميم، السُّكان، تحيُّز أخذ العيِّنات، سترينج: الخلفية الاجتماعيَّة والقابليَّة للتَّتبُّع والاختيار الذَّاتي وتاريخ التَّربية، والتَّأقلم، والتَّعود.",
-                "related_terms": [],
-                "references": [],
-                "drafted_by": [],
-                "reviewed_by": [],
+                "related_terms": [
+                    "Bias",
+                    "BIZARRE",
+                    "Diversity",
+                    "Generalizability",
+                    "Populations",
+                    "Sampling bias",
+                    "STRANGE"
+                ],
+                "references": [
+                    "Henrich, J. (2020). <i>The weirdest people in the world: How the west became psychologically peculiar and particularly prosperous</i>. Farrar, Straus and Giroux.",
+                    "Henrich, J., Heine, S. J., & Norenzayan, A. (2010). The weirdest people in the world? <i>Behavioral and Brain Sciences</i>, <i>33</i>(2–3), 61–83. https://doi.org/10.1017/S0140525X0999152X",
+                    "Muthukrishna, M., Bell, A. V., Henrich, J., Curtin, C. M., Gedranovich, A., McInerney, J., & Thue, B. (2020). Beyond Western, Educated, Industrial, Rich, and Democratic (WEIRD) psychology: Measuring and mapping scales of cultural and psychological distance. <i>Psychological Science</i>, <i>31</i>, 678–701. https://doi.org/10.1177/0956797620916782",
+                    "Syed, M., & Kathawalla, U. (2020). <i>Cultural Psychology, Diversity, and Representation in Open Science</i>. https://doi.org/10.31234/osf.io/t7hp2"
+                ],
+                "drafted_by": [
+                    "Mahmoud Elsherif"
+                ],
+                "reviewed_by": [
+                    "Zoe Flack",
+                    "Matt Jaquiery",
+                    "Bettina M. J. Kern",
+                    "Adam Parker",
+                    "Charlotte R. Pennington",
+                    "Robert M. Ross",
+                    "Suzanne L. K. Stewart"
+                ],
                 "alt_related_terms": [
                     null
                 ],
@@ -10770,7 +10846,7 @@
                     "Alaa M. Saleh",
                     "Mohammed Mohsen"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -10952,7 +11028,7 @@
                 "references": [
                     "Brown, N., Thompson, P., & Leigh, J. S. (2018). Making academia more accessible. <i>Journal of Perspectives in Applied Academic Practice</i>, <i>6</i>(2), 82–90. https://doi.org/10.14297/jpaap.v6i2.348",
                     "Pollet, I. L., & Bond, A. L. (2021). Evaluation and recommendations for greater accessibility of colour figures in ornithology. <i>Ibis</i>, <i>163</i>, 292–295. https://doi.org/10.1111/ibi.12887",
-                    "Suber, P. (2004). The primacy of authors in achieving Open Access. In <i>Nature</i>. Retrieved from http://dash.harvard.edu/handle/1/4391161)",
+                    "Suber, P. (2004). The primacy of authors in achieving Open Access. In <i>Nature</i>. Retrieved from http://dash.harvard.edu/handle/1/4391161",
                     "World Wide Web Consortium. (2021). <i>Web Accessibility Initiative</i>. https://www.w3.org/WAI/",
                     "Pownall, M., Talbot, C. V., Henschel, A., Lautarescu, A., Lloyd, K. E., Hartmann, H., Darda, K. M., Tang, K. T. Y., Carmichael-Murphy, P., & Siegel, J. A. (2021). Navigating Open Science as Early Career Feminist Researchers. <i>Psychology of Women Quarterly</i>, <i>45</i>(4), 526–539. https://doi.org/10.1177/03616843211029255"
                 ],
@@ -10985,7 +11061,7 @@
                     "Ruoting Liu",
                     "Shuxian Jin"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -11711,7 +11787,8 @@
                 ],
                 "references": [
                     "Gorgolewski, K., Auer, T., Calhoun, V., & others. (2016). The brain imaging data structure, a format for organizing and describing outputs of neuroimaging experiments. <i>Scientific Data</i>, <i>3</i>, 160044. https://doi.org/10.1038/sdata.2016.44",
-                    "BIDS. (2020). <i>About BIDS</i>. Retrieved from https://bids.neuroimaging.io"
+                    "BIDS. (2020). <i>About BIDS</i>. Retrieved from https://bids.neuroimaging.io",
+                    "Pernet, C. R., Appelhoff, S., Gorgolewski, K. J., Flandin, G., Phillips, C., Delorme, A., & Oostenveld, R. (2019). EEG-BIDS, an extension to the brain imaging data structure for electroencephalography. <i>Scientific Data</i>, <i>6</i>(1), 103. https://doi.org/10.1038/s41597-019-0104-8"
                 ],
                 "drafted_by": [
                     "Tina Lonsdorf"
@@ -11735,7 +11812,7 @@
                     "Ruoting Liu",
                     "Shuxian Jin"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -11873,7 +11950,9 @@
                 "references": [
                     "Guest, O. [@o_guest]. (2017). <i>Thanks! Hopefully this thread & many other similar discussions & blogs will help make it less Bropen Science and more Open Science. *hides* </i>. Twitter. Retrieved from https://twitter.com/o_guest/status/871675631062458368",
                     "Whitaker, K., & Guest, O. (2020).  #bropenscience is broken science. <i>The Psychologist</i>, <i>33</i>, 34–37.",
-                    "Pownall, M., Talbot, C. V., Henschel, A., Lautarescu, A., Lloyd, K. E., Hartmann, H., Darda, K. M., Tang, K. T. Y., Carmichael-Murphy, P., & Siegel, J. A. (2021). Navigating Open Science as Early Career Feminist Researchers. <i>Psychology of Women Quarterly</i>, <i>45</i>(4), 526–539. https://doi.org/10.1177/03616843211029255"
+                    "Pownall, M., Talbot, C. V., Henschel, A., Lautarescu, A., Lloyd, K. E., Hartmann, H., Darda, K. M., Tang, K. T. Y., Carmichael-Murphy, P., & Siegel, J. A. (2021). Navigating Open Science as Early Career Feminist Researchers. <i>Psychology of Women Quarterly</i>, <i>45</i>(4), 526–539. https://doi.org/10.1177/03616843211029255",
+                    "Bahlai, C., Bartlett, L. J., Burgio, K. R., & others. (2019). Open science isn’t always open to all scientists. <i>American Scientist</i>, <i>107</i>(2), 78.",
+                    "Onie, S. (2020). Redesign open science for Asia, Africa and Latin America. <i>Nature</i>, <i>587</i>, 5–37. https://doi.org/10.1038/d41586-020-03052-3"
                 ],
                 "drafted_by": [
                     "Zoe Flack"
@@ -11902,7 +11981,7 @@
                     "Ruoting Liu",
                     "Shuxian Jin"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -12635,7 +12714,7 @@
                 "en_title": "Conflict of interest",
                 "title": "利益冲突 [Conflict of interest]",
                 "sort_key": "liyichongtu",
-                "definition": "利益冲突（conflict of interest，简称COI，或“竞争性利益”）是指可能影响作者、审稿人、编辑或编辑部成员客观性或专业判断的财务或非财务关系、活动或其他关联利益。出版伦理委员会、开放获取期刊目录、开放获取学术出版商协会和世界医学编辑协会联合发布的《学术出版透明度和最佳实践准则》指出，期刊应制定包含COI的出版伦理政策（DOAJ, 2018）。COI应透明化，以便读者能正确评估研究及潜在或实际的偏见。除了出版领域外，学术报告人、评审委员会成员和教育工作者也应声明COI。故意不披露COI可能被视为不当行为。",
+                "definition": "利益冲突（conflict of interest，简称COI，或“竞争性利益”）是指可能影响作者、审稿人、编辑或编辑部成员客观性或专业判断的财务或非财务关系、活动或其他关联利益。出版伦理委员会、开放获取期刊目录、开放获取学术出版商协会和世界医学编辑协会联合发布的《学术出版透明度和最佳实践准则》指出，期刊应制定包含COI的出版伦理政策（DOAJ, n.d.）。COI应透明化，以便读者能正确评估研究及潜在或实际的偏见。除了出版领域外，学术报告人、评审委员会成员和教育工作者也应声明COI。故意不披露COI可能被视为不当行为。",
                 "related_terms": [
                     "Objectivity",
                     "Peer review",
@@ -12666,7 +12745,7 @@
                     "Ruoting Liu",
                     "Shuxian Jin"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -12855,7 +12934,8 @@
                 "references": [
                     "Knoth, P., & Herrmannova, D. (2014). Towards semantometrics: A new semantic similarity based measure for assessing a research publication’s contribution. <i>D-Lib Magazine</i>, <i>20</i>(11), 8. https://doi.org/10.1045/november2014-knoth",
                     "Larivière, V., Desrochers, N., Macaluso, B., Mongeon, P., Paul-Hus, A., & Sugimoto, C. R. (2016). Contributorship and division of labor in knowledge production. <i>Social Studies of Science</i>, <i>46</i>(3), 417–435. https://doi.org/10.1177/0306312716650046",
-                    "Holcombe, A. O. (2019). Contributorship, not authorship: Use CRediT to indicate who did what. <i>Publications</i>, <i>7</i>(3), 48. https://doi.org/10.3390/publications7030048"
+                    "Holcombe, A. O. (2019). Contributorship, not authorship: Use CRediT to indicate who did what. <i>Publications</i>, <i>7</i>(3), 48. https://doi.org/10.3390/publications7030048",
+                    "Harris, C. R., Millman, K. J., van der Walt, S. J., Gommers, R., Virtanen, P., Cournapeau, D., Wieser, E., Taylor, J., Berg, S., Smith, N. J., Kern, R., Picus, M., Hoyer, S., van Kerkwijk, M. H., Brett, M., Haldane, A., del Río, J. F., Wiebe, M., Peterson, P., & Gérard-Marchant, P. (2020). Array programming with NumPy. <i>Nature</i>, <i>585</i>(7825), 357–362. https://doi.org/10.1038/s41586-020-2649-2"
                 ],
                 "drafted_by": [
                     "Micah Vandegrift"
@@ -12881,7 +12961,7 @@
                     "Ruoting Liu",
                     "Shuxian Jin"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -13647,7 +13727,9 @@
                 "references": [
                     "Albayrak, N., & Okoroji, C. (2019). Facing the challenges of postgraduate study as a minority student. <i>A Guide for Psychology Postgraduates</i>, 63.",
                     "Du Bois, W. E. B. (1968). <i>The souls of black folk; essays and sketches</i>. Johnson Reprint Corp.",
-                    "Gilroy, P. (1993). <i>The black Atlantic: Modernity and double consciousness</i>. Harvard University Press."
+                    "Gilroy, P. (1993). <i>The black Atlantic: Modernity and double consciousness</i>. Harvard University Press.",
+                    "Rubin, M. (2021). Explaining the association between subjective social status and mental health among university students using an impact ratings approach. <i>SN Social Sciences</i>, <i>1</i>(1), 1–21. https://doi.org/10.1007/s43545-020-00031-3",
+                    "Rubin, M., Evans, O., & McGuffog, R. (2019). Social class differences in social integration at university: Implications for academic outcomes and mental health. In J. Jetten & K. Peters (Eds.), <i>The social psychology of inequality</i> (pp. 87–102). Springer. https://doi.org/10.1007/978-3-030-28856-3_6"
                 ],
                 "drafted_by": [
                     "Nihan Albayrak-Aydemir"
@@ -13671,7 +13753,7 @@
                     "Ruoting Liu",
                     "Shuxian Jin"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -14042,7 +14124,7 @@
                 "en_title": "Equivalence Testing",
                 "title": "等效性检验 [Equivalence Testing]",
                 "sort_key": "dengxiaoxingjianyan",
-                "definition": "等效性检验通过统计学方法评估一个零假设，即给定效应量超过了被视为有意义的最小标准值。因而，拒绝零假设则表明缺乏（有实际意义的）效应。等效性检验基于频率学派，设定等效界限，即研究者感兴趣的最小效应量的上下限，并通过两次单侧 t 检验评估是否能拒绝那些被认为具有实际意义的效应（Schuirmann, 1972; Lakens et al., 2018; 2020）。",
+                "definition": "等效性检验通过统计学方法评估一个零假设，即给定效应量超过了被视为有意义的最小标准值。因而，拒绝零假设则表明缺乏（有实际意义的）效应。等效性检验基于频率学派，设定等效界限，即研究者感兴趣的最小效应量的上下限，并通过两次单侧 t 检验评估是否能拒绝那些被认为具有实际意义的效应（Schuirmann, 1987; Lakens et al., 2018; 2020）。",
                 "related_terms": [
                     "Equivalence bounds",
                     "Falsification",
@@ -14081,7 +14163,7 @@
                     "Ruoting Liu",
                     "Shuxian Jin"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -14581,7 +14663,7 @@
                     "Specification Curve Analysis"
                 ],
                 "references": [
-                    "Gelman, A., & Loken, E. (n.d.). <i>The garden of forking paths: Why multiple comparisons can be a problem, even when there is no “fishing expedition” or “p-hacking” and the research hypothesis was posited ahead of time</i>. Retrieved from http://www.stat.columbia.edu/"
+                    "Gelman, A., & Loken, E. (2013). <i>The garden of forking paths: Why multiple comparisons can be a problem, even when there is no “fishing expedition” or “p-hacking” and the research hypothesis was posited ahead of time</i>. http://www.stat.columbia.edu/~gelman/research/unpublished/p_hacking.pdf"
                 ],
                 "drafted_by": [
                     "Flávio Azevedo; Mahmoud Elsherif"
@@ -14605,7 +14687,7 @@
                     "Ruoting Liu",
                     "Shuxian Jin"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -17601,7 +17683,8 @@
                     "Kiernan, C. (1999). Participation in research by people with learning disability: Origins and issues. <i>British Journal of Learning Disabilities</i>, <i>27</i>(2), 43–47. https://doi.org/10.1111/j.1468-3156.1999.tb00084.x",
                     "Leavy, P. (2017). <i>Research Design: Quantitative, Qualitative, Mixed Methods, Arts-Based, and Community-Based Participatory Research Approaches</i>. The Guilford Press.",
                     "Ottmann, G., Laragy, C., Allen, J., & Feldman, P. (2011). Coproduction in practice: Participatory action research to develop a model of community aged care. <i>Systemic Practice and Action Research</i>, <i>24</i>, 413–427. https://doi.org/10.1007/s11213-011-9192-x",
-                    "Rose, D. (2018). Participatory research: Real or imagined. <i>Social Psychiatry and Psychiatric Epidemiology</i>, <i>53</i>, 765–771. https://doi.org/10.1007/s00127-018-1549-3"
+                    "Rose, D. (2018). Participatory research: Real or imagined. <i>Social Psychiatry and Psychiatric Epidemiology</i>, <i>53</i>, 765–771. https://doi.org/10.1007/s00127-018-1549-3",
+                    "Andersson, N. (2018). Participatory research—a modernizing science for primary health care. <i>Journal of General and Family Medicine</i>, <i>19</i>(5), 154–159. https://doi.org/10.1002/jgf2.187"
                 ],
                 "drafted_by": [
                     "Tamara Kalandadze"
@@ -17625,7 +17708,7 @@
                     "Ruoting Liu",
                     "Shuxian Jin"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -18487,14 +18570,14 @@
                 "en_title": "Public Trust in Science",
                 "title": "公众对科学的信任 [Public Trust in Science]",
                 "sort_key": "gongzhongduikexuedexinren",
-                "definition": "公众对科学的信任是指，公众对科学家为公民社会利益所创造的知识、指南与建议的信任（Hendriks et al., 2016）。这还涵盖公众对基于科学的公共卫生（例如，全民医疗、干细胞研究、联邦资助的妇女生殖权利、传染病预防、疫苗接种）、气候变化、经济政策（例如，福利、不平等和贫困控制）及其交叉领域的建议的信任。研究表明，公众对科学的信任受多种因素影响，如年龄（Anderson et al., 2012）、性别（Von Roten, 2004）、科学规范排斥（Lewandowsky & Oberauer, 2021）、政治意识形态（Azevedo & Jost, 2021; Brewer & Ley, 2012; Leiserowitz et al., 2010）、右翼威权主义和社会支配倾向（Kerr & Wilson, 2021）、教育（Bak, 2001; Hayes & Tariq, 2000）、收入（Anderson et al., 2012）、科学知识（Evans & Durant, 1995; Nisbet et al., 2002）、社交媒体使用（Huber et al., 2019）及宗教信仰（Azevedo, 2021; Brewer & Ley, 2013; Liu & Priest, 2009）。",
+                "definition": "公众对科学的信任是指，公众对科学家为公民社会利益所创造的知识、指南与建议的信任（Hendriks et al., 2016）。这还涵盖公众对基于科学的公共卫生（例如，全民医疗、干细胞研究、联邦资助的妇女生殖权利、传染病预防、疫苗接种）、气候变化、经济政策（例如，福利、不平等和贫困控制）及其交叉领域的建议的信任。研究表明，公众对科学的信任受多种因素影响，如年龄（Anderson et al., 2012）、性别（Crettaz von Roten, 2004）、科学规范排斥（Lewandowsky & Oberauer, 2021）、政治意识形态（Azevedo & Jost, 2021; Brewer & Ley, 2013; Leiserowitz et al., 2010）、右翼威权主义和社会支配倾向（Kerr & Wilson, 2021）、教育（Bak, 2001; Hayes & Tariq, 2000）、收入（Anderson et al., 2012）、科学知识（Evans & Durant, 1995; Nisbet et al., 2002）、社交媒体使用（Huber et al., 2019）及宗教信仰（Azevedo, 2021; Brewer & Ley, 2013; Liu & Priest, 2009）。",
                 "related_terms": [
                     "Credibility of scientific claims",
                     "Epistemic Trust"
                 ],
                 "references": [
                     "Anderson, M. S., Ronning, E. A., Devries, R., & Martinson, B. C. (2010). Extending the Mertonian norms: Scientists’ subscription to norms of research. <i>Journal of Higher Education</i>, <i>81</i>(3), 366–393. https://doi.org/10.1353/jhe.0.0095",
-                    "Azevedo, F. (n.d.). <i>Ideology May Help Explain Anti-Scientific Attitudes | Psychology Today</i>. https://www.psychologytoday.com/us/blog/social-justice-pacifists/202107/ideology-may-help-explain-anti-scientific-attitudes",
+                    "Azevedo, F. (2021). <i>Ideology May Help Explain Anti-Scientific Attitudes | Psychology Today</i>. https://www.psychologytoday.com/us/blog/social-justice-pacifists/202107/ideology-may-help-explain-anti-scientific-attitudes",
                     "Azevedo, F., & Jost, J. T. (2021). The ideological basis of antiscientific attitudes: Effects of authoritarianism, conservatism, religiosity, social dominance, and system justification. <i>Group Processes & Intergroup Relations</i>, <i>24</i>(4), 518–549. https://doi.org/10.1177/1368430221990104",
                     "Bak, H.-J. (2001). Education and Public Attitudes toward Science: Implications for the ‘Deficit Model’ of Education and Support for Science and Technology. <i>Social Science Quarterly</i>, <i>82</i>(4), 779–795. https://www.jstor.org/stable/42955760",
                     "Brewer, P. R., & Ley, B. L. (2013). Whose Science Do You Believe? Explaining Trust in Sources of Scientific Information About the Environment. <i>Science Communication</i>, <i>35</i>(1), 115–137. https://doi.org/10.1177/1075547012441691",
@@ -18508,7 +18591,8 @@
                     "Nisbet, M. C., Scheufele, D. A., Shanahan, J., Moy, P., Brossard, D., & Lewenstein, B. V. (2002). Knowledge, Reservations, or Promise?: A Media Effects Model for Public Perceptions of Science and Technology. <i>Communication Research</i>, <i>29</i>(5), 584–608. https://doi.org/10.1177/009365002236196",
                     "Schneider, J., Merk, S., & Rosman, T. (2019). <i>(Re)Building Trust? Investigating the effects of open science badges on perceived trustworthiness in journal articles</i>. https://doi.org/10.17605/OSF.IO/VGBRS",
                     "Wingen, T., Berkessel, J. B., & Englich, B. (2020). No Replication, No Trust? How Low Replicability Influences Trust in Psychology. <i>Social Psychological and Personality Science</i>, <i>11</i>(4). https://doi.org/10.1177/1948550619877412",
-                    "Anderson, A. A., Scheufele, D. A., Brossard, D., & Corley, E. A. (2012). The Role of Media and Deference to Scientific Authority in Cultivating Trust in Sources of Information about Emerging Technologies. <i>International Journal of Public Opinion Research</i>, <i>24</i>(2), 225–237. https://doi.org/10.1093/ijpor/edr032"
+                    "Anderson, A. A., Scheufele, D. A., Brossard, D., & Corley, E. A. (2012). The Role of Media and Deference to Scientific Authority in Cultivating Trust in Sources of Information about Emerging Technologies. <i>International Journal of Public Opinion Research</i>, <i>24</i>(2), 225–237. https://doi.org/10.1093/ijpor/edr032",
+                    "Crettaz von Roten, F. (2004). Gender differences in attitudes toward science in Switzerland. <i>Public Understanding of Science</i>, <i>13</i>(2), 191–199. https://doi.org/10.1177/0963662504043870"
                 ],
                 "drafted_by": [
                     "Tobias Wingen; Flávio Azevedo"
@@ -18532,7 +18616,7 @@
                     "Ruoting Liu",
                     "Shuxian Jin"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -19086,13 +19170,14 @@
                 "en_title": "Repeatability",
                 "title": "重复性 [Repeatability]",
                 "sort_key": "chongfuxing",
-                "definition": "重复性与重测信度同义，指对同一测量指标进行连续多次测量所得结果之间的一致性程度。实现重复性需满足以下条件：使用相同的实验工具、由同一观察者操作、在相同条件下运行同一测量仪器、于同一地点实施、在短期内对相同目标进行重复测量（Joint Committee for Guidelines in Metrology, 2008）。",
+                "definition": "重复性与重测信度同义，指对同一测量指标进行连续多次测量所得结果之间的一致性程度。实现重复性需满足以下条件：使用相同的实验工具、由同一观察者操作、在相同条件下运行同一测量仪器、于同一地点实施、在短期内对相同目标进行重复测量（Joint Committee for Guides in Metrology, 2008）。",
                 "related_terms": [
                     "Reliability"
                 ],
                 "references": [
                     "ISO. (1993). <i>Guide to the Expression of Uncertainty in Measurement</i> (1st ed.). International Organization for Standardization.",
-                    "Stodden, V. C. (2011). <i>Trust your science? Open your data and code</i>."
+                    "Stodden, V. C. (2011). <i>Trust your science? Open your data and code</i>.",
+                    "Working Group 1 of the Joint Committee for Guides in Metrology JCGM. (2008). <i>Evaluation of measurement data—Guide to the expression of uncertainty in measurement</i> (pp. 1–120). JCGM. https://www.bipm.org/documents/20126/2071204/JCGM_100_2008_E.pdf/cb0ef43f-baa5-11cf-3f85-4dcd86f77bd6"
                 ],
                 "drafted_by": [
                     "Mahmoud Elsherif, Adam Parker"
@@ -19116,7 +19201,7 @@
                     "Ruoting Liu",
                     "Shuxian Jin"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -19136,8 +19221,9 @@
                     "Barba, L. A. (2018). Terminologies for reproducible research. <i>arXiv Preprint arXiv:1802.03311</i>.",
                     "Crüwell, S., van Doorn, J., Etz, A., Makel, M. C., Moshontz, H., Niebaum, J. C., Orben, A., Parsons, S., & Schulte-Mecklenbeck, M. (2019). Seven Easy Steps to Open Science: An Annotated Reading List. <i>Zeitschrift Für Psychologie</i>, <i>227</i>(4), 237–248. https://doi.org/10.1027/2151-2604/a000387",
                     "King, G. (1995). Replication, replication. <i>PS: Political Science & Politics</i>, <i>28</i>(3), 444–452. https://doi.org/10.2307/420301",
-                    "National Academies of Sciences, Engineering, Medicine, & others. (2019). <i>Reproducibility and Replicability in Science. In Understanding Reproducibility and Replicability</i> [Techreport]. National Academies Press (US). https://www.ncbi.nlm.nih.gov/books/NBK547546/",
-                    "Nosek, B. A., & Errington, T. M. (2020). What is replication? <i>PLOS Biology</i>, <i>18</i>(3), e3000691. https://doi.org/10.1371/journal.pbio.3000691"
+                    "National Academies of Sciences, Engineering, and Medicine. (2019). <i>Reproducibility and Replicability in Science. In Understanding Reproducibility and Replicability</i> [Techreport]. National Academies Press (US). https://www.ncbi.nlm.nih.gov/books/NBK547546/",
+                    "Nosek, B. A., & Errington, T. M. (2020). What is replication? <i>PLOS Biology</i>, <i>18</i>(3), e3000691. https://doi.org/10.1371/journal.pbio.3000691",
+                    "Claerbout, J. F., & Karrenbach, M. (1992). Electronic documents give reproducible research a new meaning. <i>SEG Technical Program Expanded Abstracts 1992</i>, 601–604. http://sepwww.stanford.edu/doku.php?id=sep:research:reproducible:seg92"
                 ],
                 "drafted_by": [
                     "Mahmoud Elsherif"
@@ -19165,7 +19251,7 @@
                     "Ruoting Liu",
                     "Shuxian Jin"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -19355,7 +19441,7 @@
                     "Peng, R. D. (2011). Reproducible Research in Computational Science. <i>Science</i>, <i>334</i>(6060), 1226–1227. https://doi.org/10.1126/science.1213847",
                     "Stodden, V. C. (2011). <i>Trust your science? Open your data and code</i>.",
                     "Syed, M. (2019). The Open Science Movement is for all of us. <i>PsyArXiv</i>.",
-                    "National Academies of Sciences, Engineering, Medicine, & others. (2019). <i>Reproducibility and Replicability in Science. In Understanding Reproducibility and Replicability</i> [Techreport]. National Academies Press (US). https://www.ncbi.nlm.nih.gov/books/NBK547546/"
+                    "National Academies of Sciences, Engineering, and Medicine. (2019). <i>Reproducibility and Replicability in Science. In Understanding Reproducibility and Replicability</i> [Techreport]. National Academies Press (US). https://www.ncbi.nlm.nih.gov/books/NBK547546/"
                 ],
                 "drafted_by": [
                     "Mahmoud Elsherif"
@@ -19381,7 +19467,7 @@
                     "Ruoting Liu",
                     "Shuxian Jin"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -19722,7 +19808,7 @@
                     "Specification curve analysis"
                 ],
                 "references": [
-                    "Gelman, A., & Loken, E. (n.d.). <i>The garden of forking paths: Why multiple comparisons can be a problem, even when there is no “fishing expedition” or “p-hacking” and the research hypothesis was posited ahead of time</i>. Retrieved from http://www.stat.columbia.edu/",
+                    "Gelman, A., & Loken, E. (2013). <i>The garden of forking paths: Why multiple comparisons can be a problem, even when there is no “fishing expedition” or “p-hacking” and the research hypothesis was posited ahead of time</i>. http://www.stat.columbia.edu/~gelman/research/unpublished/p_hacking.pdf",
                     "Simmons, J. P., Nelson, L. D., & Simonsohn, U. (2011). False-positive psychology: Undisclosed flexibility in data collection and analysis allows presenting anything as significant. <i>Psychological Science</i>, <i>22</i>(11), 1359–1366. https://doi.org/10.1177/0956797611417632",
                     "Wicherts, J. M., Veldkamp, C. L., Augusteijn, H. E., Bakker, M., Van Aert, R., & Van Assen, M. A. (2016). Degrees of freedom in planning, running, analyzing, and reporting psychological studies: A checklist to avoid p-hacking. <i>Frontiers in Psychology</i>, <i>7</i>, 1832. https://doi.org/10.3389/fpsyg.2016.01832"
                 ],
@@ -19749,7 +19835,7 @@
                     "Ruoting Liu",
                     "Shuxian Jin"
                 ],
-                "lastmod": "2026-11-08"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -21400,7 +21486,8 @@
                 "references": [
                     "Hitchcock, C., Meyer, A., Rose, D., & Jackson, R. (2002). Providing new access to the general curriculum: Universal design for learning. <i>Teaching Exceptional Children</i>, <i>35</i>(2), 8–17. https://www.proquest.com/scholarly-journals/providing-new-access-general-curriculum/docview/201139970/se-2?accountid=8630",
                     "Rose, D. (2000). Universal design for learning. <i>Journal of Special Education Technology</i>, <i>15</i>(3), 45–49. https://doi.org/10.1177/016264340001500307",
-                    "Rose, D. H., & Meyer, A. (2002). Teaching every student in the digital age: Universal design for learning. In <i>The Corsini Encyclopedia of Psychology</i>. Association for Supervision."
+                    "Rose, D. H., & Meyer, A. (2002). Teaching every student in the digital age: Universal design for learning. In <i>The Corsini Encyclopedia of Psychology</i>. Association for Supervision.",
+                    "Edyburn, D. L. (2010). Would you recognize universal design for learning if you saw it? Ten propositions for new directions for the second decade of UDL. <i>Learning Disability Quarterly</i>, <i>33</i>(1), 33–41. https://doi.org/10.1177/073194871003300103"
                 ],
                 "drafted_by": [
                     "Charlotte R. Pennington"
@@ -21426,7 +21513,7 @@
                     "Xiujuan Wen",
                     "Shuxian Jin"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -21570,10 +21657,33 @@
                 "title": "西方的、受过教育的、工业化的、富裕的、民主的社会 [WEIRD]",
                 "sort_key": "xifangde、shouguojiaoyude、gongyehuade、fuyude、minzhudeshehui",
                 "definition": "WEIRD 这个缩写词指的是西方的（Western）、受过教育的（Educated）、工业化的（Industrialized）、富裕的（Rich）和民主的（Democratic）的社会。大多数研究都是在WEIRD社会中进行的，研究对象也往往是这些社会中相对同质化的群体样本。这极大地限制了大量研究结果的普适性，尤其是考虑到WEIRD群体在心理上常常属于“离群值”。有观点认为，“WEIRD 心理学”是欧洲中世纪社会变革和宗教信仰影响下逐渐演化形成的文化产物。对该术语的批评者指出，它将全球人口简单二元对立，忽略了社会之间和社会内部存在的差异，同时也未能涵盖多样性的其他维度。",
-                "related_terms": [],
-                "references": [],
-                "drafted_by": [],
-                "reviewed_by": [],
+                "related_terms": [
+                    "Bias",
+                    "BIZARRE",
+                    "Diversity",
+                    "Generalizability",
+                    "Populations",
+                    "Sampling bias",
+                    "STRANGE"
+                ],
+                "references": [
+                    "Henrich, J. (2020). <i>The weirdest people in the world: How the west became psychologically peculiar and particularly prosperous</i>. Farrar, Straus and Giroux.",
+                    "Henrich, J., Heine, S. J., & Norenzayan, A. (2010). The weirdest people in the world? <i>Behavioral and Brain Sciences</i>, <i>33</i>(2–3), 61–83. https://doi.org/10.1017/S0140525X0999152X",
+                    "Muthukrishna, M., Bell, A. V., Henrich, J., Curtin, C. M., Gedranovich, A., McInerney, J., & Thue, B. (2020). Beyond Western, Educated, Industrial, Rich, and Democratic (WEIRD) psychology: Measuring and mapping scales of cultural and psychological distance. <i>Psychological Science</i>, <i>31</i>, 678–701. https://doi.org/10.1177/0956797620916782",
+                    "Syed, M., & Kathawalla, U. (2020). <i>Cultural Psychology, Diversity, and Representation in Open Science</i>. https://doi.org/10.31234/osf.io/t7hp2"
+                ],
+                "drafted_by": [
+                    "Mahmoud Elsherif"
+                ],
+                "reviewed_by": [
+                    "Zoe Flack",
+                    "Matt Jaquiery",
+                    "Bettina M. J. Kern",
+                    "Adam Parker",
+                    "Charlotte R. Pennington",
+                    "Robert M. Ross",
+                    "Suzanne L. K. Stewart"
+                ],
                 "alt_related_terms": [
                     null
                 ],
@@ -21588,7 +21698,7 @@
                     "Xiujuan Wen",
                     "Shuxian Jin"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -21767,7 +21877,7 @@
                 "references": [
                     "Brown, N., Thompson, P., & Leigh, J. S. (2018). Making academia more accessible. <i>Journal of Perspectives in Applied Academic Practice</i>, <i>6</i>(2), 82–90. https://doi.org/10.14297/jpaap.v6i2.348",
                     "Pollet, I. L., & Bond, A. L. (2021). Evaluation and recommendations for greater accessibility of colour figures in ornithology. <i>Ibis</i>, <i>163</i>, 292–295. https://doi.org/10.1111/ibi.12887",
-                    "Suber, P. (2004). The primacy of authors in achieving Open Access. In <i>Nature</i>. Retrieved from http://dash.harvard.edu/handle/1/4391161)",
+                    "Suber, P. (2004). The primacy of authors in achieving Open Access. In <i>Nature</i>. Retrieved from http://dash.harvard.edu/handle/1/4391161",
                     "World Wide Web Consortium. (2021). <i>Web Accessibility Initiative</i>. https://www.w3.org/WAI/",
                     "Pownall, M., Talbot, C. V., Henschel, A., Lautarescu, A., Lloyd, K. E., Hartmann, H., Darda, K. M., Tang, K. T. Y., Carmichael-Murphy, P., & Siegel, J. A. (2021). Navigating Open Science as Early Career Feminist Researchers. <i>Psychology of Women Quarterly</i>, <i>45</i>(4), 526–539. https://doi.org/10.1177/03616843211029255"
                 ],
@@ -21798,7 +21908,7 @@
                     "Susanne Vogel",
                     "Jennifer Mattschey"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -22490,7 +22600,8 @@
                 ],
                 "references": [
                     "Gorgolewski, K., Auer, T., Calhoun, V., & others. (2016). The brain imaging data structure, a format for organizing and describing outputs of neuroimaging experiments. <i>Scientific Data</i>, <i>3</i>, 160044. https://doi.org/10.1038/sdata.2016.44",
-                    "BIDS. (2020). <i>About BIDS</i>. Retrieved from https://bids.neuroimaging.io"
+                    "BIDS. (2020). <i>About BIDS</i>. Retrieved from https://bids.neuroimaging.io",
+                    "Pernet, C. R., Appelhoff, S., Gorgolewski, K. J., Flandin, G., Phillips, C., Delorme, A., & Oostenveld, R. (2019). EEG-BIDS, an extension to the brain imaging data structure for electroencephalography. <i>Scientific Data</i>, <i>6</i>(1), 103. https://doi.org/10.1038/s41597-019-0104-8"
                 ],
                 "drafted_by": [
                     "Tina Lonsdorf"
@@ -22512,7 +22623,7 @@
                     "Susanne Vogel",
                     "Jennifer Mattschey"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -22644,7 +22755,9 @@
                 "references": [
                     "Guest, O. [@o_guest]. (2017). <i>Thanks! Hopefully this thread & many other similar discussions & blogs will help make it less Bropen Science and more Open Science. *hides* </i>. Twitter. Retrieved from https://twitter.com/o_guest/status/871675631062458368",
                     "Whitaker, K., & Guest, O. (2020).  #bropenscience is broken science. <i>The Psychologist</i>, <i>33</i>, 34–37.",
-                    "Pownall, M., Talbot, C. V., Henschel, A., Lautarescu, A., Lloyd, K. E., Hartmann, H., Darda, K. M., Tang, K. T. Y., Carmichael-Murphy, P., & Siegel, J. A. (2021). Navigating Open Science as Early Career Feminist Researchers. <i>Psychology of Women Quarterly</i>, <i>45</i>(4), 526–539. https://doi.org/10.1177/03616843211029255"
+                    "Pownall, M., Talbot, C. V., Henschel, A., Lautarescu, A., Lloyd, K. E., Hartmann, H., Darda, K. M., Tang, K. T. Y., Carmichael-Murphy, P., & Siegel, J. A. (2021). Navigating Open Science as Early Career Feminist Researchers. <i>Psychology of Women Quarterly</i>, <i>45</i>(4), 526–539. https://doi.org/10.1177/03616843211029255",
+                    "Bahlai, C., Bartlett, L. J., Burgio, K. R., & others. (2019). Open science isn’t always open to all scientists. <i>American Scientist</i>, <i>107</i>(2), 78.",
+                    "Onie, S. (2020). Redesign open science for Asia, Africa and Latin America. <i>Nature</i>, <i>587</i>, 5–37. https://doi.org/10.1038/d41586-020-03052-3"
                 ],
                 "drafted_by": [
                     "Zoe Flack"
@@ -22671,7 +22784,7 @@
                     "Helena Hartmann",
                     "Jennifer Mattschey"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -23368,7 +23481,7 @@
                 "en_title": "Conflict of interest",
                 "title": "Interessenkonflikt [Conflict of interest]",
                 "sort_key": "interessenkonflikt [conflict of interest]",
-                "definition": "Ein Interessenkonflikt (COI, Conflict of Interest) ist eine finanzielle oder nicht-finanzielle Beziehung, Aktivität oder ein anderes Interesse, das die Objektivität oder das professionelle Urteilsvermögen von Autor:innen, Gutachter:innen, Redakteur:innen oder Redaktionsmitgliedern beeinträchtigen könnte. In den “Principles of Transparency and Best Practice in Scholarly Publishing” des Committee on Publication Ethics (COPE), des Directory of Open Access Journals (DOAJ), der Open Access Scholarly Publishers Association (OASPA) und der World Association of Medical Editors (WAME) heißt es, dass Zeitschriften über Richtlinien zur Publikationsethik verfügen sollten, einschließlich Richtlinien zu COI (DOAJ, 2018). COIs sollten transparent offengelegt werden, damit die Lesende die Forschung richtig bewerten und auf potenzielle oder tatsächliche Voreingenommenheit(en) prüfen können. Jenseits von Veröffentlichungen sollten akademische Vortragende, Gremiumsmitglieder und Lehrende ebenfalls COIs angeben. Die absichtliche Nichtoffenlegung eines Interessenkonflikts kann als eine Form des Fehlverhaltens angesehen werden.",
+                "definition": "Ein Interessenkonflikt (COI, Conflict of Interest) ist eine finanzielle oder nicht-finanzielle Beziehung, Aktivität oder ein anderes Interesse, das die Objektivität oder das professionelle Urteilsvermögen von Autor:innen, Gutachter:innen, Redakteur:innen oder Redaktionsmitgliedern beeinträchtigen könnte. In den “Principles of Transparency and Best Practice in Scholarly Publishing” des Committee on Publication Ethics (COPE), des Directory of Open Access Journals (DOAJ), der Open Access Scholarly Publishers Association (OASPA) und der World Association of Medical Editors (WAME) heißt es, dass Zeitschriften über Richtlinien zur Publikationsethik verfügen sollten, einschließlich Richtlinien zu COI (DOAJ, n.d.). COIs sollten transparent offengelegt werden, damit die Lesende die Forschung richtig bewerten und auf potenzielle oder tatsächliche Voreingenommenheit(en) prüfen können. Jenseits von Veröffentlichungen sollten akademische Vortragende, Gremiumsmitglieder und Lehrende ebenfalls COIs angeben. Die absichtliche Nichtoffenlegung eines Interessenkonflikts kann als eine Form des Fehlverhaltens angesehen werden.",
                 "related_terms": [
                     "Objectivity",
                     "Peer review",
@@ -23397,7 +23510,7 @@
                     "Helena Hartmann",
                     "Jennifer Mattschey"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -23578,7 +23691,8 @@
                 "references": [
                     "Knoth, P., & Herrmannova, D. (2014). Towards semantometrics: A new semantic similarity based measure for assessing a research publication’s contribution. <i>D-Lib Magazine</i>, <i>20</i>(11), 8. https://doi.org/10.1045/november2014-knoth",
                     "Larivière, V., Desrochers, N., Macaluso, B., Mongeon, P., Paul-Hus, A., & Sugimoto, C. R. (2016). Contributorship and division of labor in knowledge production. <i>Social Studies of Science</i>, <i>46</i>(3), 417–435. https://doi.org/10.1177/0306312716650046",
-                    "Holcombe, A. O. (2019). Contributorship, not authorship: Use CRediT to indicate who did what. <i>Publications</i>, <i>7</i>(3), 48. https://doi.org/10.3390/publications7030048"
+                    "Holcombe, A. O. (2019). Contributorship, not authorship: Use CRediT to indicate who did what. <i>Publications</i>, <i>7</i>(3), 48. https://doi.org/10.3390/publications7030048",
+                    "Harris, C. R., Millman, K. J., van der Walt, S. J., Gommers, R., Virtanen, P., Cournapeau, D., Wieser, E., Taylor, J., Berg, S., Smith, N. J., Kern, R., Picus, M., Hoyer, S., van Kerkwijk, M. H., Brett, M., Haldane, A., del Río, J. F., Wiebe, M., Peterson, P., & Gérard-Marchant, P. (2020). Array programming with NumPy. <i>Nature</i>, <i>585</i>(7825), 357–362. https://doi.org/10.1038/s41586-020-2649-2"
                 ],
                 "drafted_by": [
                     "Micah Vandegrift"
@@ -23602,7 +23716,7 @@
                     "Susanne Vogel",
                     "Jennifer Mattschey"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -24332,7 +24446,9 @@
                 "references": [
                     "Albayrak, N., & Okoroji, C. (2019). Facing the challenges of postgraduate study as a minority student. <i>A Guide for Psychology Postgraduates</i>, 63.",
                     "Du Bois, W. E. B. (1968). <i>The souls of black folk; essays and sketches</i>. Johnson Reprint Corp.",
-                    "Gilroy, P. (1993). <i>The black Atlantic: Modernity and double consciousness</i>. Harvard University Press."
+                    "Gilroy, P. (1993). <i>The black Atlantic: Modernity and double consciousness</i>. Harvard University Press.",
+                    "Rubin, M. (2021). Explaining the association between subjective social status and mental health among university students using an impact ratings approach. <i>SN Social Sciences</i>, <i>1</i>(1), 1–21. https://doi.org/10.1007/s43545-020-00031-3",
+                    "Rubin, M., Evans, O., & McGuffog, R. (2019). Social class differences in social integration at university: Implications for academic outcomes and mental health. In J. Jetten & K. Peters (Eds.), <i>The social psychology of inequality</i> (pp. 87–102). Springer. https://doi.org/10.1007/978-3-030-28856-3_6"
                 ],
                 "drafted_by": [
                     "Nihan Albayrak-Aydemir"
@@ -24354,7 +24470,7 @@
                     "Susanne Vogel",
                     "Jennifer Mattschey"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -24707,7 +24823,7 @@
                 "en_title": "Equivalence Testing",
                 "title": "Äquivalenztesten [Equivalence Testing]",
                 "sort_key": "äquivalenztesten [equivalence testing]",
-                "definition": "Äquivalenztests bewerten statistisch die Nullhypothese, dass ein bestimmter Effekt ein Minimalkriterium überschreitet, um als bedeutsam eingestuft zu werden. Die Ablehnung der Nullhypothese ist somit ein Beweis für das Fehlen eines (bedeutsamen) Effekts. Äquivalenztests basieren auf der frequentistischen Statistik und funktionieren durch die Festlegung von Äquivalenzgrenzen: einer unteren und einer oberen Grenze, die die kleinste interessierende Effektgröße widerspiegeln. Anschließend werden zwei einseitige *t*\\-Tests gegen jede dieser Äquivalenzgrenzen durchgeführt, um festzustellen, ob als bedeutsam erachteten Effekte *abgelehnt* werden können (siehe Schuirmann, 1972; Lakens et al., 2018; 2020).",
+                "definition": "Äquivalenztests bewerten statistisch die Nullhypothese, dass ein bestimmter Effekt ein Minimalkriterium überschreitet, um als bedeutsam eingestuft zu werden. Die Ablehnung der Nullhypothese ist somit ein Beweis für das Fehlen eines (bedeutsamen) Effekts. Äquivalenztests basieren auf der frequentistischen Statistik und funktionieren durch die Festlegung von Äquivalenzgrenzen: einer unteren und einer oberen Grenze, die die kleinste interessierende Effektgröße widerspiegeln. Anschließend werden zwei einseitige *t*\\-Tests gegen jede dieser Äquivalenzgrenzen durchgeführt, um festzustellen, ob als bedeutsam erachteten Effekte *abgelehnt* werden können (siehe Schuirmann, 1987; Lakens et al., 2018; 2020).",
                 "related_terms": [
                     "Equivalence bounds",
                     "Falsification",
@@ -24744,7 +24860,7 @@
                     "Helena Hartmann",
                     "Jennifer Mattschey"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -25220,7 +25336,7 @@
                     "Specification Curve Analysis"
                 ],
                 "references": [
-                    "Gelman, A., & Loken, E. (n.d.). <i>The garden of forking paths: Why multiple comparisons can be a problem, even when there is no “fishing expedition” or “p-hacking” and the research hypothesis was posited ahead of time</i>. Retrieved from http://www.stat.columbia.edu/"
+                    "Gelman, A., & Loken, E. (2013). <i>The garden of forking paths: Why multiple comparisons can be a problem, even when there is no “fishing expedition” or “p-hacking” and the research hypothesis was posited ahead of time</i>. http://www.stat.columbia.edu/~gelman/research/unpublished/p_hacking.pdf"
                 ],
                 "drafted_by": [
                     "Flávio Azevedo; Mahmoud Elsherif"
@@ -25242,7 +25358,7 @@
                     "Helena Hartmann",
                     "Jennifer Mattschey"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -26660,8 +26776,8 @@
             {
                 "type": "glossary",
                 "en_title": "Model (computational)",
-                "title": "computational Rechenmodell [Model (computational)]",
-                "sort_key": "computational rechenmodell [model (computational)]",
+                "title": "Rechenmodell [Model (computational)]",
+                "sort_key": "rechenmodell [model (computational)]",
                 "definition": "Rechenmodelle zielen darauf ab, untersuchte Phänomene mathematisch zu übersetzen, um komplexe Verhaltensweisen besser zu verstehen, zu vermitteln und vorherzusagen.",
                 "related_terms": [
                     "algorithms",
@@ -26695,13 +26811,13 @@
                     "Helena Hartmann",
                     "Jennifer Mattschey"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
                 "en_title": "Model (statistical)",
-                "title": "statistical statistisches Modell [Model (statistical)]",
-                "sort_key": "statistical statistisches modell [model (statistical)]",
+                "title": "statistisches Modell [Model (statistical)]",
+                "sort_key": "statistisches modell [model (statistical)]",
                 "definition": "Eine mathematische Repräsentation beobachteter Daten, die darauf abzielt, die untersuchte Population widerzuspiegeln, und die ein besseres Verständnis des interessierenden Phänomens, die Identifizierung von Beziehungen zwischen den Variablen und Vorhersagen über zukünftige Fälle ermöglicht. Ein klassisches Beispiel ist die Anwendung von Chi-Quadrat, um den Zusammenhang zwischen Rauchen und Krebs zu verstehen (Doll & Hill, 1954).",
                 "related_terms": [
                     "Bayesian Inference",
@@ -26733,7 +26849,7 @@
                     "Helena Hartmann",
                     "Jennifer Mattschey"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -28090,7 +28206,8 @@
                     "Kiernan, C. (1999). Participation in research by people with learning disability: Origins and issues. <i>British Journal of Learning Disabilities</i>, <i>27</i>(2), 43–47. https://doi.org/10.1111/j.1468-3156.1999.tb00084.x",
                     "Leavy, P. (2017). <i>Research Design: Quantitative, Qualitative, Mixed Methods, Arts-Based, and Community-Based Participatory Research Approaches</i>. The Guilford Press.",
                     "Ottmann, G., Laragy, C., Allen, J., & Feldman, P. (2011). Coproduction in practice: Participatory action research to develop a model of community aged care. <i>Systemic Practice and Action Research</i>, <i>24</i>, 413–427. https://doi.org/10.1007/s11213-011-9192-x",
-                    "Rose, D. (2018). Participatory research: Real or imagined. <i>Social Psychiatry and Psychiatric Epidemiology</i>, <i>53</i>, 765–771. https://doi.org/10.1007/s00127-018-1549-3"
+                    "Rose, D. (2018). Participatory research: Real or imagined. <i>Social Psychiatry and Psychiatric Epidemiology</i>, <i>53</i>, 765–771. https://doi.org/10.1007/s00127-018-1549-3",
+                    "Andersson, N. (2018). Participatory research—a modernizing science for primary health care. <i>Journal of General and Family Medicine</i>, <i>19</i>(5), 154–159. https://doi.org/10.1002/jgf2.187"
                 ],
                 "drafted_by": [
                     "Tamara Kalandadze"
@@ -28112,7 +28229,7 @@
                     "Susanne Vogel",
                     "Jennifer Mattschey"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -28932,14 +29049,14 @@
                 "en_title": "Public Trust in Science",
                 "title": "öffentliches Vertrauen in die Wissenschaft [Public Trust in Science]",
                 "sort_key": "öffentliches vertrauen in die wissenschaft [public trust in science]",
-                "definition": "Vertrauen in das Wissen, die Leitlinien und Empfehlungen, die von Wissenschaftler:innen zum Nutzen der Zivilgesellschaft erarbeitet oder bereitgestellt wurden (Hendriks et al., 2016). Dies kann sich auch auf das Vertrauen in wissenschaftlich fundierte Empfehlungen zur öffentlichen Gesundheit (z. B. universelle Gesundheitsversorgung, Stammzellenforschung, Bundesmittel für die reproduktiven Rechte von Frauen, Präventivmaßnahmen für ansteckende Krankheiten und Impfungen), zum Klimawandel, zur Wirtschaftspolitik (z. B. Sozial-/Transferleistungen, Bekämpfung von Ungleichheit und Armut) und deren Überschneidungen beziehen. Das Vertrauen der Öffentlichkeit in die Wissenschaft wird nachweislich durch eine Vielzahl von Faktoren beeinflusst, wie Alter (Anderson et al., 2012), Geschlecht (Von Roten, 2004), Ablehnung wissenschaftlicher Normen (Lewandowsky & Oberauer, 2021), politische Ideologie (Azevedo & Jost, 2021; Brewer & Ley, 2012; Leiserowitz et al, 2010), Rechtsautoritarismus und soziale Dominanz (Kerr & Wilson, 2021), Bildung (Bak, 2001; Hayes & Tariq, 2000), Einkommen (Anderson et al., 2012), wissenschaftliche Kenntnisse (Evans & Durant, 1995; Nisbet et al., 2002), Nutzung sozialer Medien (Huber et al., 2019\\) und Religiosität (Azevedo, 2021; Brewer & Ley, 2013; Liu & Priest, 2009).",
+                "definition": "Vertrauen in das Wissen, die Leitlinien und Empfehlungen, die von Wissenschaftler:innen zum Nutzen der Zivilgesellschaft erarbeitet oder bereitgestellt wurden (Hendriks et al., 2016). Dies kann sich auch auf das Vertrauen in wissenschaftlich fundierte Empfehlungen zur öffentlichen Gesundheit (z. B. universelle Gesundheitsversorgung, Stammzellenforschung, Bundesmittel für die reproduktiven Rechte von Frauen, Präventivmaßnahmen für ansteckende Krankheiten und Impfungen), zum Klimawandel, zur Wirtschaftspolitik (z. B. Sozial-/Transferleistungen, Bekämpfung von Ungleichheit und Armut) und deren Überschneidungen beziehen. Das Vertrauen der Öffentlichkeit in die Wissenschaft wird nachweislich durch eine Vielzahl von Faktoren beeinflusst, wie Alter (Anderson et al., 2012), Geschlecht (Crettaz von Roten, 2004), Ablehnung wissenschaftlicher Normen (Lewandowsky & Oberauer, 2021), politische Ideologie (Azevedo & Jost, 2021; Brewer & Ley, 2013; Leiserowitz et al, 2010), Rechtsautoritarismus und soziale Dominanz (Kerr & Wilson, 2021), Bildung (Bak, 2001; Hayes & Tariq, 2000), Einkommen (Anderson et al., 2012), wissenschaftliche Kenntnisse (Evans & Durant, 1995; Nisbet et al., 2002), Nutzung sozialer Medien (Huber et al., 2019\\) und Religiosität (Azevedo, 2021; Brewer & Ley, 2013; Liu & Priest, 2009).",
                 "related_terms": [
                     "Credibility of scientific claims",
                     "Epistemic Trust"
                 ],
                 "references": [
                     "Anderson, M. S., Ronning, E. A., Devries, R., & Martinson, B. C. (2010). Extending the Mertonian norms: Scientists’ subscription to norms of research. <i>Journal of Higher Education</i>, <i>81</i>(3), 366–393. https://doi.org/10.1353/jhe.0.0095",
-                    "Azevedo, F. (n.d.). <i>Ideology May Help Explain Anti-Scientific Attitudes | Psychology Today</i>. https://www.psychologytoday.com/us/blog/social-justice-pacifists/202107/ideology-may-help-explain-anti-scientific-attitudes",
+                    "Azevedo, F. (2021). <i>Ideology May Help Explain Anti-Scientific Attitudes | Psychology Today</i>. https://www.psychologytoday.com/us/blog/social-justice-pacifists/202107/ideology-may-help-explain-anti-scientific-attitudes",
                     "Azevedo, F., & Jost, J. T. (2021). The ideological basis of antiscientific attitudes: Effects of authoritarianism, conservatism, religiosity, social dominance, and system justification. <i>Group Processes & Intergroup Relations</i>, <i>24</i>(4), 518–549. https://doi.org/10.1177/1368430221990104",
                     "Bak, H.-J. (2001). Education and Public Attitudes toward Science: Implications for the ‘Deficit Model’ of Education and Support for Science and Technology. <i>Social Science Quarterly</i>, <i>82</i>(4), 779–795. https://www.jstor.org/stable/42955760",
                     "Brewer, P. R., & Ley, B. L. (2013). Whose Science Do You Believe? Explaining Trust in Sources of Scientific Information About the Environment. <i>Science Communication</i>, <i>35</i>(1), 115–137. https://doi.org/10.1177/1075547012441691",
@@ -28953,7 +29070,8 @@
                     "Nisbet, M. C., Scheufele, D. A., Shanahan, J., Moy, P., Brossard, D., & Lewenstein, B. V. (2002). Knowledge, Reservations, or Promise?: A Media Effects Model for Public Perceptions of Science and Technology. <i>Communication Research</i>, <i>29</i>(5), 584–608. https://doi.org/10.1177/009365002236196",
                     "Schneider, J., Merk, S., & Rosman, T. (2019). <i>(Re)Building Trust? Investigating the effects of open science badges on perceived trustworthiness in journal articles</i>. https://doi.org/10.17605/OSF.IO/VGBRS",
                     "Wingen, T., Berkessel, J. B., & Englich, B. (2020). No Replication, No Trust? How Low Replicability Influences Trust in Psychology. <i>Social Psychological and Personality Science</i>, <i>11</i>(4). https://doi.org/10.1177/1948550619877412",
-                    "Anderson, A. A., Scheufele, D. A., Brossard, D., & Corley, E. A. (2012). The Role of Media and Deference to Scientific Authority in Cultivating Trust in Sources of Information about Emerging Technologies. <i>International Journal of Public Opinion Research</i>, <i>24</i>(2), 225–237. https://doi.org/10.1093/ijpor/edr032"
+                    "Anderson, A. A., Scheufele, D. A., Brossard, D., & Corley, E. A. (2012). The Role of Media and Deference to Scientific Authority in Cultivating Trust in Sources of Information about Emerging Technologies. <i>International Journal of Public Opinion Research</i>, <i>24</i>(2), 225–237. https://doi.org/10.1093/ijpor/edr032",
+                    "Crettaz von Roten, F. (2004). Gender differences in attitudes toward science in Switzerland. <i>Public Understanding of Science</i>, <i>13</i>(2), 191–199. https://doi.org/10.1177/0963662504043870"
                 ],
                 "drafted_by": [
                     "Tobias Wingen; Flávio Azevedo"
@@ -28975,7 +29093,7 @@
                     "Susanne Vogel",
                     "Jennifer Mattschey"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -29503,13 +29621,14 @@
                 "en_title": "Repeatability",
                 "title": "Wiederholbarkeit [Repeatability]",
                 "sort_key": "wiederholbarkeit [repeatability]",
-                "definition": "Synonym für die Test-Retest-Reliabilität. Sie bezieht sich auf die Übereinstimmung zwischen den Ergebnissen aufeinanderfolgender Messungen derselben Maße. Die Wiederholbarkeit erfordert die gleichen Versuchswerkzeuge, die gleichen Beobachtenden, das gleiche Messinstrument unter den gleichen Bedingungen, den gleichen Ort, Wiederholungen über einen kurzen Zeitraum und die gleichen Ziele (Joint Committee for Guidelines in Metrology, 2008\\)",
+                "definition": "Synonym für die Test-Retest-Reliabilität. Sie bezieht sich auf die Übereinstimmung zwischen den Ergebnissen aufeinanderfolgender Messungen derselben Maße. Die Wiederholbarkeit erfordert die gleichen Versuchswerkzeuge, die gleichen Beobachtenden, das gleiche Messinstrument unter den gleichen Bedingungen, den gleichen Ort, Wiederholungen über einen kurzen Zeitraum und die gleichen Ziele (Joint Committee for Guides in Metrology, 2008\\)",
                 "related_terms": [
                     "Reliability"
                 ],
                 "references": [
                     "ISO. (1993). <i>Guide to the Expression of Uncertainty in Measurement</i> (1st ed.). International Organization for Standardization.",
-                    "Stodden, V. C. (2011). <i>Trust your science? Open your data and code</i>."
+                    "Stodden, V. C. (2011). <i>Trust your science? Open your data and code</i>.",
+                    "Working Group 1 of the Joint Committee for Guides in Metrology JCGM. (2008). <i>Evaluation of measurement data—Guide to the expression of uncertainty in measurement</i> (pp. 1–120). JCGM. https://www.bipm.org/documents/20126/2071204/JCGM_100_2008_E.pdf/cb0ef43f-baa5-11cf-3f85-4dcd86f77bd6"
                 ],
                 "drafted_by": [
                     "Mahmoud Elsherif, Adam Parker"
@@ -29531,7 +29650,7 @@
                     "Helena Hartmann",
                     "Jennifer Mattschey"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -29551,8 +29670,9 @@
                     "Barba, L. A. (2018). Terminologies for reproducible research. <i>arXiv Preprint arXiv:1802.03311</i>.",
                     "Crüwell, S., van Doorn, J., Etz, A., Makel, M. C., Moshontz, H., Niebaum, J. C., Orben, A., Parsons, S., & Schulte-Mecklenbeck, M. (2019). Seven Easy Steps to Open Science: An Annotated Reading List. <i>Zeitschrift Für Psychologie</i>, <i>227</i>(4), 237–248. https://doi.org/10.1027/2151-2604/a000387",
                     "King, G. (1995). Replication, replication. <i>PS: Political Science & Politics</i>, <i>28</i>(3), 444–452. https://doi.org/10.2307/420301",
-                    "National Academies of Sciences, Engineering, Medicine, & others. (2019). <i>Reproducibility and Replicability in Science. In Understanding Reproducibility and Replicability</i> [Techreport]. National Academies Press (US). https://www.ncbi.nlm.nih.gov/books/NBK547546/",
-                    "Nosek, B. A., & Errington, T. M. (2020). What is replication? <i>PLOS Biology</i>, <i>18</i>(3), e3000691. https://doi.org/10.1371/journal.pbio.3000691"
+                    "National Academies of Sciences, Engineering, and Medicine. (2019). <i>Reproducibility and Replicability in Science. In Understanding Reproducibility and Replicability</i> [Techreport]. National Academies Press (US). https://www.ncbi.nlm.nih.gov/books/NBK547546/",
+                    "Nosek, B. A., & Errington, T. M. (2020). What is replication? <i>PLOS Biology</i>, <i>18</i>(3), e3000691. https://doi.org/10.1371/journal.pbio.3000691",
+                    "Claerbout, J. F., & Karrenbach, M. (1992). Electronic documents give reproducible research a new meaning. <i>SEG Technical Program Expanded Abstracts 1992</i>, 601–604. http://sepwww.stanford.edu/doku.php?id=sep:research:reproducible:seg92"
                 ],
                 "drafted_by": [
                     "Mahmoud Elsherif"
@@ -29578,7 +29698,7 @@
                     "Helena Hartmann",
                     "Jennifer Mattschey"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -29760,7 +29880,7 @@
                     "Peng, R. D. (2011). Reproducible Research in Computational Science. <i>Science</i>, <i>334</i>(6060), 1226–1227. https://doi.org/10.1126/science.1213847",
                     "Stodden, V. C. (2011). <i>Trust your science? Open your data and code</i>.",
                     "Syed, M. (2019). The Open Science Movement is for all of us. <i>PsyArXiv</i>.",
-                    "National Academies of Sciences, Engineering, Medicine, & others. (2019). <i>Reproducibility and Replicability in Science. In Understanding Reproducibility and Replicability</i> [Techreport]. National Academies Press (US). https://www.ncbi.nlm.nih.gov/books/NBK547546/"
+                    "National Academies of Sciences, Engineering, and Medicine. (2019). <i>Reproducibility and Replicability in Science. In Understanding Reproducibility and Replicability</i> [Techreport]. National Academies Press (US). https://www.ncbi.nlm.nih.gov/books/NBK547546/"
                 ],
                 "drafted_by": [
                     "Mahmoud Elsherif"
@@ -29784,7 +29904,7 @@
                     "Helena Hartmann",
                     "Jennifer Mattschey"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -30109,7 +30229,7 @@
                     "Specification curve analysis"
                 ],
                 "references": [
-                    "Gelman, A., & Loken, E. (n.d.). <i>The garden of forking paths: Why multiple comparisons can be a problem, even when there is no “fishing expedition” or “p-hacking” and the research hypothesis was posited ahead of time</i>. Retrieved from http://www.stat.columbia.edu/",
+                    "Gelman, A., & Loken, E. (2013). <i>The garden of forking paths: Why multiple comparisons can be a problem, even when there is no “fishing expedition” or “p-hacking” and the research hypothesis was posited ahead of time</i>. http://www.stat.columbia.edu/~gelman/research/unpublished/p_hacking.pdf",
                     "Simmons, J. P., Nelson, L. D., & Simonsohn, U. (2011). False-positive psychology: Undisclosed flexibility in data collection and analysis allows presenting anything as significant. <i>Psychological Science</i>, <i>22</i>(11), 1359–1366. https://doi.org/10.1177/0956797611417632",
                     "Wicherts, J. M., Veldkamp, C. L., Augusteijn, H. E., Bakker, M., Van Aert, R., & Van Assen, M. A. (2016). Degrees of freedom in planning, running, analyzing, and reporting psychological studies: A checklist to avoid p-hacking. <i>Frontiers in Psychology</i>, <i>7</i>, 1832. https://doi.org/10.3389/fpsyg.2016.01832"
                 ],
@@ -30134,7 +30254,7 @@
                     "Susanne Vogel",
                     "Jennifer Mattschey"
                 ],
-                "lastmod": "2026-11-08"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -31682,7 +31802,8 @@
                 "references": [
                     "Hitchcock, C., Meyer, A., Rose, D., & Jackson, R. (2002). Providing new access to the general curriculum: Universal design for learning. <i>Teaching Exceptional Children</i>, <i>35</i>(2), 8–17. https://www.proquest.com/scholarly-journals/providing-new-access-general-curriculum/docview/201139970/se-2?accountid=8630",
                     "Rose, D. (2000). Universal design for learning. <i>Journal of Special Education Technology</i>, <i>15</i>(3), 45–49. https://doi.org/10.1177/016264340001500307",
-                    "Rose, D. H., & Meyer, A. (2002). Teaching every student in the digital age: Universal design for learning. In <i>The Corsini Encyclopedia of Psychology</i>. Association for Supervision."
+                    "Rose, D. H., & Meyer, A. (2002). Teaching every student in the digital age: Universal design for learning. In <i>The Corsini Encyclopedia of Psychology</i>. Association for Supervision.",
+                    "Edyburn, D. L. (2010). Would you recognize universal design for learning if you saw it? Ten propositions for new directions for the second decade of UDL. <i>Learning Disability Quarterly</i>, <i>33</i>(1), 33–41. https://doi.org/10.1177/073194871003300103"
                 ],
                 "drafted_by": [
                     "Charlotte R. Pennington"
@@ -31705,7 +31826,7 @@
                     "Susanne Vogel",
                     "Joris Frese"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -31840,10 +31961,33 @@
                 "title": "WEIRD",
                 "sort_key": "weird",
                 "definition": "Dieses Akronym steht für westliche, gebildete, industrialisierte, reiche und demokratische (Western, Educated, Industrialized, Rich and Democratic) Gesellschaften. Die meisten Forschungsarbeiten werden an relativ homogenen Stichproben aus WEIRD-Gesellschaften durchgeführt und von diesen durchgeführt. Dies schränkt die Verallgemeinerbarkeit zahlreicher Forschungsergebnisse ein, zumal WEIRD-Personen oft psychologische Ausreißer sind. Es wurde argumentiert, dass sich die \"WEIRD Psychologie\" kulturell als Ergebnis gesellschaftlicher Veränderungen und religiöser Überzeugungen im Mittelalter in Europa zu entwickeln begann. Kritiker\\*innen dieses Begriffs sind der Meinung, dass er ein binäres Bild der Weltbevölkerung zeichnet und die Unterschiede zwischen und innerhalb von Gesellschaften ausblendet und dass andere Aspekte der Vielfalt nicht erfasst werden.",
-                "related_terms": [],
-                "references": [],
-                "drafted_by": [],
-                "reviewed_by": [],
+                "related_terms": [
+                    "Bias",
+                    "BIZARRE",
+                    "Diversity",
+                    "Generalizability",
+                    "Populations",
+                    "Sampling bias",
+                    "STRANGE"
+                ],
+                "references": [
+                    "Henrich, J. (2020). <i>The weirdest people in the world: How the west became psychologically peculiar and particularly prosperous</i>. Farrar, Straus and Giroux.",
+                    "Henrich, J., Heine, S. J., & Norenzayan, A. (2010). The weirdest people in the world? <i>Behavioral and Brain Sciences</i>, <i>33</i>(2–3), 61–83. https://doi.org/10.1017/S0140525X0999152X",
+                    "Muthukrishna, M., Bell, A. V., Henrich, J., Curtin, C. M., Gedranovich, A., McInerney, J., & Thue, B. (2020). Beyond Western, Educated, Industrial, Rich, and Democratic (WEIRD) psychology: Measuring and mapping scales of cultural and psychological distance. <i>Psychological Science</i>, <i>31</i>, 678–701. https://doi.org/10.1177/0956797620916782",
+                    "Syed, M., & Kathawalla, U. (2020). <i>Cultural Psychology, Diversity, and Representation in Open Science</i>. https://doi.org/10.31234/osf.io/t7hp2"
+                ],
+                "drafted_by": [
+                    "Mahmoud Elsherif"
+                ],
+                "reviewed_by": [
+                    "Zoe Flack",
+                    "Matt Jaquiery",
+                    "Bettina M. J. Kern",
+                    "Adam Parker",
+                    "Charlotte R. Pennington",
+                    "Robert M. Ross",
+                    "Suzanne L. K. Stewart"
+                ],
                 "alt_related_terms": [
                     null
                 ],
@@ -31855,7 +31999,7 @@
                     "Susanne Vogel",
                     "Joris Frese  ###   ###"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -32020,7 +32164,7 @@
                 "references": [
                     "Brown, N., Thompson, P., & Leigh, J. S. (2018). Making academia more accessible. <i>Journal of Perspectives in Applied Academic Practice</i>, <i>6</i>(2), 82–90. https://doi.org/10.14297/jpaap.v6i2.348",
                     "Pollet, I. L., & Bond, A. L. (2021). Evaluation and recommendations for greater accessibility of colour figures in ornithology. <i>Ibis</i>, <i>163</i>, 292–295. https://doi.org/10.1111/ibi.12887",
-                    "Suber, P. (2004). The primacy of authors in achieving Open Access. In <i>Nature</i>. Retrieved from http://dash.harvard.edu/handle/1/4391161)",
+                    "Suber, P. (2004). The primacy of authors in achieving Open Access. In <i>Nature</i>. Retrieved from http://dash.harvard.edu/handle/1/4391161",
                     "World Wide Web Consortium. (2021). <i>Web Accessibility Initiative</i>. https://www.w3.org/WAI/",
                     "Pownall, M., Talbot, C. V., Henschel, A., Lautarescu, A., Lloyd, K. E., Hartmann, H., Darda, K. M., Tang, K. T. Y., Carmichael-Murphy, P., & Siegel, J. A. (2021). Navigating Open Science as Early Career Feminist Researchers. <i>Psychology of Women Quarterly</i>, <i>45</i>(4), 526–539. https://doi.org/10.1177/03616843211029255"
                 ],
@@ -32047,7 +32191,7 @@
                 "aliases": [
                     "/glossary/accessibility"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -32671,7 +32815,8 @@
                 ],
                 "references": [
                     "Gorgolewski, K., Auer, T., Calhoun, V., & others. (2016). The brain imaging data structure, a format for organizing and describing outputs of neuroimaging experiments. <i>Scientific Data</i>, <i>3</i>, 160044. https://doi.org/10.1038/sdata.2016.44",
-                    "BIDS. (2020). <i>About BIDS</i>. Retrieved from https://bids.neuroimaging.io"
+                    "BIDS. (2020). <i>About BIDS</i>. Retrieved from https://bids.neuroimaging.io",
+                    "Pernet, C. R., Appelhoff, S., Gorgolewski, K. J., Flandin, G., Phillips, C., Delorme, A., & Oostenveld, R. (2019). EEG-BIDS, an extension to the brain imaging data structure for electroencephalography. <i>Scientific Data</i>, <i>6</i>(1), 103. https://doi.org/10.1038/s41597-019-0104-8"
                 ],
                 "drafted_by": [
                     "Tina Lonsdorf"
@@ -32689,7 +32834,7 @@
                 "aliases": [
                     "/glossary/bids_data_structure"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -32809,7 +32954,9 @@
                 "references": [
                     "Guest, O. [@o_guest]. (2017). <i>Thanks! Hopefully this thread & many other similar discussions & blogs will help make it less Bropen Science and more Open Science. *hides* </i>. Twitter. Retrieved from https://twitter.com/o_guest/status/871675631062458368",
                     "Whitaker, K., & Guest, O. (2020).  #bropenscience is broken science. <i>The Psychologist</i>, <i>33</i>, 34–37.",
-                    "Pownall, M., Talbot, C. V., Henschel, A., Lautarescu, A., Lloyd, K. E., Hartmann, H., Darda, K. M., Tang, K. T. Y., Carmichael-Murphy, P., & Siegel, J. A. (2021). Navigating Open Science as Early Career Feminist Researchers. <i>Psychology of Women Quarterly</i>, <i>45</i>(4), 526–539. https://doi.org/10.1177/03616843211029255"
+                    "Pownall, M., Talbot, C. V., Henschel, A., Lautarescu, A., Lloyd, K. E., Hartmann, H., Darda, K. M., Tang, K. T. Y., Carmichael-Murphy, P., & Siegel, J. A. (2021). Navigating Open Science as Early Career Feminist Researchers. <i>Psychology of Women Quarterly</i>, <i>45</i>(4), 526–539. https://doi.org/10.1177/03616843211029255",
+                    "Bahlai, C., Bartlett, L. J., Burgio, K. R., & others. (2019). Open science isn’t always open to all scientists. <i>American Scientist</i>, <i>107</i>(2), 78.",
+                    "Onie, S. (2020). Redesign open science for Asia, Africa and Latin America. <i>Nature</i>, <i>587</i>, 5–37. https://doi.org/10.1038/d41586-020-03052-3"
                 ],
                 "drafted_by": [
                     "Zoe Flack"
@@ -32832,7 +32979,7 @@
                 "aliases": [
                     "/glossary/bropenscience"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -33457,7 +33604,7 @@
                 "en_title": "Conflict of interest",
                 "title": "Conflict of interest",
                 "sort_key": "conflict of interest",
-                "definition": "A conflict of interest (COI, also ‘competing interest’) is a financial or non-financial relationship, activity or other interest that might compromise objectivity or professional judgement on the part of an author, reviewer, editor, or editorial staff. The *Principles of Transparency and Best Practice in Scholarly Publishing* by the Committee on Publication Ethics (COPE), the Directory of Open Access Journals (DOAJ), the Open Access Scholarly Publishers Association (OASPA), and the World Association of Medical Editors (WAME) states that journals should have policies on publication ethics, including policies on COI (DOAJ, 2018). COIs should be made transparent so that readers can properly evaluate research and assess for potential or actual bias(es). Outside publishing, academic presenters, panel members and educators should also declare COIs. Purposeful failure to disclose a COI may be considered a form of misconduct.",
+                "definition": "A conflict of interest (COI, also ‘competing interest’) is a financial or non-financial relationship, activity or other interest that might compromise objectivity or professional judgement on the part of an author, reviewer, editor, or editorial staff. The *Principles of Transparency and Best Practice in Scholarly Publishing* by the Committee on Publication Ethics (COPE), the Directory of Open Access Journals (DOAJ), the Open Access Scholarly Publishers Association (OASPA), and the World Association of Medical Editors (WAME) states that journals should have policies on publication ethics, including policies on COI (DOAJ, n.d.). COIs should be made transparent so that readers can properly evaluate research and assess for potential or actual bias(es). Outside publishing, academic presenters, panel members and educators should also declare COIs. Purposeful failure to disclose a COI may be considered a form of misconduct.",
                 "related_terms": [
                     "Objectivity",
                     "Peer review",
@@ -33482,7 +33629,7 @@
                 "aliases": [
                     "/glossary/conflict_of_interest"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -33632,6 +33779,43 @@
                     "/glossary/content_validity"
                 ],
                 "lastmod": "2026-08-05"
+            },
+            {
+                "type": "glossary",
+                "en_title": "Contribution",
+                "title": "Contribution",
+                "sort_key": "contribution",
+                "definition": "A formal addition or activity in a research context. Contribution and contributor statements, including acknowledgments sections in journal articles, are attached to research products to better classify and recognize the variety of labor beyond “authorship” that any intellectual pursuit requires. Contribution is an evolving “source of data for understanding the relationship between authorship and knowledge production.” (Lariviere et al., p.430). In open source software development, a contribution may count as changes committed onto a project's software repository following a peer-review (known technically as a pull request). An example of an open-source project accepting contributions is NumPy (Harris et al., 2020).",
+                "related_terms": [
+                    "authorship",
+                    "CRediT",
+                    "Semantometrics"
+                ],
+                "references": [
+                    "Knoth, P., & Herrmannova, D. (2014). Towards semantometrics: A new semantic similarity based measure for assessing a research publication’s contribution. <i>D-Lib Magazine</i>, <i>20</i>(11), 8. https://doi.org/10.1045/november2014-knoth",
+                    "Larivière, V., Desrochers, N., Macaluso, B., Mongeon, P., Paul-Hus, A., & Sugimoto, C. R. (2016). Contributorship and division of labor in knowledge production. <i>Social Studies of Science</i>, <i>46</i>(3), 417–435. https://doi.org/10.1177/0306312716650046",
+                    "Holcombe, A. O. (2019). Contributorship, not authorship: Use CRediT to indicate who did what. <i>Publications</i>, <i>7</i>(3), 48. https://doi.org/10.3390/publications7030048",
+                    "Harris, C. R., Millman, K. J., van der Walt, S. J., Gommers, R., Virtanen, P., Cournapeau, D., Wieser, E., Taylor, J., Berg, S., Smith, N. J., Kern, R., Picus, M., Hoyer, S., van Kerkwijk, M. H., Brett, M., Haldane, A., del Río, J. F., Wiebe, M., Peterson, P., & Gérard-Marchant, P. (2020). Array programming with NumPy. <i>Nature</i>, <i>585</i>(7825), 357–362. https://doi.org/10.1038/s41586-020-2649-2"
+                ],
+                "drafted_by": [
+                    "Micah Vandegrift"
+                ],
+                "reviewed_by": [
+                    "Jamie P. Cockcroft",
+                    "Dominik Kiersz",
+                    "Michele C. Lim",
+                    "Leticia Micheli",
+                    "Sam Parsons",
+                    "Gerald Vineyard"
+                ],
+                "alt_related_terms": [
+                    null
+                ],
+                "language": "english",
+                "aliases": [
+                    "/glossary/contribution"
+                ],
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -34207,7 +34391,7 @@
                 "en_title": "DOI (digital object identifier)",
                 "title": "DOI (digital object identifier)",
                 "sort_key": "doi (digital object identifier)",
-                "definition": "Digital Object Identifiers (DOI) are alpha-numeric strings that can be assigned to any entity, including: publications (including preprints), materials, datasets, and feature films \\- the use of DOIs is not restricted to just scholarly or academic material. There are many different DOI registration agencies that operate DOIs, but the two that researchers would most likely encounter are [Crossref](https://www.crossref.org/) and [Datacite](https://datacite.org/).",
+                "definition": "Digital Object Identifiers (DOI) are alpha-numeric strings that can be assigned to any entity, including: publications (including preprints), materials, datasets, and feature films \\- the use of DOIs is not restricted to just scholarly or academic material. There are many different DOI registration agencies that operate DOIs, but the two that researchers would most likely encounter are [Crossref](https://www.crossref.org/) and [DataCite](https://datacite.org/).",
                 "related_terms": [
                     "arXiv and BibTex",
                     "Crossref, Datacite, ISBN, ISO, ORCID",
@@ -34235,7 +34419,7 @@
                 "aliases": [
                     "/glossary/doi_digital_object_identifier_"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -34289,7 +34473,9 @@
                 "references": [
                     "Albayrak, N., & Okoroji, C. (2019). Facing the challenges of postgraduate study as a minority student. <i>A Guide for Psychology Postgraduates</i>, 63.",
                     "Du Bois, W. E. B. (1968). <i>The souls of black folk; essays and sketches</i>. Johnson Reprint Corp.",
-                    "Gilroy, P. (1993). <i>The black Atlantic: Modernity and double consciousness</i>. Harvard University Press."
+                    "Gilroy, P. (1993). <i>The black Atlantic: Modernity and double consciousness</i>. Harvard University Press.",
+                    "Rubin, M. (2021). Explaining the association between subjective social status and mental health among university students using an impact ratings approach. <i>SN Social Sciences</i>, <i>1</i>(1), 1–21. https://doi.org/10.1007/s43545-020-00031-3",
+                    "Rubin, M., Evans, O., & McGuffog, R. (2019). Social class differences in social integration at university: Implications for academic outcomes and mental health. In J. Jetten & K. Peters (Eds.), <i>The social psychology of inequality</i> (pp. 87–102). Springer. https://doi.org/10.1007/978-3-030-28856-3_6"
                 ],
                 "drafted_by": [
                     "Nihan Albayrak-Aydemir"
@@ -34307,7 +34493,7 @@
                 "aliases": [
                     "/glossary/double_consciousness"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -34345,7 +34531,7 @@
                 "en_title": "Direct replication",
                 "title": "Direct replication",
                 "sort_key": "direct replication",
-                "definition": "As ‘direct replication’ does not have a widely-agreed technical meaning nor there is no clear cut distinction between a direct and conceptual replication, below we list several contributions towards a consensus. Rather than debating the ‘exactness’ of a replication, it is more helpful to discuss the relevant differences between a replication and its target, and their implications for the reliability and generality of the target’s results. Generally, direct replication refers to a new data collection that attempts to replicate original studies’ methods as closely as possible. A replication attempt that “seek(s) to duplicate the necessary elements that produced the original finding.” (Crüwell et al., 2019; p.243). The purpose of a direct replication can be to identify type 1 errors and/or experimenter effects, determine the replicability of an effect using the same or improved practices, or to create more specific estimates of effect size (Hüffmeier et al., 2016). Directness of replication is a continuum between repeating specific observations (data) and observing generalised effects (phenomena). How closely a replication replicates an original study is often a matter for debate, often with differences being cited as hidden moderators of effects. Furthermore, there can be debate over the relevant importance of technical equivalence (i.e., using identical materials) versus psychological equivalence (i.e., realizing the identical psychological conditions) to the original study (Schwarz and Strack, 2014). For example, consider a study on Trust in the US- President conducted in 2018\\. A technical equivalent replication would use Trump as stimulus (he was president in 2018\\) a psychological equivalent study would use Biden (he is the current president).",
+                "definition": "As ‘direct replication’ does not have a widely-agreed technical meaning nor there is no clear cut distinction between a direct and conceptual replication, below we list several contributions towards a consensus. Rather than debating the ‘exactness’ of a replication, it is more helpful to discuss the relevant differences between a replication and its target, and their implications for the reliability and generality of the target’s results. Generally, direct replication refers to a new data collection that attempts to replicate original studies’ methods as closely as possible. A replication attempt that “seek(s) to duplicate the necessary elements that produced the original finding.” (Crüwell et al., 2019; p.243). The purpose of a direct replication can be to identify type 1 errors and/or experimenter effects, determine the replicability of an effect using the same or improved practices, or to create more specific estimates of effect size (Hüffmeier et al., 2016). Directness of replication is a continuum between repeating specific observations (data) and observing generalised effects (phenomena). How closely a replication replicates an original study is often a matter for debate, often with differences being cited as hidden moderators of effects. Furthermore, there can be debate over the relevant importance of technical equivalence (i.e., using identical materials) versus psychological equivalence (i.e., realizing the identical psychological conditions) to the original study (Schwarz and Strack, 2014). For example, consider a study on Trust in the US- President conducted in 2018\\. A technical equivalent replication would use Trump as stimulus (he was president in 2018\\) a psychological equivalent study conducted in 2023 would use Biden (he was president in 2023).",
                 "related_terms": [
                     "close replication",
                     "Conceptual replication",
@@ -34378,7 +34564,7 @@
                 "aliases": [
                     "/glossary/direct_replication"
                 ],
-                "lastmod": "2026-11-08"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -34624,7 +34810,7 @@
                 "en_title": "Equivalence Testing",
                 "title": "Equivalence Testing",
                 "sort_key": "equivalence testing",
-                "definition": "Equivalence tests statistically assess the null hypothesis that a given effect exceeds a minimum criterion to be considered meaningful. Thus, rejection of the null hypothesis provides evidence of a lack of (meaningful) effect. Based upon frequentist statistics, equivalence tests work by specifying equivalence bounds: a lower and upper value that reflect the smallest effect size of interest. Two one-sided *t*\\-tests are then conducted against each of these equivalence bounds to assess whether effects that are deemed meaningful can be *rejected* (see Schuirmann, 1972; Lakens et al., 2018; 2020).",
+                "definition": "Equivalence tests statistically assess the null hypothesis that a given effect exceeds a minimum criterion to be considered meaningful. Thus, rejection of the null hypothesis provides evidence of a lack of (meaningful) effect. Based upon frequentist statistics, equivalence tests work by specifying equivalence bounds: a lower and upper value that reflect the smallest effect size of interest. Two one-sided *t*\\-tests are then conducted against each of these equivalence bounds to assess whether effects that are deemed meaningful can be *rejected* (see Schuirmann, 1987; Lakens et al., 2018; 2020).",
                 "related_terms": [
                     "Equivalence bounds",
                     "Falsification",
@@ -34657,7 +34843,7 @@
                 "aliases": [
                     "/glossary/equivalence_testing"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -34948,7 +35134,7 @@
                 "en_title": "FORRT",
                 "title": "FORRT",
                 "sort_key": "forrt",
-                "definition": "Framework of Open Reproducible Research and Teaching. It aims to provide a pedagogical infrastructure designed to recognize and support the teaching and mentoring of open and reproducible research in tandem with prototypical subject matters in higher education. FORRT strives to be an effective, evolving, and community-driven organization raising awareness of the pedagogical implications of open and reproducible science and its associated challenges (i.e., curricular reform, epistemological uncertainty, methods of education). FORRT also advocates for the opening of teaching and mentoring materials as a means to facilitate access, discovery, and learning to those who otherwise would be educationally disenfranchised.",
+                "definition": "Framework for Open and Reproducible Research Training. It aims to provide a pedagogical infrastructure designed to recognize and support the teaching and mentoring of open and reproducible research in tandem with prototypical subject matters in higher education. FORRT strives to be an effective, evolving, and community-driven organization raising awareness of the pedagogical implications of open and reproducible science and its associated challenges (i.e., curricular reform, epistemological uncertainty, methods of education). FORRT also advocates for the opening of teaching and mentoring materials as a means to facilitate access, discovery, and learning to those who otherwise would be educationally disenfranchised.",
                 "related_terms": [
                     "Integrating open and reproducible science tenets into higher education"
                 ],
@@ -34970,7 +35156,7 @@
                 "aliases": [
                     "/glossary/forrt"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -35085,7 +35271,7 @@
                     "Specification Curve Analysis"
                 ],
                 "references": [
-                    "Gelman, A., & Loken, E. (n.d.). <i>The garden of forking paths: Why multiple comparisons can be a problem, even when there is no “fishing expedition” or “p-hacking” and the research hypothesis was posited ahead of time</i>. Retrieved from http://www.stat.columbia.edu/"
+                    "Gelman, A., & Loken, E. (2013). <i>The garden of forking paths: Why multiple comparisons can be a problem, even when there is no “fishing expedition” or “p-hacking” and the research hypothesis was posited ahead of time</i>. http://www.stat.columbia.edu/~gelman/research/unpublished/p_hacking.pdf"
                 ],
                 "drafted_by": [
                     "Flávio Azevedo; Mahmoud Elsherif"
@@ -35103,7 +35289,7 @@
                 "aliases": [
                     "/glossary/garden_of_forking_paths"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -37661,7 +37847,8 @@
                     "Kiernan, C. (1999). Participation in research by people with learning disability: Origins and issues. <i>British Journal of Learning Disabilities</i>, <i>27</i>(2), 43–47. https://doi.org/10.1111/j.1468-3156.1999.tb00084.x",
                     "Leavy, P. (2017). <i>Research Design: Quantitative, Qualitative, Mixed Methods, Arts-Based, and Community-Based Participatory Research Approaches</i>. The Guilford Press.",
                     "Ottmann, G., Laragy, C., Allen, J., & Feldman, P. (2011). Coproduction in practice: Participatory action research to develop a model of community aged care. <i>Systemic Practice and Action Research</i>, <i>24</i>, 413–427. https://doi.org/10.1007/s11213-011-9192-x",
-                    "Rose, D. (2018). Participatory research: Real or imagined. <i>Social Psychiatry and Psychiatric Epidemiology</i>, <i>53</i>, 765–771. https://doi.org/10.1007/s00127-018-1549-3"
+                    "Rose, D. (2018). Participatory research: Real or imagined. <i>Social Psychiatry and Psychiatric Epidemiology</i>, <i>53</i>, 765–771. https://doi.org/10.1007/s00127-018-1549-3",
+                    "Andersson, N. (2018). Participatory research—a modernizing science for primary health care. <i>Journal of General and Family Medicine</i>, <i>19</i>(5), 154–159. https://doi.org/10.1002/jgf2.187"
                 ],
                 "drafted_by": [
                     "Tamara Kalandadze"
@@ -37679,7 +37866,7 @@
                 "aliases": [
                     "/glossary/participatory_research"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -38415,14 +38602,14 @@
                 "en_title": "Public Trust in Science",
                 "title": "Public Trust in Science",
                 "sort_key": "public trust in science",
-                "definition": "Trust in the knowledge, guidelines and recommendations that has been produced or provided by scientists to the benefit of civil society (Hendriks et al., 2016). These may also refer to trust in scientific-based recommendations on public health (e.g., universal health-care, stem cell research, federal funds for women’s reproductive rights, preventive measures of contagious diseases, and vaccination), climate change, economic policies (e.g., welfare, inequality- and poverty-control) and their intersections. The trust a member of the public has in science has been shown to be influenced by a vast number of factors such as age (Anderson et al., 2012), gender (Von Roten, 2004), rejection of scientific norms (Lewandowsky & Oberauer, 2021), political ideology (Azevedo & Jost, 2021; Brewer & Ley, 2012; Leiserowitz et al., 2010), \tright-wing authoritarianism and social dominance (Kerr & Wilson, 2021), education (Bak, 2001; Hayes & Tariq, 2000), income (Anderson et al., 2012), science knowledge (Evans & Durant, 1995; Nisbet et al., 2002), social media use (Huber et al., 2019), and religiosity (Azevedo, 2021; Brewer & Ley, 2013; Liu & Priest, 2009).",
+                "definition": "Trust in the knowledge, guidelines and recommendations that has been produced or provided by scientists to the benefit of civil society (Hendriks et al., 2016). These may also refer to trust in scientific-based recommendations on public health (e.g., universal health-care, stem cell research, federal funds for women’s reproductive rights, preventive measures of contagious diseases, and vaccination), climate change, economic policies (e.g., welfare, inequality- and poverty-control) and their intersections. The trust a member of the public has in science has been shown to be influenced by a vast number of factors such as age (Anderson et al., 2012), gender (Crettaz von Roten, 2004), rejection of scientific norms (Lewandowsky & Oberauer, 2021), political ideology (Azevedo & Jost, 2021; Brewer & Ley, 2013; Leiserowitz et al., 2010), \tright-wing authoritarianism and social dominance (Kerr & Wilson, 2021), education (Bak, 2001; Hayes & Tariq, 2000), income (Anderson et al., 2012), science knowledge (Evans & Durant, 1995; Nisbet et al., 2002), social media use (Huber et al., 2019), and religiosity (Azevedo, 2021; Brewer & Ley, 2013; Liu & Priest, 2009).",
                 "related_terms": [
                     "Credibility of scientific claims",
                     "Epistemic Trust"
                 ],
                 "references": [
                     "Anderson, M. S., Ronning, E. A., Devries, R., & Martinson, B. C. (2010). Extending the Mertonian norms: Scientists’ subscription to norms of research. <i>Journal of Higher Education</i>, <i>81</i>(3), 366–393. https://doi.org/10.1353/jhe.0.0095",
-                    "Azevedo, F. (n.d.). <i>Ideology May Help Explain Anti-Scientific Attitudes | Psychology Today</i>. https://www.psychologytoday.com/us/blog/social-justice-pacifists/202107/ideology-may-help-explain-anti-scientific-attitudes",
+                    "Azevedo, F. (2021). <i>Ideology May Help Explain Anti-Scientific Attitudes | Psychology Today</i>. https://www.psychologytoday.com/us/blog/social-justice-pacifists/202107/ideology-may-help-explain-anti-scientific-attitudes",
                     "Azevedo, F., & Jost, J. T. (2021). The ideological basis of antiscientific attitudes: Effects of authoritarianism, conservatism, religiosity, social dominance, and system justification. <i>Group Processes & Intergroup Relations</i>, <i>24</i>(4), 518–549. https://doi.org/10.1177/1368430221990104",
                     "Bak, H.-J. (2001). Education and Public Attitudes toward Science: Implications for the ‘Deficit Model’ of Education and Support for Science and Technology. <i>Social Science Quarterly</i>, <i>82</i>(4), 779–795. https://www.jstor.org/stable/42955760",
                     "Brewer, P. R., & Ley, B. L. (2013). Whose Science Do You Believe? Explaining Trust in Sources of Scientific Information About the Environment. <i>Science Communication</i>, <i>35</i>(1), 115–137. https://doi.org/10.1177/1075547012441691",
@@ -38436,7 +38623,8 @@
                     "Nisbet, M. C., Scheufele, D. A., Shanahan, J., Moy, P., Brossard, D., & Lewenstein, B. V. (2002). Knowledge, Reservations, or Promise?: A Media Effects Model for Public Perceptions of Science and Technology. <i>Communication Research</i>, <i>29</i>(5), 584–608. https://doi.org/10.1177/009365002236196",
                     "Schneider, J., Merk, S., & Rosman, T. (2019). <i>(Re)Building Trust? Investigating the effects of open science badges on perceived trustworthiness in journal articles</i>. https://doi.org/10.17605/OSF.IO/VGBRS",
                     "Wingen, T., Berkessel, J. B., & Englich, B. (2020). No Replication, No Trust? How Low Replicability Influences Trust in Psychology. <i>Social Psychological and Personality Science</i>, <i>11</i>(4). https://doi.org/10.1177/1948550619877412",
-                    "Anderson, A. A., Scheufele, D. A., Brossard, D., & Corley, E. A. (2012). The Role of Media and Deference to Scientific Authority in Cultivating Trust in Sources of Information about Emerging Technologies. <i>International Journal of Public Opinion Research</i>, <i>24</i>(2), 225–237. https://doi.org/10.1093/ijpor/edr032"
+                    "Anderson, A. A., Scheufele, D. A., Brossard, D., & Corley, E. A. (2012). The Role of Media and Deference to Scientific Authority in Cultivating Trust in Sources of Information about Emerging Technologies. <i>International Journal of Public Opinion Research</i>, <i>24</i>(2), 225–237. https://doi.org/10.1093/ijpor/edr032",
+                    "Crettaz von Roten, F. (2004). Gender differences in attitudes toward science in Switzerland. <i>Public Understanding of Science</i>, <i>13</i>(2), 191–199. https://doi.org/10.1177/0963662504043870"
                 ],
                 "drafted_by": [
                     "Tobias Wingen; Flávio Azevedo"
@@ -38454,7 +38642,7 @@
                 "aliases": [
                     "/glossary/public_trust_in_science"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -38930,13 +39118,14 @@
                 "en_title": "Repeatability",
                 "title": "Repeatability",
                 "sort_key": "repeatability",
-                "definition": "Synonymous with *test-retest* *reliability*. It refers to the agreement between the results of successive measurements of the same measure. Repeatability requires the same experimental tools, the same observer, the same measuring instrument administered under the same conditions, the same location, repetition over a short period of time, and the same objectives (Joint Committee for Guidelines in Metrology, 2008\\)",
+                "definition": "Synonymous with *test-retest* *reliability*. It refers to the agreement between the results of successive measurements of the same measure. Repeatability requires the same experimental tools, the same observer, the same measuring instrument administered under the same conditions, the same location, repetition over a short period of time, and the same objectives (Joint Committee for Guides in Metrology, 2008\\)",
                 "related_terms": [
                     "Reliability"
                 ],
                 "references": [
                     "ISO. (1993). <i>Guide to the Expression of Uncertainty in Measurement</i> (1st ed.). International Organization for Standardization.",
-                    "Stodden, V. C. (2011). <i>Trust your science? Open your data and code</i>."
+                    "Stodden, V. C. (2011). <i>Trust your science? Open your data and code</i>.",
+                    "Working Group 1 of the Joint Committee for Guides in Metrology JCGM. (2008). <i>Evaluation of measurement data—Guide to the expression of uncertainty in measurement</i> (pp. 1–120). JCGM. https://www.bipm.org/documents/20126/2071204/JCGM_100_2008_E.pdf/cb0ef43f-baa5-11cf-3f85-4dcd86f77bd6"
                 ],
                 "drafted_by": [
                     "Mahmoud Elsherif, Adam Parker"
@@ -38954,7 +39143,7 @@
                 "aliases": [
                     "/glossary/repeatability"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -38974,8 +39163,9 @@
                     "Barba, L. A. (2018). Terminologies for reproducible research. <i>arXiv Preprint arXiv:1802.03311</i>.",
                     "Crüwell, S., van Doorn, J., Etz, A., Makel, M. C., Moshontz, H., Niebaum, J. C., Orben, A., Parsons, S., & Schulte-Mecklenbeck, M. (2019). Seven Easy Steps to Open Science: An Annotated Reading List. <i>Zeitschrift Für Psychologie</i>, <i>227</i>(4), 237–248. https://doi.org/10.1027/2151-2604/a000387",
                     "King, G. (1995). Replication, replication. <i>PS: Political Science & Politics</i>, <i>28</i>(3), 444–452. https://doi.org/10.2307/420301",
-                    "National Academies of Sciences, Engineering, Medicine, & others. (2019). <i>Reproducibility and Replicability in Science. In Understanding Reproducibility and Replicability</i> [Techreport]. National Academies Press (US). https://www.ncbi.nlm.nih.gov/books/NBK547546/",
-                    "Nosek, B. A., & Errington, T. M. (2020). What is replication? <i>PLOS Biology</i>, <i>18</i>(3), e3000691. https://doi.org/10.1371/journal.pbio.3000691"
+                    "National Academies of Sciences, Engineering, and Medicine. (2019). <i>Reproducibility and Replicability in Science. In Understanding Reproducibility and Replicability</i> [Techreport]. National Academies Press (US). https://www.ncbi.nlm.nih.gov/books/NBK547546/",
+                    "Nosek, B. A., & Errington, T. M. (2020). What is replication? <i>PLOS Biology</i>, <i>18</i>(3), e3000691. https://doi.org/10.1371/journal.pbio.3000691",
+                    "Claerbout, J. F., & Karrenbach, M. (1992). Electronic documents give reproducible research a new meaning. <i>SEG Technical Program Expanded Abstracts 1992</i>, 601–604. http://sepwww.stanford.edu/doku.php?id=sep:research:reproducible:seg92"
                 ],
                 "drafted_by": [
                     "Mahmoud Elsherif"
@@ -38997,7 +39187,7 @@
                 "aliases": [
                     "/glossary/replicability"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -39163,7 +39353,7 @@
                     "Peng, R. D. (2011). Reproducible Research in Computational Science. <i>Science</i>, <i>334</i>(6060), 1226–1227. https://doi.org/10.1126/science.1213847",
                     "Stodden, V. C. (2011). <i>Trust your science? Open your data and code</i>.",
                     "Syed, M. (2019). The Open Science Movement is for all of us. <i>PsyArXiv</i>.",
-                    "National Academies of Sciences, Engineering, Medicine, & others. (2019). <i>Reproducibility and Replicability in Science. In Understanding Reproducibility and Replicability</i> [Techreport]. National Academies Press (US). https://www.ncbi.nlm.nih.gov/books/NBK547546/"
+                    "National Academies of Sciences, Engineering, and Medicine. (2019). <i>Reproducibility and Replicability in Science. In Understanding Reproducibility and Replicability</i> [Techreport]. National Academies Press (US). https://www.ncbi.nlm.nih.gov/books/NBK547546/"
                 ],
                 "drafted_by": [
                     "Mahmoud Elsherif"
@@ -39183,7 +39373,7 @@
                 "aliases": [
                     "/glossary/reproducibility"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -39476,7 +39666,7 @@
                     "Specification curve analysis"
                 ],
                 "references": [
-                    "Gelman, A., & Loken, E. (n.d.). <i>The garden of forking paths: Why multiple comparisons can be a problem, even when there is no “fishing expedition” or “p-hacking” and the research hypothesis was posited ahead of time</i>. Retrieved from http://www.stat.columbia.edu/",
+                    "Gelman, A., & Loken, E. (2013). <i>The garden of forking paths: Why multiple comparisons can be a problem, even when there is no “fishing expedition” or “p-hacking” and the research hypothesis was posited ahead of time</i>. http://www.stat.columbia.edu/~gelman/research/unpublished/p_hacking.pdf",
                     "Simmons, J. P., Nelson, L. D., & Simonsohn, U. (2011). False-positive psychology: Undisclosed flexibility in data collection and analysis allows presenting anything as significant. <i>Psychological Science</i>, <i>22</i>(11), 1359–1366. https://doi.org/10.1177/0956797611417632",
                     "Wicherts, J. M., Veldkamp, C. L., Augusteijn, H. E., Bakker, M., Van Aert, R., & Van Assen, M. A. (2016). Degrees of freedom in planning, running, analyzing, and reporting psychological studies: A checklist to avoid p-hacking. <i>Frontiers in Psychology</i>, <i>7</i>, 1832. https://doi.org/10.3389/fpsyg.2016.01832"
                 ],
@@ -39497,7 +39687,7 @@
                 "aliases": [
                     "/glossary/researcher_degrees_of_freedom"
                 ],
-                "lastmod": "2026-11-08"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -40880,7 +41070,8 @@
                 "references": [
                     "Hitchcock, C., Meyer, A., Rose, D., & Jackson, R. (2002). Providing new access to the general curriculum: Universal design for learning. <i>Teaching Exceptional Children</i>, <i>35</i>(2), 8–17. https://www.proquest.com/scholarly-journals/providing-new-access-general-curriculum/docview/201139970/se-2?accountid=8630",
                     "Rose, D. (2000). Universal design for learning. <i>Journal of Special Education Technology</i>, <i>15</i>(3), 45–49. https://doi.org/10.1177/016264340001500307",
-                    "Rose, D. H., & Meyer, A. (2002). Teaching every student in the digital age: Universal design for learning. In <i>The Corsini Encyclopedia of Psychology</i>. Association for Supervision."
+                    "Rose, D. H., & Meyer, A. (2002). Teaching every student in the digital age: Universal design for learning. In <i>The Corsini Encyclopedia of Psychology</i>. Association for Supervision.",
+                    "Edyburn, D. L. (2010). Would you recognize universal design for learning if you saw it? Ten propositions for new directions for the second decade of UDL. <i>Learning Disability Quarterly</i>, <i>33</i>(1), 33–41. https://doi.org/10.1177/073194871003300103"
                 ],
                 "drafted_by": [
                     "Charlotte R. Pennington"
@@ -40899,7 +41090,7 @@
                 "aliases": [
                     "/glossary/universal_design_for_learning_udl_"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -41015,6 +41206,48 @@
                     "/glossary/webometrics"
                 ],
                 "lastmod": "2026-11-08"
+            },
+            {
+                "type": "glossary",
+                "en_title": "WEIRD",
+                "title": "WEIRD",
+                "sort_key": "weird",
+                "definition": "This acronym refers to Western, Educated, Industrialized, Rich and Democratic societies. Most research is conducted on, and conducted by, relatively homogeneous samples from WEIRD societies. This limits the generalizability of a large number of research findings, particularly given that WEIRD people are often psychological outliers. It has been argued that “WEIRD psychology” started to evolve culturally as a result of societal changes and religious beliefs in the Middle Ages in Europe. Critics of this term suggest it presents a binary view of the global population and erases variation that exists both between and within societies, and that other aspects of diversity are not captured.",
+                "related_terms": [
+                    "Bias",
+                    "BIZARRE",
+                    "Diversity",
+                    "Generalizability",
+                    "Populations",
+                    "Sampling bias",
+                    "STRANGE"
+                ],
+                "references": [
+                    "Henrich, J. (2020). <i>The weirdest people in the world: How the west became psychologically peculiar and particularly prosperous</i>. Farrar, Straus and Giroux.",
+                    "Henrich, J., Heine, S. J., & Norenzayan, A. (2010). The weirdest people in the world? <i>Behavioral and Brain Sciences</i>, <i>33</i>(2–3), 61–83. https://doi.org/10.1017/S0140525X0999152X",
+                    "Muthukrishna, M., Bell, A. V., Henrich, J., Curtin, C. M., Gedranovich, A., McInerney, J., & Thue, B. (2020). Beyond Western, Educated, Industrial, Rich, and Democratic (WEIRD) psychology: Measuring and mapping scales of cultural and psychological distance. <i>Psychological Science</i>, <i>31</i>, 678–701. https://doi.org/10.1177/0956797620916782",
+                    "Syed, M., & Kathawalla, U. (2020). <i>Cultural Psychology, Diversity, and Representation in Open Science</i>. https://doi.org/10.31234/osf.io/t7hp2"
+                ],
+                "drafted_by": [
+                    "Mahmoud Elsherif"
+                ],
+                "reviewed_by": [
+                    "Zoe Flack",
+                    "Matt Jaquiery",
+                    "Bettina M. J. Kern",
+                    "Adam Parker",
+                    "Charlotte R. Pennington",
+                    "Robert M. Ross",
+                    "Suzanne L. K. Stewart"
+                ],
+                "alt_related_terms": [
+                    null
+                ],
+                "language": "english",
+                "aliases": [
+                    "/glossary/weird"
+                ],
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -41177,7 +41410,7 @@
                 "references": [
                     "Brown, N., Thompson, P., & Leigh, J. S. (2018). Making academia more accessible. <i>Journal of Perspectives in Applied Academic Practice</i>, <i>6</i>(2), 82–90. https://doi.org/10.14297/jpaap.v6i2.348",
                     "Pollet, I. L., & Bond, A. L. (2021). Evaluation and recommendations for greater accessibility of colour figures in ornithology. <i>Ibis</i>, <i>163</i>, 292–295. https://doi.org/10.1111/ibi.12887",
-                    "Suber, P. (2004). The primacy of authors in achieving Open Access. In <i>Nature</i>. Retrieved from http://dash.harvard.edu/handle/1/4391161)",
+                    "Suber, P. (2004). The primacy of authors in achieving Open Access. In <i>Nature</i>. Retrieved from http://dash.harvard.edu/handle/1/4391161",
                     "World Wide Web Consortium. (2021). <i>Web Accessibility Initiative</i>. https://www.w3.org/WAI/",
                     "Pownall, M., Talbot, C. V., Henschel, A., Lautarescu, A., Lloyd, K. E., Hartmann, H., Darda, K. M., Tang, K. T. Y., Carmichael-Murphy, P., & Siegel, J. A. (2021). Navigating Open Science as Early Career Feminist Researchers. <i>Psychology of Women Quarterly</i>, <i>45</i>(4), 526–539. https://doi.org/10.1177/03616843211029255"
                 ],
@@ -41207,7 +41440,7 @@
                 "translation_reviewed_by": [
                     "Elif Baştan"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -41882,7 +42115,8 @@
                 ],
                 "references": [
                     "Gorgolewski, K., Auer, T., Calhoun, V., & others. (2016). The brain imaging data structure, a format for organizing and describing outputs of neuroimaging experiments. <i>Scientific Data</i>, <i>3</i>, 160044. https://doi.org/10.1038/sdata.2016.44",
-                    "BIDS. (2020). <i>About BIDS</i>. Retrieved from https://bids.neuroimaging.io"
+                    "BIDS. (2020). <i>About BIDS</i>. Retrieved from https://bids.neuroimaging.io",
+                    "Pernet, C. R., Appelhoff, S., Gorgolewski, K. J., Flandin, G., Phillips, C., Delorme, A., & Oostenveld, R. (2019). EEG-BIDS, an extension to the brain imaging data structure for electroencephalography. <i>Scientific Data</i>, <i>6</i>(1), 103. https://doi.org/10.1038/s41597-019-0104-8"
                 ],
                 "drafted_by": [
                     "Tina Lonsdorf"
@@ -41903,7 +42137,7 @@
                 "translation_reviewed_by": [
                     "Elif Baştan"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -42032,7 +42266,9 @@
                 "references": [
                     "Guest, O. [@o_guest]. (2017). <i>Thanks! Hopefully this thread & many other similar discussions & blogs will help make it less Bropen Science and more Open Science. *hides* </i>. Twitter. Retrieved from https://twitter.com/o_guest/status/871675631062458368",
                     "Whitaker, K., & Guest, O. (2020).  #bropenscience is broken science. <i>The Psychologist</i>, <i>33</i>, 34–37.",
-                    "Pownall, M., Talbot, C. V., Henschel, A., Lautarescu, A., Lloyd, K. E., Hartmann, H., Darda, K. M., Tang, K. T. Y., Carmichael-Murphy, P., & Siegel, J. A. (2021). Navigating Open Science as Early Career Feminist Researchers. <i>Psychology of Women Quarterly</i>, <i>45</i>(4), 526–539. https://doi.org/10.1177/03616843211029255"
+                    "Pownall, M., Talbot, C. V., Henschel, A., Lautarescu, A., Lloyd, K. E., Hartmann, H., Darda, K. M., Tang, K. T. Y., Carmichael-Murphy, P., & Siegel, J. A. (2021). Navigating Open Science as Early Career Feminist Researchers. <i>Psychology of Women Quarterly</i>, <i>45</i>(4), 526–539. https://doi.org/10.1177/03616843211029255",
+                    "Bahlai, C., Bartlett, L. J., Burgio, K. R., & others. (2019). Open science isn’t always open to all scientists. <i>American Scientist</i>, <i>107</i>(2), 78.",
+                    "Onie, S. (2020). Redesign open science for Asia, Africa and Latin America. <i>Nature</i>, <i>587</i>, 5–37. https://doi.org/10.1038/d41586-020-03052-3"
                 ],
                 "drafted_by": [
                     "Zoe Flack"
@@ -42058,7 +42294,7 @@
                 "translation_reviewed_by": [
                     "Elif Baştan"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -42737,7 +42973,7 @@
                 "en_title": "Conflict of interest",
                 "title": "Çıkar çatışması [Conflict of interest]",
                 "sort_key": "czizkar czatizszmasiz [conflict of interest]",
-                "definition": "Çıkar çatışması, bir yazar, hakem, editör veya editör ekibinin tarafsızlığını veya mesleki yargısını tehlikeye atabilecek finansal veya finansal olmayan bir ilişkiyi, faaliyeti veya diğer çıkarları ifade eder. Yayın Etiği Komitesi (COPE), Açık Erişim Dergileri Dizini (DOAJ), Açık Erişim Akademik Yayıncılar Derneği (OASPA) ve Dünya Tıbbi Editörleri Derneği (WAME) tarafından yayımlanan Akademik Yayıncılıkta Şeffaflık ve En İyi Uygulama İlkeleri, dergilerin çıkar çatışması ile ilgili politikalar da dahil olmak üzere yayın etiği ile ilgili politikalara sahip olması gerektiğini belirtmektedir (DOAJ, 2018). Çıkar çatışmaları, okuyucuların araştırmayı doğru bir şekilde değerlendirebilmesi ve potansiyel veya fiili yanlılığı/yanlılıkları değerlendirebilmesi için şeffaf hale getirilmelidir. Yayıncılık dışında, akademik sunum yapanlar, panel üyeleri ve eğitimciler de çıkar çatışmalarını beyan etmelidir. Çıkar çatışmasını kasıtlı olarak açıklamamak bir tür suistimal olarak değerlendirilebilir.",
+                "definition": "Çıkar çatışması, bir yazar, hakem, editör veya editör ekibinin tarafsızlığını veya mesleki yargısını tehlikeye atabilecek finansal veya finansal olmayan bir ilişkiyi, faaliyeti veya diğer çıkarları ifade eder. Yayın Etiği Komitesi (COPE), Açık Erişim Dergileri Dizini (DOAJ), Açık Erişim Akademik Yayıncılar Derneği (OASPA) ve Dünya Tıbbi Editörleri Derneği (WAME) tarafından yayımlanan Akademik Yayıncılıkta Şeffaflık ve En İyi Uygulama İlkeleri, dergilerin çıkar çatışması ile ilgili politikalar da dahil olmak üzere yayın etiği ile ilgili politikalara sahip olması gerektiğini belirtmektedir (DOAJ, n.d.). Çıkar çatışmaları, okuyucuların araştırmayı doğru bir şekilde değerlendirebilmesi ve potansiyel veya fiili yanlılığı/yanlılıkları değerlendirebilmesi için şeffaf hale getirilmelidir. Yayıncılık dışında, akademik sunum yapanlar, panel üyeleri ve eğitimciler de çıkar çatışmalarını beyan etmelidir. Çıkar çatışmasını kasıtlı olarak açıklamamak bir tür suistimal olarak değerlendirilebilir.",
                 "related_terms": [
                     "Objectivity",
                     "Peer review",
@@ -42765,7 +43001,7 @@
                 "translation_reviewed_by": [
                     "Elif Baştan"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -43550,7 +43786,7 @@
                 "en_title": "DOI (digital object identifier)",
                 "title": "DOI (Dijital Nesne Tanımlayıcısı) [DOI (digital object identifier)]",
                 "sort_key": "doi (dijital nesne tanizmlayizcizsiz) [doi (digital object identifier)]",
-                "definition": "Dijital Nesne Tanımlayıcıları (DOI; Digital Object Identifiers), yayınlar (ön-baskılar dahil), materyaller, veri setleri ve uzun metrajlı filmler gibi her türlü şeye atanabilen alfa-nümerik dizilerdir. DOI kullanımı yalnızca akademik veya bilimsel materyallerle sınırlı değildir. DOI’ler, “dijital ağlar üzerinde yönetilen bilgilerin kalıcı ve eyleme geçirilebilir bir şekilde tanımlanması ve birlikte çalışabilir şekilde paylaşılması için bir sistem sağlar” ([https://doi.org/hb.html](https://doi.org/hb.html)). DOI’leri yöneten birçok farklı kayıt ajansı vardır ancak araştırmacıların en sık karşılaşabileceği iki ajans Crossref and Datacite’tır.",
+                "definition": "Dijital Nesne Tanımlayıcıları (DOI; Digital Object Identifiers), yayınlar (ön-baskılar dahil), materyaller, veri setleri ve uzun metrajlı filmler gibi her türlü şeye atanabilen alfa-nümerik dizilerdir. DOI kullanımı yalnızca akademik veya bilimsel materyallerle sınırlı değildir. DOI’ler, “dijital ağlar üzerinde yönetilen bilgilerin kalıcı ve eyleme geçirilebilir bir şekilde tanımlanması ve birlikte çalışabilir şekilde paylaşılması için bir sistem sağlar” ([https://doi.org/hb.html](https://doi.org/hb.html)). DOI’leri yöneten birçok farklı kayıt ajansı vardır ancak araştırmacıların en sık karşılaşabileceği iki ajans Crossref ve DataCite’tır.",
                 "related_terms": [
                     "arXiv and BibTex",
                     "Crossref, Datacite, ISBN, ISO, ORCID",
@@ -43581,7 +43817,7 @@
                 "translation_reviewed_by": [
                     "Ege Emek"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -43638,7 +43874,9 @@
                 "references": [
                     "Albayrak, N., & Okoroji, C. (2019). Facing the challenges of postgraduate study as a minority student. <i>A Guide for Psychology Postgraduates</i>, 63.",
                     "Du Bois, W. E. B. (1968). <i>The souls of black folk; essays and sketches</i>. Johnson Reprint Corp.",
-                    "Gilroy, P. (1993). <i>The black Atlantic: Modernity and double consciousness</i>. Harvard University Press."
+                    "Gilroy, P. (1993). <i>The black Atlantic: Modernity and double consciousness</i>. Harvard University Press.",
+                    "Rubin, M. (2021). Explaining the association between subjective social status and mental health among university students using an impact ratings approach. <i>SN Social Sciences</i>, <i>1</i>(1), 1–21. https://doi.org/10.1007/s43545-020-00031-3",
+                    "Rubin, M., Evans, O., & McGuffog, R. (2019). Social class differences in social integration at university: Implications for academic outcomes and mental health. In J. Jetten & K. Peters (Eds.), <i>The social psychology of inequality</i> (pp. 87–102). Springer. https://doi.org/10.1007/978-3-030-28856-3_6"
                 ],
                 "drafted_by": [
                     "Nihan Albayrak-Aydemir"
@@ -43659,7 +43897,7 @@
                 "translation_reviewed_by": [
                     "Ege Emek"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -44003,7 +44241,7 @@
                 "en_title": "Equivalence Testing",
                 "title": "Eşdeğerlik Testi [Equivalence Testing]",
                 "sort_key": "eszdegzerlik testi [equivalence testing]",
-                "definition": "Eşdeğerlik testleri, belirli bir etkinin anlamlı sayılabilmesi için gerekli olan minimum değeri aştığı yönündeki sıfır hipotezini istatistiksel olarak değerlendirir. Bu nedenle, sıfır hipotezinin reddedilmesi, anlamlı bir etkinin bulunmadığına dair kanıt sağlar. Frekansçı istatistiğe dayanan bu testlerde, öncelikle eşdeğerlik sınırları belirlenir: ilgi duyulan en küçük etki büyüklüğünü yansıtan alt ve üst sınır değerleri. Ardından, bu sınırların her biriyle karşılaştırmak üzere iki tane tek yönlü t-testi yapılır. Bu sayede, etkilerin anlamlı olup olmadıkları değerlendirilebilir (bkz. Schuirmann, 1972; Lakens vd., 2018; 2020).",
+                "definition": "Eşdeğerlik testleri, belirli bir etkinin anlamlı sayılabilmesi için gerekli olan minimum değeri aştığı yönündeki sıfır hipotezini istatistiksel olarak değerlendirir. Bu nedenle, sıfır hipotezinin reddedilmesi, anlamlı bir etkinin bulunmadığına dair kanıt sağlar. Frekansçı istatistiğe dayanan bu testlerde, öncelikle eşdeğerlik sınırları belirlenir: ilgi duyulan en küçük etki büyüklüğünü yansıtan alt ve üst sınır değerleri. Ardından, bu sınırların her biriyle karşılaştırmak üzere iki tane tek yönlü t-testi yapılır. Bu sayede, etkilerin anlamlı olup olmadıkları değerlendirilebilir (bkz. Schuirmann, 1987; Lakens vd., 2018; 2020).",
                 "related_terms": [
                     "Equivalence bounds",
                     "Falsification",
@@ -44039,7 +44277,7 @@
                 "translation_reviewed_by": [
                     "Ege Emek"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -44503,7 +44741,7 @@
                     "Specification Curve Analysis"
                 ],
                 "references": [
-                    "Gelman, A., & Loken, E. (n.d.). <i>The garden of forking paths: Why multiple comparisons can be a problem, even when there is no “fishing expedition” or “p-hacking” and the research hypothesis was posited ahead of time</i>. Retrieved from http://www.stat.columbia.edu/"
+                    "Gelman, A., & Loken, E. (2013). <i>The garden of forking paths: Why multiple comparisons can be a problem, even when there is no “fishing expedition” or “p-hacking” and the research hypothesis was posited ahead of time</i>. http://www.stat.columbia.edu/~gelman/research/unpublished/p_hacking.pdf"
                 ],
                 "drafted_by": [
                     "Flávio Azevedo; Mahmoud Elsherif"
@@ -44524,7 +44762,7 @@
                 "translation_reviewed_by": [
                     "Ege Emek"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -47187,7 +47425,8 @@
                     "Kiernan, C. (1999). Participation in research by people with learning disability: Origins and issues. <i>British Journal of Learning Disabilities</i>, <i>27</i>(2), 43–47. https://doi.org/10.1111/j.1468-3156.1999.tb00084.x",
                     "Leavy, P. (2017). <i>Research Design: Quantitative, Qualitative, Mixed Methods, Arts-Based, and Community-Based Participatory Research Approaches</i>. The Guilford Press.",
                     "Ottmann, G., Laragy, C., Allen, J., & Feldman, P. (2011). Coproduction in practice: Participatory action research to develop a model of community aged care. <i>Systemic Practice and Action Research</i>, <i>24</i>, 413–427. https://doi.org/10.1007/s11213-011-9192-x",
-                    "Rose, D. (2018). Participatory research: Real or imagined. <i>Social Psychiatry and Psychiatric Epidemiology</i>, <i>53</i>, 765–771. https://doi.org/10.1007/s00127-018-1549-3"
+                    "Rose, D. (2018). Participatory research: Real or imagined. <i>Social Psychiatry and Psychiatric Epidemiology</i>, <i>53</i>, 765–771. https://doi.org/10.1007/s00127-018-1549-3",
+                    "Andersson, N. (2018). Participatory research—a modernizing science for primary health care. <i>Journal of General and Family Medicine</i>, <i>19</i>(5), 154–159. https://doi.org/10.1002/jgf2.187"
                 ],
                 "drafted_by": [
                     "Tamara Kalandadze"
@@ -47208,7 +47447,7 @@
                 "translation_reviewed_by": [
                     "Nihan Selin Soylu-Konak"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -48007,14 +48246,14 @@
                 "en_title": "Public Trust in Science",
                 "title": "Bilime Duyulan Toplumsal Güven [Public Trust in Science]",
                 "sort_key": "bilime duyulan toplumsal guzven [public trust in science]",
-                "definition": "Bilim insanları tarafından üretilen veya sağlanan ve sivil toplumun yararına sunulan bilgiye, rehberliğe ve önerilere duyulan güven (Hendriks vd., 2016). Bunlar aynı zamanda halk sağlığına ilişkin bilim temelli tavsiyelere (örn., evrensel sağlık hizmeti, kök hücre araştırmaları, kadınların üreme hakları için federal fonlar, bulaşıcı hastalıkların önleyici tedbirleri ve aşılama), iklim değişikliğine, ekonomik politikalara (örn., refah, eşitsizlik ve yoksullukla mücadele) ve bunların kesişim noktalarına duyulan güveni de kastedebilir. Bir bireyin bilime duyduğu güvenin; yaş (Anderson vd., 2012), cinsiyet (Von Roten, 2004), bilimsel normların reddi (Lewandowsky ve Oberauer, 2021), politik ideoloji (Azevedo ve Jost, 2021; Brewer ve Ley, 2012; Leiserowitz vd., 2010), sağ eğilimli otoriterlik ve sosyal baskınlık (Kerr ve Wilson, 2021), eğitim (Bak, 2001; Hayes ve Tariq, 2000), gelir (Anderson vd., 2012), bilim bilgisi (Evans ve Durant, 1995; Nisbet vd., 2002), sosyal medya kullanımı (Huber vd., 2019) ve dindarlık (Azevedo, 2021; Brewer ve Ley, 2013; Liu ve Priest, 2009) gibi çok sayıda faktörden etkilendiği gösterilmiştir.",
+                "definition": "Bilim insanları tarafından üretilen veya sağlanan ve sivil toplumun yararına sunulan bilgiye, rehberliğe ve önerilere duyulan güven (Hendriks vd., 2016). Bunlar aynı zamanda halk sağlığına ilişkin bilim temelli tavsiyelere (örn., evrensel sağlık hizmeti, kök hücre araştırmaları, kadınların üreme hakları için federal fonlar, bulaşıcı hastalıkların önleyici tedbirleri ve aşılama), iklim değişikliğine, ekonomik politikalara (örn., refah, eşitsizlik ve yoksullukla mücadele) ve bunların kesişim noktalarına duyulan güveni de kastedebilir. Bir bireyin bilime duyduğu güvenin; yaş (Anderson vd., 2012), cinsiyet (Crettaz von Roten, 2004), bilimsel normların reddi (Lewandowsky ve Oberauer, 2021), politik ideoloji (Azevedo ve Jost, 2021; Brewer ve Ley, 2013; Leiserowitz vd., 2010), sağ eğilimli otoriterlik ve sosyal baskınlık (Kerr ve Wilson, 2021), eğitim (Bak, 2001; Hayes ve Tariq, 2000), gelir (Anderson vd., 2012), bilim bilgisi (Evans ve Durant, 1995; Nisbet vd., 2002), sosyal medya kullanımı (Huber vd., 2019) ve dindarlık (Azevedo, 2021; Brewer ve Ley, 2013; Liu ve Priest, 2009) gibi çok sayıda faktörden etkilendiği gösterilmiştir.",
                 "related_terms": [
                     "Credibility of scientific claims",
                     "Epistemic Trust"
                 ],
                 "references": [
                     "Anderson, M. S., Ronning, E. A., Devries, R., & Martinson, B. C. (2010). Extending the Mertonian norms: Scientists’ subscription to norms of research. <i>Journal of Higher Education</i>, <i>81</i>(3), 366–393. https://doi.org/10.1353/jhe.0.0095",
-                    "Azevedo, F. (n.d.). <i>Ideology May Help Explain Anti-Scientific Attitudes | Psychology Today</i>. https://www.psychologytoday.com/us/blog/social-justice-pacifists/202107/ideology-may-help-explain-anti-scientific-attitudes",
+                    "Azevedo, F. (2021). <i>Ideology May Help Explain Anti-Scientific Attitudes | Psychology Today</i>. https://www.psychologytoday.com/us/blog/social-justice-pacifists/202107/ideology-may-help-explain-anti-scientific-attitudes",
                     "Azevedo, F., & Jost, J. T. (2021). The ideological basis of antiscientific attitudes: Effects of authoritarianism, conservatism, religiosity, social dominance, and system justification. <i>Group Processes & Intergroup Relations</i>, <i>24</i>(4), 518–549. https://doi.org/10.1177/1368430221990104",
                     "Bak, H.-J. (2001). Education and Public Attitudes toward Science: Implications for the ‘Deficit Model’ of Education and Support for Science and Technology. <i>Social Science Quarterly</i>, <i>82</i>(4), 779–795. https://www.jstor.org/stable/42955760",
                     "Brewer, P. R., & Ley, B. L. (2013). Whose Science Do You Believe? Explaining Trust in Sources of Scientific Information About the Environment. <i>Science Communication</i>, <i>35</i>(1), 115–137. https://doi.org/10.1177/1075547012441691",
@@ -48028,7 +48267,8 @@
                     "Nisbet, M. C., Scheufele, D. A., Shanahan, J., Moy, P., Brossard, D., & Lewenstein, B. V. (2002). Knowledge, Reservations, or Promise?: A Media Effects Model for Public Perceptions of Science and Technology. <i>Communication Research</i>, <i>29</i>(5), 584–608. https://doi.org/10.1177/009365002236196",
                     "Schneider, J., Merk, S., & Rosman, T. (2019). <i>(Re)Building Trust? Investigating the effects of open science badges on perceived trustworthiness in journal articles</i>. https://doi.org/10.17605/OSF.IO/VGBRS",
                     "Wingen, T., Berkessel, J. B., & Englich, B. (2020). No Replication, No Trust? How Low Replicability Influences Trust in Psychology. <i>Social Psychological and Personality Science</i>, <i>11</i>(4). https://doi.org/10.1177/1948550619877412",
-                    "Anderson, A. A., Scheufele, D. A., Brossard, D., & Corley, E. A. (2012). The Role of Media and Deference to Scientific Authority in Cultivating Trust in Sources of Information about Emerging Technologies. <i>International Journal of Public Opinion Research</i>, <i>24</i>(2), 225–237. https://doi.org/10.1093/ijpor/edr032"
+                    "Anderson, A. A., Scheufele, D. A., Brossard, D., & Corley, E. A. (2012). The Role of Media and Deference to Scientific Authority in Cultivating Trust in Sources of Information about Emerging Technologies. <i>International Journal of Public Opinion Research</i>, <i>24</i>(2), 225–237. https://doi.org/10.1093/ijpor/edr032",
+                    "Crettaz von Roten, F. (2004). Gender differences in attitudes toward science in Switzerland. <i>Public Understanding of Science</i>, <i>13</i>(2), 191–199. https://doi.org/10.1177/0963662504043870"
                 ],
                 "drafted_by": [
                     "Tobias Wingen; Flávio Azevedo"
@@ -48049,7 +48289,7 @@
                 "translation_reviewed_by": [
                     "Nihan Selin Soylu-Konak"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -48564,13 +48804,14 @@
                 "en_title": "Repeatability",
                 "title": "Yinelenebilirlik [Repeatability]",
                 "sort_key": "yinelenebilirlik [repeatability]",
-                "definition": "Test-tekrar test güvenilirliği (test-retest reliability) ile eş anlamlıdır. Aynı ölçüm aracının ardışık ölçümlerinin sonuçları arasındaki uyumu ifade eder. Yinelenebilirlik, aynı deneysel araçların, aynı gözlemcinin ve aynı ölçüm cihazının, aynı koşullar altında, aynı yerde, kısa bir zaman aralığında tekrarlanacak şekilde ve aynı amaçla kullanılmasını gerektirir (Joint Committee for Guidelines in Metrology, 2008).",
+                "definition": "Test-tekrar test güvenilirliği (test-retest reliability) ile eş anlamlıdır. Aynı ölçüm aracının ardışık ölçümlerinin sonuçları arasındaki uyumu ifade eder. Yinelenebilirlik, aynı deneysel araçların, aynı gözlemcinin ve aynı ölçüm cihazının, aynı koşullar altında, aynı yerde, kısa bir zaman aralığında tekrarlanacak şekilde ve aynı amaçla kullanılmasını gerektirir (Joint Committee for Guides in Metrology, 2008).",
                 "related_terms": [
                     "Reliability"
                 ],
                 "references": [
                     "ISO. (1993). <i>Guide to the Expression of Uncertainty in Measurement</i> (1st ed.). International Organization for Standardization.",
-                    "Stodden, V. C. (2011). <i>Trust your science? Open your data and code</i>."
+                    "Stodden, V. C. (2011). <i>Trust your science? Open your data and code</i>.",
+                    "Working Group 1 of the Joint Committee for Guides in Metrology JCGM. (2008). <i>Evaluation of measurement data—Guide to the expression of uncertainty in measurement</i> (pp. 1–120). JCGM. https://www.bipm.org/documents/20126/2071204/JCGM_100_2008_E.pdf/cb0ef43f-baa5-11cf-3f85-4dcd86f77bd6"
                 ],
                 "drafted_by": [
                     "Mahmoud Elsherif, Adam Parker"
@@ -48591,7 +48832,7 @@
                 "translation_reviewed_by": [
                     "Neslihan Özhan"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -48611,8 +48852,9 @@
                     "Barba, L. A. (2018). Terminologies for reproducible research. <i>arXiv Preprint arXiv:1802.03311</i>.",
                     "Crüwell, S., van Doorn, J., Etz, A., Makel, M. C., Moshontz, H., Niebaum, J. C., Orben, A., Parsons, S., & Schulte-Mecklenbeck, M. (2019). Seven Easy Steps to Open Science: An Annotated Reading List. <i>Zeitschrift Für Psychologie</i>, <i>227</i>(4), 237–248. https://doi.org/10.1027/2151-2604/a000387",
                     "King, G. (1995). Replication, replication. <i>PS: Political Science & Politics</i>, <i>28</i>(3), 444–452. https://doi.org/10.2307/420301",
-                    "National Academies of Sciences, Engineering, Medicine, & others. (2019). <i>Reproducibility and Replicability in Science. In Understanding Reproducibility and Replicability</i> [Techreport]. National Academies Press (US). https://www.ncbi.nlm.nih.gov/books/NBK547546/",
-                    "Nosek, B. A., & Errington, T. M. (2020). What is replication? <i>PLOS Biology</i>, <i>18</i>(3), e3000691. https://doi.org/10.1371/journal.pbio.3000691"
+                    "National Academies of Sciences, Engineering, and Medicine. (2019). <i>Reproducibility and Replicability in Science. In Understanding Reproducibility and Replicability</i> [Techreport]. National Academies Press (US). https://www.ncbi.nlm.nih.gov/books/NBK547546/",
+                    "Nosek, B. A., & Errington, T. M. (2020). What is replication? <i>PLOS Biology</i>, <i>18</i>(3), e3000691. https://doi.org/10.1371/journal.pbio.3000691",
+                    "Claerbout, J. F., & Karrenbach, M. (1992). Electronic documents give reproducible research a new meaning. <i>SEG Technical Program Expanded Abstracts 1992</i>, 601–604. http://sepwww.stanford.edu/doku.php?id=sep:research:reproducible:seg92"
                 ],
                 "drafted_by": [
                     "Mahmoud Elsherif"
@@ -48637,7 +48879,7 @@
                 "translation_reviewed_by": [
                     "Neslihan Özhan"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -48776,7 +49018,7 @@
                     "Peng, R. D. (2011). Reproducible Research in Computational Science. <i>Science</i>, <i>334</i>(6060), 1226–1227. https://doi.org/10.1126/science.1213847",
                     "Stodden, V. C. (2011). <i>Trust your science? Open your data and code</i>.",
                     "Syed, M. (2019). The Open Science Movement is for all of us. <i>PsyArXiv</i>.",
-                    "National Academies of Sciences, Engineering, Medicine, & others. (2019). <i>Reproducibility and Replicability in Science. In Understanding Reproducibility and Replicability</i> [Techreport]. National Academies Press (US). https://www.ncbi.nlm.nih.gov/books/NBK547546/"
+                    "National Academies of Sciences, Engineering, and Medicine. (2019). <i>Reproducibility and Replicability in Science. In Understanding Reproducibility and Replicability</i> [Techreport]. National Academies Press (US). https://www.ncbi.nlm.nih.gov/books/NBK547546/"
                 ],
                 "drafted_by": [
                     "Mahmoud Elsherif"
@@ -48799,7 +49041,7 @@
                 "translation_reviewed_by": [
                     "Neslihan Özhan"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -49116,7 +49358,7 @@
                     "Specification curve analysis"
                 ],
                 "references": [
-                    "Gelman, A., & Loken, E. (n.d.). <i>The garden of forking paths: Why multiple comparisons can be a problem, even when there is no “fishing expedition” or “p-hacking” and the research hypothesis was posited ahead of time</i>. Retrieved from http://www.stat.columbia.edu/",
+                    "Gelman, A., & Loken, E. (2013). <i>The garden of forking paths: Why multiple comparisons can be a problem, even when there is no “fishing expedition” or “p-hacking” and the research hypothesis was posited ahead of time</i>. http://www.stat.columbia.edu/~gelman/research/unpublished/p_hacking.pdf",
                     "Simmons, J. P., Nelson, L. D., & Simonsohn, U. (2011). False-positive psychology: Undisclosed flexibility in data collection and analysis allows presenting anything as significant. <i>Psychological Science</i>, <i>22</i>(11), 1359–1366. https://doi.org/10.1177/0956797611417632",
                     "Wicherts, J. M., Veldkamp, C. L., Augusteijn, H. E., Bakker, M., Van Aert, R., & Van Assen, M. A. (2016). Degrees of freedom in planning, running, analyzing, and reporting psychological studies: A checklist to avoid p-hacking. <i>Frontiers in Psychology</i>, <i>7</i>, 1832. https://doi.org/10.3389/fpsyg.2016.01832"
                 ],
@@ -49140,7 +49382,7 @@
                 "translation_reviewed_by": [
                     "Neslihan Özhan"
                 ],
-                "lastmod": "2026-11-08"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
@@ -50532,7 +50774,8 @@
                 "references": [
                     "Hitchcock, C., Meyer, A., Rose, D., & Jackson, R. (2002). Providing new access to the general curriculum: Universal design for learning. <i>Teaching Exceptional Children</i>, <i>35</i>(2), 8–17. https://www.proquest.com/scholarly-journals/providing-new-access-general-curriculum/docview/201139970/se-2?accountid=8630",
                     "Rose, D. (2000). Universal design for learning. <i>Journal of Special Education Technology</i>, <i>15</i>(3), 45–49. https://doi.org/10.1177/016264340001500307",
-                    "Rose, D. H., & Meyer, A. (2002). Teaching every student in the digital age: Universal design for learning. In <i>The Corsini Encyclopedia of Psychology</i>. Association for Supervision."
+                    "Rose, D. H., & Meyer, A. (2002). Teaching every student in the digital age: Universal design for learning. In <i>The Corsini Encyclopedia of Psychology</i>. Association for Supervision.",
+                    "Edyburn, D. L. (2010). Would you recognize universal design for learning if you saw it? Ten propositions for new directions for the second decade of UDL. <i>Learning Disability Quarterly</i>, <i>33</i>(1), 33–41. https://doi.org/10.1177/073194871003300103"
                 ],
                 "drafted_by": [
                     "Charlotte R. Pennington"
@@ -50554,7 +50797,7 @@
                 "translation_reviewed_by": [
                     "Neslihan Özhan"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-09"
             },
             {
                 "type": "glossary",
