@@ -1,0 +1,7 @@
+{{- /* Keep title data plain; annotate the English suffix only when rendering. */ -}}
+{{- $suffix := printf " [%s]" (.Params.en_title | default "") -}}
+{{- if and (eq .Params.language "bulgarian") .Params.en_title (strings.HasSuffix .Title $suffix) -}}
+  {{- strings.TrimSuffix $suffix .Title }} <span lang="en">{{ $suffix }}</span>
+{{- else -}}
+  {{- .Title -}}
+{{- end -}}

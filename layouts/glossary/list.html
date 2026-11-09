@@ -50,7 +50,7 @@
           {{ $sortedPages := sort $filteredPages "Params.sort_key" }}
           {{ range $index, $page := $sortedPages }}
           <li class="nav-item">
-            <a href="{{ .Permalink }}" class="nav-link">{{ .Title }}</a>
+            <a href="{{ .Permalink }}" class="nav-link">{{ partial "glossary_title" . }}</a>
           </li>
           {{ end }}
         </ul>

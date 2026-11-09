@@ -304,6 +304,7 @@ for language_code in languages_to_process:
         # lists mix English and Bulgarian, so splitting on commas is unsafe.
         if language_code == 'BG':
             entry['related_terms'] = []
+            entry['reviewed_by'] = [name for name in entry['reviewed_by'] if name.strip()]
             related_text = safe_get(row, 'BG_rel')
             if related_text:
                 entry['related_terms_text'] = related_text

@@ -11253,7 +11253,7 @@
                     null
                 ],
                 "language": "bulgarian",
-                "related_terms_text": "Co-authorship, [Consortium authorship](https://forrt.org/glossary/english/consortium_authorship/), Contributorship, [CRediT](https://forrt.org/glossary/english/credit/), [First-last-author-emphasis norm (FLAE)](https://forrt.org/glossary/english/first_last_author_emphasis_norm/), Gift (or Guest) Authorship, [Sequence-determines-credit approach (SDC)](https://forrt.org/glossary/english/sequence_determines_credit_approach/)",
+                "related_terms_text": "Co-authorship, [Consortium authorship](https://forrt.org/glossary/english/consortium_authorship/), Contributorship, [CRediT](https://forrt.org/glossary/english/credit/), [First-last-author-emphasis norm (FLAE)](https://forrt.org/glossary/english/first_last_author_emphasis_norm_flae_/), Gift (or Guest) Authorship, [Sequence-determines-credit approach (SDC)](https://forrt.org/glossary/english/sequence_determines_credit_approach_sdc_/)",
                 "translated_by": [
                     "Антония Кръстева"
                 ],
@@ -11336,7 +11336,7 @@
                 "definition": "Технологична организация с нетърговска цел със седалище в Шарлотсвил, Вирджиния, чиято мисия е „да повиши откритостта, интегритета и възпроизводимостта на научните изследвания“. Наред с други ресурси, ЦОН е домакин на Рамката за отворена наука (OSF) и Базата за знания за отворена академична дейност.",
                 "related_terms": [],
                 "references": [
-                    "cos.io"
+                    "[cos.io](https://cos.io)"
                 ],
                 "drafted_by": [
                     "Beatrix Arendt"
@@ -11368,7 +11368,7 @@
                 "definition": "Това е когнитивна склонност към пристрастен подбор на статии или автори, цитирани и включени в раздела за литературни източници. Когато е налице когнитивна склонност при цитирането, тя често се проявява по начин, който би бил от полза за автора (авторите) или рецензентите, представяйки по изкривен начин статистически значими проучвания или отразявайки широко разпространени полови или расови пристрастия (Brooks, 1985; Jannot et al., 2013; Zurn et al., 2020). Едно от предложените решения е използването на Декларациите за разнообразие на цитиранията, в които авторите анализират своите практики на цитиране и посочват пристрастията (когнитивните склонности), които може да са се появили (Zurn et al., 2020).",
                 "related_terms": [],
                 "references": [
-                    "Brooks (1985), Jannot et al (2013), Thombs et al (2015), & Zurn et al (2020"
+                    "Brooks (1985), Jannot et al (2013), Thombs et al (2015), & Zurn et al (2020)"
                 ],
                 "drafted_by": [
                     "Bettina M. J. Kern"
@@ -11400,7 +11400,7 @@
                 "en_title": "Citation Diversity Statement",
                 "title": "Декларацията за разнообразие на цитатите [Citation Diversity Statement]",
                 "sort_key": "декларацията за разнообразие на цитатите [citation diversity statement]",
-                "definition": "Декларацията за разнообразие на цитатите е настоящото усилие за повишаване на осведомеността и смекчаване на когнитивната наклонността при цитирането по отношение на пола и расата. Тя е кратък параграф, в който „авторите разглеждат собствената си когнитивни наклонности и пристрастия, и определят количествено равнопоставеността на списъците си с литературни източници. В параграфа се посочва: (I) значението на разнообразието на цитатите, (II) процентното раздробяване (или други показатели за разнообразие) на цитатите в статията, (III) методът, по който са оценени процентите, и неговите ограничения, и (IV) ангажимента за подобряване на равноправните практики в науката“ (Zurn et al., 2020, с. 669).",
+                "definition": "Декларацията за разнообразие на цитатите е настоящото усилие за повишаване на осведомеността и смекчаване на когнитивната наклонност при цитирането по отношение на пола и расата. Тя е кратък параграф, в който „авторите разглеждат собствените си когнитивни наклонности и пристрастия, и определят количествено равнопоставеността на списъците си с литературни източници. В параграфа се посочва: (I) значението на разнообразието на цитатите, (II) процентното раздробяване (или други показатели за разнообразие) на цитатите в статията, (III) методът, по който са оценени процентите, и неговите ограничения, и (IV) ангажимента за подобряване на равноправните практики в науката“ (Zurn et al., 2020, с. 669).",
                 "related_terms": [],
                 "references": [
                     "Zurn, P., Bassett, D. S., & Rust, N. C. (2020). The Citation Diversity Statement: A Practice of Transparency, A Way of Life. <i>Trends in Cognitive Sciences</i>, <i>24</i>(9), 669–672. https://doi.org/10.1016/j.tics.2020.06.009"
@@ -11705,7 +11705,7 @@
                     null
                 ],
                 "language": "bulgarian",
-                "related_terms_text": "[Bottom-up approach (to Open Scholarship)](https://forrt.org/glossary/english/bottom_up_approach/), [Crowdsourced research](https://forrt.org/glossary/english/crowdsourced_research/), [Hackathon](https://forrt.org/glossary/english/hackathon/), [Many Labs](https://forrt.org/glossary/english/many_labs/), [ReproducibiliTea](https://forrt.org/glossary/english/reproducibilitea/)",
+                "related_terms_text": "[Bottom-up approach (to Open Scholarship)](https://forrt.org/glossary/english/bottom_up_approach_to_open_scholarship_/), [Crowdsourced research](https://forrt.org/glossary/english/crowdsourced_research/), [Hackathon](https://forrt.org/glossary/english/hackathon/), [Many Labs](https://forrt.org/glossary/english/many_labs/), [ReproducibiliTea](https://forrt.org/glossary/english/reproducibilitea/)",
                 "translated_by": [
                     "Антония Кръстева"
                 ],
@@ -11970,7 +11970,7 @@
                     null
                 ],
                 "language": "bulgarian",
-                "related_terms_text": "[BIZARRE](https://forrt.org/glossary/english/bizarre/), [Diversity](https://forrt.org/glossary/english/diversity/), [Equity](https://forrt.org/glossary/english/equity/), [Generalizability](https://forrt.org/glossary/english/generalizability/), [Inclusion](https://forrt.org/glossary/english/inclusion/), [Reproducibility](https://forrt.org/glossary/english/reproducibility/), Replication, [STRANGE](https://forrt.org/glossary/english/strange/), [WEIRD](https://forrt.org/glossary/english/weird/)",
+                "related_terms_text": "[BIZARRE](https://forrt.org/glossary/english/bizarre/), [Diversity](https://forrt.org/glossary/english/diversity/), [Equity](https://forrt.org/glossary/english/equity/), [Generalizability](https://forrt.org/glossary/english/generalizability/), [Inclusion](https://forrt.org/glossary/english/inclusion/), [Reproducibility](https://forrt.org/glossary/english/reproducibility/), Replication, [STRANGE](https://forrt.org/glossary/english/strange/), WEIRD",
                 "translated_by": [
                     "Антония Кръстева"
                 ],
@@ -12002,7 +12002,7 @@
                     null
                 ],
                 "language": "bulgarian",
-                "related_terms_text": "Measurement crisis, Measurement validity, [Questionable Measurement Practices (QMP)](https://forrt.org/glossary/english/questionable_measurement_practices/), [Theory](https://forrt.org/glossary/english/theory/), [Validity](https://forrt.org/glossary/english/validity/), Validation",
+                "related_terms_text": "Measurement crisis, Measurement validity, [Questionable Measurement Practices (QMP)](https://forrt.org/glossary/english/questionable_measurement_practices_qmp_/), [Theory](https://forrt.org/glossary/english/theory/), [Validity](https://forrt.org/glossary/english/validity/), Validation",
                 "translated_by": [
                     "Антония Кръстева"
                 ],
@@ -12050,7 +12050,7 @@
                 "en_title": "Corrigendum",
                 "title": "Коригендум [Corrigendum]",
                 "sort_key": "коригендум [corrigendum]",
-                "definition": "Коригендумът (мн. ч.: коригенда, от латински: „поправям“) документира една или няколко грешки в публикуван труд, които не променят основното твърдение или заключения, и следователно не достигат стандарта, изискващ оттегляне на труда. Обикновено коригендата се публикуват заедно с оригиналния труд, за да се подпомогне прозрачността. Някои издатели наричат този документ “ератум” (мн. ч.: “ерата”, от латински: „грешка“), докато други правят разлика между двата вида (корегенда отнасящо се към авторски грешки и “ерата” - към издателски грешки).",
+                "definition": "Коригендумът (мн. ч.: коригенда, от латински: „поправям“) документира една или няколко грешки в публикуван труд, които не променят основното твърдение или заключения, и следователно не достигат стандарта, изискващ оттегляне на труда. Обикновено коригендата се публикуват заедно с оригиналния труд, за да се подпомогне прозрачността. Някои издатели наричат този документ “ератум” (мн. ч.: “ерата”, от латински: „грешка“), докато други правят разлика между двата вида (коригенда отнасящо се към авторски грешки и “ерата” - към издателски грешки).",
                 "related_terms": [],
                 "references": [
                     "Correction or retraction? (2006)"
@@ -12102,7 +12102,7 @@
                     null
                 ],
                 "language": "bulgarian",
-                "related_terms_text": "[Citizen science](https://forrt.org/glossary/english/citizen_science/), Collaboration, Collaborative research, Crowd science, Engaged scholarship, Integrated Knowledge Translation (IKT), Mode 2 of knowledge production, [Participatory research](https://forrt.org/glossary/english/participatory_research/), [Patient and Public Involvement (PPI)](https://forrt.org/glossary/english/patient_and_public_involvement/)",
+                "related_terms_text": "[Citizen science](https://forrt.org/glossary/english/citizen_science/), Collaboration, Collaborative research, Crowd science, Engaged scholarship, Integrated Knowledge Translation (IKT), Mode 2 of knowledge production, [Participatory research](https://forrt.org/glossary/english/participatory_research/), [Patient and Public Involvement (PPI)](https://forrt.org/glossary/english/patient_and_public_involvement_ppi_/)",
                 "translated_by": [
                     "Антония Кръстева"
                 ],
@@ -12116,7 +12116,7 @@
                 "en_title": "Creative Commons (CC) license",
                 "title": "Криейтив комънс лиценз [Creative Commons (CC) license]",
                 "sort_key": "криейтив комънс лиценз [creative commons (cc) license]",
-                "definition": "Набор от безплатни и лесни за използване лицензи за авторски права, които определят правата на авторите и потребителите на отворените данни и материали по стандартизиран начин. Криейтив комън (съкр. от англ.: CC) лицензите дават възможност на авторите или създателите да споделят с обществеността произведения, защитени от закона за авторското право, и се предлагат в различни разновидности с повече или по-малко клаузи. Например, лицензът „Признание с некомерсиално споделяне“ (от англ.: Attribution-NonCommercial-ShareAlike 4.0 International, съкр.: CC BY-NC-SA 4.0) Ви позволява да споделяте и адаптирате материала, при условие че посочите оригиналните създатели, посочите дали са направени промени, споделяте под същия лиценз като оригинала, както и че не използвате материала за комерсиални цели.\n\nДруго определение: Криейтив комънс е международна организация с нестопанска цел, която предоставя криейтив комънс (Creative Commons) лицензи с цел да се сведат до минимум правните пречки пред споделянето на знания и творчество.",
+                "definition": "Набор от безплатни и лесни за използване лицензи за авторски права, които определят правата на авторите и потребителите на отворените данни и материали по стандартизиран начин. Криейтив комънс (съкр. от англ.: CC) лицензите дават възможност на авторите или създателите да споделят с обществеността произведения, защитени от закона за авторското право, и се предлагат в различни разновидности с повече или по-малко клаузи. Например, лицензът „Признание с некомерсиално споделяне“ (от англ.: Attribution-NonCommercial-ShareAlike 4.0 International, съкр.: CC BY-NC-SA 4.0) Ви позволява да споделяте и адаптирате материала, при условие че посочите оригиналните създатели, посочите дали са направени промени, споделяте под същия лиценз като оригинала, както и че не използвате материала за комерсиални цели.\n\nДруго определение: Криейтив комънс е международна организация с нестопанска цел, която предоставя криейтив комънс (Creative Commons) лицензи с цел да се сведат до минимум правните пречки пред споделянето на знания и творчество.",
                 "related_terms": [],
                 "references": [
                     "Anon. (n.d.). <i>About CC Licenses</i>. Retrieved from https://creativecommons.org/about/cclicenses/"
@@ -12149,7 +12149,7 @@
                 "en_title": "Credibility revolution",
                 "title": "Революция на достоверността [Credibility revolution]",
                 "sort_key": "революция на достоверността [credibility revolution]",
-                "definition": "Проблемите и решенията, произтичащи от нарастващото недоверие към научните открития в резултат на опасения относно достоверността на научните твърдения (напр., нискаta степен на реплицируемост). Терминът е предложен като по-позитивна алтернатива на термина „криза на възпроизводимостта“ и включва многобройните решения за подобряване на достоверността на научните изследвания, като например предварителната регистрация, прозрачността и репликацията.",
+                "definition": "Проблемите и решенията, произтичащи от нарастващото недоверие към научните открития в резултат на опасения относно достоверността на научните твърдения (напр., ниската степен на реплицируемост). Терминът е предложен като по-позитивна алтернатива на термина „криза на възпроизводимостта“ и включва многобройните решения за подобряване на достоверността на научните изследвания, като например предварителната регистрация, прозрачността и репликацията.",
                 "related_terms": [],
                 "references": [
                     "Angrist and Pischke (2010), Vazire (2018), & Vazire et al. (2020)"
@@ -12173,7 +12173,7 @@
                     null
                 ],
                 "language": "bulgarian",
-                "related_terms_text": "Credibility of scientific claims, High standards of evidence, Openness, [Open Science](https://forrt.org/glossary/english/open_science/), [Reproducibility crisis (aka Replicability or replication crisis)](https://forrt.org/glossary/english/reproducibility_crisis/), [Transparency](https://forrt.org/glossary/english/transparency/)",
+                "related_terms_text": "Credibility of scientific claims, High standards of evidence, Openness, [Open Science](https://forrt.org/glossary/english/open_science/), [Reproducibility crisis (aka Replicability or replication crisis)](https://forrt.org/glossary/english/reproducibility_crisis_aka_replicability_or_replication_crisis_/), [Transparency](https://forrt.org/glossary/english/transparency/)",
                 "translated_by": [
                     "Антония Кръстева"
                 ],
@@ -12423,7 +12423,7 @@
                 "definition": "Структуриран документ, който описва процеса на събирането, анализа, управлението и съхранението на данни по време на даден научноизследователски проект. В него се описва също така собствеността върху данните и как те ще бъдат съхранявани и споделяни по време на проекта и след неговото приключване. Шаблоните за управление на данни също така предоставят насоки за това как да се направят изследователските данни да отговарят на ОДИВ принципите (откриваеми, достъпни, многократно използваеми и взаимносъвместими) и, когато е възможно - да бъдат свободно достъпни.",
                 "related_terms": [],
                 "references": [
-                    "Burnette et al. (2016), Michener (2015), Research Data Alliance (2020), & [https://library.stanford.edu/research/data-management-services/data-management-plans#:~:text=A%20data%20management%20plan%20(DMP,share%20and%20preserve%20your%20data](https://library.stanford.edu/research/data-management-services/data-management-plans#:~:text=A%20data%20management%20plan%20(DMP,share%20and%20preserve%20your%20data)."
+                    "Burnette et al. (2016), Michener (2015), Research Data Alliance (2020), & [https://library.stanford.edu/research/data-management-services/data-management-plans#:~:text=A%20data%20management%20plan%20(DMP,share%20and%20preserve%20your%20data](https://library.stanford.edu/research/data-management-services/data-management-plans#:~:text=A%20data%20management%20plan%20%28DMP,share%20and%20preserve%20your%20data)."
                 ],
                 "drafted_by": [
                     "Dominique Roche"
@@ -12732,7 +12732,7 @@
                     null
                 ],
                 "language": "bulgarian",
-                "related_terms_text": "[Bropenscience](https://forrt.org/glossary/english/bropenscience/), [BIZARRE](https://forrt.org/glossary/english/bizarre/), [Decolonisation](https://forrt.org/glossary/english/decolonisation/), [Double Consciousness](https://forrt.org/glossary/english/double_consciousness/), [Equity](https://forrt.org/glossary/english/equity/), [Inclusion](https://forrt.org/glossary/english/inclusion/), [STRANGE](https://forrt.org/glossary/english/strange/), [WEIRD](https://forrt.org/glossary/english/weird/)",
+                "related_terms_text": "[Bropenscience](https://forrt.org/glossary/english/bropenscience/), [BIZARRE](https://forrt.org/glossary/english/bizarre/), [Decolonisation](https://forrt.org/glossary/english/decolonisation/), [Double Consciousness](https://forrt.org/glossary/english/double_consciousness/), [Equity](https://forrt.org/glossary/english/equity/), [Inclusion](https://forrt.org/glossary/english/inclusion/), [STRANGE](https://forrt.org/glossary/english/strange/), WEIRD",
                 "translated_by": [
                     "Антония Кръстева"
                 ],
@@ -13039,7 +13039,7 @@
                 "en_title": "Exploratory data analysis",
                 "title": "Експлораторен анализ на данни (ЕАД) [Exploratory data analysis]",
                 "sort_key": "експлораторен анализ на данни (еад) [exploratory data analysis]",
-                "definition": "Експлораторният анализ на данни (ЕАД) е добре установена статистическа традиция, която предоставя концептуални и изчислителни инструменти за откриване на тенденции в данните за насърчаване на развитието и усъвършенстването на хипотезите. Тези инструменти и нагласи допълват употребата на тестовете на хипотезите, използвани в конфирматорните анализи на данни (КАД). Дори когато се поддържат добре определени теории, ЕАД помага за интерпретацията нат резултатите от КАД и може да разкрие неочаквани или подвеждащи тенденции в данните.",
+                "definition": "Експлораторният анализ на данни (ЕАД) е добре установена статистическа традиция, която предоставя концептуални и изчислителни инструменти за откриване на тенденции в данните за насърчаване на развитието и усъвършенстването на хипотезите. Тези инструменти и нагласи допълват употребата на тестовете на хипотезите, използвани в конфирматорните анализи на данни (КАД). Дори когато се поддържат добре определени теории, ЕАД помага за интерпретацията на резултатите от КАД и може да разкрие неочаквани или подвеждащи тенденции в данните.",
                 "related_terms": [],
                 "references": [
                     "Behrens (1997); Box (1976); Tukey (1977); Wagenmakers (2012)"
@@ -13136,7 +13136,7 @@
                 "en_title": "HARKing",
                 "title": "ИХСПоР [HARKing]",
                 "sort_key": "ихспор [harking]",
-                "definition": "Спорна изследователска практика, наречена „Изграждане на хипотези след получаване на резултатите“ (ИХСПоР). „ИХСПоР се дефинира като представяне на post hoc хипотеза (т.е. такава, която се основава на или е повлияна от резултатите) в изследователски доклад, сякаш тя всъщност е предварителнa (“априори”)“ (Кър, 1998, стр. 196). Например, извършване на анализи на подгрупи, откриване на ефект в една подгрупа и писaне на въведение с „хипотеза“, която съответства на тези резултати.",
+                "definition": "Спорна изследователска практика, наречена „Изграждане на хипотези след получаване на резултатите“ (ИХСПоР). „ИХСПоР се дефинира като представяне на post hoc хипотеза (т.е. такава, която се основава на или е повлияна от резултатите) в изследователски доклад, сякаш тя всъщност е предварителна (“априори”)“ (Кър, 1998, стр. 196). Например, извършване на анализи на подгрупи, откриване на ефект в една подгрупа и писане на въведение с „хипотеза“, която съответства на тези резултати.",
                 "related_terms": [],
                 "references": [
                     "Kerr (1998) & Nosek & Lakens (2014)"
@@ -13479,7 +13479,7 @@
                     null
                 ],
                 "language": "bulgarian",
-                "related_terms_text": "CONSORT, Correlational Meta-Analysis, Effect size, [Evidence synthesis](https://forrt.org/glossary/english/evidence_synthesis/), Non-Intervention, Reproducible, and Open Systematic Reviews (NIRO-SR), PRISMA, [Publication bias (File Drawer Problem)](https://forrt.org/glossary/english/publication_bias/), STROBE, [Systematic Review](https://forrt.org/glossary/english/systematic_review/)",
+                "related_terms_text": "CONSORT, Correlational Meta-Analysis, Effect size, [Evidence synthesis](https://forrt.org/glossary/english/evidence_synthesis/), Non-Intervention, Reproducible, and Open Systematic Reviews (NIRO-SR), PRISMA, [Publication bias (File Drawer Problem)](https://forrt.org/glossary/english/publication_bias_file_drawer_problem_/), STROBE, [Systematic Review](https://forrt.org/glossary/english/systematic_review/)",
                 "translated_by": [
                     "Vladislava Trashlieva"
                 ],
@@ -13858,7 +13858,7 @@
                 "definition": "Учебни материали, които могат да бъдат модифицирани и подобрявани, защото създателите им са дали разрешение на други да го правят. Лицата или организациите, които създават ООР, включващи материали като презентационни слайдове, подкастове, учебни програми, изображения, урочни планове, лекционни видеа, карти, планове за упражнение и дори цели учебници, отменят някои (а понякога и всички) от авторските права, свързани с работата им. Това най-често се случва чрез правни инструменти като криейтив комънс лицензи, така че други да могат свободно да достигат, използват, превеждат или модифицират работите.",
                 "related_terms": [],
                 "references": [
-                    "[https://opensource.com/resources/what-open-education](https://opensource.com/resources/what-open-education,); [https://en.unesco.org/themes/building-knowledge-societies/oer](https://en.unesco.org/themes/building-knowledge-societies/oer)"
+                    "[https://opensource.com/resources/what-open-education](https://opensource.com/resources/what-open-education),; [https://en.unesco.org/themes/building-knowledge-societies/oer](https://en.unesco.org/themes/building-knowledge-societies/oer)"
                 ],
                 "drafted_by": [
                     "Aleksandra Lazić"
@@ -13919,7 +13919,7 @@
                 "en_title": "Open Material",
                 "title": "Отворен материал [Open Material]",
                 "sort_key": "отворен материал [open material]",
-                "definition": "Публичното споделяне на материали, използвани в излседване от автора им, „например: въпроси от проучване, експериментални стимулни материали или експериментални програми“ (Kidwell et al., 2016, p. 3). Дигитално разпространяемите материали се публикуват в хранилища с отворен достъп, което ги прави публично налични и достъпни. В зависимост от лиценза, материалът може да може да се използва повторно от други автори за техните изследвания. Компонентите, които не са дигитално разпространяеми (напр.: биологични материали или оборудване) трябва да бъдат описани в достатъчно детайли, за да се позволи възпроизводимост.",
+                "definition": "Публичното споделяне на материали, използвани в изследване от автора им, „например: въпроси от проучване, експериментални стимулни материали или експериментални програми“ (Kidwell et al., 2016, p. 3). Дигитално разпространяемите материали се публикуват в хранилища с отворен достъп, което ги прави публично налични и достъпни. В зависимост от лиценза, материалът може да се използва повторно от други автори за техните изследвания. Компонентите, които не са дигитално разпространяеми (напр.: биологични материали или оборудване) трябва да бъдат описани в достатъчно детайли, за да се позволи възпроизводимост.",
                 "related_terms": [],
                 "references": [
                     "Blohowiak et al. (2020); Kidwell et al. (2016)"
@@ -14014,7 +14014,7 @@
                 "en_title": "Open Scholarship",
                 "title": "Отворена академична дейност [Open Scholarship]",
                 "sort_key": "отворена академична дейност [open scholarship]",
-                "definition": "Този термин за отворена наука често се използва като синоним на друг такъв (“open science”), но за разлика от втория, обхваща всички дисциплини, включително тези, които традиционно не се определят като базирани на науката. Това изразява идеята, че знанието от всякакъв вид трябва да бъде споделяно отворено, прозрачно, точно, възпроизводимо, възможно да бъде реплицирано, кумулативно и включващо всички системи на знание. Отворената наука включва всички научни дейности, както преподаване и педагогика, и не се органичава само до изследвания.",
+                "definition": "Този термин за отворена наука често се използва като синоним на друг такъв (“open science”), но за разлика от втория, обхваща всички дисциплини, включително тези, които традиционно не се определят като базирани на науката. Това изразява идеята, че знанието от всякакъв вид трябва да бъде споделяно отворено, прозрачно, точно, възпроизводимо, възможно да бъде реплицирано, кумулативно и включващо всички системи на знание. Отворената наука включва всички научни дейности, както преподаване и педагогика, и не се ограничава само до изследвания.",
                 "related_terms": [],
                 "references": [
                     "Tennant et al. (2019). Foundations for open scholarship strategy development.  [https://www.researchgate.net/publication/330742805_Foundations_for_Open_Scholarship_Strategy_Development](https://www.researchgate.net/publication/330742805_Foundations_for_Open_Scholarship_Strategy_Development)"
@@ -14112,7 +14112,7 @@
                 "definition": "Вид компютърен софтуер, при който изходния код е публикуван с лиценз, който позволява на други да използват, променят и разпространяват софтуера до всекиго, с каквато и да е цел. Отвореният софтуер е повече от достъпен - условията за разпространение на отворения софтуер трябва да отговарят на 10 конкретни критерия (вж.: [https://opensource.org/osd](https://opensource.org/osd)).",
                 "related_terms": [],
                 "references": [
-                    "[https://opensource.org/osd](https://opensource.org/osd,); [https://www.fosteropenscience.eu/foster-taxonomy/open-source-open-science](https://www.fosteropenscience.eu/foster-taxonomy/open-source-open-science)"
+                    "[https://opensource.org/osd](https://opensource.org/osd),; [https://www.fosteropenscience.eu/foster-taxonomy/open-source-open-science](https://www.fosteropenscience.eu/foster-taxonomy/open-source-open-science)"
                 ],
                 "drafted_by": [
                     "Connor Keating"
@@ -14141,7 +14141,7 @@
                 "en_title": "Open washing",
                 "title": "Пране на отворена наука [Open washing]",
                 "sort_key": "пране на отворена наука [open washing]",
-                "definition": "Прането на отворена наука (“open washing”), наричано така по подобие на „екологичното пране“ (“greenwashing”), се отнася до твърденията за отвореност, които се използват за създаването на впечатление за точност или престиж, асоциирани с отворените практики. Използва се за описване на маркетинговата стратегия на софтуерни компании, които дават вид на подкрепящи отворения код и отворените лицензи, докато прилагат собственически практики. Прането на отворена наука е нарастващ проблем за тези, които прилагат отворените научи практики, тъй като действията им се подкопават от измамното използване на практиките. Междувременно, действията, насочени към улесняване на прогресивното развитие, се свеждат до формалност „на хартия“ без ясен контрол на качеството.",
+                "definition": "Прането на отворена наука (“open washing”), наричано така по подобие на „екологичното пране“ (“greenwashing”), се отнася до твърденията за отвореност, които се използват за създаването на впечатление за точност или престиж, асоциирани с отворените практики. Използва се за описване на маркетинговата стратегия на софтуерни компании, които дават вид на подкрепящи отворения код и отворените лицензи, докато прилагат собственически практики. Прането на отворена наука е нарастващ проблем за тези, които прилагат отворените научни практики, тъй като действията им се подкопават от измамното използване на практиките. Междувременно, действията, насочени към улесняване на прогресивното развитие, се свеждат до формалност „на хартия“ без ясен контрол на качеството.",
                 "related_terms": [],
                 "references": [
                     "Farrow (2017); Moretti (2020); Villum (2016); Vlaeminck and Podkrajac (2017)"
@@ -14495,7 +14495,7 @@
                 "en_title": "Salami slicing",
                 "title": "Раздробяване [Salami slicing]",
                 "sort_key": "раздробяване [salami slicing]",
-                "definition": "Съмнителна стратегия на научно изследване или научно докладване, често използвана “пост-хок” (след приключване на проучването). Данните от едно проучване за раздробяват, за да се увеличи броят на ръкописите, които могат да бъдат публикувани. Това е пример за мето, за надиграване на системата на академичните поощрения. Например, това може да включва публикуването на множество изследвания, базирани на едни и същи данни или или публикуване на множество изследвания от различни места на събиране на данните без да се обяви открито от къде произлизат данните. Такива практики изкривяват литературата и по-специално метаанализите, защото е неясно, че резултатите са били изведени от едни и същи данни, прикривайки по този начин зависимостите между индивидуално публикуваните статии.",
+                "definition": "Съмнителна стратегия на научно изследване или научно докладване, често използвана “пост-хок” (след приключване на проучването). Данните от едно проучване се раздробяват, за да се увеличи броят на ръкописите, които могат да бъдат публикувани. Това е пример за метод за надиграване на системата на академичните поощрения. Например, това може да включва публикуването на множество изследвания, базирани на едни и същи данни или публикуване на множество изследвания от различни места на събиране на данните без да се обяви открито от къде произлизат данните. Такива практики изкривяват литературата и по-специално метаанализите, защото е неясно, че резултатите са били изведени от едни и същи данни, прикривайки по този начин зависимостите между индивидуално публикуваните статии.",
                 "related_terms": [],
                 "references": [
                     "Fanelli (2018)"
@@ -14630,12 +14630,12 @@
             {
                 "type": "glossary",
                 "en_title": "Single-blind peer review",
-                "title": "Едностранно анонимна реценция [Single-blind peer review]",
-                "sort_key": "едностранно анонимна реценция [single-blind peer review]",
+                "title": "Едностранно анонимна рецензия [Single-blind peer review]",
+                "sort_key": "едностранно анонимна рецензия [single-blind peer review]",
                 "definition": "Оценяване на научна работа от квалифициран експерт или експерти, където рецензентът (или рецензентите) знае идентичността на авторът (или авторите), но рецензентите остават анонимни за авторите.",
                 "related_terms": [],
                 "references": [
-                    "https://v2.sherpa.ac.uk/romeo/](https://v2.sherpa.ac.uk/romeo/"
+                    "[https://v2.sherpa.ac.uk/romeo/](https://v2.sherpa.ac.uk/romeo/)"
                 ],
                 "drafted_by": [
                     "Bradley Baker"
@@ -14650,12 +14650,15 @@
                     null
                 ],
                 "language": "bulgarian",
-                "related_terms_text": "анонимна рецензия, двустранно анонимна рецнезия, период на ембарго, отворен достъп, платена бариера, предпечат, хранилище",
+                "related_terms_text": "анонимна рецензия, двустранно анонимна рецензия, период на ембарго, отворен достъп, платена бариера, предпечат, хранилище",
                 "translated_by": [
                     "Мария Доковова"
                 ],
                 "translation_reviewed_by": [
                     "Златомира Илчовска"
+                ],
+                "aliases": [
+                    "/glossary/bulgarian/едностранно_анонимна_реценция"
                 ],
                 "lastmod": "2026-11-09"
             },
@@ -14860,7 +14863,7 @@
                 "en_title": "Statistical power",
                 "title": "Статистическа мощност [Statistical power]",
                 "sort_key": "статистическа мощност [statistical power]",
-                "definition": "Статистическата мощност е дългосрочната вероятност статистическият тест правилно да отхвърля нулевата хипотеза, ако алтернативната хипотеза е вярна. Тя варира от 0 до 1, но често е изразена като процент. Мощността може да бъде определена използвайки критерия за статистическа значимост (алфа), размера на ефекта, и размера на извадката, за конкретната техниха за анализ. Има два основни начина за използване на статистическата мощност. Предварително изчислената мощност е, когато ученият си задава въпроса: \"При даден размер на ефект, от колко участници имам нужда, за да постигна х% мощност?\". Мощността за чувствителност поставя въпроса: \"При даден размер на извадката, колко голям размер на ефекта мога да намеря с мощност от х%?\"",
+                "definition": "Статистическата мощност е дългосрочната вероятност статистическият тест правилно да отхвърля нулевата хипотеза, ако алтернативната хипотеза е вярна. Тя варира от 0 до 1, но често е изразена като процент. Мощността може да бъде определена използвайки критерия за статистическа значимост (алфа), размера на ефекта, и размера на извадката, за конкретната техника за анализ. Има два основни начина за използване на статистическата мощност. Предварително изчислената мощност е, когато ученият си задава въпроса: \"При даден размер на ефект, от колко участници имам нужда, за да постигна х% мощност?\". Мощността за чувствителност поставя въпроса: \"При даден размер на извадката, колко голям размер на ефекта мога да намеря с мощност от х%?\"",
                 "related_terms": [],
                 "references": [
                     "Carter et al. (2021); Cohen (1962); Cohen (1988); Dienes (2008); Giner-Sorolla et al. (2019); Ioannidis (2005); Lakens (2021a)"
@@ -14933,7 +14936,7 @@
                 "en_title": "StudySwap",
                 "title": "“Стъди суоп” (Обмен на наука) [StudySwap]",
                 "sort_key": "“стъди суоп” (обмен на наука) [studyswap]",
-                "definition": "Безплатна онлайн платфома, в която учените споделят кратки описания на научни проекти и ресурси със свободен достъп (\"имащи\") или от които някой, друг учен може да има нужда (\"нуждаещи\"). Стъди Суоп използва метода на свободния групов обмен на информация (“краудсорсинг”), за да може възможно най-малко научни ресурси да останат неизползвани и повече учени да получат достъп до ресурсите, от които имат нужда.",
+                "definition": "Безплатна онлайн платформа, в която учените споделят кратки описания на научни проекти и ресурси със свободен достъп (\"имащи\") или от които някой друг учен може да има нужда (\"нуждаещи\"). Стъди Суоп използва метода на свободния групов обмен на информация (“краудсорсинг”), за да може възможно най-малко научни ресурси да останат неизползвани и повече учени да получат достъп до ресурсите, от които имат нужда.",
                 "related_terms": [],
                 "references": [
                     "Chartier et al. (2018); [https://osf.io/view/StudySwap](https://osf.io/view/StudySwap)"
@@ -15032,8 +15035,8 @@
             {
                 "type": "glossary",
                 "en_title": "The Troubling Trio",
-                "title": "Tревожещата тройка [The Troubling Trio]",
-                "sort_key": "tревожещата тройка [the troubling trio]",
+                "title": "Тревожещата тройка [The Troubling Trio]",
+                "sort_key": "тревожещата тройка [the troubling trio]",
                 "definition": "Описана като комбинация от ниска статистическа мощност, неочакван резултат и р-стойност, която е съвсем малко по-ниска от 0.05.",
                 "related_terms": [],
                 "references": [
@@ -15043,7 +15046,6 @@
                     "Halil Emre Kocalar"
                 ],
                 "reviewed_by": [
-                    "",
                     "Catia M. Oliveira",
                     "Adam Parker",
                     "Sam Parsons;Charlotte R. Pennington"
@@ -15058,6 +15060,9 @@
                 ],
                 "translation_reviewed_by": [
                     "Златомира Илчовска"
+                ],
+                "aliases": [
+                    "/glossary/bulgarian/tревожещата_тройка"
                 ],
                 "lastmod": "2026-11-09"
             },
@@ -15101,7 +15106,7 @@
                 "definition": "Контролният списък за прозрачност е консенсусен, изчерпателен списък, съдържащ 36 твърдения, които обхващат предварителната регистрация, методите, резултатите и дискусията, както и достъпността на данните, кода и материалите. Налична е и съкратена версия на контролния списък с 12 твърдения. Отговорите на контролния списък могат да бъдат подадени заедно с ръкопис за рецензия. Въпреки че контролният списък може да служи и за образователни цели, той има за главна цел да подкрепи изследователите да идентифицират конкретните действия, които могат да увеличат прозрачността на техните изследвания. В същото време, свободно достъпният контролен списък може да помогне на читателите и рецензентите да получат особено важна информация за различните аспекти на прозрачността на представените изследвания.",
                 "related_terms": [],
                 "references": [
-                    "Aczel et. al. (2021)"
+                    "Aczel et al. (2020)"
                 ],
                 "drafted_by": [
                     "Barnabas Szaszi"
