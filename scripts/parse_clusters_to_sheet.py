@@ -234,6 +234,22 @@ def looks_like_citation(text):
     return False
 
 
+AUTHOR_START_RE = re.compile(r"^[^\W\d_][^,()]{0,60}, (?:[A-Z]\.|[A-Z][a-z]+(?: [A-Z]\.)+)")
+
+
+def is_description_with_year(text):
+    """True for prose that mentions a year, as opposed to a reference.
+
+    A reference starts with an author list ('Surname, X.') or carries a DOI or URL.
+    """
+    if not looks_like_citation(text):
+        return False
+    lower = text.lower()
+    if 'doi.org/' in lower or 'http://' in lower or 'https://' in lower:
+        return False
+    return not AUTHOR_START_RE.match(text)
+
+
 STOP_WORDS = frozenset(
     'the a an and or in on of to for is are was were be been its it we they '
     'that this with by as at from not but how when why what which their have '
@@ -397,7 +413,13 @@ def parse_subclusters_standard(lines, start, end, toc_names, cluster_name):
             i += 1
             continue
 
-        # 3. If it looks like a citation, treat as citation/continuation
+        # 3. A description line can cite a work in passing, e.g. "Clarke's (2022) piece" (Cluster 10)
+        if state == 'in_description' and not current_cites and is_description_with_year(clean_text):
+            current_desc.append(extract_annotations(stripped)[0])
+            i += 1
+            continue
+
+        # 4. If it looks like a citation, treat as citation/continuation
         if looks_like_citation(clean_text):
             if current_cites:
                 current_cites[-1] += ' ' + stripped
@@ -407,7 +429,7 @@ def parse_subclusters_standard(lines, start, end, toc_names, cluster_name):
             i += 1
             continue
 
-        # 4. Structural heading: non-indented, non-citation, after blank lines only
+        # 5. Structural heading: non-indented, non-citation, after blank lines only
         # FILTER: Reject placeholder text and incomplete citations
         is_placeholder = clean_text in ('INSERT DESCRIPTION', 'Description')
 
@@ -432,7 +454,7 @@ def parse_subclusters_standard(lines, start, end, toc_names, cluster_name):
             i += 1
             continue
 
-        # 5. Description text (after heading, before citations)
+        # 6. Description text (after heading, before citations)
         if state == 'in_description':
             current_desc.append(extract_annotations(stripped)[0])
             i += 1
@@ -702,6 +724,20 @@ def tidy_lookup_citation(apa, bibtex=''):
                          lambda m: m.group(0).title(), apa[:year.start()])
         apa = authors + apa[year.start():]
     return apa
+
+
+def keep_doc_author(looked_up, doc_citation):
+    """Restore a group author that the doi.org APA text leaves out.
+
+    doi.org gives e.g. '(2015). Estimating ...' for Open Science Collaboration (2015);
+    the Doc citation still has the author before its '(YYYY)'.
+    """
+    if not re.match(r'\(\d{4}', looked_up):
+        return looked_up
+    m = re.match(r'(.+?)\s*\(\d{4}', doc_citation)
+    if not m:
+        return looked_up
+    return f"{m.group(1).strip()} {looked_up}"
 
 
 # --- DOI lookup ---
@@ -1089,7 +1125,8 @@ def main():
                 continue
             result = doi_lookup.lookup(pub.doi)
             if result:
-                pub.apa_reference = tidy_lookup_citation(result['apa'], result.get('bibtex', ''))
+                looked_up = tidy_lookup_citation(result['apa'], result.get('bibtex', ''))
+                pub.apa_reference = keep_doc_author(looked_up, pub.apa_reference)
                 pub.bibtex = result.get('bibtex', '')
                 pub.auto_ref = True
             if (i + 1) % 100 == 0:

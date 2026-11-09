@@ -204,7 +204,7 @@
         },
         {
           "name": "Questionable research practices & their prevalence",
-          "description": "Questionable research practices are actions which researchers take to increase the probability of their desired result. They can be done consciously and unconsciously, distinguishing them from deliberate scientific misconduct, but still compromise research integrity since they can lead to misleading conclusions. Examples of such behaviors include p-hacking, selective reporting, and HARK-ing (Hypothesizing After the Results are Known). The ways in which researchers engage in behaviors and decision-making that increase the probability of their (consciously or unconsciously) desired result.",
+          "description": "Questionable research practices are actions which researchers take to increase the probability of their desired result. They can be done consciously and unconsciously, distinguishing them from deliberate scientific misconduct, but still compromise research integrity since they can lead to misleading conclusions. Examples of such behaviors include p-hacking, selective reporting, and HARK-ing (Hypothesizing After the Results are Known).",
           "publications": [
             {
               "doi": "10.1007/s10670-024-00834-3",
@@ -404,12 +404,12 @@
             },
             {
               "doi": "10.1177/1745691612462588",
-              "apa": "(2012). An Open, Large-Scale, Collaborative Effort to Estimate the Reproducibility of Psychological Science. Perspectives on Psychological Science, 7(6), 657–660. https://doi.org/10.1177/1745691612462588",
+              "apa": "Open Science Collaboration. (2012). An Open, Large-Scale, Collaborative Effort to Estimate the Reproducibility of Psychological Science. Perspectives on Psychological Science, 7(6), 657–660. https://doi.org/10.1177/1745691612462588",
               "auto_ref": true
             },
             {
               "doi": "10.1126/science.aac4716",
-              "apa": "(2015). Estimating the reproducibility of psychological science. Science, 349(6251). https://doi.org/10.1126/science.aac4716",
+              "apa": "Open Science Collaboration. (2015). Estimating the reproducibility of psychological science. Science, 349(6251). https://doi.org/10.1126/science.aac4716",
               "auto_ref": true
             },
             {
@@ -1151,7 +1151,7 @@
         },
         {
           "name": "Research design, sampling methods, & its implications for inferences.",
-          "description": "How design choices and sampling strategies shape bias, precision, and generalizability. Includes threats to validity (internal/external), power and sample-size planning, selection bias, clustering/design effects, weighting, and transparent reporting/preregistration. Design and sampling decisions determine the credibility and scope of statistical inference. This sub-cluster emphasizes adequate power and sample-size planning (e.g., safeguard power), transparent pre-analysis planning to constrain researcher degrees of freedom, and rigorous, valid methods as prerequisites for meaningful replication—reducing bias, increasing precision, and improving generalizability across lab and field work.",
+          "description": "How design choices and sampling strategies shape bias, precision, and generalizability. Includes threats to validity (internal/external), power and sample-size planning, selection bias, clustering/design effects, weighting, and transparent reporting/preregistration. Design and sampling decisions determine the credibility and scope of statistical inference. This sub-cluster emphasizes adequate power and sample-size planning (e.g., safeguard power analysis), transparent pre-analysis planning to constrain researcher degrees of freedom, and rigorous, valid methods as prerequisites for meaningful replication—reducing bias, increasing precision, and improving generalizability across lab and field work.",
           "publications": [
             {
               "doi": "10.1177/1948550615584199",
@@ -1177,7 +1177,7 @@
         },
         {
           "name": "The logic of null hypothesis testing, p-values, Type I and II errors (and when and why they might happen).",
-          "description": "Frequentist statistics are typically the default in quantitative research. They come with certain assumptions and implications, as well as often being misinterpreted. Frequentist statistics are typically the default in much quantitative research, but they are often misinterpreted. This sub-cluster clarifies the logic of NHST, the meaning of p-values, and when and why Type I and Type II errors arise, extending to Type S and Type M errors. It links these to design and power choices and outlines practical steps for better inference and reporting.",
+          "description": "Frequentist statistics are typically the default in quantitative research. They come with certain assumptions and implications, as well as often being misinterpreted. This sub-cluster clarifies the logic of NHST, the meaning of p-values, and when and why Type I and Type II errors arise, extending to Type S and Type M errors. It links these to design and power choices and outlines practical steps for better inference and reporting.",
           "publications": [
             {
               "doi": "10.4103%2F0972-6748.62274",
@@ -2087,7 +2087,7 @@
         },
         {
           "name": "Study Design",
-          "description": "Design elements should be before data collection so that confirmatory claims are credible and deviations are interpretable. This includes choosing appropriate sample sizes, conditions, and measures prior to registration, and planning how to handle deviations",
+          "description": "Design elements should be specified before data collection so that confirmatory claims are credible and deviations are interpretable. This includes choosing appropriate sample sizes, conditions, and measures prior to registration, and planning how to handle deviations.",
           "publications": [
             {
               "doi": "10.31234/osf.io/ha29k",
@@ -2141,12 +2141,12 @@
     },
     {
       "number": 5,
-      "name": "Transparency and reproducibility in computation and analysis",
+      "name": "Transparency and Reproducibility in Computation and Analysis",
       "description": "Attainment of the how-to basics of reproducible reports and analyses. It requires students to move towards transparent and scripted analysis practices in quantitative research. There are 5 sub-clusters which aim to further parse the learning and teaching process:",
       "sub_clusters": [
         {
           "name": "Analysis and reporting in qualitative research",
-          "description": "By documenting and reporting research processes in qualitative research, transparency and credibility in qualitative research reports is ensured. Topics include using agreed reporting standards, demonstrating methodological rigor, and recent calls to integrate qualitative methods into the open science movement. The emphasis is on making qualitative research as trustworthy and open as context permits, without forcing inappropriate replication model",
+          "description": "By documenting and reporting research processes in qualitative research, transparency and credibility in qualitative research reports is ensured. Topics include using agreed reporting standards, demonstrating methodological rigor, and recent calls to integrate qualitative methods into the open science movement. The emphasis is on making qualitative research as trustworthy and open as context permits, without forcing an inappropriate replication model.",
           "publications": [
             {
               "doi": "",
@@ -2453,8 +2453,8 @@
     },
     {
       "number": 6,
-      "name": "FAIR data and materials",
-      "description": "Students will learn about FAIR data (and education/research materials) principles that address Findability, Accessibility, Interoperability, and Reusability; engage with reasons to share data, the initiatives designed to increase scientific openness; as well as of possible privacy and security considerations together with anonymization procedures. There are 7 sub-clusters which aim to further parse the learning and teaching process:",
+      "name": "FAIR Data and Materials",
+      "description": "Students will learn about FAIR data (and education/research materials) principles that address Findability, Accessibility, Interoperability, and Reusability; engage with reasons to share data, the initiatives designed to increase scientific openness; as well as possible privacy and security considerations together with anonymization procedures. There are 7 sub-clusters which aim to further parse the learning and teaching process:",
       "sub_clusters": [
         {
           "name": "Reasons to share data and materials",
@@ -2476,7 +2476,7 @@
               "auto_ref": true
             },
             {
-              "doi": "10.1037%2Fqup0000076",
+              "doi": "10.1037/qup0000076",
               "apa": "DuBois, J. M., Strait, M., & Walsh, H. (2018). Is it time to share qualitative research data? Qualitative Psychology, 5(3), 380–393. https://doi.org/10.1037/qup0000076",
               "auto_ref": true
             },
@@ -2642,8 +2642,8 @@
               "auto_ref": true
             },
             {
-              "doi": "10.1002/eahr.500044",
-              "apa": "Mozersky, J., Parsons, M., Walsh, H., Baldwin, K., McIntosh, T., & DuBois, J. M. (2020). Research Participant Views regarding Qualitative Data Sharing. Ethics & Human Research, 42(2), 13–27. https://doi.org/10.1002/eahr.500044",
+              "doi": "10.29173/iq952",
+              "apa": "Mozersky, J., Walsh, H., Parsons, M., McIntosh, T., Baldwin, K., & DuBois, J. M. (2020). Are we ready to share qualitative research data? Knowledge and preparedness among qualitative researchers, IRB members, and data repository curators. IASSIST Quarterly, 43(4), 1–23. https://doi.org/10.29173/iq952",
               "auto_ref": true
             },
             {
@@ -2884,7 +2884,7 @@
         },
         {
           "name": "FAIR principles applied to Education & Training",
-          "description": "FAIR isn’t only for datasets, syllabi, slides, and assignments can be findable, accessible, interoperable, and reusable too. This section offers institutional and practical roadmaps to make FAIR-by-design teaching materials the default.",
+          "description": "FAIR isn’t only for datasets; syllabi, slides, and assignments can be findable, accessible, interoperable, and reusable too. This section offers institutional and practical roadmaps to make FAIR-by-design teaching materials the default.",
           "publications": [
             {
               "doi": "10.5281/zenodo.8305540",
@@ -2989,7 +2989,7 @@
         },
         {
           "name": "Different shades of open access",
-          "description": "We usually hear about GOLD open access (journal archives openly) for hefty fees. There are other options that may better fit your needs (and budget / reluctance to fund for-profit publishers); GREEN (self-archive), DIAMOND (journal archives openly for free), and more.",
+          "description": "We usually hear about GOLD open access (journal publishes openly) for hefty fees. There are other options that may better fit your needs (and budget / reluctance to fund for-profit publishers); GREEN (self-archive), DIAMOND (journal publishes openly with no fees for authors or readers), and more.",
           "publications": [
             {
               "doi": "",
@@ -3187,7 +3187,7 @@
         },
         {
           "name": "Rights retention strategies",
-          "description": "To whom does the paper belong?",
+          "description": "To whom does the paper belong? Rights retention strategies help authors keep the right to share their own accepted manuscripts openly, for example by stating at submission that an open licence applies to the accepted manuscript.",
           "publications": [
             {
               "doi": "",
@@ -3210,7 +3210,7 @@
     },
     {
       "number": 8,
-      "name": "Replication and meta-research",
+      "name": "Replication and Meta-Research",
       "description": "Attainment of a grounding in 'replication research', which takes a variety of forms, each with a different purpose and contribution. Replicable science requires replication research. When teaching, students should understand the purpose and need of replications in its variety of forms and be able to conduct (and join) replication projects. There are 7 sub-clusters which aim to further parse the learning and teaching process:",
       "sub_clusters": [
         {
@@ -3219,7 +3219,7 @@
           "publications": [
             {
               "doi": "10.1126/science.aac4716",
-              "apa": "(2015). Estimating the reproducibility of psychological science. Science, 349(6251). https://doi.org/10.1126/science.aac4716",
+              "apa": "Anderson, J. E., Aarts, A. A., Anderson, C. J., Attridge, P. R., Attwood, A., Axt, J., Babel, M., Bahník, Š., Baranski, E., Barnett-Cowan, M., Bartmess, E., Beer, J., Bell, R., Bentley, H., Beyan, L., Binion, G., Borsboom, D., Bosch, A., Bosco, F. A., ... Zuni, K. (2015). Estimating the reproducibility of psychological science. Science, 349(6251). https://doi.org/10.1126/science.aac4716",
               "auto_ref": true
             },
             {
@@ -3422,11 +3422,6 @@
             {
               "doi": "10.1136/bmj.333.7568.597",
               "apa": "Lau, J., Ioannidis, J. P. A., Terrin, N., Schmid, C. H., & Olkin, I. (2006). The case of the misleading funnel plot. BMJ, 333(7568), 597–600. https://doi.org/10.1136/bmj.333.7568.597",
-              "auto_ref": true
-            },
-            {
-              "doi": "10.1002/jrsm.1703",
-              "apa": "Bartoš, F., Maier, M., Wagenmakers, E., Nippold, F., Doucouliagos, H., Ioannidis, J. P. A., Otte, W. M., Sladekova, M., Deresssa, T. K., Bruns, S. B., Fanelli, D., & Stanley, T. D. (2024). Footprint of publication selection bias on meta‐analyses in medicine, environmental sciences, psychology, and economics. Research Synthesis Methods, 15(3), 500–511. https://doi.org/10.1002/jrsm.1703",
               "auto_ref": true
             },
             {
@@ -3811,7 +3806,7 @@
         },
         {
           "name": "Decolonizing Research Practices",
-          "description": "",
+          "description": "Examines how (post-)colonial power relations shape whose knowledge counts, who does research and who benefits from it, and introduces decolonial and Indigenous research methodologies and principles for Indigenous data governance.",
           "publications": [
             {
               "doi": "10.5964/jspp.v3i1.564",
@@ -4068,7 +4063,7 @@
         },
         {
           "name": "Diversity sample and generalizability",
-          "description": "Data within Psychology has been primarily from a Western, Educated, Industrious, Rich and Democratic population and generalised the findings to participants across the globe. However, researchers have rarely included Global South or discussed sample diversity in terms of race, ethnicity, gender diversity among other areas. Even when these samples are included, the findings are found to be limited to that specific region.",
+          "description": "Data within Psychology has been primarily from a Western, Educated, Industrialized, Rich and Democratic population and generalised the findings to participants across the globe. However, researchers have rarely included Global South or discussed sample diversity in terms of race, ethnicity, gender diversity among other areas. Even when these samples are included, the findings are found to be limited to that specific region.",
           "publications": [
             {
               "doi": "10.1038/s44159-022-00070-y",
@@ -4094,7 +4089,7 @@
         },
         {
           "name": "Equity",
-          "description": "Equity is that everyone has access to the same opportunities and that we all have privileges and barriers, thus we do not all start from the same starting position.",
+          "description": "Equity means ensuring that everyone has access to the same opportunities, recognising that we all have privileges and barriers and therefore do not all start from the same position.",
           "publications": [
             {
               "doi": "",
@@ -4458,7 +4453,7 @@
         },
         {
           "name": "Multimodal barriers to communication",
-          "description": "The way a person communicates can influence how they are perceived and their access to opportunities in academia, including not being a nonnative English speaker, sign-language, or accents.",
+          "description": "The way a person communicates can influence how they are perceived and their access to opportunities in academia, including being a nonnative English speaker, using sign language, or speaking with an accent.",
           "publications": [
             {
               "doi": "",
@@ -4597,9 +4592,9 @@
               "auto_ref": true
             },
             {
-              "doi": "",
-              "apa": "To add: https://www.scienceopen.com/hosted-document?doi=10.13169/intljofdissocjus.5.3.0002",
-              "auto_ref": false
+              "doi": "10.13169/intljofdissocjus.5.3.0002",
+              "apa": "Flynn, S. (2025). Neurodiversity, Social Work, and Social Justice: Key Issues and Overlaps. International Journal of Disability and Social Justice, 5(3). https://doi.org/10.13169/intljofdissocjus.5.3.0002",
+              "auto_ref": true
             }
           ]
         },
@@ -4787,11 +4782,6 @@
               "doi": "10.31235/osf.io/xvcf2",
               "apa": "Wetts, R., & Willer, R. (2022). Antiracism and its Discontents: Opposition to Antiracism is a Widespread and Politically Influential Racial Ideology among White Americans. https://doi.org/10.31235/osf.io/xvcf2",
               "auto_ref": true
-            },
-            {
-              "doi": "",
-              "apa": "https://en.wikipedia.org/wiki/Elsevier (go to \"Scientific Racism” section)",
-              "auto_ref": false
             }
           ]
         },
@@ -4838,7 +4828,7 @@
         },
         {
           "name": "Research assessment, proposals, and reforms",
-          "description": "Examines how researchers and institutions are evaluated and efforts to reform these systems to better align with open and responsible science. INSERT DESCRIPTION",
+          "description": "Examines how researchers and institutions are evaluated and efforts to reform these systems to better align with open and responsible science.",
           "publications": [
             {
               "doi": "10.1093/joc/jqz052",
@@ -4894,7 +4884,7 @@
         },
         {
           "name": "Sexuality & Gender",
-          "description": "Sexuality refers to the various aspects of an individual’s being related to their sexual feelings, thoughts, attractions and behaviour. We use “LGBTQ+” as an inclusive term to refer to all sexual identities and orientations which are not heterosexual. This includes but is not limited to lesbian, gay, bisexual, pansexual, asexual, queer, and questioning.",
+          "description": "Sexuality refers to the various aspects of an individual’s being related to their sexual feelings, thoughts, attractions and behaviour. We use “LGBTQ+” as an inclusive term to refer to all sexual orientations that are not heterosexual and all gender identities that are not cisgender. This includes but is not limited to lesbian, gay, bisexual, transgender, non-binary, pansexual, asexual, queer, and questioning.",
           "publications": [
             {
               "doi": "10.1126/sciadv.abe0933",
@@ -5324,7 +5314,7 @@
       "description": "Qualitative research refers to research conducted with non-numeric data, such as interviews, focus groups, ethnographies, photovoice, and others. There are 10 sub-clusters that can help readers understand open science from a qualitative perspective:",
       "sub_clusters": [
         {
-          "name": "FAIR data and materials: Choosing to share data",
+          "name": "FAIR Data and Materials: Choosing to share data",
           "description": "Data sharing may be a particularly useful way for researchers to increase the impact of their research. Readings in this section will highlight what data sharing can look like and why researchers and communities might benefit from these practices.",
           "publications": [
             {
@@ -5480,7 +5470,7 @@
           ]
         },
         {
-          "name": "FAIR data and materials: Ethical and legal challenges",
+          "name": "FAIR Data and Materials: Ethical and legal challenges",
           "description": "Sharing qualitative data comes with its own challenges. Depending on the nature of the data, it may not be ethical to share data so that anyone can access it. This section outlines some of the common issues in sharing qualitative data and how researchers might respond to these challenges.",
           "publications": [
             {
@@ -5609,8 +5599,8 @@
               "auto_ref": true
             },
             {
-              "doi": "10.1002/eahr.500044",
-              "apa": "Mozersky, J., Parsons, M., Walsh, H., Baldwin, K., McIntosh, T., & DuBois, J. M. (2020). Research Participant Views regarding Qualitative Data Sharing. Ethics & Human Research, 42(2), 13–27. https://doi.org/10.1002/eahr.500044",
+              "doi": "10.29173/iq952",
+              "apa": "Mozersky, J., Walsh, H., Parsons, M., McIntosh, T., Baldwin, K., & DuBois, J. M. (2020). Are we ready to share qualitative research data? Knowledge and preparedness among qualitative researchers, IRB members, and data repository curators. IASSIST Quarterly, 43(4), 1–23. https://doi.org/10.29173/iq952",
               "auto_ref": true
             },
             {
@@ -6123,13 +6113,8 @@
         },
         {
           "name": "Standards and guidelines for rigorous qualitative research",
-          "description": "",
+          "description": "Learn about different standards for reporting qualitative research processes and results. It may be helpful to first read Clarke’s (2022) piece on whether generic reporting standards are helpful in the first place.",
           "publications": [
-            {
-              "doi": "",
-              "apa": "Learn about different standards for reporting qualitative research processes and results. It may be helpful to first read Clarke’s (2022) piece on whether generic reporting standards are helpful in the first place.",
-              "auto_ref": false
-            },
             {
               "doi": "10.1080/14780887.2020.1769238",
               "apa": "Braun, V., & Clarke, V. (2020). One size fits all? What counts as quality practice in (reflexive) thematic analysis? Qualitative Research in Psychology, 18(3), 328–352. https://doi.org/10.1080/14780887.2020.1769238",
@@ -6292,7 +6277,7 @@
       "sub_clusters": [
         {
           "name": "Principles and Frameworks of Research Integrity",
-          "description": "This sub-cluster covers the core principles, codes, and global frameworks that define research integrity. It introduces the fundamental values (e.g. honesty, rigor, transparency, accountability, respect) that underpin responsible science​. Key international statements and guidelines – such as the Singapore Statement (2010) and ALLEA’s European Code of Conduct (2017) – articulate universal norms and responsibilities for researchers. They emphasize that integrity spans all stages of research, from study design and data collection to authorship and peer review. Foundational documents (e.g. the U.S. National Academies 2017 report) situate RI in a broader context, calling for supportive research environments and institutional policies that foster ethical behavior. By studying these frameworks, one gains insight into how core values (e.g., honesty, transparency, accountability, respect) are operationalized into norms and good research practice across the research cycle. Explicitly articulated in the Netherlands Code of Conduct and agreed upon by the global research community “doing the right thing” means not only  avoiding misconduct but proactively promoting openness, accountability, and social responsibility in science with clear links between specific practices and potential breaches or allegations.",
+          "description": "This sub-cluster covers the core principles, codes, and global frameworks that define research integrity. It introduces the fundamental values (e.g. honesty, rigor, transparency, accountability, respect) that underpin responsible science​. Key international statements and guidelines – such as the Singapore Statement (2010) and ALLEA’s European Code of Conduct (2017) – articulate universal norms and responsibilities for researchers. They emphasize that integrity spans all stages of research, from study design and data collection to authorship and peer review. Foundational documents (e.g. the U.S. National Academies 2017 report) situate RI in a broader context, calling for supportive research environments and institutional policies that foster ethical behavior. By studying these frameworks, one gains insight into how core values (e.g., honesty, transparency, accountability, respect) are operationalized into norms and good research practice across the research cycle. As articulated in the Netherlands Code of Conduct, and agreed upon by the global research community, “doing the right thing” means not only avoiding misconduct but proactively promoting openness, accountability, and social responsibility in science with clear links between specific practices and potential breaches or allegations.",
           "publications": [
             {
               "doi": "",
@@ -6341,7 +6326,7 @@
             },
             {
               "doi": "10.17226/21896",
-              "apa": "(2017). Fostering Integrity in Research. https://doi.org/10.17226/21896",
+              "apa": "National Academies of Sciences, Engineering, and Medicine. (2017). Fostering Integrity in Research. https://doi.org/10.17226/21896",
               "auto_ref": true
             },
             {
@@ -6711,7 +6696,7 @@
         },
         {
           "name": "Publication, Peer Review, and Research Integrity",
-          "description": "This sub-cluster examines integrity issues in the dissemination phase of science – covering authorship ethics, peer review, and publication practices. It tackles questions like: Who deserves authorship and in what order? How to avoid ghost authorship (uncredited contributors) or gift/guest authorship (undeserved credit)? Students learn about authorship guidelines (e.g., International Committee of Medical Journal Editors (ICMJE) criteria) designed to ensure fair credit and accountability. We also discuss the role of peer review as a quality safeguard and the integrity challenges it faces – from biases in reviewer selection to cases of peer review fraud. The rise of predatory journals (which subvert quality standards for profit) is a contemporary integrity threat, potentially flooding literature with unvetted findings. Additionally, this sub-cluster emphasizes the importance of corrections and retractions as part of the self-correction mechanism of science. We explore whether increasing retraction rates signify improving vigilance or persistent problems​ (Bouter, 2024). Key themes include the responsibilities of journals (via ethics committees like the Committee on Publication Ethics (COPE) and editors in handling misconduct or honest errors, and emerging innovations like open peer review to improve transparency. By engaging with these topics, future researchers learn to navigate the publication process with integrity – ensuring proper attribution, objective review, and willingness to correct the record. Key Readings:",
+          "description": "This sub-cluster examines integrity issues in the dissemination phase of science – covering authorship ethics, peer review, and publication practices. It tackles questions like: Who deserves authorship and in what order? How to avoid ghost authorship (uncredited contributors) or gift/guest authorship (undeserved credit)? Students learn about authorship guidelines (e.g., International Committee of Medical Journal Editors (ICMJE) criteria) designed to ensure fair credit and accountability. We also discuss the role of peer review as a quality safeguard and the integrity challenges it faces – from biases in reviewer selection to cases of peer review fraud. The rise of predatory journals (which subvert quality standards for profit) is a contemporary integrity threat, potentially flooding literature with unvetted findings. Additionally, this sub-cluster emphasizes the importance of corrections and retractions as part of the self-correction mechanism of science. We explore whether increasing retraction rates signify improving vigilance or persistent problems​ (Bouter, 2024). Key themes include the responsibilities of journals (via ethics committees like the Committee on Publication Ethics (COPE) and editors in handling misconduct or honest errors, and emerging innovations like open peer review to improve transparency. By engaging with these topics, future researchers learn to navigate the publication process with integrity – ensuring proper attribution, objective review, and willingness to correct the record.",
           "publications": [
             {
               "doi": "10.1038/530027a",
