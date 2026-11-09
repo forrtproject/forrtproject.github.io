@@ -37,6 +37,10 @@ Hard checks (exit 1 if any fails):
      separate file the page fetches when it needs it.
   15. Every citation links to its reference on the same page (#200).
   16. Every glossary term link points to an existing English glossary page (#227).
+  17. Every link in a visible breadcrumb trail (nav.crumbs) has a non-empty href,
+     so a section that is not rendered cannot leave an empty link in the trail.
+  18. Cluster pages render publication-title markup (<i>, <em>, <scp>) instead of
+     showing it as literal or escaped text, and at least one cluster page exists.
 
 Report-only sections (never fail): pages with no <h1>, the
 site-wide share of images that carry both width and height, pages whose
@@ -88,6 +92,8 @@ class PageParser(HTMLParser):
         self._inline_script = None
         self.ids = set()
         self.citations = []
+        self.crumb_links = []
+        self._in_crumbs = False
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
@@ -95,6 +101,10 @@ class PageParser(HTMLParser):
             self._inline_script = 0
         if attrs.get("id"):
             self.ids.add(attrs["id"])
+        if tag == "nav" and "crumbs" in (attrs.get("class") or "").split():
+            self._in_crumbs = True
+        if tag == "a" and self._in_crumbs:
+            self.crumb_links.append(attrs.get("href") or "")
         if tag == "a" and "cite" in attrs.get("class", "").split():
             self.citations.append(attrs.get("href", ""))
         if tag == "script" and attrs.get("type") == "application/ld+json":
@@ -128,6 +138,8 @@ class PageParser(HTMLParser):
             self.code_classes.append(attrs.get("class") or "")
 
     def handle_endtag(self, tag):
+        if tag == "nav":
+            self._in_crumbs = False
         if tag == "script" and self._inline_script is not None:
             self.largest_inline_script = max(self.largest_inline_script, self._inline_script)
             self._inline_script = None
@@ -194,6 +206,7 @@ class Page:
         self.ids = parser.ids
         self.citations = parser.citations
         self.gloss_terms = parser.gloss_terms
+        self.crumb_links = parser.crumb_links
 
     def loads(self, needle):
         return any(needle in url for url in self.urls)
@@ -584,7 +597,8 @@ def main(public_dir):
         "14. no inline <script> over 200 KB": check_inline_scripts(pages),
         "15. every citation has a local reference target": check_citation_targets(pages),
         "16. glossary links reach existing English terms": check_glossary_links(pages),
-        "17. cluster pages show no literal <i>/<em>/<scp> title markup": check_cluster_title_markup(public_dir),
+        "17. every breadcrumb link has a target": [p.path for p in pages if any(not h.strip() for h in p.crumb_links)],
+        "18. cluster pages show no literal <i>/<em>/<scp> title markup": check_cluster_title_markup(public_dir),
     }
     conditional = check_conditional_assets(pages)
     results["3. conditional highlight.js / mermaid loading"] = [

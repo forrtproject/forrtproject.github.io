@@ -6,7 +6,6 @@ newsletters:
     issues:
       - month: "September"
         url: "https://eocampaign1.com/web-version?p=7c043a9c-baa5-11f1-bab9-3d059e260e0e&pt=campaign&t=1790794937&s=4f3e808db26617213364a78049b630e86d7a411db5e1dffff806d67645b50628"
-        new: true 
 
       - month: "August"
         url: "https://eocampaign1.com/web-version?p=70dccb38-a138-11f1-a13e-3dcb3d9116a3&pt=campaign&t=1788139229&s=832e7856e81cd01a0d146de9850e9190c651482bf3676650087db736ff319f4a"

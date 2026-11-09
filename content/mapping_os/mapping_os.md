@@ -46,7 +46,7 @@ THIS PAGE IS IN CONSTRUCTION. PLEASE COME BACK SOON!
 <!-- <br> -->
 <!-- <br> -->
 
-Welcome to the FORRT Open Science Communities Mapping Initiative, a global effort to systematically identify, map, and connect Open Science (OS) organizations across disciplines and regions.
+Welcome to the FORRT Mapping Open Science Communities Initiative, a global effort to systematically identify, map, and connect Open Science (OS) organizations across disciplines and regions.
 
 > Our goal is to build an interactive, crowdsourced, and living map of grassroots Open Science networks, along with their procedural tools and structural changes, providing researchers, educators, and policymakers with a detailed landscape of the resources, opportunities, collaborations, and initiatives within these communities.
 
@@ -62,7 +62,7 @@ This initiative builds upon the successful mapping of Open Science initiatives i
 
 The Mapping Open Science Communities Initiative aims to systematically catalog and map Open Science (OS) organizations worldwide. By identifying grassroots networks, institutional initiatives, training resources, data repositories, and more, we hope to provide a comprehensive and accessible resource for the global research community.
 
-This project is guided by FORRT’s core mission of promoting research transparency, inclusivity, and rigorous scientific practices. Through an interactive map, researchers, educators, and the public will be able to explore resources sorted by research discipline, geographic region, language, or specific Open Science principles. The map is designed not just to showcase existing initiatives but also to encourage cross-disciplinary collaboration and increase the visibility of often under-represented regions and languages in the global OS movement.
+This project is guided by FORRT’s core mission of promoting research transparency, inclusivity, and rigorous scientific practices. Through an interactive map, which we are currently revising and will relaunch with verified entries, researchers, educators, and the public will be able to explore resources sorted by research discipline, geographic region, language, or specific Open Science principles. The map is designed not just to showcase existing initiatives but also to encourage cross-disciplinary collaboration and increase the visibility of often under-represented regions and languages in the global OS movement.
 
 <br>
 
@@ -91,7 +91,7 @@ By creating a "network of OS communities", the map will enable organizations tha
 * ***Addressing Fragmentation***: Many Open Science efforts are siloed, limiting their potential for broader collaboration and impact.
 * ***Promoting Inclusivity***: Many regions and languages are underrepresented in the global OS conversation. This initiative seeks to highlight OS organizations beyond the UK, US, and Europe, embracing the global scientific community.
 * ***Supporting Early-Career Researchers***: Grassroots networks often rely heavily on early-career researchers. This initiative will ensure they are supported with resources, opportunities, and recognition.
-* ***Bottom-up Culture Change***: Like COSGN, we believe that grassroots efforts are essential to complement top-down policy changes. Bottom-up networks can drive culture change more organically within research communities by offering peer-led training, resource-sharing, and collaboration.
+* ***Bottom-up Culture Change***: Like the Community of Open Scholarship Grassroots Networks (COSGN), we believe that grassroots efforts are essential to complement top-down policy changes. Bottom-up networks can drive culture change more organically within research communities by offering peer-led training, resource-sharing, and collaboration.
 
 ***Driving Culture Change and Innovation***
 

@@ -220,6 +220,14 @@ class GlossaryLinkCheck(unittest.TestCase):
         self.assertEqual(len(self.check_links(links)), len(links))
 
 
+class BreadcrumbLinks(unittest.TestCase):
+    def test_crumb_links_need_a_target(self):
+        good = page_from_html('<nav class="crumbs"><a href="/">Home</a> <a href="/about/">About</a></nav>')
+        bad = page_from_html('<nav class="crumbs"><a href="/">Home</a> <a href>About</a></nav><a href>x</a>')
+        self.assertEqual(good.crumb_links, ["/", "/about/"])
+        self.assertEqual(bad.crumb_links, ["/", ""])
+
+
 class ClusterTitleMarkupCheck(unittest.TestCase):
     def check(self, body):
         with tempfile.TemporaryDirectory() as public:
