@@ -51,7 +51,7 @@ The list of terms we have drafted and reviewed can be found on the left if you a
 
 <br>
 
-We successfully arrived at the end of ***Phase 1*** 🎉. This means we managed to go from an ambitious idea to a full blown crowd-sourced project in which more than ***110 collaborators*** defined via consensus after much discussion and reviewed upwards of ***250 Open Scholarship terms***.  We published our manuscript at [***Nature Human Behavior***](https://doi.org/10.1038/s41562-021-01269-4), where all contributors are co-authors. 🥳
+We successfully arrived at the end of ***Phase 1*** 🎉. This means we managed to go from an ambitious idea to a full blown crowd-sourced project in which more than ***110 collaborators*** defined via consensus after much discussion and reviewed upwards of ***250 Open Scholarship terms***.  We published our manuscript at [***Nature Human Behaviour***](https://doi.org/10.1038/s41562-021-01269-4), where all contributors are co-authors. 🥳
 
 ### Phase 2 
 
@@ -144,7 +144,7 @@ We invite several specific contributions: _original draft preparation_, and _rev
 
 * Writing | Original Draft Preparation: We consider this contribution as, for example, writing at least one full glossary entry. If you wrote the original draft for an entry, please add your name to the “Drafted by” field and be sure to tick the “Original Draft Preparation” checkbox in the contributors spreadsheet.
 
-* Writing | Review & Editing: We consider this contribution as, for example, providing constructive comments, feedback, and approval, on more than 5 glossary entries (we acknowledge that towards the end of the project the main contribution will be checking definitions for agreement and so it may be difficult for some people to make large writing contributions. Please remember to add your name to the “Reviewed by” field and be sure to tick the “Review & Editing” checkbox in the contributors spreadsheet.
+* Writing | Review & Editing: We consider this contribution as, for example, providing constructive comments, feedback, and approval, on more than 5 glossary entries (we acknowledge that towards the end of the project the main contribution will be checking definitions for agreement and so it may be difficult for some people to make large writing contributions). Please remember to add your name to the “Reviewed by” field and be sure to tick the “Review & Editing” checkbox in the contributors spreadsheet.
 
 6. Template & Example
 
@@ -168,7 +168,7 @@ We invite several specific contributions: _original draft preparation_, and _rev
 
 **Term: CRediT**
 
-**Definition:**  The Contributor Roles Taxonomy (CRediT; https://credit.niso.org/) is a high-level taxonomy, including 14 roles, that can be used to indicate the roles typically adopted by contributors to scientific scholarly output. The roles describe each contributor’s specific contribution to the scholarly output. They can be assigned multiple times to different authors and one author can also be assigned multiple roles. CRediT includes the following roles: Conceptualization, Data curation, Formal Analysis, Funding acquisition, Investigation, Methodology, Project administration, Resources, Software, Supervision, Validation, Visualization, Writing – original draft, Writing – review & editing. A description of the different roles can be found in the work of Brand et al., (2015).  
+**Definition:**  The Contributor Roles Taxonomy (CRediT; https://credit.niso.org/) is a high-level taxonomy, including 14 roles, that can be used to indicate the roles typically adopted by contributors to scientific scholarly output. The roles describe each contributor’s specific contribution to the scholarly output. They can be assigned multiple times to different authors and one author can also be assigned multiple roles. CRediT includes the following roles: Conceptualization, Data curation, Formal Analysis, Funding acquisition, Investigation, Methodology, Project administration, Resources, Software, Supervision, Validation, Visualization, Writing – original draft, Writing – review & editing. A description of the different roles can be found in the work of Brand et al. (2015).  
 **Related terms:** Authorship  
 **Alternative definition:** (if applicable)  
 **Related terms to alternative definition:** (if applicable)  
