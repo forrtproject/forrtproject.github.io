@@ -8,7 +8,7 @@ headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 10  # Order that this section will appear.
 
-title = "Open Science in Developing Countries"
+title = "Open Science in the Developing World"
 subtitle = "A Collection of Practical Guides"
 
 [design]
@@ -119,11 +119,11 @@ This structure explicitly rejects a “one-size-fits-all” model of open scienc
 **Fig. 2.** Practical guide for engaging in and contributing to open science as researchers from developing countries. Researchers start with using open resources and building a solid foundation, gradually grow and adopt recommended practices according to their own pace and context, contribute to the community in various ways, and finally, become leaders in the open-science movement.
 
 
-![A conceptual illustration showing how researchers can move from individual open science practices toward community contribution and leadership, supported by shared infrastructure, collaboration, training, and grassroots networks across diverse regional and institutional contexts.](The_hidden_costs_of_best_open-science_practices.webp)
+![A circular diagram of six research steps around the FORRT and COSN logos, each listing a recommended open-science practice and its hidden costs for researchers in developing countries.](The_hidden_costs_of_best_open-science_practices.webp)
 
 **Fig. 3.** The hidden costs of “best open-science practices” for researchers in developing countries. FORRT = the Framework for Open and Reproducible Research Training; COSN = the Chinese Open Science Network; APC = article-processing cost; OA = open access.
 
-This figure synthesizes how individual actions scale into collective impact through community-led open science initiatives. It highlights the role of grassroots networks, shared infrastructure, and inclusive governance in transforming open science from a set of technical practices into a sustainable research culture. The figure reinforces the paper’s central argument that leadership in open science can emerge from diverse global contexts when supported by accessible tools and communities.
+This figure follows the steps of a research project, from generating hypotheses and designing the study to collecting and analysing data, interpreting results and publishing. For each step it names the practice usually recommended, such as preregistration, large samples, big-team science, open access and open data, and the hidden costs these practices carry for researchers in developing countries, including research topics geared to developed countries, an unconventional front-loaded workflow, extra training and time, resources for large samples, lack of standard equipment and proprietary software, unequal collaboration, article-processing charges and regional discrimination.
 
 
 ### Educational & Practical Resources
@@ -165,6 +165,7 @@ Importantly, these organizations differ in scale, disciplinary focus, governance
 
 #### Inclusion-Focused and Transnational Initiatives
 
+- **ABRIR**  
   An international consortium addressing barriers faced by researchers from developing countries in big-team and open-science collaborations. ABRIR foregrounds issues of representation, onboarding, credit, and leadership in large-scale research.
 
 - **FORRT**  
@@ -199,7 +200,7 @@ The paper also directly informs FORRT’s ongoing work on:
 
 ****Contributors****
 
-- 49 contributors will cover Open Science related topic from perspective of 12 developing countries.
+- 49 contributors covered Open Science related topics from the perspective of 12 developing countries.
 
 <center>
 
@@ -250,7 +251,7 @@ The paper also directly informs FORRT’s ongoing work on:
 
 The open access **<font style="color:#0e2a38">publication</font>** can be found [here](https://doi.org/10.1177/25152459251357565), and the **<font style="color:#0e2a38">postprint</font>** can [be found here (osf.io/7ubk2)](http://osf.io/7ubk2). Download the supplementary material [here](https://doi.org/10.1177/25152459251357565).
 
-> Hu, C.-P., Xu, Z., Lazić, A., Bhattacharya, P., Seda, L., Hossain, S., Jeftić, A., Özdoğru, A. A., Amaral, O. B., Miljković, N., Ilchovska, Z. G., Lazarevic, L. B., Wu, H., Bao, S., Ghodke, N., Moreau, D., Elsherif, M., C., C., Ghai, S., ... Azevedo, F. (2025). **Open Science in the Developing World: A Collection of Practical Guides for Researchers in Developing Countries.** *Advances in Methods and Practices in Psychological Science*, *8*(3), 25152459251357565. [https://doi.org/10.1177/25152459251357565](https://doi.org/10.1177/25152459251357565) 
+> Hu, C.-P., Xu, Z., Lazić, A., Bhattacharya, P., Seda, L., Hossain, S., Jeftić, A., Özdoğru, A. A., Amaral, O. B., Miljković, N., Ilchovska, Z. G., Lazarevic, L. B., Bao, H. W. S., Ghodke, N., Moreau, D., Elsherif, M., C., C., Ghai, S., Carneiro, C. F. D., ... Azevedo, F. (2025). **Open Science in the Developing World: A Collection of Practical Guides for Researchers in Developing Countries.** *Advances in Methods and Practices in Psychological Science*, *8*(3), 25152459251357565. [https://doi.org/10.1177/25152459251357565](https://doi.org/10.1177/25152459251357565) 
 
 
 ### Learn more & get involved

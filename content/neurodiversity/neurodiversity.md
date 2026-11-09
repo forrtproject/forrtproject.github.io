@@ -251,7 +251,7 @@ Our work has been featured in:
 
 ## History & Management
 
-Team Neurodiversity was founded in 2021 by Mahmoud Elsherif, Tamara Kalandaze and Amélie Gourdon-Kanhukamwe. Please see [our blog post for FORRT’s Educators’ Corner](https://forrt.org/educators-corner/010-neurodiversity/) for more information about how Team Neurodiversity was formed, why it is needed, and our plans for future work. At the moment, the group channel has over 100 members who come from Europe, North America and Asia.
+Team Neurodiversity was founded in 2021 by Mahmoud Elsherif, Tamara Kalandadze and Amélie Gourdon-Kanhukamwe. Please see [our blog post for FORRT’s Educators’ Corner](https://forrt.org/educators-corner/010-neurodiversity/) for more information about how Team Neurodiversity was formed, why it is needed, and our plans for future work. At the moment, the group channel has over 100 members who come from Europe, North America and Asia.
 
 We have a rotating leadership team which changes every six months. To promote diverse and inclusive leadership, anyone can put themselves forward for this role, regardless of their experience.
 

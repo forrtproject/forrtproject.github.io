@@ -38,7 +38,8 @@ If possible, please report the following information:
 * Your account of what occurred, and if you believe the incident is ongoing. 
 * If there is a publicly available record (e.g. a Slack conversation), please include a link. 
 * Any additional information that may be helpful.
-* Who will deal with the report?
+
+**Who will deal with the report?**
 
 All reports will be passed along to the Ethics Committee, who will decide on appropriate action. After filing a report, a representative from the Ethics Committee will contact you personally, review the incident, follow up with any additional questions, and make a decision as to how to respond.
 

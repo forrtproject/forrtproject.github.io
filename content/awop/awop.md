@@ -85,7 +85,7 @@ We provide a comprehensive suite of resources within the AWoP toolkit:
 
   > **Example Question**: “Do the people I collaborate with hold similar levels of privilege to me?”
   
-* **Case Study on First-Generation Academics (S6)**: This case study on first-generation academics—those whose parents did not progress beyond high school education can affect an individual's expectations, opportunities, or resources, leading to disparities in contributions and authorship. The experiences of first-generation academics highlight multiple dimensions represented within the Academic Wheel of Privilege (AWoP), ranging from socio-cultural capital and household wealth in childhood, through networking opportunities and mentorship, to factors like ethnicity and culture.
+* **Case Study on First-Generation Academics (S6)**: This case study explores how being a first-generation academic—someone whose parents did not progress beyond high school education—can affect an individual's expectations, opportunities, or resources, leading to disparities in contributions and authorship. The experiences of first-generation academics highlight multiple dimensions represented within the Academic Wheel of Privilege (AWoP), ranging from socio-cultural capital and household wealth in childhood, through networking opportunities and mentorship, to factors like ethnicity and culture.
 
   > **Example Insight**: “First-generation students often work more hours outside of academia to support their studies and have fewer interactions with faculty or mentors.”
 

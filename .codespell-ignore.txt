@@ -42,6 +42,7 @@ Udo
 Yau
 Mathes
 Smal
+Asai
 
 # Technical or code related terms
 aCount
