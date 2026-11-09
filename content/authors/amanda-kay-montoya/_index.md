@@ -1,7 +1,7 @@
 ---
 # Display name
-name: "Dr. Amanda Kay Montoya"
-title: "Dr. Amanda Kay Montoya"
+name: "Dr Amanda Kay Montoya"
+title: "Dr Amanda Kay Montoya"
 
 
 # Is this the primary user of the site?

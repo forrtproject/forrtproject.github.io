@@ -28,4 +28,4 @@ social:
 # No social links
 ---
 
-Coming soon.
+Giorgia Andreolli is a postdoctoral researcher in applied linguistics with a background in language education and English studies. Her work is committed to advancing social justice in education, which is why she joined FORRT in 2022, drawn by its mission and values. She is currently based in Italy and actively engages with open scholarship and open education, advocating for accessibility and equity in academic work. Open education matters to her because it helps reduce structural barriers in academia, fosters participation, and challenges dominant systems of knowledge production. Her current research focuses on processes of linguistic minoritization, particularly in educational transitions, exploring how language policies and practices shape opportunities for learners. Her goal is for FORRT to continue as a welcoming and supportive community, creating space for dialogue and collaboration.

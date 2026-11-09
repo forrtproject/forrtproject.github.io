@@ -227,7 +227,7 @@ MODAL_TEMPLATE = r"""
                 <div class="sc-modal-main">
                     <h3 class="sc-modal-name">{name}</h3>
                     <p class="sc-modal-role">{role}</p>
-                    <div class="sc-modal-bio">{bio}</div>
+                    {bio_block}
                 </div>
             </div>
         </div>
@@ -252,15 +252,46 @@ def normalize_name(name):
     name = re.sub(r'\s+', ' ', name).strip()
     return name.lower()
 
+def display_name(name):
+    """Name as supplied on the personal-details form, in one house style: 'Dr' without a
+    full stop (also for 'dr.'), and a trailing ', PhD' shown as a leading 'Dr'. Other
+    titles ('Prof', ', M.Sc.', ', PhD Student') stay as supplied."""
+    name = re.sub(r'\s+', ' ', str(name)).strip()
+    name = re.sub(r'^dr\.?\s+', 'Dr ', name, flags=re.IGNORECASE)
+    phd = re.match(r'^(.*?),\s*PhD$', name)
+    if phd:
+        name = phd.group(1).strip()
+        if not name.startswith('Dr '):
+            name = f"Dr {name}"
+    return name
+
+def strip_title(name):
+    """Drop a leading 'Dr'/'Prof' and any post-nominals so initials come from the names."""
+    name = name.split(',')[0]
+    return re.sub(r'^(Dr|Prof)\.?\s+', '', name, flags=re.IGNORECASE).strip()
+
+def render_bio(bio):
+    """Bio paragraph for a modal; nothing at all when no bio was supplied."""
+    if not bio:
+        return ""
+    return f'<div class="sc-modal-bio">{html.escape(bio)}</div>'
+
+def match_key(name):
+    """normalize_name() without post-nominals (', PhD') or notes such as '(gmail)', so the
+    roster, the personal-details form and the fallback sheet agree on who is who."""
+    if pd.isna(name): return ""
+    name = re.sub(r'\([^)]*\)', ' ', str(name)).split(',')[0]
+    return normalize_name(name)
+
 def similarity(a, b):
     return SequenceMatcher(None, a, b).ratio()
 
 def find_match(name, candidates, threshold=0.6):
-    normalized = normalize_name(name)
+    normalized = match_key(name)
     best_match = None
     best_score = threshold
     for candidate in candidates:
-        normalized_candidate = normalize_name(candidate)
+        normalized_candidate = match_key(candidate)
         score = similarity(normalized, normalized_candidate)
         if score > best_score:
             best_score = score
@@ -290,6 +321,13 @@ def find_existing_author_dir(personal_name, authors_dir):
         if score > best_score:
             best_score = score
             best_match = existing_dir.name
+    if best_match is None:
+        # Folders added by hand are sometimes slugged without separators
+        # (e.g. "ruthvanderhallenphd"); match those on letters and digits alone.
+        compact_target = re.sub(r'[^a-z0-9]', '', normalized_target)
+        for existing_dir in authors_dir.iterdir():
+            if existing_dir.is_dir() and existing_dir.name.replace('-', '') == compact_target:
+                return existing_dir.name
     return best_match
 
 def sanitize_filename(name):
@@ -418,7 +456,7 @@ def main():
         full_name = row.get('Full Name (incl academic title)', '')
         if pd.isna(full_name) or str(full_name).strip() == '':
             return
-        normalized = normalize_name(str(full_name))
+        normalized = match_key(str(full_name))
         if not allow_overwrite and normalized in target:
             return
         target[normalized] = {
@@ -481,7 +519,7 @@ def main():
             team_name = section if pd.notna(section) else "General"
 
         # Try to find matching personal details
-        normalized_member = normalize_name(member_name)
+        normalized_member = match_key(member_name)
         personal_data = personal_dict.get(normalized_member)
         personal_name = member_name
 
@@ -495,7 +533,11 @@ def main():
 
         # Handle image
         img_url = ""
-        sanitized_name = find_existing_author_dir(personal_name, AUTHORS_DIR) or sanitize_filename(personal_name)
+        sanitized_name = (
+            find_existing_author_dir(personal_name, AUTHORS_DIR)
+            or find_existing_author_dir(strip_title(display_name(personal_name)), AUTHORS_DIR)
+            or sanitize_filename(personal_name)
+        )
         author_dir = AUTHORS_DIR / sanitized_name
         author_dir.mkdir(parents=True, exist_ok=True)
         avatar_path = author_dir / "avatar.webp"
@@ -512,17 +554,18 @@ def main():
         # Build member object
         bio_text = ""
         if personal_data and personal_data.get('Bio'):
-            bio_text = str(personal_data.get('Bio'))
+            bio_text = str(personal_data.get('Bio')).strip()
             if bio_text.lower() == 'nan':
                 bio_text = ""
         
+        shown_name = display_name(personal_name)
         member_obj = {
             "id": sanitized_name,
-            "name": personal_name,
+            "name": shown_name,
             "role": role if pd.notna(role) else "",
             "role_title": role_title if pd.notna(role_title) else (role if pd.notna(role) else ""),
             "imgUrl": img_url,
-            "initials": get_initials(personal_name),
+            "initials": get_initials(strip_title(shown_name)),
             "bio": bio_text,
             "email": personal_data.get('Email', '') if personal_data else '',
             "website": normalize_website_url(personal_data.get('Weblink', '') if personal_data else ''),
@@ -600,11 +643,14 @@ def main():
                 else:
                     img_content_large = f'<span style="font-size: 2rem; color: #94a3b8; font-weight: 600;">{member["initials"]}</span>'
 
-                modals_html += MODAL_TEMPLATE.format(
+                bio_block = render_bio(member["bio"])
+                # Without a bio, drop the template's bio line entirely (no blank line).
+                modal_template = MODAL_TEMPLATE if bio_block else MODAL_TEMPLATE.replace("\n                    {bio_block}", "")
+                modals_html += modal_template.format(
                     id=render_id,
                     name=member["name"],
                     role=member["role_title"] or member["role"],
-                    bio=html.escape(member["bio"] or "Bio coming soon."),
+                    bio_block=bio_block,
                     img_content_large=img_content_large,
                     social_links=generate_social_links(member)
                 ).strip()

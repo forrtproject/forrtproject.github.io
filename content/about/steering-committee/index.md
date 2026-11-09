@@ -33,21 +33,21 @@ layout: single
     <span class="sc-cbar"></span>
 </div><div class="sc-card" onclick="openModal('steven-verheyen')" style="--team-color:#0f766e;--bar-extend:calc(1rem + 1px)">
     <div class="sc-card-photo">
-        <img src="/authors/steven-verheyen/avatar.webp" alt="dr. Steven Verheyen" class="sc-card-img" />
+        <img src="/authors/steven-verheyen/avatar.webp" alt="Dr Steven Verheyen" class="sc-card-img" />
         <div class="sc-card-overlay"></div>
     </div>
     <div class="sc-card-content">
-        <h4 class="sc-card-name">dr. Steven Verheyen</h4>
+        <h4 class="sc-card-name">Dr Steven Verheyen</h4>
         <p class="sc-card-role">Director</p>
     </div>
     <span class="sc-cbar"></span>
 </div><div class="sc-card" onclick="openModal('adira-daniel')" style="--team-color:#0f766e;--bar-extend:0px">
     <div class="sc-card-photo">
-        <img src="/authors/adira-daniel/avatar.webp" alt="Adira Daniel " class="sc-card-img" />
+        <img src="/authors/adira-daniel/avatar.webp" alt="Adira Daniel" class="sc-card-img" />
         <div class="sc-card-overlay"></div>
     </div>
     <div class="sc-card-content">
-        <h4 class="sc-card-name">Adira Daniel </h4>
+        <h4 class="sc-card-name">Adira Daniel</h4>
         <p class="sc-card-role">Co-Director</p>
     </div>
     <span class="sc-cbar"></span>
@@ -57,11 +57,11 @@ layout: single
     <span class="sc-cbar"></span>
 </div><div class="sc-card" onclick="openModal('sarah-a-sauve')" style="--team-color:#2563eb;--bar-extend:0px">
     <div class="sc-card-photo">
-        <img src="/authors/sarah-a-sauve/avatar.webp" alt="Dr. Sarah A. Sauvé" class="sc-card-img" />
+        <img src="/authors/sarah-a-sauve/avatar.webp" alt="Dr Sarah A. Sauvé" class="sc-card-img" />
         <div class="sc-card-overlay"></div>
     </div>
     <div class="sc-card-content">
-        <h4 class="sc-card-name">Dr. Sarah A. Sauvé</h4>
+        <h4 class="sc-card-name">Dr Sarah A. Sauvé</h4>
         <p class="sc-card-role">Director</p>
     </div>
     <span class="sc-cbar"></span>
@@ -81,11 +81,11 @@ layout: single
     <span class="sc-cbar"></span>
 </div><div class="sc-card" onclick="openModal('tom-heyman')" style="--team-color:#7c3aed;--bar-extend:calc(1rem + 1px)">
     <div class="sc-card-photo">
-        <img src="/authors/tom-heyman/avatar.webp" alt="Dr. Tom Heyman" class="sc-card-img" />
+        <img src="/authors/tom-heyman/avatar.webp" alt="Dr Tom Heyman" class="sc-card-img" />
         <div class="sc-card-overlay"></div>
     </div>
     <div class="sc-card-content">
-        <h4 class="sc-card-name">Dr. Tom Heyman</h4>
+        <h4 class="sc-card-name">Dr Tom Heyman</h4>
         <p class="sc-card-role">Deputy-Director</p>
     </div>
     <span class="sc-cbar"></span>
@@ -140,11 +140,11 @@ layout: single
     <span class="sc-cbar"></span>
 </div><div class="sc-card" onclick="openModal('amanda-kay-montoya')" style="--team-color:#0f766e;--bar-extend:calc(1rem + 1px)">
     <div class="sc-card-photo">
-        <img src="/authors/amanda-kay-montoya/avatar.webp" alt="Dr. Amanda Kay Montoya" class="sc-card-img" />
+        <img src="/authors/amanda-kay-montoya/avatar.webp" alt="Dr Amanda Kay Montoya" class="sc-card-img" />
         <div class="sc-card-overlay"></div>
     </div>
     <div class="sc-card-content">
-        <h4 class="sc-card-name">Dr. Amanda Kay Montoya</h4>
+        <h4 class="sc-card-name">Dr Amanda Kay Montoya</h4>
         <p class="sc-card-role">Director</p>
     </div>
     <span class="sc-cbar"></span>
@@ -160,11 +160,11 @@ layout: single
     <span class="sc-cbar"></span>
 </div><div class="sc-card" onclick="openModal('giorgia-andreolli')" style="--team-color:#0f766e;--bar-extend:0px">
     <div class="sc-card-photo">
-        <img src="/authors/giorgia-andreolli/avatar.webp" alt="Giorgia Andreolli" class="sc-card-img" />
+        <img src="/authors/giorgia-andreolli/avatar.webp" alt="Dr Giorgia Andreolli" class="sc-card-img" />
         <div class="sc-card-overlay"></div>
     </div>
     <div class="sc-card-content">
-        <h4 class="sc-card-name">Giorgia Andreolli</h4>
+        <h4 class="sc-card-name">Dr Giorgia Andreolli</h4>
         <p class="sc-card-role">Cohesion-Liaison</p>
     </div>
     <span class="sc-cbar"></span>
@@ -174,11 +174,11 @@ layout: single
     <span class="sc-cbar"></span>
 </div><div class="sc-card" onclick="openModal('lukas-roseler')" style="--team-color:#2563eb;--bar-extend:0px">
     <div class="sc-card-photo">
-        <img src="/authors/lukas-roseler/avatar.webp" alt="Dr. Lukas Röseler" class="sc-card-img" />
+        <img src="/authors/lukas-roseler/avatar.webp" alt="Dr Lukas Röseler" class="sc-card-img" />
         <div class="sc-card-overlay"></div>
     </div>
     <div class="sc-card-content">
-        <h4 class="sc-card-name">Dr. Lukas Röseler</h4>
+        <h4 class="sc-card-name">Dr Lukas Röseler</h4>
         <p class="sc-card-role">Infrastructure-Liaison</p>
     </div>
     <span class="sc-cbar"></span>
@@ -222,11 +222,11 @@ layout: single
     <span class="sc-cbar"></span>
 </div><div class="sc-card" onclick="openModal('ruthvanderhallenphd')" style="--team-color:#be123c;--bar-extend:calc(1rem + 1px)">
     <div class="sc-card-photo">
-        <img src="/authors/ruthvanderhallenphd/avatar.webp" alt="Ruth Van der Hallen, PhD " class="sc-card-img" />
+        <img src="/authors/ruthvanderhallenphd/avatar.webp" alt="Dr Ruth Van der Hallen" class="sc-card-img" />
         <div class="sc-card-overlay"></div>
     </div>
     <div class="sc-card-content">
-        <h4 class="sc-card-name">Ruth Van der Hallen, PhD </h4>
+        <h4 class="sc-card-name">Dr Ruth Van der Hallen</h4>
         <p class="sc-card-role">Confidential Advisor</p>
     </div>
     <span class="sc-cbar"></span>
@@ -285,7 +285,7 @@ layout: single
     </div>
     <div class="sc-card-content">
         <h4 class="sc-card-name">Alicia Tamara Veersma Barredo</h4>
-        <p class="sc-card-role">Officer</p>
+        <p class="sc-card-role">Advisor</p>
     </div>
     <span class="sc-cbar"></span>
 </div><div class="sc-title-card" style="--team-color:#4d7c0f;--bar-extend:calc(1rem + 1px)">
@@ -328,7 +328,7 @@ layout: single
     <span class="sc-cbar"></span>
 </div><div class="sc-title-card" style="--team-color:#475569;--bar-extend:calc(1rem + 1px)">
     <span class="sc-title-label">Team</span>
-    <h3 class="sc-title-text">Communication, Dissemination & Impact</h3>
+    <h3 class="sc-title-text">Impact</h3>
     <span class="sc-cbar"></span>
 </div><div class="sc-card" onclick="openModal('charlotte-r-pennington')" style="--team-color:#475569;--bar-extend:0px">
     <div class="sc-card-photo">
@@ -356,11 +356,11 @@ layout: single
     <span class="sc-cbar"></span>
 </div><div class="sc-card" onclick="openModal('stephanie-zellers')" style="--team-color:#a16207;--bar-extend:calc(1rem + 1px)">
     <div class="sc-card-photo">
-        <img src="/authors/stephanie-zellers/avatar.webp" alt="Stephanie Zellers" class="sc-card-img" />
+        <img src="/authors/stephanie-zellers/avatar.webp" alt="Dr Stephanie Zellers" class="sc-card-img" />
         <div class="sc-card-overlay"></div>
     </div>
     <div class="sc-card-content">
-        <h4 class="sc-card-name">Stephanie Zellers</h4>
+        <h4 class="sc-card-name">Dr Stephanie Zellers</h4>
         <p class="sc-card-role">FORRT Steward</p>
     </div>
     <span class="sc-cbar"></span>
@@ -416,11 +416,11 @@ layout: single
     </div>
 </div><div class="sc-card" onclick="openModal('flavio-azevedo')">
     <div class="sc-card-photo">
-        <img src="/authors/flavio-azevedo/avatar.webp" alt="Dr Flavio Azevedo" class="sc-card-img" />
+        <img src="/authors/flavio-azevedo/avatar.webp" alt="Dr Flávio Azevedo" class="sc-card-img" />
         <div class="sc-card-overlay"></div>
     </div>
     <div class="sc-card-content">
-        <h4 class="sc-card-name">Dr Flavio Azevedo</h4>
+        <h4 class="sc-card-name">Dr Flávio Azevedo</h4>
         <p class="sc-card-role">Director</p>
     </div>
 </div>
@@ -441,7 +441,16 @@ layout: single
     </div>
     <div class="sc-card-content">
         <h4 class="sc-card-name">Sam Parsons</h4>
-        <p class="sc-card-role">Stewardship Panel</p>
+        <p class="sc-card-role">Stewardship Council</p>
+    </div>
+</div><div class="sc-card" onclick="openModal('ruthvanderhallenphd-2')">
+    <div class="sc-card-photo">
+        <img src="/authors/ruthvanderhallenphd/avatar.webp" alt="Dr Ruth Van der Hallen" class="sc-card-img" />
+        <div class="sc-card-overlay"></div>
+    </div>
+    <div class="sc-card-content">
+        <h4 class="sc-card-name">Dr Ruth Van der Hallen</h4>
+        <p class="sc-card-role">Confidential Advisor</p>
     </div>
 </div><div class="sc-card" onclick="openModal('thomas-rhys-evans-2')">
     <div class="sc-card-photo">
@@ -451,15 +460,6 @@ layout: single
     <div class="sc-card-content">
         <h4 class="sc-card-name">Thomas Rhys Evans</h4>
         <p class="sc-card-role">Ombuds</p>
-    </div>
-</div><div class="sc-card" onclick="openModal('ruthvanderhallenphd-2')">
-    <div class="sc-card-photo">
-        <img src="/authors/ruthvanderhallenphd/avatar.webp" alt="Ruth Van der Hallen, PhD " class="sc-card-img" />
-        <div class="sc-card-overlay"></div>
-    </div>
-    <div class="sc-card-content">
-        <h4 class="sc-card-name">Ruth Van der Hallen, PhD </h4>
-        <p class="sc-card-role">Confidential Advisor</p>
     </div>
 </div>
     </div>
@@ -477,14 +477,14 @@ layout: single
             <div class="sc-modal-layout">
                 <div class="sc-modal-sidebar">
                     <div class="sc-modal-img">
-                        <img src="/authors/steven-verheyen/avatar.webp" alt="dr. Steven Verheyen" />
+                        <img src="/authors/steven-verheyen/avatar.webp" alt="Dr Steven Verheyen" />
                     </div>
                     <div class="sc-social-links">
                         <a href="https://www.stevenverheyen.com" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a><a href="mailto:verheyen@essb.eur.nl" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
                     </div>
                 </div>
                 <div class="sc-modal-main">
-                    <h3 class="sc-modal-name">dr. Steven Verheyen</h3>
+                    <h3 class="sc-modal-name">Dr Steven Verheyen</h3>
                     <p class="sc-modal-role">Director (Community & Sustainability)</p>
                     <div class="sc-modal-bio">Steven Verheyen is an Assistant Professor of Cognitive Psychology at Erasmus University Rotterdam, where he also coordinates the Open Science Community Rotterdam and is Open Science Champion of the Erasmus School of Social and Behavioural Sciences. His work on individual differences in language use is positioned at the intersection of quantitative psychology, philosophy of language, and cognitive linguistics. He also conducts meta-scientific research on incentivization, contributorship, conflicts of interest, and replication. He is currently serving as editor of the Review of Philosophy and Psychology, PCI Psychology, and Replication Research.  At FORRT, he aims to promote open and responsible research through pedagogical reform.</div>
                 </div>
@@ -502,15 +502,15 @@ layout: single
             <div class="sc-modal-layout">
                 <div class="sc-modal-sidebar">
                     <div class="sc-modal-img">
-                        <img src="/authors/adira-daniel/avatar.webp" alt="Adira Daniel " />
+                        <img src="/authors/adira-daniel/avatar.webp" alt="Adira Daniel" />
                     </div>
                     <div class="sc-social-links">
                         <a href="https://www.linkedin.com/in/adiradaniel/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
                     </div>
                 </div>
                 <div class="sc-modal-main">
-                    <h3 class="sc-modal-name">Adira Daniel </h3>
-                    <p class="sc-modal-role">Co-Director</p>
+                    <h3 class="sc-modal-name">Adira Daniel</h3>
+                    <p class="sc-modal-role">Co-Director (Community & Sustainability)</p>
                     <div class="sc-modal-bio">I’m a PhD Candidate in Social, Personality, and Developmental Psychology at Western University in Canada and an active member of FORRT’s Qualitative Research &amp; Mixed Methods sub-cluster. At FORRT, I focus on creating accessible, equity-focused teaching materials that support researchers in developing rigorous, transparent, and reflexive qualitative and mixed-methods practices. I love building resources that help demystify methodology and make open science more inclusive—especially for early-career scholars.
 
 My own research explores how diverse and intercultural couples navigate identity, disclosure, and resilience under conditions of marginalization. I’m passionate about intersectionality, relationship processes, and rethinking methodological “rigour” in ways that honour complexity and lived experience.
@@ -531,17 +531,17 @@ Outside of research, you’ll usually find me baking something cozy, tending to 
             <div class="sc-modal-layout">
                 <div class="sc-modal-sidebar">
                     <div class="sc-modal-img">
-                        <img src="/authors/sarah-a-sauve/avatar.webp" alt="Dr. Sarah A. Sauvé" />
+                        <img src="/authors/sarah-a-sauve/avatar.webp" alt="Dr Sarah A. Sauvé" />
                     </div>
                     <div class="sc-social-links">
                         <a href="https://staff.lincoln.ac.uk/8ebcbc1e-6ca0-4fde-b6ad-42775c65d754" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a><a href="mailto:ssauve@lincoln.ac.uk" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
                     </div>
                 </div>
                 <div class="sc-modal-main">
-                    <h3 class="sc-modal-name">Dr. Sarah A. Sauvé</h3>
+                    <h3 class="sc-modal-name">Dr Sarah A. Sauvé</h3>
                     <p class="sc-modal-role">Director (Social Justice & DEIA)</p>
                     <div class="sc-modal-bio">Dr. Sarah Sauvé is currently a Lecturer in Psychology at the University of Lincoln. She is a white immigrant living and working on the land of the people who colonized the land on which she was born and spent most of her life so far. She is interested in applying feminist and critical theory and praxis to music science research, where her specialties include the neuroscience of learning, music perception in older adults, computational modeling and public engagement.
-In FORRT, she has been involved in co-leading Team Citational Politics and is very excited to be part of FORRT&#x27;s first steering committee as Director of Social Justice and DEIA!</div>
+In FORRT, she has been involved in co-leading Team Citation Politics and is very excited to be part of FORRT&#x27;s first steering committee as Director of Social Justice and DEIA!</div>
                 </div>
             </div>
         </div>
@@ -582,14 +582,14 @@ In FORRT, she has been involved in co-leading Team Citational Politics and is ve
             <div class="sc-modal-layout">
                 <div class="sc-modal-sidebar">
                     <div class="sc-modal-img">
-                        <img src="/authors/tom-heyman/avatar.webp" alt="Dr. Tom Heyman" />
+                        <img src="/authors/tom-heyman/avatar.webp" alt="Dr Tom Heyman" />
                     </div>
                     <div class="sc-social-links">
                         <a href="https://www.universiteitleiden.nl/en/staffmembers/tom-heyman" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a><a href="mailto:t.d.p.heyman@fsw.leidenuniv.nl" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
                     </div>
                 </div>
                 <div class="sc-modal-main">
-                    <h3 class="sc-modal-name">Dr. Tom Heyman</h3>
+                    <h3 class="sc-modal-name">Dr Tom Heyman</h3>
                     <p class="sc-modal-role">Deputy-Director (Meta-science & Research)</p>
                     <div class="sc-modal-bio">Cognitive psychologist turned meta-scientist. PhD obtained at KU Leuven (Belgium), and currently working as an assistant professor at Leiden University (The Netherlands) in the Methods &amp; Statistics unit of the Institute of Psychology. Research interests include the potential and risks of using Large Language Models in (meta-)science, the pedagogy of responsible research practices, evaluating the robustness of scientific findings, and examining evidence accumulation, correction mechanisms as well as the adoption of responsible research practices through the lens of metascience. Teaching introduction to statistics, research methodology, and responsible research practices.</div>
                 </div>
@@ -682,16 +682,16 @@ In FORRT, she has been involved in co-leading Team Citational Politics and is ve
             <div class="sc-modal-layout">
                 <div class="sc-modal-sidebar">
                     <div class="sc-modal-img">
-                        <img src="/authors/amanda-kay-montoya/avatar.webp" alt="Dr. Amanda Kay Montoya" />
+                        <img src="/authors/amanda-kay-montoya/avatar.webp" alt="Dr Amanda Kay Montoya" />
                     </div>
                     <div class="sc-social-links">
                         <a href="https://akmontoya.com" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a><a href="mailto:akmontoya@ucla.edu" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
                     </div>
                 </div>
                 <div class="sc-modal-main">
-                    <h3 class="sc-modal-name">Dr. Amanda Kay Montoya</h3>
+                    <h3 class="sc-modal-name">Dr Amanda Kay Montoya</h3>
                     <p class="sc-modal-role">Director (Community Management)</p>
-                    <div class="sc-modal-bio">Dr. Montoya is an Associate Professor of Quantitative Psychology at the University of California, Los Angeles (UCLA). She is an advocate for open science and leader across communities, serving on the Board of Directors for the Center for Open Science, the APA Open Science and Methodology Panel, and multiple editorial roles for coordinating registered reports, including as a recommender for Peer Community In Registered Reports. Her research focuses on early adoption of new research practices, with a particular focus on registered reports. She also studies open science practices for computationally intensive approaches such as Monte Carlo simulations. </div>
+                    <div class="sc-modal-bio">Dr. Montoya is an Associate Professor of Quantitative Psychology at the University of California, Los Angeles (UCLA). She is an advocate for open science and leader across communities, serving on the Board of Directors for the Center for Open Science, the APA Open Science and Methodology Panel, and multiple editorial roles for coordinating registered reports, including as a recommender for Peer Community In Registered Reports. Her research focuses on early adoption of new research practices, with a particular focus on registered reports. She also studies open science practices for computationally intensive approaches such as Monte Carlo simulations.</div>
                 </div>
             </div>
         </div>
@@ -715,7 +715,7 @@ In FORRT, she has been involved in co-leading Team Citational Politics and is ve
                 </div>
                 <div class="sc-modal-main">
                     <h3 class="sc-modal-name">Dr Kelly Lloyd</h3>
-                    <p class="sc-modal-role">Community Cohesion-Liaison </p>
+                    <p class="sc-modal-role">Community Cohesion-Liaison</p>
                     <div class="sc-modal-bio">I am a Research Fellow working in primary care research and implementation science at the Leeds Institute of Health Sciences, University of Leeds. I am a keen advocate for open research practices, which led to me joining the amazing FORRT community in 2021! Since, I have worked behind the scenes on aspects such as our communication (e.g., newsletter, social media), and community and cohesion building.</div>
                 </div>
             </div>
@@ -732,16 +732,16 @@ In FORRT, she has been involved in co-leading Team Citational Politics and is ve
             <div class="sc-modal-layout">
                 <div class="sc-modal-sidebar">
                     <div class="sc-modal-img">
-                        <img src="/authors/giorgia-andreolli/avatar.webp" alt="Giorgia Andreolli" />
+                        <img src="/authors/giorgia-andreolli/avatar.webp" alt="Dr Giorgia Andreolli" />
                     </div>
                     <div class="sc-social-links">
-                        <a href="https://www.eurac.edu/en/people/giorgia-andreolli" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
+                        
                     </div>
                 </div>
                 <div class="sc-modal-main">
-                    <h3 class="sc-modal-name">Giorgia Andreolli</h3>
-                    <p class="sc-modal-role">Community Cohesion-Liaison </p>
-                    <div class="sc-modal-bio">Bio coming soon.</div>
+                    <h3 class="sc-modal-name">Dr Giorgia Andreolli</h3>
+                    <p class="sc-modal-role">Community Cohesion-Liaison</p>
+                    <div class="sc-modal-bio">Giorgia Andreolli is a postdoctoral researcher in applied linguistics with a background in language education and English studies. Her work is committed to advancing social justice in education, which is why she joined FORRT in 2022, drawn by its mission and values. She is currently based in Italy and actively engages with open scholarship and open education, advocating for accessibility and equity in academic work. Open education matters to her because it helps reduce structural barriers in academia, fosters participation, and challenges dominant systems of knowledge production. Her current research focuses on processes of linguistic minoritization, particularly in educational transitions, exploring how language policies and practices shape opportunities for learners. Her goal is for FORRT to continue as a welcoming and supportive community, creating space for dialogue and collaboration.</div>
                 </div>
             </div>
         </div>
@@ -757,16 +757,16 @@ In FORRT, she has been involved in co-leading Team Citational Politics and is ve
             <div class="sc-modal-layout">
                 <div class="sc-modal-sidebar">
                     <div class="sc-modal-img">
-                        <img src="/authors/lukas-roseler/avatar.webp" alt="Dr. Lukas Röseler" />
+                        <img src="/authors/lukas-roseler/avatar.webp" alt="Dr Lukas Röseler" />
                     </div>
                     <div class="sc-social-links">
                         <a href="https://lukasroeseler.github.io/home/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a><a href="mailto:lukas.roeseler@uni-muenster.de" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
                     </div>
                 </div>
                 <div class="sc-modal-main">
-                    <h3 class="sc-modal-name">Dr. Lukas Röseler</h3>
+                    <h3 class="sc-modal-name">Dr Lukas Röseler</h3>
                     <p class="sc-modal-role">Community Engagement Infrastructure</p>
-                    <div class="sc-modal-bio">Lukas studied consumer behavior and market research, PhD in psychology, and currently managing director of the Münster Center for Open Science where he is responsible to support members of the University of Münster with respect to Open Science. Lukas is heavily invested in repetitive research and has been creating open resources and open infrastructure to support replications and reproductions (e.g., a database, handbook, and academic journal).</div>
+                    <div class="sc-modal-bio">Lukas studied consumer behavior and market research, holds a PhD in psychology, and is currently managing director of the Münster Center for Open Science, where he supports members of the University of Münster with respect to Open Science. Lukas is heavily invested in repetitive research and has been creating open resources and open infrastructure to support replications and reproductions (e.g., a database, handbook, and academic journal).</div>
                 </div>
             </div>
         </div>
@@ -791,7 +791,7 @@ In FORRT, she has been involved in co-leading Team Citational Politics and is ve
                 <div class="sc-modal-main">
                     <h3 class="sc-modal-name">Dr Sarah Ashcroft-Jones</h3>
                     <p class="sc-modal-role">Director (Sustainability & Strategy)</p>
-                    <div class="sc-modal-bio">Sarah Ashcroft-Jones is a researcher of the psychological and behavioural sciences at the Columbia University Mailman School of Public Health. Her research interests include decision making, categorisation, and cognitive biases. Her current work focuses on understanding the individual and structural factors that influence financial and health behaviours. She leads the Junior Researcher Programme, which develops opportunities for early career researchers in the psychological and behavioural sciences. She is an advocate of open science practices and open pedagogy. </div>
+                    <div class="sc-modal-bio">Sarah Ashcroft-Jones is a researcher of the psychological and behavioural sciences at the Columbia University Mailman School of Public Health. Her research interests include decision making, categorisation, and cognitive biases. Her current work focuses on understanding the individual and structural factors that influence financial and health behaviours. She leads the Junior Researcher Programme, which develops opportunities for early career researchers in the psychological and behavioural sciences. She is an advocate of open science practices and open pedagogy.</div>
                 </div>
             </div>
         </div>
@@ -857,14 +857,14 @@ In FORRT, she has been involved in co-leading Team Citational Politics and is ve
             <div class="sc-modal-layout">
                 <div class="sc-modal-sidebar">
                     <div class="sc-modal-img">
-                        <img src="/authors/ruthvanderhallenphd/avatar.webp" alt="Ruth Van der Hallen, PhD " />
+                        <img src="/authors/ruthvanderhallenphd/avatar.webp" alt="Dr Ruth Van der Hallen" />
                     </div>
                     <div class="sc-social-links">
                         <a href="https://www.eur.nl/people/ruth-van-der-hallen" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a><a href="mailto:confidential-advisor@forrt.org" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
                     </div>
                 </div>
                 <div class="sc-modal-main">
-                    <h3 class="sc-modal-name">Ruth Van der Hallen, PhD </h3>
+                    <h3 class="sc-modal-name">Dr Ruth Van der Hallen</h3>
                     <p class="sc-modal-role">Confidential Advisor</p>
                     <div class="sc-modal-bio">Ruth Van der Hallen is an Associate Professor in Clinical Psychology at Erasmus University Rotterdam, where she combines teaching, research, and academic leadership. She coordinates the Master’s specialisation in Clinical Psychology and leads projects that connect academic training with professional practice in clinical settings. In addition, she serves as a confidential counsellor for students and staff at the university. At FORRT, she acts as a confidential advisor and offers a safe and independent point of contact for community members seeking advice or support when navigating sensitive situations involving inappropriate behaviour, interpersonal conflicts, and concerns related to integrity and professional conduct.</div>
                 </div>
@@ -891,7 +891,6 @@ In FORRT, she has been involved in co-leading Team Citational Politics and is ve
                 <div class="sc-modal-main">
                     <h3 class="sc-modal-name">Thomas Rhys Evans</h3>
                     <p class="sc-modal-role">Advisor (Ethics and Inclusion)</p>
-                    <div class="sc-modal-bio">Bio coming soon.</div>
                 </div>
             </div>
         </div>
@@ -941,7 +940,7 @@ In FORRT, she has been involved in co-leading Team Citational Politics and is ve
                 <div class="sc-modal-main">
                     <h3 class="sc-modal-name">Karen Matvienko-Sikar</h3>
                     <p class="sc-modal-role">Co-Director (Fundraising)</p>
-                    <div class="sc-modal-bio">Dr Karen Matvienko-Sikar is a Health Psychologist Senior Lecturer in the School of Public Health, University College Cork, Ireland. Karens research interests and expertise are in the area of maternal and child health, particularly perinatal mental health and infant feeding. She is also an advocate for open research, a BITSS Catalyst, and leads the Principles and Practices of Open Research (PaPOR TRaIL) open education resource for which she has received research commendations and awards.</div>
+                    <div class="sc-modal-bio">Dr Karen Matvienko-Sikar is a Health Psychologist Senior Lecturer in the School of Public Health, University College Cork, Ireland. Karen&#x27;s research interests and expertise are in the area of maternal and child health, particularly perinatal mental health and infant feeding. She is also an advocate for open research, a BITSS Catalyst, and leads the Principles and Practices of Open Research (PaPOR TRaIL) open education resource for which she has received research commendations and awards.</div>
                 </div>
             </div>
         </div>
@@ -969,11 +968,7 @@ In FORRT, she has been involved in co-leading Team Citational Politics and is ve
                     <div class="sc-modal-bio">Fotis Mystakopoulos is a professional actively engaged in advancing Open Science. His career trajectory reflects the evolution of information science, from its traditional roots in library services to its modern role in shaping research policy and data infrastructure. With a background in Library and Information Science, he has developed expertise in key areas of scholarly communication, including Responsible Research Assessment, Open Access, Open Science Training, and Research Data Management.
 
 Beyond his formal roles, he is actively engaged in community building, supporting initiatives that connect researchers and professionals around shared values and practices of openness and advocating for cultural change in academia that aligns with the ethos of Open Science.
-Currently, alongside his professional duties, he is pursuing a PhD at the University of West Attica, examining the evolution of academic libraries, and their services within the expanding global landscape of Open Science.
-
-
-
-</div>
+Currently, alongside his professional duties, he is pursuing a PhD at the University of West Attica, examining the evolution of academic libraries, and their services within the expanding global landscape of Open Science.</div>
                 </div>
             </div>
         </div>
@@ -997,7 +992,7 @@ Currently, alongside his professional duties, he is pursuing a PhD at the Univer
                 </div>
                 <div class="sc-modal-main">
                     <h3 class="sc-modal-name">Alicia Tamara Veersma Barredo</h3>
-                    <p class="sc-modal-role">Officer (Financial Transparency)</p>
+                    <p class="sc-modal-role">Advisor (Financial Transparency)</p>
                     <div class="sc-modal-bio">I recently joined FORRT and am beginning to support the team with operational and administrative tasks, especially in accounting and coordination. I’m excited to contribute to FORRT’s mission of fostering open and reproducible research and to learn more about the work that makes such initiatives possible. My background is in office administration and project organization, and I’m particularly interested in how clear structures and good processes can help teams work more effectively.</div>
                 </div>
             </div>
@@ -1023,7 +1018,6 @@ Currently, alongside his professional duties, he is pursuing a PhD at the Univer
                 <div class="sc-modal-main">
                     <h3 class="sc-modal-name">Adam Partridge</h3>
                     <p class="sc-modal-role">Director (Partnerships)</p>
-                    <div class="sc-modal-bio">Bio coming soon.</div>
                 </div>
             </div>
         </div>
@@ -1048,7 +1042,6 @@ Currently, alongside his professional duties, he is pursuing a PhD at the Univer
                 <div class="sc-modal-main">
                     <h3 class="sc-modal-name">Justin Sulik</h3>
                     <p class="sc-modal-role">Director (Digital Infrastructure Team)</p>
-                    <div class="sc-modal-bio">Bio coming soon.</div>
                 </div>
             </div>
         </div>
@@ -1073,7 +1066,6 @@ Currently, alongside his professional duties, he is pursuing a PhD at the Univer
                 <div class="sc-modal-main">
                     <h3 class="sc-modal-name">Dushime Mudahera Richard</h3>
                     <p class="sc-modal-role">Website Lead</p>
-                    <div class="sc-modal-bio">Bio coming soon.</div>
                 </div>
             </div>
         </div>
@@ -1097,8 +1089,8 @@ Currently, alongside his professional duties, he is pursuing a PhD at the Univer
                 </div>
                 <div class="sc-modal-main">
                     <h3 class="sc-modal-name">Charlotte Pennington</h3>
-                    <p class="sc-modal-role">Director (Communication, Dissemination & Impact)</p>
-                    <div class="sc-modal-bio">Dr. Charlotte Pennington is a Senior Lecturer in Psychology at Aston University, Birmingham, UK. As an experimental social psychologist, Charlotte is interested in understanding how people’s complex social environments impact on health and wellbeing, with a particular interest in alcohol consumption and addiction. Charlotte is an expert in Open Scholarship: she is author of “A Student’s Guide to Open Science: Using the Replication Crisis to Reform Psychology”, which won the 2024 British Psychology Society Textbook Award, and is an Action Editor of Registered Reports for Addiction Research &amp; Theory and Peer Community In. Charlotte also sits on the APA Open Science &amp; Methodology Expert Panel, working to deepen commitment to open research, transparency, and methodological rigour. She has been an active member of FORRT for over 6 years, contributing to many initiatives, such as FORRT’s glossary, educator’s corner, impact on students, lesson plans, and mapping of open scholarship communities. As Director of Communication, Dissemination &amp; Impact, Charlotte works to enhance FORRT’s visibility, reach, and mission at a global scale.</div>
+                    <p class="sc-modal-role">Director (Impact)</p>
+                    <div class="sc-modal-bio">Dr. Charlotte Pennington is a Senior Lecturer in Psychology at Aston University, Birmingham, UK. As an experimental social psychologist, Charlotte is interested in understanding how people’s complex social environments impact on health and wellbeing, with a particular interest in alcohol consumption and addiction. Charlotte is an expert in Open Scholarship: she is author of “A Student’s Guide to Open Science: Using the Replication Crisis to Reform Psychology”, which won the 2024 British Psychological Society Textbook Award, and is an Action Editor of Registered Reports for Addiction Research &amp; Theory and Peer Community In. Charlotte also sits on the APA Open Science &amp; Methodology Expert Panel, working to deepen commitment to open research, transparency, and methodological rigour. She has been an active member of FORRT for over 6 years, contributing to many initiatives, such as FORRT’s glossary, educator’s corner, impact on students, lesson plans, and mapping of open scholarship communities. As Director of Communication, Dissemination &amp; Impact, Charlotte works to enhance FORRT’s visibility, reach, and mission at a global scale.</div>
                 </div>
             </div>
         </div>
@@ -1123,7 +1115,6 @@ Currently, alongside his professional duties, he is pursuing a PhD at the Univer
                 <div class="sc-modal-main">
                     <h3 class="sc-modal-name">Ana Carolina Marinho</h3>
                     <p class="sc-modal-role">FORRT Steward</p>
-                    <div class="sc-modal-bio">Bio coming soon.</div>
                 </div>
             </div>
         </div>
@@ -1139,16 +1130,16 @@ Currently, alongside his professional duties, he is pursuing a PhD at the Univer
             <div class="sc-modal-layout">
                 <div class="sc-modal-sidebar">
                     <div class="sc-modal-img">
-                        <img src="/authors/stephanie-zellers/avatar.webp" alt="Stephanie Zellers" />
+                        <img src="/authors/stephanie-zellers/avatar.webp" alt="Dr Stephanie Zellers" />
                     </div>
                     <div class="sc-social-links">
-                        <a href="https://researchportal.helsinki.fi/en/persons/stephanie-zellers" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
+                        <a href="https://researchportal.helsinki.fi/en/persons/stephanie-zellers/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a><a href="mailto:stephanie.zellers@helsinki.fi" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
                     </div>
                 </div>
                 <div class="sc-modal-main">
-                    <h3 class="sc-modal-name">Stephanie Zellers</h3>
-                    <p class="sc-modal-role">FORRT Stewards</p>
-                    <div class="sc-modal-bio">Bio coming soon.</div>
+                    <h3 class="sc-modal-name">Dr Stephanie Zellers</h3>
+                    <p class="sc-modal-role">FORRT Steward</p>
+                    <div class="sc-modal-bio">Stephanie Zellers (she, her, hers; PhD in psychology awarded in 2022 from the University of Minnesota) is a postdoctoral researcher at the Institute for Molecular Medicine Finland.  Her research projects are based in leveraging natural experiments to evaluate the causal influence of environmental exposures on health and wellbeing. She also works in reproducible research, where she provides cross-cutting Equity Diversity and Inclusion support in the iRISE consortium. She works to ensure that diversity is considered in all consortium activities, including intervention trials, systematic reviews, internal communication, and research dissemination. In her free time, she organizes Blues Dance events, where she also has experience in designing and implementing community safety and access policies that align with the culture, history, and values of Blues Dance. She  also likes studying Finnish and Chinese languages and hanging out with her cat Viivi.</div>
                 </div>
             </div>
         </div>
@@ -1172,7 +1163,7 @@ Currently, alongside his professional duties, he is pursuing a PhD at the Univer
                 </div>
                 <div class="sc-modal-main">
                     <h3 class="sc-modal-name">Roksana Sobolak</h3>
-                    <p class="sc-modal-role">FORRT Stewards</p>
+                    <p class="sc-modal-role">FORRT Steward</p>
                     <div class="sc-modal-bio">I am a PhD student at King’s College London researching ADHD and women’s health, with a particular focus on the menopausal transition. I have a strong interest in open and transparent research practices, and I am passionate about improving accessibility and equity throughout the research process. Before beginning my PhD, I worked as a Research Fellow in Open Science, where I focused on identifying accessible feedback opportunities across the research cycle.
 
 I have been actively involved in several FORRT initiatives, including contributions to the Replication Database and Team Curriculum through creating lecture materials, both of which deepened my commitment to collaborative, community-led scholarship. I am excited to join the FORRT Steering Board as a Steward and look forward to contributing to FORRT’s mission to advance open, responsible, and inclusive research practices across disciplines.</div>
@@ -1224,8 +1215,7 @@ I have been actively involved in several FORRT initiatives, including contributi
                 </div>
                 <div class="sc-modal-main">
                     <h3 class="sc-modal-name">Meera Chandra</h3>
-                    <p class="sc-modal-role">FORRT Stewards</p>
-                    <div class="sc-modal-bio">Bio coming soon.</div>
+                    <p class="sc-modal-role">FORRT Steward</p>
                 </div>
             </div>
         </div>
@@ -1268,16 +1258,15 @@ I am also very interested in Open Science and an avid R user. In that space, I e
             <div class="sc-modal-layout">
                 <div class="sc-modal-sidebar">
                     <div class="sc-modal-img">
-                        <img src="/authors/flavio-azevedo/avatar.webp" alt="Dr Flavio Azevedo" />
+                        <img src="/authors/flavio-azevedo/avatar.webp" alt="Dr Flávio Azevedo" />
                     </div>
                     <div class="sc-social-links">
                         <a href="http://flavioazevedo.com/about" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
                     </div>
                 </div>
                 <div class="sc-modal-main">
-                    <h3 class="sc-modal-name">Dr Flavio Azevedo</h3>
+                    <h3 class="sc-modal-name">Dr Flávio Azevedo</h3>
                     <p class="sc-modal-role">Director of FORRT</p>
-                    <div class="sc-modal-bio">Bio coming soon.</div>
                 </div>
             </div>
         </div>
@@ -1302,7 +1291,31 @@ I am also very interested in Open Science and an avid R user. In that space, I e
                 <div class="sc-modal-main">
                     <h3 class="sc-modal-name">Sam Parsons</h3>
                     <p class="sc-modal-role">Stewardship Council Chair</p>
-                    <div class="sc-modal-bio">Bio coming soon.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><div id="modal-ruthvanderhallenphd-2" class="sc-modal-backdrop">
+    <div class="sc-modal-content">
+        <div class="sc-modal-header">
+            <button onclick="closeModal('ruthvanderhallenphd-2')" class="sc-close-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 18 12"/></svg>
+            </button>
+        </div>
+        <div class="sc-modal-body">
+            <div class="sc-modal-layout">
+                <div class="sc-modal-sidebar">
+                    <div class="sc-modal-img">
+                        <img src="/authors/ruthvanderhallenphd/avatar.webp" alt="Dr Ruth Van der Hallen" />
+                    </div>
+                    <div class="sc-social-links">
+                        <a href="https://www.eur.nl/people/ruth-van-der-hallen" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a><a href="mailto:confidential-advisor@forrt.org" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
+                    </div>
+                </div>
+                <div class="sc-modal-main">
+                    <h3 class="sc-modal-name">Dr Ruth Van der Hallen</h3>
+                    <p class="sc-modal-role">Confidential Advisor</p>
+                    <div class="sc-modal-bio">Ruth Van der Hallen is an Associate Professor in Clinical Psychology at Erasmus University Rotterdam, where she combines teaching, research, and academic leadership. She coordinates the Master’s specialisation in Clinical Psychology and leads projects that connect academic training with professional practice in clinical settings. In addition, she serves as a confidential counsellor for students and staff at the university. At FORRT, she acts as a confidential advisor and offers a safe and independent point of contact for community members seeking advice or support when navigating sensitive situations involving inappropriate behaviour, interpersonal conflicts, and concerns related to integrity and professional conduct.</div>
                 </div>
             </div>
         </div>
@@ -1327,32 +1340,6 @@ I am also very interested in Open Science and an avid R user. In that space, I e
                 <div class="sc-modal-main">
                     <h3 class="sc-modal-name">Thomas Rhys Evans</h3>
                     <p class="sc-modal-role">Ombuds</p>
-                    <div class="sc-modal-bio">Bio coming soon.</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div><div id="modal-ruthvanderhallenphd-2" class="sc-modal-backdrop">
-    <div class="sc-modal-content">
-        <div class="sc-modal-header">
-            <button onclick="closeModal('ruthvanderhallenphd-2')" class="sc-close-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 18 12"/></svg>
-            </button>
-        </div>
-        <div class="sc-modal-body">
-            <div class="sc-modal-layout">
-                <div class="sc-modal-sidebar">
-                    <div class="sc-modal-img">
-                        <img src="/authors/ruthvanderhallenphd/avatar.webp" alt="Ruth Van der Hallen, PhD " />
-                    </div>
-                    <div class="sc-social-links">
-                        <a href="https://www.eur.nl/people/ruth-van-der-hallen" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a><a href="mailto:confidential-advisor@forrt.org" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
-                    </div>
-                </div>
-                <div class="sc-modal-main">
-                    <h3 class="sc-modal-name">Ruth Van der Hallen, PhD </h3>
-                    <p class="sc-modal-role">Confidential Advisor</p>
-                    <div class="sc-modal-bio">Ruth Van der Hallen is an Associate Professor in Clinical Psychology at Erasmus University Rotterdam, where she combines teaching, research, and academic leadership. She coordinates the Master’s specialisation in Clinical Psychology and leads projects that connect academic training with professional practice in clinical settings. In addition, she serves as a confidential counsellor for students and staff at the university. At FORRT, she acts as a confidential advisor and offers a safe and independent point of contact for community members seeking advice or support when navigating sensitive situations involving inappropriate behaviour, interpersonal conflicts, and concerns related to integrity and professional conduct.</div>
                 </div>
             </div>
         </div>
