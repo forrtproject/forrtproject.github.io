@@ -26805,6 +26805,9 @@
                     "Helena Hartmann",
                     "Jennifer Mattschey"
                 ],
+                "aliases": [
+                    "/glossary/german/computational_rechenmodell"
+                ],
                 "lastmod": "2026-11-09"
             },
             {
@@ -26842,6 +26845,9 @@
                 "translation_reviewed_by": [
                     "Helena Hartmann",
                     "Jennifer Mattschey"
+                ],
+                "aliases": [
+                    "/glossary/german/statistical_statistisches_modell"
                 ],
                 "lastmod": "2026-11-09"
             },

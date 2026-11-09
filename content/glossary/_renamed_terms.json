@@ -1,4 +1,12 @@
 {
+    "german": {
+        "Model (computational)": [
+            "computational_rechenmodell"
+        ],
+        "Model (statistical)": [
+            "statistical_statistisches_modell"
+        ]
+    },
     "arabic": {
         "Adversarial (collaborative) commentary": [
             "collaborative_commentary_الت_عليق_الت_عاوني_العدايي"
