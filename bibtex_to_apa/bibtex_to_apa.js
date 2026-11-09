@@ -56,6 +56,9 @@ function bibtexToApaJson(bibtexContent, includeUrl = true) {
     // re-escape to &amp;, and URLs with query strings (e.g. ...&oldid=) link
     // correctly instead of double-escaping to &amp;#38;.
     ref = ref.replace(/&#38;/g, '&');
+    // BibTeX "and others" truncates an author list; citation-js prints it as a
+    // literal last author ("…, & others. (2019)"). Show it as "et al." instead.
+    ref = ref.replace(/, & others\.(?= \()/, ', et al.');
 
     if (includeUrl) {
       const url = extractUrl(entry);
