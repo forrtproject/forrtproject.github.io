@@ -38,7 +38,8 @@ class FeaturedReferences(unittest.TestCase):
                 "Celebrating 30 years of <i>Feminism & Psychology</i>",
             "Registered Reports at &lt;em&gt;AIMS Neuroscience&lt;/em&gt; and beyond":
                 "Registered Reports at <i>AIMS Neuroscience</i> and beyond",
-            "The earth is round (p\u2002&lt;\u2002.05).": "The earth is round (p < .05).",
+            "The earth is round (p\u2002&lt;\u2002.05).": "The earth is round (p &lt; .05).",
+            "Title &lt;img src=x onerror=alert(1)&gt;": "Title &lt;img src=x onerror=alert(1)&gt;",
             "Promoting Research Integrity in <scp>A</scp>frica": "Promoting Research Integrity in <scp>A</scp>frica",
             "psychology departments in the\n                    <scp>UK</scp>\n                    and Ireland":
                 "psychology departments in the <scp>UK</scp> and Ireland",
@@ -51,6 +52,9 @@ class FeaturedReferences(unittest.TestCase):
             featured.make_short_ref("Open Science Collaboration. (2015). Estimating the reproducibility."),
             "Open Science Collaboration (2015)",
         )
+
+    def test_et_al_keeps_its_full_stop(self):
+        self.assertEqual(featured.make_short_ref("Doe et al. (2020). Title."), "Doe et al. (2020)")
 
     def test_apa_entities_are_decoded(self):
         self.assertEqual(

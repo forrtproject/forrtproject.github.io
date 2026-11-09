@@ -237,17 +237,21 @@ def looks_like_citation(text):
 AUTHOR_START_RE = re.compile(r"^[^\W\d_][^,()]{0,60}, (?:[A-Z]\.|[A-Z][a-z]+(?: [A-Z]\.)+)")
 
 
+REFERENCE_DATE_RE = re.compile(r'\((?:\d{4}[a-z]?(?:, [^)]*)?|n\.d\.)\)\.')
+
+
 def is_description_with_year(text):
     """True for prose that mentions a year, as opposed to a reference.
 
-    A reference starts with an author list ('Surname, X.') or carries a DOI or URL.
+    A reference starts with an author list ('Surname, X.'), has a date followed by a
+    full stop ('(2015).', 'Open Science Collaboration. (2015).'), or carries a DOI or URL.
     """
     if not looks_like_citation(text):
         return False
     lower = text.lower()
     if 'doi.org/' in lower or 'http://' in lower or 'https://' in lower:
         return False
-    return not AUTHOR_START_RE.match(text)
+    return not (AUTHOR_START_RE.match(text) or REFERENCE_DATE_RE.search(text))
 
 
 STOP_WORDS = frozenset(

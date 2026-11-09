@@ -46,9 +46,14 @@ class StandardSubClusters(unittest.TestCase):
 
     def test_unbulleted_reference_under_a_heading_stays_a_reference(self):
         heading = "Standards"
-        lines = [heading, "Clarke, V. (2022). Navigating the messy swamp. Qualitative Psychology."]
-        [sub] = parse_subclusters_standard(lines, 0, len(lines), [heading], "Cluster")
-        self.assertEqual((sub.description, len(sub.raw_citations)), ("", 1))
+        for reference in (
+            "Clarke, V. (2022). Navigating the messy swamp. Qualitative Psychology.",
+            "Open Science Collaboration. (2015). Estimating the reproducibility. Science.",
+            "Jane Doe (2020, May). A talk. Conference.",
+        ):
+            lines = [heading, reference]
+            [sub] = parse_subclusters_standard(lines, 0, len(lines), [heading], "Cluster")
+            self.assertEqual((sub.description, len(sub.raw_citations)), ("", 1), reference)
 
     def test_comment_marker_before_indent_is_a_continuation(self):
         heading = "Questionable measurement practices (QMPs), validity & reliability issues."

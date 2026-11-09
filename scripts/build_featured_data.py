@@ -106,8 +106,9 @@ def clean_markup_text(text: str) -> str:
 
     Crossref metadata in the Publications sheet carries HTML entities ('&amp;'),
     sometimes escaped twice ('&lt;em&gt;'), and the inline tags <i>, <em> and
-    <scp>. Entities are decoded, <em> becomes <i>, and whitespace is collapsed.
-    The templates render <i> and <scp> and escape everything else.
+    <scp>. Entities are decoded, <em> becomes <i>, other angle brackets are
+    re-encoded and whitespace is collapsed. The templates render <i> and <scp>
+    and escape everything else.
     """
     for _ in range(2):
         decoded = html.unescape(text)
@@ -115,6 +116,9 @@ def clean_markup_text(text: str) -> str:
             break
         text = decoded
     text = re.sub(r'<(/?)em>', r'<\1i>', text, flags=re.IGNORECASE)
+    # Any other angle bracket stays encoded, so only <i> and <scp> can ever be markup.
+    text = text.replace('<', '&lt;').replace('>', '&gt;')
+    text = re.sub(r'&lt;(/?(?:i|scp))&gt;', r'<\1>', text, flags=re.IGNORECASE)
     return ' '.join(text.split())
 
 
@@ -131,7 +135,9 @@ def make_short_ref(apa: str) -> str:
     m = re.match(r"^(.+?)\((\d{4})\)", apa)
     if not m:
         return apa[:60]
-    authors_part = m.group(1).strip().rstrip(",.").strip()
+    authors_part = m.group(1).strip().rstrip(",").strip()
+    if not authors_part.endswith("et al."):
+        authors_part = authors_part.rstrip(".").strip()  # group author: "Open Science Collaboration."
     year = m.group(2)
     amp_count = authors_part.count("&")
     if amp_count == 0:
