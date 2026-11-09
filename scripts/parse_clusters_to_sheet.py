@@ -1086,7 +1086,8 @@ def main():
     parser.add_argument('--cache-file', default=DEFAULT_CACHE,
                         help='DOI cache file path')
     parser.add_argument('--export-json', action='store_true',
-                        help='Export clusters data as JSON for Hugo (data/clusters_v4.json)')
+                        help='Export clusters data as JSON for Hugo (data/clusters_v4.json) and still write '
+                             'the sheet; use --json-only to export without touching the sheet')
     parser.add_argument('--json-only', action='store_true',
                         help='Only export JSON (skip sheet writing)')
     args = parser.parse_args()
