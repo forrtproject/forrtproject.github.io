@@ -261,7 +261,7 @@ def display_name(name):
     phd = re.match(r'^(.*?),\s*PhD$', name)
     if phd:
         name = phd.group(1).strip()
-        if not name.startswith('Dr '):
+        if not re.match(r'^(Dr|Prof)\b', name):
             name = f"Dr {name}"
     return name
 
@@ -324,10 +324,13 @@ def find_existing_author_dir(personal_name, authors_dir):
     if best_match is None:
         # Folders added by hand are sometimes slugged without separators
         # (e.g. "ruthvanderhallenphd"); match those on letters and digits alone.
+        # Use this only when exactly one folder matches, so the result never depends on
+        # directory order.
         compact_target = re.sub(r'[^a-z0-9]', '', normalized_target)
-        for existing_dir in authors_dir.iterdir():
-            if existing_dir.is_dir() and existing_dir.name.replace('-', '') == compact_target:
-                return existing_dir.name
+        compact_matches = [d.name for d in authors_dir.iterdir()
+                           if d.is_dir() and d.name.replace('-', '') == compact_target]
+        if len(compact_matches) == 1:
+            return compact_matches[0]
     return best_match
 
 def sanitize_filename(name):
