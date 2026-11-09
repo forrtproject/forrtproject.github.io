@@ -102,7 +102,7 @@ Would you like to help us be or do better? Give us (anonymous) feedback in our [
 
 ### The problem
 
-* Recently, the scientific community took steps to reflect a widespread awareness of, and call for, improved practices ushering in the “credibility revolution” including higher standards of evidence, preregistration, direct replication, transparency, and openness.
+* Since the 2010s, the scientific community has taken steps to reflect a widespread awareness of, and call for, improved practices ushering in the “credibility revolution” including higher standards of evidence, preregistration, direct replication, transparency, and openness.
 * Structurally, three pillars were proposed to carry social sciences towards academic utopia:  opening scientific communication, restructuring incentives and practices, and collaborative and crowdsourced science. 
 
 However, ongoing attempts have neglected an essential aspect of the academic machinery: students. And indeed, current norms for the teaching and mentoring in higher education are rooted in the obsolete practices of bygone eras. Improving transparency and rigor of science is the responsibility of all who engage in it.
@@ -126,7 +126,7 @@ FORRT supports this endeavor through a three-pronged approach:
   <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT’s Educational Nexus](/nexus/)  
   <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT’s Pedagogies](/pedagogies/)
 
-3. Modifying the academic incentive structure regarding teaching and mentoring through recognition and commendations of excellent teaching and mentoring; foster social justice through the opening and democratization of scientific-educational resources to those who otherwise would be educationally disenfranchised; and building a community with existing educational initiatives and strengthening our missions, identify and reduce redundancies, and streamline the advancement of open educational practices.  
+3. Modifying the academic incentive structure regarding teaching and mentoring through recognition and commendations of excellent teaching and mentoring; fostering social justice through the opening and democratization of scientific-educational resources to those who otherwise would be educationally disenfranchised; and building a community with existing educational initiatives, strengthening our missions, identifying and reducing redundancies, and streamlining the advancement of open educational practices.  
   
   <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT’s Toward Social Justice in Academia initiatives](/dei/)   
   <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT's Neurodiversity Team](/neurodiversity/)   

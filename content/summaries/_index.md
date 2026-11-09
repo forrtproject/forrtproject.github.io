@@ -21,8 +21,6 @@ menu:
     weight: 1
 ---
 
-# *100+ Summaries of Open and Reproducible Science Literature*
-
 ## Overview
 
 The FORRT community has prepared 100+ summaries of Open and Reproducible Science literature. The purpose of these summaries is to reduce some of the burden on educators looking to incorporate open and reproducible research principles into their teaching as well as facilitate the edification of anyone wishing to learn or disseminate open and reproducible science tenets.

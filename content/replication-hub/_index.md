@@ -66,6 +66,7 @@ cards:
     summary: Get replications to the people who need them.
     links:
       - url: "https://replicationresearch.org"
+        label: "Replication Research (R2)"
         note: "Publish and read reproduction and replication research in a diamond open access journal."
       - url: "https://ejournals.uni-muenster.de/replicationresearch/mentorshipprogram"
         label: "R2 Mentorship Program"

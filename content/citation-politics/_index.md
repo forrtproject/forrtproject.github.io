@@ -54,14 +54,14 @@ This guide will walk you through using the Citational Justice Toolkit to conduct
 This material will help you spread the word about citational justice in your own teaching.
 
 ### Diversify Your Content Workshop
-This workshop will guide you through applying the Citational Justice Workshop to teaching content using focused questions to target changes. In development in English and Spanish.
+This workshop will guide you through applying the Citational Justice Toolkit to teaching content using focused questions to target changes. In development in English and Spanish.
 
 # Get involved!
 
 --- 
 
-This toolkit and accompanying manuscript are only the first piece of work produced by the FORRT Citational Politics Working Group.
-For **FORRT’s Citation Politics Team** [(#citation-politics)](https://forrt.slack.com/archives/C074E9LDES2), we devised a few action points we will be working on:
+This toolkit and accompanying manuscript are only the first piece of work produced by FORRT’s Team Citation Politics.
+For **FORRT’s Team Citation Politics** [(#citation-politics)](https://forrt.slack.com/archives/C074E9LDES2), we devised a few action points we will be working on:
 
 ### Toolkit Expansion and Infrastructure Building
 - Modularize the toolkit by audience: for authors, editors, instructors, students.
@@ -74,7 +74,7 @@ For **FORRT’s Citation Politics Team** [(#citation-politics)](https://forrt.sl
 - Conduct longitudinal citation audits by field or journal using gender, region, epistemology as categories.
 - Develop or refine methods for ethical demographic inference using community consultation and validation.
 - Benchmark (per field and per category) citational diversity.
-- Integrate and expand categories with Academic Wheel of Privilege’s. 
+- Integrate and expand categories with those of the Academic Wheel of Privilege. 
 - Study via Dimensions & Altmetric data to see whether citations across papers with low and high diversity rank higher or lower on Dimensions & Altmetric areas.
 
 
