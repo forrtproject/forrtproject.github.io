@@ -33,6 +33,7 @@ coc/index.html  # Its title was empty (" | FORRT"), and it now says Code of Cond
 glossary/english/research_contribution_metric__p_/index.html  # #1085: glossary titles render their Markdown, so the <title>, og:title and JSON-LD name read "(p)" instead of "(*p*)"
 glossary/german/p/index.html  # #1085: glossary titles render their Markdown, so the <title>, og:title and JSON-LD name read "(p)" instead of "(*p*)"
 glossary/arabic/مقياس_المساهمة_البحثي_ة_نشر/index.html  # #1085: glossary titles render their Markdown, so the <title>, og:title and JSON-LD name read "(p)" instead of "(*p*)"
+glossary/arabic/p_مقياس_المساهمة_البحثي_ة_نشر/index.html  # #1085: the same Arabic page under the older slug that the content committed on this branch still uses
 glossary/chinese/研究贡献指标_p_/index.html  # #1085: glossary titles render their Markdown, so the <title>, og:title and JSON-LD name read "(p)" instead of "(*p*)"
 glossary/turkish/bilimsel_katkı_olcutu_p_/index.html  # #1085: glossary titles render their Markdown, so the <title>, og:title and JSON-LD name read "(p)" instead of "(*p*)"
 about/charity/gep/index.html  # #973: redirect from the address printed in the GEP PDF to /about/charity/, not a page
