@@ -37,6 +37,7 @@ import glob
 import json
 import os
 import re
+import unicodedata
 from collections import defaultdict
 from html import escape
 
@@ -52,8 +53,9 @@ URL_RE = re.compile(r"(?<![\"'>])(https?://[^\s<>]+[^\s<>.,;)])")
 
 def sort_key(citation):
     # Sort like a bibliography: by the leading author/title text, ignoring
-    # leading markup/punctuation and case.
+    # leading markup/punctuation, case and diacritics (so "Özkan" files under O).
     text = re.sub(r"<[^>]+>", "", MD_LINK_RE.sub(r"\1", citation))
+    text = "".join(c for c in unicodedata.normalize("NFKD", text) if not unicodedata.combining(c))
     return re.sub(r"^[^\w]+", "", text).casefold()
 
 
