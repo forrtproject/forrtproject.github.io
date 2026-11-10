@@ -313,6 +313,12 @@
   parent = "replications"
 
 [[main]]
+  name = "FLoRA"
+  url = "/replication-hub/flora/"
+  weight = 61.5
+  parent = "replications"
+
+[[main]]
   name = "Replication Atlas"
   url = "https://forrt.org/flora-replication-atlas/"
   weight = 62
@@ -325,7 +331,7 @@
   parent = "replications"
 
 [[main]]
-  name = "FORRT ORE browser extension"
+  name = "Browser Extension"
   url = "https://forrt.org/chromium-extension/"
   weight = 63
   parent = "replications"
