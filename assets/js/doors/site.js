@@ -156,10 +156,8 @@ document.querySelectorAll('.newsletter-form').forEach((form) => {
       });
       holder.hidden = true;
     }
-    // A visitor can close reCAPTCHA's picture challenge, which then never answers.
     return new Promise((resolve, reject) => {
       solved = { resolve, reject };
-      setTimeout(() => reject(new Error('reCAPTCHA timed out')), 120000);
       grecaptcha.execute(widget);
     });
   };
@@ -172,13 +170,18 @@ document.querySelectorAll('.newsletter-form').forEach((form) => {
     try {
       const body = new URLSearchParams();
       form.querySelectorAll('input[name]').forEach((input) => body.set(input.name, input.value.trim()));
-      body.set('recaptcha-response', await token());
+      // Covers a reCAPTCHA script that stalls as well as a challenge the visitor closes.
+      body.set('recaptcha-response', await Promise.race([
+        token(),
+        new Promise((resolve, reject) => setTimeout(() => reject(new Error('reCAPTCHA timed out')), 120000)),
+      ]));
       const reply = await (await fetch(form.action, { method: 'POST', mode: 'cors', cache: 'no-cache', body })).json();
       if (reply.success) {
         form.classList.add('is-done');
         say(reply.contact?.status === 'PENDING'
           ? 'Nearly done: we have emailed you a link to confirm your subscription.'
           : 'Thanks for subscribing! Look out for FORRT news in your inbox.');
+        status.focus();
         return;
       }
       const code = reply.error?.code;
@@ -190,7 +193,7 @@ document.querySelectorAll('.newsletter-form').forEach((form) => {
       say('Sorry, that did not work. Please try again, or ask to join at info@forrt.org.', true);
     } finally {
       button.disabled = false;
-      if (widget !== undefined) window.grecaptcha.reset(widget);
+      if (widget !== undefined) window.grecaptcha?.reset(widget);
     }
   });
 });

@@ -54,7 +54,7 @@ REDIRECTS = {
 PREVIEW_URL = "https://forrt.org/rebrand-doors/"
 SITE_URL = "https://forrt.org/"
 BLOCK = re.compile(r"googletagmanager|google-analytics|doubleclick|youtube")
-# The newsletter embed and what it pulls in. None of these may load until a visitor clicks.
+# The newsletter's third-party services. None of these may load until a visitor subscribes.
 EMBED_HOSTS = ("eocampaign1.com", "eo.page", "fonts.googleapis.com", "fonts.gstatic.com")
 EMBED_URLS = re.compile(r"https://www\.(google\.com|gstatic\.com)/recaptcha/")
 
@@ -209,7 +209,8 @@ def check_links_assets(browser, base, failures, production=False):
 
 
 def check_newsletter(browser, base, failures):
-    """The form loads on a click and not before, and shows EmailOctopus's badge."""
+    """The native form contacts EmailOctopus and reCAPTCHA only on a valid submit. The check never
+    submits a valid address, because that would add a contact to the live list."""
     context = browser.new_context(viewport={"width": 1440, "height": 900})
     page = context.new_page()
     page.route("**/*", lambda route: route.abort() if BLOCK.search(route.request.url) else route.continue_())
@@ -218,20 +219,21 @@ def check_newsletter(browser, base, failures):
     page.goto(base + "newsletters/", wait_until="load", timeout=120000)
     page.wait_for_timeout(1500)
     if seen:
-        failures.append(f"newsletter page loaded the embed before a click: {seen[:3]}")
+        failures.append(f"newsletter page loaded a third-party service before Subscribe: {seen[:3]}")
     try:
-        page.click(".newsletter-open", timeout=10000)
-        page.wait_for_selector(".newsletter-form .emailoctopus-form input[type=email]", timeout=30000)
-        if not page.locator('.newsletter-form .mastfoot a[href*="emailoctopus.com"]').is_visible():
-            failures.append("newsletter form: the Powered by EmailOctopus badge is not visible")
-        if page.locator(".newsletter-open").count():
-            failures.append("newsletter form: the button is still there after the form loaded")
-        focused = page.evaluate("document.activeElement?.type")
-        print(f"  Form opened; focus on {focused}; requests after the click: {len(seen)}")
-        if focused != "email":
-            failures.append(f"newsletter form: focus went to {focused}, not the email field")
+        form = page.locator("form.newsletter-form")
+        if not form.locator("input[type=email]").is_visible() or not form.locator(".newsletter-submit").is_visible():
+            failures.append("newsletter form: the email field or Subscribe button is not visible")
+        if not form.locator('.newsletter-note a[href*="policies.google.com/terms"]').count():
+            failures.append("newsletter form: the note lacks Google's reCAPTCHA terms link")
+        form.locator("input[type=email]").fill("not-an-address")
+        form.locator(".newsletter-submit").click()
+        page.wait_for_timeout(1500)
+        print(f"  Form present; requests after an invalid submit: {len(seen)}")
+        if seen:
+            failures.append(f"newsletter form contacted a third party on an invalid address: {seen[:3]}")
     except Exception as error:
-        failures.append(f"newsletter form did not appear after a click: {str(error)[:200]}")
+        failures.append(f"newsletter form check failed: {str(error)[:200]}")
     context.close()
 
 

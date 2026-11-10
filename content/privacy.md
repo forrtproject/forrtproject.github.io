@@ -1,9 +1,9 @@
 ---
 title: Privacy policy
-date: 2026-11-03
+date: 2026-11-10
 ---
 
-*Last updated: 3 November 2026*
+*Last updated: 10 November 2026*
 
 This policy explains what happens to personal data when you use forrt.org, why, and what rights you have.
 

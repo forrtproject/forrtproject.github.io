@@ -18,3 +18,4 @@ form.newsletter-form p.newsletter-note{margin:8px 0 0;color:var(--soft);font-siz
 .newsletter-note a{color:inherit;text-decoration:underline}
 .newsletter-form.is-done .newsletter-row,.newsletter-form.is-done .newsletter-note{display:none}
 .newsletter-form.is-done .newsletter-status{margin-top:0}
+.newsletter-status:focus{outline:none}
