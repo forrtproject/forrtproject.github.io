@@ -266,6 +266,13 @@ for language_code in languages_to_process:
             else:
                 title = en_title
 
+        # Keep statistical emphasis for rendering without putting Markdown
+        # markers in page names, sorting or structured-data titles.
+        display_title = None
+        if language_code == 'BG' and '*p*' in title:
+            display_title = title
+            title = title.replace('*p*', 'p')
+
         # Process references: always combine the generic shared column with any
         # language-specific column (e.g. AR_refs, CN_refs), generic first. Both use
         # the same [@citekey] format resolved via apa_lookup; dedupe across them.
@@ -305,6 +312,8 @@ for language_code in languages_to_process:
         if language_code == 'BG':
             entry['related_terms'] = []
             entry['reviewed_by'] = [name for name in entry['reviewed_by'] if name.strip()]
+            if display_title:
+                entry['display_title'] = display_title
             related_text = safe_get(row, 'BG_rel')
             if related_text:
                 entry['related_terms_text'] = related_text

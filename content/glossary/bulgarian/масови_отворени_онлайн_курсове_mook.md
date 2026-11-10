@@ -24,10 +24,10 @@
     "language": "bulgarian",
     "related_terms_text": "[Accessibility](https://forrt.org/glossary/english/accessibility/), Distance education, [Inclusion](https://forrt.org/glossary/english/inclusion/), Open learning",
     "translated_by": [
-        "Vladislava Trashlieva"
+        "Владислава Трашлиева"
     ],
     "translation_reviewed_by": [
-        "Antonia Krasteva"
+        "Антония Кръстева"
     ],
-    "lastmod": "2026-11-09"
+    "lastmod": "2026-11-10"
 }

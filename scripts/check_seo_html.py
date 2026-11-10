@@ -83,6 +83,7 @@ class PageParser(HTMLParser):
             self._h1_depth += 1
         elif tag == "span" and self._h1_depth and attrs.get("lang") == "en":
             self._h1_english = True
+            self.h1_english_texts.append("")
         elif tag == "a" and attrs.get("href"):
             self.anchors.append(attrs["href"])
         elif tag in ("script", "link"):
@@ -103,6 +104,8 @@ class PageParser(HTMLParser):
 
     def handle_endtag(self, tag):
         if tag in ("span", "h1"):
+            if self._h1_english:
+                self.h1_english_texts[-1] = self.h1_english_texts[-1].strip()
             self._h1_english = False
         if tag == "script" and self._jsonld_buffer is not None:
             self.jsonld.append("".join(self._jsonld_buffer))
@@ -121,7 +124,7 @@ class PageParser(HTMLParser):
         if self._h1_depth > 0:
             self._h1_buffer.append(data)
             if self._h1_english:
-                self.h1_english_texts.append(data.strip())
+                self.h1_english_texts[-1] += data
 
 
 class Page:

@@ -12973,7 +12973,7 @@
                 "en_title": "Error detection",
                 "title": "Улавяне на грешки [Error detection]",
                 "sort_key": "улавяне на грешки [error detection]",
-                "definition": "Най-общо се отнася до изпитване на изследователски данни и ръкописи за грешки или несъответствия в докладването. Често обсъжданите подходи включват: проверка на несъответствия в дескриптивните статистики (напр. обобщителни статистики, които не са възможни, предвид размера на извадката и характеристиките на измерването; Brown & Heathers, 2017; Heathers et al. 2018), несъответствия в докладваните статистики (напр. p-стойности, които не съвпадат с докладваната F-статистика и съпътстващите степени на свобода; Epskamp, ​​& Nuijten, 2016; Nuijten et al. 2016) и манипулиране на изображения (Bik et al., 2016). Улавянето на грешки е един от мотивите, данните и кодът за анализ да бъдат свободно достъпни, така че научната рецензия да може да потвърди откритията в ръкописа или, ако вече е публикуван, записът да може да бъде коригиран. Уловените грешките могат да доведат до корекции или оттегляне на публикувани статии, въпреки че тези действия често се забавят дълго след като погрешните открития са повлияли и въздействали на по-нататъшните изследвания.",
+                "definition": "Най-общо се отнася до изпитване на изследователски данни и ръкописи за грешки или несъответствия в докладването. Често обсъжданите подходи включват: проверка на несъответствия в дескриптивните статистики (напр. обобщителни статистики, които не са възможни, предвид размера на извадката и характеристиките на измерването; Brown & Heathers, 2017; Heathers et al. 2018), несъответствия в докладваните статистики (напр. *p*-стойности, които не съвпадат с докладваната F-статистика и съпътстващите степени на свобода; Epskamp, ​​& Nuijten, 2016; Nuijten et al. 2016) и манипулиране на изображения (Bik et al., 2016). Улавянето на грешки е един от мотивите, данните и кодът за анализ да бъдат свободно достъпни, така че научната рецензия да може да потвърди откритията в ръкописа или, ако вече е публикуван, записът да може да бъде коригиран. Уловените грешките могат да доведат до корекции или оттегляне на публикувани статии, въпреки че тези действия често се забавят дълго след като погрешните открития са повлияли и въздействали на по-нататъшните изследвания.",
                 "related_terms": [],
                 "references": [
                     "Bik et al. (2016); Brown and Heathers (2017); Epskamp and Nuijten (2016); Heathers et al. (2018); Nuijten et al. (2016); https://retractionwatch.com/"
@@ -13000,7 +13000,7 @@
                 "translation_reviewed_by": [
                     "Златомира Илчовска"
                 ],
-                "lastmod": "2026-11-09"
+                "lastmod": "2026-11-10"
             },
             {
                 "type": "glossary",
@@ -13156,12 +13156,12 @@
                 "language": "bulgarian",
                 "related_terms_text": "Analytic Flexibility, Confirmatory analyses, Exploratory data analysis, Fudging, Garden of forking paths, P-hacking, Questionable Research Practices or Questionable Reporting Practices (QRPs)",
                 "translated_by": [
-                    "Vladislava Trashlieva"
+                    "Владислава Трашлиева"
                 ],
                 "translation_reviewed_by": [
-                    "Antonia Krasteva"
+                    "Антония Кръстева"
                 ],
-                "lastmod": "2026-11-09"
+                "lastmod": "2026-11-10"
             },
             {
                 "type": "glossary",
@@ -13416,12 +13416,12 @@
                 "language": "bulgarian",
                 "related_terms_text": "[Accessibility](https://forrt.org/glossary/english/accessibility/), Distance education, [Inclusion](https://forrt.org/glossary/english/inclusion/), Open learning",
                 "translated_by": [
-                    "Vladislava Trashlieva"
+                    "Владислава Трашлиева"
                 ],
                 "translation_reviewed_by": [
-                    "Antonia Krasteva"
+                    "Антония Кръстева"
                 ],
-                "lastmod": "2026-11-09"
+                "lastmod": "2026-11-10"
             },
             {
                 "type": "glossary",
@@ -13449,12 +13449,12 @@
                 "language": "bulgarian",
                 "related_terms_text": "Matthew effect in education, Stigler’s law of eponymy",
                 "translated_by": [
-                    "Vladislava Trashlieva"
+                    "Владислава Трашлиева"
                 ],
                 "translation_reviewed_by": [
-                    "Antonia Krasteva"
+                    "Антония Кръстева"
                 ],
-                "lastmod": "2026-11-09"
+                "lastmod": "2026-11-10"
             },
             {
                 "type": "glossary",
@@ -13481,12 +13481,12 @@
                 "language": "bulgarian",
                 "related_terms_text": "CONSORT, Correlational Meta-Analysis, Effect size, [Evidence synthesis](https://forrt.org/glossary/english/evidence_synthesis/), Non-Intervention, Reproducible, and Open Systematic Reviews (NIRO-SR), PRISMA, [Publication bias (File Drawer Problem)](https://forrt.org/glossary/english/publication_bias_file_drawer_problem_/), STROBE, [Systematic Review](https://forrt.org/glossary/english/systematic_review/)",
                 "translated_by": [
-                    "Vladislava Trashlieva"
+                    "Владислава Трашлиева"
                 ],
                 "translation_reviewed_by": [
-                    "Antonia Krasteva"
+                    "Антония Кръстева"
                 ],
-                "lastmod": "2026-11-09"
+                "lastmod": "2026-11-10"
             },
             {
                 "type": "glossary",
@@ -13513,12 +13513,12 @@
                 "language": "bulgarian",
                 "related_terms_text": "Data, Open Data Alternative definition: (if applicable) Data about data",
                 "translated_by": [
-                    "Vladislava Trashlieva"
+                    "Владислава Трашлиева"
                 ],
                 "translation_reviewed_by": [
-                    "Antonia Krasteva"
+                    "Антония Кръстева"
                 ],
-                "lastmod": "2026-11-09"
+                "lastmod": "2026-11-10"
             },
             {
                 "type": "glossary",
@@ -13543,12 +13543,12 @@
                 ],
                 "language": "bulgarian",
                 "translated_by": [
-                    "Vladislava Trashlieva"
+                    "Владислава Трашлиева"
                 ],
                 "translation_reviewed_by": [
-                    "Antonia Krasteva"
+                    "Антония Кръстева"
                 ],
-                "lastmod": "2026-11-09"
+                "lastmod": "2026-11-10"
             },
             {
                 "type": "glossary",
@@ -13578,12 +13578,12 @@
                 "language": "bulgarian",
                 "related_terms_text": "Analytic flexibility, Crowdsourcing science, Data Analysis, Garden of Forking Paths, Multiverse Analysis, Researcher Degrees of Freedom, Scientific Transparency",
                 "translated_by": [
-                    "Vladislava Trashlieva"
+                    "Владислава Трашлиева"
                 ],
                 "translation_reviewed_by": [
-                    "Antonia Krasteva"
+                    "Антония Кръстева"
                 ],
-                "lastmod": "2026-11-09"
+                "lastmod": "2026-11-10"
             },
             {
                 "type": "glossary",
@@ -13610,12 +13610,12 @@
                 "language": "bulgarian",
                 "related_terms_text": "Garden of forking paths, Robustness (analyses), Specification curve analysis, Vibration of effects",
                 "translated_by": [
-                    "Vladislava Trashlieva"
+                    "Владислава Трашлиева"
                 ],
                 "translation_reviewed_by": [
-                    "Antonia Krasteva"
+                    "Антония Кръстева"
                 ],
-                "lastmod": "2026-11-09"
+                "lastmod": "2026-11-10"
             },
             {
                 "type": "glossary",
@@ -13675,12 +13675,12 @@
                 "language": "bulgarian",
                 "related_terms_text": "Anonymity, Confidentiality, Data sharing, Research ethics",
                 "translated_by": [
-                    "Vladislava Trashlieva"
+                    "Владислава Трашлиева"
                 ],
                 "translation_reviewed_by": [
-                    "Antonia Krasteva"
+                    "Антония Кръстева"
                 ],
-                "lastmod": "2026-11-09"
+                "lastmod": "2026-11-10"
             },
             {
                 "type": "glossary",
@@ -13708,12 +13708,12 @@
                 "language": "bulgarian",
                 "related_terms_text": "Knowledge accumulation, Systematic review, Systematic Review Protocol",
                 "translated_by": [
-                    "Vladislava Trashlieva"
+                    "Владислава Трашлиева"
                 ],
                 "translation_reviewed_by": [
-                    "Antonia Krasteva"
+                    "Антония Кръстева"
                 ],
-                "lastmod": "2026-11-09"
+                "lastmod": "2026-11-10"
             },
             {
                 "type": "glossary",
@@ -14174,7 +14174,7 @@
                 "en_title": "Optional Stopping",
                 "title": "Необосновано прекратяване [Optional Stopping]",
                 "sort_key": "необосновано прекратяване [optional stopping]",
-                "definition": "Практиката да се анализират данни (и многократно) по време на процеса на събирането им, както и да се взема решение за прекратяване на събирането им, ако даден статистически критерий (например p стойността или фактора на Бейес) достигне определен праг. Ако се вземат подходящи методологични мерки за контрол на грешката от 1-ви тип, това може да бъде ефективна процедура за анализ (вж. Lakens, 2014). Въпреки това, без прозрачно докладване или подходящ контрол на грешките, грешката от 1-ви тип може да се увеличи значително, а необоснованото прекратяване на събиране на данни може да се счете за съмнителна изследователска практика или форма на хакване на p стойността.",
+                "definition": "Практиката да се анализират данни (и многократно) по време на процеса на събирането им, както и да се взема решение за прекратяване на събирането им, ако даден статистически критерий (например *p* стойността или фактора на Бейес) достигне определен праг. Ако се вземат подходящи методологични мерки за контрол на грешката от 1-ви тип, това може да бъде ефективна процедура за анализ (вж. Lakens, 2014). Въпреки това, без прозрачно докладване или подходящ контрол на грешките, грешката от 1-ви тип може да се увеличи значително, а необоснованото прекратяване на събиране на данни може да се счете за съмнителна изследователска практика или форма на хакване на *p* стойността.",
                 "related_terms": [],
                 "references": [
                     "Beffara Bret et al. (2021); Lakens (2014); Sagarin et al. (2014); Schönbrodt et al. (2017)"
@@ -14199,7 +14199,7 @@
                 "translation_reviewed_by": [
                     "Мария Доковова"
                 ],
-                "lastmod": "2026-11-09"
+                "lastmod": "2026-11-10"
             },
             {
                 "type": "glossary",
@@ -14272,7 +14272,7 @@
                 "en_title": "P-curve",
                 "title": "P-крива [P-curve]",
                 "sort_key": "p-крива [p-curve]",
-                "definition": "P-кривата е инструмент за идентификация на потенциални предразсъдъци при публикация, използващ разпределението от статистически значими стойности на p, в поредица от независими резултати. Отклонението от очакваното дясно наклонено разпределение може да бъде използвано за да се оцени наличието и степента на предразсъдъка при публикация: ако кривата е дясно наклонена, има повече много ниски статистически значими p стойности, отразяващи скрит реален ефект. Ако кривата е ляво наклонена, има много, едва достигащи статистическа значимост резултати, точно под прага от 0.05. Това предполага, че на изследванията липсва доказателствена стойност и може да са подплатени със съмнителни изследователски практики (СИП-и; например, хакване на p). В случая на отсъствие на реален ефект (вярна нулева хипотеза) и безпристрастно отчитане на p стойностите, p-кривата, представяща типичното разпределение на тези стойности, ще бъде напълно хоризонтална линия.",
+                "definition": "P-кривата е инструмент за идентификация на потенциални предразсъдъци при публикация, използващ разпределението от статистически значими стойности на *p*, в поредица от независими резултати. Отклонението от очакваното дясно наклонено разпределение може да бъде използвано за да се оцени наличието и степента на предразсъдъка при публикация: ако кривата е дясно наклонена, има повече много ниски статистически значими *p* стойности, отразяващи скрит реален ефект. Ако кривата е ляво наклонена, има много, едва достигащи статистическа значимост резултати, точно под прага от 0.05. Това предполага, че на изследванията липсва доказателствена стойност и може да са подплатени със съмнителни изследователски практики (СИП-и; например, хакване на *p*). В случая на отсъствие на реален ефект (вярна нулева хипотеза) и безпристрастно отчитане на *p* стойностите, *p*-кривата, представяща типичното разпределение на тези стойности, ще бъде напълно хоризонтална линия.",
                 "related_terms": [],
                 "references": [
                     "Bruns and Ioannidis (2016); Simonsohn et al. (2014a); Simonsohn et al. (2014b);  Simonsohn et al. (2019)"
@@ -14291,14 +14291,14 @@
                     null
                 ],
                 "language": "bulgarian",
-                "related_terms_text": "File-drawer, Hypothesis, P-hacking, p-value, Publication bias (File Drawer Problem), Questionable Research Practices or Questionable Reporting Practices (QRPs), Selective reporting, Z-curve",
+                "related_terms_text": "File-drawer, Hypothesis, P-hacking, *p*-value, Publication bias (File Drawer Problem), Questionable Research Practices or Questionable Reporting Practices (QRPs), Selective reporting, Z-curve",
                 "translated_by": [
                     "Златомира Илчовска"
                 ],
                 "translation_reviewed_by": [
                     "Мария Доковова"
                 ],
-                "lastmod": "2026-11-09"
+                "lastmod": "2026-11-10"
             },
             {
                 "type": "glossary",
@@ -14325,12 +14325,12 @@
                 "language": "bulgarian",
                 "related_terms_text": "Data fabrication, Data falsification, Fraud, Plagiarism, Questionable Research Practices or Questionable Reporting Practices (QRPs), Scientific misconduct, Scientific publishing",
                 "translated_by": [
-                    "Vladislava Trashlieva"
+                    "Владислава Трашлиева"
                 ],
                 "translation_reviewed_by": [
-                    "Antonia Krasteva"
+                    "Антония Кръстева"
                 ],
-                "lastmod": "2026-11-09"
+                "lastmod": "2026-11-10"
             },
             {
                 "type": "glossary",
@@ -14357,12 +14357,12 @@
                 "language": "bulgarian",
                 "related_terms_text": "Auxiliary data, Data collection, Data quality, Metadata, Process information",
                 "translated_by": [
-                    "Vladislava Trashlieva"
+                    "Владислава Трашлиева"
                 ],
                 "translation_reviewed_by": [
-                    "Antonia Krasteva"
+                    "Антония Кръстева"
                 ],
-                "lastmod": "2026-11-09"
+                "lastmod": "2026-11-10"
             },
             {
                 "type": "glossary",
@@ -14388,12 +14388,12 @@
                 "language": "bulgarian",
                 "related_terms_text": "HARKing, Preregistration, Questionable Research Practices or Questionable Reporting Practices (QRPs)",
                 "translated_by": [
-                    "Vladislava Trashlieva"
+                    "Владислава Трашлиева"
                 ],
                 "translation_reviewed_by": [
-                    "Antonia Krasteva"
+                    "Антония Кръстева"
                 ],
-                "lastmod": "2026-11-09"
+                "lastmod": "2026-11-10"
             },
             {
                 "type": "glossary",
@@ -14420,12 +14420,12 @@
                 "language": "bulgarian",
                 "related_terms_text": "Collaborative research, Inclusion, Neurodiversity, Patient and Public Involvement (PPI), Transformative paradigm",
                 "translated_by": [
-                    "Vladislava Trashlieva"
+                    "Владислава Трашлиева"
                 ],
                 "translation_reviewed_by": [
-                    "Antonia Krasteva"
+                    "Антония Кръстева"
                 ],
-                "lastmod": "2026-11-09"
+                "lastmod": "2026-11-10"
             },
             {
                 "type": "glossary",
@@ -14451,12 +14451,12 @@
                 "language": "bulgarian",
                 "related_terms_text": "Co-production, Participatory research",
                 "translated_by": [
-                    "Vladislava Trashlieva"
+                    "Владислава Трашлиева"
                 ],
                 "translation_reviewed_by": [
-                    "Antonia Krasteva"
+                    "Антония Кръстева"
                 ],
-                "lastmod": "2026-11-09"
+                "lastmod": "2026-11-10"
             },
             {
                 "type": "glossary",
@@ -14483,12 +14483,12 @@
                 "language": "bulgarian",
                 "related_terms_text": "Accessibility, Open Access",
                 "translated_by": [
-                    "Vladislava Trashlieva"
+                    "Владислава Трашлиева"
                 ],
                 "translation_reviewed_by": [
-                    "Antonia Krasteva"
+                    "Антония Кръстева"
                 ],
-                "lastmod": "2026-11-09"
+                "lastmod": "2026-11-10"
             },
             {
                 "type": "glossary",
@@ -14635,7 +14635,7 @@
                 "definition": "Оценяване на научна работа от квалифициран експерт или експерти, където рецензентът (или рецензентите) знае идентичността на авторът (или авторите), но рецензентите остават анонимни за авторите.",
                 "related_terms": [],
                 "references": [
-                    "[https://v2.sherpa.ac.uk/romeo/](https://v2.sherpa.ac.uk/romeo/)"
+                    "[Largent and Snodgrass (2016)](https://doi.org/10.1016/B978-0-12-802460-7.00005-X)"
                 ],
                 "drafted_by": [
                     "Bradley Baker"
@@ -14650,7 +14650,7 @@
                     null
                 ],
                 "language": "bulgarian",
-                "related_terms_text": "анонимна рецензия, двустранно анонимна рецензия, период на ембарго, отворен достъп, платена бариера, предпечат, хранилище",
+                "related_terms_text": "анонимна рецензия, [Двойно анонимна рецензия](https://forrt.org/glossary/bulgarian/двоино_анонимна_рецензия/), Masked review, [Отворена научна рецензия](https://forrt.org/glossary/bulgarian/отворена_научна_рецензия/), Peer review, [Тройно анонимна рецензия](https://forrt.org/glossary/bulgarian/троино_анонимна_рецензия/)",
                 "translated_by": [
                     "Мария Доковова"
                 ],
@@ -14660,7 +14660,7 @@
                 "aliases": [
                     "/glossary/bulgarian/едностранно_анонимна_реценция"
                 ],
-                "lastmod": "2026-11-09"
+                "lastmod": "2026-11-10"
             },
             {
                 "type": "glossary",
@@ -15037,7 +15037,7 @@
                 "en_title": "The Troubling Trio",
                 "title": "Тревожещата тройка [The Troubling Trio]",
                 "sort_key": "тревожещата тройка [the troubling trio]",
-                "definition": "Описана като комбинация от ниска статистическа мощност, неочакван резултат и р-стойност, която е съвсем малко по-ниска от 0.05.",
+                "definition": "Описана като комбинация от ниска статистическа мощност, неочакван резултат и *p*-стойност, която е съвсем малко по-ниска от 0.05.",
                 "related_terms": [],
                 "references": [
                     "Lindsay (2015)"
@@ -15065,7 +15065,7 @@
                     "/glossary/bulgarian/tревожещата_тройка",
                     "/glossary/bulgarian/tревожещата_троика"
                 ],
-                "lastmod": "2026-11-09"
+                "lastmod": "2026-11-10"
             },
             {
                 "type": "glossary",
@@ -15224,14 +15224,14 @@
                     null
                 ],
                 "language": "bulgarian",
-                "related_terms_text": "честотна статистика, тестване на нулевата хипотеза за статистическа значимост (NHST), нулев резултат, p стойност, съмнителни изследователски практики или съмнителни практики за докладване (QRPs), криза на репликацията, научна честност, статистическа мощност, истински положителен резултат, грешка от втори вид (тип 2)",
+                "related_terms_text": "честотна статистика, тестване на нулевата хипотеза за статистическа значимост (NHST), нулев резултат, *p* стойност, съмнителни изследователски практики или съмнителни практики за докладване (QRPs), криза на репликацията, научна честност, статистическа мощност, истински положителен резултат, грешка от втори вид (тип 2)",
                 "translated_by": [
                     "Мария Доковова"
                 ],
                 "translation_reviewed_by": [
                     "Златомира Илчовска"
                 ],
-                "lastmod": "2026-11-09"
+                "lastmod": "2026-11-10"
             },
             {
                 "type": "glossary",

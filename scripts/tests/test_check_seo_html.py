@@ -52,6 +52,10 @@ class BulgarianGlossaryCheck(unittest.TestCase):
     def test_correct_language_and_unquoted_span_pass(self):
         self.assertEqual(seo.check_bulgarian_glossary([self.term()]), [])
 
+    def test_emphasized_statistic_in_english_suffix_passes(self):
+        term = self.term(heading='<h1><em>p</em>-стойност <span lang=en>[<em>p</em>-value]</span></h1>')
+        self.assertEqual(seo.check_bulgarian_glossary([term]), [])
+
     def test_english_structured_data_fails(self):
         self.assertIn("language is not bg", seo.check_bulgarian_glossary([self.term(language="en")])[0])
 
