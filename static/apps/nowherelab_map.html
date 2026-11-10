@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nowhere Lab Members Map</title>
+<meta name="description" content="Where Nowhere Lab members are based, by country.">
+<meta name="robots" content="noindex">
+<!-- Data: /data/nowherelab_members.json, rebuilt daily by scripts/build_nowherelab_map.py -->
+<link rel="stylesheet" href="../vendor/assets/leaflet/1.5.1/leaflet.css">
+<style>
+  html, body, #map { height: 100%; margin: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  #map { background: #f2f2f0; }
+  .leaflet-tooltip { font-size: 13px; }
+  .note { position: absolute; left: 10px; bottom: 6px; z-index: 1000; font-size: 12px; color: #555;
+          background: rgba(255,255,255,.8); padding: 2px 6px; border-radius: 3px; }
+</style>
+</head>
+<body>
+<div id="map" role="region" aria-label="Map of Nowhere Lab members by country"></div>
+<div class="note" id="note"></div>
+<script src="../vendor/assets/leaflet/1.5.1/leaflet.js"></script>
+<script>
+  var map = L.map('map', { worldCopyJump: true, minZoom: 0, zoomSnap: 0.25, scrollWheelZoom: false }).setView([25, 15], 2);
+  var esri = 'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/';
+  L.tileLayer(esri + 'World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+    attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ', maxZoom: 16
+  }).addTo(map);
+  L.tileLayer(esri + 'World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}', { maxZoom: 16 }).addTo(map);
+
+  fetch('../data/nowherelab_members.json')
+    .then(function (r) { return r.json(); })
+    .then(function (members) {
+      var total = 0;
+      members.forEach(function (m) {
+        total += m.count;
+        L.circleMarker([m.lat, m.lon], {
+          radius: 5 + 3 * Math.sqrt(m.count),
+          color: '#b86d0f', weight: 1, fillColor: '#fda63b', fillOpacity: 0.85
+        }).bindTooltip('<strong>' + m.country + '</strong><br>' + m.count +
+                       (m.count === 1 ? ' member' : ' members')).addTo(map);
+      });
+      map.fitBounds(members.map(function (m) { return [m.lat, m.lon]; }), { padding: [20, 20], animate: false });
+      document.getElementById('note').textContent =
+        total + ' members in ' + members.length + ' countries';
+    });
+</script>
+</body>
+</html>

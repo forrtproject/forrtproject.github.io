@@ -6,10 +6,7 @@ sharing_image: "img/nowherelab-logo.png"
 sharing_image_alt: "Nowhere Lab logo"
 ---
 
-<div style="min-height:458px; margin-bottom: 2rem;">
-  <script type="text/javascript" defer src="https://datawrapper.dwcdn.net/ZNe0j/embed.js?v=7" charset="utf-8"></script>
-  <noscript><img src="https://datawrapper.dwcdn.net/ZNe0j/full.png" style="display:block; width:100%; margin:auto" alt="Map of Nowhere Lab members around the world" /></noscript>
-</div>
+<iframe src="/apps/nowherelab_map.html" title="Map of Nowhere Lab members around the world" loading="lazy" style="width:100%; height:458px; border:none; margin-bottom:2rem;"></iframe>
 
 We are Nowhere Lab. Anyone from any field is welcome to join who doesn't have a lab but would like the lab meeting experience. Target audience includes but is absolutely not limited to:
 
