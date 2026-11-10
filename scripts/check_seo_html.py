@@ -367,21 +367,29 @@ def check_bulgarian_glossary(pages):
     for p in pages:
         if not p.path.startswith("glossary/bulgarian/") or not p.indexable:
             continue
+        found_term = False
         for block in p.jsonld:
             try:
                 term = json.loads(block)
             except ValueError:
-                continue  # The general JSON-LD checks report malformed blocks.
+                continue  # A term route must still have a valid block below.
             if not isinstance(term, dict) or term.get("@type") != "DefinedTerm":
                 continue
-            if (term.get("inLanguage") != "bg"
-                    or term.get("inDefinedTermSet", {}).get("inLanguage") != "bg"):
+            found_term = True
+            if term.get("inLanguage") != "bg":
                 failures.append(f"{p.path} (DefinedTerm language is not bg)")
+            term_set = term.get("inDefinedTermSet")
+            if not isinstance(term_set, dict):
+                failures.append(f"{p.path} (inDefinedTermSet is not an object)")
+            elif term_set.get("inLanguage") != "bg":
+                failures.append(f"{p.path} (DefinedTermSet language is not bg)")
             for title in p.h1_texts:
                 if " [" in title and title.endswith("]"):
                     suffix = "[" + title.rsplit(" [", 1)[1]
                     if suffix not in p.h1_english_texts:
                         failures.append(f"{p.path} (English heading suffix lacks lang=en)")
+        if not found_term and p.path != "glossary/bulgarian/index.html":
+            failures.append(f"{p.path} (missing valid DefinedTerm block)")
         for href in p.anchors:
             url = urlparse(href)
             if url.hostname not in (None, "forrt.org", "staging.forrt.org"):
