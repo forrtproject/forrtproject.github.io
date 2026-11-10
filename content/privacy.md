@@ -1,6 +1,7 @@
 ---
 title: Privacy policy
-date: 2026-11-10
+date: 2026-11-03
+lastmod: 2026-11-10
 ---
 
 *Last updated: 10 November 2026*

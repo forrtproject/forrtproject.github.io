@@ -14,7 +14,7 @@
 form.newsletter-form p.newsletter-status{margin:10px 0 0;font-size:16px;font-weight:600}
 .newsletter-status:empty{display:none}
 .newsletter-status.is-error{color:#a3271f}
-form.newsletter-form p.newsletter-note{margin:8px 0 0;color:var(--soft);font-size:14px;line-height:1.4}
+form.newsletter-form p.newsletter-note{margin:8px 0 0;color:var(--soft);font-size:15px;line-height:1.4}
 .newsletter-note a{color:inherit;text-decoration:underline}
 .newsletter-form.is-done .newsletter-row,.newsletter-form.is-done .newsletter-note{display:none}
 .newsletter-form.is-done .newsletter-status{margin-top:0}
