@@ -1,11 +1,23 @@
-{{/* Newsletter sign-up, from the `subscribe` shortcode and the newsletters page. EmailOctopus's
-     embed loads only when a visitor clicks (assets/js/doors/site.js). Its styles are in
-     assets/css/doors/newsletter.css. Expects at most one form on a page, because the embed
-     anchors itself to the first script it finds. */}}
+{{/* Newsletter sign-up, from the `subscribe` shortcode, the home board and the newsletters page.
+     The form is ours and loads nothing from elsewhere. Pressing Subscribe loads Google reCAPTCHA,
+     which EmailOctopus requires, and then posts the address to EmailOctopus's form endpoint
+     (assets/js/doors/site.js). The IDs below come from the form's embed code in EmailOctopus;
+     if that form is replaced, copy the new form ID, honeypot field name and reCAPTCHA site key
+     from https://eocampaign1.com/form/<id>.js. Styles: assets/css/doors/newsletter.css. */}}
 {{ $form := "5fb3cb44-8c81-11f0-9781-f7fc195374ed" }}
-<div class="newsletter-form" data-newsletter-id="{{ $form }}" data-newsletter-src="https://eocampaign1.com/form/{{ $form }}.js">
-  <button class="newsletter-open" type="button">Subscribe to the newsletter</button>
-  <p class="newsletter-note">The sign-up form comes from EmailOctopus, with spam protection by Google reCAPTCHA. Loading it sends your IP address to them and they may set cookies. See our <a href="{{ "privacy/" | relURL }}#embedded-content">privacy policy</a>.</p>
+<form class="newsletter-form" action="https://eocampaign1.com/form/{{ $form }}" method="post"
+      data-newsletter-sitekey="6LdG8skrAAAAAHG0XCORv-FkbuhBc3caWlOFamMH">
+  <div class="newsletter-row">
+    <label class="newsletter-field">
+      <span class="visually-hidden">Email address</span>
+      <input type="email" name="field_0" required autocomplete="email" placeholder="Your email address">
+    </label>
+    <button class="newsletter-submit" type="submit">Subscribe</button>
+  </div>
+  <div class="newsletter-hp" aria-hidden="true">
+    <input type="text" name="hpc4b27b6e-eb38-11e9-be00-06b4694bee2a" tabindex="-1" autocomplete="off">
+  </div>
   <p class="newsletter-status" role="status"></p>
-  <noscript><style>.newsletter-open,.newsletter-note{display:none}</style><p>The sign-up form needs JavaScript. You can also ask to join at <a href="mailto:info@forrt.org">info@forrt.org</a>.</p></noscript>
-</div>
+  <p class="newsletter-note">Unsubscribe anytime. Uses EmailOctopus and Google reCAPTCHA (Google <a href="https://policies.google.com/privacy">Privacy</a> and <a href="https://policies.google.com/terms">Terms</a> apply). <a href="{{ "privacy/" | relURL }}#newsletter">See our privacy policy</a>.</p>
+  <noscript><style>.newsletter-row,.newsletter-note{display:none}</style><p>Signing up needs JavaScript. You can also ask to join at <a href="mailto:info@forrt.org">info@forrt.org</a>.</p></noscript>
+</form>
