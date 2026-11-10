@@ -209,11 +209,19 @@ def check_links_assets(browser, base, failures, production=False):
 
 
 def check_newsletter(browser, base, failures):
-    """The native form contacts EmailOctopus and reCAPTCHA only on a valid submit. The check never
-    submits a valid address, because that would add a contact to the live list."""
+    """The native form contacts reCAPTCHA and EmailOctopus only on a valid submit. EmailOctopus's
+    endpoint is stubbed, so the check exercises the submit handler without adding a contact."""
     context = browser.new_context(viewport={"width": 1440, "height": 900})
     page = context.new_page()
     page.route("**/*", lambda route: route.abort() if BLOCK.search(route.request.url) else route.continue_())
+    posted = []
+
+    def stub_signup(route):
+        posted.append(route.request.url)
+        route.fulfill(status=200, content_type="application/json", headers={"Access-Control-Allow-Origin": "*"},
+                      body='{"success":true,"contact":{"status":"SUBSCRIBED"}}')
+
+    page.route("https://eocampaign1.com/form/*", stub_signup)
     seen = []
     page.on("request", lambda request: seen.append(request.url) if embed_request(request, page.main_frame) else None)
     page.goto(base + "newsletters/", wait_until="load", timeout=120000)
@@ -222,16 +230,29 @@ def check_newsletter(browser, base, failures):
         failures.append(f"newsletter page loaded a third-party service before Subscribe: {seen[:3]}")
     try:
         form = page.locator("form.newsletter-form")
-        if not form.locator("input[type=email]").is_visible() or not form.locator(".newsletter-submit").is_visible():
+        email = form.locator("input[type=email]")
+        if not email.is_visible() or not form.locator(".newsletter-submit").is_visible():
             failures.append("newsletter form: the email field or Subscribe button is not visible")
         if not form.locator('.newsletter-note a[href*="policies.google.com/terms"]').count():
             failures.append("newsletter form: the note lacks Google's reCAPTCHA terms link")
-        form.locator("input[type=email]").fill("not-an-address")
+        before = len(seen)
+        email.fill("not-an-address")
         form.locator(".newsletter-submit").click()
         page.wait_for_timeout(1500)
-        print(f"  Form present; requests after an invalid submit: {len(seen)}")
-        if seen:
-            failures.append(f"newsletter form contacted a third party on an invalid address: {seen[:3]}")
+        if len(seen) > before:
+            failures.append(f"newsletter form contacted a third party on an invalid address: {seen[before:][:3]}")
+        email.fill("smoke-test@example.invalid")
+        form.locator(".newsletter-submit").click()
+        if not any("recaptcha" in url for url in seen[before:]):
+            page.wait_for_timeout(5000)
+        if not any("recaptcha" in url for url in seen[before:]):
+            failures.append("newsletter form: Subscribe did not load reCAPTCHA")
+        # A headless browser may get a reCAPTCHA picture challenge, so a missing post is reported, not failed.
+        try:
+            page.wait_for_selector("form.newsletter-form.is-done", timeout=20000)
+            print("  Valid submit loaded reCAPTCHA, posted to the stubbed endpoint and showed the thanks")
+        except Exception:
+            print(f"  Valid submit loaded reCAPTCHA; no post within 20 s (posts: {len(posted)}), likely a challenge")
     except Exception as error:
         failures.append(f"newsletter form check failed: {str(error)[:200]}")
     context.close()
