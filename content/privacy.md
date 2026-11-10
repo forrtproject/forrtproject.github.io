@@ -29,9 +29,8 @@ We have not appointed a data protection officer.
 
 | Service | Based in | What it delivers | Where used |
 |---|---|---|---|
-| Esri (ArcGIS Online) | USA | Map tiles | Community map |
+| Esri (ArcGIS Online) | USA | Map tiles | Community map and Nowhere Lab page |
 | Altmetric (Digital Science) | UK, with a US affiliate | Attention badges | Publications page |
-| Datawrapper | Germany | Charts | NOWHERE Lab page |
 | Posit Connect and shinyapps.io (Posit), Heroku (Salesforce) | USA | Interactive tools that run on those platforms | The pages for those tools |
 
 The legal basis is our legitimate interest in showing this content (Art. 6(1)(f) GDPR). You can object at any time; see [your rights](#your-rights). We serve fonts, scripts, stylesheets and icons from forrt.org.

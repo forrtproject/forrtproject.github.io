@@ -14,6 +14,7 @@ Rebuilt by `data-processing.yml`, daily unless noted; a manual dispatch rebuilds
 | `content/glossary/apa_lookup.json`, `content/glossary/references/index.md` | `bibtex_to_apa/bibtex_to_apa.js`, `content/glossary/_build_references.py` | "Glossary BibTex" Google Doc |
 | `data/featured_resources.json`, `data/pub_cards.json`, `data/filter_tags.json` | `scripts/build_featured_data.py` | Recommendations form + Publications sheet |
 | `data/get_involved_projects.json` | `scripts/build_get_involved.py` | Get Involved sheet (fallback `scripts/get_involved/projects.csv`) |
+| `static/data/nowherelab_members.json` (read by `static/apps/nowherelab_map.html`) | `scripts/build_nowherelab_map.py` | Nowhere Lab members sheet (keeps the committed file on failure) |
 | `data/ga_data.json` | `scripts/download_ga_data.py` | Google Analytics (credentials in CI only) |
 | `content/contributors/tenzing.md` | `scripts/forrt_contribs/tenzing.py` | Tenzing sheets |
 | `static/data/fred_citation.txt` | `scripts/update_fred_citation.py` (Sundays) | FReD-data repo |

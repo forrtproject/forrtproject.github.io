@@ -1,0 +1,140 @@
+[
+ {
+  "country": "Australia",
+  "count": 1,
+  "lat": -23.0077,
+  "lon": 132.3648
+ },
+ {
+  "country": "Austria",
+  "count": 1,
+  "lat": 47.5224,
+  "lon": 14.1457
+ },
+ {
+  "country": "Brazil",
+  "count": 2,
+  "lat": -11.9983,
+  "lon": -49.5306
+ },
+ {
+  "country": "Canada",
+  "count": 2,
+  "lat": 58.34,
+  "lon": -112.4914
+ },
+ {
+  "country": "France",
+  "count": 1,
+  "lat": 46.7216,
+  "lon": 2.4477
+ },
+ {
+  "country": "Germany",
+  "count": 6,
+  "lat": 51.1811,
+  "lon": 9.6899
+ },
+ {
+  "country": "Greece",
+  "count": 1,
+  "lat": 39.6437,
+  "lon": 21.7598
+ },
+ {
+  "country": "Hong Kong",
+  "count": 2,
+  "lat": 22.4431,
+  "lon": 114.1548
+ },
+ {
+  "country": "India",
+  "count": 23,
+  "lat": 22.5277,
+  "lon": 78.7406
+ },
+ {
+  "country": "Italy",
+  "count": 1,
+  "lat": 44.7633,
+  "lon": 11.077
+ },
+ {
+  "country": "Japan",
+  "count": 1,
+  "lat": 36.1761,
+  "lon": 138.5311
+ },
+ {
+  "country": "Malaysia",
+  "count": 1,
+  "lat": 2.5403,
+  "lon": 113.8377
+ },
+ {
+  "country": "Netherlands",
+  "count": 1,
+  "lat": 52.4574,
+  "lon": 6.1364
+ },
+ {
+  "country": "Nigeria",
+  "count": 18,
+  "lat": 9.5386,
+  "lon": 7.6109
+ },
+ {
+  "country": "Pakistan",
+  "count": 1,
+  "lat": 30.4765,
+  "lon": 70.9322
+ },
+ {
+  "country": "Philippines",
+  "count": 1,
+  "lat": 16.9105,
+  "lon": 121.3906
+ },
+ {
+  "country": "Poland",
+  "count": 1,
+  "lat": 51.8976,
+  "lon": 20.3967
+ },
+ {
+  "country": "Spain",
+  "count": 1,
+  "lat": 40.0695,
+  "lon": -3.4552
+ },
+ {
+  "country": "Sweden",
+  "count": 1,
+  "lat": 64.1294,
+  "lon": 16.207
+ },
+ {
+  "country": "Türkiye",
+  "count": 3,
+  "lat": 38.9598,
+  "lon": 34.925
+ },
+ {
+  "country": "United Kingdom",
+  "count": 6,
+  "lat": 52.7022,
+  "lon": -1.5636
+ },
+ {
+  "country": "United States of America",
+  "count": 8,
+  "lat": 39.3804,
+  "lon": -97.4653
+ },
+ {
+  "country": "Vietnam",
+  "count": 1,
+  "lat": 21.7046,
+  "lon": 105.4487
+ }
+]
