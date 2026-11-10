@@ -37,7 +37,7 @@ def parse(text: str) -> list[dict]:
         if len(row) < 4:
             raise ValueError(f"row {i} has fewer than four columns: {row}")
         country = row[0].strip()
-        count = int(float(row[1]))
+        count = int(row[1])  # rejects fractional counts
         lat, lon = float(row[2]), float(row[3])
         if count < 1 or not (-90 <= lat <= 90) or not (-180 <= lon <= 180):
             raise ValueError(f"row {i} has an implausible value: {row}")
@@ -52,9 +52,9 @@ def main() -> int:
         req = urllib.request.Request(SHEET_CSV_URL, headers={"User-Agent": "FORRT-build/1.0"})
         with urllib.request.urlopen(req, timeout=30) as resp:
             members = parse(resp.read().decode("utf-8"))
-    except Exception as exc:  # keep the committed data on any failure
+    except Exception as exc:  # keep the committed data; the workflow step continues on error
         print(f"WARNING: Nowhere Lab map data not updated: {exc}")
-        return 0
+        return 1
     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
         json.dump(members, f, ensure_ascii=False, indent=1)
         f.write("\n")

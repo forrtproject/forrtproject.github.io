@@ -29,6 +29,15 @@
   }).addTo(map);
   L.tileLayer(esri + 'World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}', { maxZoom: 16 }).addTo(map);
 
+  function tooltip(m) {
+    var el = document.createElement('div'), name = document.createElement('strong');
+    name.textContent = m.country;
+    el.appendChild(name);
+    el.appendChild(document.createElement('br'));
+    el.appendChild(document.createTextNode(m.count + (m.count === 1 ? ' member' : ' members')));
+    return el;
+  }
+
   fetch('../data/nowherelab_members.json')
     .then(function (r) { return r.json(); })
     .then(function (members) {
@@ -38,12 +47,14 @@
         L.circleMarker([m.lat, m.lon], {
           radius: 5 + 3 * Math.sqrt(m.count),
           color: '#b86d0f', weight: 1, fillColor: '#fda63b', fillOpacity: 0.85
-        }).bindTooltip('<strong>' + m.country + '</strong><br>' + m.count +
-                       (m.count === 1 ? ' member' : ' members')).addTo(map);
+        }).bindTooltip(tooltip(m)).addTo(map);
       });
       map.fitBounds(members.map(function (m) { return [m.lat, m.lon]; }), { padding: [20, 20], animate: false });
       document.getElementById('note').textContent =
         total + ' members in ' + members.length + ' countries';
+    })
+    .catch(function () {
+      document.getElementById('note').textContent = 'The member data could not be loaded.';
     });
 </script>
 </body>
