@@ -4,7 +4,7 @@ Hugo site for forrt.org. Setup, contribution workflow and staging are in `CONTRI
 
 ## Generated content: fix the source, then re-run the generator
 
-Much of the site is built from Google Sheets/Docs. To change such content, edit the source named in the generator's docstring and re-run the generator (or let the workflow run); commit only what the generator writes. `data-processing.yml` uploads its checkout of the following paths as `data-artifact` (`content/curated_resources/`, `content/glossary/`, `data/` except `partners.json` and `publications.yaml`, `static/data/`, `static/partials/`, `static/newsletters/`, `content/contributors/tenzing.md`, `content/contributor-analysis/`, `content/publications/citation_chart.webp`, `scripts/forrt_contribs/contributors_cache.csv`), and `deploy.yaml` unpacks it over the checkout before Hugo builds. Any commit to these paths therefore reaches forrt.org only after the next data-processing run on `main` (daily, or manual dispatch), and a hand edit to a generated output is lost when its generator next runs (schedules below).
+Much of the site is built from Google Sheets/Docs. To change such content, edit the source named in the generator's docstring and re-run the generator (or let the workflow run); commit only what the generator writes. `data-processing.yml` uploads its checkout of the following paths as `data-artifact` (`content/curated_resources/`, `content/glossary/`, `data/` except `partners.json` and `publications.yaml`, `static/data/`, `static/partials/`, `content/contributors/tenzing.md`, `content/contributor-analysis/`, `content/publications/citation_chart.webp`, `scripts/forrt_contribs/contributors_cache.csv`), and `deploy.yaml` unpacks it over the checkout before Hugo builds. Any commit to these paths therefore reaches forrt.org only after the next data-processing run on `main` (daily, or manual dispatch), and a hand edit to a generated output is lost when its generator next runs (schedules below).
 
 Rebuilt by `data-processing.yml`, daily unless noted; a manual dispatch rebuilds all of them except GA data:
 
@@ -15,7 +15,6 @@ Rebuilt by `data-processing.yml`, daily unless noted; a manual dispatch rebuilds
 | `data/featured_resources.json`, `data/pub_cards.json`, `data/filter_tags.json` | `scripts/build_featured_data.py` | Recommendations form + Publications sheet |
 | `data/get_involved_projects.json` | `scripts/build_get_involved.py` | Get Involved sheet (fallback `scripts/get_involved/projects.csv`) |
 | `data/ga_data.json` | `scripts/download_ga_data.py` | Google Analytics (credentials in CI only) |
-| `data/newsletters.json`, `static/newsletters/` (hosted copies of each EmailOctopus issue and its images; the Mailchimp issues up to June 2025 in the same folder are committed copies) | `scripts/sync_newsletters.py`, which adds new issues to the copy restored from `build-resources` (a later resend for an archived month replaces it) | EmailOctopus campaigns (API key in CI only) |
 | `content/contributors/tenzing.md` | `scripts/forrt_contribs/tenzing.py` | Tenzing sheets |
 | `static/data/fred_citation.txt` | `scripts/update_fred_citation.py` (Sundays) | FReD-data repo |
 | `content/contributor-analysis/` | `content/contributor-analysis/*.Rmd` (1st of the month) | Tenzing cache + Google Sheets |
