@@ -1,8 +1,38 @@
 /* The contributor network on /contributor-analysis/. People and projects are drawn on a canvas from
-   the JSON in the page, at positions computed when the data is generated, so nothing moves on its
-   own. Everything the drawing shows can also be reached with the two search boxes and read as text. */
+   the JSON in the page, at positions computed when the data is generated and spread out once here,
+   so nothing moves on its own. Everything the drawing shows can also be reached with the two search
+   boxes and read as text. */
 const root = document.querySelector('[data-analysis-network]');
 const canvas = root && root.querySelector('[data-network-canvas]');
+
+/* A force layout packs the people who share many projects into a dense middle, and how dense it
+   is changes with every data run. This moves each node along the line from the middle by its rank
+   in distance, partly, so that the middle opens up whatever shape the layout took. Distances are
+   measured in each axis's own spread, so the drawing keeps its proportions, and the order outwards
+   is kept, so a project's people stay around it. */
+const SPREAD = 0.7;
+
+function spreadOut(items) {
+  if (items.length < 3) return;
+  const median = (values) => {
+    const sorted = [...values].sort((a, b) => a - b);
+    return sorted[Math.floor(sorted.length / 2)];
+  };
+  const cx = median(items.map((item) => item.x));
+  const cy = median(items.map((item) => item.y));
+  const sx = median(items.map((item) => Math.abs(item.x - cx))) || 1;
+  const sy = median(items.map((item) => Math.abs(item.y - cy))) || 1;
+  const away = items.map((item) => ({ item, r: Math.hypot((item.x - cx) / sx, (item.y - cy) / sy) }))
+    .sort((a, b) => a.r - b.r);
+  const outer = away[away.length - 1].r;
+  if (!outer) return;
+  away.forEach(({ item, r }, i) => {
+    if (!r) return;
+    const target = outer * (SPREAD * Math.sqrt(i / (away.length - 1)) + (1 - SPREAD) * (r / outer));
+    item.x = cx + (item.x - cx) * (target / r);
+    item.y = cy + (item.y - cy) * (target / r);
+  });
+}
 
 if (canvas) {
   const raw = JSON.parse(document.getElementById('network-data').textContent);
@@ -11,18 +41,8 @@ if (canvas) {
     kind: 'person', name, roles, x, y, projects: joined.map((index) => projects[index]),
   }));
   people.forEach((person) => person.projects.forEach((project) => project.members.push(person)));
-  // The older generated file has no positions for projects, and most of its people share one dense
-  // lump. Spreading them by rank on each axis keeps who sits next to whom. Goes with that file.
-  if (projects.length && projects[0].x === undefined) {
-    ['x', 'y'].forEach((axis) => {
-      const sorted = [...people].sort((a, b) => a[axis] - b[axis]);
-      const low = sorted[0][axis];
-      const range = sorted[sorted.length - 1][axis] - low || 1;
-      sorted.forEach((person, i) => {
-        person[axis] = 1000 * (0.75 * (i / (sorted.length - 1 || 1)) + 0.25 * ((person[axis] - low) / range));
-      });
-    });
-  }
+  // The older generated file has no positions for projects, so they sit among their people.
+  // Goes with that file.
   projects.forEach((project) => {
     if (project.x === undefined) {
       project.x = project.members.reduce((sum, person) => sum + person.x, 0) / project.members.length;
@@ -30,6 +50,7 @@ if (canvas) {
     }
     project.radius = Math.min(11, 3 + Math.sqrt(project.members.length) * 0.6);
   });
+  spreadOut([...people, ...projects]);
   people.forEach((person) => { person.radius = Math.min(7, 2 + Math.sqrt(person.roles) * 0.45); });
   const byMembers = [...projects].sort((a, b) => b.members.length - a.members.length);
   const byName = [...projects].sort((a, b) => a.name.localeCompare(b.name));
@@ -56,7 +77,9 @@ if (canvas) {
 
   const phone = window.matchMedia('(max-width:760px)');
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
-  const PAD = 34;
+  // A small drawing, as on a phone, has little room to give to its margins or to names.
+  const narrow = () => view.width < 500;
+  const pad = () => (narrow() ? 18 : 34);
   const MAX_ZOOM = 14;
 
   const state = { person: null, chosen: new Set(), hover: null };
@@ -98,7 +121,7 @@ if (canvas) {
     const box = bounds(items);
     const width = Math.max(box.right - box.left, 1);
     const height = Math.max(box.bottom - box.top, 1);
-    const k = Math.min((view.width - PAD * 2) / width, (view.height - PAD * 2) / height, limit);
+    const k = Math.min((view.width - pad() * 2) / width, (view.height - pad() * 2) / height, limit);
     return { k, x: view.width / 2 - ((box.left + box.right) / 2) * k, y: view.height / 2 - ((box.top + box.bottom) / 2) * k };
   }
 
@@ -170,7 +193,7 @@ if (canvas) {
     // How wide a force layout runs means nothing, so it can take the stage's proportions.
     view.tall = 1;
     const all = bounds(everything());
-    const proportion = ((view.height - PAD * 2) / (view.width - PAD * 2)) / (((all.bottom - all.top) || 1) / ((all.right - all.left) || 1));
+    const proportion = ((view.height - pad() * 2) / (view.width - pad() * 2)) / (((all.bottom - all.top) || 1) / ((all.right - all.left) || 1));
     view.tall = Math.max(0.8, Math.min(1.6, proportion));
     view.fitted = frameFor(everything(), Infinity).k;
     if (followFit) {
@@ -193,7 +216,7 @@ if (canvas) {
     raf = requestAnimationFrame(paint);
   }
 
-  const dotScale = () => Math.min(1.7, Math.max(0.75, Math.sqrt(view.k / view.fitted))) * (view.width < 500 ? 0.62 : 1);
+  const dotScale = () => Math.min(1.7, Math.max(0.75, Math.sqrt(view.k / view.fitted))) * (narrow() ? 0.62 : 1);
 
   function dot(person, radius, fill) {
     context.fillStyle = fill;
@@ -299,7 +322,7 @@ if (canvas) {
       .forEach((project) => wanted.push({ text: project.name, item: project, weight: 600, fill: ink.project, force: state.chosen.has(project) }));
     // At rest the largest projects get names, and more come in with zooming.
     if (!active) {
-      const room = Math.max(4, Math.min(12, (view.width * view.height) / 60000)) * (view.k / view.fitted) ** 2;
+      const room = Math.max(narrow() ? 2 : 4, Math.min(12, (view.width * view.height) / 60000)) * (view.k / view.fitted) ** 2;
       byMembers.slice(0, Math.round(room)).forEach((project) => wanted.push({ text: project.name, item: project, weight: 600, fill: ink.project }));
     }
     // Names of people come in once they have room.
