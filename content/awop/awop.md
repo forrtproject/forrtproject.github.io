@@ -79,8 +79,6 @@ Manuscript | The preprint describing the AWoP | https://doi.org/10.31222/osf.io/
 OSF page | Supplementary files | https://osf.io/pfxqb/overview
 {{< /action_cards >}}
 
-The App is a dynamic tool that allows users to generate customized weighted indicators of privilege across key socio-economic and cultural identity categories. It helps users actively identify and consider privilege in authorship decisions, facilitating equitable and transparent authorship order determination.
-
 ### Supplemental materials
 
 All five are in the [OSF project](https://osf.io/pfxqb/overview).
