@@ -29,6 +29,7 @@ css/citations.min.FINGERPRINT.css  # The old toolkit stylesheet, replaced by css
 post/*/featured_hu.jpg           # The page's resized image is now WebP, so its generated copy has a new name
 post/*/featured_hu.png           # The same
 ai-metascience/featured_hu.png   # The same
+accessibility/index.html         # The accessibility statement, new with the redesign
 coc/index.html  # Its title was empty (" | FORRT"), and it now says Code of Conduct
 glossary/english/research_contribution_metric__p_/index.html  # #1085: glossary titles render their Markdown, so the <title>, og:title and JSON-LD name read "(p)" instead of "(*p*)"
 glossary/german/p/index.html  # #1085: glossary titles render their Markdown, so the <title>, og:title and JSON-LD name read "(p)" instead of "(*p*)"
