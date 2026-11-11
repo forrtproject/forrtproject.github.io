@@ -2,7 +2,7 @@
   "projects": [
     {
       "order": 10,
-      "name": "FLoRA - FORRT Library of Replication and Reproduction Attempts",
+      "name": "FLoRA - FORRT Library of Reproduction and Replication Attempts",
       "link": "/replication-hub/flora/",
       "description": "FLoRA tracks attempts to repeatedly test published findings across the sciences and humanities. As an open, crowd-sourced project we are always looking for collaborators to help curate replications and reproductions and to put the data to use.",
       "slack": "",
