@@ -53,7 +53,9 @@ subtitle = ""
 
 {{% alert note %}}
 
-**This project has now concluded** and has been succeeded by multiple projects within the [FORRT Replication Hub](https://forrt.org/replication-hub/). The outcomes and framework of this initiative are discussed in our recent preprint: [Tracking and Mainstreaming Replications in the Social, Cognitive, and Behavioral Sciences](https://osf.io/preprints/metaarxiv/ad2w6_v1).
+**This project has concluded.** Its work continues in the [FORRT Replication Hub](/replication-hub/), and its outcomes are described in the preprint [Tracking and Mainstreaming Replications in the Social, Cognitive, and Behavioral Sciences](https://osf.io/preprints/metaarxiv/ad2w6_v1). The effects below were crowdsourced and not consistently validated, so check specific claims before relying on them, and please [report errors](https://github.com/forrtproject/forrtproject.github.io/issues/612).
+
+<a class="btn btn-primary" href="/explorer/">Validated data in FReD</a> <a class="btn btn-outline-primary" href="/annotator/">Search FLoRA</a>
 
 {{% /alert %}}
 
@@ -63,21 +65,13 @@ subtitle = ""
 
 FORRT's Replications and Reversals project collected replications of effects in the social sciences, especially reversals: effects whose direction flipped when they were replicated. It was a crowd-sourced, community-driven collection to help scholars and educators keep up with which effects in their field replicate and which do not.
 
-<br>
-
-{{% alert note %}}
-
-Data for this project were crowdsourced and not yet consistently validated. Researchers who contributed to this project did so voluntarily and are listed at <a href="http://forrt.org/contributors">forrt.org/contributors</a>. This page can give a good orientation regarding the state of evidence regarding various claims, but you should check specific claims before you rely on them.
-
-Please report errors you spot <a href="https://github.com/forrtproject/forrtproject.github.io/issues/612">here</a>. If you need validated data on replications, we would encourage you to use the FORRT Replication Database (<a href="https://forrt.org/explorer">FReD</a>, with effect sizes) or the more comprehensive FORRT Library of Reproduction and Replication Attempts (<a href="https://forrt.org/annotator">FLoRA</a>).
-
-Please cite this source as Hartmann H, Azevedo F, Röseler L, Wallrich L, Aldoh A, Elsherif MM, et al. Tracking and mainstreaming replications in the social, cognitive, and behavioral sciences. MetaArXiv. https://doi.org/10.31222/osf.io/ad2w6_v1
-
-{{% /alert %}}
 
 <br>
 
-{{< spoiler text="About this project: motivation, history and how to contribute" >}}
+{{< spoiler text="About this project: motivation, history, how to contribute and how to cite" >}}
+
+Please cite this source as Hartmann H, Azevedo F, Röseler L, Wallrich L, Aldoh A, Elsherif MM, et al. Tracking and mainstreaming replications in the social, cognitive, and behavioral sciences. MetaArXiv. https://doi.org/10.31222/osf.io/ad2w6_v1 Contributors are listed at [forrt.org/contributors](/contributors/).
+
 
 ### **Motivation**
 
