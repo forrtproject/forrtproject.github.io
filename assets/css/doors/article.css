@@ -285,3 +285,9 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .article-layout .article-style .list-filter input{width:100%;box-sizing:border-box;padding:10px 16px;border:1.5px solid var(--ink);border-radius:999px;background:#fff;font:400 17px/1.3 var(--text);color:var(--ink)}
 .article-layout .article-style .list-filter-count{margin:8px 0 0;font-size:16px;color:var(--soft)}
 .article-layout .article-style [hidden]{display:none!important}
+/* A licence note is a quiet line with its badge, as the site's other notes, not a bordered, centred box. */
+.article-layout .article-style .license-note{margin:28px 0 0!important;padding:14px 18px!important;border:0!important;border-radius:var(--r-large)!important;background:var(--surface)!important;text-align:start!important}
+.article-layout .article-style .license-note .license-content{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 18px}
+.article-layout .article-style .license-note p{margin:0!important;font-size:16px!important;text-align:start!important}
+/* AWoP: the wheel opens the overview, so the tool is in view at once. */
+.awop-wheel img{display:block;width:100%;max-width:440px;height:auto;margin:4px 0 20px}
