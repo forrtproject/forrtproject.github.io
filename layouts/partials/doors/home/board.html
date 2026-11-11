@@ -1,9 +1,11 @@
 {{/* The noticeboard, from the newest announcements, and ways to take part, which stay useful with
-     no news. Context: content/home/4-board.md. */}}
+     no news, and the newsletter sign-up, which sits under "Take part" on wide screens and last when
+     the board is one column. Context: content/home/4-board.md. */}}
 {{ $posts := first (.Params.notices_count | default 3) (sort (where site.RegularPages "Type" "post") "Date" "desc") }}
 <section class="wrap board" aria-label="News and ways to take part">
   <div class="notices">
     <h2>{{ .Params.notices_heading }}</h2>
+    <div class="notice-card">
     <ol class="notice-list">
       {{ range $posts }}
       <li>
@@ -17,9 +19,6 @@
       {{ end }}
     </ol>
     <p class="board-foot"><a class="more" href="{{ relref . "/post" }}">All news and announcements</a></p>
-    <div class="home-newsletter">
-      <p>{{ .Params.newsletter_text }}</p>
-      {{ partial "doors/newsletter" . }}
     </div>
   </div>
   <section class="standing" id="take-part" aria-labelledby="standing-h">
@@ -30,5 +29,10 @@
       <li><a href="{{ $link.href }}"><strong>{{ $link.label }}</strong><span>{{ .text }}</span></a></li>
       {{ end }}
     </ul>
+  </section>
+  <section class="home-newsletter" aria-labelledby="newsletter-h">
+    <h3 id="newsletter-h">{{ .Params.newsletter_heading }}</h3>
+    <p>{{ .Params.newsletter_text }}</p>
+    {{ partial "doors/newsletter" . }}
   </section>
 </section>
