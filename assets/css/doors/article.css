@@ -314,3 +314,9 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .article-layout .article-style li .spoiler>summary::before{content:"▸";display:inline-block;margin-inline-end:6px;text-decoration:none;transition:transform .15s}
 .article-layout .article-style li .spoiler[open]>summary::before{transform:rotate(90deg)}
 .article-layout .article-style .btn.btn-outline-primary{padding:10px 22px!important;border-radius:999px!important;font-size:17px!important;line-height:1.3!important}
+/* Replication status beside an effect (site.js): tinted by outcome, dark text throughout. */
+.status-chip{display:inline-block;margin:0 2px 0 0;padding:1px 9px;border-radius:999px;font:600 15px/1.4 var(--text);color:var(--ink);background:var(--surface);vertical-align:1px}
+.status-replicated{background:var(--edu-bg)}
+.status-not-replicated{background:var(--com-bg)}
+.status-reversed{background:var(--jus-bg)}
+.status-mixed{background:var(--res-bg)}

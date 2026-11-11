@@ -320,15 +320,15 @@ image:
 .article-layout .article-style .am-prog-watch a { text-decoration: none; }
 .article-layout .article-style .am-prog-watch a:hover { background: var(--am-tint); color: var(--am-deep); text-decoration: underline; }
 .am-prog-watch a:focus-visible { outline: 2px solid var(--am-deep); outline-offset: 1px; }
-/* On a phone the time and the abstract link share the first line, and the
-   recordings go under the speakers. */
+/* On a phone the time leads, then the talk, and Abstract and Watch share the last line:
+   Abstract on the left inside the talk's button, Watch on the right beside it. */
 @media (max-width: 599px) {
-  .article-layout .article-style .am-prog-talks li { grid-template-columns: minmax(0, 1fr); }
-  .am-prog-item { grid-template-columns: minmax(0, 1fr) auto; }
+  .article-layout .article-style .am-prog-talks li { grid-template-columns: minmax(0, 1fr); position: relative; }
+  .am-prog-item { grid-template-columns: minmax(0, 1fr); }
   .am-prog-time { grid-column: 1; grid-row: 1; }
-  .am-prog-meta { grid-column: 2; grid-row: 1; align-self: start; }
-  .am-prog-text { grid-column: 1 / -1; }
-  .am-prog-watch { justify-content: flex-start; max-width: none; padding: 0 4px 8px; }
+  .am-prog-text { grid-column: 1; grid-row: 2; }
+  .am-prog-meta { grid-column: 1; grid-row: 3; align-self: center; min-height: 34px; display: flex; align-items: center; }
+  .am-prog-watch { position: absolute; right: 4px; bottom: 8px; padding: 0; max-width: none; }
 }
 
 .am-prog-next {

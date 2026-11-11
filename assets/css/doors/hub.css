@@ -27,3 +27,5 @@
 .hub-start{margin:0 0 28px}
 .hub-start h2{margin:0 0 10px;font-size:24px}
 .hub-start .action-cards{margin:0}
+/* The first tool in each stage is its starting point: tinted in the stage's colour. */
+.stage ul>li.tool:first-child{background:color-mix(in srgb,var(--tone) 9%,#fff);box-shadow:inset 4px 0 0 var(--tone)}

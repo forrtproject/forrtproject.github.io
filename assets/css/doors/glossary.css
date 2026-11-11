@@ -91,3 +91,10 @@ a.term-chip:hover{background:var(--link);color:#fff}
   .glossary-layout .article-style .term-definition p{font-size:18px}
 }
 .glossary-letters{border-bottom:1px solid var(--line)}
+/* On a phone the languages and the letters are one row each, scrolled sideways, so the terms start in the first screen. */
+@media(max-width:760px){
+  .glossary-hub .glossary-languages,.glossary-letters{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:thin;padding-bottom:6px}
+  .glossary-hub .glossary-languages a,.glossary-letters a{flex:none}
+  .glossary-find{margin-top:18px}
+  .glossary-find label{font-size:21px}
+}

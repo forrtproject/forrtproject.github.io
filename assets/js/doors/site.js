@@ -523,6 +523,19 @@ document.querySelectorAll('.area-more button').forEach((button) => {
   });
 });
 
+// An entry whose details give "Status: …" (the effects on /reversals/) shows that status as a chip beside its name.
+document.querySelectorAll('.article-style li > p > strong:first-child').forEach((name) => {
+  const item = name.closest('li');
+  const line = [...item.querySelectorAll('.spoiler li')].find((li) => /^\s*status:/i.test(li.textContent));
+  if (!line) return;
+  const status = line.textContent.replace(/^\s*status:\s*/i, '').trim().toLowerCase();
+  if (!status || status === 'na') return;
+  const chip = document.createElement('span');
+  chip.className = `status-chip status-${status.replace(/[^a-z]+/g, '-')}`;
+  chip.textContent = status;
+  name.before(chip, ' ');
+});
+
 // A search over the list items after it (shortcodes/list_filter.html): items match on their text, and a
 // heading whose lists are all hidden hides too, so the page reads as the matches.
 const listFilter = document.querySelector('.list-filter');
