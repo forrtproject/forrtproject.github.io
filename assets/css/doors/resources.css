@@ -66,3 +66,17 @@
 .res-title a::after{content:"";position:absolute;inset:0;border-radius:inherit}
 .res:hover{background:var(--res-bg)}
 .res:has(.res-title a:focus-visible){outline:2px solid var(--link);outline-offset:2px}
+/* Cards lead with the title; type and level follow as one quiet line, then the cluster. Each card is as tall as it needs. */
+.res-grid{align-items:start}
+.res-title{order:-1}
+.res-format{gap:0;color:var(--soft)}
+.res-type{background:none;color:var(--ink);font-weight:600;padding:0;border-radius:0}
+.res-level::before{content:"·";margin:0 8px;color:var(--soft)}
+.res-level{color:var(--soft)}
+.res-tag{margin:0;color:var(--soft)}
+.res-level:empty{display:none}
+/* Active filters as chips; each one's cross removes it. */
+.active-filters{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 0}
+.active-chip{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border:1.5px solid var(--ink);border-radius:999px;background:#fff;color:var(--ink);font:600 15px/1.3 var(--text);cursor:pointer}
+.active-chip::after{content:"×";font-size:18px;line-height:1}
+.active-chip:hover{background:var(--ink);color:#fff}

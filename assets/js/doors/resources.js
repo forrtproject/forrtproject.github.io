@@ -88,18 +88,6 @@ function writeAddress(picks) {
   history.replaceState(null, '', address + location.hash);
 }
 
-function describe(picks) {
-  const parts = [];
-  facets.forEach((facet) => {
-    const names = chipsOf(facet)
-      .filter((chip) => picks[facet.dataset.facet].includes(chip.dataset.value))
-      .map(labelOf);
-    if (names.length) parts.push(`${facet.querySelector('legend').textContent}: ${names.join(' or ')}`);
-  });
-  if (search.value.trim()) parts.push(`Search: “${search.value.trim()}”`);
-  return parts;
-}
-
 function draw() {
   const picks = chosen();
   const query = words();
@@ -136,9 +124,23 @@ function draw() {
   empty.hidden = hits.length > 0;
   results.hidden = hits.length === 0;
   clear.hidden = !filtering;
-  const active = describe(picks);
-  activeLine.hidden = !active.length;
-  activeLine.textContent = active.length ? `Filtered by ${active.join('; ')}` : '';
+  // Each active filter as a chip that removes it, and the search too.
+  const removers = [];
+  facets.forEach((facet) => chipsOf(facet).forEach((chip) => {
+    if (chip.getAttribute('aria-pressed') !== 'true') return;
+    removers.push([labelOf(chip), () => { chip.setAttribute('aria-pressed', 'false'); redraw(); }]);
+  }));
+  if (search.value.trim()) removers.push([`“${search.value.trim()}”`, () => { search.value = ''; redraw(); }]);
+  activeLine.hidden = !removers.length;
+  activeLine.replaceChildren(...removers.map(([label, remove]) => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'active-chip';
+    button.textContent = label;
+    button.setAttribute('aria-label', `Remove filter: ${label}`);
+    button.addEventListener('click', () => { remove(); clear.hidden ? search.focus() : clear.focus(); });
+    return button;
+  }));
   const facetCount = Object.values(picks).reduce((sum, list) => sum + list.length, 0);
   badge.textContent = facetCount ? `(${facetCount} active)` : '';
   writeAddress(picks);
