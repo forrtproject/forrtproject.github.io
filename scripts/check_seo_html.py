@@ -389,6 +389,11 @@ def print_items(title, items):
         print("      +%d more" % (len(items) - MAX_LISTED))
 
 
+def check_third_party_forms(pages):
+    """The newsletter form loads reCAPTCHA and posts to EmailOctopus only when a visitor subscribes."""
+    return sorted(p.path for p in pages if p.loads("recaptcha") or p.loads("eocampaign1.com"))
+
+
 def main(public_dir):
     pages = load_pages(public_dir)
     home = next((p for p in pages if p.path == "index.html"), None)
@@ -409,6 +414,7 @@ def main(public_dir):
     results["3. conditional highlight.js / mermaid loading"] = [
         item for items in conditional.values() for item in items]
     results["8. curated resources carry one clean LearningResource"] = check_learning_resource(pages)
+    results["12. no page loads EmailOctopus or reCAPTCHA before a visitor subscribes"] = check_third_party_forms(pages)
 
     print("\nSummary")
     for title in sorted(results, key=lambda t: int(t.split(".")[0])):

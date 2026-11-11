@@ -210,6 +210,7 @@
   <link rel="preload" href="{{ "fonts/domine/domine-latin-wght-normal.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="{{ "css/fonts.css" | relURL }}">
   <script src="{{ "js/click-to-load.js" | relURL }}" defer></script>
+  <script src="{{ "js/newsletter.js" | relURL }}" defer></script>
 
   {{/* Netlify Identity integration. */}}
   {{ if .IsHome | and (site.Params.cms.netlify_cms | default true) }}

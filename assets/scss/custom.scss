@@ -3415,23 +3415,34 @@ h1.clusters-site-heading.clusters-hub-page__title {
 }
 
 /* ============================================================
- *  Newsletter (EmailOctopus) submit button — ships Bootstrap-purple;
- *  repaint it in FORRT teal. High specificity + !important to beat the
- *  embed's own injected, later-loaded styles.
+ *  Newsletter sign-up form (layouts/partials/newsletter_form.html)
  * ============================================================ */
-[id^="octopus-form"] input.btn.btn-primary,
-[id^="octopus-form"] input[type="submit"],
-[id^="octopus-form"] button[type="submit"] {
-  background-color: #004055 !important;
-  border-color: #004055 !important;
-  color: #fff !important;
+.newsletter-form { flex: 0 1 auto; width: 100%; max-width: 520px; text-align: left; }
+.newsletter-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.newsletter-field { flex: 999 1 220px; margin: 0; }
+.newsletter-field input {
+  width: 100%; padding: 8px 14px; border: 1.5px solid #718096; border-radius: 999px;
+  background: #fff; color: #2d3748; font-size: 1rem; line-height: 1.3;
 }
-[id^="octopus-form"] input.btn.btn-primary:hover,
-[id^="octopus-form"] input[type="submit"]:hover,
-[id^="octopus-form"] button[type="submit"]:hover {
-  background-color: #00566f !important;
-  border-color: #00566f !important;
+.newsletter-field input::placeholder { color: #4a5568; opacity: 1; }
+.newsletter-field input:focus { border-color: #004055; outline: 3px solid #004055; outline-offset: 0; }
+.newsletter-submit {
+  flex: 1 0 auto; padding: 9px 22px; border: 0; border-radius: 999px;
+  background: #004055; color: #fff; cursor: pointer; font-weight: 700; font-size: 1rem; line-height: 1.3;
 }
+.newsletter-submit:hover { background: #00566f; }
+.newsletter-submit:focus-visible { outline: 3px solid #2d3748; outline-offset: 2px; }
+.newsletter-submit:disabled { background: #718096; cursor: progress; }
+.newsletter-hp { position: absolute; left: -5000px; }
+form.newsletter-form p.newsletter-status { margin: 8px 0 0; font-size: 1rem; font-weight: 600; color: #2d3748; }
+.newsletter-status:empty { display: none; }
+form.newsletter-form p.newsletter-status.is-error { color: #a3271f; }
+.newsletter-status:focus:not(:focus-visible) { outline: none; }
+form.newsletter-form p.newsletter-note { margin: 6px 0 0; color: #4a5568; font-size: 15px; line-height: 1.4; }
+.newsletter-note a { color: inherit; text-decoration: underline; }
+.newsletter-form.is-done .newsletter-row,
+.newsletter-form.is-done .newsletter-note { display: none; }
+.newsletter-form.is-done .newsletter-status { margin-top: 0; }
 
 /* ============================================================
  *  Combined Achievements & Awards section (two columns)
