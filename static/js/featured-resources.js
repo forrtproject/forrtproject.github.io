@@ -22,6 +22,26 @@
     return d.innerHTML;
   }
 
+  /** Decode HTML entities without parsing markup (a textarea's content is text only). */
+  function decodeEntities(s) {
+    var t = document.createElement('textarea');
+    t.innerHTML = s || '';
+    return t.value;
+  }
+
+  /** Titles and references from Crossref carry <i>, <em> and <scp>: escape, then restore those.
+      Same rule as layouts/partials/clusters/rich_text.html. */
+  function richText(s) {
+    return escHtml(decodeEntities(s).replace(/\s+/g, ' ').trim())
+      .replace(/&lt;(i|em)&gt;([\s\S]*?)&lt;\/\1&gt;/g, '<i>$2</i>')
+      .replace(/&lt;scp&gt;([\s\S]*?)&lt;\/scp&gt;/g, '<span class="scp">$1</span>');
+  }
+
+  /** The same text without markup, for copying and the PDF. */
+  function plainText(s) {
+    return decodeEntities(s).replace(/<\/?(?:i|em|scp)>/gi, '').replace(/\s+/g, ' ').trim();
+  }
+
   /** Flat lookup: DOI → resource object across all clusters. */
   function buildResourceIndex(data) {
     var idx = {};
@@ -85,13 +105,13 @@
       if (r.focus) html += '<span class="tag tag-focus">' + escHtml(r.focus) + '</span>';
       if (r.resource_type) html += '<span class="tag tag-type">' + escHtml(r.resource_type) + '</span>';
       html += '</div>';
-      html += '<div class="ref-popup-title">' + escHtml(r.title) + '</div>';
+      html += '<div class="ref-popup-title">' + richText(r.title) + '</div>';
 
       // APA
       if (r.apa) {
         html += '<div class="ref-section">';
         html += '<div class="ref-section-label">APA Reference</div>';
-        html += '<div class="ref-apa">' + escHtml(r.apa) + '</div>';
+        html += '<div class="ref-apa">' + richText(r.apa) + '</div>';
         html += '<div class="ref-copy-row">';
         html += '<button class="ref-copy-btn" data-copy="apa" data-doi="' + escHtml(doi) + '">' +
           '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="8" height="10" rx="1"/><path d="M5 3V2a1 1 0 011-1h5a1 1 0 011 1v9a1 1 0 01-1 1h-1"/></svg>' +
@@ -154,7 +174,7 @@
         var d = copyBtn.getAttribute('data-doi');
         var res = resourceIdx[d];
         if (!res) return;
-        var text = type === 'bibtex' ? res.bibtex : res.apa;
+        var text = type === 'bibtex' ? res.bibtex : plainText(res.apa);
         navigator.clipboard.writeText(text).then(function () {
           copyBtn.classList.add('copied');
           var orig = copyBtn.innerHTML;
@@ -258,7 +278,7 @@
         html += '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>';
         html += '</button>';
         html += '<div class="rl-panel-item-info">';
-        html += '<div class="rl-panel-item-title">' + escHtml(r.title || doi) + '</div>';
+        html += '<div class="rl-panel-item-title">' + (r.title ? richText(r.title) : escHtml(doi)) + '</div>';
         html += '<div class="rl-panel-item-ref">' + escHtml(r.short_ref || '') + '</div>';
         html += '</div>';
         html += '<button class="rl-panel-item-remove" data-doi="' + escHtml(doi) + '" aria-label="Remove">&times;</button>';
@@ -268,7 +288,7 @@
         html += '<div class="rl-panel-item-details">';
         if (r.apa) {
           html += '<div class="rl-detail-ref-row">';
-          html += '<div class="rl-detail-apa">' + escHtml(r.apa) + '</div>';
+          html += '<div class="rl-detail-apa">' + richText(r.apa) + '</div>';
           html += '<button class="rl-detail-copy" data-copy-apa="' + escHtml(doi) + '" title="Copy APA reference">';
           html += '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="8" height="10" rx="1"/><path d="M5 3V2a1 1 0 011-1h5a1 1 0 011 1v9a1 1 0 01-1 1h-1"/></svg>';
           html += '</button>';
@@ -365,7 +385,7 @@
         var d = copyBtn.getAttribute('data-copy-apa');
         var res = resourceIdx[d];
         if (res && res.apa) {
-          navigator.clipboard.writeText(res.apa).then(function () {
+          navigator.clipboard.writeText(plainText(res.apa)).then(function () {
             copyBtn.classList.add('copied');
             setTimeout(function () { copyBtn.classList.remove('copied'); }, 1500);
           });
@@ -467,7 +487,7 @@
           doc.setFont('helvetica', 'bold');
           doc.setFontSize(11);
           doc.setTextColor(34, 34, 34);
-          var titleLines = doc.splitTextToSize(r.title || doi, contentW);
+          var titleLines = doc.splitTextToSize(r.title ? plainText(r.title) : doi, contentW);
           doc.text(titleLines, margin, y);
           y += titleLines.length * 5 + 2;
 
@@ -477,7 +497,7 @@
             doc.setFont('times', 'normal');
             doc.setFontSize(9);
             doc.setTextColor(68, 68, 68);
-            var apaLines = doc.splitTextToSize(r.apa, contentW - 10);
+            var apaLines = doc.splitTextToSize(plainText(r.apa), contentW - 10);
             // Hanging indent: first line at margin, rest indented
             apaLines.forEach(function (line, li) {
               checkPage(4);

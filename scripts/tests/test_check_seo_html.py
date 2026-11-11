@@ -68,6 +68,9 @@ class DescriptionURLReport(unittest.TestCase):
                     "<meta property='og:image:height' content='630'>"
                     "<meta name='twitter:card' content='summary_large_image'>")
             (Path(public) / "index.html").write_text(html, encoding="utf-8")
+            cluster = Path(public) / "clusters" / "cluster-1" / "index.html"
+            cluster.parent.mkdir(parents=True)
+            cluster.write_text("<meta name='description' content='Cluster 1'><h1>Cluster 1</h1>", encoding="utf-8")
             output = StringIO()
             with redirect_stdout(output):
                 self.assertEqual(seo.main(public), 0)
@@ -242,6 +245,26 @@ class BreadcrumbLinks(unittest.TestCase):
         self.assertEqual(good.crumb_links, ["/", "/about/"])
         self.assertEqual(bad.crumb_links, ["/", ""])
 
+
+class ClusterTitleMarkupCheck(unittest.TestCase):
+    def check(self, body):
+        with tempfile.TemporaryDirectory() as public:
+            page = Path(public) / "clusters" / "cluster-1" / "index.html"
+            page.parent.mkdir(parents=True)
+            page.write_text("<div class=fc-title>%s</div>" % body, encoding="utf-8")
+            return seo.check_cluster_title_markup(public)
+
+    def test_rendered_markup_passes(self):
+        self.assertEqual(self.check("In <span class=scp>A</span>frica at <i>Cognition</i> (p &lt; .05)"), [])
+
+    def test_literal_or_unrendered_markup_fails(self):
+        for body in ("at &lt;i&gt;Cognition&lt;/i&gt;", "in <scp>A</scp>frica", "&lt;em&gt;AIMS&lt;/em&gt;",
+                     "at &amp;lt;i&amp;gt;Cognition&amp;lt;/i&amp;gt;"):
+            self.assertEqual(self.check(body), ["clusters/cluster-1/index.html"], body)
+
+    def test_missing_cluster_pages_fail(self):
+        with tempfile.TemporaryDirectory() as public:
+            self.assertEqual(seo.check_cluster_title_markup(public), ["clusters/ (no cluster pages found)"])
 
 
 def clusters_map_failures(page):

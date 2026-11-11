@@ -41,6 +41,8 @@ Hard checks (exit 1 if any fails):
      so a section that is not rendered cannot leave an empty link in the trail.
   18. No glossary page's <title> or <h1> shows Markdown emphasis as typed, e.g. "(*p*)".
   19. No page loads EmailOctopus or reCAPTCHA before a visitor subscribes.
+  20. Cluster pages render publication-title markup (<i>, <em>, <scp>) instead of
+     showing it as literal or escaped text, and at least one cluster page exists.
   21. The /clusters/ illustration (svg.clusters-map__art) is hidden from assistive technology
       and holds no tab stop (every link has tabindex="-1"), and every in-page link in the
       clusters map reaches an id on the page.
@@ -335,6 +337,26 @@ def check_homepage_share_image(home):
 def check_img_alt(pages):
     return ["%s (%d image(s))" % (p.path, len(p.imgs_without_alt))
             for p in pages if p.imgs_without_alt]
+
+
+# Escaped once (&lt;i&gt;) or twice (&amp;lt;i&amp;gt;), or a raw <scp> no browser styles.
+LITERAL_TITLE_MARKUP = re.compile(r"&(?:amp;)?lt;/?(?:i|em|scp)&(?:amp;)?gt;|</?scp>", re.IGNORECASE)
+
+
+def check_cluster_title_markup(public_dir):
+    """Cluster pages render publication-title markup (clusters/rich_text.html), never show it."""
+    clusters_dir = os.path.join(public_dir, "clusters")
+    found, scanned = [], 0
+    for root, _dirs, files in os.walk(clusters_dir):
+        if "index.html" in files:
+            scanned += 1
+            full = os.path.join(root, "index.html")
+            with open(full, encoding="utf-8", errors="replace") as handle:
+                if LITERAL_TITLE_MARKUP.search(handle.read()):
+                    found.append(os.path.relpath(full, public_dir))
+    if not scanned:
+        return ["clusters/ (no cluster pages found)"]
+    return sorted(found)
 
 
 def check_citation_targets(pages):
@@ -651,6 +673,7 @@ def main(public_dir):
         "16. glossary links reach existing English terms": check_glossary_links(pages),
         "17. every breadcrumb link has a target": [p.path for p in pages if any(not h.strip() for h in p.crumb_links)],
         "19. no page loads EmailOctopus or reCAPTCHA before a visitor subscribes": check_third_party_forms(pages),
+        "20. cluster pages show no literal <i>/<em>/<scp> title markup": check_cluster_title_markup(public_dir),
         "21. the clusters illustration holds no tab stop and its links have targets": check_clusters_map(public_dir),
     }
     conditional = check_conditional_assets(pages)
