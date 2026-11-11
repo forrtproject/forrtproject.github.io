@@ -61,7 +61,7 @@ subtitle = ""
 
 <br>
 
-Replications of previous scientific work are at the core of the Open Scholarship movement. However, as replication efforts become more widespread, it can be challenging to scholars and educators to keep themselves up to date with which effects in their field replicate and which do not. FORRT’s replications and reversals aims to collate replications and specifically so-called reversal effects in social science. Reversals are—in the context of a replication—effects that have their original direction flipped. The extent of such reversals and non-replicated effects is already apparent in the social science literature, with even replicated effects being only half of the originally reported effect (Ioannidis, 2005; Open Science Collaboration, 2015). Although such failures to replicate are far less costly to society than for example medical ones (Prasad & Cifu, 2011), they broadly hinder science's goal of accumulating knowledge and contribute to waste of scarce resources. This resource aims to be a “living”, freely available, crowd-sourced, and community-driven collection of effects that have either not been replicated or even reversed through empirical research across social sciences. Scholars from varied backgrounds and areas of social science are invited to contribute with prevalent effects in their respective fields.
+FORRT's Replications and Reversals project collected replications of effects in the social sciences, especially reversals: effects whose direction flipped when they were replicated. It was a crowd-sourced, community-driven collection to help scholars and educators keep up with which effects in their field replicate and which do not.
 
 <br>
 
@@ -110,23 +110,11 @@ The original project was organized in five stages:
 
 - [x] **Update Phases** (dynamically adding new effects). Now continued through the Replication Hub projects.
 
-{{% alert example %}}
+### **Recognition**
 
- {{< hl >}}We were shortlisted for the **Einstein Foundation Award for Promoting Quality in Research 2023** in the category Early Career Award! Check out our project "Tracking and Mainstreaming Replications across the Social, Behavioral and Cognitive Sciences" [here](https://web.archive.org/web/20231204000615/https://www.einsteinfoundation.de/en/award/events/meet-the-finalists/)!{{< /hl >}}
-
- {{% /alert %}}
-
-{{% alert example %}}
-
- {{< hl >}}We received the **Open Science Fund 2023** from the Dutch Research Foundation (NWO)! Check out our project "Tracking and Mainstreaming Replications across the Social, Behavioral and Cognitive Sciences" [here](https://www.nwo.nl/en/researchprogrammes/open-science/open-science-fund/open-science-fund-2023-awarded-grants)!{{< /hl >}}
-
- {{% /alert %}}
-
- {{% alert example %}}
-
- {{< hl >}}We got a **SIPS 2023 commendation** from the Society for the Improvement of Psychological Science! Check out the [awards page](https://improvingpsych.org/mission/awards/) for the other commendations!{{< /hl >}}
-
- {{% /alert %}}
+- Shortlisted for the **Einstein Foundation Award for Promoting Quality in Research 2023**, Early Career Award ([finalists](https://web.archive.org/web/20231204000615/https://www.einsteinfoundation.de/en/award/events/meet-the-finalists/))
+- **Open Science Fund 2023** from the Dutch Research Council, NWO ([awarded grants](https://www.nwo.nl/en/researchprogrammes/open-science/open-science-fund/open-science-fund-2023-awarded-grants))
+- **SIPS 2023 commendation** from the Society for the Improvement of Psychological Science ([awards page](https://improvingpsych.org/mission/awards/))
 
 <br>
 
@@ -146,7 +134,7 @@ All **past or current project contributors** are listed at the [bottom of this p
 
 {{< list_filter label="Search the effects" placeholder="e.g. priming, Bargh, ego depletion" >}}
 
-You can find a list of all effects we are working on [here](https://docs.google.com/spreadsheets/d/1IY56xdDmoU9VasdE0sry2xvsGFkWPrqbKXAs1Rw-9LA/edit#gid=0). To search whether an effect already exists in our collection, use Ctrl-F or the search function together with a keyword in relation to the effect (e.g. "Macbeth" or "Priming"). Please note that not all effects in the spreadsheet are listed below, as this is a work in progress (last site update: 13th of July 2023)
+The full list of effects is in [this spreadsheet](https://docs.google.com/spreadsheets/d/1IY56xdDmoU9VasdE0sry2xvsGFkWPrqbKXAs1Rw-9LA/edit#gid=0); not all of them are shown below (last updated 13 July 2023).
 
 <br>
 
