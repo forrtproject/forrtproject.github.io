@@ -36,7 +36,7 @@
   {{ partial "clusters/cluster_seo_jsonld.html" (dict "page" . "cluster" $cluster) }}
 
   <div class="wrap clusters-head">
-    <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ "" | relLangURL }}">Home</a> <span aria-hidden="true">/</span> <a href="{{ "clusters/" | relLangURL }}">FORRT Clusters</a> <span aria-hidden="true">/</span> <span aria-current="page">{{ .Params.heading_title | default .Title }}</span></nav>
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ "" | relLangURL }}">Home</a> <span aria-hidden="true">/</span> <a href="{{ "nexus/" | relLangURL }}">Educational Nexus</a> <span aria-hidden="true">/</span> <a href="{{ "clusters/" | relLangURL }}">Clusters</a> <span aria-hidden="true">/</span> <span aria-current="page">{{ .Params.heading_title | default .Title }}</span></nav>
     <h1 class="clusters-site-heading" itemprop="headline">{{ .Params.heading_title | default .Title }}</h1>
   </div>
 
