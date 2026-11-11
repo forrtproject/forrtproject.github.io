@@ -289,8 +289,13 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .article-layout .article-style .license-note{margin:28px 0 0!important;padding:14px 18px!important;border:0!important;border-radius:var(--r-large)!important;background:var(--surface)!important;text-align:start!important}
 .article-layout .article-style .license-note .license-content{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 18px}
 .article-layout .article-style .license-note p{margin:0!important;font-size:16px!important;text-align:start!important}
-/* AWoP: the wheel opens the overview, so the tool is in view at once. */
-.awop-wheel img{display:block;width:100%;max-width:440px;height:auto;margin:4px 0 20px}
+/* AWoP: the wheel follows the lead and opens full size; each material shows its purpose, with more in a disclosure. */
+.awop-wheel img{display:block;width:100%;max-width:320px;height:auto;margin:4px 0 6px}
+.article-layout .article-style .awop-wheel p{margin:0 0 18px}
+.article-layout .article-style .awop-material{margin:0 0 12px;padding:14px 18px 4px;background:var(--surface);border-radius:var(--r-large)}
+.article-layout .article-style .awop-material p{margin:0 0 8px}
+.article-layout .article-style .awop-material .spoiler{margin:0 0 10px;background:none}
+.article-layout .article-style .awop-material .spoiler>summary{padding:4px 0;font-size:16px}
 
 /* Starting points at the top of a page (shortcodes/action_cards.html). */
 .action-cards,.article-layout .article-style .action-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr));gap:12px;margin:8px 0 28px;padding:0;list-style:none;max-width:none}

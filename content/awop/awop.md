@@ -54,13 +54,15 @@ subtitle = "An equity-based tool for authorship order"
 ## Overview
 ---
 
+Who goes first? Authorship order shapes research impact and careers, yet decisions about it often overlook equity and favour privileged researchers. The Academic Wheel of Privilege (AWoP) is a toolkit, an app with educational materials, that helps teams decide authorship order equitably, especially where contributions are hard to compare or bias may play a part.
+
 <div class="awop-wheel">
 
-![The Academic Wheel of Privilege showing the 24 socio-cultural identities. The 24 socio-cultural identity types span six sectors: health and wellbeing, society, culture and communication, gender and sexuality, education and career, living arrangements and lastly childhood and development. These identity types are shown as circles connected to three concentric rings (outer, middle and inner) of “identity” circles with increasing privilege as you go towards the centre.](AWOP.webp)
+[![The Academic Wheel of Privilege showing the 24 socio-cultural identities. The 24 socio-cultural identity types span six sectors: health and wellbeing, society, culture and communication, gender and sexuality, education and career, living arrangements and lastly childhood and development. These identity types are shown as circles connected to three concentric rings (outer, middle and inner) of “identity” circles with increasing privilege as you go towards the centre.](AWOP.webp)](AWOP.webp)
+
+[Open the full-size wheel](AWOP.webp)
 
 </div>
-
-Who goes first? Authorship order shapes research impact and careers, yet decisions about it often overlook equity and favour privileged researchers. The Academic Wheel of Privilege (AWoP) is a toolkit, an app with educational materials, that helps teams decide authorship order equitably, especially where contributions are hard to compare or bias may play a part.
 
 {{< spoiler text="Why the AWoP" >}}
 The AWoP transcends traditional frameworks by integrating accessibility, inclusivity, diversity, equity, and social justice. It is particularly beneficial in situations where contribution levels are difficult to assess or where systemic biases might influence decisions. Central to the AWoP’s mission is its capacity to promote critical discussions on academic privilege, intersectionality, and power dynamics, nurturing a research culture characterized by accountability and a collaborative spirit in research. By adopting this tool, the academic community can move towards a research ethos that recognizes and values diverse backgrounds and experiences.
@@ -83,35 +85,75 @@ The App is a dynamic tool that allows users to generate customized weighted indi
 
 All five are in the [OSF project](https://osf.io/pfxqb/overview).
 
-{{< spoiler text="Reflection Questions (S5)" >}}
-These questions are designed to guide both individual and collective introspection within authorship teams. They help users recognize and understand the dynamics of privilege and how these might influence authorship decisions. The questions can be used as a starting point for discussions about fairness and equity in academic contributions.
+<div class="awop-material">
+
+**Reflection Questions (S5)**
+
+These questions are designed to guide both individual and collective introspection within authorship teams.
+
+{{< spoiler text="More, with an example" >}}
+They help users recognize and understand the dynamics of privilege and how these might influence authorship decisions. The questions can be used as a starting point for discussions about fairness and equity in academic contributions.
 
 > **Example Question**: “Do the people I collaborate with hold similar levels of privilege to me?”
 {{< /spoiler >}}
 
-{{< spoiler text="Case Study on First-Generation Academics (S6)" >}}
-This case study explores how being a first-generation academic—someone whose parents did not progress beyond high school education—can affect an individual's expectations, opportunities, or resources, leading to disparities in contributions and authorship. The experiences of first-generation academics highlight multiple dimensions represented within the Academic Wheel of Privilege (AWoP), ranging from socio-cultural capital and household wealth in childhood, through networking opportunities and mentorship, to factors like ethnicity and culture.
+</div>
+
+<div class="awop-material">
+
+**Case Study on First-Generation Academics (S6)**
+
+This case study explores how being a first-generation academic—someone whose parents did not progress beyond high school education—can affect an individual's expectations, opportunities, or resources, leading to disparities in contributions and authorship.
+
+{{< spoiler text="More, with an example" >}}
+The experiences of first-generation academics highlight multiple dimensions represented within the Academic Wheel of Privilege (AWoP), ranging from socio-cultural capital and household wealth in childhood, through networking opportunities and mentorship, to factors like ethnicity and culture.
 
 > **Example Insight**: “First-generation students often work more hours outside of academia to support their studies and have fewer interactions with faculty or mentors.”
 {{< /spoiler >}}
 
-{{< spoiler text="Illustrated Examples of Academic Privilege/Disadvantage (S7)" >}}
-These visuals serve as a relatable way to comprehend complex concepts of privilege and disadvantage. They depict the varied experiences of individuals within academic spaces. It brings attention to how privilege or disadvantage from early childhood influences an individual's academic opportunities and career trajectory.
+</div>
+
+<div class="awop-material">
+
+**Illustrated Examples of Academic Privilege/Disadvantage (S7)**
+
+These visuals serve as a relatable way to comprehend complex concepts of privilege and disadvantage.
+
+{{< spoiler text="More, with an example" >}}
+They depict the varied experiences of individuals within academic spaces. It brings attention to how privilege or disadvantage from early childhood influences an individual's academic opportunities and career trajectory.
 
 > **Example Scenario**: “A scholar from a less privileged background might face significant barriers in networking and accessing funding compared to their more privileged counterparts.”
 {{< /spoiler >}}
 
-{{< spoiler text="Detailed Bibliography on Socio-Cultural Identities (S8)" >}}
-This extensive resource provides in-depth understanding and research on the 24 identity categories we present in the Academic Wheel of Privilege. It supports users in exploring the intersectionality of different identities and their impact on academic careers.
+</div>
+
+<div class="awop-material">
+
+**Detailed Bibliography on Socio-Cultural Identities (S8)**
+
+This extensive resource provides in-depth understanding and research on the 24 identity categories we present in the Academic Wheel of Privilege.
+
+{{< spoiler text="More, with an example" >}}
+It supports users in exploring the intersectionality of different identities and their impact on academic careers.
 
 > **Example Topic**: How caring duties demand extra responsibilities, time, money and resources, regardless of the age and support needs of the person(s) who requires care. Greater time and frequency spent on caring duties will have a greater impact on the academic opportunities of the caregiver (e.g. reduced work hours, ability to network/attend conferences). Those who spend less time caring for another person have greater privilege.
 {{< /spoiler >}}
 
-{{< spoiler text="Syllabus for Learning on Equity, Justice, and Accessibility (S9)" >}}
-This curated syllabus covering 14 topics is designed to support users at different stages of their journey towards equity and justice in academia. It includes structured learning paths, suggested activities and resources tailored to varying levels of familiarity and expertise.
+</div>
+
+<div class="awop-material">
+
+**Syllabus for Learning on Equity, Justice, and Accessibility (S9)**
+
+This curated syllabus covering 14 topics is designed to support users at different stages of their journey towards equity and justice in academia.
+
+{{< spoiler text="More, with an example" >}}
+It includes structured learning paths, suggested activities and resources tailored to varying levels of familiarity and expertise.
 
 > **Example Topic**: Academic futures: Exploring grassroots initiatives to improve academia.
 {{< /spoiler >}}
+
+</div>
 
 ## AWoP in Use 
 ---
