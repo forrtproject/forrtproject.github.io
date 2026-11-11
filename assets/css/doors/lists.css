@@ -96,3 +96,8 @@
 .cluster-resources a{color:var(--link);text-decoration:none;font-weight:600}
 .cluster-resources a:hover{text-decoration:underline;text-underline-offset:3px}
 .cluster-resources span{display:block;margin-top:4px;color:var(--soft);font-size:15px}
+.tag-find{max-width:520px;margin:20px 0 6px}
+.tag-find label{display:block;margin:0 0 6px;font:600 17px/1.3 var(--text)}
+.tag-find input{width:100%;box-sizing:border-box;padding:10px 16px;border:1.5px solid var(--ink);border-radius:999px;background:#fff;font:400 17px/1.3 var(--text);color:var(--ink)}
+.tag-filter-count{margin:8px 0 0;font-size:16px;color:var(--soft)}
+.tag-cloud a[hidden]{display:none}

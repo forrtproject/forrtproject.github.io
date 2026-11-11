@@ -21,6 +21,13 @@
     <a href="{{ "clusters/" | relURL }}">FORRT clusters</a>.
   </p>
 
+  {{/* A search over all the tags, the hidden ones too (static/js/tag-browser.js); with JavaScript off it stays hidden. */}}
+  <div class="tag-find" hidden>
+    <label for="tag-filter">Find a tag</label>
+    <input type="search" id="tag-filter" placeholder="e.g. preregistration" autocomplete="off">
+    <p class="tag-filter-count" aria-live="polite"></p>
+  </div>
+
   {{/* Filled by the script when a tag is selected; stays empty otherwise. */}}
   <noscript><p class="tags-note">Listing the pages for a tag needs JavaScript. The <a href="{{ "resources/" | relLangURL }}">resources directory</a> lists every resource without it.</p></noscript>
   <div id="tag-results" hidden>

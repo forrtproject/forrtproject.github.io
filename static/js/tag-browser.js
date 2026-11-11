@@ -8,6 +8,29 @@
  * With no parameter, or with JavaScript off, the page is the server-rendered
  * tag cloud and nothing here runs.
  */
+/** The search over every tag: it opens the full list and shows only the tags that match. */
+(function () {
+  "use strict";
+  var box = document.querySelector(".tag-find");
+  var input = document.getElementById("tag-filter");
+  if (!box || !input) return;
+  box.hidden = false;
+  var tags = Array.prototype.slice.call(document.querySelectorAll("#tag-cloud a"));
+  var more = document.querySelector(".tag-more");
+  var count = box.querySelector(".tag-filter-count");
+  input.addEventListener("input", function () {
+    var query = input.value.trim().toLowerCase();
+    var shown = 0;
+    tags.forEach(function (link) {
+      var match = !query || link.firstChild.textContent.toLowerCase().indexOf(query) !== -1;
+      link.hidden = !match;
+      if (match) shown += 1;
+    });
+    if (more) more.open = Boolean(query);
+    count.textContent = !query ? "" : shown ? shown + (shown === 1 ? " tag matches" : " tags match") : "No tag matches.";
+  });
+})();
+
 (function () {
   "use strict";
 
