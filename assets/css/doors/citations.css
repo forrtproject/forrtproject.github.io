@@ -1,2 +1,5 @@
 a.cite{color:inherit;text-decoration:underline dotted 1px var(--soft);text-underline-offset:3px}
 a.cite:hover,a.cite:focus{color:var(--link)}
+/* The button that shows a reference's full author list (layouts/partials/citations/authors.html). */
+.ref-authors-toggle{display:inline;margin:0 .15em;padding:0 .55em;background:#fff;border:1px solid var(--line);border-radius:999px;color:var(--link);font:600 15px/1.45 var(--text);white-space:nowrap;cursor:pointer;vertical-align:baseline}
+.ref-authors-toggle:hover{border-color:var(--link);text-decoration:underline}

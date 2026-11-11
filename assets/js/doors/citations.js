@@ -1,5 +1,6 @@
 import { registerPopover } from './popover.js';
 import { citationMatches } from './citation-matches.js';
+import { referenceText } from './references.js';
 
 // Glossary generators already expand citekeys to APA strings. The template recovers their
 // keys and metadata; residual references still get a stable local id, never a guessed key.
@@ -61,7 +62,7 @@ registerPopover('a.cite[data-cite]', (trigger) => {
   let reset;
   copy.addEventListener('click', async () => {
     try {
-      await navigator.clipboard.writeText(reference.textContent.trim());
+      await navigator.clipboard.writeText(referenceText(reference));
       copy.textContent = 'Copied';
     } catch {
       copy.textContent = 'Copy failed';
