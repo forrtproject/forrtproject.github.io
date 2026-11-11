@@ -8,25 +8,31 @@
  * With no parameter, or with JavaScript off, the page is the server-rendered
  * tag cloud and nothing here runs.
  */
-/** The search over every tag: it opens the full list and shows only the tags that match. */
+/** The search over every tag: while it has a query, the most-used row steps aside and the A to Z list shows only matches. */
 (function () {
   "use strict";
   var box = document.querySelector(".tag-find");
   var input = document.getElementById("tag-filter");
   if (!box || !input) return;
   box.hidden = false;
-  var tags = Array.prototype.slice.call(document.querySelectorAll("#tag-cloud a"));
-  var more = document.querySelector(".tag-more");
+  var top = document.querySelector(".tag-top");
+  var letters = document.querySelector(".tag-letters");
+  var groups = Array.prototype.slice.call(document.querySelectorAll(".tag-group"));
   var count = box.querySelector(".tag-filter-count");
   input.addEventListener("input", function () {
     var query = input.value.trim().toLowerCase();
     var shown = 0;
-    tags.forEach(function (link) {
-      var match = !query || link.firstChild.textContent.toLowerCase().indexOf(query) !== -1;
-      link.hidden = !match;
-      if (match) shown += 1;
+    groups.forEach(function (group) {
+      var any = false;
+      Array.prototype.forEach.call(group.querySelectorAll("li"), function (item) {
+        var match = !query || item.firstChild.firstChild.textContent.toLowerCase().indexOf(query) !== -1;
+        item.hidden = !match;
+        if (match) { any = true; shown += 1; }
+      });
+      group.hidden = !any;
     });
-    if (more) more.open = Boolean(query);
+    if (top) top.hidden = Boolean(query);
+    if (letters) letters.hidden = Boolean(query);
     count.textContent = !query ? "" : shown ? shown + (shown === 1 ? " tag matches" : " tags match") : "No tag matches.";
   });
 })();

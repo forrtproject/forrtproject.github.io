@@ -36,14 +36,31 @@
     <p><a href="{{ "tags/" | relURL }}">Show all tags</a></p>
   </div>
 
-  <div id="tag-cloud" class="tag-cloud">
-    {{ range first 100 $rows }}<a href="{{ printf "tags/?tag=%s" (.tag | urlquery) | relURL }}" title="{{ .count }} page{{ if ne .count 1 }}s{{ end }}">{{ .tag }} <span class="tag-count">{{ .count }}</span></a>{{ end }}
-    {{ with after 100 $rows }}
-    <details class="tag-more">
-      <summary>Show all {{ len $rows }} tags</summary>
-      <div class="tag-cloud">{{ range . }}<a href="{{ printf "tags/?tag=%s" (.tag | urlquery) | relURL }}" title="{{ .count }} page{{ if ne .count 1 }}s{{ end }}">{{ .tag }} <span class="tag-count">{{ .count }}</span></a>{{ end }}</div>
-    </details>
-    {{ end }}
+  {{/* The twenty most used as larger pills, then every tag A to Z with letter links; the search above covers all of them. */}}
+  {{ $sorted := sort $rows "tag" }}
+  {{ $groups := slice }}{{ $current := "" }}{{ $items := slice }}
+  {{ range $sorted }}
+    {{ $first := upper (substr (strings.TrimLeft "\"“'#(*[ " .tag) 0 1) }}
+    {{ if not (findRE `^[A-Z]$` $first) }}{{ $first = "#" }}{{ end }}
+    {{ if ne $first $current }}{{ if $items }}{{ $groups = $groups | append (dict "letter" $current "rows" $items) }}{{ end }}{{ $current = $first }}{{ $items = slice }}{{ end }}
+    {{ $items = $items | append . }}
+  {{ end }}
+  {{ if $items }}{{ $groups = $groups | append (dict "letter" $current "rows" $items) }}{{ end }}
+  <div id="tag-cloud">
+    <section class="tag-top">
+      <h2>Most used</h2>
+      <div class="tag-cloud">{{ range first 20 $rows }}<a href="{{ printf "tags/?tag=%s" (.tag | urlquery) | relURL }}">{{ .tag }} <span class="tag-count">{{ .count }}</span></a>{{ end }}</div>
+    </section>
+    <section class="tag-all">
+      <h2>All tags, A to Z</h2>
+      <nav class="tag-letters" aria-label="Tags by letter">{{ range $groups }}<a href="#tags-{{ .letter | urlize | default "other" }}">{{ .letter }}</a>{{ end }}</nav>
+      {{ range $groups }}
+      <div class="tag-group" id="tags-{{ .letter | urlize | default "other" }}">
+        <h3>{{ .letter }}</h3>
+        <ul>{{ range .rows }}<li><a href="{{ printf "tags/?tag=%s" (.tag | urlquery) | relURL }}">{{ .tag }} <span class="tag-count">{{ .count }}</span></a></li>{{ end }}</ul>
+      </div>
+      {{ end }}
+    </section>
   </div>
 </div>
 {{ end }}
