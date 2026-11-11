@@ -41,8 +41,10 @@ if (canvas) {
     kind: 'person', name, roles, x, y, projects: joined.map((index) => projects[index]),
   }));
   people.forEach((person) => person.projects.forEach((project) => project.members.push(person)));
-  // The older generated file has no positions for projects, so they sit among their people.
-  // Goes with that file.
+  // The older generated file has no positions for projects, so they sit among their people once
+  // the people are spread. Goes with that file.
+  const placed = projects.filter((project) => project.x !== undefined);
+  spreadOut([...people, ...placed]);
   projects.forEach((project) => {
     if (project.x === undefined) {
       project.x = project.members.reduce((sum, person) => sum + person.x, 0) / project.members.length;
@@ -50,7 +52,6 @@ if (canvas) {
     }
     project.radius = Math.min(11, 3 + Math.sqrt(project.members.length) * 0.6);
   });
-  spreadOut([...people, ...projects]);
   people.forEach((person) => { person.radius = Math.min(7, 2 + Math.sqrt(person.roles) * 0.45); });
   const byMembers = [...projects].sort((a, b) => b.members.length - a.members.length);
   const byName = [...projects].sort((a, b) => a.name.localeCompare(b.name));
