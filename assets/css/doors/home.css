@@ -160,3 +160,12 @@
 
 .area-more{display:none}
 @media(max-width:760px){.area-more{display:list-item}}
+/* The statement band on a wide screen: the quote on the left, what FORRT is and the mission link beside it. */
+@media(min-width:1001px){
+  .about-statement{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);column-gap:56px;align-items:end;max-width:none}
+  .about-statement .quotes{grid-column:1;grid-row:1 / span 2}
+  .about-statement>p,.about-statement>.more{grid-column:2}
+  .about-statement>p{margin-top:0}
+  .about-statement>.more{justify-self:start;margin-bottom:52px}
+}
+.ledger strong{white-space:nowrap}
