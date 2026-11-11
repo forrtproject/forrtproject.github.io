@@ -69,9 +69,9 @@
 /* Cards lead with the title; type and level follow as one quiet line, then the cluster. Each card is as tall as it needs. */
 .res-grid{align-items:start}
 .res-title{order:-1}
-.res-format{gap:0;color:var(--soft)}
+.res-format{display:block;color:var(--soft);line-height:1.45}
 .res-type{background:none;color:var(--ink);font-weight:600;padding:0;border-radius:0}
-.res-level::before{content:"·";margin:0 8px;color:var(--soft)}
+.res-type:has(+ .res-level:not(:empty))::after{content:" ·";font-weight:400;color:var(--soft)}
 .res-level{color:var(--soft)}
 .res-tag{margin:0;color:var(--soft)}
 .res-level:empty{display:none}
