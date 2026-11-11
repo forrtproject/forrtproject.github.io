@@ -122,7 +122,7 @@
   .article-layout-wide .doc-section:has(>#just-os-fullpage)>br{display:none}
   /* The team runs across the page below the chat. */
   .article-layout-wide .doc-section:has(>#just-os-fullpage)>h2:last-of-type{grid-column:1/-1;grid-row:31}
-  .article-layout-wide .doc-section:has(>#just-os-fullpage)>div[style*="flex-wrap"]{grid-column:1/-1;grid-row:32}
+  .article-layout-wide .doc-section:has(>#just-os-fullpage)>.jos-team{grid-column:1/-1;grid-row:32}
 }
 @media(min-width:1001px) and (max-width:1279px){.article-layout-wide .doc-section:has(>#just-os-fullpage){grid-template-columns:repeat(2,minmax(0,1fr));column-gap:32px}}
 
@@ -147,3 +147,9 @@
   .partner-logo{width:64px}
 }
 .article-layout .article-style center p:not(:has(img)){text-align:start}
+/* The JUST-OS team: the site's people cards, a pale panel with a round portrait, name and role. */
+.article-layout .article-style .jos-team{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr));gap:16px;margin:16px 0 0;padding:0;list-style:none}
+.article-layout .article-style .jos-team li{margin:0;padding:18px;background:var(--surface);border-radius:var(--r-large)}
+.article-layout .article-style .jos-team img{display:block;width:96px;height:96px;border-radius:50%;object-fit:cover;margin:0 0 12px}
+.article-layout .article-style .jos-team h3{margin:0 0 6px;font-size:20px}
+.article-layout .article-style .jos-team p{margin:0;font-size:16px;line-height:1.45;color:var(--soft)}

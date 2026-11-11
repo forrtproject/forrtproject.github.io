@@ -67,11 +67,9 @@ image:
 .am-fact { padding: 0.4rem 0; }
 .am-fact-label {
   display: block;
-  color: var(--am-muted);
+  color: var(--am-ink);
   font-size: 15px;
   font-weight: 700;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
 }
 .am-fact-value {
   display: block;
@@ -206,12 +204,10 @@ image:
   gap: 10px;
   max-width: none;
   margin: 14px 0 8px;
-  color: var(--am-muted);
-  font-size: 15px;
+  color: var(--am-ink);
+  font-size: 16px;
   font-weight: 700;
-  letter-spacing: 0.08em;
   line-height: 1.3;
-  text-transform: uppercase;
 }
 .am-prog-half::after { content: ""; flex: 1; height: 1px; background: var(--am-rule); }
 .am-prog-session {

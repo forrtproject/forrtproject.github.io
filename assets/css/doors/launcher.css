@@ -48,3 +48,12 @@
   #just-os-img{width:16px;height:16px}
   #just-os-bubble{inset-inline-end:28px}
 }
+/* Below 1440 px the tab in the margin says what it is: a dark tab with the mascot and "Ask JUST-OS" set
+   on its side, tall enough to find and press, and still no wider than the margin. */
+#just-os-tab-label{display:none}
+@media (max-width:1439px){
+  #just-os-btn{flex-direction:column;gap:8px;height:auto;padding:8px 0 10px;background:var(--ink);border-color:var(--ink)}
+  #just-os-btn:hover{background:var(--link);border-color:var(--link)}
+  #just-os-tab-label{display:block;writing-mode:vertical-rl;transform:rotate(180deg);color:#fff;font:600 15px/1 var(--text);letter-spacing:.02em;white-space:nowrap}
+  #just-os-btn:focus-visible{outline-color:#fff}
+}

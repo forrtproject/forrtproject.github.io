@@ -43,7 +43,7 @@
       <div class="acc-header acc-header--rec">
         <span class="acc-chevron acc-open" aria-hidden="true">&#9656;</span>
         <span class="acc-label"><button type="button" class="acc-trigger" aria-expanded="true">Recommended</button></span>
-        <span class="acc-count"><span class="acc-count-match">{{ len $featuredData }}</span> / {{ len $featuredData }}</span>
+        <span class="acc-count" title="References shown with the current filters, of all in this group"><span class="acc-count-match">{{ len $featuredData }}</span> of {{ len $featuredData }}</span>
       </div>
       <div class="acc-body">
         {{ partial "clusters/featured_cards.html" (dict "resources" $featuredData "cluster_number" (int $cluster.number)) }}
@@ -59,7 +59,7 @@
       <div class="acc-header">
         <span class="acc-chevron" aria-hidden="true">&#9656;</span>
         <h3 class="acc-label"><button type="button" class="acc-trigger" aria-expanded="false">{{ $sc.name }}</button></h3>
-        <span class="acc-count"><span class="acc-count-match">{{ len $sc.publications }}</span> / {{ len $sc.publications }}</span>
+        <span class="acc-count" title="References shown with the current filters, of all in this sub-cluster"><span class="acc-count-match">{{ len $sc.publications }}</span> of {{ len $sc.publications }}</span>
         <button type="button" class="acc-copy-link" data-anchor="{{ $scid }}" aria-label="Copy link to this sub-cluster" title="Copy link to this sub-cluster">
           <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M6.5 9.5l3-3M7 4.5l1-1a3 3 0 014.25 4.25l-1 1M9 11.5l-1 1a3 3 0 01-4.25-4.25l1-1"/></svg>
         </button>

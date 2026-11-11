@@ -253,3 +253,9 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .article-layout .page-actions .btn{padding:10px 22px;font-size:17px}
 /* On phones a tall cover image pushed the page's contents a screen down, so it is held to part of the screen. */
 @media(max-width:760px){.article-layout .article-image img{width:auto;max-width:100%;max-height:280px;margin-inline:auto}}
+/* Old pages put a rule under each heading (### Title, then ---) and at the very end. The heading already
+   separates the section, and the rule pushed it away from its text, so neither rule is drawn. */
+.article-style :is(h2,h3,h4)+hr,.article-style>hr:last-child{display:none}
+.article-layout .post-nav-next{margin-inline-start:auto;text-align:end}
+.post-nav .meta-nav>span{display:inline-block}
+[dir=rtl] .post-nav .meta-nav>span{transform:scaleX(-1)}
