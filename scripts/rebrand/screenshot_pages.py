@@ -2,7 +2,8 @@
 """Screenshot pages at phone and desktop size for design review.
 
 Run: python3 scripts/rebrand/screenshot_pages.py <public-dir | http(s)://site/> --out <dir>
-     [--pages "home,cluster"] [--paths /about/us/,/glossary/] [--max-height 7200]
+     [--pages "home,cluster" | --paths /about/us/,/glossary/ | --list pages.json]
+     [--max-height 7200]
 
 The first argument is either a built site, which is served locally (with its links and redirects to
 https://forrt.org/ answered from the build), or the address of a
@@ -122,13 +123,17 @@ def main():
     parser.add_argument("--out", required=True)
     parser.add_argument("--pages", help="comma-separated names from sample_pages.json")
     parser.add_argument("--paths", help="comma-separated paths to shoot instead of sample_pages.json")
+    parser.add_argument("--list", help="a JSON file of {name: path} to shoot instead of sample_pages.json")
     parser.add_argument("--sizes", default="mobile,desktop", help="mobile, desktop or both")
     parser.add_argument("--max-height", type=int, default=7200, help="CSS pixels shot per page")
     parser.add_argument("--quality", type=int, default=78)
     parser.add_argument("--cookie-banner", action="store_true", help="show the cookie banner")
     args = parser.parse_args()
 
-    if args.paths:
+    if args.list:
+        with open(args.list, encoding="utf-8") as handle:
+            samples = json.load(handle)
+    elif args.paths:
         samples = {path.strip("/") or "home": path for path in args.paths.split(",")}
     else:
         with open(os.path.join(HERE, "sample_pages.json"), encoding="utf-8") as handle:
