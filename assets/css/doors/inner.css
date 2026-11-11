@@ -50,6 +50,6 @@ ul.network-icon a:hover{color:var(--ink)}
 
 /* Forced colours drop backgrounds, so filled buttons need an edge, and the dark logo needs a light plate. */
 @media (forced-colors:active){
-  .head-join,.cc-window.cc-window .cc-btn,.newsletter-open,.btn,.tower-entry,.motion-toggle{border:2px solid ButtonText!important}
+  .head-join,.cc-window.cc-window .cc-btn,.newsletter-submit,.btn,.tower-entry,.motion-toggle{border:2px solid ButtonText!important}
   .brand img{background:#fff;padding:2px;border-radius:4px;forced-color-adjust:none}
 }
