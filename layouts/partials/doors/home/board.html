@@ -5,6 +5,7 @@
 <section class="wrap board" aria-label="News and ways to take part">
   <div class="notices">
     <h2>{{ .Params.notices_heading }}</h2>
+    <div class="notice-card">
     <ol class="notice-list">
       {{ range $posts }}
       <li>
@@ -18,6 +19,7 @@
       {{ end }}
     </ol>
     <p class="board-foot"><a class="more" href="{{ relref . "/post" }}">All news and announcements</a></p>
+    </div>
   </div>
   <section class="standing" id="take-part" aria-labelledby="standing-h">
     <h2 id="standing-h">{{ .Params.take_part_heading }}</h2>
