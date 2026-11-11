@@ -499,6 +499,16 @@ if (termFilter && termGrid) {
   if (current) list.scrollTop = current.offsetTop - list.offsetTop - list.clientHeight / 3;
 }
 
+// Home: on a phone each area shows two links, and its "more" button shows the rest.
+document.querySelectorAll('.area-more button').forEach((button) => {
+  button.addEventListener('click', () => {
+    const area = button.closest('.area');
+    area.classList.add('is-open');
+    button.setAttribute('aria-expanded', 'true');
+    area.querySelector('li:nth-child(3) a')?.focus();
+  });
+});
+
 // A search over the list items after it (shortcodes/list_filter.html): items match on their text, and a
 // heading whose lists are all hidden hides too, so the page reads as the matches.
 const listFilter = document.querySelector('.list-filter');
