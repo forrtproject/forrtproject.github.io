@@ -15,6 +15,7 @@ image:
 ---
 
 <style>
+.am-actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 6px; }
 /* On a wide screen the title and the banner share the first row; everything else spans the page below them. */
 @media (min-width: 1001px) {
   .reading:has(.am-facts) { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 520px); column-gap: 56px; align-items: center; }
@@ -87,7 +88,6 @@ image:
   line-height: 1.35;
 }
 @media (max-width: 640px) { .am-facts { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 400px) { .am-facts { grid-template-columns: 1fr; } }
 
 /* Days. Without JavaScript these are links to the three days, all shown in
    turn; the script below turns them into tabs that show one day at a time. */
@@ -419,6 +419,8 @@ image:
 </style>
 
 How is AI changing the way research is done, checked and understood? The **FORRT AI in Metascience Online Conference** spent three days on that question, with 35+ talks and workshops from people who are studying it or building with it. Most talks are now on the [FORRT YouTube channel](https://youtube.com/@forrtproject9995), one playlist per day.
+
+<p class="am-actions"><a class="btn btn-primary" href="#recordings">Watch the recordings</a> <a class="btn btn-outline-primary" href="#programme">See the programme</a></p>
 
 <div class="am-facts">
 <div class="am-fact"><span class="am-fact-label">When</span><span class="am-fact-value">28–30 September 2026</span></div>
