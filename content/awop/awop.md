@@ -81,6 +81,8 @@ The App is a dynamic tool that allows users to generate customized weighted indi
 
 ### Supplemental materials
 
+All five are in the [OSF project](https://osf.io/pfxqb/overview).
+
 {{< spoiler text="Reflection Questions (S5)" >}}
 These questions are designed to guide both individual and collective introspection within authorship teams. They help users recognize and understand the dynamics of privilege and how these might influence authorship decisions. The questions can be used as a starting point for discussions about fairness and equity in academic contributions.
 
