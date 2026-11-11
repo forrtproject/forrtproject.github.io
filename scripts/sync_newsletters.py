@@ -191,6 +191,12 @@ def page_html(campaign, year, month, root):
     leftover = sorted(set(re.findall(r"\{\{.*?\}\}|\{%.*?%\}", page)))
     if leftover:
         raise ArchiveError("unknown merge tags %s" % ", ".join(leftover))
+    return finish_page(page, year, month, preview, root)
+
+
+def finish_page(page, year, month, preview, root):
+    """Make an email's HTML a self-contained forrt.org page (also used for Mailchimp issues)."""
+    label = "%s %d" % (calendar.month_name[month], year)
 
     # Local copies of every image, each with an alt attribute.
     if EXECUTABLE.search(page):
