@@ -1,5 +1,6 @@
 ---
 title: "FORRT AI in Metascience Online Conference"
+crumb_parent: "About FORRT"
 type: plain_page
 url: "/ai-metascience/"
 hide_title: true

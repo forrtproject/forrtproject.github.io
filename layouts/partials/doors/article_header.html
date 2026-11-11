@@ -8,6 +8,13 @@
     {{ with .Parent }}{{ if not .IsHome }}
     {{ $label := index (partialCached "doors/menu_labels" . "menu-labels") (strings.Trim .Path "/") | default .LinkTitle }}
     <span aria-hidden="true">/</span> <a href="{{ .RelPermalink | default (printf "/%s/" (strings.Trim .Path "/") | relLangURL) }}">{{ $label }}</a>
+    {{ else }}
+    {{/* A page at the top of the site takes its section from the main menu, or from crumb_parent. */}}
+    {{ $here := strings.TrimSuffix "/" $page.RelPermalink }}
+    {{ $section := "" }}
+    {{ range site.Menus.main }}{{ $top := . }}{{ range .Children }}{{ if and (not $section) (eq (strings.TrimSuffix "/" (.URL | relLangURL)) $here) }}{{ $section = $top }}{{ end }}{{ end }}{{ end }}
+    {{ if not $section }}{{ with $page.Params.crumb_parent }}{{ $name := . }}{{ range site.Menus.main }}{{ if eq .Name $name }}{{ $section = . }}{{ end }}{{ end }}{{ end }}{{ end }}
+    {{ with $section }}<span aria-hidden="true">/</span> {{ if .URL }}<a href="{{ .URL | relLangURL }}">{{ .Name }}</a>{{ else }}{{ .Name }}{{ end }}{{ end }}
     {{ end }}{{ end }}
   </nav>
   {{ with .Params.categories }}<div class="article-meta">{{ range . }}<span>{{ . }}</span>{{ end }}</div>{{ end }}

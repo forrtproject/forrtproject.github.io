@@ -832,7 +832,7 @@ DIRECTORIES = {
     "about/teams/": ".feature-rows",
     "educators-corner/": ".list-items",
     "pedagogies/": ".list-items",
-    "forrt_clusters/academic-life-and-culture/": ".plain-list",
+    "forrt_clusters/academic-life-and-culture/": ".cluster-resources",
     "syllabus/": ".catalogue",
     "neurodiversity-lessonbank/": ".lesson-grid",
     "citation-politics/toolkit/": ".cpt-items",

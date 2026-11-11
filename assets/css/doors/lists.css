@@ -91,3 +91,8 @@
   .list-item-image{display:flex;flex-direction:column-reverse;align-items:flex-start;gap:12px}
   .list-item-image img{width:120px;height:72px}
 }
+.cluster-resources{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:14px 36px;margin:18px 0 0;padding:0;list-style:none}
+.cluster-resources li{margin:0;padding:0 0 12px;border-bottom:1px solid var(--line);font-size:17px;line-height:1.35}
+.cluster-resources a{color:var(--link);text-decoration:none;font-weight:600}
+.cluster-resources a:hover{text-decoration:underline;text-underline-offset:3px}
+.cluster-resources span{display:block;margin-top:4px;color:var(--soft);font-size:15px}

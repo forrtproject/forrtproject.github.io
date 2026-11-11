@@ -21,8 +21,9 @@
         <p><a class="btn btn-primary" href="{{ relref . "/resources" }}">Open the resources directory</a></p>
       {{ else if and (eq (.Type | lower) "forrt_clusters") (ne .Kind "taxonomy") }}
         <p class="list-count">{{ len .Data.Pages }} resources. Search and filter them all in the <a href="{{ relref . "/resources" }}">resources directory</a>.</p>
-        <ul class="plain-list">
-          {{ range .Data.Pages }}<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}
+        {{/* Alphabetical rows that read across, each with its type, rather than a wall of bare links. */}}
+        <ul class="cluster-resources">
+          {{ range sort .Data.Pages "Title" }}<li><a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ with .Params.material_type }}<span>{{ delimit . ", " }}</span>{{ end }}</li>{{ end }}
         </ul>
       {{ else }}
         {{ $pager := .Paginate .Data.Pages }}
