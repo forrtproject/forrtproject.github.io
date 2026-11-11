@@ -1,5 +1,10 @@
 ---
 title: Newsletter Archives
+# Issues sent through EmailOctopus are added automatically from
+# data/newsletters.json (scripts/sync_newsletters.py) and link to copies hosted
+# on forrt.org; for those months that data replaces the entries below, which
+# remain as a fallback. List other issues here: a url starting with "/" is a
+# copy hosted on forrt.org. A year listed here sets that year's colour.
 newsletters:
   - year: 2026
     color: "#2c7a7b"

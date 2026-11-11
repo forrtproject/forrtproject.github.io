@@ -556,6 +556,11 @@ def check_resource_pagination(pages):
         if problems:
             failures.append("%s (%s)" % (p.path, ", ".join(problems)))
     return failures
+def check_third_party_forms(pages):
+    """The newsletter form loads reCAPTCHA and posts to EmailOctopus only when a visitor subscribes."""
+    return sorted(p.path for p in pages if p.loads("recaptcha") or p.loads("eocampaign1.com"))
+
+
 def check_inline_scripts(pages):
     return ["%s (%d KB)" % (p.path, p.largest_inline_script // 1000) for p in pages
             if p.largest_inline_script > MAX_INLINE_SCRIPT]
@@ -612,7 +617,8 @@ def main(public_dir):
         "15. every citation has a local reference target": check_citation_targets(pages),
         "16. glossary links reach existing English terms": check_glossary_links(pages),
         "17. every breadcrumb link has a target": [p.path for p in pages if any(not h.strip() for h in p.crumb_links)],
-        "19. cluster pages show no literal <i>/<em>/<scp> title markup": check_cluster_title_markup(public_dir),
+        "19. no page loads EmailOctopus or reCAPTCHA before a visitor subscribes": check_third_party_forms(pages),
+        "20. cluster pages show no literal <i>/<em>/<scp> title markup": check_cluster_title_markup(public_dir),
     }
     conditional = check_conditional_assets(pages)
     results["3. conditional highlight.js / mermaid loading"] = [
