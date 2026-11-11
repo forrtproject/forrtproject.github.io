@@ -1,12 +1,15 @@
 #!/usr/bin/env python3
 """
-Script to fetch and update the FReD citation from the FReD-data repository.
+Fetch the FReD/FLoRA citation from the FReD-data repository.
 
-This script downloads the latest citation from:
-https://raw.githubusercontent.com/forrtproject/FReD-data/refs/heads/main/output/citation.txt
+Source: https://raw.githubusercontent.com/forrtproject/FReD-data/refs/heads/main/output/citation.txt
 
-And saves it to static/data/fred_citation.txt. The cite-us and flora-citation
-shortcodes read that file at build time (cite_us page and FLoRA page).
+Writes one file: static/data/fred_citation.txt (citation as HTML, DOI linked).
+The cite-us and flora-citation shortcodes read it at build time, for the
+cite_us and FLoRA pages; neither page is edited by this script.
+
+Run by data-processing.yml on every run; the file reaches forrt.org through
+data-artifact.
 """
 
 import re
