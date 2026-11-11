@@ -5,6 +5,7 @@
        The newest issue carries a "New" badge for two months after sending. */ -}}
 {{- $listed := .Params.newsletters | default slice -}}
 {{- $synced := index (hugo.Data.newsletters | default dict) "issues" | default slice -}}
+{{- $synced = sort $synced "sent_at" "desc" -}}
 {{- $palette := slice "#2c7a7b" "#3b82c4" "#c05621" "#6b46c1" "#b83280" -}}
 {{- $years := slice -}}
 {{- range $synced }}{{ $years = $years | append (int .year) }}{{ end -}}
