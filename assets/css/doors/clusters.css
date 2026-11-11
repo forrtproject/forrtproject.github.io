@@ -988,7 +988,6 @@
 @media (max-width: 760px) {
   .clusters-map__frame { display: none; }
   .clusters-map__compact { display: block; }
-  .clusters-map__scroll .clusters-map__art { width: 1400px; }
 }
 @media (forced-colors: active) {
   .clusters-map__art text, .clusters-map__icon { fill: CanvasText; }

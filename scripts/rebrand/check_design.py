@@ -610,8 +610,18 @@ CLUSTERS_MAP_LAYOUT = """() => {
       if (hit) { crossings.push(own.text + ' crosses ' + hit.text); break; }
     }
   });
+  const list = document.querySelector('.clusters-map__list > ol');
   return {overflow: boxes.filter((b) => b.over.length).map((b) => b.over[0]), overlaps, crossings,
-    pills: boxes.filter((b) => !b.label).length, labels: boxes.filter((b) => b.label).length};
+    pills: boxes.filter((b) => !b.label).length, labels: boxes.filter((b) => b.label).length,
+    listed: list ? [list.children.length, list.querySelectorAll('ul > li').length] : [0, 0]};
+}"""
+
+CLUSTERS_MAP_PHONE = """() => {
+  const shown = (el) => !!el && el.getClientRects().length > 0;
+  return {frame: shown(document.querySelector('.clusters-map__frame')),
+    hub: shown(document.querySelector('.clusters-map__hub')),
+    chips: [...document.querySelectorAll('.clusters-map__chips a')].filter(shown).length,
+    clusters: document.querySelectorAll('.clusters-map__list > ol > li').length};
 }"""
 
 
@@ -630,6 +640,15 @@ def check_clusters_map(browser, base, failures):
         expect(not found["overflow"], "text fits its pill or label" + listed(found["overflow"]))
         expect(not found["overlaps"], "no pill or label overlaps another" + listed(found["overlaps"]))
         expect(not found["crossings"], "no line runs through a pill or label" + listed(found["crossings"]))
+        expect(found["listed"][0] > 0 and [found["labels"], found["pills"]] == found["listed"],
+               f"the drawing has every cluster and sub-cluster in the list ({found['listed']})")
+    page.context.close()
+    page = new_page(browser, 390)
+    page.goto(base + "clusters/", wait_until="load")
+    phone = page.evaluate(CLUSTERS_MAP_PHONE)
+    expect(not phone["frame"] and phone["hub"], "at 390 px the hub shows instead of the full drawing")
+    expect(phone["clusters"] > 0 and phone["chips"] == phone["clusters"],
+           f"at 390 px every cluster has a label ({phone['chips']} of {phone['clusters']})")
     page.context.close()
 
 

@@ -243,10 +243,6 @@ class BreadcrumbLinks(unittest.TestCase):
         self.assertEqual(bad.crumb_links, ["/", ""])
 
 
-if __name__ == "__main__":
-    unittest.main()
-
-
 
 def clusters_map_failures(page):
     with tempfile.TemporaryDirectory() as public:
@@ -271,3 +267,7 @@ class ClustersMapCheck(unittest.TestCase):
 
     def test_page_without_the_drawing_fails(self):
         self.assertTrue(clusters_map_failures("<p>No map</p>"))
+
+
+if __name__ == "__main__":
+    unittest.main()
