@@ -264,7 +264,7 @@ def name_image_link(match):
 def tidy_page(page):
     """Document-level fixes for an archived email. Safe to apply more than once."""
     # One HTML5 doctype, an English page language and a zoomable viewport.
-    page = re.sub(r"\A\s*(<!doctype[^>]*>\s*)+", "<!doctype html>\n", page, flags=re.IGNORECASE)
+    page = re.sub(r"\A\s*(<!doctype[^>]*>\s*)*", "<!doctype html>\n", page, count=1, flags=re.IGNORECASE)
     page = re.sub(r"<html\b(?![^>]*\slang=)", '<html lang="en"', page, count=1, flags=re.IGNORECASE)
     page = re.sub(r'<meta\s+name="viewport"[^>]*>', "", page, flags=re.IGNORECASE)
     page = re.sub(r"(<head\b[^>]*>)", r'\1<meta name="viewport" content="width=device-width, initial-scale=1">',
