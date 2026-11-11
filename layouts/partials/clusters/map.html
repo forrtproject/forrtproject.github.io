@@ -7,7 +7,10 @@
      right to left below it. Labels sit on an arc round the hub, their pills stack away from it,
      and a cluster whose pills would stand taller than $colMax splits them into columns. Text is
      wrapped with the font's measured widths (clusters/map_wrap.html). On the page the drawing
-     scales to the column; "Open full size" shows it larger. */}}
+     scales to the column; "Open full size" shows it larger.
+
+     The /clusters/ share image (content/clusters/FORRT_Clusters.webp) is a render of this map.
+     After changing the map or the clusters, rebuild and re-run scripts/render_clusters_share_image.py. */}}
 {{ with hugo.Data.clusters_v4 }}{{ with .clusters }}
 {{ $clusters := . }}
 {{ $palette := (partial "clusters/colors.html").arrowColors }}
