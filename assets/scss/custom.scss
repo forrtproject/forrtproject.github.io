@@ -3438,7 +3438,7 @@ form.newsletter-form p.newsletter-status { margin: 8px 0 0; font-size: 1rem; fon
 .newsletter-status:empty { display: none; }
 form.newsletter-form p.newsletter-status.is-error { color: #a3271f; }
 .newsletter-status:focus:not(:focus-visible) { outline: none; }
-form.newsletter-form p.newsletter-note { margin: 6px 0 0; color: #4a5568; font-size: 0.8rem; line-height: 1.4; }
+form.newsletter-form p.newsletter-note { margin: 6px 0 0; color: #4a5568; font-size: 15px; line-height: 1.4; }
 .newsletter-note a { color: inherit; text-decoration: underline; }
 .newsletter-form.is-done .newsletter-row,
 .newsletter-form.is-done .newsletter-note { display: none; }
