@@ -942,30 +942,59 @@
   }
 }
 
-/* Clusters map: wheel and legend (partials/clusters/map.html) */
-.clusters-map {
-  display: grid;
-  grid-template-columns: minmax(220px, 320px) 1fr;
-  gap: 1.5rem 2.5rem;
-  align-items: center;
-  margin: 1.75rem 0 0.5rem;
+/* Clusters map: a mind map drawn by partials/clusters/map.html */
+.clusters-map { margin: 1.75rem 0 0.5rem; }
+.clusters-map__frame { overflow: hidden; }
+.clusters-map__art { display: block; width: 100%; height: auto; font-family: var(--text); }
+.clusters-map__art text { fill: #fff; text-anchor: middle; pointer-events: none; }
+.clusters-map__line { fill: none; stroke: var(--soft); stroke-width: 2; stroke-linecap: round; }
+.clusters-map__seg path:first-of-type, .clusters-map__label rect, .clusters-map__pill rect { fill: var(--c); }
+.clusters-map__icon { fill: #fff; }
+.clusters-map__label text { font-size: 20px; font-weight: 700; }
+.clusters-map__pill text { font-size: 17px; font-weight: 400; }
+.clusters-map__disc { fill: #fff; stroke: var(--res); stroke-width: 7; }
+.clusters-map__cluster { transition: opacity 0.15s; }
+.clusters-map__art.is-pointing .clusters-map__cluster:not(.is-active) { opacity: 0.35; }
+.clusters-map__art a:hover rect { fill: color-mix(in srgb, var(--c) 80%, #000); }
+.clusters-map__caption { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.5rem 1.5rem; margin-top: 0.75rem; }
+.clusters-map__enlarge, .clusters-map__close {
+  font: inherit; font-size: 0.9rem; font-weight: 600; color: var(--ink); background: var(--page);
+  border: 1px solid var(--line); border-radius: var(--r-small); padding: 0.35rem 0.9rem; cursor: pointer;
 }
-.clusters-map__wheel { width: 100%; height: auto; display: block; }
-.clusters-map__segment path { transition: opacity 0.15s; }
-.clusters-map__segment text { fill: #fff; font: 700 21px var(--text); text-anchor: middle; pointer-events: none; }
-.clusters-map.is-pointing .clusters-map__segment:not(.is-active) path { opacity: 0.3; }
-.clusters-map__hub { fill: var(--ink); font: 500 38px var(--display); text-anchor: middle; }
-.clusters-map__hub-sub { fill: var(--soft); font: 400 21px var(--text); text-anchor: middle; }
-.clusters-map__legend ol { list-style: none; margin: 0; padding: 0; columns: 2; column-gap: 1.5rem; }
-.clusters-map__legend li { break-inside: avoid; padding: 6px 8px; border-radius: var(--r-small); }
-.clusters-map__legend li.is-active { background: var(--surface); }
-.clusters-map__legend a { display: flex; align-items: flex-start; gap: 0.6rem; color: var(--ink); text-decoration: none; line-height: 1.3; }
-.clusters-map__name { text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px; }
-.clusters-map__legend a:hover .clusters-map__name, .clusters-map__legend a:focus-visible .clusters-map__name { text-decoration-color: currentColor; }
-.clusters-map__segment { cursor: pointer; }
-.clusters-map__chip { flex: 0 0 1.7rem; height: 1.7rem; border-radius: 50%; color: #fff; font-weight: 700; font-size: 0.85rem; display: inline-flex; align-items: center; justify-content: center; }
-.clusters-map__name { padding-top: 0.15rem; }
-.clusters-map__count { display: block; margin-left: 2.3rem; font-size: 0.85rem; color: var(--soft); }
+.clusters-map__enlarge:hover, .clusters-map__close:hover { border-color: var(--ink); }
+.clusters-map__list { flex: 1 1 20rem; }
+.clusters-map__list summary { cursor: pointer; color: var(--link); font-size: 0.95rem; }
+.clusters-map__list ol { margin: 0.75rem 0 0; padding-left: 1.4rem; columns: 2 22rem; column-gap: 2rem; font-size: 0.95rem; }
+.clusters-map__list li { break-inside: avoid; margin-bottom: 0.5rem; }
+.clusters-map__list ul { margin: 0.2rem 0 0; padding-left: 1.1rem; font-size: 0.9rem; }
+.clusters-map__list ul li { margin: 0; }
+.clusters-map__list a { color: var(--ink); }
+.clusters-map__dialog { width: 96vw; max-width: none; height: 94vh; max-height: none; padding: 0; border: 0; border-radius: var(--r-large); background: var(--page); }
+.clusters-map__dialog::backdrop { background: rgba(38, 45, 53, 0.6); }
+.clusters-map__close { position: absolute; top: 0.75rem; right: 0.75rem; z-index: 1; box-shadow: 0 1px 4px rgba(38, 45, 53, 0.25); }
+.clusters-map__scroll { height: 100%; overflow: auto; }
+.clusters-map__scroll .clusters-map__art { width: auto; max-width: none; height: auto; margin: 0 auto; }
+.clusters-map__compact { display: none; }
+.clusters-map__hub { display: block; width: min(240px, 70%); margin: 0 auto 1rem; }
+.clusters-map__segment { fill: var(--c); }
+.clusters-map__chips { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.5rem; }
+.clusters-map__chips a {
+  display: flex; align-items: center; gap: 0.8rem; padding: 0.55rem 0.9rem; border-radius: 12px;
+  background: var(--c); color: #fff; font-weight: 700; line-height: 1.25; text-decoration: none;
+}
+.clusters-map__chips svg { flex: 0 0 1.4rem; height: 1.4rem; fill: currentColor; }
+.clusters-map__chips small { display: block; font-size: 0.85rem; font-weight: 400; }
+/* Phones: the hub and the cluster labels; the pills are in the list and the full-size view. */
+@media (max-width: 760px) {
+  .clusters-map__frame { display: none; }
+  .clusters-map__compact { display: block; }
+  .clusters-map__scroll .clusters-map__art { width: 1400px; }
+}
+@media (forced-colors: active) {
+  .clusters-map__art text, .clusters-map__icon { fill: CanvasText; }
+  .clusters-map__seg path:first-of-type, .clusters-map__segment, .clusters-map__label rect, .clusters-map__pill rect { fill: Canvas; stroke: CanvasText; }
+  .clusters-map__chips a { border: 1px solid CanvasText; }
+}
 
 /* Stack on small screens */
 @media (max-width: 768px) {
@@ -987,13 +1016,6 @@
     font-size: 0.9rem;
   }
 
-  .clusters-map { grid-template-columns: 1fr; }
-  .clusters-map__wheel { max-width: 280px; margin: 0 auto; }
-  .clusters-map__legend ol { columns: 1; }
-  .clusters-map__legend li { padding: 4px 6px; }
-  .clusters-map__count { display: inline; margin-left: 0.4rem; }
-  .clusters-map__count::before { content: "· "; }
-  .clusters-map__legend li { display: flex; flex-wrap: wrap; align-items: baseline; }
 }
 
 

@@ -1,0 +1,33 @@
+{{/* Wrap text into lines no wider than .width at font .size and .weight ("400" or "700"),
+     using Source Sans 3's advance widths. Returns dict: lines (slice), widest (number).
+     With .max_lines, a longer text keeps that many lines and ends the last one with "…". */}}
+{{ $tab := index (partialCached "clusters/map_metrics.html" "metrics") .weight }}
+{{ $scale := div (float .size) 1000 }}
+{{ $space := mul (index $tab " ") $scale }}
+{{ $lines := slice }}{{ $widths := slice }}
+{{ $cur := "" }}{{ $curW := 0.0 }}
+{{ range split .text " " }}
+  {{ if . }}
+    {{ $w := 0.0 }}
+    {{ range split . "" }}{{ $w = add $w (or (index $tab .) 560) }}{{ end }}
+    {{ $w = mul $w $scale }}
+    {{ if eq $cur "" }}
+      {{ $cur = . }}{{ $curW = $w }}
+    {{ else if gt (add $curW $space $w) $.width }}
+      {{ $lines = $lines | append $cur }}{{ $widths = $widths | append $curW }}
+      {{ $cur = . }}{{ $curW = $w }}
+    {{ else }}
+      {{ $cur = printf "%s %s" $cur . }}{{ $curW = add $curW $space $w }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+{{ if ne $cur "" }}{{ $lines = $lines | append $cur }}{{ $widths = $widths | append $curW }}{{ end }}
+{{ with .max_lines }}{{ if gt (len $lines) . }}
+  {{ $keep := first . $lines }}
+  {{ $last := index $keep (sub . 1) }}
+  {{/* Drop the last word (it is at least as wide as the ellipsis) and mark the cut. */}}
+  {{ $last = replaceRE `[\s,;:&–-]*\S+$` "" $last }}
+  {{ $lines = (first (sub . 1) $keep) | append (printf "%s…" $last) }}
+  {{ $widths = first . $widths }}
+{{ end }}{{ end }}
+{{ return dict "lines" $lines "widest" (math.Max 0.0 $widths) }}
