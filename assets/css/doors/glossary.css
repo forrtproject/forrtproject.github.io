@@ -63,3 +63,14 @@ main:lang(ar) .post-nav-next .term-en{text-align:left}
 .glossary-about{margin:36px 0 0;padding:4px 20px;background:var(--surface);border-radius:var(--r-large)}
 .glossary-about>summary{padding:14px 0;cursor:pointer;font:600 18px/1.3 var(--text);color:var(--ink)}
 .glossary-about .article-style>.btn-group:first-child{display:none}
+/* A term page leads with its definition in a tinted panel; credits are a quiet line at the end. */
+.glossary-layout .article-style .term-definition{margin:6px 0 18px;padding:18px 22px;background:var(--edu-bg);border:0;border-radius:var(--r-large)}
+.glossary-layout .article-style .term-definition p{margin:0;font-size:20px;line-height:1.55}
+.glossary-layout .article-style .term-definition .term-definition-label{margin:0 0 6px;color:var(--edu);font:600 15px/1.3 var(--text)}
+.glossary-layout .article-style .term-credit{margin:0 0 4px;font-size:16px;color:var(--soft)}
+.glossary-layout .article-style .term-credit b{font-weight:600;color:var(--ink)}
+.glossary-layout .article-style .term-credit:first-of-type{margin-top:18px}
+.glossary-count{margin:8px 0 0;font-size:16px;color:var(--soft)}
+.glossary-count:empty{display:none}
+/* The letters stay in reach while the terms scroll by. */
+.glossary-letters{position:sticky;top:0;z-index:5;padding:8px 0;background:var(--page)}

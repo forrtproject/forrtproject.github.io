@@ -160,7 +160,7 @@
 
       <div class="article-style">
         {{ with .Params.definition }}
-        <p class="term-definition"><b>{{ index $dict "definition" }}: </b>{{ . | markdownify }}</p>
+        <div class="term-definition"><p class="term-definition-label">{{ index $dict "definition" }}</p><p>{{ . | markdownify }}</p></div>
         {{ end }}
 
             {{ partial "doors/content" .Content }}
@@ -225,28 +225,28 @@
             {{ if .Params.drafted_by }}
             {{ $drafted_by := delimit .Params.drafted_by ", " | len }}
             {{ if ne $drafted_by 0 }}
-            <p class="term-line"><b>{{ index (index $dictionary $lang) "originally_drafted_by" }}: </b>{{ delimit .Params.drafted_by ", " }}</p>
+            <p class="term-line term-credit"><b>{{ index (index $dictionary $lang) "originally_drafted_by" }}: </b>{{ delimit .Params.drafted_by ", " }}</p>
             {{ end }}
             {{ end }}
 
             {{ if .Params.reviewed_by }}
             {{ $reviewed_by := delimit .Params.reviewed_by ", " | len }}
             {{ if ne $reviewed_by 0 }}
-            <p class="term-line"><b>{{ index (index $dictionary $lang) "reviewed_by" }}: </b>{{ delimit .Params.reviewed_by ", " | markdownify }}</p>
+            <p class="term-line term-credit"><b>{{ index (index $dictionary $lang) "reviewed_by" }}: </b>{{ delimit .Params.reviewed_by ", " | markdownify }}</p>
             {{ end }}
             {{ end }}
 
             {{ if .Params.translated_by }}
             {{ $translated_by := delimit .Params.translated_by ", " | len }}
             {{ if ne $translated_by 0 }}
-            <p class="term-line"><b>{{ index (index $dictionary $lang) "translated_by" }}: </b>{{ delimit .Params.translated_by ", " }}</p>
+            <p class="term-line term-credit"><b>{{ index (index $dictionary $lang) "translated_by" }}: </b>{{ delimit .Params.translated_by ", " }}</p>
             {{ end }}
             {{ end }}
 
             {{ if .Params.translation_reviewed_by }}
             {{ $translation_reviewed_by := delimit .Params.translation_reviewed_by ", " | len }}
             {{ if ne $translation_reviewed_by 0 }}
-            <p class="term-line"><b>{{ index (index $dictionary $lang) "translation_reviewed_by" }}: </b>{{ delimit .Params.translation_reviewed_by ", " }}</p>
+            <p class="term-line term-credit"><b>{{ index (index $dictionary $lang) "translation_reviewed_by" }}: </b>{{ delimit .Params.translation_reviewed_by ", " }}</p>
             {{ end }}
             {{ end }}
 

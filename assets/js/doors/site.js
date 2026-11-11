@@ -480,7 +480,14 @@ if (termFilter && termGrid) {
     terms.forEach((term) => { term.hidden = !term.dataset.term.includes(query); });
     groups.forEach((group) => { group.hidden = !group.querySelector('li:not([hidden])'); });
     none.hidden = groups.some((group) => !group.hidden);
+    const shown = terms.filter((term) => !term.hidden).length;
+    document.querySelector('.glossary-count').textContent = query && shown ? `${shown} of ${terms.length} terms` : '';
   });
+  // "How to cite" links to the closed disclosure at the end; following the link opens it.
+  const about = document.getElementById('about-the-glossary');
+  const openAbout = () => { if (location.hash === '#about-the-glossary') about.open = true; };
+  window.addEventListener('hashchange', openAbout);
+  openAbout();
 } else if (termFilter) {
   const terms = [...document.querySelectorAll('.term-list li')];
   termFilter.addEventListener('input', () => {
