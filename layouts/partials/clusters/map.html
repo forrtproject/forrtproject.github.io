@@ -53,6 +53,8 @@
   {{ $tallest := 0.0 }}{{ range $colH }}{{ $tallest = math.Max $tallest . }}{{ end }}
   {{ $blockW := add (mul $cols $colW) (mul (sub $cols 1) $colGap) }}
   {{ $lw := math.Min $labelMax (math.Max $labelMin $blockW) }}
+  {{/* A name that needs more than 3 lines at the column's width widens, up to $labelMax, before it is cut. */}}
+  {{ if gt (len (partial "clusters/map_wrap.html" (dict "text" $c.name "width" (sub $lw (mul 2 $lpadX)) "size" $lfs "weight" "700")).lines) 3 }}{{ $lw = $labelMax }}{{ end }}
   {{ $label := partial "clusters/map_wrap.html" (dict "text" $c.name "width" (sub $lw (mul 2 $lpadX)) "size" $lfs "weight" "700" "max_lines" 3) }}
   {{ $icon := index $icons.by_cluster (string $num) | default $icons.fallback }}
   {{ $stacks = $stacks | append (dict

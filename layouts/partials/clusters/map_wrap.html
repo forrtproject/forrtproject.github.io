@@ -2,7 +2,9 @@
      using Source Sans 3's advance widths. Returns dict: lines (slice), widest (number).
      With .max_lines, a longer text keeps that many lines and ends the last one with "…". */}}
 {{ $tab := index (partialCached "clusters/map_metrics.html" "metrics") .weight }}
-{{ $scale := div (float .size) 1000 }}
+{{/* 4% headroom: browsers set text up to a few per cent wider than the advance widths
+     (Chromium on Linux overflowed pills that fitted on macOS with under 1 px to spare). */}}
+{{ $scale := mul (div (float .size) 1000) 1.04 }}
 {{ $space := mul (index $tab " ") $scale }}
 {{ $lines := slice }}{{ $widths := slice }}
 {{ $cur := "" }}{{ $curW := 0.0 }}
