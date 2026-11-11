@@ -19,8 +19,24 @@
   var letters = document.querySelector(".tag-letters");
   var groups = Array.prototype.slice.call(document.querySelectorAll(".tag-group"));
   var count = box.querySelector(".tag-filter-count");
+  // On a phone each letter shows its first twelve tags and a button for the rest, so the list stays walkable.
+  var FIRST = 12;
+  if (window.matchMedia("(max-width: 760px)").matches) {
+    groups.forEach(function (group) {
+      var items = group.querySelectorAll("li");
+      if (items.length <= FIRST) return;
+      group.classList.add("is-short");
+      var more = document.createElement("button");
+      more.type = "button";
+      more.className = "tag-group-more";
+      more.textContent = "All " + items.length + " tags under " + group.querySelector("h3").textContent;
+      more.addEventListener("click", function () { group.classList.remove("is-short"); more.remove(); });
+      group.appendChild(more);
+    });
+  }
   input.addEventListener("input", function () {
     var query = input.value.trim().toLowerCase();
+    document.querySelector(".tag-all").classList.toggle("is-searching", Boolean(query));
     var shown = 0;
     groups.forEach(function (group) {
       var any = false;
