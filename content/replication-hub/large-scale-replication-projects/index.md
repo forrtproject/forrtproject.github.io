@@ -224,6 +224,14 @@ Here you can find a list of completed and ongoing projects that summarize replic
    </td>
   </tr>
   <tr>
+   <td>COVID-19 Preprint Replication Project (Marcoci et al. 2024)
+   </td>
+   <td>Social and Behavioural Sciences (COVID-19 preprints)
+   </td>
+   <td><a href="https://doi.org/10.1038/s41562-024-01961-1">https://doi.org/10.1038/s41562-024-01961-1</a>
+   </td>
+  </tr>
+  <tr>
    <td>Brazilian Reproducibility Initiative (Amaral et al.)
    </td>
    <td>Biomedical Science
