@@ -750,6 +750,8 @@ FLOATING_WIDTHS = (390, 1024, 1280, 1440, 1800)  # From 1800 px the launcher has
 
 def check_floating_controls(browser, base, failures):
     """The chat launcher, its invitation and label, and back to top cover nothing of the page, wherever it is scrolled.
+    Below 1440 px the launcher and back to top float in the bottom corner, so mid-page they need only keep off each
+    other; at the end of the page, which the footer pads for them, they still cover nothing.
 
     The launcher is checked closed, hovered, focused from the keyboard and inviting (on a fake clock, so that its
     ten-second cycle runs at once), at the top, a third and two thirds of the way down, and at the end of each page.
@@ -766,8 +768,12 @@ def check_floating_controls(browser, base, failures):
         for path in FLOATING_PAGES:
             covered = {}
 
-            def look(state, selector="#just-os-bubble"):
+            def look(state, selector="#just-os-bubble", floating=False):
                 for item in page.evaluate(FLOATING_OVER, selector):
+                    # Below 1440 px the chat button and back to top float over the page as it scrolls by;
+                    # there they must only keep off each other, and cover nothing once the page is at its end.
+                    if floating and not re.search(r"just-os|back-to-top", item):
+                        continue
                     covered.setdefault(state, []).append(item)
                 if state.startswith("invitation") and page.evaluate(BUBBLE_SHOWN):
                     invited.add(f"{path} at {width} px")
@@ -788,8 +794,9 @@ def check_floating_controls(browser, base, failures):
                 page.mouse.move(1, 1)
                 page.evaluate(f"scrollTo(0, {y}); dispatchEvent(new Event('scroll'))")
                 page.wait_for_timeout(400)
-                look(f"launcher at {where}", "#just-os-btn")
-                look(f"back to top at {where}", ".clusters-back-to-top")
+                floating = width < 1440 and y != end
+                look(f"launcher at {where}", "#just-os-btn", floating)
+                look(f"back to top at {where}", ".clusters-back-to-top", floating)
                 back_to_top = back_to_top or page.evaluate(BACK_TO_TOP_SHOWN)
                 for turn in range(2):  # One of two turns of its cycle shows the invitation, where it may show.
                     page.clock.run_for(10000)

@@ -2398,3 +2398,8 @@ body.clusters-mobile-nav-open .clusters-back-to-top{display:none}
   .acc-header .acc-copy-link{order:2}
   .acc-header .acc-count{order:3;flex-basis:100%;margin-left:24px}
 }
+/* Below 1440 px the chat button floats in the bottom corner (launcher.css); back to top sits above it. */
+@media (max-width:1439px){
+  .clusters-back-to-top.clusters-back-to-top{right:20px;bottom:calc(80px + var(--banner,0px) + env(safe-area-inset-bottom,0px));width:44px;height:44px;font-size:16px}
+}
+body.clusters-mobile-nav-open #just-os-widget{display:none}

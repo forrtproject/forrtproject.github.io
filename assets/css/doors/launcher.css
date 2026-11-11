@@ -48,10 +48,15 @@
   #just-os-img{width:16px;height:16px}
   #just-os-bubble{inset-inline-end:28px}
 }
-/* Below 1440 px the tab in the margin is dark, so it reads as a control against the page; it keeps its
-   52 px height, as a taller tab covers text and back to top (check_design.py, floating controls). */
+/* Below 1440 px the margin is too narrow to hold the button, so it floats in the bottom corner over the page,
+   as a 48 px round button that is easy to find and press; the footer keeps room under it, so the end of the
+   page is never hidden. (Earlier the tab sat in the margin; reviewers found it too small to read or press.) */
 @media (max-width:1439px){
-  #just-os-btn{background:var(--ink);border-color:var(--ink)}
-  #just-os-btn:hover{background:var(--link);border-color:var(--link)}
-  #just-os-btn:focus-visible{outline-color:#fff}
+  #just-os-widget{inset-block-end:calc(16px + var(--banner,0px) + env(safe-area-inset-bottom,0px));inset-inline-end:16px}
+  #just-os-btn{display:inline-block;width:auto;height:auto;padding:0;background:#fff;border:1.5px solid var(--ink);border-radius:50%;box-shadow:0 2px 8px rgba(38,45,53,.3)}
+  #just-os-btn:hover{background:#fff;border-color:var(--link)}
+  #just-os-img{width:48px;height:48px}
+  #just-os-btn:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+  #just-os-bubble{inset-inline-end:58px;top:9px}
+  .site-foot{padding-bottom:88px}
 }
