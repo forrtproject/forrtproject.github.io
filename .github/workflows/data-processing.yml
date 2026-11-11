@@ -534,6 +534,7 @@ jobs:
             content/curated_resources/
             content/glossary/
             data/
+            !data/lesson_plans.json
             !data/partners.json
             !data/publications.yaml
             static/data/
