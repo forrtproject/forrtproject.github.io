@@ -169,23 +169,26 @@
             {{ end }}
 
             {{ with .Params.related_terms }}
-            {{ $related_links := slice }}
-            {{ range $index, $term := . }}
-            {{ $term_str := printf "%s" $term }} <!-- Ensure $term is treated as a string -->
-            {{ $term_clean := replace $term_str "\u00a0" " " }} <!-- Replace non-breaking space with space -->
-            {{ $term_clean = replaceRE `[*\\]` "" $term_clean }} <!-- Drop Markdown emphasis and escapes (*p*-value) so the slug matches the title's -->
-            {{ $term_clean = replaceRE "\\s*\\(.*\\)" "" $term_clean }} <!-- Remove text in parentheses -->
-            {{ $term_clean = replace $term_clean " " "_" }} <!-- Replace spaces with underscores -->
-            {{ $term_clean = replaceRE "[^a-zA-Z0-9_]" "_" $term_clean }} <!-- Replace all non-alphanumeric characters with underscores -->
-            {{ $term_clean = lower $term_clean }} <!-- Convert to lowercase -->
-            {{ $term_clean = trim $term_clean "_" }} <!-- Trim leading and trailing underscores -->
-            {{ $term_page := site.GetPage (printf "/glossary/%s/%s" $lang $term_clean) }}
-            {{ if not $term_page }}
-              {{ $term_page = site.GetPage (printf "/glossary/english/%s" $term_clean) }}
+            {{/* Related terms link to their pages, found by title: this language's terms first, then English;
+                 a translated term is also found by the English name in its brackets. */}}
+            {{ $index := dict }}
+            {{ range slice "english" $lang }}
+              {{ range where (where site.RegularPages "Type" "glossary") "File.Dir" (printf "glossary/%s/" .) }}
+                {{ $page := . }}
+                {{ $names := slice .Title }}
+                {{ with findRESubmatch `\[(.*)\]\s*$` .Title 1 }}{{ $names = $names | append (index (index . 0) 1) }}{{ end }}
+                {{ range $names }}
+                  {{ $key := . | replaceRE `[*\\]` "" | replaceRE `\s*\(.*?\)` "" | replaceRE `\s*\[.*\]\s*$` "" | lower | replaceRE `[^\p{L}\p{N}]+` "" }}
+                  {{ if $key }}{{ $index = merge $index (dict $key $page) }}{{ end }}
+                {{ end }}
+              {{ end }}
             {{ end }}
-            {{ if $term_page }}
-            {{ $term_url := $term_page.RelPermalink }}
-            {{ $related_links = $related_links | append (printf "<a href='%s'>%s</a>" $term_url ($term_str | htmlEscape | markdownify)) }}
+            {{ $related_links := slice }}
+            {{ range . }}
+            {{ $term_str := printf "%s" . }}
+            {{ $key := $term_str | replaceRE "\u00a0" " " | replaceRE `[*\\]` "" | replaceRE `\s*\(.*?\)` "" | lower | replaceRE `[^\p{L}\p{N}]+` "" }}
+            {{ with index $index $key }}
+            {{ $related_links = $related_links | append (printf "<a href='%s'>%s</a>" .RelPermalink ($term_str | htmlEscape | markdownify)) }}
             {{ else }}
             {{ $related_links = $related_links | append ($term_str | htmlEscape | markdownify | string) }}
             {{ end }}
