@@ -43,6 +43,8 @@
       <div class="result-bar">
         <p class="result-count" id="resultCount" role="status">{{ if gt $pager.TotalPages 1 }}Showing page {{ $pager.PageNumber }} of {{ $pager.TotalPages }}, from {{ lang.FormatNumber 0 $total }} resources{{ else }}Showing all {{ lang.FormatNumber 0 $total }} resources{{ end }}</p>
         <button class="text-button" id="clearFilters" type="button" hidden>Reset filters</button>
+        {{/* The previous and next page beside the count too, so a long page need not be scrolled to move on. */}}
+        {{ if gt $pager.TotalPages 1 }}<nav class="pager-mini" aria-label="Pages, at the top">{{ with $pager.Prev }}<a href="{{ .URL }}">Previous page</a>{{ end }}{{ with $pager.Next }}<a href="{{ .URL }}">Next page</a>{{ end }}</nav>{{ end }}
       </div>
       <p class="active-filters" id="activeFilters" hidden></p>
       <div class="res-grid" id="results">

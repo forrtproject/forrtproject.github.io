@@ -120,6 +120,8 @@ function draw() {
     countLine.textContent = serverCount;
   }
   if (pager) pager.hidden = filtering;
+  const pagerTop = document.querySelector('.pager-mini');
+  if (pagerTop) pagerTop.hidden = filtering;
   more.hidden = !filtering || hits.length <= shown;
   empty.hidden = hits.length > 0;
   results.hidden = hits.length === 0;

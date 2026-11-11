@@ -80,3 +80,11 @@
 .active-chip{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border:1.5px solid var(--ink);border-radius:999px;background:#fff;color:var(--ink);font:600 15px/1.3 var(--text);cursor:pointer}
 .active-chip::after{content:"×";font-size:18px;line-height:1}
 .active-chip:hover{background:var(--ink);color:#fff}
+/* Results as full-width rows: title, then type and level, then cluster, each row as tall as it needs. */
+.res-grid{grid-template-columns:minmax(0,1fr);gap:0;border-top:1px solid var(--line)}
+.res{padding:14px 12px;background:none;border-radius:0;border-bottom:1px solid var(--line);gap:4px}
+.res:hover{background:var(--surface)}
+.res-title{font-size:20px}
+.pager-mini{display:flex;gap:16px;margin-inline-start:auto}
+.pager-mini a{color:var(--link);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.pager-mini[hidden]{display:none}
