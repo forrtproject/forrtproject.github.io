@@ -60,16 +60,16 @@ subtitle = "An equity-based tool for authorship order"
 
 </div>
 
-Who goes first? Authorship order in academia is not just a matter of protocol but a critical determinant of research impact and professional advancement. However, the decision-making process often overlooks justice and equity, leading to a skewed distribution of authorship that favors privileged individuals, thereby exacerbating credit disparities for marginalized researchers. In response, we introduce the Academic Wheel of Privilege (AWoP): a comprehensive toolkit anchored by an app and supplemented with educational materials designed to guide equitable authorship order decisions.
+Who goes first? Authorship order shapes research impact and careers, yet decisions about it often overlook equity and favour privileged researchers. The Academic Wheel of Privilege (AWoP) is a toolkit, an app with educational materials, that helps teams decide authorship order equitably, especially where contributions are hard to compare or bias may play a part.
 
+{{< spoiler text="Why the AWoP" >}}
 The AWoP transcends traditional frameworks by integrating accessibility, inclusivity, diversity, equity, and social justice. It is particularly beneficial in situations where contribution levels are difficult to assess or where systemic biases might influence decisions. Central to the AWoP’s mission is its capacity to promote critical discussions on academic privilege, intersectionality, and power dynamics, nurturing a research culture characterized by accountability and a collaborative spirit in research. By adopting this tool, the academic community can move towards a research ethos that recognizes and values diverse backgrounds and experiences.
 
 The Academic Wheel of Privilege aims to reform authorship practices and inspire a broader transformation towards fairness and inclusiveness in the academic landscape. We invite you to explore the AWoP toolkit and join us in promoting equity and justice in academia.
+{{< /spoiler >}}
 
 ## Toolkit 
 ---
-
-We provide a comprehensive suite of resources within the AWoP toolkit:
 
 {{< action_cards >}}
 Web App | Generate weighted indicators of privilege for your team | /awop_app/
