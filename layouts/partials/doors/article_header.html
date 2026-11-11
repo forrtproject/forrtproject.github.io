@@ -16,6 +16,8 @@
     {{ if not $section }}{{ with $page.Params.crumb_parent }}{{ $name := . }}{{ range site.Menus.main }}{{ if eq .Name $name }}{{ $section = . }}{{ end }}{{ end }}{{ end }}{{ end }}
     {{ with $section }}<span aria-hidden="true">/</span> {{ if .URL }}<a href="{{ .URL | relLangURL }}">{{ .Name }}</a>{{ else }}{{ .Name }}{{ end }}{{ end }}
     {{ end }}{{ end }}
+    {{/* The trail ends with the page itself, as on every other template (doors/crumbs.html). */}}
+    <span aria-hidden="true">/</span> <span aria-current="page">{{ $page.LinkTitle }}</span>
   </nav>
   {{ with .Params.categories }}<div class="article-meta">{{ range . }}<span>{{ . }}</span>{{ end }}</div>{{ end }}
   {{ with .Params.header_logo }}<img class="article-logo" src="{{ . | relURL }}" alt="">{{ end }}

@@ -58,5 +58,7 @@
   #just-os-img{width:48px;height:48px}
   #just-os-btn:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
   #just-os-bubble{inset-inline-end:58px;top:9px}
+  /* A floating button can be dismissed, as on desktop; on touch screens the cross always shows. */
+  #just-os-dismiss{display:block}
   .site-foot{padding-bottom:88px}
 }

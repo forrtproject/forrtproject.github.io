@@ -36,3 +36,7 @@ main:lang(ar) .glossary-layout .reading h1 bdi{text-align:right}
 /* English runs on an Arabic page in the site's own faces; the Arabic text keeps its own, whose spacing the line-length rule is set for. */
 main:lang(ar) [lang=en],main:lang(ar) .glossary-layout .references-list li{font-family:'Source Sans 3','Source Sans Pro',system-ui,sans-serif}
 main:lang(ar) h1 [lang=en]{font-family:var(--display)}
+/* A translated term's English name, on its own smaller line wherever the term is listed. */
+.term-list .term-en,.post-nav .term-en{display:block;font-size:15px;color:var(--soft)}
+main:lang(ar) .term-list .term-en,main:lang(ar) .post-nav-prev .term-en{text-align:right}
+main:lang(ar) .post-nav-next .term-en{text-align:left}

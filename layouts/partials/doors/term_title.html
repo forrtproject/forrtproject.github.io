@@ -1,6 +1,6 @@
 {{/* A glossary term's title. Titles may carry inline Markdown, e.g. the italic p in "Research
      Contribution Metric (*p*)"; the title is escaped first so it cannot inject HTML. Translated terms end
      in the English title in square brackets, which must stay left to right inside an Arabic heading,
-     or its brackets and words change places. */}}
-{{ $out := replaceRE `^(.*) \[(.*)\]$` `$1 <bdi dir="ltr" lang="en">[$2]</bdi>` (. | htmlEscape | markdownify | string) | safeHTML }}
+     or its words change places. It shows as a second line (glossary.css), so it needs no brackets. */}}
+{{ $out := replaceRE `^(.*) \[(.*)\]$` `$1 <bdi class="term-en" dir="ltr" lang="en">$2</bdi>` (. | htmlEscape | markdownify | string) | safeHTML }}
 {{ return $out }}

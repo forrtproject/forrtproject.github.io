@@ -142,36 +142,6 @@ You can find a list of all effects we are working on [here](https://docs.google.
 
 <br>
 
-## **Table of Contents**
-
-<!-- MarkdownTOC depth=4 -->
-
-- [Social Psychology](#social-psychology)
-- [Positive Psychology](#positive-psychology)
-- [Cognitive Psychology](#cognitive-psychology)
-- [Developmental Psychology](#developmental-psychology)
-- [Differential Psychology](#differential-psychology)
-- [Judgment and Decision Making / Behavioral Economics](#judgment-and-decision-making)
-- [Marketing](#marketing)
-- [Neuroscience (humans)](#neuroscience-humans)
-- [Psychiatry / Mental Health](#psychiatry)
-- [Parapsychology](#parapsychology)
-- [Evolutionary Psychology](#evolutionary-psychology)
-- [Psychophysiology](#psychophysiology)<!-- - - [Behavioral Genetics](#behavioral-genetics)-->
-- [Applied Linguistics](#applied-linguistics)
-- [Educational Psychology](#educational-psychology)
-- [Health Psychology](#health-psychology)
-- [Political Psychology](#political-psychology) <!-- - [Comparative Psychology](#comparative-psychology)-->
-- [Evolutionary Linguistics](#evolutionary-linguistics)
-- [Speech Language Therapy](#speech-language-therapy)
-- [Experimental Philosophy](#experimental-philosophy)
-- [Further Literature](#further-literature)
-- [Contributors](#contributors)
-
-<!-- /MarkdownTOC -->
-
-<br>
-
 ## **Social Psychology**
 
 * **Elderly priming**. that hearing about old age makes people walk slower.

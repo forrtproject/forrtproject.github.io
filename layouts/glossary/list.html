@@ -13,6 +13,8 @@
       <header class="article-head">
         {{ partial "doors/crumbs" (dict "page" .) }}
         <h1>{{ .Title }}</h1>
+        {{/* On a narrow screen the list follows the introduction and languages; this links to it. */}}
+        <a class="term-list-jump" href="#glossary-terms">{{ (index $labels (.Params.language | default "english")).list_of_terms }} ↓</a>
       </header>
       <div class="article-style">
         {{ partial "doors/content" .Content }}

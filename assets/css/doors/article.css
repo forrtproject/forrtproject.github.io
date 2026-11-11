@@ -213,8 +213,9 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
   .article-layout:has(.toc-phone) .article-card:not(:has(dl)){display:none}
   .glossary-index .reading{display:contents}
   .glossary-index .article-head{order:-2;margin-bottom:0}
-  .glossary-index .glossary-card{order:-1}
   .glossary-index .term-list{max-height:220px}
+  .glossary-index .glossary-card{order:1}
+  .glossary-index .article-foot{order:2}
 }
 .summary-tools{margin:0 0 14px;padding:14px 18px;background:var(--surface);border-radius:var(--r-large)}
 .summary-tools label{display:block;margin:0;font-size:16px;font-weight:700}
