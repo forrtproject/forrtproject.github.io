@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Generate content/clusters/cluster-N/index.md from data/clusters_v4.json (re-run after JSON changes)."""
+"""Generate content/clusters/cluster-N/index.md from data/clusters_v4.json (re-run after JSON changes).
+
+The /clusters/ share image is rendered separately: after the clusters change, rebuild the
+site and run scripts/render_clusters_share_image.py <build-dir>.
+"""
 from __future__ import annotations
 
 import json
