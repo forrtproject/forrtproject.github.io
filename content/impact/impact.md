@@ -94,11 +94,11 @@ The manuscript was an international effort! Contributors were located across mul
 <br>
 
 
-### Lecture & Slides
+### Lecture
 
 <br>
 
-Dr. Madeleine Pownall presents a summary of the article in this lecture. You can find the slides here.
+Dr. Madeleine Pownall presents a summary of the article in this lecture.
 
 {{< youtube qYejqrtquzc >}}
  
