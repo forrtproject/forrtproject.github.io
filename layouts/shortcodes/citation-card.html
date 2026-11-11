@@ -1,3 +1,7 @@
+{{/* A suggested citation with a copy button. Either quote a work from the shared bibliography,
+     {{< citation-card key="Asai2026OpenScholar" />}}, or write the reference inside the shortcode.
+     Long author lists show three authors until the reader asks for all (citations/authors);
+     the copy button always copies the full reference (assets/js/doors/references.js). */}}
 {{ $css := resources.Get "css/cite_us.css" }}
 {{ if $css }}
   {{ $style := $css | minify | fingerprint }}
@@ -7,39 +11,29 @@
   <link rel="stylesheet" href="{{ "css/cite_us.css" | relURL }}">
 {{ end }}
 
+{{ $reference := "" }}
+{{ with .Get "key" }}
+  {{ $bib := partialCached "citations/bibliography" . "bibliography" }}
+  {{ with index $bib . }}
+    {{ $reference = markdownify . }}
+  {{ else }}
+    {{/* Local builds use the committed bibliography, which can lag the Doc: warn rather than fail. */}}
+    {{ warnf "citation-card: unknown bibliography key %q on %s" . $.Page.File.Path }}
+  {{ end }}
+{{ else }}
+  {{ $reference = .Inner | markdownify }}
+{{ end }}
+
+{{ with $reference }}
 <div class="cite-us-section citation-card">
   <div class="cite-us-item">
-    <div class="cite-us-text">{{ .Inner | markdownify }}</div>
-    <button type="button" class="copy-button" aria-label="Copy citation" onclick="copyCitationCard(this)">
+    <div class="cite-us-text"><p>{{ partial "citations/authors" $reference }}</p></div>
+    <button type="button" class="copy-button" aria-label="Copy citation" data-copy-reference>
       <svg class="copy-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
       </svg>
-      Copy
+      <span class="copy-label">Copy</span>
     </button>
   </div>
 </div>
-
-<script>
-  async function copyCitationCard(button) {
-    const citation = button.previousElementSibling.innerText.trim();
-    const originalContent = button.innerHTML;
-
-    try {
-      await navigator.clipboard.writeText(citation);
-    } catch (err) {
-      const textarea = document.createElement('textarea');
-      textarea.value = citation;
-      document.body.appendChild(textarea);
-      textarea.select();
-      document.execCommand('copy');
-      document.body.removeChild(textarea);
-    }
-
-    button.innerHTML = '<svg class="copy-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Copied!';
-    button.classList.add('copied');
-    setTimeout(() => {
-      button.innerHTML = originalContent;
-      button.classList.remove('copied');
-    }, 2000);
-  }
-</script>
+{{ end }}

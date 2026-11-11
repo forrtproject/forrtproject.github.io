@@ -29,6 +29,8 @@
 {{ end }}
 {{ $js := resources.Get "js/doors/site.js" | js.Build (dict "minify" true "format" "iife" "target" "es2019") | fingerprint "md5" }}
 <script src="{{ $js.RelPermalink }}" defer></script>
+{{/* Without the script, long author lists show in full (layouts/partials/citations/authors.html). */}}
+<noscript><style>.ref-more[hidden]{display:inline!important}.ref-etal,.ref-authors-toggle{display:none}</style></noscript>
 {{/* Publish a fingerprinted lookup for the glossary feature to fetch on first use. */}}
 {{ $terms := partialCached "doors/glossary_index.html" site }}
 {{ $index := resources.FromString "data/glossary-terms.json" ($terms | jsonify) | fingerprint "md5" }}

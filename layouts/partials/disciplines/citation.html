@@ -12,9 +12,7 @@
 
   <div class="cite-us-item">
     <div class="cite-us-text">
-      <span class="disciplines-cite-lead">The preprint:</span>
-      Farran, E. K., Silverstein, P., Ameen, A. A., Misheva, I., &amp; Gilmore, C. (2025, October 27). Open Research: Examples of good practice, and resources across disciplines (2026 edition).
-      <a href="https://doi.org/10.31219/osf.io/3r8hb" target="_blank" rel="noopener" class="doi-link">https://doi.org/10.31219/osf.io/3r8hb</a>
+      <p><span class="disciplines-cite-lead">The preprint:</span> Farran, E. K., Silverstein, P., Ameen, A. A., Misheva, I., &amp; Gilmore, C. (2025, October 27). Open Research: Examples of good practice, and resources across disciplines (2026 edition). <a href="https://doi.org/10.31219/osf.io/3r8hb" target="_blank" rel="noopener" class="doi-link">https://doi.org/10.31219/osf.io/3r8hb</a></p>
     </div>
     <button class="copy-button" onclick="copyDisciplinesCitation(this, 'preprint')">
       <svg class="copy-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -27,8 +25,7 @@
   {{ if $webCitationHTML }}
   <div class="cite-us-item">
     <div class="cite-us-text">
-      <span class="disciplines-cite-lead">This web resource:</span>
-      {{ $webCitationHTML | safeHTML }}
+      <p><span class="disciplines-cite-lead">This web resource:</span> {{ partial "citations/authors" $webCitationHTML }}</p>
     </div>
     <button class="copy-button" onclick="copyDisciplinesCitation(this, 'web')">
       <svg class="copy-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
