@@ -75,3 +75,10 @@ main:lang(ar) .post-nav-next .term-en{text-align:left}
 /* The letters stay in reach while the terms scroll by. */
 .glossary-letters{position:sticky;top:0;z-index:5;padding:8px 0;background:var(--page)}
 .glossary-letters a.is-empty{opacity:.35;pointer-events:none}
+/* Related terms as chips: linked where the term has a page, plain where it has none yet. */
+.glossary-layout .article-style .term-related{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.glossary-layout .article-style .term-related strong{margin-inline-end:4px}
+.term-chip{display:inline-block;padding:3px 12px;border:1.5px solid var(--line);border-radius:999px;font-size:16px;line-height:1.4;color:var(--ink)}
+a.term-chip{border-color:var(--link);color:var(--link);text-decoration:none}
+a.term-chip:hover{background:var(--link);color:#fff}
+.glossary-layout .article-style .term-credit{color:var(--ink)}

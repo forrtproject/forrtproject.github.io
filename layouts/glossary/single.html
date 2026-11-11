@@ -188,13 +188,13 @@
             {{ $term_str := printf "%s" . }}
             {{ $key := $term_str | replaceRE "\u00a0" " " | replaceRE `[*\\]` "" | replaceRE `\s*\(.*?\)` "" | lower | replaceRE `[^\p{L}\p{N}]+` "" }}
             {{ with index $index $key }}
-            {{ $related_links = $related_links | append (printf "<a href='%s'>%s</a>" .RelPermalink ($term_str | htmlEscape | markdownify)) }}
+            {{ $related_links = $related_links | append (printf "<a class='term-chip' href='%s'>%s</a>" .RelPermalink ($term_str | htmlEscape | markdownify)) }}
             {{ else }}
-            {{ $related_links = $related_links | append ($term_str | htmlEscape | markdownify | string) }}
+            {{ $related_links = $related_links | append (printf "<span class='term-chip'>%s</span>" ($term_str | htmlEscape | markdownify | string)) }}
             {{ end }}
             {{ end }}
-            {{ $related_links_string := delimit $related_links ", " | safeHTML }}
-            <p class="term-line"><strong>{{ if gt (len $related_links) 1 }}{{ index (index $dictionary $lang) "related_terms" }}{{ else }}{{ index (index $dictionary $lang) "related_term" }}{{ end }}: </strong>{{ $related_links_string }}</p>
+            {{ $related_links_string := delimit $related_links " " | safeHTML }}
+            <p class="term-line term-related"><strong>{{ if gt (len $related_links) 1 }}{{ index (index $dictionary $lang) "related_terms" }}{{ else }}{{ index (index $dictionary $lang) "related_term" }}{{ end }}: </strong>{{ $related_links_string }}</p>
             {{ end }}
 
             {{ if .Params.alt_related_terms }}
