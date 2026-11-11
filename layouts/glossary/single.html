@@ -62,6 +62,21 @@
         "reference" "Kaynak"
         "references" "Kaynakça"
     )
+    "bulgarian" (dict
+        "list_of_terms" "Списък на термините"
+        "filter_terms" "Филтриране на термините..."
+        "definition" "Определение"
+        "alt_definition" "Алтернативно определение"
+        "related_term" "Свързан термин"
+        "related_terms" "Свързани термини"
+        "originally_drafted_by" "Първоначално изготвено от"
+        "reviewed_by" "Прегледано от"
+        "translated_by" "Превод"
+        "translation_reviewed_by" "Редакция"
+        "note" "В момента работим по директното свързване на препратките. Засега пълният списък с препратки можете да видите <a href='https://forrt.org/glossary/references'>тук</a>."
+        "reference" "Препратка"
+        "references" "Препратки"
+    )
     "chinese" (dict
         "list_of_terms" "术语列表"
         "filter_terms" "筛选术语..."
@@ -172,7 +187,7 @@
           {{ $sortedPages := sort $withDefinition "Params.sort_key" }}
           {{ range $index, $page := $sortedPages }}
           <li class="nav-item">
-            <a href="{{ .Permalink }}" class="nav-link">{{ .Title }}</a>
+            <a href="{{ .Permalink }}" class="nav-link">{{ partial "glossary_title" . }}</a>
           </li>
           {{ end }}
         </ul>
@@ -186,7 +201,7 @@
 
 <div class="language-switcher">
   {{ $currentLang := .Params.language | default "english" }}
-{{ $allLanguages := slice "arabic" "chinese" "english" "german" "turkish" }}
+{{ $allLanguages := slice "arabic" "bulgarian" "chinese" "english" "german" "turkish" }}
   {{ $availableLanguages := slice }}
   {{ $site := .Site }}
   
@@ -241,7 +256,7 @@
   {{ end }}
 
   {{ if gt (len $availableLanguages) 0 }}
-    <strong>Also available in: </strong>
+    <strong>{{ if eq $lang "bulgarian" }}Налично и на{{ else }}Also available in{{ end }}: </strong>
     {{ range $index, $item := $availableLanguages }}
       <a href="{{ $item.page.RelPermalink }}">{{ $item.lang | title }}</a>{{ if lt $index (sub (len $availableLanguages) 1) }} | {{ end }}
     {{ end }}
@@ -260,6 +275,9 @@
             <p class="mb-1 pr-2"><b>{{ index (index $dictionary $lang) "alt_definition" }}: </b>{{ . | markdownify }}</p>
             {{ end }}
 
+            {{ with .Params.related_terms_text }}
+            <p class="mb-1 pr-2"><strong>{{ index (index $dictionary $lang) "related_terms" }}: </strong>{{ . | markdownify }}</p>
+            {{ end }}
             {{ with .Params.related_terms }}
             {{ $related_links := slice }}
             {{ range $index, $term := . }}

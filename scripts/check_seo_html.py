@@ -28,6 +28,8 @@ Hard checks (exit 1 if any fails):
      non-empty meta description (#864).
   10. No meta description contains a double-escaped entity such as `&amp;ldquo;`
      (#864). Text that merely looks like an entity (`&name;`) is not one.
+  11. Bulgarian glossary pages have Bulgarian DefinedTerm metadata, mark the
+     English heading suffix, and link only to existing internal glossary routes.
 
 Report-only sections (never fail): pages with zero or several <h1>, the
 site-wide share of images that carry both width and height, pages whose
@@ -67,6 +69,9 @@ class PageParser(HTMLParser):
         self.jsonld = []
         self.canonical = None
         self._jsonld_buffer = None
+        self.anchors = []
+        self.h1_english_texts = []
+        self._h1_english = False
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
@@ -76,6 +81,11 @@ class PageParser(HTMLParser):
             self.canonical = attrs.get("href")
         if tag == "h1":
             self._h1_depth += 1
+        elif tag == "span" and self._h1_depth and attrs.get("lang") == "en":
+            self._h1_english = True
+            self.h1_english_texts.append("")
+        elif tag == "a" and attrs.get("href"):
+            self.anchors.append(attrs["href"])
         elif tag in ("script", "link"):
             url = attrs.get("src") or attrs.get("href")
             if url:
@@ -93,6 +103,10 @@ class PageParser(HTMLParser):
             self.code_classes.append(attrs.get("class") or "")
 
     def handle_endtag(self, tag):
+        if tag in ("span", "h1"):
+            if self._h1_english:
+                self.h1_english_texts[-1] = self.h1_english_texts[-1].strip()
+            self._h1_english = False
         if tag == "script" and self._jsonld_buffer is not None:
             self.jsonld.append("".join(self._jsonld_buffer))
             self._jsonld_buffer = None
@@ -109,6 +123,8 @@ class PageParser(HTMLParser):
             self._jsonld_buffer.append(data)
         if self._h1_depth > 0:
             self._h1_buffer.append(data)
+            if self._h1_english:
+                self.h1_english_texts[-1] += data
 
 
 class Page:
@@ -135,6 +151,8 @@ class Page:
         self.indexable = not self.noindex and not refresh and not elsewhere
         self.jsonld = parser.jsonld
         self.canonical = parser.canonical
+        self.anchors = parser.anchors
+        self.h1_english_texts = parser.h1_english_texts
 
     def loads(self, needle):
         return any(needle in url for url in self.urls)
@@ -345,6 +363,49 @@ def check_description_entities(pages):
     return failures
 
 
+def check_bulgarian_glossary(pages):
+    """Check the rendered release, including minified/unquoted HTML attributes."""
+    known_routes = {"/" + p.path.removesuffix("index.html") for p in pages}
+    failures = []
+    for p in pages:
+        if not p.path.startswith("glossary/bulgarian/") or not p.indexable:
+            continue
+        found_term = False
+        for block in p.jsonld:
+            try:
+                term = json.loads(block)
+            except ValueError:
+                continue  # A term route must still have a valid block below.
+            if not isinstance(term, dict) or term.get("@type") != "DefinedTerm":
+                continue
+            found_term = True
+            if term.get("inLanguage") != "bg":
+                failures.append(f"{p.path} (DefinedTerm language is not bg)")
+            term_set = term.get("inDefinedTermSet")
+            if not isinstance(term_set, dict):
+                failures.append(f"{p.path} (inDefinedTermSet is not an object)")
+            elif term_set.get("inLanguage") != "bg":
+                failures.append(f"{p.path} (DefinedTermSet language is not bg)")
+            for title in p.h1_texts:
+                if " [" in title and title.endswith("]"):
+                    suffix = "[" + title.rsplit(" [", 1)[1]
+                    if suffix not in p.h1_english_texts:
+                        failures.append(f"{p.path} (English heading suffix lacks lang=en)")
+        if not found_term and p.path != "glossary/bulgarian/index.html":
+            failures.append(f"{p.path} (missing valid DefinedTerm block)")
+        for href in p.anchors:
+            url = urlparse(href)
+            if url.hostname not in (None, "forrt.org", "staging.forrt.org"):
+                continue
+            path = unquote(url.path)
+            if not path.startswith("/glossary/"):
+                continue
+            route = path.removesuffix("index.html").rstrip("/") + "/"
+            if route not in known_routes:
+                failures.append(f"{p.path} (missing glossary link: {href})")
+    return failures
+
+
 def description_report(pages, home):
     """Report-only: generic, duplicated and markup-containing descriptions on indexable pages."""
     described = [(p, p.descriptions[0].strip()) for p in pages
@@ -388,6 +449,7 @@ def main(public_dir):
         "7. breadcrumb JSON-LD is well formed": check_breadcrumbs(pages),
         "9. every indexable page has a meta description": check_description_present(pages),
         "10. no double-escaped entity in a meta description": check_description_entities(pages),
+        "11. Bulgarian glossary language metadata, headings and links": check_bulgarian_glossary(pages),
     }
     conditional = check_conditional_assets(pages)
     results["3. conditional highlight.js / mermaid loading"] = [
