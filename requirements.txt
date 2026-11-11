@@ -10,3 +10,4 @@ matplotlib
 pypinyin
 flask
 flask-cors
+pillow
