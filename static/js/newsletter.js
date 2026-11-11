@@ -59,7 +59,10 @@
         const reply = await (await fetch(form.action, { method: 'POST', mode: 'cors', cache: 'no-cache', body })).json();
         if (reply.success) {
           form.classList.add('is-done');
-          say('Thanks for subscribing! Look out for FORRT news in your inbox.');
+          const pending = reply.contact?.status === 'PENDING';
+          say(pending
+            ? 'Almost there! Click the link in the confirmation email to finish subscribing.'
+            : 'Thanks for subscribing! Look out for FORRT news in your inbox.');
           status.focus();
           return;
         }
