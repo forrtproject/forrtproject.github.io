@@ -3,7 +3,7 @@
     "en_title": "FORRT",
     "title": "FORRT",
     "sort_key": "forrt",
-    "definition": "Açık ve Yeniden Üretilebilir Araştırma ve Öğretim Platformu  (Framework of Open Reproducible Research and Teaching), yükseköğretimdeki temel ders konularıyla birlikte açık ve tekrarlanabilir araştırmanın öğretilmesini ve bu alanda mentorluk yapılmasını tanıyan ve destekleyen pedagojik bir altyapı sunmayı amaçlar. FORRT, açık ve yeniden üretilebilir bilimin pedagojik etkilerine ve bu alana özgü zorluklara (örn., müfredat reformu, epistemolojik belirsizlik, eğitim yöntemleri) dikkat çekmeyi hedefleyen, etkili, gelişen ve topluluk temelli bir organizasyon olmayı hedefler. Aynı zamanda FORRT, eğitime erişim imkânı kısıtlı bireyler için öğrenmeyi, keşfi ve erişimi kolaylaştırmak adına öğretim ve mentorluk materyallerinin açık hale getirilmesini savunur.",
+    "definition": "Açık ve Yeniden Üretilebilir Araştırma ve Öğretim Platformu  (Framework for Open and Reproducible Research Training), yükseköğretimdeki temel ders konularıyla birlikte açık ve tekrarlanabilir araştırmanın öğretilmesini ve bu alanda mentorluk yapılmasını tanıyan ve destekleyen pedagojik bir altyapı sunmayı amaçlar. FORRT, açık ve yeniden üretilebilir bilimin pedagojik etkilerine ve bu alana özgü zorluklara (örn., müfredat reformu, epistemolojik belirsizlik, eğitim yöntemleri) dikkat çekmeyi hedefleyen, etkili, gelişen ve topluluk temelli bir organizasyon olmayı hedefler. Aynı zamanda FORRT, eğitime erişim imkânı kısıtlı bireyler için öğrenmeyi, keşfi ve erişimi kolaylaştırmak adına öğretim ve mentorluk materyallerinin açık hale getirilmesini savunur.",
     "related_terms": [
         "Integrating open and reproducible science tenets into higher education"
     ],
@@ -28,5 +28,5 @@
     "translation_reviewed_by": [
         "Ege Emek"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-11"
 }

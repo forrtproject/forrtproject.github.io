@@ -8,8 +8,7 @@
         "Open Peer Review"
     ],
     "references": [
-        "PubPeer. (n.d.). <i>PubPeer—Search publications and join the conversation</i>. Pubpeer. https://www.pubpeer.com/",
-        "[www.pubpeer.com](http://www.pubpeer.com)"
+        "PubPeer. (n.d.). <i>PubPeer—Search publications and join the conversation</i>. Pubpeer. https://www.pubpeer.com/"
     ],
     "drafted_by": [
         "Ali H. Al-Hoorie"
@@ -27,5 +26,5 @@
     "translation_reviewed_by": [
         "Nihan Selin Soylu-Konak"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-11"
 }

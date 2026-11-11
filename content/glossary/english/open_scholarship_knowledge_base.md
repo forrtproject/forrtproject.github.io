@@ -10,8 +10,7 @@
         "Open Science"
     ],
     "references": [
-        "OER Commons. (n.d.). <i>Open Scholarship Knowledge Base | OER Commons</i>. https://www.oercommons.org/hubs/OSKB",
-        "[www.oercommons.org/hubs/OSKB](http://www.oercommons.org/hubs/OSKB)"
+        "OER Commons. (n.d.). <i>Open Scholarship Knowledge Base | OER Commons</i>. https://www.oercommons.org/hubs/OSKB"
     ],
     "drafted_by": [
         "Ali H. Al-Hoorie"
@@ -28,5 +27,5 @@
     "aliases": [
         "/glossary/open_scholarship_knowledge_base"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-11"
 }

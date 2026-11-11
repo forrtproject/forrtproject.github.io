@@ -12,8 +12,7 @@
         "Open Science"
     ],
     "references": [
-        "Tennant, J., Beamer, J. E., Bosman, J., Brembs, B., Chung, N. C., Clement, G., Crick, T., Dugan, J., Dunning, A., Eccles, D., Enkhbayar, A., Graziotin, D., Harding, R., Havemann, J., Katz, D. S., Khanal, K., Kjaer, J. N., Koder, T., Macklin, P., & Turner, A. (2019). <i>Foundations for Open Scholarship Strategy Development</i>. MetaArXiv. https://doi.org/10.31222/osf.io/b4v8p",
-        "[https://www.researchgate.net/publication/330742805\\_Foundations\\_for\\_Open\\_Scholarship\\_Strategy\\_Development](https://www.researchgate.net/publication/330742805_Foundations_for_Open_Scholarship_Strategy_Development)"
+        "Tennant, J., Beamer, J. E., Bosman, J., Brembs, B., Chung, N. C., Clement, G., Crick, T., Dugan, J., Dunning, A., Eccles, D., Enkhbayar, A., Graziotin, D., Harding, R., Havemann, J., Katz, D. S., Khanal, K., Kjaer, J. N., Koder, T., Macklin, P., & Turner, A. (2019). <i>Foundations for Open Scholarship Strategy Development</i>. MetaArXiv. https://doi.org/10.31222/osf.io/b4v8p"
     ],
     "drafted_by": [
         "Gerald Vineyard"
@@ -35,5 +34,5 @@
         "Susanne Vogel",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-11"
 }

@@ -10,7 +10,7 @@
     ],
     "references": [
         "Gollwitzer, M., Abele-Brehm, A., Fiebach, C., Ramthun, R., Scheel, A. M., Schönbrodt, F. D., & Steinberg, U. (2020). <i>Data Management and Data Sharing in Psychological Science: Revision of the DGPs Recommendations</i>.",
-        "[https://schema.datacite.org/](https://schema.datacite.org/)"
+        "DataCite Schema. (n.d.). <i>Datacite Metadata Schema</i>. https://schema.datacite.org/"
     ],
     "drafted_by": [
         "Matt Jaquiery"
@@ -31,5 +31,5 @@
     "translation_reviewed_by": [
         "Merve Öztürk"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-11"
 }

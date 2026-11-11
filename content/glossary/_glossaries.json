@@ -705,7 +705,7 @@
                     "Triple badge"
                 ],
                 "references": [
-                    "Hardwicke, T. E., Bohn, M., MacDonald, K., Hembacher, E., Nuijten, M. B., Peloquin, B. N., et al. (2020). Analytic reproducibility in articles receiving open data badges at the journal Psychological Science: an observational study. <i>Royal Society Open Science</i>, <i>8</i>(1), 201494. https://doi.org/10.1098/rsos.201494",
+                    "Hardwicke, T. E., Bohn, M., MacDonald, K., Hembacher, E., Nuijten, M. B., Peloquin, B. N., deMayo, B. E., Long, B., Yoon, E. J., & Frank, M. C. (2020). Analytic reproducibility in articles receiving open data badges at the journal Psychological Science: an observational study. <i>Royal Society Open Science</i>, <i>8</i>(1), 201494. https://doi.org/10.1098/rsos.201494",
                     "Kidwell, M. C., Lazarević, L. B., Baranski, E., Hardwicke, T. E., Piechowski, S., Falkenberg, L. S., & Nosek, B. A. (2016). Badges to acknowledge open practices: A simple, low-cost, effective method for increasing transparency. <i>PLoS Biology</i>, <i>14</i>(5), e1002456. https://doi.org/10.1371/journal.pbio.1002456",
                     "Rowhani-Farid, A., Aldcroft, A., & Barnett, A. G. (2020). Did awarding badges increase data sharing in BMJ Open? A randomized controlled trial. <i>Royal Society Open Science</i>, <i>7</i>(3), 191818. https://doi.org/10.1098/rsos.191818",
                     "Science, C. (n.d.). <i>Open science badges</i>. https://www.cos.io/initiatives/badges"
@@ -738,7 +738,7 @@
                 "aliases": [
                     "/glossary/arabic/open_science_الش_ارات_العلم_المفتوح"
                 ],
-                "lastmod": "2026-11-09"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -800,7 +800,7 @@
                     "Dienes, Z. (2011). Bayesian versus orthodox statistics: Which side are you on? <i>Perspectives on Psychological Science</i>, <i>6</i>(3), 274–290. https://doi.org/10.1177/1745691611406920",
                     "Dienes, Z. (2014). Using Bayes to get the most out of non-significant results. <i>Frontiers in Psychology</i>, <i>5</i>, 781. https://doi.org/10.3389/fpsyg.2014.00781",
                     "Dienes, Z. (2016). How Bayes factors change scientific practice. <i>Journal of Mathematical Psychology</i>, <i>72</i>, 78–89. https://doi.org/10.1016/j.jmp.2015.10.003",
-                    "Etz, A., Gronau, Q. F., Dablander, F., et al. (2018). How to become a Bayesian in eight easy steps: An annotated reading list. <i>Psychonomic Bulletin & Review</i>, <i>25</i>, 219–234. https://doi.org/10.3758/s13423-017-1317-5",
+                    "Etz, A., Gronau, Q. F., Dablander, F., Edelsbrunner, P. A., & Baribault, B. (2018). How to become a Bayesian in eight easy steps: An annotated reading list. <i>Psychonomic Bulletin & Review</i>, <i>25</i>, 219–234. https://doi.org/10.3758/s13423-017-1317-5",
                     "Kruschke, J. K. (2015). <i>Doing Bayesian data analysis: A tutorial with R, JAGS, and Stan</i> (2nd ed.). Academic Press.",
                     "McElreath, R. (2020). <i>Statistical rethinking: A Bayesian course with examples in R and Stan</i> (2nd ed.). Taylor.",
                     "Wagenmakers, E.-J., Marsman, M., Jamil, T., Ly, A., Verhagen, J., Love, J., Selker, R., Gronau, Q. F., Šmíra, M., Epskamp, S., Matzke, D., Rouder, J. N., & Morey, R. D. (2018). Bayesian inference for psychology. Part I: Theoretical advantages and practical ramifications. <i>Psychonomic Bulletin & Review</i>, <i>25</i>(1), 35–57. https://doi.org/10.3758/s13423-017-1343-3"
@@ -829,7 +829,7 @@
                     "Ali H. Al-Hoorie",
                     "Mohammed Mohsen"
                 ],
-                "lastmod": "2026-11-09"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -1055,7 +1055,7 @@
                     "Guest, O. [@o_guest]. (2017). <i>Thanks! Hopefully this thread & many other similar discussions & blogs will help make it less Bropen Science and more Open Science. *hides* </i>. Twitter. Retrieved from https://twitter.com/o_guest/status/871675631062458368",
                     "Whitaker, K., & Guest, O. (2020).  #bropenscience is broken science. <i>The Psychologist</i>, <i>33</i>, 34–37.",
                     "Pownall, M., Talbot, C. V., Henschel, A., Lautarescu, A., Lloyd, K. E., Hartmann, H., Darda, K. M., Tang, K. T. Y., Carmichael-Murphy, P., & Siegel, J. A. (2021). Navigating Open Science as Early Career Feminist Researchers. <i>Psychology of Women Quarterly</i>, <i>45</i>(4), 526–539. https://doi.org/10.1177/03616843211029255",
-                    "Bahlai, C., Bartlett, L. J., Burgio, K. R., et al. (2019). Open science isn’t always open to all scientists. <i>American Scientist</i>, <i>107</i>(2), 78.",
+                    "Bahlai, C., Bartlett, L. J., Burgio, K. R., Fournier, A., Keiser, C., Poisot, T., & Whitney, K. (2019). Open science isn’t always open to all scientists. <i>American Scientist</i>, <i>107</i>(2), 78.",
                     "Onie, S. (2020). Redesign open science for Asia, Africa and Latin America. <i>Nature</i>, <i>587</i>, 35–37. https://doi.org/10.1038/d41586-020-03052-3"
                 ],
                 "drafted_by": [
@@ -1084,7 +1084,7 @@
                     "Asma Alzahrani",
                     "Mohammed Mohsen"
                 ],
-                "lastmod": "2026-11-09"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -2405,8 +2405,7 @@
                     "Tennant, J., Bielczyk, N. Z., Cheplygina, V., Greshake Tzovaras, B., Hartgerink, C. H. J., Havemann, J., Masuzzo, P., & Steiner, T. (2019). Ten simple rules for researchers collaborating on Massively Open Online Papers (MOOPs). <i>MetaArXiv</i>. https://doi.org/10.31222/osf.io/et8ak",
                     "Uhlmann, E. L., Ebersole, C. R., Chartier, C. R., Errington, T. M., Kidwell, M. C., Lai, C. K., McCarthy, R. J., Riegelman, A., Silberzahn, R., & Nosek, B. A. (2019). Scientific utopia III: Crowdsourcing science. <i>Perspectives on Psychological Science</i>, <i>14</i>(5), 711–733. https://doi.org/10.1177/1745691619850561",
                     "Accelerator, P. S. (n.d.). <i>Psychological Science Accelerator</i>. https://psysciacc.org/",
-                    "Week, C. (2021). <i>What is Crowdsourcing?</i> https://crowdsourcingweek.com/what-is-crowdsourcing/",
-                    "[https://crowdsourcingweek.com/what-is-crowdsourcing/](https://crowdsourcingweek.com/what-is-crowdsourcing/#:~:text=Crowdsourcing%20is%20the%20practice%20of,levels%20and%20across%20various%20industries)"
+                    "Week, C. (2021). <i>What is Crowdsourcing?</i> https://crowdsourcingweek.com/what-is-crowdsourcing/"
                 ],
                 "drafted_by": [
                     "Eike Mark Rinke"
@@ -2431,7 +2430,7 @@
                     "Ali H. Al-Hoorie",
                     "Mohammed Mohsen"
                 ],
-                "lastmod": "2026-11-09"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -2748,10 +2747,10 @@
                 "en_title": "DOI (digital object identifier)",
                 "title": "معرّف الكائن الرَّقمي [DOI (digital object identifier)]",
                 "sort_key": "معرّف الكائن الرَّقمي [doi (digital object identifier)]",
-                "definition": "معرفات الكائنات الرَّقميَّة هي سلاسل أبجديَّة رقميَّة يمكن تخصيصها لأي كيان بما في ذلك: المنشورات (ومنها المطبوعات الأوليَّة)، والمواد، ومجموعات البيانات، والأفلام. ولا يقتصر استخدام المعرّفات الرَّقميَّة على المواد الأكاديميَّة فقط. إنَّ معرفات الكائنات الرَّقميَّة توفِّر نظامًا لتحديد دائم، وقابل للتَّنفيذ، وتبادل قابل للتَّشغيل البيني للمعلومات المدارة على الشَّبكات الرَّقميَّة  ([https://www.doi.org/doi-handbook/HTML/index.html](https://www.doi.org/doi-handbook/HTML/index.html)). هناك العديد من وكالات لتسجيل معرّفات الكائنات الرَّقميَّة وإدارتها، ولكن من المرجَّح أنْ يواجه أغلب الباحثين اثنتين هما: Crossref و Datacite. :**المصطلحات ذات الصِّلة** arXiv and BibTex; Crossref, Datacite, ISBN, ISO, الأوركيد; Permalink.",
+                "definition": "معرفات الكائنات الرَّقميَّة هي سلاسل أبجديَّة رقميَّة يمكن تخصيصها لأي كيان بما في ذلك: المنشورات (ومنها المطبوعات الأوليَّة)، والمواد، ومجموعات البيانات، والأفلام. ولا يقتصر استخدام المعرّفات الرَّقميَّة على المواد الأكاديميَّة فقط. إنَّ معرفات الكائنات الرَّقميَّة توفِّر نظامًا لتحديد دائم، وقابل للتَّنفيذ، وتبادل قابل للتَّشغيل البيني للمعلومات المدارة على الشَّبكات الرَّقميَّة  ([https://www.doi.org/doi-handbook/HTML/index.html](https://www.doi.org/doi-handbook/HTML/index.html)). هناك العديد من وكالات لتسجيل معرّفات الكائنات الرَّقميَّة وإدارتها، ولكن من المرجَّح أنْ يواجه أغلب الباحثين اثنتين هما: Crossref و DataCite. :**المصطلحات ذات الصِّلة** arXiv and BibTex; Crossref, DataCite, ISBN, ISO, الأوركيد; Permalink.",
                 "related_terms": [
                     "arXiv and BibTex",
-                    "Crossref, Datacite, ISBN, ISO, ORCID",
+                    "Crossref, DataCite, ISBN, ISO, ORCID",
                     "Permalink"
                 ],
                 "references": [
@@ -2784,7 +2783,7 @@
                 "aliases": [
                     "/glossary/arabic/digital_object_identifier_معر_ف_الكاين_الر_قمي"
                 ],
-                "lastmod": "2026-11-08"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -5269,7 +5268,7 @@
                     "Ali H. Al-Hoorie",
                     "MOhammed Mohsen"
                 ],
-                "lastmod": "2026-11-09"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -5283,7 +5282,7 @@
                 ],
                 "references": [
                     "Gollwitzer, M., Abele-Brehm, A., Fiebach, C., Ramthun, R., Scheel, A. M., Schönbrodt, F. D., & Steinberg, U. (2020). <i>Data Management and Data Sharing in Psychological Science: Revision of the DGPs Recommendations</i>.",
-                    "[https://schema.datacite.org/](https://schema.datacite.org/)"
+                    "DataCite Schema. (n.d.). <i>Datacite Metadata Schema</i>. https://schema.datacite.org/"
                 ],
                 "drafted_by": [
                     "Matt Jaquiery"
@@ -5307,7 +5306,7 @@
                     "Ali H. Al-Hoorie",
                     "Mohammed Mohsen"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -6021,8 +6020,7 @@
                     "Open Science Framework"
                 ],
                 "references": [
-                    "OER Commons. (n.d.). <i>OER Commons</i>. https://www.oercommons.org/",
-                    "[www.oercommons.org](http://www.oercommons.org)"
+                    "OER Commons. (n.d.). <i>OER Commons</i>. https://www.oercommons.org/"
                 ],
                 "drafted_by": [
                     "Ali H. Al-Hoorie"
@@ -6043,7 +6041,7 @@
                     "Ali H. Al-Hoorie",
                     "Mohammed Mohsen"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -6222,8 +6220,7 @@
                     "Open Science"
                 ],
                 "references": [
-                    "Tennant, J., Beamer, J. E., Bosman, J., Brembs, B., Chung, N. C., Clement, G., Crick, T., Dugan, J., Dunning, A., Eccles, D., Enkhbayar, A., Graziotin, D., Harding, R., Havemann, J., Katz, D. S., Khanal, K., Kjaer, J. N., Koder, T., Macklin, P., & Turner, A. (2019). <i>Foundations for Open Scholarship Strategy Development</i>. MetaArXiv. https://doi.org/10.31222/osf.io/b4v8p",
-                    "[https://www.researchgate.net/publication/330742805\\_Foundations\\_for\\_Open\\_Scholarship\\_Strategy\\_Development](https://www.researchgate.net/publication/330742805_Foundations_for_Open_Scholarship_Strategy_Development)"
+                    "Tennant, J., Beamer, J. E., Bosman, J., Brembs, B., Chung, N. C., Clement, G., Crick, T., Dugan, J., Dunning, A., Eccles, D., Enkhbayar, A., Graziotin, D., Harding, R., Havemann, J., Katz, D. S., Khanal, K., Kjaer, J. N., Koder, T., Macklin, P., & Turner, A. (2019). <i>Foundations for Open Scholarship Strategy Development</i>. MetaArXiv. https://doi.org/10.31222/osf.io/b4v8p"
                 ],
                 "drafted_by": [
                     "Gerald Vineyard"
@@ -6247,7 +6244,7 @@
                     "Ali H. Al-Hoorie",
                     "Mohammed Mohsen"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -6261,8 +6258,7 @@
                     "Open Science"
                 ],
                 "references": [
-                    "OER Commons. (n.d.). <i>Open Scholarship Knowledge Base | OER Commons</i>. https://www.oercommons.org/hubs/OSKB",
-                    "[www.oercommons.org/hubs/OSKB](http://www.oercommons.org/hubs/OSKB)"
+                    "OER Commons. (n.d.). <i>Open Scholarship Knowledge Base | OER Commons</i>. https://www.oercommons.org/hubs/OSKB"
                 ],
                 "drafted_by": [
                     "Ali H. Al-Hoorie"
@@ -6285,7 +6281,7 @@
                     "Ali H. Al-Hoorie",
                     "Mohammed Mohsen"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -6310,7 +6306,7 @@
                     "Abele-Brehm, A. E., Gollwitzer, M., Steinberg, U., & Schönbrodt, F. D. (2019). Attitudes toward open science and public data sharing. <i>Social Psychology</i>, <i>50</i>, 252–260. https://doi.org/10.1027/1864-9335/a000384",
                     "Crüwell, S., van Doorn, J., Etz, A., Makel, M. C., Moshontz, H., Niebaum, J. C., Orben, A., Parsons, S., & Schulte-Mecklenbeck, M. (2019). Seven Easy Steps to Open Science: An Annotated Reading List. <i>Zeitschrift Für Psychologie</i>, <i>227</i>(4), 237–248. https://doi.org/10.1027/2151-2604/a000387",
                     "Kathawalla, U., Silverstein, P., & Syed, M. (2020). Easing into Open Science: A Guide for Graduate Students and Their Advisors. <i>Collabra: Psychology</i>. https://doi.org/10.31234/osf.io/vzjdp Retrieved from https://psyarxiv.com/vzjdp",
-                    "Syed, M. (2019). The Open Science Movement is for all of us. <i>PsyArXiv</i>.",
+                    "Syed, M. (2019). The Open Science Movement is for all of us. <i>PsyArXiv</i>. https://doi.org/10.31234/osf.io/cteyb",
                     "Woelfle, M., Olliaro, P., & Todd, M. H. (2011). Open science is a research accelerator. <i>Nature Chemistry</i>, <i>3</i>(10), 745–748. https://doi.org/10.1038/nchem.1149"
                 ],
                 "drafted_by": [
@@ -6335,7 +6331,7 @@
                     "Asma Alzahrani",
                     "Mohammed Mohsen"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -6690,8 +6686,7 @@
                 "references": [
                     "psyTeachR Team. (n.d.). <i>P | Glossary</i>. psyTeachR. https://psyteachr.github.io/glossary",
                     "Lakens, D. (2021). The Practical Alternative to the p Value Is the Correctly Used p Value. <i>Perspectives on Psychological Science</i>, <i>16</i>(3), 639–648. https://doi.org/10.1177/1745691620958012",
-                    "Wasserstein, R. L., & Lazar, N. A. (2016). The ASA Statement on p-Values: Context, Process, and Purpose. <i>The American Statistician</i>, <i>70</i>, 129–133. https://doi.org/10.1080/00031305.2016.1154108",
-                    "[https://psyteachr.github.io/glossary/p.html](https://psyteachr.github.io/glossary/p.html)"
+                    "Wasserstein, R. L., & Lazar, N. A. (2016). The ASA Statement on p-Values: Context, Process, and Purpose. <i>The American Statistician</i>, <i>70</i>, 129–133. https://doi.org/10.1080/00031305.2016.1154108"
                 ],
                 "drafted_by": [
                     "Alaa AlDoh; Flávio Azevedo"
@@ -6717,7 +6712,7 @@
                     "Asma Alzahrani",
                     "Mohammed Mohsen"
                 ],
-                "lastmod": "2026-11-08"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -6815,9 +6810,7 @@
                 ],
                 "references": [
                     "Ikeda, A., Xu, H., Fuji, N., Zhu, S., & Yamada, Y. (2019). Questionable research practices following pre-registration. <i>Japanese Psychological Review</i>, <i>62</i>, 281–295.",
-                    "Yamada, Y. (2018). How to crack pre-registration: Toward transparent and open science. <i>Frontiers in Psychology</i>, <i>9</i>, 1831. https://doi.org/10.3389/fpsyg.2018.01831",
-                    "[Ikeda et al. (2019)](https://www.jstage.jst.go.jp/article/sjpr/62/3/62_281/_pdf/-char/ja)",
-                    "[Yamada (2018)](https://www.frontiersin.org/articles/10.3389/fpsyg.2018.01831/full)"
+                    "Yamada, Y. (2018). How to crack pre-registration: Toward transparent and open science. <i>Frontiers in Psychology</i>, <i>9</i>, 1831. https://doi.org/10.3389/fpsyg.2018.01831"
                 ],
                 "drafted_by": [
                     "Qinyu Xiao"
@@ -6838,7 +6831,7 @@
                     "Ahlam Ahmed",
                     "Mohammed Mohsen"
                 ],
-                "lastmod": "2026-11-08"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -6935,7 +6928,7 @@
                 ],
                 "references": [
                     "Day, S., Rennie, S., Luo, D., & Tucker, J. D. (2020). Open to the public: Paywalls and the public rationale for open access medical research publishing. <i>Research Involvement and Engagement</i>, <i>6</i>(1), 8. https://doi.org/10.1186/s40900-020-0182-y",
-                    "[https://web.archive.org/web/20220221165721/https://casrai.org/term/closed-access/](https://web.archive.org/web/20220221165721/https://casrai.org/term/closed-access/)"
+                    "<i>Closed access</i>. (n.d.). Retrieved 9 July 2021, from https://web.archive.org/web/20220221165721/https://casrai.org/term/closed-access/."
                 ],
                 "drafted_by": [
                     "Bradley Baker"
@@ -6959,7 +6952,7 @@
                     "Ahlam Ahmed",
                     "Mohammed Mohsen"
                 ],
-                "lastmod": "2026-11-08"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -7857,8 +7850,7 @@
                     "Open Peer Review"
                 ],
                 "references": [
-                    "PubPeer. (n.d.). <i>PubPeer—Search publications and join the conversation</i>. Pubpeer. https://www.pubpeer.com/",
-                    "[www.pubpeer.com](http://www.pubpeer.com)"
+                    "PubPeer. (n.d.). <i>PubPeer—Search publications and join the conversation</i>. Pubpeer. https://www.pubpeer.com/"
                 ],
                 "drafted_by": [
                     "Ali H. Al-Hoorie"
@@ -7879,7 +7871,7 @@
                     "Asma Alzahrani",
                     "Mohammed Mohsen"
                 ],
-                "lastmod": "2026-11-08"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -8454,8 +8446,7 @@
                     "Liu, Y., Gordon, M., Wang, J., Bishop, M., Chen, Y., Pfeiffer, T., Twardy, C., & Viganola, D. (2020). Replication Markets: Results, Lessons, Challenges and Opportunities in AI Replication. <i>ArXiv:2005.04543 </i>. http://arxiv.org/abs/2005.04543",
                     "Tierney, W., Hardy III, J. H., Ebersole, C. R., Leavitt, K., Viganola, D., Clemente, E. G., et al. (2020). Creative destruction in science. <i>Organizational Behavior and Human Decision Processes</i>, <i>161</i>, 291–309. https://doi.org/10.1016/j.obhdp.2020.07.002",
                     "Tierney, W., Hardy III, J., Ebersole, C. R., Viganola, D., Clemente, E. G., Gordon, M., et al. (2021). A creative destruction approach to replication: Implicit work and sex morality across cultures. <i>Journal of Experimental Social Psychology</i>, <i>93</i>, 104060. https://doi.org/10.1016/j.jesp.2020.104060",
-                    "Replication Markets. (n.d.). <i>Replication Markets – Reliable research replicates…you can bet on it</i>. Replication Markets. https://www.replicationmarkets.org/",
-                    "[www.replicationmarkets.com](http://www.replicationmarkets.com)"
+                    "Replication Markets. (n.d.). <i>Replication Markets – Reliable research replicates…you can bet on it</i>. Replication Markets. https://www.replicationmarkets.org/"
                 ],
                 "drafted_by": [
                     "Ali H. Al-Hoorie"
@@ -8478,7 +8469,7 @@
                     "Hiba Alomary",
                     "Mohammed Mohsen"
                 ],
-                "lastmod": "2026-11-09"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -8624,7 +8615,7 @@
                     "Crüwell, S., van Doorn, J., Etz, A., Makel, M. C., Moshontz, H., Niebaum, J. C., Orben, A., Parsons, S., & Schulte-Mecklenbeck, M. (2019). Seven Easy Steps to Open Science: An Annotated Reading List. <i>Zeitschrift Für Psychologie</i>, <i>227</i>(4), 237–248. https://doi.org/10.1027/2151-2604/a000387",
                     "Peng, R. D. (2011). Reproducible Research in Computational Science. <i>Science</i>, <i>334</i>(6060), 1226–1227. https://doi.org/10.1126/science.1213847",
                     "Stodden, V. C. (2011). <i>Trust your science? Open your data and code</i>.",
-                    "Syed, M. (2019). The Open Science Movement is for all of us. <i>PsyArXiv</i>.",
+                    "Syed, M. (2019). The Open Science Movement is for all of us. <i>PsyArXiv</i>. https://doi.org/10.31234/osf.io/cteyb",
                     "National Academies of Sciences, Engineering, and Medicine. (2019). <i>Reproducibility and Replicability in Science. In Understanding Reproducibility and Replicability</i> [Techreport]. National Academies Press (US). https://www.ncbi.nlm.nih.gov/books/NBK547546/"
                 ],
                 "drafted_by": [
@@ -8651,7 +8642,7 @@
                     "Asma Alzahrani",
                     "Mohammed Mohsen"
                 ],
-                "lastmod": "2026-11-09"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -9973,8 +9964,7 @@
                 ],
                 "references": [
                     "Chartier, C. R., Riegelman, A., & McCarthy, R. J. (2018). StudySwap: A platform for interlab replication, collaboration, and resource exchange. <i>Advances in Methods and Practices in Psychological Science</i>, <i>1</i>(4), 574–579. https://doi.org/10.1177/2515245918808767",
-                    "OSF. (n.d.). <i>OSF | StudySwap: A platform for interlab replication, collaboration, and research resource exchange</i>. https://osf.io/meetings/StudySwap/",
-                    "[https://osf.io/view/StudySwap](https://osf.io/view/StudySwap)"
+                    "OSF. (n.d.). <i>OSF | StudySwap: A platform for interlab replication, collaboration, and research resource exchange</i>. https://osf.io/meetings/StudySwap/"
                 ],
                 "drafted_by": [
                     "Charlotte R. Pennington"
@@ -9998,7 +9988,7 @@
                     "Asma Alzahrani",
                     "Mohammed Mohsen"
                 ],
-                "lastmod": "2026-11-08"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -10224,8 +10214,7 @@
                 "references": [
                     "Elliott, K. C., & Resnik, D. B. (2019). Making open science work for science and society. <i>Environmental Health Perspectives</i>, <i>127</i>(7). https://doi.org/10.1289/EHP4808",
                     "Lyon, L. (2016). Transparency: The Emerging Third Dimension of Open Science and Open Data. <i>LIBER Quarterly</i>, <i>25</i>(4), 153–171. http://doi.org/10.18352/lq.10113",
-                    "Syed, M. (2019). The Open Science Movement is for all of us. <i>PsyArXiv</i>.",
-                    "[Syed (2019)](https://psyarxiv.com/cteyb/)"
+                    "Syed, M. (2019). The Open Science Movement is for all of us. <i>PsyArXiv</i>. https://doi.org/10.31234/osf.io/cteyb"
                 ],
                 "drafted_by": [
                     "William Ngiam"
@@ -10249,7 +10238,7 @@
                     "Asma Alzahrani",
                     "Mohammed Mohsen"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -10901,8 +10890,7 @@
                     "Preprint"
                 ],
                 "references": [
-                    "Zenodo. (n.d.). <i>Zenodo—Research. Shared.</i> https://www.zenodo.org/",
-                    "[www.zenodo.org](http://www.zenodo.org)"
+                    "Zenodo. (n.d.). <i>Zenodo—Research. Shared.</i> https://www.zenodo.org/"
                 ],
                 "drafted_by": [
                     "Ali H. Al-Hoorie"
@@ -10922,7 +10910,7 @@
                     "Alaa M. Saleh",
                     "Mohammed Mohsen"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-11"
             }
         ]
     },
@@ -11608,7 +11596,7 @@
                     "Triple badge"
                 ],
                 "references": [
-                    "Hardwicke, T. E., Bohn, M., MacDonald, K., Hembacher, E., Nuijten, M. B., Peloquin, B. N., et al. (2020). Analytic reproducibility in articles receiving open data badges at the journal Psychological Science: an observational study. <i>Royal Society Open Science</i>, <i>8</i>(1), 201494. https://doi.org/10.1098/rsos.201494",
+                    "Hardwicke, T. E., Bohn, M., MacDonald, K., Hembacher, E., Nuijten, M. B., Peloquin, B. N., deMayo, B. E., Long, B., Yoon, E. J., & Frank, M. C. (2020). Analytic reproducibility in articles receiving open data badges at the journal Psychological Science: an observational study. <i>Royal Society Open Science</i>, <i>8</i>(1), 201494. https://doi.org/10.1098/rsos.201494",
                     "Kidwell, M. C., Lazarević, L. B., Baranski, E., Hardwicke, T. E., Piechowski, S., Falkenberg, L. S., & Nosek, B. A. (2016). Badges to acknowledge open practices: A simple, low-cost, effective method for increasing transparency. <i>PLoS Biology</i>, <i>14</i>(5), e1002456. https://doi.org/10.1371/journal.pbio.1002456",
                     "Rowhani-Farid, A., Aldcroft, A., & Barnett, A. G. (2020). Did awarding badges increase data sharing in BMJ Open? A randomized controlled trial. <i>Royal Society Open Science</i>, <i>7</i>(3), 191818. https://doi.org/10.1098/rsos.191818",
                     "Science, C. (n.d.). <i>Open science badges</i>. https://www.cos.io/initiatives/badges"
@@ -11637,7 +11625,7 @@
                     "Ruoting Liu",
                     "Shuxian Jin"
                 ],
-                "lastmod": "2026-11-09"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -11698,7 +11686,7 @@
                     "Dienes, Z. (2011). Bayesian versus orthodox statistics: Which side are you on? <i>Perspectives on Psychological Science</i>, <i>6</i>(3), 274–290. https://doi.org/10.1177/1745691611406920",
                     "Dienes, Z. (2014). Using Bayes to get the most out of non-significant results. <i>Frontiers in Psychology</i>, <i>5</i>, 781. https://doi.org/10.3389/fpsyg.2014.00781",
                     "Dienes, Z. (2016). How Bayes factors change scientific practice. <i>Journal of Mathematical Psychology</i>, <i>72</i>, 78–89. https://doi.org/10.1016/j.jmp.2015.10.003",
-                    "Etz, A., Gronau, Q. F., Dablander, F., et al. (2018). How to become a Bayesian in eight easy steps: An annotated reading list. <i>Psychonomic Bulletin & Review</i>, <i>25</i>, 219–234. https://doi.org/10.3758/s13423-017-1317-5",
+                    "Etz, A., Gronau, Q. F., Dablander, F., Edelsbrunner, P. A., & Baribault, B. (2018). How to become a Bayesian in eight easy steps: An annotated reading list. <i>Psychonomic Bulletin & Review</i>, <i>25</i>, 219–234. https://doi.org/10.3758/s13423-017-1317-5",
                     "Kruschke, J. K. (2015). <i>Doing Bayesian data analysis: A tutorial with R, JAGS, and Stan</i> (2nd ed.). Academic Press.",
                     "McElreath, R. (2020). <i>Statistical rethinking: A Bayesian course with examples in R and Stan</i> (2nd ed.). Taylor.",
                     "Wagenmakers, E.-J., Marsman, M., Jamil, T., Ly, A., Verhagen, J., Love, J., Selker, R., Gronau, Q. F., Šmíra, M., Epskamp, S., Matzke, D., Rouder, J. N., & Morey, R. D. (2018). Bayesian inference for psychology. Part I: Theoretical advantages and practical ramifications. <i>Psychonomic Bulletin & Review</i>, <i>25</i>(1), 35–57. https://doi.org/10.3758/s13423-017-1343-3"
@@ -11727,7 +11715,7 @@
                     "Ruoting Liu",
                     "Shuxian Jin"
                 ],
-                "lastmod": "2026-11-09"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -11948,7 +11936,7 @@
                     "Guest, O. [@o_guest]. (2017). <i>Thanks! Hopefully this thread & many other similar discussions & blogs will help make it less Bropen Science and more Open Science. *hides* </i>. Twitter. Retrieved from https://twitter.com/o_guest/status/871675631062458368",
                     "Whitaker, K., & Guest, O. (2020).  #bropenscience is broken science. <i>The Psychologist</i>, <i>33</i>, 34–37.",
                     "Pownall, M., Talbot, C. V., Henschel, A., Lautarescu, A., Lloyd, K. E., Hartmann, H., Darda, K. M., Tang, K. T. Y., Carmichael-Murphy, P., & Siegel, J. A. (2021). Navigating Open Science as Early Career Feminist Researchers. <i>Psychology of Women Quarterly</i>, <i>45</i>(4), 526–539. https://doi.org/10.1177/03616843211029255",
-                    "Bahlai, C., Bartlett, L. J., Burgio, K. R., et al. (2019). Open science isn’t always open to all scientists. <i>American Scientist</i>, <i>107</i>(2), 78.",
+                    "Bahlai, C., Bartlett, L. J., Burgio, K. R., Fournier, A., Keiser, C., Poisot, T., & Whitney, K. (2019). Open science isn’t always open to all scientists. <i>American Scientist</i>, <i>107</i>(2), 78.",
                     "Onie, S. (2020). Redesign open science for Asia, Africa and Latin America. <i>Nature</i>, <i>587</i>, 35–37. https://doi.org/10.1038/d41586-020-03052-3"
                 ],
                 "drafted_by": [
@@ -11978,7 +11966,7 @@
                     "Ruoting Liu",
                     "Shuxian Jin"
                 ],
-                "lastmod": "2026-11-09"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -13280,8 +13268,7 @@
                     "Tennant, J., Bielczyk, N. Z., Cheplygina, V., Greshake Tzovaras, B., Hartgerink, C. H. J., Havemann, J., Masuzzo, P., & Steiner, T. (2019). Ten simple rules for researchers collaborating on Massively Open Online Papers (MOOPs). <i>MetaArXiv</i>. https://doi.org/10.31222/osf.io/et8ak",
                     "Uhlmann, E. L., Ebersole, C. R., Chartier, C. R., Errington, T. M., Kidwell, M. C., Lai, C. K., McCarthy, R. J., Riegelman, A., Silberzahn, R., & Nosek, B. A. (2019). Scientific utopia III: Crowdsourcing science. <i>Perspectives on Psychological Science</i>, <i>14</i>(5), 711–733. https://doi.org/10.1177/1745691619850561",
                     "Accelerator, P. S. (n.d.). <i>Psychological Science Accelerator</i>. https://psysciacc.org/",
-                    "Week, C. (2021). <i>What is Crowdsourcing?</i> https://crowdsourcingweek.com/what-is-crowdsourcing/",
-                    "[https://crowdsourcingweek.com/what-is-crowdsourcing/](https://crowdsourcingweek.com/what-is-crowdsourcing/#:~:text=Crowdsourcing%20is%20the%20practice%20of,levels%20and%20across%20various%20industries)"
+                    "Week, C. (2021). <i>What is Crowdsourcing?</i> https://crowdsourcingweek.com/what-is-crowdsourcing/"
                 ],
                 "drafted_by": [
                     "Eike Mark Rinke"
@@ -13306,7 +13293,7 @@
                     "Ruoting Liu",
                     "Shuxian Jin"
                 ],
-                "lastmod": "2026-11-09"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -13630,10 +13617,10 @@
                 "en_title": "DOI (digital object identifier)",
                 "title": "数字对象唯一标识符 [DOI (digital object identifier)]",
                 "sort_key": "shuziduixiangweiyibiaoshifu",
-                "definition": "DOI是可以分配给任何实体的字母数字字符串，包括出版物（包括预印本）、材料、数据集、甚至电影。DOI的使用不仅限于学术或学术材料。DOI构建了一个系统，使信息在数字网络中实现持久和可操作的识别与互操作性交换（https://doi.org/hb.html）。目前有多个机构负责DOI的注册与管理，其中最常见的机构包括Crossref和Datacite。",
+                "definition": "DOI是可以分配给任何实体的字母数字字符串，包括出版物（包括预印本）、材料、数据集、甚至电影。DOI的使用不仅限于学术或学术材料。DOI构建了一个系统，使信息在数字网络中实现持久和可操作的识别与互操作性交换（https://doi.org/hb.html）。目前有多个机构负责DOI的注册与管理，其中最常见的机构包括Crossref和DataCite。",
                 "related_terms": [
                     "arXiv and BibTex",
-                    "Crossref, Datacite, ISBN, ISO, ORCID",
+                    "Crossref, DataCite, ISBN, ISO, ORCID",
                     "Permalink"
                 ],
                 "references": [
@@ -13664,7 +13651,7 @@
                     "Ruoting Liu",
                     "Shuxian Jin"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -14499,7 +14486,7 @@
                 "en_title": "FORRT",
                 "title": "开放可重复研究与教学框架 [FORRT]",
                 "sort_key": "kaifangkechongfuyanjiuyujiaoxuekuangjia",
-                "definition": "开放可重复研究与教学框架（Framework of Open Reproducible Research and Teaching，简称 FORRT）旨在提供一套教育基础设施，与典型学科内容相结合，促进高等教育中开放和可重复研究的教学与指导。FORRT致力于成为一个高效、动态和社区驱动的组织，提升人们对开放与可重复科学的教学意义及其相关挑战（例如，课程改革、认识论的不确定性、教育方法）的认识。FORRT还倡导开放教学与指导资源，以便为那些可能在教育上处于弱势的人群提供获取、发现和学习的机会。",
+                "definition": "开放可重复研究与教学框架（Framework for Open and Reproducible Research Training，简称 FORRT）旨在提供一套教育基础设施，与典型学科内容相结合，促进高等教育中开放和可重复研究的教学与指导。FORRT致力于成为一个高效、动态和社区驱动的组织，提升人们对开放与可重复科学的教学意义及其相关挑战（例如，课程改革、认识论的不确定性、教育方法）的认识。FORRT还倡导开放教学与指导资源，以便为那些可能在教育上处于弱势的人群提供获取、发现和学习的机会。",
                 "related_terms": [
                     "Integrating open and reproducible science tenets into higher education"
                 ],
@@ -14527,7 +14514,7 @@
                     "Ruoting Liu",
                     "Shuxian Jin"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -16113,7 +16100,7 @@
                 ],
                 "references": [
                     "Gollwitzer, M., Abele-Brehm, A., Fiebach, C., Ramthun, R., Scheel, A. M., Schönbrodt, F. D., & Steinberg, U. (2020). <i>Data Management and Data Sharing in Psychological Science: Revision of the DGPs Recommendations</i>.",
-                    "[https://schema.datacite.org/](https://schema.datacite.org/)"
+                    "DataCite Schema. (n.d.). <i>Datacite Metadata Schema</i>. https://schema.datacite.org/"
                 ],
                 "drafted_by": [
                     "Matt Jaquiery"
@@ -16137,7 +16124,7 @@
                     "Ruoting Liu",
                     "Shuxian Jin"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -16843,8 +16830,7 @@
                     "Open Science Framework"
                 ],
                 "references": [
-                    "OER Commons. (n.d.). <i>OER Commons</i>. https://www.oercommons.org/",
-                    "[www.oercommons.org](http://www.oercommons.org)"
+                    "OER Commons. (n.d.). <i>OER Commons</i>. https://www.oercommons.org/"
                 ],
                 "drafted_by": [
                     "Ali H. Al-Hoorie"
@@ -16865,7 +16851,7 @@
                     "Ruoting Liu",
                     "Shuxian Jin"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -17044,8 +17030,7 @@
                     "Open Science"
                 ],
                 "references": [
-                    "Tennant, J., Beamer, J. E., Bosman, J., Brembs, B., Chung, N. C., Clement, G., Crick, T., Dugan, J., Dunning, A., Eccles, D., Enkhbayar, A., Graziotin, D., Harding, R., Havemann, J., Katz, D. S., Khanal, K., Kjaer, J. N., Koder, T., Macklin, P., & Turner, A. (2019). <i>Foundations for Open Scholarship Strategy Development</i>. MetaArXiv. https://doi.org/10.31222/osf.io/b4v8p",
-                    "[https://www.researchgate.net/publication/330742805\\_Foundations\\_for\\_Open\\_Scholarship\\_Strategy\\_Development](https://www.researchgate.net/publication/330742805_Foundations_for_Open_Scholarship_Strategy_Development)"
+                    "Tennant, J., Beamer, J. E., Bosman, J., Brembs, B., Chung, N. C., Clement, G., Crick, T., Dugan, J., Dunning, A., Eccles, D., Enkhbayar, A., Graziotin, D., Harding, R., Havemann, J., Katz, D. S., Khanal, K., Kjaer, J. N., Koder, T., Macklin, P., & Turner, A. (2019). <i>Foundations for Open Scholarship Strategy Development</i>. MetaArXiv. https://doi.org/10.31222/osf.io/b4v8p"
                 ],
                 "drafted_by": [
                     "Gerald Vineyard"
@@ -17069,7 +17054,7 @@
                     "Ruoting Liu",
                     "Shuxian Jin"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -17083,8 +17068,7 @@
                     "Open Science"
                 ],
                 "references": [
-                    "OER Commons. (n.d.). <i>Open Scholarship Knowledge Base | OER Commons</i>. https://www.oercommons.org/hubs/OSKB",
-                    "[www.oercommons.org/hubs/OSKB](http://www.oercommons.org/hubs/OSKB)"
+                    "OER Commons. (n.d.). <i>Open Scholarship Knowledge Base | OER Commons</i>. https://www.oercommons.org/hubs/OSKB"
                 ],
                 "drafted_by": [
                     "Ali H. Al-Hoorie"
@@ -17107,7 +17091,7 @@
                     "Ruoting Liu",
                     "Shuxian Jin"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -17132,7 +17116,7 @@
                     "Abele-Brehm, A. E., Gollwitzer, M., Steinberg, U., & Schönbrodt, F. D. (2019). Attitudes toward open science and public data sharing. <i>Social Psychology</i>, <i>50</i>, 252–260. https://doi.org/10.1027/1864-9335/a000384",
                     "Crüwell, S., van Doorn, J., Etz, A., Makel, M. C., Moshontz, H., Niebaum, J. C., Orben, A., Parsons, S., & Schulte-Mecklenbeck, M. (2019). Seven Easy Steps to Open Science: An Annotated Reading List. <i>Zeitschrift Für Psychologie</i>, <i>227</i>(4), 237–248. https://doi.org/10.1027/2151-2604/a000387",
                     "Kathawalla, U., Silverstein, P., & Syed, M. (2020). Easing into Open Science: A Guide for Graduate Students and Their Advisors. <i>Collabra: Psychology</i>. https://doi.org/10.31234/osf.io/vzjdp Retrieved from https://psyarxiv.com/vzjdp",
-                    "Syed, M. (2019). The Open Science Movement is for all of us. <i>PsyArXiv</i>.",
+                    "Syed, M. (2019). The Open Science Movement is for all of us. <i>PsyArXiv</i>. https://doi.org/10.31234/osf.io/cteyb",
                     "Woelfle, M., Olliaro, P., & Todd, M. H. (2011). Open science is a research accelerator. <i>Nature Chemistry</i>, <i>3</i>(10), 745–748. https://doi.org/10.1038/nchem.1149"
                 ],
                 "drafted_by": [
@@ -17157,7 +17141,7 @@
                     "Ruoting Liu",
                     "Shuxian Jin"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -17509,8 +17493,7 @@
                 "references": [
                     "psyTeachR Team. (n.d.). <i>P | Glossary</i>. psyTeachR. https://psyteachr.github.io/glossary",
                     "Lakens, D. (2021). The Practical Alternative to the p Value Is the Correctly Used p Value. <i>Perspectives on Psychological Science</i>, <i>16</i>(3), 639–648. https://doi.org/10.1177/1745691620958012",
-                    "Wasserstein, R. L., & Lazar, N. A. (2016). The ASA Statement on p-Values: Context, Process, and Purpose. <i>The American Statistician</i>, <i>70</i>, 129–133. https://doi.org/10.1080/00031305.2016.1154108",
-                    "[https://psyteachr.github.io/glossary/p.html](https://psyteachr.github.io/glossary/p.html)"
+                    "Wasserstein, R. L., & Lazar, N. A. (2016). The ASA Statement on p-Values: Context, Process, and Purpose. <i>The American Statistician</i>, <i>70</i>, 129–133. https://doi.org/10.1080/00031305.2016.1154108"
                 ],
                 "drafted_by": [
                     "Alaa AlDoh; Flávio Azevedo"
@@ -17536,7 +17519,7 @@
                     "Ruoting Liu",
                     "Shuxian Jin"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -17634,9 +17617,7 @@
                 ],
                 "references": [
                     "Ikeda, A., Xu, H., Fuji, N., Zhu, S., & Yamada, Y. (2019). Questionable research practices following pre-registration. <i>Japanese Psychological Review</i>, <i>62</i>, 281–295.",
-                    "Yamada, Y. (2018). How to crack pre-registration: Toward transparent and open science. <i>Frontiers in Psychology</i>, <i>9</i>, 1831. https://doi.org/10.3389/fpsyg.2018.01831",
-                    "[Ikeda et al. (2019)](https://www.jstage.jst.go.jp/article/sjpr/62/3/62_281/_pdf/-char/ja)",
-                    "[Yamada (2018)](https://www.frontiersin.org/articles/10.3389/fpsyg.2018.01831/full)"
+                    "Yamada, Y. (2018). How to crack pre-registration: Toward transparent and open science. <i>Frontiers in Psychology</i>, <i>9</i>, 1831. https://doi.org/10.3389/fpsyg.2018.01831"
                 ],
                 "drafted_by": [
                     "Qinyu Xiao"
@@ -17659,7 +17640,7 @@
                     "Ruoting Liu",
                     "Shuxian Jin"
                 ],
-                "lastmod": "2026-11-08"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -17756,7 +17737,7 @@
                 ],
                 "references": [
                     "Day, S., Rennie, S., Luo, D., & Tucker, J. D. (2020). Open to the public: Paywalls and the public rationale for open access medical research publishing. <i>Research Involvement and Engagement</i>, <i>6</i>(1), 8. https://doi.org/10.1186/s40900-020-0182-y",
-                    "[https://web.archive.org/web/20220221165721/https://casrai.org/term/closed-access/](https://web.archive.org/web/20220221165721/https://casrai.org/term/closed-access/)"
+                    "<i>Closed access</i>. (n.d.). Retrieved 9 July 2021, from https://web.archive.org/web/20220221165721/https://casrai.org/term/closed-access/."
                 ],
                 "drafted_by": [
                     "Bradley Baker"
@@ -17780,7 +17761,7 @@
                     "Ruoting Liu",
                     "Shuxian Jin"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -18669,8 +18650,7 @@
                     "Open Peer Review"
                 ],
                 "references": [
-                    "PubPeer. (n.d.). <i>PubPeer—Search publications and join the conversation</i>. Pubpeer. https://www.pubpeer.com/",
-                    "[www.pubpeer.com](http://www.pubpeer.com)"
+                    "PubPeer. (n.d.). <i>PubPeer—Search publications and join the conversation</i>. Pubpeer. https://www.pubpeer.com/"
                 ],
                 "drafted_by": [
                     "Ali H. Al-Hoorie"
@@ -18691,7 +18671,7 @@
                     "Ruoting Liu",
                     "Shuxian Jin"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -19266,8 +19246,7 @@
                     "Liu, Y., Gordon, M., Wang, J., Bishop, M., Chen, Y., Pfeiffer, T., Twardy, C., & Viganola, D. (2020). Replication Markets: Results, Lessons, Challenges and Opportunities in AI Replication. <i>ArXiv:2005.04543 </i>. http://arxiv.org/abs/2005.04543",
                     "Tierney, W., Hardy III, J. H., Ebersole, C. R., Leavitt, K., Viganola, D., Clemente, E. G., et al. (2020). Creative destruction in science. <i>Organizational Behavior and Human Decision Processes</i>, <i>161</i>, 291–309. https://doi.org/10.1016/j.obhdp.2020.07.002",
                     "Tierney, W., Hardy III, J., Ebersole, C. R., Viganola, D., Clemente, E. G., Gordon, M., et al. (2021). A creative destruction approach to replication: Implicit work and sex morality across cultures. <i>Journal of Experimental Social Psychology</i>, <i>93</i>, 104060. https://doi.org/10.1016/j.jesp.2020.104060",
-                    "Replication Markets. (n.d.). <i>Replication Markets – Reliable research replicates…you can bet on it</i>. Replication Markets. https://www.replicationmarkets.org/",
-                    "[www.replicationmarkets.com](http://www.replicationmarkets.com)"
+                    "Replication Markets. (n.d.). <i>Replication Markets – Reliable research replicates…you can bet on it</i>. Replication Markets. https://www.replicationmarkets.org/"
                 ],
                 "drafted_by": [
                     "Ali H. Al-Hoorie"
@@ -19290,7 +19269,7 @@
                     "Ruoting Liu",
                     "Shuxian Jin"
                 ],
-                "lastmod": "2026-11-09"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -19437,7 +19416,7 @@
                     "Crüwell, S., van Doorn, J., Etz, A., Makel, M. C., Moshontz, H., Niebaum, J. C., Orben, A., Parsons, S., & Schulte-Mecklenbeck, M. (2019). Seven Easy Steps to Open Science: An Annotated Reading List. <i>Zeitschrift Für Psychologie</i>, <i>227</i>(4), 237–248. https://doi.org/10.1027/2151-2604/a000387",
                     "Peng, R. D. (2011). Reproducible Research in Computational Science. <i>Science</i>, <i>334</i>(6060), 1226–1227. https://doi.org/10.1126/science.1213847",
                     "Stodden, V. C. (2011). <i>Trust your science? Open your data and code</i>.",
-                    "Syed, M. (2019). The Open Science Movement is for all of us. <i>PsyArXiv</i>.",
+                    "Syed, M. (2019). The Open Science Movement is for all of us. <i>PsyArXiv</i>. https://doi.org/10.31234/osf.io/cteyb",
                     "National Academies of Sciences, Engineering, and Medicine. (2019). <i>Reproducibility and Replicability in Science. In Understanding Reproducibility and Replicability</i> [Techreport]. National Academies Press (US). https://www.ncbi.nlm.nih.gov/books/NBK547546/"
                 ],
                 "drafted_by": [
@@ -19464,7 +19443,7 @@
                     "Ruoting Liu",
                     "Shuxian Jin"
                 ],
-                "lastmod": "2026-11-09"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -20806,8 +20785,7 @@
                 ],
                 "references": [
                     "Chartier, C. R., Riegelman, A., & McCarthy, R. J. (2018). StudySwap: A platform for interlab replication, collaboration, and resource exchange. <i>Advances in Methods and Practices in Psychological Science</i>, <i>1</i>(4), 574–579. https://doi.org/10.1177/2515245918808767",
-                    "OSF. (n.d.). <i>OSF | StudySwap: A platform for interlab replication, collaboration, and research resource exchange</i>. https://osf.io/meetings/StudySwap/",
-                    "[https://osf.io/view/StudySwap](https://osf.io/view/StudySwap)"
+                    "OSF. (n.d.). <i>OSF | StudySwap: A platform for interlab replication, collaboration, and research resource exchange</i>. https://osf.io/meetings/StudySwap/"
                 ],
                 "drafted_by": [
                     "Charlotte R. Pennington"
@@ -20832,7 +20810,7 @@
                     "Xiujuan Wen",
                     "Shuxian Jin"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -21062,8 +21040,7 @@
                 "references": [
                     "Elliott, K. C., & Resnik, D. B. (2019). Making open science work for science and society. <i>Environmental Health Perspectives</i>, <i>127</i>(7). https://doi.org/10.1289/EHP4808",
                     "Lyon, L. (2016). Transparency: The Emerging Third Dimension of Open Science and Open Data. <i>LIBER Quarterly</i>, <i>25</i>(4), 153–171. http://doi.org/10.18352/lq.10113",
-                    "Syed, M. (2019). The Open Science Movement is for all of us. <i>PsyArXiv</i>.",
-                    "[Syed (2019)](https://psyarxiv.com/cteyb/)"
+                    "Syed, M. (2019). The Open Science Movement is for all of us. <i>PsyArXiv</i>. https://doi.org/10.31234/osf.io/cteyb"
                 ],
                 "drafted_by": [
                     "William Ngiam"
@@ -21088,7 +21065,7 @@
                     "Xiujuan Wen",
                     "Shuxian Jin"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -21751,8 +21728,7 @@
                     "Preprint"
                 ],
                 "references": [
-                    "Zenodo. (n.d.). <i>Zenodo—Research. Shared.</i> https://www.zenodo.org/",
-                    "[www.zenodo.org](http://www.zenodo.org)"
+                    "Zenodo. (n.d.). <i>Zenodo—Research. Shared.</i> https://www.zenodo.org/"
                 ],
                 "drafted_by": [
                     "Ali H. Al-Hoorie"
@@ -21772,7 +21748,7 @@
                     "Xiujuan Wen",
                     "Shuxian Jin"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-11"
             }
         ]
     },
@@ -22426,7 +22402,7 @@
                     "Triple badge"
                 ],
                 "references": [
-                    "Hardwicke, T. E., Bohn, M., MacDonald, K., Hembacher, E., Nuijten, M. B., Peloquin, B. N., et al. (2020). Analytic reproducibility in articles receiving open data badges at the journal Psychological Science: an observational study. <i>Royal Society Open Science</i>, <i>8</i>(1), 201494. https://doi.org/10.1098/rsos.201494",
+                    "Hardwicke, T. E., Bohn, M., MacDonald, K., Hembacher, E., Nuijten, M. B., Peloquin, B. N., deMayo, B. E., Long, B., Yoon, E. J., & Frank, M. C. (2020). Analytic reproducibility in articles receiving open data badges at the journal Psychological Science: an observational study. <i>Royal Society Open Science</i>, <i>8</i>(1), 201494. https://doi.org/10.1098/rsos.201494",
                     "Kidwell, M. C., Lazarević, L. B., Baranski, E., Hardwicke, T. E., Piechowski, S., Falkenberg, L. S., & Nosek, B. A. (2016). Badges to acknowledge open practices: A simple, low-cost, effective method for increasing transparency. <i>PLoS Biology</i>, <i>14</i>(5), e1002456. https://doi.org/10.1371/journal.pbio.1002456",
                     "Rowhani-Farid, A., Aldcroft, A., & Barnett, A. G. (2020). Did awarding badges increase data sharing in BMJ Open? A randomized controlled trial. <i>Royal Society Open Science</i>, <i>7</i>(3), 191818. https://doi.org/10.1098/rsos.191818",
                     "Science, C. (n.d.). <i>Open science badges</i>. https://www.cos.io/initiatives/badges"
@@ -22453,7 +22429,7 @@
                     "Helena Hartmann",
                     "Jennifer Mattschey"
                 ],
-                "lastmod": "2026-11-09"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -22512,7 +22488,7 @@
                     "Dienes, Z. (2011). Bayesian versus orthodox statistics: Which side are you on? <i>Perspectives on Psychological Science</i>, <i>6</i>(3), 274–290. https://doi.org/10.1177/1745691611406920",
                     "Dienes, Z. (2014). Using Bayes to get the most out of non-significant results. <i>Frontiers in Psychology</i>, <i>5</i>, 781. https://doi.org/10.3389/fpsyg.2014.00781",
                     "Dienes, Z. (2016). How Bayes factors change scientific practice. <i>Journal of Mathematical Psychology</i>, <i>72</i>, 78–89. https://doi.org/10.1016/j.jmp.2015.10.003",
-                    "Etz, A., Gronau, Q. F., Dablander, F., et al. (2018). How to become a Bayesian in eight easy steps: An annotated reading list. <i>Psychonomic Bulletin & Review</i>, <i>25</i>, 219–234. https://doi.org/10.3758/s13423-017-1317-5",
+                    "Etz, A., Gronau, Q. F., Dablander, F., Edelsbrunner, P. A., & Baribault, B. (2018). How to become a Bayesian in eight easy steps: An annotated reading list. <i>Psychonomic Bulletin & Review</i>, <i>25</i>, 219–234. https://doi.org/10.3758/s13423-017-1317-5",
                     "Kruschke, J. K. (2015). <i>Doing Bayesian data analysis: A tutorial with R, JAGS, and Stan</i> (2nd ed.). Academic Press.",
                     "McElreath, R. (2020). <i>Statistical rethinking: A Bayesian course with examples in R and Stan</i> (2nd ed.). Taylor.",
                     "Wagenmakers, E.-J., Marsman, M., Jamil, T., Ly, A., Verhagen, J., Love, J., Selker, R., Gronau, Q. F., Šmíra, M., Epskamp, S., Matzke, D., Rouder, J. N., & Morey, R. D. (2018). Bayesian inference for psychology. Part I: Theoretical advantages and practical ramifications. <i>Psychonomic Bulletin & Review</i>, <i>25</i>(1), 35–57. https://doi.org/10.3758/s13423-017-1343-3"
@@ -22539,7 +22515,7 @@
                     "Helena Hartmann",
                     "Jennifer Mattschey"
                 ],
-                "lastmod": "2026-11-09"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -22750,7 +22726,7 @@
                     "Guest, O. [@o_guest]. (2017). <i>Thanks! Hopefully this thread & many other similar discussions & blogs will help make it less Bropen Science and more Open Science. *hides* </i>. Twitter. Retrieved from https://twitter.com/o_guest/status/871675631062458368",
                     "Whitaker, K., & Guest, O. (2020).  #bropenscience is broken science. <i>The Psychologist</i>, <i>33</i>, 34–37.",
                     "Pownall, M., Talbot, C. V., Henschel, A., Lautarescu, A., Lloyd, K. E., Hartmann, H., Darda, K. M., Tang, K. T. Y., Carmichael-Murphy, P., & Siegel, J. A. (2021). Navigating Open Science as Early Career Feminist Researchers. <i>Psychology of Women Quarterly</i>, <i>45</i>(4), 526–539. https://doi.org/10.1177/03616843211029255",
-                    "Bahlai, C., Bartlett, L. J., Burgio, K. R., et al. (2019). Open science isn’t always open to all scientists. <i>American Scientist</i>, <i>107</i>(2), 78.",
+                    "Bahlai, C., Bartlett, L. J., Burgio, K. R., Fournier, A., Keiser, C., Poisot, T., & Whitney, K. (2019). Open science isn’t always open to all scientists. <i>American Scientist</i>, <i>107</i>(2), 78.",
                     "Onie, S. (2020). Redesign open science for Asia, Africa and Latin America. <i>Nature</i>, <i>587</i>, 35–37. https://doi.org/10.1038/d41586-020-03052-3"
                 ],
                 "drafted_by": [
@@ -22778,7 +22754,7 @@
                     "Helena Hartmann",
                     "Jennifer Mattschey"
                 ],
-                "lastmod": "2026-11-09"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -24018,8 +23994,7 @@
                     "Tennant, J., Bielczyk, N. Z., Cheplygina, V., Greshake Tzovaras, B., Hartgerink, C. H. J., Havemann, J., Masuzzo, P., & Steiner, T. (2019). Ten simple rules for researchers collaborating on Massively Open Online Papers (MOOPs). <i>MetaArXiv</i>. https://doi.org/10.31222/osf.io/et8ak",
                     "Uhlmann, E. L., Ebersole, C. R., Chartier, C. R., Errington, T. M., Kidwell, M. C., Lai, C. K., McCarthy, R. J., Riegelman, A., Silberzahn, R., & Nosek, B. A. (2019). Scientific utopia III: Crowdsourcing science. <i>Perspectives on Psychological Science</i>, <i>14</i>(5), 711–733. https://doi.org/10.1177/1745691619850561",
                     "Accelerator, P. S. (n.d.). <i>Psychological Science Accelerator</i>. https://psysciacc.org/",
-                    "Week, C. (2021). <i>What is Crowdsourcing?</i> https://crowdsourcingweek.com/what-is-crowdsourcing/",
-                    "[https://crowdsourcingweek.com/what-is-crowdsourcing/](https://crowdsourcingweek.com/what-is-crowdsourcing/#:~:text=Crowdsourcing%20is%20the%20practice%20of,levels%20and%20across%20various%20industries)"
+                    "Week, C. (2021). <i>What is Crowdsourcing?</i> https://crowdsourcingweek.com/what-is-crowdsourcing/"
                 ],
                 "drafted_by": [
                     "Eike Mark Rinke"
@@ -24042,7 +24017,7 @@
                     "Susanne Vogel",
                     "Jennifer Mattschey"
                 ],
-                "lastmod": "2026-11-09"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -24350,10 +24325,10 @@
                 "en_title": "DOI (digital object identifier)",
                 "title": "digital object identifier [DOI (digital object identifier)]",
                 "sort_key": "digital object identifier [doi (digital object identifier)]",
-                "definition": "Digital Object Identifiers (DOI) sind alphanumerische Zeichenfolgen, die jeder beliebigen Einheit zugewiesen werden können, z. B. Veröffentlichungen (einschließlich Preprints), Materialien, Datensätze und Spielfilme \\- die Verwendung von DOIs ist nicht nur auf wissenschaftliches oder akademisches Material beschränkt. DOIs “provides a system for persistent and actionable identification and interoperable exchange of managed information on digital networks.” (dt. bieten ein System für die dauerhafte und umsetzbare Identifizierung und den interoperablen Austausch von verwalteten Informationen in digitalen Netzwerken; [https://www.doi.org/doi-handbook/HTML/index.html](https://www.doi.org/doi-handbook/HTML/index.html)). Es gibt viele verschiedene DOI-Registrierungsstellen, die DOIs betreiben, aber die beiden, auf die Forschende am ehesten stoßen, sind [Crossref](https://www.crossref.org/) und [Datacite](https://datacite.org/).",
+                "definition": "Digital Object Identifiers (DOI) sind alphanumerische Zeichenfolgen, die jeder beliebigen Einheit zugewiesen werden können, z. B. Veröffentlichungen (einschließlich Preprints), Materialien, Datensätze und Spielfilme \\- die Verwendung von DOIs ist nicht nur auf wissenschaftliches oder akademisches Material beschränkt. DOIs “provides a system for persistent and actionable identification and interoperable exchange of managed information on digital networks.” (dt. bieten ein System für die dauerhafte und umsetzbare Identifizierung und den interoperablen Austausch von verwalteten Informationen in digitalen Netzwerken; [https://www.doi.org/doi-handbook/HTML/index.html](https://www.doi.org/doi-handbook/HTML/index.html)). Es gibt viele verschiedene DOI-Registrierungsstellen, die DOIs betreiben, aber die beiden, auf die Forschende am ehesten stoßen, sind [Crossref](https://www.crossref.org/) und [DataCite](https://datacite.org/).",
                 "related_terms": [
                     "arXiv and BibTex",
-                    "Crossref, Datacite, ISBN, ISO, ORCID",
+                    "Crossref, DataCite, ISBN, ISO, ORCID",
                     "Permalink"
                 ],
                 "references": [
@@ -24382,7 +24357,7 @@
                     "Susanne Vogel",
                     "Jennifer Mattschey"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -26711,7 +26686,7 @@
                 ],
                 "references": [
                     "Gollwitzer, M., Abele-Brehm, A., Fiebach, C., Ramthun, R., Scheel, A. M., Schönbrodt, F. D., & Steinberg, U. (2020). <i>Data Management and Data Sharing in Psychological Science: Revision of the DGPs Recommendations</i>.",
-                    "[https://schema.datacite.org/](https://schema.datacite.org/)"
+                    "DataCite Schema. (n.d.). <i>Datacite Metadata Schema</i>. https://schema.datacite.org/"
                 ],
                 "drafted_by": [
                     "Matt Jaquiery"
@@ -26733,7 +26708,7 @@
                     "Helena Hartmann",
                     "Jennifer Mattschey"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -27410,8 +27385,7 @@
                     "Open Science Framework"
                 ],
                 "references": [
-                    "OER Commons. (n.d.). <i>OER Commons</i>. https://www.oercommons.org/",
-                    "[www.oercommons.org](http://www.oercommons.org)"
+                    "OER Commons. (n.d.). <i>OER Commons</i>. https://www.oercommons.org/"
                 ],
                 "drafted_by": [
                     "Ali H. Al-Hoorie"
@@ -27430,7 +27404,7 @@
                     "Susanne Vogel",
                     "Jennifer Mattschey"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -27601,8 +27575,7 @@
                     "Open Science"
                 ],
                 "references": [
-                    "Tennant, J., Beamer, J. E., Bosman, J., Brembs, B., Chung, N. C., Clement, G., Crick, T., Dugan, J., Dunning, A., Eccles, D., Enkhbayar, A., Graziotin, D., Harding, R., Havemann, J., Katz, D. S., Khanal, K., Kjaer, J. N., Koder, T., Macklin, P., & Turner, A. (2019). <i>Foundations for Open Scholarship Strategy Development</i>. MetaArXiv. https://doi.org/10.31222/osf.io/b4v8p",
-                    "[https://www.researchgate.net/publication/330742805\\_Foundations\\_for\\_Open\\_Scholarship\\_Strategy\\_Development](https://www.researchgate.net/publication/330742805_Foundations_for_Open_Scholarship_Strategy_Development)"
+                    "Tennant, J., Beamer, J. E., Bosman, J., Brembs, B., Chung, N. C., Clement, G., Crick, T., Dugan, J., Dunning, A., Eccles, D., Enkhbayar, A., Graziotin, D., Harding, R., Havemann, J., Katz, D. S., Khanal, K., Kjaer, J. N., Koder, T., Macklin, P., & Turner, A. (2019). <i>Foundations for Open Scholarship Strategy Development</i>. MetaArXiv. https://doi.org/10.31222/osf.io/b4v8p"
                 ],
                 "drafted_by": [
                     "Gerald Vineyard"
@@ -27624,7 +27597,7 @@
                     "Susanne Vogel",
                     "Jennifer Mattschey"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -27638,8 +27611,7 @@
                     "Open Science"
                 ],
                 "references": [
-                    "OER Commons. (n.d.). <i>Open Scholarship Knowledge Base | OER Commons</i>. https://www.oercommons.org/hubs/OSKB",
-                    "[www.oercommons.org/hubs/OSKB](http://www.oercommons.org/hubs/OSKB)"
+                    "OER Commons. (n.d.). <i>Open Scholarship Knowledge Base | OER Commons</i>. https://www.oercommons.org/hubs/OSKB"
                 ],
                 "drafted_by": [
                     "Ali H. Al-Hoorie"
@@ -27659,7 +27631,7 @@
                 "translation_reviewed_by": [
                     "Helena Hartmann"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -27684,7 +27656,7 @@
                     "Abele-Brehm, A. E., Gollwitzer, M., Steinberg, U., & Schönbrodt, F. D. (2019). Attitudes toward open science and public data sharing. <i>Social Psychology</i>, <i>50</i>, 252–260. https://doi.org/10.1027/1864-9335/a000384",
                     "Crüwell, S., van Doorn, J., Etz, A., Makel, M. C., Moshontz, H., Niebaum, J. C., Orben, A., Parsons, S., & Schulte-Mecklenbeck, M. (2019). Seven Easy Steps to Open Science: An Annotated Reading List. <i>Zeitschrift Für Psychologie</i>, <i>227</i>(4), 237–248. https://doi.org/10.1027/2151-2604/a000387",
                     "Kathawalla, U., Silverstein, P., & Syed, M. (2020). Easing into Open Science: A Guide for Graduate Students and Their Advisors. <i>Collabra: Psychology</i>. https://doi.org/10.31234/osf.io/vzjdp Retrieved from https://psyarxiv.com/vzjdp",
-                    "Syed, M. (2019). The Open Science Movement is for all of us. <i>PsyArXiv</i>.",
+                    "Syed, M. (2019). The Open Science Movement is for all of us. <i>PsyArXiv</i>. https://doi.org/10.31234/osf.io/cteyb",
                     "Woelfle, M., Olliaro, P., & Todd, M. H. (2011). Open science is a research accelerator. <i>Nature Chemistry</i>, <i>3</i>(10), 745–748. https://doi.org/10.1038/nchem.1149"
                 ],
                 "drafted_by": [
@@ -27707,7 +27679,7 @@
                     "Susanne Vogel",
                     "Jennifer Mattschey"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -28043,8 +28015,7 @@
                 "references": [
                     "psyTeachR Team. (n.d.). <i>P | Glossary</i>. psyTeachR. https://psyteachr.github.io/glossary",
                     "Lakens, D. (2021). The Practical Alternative to the p Value Is the Correctly Used p Value. <i>Perspectives on Psychological Science</i>, <i>16</i>(3), 639–648. https://doi.org/10.1177/1745691620958012",
-                    "Wasserstein, R. L., & Lazar, N. A. (2016). The ASA Statement on p-Values: Context, Process, and Purpose. <i>The American Statistician</i>, <i>70</i>, 129–133. https://doi.org/10.1080/00031305.2016.1154108",
-                    "[https://psyteachr.github.io/glossary/p.html](https://psyteachr.github.io/glossary/p.html)"
+                    "Wasserstein, R. L., & Lazar, N. A. (2016). The ASA Statement on p-Values: Context, Process, and Purpose. <i>The American Statistician</i>, <i>70</i>, 129–133. https://doi.org/10.1080/00031305.2016.1154108"
                 ],
                 "drafted_by": [
                     "Alaa AlDoh; Flávio Azevedo"
@@ -28068,7 +28039,7 @@
                     "Helena Hartmann",
                     "Jennifer Mattschey"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -28162,9 +28133,7 @@
                 ],
                 "references": [
                     "Ikeda, A., Xu, H., Fuji, N., Zhu, S., & Yamada, Y. (2019). Questionable research practices following pre-registration. <i>Japanese Psychological Review</i>, <i>62</i>, 281–295.",
-                    "Yamada, Y. (2018). How to crack pre-registration: Toward transparent and open science. <i>Frontiers in Psychology</i>, <i>9</i>, 1831. https://doi.org/10.3389/fpsyg.2018.01831",
-                    "[Ikeda et al. (2019)](https://www.jstage.jst.go.jp/article/sjpr/62/3/62_281/_pdf/-char/ja)",
-                    "[Yamada (2018)](https://www.frontiersin.org/articles/10.3389/fpsyg.2018.01831/full)"
+                    "Yamada, Y. (2018). How to crack pre-registration: Toward transparent and open science. <i>Frontiers in Psychology</i>, <i>9</i>, 1831. https://doi.org/10.3389/fpsyg.2018.01831"
                 ],
                 "drafted_by": [
                     "Qinyu Xiao"
@@ -28185,7 +28154,7 @@
                     "Helena Hartmann",
                     "Jennifer Mattschey"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -28278,7 +28247,7 @@
                 ],
                 "references": [
                     "Day, S., Rennie, S., Luo, D., & Tucker, J. D. (2020). Open to the public: Paywalls and the public rationale for open access medical research publishing. <i>Research Involvement and Engagement</i>, <i>6</i>(1), 8. https://doi.org/10.1186/s40900-020-0182-y",
-                    "[https://web.archive.org/web/20220221165721/https://casrai.org/term/closed-access/](https://web.archive.org/web/20220221165721/https://casrai.org/term/closed-access/)"
+                    "<i>Closed access</i>. (n.d.). Retrieved 9 July 2021, from https://web.archive.org/web/20220221165721/https://casrai.org/term/closed-access/."
                 ],
                 "drafted_by": [
                     "Bradley Baker"
@@ -28300,7 +28269,7 @@
                     "Susanne Vogel",
                     "Jennifer Mattschey"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -29147,8 +29116,7 @@
                     "Open Peer Review"
                 ],
                 "references": [
-                    "PubPeer. (n.d.). <i>PubPeer—Search publications and join the conversation</i>. Pubpeer. https://www.pubpeer.com/",
-                    "[www.pubpeer.com](http://www.pubpeer.com)"
+                    "PubPeer. (n.d.). <i>PubPeer—Search publications and join the conversation</i>. Pubpeer. https://www.pubpeer.com/"
                 ],
                 "drafted_by": [
                     "Ali H. Al-Hoorie"
@@ -29167,7 +29135,7 @@
                     "Susanne Vogel",
                     "Jennifer Mattschey"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -29716,8 +29684,7 @@
                     "Liu, Y., Gordon, M., Wang, J., Bishop, M., Chen, Y., Pfeiffer, T., Twardy, C., & Viganola, D. (2020). Replication Markets: Results, Lessons, Challenges and Opportunities in AI Replication. <i>ArXiv:2005.04543 </i>. http://arxiv.org/abs/2005.04543",
                     "Tierney, W., Hardy III, J. H., Ebersole, C. R., Leavitt, K., Viganola, D., Clemente, E. G., et al. (2020). Creative destruction in science. <i>Organizational Behavior and Human Decision Processes</i>, <i>161</i>, 291–309. https://doi.org/10.1016/j.obhdp.2020.07.002",
                     "Tierney, W., Hardy III, J., Ebersole, C. R., Viganola, D., Clemente, E. G., Gordon, M., et al. (2021). A creative destruction approach to replication: Implicit work and sex morality across cultures. <i>Journal of Experimental Social Psychology</i>, <i>93</i>, 104060. https://doi.org/10.1016/j.jesp.2020.104060",
-                    "Replication Markets. (n.d.). <i>Replication Markets – Reliable research replicates…you can bet on it</i>. Replication Markets. https://www.replicationmarkets.org/",
-                    "[www.replicationmarkets.com](http://www.replicationmarkets.com)"
+                    "Replication Markets. (n.d.). <i>Replication Markets – Reliable research replicates…you can bet on it</i>. Replication Markets. https://www.replicationmarkets.org/"
                 ],
                 "drafted_by": [
                     "Ali H. Al-Hoorie"
@@ -29738,7 +29705,7 @@
                     "Susanne Vogel",
                     "Jennifer Mattschey"
                 ],
-                "lastmod": "2026-11-09"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -29879,7 +29846,7 @@
                     "Crüwell, S., van Doorn, J., Etz, A., Makel, M. C., Moshontz, H., Niebaum, J. C., Orben, A., Parsons, S., & Schulte-Mecklenbeck, M. (2019). Seven Easy Steps to Open Science: An Annotated Reading List. <i>Zeitschrift Für Psychologie</i>, <i>227</i>(4), 237–248. https://doi.org/10.1027/2151-2604/a000387",
                     "Peng, R. D. (2011). Reproducible Research in Computational Science. <i>Science</i>, <i>334</i>(6060), 1226–1227. https://doi.org/10.1126/science.1213847",
                     "Stodden, V. C. (2011). <i>Trust your science? Open your data and code</i>.",
-                    "Syed, M. (2019). The Open Science Movement is for all of us. <i>PsyArXiv</i>.",
+                    "Syed, M. (2019). The Open Science Movement is for all of us. <i>PsyArXiv</i>. https://doi.org/10.31234/osf.io/cteyb",
                     "National Academies of Sciences, Engineering, and Medicine. (2019). <i>Reproducibility and Replicability in Science. In Understanding Reproducibility and Replicability</i> [Techreport]. National Academies Press (US). https://www.ncbi.nlm.nih.gov/books/NBK547546/"
                 ],
                 "drafted_by": [
@@ -29904,7 +29871,7 @@
                     "Helena Hartmann",
                     "Jennifer Mattschey"
                 ],
-                "lastmod": "2026-11-09"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -31168,8 +31135,7 @@
                 ],
                 "references": [
                     "Chartier, C. R., Riegelman, A., & McCarthy, R. J. (2018). StudySwap: A platform for interlab replication, collaboration, and resource exchange. <i>Advances in Methods and Practices in Psychological Science</i>, <i>1</i>(4), 574–579. https://doi.org/10.1177/2515245918808767",
-                    "OSF. (n.d.). <i>OSF | StudySwap: A platform for interlab replication, collaboration, and research resource exchange</i>. https://osf.io/meetings/StudySwap/",
-                    "[https://osf.io/view/StudySwap](https://osf.io/view/StudySwap)"
+                    "OSF. (n.d.). <i>OSF | StudySwap: A platform for interlab replication, collaboration, and research resource exchange</i>. https://osf.io/meetings/StudySwap/"
                 ],
                 "drafted_by": [
                     "Charlotte R. Pennington"
@@ -31191,7 +31157,7 @@
                     "Susanne Vogel",
                     "Joris Frese"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -31407,8 +31373,7 @@
                 "references": [
                     "Elliott, K. C., & Resnik, D. B. (2019). Making open science work for science and society. <i>Environmental Health Perspectives</i>, <i>127</i>(7). https://doi.org/10.1289/EHP4808",
                     "Lyon, L. (2016). Transparency: The Emerging Third Dimension of Open Science and Open Data. <i>LIBER Quarterly</i>, <i>25</i>(4), 153–171. http://doi.org/10.18352/lq.10113",
-                    "Syed, M. (2019). The Open Science Movement is for all of us. <i>PsyArXiv</i>.",
-                    "[Syed (2019)](https://psyarxiv.com/cteyb/)"
+                    "Syed, M. (2019). The Open Science Movement is for all of us. <i>PsyArXiv</i>. https://doi.org/10.31234/osf.io/cteyb"
                 ],
                 "drafted_by": [
                     "William Ngiam"
@@ -31431,7 +31396,7 @@
                     "Susanne Vogel",
                     "Joris Frese"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -32052,8 +32017,7 @@
                     "Preprint"
                 ],
                 "references": [
-                    "Zenodo. (n.d.). <i>Zenodo—Research. Shared.</i> https://www.zenodo.org/",
-                    "[www.zenodo.org](http://www.zenodo.org)"
+                    "Zenodo. (n.d.). <i>Zenodo—Research. Shared.</i> https://www.zenodo.org/"
                 ],
                 "drafted_by": [
                     "Ali H. Al-Hoorie"
@@ -32070,7 +32034,7 @@
                     "Susanne Vogel",
                     "Joris Frese"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-11"
             }
         ]
     },
@@ -32660,7 +32624,7 @@
                     "Triple badge"
                 ],
                 "references": [
-                    "Hardwicke, T. E., Bohn, M., MacDonald, K., Hembacher, E., Nuijten, M. B., Peloquin, B. N., et al. (2020). Analytic reproducibility in articles receiving open data badges at the journal Psychological Science: an observational study. <i>Royal Society Open Science</i>, <i>8</i>(1), 201494. https://doi.org/10.1098/rsos.201494",
+                    "Hardwicke, T. E., Bohn, M., MacDonald, K., Hembacher, E., Nuijten, M. B., Peloquin, B. N., deMayo, B. E., Long, B., Yoon, E. J., & Frank, M. C. (2020). Analytic reproducibility in articles receiving open data badges at the journal Psychological Science: an observational study. <i>Royal Society Open Science</i>, <i>8</i>(1), 201494. https://doi.org/10.1098/rsos.201494",
                     "Kidwell, M. C., Lazarević, L. B., Baranski, E., Hardwicke, T. E., Piechowski, S., Falkenberg, L. S., & Nosek, B. A. (2016). Badges to acknowledge open practices: A simple, low-cost, effective method for increasing transparency. <i>PLoS Biology</i>, <i>14</i>(5), e1002456. https://doi.org/10.1371/journal.pbio.1002456",
                     "Rowhani-Farid, A., Aldcroft, A., & Barnett, A. G. (2020). Did awarding badges increase data sharing in BMJ Open? A randomized controlled trial. <i>Royal Society Open Science</i>, <i>7</i>(3), 191818. https://doi.org/10.1098/rsos.191818",
                     "Science, C. (n.d.). <i>Open science badges</i>. https://www.cos.io/initiatives/badges"
@@ -32683,7 +32647,7 @@
                 "aliases": [
                     "/glossary/badges_open_science_"
                 ],
-                "lastmod": "2026-11-09"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -32738,7 +32702,7 @@
                     "Dienes, Z. (2011). Bayesian versus orthodox statistics: Which side are you on? <i>Perspectives on Psychological Science</i>, <i>6</i>(3), 274–290. https://doi.org/10.1177/1745691611406920",
                     "Dienes, Z. (2014). Using Bayes to get the most out of non-significant results. <i>Frontiers in Psychology</i>, <i>5</i>, 781. https://doi.org/10.3389/fpsyg.2014.00781",
                     "Dienes, Z. (2016). How Bayes factors change scientific practice. <i>Journal of Mathematical Psychology</i>, <i>72</i>, 78–89. https://doi.org/10.1016/j.jmp.2015.10.003",
-                    "Etz, A., Gronau, Q. F., Dablander, F., et al. (2018). How to become a Bayesian in eight easy steps: An annotated reading list. <i>Psychonomic Bulletin & Review</i>, <i>25</i>, 219–234. https://doi.org/10.3758/s13423-017-1317-5",
+                    "Etz, A., Gronau, Q. F., Dablander, F., Edelsbrunner, P. A., & Baribault, B. (2018). How to become a Bayesian in eight easy steps: An annotated reading list. <i>Psychonomic Bulletin & Review</i>, <i>25</i>, 219–234. https://doi.org/10.3758/s13423-017-1317-5",
                     "Kruschke, J. K. (2015). <i>Doing Bayesian data analysis: A tutorial with R, JAGS, and Stan</i> (2nd ed.). Academic Press.",
                     "McElreath, R. (2020). <i>Statistical rethinking: A Bayesian course with examples in R and Stan</i> (2nd ed.). Taylor.",
                     "Wagenmakers, E.-J., Marsman, M., Jamil, T., Ly, A., Verhagen, J., Love, J., Selker, R., Gronau, Q. F., Šmíra, M., Epskamp, S., Matzke, D., Rouder, J. N., & Morey, R. D. (2018). Bayesian inference for psychology. Part I: Theoretical advantages and practical ramifications. <i>Psychonomic Bulletin & Review</i>, <i>25</i>(1), 35–57. https://doi.org/10.3758/s13423-017-1343-3"
@@ -32761,7 +32725,7 @@
                 "aliases": [
                     "/glossary/bayesian_inference"
                 ],
-                "lastmod": "2026-11-09"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -32952,7 +32916,7 @@
                     "Guest, O. [@o_guest]. (2017). <i>Thanks! Hopefully this thread & many other similar discussions & blogs will help make it less Bropen Science and more Open Science. *hides* </i>. Twitter. Retrieved from https://twitter.com/o_guest/status/871675631062458368",
                     "Whitaker, K., & Guest, O. (2020).  #bropenscience is broken science. <i>The Psychologist</i>, <i>33</i>, 34–37.",
                     "Pownall, M., Talbot, C. V., Henschel, A., Lautarescu, A., Lloyd, K. E., Hartmann, H., Darda, K. M., Tang, K. T. Y., Carmichael-Murphy, P., & Siegel, J. A. (2021). Navigating Open Science as Early Career Feminist Researchers. <i>Psychology of Women Quarterly</i>, <i>45</i>(4), 526–539. https://doi.org/10.1177/03616843211029255",
-                    "Bahlai, C., Bartlett, L. J., Burgio, K. R., et al. (2019). Open science isn’t always open to all scientists. <i>American Scientist</i>, <i>107</i>(2), 78.",
+                    "Bahlai, C., Bartlett, L. J., Burgio, K. R., Fournier, A., Keiser, C., Poisot, T., & Whitney, K. (2019). Open science isn’t always open to all scientists. <i>American Scientist</i>, <i>107</i>(2), 78.",
                     "Onie, S. (2020). Redesign open science for Asia, Africa and Latin America. <i>Nature</i>, <i>587</i>, 35–37. https://doi.org/10.1038/d41586-020-03052-3"
                 ],
                 "drafted_by": [
@@ -32976,7 +32940,7 @@
                 "aliases": [
                     "/glossary/bropenscience"
                 ],
-                "lastmod": "2026-11-09"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -34092,8 +34056,7 @@
                     "Tennant, J., Bielczyk, N. Z., Cheplygina, V., Greshake Tzovaras, B., Hartgerink, C. H. J., Havemann, J., Masuzzo, P., & Steiner, T. (2019). Ten simple rules for researchers collaborating on Massively Open Online Papers (MOOPs). <i>MetaArXiv</i>. https://doi.org/10.31222/osf.io/et8ak",
                     "Uhlmann, E. L., Ebersole, C. R., Chartier, C. R., Errington, T. M., Kidwell, M. C., Lai, C. K., McCarthy, R. J., Riegelman, A., Silberzahn, R., & Nosek, B. A. (2019). Scientific utopia III: Crowdsourcing science. <i>Perspectives on Psychological Science</i>, <i>14</i>(5), 711–733. https://doi.org/10.1177/1745691619850561",
                     "Accelerator, P. S. (n.d.). <i>Psychological Science Accelerator</i>. https://psysciacc.org/",
-                    "Week, C. (2021). <i>What is Crowdsourcing?</i> https://crowdsourcingweek.com/what-is-crowdsourcing/",
-                    "[https://crowdsourcingweek.com/what-is-crowdsourcing/](https://crowdsourcingweek.com/what-is-crowdsourcing/#:~:text=Crowdsourcing%20is%20the%20practice%20of,levels%20and%20across%20various%20industries)"
+                    "Week, C. (2021). <i>What is Crowdsourcing?</i> https://crowdsourcingweek.com/what-is-crowdsourcing/"
                 ],
                 "drafted_by": [
                     "Eike Mark Rinke"
@@ -34112,7 +34075,7 @@
                 "aliases": [
                     "/glossary/crowdsourced_research"
                 ],
-                "lastmod": "2026-11-09"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -34391,7 +34354,7 @@
                 "definition": "Digital Object Identifiers (DOI) are alpha-numeric strings that can be assigned to any entity, including: publications (including preprints), materials, datasets, and feature films \\- the use of DOIs is not restricted to just scholarly or academic material. There are many different DOI registration agencies that operate DOIs, but the two that researchers would most likely encounter are [Crossref](https://www.crossref.org/) and [DataCite](https://datacite.org/).",
                 "related_terms": [
                     "arXiv and BibTex",
-                    "Crossref, Datacite, ISBN, ISO, ORCID",
+                    "Crossref, DataCite, ISBN, ISO, ORCID",
                     "Permalink"
                 ],
                 "references": [
@@ -34416,7 +34379,7 @@
                 "aliases": [
                     "/glossary/doi_digital_object_identifier_"
                 ],
-                "lastmod": "2026-11-09"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -34528,7 +34491,7 @@
                 "en_title": "Direct replication",
                 "title": "Direct replication",
                 "sort_key": "direct replication",
-                "definition": "As ‘direct replication’ does not have a widely-agreed technical meaning nor there is no clear cut distinction between a direct and conceptual replication, below we list several contributions towards a consensus. Rather than debating the ‘exactness’ of a replication, it is more helpful to discuss the relevant differences between a replication and its target, and their implications for the reliability and generality of the target’s results. Generally, direct replication refers to a new data collection that attempts to replicate original studies’ methods as closely as possible. A replication attempt that “seek(s) to duplicate the necessary elements that produced the original finding.” (Crüwell et al., 2019; p.243). The purpose of a direct replication can be to identify type 1 errors and/or experimenter effects, determine the replicability of an effect using the same or improved practices, or to create more specific estimates of effect size (Hüffmeier et al., 2016). Directness of replication is a continuum between repeating specific observations (data) and observing generalised effects (phenomena). How closely a replication replicates an original study is often a matter for debate, often with differences being cited as hidden moderators of effects. Furthermore, there can be debate over the relevant importance of technical equivalence (i.e., using identical materials) versus psychological equivalence (i.e., realizing the identical psychological conditions) to the original study (Schwarz and Strack, 2014). For example, consider a study on Trust in the US- President conducted in 2018\\. A technical equivalent replication would use Trump as stimulus (he was president in 2018\\) a psychological equivalent study conducted in 2023 would use Biden (he was president in 2023).",
+                "definition": "As ‘direct replication’ does not have a widely-agreed technical meaning nor there is no clear cut distinction between a direct and conceptual replication, below we list several contributions towards a consensus. Rather than debating the ‘exactness’ of a replication, it is more helpful to discuss the relevant differences between a replication and its target, and their implications for the reliability and generality of the target’s results. Generally, direct replication refers to a new data collection that attempts to replicate original studies’ methods as closely as possible. A replication attempt that “seek(s) to duplicate the necessary elements that produced the original finding.” (Crüwell et al., 2019; p.243). The purpose of a direct replication can be to identify type 1 errors and/or experimenter effects, determine the replicability of an effect using the same or improved practices, or to create more specific estimates of effect size (Hüffmeier et al., 2016). Directness of replication is a continuum between repeating specific observations (data) and observing generalised effects (phenomena). How closely a replication replicates an original study is often a matter for debate, often with differences being cited as hidden moderators of effects. Furthermore, there can be debate over the relevant importance of technical equivalence (i.e., using identical materials) versus psychological equivalence (i.e., realizing the identical psychological conditions) to the original study (Schwarz and Strack, 2014). For example, consider a study on Trust in the US- President conducted in 2018\\. A technical equivalent replication would use Trump as stimulus (he was president in 2018\\). A psychological equivalent study conducted in 2023 would use Biden (he was president in 2023).",
                 "related_terms": [
                     "close replication",
                     "Conceptual replication",
@@ -34561,7 +34524,7 @@
                 "aliases": [
                     "/glossary/direct_replication"
                 ],
-                "lastmod": "2026-11-09"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -36505,7 +36468,7 @@
                 ],
                 "references": [
                     "Gollwitzer, M., Abele-Brehm, A., Fiebach, C., Ramthun, R., Scheel, A. M., Schönbrodt, F. D., & Steinberg, U. (2020). <i>Data Management and Data Sharing in Psychological Science: Revision of the DGPs Recommendations</i>.",
-                    "[https://schema.datacite.org/](https://schema.datacite.org/)"
+                    "DataCite Schema. (n.d.). <i>Datacite Metadata Schema</i>. https://schema.datacite.org/"
                 ],
                 "drafted_by": [
                     "Matt Jaquiery"
@@ -36523,7 +36486,7 @@
                 "aliases": [
                     "/glossary/metadata"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -37127,8 +37090,7 @@
                     "Open Science Framework"
                 ],
                 "references": [
-                    "OER Commons. (n.d.). <i>OER Commons</i>. https://www.oercommons.org/",
-                    "[www.oercommons.org](http://www.oercommons.org)"
+                    "OER Commons. (n.d.). <i>OER Commons</i>. https://www.oercommons.org/"
                 ],
                 "drafted_by": [
                     "Ali H. Al-Hoorie"
@@ -37143,7 +37105,7 @@
                 "aliases": [
                     "/glossary/open_educational_resources_oer_commons"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -37298,8 +37260,7 @@
                     "Open Science"
                 ],
                 "references": [
-                    "Tennant, J., Beamer, J. E., Bosman, J., Brembs, B., Chung, N. C., Clement, G., Crick, T., Dugan, J., Dunning, A., Eccles, D., Enkhbayar, A., Graziotin, D., Harding, R., Havemann, J., Katz, D. S., Khanal, K., Kjaer, J. N., Koder, T., Macklin, P., & Turner, A. (2019). <i>Foundations for Open Scholarship Strategy Development</i>. MetaArXiv. https://doi.org/10.31222/osf.io/b4v8p",
-                    "[https://www.researchgate.net/publication/330742805\\_Foundations\\_for\\_Open\\_Scholarship\\_Strategy\\_Development](https://www.researchgate.net/publication/330742805_Foundations_for_Open_Scholarship_Strategy_Development)"
+                    "Tennant, J., Beamer, J. E., Bosman, J., Brembs, B., Chung, N. C., Clement, G., Crick, T., Dugan, J., Dunning, A., Eccles, D., Enkhbayar, A., Graziotin, D., Harding, R., Havemann, J., Katz, D. S., Khanal, K., Kjaer, J. N., Koder, T., Macklin, P., & Turner, A. (2019). <i>Foundations for Open Scholarship Strategy Development</i>. MetaArXiv. https://doi.org/10.31222/osf.io/b4v8p"
                 ],
                 "drafted_by": [
                     "Gerald Vineyard"
@@ -37317,7 +37278,7 @@
                 "aliases": [
                     "/glossary/open_scholarship"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -37331,8 +37292,7 @@
                     "Open Science"
                 ],
                 "references": [
-                    "OER Commons. (n.d.). <i>Open Scholarship Knowledge Base | OER Commons</i>. https://www.oercommons.org/hubs/OSKB",
-                    "[www.oercommons.org/hubs/OSKB](http://www.oercommons.org/hubs/OSKB)"
+                    "OER Commons. (n.d.). <i>Open Scholarship Knowledge Base | OER Commons</i>. https://www.oercommons.org/hubs/OSKB"
                 ],
                 "drafted_by": [
                     "Ali H. Al-Hoorie"
@@ -37349,7 +37309,7 @@
                 "aliases": [
                     "/glossary/open_scholarship_knowledge_base"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -37374,7 +37334,7 @@
                     "Abele-Brehm, A. E., Gollwitzer, M., Steinberg, U., & Schönbrodt, F. D. (2019). Attitudes toward open science and public data sharing. <i>Social Psychology</i>, <i>50</i>, 252–260. https://doi.org/10.1027/1864-9335/a000384",
                     "Crüwell, S., van Doorn, J., Etz, A., Makel, M. C., Moshontz, H., Niebaum, J. C., Orben, A., Parsons, S., & Schulte-Mecklenbeck, M. (2019). Seven Easy Steps to Open Science: An Annotated Reading List. <i>Zeitschrift Für Psychologie</i>, <i>227</i>(4), 237–248. https://doi.org/10.1027/2151-2604/a000387",
                     "Kathawalla, U., Silverstein, P., & Syed, M. (2020). Easing into Open Science: A Guide for Graduate Students and Their Advisors. <i>Collabra: Psychology</i>. https://doi.org/10.31234/osf.io/vzjdp Retrieved from https://psyarxiv.com/vzjdp",
-                    "Syed, M. (2019). The Open Science Movement is for all of us. <i>PsyArXiv</i>.",
+                    "Syed, M. (2019). The Open Science Movement is for all of us. <i>PsyArXiv</i>. https://doi.org/10.31234/osf.io/cteyb",
                     "Woelfle, M., Olliaro, P., & Todd, M. H. (2011). Open science is a research accelerator. <i>Nature Chemistry</i>, <i>3</i>(10), 745–748. https://doi.org/10.1038/nchem.1149"
                 ],
                 "drafted_by": [
@@ -37393,7 +37353,7 @@
                 "aliases": [
                     "/glossary/open_science"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -37697,8 +37657,7 @@
                 "references": [
                     "psyTeachR Team. (n.d.). <i>P | Glossary</i>. psyTeachR. https://psyteachr.github.io/glossary",
                     "Lakens, D. (2021). The Practical Alternative to the p Value Is the Correctly Used p Value. <i>Perspectives on Psychological Science</i>, <i>16</i>(3), 639–648. https://doi.org/10.1177/1745691620958012",
-                    "Wasserstein, R. L., & Lazar, N. A. (2016). The ASA Statement on p-Values: Context, Process, and Purpose. <i>The American Statistician</i>, <i>70</i>, 129–133. https://doi.org/10.1080/00031305.2016.1154108",
-                    "[https://psyteachr.github.io/glossary/p.html](https://psyteachr.github.io/glossary/p.html)"
+                    "Wasserstein, R. L., & Lazar, N. A. (2016). The ASA Statement on p-Values: Context, Process, and Purpose. <i>The American Statistician</i>, <i>70</i>, 129–133. https://doi.org/10.1080/00031305.2016.1154108"
                 ],
                 "drafted_by": [
                     "Alaa AlDoh; Flávio Azevedo"
@@ -37718,7 +37677,7 @@
                 "aliases": [
                     "/glossary/p_value"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -37804,9 +37763,7 @@
                 ],
                 "references": [
                     "Ikeda, A., Xu, H., Fuji, N., Zhu, S., & Yamada, Y. (2019). Questionable research practices following pre-registration. <i>Japanese Psychological Review</i>, <i>62</i>, 281–295.",
-                    "Yamada, Y. (2018). How to crack pre-registration: Toward transparent and open science. <i>Frontiers in Psychology</i>, <i>9</i>, 1831. https://doi.org/10.3389/fpsyg.2018.01831",
-                    "[Ikeda et al. (2019)](https://www.jstage.jst.go.jp/article/sjpr/62/3/62_281/_pdf/-char/ja)",
-                    "[Yamada (2018)](https://www.frontiersin.org/articles/10.3389/fpsyg.2018.01831/full)"
+                    "Yamada, Y. (2018). How to crack pre-registration: Toward transparent and open science. <i>Frontiers in Psychology</i>, <i>9</i>, 1831. https://doi.org/10.3389/fpsyg.2018.01831"
                 ],
                 "drafted_by": [
                     "Qinyu Xiao"
@@ -37823,7 +37780,7 @@
                 "aliases": [
                     "/glossary/parking"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -37908,7 +37865,7 @@
                 ],
                 "references": [
                     "Day, S., Rennie, S., Luo, D., & Tucker, J. D. (2020). Open to the public: Paywalls and the public rationale for open access medical research publishing. <i>Research Involvement and Engagement</i>, <i>6</i>(1), 8. https://doi.org/10.1186/s40900-020-0182-y",
-                    "[https://web.archive.org/web/20220221165721/https://casrai.org/term/closed-access/](https://web.archive.org/web/20220221165721/https://casrai.org/term/closed-access/)"
+                    "<i>Closed access</i>. (n.d.). Retrieved 9 July 2021, from https://web.archive.org/web/20220221165721/https://casrai.org/term/closed-access/."
                 ],
                 "drafted_by": [
                     "Bradley Baker"
@@ -37926,7 +37883,7 @@
                 "aliases": [
                     "/glossary/paywall"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -38689,8 +38646,7 @@
                     "Open Peer Review"
                 ],
                 "references": [
-                    "PubPeer. (n.d.). <i>PubPeer—Search publications and join the conversation</i>. Pubpeer. https://www.pubpeer.com/",
-                    "[www.pubpeer.com](http://www.pubpeer.com)"
+                    "PubPeer. (n.d.). <i>PubPeer—Search publications and join the conversation</i>. Pubpeer. https://www.pubpeer.com/"
                 ],
                 "drafted_by": [
                     "Ali H. Al-Hoorie"
@@ -38705,7 +38661,7 @@
                 "aliases": [
                     "/glossary/pubpeer"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -39202,8 +39158,7 @@
                     "Liu, Y., Gordon, M., Wang, J., Bishop, M., Chen, Y., Pfeiffer, T., Twardy, C., & Viganola, D. (2020). Replication Markets: Results, Lessons, Challenges and Opportunities in AI Replication. <i>ArXiv:2005.04543 </i>. http://arxiv.org/abs/2005.04543",
                     "Tierney, W., Hardy III, J. H., Ebersole, C. R., Leavitt, K., Viganola, D., Clemente, E. G., et al. (2020). Creative destruction in science. <i>Organizational Behavior and Human Decision Processes</i>, <i>161</i>, 291–309. https://doi.org/10.1016/j.obhdp.2020.07.002",
                     "Tierney, W., Hardy III, J., Ebersole, C. R., Viganola, D., Clemente, E. G., Gordon, M., et al. (2021). A creative destruction approach to replication: Implicit work and sex morality across cultures. <i>Journal of Experimental Social Psychology</i>, <i>93</i>, 104060. https://doi.org/10.1016/j.jesp.2020.104060",
-                    "Replication Markets. (n.d.). <i>Replication Markets – Reliable research replicates…you can bet on it</i>. Replication Markets. https://www.replicationmarkets.org/",
-                    "[www.replicationmarkets.com](http://www.replicationmarkets.com)"
+                    "Replication Markets. (n.d.). <i>Replication Markets – Reliable research replicates…you can bet on it</i>. Replication Markets. https://www.replicationmarkets.org/"
                 ],
                 "drafted_by": [
                     "Ali H. Al-Hoorie"
@@ -39220,7 +39175,7 @@
                 "aliases": [
                     "/glossary/replication_markets"
                 ],
-                "lastmod": "2026-11-09"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -39349,7 +39304,7 @@
                     "Crüwell, S., van Doorn, J., Etz, A., Makel, M. C., Moshontz, H., Niebaum, J. C., Orben, A., Parsons, S., & Schulte-Mecklenbeck, M. (2019). Seven Easy Steps to Open Science: An Annotated Reading List. <i>Zeitschrift Für Psychologie</i>, <i>227</i>(4), 237–248. https://doi.org/10.1027/2151-2604/a000387",
                     "Peng, R. D. (2011). Reproducible Research in Computational Science. <i>Science</i>, <i>334</i>(6060), 1226–1227. https://doi.org/10.1126/science.1213847",
                     "Stodden, V. C. (2011). <i>Trust your science? Open your data and code</i>.",
-                    "Syed, M. (2019). The Open Science Movement is for all of us. <i>PsyArXiv</i>.",
+                    "Syed, M. (2019). The Open Science Movement is for all of us. <i>PsyArXiv</i>. https://doi.org/10.31234/osf.io/cteyb",
                     "National Academies of Sciences, Engineering, and Medicine. (2019). <i>Reproducibility and Replicability in Science. In Understanding Reproducibility and Replicability</i> [Techreport]. National Academies Press (US). https://www.ncbi.nlm.nih.gov/books/NBK547546/"
                 ],
                 "drafted_by": [
@@ -39370,7 +39325,7 @@
                 "aliases": [
                     "/glossary/reproducibility"
                 ],
-                "lastmod": "2026-11-09"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -40502,8 +40457,7 @@
                 ],
                 "references": [
                     "Chartier, C. R., Riegelman, A., & McCarthy, R. J. (2018). StudySwap: A platform for interlab replication, collaboration, and resource exchange. <i>Advances in Methods and Practices in Psychological Science</i>, <i>1</i>(4), 574–579. https://doi.org/10.1177/2515245918808767",
-                    "OSF. (n.d.). <i>OSF | StudySwap: A platform for interlab replication, collaboration, and research resource exchange</i>. https://osf.io/meetings/StudySwap/",
-                    "[https://osf.io/view/StudySwap](https://osf.io/view/StudySwap)"
+                    "OSF. (n.d.). <i>OSF | StudySwap: A platform for interlab replication, collaboration, and research resource exchange</i>. https://osf.io/meetings/StudySwap/"
                 ],
                 "drafted_by": [
                     "Charlotte R. Pennington"
@@ -40521,7 +40475,7 @@
                 "aliases": [
                     "/glossary/studyswap"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -40716,8 +40670,7 @@
                 "references": [
                     "Elliott, K. C., & Resnik, D. B. (2019). Making open science work for science and society. <i>Environmental Health Perspectives</i>, <i>127</i>(7). https://doi.org/10.1289/EHP4808",
                     "Lyon, L. (2016). Transparency: The Emerging Third Dimension of Open Science and Open Data. <i>LIBER Quarterly</i>, <i>25</i>(4), 153–171. http://doi.org/10.18352/lq.10113",
-                    "Syed, M. (2019). The Open Science Movement is for all of us. <i>PsyArXiv</i>.",
-                    "[Syed (2019)](https://psyarxiv.com/cteyb/)"
+                    "Syed, M. (2019). The Open Science Movement is for all of us. <i>PsyArXiv</i>. https://doi.org/10.31234/osf.io/cteyb"
                 ],
                 "drafted_by": [
                     "William Ngiam"
@@ -40735,7 +40688,7 @@
                 "aliases": [
                     "/glossary/transparency"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -41293,8 +41246,7 @@
                     "Preprint"
                 ],
                 "references": [
-                    "Zenodo. (n.d.). <i>Zenodo—Research. Shared.</i> https://www.zenodo.org/",
-                    "[www.zenodo.org](http://www.zenodo.org)"
+                    "Zenodo. (n.d.). <i>Zenodo—Research. Shared.</i> https://www.zenodo.org/"
                 ],
                 "drafted_by": [
                     "Ali H. Al-Hoorie"
@@ -41307,7 +41259,7 @@
                 "aliases": [
                     "/glossary/zenodo"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-11"
             }
         ]
     },
@@ -41945,7 +41897,7 @@
                     "Triple badge"
                 ],
                 "references": [
-                    "Hardwicke, T. E., Bohn, M., MacDonald, K., Hembacher, E., Nuijten, M. B., Peloquin, B. N., et al. (2020). Analytic reproducibility in articles receiving open data badges at the journal Psychological Science: an observational study. <i>Royal Society Open Science</i>, <i>8</i>(1), 201494. https://doi.org/10.1098/rsos.201494",
+                    "Hardwicke, T. E., Bohn, M., MacDonald, K., Hembacher, E., Nuijten, M. B., Peloquin, B. N., deMayo, B. E., Long, B., Yoon, E. J., & Frank, M. C. (2020). Analytic reproducibility in articles receiving open data badges at the journal Psychological Science: an observational study. <i>Royal Society Open Science</i>, <i>8</i>(1), 201494. https://doi.org/10.1098/rsos.201494",
                     "Kidwell, M. C., Lazarević, L. B., Baranski, E., Hardwicke, T. E., Piechowski, S., Falkenberg, L. S., & Nosek, B. A. (2016). Badges to acknowledge open practices: A simple, low-cost, effective method for increasing transparency. <i>PLoS Biology</i>, <i>14</i>(5), e1002456. https://doi.org/10.1371/journal.pbio.1002456",
                     "Rowhani-Farid, A., Aldcroft, A., & Barnett, A. G. (2020). Did awarding badges increase data sharing in BMJ Open? A randomized controlled trial. <i>Royal Society Open Science</i>, <i>7</i>(3), 191818. https://doi.org/10.1098/rsos.191818",
                     "Science, C. (n.d.). <i>Open science badges</i>. https://www.cos.io/initiatives/badges"
@@ -41971,7 +41923,7 @@
                 "translation_reviewed_by": [
                     "Elif Baştan"
                 ],
-                "lastmod": "2026-11-09"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -42029,7 +41981,7 @@
                     "Dienes, Z. (2011). Bayesian versus orthodox statistics: Which side are you on? <i>Perspectives on Psychological Science</i>, <i>6</i>(3), 274–290. https://doi.org/10.1177/1745691611406920",
                     "Dienes, Z. (2014). Using Bayes to get the most out of non-significant results. <i>Frontiers in Psychology</i>, <i>5</i>, 781. https://doi.org/10.3389/fpsyg.2014.00781",
                     "Dienes, Z. (2016). How Bayes factors change scientific practice. <i>Journal of Mathematical Psychology</i>, <i>72</i>, 78–89. https://doi.org/10.1016/j.jmp.2015.10.003",
-                    "Etz, A., Gronau, Q. F., Dablander, F., et al. (2018). How to become a Bayesian in eight easy steps: An annotated reading list. <i>Psychonomic Bulletin & Review</i>, <i>25</i>, 219–234. https://doi.org/10.3758/s13423-017-1317-5",
+                    "Etz, A., Gronau, Q. F., Dablander, F., Edelsbrunner, P. A., & Baribault, B. (2018). How to become a Bayesian in eight easy steps: An annotated reading list. <i>Psychonomic Bulletin & Review</i>, <i>25</i>, 219–234. https://doi.org/10.3758/s13423-017-1317-5",
                     "Kruschke, J. K. (2015). <i>Doing Bayesian data analysis: A tutorial with R, JAGS, and Stan</i> (2nd ed.). Academic Press.",
                     "McElreath, R. (2020). <i>Statistical rethinking: A Bayesian course with examples in R and Stan</i> (2nd ed.). Taylor.",
                     "Wagenmakers, E.-J., Marsman, M., Jamil, T., Ly, A., Verhagen, J., Love, J., Selker, R., Gronau, Q. F., Šmíra, M., Epskamp, S., Matzke, D., Rouder, J. N., & Morey, R. D. (2018). Bayesian inference for psychology. Part I: Theoretical advantages and practical ramifications. <i>Psychonomic Bulletin & Review</i>, <i>25</i>(1), 35–57. https://doi.org/10.3758/s13423-017-1343-3"
@@ -42055,7 +42007,7 @@
                 "translation_reviewed_by": [
                     "Elif Baştan"
                 ],
-                "lastmod": "2026-11-09"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -42261,7 +42213,7 @@
                     "Guest, O. [@o_guest]. (2017). <i>Thanks! Hopefully this thread & many other similar discussions & blogs will help make it less Bropen Science and more Open Science. *hides* </i>. Twitter. Retrieved from https://twitter.com/o_guest/status/871675631062458368",
                     "Whitaker, K., & Guest, O. (2020).  #bropenscience is broken science. <i>The Psychologist</i>, <i>33</i>, 34–37.",
                     "Pownall, M., Talbot, C. V., Henschel, A., Lautarescu, A., Lloyd, K. E., Hartmann, H., Darda, K. M., Tang, K. T. Y., Carmichael-Murphy, P., & Siegel, J. A. (2021). Navigating Open Science as Early Career Feminist Researchers. <i>Psychology of Women Quarterly</i>, <i>45</i>(4), 526–539. https://doi.org/10.1177/03616843211029255",
-                    "Bahlai, C., Bartlett, L. J., Burgio, K. R., et al. (2019). Open science isn’t always open to all scientists. <i>American Scientist</i>, <i>107</i>(2), 78.",
+                    "Bahlai, C., Bartlett, L. J., Burgio, K. R., Fournier, A., Keiser, C., Poisot, T., & Whitney, K. (2019). Open science isn’t always open to all scientists. <i>American Scientist</i>, <i>107</i>(2), 78.",
                     "Onie, S. (2020). Redesign open science for Asia, Africa and Latin America. <i>Nature</i>, <i>587</i>, 35–37. https://doi.org/10.1038/d41586-020-03052-3"
                 ],
                 "drafted_by": [
@@ -42288,7 +42240,7 @@
                 "translation_reviewed_by": [
                     "Elif Baştan"
                 ],
-                "lastmod": "2026-11-09"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -43457,8 +43409,7 @@
                     "Tennant, J., Bielczyk, N. Z., Cheplygina, V., Greshake Tzovaras, B., Hartgerink, C. H. J., Havemann, J., Masuzzo, P., & Steiner, T. (2019). Ten simple rules for researchers collaborating on Massively Open Online Papers (MOOPs). <i>MetaArXiv</i>. https://doi.org/10.31222/osf.io/et8ak",
                     "Uhlmann, E. L., Ebersole, C. R., Chartier, C. R., Errington, T. M., Kidwell, M. C., Lai, C. K., McCarthy, R. J., Riegelman, A., Silberzahn, R., & Nosek, B. A. (2019). Scientific utopia III: Crowdsourcing science. <i>Perspectives on Psychological Science</i>, <i>14</i>(5), 711–733. https://doi.org/10.1177/1745691619850561",
                     "Accelerator, P. S. (n.d.). <i>Psychological Science Accelerator</i>. https://psysciacc.org/",
-                    "Week, C. (2021). <i>What is Crowdsourcing?</i> https://crowdsourcingweek.com/what-is-crowdsourcing/",
-                    "[https://crowdsourcingweek.com/what-is-crowdsourcing/](https://crowdsourcingweek.com/what-is-crowdsourcing/#:~:text=Crowdsourcing%20is%20the%20practice%20of,levels%20and%20across%20various%20industries)"
+                    "Week, C. (2021). <i>What is Crowdsourcing?</i> https://crowdsourcingweek.com/what-is-crowdsourcing/"
                 ],
                 "drafted_by": [
                     "Eike Mark Rinke"
@@ -43480,7 +43431,7 @@
                 "translation_reviewed_by": [
                     "Ege Emek"
                 ],
-                "lastmod": "2026-11-09"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -43783,7 +43734,7 @@
                 "definition": "Dijital Nesne Tanımlayıcıları (DOI; Digital Object Identifiers), yayınlar (ön-baskılar dahil), materyaller, veri setleri ve uzun metrajlı filmler gibi her türlü şeye atanabilen alfa-nümerik dizilerdir. DOI kullanımı yalnızca akademik veya bilimsel materyallerle sınırlı değildir. DOI’ler, “dijital ağlar üzerinde yönetilen bilgilerin kalıcı ve eyleme geçirilebilir bir şekilde tanımlanması ve birlikte çalışabilir şekilde paylaşılması için bir sistem sağlar” ([https://doi.org/hb.html](https://doi.org/hb.html)). DOI’leri yöneten birçok farklı kayıt ajansı vardır ancak araştırmacıların en sık karşılaşabileceği iki ajans Crossref ve DataCite’tır.",
                 "related_terms": [
                     "arXiv and BibTex",
-                    "Crossref, Datacite, ISBN, ISO, ORCID",
+                    "Crossref, DataCite, ISBN, ISO, ORCID",
                     "Permalink"
                 ],
                 "references": [
@@ -43811,7 +43762,7 @@
                 "translation_reviewed_by": [
                     "Ege Emek"
                 ],
-                "lastmod": "2026-11-09"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -44586,7 +44537,7 @@
                 "en_title": "FORRT",
                 "title": "FORRT",
                 "sort_key": "forrt",
-                "definition": "Açık ve Yeniden Üretilebilir Araştırma ve Öğretim Platformu  (Framework of Open Reproducible Research and Teaching), yükseköğretimdeki temel ders konularıyla birlikte açık ve tekrarlanabilir araştırmanın öğretilmesini ve bu alanda mentorluk yapılmasını tanıyan ve destekleyen pedagojik bir altyapı sunmayı amaçlar. FORRT, açık ve yeniden üretilebilir bilimin pedagojik etkilerine ve bu alana özgü zorluklara (örn., müfredat reformu, epistemolojik belirsizlik, eğitim yöntemleri) dikkat çekmeyi hedefleyen, etkili, gelişen ve topluluk temelli bir organizasyon olmayı hedefler. Aynı zamanda FORRT, eğitime erişim imkânı kısıtlı bireyler için öğrenmeyi, keşfi ve erişimi kolaylaştırmak adına öğretim ve mentorluk materyallerinin açık hale getirilmesini savunur.",
+                "definition": "Açık ve Yeniden Üretilebilir Araştırma ve Öğretim Platformu  (Framework for Open and Reproducible Research Training), yükseköğretimdeki temel ders konularıyla birlikte açık ve tekrarlanabilir araştırmanın öğretilmesini ve bu alanda mentorluk yapılmasını tanıyan ve destekleyen pedagojik bir altyapı sunmayı amaçlar. FORRT, açık ve yeniden üretilebilir bilimin pedagojik etkilerine ve bu alana özgü zorluklara (örn., müfredat reformu, epistemolojik belirsizlik, eğitim yöntemleri) dikkat çekmeyi hedefleyen, etkili, gelişen ve topluluk temelli bir organizasyon olmayı hedefler. Aynı zamanda FORRT, eğitime erişim imkânı kısıtlı bireyler için öğrenmeyi, keşfi ve erişimi kolaylaştırmak adına öğretim ve mentorluk materyallerinin açık hale getirilmesini savunur.",
                 "related_terms": [
                     "Integrating open and reproducible science tenets into higher education"
                 ],
@@ -44611,7 +44562,7 @@
                 "translation_reviewed_by": [
                     "Ege Emek"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -46080,7 +46031,7 @@
                 ],
                 "references": [
                     "Gollwitzer, M., Abele-Brehm, A., Fiebach, C., Ramthun, R., Scheel, A. M., Schönbrodt, F. D., & Steinberg, U. (2020). <i>Data Management and Data Sharing in Psychological Science: Revision of the DGPs Recommendations</i>.",
-                    "[https://schema.datacite.org/](https://schema.datacite.org/)"
+                    "DataCite Schema. (n.d.). <i>Datacite Metadata Schema</i>. https://schema.datacite.org/"
                 ],
                 "drafted_by": [
                     "Matt Jaquiery"
@@ -46101,7 +46052,7 @@
                 "translation_reviewed_by": [
                     "Merve Öztürk"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -46642,8 +46593,7 @@
                     "Open Science Framework"
                 ],
                 "references": [
-                    "OER Commons. (n.d.). <i>OER Commons</i>. https://www.oercommons.org/",
-                    "[www.oercommons.org](http://www.oercommons.org)"
+                    "OER Commons. (n.d.). <i>OER Commons</i>. https://www.oercommons.org/"
                 ],
                 "drafted_by": [
                     "Ali H. Al-Hoorie"
@@ -46661,7 +46611,7 @@
                 "translation_reviewed_by": [
                     "Merve Öztürk"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -46828,8 +46778,7 @@
                     "Open Science"
                 ],
                 "references": [
-                    "Tennant, J., Beamer, J. E., Bosman, J., Brembs, B., Chung, N. C., Clement, G., Crick, T., Dugan, J., Dunning, A., Eccles, D., Enkhbayar, A., Graziotin, D., Harding, R., Havemann, J., Katz, D. S., Khanal, K., Kjaer, J. N., Koder, T., Macklin, P., & Turner, A. (2019). <i>Foundations for Open Scholarship Strategy Development</i>. MetaArXiv. https://doi.org/10.31222/osf.io/b4v8p",
-                    "[https://www.researchgate.net/publication/330742805\\_Foundations\\_for\\_Open\\_Scholarship\\_Strategy\\_Development](https://www.researchgate.net/publication/330742805_Foundations_for_Open_Scholarship_Strategy_Development)"
+                    "Tennant, J., Beamer, J. E., Bosman, J., Brembs, B., Chung, N. C., Clement, G., Crick, T., Dugan, J., Dunning, A., Eccles, D., Enkhbayar, A., Graziotin, D., Harding, R., Havemann, J., Katz, D. S., Khanal, K., Kjaer, J. N., Koder, T., Macklin, P., & Turner, A. (2019). <i>Foundations for Open Scholarship Strategy Development</i>. MetaArXiv. https://doi.org/10.31222/osf.io/b4v8p"
                 ],
                 "drafted_by": [
                     "Gerald Vineyard"
@@ -46850,7 +46799,7 @@
                 "translation_reviewed_by": [
                     "Nihan Selin Soylu-Konak"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -46864,8 +46813,7 @@
                     "Open Science"
                 ],
                 "references": [
-                    "OER Commons. (n.d.). <i>Open Scholarship Knowledge Base | OER Commons</i>. https://www.oercommons.org/hubs/OSKB",
-                    "[www.oercommons.org/hubs/OSKB](http://www.oercommons.org/hubs/OSKB)"
+                    "OER Commons. (n.d.). <i>Open Scholarship Knowledge Base | OER Commons</i>. https://www.oercommons.org/hubs/OSKB"
                 ],
                 "drafted_by": [
                     "Ali H. Al-Hoorie"
@@ -46885,7 +46833,7 @@
                 "translation_reviewed_by": [
                     "Nihan Selin Soylu-Konak"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -46910,7 +46858,7 @@
                     "Abele-Brehm, A. E., Gollwitzer, M., Steinberg, U., & Schönbrodt, F. D. (2019). Attitudes toward open science and public data sharing. <i>Social Psychology</i>, <i>50</i>, 252–260. https://doi.org/10.1027/1864-9335/a000384",
                     "Crüwell, S., van Doorn, J., Etz, A., Makel, M. C., Moshontz, H., Niebaum, J. C., Orben, A., Parsons, S., & Schulte-Mecklenbeck, M. (2019). Seven Easy Steps to Open Science: An Annotated Reading List. <i>Zeitschrift Für Psychologie</i>, <i>227</i>(4), 237–248. https://doi.org/10.1027/2151-2604/a000387",
                     "Kathawalla, U., Silverstein, P., & Syed, M. (2020). Easing into Open Science: A Guide for Graduate Students and Their Advisors. <i>Collabra: Psychology</i>. https://doi.org/10.31234/osf.io/vzjdp Retrieved from https://psyarxiv.com/vzjdp",
-                    "Syed, M. (2019). The Open Science Movement is for all of us. <i>PsyArXiv</i>.",
+                    "Syed, M. (2019). The Open Science Movement is for all of us. <i>PsyArXiv</i>. https://doi.org/10.31234/osf.io/cteyb",
                     "Woelfle, M., Olliaro, P., & Todd, M. H. (2011). Open science is a research accelerator. <i>Nature Chemistry</i>, <i>3</i>(10), 745–748. https://doi.org/10.1038/nchem.1149"
                 ],
                 "drafted_by": [
@@ -46932,7 +46880,7 @@
                 "translation_reviewed_by": [
                     "Nihan Selin Soylu-Konak"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -47260,8 +47208,7 @@
                 "references": [
                     "psyTeachR Team. (n.d.). <i>P | Glossary</i>. psyTeachR. https://psyteachr.github.io/glossary",
                     "Lakens, D. (2021). The Practical Alternative to the p Value Is the Correctly Used p Value. <i>Perspectives on Psychological Science</i>, <i>16</i>(3), 639–648. https://doi.org/10.1177/1745691620958012",
-                    "Wasserstein, R. L., & Lazar, N. A. (2016). The ASA Statement on p-Values: Context, Process, and Purpose. <i>The American Statistician</i>, <i>70</i>, 129–133. https://doi.org/10.1080/00031305.2016.1154108",
-                    "[https://psyteachr.github.io/glossary/p.html](https://psyteachr.github.io/glossary/p.html)"
+                    "Wasserstein, R. L., & Lazar, N. A. (2016). The ASA Statement on p-Values: Context, Process, and Purpose. <i>The American Statistician</i>, <i>70</i>, 129–133. https://doi.org/10.1080/00031305.2016.1154108"
                 ],
                 "drafted_by": [
                     "Alaa AlDoh; Flávio Azevedo"
@@ -47284,7 +47231,7 @@
                 "translation_reviewed_by": [
                     "Nihan Selin Soylu-Konak"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -47376,9 +47323,7 @@
                 ],
                 "references": [
                     "Ikeda, A., Xu, H., Fuji, N., Zhu, S., & Yamada, Y. (2019). Questionable research practices following pre-registration. <i>Japanese Psychological Review</i>, <i>62</i>, 281–295.",
-                    "Yamada, Y. (2018). How to crack pre-registration: Toward transparent and open science. <i>Frontiers in Psychology</i>, <i>9</i>, 1831. https://doi.org/10.3389/fpsyg.2018.01831",
-                    "[Ikeda et al. (2019)](https://www.jstage.jst.go.jp/article/sjpr/62/3/62_281/_pdf/-char/ja)",
-                    "[Yamada (2018)](https://www.frontiersin.org/articles/10.3389/fpsyg.2018.01831/full)"
+                    "Yamada, Y. (2018). How to crack pre-registration: Toward transparent and open science. <i>Frontiers in Psychology</i>, <i>9</i>, 1831. https://doi.org/10.3389/fpsyg.2018.01831"
                 ],
                 "drafted_by": [
                     "Qinyu Xiao"
@@ -47398,7 +47343,7 @@
                 "translation_reviewed_by": [
                     "Nihan Selin Soylu-Konak"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -47489,7 +47434,7 @@
                 ],
                 "references": [
                     "Day, S., Rennie, S., Luo, D., & Tucker, J. D. (2020). Open to the public: Paywalls and the public rationale for open access medical research publishing. <i>Research Involvement and Engagement</i>, <i>6</i>(1), 8. https://doi.org/10.1186/s40900-020-0182-y",
-                    "[https://web.archive.org/web/20220221165721/https://casrai.org/term/closed-access/](https://web.archive.org/web/20220221165721/https://casrai.org/term/closed-access/)"
+                    "<i>Closed access</i>. (n.d.). Retrieved 9 July 2021, from https://web.archive.org/web/20220221165721/https://casrai.org/term/closed-access/."
                 ],
                 "drafted_by": [
                     "Bradley Baker"
@@ -47510,7 +47455,7 @@
                 "translation_reviewed_by": [
                     "Nihan Selin Soylu-Konak"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -48336,8 +48281,7 @@
                     "Open Peer Review"
                 ],
                 "references": [
-                    "PubPeer. (n.d.). <i>PubPeer—Search publications and join the conversation</i>. Pubpeer. https://www.pubpeer.com/",
-                    "[www.pubpeer.com](http://www.pubpeer.com)"
+                    "PubPeer. (n.d.). <i>PubPeer—Search publications and join the conversation</i>. Pubpeer. https://www.pubpeer.com/"
                 ],
                 "drafted_by": [
                     "Ali H. Al-Hoorie"
@@ -48355,7 +48299,7 @@
                 "translation_reviewed_by": [
                     "Nihan Selin Soylu-Konak"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -49011,7 +48955,7 @@
                     "Crüwell, S., van Doorn, J., Etz, A., Makel, M. C., Moshontz, H., Niebaum, J. C., Orben, A., Parsons, S., & Schulte-Mecklenbeck, M. (2019). Seven Easy Steps to Open Science: An Annotated Reading List. <i>Zeitschrift Für Psychologie</i>, <i>227</i>(4), 237–248. https://doi.org/10.1027/2151-2604/a000387",
                     "Peng, R. D. (2011). Reproducible Research in Computational Science. <i>Science</i>, <i>334</i>(6060), 1226–1227. https://doi.org/10.1126/science.1213847",
                     "Stodden, V. C. (2011). <i>Trust your science? Open your data and code</i>.",
-                    "Syed, M. (2019). The Open Science Movement is for all of us. <i>PsyArXiv</i>.",
+                    "Syed, M. (2019). The Open Science Movement is for all of us. <i>PsyArXiv</i>. https://doi.org/10.31234/osf.io/cteyb",
                     "National Academies of Sciences, Engineering, and Medicine. (2019). <i>Reproducibility and Replicability in Science. In Understanding Reproducibility and Replicability</i> [Techreport]. National Academies Press (US). https://www.ncbi.nlm.nih.gov/books/NBK547546/"
                 ],
                 "drafted_by": [
@@ -49035,7 +48979,7 @@
                 "translation_reviewed_by": [
                     "Neslihan Özhan"
                 ],
-                "lastmod": "2026-11-09"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -50190,8 +50134,7 @@
                 ],
                 "references": [
                     "Chartier, C. R., Riegelman, A., & McCarthy, R. J. (2018). StudySwap: A platform for interlab replication, collaboration, and resource exchange. <i>Advances in Methods and Practices in Psychological Science</i>, <i>1</i>(4), 574–579. https://doi.org/10.1177/2515245918808767",
-                    "OSF. (n.d.). <i>OSF | StudySwap: A platform for interlab replication, collaboration, and research resource exchange</i>. https://osf.io/meetings/StudySwap/",
-                    "[https://osf.io/view/StudySwap](https://osf.io/view/StudySwap)"
+                    "OSF. (n.d.). <i>OSF | StudySwap: A platform for interlab replication, collaboration, and research resource exchange</i>. https://osf.io/meetings/StudySwap/"
                 ],
                 "drafted_by": [
                     "Charlotte R. Pennington"
@@ -50212,7 +50155,7 @@
                 "translation_reviewed_by": [
                     "Neslihan Özhan"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -50422,8 +50365,7 @@
                 "references": [
                     "Elliott, K. C., & Resnik, D. B. (2019). Making open science work for science and society. <i>Environmental Health Perspectives</i>, <i>127</i>(7). https://doi.org/10.1289/EHP4808",
                     "Lyon, L. (2016). Transparency: The Emerging Third Dimension of Open Science and Open Data. <i>LIBER Quarterly</i>, <i>25</i>(4), 153–171. http://doi.org/10.18352/lq.10113",
-                    "Syed, M. (2019). The Open Science Movement is for all of us. <i>PsyArXiv</i>.",
-                    "[Syed (2019)](https://psyarxiv.com/cteyb/)"
+                    "Syed, M. (2019). The Open Science Movement is for all of us. <i>PsyArXiv</i>. https://doi.org/10.31234/osf.io/cteyb"
                 ],
                 "drafted_by": [
                     "William Ngiam"
@@ -50444,7 +50386,7 @@
                 "translation_reviewed_by": [
                     "Neslihan Özhan"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-11"
             },
             {
                 "type": "glossary",
@@ -50970,8 +50912,7 @@
                     "Preprint"
                 ],
                 "references": [
-                    "Zenodo. (n.d.). <i>Zenodo—Research. Shared.</i> https://www.zenodo.org/",
-                    "[www.zenodo.org](http://www.zenodo.org)"
+                    "Zenodo. (n.d.). <i>Zenodo—Research. Shared.</i> https://www.zenodo.org/"
                 ],
                 "drafted_by": [
                     "Ali H. Al-Hoorie"
@@ -50987,7 +50928,7 @@
                 "translation_reviewed_by": [
                     "Neslihan Özhan"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-11"
             }
         ]
     }
