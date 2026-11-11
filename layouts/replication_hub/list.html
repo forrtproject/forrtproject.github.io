@@ -9,11 +9,19 @@
         <h1>{{ .Params.heading_title | default .Title }}</h1>
         <p class="lede">{{ .Params.lede }}</p>
       </div>
-      {{ with .Resources.GetMatch .Params.image }}
-      <figure class="heading-plate-plain"><img src="{{ .RelPermalink }}" alt="{{ $.Params.image_alt }}" width="{{ .Width }}" height="{{ .Height }}" loading="lazy"></figure>
-      {{ end }}
+      {{/* The research area's bricks, in an arch as on the resources directory; the old diagram's labels were too small to read. */}}
+      {{ $plate := resources.Get "images/doors/area-research.webp" }}
+      <figure class="heading-plate heading-plate-research"><img src="{{ $plate.RelPermalink }}" alt="Brick stacks of data under a magnifying glass" width="{{ $plate.Width }}" height="{{ $plate.Height }}"></figure>
     </div>
   </header>
+  {{ with .Params.start }}
+  <nav class="hub-start" aria-label="Start here">
+    <h2>Start here</h2>
+    <ul class="action-cards">
+      {{ range . }}{{ $href := cond (hasPrefix .url "http") .url (.url | relLangURL) }}<li><a href="{{ $href }}"><strong>{{ .title }}</strong><span>{{ .text }}</span></a></li>{{ end }}
+    </ul>
+  </nav>
+  {{ end }}
   {{/* On a phone the four stages stack, so the page opens with a way to jump to each. */}}
   <nav class="stage-jumps" aria-label="Stages">
     {{ range .Params.cards }}<a class="stage-jump stage-{{ .key }}" href="#stage-{{ .key }}">{{ .title }}</a>{{ end }}

@@ -172,14 +172,6 @@
   .doc-section>#just-os-fullpage{order:-1;margin-top:4px!important}
 }
 @media(max-width:760px){#just-os-fullpage{height:min(52vh,460px)!important;min-height:340px}}
-/* Starting points at the top of a page (shortcodes/action_cards.html). */
-.article-layout .article-style .action-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr));gap:12px;margin:8px 0 28px;padding:0;list-style:none;max-width:none}
-.article-layout .article-style .action-cards li{margin:0}
-.article-layout .article-style .action-cards a{display:flex;flex-direction:column;gap:4px;height:100%;box-sizing:border-box;padding:16px 18px;background:var(--surface);border:1.5px solid transparent;border-radius:var(--r-large);color:var(--ink);text-decoration:none}
-.article-layout .article-style .action-cards a:hover{border-color:var(--link)}
-.article-layout .article-style .action-cards strong{color:var(--link);font:600 19px/1.3 var(--text)}
-.article-layout .article-style .action-cards strong::after{content:" →"}
-.article-layout .article-style .action-cards span{font-size:16px;line-height:1.4}
 /* Project cards: their actions as the site's outline pills, one size. */
 .get-involved-card .btn{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:8px 16px!important;border:1.5px solid var(--link)!important;border-radius:999px!important;background:#fff!important;color:var(--link)!important;font:600 15px/1.2 var(--text)!important}
 .get-involved-card .btn:hover{background:var(--link)!important;color:#fff!important}

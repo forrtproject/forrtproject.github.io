@@ -11,6 +11,17 @@ sharing_image_alt: "FORRT Replication Hub diagram showing four areas: Track, Exp
 lede: "Evidence worth building on. Tools and guidance for reproduction and replication studies, at every stage and in every discipline."
 
 # A link with no `label` takes its name from the main menu, so renaming a menu entry renames it here.
+# Three common starting points, shown under the introduction.
+start:
+  - title: "Check a paper"
+    text: "Find replications of the studies a paper cites"
+    url: "annotator/"
+  - title: "Plan a replication"
+    text: "The handbook for reproductions and replications"
+    url: "https://forrt.org/replication-handbook/"
+  - title: "Submit a replication"
+    text: "Add your study to FLoRA"
+    url: "replication-hub/submit/"
 cards:
   - key: track
     title: Track

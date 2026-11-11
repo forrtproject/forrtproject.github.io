@@ -291,3 +291,12 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .article-layout .article-style .license-note p{margin:0!important;font-size:16px!important;text-align:start!important}
 /* AWoP: the wheel opens the overview, so the tool is in view at once. */
 .awop-wheel img{display:block;width:100%;max-width:440px;height:auto;margin:4px 0 20px}
+
+/* Starting points at the top of a page (shortcodes/action_cards.html). */
+.action-cards,.article-layout .article-style .action-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr));gap:12px;margin:8px 0 28px;padding:0;list-style:none;max-width:none}
+.action-cards li,.article-layout .article-style .action-cards li{margin:0}
+.action-cards a,.article-layout .article-style .action-cards a{display:flex;flex-direction:column;gap:4px;height:100%;box-sizing:border-box;padding:16px 18px;background:var(--surface);border:1.5px solid transparent;border-radius:var(--r-large);color:var(--ink);text-decoration:none}
+.action-cards a:hover,.article-layout .article-style .action-cards a:hover{border-color:var(--link)}
+.action-cards strong,.article-layout .article-style .action-cards strong{color:var(--link);font:600 19px/1.3 var(--text)}
+.action-cards strong::after,.article-layout .article-style .action-cards strong::after{content:" →"}
+.action-cards span,.article-layout .article-style .action-cards span{font-size:16px;line-height:1.4}

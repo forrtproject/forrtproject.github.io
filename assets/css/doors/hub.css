@@ -23,3 +23,7 @@
   .stage-jump:hover{background:var(--tone);color:#fff}
   .stage h2{scroll-margin-top:16px}
 }
+.heading-plate-research{background:var(--res-bg)}
+.hub-start{margin:0 0 28px}
+.hub-start h2{margin:0 0 10px;font-size:24px}
+.hub-start .action-cards{margin:0;max-width:960px}
