@@ -19,7 +19,7 @@
       <div>
         {{ .description | markdownify }}
       </div>
-      <div>
+      <div class="get-involved-actions">
         {{ if .link }}
           <a href="{{ .link }}" class="btn btn-outline-primary btn-sm">
             <i class="fas fa-external-link-alt"></i> Visit project
@@ -35,9 +35,10 @@
             <i class="fas fa-envelope"></i> Email {{ .contact_name }}
           </a>
         {{ else if .contact_name }}
-          <span>
-            <i class="fas fa-user"></i> Contact: {{ .contact_name }} (reach out via Slack)
-          </span>
+          {{/* No email: the person is reached on FORRT's Slack, so the button joins it. */}}
+          <a href="https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ" target="_blank" rel="noopener" class="btn btn-outline-info btn-sm">
+            <i class="fab fa-slack"></i> Ask {{ .contact_name }} on Slack
+          </a>
         {{ end }}
       </div>
     </div>

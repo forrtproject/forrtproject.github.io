@@ -365,13 +365,13 @@ image:
   position: absolute;
   top: 1rem;
   right: 1rem;
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   padding: 0;
-  border: 1px solid var(--am-rule);
+  border: 1.5px solid var(--am-ink);
   border-radius: 50%;
   background: var(--am-card);
-  color: var(--am-muted);
+  color: var(--am-ink);
   font-size: 1.4rem;
   line-height: 1;
   cursor: pointer;

@@ -175,3 +175,6 @@
 /* Project cards: their actions as the site's outline pills, one size. */
 .get-involved-card .btn{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:8px 16px!important;border:1.5px solid var(--link)!important;border-radius:999px!important;background:#fff!important;color:var(--link)!important;font:600 15px/1.2 var(--text)!important}
 .get-involved-card .btn:hover{background:var(--link)!important;color:#fff!important}
+/* Project cards share one footer line of actions. */
+.get-involved-card{display:flex;flex-direction:column}
+.get-involved-card .get-involved-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:12px}

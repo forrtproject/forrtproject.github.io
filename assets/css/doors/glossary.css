@@ -74,3 +74,4 @@ main:lang(ar) .post-nav-next .term-en{text-align:left}
 .glossary-count:empty{display:none}
 /* The letters stay in reach while the terms scroll by. */
 .glossary-letters{position:sticky;top:0;z-index:5;padding:8px 0;background:var(--page)}
+.glossary-letters a.is-empty{opacity:.35;pointer-events:none}

@@ -480,6 +480,13 @@ if (termFilter && termGrid) {
     terms.forEach((term) => { term.hidden = !term.dataset.term.includes(query); });
     groups.forEach((group) => { group.hidden = !group.querySelector('li:not([hidden])'); });
     none.hidden = groups.some((group) => !group.hidden);
+    // Letters with no match left are dimmed and leave the tab order.
+    groups.forEach((group) => {
+      const letter = document.querySelector(`.glossary-letters a[href="#${group.id}"]`);
+      if (!letter) return;
+      letter.classList.toggle('is-empty', group.hidden);
+      if (group.hidden) letter.setAttribute('tabindex', '-1'); else letter.removeAttribute('tabindex');
+    });
     const shown = terms.filter((term) => !term.hidden).length;
     document.querySelector('.glossary-count').textContent = query && shown ? `${shown} of ${terms.length} terms` : '';
   });
