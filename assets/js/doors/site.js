@@ -469,7 +469,19 @@ if (chatWidget) {
 
 // Glossary pages: filter the list of terms, and show the current term inside its card.
 const termFilter = document.getElementById('glossary-search');
-if (termFilter) {
+const termGrid = document.querySelector('.term-grid');
+if (termFilter && termGrid) {
+  // The glossary hub: match on the term's name, hide letters left empty, and say when nothing matches.
+  const terms = [...termGrid.querySelectorAll('li[data-term]')];
+  const groups = [...termGrid.querySelectorAll('.term-group')];
+  const none = document.querySelector('.glossary-none');
+  termFilter.addEventListener('input', () => {
+    const query = termFilter.value.trim().toLowerCase();
+    terms.forEach((term) => { term.hidden = !term.dataset.term.includes(query); });
+    groups.forEach((group) => { group.hidden = !group.querySelector('li:not([hidden])'); });
+    none.hidden = groups.some((group) => !group.hidden);
+  });
+} else if (termFilter) {
   const terms = [...document.querySelectorAll('.term-list li')];
   termFilter.addEventListener('input', () => {
     const query = termFilter.value.toLowerCase();

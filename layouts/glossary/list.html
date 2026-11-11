@@ -1,24 +1,64 @@
 {{- define "main" -}}
-{{/* A glossary's language index: the introduction beside the list of its terms. */}}
+{{/* A glossary's hub, one per language: the terms are the page. Languages and a search come first, then every
+     term with the start of its definition, A to Z, and the project's history and citation in a disclosure.
+     site.js filters the terms as the search is typed. */}}
+{{ $lang := .Params.language | default "english" }}
+{{ $labels := dict
+  "english" (dict "search" "Search %d terms" "placeholder" "Type a term, e.g. replication" "about" "About the glossary, and how to cite it" "letters" "Terms by letter" "none" "No term matches.")
+  "german" (dict "search" "%d Begriffe durchsuchen" "placeholder" "Begriff eingeben, z. B. Replikation" "about" "Über das Glossar und wie man es zitiert" "letters" "Begriffe nach Buchstaben" "none" "Kein Begriff passt.")
+  "arabic" (dict "search" "ابحث في %d مصطلحًا" "placeholder" "اكتب مصطلحًا" "about" "عن المسرد وكيفية الاستشهاد به" "letters" "المصطلحات حسب الحرف" "none" "لا يوجد مصطلح مطابق.")
+  "turkish" (dict "search" "%d terimde ara" "placeholder" "Bir terim yazın" "about" "Sözlük hakkında ve nasıl atıf yapılır" "letters" "Harfe göre terimler" "none" "Eşleşen terim yok.")
+  "chinese" (dict "search" "搜索 %d 个术语" "placeholder" "输入术语" "about" "关于本术语表及引用方式" "letters" "按字母排列的术语" "none" "没有匹配的术语。") }}
+{{ $l := index $labels $lang | default (index $labels "english") }}
+{{ $pages := sort (where (where site.RegularPages "Type" "glossary") "File.Dir" .File.Dir) "Params.sort_key" }}
+{{ $groups := slice }}{{ $current := "" }}{{ $items := slice }}
+{{ range $pages }}
+  {{ $first := upper (substr (strings.TrimLeft "\"“”'*[(_ " (.Params.sort_key | default .Title)) 0 1) }}
+  {{ if not (findRE `^\p{L}$` $first) }}{{ $first = "#" }}{{ end }}
+  {{ if ne $first $current }}
+    {{ if $items }}{{ $groups = $groups | append (dict "letter" $current "pages" $items) }}{{ end }}
+    {{ $current = $first }}{{ $items = slice }}
+  {{ end }}
+  {{ $items = $items | append . }}
+{{ end }}
+{{ if $items }}{{ $groups = $groups | append (dict "letter" $current "pages" $items) }}{{ end }}
 <div class="wrap">
-  <div class="article-layout glossary-layout glossary-index">
-    {{ $labels := dict
-      "english" (dict "list_of_terms" "List of terms" "filter_terms" "Filter terms...")
-      "german" (dict "list_of_terms" "Liste der Begriffe" "filter_terms" "Begriffe filtern...")
-      "arabic" (dict "list_of_terms" "قائمة المصطلحات" "filter_terms" "تصفية المصطلحات...")
-      "turkish" (dict "list_of_terms" "Terimler listesi" "filter_terms" "Terimleri filtrele...")
-      "chinese" (dict "list_of_terms" "术语列表" "filter_terms" "筛选术语...") }}
-    {{ partial "doors/glossary_terms" (dict "page" . "labels" (index $labels (.Params.language | default "english")) "defined_only" false) }}
+  <div class="article-layout article-layout-single article-layout-wide glossary-layout glossary-hub">
     <article class="reading">
       <header class="article-head">
         {{ partial "doors/crumbs" (dict "page" .) }}
         <h1>{{ .Title }}</h1>
-        {{/* On a narrow screen the list follows the introduction and languages; this links to it. */}}
-        <a class="term-list-jump" href="#glossary-terms">{{ (index $labels (.Params.language | default "english")).list_of_terms }} ↓</a>
+        <nav class="glossary-languages" aria-label="Languages">
+          {{ range hugo.Data.glossary_languages }}<a href="{{ printf "/glossary/%s/" .slug | relLangURL }}"{{ if eq .slug $lang }} aria-current="page"{{ end }}>{{ trim .label " " }}</a>{{ end }}
+        </nav>
       </header>
-      <div class="article-style">
-        {{ partial "doors/content" .Content }}
+      <div class="glossary-find">
+        <label for="glossary-search">{{ printf $l.search (len $pages) }}</label>
+        <input type="search" id="glossary-search" placeholder="{{ $l.placeholder }}" autocomplete="off">
+        <p class="glossary-none" hidden>{{ $l.none }}</p>
       </div>
+      <nav class="glossary-letters" aria-label="{{ $l.letters }}">
+        {{ range $groups }}<a href="#letter-{{ .letter | urlize | default "other" }}">{{ .letter }}</a>{{ end }}
+      </nav>
+      <div class="term-grid">
+        {{ range $groups }}
+        <section class="term-group" id="letter-{{ .letter | urlize | default "other" }}">
+          <h2>{{ .letter }}</h2>
+          <ul>
+            {{ range .pages }}
+            <li data-term="{{ .Title | plainify | lower }}">
+              <a href="{{ .RelPermalink }}">{{ partial "doors/term_title" .Title }}</a>
+              {{ with .Params.definition }}<p>{{ . | markdownify | plainify | htmlUnescape | truncate 150 }}</p>{{ end }}
+            </li>
+            {{ end }}
+          </ul>
+        </section>
+        {{ end }}
+      </div>
+      <details class="glossary-about">
+        <summary>{{ $l.about }}</summary>
+        <div class="article-style">{{ partial "doors/content" .Content }}</div>
+      </details>
       <div class="article-foot">
         <p>{{ i18n "last_updated" }} {{ $.Lastmod.Format site.Params.date_format }}</p>
       </div>

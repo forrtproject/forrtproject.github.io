@@ -40,3 +40,26 @@ main:lang(ar) h1 [lang=en]{font-family:var(--display)}
 .term-list .term-en,.post-nav .term-en{display:block;font-size:15px;color:var(--soft)}
 main:lang(ar) .term-list .term-en,main:lang(ar) .post-nav-prev .term-en{text-align:right}
 main:lang(ar) .post-nav-next .term-en{text-align:left}
+/* The glossary hub: languages, a search and every term with the start of its definition. */
+.glossary-hub .glossary-languages{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0}
+.glossary-hub .glossary-languages a{padding:7px 14px;border:1.5px solid var(--line);border-radius:999px;background:#fff;color:var(--link);font:600 16px/1.3 var(--text);text-decoration:none}
+.glossary-hub .glossary-languages a:hover{border-color:var(--link)}
+.glossary-hub .glossary-languages a[aria-current]{background:var(--ink);border-color:var(--ink);color:#fff}
+.glossary-find{margin:28px 0 10px;max-width:640px}
+.glossary-find label{display:block;margin:0 0 8px;font:var(--display-weight) 24px/1.2 var(--display)}
+.glossary-find input{width:100%;box-sizing:border-box;padding:12px 18px;border:1.5px solid var(--ink);border-radius:999px;background:#fff;font:400 18px/1.3 var(--text);color:var(--ink)}
+.glossary-none{margin:12px 0 0;font-size:17px}
+.glossary-letters{display:flex;flex-wrap:wrap;gap:4px;margin:14px 0 8px}
+.glossary-letters a{display:inline-flex;align-items:center;justify-content:center;min-width:36px;height:36px;border-radius:var(--r-small);background:var(--surface);color:var(--ink);font:600 16px/1 var(--text);text-decoration:none}
+.glossary-letters a:hover{background:var(--edu-bg)}
+.term-group{scroll-margin-top:16px}
+.term-group h2{margin:28px 0 10px;font-size:28px;color:var(--edu)}
+.term-group ul{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:12px;margin:0;padding:0;list-style:none}
+.term-group li{margin:0;padding:14px 16px;background:var(--surface);border-radius:var(--r-large)}
+.term-group li a{color:var(--link);font:600 18px/1.3 var(--text);text-decoration:none}
+.term-group li a:hover{text-decoration:underline;text-underline-offset:3px}
+.term-group li .term-en{display:block;font-size:15px;font-weight:400;color:var(--soft)}
+.term-group li p{margin:6px 0 0;font-size:16px;line-height:1.45;color:var(--ink)}
+.glossary-about{margin:36px 0 0;padding:4px 20px;background:var(--surface);border-radius:var(--r-large)}
+.glossary-about>summary{padding:14px 0;cursor:pointer;font:600 18px/1.3 var(--text);color:var(--ink)}
+.glossary-about .article-style>.btn-group:first-child{display:none}
