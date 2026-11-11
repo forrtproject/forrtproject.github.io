@@ -4,8 +4,9 @@
      comes back unchanged. The hidden authors stay in the page, so copying gives the full APA text,
      and without JavaScript they show (layouts/partials/doors/assets.html). */}}
 {{- $html := trim (string .) " \n\r\t" -}}
-{{/* A surname (with "Jr." as the bibliography generator writes it) and initials. */}}
-{{- $name := `(?:[^,&…<>()]|&[a-z]+;|&#[0-9]+;)+?(?:,\s*[JS]r\.)?,\s*\p{Lu}\p{Ll}?\.(?:[\s-]*\p{Lu}\p{Ll}?\.)*\*?` -}}
+{{/* A surname and initials, with "Jr." or a particle where the bibliography generator puts them:
+     "Lewis, Jr., N. A.", "Elm, E. von". */}}
+{{- $name := `(?:[^,&…<>()]|&[a-z]+;|&#[0-9]+;)+?(?:,\s*[JS]r\.)?,\s*\p{Lu}\p{Ll}?\.(?:[\s-]*\p{Lu}\p{Ll}?\.)*(?:\s+(?:von|van|de|der|den|du|da|di|del|dos|das|la|le|ter|ten)\b)*\*?` -}}
 {{- $out := $html -}}
 {{- with findRESubmatch `^([^<(]*?)\s*\((?:[0-9]{4}|n\.d\.)` $html 1 -}}
   {{- $authors := index (index . 0) 1 -}}

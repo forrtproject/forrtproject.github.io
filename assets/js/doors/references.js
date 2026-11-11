@@ -9,12 +9,22 @@ export function referenceText(node) {
   return copy.textContent.replace(/\s+/g, ' ').trim();
 }
 
+// The Clipboard API needs a secure context; older browsers and plain-http previews fall back to a selection.
 export async function copyText(text) {
   try {
     await navigator.clipboard.writeText(text);
     return true;
   } catch {
-    return false;
+    const area = document.createElement('textarea');
+    area.value = text;
+    area.setAttribute('readonly', '');
+    area.style.cssText = 'position:fixed;opacity:0';
+    document.body.append(area);
+    area.select();
+    let copied = false;
+    try { copied = document.execCommand('copy'); } catch { copied = false; }
+    area.remove();
+    return copied;
   }
 }
 

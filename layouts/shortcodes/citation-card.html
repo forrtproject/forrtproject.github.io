@@ -28,11 +28,11 @@
 <div class="cite-us-section citation-card">
   <div class="cite-us-item">
     <div class="cite-us-text"><p>{{ partial "citations/authors" $reference }}</p></div>
-    <button type="button" class="copy-button" aria-label="Copy citation" data-copy-reference>
+    <button type="button" class="copy-button" data-copy-reference>
       <svg class="copy-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
       </svg>
-      <span class="copy-label">Copy</span>
+      <span class="copy-label" aria-live="polite">Copy</span><span class="visually-hidden"> citation</span>
     </button>
   </div>
 </div>
