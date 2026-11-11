@@ -14,6 +14,10 @@
       {{ end }}
     </div>
   </header>
+  {{/* On a phone the four stages stack, so the page opens with a way to jump to each. */}}
+  <nav class="stage-jumps" aria-label="Stages">
+    {{ range .Params.cards }}<a class="stage-jump stage-{{ .key }}" href="#stage-{{ .key }}">{{ .title }}</a>{{ end }}
+  </nav>
   <div class="stages">
     {{ range .Params.cards }}
     <section class="stage stage-{{ .key }}" aria-labelledby="stage-{{ .key }}">

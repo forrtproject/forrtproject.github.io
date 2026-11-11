@@ -259,3 +259,17 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .article-layout .post-nav-next{margin-inline-start:auto;text-align:end}
 .post-nav .meta-nav>span{display:inline-block}
 [dir=rtl] .post-nav .meta-nav>span{transform:scaleX(-1)}
+/* Author profiles on a narrow screen: portrait, role and links under the name, in place of the side card. */
+.profile-head{display:none}
+@media(max-width:1000px){
+  .article-layout .profile-card{display:none}
+  .profile-head{display:flex;align-items:center;gap:14px;margin-top:14px}
+  .profile-head .profile-photo{width:72px;height:72px;border-radius:50%;object-fit:cover;flex:none}
+  .profile-head .avatar-square{border-radius:var(--r-small)}
+  .profile-head p{margin:0 0 4px;font-weight:700}
+}
+/* One primary button: old pages give theirs inline sizes, corners and full widths; all take the "Open this resource" pill. */
+.article-layout .article-style .btn-primary,.article-layout .article-style .btn-lg{padding:10px 22px!important;border-radius:999px!important;font-size:17px!important;line-height:1.3!important}
+.article-layout .article-style .btn-block{display:inline-block;width:auto}
+.booklet-open .btn{margin-inline-end:10px}
+@media(max-width:1000px){.profile-head .profile-org{font-weight:400}.profile-head ul.network-icon{margin:4px 0 0}.profile-head ul.network-icon a{text-decoration:none}}

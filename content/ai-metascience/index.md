@@ -96,7 +96,7 @@ image:
   border: 1px solid var(--am-rule);
   border-bottom: 0;
   border-top: 4px solid var(--am-accent);
-  border-radius: 8px 8px 0 0;
+  border-radius: 14px 14px 0 0;
   background: var(--am-card);
   color: var(--am-ink);
   line-height: 1.3;
@@ -163,8 +163,8 @@ image:
 }
 .article-layout .article-style .am-prog-playlist a {
   display: inline-block;
-  padding: 8px 16px;
-  border-radius: 6px;
+  padding: 10px 22px;
+  border-radius: 999px;
   background: var(--am-deep);
   color: #fff;
   font-size: 16px;

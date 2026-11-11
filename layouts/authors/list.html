@@ -41,6 +41,16 @@
       <header class="article-head">
         <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ "" | relLangURL }}">Home</a> <span aria-hidden="true">/</span> <a href="{{ relref . "/authors" }}">People</a></nav>
         <h1>{{ $name }}</h1>
+        {{/* On a narrow screen the side card would follow the whole biography, so its essentials sit
+             under the name instead; the card is hidden there (article.css), so each shows once. */}}
+        <div class="profile-head">
+          {{ with $avatar }}{{ $img := .Fill "144x144 Center webp" }}<img class="profile-photo{{ if eq $avatar_shape "square" }} avatar-square{{ end }}" src="{{ $img.RelPermalink }}" width="72" height="72" alt="Portrait of {{ $name }}">{{ end }}
+          <div>
+            {{ with $page.Params.role }}<p class="profile-role">{{ . | markdownify | emojify }}</p>{{ end }}
+            {{ range $page.Params.organizations }}<p class="profile-org">{{ with .url }}<a href="{{ if (urls.Parse .).Scheme }}{{ . }}{{ else }}https://{{ . }}{{ end }}" target="_blank" rel="noopener">{{ end }}{{ .name }}{{ if .url }}</a>{{ end }}</p>{{ end }}
+            {{ partial "social_links" $page }}
+          </div>
+        </div>
       </header>
       <div class="article-style">
         {{ with $page.Params.bio }}<p>{{ . | markdownify | emojify }}</p>{{ end }}

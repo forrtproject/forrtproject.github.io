@@ -14,3 +14,15 @@ a.gloss-term:focus {
   font-weight: 500;
   margin: 0 0 6px;
 }
+/* Translated terms: the term on its own line, its English name below it, isolated left to right; the
+   breadcrumb names only the term; English references read left to right inside an Arabic page. */
+.glossary-layout .reading h1 bdi{display:block;margin-top:6px;font-size:.6em;line-height:1.2;color:var(--soft)}
+.glossary-layout .crumbs [aria-current=page] bdi{display:none}
+main:lang(ar) .glossary-layout .references-list li{direction:ltr;text-align:left}
+.term-list-jump{display:none}
+@media(max-width:1000px){
+  .term-list-jump{display:inline-block;margin-top:10px;font-weight:600;color:var(--link);text-decoration:underline;text-underline-offset:3px}
+  #glossary-terms{scroll-margin-top:16px}
+}
+main:lang(ar) .glossary-layout .reading h1 bdi{text-align:right}
+@media(max-width:1000px){.term-list-jump{display:block;width:fit-content}}

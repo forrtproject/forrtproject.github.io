@@ -4,7 +4,7 @@
 {{ $page := .page }}
 {{ $pages := where (where site.RegularPages "Type" "glossary") "File.Dir" $page.File.Dir }}
 {{ if .defined_only }}{{ $pages = where $pages "Params.definition" "!=" nil }}{{ end }}
-<section class="article-card glossary-card" aria-label="{{ .labels.list_of_terms }}">
+<section id="glossary-terms" class="article-card glossary-card" aria-label="{{ .labels.list_of_terms }}">
   <h2>{{ .labels.list_of_terms }}</h2>
   <input type="text" id="glossary-search" class="form-control" placeholder="{{ .labels.filter_terms }}" aria-label="{{ .labels.filter_terms }}">
   <nav class="term-list" aria-label="{{ .labels.list_of_terms }}">

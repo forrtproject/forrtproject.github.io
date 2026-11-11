@@ -153,6 +153,8 @@
       <a href="{{ $item.page.RelPermalink }}">{{ $item.lang | title }}</a>{{ if lt $index (sub (len $availableLanguages) 1) }} | {{ end }}
     {{ end }}
   {{ end }}
+  {{/* On a phone the list of terms follows the whole entry, so the top of the page links to it. */}}
+  {{ if $hasTerms }}<a class="term-list-jump" href="#glossary-terms">{{ $dict.list_of_terms }} ↓</a>{{ end }}
 </div>
 
 

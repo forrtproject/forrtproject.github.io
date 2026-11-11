@@ -87,12 +87,13 @@
                     <p>{{ .abstract | markdownify }}</p>
                 </div>
 
-                <div class="pub-citation-section">
-                    <strong>Cite:</strong>
+                {{/* The card already shows title, authors and venue, so the full reference waits behind "Cite". */}}
+                <details class="pub-citation-section">
+                    <summary><i class="fas fa-chevron-right" aria-hidden="true"></i> Cite this</summary>
                     <div class="citation-text">
                         {{ .citation | markdownify }}
                     </div>
-                </div>
+                </details>
 
                 <div class="pub-footer">
                     <div class="pub-buttons">

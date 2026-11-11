@@ -153,3 +153,15 @@
 .article-layout .article-style .jos-team img{display:block;width:96px;height:96px;border-radius:50%;object-fit:cover;margin:0 0 12px}
 .article-layout .article-style .jos-team h3{margin:0 0 6px;font-size:20px}
 .article-layout .article-style .jos-team p{margin:0;font-size:16px;line-height:1.45;color:var(--soft)}
+/* "Cite this" reads like "Show Abstract" above it, and opens the full reference. */
+.pub-citation-section{margin:4px 0 10px}
+.pub-citation-section>summary{display:inline-block;cursor:pointer;color:var(--link);font:600 15px/1.4 var(--text);text-decoration:underline;text-underline-offset:3px}
+.pub-citation-section>summary::-webkit-details-marker{display:none}
+.pub-citation-section>summary i{transition:transform .15s}
+.pub-citation-section[open]>summary i{transform:rotate(90deg)}
+.pub-citation-section .citation-text{margin-top:8px;padding:10px 12px;background:#fff;border-radius:var(--r-small)}
+#just-os-fullpage{margin-bottom:24px}
+/* On a phone the empty chat takes about half the screen, so its question box is in view at once; it is the site's card, not a shadowed box. */
+#just-os-fullpage{border-color:var(--line)!important;border-radius:var(--r-large)!important;box-shadow:none!important}
+@media(max-width:760px){#just-os-fullpage{height:min(60vh,520px)!important;min-height:380px}}
+@media(max-width:760px){.article-layout .article-style .citation-container{width:min(100%,220px)}}
