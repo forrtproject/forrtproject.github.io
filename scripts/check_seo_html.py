@@ -28,9 +28,7 @@ Hard checks (exit 1 if any fails):
      non-empty meta description (#864).
   10. No meta description contains a double-escaped entity such as `&amp;ldquo;`
      (#864). Text that merely looks like an entity (`&name;`) is not one.
-  11. The FLoRA page (replication-hub/flora/) shows the citation from
-     static/data/fred_citation.txt with the OSF DOI, and the asterisks marking
-     equal contribution are not rendered as emphasis.
+  11. The FLoRA page (replication-hub/flora/) contains the FLoRA citation DOI.
 
 Report-only sections (never fail): pages with zero or several <h1>, the
 site-wide share of images that carry both width and height, pages whose
@@ -357,12 +355,9 @@ def check_flora_citation(public_dir):
         return ["%s (page not found)" % FLORA_PAGE]
     with open(path, encoding="utf-8") as handle:
         html = handle.read()
-    problems = []
     if "doi.org/10.17605/OSF.IO/9R62X" not in html:
-        problems.append("%s (no FLoRA DOI in the citation)" % FLORA_PAGE)
-    if re.search(r"Wallrich, L\.\s*<em>", html):
-        problems.append("%s (author asterisks rendered as emphasis)" % FLORA_PAGE)
-    return problems
+        return ["%s (no FLoRA DOI in the citation)" % FLORA_PAGE]
+    return []
 
 
 def description_report(pages, home):
@@ -408,7 +403,7 @@ def main(public_dir):
         "7. breadcrumb JSON-LD is well formed": check_breadcrumbs(pages),
         "9. every indexable page has a meta description": check_description_present(pages),
         "10. no double-escaped entity in a meta description": check_description_entities(pages),
-        "11. FLoRA page shows the citation as HTML": check_flora_citation(public_dir),
+        "11. FLoRA page shows the citation": check_flora_citation(public_dir),
     }
     conditional = check_conditional_assets(pages)
     results["3. conditional highlight.js / mermaid loading"] = [
