@@ -4,7 +4,8 @@
 Run: python3 scripts/rebrand/screenshot_pages.py <public-dir | http(s)://site/> --out <dir>
      [--pages "home,cluster"] [--paths /about/us/,/glossary/] [--max-height 7200]
 
-The first argument is either a built site, which is served locally, or the address of a
+The first argument is either a built site, which is served locally (with its links and redirects to
+https://forrt.org/ answered from the build), or the address of a
 running site such as `hugo server` or the preview (https://forrt.org/rebrand-doors/).
 Pages default to `sample_pages.json`. Each page is shot at 390 x 844 (phone, at 2x) and
 1440 x 900 (desktop), with reduced motion, analytics blocked and the cookie banner
@@ -34,6 +35,7 @@ SIZES = {
     "mobile": {"width": 390, "height": 844, "scale": 2},
     "desktop": {"width": 1440, "height": 900, "scale": 1},
 }
+PRODUCTION = "https://forrt.org/"
 BLOCKED = re.compile(r"googletagmanager|google-analytics|doubleclick|youtube|eocampaign|eo\.page|docs\.google")
 
 
@@ -53,15 +55,27 @@ def slug(name):
     return re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-") or "page"
 
 
-def shoot(browser, url, size, max_height, banner):
+def shoot(browser, url, size, max_height, banner, local=None):
     context = browser.new_context(
         viewport={"width": size["width"], "height": size["height"]},
         device_scale_factor=size["scale"], reduced_motion="reduce",
         is_mobile=size["width"] < 600, has_touch=size["width"] < 600)
     if not banner:  # answer the cookie banner as a returning visitor would have
-        context.add_cookies([{"name": "forrt_analytics_choice", "value": "deny", "url": url}])
+        context.add_cookies([{"name": "forrt_analytics_choice", "value": "deny", "url": address}
+                             for address in (url, PRODUCTION)])
     page = context.new_page()
-    page.route("**/*", lambda route: route.abort() if BLOCKED.search(route.request.url) else route.continue_())
+
+    def handle(route):
+        address = route.request.url
+        if BLOCKED.search(address):
+            route.abort()
+        elif local and address.startswith(PRODUCTION):
+            # A local build's redirects and aliases name the production address; serve them here.
+            route.fulfill(response=route.fetch(url=local + address[len(PRODUCTION):]))
+        else:
+            route.continue_()
+
+    page.route("**/*", handle)
     page.goto(url, wait_until="load", timeout=120000)
     # Some pages forward themselves by script, which destroys the page mid-call; try again
     # on the page it forwarded to.
@@ -131,6 +145,7 @@ def main():
         origin = args.site.rstrip("/") + "/"
     else:
         server, origin = serve(os.path.abspath(args.site))
+    local = None if server is None else origin
     os.makedirs(args.out, exist_ok=True)
 
     manifest = {}
@@ -141,7 +156,7 @@ def main():
             for size_name in args.sizes.split(","):
                 size = SIZES[size_name]
                 image, height, overflow = shoot(browser, origin + path.lstrip("/"), size, args.max_height,
-                                                args.cookie_banner)
+                                                args.cookie_banner, local)
                 files = []
                 for number, tile in enumerate(tiles(image, 2 * size["height"] * size["scale"]), 1):
                     filename = f"{slug(name)}-{size_name}-{number}.jpg"
