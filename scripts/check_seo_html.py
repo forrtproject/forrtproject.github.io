@@ -374,6 +374,11 @@ def print_items(title, items):
         print("      +%d more" % (len(items) - MAX_LISTED))
 
 
+def check_third_party_forms(pages):
+    """The newsletter form loads reCAPTCHA and posts to EmailOctopus only when a visitor subscribes."""
+    return sorted(p.path for p in pages if p.loads("recaptcha") or p.loads("eocampaign1.com"))
+
+
 def main(public_dir):
     pages = load_pages(public_dir)
     home = next((p for p in pages if p.path == "index.html"), None)
@@ -388,6 +393,7 @@ def main(public_dir):
         "7. breadcrumb JSON-LD is well formed": check_breadcrumbs(pages),
         "9. every indexable page has a meta description": check_description_present(pages),
         "10. no double-escaped entity in a meta description": check_description_entities(pages),
+        "11. no page loads EmailOctopus or reCAPTCHA before a visitor subscribes": check_third_party_forms(pages),
     }
     conditional = check_conditional_assets(pages)
     results["3. conditional highlight.js / mermaid loading"] = [
