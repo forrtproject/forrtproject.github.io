@@ -28,9 +28,9 @@
   </div>
   {{/* The figures as a strip: the number large, what it counts beneath. */}}
   <ul class="ledger">
-    <li><a href="{{ relref . "/contributors" }}"><strong>{{ lang.FormatNumber 0 $contributors }}</strong><span>people have contributed to FORRT projects</span></a></li>
+    <li><a href="{{ relref . "/contributors" }}"><strong>{{ lang.FormatNumber 0 $contributors }}</strong><span>contributors to FORRT projects</span></a></li>
     <li><a href="{{ .Params.facts.projects_url | relLangURL }}"><strong>{{ .Params.facts.projects_figure }}</strong><span>{{ .Params.facts.projects_label }}</span></a></li>
-    <li><a href="{{ relref . "/about/partnerships" }}"><strong>{{ $partners }}</strong><span>partner organisations and networks</span></a></li>
+    <li><a href="{{ relref . "/about/partnerships" }}"><strong>{{ $partners }}</strong><span>partner organisations</span></a></li>
     <li><a href="{{ .Params.facts.awards_url | relLangURL }}"><strong>{{ .Params.facts.awards_figure }}</strong><span>{{ .Params.facts.awards_label }}</span></a></li>
   </ul>
 </section>
