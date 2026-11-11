@@ -57,7 +57,10 @@
 .topic:hover{background:var(--edu);color:#fff}
 
 /* Noticeboard and ways to take part */
-.board{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:64px;padding-top:80px}
+/* The news spans both rows; the second row takes up the extra height, so the sign-up sits
+   straight under "Take part" whatever the length of the news. */
+.board{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);grid-template-rows:auto 1fr;gap:28px 64px;padding-top:80px}
+.notices{grid-row:1/span 2}
 .notice-list{list-style:none;margin:24px 0 0;background:var(--surface);border-radius:var(--r-large);padding:6px 24px}
 .notice-list li+li{border-top:1.5px solid var(--line)}
 .notice-list a{display:grid;grid-template-columns:150px minmax(0,1fr);column-gap:24px;padding:18px 0;color:inherit;text-decoration:none}
@@ -67,8 +70,9 @@
 .notice-list h3{grid-column:2;grid-row:1;font-size:24px;line-height:1.12;margin:0}
 .notice-list p{grid-column:2;grid-row:2;margin:5px 0 0;font-size:16px;line-height:1.5}
 .board-foot{display:flex;flex-wrap:wrap;gap:10px 28px;margin:20px 0 0;font-size:16px}
-.home-newsletter{margin-top:28px}
-.home-newsletter>p{margin:0 0 10px;font-size:16px}
+.home-newsletter{grid-column:2;align-self:start}
+.home-newsletter h3{font:var(--display-weight) 21px/1.2 var(--display);margin:0}
+.home-newsletter>p{margin:3px 0 12px;font-size:16px;line-height:1.5}
 .standing-list{list-style:none;margin:24px 0 0;padding:0}
 .standing-list a{display:block;padding:12px 0;color:inherit;text-decoration:none}
 .standing-list strong{display:block;font:var(--display-weight) 21px/1.2 var(--display);color:var(--link);text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:4px;text-decoration-color:transparent}
@@ -101,7 +105,9 @@
   .board{gap:44px}
 }
 @media(max-width:1000px){
-  .board{grid-template-columns:1fr}
+  .board{grid-template-columns:1fr;grid-template-rows:none;row-gap:44px}
+  .notices{grid-row:auto}
+  .home-newsletter{grid-column:auto}
   .standing-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:28px}
   .about{grid-template-columns:minmax(0,1fr)}
 }
@@ -128,6 +134,7 @@
   .area li a{padding:8px 0;font-size:16px}
   .board{gap:44px;padding-top:56px}
   .standing{grid-row:1}
+  .notices{grid-row:2}
   .notice-list{padding:4px 16px}
   .notice-list a{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;padding:14px 0}
   .notice-list time{padding:0}
