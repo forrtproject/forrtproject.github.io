@@ -21,7 +21,7 @@ While we built the current design, every proposed change was checked automatical
 - the [axe-core](https://github.com/dequelabs/axe-core) rules for WCAG Level A and AA, at phone and desktop widths;
 - on the main page designs, at three screen widths: text contrast, text smaller than 15 px, and lines of 80 characters or more;
 - that pages do not run wider than the screen, at phone, tablet and desktop widths, and on the main page designs also with all text doubled in size;
-- on the home page: that the keyboard reaches the pause buttons for the animation and the button that starts the tower game, that the animation stays still and the 3D tower does not load when a device is set to reduce motion, and that the game is not offered where the browser cannot draw 3D graphics;
+- on the home page: that the keyboard reaches a pause button that stops the animation, that Tab moves on from the tower's pause button to the button that starts the tower game, that the animation stays still and the 3D tower does not load when a device is set to reduce motion, and that the game is not offered where the browser cannot draw 3D graphics;
 - that the chat button does not cover the page, including when it has keyboard focus.
 
 Each time the site is published, every page is also checked for images without an `alt` attribute and for pages with more than one top-level heading.
