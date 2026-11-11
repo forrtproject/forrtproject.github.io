@@ -1,5 +1,46 @@
 {{- define "main" -}}
-{{ $newsletters := .Params.newsletters }}
+{{- /* Issues come from two sources: data/newsletters.json, generated from
+       EmailOctopus by scripts/sync_newsletters.py and hosted on forrt.org,
+       and the front matter, which holds earlier issues. Each year keeps the
+       palette colour at its index modulo 5.
+       The newest issue carries a "New" badge for two months after sending. */ -}}
+{{- $listed := .Params.newsletters | default slice -}}
+{{- $synced := index (hugo.Data.newsletters | default dict) "issues" | default slice -}}
+{{- /* Newest issue first; the URLs end in YYYY-MM/, so they sort by issue month. */ -}}
+{{- $synced = sort $synced "url" "desc" -}}
+{{- $palette := slice "#3b82c4" "#2c7a7b" "#b83280" "#6b46c1" "#c05621" -}}
+{{- $years := slice -}}
+{{- range $synced }}{{ $years = $years | append (int .year) }}{{ end -}}
+{{- range $listed }}{{ $years = $years | append (int .year) }}{{ end -}}
+{{- $years = sort (uniq $years) "value" "desc" -}}
+{{- $newestID := "" -}}
+{{- with $synced }}{{ $newestID = (index . 0).id }}{{ end -}}
+{{- $newsletters := slice -}}
+{{- range $year := $years -}}
+  {{- $color := index $palette (mod $year (len $palette)) -}}
+  {{- $issues := slice -}}
+  {{- range $synced -}}
+    {{- if eq (int .year) $year -}}
+      {{- $new := and (eq .id $newestID) ((time .sent_at).After (now.AddDate 0 -2 0)) -}}
+      {{- $issues = $issues | append (dict "month" .month "url" (relURL .url) "local" true "new" $new) -}}
+    {{- end -}}
+  {{- end -}}
+  {{- range $listed -}}
+    {{- if eq (int .year) $year -}}
+      {{- range .issues -}}
+        {{- if strings.HasPrefix .url "/" -}}
+          {{- /* A copy hosted on forrt.org, such as the Mailchimp issues. */ -}}
+          {{- $issues = $issues | append (dict "month" .month "url" (relURL .url) "local" true) -}}
+        {{- else -}}
+          {{- $issues = $issues | append . -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+  {{- with $issues -}}
+    {{- $newsletters = $newsletters | append (dict "year" $year "color" $color "issues" .) -}}
+  {{- end -}}
+{{- end }}
 
 <article class="article nla-page">
   {{ partial "page_header" . }}
@@ -35,7 +76,7 @@
 
         <div class="nla-grid">
           {{ range $y.issues }}
-          <a href="{{ .url }}" target="_blank" rel="noopener"
+          <a href="{{ .url }}"{{ if not .local }} target="_blank" rel="noopener"{{ end }}
              class="nla-card" style="--nla-year-color: {{ $y.color }}"
              aria-label="Read {{ .month }} {{ $y.year }} newsletter">
             <div class="nla-card-accent"></div>

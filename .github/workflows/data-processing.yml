@@ -19,6 +19,7 @@ name: Data Processing
 # 5. FReD citation (Python)
 # 6. Google Scholar citations (Python)
 # 7. Contributor analysis (R) - monthly
+# 8. Newsletter archive from EmailOctopus (Python)
 #
 # Outputs:
 # - On main, `data-artifact`, which deploy.yaml unpacks before Hugo builds
@@ -248,6 +249,31 @@ jobs:
         id: get-involved
         continue-on-error: true
         run: python3 scripts/build_get_involved.py
+
+      #========================================
+      # Archive newsletter issues sent through EmailOctopus
+      # Restores the earlier archive from build-resources first, so issues and
+      # images already copied survive API outages; the script only adds new
+      # issues and leaves the archive as it is when the API is unavailable.
+      #========================================
+      - name: Restore previous newsletter archive
+        continue-on-error: true
+        run: |
+          git fetch origin +refs/heads/build-resources:refs/remotes/origin/build-resources || true
+          git archive origin/build-resources data/newsletters.json | tar -x || true
+          git archive origin/build-resources static/newsletters | tar -x || true
+          if [ -f data/newsletters.json ]; then
+            echo "✅ Previous newsletter archive: $(grep -c '"id"' data/newsletters.json) issues"
+          else
+            echo "⚠️ No previous newsletter archive on build-resources; the script starts afresh"
+          fi
+
+      - name: Sync newsletter archive
+        id: newsletters
+        continue-on-error: true
+        env:
+          EMAILOCTOPUS_API_KEY: ${{ secrets.EMAILOCTOPUS_API_KEY }}
+        run: python3 scripts/sync_newsletters.py
 
       #========================================
       # Fetch the previous generated curated resources from the build-resources
@@ -531,6 +557,7 @@ jobs:
             !data/publications.yaml
             static/data/
             static/partials/
+            static/newsletters/
             content/contributor-analysis/
             content/publications/citation_chart.webp
           retention-days: 7
@@ -577,6 +604,14 @@ jobs:
             cp data/summaries.json /tmp/generated-resources/summaries.json
           fi
 
+          if [ -f data/newsletters.json ]; then
+            cp data/newsletters.json /tmp/generated-resources/newsletters.json
+          fi
+          if [ -d static/newsletters ]; then
+            mkdir -p /tmp/generated-resources/static
+            cp -r static/newsletters /tmp/generated-resources/static/
+          fi
+
           if [ "${{ github.event.inputs.regenerate_glossary }}" = "true" ]; then
             cp -r content/glossary /tmp/generated-resources/
           fi
@@ -619,6 +654,14 @@ jobs:
           if [ -f /tmp/generated-resources/summaries.json ]; then
             cp /tmp/generated-resources/summaries.json data/summaries.json
           fi
+          if [ -f /tmp/generated-resources/newsletters.json ]; then
+            cp /tmp/generated-resources/newsletters.json data/newsletters.json
+          fi
+          # Add to the archive without deleting: earlier copies must survive.
+          if [ -d /tmp/generated-resources/static/newsletters ]; then
+            mkdir -p static/newsletters
+            cp -r /tmp/generated-resources/static/newsletters/. static/newsletters/
+          fi
           if [ -f /tmp/generated-resources/featured_resources.json ]; then
             cp /tmp/generated-resources/featured_resources.json data/featured_resources.json
           fi
@@ -649,8 +692,8 @@ jobs:
             rsync -av --exclude='_index.md' --exclude='_create_glossaries.py' /tmp/generated-resources/glossary/ content/glossary/
           fi
 
-          # Check if there are any changes to commit
-          if git diff --quiet && git diff --cached --quiet; then
+          # Check if there are any changes to commit (new untracked files count)
+          if [ -z "$(git status --porcelain)" ]; then
             echo "ℹ️ No changes to commit"
           else
             echo "✓ Changes detected, committing..."
@@ -665,6 +708,7 @@ jobs:
             git add data/get_involved_projects.json 2>/dev/null || true
             git add static/data/fred_citation.txt 2>/dev/null || true
             git add data/summaries.json 2>/dev/null || true
+            git add data/newsletters.json static/newsletters/ 2>/dev/null || true
             git add content/contributor-analysis/ 2>/dev/null || true
             git add static/partials/network-graph.html 2>/dev/null || true
             git add content/publications/citation_chart.webp 2>/dev/null || true
@@ -768,6 +812,14 @@ jobs:
             python3 scripts/create_workflow_failure_issue.py "Curated Resources Processing" "The curated resources processing step failed during execution." "$WORKFLOW_RUN_URL" || echo "Failed to create issue for Curated Resources"
           fi
           
+          # Newsletter archive (the script warns instead of failing on API outages,
+          # so a failure here is a bug in the script)
+          if [ "${{ steps.newsletters.outcome }}" == "failure" ]; then
+            echo "❌ Newsletter archive sync failed"
+            FAILURES_FOUND=true
+            python3 scripts/create_workflow_failure_issue.py "Newsletter Archive" "The newsletter archive sync step (scripts/sync_newsletters.py) failed during execution." "$WORKFLOW_RUN_URL" || echo "Failed to create issue for Newsletter Archive"
+          fi
+
           # Tenzing Output Validation
           if [ "${{ steps.tenzing-output.outcome }}" == "failure" ]; then
             echo "❌ Tenzing output validation failed"
