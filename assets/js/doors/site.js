@@ -2,6 +2,7 @@
    Closing rules follow the Doors mock: Escape, a click outside and a second click all close,
    and an opened menu is next in the Tab order because it follows its button in the page. */
 import './citations.js';
+import './references.js';
 import './glossary.js';
 
 const toggle = document.querySelector('.menu-toggle');

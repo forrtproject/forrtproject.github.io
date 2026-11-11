@@ -1,77 +1,242 @@
-{{/* Clusters map: a wheel with one segment per cluster, plus a legend, both linking to the
-     clusters. Drawn from data/clusters_v4.json at build time, so it always matches the list.
-     Expects dict: link_mode ("anchor" for #cluster-N on /clusters/, else /clusters/cluster-N/). */}}
+{{/* Clusters map: a mind map with the FORRT badge in a ring of cluster icons, a line from each
+     segment to its cluster's label, and the sub-clusters as pills fanning out from the label.
+     Drawn from data/clusters_v4.json at build time, so it always matches the list below it.
+     Expects dict: link_mode ("anchor" for #cluster-N on /clusters/, else /clusters/cluster-N/).
+
+     Layout: the clusters run clockwise, the first ones left to right above the hub and the rest
+     right to left below it. Labels sit on an arc round the hub, their pills stack away from it,
+     and a cluster whose pills would stand taller than $colMax splits them into columns. Text is
+     wrapped with the font's measured widths (clusters/map_wrap.html). On the page the drawing
+     scales to the column; "Open full size" shows it larger. */}}
 {{ with hugo.Data.clusters_v4 }}{{ with .clusters }}
 {{ $clusters := . }}
 {{ $palette := (partial "clusters/colors.html").arrowColors }}
+{{ $icons := partialCached "clusters/map_icons.html" "icons" }}
 {{ $n := len $clusters }}
-{{ $cx := 200.0 }}{{ $cy := 200.0 }}{{ $R := 196.0 }}{{ $r := 104.0 }}
-{{ $gap := 1.2 }}{{/* degrees left blank between segments */}}
-{{ $step := div 360.0 $n }}
-{{ $items := slice }}
+
+{{/* Sizes, in drawing units (one unit is one CSS pixel at full size). */}}
+{{ $fs := 17.0 }}{{ $lh := 21.0 }}{{ $padX := 14.0 }}{{ $padY := 8.0 }}{{ $pillMax := 272.0 }}{{ $pillGap := 7.0 }}
+{{ $colGap := 12.0 }}{{ $colMax := 520.0 }}{{ $stackGap := 26.0 }}
+{{ $lfs := 20.0 }}{{ $llh := 24.0 }}{{ $lpadX := 16.0 }}{{ $lpadY := 11.0 }}{{ $labelMin := 230.0 }}{{ $labelMax := 300.0 }}{{ $labelGap := 14.0 }}
+{{ $Ro := 165.0 }}{{ $Ri := 104.0 }}{{ $disc := 94.0 }}{{ $dMin := 26.0 }}{{ $dMax := 205.0 }}{{ $margin := 24.0 }}
+
+{{/* 1. Each cluster: its pills, their columns and its label. */}}
+{{ $stacks := slice }}
 {{ range $i, $c := $clusters }}
   {{ $num := int $c.number }}
-  {{ $href := cond (eq $.link_mode "anchor") (printf "#cluster-%d" $num) ((printf "/clusters/cluster-%d/" $num) | relURL) }}
-  {{ $a0 := math.ToRadians (add -90.0 (add (mul $i $step) (div $gap 2))) }}
-  {{ $a1 := math.ToRadians (add -90.0 (sub (mul (add $i 1) $step) (div $gap 2))) }}
-  {{ $mid := math.ToRadians (add -90.0 (mul (add $i 0.5) $step)) }}
-  {{ $path := printf "M%.2f %.2fA%.0f %.0f 0 0 1 %.2f %.2fL%.2f %.2fA%.0f %.0f 0 0 0 %.2f %.2fZ"
-      (add $cx (mul $R (math.Cos $a0))) (add $cy (mul $R (math.Sin $a0))) $R $R
-      (add $cx (mul $R (math.Cos $a1))) (add $cy (mul $R (math.Sin $a1)))
-      (add $cx (mul $r (math.Cos $a1))) (add $cy (mul $r (math.Sin $a1))) $r $r
-      (add $cx (mul $r (math.Cos $a0))) (add $cy (mul $r (math.Sin $a0))) }}
-  {{ $lr := div (add $R $r) 2 }}
-  {{ $items = $items | append (dict
-      "num" $num "name" $c.name "href" $href "path" $path
+  {{ $base := cond (eq $.link_mode "anchor") "" ((printf "/clusters/cluster-%d/" $num) | relURL) }}
+  {{ $pills := slice }}{{ $natW := 0.0 }}{{ $total := 0.0 }}
+  {{ range $c.sub_clusters }}
+    {{/* Same slug as cluster_section.html and sidebar_nav.html, from the full name. */}}
+    {{ $slug := .name | lower | replaceRE "[^a-z0-9]+" "-" | replaceRE "^-+|-+$" "" }}
+    {{/* Shown text: the name without a closing parenthetical aside or full stop, in at most 3 lines. */}}
+    {{ $short := .name | strings.TrimSpace | replaceRE `\.$` "" }}
+    {{ with replaceRE `\s*\([^()]*\)$` "" $short }}{{ $short = . }}{{ end }}
+    {{ $wrap := partial "clusters/map_wrap.html" (dict "text" $short "width" (sub $pillMax (mul 2 $padX)) "size" $fs "weight" "400" "max_lines" 3) }}
+    {{ $h := add (mul 2 $padY) (mul (len $wrap.lines) $lh) }}
+    {{ $natW = math.Max $natW (add $wrap.widest (mul 2 $padX)) }}
+    {{ $pills = $pills | append (dict "lines" $wrap.lines "h" $h "title" .name "href" (printf "%s#c%d-%s" $base $num $slug)) }}
+    {{ $total = add $total $h $pillGap }}
+  {{ end }}
+  {{ $colW := math.Ceil (math.Min $pillMax (math.Max $natW 150.0)) }}
+  {{ $cols := int (math.Max 1 (math.Ceil (div $total $colMax))) }}
+  {{/* Fill the columns in reading order, starting a new one at each equal share of the height. */}}
+  {{ $share := div $total $cols }}{{ $acc := 0.0 }}{{ $col := 0 }}{{ $colH := dict }}{{ $placed := slice }}
+  {{ range seq $cols }}{{ $colH = merge $colH (dict (string (sub . 1)) 0.0) }}{{ end }}
+  {{ range $pills }}
+    {{ if and (lt $col (sub $cols 1)) (gt (add $acc (div .h 2)) (mul $share (add $col 1))) (gt (index $colH (string $col)) 0.0) }}{{ $col = add $col 1 }}{{ end }}
+    {{ $y := index $colH (string $col) }}
+    {{ $placed = $placed | append (merge . (dict "col" $col "y" $y)) }}
+    {{ $colH = merge $colH (dict (string $col) (add $y .h $pillGap)) }}
+    {{ $acc = add $acc .h $pillGap }}
+  {{ end }}
+  {{ $tallest := 0.0 }}{{ range $colH }}{{ $tallest = math.Max $tallest . }}{{ end }}
+  {{ $blockW := add (mul $cols $colW) (mul (sub $cols 1) $colGap) }}
+  {{ $lw := math.Min $labelMax (math.Max $labelMin $blockW) }}
+  {{/* A name that needs more than 3 lines at the column's width widens, up to $labelMax, before it is cut. */}}
+  {{ if gt (len (partial "clusters/map_wrap.html" (dict "text" $c.name "width" (sub $lw (mul 2 $lpadX)) "size" $lfs "weight" "700")).lines) 3 }}{{ $lw = $labelMax }}{{ end }}
+  {{ $label := partial "clusters/map_wrap.html" (dict "text" $c.name "width" (sub $lw (mul 2 $lpadX)) "size" $lfs "weight" "700" "max_lines" 3) }}
+  {{ $icon := index $icons.by_cluster (string $num) | default $icons.fallback }}
+  {{ $stacks = $stacks | append (dict
+      "num" $num "name" $c.name "i" $i
+      "href" (cond (eq $.link_mode "anchor") (printf "#cluster-%d" $num) $base)
       "color" (index $palette (mod $i (len $palette)))
-      "x" (add $cx (mul $lr (math.Cos $mid))) "y" (add $cy (mul $lr (math.Sin $mid)))
-      "subs" (len $c.sub_clusters)) }}
+      "icon" (index $icons.paths $icon)
+      "pills" $placed "cols" $cols "colW" $colW "blockW" $blockW
+      "colH" $colH "pillsH" (sub $tallest $pillGap)
+      "lw" $lw "lines" $label.lines "lh" (add (mul 2 $lpadY) (mul (len $label.lines) $llh))
+      "w" (math.Max $blockW $lw)) }}
 {{ end }}
+
+{{/* 2. Split the clusters between the row above the hub and the row below, as evenly as the widths allow. */}}
+{{ $best := 1 }}{{ $bestW := add (index $stacks 0).w $stackGap }}
+{{ if gt $n 1 }}{{ $bestW = 1e9 }}{{ range $k := seq (sub $n 1) }}
+  {{ $top := 0.0 }}{{ $bottom := 0.0 }}
+  {{ range $j, $s := $stacks }}{{ if lt $j $k }}{{ $top = add $top $s.w $stackGap }}{{ else }}{{ $bottom = add $bottom $s.w $stackGap }}{{ end }}{{ end }}
+  {{ $wide := math.Max $top $bottom }}
+  {{ if lt $wide $bestW }}{{ $best = $k }}{{ $bestW = $wide }}{{ end }}
+{{ end }}{{ end }}
+{{ $half := div (sub $bestW $stackGap) 2 }}
+{{ $W := math.Ceil (add (mul 2 $margin) (math.Max (mul 2 $half) (mul 2 (add $Ro 40)))) }}
+{{ $cx := div $W 2 }}
+
+{{/* 3. Place each label on an arc: near the hub in the middle, level with it at the ends. */}}
+{{ $top := slice }}{{ $bottom := slice }}
+{{ range $j, $s := $stacks }}{{ if lt $j $best }}{{ $top = $top | append $s }}{{ else }}{{ $bottom = $bottom | append $s }}{{ end }}{{ end }}
+{{ $rows := slice (dict "up" true "stacks" $top) (dict "up" false "stacks" ($bottom | collections.Reverse)) }}
+{{ $laid := slice }}{{ $reachUp := add $Ro 20 }}{{ $reachDown := add $Ro 20 }}
+{{ range $rows }}
+  {{ $up := .up }}
+  {{ $width := 0.0 }}{{ range .stacks }}{{ $width = add $width .w $stackGap }}{{ end }}
+  {{ $x := sub $cx (div (sub $width $stackGap) 2) }}
+  {{ range .stacks }}
+    {{ $mid := add $x (div .w 2) }}
+    {{ $u := div (sub $mid $cx) (math.Max $half 1.0) }}
+    {{ $d := add $dMin (mul (sub $dMax $dMin) (sub 1 (mul $u $u))) }}
+    {{/* Keep labels clear of the ring. */}}
+    {{ $dx := math.Max 0.0 (sub (math.Abs (sub $mid $cx)) (div .lw 2)) }}
+    {{ $clear := add $Ro 34 }}
+    {{ if lt $dx $clear }}{{ $d = math.Max $d (math.Sqrt (sub (mul $clear $clear) (mul $dx $dx))) }}{{ end }}
+    {{ $reach := add $d .lh $labelGap .pillsH }}
+    {{ if $up }}{{ $reachUp = math.Max $reachUp $reach }}{{ else }}{{ $reachDown = math.Max $reachDown $reach }}{{ end }}
+    {{ $laid = $laid | append (merge . (dict "up" $up "mid" $mid "d" $d)) }}
+    {{ $x = add $x .w $stackGap }}
+  {{ end }}
+{{ end }}
+{{ $H := math.Ceil (add $reachUp $reachDown (mul 2 $margin)) }}
+{{ $cy := add $margin $reachUp }}
+
+{{/* 4. Ring segments: equal shares, turned so each points as nearly as possible at its label. */}}
+{{ $step := div (mul 2 math.Pi) $n }}
+{{ $sumS := 0.0 }}{{ $sumC := 0.0 }}
+{{ range $laid }}
+  {{ $ly := cond .up (sub $cy (add .d (div .lh 2))) (add $cy .d (div .lh 2)) }}
+  {{ $off := sub (math.Atan2 (sub $ly $cy) (sub .mid $cx)) (mul (add .i 0.5) $step) }}
+  {{ $sumS = add $sumS (math.Sin $off) }}{{ $sumC = add $sumC (math.Cos $off) }}
+{{ end }}
+{{ $turn := math.Atan2 $sumS $sumC }}
+{{ $gap := 0.012 }}{{/* radians left blank between segments */}}
+{{ $ring := dict }}
+{{ range $laid }}
+  {{ $a0 := add $turn (mul .i $step) $gap }}{{ $a1 := sub (add $turn (mul (add .i 1) $step)) $gap }}{{ $am := add $turn (mul (add .i 0.5) $step) }}
+  {{ $ir := div (add $Ro $Ri) 2 }}{{ $k := div 34.0 (math.Max .icon.w .icon.h) }}
+  {{ $ring = merge $ring (dict (string .num) (dict
+      "seg" (printf "M%.1f %.1fA%.0f %.0f 0 0 1 %.1f %.1fL%.1f %.1fA%.0f %.0f 0 0 0 %.1f %.1fZ"
+        (add $cx (mul $Ro (math.Cos $a0))) (add $cy (mul $Ro (math.Sin $a0))) $Ro $Ro
+        (add $cx (mul $Ro (math.Cos $a1))) (add $cy (mul $Ro (math.Sin $a1)))
+        (add $cx (mul $Ri (math.Cos $a1))) (add $cy (mul $Ri (math.Sin $a1))) $Ri $Ri
+        (add $cx (mul $Ri (math.Cos $a0))) (add $cy (mul $Ri (math.Sin $a0))))
+      "icon" (printf "translate(%.1f %.1f) scale(%.4f)"
+        (sub (add $cx (mul $ir (math.Cos $am))) (div (mul .icon.w $k) 2))
+        (sub (add $cy (mul $ir (math.Sin $am))) (div (mul .icon.h $k) 2)) $k)
+      "from" (printf "%.1f %.1f" (add $cx (mul (add $Ro 2) (math.Cos $am))) (add $cy (mul (add $Ro 2) (math.Sin $am)))))) }}
+{{ end }}
+
+{{ $hub := printf `<circle class="clusters-map__disc" cx="%.1f" cy="%.1f" r="%.0f"></circle><image href="%s" x="%.1f" y="%.1f" width="124" height="130"></image>` $cx $cy $disc ("img/FORRT%20Badge%20-%20Color%20-%20v4.webp" | relURL) (sub $cx 62) (sub $cy 65) | safeHTML }}
 <figure class="clusters-map" data-clusters-map>
-  {{/* The legend carries the links. The wheel is a pointer shortcut to the same places, with
-       no links of its own, so it is hidden from assistive technology and holds nothing focusable. */}}
-  <svg class="clusters-map__wheel" viewBox="0 0 400 400" aria-hidden="true" focusable="false">
-    {{ range $items }}
-    <g class="clusters-map__segment" data-cluster="{{ .num }}" data-href="{{ .href }}">
-      <title>{{ .num }}. {{ .name }}</title>
-      <path d="{{ .path }}" style="fill: {{ .color | safeCSS }}"></path>
-      <text x="{{ printf "%.1f" .x }}" y="{{ printf "%.1f" .y }}" dy=".35em">{{ .num }}</text>
+  {{/* The drawing is for pointers and eyes: it is hidden from assistive technology and none of its
+       links is a tab stop. The list below carries the same links for everyone. */}}
+  <div class="clusters-map__frame">
+  <svg class="clusters-map__art" viewBox="0 0 {{ $W }} {{ $H }}" width="{{ $W }}" height="{{ $H }}" aria-hidden="true" focusable="false">
+    {{ range sort $laid "i" }}
+    {{ $seg := index $ring (string .num) }}
+    {{ $lx := sub .mid (div .lw 2) }}
+    {{ $ly := cond .up (sub $cy .d .lh) (add $cy .d) }}
+    <g class="clusters-map__cluster" data-cluster="{{ .num }}" style="--c: {{ .color | safeCSS }}">
+      <path class="clusters-map__line" d="M{{ $seg.from }}L{{ printf "%.1f %.1f" .mid (add $ly (div .lh 2)) }}"></path>
+      <a href="{{ .href }}" tabindex="-1" class="clusters-map__seg">
+        <title>{{ .name }}</title>
+        <path d="{{ $seg.seg }}"></path>
+        <path class="clusters-map__icon" transform="{{ $seg.icon }}" d="{{ .icon.d }}"></path>
+      </a>
+      <a href="{{ .href }}" tabindex="-1" class="clusters-map__label">
+        <title>{{ .name }}</title>
+        <rect x="{{ printf "%.1f" $lx }}" y="{{ printf "%.1f" $ly }}" width="{{ .lw }}" height="{{ .lh }}" rx="12"></rect>
+        {{ $lmid := .mid }}<text>{{ range $li, $t := .lines }}<tspan x="{{ printf "%.1f" $lmid }}" y="{{ printf "%.1f" (add $ly $lpadY (mul $llh (add $li 0.5))) }}" dy=".35em">{{ $t }}</tspan>{{ end }}</text>
+      </a>
+      {{ $s := . }}
+      {{ $x0 := sub .mid (div .blockW 2) }}
+      {{ range .pills }}
+        {{ $px := add $x0 (mul .col (add $s.colW $colGap)) }}
+        {{ $py := cond $s.up (sub $ly $labelGap (sub (index $s.colH (string .col)) $pillGap)) (add $ly $s.lh $labelGap) }}
+        {{ $py = add $py .y }}
+      <a href="{{ .href }}" tabindex="-1" class="clusters-map__pill">
+        <title>{{ .title }}</title>
+        <rect x="{{ printf "%.1f" $px }}" y="{{ printf "%.1f" $py }}" width="{{ $s.colW }}" height="{{ .h }}" rx="{{ cond (gt (len .lines) 1) 16 (div .h 2) }}"></rect>
+        <text>{{ $tx := add $px (div $s.colW 2) }}{{ range $li, $t := .lines }}<tspan x="{{ printf "%.1f" $tx }}" y="{{ printf "%.1f" (add $py $padY (mul $lh (add $li 0.5))) }}" dy=".35em">{{ $t }}</tspan>{{ end }}</text>
+      </a>
+      {{ end }}
     </g>
     {{ end }}
-    <text class="clusters-map__hub" x="200" y="192">FORRT</text>
-    <text class="clusters-map__hub-sub" x="200" y="224">{{ $n }} clusters</text>
+    {{ $hub }}
   </svg>
-  <figcaption class="clusters-map__legend">
-    <h2 class="visually-hidden">The {{ $n }} clusters</h2>
-    <ol>
-      {{ range $items }}
-      <li data-cluster="{{ .num }}">
-        <a href="{{ .href }}"><span class="clusters-map__chip" style="background: {{ .color | safeCSS }}" aria-hidden="true">{{ .num }}</span><span class="clusters-map__name">{{ .name }}</span></a>
-        <span class="clusters-map__count">{{ .subs }} sub-clusters</span>
-      </li>
+  </div>
+  {{/* Phones get the hub and the cluster labels; the pills are in the list and the full-size view. */}}
+  <div class="clusters-map__compact">
+    <svg class="clusters-map__hub" viewBox="{{ printf "%.1f %.1f %.1f %.1f" (sub $cx $Ro 4) (sub $cy $Ro 4) (add (mul 2 $Ro) 8) (add (mul 2 $Ro) 8) }}" aria-hidden="true" focusable="false">
+      {{ range sort $laid "i" }}{{ $seg := index $ring (string .num) }}
+      <g style="--c: {{ .color | safeCSS }}"><path class="clusters-map__segment" d="{{ $seg.seg }}"></path><path class="clusters-map__icon" transform="{{ $seg.icon }}" d="{{ .icon.d }}"></path></g>
+      {{ end }}
+      {{ $hub }}
+    </svg>
+    <ol class="clusters-map__chips">
+      {{ range sort $laid "i" }}
+      <li><a href="{{ .href }}" style="--c: {{ .color | safeCSS }}"><svg viewBox="0 0 {{ .icon.w }} {{ .icon.h }}" aria-hidden="true" focusable="false"><path d="{{ .icon.d }}"></path></svg><span>{{ .name }} <small>{{ len .pills }} sub-clusters</small></span></a></li>
       {{ end }}
     </ol>
+  </div>
+  <figcaption class="clusters-map__caption">
+    <button type="button" class="clusters-map__enlarge" hidden>Open full size</button>
+    <details class="clusters-map__list">
+      <summary>The {{ $n }} clusters and their sub-clusters as a list</summary>
+      <ol>
+        {{ range sort $laid "i" }}
+        <li><a href="{{ .href }}">{{ .name }}</a>
+          <ul>{{ range .pills }}<li><a href="{{ .href }}">{{ .title }}</a></li>{{ end }}</ul>
+        </li>
+        {{ end }}
+      </ol>
+    </details>
   </figcaption>
 </figure>
 <script>
 (function () {
-  /* Highlight a cluster in the wheel and the legend together; a wheel segment follows its link. */
+  /* Hovering a cluster lights it up; "Open full size" shows the drawing in a dialog at its full size. */
   var map = document.currentScript.previousElementSibling;
-  var parts = map.querySelectorAll('[data-cluster]');
-  map.querySelectorAll('.clusters-map__segment').forEach(function (seg) {
-    seg.addEventListener('click', function () { window.location.href = seg.getAttribute('data-href'); });
-  });
-  function show(num) {
-    map.classList.toggle('is-pointing', !!num);
-    parts.forEach(function (el) { el.classList.toggle('is-active', el.getAttribute('data-cluster') === num); });
+  var art = map.querySelector('.clusters-map__art');
+  function point(svg) {
+    svg.querySelectorAll('.clusters-map__cluster').forEach(function (g) {
+      g.addEventListener('mouseenter', function () { svg.classList.add('is-pointing'); g.classList.add('is-active'); });
+      g.addEventListener('mouseleave', function () { svg.classList.remove('is-pointing'); g.classList.remove('is-active'); });
+    });
   }
-  parts.forEach(function (el) {
-    var num = el.getAttribute('data-cluster');
-    el.addEventListener('mouseenter', function () { show(num); });
-    el.addEventListener('mouseleave', function () { show(null); });
-    el.addEventListener('focusin', function () { show(num); });
-    el.addEventListener('focusout', function () { show(null); });
+  point(art);
+  var open = map.querySelector('.clusters-map__enlarge');
+  if (typeof HTMLDialogElement !== 'function') return;
+  var dialog = document.createElement('dialog');
+  dialog.className = 'clusters-map__dialog';
+  dialog.setAttribute('aria-label', 'Clusters map, full size');
+  dialog.innerHTML = '<button type="button" class="clusters-map__close">Close</button><div class="clusters-map__scroll"></div>';
+  var big = art.cloneNode(true);
+  dialog.querySelector('.clusters-map__scroll').append(big);
+  point(big);
+  document.body.append(dialog);
+  open.hidden = false;
+  var scroller = dialog.querySelector('.clusters-map__scroll');
+  var leaving = false;
+  open.addEventListener('click', function () {
+    leaving = false;
+    dialog.showModal();
+    /* Start with the hub in view. */
+    scroller.scrollLeft = (scroller.scrollWidth - scroller.clientWidth) / 2;
+    scroller.scrollTop = (scroller.scrollHeight - scroller.clientHeight) / 2;
   });
+  dialog.querySelector('.clusters-map__close').addEventListener('click', function () { dialog.close(); });
+  dialog.addEventListener('click', function (event) {
+    if (event.target === dialog) { dialog.close(); return; }
+    if (event.target.closest('a')) { leaving = true; dialog.close(); } /* then the link takes the reader to its section */
+  });
+  dialog.addEventListener('close', function () { if (!leaving) open.focus({ preventScroll: true }); });
 })();
 </script>
 {{ end }}{{ end }}
