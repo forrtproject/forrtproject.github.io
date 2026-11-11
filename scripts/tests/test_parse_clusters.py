@@ -10,6 +10,7 @@ from parse_clusters_to_sheet import (
     SubCluster,
     build_export,
     build_publications,
+    keep_doc_author,
     parse_cluster_11,
     parse_document,
     parse_subclusters_standard,
@@ -29,6 +30,30 @@ class StandardSubClusters(unittest.TestCase):
             "https://sparceurope.org/helper/",
         ]
         self.assertEqual(self.names(lines, ["Rights retention strategies"]), ["Rights retention strategies"])
+
+    def test_description_citing_a_year_stays_the_description(self):
+        heading = "Standards and guidelines for rigorous qualitative research"
+        description = "It may be helpful to first read Clarke’s (2022) piece on reporting standards."
+        lines = [
+            heading,
+            description,
+            "* Braun, V., & Clarke, V. (2021). One size fits all?",
+            "Clarke, V. (2022). Navigating the messy swamp. https://doi.org/10.1/x",
+        ]
+        [sub] = parse_subclusters_standard(lines, 0, len(lines), [heading], "Cluster")
+        self.assertEqual(sub.description, description)
+        self.assertEqual(len(sub.raw_citations), 1)
+
+    def test_unbulleted_reference_under_a_heading_stays_a_reference(self):
+        heading = "Standards"
+        for reference in (
+            "Clarke, V. (2022). Navigating the messy swamp. Qualitative Psychology.",
+            "Open Science Collaboration. (2015). Estimating the reproducibility. Science.",
+            "Jane Doe (2020, May). A talk. Conference.",
+        ):
+            lines = [heading, reference]
+            [sub] = parse_subclusters_standard(lines, 0, len(lines), [heading], "Cluster")
+            self.assertEqual((sub.description, len(sub.raw_citations)), ("", 1), reference)
 
     def test_comment_marker_before_indent_is_a_continuation(self):
         heading = "Questionable measurement practices (QMPs), validity & reliability issues."
@@ -120,6 +145,19 @@ class LookupCitations(unittest.TestCase):
             tidy_lookup_citation("PIÑEIRO, R., & ROSENBLATT, F. (2016). THE TITLE. https://doi.org/10.1/x"),
             "Piñeiro, R., & Rosenblatt, F. (2016). THE TITLE. https://doi.org/10.1/x",
         )
+
+    def test_group_author_missing_from_lookup_is_kept_from_the_doc(self):
+        self.assertEqual(
+            keep_doc_author(
+                "(2015). Estimating the reproducibility. Science, 349(6251). https://doi.org/10.1/x",
+                "Open Science Collaboration. (2015). Estimating the reproducibility. https://doi.org/10.1/x",
+            ),
+            "Open Science Collaboration. (2015). Estimating the reproducibility. Science, 349(6251). https://doi.org/10.1/x",
+        )
+
+    def test_lookup_with_authors_is_unchanged(self):
+        apa = "Doe, A. (2015). Title. https://doi.org/10.1/x"
+        self.assertEqual(keep_doc_author(apa, "Roe, B. (2015). Title."), apa)
 
     def test_organisations_and_suffixes_keep_their_capitals(self):
         for apa in ("KNAW, NFU, & VSNU. (2018). Title.", "Boum II, Y., & Doe, A. (2021). Title."):

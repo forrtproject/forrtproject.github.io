@@ -26,7 +26,7 @@ Regenerated on demand; the output is committed:
 | Glossary terms `content/glossary/{english,german,arabic,chinese,turkish}/*.md` | `content/glossary/_create_glossaries.py`; in CI only via `data-processing.yml` dispatch with `regenerate_glossary`, which opens a PR | Glossary Google Sheet |
 | `data/disciplines.json` | `scripts/parse_disciplines_to_json.py` (see `content/disciplines/README`) | Disciplines sheet |
 | `data/disciplines_citation.json` | `scripts/build_disciplines_citation.py` | Tenzing sheet |
-| `data/clusters_v4.json` | `scripts/parse_clusters_to_sheet.py --export-json` | Clusters v4.1 Google Doc |
+| `data/clusters_v4.json` | `scripts/parse_clusters_to_sheet.py --json-only` (without it, the script also clears and rewrites the Clusters, Sub-Clusters and Publications sheet tabs) | Clusters v4.1 Google Doc |
 | `content/clusters/cluster-N/index.md` | `scripts/generate_cluster_pages.py` | `data/clusters_v4.json` |
 | `content/about/steering-committee/index.md` (rewritten on re-run) | `scripts/generate_sc_profiles.py` | Steering committee sheets |
 
