@@ -129,9 +129,12 @@ const loadRecaptcha = () => {
     const script = document.createElement('script');
     // A failed or stalled load clears the cache, so the next Subscribe tries again. Each retry
     // gets its own URL; otherwise the browser waits on the stalled request again.
+    // Only the latest attempt clears the cache: a late error from a stalled earlier script must
+    // not wipe out the promise of the retry that replaced it.
+    const attempt = recaptchaTries;
     const fail = () => {
       clearTimeout(timer);
-      recaptcha = null;
+      if (attempt === recaptchaTries - 1) recaptcha = null;
       script.remove();
       reject(new Error('reCAPTCHA did not load'));
     };
