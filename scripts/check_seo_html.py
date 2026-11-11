@@ -40,7 +40,8 @@ Hard checks (exit 1 if any fails):
   17. Every link in a visible breadcrumb trail (nav.crumbs) has a non-empty href,
      so a section that is not rendered cannot leave an empty link in the trail.
   18. No glossary page's <title> or <h1> shows Markdown emphasis as typed, e.g. "(*p*)".
-  19. The /clusters/ illustration (svg.clusters-map__art) is hidden from assistive technology
+  19. No page loads EmailOctopus or reCAPTCHA before a visitor subscribes.
+  21. The /clusters/ illustration (svg.clusters-map__art) is hidden from assistive technology
       and holds no tab stop (every link has tabindex="-1"), and every in-page link in the
       clusters map reaches an id on the page.
 
@@ -537,6 +538,11 @@ def check_resource_pagination(pages):
         if problems:
             failures.append("%s (%s)" % (p.path, ", ".join(problems)))
     return failures
+def check_third_party_forms(pages):
+    """The newsletter form loads reCAPTCHA and posts to EmailOctopus only when a visitor subscribes."""
+    return sorted(p.path for p in pages if p.loads("recaptcha") or p.loads("eocampaign1.com"))
+
+
 def check_inline_scripts(pages):
     return ["%s (%d KB)" % (p.path, p.largest_inline_script // 1000) for p in pages
             if p.largest_inline_script > MAX_INLINE_SCRIPT]
@@ -644,7 +650,8 @@ def main(public_dir):
         "15. every citation has a local reference target": check_citation_targets(pages),
         "16. glossary links reach existing English terms": check_glossary_links(pages),
         "17. every breadcrumb link has a target": [p.path for p in pages if any(not h.strip() for h in p.crumb_links)],
-        "19. the clusters illustration holds no tab stop and its links have targets": check_clusters_map(public_dir),
+        "19. no page loads EmailOctopus or reCAPTCHA before a visitor subscribes": check_third_party_forms(pages),
+        "21. the clusters illustration holds no tab stop and its links have targets": check_clusters_map(public_dir),
     }
     conditional = check_conditional_assets(pages)
     results["3. conditional highlight.js / mermaid loading"] = [

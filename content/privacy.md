@@ -1,9 +1,10 @@
 ---
 title: Privacy policy
 date: 2026-11-03
+lastmod: 2026-11-10
 ---
 
-*Last updated: 3 November 2026*
+*Last updated: 10 November 2026*
 
 This policy explains what happens to personal data when you use forrt.org, why, and what rights you have.
 
@@ -19,6 +20,7 @@ We have not appointed a data protection officer.
 
 - Google Analytics runs only if you allow it.
 - Videos, forms, calendars and teaching activities load only if you click to load them.
+- The newsletter form contacts EmailOctopus and Google reCAPTCHA only when you press **Subscribe**.
 - Our host receives your IP address and other technical data each time you open a page, and so do the services listed below on the few pages that use them.
 
 ## When you visit a page
@@ -45,7 +47,7 @@ Esri, Posit, Salesforce (including Heroku) and Altmetric's US affiliate each sta
 | `forrt_analytics_choice` | forrt.org | Remembers whether you allowed or declined analytics | 1 year | Necessary to honour your choice |
 | `_ga`, `_ga_2BTFVS6SPM` | Google Analytics | Distinguish visitors and sessions | Up to 2 years, shorter in some browsers | Your consent |
 
-Embedded services may set their own cookies once you load them.
+Embedded services may set their own cookies once you load them, and so may Google reCAPTCHA when you subscribe to the [newsletter](#newsletter).
 
 ## Analytics
 
@@ -74,7 +76,7 @@ Videos use the `youtube-nocookie.com` player.
 
 ## If you contact us or send us something
 
-**Newsletter.** The sign-up form loads from EmailOctopus (Three Hearts Digital Ltd, 86-90 Paul Street, London EC2A 4NE, UK), and also loads Google reCAPTCHA for spam protection. If you subscribe, EmailOctopus stores your email address as our processor, under the data processing schedule in its terms, and we use it to send the newsletter. Its [sub-processors are listed here](https://emailoctopus.com/legal/subprocessors). The legal basis is your consent (Art. 6(1)(a) GDPR). You can unsubscribe through the link in every email, and we then remove you from the list. The European Commission has found that the UK provides adequate protection.
+<span id="newsletter"></span>**Newsletter.** The sign-up form is part of our pages and loads nothing from other services until you press **Subscribe**. Pressing it loads Google reCAPTCHA, which checks for spam: Google receives your IP address and browser data, may set cookies, and handles this data under its [privacy policy](https://policies.google.com/privacy). Your email address then goes to EmailOctopus (Three Hearts Digital Ltd, 86-90 Paul Street, London EC2A 4NE, UK), which stores it as our processor, under the data processing schedule in its terms, and we use it to send the newsletter. Its [sub-processors are listed here](https://emailoctopus.com/legal/subprocessors). The legal basis is your consent (Art. 6(1)(a) GDPR). You can unsubscribe through the link in every email, and we then remove you from the list. The European Commission has found that the UK provides adequate protection.
 
 **Forms and feedback.** Our Google Forms and the feedback forms on glossary and other pages store what you enter, and any email address you choose to give, in Google Sheets. We hold this in our forrtproject@gmail.com account, and use it to act on your message or application. We keep it for as long as we need it for that purpose, and then delete it. The legal basis is our legitimate interest in improving our resources and running our programmes (Art. 6(1)(f) GDPR), or your consent where a form asks for it. Google stores this data and may process it in the USA, as described under Analytics.
 

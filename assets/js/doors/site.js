@@ -118,29 +118,81 @@ if (searchDialog) {
   if (shared) openSearch(shared);
 }
 
-// The newsletter form comes from EmailOctopus and loads only when a visitor asks for it. The
-// embed writes itself in beside this script, which it finds by its data-form attribute.
-document.querySelectorAll('[data-newsletter-src]').forEach((box) => {
-  const open = box.querySelector('.newsletter-open');
-  const status = box.querySelector('.newsletter-status');
-  open.addEventListener('click', () => {
-    open.disabled = true;
-    status.textContent = 'Loading the form.';
-    const embed = document.createElement('script');
-    embed.src = box.dataset.newsletterSrc;
-    embed.dataset.form = box.dataset.newsletterId;
-    embed.onload = () => {
-      open.remove();
-      box.querySelector('.newsletter-note')?.remove();
-      status.textContent = '';
-      box.querySelector('input[type=email]')?.focus();
-    };
-    embed.onerror = () => {
-      embed.remove();
-      open.disabled = false;
-      status.textContent = 'The form did not load. Try again, or ask to join at info@forrt.org.';
-    };
-    box.append(embed);
+// Newsletter sign-up (layouts/partials/doors/newsletter.html). Nothing loads from elsewhere until
+// a visitor presses Subscribe. Then Google reCAPTCHA loads, as EmailOctopus requires, and the form
+// posts the address to EmailOctopus the way its own embed does.
+let recaptcha;
+const loadRecaptcha = () => {
+  recaptcha ??= new Promise((resolve, reject) => {
+    window.forrtRecaptchaReady = () => resolve(window.grecaptcha);
+    const script = document.createElement('script');
+    script.src = 'https://www.google.com/recaptcha/api.js?onload=forrtRecaptchaReady&render=explicit';
+    script.async = true;
+    script.onerror = () => { recaptcha = null; script.remove(); reject(new Error('reCAPTCHA did not load')); };
+    document.head.append(script);
+  });
+  return recaptcha;
+};
+
+document.querySelectorAll('.newsletter-form').forEach((form) => {
+  const button = form.querySelector('.newsletter-submit');
+  const status = form.querySelector('.newsletter-status');
+  const email = form.querySelector('input[type=email]');
+  let widget;
+  let solved;
+  const say = (text, error) => {
+    status.textContent = text;
+    status.classList.toggle('is-error', Boolean(error));
+  };
+  const token = async () => {
+    const grecaptcha = await loadRecaptcha();
+    if (widget === undefined) {
+      const holder = document.createElement('div');
+      form.append(holder);
+      widget = grecaptcha.render(holder, {
+        sitekey: form.dataset.newsletterSitekey, size: 'invisible', badge: 'inline', isolated: true,
+        callback: (value) => solved?.resolve(value),
+        'error-callback': () => solved?.reject(new Error('reCAPTCHA failed')),
+      });
+      holder.hidden = true;
+    }
+    return new Promise((resolve, reject) => {
+      solved = { resolve, reject };
+      grecaptcha.execute(widget);
+    });
+  };
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    if (!form.reportValidity()) return;
+    button.disabled = true;
+    say('Subscribing…');
+    try {
+      const body = new URLSearchParams();
+      form.querySelectorAll('input[name]').forEach((input) => body.set(input.name, input.value.trim()));
+      // Covers a reCAPTCHA script that stalls as well as a challenge the visitor closes.
+      body.set('recaptcha-response', await Promise.race([
+        token(),
+        new Promise((resolve, reject) => setTimeout(() => reject(new Error('reCAPTCHA timed out')), 120000)),
+      ]));
+      const reply = await (await fetch(form.action, { method: 'POST', mode: 'cors', cache: 'no-cache', body })).json();
+      if (reply.success) {
+        form.classList.add('is-done');
+        say('Thanks for subscribing! Look out for FORRT news in your inbox.');
+        status.focus();
+        return;
+      }
+      const code = reply.error?.code;
+      say(code === 'INVALID_PARAMETERS'
+        ? 'That email address does not look right. Please check it and try again.'
+        : 'Sorry, that did not work. Please try again, or ask to join at info@forrt.org.', true);
+      if (code === 'INVALID_PARAMETERS') email.focus();
+    } catch {
+      say('Sorry, that did not work. Please try again, or ask to join at info@forrt.org.', true);
+    } finally {
+      button.disabled = false;
+      if (widget !== undefined) window.grecaptcha?.reset(widget);
+    }
   });
 });
 

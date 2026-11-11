@@ -154,7 +154,12 @@ jobs:
         continue-on-error: true
         run: |
           pip install --quiet playwright==1.63.0 pillow
-          playwright install --with-deps chromium
+          # The runner image already has Chromium's libraries; --with-deps adds fonts from the
+          # Ubuntu mirror. When the mirror is unreachable, install the browser without them.
+          playwright install --with-deps chromium || {
+            echo "::warning::Could not install Chromium's system packages; installing the browser without them"
+            playwright install chromium
+          }
           python3 scripts/rebrand/check_design.py public --base "$PREVIEW_BASE"
 
       - name: Accessibility rules in a browser (axe-core, by WCAG level)

@@ -51,3 +51,4 @@ pedagogies/004-thomas-rhys-evans/index.html  # Content review (nexus-pedagogies-
 welcome/index.html         # Content review (sol-welcome-counters): description drops the outdated list of teams
 about/teams/index.html     # Content review (community-teams-intro-grammar): description's list of purposes made grammatical
 educators-corner/018-accessible-feedback-in-research/index.html  # Review of #1078: its authors are listed one per entry, so its author data changes
+privacy/index.html  # #1096: the policy describes the native newsletter form, so its 'Last updated' description and modified time change
