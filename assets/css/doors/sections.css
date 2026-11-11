@@ -2,7 +2,7 @@
 .article-layout .doc-section{margin:0 0 36px}
 .article-layout .doc-section:last-child{margin-bottom:0}
 .article-layout .doc-section>h2:first-child{margin-top:0}
-.article-layout .section-lede{font:500 21px/1.4 var(--display)}
+.article-layout .section-lede{font:400 19px/1.5 var(--text);color:var(--ink)}
 .article-layout .doc-section-tinted{padding:22px 24px;background:var(--surface);border-radius:var(--r-large)}
 .article-layout .doc-section-tinted:nth-of-type(4n+1){background:var(--edu-bg)}
 .article-layout .doc-section-tinted:nth-of-type(4n+2){background:var(--res-bg)}
