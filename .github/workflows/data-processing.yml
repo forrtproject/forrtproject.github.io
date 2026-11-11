@@ -6,8 +6,8 @@ name: Data Processing
 # 
 # Triggers:
 # - Scheduled: daily at midnight UTC. On scheduled runs some steps run less often:
-#   FReD citation on Sundays; contributor analysis and the GA data PR on the 1st of the month.
-# - Manual (workflow_dispatch): skips the Sunday and 1st-of-month guards, so those steps run too.
+#   contributor analysis and the GA data PR on the 1st of the month.
+# - Manual (workflow_dispatch): skips the 1st-of-month guards, so those steps run too.
 #   GA data is downloaded only if `regenerate_ga` is set; glossary terms are regenerated
 #   (and a PR opened) only if `regenerate_glossary` is set.
 #
@@ -448,22 +448,15 @@ jobs:
           fi
 
       #========================================
-      # Update FReD citation (Weekly or Manual)
+      # Update FReD citation on every run: the artifact's static/data/ replaces
+      # the deployed copy, so a skipped fetch would ship main's older committed
+      # file. The cite_us and FLoRA pages render it at build time.
       #========================================
       - name: Update FReD Citation
         id: fred-citation
         continue-on-error: true  # Continue even if this step fails
         run: |
           echo "=== Updating FReD citation ==="
-          
-          # Check if it's a Sunday (day 0) OR manually triggered
-          CURRENT_DAY_OF_WEEK=$(date +%u)
-          if [ "$CURRENT_DAY_OF_WEEK" != "7" ] && [ "${{ github.event_name }}" != "workflow_dispatch" ]; then
-            echo "ℹ️ Skipping FReD citation update (not Sunday and not manual trigger)"
-            exit 0
-          fi
-          
-          echo "🔄 Running FReD citation update..."
           python3 scripts/update_fred_citation.py
           
           if [ -f "static/data/fred_citation.txt" ]; then
@@ -596,12 +589,6 @@ jobs:
             mkdir -p /tmp/generated-resources/static/data
             cp static/data/fred_citation.txt /tmp/generated-resources/static/data/fred_citation.txt
           fi
-
-          # Copy updated FLoRA index if it exists
-          if [ -f content/replication-hub/flora/_index.md ]; then
-            mkdir -p /tmp/generated-resources/flora
-            cp content/replication-hub/flora/_index.md /tmp/generated-resources/flora/_index.md
-          fi
           
           # Copy additional generated files
           mkdir -p /tmp/generated-resources/contributor-analysis
@@ -645,7 +632,7 @@ jobs:
           pushd "$WORKTREE_DIR"
 
           # Ensure target directories exist
-          mkdir -p content/curated_resources content/contributors data content/contributor-analysis content/publications static/data content/replication-hub/flora
+          mkdir -p content/curated_resources content/contributors data content/contributor-analysis content/publications static/data
 
           # Remove old generated resource files (but keep _index.md)
           find content/curated_resources -type f ! -name '_index.md' -delete 2>/dev/null || true
@@ -663,9 +650,6 @@ jobs:
           fi
           if [ -f /tmp/generated-resources/static/data/fred_citation.txt ]; then
             cp /tmp/generated-resources/static/data/fred_citation.txt static/data/fred_citation.txt
-          fi
-          if [ -f /tmp/generated-resources/flora/_index.md ]; then
-            cp /tmp/generated-resources/flora/_index.md content/replication-hub/flora/_index.md
           fi
           if [ -f /tmp/generated-resources/summaries.json ]; then
             cp /tmp/generated-resources/summaries.json data/summaries.json
@@ -723,7 +707,6 @@ jobs:
             git add data/pub_cards.json 2>/dev/null || true
             git add data/get_involved_projects.json 2>/dev/null || true
             git add static/data/fred_citation.txt 2>/dev/null || true
-            git add content/replication-hub/flora/_index.md 2>/dev/null || true
             git add data/summaries.json 2>/dev/null || true
             git add data/newsletters.json static/newsletters/ 2>/dev/null || true
             git add content/contributor-analysis/ 2>/dev/null || true
