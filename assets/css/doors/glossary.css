@@ -26,8 +26,8 @@ main:lang(ar) .glossary-layout .references-list li{direction:ltr;text-align:left
 }
 main:lang(ar) .glossary-layout .reading h1 bdi{text-align:right}
 @media(max-width:1000px){.term-list-jump{display:block;width:fit-content}}
-/* Languages on a term page as the hub's pills; the separators between the old inline links are not drawn. */
-.glossary-layout .language-switcher{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:0}
+/* Languages on a term page as the hub's pills. */
+.glossary-layout .language-switcher{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
 .glossary-layout .language-switcher strong{font-size:16px;margin-inline-end:4px}
 .glossary-layout .language-switcher a{font-size:16px;padding:5px 12px;border:1.5px solid var(--line);border-radius:999px;background:#fff;color:var(--link);text-decoration:none}
 .glossary-layout .language-switcher a:hover{border-color:var(--link)}

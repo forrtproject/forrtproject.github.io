@@ -525,18 +525,21 @@ def check_tower_game(browser, base, expect):
 
 
 def check_phone_reading(browser, base, failures):
-    """On a phone the chat launcher stays in the gutter, and an embed's panel is not clipped."""
+    """On a phone the chat launcher is a small button in the bottom corner, and an embed's panel is not clipped."""
     expect = expectation(failures, "phone reading")
     page = new_page(browser, 390)
     page.goto(base + "glossary/english/abstract_bias/", wait_until="load")
     page.wait_for_timeout(300)
     page.evaluate("scrollBy(0, 500)")
     page.wait_for_timeout(500)
-    shown = page.evaluate("innerWidth - document.getElementById('just-os-btn').getBoundingClientRect().left")
-    expect(shown <= 24, f"the launcher takes {shown:.0f} px of the screen's width, limit 24")
+    box = page.evaluate("(() => { const r = document.getElementById('just-os-btn').getBoundingClientRect();"
+                        " return {w: r.width, right: innerWidth - r.right, bottom: innerHeight - r.bottom}; })()")
+    expect(box["w"] <= 64 and box["right"] <= 24 and box["bottom"] <= 40,
+           f"the launcher is a button of at most 64 px in the bottom corner ({box['w']:.0f} px wide, "
+           f"{box['right']:.0f} px from the side, {box['bottom']:.0f} px from the bottom)")
     page.locator("#just-os-btn").tap()
     page.wait_for_timeout(3000)
-    expect(page.evaluate("document.getElementById('just-os-window')?.style.display === 'flex'"), "tapping the tab opens the chat")
+    expect(page.evaluate("document.getElementById('just-os-window')?.style.display === 'flex'"), "tapping the launcher opens the chat")
     page.goto(base + "neurodiversity-lessonbank/implicit_bias/", wait_until="load")
     page.wait_for_timeout(300)
     panels = page.locator(".click-to-load").count()

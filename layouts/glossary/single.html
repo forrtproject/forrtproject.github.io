@@ -150,7 +150,7 @@
   {{ if gt (len $availableLanguages) 0 }}
     <strong>Also available in:</strong>
     {{ range $index, $item := $availableLanguages }}
-      <a href="{{ $item.page.RelPermalink }}">{{ $item.lang | title }}</a>{{ if lt $index (sub (len $availableLanguages) 1) }} | {{ end }}
+      <a href="{{ $item.page.RelPermalink }}">{{ $item.lang | title }}</a>
     {{ end }}
   {{ end }}
   {{/* On a phone the list of terms follows the whole entry, so the top of the page links to it. */}}
