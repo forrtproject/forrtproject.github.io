@@ -38,6 +38,17 @@ class IssueMonthTests(unittest.TestCase):
         self.assertEqual(sync.issue_month(campaign("January Newsletter", "2026-12-30T08:00:00+00:00")),
                          (2027, 1))
 
+    def test_year_in_the_name_wins(self):
+        self.assertEqual(sync.issue_month(campaign("December 2026 Newsletter", "2027-03-01T08:00:00+00:00")),
+                         (2026, 12))
+
+    def test_unparsed_newsletter_names_are_reported(self):
+        with mock.patch.object(sync, "warn") as warn:
+            self.assertEqual(sync.select_issues([
+                campaign("Newsletter for May", "2026-05-01T08:00:00+00:00"),
+                campaign("Test", "2026-05-01T08:00:00+00:00")]), {})
+        warn.assert_called_once()
+
     def test_other_campaigns_are_ignored(self):
         self.assertIsNone(sync.issue_month(campaign("Test", "2026-10-01T08:00:00+00:00")))
         self.assertIsNone(sync.issue_month(campaign("Newsletter for May", "2026-05-01T08:00:00+00:00")))

@@ -11,11 +11,13 @@ Outputs (under --root, default the repository root):
     static/newsletters/YYYY-MM/index.html standalone copy of each issue
     static/newsletters/images/*.webp      the issues' images, converted to WebP
 
-An issue is a sent campaign named "<Month> Newsletter" (anything may follow,
-e.g. "June Newsletter Edit"). The month comes from that name, because issues
-often go out early in the following month; the year is the sending year,
-moved back or forward one where the named month and the sending month are
-far apart (a December issue sent in January). If several campaigns name the
+An issue is a sent campaign named "<Month> Newsletter" or "<Month> <Year>
+Newsletter" (anything may follow, e.g. "June Newsletter Edit"); other sent
+campaigns with "newsletter" in their name are reported as warnings. The month
+comes from that name, because issues often go out early in the following
+month. Without a year in the name, the year is the sending year, moved back or
+forward one where the named month and the sending month are far apart (a
+December issue sent in January). If several campaigns name the
 same month, the one sent last is the issue, so a corrected re-send replaces
 the original.
 
@@ -60,7 +62,7 @@ ARCHIVE_DIR = Path("static/newsletters")
 IMAGE_DIR = ARCHIVE_DIR / "images"
 
 MONTHS = {name.lower(): number for number, name in enumerate(calendar.month_name) if name}
-ISSUE_NAME = re.compile(r"^\s*(%s)\s+newsletter\b" % "|".join(MONTHS), re.IGNORECASE)
+ISSUE_NAME = re.compile(r"^\s*(%s)\s+(?:(\d{4})\s+)?newsletter\b" % "|".join(MONTHS), re.IGNORECASE)
 IMG_SRC = re.compile(r'(<img\b[^>]*?\ssrc=")([^"]+)(")', re.IGNORECASE)
 IMG_TAG = re.compile(r"<img\b[^>]*>", re.IGNORECASE)
 
@@ -85,6 +87,8 @@ def issue_month(campaign):
     if not match:
         return None
     month = MONTHS[match.group(1).lower()]
+    if match.group(2):
+        return int(match.group(2)), month
     sent = datetime.fromisoformat(campaign["sent_at"].replace("Z", "+00:00"))
     year = sent.year
     if month - sent.month > 6:      # December issue sent in January
@@ -99,6 +103,10 @@ def select_issues(campaigns):
     issues = {}
     for campaign in campaigns:
         key = issue_month(campaign)
+        if not key and campaign.get("status") == "sent" \
+                and "newsletter" in (campaign.get("name") or "").lower():
+            warn("Campaign %r was sent but its name gives no issue month (expected "
+                 "'<Month> Newsletter'); it is not archived." % campaign.get("name"))
         if key and (key not in issues or campaign["sent_at"] > issues[key]["sent_at"]):
             issues[key] = campaign
     return issues
