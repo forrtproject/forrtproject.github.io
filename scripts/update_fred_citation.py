@@ -68,7 +68,9 @@ def save_citation(citation, output_path):
         # Post-process citation to match required format
         # Replace DOI URL with HTML link and append note if not present
         # Find DOI URL (assume starts with https://doi.org/)
-        citation = citation.strip()
+        # Escape angle brackets so the upstream text cannot add markup; the
+        # pages insert this file as HTML. Only the DOI link and note below are HTML.
+        citation = citation.strip().replace("<", "&lt;").replace(">", "&gt;")
         # Remove any trailing note
         citation_main = citation
         note = "* These authors contributed equally to this work."
