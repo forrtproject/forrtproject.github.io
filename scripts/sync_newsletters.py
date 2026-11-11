@@ -5,7 +5,7 @@ Source: the EmailOctopus API v2 (https://api.emailoctopus.com), read with the
 EMAILOCTOPUS_API_KEY environment variable. EmailOctopus's own web versions are
 signed links that the API does not return, so each issue is hosted here.
 
-Outputs (under --root, default the repository root):
+Outputs:
 
     data/newsletters.json                 one entry per issue, newest first
     static/newsletters/YYYY-MM/index.html standalone copy of each issue
@@ -33,10 +33,9 @@ HTML contains an unknown merge tag) is skipped with a warning and retried on
 the next run.
 
 Usage:
-    EMAILOCTOPUS_API_KEY=... python3 scripts/sync_newsletters.py [--root DIR]
+    EMAILOCTOPUS_API_KEY=... python3 scripts/sync_newsletters.py
 """
 
-import argparse
 import calendar
 from datetime import datetime
 import hashlib
@@ -195,7 +194,7 @@ def page_html(campaign, year, month, root):
 
 
 def finish_page(page, year, month, preview, root):
-    """Make an email's HTML a self-contained forrt.org page (also used for Mailchimp issues)."""
+    """Make an email's HTML a self-contained forrt.org page."""
     label = "%s %d" % (calendar.month_name[month], year)
 
     # Local copies of every image, each with an alt attribute.
@@ -247,7 +246,6 @@ def entry_for(campaign, year, month):
         "year": year,
         "month": calendar.month_name[month],
         "month_number": month,
-        "subject": campaign.get("subject") or "",
         "sent_at": campaign["sent_at"],
         "url": "/newsletters/%04d-%02d/" % (year, month),
     }
@@ -281,11 +279,8 @@ def load_existing(path):
         return []
 
 
-def main(argv=None):
-    parser = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
-    args = parser.parse_args(argv)
-    root = args.root
+def main():
+    root = Path(__file__).resolve().parents[1]
     data_path = root / DATA_FILE
     existing = load_existing(data_path)
     print("Existing archive: %d issues" % len(existing))

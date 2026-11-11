@@ -15,7 +15,7 @@ Rebuilt by `data-processing.yml`, daily unless noted; a manual dispatch rebuilds
 | `data/featured_resources.json`, `data/pub_cards.json`, `data/filter_tags.json` | `scripts/build_featured_data.py` | Recommendations form + Publications sheet |
 | `data/get_involved_projects.json` | `scripts/build_get_involved.py` | Get Involved sheet (fallback `scripts/get_involved/projects.csv`) |
 | `data/ga_data.json` | `scripts/download_ga_data.py` | Google Analytics (credentials in CI only) |
-| `data/newsletters.json`, `static/newsletters/` (hosted copies of each EmailOctopus issue and its images; the Mailchimp issues up to June 2025 in the same folder are committed one-off copies from `scripts/import_mailchimp_newsletters.py`) | `scripts/sync_newsletters.py`, which adds new issues to the copy restored from `build-resources` (a later resend for an archived month replaces it) | EmailOctopus campaigns (API key in CI only) |
+| `data/newsletters.json`, `static/newsletters/` (hosted copies of each EmailOctopus issue and its images; the Mailchimp issues up to June 2025 in the same folder are committed one-off copies, made with [this import script](https://gist.github.com/LukasWallrich/33609793657f2f722275e6a5a36596a1)) | `scripts/sync_newsletters.py`, which adds new issues to the copy restored from `build-resources` (a later resend for an archived month replaces it) | EmailOctopus campaigns (API key in CI only) |
 | `content/contributors/tenzing.md` | `scripts/forrt_contribs/tenzing.py` | Tenzing sheets |
 | `static/data/fred_citation.txt` | `scripts/update_fred_citation.py` (Sundays) | FReD-data repo |
 | `content/contributor-analysis/` | `content/contributor-analysis/*.Rmd` (1st of the month) | Tenzing cache + Google Sheets |
