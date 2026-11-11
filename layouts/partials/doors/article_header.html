@@ -24,6 +24,8 @@
   {{ with .Params.subtitle }}<p class="standfirst">{{ . | markdownify | emojify }}</p>{{ end }}
   <div class="byline">
     {{ with .Params.authors }}<span class="byline-authors">{{ partial "page_metadata_authors" $page }}</span>{{ end }}
+    {{/* The side card carries the date on a wide screen; on a narrow one it would come after the article. */}}
+    {{ if and (in (slice "post" "educators-corner" "pedagogies") .Type) (not .Date.IsZero) }}<time class="byline-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time>{{ end }}
     {{ if eq .Type "post" }}<span class="byline-time">{{ .ReadingTime }} {{ i18n "minute_read" }}</span>{{ end }}
   </div>
   {{ partial "page_links_div.html" $page }}

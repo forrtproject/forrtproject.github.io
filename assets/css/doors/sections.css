@@ -165,3 +165,10 @@
 #just-os-fullpage{border-color:var(--line)!important;border-radius:var(--r-large)!important;box-shadow:none!important}
 @media(max-width:760px){#just-os-fullpage{height:min(60vh,520px)!important;min-height:380px}}
 @media(max-width:760px){.article-layout .article-style .citation-container{width:min(100%,220px)}}
+/* The chat page on a phone opens with the chat: the introduction and credits follow it. */
+#just-os-fullpage{margin-bottom:24px!important}
+@media(max-width:1000px){
+  .doc-section:has(>#just-os-fullpage){display:flex;flex-direction:column}
+  .doc-section>#just-os-fullpage{order:-1;margin-top:4px!important}
+}
+@media(max-width:760px){#just-os-fullpage{height:min(52vh,460px)!important;min-height:340px}}

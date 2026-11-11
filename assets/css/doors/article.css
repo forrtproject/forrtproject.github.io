@@ -274,3 +274,7 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .booklet-open .btn{margin-inline-end:10px}
 @media(max-width:1000px){.profile-head .profile-org{font-weight:400}.profile-head ul.network-icon{margin:4px 0 0}.profile-head ul.network-icon a{text-decoration:none}}
 .article-layout .article-style .btn.btn-primary,.article-layout .article-style .btn.btn-lg{padding:10px 22px!important;font-size:17px!important}
+.resource-facts{display:none}
+@media(max-width:1000px){.resource-facts{display:block;margin:-6px 0 22px;font-size:16px;line-height:1.5;color:var(--soft)}.resource-facts strong{color:var(--ink);font-weight:600}}
+.byline-date{display:none}
+@media(max-width:1000px){.article-layout .byline-date{display:inline}}
