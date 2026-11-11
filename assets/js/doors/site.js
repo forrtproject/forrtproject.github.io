@@ -178,10 +178,7 @@ document.querySelectorAll('.newsletter-form').forEach((form) => {
       const reply = await (await fetch(form.action, { method: 'POST', mode: 'cors', cache: 'no-cache', body })).json();
       if (reply.success) {
         form.classList.add('is-done');
-        // EmailOctopus reports PENDING when the list asks subscribers to confirm by email.
-        say(reply.contact?.status === 'PENDING'
-          ? 'Nearly done: we have emailed you a link to confirm your subscription.'
-          : 'Thanks for subscribing! Look out for FORRT news in your inbox.');
+        say('Thanks for subscribing! Look out for FORRT news in your inbox.');
         status.focus();
         return;
       }
