@@ -3,13 +3,25 @@
 // posts the address to EmailOctopus the way its own embed does.
 (() => {
   let recaptcha;
+  let recaptchaTries = 0;
   const loadRecaptcha = () => {
     recaptcha ??= new Promise((resolve, reject) => {
-      window.forrtRecaptchaReady = () => resolve(window.grecaptcha);
       const script = document.createElement('script');
-      script.src = 'https://www.google.com/recaptcha/api.js?onload=forrtRecaptchaReady&render=explicit';
+      // A failed or stalled load clears the cache, so the next Subscribe tries again. Each retry
+      // gets its own URL; otherwise the browser waits on the stalled request again.
+      const fail = () => {
+        clearTimeout(timer);
+        recaptcha = null;
+        script.remove();
+        reject(new Error('reCAPTCHA did not load'));
+      };
+      const timer = setTimeout(fail, 120000);
+      window.forrtRecaptchaReady = () => { clearTimeout(timer); resolve(window.grecaptcha); };
+      script.src = 'https://www.google.com/recaptcha/api.js?onload=forrtRecaptchaReady&render=explicit'
+        + (recaptchaTries ? `&retry=${recaptchaTries}` : '');
+      recaptchaTries += 1;
       script.async = true;
-      script.onerror = () => { recaptcha = null; script.remove(); reject(new Error('reCAPTCHA did not load')); };
+      script.onerror = fail;
       document.head.append(script);
     });
     return recaptcha;
