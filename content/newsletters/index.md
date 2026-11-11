@@ -1,14 +1,9 @@
 ---
 title: Newsletter Archives
-# Issues sent through EmailOctopus (from September 2025) are listed from
-# data/newsletters.json, which scripts/sync_newsletters.py writes. List only
-# earlier issues here; a url starting with "/" is a copy hosted on forrt.org.
-# A year listed here sets that year's colour.
+# Issues sent before September 2025 (Mailchimp). Later issues come from
+# data/newsletters.json, which data processing generates.
 newsletters:
-  - year: 2026
-    color: "#2c7a7b"
   - year: 2025
-    color: "#3b82c4"
     issues:
       - month: "June"
         url: "/newsletters/2025-06/"
@@ -23,7 +18,6 @@ newsletters:
       - month: "January"
         url: "/newsletters/2025-01/"
   - year: 2024
-    color: "#c05621"
     issues:
       - month: "November"
         url: "/newsletters/2024-11/"
@@ -44,7 +38,6 @@ newsletters:
       - month: "January"
         url: "/newsletters/2024-01/"
   - year: 2023
-    color: "#6b46c1"
     issues:
       - month: "November"
         url: "/newsletters/2023-11/"
@@ -55,7 +48,6 @@ newsletters:
       - month: "January"
         url: "/newsletters/2023-01/"
   - year: 2022
-    color: "#b83280"
     issues:
       - month: "August"
         url: "/newsletters/2022-08/"
