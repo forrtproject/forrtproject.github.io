@@ -13,7 +13,7 @@ This script:
 !! content/about/steering-committee/index.md IS GENERATED — DO NOT EDIT IT DIRECTLY !!
     Each run rewrites the whole file. Pictures are downloaded to
     content/authors/<name>/avatar.webp only when that file is missing. Fix a member's details in the steering committee or personal-details sheet
-    (SC_CSV_URL, PERSONAL_CSV_URL below), then re-run and commit the output. No
+    (SC_CSV_URL, PERSONAL_CSV_URL, or PERSONAL_FALLBACK_CSV_URL below), then re-run and commit the output. No
     workflow runs this script.
 """
 
