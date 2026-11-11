@@ -10,7 +10,7 @@
         "Null hypothesis",
         "Null Hypothesis Significance Testing (NHST)",
         "*p*-value",
-        "Type I error **Incorrect definition:** Statistical significance describes the likelihood of the observed result against chance (regardless of the null hypotheses)"
+        "Type I error"
     ],
     "references": [
         "Cassidy, S. A., Dimova, R., Giguère, B., Spence, J. R., & Stanley, D. J. (2019). Failing grade: 89% of introduction-to-psychology textbooks that define or explain statistical significance do so incorrectly. <i>Advances in Methods and Practices in Psychological Science</i>, <i>2</i>(3), 233–239. https://doi.org/10.1177/2515245919858072",
@@ -36,5 +36,5 @@
     "aliases": [
         "/glossary/statistical_significance"
     ],
-    "lastmod": "2026-11-09"
+    "lastmod": "2026-11-11"
 }
