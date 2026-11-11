@@ -190,6 +190,7 @@
             {{ with index $index $key }}
             {{ $related_links = $related_links | append (printf "<a class='term-chip' href='%s'>%s</a>" .RelPermalink ($term_str | htmlEscape | markdownify)) }}
             {{ else }}
+            {{/* No page of its own yet: a plain chip. */}}
             {{ $related_links = $related_links | append (printf "<span class='term-chip'>%s</span>" ($term_str | htmlEscape | markdownify | string)) }}
             {{ end }}
             {{ end }}

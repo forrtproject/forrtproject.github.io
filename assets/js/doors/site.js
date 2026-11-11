@@ -477,7 +477,11 @@ if (termFilter && termGrid) {
   const none = document.querySelector('.glossary-none');
   termFilter.addEventListener('input', () => {
     const query = termFilter.value.trim().toLowerCase();
-    terms.forEach((term) => { term.hidden = !term.dataset.term.includes(query); });
+    // Names first; when no name matches, the definitions (a related term may be named only inside them).
+    const byName = terms.some((term) => term.dataset.term.includes(query));
+    terms.forEach((term) => {
+      term.hidden = !(byName ? term.dataset.term : term.textContent.toLowerCase()).includes(query);
+    });
     groups.forEach((group) => { group.hidden = !group.querySelector('li:not([hidden])'); });
     none.hidden = groups.some((group) => !group.hidden);
     // Letters with no match left are dimmed and leave the tab order.
@@ -490,6 +494,9 @@ if (termFilter && termGrid) {
     const shown = terms.filter((term) => !term.hidden).length;
     document.querySelector('.glossary-count').textContent = query && shown ? `${shown} of ${terms.length} terms` : '';
   });
+  // /glossary/english/?q=… opens with that search, so a related term without its own page can link here.
+  const asked = new URLSearchParams(location.search).get('q');
+  if (asked) { termFilter.value = asked; termFilter.dispatchEvent(new Event('input')); }
   // "How to cite" links to the closed disclosure at the end; following the link opens it.
   const about = document.getElementById('about-the-glossary');
   const openAbout = () => { if (location.hash === '#about-the-glossary') about.open = true; };

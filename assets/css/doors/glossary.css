@@ -90,3 +90,4 @@ a.term-chip:hover{background:var(--link);color:#fff}
   .glossary-layout .article-style .term-definition{padding:14px 16px}
   .glossary-layout .article-style .term-definition p{font-size:18px}
 }
+.glossary-letters{border-bottom:1px solid var(--line)}
