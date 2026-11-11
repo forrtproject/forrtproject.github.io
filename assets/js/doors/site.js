@@ -492,6 +492,35 @@ if (termFilter && termGrid) {
   if (current) list.scrollTop = current.offsetTop - list.offsetTop - list.clientHeight / 3;
 }
 
+// A search over the list items after it (shortcodes/list_filter.html): items match on their text, and a
+// heading whose lists are all hidden hides too, so the page reads as the matches.
+const listFilter = document.querySelector('.list-filter');
+if (listFilter) {
+  listFilter.hidden = false;
+  const input = listFilter.querySelector('input');
+  const count = listFilter.querySelector('.list-filter-count');
+  const sections = [];
+  let section = null;
+  for (let node = listFilter.nextElementSibling; node; node = node.nextElementSibling) {
+    if (/^H[1-3]$/.test(node.tagName)) { section = {heading: node, items: []}; sections.push(section); }
+    else if (section && /^(UL|OL)$/.test(node.tagName)) section.items.push(...node.children);
+  }
+  input.addEventListener('input', () => {
+    const query = input.value.trim().toLowerCase();
+    let shown = 0;
+    sections.forEach(({heading, items}) => {
+      let any = false;
+      items.forEach((item) => {
+        const match = !query || item.textContent.toLowerCase().includes(query);
+        item.hidden = !match;
+        if (match) { any = true; shown += 1; }
+      });
+      heading.hidden = Boolean(query) && !any;
+    });
+    count.textContent = !query ? '' : shown ? `${shown} ${shown === 1 ? 'entry matches' : 'entries match'}` : 'Nothing matches.';
+  });
+}
+
 // A table wider than the screen scrolls in its own box, so keyboard users must be able to focus it.
 // Closed sections and late fonts change the answer after load.
 function focusableTable(table) {

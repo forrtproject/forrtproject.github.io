@@ -51,7 +51,11 @@ subtitle = ""
  css_class = ""
 +++
 
-<br>
+{{% alert note %}}
+
+**This project has now concluded** and has been succeeded by multiple projects within the [FORRT Replication Hub](https://forrt.org/replication-hub/). The outcomes and framework of this initiative are discussed in our recent preprint: [Tracking and Mainstreaming Replications in the Social, Cognitive, and Behavioral Sciences](https://osf.io/preprints/metaarxiv/ad2w6_v1).
+
+{{% /alert %}}
 
 ## **Summary**
 
@@ -73,7 +77,9 @@ Please cite this source as Hartmann H, Azevedo F, Röseler L, Wallrich L, Aldoh 
 
 <br>
 
-## **Motivation**
+{{< spoiler text="About this project: motivation, history and how to contribute" >}}
+
+### **Motivation**
 
 The purpose of collating these reversal effects in social science is to encourage educators to incorporate replications of these effects into their students' project (e.g., third-year, thesis, course work) to provide them the opportunity to experience the research process directly, assess their ability to perform and report scientific research, and to help evaluate the robustness of the original study, thereby also helping them become good consumers of research. The below crowdsourced and community-curated resource aims to satisfy three of [FORRT’s Goals](https://forrt.org/about/mission/):
 
@@ -90,9 +96,7 @@ and four of [FORRT’s Mission](https://forrt.org/about/mission/):
 
 <br>
 
-## **Current Status**
-
-**This project has now concluded** and has been succeeded by multiple projects within the [FORRT Replication Hub](https://forrt.org/replication-hub/). The outcomes and framework of this initiative are discussed in our recent preprint: [Tracking and Mainstreaming Replications in the Social, Cognitive, and Behavioral Sciences](https://osf.io/preprints/metaarxiv/ad2w6_v1).
+### **Current Status**
 
 The original project was organized in five stages: 
 
@@ -126,7 +130,7 @@ The original project was organized in five stages:
 
 <br>
 
-## **How to contribute?**
+### **How to contribute?**
 
 This specific reversals project has concluded, and its work has been integrated into the broader [FORRT Replication Hub](https://forrt.org/replication-hub/). To contribute replication data, please submit new entries through the [Replication Hub](/replication-hub/submit/) or contact Lukas Röseler at lukas.roeseler@uni-muenster.de for any questions.
 
@@ -134,9 +138,13 @@ All **past or current project contributors** are listed at the [bottom of this p
 
 <br><br>
 
+{{< /spoiler >}}
+
 ---------------
 # **All Effects** (*sorted by discipline*)
 ---------------
+
+{{< list_filter label="Search the effects" placeholder="e.g. priming, Bargh, ego depletion" >}}
 
 You can find a list of all effects we are working on [here](https://docs.google.com/spreadsheets/d/1IY56xdDmoU9VasdE0sry2xvsGFkWPrqbKXAs1Rw-9LA/edit#gid=0). To search whether an effect already exists in our collection, use Ctrl-F or the search function together with a keyword in relation to the effect (e.g. "Macbeth" or "Priming"). Please note that not all effects in the spreadsheet are listed below, as this is a work in progress (last site update: 13th of July 2023)
 
