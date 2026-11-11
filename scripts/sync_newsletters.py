@@ -63,7 +63,9 @@ IMAGE_DIR = ARCHIVE_DIR / "images"
 
 MONTHS = {name.lower(): number for number, name in enumerate(calendar.month_name) if name}
 ISSUE_NAME = re.compile(r"^\s*(%s)\s+(?:(\d{4})\s+)?newsletter\b" % "|".join(MONTHS), re.IGNORECASE)
-IMG_SRC = re.compile(r'(<img\b[^>]*?\ssrc=")([^"]+)(")', re.IGNORECASE)
+IMG_SRC = re.compile(r"""(<img\b[^>]*?\ssrc\s*=\s*)(["'])(.*?)\2""", re.IGNORECASE | re.DOTALL)
+# Markup an email never needs; an issue containing any of it is not published.
+EXECUTABLE = re.compile(r"<\s*(script|iframe|object|embed|form)\b|\son\w+\s*=|javascript:", re.IGNORECASE)
 IMG_TAG = re.compile(r"<img\b[^>]*>", re.IGNORECASE)
 
 
@@ -79,6 +81,10 @@ def warn(message):
 # ---------------------------------------------------------------------------
 # Choosing issues
 
+def sent_time(campaign):
+    return datetime.fromisoformat(campaign["sent_at"].replace("Z", "+00:00"))
+
+
 def issue_month(campaign):
     """Return (year, month) for a newsletter campaign, or None for any other campaign."""
     if campaign.get("status") != "sent" or not campaign.get("sent_at"):
@@ -89,7 +95,7 @@ def issue_month(campaign):
     month = MONTHS[match.group(1).lower()]
     if match.group(2):
         return int(match.group(2)), month
-    sent = datetime.fromisoformat(campaign["sent_at"].replace("Z", "+00:00"))
+    sent = sent_time(campaign)
     year = sent.year
     if month - sent.month > 6:      # December issue sent in January
         year -= 1
@@ -107,7 +113,7 @@ def select_issues(campaigns):
                 and "newsletter" in (campaign.get("name") or "").lower():
             warn("Campaign %r was sent but its name gives no issue month (expected "
                  "'<Month> Newsletter'); it is not archived." % campaign.get("name"))
-        if key and (key not in issues or campaign["sent_at"] > issues[key]["sent_at"]):
+        if key and (key not in issues or sent_time(campaign) > sent_time(issues[key])):
             issues[key] = campaign
     return issues
 
@@ -187,7 +193,12 @@ def page_html(campaign, year, month, root):
         raise ArchiveError("unknown merge tags %s" % ", ".join(leftover))
 
     # Local copies of every image, each with an alt attribute.
-    page = IMG_SRC.sub(lambda m: m.group(1) + local_image(m.group(2), root) + m.group(3), page)
+    if EXECUTABLE.search(page):
+        raise ArchiveError("HTML contains scripts, frames, forms or event handlers")
+    page = IMG_SRC.sub(lambda m: '%s"%s"' % (m.group(1), local_image(m.group(3), root)), page)
+    remote = [tag for tag in IMG_TAG.findall(page) if re.search(r"srcset|https?:", tag, re.I)]
+    if remote:
+        raise ArchiveError("images that could not be copied: %s" % remote[0][:120])
     page = IMG_TAG.sub(lambda m: m.group(0) if re.search(r"\salt=", m.group(0), re.I)
                        else m.group(0)[:4] + ' alt=""' + m.group(0)[4:], page)
 
@@ -208,7 +219,8 @@ def page_html(campaign, year, month, root):
         "text-align:center;padding:10px 16px;background:#fefdf6}"
         ".forrt-archive-bar a{color:#980000}</style>\n"
     ) % (html.escape(description), url)
-    page, titled = re.subn(r"<title>\s*</title>", "<title>%s</title>" % html.escape(title), page, count=1)
+    page, titled = re.subn(r"<title\b[^>]*>.*?</title\s*>", lambda m: "<title>%s</title>" % html.escape(title),
+                           page, count=1, flags=re.IGNORECASE | re.DOTALL)
     if not titled:
         head = "<title>%s</title>\n" % html.escape(title) + head
     page, headed = re.subn(r"</head>", head + "</head>", page, count=1, flags=re.IGNORECASE)

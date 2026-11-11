@@ -1,4 +1,5 @@
 """Run with python3 -m unittest discover -s scripts/tests -p test_sync_newsletters.py."""
+import io
 import json
 from pathlib import Path
 import sys
@@ -55,7 +56,7 @@ class IssueMonthTests(unittest.TestCase):
         self.assertIsNone(sync.issue_month(campaign("May Newsletter", None, status="draft")))
 
     def test_latest_send_of_a_month_wins(self):
-        first = campaign("June Newsletter", "2026-07-01T08:01:45+00:00", cid="original")
+        first = campaign("June Newsletter", "2026-07-02T13:00:00+02:00", cid="original")
         edit = campaign("June Newsletter Edit", "2026-07-02T12:02:35+00:00", cid="edit")
         self.assertEqual(sync.select_issues([edit, first])[(2026, 6)]["id"], "edit")
 
@@ -82,6 +83,7 @@ class PageTests(unittest.TestCase):
         self.assertIn("You can unsubscribe at any time.", page)
         self.assertIn('href="https://emailoctopus.com/"', page)
         self.assertIn("<title>FORRT Newsletter, October 2026</title>", page)
+        self.assertEqual(page.count("<title>"), 1)
         self.assertIn('<meta name="description" content="The FORRT newsletter for October 2026. Catch up.">', page)
         self.assertIn('<link rel="canonical" href="https://forrt.org/newsletters/2026-10/">', page)
         self.assertIn('href="/newsletters/"', page)
@@ -104,6 +106,48 @@ class PageTests(unittest.TestCase):
         self.assertTrue((self.root / "static/newsletters/2026-09/index.html").exists())
         self.assertFalse((self.root / "static/newsletters/2026-10").exists())
         warn.assert_called_once()
+
+
+class ImageTests(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.tmp.cleanup)
+        self.root = Path(self.tmp.name)
+
+    def png(self, size=(2000, 100)):
+        from PIL import Image
+        out = io.BytesIO()
+        Image.new("RGBA", size, (200, 0, 0, 255)).save(out, "PNG")
+        return out.getvalue()
+
+    def test_images_are_copied_as_resized_webp(self):
+        from PIL import Image
+        html = EMAIL.replace('src="https://gallery.example/b.png"', "src='https://gallery.example/b.png'")
+        with mock.patch.object(sync, "request", return_value=self.png()) as fetch:
+            page = sync.page_html(campaign("October Newsletter", "2026-10-30T09:00:48+00:00", html=html),
+                                  2026, 10, self.root)
+        self.assertEqual(fetch.call_count, 2)
+        self.assertNotIn("gallery.example", page)
+        files = sorted((self.root / "static/newsletters/images").iterdir())
+        self.assertEqual(len(files), 2)
+        with Image.open(files[0]) as image:
+            self.assertEqual((image.format, image.width), ("WEBP", sync.MAX_IMAGE_WIDTH))
+
+    def test_failed_download_blocks_the_issue_and_is_retried(self):
+        failing = mock.patch.object(sync, "request", side_effect=OSError("404"))
+        with failing, mock.patch.object(sync, "warn"):
+            entries = sync.sync([campaign("October Newsletter", "2026-10-30T09:00:48+00:00")], self.root, [])
+        self.assertEqual(entries, [])
+        self.assertFalse((self.root / "static/newsletters/2026-10").exists())
+        with mock.patch.object(sync, "request", return_value=self.png()):
+            entries = sync.sync([campaign("October Newsletter", "2026-10-30T09:00:48+00:00")], self.root, [])
+        self.assertEqual([e["month"] for e in entries], ["October"])
+
+    def test_executable_markup_blocks_the_issue(self):
+        html = EMAIL.replace("<h1>More</h1>", '<h1 onclick="x()">More</h1>')
+        with self.assertRaises(sync.ArchiveError):
+            sync.page_html(campaign("October Newsletter", "2026-10-30T09:00:48+00:00", html=html),
+                           2026, 10, self.root)
 
 
 class MainTests(unittest.TestCase):
