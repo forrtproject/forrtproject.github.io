@@ -27,7 +27,7 @@ import re
 import threading
 
 from PIL import Image
-from playwright.sync_api import sync_playwright
+from playwright.sync_api import Error as PlaywrightError, sync_playwright
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SIZES = {
@@ -63,16 +63,24 @@ def shoot(browser, url, size, max_height, banner):
     page = context.new_page()
     page.route("**/*", lambda route: route.abort() if BLOCKED.search(route.request.url) else route.continue_())
     page.goto(url, wait_until="load", timeout=120000)
-    page.evaluate("document.fonts.ready")
-    page.wait_for_timeout(800)
-    page.wait_for_load_state("load")  # some pages forward themselves by script
-    # Scroll through once so lazy images load, then back to the top.
-    page.evaluate("""async () => {
-        for (let y = 0; y < document.documentElement.scrollHeight; y += innerHeight) {
-            scrollTo(0, y); await new Promise(r => setTimeout(r, 60));
-        }
-        scrollTo(0, 0);
-    }""")
+    # Some pages forward themselves by script, which destroys the page mid-call; try again
+    # on the page it forwarded to.
+    for attempt in range(3):
+        try:
+            page.wait_for_load_state("load")
+            page.evaluate("document.fonts.ready")
+            page.wait_for_timeout(800)
+            # Scroll through once so lazy images load, then back to the top.
+            page.evaluate("""async () => {
+                for (let y = 0; y < document.documentElement.scrollHeight; y += innerHeight) {
+                    scrollTo(0, y); await new Promise(r => setTimeout(r, 60));
+                }
+                scrollTo(0, 0);
+            }""")
+            break
+        except PlaywrightError:
+            if attempt == 2:
+                raise
     page.wait_for_timeout(400)
     overflow = page.evaluate("document.documentElement.scrollWidth - document.documentElement.clientWidth")
     height = page.evaluate("document.documentElement.scrollHeight")
