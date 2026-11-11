@@ -3,7 +3,7 @@ title: "FORRT AI in Metascience Online Conference"
 crumb_parent: "About FORRT"
 type: plain_page
 url: "/ai-metascience/"
-hide_title: true
+subtitle: "Programme and recordings of three days of talks and workshops, held online on 28–30 September 2026."
 hide_date: true
 summary: "Programme and recordings of the FORRT AI in Metascience Online Conference, 28–30 September 2026: 35+ talks and workshops over 3 days, most of them on YouTube."
 sharing_description: "Watch the talks from the FORRT AI in Metascience Online Conference, 28–30 September 2026."
@@ -15,6 +15,13 @@ image:
 ---
 
 <style>
+/* On a wide screen the title and the banner share the first row; everything else spans the page below them. */
+@media (min-width: 1001px) {
+  .reading:has(.am-facts) { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 520px); column-gap: 56px; align-items: center; }
+  .reading:has(.am-facts) > * { grid-column: 1 / -1; }
+  .reading:has(.am-facts) > .article-head { grid-column: 1; grid-row: 1; }
+  .reading:has(.am-facts) > .article-image { grid-column: 2; grid-row: 1; margin: 0; }
+}
 /* Palette, drawn from the banner mosaic. Each day sets --am-accent (rules and
    borders), --am-deep (text and filled pills, 4.5:1 or better on white and on
    the day tint) and --am-tint (selected tab and hover backgrounds). */
