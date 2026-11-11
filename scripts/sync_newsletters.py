@@ -207,9 +207,10 @@ def finish_page(page, year, month, preview, root):
     page = IMG_TAG.sub(lambda m: m.group(0) if re.search(r"\salt=", m.group(0), re.I)
                        else m.group(0)[:4] + ' alt=""' + m.group(0)[4:], page)
 
-    # The site's page has the only <h1>; the email's section headings keep h1 sizing.
+    # The archive bar holds the page's only <h1>; the email's headings keep h1 sizing.
     page = re.sub(r"<h1\b", "<h2 data-email-h1", page, flags=re.IGNORECASE)
     page = re.sub(r"</h1\s*>", "</h2>", page, flags=re.IGNORECASE)
+    page = tidy_page(page)
 
     title = "FORRT Newsletter, %s" % label
     description = "The FORRT newsletter for %s." % label
@@ -222,7 +223,8 @@ def finish_page(page, year, month, preview, root):
         "<style>h2[data-email-h1]{font-size:2em}"
         ".forrt-archive-bar{font-family:Arial,Helvetica,sans-serif;font-size:14px;"
         "text-align:center;padding:10px 16px;background:#fefdf6}"
-        ".forrt-archive-bar a{color:#980000}</style>\n"
+        ".forrt-archive-bar a{color:#980000}"
+        ".forrt-archive-bar h1{display:inline;font-size:inherit;font-weight:normal;margin:0}</style>\n"
     ) % (html.escape(description), url)
     page, titled = re.subn(r"<title\b[^>]*>.*?</title\s*>", lambda m: "<title>%s</title>" % html.escape(title),
                            page, count=1, flags=re.IGNORECASE | re.DOTALL)
@@ -230,11 +232,51 @@ def finish_page(page, year, month, preview, root):
         head = "<title>%s</title>\n" % html.escape(title) + head
     page, headed = re.subn(r"</head>", head + "</head>", page, count=1, flags=re.IGNORECASE)
     bar = ('<div class="forrt-archive-bar"><a href="/newsletters/">&larr; FORRT newsletter archive</a>'
-           " &middot; %s</div>" % label)
+           " &middot; <h1>%s</h1></div>" % html.escape(title))
     page, bodied = re.subn(r"(<body\b[^>]*>)", r"\1" + bar.replace("\\", "\\\\"), page, count=1,
                            flags=re.IGNORECASE)
     if not (headed and bodied):
         raise ArchiveError("HTML has no <head> or <body>")
+    return page
+
+
+# Accessible names for links whose only content is an image with alt="".
+LINK_NAMES = [
+    (re.compile(r"^https://forrt\.org/?$"), "FORRT homepage"),
+    (re.compile(r"^https://forrt\.org/about/get-involved/#calendar$"), "FORRT community calendar"),
+    (re.compile(r"^https://forrt\.org/about/get-involved/?$"), "Get involved with FORRT"),
+    (re.compile(r"^https://join\.slack\.com/t/forrt/"), "Join FORRT on Slack"),
+]
+
+
+def name_image_link(match):
+    """Give an image-only link with empty alt text a name from its destination."""
+    tag, inner = match.group(1), match.group(2)
+    if re.sub(r"<[^>]+>|&nbsp;|\s", "", inner) or re.search(r'\salt="[^"]*[^"\s]', inner):
+        return match.group(0)
+    href = re.search(r'\shref="([^"]*)"', tag)
+    for pattern, name in LINK_NAMES:
+        if href and pattern.search(href.group(1)):
+            return tag + re.sub(r'\salt=""', ' alt="%s"' % name, inner, count=1) + "</a>"
+    return match.group(0)
+
+
+def tidy_page(page):
+    """Document-level fixes for an archived email. Safe to apply more than once."""
+    # One HTML5 doctype, an English page language and a zoomable viewport.
+    page = re.sub(r"\A\s*(<!doctype[^>]*>\s*)+", "<!doctype html>\n", page, flags=re.IGNORECASE)
+    page = re.sub(r"<html\b(?![^>]*\slang=)", '<html lang="en"', page, count=1, flags=re.IGNORECASE)
+    page = re.sub(r'<meta\s+name="viewport"[^>]*>', "", page, flags=re.IGNORECASE)
+    page = re.sub(r"(<head\b[^>]*>)", r'\1<meta name="viewport" content="width=device-width, initial-scale=1">',
+                  page, count=1, flags=re.IGNORECASE)
+    # Only the last </body> closes the document.
+    closes = len(re.findall(r"</body\s*>", page, flags=re.IGNORECASE))
+    if closes > 1:
+        page = re.sub(r"</body\s*>", "", page, count=closes - 1, flags=re.IGNORECASE)
+    # Links: no surrounding whitespace in href (a trailing &nbsp; breaks DOIs), HTTPS for forrt.org.
+    page = re.sub(r'(\shref=")(?:\s|\xa0|&nbsp;)*(.*?)(?:\s|\xa0|&nbsp;)*"', r'\1\2"', page)
+    page = re.sub(r'(\shref=")http://(?:www\.)?forrt\.org', r"\1https://forrt.org", page)
+    page = re.sub(r"(<a\b[^>]*>)(.*?)</a>", name_image_link, page, flags=re.IGNORECASE | re.DOTALL)
     return page
 
 
