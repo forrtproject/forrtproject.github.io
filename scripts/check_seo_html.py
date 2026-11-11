@@ -40,7 +40,8 @@ Hard checks (exit 1 if any fails):
   17. Every link in a visible breadcrumb trail (nav.crumbs) has a non-empty href,
      so a section that is not rendered cannot leave an empty link in the trail.
   18. No glossary page's <title> or <h1> shows Markdown emphasis as typed, e.g. "(*p*)".
-  19. Cluster pages render publication-title markup (<i>, <em>, <scp>) instead of
+  19. No page loads EmailOctopus or reCAPTCHA before a visitor subscribes.
+  20. Cluster pages render publication-title markup (<i>, <em>, <scp>) instead of
      showing it as literal or escaped text, and at least one cluster page exists.
 
 Report-only sections (never fail): pages with no <h1>, the
