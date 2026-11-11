@@ -29,7 +29,14 @@
     {{- if eq (int .year) $year -}}
       {{- with .color }}{{ $color = . }}{{ end -}}
       {{- range .issues -}}
-        {{- if not (in $months .month) }}{{ $issues = $issues | append . }}{{ end -}}
+        {{- if not (in $months .month) -}}
+          {{- if strings.HasPrefix .url "/" -}}
+            {{- /* A copy hosted on forrt.org, such as the Mailchimp issues. */ -}}
+            {{- $issues = $issues | append (dict "month" .month "url" (relURL .url) "local" true) -}}
+          {{- else -}}
+            {{- $issues = $issues | append . -}}
+          {{- end -}}
+        {{- end -}}
       {{- end -}}
     {{- end -}}
   {{- end -}}
