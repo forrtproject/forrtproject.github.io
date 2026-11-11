@@ -196,7 +196,7 @@
   .glossary-feedback-chevron {
     flex: none;
     color: var(--soft);
-    font-size: 0.8rem;
+    font-size: 16px;
     transition: transform 0.2s ease;
   }
 
@@ -212,7 +212,7 @@
   .glossary-feedback-intro {
     margin: 0 0 1rem;
     color: var(--soft);
-    font-size: 0.9rem;
+    font-size: 16px;
     line-height: 1.5;
   }
 
@@ -221,15 +221,14 @@
   }
 
   .glossary-feedback-form label {
-    font-size: 0.8rem;
+    font-size: 15px;
     font-weight: 600;
     margin-bottom: 0.35rem;
   }
 
-  /* Bootstrap's default .form-control font-size (1rem) reads oversized next
-     to this form's compact label/intro text — halved to match. */
+  /* Fields at 16 px, so phones do not zoom in on them and the text meets the site's 15 px minimum. */
   .glossary-feedback-form .form-control {
-    font-size: 0.7rem;
+    font-size: 16px;
   }
 
   .glossary-feedback-form .form-control:focus {
@@ -262,7 +261,7 @@
   }
 
   .glossary-feedback-status {
-    font-size: 0.85rem;
+    font-size: 15px;
     color: var(--edu);
   }
 
