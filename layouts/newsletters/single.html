@@ -17,25 +17,21 @@
 {{- range $i, $year := $years -}}
   {{- $color := index $palette (mod $i (len $palette)) -}}
   {{- $issues := slice -}}
-  {{- $months := slice -}}
   {{- range $synced -}}
     {{- if eq (int .year) $year -}}
       {{- $new := and (eq .id $newestID) ((time .sent_at).After (now.AddDate 0 -2 0)) -}}
       {{- $issues = $issues | append (dict "month" .month "url" (relURL .url) "local" true "new" $new) -}}
-      {{- $months = $months | append .month -}}
     {{- end -}}
   {{- end -}}
   {{- range $listed -}}
     {{- if eq (int .year) $year -}}
       {{- with .color }}{{ $color = . }}{{ end -}}
       {{- range .issues -}}
-        {{- if not (in $months .month) -}}
-          {{- if strings.HasPrefix .url "/" -}}
-            {{- /* A copy hosted on forrt.org, such as the Mailchimp issues. */ -}}
-            {{- $issues = $issues | append (dict "month" .month "url" (relURL .url) "local" true) -}}
-          {{- else -}}
-            {{- $issues = $issues | append . -}}
-          {{- end -}}
+        {{- if strings.HasPrefix .url "/" -}}
+          {{- /* A copy hosted on forrt.org, such as the Mailchimp issues. */ -}}
+          {{- $issues = $issues | append (dict "month" .month "url" (relURL .url) "local" true) -}}
+        {{- else -}}
+          {{- $issues = $issues | append . -}}
         {{- end -}}
       {{- end -}}
     {{- end -}}
