@@ -1,5 +1,10 @@
 ---
 title: Newsletter Archives
+# Issues sent through EmailOctopus are added automatically from
+# data/newsletters.json (scripts/sync_newsletters.py) and link to copies hosted
+# on forrt.org; for those months that data replaces the entries below, which
+# remain as a fallback. Enter only issues sent elsewhere here. A year listed
+# here sets that year's colour.
 newsletters:
   - year: 2026
     color: "#2c7a7b"

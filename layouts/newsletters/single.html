@@ -1,5 +1,41 @@
 {{- define "main" -}}
-{{ $newsletters := .Params.newsletters }}
+{{- /* Issues come from two sources: data/newsletters.json, generated from
+       EmailOctopus by scripts/sync_newsletters.py and hosted on forrt.org,
+       and the front matter, which holds earlier issues and the year colours.
+       The newest issue carries a "New" badge for two months after sending. */ -}}
+{{- $listed := .Params.newsletters | default slice -}}
+{{- $synced := index (hugo.Data.newsletters | default dict) "issues" | default slice -}}
+{{- $palette := slice "#2c7a7b" "#3b82c4" "#c05621" "#6b46c1" "#b83280" -}}
+{{- $years := slice -}}
+{{- range $synced }}{{ $years = $years | append (int .year) }}{{ end -}}
+{{- range $listed }}{{ $years = $years | append (int .year) }}{{ end -}}
+{{- $years = sort (uniq $years) "value" "desc" -}}
+{{- $newestID := "" -}}
+{{- with $synced }}{{ $newestID = (index . 0).id }}{{ end -}}
+{{- $newsletters := slice -}}
+{{- range $i, $year := $years -}}
+  {{- $color := index $palette (mod $i (len $palette)) -}}
+  {{- $issues := slice -}}
+  {{- $months := slice -}}
+  {{- range $synced -}}
+    {{- if eq (int .year) $year -}}
+      {{- $new := and (eq .id $newestID) ((time .sent_at).After (now.AddDate 0 -2 0)) -}}
+      {{- $issues = $issues | append (dict "month" .month "url" (relURL .url) "local" true "new" $new) -}}
+      {{- $months = $months | append .month -}}
+    {{- end -}}
+  {{- end -}}
+  {{- range $listed -}}
+    {{- if eq (int .year) $year -}}
+      {{- with .color }}{{ $color = . }}{{ end -}}
+      {{- range .issues -}}
+        {{- if not (in $months .month) }}{{ $issues = $issues | append . }}{{ end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+  {{- with $issues -}}
+    {{- $newsletters = $newsletters | append (dict "year" $year "color" $color "issues" .) -}}
+  {{- end -}}
+{{- end }}
 
 <div class="wrap">
 <article class="nla-page">
@@ -38,7 +74,7 @@
 
         <div class="nla-grid">
           {{ range $y.issues }}
-          <a href="{{ .url }}" target="_blank" rel="noopener"
+          <a href="{{ .url }}"{{ if not .local }} target="_blank" rel="noopener"{{ end }}
              class="nla-card" style="--nla-year-color: {{ $y.color }}"
              aria-label="Read {{ .month }} {{ $y.year }} newsletter">
             <div class="nla-card-accent"></div>
