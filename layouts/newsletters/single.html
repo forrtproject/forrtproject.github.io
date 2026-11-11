@@ -1,12 +1,13 @@
 {{- define "main" -}}
 {{- /* Issues come from two sources: data/newsletters.json, generated from
        EmailOctopus by scripts/sync_newsletters.py and hosted on forrt.org,
-       and the front matter, which holds earlier issues and the year colours.
+       and the front matter, which holds earlier issues. Each year keeps the
+       palette colour at its index modulo 5.
        The newest issue carries a "New" badge for two months after sending. */ -}}
 {{- $listed := .Params.newsletters | default slice -}}
 {{- $synced := index (hugo.Data.newsletters | default dict) "issues" | default slice -}}
 {{- $synced = sort $synced "sent_at" "desc" -}}
-{{- $palette := slice "#2c7a7b" "#3b82c4" "#c05621" "#6b46c1" "#b83280" -}}
+{{- $palette := slice "#3b82c4" "#2c7a7b" "#b83280" "#6b46c1" "#c05621" -}}
 {{- $years := slice -}}
 {{- range $synced }}{{ $years = $years | append (int .year) }}{{ end -}}
 {{- range $listed }}{{ $years = $years | append (int .year) }}{{ end -}}
@@ -14,8 +15,8 @@
 {{- $newestID := "" -}}
 {{- with $synced }}{{ $newestID = (index . 0).id }}{{ end -}}
 {{- $newsletters := slice -}}
-{{- range $i, $year := $years -}}
-  {{- $color := index $palette (mod $i (len $palette)) -}}
+{{- range $year := $years -}}
+  {{- $color := index $palette (mod $year (len $palette)) -}}
   {{- $issues := slice -}}
   {{- range $synced -}}
     {{- if eq (int .year) $year -}}
@@ -25,7 +26,6 @@
   {{- end -}}
   {{- range $listed -}}
     {{- if eq (int .year) $year -}}
-      {{- with .color }}{{ $color = . }}{{ end -}}
       {{- range .issues -}}
         {{- if strings.HasPrefix .url "/" -}}
           {{- /* A copy hosted on forrt.org, such as the Mailchimp issues. */ -}}
