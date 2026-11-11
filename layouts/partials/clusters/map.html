@@ -10,7 +10,8 @@
      scales to the column; "Open full size" shows it larger.
 
      The /clusters/ share image (content/clusters/FORRT_Clusters.webp) is a render of this map.
-     After changing the map or the clusters, rebuild and re-run scripts/render_clusters_share_image.py. */}}
+     After changing the map or the clusters, build the site and run
+     scripts/render_clusters_share_image.py <build-dir>. */}}
 {{ with hugo.Data.clusters_v4 }}{{ with .clusters }}
 {{ $clusters := . }}
 {{ $palette := (partial "clusters/colors.html").arrowColors }}
