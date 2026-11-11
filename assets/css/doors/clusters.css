@@ -946,7 +946,9 @@
 .clusters-map { margin: 1.75rem 0 0.5rem; }
 .clusters-map__frame { overflow: hidden; }
 .clusters-map__art { display: block; width: 100%; height: auto; font-family: var(--text); }
-.clusters-map__art text { fill: #fff; text-anchor: middle; pointer-events: none; }
+/* geometricPrecision: Chromium on Linux otherwise rounds each glyph to whole pixels, which sets the
+   text about 6% wider than the advance widths the build wraps it with (clusters/map_wrap.html). */
+.clusters-map__art text { fill: #fff; text-anchor: middle; pointer-events: none; text-rendering: geometricPrecision; }
 .clusters-map__line { fill: none; stroke: var(--soft); stroke-width: 2; stroke-linecap: round; }
 .clusters-map__seg path:first-of-type, .clusters-map__label rect, .clusters-map__pill rect { fill: var(--c); }
 .clusters-map__icon { fill: #fff; }
