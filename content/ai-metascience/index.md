@@ -15,7 +15,8 @@ image:
 ---
 
 <style>
-.am-actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 6px; }
+.am-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 18px 0 6px; }
+.am-actions-label { flex-basis: 100%; font-weight: 600; }
 /* On a wide screen the title and the banner share the first row; everything else spans the page below them. */
 @media (min-width: 1001px) {
   .reading:has(.am-facts) { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 520px); column-gap: 56px; align-items: center; }
@@ -420,7 +421,7 @@ image:
 
 How is AI changing the way research is done, checked and understood? The **FORRT AI in Metascience Online Conference** spent three days on that question, with 35+ talks and workshops from people who are studying it or building with it. Most talks are now on the [FORRT YouTube channel](https://youtube.com/@forrtproject9995), one playlist per day.
 
-<p class="am-actions"><a class="btn btn-primary" href="#recordings">Watch the recordings</a> <a class="btn btn-outline-primary" href="#programme">See the programme</a></p>
+<p class="am-actions"><span class="am-actions-label">Watch the recordings:</span> <a class="btn btn-primary" href="https://www.youtube.com/playlist?list=PLS3VdaYKcrew">Monday</a> <a class="btn btn-primary" href="https://www.youtube.com/playlist?list=PLSItTTcc91ac">Tuesday</a> <a class="btn btn-primary" href="https://www.youtube.com/playlist?list=PLZYxy57rykQU">Wednesday</a></p>
 
 <div class="am-facts">
 <div class="am-fact"><span class="am-fact-label">When</span><span class="am-fact-value">28–30 September 2026</span></div>

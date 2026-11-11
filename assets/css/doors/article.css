@@ -290,8 +290,11 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .article-layout .article-style .license-note .license-content{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 18px}
 .article-layout .article-style .license-note p{margin:0!important;font-size:16px!important;text-align:start!important}
 /* AWoP: the wheel follows the lead and opens full size; each material shows its purpose, with more in a disclosure. */
-.awop-wheel img{display:block;width:100%;max-width:320px;height:auto;margin:4px 0 6px}
-.article-layout .article-style .awop-wheel p{margin:0 0 18px}
+.article-layout .article-style .awop-wheel{float:right;width:200px;margin:4px 0 12px 24px;text-align:center}
+.awop-wheel img{display:block;width:100%;height:auto;margin:0 0 4px}
+.article-layout .article-style .awop-wheel p{margin:0;font-size:15px}
+@media(max-width:600px){.article-layout .article-style .awop-wheel{width:140px;margin-left:16px}}
+.article-layout .article-style .awop-wheel~h2{clear:both}
 .article-layout .article-style .awop-material{margin:0 0 12px;padding:14px 18px 4px;background:var(--surface);border-radius:var(--r-large)}
 .article-layout .article-style .awop-material p{margin:0 0 8px}
 .article-layout .article-style .awop-material .spoiler{margin:0 0 10px;background:none}

@@ -182,3 +182,4 @@
 @media(min-width:1440px){
   .article-layout:not(.article-layout-callouts) .article-style .get-involved-projects{width:calc(100% + 180px);grid-template-columns:repeat(2,minmax(0,1fr))}
 }
+.get-involved-card[hidden]{display:none}

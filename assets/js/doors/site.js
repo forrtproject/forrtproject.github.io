@@ -491,8 +491,14 @@ if (termFilter && termGrid) {
       letter.classList.toggle('is-empty', group.hidden);
       if (group.hidden) letter.setAttribute('tabindex', '-1'); else letter.removeAttribute('tabindex');
     });
+    document.querySelector('.glossary-clear').hidden = !query;
     const shown = terms.filter((term) => !term.hidden).length;
     document.querySelector('.glossary-count').textContent = query && shown ? `${shown} of ${terms.length} terms` : '';
+  });
+  document.querySelector('.glossary-clear').addEventListener('click', () => {
+    termFilter.value = '';
+    termFilter.dispatchEvent(new Event('input'));
+    termFilter.focus();
   });
   // /glossary/english/?q=… opens with that search, so a related term without its own page can link here.
   const asked = new URLSearchParams(location.search).get('q');
@@ -536,9 +542,28 @@ document.querySelectorAll('.article-style li > p > strong:first-child').forEach(
   name.before(chip, ' ');
 });
 
+// Get Involved: a search over the project cards.
+const projectFilter = document.querySelector('.project-filter');
+if (projectFilter) {
+  projectFilter.hidden = false;
+  const input = projectFilter.querySelector('input');
+  const count = projectFilter.querySelector('.list-filter-count');
+  const cards = [...document.querySelectorAll('.get-involved-card')];
+  input.addEventListener('input', () => {
+    const query = input.value.trim().toLowerCase();
+    let shown = 0;
+    cards.forEach((card) => {
+      const match = !query || card.textContent.toLowerCase().includes(query);
+      card.hidden = !match;
+      if (match) shown += 1;
+    });
+    count.textContent = !query ? '' : shown ? `${shown} of ${cards.length} projects` : 'No project matches.';
+  });
+}
+
 // A search over the list items after it (shortcodes/list_filter.html): items match on their text, and a
 // heading whose lists are all hidden hides too, so the page reads as the matches.
-const listFilter = document.querySelector('.list-filter');
+const listFilter = document.querySelector('.list-filter:not(.project-filter)');
 if (listFilter) {
   listFilter.hidden = false;
   const input = listFilter.querySelector('input');

@@ -88,3 +88,5 @@
 .pager-mini{display:flex;gap:16px;margin-inline-start:auto}
 .pager-mini a{color:var(--link);font-weight:600;text-decoration:underline;text-underline-offset:3px}
 .pager-mini[hidden]{display:none}
+.result-bar .pager-top{margin:0 0 0 auto}
+.pager-top[hidden]{display:none}

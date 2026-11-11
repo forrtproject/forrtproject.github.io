@@ -36,7 +36,7 @@
     <p><a href="{{ "tags/" | relURL }}">Show all tags</a></p>
   </div>
 
-  {{/* The twenty most used as larger pills, then every tag A to Z with letter links; the search above covers all of them. */}}
+  {{/* The twelve most used as larger pills, then every tag A to Z with letter links; the search above covers all of them. */}}
   {{ $sorted := sort $rows "tag" }}
   {{ $groups := slice }}{{ $current := "" }}{{ $items := slice }}
   {{ range $sorted }}
@@ -49,7 +49,7 @@
   <div id="tag-cloud">
     <section class="tag-top">
       <h2>Most used</h2>
-      <div class="tag-cloud">{{ range first 20 $rows }}<a href="{{ printf "tags/?tag=%s" (.tag | urlquery) | relURL }}">{{ .tag }} <span class="tag-count">{{ .count }}</span></a>{{ end }}</div>
+      <div class="tag-cloud">{{ range first 12 $rows }}<a href="{{ printf "tags/?tag=%s" (.tag | urlquery) | relURL }}">{{ .tag }} <span class="tag-count">{{ .count }}</span></a>{{ end }}</div>
     </section>
     <section class="tag-all">
       <h2>All tags, A to Z</h2>

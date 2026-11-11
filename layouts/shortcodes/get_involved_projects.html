@@ -6,6 +6,12 @@
 {{ $data := index hugo.Data "get_involved_projects" }}
 {{ $projects := $data.projects }}
 
+{{/* A search over the projects by name and description (site.js); hidden with JavaScript off. */}}
+<div class="list-filter project-filter" hidden>
+  <label for="project-filter-input">Search {{ len $projects }} projects</label>
+  <input type="search" id="project-filter-input" placeholder="e.g. data, teaching, replication" autocomplete="off">
+  <p class="list-filter-count" aria-live="polite"></p>
+</div>
 <div class="get-involved-projects">
   {{ range $projects }}
     <div class="get-involved-card">
