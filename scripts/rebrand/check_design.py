@@ -594,7 +594,8 @@ CLUSTERS_MAP_LAYOUT = """() => {
     const pad = link.classList.contains('clusters-map__pill') ? 14 : 16;  // padX and lpadX in map.html
     const over = [...link.querySelectorAll('tspan')].filter((t) => t.getComputedTextLength() > rect.width - 2 * pad + 0.5);
     return {rect, own: link.closest('g'), label: link.classList.contains('clusters-map__label'),
-      text: link.textContent.trim().slice(0, 40), over: over.map((t) => t.textContent)};
+      text: link.textContent.trim().slice(0, 40),
+      over: over.map((t) => `${t.textContent} (${t.getComputedTextLength().toFixed(1)} in ${(rect.width - 2 * pad).toFixed(1)})`)};
   });
   const meets = (a, b, gap) => a.x < b.x + b.width + gap && b.x < a.x + a.width + gap && a.y < b.y + b.height + gap && b.y < a.y + a.height + gap;
   const overlaps = [];
@@ -612,6 +613,7 @@ CLUSTERS_MAP_LAYOUT = """() => {
   });
   const list = document.querySelector('.clusters-map__list > ol');
   return {overflow: boxes.filter((b) => b.over.length).map((b) => b.over[0]), overlaps, crossings,
+    fonts: [...document.fonts].filter((f) => f.status === 'loaded').map((f) => `${f.family} ${f.weight}`),
     pills: boxes.filter((b) => !b.label).length, labels: boxes.filter((b) => b.label).length,
     listed: list ? [list.children.length, list.querySelectorAll('ul > li').length] : [0, 0]};
 }"""
@@ -635,7 +637,7 @@ def check_clusters_map(browser, base, failures):
     found = page.evaluate(CLUSTERS_MAP_LAYOUT)
     expect(not found.get("missing"), "/clusters/ has the illustration")
     if not found.get("missing"):
-        print(f"  {found['labels']} cluster labels, {found['pills']} sub-cluster pills")
+        print(f"  {found['labels']} cluster labels, {found['pills']} sub-cluster pills; fonts loaded: {found['fonts']}")
         listed = lambda items: f": {items[:3]}" if items else ""
         expect(not found["overflow"], "text fits its pill or label" + listed(found["overflow"]))
         expect(not found["overlaps"], "no pill or label overlaps another" + listed(found["overlaps"]))
