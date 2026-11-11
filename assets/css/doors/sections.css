@@ -178,3 +178,7 @@
 /* Project cards share one footer line of actions. */
 .get-involved-card{display:flex;flex-direction:column}
 .get-involved-card .get-involved-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:12px}
+/* The projects use the empty space beside the reading column, two to a row, as they did beside the call-out. */
+@media(min-width:1440px){
+  .article-layout:not(.article-layout-callouts) .article-style .get-involved-projects{width:calc(100% + 180px);grid-template-columns:repeat(2,minmax(0,1fr))}
+}

@@ -82,3 +82,11 @@ main:lang(ar) .post-nav-next .term-en{text-align:left}
 a.term-chip{border-color:var(--link);color:var(--link);text-decoration:none}
 a.term-chip:hover{background:var(--link);color:#fff}
 .glossary-layout .article-style .term-credit{color:var(--ink)}
+/* On a phone the hub's terms are compact rows with two lines of definition, and a term's definition panel is lighter. */
+@media(max-width:760px){
+  .term-group ul{gap:8px}
+  .term-group li{padding:10px 14px}
+  .term-group li p{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-top:4px;font-size:15px}
+  .glossary-layout .article-style .term-definition{padding:14px 16px}
+  .glossary-layout .article-style .term-definition p{font-size:18px}
+}
