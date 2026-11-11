@@ -8,7 +8,7 @@ Needs Playwright. Covers what a build comparison cannot: nothing runs wider than
 no italic type outside references, reading lines under 80 characters, no page's own button
 hidden, the sample pages' width as well as the designed screens', the home page's topic
 buttons within their position limit (checklist A14), its layout shift on a slow phone, the pause
-control over the castle and the quotes, and the behaviour of the resources directory. On a local build it also weighs the designed screens against the migration
+control over the castle and the quotes, the layout of the /clusters/ illustration, and the behaviour of the resources directory. On a local build it also weighs the designed screens against the migration
 plan's budgets. Those lines are a report and do not fail the check, because the theme's Bootstrap,
 jQuery and Font Awesome stay until Phase 3.
 """
@@ -584,6 +584,53 @@ def check_phone_reading(browser, base, failures):
             }""")
             expect(past <= 0, f"it also clears the open banner at {width} px ({past:.0f} px)")
         page.context.close()
+
+
+CLUSTERS_MAP_LAYOUT = """() => {
+  const art = document.querySelector('.clusters-map__art');
+  if (!art) return {missing: true};
+  const boxes = [...art.querySelectorAll('.clusters-map__pill, .clusters-map__label')].map((link) => {
+    const rect = link.querySelector('rect').getBBox();
+    const pad = link.classList.contains('clusters-map__pill') ? 14 : 16;  // padX and lpadX in map.html
+    const over = [...link.querySelectorAll('tspan')].filter((t) => t.getComputedTextLength() > rect.width - 2 * pad + 0.5);
+    return {rect, own: link.closest('g'), label: link.classList.contains('clusters-map__label'),
+      text: link.textContent.trim().slice(0, 40), over: over.map((t) => t.textContent)};
+  });
+  const meets = (a, b, gap) => a.x < b.x + b.width + gap && b.x < a.x + a.width + gap && a.y < b.y + b.height + gap && b.y < a.y + a.height + gap;
+  const overlaps = [];
+  boxes.forEach((a, i) => boxes.slice(i + 1).forEach((b) => { if (meets(a.rect, b.rect, 4)) overlaps.push(a.text + ' / ' + b.text); }));
+  const crossings = [];
+  art.querySelectorAll('.clusters-map__line').forEach((line) => {
+    const own = boxes.find((b) => b.label && b.own === line.closest('g'));
+    for (let at = 0; at < line.getTotalLength(); at += 3) {
+      const p = line.getPointAtLength(at);
+      const inside = (r, gap) => p.x >= r.x - gap && p.x <= r.x + r.width + gap && p.y >= r.y - gap && p.y <= r.y + r.height + gap;
+      if (own && inside(own.rect, 0)) break;
+      const hit = boxes.find((b) => b !== own && inside(b.rect, 3));
+      if (hit) { crossings.push(own.text + ' crosses ' + hit.text); break; }
+    }
+  });
+  return {overflow: boxes.filter((b) => b.over.length).map((b) => b.over[0]), overlaps, crossings,
+    pills: boxes.filter((b) => !b.label).length, labels: boxes.filter((b) => b.label).length};
+}"""
+
+
+def check_clusters_map(browser, base, failures):
+    """The /clusters/ illustration, laid out at build time: text fits its pill, nothing overlaps,
+    and no line runs through another box. Rerun when the Clusters Doc changes."""
+    expect = expectation(failures, "clusters map")
+    page = new_page(browser, 1440)
+    page.goto(base + "clusters/", wait_until="load")
+    page.evaluate("document.fonts.ready")
+    found = page.evaluate(CLUSTERS_MAP_LAYOUT)
+    expect(not found.get("missing"), "/clusters/ has the illustration")
+    if not found.get("missing"):
+        print(f"  {found['labels']} cluster labels, {found['pills']} sub-cluster pills")
+        listed = lambda items: f": {items[:3]}" if items else ""
+        expect(not found["overflow"], "text fits its pill or label" + listed(found["overflow"]))
+        expect(not found["overlaps"], "no pill or label overlaps another" + listed(found["overlaps"]))
+        expect(not found["crossings"], "no line runs through a pill or label" + listed(found["crossings"]))
+    page.context.close()
 
 
 SPECIALIST_SHOWN = """() => {
@@ -1391,6 +1438,8 @@ def main():
         check_directory_widths(browser, base, failures)
         print("Specialist resources on cluster pages")
         check_specialist_cards(browser, base, failures)
+        print("Clusters map")
+        check_clusters_map(browser, base, failures)
         print("Conference programme")
         check_conference(browser, base, failures)
         print("Final review fixes")

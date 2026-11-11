@@ -246,3 +246,28 @@ class BreadcrumbLinks(unittest.TestCase):
 if __name__ == "__main__":
     unittest.main()
 
+
+
+def clusters_map_failures(page):
+    with tempfile.TemporaryDirectory() as public:
+        (Path(public) / "clusters").mkdir()
+        (Path(public) / "clusters" / "index.html").write_text(page, encoding="utf-8")
+        return seo.check_clusters_map(public)
+
+
+class ClustersMapCheck(unittest.TestCase):
+    MAP = ('<figure class="clusters-map"><svg class="clusters-map__art" aria-hidden="true">'
+           '<g><a href="#cluster-1" tabindex="-1"><rect></rect><text><tspan>One</tspan></text></a></g></svg>'
+           '<details><summary>List</summary><ol><li><a href="#c1-a">A</a></li></ol></details></figure>'
+           '<section id="cluster-1"><div id="c1-a"></div></section><a href="#elsewhere">not in the map</a>')
+
+    def test_hidden_drawing_with_targets_passes(self):
+        self.assertEqual(clusters_map_failures(self.MAP), [])
+
+    def test_tab_stop_visible_drawing_or_missing_target_fails(self):
+        for change in (('tabindex="-1"', ""), ('aria-hidden="true"', ""), ('id="c1-a"', 'id="c1-b"')):
+            with self.subTest(change):
+                self.assertEqual(len(clusters_map_failures(self.MAP.replace(*change))), 1)
+
+    def test_page_without_the_drawing_fails(self):
+        self.assertTrue(clusters_map_failures("<p>No map</p>"))

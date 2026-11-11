@@ -40,6 +40,9 @@ Hard checks (exit 1 if any fails):
   17. Every link in a visible breadcrumb trail (nav.crumbs) has a non-empty href,
      so a section that is not rendered cannot leave an empty link in the trail.
   18. No glossary page's <title> or <h1> shows Markdown emphasis as typed, e.g. "(*p*)".
+  19. The /clusters/ illustration (svg.clusters-map__art) is hidden from assistive technology
+      and holds no tab stop (every link has tabindex="-1"), and every in-page link in the
+      clusters map reaches an id on the page.
 
 Report-only sections (never fail): pages with no <h1>, the
 site-wide share of images that carry both width and height, pages whose
@@ -568,6 +571,57 @@ def print_items(title, items):
         print("      +%d more" % (len(items) - MAX_LISTED))
 
 
+class ClustersMapParser(HTMLParser):
+    """Ids on the page, the illustration's attributes and links, and every in-page link in the map."""
+
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.ids, self.arts, self.art_links, self.map_hrefs = set(), [], [], []
+        self.stack = []  # (tag, in_art, in_map) for open elements
+
+    def handle_starttag(self, tag, attrs):
+        attrs = dict(attrs)
+        if attrs.get("id"):
+            self.ids.add(attrs["id"])
+        classes = (attrs.get("class") or "").split()
+        in_art = (self.stack[-1][1] if self.stack else False) or (tag == "svg" and "clusters-map__art" in classes)
+        in_map = (self.stack[-1][2] if self.stack else False) or "clusters-map" in classes
+        if tag == "svg" and "clusters-map__art" in classes:
+            self.arts.append(attrs)
+        if tag == "a" and in_art:
+            self.art_links.append(attrs)
+        if tag == "a" and in_map and (attrs.get("href") or "").startswith("#"):
+            self.map_hrefs.append(attrs["href"])
+        if tag not in ("path", "rect", "circle", "image", "tspan", "br", "img", "input", "meta", "link"):
+            self.stack.append((tag, in_art, in_map))
+
+    def handle_endtag(self, tag):
+        for i in range(len(self.stack) - 1, -1, -1):
+            if self.stack[i][0] == tag:
+                del self.stack[i:]
+                break
+
+
+def check_clusters_map(public_dir):
+    path = os.path.join(public_dir, "clusters", "index.html")
+    if not os.path.exists(path):
+        return []
+    parser = ClustersMapParser()
+    with open(path, encoding="utf-8", errors="replace") as handle:
+        parser.feed(handle.read())
+    failures = []
+    if not parser.arts:
+        failures.append("clusters/index.html: no svg.clusters-map__art")
+    failures += ["clusters/index.html: the illustration is not aria-hidden"
+                 for art in parser.arts if art.get("aria-hidden") != "true"]
+    stops = [a.get("href", "") for a in parser.art_links if a.get("tabindex") != "-1"]
+    if stops:
+        failures.append("clusters/index.html: %d links in the illustration are tab stops, e.g. %s" % (len(stops), stops[0]))
+    missing = sorted({h for h in parser.map_hrefs if unquote(h[1:]) not in parser.ids})
+    failures += ["clusters/index.html: %s has no target" % h for h in missing]
+    return failures
+
+
 def main(public_dir):
     pages = load_pages(public_dir)
     home = next((p for p in pages if p.path == "index.html"), None)
@@ -590,6 +644,7 @@ def main(public_dir):
         "15. every citation has a local reference target": check_citation_targets(pages),
         "16. glossary links reach existing English terms": check_glossary_links(pages),
         "17. every breadcrumb link has a target": [p.path for p in pages if any(not h.strip() for h in p.crumb_links)],
+        "19. the clusters illustration holds no tab stop and its links have targets": check_clusters_map(public_dir),
     }
     conditional = check_conditional_assets(pages)
     results["3. conditional highlight.js / mermaid loading"] = [
