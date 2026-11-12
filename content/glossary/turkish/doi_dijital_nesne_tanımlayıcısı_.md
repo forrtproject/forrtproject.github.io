@@ -3,10 +3,10 @@
     "en_title": "DOI (digital object identifier)",
     "title": "DOI (Dijital Nesne Tanımlayıcısı) [DOI (digital object identifier)]",
     "sort_key": "doi (dijital nesne tanizmlayizcizsiz) [doi (digital object identifier)]",
-    "definition": "Dijital Nesne Tanımlayıcıları (DOI; Digital Object Identifiers), yayınlar (ön-baskılar dahil), materyaller, veri setleri ve uzun metrajlı filmler gibi her türlü şeye atanabilen alfa-nümerik dizilerdir. DOI kullanımı yalnızca akademik veya bilimsel materyallerle sınırlı değildir. DOI’ler, “dijital ağlar üzerinde yönetilen bilgilerin kalıcı ve eyleme geçirilebilir bir şekilde tanımlanması ve birlikte çalışabilir şekilde paylaşılması için bir sistem sağlar” ([https://doi.org/hb.html](https://doi.org/hb.html)). DOI’leri yöneten birçok farklı kayıt ajansı vardır ancak araştırmacıların en sık karşılaşabileceği iki ajans Crossref and Datacite’tır.",
+    "definition": "Dijital Nesne Tanımlayıcıları (DOI; Digital Object Identifiers), yayınlar (ön-baskılar dahil), materyaller, veri setleri ve uzun metrajlı filmler gibi her türlü şeye atanabilen alfa-nümerik dizilerdir. DOI kullanımı yalnızca akademik veya bilimsel materyallerle sınırlı değildir. DOI’ler, “dijital ağlar üzerinde yönetilen bilgilerin kalıcı ve eyleme geçirilebilir bir şekilde tanımlanması ve birlikte çalışabilir şekilde paylaşılması için bir sistem sağlar” ([https://doi.org/hb.html](https://doi.org/hb.html)). DOI’leri yöneten birçok farklı kayıt ajansı vardır ancak araştırmacıların en sık karşılaşabileceği iki ajans Crossref ve DataCite’tır.",
     "related_terms": [
         "arXiv and BibTex",
-        "Crossref, Datacite, ISBN, ISO, ORCID",
+        "Crossref, DataCite, ISBN, ISO, ORCID",
         "Permalink"
     ],
     "references": [
@@ -34,5 +34,5 @@
     "translation_reviewed_by": [
         "Ege Emek"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-12"
 }

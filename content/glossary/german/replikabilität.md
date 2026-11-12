@@ -14,9 +14,10 @@
     ],
     "references": [
         "Barba, L. A. (2018). Terminologies for reproducible research. <i>arXiv Preprint arXiv:1802.03311</i>.",
+        "Claerbout, J. F., & Karrenbach, M. (1992). Electronic documents give reproducible research a new meaning. <i>SEG Technical Program Expanded Abstracts 1992</i>, 601–604. http://sepwww.stanford.edu/doku.php?id=sep:research:reproducible:seg92",
         "Crüwell, S., van Doorn, J., Etz, A., Makel, M. C., Moshontz, H., Niebaum, J. C., Orben, A., Parsons, S., & Schulte-Mecklenbeck, M. (2019). Seven Easy Steps to Open Science: An Annotated Reading List. <i>Zeitschrift Für Psychologie</i>, <i>227</i>(4), 237–248. https://doi.org/10.1027/2151-2604/a000387",
         "King, G. (1995). Replication, replication. <i>PS: Political Science & Politics</i>, <i>28</i>(3), 444–452. https://doi.org/10.2307/420301",
-        "National Academies of Sciences, Engineering, Medicine, & others. (2019). <i>Reproducibility and Replicability in Science. In Understanding Reproducibility and Replicability</i> [Techreport]. National Academies Press (US). https://www.ncbi.nlm.nih.gov/books/NBK547546/",
+        "National Academies of Sciences, Engineering, and Medicine. (2019). <i>Reproducibility and Replicability in Science. In Understanding Reproducibility and Replicability</i> [Techreport]. National Academies Press (US). https://www.ncbi.nlm.nih.gov/books/NBK547546/",
         "Nosek, B. A., & Errington, T. M. (2020). What is replication? <i>PLOS Biology</i>, <i>18</i>(3), e3000691. https://doi.org/10.1371/journal.pbio.3000691"
     ],
     "drafted_by": [
@@ -43,5 +44,5 @@
         "Helena Hartmann",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-12"
 }

@@ -7,8 +7,8 @@
     "related_terms": [
         "File-drawer",
         "Hypothesis",
-        "p-hacking",
-        "p-value",
+        "*p*-hacking",
+        "*p*-value",
         "Publication bias (File Drawer Problem)",
         "Questionable Research Practices or Questionable Reporting Practices (QRPs)",
         "Selective reporting",
@@ -37,5 +37,5 @@
     "aliases": [
         "/glossary/p_curve"
     ],
-    "lastmod": "2026-11-08"
+    "lastmod": "2026-11-12"
 }

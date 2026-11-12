@@ -12,8 +12,7 @@
         "Open Science Framework"
     ],
     "references": [
-        "OER Commons. (n.d.). <i>OER Commons</i>. https://www.oercommons.org/",
-        "[www.oercommons.org](http://www.oercommons.org)"
+        "OER Commons. (n.d.). <i>OER Commons</i>. https://www.oercommons.org/"
     ],
     "drafted_by": [
         "Ali H. Al-Hoorie"
@@ -32,5 +31,5 @@
         "Susanne Vogel",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-12"
 }

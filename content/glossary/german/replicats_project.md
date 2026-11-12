@@ -9,7 +9,7 @@
         "Trustworthiness"
     ],
     "references": [
-        "Fraser, H., Bush, M., Wintle, B., Mody, F., Smith, E., Hanea, A., & others. (2021). <i>Predicting reliability through structured expert elicitation with repliCATS (Collaborative Assessments for Trustworthy Science)</i>.",
+        "Fraser, H., Bush, M., Wintle, B., Mody, F., Smith, E., Hanea, A., et al. (2021). <i>Predicting reliability through structured expert elicitation with repliCATS (Collaborative Assessments for Trustworthy Science)</i>.",
         "RepliCATS project. (2020). <i>Collaborative Assessment for Trustworthy Science</i>. The University of Melbourne. https://replicats.research.unimelb.edu.au/"
     ],
     "drafted_by": [
@@ -33,5 +33,5 @@
         "Susanne Vogel",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-12"
 }

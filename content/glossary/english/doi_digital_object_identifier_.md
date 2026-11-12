@@ -3,10 +3,10 @@
     "en_title": "DOI (digital object identifier)",
     "title": "DOI (digital object identifier)",
     "sort_key": "doi (digital object identifier)",
-    "definition": "Digital Object Identifiers (DOI) are alpha-numeric strings that can be assigned to any entity, including: publications (including preprints), materials, datasets, and feature films \\- the use of DOIs is not restricted to just scholarly or academic material. There are many different DOI registration agencies that operate DOIs, but the two that researchers would most likely encounter are [Crossref](https://www.crossref.org/) and [Datacite](https://datacite.org/).",
+    "definition": "Digital Object Identifiers (DOI) are alpha-numeric strings that can be assigned to any entity, including: publications (including preprints), materials, datasets, and feature films \\- the use of DOIs is not restricted to just scholarly or academic material. There are many different DOI registration agencies that operate DOIs, but the two that researchers would most likely encounter are [Crossref](https://www.crossref.org/) and [DataCite](https://datacite.org/).",
     "related_terms": [
         "arXiv and BibTex",
-        "Crossref, Datacite, ISBN, ISO, ORCID",
+        "Crossref, DataCite, ISBN, ISO, ORCID",
         "Permalink"
     ],
     "references": [
@@ -31,5 +31,5 @@
     "aliases": [
         "/glossary/doi_digital_object_identifier_"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-12"
 }

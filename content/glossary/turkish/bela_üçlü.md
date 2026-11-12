@@ -8,7 +8,7 @@
         "Replication",
         "Reproducibility",
         "Null Hypothesis Significance Testing (NHST)",
-        "p-hacking",
+        "*p*-hacking",
         "Questionable Research Practices or Questionable Reporting Practices (QRPs)"
     ],
     "references": [
@@ -33,5 +33,5 @@
     "translation_reviewed_by": [
         "Neslihan Özhan"
     ],
-    "lastmod": "2026-11-08"
+    "lastmod": "2026-11-12"
 }
