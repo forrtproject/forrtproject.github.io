@@ -2,14 +2,14 @@
    else. Lists and paragraphs are reset here because the theme's global rules still apply. */
 .hero{position:relative;isolation:isolate;border-bottom:12px solid var(--edu-bg)}
 .hero-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:48px;align-items:end;padding-top:12px}
-.invite{padding:32px 0 64px;min-width:0;align-self:center}
+.invite{padding:32px 0 28px;min-width:0;align-self:center}
 .hero h1{font-size:clamp(50px,6.2vw,92px);line-height:1;font-weight:500;letter-spacing:-.018em;margin:0;overflow-wrap:anywhere;text-wrap:balance}
 .lede{font-size:clamp(18px,1.45vw,20px);line-height:1.55;margin:24px 0 0;max-width:32em;color:var(--ink)}
-.quick{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px;max-width:720px}
+.quick{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px;max-width:720px}
 .quick a{padding:8px 14px;border:1.5px solid var(--edu);border-radius:999px;font-weight:600;font-size:16px;line-height:1.3;text-decoration:none;background:#fff;color:var(--ink)}
 .quick a:hover{background:var(--edu);border-color:var(--edu);color:#fff}
-.tower{margin:0;position:relative;min-width:0;background:var(--edu-bg);border-radius:999px 999px 0 0;padding:44px 32px 14px;max-width:560px;justify-self:end;width:100%}
-.castle-stage{position:relative;height:clamp(320px,31vw,430px)}
+.tower{margin:0;position:relative;min-width:0;background:var(--edu-bg);border-radius:999px 999px 0 0;padding:28px 32px 14px;max-width:560px;justify-self:end;width:100%}
+.castle-stage{position:relative;height:clamp(320px,31vw,410px)}
 .castle-stage canvas,.castle-fallback{display:block;width:100%;height:100%;max-width:none;object-fit:cover}
 .castle-stage canvas{position:absolute;inset:0;visibility:hidden}
 .castle-stage[data-engine=webgl] canvas{visibility:visible}
@@ -34,7 +34,7 @@
 
 /* The four areas, each behind its arched door */
 .areas-section{padding-top:0}
-.areas{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;padding-top:52px}
+.areas{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;padding-top:40px}
 .area{--tone:var(--edu);--tint:var(--edu-bg);display:flex;flex-direction:column;min-width:0;background:var(--tint);border-radius:999px 999px var(--r-large) var(--r-large);padding:0 22px 20px}
 .area-res{--tone:var(--res);--tint:var(--res-bg)}
 .area-jus{--tone:var(--jus);--tint:var(--jus-bg)}
@@ -174,7 +174,7 @@
 .quick a:first-child{background:var(--edu);border-color:var(--edu);color:#fff}
 .quick a:first-child:hover{background:var(--ink);border-color:var(--ink)}
 /* The second line under the hero actions: plain links, on wide screens only. */
-.quick-more{display:flex;flex-wrap:wrap;gap:4px 22px;margin-top:14px}
+.quick-more{display:flex;flex-wrap:wrap;gap:4px 22px;margin-top:10px}
 .quick-more a{padding:6px 0;font-weight:600;font-size:16px;line-height:1.3;color:var(--ink);text-decoration:underline;text-underline-offset:3px}
 .quick-more a:hover{color:var(--edu)}
 @media(max-width:760px){.quick-more{display:none}}

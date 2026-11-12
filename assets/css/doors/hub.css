@@ -28,7 +28,7 @@
 .stages{display:grid;grid-template-columns:1fr;gap:40px}
 @media(min-width:1001px){.stages{display:block;columns:2;column-gap:56px}.stage{break-inside:avoid;margin:0 0 44px}}
 .stage header{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 16px}
-.stage h2{margin:0;font:500 34px/1.1 var(--display);color:var(--tone);scroll-margin-top:16px}
+.stage h2{margin:0;font:500 34px/1.1 var(--display);color:var(--tone);scroll-margin-top:16px;overflow-wrap:anywhere}
 .stage header p{margin:0;font-size:17px;line-height:1.4;color:var(--soft)}
 .stage ul{list-style:none;margin:10px 0 0;padding:0}
 .tool{position:relative;display:grid;grid-template-columns:7.5rem minmax(0,1fr);column-gap:16px;padding:12px 8px;border-bottom:1px solid var(--line)}
