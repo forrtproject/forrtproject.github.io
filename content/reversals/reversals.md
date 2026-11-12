@@ -70,7 +70,7 @@ FORRT's Replications and Reversals project collected replications of effects in 
 
 {{< spoiler text="About this project: motivation, history, how to contribute and how to cite" >}}
 
-Please cite this source as Hartmann H, Azevedo F, Röseler L, Wallrich L, Aldoh A, Elsherif MM, et al. Tracking and mainstreaming replications in the social, cognitive, and behavioral sciences. MetaArXiv. https://doi.org/10.31222/osf.io/ad2w6_v1 Contributors are listed at [forrt.org/contributors](/contributors/).
+Please cite this source as Hartmann H, Azevedo F, Röseler L, Wallrich L, Aldoh A, Elsherif MM, et al. Tracking and mainstreaming replications in the social, cognitive, and behavioral sciences. MetaArXiv. https://doi.org/10.31222/osf.io/ad2w6_v1. Contributors are listed at [forrt.org/contributors](/contributors/).
 
 
 ### **Motivation**

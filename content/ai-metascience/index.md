@@ -8,6 +8,9 @@ hide_date: true
 summary: "Programme and recordings of the FORRT AI in Metascience Online Conference, 28–30 September 2026: 35+ talks and workshops over 3 days, most of them on YouTube."
 sharing_description: "Watch the talks from the FORRT AI in Metascience Online Conference, 28–30 September 2026."
 sharing_image_alt: "FORRT AI in Metascience Conference — online, 28–30 September 2026"
+# The banner beside the title (layouts/partials/doors/page_hero.html).
+hero_image: "featured.png"
+hero_image_alt: "FORRT AI in Metascience Conference — online, 28–30 September 2026"
 image:
   placement: 1
   alt_text: "FORRT AI in Metascience Conference — online, 28–30 September 2026"
@@ -26,13 +29,8 @@ image:
 .am-playlist:nth-of-type(3) { --am-deep: var(--am-wed-deep); --am-tint: var(--am-wed-tint); }
 @media (max-width: 599px) { .am-actions { grid-template-columns: 1fr; } }
 .am-actions-label { grid-column: 1 / -1; font-weight: 600; }
-/* On a wide screen the title and the banner share the first row; everything else spans the page below them. */
+/* The title and the banner open the page (page_hero). On a wide screen the facts sit under the banner, beside the introduction and the playlists, so the programme starts sooner. */
 @media (min-width: 1001px) {
-  .reading:has(.am-facts) { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 520px); column-gap: 56px; align-items: center; }
-  .reading:has(.am-facts) > * { grid-column: 1 / -1; }
-  .reading:has(.am-facts) > .article-head { grid-column: 1; grid-row: 1; }
-  .reading:has(.am-facts) > .article-image { grid-column: 2; grid-row: 1; margin: 0; }
-  /* The facts sit under the banner, beside the introduction and the playlists, so the programme starts sooner. */
   .reading:has(.am-facts) > .article-style { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 520px); column-gap: 56px; align-content: start; }
   .reading:has(.am-facts) > .article-style > * { grid-column: 1 / -1; }
   .reading:has(.am-facts) > .article-style > p:first-of-type { grid-column: 1; grid-row: 1; }
@@ -74,9 +72,6 @@ image:
   --am-tint: var(--am-wed-tint);
 }
 
-/* The page is wide so that the programme can use the width; the banner and
-   the facts stay at the reading width of the text around them. */
-.article-layout-wide .article-image { max-width: 580px; }
 
 .am-facts {
   display: grid;
