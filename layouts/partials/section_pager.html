@@ -3,6 +3,9 @@
 {{ $prev := .PrevInSection }}
 {{ $next := .NextInSection }}
 {{ $glossary := eq .Type "glossary" }}
+{{/* Glossary pages carry their own language; the Arabic one labels its pager in Arabic. */}}
+{{ $prevLabel := i18n "previous" }}{{ $nextLabel := i18n "next" }}
+{{ if and $glossary (eq .Params.language "arabic") }}{{ $prevLabel = "السابق" }}{{ $nextLabel = "التالي" }}{{ end }}
 {{ if in (slice "docs" "book" "glossary" "educators-corner") .Type }}
   {{ $prev = .NextInSection }}
   {{ $next = .PrevInSection }}
@@ -19,13 +22,13 @@
 <div class="post-nav">
   {{ with $prev }}
   <div class="post-nav-item post-nav-prev">
-    <a href="{{ .RelPermalink }}" rel="prev"><div class="meta-nav"><span aria-hidden="true">← </span>{{ i18n "previous" }}</div>
+    <a href="{{ .RelPermalink }}" rel="prev"><div class="meta-nav"><span aria-hidden="true">← </span>{{ $prevLabel }}</div>
     <p>{{ if $glossary }}{{ partial "doors/term_title" .Title }}{{ else }}{{ .Title }}{{ end }}</p></a>
   </div>
   {{ end }}
   {{ with $next }}
   <div class="post-nav-item post-nav-next">
-    <a href="{{ .RelPermalink }}" rel="next"><div class="meta-nav">{{ i18n "next" }}<span aria-hidden="true"> →</span></div>
+    <a href="{{ .RelPermalink }}" rel="next"><div class="meta-nav">{{ $nextLabel }}<span aria-hidden="true"> →</span></div>
     <p>{{ if $glossary }}{{ partial "doors/term_title" .Title }}{{ else }}{{ .Title }}{{ end }}</p></a>
   </div>
   {{ end }}

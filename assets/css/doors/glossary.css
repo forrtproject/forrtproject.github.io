@@ -138,3 +138,9 @@ main:lang(ar) .glossary-layout .article-style .term-definition p{font-size:21px}
 @media(max-width:760px){.glossary-search-row{flex-wrap:wrap}.glossary-search-row input{flex-basis:100%}}
 .glossary-letters a.is-current{background:var(--ink);color:#fff}
 .term-filter-label{display:block;margin:0 0 6px;font:600 16px/1.3 var(--text);color:var(--ink)}
+/* Arabic term pages: each breadcrumb step and each link is isolated, so an English name or a URL keeps its own
+   order and its brackets inside right-to-left text. */
+main:lang(ar) .crumbs a,main:lang(ar) .crumbs [aria-current]{unicode-bidi:isolate}
+main:lang(ar) .glossary-layout .article-style a{unicode-bidi:plaintext}
+/* A contributor's name is never split across lines. */
+.glossary-layout .term-credit bdi{white-space:nowrap}
