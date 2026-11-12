@@ -10,14 +10,14 @@ heading = "Better science.<br>Built together."
 lede = "FORRT is a community of researchers and educators who develop, share and teach open scholarship, and who work to make science more rigorous, more transparent and more just."
 
 [[quick]]
-  label = "Find teaching resources"
-  url = "resources/"
-[[quick]]
   label = "Mission & advocacy"
   url = "about/mission/"
 [[quick]]
   label = "Tools"
   url = "replication-hub/"
+[[quick]]
+  label = "Resources"
+  url = "resources/"
 [[quick]]
   label = "Publications"
   url = "publications/"
