@@ -96,12 +96,22 @@ AUDIT = """() => {
     const lines = {};
     let node;
     while ((node = walker.nextNode())) {
+      // Text no one can see is not a line: inside a closed disclosure, or cut off by a box that clips it
+      // (a description shortened to its first lines).
+      const parent = node.parentElement;
+      if (parent.closest('details:not([open])') && !parent.closest('summary')) continue;
+      const clips = [];
+      for (let up = parent; up && up !== el.parentElement; up = up.parentElement) {
+        if (getComputedStyle(up).overflowY !== 'visible') clips.push(up.getBoundingClientRect());
+      }
       for (const match of node.textContent.matchAll(/\\S+\\s*/g)) {
         const range = document.createRange();
         range.setStart(node, match.index);
         range.setEnd(node, match.index + match[0].length);
         // A long address can break across lines, so share its characters out by rendered width.
-        const boxes = [...range.getClientRects()].filter((box) => box.width > 0);
+        const boxes = [...range.getClientRects()].filter((box) => box.width > 0
+          && clips.every((clip) => box.top < clip.bottom - 1 && box.bottom > clip.top + 1
+            && box.left < clip.right - 1 && box.right > clip.left + 1));
         const total = boxes.reduce((sum, box) => sum + box.width, 0);
         for (const box of boxes) {
           const key = Math.round(box.top / 6);

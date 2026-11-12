@@ -648,6 +648,12 @@ if (listFilter) {
   listFilter.hidden = false;
   const input = listFilter.querySelector('input');
   const count = listFilter.querySelector('.list-filter-count');
+  // The label, the field and the count form the search row, the part of the toolbar that stays on screen on a phone.
+  const searchRow = document.createElement('div');
+  searchRow.className = 'list-filter-search';
+  searchRow.append(listFilter.querySelector('label'), count, input);
+  listFilter.prepend(searchRow);
+  const noun = listFilter.dataset.noun || 'entries';
   const sections = [];
   let section = null;
   for (let node = listFilter.nextElementSibling; node; node = node.nextElementSibling) {
@@ -670,7 +676,7 @@ if (listFilter) {
     withItems.forEach(({heading, items}) => select.append(new Option(`${heading.textContent.trim()} (${items.length})`, heading.id)));
     select.addEventListener('change', () => { if (select.value) document.getElementById(select.value).scrollIntoView(); });
     jump.append(select);
-    count.before(jump);
+    listFilter.append(jump);
   }
   // Status buttons, when the entries carry status chips: show one outcome at a time.
   let status = '';
@@ -694,8 +700,11 @@ if (listFilter) {
       });
       row.append(button);
     });
-    count.before(row);
+    listFilter.append(row);
   }
+  // Each entry's text is read once, so controls added to the entries later (their "more" buttons) are not searched.
+  const texts = new Map(sections.flatMap(({items}) => items.map((item) => [item, item.textContent])));
+  const total = texts.size;
   let words = /./;
   input.addEventListener('input', () => {
     const query = input.value.trim().toLowerCase();
@@ -706,14 +715,80 @@ if (listFilter) {
       let any = false;
       items.forEach((item) => {
         // Matches the start of a word, so "ego" finds ego depletion and not "category".
-        const match = (!query || words.test(item.textContent)) && (!status || item.querySelector(`.status-${status}`));
+        const match = (!query || words.test(texts.get(item))) && (!status || item.querySelector(`.status-${status}`));
         item.hidden = !match;
         if (match) { any = true; shown += 1; }
       });
       heading.hidden = Boolean(query || status) && !any;
     });
-    count.textContent = !(query || status) ? '' : shown ? `${shown} ${shown === 1 ? 'entry matches' : 'entries match'}` : 'Nothing matches.';
+    count.textContent = `Showing ${shown} of ${total} ${noun}`;
   });
+  input.dispatchEvent(new Event('input'));
+}
+
+// /reversals/: the search, outcome and Go to controls are a toolbar that stays at the top of the screen while the
+// effects scroll under it (on a phone only the search row stays), and each effect shows the start of its
+// description, with a "more" button for the rest.
+const entryFilter = document.querySelector('.list-filter:not(.project-filter):not([hidden])');
+const entries = entryFilter ? [...document.querySelectorAll('.list-filter ~ ul > li')]
+  .filter((item) => item.firstElementChild?.matches('p') && item.querySelector(':scope > .spoiler')) : [];
+if (entries.length) {
+  // The toolbar sticks only within the list: one box from the toolbar to the last entry's list.
+  const section = document.createElement('div');
+  section.className = 'list-filter-section';
+  const last = entries[entries.length - 1].parentElement;
+  entryFilter.before(section);
+  for (let node = entryFilter; node;) {
+    const next = node.nextSibling;
+    section.append(node);
+    node = node === last ? null : next;
+  }
+  // Rows scrolled to or reached with Tab stop below the toolbar: its height is the page's scroll padding.
+  const phone = matchMedia('(max-width: 760px)');
+  const searchRow = entryFilter.querySelector('.list-filter-search');
+  const pad = () => document.documentElement.style.setProperty('--list-filter-bar', `${(phone.matches ? searchRow : entryFilter).offsetHeight}px`);
+  const bars = new ResizeObserver(pad);
+  bars.observe(entryFilter);
+  bars.observe(searchRow);
+  // The description is cut to its first lines; an entry whose text runs longer gets the button.
+  entries.forEach((item) => {
+    const text = item.firstElementChild;
+    text.classList.add('entry-text');
+    const more = document.createElement('button');
+    more.type = 'button';
+    more.className = 'entry-more';
+    more.setAttribute('aria-expanded', 'false');
+    // The label names the effect for screen readers; it is an attribute, not hidden text, so it adds nothing to the line.
+    const about = ` about ${text.querySelector('strong')?.textContent.trim() || 'this effect'}`;
+    const label = (word) => { more.textContent = word; more.setAttribute('aria-label', word + about); };
+    label('more');
+    more.addEventListener('click', () => {
+      const open = item.classList.toggle('is-open');
+      more.setAttribute('aria-expanded', String(open));
+      label(open ? 'less' : 'more');
+      // The width may have changed while it was open, so check again whether the text still runs over.
+      if (!open) item.classList.toggle('is-long', text.scrollHeight > text.clientHeight + 2);
+    });
+    text.after(more);
+  });
+  // While a search is typed, the matching entries show in full, so the match can be seen wherever it is.
+  const query = entryFilter.querySelector('input');
+  const measure = () => {
+    if (section.classList.contains('is-searching')) return;
+    const long = entries.map((item) => !item.hidden && !item.classList.contains('is-open') && item.firstElementChild.scrollHeight > item.firstElementChild.clientHeight + 2);
+    entries.forEach((item, i) => { if (!item.hidden && !item.classList.contains('is-open')) item.classList.toggle('is-long', long[i]); });
+  };
+  query.addEventListener('input', () => {
+    section.classList.toggle('is-searching', Boolean(query.value.trim()));
+    measure();
+  });
+  let width = 0;
+  new ResizeObserver(([entry]) => {
+    if (Math.round(entry.contentRect.width) === width) return;
+    width = Math.round(entry.contentRect.width);
+    measure();
+  }).observe(section);
+  document.fonts?.ready.then(measure);
 }
 
 // A table wider than the screen scrolls in its own box, so keyboard users must be able to focus it.
@@ -736,3 +811,21 @@ if (badges.length) {
   });
   new MutationObserver(nameBadges).observe(document.querySelector('.pub-list, .article-style') || document.body, { childList: true, subtree: true });
 }
+
+// Phone contents (doors/toc_phone): a list of more than six sections shows its first five and a button for the rest.
+document.querySelectorAll('.toc-phone').forEach((box) => {
+  const items = [...box.querySelectorAll('nav > ul > li')];
+  if (items.length <= 6) return;
+  items.slice(5).forEach((item) => item.classList.add('toc-extra'));
+  box.classList.add('is-short');
+  const more = document.createElement('button');
+  more.type = 'button';
+  more.className = 'toc-phone-more';
+  more.textContent = `Show all ${items.length} sections`;
+  more.addEventListener('click', () => {
+    box.classList.remove('is-short');
+    more.remove();
+    items[5].querySelector('a')?.focus();
+  });
+  box.querySelector('.article-toc').append(more);
+});

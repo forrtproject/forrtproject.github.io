@@ -144,7 +144,7 @@ All **past or current project contributors** are listed at the [bottom of this p
 # **All Effects** (*sorted by discipline*)
 ---------------
 
-{{< list_filter label="Search the effects" placeholder="e.g. priming, Bargh, ego depletion" >}}
+{{< list_filter label="Search the effects" placeholder="e.g. priming, Bargh, ego depletion" noun="effects" >}}
 
 You can find a list of all effects we are working on [here](https://docs.google.com/spreadsheets/d/1IY56xdDmoU9VasdE0sry2xvsGFkWPrqbKXAs1Rw-9LA/edit#gid=0). To search whether an effect already exists in our collection, use Ctrl-F or the search function together with a keyword in relation to the effect (e.g. "Macbeth" or "Priming"). Please note that not all effects in the spreadsheet are listed below, as this is a work in progress (last site update: 13th of July 2023)
 

@@ -56,12 +56,9 @@
       {{ end }}
       {{/* On phones the side card falls below the text, too late to help on a long page. */}}
       {{ if $hasCard }}
-      <details class="toc-phone">
-        <summary>On this page</summary>
-        <div class="article-toc"><nav aria-label="On this page"><ul>
-          {{ range $toc }}<li><a href="#{{ .id }}">{{ .title | markdownify | emojify | plainify }}</a></li>{{ end }}
-        </ul></nav></div>
-      </details>
+      {{ $items := "" }}{{ range $toc }}{{ $items = printf `%s<li><a href="#%s">%s</a></li>` $items (.id | htmlEscape) (.title | markdownify | emojify | plainify | htmlUnescape | htmlEscape) }}{{ end }}
+      {{ $nav := printf `<nav aria-label="On this page"><ul>%s</ul></nav>` $items }}
+      {{ partial "doors/toc_phone" $nav }}
       {{ end }}
       <div class="article-style">
         {{ range $rendered }}

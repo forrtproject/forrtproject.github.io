@@ -7,7 +7,7 @@
      tagged page in any section. The 404 page sends the old `/tag/<term>/` addresses here. */}}
 
 {{ $tags := partialCached "functions/tag_counts.html" . }}
-{{ $rows := $tags.rows }}
+{{ $rows := $tags.common }}
 
 <div class="wrap tags-page">
   <header class="article-head">
@@ -16,12 +16,12 @@
     {{ with .Params.description }}<p class="standfirst">{{ . }}</p>{{ end }}
   </header>
   <p class="tags-note">
-    {{ len $rows }} tags across {{ $tags.pages }} pages, most used first. Tags are
+    The {{ len $rows }} tags used on {{ $tags.min }} or more pages. Tags are
     contributor-supplied keywords; for curated topics see
     <a href="{{ "clusters/" | relURL }}">FORRT clusters</a>.
   </p>
 
-  {{/* A search over all the tags, the hidden ones too (static/js/tag-browser.js); with JavaScript off it stays hidden. */}}
+  {{/* A search over the listed tags (static/js/tag-browser.js); with JavaScript off it stays hidden. */}}
   <div class="tag-find" hidden>
     <label for="tag-filter">Find a tag</label>
     <input type="search" id="tag-filter" placeholder="e.g. preregistration" autocomplete="off">
@@ -36,7 +36,7 @@
     <p><a href="{{ "tags/" | relURL }}">Show all tags</a></p>
   </div>
 
-  {{/* The twelve most used as larger pills, then every tag A to Z with letter links; the search above covers all of them. */}}
+  {{/* The twelve most used as larger pills, then the common tags A to Z with letter links. */}}
   {{ $sorted := sort $rows "tag" }}
   {{ $groups := slice }}{{ $current := "" }}{{ $items := slice }}
   {{ range $sorted }}
@@ -52,12 +52,12 @@
       <div class="tag-cloud">{{ range first 12 $rows }}<a href="{{ printf "tags/?tag=%s" (.tag | urlquery) | relURL }}">{{ .tag }} <span class="tag-count">{{ .count }}</span></a>{{ end }}</div>
     </section>
     <section class="tag-all">
-      <h2>All tags, A to Z</h2>
+      <h2>All common tags, A to Z</h2>
       <nav class="tag-letters" aria-label="Tags by letter">{{ range $groups }}<a href="#tags-{{ .letter | urlize | default "other" }}">{{ .letter }}</a>{{ end }}</nav>
       {{ range $groups }}
       <div class="tag-group" id="tags-{{ .letter | urlize | default "other" }}">
         <h3>{{ .letter }}</h3>
-        <ul>{{ range .rows }}<li{{ if eq .count 1 }} class="tag-rare"{{ end }}><a href="{{ printf "tags/?tag=%s" (.tag | urlquery) | relURL }}">{{ .tag }} <span class="tag-count">{{ .count }}</span></a></li>{{ end }}</ul>
+        <ul>{{ range .rows }}<li><a href="{{ printf "tags/?tag=%s" (.tag | urlquery) | relURL }}">{{ .tag }} <span class="tag-count">{{ .count }}</span></a></li>{{ end }}</ul>
       </div>
       {{ end }}
     </section>
