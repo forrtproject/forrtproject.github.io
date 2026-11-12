@@ -1,10 +1,19 @@
 {
+    "german": {
+        "Model (computational)": [
+            "computational_rechenmodell"
+        ],
+        "Model (statistical)": [
+            "statistical_statistisches_modell"
+        ]
+    },
     "arabic": {
         "Adversarial (collaborative) commentary": [
             "collaborative_commentary_الت_عليق_الت_عاوني_العدايي"
         ],
         "Badges (Open Science)": [
-            "open_science_الش_ارات_العلم_المفتوح"
+            "open_science_الش_ارات_العلم_المفتوح",
+            "الش_ارات_العلم_المفتوح"
         ],
         "Bottom-up approach (to Open Scholarship)": [
             "to_open_scholarship_الن_هج_الت_صاعدي_"
@@ -31,7 +40,8 @@
             "philosophy_الن_موذج_الفلسفي_"
         ],
         "Ontology (Artificial Intelligence)": [
-            "artificial_intelligence_علم_الوجود_الذ_كاء_الاصطناعي"
+            "artificial_intelligence_علم_الوجود_الذ_كاء_الاصطناعي",
+            "علم_الوجود_الذ_كاء_الاصطناعي"
         ],
         "ORCID (Open Researcher and Contributor ID)": [
             "open_researcher_and_contributor_id_الاوركيد"
@@ -43,16 +53,96 @@
             "peer_review_openness_initiative_مبادرة_انفتاح_تحكيم_الاقران"
         ],
         "Publication bias (File Drawer Problem)": [
-            "file_drawer_problem_تحي_ز_الن_شر_مشكلة_درج_الملف_ات"
+            "file_drawer_problem_تحي_ز_الن_شر_مشكلة_درج_الملف_ات",
+            "تحي_ز_الن_شر_مشكلة_درج_الملف_ات"
         ],
         "Reproducibility crisis (aka Replicability or replication crisis)": [
             "aka_replicability_or_replication_crisis_ازمة_اعادة_الانتاج_او_ازمة_الت_كرار"
         ],
         "Research Contribution Metric (*p*)": [
-            "p_مقياس_المساهمة_البحثي_ة_نشر"
+            "p_مقياس_المساهمة_البحثي_ة_نشر",
+            "مقياس_المساهمة_البحثي_ة_نشر"
         ],
         "Robustness (analyses)": [
             "analyses_المتانة_في_التحليلات"
+        ],
+        "Article Processing Charge (APC)": [
+            "apc_رسوم_الن_شر"
+        ],
+        "Center for Open Science (COS)": [
+            "cos_مركز_العلم_المفتوح"
+        ],
+        "Collaborative Replication and Education Project (CREP)": [
+            "crep_مشروع_الت_كرار_والت_عليم_الت_عاوني"
+        ],
+        "Committee on Best Practices in Data Analysis and Sharing (COBIDAS)": [
+            "cobidas_لجنة_افضل_الممارسات_في_تحليل_البيانات_ومشاركتها"
+        ],
+        "Constraints on Generality (COG)": [
+            "cog_قيود_الت_عميم"
+        ],
+        "Creative Commons (CC) license": [
+            "cc_license_رخصة_المشاع_الابداعي_"
+        ],
+        "Data Access and Research Transparency (DA-RT)": [
+            "da_rt_الوصول_للبيانات_وشفافي_ة_البحث"
+        ],
+        "Data management plan (DMP)": [
+            "dmp_خطة_ادارة_البيانات"
+        ],
+        "Early career researchers (ECRs)": [
+            "ecrs_الباحثون_المبتديون"
+        ],
+        "First-last-author-emphasis norm (FLAE)": [
+            "flae_مبدا_الت_اكيد_على_المولف_ين_الاول_والاخير"
+        ],
+        "General Data Protection Regulation (GDPR)": [
+            "gdpr_لايحة_حماية_البيانات_العام_ة"
+        ],
+        "Massive Open Online Courses (MOOCs)": [
+            "moocs_مقر_رات_الت_عل_م_الض_خمة_المفتوحة_عن_بعد"
+        ],
+        "Massively Open Online Papers (MOOPs)": [
+            "moops_الاوراق_الضخمة_والمفتوحة_على_الانترنت"
+        ],
+        "Named entity-based Text Anonymization for Open Science (NETANOS)": [
+            "netanos_اخفاء_ه_وي_ة_الن_ص_المعتمد_على_الكيان_للعلم_المفتوح"
+        ],
+        "Non-Intervention, Reproducible, and Open Systematic Reviews (NIRO-SR)": [
+            "niro_sr_المراجعات_المنهجي_ة_غير_الت_دخلي_ة_المفتوحة_والقابلة_للت_كرار"
+        ],
+        "Null Hypothesis Significance Testing (NHST)": [
+            "nhst_اختبار_دلالة_الفرضي_ة_الص_فري_ة"
+        ],
+        "Open Educational Resources (OER) Commons": [
+            "oer_commons_مصادر_التع_ل_م_المفتوحة_العام_ة"
+        ],
+        "Open Educational Resources (OERs)": [
+            "oers_المصادر_الت_عليمي_ة_المفتوحة"
+        ],
+        "Patient and Public Involvement (PPI)": [
+            "ppi_عي_نة_ومجتمع_الد_راسة_المساهمين"
+        ],
+        "Questionable Measurement Practices (QMP)": [
+            "qmp_ممارسات_القياس_المشكوك_فيها"
+        ],
+        "Questionable Research Practices or Questionable Reporting Practices (QRPs)": [
+            "qrps_ممارسات_البحث_المشكوك_فيها_او_ممارسات_اعداد_الت_قارير_المشكوك_فيها"
+        ],
+        "RIOT Science Club": [
+            "منتدى_العلوم_المتعد_د_القابلة_للت_كرار_والقابلة_للت_فسير_والمفتوحة_والش_فافة_نادي_رايوت_للعلوم"
+        ],
+        "Sequence-determines-credit approach (SDC)": [
+            "sdc_نهج_الت_سلسل_الذي_يحد_د_المساهمة"
+        ],
+        "Society for Open, Reliable, and Transparent Ecology and Evolutionary biology (SORTEE)": [
+            "sortee_جمعي_ة_علم_البيية_والبيولوجيا_الت_طوري_ة_المنفتحة_والموثوقة_والش_فافة"
+        ],
+        "Society for the Improvement of Psychological Science (SIPS)": [
+            "sips_جمعية_تطويرالعلوم_الن_فسي_ة"
+        ],
+        "Universal design for learning (UDL)": [
+            "udl_الت_صميم_الش_امل_للت_عل_م"
         ]
     }
 }

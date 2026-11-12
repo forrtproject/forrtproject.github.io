@@ -600,6 +600,9 @@
                     "Hala Alghamdi",
                     "Mohammed Mohsen"
                 ],
+                "aliases": [
+                    "/glossary/arabic/apc_رسوم_الن_شر"
+                ],
                 "lastmod": "2026-11-12"
             },
             {
@@ -736,7 +739,8 @@
                     "Mohammed Mohsen"
                 ],
                 "aliases": [
-                    "/glossary/arabic/open_science_الش_ارات_العلم_المفتوح"
+                    "/glossary/arabic/open_science_الش_ارات_العلم_المفتوح",
+                    "/glossary/arabic/الش_ارات_العلم_المفتوح"
                 ],
                 "lastmod": "2026-11-12"
             },
@@ -1171,6 +1175,9 @@
                     "Ali H. Al-Hoorie",
                     "Mohammed Mohsen"
                 ],
+                "aliases": [
+                    "/glossary/arabic/cos_مركز_العلم_المفتوح"
+                ],
                 "lastmod": "2026-11-12"
             },
             {
@@ -1488,6 +1495,9 @@
                     "Ali H. Al-Hoorie",
                     "Mohammed Mohsen"
                 ],
+                "aliases": [
+                    "/glossary/arabic/crep_مشروع_الت_كرار_والت_عليم_الت_عاوني"
+                ],
                 "lastmod": "2026-11-12"
             },
             {
@@ -1523,6 +1533,9 @@
                     "Ahlam Ahmed",
                     "Ali H. Al-Hoorie",
                     "Mohammed Mohsen"
+                ],
+                "aliases": [
+                    "/glossary/arabic/cobidas_لجنة_افضل_الممارسات_في_تحليل_البيانات_ومشاركتها"
                 ],
                 "lastmod": "2026-11-12"
             },
@@ -1954,6 +1967,9 @@
                     "Ali H. Al-Hoorie",
                     "Mohammed Mohsen"
                 ],
+                "aliases": [
+                    "/glossary/arabic/cog_قيود_الت_عميم"
+                ],
                 "lastmod": "2026-11-12"
             },
             {
@@ -2207,6 +2223,9 @@
                     "Awatif Alruwaili",
                     "Ali H. Al-Hoorie",
                     "Mohammed Mohsen"
+                ],
+                "aliases": [
+                    "/glossary/arabic/cc_license_رخصة_المشاع_الابداعي_"
                 ],
                 "lastmod": "2026-11-12"
             },
@@ -2551,6 +2570,9 @@
                     "Ahlam Ahmed",
                     "Mohammed Mohsen"
                 ],
+                "aliases": [
+                    "/glossary/arabic/da_rt_الوصول_للبيانات_وشفافي_ة_البحث"
+                ],
                 "lastmod": "2026-11-12"
             },
             {
@@ -2592,6 +2614,9 @@
                     "Ahlam Ahmed",
                     "Ali H. Al-Hoorie",
                     "Mohammed Mohsen"
+                ],
+                "aliases": [
+                    "/glossary/arabic/dmp_خطة_ادارة_البيانات"
                 ],
                 "lastmod": "2026-11-12"
             },
@@ -3037,6 +3062,9 @@
                     "Hala Alghamdi",
                     "Ahlam Ahmed",
                     "Mohammed Mohsen"
+                ],
+                "aliases": [
+                    "/glossary/arabic/ecrs_الباحثون_المبتديون"
                 ],
                 "lastmod": "2026-11-12"
             },
@@ -3618,6 +3646,9 @@
                     "Ali H. Al-Hoorie",
                     "Mohammed Mohsen"
                 ],
+                "aliases": [
+                    "/glossary/arabic/flae_مبدا_الت_اكيد_على_المولف_ين_الاول_والاخير"
+                ],
                 "lastmod": "2026-11-12"
             },
             {
@@ -3862,6 +3893,9 @@
                     "Hala Alghamdi",
                     "Mai Helmy",
                     "Mohammed Mohsen"
+                ],
+                "aliases": [
+                    "/glossary/arabic/gdpr_لايحة_حماية_البيانات_العام_ة"
                 ],
                 "lastmod": "2026-11-12"
             },
@@ -5148,6 +5182,9 @@
                     "Ali H. Al-Hoorie",
                     "Mohammed Mohsen"
                 ],
+                "aliases": [
+                    "/glossary/arabic/moocs_مقر_رات_الت_عل_م_الض_خمة_المفتوحة_عن_بعد"
+                ],
                 "lastmod": "2026-11-12"
             },
             {
@@ -5184,6 +5221,9 @@
                     "Hiba Alomary",
                     "Ali H. Al-Hoorie",
                     "Mohammed Mohsen"
+                ],
+                "aliases": [
+                    "/glossary/arabic/moops_الاوراق_الضخمة_والمفتوحة_على_الانترنت"
                 ],
                 "lastmod": "2026-11-12"
             },
@@ -5678,6 +5718,9 @@
                     "Ali H. Al-Hoorie",
                     "Mohammed Mohsen"
                 ],
+                "aliases": [
+                    "/glossary/arabic/netanos_اخفاء_ه_وي_ة_الن_ص_المعتمد_على_الكيان_للعلم_المفتوح"
+                ],
                 "lastmod": "2026-11-12"
             },
             {
@@ -5715,6 +5758,9 @@
                     "Alaa M. Saleh",
                     "Ali H. Al-Hoorie",
                     "Mohammed Mohsen"
+                ],
+                "aliases": [
+                    "/glossary/arabic/niro_sr_المراجعات_المنهجي_ة_غير_الت_دخلي_ة_المفتوحة_والقابلة_للت_كرار"
                 ],
                 "lastmod": "2026-11-12"
             },
@@ -5754,6 +5800,9 @@
                 "translation_reviewed_by": [
                     "Alaa M. Saleh",
                     "Mohammed Mohsen"
+                ],
+                "aliases": [
+                    "/glossary/arabic/nhst_اختبار_دلالة_الفرضي_ة_الص_فري_ة"
                 ],
                 "lastmod": "2026-11-12"
             },
@@ -5833,7 +5882,8 @@
                     "Mohammed Mohsen"
                 ],
                 "aliases": [
-                    "/glossary/arabic/artificial_intelligence_علم_الوجود_الذ_كاء_الاصطناعي"
+                    "/glossary/arabic/artificial_intelligence_علم_الوجود_الذ_كاء_الاصطناعي",
+                    "/glossary/arabic/علم_الوجود_الذ_كاء_الاصطناعي"
                 ],
                 "lastmod": "2026-11-12"
             },
@@ -6010,6 +6060,9 @@
                     "Asma Alzahrani",
                     "Mohammed Mohsen"
                 ],
+                "aliases": [
+                    "/glossary/arabic/oers_المصادر_الت_عليمي_ة_المفتوحة"
+                ],
                 "lastmod": "2026-11-12"
             },
             {
@@ -6046,6 +6099,9 @@
                     "Alaa M. Saleh",
                     "Ali H. Al-Hoorie",
                     "Mohammed Mohsen"
+                ],
+                "aliases": [
+                    "/glossary/arabic/oer_commons_مصادر_التع_ل_م_المفتوحة_العام_ة"
                 ],
                 "lastmod": "2026-11-12"
             },
@@ -6922,6 +6978,9 @@
                     "Asma Alzahrani",
                     "Mohammed Mohsen"
                 ],
+                "aliases": [
+                    "/glossary/arabic/ppi_عي_نة_ومجتمع_الد_راسة_المساهمين"
+                ],
                 "lastmod": "2026-11-12"
             },
             {
@@ -7747,7 +7806,8 @@
                     "Mohammed Mohsen"
                 ],
                 "aliases": [
-                    "/glossary/arabic/file_drawer_problem_تحي_ز_الن_شر_مشكلة_درج_الملف_ات"
+                    "/glossary/arabic/file_drawer_problem_تحي_ز_الن_شر_مشكلة_درج_الملف_ات",
+                    "/glossary/arabic/تحي_ز_الن_شر_مشكلة_درج_الملف_ات"
                 ],
                 "lastmod": "2026-11-12"
             },
@@ -8061,6 +8121,9 @@
                     "Asma Alzahrani",
                     "Mohammed Mohsen"
                 ],
+                "aliases": [
+                    "/glossary/arabic/qrps_ممارسات_البحث_المشكوك_فيها_او_ممارسات_اعداد_الت_قارير_المشكوك_فيها"
+                ],
                 "lastmod": "2026-11-12"
             },
             {
@@ -8102,6 +8165,9 @@
                     "Hiba Alomary",
                     "Asma Alzahrani",
                     "Mohammed Mohsen"
+                ],
+                "aliases": [
+                    "/glossary/arabic/qmp_ممارسات_القياس_المشكوك_فيها"
                 ],
                 "lastmod": "2026-11-12"
             },
@@ -8771,7 +8837,8 @@
                     "Mohammed Mohsen"
                 ],
                 "aliases": [
-                    "/glossary/arabic/p_مقياس_المساهمة_البحثي_ة_نشر"
+                    "/glossary/arabic/p_مقياس_المساهمة_البحثي_ة_نشر",
+                    "/glossary/arabic/مقياس_المساهمة_البحثي_ة_نشر"
                 ],
                 "lastmod": "2026-11-12"
             },
@@ -9177,6 +9244,9 @@
                     "Ali H. Al-Hoorie",
                     "Mohammed Mohsen"
                 ],
+                "aliases": [
+                    "/glossary/arabic/منتدى_العلوم_المتعد_د_القابلة_للت_كرار_والقابلة_للت_فسير_والمفتوحة_والش_فافة_نادي_رايوت_للعلوم"
+                ],
                 "lastmod": "2026-11-12"
             },
             {
@@ -9413,6 +9483,9 @@
                     "Hala Alghamdi",
                     "Mohammed Mohsen"
                 ],
+                "aliases": [
+                    "/glossary/arabic/sdc_نهج_الت_سلسل_الذي_يحد_د_المساهمة"
+                ],
                 "lastmod": "2026-11-12"
             },
             {
@@ -9572,6 +9645,9 @@
                     "Ali H. Al-Hoorie",
                     "Mohammed Mohsen"
                 ],
+                "aliases": [
+                    "/glossary/arabic/sortee_جمعي_ة_علم_البيية_والبيولوجيا_الت_طوري_ة_المنفتحة_والموثوقة_والش_فافة"
+                ],
                 "lastmod": "2026-11-12"
             },
             {
@@ -9607,6 +9683,9 @@
                     "Ali H. Al-Hoorie",
                     "Hala Alghamdi",
                     "Mohammed Mohsen"
+                ],
+                "aliases": [
+                    "/glossary/arabic/sips_جمعية_تطويرالعلوم_الن_فسي_ة"
                 ],
                 "lastmod": "2026-11-12"
             },
@@ -10664,6 +10743,9 @@
                     "Ahlam Ahmed",
                     "Hiba Alomary",
                     "Mohammed Mohsen"
+                ],
+                "aliases": [
+                    "/glossary/arabic/udl_الت_صميم_الش_امل_للت_عل_م"
                 ],
                 "lastmod": "2026-11-12"
             },
@@ -26791,6 +26873,9 @@
                     "Helena Hartmann",
                     "Jennifer Mattschey"
                 ],
+                "aliases": [
+                    "/glossary/german/computational_rechenmodell"
+                ],
                 "lastmod": "2026-11-12"
             },
             {
@@ -26828,6 +26913,9 @@
                 "translation_reviewed_by": [
                     "Helena Hartmann",
                     "Jennifer Mattschey"
+                ],
+                "aliases": [
+                    "/glossary/german/statistical_statistisches_modell"
                 ],
                 "lastmod": "2026-11-12"
             },

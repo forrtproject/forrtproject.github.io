@@ -36,5 +36,8 @@
         "Helena Hartmann",
         "Jennifer Mattschey"
     ],
+    "aliases": [
+        "/glossary/german/computational_rechenmodell"
+    ],
     "lastmod": "2026-11-12"
 }
