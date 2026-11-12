@@ -107,6 +107,9 @@
 .tag-letters{display:flex;flex-wrap:wrap;gap:4px;margin:0 0 8px;position:sticky;top:0;z-index:5;padding:8px 0;background:var(--page)}
 .tag-letters a{display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:34px;border-radius:var(--r-small);background:var(--surface);color:var(--ink);font:600 15px/1 var(--text);text-decoration:none}
 .tag-group{scroll-margin-top:56px}
+/* On a phone the sticky letters wrap to three or four rows, so a jump lands below them. */
+@media(max-width:760px){.tag-group{scroll-margin-top:140px}}
+@media(max-width:360px){.tag-group{scroll-margin-top:180px}}
 .tag-group h3{margin:20px 0 6px;font-size:22px;color:var(--edu)}
 .tag-group ul{columns:4 220px;column-gap:28px;margin:0;padding:0;list-style:none}
 .tag-group li{break-inside:avoid;margin:0;padding:3px 0}
@@ -119,7 +122,6 @@
 .tag-all.is-searching .tag-group-more{display:none}
 .tag-group-more{margin:6px 0 0;padding:6px 14px;border:1.5px solid var(--ink);border-radius:999px;background:#fff;color:var(--ink);font:600 15px/1.3 var(--text);cursor:pointer}
 .tag-letters{border-bottom:1px solid var(--line)}
-@media(max-width:760px){.tag-group ul{columns:2 140px}}
 /* Tags carried by one page only are lighter, so the ones in common use stand out. */
 .tag-group li.tag-rare .tag-count{opacity:.8}
 /* A tag's page count as a small badge beside it, not another word of the tag. */
@@ -127,6 +129,7 @@
 .tag-top .tag-cloud a .tag-count{background:#fff}
 /* A to Z as rows: the tag on the left, its count aligned on the right, a light rule between rows. */
 .tag-group ul{columns:3 240px}
+@media(max-width:760px){.tag-group ul{columns:2 140px}}
 .tag-group li{padding:0;border-bottom:1px solid var(--surface)}
 .tag-group li a{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:5px 2px}
 .tag-group li .tag-count{flex:none}

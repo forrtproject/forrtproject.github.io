@@ -24,12 +24,6 @@
 @media(hover:none){#just-os-dismiss{opacity:1}}
 @media print{#just-os-widget{display:none}}
 
-/* At 400% zoom a full-size launcher would cover a third of the screen. */
-@media (max-height:420px){
-  #just-os-img{width:38px;height:38px}
-  #just-os-bubble{display:none}
-}
-
 /* The round button needs 80 px of margin, which the page has from 1440 px (.wrap is at most 1280 px wide).
    Below that it would sit over text, cards or buttons wherever it rested, so it is a tab in the page's gutter. site.js uses the same width for the invitation. */
 @media (max-width:1439px){
@@ -61,4 +55,9 @@
   /* A floating button can be dismissed, as on desktop; on touch screens the cross always shows. */
   #just-os-dismiss{display:block}
   .site-foot{padding-bottom:88px}
+}
+/* At 400% zoom a full-size launcher would cover a third of the screen. Last, so the sizes above do not undo it. */
+@media (max-height:420px){
+  #just-os-img{width:38px;height:38px}
+  #just-os-bubble{display:none}
 }
