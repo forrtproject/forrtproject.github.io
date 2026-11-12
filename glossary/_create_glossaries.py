@@ -1,3 +1,22 @@
+"""Generate the glossary term pages from the Glossary Google Sheet.
+
+Source: the Glossary sheet (DEFAULT_SHEET_ID / DEFAULT_GID; override with the
+GLOSSARY_SHEET_ID and GLOSSARY_SHEET_GID environment variables). Each `XX_` column
+prefix is a language, mapped to a folder by `language_map`.
+
+Writes content/glossary/{english,german,arabic,chinese,turkish}/*.md (each folder's
+hand-written _index.md is kept) and _glossaries.json, writes missing_references.txt
+when a term cites a reference missing from apa_lookup.json, and rewrites the
+`$allLanguages` line in layouts/glossary/single.html. Fix a term in the sheet, then re-run; a hand edit to a
+term page is lost on the next run. Each page keeps its `lastmod` while its content is
+unchanged (see scripts/generated_lastmod.py).
+
+The term pages are committed. In CI they are regenerated only by a manual
+data-processing.yml dispatch with `regenerate_glossary`, which opens a PR.
+
+Usage (from the repository root):
+    python3 content/glossary/_create_glossaries.py
+"""
 import requests
 import re
 import json
