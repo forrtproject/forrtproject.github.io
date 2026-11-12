@@ -603,22 +603,6 @@ document.querySelectorAll('.article-style li > p > strong:first-child').forEach(
   name.before(chip, ' ');
 });
 
-// Replication Hub: a search over the tools; a stage with no match steps aside.
-const toolFind = document.querySelector('.tool-find');
-if (toolFind) {
-  toolFind.hidden = false;
-  const input = toolFind.querySelector('input');
-  const count = toolFind.querySelector('.tool-find-count');
-  const tools = [...document.querySelectorAll('.stage .tool')];
-  input.addEventListener('input', () => {
-    const query = input.value.trim().toLowerCase();
-    tools.forEach((tool) => { tool.hidden = Boolean(query) && !tool.textContent.toLowerCase().includes(query); });
-    document.querySelectorAll('.stage').forEach((stage) => { stage.hidden = Boolean(query) && !stage.querySelector('.tool:not([hidden])'); });
-    const shown = tools.filter((tool) => !tool.hidden).length;
-    count.textContent = !query ? '' : shown ? `${shown} of ${tools.length} tools` : 'No tool matches.';
-  });
-}
-
 // Get Involved: a search over the project cards.
 const projectFilter = document.querySelector('.project-filter');
 if (projectFilter) {

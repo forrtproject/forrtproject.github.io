@@ -309,13 +309,29 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .article-layout .article-style .awop-material .spoiler>summary{padding:4px 0;font-size:16px}
 
 /* Starting points at the top of a page (shortcodes/action_cards.html). */
-.action-cards,.article-layout .article-style .action-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr));gap:12px;margin:8px 0 28px;padding:0;list-style:none;max-width:none}
-.action-cards li,.article-layout .article-style .action-cards li{margin:0}
-.action-cards a,.article-layout .article-style .action-cards a{display:flex;flex-direction:column;gap:4px;height:100%;box-sizing:border-box;padding:16px 18px;background:var(--surface);border:1.5px solid transparent;border-radius:var(--r-large);color:var(--ink);text-decoration:none}
-.action-cards a:hover,.article-layout .article-style .action-cards a:hover{border-color:var(--link)}
-.action-cards strong,.article-layout .article-style .action-cards strong{color:var(--link);font:600 19px/1.3 var(--text)}
-.action-cards strong::after,.article-layout .article-style .action-cards strong::after{content:" →"}
-.action-cards span,.article-layout .article-style .action-cards span{font-size:16px;line-height:1.4}
+/* Starting points (the action_cards shortcode and the Replication Hub's Start here): solid bricks with studs,
+   laid edge to edge like a short wall, in the area colours (below). The bricks are for a handful of actions; long lists are rows (hub.css). */
+/* A row runs through the four area colours, starting with its own area's (`area` on the shortcode), so a
+   page's bricks are related but not identical. */
+.action-cards{--c1:var(--res);--c2:var(--edu);--c3:var(--jus);--c4:var(--com)}
+.action-cards.area-edu{--c1:var(--edu);--c2:var(--res);--c3:var(--jus);--c4:var(--com)}
+.action-cards.area-jus{--c1:var(--jus);--c2:var(--res);--c3:var(--edu);--c4:var(--com)}
+.action-cards.area-com{--c1:var(--com);--c2:var(--res);--c3:var(--edu);--c4:var(--jus)}
+.action-cards li:nth-child(4n+1){--tone:var(--c1)}.action-cards li:nth-child(4n+2){--tone:var(--c2)}
+.action-cards li:nth-child(4n+3){--tone:var(--c3)}.action-cards li:nth-child(4n+4){--tone:var(--c4)}
+:is(.article-layout .article-style,.hub-start) .action-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:16px 5px;list-style:none;margin:26px 0 32px;padding:0;max-width:none}
+:is(.article-layout .article-style,.hub-start) .action-cards li{position:relative;margin:0;--brick:var(--tone)}
+/* The studs: short blocks along the top edge, on a pseudo-element so the text sits on a plain fill. */
+:is(.article-layout .article-style,.hub-start) .action-cards li::before{content:"";position:absolute;left:14px;right:14px;top:-8px;height:8px;background:linear-gradient(90deg,transparent 6px,var(--brick) 6px 28px,transparent 28px) left top/34px 8px space no-repeat;border-radius:3px 3px 0 0;pointer-events:none}
+:is(.article-layout .article-style,.hub-start) .action-cards a{display:flex;flex-direction:column;gap:4px;height:100%;box-sizing:border-box;min-height:96px;padding:16px 18px 22px;background:var(--brick);border-radius:3px;box-shadow:inset 0 -6px 0 rgb(0 0 0/.24);color:#fff;text-decoration:none;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+:is(.article-layout .article-style,.hub-start) .action-cards strong{font:500 24px/1.15 var(--display);color:#fff}
+:is(.article-layout .article-style,.hub-start) .action-cards span{font:400 17px/1.4 var(--text);color:#fff}
+:is(.article-layout .article-style,.hub-start) .action-cards a:hover strong{text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:4px}
+:is(.article-layout .article-style,.hub-start) .action-cards a:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+@media(prefers-reduced-motion:no-preference){
+  :is(.article-layout .article-style,.hub-start) .action-cards li{transition:transform .15s}
+  :is(.article-layout .article-style,.hub-start) .action-cards li:hover{transform:translateY(-3px)}
+}
 /* A disclosure inside a list item (the effects on /reversals/) is a small toggle under the entry, not a full-width bar. */
 .article-layout .article-style li .spoiler{margin:4px 0 12px;background:none;border-radius:0}
 .article-layout .article-style li .spoiler>summary{display:inline-flex;padding:4px 0;font-size:15px;color:var(--link);text-decoration:underline;text-underline-offset:3px}
