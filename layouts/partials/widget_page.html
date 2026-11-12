@@ -56,7 +56,7 @@
       {{ end }}
       {{/* On phones the side card falls below the text, too late to help on a long page. */}}
       {{ if $hasCard }}
-      {{ $items := "" }}{{ range $toc }}{{ $items = printf `%s<li><a href="#%s">%s</a></li>` $items .id (.title | markdownify | emojify | plainify) }}{{ end }}
+      {{ $items := "" }}{{ range $toc }}{{ $items = printf `%s<li><a href="#%s">%s</a></li>` $items (.id | htmlEscape) (.title | markdownify | emojify | plainify | htmlUnescape | htmlEscape) }}{{ end }}
       {{ $nav := printf `<nav aria-label="On this page"><ul>%s</ul></nav>` $items }}
       {{ partial "doors/toc_phone" $nav }}
       {{ end }}
