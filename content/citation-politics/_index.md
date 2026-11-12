@@ -6,6 +6,10 @@ subtitle: "A toolkit to encourage thoughtful citation"
 url: "/citation-politics/"
 sharing_image: "img/citation-politics-toolkit.webp"
 sharing_image_alt: "Towards Citational Justice Across the Whole Research Cycle — a wheel of citation politics tools and practices for planning, project, paper, and publication stages"
+# The wheel beside the title (layouts/partials/doors/page_hero.html).
+hero_image: "img/citation-politics-toolkit.webp"
+hero_image_alt: "Towards Citational Justice Across the Whole Research Cycle: a wheel of citation politics tools and practices for the planning, project, paper and publication stages"
+hero_image_link: "Open the full-size wheel"
 ---
 
 # Overview

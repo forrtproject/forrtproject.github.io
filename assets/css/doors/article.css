@@ -333,28 +333,31 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .article-layout .article-style .list-filter-status button[aria-pressed=true]{border-color:var(--ink)}
 .status-no-status{background:var(--surface);color:var(--soft)}
 
-/* A tool page's opening with the tool in view (partials/doors/tool_hero.html, the AWoP wheel): on a
+/* A page's opening with its picture in view (partials/doors/page_hero.html: the AWoP and citation wheels, a banner): on a
    desktop the title, lede and actions sit beside a large image and span the side card and text below;
    on a phone the image follows the actions at a size that keeps them on the first screen. */
-.article-layout .tool-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,400px);column-gap:48px;align-items:center}
-.article-layout .tool-hero h1{font-size:clamp(34px,3.2vw,44px);line-height:1.1;letter-spacing:-.01em;margin:0;text-wrap:balance}
-.article-layout .tool-hero .page-actions{margin-bottom:0}
-.article-layout .tool-hero-media{margin:0;text-align:center}
-.article-layout .tool-hero-media img{display:block;width:100%;height:auto}
-.article-layout .tool-hero-media a{display:block;border-radius:var(--r-small);overflow:hidden}
-.article-layout .tool-hero-media p{margin:6px 0 0;font-size:15px}
-.article-layout .tool-hero-media p a{display:inline;color:var(--link);text-decoration:underline;text-underline-offset:3px}
+.article-layout .page-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,400px);column-gap:48px;align-items:center}
+/* A full-width page (AI in Metascience) gives a landscape banner the width of the cards below it. */
+.article-layout-wide .page-hero{grid-template-columns:minmax(0,1fr) minmax(0,520px);column-gap:56px}
+.article-layout .page-hero h1{font-size:clamp(34px,3.2vw,44px);line-height:1.1;letter-spacing:-.01em;margin:0;text-wrap:balance}
+.article-layout .page-hero .page-actions{margin-bottom:0}
+.article-layout .page-hero-media{margin:0;text-align:center}
+.article-layout .page-hero-media img{display:block;width:100%;height:auto}
+.article-layout .page-hero-media a{display:block;border-radius:var(--r-small);overflow:hidden}
+.article-layout .page-hero-media p{margin:6px 0 0;font-size:15px}
+.article-layout .page-hero-media p a{display:inline;color:var(--link);text-decoration:underline;text-underline-offset:3px}
 @media(min-width:1001px){
-  .article-layout:has(>.tool-hero){row-gap:40px}
-  .article-layout:not(.article-layout-wide)>.tool-hero{grid-column:1/-1;grid-row:1}
-  .article-layout:not(.article-layout-wide):has(>.tool-hero)>:is(.article-card,.reading){grid-row:2}
+  .article-layout:has(>.page-hero){row-gap:40px}
+  .article-layout:not(.article-layout-wide)>.page-hero{grid-column:1/-1;grid-row:1}
+  .article-layout:not(.article-layout-wide):has(>.page-hero)>:is(.article-card,.reading){grid-row:2}
 }
 @media(max-width:1000px){
-  .article-layout:has(>.tool-hero){row-gap:24px}
-  .article-layout .tool-hero{grid-template-columns:minmax(0,1fr);row-gap:24px}
-  .article-layout .tool-hero-media{width:min(100%,340px)}
+  .article-layout:has(>.page-hero){row-gap:24px}
+  .article-layout .page-hero{grid-template-columns:minmax(0,1fr);row-gap:24px}
+  .article-layout .page-hero-media{width:min(100%,340px)}
+  .article-layout .page-hero-landscape .page-hero-media{width:100%}
 }
 @media(max-width:600px){
-  .article-layout .tool-hero{row-gap:18px}
-  .article-layout .tool-hero-media{width:min(100%,280px)}
+  .article-layout .page-hero{row-gap:18px}
+  .article-layout .page-hero:not(.page-hero-landscape) .page-hero-media{width:min(100%,280px)}
 }

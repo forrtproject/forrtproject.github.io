@@ -43,16 +43,15 @@
 
 <div class="wrap">
   <div class="article-layout{{ if $hasCallouts }} article-layout-callouts{{ else if not $hasCard }} article-layout-single{{ end }}{{ if $wide }} article-layout-wide{{ end }}">
-    {{ with .Params.hero_image }}{{ partial "doors/tool_hero" (dict "page" $page "h1" $h1 "lede" $lede) }}{{ end }}
+    {{ with .Params.hero_image }}
+      {{ $head := partial "doors/page_head" (dict "page" $page "h1" $h1 "lede" $lede) }}
+      {{ partial "doors/page_hero" (dict "page" $page "head" $head) }}
+    {{ end }}
     {{/* First in the page, so keyboard order follows the layout: contents, then text. */}}
     {{ $card }}
     <article class="reading">
       {{ if not .Params.hero_image }}
-      <header class="article-head">
-        {{ partial "doors/crumbs" (dict "page" .) }}
-        <h1>{{ $h1 | markdownify | emojify }}</h1>
-        {{ with $lede }}<p class="standfirst">{{ . | markdownify | emojify }}</p>{{ end }}
-      </header>
+      {{ partial "doors/page_head" (dict "page" . "h1" $h1 "lede" $lede) }}
       {{ partial "doors/page_actions" . }}
       {{ end }}
       {{/* On phones the side card falls below the text, too late to help on a long page. */}}
