@@ -736,3 +736,21 @@ if (badges.length) {
   });
   new MutationObserver(nameBadges).observe(document.querySelector('.pub-list, .article-style') || document.body, { childList: true, subtree: true });
 }
+
+// Phone contents (doors/toc_phone): a list of more than six sections shows its first five and a button for the rest.
+document.querySelectorAll('.toc-phone').forEach((box) => {
+  const items = [...box.querySelectorAll('nav > ul > li')];
+  if (items.length <= 6) return;
+  items.slice(5).forEach((item) => item.classList.add('toc-extra'));
+  box.classList.add('is-short');
+  const more = document.createElement('button');
+  more.type = 'button';
+  more.className = 'toc-phone-more';
+  more.textContent = `Show all ${items.length} sections`;
+  more.addEventListener('click', () => {
+    box.classList.remove('is-short');
+    more.remove();
+    items[5].querySelector('a')?.focus();
+  });
+  box.querySelector('.article-toc').append(more);
+});
