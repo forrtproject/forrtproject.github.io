@@ -143,4 +143,4 @@ main:lang(ar) .glossary-layout .article-style .term-definition p{font-size:21px}
 main:lang(ar) .crumbs a,main:lang(ar) .crumbs [aria-current]{unicode-bidi:isolate}
 main:lang(ar) .glossary-layout .article-style a{unicode-bidi:plaintext}
 /* A contributor's name is never split across lines. */
-.glossary-layout .term-credit bdi{white-space:nowrap}
+.glossary-layout .term-credit bdi.term-name{white-space:nowrap}

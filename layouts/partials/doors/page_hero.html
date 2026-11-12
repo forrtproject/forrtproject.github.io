@@ -12,7 +12,8 @@
 {{ with $page.Resources.GetMatch $src }}
   {{ $full = .RelPermalink }}
   {{/* The opening shows it at most 400 px wide, so 900 px covers a 2x screen. */}}
-  {{ $img := cond (gt .Width 900) (.Resize "900x webp q80") . }}
+  {{ $img := . }}
+  {{ if gt .Width 900 }}{{ $img = .Resize "900x webp q80" }}{{ end }}
   {{ $shown = $img.RelPermalink }}{{ $w = $img.Width }}{{ $h = $img.Height }}
 {{ else }}
   {{ $path := strings.TrimPrefix "/" $src }}

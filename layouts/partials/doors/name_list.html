@@ -2,5 +2,7 @@
      order inside an Arabic sentence and the list runs in the page's direction. Input: dict with `names`
      and `sep` (", " or the Arabic "، "). */}}
 {{ $out := slice }}
-{{ range .names }}{{ $out = $out | append (printf "<bdi>%s</bdi>" (. | markdownify)) }}{{ end }}
+{{/* Each name is escaped before Markdown, as in term_title, so only the list's own markup is trusted. A name stays
+     on one line; a long value (a list of links, say) may wrap. */}}
+{{ range .names }}{{ $text := . | htmlEscape | markdownify }}{{ $out = $out | append (printf "<bdi%s>%s</bdi>" (cond (lt (len (plainify $text)) 40) ` class="term-name"` "") $text) }}{{ end }}
 {{ return (delimit $out .sep | safeHTML) }}
