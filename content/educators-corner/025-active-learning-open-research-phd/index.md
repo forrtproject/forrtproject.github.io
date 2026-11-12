@@ -21,7 +21,7 @@ image:
 projects: []
 ---
 
-As Open Research Practices (ORP) become increasingly embedded within research culture, postgraduate researchers are often expected to engage with ORP such as pre-registration, data sharing, and open materials. However, guidance documents alone rarely lead to meaningful engagement unless supported by active learning strategies or social reinforcement (Adam-Ismail, 2023; Munna & Kalam, 2021). To address this challenge, we designed, delivered, and evaluated a 90-minute ORP workshop for postgraduate researchers that combined three active learning strategies: Reflective Group Discussions (RGD), Expert Narratives (EN), and Live Demonstrations (LD). Drawing on cognitive-affective-behavioural learning models (e.g., Bloom et al., 1956; Krathwohl et al., 1964; OECD, 2026), three active learning strategies were intentionally selected and sequenced within the workshop (RGD-EN-LD). The intentional design sought to move beyond knowledge transfer by supporting researchers to reflect on their motivations, connect with authentic examples of ORP in practice, and develop confidence using the Open Science Framework (OSF).
+As Open Research Practices (ORP) become increasingly embedded within research culture, postgraduate researchers are often expected to engage with ORP such as pre-registration, data sharing, and open materials. However, guidance documents alone rarely lead to meaningful engagement unless supported by active learning strategies or social reinforcement (Adam Ismail, 2023; Munna & Kalam, 2021). To address this challenge, we designed, delivered, and evaluated a 90-minute ORP workshop for postgraduate researchers that combined three active learning strategies: Reflective Group Discussions (RGD), Expert Narratives (EN), and Live Demonstrations (LD). Drawing on cognitive-affective-behavioural learning models (e.g., Bloom et al., 1956; Krathwohl et al., 1964; OECD, 2026), three active learning strategies were intentionally selected and sequenced within the workshop (RGD-EN-LD). The intentional design sought to move beyond knowledge transfer by supporting researchers to reflect on their motivations, connect with authentic examples of ORP in practice, and develop confidence using the Open Science Framework (OSF).
 
 To evaluate the effectiveness of the workshop with three active learning strategies, a mixed methods design was adopted. Fifteen postgraduate researchers attended the workshop. Anonymous questionnaires (N = 4; first-year = 1; third year = 3) were analysed descriptively to capture breadth, while interviews with postgraduate researchers (N = 4; first-year = 2; third year = 2) and co-facilitator (N = 1) were analysed using Braun and Clarke's (2006; 2019) six-step thematic analysis framework and offered in-depth insight into context and individual experiences.
 
@@ -45,6 +45,20 @@ As a result, several changes were implemented, including the expansion of ORP po
 
 - The lesson plan for this workshop is available on FORRT's [Lesson Plans page](/lesson-plans/#open-research-phd) ([PDF](/lesson-plans/LessonPlan_OpenResearchPhD.pdf), [editable Word version](/lesson-plans/LessonPlan_OpenResearchPhD.docx)).
 - The project and workshop slides are on [OSF](https://osf.io/82t9c/overview).
+
+## References
+
+Adam Ismail, I. (2023). *Using positive reinforcement to increase student engagement in the classroom* [Master's thesis, Minnesota State University Moorhead]. Dissertations, Theses, and Projects, 850. [https://red.mnstate.edu/thesis/850](https://red.mnstate.edu/thesis/850)
+
+Braun, V., & Clarke, V. (2006). Using thematic analysis in psychology. *Qualitative Research in Psychology, 3*(2), 77–101. [https://doi.org/10.1191/1478088706qp063oa](https://doi.org/10.1191/1478088706qp063oa)
+
+Braun, V., & Clarke, V. (2019). Reflecting on reflexive thematic analysis. *Qualitative Research in Sport, Exercise and Health, 11*(4), 589–597. [https://doi.org/10.1080/2159676X.2019.1628806](https://doi.org/10.1080/2159676X.2019.1628806)
+
+Bronfenbrenner, U. (1976). The experimental ecology of education. *Educational Researcher, 5*(9), 5–15. [https://doi.org/10.3102/0013189X005009005](https://doi.org/10.3102/0013189X005009005)
+
+Bronfenbrenner, U., & Morris, P. A. (2007). The bioecological model of human development. In W. Damon & R. M. Lerner (Eds.), *Handbook of child psychology* (Vol. 1). Wiley. [https://doi.org/10.1002/9780470147658.chpsy0114](https://doi.org/10.1002/9780470147658.chpsy0114)
+
+Munna, A. S., & Kalam, M. A. (2021). Impact of active learning strategy on the student engagement. *GNOSI: An Interdisciplinary Journal of Human Theory and Praxis, 4*(2), 96–114.
 
 ## About the author
 
