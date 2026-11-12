@@ -148,17 +148,18 @@
 
 <style>
   .glossary-feedback {
-    margin: 2.5rem 0 1.5rem;
-    padding: 1.5rem 1.75rem;
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    border-radius: 8px;
-    background: var(--surface);
+    margin: 1.5rem 0 1rem;
+    padding: 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
   }
 
   .glossary-feedback-header {
     display: flex;
     align-items: center;
-    gap: 0.85rem;
+    gap: 0.5rem;
+    min-height: 48px;
+    padding: 8px 0;
     /* <summary> renders the header row; strip its native disclosure
        triangle so our own chevron is the only toggle affordance. */
     cursor: pointer;
@@ -178,18 +179,15 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 2.25rem;
-    height: 2.25rem;
-    border-radius: 50%;
-    background: var(--res-bg);
     color: var(--link);
-    font-size: 1.1rem;
+    font-size: 17px;
   }
 
   .glossary-feedback-heading {
     margin: 0;
-    font-size: 1.05rem;
-    font-weight: 700;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--link);
     flex: 1 1 auto;
   }
 
@@ -206,7 +204,7 @@
   }
 
   .glossary-feedback-body {
-    margin-top: 1.25rem;
+    margin: 0.5rem 0 1.25rem;
   }
 
   .glossary-feedback-intro {
@@ -243,10 +241,6 @@
   }
 
   @media (max-width: 576px) {
-    .glossary-feedback {
-      padding: 1.25rem;
-    }
-
     .glossary-feedback-row {
       grid-template-columns: 1fr;
     }

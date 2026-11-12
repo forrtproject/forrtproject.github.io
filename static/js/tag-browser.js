@@ -24,7 +24,7 @@
   {
     groups.forEach(function (group) {
       var items = group.querySelectorAll("li");
-      if (items.length <= FIRST) return;
+      if (items.length < FIRST + 5) return;
       // The preview shows the letter's most used tags, in their alphabetical places.
       var ranked = Array.prototype.slice.call(items).sort(function (a, b) {
         return Number(b.querySelector(".tag-count").textContent) - Number(a.querySelector(".tag-count").textContent);

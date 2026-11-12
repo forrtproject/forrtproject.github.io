@@ -126,7 +126,9 @@ main:lang(ar) .glossary-layout .article-style .term-definition p{font-size:21px}
 .term-finder .glossary-card>h2{display:none}
 .term-finder .term-list{max-height:50vh;overflow-y:auto}
 .glossary-hub .standfirst a{text-decoration:underline;text-underline-offset:3px}
-.glossary-view{flex:none;padding:10px 16px;border:1.5px solid var(--line);border-radius:999px;background:#fff;color:var(--ink);font:600 16px/1.2 var(--text);cursor:pointer}
+.glossary-view{flex:none;display:inline-flex;border:1.5px solid var(--line);border-radius:999px;background:#fff;overflow:hidden}
+.glossary-view button{padding:10px 14px;border:0;background:transparent;color:var(--ink);font:600 16px/1.2 var(--text);cursor:pointer}
+.glossary-view button[aria-pressed="true"]{background:var(--ink);color:#fff}
 .glossary-view[hidden]{display:none}
 /* List view: one row per term, its definition on one line beside or under it. */
 .term-grid.is-list .term-group ul{grid-template-columns:minmax(0,1fr);gap:0}
@@ -134,3 +136,4 @@ main:lang(ar) .glossary-layout .article-style .term-definition p{font-size:21px}
 .term-grid.is-list .term-group li p{margin:0;-webkit-line-clamp:1}
 @media(max-width:760px){.term-grid.is-list .term-group li{grid-template-columns:minmax(0,1fr)}}
 @media(max-width:760px){.glossary-search-row{flex-wrap:wrap}.glossary-search-row input{flex-basis:100%}}
+.glossary-letters a.is-current{background:var(--ink);color:#fff}

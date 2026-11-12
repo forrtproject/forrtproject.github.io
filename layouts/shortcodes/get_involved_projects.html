@@ -25,27 +25,16 @@
       <div>
         {{ .description | markdownify }}
       </div>
+      {{/* One filled action to reach a person; the project's own page and its Slack channel follow as plain links. */}}
       <div class="get-involved-actions">
-        {{ if .link }}
-          <a href="{{ .link }}" class="btn btn-outline-primary btn-sm">
-            <i class="fas fa-external-link-alt"></i> Visit project
-          </a>
-        {{ end }}
-        {{ if .slack }}
-          <a href="{{ .slack }}" target="_blank" rel="noopener" class="btn btn-outline-info btn-sm">
-            <i class="fab fa-slack"></i> Slack
-          </a>
-        {{ end }}
         {{ if .contact_email }}
-          <a href="mailto:{{ .contact_email }}" class="btn btn-outline-success btn-sm">
-            <i class="fas fa-envelope"></i> Email {{ .contact_name }}
-          </a>
+          <a href="mailto:{{ .contact_email }}" class="btn btn-primary btn-sm is-main">Email {{ .contact_name | default "the team" }}</a>
         {{ else if .contact_name }}
           {{/* No email: the person is reached on FORRT's Slack, so the button joins it. */}}
-          <a href="https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ" target="_blank" rel="noopener" class="btn btn-outline-info btn-sm">
-            <i class="fab fa-slack"></i> Ask {{ .contact_name }} on Slack
-          </a>
+          <a href="https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ" target="_blank" rel="noopener" class="btn btn-primary btn-sm is-main">Ask {{ .contact_name }} on Slack</a>
         {{ end }}
+        {{ if .slack }}<a href="{{ .slack }}" target="_blank" rel="noopener" class="get-involved-link">Slack channel</a>{{ end }}
+        {{ if .link }}<a href="{{ .link }}" class="get-involved-link">Visit project</a>{{ end }}
       </div>
     </div>
   {{ end }}

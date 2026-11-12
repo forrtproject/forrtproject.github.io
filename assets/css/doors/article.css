@@ -337,3 +337,4 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .article-layout .article-style .list-filter-status{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 0}
 .article-layout .article-style .list-filter-status button{border:1.5px solid transparent;cursor:pointer;padding:3px 10px}
 .article-layout .article-style .list-filter-status button[aria-pressed=true]{border-color:var(--ink)}
+.status-no-status{background:var(--surface);color:var(--soft)}

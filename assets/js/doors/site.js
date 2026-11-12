@@ -499,13 +499,29 @@ if (termFilter && termGrid) {
   const view = document.querySelector('.glossary-view');
   const setView = (list) => {
     termGrid.classList.toggle('is-list', list);
-    view.setAttribute('aria-pressed', String(list));
-    view.textContent = list ? view.dataset.cards : view.dataset.list;
+    view.querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', String((b.dataset.view === 'list') === list)));
     try { localStorage.setItem('glossary-view', list ? 'list' : 'cards'); } catch (e) { /* storage blocked: the choice lasts this visit */ }
   };
   view.hidden = false;
-  view.addEventListener('click', () => setView(!termGrid.classList.contains('is-list')));
-  try { if (localStorage.getItem('glossary-view') === 'list') setView(true); } catch (e) { /* no stored choice */ }
+  view.querySelectorAll('button').forEach((b) => b.addEventListener('click', () => setView(b.dataset.view === 'list')));
+  // Phones start with the compact list; a stored choice wins.
+  let stored = null;
+  try { stored = localStorage.getItem('glossary-view'); } catch (e) { /* no stored choice */ }
+  if (stored ? stored === 'list' : matchMedia('(max-width: 760px)').matches) setView(stored === 'list' || !stored);
+  // The letter whose terms are on screen is marked in the letter bar.
+  const letterLinks = [...document.querySelectorAll('.glossary-letters a')];
+  if ('IntersectionObserver' in window && letterLinks.length) {
+    const seen = new Map();
+    const mark = () => {
+      const top = [...seen.entries()].filter(([, on]) => on).map(([id]) => id)[0];
+      if (top) letterLinks.forEach((a) => a.classList.toggle('is-current', a.hash === `#${top}`));
+    };
+    const watch = new IntersectionObserver((entries) => {
+      entries.forEach((e) => seen.set(e.target.id, e.isIntersecting));
+      mark();
+    }, { rootMargin: '-35% 0px -60% 0px' });
+    document.querySelectorAll('.term-group').forEach((g) => { seen.set(g.id, false); watch.observe(g); });
+  }
   document.querySelector('.glossary-clear').addEventListener('click', () => {
     termFilter.value = '';
     termFilter.dispatchEvent(new Event('input'));
@@ -569,12 +585,12 @@ document.querySelectorAll('.area-more button').forEach((button) => {
 // An entry whose details give "Status: …" (the effects on /reversals/) shows that status as a chip beside its name.
 document.querySelectorAll('.article-style li > p > strong:first-child').forEach((name) => {
   const item = name.closest('li');
+  if (!item.querySelector('.spoiler')) return;
   const line = [...item.querySelectorAll('.spoiler li')].find((li) => /^\s*status:/i.test(li.textContent));
-  if (!line) return;
-  const status = line.textContent.replace(/^\s*status:\s*/i, '').trim().toLowerCase();
+  const status = line ? line.textContent.replace(/^\s*status:\s*/i, '').trim().toLowerCase() : '';
   // One word set for the chips; any qualifier stays in the statistics and in the chip's title.
-  const label = ['not replicated', 'reversed', 'mixed', 'replicated'].find((word) => status.startsWith(word) || status.includes(word));
-  if (!label) return;
+  // An entry with no status says so, so that it can still be found by outcome.
+  const label = ['not replicated', 'reversed', 'mixed', 'replicated'].find((word) => status.startsWith(word) || status.includes(word)) || 'no status';
   const chip = document.createElement('span');
   chip.className = `status-chip status-${label.replace(/[^a-z]+/g, '-')}`;
   chip.textContent = label;
@@ -645,7 +661,7 @@ if (listFilter) {
   }
   // Status buttons, when the entries carry status chips: show one outcome at a time.
   let status = '';
-  const outcomes = ['not replicated', 'reversed', 'mixed', 'replicated'].filter((word) => document.querySelector(`.status-${word.replace(' ', '-')}`));
+  const outcomes = ['not replicated', 'reversed', 'mixed', 'replicated', 'no status'].filter((word) => document.querySelector(`.status-${word.replace(' ', '-')}`));
   if (outcomes.length) {
     const row = document.createElement('div');
     row.className = 'list-filter-status';
@@ -655,7 +671,8 @@ if (listFilter) {
       const button = document.createElement('button');
       button.type = 'button';
       button.className = word === 'all' ? 'status-chip' : `status-chip status-${word.replace(' ', '-')}`;
-      button.textContent = word;
+      const many = word === 'all' ? '' : ` ${document.querySelectorAll(`.list-filter ~ ul .status-${word.replace(' ', '-')}`).length}`;
+      button.textContent = word + many;
       button.setAttribute('aria-pressed', String(word === 'all'));
       button.addEventListener('click', () => {
         status = word === 'all' ? '' : word.replace(' ', '-');
