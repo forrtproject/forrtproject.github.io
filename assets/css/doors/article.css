@@ -323,7 +323,7 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 :is(.article-layout .article-style,.hub-start) .action-cards li{position:relative;margin:0;--brick:var(--tone)}
 /* The studs: short blocks along the top edge, on a pseudo-element so the text sits on a plain fill. */
 :is(.article-layout .article-style,.hub-start) .action-cards li::before{content:"";position:absolute;left:14px;right:14px;top:-8px;height:8px;background:linear-gradient(90deg,transparent 6px,var(--brick) 6px 28px,transparent 28px) left top/34px 8px space no-repeat;border-radius:3px 3px 0 0;pointer-events:none}
-:is(.article-layout .article-style,.hub-start) .action-cards a{display:flex;flex-direction:column;gap:4px;height:100%;box-sizing:border-box;min-height:96px;padding:16px 18px 22px;background:var(--brick);border-radius:3px;box-shadow:inset 0 -6px 0 rgb(0 0 0/.24);color:#fff;text-decoration:none}
+:is(.article-layout .article-style,.hub-start) .action-cards a{display:flex;flex-direction:column;gap:4px;height:100%;box-sizing:border-box;min-height:96px;padding:16px 18px 22px;background:var(--brick);border-radius:3px;box-shadow:inset 0 -6px 0 rgb(0 0 0/.24);color:#fff;text-decoration:none;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 :is(.article-layout .article-style,.hub-start) .action-cards strong{font:500 24px/1.15 var(--display);color:#fff}
 :is(.article-layout .article-style,.hub-start) .action-cards span{font:400 17px/1.4 var(--text);color:#fff}
 :is(.article-layout .article-style,.hub-start) .action-cards a:hover strong{text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:4px}

@@ -18,7 +18,8 @@
 .hub-start h2{margin:0 0 4px;font:500 28px/1.2 var(--display)}
 .hub-start .action-cards li:nth-child(1){--tone:#44598c}.hub-start .action-cards li:nth-child(2){--tone:#25705f}
 .hub-start .action-cards li:nth-child(3){--tone:#a34a0c}.hub-start .action-cards li:nth-child(4){--tone:#7a5c3d}
-@media(min-width:761px){.hub-start.hub-start .action-cards{gap:0 4px}}
+/* Joined into one course once all four fit on a line; until then they keep a row gap for their studs. */
+@media(min-width:1001px){.hub-start.hub-start .action-cards{gap:0 4px}}
 
 /* Stages: open sections under a rule in the stage colour, each tool a ruled row whose whole width is
    the link (a stretched link), so it is a full-size target on a phone. Set like a contents page. */
