@@ -91,3 +91,11 @@
 .result-bar .pager-top{margin:0 0 0 auto}
 .pager-top[hidden]{display:none}
 .collection-about>summary{cursor:pointer;color:var(--link);font-weight:600;text-decoration:underline;text-underline-offset:3px;margin:8px 0}
+/* Sort and page size, beside the result count; each select keeps its label, and wraps as a unit. */
+.result-tools{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center}
+.result-tool{display:inline-flex;align-items:center;gap:8px;font:600 16px/1.3 var(--text);color:var(--ink);white-space:nowrap}
+.result-tool select{padding:6px 10px;border:1.5px solid var(--soft);border-radius:var(--r-small);background:#fff;font:400 16px/1.3 var(--text);color:var(--ink);cursor:pointer}
+.result-tool select:disabled{cursor:default;opacity:.6}
+.result-bar{align-items:center}
+.result-count{flex:1 1 16em}
+.pager[hidden]{display:none}
