@@ -54,14 +54,6 @@ subtitle = "An equity-based tool for authorship order"
 ## Overview
 ---
 
-<div class="awop-wheel">
-
-[![The Academic Wheel of Privilege showing the 24 socio-cultural identities. The 24 socio-cultural identity types span six sectors: health and wellbeing, society, culture and communication, gender and sexuality, education and career, living arrangements and lastly childhood and development. These identity types are shown as circles connected to three concentric rings (outer, middle and inner) of “identity” circles with increasing privilege as you go towards the centre.](AWOP.webp)](AWOP.webp)
-
-[Open the full-size wheel](AWOP.webp)
-
-</div>
-
 Who goes first? Authorship order in academia is not just a matter of protocol but a critical determinant of research impact and professional advancement. However, the decision-making process often overlooks justice and equity, leading to a skewed distribution of authorship that favors privileged individuals, thereby exacerbating credit disparities for marginalized researchers. In response, we introduce the Academic Wheel of Privilege (AWoP): a comprehensive toolkit anchored by an app and supplemented with educational materials designed to guide equitable authorship order decisions.
 
 The AWoP transcends traditional frameworks by integrating accessibility, inclusivity, diversity, equity, and social justice. It is particularly beneficial in situations where contribution levels are difficult to assess or where systemic biases might influence decisions. Central to the AWoP’s mission is its capacity to promote critical discussions on academic privilege, intersectionality, and power dynamics, nurturing a research culture characterized by accountability and a collaborative spirit in research. By adopting this tool, the academic community can move towards a research ethos that recognizes and values diverse backgrounds and experiences.

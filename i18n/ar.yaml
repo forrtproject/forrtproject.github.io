@@ -1,0 +1,3 @@
+# Overrides the theme's Arabic strings (themes/academic/i18n/ar.yaml).
+- id: last_updated
+  translation: "آخر تحديث:"
