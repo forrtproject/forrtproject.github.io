@@ -3,7 +3,7 @@
     "en_title": "Consortium authorship",
     "title": "Konsortium Autor:innenschaft [Consortium authorship]",
     "sort_key": "konsortium autor:innenschaft [consortium authorship]",
-    "definition": "In der Autor:innenspalte erscheint nur der Name des Konsortiums oder der Organisation; die Namen der einzelnen Personen werden nicht genannt: Zum Beispiel \"FORRT\" als Autor. Dies ist bei den Publikationen der Ergebnisse von Gemeinschaftsprojekten mit einer sehr großen Anzahl von Mitwirkenden zu beobachten. Je nach den Richtlinien der Zeitschrift können einzelne Forschende in Literaturdatenbanken wie ORCID und Scopus als einer der Autoren aufgeführt werden. Die Autor:innenschaft eines Konsortiums kann auch als Gruppen-, Unternehmens-, Organisations- oder kollektive Autorenschaft (z. B. [https://www.bmj.com/about-bmj/resources-authors/article-submission/authorship-contributorship](https://www.bmj.com/about-bmj/resources-authors/article-submission/authorship-contributorship)) oder als kollaborative Autorenschaft (z. B. [https://support.jmir.org/hc/en-us/articles/115001449591-What-is-a-group-author-collaborative-author-and-does-it-need-an-ORCID](https://support.jmir.org/hc/en-us/articles/115001449591-What-is-a-group-author-collaborative-author-and-does-it-need-an-ORCID)) bezeichnet werden.",
+    "definition": "In der Autor:innenspalte erscheint nur der Name des Konsortiums oder der Organisation; die Namen der einzelnen Personen werden nicht genannt: Zum Beispiel \"FORRT\" als Autor. Dies ist bei den Publikationen der Ergebnisse von Gemeinschaftsprojekten mit einer sehr großen Anzahl von Mitwirkenden zu beobachten. Je nach den Richtlinien der Zeitschrift können einzelne Forschende in Literaturdatenbanken wie ORCID und Scopus als einer der Autoren aufgeführt werden. Die Autor:innenschaft eines Konsortiums kann auch als Gruppen-, Unternehmens-, Organisations- oder kollektive Autorenschaft (z. B. The BMJ, n.d.) oder als kollaborative Autorenschaft (z. B. JMIR Publications, 2021) bezeichnet werden.",
     "related_terms": [
         "Authorship",
         "CRediT"
@@ -11,7 +11,9 @@
     "references": [
         "Open Science Collaboration. (2015). Estimating the reproducibility of psychological science. <i>Science</i>, <i>349</i>(6251), aac4716. https://doi.org/10.1126/science.aac4716",
         "Tierney, W., Hardy III, J. H., Ebersole, C. R., Leavitt, K., Viganola, D., Clemente, E. G., et al. (2020). Creative destruction in science. <i>Organizational Behavior and Human Decision Processes</i>, <i>161</i>, 291–309. https://doi.org/10.1016/j.obhdp.2020.07.002",
-        "Tierney, W., Hardy III, J., Ebersole, C. R., Viganola, D., Clemente, E. G., Gordon, M., et al. (2021). A creative destruction approach to replication: Implicit work and sex morality across cultures. <i>Journal of Experimental Social Psychology</i>, <i>93</i>, 104060. https://doi.org/10.1016/j.jesp.2020.104060"
+        "Tierney, W., Hardy III, J., Ebersole, C. R., Viganola, D., Clemente, E. G., Gordon, M., et al. (2021). A creative destruction approach to replication: Implicit work and sex morality across cultures. <i>Journal of Experimental Social Psychology</i>, <i>93</i>, 104060. https://doi.org/10.1016/j.jesp.2020.104060",
+        "The BMJ. (n.d.). <i>Authorship & contributorship</i>. https://www.bmj.com/about-bmj/resources-authors/article-submission/authorship-contributorship",
+        "JMIR Publications. (2021). <i>What is a group author (collaborative author) and does it need an ORCID?</i> https://support.jmir.org/hc/en-us/articles/115001449591-What-is-a-group-author-collaborative-author-and-does-it-need-an-ORCID-"
     ],
     "drafted_by": [
         "Yuki Yamada"

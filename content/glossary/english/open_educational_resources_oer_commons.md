@@ -3,7 +3,7 @@
     "en_title": "Open Educational Resources (OER) Commons",
     "title": "Open Educational Resources (OER) Commons",
     "sort_key": "open educational resources (oer) commons",
-    "definition": "OER Commons (with OER standing for open educational resources) is a freely accessible online library allowing teachers to create, share and remix educational resources. The goal of the OER movement is to stimulate “collaborative teaching and learning” ([https://www.oercommons.org/about](https://www.oercommons.org/about)) and provide high-quality educational resources that are accessible for everyone.",
+    "definition": "OER Commons (with OER standing for open educational resources) is a freely accessible online library allowing teachers to create, share and remix educational resources. The goal of the OER movement is to stimulate “collaborative teaching and learning” (OER Commons, n.d.) and provide high-quality educational resources that are accessible for everyone.",
     "related_terms": [
         "Equity",
         "FORRT",
