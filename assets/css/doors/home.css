@@ -2,14 +2,14 @@
    else. Lists and paragraphs are reset here because the theme's global rules still apply. */
 .hero{position:relative;isolation:isolate;border-bottom:12px solid var(--edu-bg)}
 .hero-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:48px;align-items:end;padding-top:12px}
-.invite{padding:32px 0 64px;min-width:0;align-self:center}
+.invite{padding:32px 0 28px;min-width:0;align-self:center}
 .hero h1{font-size:clamp(50px,6.2vw,92px);line-height:1;font-weight:500;letter-spacing:-.018em;margin:0;overflow-wrap:anywhere;text-wrap:balance}
 .lede{font-size:clamp(18px,1.45vw,20px);line-height:1.55;margin:24px 0 0;max-width:32em;color:var(--ink)}
-.quick{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px;max-width:600px}
+.quick{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px;max-width:720px}
 .quick a{padding:8px 14px;border:1.5px solid var(--edu);border-radius:999px;font-weight:600;font-size:16px;line-height:1.3;text-decoration:none;background:#fff;color:var(--ink)}
 .quick a:hover{background:var(--edu);border-color:var(--edu);color:#fff}
-.tower{margin:0;position:relative;min-width:0;background:var(--edu-bg);border-radius:999px 999px 0 0;padding:44px 32px 14px;max-width:560px;justify-self:end;width:100%}
-.castle-stage{position:relative;height:clamp(320px,31vw,430px)}
+.tower{margin:0;position:relative;min-width:0;background:var(--edu-bg);border-radius:999px 999px 0 0;padding:28px 32px 14px;max-width:560px;justify-self:end;width:100%}
+.castle-stage{position:relative;height:clamp(320px,31vw,410px)}
 .castle-stage canvas,.castle-fallback{display:block;width:100%;height:100%;max-width:none;object-fit:cover}
 .castle-stage canvas{position:absolute;inset:0;visibility:hidden}
 .castle-stage[data-engine=webgl] canvas{visibility:visible}
@@ -34,7 +34,7 @@
 
 /* The four areas, each behind its arched door */
 .areas-section{padding-top:0}
-.areas{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;padding-top:52px}
+.areas{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;padding-top:40px}
 .area{--tone:var(--edu);--tint:var(--edu-bg);display:flex;flex-direction:column;min-width:0;background:var(--tint);border-radius:999px 999px var(--r-large) var(--r-large);padding:0 22px 20px}
 .area-res{--tone:var(--res);--tint:var(--res-bg)}
 .area-jus{--tone:var(--jus);--tint:var(--jus-bg)}
@@ -94,9 +94,12 @@
 .forward h3{font-size:clamp(25px,2.2vw,31px);line-height:1.12;margin:0}
 .forward p{margin:12px 0 0;font-size:16px;line-height:1.55;max-width:32em}
 .forward .forward-links{display:flex;flex-wrap:wrap;gap:8px 24px;max-width:none}
-.ledger{display:grid;gap:14px;align-content:center;list-style:none;margin:0;padding:0}
-.ledger a{font:500 clamp(19px,1.6vw,22px)/1.3 var(--display);color:inherit;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:4px}
-.ledger a:hover{color:var(--link);text-decoration-color:currentColor}
+.ledger{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-content:start;list-style:none;margin:0;padding:0}
+.ledger a{display:flex;flex-direction:column;gap:6px;height:100%;box-sizing:border-box;padding:18px 20px;border:1.5px solid var(--line);border-radius:var(--r-large);color:var(--ink);text-decoration:none}
+.ledger strong{font:var(--display-weight) clamp(30px,2.8vw,40px)/1 var(--display);color:var(--ink)}
+.ledger span{font-size:16px;line-height:1.4}
+.ledger a:hover{border-color:var(--link)}
+.ledger a:hover strong{color:var(--link)}
 
 @media(max-width:1240px){
   .castle-stage{height:clamp(320px,34vw,400px)}
@@ -131,7 +134,11 @@
   .area h3{font-size:23px}
   .area-body>p{margin-top:5px}
   .area ul{padding-top:6px}
-  .area li:nth-child(n+3){display:none}
+  /* Only with script, which sets .js above the areas: without it every link stays in view. */
+  .js .area li:nth-child(n+3):not(.area-more){display:none}
+  .js .area.is-open li:nth-child(n+3){display:list-item}
+  .js .area.is-open li.area-more{display:none}
+  .area-more button{margin:2px 0 0;padding:8px 0;text-align:left;background:none;border:0;color:var(--ink);font:600 16px/1.3 var(--text);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
   .area li a{padding:8px 0;font-size:16px}
   .board{gap:44px;padding-top:56px}
   .standing{grid-row:1}
@@ -150,4 +157,48 @@
   .about{padding:56px 0 28px}
   .quote{font-size:34px}
   .forward{padding:22px 20px}
+}
+
+.area-more{display:none}
+@media(max-width:760px){.js .area-more{display:list-item}}
+/* The statement band on a wide screen: the quote on the left, what FORRT is and the mission link beside it. */
+@media(min-width:1001px){
+  .about-statement{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);column-gap:56px;align-items:end;max-width:none}
+  .about-statement .quotes{grid-column:1;grid-row:1 / span 2}
+  .about-statement>p,.about-statement>.more{grid-column:2}
+  .about-statement>p{margin-top:0}
+  .about-statement>.more{justify-self:start;margin-bottom:52px}
+}
+.ledger strong{white-space:nowrap}
+/* The first hero link is the main task, filled; the others stay as outlines. */
+.quick a:first-child{background:var(--edu);border-color:var(--edu);color:#fff}
+.quick a:first-child:hover{background:var(--ink);border-color:var(--ink)}
+/* The second line under the hero actions: plain links, on wide screens only. */
+.quick-more{display:flex;flex-wrap:wrap;gap:4px 22px;margin-top:10px}
+.quick-more a{padding:6px 0;font-weight:600;font-size:16px;line-height:1.3;color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+.quick-more a:hover{color:var(--edu)}
+@media(max-width:760px){.quick-more{display:none}}
+@media(max-width:760px){.tower{max-width:200px}.castle-stage{height:120px}}
+
+/* Noticeboard thumbnails: each news row leads with a small crop of the post's featured image, or a
+   tile in its category's tint, beside the date and category, title and an excerpt of two lines.
+   The rules above set the older two-column layout; these replace it on every screen width. */
+.notice-list a{display:grid;grid-template-columns:88px minmax(0,1fr);grid-template-rows:auto auto 1fr;column-gap:20px;align-items:start;padding:18px 0}
+.notice-thumb{grid-column:1;grid-row:1/span 3;display:block;width:88px;height:66px;margin-top:4px;object-fit:cover;border-radius:var(--r-small);background:var(--page)}
+.notice-tile{display:grid;place-items:center;background:var(--res-bg);color:var(--res);font:var(--display-weight) 34px/1 var(--display)}
+.notice-tile-newsletter{background:var(--com-bg);color:var(--com)}
+.notice-tile-opportunity{background:var(--edu-bg);color:var(--edu)}
+.notice-tile-milestone{background:var(--jus-bg);color:var(--jus)}
+.notice-meta{grid-column:2;grid-row:1;display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px}
+.notice-list time{padding:0}
+.notice-kind{margin:0}
+.notice-list h3{grid-column:2;grid-row:2;margin:2px 0 0}
+.notice-list p{grid-column:2;grid-row:3;margin:5px 0 0;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2;overflow:hidden}
+@media(max-width:760px){
+  /* The thumbnail sits beside the date and title; the excerpt takes the full width below. */
+  .notice-list a{grid-template-columns:64px minmax(0,1fr);grid-template-rows:auto 1fr auto;gap:0 12px;padding:14px 0}
+  .notice-thumb{grid-row:1/span 2;width:64px;height:48px;margin-top:2px}
+  .notice-tile{font-size:26px}
+  .notice-list h3{flex:none}
+  .notice-list p{flex:none;grid-column:1/-1;margin-top:6px}
 }

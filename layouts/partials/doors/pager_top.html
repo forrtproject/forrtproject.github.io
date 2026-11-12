@@ -1,0 +1,18 @@
+{{/* The same page links as doors/pager, for the top of a list; no id, as doors/pager has it.
+     Crawlers follow these to reach every resource. Input: a Hugo paginator. */}}
+{{ $pager := . }}
+{{ if gt $pager.TotalPages 1 }}
+<nav class="pager pager-top" aria-label="Pages, at the top">
+  {{ with $pager.Prev }}<a href="{{ .URL }}" rel="prev">Previous</a>{{ end }}
+  {{ $last := 0 }}
+  {{ range $pager.Pagers }}
+    {{ $near := and (ge .PageNumber (sub $pager.PageNumber 2)) (le .PageNumber (add $pager.PageNumber 2)) }}
+    {{ if or $near (eq .PageNumber 1) (eq .PageNumber $pager.TotalPages) }}
+      {{ if gt (sub .PageNumber $last) 1 }}<span class="pager-gap" aria-hidden="true">…</span>{{ end }}
+      {{ if eq .PageNumber $pager.PageNumber }}<span class="pager-current" aria-current="page">{{ .PageNumber }}</span>{{ else }}<a href="{{ .URL }}" aria-label="Page {{ .PageNumber }}">{{ .PageNumber }}</a>{{ end }}
+      {{ $last = .PageNumber }}
+    {{ end }}
+  {{ end }}
+  {{ with $pager.Next }}<a href="{{ .URL }}" rel="next">Next</a>{{ end }}
+</nav>
+{{ end }}

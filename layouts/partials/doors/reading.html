@@ -17,26 +17,29 @@
 {{ if $hasCard }}{{ $card = partial "doors/reading_card" (dict "page" . "hasDates" $hasDates "headings" $headings "contents" $contents "written" $written) }}{{ end }}
 <div class="wrap">
   <div class="article-layout{{ if $hasCallouts }} article-layout-callouts{{ else if not $hasCard }} article-layout-single{{ end }}{{ if $wide }} article-layout-wide{{ end }}">
+    {{/* A page whose picture is the thing itself opens with it beside the heading (doors/page_hero). */}}
+    {{ $hero := and .Params.hero_image (not .Params.hide_page_header) }}
+    {{ if $hero }}{{ partial "doors/page_hero" (dict "page" . "head" (partial "doors/article_header" .)) }}{{ end }}
     {{/* First in the page, so keyboard order follows the layout: contents, then text. */}}
     {{ $card }}
     <article class="reading">
-      {{ if not .Params.hide_page_header }}
-        {{ partial "doors/article_header" . }}
+      {{ if not $hero }}
+        {{ if not .Params.hide_page_header }}
+          {{ partial "doors/article_header" . }}
+        {{ end }}
+        {{ partial "doors/page_actions" . }}
       {{ end }}
-      {{ partial "doors/page_actions" . }}
       {{/* On phones the side card falls below the text, too late to help on a long page. */}}
       {{ if and (or $hasCard $wide) (gt (len $headings) 1) }}
-      <details class="toc-phone">
-        <summary>On this page</summary>
-        <div class="article-toc">{{ replace (partial "doors/reading_toc" (dict "page" . "contents" $contents "written" $written)) `id="TableOfContents"` `aria-label="On this page"` | safeHTML }}</div>
-      </details>
+      {{ partial "doors/toc_phone" (replace (partial "doors/reading_toc" (dict "page" . "contents" $contents "written" $written)) `id="TableOfContents"` `aria-label="On this page"`) }}
       {{ end }}
       <div class="article-style">
         {{ $body }}
       </div>
       {{ if and (eq .Type "post") (le .ReadingTime 1) (not .Params.image.preview_only) (not .Params.hide_page_header) }}{{ partial "doors/featured_image" . }}{{ end }}
       <div class="article-foot">
-        {{ if .IsPage }}<p class="share-link"><button class="copy-link" type="button" data-copy-link="{{ .Permalink }}">Copy article link</button> <span role="status"></span></p>{{ end }}
+        {{/* Only articles offer their link to copy; tools, policies and event pages do not. */}}
+        {{ if and .IsPage (in (slice "post" "educators-corner" "pedagogies" "summaries" "neurodiversity-lessonbank" "nowherelab") .Section) }}<p class="share-link"><button class="copy-link" type="button" data-copy-link="{{ .Permalink }}">Copy article link</button> <span role="status"></span></p>{{ end }}
         {{ partial "page_footer" . }}
       </div>
     </article>

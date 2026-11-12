@@ -4,7 +4,14 @@
      `/tags/?tag=`, which lists every page carrying the term. Reached by every
      section via `_default/single.html` -> `page_footer`. */}}
 
-{{ with partial "functions/page_tags.html" . }}
+{{/* Only tags on at least `min` pages (functions/tag_counts.html): a one-off tag leads to a list of one. */}}
+{{ $tc := partialCached "functions/tag_counts.html" . }}
+{{ $shown := slice }}
+{{ range partial "functions/page_tags.html" . }}
+  {{ $n := int (index $tc.counts (lower .) | default 0) }}
+  {{ if and (ge $n $tc.min) (le $n $tc.max) }}{{ $shown = $shown | append . }}{{ end }}
+{{ end }}
+{{ with $shown }}
 <div class="article-tags">
   {{ range . }}
   <a class="badge badge-light" href="{{ printf "tags/?tag=%s" (. | urlquery) | relURL }}">{{ . }}</a>

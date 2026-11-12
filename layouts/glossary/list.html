@@ -1,24 +1,84 @@
 {{- define "main" -}}
-{{/* A glossary's language index: the introduction beside the list of its terms. */}}
+{{/* A glossary's hub, one per language: the terms are the page. Languages and a search come first, then every
+     term with the start of its definition, A to Z, and the project's history and citation in a disclosure.
+     site.js filters the terms as the search is typed. */}}
+{{ $lang := .Params.language | default "english" }}
+{{ $labels := dict
+  "english" (dict "view" "View" "cards" "Cards" "list" "List" "language" "Language" "clear" "Clear" "lede" "Community-written definitions of open scholarship terms, described in Nature Human Behaviour (Parsons et al., 2022). [How to cite the glossary](#about-the-glossary)." "search" "Search %d terms" "placeholder" "Type a term, e.g. replication" "about" "About the glossary project, and how to cite it" "letters" "Terms by letter" "none" "No term matches.")
+  "german" (dict "view" "Ansicht" "cards" "Karten" "list" "Liste" "language" "Sprache" "clear" "Löschen" "search" "%d Begriffe durchsuchen" "placeholder" "Begriff eingeben, z. B. Replikation" "about" "Über das Glossar und wie man es zitiert" "letters" "Begriffe nach Buchstaben" "none" "Kein Begriff passt.")
+  "arabic" (dict "view" "العرض" "cards" "بطاقات" "list" "قائمة" "language" "اللغة" "clear" "مسح" "search" "ابحث في %d مصطلحًا" "placeholder" "اكتب مصطلحًا" "about" "عن المسرد وكيفية الاستشهاد به" "letters" "المصطلحات حسب الحرف" "updated" "آخر تحديث:" "none" "لا يوجد مصطلح مطابق.")
+  "turkish" (dict "view" "Görünüm" "cards" "Kartlar" "list" "Liste" "language" "Dil" "clear" "Temizle" "search" "%d terimde ara" "placeholder" "Bir terim yazın" "about" "Sözlük hakkında ve nasıl atıf yapılır" "letters" "Harfe göre terimler" "none" "Eşleşen terim yok.")
+  "chinese" (dict "view" "显示方式" "cards" "卡片" "list" "列表" "language" "语言" "clear" "清除" "search" "搜索 %d 个术语" "placeholder" "输入术语" "about" "关于本术语表及引用方式" "letters" "按字母排列的术语" "none" "没有匹配的术语。") }}
+{{ $l := index $labels $lang | default (index $labels "english") }}
+{{ $pages := sort (where (where site.RegularPages "Type" "glossary") "File.Dir" .File.Dir) "Params.sort_key" }}
+{{/* Hugo's sort already collates Ä with A. German also files them under one letter (DIN 5007); other languages keep
+     their own letters: in Turkish, Ç, Ö and Ü are letters of their own. */}}
+{{ $groups := slice }}{{ $current := "" }}{{ $items := slice }}
+{{ range $pages }}
+  {{ $first := upper (substr (strings.TrimLeft "\"“”'*[(_ " (.Params.sort_key | default .Title)) 0 1) }}
+  {{ if eq $lang "german" }}{{ $first = $first | replaceRE "Ä" "A" | replaceRE "Ö" "O" | replaceRE "Ü" "U" }}{{ end }}
+  {{ if not (findRE `^\p{L}$` $first) }}{{ $first = "#" }}{{ end }}
+  {{ if ne $first $current }}
+    {{ if $items }}{{ $groups = $groups | append (dict "letter" $current "pages" $items) }}{{ end }}
+    {{ $current = $first }}{{ $items = slice }}
+  {{ end }}
+  {{ $items = $items | append . }}
+{{ end }}
+{{ if $items }}{{ $groups = $groups | append (dict "letter" $current "pages" $items) }}{{ end }}
 <div class="wrap">
-  <div class="article-layout glossary-layout glossary-index">
-    {{ $labels := dict
-      "english" (dict "list_of_terms" "List of terms" "filter_terms" "Filter terms...")
-      "german" (dict "list_of_terms" "Liste der Begriffe" "filter_terms" "Begriffe filtern...")
-      "arabic" (dict "list_of_terms" "قائمة المصطلحات" "filter_terms" "تصفية المصطلحات...")
-      "turkish" (dict "list_of_terms" "Terimler listesi" "filter_terms" "Terimleri filtrele...")
-      "chinese" (dict "list_of_terms" "术语列表" "filter_terms" "筛选术语...") }}
-    {{ partial "doors/glossary_terms" (dict "page" . "labels" (index $labels (.Params.language | default "english")) "defined_only" false) }}
+  <div class="article-layout article-layout-single article-layout-wide glossary-layout glossary-hub">
     <article class="reading">
       <header class="article-head">
         {{ partial "doors/crumbs" (dict "page" .) }}
         <h1>{{ .Title }}</h1>
+        {{/* The lede lives here, not in the _index.md pages: data-processing.yml ships content/glossary/ from main,
+             so an edit there would not reach the site. */}}
+        {{ with $l.lede }}<p class="standfirst">{{ . | markdownify }}</p>{{ end }}
+        {{/* On a phone a menu replaces the row of languages, which would not fit. */}}
+        <label class="glossary-language-select">{{ $l.language }}
+          <select onchange="location.assign(this.value)">
+            {{ range hugo.Data.glossary_languages }}<option value="{{ printf "/glossary/%s/" .slug | relLangURL }}"{{ if eq .slug $lang }} selected{{ end }}>{{ trim .label " " }}</option>{{ end }}
+          </select>
+        </label>
+        <nav class="glossary-languages" aria-label="Languages">
+          {{ range hugo.Data.glossary_languages }}<a href="{{ printf "/glossary/%s/" .slug | relLangURL }}"{{ if eq .slug $lang }} aria-current="page"{{ end }}>{{ trim .label " " }}</a>{{ end }}
+        </nav>
       </header>
-      <div class="article-style">
-        {{ partial "doors/content" .Content }}
+      {{/* The project's introduction, history and citation, closed under the heading so the terms come soon. */}}
+      <details class="glossary-about" id="about-the-glossary">
+        <summary>{{ $l.about }}</summary>
+        <div class="article-style">{{ partial "doors/content" .Content }}</div>
+      </details>
+      {{/* The search, its count and the letters stay at the top while the terms scroll by. */}}
+      <div class="glossary-tools">
+      <div class="glossary-find">
+        <label for="glossary-search">{{ printf $l.search (len $pages) }}</label>
+        <div class="glossary-search-row"><input type="search" id="glossary-search" placeholder="{{ $l.placeholder }}" autocomplete="off"><button type="button" class="glossary-clear" hidden>{{ $l.clear }}</button><span class="glossary-view" role="group" aria-label="{{ $l.view }}" hidden><button type="button" data-view="cards" aria-pressed="true">{{ $l.cards }}</button><button type="button" data-view="list" aria-pressed="false">{{ $l.list }}</button></span></div>
+        <p class="glossary-none" hidden>{{ $l.none }}</p>
+        <p class="glossary-count" aria-live="polite"></p>
+      </div>
+      <nav class="glossary-letters" aria-label="{{ $l.letters }}">
+        {{ range $groups }}<a href="#letter-{{ .letter | urlize | default "other" }}">{{ .letter }}</a>{{ end }}
+      </nav>
+      </div>
+      <div class="term-grid">
+        {{ range $groups }}
+        <section class="term-group" id="letter-{{ .letter | urlize | default "other" }}">
+          <h2>{{ .letter }}</h2>
+          <ul>
+            {{ range .pages }}
+            <li data-term="{{ .Title | plainify | lower }}">
+              <a href="{{ .RelPermalink }}">{{ partial "doors/term_title" .Title }}</a>
+              {{ with .Params.definition }}<p>{{ . | markdownify | plainify | htmlUnescape | replaceRE `\*\*|__` "" | truncate 150 }}</p>{{ end }}
+            </li>
+            {{ end }}
+          </ul>
+        </section>
+        {{ end }}
       </div>
       <div class="article-foot">
-        <p>{{ i18n "last_updated" }} {{ $.Lastmod.Format site.Params.date_format }}</p>
+        {{/* An Arabic page gives the date in digits, isolated, so no English month name sits in the Arabic line. */}}
+        <p>{{ with $l.updated }}{{ . }} <bdi>{{ $.Lastmod.Format "2006-01-02" }}</bdi>{{ else }}{{ i18n "last_updated" }} {{ $.Lastmod.Format site.Params.date_format }}{{ end }}</p>
       </div>
     </article>
   </div>

@@ -96,13 +96,24 @@ AUDIT = """() => {
     const lines = {};
     let node;
     while ((node = walker.nextNode())) {
+      // Text no one can see is not a line: inside a closed disclosure, or cut off by a box that clips it
+      // (a description shortened to its first lines).
+      const parent = node.parentElement;
+      if (parent.closest('details:not([open])') && !parent.closest('summary')) continue;
+      const clips = [];
+      for (let up = parent; up && up !== el.parentElement; up = up.parentElement) {
+        if (getComputedStyle(up).overflowY !== 'visible') clips.push(up.getBoundingClientRect());
+      }
       for (const match of node.textContent.matchAll(/\\S+\\s*/g)) {
         const range = document.createRange();
         range.setStart(node, match.index);
         range.setEnd(node, match.index + match[0].length);
         // A long address can break across lines, so share its characters out by rendered width.
-        const boxes = [...range.getClientRects()].filter((box) => box.width > 0);
-        const total = boxes.reduce((sum, box) => sum + box.width, 0);
+        // The share is taken over all of the word's boxes, then only the visible ones count.
+        const all = [...range.getClientRects()].filter((box) => box.width > 0);
+        const total = all.reduce((sum, box) => sum + box.width, 0);
+        const boxes = all.filter((box) => clips.every((clip) => box.top < clip.bottom - 1 && box.bottom > clip.top + 1
+          && box.left < clip.right - 1 && box.right > clip.left + 1));
         for (const box of boxes) {
           const key = Math.round(box.top / 6);
           // Arabic vowel marks and other combining marks take up no column of their own.
@@ -525,18 +536,23 @@ def check_tower_game(browser, base, expect):
 
 
 def check_phone_reading(browser, base, failures):
-    """On a phone the chat launcher stays in the gutter, and an embed's panel is not clipped."""
+    """On a phone the chat launcher is a small button in the bottom corner, and an embed's panel is not clipped."""
     expect = expectation(failures, "phone reading")
     page = new_page(browser, 390)
     page.goto(base + "glossary/english/abstract_bias/", wait_until="load")
     page.wait_for_timeout(300)
     page.evaluate("scrollBy(0, 500)")
     page.wait_for_timeout(500)
-    shown = page.evaluate("innerWidth - document.getElementById('just-os-btn').getBoundingClientRect().left")
-    expect(shown <= 24, f"the launcher takes {shown:.0f} px of the screen's width, limit 24")
+    box = page.evaluate("(() => { const r = document.getElementById('just-os-btn').getBoundingClientRect();"
+                        " const banner = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--banner')) || 0;"
+                        " return {w: r.width, h: r.height, right: innerWidth - r.right, bottom: innerHeight - r.bottom - banner}; })()")
+    # It rises above the cookie banner while that shows (--banner), so the corner is measured from the banner.
+    expect(0 < box["w"] <= 64 and box["h"] > 0 and 0 <= box["right"] <= 24 and 0 <= box["bottom"] <= 40,
+           f"the launcher is a button of at most 64 px in the bottom corner ({box['w']:.0f} px wide, "
+           f"{box['right']:.0f} px from the side, {box['bottom']:.0f} px from the bottom)")
     page.locator("#just-os-btn").tap()
     page.wait_for_timeout(3000)
-    expect(page.evaluate("document.getElementById('just-os-window')?.style.display === 'flex'"), "tapping the tab opens the chat")
+    expect(page.evaluate("document.getElementById('just-os-window')?.style.display === 'flex'"), "tapping the launcher opens the chat")
     page.goto(base + "neurodiversity-lessonbank/implicit_bias/", wait_until="load")
     page.wait_for_timeout(300)
     panels = page.locator(".click-to-load").count()
@@ -750,6 +766,8 @@ FLOATING_WIDTHS = (390, 1024, 1280, 1440, 1800)  # From 1800 px the launcher has
 
 def check_floating_controls(browser, base, failures):
     """The chat launcher, its invitation and label, and back to top cover nothing of the page, wherever it is scrolled.
+    Below 1440 px the launcher and back to top float in the bottom corner, so mid-page they need only keep off each
+    other; at the end of the page, which the footer pads for them, they still cover nothing.
 
     The launcher is checked closed, hovered, focused from the keyboard and inviting (on a fake clock, so that its
     ten-second cycle runs at once), at the top, a third and two thirds of the way down, and at the end of each page.
@@ -766,8 +784,12 @@ def check_floating_controls(browser, base, failures):
         for path in FLOATING_PAGES:
             covered = {}
 
-            def look(state, selector="#just-os-bubble"):
+            def look(state, selector="#just-os-bubble", floating=False):
                 for item in page.evaluate(FLOATING_OVER, selector):
+                    # Below 1440 px the chat button and back to top float over the page as it scrolls by;
+                    # there they must only keep off each other, and cover nothing once the page is at its end.
+                    if floating and not re.search(r"just-os|back-to-top", item):
+                        continue
                     covered.setdefault(state, []).append(item)
                 if state.startswith("invitation") and page.evaluate(BUBBLE_SHOWN):
                     invited.add(f"{path} at {width} px")
@@ -788,8 +810,9 @@ def check_floating_controls(browser, base, failures):
                 page.mouse.move(1, 1)
                 page.evaluate(f"scrollTo(0, {y}); dispatchEvent(new Event('scroll'))")
                 page.wait_for_timeout(400)
-                look(f"launcher at {where}", "#just-os-btn")
-                look(f"back to top at {where}", ".clusters-back-to-top")
+                floating = width < 1440 and y != end
+                look(f"launcher at {where}", "#just-os-btn", floating)
+                look(f"back to top at {where}", ".clusters-back-to-top", floating)
                 back_to_top = back_to_top or page.evaluate(BACK_TO_TOP_SHOWN)
                 for turn in range(2):  # One of two turns of its cycle shows the invitation, where it may show.
                     page.clock.run_for(10000)
@@ -832,7 +855,7 @@ DIRECTORIES = {
     "about/teams/": ".feature-rows",
     "educators-corner/": ".list-items",
     "pedagogies/": ".list-items",
-    "forrt_clusters/academic-life-and-culture/": ".plain-list",
+    "forrt_clusters/academic-life-and-culture/": ".cluster-resources",
     "syllabus/": ".catalogue",
     "neurodiversity-lessonbank/": ".lesson-grid",
     "citation-politics/toolkit/": ".cpt-items",
@@ -939,10 +962,22 @@ def check_directory(browser, base, failures):
     count = page.text_content("#resultCount")
     expect("matching" in count, f"choosing a cluster filters the list: {count}")
     expect(not pager.is_visible(), "the page links hide while filtering")
-    shown = page.locator(".res").count()
-    page.click("#showMore")
-    expect(page.locator(".res").count() > shown, "Show more adds cards")
-    expect(page.evaluate("document.activeElement.closest('.res') !== null"), "Show more moves focus to the new cards")
+    first = page.text_content(".res-title")
+    page.click("#clientPager a[rel=next]")
+    expect(page.text_content(".res-title") != first and "page=2" in page.url, f"the filtered list's page links turn the page: {page.url}")
+    expect(page.evaluate("document.activeElement.closest('.res') !== null"), "a page link moves focus to the new cards")
+    page.go_back()
+    page.wait_for_function("!location.search.includes('page=')")
+    expect(page.text_content(".res-title") == first, "Back returns to the first page of results")
+    page.select_option("#sortOrder", "newest")
+    page.wait_for_function("location.search.includes('sort=newest')")
+    expect("newest first" in page.text_content("#resultCount"), "Newest added re-sorts and says so")
+    page.select_option("#perPage", "48")
+    page.wait_for_function("location.search.includes('per=48')")
+    matches = int(re.search(r"of ([\d,]+)", page.text_content("#resultCount")).group(1).replace(",", ""))
+    expect(page.locator(".res").count() == min(48, matches), f"Per page sets the page size: {page.text_content('#resultCount')}")
+    page.select_option("#sortOrder", "title")
+    page.select_option("#perPage", "24")
 
     address = page.url
     fresh = new_page(browser, 390)

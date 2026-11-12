@@ -1,12 +1,16 @@
 ---
 title: "FORRT AI in Metascience Online Conference"
+crumb_parent: "About FORRT"
 type: plain_page
 url: "/ai-metascience/"
-hide_title: true
+subtitle: "Programme and recordings of three days of talks and workshops, held online on 28–30 September 2026."
 hide_date: true
 summary: "Programme and recordings of the FORRT AI in Metascience Online Conference, 28–30 September 2026: 35+ talks and workshops over 3 days, most of them on YouTube."
 sharing_description: "Watch the talks from the FORRT AI in Metascience Online Conference, 28–30 September 2026."
 sharing_image_alt: "FORRT AI in Metascience Conference — online, 28–30 September 2026"
+# The banner beside the title (layouts/partials/doors/page_hero.html).
+hero_image: "featured.png"
+hero_image_alt: "FORRT AI in Metascience Conference — online, 28–30 September 2026"
 image:
   placement: 1
   alt_text: "FORRT AI in Metascience Conference — online, 28–30 September 2026"
@@ -14,6 +18,25 @@ image:
 ---
 
 <style>
+.am-actions { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin: 18px 0 6px; max-width: 620px; }
+.article-layout .article-style .am-playlist { display: flex; flex-direction: column; gap: 2px; padding: 12px 14px; border: 2px solid var(--am-deep) !important; border-radius: 12px; background: var(--am-tint, #eef5f3); color: var(--am-ink); text-decoration: none !important; font-size: 15px; line-height: 1.3; }
+.article-layout .article-style .am-playlist strong { color: var(--am-deep); font-size: 17px; }
+.article-layout .article-style .am-playlist:hover { background: var(--am-tint); }
+.am-playlist strong::before { content: "\25B6\00A0"; }
+/* Each playlist takes its day's colours, as the programme does. */
+.am-playlist:nth-of-type(1) { --am-deep: var(--am-mon-deep); --am-tint: var(--am-mon-tint); }
+.am-playlist:nth-of-type(2) { --am-deep: var(--am-tue-deep); --am-tint: var(--am-tue-tint); }
+.am-playlist:nth-of-type(3) { --am-deep: var(--am-wed-deep); --am-tint: var(--am-wed-tint); }
+@media (max-width: 599px) { .am-actions { grid-template-columns: 1fr; } }
+.am-actions-label { grid-column: 1 / -1; font-weight: 600; }
+/* The title and the banner open the page (page_hero). On a wide screen the facts sit under the banner, beside the introduction and the playlists, so the programme starts sooner. */
+@media (min-width: 1001px) {
+  .reading:has(.am-facts) > .article-style { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 520px); column-gap: 56px; align-content: start; }
+  .reading:has(.am-facts) > .article-style > * { grid-column: 1 / -1; }
+  .reading:has(.am-facts) > .article-style > p:first-of-type { grid-column: 1; grid-row: 1; }
+  .reading:has(.am-facts) > .article-style > .am-actions { grid-column: 1; grid-row: 2; }
+  .reading:has(.am-facts) > .article-style > .am-facts { grid-column: 2; grid-row: 1 / span 2; align-self: start; grid-template-columns: 1fr 1fr; margin-top: 20px; }
+}
 /* Palette, drawn from the banner mosaic. Each day sets --am-accent (rules and
    borders), --am-deep (text and filled pills, 4.5:1 or better on white and on
    the day tint) and --am-tint (selected tab and hover backgrounds). */
@@ -49,9 +72,6 @@ image:
   --am-tint: var(--am-wed-tint);
 }
 
-/* The page is wide so that the programme can use the width; the banner and
-   the facts stay at the reading width of the text around them. */
-.article-layout-wide .article-image { max-width: 580px; }
 
 .am-facts {
   display: grid;
@@ -67,11 +87,9 @@ image:
 .am-fact { padding: 0.4rem 0; }
 .am-fact-label {
   display: block;
-  color: var(--am-muted);
+  color: var(--am-ink);
   font-size: 15px;
   font-weight: 700;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
 }
 .am-fact-value {
   display: block;
@@ -81,7 +99,6 @@ image:
   line-height: 1.35;
 }
 @media (max-width: 640px) { .am-facts { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 400px) { .am-facts { grid-template-columns: 1fr; } }
 
 /* Days. Without JavaScript these are links to the three days, all shown in
    turn; the script below turns them into tabs that show one day at a time. */
@@ -98,7 +115,7 @@ image:
   border: 1px solid var(--am-rule);
   border-bottom: 0;
   border-top: 4px solid var(--am-accent);
-  border-radius: 8px 8px 0 0;
+  border-radius: 14px 14px 0 0;
   background: var(--am-card);
   color: var(--am-ink);
   line-height: 1.3;
@@ -165,8 +182,8 @@ image:
 }
 .article-layout .article-style .am-prog-playlist a {
   display: inline-block;
-  padding: 8px 16px;
-  border-radius: 6px;
+  padding: 10px 22px;
+  border-radius: 999px;
   background: var(--am-deep);
   color: #fff;
   font-size: 16px;
@@ -206,8 +223,8 @@ image:
   gap: 10px;
   max-width: none;
   margin: 14px 0 8px;
-  color: var(--am-muted);
-  font-size: 15px;
+  color: var(--am-ink);
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.08em;
   line-height: 1.3;
@@ -316,15 +333,15 @@ image:
 .article-layout .article-style .am-prog-watch a { text-decoration: none; }
 .article-layout .article-style .am-prog-watch a:hover { background: var(--am-tint); color: var(--am-deep); text-decoration: underline; }
 .am-prog-watch a:focus-visible { outline: 2px solid var(--am-deep); outline-offset: 1px; }
-/* On a phone the time and the abstract link share the first line, and the
-   recordings go under the speakers. */
+/* On a phone the time leads, then the talk, and Abstract and Watch share the last line:
+   Abstract on the left inside the talk's button, Watch on the right beside it. */
 @media (max-width: 599px) {
-  .article-layout .article-style .am-prog-talks li { grid-template-columns: minmax(0, 1fr); }
-  .am-prog-item { grid-template-columns: minmax(0, 1fr) auto; }
+  .article-layout .article-style .am-prog-talks li { grid-template-columns: minmax(0, 1fr); position: relative; }
+  .am-prog-item { grid-template-columns: minmax(0, 1fr); }
   .am-prog-time { grid-column: 1; grid-row: 1; }
-  .am-prog-meta { grid-column: 2; grid-row: 1; align-self: start; }
-  .am-prog-text { grid-column: 1 / -1; }
-  .am-prog-watch { justify-content: flex-start; max-width: none; padding: 0 4px 8px; }
+  .am-prog-text { grid-column: 1; grid-row: 2; }
+  .am-prog-meta { grid-column: 1; grid-row: 3; align-self: center; min-height: 34px; display: flex; align-items: center; }
+  .am-prog-watch { position: absolute; right: 4px; bottom: 8px; padding: 0; max-width: none; }
 }
 
 .am-prog-next {
@@ -361,13 +378,13 @@ image:
   position: absolute;
   top: 1rem;
   right: 1rem;
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   padding: 0;
-  border: 1px solid var(--am-rule);
+  border: 1.5px solid var(--am-ink);
   border-radius: 50%;
   background: var(--am-card);
-  color: var(--am-muted);
+  color: var(--am-ink);
   font-size: 1.4rem;
   line-height: 1;
   cursor: pointer;
@@ -415,6 +432,8 @@ image:
 </style>
 
 How is AI changing the way research is done, checked and understood? The **FORRT AI in Metascience Online Conference** spent three days on that question, with 35+ talks and workshops from people who are studying it or building with it. Most talks are now on the [FORRT YouTube channel](https://youtube.com/@forrtproject9995), one playlist per day.
+
+<p class="am-actions"><span class="am-actions-label">Watch the recordings:</span> <a class="am-playlist" href="https://www.youtube.com/playlist?list=PLS3VdaYKcrew"><strong>Monday</strong><span>AI in the research pipeline</span></a> <a class="am-playlist" href="https://www.youtube.com/playlist?list=PLSItTTcc91ac"><strong>Tuesday</strong><span>Replications and reproductions</span></a> <a class="am-playlist" href="https://www.youtube.com/playlist?list=PLZYxy57rykQU"><strong>Wednesday</strong><span>Workshops and analyst variability</span></a></p>
 
 <div class="am-facts">
 <div class="am-fact"><span class="am-fact-label">When</span><span class="am-fact-value">28–30 September 2026</span></div>

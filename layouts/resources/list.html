@@ -20,7 +20,7 @@
     </div>
   </header>
 
-  <div class="directory" id="directory" data-directory-url="{{ $data.directory.RelPermalink }}" data-search-url="{{ $data.search.RelPermalink }}" data-list-url="{{ .RelPermalink }}" data-total="{{ $total }}">
+  <div class="directory" id="directory" data-directory-url="{{ $data.directory.RelPermalink }}" data-search-url="{{ $data.search.RelPermalink }}" data-list-url="{{ .RelPermalink }}" data-total="{{ $total }}" data-page="{{ $pager.PageNumber }}" data-per-page="{{ $pager.PagerSize }}">
     <section class="filters" aria-label="Resource filters">
       <details class="filter-drawer" id="filterDrawer">
         <summary>Filter by type, level and cluster <span class="filter-badge" id="filterBadge"></span></summary>
@@ -35,14 +35,24 @@
       </details>
       {{/* Open on wider screens before the first paint, so the page does not jump. */}}
       <script>if(matchMedia('(min-width:761px)').matches)document.getElementById('filterDrawer').open=true</script>
-      <noscript><p class="filter-note">Filters and search need JavaScript. Every resource is still listed in the pages below.</p></noscript>
+      <noscript><p class="filter-note">Filters, search and sorting need JavaScript. Every resource is still listed in the pages below.</p></noscript>
     </section>
     <div class="catalogue">
       <label for="resource-search" class="search-label">Search the collection</label>
-      <input class="resource-search" id="resource-search" type="search" placeholder="Try preregistration, data or Bayesian" aria-describedby="resultCount" autocomplete="off">
+      {{/* The search, with sort order and page size as two quiet menus beside it (below it on a phone);
+           resources.js enables them once the data has loaded. */}}
+      <div class="search-row">
+        <input class="resource-search" id="resource-search" type="search" placeholder="Try preregistration, data or Bayesian" aria-describedby="resultCount" autocomplete="off">
+        <label class="visually-hidden" for="sortOrder">Sort</label>
+        <select class="search-option" id="sortOrder" disabled><option value="title" selected>Title A–Z</option><option value="newest">Newest added</option></select>
+        <label class="visually-hidden" for="perPage">Resources per page</label>
+        <select class="search-option" id="perPage" disabled>{{ range slice 12 24 48 }}<option value="{{ . }}"{{ if eq . $pager.PagerSize }} selected{{ end }}>{{ . }} per page</option>{{ end }}</select>
+      </div>
       <div class="result-bar">
-        <p class="result-count" id="resultCount" role="status">{{ if gt $pager.TotalPages 1 }}Showing page {{ $pager.PageNumber }} of {{ $pager.TotalPages }}, from {{ lang.FormatNumber 0 $total }} resources{{ else }}Showing all {{ lang.FormatNumber 0 $total }} resources{{ end }}</p>
+        <p class="result-count" id="resultCount" role="status">{{ if gt $pager.TotalPages 1 }}{{ $first := add 1 (mul (sub $pager.PageNumber 1) $pager.PagerSize) }}Showing {{ lang.FormatNumber 0 $first }}–{{ lang.FormatNumber 0 (math.Min $total (add $first (sub $pager.PagerSize 1))) }} of {{ lang.FormatNumber 0 $total }} resources, A to Z{{ else }}Showing all {{ lang.FormatNumber 0 $total }} resources, A to Z{{ end }}</p>
         <button class="text-button" id="clearFilters" type="button" hidden>Reset filters</button>
+        {{ partial "doors/pager_top" $pager }}
+        <nav class="pager pager-top" id="clientPagerTop" aria-label="Pages, at the top" hidden></nav>
       </div>
       <p class="active-filters" id="activeFilters" hidden></p>
       <div class="res-grid" id="results">
@@ -53,7 +63,7 @@
         <p>Remove a filter or try a broader search term. If something is missing from the collection, <a href="{{ .Params.form_url }}" rel="noopener">suggest a resource</a>.</p>
         <p><button class="text-button" id="emptyReset" type="button">Reset filters and search</button></p>
       </div>
-      <button class="show-more" id="showMore" type="button" hidden>Show more resources</button>
+      <nav class="pager" id="clientPager" aria-label="Pages" hidden></nav>
       {{ partial "doors/pager" $pager }}
     </div>
   </div>
@@ -61,7 +71,7 @@
   <section class="collection-note" id="form" aria-labelledby="collection-h">
     <h2 id="collection-h">Missing a resource?</h2>
     <p><a class="more" href="{{ .Params.form_url }}" rel="noopener">Suggest a resource through our form</a></p>
-    <div class="collection-about">{{ .Content }}</div>
+    <details class="collection-about"><summary>How the collection grew</summary>{{ .Content }}</details>
   </section>
 </div>
 <template id="resCard">{{ partial "doors/resource_card" (dict "title" "" "url" "" "types" slice "levels" slice "clusters" slice) }}</template>

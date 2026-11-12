@@ -8,6 +8,63 @@
  * With no parameter, or with JavaScript off, the page is the server-rendered
  * tag cloud and nothing here runs.
  */
+/** The search over every tag: while it has a query, the most-used row steps aside and the A to Z list shows only matches. */
+(function () {
+  "use strict";
+  var box = document.querySelector(".tag-find");
+  var input = document.getElementById("tag-filter");
+  // A selected tag replaces the list this searches, so the search stays hidden with it.
+  if (!box || !input || new URLSearchParams(window.location.search).get("tag")) return;
+  box.hidden = false;
+  var top = document.querySelector(".tag-top");
+  var letters = document.querySelector(".tag-letters");
+  var groups = Array.prototype.slice.call(document.querySelectorAll(".tag-group"));
+  var count = box.querySelector(".tag-filter-count");
+  // Each letter shows its most used tags (twelve on a phone, sixteen otherwise) and a button for the rest, so the list stays walkable.
+  var FIRST = window.matchMedia("(max-width: 760px)").matches ? 12 : 16;
+  {
+    groups.forEach(function (group) {
+      var items = group.querySelectorAll("li");
+      if (items.length < FIRST + 5) return;
+      // The preview shows the letter's most used tags, in their alphabetical places.
+      var ranked = Array.prototype.slice.call(items).sort(function (a, b) {
+        return Number(b.querySelector(".tag-count").textContent) - Number(a.querySelector(".tag-count").textContent);
+      });
+      ranked.slice(0, FIRST).forEach(function (item) { item.classList.add("is-top"); });
+      group.classList.add("is-short");
+      var more = document.createElement("button");
+      more.type = "button";
+      more.className = "tag-group-more";
+      more.textContent = "All " + items.length + " tags under " + group.querySelector("h3").textContent;
+      more.addEventListener("click", function () {
+        // Focus moves to the first tag the button revealed, so keyboard users carry on from there.
+        var next = group.querySelector("li:not(.is-top) a");
+        group.classList.remove("is-short");
+        more.remove();
+        if (next) next.focus();
+      });
+      group.appendChild(more);
+    });
+  }
+  input.addEventListener("input", function () {
+    var query = input.value.trim().toLowerCase();
+    document.querySelector(".tag-all").classList.toggle("is-searching", Boolean(query));
+    var shown = 0;
+    groups.forEach(function (group) {
+      var any = false;
+      Array.prototype.forEach.call(group.querySelectorAll("li"), function (item) {
+        var match = !query || item.firstChild.firstChild.textContent.toLowerCase().indexOf(query) !== -1;
+        item.hidden = !match;
+        if (match) { any = true; shown += 1; }
+      });
+      group.hidden = !any;
+    });
+    if (top) top.hidden = Boolean(query);
+    if (letters) letters.hidden = Boolean(query);
+    count.textContent = !query ? "" : shown ? shown + (shown === 1 ? " tag matches" : " tags match") : "No tag matches.";
+  });
+})();
+
 (function () {
   "use strict";
 

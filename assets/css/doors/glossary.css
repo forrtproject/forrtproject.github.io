@@ -14,3 +14,128 @@ a.gloss-term:focus {
   font-weight: 500;
   margin: 0 0 6px;
 }
+/* Translated terms: the term on its own line, its English name below it, isolated left to right; the
+   breadcrumb names only the term; English references read left to right inside an Arabic page. */
+.glossary-layout .reading h1 bdi{display:block;margin-top:6px;font-size:.6em;line-height:1.2;color:var(--soft)}
+.glossary-layout .crumbs [aria-current=page] bdi{display:none}
+main:lang(ar) .glossary-layout .references-list li{direction:ltr;text-align:left}
+.term-list-jump{display:none}
+@media(max-width:1000px){
+  .term-list-jump{display:inline-block;margin-top:10px;font-weight:600;color:var(--link);text-decoration:underline;text-underline-offset:3px}
+  #glossary-terms{scroll-margin-top:16px}
+}
+main:lang(ar) .glossary-layout .reading h1 bdi{text-align:right}
+@media(max-width:1000px){.term-list-jump{display:block;width:fit-content}}
+/* Languages on a term page as the hub's pills. */
+.glossary-layout .language-switcher{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.glossary-layout .language-switcher strong{font-size:16px;margin-inline-end:4px}
+.glossary-layout .language-switcher a{font-size:16px;padding:5px 12px;border:1.5px solid var(--line);border-radius:999px;background:#fff;color:var(--link);text-decoration:none}
+.glossary-layout .language-switcher a:hover{border-color:var(--link)}
+.glossary-layout .language-switcher .term-list-jump{flex-basis:auto;margin-top:6px;border-color:var(--ink);color:var(--ink);font-weight:600}
+@media(max-width:1000px){.glossary-layout .language-switcher .term-list-jump{display:inline-block}}
+/* English runs on an Arabic page in the site's own faces; the Arabic text keeps its own, whose spacing the line-length rule is set for. */
+main:lang(ar) [lang=en],main:lang(ar) .glossary-layout .references-list li{font-family:'Source Sans 3','Source Sans Pro',system-ui,sans-serif}
+main:lang(ar) h1 [lang=en]{font-family:var(--display)}
+/* A translated term's English name, on its own smaller line wherever the term is listed. */
+.term-list .term-en,.post-nav .term-en{display:block;font-size:15px;color:var(--soft)}
+main:lang(ar) .term-list .term-en,main:lang(ar) .post-nav-prev .term-en{text-align:right}
+main:lang(ar) .post-nav-next .term-en{text-align:left}
+/* The glossary hub: languages, a search and every term with the start of its definition. */
+.glossary-hub .glossary-languages{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0}
+.glossary-hub .glossary-languages a{padding:7px 14px;border:1.5px solid var(--line);border-radius:999px;background:#fff;color:var(--link);font:600 16px/1.3 var(--text);text-decoration:none}
+.glossary-hub .glossary-languages a:hover{border-color:var(--link)}
+.glossary-hub .glossary-languages a[aria-current]{background:var(--ink);border-color:var(--ink);color:#fff}
+.glossary-find{margin:28px 0 10px;max-width:640px}
+.glossary-find label{display:block;margin:0 0 8px;font:var(--display-weight) 24px/1.2 var(--display)}
+.glossary-find input{width:100%;box-sizing:border-box;padding:12px 18px;border:1.5px solid var(--ink);border-radius:999px;background:#fff;font:400 18px/1.3 var(--text);color:var(--ink)}
+.glossary-none{margin:12px 0 0;font-size:17px}
+.glossary-letters{display:flex;flex-wrap:wrap;gap:4px;margin:14px 0 8px}
+.glossary-letters a{display:inline-flex;align-items:center;justify-content:center;min-width:36px;height:36px;border-radius:var(--r-small);background:var(--surface);color:var(--ink);font:600 16px/1 var(--text);text-decoration:none}
+.glossary-letters a:hover{background:var(--edu-bg)}
+.term-group{scroll-margin-top:16px}
+.term-group h2{margin:28px 0 10px;font-size:28px;color:var(--edu)}
+.term-group ul{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:12px;margin:0;padding:0;list-style:none}
+.term-group li{margin:0;padding:14px 16px;background:var(--surface);border-radius:var(--r-large)}
+.term-group li a{color:var(--link);font:600 18px/1.3 var(--text);text-decoration:none}
+.term-group li a:hover{text-decoration:underline;text-underline-offset:3px}
+.term-group li .term-en{display:block;font-size:15px;font-weight:400;color:var(--soft)}
+.term-group li p{margin:6px 0 0;font-size:16px;line-height:1.45;color:var(--ink)}
+.glossary-about{margin:0 0 20px;padding:4px 20px;background:var(--surface);border-radius:var(--r-large)}
+.glossary-about>summary{padding:14px 0;cursor:pointer;font:600 18px/1.3 var(--text);color:var(--ink)}
+.glossary-about .article-style>.btn-group:first-child{display:none}
+/* A term page leads with its definition in a tinted panel; credits are a quiet line at the end. */
+.glossary-layout .article-style .term-definition{margin:6px 0 18px;padding:18px 22px;background:var(--edu-bg);border:0;border-radius:var(--r-large)}
+.glossary-layout .article-style .term-definition p{margin:0;font-size:20px;line-height:1.55}
+.glossary-layout .article-style .term-definition .term-definition-label{margin:0 0 6px;color:var(--edu);font:600 15px/1.3 var(--text)}
+.glossary-layout .article-style .term-credit{margin:0 0 4px;font-size:16px;color:var(--soft)}
+.glossary-layout .article-style .term-credit b{font-weight:600;color:var(--ink)}
+.glossary-layout .article-style .term-credit:first-of-type{margin-top:18px}
+.glossary-count{margin:8px 0 0;font-size:16px;color:var(--soft)}
+.glossary-count:empty{display:none}
+/* The letters stay in reach while the terms scroll by. */
+.glossary-tools{position:sticky;top:0;z-index:5;padding:6px 0 4px;background:var(--page);border-bottom:1px solid var(--line)}
+.glossary-letters a.is-empty{opacity:.35;pointer-events:none}
+/* Related terms as chips: linked where the term has a page, plain where it has none yet. */
+.glossary-layout .article-style .term-related a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
+.glossary-layout .article-style .term-credit{color:var(--ink)}
+/* On a phone the hub's terms are compact rows with two lines of definition, and a term's definition panel is lighter. */
+@media(max-width:760px){
+  .term-group ul{gap:8px}
+  .term-group li{padding:10px 14px}
+  .term-group li p{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-top:4px;font-size:15px}
+  .glossary-layout .article-style .term-definition{padding:14px 16px}
+  .glossary-layout .article-style .term-definition p{font-size:18px}
+}
+/* On a phone the languages and the letters are one row each, scrolled sideways, so the terms start in the first screen. */
+@media(max-width:760px){
+  .glossary-hub .glossary-languages,.glossary-letters{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:thin;padding-bottom:6px}
+  .glossary-hub .glossary-languages a,.glossary-letters a{flex:none}
+  .glossary-find{margin-top:18px}
+  .glossary-find label{font-size:21px}
+}
+/* Related terms on their own row under the label; those without a page of their own are muted chips. */
+.glossary-layout .article-style .term-unlinked{color:var(--ink)}
+.glossary-search-row{display:flex;gap:8px;align-items:center}
+.glossary-search-row input{flex:1}
+.glossary-clear{flex:none;padding:10px 16px;border:1.5px solid var(--ink);border-radius:999px;background:#fff;color:var(--ink);font:600 16px/1.2 var(--text);cursor:pointer}
+.glossary-clear[hidden]{display:none}
+.term-group{scroll-margin-top:200px}
+@media(max-width:760px){.glossary-tools .glossary-find label{font-size:17px;margin-bottom:6px}.glossary-find{margin-top:10px}.term-group{scroll-margin-top:150px}}
+.glossary-language-select{display:none}
+@media(max-width:760px){
+  .glossary-hub .glossary-languages{display:none}
+  .glossary-language-select{display:flex;align-items:center;gap:10px;margin:14px 0 0;font:600 16px/1.3 var(--text)}
+  .glossary-language-select select{flex:1;padding:9px 12px;border:1.5px solid var(--ink);border-radius:var(--r-small);background:#fff;font:400 16px/1.3 var(--text);color:var(--ink)}
+}
+/* Two lines of definition per term on every screen, so each letter reads as an even block. */
+.term-group li p{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+main:lang(ar) .glossary-layout .article-style .term-definition p{font-size:21px}
+.term-filter-status{margin:4px 0 0;font-size:15px;color:var(--soft)}
+.term-filter-status:empty{display:none}
+.term-filter-clear{align-self:flex-start;margin:4px 0 8px;padding:4px 12px;border:1.5px solid var(--ink);border-radius:999px;background:#fff;font:600 15px/1.3 var(--text);color:var(--ink);cursor:pointer}
+.term-filter-clear[hidden]{display:none}
+/* On a phone the list of terms sits in a disclosure right after the definition (site.js). */
+.term-finder{margin:0 0 18px;background:var(--surface);border-radius:var(--r-large)}
+.term-finder>summary{padding:12px 16px;cursor:pointer;font:600 17px/1.3 var(--text);color:var(--link)}
+.term-finder .glossary-card{position:static;max-height:none;margin:0;background:none;padding:0 16px 14px}
+.term-finder .glossary-card>h2{display:none}
+.term-finder .term-list{max-height:50vh;overflow-y:auto}
+.glossary-hub .standfirst a{text-decoration:underline;text-underline-offset:3px}
+.glossary-view{flex:none;display:inline-flex;border:1.5px solid var(--line);border-radius:999px;background:#fff;overflow:hidden}
+.glossary-view button{padding:10px 14px;border:0;background:transparent;color:var(--ink);font:600 16px/1.2 var(--text);cursor:pointer}
+.glossary-view button[aria-pressed="true"]{background:var(--ink);color:#fff}
+.glossary-view[hidden]{display:none}
+/* List view: one row per term, its definition on one line beside or under it. */
+.term-grid.is-list .term-group ul{grid-template-columns:minmax(0,1fr);gap:0}
+.term-grid.is-list .term-group li{padding:8px 4px;background:none;border-radius:0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:minmax(0,280px) minmax(0,1fr);gap:4px 20px;align-items:baseline}
+.term-grid.is-list .term-group li p{margin:0;-webkit-line-clamp:1}
+@media(max-width:760px){.term-grid.is-list .term-group li{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:760px){.glossary-search-row{flex-wrap:wrap}.glossary-search-row input{flex-basis:100%}}
+.glossary-letters a.is-current{background:var(--ink);color:#fff}
+.term-filter-label{display:block;margin:0 0 6px;font:600 16px/1.3 var(--text);color:var(--ink)}
+/* Arabic term pages: each breadcrumb step and each link is isolated, so an English name or a URL keeps its own
+   order and its brackets inside right-to-left text. */
+main:lang(ar) .crumbs a,main:lang(ar) .crumbs [aria-current]{unicode-bidi:isolate}
+main:lang(ar) .glossary-layout .article-style a{unicode-bidi:plaintext}
+/* A contributor's name is never split across lines. */
+.glossary-layout .term-credit bdi.term-name{white-space:nowrap}

@@ -469,15 +469,310 @@ if (chatWidget) {
 
 // Glossary pages: filter the list of terms, and show the current term inside its card.
 const termFilter = document.getElementById('glossary-search');
-if (termFilter) {
+const termGrid = document.querySelector('.term-grid');
+if (termFilter && termGrid) {
+  // The glossary hub: match on the term's name, hide letters left empty, and say when nothing matches.
+  const terms = [...termGrid.querySelectorAll('li[data-term]')];
+  const groups = [...termGrid.querySelectorAll('.term-group')];
+  const none = document.querySelector('.glossary-none');
+  termFilter.addEventListener('input', () => {
+    const query = termFilter.value.trim().toLowerCase();
+    // Names first; when no name matches, the definitions (a related term may be named only inside them).
+    const byName = terms.some((term) => term.dataset.term.includes(query));
+    terms.forEach((term) => {
+      term.hidden = !(byName ? term.dataset.term : term.textContent.toLowerCase()).includes(query);
+    });
+    groups.forEach((group) => { group.hidden = !group.querySelector('li:not([hidden])'); });
+    none.hidden = groups.some((group) => !group.hidden);
+    // Letters with no match left are dimmed and leave the tab order.
+    groups.forEach((group) => {
+      const letter = document.querySelector(`.glossary-letters a[href="#${group.id}"]`);
+      if (!letter) return;
+      letter.classList.toggle('is-empty', group.hidden);
+      if (group.hidden) letter.setAttribute('tabindex', '-1'); else letter.removeAttribute('tabindex');
+    });
+    document.querySelector('.glossary-clear').hidden = !query;
+    const shown = terms.filter((term) => !term.hidden).length;
+    document.querySelector('.glossary-count').textContent = query && shown ? `${shown} of ${terms.length} terms` : '';
+  });
+  // Cards or a compact list; the choice is kept for the next visit.
+  const view = document.querySelector('.glossary-view');
+  const setView = (list) => {
+    termGrid.classList.toggle('is-list', list);
+    view.querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', String((b.dataset.view === 'list') === list)));
+    try { localStorage.setItem('glossary-view', list ? 'list' : 'cards'); } catch (e) { /* storage blocked: the choice lasts this visit */ }
+  };
+  view.hidden = false;
+  view.querySelectorAll('button').forEach((b) => b.addEventListener('click', () => setView(b.dataset.view === 'list')));
+  // Phones start with the compact list; a stored choice wins.
+  let stored = null;
+  try { stored = localStorage.getItem('glossary-view'); } catch (e) { /* no stored choice */ }
+  if (stored ? stored === 'list' : matchMedia('(max-width: 760px)').matches) setView(stored === 'list' || !stored);
+  // The letter whose terms are on screen is marked in the letter bar.
+  const letterLinks = [...document.querySelectorAll('.glossary-letters a')];
+  if ('IntersectionObserver' in window && letterLinks.length) {
+    const seen = new Map();
+    const mark = () => {
+      const top = [...seen.entries()].filter(([, on]) => on).map(([id]) => id)[0];
+      const first = top || (scrollY < 200 ? [...seen.keys()][0] : null);
+      if (first) letterLinks.forEach((a) => a.classList.toggle('is-current', a.hash === `#${first}`));
+    };
+    const watch = new IntersectionObserver((entries) => {
+      entries.forEach((e) => seen.set(e.target.id, e.isIntersecting));
+      mark();
+    }, { rootMargin: '-35% 0px -60% 0px' });
+    document.querySelectorAll('.term-group').forEach((g) => { seen.set(g.id, false); watch.observe(g); });
+    mark();
+  }
+  document.querySelector('.glossary-clear').addEventListener('click', () => {
+    termFilter.value = '';
+    termFilter.dispatchEvent(new Event('input'));
+    termFilter.focus();
+  });
+  // /glossary/english/?q=… opens with that search, so a related term without its own page can link here.
+  const asked = new URLSearchParams(location.search).get('q');
+  if (asked) { termFilter.value = asked; termFilter.dispatchEvent(new Event('input')); }
+  // "How to cite" links to the closed disclosure under the heading; following the link opens it.
+  const about = document.getElementById('about-the-glossary');
+  const openAbout = () => { if (location.hash === '#about-the-glossary') about.open = true; };
+  window.addEventListener('hashchange', openAbout);
+  openAbout();
+} else if (termFilter) {
   const terms = [...document.querySelectorAll('.term-list li')];
+  // A count, a no-results line and a clear button under the filter.
+  const status = document.createElement('p');
+  status.className = 'term-filter-status';
+  status.setAttribute('aria-live', 'polite');
+  const clearTerms = document.createElement('button');
+  clearTerms.type = 'button';
+  clearTerms.className = 'term-filter-clear';
+  clearTerms.textContent = 'Clear';
+  clearTerms.hidden = true;
+  termFilter.after(status, clearTerms);
+  clearTerms.addEventListener('click', () => { termFilter.value = ''; termFilter.dispatchEvent(new Event('input')); termFilter.focus(); });
   termFilter.addEventListener('input', () => {
     const query = termFilter.value.toLowerCase();
     terms.forEach((term) => { term.hidden = !term.textContent.toLowerCase().includes(query); });
+    const shown = terms.filter((term) => !term.hidden).length;
+    status.textContent = !query ? '' : shown ? `${shown} ${shown === 1 ? 'term' : 'terms'}` : 'No matching terms.';
+    clearTerms.hidden = !query;
   });
+  // On a phone the list moves up, into a "Find another term" disclosure right after the definition.
+  const card = document.getElementById('glossary-terms');
+  const definition = document.querySelector('.term-definition');
+  if (card && definition && window.matchMedia('(max-width: 1000px)').matches) {
+    const finder = document.createElement('details');
+    finder.className = 'term-finder';
+    const summary = document.createElement('summary');
+    summary.textContent = document.documentElement.lang.startsWith('en') ? 'Find another term' : (card.querySelector('h2')?.textContent || 'Find another term');
+    finder.append(summary, card);
+    definition.after(finder);
+    document.querySelector('.term-list-jump')?.remove();
+  }
   const list = document.querySelector('.term-list');
   const current = list.querySelector('[aria-current]');
-  if (current) list.scrollTop = current.offsetTop - list.offsetTop - list.clientHeight / 3;
+  const centre = () => { if (current) list.scrollTop = current.offsetTop - list.offsetTop - list.clientHeight / 3; };
+  centre();
+  // A closed disclosure has no layout, so the phone list is centred on the current term when it opens.
+  document.querySelector('.term-finder')?.addEventListener('toggle', (event) => { if (event.target.open) centre(); });
+}
+
+// Home: on a phone each area shows two links, and its "more" button shows the rest.
+document.querySelectorAll('.area-more button').forEach((button) => {
+  button.addEventListener('click', () => {
+    const area = button.closest('.area');
+    area.classList.add('is-open');
+    button.setAttribute('aria-expanded', 'true');
+    area.querySelector('li:nth-child(3) a')?.focus();
+  });
+});
+
+// An entry whose details give "Status: …" (the effects on /reversals/) shows that status as a chip beside its name.
+document.querySelectorAll('.article-style li > p > strong:first-child').forEach((name) => {
+  const item = name.closest('li');
+  if (!item.querySelector('.spoiler')) return;
+  const line = [...item.querySelectorAll('.spoiler li')].find((li) => /^\s*status:/i.test(li.textContent));
+  const status = line ? line.textContent.replace(/^\s*status:\s*/i, '').trim().toLowerCase() : '';
+  // One word set for the chips; any qualifier stays in the statistics and in the chip's title.
+  // An entry with no status says so, so that it can still be found by outcome.
+  const label = ['not replicated', 'reversed', 'mixed', 'replicated'].find((word) => status.startsWith(word) || status.includes(word)) || 'no status';
+  const chip = document.createElement('span');
+  chip.className = `status-chip status-${label.replace(/[^a-z]+/g, '-')}`;
+  chip.textContent = label;
+  if (status !== label) chip.title = status;
+  name.before(chip, ' ');
+});
+
+// Get Involved: a search over the project cards.
+const projectFilter = document.querySelector('.project-filter');
+if (projectFilter) {
+  projectFilter.hidden = false;
+  const input = projectFilter.querySelector('input');
+  const count = projectFilter.querySelector('.list-filter-count');
+  const cards = [...document.querySelectorAll('.get-involved-card')];
+  // A card matches on its name and description, not on its actions, which every card shares ("Email", "Slack channel").
+  const texts = cards.map((card) => [...card.querySelectorAll(':scope > h3, :scope > h3 + div')]
+    .map((part) => part.textContent).join(' ').toLowerCase());
+  input.addEventListener('input', () => {
+    const query = input.value.trim().toLowerCase();
+    let shown = 0;
+    cards.forEach((card, index) => {
+      const match = !query || texts[index].includes(query);
+      card.hidden = !match;
+      if (match) shown += 1;
+    });
+    count.textContent = !query ? '' : shown ? `${shown} of ${cards.length} projects` : 'No project matches.';
+  });
+}
+
+// A search over the list items after it (shortcodes/list_filter.html): items match on their text, and a
+// heading whose lists are all hidden hides too, so the page reads as the matches.
+const listFilter = document.querySelector('.list-filter:not(.project-filter)');
+if (listFilter) {
+  listFilter.hidden = false;
+  const input = listFilter.querySelector('input');
+  const count = listFilter.querySelector('.list-filter-count');
+  // The label, the field and the count form the search row, the part of the toolbar that stays on screen on a phone.
+  const searchRow = document.createElement('div');
+  searchRow.className = 'list-filter-search';
+  searchRow.append(listFilter.querySelector('label'), count, input);
+  listFilter.prepend(searchRow);
+  const noun = listFilter.dataset.noun || 'entries';
+  const sections = [];
+  let section = null;
+  for (let node = listFilter.nextElementSibling; node; node = node.nextElementSibling) {
+    if (/^H[1-3]$/.test(node.tagName)) { section = {heading: node, items: []}; sections.push(section); }
+    else if (section && /^(UL|OL)$/.test(node.tagName)) section.items.push(...node.children);
+  }
+  // Where the entries carry details (the reversals' statistics), other lists after them, such as further
+  // literature or contributors, are not entries: they stay out of the menu, the count and the filter.
+  if (sections.some(({items}) => items.some((item) => item.querySelector('.spoiler')))) {
+    sections.forEach((s) => { s.items = s.items.filter((item) => item.querySelector('.spoiler')); });
+  }
+  // A menu of the sections that hold entries, with their counts, to jump straight to one.
+  const withItems = sections.filter(({items}) => items.length && items.length < 400);
+  if (withItems.length > 3) {
+    const jump = document.createElement('label');
+    jump.className = 'list-filter-jump';
+    jump.textContent = 'Go to ';
+    const select = document.createElement('select');
+    select.append(new Option('a section…', ''));
+    withItems.forEach(({heading, items}) => select.append(new Option(`${heading.textContent.trim()} (${items.length})`, heading.id)));
+    select.addEventListener('change', () => { if (select.value) document.getElementById(select.value).scrollIntoView(); });
+    jump.append(select);
+    listFilter.append(jump);
+  }
+  // Status buttons, when the entries carry status chips: show one outcome at a time.
+  let status = '';
+  const outcomes = ['not replicated', 'reversed', 'mixed', 'replicated', 'no status'].filter((word) => document.querySelector(`.status-${word.replace(' ', '-')}`));
+  if (outcomes.length) {
+    const row = document.createElement('div');
+    row.className = 'list-filter-status';
+    row.setAttribute('role', 'group');
+    row.setAttribute('aria-label', 'Show by outcome');
+    ['all', ...outcomes].forEach((word) => {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = word === 'all' ? 'status-chip' : `status-chip status-${word.replace(' ', '-')}`;
+      const many = word === 'all' ? '' : ` ${document.querySelectorAll(`.list-filter ~ ul .status-${word.replace(' ', '-')}`).length}`;
+      button.textContent = word + many;
+      button.setAttribute('aria-pressed', String(word === 'all'));
+      button.addEventListener('click', () => {
+        status = word === 'all' ? '' : word.replace(' ', '-');
+        row.querySelectorAll('button').forEach((other) => other.setAttribute('aria-pressed', String(other === button)));
+        input.dispatchEvent(new Event('input'));
+      });
+      row.append(button);
+    });
+    listFilter.append(row);
+  }
+  // Each entry's text is read once, so controls added to the entries later (their "more" buttons) are not searched.
+  const texts = new Map(sections.flatMap(({items}) => items.map((item) => [item, item.textContent])));
+  const total = texts.size;
+  let words = /./;
+  input.addEventListener('input', () => {
+    const query = input.value.trim().toLowerCase();
+    words = new RegExp(`(^|[^\\p{L}\\p{N}])${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`, 'iu');
+    let shown = 0;
+    sections.forEach(({heading, items}) => {
+      if (!items.length) return;
+      let any = false;
+      items.forEach((item) => {
+        // Matches the start of a word, so "ego" finds ego depletion and not "category".
+        const match = (!query || words.test(texts.get(item))) && (!status || item.querySelector(`.status-${status}`));
+        item.hidden = !match;
+        if (match) { any = true; shown += 1; }
+      });
+      heading.hidden = Boolean(query || status) && !any;
+    });
+    count.textContent = `Showing ${shown} of ${total} ${noun}`;
+  });
+  input.dispatchEvent(new Event('input'));
+}
+
+// /reversals/: the search, outcome and Go to controls are a toolbar that stays at the top of the screen while the
+// effects scroll under it (on a phone only the search row stays), and each effect shows the start of its
+// description, with a "more" button for the rest.
+const entryFilter = document.querySelector('.list-filter:not(.project-filter):not([hidden])');
+const entries = entryFilter ? [...document.querySelectorAll('.list-filter ~ ul > li')]
+  .filter((item) => item.firstElementChild?.matches('p') && item.querySelector(':scope > .spoiler')) : [];
+if (entries.length) {
+  // The toolbar sticks only within the list: one box from the toolbar to the last entry's list.
+  const section = document.createElement('div');
+  section.className = 'list-filter-section';
+  const last = entries[entries.length - 1].parentElement;
+  entryFilter.before(section);
+  for (let node = entryFilter; node;) {
+    const next = node.nextSibling;
+    section.append(node);
+    node = node === last ? null : next;
+  }
+  // Rows scrolled to or reached with Tab stop below the toolbar: its height is the page's scroll padding.
+  const phone = matchMedia('(max-width: 760px)');
+  const searchRow = entryFilter.querySelector('.list-filter-search');
+  const pad = () => document.documentElement.style.setProperty('--list-filter-bar', `${(phone.matches ? searchRow : entryFilter).offsetHeight}px`);
+  const bars = new ResizeObserver(pad);
+  bars.observe(entryFilter);
+  bars.observe(searchRow);
+  // The description is cut to its first lines; an entry whose text runs longer gets the button.
+  entries.forEach((item) => {
+    const text = item.firstElementChild;
+    text.classList.add('entry-text');
+    const more = document.createElement('button');
+    more.type = 'button';
+    more.className = 'entry-more';
+    more.setAttribute('aria-expanded', 'false');
+    // The label names the effect for screen readers; it is an attribute, not hidden text, so it adds nothing to the line.
+    const about = ` about ${text.querySelector('strong')?.textContent.trim() || 'this effect'}`;
+    const label = (word) => { more.textContent = word; more.setAttribute('aria-label', word + about); };
+    label('more');
+    more.addEventListener('click', () => {
+      const open = item.classList.toggle('is-open');
+      more.setAttribute('aria-expanded', String(open));
+      label(open ? 'less' : 'more');
+      // The width may have changed while it was open, so check again whether the text still runs over.
+      if (!open) item.classList.toggle('is-long', text.scrollHeight > text.clientHeight + 2);
+    });
+    text.after(more);
+  });
+  // While a search is typed, the matching entries show in full, so the match can be seen wherever it is.
+  const query = entryFilter.querySelector('input');
+  const measure = () => {
+    if (section.classList.contains('is-searching')) return;
+    const long = entries.map((item) => !item.hidden && !item.classList.contains('is-open') && item.firstElementChild.scrollHeight > item.firstElementChild.clientHeight + 2);
+    entries.forEach((item, i) => { if (!item.hidden && !item.classList.contains('is-open')) item.classList.toggle('is-long', long[i]); });
+  };
+  query.addEventListener('input', () => {
+    section.classList.toggle('is-searching', Boolean(query.value.trim()));
+    measure();
+  });
+  let width = 0;
+  new ResizeObserver(([entry]) => {
+    if (Math.round(entry.contentRect.width) === width) return;
+    width = Math.round(entry.contentRect.width);
+    measure();
+  }).observe(section);
+  document.fonts?.ready.then(measure);
 }
 
 // A table wider than the screen scrolls in its own box, so keyboard users must be able to focus it.
@@ -500,3 +795,21 @@ if (badges.length) {
   });
   new MutationObserver(nameBadges).observe(document.querySelector('.pub-list, .article-style') || document.body, { childList: true, subtree: true });
 }
+
+// Phone contents (doors/toc_phone): a list of more than six sections shows its first five and a button for the rest.
+document.querySelectorAll('.toc-phone').forEach((box) => {
+  const items = [...box.querySelectorAll('nav > ul > li')];
+  if (items.length <= 6) return;
+  items.slice(5).forEach((item) => item.classList.add('toc-extra'));
+  box.classList.add('is-short');
+  const more = document.createElement('button');
+  more.type = 'button';
+  more.className = 'toc-phone-more';
+  more.textContent = `Show all ${items.length} sections`;
+  more.addEventListener('click', () => {
+    box.classList.remove('is-short');
+    more.remove();
+    items[5].querySelector('a')?.focus();
+  });
+  box.querySelector('.article-toc').append(more);
+});

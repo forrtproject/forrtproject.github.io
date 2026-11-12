@@ -9,11 +9,24 @@
         <h1>{{ .Params.heading_title | default .Title }}</h1>
         <p class="lede">{{ .Params.lede }}</p>
       </div>
+      {{/* The hub's own diagram of how its parts fit together (front matter `image`). */}}
       {{ with .Resources.GetMatch .Params.image }}
-      <figure class="heading-plate-plain"><img src="{{ .RelPermalink }}" alt="{{ $.Params.image_alt }}" width="{{ .Width }}" height="{{ .Height }}" loading="lazy"></figure>
+      <figure class="heading-plate-plain"><img src="{{ .RelPermalink }}" alt="{{ $.Params.image_alt }}" width="{{ .Width }}" height="{{ .Height }}" fetchpriority="high"></figure>
       {{ end }}
     </div>
   </header>
+  {{ with .Params.start }}
+  <nav class="hub-start" aria-label="Start here">
+    <h2>Start here</h2>
+    <ul class="action-cards">
+      {{ range . }}{{ $href := cond (hasPrefix .url "http") .url (.url | relLangURL) }}<li><a href="{{ $href }}"><strong>{{ .title }}</strong><span>{{ .text }}</span></a></li>{{ end }}
+    </ul>
+  </nav>
+  {{ end }}
+  {{/* On a phone the four stages stack, so the page opens with a way to jump to each. */}}
+  <nav class="stage-jumps" aria-label="Stages">
+    {{ range .Params.cards }}<a class="stage-jump stage-{{ .key }}" href="#stage-{{ .key }}">{{ .title }}</a>{{ end }}
+  </nav>
   <div class="stages">
     {{ range .Params.cards }}
     <section class="stage stage-{{ .key }}" aria-labelledby="stage-{{ .key }}">
@@ -22,6 +35,7 @@
         {{ range .links }}
         {{ $link := partial "doors/link" . }}
         <li class="tool">
+          {{ with .format }}<p class="tool-format">{{ . }}</p>{{ end }}
           <h3><a href="{{ $link.href }}">{{ $link.label }}</a></h3>
           <p>{{ .note }}</p>
         </li>

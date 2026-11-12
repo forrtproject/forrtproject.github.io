@@ -7,7 +7,7 @@
      tagged page in any section. The 404 page sends the old `/tag/<term>/` addresses here. */}}
 
 {{ $tags := partialCached "functions/tag_counts.html" . }}
-{{ $rows := $tags.rows }}
+{{ $rows := $tags.common }}
 
 <div class="wrap tags-page">
   <header class="article-head">
@@ -15,11 +15,13 @@
     <h1>{{ .Title }}</h1>
     {{ with .Params.description }}<p class="standfirst">{{ . }}</p>{{ end }}
   </header>
-  <p class="tags-note">
-    {{ len $rows }} tags across {{ $tags.pages }} pages, most used first. Tags are
-    contributor-supplied keywords; for curated topics see
-    <a href="{{ "clusters/" | relURL }}">FORRT clusters</a>.
-  </p>
+
+  {{/* A search over the listed tags (static/js/tag-browser.js); with JavaScript off it stays hidden. */}}
+  <div class="tag-find" hidden>
+    <label for="tag-filter">Find a tag</label>
+    <input type="search" id="tag-filter" placeholder="e.g. preregistration" autocomplete="off">
+    <p class="tag-filter-count" aria-live="polite"></p>
+  </div>
 
   {{/* Filled by the script when a tag is selected; stays empty otherwise. */}}
   <noscript><p class="tags-note">Listing the pages for a tag needs JavaScript. The <a href="{{ "resources/" | relLangURL }}">resources directory</a> lists every resource without it.</p></noscript>
@@ -29,14 +31,31 @@
     <p><a href="{{ "tags/" | relURL }}">Show all tags</a></p>
   </div>
 
-  <div id="tag-cloud" class="tag-cloud">
-    {{ range first 100 $rows }}<a href="{{ printf "tags/?tag=%s" (.tag | urlquery) | relURL }}" title="{{ .count }} page{{ if ne .count 1 }}s{{ end }}">{{ .tag }} <span class="tag-count">{{ .count }}</span></a>{{ end }}
-    {{ with after 100 $rows }}
-    <details class="tag-more">
-      <summary>Show all {{ len $rows }} tags</summary>
-      <div class="tag-cloud">{{ range . }}<a href="{{ printf "tags/?tag=%s" (.tag | urlquery) | relURL }}" title="{{ .count }} page{{ if ne .count 1 }}s{{ end }}">{{ .tag }} <span class="tag-count">{{ .count }}</span></a>{{ end }}</div>
-    </details>
-    {{ end }}
+  {{/* The twelve most used as larger pills, then the common tags A to Z with letter links. */}}
+  {{ $sorted := sort $rows "tag" }}
+  {{ $groups := slice }}{{ $current := "" }}{{ $items := slice }}
+  {{ range $sorted }}
+    {{ $first := upper (substr (strings.TrimLeft "\"“'#(*[ " .tag) 0 1) }}
+    {{ if not (findRE `^[A-Z]$` $first) }}{{ $first = "#" }}{{ end }}
+    {{ if ne $first $current }}{{ if $items }}{{ $groups = $groups | append (dict "letter" $current "rows" $items) }}{{ end }}{{ $current = $first }}{{ $items = slice }}{{ end }}
+    {{ $items = $items | append . }}
+  {{ end }}
+  {{ if $items }}{{ $groups = $groups | append (dict "letter" $current "rows" $items) }}{{ end }}
+  <div id="tag-cloud">
+    <section class="tag-top">
+      <h2>Most used</h2>
+      <div class="tag-cloud">{{ range first 12 $rows }}<a href="{{ printf "tags/?tag=%s" (.tag | urlquery) | relURL }}">{{ .tag }} <span class="tag-count">{{ .count }}</span></a>{{ end }}</div>
+    </section>
+    <section class="tag-all">
+      <h2>All common tags, A to Z</h2>
+      <nav class="tag-letters" aria-label="Tags by letter">{{ range $groups }}<a href="#tags-{{ .letter | urlize | default "other" }}">{{ .letter }}</a>{{ end }}</nav>
+      {{ range $groups }}
+      <div class="tag-group" id="tags-{{ .letter | urlize | default "other" }}">
+        <h3>{{ .letter }}</h3>
+        <ul>{{ range .rows }}<li><a href="{{ printf "tags/?tag=%s" (.tag | urlquery) | relURL }}">{{ .tag }} <span class="tag-count">{{ .count }}</span></a></li>{{ end }}</ul>
+      </div>
+      {{ end }}
+    </section>
   </div>
 </div>
 {{ end }}

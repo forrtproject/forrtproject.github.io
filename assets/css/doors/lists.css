@@ -84,3 +84,52 @@
 .tag-section{display:block;font-size:15px;color:var(--soft)}
 #tag-results li{padding:8px 0;font-size:18px}
 .tag-show-more{margin:14px 0}
+/* Thumbnails are often logos or figures, so they are shown whole on a white panel, not cropped. On phones the
+   thumbnail sits above the entry and the text takes the full width. */
+.list-item-image img{object-fit:contain;background:#fff;border:1px solid var(--line);padding:4px}
+@media(max-width:760px){
+  .list-item-image{display:flex;flex-direction:column-reverse;align-items:flex-start;gap:12px}
+  .list-item-image img{width:120px;height:72px}
+}
+.cluster-resources{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:14px 36px;margin:18px 0 0;padding:0;list-style:none}
+.cluster-resources li{margin:0;padding:0 0 12px;border-bottom:1px solid var(--line);font-size:17px;line-height:1.35}
+.cluster-resources a{color:var(--link);text-decoration:none;font-weight:600}
+.cluster-resources a:hover{text-decoration:underline;text-underline-offset:3px}
+.cluster-resources span{display:block;margin-top:4px;color:var(--soft);font-size:15px}
+.tag-find{max-width:520px;margin:20px 0 6px}
+.tag-find label{display:block;margin:0 0 6px;font:600 17px/1.3 var(--text)}
+.tag-find input{width:100%;box-sizing:border-box;padding:10px 16px;border:1.5px solid var(--ink);border-radius:999px;background:#fff;font:400 17px/1.3 var(--text);color:var(--ink)}
+.tag-filter-count{margin:8px 0 0;font-size:16px;color:var(--soft)}
+.tag-cloud a[hidden]{display:none}
+/* Tags: the most used as larger pills, then A to Z in columns. */
+.tag-top h2,.tag-all h2{margin:28px 0 10px;font-size:24px}
+.tag-top .tag-cloud a{padding:6px 14px;font-size:17px}
+.tag-letters{display:flex;flex-wrap:wrap;gap:4px;margin:0 0 8px;position:sticky;top:0;z-index:5;padding:8px 0;background:var(--page)}
+.tag-letters a{display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:34px;border-radius:var(--r-small);background:var(--surface);color:var(--ink);font:600 15px/1 var(--text);text-decoration:none}
+.tag-group{scroll-margin-top:56px}
+/* On a phone the sticky letters wrap to three or four rows, so a jump lands below them. */
+@media(max-width:760px){.tag-group{scroll-margin-top:140px}}
+@media(max-width:360px){.tag-group{scroll-margin-top:180px}}
+.tag-group h3{margin:20px 0 6px;font-size:22px;color:var(--edu)}
+.tag-group ul{columns:4 220px;column-gap:28px;margin:0;padding:0;list-style:none}
+.tag-group li{break-inside:avoid;margin:0;padding:3px 0}
+.tag-group a{color:var(--link);font-size:16px;text-decoration:none}
+.tag-group a:hover{text-decoration:underline;text-underline-offset:3px}
+.tag-group .tag-count{color:var(--soft);font-size:15px}
+.tag-group[hidden],.tag-group li[hidden]{display:none}
+.tag-group.is-short li:not(.is-top){display:none}
+.tag-all.is-searching .tag-group.is-short li:not([hidden]){display:list-item}
+.tag-all.is-searching .tag-group-more{display:none}
+.tag-group-more{margin:6px 0 0;padding:6px 14px;border:1.5px solid var(--ink);border-radius:999px;background:#fff;color:var(--ink);font:600 15px/1.3 var(--text);cursor:pointer}
+.tag-letters{border-bottom:1px solid var(--line)}
+/* Tags carried by one page only are lighter, so the ones in common use stand out. */
+/* A tag's page count as a small badge beside it, not another word of the tag. */
+.tag-group .tag-count,.tag-top .tag-count{display:inline-block;margin-inline-start:4px;padding:0 7px;border-radius:999px;background:var(--surface);color:var(--soft);font-size:15px;line-height:1.5}
+.tag-top .tag-cloud a .tag-count{background:#fff}
+/* A to Z as rows: the tag on the left, its count aligned on the right, a light rule between rows. */
+.tag-group ul{columns:3 240px}
+@media(max-width:760px){.tag-group ul{columns:2 140px}}
+.tag-group li{padding:0;border-bottom:1px solid var(--surface)}
+.tag-group li a{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:5px 2px}
+.tag-group li .tag-count{flex:none}
+.tag-top .tag-cloud a{display:inline-flex;align-items:center}

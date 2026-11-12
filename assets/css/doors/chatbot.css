@@ -710,3 +710,7 @@
     top: 5vh;
   }
 }
+/* Send is the site's primary pill. */
+.just-os-send-btn,#just-os-fullpage .just-os-send-btn{background:var(--link);border-radius:999px;padding:9px 18px;font:600 16px/1.3 var(--text)}
+.just-os-send-btn:hover,#just-os-fullpage .just-os-send-btn:hover{background:var(--ink)}
+.just-os-input{font-size:16px}

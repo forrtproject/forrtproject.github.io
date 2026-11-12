@@ -34,12 +34,18 @@
         {{ with $clean.creators }}<div class="byline"><span class="byline-authors">By {{ delimit . ", " }}</span></div>{{ end }}
       </header>
       {{ with partial "doors/resource_url" . }}<p class="resource-open"><a class="btn btn-primary" href="{{ . }}">Open this resource</a></p>{{ end }}
+      {{/* On a narrow screen the side card follows the whole entry, so who it is for comes first here. */}}
+      {{ $facts := slice }}
+      {{ with $clean.education_level }}{{ $facts = $facts | append (printf "<strong>Level</strong> %s" (delimit . ", " | htmlEscape)) }}{{ end }}
+      {{ with $clean.primary_user }}{{ $facts = $facts | append (printf "<strong>For</strong> %s" (delimit . ", " | htmlEscape)) }}{{ end }}
+      {{ with $clean.language }}{{ $facts = $facts | append (printf "<strong>Language</strong> %s" (delimit . ", " | htmlEscape)) }}{{ end }}
+      {{ with $facts }}<p class="resource-facts">{{ delimit . " · " | safeHTML }}</p>{{ end }}
       <div class="article-style">
         {{ with .Params.abstract }}<h2>{{ i18n "abstract" }}</h2>{{ $.RenderString (dict "display" "block") . }}{{ end }}
         {{ partial "doors/content" .Content }}
       </div>
       <div class="article-foot">
-        {{ partial "tags" . }}
+        {{ partial "doors/resource_keywords" . }}
         {{ if site.Params.section_pager }}<div class="article-widget">{{ partial "section_pager" . }}</div>{{ end }}
         {{ partial "page_related" . }}
       </div>

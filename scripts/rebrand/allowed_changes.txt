@@ -52,3 +52,8 @@ welcome/index.html         # Content review (sol-welcome-counters): description 
 about/teams/index.html     # Content review (community-teams-intro-grammar): description's list of purposes made grammatical
 educators-corner/018-accessible-feedback-in-research/index.html  # Review of #1078: its authors are listed one per entry, so its author data changes
 privacy/index.html  # #1096: the policy describes the native newsletter form, so its 'Last updated' description and modified time change
+about/get-involved/index.html  # #1118: its description is now a written summary, not the opening link text
+awop/index.html                # #1118: its description is now a written summary, not the opening link text
+reversals/index.html           # #1118: its description now opens with the concluded-project note at the top of the page
+tags/index.html                # #1118: its description says in one sentence what tags are for
+submit/index.html               # #1133: a new page listing the ways to submit work to FORRT

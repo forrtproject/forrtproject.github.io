@@ -8,7 +8,16 @@
     {{ with .Parent }}{{ if not .IsHome }}
     {{ $label := index (partialCached "doors/menu_labels" . "menu-labels") (strings.Trim .Path "/") | default .LinkTitle }}
     <span aria-hidden="true">/</span> <a href="{{ .RelPermalink | default (printf "/%s/" (strings.Trim .Path "/") | relLangURL) }}">{{ $label }}</a>
+    {{ else }}
+    {{/* A page at the top of the site takes its section from the main menu, or from crumb_parent. */}}
+    {{ $here := strings.TrimSuffix "/" $page.RelPermalink }}
+    {{ $section := "" }}
+    {{ range site.Menus.main }}{{ $top := . }}{{ range .Children }}{{ if and (not $section) (eq (strings.TrimSuffix "/" (.URL | relLangURL)) $here) }}{{ $section = $top }}{{ end }}{{ end }}{{ end }}
+    {{ if not $section }}{{ with $page.Params.crumb_parent }}{{ $name := . }}{{ range site.Menus.main }}{{ if eq .Name $name }}{{ $section = . }}{{ end }}{{ end }}{{ end }}{{ end }}
+    {{ with $section }}<span aria-hidden="true">/</span> {{ if .URL }}<a href="{{ .URL | relLangURL }}">{{ .Name }}</a>{{ else }}{{ .Name }}{{ end }}{{ end }}
     {{ end }}{{ end }}
+    {{/* The trail ends with the page itself, as on every other template (doors/crumbs.html). */}}
+    <span aria-hidden="true">/</span> <span aria-current="page">{{ $page.LinkTitle }}</span>
   </nav>
   {{ with .Params.categories }}<div class="article-meta">{{ range . }}<span>{{ . }}</span>{{ end }}</div>{{ end }}
   {{ with .Params.header_logo }}<img class="article-logo" src="{{ . | relURL }}" alt="">{{ end }}
@@ -17,10 +26,14 @@
   {{ with .Params.subtitle }}<p class="standfirst">{{ . | markdownify | emojify }}</p>{{ end }}
   <div class="byline">
     {{ with .Params.authors }}<span class="byline-authors">{{ partial "page_metadata_authors" $page }}</span>{{ end }}
+    {{/* The side card carries the date on a wide screen; on a narrow one it would come after the article. */}}
+    {{ if and (in (slice "post" "educators-corner" "pedagogies") .Type) (not .Date.IsZero) }}<time class="byline-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time>{{ end }}
     {{ if eq .Type "post" }}<span class="byline-time">{{ .ReadingTime }} {{ i18n "minute_read" }}</span>{{ end }}
   </div>
   {{ partial "page_links_div.html" $page }}
 </header>
+{{/* With a hero image (doors/page_hero), that is the page's one picture at the top. */}}
+{{ if not .Params.hero_image }}
 {{ if and .Params.header.image (not (and $featured (not .Params.image.preview_only))) }}
 <figure class="article-image">
   {{ $src := urls.Parse .Params.header.image }}
@@ -39,4 +52,5 @@
   <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{ with $.Params.image.alt_text }}{{ . }}{{ else }}Featured image for {{ $.Title }}{{ end }}">
   {{ with $.Params.image.caption }}<figcaption>{{ . | markdownify | emojify }}</figcaption>{{ end }}
 </figure>
+{{ end }}
 {{ end }}

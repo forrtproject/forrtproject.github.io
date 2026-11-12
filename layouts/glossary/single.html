@@ -47,6 +47,12 @@
         "note" (printf "نحن نعمل حاليًا على آلية تلقائية لربط المراجع المذكورة أعلاه بنسختها الكاملة التي يمكن العثور عليها في <a href='%s'>قائمة المراجع الكاملة</a>." $references_url)
         "reference" "مرجع"
         "references" "مراجع"
+        "home" "الرئيسية"
+        "breadcrumb" "مسار التنقل"
+        "glossary" "المسرد"
+        "also_available_in" "اللغات الأخرى"
+        "languages" (dict "arabic" "العربية" "chinese" "الصينية" "english" "الإنجليزية" "german" "الألمانية" "turkish" "التركية")
+        "separator" "، "
     )
     "turkish" (dict
         "list_of_terms" "Terimler listesi"
@@ -81,13 +87,14 @@
 }}
 
 {{ $dict := index $dictionary $lang }}
+{{ $sep := $dict.separator | default ", " }}
 <div class="wrap">
   {{ $hasTerms := where (where (where site.RegularPages "Type" "glossary") "File.Dir" .File.Dir) "Params.definition" "!=" nil }}
   <div class="article-layout glossary-layout{{ if not $hasTerms }} article-layout-single{{ end }}">
     {{ if $hasTerms }}{{ partial "doors/glossary_terms" (dict "page" . "labels" $dict "defined_only" true) }}{{ end }}
     <article class="reading">
       <header class="article-head">
-        <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ "" | relLangURL }}">Home</a> <span aria-hidden="true">/</span> {{ with .Parent }}<a href="{{ .RelPermalink | default (printf "/%s/" (strings.Trim .Path "/") | relLangURL) }}">{{ .Title }}</a> <span aria-hidden="true">/</span> {{ end }}<span aria-current="page">{{ partial "doors/term_title" .Title }}</span></nav>
+        <nav class="crumbs" aria-label="{{ $dict.breadcrumb | default "Breadcrumb" }}"><a href="{{ "" | relLangURL }}">{{ $dict.home | default "Home" }}</a> <span aria-hidden="true">/</span> {{ with .Parent }}<a href="{{ .RelPermalink | default (printf "/%s/" (strings.Trim .Path "/") | relLangURL) }}">{{ $dict.glossary | default .Title }}</a> <span aria-hidden="true">/</span> {{ end }}<span aria-current="page">{{ partial "doors/term_title" .Title }}</span></nav>
         <h1{{ if gt (strings.RuneCount .Title) 60 }} class="long-title"{{ end }}>{{ partial "doors/term_title" .Title }}</h1>
       </header>
 
@@ -148,17 +155,19 @@
   {{ end }}
 
   {{ if gt (len $availableLanguages) 0 }}
-    <strong>Also available in:</strong>
+    <strong>{{ $dict.also_available_in | default "Also available in" }}:</strong>
     {{ range $index, $item := $availableLanguages }}
-      <a href="{{ $item.page.RelPermalink }}">{{ $item.lang | title }}</a>{{ if lt $index (sub (len $availableLanguages) 1) }} | {{ end }}
+      <a href="{{ $item.page.RelPermalink }}">{{ with $dict.languages }}{{ index . $item.lang }}{{ else }}{{ $item.lang | title }}{{ end }}</a>
     {{ end }}
   {{ end }}
+  {{/* On a phone the list of terms follows the whole entry, so the top of the page links to it. */}}
+  {{ if $hasTerms }}<a class="term-list-jump" href="#glossary-terms">{{ $dict.list_of_terms }} ↓</a>{{ end }}
 </div>
 
 
       <div class="article-style">
         {{ with .Params.definition }}
-        <p class="term-definition"><b>{{ index $dict "definition" }}: </b>{{ . | markdownify }}</p>
+        <div class="term-definition"><p class="term-definition-label">{{ index $dict "definition" }}</p><p>{{ . | markdownify }}</p></div>
         {{ end }}
 
             {{ partial "doors/content" .Content }}
@@ -167,29 +176,41 @@
             {{ end }}
 
             {{ with .Params.related_terms }}
+            {{/* Related terms link to their pages, found by title: this language's terms first, then English;
+                 a translated term is also found by the English name in its brackets. A name is matched in full first, so
+                 "Model (philosophy)" and "Model (statistical)" stay apart, then without its bracketed qualifier. */}}
+            {{ $index := dict }}{{ $exact := dict }}
+            {{ range slice "english" $lang }}
+              {{ range where (where site.RegularPages "Type" "glossary") "File.Dir" (printf "glossary/%s/" .) }}
+                {{ $page := . }}
+                {{ $names := slice .Title }}
+                {{ with findRESubmatch `\[(.*)\]\s*$` .Title 1 }}{{ $names = $names | append (index (index . 0) 1) }}{{ end }}
+                {{ range $names }}
+                  {{ $key := . | replaceRE `[*\\]` "" | replaceRE `\s*\(.*?\)` "" | replaceRE `\s*\[.*\]\s*$` "" | lower | replaceRE `[^\p{L}\p{N}]+` "" }}
+                  {{ if $key }}{{ $index = merge $index (dict $key $page) }}{{ end }}
+                  {{ $full := . | replaceRE `[*\\]` "" | replaceRE `\s*\[.*\]\s*$` "" | lower | replaceRE `[^\p{L}\p{N}]+` "" }}
+                  {{ if $full }}{{ $exact = merge $exact (dict $full $page) }}{{ end }}
+                {{ end }}
+              {{ end }}
+            {{ end }}
             {{ $related_links := slice }}
-            {{ range $index, $term := . }}
-            {{ $term_str := printf "%s" $term }} <!-- Ensure $term is treated as a string -->
-            {{ $term_clean := replace $term_str "\u00a0" " " }} <!-- Replace non-breaking space with space -->
-            {{ $term_clean = replaceRE `[*\\]` "" $term_clean }} <!-- Drop Markdown emphasis and escapes (*p*-value) so the slug matches the title's -->
-            {{ $term_clean = replaceRE "\\s*\\(.*\\)" "" $term_clean }} <!-- Remove text in parentheses -->
-            {{ $term_clean = replace $term_clean " " "_" }} <!-- Replace spaces with underscores -->
-            {{ $term_clean = replaceRE "[^a-zA-Z0-9_]" "_" $term_clean }} <!-- Replace all non-alphanumeric characters with underscores -->
-            {{ $term_clean = lower $term_clean }} <!-- Convert to lowercase -->
-            {{ $term_clean = trim $term_clean "_" }} <!-- Trim leading and trailing underscores -->
-            {{ $term_page := site.GetPage (printf "/glossary/%s/%s" $lang $term_clean) }}
-            {{ if not $term_page }}
-              {{ $term_page = site.GetPage (printf "/glossary/english/%s" $term_clean) }}
-            {{ end }}
-            {{ if $term_page }}
-            {{ $term_url := $term_page.RelPermalink }}
-            {{ $related_links = $related_links | append (printf "<a href='%s'>%s</a>" $term_url ($term_str | htmlEscape | markdownify)) }}
+            {{ range . }}
+            {{ $term_str := printf "%s" . }}
+            {{ $key := $term_str | replaceRE "\u00a0" " " | replaceRE `[*\\]` "" | replaceRE `\s*\(.*?\)` "" | lower | replaceRE `[^\p{L}\p{N}]+` "" }}
+            {{ $full := $term_str | replaceRE "\u00a0" " " | replaceRE `[*\\]` "" | lower | replaceRE `[^\p{L}\p{N}]+` "" }}
+            {{ with or (index $exact $full) (index $index $key) }}
+            {{/* A term found in this language is named as its page is, without the English name in brackets. */}}
+            {{ $name := $term_str }}
+            {{ if and (ne $lang "english") (eq .Params.language $lang) }}{{ $name = replaceRE `\s*\[.*\]\s*$` "" .Title }}{{ end }}
+            {{ $related_links = $related_links | append (printf "<a href='%s'>%s</a>" .RelPermalink ($name | htmlEscape | markdownify)) }}
             {{ else }}
-            {{ $related_links = $related_links | append ($term_str | htmlEscape | markdownify | string) }}
+            {{/* No page of its own yet: a plain chip. */}}
+            {{ $related_links = $related_links | append (printf "<span class='term-unlinked'>%s</span>" ($term_str | htmlEscape | markdownify | string)) }}
             {{ end }}
             {{ end }}
-            {{ $related_links_string := delimit $related_links ", " | safeHTML }}
-            <p class="term-line"><strong>{{ if gt (len $related_links) 1 }}{{ index (index $dictionary $lang) "related_terms" }}{{ else }}{{ index (index $dictionary $lang) "related_term" }}{{ end }}: </strong>{{ $related_links_string }}</p>
+            {{/* A plain list in the page's own separator: the page already has enough pill shapes. */}}
+            {{ $related_links_string := delimit $related_links $sep | safeHTML }}
+            <p class="term-line term-related"><strong>{{ if gt (len $related_links) 1 }}{{ index (index $dictionary $lang) "related_terms" }}{{ else }}{{ index (index $dictionary $lang) "related_term" }}{{ end }}: </strong>{{ $related_links_string }}</p>
             {{ end }}
 
             {{ if .Params.alt_related_terms }}
@@ -220,28 +241,28 @@
             {{ if .Params.drafted_by }}
             {{ $drafted_by := delimit .Params.drafted_by ", " | len }}
             {{ if ne $drafted_by 0 }}
-            <p class="term-line"><b>{{ index (index $dictionary $lang) "originally_drafted_by" }}: </b>{{ delimit .Params.drafted_by ", " }}</p>
+            <p class="term-line term-credit"><b>{{ index (index $dictionary $lang) "originally_drafted_by" }}: </b>{{ partial "doors/name_list" (dict "names" .Params.drafted_by "sep" $sep) }}</p>
             {{ end }}
             {{ end }}
 
             {{ if .Params.reviewed_by }}
             {{ $reviewed_by := delimit .Params.reviewed_by ", " | len }}
             {{ if ne $reviewed_by 0 }}
-            <p class="term-line"><b>{{ index (index $dictionary $lang) "reviewed_by" }}: </b>{{ delimit .Params.reviewed_by ", " | markdownify }}</p>
+            <p class="term-line term-credit"><b>{{ index (index $dictionary $lang) "reviewed_by" }}: </b>{{ partial "doors/name_list" (dict "names" .Params.reviewed_by "sep" $sep) }}</p>
             {{ end }}
             {{ end }}
 
             {{ if .Params.translated_by }}
             {{ $translated_by := delimit .Params.translated_by ", " | len }}
             {{ if ne $translated_by 0 }}
-            <p class="term-line"><b>{{ index (index $dictionary $lang) "translated_by" }}: </b>{{ delimit .Params.translated_by ", " }}</p>
+            <p class="term-line term-credit"><b>{{ index (index $dictionary $lang) "translated_by" }}: </b>{{ partial "doors/name_list" (dict "names" .Params.translated_by "sep" $sep) }}</p>
             {{ end }}
             {{ end }}
 
             {{ if .Params.translation_reviewed_by }}
             {{ $translation_reviewed_by := delimit .Params.translation_reviewed_by ", " | len }}
             {{ if ne $translation_reviewed_by 0 }}
-            <p class="term-line"><b>{{ index (index $dictionary $lang) "translation_reviewed_by" }}: </b>{{ delimit .Params.translation_reviewed_by ", " }}</p>
+            <p class="term-line term-credit"><b>{{ index (index $dictionary $lang) "translation_reviewed_by" }}: </b>{{ partial "doors/name_list" (dict "names" .Params.translation_reviewed_by "sep" $sep) }}</p>
             {{ end }}
             {{ end }}
 
