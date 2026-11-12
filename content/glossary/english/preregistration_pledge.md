@@ -3,12 +3,13 @@
     "en_title": "Preregistration Pledge",
     "title": "Preregistration Pledge",
     "sort_key": "preregistration pledge",
-    "definition": "In a “collective action in support of open and reproducible research practices'', the preregistration pledge is a campaign from the Project Free Our Knowledge that asks a researcher to commit to preregistering at least one study in the next two years ([https://freeourknowledge.org/2020-12-03-preregistration-pledge/](https://freeourknowledge.org/2020-12-03-preregistration-pledge/) [https://freeourknowledge.org/about/](https://freeourknowledge.org/about/)). The project is a grassroots movement initiated by early career researchers (ECRs).",
+    "definition": "In a “collective action in support of open and reproducible research practices'', the preregistration pledge is a campaign from the Project Free Our Knowledge that asks a researcher to commit to preregistering at least one study in the next two years (Free Our Knowledge, 2020, n.d.). The project is a grassroots movement initiated by early career researchers (ECRs).",
     "related_terms": [
         "Preregistration"
     ],
     "references": [
-        "Knowledge, F. O. (2020). <i>Preregistration Pledge</i>. https://freeourknowledge.org/2020-12-03-preregistration-pledge/"
+        "Free Our Knowledge. (2020). <i>Preregistration Pledge</i>. https://freeourknowledge.org/2020-12-03-preregistration-pledge/",
+        "Free Our Knowledge. (n.d.). <i>About</i>. Retrieved from https://freeourknowledge.org/about/"
     ],
     "drafted_by": [
         "Helena Hartmann"
@@ -25,5 +26,5 @@
     "aliases": [
         "/glossary/preregistration_pledge"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-12"
 }

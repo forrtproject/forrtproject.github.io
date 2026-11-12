@@ -3,15 +3,17 @@
     "en_title": "Consortium authorship",
     "title": "Konsorsiyum Yazarlığı [Consortium authorship]",
     "sort_key": "konsorsiyum yazarlizgziz [consortium authorship]",
-    "definition": "Yazar sütununda yalnızca konsorsiyum veya kuruluşun adı görünür ve literatürde bireylerin adları yer almaz. Örneğin, yazar olarak ‘FORRT’. Bu durum, çok sayıda iş birlikçi ve/veya katkıda bulunanların olduğu iş birlikli projelerin ürünlerinde görülebilir. Dergi politikasına bağlı olarak, bireysel araştırmacılar ORCID ve Scopus gibi literatür veri tabanlarında ürünün yazarlarından biri olarak kaydedilebilir. Konsorsiyum yazarlığı, grup, kurumsal, organizasyon/kuruluş veya kolektif yazarlık (örn., [https://www.bmj.com/about-bmj/resources-authors/article-submission/authorship-contributorship](https://www.bmj.com/about-bmj/resources-authors/article-submission/authorship-contributorship)) veya iş birliğine dayalı yazarlık (örn., [https://support.jmir.org/hc/en-us/articles/115001449591-What-is-a-group-author-collaborative-author-and-does-it-need-an-ORCID](https://support.jmir.org/hc/en-us/articles/115001449591-What-is-a-group-author-collaborative-author-and-does-it-need-an-ORCID)) olarak da adlandırılabilir.",
+    "definition": "Yazar sütununda yalnızca konsorsiyum veya kuruluşun adı görünür ve literatürde bireylerin adları yer almaz. Örneğin, yazar olarak ‘FORRT’. Bu durum, çok sayıda iş birlikçi ve/veya katkıda bulunanların olduğu iş birlikli projelerin ürünlerinde görülebilir. Dergi politikasına bağlı olarak, bireysel araştırmacılar ORCID ve Scopus gibi literatür veri tabanlarında ürünün yazarlarından biri olarak kaydedilebilir. Konsorsiyum yazarlığı, grup, kurumsal, organizasyon/kuruluş veya kolektif yazarlık (örn., The BMJ, n.d.) veya iş birliğine dayalı yazarlık (örn., JMIR Publications, 2021) olarak da adlandırılabilir.",
     "related_terms": [
         "Authorship",
         "CRediT"
     ],
     "references": [
         "Open Science Collaboration. (2015). Estimating the reproducibility of psychological science. <i>Science</i>, <i>349</i>(6251), aac4716. https://doi.org/10.1126/science.aac4716",
-        "Tierney, W., Hardy III, J. H., Ebersole, C. R., Leavitt, K., Viganola, D., Clemente, E. G., & others. (2020). Creative destruction in science. <i>Organizational Behavior and Human Decision Processes</i>, <i>161</i>, 291–309. https://doi.org/10.1016/j.obhdp.2020.07.002",
-        "Tierney, W., Hardy III, J., Ebersole, C. R., Viganola, D., Clemente, E. G., Gordon, M., & others. (2021). A creative destruction approach to replication: Implicit work and sex morality across cultures. <i>Journal of Experimental Social Psychology</i>, <i>93</i>, 104060. https://doi.org/10.1016/j.jesp.2020.104060"
+        "Tierney, W., Hardy III, J. H., Ebersole, C. R., Leavitt, K., Viganola, D., Clemente, E. G., et al. (2020). Creative destruction in science. <i>Organizational Behavior and Human Decision Processes</i>, <i>161</i>, 291–309. https://doi.org/10.1016/j.obhdp.2020.07.002",
+        "Tierney, W., Hardy III, J., Ebersole, C. R., Viganola, D., Clemente, E. G., Gordon, M., et al. (2021). A creative destruction approach to replication: Implicit work and sex morality across cultures. <i>Journal of Experimental Social Psychology</i>, <i>93</i>, 104060. https://doi.org/10.1016/j.jesp.2020.104060",
+        "The BMJ. (n.d.). <i>Authorship & contributorship</i>. https://www.bmj.com/about-bmj/resources-authors/article-submission/authorship-contributorship",
+        "JMIR Publications. (2021). <i>What is a group author (collaborative author) and does it need an ORCID?</i> https://support.jmir.org/hc/en-us/articles/115001449591-What-is-a-group-author-collaborative-author-and-does-it-need-an-ORCID-"
     ],
     "drafted_by": [
         "Yuki Yamada"
@@ -33,5 +35,5 @@
     "translation_reviewed_by": [
         "Elif Baştan"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-12"
 }

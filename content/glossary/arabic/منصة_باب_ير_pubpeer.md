@@ -3,13 +3,12 @@
     "en_title": "PubPeer",
     "title": "منصة بابّير PubPeer",
     "sort_key": "منصة بابّير pubpeer",
-    "definition": "موقع ويب يسمح للمستخدمين بنشر مراجعات أقران مجهولة المصدر للبحوث ا المنشورة (أي مراجعة الأقران بعد النَّشر).  **المصطلحات ذات الصِّلة:** التّحكيم المفتوح.",
+    "definition": "موقع ويب يسمح للمستخدمين بنشر مراجعات أقران مجهولة المصدر للبحوث ا المنشورة (أي مراجعة الأقران بعد النَّشر).",
     "related_terms": [
         "Open Peer Review"
     ],
     "references": [
-        "PubPeer. (n.d.). <i>PubPeer—Search publications and join the conversation</i>. Pubpeer. https://www.pubpeer.com/",
-        "[www.pubpeer.com](http://www.pubpeer.com)"
+        "PubPeer. (n.d.). <i>PubPeer—Search publications and join the conversation</i>. Pubpeer. https://www.pubpeer.com/"
     ],
     "drafted_by": [
         "Ali H. Al-Hoorie"
@@ -30,5 +29,5 @@
         "Asma Alzahrani",
         "Mohammed Mohsen"
     ],
-    "lastmod": "2026-11-08"
+    "lastmod": "2026-11-12"
 }

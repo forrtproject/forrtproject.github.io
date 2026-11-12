@@ -3,7 +3,7 @@
     "en_title": "Open Data",
     "title": "Offene Daten [Open Data]",
     "sort_key": "offene daten [open data]",
-    "definition": "Offene Daten sind frei verfügbare und direkt zugängliche Daten, die von anderen uneingeschränkt genutzt werden können. \"Open data and content can be freely used, modified, and shared by anyone for any purpose” (dt. Offene Daten und Inhalte können von jeder:m zu jedem Zweck frei verwendet, verändert und weitergegeben werden\" ) ([https://opendefinition.org/](https://opendefinition.org/)). Offene Daten unterliegen sowohl dem Erfordernis der Kennzeichnung als auch des Teilens, daher ist es wichtig, geeignete Lizenzen (Open Licenses) in Betracht zu ziehen. Sensible oder zeitkritische Datensätze können mit einer Sperrfrist (embargo) belegt oder mit selektiveren Zugriffsoptionen freigegeben werden, um die Integrität der Daten zu gewährleisten.",
+    "definition": "Offene Daten sind frei verfügbare und direkt zugängliche Daten, die von anderen uneingeschränkt genutzt werden können. \"Open data and content can be freely used, modified, and shared by anyone for any purpose” (dt. Offene Daten und Inhalte können von jeder:m zu jedem Zweck frei verwendet, verändert und weitergegeben werden\" (Open Knowledge Foundation, n.d.). Offene Daten unterliegen sowohl dem Erfordernis der Kennzeichnung als auch des Teilens, daher ist es wichtig, geeignete Lizenzen (Open Licenses) in Betracht zu ziehen. Sensible oder zeitkritische Datensätze können mit einer Sperrfrist (embargo) belegt oder mit selektiveren Zugriffsoptionen freigegeben werden, um die Integrität der Daten zu gewährleisten.",
     "related_terms": [
         "Badges (Open Science)",
         "Data availability",
@@ -15,7 +15,7 @@
         "Secondary data analysis"
     ],
     "references": [
-        "Definition, T. O. (n.d.). <i>The Open Definition—Open Definition—Defining Open in Open Data, Open Content and Open Knowledge</i>. Open Knowledge Foundation. https://opendefinition.org/",
+        "Open Knowledge Foundation. (n.d.). <i>The Open Definition</i>. https://opendefinition.org/",
         "Handbook, O. D. (n.d.). <i>What is Open Data?</i> Retrieved 9 July 2021. https://opendatahandbook.org/guide/en/what-is-open-data/"
     ],
     "drafted_by": [
@@ -42,5 +42,5 @@
         "Helena Hartmann",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-12"
 }

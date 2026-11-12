@@ -12,8 +12,7 @@
         "Preprint"
     ],
     "references": [
-        "Zenodo. (n.d.). <i>Zenodo—Research. Shared.</i> https://www.zenodo.org/",
-        "[www.zenodo.org](http://www.zenodo.org)"
+        "Zenodo. (n.d.). <i>Zenodo—Research. Shared.</i> https://www.zenodo.org/"
     ],
     "drafted_by": [
         "Ali H. Al-Hoorie"
@@ -30,5 +29,5 @@
         "Susanne Vogel",
         "Joris Frese"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-12"
 }

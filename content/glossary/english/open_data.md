@@ -3,7 +3,7 @@
     "en_title": "Open Data",
     "title": "Open Data",
     "sort_key": "open data",
-    "definition": "Open data refers to data that is freely available and readily accessible for use by others without restriction, “Open data and content can be freely used, modified, and shared by anyone for any purpose” ([https://opendefinition.org/](https://opendefinition.org/) ). Open data are subject to the requirement to attribute and share alike, thus it is important to consider appropriate Open Licenses. Sensitive or time-sensitive datasets can be embargoed or shared with more selective access options to ensure data integrity is upheld.",
+    "definition": "Open data refers to data that is freely available and readily accessible for use by others without restriction, “Open data and content can be freely used, modified, and shared by anyone for any purpose” (Open Knowledge Foundation, n.d.). Open data are subject to the requirement to attribute and share alike, thus it is important to consider appropriate Open Licenses. Sensitive or time-sensitive datasets can be embargoed or shared with more selective access options to ensure data integrity is upheld.",
     "related_terms": [
         "Badges (Open Science)",
         "Data availability",
@@ -15,7 +15,7 @@
         "Secondary data analysis"
     ],
     "references": [
-        "Definition, T. O. (n.d.). <i>The Open Definition—Open Definition—Defining Open in Open Data, Open Content and Open Knowledge</i>. Open Knowledge Foundation. https://opendefinition.org/",
+        "Open Knowledge Foundation. (n.d.). <i>The Open Definition</i>. https://opendefinition.org/",
         "Handbook, O. D. (n.d.). <i>What is Open Data?</i> Retrieved 9 July 2021. https://opendatahandbook.org/guide/en/what-is-open-data/"
     ],
     "drafted_by": [
@@ -38,5 +38,5 @@
     "aliases": [
         "/glossary/open_data"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-12"
 }

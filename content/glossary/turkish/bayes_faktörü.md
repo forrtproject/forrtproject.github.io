@@ -9,7 +9,7 @@
         "Bayesian statistics",
         "Likelihood function",
         "Null Hypothesis Significance Testing (NHST)",
-        "p-value"
+        "*p*-value"
     ],
     "references": [
         "Hoijtink, H., Mulder, J., van Lissa, C., & Gu, X. (2019). A tutorial on testing hypotheses using the Bayes factor. <i>Psychological Methods</i>, <i>24</i>(5), 539–556. https://doi.org/10.1037/met0000201",
@@ -37,5 +37,5 @@
     "translation_reviewed_by": [
         "Elif Baştan"
     ],
-    "lastmod": "2026-11-08"
+    "lastmod": "2026-11-12"
 }

@@ -3,7 +3,7 @@
     "en_title": "ORCID (Open Researcher and Contributor ID)",
     "title": "ORCID (Open Researcher and Contributor ID)",
     "sort_key": "orcid (open researcher and contributor id)",
-    "definition": "A organisation that provides a registry of persistent unique identifiers (ORCID iDs) for researchers and scholars, allowing these users to link their digital research documents and other contributions to their ORCID record. This avoids the name ambiguity problem in scholarly communication. ORCID iDs provide unique, persistent identifiers connecting researchers and their scholarly work. It is free to register for an ORCID iD at https://orcid.org/register.",
+    "definition": "A organisation that provides a registry of persistent unique identifiers (ORCID iDs) for researchers and scholars, allowing these users to link their digital research documents and other contributions to their ORCID record. This avoids the name ambiguity problem in scholarly communication. ORCID iDs provide unique, persistent identifiers connecting researchers and their scholarly work. It is free to register for an ORCID iD at [orcid.org/register](https://orcid.org/register).",
     "related_terms": [
         "Authorship",
         "DOI (digital object identifier)",
@@ -31,5 +31,5 @@
     "aliases": [
         "/glossary/orcid_open_researcher_and_contributor_id_"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-12"
 }
