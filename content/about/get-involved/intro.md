@@ -56,7 +56,7 @@ classtitle = ""
 {{< action_cards >}}
 Join our Slack | Where most of FORRT's work and conversation happens | https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ
 Find a project | Initiatives looking for collaborators right now | #get-involved
-Get the newsletter | News, events and opportunities, in your inbox | #newsletter
+Read the starter guide | "Getting Started with FORRT", our introduction for newcomers | https://docs.google.com/document/d/e/2PACX-1vR_OKOxDlrbPcXn6SZLYlq19139ofcYDInBu9E392jWG5yzbp2VjF7E1_fwtzTz4Wxo9i4ddHZTbHfT/pub
 {{< /action_cards >}}
 
 
