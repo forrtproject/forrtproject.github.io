@@ -10,8 +10,10 @@
         <p class="lede">{{ .Params.lede }}</p>
       </div>
       {{/* The research area's bricks, in an arch as on the resources directory; the old diagram's labels were too small to read. */}}
-      {{ $plate := resources.Get "images/doors/area-research.webp" }}
-      <figure class="heading-plate heading-plate-research"><img src="{{ $plate.RelPermalink }}" alt="Two near-identical brick towers, one with a single orange brick, seen through a magnifying glass." width="{{ $plate.Width }}" height="{{ $plate.Height }}"></figure>
+      {{/* The hub's own diagram of how its parts fit together (front matter `image`). */}}
+      {{ with .Resources.GetMatch .Params.image }}
+      <figure class="heading-plate-plain"><img src="{{ .RelPermalink }}" alt="{{ $.Params.image_alt }}" width="{{ .Width }}" height="{{ .Height }}" loading="lazy"></figure>
+      {{ end }}
     </div>
   </header>
   {{ with .Params.start }}

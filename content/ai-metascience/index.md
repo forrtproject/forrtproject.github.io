@@ -226,7 +226,9 @@ image:
   color: var(--am-ink);
   font-size: 16px;
   font-weight: 700;
+  letter-spacing: 0.08em;
   line-height: 1.3;
+  text-transform: uppercase;
 }
 .am-prog-half::after { content: ""; flex: 1; height: 1px; background: var(--am-rule); }
 .am-prog-session {

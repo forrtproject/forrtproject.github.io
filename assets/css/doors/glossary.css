@@ -60,7 +60,7 @@ main:lang(ar) .post-nav-next .term-en{text-align:left}
 .term-group li a:hover{text-decoration:underline;text-underline-offset:3px}
 .term-group li .term-en{display:block;font-size:15px;font-weight:400;color:var(--soft)}
 .term-group li p{margin:6px 0 0;font-size:16px;line-height:1.45;color:var(--ink)}
-.glossary-about{margin:36px 0 0;padding:4px 20px;background:var(--surface);border-radius:var(--r-large)}
+.glossary-about{margin:0 0 20px;padding:4px 20px;background:var(--surface);border-radius:var(--r-large)}
 .glossary-about>summary{padding:14px 0;cursor:pointer;font:600 18px/1.3 var(--text);color:var(--ink)}
 .glossary-about .article-style>.btn-group:first-child{display:none}
 /* A term page leads with its definition in a tinted panel; credits are a quiet line at the end. */
@@ -76,11 +76,7 @@ main:lang(ar) .post-nav-next .term-en{text-align:left}
 .glossary-tools{position:sticky;top:0;z-index:5;padding:6px 0 4px;background:var(--page);border-bottom:1px solid var(--line)}
 .glossary-letters a.is-empty{opacity:.35;pointer-events:none}
 /* Related terms as chips: linked where the term has a page, plain where it has none yet. */
-.glossary-layout .article-style .term-related{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
-.glossary-layout .article-style .term-related strong{margin-inline-end:4px}
-.term-chip{display:inline-block;padding:3px 12px;border:1.5px solid var(--line);border-radius:999px;font-size:16px;line-height:1.4;color:var(--ink)}
-a.term-chip{border-color:var(--link);color:var(--link);text-decoration:none}
-a.term-chip:hover{background:var(--link);color:#fff}
+.glossary-layout .article-style .term-related a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
 .glossary-layout .article-style .term-credit{color:var(--ink)}
 /* On a phone the hub's terms are compact rows with two lines of definition, and a term's definition panel is lighter. */
 @media(max-width:760px){
@@ -98,8 +94,7 @@ a.term-chip:hover{background:var(--link);color:#fff}
   .glossary-find label{font-size:21px}
 }
 /* Related terms on their own row under the label; those without a page of their own are muted chips. */
-.glossary-layout .article-style .term-related strong{flex-basis:100%;margin:0 0 2px}
-.glossary-layout .article-style span.term-chip{border-color:transparent;background:var(--surface);color:var(--soft)}
+.glossary-layout .article-style .term-unlinked{color:var(--ink)}
 .glossary-search-row{display:flex;gap:8px;align-items:center}
 .glossary-search-row input{flex:1}
 .glossary-clear{flex:none;padding:10px 16px;border:1.5px solid var(--ink);border-radius:999px;background:#fff;color:var(--ink);font:600 16px/1.2 var(--text);cursor:pointer}

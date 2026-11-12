@@ -55,4 +55,4 @@ privacy/index.html  # #1096: the policy describes the native newsletter form, so
 about/get-involved/index.html  # #1118: its description is now a written summary, not the opening link text
 awop/index.html                # #1118: its description is now a written summary, not the opening link text
 reversals/index.html           # #1118: its description now opens with the concluded-project note at the top of the page
-tags/index.html                # #1120: its description says the page lists the tags used on five or more pages
+tags/index.html                # #1118: its description says in one sentence what tags are for

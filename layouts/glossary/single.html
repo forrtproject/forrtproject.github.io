@@ -202,13 +202,14 @@
             {{/* A term found in this language is named as its page is, without the English name in brackets. */}}
             {{ $name := $term_str }}
             {{ if and (ne $lang "english") (eq .Params.language $lang) }}{{ $name = replaceRE `\s*\[.*\]\s*$` "" .Title }}{{ end }}
-            {{ $related_links = $related_links | append (printf "<a class='term-chip' href='%s'>%s</a>" .RelPermalink ($name | htmlEscape | markdownify)) }}
+            {{ $related_links = $related_links | append (printf "<a href='%s'>%s</a>" .RelPermalink ($name | htmlEscape | markdownify)) }}
             {{ else }}
             {{/* No page of its own yet: a plain chip. */}}
-            {{ $related_links = $related_links | append (printf "<span class='term-chip'>%s</span>" ($term_str | htmlEscape | markdownify | string)) }}
+            {{ $related_links = $related_links | append (printf "<span class='term-unlinked'>%s</span>" ($term_str | htmlEscape | markdownify | string)) }}
             {{ end }}
             {{ end }}
-            {{ $related_links_string := delimit $related_links " " | safeHTML }}
+            {{/* A plain list in the page's own separator: the page already has enough pill shapes. */}}
+            {{ $related_links_string := delimit $related_links $sep | safeHTML }}
             <p class="term-line term-related"><strong>{{ if gt (len $related_links) 1 }}{{ index (index $dictionary $lang) "related_terms" }}{{ else }}{{ index (index $dictionary $lang) "related_term" }}{{ end }}: </strong>{{ $related_links_string }}</p>
             {{ end }}
 

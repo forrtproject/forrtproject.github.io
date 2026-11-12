@@ -5,9 +5,9 @@
 widget = "blank"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
-weight = 40  # Order that this section will appear.
+weight = 12  # Order that this section will appear.
 
-title = "In-depth introduction to FORRT"
+title = "About FORRT"
 subtitle = ""
 classtitle = ""
 
@@ -53,4 +53,16 @@ classtitle = ""
 
 +++
 
-To learn what FORRT does, see our [Publications page](/publications/). For how FORRT is organised, its Slack channels and the initiatives that would welcome your help, read [Getting Started with FORRT](https://docs.google.com/document/d/e/2PACX-1vR_OKOxDlrbPcXn6SZLYlq19139ofcYDInBu9E392jWG5yzbp2VjF7E1_fwtzTz4Wxo9i4ddHZTbHfT/pub).
+FORRT is a community of researchers and educators who develop, share and teach open scholarship, and who work to make science more rigorous, more transparent and more just. Most of its work happens in teams and projects that coordinate on [Slack](https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ).
+
+{{% callout title="Getting Started with FORRT" %}}
+
+Before you join, read our guide, [**Getting Started with FORRT**](https://docs.google.com/document/d/e/2PACX-1vR_OKOxDlrbPcXn6SZLYlq19139ofcYDInBu9E392jWG5yzbp2VjF7E1_fwtzTz4Wxo9i4ddHZTbHfT/pub). It is organised by how involved you want to be:
+
+1. General information about FORRT, its Slack channels and community, with links to resources.
+2. The current initiatives that would benefit from your help, with authorship opportunities and no required involvement in the organisation.
+3. How FORRT is organised, and how to take part in running it.
+
+{{% /callout %}}
+
+To see what FORRT does, browse the [publications](/publications/). Its aims are on [Mission & advocacy](/about/mission/) and [Principles](/about/principles/), and the people behind it on [Teams](/about/teams/) and [Steering Committee](/about/steering-committee/).

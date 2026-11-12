@@ -21,7 +21,11 @@
 #just-os-offline-badge{position:absolute;inset-block-end:-2px;inset-inline-start:-2px;width:22px;height:22px;display:flex;align-items:center;justify-content:center;background:#fff;border:1.5px solid var(--ink);border-radius:50%;color:var(--urgent)}
 #just-os-offline-badge svg{width:14px;height:14px}
 @media(max-width:760px){#just-os-widget{inset-block-end:calc(12px + var(--banner,0px));inset-inline-end:12px}#just-os-img{width:48px;height:48px}#just-os-bubble{inset-inline-end:58px;top:9px;font-size:14px}}
-@media(hover:none){#just-os-dismiss{opacity:1}}
+/* On a touch screen the close control is larger and its tap area is 44 px, reaching past the visible circle. */
+@media(hover:none){
+  #just-os-dismiss{opacity:1;width:28px;height:28px;top:-10px;inset-inline-end:-10px;font-size:18px;line-height:24px}
+  #just-os-dismiss::after{content:"";position:absolute;inset:-8px}
+}
 @media print{#just-os-widget{display:none}}
 
 /* The round button needs 80 px of margin, which the page has from 1440 px (.wrap is at most 1280 px wide).

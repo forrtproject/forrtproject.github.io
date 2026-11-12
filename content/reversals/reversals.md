@@ -55,7 +55,7 @@ subtitle = ""
 
 **This project has concluded.** Its work continues in the [FORRT Replication Hub](/replication-hub/), and its outcomes are described in the preprint [Tracking and Mainstreaming Replications in the Social, Cognitive, and Behavioral Sciences](https://osf.io/preprints/metaarxiv/ad2w6_v1). The effects below were crowdsourced and not consistently validated, so check specific claims before relying on them, and please [report errors](https://github.com/forrtproject/forrtproject.github.io/issues/612).
 
-<a class="btn btn-primary" href="/explorer/">Validated data in FReD</a> <a class="btn btn-outline-primary" href="/annotator/">Search FLoRA</a>
+<a class="btn btn-primary" href="/annotator/">Search FLoRA for validated replications</a>
 
 {{% /alert %}}
 
@@ -68,9 +68,14 @@ FORRT's Replications and Reversals project collected replications of effects in 
 
 <br>
 
-{{< spoiler text="About this project: motivation, history, how to contribute and how to cite" >}}
+### **How to cite**
 
 Please cite this source as Hartmann H, Azevedo F, Röseler L, Wallrich L, Aldoh A, Elsherif MM, et al. Tracking and mainstreaming replications in the social, cognitive, and behavioral sciences. MetaArXiv. https://doi.org/10.31222/osf.io/ad2w6_v1. Contributors are listed at [forrt.org/contributors](/contributors/).
+
+<br>
+
+{{< spoiler text="About this project: motivation, history and how to contribute" >}}
+
 
 
 ### **Motivation**
@@ -122,8 +127,6 @@ All **past or current project contributors** are listed at the [bottom of this p
 
 {{< /spoiler >}}
 
----------------
-# **All Effects** (*sorted by discipline*)
 ---------------
 
 {{< list_filter label="Search the effects" placeholder="e.g. priming, Bargh, ego depletion" noun="effects" >}}

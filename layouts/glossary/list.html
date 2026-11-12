@@ -4,7 +4,7 @@
      site.js filters the terms as the search is typed. */}}
 {{ $lang := .Params.language | default "english" }}
 {{ $labels := dict
-  "english" (dict "view" "View" "cards" "Cards" "list" "List" "language" "Language" "clear" "Clear" "lede" "Community-written definitions of open scholarship terms, described in Nature Human Behaviour (Parsons et al., 2022). [How to cite the glossary](#about-the-glossary)." "search" "Search %d terms" "placeholder" "Type a term, e.g. replication" "about" "About the glossary, and how to cite it" "letters" "Terms by letter" "none" "No term matches.")
+  "english" (dict "view" "View" "cards" "Cards" "list" "List" "language" "Language" "clear" "Clear" "lede" "Community-written definitions of open scholarship terms, described in Nature Human Behaviour (Parsons et al., 2022). [How to cite the glossary](#about-the-glossary)." "search" "Search %d terms" "placeholder" "Type a term, e.g. replication" "about" "About the glossary project, and how to cite it" "letters" "Terms by letter" "none" "No term matches.")
   "german" (dict "view" "Ansicht" "cards" "Karten" "list" "Liste" "language" "Sprache" "clear" "Löschen" "search" "%d Begriffe durchsuchen" "placeholder" "Begriff eingeben, z. B. Replikation" "about" "Über das Glossar und wie man es zitiert" "letters" "Begriffe nach Buchstaben" "none" "Kein Begriff passt.")
   "arabic" (dict "view" "العرض" "cards" "بطاقات" "list" "قائمة" "language" "اللغة" "clear" "مسح" "search" "ابحث في %d مصطلحًا" "placeholder" "اكتب مصطلحًا" "about" "عن المسرد وكيفية الاستشهاد به" "letters" "المصطلحات حسب الحرف" "updated" "آخر تحديث:" "none" "لا يوجد مصطلح مطابق.")
   "turkish" (dict "view" "Görünüm" "cards" "Kartlar" "list" "Liste" "language" "Dil" "clear" "Temizle" "search" "%d terimde ara" "placeholder" "Bir terim yazın" "about" "Sözlük hakkında ve nasıl atıf yapılır" "letters" "Harfe göre terimler" "none" "Eşleşen terim yok.")
@@ -44,6 +44,11 @@
           {{ range hugo.Data.glossary_languages }}<a href="{{ printf "/glossary/%s/" .slug | relLangURL }}"{{ if eq .slug $lang }} aria-current="page"{{ end }}>{{ trim .label " " }}</a>{{ end }}
         </nav>
       </header>
+      {{/* The project's introduction, history and citation, closed under the heading so the terms come soon. */}}
+      <details class="glossary-about" id="about-the-glossary">
+        <summary>{{ $l.about }}</summary>
+        <div class="article-style">{{ partial "doors/content" .Content }}</div>
+      </details>
       {{/* The search, its count and the letters stay at the top while the terms scroll by. */}}
       <div class="glossary-tools">
       <div class="glossary-find">
@@ -71,10 +76,6 @@
         </section>
         {{ end }}
       </div>
-      <details class="glossary-about" id="about-the-glossary">
-        <summary>{{ $l.about }}</summary>
-        <div class="article-style">{{ partial "doors/content" .Content }}</div>
-      </details>
       <div class="article-foot">
         {{/* An Arabic page gives the date in digits, isolated, so no English month name sits in the Arabic line. */}}
         <p>{{ with $l.updated }}{{ . }} <bdi>{{ $.Lastmod.Format "2006-01-02" }}</bdi>{{ else }}{{ i18n "last_updated" }} {{ $.Lastmod.Format site.Params.date_format }}{{ end }}</p>
