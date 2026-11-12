@@ -1,0 +1,11 @@
+{{/* The contents on a phone, where the side card would fall below the text: a disclosure whose closed line says what
+     it holds, "On this page: 5 sections", with the first section names under it. Input: the contents' rendered
+     <nav> (a list of links). Used by doors/reading and widget_page. */}}
+{{ $nav := . }}
+{{ $names := slice }}
+{{ range findRESubmatch `<a [^>]*>([\s\S]*?)</a>` $nav }}{{ $names = $names | append (index . 1 | plainify | htmlUnescape | strings.TrimSpace) }}{{ end }}
+<details class="toc-phone">
+  <summary><span class="toc-phone-title">On this page: {{ len $names }} {{ cond (eq (len $names) 1) "section" "sections" }}</span>
+    <span class="toc-phone-names" aria-hidden="true">{{ delimit (first 6 $names) " · " }}</span></summary>
+  <div class="article-toc">{{ $nav | safeHTML }}</div>
+</details>
