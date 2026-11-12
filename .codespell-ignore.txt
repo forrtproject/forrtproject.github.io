@@ -104,3 +104,4 @@ doubleclick
 # German glossary label
 Referenz
 pre-selected
+jus
