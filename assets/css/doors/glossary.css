@@ -112,3 +112,5 @@ a.term-chip:hover{background:var(--link);color:#fff}
   .glossary-language-select{display:flex;align-items:center;gap:10px;margin:14px 0 0;font:600 16px/1.3 var(--text)}
   .glossary-language-select select{flex:1;padding:9px 12px;border:1.5px solid var(--ink);border-radius:var(--r-small);background:#fff;font:400 16px/1.3 var(--text);color:var(--ink)}
 }
+/* Two lines of definition per term on every screen, so each letter reads as an even block. */
+.term-group li p{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}

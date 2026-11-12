@@ -328,3 +328,7 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
   .article-layout .article-style .awop-wheel{float:none;width:auto;margin:0 0 14px;display:flex;align-items:center;gap:14px;text-align:start}
   .article-layout .article-style .awop-wheel>p:first-child{flex:none;width:96px}
 }
+/* A list with a search over it (the effects on /reversals/) reads as rows: no bullets, a rule between entries. */
+.article-layout .article-style .list-filter~ul{list-style:none;padding-inline-start:0}
+.article-layout .article-style .list-filter~ul>li{margin:0;padding:12px 0 6px;border-bottom:1px solid var(--line)}
+.article-layout .article-style .list-filter~ul>li>p{margin:0 0 4px}

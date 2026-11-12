@@ -178,8 +178,7 @@
 /* Project cards share one footer line of actions. */
 .get-involved-card{display:flex;flex-direction:column}
 .get-involved-card .get-involved-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:12px}
-/* The projects use the empty space beside the reading column, two to a row, as they did beside the call-out. */
-@media(min-width:1440px){
-  .article-layout:not(.article-layout-callouts) .article-style .get-involved-projects{width:calc(100% + 180px);grid-template-columns:repeat(2,minmax(0,1fr))}
-}
+/* Get Involved is a wide page: its projects fill the width, as many to a row as fit. */
+.article-layout-wide .article-style .get-involved-projects{grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));max-width:none}
+.article-layout-wide .article-style .action-cards{max-width:960px}
 .get-involved-card[hidden]{display:none}

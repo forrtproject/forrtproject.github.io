@@ -19,9 +19,9 @@
   var letters = document.querySelector(".tag-letters");
   var groups = Array.prototype.slice.call(document.querySelectorAll(".tag-group"));
   var count = box.querySelector(".tag-filter-count");
-  // On a phone each letter shows its first twelve tags and a button for the rest, so the list stays walkable.
-  var FIRST = 12;
-  if (window.matchMedia("(max-width: 760px)").matches) {
+  // Each letter shows its first tags (twelve on a phone, sixteen otherwise) and a button for the rest, so the list stays walkable.
+  var FIRST = window.matchMedia("(max-width: 760px)").matches ? 12 : 16;
+  {
     groups.forEach(function (group) {
       var items = group.querySelectorAll("li");
       if (items.length <= FIRST) return;
