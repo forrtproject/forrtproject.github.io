@@ -626,11 +626,14 @@ if (projectFilter) {
   const input = projectFilter.querySelector('input');
   const count = projectFilter.querySelector('.list-filter-count');
   const cards = [...document.querySelectorAll('.get-involved-card')];
+  // A card matches on its name and description, not on its actions, which every card shares ("Email", "Slack channel").
+  const texts = cards.map((card) => [...card.querySelectorAll(':scope > h3, :scope > h3 + div')]
+    .map((part) => part.textContent).join(' ').toLowerCase());
   input.addEventListener('input', () => {
     const query = input.value.trim().toLowerCase();
     let shown = 0;
-    cards.forEach((card) => {
-      const match = !query || card.textContent.toLowerCase().includes(query);
+    cards.forEach((card, index) => {
+      const match = !query || texts[index].includes(query);
       card.hidden = !match;
       if (match) shown += 1;
     });
