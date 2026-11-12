@@ -182,6 +182,4 @@
 .article-layout-wide .article-style .get-involved-projects{grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));max-width:none}
 .article-layout-wide .article-style .action-cards{max-width:960px}
 .get-involved-card[hidden]{display:none}
-.get-involved-card .btn.is-main{background:var(--link)!important;color:#fff!important}
-.get-involved-card .btn.is-main:hover{background:var(--ink)!important;border-color:var(--ink)!important}
 .get-involved-card .get-involved-link{display:inline-flex;align-items:center;min-height:40px;padding:0 6px;color:var(--link);font-weight:600;text-decoration:underline;text-underline-offset:3px}

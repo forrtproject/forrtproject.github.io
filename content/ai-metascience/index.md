@@ -32,6 +32,12 @@ image:
   .reading:has(.am-facts) > * { grid-column: 1 / -1; }
   .reading:has(.am-facts) > .article-head { grid-column: 1; grid-row: 1; }
   .reading:has(.am-facts) > .article-image { grid-column: 2; grid-row: 1; margin: 0; }
+  /* The facts sit under the banner, beside the introduction and the playlists, so the programme starts sooner. */
+  .reading:has(.am-facts) > .article-style { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 520px); column-gap: 56px; align-content: start; }
+  .reading:has(.am-facts) > .article-style > * { grid-column: 1 / -1; }
+  .reading:has(.am-facts) > .article-style > p:first-of-type { grid-column: 1; grid-row: 1; }
+  .reading:has(.am-facts) > .article-style > .am-actions { grid-column: 1; grid-row: 2; }
+  .reading:has(.am-facts) > .article-style > .am-facts { grid-column: 2; grid-row: 1 / span 2; align-self: start; grid-template-columns: 1fr 1fr; margin-top: 20px; }
 }
 /* Palette, drawn from the banner mosaic. Each day sets --am-accent (rules and
    borders), --am-deep (text and filled pills, 4.5:1 or better on white and on

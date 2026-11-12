@@ -295,7 +295,12 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .article-layout .article-style .awop-wheel p{margin:0;font-size:15px}
 @media(max-width:600px){.article-layout .article-style .awop-wheel{width:140px;margin-left:16px}}
 .article-layout .article-style .awop-wheel~h2{clear:both}
-.article-layout .article-style .awop-material{margin:0 0 12px;padding:14px 18px 4px;background:var(--surface);border-radius:var(--r-large)}
+/* The supplemental materials read as a list: each title with its OSF link beside it, then what it is. */
+.article-layout .article-style .awop-material{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:16px;margin:0;padding:14px 0 4px;border-bottom:1px solid var(--line)}
+.article-layout .article-style p+.awop-material{border-top:1px solid var(--line);margin-top:12px}
+.article-layout .article-style .awop-material>*{grid-column:1/-1}
+.article-layout .article-style .awop-material>p:first-child{grid-column:1;grid-row:1}
+.article-layout .article-style .awop-material>p:nth-child(3){grid-column:2;grid-row:1;white-space:nowrap}
 .article-layout .article-style .awop-material p{margin:0 0 8px}
 .article-layout .article-style .awop-material .spoiler{margin:0 0 10px;background:none}
 .article-layout .article-style .awop-material .spoiler>summary{padding:4px 0;font-size:16px}
