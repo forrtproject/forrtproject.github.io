@@ -11,7 +11,7 @@ hide_date: true
 {{< action_cards >}}
 A teaching resource | A reading, lesson, course, video or tool for the curated resources | https://docs.google.com/forms/d/e/1FAIpQLSfPceN5opEeauCBSvapoB-ADpH0IoT24XOLfQGaVEF0EJGFOA/viewform
 A replication | A replication or reproduction study for FLoRA, the FORRT Library of Reproduction and Replication Attempts | /replication-hub/submit/
-A game | An open-science game for the Games Portal | https://forms.gle/MSBWR87GchDo8fED7
+A game | An open-science game the Games Portal is missing | https://forms.gle/PXYBrRhXGiZyi8M99
 Discipline resources | Resources for a discipline's open-scholarship page, or a correction | https://docs.google.com/forms/d/e/1FAIpQLSfs-BCYWGet5QNZAWQ8IQVZ05TAUUwvD4mkc31Ehrm5tK8q3Q/viewform
 A glossary suggestion | Use "Suggest an improvement" at the foot of any glossary term | /glossary/
 Anything else | Feedback, ideas or corrections for the website | /feedback/
