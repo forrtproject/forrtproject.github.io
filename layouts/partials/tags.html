@@ -8,7 +8,8 @@
 {{ $tc := partialCached "functions/tag_counts.html" . }}
 {{ $shown := slice }}
 {{ range partial "functions/page_tags.html" . }}
-  {{ if ge (int (index $tc.counts (lower .) | default 0)) $tc.min }}{{ $shown = $shown | append . }}{{ end }}
+  {{ $n := int (index $tc.counts (lower .) | default 0) }}
+  {{ if and (ge $n $tc.min) (le $n $tc.max) }}{{ $shown = $shown | append . }}{{ end }}
 {{ end }}
 {{ with $shown }}
 <div class="article-tags">

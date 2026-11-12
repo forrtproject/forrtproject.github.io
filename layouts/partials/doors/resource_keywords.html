@@ -4,7 +4,10 @@
 {{ $tc := partialCached "functions/tag_counts.html" . }}
 {{ $words := slice }}
 {{ range partial "functions/page_tags.html" . }}
-  {{ if ge (int (index $tc.counts (lower .) | default 0)) $tc.min }}
+  {{ $n := int (index $tc.counts (lower .) | default 0) }}
+  {{/* A site-wide tag (on more than `max` pages) describes nothing here, so it is left out. */}}
+  {{ if gt $n $tc.max }}{{ continue }}{{ end }}
+  {{ if ge $n $tc.min }}
     {{ $words = $words | append (printf `<a href="%s">%s</a>` (printf "tags/?tag=%s" (. | urlquery) | relURL) (. | htmlEscape)) }}
   {{ else }}
     {{ $words = $words | append (. | htmlEscape) }}

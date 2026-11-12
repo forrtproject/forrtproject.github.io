@@ -10,8 +10,8 @@
 
      Inputs: none (uses `site`). Output: dict with `rows` (dicts of `tag` and
      `count`, most used first, one row per term regardless of spelling),
-     `min` (the page count a tag needs to be shown), `common` (the rows on at
-     least `min` pages), `counts` (lower-cased term to count), `pages` (pages
+     `min` (the page count a tag needs to be shown), `max` (a quarter of the tagged
+     pages, above which a tag is too general to show), `common` (the rows from `min` to `max` pages), `counts` (lower-cased term to count), `pages` (pages
      carrying at least one tag) and `total` (tag applications).
      `pages` is counted here rather than with a `where` on `Params.tags`, which
      would also match pages that declare an empty `tags: []`. */}}
@@ -60,6 +60,9 @@
      of the vocabulary is used once, which made both read as clutter. Every tag still works in
      `/tags/?tag=` (old /tag/<term>/ links arrive there) and in site search. */}}
 {{ $min := 5 }}
-{{ $common := where $rows "count" "ge" $min }}
+{{/* A tag on more than a quarter of the tagged pages (today only "Open Science", on about 30%) says nothing on
+     a site about open science, so it is not shown as a tag. Its address under /tags/?tag= still works. */}}
+{{ $max := div $pages 4 }}
+{{ $common := where (where $rows "count" "ge" $min) "count" "le" $max }}
 
-{{ return (dict "rows" (sort $rows "count" "desc") "common" (sort $common "count" "desc") "counts" $counts "min" $min "pages" $pages "total" $total) }}
+{{ return (dict "rows" (sort $rows "count" "desc") "common" (sort $common "count" "desc") "counts" $counts "min" $min "max" $max "pages" $pages "total" $total) }}
