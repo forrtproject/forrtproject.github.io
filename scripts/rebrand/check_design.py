@@ -109,10 +109,11 @@ AUDIT = """() => {
         range.setStart(node, match.index);
         range.setEnd(node, match.index + match[0].length);
         // A long address can break across lines, so share its characters out by rendered width.
-        const boxes = [...range.getClientRects()].filter((box) => box.width > 0
-          && clips.every((clip) => box.top < clip.bottom - 1 && box.bottom > clip.top + 1
-            && box.left < clip.right - 1 && box.right > clip.left + 1));
-        const total = boxes.reduce((sum, box) => sum + box.width, 0);
+        // The share is taken over all of the word's boxes, then only the visible ones count.
+        const all = [...range.getClientRects()].filter((box) => box.width > 0);
+        const total = all.reduce((sum, box) => sum + box.width, 0);
+        const boxes = all.filter((box) => clips.every((clip) => box.top < clip.bottom - 1 && box.bottom > clip.top + 1
+          && box.left < clip.right - 1 && box.right > clip.left + 1));
         for (const box of boxes) {
           const key = Math.round(box.top / 6);
           // Arabic vowel marks and other combining marks take up no column of their own.
