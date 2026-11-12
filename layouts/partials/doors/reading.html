@@ -17,13 +17,18 @@
 {{ if $hasCard }}{{ $card = partial "doors/reading_card" (dict "page" . "hasDates" $hasDates "headings" $headings "contents" $contents "written" $written) }}{{ end }}
 <div class="wrap">
   <div class="article-layout{{ if $hasCallouts }} article-layout-callouts{{ else if not $hasCard }} article-layout-single{{ end }}{{ if $wide }} article-layout-wide{{ end }}">
+    {{/* A page whose picture is the thing itself opens with it beside the heading (doors/page_hero). */}}
+    {{ $hero := and .Params.hero_image (not .Params.hide_page_header) }}
+    {{ if $hero }}{{ partial "doors/page_hero" (dict "page" . "head" (partial "doors/article_header" .)) }}{{ end }}
     {{/* First in the page, so keyboard order follows the layout: contents, then text. */}}
     {{ $card }}
     <article class="reading">
-      {{ if not .Params.hide_page_header }}
-        {{ partial "doors/article_header" . }}
+      {{ if not $hero }}
+        {{ if not .Params.hide_page_header }}
+          {{ partial "doors/article_header" . }}
+        {{ end }}
+        {{ partial "doors/page_actions" . }}
       {{ end }}
-      {{ partial "doors/page_actions" . }}
       {{/* On phones the side card falls below the text, too late to help on a long page. */}}
       {{ if and (or $hasCard $wide) (gt (len $headings) 1) }}
       <details class="toc-phone">
