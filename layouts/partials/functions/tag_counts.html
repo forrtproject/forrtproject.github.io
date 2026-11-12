@@ -8,7 +8,8 @@
      Call through `partialCached` so the walk happens once per build.
 
      Inputs: none (uses `site`). Output: dict with `rows` (dicts of `tag` and
-     `count`, most used first, one row per term regardless of spelling),
+     `count`, most used first, one row per term regardless of spelling), `common` (the rows on at
+     least `min` pages), `counts` (lower-cased term to count),
      `pages` (pages carrying at least one tag) and `total` (tag applications).
      `pages` is counted here rather than with a `where` on `Params.tags`, which
      would also match pages that declare an empty `tags: []`. */}}
@@ -53,4 +54,10 @@
   {{ $rows = $rows | append (dict "tag" (index $labels .) "count" (int (index $counts .))) }}
 {{ end }}
 
-{{ return (dict "rows" (sort $rows "count" "desc") "pages" $pages "total" $total) }}
+{{/* Tags on fewer than `min` pages are left out of the /tags/ list and off page badges: three quarters
+     of the vocabulary is used once, which made both read as clutter. Every tag still works in
+     `/tags/?tag=` (old /tag/<term>/ links arrive there) and in site search. */}}
+{{ $min := 5 }}
+{{ $common := where $rows "count" "ge" $min }}
+
+{{ return (dict "rows" (sort $rows "count" "desc") "common" (sort $common "count" "desc") "counts" $counts "min" $min "pages" $pages "total" $total) }}
