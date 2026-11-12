@@ -643,19 +643,45 @@ if (listFilter) {
     jump.append(select);
     count.before(jump);
   }
+  // Status buttons, when the entries carry status chips: show one outcome at a time.
+  let status = '';
+  const outcomes = ['not replicated', 'reversed', 'mixed', 'replicated'].filter((word) => document.querySelector(`.status-${word.replace(' ', '-')}`));
+  if (outcomes.length) {
+    const row = document.createElement('div');
+    row.className = 'list-filter-status';
+    row.setAttribute('role', 'group');
+    row.setAttribute('aria-label', 'Show by outcome');
+    ['all', ...outcomes].forEach((word) => {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = word === 'all' ? 'status-chip' : `status-chip status-${word.replace(' ', '-')}`;
+      button.textContent = word;
+      button.setAttribute('aria-pressed', String(word === 'all'));
+      button.addEventListener('click', () => {
+        status = word === 'all' ? '' : word.replace(' ', '-');
+        row.querySelectorAll('button').forEach((other) => other.setAttribute('aria-pressed', String(other === button)));
+        input.dispatchEvent(new Event('input'));
+      });
+      row.append(button);
+    });
+    count.before(row);
+  }
+  let words = /./;
   input.addEventListener('input', () => {
     const query = input.value.trim().toLowerCase();
+    words = new RegExp(`(^|[^\\p{L}\\p{N}])${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`, 'iu');
     let shown = 0;
     sections.forEach(({heading, items}) => {
       let any = false;
       items.forEach((item) => {
-        const match = !query || item.textContent.toLowerCase().includes(query);
+        // Matches the start of a word, so "ego" finds ego depletion and not "category".
+        const match = (!query || words.test(item.textContent)) && (!status || item.querySelector(`.status-${status}`));
         item.hidden = !match;
         if (match) { any = true; shown += 1; }
       });
-      heading.hidden = Boolean(query) && !any;
+      heading.hidden = Boolean(query || status) && !any;
     });
-    count.textContent = !query ? '' : shown ? `${shown} ${shown === 1 ? 'entry matches' : 'entries match'}` : 'Nothing matches.';
+    count.textContent = !(query || status) ? '' : shown ? `${shown} ${shown === 1 ? 'entry matches' : 'entries match'}` : 'Nothing matches.';
   });
 }
 

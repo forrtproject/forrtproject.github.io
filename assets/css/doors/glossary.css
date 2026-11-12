@@ -133,3 +133,4 @@ main:lang(ar) .glossary-layout .article-style .term-definition p{font-size:21px}
 .term-grid.is-list .term-group li{padding:8px 4px;background:none;border-radius:0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:minmax(0,280px) minmax(0,1fr);gap:4px 20px;align-items:baseline}
 .term-grid.is-list .term-group li p{margin:0;-webkit-line-clamp:1}
 @media(max-width:760px){.term-grid.is-list .term-group li{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:760px){.glossary-search-row{flex-wrap:wrap}.glossary-search-row input{flex-basis:100%}}

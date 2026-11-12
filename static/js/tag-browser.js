@@ -19,12 +19,17 @@
   var letters = document.querySelector(".tag-letters");
   var groups = Array.prototype.slice.call(document.querySelectorAll(".tag-group"));
   var count = box.querySelector(".tag-filter-count");
-  // Each letter shows its first tags (twelve on a phone, sixteen otherwise) and a button for the rest, so the list stays walkable.
+  // Each letter shows its most used tags (twelve on a phone, sixteen otherwise) and a button for the rest, so the list stays walkable.
   var FIRST = window.matchMedia("(max-width: 760px)").matches ? 12 : 16;
   {
     groups.forEach(function (group) {
       var items = group.querySelectorAll("li");
       if (items.length <= FIRST) return;
+      // The preview shows the letter's most used tags, in their alphabetical places.
+      var ranked = Array.prototype.slice.call(items).sort(function (a, b) {
+        return Number(b.querySelector(".tag-count").textContent) - Number(a.querySelector(".tag-count").textContent);
+      });
+      ranked.slice(0, FIRST).forEach(function (item) { item.classList.add("is-top"); });
       group.classList.add("is-short");
       var more = document.createElement("button");
       more.type = "button";
