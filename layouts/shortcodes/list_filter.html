@@ -1,6 +1,6 @@
-{{/* A search over the list items that follow it on the page, e.g. {{< list_filter label="Search the effects" placeholder="e.g. priming" >}}.
+{{/* A search over the list items that follow it on the page, e.g. {{< list_filter label="Search the effects" placeholder="e.g. priming" noun="effects" >}}.
      site.js hides items that do not match and headings left with none; it stays hidden with JavaScript off. One per page: site.js sets up the first. */}}
-<div class="list-filter" hidden>
+<div class="list-filter" data-noun="{{ .Get "noun" | default "entries" }}" hidden>
   <label for="list-filter-input">{{ .Get "label" | default "Search this list" }}</label>
   <input type="search" id="list-filter-input" placeholder="{{ .Get "placeholder" }}" autocomplete="off">
   <p class="list-filter-count" aria-live="polite"></p>
