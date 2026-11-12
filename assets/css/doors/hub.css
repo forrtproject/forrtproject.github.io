@@ -11,12 +11,6 @@
 }
 .heading-plate-research{background:var(--res-bg)}
 
-.tool-find{max-width:520px;margin:0 0 18px}
-.tool-find label{display:block;margin:0 0 6px;font:600 17px/1.3 var(--text)}
-.tool-find input{width:100%;box-sizing:border-box;padding:10px 16px;border:1.5px solid var(--ink);border-radius:999px;background:#fff;font:400 17px/1.3 var(--text);color:var(--ink)}
-.tool-find-count{margin:6px 0 0;font-size:16px;color:var(--soft)}
-.tool-find-count:empty{display:none}
-.tool[hidden],.stage[hidden],.tool-find[hidden]{display:none}
 @media(max-width:760px){.stage-jumps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.stage-jump{text-align:center}}
 
 /* Start here: four bricks in the stage colours, joined into one course on a wide screen. */

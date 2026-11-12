@@ -310,14 +310,17 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 
 /* Starting points at the top of a page (shortcodes/action_cards.html). */
 /* Starting points (the action_cards shortcode and the Replication Hub's Start here): solid bricks with studs,
-   laid edge to edge like a short wall, in the colour of their area (`area` on the shortcode, link blue
-   without it). The bricks are for a handful of actions; long lists are rows (hub.css). */
-.action-cards{--tone:var(--link)}
-.action-cards.area-edu{--tone:var(--edu)}.action-cards.area-res{--tone:var(--res)}.action-cards.area-jus{--tone:var(--jus)}.action-cards.area-com{--tone:var(--com)}
+   laid edge to edge like a short wall, in the area colours (below). The bricks are for a handful of actions; long lists are rows (hub.css). */
+/* A row runs through the four area colours, starting with its own area's (`area` on the shortcode), so a
+   page's bricks are related but not identical. */
+.action-cards{--c1:var(--res);--c2:var(--edu);--c3:var(--jus);--c4:var(--com)}
+.action-cards.area-edu{--c1:var(--edu);--c2:var(--res);--c3:var(--jus);--c4:var(--com)}
+.action-cards.area-jus{--c1:var(--jus);--c2:var(--res);--c3:var(--edu);--c4:var(--com)}
+.action-cards.area-com{--c1:var(--com);--c2:var(--res);--c3:var(--edu);--c4:var(--jus)}
+.action-cards li:nth-child(4n+1){--tone:var(--c1)}.action-cards li:nth-child(4n+2){--tone:var(--c2)}
+.action-cards li:nth-child(4n+3){--tone:var(--c3)}.action-cards li:nth-child(4n+4){--tone:var(--c4)}
 :is(.article-layout .article-style,.hub-start) .action-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:16px 5px;list-style:none;margin:26px 0 32px;padding:0;max-width:none}
 :is(.article-layout .article-style,.hub-start) .action-cards li{position:relative;margin:0;--brick:var(--tone)}
-/* Alternate bricks are a shade darker, so a wall of one colour still reads as separate bricks. */
-.article-layout .article-style .action-cards li:nth-child(even){--brick:color-mix(in srgb,var(--tone) 82%,#000)}
 /* The studs: short blocks along the top edge, on a pseudo-element so the text sits on a plain fill. */
 :is(.article-layout .article-style,.hub-start) .action-cards li::before{content:"";position:absolute;left:14px;right:14px;top:-8px;height:8px;background:linear-gradient(90deg,transparent 6px,var(--brick) 6px 28px,transparent 28px) left top/34px 8px space no-repeat;border-radius:3px 3px 0 0;pointer-events:none}
 :is(.article-layout .article-style,.hub-start) .action-cards a{display:flex;flex-direction:column;gap:4px;height:100%;box-sizing:border-box;min-height:96px;padding:16px 18px 22px;background:var(--brick);border-radius:3px;box-shadow:inset 0 -6px 0 rgb(0 0 0/.24);color:#fff;text-decoration:none}
