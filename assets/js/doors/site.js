@@ -546,7 +546,7 @@ if (termFilter && termGrid) {
     const finder = document.createElement('details');
     finder.className = 'term-finder';
     const summary = document.createElement('summary');
-    summary.textContent = card.querySelector('h2')?.textContent || 'Find another term';
+    summary.textContent = document.documentElement.lang.startsWith('en') ? 'Find another term' : (card.querySelector('h2')?.textContent || 'Find another term');
     finder.append(summary, card);
     definition.after(finder);
     document.querySelector('.term-list-jump')?.remove();
