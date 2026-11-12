@@ -65,7 +65,7 @@ The Academic Wheel of Privilege aims to reform authorship practices and inspire 
 
 We provide a comprehensive suite of resources within the AWoP toolkit:
 
-{{< action_cards >}}
+{{< action_cards area="jus" >}}
 Web App | Generate weighted indicators of privilege for your team | /awop_app/
 Manuscript | The preprint describing the AWoP | https://doi.org/10.31222/osf.io/af4nk_v2
 OSF page | Supplementary files | https://osf.io/pfxqb/overview

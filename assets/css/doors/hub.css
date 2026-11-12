@@ -1,21 +1,7 @@
 /* The Replication Hub. Loaded only on /replication-hub/. */
 .heading-plate-plain{margin:0;justify-self:end;width:100%;max-width:400px}
 .heading-plate-plain img{display:block;width:100%;height:auto}
-.stages{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;align-items:start}
-.stage{--tone:#44598c;min-width:0;background:var(--surface);border-radius:var(--r-large);padding:22px 20px;border-top:6px solid var(--tone)}
-.stage-explore{--tone:#25705f}
-.stage-conduct{--tone:#a34a0c}
-.stage-disseminate{--tone:#7a5c3d}
-.stage h2{font-size:30px;line-height:1.12;margin:0;color:var(--tone)}
-.stage header p{margin:6px 0 0;font-size:16px;line-height:1.45}
-.stage ul{list-style:none;display:grid;gap:10px;margin:16px 0 0;padding:0}
-.tool{background:#fff;border-radius:var(--r-small);padding:14px}
-.tool h3{font-size:19px;line-height:1.25;margin:0;overflow-wrap:anywhere}
-.tool h3 a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--tone);text-decoration-thickness:2px;text-underline-offset:3px}
-.tool h3 a:hover{color:var(--tone)}
-.tool p{margin:6px 0 0;font-size:16px;line-height:1.45}
-@media(max-width:1240px){.stages{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:760px){.stages{grid-template-columns:1fr;gap:14px}.heading-plate-plain{display:none}}
+@media(max-width:760px){.heading-plate-plain{display:none}}
 .stage-jumps{display:none;--tone:#44598c}
 @media(max-width:760px){
   .stage-jumps{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
@@ -24,29 +10,47 @@
   .stage h2{scroll-margin-top:16px}
 }
 .heading-plate-research{background:var(--res-bg)}
-.hub-start{margin:0 0 28px}
-.hub-start h2{margin:0 0 10px;font-size:24px}
-.hub-start .action-cards{margin:0}
-/* The first tool in each stage is its starting point: tinted in the stage's colour. */
-.stage ul>li.tool:first-child{background:var(--tint,#f4f6f9);box-shadow:inset 4px 0 0 var(--tone)}
-.stage-track{--tint:#eef0f5}.stage-explore{--tint:#ebf2f1}.stage-conduct{--tint:#f7efe9}.stage-disseminate{--tint:#f3f0ee}
 
-/* On a wide screen the stages fill two columns, Track and Explore on the left, Conduct and Disseminate on the right, each laying its tools two to a row. */
-@media(min-width:1001px){
-  .stages{display:block;columns:2;column-gap:20px}
-  .stage{break-inside:avoid;margin:0 0 20px}
-  .stage ul{grid-template-columns:repeat(2,minmax(0,1fr))}
-}
-.tool p.tool-format{margin:0 0 4px;font:600 15px/1.3 var(--text);color:var(--soft)}
 .tool-find{max-width:520px;margin:0 0 18px}
 .tool-find label{display:block;margin:0 0 6px;font:600 17px/1.3 var(--text)}
 .tool-find input{width:100%;box-sizing:border-box;padding:10px 16px;border:1.5px solid var(--ink);border-radius:999px;background:#fff;font:400 17px/1.3 var(--text);color:var(--ink)}
 .tool-find-count{margin:6px 0 0;font-size:16px;color:var(--soft)}
 .tool-find-count:empty{display:none}
 .tool[hidden],.stage[hidden],.tool-find[hidden]{display:none}
-/* Each starting point carries the colour of the stage it belongs to. */
-.hub-start .action-cards li:nth-child(1) a{box-shadow:inset 0 5px 0 #44598c}
-.hub-start .action-cards li:nth-child(2) a{box-shadow:inset 0 5px 0 #25705f}
-.hub-start .action-cards li:nth-child(3) a{box-shadow:inset 0 5px 0 #a34a0c}
-.hub-start .action-cards li:nth-child(4) a{box-shadow:inset 0 5px 0 #7a5c3d}
 @media(max-width:760px){.stage-jumps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.stage-jump{text-align:center}}
+
+/* Start here: four bricks in the stage colours, joined into one course on a wide screen. */
+.hub-start{margin:0 0 40px}
+.hub-start h2{margin:0 0 4px;font:500 28px/1.2 var(--display)}
+.hub-start .action-cards li:nth-child(1){--tone:#44598c}.hub-start .action-cards li:nth-child(2){--tone:#25705f}
+.hub-start .action-cards li:nth-child(3){--tone:#a34a0c}.hub-start .action-cards li:nth-child(4){--tone:#7a5c3d}
+@media(min-width:761px){.hub-start.hub-start .action-cards{gap:0 4px}}
+
+/* Stages: open sections under a rule in the stage colour, each tool a ruled row whose whole width is
+   the link (a stretched link), so it is a full-size target on a phone. Set like a contents page. */
+.stage{--tone:#44598c;--tint:#eef0f5;min-width:0;border-top:5px solid var(--tone);padding-top:12px}
+.stage-explore{--tone:#25705f;--tint:#ebf2f1}.stage-conduct{--tone:#a34a0c;--tint:#f7efe9}.stage-disseminate{--tone:#7a5c3d;--tint:#f3f0ee}
+.stages{display:grid;grid-template-columns:1fr;gap:40px}
+@media(min-width:1001px){.stages{display:block;columns:2;column-gap:56px}.stage{break-inside:avoid;margin:0 0 44px}}
+.stage header{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 16px}
+.stage h2{margin:0;font:500 34px/1.1 var(--display);color:var(--tone);scroll-margin-top:16px}
+.stage header p{margin:0;font-size:17px;line-height:1.4;color:var(--soft)}
+.stage ul{list-style:none;margin:10px 0 0;padding:0}
+.tool{position:relative;display:grid;grid-template-columns:7.5rem minmax(0,1fr);column-gap:16px;padding:12px 8px;border-bottom:1px solid var(--line)}
+.tool p.tool-format{grid-column:1;grid-row:1/span 2;margin:0;padding-top:5px;font:600 15px/1.3 var(--text);color:var(--soft)}
+.tool h3{grid-column:2;margin:0;font:500 21px/1.25 var(--display);overflow-wrap:anywhere}
+.tool h3 a{color:var(--ink);text-decoration:none}
+.tool h3 a::after{content:"";position:absolute;inset:0}
+.tool p:not(.tool-format){grid-column:2;margin:2px 0 0;font-size:16px;line-height:1.45}
+.tool:hover{background:var(--tint)}
+.tool:hover h3 a{text-decoration:underline;text-decoration-color:var(--tone);text-decoration-thickness:2px;text-underline-offset:3px}
+.tool:focus-within{outline:3px solid var(--ink);outline-offset:2px;background:var(--tint)}
+.tool h3 a:focus-visible{outline:none}
+/* Each stage's starting point keeps its emphasis as a title in the stage colour. */
+.tool:first-child h3 a{color:var(--tone)}
+@media(max-width:600px){
+  .tool{grid-template-columns:1fr;padding:12px 4px}
+  .tool p.tool-format,.tool h3,.tool p:not(.tool-format){grid-column:1;grid-row:auto}
+  .tool p.tool-format{padding:0;margin:0 0 2px}
+}
+@media(prefers-reduced-motion:no-preference){.tool{transition:background-color .15s}}
