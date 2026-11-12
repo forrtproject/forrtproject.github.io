@@ -45,7 +45,7 @@
         {{ partial "doors/content" .Content }}
       </div>
       <div class="article-foot">
-        {{ partial "tags" . }}
+        {{ partial "doors/resource_keywords" . }}
         {{ if site.Params.section_pager }}<div class="article-widget">{{ partial "section_pager" . }}</div>{{ end }}
         {{ partial "page_related" . }}
       </div>
