@@ -1,0 +1,6 @@
+{{/* A section page's heading block (widget_page): trail, title and standfirst. Input: dict with `page`, `h1`, `lede`. */}}
+<header class="article-head">
+  {{ partial "doors/crumbs" (dict "page" .page) }}
+  <h1>{{ .h1 | markdownify | emojify }}</h1>
+  {{ with .lede }}<p class="standfirst">{{ . | markdownify | emojify }}</p>{{ end }}
+</header>

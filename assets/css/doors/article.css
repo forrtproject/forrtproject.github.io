@@ -289,13 +289,7 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .article-layout .article-style .license-note{margin:28px 0 0!important;padding:14px 18px!important;border:0!important;border-radius:var(--r-large)!important;background:var(--surface)!important;text-align:start!important}
 .article-layout .article-style .license-note .license-content{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 18px}
 .article-layout .article-style .license-note p{margin:0!important;font-size:16px!important;text-align:start!important}
-/* AWoP: the wheel follows the lead and opens full size; each material shows its purpose, with more in a disclosure. */
-.article-layout .article-style .awop-wheel{float:right;width:200px;margin:4px 0 12px 24px;text-align:center}
-.awop-wheel img{display:block;width:100%;height:auto;margin:0 0 4px}
-.article-layout .article-style .awop-wheel p{margin:0;font-size:15px}
-@media(max-width:600px){.article-layout .article-style .awop-wheel{width:140px;margin-left:16px}}
-.article-layout .article-style .awop-wheel~h2{clear:both}
-/* The supplemental materials read as a list: each title with its OSF link beside it, then what it is. */
+/* AWoP: the supplemental materials read as a list: each title with its OSF link beside it, then what it is. */
 .article-layout .article-style .awop-material{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:16px;margin:0;padding:14px 0 4px;border-bottom:1px solid var(--line)}
 .article-layout .article-style p+.awop-material{border-top:1px solid var(--line);margin-top:12px}
 .article-layout .article-style .awop-material>*{grid-column:1/-1}
@@ -328,11 +322,6 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .status-not-replicated{background:var(--com-bg)}
 .status-reversed{background:var(--jus-bg)}
 .status-mixed{background:var(--res-bg)}
-/* On a phone the wheel is a small thumbnail beside its link, above the overview, so no text wraps around it. */
-@media(max-width:600px){
-  .article-layout .article-style .awop-wheel{float:none;width:auto;margin:0 0 14px;display:flex;align-items:center;gap:14px;text-align:start}
-  .article-layout .article-style .awop-wheel>p:first-child{flex:none;width:96px}
-}
 /* A list with a search over it (the effects on /reversals/) reads as rows: no bullets, a rule between entries. */
 .article-layout .article-style .list-filter~ul{list-style:none;padding-inline-start:0}
 .article-layout .article-style .list-filter~ul>li{margin:0;padding:12px 0 6px;border-bottom:1px solid var(--line)}
@@ -343,6 +332,35 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .article-layout .article-style .list-filter-status button{border:1.5px solid transparent;cursor:pointer;padding:3px 10px}
 .article-layout .article-style .list-filter-status button[aria-pressed=true]{border-color:var(--ink)}
 .status-no-status{background:var(--surface);color:var(--soft)}
+
+/* A page's opening with its picture in view (partials/doors/page_hero.html: the AWoP and citation wheels, a banner): on a
+   desktop the title, lede and actions sit beside a large image and span the side card and text below;
+   on a phone the image follows the actions at a size that keeps them on the first screen. */
+.article-layout .page-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,400px);column-gap:48px;align-items:center}
+/* A full-width page (AI in Metascience) gives a landscape banner the width of the cards below it. */
+.article-layout-wide .page-hero{grid-template-columns:minmax(0,1fr) minmax(0,520px);column-gap:56px}
+.article-layout .page-hero h1{font-size:clamp(34px,3.2vw,44px);line-height:1.1;letter-spacing:-.01em;margin:0;text-wrap:balance}
+.article-layout .page-hero .page-actions{margin-bottom:0}
+.article-layout .page-hero-media{margin:0;text-align:center}
+.article-layout .page-hero-media img{display:block;width:100%;height:auto}
+.article-layout .page-hero-media a{display:block;border-radius:var(--r-small);overflow:hidden}
+.article-layout .page-hero-media p{margin:6px 0 0;font-size:15px}
+.article-layout .page-hero-media p a{display:inline;color:var(--link);text-decoration:underline;text-underline-offset:3px}
+@media(min-width:1001px){
+  .article-layout:has(>.page-hero){row-gap:40px}
+  .article-layout:not(.article-layout-wide)>.page-hero{grid-column:1/-1;grid-row:1}
+  .article-layout:not(.article-layout-wide):has(>.page-hero)>:is(.article-card,.reading){grid-row:2}
+}
+@media(max-width:1000px){
+  .article-layout:has(>.page-hero){row-gap:24px}
+  .article-layout .page-hero{grid-template-columns:minmax(0,1fr);row-gap:24px}
+  .article-layout .page-hero-media{width:min(100%,340px)}
+  .article-layout .page-hero-landscape .page-hero-media{width:100%}
+}
+@media(max-width:600px){
+  .article-layout .page-hero{row-gap:18px}
+  .article-layout .page-hero:not(.page-hero-landscape) .page-hero-media{width:min(100%,280px)}
+}
 
 /* /reversals/ (site.js): the search, outcome and Go to controls are one toolbar that stays at the top of the screen
    while the effects scroll, up to the end of the list; on a phone only the search row and count stay. Rows reached
