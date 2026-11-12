@@ -34,11 +34,11 @@
 .tool{position:relative;display:grid;grid-template-columns:7.5rem minmax(0,1fr);column-gap:16px;padding:12px 8px;border-bottom:1px solid var(--line)}
 .tool p.tool-format{grid-column:1;grid-row:1/span 2;margin:0;padding-top:5px;font:600 15px/1.3 var(--text);color:var(--soft)}
 .tool h3{grid-column:2;margin:0;font:500 21px/1.25 var(--display);overflow-wrap:anywhere}
-.tool h3 a{color:var(--ink);text-decoration:none}
+.tool h3 a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--tone);text-decoration-thickness:1px;text-underline-offset:3px}
 .tool h3 a::after{content:"";position:absolute;inset:0}
 .tool p:not(.tool-format){grid-column:2;margin:2px 0 0;font-size:16px;line-height:1.45}
 .tool:hover{background:var(--tint)}
-.tool:hover h3 a{text-decoration:underline;text-decoration-color:var(--tone);text-decoration-thickness:2px;text-underline-offset:3px}
+.tool:hover h3 a{text-decoration-thickness:2px}
 .tool:focus-within{outline:3px solid var(--ink);outline-offset:2px;background:var(--tint)}
 .tool h3 a:focus-visible{outline:none}
 /* Each stage's starting point keeps its emphasis as a title in the stage colour. */
