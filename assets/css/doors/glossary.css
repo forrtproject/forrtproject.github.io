@@ -137,3 +137,4 @@ main:lang(ar) .glossary-layout .article-style .term-definition p{font-size:21px}
 @media(max-width:760px){.term-grid.is-list .term-group li{grid-template-columns:minmax(0,1fr)}}
 @media(max-width:760px){.glossary-search-row{flex-wrap:wrap}.glossary-search-row input{flex-basis:100%}}
 .glossary-letters a.is-current{background:var(--ink);color:#fff}
+.term-filter-label{display:block;margin:0 0 6px;font:600 16px/1.3 var(--text);color:var(--ink)}

@@ -6,7 +6,9 @@
 {{ if .defined_only }}{{ $pages = where $pages "Params.definition" "!=" nil }}{{ end }}
 <section id="glossary-terms" class="article-card glossary-card" aria-label="{{ .labels.list_of_terms }}">
   <h2>{{ .labels.list_of_terms }}</h2>
-  <input type="text" id="glossary-search" class="form-control" placeholder="{{ .labels.filter_terms }}" aria-label="{{ .labels.filter_terms }}">
+  {{ $label := strings.TrimRight ".…" .labels.filter_terms }}
+  <label class="term-filter-label" for="glossary-search">{{ $label }}</label>
+  <input type="search" id="glossary-search" class="form-control" autocomplete="off">
   <nav class="term-list" aria-label="{{ .labels.list_of_terms }}">
     <ul>
       {{ range sort $pages "Params.sort_key" }}<li><a href="{{ .RelPermalink }}"{{ if eq .RelPermalink $page.RelPermalink }} aria-current="page"{{ end }}>{{ partial "doors/term_title" .Title }}</a></li>{{ end }}
