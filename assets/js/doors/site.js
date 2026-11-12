@@ -514,13 +514,15 @@ if (termFilter && termGrid) {
     const seen = new Map();
     const mark = () => {
       const top = [...seen.entries()].filter(([, on]) => on).map(([id]) => id)[0];
-      if (top) letterLinks.forEach((a) => a.classList.toggle('is-current', a.hash === `#${top}`));
+      const first = top || (scrollY < 200 ? [...seen.keys()][0] : null);
+      if (first) letterLinks.forEach((a) => a.classList.toggle('is-current', a.hash === `#${first}`));
     };
     const watch = new IntersectionObserver((entries) => {
       entries.forEach((e) => seen.set(e.target.id, e.isIntersecting));
       mark();
     }, { rootMargin: '-35% 0px -60% 0px' });
     document.querySelectorAll('.term-group').forEach((g) => { seen.set(g.id, false); watch.observe(g); });
+    mark();
   }
   document.querySelector('.glossary-clear').addEventListener('click', () => {
     termFilter.value = '';
@@ -569,7 +571,10 @@ if (termFilter && termGrid) {
   }
   const list = document.querySelector('.term-list');
   const current = list.querySelector('[aria-current]');
-  if (current) list.scrollTop = current.offsetTop - list.offsetTop - list.clientHeight / 3;
+  const centre = () => { if (current) list.scrollTop = current.offsetTop - list.offsetTop - list.clientHeight / 3; };
+  centre();
+  // A closed disclosure has no layout, so the phone list is centred on the current term when it opens.
+  document.querySelector('.term-finder')?.addEventListener('toggle', (event) => { if (event.target.open) centre(); });
 }
 
 // Home: on a phone each area shows two links, and its "more" button shows the rest.
