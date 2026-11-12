@@ -2,7 +2,7 @@
 title: "Submit to FORRT"
 crumb_parent: "About FORRT"
 type: plain_page
-url: "/contribute/"
+url: "/submit/"
 subtitle: "Add your work to FORRT's collections. Each kind of submission has its own form."
 summary: "Ways to add your work to FORRT: teaching resources, replication studies, games, discipline resources and glossary suggestions, each with its own form."
 hide_date: true
