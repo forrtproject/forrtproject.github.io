@@ -1,6 +1,7 @@
 {{/* A page's opening with its picture in view: the heading block and actions beside a large image, for pages
      whose picture is the thing itself (a tool's wheel, an event's banner), not decoration. A page opts in with
-     front matter `hero_image` (a page resource, or a path under static/), `hero_image_alt` and, optionally,
+     front matter `hero_image` (a page resource, resized for the opening; a path under static/ is served as is, so
+     prefer a copy beside the page), `hero_image_alt` and, optionally,
      `hero_image_link`, the text of a link to the full-size image. The image links to its full size. On a wide
      screen the opening spans the layout above the side card and text; on a phone the image follows the actions.
      Input: dict with `page` and `head`, the heading block already rendered (crumbs, title, standfirst). Used by
