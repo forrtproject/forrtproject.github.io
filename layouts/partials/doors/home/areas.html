@@ -1,4 +1,6 @@
 {{/* The four areas, each behind its arched door. Context: content/home/2-areas.md. */}}
+{{/* Set before the areas are parsed, so the phone layout collapses their links without a shift, and only when site.js can open them. */}}
+<script>document.documentElement.classList.add('js')</script>
 <section class="wrap areas-section" aria-labelledby="areas-h">
   <h2 id="areas-h" class="visually-hidden">What FORRT does</h2>
   <div class="areas">
