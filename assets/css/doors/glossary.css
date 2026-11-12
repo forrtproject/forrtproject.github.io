@@ -114,3 +114,4 @@ a.term-chip:hover{background:var(--link);color:#fff}
 }
 /* Two lines of definition per term on every screen, so each letter reads as an even block. */
 .term-group li p{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+main:lang(ar) .glossary-layout .article-style .term-definition p{font-size:21px}

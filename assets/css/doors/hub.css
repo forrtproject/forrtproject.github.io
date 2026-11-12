@@ -28,7 +28,9 @@
 .hub-start h2{margin:0 0 10px;font-size:24px}
 .hub-start .action-cards{margin:0}
 /* The first tool in each stage is its starting point: tinted in the stage's colour. */
-.stage ul>li.tool:first-child{background:color-mix(in srgb,var(--tone) 9%,#fff);box-shadow:inset 4px 0 0 var(--tone)}
+.stage ul>li.tool:first-child{background:var(--tint,#f4f6f9);box-shadow:inset 4px 0 0 var(--tone)}
+.stage-track{--tint:#eef0f5}.stage-explore{--tint:#ebf2f1}.stage-conduct{--tint:#f7efe9}.stage-disseminate{--tint:#f3f0ee}
+
 /* On a wide screen the stages fill two columns, Track and Explore on the left, Conduct and Disseminate on the right, each laying its tools two to a row. */
 @media(min-width:1001px){
   .stages{display:block;columns:2;column-gap:20px}
