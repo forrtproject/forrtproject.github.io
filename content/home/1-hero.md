@@ -24,6 +24,6 @@ lede = "FORRT is a community of researchers and educators who develop, share and
   label = "Join FORRT"
   url = "#take-part"
 [[more]]
-  label = "Submit a replication"
-  url = "replication-hub/submit/"
+  label = "Submit a resource"
+  url = "contribute/"
 +++
