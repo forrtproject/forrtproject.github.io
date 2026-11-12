@@ -50,7 +50,7 @@ As a result, several changes were implemented, including the expansion of ORP po
 
 <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start;">
   <div style="flex: 0 0 180px;">
-    <img src="./Abbie_Cahoon.webp" alt="Abbie Cahoon" style="max-width: 100%; height: auto; border-radius: 8px;">
+    <img src="./Abbie_Cahoon.webp" alt="Abbie Cahoon" style="display: block; margin: 0; max-width: 100%; height: auto; border-radius: 8px;">
   </div>
   <div style="flex: 1; min-width: 250px;">
     <strong>Dr Abbie Cahoon</strong> is a Lecturer in Developmental Psychology at Ulster University and the university's open research champion.<br>
