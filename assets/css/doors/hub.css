@@ -37,7 +37,7 @@
   .stage{break-inside:avoid;margin:0 0 20px}
   .stage ul{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
-.tool-format{margin:0 0 4px;font:600 15px/1.3 var(--text);color:var(--soft)}
+.tool p.tool-format{margin:0 0 4px;font:600 15px/1.3 var(--text);color:var(--soft)}
 .tool-find{max-width:520px;margin:0 0 18px}
 .tool-find label{display:block;margin:0 0 6px;font:600 17px/1.3 var(--text)}
 .tool-find input{width:100%;box-sizing:border-box;padding:10px 16px;border:1.5px solid var(--ink);border-radius:999px;background:#fff;font:400 17px/1.3 var(--text);color:var(--ink)}

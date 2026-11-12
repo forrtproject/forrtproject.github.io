@@ -2403,5 +2403,6 @@ body.clusters-mobile-nav-open .clusters-back-to-top{display:none}
   .clusters-back-to-top.clusters-back-to-top{right:20px;bottom:calc(80px + var(--banner,0px) + env(safe-area-inset-bottom,0px));width:44px;height:44px;font-size:16px}
 }
 body.clusters-mobile-nav-open #just-os-widget{display:none}
-.disciplines-areas{display:flex;flex-wrap:wrap;gap:6px;margin:-4px 0 14px}
+.disciplines-areas{display:flex;flex-wrap:wrap;gap:6px;margin:-4px 0 14px;padding:0;list-style:none}
+.disciplines-areas li{margin:0}
 .disciplines-areas .badge{padding:4px 10px;border-radius:999px;font:600 15px/1.3 var(--text)}

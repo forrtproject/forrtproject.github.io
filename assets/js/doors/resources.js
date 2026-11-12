@@ -129,20 +129,25 @@ function draw() {
   empty.hidden = hits.length > 0;
   results.hidden = hits.length === 0;
   clear.hidden = !filtering;
-  // Each active filter as a chip that removes it, and the search too.
+  // Each active filter as a chip that removes it, and the search too. Its group is named in the chip when
+  // another chip has the same label (two facets have an "Other"), and always to screen readers.
   const removers = [];
-  facets.forEach((facet) => chipsOf(facet).forEach((chip) => {
-    if (chip.getAttribute('aria-pressed') !== 'true') return;
-    removers.push([labelOf(chip), () => { chip.setAttribute('aria-pressed', 'false'); redraw(); }]);
-  }));
-  if (search.value.trim()) removers.push([`“${search.value.trim()}”`, () => { search.value = ''; redraw(); }]);
+  facets.forEach((facet) => {
+    const group = facet.querySelector('legend')?.textContent.trim() || '';
+    chipsOf(facet).forEach((chip) => {
+      if (chip.getAttribute('aria-pressed') !== 'true') return;
+      removers.push([labelOf(chip), () => { chip.setAttribute('aria-pressed', 'false'); redraw(); }, group]);
+    });
+  });
+  if (search.value.trim()) removers.push([`“${search.value.trim()}”`, () => { search.value = ''; redraw(); }, '']);
   activeLine.hidden = !removers.length;
-  activeLine.replaceChildren(...removers.map(([label, remove]) => {
+  activeLine.replaceChildren(...removers.map(([label, remove, group]) => {
+    const named = group ? `${group}: ${label}` : label;
     const button = document.createElement('button');
     button.type = 'button';
     button.className = 'active-chip';
-    button.textContent = label;
-    button.setAttribute('aria-label', `Remove filter: ${label}`);
+    button.textContent = removers.filter((other) => other[0] === label).length > 1 ? named : label;
+    button.setAttribute('aria-label', `Remove filter: ${named}`);
     button.addEventListener('click', () => { remove(); clear.hidden ? search.focus() : clear.focus(); });
     return button;
   }));

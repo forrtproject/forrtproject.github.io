@@ -58,5 +58,6 @@ ul.network-icon a:hover{color:var(--ink)}
   .cc-window.cc-window{padding:12px 16px;font-size:15px;line-height:1.4}
   .cc-window.cc-window .cc-message{margin-bottom:10px}
   .cc-window.cc-window .cc-compliance{display:flex;gap:8px}
-  .cc-window.cc-window .cc-compliance .cc-btn{flex:1;padding:9px 12px}
+  /* The plug-in's second-button margin and the 140 px minimum would overflow a 320 px screen. */
+  .cc-window.cc-window .cc-compliance .cc-btn{flex:1 1 0;min-width:0;margin:0;padding:9px 12px}
 }

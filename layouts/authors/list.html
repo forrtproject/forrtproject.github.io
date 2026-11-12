@@ -32,9 +32,10 @@
     <section class="article-card profile-card" aria-label="About {{ $name }}">
       {{ with $avatar }}{{ $img := .Fill "270x270 Center webp" }}<img class="profile-photo{{ if eq $avatar_shape "square" }} avatar-square{{ end }}" src="{{ $img.RelPermalink }}" width="135" height="135" alt="Portrait of {{ $name }}">{{ end }}
       {{ with $page.Params.role }}<p class="profile-role">{{ . | markdownify | emojify }}</p>{{ end }}
-      {{ range $page.Params.organizations }}
+      {{/* Most profiles keep the template's empty organisation, which would leave an empty paragraph. */}}
+      {{ range $page.Params.organizations }}{{ if .name }}
         <p class="profile-org">{{ with .url }}<a href="{{ if (urls.Parse .).Scheme }}{{ . }}{{ else }}https://{{ . }}{{ end }}" target="_blank" rel="noopener">{{ end }}{{ .name }}{{ if .url }}</a>{{ end }}</p>
-      {{ end }}
+      {{ end }}{{ end }}
       {{ partial "social_links" $page }}
     </section>
     <article class="reading">
@@ -47,7 +48,7 @@
           {{ with $avatar }}{{ $img := .Fill "144x144 Center webp" }}<img class="profile-photo{{ if eq $avatar_shape "square" }} avatar-square{{ end }}" src="{{ $img.RelPermalink }}" width="72" height="72" alt="Portrait of {{ $name }}">{{ end }}
           <div>
             {{ with $page.Params.role }}<p class="profile-role">{{ . | markdownify | emojify }}</p>{{ end }}
-            {{ range $page.Params.organizations }}<p class="profile-org">{{ with .url }}<a href="{{ if (urls.Parse .).Scheme }}{{ . }}{{ else }}https://{{ . }}{{ end }}" target="_blank" rel="noopener">{{ end }}{{ .name }}{{ if .url }}</a>{{ end }}</p>{{ end }}
+            {{ range $page.Params.organizations }}{{ if .name }}<p class="profile-org">{{ with .url }}<a href="{{ if (urls.Parse .).Scheme }}{{ . }}{{ else }}https://{{ . }}{{ end }}" target="_blank" rel="noopener">{{ end }}{{ .name }}{{ if .url }}</a>{{ end }}</p>{{ end }}{{ end }}
             {{ partial "social_links" $page }}
           </div>
         </div>

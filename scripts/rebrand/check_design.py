@@ -534,9 +534,9 @@ def check_phone_reading(browser, base, failures):
     page.wait_for_timeout(500)
     box = page.evaluate("(() => { const r = document.getElementById('just-os-btn').getBoundingClientRect();"
                         " const banner = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--banner')) || 0;"
-                        " return {w: r.width, right: innerWidth - r.right, bottom: innerHeight - r.bottom - banner}; })()")
+                        " return {w: r.width, h: r.height, right: innerWidth - r.right, bottom: innerHeight - r.bottom - banner}; })()")
     # It rises above the cookie banner while that shows (--banner), so the corner is measured from the banner.
-    expect(box["w"] <= 64 and box["right"] <= 24 and box["bottom"] <= 40,
+    expect(0 < box["w"] <= 64 and box["h"] > 0 and 0 <= box["right"] <= 24 and 0 <= box["bottom"] <= 40,
            f"the launcher is a button of at most 64 px in the bottom corner ({box['w']:.0f} px wide, "
            f"{box['right']:.0f} px from the side, {box['bottom']:.0f} px from the bottom)")
     page.locator("#just-os-btn").tap()
