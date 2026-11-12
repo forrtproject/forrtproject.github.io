@@ -9,9 +9,20 @@
     <ol class="notice-list">
       {{ range $posts }}
       <li>
+        {{/* A small crop of the post's featured image, or a tile in its category's tint with the
+             category's initial. Both are decoration: the title is the link text. */}}
+        {{ $kind := index (.Params.categories | default (slice "")) 0 }}
         <a href="{{ .RelPermalink }}">
-          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time>
-          {{ with .Params.categories }}<span class="notice-kind">{{ index . 0 }}</span>{{ end }}
+          {{ with (.Resources.ByType "image").GetMatch "*featured*" }}
+          {{ $thumb := .Fill "176x132 Center webp q75" }}
+          <img class="notice-thumb" src="{{ $thumb.RelPermalink }}" width="88" height="66" alt="" loading="lazy">
+          {{ else }}
+          <span class="notice-thumb notice-tile notice-tile-{{ $kind | default "news" | urlize }}" aria-hidden="true">{{ substr ($kind | default "News") 0 1 }}</span>
+          {{ end }}
+          <span class="notice-meta">
+            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time>
+            {{ with $kind }}<span class="notice-kind">{{ . }}</span>{{ end }}
+          </span>
           <h3>{{ .Title }}</h3>
           <p>{{ .Summary | plainify | htmlUnescape | truncate 150 }}</p>
         </a>
