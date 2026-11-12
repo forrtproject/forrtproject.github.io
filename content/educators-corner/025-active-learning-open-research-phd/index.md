@@ -50,6 +50,8 @@ As a result, several changes were implemented, including the expansion of ORP po
 
 Adam Ismail, I. (2023). *Using positive reinforcement to increase student engagement in the classroom* [Master's thesis, Minnesota State University Moorhead]. Dissertations, Theses, and Projects, 850. [https://red.mnstate.edu/thesis/850](https://red.mnstate.edu/thesis/850)
 
+Bloom, B. S., Engelhart, M. D., Furst, E. J., Hill, W. H., & Krathwohl, D. R. (1956). *Taxonomy of educational objectives: The classification of educational goals. Handbook I: Cognitive domain*. David McKay.
+
 Braun, V., & Clarke, V. (2006). Using thematic analysis in psychology. *Qualitative Research in Psychology, 3*(2), 77–101. [https://doi.org/10.1191/1478088706qp063oa](https://doi.org/10.1191/1478088706qp063oa)
 
 Braun, V., & Clarke, V. (2019). Reflecting on reflexive thematic analysis. *Qualitative Research in Sport, Exercise and Health, 11*(4), 589–597. [https://doi.org/10.1080/2159676X.2019.1628806](https://doi.org/10.1080/2159676X.2019.1628806)
@@ -57,6 +59,8 @@ Braun, V., & Clarke, V. (2019). Reflecting on reflexive thematic analysis. *Qual
 Bronfenbrenner, U. (1976). The experimental ecology of education. *Educational Researcher, 5*(9), 5–15. [https://doi.org/10.3102/0013189X005009005](https://doi.org/10.3102/0013189X005009005)
 
 Bronfenbrenner, U., & Morris, P. A. (2007). The bioecological model of human development. In W. Damon & R. M. Lerner (Eds.), *Handbook of child psychology* (Vol. 1). Wiley. [https://doi.org/10.1002/9780470147658.chpsy0114](https://doi.org/10.1002/9780470147658.chpsy0114)
+
+Krathwohl, D. R., Bloom, B. S., & Masia, B. B. (1964). *Taxonomy of educational objectives: The classification of educational goals. Handbook II: Affective domain*. David McKay.
 
 Munna, A. S., & Kalam, M. A. (2021). Impact of active learning strategy on the student engagement. *GNOSI: An Interdisciplinary Journal of Human Theory and Praxis, 4*(2), 96–114.
 
