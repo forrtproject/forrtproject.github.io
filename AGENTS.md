@@ -38,6 +38,7 @@ Announcement posts (`content/post/<Slug>/`) come from the "FORRT Announcements" 
 
 - Templates: edit `layouts/`, which overrides `themes/academic/layouts/`. Change `themes/academic/` only when no override exists and an override would not do.
 - Styles: the site compiles `assets/scss/` (`main.scss`, `custom.scss`, `academic/*.scss`), whose files override the theme's same-named SCSS.
+- Design principles for pages and components are in `DESIGN.md`; follow them when changing layouts or styles.
 - Configuration lives in `config/_default/`; the root `config.toml` exists only for blogdown compatibility.
 
 ## Build and preview
