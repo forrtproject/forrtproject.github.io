@@ -43,5 +43,19 @@ As a result, several changes were implemented, including the expansion of ORP po
 
 ## Resources
 
-- The lesson plan for this workshop is available on FORRT's [Lesson Plans page](/lesson-plans/) ([PDF](/lesson-plans/LessonPlan_OpenResearchPhD.pdf), [editable Word version](/lesson-plans/LessonPlan_OpenResearchPhD.docx)).
+- The lesson plan for this workshop is available on FORRT's [Lesson Plans page](/lesson-plans/#open-research-phd) ([PDF](/lesson-plans/LessonPlan_OpenResearchPhD.pdf), [editable Word version](/lesson-plans/LessonPlan_OpenResearchPhD.docx)).
 - The project and workshop slides are on [OSF](https://osf.io/82t9c/overview).
+
+## About the author
+
+<div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start;">
+  <div style="flex: 0 0 180px;">
+    <img src="./Abbie_Cahoon.webp" alt="Abbie Cahoon" style="max-width: 100%; height: auto; border-radius: 8px;">
+  </div>
+  <div style="flex: 1; min-width: 250px;">
+    <strong>Dr Abbie Cahoon</strong> is a Lecturer in Developmental Psychology at Ulster University and the university's open research champion.<br>
+    Email: <a href="mailto:a.cahoon@ulster.ac.uk">a.cahoon@ulster.ac.uk</a><br>
+    Staff profile: <a href="https://www.ulster.ac.uk/staff/a-cahoon">ulster.ac.uk/staff/a-cahoon</a><br>
+    OSF: <a href="https://osf.io/qpxrw/">osf.io/qpxrw</a>
+  </div>
+</div>
