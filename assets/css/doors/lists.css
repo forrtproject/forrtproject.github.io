@@ -123,7 +123,6 @@
 .tag-group-more{margin:6px 0 0;padding:6px 14px;border:1.5px solid var(--ink);border-radius:999px;background:#fff;color:var(--ink);font:600 15px/1.3 var(--text);cursor:pointer}
 .tag-letters{border-bottom:1px solid var(--line)}
 /* Tags carried by one page only are lighter, so the ones in common use stand out. */
-.tag-group li.tag-rare .tag-count{opacity:.8}
 /* A tag's page count as a small badge beside it, not another word of the tag. */
 .tag-group .tag-count,.tag-top .tag-count{display:inline-block;margin-inline-start:4px;padding:0 7px;border-radius:999px;background:var(--surface);color:var(--soft);font-size:15px;line-height:1.5}
 .tag-top .tag-cloud a .tag-count{background:#fff}

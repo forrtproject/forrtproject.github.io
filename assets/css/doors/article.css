@@ -152,6 +152,9 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .resource-open{margin:0 0 24px}
 .resource-open .btn{padding:10px 22px;font-size:17px}
 .article-layout .article-tags{margin:0 0 18px}
+.article-layout .resource-keywords{max-width:32em;margin:0 0 18px;font-size:16px;line-height:1.6;color:var(--soft)}
+.article-layout .resource-keywords strong{margin-inline-end:6px;color:var(--ink)}
+.article-layout .resource-keywords a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
 /* Author profiles: the person's details in the side card. */
 .profile-card .profile-photo{display:block;width:135px;height:135px;margin:0 0 12px;object-fit:cover;border-radius:50%}
 .profile-card .avatar-square{border-radius:var(--r-small)}
