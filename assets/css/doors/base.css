@@ -5,7 +5,7 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{font-family:var(--display);font-weight
 @media (max-width:19em){h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{hyphens:auto}}
 a{color:var(--link)}
 a:hover{color:var(--ink)}
-a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible,table:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:2px}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible,select:focus-visible,table:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:2px}
 main:focus{outline:none}
 /* The cookie banner sits over the foot of the screen until dismissed; site.js sets its height. */
 html{scroll-padding-block-end:var(--banner,0px)}

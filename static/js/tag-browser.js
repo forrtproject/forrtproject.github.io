@@ -35,7 +35,13 @@
       more.type = "button";
       more.className = "tag-group-more";
       more.textContent = "All " + items.length + " tags under " + group.querySelector("h3").textContent;
-      more.addEventListener("click", function () { group.classList.remove("is-short"); more.remove(); });
+      more.addEventListener("click", function () {
+        // Focus moves to the first tag the button revealed, so keyboard users carry on from there.
+        var next = group.querySelector("li:not(.is-top) a");
+        group.classList.remove("is-short");
+        more.remove();
+        if (next) next.focus();
+      });
       group.appendChild(more);
     });
   }

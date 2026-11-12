@@ -20,6 +20,10 @@ image:
 .article-layout .article-style .am-playlist strong { color: var(--am-deep); font-size: 17px; }
 .article-layout .article-style .am-playlist:hover { background: var(--am-tint); }
 .am-playlist strong::before { content: "\25B6\00A0"; }
+/* Each playlist takes its day's colours, as the programme does. */
+.am-playlist:nth-of-type(1) { --am-deep: var(--am-mon-deep); --am-tint: var(--am-mon-tint); }
+.am-playlist:nth-of-type(2) { --am-deep: var(--am-tue-deep); --am-tint: var(--am-tue-tint); }
+.am-playlist:nth-of-type(3) { --am-deep: var(--am-wed-deep); --am-tint: var(--am-wed-tint); }
 @media (max-width: 599px) { .am-actions { grid-template-columns: 1fr; } }
 .am-actions-label { grid-column: 1 / -1; font-weight: 600; }
 /* On a wide screen the title and the banner share the first row; everything else spans the page below them. */

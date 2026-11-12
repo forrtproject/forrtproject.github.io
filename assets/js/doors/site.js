@@ -646,6 +646,11 @@ if (listFilter) {
     if (/^H[1-3]$/.test(node.tagName)) { section = {heading: node, items: []}; sections.push(section); }
     else if (section && /^(UL|OL)$/.test(node.tagName)) section.items.push(...node.children);
   }
+  // Where the entries carry details (the reversals' statistics), other lists after them, such as further
+  // literature or contributors, are not entries: they stay out of the menu, the count and the filter.
+  if (sections.some(({items}) => items.some((item) => item.querySelector('.spoiler')))) {
+    sections.forEach((s) => { s.items = s.items.filter((item) => item.querySelector('.spoiler')); });
+  }
   // A menu of the sections that hold entries, with their counts, to jump straight to one.
   const withItems = sections.filter(({items}) => items.length && items.length < 400);
   if (withItems.length > 3) {
@@ -689,6 +694,7 @@ if (listFilter) {
     words = new RegExp(`(^|[^\\p{L}\\p{N}])${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`, 'iu');
     let shown = 0;
     sections.forEach(({heading, items}) => {
+      if (!items.length) return;
       let any = false;
       items.forEach((item) => {
         // Matches the start of a word, so "ego" finds ego depletion and not "category".
