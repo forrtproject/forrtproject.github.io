@@ -9,22 +9,21 @@ weight = 10
 heading = "Better science.<br>Built together."
 lede = "FORRT is a community of researchers and educators who develop, share and teach open scholarship, and who work to make science more rigorous, more transparent and more just."
 
+# Three main actions under the intro, then a quieter line on wide screens (`more`), hidden on phones,
+# where the header's "Get involved" button and the Take part section cover joining.
 [[quick]]
-  label = "Find teaching resources"
+  label = "Teach with open materials"
   url = "resources/"
 [[quick]]
-  label = "Mission & advocacy"
-  url = "about/mission/"
+  label = "Learn about open scholarship"
+  url = "clusters/"
 [[quick]]
-  label = "Tools"
+  label = "Explore replications"
   url = "replication-hub/"
-[[quick]]
-  label = "Publications"
-  url = "publications/"
-[[quick]]
-  label = "Partnerships"
-  url = "about/partnerships/"
-[[quick]]
-  label = "Take part"
+[[more]]
+  label = "Join FORRT"
   url = "#take-part"
+[[more]]
+  label = "Submit a replication"
+  url = "replication-hub/submit/"
 +++
