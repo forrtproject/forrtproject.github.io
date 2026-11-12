@@ -39,15 +39,18 @@
     </section>
     <div class="catalogue">
       <label for="resource-search" class="search-label">Search the collection</label>
-      <input class="resource-search" id="resource-search" type="search" placeholder="Try preregistration, data or Bayesian" aria-describedby="resultCount" autocomplete="off">
+      {{/* The search, with sort order and page size as two quiet menus beside it (below it on a phone);
+           resources.js enables them once the data has loaded. */}}
+      <div class="search-row">
+        <input class="resource-search" id="resource-search" type="search" placeholder="Try preregistration, data or Bayesian" aria-describedby="resultCount" autocomplete="off">
+        <label class="visually-hidden" for="sortOrder">Sort</label>
+        <select class="search-option" id="sortOrder" disabled><option value="title" selected>Title A–Z</option><option value="newest">Newest added</option></select>
+        <label class="visually-hidden" for="perPage">Resources per page</label>
+        <select class="search-option" id="perPage" disabled>{{ range slice 12 24 48 }}<option value="{{ . }}"{{ if eq . $pager.PagerSize }} selected{{ end }}>{{ . }} per page</option>{{ end }}</select>
+      </div>
       <div class="result-bar">
         <p class="result-count" id="resultCount" role="status">{{ if gt $pager.TotalPages 1 }}{{ $first := add 1 (mul (sub $pager.PageNumber 1) $pager.PagerSize) }}Showing {{ lang.FormatNumber 0 $first }}–{{ lang.FormatNumber 0 (math.Min $total (add $first (sub $pager.PagerSize 1))) }} of {{ lang.FormatNumber 0 $total }} resources, A to Z{{ else }}Showing all {{ lang.FormatNumber 0 $total }} resources, A to Z{{ end }}</p>
         <button class="text-button" id="clearFilters" type="button" hidden>Reset filters</button>
-        {{/* Sorting and page size; resources.js enables them once the data has loaded. */}}
-        <div class="result-tools">
-          <label class="result-tool">Sort <select id="sortOrder" disabled><option value="title" selected>Title A–Z</option><option value="newest">Newest added</option></select></label>
-          <label class="result-tool">Per page <select id="perPage" disabled>{{ range slice 12 24 48 }}<option value="{{ . }}"{{ if eq . $pager.PagerSize }} selected{{ end }}>{{ . }}</option>{{ end }}</select></label>
-        </div>
         {{ partial "doors/pager_top" $pager }}
         <nav class="pager pager-top" id="clientPagerTop" aria-label="Pages, at the top" hidden></nav>
       </div>
