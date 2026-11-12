@@ -28,4 +28,4 @@ social:
 # No social links
 ---
 
-Coming soon.
+Cognitive psychologist turned meta-scientist. PhD obtained at KU Leuven (Belgium), and currently working as an assistant professor at Leiden University (The Netherlands) in the Methods & Statistics unit of the Institute of Psychology. Research interests include the potential and risks of using Large Language Models in (meta-)science, the pedagogy of responsible research practices, evaluating the robustness of scientific findings, and examining evidence accumulation, correction mechanisms as well as the adoption of responsible research practices through the lens of metascience. Teaching introduction to statistics, research methodology, and responsible research practices.

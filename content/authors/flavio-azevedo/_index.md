@@ -1,7 +1,7 @@
 ---
 # Display name
-name: "Flavio Azevedo"
-title: "Flavio Azevedo"
+name: "Flávio Azevedo"
+title: "Flávio Azevedo"
 
 
 # Is this the primary user of the site?
@@ -27,5 +27,3 @@ user_groups:
 social:
 # No social links
 ---
-
-Coming soon.

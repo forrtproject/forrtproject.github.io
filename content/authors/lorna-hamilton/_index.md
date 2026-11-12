@@ -28,4 +28,4 @@ social:
 # No social links
 ---
 
-Coming soon.
+Lorna Hamilton is Professor of Developmental Psychology and Inclusive Education at York St John University. Her research uses participatory approaches, longitudinal designs and mixed methods to understand educational experiences and outcomes for neurodivergent children and young people. Lorna is committed to social justice in education, with a particular focus on Universal Design for Learning, compassionate pedagogies and widening access to higher education.
