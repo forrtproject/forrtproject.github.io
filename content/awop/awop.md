@@ -9,7 +9,7 @@ active = true  # Activate this widget? true/false
 weight = 10  # Order that this section will appear.
 
 title = "The Academic Wheel of Privilege (AWoP)"
-subtitle = "An equity-based tool for authorship order"
+subtitle = "An equity-based tool that helps research teams decide authorship order, especially when contributions are hard to compare"
 
 [design]
   # Choose how many columns the section has. Valid values: 1 or 2.

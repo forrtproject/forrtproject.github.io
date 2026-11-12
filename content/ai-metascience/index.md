@@ -421,7 +421,7 @@ image:
 
 How is AI changing the way research is done, checked and understood? The **FORRT AI in Metascience Online Conference** spent three days on that question, with 35+ talks and workshops from people who are studying it or building with it. Most talks are now on the [FORRT YouTube channel](https://youtube.com/@forrtproject9995), one playlist per day.
 
-<p class="am-actions"><span class="am-actions-label">Watch the recordings:</span> <a class="btn btn-primary" href="https://www.youtube.com/playlist?list=PLS3VdaYKcrew">Monday</a> <a class="btn btn-primary" href="https://www.youtube.com/playlist?list=PLSItTTcc91ac">Tuesday</a> <a class="btn btn-primary" href="https://www.youtube.com/playlist?list=PLZYxy57rykQU">Wednesday</a></p>
+<p class="am-actions"><span class="am-actions-label">Watch the recordings:</span> <a class="btn btn-primary" href="https://www.youtube.com/playlist?list=PLS3VdaYKcrew">Monday: AI in the research pipeline</a> <a class="btn btn-primary" href="https://www.youtube.com/playlist?list=PLSItTTcc91ac">Tuesday: Replications and reproductions</a> <a class="btn btn-primary" href="https://www.youtube.com/playlist?list=PLZYxy57rykQU">Wednesday: Workshops and analyst variability</a></p>
 
 <div class="am-facts">
 <div class="am-fact"><span class="am-fact-label">When</span><span class="am-fact-value">28–30 September 2026</span></div>
