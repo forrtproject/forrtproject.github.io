@@ -1,16 +1,18 @@
 {{/* Every tag in use, with the number of pages carrying it.
 
      `tags` is plain front matter rather than a taxonomy (see `[taxonomies]` in
-     config/_default/config.toml), so counts come from one walk over the pages. `Scratch.SetInMap` mutates one map in place; tallying with `merge`
-     instead would copy a ~1,650-key map on each of ~5,400 tags. The term order
-     is tracked alongside the tally because Hugo has no `keys` function.
+     config/_default/config.toml), so counts come from one walk over the pages.
+     `Scratch.SetInMap` mutates one map in place; tallying with `merge` instead
+     would copy a ~1,650-key map on each of ~5,400 tags. The term order is
+     tracked alongside the tally because Hugo has no `keys` function.
 
      Call through `partialCached` so the walk happens once per build.
 
      Inputs: none (uses `site`). Output: dict with `rows` (dicts of `tag` and
-     `count`, most used first, one row per term regardless of spelling), `common` (the rows on at
-     least `min` pages), `counts` (lower-cased term to count),
-     `pages` (pages carrying at least one tag) and `total` (tag applications).
+     `count`, most used first, one row per term regardless of spelling),
+     `min` (the page count a tag needs to be shown), `common` (the rows on at
+     least `min` pages), `counts` (lower-cased term to count), `pages` (pages
+     carrying at least one tag) and `total` (tag applications).
      `pages` is counted here rather than with a `where` on `Params.tags`, which
      would also match pages that declare an empty `tags: []`. */}}
 
