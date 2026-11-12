@@ -90,6 +90,8 @@ All five are in the [OSF project](https://osf.io/pfxqb/overview).
 
 These questions are designed to guide both individual and collective introspection within authorship teams.
 
+[Open on OSF](https://osf.io/pfxqb/overview)
+
 {{< spoiler text="More, with an example" >}}
 They help users recognize and understand the dynamics of privilege and how these might influence authorship decisions. The questions can be used as a starting point for discussions about fairness and equity in academic contributions.
 
@@ -103,6 +105,8 @@ They help users recognize and understand the dynamics of privilege and how these
 **Case Study on First-Generation Academics (S6)**
 
 This case study explores how being a first-generation academic—someone whose parents did not progress beyond high school education—can affect an individual's expectations, opportunities, or resources, leading to disparities in contributions and authorship.
+
+[Open on OSF](https://osf.io/pfxqb/overview)
 
 {{< spoiler text="More, with an example" >}}
 The experiences of first-generation academics highlight multiple dimensions represented within the Academic Wheel of Privilege (AWoP), ranging from socio-cultural capital and household wealth in childhood, through networking opportunities and mentorship, to factors like ethnicity and culture.
@@ -118,6 +122,8 @@ The experiences of first-generation academics highlight multiple dimensions repr
 
 These visuals serve as a relatable way to comprehend complex concepts of privilege and disadvantage.
 
+[Open on OSF](https://osf.io/pfxqb/overview)
+
 {{< spoiler text="More, with an example" >}}
 They depict the varied experiences of individuals within academic spaces. It brings attention to how privilege or disadvantage from early childhood influences an individual's academic opportunities and career trajectory.
 
@@ -132,6 +138,8 @@ They depict the varied experiences of individuals within academic spaces. It bri
 
 This extensive resource provides in-depth understanding and research on the 24 identity categories we present in the Academic Wheel of Privilege.
 
+[Open on OSF](https://osf.io/pfxqb/overview)
+
 {{< spoiler text="More, with an example" >}}
 It supports users in exploring the intersectionality of different identities and their impact on academic careers.
 
@@ -145,6 +153,8 @@ It supports users in exploring the intersectionality of different identities and
 **Syllabus for Learning on Equity, Justice, and Accessibility (S9)**
 
 This curated syllabus covering 14 topics is designed to support users at different stages of their journey towards equity and justice in academia.
+
+[Open on OSF](https://osf.io/pfxqb/overview)
 
 {{< spoiler text="More, with an example" >}}
 It includes structured learning paths, suggested activities and resources tailored to varying levels of familiarity and expertise.
