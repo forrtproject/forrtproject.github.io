@@ -5,8 +5,13 @@
     "sort_key": "doi (dijital nesne tanizmlayizcizsiz) [doi (digital object identifier)]",
     "definition": "Dijital Nesne Tanımlayıcıları (DOI; Digital Object Identifiers), yayınlar (ön-baskılar dahil), materyaller, veri setleri ve uzun metrajlı filmler gibi her türlü şeye atanabilen alfa-nümerik dizilerdir. DOI kullanımı yalnızca akademik veya bilimsel materyallerle sınırlı değildir. DOI’ler, “dijital ağlar üzerinde yönetilen bilgilerin kalıcı ve eyleme geçirilebilir bir şekilde tanımlanması ve birlikte çalışabilir şekilde paylaşılması için bir sistem sağlar” ([https://doi.org/hb.html](https://doi.org/hb.html)). DOI’leri yöneten birçok farklı kayıt ajansı vardır ancak araştırmacıların en sık karşılaşabileceği iki ajans Crossref ve DataCite’tır.",
     "related_terms": [
-        "arXiv and BibTex",
-        "Crossref, DataCite, ISBN, ISO, ORCID",
+        "arXiv",
+        "BibTeX",
+        "Crossref",
+        "DataCite",
+        "ISBN",
+        "ISO",
+        "ORCID",
         "Permalink"
     ],
     "references": [

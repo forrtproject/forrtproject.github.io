@@ -6,7 +6,7 @@
                 "en_title": "Abstract Bias",
                 "title": "انحياز المستخلص [Abstract Bias]",
                 "sort_key": "انحياز المستخلص [abstract bias]",
-                "definition": "الميل نحو الإشارة إلى النَّتائج ذات الدِّلالة الإحصائيَّة في المستخلص فقط، والاكتفاء بالنَّتائج التي لا تصل بالدِّلالة الإحصائيَّة إلى داخل النَّص الرَّئيسيّ. للبحث (حيث إنَّ عدم الإبلاغ عن هذه النَّتائج يعدُّ تقريرًا انتقائيًا). يؤدي هذا التَّحيُّز إلى عدم اكتشاف الدِّراسات التي تحوي نتائج لا تصل للدِّلالة الإحصائيَّة باستخدام إجراءات الأبحاث البعديَّة المعتادة (التي تعتمد على المعلومات الموجودة في العنوان والملخَّص والكلمات الرَّئيسيَّة)، وبالتَّالي إلى التَّحيُّز في نتائج التَّحليلات البعديَّة.",
+                "definition": "الميل نحو الإشارة إلى النَّتائج ذات الدِّلالة الإحصائيَّة في المستخلص فقط، والاكتفاء بالنَّتائج التي لا تصل بالدِّلالة الإحصائيَّة إلى داخل النَّص الرَّئيسيّ. للبحث (حيث إنَّ عدم الإبلاغ عن هذه النَّتائج يعدُّ تقريرًا انتقائيًا). يؤدي هذا التَّحيُّز إلى عدم اكتشاف الدِّراسات التي تحوي نتائج لا تصل للدِّلالة الإحصائيَّة باستخدام إجراءات الأبحاث التَّلويَّة المعتادة (التي تعتمد على المعلومات الموجودة في العنوان والملخَّص والكلمات الرَّئيسيَّة)، وبالتَّالي إلى التَّحيُّز في نتائج التَّحليلات التَّلويَّة.",
                 "related_terms": [
                     "Cherry-picking",
                     "Publication bias (File Drawer Problem)",
@@ -2774,8 +2774,13 @@
                 "sort_key": "معرّف الكائن الرَّقمي [doi (digital object identifier)]",
                 "definition": "معرفات الكائنات الرَّقميَّة هي سلاسل أبجديَّة رقميَّة يمكن تخصيصها لأي كيان بما في ذلك: المنشورات (ومنها المطبوعات الأوليَّة)، والمواد، ومجموعات البيانات، والأفلام. ولا يقتصر استخدام المعرّفات الرَّقميَّة على المواد الأكاديميَّة فقط. إنَّ معرفات الكائنات الرَّقميَّة توفِّر نظامًا لتحديد دائم، وقابل للتَّنفيذ، وتبادل قابل للتَّشغيل البيني للمعلومات المدارة على الشَّبكات الرَّقميَّة  ([https://www.doi.org/doi-handbook/HTML/index.html](https://www.doi.org/doi-handbook/HTML/index.html)). هناك العديد من وكالات لتسجيل معرّفات الكائنات الرَّقميَّة وإدارتها، ولكن من المرجَّح أنْ يواجه أغلب الباحثين اثنتين هما: Crossref و DataCite.",
                 "related_terms": [
-                    "arXiv and BibTex",
-                    "Crossref, DataCite, ISBN, ISO, ORCID",
+                    "arXiv",
+                    "BibTeX",
+                    "Crossref",
+                    "DataCite",
+                    "ISBN",
+                    "ISO",
+                    "ORCID",
                     "Permalink"
                 ],
                 "references": [
@@ -3360,7 +3365,7 @@
                 "en_title": "Evidence Synthesis",
                 "title": "توليف الأدلة [Evidence Synthesis]",
                 "sort_key": "توليف الأدلة [evidence synthesis]",
-                "definition": "هو نوع من مناهج   البحث و يهدف إلى استخلاص استنتاجات عامة لمعالجة سؤال بحثي حول موضوع أو ظاهرة أو تأثير معين من خلال مراجعة النتائج البحثية والمعلومات من مجموعة من المصادر المختلفة كما يمكن استخلاص المعلومات الخاضعة للتوليف من الدراسات النوعية والكمية. يمكن توليف هذه المعلومات بشكل كيفي (توليف سردي)، أو كمي (تحليل بعدي) أو بشكل مختلط (توليف بعدي، رسم خرائط منهجي). يحتوي توليف (تجميع) الأدلة على العديد من التطبيقات وغالبًا ما يستخدم في سياق الرعاية الصحية والسياسة العامة، ويُستخدم أيضًا لفهم وتطوير مجالات بحثية محددة.",
+                "definition": "هو نوع من مناهج   البحث و يهدف إلى استخلاص استنتاجات عامة لمعالجة سؤال بحثي حول موضوع أو ظاهرة أو تأثير معين من خلال مراجعة النتائج البحثية والمعلومات من مجموعة من المصادر المختلفة كما يمكن استخلاص المعلومات الخاضعة للتوليف من الدراسات النوعية والكمية. يمكن توليف هذه المعلومات بشكل كيفي (توليف سردي)، أو كمي (تحليل تلوي) أو بشكل مختلط (توليف بعدي، رسم خرائط منهجي). يحتوي توليف (تجميع) الأدلة على العديد من التطبيقات وغالبًا ما يستخدم في سياق الرعاية الصحية والسياسة العامة، ويُستخدم أيضًا لفهم وتطوير مجالات بحثية محددة.",
                 "related_terms": [
                     "Literature Review",
                     "Meta-analysis",
@@ -5276,7 +5281,7 @@
                 "en_title": "Meta-analysis",
                 "title": "التحليل التلوي [Meta-analysis]",
                 "sort_key": "التحليل التلوي [meta-analysis]",
-                "definition": "التَّحليل البعدي (أو التَّلوي) هو تجميع إحصائي لنتائج عدد من الدِّراسات التي تبحث في نفس الظَّاهرة.  توجد طرق متنوعة من أساليب التَّحليل البعدي، بما في ذلك نماذج التَّأثيرات العشوائيَّة، أو الثَّابتة، أو الانحدارات البعديَّة، والتي تسمح بفحص التَّأثيرات الوسيطة. ومن خلال تجميع  البيانات من دراسات متعدِّدة، يمكن أن يوفِّر التَّحليل البعدي تقديرًا أكثر دِقّة لظاهرة ما، مثل: معاملة معيّنة من الدِّراسات الفرديَّة. عادة ما يتم تصوير النَّتائج في مخطط غابي. ويمكن أن تساعد التَّحليلات البعديَّة أيضًا في فحص غياب التَّجانس في نتائج الدِّراسات. وغالبًا ما يتم إجراء التَّحليلات البعديَّة بالاقتران مع المراجعات المنهجيَّة التي تتطلَّب كذلك بحثًا، وفحصًا منهجيًا للدِّراسات. ومن الشَّائع أيضًا فحص تحيُّز النَّشر في سياق التَّحليل البعدي، وعادة ما يتم تقديمه بشكل مرئي عبر مخطط قمعي.",
+                "definition": "التَّحليل التَّلوي هو تجميع إحصائي لنتائج عدد من الدِّراسات التي تبحث في نفس الظَّاهرة.  توجد طرق متنوعة من أساليب التَّحليل التَّلوي، بما في ذلك نماذج التَّأثيرات العشوائيَّة، أو الثَّابتة، أو الانحدارات التَّلويَّة، والتي تسمح بفحص التَّأثيرات الوسيطة. ومن خلال تجميع  البيانات من دراسات متعدِّدة، يمكن أن يوفِّر التَّحليل التَّلوي تقديرًا أكثر دِقّة لظاهرة ما، مثل: معاملة معيّنة من الدِّراسات الفرديَّة. عادة ما يتم تصوير النَّتائج في مخطط غابي. ويمكن أن تساعد التَّحليلات التَّلويَّة أيضًا في فحص غياب التَّجانس في نتائج الدِّراسات. وغالبًا ما يتم إجراء التَّحليلات التَّلويَّة بالاقتران مع المراجعات المنهجيَّة التي تتطلَّب كذلك بحثًا، وفحصًا منهجيًا للدِّراسات. ومن الشَّائع أيضًا فحص تحيُّز النَّشر في سياق التَّحليل التَّلوي، وعادة ما يتم تقديمه بشكل مرئي عبر مخطط قمعي.",
                 "related_terms": [
                     "CONSORT",
                     "Correlational Meta-Analysis",
@@ -6315,7 +6320,8 @@
                 "sort_key": "قاعدة المعرفة للمنح الدِّراسيَّة المفتوحة [open scholarship knowledge base]",
                 "definition": "قاعدة المعرفة المفتوحة (OSKB) هي مبادرة تعاونيَّة لمشاركة المعرفة بماذا، ولماذا، وكيف يكون العلم المفتوح؛ وذلك لتسهيل المعرفة بالعلم المفتوح وبتطبيقه، كما يتم اختيار، وإنشاء المعلومات وتنظيمها بدقَّة من قِبل المجتمع.  وتعدُّ قاعدة المعرفة المفتوحة مجتمعًا تابعًا لمركز العلم المفتوح.",
                 "related_terms": [
-                    "Center for Open Science (COS), Open Educational Resources (OERs)",
+                    "Center for Open Science (COS)",
+                    "Open Educational Resources (OERs)",
                     "Open scholarship",
                     "Open Science"
                 ],
@@ -7233,7 +7239,8 @@
                 "sort_key": "التَّحليل البعدي [post hoc]",
                 "definition": "تم استعارة المصطلح الإنجليزي من اللاتينيَّة، ويعني \"بعد هذا\". وفي الإحصاء يشير التَّحليل البعدي لاختبار الفرضيَّات التي لم يتم تحديدها بشكل مسبق. ففي الإحصاء التِّكراري، تختلف طريقة التَّحليل بناءً على ما إذا كان مخططًا له أم بعديًا، مثلًا: من خلال تطبيق تحكُّم أكثر صرامة بالخطأ، وفي المقابل، لا تختلف طريقة التَّحليل في المنهجيَّة الاحتماليَّة والبايزيَّة عندما يتم تحديد الفرضيَّة مسبقًا أو لا.",
                 "related_terms": [
-                    "A priori, Ad hoc",
+                    "A priori",
+                    "Ad hoc",
                     "HARKing",
                     "P-hacking"
                 ],
@@ -7714,9 +7721,9 @@
             {
                 "type": "glossary",
                 "en_title": "Psychometric meta-analysis",
-                "title": "التَّحليل البعديّ للمقاييس النَّفسيّة [Psychometric meta-analysis]",
-                "sort_key": "التَّحليل البعديّ للمقاييس النَّفسيّة [psychometric meta-analysis]",
-                "definition": "تهدف التَّحليلات البعديَّة للمقاييس النَّفسيَّة إلى تصحيح حجم تأثير معيّن، والحاصل بسبب خطأ في القياس وغيره من الأخطاء؛ وذلك باستخدام إجراءات تعتمد على مبادئ القياس النَّفسي، كثبات المقاييس.  ينبغي تنفيذ هذه الإجراءات قبل تحليل حجم الأثر في التَّحليل البعدي الارتباطي، أو التَّجريبي، حيث إن إجراء هذه التَّصحيحات قد يؤدِّي إلى أحجام تأثير أكبر، وأكثر ثباتًا.",
+                "title": "التَّحليل التَّلوي للمقاييس النَّفسيّة [Psychometric meta-analysis]",
+                "sort_key": "التَّحليل التَّلوي للمقاييس النَّفسيّة [psychometric meta-analysis]",
+                "definition": "تهدف التَّحليلات التَّلويَّة للمقاييس النَّفسيَّة إلى تصحيح حجم تأثير معيّن، والحاصل بسبب خطأ في القياس وغيره من الأخطاء؛ وذلك باستخدام إجراءات تعتمد على مبادئ القياس النَّفسي، كثبات المقاييس.  ينبغي تنفيذ هذه الإجراءات قبل تحليل حجم الأثر في التَّحليل التَّلوي الارتباطي، أو التَّجريبي، حيث إن إجراء هذه التَّصحيحات قد يؤدِّي إلى أحجام تأثير أكبر، وأكثر ثباتًا.",
                 "related_terms": [
                     "Correlational meta-analysis",
                     "Hunter-Schmidt meta-analysis",
@@ -7751,6 +7758,9 @@
                     "Hala Alghamdi",
                     "Asma Alzahrani",
                     "Mohammed Mohsen"
+                ],
+                "aliases": [
+                    "/glossary/arabic/الت_حليل_البعدي_للمقاييس_الن_فسي_ة"
                 ],
                 "lastmod": "2026-11-12"
             },
@@ -9296,7 +9306,7 @@
                 "en_title": "Salami slicing",
                 "title": "التَّقطيع غير المبرَّر [Salami slicing]",
                 "sort_key": "التَّقطيع غير المبرَّر [salami slicing]",
-                "definition": "استراتيجيَّة مشبوهة في إجراء البحوث أو إعداد تقارير تهدف لزيادة عدد النُّصوص القابلة للنَّشر عن طريق \"تقسيم\" البيانات من دراسة واحدة. غالبًا ما يتم اتِّخاذ قرار التَّقسيم في وقت متأخِّر من العمليَّة البحثيَّة، وهو أحد الأمثلة على التَّلاعب بنظام الحوافِّز الأكاديميَّة. فمثلًا قد يتضمَّن ذلك نشر دراسات متعدِّدة تستند إلى مجموعة بيانات واحدة، أو نشر دراسات متعدِّدة من مواقع مختلفة لجمع البيانات دون الإشارة بشفافيَّة إلى مصدر البيانات في الأصل. مثل هذه الممارسات تشوِّه الأدبيَّات العلميَّة، وخاصّة التَّحليلات البعديَّة؛ لأنَّه ليس واضحًا ما إذا كانت  النَّتائج مستخلصة من نفس مجموعة البيانات، وبالتَّالي تخفي تبعيَّة هذه الأوراق ببعض كونها منشورة بشكل منفصل.",
+                "definition": "استراتيجيَّة مشبوهة في إجراء البحوث أو إعداد تقارير تهدف لزيادة عدد النُّصوص القابلة للنَّشر عن طريق \"تقسيم\" البيانات من دراسة واحدة. غالبًا ما يتم اتِّخاذ قرار التَّقسيم في وقت متأخِّر من العمليَّة البحثيَّة، وهو أحد الأمثلة على التَّلاعب بنظام الحوافِّز الأكاديميَّة. فمثلًا قد يتضمَّن ذلك نشر دراسات متعدِّدة تستند إلى مجموعة بيانات واحدة، أو نشر دراسات متعدِّدة من مواقع مختلفة لجمع البيانات دون الإشارة بشفافيَّة إلى مصدر البيانات في الأصل. مثل هذه الممارسات تشوِّه الأدبيَّات العلميَّة، وخاصّة التَّحليلات التَّلويَّة؛ لأنَّه ليس واضحًا ما إذا كانت  النَّتائج مستخلصة من نفس مجموعة البيانات، وبالتَّالي تخفي تبعيَّة هذه الأوراق ببعض كونها منشورة بشكل منفصل.",
                 "related_terms": [
                     "Gaming (the system)",
                     "Questionable Research Practices or Questionable Reporting Practices (QRPs)",
@@ -10082,7 +10092,7 @@
                 "en_title": "Systematic Review",
                 "title": "المراجعة المنهجيّة [Systematic Review]",
                 "sort_key": "المراجعة المنهجيّة [systematic review]",
-                "definition": "تعدُّ المراجعة المنهجيَّة شكلًا من أشكال مراجعة الأدبيَّات وتجميع الأدلَّة. عادة ما تتضمَّن المراجعة المنهجيَّة استراتيجيَّة بحث شاملة وقابلة للتِّكرار، وتشمل: المصطلحات الرَّئيسيَّة، وقواعد البيانات المستخدمة للوصول إلى الأدبيَّات ذات العلاقة بموضوع ، أو سؤال بحثي معين. يقوم المراجعون المنهجيُّون بعمليَّة فحص الدِّراسات التي تم العثور عليها من خلال بحثهم، وتصفيتها حتى الوصول إلى مجموعة من الدِّراسات التي تتطابق مع معايير التَّضمين المحدَّدة مسبقًا. يمكن بعد ذلك جمع هذه الدِّراسات في مراجعة مكتوبة والتي قد تحتوي بدورها- ولكن ليس بالضَّرورة- على تجميع احصائي باستخدام التَّحليل البعدي. يجب أن تتبع المراجعة المنهجيَّة مجموعة محدَّدة من الإرشادات؛ لضمان إبقاء التَّحيُّز عند الحدِّ الأدنى مثل إرشادات بريزما (Moher et al., 2009; Page et al., 2021) ومراجعات كوكرين المنهجيَّة (Higgins et al. 2019\\) أو قائمة نيرو للمراجعات المنهجيَّة (Topor et al., 2021).",
+                "definition": "تعدُّ المراجعة المنهجيَّة شكلًا من أشكال مراجعة الأدبيَّات وتجميع الأدلَّة. عادة ما تتضمَّن المراجعة المنهجيَّة استراتيجيَّة بحث شاملة وقابلة للتِّكرار، وتشمل: المصطلحات الرَّئيسيَّة، وقواعد البيانات المستخدمة للوصول إلى الأدبيَّات ذات العلاقة بموضوع ، أو سؤال بحثي معين. يقوم المراجعون المنهجيُّون بعمليَّة فحص الدِّراسات التي تم العثور عليها من خلال بحثهم، وتصفيتها حتى الوصول إلى مجموعة من الدِّراسات التي تتطابق مع معايير التَّضمين المحدَّدة مسبقًا. يمكن بعد ذلك جمع هذه الدِّراسات في مراجعة مكتوبة والتي قد تحتوي بدورها- ولكن ليس بالضَّرورة- على تجميع احصائي باستخدام التَّحليل التَّلوي. يجب أن تتبع المراجعة المنهجيَّة مجموعة محدَّدة من الإرشادات؛ لضمان إبقاء التَّحيُّز عند الحدِّ الأدنى مثل إرشادات بريزما (Moher et al., 2009; Page et al., 2021) ومراجعات كوكرين المنهجيَّة (Higgins et al. 2019\\) أو قائمة نيرو للمراجعات المنهجيَّة (Topor et al., 2021).",
                 "related_terms": [
                     "Meta-analysis",
                     "CONSORT",
@@ -13712,8 +13722,13 @@
                 "sort_key": "shuziduixiangweiyibiaoshifu",
                 "definition": "DOI是可以分配给任何实体的字母数字字符串，包括出版物（包括预印本）、材料、数据集、甚至电影。DOI的使用不仅限于学术或学术材料。DOI构建了一个系统，使信息在数字网络中实现持久和可操作的识别与互操作性交换（https://doi.org/hb.html）。目前有多个机构负责DOI的注册与管理，其中最常见的机构包括Crossref和DataCite。",
                 "related_terms": [
-                    "arXiv and BibTex",
-                    "Crossref, DataCite, ISBN, ISO, ORCID",
+                    "arXiv",
+                    "BibTeX",
+                    "Crossref",
+                    "DataCite",
+                    "ISBN",
+                    "ISO",
+                    "ORCID",
                     "Permalink"
                 ],
                 "references": [
@@ -17156,7 +17171,8 @@
                 "sort_key": "kaifangxueshuzhishiku",
                 "definition": "开放学术知识库（Open Scholarship Knowledge Base，简称OSKB）是一项协作性倡议，旨在分享有关开放学术内容、原因和方式的核心知识，让这些知识更易于获取和应用。OSKB由社区共同策划和创建信息，强调参与性，是开放科学中心旗下的一个社区，致力于开放学术知识的传播。",
                 "related_terms": [
-                    "Center for Open Science (COS), Open Educational Resources (OERs)",
+                    "Center for Open Science (COS)",
+                    "Open Educational Resources (OERs)",
                     "Open scholarship",
                     "Open Science"
                 ],
@@ -18065,7 +18081,8 @@
                 "sort_key": "shihou",
                 "definition": "Post Hoc 这个词借用于拉丁语，意指“在此之后”。在统计学中，事后（或事后分析）是指对数据分析前未预设的假设进行检验。在频率主义统计学中，分析程序会因假设是预先设定还是事后提出而有所不同（例如，通过采用更严格的误差控制）。相比之下，贝叶斯统计与似然估计方法则不会因假设提出的时间点不同而改变分析方式。",
                 "related_terms": [
-                    "A priori, Ad hoc",
+                    "A priori",
+                    "Ad hoc",
                     "HARKing",
                     "P-hacking"
                 ],
@@ -18096,7 +18113,7 @@
                     "Ruoting Liu",
                     "Shuxian Jin"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-12"
             },
             {
                 "type": "glossary",
@@ -24420,8 +24437,13 @@
                 "sort_key": "digital object identifier [doi (digital object identifier)]",
                 "definition": "Digital Object Identifiers (DOI) sind alphanumerische Zeichenfolgen, die jeder beliebigen Einheit zugewiesen werden können, z. B. Veröffentlichungen (einschließlich Preprints), Materialien, Datensätze und Spielfilme \\- die Verwendung von DOIs ist nicht nur auf wissenschaftliches oder akademisches Material beschränkt. DOIs “provides a system for persistent and actionable identification and interoperable exchange of managed information on digital networks.” (dt. bieten ein System für die dauerhafte und umsetzbare Identifizierung und den interoperablen Austausch von verwalteten Informationen in digitalen Netzwerken; [https://www.doi.org/doi-handbook/HTML/index.html](https://www.doi.org/doi-handbook/HTML/index.html)). Es gibt viele verschiedene DOI-Registrierungsstellen, die DOIs betreiben, aber die beiden, auf die Forschende am ehesten stoßen, sind [Crossref](https://www.crossref.org/) und [DataCite](https://datacite.org/).",
                 "related_terms": [
-                    "arXiv and BibTex",
-                    "Crossref, DataCite, ISBN, ISO, ORCID",
+                    "arXiv",
+                    "BibTeX",
+                    "Crossref",
+                    "DataCite",
+                    "ISBN",
+                    "ISO",
+                    "ORCID",
                     "Permalink"
                 ],
                 "references": [
@@ -27699,7 +27721,8 @@
                 "sort_key": "open scholarship knowledge base",
                 "definition": "Die Open Scholarship Knowledge Base (OSKB) ist eine gemeinschaftliche Initiative zum Austausch von Wissen über das Was, Warum und Wie von Open Scholarship, damit dieses Wissen leicht zu finden und anzuwenden ist. Die Informationen werden von der Gemeinschaft kuratiert und erstellt. Die OSKB ist eine Gemeinschaft im Rahmen des Center for Open Science (COS).",
                 "related_terms": [
-                    "Center for Open Science (COS), Open Educational Resources (OERs)",
+                    "Center for Open Science (COS)",
+                    "Open Educational Resources (OERs)",
                     "Open scholarship",
                     "Open Science"
                 ],
@@ -28563,7 +28586,8 @@
                 "sort_key": "im nachhinein [post hoc]",
                 "definition": "Post hoc kommt aus dem Lateinischen und bedeutet \"im Nachhinein\". In der Statistik bezieht sich post hoc (oder Post-hoc-Analyse) auf die Prüfung von Hypothesen, die nicht vor der Datenanalyse festgelegt wurden. In der frequentistischen Statistik unterscheidet sich das Verfahren je nachdem, ob die Analyse geplant oder post hoc durchgeführt wurde, z. B. durch Anwendung einer strengeren Fehlerkontrolle. Im Gegensatz dazu unterscheiden sich Bayes'sche und Likelihood-Ansätze nicht in Abhängigkeit davon, wann die Hypothese festgelegt wurde.",
                 "related_terms": [
-                    "A priori, Ad hoc",
+                    "A priori",
+                    "Ad hoc",
                     "HARKing",
                     "P-hacking"
                 ],
@@ -28592,7 +28616,7 @@
                     "Helena Hartmann",
                     "Jennifer Mattschey"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-12"
             },
             {
                 "type": "glossary",
@@ -34446,8 +34470,13 @@
                 "sort_key": "doi (digital object identifier)",
                 "definition": "Digital Object Identifiers (DOI) are alpha-numeric strings that can be assigned to any entity, including: publications (including preprints), materials, datasets, and feature films \\- the use of DOIs is not restricted to just scholarly or academic material. There are many different DOI registration agencies that operate DOIs, but the two that researchers would most likely encounter are [Crossref](https://www.crossref.org/) and [DataCite](https://datacite.org/).",
                 "related_terms": [
-                    "arXiv and BibTex",
-                    "Crossref, DataCite, ISBN, ISO, ORCID",
+                    "arXiv",
+                    "BibTeX",
+                    "Crossref",
+                    "DataCite",
+                    "ISBN",
+                    "ISO",
+                    "ORCID",
                     "Permalink"
                 ],
                 "references": [
@@ -37380,7 +37409,8 @@
                 "sort_key": "open scholarship knowledge base",
                 "definition": "The Open Scholarship Knowledge Base (OSKB) is a collaborative initiative to share knowledge on the what, why and how of open scholarship to make this knowledge easy to find and apply. Information is curated and created by the community. The OSKB is a community under the Center for Open Science (COS).",
                 "related_terms": [
-                    "Center for Open Science (COS), Open Educational Resources (OERs)",
+                    "Center for Open Science (COS)",
+                    "Open Educational Resources (OERs)",
                     "Open scholarship",
                     "Open Science"
                 ],
@@ -38157,7 +38187,8 @@
                 "sort_key": "post hoc",
                 "definition": "Post hoc is borrowed from Latin, meaning “after this”. In statistics, post hoc (or post hoc analysis) refers to the testing of hypotheses not specified prior to data analysis. In frequentist statistics, the procedure differs based on whether the analysis was planned or post-hoc, for example by applying more stringent error control. In contrast, Bayesian and likelihood approaches do not differ as a function of when the hypothesis was specified.",
                 "related_terms": [
-                    "A priori, Ad hoc",
+                    "A priori",
+                    "Ad hoc",
                     "HARKing",
                     "P-hacking"
                 ],
@@ -38182,7 +38213,7 @@
                 "aliases": [
                     "/glossary/post_hoc"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-12"
             },
             {
                 "type": "glossary",
@@ -43826,8 +43857,13 @@
                 "sort_key": "doi (dijital nesne tanizmlayizcizsiz) [doi (digital object identifier)]",
                 "definition": "Dijital Nesne Tanımlayıcıları (DOI; Digital Object Identifiers), yayınlar (ön-baskılar dahil), materyaller, veri setleri ve uzun metrajlı filmler gibi her türlü şeye atanabilen alfa-nümerik dizilerdir. DOI kullanımı yalnızca akademik veya bilimsel materyallerle sınırlı değildir. DOI’ler, “dijital ağlar üzerinde yönetilen bilgilerin kalıcı ve eyleme geçirilebilir bir şekilde tanımlanması ve birlikte çalışabilir şekilde paylaşılması için bir sistem sağlar” ([https://doi.org/hb.html](https://doi.org/hb.html)). DOI’leri yöneten birçok farklı kayıt ajansı vardır ancak araştırmacıların en sık karşılaşabileceği iki ajans Crossref ve DataCite’tır.",
                 "related_terms": [
-                    "arXiv and BibTex",
-                    "Crossref, DataCite, ISBN, ISO, ORCID",
+                    "arXiv",
+                    "BibTeX",
+                    "Crossref",
+                    "DataCite",
+                    "ISBN",
+                    "ISO",
+                    "ORCID",
                     "Permalink"
                 ],
                 "references": [
@@ -46901,7 +46937,8 @@
                 "sort_key": "aczizk akademi bilgi tabaniz (oskb; open scholarship knowledge base)",
                 "definition": "Açık Akademi Bilgi Tabanı (OSKB; Open Scholarship Knowledge Base), açık akademinin ne olduğu, neden önemli olduğu ve nasıl uygulandığı hakkında bilgileri paylaşarak bu bilgilerin kolayca bulunup uygulanabilmesini sağlamayı amaçlayan, iş birliğine dayalı bir girişimdir. Bilgiler topluluk tarafından oluşturulur ve düzenlenir. OSKB, Açık Bilim Merkezi (COS; Center for Open Science) bünyesinde yer alan bir topluluktur.",
                 "related_terms": [
-                    "Center for Open Science (COS), Open Educational Resources (OERs)",
+                    "Center for Open Science (COS)",
+                    "Open Educational Resources (OERs)",
                     "Open scholarship",
                     "Open Science"
                 ],
@@ -47744,7 +47781,8 @@
                 "sort_key": "post hoc",
                 "definition": "Post hoc, Latince’den alınmış olunup, ‘bundan sonra’ anlamına gelir. İstatistikte post hoc (veya post hoc analizi), veri analizinden önce belirlenmemiş hipotezlerin test edilmesini ifade eder. Frekansçı istatistikte, prosedür analizlerin önceden planlanıp planlanmadığına ya da sonradan (post-hoc) yapılıp yapılmadığına bağlı olarak farklılık gösterir; örneğin, daha sıkı hata kontrolü uygulanabilir. Buna karşılık, Bayesyen ve olasılık yaklaşımları, hipotezin ne zaman belirtildiğine bağlı olarak farklılık göstermez.",
                 "related_terms": [
-                    "A priori, Ad hoc",
+                    "A priori",
+                    "Ad hoc",
                     "HARKing",
                     "P-hacking"
                 ],
@@ -47772,7 +47810,7 @@
                 "translation_reviewed_by": [
                     "Nihan Selin Soylu-Konak"
                 ],
-                "lastmod": "2026-08-05"
+                "lastmod": "2026-11-12"
             },
             {
                 "type": "glossary",
