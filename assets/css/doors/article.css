@@ -341,7 +341,7 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .article-layout .tool-hero .page-actions{margin-bottom:0}
 .article-layout .tool-hero-media{margin:0;text-align:center}
 .article-layout .tool-hero-media img{display:block;width:100%;height:auto}
-.article-layout .tool-hero-media a{display:block;border-radius:var(--r-small)}
+.article-layout .tool-hero-media a{display:block;border-radius:var(--r-small);overflow:hidden}
 .article-layout .tool-hero-media p{margin:6px 0 0;font-size:15px}
 .article-layout .tool-hero-media p a{display:inline;color:var(--link);text-decoration:underline;text-underline-offset:3px}
 @media(min-width:1001px){
