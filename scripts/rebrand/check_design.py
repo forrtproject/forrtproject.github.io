@@ -963,7 +963,8 @@ def check_directory(browser, base, failures):
     expect("newest first" in page.text_content("#resultCount"), "Newest added re-sorts and says so")
     page.select_option("#perPage", "48")
     page.wait_for_function("location.search.includes('per=48')")
-    expect(page.locator(".res").count() <= 48 and "1–" in page.text_content("#resultCount"), "Per page sets the page size and the range")
+    matches = int(re.search(r"of ([\d,]+)", page.text_content("#resultCount")).group(1).replace(",", ""))
+    expect(page.locator(".res").count() == min(48, matches), f"Per page sets the page size: {page.text_content('#resultCount')}")
     page.select_option("#sortOrder", "title")
     page.select_option("#perPage", "24")
 
