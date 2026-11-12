@@ -405,7 +405,9 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
 .article-layout .article-style .list-filter-section :is(.is-open,.is-searching li)>.entry-text{max-height:none}
 .article-layout .article-style .list-filter-section li:has(>.entry-text)>.spoiler>summary{position:absolute;top:14px;inset-inline-end:0}
 .article-layout .article-style .list-filter-section .entry-more{display:none}
-.article-layout .article-style .list-filter-section .is-long>.entry-more{display:block;position:absolute;top:calc(12px + (var(--entry-lines) - 1) * 1lh);inset-inline-end:0;padding:0 0 0 2.4em;border:0;background:linear-gradient(to right,transparent,var(--page) 2em);font:inherit;font-weight:600;color:var(--link);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.article-layout .article-style .list-filter-section .is-long>.entry-more{display:block;position:absolute;top:calc(12px + (var(--entry-lines) - 1) * 1lh);inset-inline-end:0;padding:0;padding-inline-start:2.4em;border:0;background:linear-gradient(to right,transparent,var(--page) 2em);font:inherit;font-weight:600;color:var(--link);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+/* In right-to-left text the fade runs the other way. */
+.article-layout .article-style .list-filter-section .is-long>.entry-more:dir(rtl){background:linear-gradient(to left,transparent,var(--page) 2em)}
 .article-layout .article-style .list-filter-section .is-open>.entry-more{position:static;display:inline-block;margin:0 0 6px;padding:0;background:none;font-size:16px}
 .article-layout .article-style .list-filter-section.is-searching .entry-more{display:none}
 @media(max-width:760px){.article-layout .article-style .list-filter-section>ul>li{--entry-lines:3}}

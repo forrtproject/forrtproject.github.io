@@ -766,6 +766,8 @@ if (entries.length) {
       const open = item.classList.toggle('is-open');
       more.setAttribute('aria-expanded', String(open));
       label(open ? 'less' : 'more');
+      // The width may have changed while it was open, so check again whether the text still runs over.
+      if (!open) item.classList.toggle('is-long', text.scrollHeight > text.clientHeight + 2);
     });
     text.after(more);
   });

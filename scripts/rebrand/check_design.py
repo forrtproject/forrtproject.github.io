@@ -110,7 +110,8 @@ AUDIT = """() => {
         range.setEnd(node, match.index + match[0].length);
         // A long address can break across lines, so share its characters out by rendered width.
         const boxes = [...range.getClientRects()].filter((box) => box.width > 0
-          && clips.every((clip) => box.top < clip.bottom - 1 && box.bottom > clip.top + 1));
+          && clips.every((clip) => box.top < clip.bottom - 1 && box.bottom > clip.top + 1
+            && box.left < clip.right - 1 && box.right > clip.left + 1));
         const total = boxes.reduce((sum, box) => sum + box.width, 0);
         for (const box of boxes) {
           const key = Math.round(box.top / 6);
