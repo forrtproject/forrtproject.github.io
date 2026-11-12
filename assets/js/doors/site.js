@@ -495,6 +495,17 @@ if (termFilter && termGrid) {
     const shown = terms.filter((term) => !term.hidden).length;
     document.querySelector('.glossary-count').textContent = query && shown ? `${shown} of ${terms.length} terms` : '';
   });
+  // Cards or a compact list; the choice is kept for the next visit.
+  const view = document.querySelector('.glossary-view');
+  const setView = (list) => {
+    termGrid.classList.toggle('is-list', list);
+    view.setAttribute('aria-pressed', String(list));
+    view.textContent = list ? view.dataset.cards : view.dataset.list;
+    try { localStorage.setItem('glossary-view', list ? 'list' : 'cards'); } catch (e) { /* storage blocked: the choice lasts this visit */ }
+  };
+  view.hidden = false;
+  view.addEventListener('click', () => setView(!termGrid.classList.contains('is-list')));
+  try { if (localStorage.getItem('glossary-view') === 'list') setView(true); } catch (e) { /* no stored choice */ }
   document.querySelector('.glossary-clear').addEventListener('click', () => {
     termFilter.value = '';
     termFilter.dispatchEvent(new Event('input'));
@@ -510,10 +521,36 @@ if (termFilter && termGrid) {
   openAbout();
 } else if (termFilter) {
   const terms = [...document.querySelectorAll('.term-list li')];
+  // A count, a no-results line and a clear button under the filter.
+  const status = document.createElement('p');
+  status.className = 'term-filter-status';
+  status.setAttribute('aria-live', 'polite');
+  const clearTerms = document.createElement('button');
+  clearTerms.type = 'button';
+  clearTerms.className = 'term-filter-clear';
+  clearTerms.textContent = 'Clear';
+  clearTerms.hidden = true;
+  termFilter.after(status, clearTerms);
+  clearTerms.addEventListener('click', () => { termFilter.value = ''; termFilter.dispatchEvent(new Event('input')); termFilter.focus(); });
   termFilter.addEventListener('input', () => {
     const query = termFilter.value.toLowerCase();
     terms.forEach((term) => { term.hidden = !term.textContent.toLowerCase().includes(query); });
+    const shown = terms.filter((term) => !term.hidden).length;
+    status.textContent = !query ? '' : shown ? `${shown} ${shown === 1 ? 'term' : 'terms'}` : 'No matching terms.';
+    clearTerms.hidden = !query;
   });
+  // On a phone the list moves up, into a "Find another term" disclosure right after the definition.
+  const card = document.getElementById('glossary-terms');
+  const definition = document.querySelector('.term-definition');
+  if (card && definition && window.matchMedia('(max-width: 1000px)').matches) {
+    const finder = document.createElement('details');
+    finder.className = 'term-finder';
+    const summary = document.createElement('summary');
+    summary.textContent = card.querySelector('h2')?.textContent || 'Find another term';
+    finder.append(summary, card);
+    definition.after(finder);
+    document.querySelector('.term-list-jump')?.remove();
+  }
   const list = document.querySelector('.term-list');
   const current = list.querySelector('[aria-current]');
   if (current) list.scrollTop = current.offsetTop - list.offsetTop - list.clientHeight / 3;
@@ -544,6 +581,22 @@ document.querySelectorAll('.article-style li > p > strong:first-child').forEach(
   if (status !== label) chip.title = status;
   name.before(chip, ' ');
 });
+
+// Replication Hub: a search over the tools; a stage with no match steps aside.
+const toolFind = document.querySelector('.tool-find');
+if (toolFind) {
+  toolFind.hidden = false;
+  const input = toolFind.querySelector('input');
+  const count = toolFind.querySelector('.tool-find-count');
+  const tools = [...document.querySelectorAll('.stage .tool')];
+  input.addEventListener('input', () => {
+    const query = input.value.trim().toLowerCase();
+    tools.forEach((tool) => { tool.hidden = Boolean(query) && !tool.textContent.toLowerCase().includes(query); });
+    document.querySelectorAll('.stage').forEach((stage) => { stage.hidden = Boolean(query) && !stage.querySelector('.tool:not([hidden])'); });
+    const shown = tools.filter((tool) => !tool.hidden).length;
+    count.textContent = !query ? '' : shown ? `${shown} of ${tools.length} tools` : 'No tool matches.';
+  });
+}
 
 // Get Involved: a search over the project cards.
 const projectFilter = document.querySelector('.project-filter');
@@ -576,6 +629,19 @@ if (listFilter) {
   for (let node = listFilter.nextElementSibling; node; node = node.nextElementSibling) {
     if (/^H[1-3]$/.test(node.tagName)) { section = {heading: node, items: []}; sections.push(section); }
     else if (section && /^(UL|OL)$/.test(node.tagName)) section.items.push(...node.children);
+  }
+  // A menu of the sections that hold entries, with their counts, to jump straight to one.
+  const withItems = sections.filter(({items}) => items.length && items.length < 400);
+  if (withItems.length > 3) {
+    const jump = document.createElement('label');
+    jump.className = 'list-filter-jump';
+    jump.textContent = 'Go to ';
+    const select = document.createElement('select');
+    select.append(new Option('a section…', ''));
+    withItems.forEach(({heading, items}) => select.append(new Option(`${heading.textContent.trim()} (${items.length})`, heading.id)));
+    select.addEventListener('change', () => { if (select.value) document.getElementById(select.value).scrollIntoView(); });
+    jump.append(select);
+    count.before(jump);
   }
   input.addEventListener('input', () => {
     const query = input.value.trim().toLowerCase();

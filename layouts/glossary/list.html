@@ -4,11 +4,11 @@
      site.js filters the terms as the search is typed. */}}
 {{ $lang := .Params.language | default "english" }}
 {{ $labels := dict
-  "english" (dict "language" "Language" "clear" "Clear" "lede" "Community-written definitions of open scholarship terms, described in Nature Human Behaviour (Parsons et al., 2022). [How to cite the glossary](#about-the-glossary)." "search" "Search %d terms" "placeholder" "Type a term, e.g. replication" "about" "About the glossary, and how to cite it" "letters" "Terms by letter" "none" "No term matches.")
-  "german" (dict "language" "Sprache" "clear" "Löschen" "search" "%d Begriffe durchsuchen" "placeholder" "Begriff eingeben, z. B. Replikation" "about" "Über das Glossar und wie man es zitiert" "letters" "Begriffe nach Buchstaben" "none" "Kein Begriff passt.")
-  "arabic" (dict "language" "اللغة" "clear" "مسح" "search" "ابحث في %d مصطلحًا" "placeholder" "اكتب مصطلحًا" "about" "عن المسرد وكيفية الاستشهاد به" "letters" "المصطلحات حسب الحرف" "none" "لا يوجد مصطلح مطابق.")
-  "turkish" (dict "language" "Dil" "clear" "Temizle" "search" "%d terimde ara" "placeholder" "Bir terim yazın" "about" "Sözlük hakkında ve nasıl atıf yapılır" "letters" "Harfe göre terimler" "none" "Eşleşen terim yok.")
-  "chinese" (dict "language" "语言" "clear" "清除" "search" "搜索 %d 个术语" "placeholder" "输入术语" "about" "关于本术语表及引用方式" "letters" "按字母排列的术语" "none" "没有匹配的术语。") }}
+  "english" (dict "as_list" "Show as list" "as_cards" "Show as cards" "language" "Language" "clear" "Clear" "lede" "Community-written definitions of open scholarship terms, described in Nature Human Behaviour (Parsons et al., 2022). [How to cite the glossary](#about-the-glossary)." "search" "Search %d terms" "placeholder" "Type a term, e.g. replication" "about" "About the glossary, and how to cite it" "letters" "Terms by letter" "none" "No term matches.")
+  "german" (dict "as_list" "Als Liste" "as_cards" "Als Karten" "language" "Sprache" "clear" "Löschen" "search" "%d Begriffe durchsuchen" "placeholder" "Begriff eingeben, z. B. Replikation" "about" "Über das Glossar und wie man es zitiert" "letters" "Begriffe nach Buchstaben" "none" "Kein Begriff passt.")
+  "arabic" (dict "as_list" "عرض كقائمة" "as_cards" "عرض كبطاقات" "language" "اللغة" "clear" "مسح" "search" "ابحث في %d مصطلحًا" "placeholder" "اكتب مصطلحًا" "about" "عن المسرد وكيفية الاستشهاد به" "letters" "المصطلحات حسب الحرف" "none" "لا يوجد مصطلح مطابق.")
+  "turkish" (dict "as_list" "Liste olarak" "as_cards" "Kart olarak" "language" "Dil" "clear" "Temizle" "search" "%d terimde ara" "placeholder" "Bir terim yazın" "about" "Sözlük hakkında ve nasıl atıf yapılır" "letters" "Harfe göre terimler" "none" "Eşleşen terim yok.")
+  "chinese" (dict "as_list" "列表显示" "as_cards" "卡片显示" "language" "语言" "clear" "清除" "search" "搜索 %d 个术语" "placeholder" "输入术语" "about" "关于本术语表及引用方式" "letters" "按字母排列的术语" "none" "没有匹配的术语。") }}
 {{ $l := index $labels $lang | default (index $labels "english") }}
 {{ $pages := sort (where (where site.RegularPages "Type" "glossary") "File.Dir" .File.Dir) "Params.sort_key" }}
 {{ $groups := slice }}{{ $current := "" }}{{ $items := slice }}
@@ -45,7 +45,7 @@
       <div class="glossary-tools">
       <div class="glossary-find">
         <label for="glossary-search">{{ printf $l.search (len $pages) }}</label>
-        <div class="glossary-search-row"><input type="search" id="glossary-search" placeholder="{{ $l.placeholder }}" autocomplete="off"><button type="button" class="glossary-clear" hidden>{{ $l.clear }}</button></div>
+        <div class="glossary-search-row"><input type="search" id="glossary-search" placeholder="{{ $l.placeholder }}" autocomplete="off"><button type="button" class="glossary-clear" hidden>{{ $l.clear }}</button><button type="button" class="glossary-view" aria-pressed="false" data-list="{{ $l.as_list }}" data-cards="{{ $l.as_cards }}" hidden>{{ $l.as_list }}</button></div>
         <p class="glossary-none" hidden>{{ $l.none }}</p>
         <p class="glossary-count" aria-live="polite"></p>
       </div>

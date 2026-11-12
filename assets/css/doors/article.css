@@ -332,3 +332,5 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .article-layout .article-style .list-filter~ul{list-style:none;padding-inline-start:0}
 .article-layout .article-style .list-filter~ul>li{margin:0;padding:12px 0 6px;border-bottom:1px solid var(--line)}
 .article-layout .article-style .list-filter~ul>li>p{margin:0 0 4px}
+.article-layout .article-style .list-filter-jump{display:flex;align-items:center;gap:8px;margin:10px 0 0;font:600 16px/1.3 var(--text)}
+.article-layout .article-style .list-filter-jump select{flex:1;padding:8px 10px;border:1.5px solid var(--line);border-radius:var(--r-small);background:#fff;font:400 16px/1.3 var(--text);color:var(--ink)}

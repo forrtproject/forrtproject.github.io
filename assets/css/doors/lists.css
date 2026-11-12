@@ -126,3 +126,9 @@
 /* A tag's page count as a small badge beside it, not another word of the tag. */
 .tag-group .tag-count,.tag-top .tag-count{display:inline-block;margin-inline-start:4px;padding:0 7px;border-radius:999px;background:var(--surface);color:var(--soft);font-size:15px;line-height:1.5}
 .tag-top .tag-cloud a .tag-count{background:#fff}
+/* A to Z as rows: the tag on the left, its count aligned on the right, a light rule between rows. */
+.tag-group ul{columns:3 240px}
+.tag-group li{padding:0;border-bottom:1px solid var(--surface)}
+.tag-group li a{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:5px 2px}
+.tag-group li .tag-count{flex:none}
+.tag-top .tag-cloud a{display:inline-flex;align-items:center}

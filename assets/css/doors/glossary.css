@@ -115,3 +115,21 @@ a.term-chip:hover{background:var(--link);color:#fff}
 /* Two lines of definition per term on every screen, so each letter reads as an even block. */
 .term-group li p{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 main:lang(ar) .glossary-layout .article-style .term-definition p{font-size:21px}
+.term-filter-status{margin:4px 0 0;font-size:15px;color:var(--soft)}
+.term-filter-status:empty{display:none}
+.term-filter-clear{align-self:flex-start;margin:4px 0 8px;padding:4px 12px;border:1.5px solid var(--ink);border-radius:999px;background:#fff;font:600 15px/1.3 var(--text);color:var(--ink);cursor:pointer}
+.term-filter-clear[hidden]{display:none}
+/* On a phone the list of terms sits in a disclosure right after the definition (site.js). */
+.term-finder{margin:0 0 18px;background:var(--surface);border-radius:var(--r-large)}
+.term-finder>summary{padding:12px 16px;cursor:pointer;font:600 17px/1.3 var(--text);color:var(--link)}
+.term-finder .glossary-card{position:static;max-height:none;margin:0;background:none;padding:0 16px 14px}
+.term-finder .glossary-card>h2{display:none}
+.term-finder .term-list{max-height:50vh;overflow-y:auto}
+.glossary-hub .standfirst a{text-decoration:underline;text-underline-offset:3px}
+.glossary-view{flex:none;padding:10px 16px;border:1.5px solid var(--line);border-radius:999px;background:#fff;color:var(--ink);font:600 16px/1.2 var(--text);cursor:pointer}
+.glossary-view[hidden]{display:none}
+/* List view: one row per term, its definition on one line beside or under it. */
+.term-grid.is-list .term-group ul{grid-template-columns:minmax(0,1fr);gap:0}
+.term-grid.is-list .term-group li{padding:8px 4px;background:none;border-radius:0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:minmax(0,280px) minmax(0,1fr);gap:4px 20px;align-items:baseline}
+.term-grid.is-list .term-group li p{margin:0;-webkit-line-clamp:1}
+@media(max-width:760px){.term-grid.is-list .term-group li{grid-template-columns:minmax(0,1fr)}}

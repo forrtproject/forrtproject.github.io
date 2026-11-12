@@ -15,7 +15,7 @@
           <li><a href="{{ $link.href }}">{{ $link.label }}</a></li>
           {{ end }}
           {{/* Phones show two links; this shows the rest (site.js). */}}
-          {{ if gt (len .links) 2 }}<li class="area-more"><button type="button" aria-expanded="false">{{ sub (len .links) 2 }} more</button></li>{{ end }}
+          {{ if gt (len .links) 2 }}<li class="area-more"><button type="button" aria-expanded="false">{{ sub (len .links) 2 }} more in {{ .title }}</button></li>{{ end }}
         </ul>
       </div>
     </article>

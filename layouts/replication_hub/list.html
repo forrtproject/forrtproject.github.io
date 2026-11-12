@@ -26,6 +26,12 @@
   <nav class="stage-jumps" aria-label="Stages">
     {{ range .Params.cards }}<a class="stage-jump stage-{{ .key }}" href="#stage-{{ .key }}">{{ .title }}</a>{{ end }}
   </nav>
+  {{/* A search over the tools by name, note and kind (site.js); hidden with JavaScript off. */}}
+  <div class="tool-find" hidden>
+    <label for="tool-find-input">Find a tool</label>
+    <input type="search" id="tool-find-input" placeholder="e.g. Zotero, journal, database" autocomplete="off">
+    <p class="tool-find-count" aria-live="polite"></p>
+  </div>
   <div class="stages">
     {{ range .Params.cards }}
     <section class="stage stage-{{ .key }}" aria-labelledby="stage-{{ .key }}">
@@ -34,6 +40,7 @@
         {{ range .links }}
         {{ $link := partial "doors/link" . }}
         <li class="tool">
+          {{ with .format }}<p class="tool-format">{{ . }}</p>{{ end }}
           <h3><a href="{{ $link.href }}">{{ $link.label }}</a></h3>
           <p>{{ .note }}</p>
         </li>
