@@ -190,7 +190,7 @@
 .notice-list p{grid-column:2;grid-row:3;margin:5px 0 0;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2;overflow:hidden}
 @media(max-width:760px){
   /* The thumbnail sits beside the date and title; the excerpt takes the full width below. */
-  .notice-list a{grid-template-columns:64px minmax(0,1fr);grid-template-rows:auto 1fr auto;column-gap:12px;padding:14px 0}
+  .notice-list a{grid-template-columns:64px minmax(0,1fr);grid-template-rows:auto 1fr auto;gap:0 12px;padding:14px 0}
   .notice-thumb{grid-row:1/span 2;width:64px;height:48px;margin-top:2px}
   .notice-tile{font-size:26px}
   .notice-list h3{flex:none}
