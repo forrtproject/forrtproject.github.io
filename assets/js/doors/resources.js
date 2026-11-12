@@ -139,7 +139,7 @@ function draw() {
       removers.push([labelOf(chip), () => { chip.setAttribute('aria-pressed', 'false'); redraw(); }, group]);
     });
   });
-  if (search.value.trim()) removers.push([`“${search.value.trim()}”`, () => { search.value = ''; redraw(); }, '']);
+  if (search.value.trim()) removers.push([`“${search.value.trim()}”`, () => { search.value = ''; redraw(); }, 'Search']);
   activeLine.hidden = !removers.length;
   activeLine.replaceChildren(...removers.map(([label, remove, group]) => {
     const named = group ? `${group}: ${label}` : label;
