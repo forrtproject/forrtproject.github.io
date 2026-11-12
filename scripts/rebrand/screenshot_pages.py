@@ -124,7 +124,7 @@ def main():
     parser.add_argument("--pages", help="comma-separated names from sample_pages.json")
     parser.add_argument("--paths", help="comma-separated paths to shoot instead of sample_pages.json")
     parser.add_argument("--list", help="a JSON file of {name: path} to shoot instead of sample_pages.json")
-    parser.add_argument("--sizes", default="mobile,desktop", help="mobile, desktop or both")
+    parser.add_argument("--sizes", default="mobile,desktop", help="mobile, desktop, or both (mobile,desktop)")
     parser.add_argument("--max-height", type=int, default=7200, help="CSS pixels shot per page")
     parser.add_argument("--quality", type=int, default=78)
     parser.add_argument("--cookie-banner", action="store_true", help="show the cookie banner")
@@ -145,6 +145,18 @@ def main():
                 parser.error(f"not in sample_pages.json: {', '.join(missing)}")
             samples = {name: samples[name] for name in wanted}
 
+    sizes = list(SIZES) if args.sizes == "both" else [size.strip() for size in args.sizes.split(",")]
+    unknown = [size for size in sizes if size not in SIZES]
+    if unknown:
+        parser.error(f"unknown size: {', '.join(unknown)}")
+    # Tiles are named after the page's slug, so two names with one slug would overwrite each other.
+    slugs = {}
+    for name in samples:
+        slugs.setdefault(slug(name), []).append(name)
+    clashes = [" and ".join(names) for names in slugs.values() if len(names) > 1]
+    if clashes:
+        parser.error(f"page names that share a file name: {'; '.join(clashes)}")
+
     server = None
     if re.match(r"https?://", args.site):
         origin = args.site.rstrip("/") + "/"
@@ -158,7 +170,7 @@ def main():
         browser = playwright.chromium.launch()
         for name, path in samples.items():
             entry = {"path": path}
-            for size_name in args.sizes.split(","):
+            for size_name in sizes:
                 size = SIZES[size_name]
                 image, height, overflow = shoot(browser, origin + path.lstrip("/"), size, args.max_height,
                                                 args.cookie_banner, local)
