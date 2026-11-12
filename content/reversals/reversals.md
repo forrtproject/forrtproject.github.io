@@ -55,7 +55,7 @@ subtitle = ""
 
 **This project has concluded.** Its work continues in the [FORRT Replication Hub](/replication-hub/), and its outcomes are described in the preprint [Tracking and Mainstreaming Replications in the Social, Cognitive, and Behavioral Sciences](https://osf.io/preprints/metaarxiv/ad2w6_v1). The effects below were crowdsourced and not consistently validated, so check specific claims before relying on them, and please [report errors](https://github.com/forrtproject/forrtproject.github.io/issues/612).
 
-<a class="btn btn-primary" href="/annotator/">Search FLoRA for validated replications</a>
+<a class="btn btn-primary" href="/annotator/">Find more replications in FLoRA</a>
 
 {{% /alert %}}
 

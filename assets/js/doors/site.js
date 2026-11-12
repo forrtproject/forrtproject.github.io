@@ -532,7 +532,7 @@ if (termFilter && termGrid) {
   // /glossary/english/?q=… opens with that search, so a related term without its own page can link here.
   const asked = new URLSearchParams(location.search).get('q');
   if (asked) { termFilter.value = asked; termFilter.dispatchEvent(new Event('input')); }
-  // "How to cite" links to the closed disclosure at the end; following the link opens it.
+  // "How to cite" links to the closed disclosure under the heading; following the link opens it.
   const about = document.getElementById('about-the-glossary');
   const openAbout = () => { if (location.hash === '#about-the-glossary') about.open = true; };
   window.addEventListener('hashchange', openAbout);
