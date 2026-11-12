@@ -97,14 +97,18 @@ function drawCard(index) {
 // The address for the current choice on page `n`. With no filter, A to Z and 24 a page, it is the
 // server's page; otherwise ?page= goes with ?per= whenever per is not 24, so a link opened on
 // another screen size shows the same resources.
+// Other parameters in the address (a campaign tag, say) are kept as they are.
+const OWN_KEYS = ['type', 'level', 'cluster', 'search', 'sort', 'per', 'page'];
 function addressFor(picks, n) {
-  const params = new URLSearchParams();
+  const params = new URLSearchParams(location.search);
+  OWN_KEYS.forEach((key) => params.delete(key));
+  const foreign = params.toString();
   Object.entries(picks).forEach(([facet, list]) => {
     if (list.length) params.set(facet, list.join(','));
   });
   if (search.value.trim()) params.set('search', search.value.trim());
   if (sort !== 'title') params.set('sort', sort);
-  const plain = !params.toString() && per === SERVER_PER;
+  const plain = params.toString() === foreign && per === SERVER_PER;
   if (per !== defaultPer || (per !== SERVER_PER && n > 1)) params.set('per', String(per));
   let path = root.dataset.listUrl;
   if (plain) {
