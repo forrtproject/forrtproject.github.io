@@ -391,9 +391,11 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
   .article-layout .article-style .list-filter-section .list-filter-search{position:sticky;top:0;z-index:6;grid-template-columns:1fr auto;align-items:baseline;gap:4px 10px;margin:8px -20px 10px;padding:8px 20px;background:var(--surface);box-shadow:0 1px 0 var(--line)}
   .article-layout .article-style .list-filter-section .list-filter label,.article-layout .article-style .list-filter-section .list-filter-count{grid-row:1}
   .article-layout .article-style .list-filter-section .list-filter input{grid-column:1/-1;grid-row:2;padding:7px 14px}
-  .article-layout .article-style .list-filter-section .list-filter-jump{margin:0 0 8px}
+  .article-layout .article-style .list-filter-section .list-filter label.list-filter-jump{margin:4px 0 14px}
   .article-layout .article-style .list-filter-section .list-filter-jump select{flex:1;max-width:none}
-  .article-layout .article-style .list-filter-section .list-filter-status{margin:0 0 18px}
+  /* Below the sticky row there is room, so the outcome buttons get their usual size and spacing back. */
+  .article-layout .article-style .list-filter-section .list-filter-status{gap:8px;margin:0 0 24px}
+  .article-layout .article-style .list-filter-section .list-filter-status button{padding:3px 10px}
 }
 /* Each effect shows its first lines (three on a phone), with the Statistics toggle on the name's line and a
    "more" button where the text runs longer; while a search is typed the matching effects show in full. */
