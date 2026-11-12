@@ -31,10 +31,7 @@
       {{ end }}
       {{/* On phones the side card falls below the text, too late to help on a long page. */}}
       {{ if and (or $hasCard $wide) (gt (len $headings) 1) }}
-      <details class="toc-phone">
-        <summary>On this page</summary>
-        <div class="article-toc">{{ replace (partial "doors/reading_toc" (dict "page" . "contents" $contents "written" $written)) `id="TableOfContents"` `aria-label="On this page"` | safeHTML }}</div>
-      </details>
+      {{ partial "doors/toc_phone" (replace (partial "doors/reading_toc" (dict "page" . "contents" $contents "written" $written)) `id="TableOfContents"` `aria-label="On this page"`) }}
       {{ end }}
       <div class="article-style">
         {{ $body }}

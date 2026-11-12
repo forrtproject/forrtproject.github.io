@@ -1,0 +1,8 @@
+{{/* The contents on a phone, where the side card would fall below the text: an open list under a small "On this page"
+     label. site.js shortens a list of more than six sections to its first five, with a button that shows the rest;
+     without script the whole list shows. Input: the contents' rendered <nav> (a list of links). Used by
+     doors/reading and widget_page. */}}
+<div class="toc-phone">
+  <p class="toc-phone-label" aria-hidden="true">On this page</p>
+  <div class="article-toc">{{ . | safeHTML }}</div>
+</div>
