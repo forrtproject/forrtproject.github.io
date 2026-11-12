@@ -169,3 +169,7 @@
   .about-statement>.more{justify-self:start;margin-bottom:52px}
 }
 .ledger strong{white-space:nowrap}
+/* The first hero link is the main task, filled; the others stay as outlines. */
+.quick a:first-child{background:var(--edu);border-color:var(--edu);color:#fff}
+.quick a:first-child:hover{background:var(--ink);border-color:var(--ink)}
+@media(max-width:760px){.tower{max-width:200px}.castle-stage{height:120px}}

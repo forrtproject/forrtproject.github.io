@@ -323,3 +323,8 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .status-not-replicated{background:var(--com-bg)}
 .status-reversed{background:var(--jus-bg)}
 .status-mixed{background:var(--res-bg)}
+/* On a phone the wheel is a small thumbnail beside its link, above the overview, so no text wraps around it. */
+@media(max-width:600px){
+  .article-layout .article-style .awop-wheel{float:none;width:auto;margin:0 0 14px;display:flex;align-items:center;gap:14px;text-align:start}
+  .article-layout .article-style .awop-wheel>p:first-child{flex:none;width:96px}
+}

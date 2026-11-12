@@ -62,7 +62,7 @@
   <section class="collection-note" id="form" aria-labelledby="collection-h">
     <h2 id="collection-h">Missing a resource?</h2>
     <p><a class="more" href="{{ .Params.form_url }}" rel="noopener">Suggest a resource through our form</a></p>
-    <div class="collection-about">{{ .Content }}</div>
+    <details class="collection-about"><summary>How the collection grew</summary>{{ .Content }}</details>
   </section>
 </div>
 <template id="resCard">{{ partial "doors/resource_card" (dict "title" "" "url" "" "types" slice "levels" slice "clusters" slice) }}</template>

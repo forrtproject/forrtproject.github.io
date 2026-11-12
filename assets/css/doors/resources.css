@@ -90,3 +90,4 @@
 .pager-mini[hidden]{display:none}
 .result-bar .pager-top{margin:0 0 0 auto}
 .pager-top[hidden]{display:none}
+.collection-about>summary{cursor:pointer;color:var(--link);font-weight:600;text-decoration:underline;text-underline-offset:3px;margin:8px 0}

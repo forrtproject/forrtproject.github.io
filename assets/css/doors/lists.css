@@ -122,3 +122,6 @@
 @media(max-width:760px){.tag-group ul{columns:2 140px}}
 /* Tags carried by one page only are lighter, so the ones in common use stand out. */
 .tag-group li.tag-rare a{color:var(--soft)}
+/* A tag's page count as a small badge beside it, not another word of the tag. */
+.tag-group .tag-count,.tag-top .tag-count{display:inline-block;margin-inline-start:4px;padding:0 7px;border-radius:999px;background:var(--surface);color:var(--soft);font-size:15px;line-height:1.5}
+.tag-top .tag-cloud a .tag-count{background:#fff}
