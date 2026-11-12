@@ -177,8 +177,9 @@
 
             {{ with .Params.related_terms }}
             {{/* Related terms link to their pages, found by title: this language's terms first, then English;
-                 a translated term is also found by the English name in its brackets. */}}
-            {{ $index := dict }}
+                 a translated term is also found by the English name in its brackets. A name is matched in full first, so
+                 "Model (philosophy)" and "Model (statistical)" stay apart, then without its bracketed qualifier. */}}
+            {{ $index := dict }}{{ $exact := dict }}
             {{ range slice "english" $lang }}
               {{ range where (where site.RegularPages "Type" "glossary") "File.Dir" (printf "glossary/%s/" .) }}
                 {{ $page := . }}
@@ -187,6 +188,8 @@
                 {{ range $names }}
                   {{ $key := . | replaceRE `[*\\]` "" | replaceRE `\s*\(.*?\)` "" | replaceRE `\s*\[.*\]\s*$` "" | lower | replaceRE `[^\p{L}\p{N}]+` "" }}
                   {{ if $key }}{{ $index = merge $index (dict $key $page) }}{{ end }}
+                  {{ $full := . | replaceRE `[*\\]` "" | replaceRE `\s*\[.*\]\s*$` "" | lower | replaceRE `[^\p{L}\p{N}]+` "" }}
+                  {{ if $full }}{{ $exact = merge $exact (dict $full $page) }}{{ end }}
                 {{ end }}
               {{ end }}
             {{ end }}
@@ -194,7 +197,8 @@
             {{ range . }}
             {{ $term_str := printf "%s" . }}
             {{ $key := $term_str | replaceRE "\u00a0" " " | replaceRE `[*\\]` "" | replaceRE `\s*\(.*?\)` "" | lower | replaceRE `[^\p{L}\p{N}]+` "" }}
-            {{ with index $index $key }}
+            {{ $full := $term_str | replaceRE "\u00a0" " " | replaceRE `[*\\]` "" | lower | replaceRE `[^\p{L}\p{N}]+` "" }}
+            {{ with or (index $exact $full) (index $index $key) }}
             {{/* A term found in this language is named as its page is, without the English name in brackets. */}}
             {{ $name := $term_str }}
             {{ if and (ne $lang "english") (eq .Params.language $lang) }}{{ $name = replaceRE `\s*\[.*\]\s*$` "" .Title }}{{ end }}

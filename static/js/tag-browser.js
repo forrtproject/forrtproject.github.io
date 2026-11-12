@@ -13,7 +13,8 @@
   "use strict";
   var box = document.querySelector(".tag-find");
   var input = document.getElementById("tag-filter");
-  if (!box || !input) return;
+  // A selected tag replaces the list this searches, so the search stays hidden with it.
+  if (!box || !input || new URLSearchParams(window.location.search).get("tag")) return;
   box.hidden = false;
   var top = document.querySelector(".tag-top");
   var letters = document.querySelector(".tag-letters");
