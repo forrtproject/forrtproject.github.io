@@ -51,7 +51,7 @@ cards:
         url: "/flora-replication-atlas/"
       - text: "Zotero Replication Checker"
         url: "/flora-zotero/"
-      - text: "FORRT ORE browser extension"
+      - text: "Browser Extension"
         url: "/chromium-extension/"
 
   - key: conduct
