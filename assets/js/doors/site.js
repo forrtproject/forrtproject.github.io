@@ -535,10 +535,13 @@ document.querySelectorAll('.article-style li > p > strong:first-child').forEach(
   const line = [...item.querySelectorAll('.spoiler li')].find((li) => /^\s*status:/i.test(li.textContent));
   if (!line) return;
   const status = line.textContent.replace(/^\s*status:\s*/i, '').trim().toLowerCase();
-  if (!status || status === 'na') return;
+  // One word set for the chips; any qualifier stays in the statistics and in the chip's title.
+  const label = ['not replicated', 'reversed', 'mixed', 'replicated'].find((word) => status.startsWith(word) || status.includes(word));
+  if (!label) return;
   const chip = document.createElement('span');
-  chip.className = `status-chip status-${status.replace(/[^a-z]+/g, '-')}`;
-  chip.textContent = status;
+  chip.className = `status-chip status-${label.replace(/[^a-z]+/g, '-')}`;
+  chip.textContent = label;
+  if (status !== label) chip.title = status;
   name.before(chip, ' ');
 });
 

@@ -120,3 +120,5 @@
 .tag-group-more{margin:6px 0 0;padding:6px 14px;border:1.5px solid var(--ink);border-radius:999px;background:#fff;color:var(--ink);font:600 15px/1.3 var(--text);cursor:pointer}
 .tag-letters{border-bottom:1px solid var(--line)}
 @media(max-width:760px){.tag-group ul{columns:2 140px}}
+/* Tags carried by one page only are lighter, so the ones in common use stand out. */
+.tag-group li.tag-rare a{color:var(--soft)}

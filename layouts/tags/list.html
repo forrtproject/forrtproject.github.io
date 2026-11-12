@@ -57,7 +57,7 @@
       {{ range $groups }}
       <div class="tag-group" id="tags-{{ .letter | urlize | default "other" }}">
         <h3>{{ .letter }}</h3>
-        <ul>{{ range .rows }}<li><a href="{{ printf "tags/?tag=%s" (.tag | urlquery) | relURL }}">{{ .tag }} <span class="tag-count">{{ .count }}</span></a></li>{{ end }}</ul>
+        <ul>{{ range .rows }}<li{{ if eq .count 1 }} class="tag-rare"{{ end }}><a href="{{ printf "tags/?tag=%s" (.tag | urlquery) | relURL }}">{{ .tag }} <span class="tag-count">{{ .count }}</span></a></li>{{ end }}</ul>
       </div>
       {{ end }}
     </section>

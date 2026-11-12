@@ -53,3 +53,10 @@ ul.network-icon a:hover{color:var(--ink)}
   .head-join,.cc-window.cc-window .cc-btn,.newsletter-submit,.btn,.tower-entry,.motion-toggle{border:2px solid ButtonText!important}
   .brand img{background:#fff;padding:2px;border-radius:4px;forced-color-adjust:none}
 }
+/* On a phone the consent banner is compact: tighter padding and its two buttons side by side. The wording stays. */
+@media(max-width:760px){
+  .cc-window.cc-window{padding:12px 16px;font-size:15px;line-height:1.4}
+  .cc-window.cc-window .cc-message{margin-bottom:10px}
+  .cc-window.cc-window .cc-compliance{display:flex;gap:8px}
+  .cc-window.cc-window .cc-compliance .cc-btn{flex:1;padding:9px 12px}
+}

@@ -66,13 +66,16 @@ function drawCard(index) {
   const link = node.querySelector('.res-title a');
   link.textContent = item.t;
   link.href = `${data.base}${item.u}/`;
-  const labels = (facet, positions) => positions
-    .map((position) => document.querySelector(`.facet[data-facet=${facet}] .chip[data-value="${data.facets[facet][position]}"]`))
-    .filter(Boolean)
-    .map(labelOf)
-    .join(', ');
+  const labels = (facet, positions, most = Infinity) => {
+    const names = positions
+      .map((position) => document.querySelector(`.facet[data-facet=${facet}] .chip[data-value="${data.facets[facet][position]}"]`))
+      .filter(Boolean)
+      .map(labelOf);
+    // Levels show two at most and a count, as on the server-drawn cards.
+    return names.slice(0, most).join(', ') + (names.length > most ? ` +${names.length - most}` : '');
+  };
   node.querySelector('.res-type').textContent = labels('type', item.y);
-  node.querySelector('.res-level').textContent = labels('level', item.l);
+  node.querySelector('.res-level').textContent = labels('level', item.l, 2);
   node.querySelector('.res-tag').textContent = labels('cluster', item.c);
   return node;
 }

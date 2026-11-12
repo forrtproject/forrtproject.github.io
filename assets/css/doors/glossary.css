@@ -97,8 +97,9 @@ a.term-chip:hover{background:var(--link);color:#fff}
   .glossary-find{margin-top:18px}
   .glossary-find label{font-size:21px}
 }
-/* Related terms without a page of their own read as plain text, not as buttons. */
-.glossary-layout .article-style span.term-chip{padding:3px 4px;border:0;color:var(--ink)}
+/* Related terms on their own row under the label; those without a page of their own are muted chips. */
+.glossary-layout .article-style .term-related strong{flex-basis:100%;margin:0 0 2px}
+.glossary-layout .article-style span.term-chip{border-color:transparent;background:var(--surface);color:var(--soft)}
 .glossary-search-row{display:flex;gap:8px;align-items:center}
 .glossary-search-row input{flex:1}
 .glossary-clear{flex:none;padding:10px 16px;border:1.5px solid var(--ink);border-radius:999px;background:#fff;color:var(--ink);font:600 16px/1.2 var(--text);cursor:pointer}
