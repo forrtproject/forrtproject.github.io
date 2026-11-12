@@ -971,7 +971,7 @@ Anna,,Exner,0000-0002-0741-9045,Reversals & Replications,https://forrt.org/rever
 Benjamin,G,Farrar,0000-0001-8912-6133,Reversals & Replications,https://forrt.org/reversals/,False,False,False,False,True,False,False,False,False,False,False,False,,False,False,False,False
 Gilad,,Feldman,0000-0003-2812-6599,Reversals & Replications,https://forrt.org/reversals/,False,False,False,False,True,False,False,False,False,False,False,False,,False,False,False,False
 Adrien,A,Fillon,0000-0001-8324-2715,Reversals & Replications,https://forrt.org/reversals/,False,False,False,False,True,False,False,False,False,False,False,False,,False,False,False,False
-Felipe,,Fontana Vieira,,Reversals & Replications,https://forrt.org/reversals/,False,False,False,False,True,False,False,False,False,False,False,False,,False,False,False,False
+Felipe,,Fontana Vieira,0009-0006-0949-6569,Reversals & Replications,https://forrt.org/reversals/,False,False,False,False,True,False,False,False,False,False,False,False,,False,False,False,False
 Joris,,Frese,0000-0002-5871-997X,Reversals & Replications,https://forrt.org/reversals/,False,False,False,False,True,False,False,False,False,False,False,False,,False,False,False,False
 Max,C. D.,Gattie,0000-0003-4155-001X,Reversals & Replications,https://forrt.org/reversals/,False,False,False,False,True,False,False,False,False,False,False,False,,False,False,False,False
 Vaitsa,,Giannouli,0000-0003-2176-8986,Reversals & Replications,https://forrt.org/reversals/,False,False,False,False,True,False,False,False,False,False,False,False,,False,False,False,False
@@ -1070,7 +1070,7 @@ William,XQ,Ngiam,0000-0003-3567-3881,Summaries,https://forrt.org/summaries/,Fals
 Aleksandrina,,Skvortsova,,Summaries,https://forrt.org/summaries/,False,False,False,False,False,True,True,True,False,False,False,False,,False,True,,
 Yu-Fang,,Yang,,Summaries,https://forrt.org/summaries/,False,False,False,False,False,True,True,True,False,False,False,False,,False,True,,
 Giorgia,,Andreolli,0000-0001-9511-0496,Summaries,https://forrt.org/summaries/,False,False,False,False,False,True,True,True,False,False,False,False,,False,True,,
-Felipe,,Fontana Vieira,,Summaries,https://forrt.org/summaries/,False,False,False,False,False,True,True,True,False,False,False,False,,False,True,,
+Felipe,,Fontana Vieira,0009-0006-0949-6569,Summaries,https://forrt.org/summaries/,False,False,False,False,False,True,True,True,False,False,False,False,,False,True,,
 Aoife,,O'Mahony,,Summaries,https://forrt.org/summaries/,False,False,False,False,False,True,True,True,False,False,False,True,,False,True,,
 Veronica,,Diveica,0000-0002-5696-8200,Summaries,https://forrt.org/summaries/,False,False,False,False,False,False,False,False,False,False,False,False,,False,True,,
 Emily,,Friedel,0009-0001-0917-5398,Summaries,https://forrt.org/summaries/,False,False,False,False,False,False,False,True,False,True,False,False,,False,True,,
@@ -1091,7 +1091,6 @@ Daniel,,Manrique-Castano,0000-0002-1912-1764,Summaries,https://forrt.org/summari
 Fernando,,Steeb,0009-0001-7707-1486,Summaries,https://forrt.org/summaries/,False,False,False,False,False,False,False,True,False,False,False,False,,False,True,,
 Zlatomira,G.,Ilchovska,0000-0001-6682-9952,Summaries,https://forrt.org/summaries/,False,False,False,False,False,False,False,True,False,False,False,False,,False,True,,
 Alice,,Rees,,Summaries,https://forrt.org/summaries/,False,False,False,False,False,False,False,True,False,False,False,False,,False,True,,
-Stephanie,L.,Chang,,Summaries,https://forrt.org/summaries/,False,False,False,False,False,False,False,True,False,False,False,False,,False,True,,
 Jacob,,Miranda,0000-0003-2553-1273,Summaries,https://forrt.org/summaries/,False,False,False,False,False,False,False,False,False,False,False,False,,False,True,,
 Martin,,Vasilev,,Summaries,https://forrt.org/summaries/,False,False,False,False,False,False,False,True,False,False,False,False,,False,True,,
 Shannon,,Francis,,Summaries,https://forrt.org/summaries/,False,False,False,False,False,False,False,True,False,False,False,False,,False,True,,
@@ -1192,7 +1191,7 @@ Flavio,,Azevedo,0000-0001-9000-8513,Team Website,https://forrt.org/,False,False,
 Richard,Mudahera,Dushime,0000-0002-1281-9895,Team Website,https://forrt.org/,False,False,False,False,False,False,False,True,False,False,False,False,,False,False,,
 Pauline,,Karega,,Team Website,https://forrt.org/,False,False,False,False,False,False,False,True,False,False,False,False,,False,False,,
 Seun,,Olufemi,,Team Website,https://forrt.org/,False,False,False,False,False,False,False,True,False,False,False,False,,False,False,,
-Susana,,González-Sahagún,,Team Website,https://forrt.org/,False,False,False,False,False,False,False,True,False,False,False,False,,False,False,,
+Susana,,González-Sahagún,0009-0009-9423-7562,Team Website,https://forrt.org/,False,False,False,False,False,False,False,True,False,False,False,False,,False,False,,
 Belay,,Moges,,Team Website,https://forrt.org/,False,False,False,False,False,False,False,True,False,False,False,False,,False,False,,
 Cosmas,,Knowen,,Team Website,https://forrt.org/,False,False,False,False,False,False,False,True,False,False,False,False,,False,False,,
 Max,F,Wan,0000-0002-6043-7349,Team Website,https://forrt.org/,False,False,False,False,False,False,False,True,False,False,False,False,,False,False,,
@@ -1304,7 +1303,7 @@ Benjamin,G,Farrar,0000-0001-8912-6133,FORRT Replication Databases (FReD and FLoR
 Gilad,,Feldman,0000-0003-2812-6599,FORRT Replication Databases (FReD and FLoRA),https://forrt.org/flora,False,False,False,False,True,False,False,False,False,False,False,False,,False,False,False,
 Adrien,A,Fillon,0000-0001-8324-2715,FORRT Replication Databases (FReD and FLoRA),https://forrt.org/flora,False,False,False,False,True,False,False,False,False,False,False,False,,False,False,False,
 Jake,,Floyd,,FORRT Replication Databases (FReD and FLoRA),https://forrt.org/flora,False,False,False,False,True,False,False,False,False,False,False,False,,False,False,False,
-Felipe,,Fontana Vieira,,FORRT Replication Databases (FReD and FLoRA),https://forrt.org/flora,False,False,False,False,True,False,False,False,False,False,False,False,,False,False,False,
+Felipe,,Fontana Vieira,0009-0006-0949-6569,FORRT Replication Databases (FReD and FLoRA),https://forrt.org/flora,False,False,False,False,True,False,False,False,False,False,False,False,,False,False,False,
 Nico,,Förster,,FORRT Replication Databases (FReD and FLoRA),https://forrt.org/flora,False,False,False,False,False,False,False,True,False,False,False,False,,False,False,False,
 Joris,,Frese,0000-0002-5871-997X,FORRT Replication Databases (FReD and FLoRA),https://forrt.org/flora,False,False,False,False,True,False,False,False,False,False,False,False,,False,False,False,
 Max,C. D.,Gattie,0000-0003-4155-001X,FORRT Replication Databases (FReD and FLoRA),https://forrt.org/flora,False,False,False,False,True,False,False,False,False,False,False,False,,False,False,False,

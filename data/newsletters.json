@@ -1,0 +1,108 @@
+{
+  "issues": [
+    {
+      "id": "4942948c-d3c3-11f1-b6a4-0529705393d3",
+      "year": 2026,
+      "month": "October",
+      "month_number": 10,
+      "sent_at": "2026-10-30T09:00:48+00:00",
+      "url": "/newsletters/2026-10/"
+    },
+    {
+      "id": "7c043a9c-baa5-11f1-bab9-3d059e260e0e",
+      "year": 2026,
+      "month": "September",
+      "month_number": 9,
+      "sent_at": "2026-10-01T08:02:21+00:00",
+      "url": "/newsletters/2026-09/"
+    },
+    {
+      "id": "70dccb38-a138-11f1-a13e-3dcb3d9116a3",
+      "year": 2026,
+      "month": "August",
+      "month_number": 8,
+      "sent_at": "2026-08-31T08:15:31+00:00",
+      "url": "/newsletters/2026-08/"
+    },
+    {
+      "id": "8455a014-8c3d-11f1-b08c-dbb2e5f024fe",
+      "year": 2026,
+      "month": "July",
+      "month_number": 7,
+      "sent_at": "2026-07-31T08:01:15+00:00",
+      "url": "/newsletters/2026-07/"
+    },
+    {
+      "id": "5afe9fae-760d-11f1-94e3-33635a0d7222",
+      "year": 2026,
+      "month": "June",
+      "month_number": 6,
+      "sent_at": "2026-07-02T12:02:35+00:00",
+      "url": "/newsletters/2026-06/"
+    },
+    {
+      "id": "fc2dc0f2-5a02-11f1-acce-9d9105ec3473",
+      "year": 2026,
+      "month": "May",
+      "month_number": 5,
+      "sent_at": "2026-05-29T08:01:28+00:00",
+      "url": "/newsletters/2026-05/"
+    },
+    {
+      "id": "8644de88-42bb-11f1-bea3-9d65e0900500",
+      "year": 2026,
+      "month": "April",
+      "month_number": 4,
+      "sent_at": "2026-04-30T07:00:44+00:00",
+      "url": "/newsletters/2026-04/"
+    },
+    {
+      "id": "37587f24-13bc-11f1-a58e-016a4c8ed9d0",
+      "year": 2026,
+      "month": "March",
+      "month_number": 3,
+      "sent_at": "2026-03-31T07:30:55+00:00",
+      "url": "/newsletters/2026-03/"
+    },
+    {
+      "id": "e0c335de-11b6-11f1-a1c2-6ba123ee4ad5",
+      "year": 2026,
+      "month": "February",
+      "month_number": 2,
+      "sent_at": "2026-02-26T09:01:54+00:00",
+      "url": "/newsletters/2026-02/"
+    },
+    {
+      "id": "fe198ab4-f705-11f0-b264-b3838bc6094d",
+      "year": 2026,
+      "month": "January",
+      "month_number": 1,
+      "sent_at": "2026-01-29T09:02:04+00:00",
+      "url": "/newsletters/2026-01/"
+    },
+    {
+      "id": "9da7ff18-ca40-11f0-805f-0b7f4a24d8f2",
+      "year": 2025,
+      "month": "November",
+      "month_number": 11,
+      "sent_at": "2025-11-28T08:16:13+00:00",
+      "url": "/newsletters/2025-11/"
+    },
+    {
+      "id": "4b518678-a414-11f0-bce9-e9770cb46815",
+      "year": 2025,
+      "month": "October",
+      "month_number": 10,
+      "sent_at": "2025-10-30T08:01:05+00:00",
+      "url": "/newsletters/2025-10/"
+    },
+    {
+      "id": "9d2542f8-89a9-11f0-b475-23ec281bb67b",
+      "year": 2025,
+      "month": "September",
+      "month_number": 9,
+      "sent_at": "2025-09-22T08:14:04+00:00",
+      "url": "/newsletters/2025-09/"
+    }
+  ]
+}

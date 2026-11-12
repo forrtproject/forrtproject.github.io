@@ -1112,14 +1112,6 @@ FORRT is driven by a **large and diverse community of contributors** that shape 
 
 
 <li class="contributor-group">
-  <strong>Stephanie L. Chang</strong> contributed to
-  <ul class="contributions-list">
-    <li class="contribution" data-projects="summaries" data-roles="resources,writing-review-and-editing"><a href="https://forrt.org/summaries/">Summaries</a> with <em>Resources</em> and <em>Writing - review & editing</em></li>
-  </ul>
-</li>
-
-
-<li class="contributor-group">
   <strong>Sau-Chin Chen</strong> contributed to
   <ul class="contributions-list">
     <li class="contribution" data-projects="forrt-replication-databases-fred-and-flora" data-roles="investigation"><a href="https://forrt.org/flora">FORRT Replication Databases (FReD and FLoRA)</a> with <em>Investigation</em></li>
@@ -1128,18 +1120,18 @@ FORRT is driven by a **large and diverse community of contributors** that shape 
 </li>
 
 
-<li class="contributor-group">
-  <strong>Xiaoli Chen</strong> contributed to
-  <ul class="contributions-list">
-    <li class="contribution" data-projects="accessible-feedback-in-academia" data-roles="resources">Accessible Feedback in Academia with <em>Resources</em></li>
-  </ul>
-</li>
-
-
 <li class="contributor-group" id="0000-0001-9317-3047">
   <strong><a href="https://orcid.org/0000-0001-9317-3047">Liangjie Chen</a></strong> contributed to
   <ul class="contributions-list">
     <li class="contribution" data-projects="glossary-chinese-translation" data-roles="methodology,resources,software,validation,translation"><a href="https://forrt.org/glossary/chinese/">Glossary - Chinese Translation</a> with <em>Methodology</em>, <em>Resources</em>, <em>Software</em>, <em>Validation</em> and <em>Translation</em></li>
+  </ul>
+</li>
+
+
+<li class="contributor-group">
+  <strong>Xiaoli Chen</strong> contributed to
+  <ul class="contributions-list">
+    <li class="contribution" data-projects="accessible-feedback-in-academia" data-roles="resources">Accessible Feedback in Academia with <em>Resources</em></li>
   </ul>
 </li>
 
@@ -1415,7 +1407,7 @@ FORRT is driven by a **large and diverse community of contributors** that shape 
 
 
 <li class="contributor-group" id="0000-0002-1281-9895">
-  <strong><a href="https://orcid.org/0000-0002-1281-9895">Mudahera R. Dushime</a></strong> contributed to
+  <strong><a href="https://orcid.org/0000-0002-1281-9895">Richard M. Dushime</a></strong> contributed to
   <ul class="contributions-list">
     <li class="contribution" data-projects="team-website" data-roles="lead-website-maintainer"><a href="https://forrt.org/">Team Website</a> as Lead Website Maintainer</li>
     <li class="contribution" data-projects="accessible-feedback-in-academia" data-roles="resources">Accessible Feedback in Academia with <em>Resources</em></li>
@@ -1496,7 +1488,7 @@ FORRT is driven by a **large and diverse community of contributors** that shape 
 
 
 <li class="contributor-group" id="0000-0002-0540-3998">
-  <strong><a href="https://orcid.org/0000-0002-0540-3998">Mahmoud Elsherif</a></strong> contributed to
+  <strong><a href="https://orcid.org/0000-0002-0540-3998">Mahmoud M. Elsherif</a></strong> contributed to
   <ul class="contributions-list">
     <li class="contribution" data-projects="team-credit" data-roles="project-manager"><a href="https://forrt.org/contributors/">Team Credit</a> as Project manager</li>
     <li class="contribution" data-projects="team-database" data-roles="project-co-lead"><a href="https://forrt.org/resources/">Team Database </a> as Project co-lead</li>
@@ -1617,7 +1609,7 @@ Educators (POST-Edu) as Project co-lead</li>
 
 
 <li class="contributor-group" id="0000-0001-8912-6133">
-  <strong><a href="https://orcid.org/0000-0001-8912-6133">Benjamin G. Farrar</a></strong> contributed to
+  <strong><a href="https://orcid.org/0000-0001-8912-6133">Ben G. Farrar</a></strong> contributed to
   <ul class="contributions-list">
     <li class="contribution" data-projects="forrt-replication-databases-fred-and-flora" data-roles="investigation"><a href="https://forrt.org/flora">FORRT Replication Databases (FReD and FLoRA)</a> with <em>Investigation</em></li>
     <li class="contribution" data-projects="glossary" data-roles="writing-original-draft,writing-review-and-editing"><a href="https://forrt.org/glossary/">Glossary</a> with <em>Writing - original draft</em> and <em>Writing - review & editing</em></li>
@@ -1723,8 +1715,8 @@ Educators (POST-Edu) as Project co-lead</li>
 </li>
 
 
-<li class="contributor-group">
-  <strong>Felipe Fontana Vieira</strong> contributed to
+<li class="contributor-group" id="0009-0006-0949-6569">
+  <strong><a href="https://orcid.org/0009-0006-0949-6569">Felipe Fontana Vieira</a></strong> contributed to
   <ul class="contributions-list">
     <li class="contribution" data-projects="team-summaries" data-roles="project-co-lead"><a href="https://forrt.org/summaries/ ">Team Summaries</a> as Project co-lead</li>
     <li class="contribution" data-projects="forrt-replication-databases-fred-and-flora" data-roles="investigation"><a href="https://forrt.org/flora">FORRT Replication Databases (FReD and FLoRA)</a> with <em>Investigation</em></li>
@@ -2054,8 +2046,8 @@ Educators (POST-Edu) as Project co-lead</li>
 </li>
 
 
-<li class="contributor-group">
-  <strong>Susana González-Sahagún</strong> contributed to
+<li class="contributor-group" id="0009-0009-9423-7562">
+  <strong><a href="https://orcid.org/0009-0009-9423-7562">Susana González-Sahagún</a></strong> contributed to
   <ul class="contributions-list">
     <li class="contribution" data-projects="team-website" data-roles="project-manager"><a href="https://forrt.org/">Team Website</a> as Project manager</li>
     <li class="contribution" data-projects="team-website" data-roles="resources"><a href="https://forrt.org/">Team Website</a> with <em>Resources</em></li>
@@ -3203,6 +3195,22 @@ Educators (POST-Edu) as Project co-lead</li>
 </li>
 
 
+<li class="contributor-group" id="0000-0002-1253-9711">
+  <strong><a href="https://orcid.org/0000-0002-1253-9711">Ruoting Liu</a></strong> contributed to
+  <ul class="contributions-list">
+    <li class="contribution" data-projects="glossary-chinese-translation" data-roles="methodology,resources,software,validation,translation"><a href="https://forrt.org/glossary/chinese/">Glossary - Chinese Translation</a> with <em>Methodology</em>, <em>Resources</em>, <em>Software</em>, <em>Validation</em> and <em>Translation</em></li>
+  </ul>
+</li>
+
+
+<li class="contributor-group">
+  <strong>Yi Liu</strong> contributed to
+  <ul class="contributions-list">
+    <li class="contribution" data-projects="forrt-replication-databases-fred-and-flora" data-roles="resources"><a href="https://forrt.org/flora">FORRT Replication Databases (FReD and FLoRA)</a> with <em>Resources</em></li>
+  </ul>
+</li>
+
+
 <li class="contributor-group" id="0000-0001-8323-2699">
   <strong><a href="https://orcid.org/0000-0001-8323-2699">Meng Liu</a></strong> contributed to
   <ul class="contributions-list">
@@ -3221,24 +3229,8 @@ Educators (POST-Edu) as Project co-lead</li>
 </li>
 
 
-<li class="contributor-group">
-  <strong>Yi Liu</strong> contributed to
-  <ul class="contributions-list">
-    <li class="contribution" data-projects="forrt-replication-databases-fred-and-flora" data-roles="resources"><a href="https://forrt.org/flora">FORRT Replication Databases (FReD and FLoRA)</a> with <em>Resources</em></li>
-  </ul>
-</li>
-
-
-<li class="contributor-group" id="0000-0002-1253-9711">
-  <strong><a href="https://orcid.org/0000-0002-1253-9711">Ruoting Liu</a></strong> contributed to
-  <ul class="contributions-list">
-    <li class="contribution" data-projects="glossary-chinese-translation" data-roles="methodology,resources,software,validation,translation"><a href="https://forrt.org/glossary/chinese/">Glossary - Chinese Translation</a> with <em>Methodology</em>, <em>Resources</em>, <em>Software</em>, <em>Validation</em> and <em>Translation</em></li>
-  </ul>
-</li>
-
-
 <li class="contributor-group" id="0000-0002-0420-2342">
-  <strong><a href="https://orcid.org/0000-0002-0420-2342">Kelly Lloyd</a></strong> contributed to
+  <strong><a href="https://orcid.org/0000-0002-0420-2342">Kelly E. Lloyd</a></strong> contributed to
   <ul class="contributions-list">
     <li class="contribution" data-projects="forrt" data-roles="community-manager">FORRT as Community manager</li>
     <li class="contribution" data-projects="team-cohesion" data-roles="project-lead">Team Cohesion as Project lead</li>
@@ -3283,7 +3275,7 @@ Educators (POST-Edu) as Project co-lead</li>
 
 
 <li class="contributor-group" id="0009-0007-6938-6190">
-  <strong><a href="https://orcid.org/0009-0007-6938-6190">Willem Jacob Louter</a></strong> contributed to
+  <strong><a href="https://orcid.org/0009-0007-6938-6190">Willem J. Louter</a></strong> contributed to
   <ul class="contributions-list">
     <li class="contribution" data-projects="international-coordination-action-research-foundation-flanders-grant" data-roles="writing-review-and-editing">International Coordination Action Research Foundation - Flanders grant with <em>Writing - review & editing</em></li>
     <li class="contribution" data-projects="team-credit" data-roles="resources"><a href="https://forrt.org/contributors/">Team Credit</a> with <em>Resources</em></li>
@@ -3534,21 +3526,21 @@ Educators (POST-Edu) as Project co-lead</li>
 </li>
 
 
-<li class="contributor-group" id="0000-0001-5495-713X">
-  <strong><a href="https://orcid.org/0000-0001-5495-713X">Anna Meier</a></strong> contributed to
-  <ul class="contributions-list">
-    <li class="contribution" data-projects="academic-wheel-of-privilege" data-roles="writing-review-and-editing"><a href="https://forrt.org/awop/">Academic Wheel of Privilege</a> with <em>Writing - review & editing</em></li>
-    <li class="contribution" data-projects="educators-corner" data-roles="writing-original-draft,writing-review-and-editing"><a href="https://forrt.org/educators-corner/">Educators' Corner</a> with <em>Writing - original draft</em> and <em>Writing - review & editing</em></li>
-  </ul>
-</li>
-
-
 <li class="contributor-group" id="0000-0002-1655-5479">
   <strong><a href="https://orcid.org/0000-0002-1655-5479">Maria Meier</a></strong> contributed to
   <ul class="contributions-list">
     <li class="contribution" data-projects="flora-zotero-plugin" data-roles="validation"><a href="https://forrt.org/flora-zotero/">FLoRA Zotero plugin</a> with <em>Validation</em></li>
     <li class="contribution" data-projects="forrt-replication-databases-fred-and-flora" data-roles="investigation"><a href="https://forrt.org/flora">FORRT Replication Databases (FReD and FLoRA)</a> with <em>Investigation</em></li>
     <li class="contribution" data-projects="reversals-and-replications" data-roles="investigation"><a href="https://forrt.org/reversals/">Reversals & Replications</a> with <em>Investigation</em></li>
+  </ul>
+</li>
+
+
+<li class="contributor-group" id="0000-0001-5495-713X">
+  <strong><a href="https://orcid.org/0000-0001-5495-713X">Anna Meier</a></strong> contributed to
+  <ul class="contributions-list">
+    <li class="contribution" data-projects="academic-wheel-of-privilege" data-roles="writing-review-and-editing"><a href="https://forrt.org/awop/">Academic Wheel of Privilege</a> with <em>Writing - review & editing</em></li>
+    <li class="contribution" data-projects="educators-corner" data-roles="writing-original-draft,writing-review-and-editing"><a href="https://forrt.org/educators-corner/">Educators' Corner</a> with <em>Writing - original draft</em> and <em>Writing - review & editing</em></li>
   </ul>
 </li>
 
@@ -4465,16 +4457,16 @@ Educators (POST-Edu) as Project co-lead</li>
 </li>
 
 
-<li class="contributor-group" id="0000-0003-4078-3954">
-  <strong><a href="https://orcid.org/0000-0003-4078-3954">Maike Richter</a></strong> contributed to
+<li class="contributor-group" id="0000-0001-5990-0087">
+  <strong><a href="https://orcid.org/0000-0001-5990-0087">Helene Richter</a></strong> contributed to
   <ul class="contributions-list">
     <li class="contribution" data-projects="replication-research-journal-external-member" data-roles="writing-review-and-editing"><a href="http://replicationresearch.org">Replication Research Journal - External Member</a> with <em>Writing - review & editing</em></li>
   </ul>
 </li>
 
 
-<li class="contributor-group" id="0000-0001-5990-0087">
-  <strong><a href="https://orcid.org/0000-0001-5990-0087">Helene Richter</a></strong> contributed to
+<li class="contributor-group" id="0000-0003-4078-3954">
+  <strong><a href="https://orcid.org/0000-0003-4078-3954">Maike Richter</a></strong> contributed to
   <ul class="contributions-list">
     <li class="contribution" data-projects="replication-research-journal-external-member" data-roles="writing-review-and-editing"><a href="http://replicationresearch.org">Replication Research Journal - External Member</a> with <em>Writing - review & editing</em></li>
   </ul>
@@ -5011,19 +5003,19 @@ Educators (POST-Edu) as Project co-lead</li>
 </li>
 
 
-<li class="contributor-group">
-  <strong>Sofie Smal</strong> contributed to
-  <ul class="contributions-list">
-    <li class="contribution" data-projects="forrt-booklet" data-roles="writing-original-draft"><a href="https://forrt.org/booklet/">FORRT Booklet</a> with <em>Writing - original draft</em></li>
-  </ul>
-</li>
-
-
 <li class="contributor-group" id="0000-0003-4511-9008">
   <strong><a href="https://orcid.org/0000-0003-4511-9008">Iris Smal</a></strong> contributed to
   <ul class="contributions-list">
     <li class="contribution" data-projects="team-games-for-open-science" data-roles="project-lead"><a href="https://forrt.org/games/">Team Games for Open Science</a> as Project lead</li>
     <li class="contribution" data-projects="forrt-booklet" data-roles="conceptualization,project-administration,resources,visualization,writing-original-draft,writing-review-and-editing"><a href="https://forrt.org/booklet/">FORRT Booklet</a> with <em>Conceptualization</em>, <em>Project administration</em>, <em>Resources</em>, <em>Visualization</em>, <em>Writing - original draft</em> and <em>Writing - review & editing</em></li>
+  </ul>
+</li>
+
+
+<li class="contributor-group">
+  <strong>Sofie Smal</strong> contributed to
+  <ul class="contributions-list">
+    <li class="contribution" data-projects="forrt-booklet" data-roles="writing-original-draft"><a href="https://forrt.org/booklet/">FORRT Booklet</a> with <em>Writing - original draft</em></li>
   </ul>
 </li>
 
@@ -5328,7 +5320,7 @@ Educators (POST-Edu) as Project co-lead</li>
 
 
 <li class="contributor-group" id="0009-0004-9131-8053">
-  <strong><a href="https://orcid.org/0009-0004-9131-8053">Rohan Tondlekar</a></strong> contributed to
+  <strong><a href="https://orcid.org/0009-0004-9131-8053">Rohan V. Tondlekar</a></strong> contributed to
   <ul class="contributions-list">
     <li class="contribution" data-projects="flora-extractor" data-roles="software,validation,visualization">FLoRA Extractor with <em>Software</em>, <em>Validation</em> and <em>Visualization</em></li>
     <li class="contribution" data-projects="flora-zotero-plugin" data-roles="software,validation,visualization"><a href="https://forrt.org/flora-zotero/">FLoRA Zotero plugin</a> with <em>Software</em>, <em>Validation</em> and <em>Visualization</em></li>
@@ -5718,7 +5710,7 @@ Educators (POST-Edu) as Project co-lead</li>
 
 
 <li class="contributor-group" id="0000-0002-6043-7349">
-  <strong><a href="https://orcid.org/0000-0002-6043-7349">Max F. Wan</a></strong> contributed to
+  <strong><a href="https://orcid.org/0000-0002-6043-7349">Max Wan</a></strong> contributed to
   <ul class="contributions-list">
     <li class="contribution" data-projects="open-research-book" data-roles="project-co-lead">Open Research Book as Project co-lead</li>
     <li class="contribution" data-projects="forrt-s-clusters" data-roles="writing-original-draft,writing-review-and-editing"><a href="https://forrt.org/clusters/">FORRT's Clusters</a> with <em>Writing - original draft</em> and <em>Writing - review & editing</em></li>
@@ -5829,18 +5821,18 @@ Educators (POST-Edu) as Project co-lead</li>
 </li>
 
 
-<li class="contributor-group" id="0000-0003-3844-3117">
-  <strong><a href="https://orcid.org/0000-0003-3844-3117">Brendan Williams</a></strong> contributed to
-  <ul class="contributions-list">
-    <li class="contribution" data-projects="landscape" data-roles="data-curation">Landscape with <em>Data curation</em></li>
-  </ul>
-</li>
-
-
 <li class="contributor-group" id="0000-0003-0637-7151">
   <strong><a href="https://orcid.org/0000-0003-0637-7151">Emily A. Williams</a></strong> contributed to
   <ul class="contributions-list">
     <li class="contribution" data-projects="glossary" data-roles="writing-review-and-editing"><a href="https://forrt.org/glossary/">Glossary</a> with <em>Writing - review & editing</em></li>
+  </ul>
+</li>
+
+
+<li class="contributor-group" id="0000-0003-3844-3117">
+  <strong><a href="https://orcid.org/0000-0003-3844-3117">Brendan Williams</a></strong> contributed to
+  <ul class="contributions-list">
+    <li class="contribution" data-projects="landscape" data-roles="data-curation">Landscape with <em>Data curation</em></li>
   </ul>
 </li>
 
@@ -5862,6 +5854,14 @@ Educators (POST-Edu) as Project co-lead</li>
 </li>
 
 
+<li class="contributor-group" id="0000-0001-8734-9026">
+  <strong><a href="https://orcid.org/0000-0001-8734-9026">Sophia Wingen</a></strong> contributed to
+  <ul class="contributions-list">
+    <li class="contribution" data-projects="forrt-replication-databases-fred-and-flora" data-roles="software"><a href="https://forrt.org/flora">FORRT Replication Databases (FReD and FLoRA)</a> with <em>Software</em></li>
+  </ul>
+</li>
+
+
 <li class="contributor-group" id="0000-0002-1559-859X">
   <strong><a href="https://orcid.org/0000-0002-1559-859X">Tobias Wingen</a></strong> contributed to
   <ul class="contributions-list">
@@ -5872,16 +5872,8 @@ Educators (POST-Edu) as Project co-lead</li>
 </li>
 
 
-<li class="contributor-group" id="0000-0001-8734-9026">
-  <strong><a href="https://orcid.org/0000-0001-8734-9026">Sophia Wingen</a></strong> contributed to
-  <ul class="contributions-list">
-    <li class="contribution" data-projects="forrt-replication-databases-fred-and-flora" data-roles="software"><a href="https://forrt.org/flora">FORRT Replication Databases (FReD and FLoRA)</a> with <em>Software</em></li>
-  </ul>
-</li>
-
-
 <li class="contributor-group" id="0000-0001-8675-4388">
-  <strong><a href="https://orcid.org/0000-0001-8675-4388">Julia Wolska</a></strong> contributed to
+  <strong><a href="https://orcid.org/0000-0001-8675-4388">Julia K. Wolska</a></strong> contributed to
   <ul class="contributions-list">
     <li class="contribution" data-projects="accessible-feedback-in-academia" data-roles="formal-analysis,resources,translation,writing-original-draft,writing-review-and-editing">Accessible Feedback in Academia with <em>Formal analysis</em>, <em>Resources</em>, <em>Translation</em>, <em>Writing - original draft</em> and <em>Writing - review & editing</em></li>
     <li class="contribution" data-projects="forrt-replication-databases-fred-and-flora" data-roles="investigation"><a href="https://forrt.org/flora">FORRT Replication Databases (FReD and FLoRA)</a> with <em>Investigation</em></li>
@@ -5890,14 +5882,6 @@ Educators (POST-Edu) as Project co-lead</li>
     <li class="contribution" data-projects="pedagogies" data-roles="conceptualization,investigation,writing-original-draft,writing-review-and-editing"><a href="https://forrt.org/pedagogies/">Pedagogies</a> with <em>Conceptualization</em>, <em>Investigation</em>, <em>Writing - original draft</em> and <em>Writing - review & editing</em></li>
     <li class="contribution" data-projects="reversals-and-replications" data-roles="investigation"><a href="https://forrt.org/reversals/">Reversals & Replications</a> with <em>Investigation</em></li>
     <li class="contribution" data-projects="team-outreach" data-roles="conceptualization,investigation,visualization">Team Outreach with <em>Conceptualization</em>, <em>Investigation</em> and <em>Visualization</em></li>
-  </ul>
-</li>
-
-
-<li class="contributor-group">
-  <strong>Eliza A. Woodward</strong> contributed to
-  <ul class="contributions-list">
-    <li class="contribution" data-projects="glossary" data-roles="writing-original-draft"><a href="https://forrt.org/glossary/">Glossary</a> with <em>Writing - original draft</em></li>
   </ul>
 </li>
 
@@ -5912,18 +5896,18 @@ Educators (POST-Edu) as Project co-lead</li>
 </li>
 
 
-<li class="contributor-group" id="0000-0002-9824-9247">
-  <strong><a href="https://orcid.org/0000-0002-9824-9247">Qinyu Xiao</a></strong> contributed to
+<li class="contributor-group">
+  <strong>Eliza A. Woodward</strong> contributed to
   <ul class="contributions-list">
-    <li class="contribution" data-projects="glossary" data-roles="writing-original-draft,writing-review-and-editing"><a href="https://forrt.org/glossary/">Glossary</a> with <em>Writing - original draft</em> and <em>Writing - review & editing</em></li>
+    <li class="contribution" data-projects="glossary" data-roles="writing-original-draft"><a href="https://forrt.org/glossary/">Glossary</a> with <em>Writing - original draft</em></li>
   </ul>
 </li>
 
 
-<li class="contributor-group" id="0009-0001-2274-7506">
-  <strong><a href="https://orcid.org/0009-0001-2274-7506">Yu Xu</a></strong> contributed to
+<li class="contributor-group" id="0000-0002-9824-9247">
+  <strong><a href="https://orcid.org/0000-0002-9824-9247">Qinyu Xiao</a></strong> contributed to
   <ul class="contributions-list">
-    <li class="contribution" data-projects="glossary-chinese-translation" data-roles="resources,translation"><a href="https://forrt.org/glossary/chinese/">Glossary - Chinese Translation</a> with <em>Resources</em> and <em>Translation</em></li>
+    <li class="contribution" data-projects="glossary" data-roles="writing-original-draft,writing-review-and-editing"><a href="https://forrt.org/glossary/">Glossary</a> with <em>Writing - original draft</em> and <em>Writing - review & editing</em></li>
   </ul>
 </li>
 
@@ -5933,6 +5917,14 @@ Educators (POST-Edu) as Project co-lead</li>
   <ul class="contributions-list">
     <li class="contribution" data-projects="team-open-science-in-developing-countries" data-roles="project-co-lead"><a href="https://forrt.org/mapping_os/">Team Open Science in Developing Countries</a> as Project co-lead</li>
     <li class="contribution" data-projects="open-science-in-developing-countries" data-roles="data-curation,investigation,project-administration,writing-original-draft,writing-review-and-editing"><a href="https://forrt.org/os-developing-world/">Open Science in Developing Countries</a> with <em>Data curation</em>, <em>Investigation</em>, <em>Project administration</em>, <em>Writing - original draft</em> and <em>Writing - review & editing</em></li>
+  </ul>
+</li>
+
+
+<li class="contributor-group" id="0009-0001-2274-7506">
+  <strong><a href="https://orcid.org/0009-0001-2274-7506">Yu Xu</a></strong> contributed to
+  <ul class="contributions-list">
+    <li class="contribution" data-projects="glossary-chinese-translation" data-roles="resources,translation"><a href="https://forrt.org/glossary/chinese/">Glossary - Chinese Translation</a> with <em>Resources</em> and <em>Translation</em></li>
   </ul>
 </li>
 
@@ -6176,8 +6168,8 @@ Educators (POST-Edu) as Project co-lead</li>
     <li class="contribution" data-projects="autism-and-open-science" data-roles="writing-review-and-editing">Autism & Open Science with <em>Writing - review & editing</em></li>
     <li class="contribution" data-projects="bmc-pedagogical-communities" data-roles="conceptualization,project-administration,writing-original-draft,writing-review-and-editing"><a href="https://doi.org/10.1186/s13104-022-05944-1">BMC Pedagogical Communities</a> with <em>Conceptualization</em>, <em>Project administration</em>, <em>Writing - original draft</em> and <em>Writing - review & editing</em></li>
     <li class="contribution" data-projects="ceres-manuscript" data-roles="writing-review-and-editing"><a href="https://osf.io/preprints/edarxiv/s73xb">CERES Manuscript</a> with <em>Writing - review & editing</em></li>
-    <li class="contribution" data-projects="educators-corner" data-roles="writing-review-and-editing"><a href="https://forrt.org/educators-corner/">Educators' Corner</a> with <em>Writing - review & editing</em></li>
     <li class="contribution" data-projects="educators-corner" data-roles="conceptualization,project-administration,supervision,validation,writing-original-draft,writing-review-and-editing"><a href="https://forrt.org/educators-corner/">Educators' Corner</a> with <em>Conceptualization</em>, <em>Project administration</em>, <em>Supervision</em>, <em>Validation</em>, <em>Writing - original draft</em> and <em>Writing - review & editing</em></li>
+    <li class="contribution" data-projects="educators-corner" data-roles="writing-review-and-editing"><a href="https://forrt.org/educators-corner/">Educators' Corner</a> with <em>Writing - review & editing</em></li>
     <li class="contribution" data-projects="equity-in-open-scholarship" data-roles="conceptualization,data-curation,investigation,methodology,writing-original-draft,writing-review-and-editing">Equity in Open Scholarship with <em>Conceptualization</em>, <em>Data curation</em>, <em>Investigation</em>, <em>Methodology</em>, <em>Writing - original draft</em> and <em>Writing - review & editing</em></li>
     <li class="contribution" data-projects="flora-notify-preprint-alerts" data-roles="conceptualization,funding-acquisition">FLoRA - Notify preprint alerts with <em>Conceptualization</em> and <em>Funding acquisition</em></li>
     <li class="contribution" data-projects="flora-extractor" data-roles="conceptualization">FLoRA Extractor with <em>Conceptualization</em></li>
