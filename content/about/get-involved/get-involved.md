@@ -5,7 +5,9 @@ active = true  # Activate this widget? true/false
 weight = 15  # Order that this section will appear.
 
 title = "Ongoing Projects"
-subtitle = ""
+subtitle = """*Join the movement for better education*
+---
+"""
 
 [design]
   columns = "1"
