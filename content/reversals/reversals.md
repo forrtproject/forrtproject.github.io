@@ -176,7 +176,7 @@ You can find a list of all effects we are working on [here](https://docs.google.
 
 * **Elderly priming**. that hearing about old age makes people walk slower.
 {{< spoiler text="Statistics" >}}
-* Status: reversed
+* Status: not replicated (no effect with automated timing; slower walking appeared only when experimenters expected it)
 * Original paper: '[Automaticity of social behaviour](https://scholar.google.com/scholar?cluster=3335859380278379099&hl=en&as_sdt=0,5&sciodt=0,5)', Bargh 1996; 2 experiments with Study 2a: n = 30, Study 2b: n = 30. [citations = 5938(GS, October 2021)]​.
 * Critiques:[ Doyen 2012](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0029081#s2) [n=120, citations=757(GS, October 2021)]. [Lakens 2017](https://psyarxiv.com/3m5y9) [meta analysis: citations = 21(GS, October 2021)].  [Pashler et al. 2011](https://web.archive.org/web/20170923093613/http://www.psychfiledrawer.org/replication.php?attempt=MTU%3D) [n=66, citations=21(GS, October 2021)]. 
 * Original effect size: not reported. ​
@@ -455,7 +455,7 @@ You can find a list of all effects we are working on [here](https://docs.google.
 
 * **Hurricane names**. Female-named hurricanes are more deadly than male-named ones. Original effect size was a 176% increase in deaths, driven entirely by four outliers; reanalysis using a greatly expanded historical dataset found a nonsignificant decrease in deaths from female named storms.
 {{< spoiler text="Statistics" >}}
-* Status: reversed
+* Status: not replicated (no significant difference in a larger dataset)
 * Original paper: '[Female hurricanes are deadlier than male hurricanes](https://www.pnas.org/content/111/24/8782)', Jung 2014; observational study, n=92 hurricanes discarding two important outliers. [citations = 113(GS, Mar 2022)].
 * Critiques: [Christensen 2014](https://www.pnas.org/content/111/34/E3497) [same data, citations = 114(GS, March 2022)]. [Smith 2016 ](https://doi.org/10.1016/j.wace.2015.11.006)[expanded Atlantic data, 1979–2014, including tropical storms and non-U.S. deaths, n = 420 storms, and new Pacific data, n = 579 storms; citations = 8(GS, March 2022)].
 * Original effect size: _d_=0.65: [176%](https://www.google.co.uk/search?source=hp&ei=HC1yXtKbBqeRlwTgzplw&q=41.84+%2F+15.15+&oq=41.84+%2F+15.15+&gs_l=psy-ab.3...606.10628..10753...0.0..0.91.412.5......3....1..gws-wiz.......0i7i30j0.raVAib7H4Jk&ved=0ahUKEwjSmciGm6ToAhWnyIUKHWBnBg4Q4dUDCAg&uact=5) increase in deaths from flipping names from relatively masculine to relatively feminine.
@@ -3090,11 +3090,11 @@ You can find a list of all effects we are working on [here](https://docs.google.
 
 * **Scarcity effect - _Resource allocation_**. Poor economic conditions favour resource allocations to daughters over sons.
 {{< spoiler text="Statistics" >}}
-* Status: reversed
+* Status: not replicated (the replication estimate was in the opposite direction but not significant)
 * Original paper: ‘[Spending on daughters versus sons in economic recessions](https://doi.org/10.1093/jcr/ucv023)’, Durante et al. 2015; within-subjects design, n=198. [citation=57(GS, November 2021)]​.
 * Critiques: [O’Donnell et al. 2021](https://doi.org/10.1073/pnas.2103313118) [n=573, citations=0(GS, November 2021)].
 * Original effect size: _r_= .179.
-* Replication effect size: O’Donnell et al.: _r_= -.082.
+* Replication effect size: O’Donnell et al.: _r_= -.082 (not significant).
 {{< /spoiler >}}
 
 * **Scarcity effect - _Planning_**. Consumers who feel resource constrained shift to engage in relatively more priority planning, rather than efficiency planning.
