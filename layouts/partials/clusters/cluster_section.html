@@ -87,14 +87,10 @@
                data-focus="{{ $card.focus }}" data-type="{{ $card.resource_type }}"
                data-specificity="{{ cond (eq $card.specificity "Narrow") "narrow" "broad" }}">
             <div class="fr-resource">
-              <div class="fr-tags">
-                {{ with $card.focus }}<span class="tag tag-focus">{{ . }}</span>{{ end }}
-                {{ with $card.resource_type }}<span class="tag tag-type">{{ . }}</span>{{ end }}
-              </div>
-              <div class="fr-title">{{ partial "clusters/rich_text.html" $card.title }}</div>
+              {{ partial "clusters/card_head.html" (dict "focus" $card.focus "type" $card.resource_type "title" $card.title "doi" .doi "cls" "fr") }}
               {{ with $card.summary }}<div class="fr-summary">{{ . }}</div>{{ end }}
               <div class="fr-actions">
-                <button class="fr-ref-trigger" data-doi="{{ .doi }}">
+                <button type="button" class="fr-ref-trigger" data-doi="{{ .doi }}" aria-haspopup="dialog" aria-label="Reference for {{ $card.short_ref }}">
                   <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="12" height="12" rx="2"/><path d="M5 5h6M5 8h6M5 11h3"/></svg>
                   {{ $card.short_ref }}
                 </button>
@@ -147,18 +143,12 @@
                data-focus="{{ $card.focus }}" data-type="{{ $card.resource_type }}"
                data-specificity="{{ cond (eq $card.specificity "Narrow") "narrow" "broad" }}">
             <div class="fc-body">
-              <div class="fc-top-row">
-                <div class="fc-tags">
-                  {{ with $card.focus }}<span class="tag tag-focus">{{ . }}</span>{{ end }}
-                  {{ with $card.resource_type }}<span class="tag tag-type">{{ . }}</span>{{ end }}
-                </div>
-                <div class="fc-title">{{ partial "clusters/rich_text.html" $card.title }}</div>
-              </div>
+              {{ partial "clusters/card_head.html" (dict "focus" $card.focus "type" $card.resource_type "title" $card.title "doi" .doi "cls" "fc") }}
               {{ with $card.summary }}
               <div class="fc-summary">{{ . }}</div>
               {{ end }}
               <div class="fc-actions">
-                <button class="fr-ref-trigger" data-doi="{{ .doi }}">
+                <button type="button" class="fr-ref-trigger" data-doi="{{ .doi }}" aria-haspopup="dialog" aria-label="Reference for {{ $card.short_ref }}">
                   <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="12" height="12" rx="2"/><path d="M5 5h6M5 8h6M5 11h3"/></svg>
                   {{ $card.short_ref }}
                 </button>

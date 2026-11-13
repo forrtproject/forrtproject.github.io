@@ -38,6 +38,15 @@
   }
 
   /** The same text without markup, for copying and the PDF. */
+  /** "practice/tools" -> "Practice/tools", "Journal Article" -> "Journal article"; words in capitals stay
+      (layouts/partials/clusters/sentence_case.html has the same rule). */
+  function sentenceCase(s) {
+    return String(s).trim().split(' ').map(function (w, i) {
+      if (i === 0) return w.charAt(0).toUpperCase() + w.slice(1);
+      return w === w.toUpperCase() ? w : w.toLowerCase();
+    }).join(' ');
+  }
+
   function plainText(s) {
     return decodeEntities(s).replace(/<\/?(?:i|em|scp)>/gi, '').replace(/\s+/g, ' ').trim();
   }
@@ -101,16 +110,14 @@
       }
       var html = '';
       // Tags + title
-      html += '<div class="ref-popup-tags">';
-      if (r.focus) html += '<span class="tag tag-focus">' + escHtml(r.focus) + '</span>';
-      if (r.resource_type) html += '<span class="tag tag-type">' + escHtml(r.resource_type) + '</span>';
-      html += '</div>';
+      var kind = [r.focus, r.resource_type].filter(Boolean).map(sentenceCase).join(' \u00b7 ');
+      if (kind) html += '<p class="card-kind">' + escHtml(kind) + '</p>';
       html += '<div class="ref-popup-title">' + richText(r.title) + '</div>';
 
       // APA
       if (r.apa) {
         html += '<div class="ref-section">';
-        html += '<div class="ref-section-label">APA Reference</div>';
+        html += '<div class="ref-section-label">APA reference</div>';
         html += '<div class="ref-apa">' + richText(r.apa) + '</div>';
         html += '<div class="ref-copy-row">';
         html += '<button class="ref-copy-btn" data-copy="apa" data-doi="' + escHtml(doi) + '">' +

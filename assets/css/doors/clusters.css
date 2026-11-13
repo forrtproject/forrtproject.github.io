@@ -2406,3 +2406,15 @@ body.clusters-mobile-nav-open #just-os-widget{display:none}
 .disciplines-areas{display:flex;flex-wrap:wrap;gap:6px;margin:-4px 0 14px;padding:0;list-style:none}
 .disciplines-areas li{margin:0}
 .disciplines-areas .badge{padding:4px 10px;border-radius:999px;font:600 15px/1.3 var(--text)}
+
+/* Resource cards: the kind of resource as quiet text ("Overview · Paper"), not filled chips, and the
+   title as an underlined link to the resource. The reference button is a secondary action beside Save. */
+.card-kind{margin:0 0 2px;font:400 15px/1.35 var(--text);color:var(--soft);letter-spacing:0;text-transform:none}
+.fc-card .fc-body{min-width:0;flex:1}
+.fc-title a,.fr-title a,.ref-popup-title a{color:var(--link);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+.fc-title a:hover,.fr-title a:hover,.ref-popup-title a:hover{color:var(--ink)}
+.fc-title,.fr-title{margin-bottom:4px}
+.fc-summary a{text-decoration:underline;text-underline-offset:3px}
+.fr-ref-trigger{color:var(--soft);border:1px solid rgba(0,0,0,.1);border-radius:4px;padding:.2rem .5rem}
+.fr-ref-trigger:hover{color:var(--ink);border-color:var(--ink)}
+.ref-popup .card-kind{margin-bottom:4px}
