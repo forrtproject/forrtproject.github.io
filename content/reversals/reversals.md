@@ -201,13 +201,13 @@ You can find a list of all effects we are working on [here](https://docs.google.
 * Replication effect size: All effect sizes are located in O’Donnell et al. 2018: Aczel: PD = -1.35%. Aveyard: PD = -3.99%. Baskin: PD = 4.08%. Bialobrzeska: PD = -.12%. Boot: PD = -4.99%.  Braithwaite: PD = 4.01%. Chartier: PD = 3.23%. DiDonato: PD = 3.14%. Finnigan: PD: 2.89%. Karpinski: PD = 1.38%. Keller: PD = .17%. Klein: PD =.88%.  Koppel: PD = -.20%. McLatchie: PD = -2.16%.  Newell: PD = 1.66%. O’Donnell: PD = 1.58%. Phillipp: PD = 43%. Ropovik: PD = -.48%. Saunders: PD = -1.87%. Schulte-Mecklenbeck: PD = 4.24%. Shanks: PD = .11%. Steele: PD = -.58%. Steffens: PD = -.84%. Susa: PD = -.63%. Tamayo: PD = 1.41%.  Meta-analytic estimate: PD = 0.02%. 
 {{< /spoiler >}}
 
-* **Moral priming (cleanliness)**. Participants exposed to physical cleanliness were shown to reduce the severity of their moral judgments. Well-powered direct replications by Johnson et al. found no effect; Huang (2014) found a small effect only among participants who put little effort into their responses. 
+* **Moral priming (cleanliness)**. Participants exposed to physical cleanliness were shown to reduce the severity of their moral judgments. Well-powered direct replications by Johnson et al. found no effect; Huang (2014) found a small effect only when participants were told to do the priming task quickly, with little effort. 
 {{< spoiler text="Statistics" >}}
 * Status: mixed
 * Original paper: [With a Clean Conscience: Cleanliness Reduces the Severity of Moral Judgments](https://doi.org/10.1111/j.1467-9280.2008.02227.x), Schnall, Benton, and  Harvey, 2008; 2 experiments with Study 1: n = 40, Study 2: n = 44. [citations=645 (GS November 2021)].
 * Critiques: [Johnson et al.](https://econtent.hogrefe.com/doi/full/10.1027/1864-9335/a000186)<span style="text-decoration:underline;"> </span> 2014, [Study 1: n = 208, Study 2: n = 126. citations=128(GS November 2021)]. [Huang 2014](https://doi.org/10.3389/fpsyg.2014.01276) [Study 2: n = 440; Study 2a, a direct replication of Study 2: n = 436].
 * Original effect size:  Study 1: d = -0.60, 95% CI [-1.23, 0.04]; Study 2: d = -0.85, 95% CI [-1.47, -0.22]
-* Replication effect size: Johnson et al.: Study 1: d = -0.01, 95% CI [-0.28, 0.26]; Study 2: d = 0.01, 95% CI [-0.34, 0.36]. Huang, Study 2: low response effort, d = -0.29, p = .04; high response effort, d = 0.19, p = .16.
+* Replication effect size: Johnson et al.: Study 1: d = -0.01, 95% CI [-0.28, 0.26]; Study 2: d = 0.01, 95% CI [-0.34, 0.36]. Huang, Study 2 (effort on the priming task): low effort, d = -0.29, p = .04; high effort, d = 0.19, p = .16.
 {{< /spoiler >}}
 
 * **Moral priming (contemplation)**. Participants exposed to a moral-reminder prime would demonstrate reduced cheating. 
