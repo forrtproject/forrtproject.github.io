@@ -1,45 +1,58 @@
 {{/* Search toolbar + card filters + mobile nav toggle (shared by hub and cluster subpages) */}}
 <div class="clusters-controls mb-3">
 
-  {{/* Filter bar: search + Focus/Type tags + specificity toggle */}}
+  {{/* Filter bar: search, then Focus, Type and the specialist toggle. On a phone those three sit in a
+       closed "Filters" disclosure under a full-width search; from 761 px the disclosure is open and its
+       summary hidden (the script after it, and featured-resources.js on resize). */}}
   <div class="fr-filter-bar" id="clusters-filter-bar">
     <div class="fr-filter-group fr-filter-search-group">
-      <input type="text" id="clusters-inline-search-input" class="fr-search-input"
+      <input type="search" id="clusters-inline-search-input" class="fr-search-input"
              placeholder="Search resources..." aria-label="Search clusters and resources" autocomplete="off" spellcheck="false">
     </div>
     {{ $tags := hugo.Data.filter_tags }}
-    <div class="fr-filter-group">
-      <span class="fr-filter-label">Focus</span>
-      <div class="fr-filter-tags" data-filter="focus" id="fr-global-focus-tags">
-        <button class="fr-tag-btn active" data-value="all">All</button>
-        {{ with $tags }}{{ range .focus }}
-        <button class="fr-tag-btn" data-value="{{ . }}">{{ . }}</button>
-        {{ end }}{{ end }}
+    <details class="fr-filter-more" id="fr-filter-more">
+      <summary>Filters<span class="fr-filter-active" id="fr-filter-active"></span></summary>
+      <div class="fr-filter-more__body">
+        <div class="fr-filter-group">
+          <span class="fr-filter-label" id="fr-focus-label">Focus</span>
+          <div class="fr-filter-tags" data-filter="focus" id="fr-global-focus-tags" role="group" aria-labelledby="fr-focus-label">
+            <button type="button" class="fr-tag-btn active" data-value="all" aria-pressed="true">All</button>
+            {{ with $tags }}{{ range .focus }}
+            <button type="button" class="fr-tag-btn" data-value="{{ . }}" aria-pressed="false">{{ . }}</button>
+            {{ end }}{{ end }}
+          </div>
+        </div>
+        <div class="fr-filter-group">
+          <span class="fr-filter-label" id="fr-type-label">Type</span>
+          <div class="fr-filter-tags" data-filter="type" id="fr-global-type-tags" role="group" aria-labelledby="fr-type-label">
+            <button type="button" class="fr-tag-btn active" data-value="all" aria-pressed="true">All</button>
+            {{ with $tags }}{{ range .type }}
+            <button type="button" class="fr-tag-btn" data-value="{{ . }}" aria-pressed="false">{{ . }}</button>
+            {{ end }}{{ end }}
+          </div>
+        </div>
+        <div class="fr-filter-group fr-filter-group--specialist">
+          <label class="fr-specificity-toggle">
+            <input type="checkbox" id="fr-global-specificity-checkbox" aria-describedby="fr-specialist-hint">
+            <span>Show specialist resources</span>
+          </label>
+          <span class="fr-filter-hint" id="fr-specialist-hint">Resources on narrow, specialist topics stay hidden until this is ticked.</span>
+        </div>
       </div>
-    </div>
-    <div class="fr-filter-group">
-      <span class="fr-filter-label">Type</span>
-      <div class="fr-filter-tags" data-filter="type" id="fr-global-type-tags">
-        <button class="fr-tag-btn active" data-value="all">All</button>
-        {{ with $tags }}{{ range .type }}
-        <button class="fr-tag-btn" data-value="{{ . }}">{{ . }}</button>
-        {{ end }}{{ end }}
-      </div>
-    </div>
-    <div class="fr-filter-group">
-      <label class="fr-specificity-toggle">
-        <input type="checkbox" id="fr-global-specificity-checkbox">
-        <span>Show specialist resources</span>
-      </label>
-    </div>
+    </details>
+    <script>(function () { var d = document.getElementById('fr-filter-more'); if (matchMedia('(min-width: 761px)').matches) d.open = true; })();</script>
     <button type="button" class="fr-clear-btn" id="fr-global-clear" hidden
             aria-label="Clear all filters and show everything">Clear filters</button>
   </div>
 
-  {{/* Inline search results panel (kept for cluster/subcluster name search) */}}
-  <div id="clusters-inline-search-panel" class="clusters-inline-search__panel">
-    <div id="clusters-inline-search-toolbar" class="clusters-inline-search__toolbar-host" hidden></div>
-    <div id="clusters-inline-search-results" class="clusters-inline-search__results-body" aria-live="polite"></div>
+  {{/* What the filters leave: a count while any is set, or a short message when nothing matches.
+       The message is the live region; its link and Clear button stay outside it. The search filters the
+       resources in place, so the old drop-down of search hits (clusters-page.js, still used on
+       /disciplines/) is not on these pages: it counted differently and announced a second result. */}}
+  <div class="fr-filter-result" id="fr-filter-result">
+    <p class="fr-filter-status" id="fr-filter-status" role="status" aria-live="polite"></p>
+    <a class="fr-filter-result__go" id="fr-filter-result-go" href="#" hidden>Go to the first match</a>
+    <button type="button" class="fr-filter-result__clear" id="fr-filter-result-clear" hidden>Clear filters</button>
   </div>
 
   <button class="btn btn-sm btn-outline-secondary d-lg-none clusters-mobile-toggle" type="button"

@@ -719,6 +719,20 @@
     var specCheckbox = document.getElementById('fr-global-specificity-checkbox');
     var searchInput = document.getElementById('clusters-inline-search-input');
     var clearBtn = document.getElementById('fr-global-clear');
+    var more = document.getElementById('fr-filter-more');
+    var activeLabel = document.getElementById('fr-filter-active');
+    var statusEl = document.getElementById('fr-filter-status');
+    var resultClear = document.getElementById('fr-filter-result-clear');
+    var resultGo = document.getElementById('fr-filter-result-go');
+    var onHub = !!document.querySelector('.clusters-overview');
+
+    /* The Filters disclosure is open from 761 px, where its summary is hidden, and closed on a phone. */
+    if (more && window.matchMedia) {
+      var wide = window.matchMedia('(min-width: 761px)');
+      var syncMore = function () { more.open = wide.matches; };
+      if (wide.addEventListener) wide.addEventListener('change', syncMore);
+      else if (wide.addListener) wide.addListener(syncMore);
+    }
 
     // --- Pre-cache card data so filtering never queries the DOM for text ---
     var sectionCache = [];
@@ -768,8 +782,12 @@
       var group = btn.closest('.fr-filter-tags');
       if (!group) return;
       e.preventDefault();
-      group.querySelectorAll('.fr-tag-btn').forEach(function (b) { b.classList.remove('active'); });
+      group.querySelectorAll('.fr-tag-btn').forEach(function (b) {
+        b.classList.remove('active');
+        b.setAttribute('aria-pressed', 'false');
+      });
       btn.classList.add('active');
+      btn.setAttribute('aria-pressed', 'true');
       applyGlobalFilters();
     });
 
@@ -785,11 +803,14 @@
         if (searchInput) searchInput.focus();
       });
     }
+    if (resultClear && clearBtn) resultClear.addEventListener('click', function () { clearBtn.click(); });
 
     function resetGroupToAll(group) {
       if (!group) return;
       group.querySelectorAll('.fr-tag-btn').forEach(function (b) {
-        b.classList.toggle('active', b.getAttribute('data-value') === 'all');
+        var all = b.getAttribute('data-value') === 'all';
+        b.classList.toggle('active', all);
+        b.setAttribute('aria-pressed', String(all));
       });
     }
 
@@ -821,6 +842,9 @@
       var tokens = query ? query.split(/\s+/) : [];
       var isFiltered = activeFocus !== 'all' || activeType !== 'all' || tokens.length > 0;
       if (clearBtn) clearBtn.hidden = !isFiltered;
+      /* The Filters summary counts the choices that differ from the start: a focus, a type, specialist shown. */
+      var active = (activeFocus !== 'all' ? 1 : 0) + (activeType !== 'all' ? 1 : 0) + (showNarrow ? 1 : 0);
+      if (activeLabel) activeLabel.textContent = active ? ' (' + active + ' active)' : '';
 
       // --- Pass 1: compute visibility from cached data (no DOM reads) ---
       var sectionResults = [];
@@ -854,6 +878,32 @@
         }
 
         sectionResults.push({ matchCount: matchCount, cardVis: cardVis, ownTextMatches: ownTextMatches });
+      }
+
+      /* What is left, said once: a count while a filter or search is set, a message when nothing is. */
+      var shownCards = 0, allCards = 0;
+      for (var r = 0; r < sectionResults.length; r++) {
+        shownCards += sectionResults[r].matchCount;
+        allCards += sectionCache[r].cards.length;
+      }
+      if (statusEl) {
+        var message = '';
+        if (isFiltered && shownCards === 0) message = 'No resources match.';
+        else if (isFiltered) message = shownCards + ' of ' + allCards + ' resources shown' + (onHub ? ' in the clusters below.' : '.');
+        if (statusEl.textContent !== message) statusEl.textContent = message;
+        var none = isFiltered && shownCards === 0;
+        if (resultClear) resultClear.hidden = !none;
+        /* One Clear button at a time: the message's while nothing matches, the bar's otherwise. */
+        if (clearBtn && none) clearBtn.hidden = true;
+        /* On /clusters/ the matches are below the overview, so a link goes to the first cluster with one. */
+        if (resultGo) {
+          var first = null;
+          for (var g = 0; g < sectionResults.length && !first; g++) {
+            if (sectionResults[g].matchCount) first = sectionCache[g].el.closest('.cluster-section');
+          }
+          resultGo.hidden = !(onHub && isFiltered && first);
+          if (first) resultGo.setAttribute('href', '#' + first.id);
+        }
       }
 
       // --- Pass 2: batch all DOM writes ---
