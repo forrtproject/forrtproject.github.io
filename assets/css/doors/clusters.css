@@ -952,7 +952,7 @@
 .clusters-map__line { fill: none; stroke: var(--soft); stroke-width: 2; stroke-linecap: round; }
 .clusters-map__seg path:first-of-type, .clusters-map__label rect, .clusters-map__pill rect { fill: var(--c); }
 .clusters-map__icon { fill: #fff; }
-.clusters-map__label text { font-size: 20px; font-weight: 700; }
+.clusters-map__label text { font-size: 32px; font-weight: 700; }
 .clusters-map__pill text { font-size: 17px; font-weight: 400; }
 .clusters-map__disc { fill: #fff; stroke: var(--res); stroke-width: 7; }
 .clusters-map__cluster { transition: opacity 0.15s; }
@@ -2488,3 +2488,23 @@ body.clusters-mobile-nav-open #just-os-widget{display:none}
     radial-gradient(farthest-side at 50% 100%,rgba(38,45,53,.18),rgba(38,45,53,0)) center bottom/100% 12px no-repeat scroll,
     var(--surface)}
 }
+
+/* /clusters/ diagram as the way in: the cluster pointed at, or focused in the list after it, is described
+   in a line that sticks to the foot of the window while the drawing runs below it (desktop only; phones
+   show the hub and the list). */
+.clusters-map__info{position:sticky;bottom:0;z-index:3;margin:8px 0 0;padding:10px 16px;min-height:76px;background:var(--surface);border-radius:var(--r-large);display:flex;align-items:center}
+.clusters-map__info[hidden]{display:none}
+.clusters-map__hint{margin:0;font-size:16px;color:var(--soft)}
+.clusters-map__about{display:flex;gap:12px;align-items:flex-start}
+.clusters-map__about[hidden]{display:none}
+.clusters-map__num{flex:0 0 30px;height:30px;border-radius:50%;background:var(--c);color:#fff;font:700 15px/30px var(--text);text-align:center}
+.clusters-map__name{margin:0;font:600 18px/1.3 var(--text);color:var(--ink)}
+.clusters-map__desc{margin:2px 0 0;font-size:16px;line-height:1.4;color:var(--ink);max-width:80ch}
+.clusters-map__count{margin:2px 0 0;font-size:15px;color:var(--soft)}
+@media (max-width:760px){.clusters-map__info{display:none}}
+.clusters-map__art .clusters-map__label,.clusters-map__art .clusters-map__seg{cursor:pointer}
+.clusters-overview__list li[data-cluster]:hover .clusters-overview__name{color:var(--ink)}
+.clusters-map__info{bottom:var(--banner,0px)}
+.clusters-map__art .clusters-map__label:focus{outline:none}
+.clusters-map__art .clusters-map__label:focus-visible rect{stroke:var(--ink);stroke-width:7px;paint-order:stroke}
+.clusters-map__art .clusters-map__label:focus-visible{outline:3px solid var(--ink);outline-offset:4px}

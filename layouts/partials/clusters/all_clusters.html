@@ -13,18 +13,9 @@
 
 <div class="clusters-layout">
 
-  {{ partial "clusters/clusters_controls.html" . }}
-
-  {{/* The task first: the filters, then the clusters as a linked list. The introduction and the diagram
-       follow, and then every cluster with its references, which the filters act on. */}}
-  {{ partial "clusters/overview_list.html" (dict "data" $data "arrowColors" $arrowColors) }}
-
-  <section class="clusters-intro-section" aria-labelledby="clusters-about-heading">
-    <h2 class="clusters-section-heading" id="clusters-about-heading">How the clusters fit together</h2>
-    {{ partial "clusters/intro.html" . }}
-  </section>
-
   <h2 class="clusters-section-heading" id="clusters-all-heading">Every cluster and its references</h2>
+
+  {{ partial "clusters/clusters_controls.html" . }}
 
   <div class="row">
     {{ partial "clusters/sidebar_nav.html" (dict "data" $data "arrowColors" $arrowColors "link_mode" "anchor") }}

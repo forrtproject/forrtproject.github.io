@@ -21,7 +21,8 @@
 {{/* Sizes, in drawing units (one unit is one CSS pixel at full size). */}}
 {{ $fs := 17.0 }}{{ $lh := 21.0 }}{{ $padX := 14.0 }}{{ $padY := 8.0 }}{{ $pillMax := 272.0 }}{{ $pillGap := 7.0 }}
 {{ $colGap := 12.0 }}{{ $colMax := 520.0 }}{{ $stackGap := 26.0 }}
-{{ $lfs := 20.0 }}{{ $llh := 24.0 }}{{ $lpadX := 16.0 }}{{ $lpadY := 11.0 }}{{ $labelMin := 230.0 }}{{ $labelMax := 300.0 }}{{ $labelGap := 14.0 }}
+{{/* Cluster names at 32 units, so that at 1440 px, where the drawing shows at about half size, they read at 15 px or more. */}}
+{{ $lfs := 32.0 }}{{ $llh := 37.0 }}{{ $lpadX := 16.0 }}{{ $lpadY := 12.0 }}{{ $labelMin := 300.0 }}{{ $labelMax := 440.0 }}{{ $labelGap := 14.0 }}
 {{ $Ro := 165.0 }}{{ $Ri := 104.0 }}{{ $disc := 94.0 }}{{ $dMin := 26.0 }}{{ $dMax := 205.0 }}{{ $margin := 24.0 }}
 
 {{/* 1. Each cluster: its pills, their columns and its label. */}}
@@ -138,22 +139,25 @@
 
 {{ $hub := printf `<circle class="clusters-map__disc" cx="%.1f" cy="%.1f" r="%.0f"></circle><image href="%s" x="%.1f" y="%.1f" width="124" height="130"></image>` $cx $cy $disc ("img/FORRT%20Badge%20-%20Color%20-%20v4.webp" | relURL) (sub $cx 62) (sub $cy 65) | safeHTML }}
 <figure class="clusters-map" data-clusters-map>
-  {{/* The drawing is for pointers and eyes: it is hidden from assistive technology and none of its
-       links is a tab stop. The list below carries the same links for everyone. */}}
+  {{/* The drawing is the way into the clusters on a wide screen. Each cluster name is a link and a tab stop,
+       named "Cluster N: name", in cluster order; pointing at a cluster or focusing its name lights it up and
+       describes it in the line below the drawing. The ring segments repeat those links and the sub-cluster
+       pills are in the text list, so both are out of the tab order and hidden from assistive technology.
+       Phones get the hub and the linked list of clusters after the figure (clusters/overview_list.html). */}}
   <div class="clusters-map__frame">
-  <svg class="clusters-map__art" viewBox="0 0 {{ $W }} {{ $H }}" width="{{ $W }}" height="{{ $H }}" aria-hidden="true" focusable="false">
+  <svg class="clusters-map__art" viewBox="0 0 {{ $W }} {{ $H }}" width="{{ $W }}" height="{{ $H }}" role="group" aria-label="Diagram of the {{ $n }} clusters round the FORRT badge; each cluster name opens its page">
     {{ range sort $laid "i" }}
     {{ $seg := index $ring (string .num) }}
     {{ $lx := sub .mid (div .lw 2) }}
     {{ $ly := cond .up (sub $cy .d .lh) (add $cy .d) }}
     <g class="clusters-map__cluster" data-cluster="{{ .num }}" style="--c: {{ .color | safeCSS }}">
-      <path class="clusters-map__line" d="M{{ $seg.from }}L{{ printf "%.1f %.1f" .mid (add $ly (div .lh 2)) }}"></path>
-      <a href="{{ .href }}" tabindex="-1" class="clusters-map__seg">
+      <path class="clusters-map__line" aria-hidden="true" d="M{{ $seg.from }}L{{ printf "%.1f %.1f" .mid (add $ly (div .lh 2)) }}"></path>
+      <a href="{{ .href }}" tabindex="-1" aria-hidden="true" class="clusters-map__seg">
         <title>{{ .name }}</title>
         <path d="{{ $seg.seg }}"></path>
         <path class="clusters-map__icon" transform="{{ $seg.icon }}" d="{{ .icon.d }}"></path>
       </a>
-      <a href="{{ .href }}" tabindex="-1" class="clusters-map__label">
+      <a href="{{ .href }}" class="clusters-map__label" aria-label="Cluster {{ .num }}: {{ .name }}">
         <title>{{ .name }}</title>
         <rect x="{{ printf "%.1f" $lx }}" y="{{ printf "%.1f" $ly }}" width="{{ .lw }}" height="{{ .lh }}" rx="12"></rect>
         {{ $lmid := .mid }}<text>{{ range $li, $t := .lines }}<tspan x="{{ printf "%.1f" $lmid }}" y="{{ printf "%.1f" (add $ly $lpadY (mul $llh (add $li 0.5))) }}" dy=".35em">{{ $t }}</tspan>{{ end }}</text>
@@ -164,7 +168,7 @@
         {{ $px := add $x0 (mul .col (add $s.colW $colGap)) }}
         {{ $py := cond $s.up (sub $ly $labelGap (sub (index $s.colH (string .col)) $pillGap)) (add $ly $s.lh $labelGap) }}
         {{ $py = add $py .y }}
-      <a href="{{ .href }}" tabindex="-1" class="clusters-map__pill">
+      <a href="{{ .href }}" tabindex="-1" aria-hidden="true" class="clusters-map__pill">
         <title>{{ .title }}</title>
         <rect x="{{ printf "%.1f" $px }}" y="{{ printf "%.1f" $py }}" width="{{ $s.colW }}" height="{{ .h }}" rx="{{ cond (gt (len .lines) 1) 16 (div .h 2) }}"></rect>
         <text>{{ $tx := add $px (div $s.colW 2) }}{{ range $li, $t := .lines }}<tspan x="{{ printf "%.1f" $tx }}" y="{{ printf "%.1f" (add $py $padY (mul $lh (add $li 0.5))) }}" dy=".35em">{{ $t }}</tspan>{{ end }}</text>
@@ -172,7 +176,7 @@
       {{ end }}
     </g>
     {{ end }}
-    {{ $hub }}
+    <g aria-hidden="true">{{ $hub }}</g>
   </svg>
   </div>
   {{/* Phones get the hub and the cluster labels; the pills are in the list and the full-size view. */}}
@@ -183,6 +187,13 @@
       {{ end }}
       {{ $hub }}
     </svg>
+  </div>
+  {{/* The cluster pointed at or focused: its number, name, first sentence and counts, copied from the list
+       of clusters after the figure (so it repeats it, and is hidden from assistive technology). It sticks to
+       the foot of the window while the drawing runs below it. */}}
+  <div class="clusters-map__info" aria-hidden="true" hidden>
+    <p class="clusters-map__hint">Point at a cluster, or Tab to its name, to see what it covers. Select it to open its page.</p>
+    <div class="clusters-map__about" hidden><span class="clusters-map__num"></span><div><p class="clusters-map__name"></p><p class="clusters-map__desc"></p><p class="clusters-map__count"></p></div></div>
   </div>
   <figcaption class="clusters-map__caption">
     <button type="button" class="clusters-map__enlarge" hidden>Open full size</button>
@@ -210,6 +221,51 @@
     });
   }
   point(art);
+
+  /* The info line under the drawing: the cluster pointed at in the drawing, or focused or pointed at in the
+     list of clusters (.clusters-overview), which also lights it up in the drawing. */
+  var info = map.querySelector('.clusters-map__info');
+  /* The list comes after this script, so the line is set up once the page has been read. */
+  document.addEventListener('DOMContentLoaded', function () {
+  var list = document.querySelector('.clusters-overview__list');
+  if (info && list) {
+    info.hidden = false;
+    var hint = info.querySelector('.clusters-map__hint'), about = info.querySelector('.clusters-map__about');
+    var text = function (li, sel) { var el = li.querySelector(sel); return el ? el.textContent.trim() : ''; };
+    var show = function (n) {
+      var li = n && list.querySelector('li[data-cluster="' + n + '"]');
+      hint.hidden = !!li; about.hidden = !li;
+      if (!li) return;
+      about.style.setProperty('--c', li.style.getPropertyValue('--c'));
+      about.querySelector('.clusters-map__num').textContent = n;
+      var name = li.querySelector('.clusters-overview__name').cloneNode(true);
+      name.querySelectorAll('.visually-hidden').forEach(function (el) { el.remove(); });
+      about.querySelector('.clusters-map__name').textContent = name.textContent.trim();
+      about.querySelector('.clusters-map__desc').textContent = text(li, '.clusters-overview__desc');
+      about.querySelector('.clusters-map__count').textContent = text(li, '.clusters-overview__count');
+    };
+    var light = function (n) {
+      art.classList.toggle('is-pointing', !!n);
+      art.querySelectorAll('.clusters-map__cluster').forEach(function (g) { g.classList.toggle('is-active', g.getAttribute('data-cluster') === String(n)); });
+    };
+    art.querySelectorAll('.clusters-map__cluster').forEach(function (g) {
+      var n = g.getAttribute('data-cluster'), name = g.querySelector('.clusters-map__label');
+      g.addEventListener('mouseenter', function () { show(n); });
+      g.addEventListener('mouseleave', function () { show(null); });
+      if (name) {
+        name.addEventListener('focus', function () { show(n); light(n); });
+        name.addEventListener('blur', function () { show(null); light(null); });
+      }
+    });
+    list.querySelectorAll('li[data-cluster]').forEach(function (li) {
+      var n = li.getAttribute('data-cluster'), link = li.querySelector('a');
+      var on = function () { show(n); light(n); }, off = function () { show(null); light(null); };
+      li.addEventListener('mouseenter', on); li.addEventListener('mouseleave', off);
+      if (link) { link.addEventListener('focus', on); link.addEventListener('blur', off); }
+    });
+  }
+  });
+
   var open = map.querySelector('.clusters-map__enlarge');
   if (typeof HTMLDialogElement !== 'function') return;
   var dialog = document.createElement('dialog');

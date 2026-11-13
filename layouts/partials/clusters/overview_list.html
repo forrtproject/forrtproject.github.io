@@ -12,7 +12,7 @@
     {{ $text := $c.description | default "" | replaceRE "​" "" | strings.TrimSpace }}
     {{ $first := replaceRE `^([\s\S]*?[.!?])(\s[\s\S]*)?$` "$1" $text }}
     {{ if or (not (findRE `[.!?]$` $first)) (findRE `(?i)sub-clusters?` $first) }}{{ $first = "" }}{{ end }}
-    <li style="--c: {{ index $marks (mod $ci (len $marks)) | safeCSS }}">
+    <li data-cluster="{{ $num }}" style="--c: {{ index $marks (mod $ci (len $marks)) | safeCSS }}">
       <span class="clusters-overview__num" aria-hidden="true">{{ $num }}</span>
       <div class="clusters-overview__text">
         <a class="clusters-overview__name" href="{{ printf "/clusters/cluster-%d/" $num | relURL }}"><span class="visually-hidden">Cluster {{ $num }}: </span>{{ $c.name }}</a>

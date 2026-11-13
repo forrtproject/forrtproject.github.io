@@ -43,9 +43,10 @@ Hard checks (exit 1 if any fails):
   19. No page loads EmailOctopus or reCAPTCHA before a visitor subscribes.
   20. Cluster pages render publication-title markup (<i>, <em>, <scp>) instead of
      showing it as literal or escaped text, and at least one cluster page exists.
-  21. The /clusters/ illustration (svg.clusters-map__art) is hidden from assistive technology
-      and holds no tab stop (every link has tabindex="-1"), and every in-page link in the
-      clusters map reaches an id on the page.
+  21. In the /clusters/ illustration (svg.clusters-map__art) every link is either a tab stop with
+      an aria-label and a target (the cluster names) or has tabindex="-1" and aria-hidden="true";
+      a drawing with tab stops is not aria-hidden; and every in-page link in the clusters map
+      reaches an id on the page.
 
 Report-only sections (never fail): pages with no <h1>, the
 site-wide share of images that carry both width and height, pages whose
@@ -640,11 +641,20 @@ def check_clusters_map(public_dir):
     failures = []
     if not parser.arts:
         failures.append("clusters/index.html: no svg.clusters-map__art")
-    failures += ["clusters/index.html: the illustration is not aria-hidden"
-                 for art in parser.arts if art.get("aria-hidden") != "true"]
-    stops = [a.get("href", "") for a in parser.art_links if a.get("tabindex") != "-1"]
+    # Each link in the drawing is either a tab stop with a name and a target (the cluster names), or out of
+    # the tab order and hidden from assistive technology (the ring segments and sub-cluster pills, which
+    # repeat those links or are listed in the text list). A drawing with tab stops is not itself hidden.
+    stops = [a for a in parser.art_links if a.get("tabindex") != "-1"]
     if stops:
-        failures.append("clusters/index.html: %d links in the illustration are tab stops, e.g. %s" % (len(stops), stops[0]))
+        failures += ["clusters/index.html: the illustration has tab stops but is aria-hidden"
+                     for art in parser.arts if art.get("aria-hidden") == "true"]
+    unnamed = [a.get("href", "") for a in stops if not (a.get("aria-label") or "").strip() or not (a.get("href") or "").strip()]
+    if unnamed:
+        failures.append("clusters/index.html: %d tab stops in the illustration lack a name or target, e.g. %s" % (len(unnamed), unnamed[0]))
+    exposed = [a.get("href", "") for a in parser.art_links if a.get("tabindex") == "-1" and a.get("aria-hidden") != "true"
+               and not any(art.get("aria-hidden") == "true" for art in parser.arts)]
+    if exposed:
+        failures.append("clusters/index.html: %d links out of the tab order are not aria-hidden, e.g. %s" % (len(exposed), exposed[0]))
     missing = sorted({h for h in parser.map_hrefs if unquote(h[1:]) not in parser.ids})
     failures += ["clusters/index.html: %s has no target" % h for h in missing]
     return failures
@@ -674,7 +684,7 @@ def main(public_dir):
         "17. every breadcrumb link has a target": [p.path for p in pages if any(not h.strip() for h in p.crumb_links)],
         "19. no page loads EmailOctopus or reCAPTCHA before a visitor subscribes": check_third_party_forms(pages),
         "20. cluster pages show no literal <i>/<em>/<scp> title markup": check_cluster_title_markup(public_dir),
-        "21. the clusters illustration holds no tab stop and its links have targets": check_clusters_map(public_dir),
+        "21. the clusters illustration's tab stops are named and its links have targets": check_clusters_map(public_dir),
     }
     conditional = check_conditional_assets(pages)
     results["3. conditional highlight.js / mermaid loading"] = [

@@ -275,16 +275,22 @@ def clusters_map_failures(page):
 
 
 class ClustersMapCheck(unittest.TestCase):
-    MAP = ('<figure class="clusters-map"><svg class="clusters-map__art" aria-hidden="true">'
-           '<g><a href="#cluster-1" tabindex="-1"><rect></rect><text><tspan>One</tspan></text></a></g></svg>'
+    MAP = ('<figure class="clusters-map"><svg class="clusters-map__art" role="group" aria-label="Clusters">'
+           '<g><a href="/clusters/cluster-1/" aria-label="Cluster 1: One"><rect></rect><text><tspan>One</tspan></text></a>'
+           '<a href="/clusters/cluster-1/#c1-a" tabindex="-1" aria-hidden="true"><rect></rect></a></g></svg>'
            '<details><summary>List</summary><ol><li><a href="#c1-a">A</a></li></ol></details></figure>'
            '<section id="cluster-1"><div id="c1-a"></div></section><a href="#elsewhere">not in the map</a>')
 
-    def test_hidden_drawing_with_targets_passes(self):
+    def test_named_tab_stops_hidden_rest_and_targets_pass(self):
         self.assertEqual(clusters_map_failures(self.MAP), [])
 
-    def test_tab_stop_visible_drawing_or_missing_target_fails(self):
-        for change in (('tabindex="-1"', ""), ('aria-hidden="true"', ""), ('id="c1-a"', 'id="c1-b"')):
+    def test_a_drawing_hidden_with_no_tab_stops_passes(self):
+        hidden = self.MAP.replace('role="group"', 'aria-hidden="true"').replace(' aria-label="Cluster 1: One"', ' tabindex="-1"')
+        self.assertEqual(clusters_map_failures(hidden), [])
+
+    def test_unnamed_stop_exposed_link_hidden_drawing_or_missing_target_fails(self):
+        for change in ((' aria-label="Cluster 1: One"', ""), (' aria-hidden="true"', ""),
+                       ('role="group"', 'aria-hidden="true"'), ('id="c1-a"', 'id="c1-b"')):
             with self.subTest(change):
                 self.assertEqual(len(clusters_map_failures(self.MAP.replace(*change))), 1)
 
