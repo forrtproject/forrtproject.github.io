@@ -183,11 +183,6 @@
       {{ end }}
       {{ $hub }}
     </svg>
-    <ol class="clusters-map__chips">
-      {{ range sort $laid "i" }}
-      <li><a href="{{ .href }}" style="--c: {{ .color | safeCSS }}"><svg viewBox="0 0 {{ .icon.w }} {{ .icon.h }}" aria-hidden="true" focusable="false"><path d="{{ .icon.d }}"></path></svg><span>{{ .name }} <small>{{ len .pills }} sub-clusters</small></span></a></li>
-      {{ end }}
-    </ol>
   </div>
   <figcaption class="clusters-map__caption">
     <button type="button" class="clusters-map__enlarge" hidden>Open full size</button>

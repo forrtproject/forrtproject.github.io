@@ -979,14 +979,7 @@
 .clusters-map__compact { display: none; }
 .clusters-map__hub { display: block; width: min(240px, 70%); margin: 0 auto 1rem; }
 .clusters-map__segment { fill: var(--c); }
-.clusters-map__chips { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.5rem; }
-.clusters-map__chips a {
-  display: flex; align-items: center; gap: 0.8rem; padding: 0.55rem 0.9rem; border-radius: 12px;
-  background: var(--c); color: #fff; font-weight: 700; line-height: 1.25; text-decoration: none;
-}
-.clusters-map__chips svg { flex: 0 0 1.4rem; height: 1.4rem; fill: currentColor; }
-.clusters-map__chips small { display: block; font-size: 0.85rem; font-weight: 400; }
-/* Phones: the hub and the cluster labels; the pills are in the list and the full-size view. */
+/* Phones: the hub only; the clusters are in the linked list above it, the pills in the text list and the full-size view. */
 @media (max-width: 760px) {
   .clusters-map__frame { display: none; }
   .clusters-map__compact { display: block; }
@@ -994,7 +987,6 @@
 @media (forced-colors: active) {
   .clusters-map__art text, .clusters-map__icon { fill: CanvasText; }
   .clusters-map__seg path:first-of-type, .clusters-map__segment, .clusters-map__label rect, .clusters-map__pill rect { fill: Canvas; stroke: CanvasText; }
-  .clusters-map__chips a { border: 1px solid CanvasText; }
 }
 
 /* Stack on small screens */
@@ -2457,3 +2449,24 @@ body.clusters-mobile-nav-open #just-os-widget{display:none}
 }
 .fr-filter-result__go{font-size:16px;text-decoration:underline;text-underline-offset:3px}
 .fr-filter-result__go[hidden]{display:none}
+
+/* /clusters/: the clusters as a plain linked list after the filters, each numbered in its own colour,
+   in two columns on a wide screen; then the introduction and diagram, then every cluster in full. */
+.clusters-section-heading,.clusters-overview__heading{font:var(--display-weight) clamp(26px,2.4vw,32px)/1.2 var(--display);color:var(--ink);margin:36px 0 14px}
+.clusters-overview__heading{margin-top:20px}
+.clusters-overview__list{list-style:none;margin:0 0 8px;padding:0;display:grid;gap:18px 40px}
+@media (min-width:992px){.clusters-overview__list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.clusters-overview__list li{display:flex;gap:12px;align-items:flex-start;margin:0}
+.clusters-overview__num{flex:0 0 30px;height:30px;border-radius:50%;background:var(--c);color:#fff;font:700 15px/30px var(--text);text-align:center;margin-top:1px}
+.clusters-overview__text{min-width:0}
+.clusters-overview__name{font:600 18px/1.35 var(--text);color:var(--link);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+.clusters-overview__name:hover{color:var(--ink)}
+.clusters-overview__desc{margin:2px 0 0;font-size:16px;line-height:1.45;color:var(--ink);max-width:60ch;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.clusters-overview__count{margin:2px 0 0;font-size:15px;color:var(--soft)}
+.clusters-intro-section .clusters-intro{margin:0}
+/* Each cluster panel numbers itself in its own colour, and on /clusters/ its name links to its page. */
+.cluster-section .cluster-number{background:var(--c,rgba(0,0,0,.1));color:#fff}
+.cluster-title a{color:var(--link);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
+.cluster-title a:hover{color:var(--ink)}
+/* A jump to a cluster or sub-cluster stops below the pinned filters. */
+.cluster-section,.acc-section{scroll-margin-top:calc(var(--clusters-controls-height,0px) + 90px)}

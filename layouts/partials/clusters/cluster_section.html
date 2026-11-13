@@ -1,4 +1,5 @@
-{{/* One cluster block (used on /clusters/ and /clusters/cluster-N/). Expects dict: cluster, ci, colors */}}
+{{/* One cluster block (used on /clusters/ and /clusters/cluster-N/). Expects dict: cluster, ci, colors, marks;
+     link true (on /clusters/) makes the heading a link to the cluster's own page. */}}
 {{ $cluster := .cluster }}
 {{ $ci := .ci }}
 {{ $colors := .colors }}
@@ -19,11 +20,12 @@
 {{ end }}
 {{ $hasFeatured := and $featuredEnabled $featuredData }}
 
-<section id="{{ $cid }}" class="cluster-section" style="background-color: {{ $color | safeCSS }};">
+{{ $mark := "var(--soft)" }}{{ with .marks }}{{ $mark = index . (mod $ci (len .)) }}{{ end }}
+<section id="{{ $cid }}" class="cluster-section" style="background-color: {{ $color | safeCSS }}; --c: {{ $mark | safeCSS }};">
   <div class="cluster-header">
     <h2 class="cluster-title">
       <span class="cluster-number">{{ (int $cluster.number) }}</span>
-      {{ $cluster.name }}
+      {{ if .link }}<a href="{{ printf "/clusters/cluster-%d/" (int $cluster.number) | relURL }}">{{ $cluster.name }}</a>{{ else }}{{ $cluster.name }}{{ end }}
     </h2>
     <span class="cluster-stats">{{ len $cluster.sub_clusters }} sub-clusters &middot; {{ $totalPubs }} references</span>
     <button class="acc-toggle-all" data-cluster="{{ $cid }}">Expand all</button>

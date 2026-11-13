@@ -1,0 +1,25 @@
+{{/* /clusters/: the eleven clusters as a plain linked list, each with its number in its colour, the first
+     sentence of its description (left out where that sentence only counts sub-clusters) and its counts.
+     Expects dict: data (clusters_v4), arrowColors. */}}
+{{ $clusters := .data.clusters }}
+{{ $marks := .arrowColors }}
+<section class="clusters-overview" aria-labelledby="clusters-overview-heading">
+  <h2 class="clusters-overview__heading" id="clusters-overview-heading">The {{ len $clusters }} clusters</h2>
+  <ol class="clusters-overview__list">
+    {{ range $ci, $c := $clusters }}
+    {{ $num := int $c.number }}
+    {{ $refs := 0 }}{{ range $c.sub_clusters }}{{ $refs = add $refs (len .publications) }}{{ end }}
+    {{ $text := $c.description | default "" | replaceRE "​" "" | strings.TrimSpace }}
+    {{ $first := replaceRE `^([\s\S]*?[.!?])(\s[\s\S]*)?$` "$1" $text }}
+    {{ if or (not (findRE `[.!?]$` $first)) (findRE `(?i)sub-clusters?` $first) }}{{ $first = "" }}{{ end }}
+    <li style="--c: {{ index $marks (mod $ci (len $marks)) | safeCSS }}">
+      <span class="clusters-overview__num" aria-hidden="true">{{ $num }}</span>
+      <div class="clusters-overview__text">
+        <a class="clusters-overview__name" href="{{ printf "/clusters/cluster-%d/" $num | relURL }}"><span class="visually-hidden">Cluster {{ $num }}: </span>{{ $c.name }}</a>
+        {{ with $first }}<p class="clusters-overview__desc">{{ . }}</p>{{ end }}
+        <p class="clusters-overview__count">{{ len $c.sub_clusters }} sub-clusters · {{ $refs }} references</p>
+      </div>
+    </li>
+    {{ end }}
+  </ol>
+</section>

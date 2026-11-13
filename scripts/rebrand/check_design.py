@@ -638,7 +638,7 @@ CLUSTERS_MAP_PHONE = """() => {
   const shown = (el) => !!el && el.getClientRects().length > 0;
   return {frame: shown(document.querySelector('.clusters-map__frame')),
     hub: shown(document.querySelector('.clusters-map__hub')),
-    chips: [...document.querySelectorAll('.clusters-map__chips a')].filter(shown).length,
+    chips: [...document.querySelectorAll('.clusters-overview__list a')].filter(shown).length,
     clusters: document.querySelectorAll('.clusters-map__list > ol > li').length};
 }"""
 
@@ -666,7 +666,7 @@ def check_clusters_map(browser, base, failures):
     phone = page.evaluate(CLUSTERS_MAP_PHONE)
     expect(not phone["frame"] and phone["hub"], "at 390 px the hub shows instead of the full drawing")
     expect(phone["clusters"] > 0 and phone["chips"] == phone["clusters"],
-           f"at 390 px every cluster has a label ({phone['chips']} of {phone['clusters']})")
+           f"at 390 px every cluster is linked in the list of clusters ({phone['chips']} of {phone['clusters']})")
     page.context.close()
 
 
