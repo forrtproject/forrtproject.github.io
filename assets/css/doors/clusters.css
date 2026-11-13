@@ -2406,7 +2406,7 @@ body.clusters-mobile-nav-open #just-os-widget{display:none}
 .fc-title a,.fr-title a,.ref-popup-title a{color:var(--link);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
 .fc-title a:hover,.fr-title a:hover,.ref-popup-title a:hover{color:var(--ink)}
 .fc-title,.fr-title{margin-bottom:4px}
-.fc-summary a{text-decoration:underline;text-underline-offset:3px}
+.fc-summary a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
 .fr-ref-trigger{color:var(--soft);border:1px solid rgba(0,0,0,.1);border-radius:4px;padding:.2rem .5rem}
 .fr-ref-trigger:hover{color:var(--ink);border-color:var(--ink)}
 .ref-popup .card-kind{margin-bottom:4px}
@@ -2465,7 +2465,7 @@ body.clusters-mobile-nav-open #just-os-widget{display:none}
 .clusters-overview__count{margin:2px 0 0;font-size:15px;color:var(--soft)}
 .clusters-intro-section .clusters-intro{margin:0}
 /* Each cluster panel numbers itself in its own colour, and on /clusters/ its name links to its page. */
-.cluster-section .cluster-number{background:var(--c,rgba(0,0,0,.1));color:#fff}
+.cluster-section[style*="--c"] .cluster-number{background:var(--c);color:#fff;font-size:15px;width:1.8em;height:1.8em}
 .cluster-title a{color:var(--link);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
 .cluster-title a:hover{color:var(--ink)}
 /* A jump to a cluster or sub-cluster stops below the pinned filters. */

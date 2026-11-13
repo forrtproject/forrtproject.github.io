@@ -91,10 +91,10 @@
   .list-item-image{display:flex;flex-direction:column-reverse;align-items:flex-start;gap:12px}
   .list-item-image img{width:120px;height:72px}
 }
-.cluster-resources-intro{max-width:36em;margin:0 0 6px;font-size:18px;line-height:1.5}
+.cluster-resources-intro{max-width:32em;margin:0 0 6px;font-size:18px;line-height:1.5}
 .cluster-resources-intro a{text-decoration:underline;text-underline-offset:3px}
 /* /forrt_clusters/<term>/: one column of underlined titles, each with its type as plain text. */
-.article-style .cluster-resources{display:block;margin:10px 0 0;padding:0;list-style:none;max-width:44em}
+.article-style .cluster-resources{display:block;margin:10px 0 0;padding:0;list-style:none;max-width:none}
 .article-style .list-filter~ul.cluster-resources>li{margin:0;padding:7px 0;border:0;font-size:17px;line-height:1.4}
 .cluster-resources a{color:var(--link);font-weight:600;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
 .cluster-resources a:hover{color:var(--ink)}
