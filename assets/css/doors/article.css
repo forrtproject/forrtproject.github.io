@@ -120,10 +120,10 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 }
 @media(max-width:1000px){.article-layout .article-card{order:1}}
 /* Sections that open: the spoiler and expand shortcodes. */
-.article-layout .article-style .spoiler{margin:0 0 12px;background:var(--surface);border-radius:var(--r-small)}
-.article-layout .article-style .spoiler>summary{padding:10px 14px;font-weight:600;font-size:18px;line-height:1.35;color:var(--link);cursor:pointer}
+.article-layout .article-style .spoiler{margin:0 0 var(--box-gap);background:var(--surface);border-radius:var(--r-small)}
+.article-layout .article-style .spoiler>summary{padding:var(--box-pad-y) var(--box-pad);font-weight:600;font-size:18px;line-height:1.35;color:var(--link);cursor:pointer}
 .article-layout .article-style .spoiler>summary:hover{color:var(--ink)}
-.article-layout .article-style .spoiler-body{padding:2px 14px 12px;font-size:18px;line-height:1.55}
+.article-layout .article-style .spoiler-body{padding:2px var(--box-pad) var(--box-pad);font-size:18px;line-height:1.55}
 .article-layout .article-style .spoiler-body>:last-child{margin-bottom:0}
 /* Disclosures hold prose, so they stay at reading width unless a PDF is open inside one. */
 .article-layout-wide .article-style .spoiler:not([open]),.article-layout-wide .article-style .spoiler:not(:has(.pdf-viewer)){max-width:580px}
@@ -172,11 +172,15 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .sc-page .crumbs{margin-bottom:18px}
 .sc-page #sc-container{padding:0;font-family:var(--text);max-width:none}
 /* A team's name heads its own row, so it cannot end one row with its people starting the next. */
-.sc-page .sc-grid .sc-title-card{flex:0 0 100%;grid-column:1/-1;width:100%;aspect-ratio:auto;padding:10px 16px;flex-direction:row;align-items:baseline;justify-content:flex-start;gap:10px}
+.sc-page .sc-grid .sc-title-card{flex:0 0 100%;grid-column:1/-1;width:100%;aspect-ratio:auto;padding:var(--box-pad-y) var(--box-pad);flex-direction:row;align-items:baseline;justify-content:flex-start;gap:10px}
 .sc-page .sc-title-card :is(.sc-title-label,.sc-title-text){margin:0}
 .sc-page .sc-title-card .sc-title-text{font-size:17px}
 .sc-page .sc-title-card .sc-cbar{display:none}
 .sc-team{display:contents}
+/* On a phone the cards and team names share one grid: the box gap between them, and a team's name further
+   from the cards of the team before it than from its own. */
+.sc-page .sc-grid{gap:var(--box-gap)}
+@media(max-width:760px){.sc-page .sc-grid .sc-title-card:not(:first-child){margin-top:var(--box-gap)}}
 @media(min-width:761px){
   .sc-page .sc-grid{gap:28px 40px}
   .sc-page .sc-team{display:flex;flex-wrap:wrap;align-content:flex-start;gap:1rem;width:calc(var(--sc-members)*190px + (var(--sc-members) - 1)*1rem);max-width:100%}
@@ -213,7 +217,7 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .doi-link,.cite-us-text a{text-decoration:underline;text-underline-offset:3px}
 .toc-phone{display:none}
 @media(max-width:1000px){
-  .toc-phone{display:block;margin:0 0 20px;padding:12px 16px;background:var(--surface);border-radius:var(--r-small)}
+  .toc-phone{display:block;margin:0 0 20px;padding:var(--box-pad-y) var(--box-pad);background:var(--surface);border-radius:var(--r-small)}
   .toc-phone-label{margin:0 0 4px;font:700 15px/1.3 var(--text);letter-spacing:.05em;text-transform:uppercase;color:var(--soft)}
   .toc-phone.is-short .toc-extra{display:none}
   .toc-phone-more{margin:6px 0 0;padding:4px 0;border:0;background:none;font:600 16px/1.35 var(--text);color:var(--ink);text-decoration:underline;text-underline-offset:3px;cursor:pointer}

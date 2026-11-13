@@ -232,8 +232,8 @@ image:
 }
 .am-prog-half::after { content: ""; flex: 1; height: 1px; background: var(--am-rule); }
 .am-prog-session {
-  margin: 0 0 10px;
-  padding: 8px 12px 4px;
+  margin: 0 0 var(--box-gap);
+  padding: 10px var(--box-pad) 4px;
   border: 1px solid var(--am-rule);
   border-left: 4px solid var(--am-accent);
   border-radius: 8px;
