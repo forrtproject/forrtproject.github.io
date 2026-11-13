@@ -1,6 +1,6 @@
 # Designing pages for forrt.org
 
-How pages on forrt.org should look and behave, for anyone changing a template, a style or the layout of a page. The site uses the Doors design, which came out of community feedback on the earlier site and a design brief; this guide holds what still applies from both, together with the principles learnt from applying Doors across the site's templates.
+How pages on forrt.org should look and behave, for anyone changing a template, a style or the layout of a page, on any part of the site. The site uses the Doors design, which came out of community feedback on the earlier site and a design brief; this guide holds what still applies from both, together with the principles learnt from applying Doors across the site's templates.
 
 Styles live in `assets/css/doors/`, with colours and type defined once in `tokens.css`. Shared page parts are in `layouts/partials/doors/` and `layouts/shortcodes/`.
 
@@ -21,7 +21,7 @@ Styles live in `assets/css/doors/`, with colours and type defined once in `token
 
 ## 3. One clear next step
 
-- Each screen has one main action. Other actions are quieter: smaller, outlined or plain links.
+- Each screen leads with its main action, or with up to three equal ones. Other actions are quieter: smaller, outlined or plain links.
 - Action labels say what the visitor will do ("Teach with open materials", "Explore replications"), not what FORRT has.
 - Prefer routes into FORRT's own pages. A link that leaves forrt.org says where it goes.
 - Every kind of submission starts at `/submit/`, which sends people on to the right form. Do not call submitting "contributing": contributors join the work and are listed as such.
@@ -30,8 +30,8 @@ Styles live in `assets/css/doors/`, with colours and type defined once in `token
 
 Every repeated device has to earn its place. In practice:
 
-- Pills and chips are for controls: filters, toggles, language switches. A list of links, such as related glossary terms, is a plain list.
-- Search and filters belong on long lists (the glossary, the resources directory, Reversals). A list of fewer than about twenty items needs neither.
+- Pills and chips are for controls: filters, toggles, language switches. A list of links, such as related glossary terms, is a plain list. One exception: an item may carry one quiet tag for a category that visitors filter by on the same page, such as a resource's purpose.
+- Search and filters belong on long lists (the glossary, the resources directory, Reversals). A list of fewer than about twenty items needs neither, and a longer one may do without when another clear route through it exists, such as a contents list.
 - Tags: a tag links to the tags page only when at least five pages and at most a quarter of all pages share it (`layouts/partials/functions/tag_counts.html`). Rarer tags are plain keywords; tags on more pages are not shown, because they no longer tell pages apart.
 - In long lists of long entries, show the first two lines of each description (three on a phone) with a "more" button. Without JavaScript the full text shows.
 - Cards for actions are the brick cards of `action_cards`. A set of bricks uses several area colours, never three near-identical ones. Lists of tools are rows: a linked title and a sentence, not boxes.
@@ -52,7 +52,7 @@ Every repeated device has to earn its place. In practice:
 
 ## 7. Type and reading
 
-- Newsreader for headings, Source Sans 3 for text. Body text is 18 px; nothing is smaller than 15 px.
+- Newsreader for headings, Source Sans 3 for text. Body text is 18 px. Nothing is smaller than 15 px, except footnotes and similar small print, which may be 14 px.
 - No italics anywhere outside reference lists, including menus, captions, labels and quotes. Emphasis is semi-bold.
 - Headings, buttons and labels are in sentence case.
 - Reading lines stay under 80 characters, measured on the rendered lines. The narrow reading column is for prose; tables, tools, programmes and directories may use the full width.
@@ -108,6 +108,6 @@ Images in the first screen are not lazy-loaded.
 
 1. Branch from the branch you are changing (`rebrand-doors` until launch, then `main`). Put each change that someone would judge on its own in its own PR.
 2. Open the PR description with what changes for visitors. Then show, for each change, a before-and-after crop of the affected part at 390 px and at 1440 px, with one line above it saying what changed. Full-page screenshots side by side are too hard to compare.
-3. List the choices that a reviewer may want to reverse under **Decisions to review**.
+3. List the choices that a reviewer may want to reverse under **Decisions to review**, including any place where the change departs from this guide, with the reason. When the same departure comes up a second time, change the guide instead.
 4. Run the checks above and say which passed. A change to a page's description needs an entry in `scripts/rebrand/allowed_changes.txt`.
 5. For a larger review, have people or models rate a handful of representative pages from screenshots at both widths, and also try the live build to find problems that screenshots hide. Treat their suggestions as input: record which you accept and why, and judge them against this guide.

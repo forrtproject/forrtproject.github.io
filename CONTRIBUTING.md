@@ -128,6 +128,8 @@ For browser edits, GitHub handles branch creation and opening the PR; see [stagi
 
 All proposed changes must be made on a feature branch and submitted via a Pull Request to `main`. We do not use a separate development branch.
 
+If your change affects how pages look or behave, follow the design principles in [`DESIGN.md`](DESIGN.md).
+
 1. **Fork and clone** — fork the repository to your account and clone it locally (if you haven't already).
 
 2. **Create a feature branch** from an up-to-date `main` (commit or stash any local work first):
