@@ -143,7 +143,8 @@
        named "Cluster N: name", in cluster order; pointing at a cluster or focusing its name lights it up and
        describes it in the line below the drawing. The ring segments repeat those links and the sub-cluster
        pills are in the text list, so both are out of the tab order and hidden from assistive technology.
-       Phones get the hub and the linked list of clusters after the figure (clusters/overview_list.html). */}}
+       Below 1256 px, where the names would be under 15 px, the hub and the linked list of clusters after the
+       figure (clusters/overview_list.html) take its place. */}}
   <div class="clusters-map__frame">
   <svg class="clusters-map__art" viewBox="0 0 {{ $W }} {{ $H }}" width="{{ $W }}" height="{{ $H }}" role="group" aria-label="Diagram of the {{ $n }} clusters round the FORRT badge; each cluster name opens its page">
     {{ range sort $laid "i" }}

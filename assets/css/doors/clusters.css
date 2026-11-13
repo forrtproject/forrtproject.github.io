@@ -979,8 +979,9 @@
 .clusters-map__compact { display: none; }
 .clusters-map__hub { display: block; width: min(240px, 70%); margin: 0 auto 1rem; }
 .clusters-map__segment { fill: var(--c); }
-/* Phones: the hub only; the clusters are in the linked list above it, the pills in the text list and the full-size view. */
-@media (max-width: 760px) {
+/* Below 1256 px the full drawing would set cluster names under 15 px, so phones, tablets and small laptops get
+   the hub, and the clusters in the linked list after it; the pills are in the text list and the full-size view. */
+@media (max-width: 1255px) {
   .clusters-map__frame { display: none; }
   .clusters-map__compact { display: block; }
 }
@@ -2501,7 +2502,7 @@ body.clusters-mobile-nav-open #just-os-widget{display:none}
 .clusters-map__name{margin:0;font:600 18px/1.3 var(--text);color:var(--ink)}
 .clusters-map__desc{margin:2px 0 0;font-size:16px;line-height:1.4;color:var(--ink);max-width:80ch}
 .clusters-map__count{margin:2px 0 0;font-size:15px;color:var(--soft)}
-@media (max-width:760px){.clusters-map__info{display:none}}
+@media (max-width:1255px){.clusters-map__info{display:none}}
 .clusters-map__art .clusters-map__label,.clusters-map__art .clusters-map__seg{cursor:pointer}
 .clusters-overview__list li[data-cluster]:hover .clusters-overview__name{color:var(--ink)}
 .clusters-map__info{bottom:var(--banner,0px)}
