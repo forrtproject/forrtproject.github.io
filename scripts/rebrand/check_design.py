@@ -627,19 +627,19 @@ CLUSTERS_MAP_LAYOUT = """() => {
       if (hit) { crossings.push(own.text + ' crosses ' + hit.text); break; }
     }
   });
-  const list = document.querySelector('.clusters-map__list > ol');
+  const list = document.querySelector('.clusters-overview__list');
   return {overflow: boxes.filter((b) => b.over.length).map((b) => b.over[0]), overlaps, crossings,
     fonts: [...document.fonts].filter((f) => f.status === 'loaded').map((f) => `${f.family} ${f.weight}`),
     pills: boxes.filter((b) => !b.label).length, labels: boxes.filter((b) => b.label).length,
-    listed: list ? [list.children.length, list.querySelectorAll('ul > li').length] : [0, 0]};
+    listed: list ? [list.children.length, list.querySelectorAll('.clusters-overview__subs li').length] : [0, 0]};
 }"""
 
 CLUSTERS_MAP_PHONE = """() => {
   const shown = (el) => !!el && el.getClientRects().length > 0;
   return {frame: shown(document.querySelector('.clusters-map__frame')),
     hub: shown(document.querySelector('.clusters-map__hub')),
-    chips: [...document.querySelectorAll('.clusters-overview__list a')].filter(shown).length,
-    clusters: document.querySelectorAll('.clusters-map__list > ol > li').length};
+    chips: [...document.querySelectorAll('.clusters-overview__name')].filter(shown).length,
+    clusters: document.querySelectorAll('.clusters-overview__list > li').length};
 }"""
 
 

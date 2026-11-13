@@ -1,5 +1,7 @@
 {{/* /clusters/: the eleven clusters as a plain linked list, each with its number in its colour, the first
-     sentence of its description (left out where that sentence only counts sub-clusters) and its counts.
+     sentence of its description (left out where that sentence only counts sub-clusters), and its counts as
+     the label of a disclosure that lists its sub-clusters, linked to their places on its page. The map's
+     info bar copies the name, sentence and counts from here.
      Expects dict: data (clusters_v4), arrowColors. */}}
 {{ $clusters := .data.clusters }}
 {{ $marks := .arrowColors }}
@@ -17,7 +19,11 @@
       <div class="clusters-overview__text">
         <a class="clusters-overview__name" href="{{ printf "/clusters/cluster-%d/" $num | relURL }}"><span class="visually-hidden">Cluster {{ $num }}: </span>{{ $c.name }}</a>
         {{ with $first }}<p class="clusters-overview__desc">{{ . }}</p>{{ end }}
-        <p class="clusters-overview__count">{{ len $c.sub_clusters }} sub-clusters · {{ $refs }} references</p>
+        {{ $base := printf "/clusters/cluster-%d/" $num | relURL }}
+        <details class="clusters-overview__subs">
+          <summary class="clusters-overview__count">{{ len $c.sub_clusters }} sub-clusters · {{ $refs }} references</summary>
+          <ul>{{ range $c.sub_clusters }}<li><a href="{{ partial "clusters/sub_href.html" (dict "base" $base "num" $num "name" .name) }}">{{ .name | strings.TrimSpace }}</a></li>{{ end }}</ul>
+        </details>
       </div>
     </li>
     {{ end }}

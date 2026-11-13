@@ -20,18 +20,20 @@
         <p class="list-count">All {{ len .Data.Pages }} teaching resources are in the directory, where you can search and filter them.</p>
         <p><a class="btn btn-primary" href="{{ relref . "/resources" }}">Open the resources directory</a></p>
       {{ else if and (eq (.Type | lower) "forrt_clusters") (ne .Kind "taxonomy") }}
-        {{/* Linked titles (two columns on wide screens), each with its type as plain text, under the search of
-             shortcodes/list_filter.html (same markup; site.js filters the list items after the h2 that
-             follows it and keeps the count). The directory's cluster filter uses the current clusters
-             (forrt_clusters_new), not these tags, so there is no pre-filtered link to it. */}}
-        <p class="cluster-resources-intro">Resources in the FORRT database tagged with this cluster. The eleven current clusters, with their sub-clusters and references, are on the <a href="{{ relref . "/clusters" }}">clusters page</a>.</p>
+        {{/* One toolbar: the search of shortcodes/list_filter.html (same markup; site.js filters the list
+             items after the h2 that follows it and keeps the count) with the routes to the directory and the
+             clusters beside it. The directory's cluster filter uses the current clusters (forrt_clusters_new),
+             not these tags, so there is no pre-filtered link to it. Then linked titles, two columns on wide
+             screens, each with its type as plain text. */}}
         <div class="article-style cluster-resources-list">
-          <div class="list-filter" data-noun="resources" hidden>
+          <div class="list-filter topic-tools" data-noun="resources" hidden>
             <label for="list-filter-input">Search these resources</label>
             <input type="search" id="list-filter-input" placeholder="A word from the title or type" autocomplete="off">
             <p class="list-filter-count" aria-live="polite"></p>
+            <p class="topic-tools__links">Search and filter all resources in the <a href="{{ relref . "/resources" }}">resources directory</a>, or browse <a href="{{ relref . "/clusters" }}">the {{ with hugo.Data.clusters_v4 }}{{ len .clusters }}{{ else }}11{{ end }} clusters</a>.</p>
           </div>
-          <h2 id="all-resources">All {{ len .Data.Pages }} resources, A to Z</h2>
+          <noscript><p class="topic-tools__links">Search and filter all resources in the <a href="{{ relref . "/resources" }}">resources directory</a>, or browse <a href="{{ relref . "/clusters" }}">the clusters</a>.</p></noscript>
+          <h2 id="all-resources" class="visually-hidden">All {{ len .Data.Pages }} resources, A to Z</h2>
           <ul class="cluster-resources">
             {{ range sort .Data.Pages "Title" }}<li><a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ with .Params.material_type }}<span class="cluster-resources__type"> · {{ delimit . ", " }}</span>{{ end }}</li>{{ end }}
           </ul>

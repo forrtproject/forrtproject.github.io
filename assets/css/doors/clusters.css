@@ -964,13 +964,6 @@
   border: 1px solid var(--line); border-radius: var(--r-small); padding: 0.35rem 0.9rem; cursor: pointer;
 }
 .clusters-map__enlarge:hover, .clusters-map__close:hover { border-color: var(--ink); }
-.clusters-map__list { flex: 1 1 20rem; }
-.clusters-map__list summary { cursor: pointer; color: var(--link); font-size: 0.95rem; }
-.clusters-map__list ol { margin: 0.75rem 0 0; padding-left: 1.4rem; columns: 2 22rem; column-gap: 2rem; font-size: 0.95rem; }
-.clusters-map__list li { break-inside: avoid; margin-bottom: 0.5rem; }
-.clusters-map__list ul { margin: 0.2rem 0 0; padding-left: 1.1rem; font-size: 0.9rem; }
-.clusters-map__list ul li { margin: 0; }
-.clusters-map__list a { color: var(--ink); }
 .clusters-map__dialog { width: 96vw; max-width: none; height: 94vh; max-height: none; padding: 0; border: 0; border-radius: var(--r-large); background: var(--page); }
 .clusters-map__dialog::backdrop { background: rgba(38, 45, 53, 0.6); }
 .clusters-map__close { position: absolute; top: 0.75rem; right: 0.75rem; z-index: 1; box-shadow: 0 1px 4px rgba(38, 45, 53, 0.25); }
@@ -2402,7 +2395,8 @@ body.clusters-mobile-nav-open #just-os-widget{display:none}
 
 /* Resource cards: the kind of resource as quiet text ("Overview · Paper"), not filled chips, and the
    title as an underlined link to the resource. The reference button is a secondary action beside Save. */
-.card-kind{margin:0 0 2px;font:400 15px/1.35 var(--text);color:var(--soft);letter-spacing:0;text-transform:none}
+.card-kind{margin:0 0 6px;font:400 15px/1.35 var(--text);color:var(--soft);letter-spacing:0;text-transform:none}
+.card-purpose{display:inline-block;margin-right:6px;padding:1px 9px;border:1px solid var(--line);border-radius:var(--r-small,6px);background:var(--surface);color:var(--ink);font-weight:600}
 .fc-card .fc-body{min-width:0;flex:1}
 .fc-title a,.fr-title a,.ref-popup-title a{color:var(--link);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
 .fc-title a:hover,.fr-title a:hover,.ref-popup-title a:hover{color:var(--ink)}
@@ -2509,3 +2503,20 @@ body.clusters-mobile-nav-open #just-os-widget{display:none}
 .clusters-map__art .clusters-map__label:focus{outline:none}
 .clusters-map__art .clusters-map__label:focus-visible rect{stroke:var(--ink);stroke-width:7px;paint-order:stroke}
 .clusters-map__art .clusters-map__label:focus-visible{outline:3px solid var(--ink);outline-offset:4px}
+
+/* Cluster cards keep the same inner space at every width (the old theme shrank it to 9 px on phones),
+   and the phone "Navigate" button stands clear of the card below it. */
+.cluster-section.cluster-section{padding:24px 24px 20px}
+@media(max-width:760px){.cluster-section.cluster-section{padding:20px 16px 16px}}
+.clusters-mobile-toggle.clusters-mobile-toggle{margin:0 0 20px}
+/* Each cluster's sub-clusters, behind its counts. */
+.clusters-overview__subs{margin:2px 0 0}
+.clusters-overview__subs summary{display:inline-flex;align-items:center;gap:8px;min-height:44px;cursor:pointer;color:var(--link);font-size:16px;list-style:none}
+.clusters-overview__subs summary::-webkit-details-marker{display:none}
+.clusters-overview__subs summary::before{content:"";width:0;height:0;border-left:6px solid currentColor;border-top:5px solid transparent;border-bottom:5px solid transparent;transition:transform .15s}
+.clusters-overview__subs[open] summary::before{transform:rotate(90deg)}
+.clusters-overview__subs summary:hover{color:var(--ink)}
+.clusters-overview__subs ul{margin:0 0 8px;padding:0 0 0 18px;list-style:none;border-left:3px solid var(--c)}
+.clusters-overview__subs li{margin:0;padding:4px 0 4px 12px;font-size:16px;line-height:1.4}
+.clusters-overview__subs a{color:var(--link);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+@media(prefers-reduced-motion:reduce){.clusters-overview__subs summary::before{transition:none}}

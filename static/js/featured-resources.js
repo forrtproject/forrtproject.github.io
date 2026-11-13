@@ -119,8 +119,10 @@
       }
       var html = '';
       // Tags + title
-      var kind = [r.focus, r.resource_type].filter(Boolean).map(sentenceCase).join(' \u00b7 ');
-      if (kind) html += '<p class="card-kind">' + escHtml(kind) + '</p>';
+      if (r.focus || r.resource_type) {
+        html += '<p class="card-kind">' + (r.focus ? '<span class="card-purpose">' + escHtml(sentenceCase(r.focus)) + '</span> ' : '') +
+          (r.resource_type ? escHtml(sentenceCase(r.resource_type)) : '') + '</p>';
+      }
       html += '<div class="ref-popup-title">' + richText(r.title) + '</div>';
 
       // APA
