@@ -154,8 +154,31 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .term-list a:hover{color:var(--ink)}
 .term-list a[aria-current]{color:var(--ink);font-weight:700;text-decoration:none}
 @media(max-width:1000px){.term-list{max-height:340px}}
-.resource-open{margin:0 0 24px}
+.resource-open{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;margin:0 0 24px}
 .resource-open .btn{padding:10px 22px;font-size:17px}
+.resource-open .btn .fa-external-link-alt{margin-inline-start:4px;font-size:14px}
+.resource-host{font-size:16px;color:var(--soft);overflow-wrap:anywhere}
+/* A resource entry: the entry, then its details card, then Previous and Next. On a desktop the card
+   sits in the left column beside both; the second row takes any extra height of a long card. */
+.article-layout .resource-kind{margin:0 0 12px;font-size:16px;font-weight:600;color:var(--soft)}
+.article-layout .byline-more{display:inline}
+.article-layout .byline-more>summary{display:inline-block;margin-inline-start:.3em;color:var(--link);font-weight:600;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.article-layout .byline-more>summary:hover{color:var(--ink)}
+.article-layout .byline-more>p{margin:6px 0 0}
+.article-layout-resource .resource-keywords{margin-top:24px}
+.article-layout-resource .article-card dd a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
+.article-layout-resource>.article-foot{margin-top:0}
+@media(min-width:1001px){
+  .article-layout-resource:not(.article-layout-wide){grid-template-rows:auto 1fr;row-gap:32px}
+  .article-layout-resource:not(.article-layout-wide)>.article-card{grid-row:1/span 2}
+  .article-layout-resource>.article-foot{grid-column:2;grid-row:2}
+}
+@media(max-width:1000px){
+  .article-layout-resource .article-card{order:0}
+  .article-layout-resource .article-card .resource-type{display:none}
+  .article-layout-resource .article-card .resource-type+dd+dt{margin-top:0}
+  .article-layout .byline-more>summary{min-height:44px;display:inline-flex;align-items:center}
+}
 .article-layout .article-tags{margin:0 0 18px}
 .article-layout .resource-keywords{max-width:32em;margin:0 0 18px;font-size:16px;line-height:1.6;color:var(--soft)}
 .article-layout .resource-keywords strong{margin-inline-end:6px;color:var(--ink)}
@@ -284,8 +307,6 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .booklet-open .btn{margin-inline-end:10px}
 @media(max-width:1000px){.profile-head .profile-org{font-weight:400}.profile-head ul.network-icon{margin:4px 0 0}.profile-head ul.network-icon a{text-decoration:none}}
 .article-layout .article-style .btn.btn-primary,.article-layout .article-style .btn.btn-lg{padding:10px 22px!important;font-size:17px!important}
-.resource-facts{display:none}
-@media(max-width:1000px){.resource-facts{display:block;margin:-6px 0 22px;font-size:16px;line-height:1.5;color:var(--soft)}.resource-facts strong{color:var(--ink);font-weight:600}}
 .byline-date{display:none}
 @media(max-width:1000px){.article-layout .byline-date{display:inline}}
 /* A search over a long list on the page (shortcodes/list_filter.html). */
