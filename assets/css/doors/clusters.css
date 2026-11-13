@@ -942,9 +942,9 @@
   }
 }
 
-/* Clusters map: a mind map drawn by partials/clusters/map.html */
+/* Clusters map (partials/clusters/map.html): on the page the overview, the cluster names round the hub, each
+   opening a panel of its sub-clusters; "Open full size" shows the full mind map in a dialog. */
 .clusters-map { margin: 1.75rem 0 0.5rem; }
-.clusters-map__frame { overflow: hidden; }
 .clusters-map__art { display: block; width: 100%; height: auto; font-family: var(--text); }
 /* geometricPrecision: Chromium on Linux otherwise rounds each glyph to whole pixels, which sets the
    text about 6% wider than the advance widths the build wraps it with (clusters/map_wrap.html). */
@@ -952,18 +952,78 @@
 .clusters-map__line { fill: none; stroke: var(--soft); stroke-width: 2; stroke-linecap: round; }
 .clusters-map__seg path:first-of-type, .clusters-map__label rect, .clusters-map__pill rect { fill: var(--c); }
 .clusters-map__icon { fill: #fff; }
-.clusters-map__label text { font-size: 32px; font-weight: 700; }
+.clusters-map__art .clusters-map__label text { font-size: 32px; font-weight: 700; }
 .clusters-map__pill text { font-size: 17px; font-weight: 400; }
 .clusters-map__disc { fill: #fff; stroke: var(--res); stroke-width: 7; }
 .clusters-map__cluster { transition: opacity 0.15s; }
 .clusters-map__art.is-pointing .clusters-map__cluster:not(.is-active) { opacity: 0.35; }
 .clusters-map__art a:hover rect { fill: color-mix(in srgb, var(--c) 80%, #000); }
+
+/* The overview. The stage keeps the drawing's proportions; --u is one drawing unit at the stage's width. */
+.clusters-map__stage { position: relative; margin: 0 auto; container-type: inline-size; --u: calc(100cqw / var(--ow)); }
+.clusters-map__ring { position: absolute; inset: 0; width: 100%; height: 100%; display: block; overflow: visible; }
+.clusters-map__ring .clusters-map__ray { transition: opacity 0.2s; }
+.clusters-map__stage.is-pointing .clusters-map__ray:not(.is-active) { opacity: 0.4; }
+.clusters-map__ring .is-active .clusters-map__line { stroke: var(--c); stroke-width: 3; }
+.clusters-map__spots { position: absolute; inset: 0; margin: 0; padding: 0; list-style: none; }
+.clusters-map__spot { margin: 0; }
+.clusters-map__tag {
+  position: absolute; display: block; box-sizing: border-box; z-index: 1;
+  padding: calc(10 * var(--u)) calc(17.2 * var(--u)); border-radius: calc(12 * var(--u));
+  background: var(--c); color: #fff; text-align: center; text-decoration: none; text-rendering: geometricPrecision;
+  transition: box-shadow 0.2s, background-color 0.2s;
+}
+.clusters-map__tag-name { display: block; font: 700 calc(19 * var(--u)) / calc(23 * var(--u)) var(--text); }
+.clusters-map__tag-name > span { display: block; white-space: nowrap; }
+.clusters-map__cue {
+  display: inline-flex; align-items: center; gap: calc(7 * var(--u)); margin-top: calc(4 * var(--u));
+  font: 400 calc(16 * var(--u)) / calc(20 * var(--u)) var(--text); white-space: nowrap;
+}
+/* The cue's arrow points at the panel's side and turns while it is open. */
+.clusters-map__cue::after {
+  content: ""; width: 0; height: 0; border-left: calc(7 * var(--u)) solid currentColor;
+  border-top: calc(5 * var(--u)) solid transparent; border-bottom: calc(5 * var(--u)) solid transparent; transition: transform 0.2s;
+}
+.clusters-map__spot.is-open .clusters-map__cue::after { transform: rotate(90deg); }
+.clusters-map__tag:hover, .clusters-map__tag:focus-visible, .clusters-map__spot.is-open .clusters-map__tag,
+.clusters-map__spot.is-lit .clusters-map__tag { background: color-mix(in srgb, var(--c) 82%, #000); color: #fff; box-shadow: 0 4px 14px rgba(38, 45, 53, 0.3); }
+.clusters-map__tag:focus { outline: none; }
+.clusters-map__tag:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+.clusters-map__spot.is-open .clusters-map__tag { z-index: 3; }
+/* A cluster's panel: hidden and out of the tab order (inert) until its name opens it. */
+.clusters-map__panel {
+  position: absolute; left: 0; top: 0; z-index: 2; box-sizing: border-box; padding: 16px;
+  background: var(--page); border: 1px solid var(--line); border-top: 4px solid var(--c); border-radius: var(--r-large);
+  box-shadow: 0 10px 30px rgba(38, 45, 53, 0.25);
+  visibility: hidden; opacity: 0; transform: translateY(-6px);
+  transition: opacity 0.2s, transform 0.2s, visibility 0s linear 0.2s;
+}
+.clusters-map__panel[data-side="above"] { transform: translateY(6px); }
+.clusters-map__panel[data-side="left"] { transform: translateX(6px); }
+.clusters-map__panel[data-side="right"] { transform: translateX(-6px); }
+.clusters-map__spot.is-open .clusters-map__panel { visibility: visible; opacity: 1; transform: none; transition: opacity 0.2s, transform 0.2s, visibility 0s; z-index: 4; }
+/* Columns filled top to bottom, each starting at the panel's top. */
+.clusters-map__panel ul {
+  display: grid; grid-auto-flow: column; grid-template-columns: repeat(var(--cols), 250px);
+  grid-template-rows: repeat(var(--rows), auto); align-items: start; gap: 4px 16px; margin: 0; padding: 0; list-style: none;
+}
+.clusters-map__panel li { margin: 0; }
+.clusters-map__panel a {
+  display: flex; align-items: center; min-height: 44px; padding: 4px 0; box-sizing: border-box;
+  font: 400 16px/1.3 var(--text); color: var(--link); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px;
+}
+.clusters-map__panel a:hover { color: var(--ink); }
+@media (prefers-reduced-motion: reduce) {
+  .clusters-map__panel, .clusters-map__spot.is-open .clusters-map__panel, .clusters-map__tag, .clusters-map__cue::after, .clusters-map__ring .clusters-map__ray { transition: none; transform: none; }
+}
+
 .clusters-map__caption { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.5rem 1.5rem; margin-top: 0.75rem; }
 .clusters-map__enlarge, .clusters-map__close {
   font: inherit; font-size: 0.9rem; font-weight: 600; color: var(--ink); background: var(--page);
   border: 1px solid var(--line); border-radius: var(--r-small); padding: 0.35rem 0.9rem; cursor: pointer;
 }
 .clusters-map__enlarge:hover, .clusters-map__close:hover { border-color: var(--ink); }
+.clusters-map__dialog:not([open]) { display: none; }
 .clusters-map__dialog { width: 96vw; max-width: none; height: 94vh; max-height: none; padding: 0; border: 0; border-radius: var(--r-large); background: var(--page); }
 .clusters-map__dialog::backdrop { background: rgba(38, 45, 53, 0.6); }
 .clusters-map__close { position: absolute; top: 0.75rem; right: 0.75rem; z-index: 1; box-shadow: 0 1px 4px rgba(38, 45, 53, 0.25); }
@@ -972,15 +1032,16 @@
 .clusters-map__compact { display: none; }
 .clusters-map__hub { display: block; width: min(240px, 70%); margin: 0 auto 1rem; }
 .clusters-map__segment { fill: var(--c); }
-/* Below 1256 px the full drawing would set cluster names under 15 px, so phones, tablets and small laptops get
-   the hub, and the clusters in the linked list after it; the pills are in the text list and the full-size view. */
-@media (max-width: 1255px) {
+/* Below 942 px the overview would set its cue lines under 15 px, so phones and tablets get the hub, and the
+   clusters in the linked list after it, each with its sub-clusters. */
+@media (max-width: 941px) {
   .clusters-map__frame { display: none; }
   .clusters-map__compact { display: block; }
 }
 @media (forced-colors: active) {
   .clusters-map__art text, .clusters-map__icon { fill: CanvasText; }
   .clusters-map__seg path:first-of-type, .clusters-map__segment, .clusters-map__label rect, .clusters-map__pill rect { fill: Canvas; stroke: CanvasText; }
+  .clusters-map__tag { border: 2px solid CanvasText; }
 }
 
 /* Stack on small screens */
@@ -2485,9 +2546,9 @@ body.clusters-mobile-nav-open #just-os-widget{display:none}
 }
 
 /* /clusters/ diagram as the way in: the cluster pointed at, or focused in the list after it, is described
-   in a line that sticks to the foot of the window while the drawing runs below it (desktop only; phones
+   in a line under the drawing (desktop only; phones
    show the hub and the list). */
-.clusters-map__info{position:sticky;bottom:0;z-index:3;margin:8px 0 0;padding:10px 16px;min-height:76px;background:var(--surface);border-radius:var(--r-large);display:flex;align-items:center}
+.clusters-map__info{margin:8px 0 0;padding:10px 16px;min-height:76px;background:var(--surface);border-radius:var(--r-large);display:flex;align-items:center}
 .clusters-map__info[hidden]{display:none}
 .clusters-map__hint{margin:0;font-size:16px;color:var(--soft)}
 .clusters-map__about{display:flex;gap:12px;align-items:flex-start}
@@ -2496,10 +2557,9 @@ body.clusters-mobile-nav-open #just-os-widget{display:none}
 .clusters-map__name{margin:0;font:600 18px/1.3 var(--text);color:var(--ink)}
 .clusters-map__desc{margin:2px 0 0;font-size:16px;line-height:1.4;color:var(--ink);max-width:80ch}
 .clusters-map__count{margin:2px 0 0;font-size:15px;color:var(--soft)}
-@media (max-width:1255px){.clusters-map__info{display:none}}
+@media (max-width:941px){.clusters-map__info{display:none}}
 .clusters-map__art .clusters-map__label,.clusters-map__art .clusters-map__seg{cursor:pointer}
 .clusters-overview__list li[data-cluster]:hover .clusters-overview__name{color:var(--ink)}
-.clusters-map__info{bottom:var(--banner,0px)}
 .clusters-map__art .clusters-map__label:focus{outline:none}
 .clusters-map__art .clusters-map__label:focus-visible rect{stroke:var(--ink);stroke-width:7px;paint-order:stroke}
 .clusters-map__art .clusters-map__label:focus-visible{outline:3px solid var(--ink);outline-offset:4px}

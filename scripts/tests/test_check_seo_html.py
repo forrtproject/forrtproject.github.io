@@ -278,10 +278,13 @@ def clusters_map_failures(page):
 
 
 class ClustersMapCheck(unittest.TestCase):
-    MAP = ('<figure class="clusters-map"><svg class="clusters-map__art" role="group" aria-label="Clusters">'
+    MAP = ('<figure class="clusters-map"><div class="clusters-map__stage"><svg aria-hidden="true"></svg>'
+           '<ol class="clusters-map__spots"><li><a class="clusters-map__tag" href="/clusters/cluster-1/">'
+           '<span class="visually-hidden">Cluster 1: </span><span>One</span> <span>7 sub-clusters</span></a>'
+           '<div class="clusters-map__panel" id="panel-1" inert><ul><li><a href="#c1-a">A</a></li></ul></div></li></ol></div>'
+           '<dialog><svg class="clusters-map__art" role="group" aria-label="Clusters">'
            '<g><a href="/clusters/cluster-1/" aria-label="Cluster 1: One"><rect></rect><text><tspan>One</tspan></text></a>'
-           '<a href="/clusters/cluster-1/#c1-a" tabindex="-1" aria-hidden="true"><rect></rect></a></g></svg>'
-           '<details><summary>List</summary><ol><li><a href="#c1-a">A</a></li></ol></details></figure>'
+           '<a href="/clusters/cluster-1/#c1-a" tabindex="-1" aria-hidden="true"><rect></rect></a></g></svg></dialog></figure>'
            '<section id="cluster-1"><div id="c1-a"></div></section><a href="#elsewhere">not in the map</a>')
 
     def test_named_tab_stops_hidden_rest_and_targets_pass(self):
@@ -291,9 +294,11 @@ class ClustersMapCheck(unittest.TestCase):
         hidden = self.MAP.replace('role="group"', 'aria-hidden="true"').replace(' aria-label="Cluster 1: One"', ' tabindex="-1"')
         self.assertEqual(clusters_map_failures(hidden), [])
 
-    def test_unnamed_stop_exposed_link_hidden_drawing_or_missing_target_fails(self):
-        for change in ((' aria-label="Cluster 1: One"', ""), (' aria-hidden="true"', ""),
-                       ('role="group"', 'aria-hidden="true"'), ('id="c1-a"', 'id="c1-b"')):
+    def test_unnamed_stop_exposed_link_hidden_drawing_open_panel_or_missing_target_fails(self):
+        for change in ((' aria-label="Cluster 1: One"', ""), (' tabindex="-1" aria-hidden="true"', ' tabindex="-1"'),
+                       ('role="group"', 'aria-hidden="true"'), ('id="c1-a"', 'id="c1-b"'), (" inert>", ">"),
+                       ('clusters-map__tag" href="/clusters/cluster-1/"', 'clusters-map__tag" href=""'),
+                       ('class="clusters-map__tag"', 'class="other"')):
             with self.subTest(change):
                 self.assertEqual(len(clusters_map_failures(self.MAP.replace(*change))), 1)
 

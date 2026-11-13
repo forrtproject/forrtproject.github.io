@@ -1,0 +1,20 @@
+{{/* Split .pills (each with a height .h) into columns in reading order, starting a new column at each
+     equal share of the height. .gap is the space between pills. The number of columns is .cols if given,
+     else as few as keep each column under .max.
+     Returns dict: placed (the pills, each with col and y), heights (dict "0".. of column heights, each
+     including a trailing gap), tallest (the tallest column without that gap), cols. */}}
+{{ $gap := .gap }}
+{{ $total := 0.0 }}{{ range .pills }}{{ $total = add $total .h $gap }}{{ end }}
+{{ $cols := 1 }}
+{{ with .cols }}{{ $cols = int . }}{{ else }}{{ $cols = int (math.Max 1 (math.Ceil (div $total $.max))) }}{{ end }}
+{{ $share := div $total $cols }}{{ $acc := 0.0 }}{{ $col := 0 }}{{ $heights := dict }}{{ $placed := slice }}
+{{ range seq $cols }}{{ $heights = merge $heights (dict (string (sub . 1)) 0.0) }}{{ end }}
+{{ range .pills }}
+  {{ if and (lt $col (sub $cols 1)) (gt (add $acc (div .h 2)) (mul $share (add $col 1))) (gt (index $heights (string $col)) 0.0) }}{{ $col = add $col 1 }}{{ end }}
+  {{ $y := index $heights (string $col) }}
+  {{ $placed = $placed | append (merge . (dict "col" $col "y" $y)) }}
+  {{ $heights = merge $heights (dict (string $col) (add $y .h $gap)) }}
+  {{ $acc = add $acc .h $gap }}
+{{ end }}
+{{ $tallest := 0.0 }}{{ range $heights }}{{ $tallest = math.Max $tallest . }}{{ end }}
+{{ return dict "placed" $placed "heights" $heights "tallest" (sub $tallest $gap) "cols" $cols }}
