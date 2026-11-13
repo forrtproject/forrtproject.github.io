@@ -2548,7 +2548,7 @@ body.clusters-mobile-nav-open #just-os-widget{display:none}
 /* /clusters/ diagram as the way in: the cluster pointed at, or focused in the list after it, is described
    in a line under the drawing (desktop only; phones
    show the hub and the list). */
-.clusters-map__info{margin:8px 0 0;padding:10px 16px;min-height:76px;background:var(--surface);border-radius:var(--r-large);display:flex;align-items:center}
+.clusters-map__info{flex:1 0 100%;margin:0;padding:10px 16px;min-height:76px;background:var(--surface);border-radius:var(--r-large);display:flex;align-items:center}
 .clusters-map__info[hidden]{display:none}
 .clusters-map__hint{margin:0;font-size:16px;color:var(--soft)}
 .clusters-map__about{display:flex;gap:12px;align-items:flex-start}

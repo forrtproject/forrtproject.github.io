@@ -253,15 +253,16 @@
       {{ $hub }}
     </svg>
   </div>
-  {{/* The cluster pointed at or focused: its number, name, first sentence and counts, copied from the list
-       of clusters after the figure (so it repeats it, and is hidden from assistive technology). It sits under
-       the drawing rather than sticking to the foot of the window, where it would cover the lower names. */}}
-  <div class="clusters-map__info" aria-hidden="true" hidden>
-    <p class="clusters-map__hint">Point at a cluster, or Tab to its name, to see its sub-clusters. Select the name to open its page.</p>
-    <div class="clusters-map__about" hidden><span class="clusters-map__num"></span><div><p class="clusters-map__name"></p><p class="clusters-map__desc"></p><p class="clusters-map__count"></p></div></div>
-  </div>
   <figcaption class="clusters-map__caption">
     <button type="button" class="clusters-map__enlarge" hidden>Open full size</button>
+    {{/* The cluster pointed at or focused: its number, name, first sentence and counts, copied from the list
+         of clusters after the figure (so it repeats it, and is hidden from assistive technology). It sits under
+         the drawing, not at the foot of the window where it would cover the lower names, and after
+         "Open full size", so the button stays put while the line's height changes. */}}
+    <div class="clusters-map__info" aria-hidden="true" hidden>
+      <p class="clusters-map__hint">Point at a cluster, or Tab to its name, to see its sub-clusters. Select the name to open its page.</p>
+      <div class="clusters-map__about" hidden><span class="clusters-map__num"></span><div><p class="clusters-map__name"></p><p class="clusters-map__desc"></p><p class="clusters-map__count"></p></div></div>
+    </div>
   </figcaption>
   {{/* The full mind map, shown by "Open full size". */}}
   <dialog class="clusters-map__dialog" aria-label="Clusters map, full size">
