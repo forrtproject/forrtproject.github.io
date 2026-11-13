@@ -38,6 +38,7 @@ Every repeated device has to earn its place. In practice:
 ## 5. Colour carries meaning
 
 - Each of the four areas has its colour: education `--edu` (green), research `--res` (blue), social justice `--jus` (purple), community `--com` (brown). Pages and cards that belong to an area use its colour and its pale background (`--edu-bg` and so on). The `area` argument of `action_cards` starts a row of bricks with that area's colour.
+- The 11 FORRT clusters are not areas. Each keeps a colour of its own, and together they span the spectrum (`layouts/partials/clusters/colors.html`), so the clusters can be told apart. Strong cluster colours are for small marks; their backgrounds stay pale.
 - `--hot` (orange) is for highlights, `--urgent` (red) only for urgency.
 - No large areas of saturated colour, no dark bands across the page, no beige highlights (A11, A12).
 
