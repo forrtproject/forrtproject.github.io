@@ -165,7 +165,7 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .article-layout .byline-more>summary{display:inline-block;margin-inline-start:.3em;color:var(--link);font-weight:600;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
 .article-layout .byline-more>summary:hover{color:var(--ink)}
 .article-layout .byline-more>p{margin:6px 0 0}
-.article-layout-resource .resource-keywords{margin-top:24px}
+.article-layout.article-layout-resource .resource-keywords{margin-top:24px}
 .article-layout-resource .article-card dd a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
 .article-layout-resource>.article-foot{margin-top:0}
 @media(min-width:1001px){
