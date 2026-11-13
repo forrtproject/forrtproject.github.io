@@ -160,7 +160,7 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .resource-host{font-size:16px;color:var(--soft);overflow-wrap:anywhere}
 /* A resource entry: the entry, then its details card, then Previous and Next. On a desktop the card
    sits in the left column beside both; the second row takes any extra height of a long card. */
-.article-layout .resource-kind{margin:0 0 12px;font-size:16px;font-weight:600;color:var(--soft)}
+.article-layout .resource-kind{margin:0 0 12px;max-width:60ch;font-size:16px;font-weight:600;color:var(--soft)}
 .article-layout .byline-more{display:inline}
 .article-layout .byline-more>summary{display:inline-block;margin-inline-start:.3em;color:var(--link);font-weight:600;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
 .article-layout .byline-more>summary:hover{color:var(--ink)}
