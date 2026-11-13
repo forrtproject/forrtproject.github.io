@@ -18,7 +18,7 @@ image:
 ---
 
 <style>
-.am-actions { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin: 18px 0 6px; max-width: 620px; }
+.am-actions { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--box-gap); margin: 18px 0 6px; max-width: 620px; }
 .article-layout .article-style .am-playlist { display: flex; flex-direction: column; gap: 2px; padding: 12px 14px; border: 2px solid var(--am-deep) !important; border-radius: 12px; background: var(--am-tint, #eef5f3); color: var(--am-ink); text-decoration: none !important; font-size: 15px; line-height: 1.3; }
 .article-layout .article-style .am-playlist strong { color: var(--am-deep); font-size: 17px; }
 .article-layout .article-style .am-playlist:hover { background: var(--am-tint); }
@@ -232,14 +232,14 @@ image:
 }
 .am-prog-half::after { content: ""; flex: 1; height: 1px; background: var(--am-rule); }
 .am-prog-session {
-  margin: 0 0 10px;
-  padding: 8px 12px 4px;
+  margin: 0 0 var(--box-gap);
+  padding: 10px var(--box-pad) 6px;
   border: 1px solid var(--am-rule);
   border-left: 4px solid var(--am-accent);
   border-radius: 8px;
   background: var(--am-card);
 }
-.am-prog-session-solo { padding-top: 4px; }
+.am-prog-session-solo { padding-top: 6px; }
 .article-layout .article-style .am-prog-session h4 {
   margin: 0 0 2px;
   font-size: 18px;

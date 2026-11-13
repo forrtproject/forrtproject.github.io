@@ -159,7 +159,7 @@
 .pub-citation-section>summary::-webkit-details-marker{display:none}
 .pub-citation-section>summary i{transition:transform .15s}
 .pub-citation-section[open]>summary i{transform:rotate(90deg)}
-.pub-citation-section .citation-text{margin-top:8px;padding:10px 12px;background:#fff;border-radius:var(--r-small)}
+.pub-citation-section .citation-text{margin-top:8px;padding:var(--box-pad-y) var(--box-pad);background:#fff;border-radius:var(--r-small)}
 #just-os-fullpage{margin-bottom:24px}
 /* On a phone the empty chat takes about half the screen, so its question box is in view at once; it is the site's card, not a shadowed box. */
 #just-os-fullpage{border-color:var(--line)!important;border-radius:var(--r-large)!important;box-shadow:none!important}
