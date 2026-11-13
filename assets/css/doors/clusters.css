@@ -2470,3 +2470,21 @@ body.clusters-mobile-nav-open #just-os-widget{display:none}
 .cluster-title a:hover{color:var(--ink)}
 /* A jump to a cluster or sub-cluster stops below the pinned filters. */
 .cluster-section,.acc-section{scroll-margin-top:calc(var(--clusters-controls-height,0px) + 90px)}
+
+/* Side list: the cluster and sub-cluster names are underlined as links; the current cluster is marked by
+   weight (and aria-current), not by an underline. A shadow at the top or foot of the box shows that it
+   scrolls when there is more above or below. */
+.cluster-nav-heading{font-weight:400}
+.cluster-nav-name{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;text-decoration-color:currentColor}
+.cluster-nav-heading[aria-current]{font-weight:700}
+.cluster-nav-heading[aria-current] .cluster-nav-name{text-decoration:none}
+.cluster-nav-subs .nav-link .cluster-nav-name{flex:1 1 auto;min-width:0}
+.cluster-nav-heading:hover .cluster-nav-name,.cluster-nav-subs .nav-link:hover .cluster-nav-name{text-decoration-thickness:2px}
+@media (min-width:992px){
+  .clusters-sidebar-inner{background:
+    linear-gradient(var(--surface) 30%,rgba(240,243,245,0)) center top/100% 40px no-repeat local,
+    linear-gradient(rgba(240,243,245,0),var(--surface) 70%) center bottom/100% 40px no-repeat local,
+    radial-gradient(farthest-side at 50% 0,rgba(38,45,53,.18),rgba(38,45,53,0)) center top/100% 12px no-repeat scroll,
+    radial-gradient(farthest-side at 50% 100%,rgba(38,45,53,.18),rgba(38,45,53,0)) center bottom/100% 12px no-repeat scroll,
+    var(--surface)}
+}
