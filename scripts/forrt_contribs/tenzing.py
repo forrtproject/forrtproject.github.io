@@ -1,3 +1,17 @@
+"""Build the FORRT contributors page (content/contributors/tenzing.md) from Tenzing sheets.
+
+Sources: the private index sheet "TENZING SHEETS SOURCE" (INDEX_SPREADSHEET_ID), which
+lists one Tenzing contributor sheet per project, plus the published extra-roles and
+column-mapping sheets below. Reading the index needs GSHEET_CREDENTIALS; without them
+the script falls back to contributors_cache.csv, which credentialed runs rewrite.
+
+Writes scripts/forrt_contribs/tenzing.md from tenzing_template.md. data-processing.yml
+moves it to content/contributors/tenzing.md and ships it in `data-artifact`, so a hand
+edit to that page is overwritten on the next daily run. Fix the Tenzing sheet instead.
+
+Usage:
+    python3 scripts/forrt_contribs/tenzing.py
+"""
 import pandas as pd
 import os
 import re

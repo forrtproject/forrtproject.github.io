@@ -9,7 +9,7 @@
         "Garden of forking paths",
         "Model uncertainty",
         "Multiverse analysis",
-        "*P*\\-hacking",
+        "p-hacking",
         "Robustness (analyses)",
         "Specification curve analysis"
     ],
@@ -37,5 +37,6 @@
     ],
     "translation_reviewed_by": [
         "Neslihan Özhan"
-    ]
+    ],
+    "lastmod": "2026-11-08"
 }

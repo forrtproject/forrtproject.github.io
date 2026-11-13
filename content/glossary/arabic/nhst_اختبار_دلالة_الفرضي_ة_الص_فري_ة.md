@@ -34,5 +34,6 @@
     "translation_reviewed_by": [
         "Alaa M. Saleh",
         "Mohammed Mohsen"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

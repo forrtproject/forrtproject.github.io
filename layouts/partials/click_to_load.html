@@ -1,8 +1,7 @@
 {{/* Third-party embed that loads only after the visitor clicks.
-     Params: src, provider, label, and optionally link, title, style, width, height, script (true to load src as a script), form. */}}
+     Params: src, provider, label, and optionally link, title, style, width, height, script (true to load src as a script). */}}
 <div class="click-to-load" data-embed-src="{{ .src }}"
      {{- if .script }} data-embed-script="true"{{ end }}
-     {{- with .form }} data-embed-form="{{ . }}"{{ end }}
      {{- with .title | default (printf "%s from %s" .label .provider) }} data-embed-title="{{ . }}"{{ end }}
      {{- with .width }} data-embed-width="{{ . }}"{{ end }}
      {{- with .height }} data-embed-height="{{ . }}"{{ end }}
