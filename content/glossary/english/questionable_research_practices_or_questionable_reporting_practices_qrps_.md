@@ -11,14 +11,14 @@
         "Garden of forking paths",
         "HARKing",
         "Nonpublication of data",
-        "*P*\\-hacking",
-        "*P*\\-value fishing",
+        "p-hacking",
+        "p-value fishing",
         "Partial publication of data",
         "Post-hoc storytelling",
         "Preregistration",
         "Questionable Measurement Practices (QMP)",
         "Researcher degrees of freedom",
-        "Reverse *p*\\-hacking",
+        "Reverse p-hacking",
         "Salami slicing"
     ],
     "references": [
@@ -48,5 +48,6 @@
     "language": "english",
     "aliases": [
         "/glossary/questionable_research_practices_or_questionable_reporting_practices_qrps_"
-    ]
+    ],
+    "lastmod": "2026-11-08"
 }

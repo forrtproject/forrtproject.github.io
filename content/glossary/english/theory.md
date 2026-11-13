@@ -28,5 +28,6 @@
     "language": "english",
     "aliases": [
         "/glossary/theory"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

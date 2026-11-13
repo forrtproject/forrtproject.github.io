@@ -27,5 +27,6 @@
     "language": "english",
     "aliases": [
         "/glossary/conflict_of_interest"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

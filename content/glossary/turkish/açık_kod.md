@@ -3,7 +3,7 @@
     "en_title": "Open Code",
     "title": "Açık Kod [Open Code]",
     "sort_key": "aczizk kod [open code]",
-    "definition": "Araştırma metodolojisini ve analizini şeffaf hale getirmek ve yeniden üretilebilirlik ve iş birliğine olanak sağlamak için bilgisayar kodunu (örn. programlama, analiz kodu, uyaran üretimi) serbestçe ve herkese açık hale getirmek. Kod, GitHub, Open Science Framewrok ve Codeshare (birkaçını saymak gerekirse) gibi açık kod web siteleri aracılığıyla kullanılabilir hale getirilebilir ve bu da başkalarının hataları değerlendirip düzeltmesini ve sonraki araştırmalar için kodu yeniden kullanmasını ve değiştirmesini sağlar.",
+    "definition": "Araştırma metodolojisini ve analizini şeffaf hale getirmek ve yeniden üretilebilirlik ve iş birliğine olanak sağlamak için bilgisayar kodunu (örn. programlama, analiz kodu, uyaran üretimi) serbestçe ve herkese açık hale getirmek. Kod, GitHub, Open Science Framework ve Codeshare (birkaçını saymak gerekirse) gibi açık kod web siteleri aracılığıyla kullanılabilir hale getirilebilir ve bu da başkalarının hataları değerlendirip düzeltmesini ve sonraki araştırmalar için kodu yeniden kullanmasını ve değiştirmesini sağlar.",
     "related_terms": [
         "Computational Reproducibility",
         "Open Access",
@@ -35,5 +35,6 @@
     ],
     "translation_reviewed_by": [
         "Merve Öztürk"
-    ]
+    ],
+    "lastmod": "2026-11-08"
 }

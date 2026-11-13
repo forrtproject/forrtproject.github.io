@@ -31,5 +31,6 @@
     "language": "english",
     "aliases": [
         "/glossary/interaction_fallacy"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

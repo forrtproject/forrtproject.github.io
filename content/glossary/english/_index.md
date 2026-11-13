@@ -51,7 +51,7 @@ The list of terms we have drafted and reviewed can be found on the left if you a
 
 <br>
 
-We successfully arrived at the end of ***Phase 1*** 🎉. This means we managed to go from an ambitious idea to a full blown crowd-sourced project in which more than ***110 collaborators*** defined via consensus after much discussion and reviewed upwards of ***250 Open Scholarship terms***.  We published our manuscript at [***Nature Human Behavior***](https://doi.org/10.1038/s41562-021-01269-4), where all contributors are co-authors. 🥳
+We successfully arrived at the end of ***Phase 1*** 🎉. This means we managed to go from an ambitious idea to a full blown crowd-sourced project in which more than ***110 collaborators*** defined via consensus after much discussion and reviewed upwards of ***250 Open Scholarship terms***.  We published our manuscript at [***Nature Human Behaviour***](https://doi.org/10.1038/s41562-021-01269-4), where all contributors are co-authors. 🥳
 
 ### Phase 2 
 
@@ -144,9 +144,11 @@ We invite several specific contributions: _original draft preparation_, and _rev
 
 * Writing | Original Draft Preparation: We consider this contribution as, for example, writing at least one full glossary entry. If you wrote the original draft for an entry, please add your name to the “Drafted by” field and be sure to tick the “Original Draft Preparation” checkbox in the contributors spreadsheet.
 
-* Writing | Review & Editing: We consider this contribution as, for example, providing constructive comments, feedback, and approval, on more than 5 glossary entries (we acknowledge that towards the end of the project the main contribution will be checking definitions for agreement and so it may be difficult for some people to make large writing contributions. Please remember to add your name to the “Reviewed by” field and be sure to tick the “Review & Editing” checkbox in the contributors spreadsheet.
+* Writing | Review & Editing: We consider this contribution as, for example, providing constructive comments, feedback, and approval, on more than 5 glossary entries (we acknowledge that towards the end of the project the main contribution will be checking definitions for agreement and so it may be difficult for some people to make large writing contributions). Please remember to add your name to the “Reviewed by” field and be sure to tick the “Review & Editing” checkbox in the contributors spreadsheet.
 
 6. Template & Example
+
+The first block below is the blank format for an entry (XXX marks each field to fill in); the CRediT entry after it is a completed example.
 
 **Term: XXX**
 
@@ -168,7 +170,7 @@ We invite several specific contributions: _original draft preparation_, and _rev
 
 **Term: CRediT**
 
-**Definition:**  The Contributor Roles Taxonomy (CRediT; https://credit.niso.org/) is a high-level taxonomy, including 14 roles, that can be used to indicate the roles typically adopted by contributors to scientific scholarly output. The roles describe each contributor’s specific contribution to the scholarly output. They can be assigned multiple times to different authors and one author can also be assigned multiple roles. CRediT includes the following roles: Conceptualization, Data curation, Formal Analysis, Funding acquisition, Investigation, Methodology, Project administration, Resources, Software, Supervision, Validation, Visualization, Writing – original draft, Writing – review & editing. A description of the different roles can be found in the work of Brand et al., (2015).  
+**Definition:**  The Contributor Roles Taxonomy (CRediT; https://credit.niso.org/) is a high-level taxonomy, including 14 roles, that can be used to indicate the roles typically adopted by contributors to scientific scholarly output. The roles describe each contributor’s specific contribution to the scholarly output. They can be assigned multiple times to different authors and one author can also be assigned multiple roles. CRediT includes the following roles: Conceptualization, Data curation, Formal Analysis, Funding acquisition, Investigation, Methodology, Project administration, Resources, Software, Supervision, Validation, Visualization, Writing – original draft, Writing – review & editing. A description of the different roles can be found in the work of Brand et al. (2015).  
 **Related terms:** Authorship  
 **Alternative definition:** (if applicable)  
 **Related terms to alternative definition:** (if applicable)  
@@ -185,17 +187,15 @@ We completely filled the original G-doc with comments and so have moved the proj
 * [Terms beginning A – L](https://docs.google.com/document/d/1IpkueFstVauvKrvgd-0OddAeAr2YGReY2IiSJILmY2I)
 * [Terms beginning M – Z](https://docs.google.com/document/d/1OV1WKyLMmCvcrHaO9iVCdxOGVxoEza4yjvdT6Q5ZBKE)
 
-This was unplanned, we didn’t know G-docs had a limit.
-
 <br>
 
 **Part C**
 
-We are now working on our [manuscript](https://docs.google.com/document/d/1N1xQzWxYVW1Nbdv4vG3T56xwoOJH1ZwMgvqr7Mlslyw) as well as its implementation in [FORRT’s website](https://forrt.org/glossary).
+We then worked on our manuscript, published in [*Nature Human Behaviour*](https://doi.org/10.1038/s41562-021-01269-4) in 2022, as well as its implementation in [FORRT’s website](https://forrt.org/glossary).
 
 Editorial advice was given to us and it suggested us to choose 50 items to go into a 'box' (a sort of a table that doesn't have word limits). However, it is of fundamental importance to note that these 50 terms are not the community's conception —or leading authors'— of 'main' terms, or 'core' terms, or 'most important terms'. We tried as much as possible —and in line with FORRT's [mission](https://forrt.org/about/mission/), FORRT's [Code of Conduct](https://forrt.org/coc/), and FORRT's [Manuscript](https://forrt.org/manuscript/)— to choose items that give representation to a variety of past, present and future issue of Open Scholarship. The chosen 50 terms reflect the diversity and plurality of terms for the broader OS, not only for this or that discipline, or this or that view of what Open Scholarship is. Now, that's not to say these 50 comprise a perfect list. It is not, and we are bound to disagree on which terms should have made the list and which shouldn't have. And that's both normal and OK 😊
 
-After the manuscript's submission and the display of defined terms in FORRT's Glossary webpage, we will proceed to Phase 2, which aims to improve upon existing definitions, extend the scope of terms defined, and translate it to other languages to increase access.
+After the manuscript's submission and the display of defined terms in FORRT's Glossary webpage, we proceeded to Phase 2, which aims to improve upon existing definitions, extend the scope of terms defined, and translate it to other languages to increase access.
 
 #### Feedback
 

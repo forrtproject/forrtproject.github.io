@@ -29,5 +29,6 @@
     "language": "english",
     "aliases": [
         "/glossary/consortium_authorship"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

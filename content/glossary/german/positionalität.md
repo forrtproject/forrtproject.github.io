@@ -3,7 +3,7 @@
     "en_title": "Positionality",
     "title": "Positionalität [Positionality]",
     "sort_key": "positionalität [positionality]",
-    "definition": "Die Kontextualisierung sowohl der Forschungsumgebung als auch der Forschenden, um zu definieren, innerhalb welcher Grenzen die Forschungsarbeit durchgeführt wurde (Jaraf, 2018). Positionalität wird in der Regel in der qualitativen Forschung in den Mittelpunkt gestellt und gewürdigt, aber in jüngster Zeit wurde gefordert, sie auch in der quantitativen Forschung zu verwenden. Positionalitätserklärungen, in denen Forschende ihren Hintergrund und ihre \"Position\" innerhalb und gegenüber der Forschung darlegen, wurden als eine Methode zur Erkennung und Zentrierung des Bias (Voreingenommenheit) von Forschenden vorgeschlagen.",
+    "definition": "Die Kontextualisierung sowohl der Forschungsumgebung als auch der Forschenden, um zu definieren, innerhalb welcher Grenzen die Forschungsarbeit durchgeführt wurde (Jafar, 2018). Positionalität wird in der Regel in der qualitativen Forschung in den Mittelpunkt gestellt und gewürdigt, aber in jüngster Zeit wurde gefordert, sie auch in der quantitativen Forschung zu verwenden. Positionalitätserklärungen, in denen Forschende ihren Hintergrund und ihre \"Position\" innerhalb und gegenüber der Forschung darlegen, wurden als eine Methode zur Erkennung und Zentrierung des Bias (Voreingenommenheit) von Forschenden vorgeschlagen.",
     "related_terms": [
         "Bias",
         "Reflexivity",
@@ -32,5 +32,6 @@
     "translation_reviewed_by": [
         "Jennifer Mattschey",
         "Helena Hartmann"
-    ]
+    ],
+    "lastmod": "2026-11-08"
 }
