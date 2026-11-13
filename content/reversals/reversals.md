@@ -203,11 +203,11 @@ You can find a list of all effects we are working on [here](https://docs.google.
 
 * **Moral priming (cleanliness)**. Participants exposed to physical cleanliness were shown to reduce the severity of their moral judgments. Direct, well-powered replications did not find evidence for the phenomenon. 
 {{< spoiler text="Statistics" >}}
-* Status: not replicated
+* Status: mixed (large direct replications failed; one study found support only when participants paid little attention to the primes)
 * Original paper: [With a Clean Conscience: Cleanliness Reduces the Severity of Moral Judgments](https://doi.org/10.1111/j.1467-9280.2008.02227.x), Schnall, Benton, and  Harvey, 2008; 2 experiments with Study 1: n = 40, Study 2: n = 44. [citations=645 (GS November 2021)].
-* Critiques: [Johnson et al.](https://econtent.hogrefe.com/doi/full/10.1027/1864-9335/a000186)<span style="text-decoration:underline;"> </span> 2014, [Study 1: n = 208, Study 2: n = 126. citations=128(GS November 2021)].
+* Critiques: [Johnson et al.](https://econtent.hogrefe.com/doi/full/10.1027/1864-9335/a000186)<span style="text-decoration:underline;"> </span> 2014, [Study 1: n = 208, Study 2: n = 126. citations=128(GS November 2021)]. [Huang 2014](https://doi.org/10.3389/fpsyg.2014.01276) [Study 2: n = 440; Study 2a, a direct replication of Study 2: n = 436].
 * Original effect size:  Study 1: d = -0.60, 95% CI [-1.23, 0.04]; Study 2: d = -0.85, 95% CI [-1.47, -0.22]
-* Replication effect size: Study 1: d = -0.01, 95% CI [-0.28, 0.26]; Study 2: d = 0.01, 95% CI [-0.34, 0.36]
+* Replication effect size: Johnson et al.: Study 1: d = -0.01, 95% CI [-0.28, 0.26]; Study 2: d = 0.01, 95% CI [-0.34, 0.36]. Huang, Study 2: low response effort, d = -0.29, p = .04; high response effort, d = 0.19, p = .16.
 {{< /spoiler >}}
 
 * **Moral priming (contemplation)**. Participants exposed to a moral-reminder prime would demonstrate reduced cheating. 
@@ -2410,7 +2410,7 @@ You can find a list of all effects we are working on [here](https://docs.google.
 
 * **Neonate imitation**. Babies are born with the ability to imitate. 
 {{< spoiler text="Statistics" >}}
-* Status: not replicated (no imitation in a large longitudinal study or in two direct replications)
+* Status: not replicated (two direct replications and a large longitudinal study found no evidence of imitation)
 * Original paper: ‘Imitation of facial and manual gestures by human neonates’, [Meltzoff and Moore 1977](https://www.science.org/doi/pdf/10.1126/science.198.4312.75); observational and experimental design, 2 studies with: Study 1: n=6, Study 2: n=12. [citation=5311 (GS, December 2021)]​.
 * Critiques: [Oostenbroek et al. 2016](https://doi.org/10.1016/j.cub.2016.03.047) [n=106, citations=259 (GS, December 2021)]. [Koepke et al. 1983](https://doi.org/10.1016/S0163-6383(83)80012-5) [two direct replications]. 
 * Original effect size: Not reported​.
@@ -3032,11 +3032,11 @@ You can find a list of all effects we are working on [here](https://docs.google.
 
 * **Last place aversion**. A phenomenon where individuals are averse to being in last place and choose gambles with the potential to move them out of last place that they reject when randomly placed in other parts of the distribution.
 {{< spoiler text="Statistics" >}}
-* Status: replicated 
+* Status: NA (no follow-up tests the gambling result; a direct replication of the paper's redistribution game failed, and the queueing study is a conceptual extension)
 * Original paper: ‘[Last-Place Aversion”: Evidence and Redistributive Implications](https://doi.org/10.1093/qje/qjt035)’, Kuziemko et. al. 2014; laboratory experiment, N=84. [citations=358(GS, March 2023)]​.
-* Critiques: [Buell 2021](https://doi.org/10.1287/mnsc.2020.3619) [Study 1: n=1144, Study 2-4: n=1203, citations= 30 (GS, March 2023)] 
+* Critiques: [Camerer et al. 2016](https://doi.org/10.1126/science.aaf0918) [replication of Experiment 2, redistribution game with 6-person groups, n = 144]. [Buell 2021](https://doi.org/10.1287/mnsc.2020.3619) [Study 1: n=1144, Study 2-4: n=1203, citations= 30 (GS, March 2023)] 
 * Original effect size: Paper does not provide enough information to convert to effect size. Lottery experiment (Appendix Table 2): Relevant coefficient: "Last or fifth place", Coefficient value: 0.448, P-value: &lt; 0.01. 
-* Replication effect size: Buell: Study 1: Observational analysis of customers queuing at a grocery store, where the author recorded the queue positions, wait times, and switching and abandonment behaviours of 1,144 customers. The results showed that being last in line doubled the probability of switching queues and quadrupled the chances of leaving the line altogether. The last-place indicator has a coefficient of 1.255 with a p-value &lt; 0.05. This suggests that, holding all else constant, customers were 3.5 times more likely to switch queues when they were in the last place compared to having a single person waiting in line behind them. Studies 2-4: All were online experiments participants waited in a virtual queue for a chance to win a gift card. Show that being in last place increased 1)reduced wait satisfaction, increased abandonment rates 2) increased perceived value of the service, reduced 3) queue transparency moderated effects.
+* Replication effect size: Camerer et al.: marginal effect of second-to-last place on giving 0.045 (_p_ = .154) vs −0.116 (_p_ = .070) in the original (not replicated). Buell: Study 1: Observational analysis of customers queuing at a grocery store, where the author recorded the queue positions, wait times, and switching and abandonment behaviours of 1,144 customers. The results showed that being last in line doubled the probability of switching queues and quadrupled the chances of leaving the line altogether. The last-place indicator has a coefficient of 1.255 with a p-value &lt; 0.05. This suggests that, holding all else constant, customers were 3.5 times more likely to switch queues when they were in the last place compared to having a single person waiting in line behind them. Studies 2-4: All were online experiments participants waited in a virtual queue for a chance to win a gift card. Show that being in last place increased 1)reduced wait satisfaction, increased abandonment rates 2) increased perceived value of the service, reduced 3) queue transparency moderated effects.
 {{< /spoiler >}}
 
 * **Ikea effect**. When compared to objectively similar goods not produced by themselves, consumers place a higher value on goods they have assembled. Consumers show a higher willingness-to-pay when they assemble products themselves.
@@ -3530,11 +3530,11 @@ Critiques: [Gelman and Loken 2013](http://www.stat.columbia.edu/~gelman/research
 
 * **Men’s preference for competition**. Men are more likely to select tournaments than women, because women tend to avoid competition and men look for competition. 
 {{< spoiler text="Statistics" >}}
-* Status: not replicated
+* Status: mixed (Price's direct replication found no gender gap; a larger replication with Chinese adults found one)
 * Original paper: ‘[Do women shy away from competition? Do men compete too much?’, ](https://web.stanford.edu/~niederle/Niederle.Vesterlund.QJE.2007.pdf)Niederle and Vesterlund 2007; within-subject experiment, n=80. [citations=4001(GS, February 2023)]​.
-* Critiques: [Price 2020](http://www.accessecon.com/Pubs/EB/2020/Volume40/EB-20-V40-I2-P132.pdf) direct replication of Niederle & Vesterlund study [n=60, citations=23 (GS, February2023)].
+* Critiques: [Price 2020](http://www.accessecon.com/Pubs/EB/2020/Volume40/EB-20-V40-I2-P132.pdf) direct replication of Niederle & Vesterlund study [n=60, citations=23 (GS, February2023)]. [Carlsson et al. 2020](https://doi.org/10.1016/j.joep.2020.102312) [adults in three Chinese cities, n = 854].
 * Original effect size: Man more likely to select tournaments then women – probit regression coefficients in various regression models -.38 to -.16.
-* Replication effect size: Price: A female in the replication has a 22.4 percentage point higher probability (58.0% versus 35.6%) of entering into the tournament than a female in NV (original study) after controlling for task performance; probit regression coefficient for the NV*Female interaction term from -0.65 (non-significant) to -0.99 (significant) [not replicated].
+* Replication effect size: Price: A female in the replication has a 22.4 percentage point higher probability (58.0% versus 35.6%) of entering into the tournament than a female in NV (original study) after controlling for task performance; probit regression coefficient for the NV*Female interaction term from -0.65 (non-significant) to -0.99 (significant) [not replicated]. Carlsson et al.: 42.8% of men vs 19.7% of women chose the tournament, _p_ &lt; .001 (replicated).
 {{< /spoiler >}}
 
 * **Orgasm gap** (Orgasm equality). There is a gendered orgasm gap, with men experiencing orgasm more frequently than women in heterosexual sexual encounters.​
