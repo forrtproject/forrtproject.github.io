@@ -14,6 +14,7 @@ glossary/_build_references.py  # #976: generator script (or draft) Hugo publishe
 replication-hub/submit/submit.mdOUT  # #976: generator script (or draft) Hugo published by accident, not a page
 data/pub_cards.*.json        # #993: the clusters pages' publication cards, fetched on demand instead of inlined
 about/visitors/index.html    # Its generated description quotes the stats table, whose link text lost "https://" for the preview
+js/newsletter.js                 # Main's old newsletter form script; the Doors footer form (doors/newsletter.html) replaces it
 js/load-theme.js                 # The theme's day/night script, gone with the theme's look
 js/academic.min.FINGERPRINT.js   # The theme's script bundle, without its search, under a new name while some pages still need it
 curated_resources/page/*/index.html  # Decision D17: paginated lists removed, and the 404 page sends old links to /resources/
