@@ -1,8 +1,8 @@
 {{ $imageBase := "/img/team/just_os_chatbot_team" }}
 
-<h2 style="text-align: center; margin: 10px 0 24px;">The Team</h2>
+<h2>The Team</h2>
 
-<div style="display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; margin-top: 20px;">
+<ul class="jos-team">
   {{ $members := slice
     (dict "name" "Rink Hoekstra" "image" "rink-hoekstra.webp" "alt" "Rink Hoekstra" "description" "Associate Professor at Pedagogical and Educational Science department, University of Groningen; board member Open Science Community Groningen; co-project manager.")
     (dict "name" "Nina Schwarzbach" "image" "nina-schwarzbach.webp" "alt" "Nina Schwarzbach" "description" "PhD candidate in psychotherapy and research methodology at University of Groningen; co-project manager.")
@@ -16,12 +16,10 @@
   }}
 
   {{ range $members }}
-  <div style="width: 250px; padding: 2px; border-radius: 18px; background: linear-gradient(135deg, #0f766e 0%, #0ea5e9 50%, #f59e0b 100%); box-shadow: 0 10px 24px rgba(15, 118, 110, 0.15);">
-    <div style="height: 100%; background: #fff; border-radius: 16px; padding: 16px; text-align: center;">
-      <img src="{{ printf "%s/%s" $imageBase .image | relURL }}" alt="{{ .alt }}" style="width: 180px; height: 180px; border-radius: 50%; object-fit: cover;">
-      <h4 style="margin: 12px 0 6px;">{{ .name }}</h4>
-      <p style="font-size: 0.9rem; color: #555; margin: 0;">{{ .description }}</p>
-    </div>
-  </div>
+  <li>
+    <img src="{{ printf "%s/%s" $imageBase .image | relURL }}" alt="{{ .alt }}" width="96" height="96" loading="lazy">
+    <h3>{{ .name }}</h3>
+    <p>{{ .description }}</p>
+  </li>
   {{ end }}
-</div>
+</ul>

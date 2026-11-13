@@ -1,0 +1,37 @@
+{{- define "main" -}}
+{{/* The simple list page, for categories, clusters' resource lists and sections with no template of
+     their own. A section with no children is just its text. Paginated lists keep their numbered
+     pages, except the curated_resources and forrt_clusters ones (decision D17), which the 404 page
+     sends on. */}}
+{{ if not .Data.Pages }}
+  {{ $_ := .Paginate .Data.Pages }}
+  {{ partial "doors/reading" . }}
+{{ else }}
+<div class="wrap">
+  <div class="article-layout article-layout-wide">
+    <article class="reading">
+      <header class="article-head">
+        {{ partial "doors/crumbs" (dict "page" .) }}
+        <h1>{{ .Title }}</h1>
+        {{ with .Params.subtitle }}<p class="standfirst">{{ . | markdownify | emojify }}</p>{{ end }}
+      </header>
+      {{ with .Content }}<div class="article-style">{{ partial "doors/content" . }}</div>{{ end }}
+      {{ if eq (.Type | lower) "curated_resources" }}
+        <p class="list-count">All {{ len .Data.Pages }} teaching resources are in the directory, where you can search and filter them.</p>
+        <p><a class="btn btn-primary" href="{{ relref . "/resources" }}">Open the resources directory</a></p>
+      {{ else if and (eq (.Type | lower) "forrt_clusters") (ne .Kind "taxonomy") }}
+        <p class="list-count">{{ len .Data.Pages }} resources. Search and filter them all in the <a href="{{ relref . "/resources" }}">resources directory</a>.</p>
+        {{/* Alphabetical rows that read across, each with its type, rather than a wall of bare links. */}}
+        <ul class="cluster-resources">
+          {{ range sort .Data.Pages "Title" }}<li><a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ with .Params.material_type }}<span>{{ delimit . ", " }}</span>{{ end }}</li>{{ end }}
+        </ul>
+      {{ else }}
+        {{ $pager := .Paginate .Data.Pages }}
+        <div class="list-items">{{ range $pager.Pages }}{{ partial "doors/list_item" . }}{{ end }}</div>
+        {{ partial "doors/pager" $pager }}
+      {{ end }}
+    </article>
+  </div>
+</div>
+{{ end }}
+{{- end -}}

@@ -28,7 +28,7 @@ title = "POSTEdu: Promoting Open Science Teaching: A Positive, Inclusive and Par
 <!-- ![PostEdu Logo](PostEdu1.webp) -->
 
 <div style="display: flex; align-items: center;">
-  <img src="PostEdu1.webp" alt="PostEdu Logo" style="margin:auto; padding: auto;">
+  <img src="PostEdu1.webp" alt="PostEdu Logo" width="320" style="margin:auto; padding: auto;">
 </div>
 
 ### Summary
@@ -52,7 +52,7 @@ You can watch the recording of a part of one of the launch events, where the pro
 <h3 style="color:#38673F"> 🚨 <strong> Phase 2 (October 2024 - April 2025): Module Development
  </strong> </h3>
 
-Using insights from the launch events and following FORRT’s comprehensive clusters (https://forrt.org/clusters/), we will develop content for a self-guided program targeting educators interested in incorporating Open Science into their teaching/mentoring. We will develop three modules, each including active reflections on incorporating the ethos of Open Science and utilising existing open educational resources within different disciplines.
+Using insights from the launch events and following FORRT’s comprehensive [clusters](/clusters/), we will develop content for a self-guided program targeting educators interested in incorporating Open Science into their teaching/mentoring. We will develop three modules, each including active reflections on incorporating the ethos of Open Science and utilising existing open educational resources within different disciplines.
 
 - **Module 1 - “A positive lens”** (Module coordinator: Dr. Thomas Rhys Evans) <br>
 The ethos of Open Science in a teaching context (importance of meta-science, transparency and reproducibility, proposed improved initiatives, and ethical consideration for improved practices). 
@@ -74,4 +74,4 @@ Disseminate the program, elicit user feedback and engage in sustainable revision
 
 <strong>Development teams</strong>: Educators interested in actively helping to develop the modules of the self-guided course (~2-3 per module). Contributors will be included in the self-guided course in line with CRediT taxonomy. 
 
-The spots for these roles are limited and members will be selected by the core team. For more information, feel free to reach out to Team Curriculum (Leticia Micheli, Madeleine Pownall, Helena Hartmann, Thomas Rhys Evans, Karen Matvienko-Sikar & Flavio Azevedo).
+Recruitment for these roles has closed. For more information, feel free to reach out to Team Curriculum (Leticia Micheli, Madeleine Pownall, Helena Hartmann, Thomas Rhys Evans, Karen Matvienko-Sikar & Flavio Azevedo).

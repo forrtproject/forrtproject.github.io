@@ -56,4 +56,4 @@ classtitle = "text-center"
 
 Below you find FORRT's community calendar containing scheduled events.
 
-{{< click_to_load src="https://calendar.google.com/calendar/embed?src=forrtproject%40gmail.com&ctz=Europe%2FBerlin" provider="Google Calendar" label="This calendar" style="border: 0" width="100%" height="600" >}}
+{{< click_to_load src="https://calendar.google.com/calendar/embed?src=forrtproject%40gmail.com&ctz=Europe%2FBerlin&mode=AGENDA" provider="Google Calendar" label="This calendar" title="FORRT community calendar" style="border: 0" width="100%" height="600" >}}

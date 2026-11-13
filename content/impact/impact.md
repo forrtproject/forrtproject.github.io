@@ -56,7 +56,7 @@ subtitle = ""
 ## **Motivation**
 ---------------------
 
-Recently, the scientific community took steps to reflect a widespread awareness of, and call for, improved practices ushering in the “credibility revolution,” including higher standards of evidence, preregistration, direct replication, transparency, and openness. The accelerating adoption of open science practices has been perhaps the most significant change in how social scientists work in the last decade. 
+The scientific community has taken steps to reflect a widespread awareness of, and call for, improved practices ushering in the “credibility revolution,” including higher standards of evidence, preregistration, direct replication, transparency, and openness. The accelerating adoption of open science practices has been perhaps the most significant change in how social scientists work in the last decade. 
 
 *However*, while there are still issues standing in the way of widespread adoption by academics, the integration of these new and improved principles into researchers’ educational pipeline lags behind (to the detriment of students and the quality of higher education). In an effort to raise awareness of the educational benefits of open and reproducible scholarship to students, **we review** the extant literature on the topic, to tease out why academics should integrate these principles in their teaching and mentoring, and provide recommendations.
 
@@ -79,7 +79,7 @@ To review and synthesize the evidence that investigates whether embedding open a
 
 Our review of the evidence is summarized in a manuscript entitled *Teaching open and reproducible scholarship: a critical review of the evidence base for current pedagogical methods and their outcomes*. This describes the available (empirical) evidence of the impact and importance of integrating open scholarship into higher education, its benefits and challenges within three areas: students’ (a) scientific literacy; (b) engagement with science; and (c) attitudes towards science.
 
-Our manuscript has been **published**!. Cite as:
+Our manuscript has been **published**! Cite as:
 
 > Pownall, M., Azevedo, F., König, L. M., Slack, H. R., Evans, T. R., Flack, Z., ... & FORRT. (2023). Teaching open and reproducible scholarship: a critical review of the evidence base for current pedagogical methods and their outcomes. *Royal Society Open Science*, *10*(5), Article 221255. https://doi.org/10.1098/rsos.221255
 
@@ -94,11 +94,11 @@ The manuscript was an international effort! Contributors were located across mul
 <br>
 
 
-### Lecture & Slides
+### Lecture
 
 <br>
 
-Dr. Madeleine Pownall presents a summary of the article in this lecture. You can find the slides here.
+Dr. Madeleine Pownall presents a summary of the article in this lecture.
 
 {{< youtube qYejqrtquzc >}}
  
@@ -106,4 +106,4 @@ Dr. Madeleine Pownall presents a summary of the article in this lecture. You can
 
 ### Get in touch
 
-If you know of relevant papers, please reach out by email at [info@forrt.org](mailto:info@forrt.org), or [join the project's Slack channel](https://join.slack.com/t/forrt/shared_invite/enQtODMwODI0OTk4ODgzLTM0ZTQ3NDk5MzA1ZjBmNWJjYTVlN2Y2YTk0ZTJhYTY5NDliMDYzMjg2MWE0ZDRhOTY0ZDY3OTRlNDA4ODQ3NjQ). If you want to learn more about the project, [see this announcement on social media](https://twitter.com/FORRTproject/status/1453325222367698947), [join the project's Slack channel](https://join.slack.com/t/forrt/shared_invite/enQtODMwODI0OTk4ODgzLTM0ZTQ3NDk5MzA1ZjBmNWJjYTVlN2Y2YTk0ZTJhYTY5NDliMDYzMjg2MWE0ZDRhOTY0ZDY3OTRlNDA4ODQ3NjQ).
+If you know of relevant papers, please reach out by email at [info@forrt.org](mailto:info@forrt.org), or [join the project's Slack channel](https://join.slack.com/t/forrt/shared_invite/enQtODMwODI0OTk4ODgzLTM0ZTQ3NDk5MzA1ZjBmNWJjYTVlN2Y2YTk0ZTJhYTY5NDliMDYzMjg2MWE0ZDRhOTY0ZDY3OTRlNDA4ODQ3NjQ).

@@ -1,50 +1,39 @@
-<style>
-  /* Styles for the site footer */
-  footer {
-    margin: 0.5rem;
-    padding: 0.5rem;
-    float: left;
-  }
-</style>
-
-<footer class="site-footer">
-  {{ with site.GetPage "/imprint" }}
-  <p class="powered-by">
-    <a class="btn btn-primary" href="/about/cite_us/" role="button">Cite FORRT</a>
-    <span style="margin-left: 2rem;"></span>
-    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-    {{ with site.GetPage "privacy.md" }}
-      &middot; {{ printf "<a href=\"%s\">%s</a>" .RelPermalink .Title | safeHTML }}
-    {{ end }}
-    {{ with site.GetPage "terms.md" }}
-      &middot; {{ printf "<a href=\"%s\">%s</a>" .RelPermalink .Title | safeHTML }}
-    {{ end }}
-    &middot; <a href="#" data-cookie-settings>{{ i18n "cookie_settings" }}</a>
-  </p>
-  {{ end }}
-
-  <p class="powered-by">
-    {{ with site.Copyright }}{{ replace . "{year}" now.Year | markdownify}}{{ end }}
-  </p>
-
-  {{/* Display copyright license. */}}
-  {{ partial "site_footer_license" . }}
-
-  <p class="powered-by">
-    {{ if not site.Params.i_am_a_sponsor }}
-    This website is published using two great open source tools:
-    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a> & the
-    <a href="https://hugoblox.com/" target="_blank" rel="noopener">Academic theme.</a>
-    {{ end }}
-
-    {{ if not (in (slice "book" "docs" "updates") .Type) }}
-    <span class="float-right" aria-hidden="true">
-      <a href="#" class="back-to-top">
-        <span class="button_icon">
-          <i class="fas fa-chevron-up fa-2x"></i>
-        </span>
-      </a>
-    </span>
-    {{ end }}
-  </p>
+{{/* Doors site footer, from the `footer` and `social` menus in config/_default/menus.toml. */}}
+{{ $page := . }}
+{{ $logo := resources.Get "images/doors/logo-row.webp" }}
+<footer class="site-foot" lang="en" dir="ltr">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <a class="brand" href="{{ "" | relLangURL }}" aria-label="FORRT home"><img src="{{ $logo.RelPermalink }}" width="{{ $logo.Width }}" height="{{ $logo.Height }}" alt="FORRT"></a>
+        <p>{{ site.Params.description }}</p>
+        <a href="mailto:info@forrt.org">info@forrt.org</a>
+        <a class="more foot-news" href="{{ relref $page "/newsletters" }}">Subscribe to the FORRT newsletter</a>
+      </div>
+      {{ range site.Menus.footer }}
+      <div>
+        <h2>{{ .Name }}</h2>
+        {{ range .Children }}
+          {{ partial "doors/menu_link" (dict "entry" . "page" $page) }}
+        {{ end }}
+      </div>
+      {{ end }}
+    </div>
+    <div class="socials">
+      {{ range site.Menus.social }}<a href="{{ .URL }}" rel="noopener">{{ .Name }}</a>{{ end }}
+    </div>
+    <div class="foot-base">
+      <span>FORRT Germany e.V. is a registered charity in Germany, closely affiliated with FORRT.</span>
+      <span class="foot-licence"><img src="{{ "img/licenses/by-nc-sa.svg" | relURL }}" alt="" width="88" height="31">Content licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stated otherwise.</span>
+    </div>
+    <div class="foot-legal">
+      <a href="{{ relref $page "/about/cite_us" }}">Cite FORRT</a>
+      {{ with site.GetPage "/imprint" }}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
+      {{ with site.GetPage "privacy.md" }}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
+      {{ with site.GetPage "terms.md" }}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
+      <a href="#" data-cookie-settings>{{ i18n "cookie_settings" }}</a>
+      <span>{{ with site.Copyright }}{{ replace . "{year}" now.Year | markdownify }}{{ end }}</span>
+      <span>Published with <a href="https://gohugo.io" rel="noopener">Hugo</a> and the <a href="https://hugoblox.com/" rel="noopener">Academic theme</a>.</span>
+    </div>
+  </div>
 </footer>

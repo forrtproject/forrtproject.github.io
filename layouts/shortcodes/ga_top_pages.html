@@ -21,7 +21,7 @@
             <a href="{{ .RelPermalink }}">{{ .RelPermalink }}</a>
           {{ end }}
         {{ else }}
-          <a href="https://forrt.org{{ .page }}">https://forrt.org{{ .page }}</a>
+          <a href="{{ .page | relURL }}">forrt.org{{ .page }}</a>
         {{ end }}
       </td>
       <td>{{ .views }}</td>

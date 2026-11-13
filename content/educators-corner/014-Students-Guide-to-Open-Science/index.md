@@ -38,7 +38,7 @@ I am a ‘child of the replication crisis’. I completed my PhD in 2016 on 'ste
 ## What is this book about and why is it needed?
 By now, many researchers have heard about the ‘replication crisis’ that has swept research disciplines, and the fast-paced improvements brought about by open research reform. However, there is still a gap in educational practices – in the teaching of the replication crisis – which FORRT and its members strive to overcome. Furthermore, when trying to learn about the replication crisis and open science, it can feel overwhelming and there are lots of different resources in many different places. With this in mind, I wrote a “*A Student’s Guide to Open Science*” as a way of pulling together all of these various pieces of information and useful resources that are currently out there. 
 
-The book walks students (and their educators) through a recent history of the replication crisis in psychology, the causes and drivers of crises (including academic incentive structures, questionable research practices, and cognitive biases), and open science reform, its benefits and associated challenges. Importantly, to ensure that students understand how to put these new practices into practice, it also includes a handy, digestible guide to implementing open science practices such as preprints, preregistration, Registered Reports, and open materials, data, and code. It is my hope that this book becomes an essential guide to navigating the replication crisis. 
+The book walks students (and their educators) through a recent history of the replication crisis in psychology, the causes and drivers of crises (including academic incentive structures, questionable research practices, and cognitive biases), and open science reform, its benefits and associated challenges. Importantly, to ensure that students understand how to put these new practices into practice, it also includes a handy, digestible guide to implementing open science practices such as preprints, {{< term "Preregistration" "preregistration" >}}, {{< term "Registered Report" "Registered Reports" >}}, and open materials, data, and code. It is my hope that this book becomes an essential guide to navigating the replication crisis. 
 
 ## Pedagogic resources within the book
 This book is primarily aimed at students studying psychology at both undergraduate and postgraduate level, but throughout I include useful pedagogic resources that educators can use to teach the replication crisis and open science reform. For example, there is an activity where students plan to replicate a study and can understand the various difficulties they may stumble upon in their quest. Here, they find their favourite article from the journal it was published and walk themselves through different questions to assess whether there is enough information to perform an exact replication – what is the aim of the study? Do the researchers specify their main hypotheses? What is the research design? Are the measures they used detailed enough to understand how they were scored? Do they report whether (and how) they screened or cleaned their data? (see Box 1).
@@ -53,11 +53,7 @@ This same pedagogic activity can then be expanded to teach about open science re
 
 ![This activity asks students to write a preregistration for a replication study, using the As Predicted dot org template. The learning outcomes for this are: To understand how to transparently plan a study. To demonstrate understanding of how open science practices can aid transparency, replication, and reproducibility. To interpret research articles and apply this learning to conducting independent research studies.](aspredicted-template.webp)
 
-In addition to these pedagogic resources, the book also contains top tips for implementing open science practices into student’s research training, including for preprints, preregistration, Registered Reports, and open materials, data, and code. Whilst the focus is mainly on quantitative research, it also provides links and resources to qualitative research. In addition, throughout it discusses the many different organisations and initiatives that have shaped my own learning of open science (see Box 3), thus providing a detailed overview of everything we have learnt so far from the advent of the replication crisis through to current open science reform.
-
-**Box 3. Key resources to get started with open science.**
-
-{{% alert note %}}
+{{% callout title="Box 3. Key resources to get started with open science" %}}
 
 **Charlotte's Key Open Science Resources**
 
@@ -70,13 +66,15 @@ In addition to these pedagogic resources, the book also contains top tips for im
 - The [Open Research Calendar](https://openresearchcalendar.org/)
 - New meta-research articles via [MetaArXiv](https://osf.io/preprints/metaarxiv/)
 
-{{% /alert %}}
+{{% /callout %}}
+
+In addition to these pedagogic resources, the book also contains top tips for implementing open science practices into student’s research training, including for preprints, preregistration, Registered Reports, and open materials, data, and code. Whilst the focus is mainly on quantitative research, it also provides links and resources to qualitative research. In addition, throughout it discusses the many different organisations and initiatives that have shaped my own learning of open science (see Box 3), thus providing a detailed overview of everything we have learnt so far from the advent of the replication crisis through to current open science reform.
 
 ## Become a student of open science!
 The replication crisis and open science reform is not currently embedded within the teaching of psychology. It is my hope that with all of these wonderful new and ever-evolving resources, today’s students become critical consumers of science and pave the way to creating a truly robust, transparent, replicable, reproducible and representative psychological science.
 
 ## Author Bio & Contact: 
-Dr Charlotte Pennington is a Lecturer in Psychology at Aston University, Birmingham, a Fellow of the Higher Education Academy, and a member of FORRT. Her book, “*A Student’s Guide to Open Science: Using the Replication Crisis to Reform Psychology*” is available in all good bookstores and inspection copies are available from [McGraw Hill](https://www.mheducation.com.au/a-student-s-guide-to-open-science-using-the-replication-crisis-to-reform-psychology-9780335251162-aus) for review. If you have trouble accessing it, please let Charlotte know via the contact details below and she will do her best to help. 
+Dr Charlotte Pennington is a Lecturer in Psychology at Aston University, Birmingham, a Fellow of the Higher Education Academy, and a member of FORRT. Her book, “*A Student’s Guide to Open Science: Using the Replication Crisis to Reform Psychology*” is available in all good bookstores and inspection copies are available from [McGraw Hill](https://www.mheducation.co.uk/a-student-s-guide-to-open-science-using-the-replication-crisis-to-reform-psychology-9780335251162-emea-group) for review. If you have trouble accessing it, please let Charlotte know via the contact details below and she will do her best to help.
 
 Email: [c.pennington@aston.ac.uk](mailto:c.pennington@aston.ac.uk)
 

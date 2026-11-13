@@ -28,12 +28,31 @@ Hard checks (exit 1 if any fails):
      non-empty meta description (#864).
   10. No meta description contains a double-escaped entity such as `&amp;ldquo;`
      (#864). Text that merely looks like an entity (`&name;`) is not one.
-  11. The FLoRA page (replication-hub/flora/) contains the FLoRA citation DOI.
+  11. No page has more than one <h1> (#928).
+  12. Numbered resource subsets have unique, self-canonical metadata and
+      CollectionPage data matching their HTML cards (#868).
+  13. PNG/JPEG social images have matching Open Graph/Twitter URLs, type and
+      positive dimensions (#927). Unsupported formats remain report-only.
+  14. No page inlines more than 200 KB in one <script> (#993). Large data belongs in a
+     separate file the page fetches when it needs it.
+  15. Every citation links to its reference on the same page (#200).
+  16. Every glossary term link points to an existing English glossary page (#227).
+  17. Every link in a visible breadcrumb trail (nav.crumbs) has a non-empty href,
+     so a section that is not rendered cannot leave an empty link in the trail.
+  18. No glossary page's <title> or <h1> shows Markdown emphasis as typed, e.g. "(*p*)".
+  19. No page loads EmailOctopus or reCAPTCHA before a visitor subscribes.
+  20. Cluster pages render publication-title markup (<i>, <em>, <scp>) instead of
+     showing it as literal or escaped text, and at least one cluster page exists.
+  21. The /clusters/ illustration (svg.clusters-map__art) is hidden from assistive technology
+      and holds no tab stop (every link has tabindex="-1"), and every in-page link in the
+      clusters map reaches an id on the page.
+  22. The FLoRA page (replication-hub/flora/) contains the FLoRA citation DOI.
 
-Report-only sections (never fail): pages with zero or several <h1>, the
+Report-only sections (never fail): pages with no <h1>, the
 site-wide share of images that carry both width and height, pages whose
 og:image is not a PNG or JPEG, and indexable pages whose description repeats
-the homepage's, is shared with another page or contains HTML markup as text.
+the homepage's, is shared with another page, contains HTML markup as text, or
+contains a raw HTTP(S) URL or forrt.org/ path (#987).
 """
 
 import json
@@ -43,13 +62,15 @@ import sys
 from collections import Counter
 from html.entities import html5
 from html.parser import HTMLParser
-from urllib.parse import unquote, urlparse
+from urllib.parse import unquote, urljoin, urlparse
 
 MAX_LISTED = 20
+MAX_INLINE_SCRIPT = 200_000  # bytes in one inline <script> (#993)
 # Markup that survived flattening, e.g. an indented HTML block rendered as code.
 HTML_TAG = re.compile(r"</?[A-Za-z][A-Za-z0-9]*(\s[^<>]*)?/?>")
 # Attribute values arrive already unescaped, so any entity left in them was
 # escaped twice in the HTML (e.g. `&amp;ldquo;`).
+DESCRIPTION_URL = re.compile(r"https?://|\bforrt\.org/", re.I)
 LITERAL_ENTITY = re.compile(r"&(#\d+|#x[0-9a-fA-F]+|[A-Za-z][A-Za-z0-9]*);")
 
 
@@ -67,14 +88,41 @@ class PageParser(HTMLParser):
         self._h1_buffer = []
         self.jsonld = []
         self.canonical = None
+        self.title = ""
+        self.resource_links = []
+        self._in_title = False
+        self._in_resource_heading = False
+        self.gloss_terms = []
         self._jsonld_buffer = None
+        self.largest_inline_script = 0
+        self._inline_script = None
+        self.ids = set()
+        self.citations = []
+        self.crumb_links = []
+        self._in_crumbs = False
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
+        if tag == "script" and not attrs.get("src"):
+            self._inline_script = 0
+        if attrs.get("id"):
+            self.ids.add(attrs["id"])
+        if tag == "nav" and "crumbs" in (attrs.get("class") or "").split():
+            self._in_crumbs = True
+        if tag == "a" and self._in_crumbs:
+            self.crumb_links.append(attrs.get("href") or "")
+        if tag == "a" and "cite" in attrs.get("class", "").split():
+            self.citations.append(attrs.get("href", ""))
         if tag == "script" and attrs.get("type") == "application/ld+json":
             self._jsonld_buffer = []
         elif tag == "link" and attrs.get("rel") == "canonical":
             self.canonical = attrs.get("href")
+        if tag == "title":
+            self._in_title = True
+        if tag == "h2" and "res-title" in attrs.get("class", "").split():
+            self._in_resource_heading = True
+        if tag == "a" and self._in_resource_heading and attrs.get("href"):
+            self.resource_links.append(attrs["href"])
         if tag == "h1":
             self._h1_depth += 1
         elif tag in ("script", "link"):
@@ -83,6 +131,8 @@ class PageParser(HTMLParser):
                 self.urls.append(url)
         elif tag == "img":
             self.imgs.append(attrs)
+        elif tag == "a" and "gloss-term" in (attrs.get("class") or "").split():
+            self.gloss_terms.append(attrs.get("href") or "")
         elif tag == "meta":
             self.metas.append(attrs)
             key = attrs.get("property") or attrs.get("name")
@@ -94,9 +144,18 @@ class PageParser(HTMLParser):
             self.code_classes.append(attrs.get("class") or "")
 
     def handle_endtag(self, tag):
+        if tag == "nav":
+            self._in_crumbs = False
+        if tag == "script" and self._inline_script is not None:
+            self.largest_inline_script = max(self.largest_inline_script, self._inline_script)
+            self._inline_script = None
         if tag == "script" and self._jsonld_buffer is not None:
             self.jsonld.append("".join(self._jsonld_buffer))
             self._jsonld_buffer = None
+        if tag == "title":
+            self._in_title = False
+        if tag == "h2":
+            self._in_resource_heading = False
         if tag == "pre":
             self._in_pre = False
         if tag == "h1" and self._h1_depth > 0:
@@ -105,7 +164,18 @@ class PageParser(HTMLParser):
                 self.h1_texts.append("".join(self._h1_buffer).strip())
                 self._h1_buffer = []
 
+    def close(self):
+        super().close()
+        # A script left open at the end of the file still counts.
+        if self._inline_script is not None:
+            self.largest_inline_script = max(self.largest_inline_script, self._inline_script)
+            self._inline_script = None
+
     def handle_data(self, data):
+        if self._in_title:
+            self.title += data
+        if self._inline_script is not None:
+            self._inline_script += len(data.encode("utf-8"))
         if self._jsonld_buffer is not None:
             self._jsonld_buffer.append(data)
         if self._h1_depth > 0:
@@ -116,6 +186,8 @@ class Page:
     def __init__(self, path, parser):
         self.path = path
         self.h1_texts = parser.h1_texts
+        self.title = parser.title.strip()
+        self.resource_links = parser.resource_links
         self.urls = parser.urls
         self.imgs = parser.imgs
         self.meta = parser.meta
@@ -131,11 +203,16 @@ class Page:
         elsewhere = (parser.canonical is not None and
                      unquote(urlparse(parser.canonical).path) != unquote(own))
         # Redirect stubs, noindexed pages and pages canonicalised to another URL
-        # (pagination pages point at page 1) never reach search results as such.
+        # never reach search results as such.
         self.noindex = "noindex" in robots
         self.indexable = not self.noindex and not refresh and not elsewhere
         self.jsonld = parser.jsonld
         self.canonical = parser.canonical
+        self.largest_inline_script = parser.largest_inline_script
+        self.ids = parser.ids
+        self.citations = parser.citations
+        self.gloss_terms = parser.gloss_terms
+        self.crumb_links = parser.crumb_links
 
     def loads(self, needle):
         return any(needle in url for url in self.urls)
@@ -169,9 +246,40 @@ def load_pages(public_dir):
             parser = PageParser()
             with open(full, encoding="utf-8", errors="replace") as handle:
                 parser.feed(handle.read())
+            parser.close()
             pages.append(Page(os.path.relpath(full, public_dir), parser))
     pages.sort(key=lambda page: page.path)
     return pages
+
+
+def check_glossary_links(pages):
+    # Canonical URLs include a preview subfolder when built with --baseURL.
+    english = set()
+    for page in pages:
+        path = page.path.replace(os.sep, "/")
+        if path.startswith("glossary/english/") and path != "glossary/english/index.html":
+            url = urlparse(page.canonical or "/" + path.removesuffix("index.html"))
+            english.add((url.netloc, unquote(url.path)))
+    failures = []
+    for page in pages:
+        path = page.path.replace(os.sep, "/")
+        for href in page.gloss_terms:
+            url = urlparse(urljoin(page.canonical or "/" + path, href))
+            if not href or url.scheme not in ("", "http", "https") or (url.netloc, unquote(url.path)) not in english:
+                failures.append("%s (%s)" % (page.path, href or "missing href"))
+    return failures
+
+
+# Paired asterisks around text: Markdown emphasis shown as typed. Asterisks inside a word
+# ("G*Power", "P*Hack") are not delimiters.
+LITERAL_EMPHASIS = re.compile(r"(?<!\w)\*[^*\s](?:[^*]*[^*\s])?\*(?!\w)")
+
+
+def check_glossary_title_markdown(pages):
+    """Glossary titles such as "Research Contribution Metric (*p*)" must render, not show asterisks."""
+    return [p.path for p in pages
+            if p.path.replace(os.sep, "/").startswith("glossary/")
+            and any(LITERAL_EMPHASIS.search(text) for text in [p.title, *p.h1_texts])]
 
 
 def check_no_search_heading(pages):
@@ -230,6 +338,32 @@ def check_homepage_share_image(home):
 def check_img_alt(pages):
     return ["%s (%d image(s))" % (p.path, len(p.imgs_without_alt))
             for p in pages if p.imgs_without_alt]
+
+
+# Escaped once (&lt;i&gt;) or twice (&amp;lt;i&amp;gt;), or a raw <scp> no browser styles.
+LITERAL_TITLE_MARKUP = re.compile(r"&(?:amp;)?lt;/?(?:i|em|scp)&(?:amp;)?gt;|</?scp>", re.IGNORECASE)
+
+
+def check_cluster_title_markup(public_dir):
+    """Cluster pages render publication-title markup (clusters/rich_text.html), never show it."""
+    clusters_dir = os.path.join(public_dir, "clusters")
+    found, scanned = [], 0
+    for root, _dirs, files in os.walk(clusters_dir):
+        if "index.html" in files:
+            scanned += 1
+            full = os.path.join(root, "index.html")
+            with open(full, encoding="utf-8", errors="replace") as handle:
+                if LITERAL_TITLE_MARKUP.search(handle.read()):
+                    found.append(os.path.relpath(full, public_dir))
+    if not scanned:
+        return ["clusters/ (no cluster pages found)"]
+    return sorted(found)
+
+
+def check_citation_targets(pages):
+    return ["%s (%s)" % (p.path, href or "missing href")
+            for p in pages for href in p.citations
+            if not href.startswith("#ref-") or unquote(href[1:]) not in p.ids]
 
 
 def breadcrumb_lists(page):
@@ -346,6 +480,97 @@ def check_description_entities(pages):
     return failures
 
 
+
+def check_description_urls(pages):
+    return [p.path for p in pages
+            if p.indexable and any(DESCRIPTION_URL.search(d) for d in p.descriptions)]
+
+
+def check_share_image_metadata(pages):
+    failures = []
+    for p in pages:
+        image = p.meta.get("og:image", "")
+        if not is_share_format(image):
+            continue  # Undecodable originals and standalone pages are reported below.
+        expected_type = "image/png" if urlparse(image).path.lower().endswith(".png") else "image/jpeg"
+        problems = []
+        if p.meta.get("twitter:image") != image:
+            problems.append("Open Graph and Twitter images differ")
+        if p.meta.get("og:image:type") != expected_type:
+            problems.append("incorrect image type")
+        for key in ("og:image:width", "og:image:height"):
+            value = p.meta.get(key, "")
+            if not value.isdigit() or int(value) <= 0:
+                problems.append("missing or invalid " + key)
+        if problems:
+            failures.append("%s (%s)" % (p.path, ", ".join(problems)))
+    return failures
+
+
+def check_resource_pagination(pages):
+    """Check the directory and every numbered subset, including preview base paths."""
+    directory = next((p for p in pages if p.path == os.path.join("resources", "index.html")), None)
+    if directory is None:
+        return []  # This check also supports small fixtures with no directory.
+    failures = []
+    titles, descriptions = set(), set()
+    root = (directory.canonical or "").rstrip("/") + "/"
+    for p in pages:
+        match = re.fullmatch(r"resources/page/([2-9]|[1-9]\d+)/index\.html", p.path.replace(os.sep, "/"))
+        if p is not directory and not match:
+            continue
+        number = int(match[1]) if match else 1
+        expected = root if number == 1 else root + "page/%d/" % number
+        problems = []
+        if not directory.canonical or p.canonical != expected:
+            problems.append("not self-canonical")
+        if p.meta.get("og:url") != expected:
+            problems.append("og:url does not match canonical")
+        if p.noindex != directory.noindex:
+            problems.append("subset robots metadata differs from the directory")
+        for label, value, seen in (("title", p.title, titles),
+                                   ("description", next(iter(p.descriptions), ""), descriptions)):
+            if not value or value in seen:
+                problems.append("empty or repeated " + label)
+            seen.add(value)
+        if p.meta.get("og:title") != p.title:
+            problems.append("og:title does not match title")
+        if number > 1 and ("Page %d" % number not in p.title
+                           or "page %d" % number not in next(iter(p.descriptions), "")):
+            problems.append("metadata omits page number")
+        try:
+            blocks = [json.loads(block) for block in p.jsonld]
+            collections = [block for block in blocks if isinstance(block, dict)
+                           and block.get("@type") == "CollectionPage"]
+        except ValueError:
+            collections = []
+        if len(collections) != 1:
+            problems.append("missing CollectionPage")
+        else:
+            collection = collections[0]
+            if (collection.get("url") != expected
+                    or collection.get("@id") != expected + "#collection"
+                    or collection.get("name") != p.title.rsplit(" | ", 1)[0]):
+                problems.append("CollectionPage URL/name does not match metadata")
+            items = collection.get("mainEntity", {})
+            listed = items.get("itemListElement", [])
+            links = [urlparse(item.get("url", "")).path for item in listed]
+            if (not p.resource_links or links != p.resource_links
+                    or items.get("numberOfItems") != len(p.resource_links)):
+                problems.append("CollectionPage subset does not match HTML cards")
+        if problems:
+            failures.append("%s (%s)" % (p.path, ", ".join(problems)))
+    return failures
+def check_third_party_forms(pages):
+    """The newsletter form loads reCAPTCHA and posts to EmailOctopus only when a visitor subscribes."""
+    return sorted(p.path for p in pages if p.loads("recaptcha") or p.loads("eocampaign1.com"))
+
+
+def check_inline_scripts(pages):
+    return ["%s (%d KB)" % (p.path, p.largest_inline_script // 1000) for p in pages
+            if p.largest_inline_script > MAX_INLINE_SCRIPT]
+
+
 FLORA_PAGE = "replication-hub/flora/index.html"
 
 
@@ -389,9 +614,55 @@ def print_items(title, items):
         print("      +%d more" % (len(items) - MAX_LISTED))
 
 
-def check_third_party_forms(pages):
-    """The newsletter form loads reCAPTCHA and posts to EmailOctopus only when a visitor subscribes."""
-    return sorted(p.path for p in pages if p.loads("recaptcha") or p.loads("eocampaign1.com"))
+class ClustersMapParser(HTMLParser):
+    """Ids on the page, the illustration's attributes and links, and every in-page link in the map."""
+
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.ids, self.arts, self.art_links, self.map_hrefs = set(), [], [], []
+        self.stack = []  # (tag, in_art, in_map) for open elements
+
+    def handle_starttag(self, tag, attrs):
+        attrs = dict(attrs)
+        if attrs.get("id"):
+            self.ids.add(attrs["id"])
+        classes = (attrs.get("class") or "").split()
+        in_art = (self.stack[-1][1] if self.stack else False) or (tag == "svg" and "clusters-map__art" in classes)
+        in_map = (self.stack[-1][2] if self.stack else False) or "clusters-map" in classes
+        if tag == "svg" and "clusters-map__art" in classes:
+            self.arts.append(attrs)
+        if tag == "a" and in_art:
+            self.art_links.append(attrs)
+        if tag == "a" and in_map and (attrs.get("href") or "").startswith("#"):
+            self.map_hrefs.append(attrs["href"])
+        if tag not in ("path", "rect", "circle", "image", "tspan", "br", "img", "input", "meta", "link"):
+            self.stack.append((tag, in_art, in_map))
+
+    def handle_endtag(self, tag):
+        for i in range(len(self.stack) - 1, -1, -1):
+            if self.stack[i][0] == tag:
+                del self.stack[i:]
+                break
+
+
+def check_clusters_map(public_dir):
+    path = os.path.join(public_dir, "clusters", "index.html")
+    if not os.path.exists(path):
+        return []
+    parser = ClustersMapParser()
+    with open(path, encoding="utf-8", errors="replace") as handle:
+        parser.feed(handle.read())
+    failures = []
+    if not parser.arts:
+        failures.append("clusters/index.html: no svg.clusters-map__art")
+    failures += ["clusters/index.html: the illustration is not aria-hidden"
+                 for art in parser.arts if art.get("aria-hidden") != "true"]
+    stops = [a.get("href", "") for a in parser.art_links if a.get("tabindex") != "-1"]
+    if stops:
+        failures.append("clusters/index.html: %d links in the illustration are tab stops, e.g. %s" % (len(stops), stops[0]))
+    missing = sorted({h for h in parser.map_hrefs if unquote(h[1:]) not in parser.ids})
+    failures += ["clusters/index.html: %s has no target" % h for h in missing]
+    return failures
 
 
 def main(public_dir):
@@ -401,6 +672,7 @@ def main(public_dir):
 
     results = {
         '1. no <h1>Search</h1>': check_no_search_heading(pages),
+        "18. glossary titles show no Markdown asterisks": check_glossary_title_markdown(pages),
         "2. homepage free of mermaid/highlight.js assets": check_homepage_assets(home),
         "4. every <img> has an alt attribute": check_img_alt(pages),
         "5. every homepage <img> has width and height": check_homepage_img_dims(home),
@@ -408,7 +680,17 @@ def main(public_dir):
         "7. breadcrumb JSON-LD is well formed": check_breadcrumbs(pages),
         "9. every indexable page has a meta description": check_description_present(pages),
         "10. no double-escaped entity in a meta description": check_description_entities(pages),
-        "11. FLoRA page shows the citation": check_flora_citation(public_dir),
+        "11. no page has several <h1>": [p.path for p in pages if len(p.h1_texts) > 1],
+        "12. resource subsets have consistent, unique metadata": check_resource_pagination(pages),
+        "13. compatible social images have type, dimensions and matching URLs": check_share_image_metadata(pages),
+        "14. no inline <script> over 200 KB": check_inline_scripts(pages),
+        "15. every citation has a local reference target": check_citation_targets(pages),
+        "16. glossary links reach existing English terms": check_glossary_links(pages),
+        "17. every breadcrumb link has a target": [p.path for p in pages if any(not h.strip() for h in p.crumb_links)],
+        "19. no page loads EmailOctopus or reCAPTCHA before a visitor subscribes": check_third_party_forms(pages),
+        "20. cluster pages show no literal <i>/<em>/<scp> title markup": check_cluster_title_markup(public_dir),
+        "21. the clusters illustration holds no tab stop and its links have targets": check_clusters_map(public_dir),
+        "22. FLoRA page shows the citation": check_flora_citation(public_dir),
     }
     conditional = check_conditional_assets(pages)
     results["3. conditional highlight.js / mermaid loading"] = [
@@ -435,7 +717,6 @@ def main(public_dir):
 
     print("\nReport only (never fails)")
     print_items("pages with no <h1>", [p.path for p in pages if not p.h1_texts])
-    print_items("pages with several <h1>", [p.path for p in pages if len(p.h1_texts) > 1])
     all_imgs = sum(len(p.imgs) for p in pages)
     unsized = sum(len(p.imgs_without_dims) for p in pages)
     if all_imgs:
@@ -444,6 +725,7 @@ def main(public_dir):
     print_items("pages whose og:image is not PNG/JPEG",
                 ["%s (%s)" % (p.path, p.meta["og:image"]) for p in pages
                  if p.meta.get("og:image") and not is_share_format(p.meta["og:image"])])
+    print_items("pages whose meta description contains a raw URL", check_description_urls(pages))
     description_report(pages, home)
 
     return 1 if any(results.values()) else 0

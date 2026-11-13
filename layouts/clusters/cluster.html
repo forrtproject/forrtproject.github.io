@@ -27,26 +27,17 @@
 {{ end }}
 
 {{ if not $cluster }}
-  <div class="universal-wrapper pt-3 pb-3">
-    <div class="container">
+  <div class="wrap">
+    <div>
       <p class="alert alert-warning">Cluster data not found. <a href="{{ "/clusters/" | relURL }}">Back to all clusters</a>.</p>
     </div>
   </div>
 {{ else }}
   {{ partial "clusters/cluster_seo_jsonld.html" (dict "page" . "cluster" $cluster) }}
 
-  {{/* Breadcrumb header — narrow width like main page title */}}
-  <div class="universal-wrapper pt-3 pb-2">
-    <div class="container">
-      <div class="article-container pt-3">
-        {{ $heading := .Params.heading_title | default .Title }}
-        <nav aria-label="breadcrumb" class="clusters-heading-row__crumbs mb-1">
-          <a href="{{ "/clusters/" | relURL }}" class="clusters-heading-row__parent">FORRT Clusters</a>
-          <span class="clusters-heading-row__sep" aria-hidden="true">/</span>
-          <h1 class="clusters-heading-row__title clusters-site-heading" itemprop="headline">{{ $heading }}</h1>
-        </nav>
-      </div>
-    </div>
+  <div class="wrap clusters-head">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ "" | relLangURL }}">Home</a> <span aria-hidden="true">/</span> <a href="{{ "nexus/" | relLangURL }}">Educational Nexus</a> <span aria-hidden="true">/</span> <a href="{{ "clusters/" | relLangURL }}">Clusters</a> <span aria-hidden="true">/</span> <span aria-current="page">{{ .Params.heading_title | default .Title }}</span></nav>
+    <h1 class="clusters-site-heading" itemprop="headline">{{ .Params.heading_title | default .Title }}</h1>
   </div>
 
   {{ $palette := partial "clusters/colors.html" }}
@@ -56,7 +47,7 @@
 
   {{/* Main content section — same structure as hub page */}}
   <section class="cluster-full-width clusters-display-section">
-    <div class="container">
+    <div class="wrap">
       <div class="clusters-layout">
 
         {{ partial "clusters/clusters_controls.html" . }}
@@ -64,14 +55,14 @@
         <div class="row">
           {{ partial "clusters/sidebar_nav.html" (dict "data" $data "arrowColors" $arrowColors "link_mode" "subpath" "active_cluster_number" $n) }}
 
-          <main class="col-12 col-lg-8 col-xl-9 clusters-content">
+          <div class="col-12 col-lg-8 col-xl-9 clusters-content">
             {{ with .Content }}
             <div class="article-container pt-2 pb-2">
               <div class="article-style clusters-cluster-lead">{{ . }}</div>
             </div>
             {{ end }}
             {{ partial "clusters/cluster_section.html" (dict "cluster" $cluster "ci" $ci "colors" $colors) }}
-          </main>
+          </div>
         </div>
       </div>
 

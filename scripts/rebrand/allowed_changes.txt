@@ -1,0 +1,60 @@
+# Paths allowed to differ from main, one normalised path or glob per line. Say why.
+fonts/doors/Newsreader-OFL.txt   # Licence beside the self-hosted font, not a page
+fonts/doors/SourceSans3-OFL.txt  # Licence beside the self-hosted font, not a page
+fonts/doors/FontAwesome-LICENSE.txt  # Licence beside the self-hosted icon subset, not a page
+resources/page/*/index.html  # Crawlable pages of the directory (D16, #868). Their number follows the collection
+resources/directory.json     # The directory's filter data (D16, #868)
+resources/search.json        # The directory's search data, fetched on first search (D16, #868)
+resources/index.html         # Became a list page for its pager, so its SEO tags gain CollectionPage
+home/7-newsletter.md.old     # A retired draft that Hugo copied out by accident, not a page
+resources/resource.py  # #976: generator script (or draft) Hugo published by accident, not a page
+summaries/summaries.py  # #976: generator script (or draft) Hugo published by accident, not a page
+glossary/_create_glossaries.py  # #976: generator script (or draft) Hugo published by accident, not a page
+glossary/_build_references.py  # #976: generator script (or draft) Hugo published by accident, not a page
+replication-hub/submit/submit.mdOUT  # #976: generator script (or draft) Hugo published by accident, not a page
+data/pub_cards.*.json        # #993: the clusters pages' publication cards, fetched on demand instead of inlined
+about/visitors/index.html    # Its generated description quotes the stats table, whose link text lost "https://" for the preview
+js/newsletter.js                 # Main's old newsletter form script; the Doors footer form (doors/newsletter.html) replaces it
+js/load-theme.js                 # The theme's day/night script, gone with the theme's look
+js/academic.min.FINGERPRINT.js   # The theme's script bundle, without its search, under a new name while some pages still need it
+curated_resources/page/*/index.html  # Decision D17: paginated lists removed, and the 404 page sends old links to /resources/
+forrt_clusters/*/page/*/index.html   # Decision D17: paginated lists removed, and the 404 page sends old links to the cluster's page
+tag/index.html                       # The migration plan's one 404 rule replaces the /tag/ stubs
+tag/*/index.html                     # The migration plan's one 404 rule replaces the /tag/ stubs
+tag/*/*/index.html                   # The same, for the one tag with a slash in it
+css/academic.css                 # The theme's stylesheet: no template needs it
+css/academic.min.FINGERPRINT.css # The same stylesheet under its production name, which only rehearse_launch.py's builds show
+css/404.min.FINGERPRINT.css      # Folded into the Doors stylesheet
+css/welcome.min.FINGERPRINT.css  # Folded into the Doors stylesheet
+css/citations.min.FINGERPRINT.css  # The old toolkit stylesheet, replaced by css/doors/toolkit.css
+post/*/featured_hu.jpg           # The page's resized image is now WebP, so its generated copy has a new name
+post/*/featured_hu.png           # The same
+ai-metascience/featured_hu.png   # The same
+coc/index.html  # Its title was empty (" | FORRT"), and it now says Code of Conduct
+glossary/english/research_contribution_metric__p_/index.html  # #1085: glossary titles render their Markdown, so the <title>, og:title and JSON-LD name read "(p)" instead of "(*p*)"
+glossary/german/p/index.html  # #1085: glossary titles render their Markdown, so the <title>, og:title and JSON-LD name read "(p)" instead of "(*p*)"
+glossary/arabic/مقياس_المساهمة_البحثي_ة_نشر/index.html  # #1085: glossary titles render their Markdown, so the <title>, og:title and JSON-LD name read "(p)" instead of "(*p*)"
+glossary/arabic/p_مقياس_المساهمة_البحثي_ة_نشر/index.html  # #1085: the same Arabic page under the older slug that the content committed on this branch still uses
+glossary/chinese/研究贡献指标_p_/index.html  # #1085: glossary titles render their Markdown, so the <title>, og:title and JSON-LD name read "(p)" instead of "(*p*)"
+glossary/turkish/bilimsel_katkı_olcutu_p_/index.html  # #1085: glossary titles render their Markdown, so the <title>, og:title and JSON-LD name read "(p)" instead of "(*p*)"
+about/charity/gep/index.html  # #973: redirect from the address printed in the GEP PDF to /about/charity/, not a page
+data/glossary-terms.*.json  # Build-time English glossary lookup, fetched on first term interaction (#227); not a page
+cv/index.html  # Retitled as a CV template in the content review (#1079). Exempts all its SEO tags: remove once main has the new title
+# Content-review changes made on rebrand-doors only. Each entry exempts all of that page's SEO tags: remove it once main has the change (at the latest at launch).
+about/index.html           # Content review (ha-about-redirect-text): /about/ is now an alias redirect to /about/us/, not a list page
+about/index.xml            # The same: the unrendered About section has no feed
+about/page/1/index.html    # The same: the About list page and its pager are gone
+about/page/2/index.html    # The same
+equityinos/index.html      # Content review (init-eq-04): title is now "Equity in Open Scholarship"
+impact/index.html          # Content review (nexus-impact-recently): description no longer opens with "Recently"
+mapping_os/index.html      # Content review (init-mo-03): description uses the name "Mapping Open Science Communities"
+pedagogies/004-thomas-rhys-evans/index.html  # Content review (nexus-pedagogies-evan-name): summary spells "Evans" correctly
+welcome/index.html         # Content review (sol-welcome-counters): description drops the outdated list of teams
+about/teams/index.html     # Content review (community-teams-intro-grammar): description's list of purposes made grammatical
+educators-corner/018-accessible-feedback-in-research/index.html  # Review of #1078: its authors are listed one per entry, so its author data changes
+privacy/index.html  # #1096: the policy describes the native newsletter form, so its 'Last updated' description and modified time change
+about/get-involved/index.html  # #1118: its description is now a written summary, not the opening link text
+awop/index.html                # #1118: its description is now a written summary, not the opening link text
+reversals/index.html           # #1118: its description now opens with the concluded-project note at the top of the page
+tags/index.html                # #1118: its description says in one sentence what tags are for
+submit/index.html               # #1133: a new page listing the ways to submit work to FORRT

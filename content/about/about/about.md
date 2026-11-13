@@ -59,7 +59,7 @@ In a nutshell, FORRT is a ***F***ramework for ***O***pen and ***R***eproducible 
 
 FORRT provides a pedagogical infrastructure and open educational resources designed to support the teaching and mentoring of open and reproducible science. FORRT strives to (a) raise awareness of the pedagogical implications of open and reproducible science and its associated challenges (i.e., curricular reform, epistemological uncertainty, methods of education); (b) respond to calls to consider open scholarship as inclusive scholarship; (c) advocate for the opening and formal recognition of teaching and mentoring materials to facilitate access, discovery, and learning to those who otherwise would be educationally disenfranchised.
 
-***Here's a 5 minutes introduction to FORRT***
+***Here's a 5-minute introduction to FORRT***
 
 <br>
 
@@ -75,9 +75,9 @@ FORRT provides a pedagogical infrastructure and open educational resources desig
 
 <br>
 
-Learn more about FORRT in the interactive flipbook <a href="https://forrt.org/booklet/" class="btn btn-primary btn-lg btn-block" style="line-height:1;border-radius:6px; font-size:1.5rem;">
-  FORRT Booklet
-</a>
+Learn more about FORRT in the interactive flipbook:
+
+<a href="/booklet/" class="btn btn-primary">FORRT Booklet</a>
 
 ***Want to learn more about us?***
 
@@ -87,7 +87,7 @@ If you’re looking for **open educational resources**, please take a look at ou
 
 For more information about our **goals and values**, read our [Mission Statement](/about/mission), [Code of Conduct](/coc), and our quest towards [Principled Teaching and Mentoring](/about/principles).
 
-If you’re looking for information about who we are or our **organizational structure**, take a look the [teams that compose FORRT](/about/teams), the institutions and initiatives with which [we are partners](/about/partnerships), and [our community members](/about/community).
+If you’re looking for information about who we are or our **organizational structure**, take a look at the [teams that compose FORRT](/about/teams), the institutions and initiatives with which [we are partners](/about/partnerships), and [our community members](/about/community).
 
 Would you like to **get involved** more with FORRT? Check out our [getting involved page](/about/get-involved)!
 
@@ -102,7 +102,7 @@ Would you like to help us be or do better? Give us (anonymous) feedback in our [
 
 ### The problem
 
-* Recently, the scientific community took steps to reflect a widespread awareness of, and call for, improved practices ushering in the “credibility revolution” including higher standards of evidence, preregistration, direct replication, transparency, and openness.
+* Since the 2010s, the scientific community has taken steps to reflect a widespread awareness of, and call for, improved practices ushering in the “credibility revolution” including higher standards of evidence, preregistration, direct replication, transparency, and openness.
 * Structurally, three pillars were proposed to carry social sciences towards academic utopia:  opening scientific communication, restructuring incentives and practices, and collaborative and crowdsourced science. 
 
 However, ongoing attempts have neglected an essential aspect of the academic machinery: students. And indeed, current norms for the teaching and mentoring in higher education are rooted in the obsolete practices of bygone eras. Improving transparency and rigor of science is the responsibility of all who engage in it.
@@ -126,7 +126,7 @@ FORRT supports this endeavor through a three-pronged approach:
   <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT’s Educational Nexus](/nexus/)  
   <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT’s Pedagogies](/pedagogies/)
 
-3. Modifying the academic incentive structure regarding teaching and mentoring through recognition and commendations of excellent teaching and mentoring; foster social justice through the opening and democratization of scientific-educational resources to those who otherwise would be educationally disenfranchised; and building a community with existing educational initiatives and strengthening our missions, identify and reduce redundancies, and streamline the advancement of open educational practices.  
+3. Modifying the academic incentive structure regarding teaching and mentoring through recognition and commendations of excellent teaching and mentoring; fostering social justice through the opening and democratization of scientific-educational resources to those who otherwise would be educationally disenfranchised; and building a community with existing educational initiatives, strengthening our missions, identifying and reducing redundancies, and streamlining the advancement of open educational practices.  
   
   <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT’s Toward Social Justice in Academia initiatives](/dei/)   
   <i class="fas fa-arrow-alt-circle-right text-danger fa-1.5x"></i> [FORRT's Neurodiversity Team](/neurodiversity/)   

@@ -1,21 +1,22 @@
+{{/* Articles and plain content: posts, Educators' Corner, pedagogies, the lesson bank and short
+     standalone pages. Calm and readable, in one narrow column, with a side card when there is
+     something to put in it. */}}
 {{- define "main" -}}
-
-<article class="article">
-
-  {{/* Allow pages to opt out of the default header (e.g., custom full-width layouts) */}}
-  {{ if not .Params.hide_page_header }}
-    {{ partial "page_header" . }}
-  {{ end }}
-
-  <div class="article-container">
-
-    <div class="article-style">
-      {{ .Content }}
-    </div>
-
-    {{ partial "page_footer" . }}
-
-  </div>
-</article>
-
+{{ if eq .Path "/about/steering-committee" }}
+{{/* Generated with its own stylesheet, heading and Google Fonts link; scripts/generate_sc_profiles.py is the source. */}}
+<div class="wrap sc-page">
+  <header class="article-head">
+    {{ partial "doors/crumbs" (dict "page" .) }}
+    <h1>{{ .Title }}</h1>
+  </header>
+  {{ $body := partial "doors/content" .Content }}
+  {{ $body = replaceRE `<link href="https://fonts\.googleapis[^>]*>` "" $body }}
+  {{ $body = replaceRE `(?s)<h2 class="sc-page-title">.*?</h2>` "" $body }}
+  {{ replaceRE `(</?)main>` "${1}div>" $body | safeHTML }}
+</div>
+{{ $steering := resources.Get "js/doors/steering.js" | js.Build (dict "minify" true "format" "iife" "target" "es2019") | fingerprint "md5" }}
+<script src="{{ $steering.RelPermalink }}" defer></script>
+{{ else }}
+{{ partial "doors/reading" . }}
+{{ end }}
 {{- end -}}

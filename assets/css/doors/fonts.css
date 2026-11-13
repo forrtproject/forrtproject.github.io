@@ -1,0 +1,6 @@
+/* Self-hosted, subsetted from Google's OFL sources by scripts/rebrand/build_fonts.py.
+   Paths are relative to the built stylesheet in /css/. */
+@font-face{font-family:'Newsreader';src:url(../fonts/doors/newsreader-var.woff2) format('woff2');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'Source Sans 3';src:url(../fonts/doors/source-sans-3-var.woff2) format('woff2');font-weight:400 700;font-style:normal;font-display:swap}
+/* Only reference lists ask for this, so other pages never download it. */
+@font-face{font-family:'Source Sans 3';src:url(../fonts/doors/source-sans-3-italic.woff2) format('woff2');font-weight:400;font-style:italic;font-display:swap}

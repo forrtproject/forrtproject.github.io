@@ -1,0 +1,16 @@
+{{/* A resource's tags as one line of keywords. On a resource they describe it, so every tag shows, rare ones
+     included: a tag on at least `min` pages (functions/tag_counts.html) links to its list on /tags/, and a rarer one,
+     whose list would hold a page or two, is plain text. Elsewhere `tags` shows only the common ones, as chips. */}}
+{{ $tc := partialCached "functions/tag_counts.html" . }}
+{{ $words := slice }}
+{{ range partial "functions/page_tags.html" . }}
+  {{ $n := int (index $tc.counts (lower .) | default 0) }}
+  {{/* A site-wide tag (on more than `max` pages) describes nothing here, so it is left out. */}}
+  {{ if gt $n $tc.max }}{{ continue }}{{ end }}
+  {{ if ge $n $tc.min }}
+    {{ $words = $words | append (printf `<a href="%s">%s</a>` (printf "tags/?tag=%s" (. | urlquery) | relURL) (. | htmlEscape)) }}
+  {{ else }}
+    {{ $words = $words | append (. | htmlEscape) }}
+  {{ end }}
+{{ end }}
+{{ with $words }}<p class="resource-keywords"><strong>Keywords</strong> {{ delimit . " · " | safeHTML }}</p>{{ end }}

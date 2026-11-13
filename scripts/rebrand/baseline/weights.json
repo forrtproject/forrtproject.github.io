@@ -1,0 +1,1517 @@
+{
+ "home": {
+  "requests": 83,
+  "own_kb": 645,
+  "third_party_kb": 2399,
+  "by_kind_kb": {
+   "document": 122,
+   "font": 465,
+   "image": 596,
+   "other": 1,
+   "script": 1694,
+   "stylesheet": 166
+  },
+  "hosts": [
+   "(this site)",
+   "cdnjs.cloudflare.com",
+   "eocampaign1.com",
+   "fonts.googleapis.com",
+   "fonts.gstatic.com",
+   "forrt.org",
+   "gallery.eo.page",
+   "googleads.g.doubleclick.net",
+   "i.ytimg.com",
+   "jnn-pa.googleapis.com",
+   "licensebuttons.net",
+   "static.doubleclick.net",
+   "stats.g.doubleclick.net",
+   "www.google.co.uk",
+   "www.google.com",
+   "www.googletagmanager.com",
+   "www.gstatic.com",
+   "www.youtube.com"
+  ],
+  "dom_elements": 765,
+  "js_errors": [],
+  "failed_requests": [
+   "https://region1.analytics.google.com/g/collect?v=2&tid=G-2BTFVS6SPM&gtm=45je6au1v884251387za208zd884251387xf1&_p=1793709298092&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGA&cid=1014837732.1793709299"
+  ],
+  "url": "/",
+  "overflow_px": {
+   "390": 15,
+   "1024": 15,
+   "1440": 15
+  }
+ },
+ "replication hub": {
+  "requests": 32,
+  "own_kb": 270,
+  "third_party_kb": 662,
+  "by_kind_kb": {
+   "document": 10,
+   "font": 345,
+   "image": 187,
+   "other": 1,
+   "script": 322,
+   "stylesheet": 67
+  },
+  "hosts": [
+   "(this site)",
+   "cdnjs.cloudflare.com",
+   "fonts.googleapis.com",
+   "fonts.gstatic.com",
+   "licensebuttons.net",
+   "stats.g.doubleclick.net",
+   "www.google.co.uk",
+   "www.googletagmanager.com"
+  ],
+  "dom_elements": 395,
+  "js_errors": [],
+  "failed_requests": [
+   "https://region1.analytics.google.com/g/collect?v=2&tid=G-2BTFVS6SPM&gtm=45je6au1v884251387za208zd884251387xf1&_p=1793709313212&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGA&cid=1150893721.1793709314"
+  ],
+  "url": "/replication-hub/",
+  "overflow_px": {
+   "390": 0,
+   "1024": 0,
+   "1440": 0
+  }
+ },
+ "resources directory": {
+  "requests": 73,
+  "own_kb": 998,
+  "third_party_kb": 1642,
+  "by_kind_kb": {
+   "document": 869,
+   "font": 557,
+   "image": 123,
+   "other": 286,
+   "script": 569,
+   "stylesheet": 236
+  },
+  "hosts": [
+   "(this site)",
+   "cdnjs.cloudflare.com",
+   "docs.google.com",
+   "fonts.googleapis.com",
+   "fonts.gstatic.com",
+   "licensebuttons.net",
+   "play.google.com",
+   "ssl.gstatic.com",
+   "stats.g.doubleclick.net",
+   "www.google.co.uk",
+   "www.googletagmanager.com",
+   "www.gstatic.com"
+  ],
+  "dom_elements": 28680,
+  "js_errors": [],
+  "failed_requests": [
+   "https://region1.analytics.google.com/g/collect?v=2&tid=G-2BTFVS6SPM&gtm=45je6au1v884251387za208zd884251387xf1&_p=1793709326776&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGA&cid=417965014.1793709328&"
+  ],
+  "url": "/resources/",
+  "overflow_px": {
+   "390": 0,
+   "1024": 0,
+   "1440": 0
+  }
+ },
+ "article (post)": {
+  "requests": 34,
+  "own_kb": 581,
+  "third_party_kb": 673,
+  "by_kind_kb": {
+   "document": 10,
+   "font": 394,
+   "image": 461,
+   "other": 1,
+   "script": 322,
+   "stylesheet": 67
+  },
+  "hosts": [
+   "(this site)",
+   "cdnjs.cloudflare.com",
+   "fonts.googleapis.com",
+   "fonts.gstatic.com",
+   "licensebuttons.net",
+   "stats.g.doubleclick.net",
+   "www.google.co.uk",
+   "www.googletagmanager.com"
+  ],
+  "dom_elements": 361,
+  "js_errors": [],
+  "failed_requests": [
+   "https://region1.analytics.google.com/g/collect?v=2&tid=G-2BTFVS6SPM&gtm=45je6au1v884251387za208zd884251387xf1&_p=1793709348452&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGA&cid=1992875460.1793709349"
+  ],
+  "url": "/post/2026-01-newsletter/",
+  "overflow_px": {
+   "390": 0,
+   "1024": 0,
+   "1440": 0
+  }
+ },
+ "article (educators' corner)": {
+  "requests": 37,
+  "own_kb": 1528,
+  "third_party_kb": 673,
+  "by_kind_kb": {
+   "document": 13,
+   "font": 393,
+   "image": 1404,
+   "other": 1,
+   "script": 323,
+   "stylesheet": 66
+  },
+  "hosts": [
+   "(this site)",
+   "cdnjs.cloudflare.com",
+   "fonts.googleapis.com",
+   "fonts.gstatic.com",
+   "licensebuttons.net",
+   "stats.g.doubleclick.net",
+   "www.google.co.uk",
+   "www.googletagmanager.com"
+  ],
+  "dom_elements": 394,
+  "js_errors": [],
+  "failed_requests": [
+   "https://region1.analytics.google.com/g/collect?v=2&tid=G-2BTFVS6SPM&gtm=45je6au1v884251387za208zd884251387xf1&_p=1793709359453&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGA&cid=1129181014.1793709360"
+  ],
+  "url": "/educators-corner/001-representation-heatherurry/",
+  "overflow_px": {
+   "390": 0,
+   "1024": 0,
+   "1440": 0
+  }
+ },
+ "article (pedagogies)": {
+  "requests": 65,
+  "own_kb": 223,
+  "third_party_kb": 1944,
+  "by_kind_kb": {
+   "document": 160,
+   "font": 390,
+   "image": 186,
+   "other": 2,
+   "script": 1299,
+   "stylesheet": 130
+  },
+  "hosts": [
+   "(this site)",
+   "cdnjs.cloudflare.com",
+   "fonts.googleapis.com",
+   "fonts.gstatic.com",
+   "googleads.g.doubleclick.net",
+   "i.ytimg.com",
+   "jnn-pa.googleapis.com",
+   "licensebuttons.net",
+   "static.doubleclick.net",
+   "stats.g.doubleclick.net",
+   "www.google.co.uk",
+   "www.google.com",
+   "www.googletagmanager.com",
+   "www.gstatic.com",
+   "www.youtube.com",
+   "yt3.ggpht.com"
+  ],
+  "dom_elements": 458,
+  "js_errors": [],
+  "failed_requests": [
+   "https://region1.analytics.google.com/g/collect?v=2&tid=G-2BTFVS6SPM&gtm=45je6au1v884251387za208zd884251387xf1&_p=1793709373318&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGA&cid=1310391736.1793709374"
+  ],
+  "url": "/pedagogies/001-julia-strand/",
+  "overflow_px": {
+   "390": 0,
+   "1024": 0,
+   "1440": 0
+  }
+ },
+ "section page (about)": {
+  "requests": 79,
+  "own_kb": 182,
+  "third_party_kb": 2896,
+  "by_kind_kb": {
+   "document": 190,
+   "font": 427,
+   "image": 172,
+   "other": 2,
+   "script": 2121,
+   "stylesheet": 166
+  },
+  "hosts": [
+   "(this site)",
+   "cdnjs.cloudflare.com",
+   "eocampaign1.com",
+   "fonts.googleapis.com",
+   "fonts.gstatic.com",
+   "gallery.eo.page",
+   "googleads.g.doubleclick.net",
+   "i.ytimg.com",
+   "jnn-pa.googleapis.com",
+   "licensebuttons.net",
+   "static.doubleclick.net",
+   "stats.g.doubleclick.net",
+   "www.google.co.uk",
+   "www.google.com",
+   "www.googletagmanager.com",
+   "www.gstatic.com",
+   "www.youtube.com",
+   "yt3.ggpht.com"
+  ],
+  "dom_elements": 483,
+  "js_errors": [],
+  "failed_requests": [
+   "https://region1.analytics.google.com/g/collect?v=2&tid=G-2BTFVS6SPM&gtm=45je6au1v884251387za208zd884251387xf1&_p=1793709392478&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGA&cid=1384261774.1793709399"
+  ],
+  "url": "/about/us/",
+  "overflow_px": {
+   "390": 0,
+   "1024": 0,
+   "1440": 0
+  }
+ },
+ "section page (get involved)": {
+  "requests": 70,
+  "own_kb": 182,
+  "third_party_kb": 1847,
+  "by_kind_kb": {
+   "document": 60,
+   "font": 482,
+   "image": 102,
+   "other": 5,
+   "script": 1231,
+   "stylesheet": 148
+  },
+  "hosts": [
+   "(this site)",
+   "apis.google.com",
+   "calendar.google.com",
+   "cdnjs.cloudflare.com",
+   "clients6.google.com",
+   "eocampaign1.com",
+   "fonts.googleapis.com",
+   "fonts.gstatic.com",
+   "gallery.eo.page",
+   "licensebuttons.net",
+   "stats.g.doubleclick.net",
+   "www.google.co.uk",
+   "www.google.com",
+   "www.googletagmanager.com",
+   "www.gstatic.com"
+  ],
+  "dom_elements": 558,
+  "js_errors": [],
+  "failed_requests": [
+   "https://region1.analytics.google.com/g/collect?v=2&tid=G-2BTFVS6SPM&gtm=45je6au1v884251387za208zd884251387xf1&_p=1793709419053&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGA&cid=146193196.1793709427&"
+  ],
+  "url": "/about/get-involved/",
+  "overflow_px": {
+   "390": 0,
+   "1024": 0,
+   "1440": 0
+  }
+ },
+ "section page (awop)": {
+  "requests": 33,
+  "own_kb": 276,
+  "third_party_kb": 673,
+  "by_kind_kb": {
+   "document": 12,
+   "font": 355,
+   "image": 192,
+   "other": 1,
+   "script": 322,
+   "stylesheet": 67
+  },
+  "hosts": [
+   "(this site)",
+   "cdnjs.cloudflare.com",
+   "fonts.googleapis.com",
+   "fonts.gstatic.com",
+   "licensebuttons.net",
+   "stats.g.doubleclick.net",
+   "www.google.co.uk",
+   "www.googletagmanager.com"
+  ],
+  "dom_elements": 393,
+  "js_errors": [],
+  "failed_requests": [
+   "https://region1.analytics.google.com/g/collect?v=2&tid=G-2BTFVS6SPM&gtm=45je6au1v884251387za208zd884251387xf1&_p=1793709443170&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGA&cid=605763641.1793709443&"
+  ],
+  "url": "/awop/",
+  "overflow_px": {
+   "390": 0,
+   "1024": 0,
+   "1440": 0
+  }
+ },
+ "section page (reversals)": {
+  "requests": 32,
+  "own_kb": 405,
+  "third_party_kb": 689,
+  "by_kind_kb": {
+   "document": 235,
+   "font": 371,
+   "image": 97,
+   "other": 1,
+   "script": 324,
+   "stylesheet": 67
+  },
+  "hosts": [
+   "(this site)",
+   "cdnjs.cloudflare.com",
+   "fonts.googleapis.com",
+   "fonts.gstatic.com",
+   "licensebuttons.net",
+   "stats.g.doubleclick.net",
+   "www.google.co.uk",
+   "www.googletagmanager.com"
+  ],
+  "dom_elements": 13553,
+  "js_errors": [],
+  "failed_requests": [
+   "https://region1.analytics.google.com/g/collect?v=2&tid=G-2BTFVS6SPM&gtm=45je6au1v884251387za208zd884251387xf1&_p=1793709455895&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGA&cid=728305254.1793709456&"
+  ],
+  "url": "/reversals/",
+  "overflow_px": {
+   "390": 0,
+   "1024": 0,
+   "1440": 0
+  }
+ },
+ "section page (publications)": {
+  "requests": 100,
+  "own_kb": 210,
+  "third_party_kb": 2573,
+  "by_kind_kb": {
+   "document": 54,
+   "font": 427,
+   "image": 1430,
+   "other": 1,
+   "script": 767,
+   "stylesheet": 105
+  },
+  "hosts": [
+   "(this site)",
+   "api.altmetric.com",
+   "badges.altmetric.com",
+   "cdnjs.cloudflare.com",
+   "d1bxh8uas1mnw7.cloudfront.net",
+   "embed.altmetric.com",
+   "eocampaign1.com",
+   "fonts.googleapis.com",
+   "fonts.gstatic.com",
+   "gallery.eo.page",
+   "licensebuttons.net",
+   "stats.g.doubleclick.net",
+   "www.google.co.uk",
+   "www.google.com",
+   "www.googletagmanager.com",
+   "www.gstatic.com"
+  ],
+  "dom_elements": 1472,
+  "js_errors": [],
+  "failed_requests": [
+   "https://api.altmetric.com/v1/internal-556fdf0f/doi/10.17879/replicationresearch-2025-9022?callback=_altmetric.embed_callback&domain=127.0.0.1&cache_until=12-3",
+   "https://region1.analytics.google.com/g/collect?v=2&tid=G-2BTFVS6SPM&gtm=45je6au1v884251387za208zd884251387xf1&_p=1793709470444&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGA&cid=1537986060.1793709471",
+   "https://api.altmetric.com/v1/internal-556fdf0f/doi/10.31234/osf.io/c4jqr_v1?callback=_altmetric.embed_callback&domain=127.0.0.1&cache_until=12-3"
+  ],
+  "url": "/publications/",
+  "overflow_px": {
+   "390": 0,
+   "1024": 0,
+   "1440": 0
+  }
+ },
+ "section page (contributors)": {
+  "requests": 33,
+  "own_kb": 222,
+  "third_party_kb": 688,
+  "by_kind_kb": {
+   "document": 51,
+   "font": 370,
+   "image": 97,
+   "other": 1,
+   "script": 325,
+   "stylesheet": 67
+  },
+  "hosts": [
+   "(this site)",
+   "cdnjs.cloudflare.com",
+   "fonts.googleapis.com",
+   "fonts.gstatic.com",
+   "licensebuttons.net",
+   "stats.g.doubleclick.net",
+   "www.google.co.uk",
+   "www.googletagmanager.com"
+  ],
+  "dom_elements": 8707,
+  "js_errors": [],
+  "failed_requests": [
+   "https://region1.analytics.google.com/g/collect?v=2&tid=G-2BTFVS6SPM&gtm=45je6au1v884251387za208zd884251387xf1&_p=1793709505256&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGA&cid=1391968329.1793709509"
+  ],
+  "url": "/contributors/",
+  "overflow_px": {
+   "390": 0,
+   "1024": 0,
+   "1440": 0
+  }
+ },
+ "section page (lesson plans)": {
+  "requests": 85,
+  "own_kb": 182,
+  "third_party_kb": 1668,
+  "by_kind_kb": {
+   "document": 111,
+   "font": 521,
+   "image": 123,
+   "other": 284,
+   "script": 574,
+   "stylesheet": 237
+  },
+  "hosts": [
+   "(this site)",
+   "cdnjs.cloudflare.com",
+   "docs.google.com",
+   "fonts.googleapis.com",
+   "fonts.gstatic.com",
+   "licensebuttons.net",
+   "play.google.com",
+   "ssl.gstatic.com",
+   "stats.g.doubleclick.net",
+   "www.google.co.uk",
+   "www.googletagmanager.com",
+   "www.gstatic.com"
+  ],
+  "dom_elements": 413,
+  "js_errors": [
+   "DOCS_timing is not defined",
+   "DOCS_timing is not defined"
+  ],
+  "failed_requests": [
+   "https://region1.analytics.google.com/g/collect?v=2&tid=G-2BTFVS6SPM&gtm=45je6au1v884251387za208zd884251387xf1&_p=1793709520683&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGA&cid=1297544943.1793709521",
+   "filesystem:https://docs.google.com/persistent/docs/fonts/HTxxL3A_ID2an4clN7OG5Om-denKlH3T2lv0tKk.woff2",
+   "filesystem:https://docs.google.com/persistent/docs/fonts/HTxzL3A_ID2an4clN7OG5Om-denKlH3j3VHzlqsLag.woff2",
+   "filesystem:https://docs.google.com/persistent/docs/fonts/HTxyL3A_ID2an4clN7OG5Om-denKlH3rY3TWuYMBYro.woff2",
+   "filesystem:https://docs.google.com/persistent/docs/fonts/HTx8L3A_ID2an4clN7OG5Om-denKlH3j3WlKuYkGQLhExw.woff2",
+   "filesystem:https://docs.google.com/persistent/docs/fonts/HTxxL3A_ID2an4clN7OG5Om-denKlH3T2lv0tKk.woff2",
+   "filesystem:https://docs.google.com/persistent/docs/fonts/HTxzL3A_ID2an4clN7OG5Om-denKlH3j3VHzlqsLag.woff2",
+   "filesystem:https://docs.google.com/persistent/docs/fonts/HTxyL3A_ID2an4clN7OG5Om-denKlH3rY3TWuYMBYro.woff2",
+   "filesystem:https://docs.google.com/persistent/docs/fonts/HTx8L3A_ID2an4clN7OG5Om-denKlH3j3WlKuYkGQLhExw.woff2",
+   "filesystem:https://docs.google.com/persistent/docs/fonts/HTxxL3A_ID2an4clN7OG5Om-denKlH3T2lv0tKk.woff2",
+   "filesystem:https://docs.google.com/persistent/docs/fonts/HTxzL3A_ID2an4clN7OG5Om-denKlH3j3VHzlqsLag.woff2",
+   "filesystem:https://docs.google.com/persistent/docs/fonts/HTxyL3A_ID2an4clN7OG5Om-denKlH3rY3TWuYMBYro.woff2",
+   "filesystem:https://docs.google.com/persistent/docs/fonts/HTx8L3A_ID2an4clN7OG5Om-denKlH3j3WlKuYkGQLhExw.woff2"
+  ],
+  "url": "/lesson-plans/",
+  "overflow_px": {
+   "390": 0,
+   "1024": 0,
+   "1440": 0
+  }
+ },
+ "resource detail": {
+  "requests": 31,
+  "own_kb": 179,
+  "third_party_kb": 673,
+  "by_kind_kb": {
+   "document": 9,
+   "font": 355,
+   "image": 97,
+   "other": 1,
+   "script": 323,
+   "stylesheet": 67
+  },
+  "hosts": [
+   "(this site)",
+   "cdnjs.cloudflare.com",
+   "fonts.googleapis.com",
+   "fonts.gstatic.com",
+   "licensebuttons.net",
+   "stats.g.doubleclick.net",
+   "www.google.co.uk",
+   "www.googletagmanager.com"
+  ],
+  "dom_elements": 346,
+  "js_errors": [],
+  "failed_requests": [
+   "https://region1.analytics.google.com/g/collect?v=2&tid=G-2BTFVS6SPM&gtm=45je6au1v884251387za208zd884251387xf1&_p=1793709541662&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGA&cid=1260537850.1793709542"
+  ],
+  "url": "/curated_resources/milgram-obedience-experiment-an-agent-ba/",
+  "overflow_px": {
+   "390": 0,
+   "1024": 0,
+   "1440": 0
+  }
+ },
+ "glossary term (english)": {
+  "requests": 32,
+  "own_kb": 188,
+  "third_party_kb": 673,
+  "by_kind_kb": {
+   "document": 17,
+   "font": 356,
+   "image": 97,
+   "other": 1,
+   "script": 324,
+   "stylesheet": 67
+  },
+  "hosts": [
+   "(this site)",
+   "cdnjs.cloudflare.com",
+   "fonts.googleapis.com",
+   "fonts.gstatic.com",
+   "licensebuttons.net",
+   "stats.g.doubleclick.net",
+   "www.google.co.uk",
+   "www.googletagmanager.com"
+  ],
+  "dom_elements": 905,
+  "js_errors": [],
+  "failed_requests": [
+   "https://region1.analytics.google.com/g/collect?v=2&tid=G-2BTFVS6SPM&gtm=45je6au1v884251387za208zd884251387xf1&_p=1793709553678&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGA&cid=701992881.1793709554&"
+  ],
+  "url": "/glossary/english/abstract_bias/",
+  "overflow_px": {
+   "390": 0,
+   "1024": 0,
+   "1440": 0
+  }
+ },
+ "glossary term (arabic)": {
+  "requests": 32,
+  "own_kb": 171,
+  "third_party_kb": 673,
+  "by_kind_kb": {
+   "font": 356,
+   "image": 97,
+   "other": 1,
+   "script": 324,
+   "stylesheet": 67
+  },
+  "hosts": [
+   "(this site)",
+   "cdnjs.cloudflare.com",
+   "fonts.googleapis.com",
+   "fonts.gstatic.com",
+   "licensebuttons.net",
+   "stats.g.doubleclick.net",
+   "www.google.co.uk",
+   "www.googletagmanager.com"
+  ],
+  "dom_elements": 916,
+  "js_errors": [],
+  "failed_requests": [
+   "https://region1.analytics.google.com/g/collect?v=2&tid=G-2BTFVS6SPM&gtm=45je6au1v884251387za208zd884251387xf1&_p=1793709568359&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGA&cid=153403985.1793709569&"
+  ],
+  "url": "/glossary/arabic/aka_replicability_or_replication_crisis_ازمة_اعادة_الانتاج_او_ازمة_الت_كرار/",
+  "overflow_px": {
+   "390": 0,
+   "1024": 0,
+   "1440": 0
+  }
+ },
+ "glossary term (chinese)": {
+  "requests": 32,
+  "own_kb": 171,
+  "third_party_kb": 673,
+  "by_kind_kb": {
+   "font": 356,
+   "image": 97,
+   "other": 1,
+   "script": 324,
+   "stylesheet": 67
+  },
+  "hosts": [
+   "(this site)",
+   "cdnjs.cloudflare.com",
+   "fonts.googleapis.com",
+   "fonts.gstatic.com",
+   "licensebuttons.net",
+   "stats.g.doubleclick.net",
+   "www.google.co.uk",
+   "www.googletagmanager.com"
+  ],
+  "dom_elements": 920,
+  "js_errors": [],
+  "failed_requests": [
+   "https://region1.analytics.google.com/g/collect?v=2&tid=G-2BTFVS6SPM&gtm=45je6au1v884251387za208zd884251387xf1&_p=1793709579145&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGA&cid=1715932582.1793709580"
+  ],
+  "url": "/glossary/chinese/_兄弟_式开放科学/",
+  "overflow_px": {
+   "390": 91,
+   "1024": 0,
+   "1440": 0
+  }
+ },
+ "glossary references": {
+  "requests": 33,
+  "own_kb": 238,
+  "third_party_kb": 688,
+  "by_kind_kb": {
+   "document": 67,
+   "font": 371,
+   "image": 97,
+   "other": 1,
+   "script": 324,
+   "stylesheet": 67
+  },
+  "hosts": [
+   "(this site)",
+   "cdnjs.cloudflare.com",
+   "fonts.googleapis.com",
+   "fonts.gstatic.com",
+   "licensebuttons.net",
+   "stats.g.doubleclick.net",
+   "www.google.co.uk",
+   "www.googletagmanager.com"
+  ],
+  "dom_elements": 2770,
+  "js_errors": [],
+  "failed_requests": [
+   "https://region1.analytics.google.com/g/collect?v=2&tid=G-2BTFVS6SPM&gtm=45je6au1v884251387za208zd884251387xf1&_p=1793709593583&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGA&cid=543207468.1793709594&"
+  ],
+  "url": "/glossary/references/",
+  "overflow_px": {
+   "390": 561,
+   "1024": 347,
+   "1440": 259
+  }
+ },
+ "glossary hub": {
+  "requests": 33,
+  "own_kb": 0,
+  "third_party_kb": 882,
+  "by_kind_kb": {
+   "document": 23,
+   "font": 356,
+   "image": 111,
+   "other": 1,
+   "script": 323,
+   "stylesheet": 69
+  },
+  "hosts": [
+   "(this site)",
+   "cdnjs.cloudflare.com",
+   "fonts.googleapis.com",
+   "fonts.gstatic.com",
+   "forrt.org",
+   "licensebuttons.net",
+   "stats.g.doubleclick.net",
+   "www.google.co.uk",
+   "www.googletagmanager.com"
+  ],
+  "dom_elements": 1037,
+  "js_errors": [],
+  "failed_requests": [
+   "https://region1.analytics.google.com/g/collect?v=2&tid=G-2BTFVS6SPM&gtm=45je6au1h1v884251387za208zd884251387xf1&_p=1793709608550&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGA&cid=922953646.179370961"
+  ],
+  "url": "/glossary/",
+  "overflow_px": {
+   "390": 0,
+   "1024": 0,
+   "1440": 0
+  }
+ },
+ "glossary language index": {
+  "requests": 32,
+  "own_kb": 192,
+  "third_party_kb": 673,
+  "by_kind_kb": {
+   "document": 22,
+   "font": 356,
+   "image": 97,
+   "other": 1,
+   "script": 323,
+   "stylesheet": 67
+  },
+  "hosts": [
+   "(this site)",
+   "cdnjs.cloudflare.com",
+   "fonts.googleapis.com",
+   "fonts.gstatic.com",
+   "licensebuttons.net",
+   "stats.g.doubleclick.net",
+   "www.google.co.uk",
+   "www.googletagmanager.com"
+  ],
+  "dom_elements": 1037,
+  "js_errors": [],
+  "failed_requests": [
+   "https://region1.analytics.google.com/g/collect?v=2&tid=G-2BTFVS6SPM&gtm=45je6au1v884251387za208zd884251387xf1&_p=1793709616847&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGA&cid=856268944.1793709617&"
+  ],
+  "url": "/glossary/english/",
+  "overflow_px": {
+   "390": 0,
+   "1024": 0,
+   "1440": 0
+  }
+ },
+ "clusters": {
+  "requests": 35,
+  "own_kb": 1997,
+  "third_party_kb": 689,
+  "by_kind_kb": {
+   "document": 859,
+   "font": 371,
+   "image": 1049,
+   "other": 1,
+   "script": 341,
+   "stylesheet": 66
+  },
+  "hosts": [
+   "(this site)",
+   "cdnjs.cloudflare.com",
+   "fonts.googleapis.com",
+   "fonts.gstatic.com",
+   "licensebuttons.net",
+   "stats.g.doubleclick.net",
+   "www.google.co.uk",
+   "www.googletagmanager.com"
+  ],
+  "dom_elements": 24468,
+  "js_errors": [],
+  "failed_requests": [
+   "https://region1.analytics.google.com/g/collect?v=2&tid=G-2BTFVS6SPM&gtm=45je6au1v884251387za208zd884251387xf1&_p=1793709630122&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGA&cid=1646586897.1793709631"
+  ],
+  "url": "/clusters/",
+  "overflow_px": {
+   "390": 0,
+   "1024": 0,
+   "1440": 0
+  }
+ },
+ "cluster": {
+  "requests": 33,
+  "own_kb": 813,
+  "third_party_kb": 673,
+  "by_kind_kb": {
+   "document": 627,
+   "font": 356,
+   "image": 97,
+   "other": 1,
+   "script": 339,
+   "stylesheet": 66
+  },
+  "hosts": [
+   "(this site)",
+   "cdnjs.cloudflare.com",
+   "fonts.googleapis.com",
+   "fonts.gstatic.com",
+   "licensebuttons.net",
+   "stats.g.doubleclick.net",
+   "www.google.co.uk",
+   "www.googletagmanager.com"
+  ],
+  "dom_elements": 3644,
+  "js_errors": [],
+  "failed_requests": [
+   "https://region1.analytics.google.com/g/collect?v=2&tid=G-2BTFVS6SPM&gtm=45je6au1v884251387za208zd884251387xf1&_p=1793709649274&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGA&cid=997157047.1793709650&"
+  ],
+  "url": "/clusters/cluster-1/",
+  "overflow_px": {
+   "390": 0,
+   "1024": 0,
+   "1440": 0
+  }
+ },
+ "disciplines": {
+  "requests": 35,
+  "own_kb": 285,
+  "third_party_kb": 688,
+  "by_kind_kb": {
+   "document": 73,
+   "font": 371,
+   "image": 132,
+   "other": 1,
+   "script": 330,
+   "stylesheet": 67
+  },
+  "hosts": [
+   "(this site)",
+   "cdnjs.cloudflare.com",
+   "fonts.googleapis.com",
+   "fonts.gstatic.com",
+   "licensebuttons.net",
+   "stats.g.doubleclick.net",
+   "www.google.co.uk",
+   "www.googletagmanager.com"
+  ],
+  "dom_elements": 3438,
+  "js_errors": [],
+  "failed_requests": [
+   "https://region1.analytics.google.com/g/collect?v=2&tid=G-2BTFVS6SPM&gtm=45je6au1v884251387za208zd884251387xf1&_p=1793709660259&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGA&cid=922727536.1793709661&"
+  ],
+  "url": "/disciplines/",
+  "overflow_px": {
+   "390": 0,
+   "1024": 0,
+   "1440": 0
+  }
+ },
+ "author profile": {
+  "requests": 32,
+  "own_kb": 211,
+  "third_party_kb": 673,
+  "by_kind_kb": {
+   "document": 9,
+   "font": 356,
+   "image": 129,
+   "other": 1,
+   "script": 322,
+   "stylesheet": 67
+  },
+  "hosts": [
+   "(this site)",
+   "cdnjs.cloudflare.com",
+   "fonts.googleapis.com",
+   "fonts.gstatic.com",
+   "licensebuttons.net",
+   "stats.g.doubleclick.net",
+   "www.google.co.uk",
+   "www.googletagmanager.com"
+  ],
+  "dom_elements": 321,
+  "js_errors": [],
+  "failed_requests": [
+   "https://region1.analytics.google.com/g/collect?v=2&tid=G-2BTFVS6SPM&gtm=45je6au1v884251387za208zd884251387xf1&_p=1793709673269&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGA&cid=575956464.1793709674&"
+  ],
+  "url": "/authors/lukas-wallrich/",
+  "overflow_px": {
+   "390": 0,
+   "1024": 0,
+   "1440": 0
+  }
+ },
+ "generated list (cluster)": {
+  "requests": 31,
+  "own_kb": 181,
+  "third_party_kb": 672,
+  "by_kind_kb": {
+   "document": 11,
+   "font": 355,
+   "image": 97,
+   "other": 1,
+   "script": 322,
+   "stylesheet": 67
+  },
+  "hosts": [
+   "(this site)",
+   "cdnjs.cloudflare.com",
+   "fonts.googleapis.com",
+   "fonts.gstatic.com",
+   "licensebuttons.net",
+   "stats.g.doubleclick.net",
+   "www.google.co.uk",
+   "www.googletagmanager.com"
+  ],
+  "dom_elements": 350,
+  "js_errors": [],
+  "failed_requests": [
+   "https://region1.analytics.google.com/g/collect?v=2&tid=G-2BTFVS6SPM&gtm=45je6b20h2v884251387za208zd884251387xf1&_p=1793709684488&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGA&cid=593249187.179370968"
+  ],
+  "url": "/forrt_clusters/academic-life-and-culture/",
+  "overflow_px": {
+   "390": 0,
+   "1024": 0,
+   "1440": 0
+  }
+ },
+ "generated list (category)": {
+  "requests": 31,
+  "own_kb": 178,
+  "third_party_kb": 673,
+  "by_kind_kb": {
+   "document": 9,
+   "font": 356,
+   "image": 97,
+   "other": 1,
+   "script": 322,
+   "stylesheet": 67
+  },
+  "hosts": [
+   "(this site)",
+   "cdnjs.cloudflare.com",
+   "fonts.googleapis.com",
+   "fonts.gstatic.com",
+   "licensebuttons.net",
+   "stats.g.doubleclick.net",
+   "www.google.co.uk",
+   "www.googletagmanager.com"
+  ],
+  "dom_elements": 310,
+  "js_errors": [],
+  "failed_requests": [
+   "https://region1.analytics.google.com/g/collect?v=2&tid=G-2BTFVS6SPM&gtm=45je6au1v884251387za208zd884251387xf1&_p=1793709695567&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGA&cid=1262554380.1793709696"
+  ],
+  "url": "/category/event/",
+  "overflow_px": {
+   "390": 0,
+   "1024": 0,
+   "1440": 0
+  }
+ },
+ "tags browser": {
+  "requests": 32,
+  "own_kb": 203,
+  "third_party_kb": 662,
+  "by_kind_kb": {
+   "document": 32,
+   "font": 345,
+   "image": 97,
+   "other": 1,
+   "script": 324,
+   "stylesheet": 66
+  },
+  "hosts": [
+   "(this site)",
+   "cdnjs.cloudflare.com",
+   "fonts.googleapis.com",
+   "fonts.gstatic.com",
+   "licensebuttons.net",
+   "stats.g.doubleclick.net",
+   "www.google.co.uk",
+   "www.googletagmanager.com"
+  ],
+  "dom_elements": 3720,
+  "js_errors": [],
+  "failed_requests": [
+   "https://region1.analytics.google.com/g/collect?v=2&tid=G-2BTFVS6SPM&gtm=45je6au1v884251387za208zd884251387xf1&_p=1793709708451&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGA&cid=1663520011.1793709711"
+  ],
+  "url": "/tags/",
+  "overflow_px": {
+   "390": 20,
+   "1024": 0,
+   "1440": 0
+  }
+ },
+ "news list": {
+  "requests": 46,
+  "own_kb": 2529,
+  "third_party_kb": 673,
+  "by_kind_kb": {
+   "document": 12,
+   "font": 356,
+   "image": 2444,
+   "other": 1,
+   "script": 322,
+   "stylesheet": 67
+  },
+  "hosts": [
+   "(this site)",
+   "cdnjs.cloudflare.com",
+   "fonts.googleapis.com",
+   "fonts.gstatic.com",
+   "licensebuttons.net",
+   "stats.g.doubleclick.net",
+   "www.google.co.uk",
+   "www.googletagmanager.com"
+  ],
+  "dom_elements": 543,
+  "js_errors": [],
+  "failed_requests": [
+   "https://region1.analytics.google.com/g/collect?v=2&tid=G-2BTFVS6SPM&gtm=45je6au1v884251387za208zd884251387xf1&_p=1793709738502&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGA&cid=751672424.1793709739&"
+  ],
+  "url": "/post/",
+  "overflow_px": {
+   "390": 0,
+   "1024": 0,
+   "1440": 0
+  }
+ },
+ "educators' corner list": {
+  "requests": 41,
+  "own_kb": 260,
+  "third_party_kb": 688,
+  "by_kind_kb": {
+   "document": 11,
+   "font": 371,
+   "image": 176,
+   "other": 1,
+   "script": 323,
+   "stylesheet": 66
+  },
+  "hosts": [
+   "(this site)",
+   "cdnjs.cloudflare.com",
+   "fonts.googleapis.com",
+   "fonts.gstatic.com",
+   "licensebuttons.net",
+   "stats.g.doubleclick.net",
+   "www.google.co.uk",
+   "www.googletagmanager.com"
+  ],
+  "dom_elements": 460,
+  "js_errors": [],
+  "failed_requests": [
+   "https://region1.analytics.google.com/g/collect?v=2&tid=G-2BTFVS6SPM&gtm=45je6au1v884251387za208zd884251387xf1&_p=1793709757761&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGA&cid=435400156.1793709758&"
+  ],
+  "url": "/educators-corner/",
+  "overflow_px": {
+   "390": 0,
+   "1024": 0,
+   "1440": 0
+  }
+ },
+ "nowhere lab list": {
+  "requests": 43,
+  "own_kb": 210,
+  "third_party_kb": 2456,
+  "by_kind_kb": {
+   "document": 10,
+   "font": 405,
+   "image": 127,
+   "other": 1334,
+   "script": 721,
+   "stylesheet": 67
+  },
+  "hosts": [
+   "(this site)",
+   "cdnjs.cloudflare.com",
+   "datawrapper.dwcdn.net",
+   "fonts.googleapis.com",
+   "fonts.gstatic.com",
+   "licensebuttons.net",
+   "pt.dwcdn.net",
+   "static.dwcdn.net",
+   "stats.g.doubleclick.net",
+   "www.google.co.uk",
+   "www.googletagmanager.com"
+  ],
+  "dom_elements": 352,
+  "js_errors": [],
+  "failed_requests": [
+   "https://region1.analytics.google.com/g/collect?v=2&tid=G-2BTFVS6SPM&gtm=45je6b20h2v884251387za208zd884251387xf1&_p=1793709781398&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGA&cid=1891834113.17937097"
+  ],
+  "url": "/nowherelab/",
+  "overflow_px": {
+   "390": 0,
+   "1024": 0,
+   "1440": 0
+  }
+ },
+ "newsletters": {
+  "requests": 47,
+  "own_kb": 180,
+  "third_party_kb": 1211,
+  "by_kind_kb": {
+   "document": 42,
+   "font": 427,
+   "image": 101,
+   "other": 1,
+   "script": 718,
+   "stylesheet": 103
+  },
+  "hosts": [
+   "(this site)",
+   "cdnjs.cloudflare.com",
+   "eocampaign1.com",
+   "fonts.googleapis.com",
+   "fonts.gstatic.com",
+   "gallery.eo.page",
+   "licensebuttons.net",
+   "stats.g.doubleclick.net",
+   "www.google.co.uk",
+   "www.google.com",
+   "www.googletagmanager.com",
+   "www.gstatic.com"
+  ],
+  "dom_elements": 584,
+  "js_errors": [],
+  "failed_requests": [
+   "https://region1.analytics.google.com/g/collect?v=2&tid=G-2BTFVS6SPM&gtm=45je6au1h1v884251387za208zd884251387xf1&_p=1793709795851&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGA&cid=332661745.179370979",
+   "https://csp.withgoogle.com/csp/frame-ancestors/38fac9d5b82543fc4729580d18ff2d3d"
+  ],
+  "url": "/newsletters/",
+  "overflow_px": {
+   "390": 0,
+   "1024": 0,
+   "1440": 0
+  }
+ },
+ "summaries": {
+  "requests": 32,
+  "own_kb": 180,
+  "third_party_kb": 673,
+  "by_kind_kb": {
+   "document": 11,
+   "font": 355,
+   "image": 95,
+   "other": 1,
+   "script": 325,
+   "stylesheet": 66
+  },
+  "hosts": [
+   "(this site)",
+   "cdnjs.cloudflare.com",
+   "fonts.googleapis.com",
+   "fonts.gstatic.com",
+   "stats.g.doubleclick.net",
+   "www.google.co.uk",
+   "www.googletagmanager.com"
+  ],
+  "dom_elements": 351,
+  "js_errors": [],
+  "failed_requests": [
+   "https://region1.analytics.google.com/g/collect?v=2&tid=G-2BTFVS6SPM&gtm=45je6au1v884251387za208zd884251387xf1&_p=1793709809081&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGA&cid=1543310683.1793709810"
+  ],
+  "url": "/summaries/",
+  "overflow_px": {
+   "390": 0,
+   "1024": 0,
+   "1440": 0
+  }
+ },
+ "summary": {
+  "requests": 33,
+  "own_kb": 235,
+  "third_party_kb": 675,
+  "by_kind_kb": {
+   "document": 65,
+   "font": 356,
+   "image": 97,
+   "other": 1,
+   "script": 325,
+   "stylesheet": 67
+  },
+  "hosts": [
+   "(this site)",
+   "cdnjs.cloudflare.com",
+   "fonts.googleapis.com",
+   "fonts.gstatic.com",
+   "licensebuttons.net",
+   "stats.g.doubleclick.net",
+   "www.google.co.uk",
+   "www.googletagmanager.com"
+  ],
+  "dom_elements": 1940,
+  "js_errors": [],
+  "failed_requests": [
+   "https://region1.analytics.google.com/g/collect?v=2&tid=G-2BTFVS6SPM&gtm=45je6au1h1v884251387za208zd884251387xf1&_p=1793709819853&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGA&cid=2134146524.17937098"
+  ],
+  "url": "/summaries/diversity-equity-inclusion/",
+  "overflow_px": {
+   "390": 137,
+   "1024": 0,
+   "1440": 83
+  }
+ },
+ "one-off (ai metascience)": {
+  "requests": 32,
+  "own_kb": 259,
+  "third_party_kb": 673,
+  "by_kind_kb": {
+   "document": 41,
+   "font": 356,
+   "image": 146,
+   "other": 1,
+   "script": 322,
+   "stylesheet": 67
+  },
+  "hosts": [
+   "(this site)",
+   "cdnjs.cloudflare.com",
+   "fonts.googleapis.com",
+   "fonts.gstatic.com",
+   "licensebuttons.net",
+   "stats.g.doubleclick.net",
+   "www.google.co.uk",
+   "www.googletagmanager.com"
+  ],
+  "dom_elements": 812,
+  "js_errors": [],
+  "failed_requests": [
+   "https://region1.analytics.google.com/g/collect?v=2&tid=G-2BTFVS6SPM&gtm=45je6au1v884251387za208zd884251387xf1&_p=1793709834090&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGA&cid=576200269.1793709835&"
+  ],
+  "url": "/ai-metascience/",
+  "overflow_px": {
+   "390": 0,
+   "1024": 0,
+   "1440": 0
+  }
+ },
+ "one-off (citation politics)": {
+  "requests": 46,
+  "own_kb": 182,
+  "third_party_kb": 1938,
+  "by_kind_kb": {
+   "document": 85,
+   "font": 390,
+   "image": 214,
+   "other": 1,
+   "script": 1299,
+   "stylesheet": 130
+  },
+  "hosts": [
+   "(this site)",
+   "cdnjs.cloudflare.com",
+   "fonts.googleapis.com",
+   "fonts.gstatic.com",
+   "googleads.g.doubleclick.net",
+   "i.ytimg.com",
+   "jnn-pa.googleapis.com",
+   "licensebuttons.net",
+   "static.doubleclick.net",
+   "stats.g.doubleclick.net",
+   "www.google.co.uk",
+   "www.google.com",
+   "www.googletagmanager.com",
+   "www.youtube.com"
+  ],
+  "dom_elements": 391,
+  "js_errors": [],
+  "failed_requests": [
+   "https://region1.analytics.google.com/g/collect?v=2&tid=G-2BTFVS6SPM&gtm=45je6b20h2v884251387za208zd884251387xf1&_p=1793709847477&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGA&cid=1482937318.17937098"
+  ],
+  "url": "/citation-politics/",
+  "overflow_px": {
+   "390": 0,
+   "1024": 0,
+   "1440": 0
+  }
+ },
+ "one-off (contributor analysis)": {
+  "requests": 47,
+  "own_kb": 917,
+  "third_party_kb": 983,
+  "by_kind_kb": {
+   "document": 578,
+   "font": 355,
+   "image": 266,
+   "other": 1,
+   "script": 633,
+   "stylesheet": 67
+  },
+  "hosts": [
+   "(this site)",
+   "cdnjs.cloudflare.com",
+   "fonts.googleapis.com",
+   "fonts.gstatic.com",
+   "licensebuttons.net",
+   "mathjax.rstudio.com",
+   "stats.g.doubleclick.net",
+   "www.google.co.uk",
+   "www.googletagmanager.com"
+  ],
+  "dom_elements": 315,
+  "js_errors": [
+   "network.on is not a function"
+  ],
+  "failed_requests": [
+   "https://region1.analytics.google.com/g/collect?v=2&tid=G-2BTFVS6SPM&gtm=45je6au1v884251387za208zd884251387xf1&_p=1793709863738&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGA&cid=805714847.1793709865&"
+  ],
+  "url": "/contributor-analysis/",
+  "overflow_px": {
+   "390": 0,
+   "1024": 6,
+   "1440": 0
+  }
+ },
+ "one-off (community map)": {
+  "requests": 57,
+  "own_kb": 986,
+  "third_party_kb": 760,
+  "by_kind_kb": {
+   "document": 816,
+   "font": 356,
+   "image": 185,
+   "other": 1,
+   "script": 322,
+   "stylesheet": 67
+  },
+  "hosts": [
+   "(this site)",
+   "cdnjs.cloudflare.com",
+   "fonts.googleapis.com",
+   "fonts.gstatic.com",
+   "licensebuttons.net",
+   "server.arcgisonline.com",
+   "stats.g.doubleclick.net",
+   "www.google.co.uk",
+   "www.googletagmanager.com"
+  ],
+  "dom_elements": 308,
+  "js_errors": [],
+  "failed_requests": [
+   "https://region1.analytics.google.com/g/collect?v=2&tid=G-2BTFVS6SPM&gtm=45je6au1v884251387za208zd884251387xf1&_p=1793709881826&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGA&cid=1092187220.1793709882"
+  ],
+  "url": "/community-map/",
+  "overflow_px": {
+   "390": 0,
+   "1024": 0,
+   "1440": 0
+  }
+ },
+ "one-off (welcome)": {
+  "requests": 34,
+  "own_kb": 182,
+  "third_party_kb": 762,
+  "by_kind_kb": {
+   "document": 10,
+   "font": 429,
+   "image": 97,
+   "other": 1,
+   "script": 322,
+   "stylesheet": 85
+  },
+  "hosts": [
+   "(this site)",
+   "cdnjs.cloudflare.com",
+   "fonts.googleapis.com",
+   "fonts.gstatic.com",
+   "licensebuttons.net",
+   "stats.g.doubleclick.net",
+   "www.google.co.uk",
+   "www.googletagmanager.com"
+  ],
+  "dom_elements": 492,
+  "js_errors": [],
+  "failed_requests": [
+   "https://region1.analytics.google.com/g/collect?v=2&tid=G-2BTFVS6SPM&gtm=45je6au1v884251387za208zd884251387xf1&_p=1793709895531&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGA&cid=652888883.1793709896&"
+  ],
+  "url": "/welcome/",
+  "overflow_px": {
+   "390": 0,
+   "1024": 0,
+   "1440": 0
+  }
+ },
+ "games": {
+  "requests": 31,
+  "own_kb": 179,
+  "third_party_kb": 673,
+  "by_kind_kb": {
+   "document": 10,
+   "font": 356,
+   "image": 97,
+   "other": 1,
+   "script": 322,
+   "stylesheet": 67
+  },
+  "hosts": [
+   "(this site)",
+   "cdnjs.cloudflare.com",
+   "fonts.googleapis.com",
+   "fonts.gstatic.com",
+   "licensebuttons.net",
+   "stats.g.doubleclick.net",
+   "www.google.co.uk",
+   "www.googletagmanager.com"
+  ],
+  "dom_elements": 322,
+  "js_errors": [],
+  "failed_requests": [
+   "https://region1.analytics.google.com/g/collect?v=2&tid=G-2BTFVS6SPM&gtm=45je6au1v884251387za208zd884251387xf1&_p=1793709911383&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGA&cid=1466791634.1793709912"
+  ],
+  "url": "/games/",
+  "overflow_px": {
+   "390": 0,
+   "1024": 0,
+   "1440": 0
+  }
+ },
+ "booklet": {
+  "requests": 50,
+  "own_kb": 3560,
+  "third_party_kb": 676,
+  "by_kind_kb": {
+   "document": 10,
+   "font": 355,
+   "image": 99,
+   "other": 3070,
+   "script": 627,
+   "stylesheet": 75
+  },
+  "hosts": [
+   "(this site)",
+   "cdn.jsdelivr.net",
+   "cdnjs.cloudflare.com",
+   "fonts.googleapis.com",
+   "fonts.gstatic.com",
+   "licensebuttons.net",
+   "stats.g.doubleclick.net",
+   "www.google.co.uk",
+   "www.googletagmanager.com"
+  ],
+  "dom_elements": 375,
+  "js_errors": [],
+  "failed_requests": [
+   "404 http://127.0.0.1:62822/lib/dflip/css/custom.css",
+   "http://127.0.0.1:62822/lib/dflip/css/custom.css",
+   "https://region1.analytics.google.com/g/collect?v=2&tid=G-2BTFVS6SPM&gtm=45je6au1h1v884251387za208zd884251387xf1&_p=1793709925882&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGA&cid=1964004640.17937099"
+  ],
+  "url": "/booklet/",
+  "overflow_px": {
+   "390": 0,
+   "1024": 0,
+   "1440": 0
+  }
+ },
+ "chatbot": {
+  "requests": 39,
+  "own_kb": 555,
+  "third_party_kb": 673,
+  "by_kind_kb": {
+   "document": 10,
+   "font": 355,
+   "image": 472,
+   "other": 1,
+   "script": 322,
+   "stylesheet": 67
+  },
+  "hosts": [
+   "(this site)",
+   "cdnjs.cloudflare.com",
+   "fonts.googleapis.com",
+   "fonts.gstatic.com",
+   "licensebuttons.net",
+   "stats.g.doubleclick.net",
+   "www.google.co.uk",
+   "www.googletagmanager.com"
+  ],
+  "dom_elements": 366,
+  "js_errors": [],
+  "failed_requests": [
+   "https://region1.analytics.google.com/g/collect?v=2&tid=G-2BTFVS6SPM&gtm=45je6au1v884251387za208zd884251387xf1&_p=1793709938776&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGA&cid=981931414.1793709940&"
+  ],
+  "url": "/just_os_chatbot/",
+  "overflow_px": {
+   "390": 0,
+   "1024": 0,
+   "1440": 0
+  }
+ },
+ "404": {
+  "requests": 32,
+  "own_kb": 179,
+  "third_party_kb": 673,
+  "by_kind_kb": {
+   "document": 9,
+   "font": 355,
+   "image": 97,
+   "other": 1,
+   "script": 322,
+   "stylesheet": 67
+  },
+  "hosts": [
+   "(this site)",
+   "cdnjs.cloudflare.com",
+   "fonts.googleapis.com",
+   "fonts.gstatic.com",
+   "licensebuttons.net",
+   "stats.g.doubleclick.net",
+   "www.google.co.uk",
+   "www.googletagmanager.com"
+  ],
+  "dom_elements": 331,
+  "js_errors": [],
+  "failed_requests": [
+   "https://region1.analytics.google.com/g/collect?v=2&tid=G-2BTFVS6SPM&gtm=45je6au1v884251387za208zd884251387xf1&_p=1793709955259&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGA&cid=1065231210.1793709958"
+  ],
+  "url": "/404.html",
+  "overflow_px": {
+   "390": 0,
+   "1024": 0,
+   "1440": 0
+  }
+ }
+}

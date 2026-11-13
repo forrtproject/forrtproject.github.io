@@ -16,10 +16,12 @@ Please follow the [FORRT Code of Conduct](https://forrt.org/coc/) in issues, rev
 
 - [Questions, Ideas & Suggestions](#questions-ideas--suggestions)
 - [Edit content in your browser](#edit-content-in-your-browser)
+  - [Linking glossary terms](#linking-glossary-terms)
 - [Local Development Setup](#local-development-setup)
   - [Standard Setup](#standard-setup-git--hugo)
   - [RStudio Setup](#rstudio-setup)
 - [Contribution Workflow](#contribution-workflow)
+  - [Citing references](#citing-references)
   - [Contributing with AI tools](#contributing-with-ai-tools)
   - [Content, Licensing & Fact-Checking](#content-licensing--fact-checking)
 - [Deployment & Staging](#deployment--staging)
@@ -46,6 +48,12 @@ FORRT is maintained by volunteers, so response times may vary. We appreciate you
 You do not need to install Git or Hugo to fix text or a broken link. Find the relevant Markdown page under [`content/`](https://github.com/forrtproject/forrtproject.github.io/tree/main/content), open it on GitHub, and choose the pencil icon. GitHub will guide you through creating a fork, committing the edit, and opening a pull request against `main`.
 
 Preserve the YAML/TOML front matter at the top of the file and existing Hugo shortcodes. Describe the affected page and link to it in your PR. Generated paths include `content/curated_resources/` (except `_index.md`), `content/glossary/`, `content/contributors/tenzing.md`, `content/contributor-analysis/`, `content/publications/citation_chart.webp`, announcement bundles in `content/post/`, `static/data/fred_citation.txt`, and generated files in `data/`. The manually maintained `data/publications.yaml` is editable; follow the [publication instructions](content/publications/README). Generated content is refreshed during deployment. Use the source submission form/sheet linked from the public page or open an issue rather than editing the generated output. Local previews use committed copies and can differ from production. For layout or code changes, use the local setup below.
+
+To set a short note beside the text, put `{{% callout title="A title" %}}Your note{{% /callout %}}` just before the paragraph it goes with. On articles and most other text pages it sits in the right-hand column on wide screens, and in the text on phones and on pages set to full width. `title` is optional, and `tone="example"` or `tone="warning"` changes its colour. Keep it short: a long note runs on past the text it goes with.
+
+### Linking glossary terms
+
+On hand-written pages, use `{{< term "Preregistration" >}}` to link an English glossary term. To match an existing inflection, use `{{< term "Preregistration" "preregistered" >}}`. Preserve the author's exact wording and spelling; add markup only, and skip an occurrence if it cannot be marked without changing the text. Titles are matched without regard to case. Mark only the first occurrence of each term on a page, and keep existing resource links intact. Hover, keyboard focus, or a first touch tap shows a short definition; the popover links to the full entry. A repeat tap on the open trigger, mouse clicks, and Enter follow the term link, which also works without JavaScript. Unknown terms render as plain text and produce a Hugo build warning; check the [English glossary](https://forrt.org/glossary/english/) for the exact title. Do not add these shortcodes to generated content.
 
 ## Local Development Setup
 
@@ -144,6 +152,22 @@ All proposed changes must be made on a feature branch and submitted via a Pull R
 6. **Check the automated feedback** — a spell checker runs on every PR. On PRs from this repository it posts its results as a comment; on PRs from forks they appear in the workflow run summary under the **Checks** tab. Fix genuine typos; if a correct word is flagged (for example, a name or technical term), add it to [`.codespell-ignore.txt`](.codespell-ignore.txt).
 
 For more on Git, see the [official documentation](https://docs.github.com/en/get-started/using-git/about-git).
+
+### Citing references
+
+Hand-written pages can cite works in [`content/glossary/apa_lookup.json`](content/glossary/apa_lookup.json), the shared bibliography generated from the Glossary BibTeX Google Doc. Use its exact keys:
+
+```text
+{{< cite "Nosek2018" "Simmons2011" >}}
+{{< cite key="Nosek2018" narrative="true" >}}
+(e.g. Smith, 2019; {{< cite key="Nosek2018" bare="true" >}})
+```
+
+These render as “(Nosek et al., 2018; Simmons et al., 2011)”, “Nosek et al. (2018)” and “(e.g. Smith, 2019; Nosek et al., 2018)”. Use `bare` inside brackets you write yourself, for example alongside a work that isn't in the bibliography, so the author's wording stays as it was. Every page that cites must include `{{< references >}}` once, after its last citation, to add an alphabetical reference list. The built-HTML check fails citation links without matching reference entries. Clicking a citation opens its full APA reference with source and copy actions; without JavaScript it jumps to the reference list. Unknown keys produce a build warning and appear in square brackets.
+
+To ask readers to cite a work, show it as a card with a copy button: `{{< citation-card key="Asai2026OpenScholar" />}}` takes the reference from the bibliography, and `{{< citation-card >}}…{{< /citation-card >}}` takes one written out. In reference lists, cards and the “cite us” blocks, a reference with more than five authors shows the first three and “et al.”, with a button that shows the rest. Copying always gives the full reference.
+
+Do not edit the generated bibliography or glossary terms. Request additions to the Glossary BibTeX Doc through an issue; the bibliography generator supplies the APA text. Glossary definitions automatically link citations only when their first author and year identify exactly one of the term’s listed references and their author lists agree. Other citations stay plain text. Citations already linked to a source are left alone.
 
 ### Contributing with AI tools
 

@@ -4,7 +4,7 @@
   "link" $url
   "provider" "Google Forms"
   "label" "This form"
-  "title" "Google Form"
+  "title" (.Get "title" | default (printf "Google form: %s" .Page.Title))
   "width" (.Get "width")
   "height" (.Get "height")
 ) }}

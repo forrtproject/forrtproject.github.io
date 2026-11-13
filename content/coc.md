@@ -1,7 +1,6 @@
-
-
-
-# Code of Conduct
+---
+title: Code of Conduct
+---
 
 FORRT is committed to making participation in our community a harassment-free experience for everyone. We welcome people regardless of age, body size, disability (visible or invisible), ethnicity, sex characteristics, gender identity and expression, level of experience, education, socioeconomic status, nationality, personal appearance, race, religion, neurodiversity, or sexual identity and orientation.
 
@@ -20,7 +19,7 @@ The following are examples of behaviour that will not be tolerated in any FORRT 
 
 **Where does the Code of Conduct apply?**
 
-The code of conduct applies to all FORRT spaces (e.g. Website and FORRT events), and in any situation where you are representing FORRT (e.g, online or in-person conferences, workshops, or events).By engaging with FORRT either via the Slack channel or by being a part of a project, you are agreeing to this code of conduct.
+The code of conduct applies to all FORRT spaces (e.g. Website and FORRT events), and in any situation where you are representing FORRT (e.g., online or in-person conferences, workshops, or events). By engaging with FORRT either via the Slack channel or by being a part of a project, you are agreeing to this code of conduct.
 
 
 **What are the consequences for violating the Code of Conduct?**
@@ -39,7 +38,8 @@ If possible, please report the following information:
 * Your account of what occurred, and if you believe the incident is ongoing. 
 * If there is a publicly available record (e.g. a Slack conversation), please include a link. 
 * Any additional information that may be helpful.
-* Who will deal with the report?
+
+**Who will deal with the report?**
 
 All reports will be passed along to the Ethics Committee, who will decide on appropriate action. After filing a report, a representative from the Ethics Committee will contact you personally, review the incident, follow up with any additional questions, and make a decision as to how to respond.
 

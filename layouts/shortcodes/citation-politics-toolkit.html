@@ -1,364 +1,306 @@
-
-{{ $css := resources.Get "css/citations.css" }}
-{{ if $css }}
-  {{ $style := $css | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ $style.RelPermalink }}">
-{{ else }}
-  {{ warnf "CSS not found: css/citations.css. Using static version" }}
-  <link rel="stylesheet" href="{{ "css/citations.css" | relURL }}">
-{{ end }}
-
-
-<body>
-    <div class="container">
-        <!-- Header -->
-        <header class="header">
-            <h1 class="main-title">Citation Politics Toolkit</h1>
-            <p class="subtitle">A toolkit to encourage thoughtful citation</p>
-        </header>
-
-        <!-- Main Layout -->
-        <div class="main-layout">
-            <!-- Mobile Image (shown only on small screens) -->
-            <div class="mobile-image">
-                <img src="/img/citation-politics-toolkit.webp" 
-                     alt="Citational Justice Toolkit"
-                     class="toolkit-image">
-            </div>
-
-            <!-- Left Column - Paper Box -->
-            <div class="column left-column">
-                <div class="stage-box paper">
-                    <h3 class="stage-title">Paper</h3>
-                    <div class="box-content">
-                        <div class="content-group">
-                            <h4 class="section-title">Tools & Practices</h4>
-                            <div class="tools-grid">
-                                <div class="tool-box tool" data-category="tool">
-                                    <a href="https://docs.google.com/document/d/1JwwmOgRhd2p-Bl_RFEMnp04P0I2nNhOHW7JHdaLcyGs/edit?tab=t.0" target="_blank">
-                                        Mirya Holman's pre-submission checklist
-                                    </a>
-                                </div>
-                                <div class="tool-box tool" data-category="tool">
-                                    <a href="https://jlsumner.shinyapps.io/syllabustool/" target="_blank">
-                                        Gender Balance Assessment Tool (GBAT)
-                                    </a>
-                                </div>
-                                <div class="tool-box tool" data-category="tool">
-                                    <a href="https://doi.org/10.31234/osf.io/rfkyu" target="_blank">
-                                        Citation audit survey (Darda et al., 2023)
-                                    </a>
-                                </div>
-                                <div class="tool-box tool" data-category="tool">
-                                    <a href="https://scholar.google.com/scholar_lookup?title=Writing+your+journal+article+in+twelve+weeks%3A+A+guide+to+academic+publishing+success&author=W.+L.+Belcher&publication_year=2019&doi=10.7208%2Fchicago%2F9780226500089.001.0001" target="_blank">
-                                        Gray test (Belcher, 2019)
-                                    </a>
-                                </div>
-                                <div class="tool-box tool" data-category="tool">
-                                    <a href="https://docs.google.com/spreadsheets/d/1HHM6i1WDaAVzSJxgZG8UtNWP3aRcFprsdVpLZJEWxOQ/edit#gid=759055580" target="_blank">
-                                        SIBL Citation Audit Template
-                                    </a>
-                                </div>
-                                <div class="tool-box tool" data-category="tool">
-                                    <a href="http://github.com/dalejn/cleanBib" target="_blank">
-                                        Citational diversity codebook
-                                    </a>
-                                </div>
-                                <div class="tool-box tool" data-category="tool">
-                                    <a href="https://genderize.io/" target="_blank">
-                                        Genderize
-                                    </a>
-                                </div>
-                                <div class="tool-box tool" data-category="tool">
-                                    <a href="https://doi.org/10.18357/kula.135" target="_blank">
-                                        Template for citing Indigenous peoples (MacLeod, 2021)
-                                    </a>
-                                </div>
-                                <div class="tool-box tool" data-category="tool">
-                                    <a href="https://psych.wisc.edu/gcbialyzer/" target="_blank">
-                                        GCBI-alyzer
-                                    </a>
-                                </div>
-                                <div class="tool-box tool" data-category="tool">
-                                    <a href="https://doi.org/10.1371/journal.pone.0221212" target="_blank">
-                                        Inwardness metric (Baccini et al., 2019)
-                                    </a>
-                                </div>
-                                <div class="tool-box practice" data-category="practice">
-                                    <a href="https://doi.org/10.31234/osf.io/6kvqg" target="_blank">
-                                        Annotated reference list <br> (Lawson et al., 2025)
-                                    </a>
-                                </div>
-                                <div class="tool-box practice" data-category="practice">
-                                    <a href="https://doi.org/10.1016/j.tics.2020.06.009" target="_blank">
-                                        Citational diversity statement <br>
-                                        (Zurn et al., 2020)
-                                    </a>
-                                </div>
-                                <div class="tool-box practice" data-category="practice">
-                                    <a href="https://doi.org/10.31234/osf.io/6kvqg" target="_blank">
-                                        Citing R packages <br> (and other tools)
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Center Column - Image (Large Screens Only) -->
-            <div class="column center-column">
-                <img src="/img/citation-politics-toolkit.webp" 
-                     alt="Citational Justice Toolkit"
-                     class="toolkit-image">
-            </div>
-
-            <!-- Right Column - Planning and Project Boxes -->
-            <div class="column right-column">
-                <!-- Planning Box -->
-                <div class="stage-box planning">
-                    <h3 class="stage-title">Planning</h3>
-                    <div class="box-content">
-                        <div class="content-group">
-                            <h4 class="section-title">Tools & Practices</h4>
-                            <div class="tools-grid">
-                                <div class="tool-box tool" data-category="tool">
-                                    <a href="https://chromewebstore.google.com/detail/citation-transparency/cepnbdbhabaljgecaddglhhcgajphbcf?hl=en&pli=1" target="_blank">
-                                        Citation Transparency browser extension
-                                    </a>
-                                </div>
-                                <div class="tool-box tool" data-category="tool">
-                                    <a href="#">
-                                        FORRT citational justice module (coming soon)
-                                    </a>
-                                </div>
-                                <div class="tool-box tool" data-category="tool">
-                                    <a href="https://civiclaboratory.nl/2023/08/08/citational-politics-training-module/" target="_blank">
-                                        Citational politics training module - CLEAR - Civic Laboratory for Environmental Action Research
-                                    </a>
-                                </div>
-                                <div class="tool-box practice" data-category="practice">
-                                    <a href="https://forrt.org/awop/" target="_blank">
-                                        Academic Wheel of Privilege <br> (AWoP)
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project Box -->
-                <div class="stage-box project">
-                    <h3 class="stage-title">Project</h3>
-                    <div class="box-content">
-                        <div class="content-group">
-                            <h4 class="section-title">Tools & Practices</h4>
-                            <div class="tools-grid">
-                                <div class="tool-box tool" data-category="tool">
-                                    <a href="https://web.archive.org/web/20260620235035/http://www.criticalethnicstudiesjournal.org/citation-practices/" target="_blank">
-                                        Citational Practices: Critical Ethnic Studies
-                                    </a>
-                                </div>
-                                <div class="tool-box practice" data-category="practice">
-                                    <a href="#">
-                                        Diversity reading - see Table below
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+{{/* The Citation Politics Toolkit: an intro with the wheel and a search, the tools and practices by
+     stage of the research cycle, the diversity reading list, and how to cite the toolkit.
+     The entries are below as YAML. An entry links with `url`, or with `ref` for a page of this site;
+     one with neither shows as not yet available. `kind` is tool or practice. */}}
+{{ $data := `
+stages:
+  - id: planning
+    name: Planning
+    wheel: Ideas and funding
+    colour: "#f4b400"
+    items:
+      - kind: tool
+        name: Citation Transparency browser extension
+        url: https://chromewebstore.google.com/detail/citation-transparency/cepnbdbhabaljgecaddglhhcgajphbcf?hl=en&pli=1
+      - kind: tool
+        name: FORRT citational justice module
+        note: Coming soon
+      - kind: tool
+        name: Citational politics training module
+        source: CLEAR, Civic Laboratory for Environmental Action Research
+        url: https://civiclaboratory.nl/2023/08/08/citational-politics-training-module/
+      - kind: practice
+        name: Academic Wheel of Privilege (AWoP)
+        ref: /awop
+  - id: project
+    name: Project
+    wheel: Research and journal selection
+    colour: "#00a37a"
+    items:
+      - kind: tool
+        name: "Citational Practices: Critical Ethnic Studies"
+        url: https://web.archive.org/web/20260620235035/http://www.criticalethnicstudiesjournal.org/citation-practices/
+      - kind: practice
+        name: Diversity reading
+        note: See the diversity reading tools below
+        url: "#diversity-reading"
+  - id: paper
+    name: Paper
+    wheel: Paper writing and submission
+    colour: "#d45f00"
+    items:
+      - kind: tool
+        name: Mirya Holman's pre-submission checklist
+        url: https://docs.google.com/document/d/1JwwmOgRhd2p-Bl_RFEMnp04P0I2nNhOHW7JHdaLcyGs/edit?tab=t.0
+      - kind: tool
+        name: Gender Balance Assessment Tool (GBAT)
+        url: https://jlsumner.shinyapps.io/syllabustool/
+      - kind: tool
+        name: Citation audit survey
+        source: Darda et al., 2023
+        url: https://doi.org/10.31234/osf.io/rfkyu
+      - kind: tool
+        name: Gray test
+        source: Belcher, 2019
+        url: https://scholar.google.com/scholar_lookup?title=Writing+your+journal+article+in+twelve+weeks%3A+A+guide+to+academic+publishing+success&author=W.+L.+Belcher&publication_year=2019&doi=10.7208%2Fchicago%2F9780226500089.001.0001
+      - kind: tool
+        name: SIBL Citation Audit Template
+        url: https://docs.google.com/spreadsheets/d/1HHM6i1WDaAVzSJxgZG8UtNWP3aRcFprsdVpLZJEWxOQ/edit#gid=759055580
+      - kind: tool
+        name: Citational diversity codebook
+        url: http://github.com/dalejn/cleanBib
+      - kind: tool
+        name: Genderize
+        url: https://genderize.io/
+      - kind: tool
+        name: Template for citing Indigenous peoples
+        source: MacLeod, 2021
+        url: https://doi.org/10.18357/kula.135
+      - kind: tool
+        name: GCBI-alyzer
+        url: https://psych.wisc.edu/gcbialyzer/
+      - kind: tool
+        name: Inwardness metric
+        source: Baccini et al., 2019
+        url: https://doi.org/10.1371/journal.pone.0221212
+      - kind: practice
+        name: Annotated reference list
+        source: Lawson et al., 2025
+        url: https://doi.org/10.31234/osf.io/6kvqg
+      - kind: practice
+        name: Citational diversity statement
+        source: Zurn et al., 2020
+        url: https://doi.org/10.1016/j.tics.2020.06.009
+      - kind: practice
+        name: Citing R packages (and other tools)
+        url: https://doi.org/10.31234/osf.io/6kvqg
+  - id: publication
+    name: Publication
+    wheel: Peer review and publication
+    colour: "#5b3a99"
+    items:
+      - kind: practice
+        name: Academic Wheel of Privilege (AWoP)
+        note: Also listed under Planning
+        ref: /awop
+reading:
+  - name: Diverse speakers in STEM
+    url: https://docs.google.com/document/u/1/d/e/2PACX-1vSlvHTZtOc6wG5C9xEc-bAIYofpeDHVjrrVc7Q_5IQdmXcLeaYd27nhoJD9jub_q-qAILxHknMGbggb/pub
+    text: Database of databases of diverse speakers in STEM (includes some of the tools in this list, and much more)
+  - name: CiteBetter
+    url: http://citebetter.com
+    text: A community-driven pledge to promote equitable and inclusive citation practices, especially for scholars of color and non-cis-male voices. Offers minimum standards across roles (students, teachers, researchers, department chairs) to actively address citation bias.
+    note: From “Our Pledge” and “Statement of Purpose” on citebetter.com
+  - name: Citation justice in STEMM
+    url: https://libraryguides.mcgill.ca/citation_justice/how_to
+    text: McGill library list of tools and resources to help diversity reading and perform citation audits
+  - name: Citation Practice Self-Audits
+    url: https://research.ubc.ca/sites/default/files/vpri/Promising%20Practices.pdf
+    text: Faculty-led assessments of syllabi and reading lists to identify underrepresentation of women and scholars of color; encourages more inclusive citation practices across teaching and publishing. Promotes critical reflection and gradual change.
+    note: From Promising Practices for Addressing the Underrepresentation of Women in Science, Engineering, and Medicine
+  - name: Equity-Informed Editorial and Review Guidelines
+    url: https://research.ubc.ca/sites/default/files/vpri/Promising%20Practices.pdf
+    text: Proposes journals adopt guidelines that encourage authors, editors, and reviewers to consider gender and racial balance in citations. Promotes institutional accountability in publishing.
+    note: From Promising Practices for Addressing the Underrepresentation of Women in Science, Engineering, and Medicine
+  - name: Diverse Sources
+    url: https://diversesources.org/
+    text: Database of experts to include more underrepresented voices and perspectives in science, health and environment work
+  - name: Women in Neuroscience
+    url: https://www.winrepo.org/repo/
+    text: Women in neuroscience
+  - name: 500 Women Scientists
+    url: https://500womenscientists.org/
+    text: Women scientists across disciplines
+  - name: Anne's List
+    url: https://anneslist.net/
+    text: Women systems neuroscientists
+  - name: Women in Coastal Geoscience and Engineering
+    url: https://womenincoastal.org/
+    text: Aims to inspire, support, and encourage women at all career stages through networking and mentoring
+  - name: Women in Earth and Environmental Sciences in Australasia
+    url: https://www.womeesa.net/
+    text: Creating a unified Australasian network of women working in Earth and Environmental Sciences in academia, industry and government
+  - name: Global South Climate Database
+    url: https://www.carbonbrief.org/global-south-climate-database/
+    text: The Global South Climate Database is a publicly available, searchable database of scientists and experts in the fields of climate science, policy and energy.
+  - name: BIPOC-authored psychology papers
+    url: https://docs.google.com/spreadsheets/d/1i7Eacoyv9VVg2lBbCV-KJZg4nSGvR_VZFOysOyOGG8g/edit?gid=666010790#gid=666010790
+    text: A moderated database of papers to help course instructors diversify their syllabi.
+  - name: Black in Neuro
+    url: https://blackinneuro.com/
+    text: Black neuroscientists
+  - name: Cite Black authors
+    url: https://citeblackauthors.com/
+    text: Black authors across disciplines
+  - name: BlackComputerHer
+    url: https://blackcomputeher.org/citeher-bibliography/
+    text: Black women and girls in computing and tech
+    note: Links to the citeHER Bibliography
+  - name: Cite Black Women Collective
+    url: https://web.archive.org/web/20260605205836/http://www.citeblackwomencollective.org/
+    text: A movement that engages with social media and aesthetic representation (t-shirts) in order to push people to critically rethink the politics of knowledge production by engaging in a radical praxis of citation that acknowledges and honors Black women’s transnational intellectual production.
+  - name: Canadian Black Scientists Network
+    url: https://blackscientists.ca/
+    text: The Canadian Black Scientists Network (CBSN) exists to Elevate, make Visible, Celebrate and Connect Black Canadians in Science, Technology, Engineering, Mathematics & Medicine (STEMM) across sectors.
+  - name: BiasWatchNeuro
+    url: https://biaswatchneuro.com/
+    text: A website that tracks the women:men ratio of invited speakers at neuroscience conferences, workshops, and courses, as well as authors in neuroscience journals and recipients of neuroscience awards.
+  - name: 500 Queer Scientists
+    url: https://500queerscientists.com/
+    text: Queer scientists
+  - name: The Bee
+    url: https://thebeemagazine.com/
+    text: Literary magazine, online platform, podcast, and the heart of a writing community. Our mission is to nurture, publish and promote the best new working-class writing by new and established working-class writers and visual artists.
+    also:
+      - text: New Writing North
+        url: https://newwritingnorth.com/
+  - name: marginalia
+    url: https://www.marginaliascience.com/
+    text: Marginalia are committed to […] promoting female, non-gender conforming, POC, LGBTQIA+, differently abled or in any other way not promoted by the status quo in academia.
+  - name: Reviewer Zero
+    url: https://www.reviewerzero.net/about
+    text: Reviewer Zero aims to transform peer review in psychology and related fields to be more formative and constructive, reducing bias and promoting equity, especially for underserved groups. They provide training for reviewers, develop supportive review practices, and promote diverse research perspectives.
+  - name: JANE (Journal/Author Name Estimator)
+    url: https://jane.biosemantics.org/
+    text: Find papers, journals or authors based on your manuscript title, abstract or keywords. Can be used to find peer reviewers or additional literature to cite.
+  - name: Diversity Reading List in Philosophy
+    url: https://diversityreadinglist.org/
+    text: Diversity in philosophy
+  - name: Advancing big-team reproducible science through increased representation (ABRIR)
+    url: https://abrirpsy.org/about/abrir-hubs/
+    text: ABRIR is a working group that aims to diagnose the unique barriers to leadership & participation in Big-team/Open Science faced by researchers from LMICs (low-to-middle income countries).
+  - name: Framework for Open and Reproducible Research Training (FORRT) - Neurodiversity
+    ref: /neurodiversity
+    text: Supporting the messages of both open scholarship and neurodiversity will ensure that the goals of diversity, equity, and inclusion reach across populations and explicitly include neurodivergent people.
+    note: Includes a database of neurodivergent authors
+    also:
+      - text: Submit to the database of neurodivergent authors
+        url: https://qualtrics.kcl.ac.uk/jfe/form/SV_eLoQdOyAZTDGT7E
+  - name: Indigenous Science Network
+    url: https://research.acer.edu.au/isn/about.html
+    text: A network promoting First Nation/Indigenous science. Regular newsletters and resources for educators.
+  - name: City University of Seattle guide to Finding Indigenous Voices
+    url: https://library.cityu.edu/researchguides/indigenousresources/indigenousvoices
+    text: Tips for how to search for Indigenous voices in research
+  - name: Advancing Indigenous People in STEM (AISES)
+    url: https://www.aises.org/
+    text: AISES is a national nonprofit organization focused on substantially increasing the representation of Indigenous peoples of North America and the Pacific Islands in science, technology, engineering, and math (STEM) studies and careers.
+  - name: Anti-colonial research library (ACRL)
+    url: https://www.anticolonialresearchlibrary.org/
+    text: This Library holds a collection of open-access articles and books, websites, and YouTube videos on Indigenous and anti-colonial research methodologies.
+` | transform.Unmarshal }}
+{{ $page := .Page }}
+{{ $css := resources.Get "css/doors/toolkit.css" | minify | fingerprint "md5" }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}">
+{{ $wheel := "img/citation-politics-toolkit.webp" | relURL }}
+<div class="cpt">
+  <div class="cpt-intro">
+    <div class="cpt-lede">
+      <p>A toolkit to encourage thoughtful citation: tools and practices for citational justice at each stage of the research cycle, from planning a project to publishing it. Each entry is marked as a tool or a practice, and the wheel shows where it fits.</p>
+      <nav class="cpt-stages" aria-label="Stages">
+        <ul>
+          {{ range $data.stages }}<li><a href="#{{ .id }}" style="--stage:{{ .colour | safeCSS }}">{{ .name }}</a></li>{{ end }}
+          <li><a href="#diversity-reading">Diversity reading</a></li>
+        </ul>
+      </nav>
+      <div class="cpt-search" hidden>
+        <label for="cpt-search-input">Search tools and practices</label>
+        <input id="cpt-search-input" type="search" autocomplete="off" placeholder="For example: gender, audit, Indigenous">
+        <div class="cpt-result">
+          <p class="cpt-status" role="status" aria-live="polite"></p>
+          <button type="button" class="cpt-clear" hidden>Clear the search</button>
         </div>
-
-        <!-- Legend -->
-        <div class="legend">
-            <div class="legend-item tool">
-                <div class="legend-color"></div>
-                <span>Tools</span>
-            </div>
-            <div class="legend-item practice">
-                <div class="legend-color"></div>
-                <span>Practices</span>
-            </div>
-        </div>
+      </div>
     </div>
+    <figure class="cpt-wheel">
+      <a href="{{ $wheel }}">
+        <img src="{{ $wheel }}" width="2835" height="2835" alt="{{ $page.Params.sharing_image_alt }}">
+        <span class="cpt-wheel-open">Open the wheel full size</span>
+      </a>
+    </figure>
+  </div>
 
-    <script>
-                    // Enhanced hover effects and interactions
-        document.addEventListener('DOMContentLoaded', function() {
-            // hover effects to tool boxes
-            const toolBoxes = document.querySelectorAll('.tool-box');
-            
-            toolBoxes.forEach(box => {
-                box.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-3px)';
-                    this.style.boxShadow = '0 6px 20px rgba(52, 152, 219, 0.25)';
-                });
-                
-                box.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0)';
-                    this.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-                });
-            });
+  {{ range $data.stages }}
+  <section class="cpt-group" style="--stage:{{ .colour | safeCSS }}" data-cpt-group>
+    <h2 id="{{ .id }}">{{ .name }}</h2>
+    <p class="cpt-wheel-note">On the wheel: {{ .wheel }}</p>
+    <ul class="cpt-items">
+      {{ range .items }}
+      {{ $href := .url }}
+      {{ with .ref }}{{ $href = relref $page . }}{{ end }}
+      <li class="cpt-item" data-cpt-item>
+        <span class="cpt-kind cpt-kind-{{ .kind }}">{{ .kind | humanize }}</span>
+        {{ if $href }}
+        <a class="cpt-name" href="{{ $href }}"{{ if hasPrefix $href "http" }} target="_blank" rel="noopener"{{ end }}>{{ .name }}</a>
+        {{ else }}
+        <span class="cpt-name">{{ .name }}</span>
+        {{ end }}
+        {{ with .source }}<span class="cpt-source">{{ . }}</span>{{ end }}
+        {{ with .note }}<span class="cpt-note">{{ . }}</span>{{ end }}
+      </li>
+      {{ end }}
+    </ul>
+  </section>
+  {{ end }}
 
-            // click tracking for analytics
-            const links = document.querySelectorAll('.tool-box a');
-            
-            links.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    const toolName = this.textContent.trim();
-                    const category = this.parentElement.dataset.category;
-                    
-                    // Log click for analytics (you can replace this with a analytics code)
-                    console.log(`Clicked: ${toolName} (${category})`);
-                    
-                    // Optional: Add a brief visual feedback
-                    this.parentElement.style.backgroundColor = '#e3f2fd';
-                    setTimeout(() => {
-                        this.parentElement.style.backgroundColor = '';
-                    }, 200);
-                });
-            });
+  <section class="cpt-group cpt-reading" data-cpt-group>
+    <h2 id="diversity-reading">Diversity reading tools</h2>
+    <p>Databases, networks and guides that help you find and read work by scholars from under-represented groups.</p>
+    <ul class="cpt-items">
+      {{ range $data.reading }}
+      {{ $href := .url }}
+      {{ with .ref }}{{ $href = relref $page . }}{{ end }}
+      <li class="cpt-item" data-cpt-item>
+        <a class="cpt-name" href="{{ $href }}"{{ if hasPrefix $href "http" }} target="_blank" rel="noopener"{{ end }}>{{ .name }}</a>
+        <span class="cpt-text">{{ .text }}</span>
+        {{ with .note }}<span class="cpt-note">{{ . }}</span>{{ end }}
+        {{ range .also }}<a class="cpt-also" href="{{ .url }}" target="_blank" rel="noopener">{{ .text }}</a>{{ end }}
+      </li>
+      {{ end }}
+    </ul>
+  </section>
 
-            // Smooth scroll behavior for any internal links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
-            });
-
-            // loading state for external links
-            const externalLinks = document.querySelectorAll('a[target="_blank"]');
-            
-            externalLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    const originalText = this.textContent;
-                    this.textContent = 'Opening...';
-                    
-                    setTimeout(() => {
-                        this.textContent = originalText;
-                    }, 1000);
-                });
-            });
-
-            // Intersection Observer for fade-in animations
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, observerOptions);
-
-            // Observe all stage boxes for animation
-            document.querySelectorAll('.stage-box').forEach(box => {
-                observer.observe(box);
-            });
-
-            // keyboard navigation support
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Tab') {
-                    // Ensure focus is visible
-                    document.body.classList.add('keyboard-navigation');
-                }
-            });
-
-            document.addEventListener('mousedown', function() {
-                document.body.classList.remove('keyboard-navigation');
-            });
-
-            // search functionality (basic implementation)
-            function addSearchFunctionality() {
-                // Create search input
-                const searchContainer = document.createElement('div');
-                searchContainer.className = 'search-container';
-                searchContainer.innerHTML = `
-                    <input type="text" id="toolkit-search" placeholder="Search tools and practices..." 
-                        style="width: 100%; max-width: 400px; padding: 0.75rem; border: 2px solid #e5e7eb; 
-                                border-radius: 8px; font-size: 1rem; margin-bottom: 0.5rem;">
-                `;
-                
-                const header = document.querySelector('.header');
-                header.appendChild(searchContainer);
-
-                const searchInput = document.getElementById('toolkit-search');
-                
-                searchInput.addEventListener('input', function() {
-                    const searchTerm = this.value.toLowerCase();
-                    const toolBoxes = document.querySelectorAll('.tool-box');
-                    
-                    toolBoxes.forEach(box => {
-                        const text = box.textContent.toLowerCase();
-                        const shouldShow = text.includes(searchTerm);
-                        
-                        box.style.display = shouldShow ? 'flex' : 'none';
-                        
-                        // Add highlight effect
-                        if (searchTerm && shouldShow && searchTerm.length > 2) {
-                            box.style.backgroundColor = '#fff3cd';
-                            box.style.borderColor = '#ffc107';
-                        } else {
-                            box.style.backgroundColor = '';
-                            box.style.borderColor = '';
-                        }
-                    });
-                });
-            }
-
-            // Uncomment the line below to enable search functionality
-            addSearchFunctionality();
-        });
-
-        // Utility function to copy link to clipboard
-        function copyLinkToClipboard(url) {
-            navigator.clipboard.writeText(url).then(() => {
-                // Show temporary success message
-                const message = document.createElement('div');
-                message.textContent = 'Link copied to clipboard!';
-                message.style.cssText = `
-                    position: fixed;
-                    top: 20px;
-                    right: 20px;
-                    background: #10b981;
-                    color: white;
-                    padding: 0.75rem 1rem;
-                    border-radius: 8px;
-                    z-index: 1000;
-                    font-weight: 500;
-                `;
-                
-                document.body.appendChild(message);
-                
-                setTimeout(() => {
-                    message.remove();
-                }, 2000);
-            });
-        }
-
-        // copy functionality to tool boxes (right-click context)
-        document.addEventListener('contextmenu', function(e) {
-            const toolBox = e.target.closest('.tool-box');
-            if (toolBox) {
-                const link = toolBox.querySelector('a');
-                if (link && link.href !== '#') {
-                    e.preventDefault();
-                    copyLinkToClipboard(link.href);
-                }
-            }
-        });
-    </script>
-</body>
+  <section class="cpt-cite">
+    <h2 id="cite-as">Cite as</h2>
+    <blockquote><p>Sauvé, S. A., Middleton, S. L., Gellersen, H., &amp; Azevedo, F. (2025, July 31). In Pursuit of Citational Justice: A Toolkit for Equitable Scholarship. <a href="https://doi.org/10.31222/osf.io/qjecy_v2">https://doi.org/10.31222/osf.io/qjecy_v2</a></p></blockquote>
+  </section>
+</div>
+<script>
+(() => {
+  const root = document.querySelector('.cpt');
+  const box = root.querySelector('.cpt-search');
+  const input = root.querySelector('#cpt-search-input');
+  const status = root.querySelector('.cpt-status');
+  const result = root.querySelector('.cpt-result');
+  const clear = root.querySelector('.cpt-clear');
+  const items = [...root.querySelectorAll('[data-cpt-item]')].map((el) => [el, el.textContent.replace(/\s+/g, ' ').toLowerCase()]);
+  const groups = [...root.querySelectorAll('[data-cpt-group]')];
+  box.hidden = false;
+  const filter = () => {
+    const term = input.value.trim();
+    const query = term.toLowerCase();
+    let shown = 0;
+    for (const [el, text] of items) {
+      el.hidden = Boolean(query) && !text.includes(query);
+      if (!el.hidden) shown += 1;
+    }
+    for (const group of groups) group.hidden = !group.querySelector('[data-cpt-item]:not([hidden])');
+    result.classList.toggle('is-empty', !shown);
+    clear.hidden = !query;
+    status.textContent = !query ? '' : shown ? `${shown} of ${items.length} entries match “${term}”.` : `No tools, practices or reading lists match “${term}”. Try a shorter word, or clear the search to see everything.`;
+  };
+  input.addEventListener('input', filter);
+  input.addEventListener('keydown', (event) => { if (event.key === 'Escape' && input.value) { input.value = ''; filter(); } });
+  clear.addEventListener('click', () => { input.value = ''; filter(); input.focus(); });
+})();
+</script>

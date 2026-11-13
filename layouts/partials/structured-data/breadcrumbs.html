@@ -14,6 +14,9 @@
      `/glossary/` section stub, which only exists as a redirect to
      `/glossary/english/`) have no permalink and are left out: an entry
      without a URL is invalid, and its title would repeat the next level's.
+     An unrendered section can keep its step by naming its address in a
+     `breadcrumb_url` param (relative to the base URL), as /about/ does: that
+     address serves a redirect to the section's landing page.
 
      The skips are one wrapping conditional rather than early `return`s: a Hugo
      partial either returns a value or writes output, and mixing the two makes
@@ -30,17 +33,20 @@
 }}
 
 {{ if not $skip }}
+  {{ $metadata := partial "functions/resource_metadata.html" . }}
   {{ $trail := slice }}
 
   {{ range .Ancestors.Reverse }}
     {{ $ancestor := . }}
     {{ $name := cond .IsHome (site.Params.short_title | default site.Title) (.LinkTitle | default .Title) }}
-    {{ if and $name $ancestor.Permalink }}
+    {{ $item := $ancestor.Permalink }}
+    {{ if not $item }}{{ with $ancestor.Params.breadcrumb_url }}{{ $item = . | absURL }}{{ end }}{{ end }}
+    {{ if and $name $item }}
       {{ $trail = $trail | append (dict
         "@type" "ListItem"
         "position" (add (len $trail) 1)
         "name" $name
-        "item" $ancestor.Permalink
+        "item" $item
       ) }}
     {{ end }}
   {{ end }}
@@ -49,8 +55,8 @@
     {{ $trail = $trail | append (dict
       "@type" "ListItem"
       "position" (add (len $trail) 1)
-      "name" .
-      "item" $.Permalink
+      "name" $metadata.breadcrumb_title
+      "item" $metadata.url
     ) }}
   {{ end }}
 

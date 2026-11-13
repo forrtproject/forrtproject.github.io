@@ -1,33 +1,29 @@
 +++
-# Rotating-quote hero (see layouts/partials/widgets/hero_quotes.html).
-widget = "hero_quotes"
-headless = true  # This file represents a page section.
-active = true  # Activate this widget? true/false
-weight = 10  # Order that this section will appear.
+# The home page's sections are drawn by layouts/partials/doors/home/, in order of weight. Each
+# file here holds one section's wording and links. A link with a `url` and no `label` takes its
+# label from the main menu, so renaming a menu entry renames it here too.
+section = "hero"
+headless = true
+weight = 10
 
-# Key statements to cycle through. Wrap the part to highlight in
-# <span class="accent">…</span>. Drawn from FORRT's vision and mission.
-[[quote]]
-  text = 'Care is not a distraction from the work. <span class="accent">It is the work.</span>'
-[[quote]]
-  text = 'Scientific excellence and social justice, <span class="accent">inseparable.</span>'
-[[quote]]
-  text = 'From a culture of competition <span class="accent">to one of community.</span>'
-[[quote]]
-  text = 'Teaching and community building, <span class="accent">on equal footing with discovery.</span>'
+heading = "Better science.<br>Built together."
+lede = "FORRT is a community of researchers and educators who develop, share and teach open scholarship, and who work to make science more rigorous, more transparent and more just."
 
-[primary_cta]
-  label = "Get involved"
-  url = "/about/get-involved/"
-
-[secondary_cta]
-  label = "About FORRT"
-  url = "#3-what-is-forrt"
-
-[design.spacing]
-  # Customize the section spacing. Order is top, right, bottom, left.
-  padding = ["40px", "0", "44px", "0"]
-
-[design.background]
-  text_color_light = false
+# Three main actions under the intro, then a quieter line on wide screens (`more`), hidden on phones,
+# where the header's "Get involved" button and the Take part section cover joining.
+[[quick]]
+  label = "Teach with open materials"
+  url = "resources/"
+[[quick]]
+  label = "Learn about open scholarship"
+  url = "clusters/"
+[[quick]]
+  label = "Explore replications"
+  url = "replication-hub/"
+[[more]]
+  label = "Join FORRT"
+  url = "#take-part"
+[[more]]
+  label = "Submit a resource"
+  url = "submit/"
 +++

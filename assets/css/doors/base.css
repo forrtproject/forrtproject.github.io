@@ -1,0 +1,40 @@
+/* Site-wide type and colour. */
+body{margin-top:0;background:var(--page);color:var(--ink);font:400 var(--text-size)/1.6 var(--text);overflow-wrap:break-word}
+h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{font-family:var(--display);font-weight:var(--display-weight);color:var(--ink)}
+/* When the window is narrow for its text size (below about 300px at normal text, or 600px with text at 200%, whether the whole page or only text is zoomed), long words in headings no longer fit; hyphenate them rather than break at any letter (#983). */
+@media (max-width:19em){h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{hyphens:auto}}
+a{color:var(--link)}
+a:hover{color:var(--ink)}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible,select:focus-visible,table:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:2px}
+main:focus{outline:none}
+/* The cookie banner sits over the foot of the screen until dismissed; site.js sets its height. */
+html{scroll-padding-block-end:var(--banner,0px)}
+/* The site's content in system fonts where the Doors faces have no glyphs (decision D18). */
+main:lang(ar),main:lang(zh){font-family:var(--text)}
+main:lang(ar){--display:'Newsreader','Noto Naskh Arabic','Geeza Pro','Traditional Arabic','Times New Roman',serif;--text:'Noto Sans Arabic','Segoe UI','Geeza Pro',Tahoma,sans-serif}
+main:lang(zh){--display:'Newsreader','Noto Serif CJK SC','Songti SC','STSong',SimSun,serif;--text:'Source Sans 3','Noto Sans CJK SC','PingFang SC','Microsoft YaHei','Hiragino Sans GB',sans-serif}
+
+/* Upright everywhere, with emphasis as semi-bold. Real italics only inside reference lists
+   (decision D15). Font Awesome's <i> icons set their own weight, so they are left alone. */
+*,*::before,*::after,.font-italic{font-style:normal!important}
+em,i:not([class]),dfn,cite,var{font-weight:600}
+.references-list :is(em,i),.references-page .article-style :is(em,i),
+:is(h2,h3,h4)[id^=references i]~:is(ul,ol,p) :is(em,i),.csl-bib-body :is(em,i),
+.ref-apa :is(em,i),.rl-detail-apa :is(em,i){font-style:italic!important;font-weight:400}
+/* Publication titles from those lists keep their journal names and species in italics, at the title's weight. */
+:is(.fr-title,.fc-title,.ref-popup-title,.rl-panel-item-title) i{font-style:italic!important;font-weight:inherit}
+
+.wrap{width:min(1280px,calc(100% - 96px));margin-inline:auto}
+.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+/* Small capitals in publication titles from Crossref (<scp>), see clusters/rich_text.html */
+.scp{font-variant:small-caps}
+.skip{position:fixed;top:-100px;inset-inline-start:12px;z-index:1100;background:var(--ink);color:#fff;padding:12px 16px}
+.skip:focus,.skip:hover{top:8px;color:#fff}
+.crumbs{font-size:15px;line-height:1.4;color:var(--ink)}
+.crumbs a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+.more{font-weight:700;color:var(--link);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}
+.more:hover{color:var(--ink)}
+
+@media(max-width:1240px){.wrap{width:calc(100% - 64px)}}
+@media(max-width:760px){:root{--text-size:16px}.wrap{width:calc(100% - 40px)}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}

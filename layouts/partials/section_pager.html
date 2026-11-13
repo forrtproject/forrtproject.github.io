@@ -1,18 +1,36 @@
-{{ $str := "" }}
-<div class="post-nav d-sm-flex justify-content-around">
-  {{if .NextInSection}}
-  {{/* For the Book layout, prev/next labels are reversed. */}}
-  {{ if in (slice "docs" "book" "glossary" "educators-corner") .Type }}{{ $str = "previous" }}{{else}}{{ $str = "next" }}{{end}}
-  <div class="post-nav-item d-inline ">
-    <a href="{{.NextInSection.RelPermalink}}" rel="next"><div class="meta-nav">{{ i18n $str }}</div>
-    <p class=""> {{.NextInSection.Title}}</p></a>
+{{/* Previous on the left and Next on the right on every page that has them. Hugo's NextInSection is the
+     earlier page in a book-like section (glossary, docs), so those sections swap the two. */}}
+{{ $prev := .PrevInSection }}
+{{ $next := .NextInSection }}
+{{ $glossary := eq .Type "glossary" }}
+{{/* Glossary pages carry their own language; the Arabic one labels its pager in Arabic. */}}
+{{ $prevLabel := i18n "previous" }}{{ $nextLabel := i18n "next" }}
+{{ if and $glossary (eq .Params.language "arabic") }}{{ $prevLabel = "السابق" }}{{ $nextLabel = "التالي" }}{{ end }}
+{{ if in (slice "docs" "book" "glossary" "educators-corner") .Type }}
+  {{ $prev = .NextInSection }}
+  {{ $next = .PrevInSection }}
+{{ end }}
+{{/* Glossary terms step through their language's A to Z, the order of the glossary hub. */}}
+{{ if $glossary }}
+  {{ $terms := sort (where (where site.RegularPages "Type" "glossary") "File.Dir" .File.Dir) "Params.sort_key" }}
+  {{ $prev = false }}{{ $next = false }}{{ $here := -1 }}
+  {{ range $i, $p := $terms }}{{ if eq $p.RelPermalink $.RelPermalink }}{{ $here = $i }}{{ end }}{{ end }}
+  {{ if gt $here 0 }}{{ $prev = index $terms (sub $here 1) }}{{ end }}
+  {{ if and (ge $here 0) (lt (add $here 1) (len $terms)) }}{{ $next = index $terms (add $here 1) }}{{ end }}
+{{ end }}
+{{ if or $prev $next }}
+<div class="post-nav">
+  {{ with $prev }}
+  <div class="post-nav-item post-nav-prev">
+    <a href="{{ .RelPermalink }}" rel="prev"><div class="meta-nav"><span aria-hidden="true">← </span>{{ $prevLabel }}</div>
+    <p>{{ if $glossary }}{{ partial "doors/term_title" .Title }}{{ else }}{{ .Title }}{{ end }}</p></a>
   </div>
-  {{end}}
-  {{if .PrevInSection}}
-  {{ if in (slice "docs" "book" "glossary" "educators-corner") .Type }}{{ $str = "next" }}{{else}}{{ $str = "previous" }}{{end}}
-  <div class="post-nav-item d-inline order-2 text-sm-right">
-    <a href="{{.PrevInSection.RelPermalink}}" rel="prev"><div class="meta-nav">{{ i18n $str }}</div>
-    <p class="">{{.PrevInSection.Title}}</p></a>
+  {{ end }}
+  {{ with $next }}
+  <div class="post-nav-item post-nav-next">
+    <a href="{{ .RelPermalink }}" rel="next"><div class="meta-nav">{{ $nextLabel }}<span aria-hidden="true"> →</span></div>
+    <p>{{ if $glossary }}{{ partial "doors/term_title" .Title }}{{ else }}{{ .Title }}{{ end }}</p></a>
   </div>
-  {{end}}
+  {{ end }}
 </div>
+{{ end }}

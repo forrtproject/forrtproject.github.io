@@ -12,6 +12,6 @@ please submit it using the form below.
 
 If you want to check if a replication study is already included in the database, 
 the easiest way is to use the 
-<a href="/annotator" target="_blank">References Annotator</a>
+<a href="/annotator" target="_blank">FLoRA References Annotator</a>
 
-{{< click_to_load src="https://docs.google.com/forms/d/e/1FAIpQLSeMCwdtP0TPgL55stniuyyTxnNwyC34mO4VUuLcQwYrLI89sQ/viewform" provider="Google" label="This document" width="100%" height="800px" >}}
+{{< click_to_load src="https://docs.google.com/forms/d/e/1FAIpQLSeMCwdtP0TPgL55stniuyyTxnNwyC34mO4VUuLcQwYrLI89sQ/viewform" provider="Google" label="This document" title="Form to submit a replication" width="100%" height="800px" >}}

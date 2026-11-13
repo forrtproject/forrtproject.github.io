@@ -1,0 +1,23 @@
+{{/* Visible breadcrumbs, separate from the BreadcrumbList in structured-data/breadcrumbs.html.
+     A page's label and parent come from the main menu when it is there, so renaming a menu
+     entry renames the trail too. A page outside the menu can name its menu section in front matter
+     (crumb_parent = "Educational Nexus"). Input: dict with `page` and optional `label` for the last step. */}}
+{{ $page := .page }}
+{{ $label := .label | default $page.LinkTitle }}
+{{ $parent := "" }}
+{{ $here := strings.TrimSuffix "/" $page.RelPermalink }}
+{{ range site.Menus.main }}
+  {{ $top := . }}
+  {{ if eq (strings.TrimSuffix "/" (.URL | relLangURL)) $here }}
+    {{ $label = .Name }}
+  {{ else }}
+    {{ range .Children }}
+      {{ if eq (strings.TrimSuffix "/" (.URL | relLangURL)) $here }}
+        {{ $label = .Name }}
+        {{ $parent = $top }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+{{ if not $parent }}{{ with $page.Params.crumb_parent }}{{ $name := . }}{{ range site.Menus.main }}{{ if eq .Name $name }}{{ $parent = . }}{{ end }}{{ end }}{{ end }}{{ end }}
+<nav class="crumbs" aria-label="Breadcrumb"><a href="{{ "" | relLangURL }}">Home</a> <span aria-hidden="true">/</span> {{ with $parent }}{{ if ne .Name $label }}{{ if .URL }}<a href="{{ .URL | relLangURL }}">{{ .Name }}</a>{{ else }}{{ .Name }}{{ end }} <span aria-hidden="true">/</span> {{ end }}{{ end }}<span aria-current="page">{{ $label }}</span></nav>

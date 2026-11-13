@@ -23,6 +23,12 @@ document.addEventListener('DOMContentLoaded', function() {
     maxBoundsViscosity: 1.0
   }).setView([40, 0], 1.25);
 
+  // On a phone the view above cut off the Americas and East Asia, so fit the inhabited world to the frame.
+  if (document.getElementById('ga_map_yearly').clientWidth < 700) {
+    window.myLeafletMapYearly.options.zoomSnap = 0.25;
+    window.myLeafletMapYearly.fitBounds([[-56, -168], [72, 180]]);
+  }
+
   // Define visitor data from Hugo
   var gaRegionsData = {{ hugo.Data.ga_data.regions_yearly | jsonify | safeJS }};
   if (!gaRegionsData) {

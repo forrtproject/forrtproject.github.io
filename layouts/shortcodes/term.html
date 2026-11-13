@@ -1,0 +1,10 @@
+{{- $name := .Get 0 -}}
+{{- $text := .Get 1 | default $name -}}
+{{- $key := lower $name -}}
+{{- $terms := partialCached "doors/glossary_index.html" site -}}
+{{- with index $terms $key -}}
+  <a class="gloss-term" href="{{ .url }}" data-term="{{ $key }}">{{ $text }}</a>
+{{- else -}}
+  {{- warnf "Unknown English glossary term %q at %s" $name .Position -}}
+  {{- $text -}}
+{{- end -}}

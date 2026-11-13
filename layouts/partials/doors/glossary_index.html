@@ -1,0 +1,22 @@
+{{/* Build from front matter rather than .Content: shortcodes also use this lookup.
+     Cache once per build; nothing is written back to the generated glossary sources. */}}
+{{ $terms := dict }}
+{{ range where site.RegularPages "Section" "glossary" }}
+  {{ if hasPrefix .File.Dir "glossary/english/" }}
+    {{ $definition := .Params.definition | default "" | markdownify | plainify | htmlUnescape }}
+    {{/* Drop unbalanced bold markers that markdownify leaves behind, and hide the full stop
+         in common abbreviations so "(e.g." or "et al." does not end the summary. */}}
+    {{ $definition = replace $definition "**" "" | replaceRE `\s+` " " | strings.TrimSpace }}
+    {{ $definition = replaceRE `(?i)\b(e\.g|i\.e|et al|cf|vs|etc|ca|approx)\.` "${1}\uE000" $definition }}
+    {{ $sentences := findRE `(?s).+?(?:[.!?]["’”)]*(?:\s+|$)|$)` $definition 2 }}
+    {{ $summary := replace (delimit $sentences "") "\uE000" "." | strings.TrimSpace }}
+    {{ if gt (strings.RuneCount $summary) 300 }}
+      {{ $summary = printf "%s…" (substr $summary 0 299 | replaceRE `\s+\S*$` "" | strings.TrimSpace) }}
+    {{ end }}
+    {{ $entry := dict "title" .Title "url" .RelPermalink "summary" $summary }}
+    {{ range slice .Title (.Params.en_title | default .Title) }}
+      {{ $terms = merge $terms (dict (lower .) $entry) }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+{{ return $terms }}

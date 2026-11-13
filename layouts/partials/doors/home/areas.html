@@ -1,0 +1,26 @@
+{{/* The four areas, each behind its arched door. Context: content/home/2-areas.md. */}}
+{{/* Set before the areas are parsed, so the phone layout collapses their links without a shift, and only when site.js can open them. */}}
+<script>document.documentElement.classList.add('js')</script>
+<section class="wrap areas-section" aria-labelledby="areas-h">
+  <h2 id="areas-h" class="visually-hidden">What FORRT does</h2>
+  <div class="areas">
+    {{ range .Params.area }}
+    {{ $image := resources.Get (printf "images/doors/%s.webp" .image) }}
+    <article class="area area-{{ .key }}" aria-labelledby="area-{{ .key }}-h">
+      <div class="area-plate"><img src="{{ $image.RelPermalink }}" alt="{{ .alt }}" width="{{ $image.Width }}" height="{{ $image.Height }}" loading="lazy"></div>
+      <div class="area-body">
+        <h3 id="area-{{ .key }}-h">{{ .title }}</h3>
+        <p>{{ .blurb }}</p>
+        <ul>
+          {{ range .links }}
+          {{ $link := partial "doors/link" . }}
+          <li><a href="{{ $link.href }}">{{ $link.label }}</a></li>
+          {{ end }}
+          {{/* Phones show two links; this shows the rest (site.js). */}}
+          {{ if gt (len .links) 2 }}<li class="area-more"><button type="button" aria-expanded="false">{{ sub (len .links) 2 }} more in {{ .title }}</button></li>{{ end }}
+        </ul>
+      </div>
+    </article>
+    {{ end }}
+  </div>
+</section>

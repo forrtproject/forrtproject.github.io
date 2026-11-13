@@ -1,0 +1,17 @@
+{{/* The side card on glossary pages: every term in this language, with a filter. site.js runs the
+     filter and brings the current term into view inside the card. Input: dict with `page`, `labels`
+     (list_of_terms, filter_terms) and `defined_only`. */}}
+{{ $page := .page }}
+{{ $pages := where (where site.RegularPages "Type" "glossary") "File.Dir" $page.File.Dir }}
+{{ if .defined_only }}{{ $pages = where $pages "Params.definition" "!=" nil }}{{ end }}
+<section id="glossary-terms" class="article-card glossary-card" aria-label="{{ .labels.list_of_terms }}">
+  <h2>{{ .labels.list_of_terms }}</h2>
+  {{ $label := strings.TrimRight ".…" .labels.filter_terms }}
+  <label class="term-filter-label" for="glossary-search">{{ $label }}</label>
+  <input type="search" id="glossary-search" class="form-control" autocomplete="off">
+  <nav class="term-list" aria-label="{{ .labels.list_of_terms }}">
+    <ul>
+      {{ range sort $pages "Params.sort_key" }}<li><a href="{{ .RelPermalink }}"{{ if eq .RelPermalink $page.RelPermalink }} aria-current="page"{{ end }}>{{ partial "doors/term_title" .Title }}</a></li>{{ end }}
+    </ul>
+  </nav>
+</section>

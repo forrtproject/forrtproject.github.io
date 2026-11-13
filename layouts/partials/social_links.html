@@ -9,12 +9,17 @@
     {{ $scheme := (urls.Parse $link).Scheme }}
     {{ $target := "" }}
     {{ if not $scheme }}
-      {{ $link = .link | relLangURL }}
+      {{/* A website written with no https:// would resolve against this site. */}}
+      {{ if findRE `^[\w-]+(\.[\w-]+)+(/|$)` .link }}{{ $link = printf "https://%s" .link }}{{ $target = `target="_blank" rel="noopener"` }}{{ else }}{{ $link = .link | relLangURL }}{{ end }}
     {{ else if in (slice "http" "https") $scheme }}
       {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
     {{ end }}
     <li>
-      <a href="{{ $link | safeURL }}" {{ $target | safeHTMLAttr }}>
+      {{/* The icon alone says nothing to a screen reader, so the link is named. */}}
+      {{ $name := index (dict "envelope" "Email" "github" "GitHub" "osf" "OSF" "orcid" "ORCID" "google-scholar" "Google Scholar" "linkedin" "LinkedIn" "researchgate" "ResearchGate" "youtube" "YouTube") .icon | default (.icon | humanize | title) }}
+      {{/* Two links with one icon need telling apart, by the end of their address. */}}
+      {{ if gt (len (where $.Params.social "icon" .icon)) 1 }}{{ $name = printf "%s (%s)" $name (path.Base (strings.TrimSuffix "/" .link)) }}{{ end }}
+      <a href="{{ $link | safeURL }}" aria-label="{{ $.Title }}: {{ $name }}" {{ $target | safeHTMLAttr }}>
         <i class="{{ $pack }} {{ $pack_prefix }}-{{ .icon }}" aria-hidden="true"></i>
       </a>
     </li>

@@ -1,0 +1,187 @@
+/* What the generic section page adds to the reading layout in article.css. */
+.article-layout .doc-section{margin:0 0 36px}
+.article-layout .doc-section:last-child{margin-bottom:0}
+.article-layout .doc-section>h2:first-child{margin-top:0}
+.article-layout .section-lede{font:400 19px/1.5 var(--text);color:var(--ink)}
+.article-layout .doc-section-tinted{padding:22px 24px;background:var(--surface);border-radius:var(--r-large)}
+.article-layout .doc-section-tinted:nth-of-type(4n+1){background:var(--edu-bg)}
+.article-layout .doc-section-tinted:nth-of-type(4n+2){background:var(--res-bg)}
+.article-layout .doc-section-tinted:nth-of-type(4n+3){background:var(--jus-bg)}
+.article-layout .doc-section-tinted:nth-of-type(4n){background:var(--com-bg)}
+.article-layout .doc-section-tinted iframe{display:block;width:100%}
+.feature-rows{display:grid;gap:22px;margin:24px 0;padding:0;list-style:none}
+.article-layout .article-style .feature-rows li{display:grid;grid-template-columns:96px minmax(0,1fr);gap:18px;align-items:start;margin:0;font-size:18px;line-height:1.5}
+.feature-rows img{width:96px;height:96px;object-fit:contain;padding:12px;background:var(--edu-bg);border-radius:50%}
+.article-layout .article-style .feature-rows h3{margin:0 0 4px;font-size:23px}
+.feature-rows p{margin:0 0 8px}
+.feature-rows-small .feature-icon{width:96px;font-size:40px;text-align:center;color:var(--link)}
+.feature-links{display:flex;flex-wrap:wrap;gap:8px}
+.article-layout .article-style .timeline{margin:18px 0;padding:0;list-style:none;border-inline-start:3px solid var(--line)}
+.article-layout .article-style .timeline li{position:relative;margin:0 0 22px;padding-inline-start:20px;font-size:18px;line-height:1.5}
+.article-layout .article-style .timeline li::before{content:"";position:absolute;inset-inline-start:-8px;top:8px;width:13px;height:13px;background:var(--link);border-radius:50%}
+.article-layout .article-style .timeline h3{margin:0 0 2px;font-size:22px}
+.article-layout .article-style .timeline-meta{margin:0 0 6px;font-size:16px;color:var(--soft)}
+.article-layout .article-style .people-wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:18px 16px;margin:18px 0;padding:0;list-style:none}
+.article-layout .article-style .people-wall li{margin:0;font-size:15px;line-height:1.35}
+.people-wall a{display:grid;grid-template-columns:48px minmax(0,1fr);align-items:center;gap:10px;color:var(--ink);text-decoration:none}
+.people-wall a:hover .people-name{text-decoration:underline}
+.people-wall img,.people-initials{display:flex;align-items:center;justify-content:center;width:48px;height:48px;object-fit:cover;border-radius:50%;background:var(--surface);font-weight:600}
+.people-name{font-weight:600}
+.people-role{display:block;margin:4px 0 0 58px;color:var(--soft)}
+@media(max-width:760px){
+  .article-layout .article-style .feature-rows li{grid-template-columns:64px minmax(0,1fr);gap:12px;font-size:16px}
+  .feature-rows img{width:64px;height:64px;padding:8px}
+  .feature-rows-small .feature-icon{width:64px;font-size:28px}
+  .article-layout .doc-section-tinted{padding:16px}
+}
+
+/* Filters on the publications and partners pages. */
+.filter-container{margin:0 0 24px}
+.filter-section-title{margin:0 0 6px;font-size:16px;font-weight:700}
+.pill-bar{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 16px}
+.filter-pill{padding:5px 12px;background:#fff;border:1.5px solid var(--soft);border-radius:999px;color:var(--ink);font:600 15px/1.3 var(--text)}
+.filter-pill:hover{border-color:var(--ink)}
+.filter-pill.active{background:var(--ink);border-color:var(--ink);color:#fff}
+#no-resources-warning h4{margin-top:12px}
+
+/* Publications, partners and projects: a shared card. */
+.article-layout .article-style :is(.pub-section-group,.partner-section-group)>.section-heading h2{margin-top:34px}
+.article-layout .article-style :is(.pub-section-group,.partner-section-group) hr{display:none}
+.pub-section-description,.partner-section-description{margin:0 0 12px;font-size:18px}
+.pub-list,.partner-list,.get-involved-projects{display:grid;gap:14px;margin:14px 0}
+.pub-card,.partner-card,.get-involved-card{padding:18px 20px;background:var(--surface);border-radius:var(--r-large);font-size:16px;line-height:1.45}
+.article-layout .article-style :is(.pub-card,.partner-card,.get-involved-card) :is(p,li){font-size:16px;line-height:1.45}
+.pub-card,.pub-card-body{min-width:0;overflow-wrap:anywhere}
+.pub-pill{max-width:100%;white-space:normal}
+.pub-header,.partner-header{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px;margin:0 0 8px}
+.pub-tags,.partner-tags{display:flex;flex-wrap:wrap;gap:6px}
+.pub-pill,.partner-pill{padding:2px 9px;background:#fff;border-radius:var(--r-small);font-size:15px;font-weight:600;color:var(--ink)}
+.pub-year{font-size:15px;font-weight:700}
+.article-layout .article-style :is(.pub-title,.partner-title,.get-involved-card h3){margin:0 0 6px;font-size:21px;line-height:1.2}
+.pub-authors,.pub-journal{margin:0 0 6px;font-size:15px}
+.journal-icon{margin-inline-end:4px}
+.btn-toggle-abstract{padding:0;background:none;border:0;color:var(--link);font:600 15px/1.4 var(--text);text-decoration:underline;text-underline-offset:3px}
+.btn-toggle-abstract i{transition:transform .15s}
+.btn-toggle-abstract.active i{transform:rotate(90deg)}
+.publication-card-abstract{display:none;margin:8px 0}
+.publication-card-abstract.show{display:block}
+.pub-citation-section{margin:10px 0;font-size:15px}
+.pub-footer,.partner-footer{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin-top:10px}
+.pub-buttons,.partner-buttons{display:flex;flex-wrap:wrap;gap:6px}
+.pub-metrics{display:flex;gap:10px}
+.pub-metric-label{display:block;font-size:15px}
+.partner-content{display:grid;grid-template-columns:96px minmax(0,1fr);gap:16px}
+.partner-logo{display:block;width:96px;height:auto;max-height:72px;object-fit:contain}
+.partner-description{font-size:16px}
+.get-involved-card>:last-child{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+
+/* Directories hold cards and lists rather than running text, so a wide screen takes two or more columns. */
+.article-layout-wide :is(.pub-list,.partner-list){grid-template-columns:repeat(auto-fill,minmax(min(100%,420px),1fr));gap:16px}
+.article-layout-wide .article-style .feature-rows{grid-template-columns:repeat(auto-fill,minmax(min(100%,420px),1fr));gap:28px 40px}
+.article-layout-wide .article-style .feature-rows li{max-width:none}
+.article-layout-wide .pub-card,.article-layout-wide .pub-card-body{display:flex;flex-direction:column}
+.article-layout-wide .pub-card-body{flex:1}
+.article-layout-wide .pub-footer{margin-top:auto;padding-top:10px}
+@media(min-width:1001px){.article-layout-wide #contributor-list{columns:3;column-gap:40px}}
+@media(min-width:761px) and (max-width:1000px){.article-layout-wide #contributor-list{columns:2;column-gap:32px}}
+.article-layout-wide .contributor-group{max-width:none;break-inside:avoid}
+.article-layout-wide .article-style center{text-align:start}
+
+/* The citation chart supports the introduction: beside it on a wide screen, after it on a narrow one. */
+.pub-intro{display:flex;flex-direction:column;margin-bottom:28px}
+.article-layout .article-style .citation-container{order:1;width:min(100%,320px);margin:6px 0 10px}
+.citation-container img{display:block;width:100%;height:auto}
+.citation-container figcaption{margin-top:6px;text-align:start}
+@media(min-width:761px){
+  .pub-intro{display:grid;grid-template-columns:minmax(0,550px) 240px;justify-content:space-between;gap:48px;align-items:start}
+  .article-layout .article-style .pub-intro p{max-width:none;font-size:18px;line-height:1.55}
+  .article-layout .article-style .citation-container{grid-column:2;grid-row:1;width:auto;margin:0}
+  .pub-intro>:not(figure){grid-column:1}
+}
+@media(min-width:761px) and (max-width:1000px){.pub-intro{grid-template-columns:minmax(0,1fr) 260px;gap:32px}}
+
+.reading:has(.pub-intro) .article-head{margin-bottom:14px}
+.reading:has(.pub-intro) .doc-section>hr:first-child{margin:0 0 20px}
+
+/* Get Involved: its project cards take the reading column and the call-out column together. */
+@media(min-width:1240px){
+  .article-layout-callouts .article-style .get-involved-projects{clear:both;width:calc(100% + 300px);grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+/* PDFs and the booklet are for looking at, so they take the width; their introductions do not. */
+.pdf-open{margin:0 0 12px}
+/* The flipbook fits a spread to its frame's width, so a frame wider than a spread clips the pages. */
+@media(min-width:761px){.article-style ._df_book{width:min(100%,calc(80vh*1.35));margin-inline:auto!important}}
+.pdf-viewer{display:block;width:100%;max-width:960px;border:1px solid var(--line);border-radius:var(--r-small)}
+
+/* The chatbot's page is a tool: on a wide screen its input is in view beside the introduction. */
+@media(min-width:1001px){
+  .article-layout-wide .doc-section:has(>#just-os-fullpage){display:grid;grid-template-columns:minmax(0,560px) minmax(0,1fr);column-gap:48px;align-items:start}
+  .article-layout-wide .doc-section:has(>#just-os-fullpage)>*{grid-column:1}
+  .article-layout-wide .doc-section>#just-os-fullpage{grid-column:2;grid-row:1/span 30;height:min(calc(100vh - 260px),640px)!important;min-height:420px;margin:0!important}
+  .article-layout-wide .doc-section:has(>#just-os-fullpage)>br{display:none}
+  /* The team runs across the page below the chat. */
+  .article-layout-wide .doc-section:has(>#just-os-fullpage)>h2:last-of-type{grid-column:1/-1;grid-row:31}
+  .article-layout-wide .doc-section:has(>#just-os-fullpage)>.jos-team{grid-column:1/-1;grid-row:32}
+}
+@media(min-width:1001px) and (max-width:1279px){.article-layout-wide .doc-section:has(>#just-os-fullpage){grid-template-columns:repeat(2,minmax(0,1fr));column-gap:32px}}
+
+/* Contributors: its generated page carries an older inline style, so these rules name the same ids. */
+.article-layout #filter-menu,.article-layout #filter-collapsed{padding:16px 18px;margin:0 0 22px;background:var(--surface);border:0;border-radius:var(--r-large)}
+.article-layout #filter-menu h3{margin:0 0 10px;color:var(--ink);font-size:22px;font-weight:var(--display-weight)}
+.article-layout .filter-field label{font-size:15px}
+.article-layout .filter-field select{width:100%;padding:7px 10px;background:#fff;border:1.5px solid var(--soft);border-radius:var(--r-small);font-size:16px}
+.article-layout #apply-filter,.article-layout #clear-filters{padding:8px 16px;background:var(--link);border-radius:999px;color:#fff;font:600 15px/1.3 var(--text)}
+.article-layout #apply-filter:hover,.article-layout #clear-filters:hover{background:var(--ink)}
+.article-layout .filter-title{border-bottom:1px solid var(--line)}
+.article-layout #filter-collapsed a{color:var(--link)}
+.article-layout .contribution{font-size:17px;line-height:1.45}
+
+/* Testimonials: portraits float beside the text on a wide screen and sit above it on a phone.
+   Their inline size would leave the text a strip about 200 px wide. */
+.article-layout .doc-section-tinted [style*="float"]>div[style*="320px"]{width:180px!important;height:180px!important;margin-inline:auto}
+@media(max-width:760px){
+  .article-layout .doc-section-tinted img[style*="float"],.article-layout .doc-section-tinted [style*="float"]{float:none!important;display:block;margin:0 auto 12px!important}
+  .pub-card,.partner-card,.get-involved-card{padding:14px}
+  .partner-content{grid-template-columns:64px minmax(0,1fr);gap:12px}
+  .partner-logo{width:64px}
+}
+.article-layout .article-style center p:not(:has(img)){text-align:start}
+/* The JUST-OS team: the site's people cards, a pale panel with a round portrait, name and role. */
+.article-layout .article-style .jos-team{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr));gap:16px;margin:16px 0 0;padding:0;list-style:none}
+.article-layout .article-style .jos-team li{margin:0;padding:18px;background:var(--surface);border-radius:var(--r-large)}
+.article-layout .article-style .jos-team img{display:block;width:96px;height:96px;border-radius:50%;object-fit:cover;margin:0 0 12px}
+.article-layout .article-style .jos-team h3{margin:0 0 6px;font-size:20px}
+.article-layout .article-style .jos-team p{margin:0;font-size:16px;line-height:1.45;color:var(--soft)}
+/* "Cite this" reads like "Show Abstract" above it, and opens the full reference. */
+.pub-citation-section{margin:4px 0 10px}
+.pub-citation-section>summary{display:inline-block;cursor:pointer;color:var(--link);font:600 15px/1.4 var(--text);text-decoration:underline;text-underline-offset:3px}
+.pub-citation-section>summary::-webkit-details-marker{display:none}
+.pub-citation-section>summary i{transition:transform .15s}
+.pub-citation-section[open]>summary i{transform:rotate(90deg)}
+.pub-citation-section .citation-text{margin-top:8px;padding:10px 12px;background:#fff;border-radius:var(--r-small)}
+#just-os-fullpage{margin-bottom:24px}
+/* On a phone the empty chat takes about half the screen, so its question box is in view at once; it is the site's card, not a shadowed box. */
+#just-os-fullpage{border-color:var(--line)!important;border-radius:var(--r-large)!important;box-shadow:none!important}
+@media(max-width:760px){#just-os-fullpage{height:min(60vh,520px)!important;min-height:380px}}
+@media(max-width:760px){.article-layout .article-style .citation-container{width:min(100%,220px)}}
+/* The chat page on a phone opens with the chat: the introduction and credits follow it. */
+#just-os-fullpage{margin-bottom:24px!important}
+@media(max-width:1000px){
+  .doc-section:has(>#just-os-fullpage){display:flex;flex-direction:column}
+  .doc-section>#just-os-fullpage{order:-1;margin-top:4px!important}
+}
+@media(max-width:760px){#just-os-fullpage{height:min(52vh,460px)!important;min-height:340px}}
+/* Project cards: their actions as the site's outline pills, one size. */
+.get-involved-card .btn{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:8px 16px!important;border:1.5px solid var(--link)!important;border-radius:999px!important;background:#fff!important;color:var(--link)!important;font:600 15px/1.2 var(--text)!important}
+.get-involved-card .btn:hover{background:var(--link)!important;color:#fff!important}
+/* Project cards share one footer line of actions. */
+.get-involved-card{display:flex;flex-direction:column}
+.get-involved-card .get-involved-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:12px}
+/* Get Involved is a wide page: its projects fill the width, as many to a row as fit. */
+.article-layout-wide .article-style .get-involved-projects{grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));max-width:none}
+.article-layout-wide .article-style .action-cards{max-width:960px}
+.get-involved-card[hidden]{display:none}
+.get-involved-card .get-involved-link{display:inline-flex;align-items:center;min-height:40px;padding:0 6px;color:var(--link);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.get-involved-card .btn.is-main{background:var(--link)!important;color:#fff!important}
+.get-involved-card .btn.is-main:hover{background:var(--ink)!important;border-color:var(--ink)!important}

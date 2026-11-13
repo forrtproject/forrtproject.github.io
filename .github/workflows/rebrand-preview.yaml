@@ -1,0 +1,228 @@
+name: Doors preview
+
+# =======================
+# Doors Redesign Preview
+# =======================
+# Purpose: Builds the rebrand-doors branch and publishes it at forrt.org/rebrand-doors/
+# Triggers: Push to rebrand-doors, and PRs into it (checks only, no deployment)
+# Target: forrtproject/rebrand-doors, on GitHub Pages under the forrt.org domain
+# Checks: Every run also builds the merge base with main from the same data, then compares
+#         the two builds.
+#         A failed check shows on the run but does not hold back the preview.
+# Note: Uses the same data and announcement artifacts as deploy.yaml. Delete this
+#       workflow when the redesign launches.
+
+on:
+  push:
+    branches:
+      - rebrand-doors
+  pull_request:
+    branches:
+      - rebrand-doors
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
+concurrency:
+  group: rebrand-preview-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build and check
+    runs-on: ubuntu-22.04
+    # Fork PRs get no artifacts token and have no preview to update.
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+    permissions:
+      contents: read
+      actions: read  # Needed for artifact access
+    env:
+      HUGO_VERSION: "0.158.0"
+      HUGO_EXTENDED: true
+      PREVIEW_BASE: /rebrand-doors/
+      PREVIEW_URL: https://forrt.org/rebrand-doors/
+    outputs:
+      source-rules: ${{ steps.source-rules.outcome }}
+      compare: ${{ steps.compare.outcome }}
+      links: ${{ steps.links.outcome }}
+      seo: ${{ steps.seo.outcome }}
+      design: ${{ steps.design.outcome }}
+      axe: ${{ steps.axe.outcome }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      # See deploy.yaml: Git quotes non-ASCII paths unless this is off, and Hugo
+      # then finds no date for them.
+      - name: Let Git report non-ASCII paths unquoted
+        run: git config core.quotepath false
+
+      # The point where the branch last took main, not main's tip: otherwise anything landing
+      # on main shows up here as a change, until main is next merged in.
+      - name: Check out the merge base with main as the reference
+        run: git worktree add --detach "$RUNNER_TEMP/reference" "$(git merge-base origin/main HEAD)"
+
+      # =======================
+      # Artifacts, as in deploy.yaml
+      # =======================
+      - name: Download data artifact
+        uses: dawidd6/action-download-artifact@07ab29fd4a977ae4d2b275087cf67563dfdf0295
+        continue-on-error: true
+        with:
+          workflow: data-processing.yml
+          name: data-artifact
+          path: ${{ runner.temp }}/artifacts/data
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          search_artifacts: true
+          branch: main  # as in deploy.yaml: only main's runs, never a branch test run (#960)
+          if_no_artifact_found: warn
+
+      - name: Download announcements artifact
+        uses: dawidd6/action-download-artifact@07ab29fd4a977ae4d2b275087cf67563dfdf0295
+        continue-on-error: true
+        with:
+          workflow: create_announcements.yml
+          name: announcements-artifact
+          path: ${{ runner.temp }}/artifacts/announcements
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          search_artifacts: true
+          branch: main  # as in deploy.yaml: only main's runs, never a branch test run (#960)
+          if_no_artifact_found: warn
+
+      - name: Apply artifacts to both checkouts
+        run: |
+          for checkout in . "$RUNNER_TEMP/reference"; do
+            scripts/rebrand/apply_artifacts.sh "$checkout" \
+              "$RUNNER_TEMP/artifacts/data" "$RUNNER_TEMP/artifacts/announcements"
+          done
+
+      # =======================
+      # Builds
+      # =======================
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@75d2e84710de30f6ff7268e08f310b60ef14033f
+        with:
+          hugo-version: ${{ env.HUGO_VERSION }}
+          extended: ${{ env.HUGO_EXTENDED }}
+
+      # HUGO_ENV=staging adds noindex and leaves out Google Analytics.
+      - name: Build the branch
+        run: hugo --gc --minify --cleanDestinationDir --destination public --baseURL "$PREVIEW_URL"
+        env:
+          HUGO_ENV: staging
+
+      - name: Build the reference from the same data
+        working-directory: ${{ runner.temp }}/reference
+        run: hugo --gc --minify --destination "$RUNNER_TEMP/public-reference" --baseURL "$PREVIEW_URL"
+        env:
+          HUGO_ENV: staging
+
+      - name: Point root-relative links at the subfolder
+        run: |
+          python3 scripts/rebrand/preview_paths.py public --base "$PREVIEW_BASE"
+          python3 scripts/rebrand/preview_paths.py "$RUNNER_TEMP/public-reference" --base "$PREVIEW_BASE"
+
+      # =======================
+      # Checks
+      # =======================
+      - name: Templates and generated paths
+        id: source-rules
+        continue-on-error: true
+        run: python3 scripts/rebrand/check_source_rules.py --base origin/main
+
+      - name: URL list, structured data and SEO tags against the reference
+        id: compare
+        continue-on-error: true
+        run: python3 scripts/rebrand/compare_builds.py "$RUNNER_TEMP/public-reference" public
+
+      - name: Internal links
+        id: links
+        continue-on-error: true
+        run: |
+          python3 scripts/rebrand/check_internal_links.py public --base "$PREVIEW_BASE" \
+            --reference "$RUNNER_TEMP/public-reference"
+
+      - name: Built HTML (headings, conditional assets, image alt and dimensions)
+        id: seo
+        continue-on-error: true
+        run: python3 scripts/check_seo_html.py public
+
+      - name: Designed screens in a browser (overflow, position, layout shift, pause, directory)
+        id: design
+        continue-on-error: true
+        run: |
+          pip install --quiet playwright==1.63.0 pillow
+          # The runner image already has Chromium's libraries; --with-deps adds fonts from the
+          # Ubuntu mirror. When the mirror is unreachable, install the browser without them.
+          playwright install --with-deps chromium || {
+            echo "::warning::Could not install Chromium's system packages; installing the browser without them"
+            playwright install chromium
+          }
+          python3 scripts/rebrand/check_design.py public --base "$PREVIEW_BASE"
+
+      - name: Accessibility rules in a browser (axe-core, by WCAG level)
+        id: axe
+        continue-on-error: true
+        run: |
+          curl -fsSL https://cdn.jsdelivr.net/npm/axe-core@4.11.1/axe.min.js -o "$RUNNER_TEMP/axe.min.js"
+          python3 scripts/rebrand/check_axe.py public --base "$PREVIEW_BASE" --axe "$RUNNER_TEMP/axe.min.js"
+
+      - name: Upload site artifact
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-artifact@v7
+        with:
+          name: rebrand-preview-${{ github.run_number }}
+          path: public/
+          retention-days: 1
+          if-no-files-found: error
+
+  deploy:
+    name: Deploy preview
+    runs-on: ubuntu-22.04
+    needs: build
+    if: github.event_name != 'pull_request'
+    timeout-minutes: 15
+    steps:
+      - name: Download site artifact
+        uses: actions/download-artifact@v7
+        with:
+          name: rebrand-preview-${{ github.run_number }}
+          path: public
+
+      # No cname: the repository inherits the organisation site's forrt.org domain, which
+      # is what puts it at forrt.org/rebrand-doors/. force_orphan keeps one commit, so the
+      # repository does not grow by the size of the site on every push.
+      - name: Deploy to forrtproject/rebrand-doors
+        uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b9c108549d475ec49e8ef4d45e
+        with:
+          personal_token: ${{ secrets.STAGING_GITHUB_TOKEN }}
+          external_repository: forrtproject/rebrand-doors
+          publish_dir: public
+          publish_branch: gh-pages
+          force_orphan: true
+
+  checks:
+    name: Check results
+    runs-on: ubuntu-22.04
+    needs: build
+    steps:
+      - name: Fail if any check failed
+        env:
+          SOURCE_RULES: ${{ needs.build.outputs.source-rules }}
+          COMPARE: ${{ needs.build.outputs.compare }}
+          LINKS: ${{ needs.build.outputs.links }}
+          SEO: ${{ needs.build.outputs.seo }}
+          DESIGN: ${{ needs.build.outputs.design }}
+          AXE: ${{ needs.build.outputs.axe }}
+        run: |
+          echo "Templates and generated paths: $SOURCE_RULES"
+          echo "URL list, structured data and SEO tags: $COMPARE"
+          echo "Internal links: $LINKS"
+          echo "Built HTML: $SEO"
+          echo "Designed screens: $DESIGN"
+          echo "Accessibility rules: $AXE"
+          for result in "$SOURCE_RULES" "$COMPARE" "$LINKS" "$SEO" "$DESIGN" "$AXE"; do
+            [ "$result" = "success" ] || exit 1
+          done

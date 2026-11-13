@@ -1,44 +1,65 @@
 {{- define "main" -}}
 
-{{ $css := resources.Get "css/404.css" | minify | fingerprint }}
-<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
-
 <script>
 (function() {
+  // The empty string in production; a preview in a subfolder redirects within itself.
+  var base = '{{ strings.TrimSuffix "/" (urls.Parse site.BaseURL).Path }}';
   var path = window.location.pathname;
+  if (base && path.indexOf(base + '/') === 0) path = path.slice(base.length);
 
   // Special case: /glossary/vbeta/term → try /glossary/english/term, fallback to /glossary/english/
   var vbetaMatch = path.match(/^\/glossary\/vbeta\/(.+)/);
   if (vbetaMatch) {
-    var termPath = '/glossary/english/' + vbetaMatch[1];
+    var termPath = base + '/glossary/english/' + vbetaMatch[1];
     fetch(termPath, { method: 'HEAD' }).then(function(res) {
-      window.location.replace(res.ok ? termPath : '/glossary/english/');
+      window.location.replace(res.ok ? termPath : base + '/glossary/english/');
     }).catch(function() {
-      window.location.replace('/glossary/english/');
+      window.location.replace(base + '/glossary/english/');
     });
     return;
   }
   // /glossary/vbeta with no term
   if (/^\/glossary\/vbeta\/?$/.test(path)) {
-    window.location.replace('/glossary/english/');
+    window.location.replace(base + '/glossary/english/');
     return;
   }
 
   // Old taxonomy index URL (resource tag list root) → main clusters taxonomy page
   if (/^\/forrt_clusters\/?$/i.test(path)) {
-    window.location.replace('/clusters/');
+    window.location.replace(base + '/clusters/');
+    return;
+  }
+
+  // Retired paginated list pages (decision D17): back to the cluster's page. /curated_resources/ is below.
+  var clusterPage = path.match(/^\/forrt_clusters\/([^/]+)\/page\/\d+\/?$/i);
+  if (clusterPage) {
+    window.location.replace(base + '/forrt_clusters/' + clusterPage[1] + '/');
+    return;
+  }
+
+  // Former tag pages, which the tag browser reads by slug as well as by term.
+  var tagPage = path.match(/^\/tag\/(.+?)\/?$/);
+  if (tagPage) {
+    var term = tagPage[1];
+    try { term = decodeURIComponent(term); } catch (error) { /* a malformed address keeps its form */ }
+    window.location.replace(base + '/tags/?tag=' + encodeURIComponent(term));
+    return;
+  }
+  if (/^\/tag\/?$/.test(path)) {
+    window.location.replace(base + '/tags/');
     return;
   }
 
   var redirects = [
-    { pattern: /^\/curated_resources(\/|$)/, target: '/resources/' },
-    { pattern: /^\/glossary\/([^/]+)\/.+/, target: '/glossary/$1/' },
-    { pattern: /^\/author(\/|$)/, target: '/contributors/' },
-    { pattern: /^\/summaries(\/|$)/, target: '/' },
-    { pattern: /^\/reversals(\/|$)/, target: '/' },
-    { pattern: /^\/re-searchterms\/?$/, target: '/apps/re-searchterms.html' },
+    { pattern: /^\/curated_resources\/.+/, target: base + '/resources/' },
+    { pattern: /^\/glossary\/([^/]+)\/.+/, target: base + '/glossary/$1/' },
+    { pattern: /^\/author(\/|$)/, target: base + '/contributors/' },
+    { pattern: /^\/summaries(\/|$)/, target: base + '/' },
+    { pattern: /^\/reversals(\/|$)/, target: base + '/' },
+    { pattern: /^\/re-searchterms\/?$/, target: base + '/apps/re-searchterms.html' },
 
-    // Repo rename redirects (kebab-case migration). Order: longer prefixes first.
+    // Repo rename redirects (kebab-case migration). These sites live at the domain root,
+    // so they take no base. Order: longer prefixes first.
     { pattern: /^\/FReD-apps(\/.*)?$/,                      target: '/fred-apps$1' },
     { pattern: /^\/FReD(\/.*)?$/,                           target: '/fred$1' },
     { pattern: /^\/flora_zotero(\/.*)?$/,                   target: '/flora-zotero$1' },
@@ -58,43 +79,33 @@
         // append the literal string "undefined" to the target.
         target = target.replace('$' + j, match[j] || '');
       }
-      window.location.replace(target);
+      window.location.replace(target + window.location.search + window.location.hash);
       return;
     }
   }
 })();
 </script>
 
-<div class="universal-wrapper pt-3">
-
-  <h1>Whoops! Page not found</h1>
-
-  {{/* Show search box if Academic's search engine is enabled. */}}
-  {{ if eq site.Params.search.engine 1 }}
-  <form class="d-flex align-items-center mb-3">
-    <input name="q" type="search" class="form-control" placeholder="{{ i18n "search_placeholder" }}" autocomplete="off">
-  </form>
-  {{ end }}
-
-  <div class="not-found-content">
-    <p>That page can't be found. <strong>Please help us improve!</strong> If you reached this page through a broken link, let us know at <a href="mailto:info@forrt.org">info@forrt.org</a> or contact Lukas Wallrich on the <a href="https://forrt.slack.com/" target="_blank" rel="noopener">FORRT Slack</a>.</p>
-
-    <div class="not-found-links">
-      <h3>Here are some useful links:</h3>
-      <ul>
-        <li><a href="{{ .Site.BaseURL }}about/us">About FORRT</a></li>
-        <li><a href="{{ .Site.BaseURL }}about/get-involved/">Get Involved</a></li>
-        <li><a href="{{ .Site.BaseURL }}resources/">Curated Resources</a></li>
-        <li><a href="{{ .Site.BaseURL }}glossary/">Glossary</a></li>
-        <li><a href="{{ .Site.BaseURL }}replication-hub/">Replication Hub</a></li>
-        <li><a href="{{ .Site.BaseURL }}lesson-plans/">Lesson Plans</a></li>
-        <li><a href="{{ .Site.BaseURL }}publications/">Publications</a></li>
-        <li><a href="{{ .Site.BaseURL }}clusters/"> FORRT's Clusters</a></li>
-      </ul>
-    </div>
-
-    <p>Return <a href="{{ .Site.BaseURL }}">Home</a>.</p>
+<div class="wrap">
+  <div class="article-layout article-layout-single">
+    <article class="reading">
+      <header class="article-head"><h1>Page not found</h1></header>
+      <div class="article-style">
+        <p>That page can't be found. If you reached it through a broken link, tell us at <a href="mailto:info@forrt.org">info@forrt.org</a> or contact Lukas Wallrich on the <a href="https://forrt.slack.com/" target="_blank" rel="noopener">FORRT Slack</a>.</p>
+        <h2>Useful pages</h2>
+        <ul>
+          <li><a href="{{ "about/us/" | relLangURL }}">About FORRT</a></li>
+          <li><a href="{{ "about/get-involved/" | relLangURL }}">Get involved</a></li>
+          <li><a href="{{ "resources/" | relLangURL }}">Teaching resources</a></li>
+          <li><a href="{{ "glossary/english/" | relLangURL }}">Glossary</a></li>
+          <li><a href="{{ "replication-hub/" | relLangURL }}">Replication Hub</a></li>
+          <li><a href="{{ "lesson-plans/" | relLangURL }}">Lesson plans</a></li>
+          <li><a href="{{ "publications/" | relLangURL }}">Publications</a></li>
+          <li><a href="{{ "clusters/" | relLangURL }}">FORRT's clusters</a></li>
+        </ul>
+        <p>Or go back to the <a href="{{ "" | relLangURL }}">home page</a>.</p>
+      </div>
+    </article>
   </div>
-
 </div>
 {{- end -}}

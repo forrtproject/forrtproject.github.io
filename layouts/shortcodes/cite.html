@@ -1,0 +1,22 @@
+{{- $keys := .Params -}}
+{{- $narrative := false -}}
+{{- $bare := false -}}{{/* bare="true": "Author, Year" without brackets, for a citation inside the author's own brackets */}}
+{{- if .IsNamedParams -}}
+  {{- $keys = slice (.Get "key") -}}
+  {{- $narrative = eq (printf "%v" (.Get "narrative")) "true" -}}
+  {{- $bare = eq (printf "%v" (.Get "bare")) "true" -}}
+{{- end -}}
+{{- $bib := partialCached "citations/bibliography" . "bibliography" -}}
+{{- if not (or $narrative $bare) -}}({{- end -}}
+{{- range $i, $key := $keys -}}
+  {{- if $i -}}; {{ end -}}
+  {{- with index $bib $key -}}
+    {{- $meta := partialCached "citations/metadata" . . -}}
+    {{- $.Page.Store.SetInMap "citations" $key (dict "key" $key "apa" . "sort" (lower $meta.plain)) -}}
+    <a class="cite" href="#ref-{{ $key }}" data-cite="{{ $key }}">{{ if $narrative }}{{ replace $meta.author " & " " and " }} ({{ $meta.year }}){{ else }}{{ $meta.author }}, {{ $meta.year }}{{ end }}</a>
+  {{- else -}}
+    {{- warnf "Unknown citation key %q on %s" $key $.Page.File.Path -}}
+    [{{ $key }}]
+  {{- end -}}
+{{- end -}}
+{{- if not (or $narrative $bare) -}}){{- end -}}

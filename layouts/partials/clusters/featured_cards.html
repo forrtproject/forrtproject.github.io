@@ -24,7 +24,7 @@
           {{ if .focus }}<span class="tag tag-focus">{{ .focus }}</span>{{ end }}
           {{ if .resource_type }}<span class="tag tag-type">{{ .resource_type }}</span>{{ end }}
         </div>
-        <div class="fr-title">{{ .title }}</div>
+        <div class="fr-title">{{ partial "clusters/rich_text.html" .title }}</div>
         <div class="fr-summary">{{ .summary }}</div>
         <div class="fr-actions">
           <button class="fr-ref-trigger" data-doi="{{ .doi }}">
@@ -94,7 +94,7 @@
             {{ if .focus }}<span class="tag tag-focus">{{ .focus }}</span>{{ end }}
             {{ if .resource_type }}<span class="tag tag-type">{{ .resource_type }}</span>{{ end }}
           </div>
-          <div class="fc-title">{{ .title }}</div>
+          <div class="fc-title">{{ partial "clusters/rich_text.html" .title }}</div>
         </div>
         {{ if .summary }}
         <div class="fc-summary">{{ .summary }}</div>

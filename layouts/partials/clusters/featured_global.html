@@ -50,9 +50,11 @@
 {{ if $featured }}
 <script>window.FORRT_FEATURED = {{ $featured | jsonify | safeJS }};</script>
 {{ end }}
-{{ $pubCards := hugo.Data.pub_cards }}
-{{ if $pubCards }}
-<script>window.FORRT_PUB_CARDS = {{ $pubCards | jsonify | safeJS }};</script>
+{{/* The publication cards are about 2 MB, so they are a separate file that
+     featured-resources.js fetches only when a reference or the reading list needs one. */}}
+{{ with hugo.Data.pub_cards }}
+{{ $pubCards := resources.FromString "data/pub_cards.json" (jsonify .) | fingerprint }}
+<script>window.FORRT_PUB_CARDS_URL = {{ $pubCards.RelPermalink }};</script>
 {{ end }}
 {{ $filterTags := hugo.Data.filter_tags }}
 {{ if $filterTags }}
