@@ -174,9 +174,9 @@ You can find a list of all effects we are working on [here](https://docs.google.
 
 ## **Social Psychology**
 
-* **Elderly priming**. that hearing about old age makes people walk slower.
+* **Elderly priming**. Hearing about old age makes people walk slower. A larger replication that timed walking automatically found no effect, except when experimenters expected participants to walk slower.
 {{< spoiler text="Statistics" >}}
-* Status: not replicated (no effect with automated timing unless experimenters expected slower walking)
+* Status: not replicated
 * Original paper: '[Automaticity of social behaviour](https://scholar.google.com/scholar?cluster=3335859380278379099&hl=en&as_sdt=0,5&sciodt=0,5)', Bargh 1996; 2 experiments with Study 2a: n = 30, Study 2b: n = 30. [citations = 5938(GS, October 2021)]​.
 * Critiques:[ Doyen 2012](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0029081#s2) [n=120, citations=757(GS, October 2021)]. [Lakens 2017](https://psyarxiv.com/3m5y9) [meta analysis: citations = 21(GS, October 2021)].  [Pashler et al. 2011](https://web.archive.org/web/20170923093613/http://www.psychfiledrawer.org/replication.php?attempt=MTU%3D) [n=66, citations=21(GS, October 2021)]. 
 * Original effect size: not reported. ​
@@ -203,7 +203,7 @@ You can find a list of all effects we are working on [here](https://docs.google.
 
 * **Moral priming (cleanliness)**. Participants exposed to physical cleanliness were shown to reduce the severity of their moral judgments. Direct, well-powered replications did not find evidence for the phenomenon. 
 {{< spoiler text="Statistics" >}}
-* Status: mixed (large direct replications failed; one study found support only when participants paid little attention to the primes)
+* Status: mixed (mostly not replicated)
 * Original paper: [With a Clean Conscience: Cleanliness Reduces the Severity of Moral Judgments](https://doi.org/10.1111/j.1467-9280.2008.02227.x), Schnall, Benton, and  Harvey, 2008; 2 experiments with Study 1: n = 40, Study 2: n = 44. [citations=645 (GS November 2021)].
 * Critiques: [Johnson et al.](https://econtent.hogrefe.com/doi/full/10.1027/1864-9335/a000186)<span style="text-decoration:underline;"> </span> 2014, [Study 1: n = 208, Study 2: n = 126. citations=128(GS November 2021)]. [Huang 2014](https://doi.org/10.3389/fpsyg.2014.01276) [Study 2: n = 440; Study 2a, a direct replication of Study 2: n = 436].
 * Original effect size:  Study 1: d = -0.60, 95% CI [-1.23, 0.04]; Study 2: d = -0.85, 95% CI [-1.47, -0.22]
@@ -365,7 +365,7 @@ You can find a list of all effects we are working on [here](https://docs.google.
 
 * **Prosocial spending**. Spending money on other people leads to greater happiness than spending money on oneself. 
 {{< spoiler text="Statistics" >}}
-* Status: replicated (smaller effects; one of three experiments was null)
+* Status: replicated (smaller effects)
 * Original paper: ‘[Spending Money on Others Promotes Happiness](https://www.science.org/doi/epdf/10.1126/science.1150952)’, Dunn et al. , 2008; cross-sectional survey, n=632. [citations = 2008 (GS, March 2022)]. 
 * Critiques: [Aknin et al., 2020](https://doi.org/10.1037/pspa0000191) [3 Experiments, Experiment 1: n=712, Experiment 2:  n =1,950, Experiment 3: n  =5,199, citations = 51 (GS, March 2022)].
 * Original effect size: _b _= 0.11.
@@ -455,7 +455,7 @@ You can find a list of all effects we are working on [here](https://docs.google.
 
 * **Hurricane names**. Female-named hurricanes are more deadly than male-named ones. Original effect size was a 176% increase in deaths, driven entirely by four outliers; reanalysis using a greatly expanded historical dataset found a nonsignificant decrease in deaths from female named storms.
 {{< spoiler text="Statistics" >}}
-* Status: not replicated (no significant difference in a larger dataset)
+* Status: not replicated
 * Original paper: '[Female hurricanes are deadlier than male hurricanes](https://www.pnas.org/content/111/24/8782)', Jung 2014; observational study, n=92 hurricanes discarding two important outliers. [citations = 113(GS, Mar 2022)].
 * Critiques: [Christensen 2014](https://www.pnas.org/content/111/34/E3497) [same data, citations = 114(GS, March 2022)]. [Smith 2016 ](https://doi.org/10.1016/j.wace.2015.11.006)[expanded Atlantic data, 1979–2014, including tropical storms and non-U.S. deaths, n = 420 storms, and new Pacific data, n = 579 storms; citations = 8(GS, March 2022)].
 * Original effect size: _d_=0.65: [176%](https://www.google.co.uk/search?source=hp&ei=HC1yXtKbBqeRlwTgzplw&q=41.84+%2F+15.15+&oq=41.84+%2F+15.15+&gs_l=psy-ab.3...606.10628..10753...0.0..0.91.412.5......3....1..gws-wiz.......0i7i30j0.raVAib7H4Jk&ved=0ahUKEwjSmciGm6ToAhWnyIUKHWBnBg4Q4dUDCAg&uact=5) increase in deaths from flipping names from relatively masculine to relatively feminine.
@@ -986,7 +986,7 @@ You can find a list of all effects we are working on [here](https://docs.google.
 
 * **Personal cognitive dissonance - induced-compliance paradigm**. In this paradigm, subjects are led to perform, in a context of free choice, an inconsistent act with their own norms or social norms (e.g., agree to perform a counter-attitudinal act). Dissonance can be resolved through multiple modes of reduction (e.g., social support, trivialization, etv.), but attitude change remains the most studied mode of reduction.​
 {{< spoiler text="Statistics" >}}
-* Status: mixed (meta-analyses positive; the core choice effect was not replicated in a 39-lab study)
+* Status: mixed
 * Original paper: ‘[Dissonance arousal: Physiological evidence](https://doi.org/10.1037/0022-3514.45.4.782)’, Croyle and Cooper 1983; between-subjects design, n1 = 30, n2=30. [citations= 447 (GS, February 2023)]​.
 * Critiques: [Kenworthy et al. 2011 ](https://doi.org/10.1080/10463283.2011.580155)[meta-analyse; _n_= 31 studies, citations = 71 (GS, February 2023)]. [Kim et al. 2014](https://doi.org/10.1080/01463373.2014.949385) [meta-analyse; _k_= 230 effects, citations = 11 (GS, February 2023)]. [Vaidis et al. 2024](https://doi.org/10.1177/25152459231213375) [multi-lab constructive replication of Experiment 1, 39 labs, n = 4,898].​ Original effect size: Effect of induced-compliance on attitude change: _d_= 2.40 [1.40, 3.37]​.
 * Replication effect size: Kenworthy et al.: Effect of induced-compliance on dissonance effects: _d_= 0.81 [0.70, 0.91]​.​ Kim et al.: Effect of induced-compliance on attitude change: _r_= .22 [.21, .24]​.​ Vaidis et al.: high- vs low-choice counterattitudinal essay, attitude change _d_ = 0.017 [−0.071, 0.11] (not replicated); counterattitudinal vs neutral essay, _d_ = 0.31 [0.22, 0.41], regardless of choice.
@@ -1160,7 +1160,7 @@ You can find a list of all effects we are working on [here](https://docs.google.
 
 * **Facial Feedback.** Smiling causes a good mood, while pouting produces a bad mood.
 {{< spoiler text="Statistics" >}}
-* Status: mixed (posed and mimicked expressions affected happiness in a large multi-lab study; pen-in-mouth results were inconsistent)
+* Status: mixed
 * Original paper: '[Inhibiting and Facilitating Conditions of the Human Smile: A Nonobtrusive Test of the Facial Feedback Hypothesis](https://jhrcook.github.io/wagenmaker-data-analysis/papers/Strack_1988_Inhibiting-and-facilitating-conditions-of-the-human-smile-a-nonobtrusive-test-of-the-facial-feedback-hypothesis.pdf)', Strack et al. 1988; 2 experimental studies, n1= 92, n2=83. [citation= 2577(GS, February, 2022)].
 * Critiques: [Coles et al. 2019](https://psyarxiv.com/svjru/) [meta-analysis of 286 effect sizes from 138 studies, citation= 115 (GS, February 2022)]. [Coles et al. 2022](https://doi.org/10.1038/s41562-022-01458-9) [Many Smiles Collaboration, preregistered multi-lab study, n = 3,878]. [Wagenmakers et al. 2016](https://www.ejwagenmakers.com/2016/WagenmakersEtAl2016Strack.pdf) [meta-analysis n=1894, citation=349 (GS, February 2022)]. [Schimmack 2017](https://replicationindex.com/2017/09/04/the-power-of-the-pen-paradigm-a-replicability-analysis/) [replicability analysis _k_=19, citation=0 (GS, March 2023)].
 * Original effect size: Study 1:  _d_ = 0.82, _d_ = 0.43 (0.82 out of 9).
@@ -1218,7 +1218,7 @@ You can find a list of all effects we are working on [here](https://docs.google.
 
 * **Age of acquisition effects - influence on recognition (mixed block)**. The age at which a word is acquired does not affect recognition memory (Coltheart and Winograd found no age-of-acquisition effect on recognition or free recall). Later studies found that late-acquired words are recognised more accurately than early-acquired words.  
 {{< spoiler text="Statistics" >}}
-* Status: not replicated (the original found no age-of-acquisition effect on recognition; later studies found better recognition of late-acquired words)
+* Status: not replicated (original found no effect)
 * Original paper: [‘Word imagery but not age of acquisition affects episodic memory](https://doi.org/10.3758/BF03198377)’, Coltheart and Winograd 1986; experiment, Experiment 2: n = 102. [citations=44(GS, November 2022)]​.
 * Critiques: [Dewhurst et al. 1998](https://www.researchgate.net/profile/Christopher-Barry-6/publication/232448882_Separate_effects_of_word_frequency_and_age_of_acquisition_in_recognition_and_recall/links/5735b45708ae298602e08719/Separate-effects-of-word-frequency-and-age-of-acquisition-in-recognition-and-recall.pdf) [Experiment 1: n=30, Experiment 2: n = 30; citations=117(GS, November 2022)]. [Macmillan et al. 2021](https://doi.org/10.3758/s13421-021-01137-6) [n = 44, citations = 9 (GS, November 2022)].
 * Original effect size: η<sub>p</sub>² = .03 [η<sub>p<sup>2</sup></sub> calculated from reported F statistic and converted using this[ conversion](https://haiyangjin.github.io/2020/05/eta2d/#from-cohens-d-to-partial-eta-squared)].
@@ -1263,7 +1263,7 @@ You can find a list of all effects we are working on [here](https://docs.google.
 
 * **Age of acquisition influence on the pre-conceptual stages of lexical retrieval (verification tasks)**. The age at which one acquires an object's name does not affect how quickly people verify that a picture matches a name (Chalard and Bonin found age-of-acquisition effects in picture naming but not in name–object verification). Later studies used related verification tasks: word–picture and picture–picture verification, and category verification, where people decide whether an object belongs to a named category (e.g. tools vs. furniture). 
 {{< spoiler text="Statistics" >}}
-* Status: not replicated (the original reported no reliable age-of-acquisition effect on name–object verification times; other word–picture verification studies reported an early-acquired advantage. Holmes and Ellis's Experiment 8 found no reliable age-of-acquisition effect in category verification with typicality controlled)
+* Status: not replicated (original found no effect)
 * Original paper: ‘[Age-of-acquisition effects in picture naming: Are they structural and/or semantic in nature?](https://doi.org/10.1080/13506280544000084), Chalard and Bonin 2006; experiment, n = 27. [citations=36(GS, December 2022)]​.
 * Critiques:  [Catling and Elsherif 2020](https://doi.org/10.1016/j.actpsy.2020.103138) [Experiment 1a: n = 48, Experiment 2a: n = 48, citations = 12(GS, December 2022)]. [Catling and Johnston 2006](https://doi.org/10.1348/000712605X53515) [Experiment 1: n = 15, citations = 17(GS, December 2022)]. [Catling and Johnston 2009 ](https://doi.org/10.1080/17470210701814352)[Experiment 1, picture–picture verification: n = 24, citations = 54 (GS, December 2022)]. [Holmes and Ellis 2006 ](https://doi.org/10.1080/13506280544000093)[Experiment 4, category verification: n = 20 in the positive-decision condition, total N = 40; Experiment 8, category verification: n = 30, citations = 87 (GS, December 2022)]. [Räling et al. 2015](https://doi.org/10.1016/j.neuropsychologia.2015.05.031) [n = 36, citations = 24(GS, December 2022)]. [Stadthagen-Gonzalez et al. 2009 ](https://doi.org/10.1080/17470210802511139)[n = 100, citations = 51 (GS, December 2022)]. 
 * Original effect size: NA.
@@ -1545,7 +1545,7 @@ You can find a list of all effects we are working on [here](https://docs.google.
 
 * **Depressive realism effect**. Increased predictive accuracy or decreased cognitive bias among the clinically depressed.
 {{< spoiler text="Statistics" >}}
-* Status: mixed (much smaller effect in the original direction)
+* Status: mixed (much smaller effect)
 * Original paper: '[Judgment of contingency in depressed and nondepressed students: sadder but wiser?](https://www.ncbi.nlm.nih.gov/pubmed/528910)', Alloy and Abramson (1979): 4 experiments with Study 1: n1 = 48, n2 = 48, Study 2: n1 = 32, n2 = 32; Study 3: n1 = 32, n2 = 32; Study 4: n1 = 32, n2 = 32 [citations = 2855 (GS, June 2022)].
 * Critiques: [Moore and Fresco 2012 ](https://www.ncbi.nlm.nih.gov/pubmed/22717337)[meta analysis, n = 7305, citations = 311 (GS, June 2022)] 
 * Original effect size: not reported. [d= -0.32 calculated for bias about 'contingency', how much the outcome actually depends on what you do]
@@ -1813,7 +1813,7 @@ You can find a list of all effects we are working on [here](https://docs.google.
 
 * **Bottomless soup bowl**. Visual cues related to portion size increase intake volume of soup. 
 {{< spoiler text="Statistics" >}}
-* Status: replicated (about half the original effect size)
+* Status: replicated (smaller effect)
 * Original paper: [‘Bottomless bowls: why visual cues of portion size may influence intake](https://pubmed.ncbi.nlm.nih.gov/15761167/)’, Wansink et al. 2005; experiment, n = 54. [citation=767(GS, December 2021)]​.
 * Critiques: [Lopez et al. 2024](https://doi.org/10.1037/xge0001503) [preregistered direct replication, n = 464]. [Andrew 2019](https://statmodeling.stat.columbia.edu/2019/08/20/did-that-bottomless-soup-bowl-experiment-ever-happen/) [blog post]. [Heathers 2018](https://jamesheathers.medium.com/sprite-case-study-5-sunset-for-souper-man-ee898b6af9f5) [blog post].
 * Original effect size: _η<sub>p<sup>2</sup></sub>_ = 0.147 [not reported but [calculated](https://effect-size-calculator.herokuapp.com/) using this conversion].
@@ -1948,7 +1948,7 @@ You can find a list of all effects we are working on [here](https://docs.google.
 
 * **Mental simulation - match advantage object distance**. Readers verify small pictures more quickly when they are far from the protagonist, in contrast to big pictures, while big pictures are verified more quickly when closer to the protagonist, as opposed to smaller pictures.
 {{< spoiler text="Statistics" >}}
-* Status: NA (the only cited follow-up used a different task and does not test the original effect directly)
+* Status: NA (no direct test)
 * Original paper: ‘[Language comprehenders represent object distance both visually and auditorily](https://www.cambridge.org/core/services/aop-cambridge-core/content/view/9320F4D38E43C3EABFAFAAC50259FF40/S1866980800000880a.pdf/div-class-title-language-comprehenders-represent-object-distance-both-visually-and-auditorily-div.pdf)’, Winter and Bergen 2012; experimental design,  Experiment 1: n =22. [citation=54(GS, November 2022)]​.
 * Critiques: [Vukovic and Williams 2014](https://doi.org/10.1016/j.actpsy.2013.11.002) [conceptual test with Dutch–English bilinguals hearing interlingual homophones, n=20, citations=36(GS, November 2022)]. ​
 * Original effect size: Experiment 1: _η<sub>p<sup>2</sup></sub>_= 0.230.
@@ -2410,7 +2410,7 @@ You can find a list of all effects we are working on [here](https://docs.google.
 
 * **Neonate imitation**. Babies are born with the ability to imitate. 
 {{< spoiler text="Statistics" >}}
-* Status: not replicated (two direct replications and a large longitudinal study found no evidence of imitation)
+* Status: not replicated
 * Original paper: ‘Imitation of facial and manual gestures by human neonates’, [Meltzoff and Moore 1977](https://www.science.org/doi/pdf/10.1126/science.198.4312.75); observational and experimental design, 2 studies with: Study 1: n=6, Study 2: n=12. [citation=5311 (GS, December 2021)]​.
 * Critiques: [Oostenbroek et al. 2016](https://doi.org/10.1016/j.cub.2016.03.047) [n=106, citations=259 (GS, December 2021)]. [Koepke et al. 1983](https://doi.org/10.1016/S0163-6383(83)80012-5) [two direct replications]. 
 * Original effect size: Not reported​.
@@ -2446,7 +2446,7 @@ You can find a list of all effects we are working on [here](https://docs.google.
 
 * **Abstract rule learning**. After training on strings on stimuli generated from a particular repetition pattern (e.g., AAB), young infants attend longer to novel stimuli generated from a novel pattern (e.g., ABA) than novel stimuli generated from the original pattern.
 {{< spoiler text="Statistics" >}}
-* Status: mixed (positive meta-analysis; a four-lab close replication found no effect)
+* Status: mixed
 * Original paper: [‘Rule learning by seven-month-old infants’](https://www.science.org/doi/10.1126/science.283.5398.77), Marcus et al. 1999; preferential looking time, Experiment 1: n=16. [Citations=1707 (GS, February 2023)].
 * Critiques: [Rabagliati et al. 2018](https://doi.org/10.1111/desc.12704) [meta-analysis, n=1318, citations=53 (GS, February 2023)]. [Geambașu et al. 2022](https://doi.org/10.1111/desc.13244) [close replication across four labs with the original stimuli, n = 96].
 * Original effect size: _η<sup>2<sub>p</sub></sup>_=0.647 [0.252, 0.789].
@@ -2678,7 +2678,7 @@ You can find a list of all effects we are working on [here](https://docs.google.
 
 * **Choosing versus rejecting** (Framing effects, compatibility principle). People are inconsistent in their preferences when faced with choosing versus rejecting decision-making scenarios.
 {{< spoiler text="Statistics" >}}
-* Status: mixed (with the original materials, Many Labs 2 found a significant opposite effect and a close replication found none; updated materials replicated the original)
+* Status: mixed (depends on materials)
 * Original paper: ‘[Choosing versus rejecting: Why some options are both better and worse than others](https://doi.org/10.3758/BF03197186)’, Shafir 1993; 8 experiments with between-subjects design (i.e., two between-subjects conditions), across 8 studies sample size ranged from 170 to 398. [citations=779 (GS, July 2022)]​.
 * Critiques: [Chandrashekar et al. 2021](https://journal.sjdm.org/20/200131/jdm200131.html) [n = 1026, citations = 1 (GS, July 2022)]. [Klein et al. 2018](https://doi.org/10.1177/2515245918810225) [Many Labs 2, custody problem, n = 7,901]. [Shafir and Cheek 2024](https://doi.org/10.1017/jdm.2023.48) [two preregistered experiments with updated custody problems]. Proposed and tested alternative theoretical predictions to that of Shafir 1993.[Ganzach 1995](https://doi.org/10.1006/obhd.1995.1036) [n = 41 & 96, citations = 94 (GS, July 2022)]. [Wedell 1997 ](https://doi.org/10.3758/BF03211332)[n1=225, n2= 125, citations = 79(GS, July 2022)]. 
 * Original effect size: _d_= 0.22 to 0.51​. 
@@ -3032,7 +3032,7 @@ You can find a list of all effects we are working on [here](https://docs.google.
 
 * **Last place aversion**. A phenomenon where individuals are averse to being in last place. In Kuziemko et al.'s experiments, people in last place chose gambles that could move them out of last place, which they rejected when randomly placed in other parts of the distribution, and people in second-to-last place were the least likely to give money to the person ranked just below them.
 {{< spoiler text="Statistics" >}}
-* Status: mixed (two direct replications found no last-place aversion; a modified design and a queueing study found support)
+* Status: mixed
 * Original paper: ‘[Last-Place Aversion”: Evidence and Redistributive Implications](https://doi.org/10.1093/qje/qjt035)’, Kuziemko et. al. 2014; laboratory experiment, N=84. [citations=358(GS, March 2023)]​.
 * Critiques: [Camerer et al. 2016](https://doi.org/10.1126/science.aaf0918) [replication of Experiment 2, redistribution game with 6-person groups, n = 144]. [Martinangeli and Windsteiger 2021](https://doi.org/10.1007/s10683-020-09682-8) [replication and a modified design that holds ranks fixed across rounds]. [Buell 2021](https://doi.org/10.1287/mnsc.2020.3619) [Study 1: n=1144, Study 2-4: n=1203, citations= 30 (GS, March 2023)] 
 * Original effect size: Paper does not provide enough information to convert to effect size. Lottery experiment (Appendix Table 2): Relevant coefficient: "Last or fifth place", Coefficient value: 0.448, P-value: &lt; 0.01. 
@@ -3090,7 +3090,7 @@ You can find a list of all effects we are working on [here](https://docs.google.
 
 * **Scarcity effect - _Resource allocation_**. Poor economic conditions favour resource allocations to daughters over sons.
 {{< spoiler text="Statistics" >}}
-* Status: not replicated (the replication estimate was in the opposite direction but not significant)
+* Status: not replicated
 * Original paper: ‘[Spending on daughters versus sons in economic recessions](https://doi.org/10.1093/jcr/ucv023)’, Durante et al. 2015; within-subjects design, n=198. [citation=57(GS, November 2021)]​.
 * Critiques: [O’Donnell et al. 2021](https://doi.org/10.1073/pnas.2103313118) [n=573, citations=0(GS, November 2021)].
 * Original effect size: _r_= .179.
@@ -3117,7 +3117,7 @@ You can find a list of all effects we are working on [here](https://docs.google.
 
 * **Scarcity effect - _Brand attitudes_**. Observing luxury brand consumers whose consumption arises from unearned financial resources reduces observers’ brand attitudes when observers place a high value on fairness.​
 {{< spoiler text="Statistics" >}}
-* Status: not replicated (the key resource × fairness interaction and the mediation were not supported)
+* Status: not replicated
 * Original paper: ‘[Did they earn it? Observing unearned luxury consumption decreases brand attitude when observers value fairness](https://doi.org/10.1002/jcpy.1028)’, Lee et al. 2018; experimental design, n=164. [citation=23(GS, November 2021)]​.
 * Critiques: [O’Donnell et al. 2021](https://doi.org/10.1073/pnas.2103313118) [n=401, citations=0(GS, November 2021)].
 * Original effect size: _r_ = .128.
@@ -3530,7 +3530,7 @@ Critiques: [Gelman and Loken 2013](http://www.stat.columbia.edu/~gelman/research
 
 * **Men’s preference for competition**. Men are more likely to select tournaments than women, because women tend to avoid competition and men look for competition. 
 {{< spoiler text="Statistics" >}}
-* Status: mixed (Price's direct replication found no gender gap; a larger replication with Chinese adults found one)
+* Status: mixed
 * Original paper: ‘[Do women shy away from competition? Do men compete too much?’, ](https://web.stanford.edu/~niederle/Niederle.Vesterlund.QJE.2007.pdf)Niederle and Vesterlund 2007; within-subject experiment, n=80. [citations=4001(GS, February 2023)]​.
 * Critiques: [Price 2020](http://www.accessecon.com/Pubs/EB/2020/Volume40/EB-20-V40-I2-P132.pdf) direct replication of Niederle & Vesterlund study [n=60, citations=23 (GS, February2023)]. [Carlsson et al. 2020](https://doi.org/10.1016/j.joep.2020.102312) [adults in three Chinese cities, n = 854].
 * Original effect size: Man more likely to select tournaments then women – probit regression coefficients in various regression models -.38 to -.16.
@@ -4017,7 +4017,7 @@ Critiques: [Gelman and Loken 2013](http://www.stat.columbia.edu/~gelman/research
 
 * **Numerical ratio effects on quantity discrimination in elephants** (Number discrimination, quantity/number judgments). The numerical ratio between quantities has been shown to predict the ability to discriminate quantities across a wide range of species. However, Irie-Sugimoto et al., (2009) found that elephants did not follow this pattern because numerical ratio did not predict performance. Perdue et al. (2012) used a similar paradigm with additional methodological controls in two African elephants and found that accuracy declined significantly as the two quantities became more similar, unlike the original null findings in Asian elephants.​
 {{< spoiler text="Statistics" >}}
-* Status: not replicated (the original found no ratio effect in Asian elephants; a later study found ratio effects in African elephants)
+* Status: not replicated (original found no effect)
 * Original paper: ‘[Relative quantity judgment by Asian elephants (Elephas maximus)](https://doi.org/10.1007/s10071-008-0185-9)’, Irie-Sugimoto et al. 2009; two experiments, Experiment 1: n = 5, Experiment 2: n = 4. [citations = 107 (GS, January 2023)]​.
 * Critiques: [Perdue et al. 2012](https://doi.org/10.1007/s10071-012-0521-y) [n = 2 African elephants; the original tested Asian elephants, citations = 114 (GS, January 2023)].​
 * Original effect size: Experiment 1, individual correlations between accuracy and ratio for the three elephants with enough comparisons: _r_ = 0.23, _r_ = 0.01, _r_ = 0.02 (none significant).
