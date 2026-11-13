@@ -2474,7 +2474,7 @@ body.clusters-mobile-nav-open #just-os-widget{display:none}
 /* Side list: the cluster and sub-cluster names are underlined as links; the current cluster is marked by
    weight (and aria-current), not by an underline. A shadow at the top or foot of the box shows that it
    scrolls when there is more above or below. */
-.cluster-nav-heading{font-weight:400}
+.cluster-nav-heading:has(.cluster-nav-name){font-weight:400}
 .cluster-nav-name{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;text-decoration-color:currentColor}
 .cluster-nav-heading[aria-current]{font-weight:700}
 .cluster-nav-heading[aria-current] .cluster-nav-name{text-decoration:none}
