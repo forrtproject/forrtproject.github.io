@@ -4015,13 +4015,13 @@ Critiques: [Gelman and Loken 2013](http://www.stat.columbia.edu/~gelman/research
 * Replication effect size: Mongillo et al.: _r_ = 0.01. Stevens et al.: _r_ = −0.10 [−0.34, 0.15] (Study 1), _r_ = 0.04 [−0.26, 0.34] (Study 2), _r_ = −0.11 [−0.27, 0.04] (meta-analysis).
 {{< /spoiler >}}
 
-* **Numerical ratio effects on quantity discrimination in elephants** (Number discrimination, quantity/number judgments). The numerical ratio between quantities has been shown to predict the ability to discriminate quantities across a wide range of species. However, Irie-Sugimoto et al., (2009) found that elephants did not follow this pattern because numerical ratio did not predict performance. Perdue et al. (2012) replicated the study in elephants with a similar design and found that ratio predicted performance, reversing the findings of the original study.​
+* **Numerical ratio effects on quantity discrimination in elephants** (Number discrimination, quantity/number judgments). The numerical ratio between quantities has been shown to predict the ability to discriminate quantities across a wide range of species. However, Irie-Sugimoto et al., (2009) found that elephants did not follow this pattern because numerical ratio did not predict performance. Perdue et al. (2012) used a similar paradigm with additional methodological controls in two African elephants and found that accuracy declined significantly as the two quantities became more similar, unlike the original null findings in Asian elephants.​
 {{< spoiler text="Statistics" >}}
-* Status: reversed
-* Original paper: ‘[Relative quantity judgment by Asian elephants (Elephas maximus)](https://doi.org/10.1007/s10071-008-0185-9)’, Irie-Sugimoto et al. 2009; experiment, n = 3. [citations = 107 (GS, January 2023)]​.
+* Status: not replicated (the original found no ratio effect in Asian elephants; a later study found ratio effects in African elephants)
+* Original paper: ‘[Relative quantity judgment by Asian elephants (Elephas maximus)](https://doi.org/10.1007/s10071-008-0185-9)’, Irie-Sugimoto et al. 2009; two experiments, Experiment 1: n = 5, Experiment 2: n = 4. [citations = 107 (GS, January 2023)]​.
 * Critiques: [Perdue et al. 2012](https://doi.org/10.1007/s10071-012-0521-y) [n = 2 African elephants; the original tested Asian elephants, citations = 114 (GS, January 2023)].​
-* Original effect size: individual correlations for each subject: _r_ = 0.23, _r_ = 0.01, _r_ = 0.02.
-* Replication effect size: Perdue et al.: individual correlations for each subject: _r_ = −0.64, −0.96.
+* Original effect size: Experiment 1, individual correlations between accuracy and ratio for the three elephants with enough comparisons: _r_ = 0.23, _r_ = 0.01, _r_ = 0.02 (none significant).
+* Replication effect size: Perdue et al.: individual correlations between accuracy and ratio, visible condition: _r_ = −0.64, −0.96; nonvisible condition: _r_ = −0.79, −0.67 (all significant).
 {{< /spoiler >}}
 
 * **Contagious yawning in dogs**. Dogs have been shown to yawn more after observing a person yawn than after a control condition with other mouth movements. The original study (Joly-Mascheroni et al., 2008) found 72% of dogs yawned after watching a human yawn but none yawned after watching other mouth movements. Two subsequent studies did not replicate a difference in yawning between conditions (Harr et al., 2009; O’Hara and Reeve, 2010), but a third did find a difference (Madsen and Persson, 2012).
