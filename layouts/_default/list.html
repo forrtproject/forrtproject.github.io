@@ -20,7 +20,7 @@
         <p class="list-count">All {{ len .Data.Pages }} teaching resources are in the directory, where you can search and filter them.</p>
         <p><a class="btn btn-primary" href="{{ relref . "/resources" }}">Open the resources directory</a></p>
       {{ else if and (eq (.Type | lower) "forrt_clusters") (ne .Kind "taxonomy") }}
-        {{/* One column of linked titles, each with its type as plain text, under the search of
+        {{/* Linked titles (two columns on wide screens), each with its type as plain text, under the search of
              shortcodes/list_filter.html (same markup; site.js filters the list items after the h2 that
              follows it and keeps the count). The directory's cluster filter uses the current clusters
              (forrt_clusters_new), not these tags, so there is no pre-filtered link to it. */}}
