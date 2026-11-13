@@ -30,5 +30,6 @@
     "language": "english",
     "aliases": [
         "/glossary/qualitative_research"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

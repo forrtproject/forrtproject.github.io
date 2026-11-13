@@ -8,7 +8,7 @@
         "Frequentist statistics",
         "Null Hypothesis Significance Testing (NHST)",
         "Null Result",
-        "*P* value",
+        "p-value",
         "Questionable Research Practices or Questionable Reporting Practices (QRPs)",
         "Reproducibility crisis (aka Replicability or replication crisis)",
         "Scientific integrity",
@@ -44,5 +44,6 @@
         "Helena Hartmann",
         "Susanne Vogel",
         "Joris Frese"
-    ]
+    ],
+    "lastmod": "2026-11-08"
 }

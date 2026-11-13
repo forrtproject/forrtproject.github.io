@@ -3,7 +3,7 @@
     "en_title": "Webometrics",
     "title": "Webometrie [Webometrics]",
     "sort_key": "webometrie [webometrics]",
-    "definition": "Die Webometrie befasst sich mit der Untersuchung von Online-Inhalten. Die Webometrie konzentriert sich auf die Anzahl und Art der Hyperlinks zwischen verschiedenen Online-Seiten. Solche Ansätze werden als eine Art von Altmetrik betrachtet. \"The study of the quantitative aspects of the construction and use of information resources, structures and technologies on the Web drawing on [bibliometric](https://en.wikipedia.org/wiki/Bibliometrics) and [informetric](https://en.wikipedia.org/wiki/Informetrics) approaches” (dt. Die Untersuchung der quantitativen Aspekte des Aufbaus und der Nutzung von Informationsressourcen, \\-strukturen und \\-technologien im Web auf der Grundlage bibliometrischer und informatischer Ansätze; Björneborn & Ingwersen, 2004).",
+    "definition": "Die Webometrie befasst sich mit der Untersuchung von Online-Inhalten. Die Webometrie konzentriert sich auf die Anzahl und Art der Hyperlinks zwischen verschiedenen Online-Seiten. Solche Ansätze werden als eine Art von Altmetrik betrachtet. \"The study of the quantitative aspects of the construction and use of information resources, structures and technologies on the Web drawing on [bibliometric](https://en.wikipedia.org/wiki/Bibliometrics) and [informetric](https://en.wikipedia.org/wiki/Informetrics) approaches” (dt. Die Untersuchung der quantitativen Aspekte des Aufbaus und der Nutzung von Informationsressourcen, \\-strukturen und \\-technologien im Web auf der Grundlage bibliometrischer und informatischer Ansätze; Bjørneborn & Ingwersen, 2004).",
     "related_terms": [
         "Altmetrics",
         "Bibliometrics"
@@ -28,5 +28,6 @@
     "translation_reviewed_by": [
         "Helena Hartmann",
         "Joris Frese"
-    ]
+    ],
+    "lastmod": "2026-11-08"
 }

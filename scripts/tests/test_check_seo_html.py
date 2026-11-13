@@ -71,6 +71,9 @@ class DescriptionURLReport(unittest.TestCase):
             cluster = Path(public) / "clusters" / "cluster-1" / "index.html"
             cluster.parent.mkdir(parents=True)
             cluster.write_text("<meta name='description' content='Cluster 1'><h1>Cluster 1</h1>", encoding="utf-8")
+            flora = Path(public) / seo.FLORA_PAGE
+            flora.parent.mkdir(parents=True)
+            flora.write_text("<meta name='description' content='FLoRA'><h1>FLoRA</h1><p>https://doi.org/10.17605/OSF.IO/9R62X</p>", encoding="utf-8")
             output = StringIO()
             with redirect_stdout(output):
                 self.assertEqual(seo.main(public), 0)
@@ -296,6 +299,27 @@ class ClustersMapCheck(unittest.TestCase):
 
     def test_page_without_the_drawing_fails(self):
         self.assertTrue(clusters_map_failures("<p>No map</p>"))
+
+
+def flora_failures(html):
+    """Check 22 on a FLoRA page with this HTML (None: no page)."""
+    with tempfile.TemporaryDirectory() as public:
+        if html is not None:
+            page = Path(public) / seo.FLORA_PAGE
+            page.parent.mkdir(parents=True)
+            page.write_text(html, encoding="utf-8")
+        return seo.check_flora_citation(public)
+
+
+class FloraCitationCheck(unittest.TestCase):
+    DOI = '<a href="https://doi.org/10.17605/OSF.IO/9R62X">https://doi.org/10.17605/OSF.IO/9R62X</a>'
+
+    def test_citation_passes(self):
+        self.assertEqual(flora_failures("<p>Wallrich, L.*, ... %s</p>" % self.DOI), [])
+
+    def test_missing_citation_or_page_fails(self):
+        self.assertIn("DOI", flora_failures("<p>How to cite:</p>")[0])
+        self.assertIn("not found", flora_failures(None)[0])
 
 
 if __name__ == "__main__":

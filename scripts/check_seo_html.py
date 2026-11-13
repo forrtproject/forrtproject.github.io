@@ -47,6 +47,7 @@ Hard checks (exit 1 if any fails):
       an aria-label and a target (the cluster names) or has tabindex="-1" and aria-hidden="true";
       a drawing with tab stops is not aria-hidden; and every in-page link in the clusters map
       reaches an id on the page.
+  22. The FLoRA page (replication-hub/flora/) contains the FLoRA citation DOI.
 
 Report-only sections (never fail): pages with no <h1>, the
 site-wide share of images that carry both width and height, pages whose
@@ -571,6 +572,20 @@ def check_inline_scripts(pages):
             if p.largest_inline_script > MAX_INLINE_SCRIPT]
 
 
+FLORA_PAGE = "replication-hub/flora/index.html"
+
+
+def check_flora_citation(public_dir):
+    path = os.path.join(public_dir, FLORA_PAGE)
+    if not os.path.exists(path):
+        return ["%s (page not found)" % FLORA_PAGE]
+    with open(path, encoding="utf-8") as handle:
+        html = handle.read()
+    if "doi.org/10.17605/OSF.IO/9R62X" not in html:
+        return ["%s (no FLoRA DOI in the citation)" % FLORA_PAGE]
+    return []
+
+
 def description_report(pages, home):
     """Report-only: generic, duplicated and markup-containing descriptions on indexable pages."""
     described = [(p, p.descriptions[0].strip()) for p in pages
@@ -685,11 +700,13 @@ def main(public_dir):
         "19. no page loads EmailOctopus or reCAPTCHA before a visitor subscribes": check_third_party_forms(pages),
         "20. cluster pages show no literal <i>/<em>/<scp> title markup": check_cluster_title_markup(public_dir),
         "21. the clusters illustration's tab stops are named and its links have targets": check_clusters_map(public_dir),
+        "22. FLoRA page shows the citation": check_flora_citation(public_dir),
     }
     conditional = check_conditional_assets(pages)
     results["3. conditional highlight.js / mermaid loading"] = [
         item for items in conditional.values() for item in items]
     results["8. curated resources carry one clean LearningResource"] = check_learning_resource(pages)
+    results["12. no page loads EmailOctopus or reCAPTCHA before a visitor subscribes"] = check_third_party_forms(pages)
 
     print("\nSummary")
     for title in sorted(results, key=lambda t: int(t.split(".")[0])):

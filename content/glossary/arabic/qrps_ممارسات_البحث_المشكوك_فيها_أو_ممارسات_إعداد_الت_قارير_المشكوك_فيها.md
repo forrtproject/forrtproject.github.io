@@ -11,14 +11,14 @@
         "Garden of forking paths",
         "HARKing",
         "Nonpublication of data",
-        "*P*\\-hacking",
-        "*P*\\-value fishing",
+        "p-hacking",
+        "p-value fishing",
         "Partial publication of data",
         "Post-hoc storytelling",
         "Preregistration",
         "Questionable Measurement Practices (QMP)",
         "Researcher degrees of freedom",
-        "Reverse *p*\\-hacking",
+        "Reverse p-hacking",
         "Salami slicing"
     ],
     "references": [
@@ -47,12 +47,13 @@
     ],
     "language": "arabic",
     "translated_by": [
-        "Mai Helmy."
+        "Mai Helmy"
     ],
     "translation_reviewed_by": [
         "Ali H. Al-Hoorie",
         "Ahlam Ahmed",
         "Asma Alzahrani",
         "Mohammed Mohsen"
-    ]
+    ],
+    "lastmod": "2026-11-08"
 }

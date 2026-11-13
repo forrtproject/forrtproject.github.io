@@ -33,5 +33,6 @@
     ],
     "translation_reviewed_by": [
         "Elif Baştan"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }
