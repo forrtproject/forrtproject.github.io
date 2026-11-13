@@ -7,8 +7,8 @@
     "related_terms": [
         "File-drawer",
         "Hypothesis",
-        "*P*\\-hacking",
-        "*p*\\-value",
+        "p-hacking",
+        "p-value",
         "Publication bias (File Drawer Problem)",
         "Questionable Research Practices or Questionable Reporting Practices (QRPs)",
         "Selective reporting",
@@ -40,5 +40,6 @@
     "translation_reviewed_by": [
         "Susanne Vogel",
         "Jennifer Mattschey"
-    ]
+    ],
+    "lastmod": "2026-11-08"
 }

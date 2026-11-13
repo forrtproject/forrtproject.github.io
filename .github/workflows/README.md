@@ -77,6 +77,7 @@ Processes:
 - Curated resources
 - Google Analytics data
 - Contributor analysis (monthly)
+- Newsletter archive: new EmailOctopus issues are copied, with their images, to `static/newsletters/` and listed in `data/newsletters.json` (needs the `EMAILOCTOPUS_API_KEY` secret; earlier copies are restored from `build-resources`)
 
 **Failure Reporting:**
 - Automatically creates GitHub issues when critical data processing steps fail

@@ -7,7 +7,7 @@
     "related_terms": [
         "Construct validity",
         "Measurement schmeasurement",
-        "*P*\\-hacking",
+        "p-hacking",
         "Psychometrics",
         "Questionable Research Practices or Questionable Reporting Practices (QRPs)",
         "Validity"
@@ -31,5 +31,6 @@
     "language": "english",
     "aliases": [
         "/glossary/questionable_measurement_practices_qmp_"
-    ]
+    ],
+    "lastmod": "2026-11-08"
 }

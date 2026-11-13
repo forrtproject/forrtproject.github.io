@@ -1,0 +1,15 @@
+{{/* FLoRA citation, rendered at build time from the file that
+     scripts/update_fred_citation.py writes (deployed via data-artifact).
+     The text is HTML, not Markdown: "L.*, & Röseler, L.*" would turn into emphasis. */}}
+{{- $file := "static/data/fred_citation.txt" -}}
+{{- if not (fileExists $file) -}}
+  {{- errorf "flora-citation: %s not found" $file -}}
+{{- end -}}
+{{- $citation := trim (readFile $file) " \n\r\t" -}}
+<div class="alert alert-note">
+  <div>
+    {{- range split $citation "\n\n" }}
+    <p>{{ trim . " \n\r\t" | safeHTML }}</p>
+    {{- end }}
+  </div>
+</div>

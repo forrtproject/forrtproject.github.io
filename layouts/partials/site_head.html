@@ -216,6 +216,7 @@
   {{ if partial "doors/on_theme" . }}<link rel="stylesheet" href="{{ $style.RelPermalink }}">{{ end }}
   {{ partial "doors/assets" . }}
   <script src="{{ "js/click-to-load.js" | relURL }}" defer></script>
+  <script src="{{ "js/newsletter.js" | relURL }}" defer></script>
 
   {{/* Netlify Identity integration. */}}
   {{ if .IsHome | and (site.Params.cms.netlify_cms | default true) }}

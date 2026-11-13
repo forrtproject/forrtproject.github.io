@@ -28,5 +28,6 @@
     "language": "english",
     "aliases": [
         "/glossary/citizen_science"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

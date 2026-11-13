@@ -23,5 +23,6 @@
     "language": "english",
     "aliases": [
         "/glossary/pubpeer"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

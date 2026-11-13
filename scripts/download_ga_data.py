@@ -1,4 +1,12 @@
-# scripts/download_ga_data.py
+"""Download Google Analytics summaries to data/ga_data.json.
+
+Needs the GA_API_CREDENTIALS (service-account JSON) and GA_PROPERTY_ID environment
+variables, which only CI has. data-processing.yml runs it on scheduled runs, or on a
+manual dispatch with `regenerate_ga` set, and ships the result as `data-artifact` on `main` (or `data-artifact-preview` on other refs). It
+opens a PR with the file on the 1st of the month, and on manual dispatches with `regenerate_ga` set. Never
+edit data/ga_data.json by hand.
+"""
+
 import os
 import json
 import logging
