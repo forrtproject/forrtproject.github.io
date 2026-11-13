@@ -64,6 +64,8 @@ Krathwohl, D. R., Bloom, B. S., & Masia, B. B. (1964). *Taxonomy of educational 
 
 Munna, A. S., & Kalam, M. A. (2021). Impact of active learning strategy on the student engagement. *GNOSI: An Interdisciplinary Journal of Human Theory and Praxis, 4*(2), 96–114.
 
+OECD. (2026). *Future of education and skills 2030/2040*. Retrieved June 3, 2026, from [https://www.oecd.org/en/about/projects/future-of-education-and-skills-2030.html](https://www.oecd.org/en/about/projects/future-of-education-and-skills-2030.html)
+
 ## About the author
 
 <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start;">
