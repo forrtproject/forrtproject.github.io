@@ -9,7 +9,7 @@ Styles live in `assets/css/doors/`, with colours and type defined once in `token
 - The page's main tool, list or action appears in the first screen at 390 px and at 1440 px. Background, history and acknowledgements come after it.
 - Move information down, or put it behind a disclosure with a plain label ("About the glossary project, and how to cite it"). Do not delete it to make the page shorter.
 - "How to cite" is a visible section of its own wherever a page asks to be cited.
-- Keep images that explain something, such as the Replication Hub diagram, even when the page would look more uniform without them.
+- Keep images that explain something, such as the Replication Hub diagram, even when the page would look more uniform without them. When such a diagram shows the parts of a section, such as the clusters diagram, make it the way in to those parts: each part links to its page, with readable labels and a keyboard route.
 
 ## 2. One clear next step
 
