@@ -203,7 +203,7 @@ You can find a list of all effects we are working on [here](https://docs.google.
 
 * **Moral priming (cleanliness)**. Participants exposed to physical cleanliness were shown to reduce the severity of their moral judgments. Direct, well-powered replications did not find evidence for the phenomenon. 
 {{< spoiler text="Statistics" >}}
-* Status: mixed (mostly not replicated)
+* Status: mixed
 * Original paper: [With a Clean Conscience: Cleanliness Reduces the Severity of Moral Judgments](https://doi.org/10.1111/j.1467-9280.2008.02227.x), Schnall, Benton, and  Harvey, 2008; 2 experiments with Study 1: n = 40, Study 2: n = 44. [citations=645 (GS November 2021)].
 * Critiques: [Johnson et al.](https://econtent.hogrefe.com/doi/full/10.1027/1864-9335/a000186)<span style="text-decoration:underline;"> </span> 2014, [Study 1: n = 208, Study 2: n = 126. citations=128(GS November 2021)]. [Huang 2014](https://doi.org/10.3389/fpsyg.2014.01276) [Study 2: n = 440; Study 2a, a direct replication of Study 2: n = 436].
 * Original effect size:  Study 1: d = -0.60, 95% CI [-1.23, 0.04]; Study 2: d = -0.85, 95% CI [-1.47, -0.22]
@@ -2633,11 +2633,11 @@ You can find a list of all effects we are working on [here](https://docs.google.
 
 * **Temporal differences in trait self-ascriptions**. Much like how we are more likely to ascribe dispositional traits, as opposed to situational variables, when explaining the behaviour of other people compared to ourselves, the same asymmetry can also be observed when making trait assessments about our temporally distant selves (e.g. past or future). People are more likely to ascribe dispositional traits, compared to situational explanations, when making judgements about their past or future self. 
 {{< spoiler text="Statistics" >}}
-* Status: mixed (social distance replicated, but weaker | self-enhancement replicated | self-enhancement over temporal distance reversed | core hypothesis about temporal distance not replicated)  
+* Status: mixed
 * Original paper: ‘[Temporal differences in trait self-ascription : When the self is seen as an other](https://doi.org/10.1037/0022-3514.90.2.197)’, Pronin and Ross, 2006; study 1: 2 (between - temporal distance: past vs. present) x 2 (between - social distance: self vs friend); study 2: between, temporal distance - present vs future self; study 3: 3 (between - temporal distance: past vs present vs future self) x 2 (within - valence of trait attributions : positive vs negative), study 1: n=167 (students = 123, staff = 44); study 2: n=40; study 3: n=75. [citations=345(GS, June 2022)]​.
 * Critiques: [Adelina and Feldman 2021](https://www.rips-irsp.com/article/10.5334/irsp.571/) [n=911, citations = 1(GS, November 2022)].
 * Original effect size: People attribute more dispositional traits to others compared to themselves (social distance), _f_ = 0.35 [0.03, 0.16]; People attribute more positive, compared to negative, traits when making self-assessments (self-enhancement), _f_ = 0.77 [0.29, 1.25], and this ratio does not increase with temporal distance, _f_ = 0.16 [0.00, 0.36]; People ascribe more dispositional traits when making assessments about their temporally distant self compared to their present self (temporal distance), _f_ = 0.54 [0.27, 0.77].
-* Replication effect size: Adelina and Feldman: Social distance: _f_ = 0.10 [0.03, 0.16]; Self-enhancement: _f_ = 0.88 [0.50, 1.26], ratio increases with temporal distance, _f_ = 0.33 [0.22, 0.42]; Tempn the psychology of experimental surprise oral distance: _f_ = 0.02 [0.00, 0.06].
+* Replication effect size: Adelina and Feldman: Social distance: _f_ = 0.10 [0.03, 0.16]; Self-enhancement: _f_ = 0.88 [0.50, 1.26], ratio increases with temporal distance, _f_ = 0.33 [0.22, 0.42]; Temporal distance: _f_ = 0.02 [0.00, 0.06]. In sum, social distance replicated, but weaker; self-enhancement replicated; self-enhancement over temporal distance reversed; the core hypothesis about temporal distance was not replicated.
 {{< /spoiler >}}
 
 * **Bias Blind Spot**. The phenomenon that people perceive stronger biases for others compared to self. Pronin (2002) found support for self-other asymmetries in perceived biases but failed to find support for self-other asymmetries in perceived personal shortcomings. Chandrashekar et al. (2021) found support for self-other asymmetries for both biases and personal shortcomings.​
