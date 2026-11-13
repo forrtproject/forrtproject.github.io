@@ -176,7 +176,7 @@ You can find a list of all effects we are working on [here](https://docs.google.
 
 * **Elderly priming**. that hearing about old age makes people walk slower.
 {{< spoiler text="Statistics" >}}
-* Status: not replicated (no effect with automated timing; slower walking appeared only when experimenters expected it)
+* Status: not replicated (no effect with automated timing unless experimenters expected slower walking)
 * Original paper: '[Automaticity of social behaviour](https://scholar.google.com/scholar?cluster=3335859380278379099&hl=en&as_sdt=0,5&sciodt=0,5)', Bargh 1996; 2 experiments with Study 2a: n = 30, Study 2b: n = 30. [citations = 5938(GS, October 2021)]​.
 * Critiques:[ Doyen 2012](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0029081#s2) [n=120, citations=757(GS, October 2021)]. [Lakens 2017](https://psyarxiv.com/3m5y9) [meta analysis: citations = 21(GS, October 2021)].  [Pashler et al. 2011](https://web.archive.org/web/20170923093613/http://www.psychfiledrawer.org/replication.php?attempt=MTU%3D) [n=66, citations=21(GS, October 2021)]. 
 * Original effect size: not reported. ​
@@ -3094,7 +3094,7 @@ You can find a list of all effects we are working on [here](https://docs.google.
 * Original paper: ‘[Spending on daughters versus sons in economic recessions](https://doi.org/10.1093/jcr/ucv023)’, Durante et al. 2015; within-subjects design, n=198. [citation=57(GS, November 2021)]​.
 * Critiques: [O’Donnell et al. 2021](https://doi.org/10.1073/pnas.2103313118) [n=573, citations=0(GS, November 2021)].
 * Original effect size: _r_= .179.
-* Replication effect size: O’Donnell et al.: _r_= -.082 (not significant).
+* Replication effect size: O’Donnell et al.: _r_= -.082 (_F_(1, 530) = 3.59, _p_ = .059; not significant).
 {{< /spoiler >}}
 
 * **Scarcity effect - _Planning_**. Consumers who feel resource constrained shift to engage in relatively more priority planning, rather than efficiency planning.
