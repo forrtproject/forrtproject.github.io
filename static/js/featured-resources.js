@@ -96,9 +96,18 @@
     if (!backdrop || !body) return;
 
     var latest = null;  // the reference asked for last, so a slow fetch can't open an older one
+    var returnTo = null;  // the control that opened the dialog, which gets focus back on close
+    var dialog = backdrop.querySelector('.ref-popup');
+
+    function focusables() {
+      return Array.prototype.filter.call(
+        dialog.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'),
+        function (el) { return el.getClientRects().length > 0; });
+    }
 
     function open(doi, trigger) {
       latest = doi;
+      if (trigger) returnTo = trigger;
       var r = resourceIdx[doi];
       if (!r) {
         if (trigger) trigger.setAttribute('aria-busy', 'true');
@@ -157,12 +166,18 @@
       body.innerHTML = html;
       backdrop.classList.add('open');
       document.body.style.overflow = 'hidden';
+      /* Focus moves into the dialog, on its first control (Close), so Tab and Escape act on it. */
+      if (dialog) dialog.setAttribute('tabindex', '-1');
+      (closeBtn || dialog).focus({ preventScroll: true });
     }
 
     function close() {
+      if (!backdrop.classList.contains('open')) return;
       backdrop.classList.remove('open');
       body.innerHTML = '';
       document.body.style.overflow = '';
+      if (returnTo && document.contains(returnTo)) returnTo.focus({ preventScroll: true });
+      returnTo = null;
     }
 
     // Event delegation: ref trigger buttons
@@ -202,7 +217,16 @@
       if (e.target === backdrop) close();
     });
     document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && backdrop.classList.contains('open')) close();
+      if (!backdrop.classList.contains('open')) return;
+      if (e.key === 'Escape') { close(); return; }
+      if (e.key !== 'Tab') return;
+      /* Tab stays inside the dialog: from the last control back to the first, and the other way. */
+      var items = focusables();
+      if (!items.length) { e.preventDefault(); return; }
+      var first = items[0], last = items[items.length - 1];
+      var inside = dialog.contains(document.activeElement);
+      if (e.shiftKey && (document.activeElement === first || !inside)) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && (document.activeElement === last || !inside)) { e.preventDefault(); first.focus(); }
     });
   }
 
