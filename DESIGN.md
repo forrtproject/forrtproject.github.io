@@ -21,9 +21,9 @@ Styles live in `assets/css/doors/`, with colours and type defined once in `token
 
 ## 3. One clear next step
 
-- Each screen leads with its main action, or with up to three equal ones. Other actions are quieter: smaller, outlined or plain links.
+- Each screen leads with its main action, or with up to three equal ones that share one style. Any further action is quieter: smaller, outlined or a plain link.
 - Action labels say what the visitor will do ("Teach with open materials", "Explore replications"), not what FORRT has.
-- Prefer routes into FORRT's own pages. A link that leaves forrt.org says where it goes.
+- Prefer routes into FORRT's own pages. Mark a link with the external-link icon where leaving forrt.org would surprise visitors: in menus, in lists of FORRT pages, and wherever a link opens a new tab. Links that clearly lead elsewhere, such as a resource's link to its own website, need no icon.
 - Every kind of submission starts at `/submit/`, which sends people on to the right form. Do not call submitting "contributing": contributors join the work and are listed as such.
 
 ## 4. Calm, specific pages
@@ -45,14 +45,14 @@ Every repeated device has to earn its place. In practice:
 
 ## 6. Colour carries meaning
 
-- FORRT works in four areas of equal standing: Education & Pedagogy, Meta-Science & Research, Social Justice & DEIA, and Community & Sustainability. Each has its colour: education `--edu` (green), research `--res` (dark blue), social justice `--jus` (purple), community `--com` (brown). Pages and cards that belong to an area use its colour and its pale background (`--edu-bg` and so on). The `area` argument of `action_cards` starts a row of bricks with that area's colour.
+- FORRT works in four areas of equal standing: Education & Pedagogy, Meta-Science & Research, Social Justice & DEIA, and Community & Sustainability. Each has its colour: education `--edu` (green), research `--res` (dark blue), social justice `--jus` (purple), community `--com` (brown). Pages and cards that belong to an area use its colour and its pale background (`--edu-bg` and so on), and area colours are kept for their areas. One exception: the bricks in a row of action cards run through the four area colours for variety, so a brick's colour does not say which area its action belongs to. The `area` argument of `action_cards` starts the row with that area's colour.
 - The 11 FORRT clusters are not areas. Each keeps a colour of its own, and together they span the spectrum (`layouts/partials/clusters/colors.html`), so the clusters can be told apart. Strong cluster colours are for small marks; their backgrounds stay pale.
 - `--hot` (orange) is for highlights, `--urgent` (red) only for urgency. White is a clean ground.
 - Colour is fresh but not loud: no large areas of saturated colour, no intense full-bleed colour, no dark band across the page, no grey-and-beige, and no beige highlights.
 
 ## 7. Type and reading
 
-- Newsreader for headings, Source Sans 3 for text. Body text is 18 px. Nothing is smaller than 15 px, except footnotes and similar small print, which may be 14 px.
+- Newsreader for headings, Source Sans 3 for text. Body text is 18 px. Nothing is smaller than 15 px, except small print, which may be 14 px: footnotes, credits, legal lines, counts ("Showing 12 of 436") and metadata such as dates.
 - No italics anywhere outside reference lists, including menus, captions, labels and quotes. Emphasis is semi-bold.
 - Headings, buttons and labels are in sentence case.
 - Reading lines stay under 80 characters, measured on the rendered lines. The narrow reading column is for prose; tables, tools, programmes and directories may use the full width.
@@ -85,13 +85,15 @@ Images in the first screen are not lazy-loaded.
 
 ## 10. Words
 
-- Write plain, specific text, and explain a feature in one sentence ("Tags link pages and resources across the site on the same topic."). No marketing phrases, no exclamation marks, British English.
+- Write plain, specific text, and explain a feature in one sentence ("Tags link pages and resources across the site on the same topic."). No marketing phrases, no exclamation marks. Text written for the site itself (templates, labels, buttons, help text) is in British English; content keeps its authors' spelling.
 - Shortening text that its authors wrote, such as a tool's description, goes in its own PR for the authors to review.
 - Resource entries, glossary terms, cluster pages and other generated pages get their wording from spreadsheets and documents (see `AGENTS.md`). Change their presentation in the templates, and their wording at the source.
 
 ## 11. Motion
 
-- Animation never overlaps or hides text, and it can be paused with a mouse, a keyboard and on touch, through a control that appears on hover, focus or tap rather than at rest.
+- Prefer motion that runs once and ends within five seconds, such as a preview when a diagram scrolls into view. It needs no pause control.
+- Longer or looping animation can be paused with a mouse, a keyboard and on touch. Its control stays hidden at rest and appears on hover, focus or tap; once paused, the animation stays paused.
+- Animation never overlaps or hides text.
 - Reduced-motion settings are respected, and every animated part has a static version that works without WebGL or JavaScript.
 
 ## 12. Accessibility and the technical floor
