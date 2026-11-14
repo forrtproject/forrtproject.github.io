@@ -965,6 +965,7 @@
 .clusters-map__ring .clusters-map__ray { transition: opacity 0.2s; }
 .clusters-map__stage.is-pointing .clusters-map__ray:not(.is-active) { opacity: 0.4; }
 .clusters-map__ring .is-active .clusters-map__line { stroke: var(--c); stroke-width: 3; }
+.clusters-map__ring .clusters-map__line { transition: d 0.3s ease; }
 .clusters-map__spots { position: absolute; inset: 0; margin: 0; padding: 0; list-style: none; }
 .clusters-map__spot { margin: 0; }
 .clusters-map__tag {
@@ -1014,7 +1015,7 @@
 }
 .clusters-map__panel a:hover { color: var(--ink); }
 @media (prefers-reduced-motion: reduce) {
-  .clusters-map__stage, .clusters-map__ring, .clusters-map__panel, .clusters-map__spot.is-open .clusters-map__panel, .clusters-map__tag, .clusters-map__cue::after, .clusters-map__ring .clusters-map__ray { transition: none; transform: none; }
+  .clusters-map__stage, .clusters-map__ring, .clusters-map__ring .clusters-map__line, .clusters-map__panel, .clusters-map__spot.is-open .clusters-map__panel, .clusters-map__tag, .clusters-map__cue::after, .clusters-map__ring .clusters-map__ray { transition: none; transform: none; }
 }
 
 .clusters-map__caption { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.5rem 1.5rem; margin-top: 0.75rem; }
