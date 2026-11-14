@@ -942,9 +942,9 @@
   }
 }
 
-/* Clusters map: a mind map drawn by partials/clusters/map.html */
+/* Clusters map (partials/clusters/map.html): on the page the overview, the cluster names round the hub, each
+   opening a panel of its sub-clusters; "Open full size" shows the full mind map in a dialog. */
 .clusters-map { margin: 1.75rem 0 0.5rem; }
-.clusters-map__frame { overflow: hidden; }
 .clusters-map__art { display: block; width: 100%; height: auto; font-family: var(--text); }
 /* geometricPrecision: Chromium on Linux otherwise rounds each glyph to whole pixels, which sets the
    text about 6% wider than the advance widths the build wraps it with (clusters/map_wrap.html). */
@@ -952,25 +952,81 @@
 .clusters-map__line { fill: none; stroke: var(--soft); stroke-width: 2; stroke-linecap: round; }
 .clusters-map__seg path:first-of-type, .clusters-map__label rect, .clusters-map__pill rect { fill: var(--c); }
 .clusters-map__icon { fill: #fff; }
-.clusters-map__label text { font-size: 20px; font-weight: 700; }
+.clusters-map__art .clusters-map__label text { font-size: 32px; font-weight: 700; }
 .clusters-map__pill text { font-size: 17px; font-weight: 400; }
 .clusters-map__disc { fill: #fff; stroke: var(--res); stroke-width: 7; }
 .clusters-map__cluster { transition: opacity 0.15s; }
 .clusters-map__art.is-pointing .clusters-map__cluster:not(.is-active) { opacity: 0.35; }
 .clusters-map__art a:hover rect { fill: color-mix(in srgb, var(--c) 80%, #000); }
+
+/* The overview. The stage keeps the drawing's proportions; --u is one drawing unit at the stage's width. */
+.clusters-map__stage { position: relative; margin: 0 auto; container-type: inline-size; --u: calc(100cqw / var(--ow)); transition: margin-bottom 0.3s ease; }
+.clusters-map__ring { position: absolute; inset: 0; width: 100%; height: 100%; display: block; overflow: visible; transition: translate 0.3s ease; }
+.clusters-map__ring .clusters-map__ray { transition: opacity 0.2s; }
+.clusters-map__stage.is-pointing .clusters-map__ray:not(.is-active) { opacity: 0.4; }
+.clusters-map__ring .is-active .clusters-map__line { stroke: var(--c); stroke-width: 3; }
+.clusters-map__ring .clusters-map__line { transition: d 0.3s ease; }
+.clusters-map__spots { position: absolute; inset: 0; margin: 0; padding: 0; list-style: none; }
+.clusters-map__spot { margin: 0; }
+.clusters-map__tag {
+  position: absolute; display: block; box-sizing: border-box; z-index: 1;
+  padding: calc(10 * var(--u)) calc(17.2 * var(--u)); border-radius: calc(12 * var(--u));
+  background: var(--c); color: #fff; text-align: center; text-decoration: none; text-rendering: geometricPrecision;
+  transition: box-shadow 0.2s, background-color 0.2s, translate 0.3s ease;
+}
+.clusters-map__tag-name { display: block; font: 700 calc(19 * var(--u)) / calc(23 * var(--u)) var(--text); }
+.clusters-map__tag-name > span { display: block; white-space: nowrap; }
+.clusters-map__cue {
+  display: inline-flex; align-items: center; gap: calc(7 * var(--u)); margin-top: calc(4 * var(--u));
+  font: 400 calc(16 * var(--u)) / calc(20 * var(--u)) var(--text); white-space: nowrap;
+}
+/* The cue's arrow points at the panel's side and turns while it is open. */
+.clusters-map__cue::after {
+  content: ""; width: 0; height: 0; border-left: calc(7 * var(--u)) solid currentColor;
+  border-top: calc(5 * var(--u)) solid transparent; border-bottom: calc(5 * var(--u)) solid transparent; transition: transform 0.2s;
+}
+.clusters-map__spot.is-open .clusters-map__cue::after { transform: rotate(90deg); }
+.clusters-map__tag:hover, .clusters-map__tag:focus-visible, .clusters-map__spot.is-open .clusters-map__tag,
+.clusters-map__spot.is-lit .clusters-map__tag { background: color-mix(in srgb, var(--c) 82%, #000); color: #fff; box-shadow: 0 4px 14px rgba(38, 45, 53, 0.3); }
+.clusters-map__tag:focus { outline: none; }
+.clusters-map__tag:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+.clusters-map__spot.is-open .clusters-map__tag { z-index: 3; }
+/* A cluster's panel: hidden and out of the tab order (inert) until its name opens it. */
+.clusters-map__panel {
+  position: absolute; left: 0; top: 0; z-index: 2; box-sizing: border-box; padding: 16px;
+  background: color-mix(in srgb, var(--c) 10%, #fff); border: 2px solid var(--c); border-top-width: 6px; border-radius: var(--r-large);
+  box-shadow: 0 10px 30px rgba(38, 45, 53, 0.25);
+  visibility: hidden; opacity: 0; transform: translateY(-6px);
+  transition: opacity 0.2s, transform 0.2s, visibility 0s linear 0.2s;
+}
+.clusters-map__panel[data-side="above"] { transform: translateY(6px); }
+.clusters-map__panel[data-side="left"] { transform: translateX(6px); }
+.clusters-map__panel[data-side="right"] { transform: translateX(-6px); }
+.clusters-map__spot.is-open .clusters-map__panel { visibility: visible; opacity: 1; transform: none; transition: opacity 0.2s, transform 0.2s, visibility 0s; z-index: 4; }
+/* Columns filled top to bottom, each starting at the panel's top and stacking its own names (no shared rows). */
+.clusters-map__panel ul {
+  column-count: var(--cols); column-gap: 16px; width: calc(var(--cols) * 250px + (var(--cols) - 1) * 16px);
+  margin: 0; padding: 0; list-style: none;
+}
+.clusters-map__panel li { margin: 0; break-inside: avoid; }
+.clusters-map__panel a {
+  display: flex; align-items: center; min-height: 44px; padding: 4px 0; box-sizing: border-box;
+  font: 400 16px/1.3 var(--text); color: var(--link); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px;
+}
+.clusters-map__panel a:hover { color: var(--ink); }
+/* The panel never outgrows the window. */
+.clusters-map__panel { max-height: calc(100vh - 120px); overflow-y: auto; }
+@media (prefers-reduced-motion: reduce) {
+  .clusters-map__stage, .clusters-map__ring, .clusters-map__ring .clusters-map__line, .clusters-map__panel, .clusters-map__spot.is-open .clusters-map__panel, .clusters-map__tag, .clusters-map__cue::after, .clusters-map__ring .clusters-map__ray { transition: none; transform: none; }
+}
+
 .clusters-map__caption { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.5rem 1.5rem; margin-top: 0.75rem; }
 .clusters-map__enlarge, .clusters-map__close {
   font: inherit; font-size: 0.9rem; font-weight: 600; color: var(--ink); background: var(--page);
   border: 1px solid var(--line); border-radius: var(--r-small); padding: 0.35rem 0.9rem; cursor: pointer;
 }
 .clusters-map__enlarge:hover, .clusters-map__close:hover { border-color: var(--ink); }
-.clusters-map__list { flex: 1 1 20rem; }
-.clusters-map__list summary { cursor: pointer; color: var(--link); font-size: 0.95rem; }
-.clusters-map__list ol { margin: 0.75rem 0 0; padding-left: 1.4rem; columns: 2 22rem; column-gap: 2rem; font-size: 0.95rem; }
-.clusters-map__list li { break-inside: avoid; margin-bottom: 0.5rem; }
-.clusters-map__list ul { margin: 0.2rem 0 0; padding-left: 1.1rem; font-size: 0.9rem; }
-.clusters-map__list ul li { margin: 0; }
-.clusters-map__list a { color: var(--ink); }
+.clusters-map__dialog:not([open]) { display: none; }
 .clusters-map__dialog { width: 96vw; max-width: none; height: 94vh; max-height: none; padding: 0; border: 0; border-radius: var(--r-large); background: var(--page); }
 .clusters-map__dialog::backdrop { background: rgba(38, 45, 53, 0.6); }
 .clusters-map__close { position: absolute; top: 0.75rem; right: 0.75rem; z-index: 1; box-shadow: 0 1px 4px rgba(38, 45, 53, 0.25); }
@@ -979,22 +1035,16 @@
 .clusters-map__compact { display: none; }
 .clusters-map__hub { display: block; width: min(240px, 70%); margin: 0 auto 1rem; }
 .clusters-map__segment { fill: var(--c); }
-.clusters-map__chips { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.5rem; }
-.clusters-map__chips a {
-  display: flex; align-items: center; gap: 0.8rem; padding: 0.55rem 0.9rem; border-radius: 12px;
-  background: var(--c); color: #fff; font-weight: 700; line-height: 1.25; text-decoration: none;
-}
-.clusters-map__chips svg { flex: 0 0 1.4rem; height: 1.4rem; fill: currentColor; }
-.clusters-map__chips small { display: block; font-size: 0.85rem; font-weight: 400; }
-/* Phones: the hub and the cluster labels; the pills are in the list and the full-size view. */
-@media (max-width: 760px) {
+/* Below 942 px the overview would set its cue lines under 15 px, so phones and tablets get the hub, and the
+   clusters in the linked list after it, each with its sub-clusters. */
+@media (max-width: 941px) {
   .clusters-map__frame { display: none; }
   .clusters-map__compact { display: block; }
 }
 @media (forced-colors: active) {
   .clusters-map__art text, .clusters-map__icon { fill: CanvasText; }
   .clusters-map__seg path:first-of-type, .clusters-map__segment, .clusters-map__label rect, .clusters-map__pill rect { fill: Canvas; stroke: CanvasText; }
-  .clusters-map__chips a { border: 1px solid CanvasText; }
+  .clusters-map__tag { border: 2px solid CanvasText; }
 }
 
 /* Stack on small screens */
@@ -2406,3 +2456,130 @@ body.clusters-mobile-nav-open #just-os-widget{display:none}
 .disciplines-areas{display:flex;flex-wrap:wrap;gap:6px;margin:-4px 0 14px;padding:0;list-style:none}
 .disciplines-areas li{margin:0}
 .disciplines-areas .badge{padding:4px 10px;border-radius:999px;font:600 15px/1.3 var(--text)}
+
+/* Resource cards: the kind of resource as quiet text ("Overview · Paper"), not filled chips, and the
+   title as an underlined link to the resource. The reference button is a secondary action beside Save. */
+.card-kind{margin:0 0 6px;font:400 15px/1.35 var(--text);color:var(--soft);letter-spacing:0;text-transform:none}
+.card-purpose{display:inline-block;margin-right:6px;padding:1px 9px;border:1px solid var(--line);border-radius:var(--r-small,6px);background:var(--surface);color:var(--ink);font-weight:600}
+.fc-card .fc-body{min-width:0;flex:1}
+.fc-title a,.fr-title a,.ref-popup-title a{color:var(--link);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+.fc-title a:hover,.fr-title a:hover,.ref-popup-title a:hover{color:var(--ink)}
+.fc-title,.fr-title{margin-bottom:4px}
+.fc-summary a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
+.fr-ref-trigger{color:var(--soft);border:1px solid rgba(0,0,0,.1);border-radius:4px;padding:.2rem .5rem}
+.fr-ref-trigger:hover{color:var(--ink);border-color:var(--ink)}
+.ref-popup .card-kind{margin-bottom:4px}
+
+/* Filter bar: search, then a Filters disclosure holding Focus, Type and the specialist toggle. From 761 px
+   the disclosure is open and its summary hidden, so the bar reads as one row of controls. */
+.fr-filter-bar{align-items:center}
+.fr-filter-more{flex:1 1 520px;min-width:0}
+.fr-filter-more__body{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px}
+.fr-filter-more>summary{display:none}
+.fr-filter-group--specialist{flex-direction:column;align-items:flex-start;gap:2px}
+.fr-filter-hint{font-size:15px;line-height:1.35;color:var(--soft);max-width:34em}
+.fr-search-input::-webkit-search-cancel-button{cursor:pointer}
+.fr-filter-result{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin:0 0 12px}
+.fr-filter-status{margin:0;font-size:16px;color:var(--ink)}
+.fr-filter-status:empty{display:none}
+.fr-filter-result__clear{background:#fff;border:1.5px solid var(--ink);border-radius:999px;padding:8px 16px;font:600 15px/1.3 var(--text);color:var(--ink);cursor:pointer}
+.fr-filter-result__clear:hover{background:var(--ink);color:#fff}
+.fr-filter-result__clear[hidden]{display:none}
+@media (max-width:760px){
+  .fr-filter-bar{flex-direction:column;align-items:stretch;gap:10px;padding:12px}
+  .fr-filter-search-group,.fr-filter-search-group .fr-search-input{width:100%;max-width:none}
+  .fr-filter-more{flex:none}
+  .fr-filter-more>summary{display:flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border:1.5px solid var(--line);border-radius:999px;background:#fff;font:600 16px/1.3 var(--text);color:var(--ink);cursor:pointer;list-style:none;width:max-content}
+  .fr-filter-more>summary::-webkit-details-marker{display:none}
+  .fr-filter-more>summary::after{content:"";width:8px;height:8px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);margin:-4px 0 0 4px}
+  .fr-filter-more[open]>summary::after{transform:rotate(-135deg);margin-top:4px}
+  .fr-filter-more[open]>summary{margin-bottom:12px}
+  .fr-filter-more__body{flex-direction:column;align-items:stretch;gap:14px}
+  .fr-filter-group{align-items:flex-start;flex-direction:column;gap:6px}
+  .fr-clear-btn{margin-left:0;align-self:flex-start}
+}
+/* Tap targets of at least 44 px on phones and touch screens. */
+@media (max-width:760px),(pointer:coarse){
+  .fr-tag-btn{min-height:44px;padding-inline:14px}
+  .fr-search-input{min-height:44px}
+  .fr-specificity-toggle{min-height:44px}
+  .fr-clear-btn{min-height:44px;padding-inline:14px}
+  .fr-filter-result__clear{min-height:44px}
+}
+.fr-filter-result__go{font-size:16px;text-decoration:underline;text-underline-offset:3px}
+.fr-filter-result__go[hidden]{display:none}
+
+/* /clusters/: the clusters as a plain linked list after the filters, each numbered in its own colour,
+   in two columns on a wide screen; then the introduction and diagram, then every cluster in full. */
+.clusters-section-heading,.clusters-overview__heading{font:var(--display-weight) clamp(26px,2.4vw,32px)/1.2 var(--display);color:var(--ink);margin:36px 0 14px}
+.clusters-overview__heading{margin-top:20px}
+.clusters-overview__list{list-style:none;margin:0 0 8px;padding:0;display:grid;gap:18px 40px}
+@media (min-width:992px){.clusters-overview__list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.clusters-overview__list li{display:flex;gap:12px;align-items:flex-start;margin:0}
+.clusters-overview__num{flex:0 0 30px;height:30px;border-radius:50%;background:var(--c);color:#fff;font:700 15px/30px var(--text);text-align:center;margin-top:1px}
+.clusters-overview__text{min-width:0}
+.clusters-overview__name{font:600 18px/1.35 var(--text);color:var(--link);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+.clusters-overview__name:hover{color:var(--ink)}
+.clusters-overview__desc{margin:2px 0 0;font-size:16px;line-height:1.45;color:var(--ink);max-width:60ch;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.clusters-overview__count{margin:2px 0 0;font-size:15px;color:var(--soft)}
+.clusters-intro-section .clusters-intro{margin:0}
+/* Each cluster panel numbers itself in its own colour, and on /clusters/ its name links to its page. */
+.cluster-section[style*="--c"] .cluster-number{background:var(--c);color:#fff;font-size:15px;width:1.8em;height:1.8em}
+.cluster-title a{color:var(--link);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
+.cluster-title a:hover{color:var(--ink)}
+/* A jump to a cluster or sub-cluster stops below the pinned filters. */
+.cluster-section,.acc-section{scroll-margin-top:calc(var(--clusters-controls-height,0px) + 90px)}
+
+/* Side list: the cluster and sub-cluster names are underlined as links; the current cluster is marked by
+   weight (and aria-current), not by an underline. A shadow at the top or foot of the box shows that it
+   scrolls when there is more above or below. */
+.cluster-nav-heading:has(.cluster-nav-name){font-weight:400}
+.cluster-nav-name{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;text-decoration-color:currentColor}
+.cluster-nav-heading[aria-current]{font-weight:700}
+.cluster-nav-heading[aria-current] .cluster-nav-name{text-decoration:none}
+.cluster-nav-subs .nav-link .cluster-nav-name{flex:1 1 auto;min-width:0}
+.cluster-nav-heading:hover .cluster-nav-name,.cluster-nav-subs .nav-link:hover .cluster-nav-name{text-decoration-thickness:2px}
+@media (min-width:992px){
+  .clusters-sidebar-inner{background:
+    linear-gradient(var(--surface) 30%,rgba(240,243,245,0)) center top/100% 40px no-repeat local,
+    linear-gradient(rgba(240,243,245,0),var(--surface) 70%) center bottom/100% 40px no-repeat local,
+    radial-gradient(farthest-side at 50% 0,rgba(38,45,53,.18),rgba(38,45,53,0)) center top/100% 12px no-repeat scroll,
+    radial-gradient(farthest-side at 50% 100%,rgba(38,45,53,.18),rgba(38,45,53,0)) center bottom/100% 12px no-repeat scroll,
+    var(--surface)}
+}
+
+/* /clusters/ diagram as the way in: the cluster pointed at, or focused in the list after it, is described
+   in a line under the drawing (desktop only; phones
+   show the hub and the list). */
+.clusters-map__info{flex:1 0 100%;margin:0;padding:10px 16px;min-height:76px;background:var(--surface);border-radius:var(--r-large);display:flex;align-items:center}
+.clusters-map__info[hidden]{display:none}
+.clusters-map__hint{margin:0;font-size:16px;color:var(--soft)}
+.clusters-map__about{display:flex;gap:12px;align-items:flex-start}
+.clusters-map__about[hidden]{display:none}
+.clusters-map__num{flex:0 0 30px;height:30px;border-radius:50%;background:var(--c);color:#fff;font:700 15px/30px var(--text);text-align:center}
+.clusters-map__name{margin:0;font:600 18px/1.3 var(--text);color:var(--ink)}
+.clusters-map__desc{margin:2px 0 0;font-size:16px;line-height:1.4;color:var(--ink);max-width:80ch}
+.clusters-map__count{margin:2px 0 0;font-size:15px;color:var(--soft)}
+@media (max-width:941px){.clusters-map__info{display:none}}
+.clusters-map__art .clusters-map__label,.clusters-map__art .clusters-map__seg{cursor:pointer}
+.clusters-overview__list li[data-cluster]:hover .clusters-overview__name{color:var(--ink)}
+.clusters-map__art .clusters-map__label:focus{outline:none}
+.clusters-map__art .clusters-map__label:focus-visible rect{stroke:var(--ink);stroke-width:7px;paint-order:stroke}
+.clusters-map__art .clusters-map__label:focus-visible{outline:3px solid var(--ink);outline-offset:4px}
+
+/* Cluster cards keep the same inner space at every width (the old theme shrank it to 9 px on phones),
+   and the phone "Navigate" button stands clear of the card below it. */
+.cluster-section.cluster-section{padding:24px 24px 20px}
+@media(max-width:760px){.cluster-section.cluster-section{padding:20px 16px 16px}}
+.clusters-mobile-toggle.clusters-mobile-toggle{margin:0 0 20px}
+/* Each cluster's sub-clusters, behind its counts. */
+.clusters-overview__subs{margin:2px 0 0}
+.clusters-overview__subs summary{display:inline-flex;align-items:center;gap:8px;min-height:44px;cursor:pointer;color:var(--link);font-size:16px;list-style:none}
+.clusters-overview__subs summary::-webkit-details-marker{display:none}
+.clusters-overview__subs summary::before{content:"";width:0;height:0;border-left:6px solid currentColor;border-top:5px solid transparent;border-bottom:5px solid transparent;transition:transform .15s}
+.clusters-overview__subs[open] summary::before{transform:rotate(90deg)}
+.clusters-overview__subs summary:hover{color:var(--ink)}
+.clusters-overview__subs ul{margin:0 0 8px;padding:0 0 0 18px;list-style:none;border-left:3px solid var(--c)}
+.clusters-overview__subs li{margin:0;padding:4px 0 4px 12px;font-size:16px;line-height:1.4}
+.clusters-overview__subs a{color:var(--link);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+@media(prefers-reduced-motion:reduce){.clusters-overview__subs summary::before{transition:none}}

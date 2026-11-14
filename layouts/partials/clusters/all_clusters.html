@@ -13,6 +13,8 @@
 
 <div class="clusters-layout">
 
+  <h2 class="clusters-section-heading" id="clusters-all-heading">Every cluster and its references</h2>
+
   {{ partial "clusters/clusters_controls.html" . }}
 
   <div class="row">
@@ -20,7 +22,7 @@
 
     <div class="col-12 col-lg-8 col-xl-9 clusters-content">
       {{ range $ci, $cluster := $data.clusters }}
-        {{ partial "clusters/cluster_section.html" (dict "cluster" $cluster "ci" $ci "colors" $colors) }}
+        {{ partial "clusters/cluster_section.html" (dict "cluster" $cluster "ci" $ci "colors" $colors "marks" $arrowColors "link" true) }}
       {{ end }}
     </div>
   </div>

@@ -1,4 +1,9 @@
-{{/* Shared cluster color palettes — used by all_clusters.html and cluster.html */}}
-{{ $colors := slice "var(--res-bg)" "var(--jus-bg)" "var(--edu-bg)" "var(--com-bg)" "var(--surface)" }}
-{{ $arrowColors := slice "var(--res)" "var(--jus)" "var(--edu)" "var(--com)" "var(--soft)" }}
+{{/* Cluster colours, one hue per cluster in cluster order (tokens.css, --cl1 to --cl11; owner decision).
+     colors: the pale panel backgrounds; arrowColors: the marks (sidebar arrows, list markers, the diagram).
+     Templates index them by the cluster's position, wrapping round if more clusters are added. */}}
+{{ $colors := slice }}{{ $arrowColors := slice }}
+{{ range seq 11 }}
+  {{ $colors = $colors | append (printf "var(--cl%d-bg)" .) }}
+  {{ $arrowColors = $arrowColors | append (printf "var(--cl%d)" .) }}
+{{ end }}
 {{ return dict "colors" $colors "arrowColors" $arrowColors }}

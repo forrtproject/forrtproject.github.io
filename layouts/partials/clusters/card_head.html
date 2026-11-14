@@ -1,0 +1,6 @@
+{{/* A resource card's kind and title: its purpose ("Overview") as a quiet tag, so a list can be scanned by
+     purpose, and its type ("Paper") in plain text, then the title as a link to the
+     resource (its DOI). Expects dict: focus, type, title, doi, cls ("fc" for compact cards, "fr" for
+     recommended ones). The reference button below the card stays the way to the citation. */}}
+{{ if or .focus .type }}<p class="card-kind">{{ with .focus }}<span class="card-purpose">{{ partial "clusters/sentence_case.html" . }}</span> {{ end }}{{ with .type }}{{ partial "clusters/sentence_case.html" . }}{{ end }}</p>{{ end }}
+<div class="{{ .cls }}-title">{{ if .doi }}<a href="{{ printf "https://doi.org/%s" .doi }}" target="_blank" rel="noopener">{{ partial "clusters/rich_text.html" .title }}</a>{{ else }}{{ partial "clusters/rich_text.html" .title }}{{ end }}</div>

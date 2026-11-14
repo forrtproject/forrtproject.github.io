@@ -21,6 +21,11 @@
   --jus-bg:#ebe6f4;
   --com-bg:#f8eadc;
   --urgent:#b3261e;
+  /* Cluster colours: one hue per cluster, across the spectrum (owner decision). --clN marks cluster N
+     (arrows, list markers, the diagram) and meets 4.5:1 on the page, white and its pale --clN-bg, which
+     tints the cluster's panel. Equal OKLCH lightness, hues 33 degrees apart from blue. */
+  --cl1:#1263a6;--cl2:#5853a7;--cl3:#7c4692;--cl4:#933c6d;--cl5:#9d3b3f;--cl6:#934a07;--cl7:#795b01;--cl8:#5a690d;--cl9:#16733c;--cl10:#176f66;--cl11:#196b7e;
+  --cl1-bg:#e2eefb;--cl2-bg:#eaebfc;--cl3-bg:#f3e9f7;--cl4-bg:#f9e7ef;--cl5-bg:#fbe7e6;--cl6-bg:#f9e9df;--cl7-bg:#f3ecdd;--cl8-bg:#ebefdf;--cl9-bg:#e3f1e6;--cl10-bg:#def2ee;--cl11-bg:#ddf1f7;
   /* Type */
   --display:'Newsreader',Georgia,'Apple Symbols','Segoe UI Symbol','Noto Sans Symbols 2',serif;
   --text:'Source Sans 3','Source Sans Pro',system-ui,'Apple Symbols','Segoe UI Symbol','Noto Sans Symbols 2',sans-serif;

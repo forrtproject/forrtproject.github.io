@@ -1,7 +1,12 @@
-{{/* intro.html - Intro text, then the clusters map (drawn from data/clusters_v4.json) */}}
+{{/* intro.html - The way into the clusters on /clusters/: the diagram (drawn from data/clusters_v4.json),
+     whose clusters link to their own pages, then the same clusters as a linked list, which is the route
+     for keyboards, screen readers and phones, then the introduction. */}}
+{{ $palette := partial "clusters/colors.html" }}
 <div class="clusters-intro">
+  {{ partial "clusters/map.html" (dict "link_mode" "subpath") }}
+  {{ partial "clusters/overview_list.html" (dict "data" hugo.Data.clusters_v4 "arrowColors" $palette.arrowColors) }}
+  <h2 class="clusters-section-heading" id="clusters-about-heading">About the clusters</h2>
   <p class="intro-paragraph">
     Teaching Open and Reproducible Science shouldn't require educators to spend months sifting through a decade of literature. FORRT simplifies this process by providing a curated, expert-backed framework. Developed by over 100 scholars, our taxonomy organizes open scholarship into {{ with hugo.Data.clusters_v4 }}{{ len .clusters }}{{ else }}11{{ end }} distinct clusters, offering a clear pathway for integrating these tenets into your teaching and mentoring, regardless of your field or level of expertise.
   </p>
-  {{ partial "clusters/map.html" (dict "link_mode" "anchor") }}
 </div>

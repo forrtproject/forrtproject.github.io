@@ -1,4 +1,5 @@
-{{/* One cluster block (used on /clusters/ and /clusters/cluster-N/). Expects dict: cluster, ci, colors */}}
+{{/* One cluster block (used on /clusters/ and /clusters/cluster-N/). Expects dict: cluster, ci, colors, marks;
+     link true (on /clusters/) makes the heading a link to the cluster's own page. */}}
 {{ $cluster := .cluster }}
 {{ $ci := .ci }}
 {{ $colors := .colors }}
@@ -19,11 +20,12 @@
 {{ end }}
 {{ $hasFeatured := and $featuredEnabled $featuredData }}
 
-<section id="{{ $cid }}" class="cluster-section" style="background-color: {{ $color | safeCSS }};">
+{{ $mark := "var(--soft)" }}{{ with .marks }}{{ $mark = index . (mod $ci (len .)) }}{{ end }}
+<section id="{{ $cid }}" class="cluster-section" style="background-color: {{ $color | safeCSS }}; --c: {{ $mark | safeCSS }};">
   <div class="cluster-header">
     <h2 class="cluster-title">
       <span class="cluster-number">{{ (int $cluster.number) }}</span>
-      {{ $cluster.name }}
+      {{ if .link }}<a href="{{ printf "/clusters/cluster-%d/" (int $cluster.number) | relURL }}">{{ $cluster.name }}</a>{{ else }}{{ $cluster.name }}{{ end }}
     </h2>
     <span class="cluster-stats">{{ len $cluster.sub_clusters }} sub-clusters &middot; {{ $totalPubs }} references</span>
     <button class="acc-toggle-all" data-cluster="{{ $cid }}">Expand all</button>
@@ -43,7 +45,7 @@
       <div class="acc-header acc-header--rec">
         <span class="acc-chevron acc-open" aria-hidden="true">&#9656;</span>
         <span class="acc-label"><button type="button" class="acc-trigger" aria-expanded="true">Recommended</button></span>
-        <span class="acc-count" title="References shown with the current filters, of all in this group"><span class="acc-count-match">{{ len $featuredData }}</span> of {{ len $featuredData }}</span>
+        <span class="acc-count" title="References shown with the current filters, of all in this group"><span class="acc-count-match">{{ len $featuredData }}</span> of {{ len $featuredData }} shown</span>
       </div>
       <div class="acc-body">
         {{ partial "clusters/featured_cards.html" (dict "resources" $featuredData "cluster_number" (int $cluster.number)) }}
@@ -59,7 +61,7 @@
       <div class="acc-header">
         <span class="acc-chevron" aria-hidden="true">&#9656;</span>
         <h3 class="acc-label"><button type="button" class="acc-trigger" aria-expanded="false">{{ $sc.name }}</button></h3>
-        <span class="acc-count" title="References shown with the current filters, of all in this sub-cluster"><span class="acc-count-match">{{ len $sc.publications }}</span> of {{ len $sc.publications }}</span>
+        <span class="acc-count" title="References shown with the current filters, of all in this sub-cluster"><span class="acc-count-match">{{ len $sc.publications }}</span> of {{ len $sc.publications }} shown</span>
         <button type="button" class="acc-copy-link" data-anchor="{{ $scid }}" aria-label="Copy link to this sub-cluster" title="Copy link to this sub-cluster">
           <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M6.5 9.5l3-3M7 4.5l1-1a3 3 0 014.25 4.25l-1 1M9 11.5l-1 1a3 3 0 01-4.25-4.25l1-1"/></svg>
         </button>
@@ -87,14 +89,10 @@
                data-focus="{{ $card.focus }}" data-type="{{ $card.resource_type }}"
                data-specificity="{{ cond (eq $card.specificity "Narrow") "narrow" "broad" }}">
             <div class="fr-resource">
-              <div class="fr-tags">
-                {{ with $card.focus }}<span class="tag tag-focus">{{ . }}</span>{{ end }}
-                {{ with $card.resource_type }}<span class="tag tag-type">{{ . }}</span>{{ end }}
-              </div>
-              <div class="fr-title">{{ partial "clusters/rich_text.html" $card.title }}</div>
+              {{ partial "clusters/card_head.html" (dict "focus" $card.focus "type" $card.resource_type "title" $card.title "doi" .doi "cls" "fr") }}
               {{ with $card.summary }}<div class="fr-summary">{{ . }}</div>{{ end }}
               <div class="fr-actions">
-                <button class="fr-ref-trigger" data-doi="{{ .doi }}">
+                <button type="button" class="fr-ref-trigger" data-doi="{{ .doi }}" aria-haspopup="dialog" aria-label="Reference for {{ $card.short_ref }}">
                   <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="12" height="12" rx="2"/><path d="M5 5h6M5 8h6M5 11h3"/></svg>
                   {{ $card.short_ref }}
                 </button>
@@ -147,18 +145,12 @@
                data-focus="{{ $card.focus }}" data-type="{{ $card.resource_type }}"
                data-specificity="{{ cond (eq $card.specificity "Narrow") "narrow" "broad" }}">
             <div class="fc-body">
-              <div class="fc-top-row">
-                <div class="fc-tags">
-                  {{ with $card.focus }}<span class="tag tag-focus">{{ . }}</span>{{ end }}
-                  {{ with $card.resource_type }}<span class="tag tag-type">{{ . }}</span>{{ end }}
-                </div>
-                <div class="fc-title">{{ partial "clusters/rich_text.html" $card.title }}</div>
-              </div>
+              {{ partial "clusters/card_head.html" (dict "focus" $card.focus "type" $card.resource_type "title" $card.title "doi" .doi "cls" "fc") }}
               {{ with $card.summary }}
               <div class="fc-summary">{{ . }}</div>
               {{ end }}
               <div class="fc-actions">
-                <button class="fr-ref-trigger" data-doi="{{ .doi }}">
+                <button type="button" class="fr-ref-trigger" data-doi="{{ .doi }}" aria-haspopup="dialog" aria-label="Reference for {{ $card.short_ref }}">
                   <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="12" height="12" rx="2"/><path d="M5 5h6M5 8h6M5 11h3"/></svg>
                   {{ $card.short_ref }}
                 </button>

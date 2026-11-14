@@ -603,7 +603,7 @@ def check_phone_reading(browser, base, failures):
 
 
 CLUSTERS_MAP_LAYOUT = """() => {
-  const art = document.querySelector('.clusters-map__art');
+  const art = document.querySelector('.clusters-map__dialog .clusters-map__art');
   if (!art) return {missing: true};
   const boxes = [...art.querySelectorAll('.clusters-map__pill, .clusters-map__label')].map((link) => {
     const rect = link.querySelector('rect').getBBox();
@@ -627,46 +627,135 @@ CLUSTERS_MAP_LAYOUT = """() => {
       if (hit) { crossings.push(own.text + ' crosses ' + hit.text); break; }
     }
   });
-  const list = document.querySelector('.clusters-map__list > ol');
+  const list = document.querySelector('.clusters-overview__list');
   return {overflow: boxes.filter((b) => b.over.length).map((b) => b.over[0]), overlaps, crossings,
     fonts: [...document.fonts].filter((f) => f.status === 'loaded').map((f) => `${f.family} ${f.weight}`),
     pills: boxes.filter((b) => !b.label).length, labels: boxes.filter((b) => b.label).length,
-    listed: list ? [list.children.length, list.querySelectorAll('ul > li').length] : [0, 0]};
+    listed: list ? [list.children.length, list.querySelectorAll('.clusters-overview__subs li').length] : [0, 0]};
+}"""
+
+# The overview at rest: the names' text sizes, nothing spilling out of a name, no name overlapping another or
+# the ring, no line through another name, and every panel closed and out of the tab order.
+CLUSTERS_OVERVIEW_REST = """() => {
+  const stage = document.querySelector('.clusters-map__stage');
+  if (!stage || !stage.offsetWidth) return {missing: true};
+  const size = (el) => parseFloat(getComputedStyle(el).fontSize);
+  const tags = [...stage.querySelectorAll('.clusters-map__tag')];
+  const boxes = tags.map((tag) => ({r: tag.getBoundingClientRect(), n: tag.closest('[data-cluster]').dataset.cluster}));
+  const meets = (a, b, gap) => a.left < b.right + gap && b.left < a.right + gap && a.top < b.bottom + gap && b.top < a.bottom + gap;
+  const overlaps = [];
+  boxes.forEach((a, i) => boxes.slice(i + 1).forEach((b) => { if (meets(a.r, b.r, 4)) overlaps.push(a.n + ' / ' + b.n); }));
+  const ring = stage.querySelector('.clusters-map__disc').getBoundingClientRect();
+  const segs = [...stage.querySelectorAll('.clusters-map__segment')].map((s) => s.getBoundingClientRect());
+  const onRing = boxes.filter((b) => segs.some((s) => meets(b.r, s, 0))).map((b) => b.n);
+  const crossings = [];
+  stage.querySelectorAll('.clusters-map__ray').forEach((ray) => {
+    const line = ray.querySelector('.clusters-map__line'), m = line.getScreenCTM(), n = ray.dataset.cluster;
+    for (let at = 0; at < line.getTotalLength(); at += 3) {
+      const p = new DOMPoint(line.getPointAtLength(at).x, line.getPointAtLength(at).y).matrixTransform(m);
+      const hit = boxes.find((b) => b.n !== n && p.x >= b.r.left - 3 && p.x <= b.r.right + 3 && p.y >= b.r.top - 3 && p.y <= b.r.bottom + 3);
+      if (hit) { crossings.push(n + ' crosses ' + hit.n); break; }
+    }
+  });
+  const panels = [...stage.querySelectorAll('.clusters-map__panel')];
+  return {stage: stage.offsetWidth, ring: ring.width > 0,
+    name: Math.min(...tags.map((t) => size(t.querySelector('.clusters-map__tag-name')))),
+    cue: Math.min(...tags.map((t) => size(t.querySelector('.clusters-map__cue')))),
+    spill: tags.filter((t) => t.scrollWidth > t.clientWidth + 0.5 || t.scrollHeight > t.clientHeight + 0.5).map((t) => t.textContent.trim().slice(0, 40)),
+    overlaps, onRing, crossings, names: tags.length,
+    shut: panels.filter((p) => p.inert && getComputedStyle(p).visibility === 'hidden').length, panels: panels.length,
+    links: stage.querySelectorAll('.clusters-map__panel a').length};
+}"""
+
+# One cluster open: its panel shows inside the drawing, its columns start level, its text is 15 px or more,
+# and only its links join the tab order.
+CLUSTERS_OVERVIEW_OPEN = """(n) => {
+  const stage = document.querySelector('.clusters-map__stage');
+  const spot = stage.querySelector(`.clusters-map__spot[data-cluster="${n}"]`);
+  const panel = spot.querySelector('.clusters-map__panel'), s = stage.getBoundingClientRect(), r = panel.getBoundingClientRect();
+  const links = [...panel.querySelectorAll('a')];
+  const tops = {};
+  links.forEach((a) => { const b = a.getBoundingClientRect(); const x = Math.round(b.left); if (!(x in tops)) tops[x] = b.top; });
+  const firsts = Object.values(tops);
+  return {open: spot.classList.contains('is-open') && !panel.inert && getComputedStyle(panel).visibility === 'visible',
+    expanded: spot.querySelector('.clusters-map__tag').getAttribute('aria-expanded'),
+    inside: r.left >= s.left - 0.5 && r.top >= s.top - 0.5 && r.right <= s.right + 0.5 && r.bottom <= s.bottom + 0.5,
+    columns: firsts.length, level: Math.max(...firsts) - Math.min(...firsts),
+    text: Math.min(...links.map((a) => parseFloat(getComputedStyle(a).fontSize))),
+    target: Math.min(...links.map((a) => a.getBoundingClientRect().height)),
+    others: [...stage.querySelectorAll('.clusters-map__panel')].filter((p) => p !== panel && !p.inert).length};
 }"""
 
 CLUSTERS_MAP_PHONE = """() => {
   const shown = (el) => !!el && el.getClientRects().length > 0;
   return {frame: shown(document.querySelector('.clusters-map__frame')),
     hub: shown(document.querySelector('.clusters-map__hub')),
-    chips: [...document.querySelectorAll('.clusters-map__chips a')].filter(shown).length,
-    clusters: document.querySelectorAll('.clusters-map__list > ol > li').length};
+    chips: [...document.querySelectorAll('.clusters-overview__name')].filter(shown).length,
+    clusters: document.querySelectorAll('.clusters-overview__list > li').length};
 }"""
+
+# The narrowest width that shows the overview (clusters.css); its cue lines are 15 px there.
+CLUSTERS_MAP_BREAKPOINT = 942
 
 
 def check_clusters_map(browser, base, failures):
-    """The /clusters/ illustration, laid out at build time: text fits its pill, nothing overlaps,
-    and no line runs through another box. Rerun when the Clusters Doc changes."""
+    """The /clusters/ map. The overview, laid out at build time: names fit their boxes and stay apart, at
+    15 px or more from the breakpoint up, and each panel opens inside the drawing with level columns.
+    The full-size mind map: text fits its pill, nothing overlaps, and no line runs through another box.
+    Rerun when the Clusters Doc changes."""
     expect = expectation(failures, "clusters map")
-    page = new_page(browser, 1440)
-    page.goto(base + "clusters/", wait_until="load")
-    page.evaluate("document.fonts.ready")
-    found = page.evaluate(CLUSTERS_MAP_LAYOUT)
-    expect(not found.get("missing"), "/clusters/ has the illustration")
-    if not found.get("missing"):
-        print(f"  {found['labels']} cluster labels, {found['pills']} sub-cluster pills; fonts loaded: {found['fonts']}")
+    for width in (1440, 1024, CLUSTERS_MAP_BREAKPOINT):
+        page = new_page(browser, width, reduced_motion="reduce")
+        page.goto(base + "clusters/", wait_until="load")
+        page.evaluate("document.fonts.ready")
+        rest = page.evaluate(CLUSTERS_OVERVIEW_REST)
+        expect(not rest.get("missing"), f"at {width} px /clusters/ shows the overview")
+        if rest.get("missing"):
+            page.context.close()
+            continue
         listed = lambda items: f": {items[:3]}" if items else ""
-        expect(not found["overflow"], "text fits its pill or label" + listed(found["overflow"]))
-        expect(not found["overlaps"], "no pill or label overlaps another" + listed(found["overlaps"]))
-        expect(not found["crossings"], "no line runs through a pill or label" + listed(found["crossings"]))
-        expect(found["listed"][0] > 0 and [found["labels"], found["pills"]] == found["listed"],
-               f"the drawing has every cluster and sub-cluster in the list ({found['listed']})")
-    page.context.close()
+        print(f"  {width} px: names {rest['name']:.1f} px, cues {rest['cue']:.1f} px")
+        expect(rest["name"] >= 15 and rest["cue"] >= 15, f"at {width} px the names and cues are 15 px or more")
+        expect(not rest["spill"], f"at {width} px each name fits its box" + listed(rest["spill"]))
+        expect(not rest["overlaps"], f"at {width} px no name overlaps another" + listed(rest["overlaps"]))
+        expect(not rest["onRing"], f"at {width} px no name overlaps the ring" + listed(rest["onRing"]))
+        expect(not rest["crossings"], f"at {width} px no line runs through another name" + listed(rest["crossings"]))
+        expect(rest["shut"] == rest["panels"] == rest["names"], f"at {width} px every panel is shut and inert at rest ({rest['shut']} of {rest['panels']})")
+        bad = []
+        for n in range(1, rest["names"] + 1):
+            page.mouse.move(0, 0)
+            page.wait_for_timeout(260)
+            page.hover(f'.clusters-map__spot[data-cluster="{n}"] .clusters-map__tag')
+            found = page.evaluate(CLUSTERS_OVERVIEW_OPEN, n)
+            problems = [name for name, ok in (("not open", found["open"] and found["expanded"] == "true"), ("outside", found["inside"]),
+                        ("columns not level", found["level"] <= 1), ("text under 15 px", found["text"] >= 15),
+                        ("targets under 44 px", found["target"] >= 44), ("another panel open", not found["others"])) if not ok]
+            if problems:
+                bad.append(f"{n}: {', '.join(problems)}")
+        expect(not bad, f"at {width} px each cluster's panel opens inside the drawing, level, 15 px+, 44 px targets" + listed(bad))
+        if width == CLUSTERS_MAP_BREAKPOINT:
+            page.set_viewport_size({"width": width - 1, "height": 900})
+            expect(page.evaluate(CLUSTERS_MAP_PHONE)["hub"], f"at {width - 1} px the hub and list replace the overview")
+        if width == 1440:
+            page.mouse.move(0, 0)
+            page.click(".clusters-map__enlarge")
+            page.wait_for_timeout(200)
+            found = page.evaluate(CLUSTERS_MAP_LAYOUT)
+            expect(not found.get("missing"), "Open full size shows the full map")
+            if not found.get("missing"):
+                print(f"  full map: {found['labels']} cluster labels, {found['pills']} sub-cluster pills; fonts loaded: {found['fonts']}")
+                expect(not found["overflow"], "text fits its pill or label" + listed(found["overflow"]))
+                expect(not found["overlaps"], "no pill or label overlaps another" + listed(found["overlaps"]))
+                expect(not found["crossings"], "no line runs through a pill or label" + listed(found["crossings"]))
+                expect(found["listed"][0] > 0 and [found["labels"], found["pills"]] == found["listed"] == [rest["names"], rest["links"]],
+                       f"the overview and full map have every cluster and sub-cluster in the list ({found['listed']})")
+        page.context.close()
     page = new_page(browser, 390)
     page.goto(base + "clusters/", wait_until="load")
     phone = page.evaluate(CLUSTERS_MAP_PHONE)
-    expect(not phone["frame"] and phone["hub"], "at 390 px the hub shows instead of the full drawing")
+    expect(not phone["frame"] and phone["hub"], "at 390 px the hub shows instead of the drawing")
     expect(phone["clusters"] > 0 and phone["chips"] == phone["clusters"],
-           f"at 390 px every cluster has a label ({phone['chips']} of {phone['clusters']})")
+           f"at 390 px every cluster is linked in the list of clusters ({phone['chips']} of {phone['clusters']})")
     page.context.close()
 
 

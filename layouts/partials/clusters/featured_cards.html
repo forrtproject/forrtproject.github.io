@@ -20,14 +20,10 @@
          data-specificity="{{ cond (eq .specificity "Narrow") "narrow" "broad" }}"
          {{ if eq .specificity "Narrow" }}style="display:none;"{{ end }}>
       <div class="fr-resource">
-        <div class="fr-tags">
-          {{ if .focus }}<span class="tag tag-focus">{{ .focus }}</span>{{ end }}
-          {{ if .resource_type }}<span class="tag tag-type">{{ .resource_type }}</span>{{ end }}
-        </div>
-        <div class="fr-title">{{ partial "clusters/rich_text.html" .title }}</div>
+        {{ partial "clusters/card_head.html" (dict "focus" .focus "type" .resource_type "title" .title "doi" .doi "cls" "fr") }}
         <div class="fr-summary">{{ .summary }}</div>
         <div class="fr-actions">
-          <button class="fr-ref-trigger" data-doi="{{ .doi }}">
+          <button type="button" class="fr-ref-trigger" data-doi="{{ .doi }}" aria-haspopup="dialog" aria-label="Reference for {{ .short_ref }}">
             <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="12" height="12" rx="2"/><path d="M5 5h6M5 8h6M5 11h3"/></svg>
             {{ .short_ref }}
           </button>
@@ -89,18 +85,12 @@
          data-specificity="{{ cond (eq .specificity "Narrow") "narrow" "broad" }}"
          {{ if eq .specificity "Narrow" }}style="display:none;"{{ end }}>
       <div class="fc-body">
-        <div class="fc-top-row">
-          <div class="fc-tags">
-            {{ if .focus }}<span class="tag tag-focus">{{ .focus }}</span>{{ end }}
-            {{ if .resource_type }}<span class="tag tag-type">{{ .resource_type }}</span>{{ end }}
-          </div>
-          <div class="fc-title">{{ partial "clusters/rich_text.html" .title }}</div>
-        </div>
+        {{ partial "clusters/card_head.html" (dict "focus" .focus "type" .resource_type "title" .title "doi" .doi "cls" "fc") }}
         {{ if .summary }}
         <div class="fc-summary">{{ .summary }}</div>
         {{ end }}
         <div class="fc-actions">
-          <button class="fr-ref-trigger" data-doi="{{ .doi }}">
+          <button type="button" class="fr-ref-trigger" data-doi="{{ .doi }}" aria-haspopup="dialog" aria-label="Reference for {{ .short_ref }}">
             <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="12" height="12" rx="2"/><path d="M5 5h6M5 8h6M5 11h3"/></svg>
             {{ .short_ref }}
           </button>
