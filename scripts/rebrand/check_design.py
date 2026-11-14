@@ -679,7 +679,8 @@ CLUSTERS_OVERVIEW_OPEN = """(n) => {
   const firsts = Object.values(tops);
   return {open: spot.classList.contains('is-open') && !panel.inert && getComputedStyle(panel).visibility === 'visible',
     expanded: spot.querySelector('.clusters-map__tag').getAttribute('aria-expanded'),
-    inside: r.left >= s.left - 0.5 && r.top >= s.top - 0.5 && r.right <= s.right + 0.5 && r.bottom <= s.bottom + 0.5,
+    // The drawing may grow below itself (its bottom margin) while a panel is open.
+    inside: r.left >= s.left - 0.5 && r.top >= s.top - 0.5 && r.right <= s.right + 0.5 && r.bottom <= s.bottom + (parseFloat(stage.style.marginBottom) || 0) + 0.5,
     columns: firsts.length, level: Math.max(...firsts) - Math.min(...firsts),
     text: Math.min(...links.map((a) => parseFloat(getComputedStyle(a).fontSize))),
     target: Math.min(...links.map((a) => a.getBoundingClientRect().height)),

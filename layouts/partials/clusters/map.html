@@ -342,6 +342,8 @@
     for (var cols = n >= 10 ? 2 : 1; cols <= Math.min(3, n); cols++) {
       ul.style.setProperty('--cols', cols); ul.style.setProperty('--rows', Math.ceil(n / cols));
       var pw = panel.offsetWidth, ph = panel.offsetHeight, rw = pw / 2 + m, sx = 1;
+      /* A panel wider than the drawing is no option, beyond the fewest columns allowed. */
+      if (pw > W && cols > (n >= 10 ? 2 : 1)) continue;
       var R = { x: hx - pw / 2 - m, y: hy - ph / 2 - m, w: pw + 2 * m, h: ph + 2 * m };
       /* Names level with the panel spread sideways as far as the spare width allows. */
       names.forEach(function (l) {
@@ -375,7 +377,7 @@
     var shift = Math.ceil(-best.top);
     stage.style.marginBottom = best.bottom + shift > H ? Math.ceil(best.bottom + shift - H + 8) + 'px' : '';
     stage.querySelector('.clusters-map__ring').style.translate = shift ? '0 ' + shift + 'px' : '';
-    panel.style.left = Math.round(hx - best.pw / 2) + 'px';
+    panel.style.left = Math.round(Math.max(0, Math.min(W - best.pw, hx - best.pw / 2))) + 'px';
     panel.style.top = Math.round(hy + shift - best.ph / 2) + 'px';
     best.pos.forEach(function (q) {
       var l = q.l, tx = Math.round(q.x - l.b.x), ty = Math.round(q.y - l.b.y + shift);
