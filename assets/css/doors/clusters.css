@@ -1003,19 +1003,19 @@
 .clusters-map__panel[data-side="left"] { transform: translateX(6px); }
 .clusters-map__panel[data-side="right"] { transform: translateX(-6px); }
 .clusters-map__spot.is-open .clusters-map__panel { visibility: visible; opacity: 1; transform: none; transition: opacity 0.2s, transform 0.2s, visibility 0s; z-index: 4; }
-/* Columns filled top to bottom, each starting at the panel's top. */
+/* Columns filled top to bottom, each starting at the panel's top and stacking its own names (no shared rows). */
 .clusters-map__panel ul {
-  display: grid; grid-auto-flow: column; grid-template-columns: repeat(var(--cols), 250px);
-  grid-template-rows: repeat(var(--rows), auto); align-items: start; gap: 4px 16px; margin: 0; padding: 0; list-style: none;
+  column-count: var(--cols); column-gap: 16px; width: calc(var(--cols) * 250px + (var(--cols) - 1) * 16px);
+  margin: 0; padding: 0; list-style: none;
 }
-.clusters-map__panel li { margin: 0; }
+.clusters-map__panel li { margin: 0 0 4px; break-inside: avoid; }
 .clusters-map__panel a {
   display: flex; align-items: center; min-height: 44px; padding: 4px 0; box-sizing: border-box;
   font: 400 16px/1.3 var(--text); color: var(--link); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px;
 }
 .clusters-map__panel a:hover { color: var(--ink); }
 /* With a mouse the rows sit closer; touch keeps 44 px targets. The panel never outgrows the window. */
-@media (pointer: fine) { .clusters-map__panel a { min-height: 32px; padding: 3px 0; } .clusters-map__panel ul { row-gap: 2px; } }
+@media (pointer: fine) { .clusters-map__panel a { min-height: 32px; padding: 3px 0; } .clusters-map__panel li { margin-bottom: 2px; } }
 .clusters-map__panel { max-height: calc(100vh - 120px); overflow-y: auto; }
 @media (prefers-reduced-motion: reduce) {
   .clusters-map__stage, .clusters-map__ring, .clusters-map__ring .clusters-map__line, .clusters-map__panel, .clusters-map__spot.is-open .clusters-map__panel, .clusters-map__tag, .clusters-map__cue::after, .clusters-map__ring .clusters-map__ray { transition: none; transform: none; }

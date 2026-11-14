@@ -313,16 +313,16 @@
   var stage = map.querySelector('.clusters-map__stage');
   var spots = [].slice.call(map.querySelectorAll('.clusters-map__spot'));
   var still = window.matchMedia('(prefers-reduced-motion: reduce)');
-  var open = null, timer = null, touched = false, preview = null, calm = 0, settleCheck = null, pending = null;
+  var open = null, timer = null, touched = false, preview = null, calm = 0, settleCheck = null, pending = null, told = null;
   var cssD = window.CSS && CSS.supports && CSS.supports('d', 'path("M0 0")');
   var ow = parseFloat(getComputedStyle(stage).getPropertyValue('--ow')), hub = stage.getAttribute('data-hub').split(' ').map(Number);
 
   function box(el) { return { x: el.offsetLeft, y: el.offsetTop, w: el.offsetWidth, h: el.offsetHeight }; }
   function layout(spot) {
-    /* The open cluster's panel fills the middle of the wheel, and all the names move straight out from the
-       wheel's centre, together, just far enough to clear it: sideways into the page's spare width first, then
-       up and down, the drawing growing below itself while the panel is open. The panel takes the number of
-       columns that needs the least room. The names keep their order round the wheel and their lines. */
+    /* The open cluster's panel fills the middle of the wheel, and the names in its way move just far enough
+       to clear it: sideways into the page's spare width first, then straight up or down, the drawing growing
+       below itself while the panel is open. The panel takes the number of columns that needs the least room.
+       The names keep their order round the wheel and their lines. */
     var W = stage.clientWidth, H = stage.clientHeight, k = W / ow, m = 16;
     var side = Math.max(0, (stage.parentNode.clientWidth - W) / 2);
     var hx = hub[0] * k, hy = hub[1] * k;
@@ -337,39 +337,48 @@
       sxMax = Math.min(sxMax, l.dx < 0 ? (hx + side - l.b.w / 2) / -l.dx : (W + side - hx - l.b.w / 2) / l.dx);
     });
     var best = null;
-    for (var cols = 1; cols <= Math.min(3, n); cols++) {
+    var hits = function (a, b, g) { return a.x < b.x + b.w + g && b.x < a.x + a.w + g && a.y < b.y + b.h + g && b.y < a.y + a.h + g; };
+    /* Ten or more sub-clusters always take at least two columns. */
+    for (var cols = n >= 10 ? 2 : 1; cols <= Math.min(3, n); cols++) {
       ul.style.setProperty('--cols', cols); ul.style.setProperty('--rows', Math.ceil(n / cols));
-      var pw = panel.offsetWidth, ph = panel.offsetHeight, rw = pw / 2 + m, rh = ph / 2 + m, sx = 1, sy = 1, ok = true;
-      /* Names level with the panel move sideways as far as the spare width allows; whatever still overlaps
-         it then clears it up or down. */
+      var pw = panel.offsetWidth, ph = panel.offsetHeight, rw = pw / 2 + m, sx = 1;
+      var R = { x: hx - pw / 2 - m, y: hy - ph / 2 - m, w: pw + 2 * m, h: ph + 2 * m };
+      /* Names level with the panel spread sideways as far as the spare width allows. */
       names.forEach(function (l) {
-        if (Math.abs(l.dy) >= rh || Math.abs(l.dx) < 1) return;
+        if (Math.abs(l.dy) >= R.h / 2 || Math.abs(l.dx) < 1) return;
         sx = Math.max(sx, (rw + l.b.w / 2) / Math.abs(l.dx));
       });
       sx = Math.min(sx, sxMax);
-      names.forEach(function (l) {
-        if (Math.abs(l.dx) * sx - l.b.w / 2 >= rw) return;
-        if (Math.abs(l.dy) < 1) { ok = false; return; }
-        sy = Math.max(sy, (rh + l.b.h / 2) / Math.abs(l.dy));
+      /* Then any name still in the way moves straight up (above the centre) or down (below it), just clear
+         of the panel, pushing the names beyond it along: nearest the centre first, so the order is kept. */
+      var pos = names.map(function (l) { return { l: l, x: l.b.x + l.dx * (sx - 1), y: l.b.y, w: l.b.w, h: l.b.h }; });
+      var placed = [R];
+      [pos.filter(function (q) { return q.l.dy < 0; }), pos.filter(function (q) { return q.l.dy >= 0; })].forEach(function (half, up) {
+        half.sort(function (a, b) { return Math.abs(a.l.dy) - Math.abs(b.l.dy); });
+        half.forEach(function (q) {
+          for (var guard = 0; guard < 30; guard++) {
+            var block = placed.filter(function (o) { return hits(q, o, 12); })[0];
+            if (!block) break;
+            q.y = up === 0 ? block.y - 12 - q.h : block.y + block.h + 12;
+          }
+          placed.push(q);
+        });
       });
+      var top = Math.min(0, Math.min.apply(null, pos.map(function (q) { return q.y; })));
+      var bottom = Math.max(H, Math.max.apply(null, pos.map(function (q) { return q.y + q.h; })));
       /* A panel taller than the window scrolls inside itself; that costs more than the drawing growing, per pixel. */
       var tall = Math.max(0, panel.scrollHeight - (window.innerHeight - 124));
-      var cost = (ok ? 0 : 1e6) + tall * 8 + (sy - 1) * H * 2 + (sx - 1) * W;
-      if (!best || cost < best.cost) best = { cols: cols, sx: sx, sy: sy, cost: cost, pw: pw, ph: ph };
+      var cost = tall * 8 + (bottom - top - H) * 2 + (sx - 1) * W;
+      if (!best || cost < best.cost) best = { cols: cols, pos: pos, top: top, bottom: bottom, cost: cost, pw: pw, ph: ph };
     }
     ul.style.setProperty('--cols', best.cols); ul.style.setProperty('--rows', Math.ceil(n / best.cols));
-    var top = 0, bottom = 0;
-    names.forEach(function (l) {
-      top = Math.min(top, hy + l.dy * best.sy - l.b.h / 2);
-      bottom = Math.max(bottom, hy + l.dy * best.sy + l.b.h / 2);
-    });
-    var shift = Math.ceil(-top);
-    stage.style.marginBottom = bottom + shift > H ? Math.ceil(bottom + shift - H + 8) + 'px' : '';
+    var shift = Math.ceil(-best.top);
+    stage.style.marginBottom = best.bottom + shift > H ? Math.ceil(best.bottom + shift - H + 8) + 'px' : '';
     stage.querySelector('.clusters-map__ring').style.translate = shift ? '0 ' + shift + 'px' : '';
     panel.style.left = Math.round(hx - best.pw / 2) + 'px';
     panel.style.top = Math.round(hy + shift - best.ph / 2) + 'px';
-    names.forEach(function (l) {
-      var tx = Math.round(l.dx * (best.sx - 1)), ty = Math.round(l.dy * (best.sy - 1) + shift);
+    best.pos.forEach(function (q) {
+      var l = q.l, tx = Math.round(q.x - l.b.x), ty = Math.round(q.y - l.b.y + shift);
       l.el.style.translate = tx || ty ? tx + 'px ' + ty + 'px' : '';
       var line = stage.querySelector('.clusters-map__ray[data-cluster="' + l.spot.getAttribute('data-cluster') + '"] .clusters-map__line');
       if (!line) return;
@@ -411,12 +420,13 @@
     spot.querySelector('.clusters-map__tag').setAttribute('aria-expanded', 'true');
     stage.classList.add('is-pointing');
     lightRay(spot.getAttribute('data-cluster'));
+    if (told) told(spot.getAttribute('data-cluster'));
   }
   function hide(spot) {
     spot.classList.remove('is-open');
     spot.querySelector('.clusters-map__panel').inert = true;
     spot.querySelector('.clusters-map__tag').setAttribute('aria-expanded', 'false');
-    if (open === spot) { open = null; stage.classList.remove('is-pointing'); lightRay(null); unlayout(); }
+    if (open === spot) { open = null; stage.classList.remove('is-pointing'); lightRay(null); unlayout(); if (told) told(null); }
   }
   function lightRay(n) {
     stage.querySelectorAll('.clusters-map__ray').forEach(function (g) { g.classList.toggle('is-active', g.getAttribute('data-cluster') === String(n)); });
@@ -491,8 +501,9 @@
     ['pointerdown', 'keydown', 'wheel'].forEach(function (type) { stage.addEventListener(type, interacted, { passive: true }); });
   }
 
-  /* The info line under the drawing: the cluster pointed at or focused in the drawing or in the list of
-     clusters after the figure (.clusters-overview), which also marks it in the drawing. */
+  /* The info line under the drawing describes the open cluster. Pointing at or focusing a cluster in the list
+     after the figure (.clusters-overview) marks it in the drawing; the line stays as it is, since the list
+     already describes it and a line appearing above the list would move it under the pointer. */
   var info = map.querySelector('.clusters-map__info');
   /* The list comes after this script, so the line is set up once the page has been read. */
   document.addEventListener('DOMContentLoaded', function () {
@@ -513,16 +524,12 @@
       about.querySelector('.clusters-map__count').textContent = text(li, '.clusters-overview__count');
     };
     var mark = function (n) { spots.forEach(function (s) { s.classList.toggle('is-lit', s.getAttribute('data-cluster') === String(n)); }); };
-    spots.forEach(function (spot) {
-      var n = spot.getAttribute('data-cluster');
-      spot.addEventListener('pointerenter', function () { tell(n); });
-      spot.addEventListener('pointerleave', function () { tell(null); });
-      spot.addEventListener('focusin', function () { tell(n); });
-      spot.addEventListener('focusout', function (e) { if (!spot.contains(e.relatedTarget)) tell(null); });
-    });
+    /* In the drawing, the line follows the open panel. */
+    told = tell;
+    if (open) tell(open.getAttribute('data-cluster'));
     list.querySelectorAll('li[data-cluster]').forEach(function (li) {
       var n = li.getAttribute('data-cluster'), link = li.querySelector('a');
-      var on = function () { tell(n); mark(n); }, off = function () { tell(null); mark(null); };
+      var on = function () { mark(n); }, off = function () { mark(null); };
       li.addEventListener('mouseenter', on); li.addEventListener('mouseleave', off);
       if (link) { link.addEventListener('focus', on); link.addEventListener('blur', off); }
     });
