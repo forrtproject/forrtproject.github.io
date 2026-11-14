@@ -314,6 +314,7 @@
   var spots = [].slice.call(map.querySelectorAll('.clusters-map__spot'));
   var still = window.matchMedia('(prefers-reduced-motion: reduce)');
   var open = null, timer = null, touched = false, preview = null, calm = 0, settleCheck = null, pending = null;
+  var cssD = window.CSS && CSS.supports && CSS.supports('d', 'path("M0 0")');
   var ow = parseFloat(getComputedStyle(stage).getPropertyValue('--ow')), hub = stage.getAttribute('data-hub').split(' ').map(Number);
 
   function box(el) { return { x: el.offsetLeft, y: el.offsetTop, w: el.offsetWidth, h: el.offsetHeight }; }
@@ -372,18 +373,22 @@
       l.el.style.translate = tx || ty ? tx + 'px ' + ty + 'px' : '';
       var line = stage.querySelector('.clusters-map__ray[data-cluster="' + l.spot.getAttribute('data-cluster') + '"] .clusters-map__line');
       if (!line) return;
-      var start = line.getAttribute('d').match(/^M\s*([\d.]+)[ ,]([\d.]+)/);
+      if (!line.hasAttribute('data-d')) line.setAttribute('data-d', line.getAttribute('d'));
+      var start = line.getAttribute('data-d').match(/^M\s*([\d.]+)[ ,]([\d.]+)/);
       /* End just inside the moved box, at its point nearest the wheel's centre, as the drawing does
          (in drawing units, inside the ring's own shift; hub[3], hub[4]: the drawing's origin). */
       var x = (l.b.x + tx) / k, y = (l.b.y + ty - shift) / k, w = l.b.w / k, h = l.b.h / k;
       var ex = Math.max(x + 12, Math.min(x + w - 12, hub[0])), ey = Math.max(y + 12, Math.min(y + h - 12, hub[1]));
-      /* Set as the CSS d property, so the line's end moves with its name (where d can be animated). */
-      line.style.d = 'path("M' + start[1] + ' ' + start[2] + 'L' + (ex + hub[3]).toFixed(1) + ' ' + (ey + hub[4]).toFixed(1) + '")';
+      /* As the CSS d property where supported, so the line's end moves with its name; else the attribute. */
+      var d = 'M' + start[1] + ' ' + start[2] + 'L' + (ex + hub[3]).toFixed(1) + ' ' + (ey + hub[4]).toFixed(1);
+      if (cssD) line.style.d = 'path("' + d + '")'; else line.setAttribute('d', d);
     });
   }
   function unlayout() {
     spots.forEach(function (s) { s.querySelector('.clusters-map__tag').style.translate = ''; });
-    stage.querySelectorAll('.clusters-map__line').forEach(function (l) { if (l.style.d) l.style.d = 'path("' + l.getAttribute('d') + '")'; });
+    stage.querySelectorAll('.clusters-map__line[data-d]').forEach(function (l) {
+      if (cssD) l.style.d = 'path("' + l.getAttribute('data-d') + '")'; else l.setAttribute('d', l.getAttribute('data-d'));
+    });
     stage.querySelector('.clusters-map__ring').style.translate = '';
     stage.style.marginBottom = '';
   }
