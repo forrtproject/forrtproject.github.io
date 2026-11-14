@@ -3,7 +3,7 @@
     "en_title": "ORCID (Open Researcher and Contributor ID)",
     "title": "Açık Araştırmacı ve Katkı Sağlayıcı Kimliği (ORCID; Open Researcher and Contributor ID)",
     "sort_key": "aczizk arasztizrmaciz ve katkiz sagzlayizciz kimligzi (orcid; open researcher and contributor id)",
-    "definition": "Araştırmacılar ve akademisyenler için kalıcı ve özgün tanımlayıcılar (ORCID kimlikler) sağlayan bir kuruluş olup, kullanıcıların dijital araştırma dokümanlarını ve diğer katkılarını ORCID kayıtlarıyla ilişkilendirmelerine olanak tanır. Bu, akademik iletişimde isim benzerliğinden kaynaklanan sorunları önler. ORCID kimlikleri, araştırmacılar ile akademik çalışmalarını birbirine eşleştiren özgün ve kalıcı tanımlayıcılardır. https://orcid.org/register adresinden ORCID kimlik için kayıt olmak ücretsizdir.",
+    "definition": "Araştırmacılar ve akademisyenler için kalıcı ve özgün tanımlayıcılar (ORCID kimlikler) sağlayan bir kuruluş olup, kullanıcıların dijital araştırma dokümanlarını ve diğer katkılarını ORCID kayıtlarıyla ilişkilendirmelerine olanak tanır. Bu, akademik iletişimde isim benzerliğinden kaynaklanan sorunları önler. ORCID kimlikleri, araştırmacılar ile akademik çalışmalarını birbirine eşleştiren özgün ve kalıcı tanımlayıcılardır. [orcid.org/register](https://orcid.org/register) adresinden ORCID kimlik için kayıt olmak ücretsizdir.",
     "related_terms": [
         "Authorship",
         "DOI (digital object identifier)",
@@ -34,5 +34,5 @@
     "translation_reviewed_by": [
         "Nihan Selin Soylu-Konak"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-12"
 }

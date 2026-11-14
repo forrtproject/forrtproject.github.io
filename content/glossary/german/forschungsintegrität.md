@@ -16,7 +16,7 @@
         "Trustworthy research"
     ],
     "references": [
-        "ALLEA - All European Academies. (2023). <i>The European Code of Conduct for Research Integrity</i> (Revised Edition 2023). ALLEA - All European Academies. https://doi.org/10.26356/ECoC",
+        "ALLEA - All European Academies. (2017). <i>The European Code of Conduct for Research Integrity</i> (Revised Edition). ALLEA - All European Academies. https://allea.org/wp-content/uploads/2017/05/ALLEA-European-Code-of-Conduct-for-Research-Integrity-2017.pdf",
         "Medin, D. L. (2012). Rigor without rigor mortis: The APS Board discusses research integrity. <i>APS Observer</i>, <i>25</i>(5–9), 27–28. https://www.psychologicalscience.org/observer/scientific-rigor",
         "Moher, D., Bouter, L., Kleinert, S., Glasziou, P., Sham, M. H., Barbour, V., & Dirnagl, U. (2020). The Hong Kong Principles for assessing researchers: Fostering research integrity. <i>PLoS Biology</i>, <i>18</i>(7), e3000737. https://doi.org/10.1371/journal.pbio.3000737"
     ],
@@ -41,5 +41,5 @@
         "Susanne Vogel",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-12"
 }

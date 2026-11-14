@@ -6,8 +6,8 @@
     "definition": "Die Organization for Human Brain Mapping (OHBM; dt. Organisation für menschliche Hirnbildgebung) hat einen Leitfaden für optimale Verfahren (best practices) bei der Erhebung und Analyse von Bildgebungsdaten, der Veröffentlichung und der gemeinsamen Nutzung von Daten und Analysecodes entwickelt. Er enthält acht Elemente, die beim Verfassen oder Einreichen eines Manuskripts berücksichtigt werden sollten, um die Veröffentlichung der Methodik und die daraus resultierenden Bildgebungsdaten zu verbessern und so die Transparenz und Reproduzierbarkeit zu optimieren. **Alternative definition:** (if applicable) Checklist for data analysis and sharing",
     "related_terms": [],
     "references": [
-        "Nichols, T. E., Das, S., Eickhoff, S. B., Evans, A. C., Glatard, T., Hanke, M., & others. (2017). Best practices in data analysis and sharing in neuroimaging using MRI. <i>Nature Neuroscience</i>, <i>20</i>(3), 299–303. https://doi.org/10.1038/nn.4500",
-        "Pernet, C., Garrido, M. I., Gramfort, A., Maurits, N., Michel, C. M., Pang, E., & others. (2020). Issues and recommendations from the OHBM COBIDAS MEEG committee for reproducible EEG and MEG research. <i>Nature Neuroscience</i>, <i>23</i>(12), 1473–1483. https://doi.org/10.1038/s41593-020-00709-0"
+        "Nichols, T. E., Das, S., Eickhoff, S. B., Evans, A. C., Glatard, T., Hanke, M., et al. (2017). Best practices in data analysis and sharing in neuroimaging using MRI. <i>Nature Neuroscience</i>, <i>20</i>(3), 299–303. https://doi.org/10.1038/nn.4500",
+        "Pernet, C., Garrido, M. I., Gramfort, A., Maurits, N., Michel, C. M., Pang, E., et al. (2020). Issues and recommendations from the OHBM COBIDAS MEEG committee for reproducible EEG and MEG research. <i>Nature Neuroscience</i>, <i>23</i>(12), 1473–1483. https://doi.org/10.1038/s41593-020-00709-0"
     ],
     "drafted_by": [
         "Yu-Fang Yang"
@@ -29,5 +29,5 @@
         "Helena Hartmann",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-12"
 }

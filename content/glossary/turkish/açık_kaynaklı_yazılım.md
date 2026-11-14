@@ -3,7 +3,7 @@
     "en_title": "Open Source software",
     "title": "Açık Kaynaklı Yazılım [Open Source software]",
     "sort_key": "aczizk kaynakliz yazizlizm [open source software]",
-    "definition": "Kaynak kodunun, başkalarının yazılımı kullanmasına, değiştirmesine ve yazılımı herhangi bir kişiye ve herhangi bir amaçla dağıtmasına izin veren bir lisans altında yayımlandığı bir bilgisayar yazılımı türüdür. Açık kaynak sadece açık erişimden ibaret değildir; açık kaynaklı yazılımların dağıtım koşulları 10 özel kritere uygun olmalıdır (bkz: [https://opensource.org/osd](https://opensource.org/osd)).",
+    "definition": "Kaynak kodunun, başkalarının yazılımı kullanmasına, değiştirmesine ve yazılımı herhangi bir kişiye ve herhangi bir amaçla dağıtmasına izin veren bir lisans altında yayımlandığı bir bilgisayar yazılımı türüdür. Açık kaynak sadece açık erişimden ibaret değildir; açık kaynaklı yazılımların dağıtım koşulları 10 özel kritere uygun olmalıdır (bkz: Open Source Initiative, n.d.).",
     "related_terms": [
         "Github",
         "Open Access",
@@ -37,5 +37,5 @@
     "translation_reviewed_by": [
         "Nihan Selin Soylu-Konak"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-12"
 }

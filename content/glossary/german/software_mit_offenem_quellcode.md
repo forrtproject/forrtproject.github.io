@@ -3,7 +3,7 @@
     "en_title": "Open Source software",
     "title": "Software mit offenem Quellcode [Open Source software]",
     "sort_key": "software mit offenem quellcode [open source software]",
-    "definition": "Eine Art von Computersoftware, bei der der Quellcode unter einer Lizenz veröffentlicht wird, die es anderen erlaubt, die Software zu nutzen, zu verändern und an jede Person und für jeglichen Zweck weiterzugeben. Open Source ist mehr als nur offen zugänglich: Die Vertriebsbedingungen von Open-Source-Software müssen 10 spezifische Kriterien erfüllen (siehe: [https://opensource.org/osd](https://opensource.org/osd)).",
+    "definition": "Eine Art von Computersoftware, bei der der Quellcode unter einer Lizenz veröffentlicht wird, die es anderen erlaubt, die Software zu nutzen, zu verändern und an jede Person und für jeglichen Zweck weiterzugeben. Open Source ist mehr als nur offen zugänglich: Die Vertriebsbedingungen von Open-Source-Software müssen 10 spezifische Kriterien erfüllen (siehe: Open Source Initiative, n.d.).",
     "related_terms": [
         "Github",
         "Open Access",
@@ -38,5 +38,5 @@
         "Susanne Vogel",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-12"
 }

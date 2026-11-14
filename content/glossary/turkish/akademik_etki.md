@@ -3,7 +3,7 @@
     "en_title": "Academic Impact",
     "title": "Akademik Etki [Academic Impact]",
     "sort_key": "akademik etki [academic impact]",
-    "definition": "Bir araştırma çıktısının (örneğin, yayımlanmış bir makale), disiplinler arasında ve disiplin içinde, bilimsel teori, yöntem ve uygulamanın anlaşılmasını değiştirme ve geliştirme konusundaki katkısıdır. Etki, ayrıca bir çıktı veya araştırma programının akademi dışındaki toplumsal ve ekonomik etki gibi değişimi ne ölçüde etkilediğini de ifade edebilir.(krş. ESRC: [https://www.ukri.org/councils/esrc/impact-toolkit-for-economic-and-social-sciences/](https://www.ukri.org/councils/esrc/impact-toolkit-for-economic-and-social-sciences/)).",
+    "definition": "Bir araştırma çıktısının (örneğin, yayımlanmış bir makale), disiplinler arasında ve disiplin içinde, bilimsel teori, yöntem ve uygulamanın anlaşılmasını değiştirme ve geliştirme konusundaki katkısıdır. Etki, ayrıca bir çıktı veya araştırma programının akademi dışındaki toplumsal ve ekonomik etki gibi değişimi ne ölçüde etkilediğini de ifade edebilir.(krş. Economic and Social Research Council, n.d.).",
     "related_terms": [
         "Beneficiaries",
         "DORA",
@@ -11,7 +11,7 @@
         "REF"
     ],
     "references": [
-        "Anon. (2021). <i>What is impact?</i>. Retrieved from https://esrc.ukri.org/research/impact-toolkit/what-is-impact/"
+        "Economic and Social Research Council. (n.d.). <i>Defining impact</i>. UK Research and Innovation. https://www.ukri.org/councils/esrc/impact-toolkit-for-economic-and-social-sciences/defining-impact/"
     ],
     "drafted_by": [
         "Connor Keating"
@@ -33,5 +33,5 @@
     "translation_reviewed_by": [
         "Elif Baştan"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-12"
 }

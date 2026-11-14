@@ -3,7 +3,7 @@
     "en_title": "Society for Open, Reliable, and Transparent Ecology and Evolutionary biology (SORTEE)",
     "title": "SORTEE [Society for Open, Reliable, and Transparent Ecology and Evolutionary biology (SORTEE)]",
     "sort_key": "sortee [society for open, reliable, and transparent ecology and evolutionary biology (sortee)]",
-    "definition": "SORTEE ([https://www.sortee.org/](https://www.sortee.org/)) ist eine internationale Gesellschaft mit dem Ziel, die Transparenz und Zuverlässigkeit von Forschungsergebnissen in den Bereichen Ökologie, Evolution und verwandten Disziplinen durch kulturelle und institutionelle Veränderungen zu verbessern. SORTEE wurde im Dezember 2020 gegründet und richtet sich an alle, die an der Verbesserung der Forschung in diesen Disziplinen interessiert sind, unabhängig von ihrer Erfahrung. Die Gesellschaft ist in Bezug auf Umfang, Mitgliedschaft und Ziele international. SORTEE umfasst über 600 Mitglieder (Stand Mai, 2021).",
+    "definition": "SORTEE ([sortee.org](https://www.sortee.org/)) ist eine internationale Gesellschaft mit dem Ziel, die Transparenz und Zuverlässigkeit von Forschungsergebnissen in den Bereichen Ökologie, Evolution und verwandten Disziplinen durch kulturelle und institutionelle Veränderungen zu verbessern. SORTEE wurde im Dezember 2020 gegründet und richtet sich an alle, die an der Verbesserung der Forschung in diesen Disziplinen interessiert sind, unabhängig von ihrer Erfahrung. Die Gesellschaft ist in Bezug auf Umfang, Mitgliedschaft und Ziele international. SORTEE umfasst über 600 Mitglieder (Stand Mai, 2021).",
     "related_terms": [
         "Society for the Improvement of Psychological Science (SIPS)"
     ],
@@ -30,5 +30,5 @@
         "Susanne Vogel",
         "Joris Frese"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-12"
 }
