@@ -201,9 +201,9 @@ You can find a list of all effects we are working on [here](https://docs.google.
 * Replication effect size: All effect sizes are located in O’Donnell et al. 2018: Aczel: PD = -1.35%. Aveyard: PD = -3.99%. Baskin: PD = 4.08%. Bialobrzeska: PD = -.12%. Boot: PD = -4.99%.  Braithwaite: PD = 4.01%. Chartier: PD = 3.23%. DiDonato: PD = 3.14%. Finnigan: PD: 2.89%. Karpinski: PD = 1.38%. Keller: PD = .17%. Klein: PD =.88%.  Koppel: PD = -.20%. McLatchie: PD = -2.16%.  Newell: PD = 1.66%. O’Donnell: PD = 1.58%. Phillipp: PD = 43%. Ropovik: PD = -.48%. Saunders: PD = -1.87%. Schulte-Mecklenbeck: PD = 4.24%. Shanks: PD = .11%. Steele: PD = -.58%. Steffens: PD = -.84%. Susa: PD = -.63%. Tamayo: PD = 1.41%.  Meta-analytic estimate: PD = 0.02%. 
 {{< /spoiler >}}
 
-* **Moral priming (cleanliness)**. Participants exposed to physical cleanliness were shown to reduce the severity of their moral judgments. Well-powered direct replications by Johnson et al. found no effect; Huang (2014) found a small effect only when participants were told to do the priming task quickly, with little effort. 
+* **Moral priming (cleanliness)**. Participants exposed to physical cleanliness were shown to reduce the severity of their moral judgments. Well-powered direct replications by Johnson et al. found no effect. Huang (2014) also found no overall effect of cleanliness priming; it reported an effect only when participants were told to do the priming task quickly, with little effort. 
 {{< spoiler text="Statistics" >}}
-* Status: mixed
+* Status: not replicated
 * Original paper: [With a Clean Conscience: Cleanliness Reduces the Severity of Moral Judgments](https://doi.org/10.1111/j.1467-9280.2008.02227.x), Schnall, Benton, and  Harvey, 2008; 2 experiments with Study 1: n = 40, Study 2: n = 44. [citations=645 (GS November 2021)].
 * Critiques: [Johnson et al.](https://econtent.hogrefe.com/doi/full/10.1027/1864-9335/a000186)<span style="text-decoration:underline;"> </span> 2014, [Study 1: n = 208, Study 2: n = 126. citations=128(GS November 2021)]. [Huang 2014](https://doi.org/10.3389/fpsyg.2014.01276) [Study 2: n = 440; Study 2a, a direct replication of Study 2: n = 436].
 * Original effect size:  Study 1: d = -0.60, 95% CI [-1.23, 0.04]; Study 2: d = -0.85, 95% CI [-1.47, -0.22]
@@ -1946,15 +1946,6 @@ You can find a list of all effects we are working on [here](https://docs.google.
 * Replication effect size: de Koning et al.: _d_ = .07. Rommers et al.: Experiment 1: _d_ = .14, Experiment 2: _d_ = .12, Experiment 3: _d_ = .14 [calculated using this [conversion](https://haiyangjin.github.io/2020/05/eta2d/#conversion-between-cohens-d-and-partial-eta-squared)]. Zwaan and Pecher: Experiment 1a: _d_ = .10; Experiment 1b: _d_ = .09.​
 {{< /spoiler >}}
 
-* **Mental simulation - match advantage object distance**. Readers verify small pictures more quickly when they are far from the protagonist, in contrast to big pictures, while big pictures are verified more quickly when closer to the protagonist, as opposed to smaller pictures.
-{{< spoiler text="Statistics" >}}
-* Status: NA (no direct test)
-* Original paper: ‘[Language comprehenders represent object distance both visually and auditorily](https://www.cambridge.org/core/services/aop-cambridge-core/content/view/9320F4D38E43C3EABFAFAAC50259FF40/S1866980800000880a.pdf/div-class-title-language-comprehenders-represent-object-distance-both-visually-and-auditorily-div.pdf)’, Winter and Bergen 2012; experimental design,  Experiment 1: n =22. [citation=54(GS, November 2022)]​.
-* Critiques: [Vukovic and Williams 2014](https://doi.org/10.1016/j.actpsy.2013.11.002) [conceptual test with Dutch–English bilinguals hearing interlingual homophones, n=20, citations=36(GS, November 2022)]. ​
-* Original effect size: Experiment 1: _η<sub>p<sup>2</sup></sub>_= 0.230.
-* Replication effect size: Vukovic and Williams: _η<sub>p<sup>2</sup></sub>_=0.44. Participants were slower to reject pictures whose size matched the distance implied by a task-irrelevant meaning of the homophone. The authors read this interference as evidence of automatic perceptual simulation; it is not a reversal of the original match advantage.
-{{< /spoiler >}}
-
 * **Mental simulation - match advantage object number**. Verification response was faster for concept-object match when there was numerical congruence (compared with incongruence) between the number word and quantity.
 {{< spoiler text="Statistics" >}}
 * Status: mixed 
@@ -3568,7 +3559,7 @@ Critiques: [Gelman and Loken 2013](http://www.stat.columbia.edu/~gelman/research
 * Status: not replicated
 * Original paper: ‘[Influence of Life Stress on Depression: Moderation by a Polymorphism in the 5-HTT Gene](https://www.science.org/doi/10.1126/science.1083968), Caspi et al. 2003; quasi-experimental analysis of how genotype (3 levels: s/s, s/l, l/l) and number of stressful life events (5 levels: 0, 1, 2, 3, 4+) across various categories (employment, financial, housing, health, relationship) that occurred after 21st birthday and before 26th birthday interacted to produce depression (measured by self-reported depression symptoms, probability of major depression episode, probability of suicide ideation/attempt, and informant reports of depression), 847 26-year-old participants from the Dunedin Study (a longitudinal study of 1037 non-Maori babies born between 1972-04-01 and 1972-03-31 in New Zealand). [citations = 6223 ([Dimensions, June 2022](https://app.dimensions.ai/details/publication/pub.1051420748))]​.
 * Critiques: [Culverhouse et al. 2017](https://www.nature.com/articles/mp201744) [n = 28,252 (21 studies), meta-analysis, citations = 173 ([Crossref](https://doi.org/10.1038/mp.2017.44), June 2022)]. [No good evidence](https://slatestarcodex.com/2019/05/07/5-httlpr-a-pointed-review/) that 5-HTTLPR is strongly linked to depression, insomnia, PTSD, anxiety, and more. Context on other candidate genes (these do not test the 5-HTTLPR × stress effect): [Chabris et al. 2012](https://pubmed.ncbi.nlm.nih.gov/23012269/) [n=samples of 5,571, 1,759, and 2,441 individuals, citations=347(GS, April 2022)] for intelligence; [Farrell et al. 2015](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4414705/pdf/nihms653267.pdf) [n=25 historical candidate genes for schizophrenia, citations=345(GS, April 2022)] for schizophrenia.
-* Original effect size: N/A (unreported by Caspi; however, an OR for Caspi’s data was calculated by [Risch et al. 2009](https://jamanetwork.com/journals/jama/article-abstract/184107) and displayed in Figure 2C approximately 1.3). 
+* Original effect size: no standardised effect size reported. Caspi et al. (Fig. 1) report unstandardised genotype × life events coefficients: self-reported depression symptoms, _b_ = −0.89, _SE_ = 0.37, _p_ = .02; major depressive episode, _b_ = −0.19, _SE_ = 0.10, _p_ = .056; suicide ideation or attempt, _b_ = −0.39, _SE_ = 0.20, _p_ = .051; informant reports, _b_ = −0.11, _SE_ = 0.04, _p_ &lt; .01. [Risch et al. 2009](https://jamanetwork.com/journals/jama/article-abstract/184107) calculated an odds ratio of approximately 1.3 from Caspi's data (Figure 2C). 
 * Replication effect size: Culverhouse et al.: OR = 1.05 [0.94 - 1.16].
 {{< /spoiler >}}
 
