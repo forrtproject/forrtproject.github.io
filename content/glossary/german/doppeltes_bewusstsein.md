@@ -11,7 +11,9 @@
     "references": [
         "Albayrak, N., & Okoroji, C. (2019). Facing the challenges of postgraduate study as a minority student. <i>A Guide for Psychology Postgraduates</i>, 63.",
         "Du Bois, W. E. B. (1968). <i>The souls of black folk; essays and sketches</i>. Johnson Reprint Corp.",
-        "Gilroy, P. (1993). <i>The black Atlantic: Modernity and double consciousness</i>. Harvard University Press."
+        "Gilroy, P. (1993). <i>The black Atlantic: Modernity and double consciousness</i>. Harvard University Press.",
+        "Rubin, M. (2021). Explaining the association between subjective social status and mental health among university students using an impact ratings approach. <i>SN Social Sciences</i>, <i>1</i>(1), 1–21. https://doi.org/10.1007/s43545-020-00031-3",
+        "Rubin, M., Evans, O., & McGuffog, R. (2019). Social class differences in social integration at university: Implications for academic outcomes and mental health. In J. Jetten & K. Peters (Eds.), <i>The social psychology of inequality</i> (pp. 87–102). Springer. https://doi.org/10.1007/978-3-030-28856-3_6"
     ],
     "drafted_by": [
         "Nihan Albayrak-Aydemir"
@@ -33,5 +35,5 @@
         "Susanne Vogel",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-12"
 }

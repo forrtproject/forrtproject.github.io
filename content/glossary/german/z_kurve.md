@@ -3,7 +3,7 @@
     "en_title": "Z-Curve",
     "title": "Z-Kurve [Z-Curve]",
     "sort_key": "z-kurve [z-curve]",
-    "definition": "Die Berechnung einer z-Kurve ist ein statistischer Ansatz, der hauptsächlich verwendet wird, um die \"geschätzte Replikationsrate\" (Estimated Replication Rate, ERR) und die \"erwartete Entdeckungsrate\" (Expected Discovery Rate, EDR) für eine Reihe von berichteten Studien zu ermitteln. Die Berechnung einer *z*\\-Kurve für eine Sammlung statistisch signifikanter Studien beinhaltet die Umwandlung der berichteten *p*\\-Werte in *z*\\-Werte, die Anpassung eines Finite Mixture Modell an die Verteilung der *z*\\-Werte und die Schätzung der mittleren Teststärke (Power) auf der Grundlage des Modells. Die *z*\\-Kurven-Analyse kann in R mit einem speziellen Paket durchgeführt werden \\- [https://cran.r-project.org/web/packages/zcurve/index.html](https://cran.r-project.org/web/packages/zcurve/index.html).",
+    "definition": "Die Berechnung einer z-Kurve ist ein statistischer Ansatz, der hauptsächlich verwendet wird, um die \"geschätzte Replikationsrate\" (Estimated Replication Rate, ERR) und die \"erwartete Entdeckungsrate\" (Expected Discovery Rate, EDR) für eine Reihe von berichteten Studien zu ermitteln. Die Berechnung einer *z*\\-Kurve für eine Sammlung statistisch signifikanter Studien beinhaltet die Umwandlung der berichteten *p*\\-Werte in *z*\\-Werte, die Anpassung eines Finite Mixture Modell an die Verteilung der *z*\\-Werte und die Schätzung der mittleren Teststärke (Power) auf der Grundlage des Modells. Die *z*\\-Kurven-Analyse kann in R mit einem speziellen Paket durchgeführt werden \\- [doi.org/10.32614/CRAN.package.zcurve](https://doi.org/10.32614/CRAN.package.zcurve).",
     "related_terms": [
         "Altmetrics",
         "File drawer ratio",
@@ -36,5 +36,5 @@
         "Helena Hartmann",
         "Joris Frese"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-12"
 }
