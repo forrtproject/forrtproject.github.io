@@ -438,19 +438,24 @@
 
   spots.forEach(function (spot) {
     var label = spot.querySelector('.clusters-map__tag');
-    var dismissed = false, wasOpen = false;
+    var wasOpen = false;
     /* Pointing at a name opens it at once; only while the names are still sliding (0.25 s) does a name that
        slid under the pointer wait for the pointer to move on it. */
     label.addEventListener('pointermove', function (e) {
-      if (e.pointerType === 'touch' || open === spot) return;
+      if (e.pointerType === 'touch') return;
+      /* The pointer on the name the preview opened keeps it open. */
+      if (open === spot) { if (preview && preview.spot === spot) { clearTimeout(preview.timer); stage.classList.remove('is-preview'); preview = false; } return; }
       interacted();
+      /* After Escape, the name stays shut until the pointer leaves it and comes back. */
+      if (spot.dismissed) return;
       if (open && Date.now() < calm) { pending = spot; return; }
-      dismissed = false; show(spot);
+      show(spot);
     });
-    spot.addEventListener('focusin', function () { interacted(); if (!dismissed) show(spot); });
+    label.addEventListener('pointerleave', function () { spot.dismissed = false; });
+    spot.addEventListener('focusin', function () { interacted(); if (!spot.dismissed) show(spot); });
     spot.addEventListener('focusout', function (e) {
       if (spot.contains(e.relatedTarget)) return;
-      dismissed = false;
+      spot.dismissed = false;
       if (!spot.matches(':hover')) hide(spot);
     });
     label.addEventListener('pointerdown', function (e) { touched = e.pointerType !== 'mouse'; wasOpen = spot.classList.contains('is-open'); });
@@ -461,12 +466,18 @@
     });
     spot.addEventListener('keydown', function (e) {
       if (e.key !== 'Escape' || !spot.classList.contains('is-open')) return;
-      dismissed = true;
+      spot.dismissed = true;
       hide(spot);
       label.focus();
     });
   });
   document.addEventListener('pointerdown', function (e) { if (open && !open.contains(e.target)) hide(open); });
+  /* Escape closes the open panel wherever the focus is; its name then stays shut until the pointer leaves it. */
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape' || !open || open.contains(document.activeElement)) return;
+    open.dismissed = true;
+    hide(open);
+  });
   stage.parentNode.addEventListener('pointerleave', function (e) {
     if (e.pointerType === 'touch' || !open) return;
     var spot = open;
