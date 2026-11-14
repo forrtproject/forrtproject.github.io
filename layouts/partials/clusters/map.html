@@ -210,7 +210,7 @@
 {{ $byNum := dict }}{{ range $laid }}{{ $byNum = merge $byNum (dict (string .num) .) }}{{ end }}
 <figure class="clusters-map" data-clusters-map>
   <div class="clusters-map__frame">
-  <div class="clusters-map__stage" style="--ow: {{ $OW }}; aspect-ratio: {{ $OW }} / {{ $OH }}; max-width: {{ math.Round (mul $OW 1.15) }}px">
+  <div class="clusters-map__stage" data-hub="{{ printf "%.1f %.1f %.1f %.1f %.1f" (sub $cx $X0) (sub $cy $Y0) $Ro $X0 $Y0 }}" style="--ow: {{ $OW }}; aspect-ratio: {{ $OW }} / {{ $OH }}; max-width: {{ math.Round (mul $OW 1.15) }}px">
     <svg class="clusters-map__ring" viewBox="{{ printf "%.0f %.0f %.0f %.0f" $X0 $Y0 $OW $OH }}" aria-hidden="true" focusable="false">
       {{ range $spots }}{{ $s := index $byNum (string .num) }}{{ $seg := index $oring (string .num) }}
       <g class="clusters-map__ray" data-cluster="{{ .num }}" style="--c: {{ $s.color | safeCSS }}">
@@ -260,7 +260,6 @@
          the drawing, not at the foot of the window where it would cover the lower names, and after
          "Open full size", so the button stays put while the line's height changes. */}}
     <div class="clusters-map__info" aria-hidden="true" hidden>
-      <p class="clusters-map__hint">Point at a cluster, or Tab to its name, to see its sub-clusters. Select the name to open its page.</p>
       <div class="clusters-map__about" hidden><span class="clusters-map__num"></span><div><p class="clusters-map__name"></p><p class="clusters-map__desc"></p><p class="clusters-map__count"></p></div></div>
     </div>
   </figcaption>
@@ -307,55 +306,92 @@
 <script>
 (function () {
   /* The overview: a cluster's panel of sub-clusters opens while its name is pointed at or focused, or after a
-     first tap; Escape or a tap elsewhere closes it. Nothing in the drawing is moved, so the Tab order stays put. */
+     first tap, and stays open until the pointer leaves the drawing or opens another name; Escape or a tap
+     elsewhere closes it. The names move aside while it is open only visually (CSS translate): the DOM order,
+     and so the Tab order, stays put. */
   var map = document.currentScript.previousElementSibling;
   var stage = map.querySelector('.clusters-map__stage');
   var spots = [].slice.call(map.querySelectorAll('.clusters-map__spot'));
   var still = window.matchMedia('(prefers-reduced-motion: reduce)');
-  var open = null, timer = null, touched = false, preview = null;
+  var open = null, timer = null, touched = false, preview = null, calm = 0;
+  var ow = parseFloat(getComputedStyle(stage).getPropertyValue('--ow')), hub = stage.getAttribute('data-hub').split(' ').map(Number);
 
   function box(el) { return { x: el.offsetLeft, y: el.offsetTop, w: el.offsetWidth, h: el.offsetHeight }; }
-  function overlap(a, b) {
-    return Math.max(0, Math.min(a.x + a.w, b.x + b.w) - Math.max(a.x, b.x)) * Math.max(0, Math.min(a.y + a.h, b.y + b.h) - Math.max(a.y, b.y));
-  }
-  function place(spot) {
-    /* Put the panel against its name (below, above or beside it, so the pointer can move straight into it),
-       inside the drawing, where it covers the fewest other names; ties go to the side facing the hub, then nearest. */
-    var label = spot.querySelector('.clusters-map__tag'), panel = spot.querySelector('.clusters-map__panel');
-    var W = stage.clientWidth, H = stage.clientHeight, gap = 8, l = box(label), pw = panel.offsetWidth, ph = panel.offsetHeight;
-    var others = spots.filter(function (s) { return s !== spot; }).map(function (s) { return box(s.querySelector('.clusters-map__tag')); });
-    var hubX = W / 2 - (l.x + l.w / 2), hubY = H / 2 - (l.y + l.h / 2), tries = [];
-    for (var k = 0; k <= 8; k++) {
-      var x = l.x + l.w - pw + (pw - l.w) * k / 8, y = l.y + l.h - ph + (ph - l.h) * k / 8;
-      tries.push({ x: x, y: l.y + l.h + gap, side: 'below', toward: hubY > 0 });
-      tries.push({ x: x, y: l.y - gap - ph, side: 'above', toward: hubY < 0 });
-      tries.push({ x: l.x - gap - pw, y: y, side: 'left', toward: hubX < 0 });
-      tries.push({ x: l.x + l.w + gap, y: y, side: 'right', toward: hubX > 0 });
-    }
-    var best = null;
-    tries.forEach(function (c) {
-      c.w = pw; c.h = ph;
-      if (c.x < 0 || c.y < 0 || c.x + pw > W || c.y + ph > H) return;
-      c.cover = others.filter(function (o) { return overlap(c, o) > 0; }).length;
-      c.score = c.cover * 1e5 + (c.toward ? 0 : 1000) + Math.abs(c.x + pw / 2 - (l.x + l.w / 2)) + Math.abs(c.y + ph / 2 - (l.y + l.h / 2));
-      if (!best || c.score < best.score) best = c;
+  function layout(spot) {
+    /* The open cluster's panel fills the middle of the wheel, and all the names move straight out from the
+       wheel's centre, together, just far enough to clear it: sideways into the page's spare width first, then
+       up and down, the drawing growing below itself while the panel is open. The panel takes the number of
+       columns that needs the least room. The names keep their order round the wheel and their lines. */
+    var W = stage.clientWidth, H = stage.clientHeight, k = W / ow, m = 16;
+    var side = Math.max(0, (stage.parentNode.clientWidth - W) / 2);
+    var hx = hub[0] * k, hy = hub[1] * k;
+    var panel = spot.querySelector('.clusters-map__panel'), ul = panel.querySelector('ul'), n = ul.children.length;
+    var names = spots.map(function (s) {
+      var el = s.querySelector('.clusters-map__tag'), b = box(el);
+      return { spot: s, el: el, b: b, dx: b.x + b.w / 2 - hx, dy: b.y + b.h / 2 - hy };
     });
-    if (!best) {
-      best = { x: Math.max(0, Math.min(W - pw, l.x + l.w / 2 - pw / 2)), y: hubY > 0 ? l.y + l.h + gap : l.y - gap - ph, w: pw, h: ph, side: hubY > 0 ? 'below' : 'above' };
-      best.y = Math.max(0, Math.min(H - ph, best.y));
-      best.cover = others.filter(function (o) { return overlap(best, o) > 0; }).length;
+    var sxMax = Infinity;
+    names.forEach(function (l) {
+      if (Math.abs(l.dx) < 1) return;
+      sxMax = Math.min(sxMax, l.dx < 0 ? (hx + side - l.b.w / 2) / -l.dx : (W + side - hx - l.b.w / 2) / l.dx);
+    });
+    var best = null;
+    for (var cols = 1; cols <= Math.min(3, n); cols++) {
+      ul.style.setProperty('--cols', cols); ul.style.setProperty('--rows', Math.ceil(n / cols));
+      var pw = panel.offsetWidth, ph = panel.offsetHeight, rw = pw / 2 + m, rh = ph / 2 + m, sx = 1, sy = 1, ok = true;
+      /* Names level with the panel move sideways as far as the spare width allows; whatever still overlaps
+         it then clears it up or down. */
+      names.forEach(function (l) {
+        if (Math.abs(l.dy) >= rh || Math.abs(l.dx) < 1) return;
+        sx = Math.max(sx, (rw + l.b.w / 2) / Math.abs(l.dx));
+      });
+      sx = Math.min(sx, sxMax);
+      names.forEach(function (l) {
+        if (Math.abs(l.dx) * sx - l.b.w / 2 >= rw) return;
+        if (Math.abs(l.dy) < 1) { ok = false; return; }
+        sy = Math.max(sy, (rh + l.b.h / 2) / Math.abs(l.dy));
+      });
+      var cost = (ok ? 0 : 1e6) + (sy - 1) * H * 2 + (sx - 1) * W;
+      if (!best || cost < best.cost) best = { cols: cols, sx: sx, sy: sy, cost: cost, pw: pw, ph: ph };
     }
-    panel.style.left = best.x + 'px';
-    panel.style.top = best.y + 'px';
-    panel.setAttribute('data-side', best.side);
-    return best;
+    ul.style.setProperty('--cols', best.cols); ul.style.setProperty('--rows', Math.ceil(n / best.cols));
+    var top = 0, bottom = 0;
+    names.forEach(function (l) {
+      top = Math.min(top, hy + l.dy * best.sy - l.b.h / 2);
+      bottom = Math.max(bottom, hy + l.dy * best.sy + l.b.h / 2);
+    });
+    var shift = Math.ceil(-top);
+    stage.style.marginBottom = bottom + shift > H ? Math.ceil(bottom + shift - H + 8) + 'px' : '';
+    stage.querySelector('.clusters-map__ring').style.translate = shift ? '0 ' + shift + 'px' : '';
+    panel.style.left = Math.round(hx - best.pw / 2) + 'px';
+    panel.style.top = Math.round(hy + shift - best.ph / 2) + 'px';
+    names.forEach(function (l) {
+      var tx = Math.round(l.dx * (best.sx - 1)), ty = Math.round(l.dy * (best.sy - 1) + shift);
+      l.el.style.translate = tx || ty ? tx + 'px ' + ty + 'px' : '';
+      var line = stage.querySelector('.clusters-map__ray[data-cluster="' + l.spot.getAttribute('data-cluster') + '"] .clusters-map__line');
+      if (!line) return;
+      if (!line.hasAttribute('data-d')) line.setAttribute('data-d', line.getAttribute('d'));
+      var start = line.getAttribute('data-d').match(/^M\s*([\d.]+)[ ,]([\d.]+)/);
+      /* End just inside the moved box, at its point nearest the wheel's centre, as the drawing does
+         (in drawing units, inside the ring's own shift; hub[3], hub[4]: the drawing's origin). */
+      var x = (l.b.x + tx) / k, y = (l.b.y + ty - shift) / k, w = l.b.w / k, h = l.b.h / k;
+      var ex = Math.max(x + 12, Math.min(x + w - 12, hub[0])), ey = Math.max(y + 12, Math.min(y + h - 12, hub[1]));
+      line.setAttribute('d', 'M' + start[1] + ' ' + start[2] + 'L' + (ex + hub[3]).toFixed(1) + ' ' + (ey + hub[4]).toFixed(1));
+    });
+  }
+  function unlayout() {
+    spots.forEach(function (s) { s.querySelector('.clusters-map__tag').style.translate = ''; });
+    stage.querySelectorAll('.clusters-map__line[data-d]').forEach(function (l) { l.setAttribute('d', l.getAttribute('data-d')); });
+    stage.querySelector('.clusters-map__ring').style.translate = '';
+    stage.style.marginBottom = '';
   }
   function show(spot) {
     clearTimeout(timer);
     if (open === spot) return;
     if (open) hide(open);
     open = spot;
-    place(spot);
+    layout(spot);
+    calm = Date.now() + 600;
     spot.classList.add('is-open');
     spot.querySelector('.clusters-map__panel').inert = false;
     spot.querySelector('.clusters-map__tag').setAttribute('aria-expanded', 'true');
@@ -366,23 +402,25 @@
     spot.classList.remove('is-open');
     spot.querySelector('.clusters-map__panel').inert = true;
     spot.querySelector('.clusters-map__tag').setAttribute('aria-expanded', 'false');
-    if (open === spot) { open = null; stage.classList.remove('is-pointing'); lightRay(null); }
+    if (open === spot) { open = null; stage.classList.remove('is-pointing'); lightRay(null); unlayout(); }
   }
   function lightRay(n) {
     stage.querySelectorAll('.clusters-map__ray').forEach(function (g) { g.classList.toggle('is-active', g.getAttribute('data-cluster') === String(n)); });
   }
   function interacted() {
-    if (preview) { clearTimeout(preview.timer); if (open === preview.spot) hide(preview.spot); }
+    if (preview) { clearTimeout(preview.timer); stage.classList.remove('is-preview'); if (open === preview.spot) hide(preview.spot); }
     preview = false;
   }
 
   spots.forEach(function (spot) {
     var label = spot.querySelector('.clusters-map__tag');
     var dismissed = false, wasOpen = false;
-    spot.addEventListener('pointerenter', function (e) { if (e.pointerType === 'touch') return; interacted(); dismissed = false; show(spot); });
-    spot.addEventListener('pointerleave', function (e) {
+    spot.addEventListener('pointerenter', function (e) {
       if (e.pointerType === 'touch') return;
-      timer = setTimeout(function () { if (!spot.contains(document.activeElement)) hide(spot); }, 200);
+      interacted();
+      /* A name sliding aside under a still pointer does not take over the open panel. */
+      if (open && open !== spot && Date.now() < calm) return;
+      dismissed = false; show(spot);
     });
     spot.addEventListener('focusin', function () { interacted(); if (!dismissed) show(spot); });
     spot.addEventListener('focusout', function (e) {
@@ -404,9 +442,15 @@
     });
   });
   document.addEventListener('pointerdown', function (e) { if (open && !open.contains(e.target)) hide(open); });
+  stage.parentNode.addEventListener('pointerleave', function (e) {
+    if (e.pointerType === 'touch' || !open) return;
+    var spot = open;
+    timer = setTimeout(function () { if (open === spot && !spot.contains(document.activeElement)) hide(spot); }, 250);
+  });
+  stage.parentNode.addEventListener('pointerenter', function () { clearTimeout(timer); });
 
   /* Once, when the drawing first comes into view, open one cluster for about 2 s to show that the names open.
-     Only a cluster whose panel covers no other name; not with reduced motion or after the visitor has acted. */
+     Not with reduced motion or after the visitor has acted. */
   if ('IntersectionObserver' in window && !still.matches) {
     preview = {};
     var seen = new IntersectionObserver(function (entries) {
@@ -415,8 +459,8 @@
       (document.fonts ? document.fonts.ready : Promise.resolve()).then(function () {
         setTimeout(function () {
           if (!preview || open || !stage.offsetWidth) return;
-          var pick = spots.filter(function (s) { return place(s).cover === 0; })[0];
-          if (!pick) return;
+          /* The cluster with the fewest sub-clusters, so the drawing moves least. */
+          var pick = spots.slice().sort(function (a, b) { return a.querySelectorAll('.clusters-map__panel li').length - b.querySelectorAll('.clusters-map__panel li').length; })[0];
           preview.spot = pick;
           stage.classList.add('is-preview');
           show(pick);
@@ -439,12 +483,11 @@
   document.addEventListener('DOMContentLoaded', function () {
     var list = document.querySelector('.clusters-overview__list');
     if (!info || !list) return;
-    info.hidden = false;
-    var hint = info.querySelector('.clusters-map__hint'), about = info.querySelector('.clusters-map__about');
+    var about = info.querySelector('.clusters-map__about');
     var text = function (li, sel) { var el = li.querySelector(sel); return el ? el.textContent.trim() : ''; };
     var tell = function (n) {
       var li = n && list.querySelector('li[data-cluster="' + n + '"]');
-      hint.hidden = !!li; about.hidden = !li;
+      info.hidden = !li; about.hidden = !li;
       if (!li) return;
       about.style.setProperty('--c', li.style.getPropertyValue('--c'));
       about.querySelector('.clusters-map__num').textContent = n;

@@ -960,8 +960,8 @@
 .clusters-map__art a:hover rect { fill: color-mix(in srgb, var(--c) 80%, #000); }
 
 /* The overview. The stage keeps the drawing's proportions; --u is one drawing unit at the stage's width. */
-.clusters-map__stage { position: relative; margin: 0 auto; container-type: inline-size; --u: calc(100cqw / var(--ow)); }
-.clusters-map__ring { position: absolute; inset: 0; width: 100%; height: 100%; display: block; overflow: visible; }
+.clusters-map__stage { position: relative; margin: 0 auto; container-type: inline-size; --u: calc(100cqw / var(--ow)); transition: margin-bottom 0.3s ease; }
+.clusters-map__ring { position: absolute; inset: 0; width: 100%; height: 100%; display: block; overflow: visible; transition: translate 0.3s ease; }
 .clusters-map__ring .clusters-map__ray { transition: opacity 0.2s; }
 .clusters-map__stage.is-pointing .clusters-map__ray:not(.is-active) { opacity: 0.4; }
 .clusters-map__ring .is-active .clusters-map__line { stroke: var(--c); stroke-width: 3; }
@@ -971,7 +971,7 @@
   position: absolute; display: block; box-sizing: border-box; z-index: 1;
   padding: calc(10 * var(--u)) calc(17.2 * var(--u)); border-radius: calc(12 * var(--u));
   background: var(--c); color: #fff; text-align: center; text-decoration: none; text-rendering: geometricPrecision;
-  transition: box-shadow 0.2s, background-color 0.2s;
+  transition: box-shadow 0.2s, background-color 0.2s, translate 0.3s ease;
 }
 .clusters-map__tag-name { display: block; font: 700 calc(19 * var(--u)) / calc(23 * var(--u)) var(--text); }
 .clusters-map__tag-name > span { display: block; white-space: nowrap; }
@@ -993,7 +993,7 @@
 /* A cluster's panel: hidden and out of the tab order (inert) until its name opens it. */
 .clusters-map__panel {
   position: absolute; left: 0; top: 0; z-index: 2; box-sizing: border-box; padding: 16px;
-  background: var(--page); border: 1px solid var(--line); border-top: 4px solid var(--c); border-radius: var(--r-large);
+  background: color-mix(in srgb, var(--c) 10%, #fff); border: 2px solid var(--c); border-top-width: 6px; border-radius: var(--r-large);
   box-shadow: 0 10px 30px rgba(38, 45, 53, 0.25);
   visibility: hidden; opacity: 0; transform: translateY(-6px);
   transition: opacity 0.2s, transform 0.2s, visibility 0s linear 0.2s;
@@ -1014,7 +1014,7 @@
 }
 .clusters-map__panel a:hover { color: var(--ink); }
 @media (prefers-reduced-motion: reduce) {
-  .clusters-map__panel, .clusters-map__spot.is-open .clusters-map__panel, .clusters-map__tag, .clusters-map__cue::after, .clusters-map__ring .clusters-map__ray { transition: none; transform: none; }
+  .clusters-map__stage, .clusters-map__ring, .clusters-map__panel, .clusters-map__spot.is-open .clusters-map__panel, .clusters-map__tag, .clusters-map__cue::after, .clusters-map__ring .clusters-map__ray { transition: none; transform: none; }
 }
 
 .clusters-map__caption { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.5rem 1.5rem; margin-top: 0.75rem; }
