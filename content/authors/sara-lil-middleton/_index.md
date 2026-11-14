@@ -28,4 +28,4 @@ social:
 # No social links
 ---
 
-Coming soon.
+Joy, creativity and integrity are the values at the root of how Sara Lil moves through the world as an environmental scientist, interdisciplinary scholar and educator. She is interested in how different parts of our environment intertwine and impact how we show up as individuals and in community from plants to people. At FORRT, Sara adopts social justice and systems-thinking approaches to help foster a space where academic scholarship is both scientifically rigorous and socially just.

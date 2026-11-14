@@ -35,5 +35,3 @@ social:
   icon_pack: fas
   link: mailto:carolsmarinho.ana@gmail.com
 ---
-
-Coming soon.
