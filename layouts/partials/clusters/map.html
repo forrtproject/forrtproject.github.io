@@ -313,7 +313,7 @@
   var stage = map.querySelector('.clusters-map__stage');
   var spots = [].slice.call(map.querySelectorAll('.clusters-map__spot'));
   var still = window.matchMedia('(prefers-reduced-motion: reduce)');
-  var open = null, timer = null, touched = false, preview = null, calm = 0;
+  var open = null, timer = null, touched = false, preview = null, calm = 0, settleCheck = null, pending = null;
   var ow = parseFloat(getComputedStyle(stage).getPropertyValue('--ow')), hub = stage.getAttribute('data-hub').split(' ').map(Number);
 
   function box(el) { return { x: el.offsetLeft, y: el.offsetTop, w: el.offsetWidth, h: el.offsetHeight }; }
@@ -351,7 +351,9 @@
         if (Math.abs(l.dy) < 1) { ok = false; return; }
         sy = Math.max(sy, (rh + l.b.h / 2) / Math.abs(l.dy));
       });
-      var cost = (ok ? 0 : 1e6) + (sy - 1) * H * 2 + (sx - 1) * W;
+      /* A panel taller than the window scrolls inside itself; that costs more than the drawing growing, per pixel. */
+      var tall = Math.max(0, panel.scrollHeight - (window.innerHeight - 124));
+      var cost = (ok ? 0 : 1e6) + tall * 8 + (sy - 1) * H * 2 + (sx - 1) * W;
       if (!best || cost < best.cost) best = { cols: cols, sx: sx, sy: sy, cost: cost, pw: pw, ph: ph };
     }
     ul.style.setProperty('--cols', best.cols); ul.style.setProperty('--rows', Math.ceil(n / best.cols));
@@ -391,7 +393,14 @@
     if (open) hide(open);
     open = spot;
     layout(spot);
-    calm = Date.now() + 600;
+    calm = Date.now() + 250;
+    /* When the names stop sliding, open the name the pointer moved onto meanwhile, if it is still there.
+       (Only a name the pointer moved on: a name that merely slid under a still pointer stays shut.) */
+    clearTimeout(settleCheck); pending = null;
+    settleCheck = setTimeout(function () {
+      if (pending && open && pending !== open && pending.querySelector('.clusters-map__tag').matches(':hover')) show(pending);
+      pending = null;
+    }, 260);
     spot.classList.add('is-open');
     spot.querySelector('.clusters-map__panel').inert = false;
     spot.querySelector('.clusters-map__tag').setAttribute('aria-expanded', 'true');
@@ -415,11 +424,12 @@
   spots.forEach(function (spot) {
     var label = spot.querySelector('.clusters-map__tag');
     var dismissed = false, wasOpen = false;
-    spot.addEventListener('pointerenter', function (e) {
-      if (e.pointerType === 'touch') return;
+    /* Pointing at a name opens it at once; only while the names are still sliding (0.25 s) does a name that
+       slid under the pointer wait for the pointer to move on it. */
+    label.addEventListener('pointermove', function (e) {
+      if (e.pointerType === 'touch' || open === spot) return;
       interacted();
-      /* A name sliding aside under a still pointer does not take over the open panel. */
-      if (open && open !== spot && Date.now() < calm) return;
+      if (open && Date.now() < calm) { pending = spot; return; }
       dismissed = false; show(spot);
     });
     spot.addEventListener('focusin', function () { interacted(); if (!dismissed) show(spot); });
