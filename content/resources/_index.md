@@ -59,7 +59,7 @@ clusters = [
   values = ["podcast", "podcast and transcript", "podcast episodes"]
 [[type_groups]]
   label = "Activity"
-  values = ["activity/lab", "homework/assignment", "asssessment", "case study", "game", "workshop", "workshop guide"]
+  values = ["activity/lab", "homework/assignment", "assessment", "case study", "game", "workshop", "workshop guide"]
 [[type_groups]]
   label = "Interactive"
   values = ["interactive", "simulation"]
@@ -78,11 +78,11 @@ clusters = [
   values = ["graduate / professional", "graduate/professional"]
 [[level_groups]]
   label = "Career / Technical"
-  values = ["career /technical"]
+  values = ["career / technical", "career /technical"]
 [[level_groups]]
   label = "Adult education"
   values = ["adult education", "adult-education"]
 
 +++
 
-FORRT's curated resources database now hosts over 1,400 open science materials, thanks to key partnerships. Initially boosted by over 60% by the [Open Science Knowledge Base](https://www.cos.io/communities/stem-education-hub) ([see also OSKB's OER commons page](https://oercommons.org/hubs/OSKB))—[a Center for Open Science (COS)](http://cos.io/) initiative. Recently, our collection grew by 30% through contributions from [JUST-OS](https://www.just-os.org), increasing resources from 1,140 to 1,402. OSKB's work involved almost 300 hours (valued at €10,000) and JUST-OS’s work involved 150 hours (valued around €5,000), reflecting significant effort and dedication. COS, OSKB, JUST-OS and FORRT forged partnerships to promote open and reproducible research practices, enabling the scientific community to build upon each other’s work and advance knowledge collaboratively. Learn more about it FORRT’s and OSKB’s partnership [in the COS’s announcement](https://www.cos.io/blog/forrt-and-cos-join-forces-to-foster-open-and-reproducible-research-training).
+FORRT's curated resources database now hosts over 1,400 open science materials, thanks to key partnerships. Initially boosted by over 60% by the [Open Science Knowledge Base](https://www.cos.io/communities/stem-education-hub) ([see also OSKB's OER commons page](https://oercommons.org/hubs/OSKB))—[a Center for Open Science (COS)](http://cos.io/) initiative. Later, our collection grew by about a quarter through contributions from [JUST-OS](https://www.just-os.org), increasing resources from 1,140 to 1,402. OSKB's work involved almost 300 hours (valued at €10,000) and JUST-OS’s work involved 150 hours (valued around €5,000), reflecting significant effort and dedication. COS, OSKB, JUST-OS and FORRT forged partnerships to promote open and reproducible research practices, enabling the scientific community to build upon each other’s work and advance knowledge collaboratively. Learn more about it FORRT’s and OSKB’s partnership [in the COS’s announcement](https://www.cos.io/blog/forrt-and-cos-join-forces-to-foster-open-and-reproducible-research-training).

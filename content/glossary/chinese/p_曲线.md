@@ -7,8 +7,8 @@
     "related_terms": [
         "File-drawer",
         "Hypothesis",
-        "*P*\\-hacking",
-        "*p*\\-value",
+        "p-hacking",
+        "p-value",
         "Publication bias (File Drawer Problem)",
         "Questionable Research Practices or Questionable Reporting Practices (QRPs)",
         "Selective reporting",
@@ -42,5 +42,6 @@
         "Liangjie Chen",
         "Ruoting Liu",
         "Shuxian Jin"
-    ]
+    ],
+    "lastmod": "2026-11-08"
 }

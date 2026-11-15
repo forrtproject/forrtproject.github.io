@@ -68,6 +68,12 @@ class DescriptionURLReport(unittest.TestCase):
                     "<meta property='og:image:height' content='630'>"
                     "<meta name='twitter:card' content='summary_large_image'>")
             (Path(public) / "index.html").write_text(html, encoding="utf-8")
+            cluster = Path(public) / "clusters" / "cluster-1" / "index.html"
+            cluster.parent.mkdir(parents=True)
+            cluster.write_text("<meta name='description' content='Cluster 1'><h1>Cluster 1</h1>", encoding="utf-8")
+            flora = Path(public) / seo.FLORA_PAGE
+            flora.parent.mkdir(parents=True)
+            flora.write_text("<meta name='description' content='FLoRA'><h1>FLoRA</h1><p>https://doi.org/10.17605/OSF.IO/9R62X</p>", encoding="utf-8")
             output = StringIO()
             with redirect_stdout(output):
                 self.assertEqual(seo.main(public), 0)
@@ -170,6 +176,152 @@ class InlineScriptCheck(unittest.TestCase):
     def test_unclosed_inline_data_fails(self):
         data = "x" * (seo.MAX_INLINE_SCRIPT + 1)
         self.assertEqual(self.failures("<script>window.DATA = '%s';" % data), ["index.html (200 KB)"])
+
+
+class CitationTargetCheck(unittest.TestCase):
+    def check(self, html):
+        parser = seo.PageParser()
+        parser.feed(html)
+        return seo.check_citation_targets([seo.Page("example/index.html", parser)])
+
+    def test_reference_after_citation(self):
+        self.assertEqual(self.check('<a class="cite" href="#ref-Key">Author, 2020</a>'
+                                    '<li id="ref-Key">Reference</li>'), [])
+
+    def test_missing_reference_or_nonlocal_link(self):
+        for href in ('#ref-Unknown', '/other/#ref-Key', '#Key', ''):
+            with self.subTest(href):
+                self.assertTrue(self.check('<a class="other cite" href="%s">Citation</a>'
+                                           '<li id="ref-Key">Reference</li>' % href))
+
+    def test_other_links_are_ignored(self):
+        self.assertEqual(self.check('<a href="#elsewhere">Link</a>'), [])
+
+
+class GlossaryTitleMarkdownCheck(unittest.TestCase):
+    def check(self, title, h1, path="glossary/english/term/index.html"):
+        html = "<title>%s</title><h1>%s</h1>" % (title, h1)
+        return seo.check_glossary_title_markdown([page_from_html(html, path)])
+
+    def test_rendered_emphasis_and_lone_asterisk_pass(self):
+        self.assertEqual(self.check("Research Contribution Metric (p) | FORRT",
+                                    "Research Contribution Metric (<em>p</em>)"), [])
+        self.assertEqual(self.check("G*Power | FORRT", "G*Power"), [])
+        self.assertEqual(self.check("G*Power and P*Hack | FORRT", "G*Power and P*Hack"), [])
+
+    def test_literal_emphasis_fails_on_glossary_pages_only(self):
+        self.assertEqual(len(self.check("Research Contribution Metric (*p*) | FORRT", "x")), 1)
+        self.assertEqual(len(self.check("x", "Research Contribution Metric (*p*)")), 1)
+        self.assertEqual(len(self.check("x", "*p*-value")), 1)
+        self.assertEqual(self.check("x", "*p*", path="post/x/index.html"), [])
+
+
+class GlossaryLinkCheck(unittest.TestCase):
+    def check_links(self, hrefs, base="https://forrt.org/"):
+        with tempfile.TemporaryDirectory() as public:
+            root = Path(public)
+            term = root / "glossary/english/preregistration/index.html"
+            term.parent.mkdir(parents=True)
+            term.write_text('<link rel="canonical" href="%sglossary/english/preregistration/">' % base)
+            links = "".join('<a class="other gloss-term" href="%s">term</a>' % href for href in hrefs)
+            (root / "index.html").write_text('<link rel="canonical" href="%s">%s' % (base, links))
+            return seo.check_glossary_links(seo.load_pages(public))
+
+    def test_existing_term_and_preview_base_pass(self):
+        for base in ("https://forrt.org/", "https://forrt.org/rebrand-doors/"):
+            with self.subTest(base=base):
+                self.assertEqual(self.check_links([
+                    base + "glossary/english/preregistration/",
+                    "glossary/english/preregistration/#definition",
+                ], base), [])
+
+    def test_missing_non_english_external_and_empty_links_fail(self):
+        links = ["/glossary/english/missing/", "/glossary/german/preregistration/",
+                 "https://example.org/glossary/english/preregistration/", ""]
+        self.assertEqual(len(self.check_links(links)), len(links))
+
+
+class BreadcrumbLinks(unittest.TestCase):
+    def test_crumb_links_need_a_target(self):
+        good = page_from_html('<nav class="crumbs"><a href="/">Home</a> <a href="/about/">About</a></nav>')
+        bad = page_from_html('<nav class="crumbs"><a href="/">Home</a> <a href>About</a></nav><a href>x</a>')
+        self.assertEqual(good.crumb_links, ["/", "/about/"])
+        self.assertEqual(bad.crumb_links, ["/", ""])
+
+
+class ClusterTitleMarkupCheck(unittest.TestCase):
+    def check(self, body):
+        with tempfile.TemporaryDirectory() as public:
+            page = Path(public) / "clusters" / "cluster-1" / "index.html"
+            page.parent.mkdir(parents=True)
+            page.write_text("<div class=fc-title>%s</div>" % body, encoding="utf-8")
+            return seo.check_cluster_title_markup(public)
+
+    def test_rendered_markup_passes(self):
+        self.assertEqual(self.check("In <span class=scp>A</span>frica at <i>Cognition</i> (p &lt; .05)"), [])
+
+    def test_literal_or_unrendered_markup_fails(self):
+        for body in ("at &lt;i&gt;Cognition&lt;/i&gt;", "in <scp>A</scp>frica", "&lt;em&gt;AIMS&lt;/em&gt;",
+                     "at &amp;lt;i&amp;gt;Cognition&amp;lt;/i&amp;gt;"):
+            self.assertEqual(self.check(body), ["clusters/cluster-1/index.html"], body)
+
+    def test_missing_cluster_pages_fail(self):
+        with tempfile.TemporaryDirectory() as public:
+            self.assertEqual(seo.check_cluster_title_markup(public), ["clusters/ (no cluster pages found)"])
+
+
+def clusters_map_failures(page):
+    with tempfile.TemporaryDirectory() as public:
+        (Path(public) / "clusters").mkdir()
+        (Path(public) / "clusters" / "index.html").write_text(page, encoding="utf-8")
+        return seo.check_clusters_map(public)
+
+
+class ClustersMapCheck(unittest.TestCase):
+    MAP = ('<figure class="clusters-map"><div class="clusters-map__stage"><svg class="clusters-map__ring" aria-hidden="true"></svg>'
+           '<ol class="clusters-map__spots"><li><a class="clusters-map__tag" href="/clusters/cluster-1/">'
+           '<span class="visually-hidden">Cluster 1: </span><span class="clusters-map__tag-name"><span>One</span></span> <span class="clusters-map__cue">1 sub-cluster</span></a>'
+           '<div class="clusters-map__panel" id="panel-1" inert><ul><li><a href="#c1-a">A</a></li></ul></div></li></ol></div></figure>'
+           '<ol><li data-cluster="1">One</li></ol>'
+           '<section id="cluster-1"><div id="c1-a"></div></section><a href="#elsewhere">not in the map</a>')
+
+    def test_named_counted_names_hidden_drawing_closed_panels_and_targets_pass(self):
+        self.assertEqual(clusters_map_failures(self.MAP), [])
+
+    def test_each_fault_fails_once(self):
+        for change in (('class="clusters-map__ring" aria-hidden="true">', 'class="clusters-map__ring">'),
+                       ('aria-hidden="true"></svg>', 'aria-hidden="true"><a href="/clusters/cluster-1/"></a></svg>'),
+                       ('id="c1-a"', 'id="c1-b"'), (" inert>", ">"),
+                       ('clusters-map__tag" href="/clusters/cluster-1/"', 'clusters-map__tag" href=""'),
+                       ('class="clusters-map__tag"', 'class="other"'), ('<span>One</span></span>', '</span>'),
+                       ('class="clusters-map__tag" href', 'class="clusters-map__tag" aria-hidden="true" href'),
+                       ('<li data-cluster="1">One</li>', '<li data-cluster="1">One</li><li data-cluster="2">Two</li>')):
+            with self.subTest(change):
+                self.assertEqual(len(clusters_map_failures(self.MAP.replace(*change))), 1)
+
+    def test_page_without_the_drawing_fails(self):
+        self.assertTrue(clusters_map_failures("<p>No map</p>"))
+
+
+def flora_failures(html):
+    """Check 22 on a FLoRA page with this HTML (None: no page)."""
+    with tempfile.TemporaryDirectory() as public:
+        if html is not None:
+            page = Path(public) / seo.FLORA_PAGE
+            page.parent.mkdir(parents=True)
+            page.write_text(html, encoding="utf-8")
+        return seo.check_flora_citation(public)
+
+
+class FloraCitationCheck(unittest.TestCase):
+    DOI = '<a href="https://doi.org/10.17605/OSF.IO/9R62X">https://doi.org/10.17605/OSF.IO/9R62X</a>'
+
+    def test_citation_passes(self):
+        self.assertEqual(flora_failures("<p>Wallrich, L.*, ... %s</p>" % self.DOI), [])
+
+    def test_missing_citation_or_page_fails(self):
+        self.assertIn("DOI", flora_failures("<p>How to cite:</p>")[0])
+        self.assertIn("not found", flora_failures(None)[0])
 
 
 if __name__ == "__main__":

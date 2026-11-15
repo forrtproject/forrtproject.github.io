@@ -26,8 +26,10 @@ statement_link = { label = "Read our mission", url = "about/mission/" }
 # time. Add a figure only with a source someone can check: Slack members and newsletter
 # subscribers are left out because the site holds no record of them.
 [facts]
-  projects = "More than 100 active or completed projects and support teams"
+  projects_figure = "100+"
+  projects_label = "projects and support teams"
   projects_url = "contributor-analysis/"  # States 109 projects and support teams as of 10 June 2026.
-  awards = "Awards and commendations, including the Leo Waaijers Open Science Award 2026"
+  awards_figure = "2026"
+  awards_label = "Leo Waaijers Open Science Award, among other recognition"
   awards_url = "awards/"
 +++

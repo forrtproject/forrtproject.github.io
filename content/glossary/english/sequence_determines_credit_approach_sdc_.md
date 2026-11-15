@@ -25,5 +25,6 @@
     "language": "english",
     "aliases": [
         "/glossary/sequence_determines_credit_approach_sdc_"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

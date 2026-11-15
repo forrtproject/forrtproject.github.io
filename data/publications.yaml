@@ -15,7 +15,7 @@
   focus_area: "Meta-Research & Scientific Reform"
 
 # 2
-- title: "Mapping Open Science Communities in Psychology: A Systematic Narrative Review"
+- title: "International Initiatives to Enhance Awareness and Uptake of Open Research in Psychology: A Systematic Mapping Review"
   type: "journal"
   year: "2025"
   status: "Published"
@@ -106,7 +106,7 @@
   focus_area: "Education & Pedagogy"
 
 # 8
-- title: "Improvements since the Replication Crisis: The Structural, Procedural, and Community Changes"
+- title: "The Replication Crisis Has Led to Positive Structural, Procedural, and Community Changes"
   type: "journal"
   year: "2023"
   status: "Published"
@@ -156,12 +156,12 @@
 # 11
 - title: "The Role of Pedagogical Communities"
   type: "journal"
-  year: "2021"
+  year: "2022"
   status: "Published"
   journal_name: "BMC Research Notes"
   authors: "Azevedo, F., Liu, M., Pennington, C. R., Pownall, M., Evans, T. R., Parsons, S., Elsherif, M. M., Micheli, L., ... & FORRT"
   abstract: "We have written a manuscript entitled *Towards a culture of open scholarship: The role of pedagogical communities* describing the need to integrate open scholarship principles into research training within higher education."
-  citation: "Azevedo, F., Liu, M., Pennington, C. R., Pownall, M., Evans, T. R., Parsons, S., Elsherif, M. M., Micheli, L., ... & FORRT (2021). <strong>Towards a culture of open scholarship: The role of pedagogical communities.</strong> <em>BMC Research Notes</em>, 15(1), 1-5. https://doi.org/10.1186/s13104-022-05944-1"
+  citation: "Azevedo, F., Liu, M., Pennington, C. R., Pownall, M., Evans, T. R., Parsons, S., Elsherif, M. M., Micheli, L., ... & FORRT (2022). <strong>Towards a culture of open scholarship: The role of pedagogical communities.</strong> <em>BMC Research Notes</em>, 15(1), 1-5. https://doi.org/10.1186/s13104-022-05944-1"
   links:
     doi: "https://doi.org/10.1186/s13104-022-05944-1"
   altmetric_doi: "10.1186/s13104-022-05944-1"

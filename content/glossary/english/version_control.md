@@ -34,5 +34,6 @@
     "language": "english",
     "aliases": [
         "/glossary/version_control"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

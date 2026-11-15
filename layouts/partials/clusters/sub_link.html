@@ -1,0 +1,3 @@
+{{/* A sub-cluster's link with its number of references in brackets, shared by the overview's panels and the
+     list of clusters so both read the same. Expects dict: base, num (as for sub_href.html), sub (the sub-cluster). */}}
+<a href="{{ partial "clusters/sub_href.html" (dict "base" .base "num" .num "name" .sub.name) }}"><span>{{ .sub.name | strings.TrimSpace }}<span class="clusters-refs"> ({{ len .sub.publications }}<span class="visually-hidden"> {{ cond (eq (len .sub.publications) 1) "reference" "references" }}</span>)</span></span></a>

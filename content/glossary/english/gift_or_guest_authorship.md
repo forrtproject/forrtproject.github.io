@@ -28,5 +28,6 @@
     "language": "english",
     "aliases": [
         "/glossary/gift_or_guest_authorship"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

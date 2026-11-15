@@ -5,10 +5,10 @@
 widget = "blank"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
-weight = 20  # Order that this section will appear.
+weight = 12  # Order that this section will appear.
 
-title = "In-depth introduction to FORRT"
-subtitle = "*In pursuit of the best conceivable educational practices in higher education*"
+title = "About FORRT"
+subtitle = ""
 classtitle = ""
 
 [design]
@@ -53,15 +53,16 @@ classtitle = ""
 
 +++
 
-{{% callout title="Check it out!" %}}
+FORRT is a community of researchers and educators who develop, share and teach open scholarship, and who work to make science more rigorous, more transparent and more just. Most of its work happens in teams and projects that coordinate on [Slack](https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ).
 
-[***"Getting Started with FORRT"***](https://docs.google.com/document/d/e/2PACX-1vR_OKOxDlrbPcXn6SZLYlq19139ofcYDInBu9E392jWG5yzbp2VjF7E1_fwtzTz4Wxo9i4ddHZTbHfT/pub)
+{{% callout title="Getting Started with FORRT" %}}
+
+Before you join, read our guide, [**Getting Started with FORRT**](https://docs.google.com/document/d/e/2PACX-1vR_OKOxDlrbPcXn6SZLYlq19139ofcYDInBu9E392jWG5yzbp2VjF7E1_fwtzTz4Wxo9i4ddHZTbHfT/pub). It is organised by how involved you want to be:
+
+1. General information about FORRT, its Slack channels and community, with links to resources.
+2. The current initiatives that would benefit from your help, with authorship opportunities and no required involvement in the organisation.
+3. How FORRT is organised, and how to take part in running it.
 
 {{% /callout %}}
 
-If you are looking for a deep dive into FORRT, there are two main ways to learn about us. If you are interested in learning about what we do, check out our [**Publications page**](/publications). If you want to learn about the intricacies of the FORRT organization, beyond what you can learn from the several pages in our *About FORRT* pages, and before [joining our Slack](https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ), we prepared a document for you: [**Getting Started with FORRT**](https://docs.google.com/document/d/17ECRs6J8spO3CU6siheGL8weQ-TzdyAUpXIiIE8cUeI). It is organized in terms of involvement with the FORRT organization. 
-
-* In part (1), we briefly describe general information about FORRT, its Slack channels and community, and provide links to resources; 
-* In part (2), we describe in more detail the current initiatives at FORRT, which would benefit from your help and contribution (with authorship opportunities but no required involvement with the organization per se);
-* In part (3), we describe the FORRT’s organization, structure, and how to take part in it.
-
+To see what FORRT does, browse the [publications](/publications/). Its aims are on [Mission & advocacy](/about/mission/) and [Principles](/about/principles/), and the people behind it on [Teams](/about/teams/) and [Steering Committee](/about/steering-committee/).

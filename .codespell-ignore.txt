@@ -42,6 +42,7 @@ Udo
 Yau
 Mathes
 Smal
+Asai
 
 # Technical or code related terms
 aCount
@@ -99,3 +100,8 @@ sie
 tru
 ublication
 doubleclick
+
+# German glossary label
+Referenz
+pre-selected
+jus

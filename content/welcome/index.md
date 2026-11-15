@@ -16,7 +16,7 @@ type: welcome
 {{< welcome 
     step="2"
     title="Explore FORRT Clusters"
-    description="Familiarize yourself with our 7-cluster framework that provides a comprehensive structure for teaching open science."
+    description="Familiarize yourself with our 11-cluster framework that provides a comprehensive structure for teaching open science."
     url="/clusters"
 >}}
 
@@ -38,10 +38,10 @@ type: welcome
 
 {{< welcome 
     title="Explore Our Teams"
-    description="Explore projects, Slack channels and teams and join any of your preferences. Here is a list of all our current projects: Ambassador Program, Cohesion, Database, Ethics, Glossary, Lesson Plans, Literature Landscape, Neurodiversity, Outreach, Pedagogies, Reversals, Summaries, and Website teams."
+    description="Explore projects, Slack channels and teams and join any that match your interests. The Teams page lists all our current teams."
     url="/about/teams"
+    button="Explore the Teams page"
     icon="fas fa-users"
-    count="13 teams"
 >}}
 
 {{< social-media >}}
@@ -53,7 +53,6 @@ type: welcome
     description="Our comprehensive e-learning platform with community-driven initiatives and resources for open science education."
     url="/nexus"
     icon="fas fa-graduation-cap"
-    count="12"
 >}}
 
 {{< welcome 
@@ -61,7 +60,6 @@ type: welcome
     description="Teaching methodologies and approaches specifically designed for integrating open science into educational practices."
     url="/pedagogies"
     icon="fas fa-lightbulb"
-    count="25"
 >}}
 
 {{< welcome 
@@ -69,7 +67,6 @@ type: welcome
     description="Resources focused on equity in open scholarship and supporting neurodiversity in academic settings."
     url="/dei"
     icon="fas fa-heart"
-    count="8"
 >}}
 
 {{< welcome 
@@ -77,7 +74,6 @@ type: welcome
     description="Studies, publications, and evidence about the impact of open and reproducible research on students and education."
     url="/impact"
     icon="fas fa-chart-line"
-    count="15"
 >}}
 
 {{< welcome 
@@ -85,7 +81,6 @@ type: welcome
     description="Curated collection of replications and reversals across social sciences for educational use."
     url="/replication-hub"
     icon="fas fa-redo"
-    count="6"
 >}}
 
 {{< welcome 
@@ -93,5 +88,4 @@ type: welcome
     description="Specialized lesson plans and materials for promoting neurodiversity awareness in open science education."
     url="/neurodiversity"
     icon="fas fa-brain"
-    count="42"
 >}}

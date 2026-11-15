@@ -31,5 +31,6 @@
     ],
     "translation_reviewed_by": [
         "Susanne Vogel"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

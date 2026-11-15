@@ -42,7 +42,9 @@
     </div>
     <div class="resource-description">{{ .Get "description" }}</div>
     <a href="{{ .Get "url" }}" class="resource-button">
-      {{ if hasPrefix (.Get "count") "team-" }}
+      {{ if .Get "button" }}
+      {{ .Get "button" }} <i class="fas fa-arrow-right"></i>
+      {{ else if hasPrefix (.Get "count") "team-" }}
       Explore Teams <i class="fas fa-arrow-right"></i>
       {{ else if eq (.Get "count") "15 teams" }}
       Explore Teams <i class="fas fa-arrow-right"></i>

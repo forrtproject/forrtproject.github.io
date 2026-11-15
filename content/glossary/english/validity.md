@@ -42,5 +42,6 @@
     "language": "english",
     "aliases": [
         "/glossary/validity"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

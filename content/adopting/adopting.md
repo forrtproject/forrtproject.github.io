@@ -54,7 +54,7 @@ classtitle = "text-center"
 
 ---
 
-> In this page, we describe easy ways to adopt principled teaching and mentoring practices. That is, (a) integrating open and reproducible science tenets into your teaching workflow; (b) striving to teach science (or scholarship) as a process of knowledge acquisition rather than a collection of scientific evidence, as doing so does not yield scientific literacy; (c) share publicly your teaching and mentoring (and Lab) materials so that other educators can make use of your excellent work, which also foster social justice through the democratization of scientific educational resources and pedagogies; (d) recognize that Higher Education is a profoundly unequal, non-inclusive and non-diverse environment due to a plethora of societal constraints, which also shapes academia itself, and which we as educators should try to address in class (whatever the subject taught) by integrating course content with topics of representation, diversity, equity, and inclusion. See below for 7 ways FORRT tips.
+> In this page, we describe easy ways to adopt principled teaching and mentoring practices. That is, (a) integrating open and reproducible science tenets into your teaching workflow; (b) striving to teach science (or scholarship) as a process of knowledge acquisition rather than a collection of scientific evidence, as doing so does not yield scientific literacy; (c) share publicly your teaching and mentoring (and Lab) materials so that other educators can make use of your excellent work, which also foster social justice through the democratization of scientific educational resources and pedagogies; (d) recognize that Higher Education is a profoundly unequal, non-inclusive and non-diverse environment due to a plethora of societal constraints, which also shapes academia itself, and which we as educators should try to address in class (whatever the subject taught) by integrating course content with topics of representation, diversity, equity, and inclusion. See below for 8 FORRT tips.
 
 
 ## What is **Principled Education**?
@@ -164,7 +164,7 @@ Open educational resources allow community members to make contributions and con
 * Explore existing instances of principled education:   
   * [FORRT Pedagogies](https://forrt.org/pedagogies) aims to collect and catalogue exemplary instances of principled education \- i.e., successful instances of teaching or mentoring of open and reproducible principles, and detailed examples of the processes by which ideals in teaching, mentoring, and openness of these materials come to materialize.  
 * Explore existing open educational resources, and [submit your own resources](https://docs.google.com/forms/d/e/1FAIpQLSfPceN5opEeauCBSvapoB-ADpH0IoT24XOLfQGaVEF0EJGFOA/viewform) so that others can adopt them easily into their teaching.  
-  * FORRT hosts approximately [800+ curated educational resources](https://forrt.org/resources) on Open and Reproducible topics on their database.   
+  * FORRT hosts over [1,400 curated educational resources](https://forrt.org/resources) on Open and Reproducible topics on their database.   
   * The [OSKB](https://www.oercommons.org/hubs/OSKB) shares open scholarship resources created and curated by the community.  
   * Jaclyn Siegel’s document compiles a curated list of [accessible and affordable resources](https://docs.google.com/document/d/1IFbHIN5OOAO0qz-VfCU9nEx4-x6CfArj1-d8ylA2vsU/edit?tab=t.0#heading=h.q1enyigqn74f) tailored for graduate students.  
   * [ARIADNE](https://igor-biodgps.github.io/ARIADNE/) is a resource navigator with many (open-access) resources needed throughout the whole research cycle. 
@@ -252,7 +252,7 @@ Involving students in open science projects is an effective way to deepen their 
   * Helpful resources for classroom replication projects include:  
     * [ReplicationWiki – Economics and social sciences](https://blog.repec.org/2020/08/04/a-replication-database-for-economics-and-social-sciences-the-replicationwiki/): A collaborative database documenting replication attempts, methods, and outcomes in economics and social science.  
     * [Political Science Replication](https://politicalsciencereplication.wordpress.com/about/): A directory of replication studies focused on political science, promoting methodological transparency.  
-    * [Project Tier’s Learning Course Materials](https://www.projecttier.org/tier-classroom/course-materials/): Course materials on topics such as open science, data analysis and replication in empirical.  
+    * [Project Tier’s Learning Course Materials](https://www.projecttier.org/tier-classroom/course-materials/): Course materials on topics such as open science, data analysis and replication in empirical research.  
     * [FORRT workshop: Teaching the why and how of replication studies](https://forrt.org/educators-corner/004-teaching-why-how-replication/).  
     * [Brian Dillon’s Linguistics class](https://people.umass.edu/bwdillon/project/linguist-609-2020/): A graduate-level course focusing on statistical methods for analyzing linguistic and experimental data.  
     * [Replication Reports Templates](https://osf.io/8dkxc/): A collection of academic paper templates which integrate open science and replication concepts in disciplines such as Economics, Politics and Psychology.  
@@ -321,7 +321,7 @@ Common structural barriers and how to address them:
   * Read [FORRT’s Manuscript](https://forrt.org/citation-politics/) on The Citational Justice Toolkit which offers practical guidance and tools to help researchers make more equitable and conscientious citation choices throughout the research process.  
 * Engage with *Towards Social Justice In Academia Initiatives:*  
   * [FORRT’s remote mentorship program](https://forrt.org/dei) aims to facilitate and encourage adherence to open and reproducible research practices for (a) students from underprivileged and underrepresented backgrounds; (b) non-WEIRD; and (c) when there are no local open science friendly institutions or personnel.  
-  * [FORRT’s supporting underprivileged and underrepresented early-career researchers initiative](https://forrt.org/dei) serves as a link between willing mentors and mentees in their engagement with academia, its several duties (e.g., application materials, grant/funding proposals, academic writing, research development, statistical analyses, etc.), as well as open and reproducible science practices. It is FORRT’s goal to chip away at the barriers that exist and to promote a more inclusive environment for all (Roberson, 2020).
+  * [FORRT’s supporting underprivileged and underrepresented early-career researchers initiative](https://forrt.org/dei) serves as a link between willing mentors and mentees in their engagement with academia, its several duties (e.g., application materials, grant/funding proposals, academic writing, research development, statistical analyses, etc.), as well as open and reproducible science practices. It is FORRT’s goal to chip away at the barriers that exist and to promote a more inclusive environment for all ([Roberson, 2020](https://doi.org/10.1038/s41562-020-0926-6)).
 
 </details>
 
@@ -354,7 +354,7 @@ A great way to adopt the values of principled education is to advocate in your o
   * [The repliCATS project](https://replicats.research.unimelb.edu.au/): A collaborative initiative that engages researchers in systematically assessing reproducibility and credibility in published research, fostering methodological reflection and community learning.  
   * [Quala Lab](https://qualalab.org/): Collaborative working group finding connections between the open science movement and qualitative and mixed methods research.  
   * [Reproducibility Network](https://www.ukrn.org/global-networks/): National peer led consortium of researchers aiming to promote and ensure rigorous research practices.    
-  * [ReproducibiliTea:](https://soundcloud.com/reproducibilitea) A podcast highlighting the great work of early career researchers.
+  * [ReproducibiliTea](https://reproducibilitea.org/): A global journal club initiative that encourages students and staff to read and discuss journal articles related to open science.
 
 </details>
 
@@ -375,6 +375,6 @@ You can also submit a short contribution to FORRT’s curated database or direct
 
 * a case study
 
-Submissions can be made via the form below. Please note that contributors can get credit. We are committed to transparent and meaningful attribution. Contributors are credited using our formal crediting mechanism (Tenzing / CRediT taxonomy). When submitting via the form, you will be invited to add your details so that you can be properly credited for your contribution. We value community knowledge and aim to recognise all contributions appropriately.
+Please submit them through our [resource submission form](https://docs.google.com/forms/d/e/1FAIpQLSfPceN5opEeauCBSvapoB-ADpH0IoT24XOLfQGaVEF0EJGFOA/viewform). Please note that contributors can get credit. We are committed to transparent and meaningful attribution. Contributors are credited using our formal crediting mechanism (Tenzing / CRediT taxonomy). List yourself under Provider/Creators in the form so that you can be properly credited for your contribution. We value community knowledge and aim to recognise all contributions appropriately.
 
 {{< adopting_feedback_form >}}

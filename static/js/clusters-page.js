@@ -440,6 +440,19 @@
     }
 
     scheduleStickyLayoutMetrics();
+
+    /* The desktop side list scrolls inside its own box: start it at the current cluster, without moving
+       the page (on a phone the list is a drawer, opened at the top). */
+    var currentNav = sidebar ? sidebar.querySelector('.cluster-nav-heading[aria-current]') : null;
+    var sideBox = sidebar ? sidebar.querySelector('.clusters-sidebar-inner') : null;
+    if (currentNav && sideBox && !clustersNavIsMobileWidth()) {
+      requestAnimationFrame(function () {
+        var header = sideBox.querySelector('.sidebar-header');
+        var offset = currentNav.getBoundingClientRect().top - sideBox.getBoundingClientRect().top + sideBox.scrollTop;
+        sideBox.scrollTop = Math.max(0, offset - (header ? header.offsetHeight : 0) - 8);
+      });
+    }
+
     window.addEventListener(
       'resize',
       function () {

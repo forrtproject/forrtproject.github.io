@@ -33,7 +33,7 @@ You can read more about Nowhere Lab in this [Educator's Corner post for FORRT](/
 
 ## Weekly meetings
 
-We hold weekly meetings that change time every 3 months to attempt to accommodate members in different time zones. From November 2025 onwards, *meetings are held Tuesdays at 9am (UK) and Thursdays at 4pm (UK)* and will be catch-up and co-work only, lasting approximately 1 hour. Members can set up other activities, such as practising a talk, by reaching out to our community on Slack.
+We hold two meetings a week, at different times to accommodate members in different time zones. *Meetings are currently held Tuesdays at 9am (UK) and Thursdays at 4pm (UK)* and are catch-up and co-work only, lasting approximately 1 hour. Members can set up other activities, such as practising a talk, by reaching out to our community on Slack.
 
 ## Slack channel
 

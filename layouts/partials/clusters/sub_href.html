@@ -1,0 +1,4 @@
+{{/* A sub-cluster's link: its cluster page and the anchor cluster_section.html and sidebar_nav.html give it,
+     slugged from the full name. Expects dict: base (the cluster page's URL, or "" on that page), num, name. */}}
+{{ $slug := .name | lower | replaceRE "[^a-z0-9]+" "-" | replaceRE "^-+|-+$" "" }}
+{{ return printf "%s#c%d-%s" .base .num $slug }}

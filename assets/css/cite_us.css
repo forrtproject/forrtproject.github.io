@@ -7,3 +7,7 @@
 .copy-button:hover{background:var(--ink);color:#fff}
 .copy-icon{width:14px;height:14px}
 @media(max-width:760px){.cite-us-item{grid-template-columns:minmax(0,1fr)}.copy-button{justify-self:start}}
+/* Reference text keeps to the reading measure, under 80 characters a line, whatever the page's width. */
+.cite-us-text p,.article-layout .article-style .cite-us-text p{max-width:28.4em;margin:0;font-size:inherit}
+.cite-us-text .ref-note,.article-layout .article-style .cite-us-text .ref-note{margin-top:8px}
+.disciplines-attribution .cite-us-item{max-width:640px;margin-inline:auto}

@@ -21,8 +21,6 @@ menu:
     weight: 1
 ---
 
-# *100+ Summaries of Open and Reproducible Science Literature*
-
 ## Overview
 
 The FORRT community has prepared 100+ summaries of Open and Reproducible Science literature. The purpose of these summaries is to reduce some of the burden on educators looking to incorporate open and reproducible research principles into their teaching as well as facilitate the edification of anyone wishing to learn or disseminate open and reproducible science tenets.
@@ -35,7 +33,7 @@ We made a distinction between "[Open and Reproducible Science](/summaries/open-r
 
 FORRT’s summaries are a community-curated resource that aims to satisfy three of [FORRT’s Goals](/about/mission/): 
 *   Support scholars in their efforts to learn and stay up-to-date on best practices regarding open and reproducible research;
-*   Facilitating conversations about the ethics and social impact of teaching substantive topics with due regard to scientific openness, epistemic uncertainty and the credibility revolution;
+*   Facilitating conversations about the ethics and social impact of teaching substantive topics with due regard to scientific openness, epistemic uncertainty and the {{< term "Credibility revolution" "credibility revolution" >}};
 *   Foster social justice through the democratization of scientific educational resources and its pedagogies.
 
 and four of [FORRT’s Mission](/about/mission/):

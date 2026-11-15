@@ -207,7 +207,7 @@ Thanks to our amazing community, FORRT has become an ***award-winning*** grassro
 
 <br style="clear: both;" />
 
-In 2021, FORRT has received a ***Kellogg School of Management Consultancy on “Leading & Managing Teams”***.
+In 2021, FORRT has received a ***consultancy on “Leading & Managing Teams”*** from the Kellogg School of Management.
 
 <br style="clear: both;" />
 

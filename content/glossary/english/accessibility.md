@@ -41,5 +41,6 @@
     "language": "english",
     "aliases": [
         "/glossary/accessibility"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

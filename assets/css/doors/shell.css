@@ -53,9 +53,9 @@ nav.primary>a[aria-current]{text-decoration:underline;text-underline-offset:5px}
   .foot-top>div:first-child{grid-column:1/-1}
 }
 @media(max-width:1000px){.nav-button,nav.primary>a{font-size:15px;padding:9px 8px}}
-@media(max-width:760px){
+/* Below 980 px the full row of menus no longer fits beside the logo and Get involved, so the Menu button takes over. */
+@media(max-width:979px){
   .head-inner{min-height:72px;gap:8px}
-  .brand img{width:96px}
   .menu-toggle{display:block;margin-inline-start:auto}
   .site-head .head-join{padding:10px 12px}
   .search-open{padding:8px 10px}
@@ -65,6 +65,9 @@ nav.primary>a[aria-current]{text-decoration:underline;text-underline-offset:5px}
   .nav-button,nav.primary>a{text-align:start;font-size:17px;padding:11px 8px}
   .mega{position:static;box-shadow:none;border-top:0;padding:10px 14px 14px;background:var(--surface);border-radius:var(--r-small)}
   .mega-inner{grid-template-columns:1fr;gap:18px;width:100%}
+}
+@media(max-width:760px){
+  .brand img{width:96px}
   .foot-top{grid-template-columns:1fr;gap:26px}
   .foot-base{flex-direction:column}
 }

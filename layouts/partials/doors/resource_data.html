@@ -1,5 +1,8 @@
 {{/* The two files resources.js loads: a small one for filtering, and one with every field for
-     searching, fetched on the first search. Built once. Input: dict with `index`. */}}
+     searching, fetched on the first search. Built once. Input: dict with `index`. Each row's `d`
+     is the date added, from the form's `timestamp`, as "YYYY-MM-DDTHH:MM:SS" for sorting, or ""
+     when there is none. The sheet holds form times ("6/27/2023 14:45:33"), ISO times from the
+     2020 import, and a bare "01/01/2020" that stands in for an unknown date, so that counts as none. */}}
 {{ $index := .index }}
 {{ $facets := dict }}
 {{ $positions := dict }}
@@ -16,7 +19,18 @@
   {{ $t := slice }}{{ range $item.types }}{{ $t = $t | append (index $positions.type (urlize .)) }}{{ end }}
   {{ $l := slice }}{{ range $item.levels }}{{ $l = $l | append (index $positions.level (urlize .)) }}{{ end }}
   {{ $c := slice }}{{ range $item.clusters }}{{ $c = $c | append (index $positions.cluster (urlize .)) }}{{ end }}
-  {{ $rows = $rows | append (dict "t" $item.title "u" (path.Base (strings.TrimSuffix "/" .RelPermalink)) "y" $t "l" $l "c" $c) }}
+  {{ $stamp := trim (.Params.timestamp | default "" | string) " " }}
+  {{ $added := "" }}
+  {{ with findRESubmatch `^(\d{1,2})/(\d{1,2})/(\d{4}) (\d{1,2}):(\d{2}):(\d{2})$` $stamp 1 }}
+    {{ $p := index . 0 }}
+    {{/* Padded by length, as Hugo's int reads "08" as octal. */}}
+    {{ $pad := slice }}
+    {{ range slice (index $p 1) (index $p 2) (index $p 4) }}{{ $pad = $pad | append (cond (eq (len .) 1) (printf "0%s" .) .) }}{{ end }}
+    {{ $added = printf "%s-%s-%sT%s:%s:%s" (index $p 3) (index $pad 0) (index $pad 1) (index $pad 2) (index $p 5) (index $p 6) }}
+  {{ else }}
+    {{ if findRE `^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}` $stamp 1 }}{{ $added = substr $stamp 0 19 }}{{ end }}
+  {{ end }}
+  {{ $rows = $rows | append (dict "t" $item.title "u" (path.Base (strings.TrimSuffix "/" .RelPermalink)) "y" $t "l" $l "c" $c "d" $added) }}
   {{/* Every field, as the old page's search had (issue #286). */}}
   {{ $tags := partial "functions/page_tags.html" . }}
   {{ $search = $search | append (lower (delimit (slice

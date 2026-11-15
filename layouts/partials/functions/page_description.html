@@ -14,6 +14,8 @@
 {{/* Closing block tags become spaces so paragraphs do not run together
      ("alone.The paper") once the markup is stripped. */}}
 {{- $block_end := `(<br\s*/?>|</(p|li|h[1-6]|div|td|blockquote)>)` -}}
+{{/* A shortened author list (citations/authors) keeps every author; drop its "et al." and button. */}}
+{{- $author_ui := `<span class="?ref-etal"?>[^<]*</span>|<button[^>]*ref-authors-toggle[^>]*>[^<]*</button>` -}}
 {{- $desc := "" -}}
 
 {{- if $page.IsHome -}}
@@ -56,7 +58,7 @@
   {{/* Front matter is raw Markdown (`**bold**`, links); `.Summary` is HTML.
        Render, strip the markup, then decode entities such as `&ldquo;` that
        Markdown typography produced. */}}
-  {{- $desc = trim ($page.RenderString (string $desc) | replaceRE $block_end "$1 " | plainify | htmlUnescape) $ws -}}
+  {{- $desc = trim ($page.RenderString (string $desc) | replaceRE $author_ui "" | replaceRE $block_end "$1 " | plainify | htmlUnescape) $ws -}}
 
   {{/* Curated resources whose abstract is a placeholder ("n.a.") or shared
        with other resources: lead with the resource's own title, type and
@@ -93,12 +95,12 @@
       {{- $desc = printf "Browse all %d %s used on FORRT: %s." (len $terms) (replace $page.Data.Plural "_" " ") (delimit $terms ", ") -}}
     {{- else if eq $page.Type "widget_page" -}}
       {{/* Widget pages render no body of their own: use the first widget,
-           in the order the page lays them out, that has text. `.Plain` includes
+           in the order the page lays them out, that has text. Its plain text includes
            whatever its shortcodes render, so a page whose first widget opens
            with interface text (filter buttons) needs a `summary` of its own. */}}
       {{- range where ($page.Resources.ByType "page") ".Params.active" "!=" false -}}
         {{- if not $desc -}}
-          {{- $desc = trim (.Plain | htmlUnescape) $ws -}}
+          {{- $desc = trim (.Content | replaceRE $author_ui "" | plainify | htmlUnescape) $ws -}}
         {{- end -}}
       {{- end -}}
     {{- end -}}

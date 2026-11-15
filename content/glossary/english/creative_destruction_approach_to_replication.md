@@ -31,5 +31,6 @@
     "language": "english",
     "aliases": [
         "/glossary/creative_destruction_approach_to_replication"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

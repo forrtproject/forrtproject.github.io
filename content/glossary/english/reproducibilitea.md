@@ -31,5 +31,6 @@
     "language": "english",
     "aliases": [
         "/glossary/reproducibilitea"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

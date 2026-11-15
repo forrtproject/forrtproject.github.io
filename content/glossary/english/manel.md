@@ -34,5 +34,6 @@
     "language": "english",
     "aliases": [
         "/glossary/manel"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

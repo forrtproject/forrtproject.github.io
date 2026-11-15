@@ -31,5 +31,6 @@
     "language": "english",
     "aliases": [
         "/glossary/open_washing"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

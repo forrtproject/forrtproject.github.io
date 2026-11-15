@@ -26,5 +26,6 @@
     "language": "english",
     "aliases": [
         "/glossary/literature_review"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

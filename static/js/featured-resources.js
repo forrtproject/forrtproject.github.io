@@ -22,6 +22,35 @@
     return d.innerHTML;
   }
 
+  /** Decode HTML entities without parsing markup (a textarea's content is text only). */
+  function decodeEntities(s) {
+    var t = document.createElement('textarea');
+    t.innerHTML = s || '';
+    return t.value;
+  }
+
+  /** Titles and references from Crossref carry <i>, <em> and <scp>: escape, then restore those.
+      Same rule as layouts/partials/clusters/rich_text.html. */
+  function richText(s) {
+    return escHtml(decodeEntities(s).replace(/\s+/g, ' ').trim())
+      .replace(/&lt;(i|em)&gt;([\s\S]*?)&lt;\/\1&gt;/g, '<i>$2</i>')
+      .replace(/&lt;scp&gt;([\s\S]*?)&lt;\/scp&gt;/g, '<span class="scp">$1</span>');
+  }
+
+  /** The same text without markup, for copying and the PDF. */
+  /** "practice/tools" -> "Practice/tools", "Journal Article" -> "Journal article"; words in capitals stay
+      (layouts/partials/clusters/sentence_case.html has the same rule). */
+  function sentenceCase(s) {
+    return String(s).trim().split(' ').map(function (w, i) {
+      if (i === 0) return w.charAt(0).toUpperCase() + w.slice(1);
+      return w === w.toUpperCase() ? w : w.toLowerCase();
+    }).join(' ');
+  }
+
+  function plainText(s) {
+    return decodeEntities(s).replace(/<\/?(?:i|em|scp)>/gi, '').replace(/\s+/g, ' ').trim();
+  }
+
   /** Flat lookup: DOI → resource object across all clusters. */
   function buildResourceIndex(data) {
     var idx = {};
@@ -67,9 +96,18 @@
     if (!backdrop || !body) return;
 
     var latest = null;  // the reference asked for last, so a slow fetch can't open an older one
+    var returnTo = null;  // the control that opened the dialog, which gets focus back on close
+    var dialog = backdrop.querySelector('.ref-popup');
+
+    function focusables() {
+      return Array.prototype.filter.call(
+        dialog.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'),
+        function (el) { return el.getClientRects().length > 0; });
+    }
 
     function open(doi, trigger) {
       latest = doi;
+      if (trigger) returnTo = trigger;
       var r = resourceIdx[doi];
       if (!r) {
         if (trigger) trigger.setAttribute('aria-busy', 'true');
@@ -81,17 +119,17 @@
       }
       var html = '';
       // Tags + title
-      html += '<div class="ref-popup-tags">';
-      if (r.focus) html += '<span class="tag tag-focus">' + escHtml(r.focus) + '</span>';
-      if (r.resource_type) html += '<span class="tag tag-type">' + escHtml(r.resource_type) + '</span>';
-      html += '</div>';
-      html += '<div class="ref-popup-title">' + escHtml(r.title) + '</div>';
+      if (r.focus || r.resource_type) {
+        html += '<p class="card-kind">' + (r.focus ? '<span class="card-purpose">' + escHtml(sentenceCase(r.focus)) + '</span> ' : '') +
+          (r.resource_type ? escHtml(sentenceCase(r.resource_type)) : '') + '</p>';
+      }
+      html += '<div class="ref-popup-title">' + richText(r.title) + '</div>';
 
       // APA
       if (r.apa) {
         html += '<div class="ref-section">';
-        html += '<div class="ref-section-label">APA Reference</div>';
-        html += '<div class="ref-apa">' + escHtml(r.apa) + '</div>';
+        html += '<div class="ref-section-label">APA reference</div>';
+        html += '<div class="ref-apa">' + richText(r.apa) + '</div>';
         html += '<div class="ref-copy-row">';
         html += '<button class="ref-copy-btn" data-copy="apa" data-doi="' + escHtml(doi) + '">' +
           '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="8" height="10" rx="1"/><path d="M5 3V2a1 1 0 011-1h5a1 1 0 011 1v9a1 1 0 01-1 1h-1"/></svg>' +
@@ -130,12 +168,18 @@
       body.innerHTML = html;
       backdrop.classList.add('open');
       document.body.style.overflow = 'hidden';
+      /* Focus moves into the dialog, on its first control (Close), so Tab and Escape act on it. */
+      if (dialog) dialog.setAttribute('tabindex', '-1');
+      (closeBtn || dialog).focus({ preventScroll: true });
     }
 
     function close() {
+      if (!backdrop.classList.contains('open')) return;
       backdrop.classList.remove('open');
       body.innerHTML = '';
       document.body.style.overflow = '';
+      if (returnTo && document.contains(returnTo)) returnTo.focus({ preventScroll: true });
+      returnTo = null;
     }
 
     // Event delegation: ref trigger buttons
@@ -154,7 +198,7 @@
         var d = copyBtn.getAttribute('data-doi');
         var res = resourceIdx[d];
         if (!res) return;
-        var text = type === 'bibtex' ? res.bibtex : res.apa;
+        var text = type === 'bibtex' ? res.bibtex : plainText(res.apa);
         navigator.clipboard.writeText(text).then(function () {
           copyBtn.classList.add('copied');
           var orig = copyBtn.innerHTML;
@@ -175,7 +219,16 @@
       if (e.target === backdrop) close();
     });
     document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && backdrop.classList.contains('open')) close();
+      if (!backdrop.classList.contains('open')) return;
+      if (e.key === 'Escape') { close(); return; }
+      if (e.key !== 'Tab') return;
+      /* Tab stays inside the dialog: from the last control back to the first, and the other way. */
+      var items = focusables();
+      if (!items.length) { e.preventDefault(); return; }
+      var first = items[0], last = items[items.length - 1];
+      var inside = dialog.contains(document.activeElement);
+      if (e.shiftKey && (document.activeElement === first || !inside)) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && (document.activeElement === last || !inside)) { e.preventDefault(); first.focus(); }
     });
   }
 
@@ -258,7 +311,7 @@
         html += '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>';
         html += '</button>';
         html += '<div class="rl-panel-item-info">';
-        html += '<div class="rl-panel-item-title">' + escHtml(r.title || doi) + '</div>';
+        html += '<div class="rl-panel-item-title">' + (r.title ? richText(r.title) : escHtml(doi)) + '</div>';
         html += '<div class="rl-panel-item-ref">' + escHtml(r.short_ref || '') + '</div>';
         html += '</div>';
         html += '<button class="rl-panel-item-remove" data-doi="' + escHtml(doi) + '" aria-label="Remove">&times;</button>';
@@ -268,7 +321,7 @@
         html += '<div class="rl-panel-item-details">';
         if (r.apa) {
           html += '<div class="rl-detail-ref-row">';
-          html += '<div class="rl-detail-apa">' + escHtml(r.apa) + '</div>';
+          html += '<div class="rl-detail-apa">' + richText(r.apa) + '</div>';
           html += '<button class="rl-detail-copy" data-copy-apa="' + escHtml(doi) + '" title="Copy APA reference">';
           html += '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="8" height="10" rx="1"/><path d="M5 3V2a1 1 0 011-1h5a1 1 0 011 1v9a1 1 0 01-1 1h-1"/></svg>';
           html += '</button>';
@@ -365,7 +418,7 @@
         var d = copyBtn.getAttribute('data-copy-apa');
         var res = resourceIdx[d];
         if (res && res.apa) {
-          navigator.clipboard.writeText(res.apa).then(function () {
+          navigator.clipboard.writeText(plainText(res.apa)).then(function () {
             copyBtn.classList.add('copied');
             setTimeout(function () { copyBtn.classList.remove('copied'); }, 1500);
           });
@@ -467,7 +520,7 @@
           doc.setFont('helvetica', 'bold');
           doc.setFontSize(11);
           doc.setTextColor(34, 34, 34);
-          var titleLines = doc.splitTextToSize(r.title || doi, contentW);
+          var titleLines = doc.splitTextToSize(r.title ? plainText(r.title) : doi, contentW);
           doc.text(titleLines, margin, y);
           y += titleLines.length * 5 + 2;
 
@@ -477,7 +530,7 @@
             doc.setFont('times', 'normal');
             doc.setFontSize(9);
             doc.setTextColor(68, 68, 68);
-            var apaLines = doc.splitTextToSize(r.apa, contentW - 10);
+            var apaLines = doc.splitTextToSize(plainText(r.apa), contentW - 10);
             // Hanging indent: first line at margin, rest indented
             apaLines.forEach(function (line, li) {
               checkPage(4);
@@ -668,6 +721,20 @@
     var specCheckbox = document.getElementById('fr-global-specificity-checkbox');
     var searchInput = document.getElementById('clusters-inline-search-input');
     var clearBtn = document.getElementById('fr-global-clear');
+    var more = document.getElementById('fr-filter-more');
+    var activeLabel = document.getElementById('fr-filter-active');
+    var statusEl = document.getElementById('fr-filter-status');
+    var resultClear = document.getElementById('fr-filter-result-clear');
+    var resultGo = document.getElementById('fr-filter-result-go');
+    var onHub = !!document.querySelector('.clusters-overview');
+
+    /* The Filters disclosure is open from 761 px, where its summary is hidden, and closed on a phone. */
+    if (more && window.matchMedia) {
+      var wide = window.matchMedia('(min-width: 761px)');
+      var syncMore = function () { more.open = wide.matches; };
+      if (wide.addEventListener) wide.addEventListener('change', syncMore);
+      else if (wide.addListener) wide.addListener(syncMore);
+    }
 
     // --- Pre-cache card data so filtering never queries the DOM for text ---
     var sectionCache = [];
@@ -717,8 +784,12 @@
       var group = btn.closest('.fr-filter-tags');
       if (!group) return;
       e.preventDefault();
-      group.querySelectorAll('.fr-tag-btn').forEach(function (b) { b.classList.remove('active'); });
+      group.querySelectorAll('.fr-tag-btn').forEach(function (b) {
+        b.classList.remove('active');
+        b.setAttribute('aria-pressed', 'false');
+      });
       btn.classList.add('active');
+      btn.setAttribute('aria-pressed', 'true');
       applyGlobalFilters();
     });
 
@@ -734,11 +805,14 @@
         if (searchInput) searchInput.focus();
       });
     }
+    if (resultClear && clearBtn) resultClear.addEventListener('click', function () { clearBtn.click(); });
 
     function resetGroupToAll(group) {
       if (!group) return;
       group.querySelectorAll('.fr-tag-btn').forEach(function (b) {
-        b.classList.toggle('active', b.getAttribute('data-value') === 'all');
+        var all = b.getAttribute('data-value') === 'all';
+        b.classList.toggle('active', all);
+        b.setAttribute('aria-pressed', String(all));
       });
     }
 
@@ -769,7 +843,11 @@
       var query = searchInput ? searchInput.value.toLowerCase().trim() : '';
       var tokens = query ? query.split(/\s+/) : [];
       var isFiltered = activeFocus !== 'all' || activeType !== 'all' || tokens.length > 0;
-      if (clearBtn) clearBtn.hidden = !isFiltered;
+      /* Showing specialist resources adds cards rather than filtering, but Clear filters undoes it too. */
+      if (clearBtn) clearBtn.hidden = !(isFiltered || showNarrow);
+      /* The Filters summary counts the choices that differ from the start: a focus, a type, specialist shown. */
+      var active = (activeFocus !== 'all' ? 1 : 0) + (activeType !== 'all' ? 1 : 0) + (showNarrow ? 1 : 0);
+      if (activeLabel) activeLabel.textContent = active ? ' (' + active + ' active)' : '';
 
       // --- Pass 1: compute visibility from cached data (no DOM reads) ---
       var sectionResults = [];
@@ -803,6 +881,32 @@
         }
 
         sectionResults.push({ matchCount: matchCount, cardVis: cardVis, ownTextMatches: ownTextMatches });
+      }
+
+      /* What is left, said once: a count while a filter or search is set, a message when nothing is. */
+      var shownCards = 0, allCards = 0;
+      for (var r = 0; r < sectionResults.length; r++) {
+        shownCards += sectionResults[r].matchCount;
+        allCards += sectionCache[r].cards.length;
+      }
+      if (statusEl) {
+        var message = '';
+        if (isFiltered && shownCards === 0) message = 'No resources match.';
+        else if (isFiltered) message = shownCards + ' of ' + allCards + ' resources shown' + (onHub ? ' in the clusters below.' : '.');
+        if (statusEl.textContent !== message) statusEl.textContent = message;
+        var none = isFiltered && shownCards === 0;
+        if (resultClear) resultClear.hidden = !none;
+        /* One Clear button at a time: the message's while nothing matches, the bar's otherwise. */
+        if (clearBtn && none) clearBtn.hidden = true;
+        /* On /clusters/ the matches are below the overview, so a link goes to the first cluster with one. */
+        if (resultGo) {
+          var first = null;
+          for (var g = 0; g < sectionResults.length && !first; g++) {
+            if (sectionResults[g].matchCount) first = sectionCache[g].el.closest('.cluster-section');
+          }
+          resultGo.hidden = !(onHub && isFiltered && first);
+          if (first) resultGo.setAttribute('href', '#' + first.id);
+        }
       }
 
       // --- Pass 2: batch all DOM writes ---

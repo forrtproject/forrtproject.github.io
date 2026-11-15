@@ -340,7 +340,7 @@ plugins_js  = []
   # The 3D castle on the home page. Set to false to show only the still image.
   castle = true
   # Pages whose tables, maps, cards or lists need the full width: their paragraphs stay at reading width.
-  wide_pages = ["/about/visitors", "/replication-hub/large-scale-replication-projects", "/citation-politics/toolkit", "/publications", "/about/partnerships", "/contributors", "/about/community", "/about/teams", "/cv", "/manuscript", "/about/booklet", "/just_os_chatbot", "/community-map", "/lesson-plans", "/neurodiversity-lessonbank/implicit_bias", "/neurodiversity-lessonbank/masterstools", "/neurodiversity-lessonbank/diversity-and-research", "/neurodiversity-lessonbank/community-psychology-diversity", "/neurodiversity-lessonbank/generalizability", "/ai-metascience", "/syllabus", "/neurodiversity-lessonbank"]
+  wide_pages = ["/about/get-involved", "/about/visitors", "/replication-hub/large-scale-replication-projects", "/citation-politics/toolkit", "/publications", "/about/partnerships", "/contributors", "/about/community", "/about/teams", "/cv", "/manuscript", "/about/booklet", "/just_os_chatbot", "/community-map", "/lesson-plans", "/neurodiversity-lessonbank/implicit_bias", "/neurodiversity-lessonbank/masterstools", "/neurodiversity-lessonbank/diversity-and-research", "/neurodiversity-lessonbank/community-psychology-diversity", "/neurodiversity-lessonbank/generalizability", "/ai-metascience", "/syllabus", "/neurodiversity-lessonbank"]
   # Direct actions under a tool page's title (layouts/partials/doors/page_actions.html); the first is the main one.
   [[doors.page_actions]]
     path = "/awop"

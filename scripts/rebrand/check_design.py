@@ -8,7 +8,7 @@ Needs Playwright. Covers what a build comparison cannot: nothing runs wider than
 no italic type outside references, reading lines under 80 characters, no page's own button
 hidden, the sample pages' width as well as the designed screens', the home page's topic
 buttons within their position limit (checklist A14), its layout shift on a slow phone, the pause
-control over the castle and the quotes, and the behaviour of the resources directory. On a local build it also weighs the designed screens against the migration
+control over the castle and the quotes, the layout of the /clusters/ illustration, and the behaviour of the resources directory. On a local build it also weighs the designed screens against the migration
 plan's budgets. Those lines are a report and do not fail the check, because the theme's Bootstrap,
 jQuery and Font Awesome stay until Phase 3.
 """
@@ -96,13 +96,24 @@ AUDIT = """() => {
     const lines = {};
     let node;
     while ((node = walker.nextNode())) {
+      // Text no one can see is not a line: inside a closed disclosure, or cut off by a box that clips it
+      // (a description shortened to its first lines).
+      const parent = node.parentElement;
+      if (parent.closest('details:not([open])') && !parent.closest('summary')) continue;
+      const clips = [];
+      for (let up = parent; up && up !== el.parentElement; up = up.parentElement) {
+        if (getComputedStyle(up).overflowY !== 'visible') clips.push(up.getBoundingClientRect());
+      }
       for (const match of node.textContent.matchAll(/\\S+\\s*/g)) {
         const range = document.createRange();
         range.setStart(node, match.index);
         range.setEnd(node, match.index + match[0].length);
         // A long address can break across lines, so share its characters out by rendered width.
-        const boxes = [...range.getClientRects()].filter((box) => box.width > 0);
-        const total = boxes.reduce((sum, box) => sum + box.width, 0);
+        // The share is taken over all of the word's boxes, then only the visible ones count.
+        const all = [...range.getClientRects()].filter((box) => box.width > 0);
+        const total = all.reduce((sum, box) => sum + box.width, 0);
+        const boxes = all.filter((box) => clips.every((clip) => box.top < clip.bottom - 1 && box.bottom > clip.top + 1
+          && box.left < clip.right - 1 && box.right > clip.left + 1));
         for (const box of boxes) {
           const key = Math.round(box.top / 6);
           // Arabic vowel marks and other combining marks take up no column of their own.
@@ -225,7 +236,7 @@ def check_articles(browser, base, root, failures):
 
 
 def check_callouts(browser, base, root, failures):
-    """Call-outs sit in the right-hand column on wide screens, clear of each other, and in the text on narrow ones."""
+    """Call-outs sit in the right-hand column from 1240px, clear of each other, and in the text below that."""
     paths = []
     for directory, _, files in os.walk(root):
         if "index.html" in files:
@@ -254,26 +265,29 @@ CALLOUTS = """() => {
   const notes = [...reading.querySelectorAll('.callout')].map((el) => el.getBoundingClientRect());
   const card = document.querySelector('.article-layout>.article-card')?.getBoundingClientRect();
   const problems = [];
-  if (innerWidth > 1000) {
+  if (innerWidth >= 1240) {
     const boxes = card ? [card, ...notes] : notes;
     if (notes.some((box) => box.left < area.right)) problems.push('over the text');
     if (notes.some((box) => box.right > innerWidth)) problems.push('off the screen');
     if (boxes.some((a, i) => boxes.slice(i + 1).some((b) => a.left < b.right && b.left < a.right && a.top < b.bottom && b.top < a.bottom))) problems.push('overlaps the card or another call-out');
   } else {
     if (notes.some((box) => box.left < area.left - 1 || box.right > area.right + 1)) problems.push('outside the text column');
-    if (card && card.height && card.top < area.bottom) problems.push('card comes before the text');
+    if (innerWidth <= 1000 && card && card.height && card.top < area.bottom) problems.push('card comes before the text');
   }
   return problems;
 }"""
 
 
-# From a page's text to the card beside it, when they are side by side.
+# Between a page's text and the card beside it, when they are side by side.
 CARD_GAP = """() => {
   const reading = document.querySelector('.article-layout>.reading');
   const card = document.querySelector('.article-layout>.article-card');
   if (!reading || !card) return 0;
   const box = card.getBoundingClientRect();
-  if (box.top > reading.getBoundingClientRect().bottom) return 0;
+  const text = reading.getBoundingClientRect();
+  if (box.top > text.bottom) return 0;
+  // The card sits left of the text on a desktop (right in right-to-left pages).
+  if (box.right <= text.left) return text.left - box.right;
   const lines = [...reading.querySelectorAll('.article-style p')].filter((p) => p.getClientRects().length);
   const right = Math.max(...(lines.length ? lines : [reading]).map((el) => el.getBoundingClientRect().right));
   return box.left < right ? 0 : box.left - right;
@@ -522,18 +536,23 @@ def check_tower_game(browser, base, expect):
 
 
 def check_phone_reading(browser, base, failures):
-    """On a phone the chat launcher stays in the gutter, and an embed's panel is not clipped."""
+    """On a phone the chat launcher is a small button in the bottom corner, and an embed's panel is not clipped."""
     expect = expectation(failures, "phone reading")
     page = new_page(browser, 390)
     page.goto(base + "glossary/english/abstract_bias/", wait_until="load")
     page.wait_for_timeout(300)
     page.evaluate("scrollBy(0, 500)")
     page.wait_for_timeout(500)
-    shown = page.evaluate("innerWidth - document.getElementById('just-os-btn').getBoundingClientRect().left")
-    expect(shown <= 24, f"the launcher takes {shown:.0f} px of the screen's width, limit 24")
+    box = page.evaluate("(() => { const r = document.getElementById('just-os-btn').getBoundingClientRect();"
+                        " const banner = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--banner')) || 0;"
+                        " return {w: r.width, h: r.height, right: innerWidth - r.right, bottom: innerHeight - r.bottom - banner}; })()")
+    # It rises above the cookie banner while that shows (--banner), so the corner is measured from the banner.
+    expect(0 < box["w"] <= 64 and box["h"] > 0 and 0 <= box["right"] <= 24 and 0 <= box["bottom"] <= 40,
+           f"the launcher is a button of at most 64 px in the bottom corner ({box['w']:.0f} px wide, "
+           f"{box['right']:.0f} px from the side, {box['bottom']:.0f} px from the bottom)")
     page.locator("#just-os-btn").tap()
     page.wait_for_timeout(3000)
-    expect(page.evaluate("document.getElementById('just-os-window')?.style.display === 'flex'"), "tapping the tab opens the chat")
+    expect(page.evaluate("document.getElementById('just-os-window')?.style.display === 'flex'"), "tapping the launcher opens the chat")
     page.goto(base + "neurodiversity-lessonbank/implicit_bias/", wait_until="load")
     page.wait_for_timeout(300)
     panels = page.locator(".click-to-load").count()
@@ -581,6 +600,128 @@ def check_phone_reading(browser, base, failures):
             }""")
             expect(past <= 0, f"it also clears the open banner at {width} px ({past:.0f} px)")
         page.context.close()
+
+
+# The overview at rest: the names' text sizes, nothing spilling out of a name, no name overlapping another or
+# the ring, no line through another name, and every panel closed and out of the tab order.
+CLUSTERS_OVERVIEW_REST = """() => {
+  const stage = document.querySelector('.clusters-map__stage');
+  if (!stage || !stage.offsetWidth) return {missing: true};
+  const size = (el) => parseFloat(getComputedStyle(el).fontSize);
+  const tags = [...stage.querySelectorAll('.clusters-map__tag')];
+  const boxes = tags.map((tag) => ({r: tag.getBoundingClientRect(), n: tag.closest('[data-cluster]').dataset.cluster}));
+  const meets = (a, b, gap) => a.left < b.right + gap && b.left < a.right + gap && a.top < b.bottom + gap && b.top < a.bottom + gap;
+  const overlaps = [];
+  boxes.forEach((a, i) => boxes.slice(i + 1).forEach((b) => { if (meets(a.r, b.r, 4)) overlaps.push(a.n + ' / ' + b.n); }));
+  const ring = stage.querySelector('.clusters-map__disc').getBoundingClientRect();
+  const segs = [...stage.querySelectorAll('.clusters-map__segment')].map((s) => s.getBoundingClientRect());
+  const onRing = boxes.filter((b) => segs.some((s) => meets(b.r, s, 0))).map((b) => b.n);
+  const crossings = [];
+  stage.querySelectorAll('.clusters-map__ray').forEach((ray) => {
+    const line = ray.querySelector('.clusters-map__line'), m = line.getScreenCTM(), n = ray.dataset.cluster;
+    for (let at = 0; at < line.getTotalLength(); at += 3) {
+      const p = new DOMPoint(line.getPointAtLength(at).x, line.getPointAtLength(at).y).matrixTransform(m);
+      const hit = boxes.find((b) => b.n !== n && p.x >= b.r.left - 3 && p.x <= b.r.right + 3 && p.y >= b.r.top - 3 && p.y <= b.r.bottom + 3);
+      if (hit) { crossings.push(n + ' crosses ' + hit.n); break; }
+    }
+  });
+  const panels = [...stage.querySelectorAll('.clusters-map__panel')];
+  return {stage: stage.offsetWidth, ring: ring.width > 0, listed: document.querySelectorAll('.clusters-overview__list > li').length, subs: document.querySelectorAll('.clusters-overview__subs li').length,
+    unmatched: [...stage.querySelectorAll('.clusters-map__spot')].filter((spot) => {
+      const n = spot.dataset.cluster, li = document.querySelector('.clusters-overview__list > li[data-cluster="' + n + '"]');
+      const names = (root) => [...root.querySelectorAll('a')].map((a) => a.textContent.trim()).join('|');
+      return !li || names(spot.querySelector('.clusters-map__panel')) !== names(li.querySelector('.clusters-overview__subs'));
+    }).map((spot) => spot.dataset.cluster),
+    name: Math.min(...tags.map((t) => size(t.querySelector('.clusters-map__tag-name')))),
+    cue: Math.min(...tags.map((t) => size(t.querySelector('.clusters-map__cue')))),
+    spill: tags.filter((t) => t.scrollWidth > t.clientWidth + 0.5 || t.scrollHeight > t.clientHeight + 0.5).map((t) => t.textContent.trim().slice(0, 40)),
+    overlaps, onRing, crossings, names: tags.length,
+    shut: panels.filter((p) => p.inert && getComputedStyle(p).visibility === 'hidden').length, panels: panels.length,
+    links: stage.querySelectorAll('.clusters-map__panel a').length};
+}"""
+
+# One cluster open: its panel shows inside the drawing, its columns start level, its text is 15 px or more,
+# and only its links join the tab order.
+CLUSTERS_OVERVIEW_OPEN = """(n) => {
+  const stage = document.querySelector('.clusters-map__stage');
+  const spot = stage.querySelector(`.clusters-map__spot[data-cluster="${n}"]`);
+  const panel = spot.querySelector('.clusters-map__panel'), s = stage.getBoundingClientRect(), r = panel.getBoundingClientRect();
+  const links = [...panel.querySelectorAll('a')];
+  const tops = {};
+  links.forEach((a) => { const b = a.getBoundingClientRect(); const x = Math.round(b.left); if (!(x in tops)) tops[x] = b.top; });
+  const firsts = Object.values(tops);
+  return {open: spot.classList.contains('is-open') && !panel.inert && getComputedStyle(panel).visibility === 'visible',
+    expanded: spot.querySelector('.clusters-map__tag').getAttribute('aria-expanded'),
+    // The drawing may grow below itself (its bottom margin) while a panel is open.
+    inside: r.left >= s.left - 0.5 && r.top >= s.top - 0.5 && r.right <= s.right + 0.5 && r.bottom <= s.bottom + (parseFloat(stage.style.marginBottom) || 0) + 0.5,
+    columns: firsts.length, level: Math.max(...firsts) - Math.min(...firsts),
+    text: Math.min(...links.map((a) => parseFloat(getComputedStyle(a).fontSize))),
+    target: Math.min(...links.map((a) => a.getBoundingClientRect().height)),
+    others: [...stage.querySelectorAll('.clusters-map__panel')].filter((p) => p !== panel && !p.inert).length};
+}"""
+
+CLUSTERS_MAP_PHONE = """() => {
+  const shown = (el) => !!el && el.getClientRects().length > 0;
+  return {frame: shown(document.querySelector('.clusters-map__frame')),
+    hub: shown(document.querySelector('.clusters-map__hub')),
+    chips: [...document.querySelectorAll('.clusters-overview__name')].filter(shown).length,
+    clusters: document.querySelectorAll('.clusters-overview__list > li').length};
+}"""
+
+# The narrowest width that shows the overview (clusters.css); its cue lines are 15 px there.
+CLUSTERS_MAP_BREAKPOINT = 942
+
+
+def check_clusters_map(browser, base, failures):
+    """The /clusters/ map. The overview, laid out at build time: names fit their boxes and stay apart, at
+    15 px or more from the breakpoint up, each panel opens inside the drawing with level columns, and the
+    names and panels match the list of clusters and sub-clusters after the figure.
+    Rerun when the Clusters Doc changes."""
+    expect = expectation(failures, "clusters map")
+    for width in (1440, 1024, CLUSTERS_MAP_BREAKPOINT):
+        page = new_page(browser, width, reduced_motion="reduce")
+        page.goto(base + "clusters/", wait_until="load")
+        page.evaluate("document.fonts.ready")
+        rest = page.evaluate(CLUSTERS_OVERVIEW_REST)
+        expect(not rest.get("missing"), f"at {width} px /clusters/ shows the overview")
+        if rest.get("missing"):
+            page.context.close()
+            continue
+        listed = lambda items: f": {items[:3]}" if items else ""
+        expect(rest["ring"], f"at {width} px the ring is drawn")
+        expect(0 < rest["names"] == rest["listed"], f"at {width} px the overview names every listed cluster ({rest['names']} of {rest['listed']})")
+        expect(0 < rest["links"] == rest["subs"] and not rest["unmatched"],
+               f"at {width} px each cluster's panel links the sub-clusters listed under it ({rest['links']} of {rest['subs']})" + listed(rest["unmatched"]))
+        print(f"  {width} px: names {rest['name']:.1f} px, cues {rest['cue']:.1f} px")
+        expect(rest["name"] >= 15 and rest["cue"] >= 15, f"at {width} px the names and cues are 15 px or more")
+        expect(not rest["spill"], f"at {width} px each name fits its box" + listed(rest["spill"]))
+        expect(not rest["overlaps"], f"at {width} px no name overlaps another" + listed(rest["overlaps"]))
+        expect(not rest["onRing"], f"at {width} px no name overlaps the ring" + listed(rest["onRing"]))
+        expect(not rest["crossings"], f"at {width} px no line runs through another name" + listed(rest["crossings"]))
+        expect(rest["shut"] == rest["panels"] == rest["names"], f"at {width} px every panel is shut and inert at rest ({rest['shut']} of {rest['panels']})")
+        bad = []
+        for n in range(1, rest["names"] + 1):
+            page.mouse.move(0, 0)
+            page.wait_for_timeout(260)
+            page.hover(f'.clusters-map__spot[data-cluster="{n}"] .clusters-map__tag')
+            found = page.evaluate(CLUSTERS_OVERVIEW_OPEN, n)
+            problems = [name for name, ok in (("not open", found["open"] and found["expanded"] == "true"), ("outside", found["inside"]),
+                        ("columns not level", found["level"] <= 1), ("text under 15 px", found["text"] >= 15),
+                        ("targets under 44 px", found["target"] >= 44), ("another panel open", not found["others"])) if not ok]
+            if problems:
+                bad.append(f"{n}: {', '.join(problems)}")
+        expect(not bad, f"at {width} px each cluster's panel opens inside the drawing, level, 15 px+, 44 px targets" + listed(bad))
+        if width == CLUSTERS_MAP_BREAKPOINT:
+            page.set_viewport_size({"width": width - 1, "height": 900})
+            expect(page.evaluate(CLUSTERS_MAP_PHONE)["hub"], f"at {width - 1} px the hub and list replace the overview")
+        page.context.close()
+    page = new_page(browser, 390)
+    page.goto(base + "clusters/", wait_until="load")
+    phone = page.evaluate(CLUSTERS_MAP_PHONE)
+    expect(not phone["frame"] and phone["hub"], "at 390 px the hub shows instead of the drawing")
+    expect(phone["clusters"] > 0 and phone["chips"] == phone["clusters"],
+           f"at 390 px every cluster is linked in the list of clusters ({phone['chips']} of {phone['clusters']})")
+    page.context.close()
 
 
 SPECIALIST_SHOWN = """() => {
@@ -679,6 +820,8 @@ FLOATING_WIDTHS = (390, 1024, 1280, 1440, 1800)  # From 1800 px the launcher has
 
 def check_floating_controls(browser, base, failures):
     """The chat launcher, its invitation and label, and back to top cover nothing of the page, wherever it is scrolled.
+    Below 1440 px the launcher and back to top float in the bottom corner, so mid-page they need only keep off each
+    other; at the end of the page, which the footer pads for them, they still cover nothing.
 
     The launcher is checked closed, hovered, focused from the keyboard and inviting (on a fake clock, so that its
     ten-second cycle runs at once), at the top, a third and two thirds of the way down, and at the end of each page.
@@ -695,8 +838,12 @@ def check_floating_controls(browser, base, failures):
         for path in FLOATING_PAGES:
             covered = {}
 
-            def look(state, selector="#just-os-bubble"):
+            def look(state, selector="#just-os-bubble", floating=False):
                 for item in page.evaluate(FLOATING_OVER, selector):
+                    # Below 1440 px the chat button and back to top float over the page as it scrolls by;
+                    # there they must only keep off each other, and cover nothing once the page is at its end.
+                    if floating and not re.search(r"just-os|back-to-top", item):
+                        continue
                     covered.setdefault(state, []).append(item)
                 if state.startswith("invitation") and page.evaluate(BUBBLE_SHOWN):
                     invited.add(f"{path} at {width} px")
@@ -717,8 +864,9 @@ def check_floating_controls(browser, base, failures):
                 page.mouse.move(1, 1)
                 page.evaluate(f"scrollTo(0, {y}); dispatchEvent(new Event('scroll'))")
                 page.wait_for_timeout(400)
-                look(f"launcher at {where}", "#just-os-btn")
-                look(f"back to top at {where}", ".clusters-back-to-top")
+                floating = width < 1440 and y != end
+                look(f"launcher at {where}", "#just-os-btn", floating)
+                look(f"back to top at {where}", ".clusters-back-to-top", floating)
                 back_to_top = back_to_top or page.evaluate(BACK_TO_TOP_SHOWN)
                 for turn in range(2):  # One of two turns of its cycle shows the invitation, where it may show.
                     page.clock.run_for(10000)
@@ -761,7 +909,7 @@ DIRECTORIES = {
     "about/teams/": ".feature-rows",
     "educators-corner/": ".list-items",
     "pedagogies/": ".list-items",
-    "forrt_clusters/academic-life-and-culture/": ".plain-list",
+    "forrt_clusters/academic-life-and-culture/": ".cluster-resources",
     "syllabus/": ".catalogue",
     "neurodiversity-lessonbank/": ".lesson-grid",
     "citation-politics/toolkit/": ".cpt-items",
@@ -868,10 +1016,22 @@ def check_directory(browser, base, failures):
     count = page.text_content("#resultCount")
     expect("matching" in count, f"choosing a cluster filters the list: {count}")
     expect(not pager.is_visible(), "the page links hide while filtering")
-    shown = page.locator(".res").count()
-    page.click("#showMore")
-    expect(page.locator(".res").count() > shown, "Show more adds cards")
-    expect(page.evaluate("document.activeElement.closest('.res') !== null"), "Show more moves focus to the new cards")
+    first = page.text_content(".res-title")
+    page.click("#clientPager a[rel=next]")
+    expect(page.text_content(".res-title") != first and "page=2" in page.url, f"the filtered list's page links turn the page: {page.url}")
+    expect(page.evaluate("document.activeElement.closest('.res') !== null"), "a page link moves focus to the new cards")
+    page.go_back()
+    page.wait_for_function("!location.search.includes('page=')")
+    expect(page.text_content(".res-title") == first, "Back returns to the first page of results")
+    page.select_option("#sortOrder", "newest")
+    page.wait_for_function("location.search.includes('sort=newest')")
+    expect("newest first" in page.text_content("#resultCount"), "Newest added re-sorts and says so")
+    page.select_option("#perPage", "48")
+    page.wait_for_function("location.search.includes('per=48')")
+    matches = int(re.search(r"of ([\d,]+)", page.text_content("#resultCount")).group(1).replace(",", ""))
+    expect(page.locator(".res").count() == min(48, matches), f"Per page sets the page size: {page.text_content('#resultCount')}")
+    page.select_option("#sortOrder", "title")
+    page.select_option("#perPage", "24")
 
     address = page.url
     fresh = new_page(browser, 390)
@@ -1388,6 +1548,8 @@ def main():
         check_directory_widths(browser, base, failures)
         print("Specialist resources on cluster pages")
         check_specialist_cards(browser, base, failures)
+        print("Clusters map")
+        check_clusters_map(browser, base, failures)
         print("Conference programme")
         check_conference(browser, base, failures)
         print("Final review fixes")

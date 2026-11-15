@@ -25,5 +25,6 @@
     "language": "english",
     "aliases": [
         "/glossary/society_for_the_improvement_of_psychological_science_sips_"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

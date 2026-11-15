@@ -1,0 +1,33 @@
+{{/* A page's opening with its picture in view: the heading block and actions beside a large image, for pages
+     whose picture is the thing itself (a tool's wheel, an event's banner), not decoration. A page opts in with
+     front matter `hero_image` (a page resource, resized for the opening; a path under static/ is served as is, so
+     prefer a copy beside the page), `hero_image_alt` and, optionally,
+     `hero_image_link`, the text of a link to the full-size image. The image links to its full size. On a wide
+     screen the opening spans the layout above the side card and text; on a phone the image follows the actions.
+     Input: dict with `page` and `head`, the heading block already rendered (crumbs, title, standfirst). Used by
+     doors/reading and widget_page. */}}
+{{ $page := .page }}
+{{ $src := $page.Params.hero_image }}
+{{ $full := "" }}{{ $shown := "" }}{{ $w := 0 }}{{ $h := 0 }}
+{{ with $page.Resources.GetMatch $src }}
+  {{ $full = .RelPermalink }}
+  {{/* The opening shows it at most 400 px wide, so 900 px covers a 2x screen. */}}
+  {{ $img := . }}
+  {{ if gt .Width 900 }}{{ $img = .Resize "900x webp q80" }}{{ end }}
+  {{ $shown = $img.RelPermalink }}{{ $w = $img.Width }}{{ $h = $img.Height }}
+{{ else }}
+  {{ $path := strings.TrimPrefix "/" $src }}
+  {{ with images.Config (printf "static/%s" $path) }}{{ $w = .Width }}{{ $h = .Height }}{{ end }}
+  {{ $full = $path | relURL }}{{ $shown = $full }}
+{{ end }}
+{{/* A landscape picture (a banner) takes the full width on a phone; a square one (a wheel) stays smaller. */}}
+<div class="page-hero{{ if and $w (gt (mul $w 10) (mul $h 13)) }} page-hero-landscape{{ end }}">
+  <div class="page-hero-text">
+    {{ .head }}
+    {{ partial "doors/page_actions" $page }}
+  </div>
+  <div class="page-hero-media">
+    <a href="{{ $full }}"><img src="{{ $shown }}"{{ with $w }} width="{{ . }}" height="{{ $h }}"{{ end }} alt="{{ $page.Params.hero_image_alt }}" fetchpriority="high"></a>
+    {{ with $page.Params.hero_image_link }}<p><a href="{{ $full }}">{{ . }}</a></p>{{ end }}
+  </div>
+</div>

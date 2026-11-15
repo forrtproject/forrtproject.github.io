@@ -5,6 +5,7 @@ weight = 40
 
 notices_heading = "From the community"
 notices_count = 3
+newsletter_heading = "Get the newsletter"
 newsletter_text = "News, events and opportunities from FORRT, in your inbox."
 take_part_heading = "Take part"
 

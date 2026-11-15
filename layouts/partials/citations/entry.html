@@ -1,0 +1,2 @@
+{{- $meta := partialCached "citations/metadata" .apa .apa -}}
+<li id="ref-{{ .key }}" data-reference="{{ .key }}" data-first-author="{{ $meta.first }}" data-authors="{{ $meta.names | jsonify }}" data-etal="{{ $meta.etal }}" data-year="{{ $meta.year }}"{{ with $meta.url }} data-source="{{ . }}"{{ end }}>{{ partial "citations/authors" (.apa | markdownify) }}</li>

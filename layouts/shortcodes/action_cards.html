@@ -1,0 +1,9 @@
+{{/* A row of starting points, one card each, written one per line inside the shortcode as
+     Title | One line on what it is | address
+     e.g. {{< action_cards area="com" >}}Join our Slack | Where the community talks | https://…{{< /action_cards >}}
+     `area` (edu, res, jus or com) starts the row's colours with that area's; the bricks then run through the other areas. */}}
+<ul class="action-cards{{ with .Get "area" }} area-{{ . }}{{ end }}">
+  {{ range split (trim .Inner "\n ") "\n" }}{{ with trim . " " }}{{ $part := split . "|" }}
+  <li><a href="{{ trim (index $part 2) " " }}"><strong>{{ trim (index $part 0) " " }}</strong><span>{{ trim (index $part 1) " " | markdownify }}</span></a></li>
+  {{ end }}{{ end }}
+</ul>

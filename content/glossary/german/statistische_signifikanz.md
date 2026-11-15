@@ -9,7 +9,7 @@
         "Frequentist statistics",
         "Null hypothesis",
         "Null Hypothesis Significance Testing (NHST)",
-        "*P*\\-value",
+        "p-value",
         "Type I error **Incorrect definition:** Statistical significance describes the likelihood of the observed result against chance (regardless of the null hypotheses)"
     ],
     "references": [
@@ -39,5 +39,6 @@
     "translation_reviewed_by": [
         "Helena Hartmann",
         "Joris Frese"
-    ]
+    ],
+    "lastmod": "2026-11-08"
 }

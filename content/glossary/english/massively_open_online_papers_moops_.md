@@ -25,5 +25,6 @@
     "language": "english",
     "aliases": [
         "/glossary/massively_open_online_papers_moops_"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

@@ -34,5 +34,6 @@
     "language": "english",
     "aliases": [
         "/glossary/error_detection"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

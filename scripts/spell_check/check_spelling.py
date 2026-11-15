@@ -8,6 +8,8 @@ Modes:
 - Full mode: Checks the default set of paths (content, scripts, .github, CONTRIBUTING.md, README.md) (CHECK_ALL=true env var)
 """
 
+import configparser
+import fnmatch
 import os
 import sys
 import subprocess
@@ -19,6 +21,22 @@ DEFAULT_PATHS = ['content', 'scripts', 'data', '.github', 'CONTRIBUTING.md', 'RE
 
 # File extensions to check
 ALLOWED_EXTENSIONS = {'.md', '.txt', '.html', '.yaml', '.yml', '.py', '.js', '.json', '.toml'}
+
+
+def skip_patterns(config='.codespellrc'):
+    """The `skip` list from .codespellrc. codespell ignores it for files named on the command
+    line, so PR mode applies it here."""
+    parser = configparser.ConfigParser()
+    parser.read(config)
+    raw = parser.get('codespell', 'skip', fallback='')
+    return [p.strip() for p in raw.split(',') if p.strip()]
+
+
+def is_skipped(path, patterns):
+    """True if the path, or any directory above it, matches a skip pattern."""
+    parts = Path(path).parts
+    candidates = ['/'.join(parts[:i]) for i in range(1, len(parts) + 1)] + list(parts)
+    return any(fnmatch.fnmatch(c, p) for c in candidates for p in patterns)
 
 
 def get_files_to_check():
@@ -51,9 +69,10 @@ def get_files_to_check():
 
     # Filter to only existing files with allowed extensions
     valid_files = []
+    patterns = skip_patterns()
     for f in files:
         path = Path(f)
-        if path.exists() and path.suffix.lower() in ALLOWED_EXTENSIONS:
+        if path.exists() and path.suffix.lower() in ALLOWED_EXTENSIONS and not is_skipped(f, patterns):
             valid_files.append(f)
 
     if not valid_files:

@@ -32,5 +32,6 @@
     "language": "english",
     "aliases": [
         "/glossary/posterior_distribution"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

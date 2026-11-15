@@ -64,7 +64,8 @@ jobs:
           path: .
           github_token: ${{ secrets.GITHUB_TOKEN }}
           search_artifacts: true
-          if_no_artifact_found: warn
+          branch: main  # only main's runs feed deploys; branch test runs must not (#960)
+          if_no_artifact_found: fail  # continue-on-error is set; failure triggers the fallback below
 
       # =======================
       # Data Processing (Fallback)
@@ -89,14 +90,14 @@ jobs:
             exit 0
           fi
 
-          # Determine branch ref to dispatch (must be a branch or tag)
-          REF="${GITHUB_REF#refs/heads/}"
-          if [ -z "$REF" ]; then
-            REF="main"
-          fi
+          # Always regenerate from main: deploys use main's data only (#960)
+          REF="main"
 
+          # The run this job dispatches is the first one newer than any that exists now
+          RUNS_URL="https://api.github.com/repos/${{ github.repository }}/actions/workflows/data-processing.yml/runs?event=workflow_dispatch&branch=$REF&per_page=100"
+          BEFORE=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" -H "Accept: application/vnd.github+json" "$RUNS_URL" | jq '[.workflow_runs[].id] | max // 0')
           echo "🚀 Dispatching data-processing workflow for ref: $REF because artifact was missing"
-          curl -s -X POST \
+          curl -sSf -X POST \
             -H "Authorization: Bearer $GITHUB_TOKEN" \
             -H "Accept: application/vnd.github+json" \
             "https://api.github.com/repos/${{ github.repository }}/actions/workflows/data-processing.yml/dispatches" \
@@ -115,9 +116,9 @@ jobs:
           sleep 10
 
           while [ $attempts -lt $max_attempts ]; do
-            # Get the latest run triggered by workflow_dispatch
+            # The first run created after the dispatch is ours
             runs_json=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" -H "Accept: application/vnd.github+json" \
-              "https://api.github.com/repos/${{ github.repository }}/actions/workflows/data-processing.yml/runs?event=workflow_dispatch&branch=$REF&per_page=1")
+              "$RUNS_URL" | jq --argjson before "$BEFORE" '{workflow_runs: [.workflow_runs[] | select(.id > $before)] | sort_by(.id)}')
             
             run_id=$(echo "$runs_json" | jq -r '.workflow_runs[0].id')
             status=$(echo "$runs_json" | jq -r '.workflow_runs[0].status')
@@ -172,6 +173,7 @@ jobs:
           path: .announcements
           github_token: ${{ secrets.GITHUB_TOKEN }}
           search_artifacts: true
+          branch: main  # only main's runs feed deploys; branch test runs must not (#960)
           if_no_artifact_found: warn
 
       - name: Apply announcements
