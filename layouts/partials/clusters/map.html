@@ -129,8 +129,8 @@
 {{ end }}
 
 
-{{/* 5. The overview: each cluster's name and cue in a box round the hub, clockwise from the top left: a row
-     above the hub, a column to its right, a row below it and a column to its left. The ring is turned so each
+{{/* 5. The overview: each cluster's name and cue in a box round the hub, clockwise: a row above the hub, a
+     column to its right, a row below it and a column to its left. The ring is turned so each
      segment points as nearly as possible at its box. Sizes in drawing units, which the page scales to the
      column (clusters.css: the cue's 16 units set the breakpoint). */}}
 {{ $ofs := 19.0 }}{{ $olh := 23.0 }}{{ $clh := 20.0 }}{{ $cueGap := 4.0 }}
@@ -143,6 +143,9 @@
   {{ $h := add (mul 2 $opadY) (mul (len $wrap.lines) $olh) $cueGap $clh }}
   {{ $boxes = $boxes | append (dict "num" .num "i" .i "lines" $wrap.lines "w" $w "h" $h) }}
 {{ end }}
+{{/* Turned one place anticlockwise, so cluster 1 heads the left column and the top row starts with cluster 2:
+     the largest cluster (9) then sits in the bottom row beside its neighbour, not stacked above it. */}}
+{{ if gt $n 4 }}{{ $boxes = (after 1 $boxes) | append (first 1 $boxes) }}{{ end }}
 {{ $side := cond (ge $n 8) 2 (cond (ge $n 4) 1 0) }}
 {{ $tN := int (math.Ceil (div (float (sub $n (mul 2 $side))) 2)) }}{{ $bN := sub $n (mul 2 $side) $tN }}
 {{ $topRow := first $tN $boxes }}
@@ -409,14 +412,14 @@
     if (open) hide(open);
     open = spot;
     layout(spot);
-    calm = Date.now() + 250;
+    calm = Date.now() + 400;
     /* When the names stop sliding, open the name the pointer moved onto meanwhile, if it is still there.
        (Only a name the pointer moved on: a name that merely slid under a still pointer stays shut.) */
     clearTimeout(settleCheck); pending = null;
     settleCheck = setTimeout(function () {
       if (pending && open && pending !== open && pending.querySelector('.clusters-map__tag').matches(':hover')) show(pending);
       pending = null;
-    }, 260);
+    }, 410);
     spot.classList.add('is-open');
     spot.querySelector('.clusters-map__panel').inert = false;
     spot.querySelector('.clusters-map__tag').setAttribute('aria-expanded', 'true');
@@ -441,7 +444,7 @@
   spots.forEach(function (spot) {
     var label = spot.querySelector('.clusters-map__tag');
     var wasOpen = false;
-    /* Pointing at a name opens it at once; only while the names are still sliding (0.25 s) does a name that
+    /* Pointing at a name opens it at once; only while the names are still sliding (0.4 s) does a name that
        slid under the pointer wait for the pointer to move on it. */
     label.addEventListener('pointermove', function (e) {
       if (e.pointerType === 'touch') return;
