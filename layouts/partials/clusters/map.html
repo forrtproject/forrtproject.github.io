@@ -143,9 +143,14 @@
   {{ $h := add (mul 2 $opadY) (mul (len $wrap.lines) $olh) $cueGap $clh }}
   {{ $boxes = $boxes | append (dict "num" .num "i" .i "lines" $wrap.lines "w" $w "h" $h) }}
 {{ end }}
-{{/* Turned one place anticlockwise, so cluster 1 heads the left column and the top row starts with cluster 2:
-     the largest cluster (9) then sits in the bottom row beside its neighbour, not stacked above it. */}}
-{{ if gt $n 4 }}{{ $boxes = (after 1 $boxes) | append (first 1 $boxes) }}{{ end }}
+{{/* The order round the wheel: cluster number order, except that cluster 2 (Conceptual and Statistical
+     Knowledge, the one least tied to open scholarship) comes last, at the top of the left column. So the top
+     row opens with cluster 1, and the largest cluster (9) sits in the middle of the bottom row, where opening
+     it moves its neighbours least. The ring's segments follow this order ("p"); the Tab order stays in
+     cluster number order. */}}
+{{ if gt $n 4 }}{{ $boxes = (first 1 $boxes) | append (after 2 $boxes) | append (index $boxes 1) }}{{ end }}
+{{ $ordered := slice }}{{ range $k, $b := $boxes }}{{ $ordered = $ordered | append (merge $b (dict "p" $k)) }}{{ end }}
+{{ $boxes = $ordered }}
 {{ $side := cond (ge $n 8) 2 (cond (ge $n 4) 1 0) }}
 {{ $tN := int (math.Ceil (div (float (sub $n (mul 2 $side))) 2)) }}{{ $bN := sub $n (mul 2 $side) $tN }}
 {{ $topRow := first $tN $boxes }}
@@ -182,13 +187,13 @@
 {{/* The overview's ring, turned to its boxes as the full map's is to its labels (step 4). */}}
 {{ $sumS = 0.0 }}{{ $sumC = 0.0 }}
 {{ range $spots }}
-  {{ $off := sub (math.Atan2 (sub .y $cy) (sub .x $cx)) (mul (add .i 0.5) $step) }}
+  {{ $off := sub (math.Atan2 (sub .y $cy) (sub .x $cx)) (mul (add .p 0.5) $step) }}
   {{ $sumS = add $sumS (math.Sin $off) }}{{ $sumC = add $sumC (math.Cos $off) }}
 {{ end }}
 {{ $oturn := math.Atan2 $sumS $sumC }}
 {{ $oring := dict }}
 {{ range $spots }}
-  {{ $a0 := add $oturn (mul .i $step) $gap }}{{ $a1 := sub (add $oturn (mul (add .i 1) $step)) $gap }}{{ $am := add $oturn (mul (add .i 0.5) $step) }}
+  {{ $a0 := add $oturn (mul .p $step) $gap }}{{ $a1 := sub (add $oturn (mul (add .p 1) $step)) $gap }}{{ $am := add $oturn (mul (add .p 0.5) $step) }}
   {{ $ir := div (add $Ro $Ri) 2 }}{{ $icon := (index (sort $laid "i") .i).icon }}{{ $k := div 34.0 (math.Max $icon.w $icon.h) }}
   {{ $oring = merge $oring (dict (string .num) (dict
       "seg" (printf "M%.1f %.1fA%.0f %.0f 0 0 1 %.1f %.1fL%.1f %.1fA%.0f %.0f 0 0 0 %.1f %.1fZ"
