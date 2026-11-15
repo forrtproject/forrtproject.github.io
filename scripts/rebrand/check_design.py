@@ -627,6 +627,11 @@ CLUSTERS_OVERVIEW_REST = """() => {
   });
   const panels = [...stage.querySelectorAll('.clusters-map__panel')];
   return {stage: stage.offsetWidth, ring: ring.width > 0, listed: document.querySelectorAll('.clusters-overview__list > li').length, subs: document.querySelectorAll('.clusters-overview__subs li').length,
+    unmatched: [...stage.querySelectorAll('.clusters-map__spot')].filter((spot) => {
+      const n = spot.dataset.cluster, li = document.querySelector('.clusters-overview__list > li[data-cluster="' + n + '"]');
+      const names = (root) => [...root.querySelectorAll('a')].map((a) => a.textContent.trim()).join('|');
+      return !li || names(spot.querySelector('.clusters-map__panel')) !== names(li.querySelector('.clusters-overview__subs'));
+    }).map((spot) => spot.dataset.cluster),
     name: Math.min(...tags.map((t) => size(t.querySelector('.clusters-map__tag-name')))),
     cue: Math.min(...tags.map((t) => size(t.querySelector('.clusters-map__cue')))),
     spill: tags.filter((t) => t.scrollWidth > t.clientWidth + 0.5 || t.scrollHeight > t.clientHeight + 0.5).map((t) => t.textContent.trim().slice(0, 40)),
@@ -685,7 +690,8 @@ def check_clusters_map(browser, base, failures):
         listed = lambda items: f": {items[:3]}" if items else ""
         expect(rest["ring"], f"at {width} px the ring is drawn")
         expect(0 < rest["names"] == rest["listed"], f"at {width} px the overview names every listed cluster ({rest['names']} of {rest['listed']})")
-        expect(0 < rest["links"] == rest["subs"], f"at {width} px the panels link every listed sub-cluster ({rest['links']} of {rest['subs']})")
+        expect(0 < rest["links"] == rest["subs"] and not rest["unmatched"],
+               f"at {width} px each cluster's panel links the sub-clusters listed under it ({rest['links']} of {rest['subs']})" + listed(rest["unmatched"]))
         print(f"  {width} px: names {rest['name']:.1f} px, cues {rest['cue']:.1f} px")
         expect(rest["name"] >= 15 and rest["cue"] >= 15, f"at {width} px the names and cues are 15 px or more")
         expect(not rest["spill"], f"at {width} px each name fits its box" + listed(rest["spill"]))
