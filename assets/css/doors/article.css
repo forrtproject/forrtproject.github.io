@@ -180,7 +180,8 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 /* On a phone the cards and team names share one grid: the box gap between them, and a team's name further
    from the cards of the team before it than from its own. */
 .sc-page .sc-grid{gap:var(--box-gap)}
-@media(max-width:760px){.sc-page .sc-grid .sc-title-card:not(:first-child){margin-top:var(--box-gap)}}
+/* steering.js wraps each team in .sc-team, so its name card is then the first child of its own wrapper. */
+@media(max-width:760px){.sc-page .sc-grid>.sc-title-card:not(:first-child),.sc-page .sc-grid .sc-team:not(:first-child)>.sc-title-card{margin-top:var(--box-gap)}}
 @media(min-width:761px){
   .sc-page .sc-grid{gap:28px 40px}
   .sc-page .sc-team{display:flex;flex-wrap:wrap;align-content:flex-start;gap:1rem;width:calc(var(--sc-members)*190px + (var(--sc-members) - 1)*1rem);max-width:100%}
@@ -217,7 +218,7 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .doi-link,.cite-us-text a{text-decoration:underline;text-underline-offset:3px}
 .toc-phone{display:none}
 @media(max-width:1000px){
-  .toc-phone{display:block;margin:0 0 20px;padding:var(--box-pad-y) var(--box-pad);background:var(--surface);border-radius:var(--r-small)}
+  .toc-phone{display:block;margin:0 0 20px;padding:var(--box-pad);background:var(--surface);border-radius:var(--r-small)}
   .toc-phone-label{margin:0 0 4px;font:700 15px/1.3 var(--text);letter-spacing:.05em;text-transform:uppercase;color:var(--soft)}
   .toc-phone.is-short .toc-extra{display:none}
   .toc-phone-more{margin:6px 0 0;padding:4px 0;border:0;background:none;font:600 16px/1.35 var(--text);color:var(--ink);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
@@ -339,7 +340,9 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 /* A disclosure inside a list item (the effects on /reversals/) is a small toggle under the entry, not a full-width bar. */
 .article-layout .article-style li .spoiler{margin:4px 0 12px;background:none;border-radius:0}
 .article-layout .article-style li .spoiler>summary{display:inline-flex;padding:4px 0;font-size:15px;color:var(--link);text-decoration:underline;text-underline-offset:3px}
-.article-layout .article-style li .spoiler[open]{padding:4px 14px 2px;background:var(--surface);border-radius:var(--r-small)}
+.article-layout .article-style li .spoiler[open]{padding:4px var(--box-pad) 2px;background:var(--surface);border-radius:var(--r-small)}
+/* The open entry already pads its box, so its body adds no frame of its own. */
+.article-layout .article-style li .spoiler-body{padding:2px 0 12px}
 .article-layout .article-style li .spoiler[open]>summary{text-decoration:none}
 .article-layout .article-style li .spoiler{margin-top:0}
 .article-layout .article-style li .spoiler>summary::before{content:"▸";display:inline-block;margin-inline-end:6px;text-decoration:none;transition:transform .15s}
