@@ -21,7 +21,7 @@
 {{ $hasFeatured := and $featuredEnabled $featuredData }}
 
 {{ $mark := "var(--soft)" }}{{ with .marks }}{{ $mark = index . (mod $ci (len .)) }}{{ end }}
-<section id="{{ $cid }}" class="cluster-section" style="background-color: {{ $color | safeCSS }}; --c: {{ $mark | safeCSS }};">
+<section id="{{ $cid }}" class="cluster-section cluster-section--cluster" style="background-color: {{ $color | safeCSS }}; --c: {{ $mark | safeCSS }};">
   <div class="cluster-header">
     <h2 class="cluster-title">
       <span class="cluster-number">{{ (int $cluster.number) }}</span>

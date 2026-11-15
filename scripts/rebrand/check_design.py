@@ -658,7 +658,7 @@ CLUSTERS_OVERVIEW_REST = """() => {
     }
   });
   const panels = [...stage.querySelectorAll('.clusters-map__panel')];
-  return {stage: stage.offsetWidth, ring: ring.width > 0,
+  return {stage: stage.offsetWidth, ring: ring.width > 0, listed: document.querySelectorAll('.clusters-overview__list > li').length,
     name: Math.min(...tags.map((t) => size(t.querySelector('.clusters-map__tag-name')))),
     cue: Math.min(...tags.map((t) => size(t.querySelector('.clusters-map__cue')))),
     spill: tags.filter((t) => t.scrollWidth > t.clientWidth + 0.5 || t.scrollHeight > t.clientHeight + 0.5).map((t) => t.textContent.trim().slice(0, 40)),
@@ -715,6 +715,8 @@ def check_clusters_map(browser, base, failures):
             page.context.close()
             continue
         listed = lambda items: f": {items[:3]}" if items else ""
+        expect(rest["ring"], f"at {width} px the ring is drawn")
+        expect(0 < rest["names"] == rest["listed"], f"at {width} px the overview names every listed cluster ({rest['names']} of {rest['listed']})")
         print(f"  {width} px: names {rest['name']:.1f} px, cues {rest['cue']:.1f} px")
         expect(rest["name"] >= 15 and rest["cue"] >= 15, f"at {width} px the names and cues are 15 px or more")
         expect(not rest["spill"], f"at {width} px each name fits its box" + listed(rest["spill"]))

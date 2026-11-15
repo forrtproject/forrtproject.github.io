@@ -624,7 +624,9 @@ class ClustersMapParser(HTMLParser):
     def __init__(self):
         super().__init__(convert_charrefs=True)
         self.ids, self.arts, self.art_links, self.map_hrefs = set(), [], [], []
-        self.names, self.panels = [], []  # names: [href, text] of each a.clusters-map__tag
+        self.names, self.panels = [], []  # names: [href, text] of each a.clusters-map__tag, text of its tag-name span
+        self.listed = 0  # clusters in the linked list below the map (li[data-cluster] outside it)
+        self.in_text = 0  # depth inside the current name's span.clusters-map__tag-name, 0 outside it
         self.stack = []  # (tag, in_art, in_map) for open elements
         self.in_name = 0  # depth of open elements inside the current cluster name, 0 outside one
 
@@ -644,19 +646,25 @@ class ClustersMapParser(HTMLParser):
         if in_map and "clusters-map__panel" in classes:
             self.panels.append(attrs)
         void = tag in ("path", "rect", "circle", "image", "tspan", "br", "img", "input", "meta", "link")
+        if tag == "li" and "data-cluster" in attrs and not in_map:
+            self.listed += 1
         if tag == "a" and "clusters-map__tag" in classes:
             self.names.append([(attrs.get("href") or "").strip(), ""])
             self.in_name = 1
         elif self.in_name and not void:
             self.in_name += 1
+            if self.in_text or "clusters-map__tag-name" in classes:
+                self.in_text += 1
         if not void:
             self.stack.append((tag, in_art, in_map))
 
     def handle_data(self, data):
-        if self.in_name:
+        if self.in_text:
             self.names[-1][1] += data
 
     def handle_endtag(self, tag):
+        if self.in_text:
+            self.in_text -= 1
         if self.in_name:
             self.in_name -= 1
         for i in range(len(self.stack) - 1, -1, -1):
@@ -679,6 +687,9 @@ def check_clusters_map(public_dir):
     # the tab order and hidden from assistive technology (the ring segments and sub-cluster pills, which
     # repeat those links or are listed in the text list). A drawing with tab stops is not itself hidden.
     stops = [a for a in parser.art_links if a.get("tabindex") != "-1"]
+    silent = [a.get("href", "") for a in stops if a.get("aria-hidden") == "true"]
+    if silent:
+        failures.append("clusters/index.html: %d tab stops in the illustration are aria-hidden, e.g. %s" % (len(silent), silent[0]))
     if stops:
         failures += ["clusters/index.html: the illustration has tab stops but is aria-hidden"
                      for art in parser.arts if art.get("aria-hidden") == "true"]
@@ -692,6 +703,8 @@ def check_clusters_map(public_dir):
     # The overview: each cluster name is a named link, and its panel's links are out of the tab order until it opens.
     if not parser.names:
         failures.append("clusters/index.html: no cluster names (a.clusters-map__tag) in the overview")
+    if parser.names and parser.listed and len(parser.names) != parser.listed:
+        failures.append("clusters/index.html: the overview names %d clusters, the list below it %d" % (len(parser.names), parser.listed))
     blank = [href for href, text in parser.names if not href or not text.strip()]
     if blank:
         failures.append("clusters/index.html: %d cluster names in the overview lack a target or text, e.g. %r" % (len(blank), blank[0]))

@@ -32,7 +32,7 @@
             <p class="list-filter-count" aria-live="polite"></p>
             <p class="topic-tools__links">Search and filter all resources in the <a href="{{ relref . "/resources" }}">resources directory</a>, or browse <a href="{{ relref . "/clusters" }}">the {{ with hugo.Data.clusters_v4 }}{{ len .clusters }}{{ else }}11{{ end }} clusters</a>.</p>
           </div>
-          <noscript><p class="topic-tools__links">Search and filter all resources in the <a href="{{ relref . "/resources" }}">resources directory</a>, or browse <a href="{{ relref . "/clusters" }}">the clusters</a>.</p></noscript>
+          <noscript><p class="topic-tools__links">{{ len .Data.Pages }} resources, A to Z. Search and filter all resources in the <a href="{{ relref . "/resources" }}">resources directory</a>, or browse <a href="{{ relref . "/clusters" }}">the clusters</a>.</p></noscript>
           <h2 id="all-resources" class="visually-hidden">All {{ len .Data.Pages }} resources, A to Z</h2>
           <ul class="cluster-resources">
             {{ range sort .Data.Pages "Title" }}<li><a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ with .Params.material_type }}<span class="cluster-resources__type"> · {{ delimit . ", " }}</span>{{ end }}</li>{{ end }}

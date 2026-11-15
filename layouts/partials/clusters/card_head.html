@@ -3,4 +3,4 @@
      resource (its DOI). Expects dict: focus, type, title, doi, cls ("fc" for compact cards, "fr" for
      recommended ones). The reference button below the card stays the way to the citation. */}}
 {{ if or .focus .type }}<p class="card-kind">{{ with .focus }}<span class="card-purpose">{{ partial "clusters/sentence_case.html" . }}</span> {{ end }}{{ with .type }}{{ partial "clusters/sentence_case.html" . }}{{ end }}</p>{{ end }}
-<div class="{{ .cls }}-title">{{ if .doi }}<a href="{{ printf "https://doi.org/%s" .doi }}" target="_blank" rel="noopener">{{ partial "clusters/rich_text.html" .title }}</a>{{ else }}{{ partial "clusters/rich_text.html" .title }}{{ end }}</div>
+<div class="{{ .cls }}-title">{{ if .doi }}<a href="{{ printf "https://doi.org/%s" .doi }}" target="_blank" rel="noopener">{{ partial "clusters/rich_text.html" .title }}<span class="visually-hidden"> (opens in a new tab)</span></a>{{ else }}{{ partial "clusters/rich_text.html" .title }}{{ end }}</div>

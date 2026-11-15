@@ -843,7 +843,8 @@
       var query = searchInput ? searchInput.value.toLowerCase().trim() : '';
       var tokens = query ? query.split(/\s+/) : [];
       var isFiltered = activeFocus !== 'all' || activeType !== 'all' || tokens.length > 0;
-      if (clearBtn) clearBtn.hidden = !isFiltered;
+      /* Showing specialist resources adds cards rather than filtering, but Clear filters undoes it too. */
+      if (clearBtn) clearBtn.hidden = !(isFiltered || showNarrow);
       /* The Filters summary counts the choices that differ from the start: a focus, a type, specialist shown. */
       var active = (activeFocus !== 'all' ? 1 : 0) + (activeType !== 'all' ? 1 : 0) + (showNarrow ? 1 : 0);
       if (activeLabel) activeLabel.textContent = active ? ' (' + active + ' active)' : '';
