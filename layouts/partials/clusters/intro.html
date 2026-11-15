@@ -1,6 +1,6 @@
 {{/* intro.html - The way into the clusters on /clusters/: the diagram (drawn from data/clusters_v4.json),
-     whose clusters link to their own pages, then the same clusters as a linked list, which is the route
-     for keyboards, screen readers and phones, then the introduction. */}}
+     whose clusters link to their own pages, then the same clusters as a linked list (closed from 942 px,
+     where it repeats the overview; the way in on phones), then the introduction. */}}
 {{ $palette := partial "clusters/colors.html" }}
 <div class="clusters-intro">
   {{ partial "clusters/map.html" (dict "link_mode" "subpath") }}

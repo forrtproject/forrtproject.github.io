@@ -45,10 +45,18 @@ ISOLATE = """() => {
   stage.style.cssText += `;width:${Math.min(820, 600 * ow / oh)}px;max-width:none;flex:none;margin:0 0 0 auto`;
   stage.querySelectorAll('.clusters-map__panel').forEach((panel) => panel.remove());
   document.body.innerHTML = '';
+  // The cards show only the names: without the sub-cluster cue each box keeps its centre, where its line ends.
+  const cues = [...stage.querySelectorAll('.clusters-map__cue')];
   const main = document.createElement('main');
   main.style.cssText = 'display:flex;align-items:center;gap:24px;padding:15px 30px 15px 50px;width:1200px;height:630px;box-sizing:border-box;overflow:hidden';
   main.append(head, stage);
   document.body.append(main);
+  cues.forEach((cue) => {
+    const tag = cue.closest('.clusters-map__tag');
+    const gap = cue.offsetHeight + parseFloat(getComputedStyle(cue).marginTop);
+    cue.remove();
+    tag.style.translate = `0 ${gap / 2}px`;
+  });
   return Promise.all([document.fonts.ready, ...[...stage.querySelectorAll('image')].map((img) =>
     new Promise((done) => { const probe = new Image(); probe.onload = probe.onerror = done; probe.src = img.href.baseVal; }))]);
 }"""

@@ -2490,6 +2490,12 @@ body.clusters-mobile-nav-open #just-os-widget{display:none}
    in two columns on a wide screen; then the introduction and diagram, then every cluster in full. */
 .clusters-section-heading,.clusters-overview__heading{font:var(--display-weight) clamp(26px,2.4vw,32px)/1.2 var(--display);color:var(--ink);margin:36px 0 14px}
 .clusters-overview__heading{margin-top:20px}
+summary.clusters-overview__heading{display:flex;align-items:center;gap:12px;min-height:44px;cursor:pointer;list-style:none;margin-bottom:0}
+summary.clusters-overview__heading::-webkit-details-marker{display:none}
+summary.clusters-overview__heading::before{content:"";width:0;height:0;border-left:9px solid currentColor;border-top:7px solid transparent;border-bottom:7px solid transparent;transition:transform .15s}
+.clusters-overview[open]>summary.clusters-overview__heading{margin-bottom:14px}
+.clusters-overview[open]>summary.clusters-overview__heading::before{transform:rotate(90deg)}
+.clusters-refs{display:inline-block;white-space:pre;color:var(--soft);text-decoration:none}
 .clusters-overview__list{list-style:none;margin:0 0 8px;padding:0;display:grid;gap:18px 40px}
 @media (min-width:992px){.clusters-overview__list{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .clusters-overview__list li{display:flex;gap:12px;align-items:flex-start;margin:0}
@@ -2555,4 +2561,4 @@ body.clusters-mobile-nav-open #just-os-widget{display:none}
 .clusters-overview__subs ul{margin:0 0 8px;padding:0 0 0 18px;list-style:none;border-left:3px solid var(--c)}
 .clusters-overview__subs li{margin:0;padding:4px 0 4px 12px;font-size:16px;line-height:1.4}
 .clusters-overview__subs a{color:var(--link);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
-@media(prefers-reduced-motion:reduce){.clusters-overview__subs summary::before{transition:none}}
+@media(prefers-reduced-motion:reduce){.clusters-overview__subs summary::before,summary.clusters-overview__heading::before{transition:none}}

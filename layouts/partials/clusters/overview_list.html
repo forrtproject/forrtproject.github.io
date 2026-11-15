@@ -1,12 +1,14 @@
 {{/* /clusters/: the eleven clusters as a plain linked list, each with its number in its colour, the first
      sentence of its description (left out where that sentence only counts sub-clusters), and its counts as
-     the label of a disclosure that lists its sub-clusters, linked to their places on its page. The map's
-     info bar copies the name, sentence and counts from here.
+     the label of a disclosure that lists its sub-clusters, linked to their places on its page, each with its
+     number of references. The map's info bar copies the name, sentence and counts from here.
+     From 942 px the overview above shows the same clusters, so the list starts closed there; below that it is
+     the way in and starts open (it is open in the HTML, so it also stays open without scripts).
      Expects dict: data (clusters_v4), arrowColors. */}}
 {{ $clusters := .data.clusters }}
 {{ $marks := .arrowColors }}
-<section class="clusters-overview" aria-labelledby="clusters-overview-heading">
-  <h2 class="clusters-overview__heading" id="clusters-overview-heading">The {{ len $clusters }} clusters</h2>
+<details class="clusters-overview" id="clusters-overview" open>
+  <summary class="clusters-overview__heading">The {{ len $clusters }} clusters as a list</summary>
   <ol class="clusters-overview__list">
     {{ range $ci, $c := $clusters }}
     {{ $num := int $c.number }}
@@ -22,10 +24,11 @@
         {{ $base := printf "/clusters/cluster-%d/" $num | relURL }}
         <details class="clusters-overview__subs">
           <summary class="clusters-overview__count">{{ len $c.sub_clusters }} sub-clusters · {{ $refs }} references</summary>
-          <ul>{{ range $c.sub_clusters }}<li><a href="{{ partial "clusters/sub_href.html" (dict "base" $base "num" $num "name" .name) }}">{{ .name | strings.TrimSpace }}</a></li>{{ end }}</ul>
+          <ul>{{ range $c.sub_clusters }}<li>{{ partial "clusters/sub_link.html" (dict "base" $base "num" $num "sub" .) }}</li>{{ end }}</ul>
         </details>
       </div>
     </li>
     {{ end }}
   </ol>
-</section>
+</details>
+<script>if (window.matchMedia('(min-width: 942px)').matches) document.getElementById('clusters-overview').open = false;</script>

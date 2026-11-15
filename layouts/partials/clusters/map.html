@@ -152,7 +152,7 @@
         </a>
         <div class="clusters-map__panel" id="clusters-map-panel-{{ $num }}" inert>
           <ul style="--cols: {{ $cols }}; --rows: {{ math.Ceil (div (float (len $subs)) $cols) }}">
-            {{ range $subs }}<li><a href="{{ partial "clusters/sub_href.html" (dict "base" $base "num" $num "name" .name) }}">{{ .name | strings.TrimSpace }}</a></li>{{ end }}
+            {{ range $subs }}<li>{{ partial "clusters/sub_link.html" (dict "base" $base "num" $num "sub" .) }}</li>{{ end }}
           </ul>
         </div>
       </li>
