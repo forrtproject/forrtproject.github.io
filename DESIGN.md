@@ -86,6 +86,7 @@ Images in the first screen are not lazy-loaded.
 ## 10. Words
 
 - Write plain, specific text, and explain a feature in one sentence ("Tags link pages and resources across the site on the same topic."). No marketing phrases, no exclamation marks. Text written for the site itself (templates, labels, buttons, help text) is in British English; content keeps its authors' spelling.
+- In headings, labels and buttons, every word names what is there or what happens. Delete a word, and if nothing is lost, leave it out: "The 11 clusters", not "The 11 clusters as a list". Words about the format or the act of showing ("as a list", "overview of", "below", "click here", "view") go, unless they tell two views of the same thing apart, as for the list that stands in for the contributor network.
 - Shortening text that its authors wrote, such as a tool's description, goes in its own PR for the authors to review.
 - Resource entries, glossary terms, cluster pages and other generated pages get their wording from spreadsheets and documents (see `AGENTS.md`). Change their presentation in the templates, and their wording at the source.
 
