@@ -11,7 +11,7 @@
 <section aria-labelledby="clusters-overview-heading">
 <h2 class="visually-hidden" id="clusters-overview-heading">The {{ len $clusters }} clusters</h2>
 <details class="clusters-overview" id="clusters-overview" open>
-  <summary class="clusters-overview__heading">The {{ len $clusters }} clusters as a list</summary>
+  <summary class="clusters-overview__heading">The {{ len $clusters }} clusters</summary>
   <ol class="clusters-overview__list">
     {{ range $ci, $c := $clusters }}
     {{ $num := int $c.number }}
