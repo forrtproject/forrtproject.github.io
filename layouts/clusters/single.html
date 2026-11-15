@@ -8,7 +8,7 @@
     {{ with .Params.subtitle }}<p class="standfirst">{{ . | markdownify }}</p>{{ end }}
   </div>
 
-  {{/* CLUSTERS INTRO SECTION */}}
+  {{/* The diagram and the list of clusters lead; every cluster in full, with the filters, follows. */}}
   <section class="clusters-intro-section">
     <div class="wrap">
       {{ partial "clusters/intro.html" . }}

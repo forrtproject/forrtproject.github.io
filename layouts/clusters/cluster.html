@@ -61,7 +61,7 @@
               <div class="article-style clusters-cluster-lead">{{ . }}</div>
             </div>
             {{ end }}
-            {{ partial "clusters/cluster_section.html" (dict "cluster" $cluster "ci" $ci "colors" $colors) }}
+            {{ partial "clusters/cluster_section.html" (dict "cluster" $cluster "ci" $ci "colors" $colors "marks" $arrowColors) }}
           </div>
         </div>
       </div>
