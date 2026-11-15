@@ -602,38 +602,6 @@ def check_phone_reading(browser, base, failures):
         page.context.close()
 
 
-CLUSTERS_MAP_LAYOUT = """() => {
-  const art = document.querySelector('.clusters-map__dialog .clusters-map__art');
-  if (!art) return {missing: true};
-  const boxes = [...art.querySelectorAll('.clusters-map__pill, .clusters-map__label')].map((link) => {
-    const rect = link.querySelector('rect').getBBox();
-    const pad = link.classList.contains('clusters-map__pill') ? 14 : 16;  // padX and lpadX in map.html
-    const over = [...link.querySelectorAll('tspan')].filter((t) => t.getComputedTextLength() > rect.width - 2 * pad + 0.5);
-    return {rect, own: link.closest('g'), label: link.classList.contains('clusters-map__label'),
-      text: link.textContent.trim().slice(0, 40),
-      over: over.map((t) => `${t.textContent} (${t.getComputedTextLength().toFixed(1)} in ${(rect.width - 2 * pad).toFixed(1)})`)};
-  });
-  const meets = (a, b, gap) => a.x < b.x + b.width + gap && b.x < a.x + a.width + gap && a.y < b.y + b.height + gap && b.y < a.y + a.height + gap;
-  const overlaps = [];
-  boxes.forEach((a, i) => boxes.slice(i + 1).forEach((b) => { if (meets(a.rect, b.rect, 4)) overlaps.push(a.text + ' / ' + b.text); }));
-  const crossings = [];
-  art.querySelectorAll('.clusters-map__line').forEach((line) => {
-    const own = boxes.find((b) => b.label && b.own === line.closest('g'));
-    for (let at = 0; at < line.getTotalLength(); at += 3) {
-      const p = line.getPointAtLength(at);
-      const inside = (r, gap) => p.x >= r.x - gap && p.x <= r.x + r.width + gap && p.y >= r.y - gap && p.y <= r.y + r.height + gap;
-      if (own && inside(own.rect, 0)) break;
-      const hit = boxes.find((b) => b !== own && inside(b.rect, 3));
-      if (hit) { crossings.push(own.text + ' crosses ' + hit.text); break; }
-    }
-  });
-  const list = document.querySelector('.clusters-overview__list');
-  return {overflow: boxes.filter((b) => b.over.length).map((b) => b.over[0]), overlaps, crossings,
-    fonts: [...document.fonts].filter((f) => f.status === 'loaded').map((f) => `${f.family} ${f.weight}`),
-    pills: boxes.filter((b) => !b.label).length, labels: boxes.filter((b) => b.label).length,
-    listed: list ? [list.children.length, list.querySelectorAll('.clusters-overview__subs li').length] : [0, 0]};
-}"""
-
 # The overview at rest: the names' text sizes, nothing spilling out of a name, no name overlapping another or
 # the ring, no line through another name, and every panel closed and out of the tab order.
 CLUSTERS_OVERVIEW_REST = """() => {
@@ -658,7 +626,7 @@ CLUSTERS_OVERVIEW_REST = """() => {
     }
   });
   const panels = [...stage.querySelectorAll('.clusters-map__panel')];
-  return {stage: stage.offsetWidth, ring: ring.width > 0, listed: document.querySelectorAll('.clusters-overview__list > li').length,
+  return {stage: stage.offsetWidth, ring: ring.width > 0, listed: document.querySelectorAll('.clusters-overview__list > li').length, subs: document.querySelectorAll('.clusters-overview__subs li').length,
     name: Math.min(...tags.map((t) => size(t.querySelector('.clusters-map__tag-name')))),
     cue: Math.min(...tags.map((t) => size(t.querySelector('.clusters-map__cue')))),
     spill: tags.filter((t) => t.scrollWidth > t.clientWidth + 0.5 || t.scrollHeight > t.clientHeight + 0.5).map((t) => t.textContent.trim().slice(0, 40)),
@@ -701,8 +669,8 @@ CLUSTERS_MAP_BREAKPOINT = 942
 
 def check_clusters_map(browser, base, failures):
     """The /clusters/ map. The overview, laid out at build time: names fit their boxes and stay apart, at
-    15 px or more from the breakpoint up, and each panel opens inside the drawing with level columns.
-    The full-size mind map: text fits its pill, nothing overlaps, and no line runs through another box.
+    15 px or more from the breakpoint up, each panel opens inside the drawing with level columns, and the
+    names and panels match the list of clusters and sub-clusters after the figure.
     Rerun when the Clusters Doc changes."""
     expect = expectation(failures, "clusters map")
     for width in (1440, 1024, CLUSTERS_MAP_BREAKPOINT):
@@ -717,6 +685,7 @@ def check_clusters_map(browser, base, failures):
         listed = lambda items: f": {items[:3]}" if items else ""
         expect(rest["ring"], f"at {width} px the ring is drawn")
         expect(0 < rest["names"] == rest["listed"], f"at {width} px the overview names every listed cluster ({rest['names']} of {rest['listed']})")
+        expect(0 < rest["links"] == rest["subs"], f"at {width} px the panels link every listed sub-cluster ({rest['links']} of {rest['subs']})")
         print(f"  {width} px: names {rest['name']:.1f} px, cues {rest['cue']:.1f} px")
         expect(rest["name"] >= 15 and rest["cue"] >= 15, f"at {width} px the names and cues are 15 px or more")
         expect(not rest["spill"], f"at {width} px each name fits its box" + listed(rest["spill"]))
@@ -739,19 +708,6 @@ def check_clusters_map(browser, base, failures):
         if width == CLUSTERS_MAP_BREAKPOINT:
             page.set_viewport_size({"width": width - 1, "height": 900})
             expect(page.evaluate(CLUSTERS_MAP_PHONE)["hub"], f"at {width - 1} px the hub and list replace the overview")
-        if width == 1440:
-            page.mouse.move(0, 0)
-            page.click(".clusters-map__enlarge")
-            page.wait_for_timeout(200)
-            found = page.evaluate(CLUSTERS_MAP_LAYOUT)
-            expect(not found.get("missing"), "Open full size shows the full map")
-            if not found.get("missing"):
-                print(f"  full map: {found['labels']} cluster labels, {found['pills']} sub-cluster pills; fonts loaded: {found['fonts']}")
-                expect(not found["overflow"], "text fits its pill or label" + listed(found["overflow"]))
-                expect(not found["overlaps"], "no pill or label overlaps another" + listed(found["overlaps"]))
-                expect(not found["crossings"], "no line runs through a pill or label" + listed(found["crossings"]))
-                expect(found["listed"][0] > 0 and [found["labels"], found["pills"]] == found["listed"] == [rest["names"], rest["links"]],
-                       f"the overview and full map have every cluster and sub-cluster in the list ({found['listed']})")
         page.context.close()
     page = new_page(browser, 390)
     page.goto(base + "clusters/", wait_until="load")

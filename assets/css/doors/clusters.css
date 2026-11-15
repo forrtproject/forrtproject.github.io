@@ -943,21 +943,11 @@
 }
 
 /* Clusters map (partials/clusters/map.html): on the page the overview, the cluster names round the hub, each
-   opening a panel of its sub-clusters; "Open full size" shows the full mind map in a dialog. */
+   opening a panel of its sub-clusters. */
 .clusters-map { margin: 1.75rem 0 0.5rem; }
-.clusters-map__art { display: block; width: 100%; height: auto; font-family: var(--text); }
-/* geometricPrecision: Chromium on Linux otherwise rounds each glyph to whole pixels, which sets the
-   text about 6% wider than the advance widths the build wraps it with (clusters/map_wrap.html). */
-.clusters-map__art text { fill: #fff; text-anchor: middle; pointer-events: none; text-rendering: geometricPrecision; }
 .clusters-map__line { fill: none; stroke: var(--soft); stroke-width: 2; stroke-linecap: round; }
-.clusters-map__seg path:first-of-type, .clusters-map__label rect, .clusters-map__pill rect { fill: var(--c); }
 .clusters-map__icon { fill: #fff; }
-.clusters-map__art .clusters-map__label text { font-size: 32px; font-weight: 700; }
-.clusters-map__pill text { font-size: 17px; font-weight: 400; }
 .clusters-map__disc { fill: #fff; stroke: var(--res); stroke-width: 7; }
-.clusters-map__cluster { transition: opacity 0.15s; }
-.clusters-map__art.is-pointing .clusters-map__cluster:not(.is-active) { opacity: 0.35; }
-.clusters-map__art a:hover rect { fill: color-mix(in srgb, var(--c) 80%, #000); }
 
 /* The overview. The stage keeps the drawing's proportions; --u is one drawing unit at the stage's width. */
 .clusters-map__stage { position: relative; margin: 0 auto; container-type: inline-size; --u: calc(100cqw / var(--ow)); transition: margin-bottom 0.4s ease; }
@@ -1021,17 +1011,6 @@
 }
 
 .clusters-map__caption { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.5rem 1.5rem; margin-top: 0.75rem; }
-.clusters-map__enlarge, .clusters-map__close {
-  font: inherit; font-size: 0.9rem; font-weight: 600; color: var(--ink); background: var(--page);
-  border: 1px solid var(--line); border-radius: var(--r-small); padding: 0.35rem 0.9rem; cursor: pointer;
-}
-.clusters-map__enlarge:hover, .clusters-map__close:hover { border-color: var(--ink); }
-.clusters-map__dialog:not([open]) { display: none; }
-.clusters-map__dialog { width: 96vw; max-width: none; height: 94vh; max-height: none; padding: 0; border: 0; border-radius: var(--r-large); background: var(--page); }
-.clusters-map__dialog::backdrop { background: rgba(38, 45, 53, 0.6); }
-.clusters-map__close { position: absolute; top: 0.75rem; right: 0.75rem; z-index: 1; box-shadow: 0 1px 4px rgba(38, 45, 53, 0.25); }
-.clusters-map__scroll { height: 100%; overflow: auto; }
-.clusters-map__scroll .clusters-map__art { width: auto; max-width: none; height: auto; margin: 0 auto; }
 .clusters-map__compact { display: none; }
 .clusters-map__hub { display: block; width: min(240px, 70%); margin: 0 auto 1rem; }
 .clusters-map__segment { fill: var(--c); }
@@ -1042,8 +1021,8 @@
   .clusters-map__compact { display: block; }
 }
 @media (forced-colors: active) {
-  .clusters-map__art text, .clusters-map__icon { fill: CanvasText; }
-  .clusters-map__seg path:first-of-type, .clusters-map__segment, .clusters-map__label rect, .clusters-map__pill rect { fill: Canvas; stroke: CanvasText; }
+  .clusters-map__icon { fill: CanvasText; }
+  .clusters-map__segment { fill: Canvas; stroke: CanvasText; }
   .clusters-map__tag { border: 2px solid CanvasText; }
 }
 
@@ -2439,7 +2418,6 @@ body.clusters-mobile-nav-open .clusters-back-to-top{display:none}
 .clusters-inline-search__submit.clusters-inline-search__submit:hover{background:var(--surface);color:var(--ink)}
 .clusters-inline-search__option-label{font-size:15px;color:var(--ink);margin-inline-start:8px}
 @media(max-width:760px){.clusters-inline-search__option-label{flex-basis:100%;margin:4px 0 0}}
-.clusters-map__enlarge,.clusters-map__close{border:1.5px solid var(--ink);border-radius:999px;background:#fff;padding:8px 16px;font:600 15px/1.3 var(--text)}
 @media(max-width:760px){.clusters-map__hub{width:min(180px,50%)}}
 /* On a phone a row's count goes under its title, so long titles keep the width; the whole row opens it. */
 @media(max-width:760px){
@@ -2560,11 +2538,7 @@ body.clusters-mobile-nav-open #just-os-widget{display:none}
 .clusters-map__desc{margin:2px 0 0;font-size:16px;line-height:1.4;color:var(--ink);max-width:80ch}
 .clusters-map__count{margin:2px 0 0;font-size:15px;color:var(--soft)}
 @media (max-width:941px){.clusters-map__info{display:none}}
-.clusters-map__art .clusters-map__label,.clusters-map__art .clusters-map__seg{cursor:pointer}
 .clusters-overview__list li[data-cluster]:hover .clusters-overview__name{color:var(--ink)}
-.clusters-map__art .clusters-map__label:focus{outline:none}
-.clusters-map__art .clusters-map__label:focus-visible rect{stroke:var(--ink);stroke-width:7px;paint-order:stroke}
-.clusters-map__art .clusters-map__label:focus-visible{outline:3px solid var(--ink);outline-offset:4px}
 
 /* Cluster cards keep the same inner space at every width (the old theme shrank it to 9 px on phones),
    and the phone "Navigate" button stands clear of the card below it. */

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Render the clusters illustration (layouts/partials/clusters/map.html) as the /clusters/ share image.
+"""Render the clusters overview (layouts/partials/clusters/map.html) as the /clusters/ share image.
 
 Run after the clusters change: build the site, then
     python3 scripts/render_clusters_share_image.py <build-dir>
@@ -22,27 +22,34 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "content/clusters/FORRT_Clusters.webp"
 
 ISOLATE = """() => {
-  const art = document.querySelector('.clusters-map__art').cloneNode(true);
-  const clusters = art.querySelectorAll('.clusters-map__cluster').length;
-  const pills = art.querySelectorAll('.clusters-map__pill').length;
+  // The overview at rest: every panel shut and every name in place (the page may have opened one).
+  const stage = document.querySelector('.clusters-map__stage').cloneNode(true);
+  stage.querySelectorAll('.is-open, .is-lit, .is-active').forEach((el) => el.classList.remove('is-open', 'is-lit', 'is-active'));
+  stage.classList.remove('is-pointing', 'is-preview');
+  stage.querySelectorAll('[style]').forEach((el) => { el.style.translate = ''; el.style.d = ''; });
+  stage.querySelectorAll('.clusters-map__line[data-d]').forEach((line) => line.setAttribute('d', line.getAttribute('data-d')));
+  stage.style.translate = ''; stage.style.marginBottom = '';
+  const clusters = stage.querySelectorAll('.clusters-map__tag').length;
+  const subs = stage.querySelectorAll('.clusters-map__panel li').length;
   const head = document.createElement('div');
   head.className = 'clusters-head';  // keeps the page's heading style
   const h1 = document.querySelector('h1').cloneNode(true);
   h1.style.margin = '0 0 16px';
   const line = document.createElement('p');
-  line.textContent = `${clusters} clusters, ${pills} sub-clusters`;
+  line.textContent = `${clusters} clusters, ${subs} sub-clusters`;
   line.style.cssText = 'margin:0;font-size:26px;color:var(--soft)';
   head.append(h1, line);
   head.style.cssText = 'flex:0 0 300px';
-  art.removeAttribute('width');
-  art.removeAttribute('height');
-  art.style.cssText = 'height:600px;width:auto;flex:none;margin-left:auto';
+  // As tall as the image allows: the stage keeps its proportions (aspect-ratio) at the width set here.
+  const [ow, oh] = stage.style.aspectRatio.split('/').map(Number);
+  stage.style.cssText += `;width:${Math.min(820, 600 * ow / oh)}px;max-width:none;flex:none;margin:0 0 0 auto`;
+  stage.querySelectorAll('.clusters-map__panel').forEach((panel) => panel.remove());
   document.body.innerHTML = '';
   const main = document.createElement('main');
   main.style.cssText = 'display:flex;align-items:center;gap:24px;padding:15px 30px 15px 50px;width:1200px;height:630px;box-sizing:border-box;overflow:hidden';
-  main.append(head, art);
+  main.append(head, stage);
   document.body.append(main);
-  return Promise.all([document.fonts.ready, ...[...art.querySelectorAll('image')].map((img) =>
+  return Promise.all([document.fonts.ready, ...[...stage.querySelectorAll('image')].map((img) =>
     new Promise((done) => { const probe = new Image(); probe.onload = probe.onerror = done; probe.src = img.href.baseVal; }))]);
 }"""
 
