@@ -2,11 +2,14 @@
      sentence of its description (left out where that sentence only counts sub-clusters), and its counts as
      the label of a disclosure that lists its sub-clusters, linked to their places on its page, each with its
      number of references. The map's info bar copies the name, sentence and counts from here.
-     From 942 px the overview above shows the same clusters, so the list starts closed there; below that it is
-     the way in and starts open (it is open in the HTML, so it also stays open without scripts).
+     From 942 px the overview above shows the same clusters, so the list is closed there; below that it is the
+     way in and is open (it is open in the HTML, so it also stays open without scripts). Crossing 942 px, by
+     resizing or turning the device, sets it again. A hidden h2 keeps it in the page's headings.
      Expects dict: data (clusters_v4), arrowColors. */}}
 {{ $clusters := .data.clusters }}
 {{ $marks := .arrowColors }}
+<section aria-labelledby="clusters-overview-heading">
+<h2 class="visually-hidden" id="clusters-overview-heading">The {{ len $clusters }} clusters</h2>
 <details class="clusters-overview" id="clusters-overview" open>
   <summary class="clusters-overview__heading">The {{ len $clusters }} clusters as a list</summary>
   <ol class="clusters-overview__list">
@@ -31,4 +34,10 @@
     {{ end }}
   </ol>
 </details>
-<script>if (window.matchMedia('(min-width: 942px)').matches) document.getElementById('clusters-overview').open = false;</script>
+</section>
+<script>(function () {
+  var list = document.getElementById('clusters-overview'), wide = window.matchMedia('(min-width: 942px)');
+  var sync = function () { list.open = !wide.matches; };
+  sync();
+  if (wide.addEventListener) wide.addEventListener('change', sync); else wide.addListener(sync);
+})();</script>

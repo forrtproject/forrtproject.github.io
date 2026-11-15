@@ -53,9 +53,9 @@ ISOLATE = """() => {
   document.body.append(main);
   cues.forEach((cue) => {
     const tag = cue.closest('.clusters-map__tag');
-    const gap = cue.offsetHeight + parseFloat(getComputedStyle(cue).marginTop);
+    const before = tag.getBoundingClientRect().height;  // the cue's whole line goes, not just its own box
     cue.remove();
-    tag.style.translate = `0 ${gap / 2}px`;
+    tag.style.translate = `0 ${(before - tag.getBoundingClientRect().height) / 2}px`;
   });
   return Promise.all([document.fonts.ready, ...[...stage.querySelectorAll('image')].map((img) =>
     new Promise((done) => { const probe = new Image(); probe.onload = probe.onerror = done; probe.src = img.href.baseVal; }))]);
