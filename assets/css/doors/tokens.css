@@ -28,4 +28,10 @@
   --display-weight:500;
   --r-small:8px;
   --r-large:18px;
+  /* Framed boxes (cards, panels, disclosures, bars with their own fill or border): the least space between
+     a box's edge and its text, and between two boxes side by side or one above the other. A component may
+     use more, never less. Small controls and chips (buttons, pills, tags) and joined groups are exempt. */
+  --box-pad:16px;
+  --box-pad-y:14px;  /* top and bottom of a one-line bar, such as a disclosure's summary */
+  --box-gap:16px;
 }
