@@ -1,0 +1,8 @@
+{{/* How many news posts use each featured picture, by the picture's content. A picture several posts share
+     (the newsletters' stock photo) tells them apart from nothing, so the list and the post leave it out.
+     Returns a dict of md5 → count. Call with partialCached (any context, key "post-image-uses"). */}}
+{{ $uses := dict }}
+{{ range where site.RegularPages "Type" "post" }}
+  {{ with (.Resources.ByType "image").GetMatch "*featured*" }}{{ $key := md5 .Content }}{{ $uses = merge $uses (dict $key (add 1 (index $uses $key | default 0))) }}{{ end }}
+{{ end }}
+{{ return $uses }}

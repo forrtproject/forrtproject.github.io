@@ -32,7 +32,7 @@ class ArchivePageTest(unittest.TestCase):
 
     def test_page_parts(self):
         self.assertIn('<a class="forrt-skip" href="#main">', self.page)
-        self.assertIn('<nav aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/newsletters/">', self.page)
+        self.assertIn('<nav aria-label="Breadcrumb"><a href="/">Home</a> / About FORRT / <a href="/newsletters/">Newsletters</a>', self.page)
         self.assertIn('<h1>FORRT Newsletter, April 2024</h1></header><main id="main" tabindex="-1">', self.page)
         self.assertEqual(self.page.count("<main"), 1)
         self.assertIn("</main></body>", self.page)
@@ -58,6 +58,25 @@ class ArchivePageTest(unittest.TestCase):
     def test_headings_keep_heading_font(self):
         self.assertIn(":not(:is(h1,h2,h3,h4) *)", self.page)
         self.assertIn("body :is(h1,h2,h3,h4) *{font-family:Newsreader", self.page)
+
+
+class ArchiveExtrasTest(unittest.TestCase):
+    def test_empty_heading_becomes_block(self):
+        page = s.archive_page(EMAIL.replace("</body>", '<h2 data-email-h1 style="x">&nbsp;</h2><h2 data-email-h1>Highlights</h2></body>'))
+        self.assertIn('<div data-email-h1 style="x">&nbsp;</div>', page)
+        self.assertIn("<h2 data-email-h1>Highlights</h2>", page)
+        named = s.archive_page(EMAIL.replace("</body>", '<h2 data-email-h1><a href="/x"><img src="a.webp" alt="Get involved"></a></h2></body>'))
+        self.assertIn('<h2 data-email-h1><a href="/x"><img src="a.webp" alt="Get involved"></a></h2>', named)
+        unnamed = s.archive_page(EMAIL.replace("</body>", '<h2 data-email-h1><img src="b.webp" alt=""></h2></body>'))
+        self.assertIn('<div data-email-h1><img src="b.webp" alt=""></div>', unnamed)
+        self.assertEqual(s.archive_page(unnamed), unnamed)
+
+    def test_pager(self):
+        page = s.with_pager(self.page if hasattr(self, "page") else s.archive_page(EMAIL), "2024-03", "2024-05")
+        self.assertIn('href="/newsletters/2024-03/" rel="prev">&larr; March 2024</a>', page)
+        self.assertIn('href="/newsletters/2024-05/" rel="next">May 2024 &rarr;</a>', page)
+        self.assertEqual(s.with_pager(page, "2024-03", "2024-05"), page)
+        self.assertEqual(page.count('class="forrt-pager"'), 1)
 
 
 class FinishPageTest(unittest.TestCase):

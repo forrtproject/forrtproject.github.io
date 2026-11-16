@@ -76,6 +76,8 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .article-layout .article-foot .post-nav-item p,.article-layout .article-foot .article-widget li{font-size:16px;line-height:1.4;margin:0}
 .article-layout .article-foot :is(.card-subtitle,.card-text){font-size:16px;max-width:30em}
 .article-layout .article-widget a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
+/* Related links are 44 px targets (DESIGN.md §9). */
+.article-layout .article-foot .article-widget li>a{display:inline-flex;align-items:center;min-height:44px}
 .article-layout .article-card{position:sticky;top:24px;max-height:calc(100vh - 48px - var(--banner,0px));overflow-y:auto;background:var(--surface);border-radius:var(--r-large);padding:22px;font-size:16px;line-height:1.45}
 .article-layout .article-card h2{font-size:23px;line-height:1.15;margin:0 0 8px}
 .article-layout .article-card dl{margin:0 0 20px}

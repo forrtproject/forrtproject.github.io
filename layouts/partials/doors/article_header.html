@@ -45,7 +45,7 @@
 {{ end }}
 {{/* A short news post shows its image after the text (doors/reading), so the post's link comes first. */}}
 {{ $after := and (eq .Type "post") (le .ReadingTime 1) }}
-{{ if and $featured (not .Params.image.preview_only) (not $after) }}
+{{ if and $featured (not .Params.image.preview_only) (not $after) (not (partial "doors/post_image_shared" .)) }}
 {{ $image := $featured }}
 {{ $image = $featured.Resize (printf "%dx webp q78" (cond (gt $featured.Width 720) 720 $featured.Width)) }}
 <figure class="article-image">

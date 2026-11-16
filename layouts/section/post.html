@@ -1,5 +1,6 @@
 {{- define "main" -}}
-{{/* News and announcements: one row per post, newest first (DESIGN.md §4), with category buttons that
+{{/* News and announcements: one row per post, newest first (DESIGN.md §4), its summary cut at 160 characters
+     (about four lines on a phone), with category buttons that
      filter the rows. A post's own picture shows beside its row; a picture several posts share (the
      newsletters' stock photo) tells them apart from nothing, so it is left out. */}}
 <div class="wrap news-page">
@@ -14,9 +15,6 @@
   {{ $cats := slice }}
   {{ range $posts }}{{ with .Params.categories }}{{ $cats = $cats | append (index . 0) }}{{ end }}{{ end }}
   {{ $cats = uniq $cats }}
-  {{/* How many posts use each picture, by its content. */}}
-  {{ $uses := dict }}
-  {{ range $posts }}{{ with (.Resources.ByType "image").GetMatch "*featured*" }}{{ $key := md5 .Content }}{{ $uses = merge $uses (dict $key (add 1 (index $uses $key | default 0))) }}{{ end }}{{ end }}
 
   {{/* Hidden until the script below runs: without it the buttons would do nothing. */}}
   <div class="ac-filters" role="group" aria-label="Show posts by category" hidden>
@@ -30,13 +28,13 @@
       {{ $cat := "" }}{{ with .Params.categories }}{{ $cat = index . 0 }}{{ end }}
       {{ $img := (.Resources.ByType "image").GetMatch "*featured*" }}
       {{ $alt := .Params.image.alt_text }}
-      {{ if and $img (gt (index $uses (md5 $img.Content)) 1) }}{{ $img = false }}{{ end }}
+      {{ if partial "doors/post_image_shared" . }}{{ $img = false }}{{ end }}
       <li data-cat="{{ lower $cat }}">
         <article class="list-item{{ if $img }} list-item-image{{ end }}">
           <div>
             <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
             <p class="list-meta">{{ with $cat }}{{ . }} · {{ end }}<time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time></p>
-            <p class="list-summary">{{ .Summary | plainify | emojify | truncate 220 }}</p>
+            <p class="list-summary">{{ .Summary | plainify | emojify | truncate 160 }}</p>
           </div>
           {{ with $img }}{{ $thumb := .Fill "280x210 Center webp q75" }}<img src="{{ $thumb.RelPermalink }}" width="140" height="105" alt="{{ $alt }}"{{ if not $eager }} loading="lazy"{{ end }}>{{ $eager = false }}{{ end }}
         </article>
