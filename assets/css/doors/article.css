@@ -250,6 +250,9 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
   .toc-phone.is-short .toc-extra{display:none}
   .toc-phone-more{margin:6px 0 0;padding:4px 0;border:0;background:none;font:600 16px/1.35 var(--text);color:var(--ink);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
   .toc-phone a{display:block;padding:5px 0;font-size:16px;line-height:1.35;color:var(--link);text-decoration:underline}
+  /* Each contents link and the copy button are 44 px targets on phones and tablets (DESIGN.md §9). */
+  .toc-phone a{display:flex;align-items:center;min-height:44px;box-sizing:border-box}
+  .article-layout .copy-link{min-height:44px}
   .article-layout:has(.toc-phone) .article-card :is(h2,.article-toc){display:none}
   .article-layout:has(.toc-phone) .article-card:not(:has(dl)){display:none}
   .glossary-index .reading{display:contents}
