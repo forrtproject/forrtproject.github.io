@@ -21,6 +21,10 @@
   var letters = document.querySelector(".tag-letters");
   var groups = Array.prototype.slice.call(document.querySelectorAll(".tag-group"));
   var count = box.querySelector(".tag-filter-count");
+  // While the letter bar is pinned (above 760 px), a letter's heading lands below it, however many rows it wraps to.
+  if (letters && window.ResizeObserver) new ResizeObserver(function () {
+    document.documentElement.style.setProperty("--tag-letters", letters.offsetHeight + "px");
+  }).observe(letters);
   // Each letter shows its most used tags (twelve on a phone, sixteen otherwise) and a button for the rest, so the list stays walkable.
   var FIRST = window.matchMedia("(max-width: 760px)").matches ? 12 : 16;
   {
@@ -47,8 +51,11 @@
       group.appendChild(more);
     });
   }
-  /** Spaces and hyphens count as the same, so "p hacking" finds "P-Hacking". */
+  /** Spaces and hyphens count as the same, so "p hacking" finds "P-Hacking"; compact() also drops them, so
+      "pre registration" finds "Preregistration". */
   function norm(text) { return text.toLowerCase().replace(/[\s-]+/g, " ").trim(); }
+  function compact(text) { return norm(text).replace(/ /g, ""); }
+  function name(item) { return item.firstChild.firstChild.textContent; }
   input.addEventListener("input", function () {
     var query = norm(input.value);
     document.querySelector(".tag-all").classList.toggle("is-searching", Boolean(query));
@@ -56,7 +63,7 @@
     groups.forEach(function (group) {
       var any = false;
       Array.prototype.forEach.call(group.querySelectorAll("li"), function (item) {
-        var match = !query || norm(item.firstChild.firstChild.textContent).indexOf(query) !== -1;
+        var match = !query || norm(name(item)).indexOf(query) !== -1 || compact(name(item)).indexOf(compact(query)) !== -1;
         item.hidden = !match;
         if (match) { any = true; shown += 1; }
       });
@@ -67,11 +74,23 @@
     count.textContent = !query ? "" : shown ? shown + (shown === 1 ? " tag matches" : " tags match") : "No tag matches.";
     return shown;
   });
-  // Enter opens the first tag that matches.
+  // Enter opens the best match: the tag itself, else one that starts with the query, else the most used.
+  // A query under three letters opens a tag only when it names it exactly.
   input.addEventListener("keydown", function (event) {
     if (event.key !== "Enter") return;
-    var first = document.querySelector(".tag-group li:not([hidden]) a");
-    if (input.value.trim() && first) { event.preventDefault(); first.click(); }
+    var query = compact(input.value);
+    if (!query) return;
+    var items = Array.prototype.slice.call(document.querySelectorAll(".tag-group li:not([hidden])"));
+    var rank = function (item) {
+      var tag = compact(name(item));
+      return tag === query ? 3 : tag.indexOf(query) === 0 ? 2 : 1;
+    };
+    var count = function (item) { return Number(item.querySelector(".tag-count").textContent); };
+    items.sort(function (a, b) { return rank(b) - rank(a) || count(b) - count(a); });
+    var best = items[0];
+    if (!best || (query.length < 3 && rank(best) < 3)) return;
+    event.preventDefault();
+    best.querySelector("a").click();
   });
   // No page carries the tag in the address: show the search, filled with the term when that finds tags.
   document.addEventListener("tags:nomatch", function (event) {
@@ -202,6 +221,8 @@
         });
         if (matched) label = spelling(matched) || (matched === needle ? tag : matched);
         else label = tag.replace(/-/g, " ");
+        // A tag not listed on the page (too common or too rare to show) keeps the index's lower case: start it with a capital.
+        label = label.charAt(0).toUpperCase() + label.slice(1);
         render(pages);
       })
       .catch(function () {

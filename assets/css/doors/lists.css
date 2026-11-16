@@ -165,3 +165,11 @@
 }
 /* One column on narrow phones, so long tag names and enlarged text keep to the screen. In em, so a larger default text size also gets it. */
 @media(max-width:30em){.tag-group ul{columns:1}}
+/* The letter bar's real height (tag-browser.js), as it wraps to two rows between 761 and about 1000 px. */
+@media(min-width:761px){.tag-group{scroll-margin-top:calc(var(--tag-letters,48px) + 8px)}}
+/* Phones: the tag view's links and buttons are 44 px targets too (DESIGN.md §9). */
+@media(max-width:760px){
+  #tag-results p a,#tag-results li>a{display:inline-flex;align-items:center;min-height:44px}
+  #tag-results li{padding:6px 0}
+  .tag-show-more,.tag-group-more{min-height:44px}
+}
