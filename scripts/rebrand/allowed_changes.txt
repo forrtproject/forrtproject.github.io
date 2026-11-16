@@ -2,6 +2,8 @@
 fonts/doors/Newsreader-OFL.txt   # Licence beside the self-hosted font, not a page
 fonts/doors/SourceSans3-OFL.txt  # Licence beside the self-hosted font, not a page
 fonts/doors/FontAwesome-LICENSE.txt  # Licence beside the self-hosted icon subset, not a page
+fonts/doors/NotoNaskhArabic-OFL.txt  # Licence beside the self-hosted Arabic heading font, not a page
+fonts/doors/NotoSansArabic-OFL.txt   # Licence beside the self-hosted Arabic text font, not a page
 resources/page/*/index.html  # Crawlable pages of the directory (D16, #868). Their number follows the collection
 resources/directory.json     # The directory's filter data (D16, #868)
 resources/search.json        # The directory's search data, fetched on first search (D16, #868)

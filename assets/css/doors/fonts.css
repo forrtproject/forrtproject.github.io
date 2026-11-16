@@ -4,3 +4,7 @@
 @font-face{font-family:'Source Sans 3';src:url(../fonts/doors/source-sans-3-var.woff2) format('woff2');font-weight:400 700;font-style:normal;font-display:swap}
 /* Only reference lists ask for this, so other pages never download it. */
 @font-face{font-family:'Source Sans 3';src:url(../fonts/doors/source-sans-3-italic.woff2) format('woff2');font-weight:400;font-style:italic;font-display:swap}
+/* Arabic pages (base.css): Noto Naskh Arabic for headings, Noto Sans Arabic for text. The unicode-range keeps
+   them to Arabic characters, so only a page with Arabic text on it downloads them. */
+@font-face{font-family:'Noto Naskh Arabic';src:url(../fonts/doors/noto-naskh-arabic-var.woff2) format('woff2');font-weight:400 700;font-style:normal;font-display:swap;unicode-range:U+0600-06FF,U+0750-077F,U+0870-089F,U+08A0-08FF,U+200C-200F,U+FB50-FDFF,U+FE70-FEFC}
+@font-face{font-family:'Noto Sans Arabic';src:url(../fonts/doors/noto-sans-arabic-var.woff2) format('woff2');font-weight:400 700;font-style:normal;font-display:swap;unicode-range:U+0600-06FF,U+0750-077F,U+0870-089F,U+08A0-08FF,U+200C-200F,U+FB50-FDFF,U+FE70-FEFC}

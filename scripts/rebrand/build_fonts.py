@@ -6,10 +6,13 @@ Run: python3 scripts/rebrand/build_fonts.py <dir-with-source-ttfs> static/fonts/
      python3 scripts/rebrand/build_fonts.py --icons <dir-with-font-awesome-files> static/fonts/doors assets/css/doors/icons.css
 
 Needs `pip install fonttools brotli`. Sources are the OFL files in github.com/google/fonts
-(ofl/newsreader, ofl/sourcesans3). Keeps Latin and Latin Extended-A, which cover every letter in
-the site's English, German and Turkish; Arabic and Chinese use system fonts (decision D18). Other
-scripts fall back to system fonts, as they did with the wider subset. Newsreader is only ever set
-at weight 500, so it keeps only its optical-size axis.
+(ofl/newsreader, ofl/sourcesans3, ofl/notonaskharabic, ofl/notosansarabic). The Latin faces keep
+Latin and Latin Extended-A, which cover every letter in the site's English, German and Turkish.
+Arabic pages set Arabic in Noto Naskh Arabic (headings) and Noto Sans Arabic (text), cut to the
+Arabic blocks; they load only on pages with Arabic text, through the faces' unicode-range in
+fonts.css. Chinese keeps the reader's system fonts, as a CJK web font runs to megabytes. Other
+scripts fall back to system fonts. Newsreader is only ever set at weight 500, so it keeps only its
+optical-size axis.
 
 --icons takes fa-solid-900.woff2, fa-brands-400.woff2, fa-regular-400.woff2 and all.min.css from
 Font Awesome Free 6.7.2 (cdnjs) and subsets them to the icons in ICONS. Pages download an icon font
@@ -28,12 +31,16 @@ UNICODES = (
     "U+0000-017F,U+0218-021B,U+0259,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0300-0308,U+030A-030C,"
     "U+0327-0328,U+2000-206F,U+20AC,U+2113,U+2122,U+2190-2193,U+2212,U+2248,U+2260,U+2264-2265,U+FFFD"
 )
+# Arabic, its supplements and presentation forms, the joining controls and the spaces between words.
+ARABIC = "U+0020,U+00A0,U+0600-06FF,U+0750-077F,U+0870-089F,U+08A0-08FF,U+200C-200F,U+FB50-FDFF,U+FE70-FEFC"
 FONTS = [
-    # source, axis limits, output
-    ("Newsreader[opsz,wght].ttf", {"wght": 500, "opsz": (16, 72)}, "newsreader-var.woff2"),
-    ("SourceSans3[wght].ttf", {"wght": (400, 700)}, "source-sans-3-var.woff2"),
+    # source, axis limits, output, characters kept
+    ("Newsreader[opsz,wght].ttf", {"wght": 500, "opsz": (16, 72)}, "newsreader-var.woff2", UNICODES),
+    ("SourceSans3[wght].ttf", {"wght": (400, 700)}, "source-sans-3-var.woff2", UNICODES),
     # Only reference lists use italics (decision D15), and those are in the text face.
-    ("SourceSans3-Italic[wght].ttf", {"wght": 400}, "source-sans-3-italic.woff2"),
+    ("SourceSans3-Italic[wght].ttf", {"wght": 400}, "source-sans-3-italic.woff2", UNICODES),
+    ("NotoNaskhArabic[wght].ttf", {"wght": (400, 700)}, "noto-naskh-arabic-var.woff2", ARABIC),
+    ("NotoSansArabic[wdth,wght].ttf", {"wdth": 100, "wght": (400, 700)}, "noto-sans-arabic-var.woff2", ARABIC),
 ]
 
 
@@ -88,7 +95,7 @@ def build_icons(source, output, css_path):
         handle.write("\n".join(lines) + "\n")
 
 
-def build(source, limits, output):
+def build(source, limits, output, unicodes=UNICODES):
     font = TTFont(source)
     font = instancer.instantiateVariableFont(font, limits)
     # The instancer drops glyphs left with no variation, such as spaces, and the subsetter
@@ -104,8 +111,12 @@ def build(source, limits, output):
     options.desubroutinize = True
     options.notdef_outline = True
     options.name_IDs = [1, 2, 3, 4, 6, 13, 14]
+    # Arabic needs every OpenType feature (joining forms, ligatures, mark positioning); the Latin faces keep
+    # fontTools' default set, as before.
+    if unicodes == ARABIC:
+        options.layout_features = ["*"]
     subsetter = subset.Subsetter(options)
-    subsetter.populate(unicodes=subset.parse_unicodes(UNICODES))
+    subsetter.populate(unicodes=subset.parse_unicodes(unicodes))
     subsetter.subset(font)
     font.flavor = "woff2"
     font.save(output)
@@ -119,8 +130,8 @@ def main():
         return
     source_dir, out_dir = sys.argv[1:3]
     os.makedirs(out_dir, exist_ok=True)
-    for source, limits, output in FONTS:
-        build(os.path.join(source_dir, source), limits, os.path.join(out_dir, output))
+    for source, limits, output, unicodes in FONTS:
+        build(os.path.join(source_dir, source), limits, os.path.join(out_dir, output), unicodes)
 
 
 if __name__ == "__main__":

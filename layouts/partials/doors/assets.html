@@ -7,9 +7,10 @@
 {{ range $files }}{{ $parts = $parts | append (resources.Get (printf "css/doors/%s.css" .)) }}{{ end }}
 {{ $css := $parts | resources.Concat "css/doors.css" | minify | fingerprint "md5" }}
 <link rel="preload" href="{{ "fonts/doors/source-sans-3-var.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
-{{/* Arabic and Chinese content sets its text in system fonts (decision D18). */}}
+{{/* Arabic content sets its text in the self-hosted Arabic faces, Chinese in system fonts (decision D18). */}}
 {{ $language := partial "functions/page_language.html" . }}
 {{ if not (or (hasPrefix $language "ar") (hasPrefix $language "zh")) }}<link rel="preload" href="{{ "fonts/doors/newsreader-var.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>{{ end }}
+{{ if hasPrefix $language "ar" }}<link rel="preload" href="{{ "fonts/doors/noto-sans-arabic-var.woff2" | relURL }}" as="font" type="font/woff2" crossorigin><link rel="preload" href="{{ "fonts/doors/noto-naskh-arabic-var.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>{{ end }}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}">
 {{ $screen := slice }}
 {{ if .IsHome }}{{ $screen = slice "home" }}{{ end }}
