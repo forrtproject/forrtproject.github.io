@@ -481,11 +481,18 @@ if (termFilter && termGrid) {
   const tools = document.querySelector('.glossary-tools');
   // A page opened at a letter (#letter-…) scrolled before the toolbar was measured, so it scrolls there once more.
   let aligned = false;
-  if (tools) new ResizeObserver(() => {
-    document.documentElement.style.setProperty('--glossary-tools', `${tools.offsetHeight}px`);
-    if (!aligned && location.hash.startsWith('#letter-')) document.getElementById(location.hash.slice(1))?.scrollIntoView();
-    aligned = true;
-  }).observe(tools);
+  // On a phone the toolbar box gives way (display: contents) and only the search row is pinned, so that row is measured.
+  const find = document.querySelector('.glossary-find');
+  const pinned = () => (getComputedStyle(tools).display === 'contents' ? find : tools);
+  if (tools && find) {
+    const measure = new ResizeObserver(() => {
+      document.documentElement.style.setProperty('--glossary-tools', `${pinned().offsetHeight}px`);
+      if (!aligned && location.hash.startsWith('#letter-')) document.getElementById(location.hash.slice(1))?.scrollIntoView();
+      aligned = true;
+    });
+    measure.observe(tools);
+    measure.observe(find);
+  }
   // The glossary hub: match on the term's name, hide letters left empty, and say when nothing matches.
   const terms = [...termGrid.querySelectorAll('li[data-term]')];
   const groups = [...termGrid.querySelectorAll('.term-group')];

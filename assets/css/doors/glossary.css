@@ -147,7 +147,17 @@ main:lang(ar) .glossary-layout .article-style .term-definition p{font-size:21px}
 main:lang(ar) .crumbs a,main:lang(ar) .crumbs [aria-current]{unicode-bidi:isolate}
 main:lang(ar) .glossary-layout .article-style a{unicode-bidi:plaintext}
 /* A contributor's name is never split across lines. */
-.glossary-layout .term-credit bdi.term-name{white-space:nowrap}
+/* A name moves to the next line whole, and wraps inside only when it is wider than the column (text at 200%). */
+.glossary-layout .term-credit bdi.term-name{display:inline-block;max-width:100%;white-space:normal}
+/* Phones: only the search row stays pinned (DESIGN.md §9); the letters scroll away with the page. The toolbar box
+   gives way so the search row can stick for the whole list. Controls are 44 px targets. */
+@media(max-width:760px){
+  .glossary-tools{display:contents}
+  .glossary-find{position:sticky;top:0;z-index:5;padding:6px 0 8px;background:var(--page);border-bottom:1px solid var(--line)}
+  .glossary-letters{margin-top:12px}
+  .glossary-clear,.glossary-view button,.term-filter-clear{min-height:44px}
+  .glossary-layout .language-switcher a{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box}
+}
 /* Arabic text is set at 21 px rather than 18 (article.css); its term lines and credits keep the same steps below it,
    instead of taking the body size and outgrowing the definition's label. */
 main:lang(ar) .glossary-layout .article-style .term-line{font-size:20px}
