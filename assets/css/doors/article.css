@@ -202,7 +202,31 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .sc-page .sc-grid .sc-title-card{flex:0 0 100%;grid-column:1/-1;width:100%;aspect-ratio:auto;padding:var(--box-pad-y) var(--box-pad);flex-direction:row;align-items:baseline;justify-content:flex-start;gap:10px}
 .sc-page .sc-title-card :is(.sc-title-label,.sc-title-text){margin:0}
 .sc-page .sc-title-card .sc-title-text{font-size:17px}
-.sc-page .sc-title-card .sc-cbar{display:none}
+.sc-page .sc-cbar{display:none}
+/* "Team" before every team's name says nothing the band doesn't, so only screen readers hear it; on a
+   desktop each name has room for two lines, so the photos of neighbouring teams start level. */
+.sc-page .sc-title-card .sc-title-label{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+@media(min-width:761px){.sc-page .sc-team>.sc-title-card{min-height:72px;align-items:center}}
+/* Team names on a pale band: an area's own pale colour for the four area teams, neutral for the rest
+   (DESIGN.md §6: area colours only for areas, no dark bands). */
+.sc-page .sc-title-card{background:var(--surface);color:var(--ink);border-inline-start:6px solid var(--line)}
+.sc-page .sc-title-card :is(.sc-title-label,.sc-title-text){color:var(--ink)}
+.sc-page .sc-title-card[data-area=com]{background:var(--com-bg);border-color:var(--com)}
+.sc-page .sc-title-card[data-area=jus]{background:var(--jus-bg);border-color:var(--jus)}
+.sc-page .sc-title-card[data-area=res]{background:var(--res-bg);border-color:var(--res)}
+.sc-page .sc-title-card[data-area=edu]{background:var(--edu-bg);border-color:var(--edu)}
+/* Name and role under the photo, in the page's text, at full size and in sentence case, growing with
+   enlarged text instead of being clipped over the picture (DESIGN.md §7, §12). */
+.sc-page .sc-grid .sc-card{aspect-ratio:auto;box-shadow:none}
+.sc-page .sc-card .sc-card-photo{position:relative!important;inset:auto!important;aspect-ratio:4/5;border-radius:var(--r-small)}
+.sc-page .sc-card-overlay,.sc-page .sc-card::after{display:none}
+.sc-page .sc-card .sc-card-content{position:static;height:auto;padding:8px 0 0;gap:2px}
+.sc-page .sc-card .sc-card-name{display:block;overflow:visible;color:var(--ink);font:600 17px/1.3 var(--text);text-decoration:underline;text-decoration-color:transparent;text-underline-offset:3px}
+.sc-page .sc-card:is(:hover,:focus-visible) .sc-card-name{color:var(--ink);text-decoration-color:currentColor}
+.sc-page .sc-card .sc-card-role{display:block;overflow:visible;color:var(--soft);font:400 15px/1.3 var(--text);letter-spacing:0;text-transform:none}
+/* 44 px targets (DESIGN.md §9). */
+.sc-page .sc-nav a{display:inline-flex;align-items:center;min-height:44px;padding:0}
+.sc-close-btn,.sc-social-links a{min-width:44px;min-height:44px;display:inline-flex;align-items:center;justify-content:center}
 .sc-team{display:contents}
 /* On a phone the cards and team names share one grid: the box gap between them, and a team's name further
    from the cards of the team before it than from its own. */

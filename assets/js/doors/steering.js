@@ -16,6 +16,15 @@ document.querySelectorAll('.sc-grid').forEach((grid) => {
   });
 });
 
+// The four Strategic Focus Area teams are FORRT's four areas, so they, and only they, take the area
+// colours (DESIGN.md §6); every other team is neutral. Matched by the team's name in the sheet.
+const areas = [[/communit/i, 'com'], [/justice|deia/i, 'jus'], [/research|meta-?science/i, 'res'], [/educat|pedagog/i, 'edu']];
+document.querySelectorAll('#strategic .sc-title-card').forEach((card) => {
+  const name = card.querySelector('.sc-title-text')?.textContent || '';
+  const area = areas.find(([pattern]) => pattern.test(name));
+  if (area) card.dataset.area = area[1];
+});
+
 let trigger = null;
 const backdrops = [...document.querySelectorAll('.sc-modal-backdrop')];
 
