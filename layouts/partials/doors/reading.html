@@ -38,8 +38,9 @@
         {{ end }}
         {{ partial "doors/page_actions" . }}
       {{ end }}
-      {{/* On phones the side card falls below the text, too late to help on a long page. */}}
-      {{ if and (or $hasCard $wide) (gt (len $headings) 1) }}
+      {{/* On phones the side card falls below the text, too late to help on a long page.
+           Not on a list of summaries, which is its own contents, nor where the page asks (phone_toc: false). */}}
+      {{ if and (or $hasCard $wide) (gt (len $headings) 1) (not (strings.Contains $body `class="summary-entry"`)) (ne .Params.phone_toc false) }}
       {{ partial "doors/toc_phone" (replace (partial "doors/reading_toc" (dict "page" . "contents" $contents "written" $written)) `id="TableOfContents"` `aria-label="On this page"`) }}
       {{ end }}
       <div class="article-style">

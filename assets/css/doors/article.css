@@ -275,7 +275,11 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .summary-more[hidden]{display:none}
 /* The list of entries is its own contents, so a second list beside it only repeats the titles. */
 .article-layout:has(.summary-entry) .article-card :is(h2,.article-toc){display:none}
-.dei-mark{padding:0 6px;background:var(--jus-bg);border-radius:var(--r-small);font:600 15px/1.3 var(--text);color:var(--ink);vertical-align:.1em}
+.dei-mark{margin-inline-start:.3em;padding:0 6px;background:var(--jus-bg);border-radius:var(--r-small);font:600 15px/1.3 var(--text);color:var(--ink);vertical-align:.1em}
+/* Inside an entry, its headings sit below the entry's own 22 px title (DESIGN.md §2). */
+.article-layout .article-style .summary-entry h3{font-size:19px}
+/* In the DEI collection every entry is DEI, so the mark tells nothing apart. */
+.article-layout:has(.summaries-dei) .dei-mark{display:none}
 @media print{.toc-phone{display:none!important}}
 .glossary-feedback-header>*{min-width:0;overflow-wrap:anywhere}
 .glossary-feedback-header>:lang(de),.glossary-feedback-header>:lang(tr){hyphens:auto}
