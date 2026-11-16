@@ -56,7 +56,7 @@
     groups.forEach(function (group) {
       var any = false;
       Array.prototype.forEach.call(group.querySelectorAll("li"), function (item) {
-        var match = !query || norm(item.firstChild.textContent).indexOf(query) !== -1;
+        var match = !query || norm(item.firstChild.firstChild.textContent).indexOf(query) !== -1;
         item.hidden = !match;
         if (match) { any = true; shown += 1; }
       });
