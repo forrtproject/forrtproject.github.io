@@ -34,9 +34,10 @@
   <div class="article-layout article-layout-resource">
     <article class="reading">
       <header class="article-head">
-        <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ "" | relLangURL }}">Home</a> <span aria-hidden="true">/</span> <a href="{{ relref . "/resources" }}">Resources</a> <span aria-hidden="true">/</span> <span aria-current="page">{{ .Title }}</span></nav>
+        {{/* The trail stops at Resources: the title follows straight after, and repeating a long one pushed the button below a phone's first screen. */}}
+        <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ "" | relLangURL }}">Home</a> <span aria-hidden="true">/</span> <a href="{{ relref . "/resources" }}">Resources</a></nav>
         {{ with $clean.material_type }}<p class="resource-kind">{{ delimit . ", " }}</p>{{ end }}
-        <h1>{{ .Title }}</h1>
+        <h1{{ if gt (strings.RuneCount .Title) 90 }} class="long-title"{{ end }}>{{ .Title }}</h1>
         {{ with .Params.subtitle }}<p class="standfirst">{{ . | markdownify | emojify }}</p>{{ end }}
         {{ with $clean.creators }}
         <div class="byline"><div class="byline-authors">
