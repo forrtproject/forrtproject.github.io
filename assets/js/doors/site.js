@@ -469,9 +469,10 @@ if (chatWidget) {
 
 // Glossary pages: filter the list of terms, and show the current term inside its card.
 const termFilter = document.getElementById('glossary-search');
-// Arabic terms are written with their vowel marks, which visitors seldom type: both sides drop them, and the tatweel,
-// and an alef with a hamza or madda counts as a plain alef (NFD splits it into the alef and a mark).
-const foldTerm = (text) => text.normalize('NFD').replace(/[\u064B-\u065F\u0670\u0640]/g, '').normalize('NFC').toLowerCase();
+// Arabic terms are written with their vowel marks, which visitors seldom type: both sides drop them (fathatan to sukun,
+// and the dagger alef) and the tatweel, and an alef with a hamza, madda or wasla counts as a plain alef. The hamza on
+// ئ and ؤ stays, so they remain apart from ي and و.
+const foldTerm = (text) => text.replace(/[أإآٱ]/g, 'ا').replace(/[\u064B-\u0652\u0670\u0640]/g, '').toLowerCase();
 const termGrid = document.querySelector('.term-grid');
 if (termFilter && termGrid) {
   // The glossary hub: match on the term's name, hide letters left empty, and say when nothing matches.
