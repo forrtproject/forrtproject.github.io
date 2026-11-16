@@ -158,6 +158,8 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .resource-open .btn{padding:10px 22px;font-size:17px}
 .resource-open .btn .fa-external-link-alt{margin-inline-start:4px;font-size:14px}
 .resource-host{font-size:16px;color:var(--soft);overflow-wrap:anywhere}
+/* The language takes its own line under the button, so it does not read as part of the host. */
+.resource-lang{flex-basis:100%}
 /* A resource entry: the entry, then its details card, then Previous and Next. On a desktop the card
    sits in the left column beside both; the second row takes any extra height of a long card. */
 .article-layout .resource-kind{margin:0 0 12px;max-width:60ch;font-size:16px;font-weight:600;color:var(--soft)}

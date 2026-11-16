@@ -49,8 +49,16 @@
         </div></div>
         {{ end }}
       </header>
+      {{/* Beside the button, the resource's language when it is not English alone, so a visitor knows before opening it. */}}
+      {{ $langs := $clean.language }}
+      {{ $inLang := "" }}
+      {{ if and $langs (not (and (eq (len $langs) 1) (eq (index $langs 0) "English"))) }}
+        {{ if le (len $langs) 3 }}{{ $inLang = printf "In %s" (delimit $langs ", " " and ") }}
+        {{ else }}{{ $inLang = printf "In %s and %d more languages" (delimit (first 3 $langs) ", ") (sub (len $langs) 3) }}{{ end }}
+      {{ end }}
+      {{ $described := slice }}{{ if $host }}{{ $described = $described | append "resource-host" }}{{ end }}{{ if $inLang }}{{ $described = $described | append "resource-lang" }}{{ end }}
       {{ with $url }}
-      <p class="resource-open"><a class="btn btn-primary" href="{{ . }}"{{ with $host }} aria-describedby="resource-host"{{ end }}>Open this resource{{ if and $host (ne $host "forrt.org") }} <i class="fas fa-external-link-alt" aria-hidden="true"></i>{{ end }}</a>{{ with $host }} <span class="resource-host" id="resource-host">{{ . }}</span>{{ end }}</p>
+      <p class="resource-open"><a class="btn btn-primary" href="{{ . }}"{{ with $described }} aria-describedby="{{ delimit . " " }}"{{ end }}>Open this resource{{ if and $host (ne $host "forrt.org") }} <i class="fas fa-external-link-alt" aria-hidden="true"></i>{{ end }}</a>{{ with $host }} <span class="resource-host" id="resource-host">{{ . }}</span>{{ end }}{{ with $inLang }} <span class="resource-host resource-lang" id="resource-lang">{{ . }}</span>{{ end }}</p>
       {{ end }}
       <div class="article-style">
         {{ with .Params.abstract }}<h2>{{ i18n "abstract" }}</h2>{{ $.RenderString (dict "display" "block") . }}{{ end }}
