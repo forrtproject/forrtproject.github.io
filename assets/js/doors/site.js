@@ -293,7 +293,8 @@ if (summaryEntries.length) {
     copy.querySelector('ul:last-of-type')?.remove();
     return [entry, copy.textContent.toLowerCase()];
   }));
-  let limit = 30;
+  // Pages of 30, unless that would hide only a few: then every entry shows.
+  let limit = summaryEntries.length > 40 ? 30 : summaryEntries.length;
   const show = () => {
     const query = input.value.trim().toLowerCase();
     const matches = summaryEntries.filter((entry) => !query || words.get(entry).includes(query));

@@ -1,6 +1,7 @@
 ---
 title: Diversity, Equity, & Inclusion
 linktitle: Diversity, Equity, & Inclusion
+description: "Community-written summaries of papers on diversity, equity and inclusion in academia, each with its main takeaways, abstract and reference."
 toc: true
 type: docs
 date: "2019-05-05T00:00:00+01:00"
@@ -13,8 +14,6 @@ menu:
 weight: 3
 ---
 
-_The symbol_ ◈ _stands for non-peer-reviewed work._
-
-_The symbol_ ⌺ _stands for summaries on the topic of Diversity, Equity, and Inclusion._
+◈ marks work that was not peer reviewed.
 
 {{< summaries_dei >}}
