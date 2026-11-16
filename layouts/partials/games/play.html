@@ -8,7 +8,7 @@
 {{ range . }}
   {{ $time := index (.playtime | default (slice "")) 0 }}
   {{ $minutes := findRE `\d+` $time }}
-  {{ if and .url (not (strings.HasSuffix .url ".mp4")) (in .delivery_format "Online") (in .gameplay_style "Solo") (in (lower $time) "minute") (not (in (lower $time) "hour")) $minutes }}
+  {{ if and .url (not (findRE `(?i)\.(mp4|webm|mov|m4v)([?#]|$)` .url)) (in .delivery_format "Online") (in .gameplay_style "Solo") (in (lower $time) "minute") (not (in (lower $time) "hour")) $minutes }}
     {{ $most := 0 }}{{ range $minutes }}{{ $most = math.Max $most (int .) }}{{ end }}
     {{ if and (le $most 15) (not (index $seen .url)) }}{{ $seen = merge $seen (dict .url true) }}{{ $pool = $pool | append (dict "title" .title "url" .url "time" $time "most" $most) }}{{ end }}
   {{ end }}
@@ -20,13 +20,14 @@
   <ul class="games-play-list">
     {{ range $i, $g := sort $pool "most" }}<li{{ if ge $i 3 }} hidden{{ end }}><a href="{{ $g.url }}" rel="noopener">{{ $g.title }}</a> <span class="games-play-time">{{ $g.time }}</span></li>{{ end }}
   </ul>
+  <p class="visually-hidden games-play-status" aria-live="polite"></p>
   {{/* Both need JavaScript, so they start hidden. Surprise me jumps to a random game among those the filters show. */}}
   <p class="games-play-actions">
     {{ if gt (len $pool) 3 }}<button class="text-button games-play-deal" type="button" hidden>Deal me three more</button>{{ end }}
     <a class="games-play-surprise" href="#games-list" hidden>Surprise me</a>
   </p>
   <script>(()=>{const box=document.currentScript.parentElement,items=[...box.querySelectorAll('.games-play-list li')],deal=box.querySelector('.games-play-deal'),surprise=box.querySelector('.games-play-surprise');let shown=items.slice(0,3);
-if(deal){deal.hidden=false;deal.addEventListener('click',()=>{const rest=items.filter(i=>!shown.includes(i)),next=[];while(next.length<3&&rest.length)next.push(rest.splice(Math.floor(Math.random()*rest.length),1)[0]);for(const keep of shown)if(next.length<3&&!next.includes(keep))next.push(keep);items.forEach(i=>{i.hidden=!next.includes(i)});shown=next})}
+if(deal){deal.hidden=false;deal.addEventListener('click',()=>{const rest=items.filter(i=>!shown.includes(i)),next=[];while(next.length<3&&rest.length)next.push(rest.splice(Math.floor(Math.random()*rest.length),1)[0]);for(const keep of shown)if(next.length<3&&!next.includes(keep))next.push(keep);items.forEach(i=>{i.hidden=!next.includes(i)});shown=next;box.querySelector('.games-play-status').textContent='Now showing '+next.map(i=>i.querySelector('a').textContent).join(', ')})}
 surprise.hidden=false;surprise.addEventListener('click',(e)=>{e.preventDefault();const shown=[...document.querySelectorAll('.games>.game')].filter(r=>!r.hidden&&r.id),others=shown.filter(r=>r.id!==location.hash.slice(1)),pool=others.length?others:shown;if(!pool.length)return;const row=pool[Math.floor(Math.random()*pool.length)];location.hash=row.id;const link=row.querySelector('.game-title a');if(link)link.focus({preventScroll:true})})})()</script>
 </aside>
 {{ end }}

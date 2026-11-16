@@ -46,11 +46,16 @@
             (slice "Preparation" .preparation) (slice "Context-specific elements" .context_specific_elements)
             (slice "Formal evaluation" .formal_evaluation) (slice "Testimonials" .testimonials))) }}
         {{ range $sections }}
+        {{/* A section shows only with something in it. */}}
+        {{ $filled := and (eq .heading "About the game") $game.clusters }}
+        {{ range .fields }}{{ with index . 1 }}{{ $filled = true }}{{ end }}{{ end }}
+        {{ if $filled }}
         <p class="game-section">{{ .heading }}</p>
         <dl>
           {{ range .fields }}{{ $label := index . 0 }}{{ with index . 1 }}<div><dt>{{ $label }}</dt> <dd>{{ partial "games/text" . }}</dd></div> {{ end }}{{ end }}
           {{ if eq .heading "About the game" }}{{ with $game.clusters }}<div><dt>FORRT clusters</dt> <dd><ul>{{ range . }} <li><a href="{{ printf "/clusters/cluster-%d/" (int .number) | relURL }}">Cluster {{ int .number }}: {{ .name }}</a></li>{{ end }}</ul></dd></div>{{ end }}{{ end }}
         </dl>
+        {{ end }}
         {{ end }}
       </div>
     </details>
