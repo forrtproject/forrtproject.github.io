@@ -139,3 +139,10 @@ main:lang(ar) .crumbs a,main:lang(ar) .crumbs [aria-current]{unicode-bidi:isolat
 main:lang(ar) .glossary-layout .article-style a{unicode-bidi:plaintext}
 /* A contributor's name is never split across lines. */
 .glossary-layout .term-credit bdi.term-name{white-space:nowrap}
+/* Arabic text is set at 21 px rather than 18 (article.css); its term lines and credits keep the same steps below it,
+   instead of taking the body size and outgrowing the definition's label. */
+main:lang(ar) .glossary-layout .article-style .term-line{font-size:20px}
+main:lang(ar) .glossary-layout .article-style .term-credit{font-size:18px}
+/* Chinese titles break at punctuation such as 、 rather than inside a word (工业 / 化); a title with no break
+   opportunity still wraps, through the page's overflow-wrap. */
+main:lang(zh) .glossary-layout :is(.reading h1,.term-list a){word-break:keep-all}
