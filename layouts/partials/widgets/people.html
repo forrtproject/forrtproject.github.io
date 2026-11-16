@@ -1,9 +1,9 @@
 {{/* The community wall on /about/community/: everyone with a profile, or the listed groups.
      Sorted by family name, with titles ("Dr", "Prof.") and anything after a comma ("PhD") set aside, so
      a visitor can find someone by surname; FORRT's own account is not a person and is left out.
-     A search over the names comes first (doors/list_filter). */}}
+     The search and the list come first, so they are in the first screen (DESIGN.md §2); the section's own text
+     (values and numbers) follows them. */}}
 {{ $page := .page }}
-{{ with $page.Content }}{{ . }}{{ end }}
 {{ $authors := where (where site.Pages "Section" "authors") "Params.name" "!=" nil }}
 {{ if not ($page.Params.content.show_all | default false) }}
   {{ $authors = where $authors ".Params.user_groups" "intersect" $page.Params.content.user_groups }}
@@ -21,3 +21,4 @@
 <ul class="people-wall">
   {{ range sort $people "key" }}{{ partial "widgets/people-card.html" (dict "person" .page) }}{{ end }}
 </ul>
+{{ with $page.Content }}<div class="people-about">{{ . }}</div>{{ end }}

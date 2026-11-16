@@ -4,13 +4,15 @@
      which half the teams use. */}}
 {{ $page := .page }}
 {{ $page.Content }}
+{{/* A–Z by name, so a visitor can find a team; a heading separates the list from the introduction. */}}
+<h2 class="team-rows-heading">All {{ len $page.Params.featurealt }} teams</h2>
 <ul class="feature-rows team-rows">
-  {{ range $page.Params.featurealt }}
+  {{ range sort $page.Params.featurealt "name" }}
   {{ $team := .name | plainify }}
   <li>
     <div>
       <h3>{{ .name | markdownify | emojify }}</h3>
-      {{ with .description }}<p>{{ . | markdownify | emojify }}</p>{{ end }}
+      {{ with .description }}<p class="clamp-desc" data-clamp-name="{{ $team }}">{{ . | markdownify | emojify }}</p>{{ end }}
       {{ with .buttonurl }}
         {{/* Each label names its team, so a list of the page's links still says which team each joins. */}}
         {{ $label := printf "Join %s" $team }}

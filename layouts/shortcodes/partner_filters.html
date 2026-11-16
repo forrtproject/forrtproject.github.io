@@ -1,16 +1,17 @@
-<div class="filter-container">
+{{/* Hidden until the script below runs: without it the buttons would do nothing. */}}
+<div class="filter-container partner-filters" hidden>
 
     {{/* Cluster Filter */}}
     <div class="filter-section-title">Filter by partner category</div>
     <div id="pill-bar-cluster" class="pill-bar">
         <button type="button" class="filter-pill active" aria-pressed="true" data-group="cluster" data-value="all">All partners</button>
-        <button type="button" class="filter-pill" aria-pressed="false" data-group="cluster" data-value="Global Intergovernmental Organizations">Global Intergovernmental Organizations</button>
-        <button type="button" class="filter-pill" aria-pressed="false" data-group="cluster" data-value="Reproducibility Networks">Reproducibility Networks</button>
-        <button type="button" class="filter-pill" aria-pressed="false" data-group="cluster" data-value="Open Science Infrastructure">Open Science Infrastructure</button>
-        <button type="button" class="filter-pill" aria-pressed="false" data-group="cluster" data-value="Open Research Communities">Open Research Communities</button>
-        <button type="button" class="filter-pill" aria-pressed="false" data-group="cluster" data-value="Education & Training">Education & Training</button>
-        <button type="button" class="filter-pill" aria-pressed="false" data-group="cluster" data-value="Open Research & Equity">Open Research & Equity</button>
-        <button type="button" class="filter-pill" aria-pressed="false" data-group="cluster" data-value="Higher Education Partners">Higher Education Partners</button>
+        <button type="button" class="filter-pill" aria-pressed="false" data-group="cluster" data-value="Global Intergovernmental Organizations">Global intergovernmental organizations</button>
+        <button type="button" class="filter-pill" aria-pressed="false" data-group="cluster" data-value="Open Science Infrastructure">Open science infrastructure</button>
+        <button type="button" class="filter-pill" aria-pressed="false" data-group="cluster" data-value="Reproducibility Networks">Reproducibility networks</button>
+        <button type="button" class="filter-pill" aria-pressed="false" data-group="cluster" data-value="Open Research Communities">Open research communities</button>
+        <button type="button" class="filter-pill" aria-pressed="false" data-group="cluster" data-value="Education & Training">Education and training</button>
+        <button type="button" class="filter-pill" aria-pressed="false" data-group="cluster" data-value="Open Research & Equity">Open research and equity</button>
+        <button type="button" class="filter-pill" aria-pressed="false" data-group="cluster" data-value="Higher Education Partners">Higher education partners</button>
     </div>
 
     {{/* Empty State Warning */}}
@@ -23,6 +24,7 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
+        document.querySelector('.partner-filters').hidden = false;
         const clusterPills = document.querySelectorAll('#pill-bar-cluster .filter-pill');
         const partnerCards = document.querySelectorAll('.partner-card');
         const sections = document.querySelectorAll('.partner-section-group');
