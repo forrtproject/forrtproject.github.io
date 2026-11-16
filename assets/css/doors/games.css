@@ -23,9 +23,9 @@
 
 /* The list: rows as wide as a paragraph can comfortably be. */
 .games-list{min-width:0}
-.article-layout .article-style .games-list .list-filter-section{max-width:31em}
-.article-layout .article-style .games-list .list-filter{max-width:31em}
-.article-layout .article-style .games-list ul.games{max-width:31em;margin:0;padding:0;list-style:none}
+.article-layout .article-style .games-list .list-filter-section{max-width:29em}
+.article-layout .article-style .games-list .list-filter{max-width:29em}
+.article-layout .article-style .games-list ul.games{max-width:29em;margin:0;padding:0;list-style:none}
 .article-layout .article-style ul.games>li{max-width:none;margin:0;padding:14px 0 10px;border-bottom:1px solid var(--line)}
 .article-layout .article-style ul.games .games-text{margin:0 0 6px}
 .article-layout .article-style ul.games .games-text>strong a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
@@ -43,7 +43,7 @@
 .article-layout .article-style ul.games dd p{margin:0 0 6px}
 .article-layout .article-style ul.games dd ul{margin:0 0 6px;padding-inline-start:1.2em;list-style:disc}
 .article-layout .article-style ul.games dd li{margin:0 0 4px;padding:0;border:0}
-.article-layout .article-style .games-empty{max-width:31em;margin-top:16px;padding:18px 20px;background:var(--surface);border-radius:var(--r-large)}
+.article-layout .article-style .games-empty{max-width:29em;margin-top:16px;padding:18px 20px;background:var(--surface);border-radius:var(--r-large)}
 .article-layout .article-style .games-empty[hidden]{display:none}
 .article-layout .article-style .games-empty p{margin:0}
 
