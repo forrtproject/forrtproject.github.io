@@ -557,8 +557,12 @@ if (termFilter && termGrid) {
     const query = termFilter.value.toLowerCase();
     terms.forEach((term) => { term.hidden = !term.textContent.toLowerCase().includes(query); });
     const shown = terms.filter((term) => !term.hidden).length;
+    // The page language's plural category picks the wording: Arabic has forms for 1, 2, 3–10, 11–99 and 100 and more.
     const words = termFilter.dataset;
-    status.textContent = !query ? '' : shown ? (shown === 1 ? words.single || '%d term' : words.many || '%d terms').replace('%d', shown) : words.none || 'No matching terms.';
+    const category = new Intl.PluralRules(termFilter.closest('[lang]')?.lang || 'en').select(shown);
+    const wording = {one: words.single, two: words.two, few: words.few, many: words.many, other: words.other}[category]
+      || (shown === 1 ? words.single : words.many) || '%d terms';
+    status.textContent = !query ? '' : shown ? wording.replace('%d', shown) : words.none || 'No matching terms.';
     clearTerms.hidden = !query;
   });
   // On a phone the list moves up, into a "Find another term" disclosure right after the definition.
