@@ -8,7 +8,8 @@
   <h2>{{ .labels.list_of_terms }}</h2>
   {{ $label := strings.TrimRight ".…" .labels.filter_terms }}
   <label class="term-filter-label" for="glossary-search">{{ $label }}</label>
-  <input type="search" id="glossary-search" class="form-control" autocomplete="off">
+  {{/* The filter's count, no-match line and clear button in the page's language (site.js). */}}
+  <input type="search" id="glossary-search" class="form-control" autocomplete="off" data-single="{{ .labels.filter_one | default "%d term" }}" data-many="{{ .labels.filter_many | default "%d terms" }}" data-none="{{ .labels.filter_none | default "No matching terms." }}" data-clear="{{ .labels.clear | default "Clear" }}">
   <nav class="term-list" aria-label="{{ .labels.list_of_terms }}">
     <ul>
       {{ range sort $pages "Params.sort_key" }}<li><a href="{{ .RelPermalink }}"{{ if eq .RelPermalink $page.RelPermalink }} aria-current="page"{{ end }}>{{ partial "doors/term_title" .Title }}</a></li>{{ end }}

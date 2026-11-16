@@ -549,7 +549,7 @@ if (termFilter && termGrid) {
   const clearTerms = document.createElement('button');
   clearTerms.type = 'button';
   clearTerms.className = 'term-filter-clear';
-  clearTerms.textContent = 'Clear';
+  clearTerms.textContent = termFilter.dataset.clear || 'Clear';
   clearTerms.hidden = true;
   termFilter.after(status, clearTerms);
   clearTerms.addEventListener('click', () => { termFilter.value = ''; termFilter.dispatchEvent(new Event('input')); termFilter.focus(); });
@@ -557,7 +557,8 @@ if (termFilter && termGrid) {
     const query = termFilter.value.toLowerCase();
     terms.forEach((term) => { term.hidden = !term.textContent.toLowerCase().includes(query); });
     const shown = terms.filter((term) => !term.hidden).length;
-    status.textContent = !query ? '' : shown ? `${shown} ${shown === 1 ? 'term' : 'terms'}` : 'No matching terms.';
+    const words = termFilter.dataset;
+    status.textContent = !query ? '' : shown ? (shown === 1 ? words.single || '%d term' : words.many || '%d terms').replace('%d', shown) : words.none || 'No matching terms.';
     clearTerms.hidden = !query;
   });
   // On a phone the list moves up, into a "Find another term" disclosure right after the definition.
