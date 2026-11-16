@@ -34,7 +34,7 @@ Every repeated device has to earn its place. In practice:
 - Search and filters belong on long lists (the glossary, the resources directory, Reversals). A list of fewer than about twenty items needs neither, and a longer one may do without when another clear route through it exists, such as a contents list.
 - Tags: a tag links to the tags page only when at least five pages and at most a quarter of all pages share it (`layouts/partials/functions/tag_counts.html`). Rarer tags are plain keywords; tags on more pages are not shown, because they no longer tell pages apart.
 - In long lists of long entries, show the first two lines of each description (three on a phone) with a "more" button. Without JavaScript the full text shows.
-- Cards for actions are the brick cards of `action_cards`. A set of bricks uses several area colours, never three near-identical ones. Lists of tools are rows: a linked title and a sentence, not boxes.
+- Cards for actions are the brick cards of `action_cards`. Lists of tools are rows: a linked title and a sentence, not boxes.
 - Framed boxes (cards, panels, toolbars) keep space inside them and between them; text never runs up against a box's edge.
 
 ## 5. Links look like links
@@ -45,8 +45,9 @@ Every repeated device has to earn its place. In practice:
 
 ## 6. Colour carries meaning
 
-- FORRT works in four areas of equal standing: Education & Pedagogy, Meta-Science & Research, Social Justice & DEIA, and Community & Sustainability. Each has its colour: education `--edu` (green), research `--res` (dark blue), social justice `--jus` (purple), community `--com` (brown). Pages and cards that belong to an area use its colour and its pale background (`--edu-bg` and so on), and area colours are kept for their areas. One exception: the bricks in a row of action cards run through the four area colours for variety, so a brick's colour does not say which area its action belongs to. The `area` argument of `action_cards` starts the row with that area's colour.
+- FORRT works in four areas of equal standing: Education & Pedagogy, Meta-Science & Research, Social Justice & DEIA, and Community & Sustainability. Each has its colour: education `--edu` (green), research `--res` (dark blue), social justice `--jus` (purple), community `--com` (brown). Pages and cards that belong to an area use its colour and its pale background (`--edu-bg` and so on). Area colours appear only for their areas.
 - The 11 FORRT clusters are not areas. Each keeps a colour of its own, and together they span the spectrum (`layouts/partials/clusters/colors.html`), so the clusters can be told apart. Strong cluster colours are for small marks; their backgrounds stay pale.
+- Rows of action bricks run through four brick colours of their own (`--brick1` to `--brick4`: wine, olive, slate and ochre), chosen to stay clear of the area colours. They add variety and carry no meaning. Where each brick stands for something that has a colour of its own, such as the Replication Hub's stages, it takes that colour instead. Do not use shades of one colour for variety: they read as more and less important.
 - `--hot` (orange) is for highlights, `--urgent` (red) only for urgency. White is a clean ground.
 - Colour is fresh but not loud: no large areas of saturated colour, no intense full-bleed colour, no dark band across the page, no grey-and-beige, and no beige highlights.
 
@@ -65,7 +66,7 @@ Before writing a new component, check these:
 | Need | Use |
 |---|---|
 | A page with a lead image beside its title | `doors/page_hero.html`, through `hero_image` in front matter (AWoP, Citational Justice, AI in Metascience) |
-| A set of actions as cards | `{{< action_cards area="edu|res|jus|com" >}}` |
+| A set of actions as cards | `{{< action_cards >}}` |
 | Search and a count over a long list | `{{< list_filter >}}`, with `noun` for the count ("Showing 12 of 436 effects") |
 | Contents on a phone | `doors/toc_phone.html`: an open, labelled list that collapses after six sections |
 | Names with links | `doors/name_list.html` |
