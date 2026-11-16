@@ -59,3 +59,6 @@ awop/index.html                # #1118: its description is now a written summary
 reversals/index.html           # #1118: its description now opens with the concluded-project note at the top of the page
 tags/index.html                # #1118: its description says in one sentence what tags are for
 submit/index.html               # #1133: a new page listing the ways to submit work to FORRT
+educators-corner/page/1/index.html  # Educators' Corner lists all its posts on one page; the 404 page sends old page links to it
+educators-corner/page/2/index.html  # The same
+educators-corner/page/3/index.html  # The same

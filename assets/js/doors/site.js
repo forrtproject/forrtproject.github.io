@@ -642,7 +642,11 @@ if (listFilter) {
   let section = null;
   for (let node = listFilter.nextElementSibling; node; node = node.nextElementSibling) {
     if (/^H[1-3]$/.test(node.tagName)) { section = {heading: node, items: []}; sections.push(section); }
-    else if (section && /^(UL|OL)$/.test(node.tagName)) section.items.push(...node.children);
+    else if (/^(UL|OL)$/.test(node.tagName)) {
+      // A list straight after the search, with no heading of its own, is a section too (Educators' Corner).
+      if (!section) { section = {heading: null, items: []}; sections.push(section); }
+      section.items.push(...node.children);
+    }
   }
   // Where the entries carry details (the reversals' statistics), other lists after them, such as further
   // literature or contributors, are not entries: they stay out of the menu, the count and the filter.
@@ -650,7 +654,7 @@ if (listFilter) {
     sections.forEach((s) => { s.items = s.items.filter((item) => item.querySelector('.spoiler')); });
   }
   // A menu of the sections that hold entries, with their counts, to jump straight to one.
-  const withItems = sections.filter(({items}) => items.length && items.length < 400);
+  const withItems = sections.filter(({heading, items}) => heading && items.length && items.length < 400);
   if (withItems.length > 3) {
     const jump = document.createElement('label');
     jump.className = 'list-filter-jump';
@@ -703,7 +707,7 @@ if (listFilter) {
         item.hidden = !match;
         if (match) { any = true; shown += 1; }
       });
-      heading.hidden = Boolean(query || status) && !any;
+      if (heading) heading.hidden = Boolean(query || status) && !any;
     });
     count.textContent = `Showing ${shown} of ${total} ${noun}`;
   });
