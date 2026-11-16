@@ -73,7 +73,7 @@
     </section>
     <div class="article-foot">
       {{/* Previous and Next stay within the resource's first cluster, A to Z as in the directory. */}}
-      {{ with index (partialCached "doors/resource_neighbours" (site.GetPage "/resources") "resources") .RelPermalink }}{{ if or .prev .next }}
+      {{ if site.Params.section_pager }}{{ with index (partialCached "doors/resource_neighbours" (site.GetPage "/resources") "resources") .RelPermalink }}{{ if or .prev .next }}
       {{ $cluster := .cluster }}
       <nav class="article-widget" aria-labelledby="resource-pager-label">
         <p class="post-nav-scope" id="resource-pager-label">{{ with $cluster }}More from the cluster {{ with index $clusterPages (lower $cluster) }}<a href="{{ . }}">{{ $cluster }}</a>{{ else }}{{ $cluster }}{{ end }}{{ else }}More resources{{ end }}, A to Z</p>
@@ -92,7 +92,7 @@
           {{ end }}
         </div>
       </nav>
-      {{ end }}{{ end }}
+      {{ end }}{{ end }}{{ end }}
       {{ partial "page_related" . }}
     </div>
   </div>
