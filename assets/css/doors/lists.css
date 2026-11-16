@@ -19,6 +19,9 @@ ul.list-items>li[hidden]{display:none}
 @media(min-width:1001px){.article-layout-wide .plain-list{columns:2;column-gap:48px}.article-layout-wide .plain-list li{max-width:none;break-inside:avoid}}
 @media(min-width:1280px){.article-layout-wide .plain-list{columns:3;column-gap:40px}}
 .list-item-image{display:grid;grid-template-columns:minmax(0,1fr) 140px;gap:18px;align-items:start}
+/* The text column may shrink below a long address in a summary, which then wraps (200% text on a phone). */
+.list-item-image>div{min-width:0}
+.list-summary{overflow-wrap:anywhere}
 .list-item img{border-radius:var(--r-small);width:140px;height:105px;object-fit:cover}
 .article-layout .list-item h2{margin:0 0 4px;font-size:24px;line-height:1.2}
 .list-item h2 a{color:var(--link);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1.5px}
