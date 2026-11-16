@@ -146,3 +146,17 @@
 .tag-group li a{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:5px 2px}
 .tag-group li .tag-count{flex:none}
 .tag-top .tag-cloud a{display:inline-flex;align-items:center}
+/* Tag names read as links at rest (DESIGN.md §5), and their count badges stay plain.
+   Letter headings stay neutral, as the tags span all four areas. */
+.tag-group .tag-name{min-width:0;overflow-wrap:anywhere;text-decoration:underline;text-underline-offset:3px}
+.tag-group h3{color:var(--ink)}
+/* Phones: 44 px targets, and the letters scroll away with the page instead of taking three rows of the screen. */
+@media(max-width:760px){
+  .tag-letters{position:static}
+  .tag-group{scroll-margin-top:16px}
+  .tag-letters a{min-width:44px;height:44px}
+  .tag-group li a{min-height:44px;align-items:center;box-sizing:border-box}
+  .tag-top .tag-cloud a{min-height:44px;box-sizing:border-box}
+}
+/* One column on narrow phones, so long tag names and enlarged text keep to the screen. In em, so a larger default text size also gets it. */
+@media(max-width:30em){.tag-group ul{columns:1}}
