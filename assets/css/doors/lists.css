@@ -182,3 +182,5 @@ ul.list-items>li[hidden]{display:none}
   .tag-show-more,.tag-group-more{min-height:44px}
 }
 .tag-results-all{margin-top:14px}
+/* A list page's "About …" disclosure (content/educators-corner/_index.md): a 44 px target (DESIGN.md §9). */
+.list-about>summary{min-height:44px;padding:10px 0;box-sizing:border-box;cursor:pointer}
