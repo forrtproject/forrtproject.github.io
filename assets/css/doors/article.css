@@ -20,7 +20,9 @@
 .article-layout .byline a{color:var(--link);text-underline-offset:3px;text-decoration:underline}
 .article-layout .byline-authors>*{display:inline}
 .article-layout .article-image{margin:0 0 28px}
-.article-layout .article-image img{display:block;width:100%;height:auto;border-radius:var(--r-small)}
+/* At its own size or the column's width, whichever is smaller, and at most 480 px tall: square logos and portrait
+   covers no longer push the text below the first screen, and small images are not blown up. Phones cap it lower (below). */
+.article-layout .article-image img{display:block;width:auto;max-width:100%;height:auto;max-height:480px;border-radius:var(--r-small)}
 .article-layout figcaption{margin-top:10px;font-size:15px;text-align:center}
 .article-layout .article-style{font-size:18px;line-height:1.6;color:var(--ink);text-align:start;overflow-wrap:break-word}
 .article-layout .article-style p,.article-layout .article-style li{font-size:inherit;line-height:inherit}
