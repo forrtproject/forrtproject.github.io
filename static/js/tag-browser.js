@@ -222,10 +222,13 @@
             return hit;
           });
         });
-        if (matched) label = spelling(matched) || (matched === needle ? tag : matched);
-        else label = tag.replace(/-/g, " ");
-        // A tag not listed on the page (too common or too rare to show) keeps the index's lower case: start it with a capital.
-        label = label.charAt(0).toUpperCase() + label.slice(1);
+        var listed = matched && spelling(matched);
+        if (listed) label = listed;
+        else {
+          label = matched ? (matched === needle ? tag : matched) : tag.replace(/-/g, " ");
+          // A tag not listed on the page (too common or too rare to show) keeps the index's lower case: start it with a capital.
+          label = label.charAt(0).toUpperCase() + label.slice(1);
+        }
         render(pages);
       })
       .catch(function () {

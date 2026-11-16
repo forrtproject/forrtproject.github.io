@@ -167,6 +167,8 @@
 @media(max-width:30em){.tag-group ul{columns:1}}
 /* The letter bar's real height (tag-browser.js), as it wraps to two rows between 761 and about 1000 px. */
 @media(min-width:761px){.tag-group{scroll-margin-top:calc(var(--tag-letters,48px) + 8px)}}
+/* Without JavaScript the bar's two-row height up to 1000 px is the fallback. */
+@media(min-width:761px) and (max-width:1000px){.tag-group{scroll-margin-top:calc(var(--tag-letters,89px) + 8px)}}
 /* Phones: the tag view's links and buttons are 44 px targets too (DESIGN.md §9). */
 @media(max-width:760px){
   #tag-results p a,#tag-results li>a{display:inline-flex;align-items:center;min-height:44px}
