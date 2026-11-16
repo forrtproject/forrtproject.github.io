@@ -27,6 +27,6 @@
   </p>
   <script>(()=>{const box=document.currentScript.parentElement,items=[...box.querySelectorAll('.games-play-list li')],deal=box.querySelector('.games-play-deal'),surprise=box.querySelector('.games-play-surprise');let shown=items.slice(0,3);
 if(deal){deal.hidden=false;deal.addEventListener('click',()=>{const rest=items.filter(i=>!shown.includes(i)),next=[];while(next.length<3&&rest.length)next.push(rest.splice(Math.floor(Math.random()*rest.length),1)[0]);for(const keep of shown)if(next.length<3&&!next.includes(keep))next.push(keep);items.forEach(i=>{i.hidden=!next.includes(i)});shown=next})}
-surprise.hidden=false;surprise.addEventListener('click',(e)=>{const rows=[...document.querySelectorAll('.games>.game')],open=rows.filter(r=>!r.hidden&&r.id&&r.id!==location.hash.slice(1)),pool=open.length?open:rows.filter(r=>r.id);if(!pool.length)return;e.preventDefault();const row=pool[Math.floor(Math.random()*pool.length)];location.hash=row.id;const link=row.querySelector('.game-title a');if(link)link.focus({preventScroll:true})})})()</script>
+surprise.hidden=false;surprise.addEventListener('click',(e)=>{e.preventDefault();const shown=[...document.querySelectorAll('.games>.game')].filter(r=>!r.hidden&&r.id),others=shown.filter(r=>r.id!==location.hash.slice(1)),pool=others.length?others:shown;if(!pool.length)return;const row=pool[Math.floor(Math.random()*pool.length)];location.hash=row.id;const link=row.querySelector('.game-title a');if(link)link.focus({preventScroll:true})})})()</script>
 </aside>
 {{ end }}
