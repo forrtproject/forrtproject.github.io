@@ -45,7 +45,7 @@ cards:
     links:
       - url: "https://forrt.org/flora-replication-atlas/"
         format: "Web app"
-        note: "Look up a study and see the replication attempts recorded in FLoRA."
+        note: "Look up a study and see the reproduction and replication attempts recorded in FLoRA."
       - url: "https://forrt.org/flora-explorer/"
         format: "Web app"
         label: "FLoRA Explorer"
@@ -53,7 +53,7 @@ cards:
       - url: "annotator/"
         format: "Web app"
         label: "FLoRA Annotator"
-        note: "Check the references in a paper for replication attempts recorded in FLoRA."
+        note: "Check the references in a paper for reproduction and replication attempts recorded in FLoRA."
       - url: "explorer/"
         format: "Web app"
         note: "Find replication evidence in the FORRT Replication Database."

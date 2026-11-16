@@ -57,7 +57,7 @@ type: welcome
 
 {{< welcome 
     title="Pedagogies"
-    description="Worked examples of teaching and mentoring in open and reproducible research."
+    description="Worked examples of teaching and mentoring open and reproducible research."
     url="/pedagogies"
     icon="fas fa-lightbulb"
 >}}
