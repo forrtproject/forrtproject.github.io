@@ -1,6 +1,7 @@
 ---
 title: Open and Reproducible Science Summaries
 linktitle: Open and Reproducible Science
+description: "Community-written summaries of papers on open and reproducible research, each with its main takeaways, abstract and reference."
 toc: true
 type: docs
 date: "2019-05-05T00:00:00+01:00"
@@ -15,14 +16,7 @@ menu:
 weight: 2
 ---
 
-<!-- Copy and paste the converted output. -->
-
----
-
-
-_The symbol_ ◈ _stands for non-peer-reviewed work._
-
-_The symbol_ ⌺ _stands for summaries on the topic of Diversity, Equity, and Inclusion._
+◈ marks work that was not peer reviewed. ⌺ marks summaries on diversity, equity and inclusion.
 
 
 {{< summaries >}}

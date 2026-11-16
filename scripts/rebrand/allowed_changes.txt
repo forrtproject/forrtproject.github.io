@@ -70,3 +70,6 @@ replication-hub/flora/index.html  # The same title, in its breadcrumb data
 replication-hub/large-scale-replication-projects/index.html  # The same
 replication-hub/submit/index.html  # The same
 about/principles/index.html    # Its description opens with the first heading, now in sentence case ("Principled teaching")
+summaries/index.html           # Its breadcrumb name is now "Summaries", as its heading, instead of "Overview"
+summaries/open-reproducible/index.html     # A written description instead of the symbol legend, and the same breadcrumb name
+summaries/diversity-equity-inclusion/index.html  # A written meta description instead of the symbol legend, and "Summaries" as the breadcrumb name

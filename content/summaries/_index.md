@@ -1,6 +1,6 @@
 ---
 # Course title, summary, and position.
-linktitle: Overview
+linktitle: Summaries
 summary: The FORRT community has prepared 100+ summaries of Open and Reproducible Science literature. The purpose of these summaries is to reduce some of the burden on educators looking to incorporate open and reproducible research principles into their teaching as well as facilitate the edification of anyone wishing to learn or disseminate open and reproducible science tenets.
 weight: 1
 
@@ -10,6 +10,7 @@ date: "2018-09-09T00:00:00Z"
 lastmod: "2018-09-09T00:00:00Z"
 draft: false  # Is this a draft? true/false
 toc: false  # Show table of contents? true/false
+phone_toc: false  # The two collections come first; a contents list on phones would push them down
 type: docs  # Do not modify.
 
 # Add menu entry to sidebar.
@@ -21,13 +22,18 @@ menu:
     weight: 1
 ---
 
+{{< action_cards >}}
+Open and Reproducible Science | Summaries of papers on open and reproducible research | /summaries/open-reproducible/
+Diversity, Equity, & Inclusion | Summaries of papers on diversity, equity and inclusion in academia | /summaries/diversity-equity-inclusion/
+{{< /action_cards >}}
+
 ## Overview
 
 The FORRT community has prepared 100+ summaries of Open and Reproducible Science literature. The purpose of these summaries is to reduce some of the burden on educators looking to incorporate open and reproducible research principles into their teaching as well as facilitate the edification of anyone wishing to learn or disseminate open and reproducible science tenets.
 
 ***These summaries are very much a work in progress***. We would love to receive your [criticism, areas for improvement, ideas, and help](https://docs.google.com/spreadsheets/d/1W12WpzI70Ja1FiVeflXNW8VFPzqFFvu_mL2YkNQ_cHk/edit?usp=sharing). 
 
-We made a distinction between "[Open and Reproducible Science](/summaries/open-reproducible/)" summaries and "[Diversity, Equity, & Inclusion](/dei)" summaries to highlight that the topics of social injustices and DEI (diversity, equity and inclusion) are often neglected in academia, and in open and reproducible science literature. If you are an educator, you may also be interested in our [FORRT Syllabus on Open and Reproducible Science (.pdf & G-doc)](https://forrt.org/syllabus), which is based on [FORRT Clusters.](/clusters/)
+We made a distinction between "[Open and Reproducible Science](/summaries/open-reproducible/)" summaries and "[Diversity, Equity, & Inclusion](/summaries/diversity-equity-inclusion/)" summaries to highlight that the topics of social injustices and DEI (diversity, equity and inclusion) are often neglected in academia, and in open and reproducible science literature. If you are an educator, you may also be interested in our [FORRT Syllabus on Open and Reproducible Science (.pdf & G-doc)](https://forrt.org/syllabus), which is based on [FORRT Clusters.](/clusters/)
 
 ### Why make these summaries?
 

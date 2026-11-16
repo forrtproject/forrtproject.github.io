@@ -1,0 +1,46 @@
+{{/* The summaries from data/summaries.json, one disclosure each; site.js adds the filter and "Show more".
+     Input: dict "page" and "dei" (true for the DEI collection, which lists only the entries marked ⌺).
+     A related summary that this collection leaves out links to the full collection instead. */}}
+{{ $dei := .dei }}
+{{ partial "structured-data/summaries-jsonld.html" (dict "page" .page "deiOnly" $dei) }}
+{{ $summaries := hugo.Data.summaries }}
+{{ $shown := dict }}{{ $all := dict }}{{ $byTitle := dict }}
+{{ range $summaries }}{{ if .Title }}
+  {{ $all = merge $all (dict .Id true) }}
+  {{ $byTitle = merge $byTitle (dict (replaceRE `[^a-z0-9]` "" (lower .Title)) .Id) }}
+  {{ if or (not $dei) (in .Title "⌺") }}{{ $shown = merge $shown (dict .Id true) }}{{ end }}
+{{ end }}{{ end }}
+{{ if $dei }}<span class="summaries-dei" hidden></span>{{ end }}
+{{ range $summaries }}{{ if and .Title (or (not $dei) (in .Title "⌺")) }}
+<details class="summary-entry">
+<summary><h2 id="{{ .Id }}">{{ .Title | markdownify }}</h2></summary>
+<h3>Main takeaways</h3>
+<ul>
+  {{ range .Main_Takeaways }}<li>{{ . }}</li>{{ end }}
+</ul>
+{{ with .Quote }}
+<h3>Quote</h3>
+<blockquote class="blockquote font-italic" style="font-size:1rem">{{ . }}</blockquote>
+{{ end }}
+{{ with .Abstract }}<h3>Abstract</h3>
+<p>{{ . }}</p>{{ end }}
+{{ with .Reference }}<h3>Reference</h3>
+{{/* A DOI or other address in the reference becomes a link, without the full stop that may end it. */}}
+<p>{{ replaceRE `(https?://[^\s<]*[^\s<.,;)])` `<a href="$1">$1</a>` (. | htmlEscape) | safeHTML }}</p>{{ end }}
+{{ with .You_may_also_be_interested_in }}
+<h3>You may also be interested in</h3>
+<ul>
+  {{ range $rel := . }}
+  {{ $href := $rel.href }}
+  {{/* A related entry with no address, or an id the source no longer has: find the entry by its title,
+       or show the title unlinked. */}}
+  {{ if or (not $href) (and (hasPrefix $href "#") (not (index $all (strings.TrimPrefix "#" $href)))) }}
+    {{ $href = "" }}{{ with index $byTitle (replaceRE `[^a-z0-9]` "" (lower $rel.Relevant_ref)) }}{{ $href = printf "#%s" . }}{{ end }}
+  {{ end }}
+  {{ if and $dei $href (hasPrefix $href "#") (not (index $shown (strings.TrimPrefix "#" $href))) }}{{ $href = printf "%s%s" (relref $.page "/summaries/open-reproducible") $href }}{{ end }}
+  <li>{{ with $href }}<a href="{{ . }}">{{ $rel.Relevant_ref }}</a>{{ else }}{{ $rel.Relevant_ref }}{{ end }}</li>
+  {{ end }}
+</ul>
+{{ end }}
+</details>
+{{ end }}{{ end }}
