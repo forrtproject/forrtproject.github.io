@@ -493,7 +493,10 @@ if (termFilter && termGrid) {
     });
     document.querySelector('.glossary-clear').hidden = !query;
     const shown = terms.filter((term) => !term.hidden).length;
-    document.querySelector('.glossary-count').textContent = query && shown ? `${shown} of ${terms.length} terms` : '';
+    // "12 of 260 terms", in the glossary's language (data-format, from layouts/glossary/list.html).
+    const count = document.querySelector('.glossary-count');
+    const format = count.dataset.format || '%s of %s terms';
+    count.textContent = query && shown ? format.replace('%s', shown).replace('%s', terms.length) : '';
   });
   // Cards or a compact list; the choice is kept for the next visit.
   const view = document.querySelector('.glossary-view');

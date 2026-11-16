@@ -3,9 +3,10 @@
 {{ $prev := .PrevInSection }}
 {{ $next := .NextInSection }}
 {{ $glossary := eq .Type "glossary" }}
-{{/* Glossary pages carry their own language; the Arabic one labels its pager in Arabic. */}}
+{{/* Glossary pages carry their own language; the Arabic and Chinese ones label their pager in it. */}}
 {{ $prevLabel := i18n "previous" }}{{ $nextLabel := i18n "next" }}
 {{ if and $glossary (eq .Params.language "arabic") }}{{ $prevLabel = "السابق" }}{{ $nextLabel = "التالي" }}{{ end }}
+{{ if and $glossary (eq .Params.language "chinese") }}{{ $prevLabel = "上一条" }}{{ $nextLabel = "下一条" }}{{ end }}
 {{ if in (slice "docs" "book" "glossary" "educators-corner") .Type }}
   {{ $prev = .NextInSection }}
   {{ $next = .PrevInSection }}
