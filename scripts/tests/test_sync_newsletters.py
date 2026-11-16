@@ -66,6 +66,9 @@ class FinishPageTest(unittest.TestCase):
         page = s.finish_page(raw, 2024, 4, "", Path("."))
         self.assertEqual(page.count("<h1"), 1)
         self.assertIn("<h2 data-email-h1>Welcome</h2>", page)
+        self.assertEqual(page.count("<title>FORRT Newsletter, April 2024</title>"), 1)
+        self.assertEqual(page.count("<title"), 1)
+        self.assertIn("<h1>FORRT Newsletter, April 2024</h1>", page)
         self.assertIn('<main id="main" tabindex="-1">', page)
         self.assertEqual(s.archive_page(page), page)
 
