@@ -1,6 +1,6 @@
 ---
-title: Open and Reproducible Science Summaries
-linktitle: Open and Reproducible Science
+title: Open and reproducible science summaries
+linktitle: Open and reproducible science
 description: "Community-written summaries of papers on open and reproducible research, each with its main takeaways, abstract and reference."
 toc: true
 type: docs

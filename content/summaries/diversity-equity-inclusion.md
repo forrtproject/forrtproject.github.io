@@ -1,6 +1,6 @@
 ---
-title: Diversity, Equity, & Inclusion
-linktitle: Diversity, Equity, & Inclusion
+title: Diversity, equity and inclusion summaries
+linktitle: Diversity, equity and inclusion
 description: "Community-written summaries of papers on diversity, equity and inclusion in academia, each with its main takeaways, abstract and reference."
 toc: true
 type: docs
