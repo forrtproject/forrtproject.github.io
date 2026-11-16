@@ -306,11 +306,15 @@ ARCHIVE_STYLE = (
     # The social icons are 24 px pictures; padding makes each a 44 px target (DESIGN.md §9).
     '#main [class*="mcnFollow"] a{display:inline-block;padding:10px}'
     '#main td.mcnFollowIconContent{width:auto!important}#main [class*="mcnFollow"] img{max-width:none!important}'
-    ".forrt-pager{max-width:640px;margin:32px auto 0;padding:16px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;"
+    ".forrt-pager{max-width:640px;margin:32px auto 0;padding:16px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px 24px;"
     'font:17px/1.4 "Source Sans 3",system-ui,sans-serif}'
     ".forrt-pager a{display:inline-flex;align-items:center;min-height:44px;color:#0b5a87;text-decoration:underline;text-underline-offset:3px}"
-    # Previous on the left and next on the right, also when the pager wraps on a phone (DESIGN.md §8).
-    ".forrt-pager>:last-child{margin-left:auto}"
+    # Previous on the left, the archive in the middle, next on the right (DESIGN.md §8); on a phone previous and
+    # next share the first row and the archive link sits centred below them. Empty placeholders keep their cells.
+    ".forrt-pager>:nth-child(3){justify-self:end;text-align:right}"
+    "@media(max-width:560px){.forrt-pager{grid-template-columns:1fr 1fr}"
+    ".forrt-pager>:nth-child(2){grid-row:2;grid-column:1/-1;justify-self:center}"
+    ".forrt-pager>:nth-child(3){grid-row:1;grid-column:2}}"
     ".forrt-skip{position:absolute;left:-9999px}"
     ".forrt-skip:focus{left:16px;top:8px;z-index:9;padding:8px 14px;background:#fff;color:#1f2a37}"
     '.forrt-archive-bar{max-width:640px;margin:0 auto;padding:20px 16px 16px;font:17px/1.4 "Source Sans 3",system-ui,sans-serif;color:#1f2a37}'

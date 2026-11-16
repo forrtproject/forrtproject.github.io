@@ -16,7 +16,7 @@
 .feature-rows p{margin:0 0 8px}
 /* Team descriptions are list summaries: 17 px at every width (DESIGN.md §7); "more" follows the text directly. */
 .article-layout .article-style ul.team-rows>li{font-size:17px}
-.team-rows .clamp-desc{margin-bottom:0}
+.article-layout .article-style .team-rows p.clamp-desc{margin-bottom:0}
 .feature-rows-small .feature-icon{width:96px;font-size:40px;text-align:center;color:var(--link)}
 /* Teams are rows of text: name, sentence, one plain link (DESIGN.md §4, §5). */
 .article-layout .article-style ul.team-rows{padding:0}
