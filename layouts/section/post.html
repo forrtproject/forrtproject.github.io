@@ -1,5 +1,7 @@
 {{- define "main" -}}
-
+{{/* News and announcements: one row per post, newest first (DESIGN.md §4), with category buttons that
+     filter the rows. A post's own picture shows beside its row; a picture several posts share (the
+     newsletters' stock photo) tells them apart from nothing, so it is left out. */}}
 <div class="wrap news-page">
   <header class="article-head">
     {{ partial "doors/crumbs" (dict "page" .) }}
@@ -9,38 +11,57 @@
   {{ with .Content }}<div class="article-style">{{ partial "doors/content" . }}</div>{{ end }}
 
   {{ $posts := sort .Pages "Date" "desc" }}
-
-  {{/* Build the category list from the posts */}}
   {{ $cats := slice }}
   {{ range $posts }}{{ with .Params.categories }}{{ $cats = $cats | append (index . 0) }}{{ end }}{{ end }}
   {{ $cats = uniq $cats }}
+  {{/* How many posts use each picture, by its content. */}}
+  {{ $uses := dict }}
+  {{ range $posts }}{{ with (.Resources.ByType "image").GetMatch "*featured*" }}{{ $key := md5 .Content }}{{ $uses = merge $uses (dict $key (add 1 (index $uses $key | default 0))) }}{{ end }}{{ end }}
 
-  <div class="ac-filters">
+  {{/* Hidden until the script below runs: without it the buttons would do nothing. */}}
+  <div class="ac-filters" role="group" aria-label="Show posts by category" hidden>
     <button class="ac-chip active" type="button" aria-pressed="true" data-cat="all">All</button>
     {{ range $cats }}<button class="ac-chip" type="button" aria-pressed="false" data-cat="{{ lower . }}">{{ . }}</button>{{ end }}
   </div>
 
-  <div class="announcements-grid ac-grid-page">
+  <ul class="list-items news-items">
+    {{ $eager := true }}
     {{ range $posts }}
-      {{ $cat := "" }}{{ with .Params.categories }}{{ $cat = lower (index . 0) }}{{ end }}
-      <div class="ac-item" data-cat="{{ $cat }}">{{ partial "announcement_card.html" . }}</div>
+      {{ $cat := "" }}{{ with .Params.categories }}{{ $cat = index . 0 }}{{ end }}
+      {{ $img := (.Resources.ByType "image").GetMatch "*featured*" }}
+      {{ $alt := .Params.image.alt_text }}
+      {{ if and $img (gt (index $uses (md5 $img.Content)) 1) }}{{ $img = false }}{{ end }}
+      <li data-cat="{{ lower $cat }}">
+        <article class="list-item{{ if $img }} list-item-image{{ end }}">
+          <div>
+            <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+            <p class="list-meta">{{ with $cat }}{{ . }} · {{ end }}<time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time></p>
+            <p class="list-summary">{{ .Summary | plainify | emojify | truncate 220 }}</p>
+          </div>
+          {{ with $img }}{{ $thumb := .Fill "280x210 Center webp q75" }}<img src="{{ $thumb.RelPermalink }}" width="140" height="105" alt="{{ $alt }}"{{ if not $eager }} loading="lazy"{{ end }}>{{ $eager = false }}{{ end }}
+        </article>
+      </li>
     {{ end }}
-  </div>
-
+  </ul>
 </div>
 
 <script>
-document.querySelectorAll('.ac-chip').forEach(function (chip) {
-  chip.addEventListener('click', function () {
-    document.querySelectorAll('.ac-chip').forEach(function (c) { c.classList.remove('active'); c.setAttribute('aria-pressed', 'false'); });
-    chip.classList.add('active');
-    chip.setAttribute('aria-pressed', 'true');
-    var cat = chip.getAttribute('data-cat');
-    document.querySelectorAll('.ac-item').forEach(function (it) {
-      it.style.display = (cat === 'all' || it.getAttribute('data-cat') === cat) ? '' : 'none';
+(function () {
+  var group = document.querySelector('.ac-filters');
+  if (!group) return;
+  group.hidden = false;
+  var chips = group.querySelectorAll('.ac-chip');
+  chips.forEach(function (chip) {
+    chip.addEventListener('click', function () {
+      chips.forEach(function (c) { c.classList.remove('active'); c.setAttribute('aria-pressed', 'false'); });
+      chip.classList.add('active');
+      chip.setAttribute('aria-pressed', 'true');
+      var cat = chip.getAttribute('data-cat');
+      document.querySelectorAll('.news-items > li').forEach(function (item) {
+        item.hidden = !(cat === 'all' || item.getAttribute('data-cat') === cat);
+      });
     });
   });
-});
+}());
 </script>
-
 {{- end -}}

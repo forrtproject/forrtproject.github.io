@@ -2,7 +2,7 @@
 {{- /* Issues come from two sources: data/newsletters.json, generated from
        EmailOctopus by scripts/sync_newsletters.py and hosted on forrt.org,
        and the front matter, which holds earlier issues. Each year keeps the
-       palette colour at its index modulo 5.
+       palette colour at its index modulo 5 (no longer shown).
        The newest issue carries a "New" badge for two months after sending. */ -}}
 {{- $listed := .Params.newsletters | default slice -}}
 {{- $synced := index (hugo.Data.newsletters | default dict) "issues" | default slice -}}
@@ -55,64 +55,21 @@
       {{ partial "doors/newsletter" . }}
     </div>
 
-    <div class="nla-archive-header">
-      <h2 class="nla-archive-title">Archive</h2>
-      <div class="nla-year-tabs" role="tablist" aria-label="Filter by year">
-        <button class="nla-year-tab active" data-year="all" role="tab" aria-selected="true">All</button>
-        {{ range $newsletters }}
-        <button class="nla-year-tab" data-year="{{ .year }}" role="tab" aria-selected="false"
-                style="--nla-year-color: {{ .color }}">{{ .year }}</button>
+    <h2 class="nla-archive-title">Archive</h2>
+    {{/* One heading per year and its issues as a line of month links, newest first. */}}
+    {{ range $newsletters }}
+    {{ $y := . }}
+    <section class="nla-year" aria-labelledby="nla-{{ $y.year }}">
+      <h3 id="nla-{{ $y.year }}">{{ $y.year }}</h3>
+      <ul class="nla-months">
+        {{ range $y.issues }}
+        <li><a href="{{ .url }}"{{ if not .local }} target="_blank" rel="noopener"{{ end }}>{{ .month }}<span class="sr-only"> {{ $y.year }}{{ if not .local }} (opens in a new tab){{ end }}</span></a>{{ if .new }}<span class="nla-new">New</span>{{ end }}<span class="nla-sep" aria-hidden="true">·</span></li>
         {{ end }}
-      </div>
-    </div>
-
-    <div class="nla-archive">
-      {{ range $newsletters }}
-      {{ $y := . }}
-      <section class="nla-year-section" data-year="{{ $y.year }}" aria-label="{{ $y.year }} issues">
-
-        <div class="nla-year-band" style="--nla-year-color: {{ $y.color }}">
-          <span class="nla-year-band-line"></span>
-          <span class="nla-year-band-label">{{ $y.year }}</span>
-          <span class="nla-year-band-line"></span>
-        </div>
-
-        <div class="nla-grid">
-          {{ range $y.issues }}
-          <a href="{{ .url }}"{{ if not .local }} target="_blank" rel="noopener"{{ end }}
-             class="nla-card" style="--nla-year-color: {{ $y.color }}"
-             aria-label="Read {{ .month }} {{ $y.year }} newsletter">
-            <div class="nla-card-accent"></div>
-            <div class="nla-card-body">
-              {{ if .new }}<span class="nla-badge-new">New</span>{{ end }}
-              <div class="nla-card-month">{{ .month }}</div>
-              <div class="nla-card-year">{{ $y.year }}</div>
-            </div>
-            <div class="nla-card-footer">Read →</div>
-          </a>
-          {{ end }}
-        </div>
-
-      </section>
-      {{ end }}
-    </div>
+      </ul>
+    </section>
+    {{ end }}
 
   </div>
 </article>
 </div>
-
-<script>
-(function () {
-  var tabs = document.querySelectorAll('.nla-year-tab');
-  var sections = document.querySelectorAll('.nla-year-section');
-  tabs.forEach(function (tab) {
-    tab.addEventListener('click', function () {
-      var year = tab.dataset.year;
-      tabs.forEach(function (t) { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
-      tab.classList.add('active'); tab.setAttribute('aria-selected', 'true');
-      sections.forEach(function (s) { s.style.display = (year === 'all' || s.dataset.year === year) ? '' : 'none'; });
-    });
-  });
-}());
-</script>
 {{- end -}}
