@@ -206,7 +206,7 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 /* "Team" before every team's name says nothing the band doesn't, so only screen readers hear it; on a
    desktop each name has room for two lines, so the photos of neighbouring teams start level. */
 .sc-page .sc-title-card .sc-title-label{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
-@media(min-width:761px){.sc-page .sc-team>.sc-title-card{min-height:72px;align-items:center}}
+@media(min-width:761px){.sc-page :is(.sc-team,.sc-grid)>.sc-title-card{min-height:72px;align-items:center}}
 /* Team names on a pale band: an area's own pale colour for the four area teams, neutral for the rest
    (DESIGN.md §6: area colours only for areas, no dark bands). */
 .sc-page .sc-title-card{background:var(--surface);color:var(--ink);border-inline-start:6px solid var(--line)}
