@@ -37,7 +37,9 @@
       <fieldset data-facet="{{ .key }}">
         <legend>{{ .name }}</legend>
         <div class="games-chips">
-          {{ range .values }}<button type="button" aria-pressed="false" data-value="{{ .value }}">{{ with .color }}<span class="games-dot" style="background:{{ . | safeCSS }}"></span>{{ end }}{{ .label }} <span class="games-chip-count">{{ .count }}</span></button>{{ end }}
+          {{ $group := .name }}
+          {{/* The group's name leads each button's accessible name ("Format: Online"), heard without the legend too. */}}
+          {{ range .values }}<button type="button" aria-pressed="false" data-value="{{ .value }}"><span class="visually-hidden">{{ $group }}: </span>{{ with .color }}<span class="games-dot" style="background:{{ . | safeCSS }}"></span>{{ end }}{{ .label }} <span class="games-chip-count">{{ .count }}</span></button>{{ end }}
         </div>
       </fieldset>
       {{ end }}
@@ -93,8 +95,8 @@
             {{ range $sections }}
             <p class="games-detail-head">{{ .heading }}</p>
             <dl>
-              {{ range .fields }}{{ $label := index . 0 }}{{ with index . 1 }}<dt>{{ $label }}</dt><dd>{{ partial "doors/games_text" . }}</dd>{{ end }}{{ end }}
-              {{ if eq .heading "About the game" }}{{ with $game.clusters }}<dt>FORRT clusters</dt><dd><ul>{{ range . }}<li><a href="{{ printf "/clusters/cluster-%d/" (int .number) | relURL }}">Cluster {{ int .number }}: {{ .name }}</a></li>{{ end }}</ul></dd>{{ end }}{{ end }}
+              {{ range .fields }}{{ $label := index . 0 }}{{ with index . 1 }}<dt>{{ $label }}</dt> <dd>{{ partial "doors/games_text" . }}</dd> {{ end }}{{ end }}
+              {{ if eq .heading "About the game" }}{{ with $game.clusters }}<dt>FORRT clusters</dt> <dd><ul>{{ range . }} <li><a href="{{ printf "/clusters/cluster-%d/" (int .number) | relURL }}">Cluster {{ int .number }}: {{ .name }}</a></li>{{ end }}</ul></dd>{{ end }}{{ end }}
             </dl>
             {{ end }}
           </div>
