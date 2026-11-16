@@ -13,9 +13,10 @@
   "use strict";
   var box = document.querySelector(".tag-find");
   var input = document.getElementById("tag-filter");
-  // A selected tag replaces the list this searches, so the search stays hidden with it.
-  if (!box || !input || new URLSearchParams(window.location.search).get("tag")) return;
-  box.hidden = false;
+  if (!box || !input) return;
+  // A selected tag replaces the list this searches, so the search stays hidden with it, unless
+  // no page carries that tag: then the list and the search come back, filled with the term (below).
+  if (!new URLSearchParams(window.location.search).get("tag")) box.hidden = false;
   var top = document.querySelector(".tag-top");
   var letters = document.querySelector(".tag-letters");
   var groups = Array.prototype.slice.call(document.querySelectorAll(".tag-group"));
@@ -46,14 +47,16 @@
       group.appendChild(more);
     });
   }
+  /** Spaces and hyphens count as the same, so "p hacking" finds "P-Hacking". */
+  function norm(text) { return text.toLowerCase().replace(/[\s-]+/g, " ").trim(); }
   input.addEventListener("input", function () {
-    var query = input.value.trim().toLowerCase();
+    var query = norm(input.value);
     document.querySelector(".tag-all").classList.toggle("is-searching", Boolean(query));
     var shown = 0;
     groups.forEach(function (group) {
       var any = false;
       Array.prototype.forEach.call(group.querySelectorAll("li"), function (item) {
-        var match = !query || item.firstChild.firstChild.textContent.toLowerCase().indexOf(query) !== -1;
+        var match = !query || norm(item.firstChild.textContent).indexOf(query) !== -1;
         item.hidden = !match;
         if (match) { any = true; shown += 1; }
       });
@@ -62,6 +65,23 @@
     if (top) top.hidden = Boolean(query);
     if (letters) letters.hidden = Boolean(query);
     count.textContent = !query ? "" : shown ? shown + (shown === 1 ? " tag matches" : " tags match") : "No tag matches.";
+    return shown;
+  });
+  // Enter opens the first tag that matches.
+  input.addEventListener("keydown", function (event) {
+    if (event.key !== "Enter") return;
+    var first = document.querySelector(".tag-group li:not([hidden]) a");
+    if (input.value.trim() && first) { event.preventDefault(); first.click(); }
+  });
+  // No page carries the tag in the address: show the search, filled with the term when that finds tags.
+  document.addEventListener("tags:nomatch", function (event) {
+    box.hidden = false;
+    input.value = event.detail;
+    input.dispatchEvent(new Event("input"));
+    if (!document.querySelector(".tag-group li:not([hidden])")) {
+      input.value = "";
+      input.dispatchEvent(new Event("input"));
+    }
   });
 })();
 
@@ -86,6 +106,16 @@
     return words.charAt(0).toUpperCase() + words.slice(1);
   }
 
+  /** The tag's own spelling, from the list on this page, for a term the address gives in lower case or as a slug. */
+  function spelling(term) {
+    var links = document.querySelectorAll(".tag-group li a, .tag-top .tag-cloud a");
+    for (var i = 0; i < links.length; i += 1) {
+      var name = links[i].firstChild.textContent.trim();
+      if (name.toLowerCase() === term) return name;
+    }
+    return "";
+  }
+
   function render(pages) {
     var results = document.getElementById("tag-results");
     var heading = document.getElementById("tag-results-heading");
@@ -95,6 +125,9 @@
     heading.textContent = pages.length
       ? pages.length + (pages.length === 1 ? " page tagged " : " pages tagged ") + "“" + label + "”"
       : "No pages are tagged “" + label + "”";
+    document.title = (pages.length ? label + ": tagged pages" : "Tags") + " | FORRT";
+    // A section name on every row tells rows apart only when they come from more than one section.
+    var mixed = pages.some(function (page) { return page.s !== pages[0].s; });
 
     var STEP = 50;
     pages.forEach(function (page, index) {
@@ -106,7 +139,7 @@
       link.textContent = page.t;
       item.appendChild(link);
 
-      var label = sectionLabel(page.s);
+      var label = mixed && sectionLabel(page.s);
       if (label) {
         var badge = document.createElement("span");
         badge.className = "tag-section";
@@ -120,22 +153,33 @@
       var more = document.createElement("button");
       more.type = "button";
       more.className = "btn tag-show-more";
-      more.textContent = "Show more";
+      var showing = function () {
+        return "Show more (" + list.querySelectorAll("li:not([hidden])").length + " of " + pages.length + " shown)";
+      };
+      more.textContent = showing();
       list.after(more);
       more.addEventListener("click", function () {
         var waiting = list.querySelectorAll("li[hidden]");
         for (var i = 0; i < STEP && i < waiting.length; i += 1) waiting[i].hidden = false;
         var link = waiting[0].querySelector("a");
         if (link) link.focus();
-        if (waiting.length <= STEP) more.remove();
+        if (waiting.length <= STEP) more.remove(); else more.textContent = showing();
       });
     }
 
     results.hidden = false;
-    // The results have a link back to every tag, so the cloud would only push the footer away.
     var cloud = document.getElementById("tag-cloud");
+    if (!pages.length) {
+      // Nothing to list: the tags stay, with the search filled in, so the visitor can choose another.
+      Array.prototype.forEach.call(results.querySelectorAll(".tag-results-switch, .tag-results-all"), function (el) { el.hidden = true; });
+      // The message reads first, then the search.
+      var find = document.querySelector(".tag-find");
+      if (find) find.before(results);
+      document.dispatchEvent(new CustomEvent("tags:nomatch", { detail: label }));
+      return;
+    }
+    // The results have a link back to every tag, so the cloud would only push the footer away.
     if (cloud) cloud.hidden = true;
-    results.scrollIntoView({ block: "nearest" });
   }
 
   document.addEventListener("DOMContentLoaded", function () {
@@ -146,17 +190,19 @@
         return response.json();
       })
       .then(function (rows) {
-        // A slug that only an address could have produced reads better with spaces.
-        if (!rows.some(function (row) { return row.g && row.g.indexOf(needle) !== -1; })) {
-          label = tag.replace(/-/g, " ");
-        }
-        render(
-          rows.filter(function (row) {
-            return row.g && row.g.some(function (term) {
-              return term === needle || slug(term) === needle;
-            });
-          })
-        );
+        // The heading names the tag as the list spells it. A slug from an old /tag/ address
+        // names the stored term it stands for, and only a term found nowhere loses its hyphens.
+        var matched = "";
+        var pages = rows.filter(function (row) {
+          return row.g && row.g.some(function (term) {
+            var hit = term === needle || slug(term) === needle;
+            if (hit && (!matched || term === needle)) matched = term;
+            return hit;
+          });
+        });
+        if (matched) label = spelling(matched) || (matched === needle ? tag : matched);
+        else label = tag.replace(/-/g, " ");
+        render(pages);
       })
       .catch(function () {
         var heading = document.getElementById("tag-results-heading");
