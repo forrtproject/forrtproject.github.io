@@ -290,11 +290,13 @@ ARCHIVE_STYLE = (
     "font-weight:200 900;font-display:swap}"
     '@font-face{font-family:Newsreader;src:url(/fonts/doors/newsreader-var.woff2) format("woff2");'
     "font-weight:200 800;font-display:swap}"
-    'body :is(p,li,td,div,span,a,strong,em,b,i){font-family:"Source Sans 3","Segoe UI",system-ui,sans-serif,'
+    'body :is(p,li,td,div,span,a,strong,em,b,i):not(:is(h1,h2,h3,h4) *){font-family:"Source Sans 3","Segoe UI",system-ui,sans-serif,'
     '"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji"!important}'
-    "body :is(h1,h2,h3,h4){font-family:Newsreader,Georgia,serif!important}"
+    "body :is(h1,h2,h3,h4),body :is(h1,h2,h3,h4) *{font-family:Newsreader,Georgia,serif!important}"
     "h2[data-email-h1]{font-size:2em}"
-    "#templatePreheader{display:none!important}"
+    "#templatePreheader[data-forrt-empty]{display:none!important}"
+    # Images and tables wider than a phone (a 600 px banner) shrink to the screen instead of pushing it sideways.
+    "#main img{max-width:100%!important;height:auto!important}#main table{max-width:100%!important}"
     ".forrt-skip{position:absolute;left:-9999px}"
     ".forrt-skip:focus{left:16px;top:8px;z-index:9;padding:8px 14px;background:#fff;color:#1f2a37}"
     '.forrt-archive-bar{max-width:640px;margin:0 auto;padding:20px 16px 16px;font:17px/1.4 "Source Sans 3",system-ui,sans-serif;color:#1f2a37}'
@@ -305,7 +307,26 @@ ARCHIVE_STYLE = (
 )
 OLD_STYLE = re.compile(r'<style>h2\[data-email-h1\].*?</style>|<style id="forrt-archive">.*?</style>', re.DOTALL)
 ARCHIVE_BAR = re.compile(r'(?:<a class="forrt-skip"[^>]*>[^<]*</a>)?<(div|header) class="forrt-archive-bar">'
-                         r".*?<h1>(.*?)</h1>.*?</\1>(?:<main id=\"main\">)?", re.DOTALL)
+                         r".*?<h1>(.*?)</h1>.*?</\1>(?:<main id=\"main\"[^>]*>)?", re.DOTALL)
+HIDDEN = re.compile(r"<(\w+)\b[^>]*display:\s*none[^>]*>.*?</\1\s*>", re.DOTALL | re.IGNORECASE)
+
+
+def mark_empty_preheader(page):
+    """Mark a Mailchimp preheader that shows nothing, so the archive hides its empty band. A preheader
+    with an image or visible text (several 2024-25 issues put their banner there) stays."""
+    start = page.find('id="templatePreheader"')
+    if start < 0 or "data-forrt-empty" in page[start:start + 200]:
+        return page
+    end = page.find('id="templateHeader"', start)
+    part = page[page.find(">", start) + 1:end if end > 0 else start + 20000]
+    # The slice ends inside the next section's opening tag; drop that, and Outlook's conditional comments.
+    part = re.sub(r"<!--.*?-->", "", part[:part.rfind("<")], flags=re.DOTALL)
+    if re.search(r"<img\b", part, re.IGNORECASE):
+        return page
+    text = re.sub(r"<[^>]*>|&nbsp;|\s", "", HIDDEN.sub("", part))
+    if text:
+        return page
+    return page[:start] + 'id="templatePreheader" data-forrt-empty' + page[start + len('id="templatePreheader"'):]
 # Lines that only make sense in an inbox.
 EMAIL_ONLY = [
     re.compile(r'<a\b[^>]*>\s*Add us to your address book\s*</a>(?:<br>\s*)*', re.IGNORECASE),
@@ -334,9 +355,10 @@ def archive_page(page):
     bar = (
         '<a class="forrt-skip" href="#main">Skip to the newsletter</a>'
         '<header class="forrt-archive-bar"><nav aria-label="Breadcrumb"><a href="/">Home</a> / '
-        '<a href="/newsletters/">Newsletter archive</a></nav><h1>%s</h1></header><main id="main">'
+        '<a href="/newsletters/">Newsletter archive</a></nav><h1>%s</h1></header><main id="main" tabindex="-1">'
     )
     page = ARCHIVE_BAR.sub(lambda m: bar % m.group(2), page, count=1)
+    page = mark_empty_preheader(page)
     if "</main>" not in page:
         closes = [m.start() for m in re.finditer(r"</body\s*>", page, flags=re.IGNORECASE)]
         if closes:
