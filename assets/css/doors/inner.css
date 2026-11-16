@@ -20,7 +20,7 @@ code,pre,kbd,samp{font-style:normal}
 /* An embed from another site, loaded when a visitor asks (layouts/partials/click_to_load.html). */
 .click-to-load{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-height:12rem;margin:0 0 18px;padding:24px;overflow:auto;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-small);text-align:center}
 .click-to-load p{max-width:34rem;margin:0;font-size:16px;line-height:1.45}
-.click-to-load-link{font-size:16px}
+.click-to-load-link{font-size:16px;color:var(--link);text-decoration:underline;text-underline-offset:3px}
 /* A lesson activity in a small frame on a phone is too small to use, so there it opens on the provider's site. */
 @media(max-width:760px){
   .click-to-load[style*="absolute"]:not([data-embed-src*="youtube"]) button{display:none}

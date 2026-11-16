@@ -82,6 +82,7 @@ post/2026-05-nowhere-lab/index.html  # The same name in this post's breadcrumb d
 post/2026-06-ai-metascience-call/index.html  # The same name in this post's breadcrumb data
 post/2026-06-peer-community-in-partner/index.html  # The same name in this post's breadcrumb data
 newsletters/index.html         # Newsletter archive: its title in sentence case
+about/principles/index.html    # Its description opens with the first heading, now in sentence case ("Principled teaching")
 summaries/index.html           # Its breadcrumb name is now "Summaries", as its heading, instead of "Overview"
 summaries/open-reproducible/index.html     # A written description instead of the symbol legend, and the same breadcrumb name
 summaries/diversity-equity-inclusion/index.html  # A written meta description instead of the symbol legend, and "Summaries" as the breadcrumb name

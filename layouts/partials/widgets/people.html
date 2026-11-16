@@ -1,10 +1,23 @@
-{{/* The community wall on /about/community/: everyone with a profile, or the listed groups. */}}
+{{/* The community wall on /about/community/: everyone with a profile, or the listed groups.
+     Sorted by family name, with titles ("Dr", "Prof.") and anything after a comma ("PhD") set aside, so
+     a visitor can find someone by surname; FORRT's own account is not a person and is left out.
+     A search over the names comes first (doors/list_filter). */}}
 {{ $page := .page }}
 {{ with $page.Content }}{{ . }}{{ end }}
 {{ $authors := where (where site.Pages "Section" "authors") "Params.name" "!=" nil }}
 {{ if not ($page.Params.content.show_all | default false) }}
   {{ $authors = where $authors ".Params.user_groups" "intersect" $page.Params.content.user_groups }}
 {{ end }}
+{{ $people := slice }}
+{{ range $authors }}
+  {{ if ne (lower (trim .Params.name " ")) "forrt" }}
+    {{ $name := index (split (trim .Params.name " ") ",") 0 }}
+    {{ $name = replaceRE `(?i)^((dr|prof|professor|mr|mrs|ms|mx)\.?\s+)+` "" $name }}
+    {{ $words := split (trim $name " ") " " }}
+    {{ $people = $people | append (dict "key" (printf "%s %s" (lower (index $words (sub (len $words) 1))) (lower $name)) "page" .) }}
+  {{ end }}
+{{ end }}
+{{ partial "doors/list_filter" (dict "label" "Find a person" "placeholder" "Type a name" "noun" "people") }}
 <ul class="people-wall">
-  {{ range sort $authors "Params.name" }}{{ partial "widgets/people-card.html" (dict "person" .) }}{{ end }}
+  {{ range sort $people "key" }}{{ partial "widgets/people-card.html" (dict "person" .page) }}{{ end }}
 </ul>
