@@ -8,8 +8,8 @@ Run: python3 scripts/rebrand/check_source_rules.py [--base origin/main]
    in menus. Links to sister sites are fine, as is FORRT's address in structured data.
 2. Generated paths (CONTRIBUTING.md) must not change on the branch, as a hand edit is
    lost when the generator next runs. Compared with the merge base, so main's own updates
-   arriving through a merge do not count. A file the branch adds is not an edit: it is the
-   first output of a generator the branch adds (data/open_research_games.json).
+   arriving through a merge do not count. The first output of a generator the branch adds
+   (NEW_OUTPUTS) may be added, but not changed afterwards by hand.
 """
 
 import argparse
@@ -40,6 +40,9 @@ GENERATED = re.compile(
     r"|scripts/forrt_contribs/contributors_cache\.csv$"
     r"|data/(?!partners\.json$|publications\.yaml$|themes/|fonts/)[^/]+$)"
 )
+
+# First outputs of generators added on the branch, committed with them; main has no copy yet.
+NEW_OUTPUTS = {"data/open_research_games.json"}
 
 
 def repo_files(root="."):
@@ -72,10 +75,15 @@ def absolute_url_findings(root=".", sisters=None):
 def generated_edits(base):
     merge_base = subprocess.check_output(["git", "merge-base", base, "HEAD"], text=True).strip()
     changed = subprocess.check_output(
-        ["git", "-c", "core.quotepath=false", "diff", "--name-only", "--diff-filter=a", merge_base, "HEAD"],
-        text=True,
+        ["git", "-c", "core.quotepath=false", "diff", "--name-status", merge_base, "HEAD"], text=True
     ).splitlines()
-    return [path for path in changed if GENERATED.match(path)]
+    edits = []
+    for line in changed:
+        status, *paths = line.split("\t")
+        path = paths[-1]
+        if GENERATED.match(path) and not (status == "A" and path in NEW_OUTPUTS):
+            edits.append(path)
+    return edits
 
 
 def main():
