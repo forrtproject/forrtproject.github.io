@@ -254,6 +254,7 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
   .toc-phone a{display:block;padding:5px 0;font-size:16px;line-height:1.35;color:var(--link);text-decoration:underline}
   .article-layout:has(.toc-phone) .article-card :is(h2,.article-toc){display:none}
   .article-layout:has(.toc-phone) .article-card:not(:has(dl)){display:none}
+  .article-layout .article-card-repeats{display:none}
   .glossary-index .reading{display:contents}
   .glossary-index .article-head{order:-2;margin-bottom:0}
   .glossary-index .term-list{max-height:220px}
