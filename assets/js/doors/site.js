@@ -469,6 +469,9 @@ if (chatWidget) {
 
 // Glossary pages: filter the list of terms, and show the current term inside its card.
 const termFilter = document.getElementById('glossary-search');
+// Arabic terms are written with their vowel marks, which visitors seldom type: both sides drop them, and the tatweel,
+// and an alef with a hamza or madda counts as a plain alef (NFD splits it into the alef and a mark).
+const foldTerm = (text) => text.normalize('NFD').replace(/[\u064B-\u065F\u0670\u0640]/g, '').normalize('NFC').toLowerCase();
 const termGrid = document.querySelector('.term-grid');
 if (termFilter && termGrid) {
   // The glossary hub: match on the term's name, hide letters left empty, and say when nothing matches.
@@ -476,11 +479,11 @@ if (termFilter && termGrid) {
   const groups = [...termGrid.querySelectorAll('.term-group')];
   const none = document.querySelector('.glossary-none');
   termFilter.addEventListener('input', () => {
-    const query = termFilter.value.trim().toLowerCase();
+    const query = foldTerm(termFilter.value.trim());
     // Names first; when no name matches, the definitions (a related term may be named only inside them).
-    const byName = terms.some((term) => term.dataset.term.includes(query));
+    const byName = terms.some((term) => foldTerm(term.dataset.term).includes(query));
     terms.forEach((term) => {
-      term.hidden = !(byName ? term.dataset.term : term.textContent.toLowerCase()).includes(query);
+      term.hidden = !foldTerm(byName ? term.dataset.term : term.textContent).includes(query);
     });
     groups.forEach((group) => { group.hidden = !group.querySelector('li:not([hidden])'); });
     none.hidden = groups.some((group) => !group.hidden);
@@ -551,8 +554,8 @@ if (termFilter && termGrid) {
   termFilter.after(status, clearTerms);
   clearTerms.addEventListener('click', () => { termFilter.value = ''; termFilter.dispatchEvent(new Event('input')); termFilter.focus(); });
   termFilter.addEventListener('input', () => {
-    const query = termFilter.value.toLowerCase();
-    terms.forEach((term) => { term.hidden = !term.textContent.toLowerCase().includes(query); });
+    const query = foldTerm(termFilter.value);
+    terms.forEach((term) => { term.hidden = !foldTerm(term.textContent).includes(query); });
     const shown = terms.filter((term) => !term.hidden).length;
     status.textContent = !query ? '' : shown ? `${shown} ${shown === 1 ? 'term' : 'terms'}` : 'No matching terms.';
     clearTerms.hidden = !query;

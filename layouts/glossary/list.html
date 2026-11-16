@@ -17,6 +17,8 @@
 {{ range $pages }}
   {{ $first := upper (substr (strings.TrimLeft "\"“”'*[(_ " (.Params.sort_key | default .Title)) 0 1) }}
   {{ if eq $lang "german" }}{{ $first = $first | replaceRE "Ä" "A" | replaceRE "Ö" "O" | replaceRE "Ü" "U" }}{{ end }}
+  {{/* Arabic files أ, إ, آ and ٱ under ا, as its dictionaries do; apart, they also shared one anchor, as urlize drops the hamza. */}}
+  {{ if eq $lang "arabic" }}{{ $first = $first | replaceRE "[أإآٱ]" "ا" }}{{ end }}
   {{ if not (findRE `^\p{L}$` $first) }}{{ $first = "#" }}{{ end }}
   {{ if ne $first $current }}
     {{ if $items }}{{ $groups = $groups | append (dict "letter" $current "pages" $items) }}{{ end }}
