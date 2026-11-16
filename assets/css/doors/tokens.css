@@ -21,6 +21,8 @@
   --jus-bg:#ebe6f4;
   --com-bg:#f8eadc;
   --urgent:#b3261e;
+  /* Action bricks: decorative colours that stay clear of the four area colours (owner decision, Q13) */
+  --brick1:#8c2d4f;--brick2:#56621a;--brick3:#475a6e;--brick4:#7a5600;
   /* Cluster colours: one hue per cluster, across the spectrum (owner decision). --clN marks cluster N
      (arrows, list markers, the diagram) and meets 4.5:1 on the page, white and its pale --clN-bg, which
      tints the cluster's panel. Equal OKLCH lightness, hues 33 degrees apart from blue. */
