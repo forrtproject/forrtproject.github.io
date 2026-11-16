@@ -1,4 +1,4 @@
-{{- /* Returns the lesson-plan sets from data/lesson_plans.json (cluster number -> sub-cluster slug -> set).
+{{- /* Returns the lesson-plan sets from data/lesson_plans.json (cluster number -> sub-cluster slug -> list of sets).
      Fails the build when a key matches no cluster or sub-cluster in clusters_v4.json, so a renamed
      sub-cluster cannot silently drop its materials. Call via partialCached so the check runs once. */ -}}
 {{- $sets := dict -}}

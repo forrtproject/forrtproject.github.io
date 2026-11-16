@@ -75,8 +75,8 @@
         <p class="sc-description">{{ $sc.description }}</p>
         {{ end }}
 
-        {{ with $lp }}
-        {{/* Teaching materials: one chip per file label, one link per format */}}
+        {{ range $lp }}
+        {{/* Teaching materials, one strip per set: one chip per file label, one link per format */}}
         {{ $files := .files }}
         <aside class="lp-strip" aria-label="Teaching materials: {{ .title }}">
           <span class="lp-strip__label">Teaching materials{{ with .heading }}: <span class="lp-strip__heading">{{ . }}</span>{{ end }}</span>
