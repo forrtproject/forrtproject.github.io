@@ -849,15 +849,17 @@ document.querySelectorAll('.toc-phone').forEach((box) => {
 });
 
 // Long descriptions in the About directories (Teams, Partnerships, Get involved projects) show their first lines,
-// with a "more" button for the rest (DESIGN.md §4). Without JavaScript the full text shows.
-document.querySelectorAll('.clamp-desc').forEach((text) => {
+// with a "more" button for the rest (DESIGN.md §4). Without JavaScript the full text shows. A description that is one
+// paragraph is clamped itself, not its wrapper. Whether it runs over is checked again once the web font has loaded
+// and when the width changes, so the button appears exactly where text is cut.
+const clamps = [...document.querySelectorAll('.clamp-desc')].map((wrap) => {
+  const text = wrap.querySelector(':scope > p:only-child') || wrap;
   text.classList.add('is-clamped');
-  if (text.scrollHeight <= text.clientHeight + 2) { text.classList.remove('is-clamped'); return; }
   const more = document.createElement('button');
   more.type = 'button';
   more.className = 'clamp-more';
   more.setAttribute('aria-expanded', 'false');
-  const about = text.dataset.clampName ? ` about ${text.dataset.clampName}` : '';
+  const about = wrap.dataset.clampName ? ` about ${wrap.dataset.clampName}` : '';
   const label = (word) => { more.textContent = word; more.setAttribute('aria-label', word + about); };
   label('more');
   more.addEventListener('click', () => {
@@ -865,5 +867,16 @@ document.querySelectorAll('.clamp-desc').forEach((text) => {
     more.setAttribute('aria-expanded', String(open));
     label(open ? 'less' : 'more');
   });
-  text.after(more);
+  wrap.after(more);
+  return {text, more};
 });
+const measureClamps = () => clamps.forEach(({text, more}) => {
+  if (!text.classList.contains('is-clamped')) return;
+  more.hidden = text.scrollHeight <= text.clientHeight + 2;
+});
+if (clamps.length) {
+  measureClamps();
+  document.fonts?.ready.then(measureClamps);
+  let timer;
+  addEventListener('resize', () => { clearTimeout(timer); timer = setTimeout(measureClamps, 150); });
+}

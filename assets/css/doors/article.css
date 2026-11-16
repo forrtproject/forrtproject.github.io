@@ -227,7 +227,7 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .sc-page .sc-card:is(:hover,:focus-visible) .sc-card-name{color:var(--ink)}
 /* The four sections head the page's outline, at the page's h2 size in the text colour; steering.js gives them
    heading semantics. The generated teal, which is no FORRT colour, is not used. */
-.sc-page .sc-section-title{font:var(--display-weight,500) 30px/1.2 var(--display);color:var(--ink);text-transform:none;letter-spacing:0}
+.sc-page .sc-section-title{margin:0 0 4px;font:var(--display-weight,500) 30px/1.2 var(--display);color:var(--ink);text-transform:none;letter-spacing:0}
 .sc-page .sc-section-title svg{display:none}
 .sc-page .sc-modal-role{color:var(--soft)}
 .sc-page .sc-card .sc-card-role{display:block;overflow:visible;color:var(--soft);font:400 15px/1.3 var(--text);letter-spacing:0;text-transform:none}
