@@ -625,31 +625,9 @@ document.querySelectorAll('.article-style li > p > strong:first-child').forEach(
   name.before(chip, ' ');
 });
 
-// Get Involved: a search over the project cards.
-const projectFilter = document.querySelector('.project-filter');
-if (projectFilter) {
-  projectFilter.hidden = false;
-  const input = projectFilter.querySelector('input');
-  const count = projectFilter.querySelector('.list-filter-count');
-  const cards = [...document.querySelectorAll('.get-involved-card')];
-  // A card matches on its name and description, not on its actions, which every card shares ("Email", "Slack channel").
-  const texts = cards.map((card) => [...card.querySelectorAll(':scope > h3, :scope > h3 + div')]
-    .map((part) => part.textContent).join(' ').toLowerCase());
-  input.addEventListener('input', () => {
-    const query = input.value.trim().toLowerCase();
-    let shown = 0;
-    cards.forEach((card, index) => {
-      const match = !query || texts[index].includes(query);
-      card.hidden = !match;
-      if (match) shown += 1;
-    });
-    count.textContent = !query ? '' : shown ? `${shown} of ${cards.length} projects` : 'No project matches.';
-  });
-}
-
 // A search over the list items after it (shortcodes/list_filter.html): items match on their text, and a
 // heading whose lists are all hidden hides too, so the page reads as the matches.
-const listFilter = document.querySelector('.list-filter:not(.project-filter)');
+const listFilter = document.querySelector('.list-filter');
 if (listFilter) {
   listFilter.hidden = false;
   const input = listFilter.querySelector('input');
@@ -766,7 +744,7 @@ if (listFilter) {
 // /reversals/: the search, outcome and Go to controls are a toolbar that stays at the top of the screen while the
 // effects scroll under it (on a phone only the search row stays), and each effect shows the start of its
 // description, with a "more" button for the rest.
-const entryFilter = document.querySelector('.list-filter:not(.project-filter):not([hidden])');
+const entryFilter = document.querySelector('.list-filter:not([hidden])');
 const entries = entryFilter ? [...document.querySelectorAll('.list-filter ~ ul > li')]
   .filter((item) => item.firstElementChild?.matches('p') && item.querySelector(':scope > .spoiler')) : [];
 if (entries.length) {

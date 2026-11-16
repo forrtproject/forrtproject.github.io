@@ -6,13 +6,15 @@
 {{ $page.Content }}
 <ul class="feature-rows team-rows">
   {{ range $page.Params.featurealt }}
+  {{ $team := .name | plainify }}
   <li>
     <div>
       <h3>{{ .name | markdownify | emojify }}</h3>
       {{ with .description }}<p>{{ . | markdownify | emojify }}</p>{{ end }}
       {{ with .buttonurl }}
-        {{ $label := "Join the team" }}
-        {{ if in . "slack.com/archives/" }}{{ $label = "Join the team's Slack channel" }}{{ else if in . "join.slack.com" }}{{ $label = "Join FORRT's Slack to find the team" }}{{ end }}
+        {{/* Each label names its team, so a list of the page's links still says which team each joins. */}}
+        {{ $label := printf "Join %s" $team }}
+        {{ if in . "slack.com/archives/" }}{{ $label = printf "Join the Slack channel of %s" $team }}{{ else if in . "join.slack.com" }}{{ $label = printf "Join FORRT's Slack to find %s" $team }}{{ end }}
         <p class="team-join"><a href="{{ . }}">{{ $label }}</a></p>
       {{ end }}
     </div>

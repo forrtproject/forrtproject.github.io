@@ -59,7 +59,7 @@ In a nutshell, FORRT is a ***F***ramework for ***O***pen and ***R***eproducible 
 
 FORRT provides a pedagogical infrastructure and open educational resources designed to support the teaching and mentoring of open and reproducible science. FORRT strives to (a) raise awareness of the pedagogical implications of open and reproducible science and its associated challenges (i.e., curricular reform, epistemological uncertainty, methods of education); (b) respond to calls to consider open scholarship as inclusive scholarship; (c) advocate for the opening and formal recognition of teaching and mentoring materials to facilitate access, discovery, and learning to those who otherwise would be educationally disenfranchised.
 
-### Here's a 5-minute introduction to FORRT
+## Here's a 5-minute introduction to FORRT
 
 <br>
 
@@ -67,7 +67,7 @@ FORRT provides a pedagogical infrastructure and open educational resources desig
 
 <br>
 
-### What are FORRT's goals?
+## What are FORRT's goals?
 
 1. Build, together with educators, a pathway towards the incremental adoption of open scholarship practices into higher education
 2. Generate a conversation about the ethics and social impact of a higher education pedagogy that emphasizes openness, epistemic uncertainty and research credibility
@@ -79,7 +79,7 @@ Learn more about FORRT in the interactive flipbook:
 
 <a href="/booklet/" class="btn btn-primary">FORRT Booklet</a>
 
-### Want to learn more about us?
+## Want to learn more about us?
 
 Our community has [**published**](/publications) meta-scientific peer-reviewed papers & policies (and we also have ongoing **manuscripts** being written) so please consider reading our award-winning scholarship on the FORRT's [Publications page](/publications), or start with our manifesto on the [OSF](https://osf.io/bnh7p).
 

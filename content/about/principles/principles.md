@@ -56,7 +56,7 @@ classtitle = "text-center"
 
 <br>
 
-## Principled teaching 
+## Principled teaching
 
 We believe it is of utmost importance to communicate the facts of science relative to the process by which it was acquired. Scientific claims should be taken in light of epistemic uncertainty – i.e., the intrinsic incertitude about the validity of truth claims (including scientific), to avoid teaching students a false sense of certainty about ‘the facts’ of science. This idea is enshrined at the core of the open science movement, the credibility revolution, open access, and better measurement practices.
 
