@@ -32,7 +32,7 @@ UNICODES = (
     "U+0327-0328,U+2000-206F,U+20AC,U+2113,U+2122,U+2190-2193,U+2212,U+2248,U+2260,U+2264-2265,U+FFFD"
 )
 # Arabic, its supplements and presentation forms, the joining controls and the spaces between words.
-ARABIC = "U+0020,U+00A0,U+0600-06FF,U+0750-077F,U+08A0-08FF,U+200C-200F,U+FB50-FDFF,U+FE70-FEFC"
+ARABIC = "U+0020,U+00A0,U+0600-06FF,U+0750-077F,U+0870-089F,U+08A0-08FF,U+200C-200F,U+FB50-FDFF,U+FE70-FEFC"
 FONTS = [
     # source, axis limits, output, characters kept
     ("Newsreader[opsz,wght].ttf", {"wght": 500, "opsz": (16, 72)}, "newsreader-var.woff2", UNICODES),
@@ -111,8 +111,10 @@ def build(source, limits, output, unicodes=UNICODES):
     options.desubroutinize = True
     options.notdef_outline = True
     options.name_IDs = [1, 2, 3, 4, 6, 13, 14]
-    # Every OpenType feature: Arabic needs its joining forms, ligatures and mark positioning.
-    options.layout_features = ["*"]
+    # Arabic needs every OpenType feature (joining forms, ligatures, mark positioning); the Latin faces keep
+    # fontTools' default set, as before.
+    if unicodes == ARABIC:
+        options.layout_features = ["*"]
     subsetter = subset.Subsetter(options)
     subsetter.populate(unicodes=subset.parse_unicodes(unicodes))
     subsetter.subset(font)
