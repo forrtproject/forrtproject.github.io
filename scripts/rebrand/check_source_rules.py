@@ -8,7 +8,8 @@ Run: python3 scripts/rebrand/check_source_rules.py [--base origin/main]
    in menus. Links to sister sites are fine, as is FORRT's address in structured data.
 2. Generated paths (CONTRIBUTING.md) must not change on the branch, as a hand edit is
    lost when the generator next runs. Compared with the merge base, so main's own updates
-   arriving through a merge do not count.
+   arriving through a merge do not count. A file the branch adds is not an edit: it is the
+   first output of a generator the branch adds (data/open_research_games.json).
 """
 
 import argparse
@@ -71,7 +72,8 @@ def absolute_url_findings(root=".", sisters=None):
 def generated_edits(base):
     merge_base = subprocess.check_output(["git", "merge-base", base, "HEAD"], text=True).strip()
     changed = subprocess.check_output(
-        ["git", "-c", "core.quotepath=false", "diff", "--name-only", merge_base, "HEAD"], text=True
+        ["git", "-c", "core.quotepath=false", "diff", "--name-only", "--diff-filter=a", merge_base, "HEAD"],
+        text=True,
     ).splitlines()
     return [path for path in changed if GENERATED.match(path)]
 
