@@ -62,7 +62,16 @@
       <p class="resource-open"><a class="btn btn-primary" href="{{ . }}"{{ with $described }} aria-describedby="{{ delimit . " " }}"{{ end }}>Open this resource{{ if and $host (ne $host "forrt.org") }} <i class="fas fa-external-link-alt" aria-hidden="true"></i>{{ end }}</a>{{ with $host }} <span class="resource-host" id="resource-host">{{ . }}</span>{{ end }}{{ with $inLang }} <span class="resource-host resource-lang" id="resource-lang">{{ . }}</span>{{ end }}</p>
       {{ end }}
       <div class="article-style">
-        {{ with .Params.abstract }}<h2>{{ i18n "abstract" }}</h2>{{ $.RenderString (dict "display" "block") . }}{{ end }}
+        {{/* Abstracts come from a sheet, where a single line break often ends a line of a list or a heading
+             ("Methods", "modular: …"), which Markdown would run into one paragraph. A break stays where the next line
+             starts with a capital or a short "label:"; a line ending in a space or a word such as "of" is wrapped text and joins up.
+             A line of dashes is a separator, not the underline of a heading. */}}
+        {{ with .Params.abstract }}
+          {{ $abstract := replaceRE `\n(-{3,}|\*{3,})\n` "\n\n$1\n\n" . }}
+          {{ $abstract = replaceRE `\b(a|an|and|at|by|for|from|in|of|on|the|to|with)\n` "$1 " $abstract }}
+          {{ $abstract = replaceRE `([^\s])\n(\p{Lu}|\p{Ll}[\p{L}\- ]{0,30}:\s)` "$1  \n$2" $abstract }}
+          <h2>{{ i18n "abstract" }}</h2>{{ $.RenderString (dict "display" "block") $abstract }}
+        {{ end }}
         {{ partial "doors/content" .Content }}
       </div>
       {{ partial "doors/resource_keywords" . }}
