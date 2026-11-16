@@ -315,10 +315,10 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .byline-date{display:none}
 @media(max-width:1000px){.article-layout .byline-date{display:inline}}
 /* A search over a long list on the page (shortcodes/list_filter.html). */
-.article-layout .article-style .list-filter{max-width:520px;margin:8px 0 22px;padding:16px 18px;background:var(--surface);border-radius:var(--r-large)}
-.article-layout .article-style .list-filter label{display:block;margin:0 0 8px;font:600 17px/1.3 var(--text)}
-.article-layout .article-style .list-filter input{width:100%;box-sizing:border-box;padding:10px 16px;border:1.5px solid var(--ink);border-radius:999px;background:#fff;font:400 17px/1.3 var(--text);color:var(--ink)}
-.article-layout .article-style .list-filter-count{margin:8px 0 0;font-size:16px;color:var(--soft)}
+.article-layout :is(.article-style .list-filter,.list-filter-posts){max-width:520px;margin:8px 0 22px;padding:16px 18px;background:var(--surface);border-radius:var(--r-large)}
+.article-layout :is(.article-style .list-filter,.list-filter-posts) label{display:block;margin:0 0 8px;font:600 17px/1.3 var(--text)}
+.article-layout :is(.article-style .list-filter,.list-filter-posts) input{width:100%;box-sizing:border-box;padding:10px 16px;border:1.5px solid var(--ink);border-radius:999px;background:#fff;font:400 17px/1.3 var(--text);color:var(--ink)}
+.article-layout :is(.article-style,.list-filter-posts) .list-filter-count{margin:8px 0 0;font-size:16px;color:var(--soft)}
 .article-layout .article-style [hidden]{display:none!important}
 /* A licence note is a quiet line with its badge, as the site's other notes, not a bordered, centred box. */
 .article-layout .article-style .license-note{margin:28px 0 0!important;padding:14px 18px!important;border:0!important;border-radius:var(--r-large)!important;background:var(--surface)!important;text-align:start!important}
