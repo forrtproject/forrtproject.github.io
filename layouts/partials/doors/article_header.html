@@ -28,7 +28,7 @@
     {{ with .Params.authors }}<span class="byline-authors">{{ partial "page_metadata_authors" $page }}</span>{{ end }}
     {{/* The side card carries the date on a wide screen; on a narrow one it would come after the article. */}}
     {{ if and (in (slice "post" "educators-corner" "pedagogies") .Type) (not .Date.IsZero) }}<time class="byline-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time>{{ end }}
-    {{ if eq .Type "post" }}<span class="byline-time">{{ .ReadingTime }} {{ i18n "minute_read" }}</span>{{ end }}
+    {{ if and (eq .Type "post") (ge .ReadingTime 3) }}<span class="byline-time">{{ .ReadingTime }} {{ i18n "minute_read" }}</span>{{ end }}
   </div>
   {{ partial "page_links_div.html" $page }}
 </header>
@@ -49,7 +49,7 @@
 {{ $image := $featured }}
 {{ $image = $featured.Resize (printf "%dx webp q78" (cond (gt $featured.Width 720) 720 $featured.Width)) }}
 <figure class="article-image">
-  <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{ with $.Params.image.alt_text }}{{ . }}{{ else }}Featured image for {{ $.Title }}{{ end }}">
+  <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{ $.Params.image.alt_text }}">
   {{ with $.Params.image.caption }}<figcaption>{{ . | markdownify | emojify }}</figcaption>{{ end }}
 </figure>
 {{ end }}

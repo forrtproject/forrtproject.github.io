@@ -3,7 +3,7 @@
 {{ with $featured }}
 {{ $image := .Resize (printf "%dx webp q78" (cond (gt .Width 720) 720 .Width)) }}
 <figure class="article-image">
-  <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{ with $.Params.image.alt_text }}{{ . }}{{ else }}Featured image for {{ $.Title }}{{ end }}" loading="lazy">
+  <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{ $.Params.image.alt_text }}">
   {{ with $.Params.image.caption }}<figcaption>{{ . | markdownify | emojify }}</figcaption>{{ end }}
 </figure>
 {{ end }}

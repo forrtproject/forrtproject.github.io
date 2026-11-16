@@ -4,6 +4,15 @@
 {{ $body := partial "doors/content" .Content }}
 {{/* The summaries mark their DEI entries with ⌺, which few fonts have and which shows as an empty box. */}}
 {{ $body = replace $body "⌺" `<span class="dei-mark">DEI</span>` | safeHTML }}
+{{/* A newsletter post links to EmailOctopus's signed web version; when forrt.org hosts that issue
+     (data/newsletters.json, scripts/sync_newsletters.py), the link goes to the copy here instead.
+     The post's folder starts with the issue's month, e.g. 2026-05-newsletter. */}}
+{{ if and (eq .Type "post") .File (strings.Contains $body "eocampaign1.com/web-version") }}
+  {{ $month := substr .File.ContentBaseName 0 7 }}
+  {{ range index (hugo.Data.newsletters | default dict) "issues" | default slice }}
+    {{ if hasSuffix .url (printf "/%s/" $month) }}{{ $body = replaceRE `https://eocampaign1\.com/web-version[^"]*"( target="_blank" rel="noopener")?` (printf `%s"` (relURL .url)) $body | safeHTML }}{{ end }}
+  {{ end }}
+{{ end }}
 {{ $contents := cond (findRE `(?i)<h1\b` .Content 1 | len | lt 0) slice (findRE `<li` .TableOfContents 1) }}
 {{ $written := findRESubmatch `<h2[^>]*\bid="?([^"> ]+)"?[^>]*>([\s\S]*?)</h2>` $body }}
 {{/* A short page's real sections can sit a level down. */}}

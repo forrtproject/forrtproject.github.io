@@ -8,7 +8,8 @@
 .article-layout .article-head{margin-bottom:22px}
 .article-layout .article-head:has(.byline:empty){margin-bottom:0}
 .article-layout .article-meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;font-size:15px;font-weight:600}
-.article-layout .article-meta span{background:var(--surface);padding:3px 10px;border-radius:var(--r-small)}
+/* A category here filters nothing, so it is plain text, not a chip (DESIGN.md §5). */
+.article-layout .article-meta span{color:var(--soft)}
 .article-layout .reading h1{font-size:clamp(36px,4.2vw,58px);line-height:1.06;letter-spacing:-.01em;margin:0;text-wrap:balance}
 /* In the narrow column a bigger screen must not mean a taller stack of title lines. */
 .article-layout:not(.article-layout-wide) .reading h1{font-size:clamp(34px,3.2vw,44px);line-height:1.1}
@@ -74,7 +75,7 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .article-layout .article-foot .meta-nav{font-size:15px;font-weight:700;letter-spacing:0;text-transform:none;color:var(--soft)}
 .article-layout .article-foot .post-nav-item p,.article-layout .article-foot .article-widget li{font-size:16px;line-height:1.4;margin:0}
 .article-layout .article-foot :is(.card-subtitle,.card-text){font-size:16px;max-width:30em}
-.article-layout .article-widget a{color:var(--link)}
+.article-layout .article-widget a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
 .article-layout .article-card{position:sticky;top:24px;max-height:calc(100vh - 48px - var(--banner,0px));overflow-y:auto;background:var(--surface);border-radius:var(--r-large);padding:22px;font-size:16px;line-height:1.45}
 .article-layout .article-card h2{font-size:23px;line-height:1.15;margin:0 0 8px}
 .article-layout .article-card dl{margin:0 0 20px}

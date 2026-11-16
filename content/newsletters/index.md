@@ -1,5 +1,5 @@
 ---
-title: Newsletter Archives
+title: Newsletter archive
 # Issues sent before September 2025 (Mailchimp). Later issues come from
 # data/newsletters.json, which data processing generates.
 newsletters:
