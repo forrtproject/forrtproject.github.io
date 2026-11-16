@@ -5,16 +5,19 @@
 {{ $clean := dict }}
 {{ range slice "material_type" "education_level" "primary_user" "subject_areas" "language" "creators" }}
   {{ $values := slice }}
-  {{ range index $.Params . }}{{ if . }}{{ $values = $values | append . }}{{ end }}{{ end }}
+  {{/* The sheet's free text, with a capital first letter ("student" reads "Student"); creators keep theirs. */}}
+  {{ $field := . }}
+  {{ range index $.Params . }}{{ if . }}{{ $values = $values | append (cond (eq $field "creators") . (strings.FirstUpper .)) }}{{ end }}{{ end }}
   {{ $clean = merge $clean (dict . $values) }}
 {{ end }}
 {{/* The type also shows above the title, so on a phone its row in the card is left out. */}}
+{{/* Each label in the singular or the plural, by how many values it has. */}}
 {{ $details := slice
-  (dict "label" "Type of resources" "values" $clean.material_type "class" "resource-type")
-  (dict "label" "Education level(s)" "values" $clean.education_level)
-  (dict "label" "Primary user(s)" "values" $clean.primary_user)
-  (dict "label" "Subject area(s)" "values" $clean.subject_areas)
-  (dict "label" "Language(s)" "values" $clean.language)
+  (dict "label" "Type" "labels" "Types" "values" $clean.material_type "class" "resource-type")
+  (dict "label" "Education level" "labels" "Education levels" "values" $clean.education_level)
+  (dict "label" "Primary user" "labels" "Primary users" "values" $clean.primary_user)
+  (dict "label" "Subject area" "labels" "Subject areas" "values" $clean.subject_areas)
+  (dict "label" "Language" "labels" "Languages" "values" $clean.language)
 }}
 {{/* Cluster pages by name, matched in lower case, so a cluster in the card can link to its page. */}}
 {{ $clusterPages := dict }}
@@ -79,12 +82,12 @@
     <section class="article-card" aria-label="About this resource">
       <h2>About this resource</h2>
       <dl>
-        {{ range $details }}{{ if .values }}<dt{{ with .class }} class="{{ . }}"{{ end }}>{{ .label }}</dt><dd{{ with .class }} class="{{ . }}"{{ end }}>{{ delimit .values ", " }}</dd>{{ end }}{{ end }}
+        {{ range $details }}{{ if .values }}<dt{{ with .class }} class="{{ . }}"{{ end }}>{{ cond (gt (len .values) 1) .labels .label }}</dt><dd{{ with .class }} class="{{ . }}"{{ end }}>{{ delimit .values ", " }}</dd>{{ end }}{{ end }}
         {{/* The clusters the directory filters by, from forrt_clusters_new; none when that is empty. */}}
         {{ with index (partialCached "doors/resource_index" (site.GetPage "/resources") "resources").items .RelPermalink }}{{ with .clusters }}
           {{ $names := slice }}
           {{ range $name := . }}{{ with index $clusterPages (lower $name) }}{{ $names = $names | append (printf `<a href="%s">%s</a>` . ($name | htmlEscape)) }}{{ else }}{{ $names = $names | append ($name | htmlEscape) }}{{ end }}{{ end }}
-          <dt>Cluster</dt><dd>{{ delimit $names ", " | safeHTML }}</dd>
+          <dt>{{ cond (gt (len $names) 1) "Clusters" "Cluster" }}</dt><dd>{{ delimit $names ", " | safeHTML }}</dd>
         {{ end }}{{ end }}
         <dt>Last updated</dt><dd>{{ .Lastmod.Format "2 January 2006" }}</dd>
       </dl>
