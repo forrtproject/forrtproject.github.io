@@ -244,7 +244,8 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .toc-phone{display:none}
 @media(max-width:1000px){
   .toc-phone{display:block;margin:0 0 20px;padding:var(--box-pad);background:var(--surface);border-radius:var(--r-small)}
-  .toc-phone-label{margin:0 0 4px;font:700 15px/1.3 var(--text);letter-spacing:.05em;text-transform:uppercase;color:var(--soft)}
+  /* Sentence case in the heading face, as the side card's "On this page" on a desktop (DESIGN.md §1: no tracked capitals). */
+  .toc-phone-label{margin:0 0 6px;font:500 20px/1.2 var(--display);color:var(--ink)}
   .toc-phone.is-short .toc-extra{display:none}
   .toc-phone-more{margin:6px 0 0;padding:4px 0;border:0;background:none;font:600 16px/1.35 var(--text);color:var(--ink);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
   .toc-phone a{display:block;padding:5px 0;font-size:16px;line-height:1.35;color:var(--link);text-decoration:underline}
