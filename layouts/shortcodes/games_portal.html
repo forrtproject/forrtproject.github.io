@@ -75,11 +75,14 @@
             {{ with .url }}<p><a href="{{ . }}" rel="noopener">{{ . }}</a></p>{{ end }}
             {{ with .access_additional }}{{ partial "doors/games_text" . }}{{ end }}
             {{ end }}
+            {{/* Short values (formats, types, styles, languages) read as one line; answers keep one block per entry. */}}
+            {{ $line := dict }}
+            {{ range slice "game_type" "delivery_format" "gameplay_style" "tone" "language" }}{{ $field := . }}{{ with index $game $field }}{{ $line = merge $line (dict $field (slice (delimit . ", "))) }}{{ end }}{{ end }}
             {{ $sections := slice
               (dict "heading" "About the game" "fields" (slice
-                (slice "Creators" .creators) (slice "Game type" .game_type) (slice "Format" .delivery_format)
-                (slice "Gameplay style" .gameplay_style) (slice "Tone and learning intensity" .tone)
-                (slice "Number of players" .number_of_players) (slice "Playtime" .playtime) (slice "Language" .language)
+                (slice "Creators" .creators) (slice "Game type" $line.game_type) (slice "Format" $line.delivery_format)
+                (slice "Gameplay style" $line.gameplay_style) (slice "Tone and learning intensity" $line.tone)
+                (slice "Number of players" .number_of_players) (slice "Playtime" .playtime) (slice "Language" $line.language)
                 (slice "Licence" .licence) (slice "Last updated" .last_updated) (slice "Target audience" .target_audience)
                 (slice "Prior knowledge" .prior_knowledge) (slice "Topic areas" .topic_area)))
               (dict "heading" "Teaching with it" "fields" (slice
