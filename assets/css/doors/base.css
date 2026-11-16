@@ -10,9 +10,11 @@ main:focus{outline:none}
 /* The cookie banner sits over the foot of the screen until dismissed; site.js sets its height. While it shows, 12 px more keeps
    a focused link's focus ring (3 px, offset 3 px) clear of it. */
 html{scroll-padding-block-end:calc(var(--banner,0px) + min(var(--banner,0px),12px))}
-/* The site's content in system fonts where the Doors faces have no glyphs (decision D18). */
+/* Where the Doors faces have no glyphs: Arabic in the self-hosted Noto Naskh and Noto Sans Arabic (fonts.css), with
+   English inside Arabic text in the site's own faces; Chinese in the reader's system fonts, as a CJK web font runs to
+   megabytes (decision D18, revised for Arabic). */
 main:lang(ar),main:lang(zh){font-family:var(--text)}
-main:lang(ar){--display:'Newsreader','Noto Naskh Arabic','Geeza Pro','Traditional Arabic','Times New Roman',serif;--text:'Noto Sans Arabic','Segoe UI','Geeza Pro',Tahoma,sans-serif}
+main:lang(ar){--display:'Newsreader','Noto Naskh Arabic','Geeza Pro','Traditional Arabic','Times New Roman',serif;--text:'Noto Sans Arabic','Source Sans 3','Segoe UI','Geeza Pro',Tahoma,sans-serif}
 main:lang(zh){--display:'Newsreader','Noto Serif CJK SC','Songti SC','STSong',SimSun,serif;--text:'Source Sans 3','Noto Sans CJK SC','PingFang SC','Microsoft YaHei','Hiragino Sans GB',sans-serif}
 
 /* Upright everywhere, with emphasis as semi-bold. Real italics only inside reference lists
