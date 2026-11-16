@@ -80,9 +80,9 @@ def generated_edits(base):
     edits = []
     for line in changed:
         status, *paths = line.split("\t")
-        path = paths[-1]
-        if GENERATED.match(path) and not (status == "A" and path in NEW_OUTPUTS):
-            edits.append(path)
+        # A rename lists both paths; moving a generated file away is an edit too.
+        if any(GENERATED.match(path) for path in paths) and not (status == "A" and paths[0] in NEW_OUTPUTS):
+            edits.append(paths[-1])
     return edits
 
 
