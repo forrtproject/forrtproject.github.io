@@ -471,8 +471,10 @@ if (chatWidget) {
 const termFilter = document.getElementById('glossary-search');
 // Arabic terms are written with their vowel marks, which visitors seldom type: both sides drop them (fathatan to sukun,
 // and the dagger alef) and the tatweel, and an alef with a hamza, madda or wasla counts as a plain alef. The hamza on
-// ئ and ؤ stays, so they remain apart from ي and و. NFC first, so a decomposed alef and hamza (pasted text) folds too.
-const foldTerm = (text) => text.normalize('NFC').replace(/[أإآٱ]/g, 'ا').replace(/[\u064B-\u0652\u0670\u0640]/g, '').toLowerCase();
+// ئ and ؤ stays, so they remain apart from ي and و. A final ة counts as ه and ى as ي, as people often type them.
+// NFC first, so a decomposed alef and hamza (pasted text) folds too.
+const foldTerm = (text) => text.normalize('NFC').replace(/[أإآٱ]/g, 'ا').replace(/ة/g, 'ه').replace(/ى/g, 'ي')
+  .replace(/[\u064B-\u0652\u0670\u0640]/g, '').toLowerCase();
 const termGrid = document.querySelector('.term-grid');
 if (termFilter && termGrid) {
   // The glossary hub: match on the term's name, hide letters left empty, and say when nothing matches.

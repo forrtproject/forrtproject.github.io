@@ -27,6 +27,15 @@
   {{ $items = $items | append . }}
 {{ end }}
 {{ if $items }}{{ $groups = $groups | append (dict "letter" $current "pages" $items) }}{{ end }}
+{{/* Each letter's anchor in plain ASCII: urlize percent-encodes an Arabic or Chinese letter, and the link then encodes
+     it a second time, so link and section did not match and site.js could not mark or dim those letters. */}}
+{{ $withIds := slice }}
+{{ range $i, $g := $groups }}
+  {{ $id := printf "letter-n%d" $i }}
+  {{ if eq $g.letter "#" }}{{ $id = "letter-other" }}{{ else if findRE `^[A-Za-z]$` $g.letter }}{{ $id = printf "letter-%s" (lower $g.letter) }}{{ end }}
+  {{ $withIds = $withIds | append (merge $g (dict "id" $id)) }}
+{{ end }}
+{{ $groups = $withIds }}
 <div class="wrap">
   <div class="article-layout article-layout-single article-layout-wide glossary-layout glossary-hub">
     <article class="reading">
@@ -60,12 +69,12 @@
         <p class="glossary-count" aria-live="polite"></p>
       </div>
       <nav class="glossary-letters" aria-label="{{ $l.letters }}">
-        {{ range $groups }}<a href="#letter-{{ .letter | urlize | default "other" }}">{{ .letter }}</a>{{ end }}
+        {{ range $groups }}<a href="#{{ .id }}">{{ .letter }}</a>{{ end }}
       </nav>
       </div>
       <div class="term-grid">
         {{ range $groups }}
-        <section class="term-group" id="letter-{{ .letter | urlize | default "other" }}">
+        <section class="term-group" id="{{ .id }}">
           <h2>{{ .letter }}</h2>
           <ul>
             {{ range .pages }}
