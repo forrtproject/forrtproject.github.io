@@ -170,3 +170,15 @@ ul.list-items>li[hidden]{display:none}
 }
 /* One column on narrow phones, so long tag names and enlarged text keep to the screen. In em, so a larger default text size also gets it. */
 @media(max-width:30em){.tag-group ul{columns:1}}
+/* Above 760 px the letter bar stays pinned: the page keeps its real height (tag-browser.js) clear when it scrolls to a
+   letter or to a focused tag, including with Shift+Tab. The bar wraps to two rows up to about 1000 px, the fallback
+   without JavaScript. */
+@media(min-width:761px){html:has(.tag-letters){scroll-padding-top:calc(var(--tag-letters,48px) + 8px)}.tag-group{scroll-margin-top:0}}
+@media(min-width:761px) and (max-width:1000px){html:has(.tag-letters){scroll-padding-top:calc(var(--tag-letters,89px) + 8px)}}
+/* Phones: the tag view's links and buttons are 44 px targets too (DESIGN.md §9). */
+@media(max-width:760px){
+  #tag-results p a,#tag-results li>a{display:inline-flex;align-items:center;min-height:44px}
+  #tag-results li{padding:6px 0}
+  .tag-show-more,.tag-group-more{min-height:44px}
+}
+.tag-results-all{margin-top:14px}
