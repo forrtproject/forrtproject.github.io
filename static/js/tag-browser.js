@@ -74,16 +74,19 @@
     count.textContent = !query ? "" : shown ? shown + (shown === 1 ? " tag matches" : " tags match") : "No tag matches.";
     return shown;
   });
-  // Enter opens the best match: the tag itself, else one that starts with the query, else the most used.
+  // Enter opens the best match: the tag as typed, then the same letters without spaces or hyphens, then one that
+  // starts with the query, then the most used.
   // A query under three letters opens a tag only when it names it exactly.
   input.addEventListener("keydown", function (event) {
     if (event.key !== "Enter") return;
     var query = compact(input.value);
+    var typed = norm(input.value);
     if (!query) return;
     var items = Array.prototype.slice.call(document.querySelectorAll(".tag-group li:not([hidden])"));
+    // The name as typed beats the same letters without spaces or hyphens: "Pre-registration" opens Pre-registration.
     var rank = function (item) {
       var tag = compact(name(item));
-      return tag === query ? 3 : tag.indexOf(query) === 0 ? 2 : 1;
+      return norm(name(item)) === typed ? 4 : tag === query ? 3 : tag.indexOf(query) === 0 ? 2 : 1;
     };
     var count = function (item) { return Number(item.querySelector(".tag-count").textContent); };
     items.sort(function (a, b) { return rank(b) - rank(a) || count(b) - count(a); });
