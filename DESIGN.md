@@ -23,7 +23,7 @@ Styles live in `assets/css/doors/`, with colours and type defined once in `token
 
 - Each screen leads with its main action, or with up to three equal ones that share one style. Any further action is quieter: smaller, outlined or a plain link.
 - Action labels say what the visitor will do ("Teach with open materials", "Explore replications"), not what FORRT has.
-- Prefer routes into FORRT's own pages. Mark a link with the external-link icon where leaving forrt.org would surprise visitors: in menus, in lists of FORRT pages, and wherever a link opens a new tab. Links that clearly lead elsewhere, such as a resource's link to its own website, need no icon.
+- Prefer routes into FORRT's own pages. Mark a link with the external-link icon where leaving forrt.org would surprise visitors, such as in menus and in lists of FORRT pages. Links that clearly lead elsewhere, such as a button to a resource's own website, need no icon.
 - Every kind of submission starts at `/submit/`, which sends people on to the right form. Do not call submitting "contributing": contributors join the work and are listed as such.
 
 ## 4. Calm, specific pages
@@ -32,7 +32,7 @@ Every repeated device has to earn its place. In practice:
 
 - Pills and chips are for controls: filters, toggles, language switches. A list of links, such as related glossary terms, is a plain list. One exception: an item may carry one quiet tag for a category that visitors filter by on the same page, such as a resource's purpose.
 - Search and filters belong on long lists (the glossary, the resources directory, Reversals). A list of fewer than about twenty items needs neither, and a longer one may do without when another clear route through it exists, such as a contents list.
-- Tags: a tag links to the tags page only when at least five pages and at most a quarter of all pages share it (`layouts/partials/functions/tag_counts.html`). Rarer tags are plain keywords; tags on more pages are not shown, because they no longer tell pages apart.
+- Tags: a tag links to the tags page only when at least five pages and at most a quarter of the tagged pages share it (`layouts/partials/functions/tag_counts.html`). Rarer tags are plain keywords; tags on more pages are not shown, because they no longer tell pages apart.
 - In long lists of long entries, show the first two lines of each description (three on a phone) with a "more" button. Without JavaScript the full text shows.
 - Cards for actions are the brick cards of `action_cards`. Lists of tools are rows: a linked title and a sentence, not boxes.
 - Framed boxes (cards, panels, toolbars) keep space inside them and between them; text never runs up against a box's edge.
@@ -68,7 +68,7 @@ Before writing a new component, check these:
 | A page with a lead image beside its title | `doors/page_hero.html`, through `hero_image` in front matter (AWoP, Citational Justice, AI in Metascience) |
 | A set of actions as cards | `{{< action_cards >}}` |
 | Search and a count over a long list | `{{< list_filter >}}`, with `noun` for the count ("Showing 12 of 436 effects") |
-| Contents on a phone | `doors/toc_phone.html`: an open, labelled list that collapses after six sections |
+| Contents on a phone | `doors/toc_phone.html`: an open, labelled list; a list of more than six sections shows the first five, with a button for the rest |
 | Names with links | `doors/name_list.html` |
 | Keywords on a resource | `doors/resource_keywords.html` |
 | Previous and next | `doors/pager.html`: Previous on the left, Next on the right |
@@ -87,7 +87,7 @@ Images in the first screen are not lazy-loaded.
 ## 10. Words
 
 - Write plain, specific text, and explain a feature in one sentence ("Tags link pages and resources across the site on the same topic."). No marketing phrases, no exclamation marks. Text written for the site itself (templates, labels, buttons, help text) is in British English; content keeps its authors' spelling.
-- In headings, labels and buttons, every word names what is there or what happens. Delete a word, and if nothing is lost, leave it out: "The 11 clusters", not "The 11 clusters as a list". Words about the format or the act of showing ("as a list", "overview of", "below", "click here", "view") go, unless they tell two views of the same thing apart, as for the list that stands in for the contributor network.
+- In headings, labels and buttons, every word names what is there or what happens. Delete a word, and if nothing is lost, leave it out: "The 11 clusters", not "The 11 clusters as a list". Words about the format or the act of showing ("as a list", "overview of", "below", "click here") go, unless they tell two views of the same thing apart, as for the list that stands in for the contributor network.
 - Shortening text that its authors wrote, such as a tool's description, goes in its own PR for the authors to review.
 - Resource entries, glossary terms, cluster pages and other generated pages get their wording from spreadsheets and documents (see `AGENTS.md`). Change their presentation in the templates, and their wording at the source.
 
