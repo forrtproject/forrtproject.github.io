@@ -31,7 +31,7 @@ import json
 import os
 import re
 import sys
-import urllib.error
+import tempfile
 import urllib.request
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -231,6 +231,10 @@ def build(text):
     ids = [g["id"] for g in games]
     if len(set(ids)) != len(ids):
         raise ValueError("a game ID appears twice")
+    # Anchors are the rows' ids on the page, so each must be present and different.
+    anchors = [g["anchor"] for g in games]
+    if not all(anchors) or len(set(anchors)) != len(anchors):
+        raise ValueError("game IDs must give distinct anchors (letters and digits)")
     games.sort(key=lambda g: (int(re.sub(r"\D", "", g["id"]) or 0), g["id"]))
     return {"source": SHEET_URL, "games": games}
 
@@ -241,19 +245,31 @@ def fetch(url):
         return response.read().decode("utf-8")
 
 
+def write(data, path):
+    """Write through a temporary file, so a failed write never leaves a truncated file behind."""
+    handle = tempfile.NamedTemporaryFile("w", encoding="utf-8", dir=os.path.dirname(path), suffix=".tmp", delete=False)
+    try:
+        with handle:
+            json.dump(data, handle, indent=1, ensure_ascii=False)
+            handle.write("\n")
+        os.replace(handle.name, path)
+    except BaseException:
+        os.unlink(handle.name)
+        raise
+
+
 def main():
     for url in CSV_URLS:
         try:
             data = build(fetch(url))
             break
-        except (urllib.error.URLError, TimeoutError, ValueError, UnicodeDecodeError) as exc:
+        # Any failure of one source (network, HTTP, encoding, CSV or checks) moves on to the next.
+        except (OSError, ValueError, csv.Error) as exc:
             print(f"WARNING: {url}: {exc}", file=sys.stderr)
     else:
         print("ERROR: no usable games sheet; data/open_research_games.json left unchanged.", file=sys.stderr)
         return 1
-    with open(OUTPUT_PATH, "w", encoding="utf-8") as handle:
-        json.dump(data, handle, indent=1, ensure_ascii=False)
-        handle.write("\n")
+    write(data, OUTPUT_PATH)
     print(f"Wrote {len(data['games'])} games to {os.path.relpath(OUTPUT_PATH, ROOT_DIR)}")
     return 0
 
