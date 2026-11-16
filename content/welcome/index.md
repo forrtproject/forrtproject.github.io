@@ -9,28 +9,28 @@ type: welcome
 {{< welcome 
     step="1"
     title="Learn About FORRT"
-    description="Start by understanding our mission and the three-pronged approach we use to support open science education."
+    description="Start with our mission and how we support open science education."
     url="/about/us/"
 >}}
 
 {{< welcome 
     step="2"
     title="Explore FORRT Clusters"
-    description="Familiarize yourself with our 11-cluster framework that provides a comprehensive structure for teaching open science."
+    description="Our framework sorts open science teaching into 11 clusters."
     url="/clusters"
 >}}
 
 {{< welcome 
     step="3"
     title="Browse Resources"
-    description="Explore our curated collection of over 1,400 resources to find materials relevant to your teaching needs."
+    description="Find open scholarship materials for your teaching."
     url="/resources"
 >}}
 
 {{< welcome 
     step="4"
     title="Join the Community"
-    description="Connect with other educators, share your experiences, and contribute to the growing FORRT community."
+    description="Meet other educators and find a project to join."
     url="/about/get-involved"
 >}}
 
@@ -38,7 +38,7 @@ type: welcome
 
 {{< welcome 
     title="Explore Our Teams"
-    description="Explore projects, Slack channels and teams and join any that match your interests. The Teams page lists all our current teams."
+    description="Find a team or project to join."
     url="/about/teams"
     button="Explore the Teams page"
     icon="fas fa-users"
@@ -50,14 +50,14 @@ type: welcome
 
 {{< welcome 
     title="Educational Nexus"
-    description="Our comprehensive e-learning platform with community-driven initiatives and resources for open science education."
+    description="FORRT's teaching projects and resources in one place."
     url="/nexus"
     icon="fas fa-graduation-cap"
 >}}
 
 {{< welcome 
     title="Pedagogies"
-    description="Teaching methodologies and approaches specifically designed for integrating open science into educational practices."
+    description="Worked examples of teaching and mentoring open and reproducible research."
     url="/pedagogies"
     icon="fas fa-lightbulb"
 >}}
@@ -71,21 +71,21 @@ type: welcome
 
 {{< welcome 
     title="Impact & Research"
-    description="Studies, publications, and evidence about the impact of open and reproducible research on students and education."
+    description="Evidence on how open and reproducible scholarship affects students."
     url="/impact"
     icon="fas fa-chart-line"
 >}}
 
 {{< welcome 
     title="Replication Hub"
-    description="Curated collection of replications and reversals across social sciences for educational use."
+    description="Tools and guidance for reproduction and replication studies."
     url="/replication-hub"
     icon="fas fa-redo"
 >}}
 
 {{< welcome 
     title="Neurodiversity Resources"
-    description="Specialized lesson plans and materials for promoting neurodiversity awareness in open science education."
+    description="Team Neurodiversity's lesson plans and resources on neurodiversity in open scholarship."
     url="/neurodiversity"
     icon="fas fa-brain"
 >}}

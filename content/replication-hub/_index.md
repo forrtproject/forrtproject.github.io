@@ -1,14 +1,14 @@
 ---
-title: "FORRT Replication Hub — Transforming Research"
+title: "FORRT Replication Hub"
 heading_title: "Replication Hub"
-description: "Support for every level of replication and reproduction — tracking, exploring, conducting, and disseminating replication studies across all research disciplines."
+description: "Tools and guidance for reproduction and replication studies: find earlier attempts, plan and run a study, and publish it."
 type: replication_hub
 image: "replication_hub.webp"
 image_alt: "FORRT Replication Hub diagram showing four areas: Track, Explore, Conduct, Disseminate"
 sharing_image_resource: "replication_hub.webp"
 sharing_image_alt: "FORRT Replication Hub diagram showing four areas: Track, Explore, Conduct, Disseminate"
 
-lede: "Evidence worth building on. Tools and guidance for reproduction and replication studies, at every stage and in every discipline."
+lede: "Tools and guidance for reproduction and replication studies."
 
 # A link with no `label` takes its name from the main menu, so renaming a menu entry renames it here.
 # Four common starting points, shown under the introduction, in the order of the stages (hub.css colours them).
@@ -41,11 +41,11 @@ cards:
 
   - key: explore
     title: Explore
-    summary: Discover and explore replications.
+    summary: Find replication evidence for a study or the studies a paper cites.
     links:
       - url: "https://forrt.org/flora-replication-atlas/"
         format: "Web app"
-        note: "Look up any study and see every replication and reproduction attempt on record."
+        note: "Look up a study and see the reproduction and replication attempts recorded in FLoRA."
       - url: "https://forrt.org/flora-explorer/"
         format: "Web app"
         label: "FLoRA Explorer"
@@ -53,7 +53,7 @@ cards:
       - url: "annotator/"
         format: "Web app"
         label: "FLoRA Annotator"
-        note: "Look up replication and reproduction attempts for any reference."
+        note: "Check the references in a paper for reproduction and replication attempts recorded in FLoRA."
       - url: "explorer/"
         format: "Web app"
         note: "Find replication evidence in the FORRT Replication Database."
@@ -69,21 +69,21 @@ cards:
 
   - key: conduct
     title: Conduct
-    summary: Run high-quality replications.
+    summary: Plan and run a replication.
     links:
       - url: "https://forrt.org/replication-handbook/"
         format: "Guide"
         note: "Find guidance for planning and conducting your study."
       - url: "https://osf.io/brxtd/"
         format: "Templates"
-        note: "Start writing with resources designed for replication research."
+        note: "Manuscript templates for reproduction and replication studies."
       - url: "replication-hub/large-scale-replication-projects"
         format: "List"
-        note: "Explore collaborative reproduction and replication work."
+        note: "Large collaborative reproduction and replication projects."
       - url: "https://forrt.org/love-replications-week/"
         format: "Event"
         label: "Love Replications Week"
-        note: "A week of best practices, contact with experts and open community."
+        note: "Recordings from Love Replications Week 2026."
       - url: "https://forrt.org/replicatethis/"
         format: "Prototype"
         label: "ReplicateThis Nomination Portal (demo)"
@@ -91,7 +91,7 @@ cards:
 
   - key: disseminate
     title: Disseminate
-    summary: Get replications to the people who need them.
+    summary: Publish and read replication studies.
     links:
       - url: "https://replicationresearch.org"
         format: "Journal"
@@ -107,7 +107,7 @@ cards:
         note: "Free to publish, free to read and free from commercial interests."
       - url: "reversals"
         format: "Archive"
-        note: "Follow research that examines what holds up."
+        note: "A concluded, crowdsourced list of replication outcomes."
       - url: "positive-changes-replication-crisis"
         format: "Collection"
         note: "See how research practice has changed in response."

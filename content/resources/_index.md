@@ -6,7 +6,7 @@ type = "resources"
 outputs = ["HTML"]  # No feed: the section gained no RSS when it became a list page.
 
 heading = "Teaching resources"
-lede = "Open up your teaching. Find, access and reuse materials from a curated collection of %s open scholarship resources."
+lede = "A curated collection of %s open scholarship resources for teaching."
 form_url = "https://docs.google.com/forms/d/e/1FAIpQLSfPceN5opEeauCBSvapoB-ADpH0IoT24XOLfQGaVEF0EJGFOA/viewform"
 
 # Clusters come from `forrt_clusters_new`, comma-separated. A new one not named here still gets

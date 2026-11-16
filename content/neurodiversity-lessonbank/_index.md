@@ -7,7 +7,7 @@ This lesson bank has been developed by FORRT (Framework for Open and Reproducibl
 
 ## Lessons
 
-A lesson title that is a link opens the lesson's own page. Lesson plans and texts open in a new window.
+Lesson plans and texts open in a new window.
 
 <ol class="lesson-grid">
 <li class="lesson-card"><p class="lesson-num">Lessons 1 and 2</p><h3><a href="./implicit_bias/">Implicit bias</a></h3><ul class="lesson-materials"><li><a href="./Lesson_Plans/implicit_bias_lesson_plan.pdf" target="_blank" rel="noopener">Lesson plan, part 1</a></li><li><a href="./Lesson_Plans/Implicit_Bias_part_2.pdf" target="_blank" rel="noopener">Lesson plan, part 2</a></li></ul></li>

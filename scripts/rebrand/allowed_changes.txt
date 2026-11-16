@@ -65,3 +65,7 @@ educators-corner/page/1/index.html  # Educators' Corner lists all its posts on o
 educators-corner/page/2/index.html  # The same
 educators-corner/page/3/index.html  # The same
 educators-corner/index.html  # Its description now comes from front matter, with "O&R" spelled out, as the introduction became a disclosure
+replication-hub/index.html     # Plain copy: the title drops "Transforming Research" and the description says what the Hub offers
+replication-hub/flora/index.html  # The same title, in its breadcrumb data
+replication-hub/large-scale-replication-projects/index.html  # The same
+replication-hub/submit/index.html  # The same
