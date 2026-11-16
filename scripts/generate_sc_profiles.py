@@ -282,6 +282,12 @@ def find_existing_author_dir(personal_name, authors_dir):
     sources disagrees with what's already on disk.
     """
     normalized_target = normalize_name(personal_name)
+    # Folders slugged without separators (e.g. "ruthvanderhallenphd") only match once
+    # spaces and punctuation are ignored on both sides.
+    compact_target = re.sub(r'[^a-z0-9]', '', normalized_target)
+    for existing_dir in authors_dir.iterdir():
+        if existing_dir.is_dir() and re.sub(r'[^a-z0-9]', '', existing_dir.name.lower()) == compact_target:
+            return existing_dir.name
     best_match = None
     # 0.9 is deliberately strict: legitimate spelling variants of the SAME person
     # (Dr prefix, missing middle initial, hyphen vs space in a surname) all score >=0.95
