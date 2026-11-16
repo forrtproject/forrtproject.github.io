@@ -46,7 +46,7 @@
       <div class="article-style">
         {{ $body }}
       </div>
-      {{ if and (eq .Type "post") (le .ReadingTime 1) (not .Params.image.preview_only) (not .Params.hide_page_header) }}{{ partial "doors/featured_image" . }}{{ end }}
+      {{ if and (eq .Type "post") (le .ReadingTime 1) (not .Params.image.preview_only) (not .Params.hide_page_header) (not (partial "doors/post_image_shared" .)) }}{{ partial "doors/featured_image" . }}{{ end }}
       <div class="article-foot">
         {{/* Only articles offer their link to copy; tools, policies and event pages do not. */}}
         {{ if and .IsPage (in (slice "post" "educators-corner" "pedagogies" "summaries" "neurodiversity-lessonbank" "nowherelab") .Section) }}<p class="share-link"><button class="copy-link" type="button" data-copy-link="{{ .Permalink }}">Copy article link</button> <span role="status"></span></p>{{ end }}

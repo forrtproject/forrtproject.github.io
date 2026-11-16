@@ -1,0 +1,7 @@
+{{/* True when this news post's featured picture is one several posts share (doors/post_image_uses). */}}
+{{ $shared := false }}
+{{ if eq .Type "post" }}{{ with (.Resources.ByType "image").GetMatch "*featured*" }}
+  {{ $uses := partialCached "doors/post_image_uses" site "post-image-uses" }}
+  {{ $shared = gt (index $uses (md5 .Content) | default 0) 1 }}
+{{ end }}{{ end }}
+{{ return $shared }}

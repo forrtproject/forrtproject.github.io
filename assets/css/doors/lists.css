@@ -44,6 +44,13 @@ ul.list-items>li[hidden]{display:none}
 .ac-chip:hover{border-color:var(--ink)}
 .ac-chip.active{background:var(--ink);border-color:var(--ink);color:#fff}
 .news-items{max-width:46em}
+/* Summaries keep to a reading measure even where a row has no picture (DESIGN.md §7). */
+.news-items .list-summary{max-width:36em}
+/* On a phone a news row leads with its title; the picture sits beside the text, not above it. */
+@media(max-width:760px){
+  .news-items .list-item-image{display:grid;flex-direction:initial;grid-template-columns:minmax(0,1fr) 88px;gap:12px}
+  .news-items .list-item-image img{width:88px;height:66px}
+}
 .tags-note{max-width:40em;font-size:17px}
 .tags-note a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
 .tag-cloud{display:flex;flex-wrap:wrap;gap:6px;margin:18px 0 0}
@@ -64,8 +71,7 @@ ul.list-items>li[hidden]{display:none}
 .nla-months{display:flex;flex-wrap:wrap;margin:0;padding:0;list-style:none;font-size:18px}
 .nla-months li{display:flex;align-items:center}
 .nla-sep{padding:0 10px;color:var(--soft)}
-.nla-months li:last-child .nla-sep{display:none}
-.nla-months a{display:inline-flex;align-items:center;min-height:44px;color:var(--link);text-decoration:underline;text-underline-offset:3px}
+.nla-months a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;min-width:44px;color:var(--link);text-decoration:underline;text-underline-offset:3px}
 .nla-new{margin-inline-start:4px;padding:1px 7px;background:var(--res-bg);border-radius:var(--r-small);color:var(--ink);font-size:15px;font-weight:700}
 @media(max-width:760px){
   .news-page,.tags-page,.nla-page{padding:20px 0 28px}
