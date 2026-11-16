@@ -950,13 +950,18 @@ def check_directory_widths(browser, base, failures):
         page.evaluate("document.fonts.ready.then(() => null)")
         bottom = page.evaluate("document.querySelector('.page-actions .btn-primary')?.getBoundingClientRect().bottom ?? Infinity")
         expect(bottom <= page.viewport_size["height"], f"{path}: the main action ends {bottom:.0f} px down, within the first view")
+    # A picture several posts share (the newsletters' stock photo) is left out; a post's own picture stays,
+    # after its link on a short post.
     page.goto(base + "post/2026-01-newsletter/", wait_until="load")
+    shared = page.evaluate("document.querySelectorAll('.reading .article-image').length")
+    expect(shared == 0, "a newsletter post leaves out the stock picture the newsletters share")
+    page.goto(base + "post/2026-05-chinese-glossary/", wait_until="load")
     order = page.evaluate("""() => {
-      const link = [...document.querySelectorAll('.article-style a')].find((a) => /newsletter/i.test(a.textContent));
+      const link = document.querySelector('.article-style a');
       const image = document.querySelector('.reading .article-image');
       return !!link && !!image && !!(link.compareDocumentPosition(image) & Node.DOCUMENT_POSITION_FOLLOWING);
     }""")
-    expect(order, "a short news post keeps its image, after its link")
+    expect(order, "a short news post keeps its own image, after its link")
     page.goto(base + "publications/", wait_until="load")
     chart_width, share = page.evaluate("""() => {
       const box = document.querySelector('.citation-container img').getBoundingClientRect();
