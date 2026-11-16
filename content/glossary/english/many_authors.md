@@ -34,5 +34,6 @@
     "language": "english",
     "aliases": [
         "/glossary/many_authors"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

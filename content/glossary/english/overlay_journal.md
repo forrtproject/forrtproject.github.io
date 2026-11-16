@@ -28,5 +28,6 @@
     "language": "english",
     "aliases": [
         "/glossary/overlay_journal"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

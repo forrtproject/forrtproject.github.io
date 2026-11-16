@@ -16,9 +16,6 @@ on:
   repository_dispatch:
     types: [data-update]
 
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
-
 # Note: PR staging deployments are handled by staging-aggregate.yaml
 # This workflow focuses on production deployments
 
@@ -59,7 +56,7 @@ jobs:
 
       - name: Try to download data artifact
         id: download-artifact
-        uses: dawidd6/action-download-artifact@07ab29fd4a977ae4d2b275087cf67563dfdf0295
+        uses: dawidd6/action-download-artifact@a92c7ae74cf1df8810783758581e485ac3aaa309 # v28
         continue-on-error: true
         with:
           workflow: data-processing.yml
@@ -67,7 +64,8 @@ jobs:
           path: .
           github_token: ${{ secrets.GITHUB_TOKEN }}
           search_artifacts: true
-          if_no_artifact_found: warn
+          branch: main  # only main's runs feed deploys; branch test runs must not (#960)
+          if_no_artifact_found: fail  # continue-on-error is set; failure triggers the fallback below
 
       # =======================
       # Data Processing (Fallback)
@@ -92,14 +90,14 @@ jobs:
             exit 0
           fi
 
-          # Determine branch ref to dispatch (must be a branch or tag)
-          REF="${GITHUB_REF#refs/heads/}"
-          if [ -z "$REF" ]; then
-            REF="main"
-          fi
+          # Always regenerate from main: deploys use main's data only (#960)
+          REF="main"
 
+          # The run this job dispatches is the first one newer than any that exists now
+          RUNS_URL="https://api.github.com/repos/${{ github.repository }}/actions/workflows/data-processing.yml/runs?event=workflow_dispatch&branch=$REF&per_page=100"
+          BEFORE=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" -H "Accept: application/vnd.github+json" "$RUNS_URL" | jq '[.workflow_runs[].id] | max // 0')
           echo "🚀 Dispatching data-processing workflow for ref: $REF because artifact was missing"
-          curl -s -X POST \
+          curl -sSf -X POST \
             -H "Authorization: Bearer $GITHUB_TOKEN" \
             -H "Accept: application/vnd.github+json" \
             "https://api.github.com/repos/${{ github.repository }}/actions/workflows/data-processing.yml/dispatches" \
@@ -118,9 +116,9 @@ jobs:
           sleep 10
 
           while [ $attempts -lt $max_attempts ]; do
-            # Get the latest run triggered by workflow_dispatch
+            # The first run created after the dispatch is ours
             runs_json=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" -H "Accept: application/vnd.github+json" \
-              "https://api.github.com/repos/${{ github.repository }}/actions/workflows/data-processing.yml/runs?event=workflow_dispatch&branch=$REF&per_page=1")
+              "$RUNS_URL" | jq --argjson before "$BEFORE" '{workflow_runs: [.workflow_runs[] | select(.id > $before)] | sort_by(.id)}')
             
             run_id=$(echo "$runs_json" | jq -r '.workflow_runs[0].id')
             status=$(echo "$runs_json" | jq -r '.workflow_runs[0].status')
@@ -154,7 +152,7 @@ jobs:
       - name: Download data artifact (Retry)
         id: download-artifact-retry
         if: steps.download-artifact.outcome == 'failure' && steps.data-processing.outputs.data_processing_triggered == 'true'
-        uses: dawidd6/action-download-artifact@07ab29fd4a977ae4d2b275087cf67563dfdf0295
+        uses: dawidd6/action-download-artifact@a92c7ae74cf1df8810783758581e485ac3aaa309 # v28
         with:
           workflow: data-processing.yml
           name: data-artifact
@@ -167,7 +165,7 @@ jobs:
       # =======================
       - name: Download announcements artifact
         id: download-announcements
-        uses: dawidd6/action-download-artifact@07ab29fd4a977ae4d2b275087cf67563dfdf0295
+        uses: dawidd6/action-download-artifact@a92c7ae74cf1df8810783758581e485ac3aaa309 # v28
         continue-on-error: true
         with:
           workflow: create_announcements.yml
@@ -175,6 +173,7 @@ jobs:
           path: .announcements
           github_token: ${{ secrets.GITHUB_TOKEN }}
           search_artifacts: true
+          branch: main  # only main's runs feed deploys; branch test runs must not (#960)
           if_no_artifact_found: warn
 
       - name: Apply announcements
@@ -200,7 +199,7 @@ jobs:
       # Hugo Build Environment
       # =======================
       - name: Setup Hugo
-        uses: peaceiris/actions-hugo@75d2e84710de30f6ff7268e08f310b60ef14033f
+        uses: peaceiris/actions-hugo@2752ce1d29631191ea3f27c23495fa06139a5b78 # v3.2.1
         with:
           hugo-version: ${{ env.HUGO_VERSION }}
           extended: ${{ env.HUGO_EXTENDED }}
@@ -240,7 +239,7 @@ jobs:
       # =======================
       # Built HTML Regression Checks
       # =======================
-      - name: Check built HTML (headings, conditional assets, image alt and dimensions)
+      - name: Check built HTML (headings, conditional assets, image alt and dimensions, meta descriptions)
         run: |
           python3 scripts/check_seo_html.py public
 
@@ -269,7 +268,7 @@ jobs:
       # Deploy website to production GitHub Pages
       #========================================
       - name: Deploy - GitHub Pages
-        uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b9c108549d475ec49e8ef4d45e
+        uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453 # v4.1.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ${{ github.repository }}/forrt-website

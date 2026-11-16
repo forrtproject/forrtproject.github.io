@@ -34,8 +34,10 @@
     ],
     "language": "german",
     "translated_by": [
-        "Bettina M.J. Kern **** Helena Hartmann",
+        "Bettina M.J. Kern",
+        "Helena Hartmann",
         "Susanne Vogel",
         "Joris Frese"
-    ]
+    ],
+    "lastmod": "2026-11-08"
 }

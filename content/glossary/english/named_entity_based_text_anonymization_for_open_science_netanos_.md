@@ -28,5 +28,6 @@
     "language": "english",
     "aliases": [
         "/glossary/named_entity_based_text_anonymization_for_open_science_netanos_"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

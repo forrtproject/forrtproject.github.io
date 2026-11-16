@@ -29,5 +29,6 @@
     "language": "english",
     "aliases": [
         "/glossary/abstract_bias"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

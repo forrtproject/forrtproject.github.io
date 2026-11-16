@@ -25,5 +25,6 @@
     "language": "english",
     "aliases": [
         "/glossary/society_for_open_reliable_and_transparent_ecology_and_evolutionary_biology_sortee_"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

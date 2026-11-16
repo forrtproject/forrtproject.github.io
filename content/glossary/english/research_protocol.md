@@ -27,5 +27,6 @@
     "language": "english",
     "aliases": [
         "/glossary/research_protocol"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

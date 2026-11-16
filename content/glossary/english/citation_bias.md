@@ -32,5 +32,6 @@
     "language": "english",
     "aliases": [
         "/glossary/citation_bias"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

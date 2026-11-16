@@ -327,7 +327,7 @@ h3 {
     }
 
     .mobile-image .toolkit-image {
-        max-width: 350px;
+        max-width: min(350px, 100%);
     }
 }
 

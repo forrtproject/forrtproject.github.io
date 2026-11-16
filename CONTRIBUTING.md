@@ -45,7 +45,7 @@ FORRT is maintained by volunteers, so response times may vary. We appreciate you
 
 You do not need to install Git or Hugo to fix text or a broken link. Find the relevant Markdown page under [`content/`](https://github.com/forrtproject/forrtproject.github.io/tree/main/content), open it on GitHub, and choose the pencil icon. GitHub will guide you through creating a fork, committing the edit, and opening a pull request against `main`.
 
-Preserve the YAML/TOML front matter at the top of the file and existing Hugo shortcodes. Describe the affected page and link to it in your PR. Generated paths include `content/curated_resources/` (except `_index.md`), `content/glossary/`, `content/contributors/tenzing.md`, `content/contributor-analysis/`, `content/publications/citation_chart.webp`, announcement bundles in `content/post/`, `content/replication-hub/flora/_index.md`, `static/data/fred_citation.txt`, and generated files in `data/`. The manually maintained `data/publications.yaml` is editable; follow the [publication instructions](content/publications/README). Generated content is refreshed during deployment. Use the source submission form/sheet linked from the public page or open an issue rather than editing the generated output. Local previews use committed copies and can differ from production. For layout or code changes, use the local setup below.
+Preserve the YAML/TOML front matter at the top of the file and existing Hugo shortcodes. Describe the affected page and link to it in your PR. Generated paths include `content/curated_resources/` (except `_index.md`), `content/glossary/`, `content/contributors/tenzing.md`, `content/contributor-analysis/`, `content/publications/citation_chart.webp`, announcement bundles in `content/post/`, `static/data/fred_citation.txt`, and generated files in `data/`. The manually maintained `data/publications.yaml` is editable; follow the [publication instructions](content/publications/README). Generated content is refreshed during deployment. Use the source submission form/sheet linked from the public page or open an issue rather than editing the generated output. Local previews use committed copies and can differ from production. For layout or code changes, use the local setup below.
 
 ## Local Development Setup
 
@@ -152,6 +152,8 @@ Contributions co-authored with AI agents are welcome, but only if you have **ful
 If a contribution amounts to running a single prompt, please consider posting the prompt or idea as an [issue](https://github.com/forrtproject/forrtproject.github.io/issues) instead. It is often faster for us to run it ourselves, with full knowledge of the project's coding conventions, than to review and integrate unverified, vibe-coded output.
 
 ### Content, Licensing & Fact-Checking
+
+**Generated content:** `data/clusters_v4.json` and `content/clusters/cluster-N/index.md` are generated, so never edit them by hand. Correct the [Clusters v4.1 Google Doc](https://docs.google.com/document/d/1_TRh7z3Bv_tdxGqjdWMm4kfQerTYvYw3e4wvQLNpTDQ/edit), then run `python3 scripts/parse_clusters_to_sheet.py --json-only` and `python3 scripts/generate_cluster_pages.py`.
 
 - Please **fact-check** anything you add and cite sources where relevant, so the site stays accurate and trustworthy.
 - The repository is distributed under [CC BY-NC-SA 4.0](LICENSE.md). Make sure you have the right to contribute the material and retain attribution and source licence notices.

@@ -25,12 +25,13 @@
     ],
     "language": "arabic",
     "translated_by": [
-        "Hiba Alomary."
+        "Hiba Alomary"
     ],
     "translation_reviewed_by": [
         "Ahlam Ahmed",
         "Ali H. Al-Hoorie",
         "Asma Alzahrani",
         "Mohammed Mohsen"
-    ]
+    ],
+    "lastmod": "2026-11-08"
 }

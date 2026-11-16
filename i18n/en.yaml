@@ -246,10 +246,16 @@
 # Cookie consent
 
 - id: cookie_message
-  translation: This website uses cookies to ensure you get the best experience on our website.
+  translation: We would like to use Google Analytics, which sets cookies and sends data to Google, to see how this site is used. It stays off unless you allow it, and you can change your choice at any time under Cookie settings at the foot of each page.
 
-- id: cookie_dismiss
-  translation: Got it!
+- id: cookie_allow
+  translation: Allow analytics
+
+- id: cookie_deny
+  translation: Decline
+
+- id: cookie_settings
+  translation: Cookie settings
 
 - id: cookie_learn
-  translation: Learn more
+  translation: Privacy policy

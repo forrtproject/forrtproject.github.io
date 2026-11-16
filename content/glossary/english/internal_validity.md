@@ -29,5 +29,6 @@
     "language": "english",
     "aliases": [
         "/glossary/internal_validity"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

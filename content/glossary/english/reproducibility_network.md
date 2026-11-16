@@ -26,5 +26,6 @@
     "language": "english",
     "aliases": [
         "/glossary/reproducibility_network"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

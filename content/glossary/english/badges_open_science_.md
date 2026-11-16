@@ -33,5 +33,6 @@
     "language": "english",
     "aliases": [
         "/glossary/badges_open_science_"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

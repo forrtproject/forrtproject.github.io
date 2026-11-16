@@ -1,6 +1,6 @@
 <!-- layouts/shortcodes/daily_visitors.html -->
 <canvas id="visitorsChart" width="400" height="200"></canvas>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="/vendor/assets/chart.js/4.6.1/chart.min.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   var dailyData = {{ hugo.Data.ga_data.daily_visitors | jsonify | safeJS }};

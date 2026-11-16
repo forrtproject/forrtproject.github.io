@@ -29,5 +29,6 @@
     "language": "english",
     "aliases": [
         "/glossary/post_hoc"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

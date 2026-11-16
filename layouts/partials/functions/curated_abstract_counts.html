@@ -1,0 +1,17 @@
+{{/* Counts how many curated resources share each abstract, so that
+     `functions/page_description.html` can tell a repeated abstract (lessons of
+     one curriculum, "Workshop goals …") from a page-specific one.
+
+     Call through `partialCached` with a fixed key: the map is the same for
+     every page. Abstracts are compared on their first 150 characters
+     (whitespace-normalised), because descriptions are shortened and two
+     abstracts that differ only further on still produce the same snippet.
+     Output: map of abstract key (`functions/abstract_key.html`) to its
+     number of resources. */}}
+{{- $counts := newScratch -}}
+{{- range where site.RegularPages "Section" "curated_resources" -}}
+  {{- with .Params.abstract -}}
+    {{- $counts.Add (partial "functions/abstract_key.html" .) 1 -}}
+  {{- end -}}
+{{- end -}}
+{{- return $counts.Values -}}

@@ -61,7 +61,7 @@ classtitle = ""
 
 <br>
 
-> *FORRT brings the open scholarship and reproducible science movements to teaching and mentoring, in the pursuit for the best conceivable practices in higher education. Our aspiration is to build, together with educators, a pathway towards the incremental adoption of open and reproducible science tenets in education. We believe the integration of these tenets should not be seen as an additional layer to existing proposals for reform but rather one that can unite them.*
+> *FORRT brings the open scholarship and reproducible science movements to teaching and mentoring, in the pursuit of the best conceivable practices in higher education. Our aspiration is to build, together with educators, a pathway towards the incremental adoption of open and reproducible science tenets in education. We believe the integration of these tenets should not be seen as an additional layer to existing proposals for reform but rather one that can unite them.*
 
 <br>
 

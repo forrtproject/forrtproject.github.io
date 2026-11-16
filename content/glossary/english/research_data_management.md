@@ -31,5 +31,6 @@
     "language": "english",
     "aliases": [
         "/glossary/research_data_management"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }

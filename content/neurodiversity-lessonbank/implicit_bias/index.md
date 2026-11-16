@@ -50,8 +50,7 @@ Look below at fragments of [this article](https://www.jstor.org/stable/25119452?
 TIP: click on the question marks on both sides of the text to see hints or click on the button above to see the activity in full screen.
 
 <div style="position: relative; padding-bottom: 70%; height: 0; overflow: hidden; margin: 20px 0;">
-<iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://msgrose-hodge.github.io/ND/h5p-standalone-1.3.x/demo/content-example-2.html" frameborder="0" allowfullscreen="allowfullscreen" allow="geolocation *; microphone *; camera *; midi *; encrypted-media *">
-</iframe>
+{{< click_to_load src="https://msgrose-hodge.github.io/ND/h5p-standalone-1.3.x/demo/content-example-2.html" provider="GitHub Pages" label="This activity" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" >}}
 </div>
 
 Click on the button below to see statements about the text. Are they true or false? Click on each statement to reveal the answer.
@@ -110,7 +109,10 @@ Are non-neurotypical brains presented as deficient in the article and the tweet?
 
 [Skim through the article and find a definition of neurodiversity](https://www.psychologicalscience.org/observer/gs-navigating-academia-as-neurodivergent-researchers)
 
-<blockquote class="twitter-tweet" data-conversation="none"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/Neurodiversity?src=hash&amp;ref_src=twsrc%5Etfw">#Neurodiversity</a> includes neurotypical &amp; neurodivergent people. A person is neurodivergent when their neurology diverges from the neurological majority. Examples of neurodivergence: dyslexia, dyspraxia, OCD/C, personality disorders/conditions, autism, ADHD/C, Tourette's and tics. <a href="https://t.co/swgenhJ4i1">pic.twitter.com/swgenhJ4i1</a></p>&mdash; FORRT @FORRT@mastodon.social (@FORRTproject) <a href="https://twitter.com/FORRTproject/status/1547570517137207296?ref_src=twsrc%5Etfw">July 14, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet" data-conversation="none"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/Neurodiversity?src=hash&amp;ref_src=twsrc%5Etfw">#Neurodiversity</a> includes neurotypical &amp; neurodivergent people. A person is neurodivergent when their neurology diverges from the neurological majority. Examples of neurodivergence: dyslexia, dyspraxia, OCD/C, personality disorders/conditions, autism, ADHD/C, Tourette's and tics. <a href="https://t.co/swgenhJ4i1">pic.twitter.com/swgenhJ4i1</a></p>&mdash; FORRT @FORRT@mastodon.social (@FORRTproject) <a href="https://twitter.com/FORRTproject/status/1547570517137207296?ref_src=twsrc%5Etfw">July 14, 2022</a></blockquote>
+
+<p style="text-align: center;"><img src="../images/neurodiversity-wheel.webp" alt="A multicoloured circle labelled Neurodiversity, with 13 smaller circles around it: Neurotypicality; Dyslexia, Dyscalculia and Dysgraphia; Developmental Co-ordination Disorder/Condition; Personality Disorders/Conditions; Developmental Language Disorder/Condition; Bipolar Disorder/Condition; Anxiety and Depression; Attention Deficit Hyperactivity Disorder/Condition; Stuttering and Cluttering; Obsessive Compulsive Disorder/Condition; Autism; Tourette's Syndrome and Tics; Panic Disorders/Conditions." width="1000" height="1000" style="width: 100%; max-width: 560px; height: auto;"></p>
+<p class="small" style="text-align: center;">Based on Figure 1 in Elsherif et al. (2022), <a href="https://doi.org/10.31222/osf.io/k7a9p">Bridging Neurodiversity and Open Scholarship</a>, <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</p>
 
 **Activity 4 Neurodiversity paradigm: spotting biased language**
 
@@ -135,7 +137,7 @@ Are non-neurotypical brains presented as deficient in the article and the tweet?
 Instructions: drag and drop the fields to match the language found in papers (orange pin) and the corresponding comment (blue pin). Once you find a pair, put the fields side by side. Once you complete the task, check by clicking the icon in the bottom right corner. For full screen view, click on the square in the top right corner.
 
 <div style="position: relative; padding-bottom: 60%; height: 0; overflow: hidden; margin: 20px 0;">
-<iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://learningapps.org/watch?v=pi3j02pkt23" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+{{< click_to_load src="https://learningapps.org/watch?v=pi3j02pkt23" provider="LearningApps" label="This activity" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" >}}
 </div>
 
 - What is the assumed norm that autistic individuals are often measured against? Is this explicitly stated?
@@ -146,7 +148,7 @@ Instructions: drag and drop the fields to match the language found in papers (or
 Post your reflection below.
 
 <div style="position: relative; padding-bottom: 70%; height: 0; overflow: hidden; margin: 20px 0;">
-<iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://padlet.com/magdalena_carlo/xfzxjebag7ln693r" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+{{< click_to_load src="https://padlet.com/magdalena_carlo/xfzxjebag7ln693r" provider="Padlet" label="This board" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" >}}
 </div>
 Posts are moderated so they may not appear immediately.
 

@@ -1,0 +1,10 @@
+{{ partial "click_to_load.html" (dict
+  "src" (.Get "src")
+  "link" (.Get "link" | default (.Get "src"))
+  "provider" (.Get "provider")
+  "label" (.Get "label" | default "This content")
+  "title" (.Get "title")
+  "width" (.Get "width")
+  "height" (.Get "height")
+  "style" (.Get "style")
+) }}

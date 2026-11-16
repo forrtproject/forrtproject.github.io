@@ -43,11 +43,13 @@
       {{ end }}
 
 
+      {{/* Each video_id needs a thumbnail in static/img/video-thumbnails/. */}}
       {{ with $page.Params.video_id }}
       <a class="yt-lightbox profile-video" data-fancybox href="https://www.youtube.com/watch?v={{ . }}" aria-label="Play video">
-        <img loading="lazy" src="https://i.ytimg.com/vi/{{ . }}/hqdefault.jpg" width="480" height="360" alt="Play introduction video">
+        <img loading="lazy" src="{{ printf "img/video-thumbnails/%s.webp" . | relURL }}" width="480" height="360" alt="Play introduction video">
         <span class="yt-play" aria-hidden="true"><i class="fas fa-play"></i></span>
       </a>
+      <p class="small">Playing this video loads it from YouTube (Google). See our <a href="{{ "privacy/" | relURL }}#embedded-content">privacy policy</a>.</p>
       {{ end }}
 
       <ul class="network-icon" aria-hidden="true">

@@ -1,0 +1,73 @@
+{{/* LearningResource JSON-LD for curated-resource pages (#863).
+
+     Built only from the page's front matter: fields that are absent, empty or
+     placeholders are left out rather than emitted as "" or []. Values pass
+     through as the sheet records them; cleaning them up belongs upstream.
+
+     FORRT only catalogues these resources, and the sheet does not say whether
+     a creator is a person or an organisation, so `provider`, `creator` and
+     `isBasedOn` are left out rather than asserted.
+
+     `dateModified` is the page's resolved Lastmod, the date the sitemap and
+     `article:modified_time` use. resource.py starts it from the sheet
+     `timestamp`, whose placeholder 01/01/2020 becomes 2020-01-01, so that date
+     is left out. */}}
+{{- if and (eq .Type "curated_resources") .IsPage -}}
+  {{- $p := .Params -}}
+
+  {{- $lr := dict
+      "@context" "https://schema.org"
+      "@type" "LearningResource"
+      "name" .Title
+      "url" .Permalink -}}
+
+  {{- with partial "functions/clean_list.html" $p.abstract -}}
+    {{- $lr = merge $lr (dict "abstract" (index . 0)) -}}
+  {{- end -}}
+
+  {{- with partial "functions/clean_list.html" $p.material_type -}}
+    {{- $lr = merge $lr (dict "learningResourceType" .) -}}
+  {{- end -}}
+
+  {{- with partial "functions/clean_list.html" $p.education_level -}}
+    {{- $lr = merge $lr (dict "educationalLevel" .) -}}
+  {{- end -}}
+
+  {{- $audience := slice -}}
+  {{- range partial "functions/clean_list.html" $p.primary_user -}}
+    {{- $audience = $audience | append (dict "@type" "Audience" "audienceType" .) -}}
+  {{- end -}}
+  {{- with $audience }}{{ $lr = merge $lr (dict "audience" .) }}{{ end -}}
+
+  {{- $about := slice -}}
+  {{- range partial "functions/clean_list.html" $p.subject_areas -}}
+    {{- $about = $about | append (dict "@type" "Thing" "name" .) -}}
+  {{- end -}}
+  {{- with $about }}{{ $lr = merge $lr (dict "about" .) }}{{ end -}}
+
+  {{/* `language` names the language of the linked resource; schema.org wants
+       BCP-47 tags. Names without a confident tag (e.g. "Greek (abstract
+       only)") are left out. */}}
+  {{- $tags := dict
+      "english" "en" "spanish" "es" "german" "de" "dutch" "nl" "french" "fr"
+      "portuguese" "pt" "japanese" "ja" "italian" "it"
+      "serbian" "sr" "vietnamese" "vi" "chinese" "zh" "greek" "el"
+      "turkish" "tr" "maori" "mi" "khmer" "km" "swedish" "sv" "polish" "pl"
+      "korean" "ko" "ukrainian" "uk" "uzbek" "uz" "slovak" "sk" -}}
+  {{- $tags = merge $tags (dict "portugese" "pt") -}}{{/* Sheet spelling. codespell:ignore portugese */}}
+  {{- $langs := slice -}}
+  {{- range partial "functions/clean_list.html" $p.language -}}
+    {{- with index $tags (lower .) -}}
+      {{- if not (in $langs .) }}{{ $langs = $langs | append . }}{{ end -}}
+    {{- end -}}
+  {{- end -}}
+  {{- with $langs -}}
+    {{- $lr = merge $lr (dict "inLanguage" (cond (eq (len .) 1) (index . 0) .)) -}}
+  {{- end -}}
+
+  {{- if and (not .Lastmod.IsZero) (ne (.Lastmod.Format "2006-01-02") "2020-01-01") -}}
+    {{- $lr = merge $lr (dict "dateModified" (.Lastmod.Format "2006-01-02T15:04:05Z07:00")) -}}
+  {{- end -}}
+
+  <script type="application/ld+json">{{ $lr | jsonify | safeJS }}</script>
+{{- end -}}

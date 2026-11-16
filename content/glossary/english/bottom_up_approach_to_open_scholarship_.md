@@ -34,5 +34,6 @@
     "language": "english",
     "aliases": [
         "/glossary/bottom_up_approach_to_open_scholarship_"
-    ]
+    ],
+    "lastmod": "2026-08-05"
 }
