@@ -56,8 +56,11 @@ main:lang(ar) .post-nav-next .term-en{text-align:left}
 .term-group h2{margin:28px 0 10px;font-size:28px;color:var(--edu)}
 .term-group ul{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:12px;margin:0;padding:0;list-style:none}
 .term-group li{margin:0;padding:14px 16px;background:var(--surface);border-radius:var(--r-large)}
-.term-group li a{color:var(--link);font:600 18px/1.3 var(--text);text-decoration:none}
-.term-group li a:hover{text-decoration:underline;text-underline-offset:3px}
+/* Term names read as links at rest (DESIGN.md §5). The English name under a translated term is an inline block,
+   which the underline does not reach, so only the term itself is underlined. */
+.term-group li a{color:var(--link);font:600 18px/1.3 var(--text);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+.term-group li a:hover{text-decoration-thickness:2px}
+.term-group li a .term-en{display:inline-block;width:100%}
 .term-group li .term-en{display:block;font-size:15px;font-weight:400;color:var(--soft)}
 .term-group li p{margin:6px 0 0;font-size:16px;line-height:1.45;color:var(--ink)}
 .glossary-about{margin:0 0 20px;padding:4px 20px;background:var(--surface);border-radius:var(--r-large)}
