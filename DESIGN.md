@@ -53,7 +53,7 @@ Every repeated device has to earn its place. In practice:
 
 ## 7. Type and reading
 
-- Newsreader for headings, Source Sans 3 for text. Body text is 18 px, and 17 px on phones (760 px and below) and in the summaries of list entries. Nothing is smaller than 15 px, except small print, which may be 14 px: footnotes, credits, legal lines, counts ("Showing 12 of 436") and metadata such as dates.
+- Newsreader for headings, Source Sans 3 for text. Body text is 18 px, and 17 px on phones (760 px and below) and in the summaries of list entries; Arabic text is set larger, at 21 px and 20 px on phones. Nothing is smaller than 15 px, except small print, which may be 14 px: footnotes, credits, legal lines, counts ("Showing 12 of 436") and metadata such as dates.
 - No italics anywhere outside reference lists, including menus, captions, labels and quotes. Emphasis is semi-bold.
 - Headings, buttons and labels are in sentence case.
 - Reading lines stay under 80 characters, measured on the rendered lines. The narrow reading column is for prose; tables, tools, programmes and directories may use the full width.
