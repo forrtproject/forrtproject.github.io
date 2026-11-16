@@ -29,6 +29,9 @@
 .pager a,.pager-current{display:inline-block;min-width:36px;padding:4px 10px;border-radius:999px;text-align:center;color:var(--link)}
 .pager a:hover{background:var(--surface);color:var(--ink)}
 .pager-current{background:var(--ink);color:#fff}
+/* Page numbers read as links at rest (DESIGN.md §5), and on phones every one is a 44 px target (§9). */
+.pager a{text-decoration:underline;text-underline-offset:3px}
+@media(max-width:760px){nav.pager a,nav.pager .pager-current{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;box-sizing:border-box}}
 .ac-filters{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 22px}
 .ac-chip{padding:5px 14px;background:#fff;border:1.5px solid var(--soft);border-radius:999px;color:var(--ink);font:600 15px/1.3 var(--text)}
 .ac-chip:hover{border-color:var(--ink)}

@@ -295,7 +295,9 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
    separates the section, and the rule pushed it away from its text, so neither rule is drawn. */
 .article-style :is(h2,h3,h4)+hr,.article-style>hr:last-child{display:none}
 .article-layout .post-nav-next{margin-inline-start:auto;text-align:end}
-.post-nav .meta-nav>span{display:inline-block}
+.post-nav .meta-nav>span{display:inline-block;white-space:pre}
+/* The linked title under Previous and Next reads as a link at rest (DESIGN.md §5). */
+.post-nav-item a p{text-decoration:underline;text-underline-offset:3px}
 [dir=rtl] .post-nav .meta-nav>span{transform:scaleX(-1)}
 /* Author profiles on a narrow screen: portrait, role and links under the name, in place of the side card. */
 .profile-head{display:none}
