@@ -15,6 +15,11 @@
 .article-layout .article-style .feature-rows h3{margin:0 0 4px;font-size:23px}
 .feature-rows p{margin:0 0 8px}
 .feature-rows-small .feature-icon{width:96px;font-size:40px;text-align:center;color:var(--link)}
+/* Teams are rows of text: name, sentence, one plain link (DESIGN.md §4, §5). */
+.article-layout .article-style ul.team-rows{padding:0}
+.article-layout .article-style .team-rows li{display:block}
+.team-rows .team-join{margin:0}
+.team-rows .team-join a{display:inline-flex;align-items:center;min-height:44px;color:var(--link);text-decoration:underline;text-underline-offset:3px}
 .feature-links{display:flex;flex-wrap:wrap;gap:8px}
 .article-layout .article-style .timeline{margin:18px 0;padding:0;list-style:none;border-inline-start:3px solid var(--line)}
 .article-layout .article-style .timeline li{position:relative;margin:0 0 22px;padding-inline-start:20px;font-size:18px;line-height:1.5}
@@ -39,7 +44,7 @@
 .filter-container{margin:0 0 24px}
 .filter-section-title{margin:0 0 6px;font-size:16px;font-weight:700}
 .pill-bar{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 16px}
-.filter-pill{padding:5px 12px;background:#fff;border:1.5px solid var(--soft);border-radius:999px;color:var(--ink);font:600 15px/1.3 var(--text)}
+.filter-pill{min-height:44px;padding:5px 14px;background:#fff;border:1.5px solid var(--soft);border-radius:999px;color:var(--ink);font:600 15px/1.3 var(--text)}
 .filter-pill:hover{border-color:var(--ink)}
 .filter-pill.active{background:var(--ink);border-color:var(--ink);color:#fff}
 #no-resources-warning h4{margin-top:12px}
@@ -73,6 +78,14 @@
 .partner-content{display:grid;grid-template-columns:96px minmax(0,1fr);gap:16px}
 .partner-logo{display:block;width:96px;height:auto;max-height:72px;object-fit:contain}
 .partner-description{font-size:16px}
+/* Partners are rows, not boxes: a line between them, a 17 px description (DESIGN.md §1, §4, §7). */
+.partner-card{padding:0 0 18px;background:none;border-radius:0;border-bottom:1px solid var(--line)}
+.article-layout .article-style .partner-card :is(p,li),.partner-description{font-size:17px}
+.partner-tags{margin:0 0 4px}
+.partner-links{display:flex;flex-wrap:wrap;gap:4px 18px;margin:6px 0 0}
+.partner-links a{display:inline-flex;align-items:center;min-height:44px;color:var(--link);text-decoration:underline;text-underline-offset:3px}
+/* On a phone the categories scroll sideways in one row, so the list starts sooner. */
+@media(max-width:760px){#pill-bar-cluster{flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px}#pill-bar-cluster .filter-pill{flex:0 0 auto}}
 .get-involved-card>:last-child{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
 
 /* Directories hold cards and lists rather than running text, so a wide screen takes two or more columns. */

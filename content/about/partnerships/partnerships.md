@@ -8,8 +8,8 @@ headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 20  # Order that this section will appear.
 
-title = "Institutional Partnerships"
-subtitle = "<br>*FORRT is indebted to many organizations which lent their support to our organization. We list below our formal partners, which not only are sources of inspiration but share our mission to help promote systemic change towards integration of open and reproducible science into higher education.*"
+title = "Institutional partnerships"
+subtitle = "FORRT is indebted to many organizations which lent their support to our organization. We list below our formal partners, which not only are sources of inspiration but share our mission to help promote systemic change towards integration of open and reproducible science into higher education."
 
 classtitle = "text-center"
 

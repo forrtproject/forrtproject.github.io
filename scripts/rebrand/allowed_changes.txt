@@ -69,3 +69,4 @@ replication-hub/index.html     # Plain copy: the title drops "Transforming Resea
 replication-hub/flora/index.html  # The same title, in its breadcrumb data
 replication-hub/large-scale-replication-projects/index.html  # The same
 replication-hub/submit/index.html  # The same
+about/principles/index.html    # Its description opens with the first heading, now in sentence case ("Principled teaching")

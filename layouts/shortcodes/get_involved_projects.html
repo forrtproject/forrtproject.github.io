@@ -6,12 +6,7 @@
 {{ $data := index hugo.Data "get_involved_projects" }}
 {{ $projects := $data.projects }}
 
-{{/* A search over the projects by name and description (site.js); hidden with JavaScript off. */}}
-<div class="list-filter project-filter" hidden>
-  <label for="project-filter-input">Search {{ len $projects }} projects</label>
-  <input type="search" id="project-filter-input" placeholder="e.g. data, teaching, replication" autocomplete="off">
-  <p class="list-filter-count" aria-live="polite"></p>
-</div>
+{{/* No search: a list this short is read whole (DESIGN.md §4). */}}
 <div class="get-involved-projects">
   {{ range $projects }}
     <div class="get-involved-card">
@@ -25,13 +20,14 @@
       <div>
         {{ .description | markdownify }}
       </div>
-      {{/* One filled action to reach a person; the project's own page and its Slack channel follow as plain links. */}}
+      {{/* One outlined action to reach a person, quieter than the three cards at the top of the page (DESIGN.md §3);
+           the project's own page and its Slack channel follow as plain links. */}}
       <div class="get-involved-actions">
         {{ if .contact_email }}
-          <a href="mailto:{{ .contact_email }}" class="btn btn-primary btn-sm is-main">Email {{ .contact_name | default "the team" }}</a>
+          <a href="mailto:{{ .contact_email }}" class="btn btn-sm is-main">Email {{ .contact_name | default "the team" }}</a>
         {{ else if .contact_name }}
           {{/* No email: the person is reached on FORRT's Slack, so the button joins it. */}}
-          <a href="https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ" target="_blank" rel="noopener" class="btn btn-primary btn-sm is-main">Ask {{ .contact_name }} on Slack</a>
+          <a href="https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ" target="_blank" rel="noopener" class="btn btn-sm is-main">Ask {{ .contact_name }} on Slack</a>
         {{ end }}
         {{ if .slack }}<a href="{{ .slack }}" target="_blank" rel="noopener" class="get-involved-link">Slack channel</a>{{ end }}
         {{ if .link }}<a href="{{ .link }}" class="get-involved-link">Visit project</a>{{ end }}

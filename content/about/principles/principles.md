@@ -56,7 +56,7 @@ classtitle = "text-center"
 
 <br>
 
-## Principled Teaching 
+## Principled teaching 
 
 We believe it is of utmost importance to communicate the facts of science relative to the process by which it was acquired. Scientific claims should be taken in light of epistemic uncertainty – i.e., the intrinsic incertitude about the validity of truth claims (including scientific), to avoid teaching students a false sense of certainty about ‘the facts’ of science. This idea is enshrined at the core of the open science movement, the credibility revolution, open access, and better measurement practices.
 
@@ -65,7 +65,7 @@ We believe it is of utmost importance to communicate the facts of science relati
 * it exposes students to a more honest educational process, especially with respect to epistemic uncertainty and its consequences to the facts of science; 
 * it bequeaths first-hand practical experience in probing the production of knowledge which in turn trains students to be good consumers of science
 
-{{< expand "Expand to know more" >}}
+{{< expand "More on the responsibilities of principled teaching" >}}
 
 > An increasing number of scholars have incorporated reproducible, transparent, and open principles to their research pipeline. However, the associated social and ethical responsibilities towards the teaching of these principles is yet to be realized. It is still common practice to teach subject matters, at undergraduate and graduate levels, for quantitative and qualitative science, without resolutely emphasizing that scientific claims should be taken in light of epistemic uncertainty – i.e., the intrinsic incertitude about the validity of truth claims (including scientific). This has the unfortunate consequence of teaching students a false sense of certainty about ‘the facts’ of science, which can be thought of as misleading, if not unethical.
 
@@ -73,7 +73,7 @@ We believe it is of utmost importance to communicate the facts of science relati
 
 <br>
 
-## Principled Mentoring
+## Principled mentoring
  
 Central to the academic ethos, the relationship between mentor and mentee is one of scientific genesis, incremental contributions, and personal and professional development. This academic experience is optimized when students feel they can contribute to the supervisor’s research and the product of this contribution is valued. One way to achieve this is to expose students to  the intricacies and procedures of science making, including the flaws and merits of any given research approach. Open and reproducible tenets serve an important role in mentorship pedagogy.
 
