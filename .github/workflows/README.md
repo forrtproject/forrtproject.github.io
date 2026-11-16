@@ -77,6 +77,7 @@ Processes:
 - Curated resources
 - Google Analytics data
 - Contributor analysis (monthly)
+- Open Research Games Portal: `scripts/build_games_portal.py` reads the published games sheet and writes `data/open_research_games.json` for `/open-research-games-portal/`
 - Newsletter archive: new EmailOctopus issues are copied, with their images, to `static/newsletters/` and listed in `data/newsletters.json` (needs the `EMAILOCTOPUS_API_KEY` secret; earlier copies are restored from `build-resources`)
 
 **Failure Reporting:**

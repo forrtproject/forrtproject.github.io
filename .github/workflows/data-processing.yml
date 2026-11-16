@@ -251,6 +251,15 @@ jobs:
         run: python3 scripts/build_get_involved.py
 
       #========================================
+      # Build the Open Research Games Portal list from the published games sheet
+      # Leaves the committed data/open_research_games.json as it is if the sheet is unreadable
+      #========================================
+      - name: Build Open Research Games Portal data
+        id: games-portal
+        continue-on-error: true
+        run: python3 scripts/build_games_portal.py
+
+      #========================================
       # Archive newsletter issues sent through EmailOctopus
       # Restores the earlier archive from build-resources first, so issues and
       # images already copied survive API outages; the script only adds new
@@ -860,6 +869,13 @@ jobs:
             echo "❌ Get Involved data build failed"
             FAILURES_FOUND=true
             python3 scripts/create_workflow_failure_issue.py "Get Involved Data Build" "The Get Involved projects list build step failed. Check that the published Google Sheet (FORRT — Get Involved Projects) is still shared with anyone-with-link." "$WORKFLOW_RUN_URL" || echo "Failed to create issue for Get Involved"
+          fi
+
+          # Open Research Games Portal data
+          if [ "${{ steps.games-portal.outcome }}" == "failure" ]; then
+            echo "❌ Games Portal data build failed"
+            FAILURES_FOUND=true
+            python3 scripts/create_workflow_failure_issue.py "Games Portal Data Build" "The Open Research Games Portal data build (scripts/build_games_portal.py) failed. Check that the games sheet is still published to the web as CSV and keeps its column names." "$WORKFLOW_RUN_URL" || echo "Failed to create issue for Games Portal"
           fi
 
           # Google Scholar
