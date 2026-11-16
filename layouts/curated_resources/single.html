@@ -72,7 +72,27 @@
       </dl>
     </section>
     <div class="article-foot">
-      {{ if site.Params.section_pager }}<div class="article-widget">{{ partial "section_pager" . }}</div>{{ end }}
+      {{/* Previous and Next stay within the resource's first cluster, A to Z as in the directory. */}}
+      {{ with index (partialCached "doors/resource_neighbours" (site.GetPage "/resources") "resources") .RelPermalink }}{{ if or .prev .next }}
+      {{ $cluster := .cluster }}
+      <nav class="article-widget" aria-labelledby="resource-pager-label">
+        <p class="post-nav-scope" id="resource-pager-label">{{ with $cluster }}More from the cluster {{ with index $clusterPages (lower $cluster) }}<a href="{{ . }}">{{ $cluster }}</a>{{ else }}{{ $cluster }}{{ end }}{{ else }}More resources{{ end }}, A to Z</p>
+        <div class="post-nav">
+          {{ with .prev }}
+          <div class="post-nav-item post-nav-prev">
+            <a href="{{ .RelPermalink }}" rel="prev"><div class="meta-nav"><span aria-hidden="true">← </span>{{ i18n "previous" }}</div>
+            <p>{{ .Title }}</p></a>
+          </div>
+          {{ end }}
+          {{ with .next }}
+          <div class="post-nav-item post-nav-next">
+            <a href="{{ .RelPermalink }}" rel="next"><div class="meta-nav">{{ i18n "next" }}<span aria-hidden="true"> →</span></div>
+            <p>{{ .Title }}</p></a>
+          </div>
+          {{ end }}
+        </div>
+      </nav>
+      {{ end }}{{ end }}
       {{ partial "page_related" . }}
     </div>
   </div>

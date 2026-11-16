@@ -211,6 +211,8 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
   .sc-page .sc-grid .sc-card{width:190px}
   .sc-page .sc-grid .sc-title-card{flex-wrap:wrap}
 }
+.article-layout .post-nav-scope{font-size:16px;line-height:1.4;margin:0 0 12px}
+.article-layout .post-nav-scope a{text-decoration:underline}
 .article-layout .post-nav{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;margin:0 0 18px}
 .article-layout .post-nav-item{max-width:calc(50% - 12px);min-width:0}
 .article-layout .post-nav-item:only-child{max-width:none}
