@@ -63,7 +63,8 @@ ul.list-items>li[hidden]{display:none}
 .nla-year h3{margin:0 0 4px;font-size:24px}
 .nla-months{display:flex;flex-wrap:wrap;margin:0;padding:0;list-style:none;font-size:18px}
 .nla-months li{display:flex;align-items:center}
-.nla-months li:not(:last-child)::after{content:"·";padding:0 10px;color:var(--soft)}
+.nla-sep{padding:0 10px;color:var(--soft)}
+.nla-months li:last-child .nla-sep{display:none}
 .nla-months a{display:inline-flex;align-items:center;min-height:44px;color:var(--link);text-decoration:underline;text-underline-offset:3px}
 .nla-new{margin-inline-start:4px;padding:1px 7px;background:var(--res-bg);border-radius:var(--r-small);color:var(--ink);font-size:15px;font-weight:700}
 @media(max-width:760px){

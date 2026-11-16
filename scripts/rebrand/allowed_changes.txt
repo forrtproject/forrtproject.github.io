@@ -70,5 +70,15 @@ replication-hub/flora/index.html  # The same title, in its breadcrumb data
 replication-hub/large-scale-replication-projects/index.html  # The same
 replication-hub/submit/index.html  # The same
 post/index.html                # News & announcements: its title in sentence case (DESIGN.md §7)
-post/*/index.html              # The same name in every post's breadcrumb data
+post/2026-01-newsletter/index.html  # The same name in this post's breadcrumb data
+post/2026-02-newsletter/index.html  # The same name in this post's breadcrumb data
+post/2026-03-newsletter/index.html  # The same name in this post's breadcrumb data
+post/2026-04-newsletter/index.html  # The same name in this post's breadcrumb data
+post/2026-05-chinese-glossary/index.html  # The same name in this post's breadcrumb data
+post/2026-05-get-involved-page/index.html  # The same name in this post's breadcrumb data
+post/2026-05-just-os-chatbot/index.html  # The same name in this post's breadcrumb data
+post/2026-05-newsletter/index.html  # The same name in this post's breadcrumb data
+post/2026-05-nowhere-lab/index.html  # The same name in this post's breadcrumb data
+post/2026-06-ai-metascience-call/index.html  # The same name in this post's breadcrumb data
+post/2026-06-peer-community-in-partner/index.html  # The same name in this post's breadcrumb data
 newsletters/index.html         # Newsletter archive: its title in sentence case

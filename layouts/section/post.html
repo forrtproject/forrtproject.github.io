@@ -29,6 +29,7 @@
     {{ range $posts }}
       {{ $cat := "" }}{{ with .Params.categories }}{{ $cat = index . 0 }}{{ end }}
       {{ $img := (.Resources.ByType "image").GetMatch "*featured*" }}
+      {{ $alt := .Params.image.alt_text }}
       {{ if and $img (gt (index $uses (md5 $img.Content)) 1) }}{{ $img = false }}{{ end }}
       <li data-cat="{{ lower $cat }}">
         <article class="list-item{{ if $img }} list-item-image{{ end }}">
@@ -37,7 +38,7 @@
             <p class="list-meta">{{ with $cat }}{{ . }} · {{ end }}<time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time></p>
             <p class="list-summary">{{ .Summary | plainify | emojify | truncate 220 }}</p>
           </div>
-          {{ with $img }}{{ $thumb := .Fill "280x210 Center webp q75" }}<img src="{{ $thumb.RelPermalink }}" width="140" height="105" alt="{{ $.Params.image.alt_text }}"{{ if not $eager }} loading="lazy"{{ end }}>{{ $eager = false }}{{ end }}
+          {{ with $img }}{{ $thumb := .Fill "280x210 Center webp q75" }}<img src="{{ $thumb.RelPermalink }}" width="140" height="105" alt="{{ $alt }}"{{ if not $eager }} loading="lazy"{{ end }}>{{ $eager = false }}{{ end }}
         </article>
       </li>
     {{ end }}

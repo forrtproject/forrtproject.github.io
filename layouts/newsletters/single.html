@@ -63,7 +63,7 @@
       <h3 id="nla-{{ $y.year }}">{{ $y.year }}</h3>
       <ul class="nla-months">
         {{ range $y.issues }}
-        <li><a href="{{ .url }}"{{ if not .local }} target="_blank" rel="noopener"{{ end }}>{{ .month }}<span class="sr-only"> {{ $y.year }}</span></a>{{ if .new }}<span class="nla-new">New</span>{{ end }}</li>
+        <li><a href="{{ .url }}"{{ if not .local }} target="_blank" rel="noopener"{{ end }}>{{ .month }}<span class="sr-only"> {{ $y.year }}{{ if not .local }} (opens in a new tab){{ end }}</span></a>{{ if .new }}<span class="nla-new">New</span>{{ end }}<span class="nla-sep" aria-hidden="true">·</span></li>
         {{ end }}
       </ul>
     </section>
