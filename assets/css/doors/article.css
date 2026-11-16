@@ -222,8 +222,14 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .sc-page .sc-card .sc-card-photo{position:relative!important;inset:auto!important;aspect-ratio:4/5;border-radius:var(--r-small)}
 .sc-page .sc-card-overlay,.sc-page .sc-card::after{display:none}
 .sc-page .sc-card .sc-card-content{position:static;height:auto;padding:8px 0 0;gap:2px}
-.sc-page .sc-card .sc-card-name{display:block;overflow:visible;color:var(--ink);font:600 17px/1.3 var(--text);text-decoration:underline;text-decoration-color:transparent;text-underline-offset:3px}
-.sc-page .sc-card:is(:hover,:focus-visible) .sc-card-name{color:var(--ink);text-decoration-color:currentColor}
+/* The name is the card's link, so it looks like one at rest (DESIGN.md §5). */
+.sc-page .sc-card .sc-card-name{display:block;overflow:visible;color:var(--link);font:600 17px/1.3 var(--text);text-decoration:underline;text-underline-offset:3px}
+.sc-page .sc-card:is(:hover,:focus-visible) .sc-card-name{color:var(--ink)}
+/* The four sections head the page's outline, at the page's h2 size in the text colour; steering.js gives them
+   heading semantics. The generated teal, which is no FORRT colour, is not used. */
+.sc-page .sc-section-title{font:var(--display-weight,500) 30px/1.2 var(--display);color:var(--ink);text-transform:none;letter-spacing:0}
+.sc-page .sc-section-title svg{display:none}
+.sc-page .sc-modal-role{color:var(--soft)}
 .sc-page .sc-card .sc-card-role{display:block;overflow:visible;color:var(--soft);font:400 15px/1.3 var(--text);letter-spacing:0;text-transform:none}
 /* 44 px targets (DESIGN.md §9). */
 .sc-page .sc-nav a{display:inline-flex;align-items:center;min-height:44px;padding:0}

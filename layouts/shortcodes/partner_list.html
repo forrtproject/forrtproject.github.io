@@ -49,7 +49,7 @@
                     </div>
                     {{ end }}
                     <h3 class="partner-title">{{ if .url }}<a href="{{ .url }}" target="_blank" rel="noopener">{{ .name }}</a>{{ else }}{{ .name }}{{ end }}</h3>
-                    <div class="partner-description">
+                    <div class="partner-description clamp-desc" data-clamp-name="{{ .name }}">
                         {{ .description | markdownify }}
                     </div>
                     {{ if or .additional_link .project_link }}

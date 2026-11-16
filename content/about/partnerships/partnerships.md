@@ -54,48 +54,48 @@ classtitle = "text-center"
 
 {{< partner_filters >}}
 
-{{< partner_list cluster="Global Intergovernmental Organizations" title="Global Intergovernmental Organizations" description="Major international bodies partnering with FORRT to advance open science globally." >}}
+{{< partner_list cluster="Global Intergovernmental Organizations" title="Global intergovernmental organizations" description="Major international bodies partnering with FORRT to advance open science globally." >}}
 
 <br>
 
-{{< partner_list cluster="Open Science Infrastructure" title="Open Science Infrastructure" description="Organizations providing tools, platforms, and infrastructure to support open science practices." >}}
+{{< partner_list cluster="Open Science Infrastructure" title="Open science infrastructure" description="Organizations providing tools, platforms, and infrastructure to support open science practices." >}}
 
 <br>
 
-{{< partner_list cluster="Reproducibility Networks" title="Reproducibility Networks" description="National and regional networks dedicated to improving research reproducibility and transparency." >}}
+{{< partner_list cluster="Reproducibility Networks" title="Reproducibility networks" description="National and regional networks dedicated to improving research reproducibility and transparency." >}}
 
 <br>
 
-{{< partner_list cluster="Open Research Communities" title="Open Research Communities" description="Networks and groups bringing researchers together to improve scientific practices." >}}
+{{< partner_list cluster="Open Research Communities" title="Open research communities" description="Networks and groups bringing researchers together to improve scientific practices." >}}
 
 <br>
 
-{{< partner_list cluster="Education & Training" title="Education & Training" description="Organizations focused on teaching open science principles and building research skills." >}}
+{{< partner_list cluster="Education & Training" title="Education and training" description="Organizations focused on teaching open science principles and building research skills." >}}
 
 <br>
 
-{{< partner_list cluster="Open Research & Equity" title="Open Research & Equity" description="Organizations supporting early career researchers and promoting equity, diversity, and inclusion in science." >}}
+{{< partner_list cluster="Open Research & Equity" title="Open research and equity" description="Organizations supporting early career researchers and promoting equity, diversity, and inclusion in science." >}}
 
 <br>
 
-{{< partner_list cluster="Higher Education Partners" title="Higher Education Partners" description="Universities and institutions with formal partnership agreements with FORRT." >}}
+{{< partner_list cluster="Higher Education Partners" title="Higher education partners" description="Universities and institutions with formal partnership agreements with FORRT." >}}
 
 <br>
 
 ---
 
-## **Cooperation & Collaborations**
+## Cooperation and collaborations
 
 <br>
 
-![V22](/img/Partnerships_v3.webp)
+![FORRT’s logo beside those of the Center for Open Science and its Open Science Knowledge Base, the UK Reproducibility Network, Meta-Psychology and a green arrow logo](/img/Partnerships_v3.webp)
 
 <br>
 
-__*Meta-psychology special issue*__
+### Meta-psychology special issue
 
-&nbsp;&nbsp;&nbsp;&nbsp; We have partnered with the journal [Meta-Psychology](https://open.lnu.se/index.php/metapsychology) and the [Psychological Science Accelerator](https://psysciacc.org/) to work on a recurring special issue. The call will request teaching materials, including pedagogical considerations, for the Educational NEXUS. This also sets the stage for our vision of academia in which the creation and maintenance of teaching resources are more valued - changing the publication's structure to include these excellent and open resources.
+We have partnered with the journal [Meta-Psychology](https://open.lnu.se/index.php/metapsychology) and the [Psychological Science Accelerator](https://psysciacc.org/) to work on a recurring special issue. The call will request teaching materials, including pedagogical considerations, for the Educational NEXUS. This also sets the stage for our vision of academia in which the creation and maintenance of teaching resources are more valued - changing the publication's structure to include these excellent and open resources.
 
-__*Center for Open Science - OSKB & COSGN*__
+### Center for Open Science: OSKB and COSGN
 
-&nbsp;&nbsp;&nbsp;&nbsp; We are partnering up with [OSKB](https://cos.io/oskb) ([Open Science Knowledge Base](https://cos.io/oskb)) to coordinate the alignment of our meta-data on educational materials so that we share our resources and community. To that end, FORRT will have a community in OSKB's home ([OER Commons](https://www.oercommons.org/)) and enrich data and reduce redundant work. FORRT also joined COS network-of-networks or [Community of Open Scholarship Grassroots Networks](https://groups.google.com/a/cos.io/forum/#!topic/network-of-open-science-grassroots-networks/1OWtx9VDSwo) ([COSGN](https://groups.google.com/a/cos.io/forum/#!topic/network-of-open-science-grassroots-networks/1OWtx9VDSwo)). These partnerships aim to help build a community of existing educational initiatives, strengthen our missions, and streamline the advancement of open and reproducible educational practices.
+We are partnering up with [OSKB](https://cos.io/oskb) ([Open Science Knowledge Base](https://cos.io/oskb)) to coordinate the alignment of our meta-data on educational materials so that we share our resources and community. To that end, FORRT will have a community in OSKB's home ([OER Commons](https://www.oercommons.org/)) and enrich data and reduce redundant work. FORRT also joined COS network-of-networks or [Community of Open Scholarship Grassroots Networks](https://groups.google.com/a/cos.io/forum/#!topic/network-of-open-science-grassroots-networks/1OWtx9VDSwo) ([COSGN](https://groups.google.com/a/cos.io/forum/#!topic/network-of-open-science-grassroots-networks/1OWtx9VDSwo)). These partnerships aim to help build a community of existing educational initiatives, strengthen our missions, and streamline the advancement of open and reproducible educational practices.

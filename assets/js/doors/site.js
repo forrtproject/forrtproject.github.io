@@ -713,12 +713,14 @@ if (listFilter) {
     input.focus();
   });
   // Each entry's text is read once, so controls added to the entries later (their "more" buttons) are not searched.
-  const texts = new Map(sections.flatMap(({items}) => items.map((item) => [item, item.textContent])));
+  // Accents are set aside on both sides, so "Roseler" finds Röseler and "Lazic" finds Lazić.
+  const plain = (text) => text.normalize('NFD').replace(/\p{M}/gu, '');
+  const texts = new Map(sections.flatMap(({items}) => items.map((item) => [item, plain(item.textContent)])));
   const tokens = new Map([...texts.keys()].map((item) => [item, new Set((item.dataset.facets || '').split(' '))]));
   const total = texts.size;
   let words = /./;
   input.addEventListener('input', () => {
-    const query = input.value.trim().toLowerCase();
+    const query = plain(input.value.trim().toLowerCase());
     words = new RegExp(`(^|[^\\p{L}\\p{N}])${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`, 'iu');
     const chosen = groups.map((group) => [...group.querySelectorAll('[aria-pressed=true]')].map((button) => button.dataset.value))
       .filter((values) => values.length);
@@ -735,7 +737,7 @@ if (listFilter) {
       });
       if (heading) heading.hidden = Boolean(query || status || chosen.length) && !any;
     });
-    count.textContent = `Showing ${shown} of ${total} ${noun}`;
+    count.textContent = query && !shown ? `No ${noun} match “${input.value.trim()}”.` : `Showing ${shown} of ${total} ${noun}`;
     if (empty) empty.hidden = shown > 0;
     if (reset) reset.hidden = !query && !chosen.length;
   });
@@ -844,4 +846,24 @@ document.querySelectorAll('.toc-phone').forEach((box) => {
     items[5].querySelector('a')?.focus();
   });
   box.querySelector('.article-toc').append(more);
+});
+
+// Long descriptions in the About directories (Teams, Partnerships, Get involved projects) show their first lines,
+// with a "more" button for the rest (DESIGN.md §4). Without JavaScript the full text shows.
+document.querySelectorAll('.clamp-desc').forEach((text) => {
+  text.classList.add('is-clamped');
+  if (text.scrollHeight <= text.clientHeight + 2) { text.classList.remove('is-clamped'); return; }
+  const more = document.createElement('button');
+  more.type = 'button';
+  more.className = 'clamp-more';
+  more.setAttribute('aria-expanded', 'false');
+  const about = text.dataset.clampName ? ` about ${text.dataset.clampName}` : '';
+  const label = (word) => { more.textContent = word; more.setAttribute('aria-label', word + about); };
+  label('more');
+  more.addEventListener('click', () => {
+    const open = text.classList.toggle('is-clamped') === false;
+    more.setAttribute('aria-expanded', String(open));
+    label(open ? 'less' : 'more');
+  });
+  text.after(more);
 });

@@ -25,6 +25,12 @@ document.querySelectorAll('#strategic .sc-title-card').forEach((card) => {
   if (area) card.dataset.area = area[1];
 });
 
+// Each section's title heads its part of the page (h2), so the outline is sections, teams, people.
+document.querySelectorAll('.sc-section-title').forEach((title) => {
+  title.setAttribute('role', 'heading');
+  title.setAttribute('aria-level', '2');
+});
+
 let trigger = null;
 const backdrops = [...document.querySelectorAll('.sc-modal-backdrop')];
 

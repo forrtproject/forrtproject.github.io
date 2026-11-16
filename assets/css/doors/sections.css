@@ -196,3 +196,25 @@
 .article-layout-wide .article-style .action-cards{max-width:960px}
 .get-involved-card[hidden]{display:none}
 .get-involved-card .get-involved-link{display:inline-flex;align-items:center;min-height:40px;padding:0 6px;color:var(--link);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+
+/* About directories, round 2. Long descriptions: two lines, three on a phone, then "more" (site.js, DESIGN.md §4). */
+.clamp-desc.is-clamped{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2;overflow:hidden}
+.clamp-desc.is-clamped>:last-child{margin-bottom:0}
+.clamp-more{display:inline-flex;align-items:center;min-height:44px;padding:0;border:0;background:none;color:var(--link);font:600 16px/1.3 var(--text);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+@media(max-width:760px){.clamp-desc.is-clamped{-webkit-line-clamp:3;line-clamp:3}}
+.team-rows-heading{margin-top:28px}
+/* Partners: the linked name is a 44 px target; on a phone the logo is small, so the text has the width,
+   and the category row fades at its edge to show it scrolls (DESIGN.md §9, §4). */
+.partner-title a{display:inline-flex;align-items:center;min-height:44px}
+.partner-filters[hidden]{display:none}
+@media(max-width:760px){
+  .partner-content{grid-template-columns:48px minmax(0,1fr)}
+  .partner-logo{width:48px}
+  #pill-bar-cluster{-webkit-mask-image:linear-gradient(to right,#000 85%,transparent);mask-image:linear-gradient(to right,#000 85%,transparent)}
+}
+/* Get involved projects: rows, not boxes, with 17 px text and 44 px actions (DESIGN.md §1, §4, §7, §9). */
+.get-involved-card{padding:0 0 18px;background:none;border-radius:0;border-bottom:1px solid var(--line)}
+.article-layout .article-style .get-involved-card :is(p,li),.get-involved-card .clamp-desc{font-size:17px}
+.get-involved-card .btn,.get-involved-card .get-involved-link{min-height:44px}
+.get-involved-card .get-involved-actions{margin-top:0;padding-top:6px}
+.click-to-load-link{display:inline-flex;align-items:center;min-height:44px}
