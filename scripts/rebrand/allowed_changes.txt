@@ -62,3 +62,4 @@ submit/index.html               # #1133: a new page listing the ways to submit w
 educators-corner/page/1/index.html  # Educators' Corner lists all its posts on one page; the 404 page sends old page links to it
 educators-corner/page/2/index.html  # The same
 educators-corner/page/3/index.html  # The same
+educators-corner/index.html  # Its description now comes from front matter, with "O&R" spelled out, as the introduction became a disclosure
