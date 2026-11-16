@@ -1,7 +1,8 @@
 {{/* "Just want to play?": a door-shaped panel beside the heading (layouts/games_portal/single.html) with three quick
      games, in the slot where the resources directory has its plate. Input: the games. The pool is every game that is
      online, can be played solo, links to a page (not a video, and once per address) and gives a playtime of 15
-     minutes or less; the quickest three show. With JavaScript, "Deal me three more" shows three others from the pool. */}}
+     minutes or less; the quickest three show. With JavaScript, "Deal me three more" shows three others from the pool, and "Surprise me" jumps to a
+     random game in the list. */}}
 {{ $pool := slice }}
 {{ $seen := dict }}
 {{ range . }}
@@ -19,9 +20,13 @@
   <ul class="games-play-list">
     {{ range $i, $g := sort $pool "most" }}<li{{ if ge $i 3 }} hidden{{ end }}><a href="{{ $g.url }}" rel="noopener">{{ $g.title }}</a> <span class="games-play-time">{{ $g.time }}</span></li>{{ end }}
   </ul>
-  {{ if gt (len $pool) 3 }}
-  <button class="text-button games-play-deal" type="button" hidden>Deal me three more</button>
-  <script>(()=>{const box=document.currentScript.parentElement,items=[...box.querySelectorAll('.games-play-list li')],deal=box.querySelector('.games-play-deal');let shown=items.slice(0,3);deal.hidden=false;deal.addEventListener('click',()=>{const rest=items.filter(i=>!shown.includes(i)),next=[];while(next.length<3&&rest.length)next.push(rest.splice(Math.floor(Math.random()*rest.length),1)[0]);while(next.length<3){const keep=shown[next.length];if(!next.includes(keep))next.push(keep)}items.forEach(i=>{i.hidden=!next.includes(i)});shown=next})})()</script>
-  {{ end }}
+  {{/* Both need JavaScript, so they start hidden. Surprise me jumps to a random game among those the filters show. */}}
+  <p class="games-play-actions">
+    {{ if gt (len $pool) 3 }}<button class="text-button games-play-deal" type="button" hidden>Deal me three more</button>{{ end }}
+    <a class="games-play-surprise" href="#games-list" hidden>Surprise me</a>
+  </p>
+  <script>(()=>{const box=document.currentScript.parentElement,items=[...box.querySelectorAll('.games-play-list li')],deal=box.querySelector('.games-play-deal'),surprise=box.querySelector('.games-play-surprise');let shown=items.slice(0,3);
+if(deal){deal.hidden=false;deal.addEventListener('click',()=>{const rest=items.filter(i=>!shown.includes(i)),next=[];while(next.length<3&&rest.length)next.push(rest.splice(Math.floor(Math.random()*rest.length),1)[0]);for(const keep of shown)if(next.length<3&&!next.includes(keep))next.push(keep);items.forEach(i=>{i.hidden=!next.includes(i)});shown=next})}
+surprise.hidden=false;surprise.addEventListener('click',(e)=>{const rows=[...document.querySelectorAll('.games>.game')],open=rows.filter(r=>!r.hidden&&r.id&&r.id!==location.hash.slice(1)),pool=open.length?open:rows.filter(r=>r.id);if(!pool.length)return;e.preventDefault();const row=pool[Math.floor(Math.random()*pool.length)];location.hash=row.id;const link=row.querySelector('.game-title a');if(link)link.focus({preventScroll:true})})})()</script>
 </aside>
 {{ end }}

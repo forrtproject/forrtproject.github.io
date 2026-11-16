@@ -4,7 +4,7 @@
      (games.css); without it, it shows in full. data-facets holds the tokens the filter buttons match. */}}
 {{ $colors := (partialCached "clusters/colors.html" .).arrowColors }}
 {{ $fields := partial "games/fields" . }}
-<ul class="games">
+<ul class="games" id="games-list">
   {{ range . }}
   {{ $game := . }}
   {{ $tokens := slice }}

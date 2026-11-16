@@ -27,8 +27,14 @@
 .games-play-list li[hidden]{display:none}
 .games-play-list a{color:var(--link);font-weight:600;text-decoration:underline;text-underline-offset:3px}
 .games-play-time{display:block;margin-top:2px;font-size:15px;color:var(--soft)}
-.games-play-deal{margin-top:4px;font-size:16px;min-height:44px}
-.games-play-deal[hidden]{display:none}
+.games-play-actions{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:0 22px;margin:4px 0 0}
+.games-play-actions:not(:has(:not([hidden]))){display:none}
+.games-play-deal,.games-play-surprise{display:inline-flex;align-items:center;min-height:44px;font-size:16px}
+.games-play-surprise{font-weight:700;color:var(--link);text-decoration:underline;text-underline-offset:3px}
+.games-play-deal[hidden],.games-play-surprise[hidden]{display:none}
+/* The game Surprise me lands on. */
+.game{scroll-margin-top:24px}
+.game:target{background:var(--edu-bg);border-radius:var(--r-small);padding-inline:12px}
 
 /* Rows: the title, a line of facts, the description, the clusters, then Details. */
 .games{margin:16px 0 0;padding:0;list-style:none;border-top:1px solid var(--line)}
@@ -85,7 +91,7 @@
   .games-play-list li{padding:6px 0}
   .games-play-time{display:inline;margin:0}
   .games-play-time::before{content:" · "}
-  .games-play-deal{margin-top:0}
+  .games-play-actions{justify-content:flex-start;margin-top:0}
   .chips .chip{min-height:44px;align-items:center}
   .filter-drawer>summary{min-height:44px;align-items:center}
   .game{padding:14px 0 8px}
