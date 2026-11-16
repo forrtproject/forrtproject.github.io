@@ -42,6 +42,8 @@
 .pager a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
 .pager a:hover{background:var(--surface);color:var(--ink)}
 .pager-current{background:var(--edu);color:#fff;font-weight:700}
+/* On phones every page number is a 44 px target (DESIGN.md §9). */
+@media(max-width:760px){.pager a,.pager-current{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;box-sizing:border-box}}
 .collection-note{margin-top:64px;max-width:44em}
 .collection-note h2{font-size:clamp(28px,2.6vw,36px);margin:0 0 10px}
 .collection-note p{margin:0 0 12px}
