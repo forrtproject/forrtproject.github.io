@@ -334,11 +334,10 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .article-layout .article-style .awop-material .spoiler{margin:0 0 10px;background:none}
 .article-layout .article-style .awop-material .spoiler>summary{padding:4px 0;font-size:16px}
 
-/* Starting points at the top of a page (shortcodes/action_cards.html). */
 /* Starting points (the action_cards shortcode and the Replication Hub's Start here): solid bricks with studs,
-   laid edge to edge like a short wall, in the area colours (below). The bricks are for a handful of actions; long lists are rows (hub.css). */
-/* A row runs through the four area colours, starting with its own area's (`area` on the shortcode), so a
-   page's bricks are related but not identical. */
+   laid edge to edge like a short wall. The bricks are for a handful of actions; long lists are rows (hub.css).
+   A row runs through the four brick colours (--brick1 to --brick4 in tokens.css), which stay clear of the
+   area colours and carry no meaning. The Replication Hub's bricks take their stages' colours instead (hub.css). */
 .action-cards li:nth-child(4n+1){--tone:var(--brick1)}.action-cards li:nth-child(4n+2){--tone:var(--brick2)}
 .action-cards li:nth-child(4n+3){--tone:var(--brick3)}.action-cards li:nth-child(4n+4){--tone:var(--brick4)}
 :is(.article-layout .article-style,.hub-start) .action-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:16px 5px;list-style:none;margin:26px 0 32px;padding:0;max-width:none}
