@@ -375,12 +375,12 @@ def archive_page(page):
     # screen readers. Words, or a picture with alt text, give a heading its name, so those stay headings.
     page = re.sub(r"<h2 data-email-h1([^>]*)>(.*?)</h2>",
                   lambda m: m.group(0) if re.sub(r"<[^>]*>|&nbsp;|\s", "", m.group(2))
-                  or re.search(r'<img\b[^>]*\salt="[^"]*\S[^"]*"', m.group(2))
+                  or re.search(r'<img\b[^>]*\salt="[^"]*[^"\s][^"]*"', m.group(2))
                   else "<div data-email-h1%s>%s</div>" % (m.group(1), m.group(2)), page, flags=re.DOTALL)
     # Restore headings an earlier run turned into blocks although a picture's alt text names them.
     page = re.sub(r"<div data-email-h1([^>]*)>(.*?)</div>",
                   lambda m: "<h2 data-email-h1%s>%s</h2>" % (m.group(1), m.group(2))
-                  if re.search(r'<img\b[^>]*\salt="[^"]*\S[^"]*"', m.group(2)) and "<div" not in m.group(2)
+                  if re.search(r'<img\b[^>]*\salt="[^"]*[^"\s][^"]*"', m.group(2)) and "<div" not in m.group(2)
                   else m.group(0), page, flags=re.DOTALL)
     if "</main>" not in page:
         closes = [m.start() for m in re.finditer(r"</body\s*>", page, flags=re.IGNORECASE)]
