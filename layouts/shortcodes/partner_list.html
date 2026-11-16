@@ -16,16 +16,6 @@
 {{ end }}
 {{ $items := where hugo.Data.partners "cluster" "in" $clusters }}
 
-{{/* Cluster Map for CSS classes */}}
-{{ $clusterMap := dict
-    "Global Intergovernmental Organizations" "global-orgs"
-    "Open Science Infrastructure" "os-infrastructure"
-    "Reproducibility Networks" "repro-networks"
-    "Education & Training" "education"
-    "Open Research Communities" "research-communities"
-    "Open Research & Equity" "ecr-equity"
-    "Higher Education Partners" "institutional"
-}}
 
 <div class="partner-section-group" data-cluster="{{ $cluster }}">
     {{ if $title }}
@@ -41,63 +31,34 @@
     {{ end }}
     <div class="partner-list">
         {{ range $items }}
-        {{ $clusterClass := index $clusterMap .cluster | default "default" }}
-        <div class="partner-card" data-aos="fade-up" data-cluster="{{ .cluster }}"
+                {{/* One row per partner: logo, linked name, description, and any further links as plain links
+             (DESIGN.md §4, §5). The section heading already names the category, so the row does not repeat it;
+             the logo is not a second link to the same address. */}}
+        <div class="partner-card" data-cluster="{{ .cluster }}"
             {{ if .status }}data-status="{{ .status }}"{{ end }}
             {{ if .project_specific }}data-project="true"{{ end }}>
-            <div class="partner-card-body">
-
-                <div class="partner-header">
+            <div class="partner-content">
+                <div class="partner-logo-container">
+                    {{ if .logo }}<img src="logos/{{ .logo }}" alt="" class="partner-logo" loading="lazy">{{ end }}
+                </div>
+                <div class="partner-info">
+                    {{ if or .status .project_specific }}
                     <div class="partner-tags">
-                        {{/* Cluster Pill */}}
-                        <span class="partner-pill pill-{{ $clusterClass }}">{{ .cluster }}</span>
-                        {{ if .status }}
-                        <span class="partner-pill pill-status-{{ .status }}">{{ .status | title }}</span>
-                        {{ end }}
-                        {{ if .project_specific }}
-                        <span class="partner-pill pill-project">Project Partner</span>
-                        {{ end }}
+                        {{ if .status }}<span class="partner-pill pill-status-{{ .status }}">{{ .status | strings.FirstUpper }}</span>{{ end }}
+                        {{ if .project_specific }}<span class="partner-pill pill-project">Project partner</span>{{ end }}
                     </div>
+                    {{ end }}
+                    <h3 class="partner-title">{{ if .url }}<a href="{{ .url }}" target="_blank" rel="noopener">{{ .name }}</a>{{ else }}{{ .name }}{{ end }}</h3>
+                    <div class="partner-description">
+                        {{ .description | markdownify }}
+                    </div>
+                    {{ if or .additional_link .project_link }}
+                    <p class="partner-links">
+                        {{ if .additional_link }}<a href="{{ .additional_link }}" target="_blank" rel="noopener">{{ .additional_link_text | default "Learn more" }}</a>{{ end }}
+                        {{ if .project_link }}<a href="{{ .project_link }}">{{ .project_name | default "Project" }}</a>{{ end }}
+                    </p>
+                    {{ end }}
                 </div>
-
-                <div class="partner-content">
-                    <div class="partner-logo-container">
-                        {{ if .logo }}
-                        <a href="{{ .url }}" target="_blank" rel="noopener">
-                            <img src="logos/{{ .logo }}" alt="{{ .name }} logo" class="partner-logo" loading="lazy">
-                        </a>
-                        {{ end }}
-                    </div>
-                    <div class="partner-info">
-                        <h3 class="partner-title">
-                            <a href="{{ .url }}" target="_blank" rel="noopener">{{ .name }}</a>
-                        </h3>
-                        <div class="partner-description">
-                            {{ .description | markdownify }}
-                        </div>
-                    </div>
-                </div>
-
-                <div class="partner-footer">
-                    <div class="partner-buttons">
-                        {{ if .url }}
-                        <a href="{{ .url }}" target="_blank" rel="noopener" class="btn btn-outline-primary btn-sm">
-                            <i class="fas fa-external-link-alt"></i> Visit Website
-                        </a>
-                        {{ end }}
-                        {{ if .additional_link }}
-                        <a href="{{ .additional_link }}" target="_blank" rel="noopener" class="btn btn-outline-info btn-sm">
-                            <i class="fas fa-file-alt"></i> {{ .additional_link_text | default "Learn More" }}
-                        </a>
-                        {{ end }}
-                        {{ if .project_link }}
-                        <a href="{{ .project_link }}" class="btn btn-outline-success btn-sm">
-                            <i class="fas fa-project-diagram"></i> {{ .project_name | default "Project" }}
-                        </a>
-                        {{ end }}
-                    </div>
-                </div>
-
             </div>
         </div>
         {{ end }}
