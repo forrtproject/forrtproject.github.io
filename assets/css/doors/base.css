@@ -7,8 +7,9 @@ a{color:var(--link)}
 a:hover{color:var(--ink)}
 a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible,select:focus-visible,table:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:2px}
 main:focus{outline:none}
-/* The cookie banner sits over the foot of the screen until dismissed; site.js sets its height. */
-html{scroll-padding-block-end:var(--banner,0px)}
+/* The cookie banner sits over the foot of the screen until dismissed; site.js sets its height. The extra 12 px keeps
+   a focused link's focus ring (3 px, offset 3 px) clear of it. */
+html{scroll-padding-block-end:calc(var(--banner,0px) + 12px)}
 /* The site's content in system fonts where the Doors faces have no glyphs (decision D18). */
 main:lang(ar),main:lang(zh){font-family:var(--text)}
 main:lang(ar){--display:'Newsreader','Noto Naskh Arabic','Geeza Pro','Traditional Arabic','Times New Roman',serif;--text:'Noto Sans Arabic','Segoe UI','Geeza Pro',Tahoma,sans-serif}
