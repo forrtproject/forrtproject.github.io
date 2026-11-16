@@ -1,0 +1,58 @@
+/* The Open Research Games Portal (shortcodes/games_portal.html), loaded on that page only. The search, count and
+   rows are the list_filter's (article.css); this adds the filters beside the list and the rows' facts and clusters.
+   On a wide screen the filters are a panel to the left of the list, as in the resources directory; below 1000 px
+   they are a closed drawer above the search. */
+.games-portal{display:grid;grid-template-columns:minmax(0,290px) minmax(0,1fr);gap:40px;align-items:start;margin:8px 0 48px}
+.games-filters{position:sticky;top:16px;max-height:calc(100vh - 32px);overflow-y:auto;overscroll-behavior:contain;margin-top:8px;padding:18px 18px 8px;background:var(--surface);border-radius:var(--r-large)}
+.games-filters[hidden]{display:none}
+.games-filter-drawer>summary{list-style:none;font-weight:700;line-height:1.35}
+.games-filter-drawer>summary::-webkit-details-marker{display:none}
+.article-layout .article-style .games-filters fieldset{min-width:0;margin:16px 0 0;padding:0;border:0}
+.article-layout .article-style .games-filters legend{margin:0 0 8px;padding:0;font:var(--display-weight) 19px/1.2 var(--display);color:var(--ink)}
+.games-chips{display:flex;flex-wrap:wrap;gap:6px}
+.games-chips button{display:inline-flex;align-items:baseline;gap:6px;max-width:100%;padding:6px 11px;background:#fff;border:1.5px solid var(--line);border-radius:999px;font:400 15px/1.3 var(--text);color:var(--ink);text-align:start;cursor:pointer}
+.games-chips button:hover{border-color:var(--ink)}
+.games-chips button[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:#fff}
+.games-chip-count{color:var(--soft);font-weight:600}
+.games-chips button[aria-pressed=true] .games-chip-count{color:inherit}
+.games-chips .games-dot{align-self:center}
+.games-chips button[aria-pressed=true] .games-dot{box-shadow:0 0 0 2px #fff}
+.article-layout .article-style .games-reset{margin:12px 0 8px}
+.list-filter-reset{padding:0;background:none;border:0;font:600 16px/1.4 var(--text);color:var(--link);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.list-filter-reset[hidden]{display:none}
+
+/* The list: rows as wide as a paragraph can comfortably be. */
+.games-list{min-width:0}
+.article-layout .article-style .games-list .list-filter-section{max-width:31em}
+.article-layout .article-style .games-list .list-filter{max-width:31em}
+.article-layout .article-style .games-list ul.games{max-width:31em;margin:0;padding:0;list-style:none}
+.article-layout .article-style ul.games>li{max-width:none;margin:0;padding:14px 0 10px;border-bottom:1px solid var(--line)}
+.article-layout .article-style ul.games .games-text{margin:0 0 6px}
+.article-layout .article-style ul.games .games-text>strong a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
+.article-layout .article-style ul.games .games-facts{margin:0 0 2px;font-size:16px;line-height:1.45;color:var(--soft)}
+.article-layout .article-style ul.games .games-clusters{display:flex;flex-wrap:wrap;gap:2px 14px;margin:4px 0 2px;font-size:16px;line-height:1.45;color:var(--ink)}
+.games-dot{display:inline-block;flex:none;width:10px;height:10px;margin-inline-end:6px;border-radius:50%;vertical-align:1px}
+/* Details: the answers as labelled blocks, links wrapping where they must. */
+.article-layout .article-style ul.games .spoiler-body{font-size:17px}
+.article-layout .article-style ul.games .games-detail-head{margin:16px 0 4px;font:var(--display-weight) 20px/1.25 var(--display)}
+.article-layout .article-style ul.games .games-detail-head:first-child{margin-top:4px}
+.article-layout .article-style ul.games dl{margin:0}
+.article-layout .article-style ul.games dt{margin:10px 0 2px;font-weight:600}
+.article-layout .article-style ul.games dd{margin:0}
+.article-layout .article-style ul.games :is(dd,.spoiler-body>p){overflow-wrap:anywhere}
+.article-layout .article-style ul.games dd p{margin:0 0 6px}
+.article-layout .article-style ul.games dd ul{margin:0 0 6px;padding-inline-start:1.2em;list-style:disc}
+.article-layout .article-style ul.games dd li{margin:0 0 4px;padding:0;border:0}
+.article-layout .article-style .games-empty{max-width:31em;margin-top:16px;padding:18px 20px;background:var(--surface);border-radius:var(--r-large)}
+.article-layout .article-style .games-empty[hidden]{display:none}
+.article-layout .article-style .games-empty p{margin:0}
+
+@media(max-width:1000px){
+  .games-portal{grid-template-columns:minmax(0,1fr);gap:12px}
+  .games-filters{position:static;max-height:none;overflow:visible;padding:12px 16px}
+  .games-filter-drawer>summary{display:flex;justify-content:space-between;gap:10px;min-height:28px;align-items:center;cursor:pointer;color:var(--link);text-decoration:underline;text-underline-offset:3px}
+  .games-filter-drawer>summary::after{content:'';flex:none;width:8px;height:8px;margin:0 3px 4px;border-inline-end:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg)}
+  .games-filter-drawer[open]>summary::after{transform:rotate(-135deg);margin-bottom:-4px}
+  .article-layout .article-style .games-reset{margin:8px 0 4px}
+  .article-layout .article-style .games-reset:has([hidden]){display:none}
+}
