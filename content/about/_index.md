@@ -1,8 +1,9 @@
 ---
 title: "About FORRT"
+# No page of its own: /about/ redirects to /about/us/ through the alias on content/about/about/index.md.
+build:
+  render: never
+  list: always
+# Breadcrumb data still names this section; the address serves the redirect (structured-data/breadcrumbs.html).
+breadcrumb_url: "about/"
 ---
-
-<meta http-equiv="refresh" content="0; url=/about/us/">
-<script>window.location.replace("/about/us/");</script>
-
-If you are not redirected automatically, please click [here](/about/us/).

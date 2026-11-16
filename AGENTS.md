@@ -11,6 +11,7 @@ Much of the site is generated from Google Sheets and Docs, and the generated fil
 ## Site conventions
 
 - Styles: edit `assets/scss/` (`main.scss`, `custom.scss`, `academic/*.scss`). The site compiles these, and they override the theme's same-named SCSS files.
+- Design principles for pages and components are in `DESIGN.md`; follow them when changing layouts or styles.
 - Images are WebP. The PR image check flags PNG and JPG files and references.
 - Staging: staging.forrt.org shows all open, conflict-free, non-draft PRs merged together. To stage a single PR, dispatch `staging-aggregate.yaml` with `single_pr`.
 

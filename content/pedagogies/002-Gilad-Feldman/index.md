@@ -3,7 +3,7 @@
 
 title: "Developing principled pedagogies - An Open Science journey"
 subtitle: "Insights from incorporating Open Science into teaching and mentoring."
-summary: "Gilad Feldman shares his outstanding *know-how* on how to integrate open scholarship in higher education."
+summary: "Gilad Feldman shares his outstanding know-how on how to integrate open scholarship in higher education."
 authors: ['Gilad Feldman']
 tags: []
 categories: []

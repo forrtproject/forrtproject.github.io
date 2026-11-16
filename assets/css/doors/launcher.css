@@ -1,0 +1,67 @@
+/* The JUST-OS launcher on every page. The chat loads when it is clicked (chatbot.css, just-os-chat.js). */
+#just-os-widget{position:fixed;inset-block-end:calc(20px + var(--banner,0px));inset-inline-end:20px;z-index:900;display:flex;flex-direction:column;align-items:flex-end;font-family:var(--text)}
+#just-os-widget[hidden]{display:none}
+/* The opened chat goes above everything, which its own z-index cannot do from in here. */
+#just-os-widget:has(#just-os-window[style*="flex"]){z-index:10000}
+.just-os-fullpage{position:relative;font-family:var(--text)}
+#just-os-btn{position:relative;z-index:2;display:inline-block;padding:0;background:#fff;border:1.5px solid var(--ink);border-radius:50%;box-shadow:0 1px 4px rgba(38,45,53,.25);cursor:pointer;text-decoration:none;transition:transform .2s ease}
+/* At 1440 px the margin beside .wrap is 80 px, so the button (55 px, 20 px from the edge) clears the page by 5 px.
+   Nothing may reach past it: no growth on hover, a shadow within 4 px, and the focus ring drawn inside. */
+#just-os-btn:focus-visible{outline:3px solid var(--ink);outline-offset:-6px}
+#just-os-img{display:block;width:52px;height:52px;border-radius:50%}
+#just-os-dismiss{position:absolute;top:-6px;inset-inline-end:-6px;z-index:3;width:22px;height:22px;padding:0;background:#fff;border:1.5px solid var(--ink);border-radius:50%;color:var(--ink);font-size:14px;line-height:18px;text-align:center;cursor:pointer;opacity:0;transition:opacity .2s ease}
+#just-os-widget:hover #just-os-dismiss,#just-os-dismiss:focus-visible{opacity:1}
+#just-os-dismiss:hover{background:var(--ink);color:#fff}
+#just-os-bubble{position:absolute;inset-inline-end:64px;top:11px;padding:6px 12px;background:#fff;border:1.5px solid var(--ink);border-radius:999px;color:var(--ink);font-size:15px;font-weight:600;line-height:1.3;white-space:nowrap;opacity:0;transform:translateX(-6px);transition:opacity .25s ease,transform .25s ease;pointer-events:none}
+/* The bubble never covers the page. The invitation shows only where site.js finds empty space under it,
+   and the hover or focus label only where the margin holds it beside the button: from 1800 px, as .wrap is at most 1280 px wide. */
+.bubble-visible{opacity:1!important;transform:none!important}
+@media (min-width:1800px){#just-os-btn:is(:hover,:focus-visible) #just-os-bubble{opacity:1;transform:none}}
+#just-os-widget.is-offline #just-os-img{filter:grayscale(1);opacity:.7}
+#just-os-offline-badge{position:absolute;inset-block-end:-2px;inset-inline-start:-2px;width:22px;height:22px;display:flex;align-items:center;justify-content:center;background:#fff;border:1.5px solid var(--ink);border-radius:50%;color:var(--urgent)}
+#just-os-offline-badge svg{width:14px;height:14px}
+@media(max-width:760px){#just-os-widget{inset-block-end:calc(12px + var(--banner,0px));inset-inline-end:12px}#just-os-img{width:48px;height:48px}#just-os-bubble{inset-inline-end:58px;top:9px;font-size:14px}}
+/* On a touch screen the close control is larger and its tap area is 44 px, reaching past the visible circle. */
+@media(hover:none){
+  #just-os-dismiss{opacity:1;width:28px;height:28px;top:-10px;inset-inline-end:-10px;font-size:18px;line-height:24px}
+  #just-os-dismiss::after{content:"";position:absolute;inset:-8px}
+}
+@media print{#just-os-widget{display:none}}
+
+/* The round button needs 80 px of margin, which the page has from 1440 px (.wrap is at most 1280 px wide).
+   Below that it would sit over text, cards or buttons wherever it rested, so it is a tab in the page's gutter. site.js uses the same width for the invitation. */
+@media (max-width:1439px){
+  #just-os-widget{inset-block-end:calc(16px + var(--banner,0px));inset-inline-end:0}
+  #just-os-btn{display:flex;align-items:center;justify-content:center;width:24px;height:52px;border-inline-end:0;border-radius:12px 0 0 12px}
+  #just-os-btn:hover{transform:none}
+  #just-os-img{width:20px;height:20px}
+  #just-os-dismiss{display:none}
+  #just-os-bubble{inset-inline-end:32px;top:10px}
+  /* The ring stays inside the tab, which an outside ring would take off the screen and over the page. */
+  #just-os-btn:focus-visible{outline-offset:-3px}
+}
+/* Phones have a 20 px margin (base.css), so the tab is 20 px wide and stays off the cards. */
+@media (max-width:760px){
+  #just-os-btn{width:20px}
+  #just-os-img{width:16px;height:16px}
+  #just-os-bubble{inset-inline-end:28px}
+}
+/* Below 1440 px the margin is too narrow to hold the button, so it floats in the bottom corner over the page,
+   as a 48 px round button that is easy to find and press; the footer keeps room under it, so the end of the
+   page is never hidden. (Earlier the tab sat in the margin; reviewers found it too small to read or press.) */
+@media (max-width:1439px){
+  #just-os-widget{inset-block-end:calc(16px + var(--banner,0px) + env(safe-area-inset-bottom,0px));inset-inline-end:16px}
+  #just-os-btn{display:inline-block;width:auto;height:auto;padding:0;background:#fff;border:1.5px solid var(--ink);border-radius:50%;box-shadow:0 2px 8px rgba(38,45,53,.3)}
+  #just-os-btn:hover{background:#fff;border-color:var(--link)}
+  #just-os-img{width:48px;height:48px}
+  #just-os-btn:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+  #just-os-bubble{inset-inline-end:58px;top:9px}
+  /* A floating button can be dismissed, as on desktop; on touch screens the cross always shows. */
+  #just-os-dismiss{display:block}
+  .site-foot{padding-bottom:88px}
+}
+/* At 400% zoom a full-size launcher would cover a third of the screen. Last, so the sizes above do not undo it. */
+@media (max-height:420px){
+  #just-os-img{width:38px;height:38px}
+  #just-os-bubble{display:none}
+}

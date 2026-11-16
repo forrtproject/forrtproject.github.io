@@ -1,0 +1,54 @@
+/* The Bootstrap classes still written in Markdown, shortcodes and generated pages, drawn in Doors
+   colours. Only classes the build actually uses; add here rather than bringing the theme back. */
+.btn{display:inline-block;padding:8px 18px;border:1.5px solid var(--link);border-radius:999px;background:transparent;color:var(--link);font:600 16px/1.35 var(--text);text-align:center;text-decoration:none;cursor:pointer}
+.btn:hover,.btn:focus-visible{background:var(--ink);border-color:var(--ink);color:#fff;text-decoration:none}
+.btn-primary{background:var(--link);border-color:var(--link);color:#fff}
+.btn-outline-primary,.btn-outline{color:var(--link);border-color:var(--link);background:transparent}
+.btn-outline-success,.btn-outline-info,.btn-outline-danger,.btn-outline-secondary{color:var(--ink);border-color:var(--soft);background:transparent}
+.btn-sm{padding:4px 12px;font-size:15px}
+.btn-lg{padding:12px 24px;font-size:18px}
+.btn-block{display:block;width:100%}
+.btn-group{display:inline-flex;flex-wrap:wrap;gap:6px}
+.badge{display:inline-block;padding:3px 10px;border-radius:var(--r-small);background:var(--surface);color:var(--ink);font:600 15px/1.4 var(--text)}
+.badge-pill{border-radius:999px}
+.alert{margin:0 0 1em;padding:14px 18px;background:var(--res-bg);border-radius:var(--r-large);color:var(--ink);font-size:16px}
+.alert-example{background:var(--edu-bg)}
+.alert-warning{background:var(--com-bg)}
+.card{background:var(--surface);border-radius:var(--r-large)}
+.card-body{padding:18px}
+.collapse:not(.show){display:none}
+.form-control{display:block;width:100%;padding:8px 12px;background:#fff;border:1.5px solid var(--soft);border-radius:var(--r-small);color:var(--ink);font:400 16px/1.4 var(--text)}
+.form-group{margin-bottom:1em}
+.container,.container-fluid{width:100%;margin-inline:auto;padding-inline:12px}
+.row{display:flex;flex-wrap:wrap;margin-inline:-12px}
+.row>*{width:100%;min-width:0;padding-inline:12px}
+.col{flex:1 0 0}
+.col-auto{flex:0 0 auto;width:auto}
+@media(min-width:576px){.col-sm-4{width:33.333%}.col-sm-8{width:66.667%}.col-sm-auto{flex:0 0 auto;width:auto}.d-sm-flex{display:flex!important}.text-sm-right{text-align:end}}
+@media(min-width:768px){.col-md-3{width:25%}.col-md-4{width:33.333%}.col-md-8{width:66.667%}.col-md-9{width:75%}.col-md-12{width:100%}.d-md-none{display:none!important}}
+@media(min-width:992px){.col-lg-4{width:33.333%}.col-lg-8{width:66.667%}.col-lg-12{width:100%}.d-lg-none{display:none!important}}
+@media(min-width:1200px){.col-xl-3{width:25%}.col-xl-9{width:75%}}
+.media{display:flex;align-items:flex-start;gap:12px}
+.media-body{flex:1;min-width:0}
+.d-none{display:none!important}
+.d-block{display:block!important}
+.d-flex{display:flex!important}
+.d-inline{display:inline!important}
+.flex-column{flex-direction:column}
+.flex-wrap{flex-wrap:wrap}
+.justify-content-center{justify-content:center}
+.justify-content-around{justify-content:space-around}
+.align-items-center{align-items:center}
+.align-self-center{align-self:center}
+.text-center{text-align:center}
+.text-danger{color:var(--urgent)}
+.text-white{color:#fff}
+.mx-auto{margin-inline:auto}
+.w-50{width:50%}
+.rounded-circle{border-radius:50%}
+.rounded{border-radius:var(--r-small)}
+.bg-light{background:var(--surface)}
+.border-bottom{border-bottom:1px solid var(--line)}
+.mt-0{margin-top:0}.mb-0{margin-bottom:0}.m-1{margin:4px}.mb-1{margin-bottom:4px}.mb-2{margin-bottom:8px}.mb-3{margin-bottom:16px}.mb-4{margin-bottom:24px}
+.mt-3{margin-top:16px}.mt-4{margin-top:24px}.my-1{margin-block:4px}.my-4{margin-block:24px}.mr-1{margin-inline-end:4px}.mr-3{margin-inline-end:16px}
+.p-0{padding:0}.p-3{padding:16px}.pb-1{padding-bottom:4px}.pb-2{padding-bottom:8px}.pb-3{padding-bottom:16px}.pt-3{padding-top:16px}.pr-2{padding-inline-end:8px}.py-2{padding-block:8px}.py-3{padding-block:16px}.py-4{padding-block:24px}

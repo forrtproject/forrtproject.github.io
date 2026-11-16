@@ -1,44 +1,120 @@
 {{- define "main" -}}
-
-<article class="article">
-
-    {{ partial "resource_page_header" . }}
-
-    <div class="article-container">
-        <div class="article-container">
-
-            <!-- {{ partial "page_edit" . }} (not meaningful as mds are auto-generated)-->
-            {{ partial "tags" . }}
-            {{ if .Params.abstract }}
-            <h3>{{ i18n "abstract" }}</h3>
-            <p class="pub-abstract border-bottom">{{ .Params.abstract | markdownify }}</p>
-            {{ end }}
-            <div class="article-style">
-                {{ .Content }}
-                {{with .Params.link_to_resource }} <a href="{{ . }}">
-                    <p class="mb-1 pr-2 badge badge-light">Link to resource: {{.}}</p>
-                </a>{{end}}
-            {{ with .Params.material_type }}<p class=" mb-1 pr-2"><strong>Type of resources: </strong>{{ delimit . ", " }}</p>{{ end }}
-            {{ with .Params.education_level }}<p class=" mb-1 pr-2"><strong>Education level(s): </strong>{{ delimit . ", " }}</p>{{ end }}
-            {{ with .Params.primary_user }}<p class=" mb-1 pr-2"><strong>Primary user(s): </strong>{{ delimit . ", " }}</p>{{ end }}
-            {{ with .Params.subject_areas }}<p class=" mb-1 pr-2"><strong>Subject area(s): </strong>{{ delimit . ", " }}</p>{{ end }}
-            {{ with .Params.language }}<p class=" mb-1 pr-2"><strong>Language(s): </strong>{{ delimit . ", " }}</p>{{ end }}
-            </div>
-
-            {{ partial "share" . }}
-            {{/*  {{ partial "page_author" . }}  */}}
-            {{ partial "comments" . }}
-
-            {{ if site.Params.section_pager }}
-            <div class="article-widget">
-                {{ partial "section_pager" . }}
-            </div>
-            {{ end }}
-
-            {{ partial "page_related" . }}
-
-
+{{/* A curated resource, on the reading layout: what it is first, then its details, then Previous and Next.
+     On a desktop the grid puts the details card in the left column; on a phone it follows the entry.
+     Pages are generated from the FORRT database sheet, so any list field can be missing. */}}
+{{ $clean := dict }}
+{{ range slice "material_type" "education_level" "primary_user" "subject_areas" "language" "creators" }}
+  {{ $values := slice }}
+  {{ range index $.Params . }}{{ if . }}{{ $values = $values | append . }}{{ end }}{{ end }}
+  {{ $clean = merge $clean (dict . $values) }}
+{{ end }}
+{{/* The type also shows above the title, so on a phone its row in the card is left out. */}}
+{{ $details := slice
+  (dict "label" "Type of resources" "values" $clean.material_type "class" "resource-type")
+  (dict "label" "Education level(s)" "values" $clean.education_level)
+  (dict "label" "Primary user(s)" "values" $clean.primary_user)
+  (dict "label" "Subject area(s)" "values" $clean.subject_areas)
+  (dict "label" "Language(s)" "values" $clean.language)
+}}
+{{/* Cluster pages by name, matched in lower case, so a cluster in the card can link to its page. */}}
+{{ $clusterPages := dict }}
+{{ range $c := site.Data.clusters_v4.clusters }}
+  {{ with site.GetPage (printf "/clusters/cluster-%d" (int $c.number)) }}{{ $clusterPages = merge $clusterPages (dict (lower $c.name) .RelPermalink) }}{{ end }}
+{{ end }}
+{{ $url := partial "doors/resource_url" . }}
+{{/* Where the button goes: the link's host without "www.", and doi.org for any DOI resolver. */}}
+{{ $host := "" }}
+{{ with $url }}
+  {{ $host = lower (urls.Parse .).Hostname | strings.TrimPrefix "www." }}
+  {{ if eq $host "dx.doi.org" }}{{ $host = "doi.org" }}{{ end }}
+{{ end }}
+{{/* Long creator lists show the first six names and keep the rest behind a disclosure, so the button stays in view. */}}
+{{ $shown := 6 }}
+<div class="wrap">
+  <div class="article-layout article-layout-resource">
+    <article class="reading">
+      <header class="article-head">
+        {{/* The trail stops at Resources: the title follows straight after, and repeating a long one pushed the button below a phone's first screen. */}}
+        <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ "" | relLangURL }}">Home</a> <span aria-hidden="true">/</span> <a href="{{ relref . "/resources" }}">Resources</a></nav>
+        {{ with $clean.material_type }}<p class="resource-kind">{{ delimit . ", " }}</p>{{ end }}
+        <h1{{ if gt (strings.RuneCount .Title) 90 }} class="long-title"{{ end }}>{{ .Title }}</h1>
+        {{ with .Params.subtitle }}<p class="standfirst">{{ . | markdownify | emojify }}</p>{{ end }}
+        {{ with $clean.creators }}
+        <div class="byline"><div class="byline-authors">
+          {{- if gt (len .) (add $shown 1) -}}
+          By {{ delimit (first $shown .) ", " }}
+          <details class="byline-more"><summary>and {{ sub (len .) $shown }} more</summary><p>{{ delimit (after $shown .) ", " }}</p></details>
+          {{- else -}}
+          By {{ delimit . ", " }}
+          {{- end -}}
+        </div></div>
+        {{ end }}
+      </header>
+      {{/* Beside the button, the resource's language when it is not English alone, so a visitor knows before opening it. */}}
+      {{ $langs := $clean.language }}
+      {{ $inLang := "" }}
+      {{ if and $langs (not (and (eq (len $langs) 1) (eq (index $langs 0) "English"))) }}
+        {{ if le (len $langs) 3 }}{{ $inLang = printf "In %s" (delimit $langs ", " " and ") }}
+        {{ else }}{{ $inLang = printf "In %s and %d more languages" (delimit (first 3 $langs) ", ") (sub (len $langs) 3) }}{{ end }}
+      {{ end }}
+      {{ $described := slice }}{{ if $host }}{{ $described = $described | append "resource-host" }}{{ end }}{{ if $inLang }}{{ $described = $described | append "resource-lang" }}{{ end }}
+      {{ with $url }}
+      <p class="resource-open"><a class="btn btn-primary" href="{{ . }}"{{ with $described }} aria-describedby="{{ delimit . " " }}"{{ end }}>Open this resource{{ if and $host (ne $host "forrt.org") }} <i class="fas fa-external-link-alt" aria-hidden="true"></i>{{ end }}</a>{{ with $host }} <span class="resource-host" id="resource-host">{{ . }}</span>{{ end }}{{ with $inLang }} <span class="resource-host resource-lang" id="resource-lang">{{ . }}</span>{{ end }}</p>
+      {{ end }}
+      <div class="article-style">
+        {{/* Abstracts come from a sheet, where a single line break often ends a line of a list or a heading
+             ("Methods", "modular: …"), which Markdown would run into one paragraph. A break stays where the next line
+             starts with a capital or a short "label:"; a line ending in a space or a word such as "of" is wrapped text and joins up.
+             A line of dashes is a separator, not the underline of a heading. */}}
+        {{ with .Params.abstract }}
+          {{ $abstract := replaceRE `\n(-{3,}|\*{3,})\n` "\n\n$1\n\n" . }}
+          {{ $abstract = replaceRE `\b(a|an|and|at|by|for|from|in|of|on|the|to|with)\n` "$1 " $abstract }}
+          {{ $abstract = replaceRE `([^\s])\n(\p{Lu}|\p{Ll}[\p{L}\- ]{0,30}:\s)` "$1  \n$2" $abstract }}
+          <h2>{{ i18n "abstract" }}</h2>{{ $.RenderString (dict "display" "block") $abstract }}
+        {{ end }}
+        {{ partial "doors/content" .Content }}
+      </div>
+      {{ partial "doors/resource_keywords" . }}
+    </article>
+    <section class="article-card" aria-label="About this resource">
+      <h2>About this resource</h2>
+      <dl>
+        {{ range $details }}{{ if .values }}<dt{{ with .class }} class="{{ . }}"{{ end }}>{{ .label }}</dt><dd{{ with .class }} class="{{ . }}"{{ end }}>{{ delimit .values ", " }}</dd>{{ end }}{{ end }}
+        {{/* The clusters the directory filters by, from forrt_clusters_new; none when that is empty. */}}
+        {{ with index (partialCached "doors/resource_index" (site.GetPage "/resources") "resources").items .RelPermalink }}{{ with .clusters }}
+          {{ $names := slice }}
+          {{ range $name := . }}{{ with index $clusterPages (lower $name) }}{{ $names = $names | append (printf `<a href="%s">%s</a>` . ($name | htmlEscape)) }}{{ else }}{{ $names = $names | append ($name | htmlEscape) }}{{ end }}{{ end }}
+          <dt>Cluster</dt><dd>{{ delimit $names ", " | safeHTML }}</dd>
+        {{ end }}{{ end }}
+        <dt>Last updated</dt><dd>{{ .Lastmod.Format "2 January 2006" }}</dd>
+      </dl>
+    </section>
+    <div class="article-foot">
+      {{/* Previous and Next stay within the resource's first cluster, A to Z as in the directory. */}}
+      {{ if site.Params.section_pager }}{{ with index (partialCached "doors/resource_neighbours" (site.GetPage "/resources") "resources") .RelPermalink }}{{ if or .prev .next }}
+      {{ $cluster := .cluster }}
+      <nav class="article-widget" aria-labelledby="resource-pager-label">
+        {{/* The cluster's name opens the directory filtered to it, with the slug resources.js reads from the address. */}}
+        {{ $directory := relref $ "/resources" }}
+        <p class="post-nav-scope" id="resource-pager-label">{{ with $cluster }}More from the cluster <a href="{{ $directory }}?cluster={{ $cluster | lower | replaceRE "[^a-z0-9]+" "-" }}">{{ $cluster }}</a>{{ else }}More <a href="{{ $directory }}">resources</a>{{ end }}, A to Z</p>
+        <div class="post-nav">
+          {{ with .prev }}
+          <div class="post-nav-item post-nav-prev">
+            <a href="{{ .RelPermalink }}" rel="prev"><div class="meta-nav"><span aria-hidden="true">← </span>{{ i18n "previous" }}</div>
+            <p>{{ .Title }}</p></a>
+          </div>
+          {{ end }}
+          {{ with .next }}
+          <div class="post-nav-item post-nav-next">
+            <a href="{{ .RelPermalink }}" rel="next"><div class="meta-nav">{{ i18n "next" }}<span aria-hidden="true"> →</span></div>
+            <p>{{ .Title }}</p></a>
+          </div>
+          {{ end }}
         </div>
-</article>
-
+      </nav>
+      {{ end }}{{ end }}{{ end }}
+      {{ partial "page_related" . }}
+    </div>
+  </div>
+</div>
 {{- end -}}

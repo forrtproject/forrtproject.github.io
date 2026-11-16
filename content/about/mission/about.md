@@ -70,14 +70,14 @@ classtitle = ""
 * Create and maintain a space for educators to provide and receive support around best practices in teaching and mentorship
 * Support scholars in their efforts to stay up-to-date on best practices regarding open and reproducible research
 * Advocate for greater support and institutional recognition of the value in teaching and mentoring
-* Facilitating conversations about the ethics and social impact of teaching substantive topics with due regard to scientific openness, epistemic uncertainty and the credibility revolution.  
+* Facilitate conversations about the ethics and social impact of teaching substantive topics with due regard to scientific openness, epistemic uncertainty and the credibility revolution.  
 * Foster social justice through the democratization of scientific educational resources and pedagogies.
 
 <br>
 <br>
 
 
-## FORRT’s Advocacy include:
+## FORRT’s Advocacy includes:
 
 * The elevation and legitimization of educators’ roles throughout institutions and professional organizations; 
 * Dismantling hierarchies surrounding research, teaching, and service; 

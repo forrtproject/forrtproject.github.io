@@ -42,18 +42,21 @@
   {{- end -}}
 {{- end }}
 
-<article class="article nla-page">
-  {{ partial "page_header" . }}
-
-  <div class="article-container nla-container">
+<div class="wrap">
+<article class="nla-page">
+  <header class="article-head">
+    {{ partial "doors/crumbs" (dict "page" .) }}
+    <h1>{{ .Title }}</h1>
+  </header>
+  <div class="nla-container">
 
     <div class="nla-subscribe-band">
       <p class="nla-subscribe-label">Subscribe to the FORRT newsletter to receive the latest news, initiatives, events, and opportunities straight to your inbox.</p>
-      {{ partial "newsletter_form.html" . }}
+      {{ partial "doors/newsletter" . }}
     </div>
 
     <div class="nla-archive-header">
-      <h3 class="nla-archive-title">Archive</h3>
+      <h2 class="nla-archive-title">Archive</h2>
       <div class="nla-year-tabs" role="tablist" aria-label="Filter by year">
         <button class="nla-year-tab active" data-year="all" role="tab" aria-selected="true">All</button>
         {{ range $newsletters }}
@@ -96,6 +99,7 @@
 
   </div>
 </article>
+</div>
 
 <script>
 (function () {

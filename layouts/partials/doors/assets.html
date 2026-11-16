@@ -1,0 +1,37 @@
+{{/* The Doors stylesheet and shell script, loaded after the theme's CSS so it can override
+     it. Fonts are self-hosted; the two used on every page are preloaded, and the italic
+     downloads only where a reference list uses it. The designed screens each add a stylesheet
+     of their own, so the mock's short class names cannot reach pages still on the theme. */}}
+{{ $files := slice "tokens" "reset" "fonts" "icons" "base" "shell" "launcher" "search" "compat" "inner" "newsletter" "article" "popover" "citations" "glossary" }}
+{{ $parts := slice }}
+{{ range $files }}{{ $parts = $parts | append (resources.Get (printf "css/doors/%s.css" .)) }}{{ end }}
+{{ $css := $parts | resources.Concat "css/doors.css" | minify | fingerprint "md5" }}
+<link rel="preload" href="{{ "fonts/doors/source-sans-3-var.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
+{{/* Arabic and Chinese content sets its text in system fonts (decision D18). */}}
+{{ $language := partial "functions/page_language.html" . }}
+{{ if not (or (hasPrefix $language "ar") (hasPrefix $language "zh")) }}<link rel="preload" href="{{ "fonts/doors/newsreader-var.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>{{ end }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}">
+{{ $screen := slice }}
+{{ if .IsHome }}{{ $screen = slice "home" }}{{ end }}
+{{ if eq .Type "resources" }}{{ $screen = slice "page" "resources" }}{{ end }}
+{{ if eq .Type "replication_hub" }}{{ $screen = slice "page" "hub" }}{{ end }}
+{{ if and .IsNode (not .IsHome) (not (in (slice "resources" "replication_hub" "glossary") .Type)) }}{{ $screen = slice "lists" }}{{ end }}
+{{ if or (eq .Type "tags") (eq .Path "/newsletters") }}{{ $screen = slice "lists" }}{{ end }}
+{{ if eq .Type "contributors_analysis" }}{{ $screen = slice "analysis" }}{{ end }}
+{{ if eq .Type "widget_page" }}{{ $screen = slice "sections" }}{{ end }}
+{{ if in (slice "clusters" "disciplines") .Section }}{{ $screen = slice "clusters" }}{{ end }}
+{{ if eq .Type "welcome" }}{{ $screen = slice "welcome" }}{{ end }}
+{{ with $screen }}
+  {{ $parts := slice }}
+  {{ range . }}{{ $parts = $parts | append (resources.Get (printf "css/doors/%s.css" .)) }}{{ end }}
+  {{ $page := $parts | resources.Concat (printf "css/doors-%s.css" (index . (sub (len .) 1))) | minify | fingerprint "md5" }}
+  <link rel="stylesheet" href="{{ $page.RelPermalink }}">
+{{ end }}
+{{ $js := resources.Get "js/doors/site.js" | js.Build (dict "minify" true "format" "iife" "target" "es2019") | fingerprint "md5" }}
+<script src="{{ $js.RelPermalink }}" defer></script>
+{{/* Without the script, long author lists show in full (layouts/partials/citations/authors.html). */}}
+<noscript><style>.ref-more[hidden]{display:inline!important}.ref-etal,.ref-authors-toggle{display:none}</style></noscript>
+{{/* Publish a fingerprinted lookup for the glossary feature to fetch on first use. */}}
+{{ $terms := partialCached "doors/glossary_index.html" site }}
+{{ $index := resources.FromString "data/glossary-terms.json" ($terms | jsonify) | fingerprint "md5" }}
+<meta name="glossary-index" content="{{ $index.RelPermalink }}">

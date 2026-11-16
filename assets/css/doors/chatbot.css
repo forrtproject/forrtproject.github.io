@@ -1,0 +1,716 @@
+/* The JUST-OS chat window and full-page chat, loaded on demand: the first click on the launcher, or
+   the chatbot page. */
+/* The chat window — default: docked right panel */
+#just-os-window {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: auto;
+  width: 33vw;
+  min-width: 320px;
+  background: white;
+  border-left: 2px solid var(--ink);
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  flex-direction: column;
+  z-index: 10000;
+}
+
+/* Floating mode — centered, resizable */
+#just-os-window.floating {
+  top: 5vh;
+  right: auto;
+  bottom: auto;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60vw;
+  height: 80vh;
+  min-height: 300px;
+  border: 2px solid var(--ink);
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Custom resize handle (bottom-left corner, floating only) */
+.just-os-resize-handle {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  cursor: nesw-resize;
+  z-index: 10;
+}
+
+#just-os-window.floating .just-os-resize-handle {
+  display: block;
+}
+
+.just-os-resize-handle::after {
+  content: '';
+  position: absolute;
+  bottom: 3px;
+  left: 3px;
+  width: 10px;
+  height: 10px;
+  border-left: 2px solid #bbb;
+  border-bottom: 2px solid #bbb;
+}
+
+.just-os-resize-handle:hover::after {
+  border-color: var(--soft);
+}
+
+.chat-header {
+  background: var(--surface);
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  gap: 8px;
+}
+
+.chat-header span {
+  font-weight: bold;
+  color: var(--link);
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--soft);
+}
+
+.close-btn:hover {
+  color: #000;
+}
+
+/* ---- Chat UI styles ---- */
+.just-os-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 0;
+}
+
+.just-os-msg {
+  max-width: 85%;
+  position: relative;
+}
+
+.just-os-msg.user {
+  align-self: flex-end;
+}
+
+.just-os-msg.bot {
+  align-self: flex-start;
+}
+
+.just-os-bubble-content {
+  padding: 8px 12px;
+  border-radius: 12px;
+  line-height: 1.45;
+  font-size: 0.9rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.just-os-msg.user .just-os-bubble-content {
+  background: var(--link);
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+.just-os-msg.bot .just-os-bubble-content {
+  background: var(--surface);
+  color: var(--ink);
+  border-bottom-left-radius: 4px;
+}
+
+.just-os-msg.bot .just-os-bubble-content p {
+  margin: 0 0 8px;
+}
+
+.just-os-msg.bot .just-os-bubble-content p:last-child {
+  margin-bottom: 0;
+}
+
+.just-os-msg.bot .just-os-bubble-content a {
+  color: var(--link);
+  text-decoration: underline;
+}
+
+/* Inline citation links open the supporting retrieved chunk */
+.just-os-msg.bot .just-os-bubble-content a.reference-link {
+  color: var(--link);
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 0.85em;
+  font-weight: 600;
+}
+
+.just-os-msg.bot .just-os-bubble-content a.reference-link:hover {
+  text-decoration: underline;
+}
+
+.just-os-reference-tooltip {
+  position: fixed;
+  width: min(500px, calc(100vw - 24px));
+  max-height: min(420px, calc(100vh - 24px));
+  overflow-y: auto;
+  padding: 14px;
+  background: white;
+  border: 1px solid #d9dde3;
+  border-radius: 8px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.18);
+  color: var(--ink);
+  font-size: 0.85rem;
+  line-height: 1.45;
+  z-index: 10001;
+}
+
+.just-os-reference-tooltip .title {
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.just-os-reference-tooltip .metadata {
+  color: var(--soft);
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+}
+
+.just-os-reference-tooltip .content {
+  padding: 10px;
+  background: var(--surface);
+  border-radius: 6px;
+}
+
+/* Rendered markdown inside the supporting chunk — keep it compact so a
+   chunk heading doesn't dwarf the tooltip. */
+.just-os-reference-tooltip .content > :first-child {
+  margin-top: 0;
+}
+
+.just-os-reference-tooltip .content > :last-child {
+  margin-bottom: 0;
+}
+
+.just-os-reference-tooltip .content p {
+  margin: 0 0 8px;
+}
+
+.just-os-reference-tooltip .content h1,
+.just-os-reference-tooltip .content h2,
+.just-os-reference-tooltip .content h3,
+.just-os-reference-tooltip .content h4,
+.just-os-reference-tooltip .content h5,
+.just-os-reference-tooltip .content h6 {
+  margin: 10px 0 6px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.just-os-reference-tooltip .content ul,
+.just-os-reference-tooltip .content ol {
+  margin: 0 0 8px;
+  padding-left: 20px;
+}
+
+.just-os-reference-tooltip .content li {
+  margin-bottom: 2px;
+}
+
+.just-os-reference-tooltip .content a {
+  color: var(--link);
+  text-decoration: underline;
+}
+
+.just-os-reference-tooltip .content code {
+  background: #eceff3;
+  border-radius: 3px;
+  padding: 1px 4px;
+  font-size: 0.85em;
+}
+
+.just-os-reference-tooltip .source-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: var(--link);
+  font-weight: 600;
+}
+
+.just-os-copy-btn {
+  display: block;
+  margin-top: 4px;
+  margin-left: auto;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+  padding: 2px 4px;
+  color: #aaa;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.2s;
+  line-height: 1;
+}
+
+.just-os-msg.bot:hover .just-os-copy-btn,
+.just-os-msg.bot:focus-within .just-os-copy-btn {
+  opacity: 1;
+}
+
+.just-os-copy-btn:hover {
+  color: var(--soft);
+}
+
+.just-os-copy-btn svg {
+  width: 15px;
+  height: 15px;
+  display: block;
+}
+
+/* Feedback — always-visible row beneath bot message */
+.rating-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.rating-bar .rating-btn {
+  background: none;
+  border: 1px solid var(--link);
+  color: var(--link);
+  cursor: pointer;
+  font-size: 15px;
+  padding: 2px 8px;
+  line-height: 1.4;
+  border-radius: 12px;
+  font-weight: 500;
+  transition: background 0.15s, color 0.15s;
+}
+
+.rating-bar .rating-btn:hover {
+  background: var(--link);
+  color: #fff;
+}
+
+/* Info (i) — subtle disclosure of what feedback is stored, with instant tooltip */
+.rating-bar .rating-info {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  color: #bbb;
+  cursor: help;
+  margin-left: 3px;
+}
+
+.rating-bar .rating-info svg {
+  width: 14px;
+  height: 14px;
+  display: block;
+}
+
+.rating-bar .rating-info:hover,
+.rating-bar .rating-info:focus {
+  color: var(--link);
+  outline: none;
+}
+
+.rating-bar .rating-tip {
+  position: absolute;
+  bottom: calc(100% + 7px);
+  /* Centre the tip over the (i) icon, which sits near the panel centre, so the
+     full text stays inside the narrow docked chat panel (its overflow clips). */
+  left: 50%;
+  transform: translateX(-50%) translateY(3px);
+  width: max-content;
+  max-width: 230px;
+  background: var(--link);
+  color: #fff;
+  font-size: 0.7rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.4;
+  text-align: left;
+  padding: 7px 9px;
+  border-radius: 6px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.1s ease, transform 0.1s ease;
+  pointer-events: none;
+  white-space: normal;
+  z-index: 10;
+}
+
+/* small arrow pointing down to the icon */
+.rating-bar .rating-tip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: var(--link);
+}
+
+.rating-bar .rating-info:hover .rating-tip,
+.rating-bar .rating-info:focus .rating-tip,
+.rating-bar .rating-info:focus-within .rating-tip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.rating-thanks {
+  font-size: 0.75rem;
+  color: #4caf50;
+  font-style: italic;
+}
+
+/* Comment box — appears after "Bad" rating */
+.comment-box {
+  margin-top: 5px;
+}
+
+.comment-box-inner {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.comment-box-inner input[type="text"] {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  padding: 2px 4px;
+  font-size: 0.75rem;
+  font-family: inherit;
+  background: transparent;
+  outline: none;
+  color: var(--ink);
+}
+
+.comment-box-inner input[type="text"]:focus {
+  border-bottom-color: var(--link);
+}
+
+.comment-submit {
+  background: none;
+  border: none;
+  color: var(--link);
+  font-size: 15px;
+  cursor: pointer;
+  padding: 0;
+  white-space: nowrap;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+.comment-submit:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* References list below bot message */
+.just-os-references {
+  margin-top: 8px;
+  padding: 8px 10px;
+  background: var(--surface);
+  border-radius: 8px;
+  border: 1px solid #e8eaed;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+.just-os-references summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--soft);
+  font-size: 0.8rem;
+  user-select: none;
+}
+
+.just-os-references ol {
+  margin: 6px 0 0;
+  padding-left: 18px;
+}
+
+.just-os-references li {
+  margin-bottom: 4px;
+  color: var(--soft);
+}
+
+.just-os-references li a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+.just-os-references li a:hover {
+  text-decoration: underline;
+}
+
+.just-os-typing {
+  display: none;
+  padding: 6px 12px;
+  color: var(--soft);
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+.just-os-error {
+  color: #c0392b;
+  font-style: italic;
+}
+
+.just-os-input-area {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  padding: 10px 12px;
+  border-top: 1px solid #eee;
+  background: #fafafa;
+}
+
+.just-os-input {
+  flex: 1;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 0.9rem;
+  resize: none;
+  max-height: 120px;
+  font-family: inherit;
+  line-height: 1.4;
+}
+
+.just-os-input:focus {
+  outline: 3px solid var(--ink);
+  outline-offset: 1px;
+  border-color: var(--link);
+}
+
+.just-os-send-btn {
+  background: var(--link);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.just-os-send-btn:hover {
+  background: var(--ink);
+}
+
+.just-os-send-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* New Chat / History buttons */
+.just-os-new-chat-btn,
+.just-os-history-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.8rem;
+  color: var(--soft);
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.just-os-new-chat-btn:hover,
+.just-os-history-btn:hover {
+  background: #eee;
+  color: var(--ink);
+}
+
+/* History button pushed to the right in the widget header */
+.chat-header .just-os-history-btn {
+  margin-left: auto;
+}
+
+/* History panel — overlays the chat area */
+.just-os-history-panel {
+  position: absolute;
+  inset: 0;
+  background: #fff;
+  z-index: 20;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.just-os-history-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 15px;
+  border-bottom: 1px solid #eee;
+  background: var(--surface);
+  flex-shrink: 0;
+}
+
+.just-os-history-header span {
+  font-weight: bold;
+  color: var(--link);
+}
+
+.just-os-history-back {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--link);
+  padding: 4px 6px;
+  border-radius: 4px;
+}
+
+.just-os-history-back:hover {
+  background: #eee;
+}
+
+.just-os-history-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px;
+  min-height: 0;
+}
+
+.just-os-history-empty {
+  color: var(--soft);
+  font-size: 0.85rem;
+  text-align: center;
+  margin: 24px 0;
+}
+
+.just-os-history-item {
+  display: flex;
+  align-items: stretch;
+  border-radius: 8px;
+  margin-bottom: 4px;
+}
+
+.just-os-history-item:hover {
+  background: var(--surface);
+}
+
+.just-os-history-item.active {
+  background: var(--res-bg);
+}
+
+.just-os-history-open {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  padding: 8px 10px;
+  min-width: 0;
+}
+
+.just-os-history-title {
+  font-size: 0.88rem;
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.just-os-history-meta {
+  font-size: 15px;
+  color: var(--soft);
+}
+
+.just-os-history-delete {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #bbb;
+  font-size: 0.9rem;
+  padding: 0 10px;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.just-os-history-delete:hover {
+  color: #c0392b;
+}
+
+/* Standalone page offline notice */
+.just-os-offline-page {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 32px;
+  border: 1px solid #f1d6d2;
+  border-radius: 12px;
+  background: #fdf5f4;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #4a1f1a;
+}
+
+.just-os-offline-page__icon {
+  width: 64px;
+  height: 64px;
+  color: #c0392b;
+  margin-bottom: 16px;
+}
+
+.just-os-offline-page__title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0 0 8px;
+  color: #c0392b;
+}
+
+.just-os-offline-page__body {
+  font-size: 1rem;
+  line-height: 1.5;
+  max-width: 640px;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #just-os-window {
+    width: 100vw;
+  }
+
+  #just-os-window.floating {
+    width: 95vw;
+    height: 80vh;
+    top: 5vh;
+  }
+}
+/* Send is the site's primary pill. */
+.just-os-send-btn,#just-os-fullpage .just-os-send-btn{background:var(--link);border-radius:999px;padding:9px 18px;font:600 16px/1.3 var(--text)}
+.just-os-send-btn:hover,#just-os-fullpage .just-os-send-btn:hover{background:var(--ink)}
+.just-os-input{font-size:16px}

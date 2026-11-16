@@ -46,7 +46,7 @@ To get a handle on how my students are doing, and if there are issues in the lab
 
 <br><br>
 
-If you would the direct link to the google forms, [please follow this link.](https://docs.google.com/forms/d/e/1FAIpQLScGCi7iACgmVBhFcE7G90oPwuTs-g9CQkrDmOUoQ4FvoT9CfA/viewform)
+If you would like the direct link to the Google Forms, [please follow this link.](https://docs.google.com/forms/d/e/1FAIpQLScGCi7iACgmVBhFcE7G90oPwuTs-g9CQkrDmOUoQ4FvoT9CfA/viewform)
 
 Over time, I forget which new students I’ve given ‘key advice’ and expectations. So I made a document that I give to all new students. There is a different document for undergraduate Honours Thesis, MSc, and Ph.D. students, since my advice and expectations for those students differ. The document has basic things such as how many weeks ahead to give me drafts and that all students are expected to attend group meetings, and life things like you will work long hours sometimes, but this should be the exception, not the rule.
 

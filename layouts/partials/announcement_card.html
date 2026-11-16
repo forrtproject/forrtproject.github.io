@@ -4,7 +4,7 @@
      invalid HTML — the browser closes the outer anchor early and ejects the
      body out of the card. Instead the title is a "stretched link" whose
      ::after overlay makes the whole card navigate to the post (see
-     custom.scss); links inside the summary still display, but the card
+     lists.css); links inside the summary still display, but the card
      overlay catches the click, so the whole card leads to the post. */}}
 {{ $post := . }}
 {{ $img := ($post.Resources.ByType "image").GetMatch "*featured*" }}
@@ -12,7 +12,7 @@
 <article class="announcement-card{{ if not $img }} no-image{{ end }}">
   {{ with $img }}
   <div class="ac-thumb">
-    <img loading="lazy" src="{{ (.Fill "640x360 Center").RelPermalink }}" width="640" height="360" alt="{{ with $post.Params.image.alt_text }}{{ . }}{{ else }}Featured image for {{ $post.Title }}{{ end }}">
+    <img loading="lazy" src="{{ (.Fill "640x360 Center webp q75").RelPermalink }}" width="640" height="360" alt="{{ with $post.Params.image.alt_text }}{{ . }}{{ else }}Featured image for {{ $post.Title }}{{ end }}">
   </div>
   {{ end }}
   <div class="ac-body">
@@ -20,10 +20,9 @@
       {{ with $cat }}<span class="ac-cat {{ lower . }}">{{ . }}</span>{{ end }}
       <span class="ac-date">{{ $post.Date.Format "Jan 2006" }}</span>
     </div>
-    <h3><a class="ac-link" href="{{ $post.RelPermalink }}">{{ $post.Title }}</a></h3>
+    <h2><a class="ac-link" href="{{ $post.RelPermalink }}">{{ $post.Title }}</a></h2>
     {{/* Render the rendered-markdown summary as HTML so formatting (bold, links)
          and typographic entities (’, —) display correctly; CSS clamps the height. */}}
     <div class="ac-summary">{{ $post.Summary }}</div>
-    <span class="ac-more">Read more ›</span>
-  </div>
+      </div>
 </article>

@@ -1,8 +1,9 @@
 {{ partial "structured-data/summaries-jsonld.html" (dict "page" .Page "deiOnly" false) }}
 {{ $summaries := hugo.Data.summaries }}
-{{ range $summaries }}
+{{ range $summaries }}{{ if .Title }}
 
-<h2 id="{{.Id}}">{{ .Title | markdownify }}</h2>
+<details class="summary-entry">
+<summary><h2 id="{{.Id}}">{{ .Title | markdownify }}</h2></summary>
 <h3> Main Takeaways: </h3>
 <ul>
     {{ range .Main_Takeaways }}
@@ -23,7 +24,5 @@
     <li><a href="{{.href}}" class="">{{.Relevant_ref}}</a>
     {{end}}
 </ul>
-<br>
-<hr>
-<br>
-{{end}}
+</details>
+{{ end }}{{end}}

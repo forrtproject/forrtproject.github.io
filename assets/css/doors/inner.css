@@ -1,0 +1,63 @@
+/* Bridge for pages not redesigned yet: the theme's components in Doors colours and type,
+   so they sit inside the new shell. Each page group replaces this in its own phase. */
+.btn-primary{background:var(--link);border-color:var(--link);color:#fff}
+.btn-primary:hover,.btn-primary:focus{background:var(--ink);border-color:var(--ink);color:#fff}
+.btn-outline-primary{color:var(--link);border-color:var(--link);background:transparent}
+.btn-outline-primary:hover{background:var(--link);border-color:var(--link);color:#fff}
+.home-section,.docs-content,.article,.universal-wrapper{background:transparent}
+/* The theme fixes this at 1000 px from a 1001 px screen, wider than its padded parent. */
+.universal-wrapper{max-width:100%}
+/* The theme's sidebar, contents and article columns add up to 13 of 12, so the article takes what is left. */
+@media(min-width:1200px){.docs-sidebar~.docs-content{flex:1 1 0;max-width:none;min-width:0}}
+code,pre,kbd,samp{font-style:normal}
+
+/* Cookie banner: same library and wording, in Doors colours. */
+.cc-window.cc-window{max-height:100vh;overflow-y:auto;background:var(--ink);color:var(--page);font-family:var(--text);font-size:16px;line-height:1.5}
+.cc-window .cc-link,.cc-window .cc-link:hover,.cc-window .cc-link:visited{color:var(--page);opacity:1}
+.cc-window.cc-window .cc-btn,.cc-window.cc-window .cc-btn:focus{background:var(--hot);color:var(--ink);border:0;border-radius:999px;font-weight:700;font-size:15px;text-decoration:none}
+.cc-window.cc-window .cc-btn:hover{background:var(--page);color:var(--ink);text-decoration:none}
+
+/* An embed from another site, loaded when a visitor asks (layouts/partials/click_to_load.html). */
+.click-to-load{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-height:12rem;margin:0 0 18px;padding:24px;overflow:auto;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-small);text-align:center}
+.click-to-load p{max-width:34rem;margin:0;font-size:16px;line-height:1.45}
+.click-to-load-link{font-size:16px}
+/* A lesson activity in a small frame on a phone is too small to use, so there it opens on the provider's site. */
+@media(max-width:760px){
+  .click-to-load[style*="absolute"]:not([data-embed-src*="youtube"]) button{display:none}
+  .click-to-load[style*="absolute"]:not([data-embed-src*="youtube"]) .click-to-load-link{padding:8px 18px;background:var(--link);border-radius:999px;color:#fff;font-weight:600;text-decoration:none}
+}
+/* The flipbook's page count, in its own toolbar. */
+label[for=df_book_page_number]{color:var(--ink)!important;opacity:1!important}
+/* Lesson activities sit in a fixed-ratio box meant for the frame. Until it loads, the panel sets its own height. */
+.click-to-load[style*="absolute"]{position:static!important;width:auto!important;height:auto!important}
+:has(>.click-to-load[style*="absolute"]){height:auto!important;padding:0!important;overflow:visible!important}
+
+/* Author card and its social links. The card's name is an h2 under the article and elsewhere. */
+.author-card{display:flex;align-items:flex-start;gap:14px;margin:0 0 20px}
+.author-card .avatar{flex:none;width:64px;height:64px;border-radius:50%;object-fit:cover;margin:0}
+.author-card .avatar-square{border-radius:var(--r-small)}
+.author-card .media-body{min-width:0}
+.author-card .card-title{font-size:21px;line-height:1.2;margin:0 0 4px}
+.author-card .card-title a{color:inherit}
+ul.network-icon{display:flex;flex-wrap:wrap;gap:6px 10px;margin:6px 0 0;padding:0;list-style:none}
+ul.network-icon li{margin:0}
+ul.network-icon a{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;font-size:18px;color:var(--link)}
+ul.network-icon a:hover{color:var(--ink)}
+.cite-dialog{width:min(640px,calc(100% - 32px));padding:22px;border:0;border-radius:var(--r-large);background:var(--page);color:var(--ink)}
+.cite-dialog::backdrop{background:rgba(38,45,53,.55)}
+.cite-dialog h2{font-size:26px}
+.cite-dialog pre{max-height:50vh;overflow:auto;padding:12px;background:var(--surface);border-radius:var(--r-small)}
+
+/* Forced colours drop backgrounds, so filled buttons need an edge, and the dark logo needs a light plate. */
+@media (forced-colors:active){
+  .head-join,.cc-window.cc-window .cc-btn,.newsletter-submit,.btn,.tower-entry,.motion-toggle{border:2px solid ButtonText!important}
+  .brand img{background:#fff;padding:2px;border-radius:4px;forced-color-adjust:none}
+}
+/* On a phone the consent banner is compact: tighter padding and its two buttons side by side. The wording stays. */
+@media(max-width:760px){
+  .cc-window.cc-window{padding:12px 16px;font-size:15px;line-height:1.4}
+  .cc-window.cc-window .cc-message{margin-bottom:10px}
+  .cc-window.cc-window .cc-compliance{display:flex;gap:8px}
+  /* The plug-in's second-button margin and the 140 px minimum would overflow a 320 px screen. */
+  .cc-window.cc-window .cc-compliance .cc-btn{flex:1 1 0;min-width:0;margin:0;padding:9px 12px}
+}

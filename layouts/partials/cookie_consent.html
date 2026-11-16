@@ -1,12 +1,12 @@
+{{/* Ask before starting analytics. Colours are in assets/css/doors/inner.css, not the plug-in's palette. */}}
 {{ if site.Params.privacy_pack }}
-  {{ $scr := .Scratch }}
   {{ $ga := "" }}
   {{ if in (slice (getenv "HUGO_ENV") hugo.Environment) "production" }}
     {{ $ga = site.Params.marketing.google_tag_manager }}
   {{ end }}
   <link rel="stylesheet" href="{{ "vendor/cookieconsent/cookieconsent.min.css" | relURL }}">
   <style>.cc-revoke { display: none !important; } .cc-compliance .cc-btn { min-width: 140px; }</style>
-  <script src="{{ "vendor/cookieconsent/cookieconsent.min.js" | relURL }}"></script>
+  <script src="{{ "vendor/cookieconsent/cookieconsent.min.js" | relURL }}" defer></script>
   <script>
   (function () {
     var gaId = {{ $ga }};
@@ -53,10 +53,6 @@
       window.cookieconsent.initialise({
         type: "opt-in",
         cookie: { name: "forrt_analytics_choice", expiryDays: 365, secure: location.protocol === "https:" },
-        palette: {
-          popup: { background: "{{ $scr.Get "primary" }}", text: "{{ $scr.Get "background" }}" },
-          button: { background: "{{ $scr.Get "background" }}", text: "{{ $scr.Get "primary" }}" }
-        },
         theme: "classic",
         compliance: { "opt-in": '<div class="cc-compliance">{{ "{{deny}}{{allow}}" | safeJS }}</div>' },
         {{/* The plug-in's own buttons are links with no address, which Enter cannot press, and its labels don't match what they say. */}}

@@ -29,9 +29,7 @@
 
         <div class="cite-us-item">
           <div class="cite-us-text">
-            <span class="disciplines-cite-lead">The preprint:</span>
-            Farran, E. K., Silverstein, P., Ameen, A. A., Misheva, I., &amp; Gilmore, C. (2020, December 15). Open Research: Examples of good practice, and resources across disciplines (2026 edition).
-            <a href="https://doi.org/10.31219/osf.io/3r8hb" target="_blank" rel="noopener" class="doi-link">https://doi.org/10.31219/osf.io/3r8hb</a>
+            <p><span class="disciplines-cite-lead">The preprint:</span> Farran, E. K., Silverstein, P., Ameen, A. A., Misheva, I., &amp; Gilmore, C. (2025, October 27). Open Research: Examples of good practice, and resources across disciplines (2026 edition). <a href="https://doi.org/10.31219/osf.io/3r8hb" target="_blank" rel="noopener" class="doi-link">https://doi.org/10.31219/osf.io/3r8hb</a></p>
           </div>
           <button class="copy-button" onclick="copyDisciplinesCitation(this, 'preprint')">
             <svg class="copy-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -44,8 +42,7 @@
         {{ if $webCitationHTML }}
         <div class="cite-us-item">
           <div class="cite-us-text">
-            <span class="disciplines-cite-lead">This web resource:</span>
-            {{ $webCitationHTML | safeHTML }}
+            <p><span class="disciplines-cite-lead">This web resource:</span> {{ partial "citations/authors" $webCitationHTML }}</p>
           </div>
           <button class="copy-button" onclick="copyDisciplinesCitation(this, 'web')">
             <svg class="copy-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -58,8 +55,15 @@
       </details>
 
       <p class="intro-paragraph">
-        Use the sidebar to jump to your overarching field and specific discipline. Resources are categorised into five areas: <span class="badge" style="background:#6c757d;color:#fff;">General</span> <span class="badge" style="background:#17a2b8;color:#fff;">Open Data</span> <span class="badge" style="background:#28a745;color:#fff;">Open Methods</span> <span class="badge" style="background:#fd7e14;color:#fff;">Open Outputs</span> <span class="badge" style="background:#6f42c1;color:#fff;">Open Education</span>.
+        Jump to your field and discipline from the list of fields. Resources are grouped into five areas:
       </p>
+      <ul class="disciplines-areas">
+        <li><span class="badge" style="background:var(--soft);color:#fff;">General</span></li>
+        <li><span class="badge" style="background:var(--res);color:#fff;">Open Data</span></li>
+        <li><span class="badge" style="background:var(--edu);color:#fff;">Open Methods</span></li>
+        <li><span class="badge" style="background:var(--com);color:#fff;">Open Outputs</span></li>
+        <li><span class="badge" style="background:var(--jus);color:#fff;">Open Education</span></li>
+      </ul>
       <p class="intro-paragraph">
         If you have resources or disciplines to add, or spot errors, please <a href="https://docs.google.com/forms/d/e/1FAIpQLSfs-BCYWGet5QNZAWQ8IQVZ05TAUUwvD4mkc31Ehrm5tK8q3Q/viewform" target="_blank" rel="noopener">fill out this form</a>.
       </p>
@@ -76,7 +80,7 @@
 
 <script>
   var disciplinesCitations = {
-    preprint: {{ "Farran, E. K., Silverstein, P., Ameen, A. A., Misheva, I., & Gilmore, C. (2020, December 15). Open Research: Examples of good practice, and resources across disciplines (2026 edition). https://doi.org/10.31219/osf.io/3r8hb" | jsonify | safeJS }},
+    preprint: {{ "Farran, E. K., Silverstein, P., Ameen, A. A., Misheva, I., & Gilmore, C. (2025, October 27). Open Research: Examples of good practice, and resources across disciplines (2026 edition). https://doi.org/10.31219/osf.io/3r8hb" | jsonify | safeJS }},
     web: {{ with site.Data.disciplines_citation }}{{ .web | default "" | jsonify | safeJS }}{{ else }}""{{ end }}
   };
 

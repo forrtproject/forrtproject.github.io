@@ -51,29 +51,34 @@ subtitle = ""
  css_class = ""
 +++
 
-<br>
+{{% alert note %}}
+
+**This project has concluded.** Its work continues in the [FORRT Replication Hub](/replication-hub/), and its outcomes are described in the preprint [Tracking and Mainstreaming Replications in the Social, Cognitive, and Behavioral Sciences](https://osf.io/preprints/metaarxiv/ad2w6_v1). The effects below were crowdsourced and not consistently validated, so check specific claims before relying on them, and please [report errors](https://github.com/forrtproject/forrtproject.github.io/issues/612).
+
+<a class="btn btn-primary" href="/annotator/">Find more replications in FLoRA</a>
+
+{{% /alert %}}
 
 ## **Summary**
 
 <br>
 
-Replications of previous scientific work are at the core of the Open Scholarship movement. However, as replication efforts become more widespread, it can be challenging to scholars and educators to keep themselves up to date with which effects in their field replicate and which do not. FORRT’s replications and reversals aims to collate replications and specifically so-called reversal effects in social science. Reversals are—in the context of a replication—effects that have their original direction flipped. The extent of such reversals and non-replicated effects is already apparent in the social science literature, with even replicated effects being only half of the originally reported effect (Ioannidis, 2005; Open Science Collaboration, 2015). Although such failures to replicate are far less costly to society than for example medical ones (Prasad & Cifu, 2011), they broadly hinder science's goal of accumulating knowledge and contribute to waste of scarce resources. This resource aims to be a “living”, freely available, crowd-sourced, and community-driven collection of effects that have either not been replicated or even reversed through empirical research across social sciences. Scholars from varied backgrounds and areas of social science are invited to contribute with prevalent effects in their respective fields.
+FORRT's Replications and Reversals project collected replications of effects in the social sciences, especially reversals: effects whose direction flipped when they were replicated. It was a crowd-sourced, community-driven collection to help scholars and educators keep up with which effects in their field replicate and which do not.
+
 
 <br>
 
-{{% alert note %}}
+### **How to cite**
 
-Data for this project were crowdsourced and not yet consistently validated. Researchers who contributed to this project did so voluntarily and are listed at <a href="http://forrt.org/contributors">forrt.org/contributors</a>. This page can give a good orientation regarding the state of evidence regarding various claims, but you should check specific claims before you rely on them.
-
-Please report errors you spot <a href="https://github.com/forrtproject/forrtproject.github.io/issues/612">here</a>. If you need validated data on replications, we would encourage you to use the FORRT Replication Database (<a href="https://forrt.org/explorer">FReD</a>, with effect sizes) or the more comprehensive FORRT Library of Reproduction and Replication Attempts (<a href="https://forrt.org/annotator">FLoRA</a>).
-
-Please cite this source as Hartmann H, Azevedo F, Röseler L, Wallrich L, Aldoh A, Elsherif MM, et al. Tracking and mainstreaming replications in the social, cognitive, and behavioral sciences. MetaArXiv. https://doi.org/10.31222/osf.io/ad2w6_v1
-
-{{% /alert %}}
+Please cite this source as Hartmann H, Azevedo F, Röseler L, Wallrich L, Aldoh A, Elsherif MM, et al. Tracking and mainstreaming replications in the social, cognitive, and behavioral sciences. MetaArXiv. https://doi.org/10.31222/osf.io/ad2w6_v1. Contributors are listed at [forrt.org/contributors](/contributors/).
 
 <br>
 
-## **Motivation**
+{{< spoiler text="About this project: motivation, history and how to contribute" >}}
+
+
+
+### **Motivation**
 
 The purpose of collating these reversal effects in social science is to encourage educators to incorporate replications of these effects into their students' project (e.g., third-year, thesis, course work) to provide them the opportunity to experience the research process directly, assess their ability to perform and report scientific research, and to help evaluate the robustness of the original study, thereby also helping them become good consumers of research. The below crowdsourced and community-curated resource aims to satisfy three of [FORRT’s Goals](https://forrt.org/about/mission/):
 
@@ -90,9 +95,7 @@ and four of [FORRT’s Mission](https://forrt.org/about/mission/):
 
 <br>
 
-## **Current Status**
-
-**This project has now concluded** and has been succeeded by multiple projects within the [FORRT Replication Hub](https://forrt.org/replication-hub/). The outcomes and framework of this initiative are discussed in our recent preprint: [Tracking and Mainstreaming Replications in the Social, Cognitive, and Behavioral Sciences](https://osf.io/preprints/metaarxiv/ad2w6_v1).
+### **Current Status**
 
 The original project was organized in five stages: 
 
@@ -106,69 +109,29 @@ The original project was organized in five stages:
 
 - [x] **Update Phases** (dynamically adding new effects). Now continued through the Replication Hub projects.
 
-{{% alert example %}}
+### **Recognition**
 
- {{< hl >}}We were shortlisted for the **Einstein Foundations Award or Promoting Quality in Research 2023** in the category Early Career Award! Check out our project "Tracking and Mainstreaming Replications across the Social, Behavioral and Cognitive Sciences" [here](https://web.archive.org/web/20231204000615/https://www.einsteinfoundation.de/en/award/events/meet-the-finalists/)!{{< /hl >}}
-
- {{% /alert %}}
-
-{{% alert example %}}
-
- {{< hl >}}We received the **Open Science Fund 2023** from the Dutch Research Foundation (NWO)! Check out our project "Tracking and Mainstreaming Replications across the Social, Behavioral and Cognitive Sciences" [here](https://www.nwo.nl/en/researchprogrammes/open-science/open-science-fund/open-science-fund-2023-awarded-grants)!{{< /hl >}}
-
- {{% /alert %}}
-
- {{% alert example %}}
-
- {{< hl >}}We got a **SIPS 2023 commendation** from the Society for the Improvement of Psychological Science! Check out the [awards page](https://improvingpsych.org/mission/awards/) for the other commendations!{{< /hl >}}
-
- {{% /alert %}}
+- Shortlisted for the **Einstein Foundation Award for Promoting Quality in Research 2023**, Early Career Award ([finalists](https://web.archive.org/web/20231204000615/https://www.einsteinfoundation.de/en/award/events/meet-the-finalists/))
+- **Open Science Fund 2023** from the Dutch Research Council, NWO ([awarded grants](https://www.nwo.nl/en/researchprogrammes/open-science/open-science-fund/open-science-fund-2023-awarded-grants))
+- **SIPS 2023 commendation** from the Society for the Improvement of Psychological Science ([awards page](https://improvingpsych.org/mission/awards/))
 
 <br>
 
-## **How to contribute?**
+### **How to contribute?**
 
-This specific reversals project has concluded, and its work has been integrated into the broader [FORRT Replication Hub](https://forrt.org/replication-hub/). To contribute replication data, please submit new entries to the [FORRT Replication Database (FReD)](https://forrt.org/replication-hub/fred/) or contact Lukas Röseler at lukas.roeseler@uni-muenster.de for any questions.
+This specific reversals project has concluded, and its work has been integrated into the broader [FORRT Replication Hub](https://forrt.org/replication-hub/). To contribute replication data, please submit new entries through the [Replication Hub](/replication-hub/submit/) or contact Lukas Röseler at lukas.roeseler@uni-muenster.de for any questions.
 
 All **past or current project contributors** are listed at the [bottom of this page](#contributors).
 
 <br><br>
 
+{{< /spoiler >}}
+
 ---------------
-# **All Effects** (*sorted by discipline*)
----------------
 
-You can find a list of all effects we are working on [here](https://docs.google.com/spreadsheets/d/1IY56xdDmoU9VasdE0sry2xvsGFkWPrqbKXAs1Rw-9LA/edit#gid=0). To search whether an effect already exists in our collection, use Ctrl-F or the search function together with a keyword in relation to the effect (e.g. "Macbeth" or "Priming"). Please note that not all effects in the spreadsheet are listed below, as this is a work in progress (last site update: 13th of July 2023)
+{{< list_filter label="Search the effects" placeholder="e.g. priming, Bargh, ego depletion" noun="effects" >}}
 
-<br>
-
-## **Table of Contents**
-
-<!-- MarkdownTOC depth=4 -->
-
-- [Social Psychology](#social-psychology)
-- [Positive Psychology](#positive-psychology)
-- [Cognitive Psychology](#cognitive-psychology)
-- [Developmental Psychology](#developmental-psychology)
-- [Differential Psychology](#differential-psychology)
-- [Judgment and Decision Making / Behavioral Economics](#judgment-and-decision-making)
-- [Marketing](#marketing)
-- [Neuroscience (humans)](#neuroscience-humans)
-- [Psychiatry / Mental Health](#psychiatry)
-- [Parapsychology](#parapsychology)
-- [Evolutionary Psychology](#evolutionary-psychology)
-- [Psychophysiology](#psychophysiology)<!-- - - [Behavioral Genetics](#behavioral-genetics)-->
-- [Applied Linguistics](#applied-linguistics)
-- [Educational Psychology](#educational-psychology)
-- [Health Psychology](#health-psychology)
-- [Political Psychology](#political-psychology) <!-- - [Comparative Psychology](#comparative-psychology)-->
-- [Evolutionary Linguistics](#evolutionary-linguistics)
-- [Speech Language Therapy](#speech-language-therapy)
-- [Experimental Philosophy](#experimental-philosophy)
-- [Further Literature](#further-literature)
-- [Contributors](#contributors)
-
-<!-- /MarkdownTOC -->
+The full list of effects is in [this spreadsheet](https://docs.google.com/spreadsheets/d/1IY56xdDmoU9VasdE0sry2xvsGFkWPrqbKXAs1Rw-9LA/edit#gid=0); not all of them are shown below (last updated 13 July 2023).
 
 <br>
 
@@ -250,7 +213,7 @@ You can find a list of all effects we are working on [here](https://docs.google.
 {{< spoiler text="Statistics" >}}    
 * Status: not replicated
 * Original paper: '[Mere exposure to money increases endorsement of free-market systems and social inequality](https://www.ncbi.nlm.nih.gov/pubmed/22774789)', Caruso 2013; experimental design, n between 30 and 168 [(citations~161 (GS, November 2021)].
-* Critiques: [Rohrer 2015](http://uweb.cas.usf.edu/~drohrer/pdfs/Rohrer_et_al_2015JEPG.pdf) [n=136, citations = 82 (GS, November 2021)]. Meta-analysis: [Lodder 2019](https://osf.io/3sh5a/) [_k_=246, citations = 64 (GS, November 2021)].
+* Critiques: [Rohrer 2015](https://doi.org/10.1037/xge0000058) [n=136, citations = 82 (GS, November 2021)]. Meta-analysis: [Lodder 2019](https://osf.io/3sh5a/) [_k_=246, citations = 64 (GS, November 2021)].
 * Original effect size: system justification _d _= 0.8, just world _d _= 0.44, dominance _d _= 0.51, fair market ideology: not reported, _d_ = 0.70 [obtained from Rohrer's 2015 Experiment 4 results section].
 * Replication effect size: Rohrer et al. (Experiment 1): _d_ = 0.07 [0.41, 0.27] for system justification, _d_ = 0.06 [-0.14, 0.25] for belief in a just world, _d_  = -0.06 for social dominance, social dominance: _d_ = 0.06 [0.37, 0.26], fair market ideology, _d_ = 0.14 [-0.23, 0.50]. For 47 preregistered experiments in Lodder: _g_ = 0.01 [-0.03, 0.05] for system justification, _g_ = 0.11 [-0.08, 0.3] for belief in a just world, _g_ = 0.07 [-0.02, 0.15] for fair market ideology.
 {{< /spoiler >}}
@@ -426,7 +389,7 @@ You can find a list of all effects we are working on [here](https://docs.google.
 * Replication effect size: Various sources (Burger, Perry, Branningan, Griggs, Caspar): Experiment included many** **researcher degrees of freedom, going off-script, implausible agreement between very different treatments, and “only half of the people who undertook the experiment fully believed it was real and of those, 66% disobeyed the experimenter.”. Doliński et al.: comparable effects to Milgram. Burger: similar levels of compliance to Milgram, but the level didn't scale with the strength of the experimenter prods. Blass: average compliance of 63%, but suffer from the usual publication bias and tiny samples. (Selection was by a student of Milgram.) The most you can say is that there's weak evidence for compliance, rather than obedience. ("Milgram's interpretation of his findings has been largely rejected.").
 {{< /spoiler >}}
 
-* **Robbers Cave Study**. Utilized arbitrary groupings to demonstrate that tribalism between groups arises spontaneously, and depending on the context, it can result in group competition (e.g., in case of scarce resources) or group cooperation (e.g., in case of superordinate goals and common obstacles)**. **
+* **Robbers Cave Study**. Utilized arbitrary groupings to demonstrate that tribalism between groups arises spontaneously, and depending on the context, it can result in group competition (e.g., in case of scarce resources) or group cooperation (e.g., in case of superordinate goals and common obstacles).
 {{< spoiler text="Statistics" >}}
 * Status: NA
 * Original paper: '[Superordinate Goals in the Reduction of Intergroup Conflict](https://doi.org/10.1086/222258)', Sherif 1958; field experiment, n=22. [citations= 1,010(GS, February, 2022)]. In addition to the original paper, some related books from the author(s) are also highly cited including: '[Groups in harmony and tension](https://psycnet.apa.org/record/1954-02446-000)', Sherif & Sherif 1958 [citations=2,280 (GS, February, 2022)] and ‘[Intergroup Conflict and Co-operation](https://books.google.co.uk/books?hl=en&lr=&id=24TwCQAAQBAJ&oi=fnd&pg=PP1&dq=Group+Conflict+and+Co-operation+&ots=ufwdngs5bi&sig=qxT2o26vEi7KdeJxWNqfSYHdaSM&redir_esc=y#v=onepage&q=Group%20Conflict%20and%20Co-operation&f=false)', Sherif et al. 1961 [citations= 253, (GS, February, 2022)]. Overall, the effect accounts to more than 4000 total citations including the [SciAm piece](https://doi.org/10.1038/scientificamerican1156-54).
@@ -1995,7 +1958,7 @@ You can find a list of all effects we are working on [here](https://docs.google.
 {{< spoiler text="Statistics" >}}
 * Status: replicated 
 * Original paper: ‘[You that read wrong again! A transposed-word effect in grammaticality judgments](https://doi.org/10.1177/0956797618806296)’, Mirault et al. 2018; two experiments, laboratory: n = 57, online: n = 94. [citation=47(GS, November 2022)]​.
-* Critiques:  [Huang and Staub 2022](https://doi.org/10.3758/s13423-022-02150-9) [Experiment 1: n = 49, Experiment 2: n = 51, citations=0(GS, November 2022)]. [Liu et al. 2020 ](https://doi.org/10.3758/s13414-020-02114-y)[Experiment 1: n = 63, Experiment 2: n = 69,  Experiment 3: n = 63, citations=5(GS, November 2022)]. [Liu et al. 2021 ](https://doi.org/10.1016/j.actpsy.2021.103272)[Experiment 1: n = 60, Experiment 2: n = 32, citations=4(GS, November 2022)].[ Liu et al. 2022](https://doi.org/10.1016/j.cognition.2021.104922) [n = 112, citations=2(GS, November 2022)]. [Mirault et al. 2020 ](https://doi.org/10.1016/j.metip.2020.100029)[n = 112, citations=13(GS, November 2022)]. [Mirault et al. 2022](https://doi.org/10.3758/s13414-021-02421-y) [Experiment 1: n = 60, Experiment 2: n = 32, citations=4(GS, November 2022)]. [Pegado and Grainger 2019a ](https://doi.org/10.1016/j.actpsy.2019.102943)[n = 28, citations=11(GS, November 2022)]. [Pegado and Grainger 2019b](https://psycnet.apa.org/fulltext/2019-68134-001.pdf) [Experiment 1: n = 28, Experiment 2: n = 28, citations=13(GS, November 2022)]. [Pegado and Grainger 2021](https://doi.org/10.3758/s13423-020-01819-3) [n = 28, citations=6(GS, November 2022)]. [Pegado et al. 2021](https://www.researchgate.net/publication/346130946_On_the_noisy_spatiotopic_encoding_of_word_positions_during_reading_Evidence_from_the_change-detection_task) [n = 31, citations=2(GS, November 2022)]. [Snell and Grainger 2019](https://hal.archives-ouvertes.fr/hal-02448204/document) [n = 24, citations=21(GS, November 2022)]. [Wen et al. 2021a ](https://doi.org/10.1080/23273798.2021.1880608)[n = 40, citations=3(GS, November 2022)]. [Wen et al. 2021b ](https://www.researchgate.net/publication/338782241_Fast_Syntax_in_the_Brain_Electrophysiological_Evidence_from_the_Rapid_Parallel_Visual_Presentation_Paradigm_RPVP)[experiment 2: n = 26, citations=10(GS, November 2022)][. Wen et al. 2022](https://doi.org/10.1080/23273798.2021.1880608) [n = 124, citations=0(GS, November 2022)].
+* Critiques:  [Huang and Staub 2022](https://doi.org/10.3758/s13423-022-02150-9) [Experiment 1: n = 49, Experiment 2: n = 51, citations=0(GS, November 2022)]. [Liu et al. 2020 ](https://doi.org/10.3758/s13414-020-02114-y)[Experiment 1: n = 63, Experiment 2: n = 69,  Experiment 3: n = 63, citations=5(GS, November 2022)]. [Liu et al. 2021 ](https://doi.org/10.1016/j.actpsy.2021.103272)[Experiment 1: n = 60, Experiment 2: n = 32, citations=4(GS, November 2022)].[ Liu et al. 2022](https://doi.org/10.1016/j.cognition.2021.104922) [n = 112, citations=2(GS, November 2022)]. [Mirault et al. 2020 ](https://doi.org/10.1016/j.metip.2020.100029)[n = 112, citations=13(GS, November 2022)]. [Mirault et al. 2022](https://doi.org/10.3758/s13414-021-02421-y) [Experiment 1: n = 60, Experiment 2: n = 32, citations=4(GS, November 2022)]. [Pegado and Grainger 2019a ](https://doi.org/10.1016/j.actpsy.2019.102943)[n = 28, citations=11(GS, November 2022)]. [Pegado and Grainger 2019b](https://doi.org/10.1037/xlm0000776) [Experiment 1: n = 28, Experiment 2: n = 28, citations=13(GS, November 2022)]. [Pegado and Grainger 2021](https://doi.org/10.3758/s13423-020-01819-3) [n = 28, citations=6(GS, November 2022)]. [Pegado et al. 2021](https://www.researchgate.net/publication/346130946_On_the_noisy_spatiotopic_encoding_of_word_positions_during_reading_Evidence_from_the_change-detection_task) [n = 31, citations=2(GS, November 2022)]. [Snell and Grainger 2019](https://hal.archives-ouvertes.fr/hal-02448204/document) [n = 24, citations=21(GS, November 2022)]. [Wen et al. 2021a ](https://doi.org/10.1080/23273798.2021.1880608)[n = 40, citations=3(GS, November 2022)]. [Wen et al. 2021b ](https://www.researchgate.net/publication/338782241_Fast_Syntax_in_the_Brain_Electrophysiological_Evidence_from_the_Rapid_Parallel_Visual_Presentation_Paradigm_RPVP)[experiment 2: n = 26, citations=10(GS, November 2022)][. Wen et al. 2022](https://doi.org/10.1080/23273798.2021.1880608) [n = 124, citations=0(GS, November 2022)].
 * Original effect size: laboratory: _d_ = 1.86, online: _d_ = 1.58.
 * Replication effect size: Huang and Staub: Experiment 1: _d_ = 1.27  [calculated using this conversion from t to Cohen’s d](https://haiyangjin.github.io/2020/05/eta2d/#conversion-between-cohens-d-and-partial-eta-squared), Experiment 2: _d_ = 0.97 [calculated using this conversion from t to Cohen’s d](https://haiyangjin.github.io/2020/05/eta2d/#conversion-between-cohens-d-and-partial-eta-squared). Liu et al.: Experiment 1: _d_ = 1.37 [calculated using this conversion from t to Cohen’s d](https://haiyangjin.github.io/2020/05/eta2d/#conversion-between-cohens-d-and-partial-eta-squared), Experiment 2: _d_ = 1.37 [calculated using this conversion from t to Cohen’s d,](https://haiyangjin.github.io/2020/05/eta2d/#conversion-between-cohens-d-and-partial-eta-squared) Experiment 3: _d_ = 1.26 [calculated using this conversion from t to Cohen’s d](https://haiyangjin.github.io/2020/05/eta2d/#conversion-between-cohens-d-and-partial-eta-squared). Liu et al.: Experiment 1: _d_= 2.40 [calculated using this conversion from t to Cohen’s d](https://haiyangjin.github.io/2020/05/eta2d/#conversion-between-cohens-d-and-partial-eta-squared), Experiment 2: _d_ = 1.69 [calculated using this conversion from t to Cohen’s d](https://haiyangjin.github.io/2020/05/eta2d/#conversion-between-cohens-d-and-partial-eta-squared). Liu et al.: serial visual presentation: _d_ = 1.02 [calculated using this conversion from t to Cohen’s d,](https://haiyangjin.github.io/2020/05/eta2d/#conversion-between-cohens-d-and-partial-eta-squared)parallel visual presentation: _d_ = ​2.00 [calculated using this conversion from t to Cohen’s d](https://haiyangjin.github.io/2020/05/eta2d/#conversion-between-cohens-d-and-partial-eta-squared). Mirault et al.: _d_ = 0.52 [calculated using this conversion from t to Cohen’s d](https://haiyangjin.github.io/2020/05/eta2d/#conversion-between-cohens-d-and-partial-eta-squared). Mirault et al.: Experiment 1: _d_ = 0.40 [calculated using this conversion from t to Cohen’s d; ](https://haiyangjin.github.io/2020/05/eta2d/#conversion-between-cohens-d-and-partial-eta-squared)Experiment 2: _d_ = 0.88. Pegado and Grainger: _d_ = 0.73 [calculated using this conversion from t to Cohen’s d](https://haiyangjin.github.io/2020/05/eta2d/#conversion-between-cohens-d-and-partial-eta-squared). Pegado and Grainger: Experiment 1: _d_ = 2.97 [calculated using this conversion from t to Cohen’s d](https://haiyangjin.github.io/2020/05/eta2d/#conversion-between-cohens-d-and-partial-eta-squared), Experiment 2: _d_ = 0.78 [calculated using this conversion from t to Cohen’s d](https://haiyangjin.github.io/2020/05/eta2d/#conversion-between-cohens-d-and-partial-eta-squared). Pegado and Grainger: _d_ =1.40. Pegado et al.: _d_ = 2.08 [calculated using this conversion from t to Cohen’s d](https://haiyangjin.github.io/2020/05/eta2d/#conversion-between-cohens-d-and-partial-eta-squared). Snell and Grainger: _d_ = 1.58 [calculated using this conversion from t to Cohen’s d](https://haiyangjin.github.io/2020/05/eta2d/#conversion-between-cohens-d-and-partial-eta-squared). Wen et al.: _d_ = 0.64 [calculated using this conversion from t to Cohen’s d](https://haiyangjin.github.io/2020/05/eta2d/#conversion-between-cohens-d-and-partial-eta-squared). Wen et al.: Experiment 2: _d_ = 1.62 [calculated using this conversion from t to Cohen’s d. ](https://haiyangjin.github.io/2020/05/eta2d/#conversion-between-cohens-d-and-partial-eta-squared)Wen et al.: _d_ = 0.32 [calculated using this conversion from t to Cohen’s d](https://haiyangjin.github.io/2020/05/eta2d/#conversion-between-cohens-d-and-partial-eta-squared).
 {{< /spoiler >}}

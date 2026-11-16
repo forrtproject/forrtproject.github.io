@@ -1,0 +1,6 @@
+{{/* A short note beside the text on wide screens, and in the text on narrow ones. Put it just before
+     the paragraph it goes with. Optional: title, and tone ("example" or "warning"). */}}
+<aside class="callout{{ with .Get "tone" }} callout-{{ . }}{{ end }}"{{ with .Get "title" }} aria-label="{{ . }}"{{ end }}>
+  {{ with .Get "title" }}<p class="callout-title">{{ . }}</p>{{ end }}
+  {{ .Page.RenderString (dict "display" "block") .Inner | emojify }}
+</aside>

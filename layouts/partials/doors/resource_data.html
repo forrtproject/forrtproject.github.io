@@ -1,0 +1,54 @@
+{{/* The two files resources.js loads: a small one for filtering, and one with every field for
+     searching, fetched on the first search. Built once. Input: dict with `index`. Each row's `d`
+     is the date added, from the form's `timestamp`, as "YYYY-MM-DDTHH:MM:SS" for sorting, or ""
+     when there is none. The sheet holds form times ("6/27/2023 14:45:33"), ISO times from the
+     2020 import, and a bare "01/01/2020" that stands in for an unknown date, so that counts as none. */}}
+{{ $index := .index }}
+{{ $facets := dict }}
+{{ $positions := dict }}
+{{ range $index.facets }}
+  {{ $facets = merge $facets (dict .key (apply .values "index" "." "slug")) }}
+  {{ $labels := dict }}
+  {{ range $i, $value := .values }}{{ $labels = merge $labels (dict (urlize $value.label) $i) }}{{ end }}
+  {{ $positions = merge $positions (dict .key $labels) }}
+{{ end }}
+{{ $rows := slice }}
+{{ $search := slice }}
+{{ range $index.pages }}
+  {{ $item := index $index.items .RelPermalink }}
+  {{ $t := slice }}{{ range $item.types }}{{ $t = $t | append (index $positions.type (urlize .)) }}{{ end }}
+  {{ $l := slice }}{{ range $item.levels }}{{ $l = $l | append (index $positions.level (urlize .)) }}{{ end }}
+  {{ $c := slice }}{{ range $item.clusters }}{{ $c = $c | append (index $positions.cluster (urlize .)) }}{{ end }}
+  {{ $stamp := trim (.Params.timestamp | default "" | string) " " }}
+  {{ $added := "" }}
+  {{ with findRESubmatch `^(\d{1,2})/(\d{1,2})/(\d{4}) (\d{1,2}):(\d{2}):(\d{2})$` $stamp 1 }}
+    {{ $p := index . 0 }}
+    {{/* Padded by length, as Hugo's int reads "08" as octal. */}}
+    {{ $pad := slice }}
+    {{ range slice (index $p 1) (index $p 2) (index $p 4) }}{{ $pad = $pad | append (cond (eq (len .) 1) (printf "0%s" .) .) }}{{ end }}
+    {{ $added = printf "%s-%s-%sT%s:%s:%s" (index $p 3) (index $pad 0) (index $pad 1) (index $pad 2) (index $p 5) (index $p 6) }}
+  {{ else }}
+    {{ if findRE `^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}` $stamp 1 }}{{ $added = substr $stamp 0 19 }}{{ end }}
+  {{ end }}
+  {{ $rows = $rows | append (dict "t" $item.title "u" (path.Base (strings.TrimSuffix "/" .RelPermalink)) "y" $t "l" $l "c" $c "d" $added) }}
+  {{/* Every field, as the old page's search had (issue #286). */}}
+  {{ $tags := partial "functions/page_tags.html" . }}
+  {{ $search = $search | append (lower (delimit (slice
+    $item.title
+    (.Params.abstract | default "" | markdownify | plainify | htmlUnescape)
+    (delimit (.Params.creators | default slice) " ")
+    (delimit (.Params.material_type | default slice) " ")
+    (delimit (.Params.primary_user | default slice) " ")
+    (delimit (.Params.subject_areas | default slice) " ")
+    (delimit ($tags | default slice) " ")
+    (delimit (.Params.education_level | default slice) " ")
+    (delimit (.Params.language | default slice) " ")
+    (.Params.conditions_of_use | default "")
+    (.Params.forrt_clusters_new | default "")
+    (.Params.forrt_sub_clusters | default "")
+  ) " ")) }}
+{{ end }}
+{{ $base := path.Dir (strings.TrimSuffix "/" (index $index.pages 0).RelPermalink) }}
+{{ $directory := dict "base" (printf "%s/" $base) "facets" $facets "items" $rows | jsonify | resources.FromString "resources/directory.json" }}
+{{ $searchFile := $search | jsonify | resources.FromString "resources/search.json" }}
+{{ return dict "directory" $directory "search" $searchFile }}

@@ -1,0 +1,8 @@
+{{/* Ranked bars with their numbers in text, so the list is its own alternative. Input: dict with
+     `rows` (each with `name` and `n`) and `max`, the value of a full-width bar. */}}
+{{ $max := .max }}
+<ol class="bars">
+  {{ range .rows }}
+  <li class="bar"><span class="bar-name">{{ .name }}</span><span class="bar-value">{{ .n }}</span><span class="bar-track" aria-hidden="true"><span class="bar-fill" style="--share:{{ div (mul 100.0 .n) $max }}%"></span></span></li>
+  {{ end }}
+</ol>

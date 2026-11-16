@@ -1,6 +1,6 @@
 ---
 title: "FORRT Replication Hub — Transforming Research"
-heading_title: "FORRT's Replication Hub"
+heading_title: "Replication Hub"
 description: "Support for every level of replication and reproduction — tracking, exploring, conducting, and disseminating replication studies across all research disciplines."
 type: replication_hub
 image: "replication_hub.webp"
@@ -8,83 +8,107 @@ image_alt: "FORRT Replication Hub diagram showing four areas: Track, Explore, Co
 sharing_image_resource: "replication_hub.webp"
 sharing_image_alt: "FORRT Replication Hub diagram showing four areas: Track, Explore, Conduct, Disseminate"
 
-intro: >
-  With the FORRT Replication Hub, our mission is to support reproduction and
-  replication studies across all stages of the research process as well as all
-  research disciplines. It consists of a comprehensive collection of resources
-  and tools designed to assist researchers in the *tracking*, *finding &
-  exploring*, *conducting*, and *publishing & dissemination* of reproduction and
-  replication studies.
+lede: "Evidence worth building on. Tools and guidance for reproduction and replication studies, at every stage and in every discipline."
 
+# A link with no `label` takes its name from the main menu, so renaming a menu entry renames it here.
+# Four common starting points, shown under the introduction, in the order of the stages (hub.css colours them).
+start:
+  - title: "Submit a replication"
+    text: "Add your study to FLoRA"
+    url: "replication-hub/submit/"
+  - title: "Check a paper"
+    text: "Find replications of the studies a paper cites"
+    url: "annotator/"
+  - title: "Plan a replication"
+    text: "The handbook for reproductions and replications"
+    url: "https://forrt.org/replication-handbook/"
+  - title: "Publish a replication"
+    text: "In Replication Research (R2), a diamond open access journal"
+    url: "https://replicationresearch.org"
 cards:
   - key: track
     title: Track
-    description: >
-      Reproductions and replications are often published in preprints, as part
-      of meta-papers that can include over one hundred studies, and in different
-      journals than the respective target studies. At the FORRT Replication Hub,
-      we track them in multiple ways by linking original and target studies.
+    summary: Catalogue replication attempts.
     links:
-      - text: "FORRT Library of Reproduction and Replication Attempts (FLoRA)"
-        url: "/replication-hub/flora/"
-      - text: "FLoRA Submission Form"
-        url: "/replication-hub/submit/"
-      - text: "Positive Changes from the Replication Crisis"
-        url: "https://doi.org/10.1038/s44271-023-00003-2"
+      - url: "replication-hub/flora/"
+        format: "Database"
+        label: "FLoRA"
+        note: "FORRT's library of reproduction and replication attempts."
+      - url: "replication-hub/submit/"
+        format: "Form"
+        label: "Submit a replication"
+        note: "Help the community find and use replication evidence."
 
   - key: explore
     title: Explore
-    description: >
-      *Gotta catch 'em all!* Researchers who are looking to incorporate hundreds
-      of replication attempts into their research and teaching can make use of
-      our free and open-source tools. These are mostly based on FLoRA and FReD.
+    summary: Discover and explore replications.
     links:
-      - text: "FLoRA Annotator"
-        url: "/annotator"
-      - text: "FLoRA Explorer"
-        url: "/flora-explorer/"
-      - text: "FReD Explorer"
-        url: "/explorer"
-      - text: "FReD R Package"
-        url: "/fred"
-      - text: "Replication Atlas"
-        url: "/flora-replication-atlas/"
-      - text: "Zotero Replication Checker"
-        url: "/flora-zotero/"
-      - text: "FORRT ORE browser extension"
-        url: "/chromium-extension/"
+      - url: "https://forrt.org/flora-replication-atlas/"
+        format: "Web app"
+        note: "Look up any study and see every replication and reproduction attempt on record."
+      - url: "https://forrt.org/flora-explorer/"
+        format: "Web app"
+        label: "FLoRA Explorer"
+        note: "Browse FLoRA by study, year, discipline and citation impact."
+      - url: "annotator/"
+        format: "Web app"
+        label: "FLoRA Annotator"
+        note: "Look up replication and reproduction attempts for any reference."
+      - url: "explorer/"
+        format: "Web app"
+        note: "Find replication evidence in the FORRT Replication Database."
+      - url: "https://forrt.org/fred/index.html"
+        format: "R package"
+        note: "Work with replication data in your own analyses."
+      - url: "https://forrt.org/flora-zotero/"
+        format: "Zotero plug-in"
+        note: "Check your references for replication evidence."
+      - url: "https://forrt.org/chromium-extension/"
+        format: "Browser extension"
+        note: "See replication evidence, retractions, PubPeer comments and open-access copies for the papers you read."
 
   - key: conduct
     title: Conduct
-    description: >
-      Since failures to replicate a large proportion of seminal findings across
-      many disciplines, interest in reproduction and replication has surged and
-      given rise to new techniques and methods. Our resources help students,
-      ECRs, and experienced researchers to take up newly developed methods and
-      conduct high-quality replication research.
+    summary: Run high-quality replications.
     links:
-      - text: "Handbook for Reproduction and Replication Studies (WIP)"
-        url: "/replication-handbook"
-      - text: "Manuscript Templates"
-        url: "https://osf.io/brxtd/"
-      - text: "Love Replications Week"
-        url: "/love-replications-week"
-      - text: "ReplicateThis Nomination Portal (demo!)"
-        url: "/replicatethis"
+      - url: "https://forrt.org/replication-handbook/"
+        format: "Guide"
+        note: "Find guidance for planning and conducting your study."
+      - url: "https://osf.io/brxtd/"
+        format: "Templates"
+        note: "Start writing with resources designed for replication research."
+      - url: "replication-hub/large-scale-replication-projects"
+        format: "List"
+        note: "Explore collaborative reproduction and replication work."
+      - url: "https://forrt.org/love-replications-week/"
+        format: "Event"
+        label: "Love Replications Week"
+        note: "A week of best practices, contact with experts and open community."
+      - url: "https://forrt.org/replicatethis/"
+        format: "Prototype"
+        label: "ReplicateThis Nomination Portal (demo)"
+        note: "An early prototype of a community registry for scientific verification."
 
   - key: disseminate
     title: Disseminate
-    description: >
-      Research is meant to be shared. While many areas of academic culture value
-      innovation for the sake of robustness and repetition, we strive for
-      equality. With a dedicated and community-owned diamond open access journal
-      led by a group of experts, FORRT supports all researchers in publishing
-      high-quality repetitions.
+    summary: Get replications to the people who need them.
     links:
-      - text: "Replication Research (R2) Diamond Open Access Journal"
-        url: "http://replicationresearch.org"
-      - text: "R2 Mentorship Program"
-        url: "https://ejournals.uni-muenster.de/replicationresearch/mentorshipprogram"
-      - text: "Replication Journal Federation"
-        url: "/rjf"
+      - url: "https://replicationresearch.org"
+        format: "Journal"
+        label: "Replication Research (R2)"
+        note: "Publish and read reproduction and replication research in a diamond open access journal."
+      - url: "https://ejournals.uni-muenster.de/replicationresearch/mentorshipprogram"
+        format: "Programme"
+        label: "R2 Mentorship Program"
+        note: "The journal's mentorship programme."
+      - url: "https://forrt.org/rjf/"
+        format: "Network"
+        label: "Replication Journal Federation"
+        note: "Free to publish, free to read and free from commercial interests."
+      - url: "reversals"
+        format: "Archive"
+        note: "Follow research that examines what holds up."
+      - url: "positive-changes-replication-crisis"
+        format: "Collection"
+        note: "See how research practice has changed in response."
 ---

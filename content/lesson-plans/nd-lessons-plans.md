@@ -55,7 +55,7 @@ subtitle = ""
 ### Motivation
 ---------------------
 
-Developing educational resources is essential to facilitate engagement with, adherence to, and learning of research transparency, replicability, openness, and reproducibility. Despite the growing awareness of the benefits of training reproducible methods within undergraduate and postgraduate curricula, there remains a lack of systematic incorporation of open scholarship practices in taught courses across Higher Education. While many pedagogical resources are regularly developed for this purpose, they are not often openly and actively shared with the wider community. While the potential reasons for this are diverse, one reason may be the dearth of available ready-to-use educational resources. 
+Developing educational resources is essential to facilitate engagement with, adherence to, and learning of research transparency, {{< term "Replicability" "replicability" >}}, openness, and {{< term "Reproducibility" "reproducibility" >}}. Despite the growing awareness of the benefits of training reproducible methods within undergraduate and postgraduate curricula, there remains a lack of systematic incorporation of open scholarship practices in taught courses across Higher Education. While many pedagogical resources are regularly developed for this purpose, they are not often openly and actively shared with the wider community. While the potential reasons for this are diverse, one reason may be the dearth of available ready-to-use educational resources. 
 
 To support instructors aiming to bridge that gap, FORRT's community built open educational resources that can be integrated into taught courses ‘out of the box’. As creating or changing course content can be onerous and time-consuming, we aimed to make evidence-based, high-quality lesson plans and activities available to teaching faculty, thus reducing the labour required to develop and implement open scholarship content.
 
@@ -73,7 +73,7 @@ We compiled lesson plans and activities, and categorized them based on their the
 
 You can find *all lesson plans* [in this OSF repository](https://osf.io/th254/), and here's one example about [Interpreting effect sizes and confidence intervals](LessonPlans1.pdf) and another on [Prediction Markets](LessonPlans2.pdf). 
 
-Each has suitable context: (e.g., entry-level/undergraduate/postgraduate), total time: (e.g., 1 hour, 2 hours, 1 day, etc.), pre-requisites, related resources (e.g. slides, assignment materials, lecture recordings, etc), learning outcomes, brokendown per activity length (10min, 30min, etc.). Here's all the topics that we prepared Lesson Plans far:
+Each has suitable context: (e.g., entry-level/undergraduate/postgraduate), total time: (e.g., 1 hour, 2 hours, 1 day, etc.), pre-requisites, related resources (e.g. slides, assignment materials, lecture recordings, etc), learning outcomes, broken down per activity length (10min, 30min, etc.). Here are all the topics for which we have prepared Lesson Plans so far:
 
 1. [Interpreting effect sizes and confidence intervals](https://osf.io/8jmbu/)
 1. [Registered Replication Report](https://osf.io/2znr4/)
@@ -90,8 +90,8 @@ Each has suitable context: (e.g., entry-level/undergraduate/postgraduate), total
 1. [Diversity and research](../neurodiversity-lessonbank/diversity-and-research/)
 1. [Oppression and Power](../neurodiversity-lessonbank/masterstools/)
 1. [Generalizability Crisis](../neurodiversity-lessonbank/generalizability/)
-1. The myth of the normality How neurodiversity dismantles the generalisability crisis[Text 1](https://journalofethics.ama-assn.org/article/myth-normal-brain-embracing-neurodiversity/2015-04) [Text 2](https://www.cambridge.org/core/journals/behavioral-and-brain-sciences/article/abs/generalizability-crisis/AD386115BA539A759ACB3093760F4824)
-1. [The myth of the normality How neurodiversity dismantles the generalisability crisis - Lesson Plan](../neurodiversity-lessonbank/Lesson_Plans/The_myth_of_the_normality_How_neurodiversity_dismantles_the_generalisability_crisis.pdf)
+1. The myth of the normality: How neurodiversity dismantles the generalisability crisis [Text 1](https://journalofethics.ama-assn.org/article/myth-normal-brain-embracing-neurodiversity/2015-04) [Text 2](https://www.cambridge.org/core/journals/behavioral-and-brain-sciences/article/abs/generalizability-crisis/AD386115BA539A759ACB3093760F4824)
+1. [The myth of the normality: How neurodiversity dismantles the generalisability crisis - Lesson Plan](../neurodiversity-lessonbank/Lesson_Plans/The_myth_of_the_normality_How_neurodiversity_dismantles_the_generalisability_crisis.pdf)
 1. [Neurodiversity Culture and Teaching - text](http://web.archive.org/web/20240802211120/https://www.rapidintellect.com/AEQweb/ed-5971.pdf) Lesson Plan Pdf[Neurodiversity Culture and Teaching - Lesson Plan](../neurodiversity-lessonbank/Lesson_Plans/Neuro_para.pdf)
 1. [Avoiding ableist language to diversify OS - text](https://www.liebertpub.com/doi/10.1089/aut.2020.0014)Lesson Plan pdf[Avoiding ableist language to diversify OS](../neurodiversity-lessonbank/Lesson_Plans/Avoiding_ableist%20language_to_diversify_open_scholarship.pdf)
 1. How can Open Scholarship address structural ableism and racism? [Text 1](https://www.apa.org/science/about/psa/2019/02/open-science) [Text 2](https://doi.org/10.1080/09638288.2023.2173315) LessonPlan Pdf[How can Open Scholarship address structural ableism and racism?](../neurodiversity-lessonbank/Lesson_Plans/How_can_we_Open%20Scholarship_to_address_the%20structural_ableism_and_racism_in_our_society.pdf)
@@ -100,7 +100,7 @@ Each has suitable context: (e.g., entry-level/undergraduate/postgraduate), total
 
 We hope to keep producing more Lesson Plans, so please check this space. Our community is working on this ["Table of Activities"](https://docs.google.com/spreadsheets/d/1LGdBFlOCFqyfV7NUx11oUjkqR-aVZpWVGCn8RTiQQuk/edit#gid=0) to which you can add your own ideas (see how to contribute below) and help us empower educators and stakeholders with high quality and accessible lesson plans (and educational materials) to accelerate institutional change towards the integration of open and reproducible science into Higher Education curricula!
 
-Lastly, accompanying the Lesson Plans, FORRT’s team wrote a short manuscript entitled ["Embedding open and reproducible teaching into undergraduate training"](https://psyarxiv.com/fgv79) [(OA Postprint)](https://doi.org/10.31234/osf.io/fgv79) which is now published in the APA's [Scholarship of Teaching and Learning in Psychology](https://doi.org/10.1037/stl0000307), where we describe and openly share a bank of teaching resources and lesson plans on the broad topics of open scholarship, open science, replication, and reproducibility that can be readily integrated into taught courses.
+Lastly, accompanying the Lesson Plans, FORRT’s team wrote a short manuscript entitled ["Embedding open and reproducible teaching into undergraduate training"](https://psyarxiv.com/fgv79) [(OA Postprint)](https://doi.org/10.31234/osf.io/fgv79) which was published in the APA's [Scholarship of Teaching and Learning in Psychology](https://doi.org/10.1037/stl0000307), where we describe and openly share a bank of teaching resources and lesson plans on the broad topics of open scholarship, open science, replication, and reproducibility that can be readily integrated into taught courses.
 
 <br>
 
@@ -144,7 +144,9 @@ You can still contribute to the collection of Lesson Plans by adding your ideas 
 
 ### Pedagogical Activities
 
-{{< click_to_load src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRxqwa1rfgn-mB2hdCd3DzQHYMV7bOpQw6hRwXQodSnKjL1QvV4r5Aaf0kr-AVKc9zk60ejgDhZ-FLV/pubhtml?widget=true&headers=false" provider="Google" label="This document" style="border:0px; width:100%; height:100%;" >}}
+[Open the full table](https://docs.google.com/spreadsheets/d/e/2PACX-1vRxqwa1rfgn-mB2hdCd3DzQHYMV7bOpQw6hRwXQodSnKjL1QvV4r5Aaf0kr-AVKc9zk60ejgDhZ-FLV/pubhtml) in Google Sheets. On a narrow screen, the table below scrolls sideways.
+
+{{< click_to_load src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRxqwa1rfgn-mB2hdCd3DzQHYMV7bOpQw6hRwXQodSnKjL1QvV4r5Aaf0kr-AVKc9zk60ejgDhZ-FLV/pubhtml?widget=true&headers=false" provider="Google" label="This document" title="Table of lesson plans" height="700" style="border:0px; width:100%;" >}}
 
 <br>
 
@@ -154,6 +156,6 @@ These resources were created as part of the Society for Improving Psychological 
 
 #### Contributorship 
 
-In line with principles enshrined in FORRT, this google-sheet is an open online contributorship project. The work of all contributors are valued and are formally recognized. With this, we hope to expand the scope and diversity of FORRT’s mission and its team.
+In line with principles enshrined in FORRT, this google-sheet is an open online contributorship project. The work of all contributors is valued and formally recognized. With this, we hope to expand the scope and diversity of FORRT’s mission and its team.
 
 <br>

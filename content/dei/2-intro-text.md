@@ -57,14 +57,14 @@ The current model of scientific production and higher-education reproduces globa
 
 In addition, as open science principles begin to be more commonly accepted and valued in our research communities, there is a risk that these scientists will face structural barriers to participating in the communities where these tools are developed and taught. While open science practices have enormous potential to benefit *some* researchers, it is likely that scholars from currently underrepresented groups may not benefit—at least to the same extent—from open science practices. In other words, equity and inclusion are not guaranteed by open science practices without an active effort to achieve them.
 
-To mitigate the detrimental effects on the access to, learning about, and production of scientific content, it is paramount to create conditions for knowledge to become a public good - accessible to all members of society (Steltenpohl, Anderson, & Daniels, 2019). One way to achieve this goal is to integrate the teaching and mentoring of subject matters with open and reproducible research practices. Higher education institutions, and scholars therein, can then maximize every student’s likelihood of present and future engagement with resources, facilitating the acquisition of knowledge and bolstering opportunities that would otherwise be inaccessible to disadvantaged individuals. In leveling the playing field, abiding scholars and institutions would contribute towards greater diversity and democratization of science, and improved scientific literacy, consumption, and participation.
+To mitigate the detrimental effects on the access to, learning about, and production of scientific content, it is paramount to create conditions for knowledge to become a public good - accessible to all members of society (Steltenpohl, Anderson, & Daniels, 2019). One way to achieve this goal is to integrate the teaching and mentoring of subject matters with open and reproducible research practices. Higher education institutions, and scholars therein, can then maximize every student’s likelihood of present and future engagement with resources, facilitating the acquisition of knowledge and bolstering opportunities that would otherwise be inaccessible to disadvantaged individuals. In leveling the playing field, scholars and institutions that abide by these practices would contribute towards greater diversity and democratization of science, and improved scientific literacy, consumption, and participation.
 
 Hence, we at FORRT, have devised ***4 ways*** to be proactive in the outreach to the community.
 
 <br>
 
 * FORRT's ***Equity in Open Scholarship***
-   - Together with the <a href="https://www.sparksociety.org/">SPARK Society</a> and <a href="hhttps://improvingpsych.org/">SIPS</a>, we are aligning social justice & representation with open scholarship, rigor, & reproducible research*, where our aim is to focus our discussion on the needs and concerns of researchers from historically marginalized groups.
+   - Together with the <a href="https://www.sparksociety.org/">SPARK Society</a> and <a href="https://improvingpsych.org/">SIPS</a>, we are aligning social justice & representation with open scholarship, rigor, & reproducible research, where our aim is to focus our discussion on the needs and concerns of researchers from historically marginalized groups.
    - Please check our [web portal for advocacy, events, and collated resources](/equityinos).
 
 <br>
@@ -80,7 +80,7 @@ Hence, we at FORRT, have devised ***4 ways*** to be proactive in the outreach to
    - FORRT also aims to document this process and give proper commendation to those Mentors willing to give this a try so that our community is also supportive of researchers’ visibility, prestige, tenure and promotion reviews.
        - If you are interested in serving as a Bachelor's or Master's Mentor, [please fill in the G-form below "For mentors" (in Red-ish)](#form-mentor) where we ask you a few questions about your expertise and how you would like to volunteer. 
        - If you are interested in getting help as a Mentee, [please fill in the G-form below "For mentees" (in Green-ish)](#form-mentee).
-       - How does it work? For every person who fill in the Mentees form, FORRT community will try to find a volunteer Mentor with appropriate skills and fitting expertise. Provided that a match can be found, we will contact the Mentor for their approval, and then put mentor and menteee in contact with each other.
+       - How does it work? For every person who fills in the Mentees form, the FORRT community will try to find a volunteer Mentor with appropriate skills and fitting expertise. Provided that a match can be found, we will contact the Mentor for their approval, and then put mentor and mentee in contact with each other.
 
 <br>
 
@@ -88,7 +88,7 @@ Hence, we at FORRT, have devised ***4 ways*** to be proactive in the outreach to
    - Underprivileged and underrepresented minorities who are early-career researchers suffer racism, discrimination and significant barriers to their professional development, and as 'structural racism will not go away without intentional action from those who have historically wielded the most power' (Roberson, 2020, p. 773), we at FORRT would like to be pro-active and contribute positively to a fairer academia. FORRT aims to promote the thriving of underprivileged and underrepresented students, trainees and early career scholars by serving as a link between willing mentors and mentees in their engagement with academia, its several duties (e.g., application materials, grant/funding proposals, academic writing, research development, statistical analyses, etc.), as well as open and reproducible science practices. It is FORRT's goal to chip away at the barriers that exist and to promote a more inclusive environment for all (Roberson, 2020). 
        - If you are interested in serving as a Mentor (providing help), [please fill in the G-form below "For mentors" (in Red-ish)](#form-mentor) where we ask you a few questions about your expertise and how you want to volunteer. 
        - If you are interested in getting help as a Mentee, [please fill in the G-form below "For mentees" (in Green-ish)](#form-mentee).
-       - How does it work? For every person who fill in the Mentees form, FORRT community will try to find a volunteer Mentor with appropriate skills and fitting expertise. Provided that a match can be found, we will contact the Mentor for their approval, and then put mentor and menteee in contact with each other.
+       - How does it work? For every person who fills in the Mentees form, the FORRT community will try to find a volunteer Mentor with appropriate skills and fitting expertise. Provided that a match can be found, we will contact the Mentor for their approval, and then put mentor and mentee in contact with each other.
 
 
 <br>
@@ -97,6 +97,6 @@ Hence, we at FORRT, have devised ***4 ways*** to be proactive in the outreach to
 
 * Henrich, J., Heine, S. J., & Norenzayan, A. (2010). Most people are not WEIRD. Nature, 466(7302), 29-29.
 * Lee, J. J. (2016). Is science only for the rich?. Nature, 537(7621), 466-467.
-* Steltenpohl, C. N., Daniels, K. M., & Anderson, A. J. (2020). Giving Community Psychology Away: A case for open access publishing.
+* Steltenpohl, C. N., Anderson, A. J., & Daniels, K. M. (2019). Giving Community Psychology Away: A case for open access publishing. Global Journal of Community Psychology Practice, 10(3). https://doi.org/10.17161/gjcpp.v10i3.20693
 * Roberson, M. L. (2020). On supporting early-career Black scholars. Nature Human Behaviour, 4(8), 773-773. https://doi.org/10.1038/s41562-020-0926-6
 

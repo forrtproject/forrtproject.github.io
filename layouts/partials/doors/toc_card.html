@@ -1,0 +1,7 @@
+{{/* The side card on a section page: what to jump to. */}}
+<section class="article-card" aria-label="On this page">
+  <h2>On this page</h2>
+  <div class="article-toc"><nav id="TableOfContents"><ul>
+    {{ range . }}<li><a href="#{{ .id }}">{{ .title | markdownify | emojify | plainify }}</a></li>{{ end }}
+  </ul></nav></div>
+</section>

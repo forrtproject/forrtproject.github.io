@@ -40,7 +40,7 @@ subtitle = ""
 <div style="float: right; margin: 0 1rem 1rem 0; text-align: center;">
   <div style="width: 320px; height: 320px; border-radius: 50%; overflow: hidden;">
     <img
-      src="../authors/adiradaniel/avatar.webp"
+      src="/authors/adira-daniel/avatar.webp"
       alt=" Adira Daniel Portrait"
       style="width: 100%; height: 100%; object-fit: cover;"
     >

@@ -18,8 +18,8 @@
 <div class="pub-section-group">
     {{ $description := .Get "description" }}
     {{ if $title }}
-    <div class="section-heading" align="center">
-        <h1>{{ $title | markdownify }}</h1>
+    <div class="section-heading">
+        <h2>{{ $title | markdownify }}</h2>
         <hr>
         {{ if $description }}
         <div class="pub-section-description">
@@ -29,7 +29,7 @@
     </div>
     {{ end }}
     <div class="pub-list">
-        {{ range $items }}
+        {{ range $i, $_ := $items }}
         {{ $dataType := index $typeMap .type | default .type }}
         <div class="pub-card" data-aos="fade-up" data-type="{{ $dataType }}"
             data-focus="{{ if .focus_area }}{{ .focus_area }}{{ else }}uncategorized{{ end }}">
@@ -77,21 +77,23 @@
                 </div>
 
                 <div class="pub-abstract-toggle">
-                    <button class="btn-toggle-abstract"
-                        onclick="this.parentElement.nextElementSibling.classList.toggle('show'); this.classList.toggle('active');">
-                        <i class="fas fa-chevron-right"></i> Show Abstract
+                    {{ $abstractID := printf "abstract-%d-%d" $.Ordinal $i }}
+                    <button type="button" class="btn-toggle-abstract" aria-expanded="false" aria-controls="{{ $abstractID }}"
+                        onclick="var open = this.parentElement.nextElementSibling.classList.toggle('show'); this.classList.toggle('active', open); this.setAttribute('aria-expanded', open); this.querySelector('.toggle-label').textContent = open ? 'Hide Abstract' : 'Show Abstract';">
+                        <i class="fas fa-chevron-right" aria-hidden="true"></i> <span class="toggle-label">Show Abstract</span>
                     </button>
                 </div>
-                <div class="publication-card-abstract">
+                <div class="publication-card-abstract" id="{{ $abstractID }}">
                     <p>{{ .abstract | markdownify }}</p>
                 </div>
 
-                <div class="pub-citation-section">
-                    <strong>Cite:</strong>
+                {{/* The card already shows title, authors and venue, so the full reference waits behind "Cite". */}}
+                <details class="pub-citation-section">
+                    <summary><i class="fas fa-chevron-right" aria-hidden="true"></i> Cite this</summary>
                     <div class="citation-text">
                         {{ .citation | markdownify }}
                     </div>
-                </div>
+                </details>
 
                 <div class="pub-footer">
                     <div class="pub-buttons">

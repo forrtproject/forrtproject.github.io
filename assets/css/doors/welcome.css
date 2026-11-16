@@ -1,0 +1,27 @@
+/* The welcome page for new members. */
+.welcome-page{padding:32px 0 44px}
+.welcome-page h1{font-size:clamp(36px,4.2vw,58px);line-height:1.06;margin:0 0 12px}
+.welcome-page .crumbs{margin-bottom:18px}
+.welcome-page .standfirst{font:500 clamp(19px,1.6vw,22px)/1.35 var(--display);max-width:34em;margin:0 0 14px}
+.welcome-buttons{display:flex;flex-wrap:wrap;gap:8px;margin:0}
+.welcome-content{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:28px}
+.welcome-content>*{min-width:0}
+.welcome-content>:is(h2,p,ul,div:not(.card)){grid-column:1/-1}
+.welcome-content h2{margin:22px 0 2px;font-size:30px}
+.step-card,.resource-card{position:relative;padding:18px 20px;background:var(--surface);border-radius:var(--r-large);font-size:16px;line-height:1.45}
+.step-badge{float:right;margin-inline-start:10px;width:30px;height:30px;line-height:30px;background:var(--ink);border-radius:50%;color:#fff;text-align:center;font-weight:700}
+.step-title,.resource-title{margin:0 0 6px;font:var(--display-weight) 22px/1.2 var(--display)}
+.step-description,.resource-description{margin:0 0 10px}
+.step-button,.resource-button{font-weight:700;color:var(--link);text-decoration:underline;text-underline-offset:3px}
+.step-button i,.resource-button i{margin-inline-start:4px;font-size:15px}
+.resource-header{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;margin:0 0 6px}
+.resource-header>div:first-child{display:flex;align-items:center;gap:10px}
+.resource-icon{display:flex;align-items:center;justify-content:center;flex:none;width:36px;height:36px;background:#fff;border-radius:50%;color:var(--link)}
+.resource-title{margin:0}
+.resource-count{display:inline-flex;align-items:center;gap:6px;font-size:15px;font-weight:600;color:var(--soft)}
+.social-media-grid{display:flex;flex-wrap:wrap;gap:6px}
+.social-btn{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;background:#fff;border:1.5px solid var(--soft);border-radius:999px;color:var(--ink);font-size:15px;font-weight:600}
+.social-btn:hover{border-color:var(--ink);color:var(--ink)}
+.welcome-community{margin-top:32px;padding:22px 24px;background:var(--edu-bg);border-radius:var(--r-large)}
+.welcome-community h2{margin:0 0 6px;font-size:30px}
+@media(max-width:760px){.welcome-page{padding:20px 0 28px}.welcome-content{grid-template-columns:minmax(0,1fr)}}

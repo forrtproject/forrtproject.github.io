@@ -71,7 +71,7 @@ FORRT community members can contact the Confidential Advisor via email at: [conf
 ## Ombuds
 
 <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;">
-  <img src="/authors/thomasrhysevans/avatar.webp" alt="Thomas Rhys Evans" class="avatar-circle" style="width:80px;height:80px;object-fit:cover;flex-shrink:0;">
+  <img src="/authors/thomas-rhys-evans/avatar.webp" alt="Thomas Rhys Evans" class="avatar-circle" style="width:80px;height:80px;object-fit:cover;flex-shrink:0;">
   <div style="text-align:left;">
     <strong>Thomas Rhys Evans</strong><br>
     <a href="mailto:ombuds@forrt.org">ombuds@forrt.org</a>

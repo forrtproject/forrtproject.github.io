@@ -65,9 +65,9 @@
     border: 1px solid rgba(0, 0, 0, 0.08);
     /* Logical property for visual consistency with the (RTL-aware) glossary
        feedback form, even though this page itself is English-only. */
-    border-inline-start: 4px solid #007bff;
+    border-inline-start: 4px solid var(--link);
     border-radius: 8px;
-    background: rgba(0, 123, 255, 0.03);
+    background: rgba(0, 90, 135, 0.03);
   }
 
   .adopting-feedback-header {
@@ -85,8 +85,8 @@
     width: 2.25rem;
     height: 2.25rem;
     border-radius: 50%;
-    background: rgba(0, 123, 255, 0.12);
-    color: #007bff;
+    background: rgba(0, 90, 135, 0.12);
+    color: var(--link);
     font-size: 1.1rem;
   }
 
@@ -98,7 +98,7 @@
 
   .adopting-feedback-intro {
     margin: 0;
-    color: #6c757d;
+    color: var(--ink);
     font-size: 0.9rem;
     line-height: 1.5;
   }
@@ -115,7 +115,7 @@
 
   .adopting-feedback-optional {
     font-weight: 400;
-    color: #6c757d;
+    color: var(--ink);
     font-size: 0.8rem;
   }
 
@@ -126,8 +126,8 @@
   }
 
   .adopting-feedback-form .form-control:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 0 0.15rem rgba(0, 123, 255, 0.2);
+    border-color: var(--link);
+    box-shadow: 0 0 0 0.15rem rgba(0, 90, 135, 0.2);
   }
 
   .adopting-feedback-checkboxes {
@@ -173,10 +173,10 @@
 
   .adopting-feedback-hp {
     position: absolute;
-    left: -9999px;
     width: 1px;
     height: 1px;
     overflow: hidden;
+    clip-path: inset(50%);
   }
 
   .adopting-feedback-thanks {
@@ -185,7 +185,7 @@
   }
 
   .dark .adopting-feedback {
-    background: rgba(0, 123, 255, 0.07);
+    background: rgba(0, 90, 135, 0.07);
     border-color: rgb(68, 71, 90);
   }
 

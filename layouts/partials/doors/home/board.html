@@ -1,0 +1,49 @@
+{{/* The noticeboard, from the newest announcements, and ways to take part, which stay useful with
+     no news, and the newsletter sign-up, which sits under "Take part" on wide screens and last when
+     the board is one column. Context: content/home/4-board.md. */}}
+{{ $posts := first (.Params.notices_count | default 3) (sort (where site.RegularPages "Type" "post") "Date" "desc") }}
+<section class="wrap board" aria-label="News and ways to take part">
+  <div class="notices">
+    <h2>{{ .Params.notices_heading }}</h2>
+    <div class="notice-card">
+    <ol class="notice-list">
+      {{ range $posts }}
+      <li>
+        {{/* A small crop of the post's featured image, or a tile in its category's tint with the
+             category's initial. Both are decoration: the title is the link text. */}}
+        {{ $kind := index (.Params.categories | default (slice "")) 0 }}
+        <a href="{{ .RelPermalink }}">
+          {{ with (.Resources.ByType "image").GetMatch "*featured*" }}
+          {{ $thumb := .Fill "176x132 Center webp q75" }}
+          <img class="notice-thumb" src="{{ $thumb.RelPermalink }}" width="88" height="66" alt="" loading="lazy">
+          {{ else }}
+          <span class="notice-thumb notice-tile notice-tile-{{ $kind | default "news" | urlize }}" aria-hidden="true">{{ substr ($kind | default "News") 0 1 }}</span>
+          {{ end }}
+          <span class="notice-meta">
+            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time>
+            {{ with $kind }}<span class="notice-kind">{{ . }}</span>{{ end }}
+          </span>
+          <h3>{{ .Title }}</h3>
+          <p>{{ .Summary | plainify | htmlUnescape | truncate 150 }}</p>
+        </a>
+      </li>
+      {{ end }}
+    </ol>
+    <p class="board-foot"><a class="more" href="{{ relref . "/post" }}">All news and announcements</a></p>
+    </div>
+  </div>
+  <section class="standing" id="take-part" aria-labelledby="standing-h">
+    <h2 id="standing-h">{{ .Params.take_part_heading }}</h2>
+    <ul class="standing-list">
+      {{ range .Params.take_part }}
+      {{ $link := partial "doors/link" . }}
+      <li><a href="{{ $link.href }}"><strong>{{ $link.label }}</strong><span>{{ .text }}</span></a></li>
+      {{ end }}
+    </ul>
+  </section>
+  <section class="home-newsletter" aria-labelledby="newsletter-h">
+    <h3 id="newsletter-h">{{ .Params.newsletter_heading }}</h3>
+    <p>{{ .Params.newsletter_text }}</p>
+    {{ partial "doors/newsletter" . }}
+  </section>
+</section>

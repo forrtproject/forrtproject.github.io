@@ -15,7 +15,7 @@
   focus_area: "Meta-Research & Scientific Reform"
 
 # 2
-- title: "Mapping Open Science Communities in Psychology: A Systematic Narrative Review"
+- title: "International Initiatives to Enhance Awareness and Uptake of Open Research in Psychology: A Systematic Mapping Review"
   type: "journal"
   year: "2025"
   status: "Published"
@@ -106,7 +106,7 @@
   focus_area: "Education & Pedagogy"
 
 # 8
-- title: "Improvements since the Replication Crisis: The Structural, Procedural, and Community Changes"
+- title: "The Replication Crisis Has Led to Positive Structural, Procedural, and Community Changes"
   type: "journal"
   year: "2023"
   status: "Published"
@@ -156,12 +156,12 @@
 # 11
 - title: "The Role of Pedagogical Communities"
   type: "journal"
-  year: "2021"
+  year: "2022"
   status: "Published"
   journal_name: "BMC Research Notes"
   authors: "Azevedo, F., Liu, M., Pennington, C. R., Pownall, M., Evans, T. R., Parsons, S., Elsherif, M. M., Micheli, L., ... & FORRT"
   abstract: "We have written a manuscript entitled *Towards a culture of open scholarship: The role of pedagogical communities* describing the need to integrate open scholarship principles into research training within higher education."
-  citation: "Azevedo, F., Liu, M., Pennington, C. R., Pownall, M., Evans, T. R., Parsons, S., Elsherif, M. M., Micheli, L., ... & FORRT (2021). <strong>Towards a culture of open scholarship: The role of pedagogical communities.</strong> <em>BMC Research Notes</em>, 15(1), 1-5. https://doi.org/10.1186/s13104-022-05944-1"
+  citation: "Azevedo, F., Liu, M., Pennington, C. R., Pownall, M., Evans, T. R., Parsons, S., Elsherif, M. M., Micheli, L., ... & FORRT (2022). <strong>Towards a culture of open scholarship: The role of pedagogical communities.</strong> <em>BMC Research Notes</em>, 15(1), 1-5. https://doi.org/10.1186/s13104-022-05944-1"
   links:
     doi: "https://doi.org/10.1186/s13104-022-05944-1"
   altmetric_doi: "10.1186/s13104-022-05944-1"
@@ -266,7 +266,7 @@
   year: "2026"
   status: "preprint"
   journal_name: "OSF Preprints"
-  authors: "Elif Bastan,Ege Emek,Merve Öztürk,Neslihan Özhan,Nihan Selin Soylu Konak,Flavio Azevedo"
+  authors: "Elif Bastan, Ege Emek, Merve Öztürk, Neslihan Özhan, Nihan Selin Soylu Konak, Flavio Azevedo"
   abstract: "In response to the replication crisis, a significant number of structural and procedural changes have been made in how scientific research is conducted. Of these changes, open science practices, in particular, have been seen as a panacea for improving transparency, reproducibility, and accessibility in research. However, engaging in such reforms is not equally possible for everyone in academia, partly due to dominant resources being available in the English language. This situation results in a linguistic power asymmetry that creates and perpetuates structural barriers for researchers, educators, and students working in non-English contexts, overall limiting their efforts to take part in global scientific discourse. Using the frameworks of open science, linguistics, and epistemic justice as an organizing point, this article reports and reflects on translating the Open Science Glossary of the Framework for Open and Reproducible Research Training (FORRT) into Turkish, conducted as part of a multilingual initiative. Our team of five researchers carried out a collaborative translation process and translated approximately 250 open science terms. Translation decisions, particularly for terms without established Turkish equivalents, were debated collectively, and final decisions were made by considering the principles of clarity, accuracy, accessibility, and adaptation. We argue that translating terminology is an act of epistemic inclusion that supports capacity building, teaching, and research reform, rather than simply being a technical necessity. By localising open science concepts in the Turkish language, our work contributes to more inclusive and globally representative open science efforts."
   citation: "Bastan, E., Emek, E., Öztürk, M., Özhan, N., Soylu Konak, N. S., & Azevedo, F. (2026). <strong>Making open science multilingual: Lessons from the Turkish adaptation of FORRT’s Open Science Glossary.</strong> <em>OSF Preprints</em>. https://doi.org/10.31234/osf.io/c4jqr_v1"
   links:

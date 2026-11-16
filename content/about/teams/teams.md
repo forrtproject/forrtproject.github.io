@@ -69,6 +69,16 @@ subtitle = "---"
   color = "#395855" # Background color under the image
 
 [[featurealt]]
+  img = "team/pedagogies.svg" #icon OR img that you should put in 
+  imgalttext = "Presenter pointing at a board in front of a seated audience" # Describe the image in words for screen-reader users. 
+  imgside = "left" # image will appear left or right
+  buttonurl = "https://forrt.slack.com/archives/C06J82GU6JH"
+  buttondescr = "Join Us"
+  name = "Team Curriculum" # Title
+  description = "Develops open and reproducible lecture materials and supports the integration of principled education into university curricula."
+  color = "#395855" # Background color under the image
+
+[[featurealt]]
   # icon = "slack"
   # icon_pack = "fab"
   # iconalttext = "Slack"
@@ -92,19 +102,6 @@ subtitle = "---"
   buttondescr = "Join Us"
   name = "Team Cohesion" # Title
   description = "Oversight of FORRT projects to facilitate working across groups and consistency across projects. Enhance connection between FORRT teams and initiatives."
-  color = "#395855" # Background color under the image
-
-[[featurealt]]
-  # icon = "slack"
-  # icon_pack = "fab"
-  # iconalttext = "Slack"
-  img = "team/database.svg" #icon OR img that you should put in 
-  imgalttext = "Stacked database cylinders" # Describe the image in words for screen-reader users. 
-  imgside = "left" # image will appear left or right
-  buttonurl = "https://forrt.slack.com/archives/C0190S42M1N"
-  buttondescr = "Join Us"
-  name = "Team Database" # Title
-  description = "Team responsible for any and all issues related to the FORRT curated list of resources, enriching the meta-data of existing resources, gathering and collecting resources, with a focus on teaching materials."
   color = "#395855" # Background color under the image
 
 [[featurealt]]
@@ -207,7 +204,7 @@ subtitle = "---"
   imgside = "left" # image will appear left or right
   buttonurl = "https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ"
   buttondescr = "Join Us"
-  name = "Team Mapping Open Science Organizations" # Title
+  name = "Team Mapping Open Science Communities" # Title
   description = "Aims to systematically identify, map, and connect Open Science (OS) organizations across disciplines and regions."
   color = "#395855" # Background color under the image
 
@@ -221,7 +218,7 @@ subtitle = "---"
   buttonurl = "https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ"
   buttondescr = "Join Us"
   name = "Team Open Science in Developing Countries" # Title
-  description = "Will develop a paper that discusses the practical and methodological barriers, opportunities, and potential pitfalls of Open Science in developing countries."
+  description = "Developed a paper, [published in *Advances in Methods and Practices in Psychological Science*](https://doi.org/10.1177/25152459251357565), that discusses the practical and methodological barriers, opportunities, and potential pitfalls of Open Science in developing countries."
   color = "#395855" # Background color under the image
 
 
@@ -261,9 +258,9 @@ subtitle = "---"
   imgalttext = "Document page with lines of text" # Describe the image in words for screen-reader users. 
   imgside = "left" # image will appear left or right
   buttonurl = "" # leave empty/commentout if you don't want a button or comment it out
-  buttondescr = "Join Us" # leave empty if you don't want a button
+  buttondescr = "" # leave empty if you don't want a button
   name = "Team Manuscript" # Title
-  description = "Develop and update the FORRT preprint into a manuscript ready for submission (FORRT's next top priority)."
+  description = "Develop and update the FORRT preprint into a manuscript ready for submission."
   color = "#395855" # Background color under the image
 
 
@@ -330,7 +327,7 @@ subtitle = "---"
   img = "team/website.svg" #icon OR img that you should put in 
   imgalttext = "Laptop screen showing a globe" # Describe the image in words for screen-reader users. 
   imgside = "left" # image will appear left or right
-  buttonurl = "https://forrt.slack.com/archives/C017W8Y9C87"
+  buttonurl = "https://forrt.slack.com/archives/C080N39QRJ9"
   buttondescr = "Join Us"
   name = "Team Website" # Title
   description = "Team responsible for any and all issues related to the website (e.g., maintenance, add/change content, ideas about pages or blogs, inclusion of recently produced content, correction of typos, etc.)."
@@ -382,4 +379,4 @@ subtitle = "---"
 
 +++
 
-Teams serve three key purposes: (a) advancing the adoption of open and reproducible science tenets in higher-education via the training of educators in their capacity as teachers and mentors; (b) increase of community engagement within our internal and external communities and resource gathering; (c) and providing community members with hands-on experiences of the challenges and rewards of peer-to-peer collaboration in the context of busy professional lives. Below you find the team organized alphabetically as it is the same order as in Slack.
+Teams serve three key purposes: (a) advancing the adoption of open and reproducible science tenets in higher-education via the training of educators in their capacity as teachers and mentors; (b) increasing community engagement within our internal and external communities and resource gathering; (c) providing community members with hands-on experiences of the challenges and rewards of peer-to-peer collaboration in the context of busy professional lives. Below you find our teams.
