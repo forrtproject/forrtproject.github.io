@@ -65,6 +65,8 @@ class ArchiveExtrasTest(unittest.TestCase):
         page = s.archive_page(EMAIL.replace("</body>", '<h2 data-email-h1 style="x">&nbsp;</h2><h2 data-email-h1>Highlights</h2></body>'))
         self.assertIn('<div data-email-h1 style="x">&nbsp;</div>', page)
         self.assertIn("<h2 data-email-h1>Highlights</h2>", page)
+        named = s.archive_page(EMAIL.replace("</body>", '<h2 data-email-h1><a href="/x"><img src="a.webp" alt="Get involved"></a></h2></body>'))
+        self.assertIn('<h2 data-email-h1><a href="/x"><img src="a.webp" alt="Get involved"></a></h2>', named)
 
     def test_pager(self):
         page = s.with_pager(self.page if hasattr(self, "page") else s.archive_page(EMAIL), "2024-03", "2024-05")
