@@ -1,0 +1,39 @@
+{{/* The Open Research Games Portal (/open-research-games-portal/), a directory laid out as the resources directory is
+     (layouts/resources/list.html, resources.css): filters in a panel beside the list, then the list of games as rows.
+     The games come from data/open_research_games.json (scripts/build_games_portal.py). The page's own text is the
+     list_filter search (index.md, run by site.js together with the filter buttons) and its bundle's add.md, about.md
+     and fields.md, shown under the list. Without JavaScript the filters stay hidden and every game shows in full. */}}
+{{ define "main" }}
+{{ $games := site.Data.open_research_games.games }}
+<div class="wrap">
+  <header class="page-heading">
+    {{ partial "doors/crumbs" (dict "page" .) }}
+    <div class="heading-grid">
+      <div>
+        <h1>{{ .Title }}</h1>
+        <p class="lede">{{ .Params.lede }}</p>
+      </div>
+      {{ partial "games/play" $games }}
+    </div>
+  </header>
+
+  <div class="directory games-directory">
+    {{ partial "games/filters" $games }}
+    <div class="catalogue">
+      {{ .Content }}
+      {{ partial "games/list" $games }}
+      <div class="empty list-filter-empty" hidden>
+        <h2>No game matches these filters.</h2>
+        <p>Remove a filter or try a broader search term. If a game is missing, <a href="https://forms.gle/PXYBrRhXGiZyi8M99" rel="noopener">add it through the New Entries Form</a>.</p>
+      </div>
+    </div>
+  </div>
+
+  <section class="collection-note games-note" aria-labelledby="games-add">
+    <h2 id="games-add">Add a game or tell us about one</h2>
+    {{ with .Resources.GetMatch "add.md" }}{{ .Content }}{{ end }}
+    {{ with .Resources.GetMatch "about.md" }}<details class="collection-about"><summary>About the portal</summary>{{ .Content }}</details>{{ end }}
+    {{ with .Resources.GetMatch "fields.md" }}<details class="collection-about"><summary>What each field means</summary>{{ .Content }}</details>{{ end }}
+  </section>
+</div>
+{{ end }}

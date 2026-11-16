@@ -1,0 +1,3 @@
+# Retired paths that layouts/404.html redirects, one regular expression per line, matched
+# against the link's path (scripts/rebrand/check_internal_links.py).
+^/TenureRun(/|$)  # the game moved to /tenure-run/; the Games Portal's sheet still has the old address

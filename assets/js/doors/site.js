@@ -665,7 +665,7 @@ if (listFilter) {
   for (let node = listFilter.nextElementSibling; node; node = node.nextElementSibling) {
     if (/^H[1-3]$/.test(node.tagName)) { section = {heading: node, items: []}; sections.push(section); }
     else if (/^(UL|OL)$/.test(node.tagName)) {
-      // A list straight after the search, with no heading of its own, is a section too (Educators' Corner).
+      // A list straight after the search, with no heading of its own, is a section too (Educators' Corner, the games portal).
       if (!section) { section = {heading: null, items: []}; sections.push(section); }
       section.items.push(...node.children);
     }
@@ -712,26 +712,53 @@ if (listFilter) {
     });
     listFilter.append(row);
   }
+  // Filter buttons (the games portal): each group (fieldset[data-facet]) narrows the list to entries whose
+  // data-facets name one of its pressed values; pressing values in several groups narrows by each of them.
+  const facetBox = document.querySelector('.list-filter-facets');
+  const groups = facetBox ? [...facetBox.querySelectorAll('fieldset[data-facet]')] : [];
+  const reset = document.querySelector('.list-filter-reset');
+  const empty = document.querySelector('.list-filter-empty');
+  if (facetBox) {
+    facetBox.hidden = false;
+    facetBox.addEventListener('click', (event) => {
+      const button = event.target.closest('button[data-value]');
+      if (!button) return;
+      button.setAttribute('aria-pressed', String(button.getAttribute('aria-pressed') !== 'true'));
+      input.dispatchEvent(new Event('input'));
+    });
+  }
+  reset?.addEventListener('click', () => {
+    facetBox?.querySelectorAll('[aria-pressed=true]').forEach((button) => button.setAttribute('aria-pressed', 'false'));
+    input.value = '';
+    input.dispatchEvent(new Event('input'));
+    input.focus();
+  });
   // Each entry's text is read once, so controls added to the entries later (their "more" buttons) are not searched.
   const texts = new Map(sections.flatMap(({items}) => items.map((item) => [item, item.textContent])));
+  const tokens = new Map([...texts.keys()].map((item) => [item, new Set((item.dataset.facets || '').split(' '))]));
   const total = texts.size;
   let words = /./;
   input.addEventListener('input', () => {
     const query = input.value.trim().toLowerCase();
     words = new RegExp(`(^|[^\\p{L}\\p{N}])${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`, 'iu');
+    const chosen = groups.map((group) => [...group.querySelectorAll('[aria-pressed=true]')].map((button) => button.dataset.value))
+      .filter((values) => values.length);
     let shown = 0;
     sections.forEach(({heading, items}) => {
       if (!items.length) return;
       let any = false;
       items.forEach((item) => {
         // Matches the start of a word, so "ego" finds ego depletion and not "category".
-        const match = (!query || words.test(texts.get(item))) && (!status || item.querySelector(`.status-${status}`));
+        const match = (!query || words.test(texts.get(item))) && (!status || item.querySelector(`.status-${status}`))
+          && chosen.every((values) => values.some((value) => tokens.get(item).has(value)));
         item.hidden = !match;
         if (match) { any = true; shown += 1; }
       });
-      if (heading) heading.hidden = Boolean(query || status) && !any;
+      if (heading) heading.hidden = Boolean(query || status || chosen.length) && !any;
     });
     count.textContent = `Showing ${shown} of ${total} ${noun}`;
+    if (empty) empty.hidden = shown > 0;
+    if (reset) reset.hidden = !query && !chosen.length;
   });
   input.dispatchEvent(new Event('input'));
 }
