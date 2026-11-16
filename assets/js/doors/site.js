@@ -479,7 +479,13 @@ const termGrid = document.querySelector('.term-grid');
 if (termFilter && termGrid) {
   // The search and letters stay at the top; a letter's heading must land below them, whatever their height.
   const tools = document.querySelector('.glossary-tools');
-  if (tools) new ResizeObserver(() => document.documentElement.style.setProperty('--glossary-tools', `${tools.offsetHeight}px`)).observe(tools);
+  // A page opened at a letter (#letter-…) scrolled before the toolbar was measured, so it scrolls there once more.
+  let aligned = false;
+  if (tools) new ResizeObserver(() => {
+    document.documentElement.style.setProperty('--glossary-tools', `${tools.offsetHeight}px`);
+    if (!aligned && location.hash.startsWith('#letter-')) document.getElementById(location.hash.slice(1))?.scrollIntoView();
+    aligned = true;
+  }).observe(tools);
   // The glossary hub: match on the term's name, hide letters left empty, and say when nothing matches.
   const terms = [...termGrid.querySelectorAll('li[data-term]')];
   const groups = [...termGrid.querySelectorAll('.term-group')];

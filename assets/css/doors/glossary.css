@@ -105,7 +105,8 @@ main:lang(ar) .post-nav-next .term-en{text-align:left}
    which grows when the letters wrap (34 on the Arabic hub). The fixed values are the fallback without JavaScript. */
 .term-group{scroll-margin-top:200px}
 @media(max-width:760px){.glossary-tools .glossary-find label{font-size:17px;margin-bottom:6px}.glossary-find{margin-top:10px}.term-group{scroll-margin-top:150px}}
-.glossary-hub:has(.glossary-tools) .term-group{scroll-margin-top:calc(var(--glossary-tools,200px) + 12px)}
+.glossary-hub:has(.glossary-tools) .term-group{scroll-margin-top:calc(var(--glossary-tools,212px) + 12px)}
+@media(max-width:760px){.glossary-hub:has(.glossary-tools) .term-group{scroll-margin-top:calc(var(--glossary-tools,160px) + 12px)}}
 .glossary-language-select{display:none}
 @media(max-width:760px){
   .glossary-hub .glossary-languages{display:none}
