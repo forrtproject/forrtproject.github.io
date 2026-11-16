@@ -477,6 +477,9 @@ const foldTerm = (text) => text.normalize('NFC').replace(/[أإآٱ]/g, 'ا').re
   .replace(/[\u064B-\u0652\u0670\u0640]/g, '').toLowerCase();
 const termGrid = document.querySelector('.term-grid');
 if (termFilter && termGrid) {
+  // The search and letters stay at the top; a letter's heading must land below them, whatever their height.
+  const tools = document.querySelector('.glossary-tools');
+  if (tools) new ResizeObserver(() => document.documentElement.style.setProperty('--glossary-tools', `${tools.offsetHeight}px`)).observe(tools);
   // The glossary hub: match on the term's name, hide letters left empty, and say when nothing matches.
   const terms = [...termGrid.querySelectorAll('li[data-term]')];
   const groups = [...termGrid.querySelectorAll('.term-group')];
