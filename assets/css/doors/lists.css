@@ -158,5 +158,5 @@
   .tag-group li a{min-height:44px;align-items:center;box-sizing:border-box}
   .tag-top .tag-cloud a{min-height:44px;box-sizing:border-box}
 }
-/* One column on narrow phones, so long tag names and enlarged text keep to the screen. */
-@media(max-width:480px){.tag-group ul{columns:1}}
+/* One column on narrow phones, so long tag names and enlarged text keep to the screen. In em, so a larger default text size also gets it. */
+@media(max-width:30em){.tag-group ul{columns:1}}
