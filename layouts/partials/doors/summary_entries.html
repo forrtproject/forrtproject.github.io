@@ -15,7 +15,9 @@
 <details class="summary-entry">
 {{/* ◈ (not peer reviewed) sits at the end of the title with even spacing, and screen readers hear its meaning. */}}
 {{ $title := .Title }}{{ $npr := in $title "◈" }}
-{{ if $npr }}{{ $title = replaceRE `\s*◈\s*` "" $title }}{{ end }}
+{{ if $npr }}{{ $title = replaceRE `[\s\p{Z}]*◈[\s\p{Z}]*` "" $title }}{{ end }}
+{{/* The DEI mark's own margin spaces it from the title, so spaces before it in the source are dropped. */}}
+{{ $title = replaceRE `[\s\p{Z}]+⌺` "⌺" $title }}
 <summary><h2 id="{{ .Id }}">{{ $title | markdownify }}{{ if $npr }} <span class="npr-mark" aria-hidden="true">◈</span><span class="sr-only"> (not peer reviewed)</span>{{ end }}</h2></summary>
 <h3>Main takeaways</h3>
 <ul>

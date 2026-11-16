@@ -284,7 +284,7 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
   .toc-phone-more{min-height:44px}
   /* On phones and tablets the side card never repeats the contents: either the phone list above the text has
      them, or the page left them out on purpose (summaries, phone_toc: false). */
-  .article-layout .article-card :is(h2,.article-toc){display:none}
+  .article-layout .article-card :is(h2:has(+ .article-toc),.article-toc){display:none}
   .article-layout:has(.toc-phone) .article-card:not(:has(dl)){display:none}
   .article-layout .article-card-repeats{display:none}
   .glossary-index .reading{display:contents}
