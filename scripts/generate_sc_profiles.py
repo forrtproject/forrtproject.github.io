@@ -253,6 +253,8 @@ def normalize_name(name):
     name = str(name).strip()
     name = re.sub(r'\b(Dr|Dr\.|Mr|Mr\.|Ms|Ms\.|Mrs|Prof|Prof\.)\s+', '', name, flags=re.IGNORECASE)
     name = re.sub(r'\*', '', name)
+    # Parenthesised notes such as "(gmail)" or "(Assist. Prof)" are not part of the name.
+    name = re.sub(r'\([^)]*\)', '', name)
     name = unicodedata.normalize('NFKD', name)
     name = name.encode('ascii', 'ignore').decode('ascii')
     name = re.sub(r'\s+', ' ', name).strip()
