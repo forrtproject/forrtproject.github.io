@@ -52,6 +52,8 @@ main:lang(ar) .post-nav-next .term-en{text-align:left}
 .glossary-letters{display:flex;flex-wrap:wrap;gap:4px;margin:14px 0 8px}
 .glossary-letters a{display:inline-flex;align-items:center;justify-content:center;min-width:36px;height:36px;border-radius:var(--r-small);background:var(--surface);color:var(--ink);font:600 16px/1 var(--text);text-decoration:none}
 .glossary-letters a:hover{background:var(--edu-bg)}
+/* On phones each letter is a 44 px target (DESIGN.md §9). */
+@media(max-width:760px){.glossary-letters a{min-width:44px;height:44px}}
 .term-group{scroll-margin-top:16px}
 .term-group h2{margin:28px 0 10px;font-size:28px;color:var(--edu)}
 .term-group ul{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:12px;margin:0;padding:0;list-style:none}
@@ -102,8 +104,12 @@ main:lang(ar) .post-nav-next .term-en{text-align:left}
 .glossary-search-row input{flex:1}
 .glossary-clear{flex:none;padding:10px 16px;border:1.5px solid var(--ink);border-radius:999px;background:#fff;color:var(--ink);font:600 16px/1.2 var(--text);cursor:pointer}
 .glossary-clear[hidden]{display:none}
+/* A letter's heading lands below the sticky search and letters: site.js sets --glossary-tools to their height,
+   which grows when the letters wrap (34 on the Arabic hub). The fixed values are the fallback without JavaScript. */
 .term-group{scroll-margin-top:200px}
 @media(max-width:760px){.glossary-tools .glossary-find label{font-size:17px;margin-bottom:6px}.glossary-find{margin-top:10px}.term-group{scroll-margin-top:150px}}
+.glossary-hub:has(.glossary-tools) .term-group{scroll-margin-top:calc(var(--glossary-tools,212px) + 12px)}
+@media(max-width:760px){.glossary-hub:has(.glossary-tools) .term-group{scroll-margin-top:calc(var(--glossary-tools,160px) + 12px)}}
 .glossary-language-select{display:none}
 @media(max-width:760px){
   .glossary-hub .glossary-languages{display:none}
