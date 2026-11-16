@@ -11,12 +11,7 @@
         {{ with .Params.subtitle }}<p class="standfirst">{{ . | markdownify | emojify }}</p>{{ end }}
       </header>
       {{ with .Content }}<div class="article-style">{{ partial "doors/content" . }}</div>{{ end }}
-      {{/* The same search as {{< list_filter >}}, which site.js sets up; hidden with JavaScript off. */}}
-      <div class="list-filter list-filter-posts" data-noun="posts" hidden>
-        <label for="list-filter-input">Search the posts</label>
-        <input type="search" id="list-filter-input" placeholder="e.g. mentoring, Bayesian, peer review" autocomplete="off">
-        <p class="list-filter-count" aria-live="polite"></p>
-      </div>
+      {{ partial "doors/list_filter" (dict "label" "Search the posts" "placeholder" "e.g. mentoring, Bayesian, peer review" "noun" "posts" "class" "list-filter-posts") }}
       <ul class="list-items">{{ range .Pages.ByDate.Reverse }}<li>{{ partial "doors/list_item" . }}</li>{{ end }}</ul>
     </article>
   </div>
