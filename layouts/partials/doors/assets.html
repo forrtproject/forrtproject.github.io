@@ -22,7 +22,7 @@
 {{ if eq .Type "widget_page" }}{{ $screen = slice "sections" }}{{ end }}
 {{ if in (slice "clusters" "disciplines") .Section }}{{ $screen = slice "clusters" }}{{ end }}
 {{ if eq .Type "welcome" }}{{ $screen = slice "welcome" }}{{ end }}
-{{ if eq .Path "/open-research-games-portal" }}{{ $screen = slice "games" }}{{ end }}
+{{ if eq .Type "games_portal" }}{{ $screen = slice "page" "resources" "games" }}{{ end }}
 {{ with $screen }}
   {{ $parts := slice }}
   {{ range . }}{{ $parts = $parts | append (resources.Get (printf "css/doors/%s.css" .)) }}{{ end }}

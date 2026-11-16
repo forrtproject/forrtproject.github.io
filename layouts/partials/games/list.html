@@ -1,0 +1,59 @@
+{{/* The games as rows (layouts/games_portal/single.html), in the resources directory's row style. Input: the games.
+     A row: the title, linked to the game; one line of facts; the description; the clusters; and Details, which holds
+     the full description and every other field. With JavaScript the row's description is cut to its first lines
+     (games.css); without it, it shows in full. data-facets holds the tokens the filter buttons match. */}}
+{{ $colors := (partialCached "clusters/colors.html" .).arrowColors }}
+{{ $fields := partial "games/fields" . }}
+<ul class="games">
+  {{ range . }}
+  {{ $game := . }}
+  {{ $tokens := slice }}
+  {{ range .clusters }}{{ $tokens = $tokens | append (printf "cluster-%d" (int .number)) }}{{ end }}
+  {{ range $fields }}{{ $key := .key }}{{ range index $game .field }}{{ $tokens = $tokens | append (partial "games/token" (dict "key" $key "value" .)) }}{{ end }}{{ end }}
+  {{/* Short facts; long answers stay in Details. */}}
+  {{ $facts := slice }}
+  {{ range slice .gameplay_style .tone }}{{ with . }}{{ $facts = $facts | append (delimit . ", ") }}{{ end }}{{ end }}
+  {{ with .playtime }}{{ if le (len (index . 0)) 30 }}{{ $facts = $facts | append (index . 0) }}{{ end }}{{ end }}
+  {{ with .language }}{{ $facts = $facts | append (delimit . ", ") }}{{ end }}
+  {{ $description := delimit .description " " }}
+  <li class="game" id="{{ .anchor }}" data-facets="{{ delimit $tokens " " }}">
+    <p class="game-title">{{ if .url }}<a href="{{ .url }}" rel="noopener">{{ .title }}</a>{{ else }}{{ .title }}{{ end }}</p>
+    <p class="game-facts">{{ with .delivery_format }}<strong>{{ delimit . ", " }}</strong>{{ end }}{{ range $facts }} <span aria-hidden="true">·</span> {{ . }}{{ end }}</p>
+    <p class="game-desc">{{ $description }}</p>
+    {{ with .clusters }}<p class="game-clusters">{{ range $i, $c := . }}{{ if $i }} {{ end }}<span class="game-cluster"><span class="games-dot" style="background:{{ index $colors (int (sub $c.number 1)) | safeCSS }}"></span>{{ $c.name }}</span>{{ end }}</p>{{ end }}
+    <details class="game-details">
+      <summary>Details<span class="visually-hidden"> on {{ .title }}</span></summary>
+      <div class="game-details-body">
+        <p class="game-full">{{ $description }}</p>
+        {{ if or .url .access_additional }}
+        <p class="game-section">Where to get it</p>
+        {{ with .url }}<p><a href="{{ . }}" rel="noopener">{{ . }}</a></p>{{ end }}
+        {{ with .access_additional }}{{ partial "games/text" . }}{{ end }}
+        {{ end }}
+        {{/* Short values (formats, types, styles, languages) read as one line; answers keep one block per entry. */}}
+        {{ $line := dict }}
+        {{ range slice "game_type" "delivery_format" "gameplay_style" "tone" "language" }}{{ $f := . }}{{ with index $game $f }}{{ $line = merge $line (dict $f (slice (delimit . ", "))) }}{{ end }}{{ end }}
+        {{ $sections := slice
+          (dict "heading" "About the game" "fields" (slice
+            (slice "Creators" .creators) (slice "Game type" $line.game_type) (slice "Format" $line.delivery_format)
+            (slice "Gameplay style" $line.gameplay_style) (slice "Tone and learning intensity" $line.tone)
+            (slice "Number of players" .number_of_players) (slice "Playtime" .playtime) (slice "Language" $line.language)
+            (slice "Licence" .licence) (slice "Last updated" .last_updated) (slice "Target audience" .target_audience)
+            (slice "Prior knowledge" .prior_knowledge) (slice "Topic areas" .topic_area)))
+          (dict "heading" "Teaching with it" "fields" (slice
+            (slice "Learning objectives" .learning_objectives) (slice "Suggested audience" .suggested_audience)
+            (slice "Teaching integration" .teaching_integration) (slice "Scalability" .scalability)
+            (slice "Preparation" .preparation) (slice "Context-specific elements" .context_specific_elements)
+            (slice "Formal evaluation" .formal_evaluation) (slice "Testimonials" .testimonials))) }}
+        {{ range $sections }}
+        <p class="game-section">{{ .heading }}</p>
+        <dl>
+          {{ range .fields }}{{ $label := index . 0 }}{{ with index . 1 }}<div><dt>{{ $label }}</dt> <dd>{{ partial "games/text" . }}</dd></div> {{ end }}{{ end }}
+          {{ if eq .heading "About the game" }}{{ with $game.clusters }}<div><dt>FORRT clusters</dt> <dd><ul>{{ range . }} <li><a href="{{ printf "/clusters/cluster-%d/" (int .number) | relURL }}">Cluster {{ int .number }}: {{ .name }}</a></li>{{ end }}</ul></dd></div>{{ end }}{{ end }}
+        </dl>
+        {{ end }}
+      </div>
+    </details>
+  </li>
+  {{ end }}
+</ul>

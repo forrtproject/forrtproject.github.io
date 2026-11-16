@@ -610,13 +610,10 @@ document.querySelectorAll('.area-more button').forEach((button) => {
 });
 
 // An entry whose details give "Status: …" (the effects on /reversals/) shows that status as a chip beside its name.
-// Only lists whose details give statuses get chips: other entries with details (the games portal) have none.
-const statusLine = (li) => /^\s*status:/i.test(li.textContent);
-const statusNames = [...document.querySelectorAll('.article-style li > p > strong:first-child')]
-  .filter((name) => name.closest('li').querySelector('.spoiler'));
-(statusNames.some((name) => [...name.closest('li').querySelectorAll('.spoiler li')].some(statusLine)) ? statusNames : []).forEach((name) => {
+document.querySelectorAll('.article-style li > p > strong:first-child').forEach((name) => {
   const item = name.closest('li');
-  const line = [...item.querySelectorAll('.spoiler li')].find(statusLine);
+  if (!item.querySelector('.spoiler')) return;
+  const line = [...item.querySelectorAll('.spoiler li')].find((li) => /^\s*status:/i.test(li.textContent));
   const status = line ? line.textContent.replace(/^\s*status:\s*/i, '').trim().toLowerCase() : '';
   // One word set for the chips; any qualifier stays in the statistics and in the chip's title.
   // An entry with no status says so, so that it can still be found by outcome.

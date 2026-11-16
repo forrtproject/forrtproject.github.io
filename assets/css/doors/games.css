@@ -1,60 +1,73 @@
-/* The Open Research Games Portal (shortcodes/games_portal.html), loaded on that page only. The search, count and
-   rows are the list_filter's (article.css); this adds the filters beside the list and the rows' facts and clusters.
-   On a wide screen the filters are a panel to the left of the list, as in the resources directory; below 1000 px
-   they are a closed drawer above the search. */
-.games-portal{display:grid;grid-template-columns:minmax(0,290px) minmax(0,1fr);gap:40px;align-items:start;margin:8px 0 48px}
-.games-filters{position:sticky;top:16px;max-height:calc(100vh - 32px);overflow-y:auto;overscroll-behavior:contain;margin-top:8px;padding:18px 18px 8px;background:var(--surface);border-radius:var(--r-large)}
-.games-filters[hidden]{display:none}
-.games-filter-drawer>summary{list-style:none;font-weight:700;line-height:1.35}
-.games-filter-drawer>summary::-webkit-details-marker{display:none}
-.article-layout .article-style .games-filters fieldset{min-width:0;margin:16px 0 0;padding:0;border:0}
-.article-layout .article-style .games-filters legend{margin:0 0 8px;padding:0;font:var(--display-weight) 19px/1.2 var(--display);color:var(--ink)}
-.games-chips{display:flex;flex-wrap:wrap;gap:6px}
-.games-chips button{display:inline-flex;align-items:baseline;gap:6px;max-width:100%;padding:6px 11px;background:#fff;border:1.5px solid var(--line);border-radius:999px;font:400 15px/1.3 var(--text);color:var(--ink);text-align:start;cursor:pointer}
-.games-chips button:hover{border-color:var(--ink)}
-.games-chips button[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:#fff}
-.games-chip-count{color:var(--soft);font-weight:600}
-.games-chips button[aria-pressed=true] .games-chip-count{color:inherit}
-.games-chips .games-dot{align-self:center}
-.games-chips button[aria-pressed=true] .games-dot{box-shadow:0 0 0 2px #fff}
-.article-layout .article-style .games-reset{margin:6px 0 2px}
-.list-filter-reset{display:inline-flex;align-items:center;min-height:44px;padding:0;background:none;border:0;font:600 16px/1.4 var(--text);color:var(--link);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+/* The Open Research Games Portal (layouts/games_portal/single.html), loaded after page.css and resources.css, whose
+   directory, filter panel, chips, empty state and collection note it uses as they are. This adds the search
+   (the list_filter in the resources search's style) and the rows. */
+
+/* Search: the resources directory's label, field and count, stacked. */
+.catalogue .list-filter[hidden]{display:none}
+.catalogue .list-filter-search{display:grid;grid-template-columns:minmax(0,1fr);row-gap:10px}
+.catalogue .list-filter label{display:block;margin:0;font:var(--display-weight) 22px/1.2 var(--display);color:var(--ink)}
+.catalogue .list-filter input{grid-row:2;width:100%;box-sizing:border-box;background:#fff;border:1.5px solid var(--soft);border-radius:var(--r-small);padding:12px 14px;font:400 17px/1.3 var(--text);color:var(--ink)}
+.catalogue .list-filter input::placeholder{color:var(--soft);opacity:1}
+.catalogue .list-filter-count{grid-row:3;margin:6px 0 0;font-weight:600}
+.games-reset{margin:14px 0 0}
+.games-reset:has([hidden]){display:none}
+.list-filter-reset{display:inline-flex;align-items:center;min-height:44px}
 .list-filter-reset[hidden]{display:none}
+.chip .games-dot{align-self:center}
+.chip[aria-pressed=true] .games-dot{box-shadow:0 0 0 2px #fff}
 
-/* The list: rows as wide as a paragraph can comfortably be. */
-.games-list{min-width:0}
-.article-layout .article-style .games-list .list-filter-section{max-width:29em}
-.article-layout .article-style .games-list .list-filter{max-width:29em}
-.article-layout .article-style .games-list ul.games{max-width:29em;margin:0;padding:0;list-style:none}
-.article-layout .article-style ul.games>li{max-width:none;margin:0;padding:14px 0 10px;border-bottom:1px solid var(--line)}
-.article-layout .article-style ul.games .games-text{margin:0 0 6px}
-.article-layout .article-style ul.games .games-text>strong a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
-.article-layout .article-style ul.games .games-facts{margin:0 0 2px;font-size:16px;line-height:1.45;color:var(--soft)}
-.article-layout .article-style ul.games .games-clusters{display:flex;flex-wrap:wrap;gap:2px 14px;margin:4px 0 2px;font-size:16px;line-height:1.45;color:var(--ink)}
-.games-dot{display:inline-block;flex:none;width:10px;height:10px;margin-inline-end:6px;border-radius:50%;vertical-align:1px}
-/* Details: the answers as labelled blocks, links wrapping where they must. */
-.article-layout .article-style ul.games .spoiler-body{font-size:17px}
-.article-layout .article-style ul.games .games-detail-head{margin:16px 0 4px;font:var(--display-weight) 20px/1.25 var(--display)}
-.article-layout .article-style ul.games .games-detail-head:first-child{margin-top:4px}
-.article-layout .article-style ul.games dl{margin:0}
-.article-layout .article-style ul.games dt{margin:10px 0 2px;font-weight:600}
-.article-layout .article-style ul.games dd{margin:0}
-.article-layout .article-style ul.games :is(dd,.spoiler-body>p){overflow-wrap:anywhere}
-.article-layout .article-style ul.games dd p{margin:0 0 6px}
-.article-layout .article-style ul.games dd ul{margin:0 0 6px;padding-inline-start:1.2em;list-style:disc}
-.article-layout .article-style ul.games dd li{margin:0 0 4px;padding:0;border:0}
-.article-layout .article-style .games-empty{max-width:29em;margin-top:16px;padding:18px 20px;background:var(--surface);border-radius:var(--r-large)}
-.article-layout .article-style .games-empty[hidden]{display:none}
-.article-layout .article-style .games-empty p{margin:0}
+/* Rows: the title, a line of facts, the description, the clusters, then Details. */
+.games{margin:16px 0 0;padding:0;list-style:none;border-top:1px solid var(--line)}
+.game{padding:16px 12px 10px;border-bottom:1px solid var(--line)}
+.game>p{margin:0;max-width:30em}
+.game-title{font:var(--display-weight) 21px/1.25 var(--display);overflow-wrap:anywhere}
+.game-title a{color:var(--link);text-decoration:none}
+.game-title a:hover{text-decoration:underline;text-underline-offset:3px}
+.game>.game-facts{margin-top:4px;font-size:16px;line-height:1.45;color:var(--soft)}
+.game-facts strong{font-weight:600;color:var(--ink)}
+.game>.game-desc{margin-top:8px;font-size:18px;line-height:1.5}
+.game>.game-clusters{margin-top:8px;font-size:15px;line-height:1.45;color:var(--soft)}
+.game-cluster{display:inline-block;margin-inline-end:14px}
+.games-dot{display:inline-block;flex:none;width:9px;height:9px;margin-inline-end:6px;border-radius:50%;vertical-align:1px}
 
-/* Tap targets of 44 px on phones (DESIGN.md §9); the wide-screen panel keeps the compact chips. */
-@media(max-width:760px){.games-chips button{min-height:44px;align-items:center}}
-@media(max-width:1000px){
-  .games-portal{grid-template-columns:minmax(0,1fr);gap:12px}
-  .games-filters{position:static;max-height:none;overflow:visible;padding:12px 16px}
-  .games-filter-drawer>summary{display:flex;justify-content:space-between;gap:10px;min-height:44px;align-items:center;cursor:pointer;color:var(--link);text-decoration:underline;text-underline-offset:3px}
-  .games-filter-drawer>summary::after{content:'';flex:none;width:8px;height:8px;margin:0 3px 4px;border-inline-end:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg)}
-  .games-filter-drawer[open]>summary::after{transform:rotate(-135deg);margin-bottom:-4px}
-  .article-layout .article-style .games-reset{margin:8px 0 4px}
-  .article-layout .article-style .games-reset:has([hidden]){display:none}
+/* Once the search has started (site.js shows it), the description shows its first two lines; Details holds it in
+   full and, while open, stands in for it. Without JavaScript the row shows it in full and Details does not repeat it. */
+.game-full{display:none}
+.list-filter:not([hidden])~.games .game-desc{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2;overflow:hidden}
+.list-filter:not([hidden])~.games .game:has(.game-details[open]) .game-desc{display:none}
+.list-filter:not([hidden])~.games .game-details[open] .game-full{display:block}
+
+.game-details{margin-top:4px}
+.game-details>summary{display:inline-flex;align-items:center;gap:8px;min-height:36px;font-weight:600;font-size:16px;color:var(--link);text-decoration:underline;text-underline-offset:3px;cursor:pointer;list-style:none}
+.game-details>summary::-webkit-details-marker{display:none}
+.game-details>summary::before{content:"";flex:none;width:7px;height:7px;margin-inline-start:2px;border-inline-end:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(-45deg);transition:transform .15s}
+.game-details[open]>summary::before{transform:translateY(-2px) rotate(45deg)}
+.game-details-body{max-width:31em;margin:6px 0 8px;padding:16px 20px 12px;background:var(--surface);border-radius:var(--r-large);font-size:17px;line-height:1.5}
+.game-details-body p{margin:0 0 8px}
+.game-details-body a{color:var(--link);text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.game-details-body .game-section{margin:18px 0 6px;font:var(--display-weight) 20px/1.25 var(--display)}
+.game-details-body>.game-section:first-child{margin-top:2px}
+.game-details-body dl{margin:0}
+.game-details-body dl>div{display:grid;grid-template-columns:11em minmax(0,1fr);column-gap:16px;padding:6px 0;border-top:1px solid var(--line)}
+.game-details-body dl>div:first-child{border-top:0}
+.game-details-body dt{font-weight:600}
+.game-details-body dd{margin:0;overflow-wrap:anywhere}
+.game-details-body dd p:last-child{margin-bottom:0}
+.game-details-body dd ul{margin:0;padding-inline-start:1.2em}
+.game-details-body dd li{margin:0 0 4px}
+
+/* The section under the list: lines under 80 characters, and the field guide's lists at the note's text size. */
+.games-note :is(p,li){max-width:31em}
+.games-note a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
+.games-note .collection-about ul{margin:8px 0 12px;padding-inline-start:1.2em;font-size:16px;line-height:1.55}
+.games-note .collection-about li{margin:0 0 6px}
+
+@media(max-width:760px){
+  .chips .chip{min-height:44px;align-items:center}
+  .filter-drawer>summary{min-height:44px;align-items:center}
+  .game{padding:14px 0 8px}
+  .list-filter:not([hidden])~.games .game-desc{-webkit-line-clamp:3;line-clamp:3}
+  .game-details>summary{min-height:44px}
+  .game-details-body{padding:14px 16px 10px}
+  .game-details-body dl>div{grid-template-columns:minmax(0,1fr)}
 }
