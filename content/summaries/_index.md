@@ -23,8 +23,8 @@ menu:
 ---
 
 {{< action_cards >}}
-Open and Reproducible Science | Summaries of papers on open and reproducible research | /summaries/open-reproducible/
-Diversity, Equity, & Inclusion | Summaries of papers on diversity, equity and inclusion in academia | /summaries/diversity-equity-inclusion/
+Read open and reproducible science summaries | Takeaways, abstracts and references, with a filter | /summaries/open-reproducible/
+Read diversity, equity and inclusion summaries | On diversity, equity and inclusion in academia | /summaries/diversity-equity-inclusion/
 {{< /action_cards >}}
 
 ## Overview
@@ -33,7 +33,7 @@ The FORRT community has prepared 100+ summaries of Open and Reproducible Science
 
 ***These summaries are very much a work in progress***. We would love to receive your [criticism, areas for improvement, ideas, and help](https://docs.google.com/spreadsheets/d/1W12WpzI70Ja1FiVeflXNW8VFPzqFFvu_mL2YkNQ_cHk/edit?usp=sharing). 
 
-We made a distinction between "[Open and Reproducible Science](/summaries/open-reproducible/)" summaries and "[Diversity, Equity, & Inclusion](/summaries/diversity-equity-inclusion/)" summaries to highlight that the topics of social injustices and DEI (diversity, equity and inclusion) are often neglected in academia, and in open and reproducible science literature. If you are an educator, you may also be interested in our [FORRT Syllabus on Open and Reproducible Science (.pdf & G-doc)](https://forrt.org/syllabus), which is based on [FORRT Clusters.](/clusters/)
+We made a distinction between [Open and reproducible science](/summaries/open-reproducible/) summaries and [Diversity, equity and inclusion](/summaries/diversity-equity-inclusion/) summaries to highlight that the topics of social injustices and DEI (diversity, equity and inclusion) are often neglected in academia, and in open and reproducible science literature. If you are an educator, you may also be interested in our [FORRT Syllabus on Open and Reproducible Science (.pdf & G-doc)](https://forrt.org/syllabus), which is based on [FORRT Clusters.](/clusters/)
 
 ### Why make these summaries?
 
@@ -57,7 +57,7 @@ One idea to achieve these goals would be to plan a hackathon to make these summa
 
 We also aim to further integrate this initiative with other FORRT initiatives. First, we want to make sure that all open and reproducible sources cited in the [FORRT’s Manuscript](https://forrt.org/manuscript/) have an associated summary to facilitate the reading of FORRT’s manifesto. Finally, we also hope to include each summary as a resource in [FORRT’s curated list of resources](https://forrt.org/resources/), as well include [FORRT Clusters’](/clusters/) tags for each summary. Not yet at a 'plans' stage, but we are considering formalizing this initiative with the drafting of a manuscript, summarizing lessons we learned and hopefully making it a more useful resource to the community.
 
-### Process & Credit
+### Process and credit
 
 Any and all contributions in FORRT are formally recognized. In large part, these summaries are a result of the heroic effort of Mahmoud Elsherif, a cherished member of FORRT community, who bore the brunt of most of the initial work. Flavio Azevedo conceptualized the project, reviewed summaries, and managed the initiative. This project would not have been possible without the tireless work of Leticia Micheli, Martin Vasilev, Jacob Miranda, Tamara Marques, Esther Plomp, Alice Rees, and Catia Oliveira who revised and improved the summaries to its current stage. Furthermore, members of [CSCCE community](https://www.cscce.org/) have done a fair bit of reviewing of the DEI summaries. We would like to thank CSCCE  for editing, commenting, and enriching it. These summaries are truly a community effort in the name of supporting scholars in their efforts to learn, stay up-to-date and teach open and reproducible science in Higher Education.
 

@@ -13,7 +13,12 @@
 {{ if $dei }}<span class="summaries-dei" hidden></span>{{ end }}
 {{ range $summaries }}{{ if and .Title (or (not $dei) (in .Title "⌺")) }}
 <details class="summary-entry">
-<summary><h2 id="{{ .Id }}">{{ .Title | markdownify }}</h2></summary>
+{{/* ◈ (not peer reviewed) sits at the end of the title with even spacing, and screen readers hear its meaning. */}}
+{{ $title := .Title }}{{ $npr := in $title "◈" }}
+{{ if $npr }}{{ $title = replaceRE `[\s\p{Z}]*◈[\s\p{Z}]*` "" $title }}{{ end }}
+{{/* The DEI mark's own margin spaces it from the title, so spaces before it in the source are dropped. */}}
+{{ $title = replaceRE `[\s\p{Z}]+⌺` "⌺" $title }}
+<summary><h2 id="{{ .Id }}">{{ $title | markdownify }}{{ if $npr }} <span class="npr-mark" aria-hidden="true">◈</span><span class="sr-only"> (not peer reviewed)</span>{{ end }}</h2></summary>
 <h3>Main takeaways</h3>
 <ul>
   {{ range .Main_Takeaways }}<li>{{ . }}</li>{{ end }}
@@ -26,7 +31,7 @@
 <p>{{ . }}</p>{{ end }}
 {{ with .Reference }}<h3>Reference</h3>
 {{/* A DOI or other address in the reference becomes a link, without the full stop that may end it. */}}
-<p>{{ replaceRE `(https?://[^\s<]*[^\s<.,;)])` `<a href="$1">$1</a>` (. | htmlEscape) | safeHTML }}</p>{{ end }}
+<p>{{ replaceRE `(https?://[^\s\p{Z}<]*[^\s\p{Z}<.,;)])` `<a href="$1">$1</a>` (. | htmlEscape) | safeHTML }}</p>{{ end }}
 {{ with .You_may_also_be_interested_in }}
 <h3>You may also be interested in</h3>
 <ul>

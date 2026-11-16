@@ -289,7 +289,7 @@ if (summaryEntries.length) {
   // What a filter looks through: title, takeaways, quote and abstract, not the fixed headings or related links.
   const words = new Map(summaryEntries.map((entry) => {
     const copy = entry.cloneNode(true);
-    copy.querySelectorAll('h3').forEach((heading) => heading.remove());
+    copy.querySelectorAll('h3, .sr-only, .npr-mark').forEach((part) => part.remove());
     copy.querySelector('ul:last-of-type')?.remove();
     return [entry, copy.textContent.toLowerCase()];
   }));
