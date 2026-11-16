@@ -54,6 +54,8 @@
 .tag-count{margin-inline-start:4px;font-weight:400}
 #tag-results{margin:18px 0;max-width:40em}
 #tag-results h2{font-size:26px}
+.tag-results-switch{margin:-4px 0 12px}
+#tag-results p a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
 .nla-page{padding:32px 0 40px}
 .nla-subscribe-band{max-width:40em;margin:0 0 26px;padding:18px 20px;background:var(--surface);border-radius:var(--r-large)}
 .nla-subscribe-label{margin:0 0 10px}
