@@ -13,8 +13,22 @@
 .games-reset:has([hidden]){display:none}
 .list-filter-reset{display:inline-flex;align-items:center;min-height:44px}
 .list-filter-reset[hidden]{display:none}
-.chip .games-dot{align-self:center}
+/* Long cluster names wrap; the dot and the count sit at the middle of the chip, not on its first line. */
+.games-directory .chip{align-items:center}
 .chip[aria-pressed=true] .games-dot{box-shadow:0 0 0 2px #fff}
+
+/* "Just want to play?" (partials/games/play.html): a door beside the heading, where the resources directory has
+   its plate, in the education area's pale green. */
+.games-play{justify-self:end;width:100%;max-width:340px;box-sizing:border-box;background:var(--edu-bg);border-radius:999px 999px var(--r-large) var(--r-large);padding:50px 30px 16px;text-align:center}
+.games-play h2{margin:0;font:var(--display-weight) 26px/1.15 var(--display);color:var(--edu)}
+.games-play>p{margin:8px 0 0;font-size:16px;line-height:1.4}
+.games-play-list{margin:14px 0 0;padding:0;list-style:none;text-align:start}
+.games-play-list li{padding:8px 0;border-top:1px solid color-mix(in srgb,var(--edu) 25%,transparent);font-size:17px;line-height:1.3}
+.games-play-list li[hidden]{display:none}
+.games-play-list a{color:var(--link);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.games-play-time{display:block;margin-top:2px;font-size:15px;color:var(--soft)}
+.games-play-deal{margin-top:4px;font-size:16px;min-height:44px}
+.games-play-deal[hidden]{display:none}
 
 /* Rows: the title, a line of facts, the description, the clusters, then Details. */
 .games{margin:16px 0 0;padding:0;list-style:none;border-top:1px solid var(--line)}
@@ -30,10 +44,10 @@
 .game-cluster{display:inline-block;margin-inline-end:14px}
 .games-dot{display:inline-block;flex:none;width:9px;height:9px;margin-inline-end:6px;border-radius:50%;vertical-align:1px}
 
-/* Once the search has started (site.js shows it), the description shows its first two lines; Details holds it in
+/* Once the search has started (site.js shows it), the description shows its first three lines; Details holds it in
    full and, while open, stands in for it. Without JavaScript the row shows it in full and Details does not repeat it. */
 .game-full{display:none}
-.list-filter:not([hidden])~.games .game-desc{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2;overflow:hidden}
+.list-filter:not([hidden])~.games .game-desc{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;line-clamp:3;overflow:hidden}
 .list-filter:not([hidden])~.games .game:has(.game-details[open]) .game-desc{display:none}
 .list-filter:not([hidden])~.games .game-details[open] .game-full{display:block}
 
@@ -63,10 +77,18 @@
 .games-note .collection-about li{margin:0 0 6px}
 
 @media(max-width:760px){
+  /* On a phone the panel stays short, so the search is still in the first screen: one line a game. */
+  .games-play{justify-self:stretch;max-width:none;border-radius:var(--r-large);padding:14px 18px 4px;text-align:start}
+  .games-play h2{font-size:22px}
+  .games-play>p{margin-top:2px}
+  .games-play-list{margin-top:8px}
+  .games-play-list li{padding:6px 0}
+  .games-play-time{display:inline;margin:0}
+  .games-play-time::before{content:" · "}
+  .games-play-deal{margin-top:0}
   .chips .chip{min-height:44px;align-items:center}
   .filter-drawer>summary{min-height:44px;align-items:center}
   .game{padding:14px 0 8px}
-  .list-filter:not([hidden])~.games .game-desc{-webkit-line-clamp:3;line-clamp:3}
   .game-details>summary{min-height:44px}
   .game-details-body{padding:14px 16px 10px}
   .game-details-body dl>div{grid-template-columns:minmax(0,1fr)}

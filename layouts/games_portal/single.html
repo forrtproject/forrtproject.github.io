@@ -8,8 +8,13 @@
 <div class="wrap">
   <header class="page-heading">
     {{ partial "doors/crumbs" (dict "page" .) }}
-    <h1>{{ .Title }}</h1>
-    <p class="lede">{{ .Params.lede }}</p>
+    <div class="heading-grid">
+      <div>
+        <h1>{{ .Title }}</h1>
+        <p class="lede">{{ .Params.lede }}</p>
+      </div>
+      {{ partial "games/play" $games }}
+    </div>
   </header>
 
   <div class="directory games-directory">
