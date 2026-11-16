@@ -30,7 +30,8 @@
   {
     groups.forEach(function (group) {
       var items = group.querySelectorAll("li");
-      if (items.length < FIRST + 5) return;
+      // Shortened only when it hides more than eight tags; a letter with a few more than the preview shows them all.
+      if (items.length - FIRST <= 8) return;
       // The preview shows the letter's most used tags, in their alphabetical places.
       var ranked = Array.prototype.slice.call(items).sort(function (a, b) {
         return Number(b.querySelector(".tag-count").textContent) - Number(a.querySelector(".tag-count").textContent);
@@ -40,7 +41,7 @@
       var more = document.createElement("button");
       more.type = "button";
       more.className = "tag-group-more";
-      more.textContent = "All " + items.length + " tags under " + group.querySelector("h3").textContent;
+      more.textContent = "Show all " + items.length + " tags under " + group.querySelector("h3").textContent + " (" + FIRST + " shown)";
       more.addEventListener("click", function () {
         // Focus moves to the first tag the button revealed, so keyboard users carry on from there.
         var next = group.querySelector("li:not(.is-top) a");
