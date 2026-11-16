@@ -237,7 +237,7 @@ def finish_page(page, year, month, preview, root):
                            flags=re.IGNORECASE)
     if not (headed and bodied):
         raise ArchiveError("HTML has no <head> or <body>")
-    return page
+    return archive_page(page)
 
 
 # Accessible names for links whose only content is an image with alt="".
@@ -281,6 +281,83 @@ def tidy_page(page):
 
 
 # ---------------------------------------------------------------------------
+
+# The archive page's own parts, in the site's look: a skip link, a breadcrumb, the title and a
+# main landmark around the email, set in the site's fonts (DESIGN.md §7, §12).
+ARCHIVE_STYLE = (
+    '<style id="forrt-archive">'
+    '@font-face{font-family:"Source Sans 3";src:url(/fonts/doors/source-sans-3-var.woff2) format("woff2");'
+    "font-weight:200 900;font-display:swap}"
+    '@font-face{font-family:Newsreader;src:url(/fonts/doors/newsreader-var.woff2) format("woff2");'
+    "font-weight:200 800;font-display:swap}"
+    'body :is(p,li,td,div,span,a,strong,em,b,i){font-family:"Source Sans 3","Segoe UI",system-ui,sans-serif,'
+    '"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji"!important}'
+    "body :is(h1,h2,h3,h4){font-family:Newsreader,Georgia,serif!important}"
+    "h2[data-email-h1]{font-size:2em}"
+    "#templatePreheader{display:none!important}"
+    ".forrt-skip{position:absolute;left:-9999px}"
+    ".forrt-skip:focus{left:16px;top:8px;z-index:9;padding:8px 14px;background:#fff;color:#1f2a37}"
+    '.forrt-archive-bar{max-width:640px;margin:0 auto;padding:20px 16px 16px;font:17px/1.4 "Source Sans 3",system-ui,sans-serif;color:#1f2a37}'
+    ".forrt-archive-bar nav{margin-bottom:6px}"
+    ".forrt-archive-bar a{color:#0b5a87;text-decoration:underline;text-underline-offset:3px}"
+    ".forrt-archive-bar h1{margin:0;font:500 32px/1.15 Newsreader,Georgia,serif}"
+    "</style>"
+)
+OLD_STYLE = re.compile(r'<style>h2\[data-email-h1\].*?</style>|<style id="forrt-archive">.*?</style>', re.DOTALL)
+ARCHIVE_BAR = re.compile(r'(?:<a class="forrt-skip"[^>]*>[^<]*</a>)?<(div|header) class="forrt-archive-bar">'
+                         r".*?<h1>(.*?)</h1>.*?</\1>(?:<main id=\"main\">)?", re.DOTALL)
+# Lines that only make sense in an inbox.
+EMAIL_ONLY = [
+    re.compile(r'<a\b[^>]*>\s*Add us to your address book\s*</a>(?:<br>\s*)*', re.IGNORECASE),
+    re.compile(r"<strong>\s*Add us to your address book\s*</strong>", re.IGNORECASE),
+    re.compile(r"Want to change how you receive these emails\?<br>\s*You can update your preferences or "
+               r"unsubscribe from this list\.(?:<br>)?", re.IGNORECASE),
+    re.compile(r"<span\b[^>]*>(?:<br>)?\s*You can\s*</span>\s*unsubscribe\s*<span\b[^>]*>\s*at any time from "
+               r"these newsletters\.(?:&nbsp;)?\s*</span>(?:<br>)?", re.IGNORECASE),
+]
+
+
+def larger_type(match):
+    """Email text under 15 px set at the site's sizes: small print 15 px, text 17 px (DESIGN.md §7)."""
+    size = float(match.group(2))
+    if 9 <= size < 12:
+        return match.group(1) + "15px"
+    if 12 <= size < 15:
+        return match.group(1) + "17px"
+    return match.group(0)
+
+
+def archive_page(page):
+    """Give an archived email the site's page parts. Safe to apply more than once."""
+    page = OLD_STYLE.sub("", page)
+    page = re.sub(r"</head>", ARCHIVE_STYLE + "</head>", page, count=1, flags=re.IGNORECASE)
+    bar = (
+        '<a class="forrt-skip" href="#main">Skip to the newsletter</a>'
+        '<header class="forrt-archive-bar"><nav aria-label="Breadcrumb"><a href="/">Home</a> / '
+        '<a href="/newsletters/">Newsletter archive</a></nav><h1>%s</h1></header><main id="main">'
+    )
+    page = ARCHIVE_BAR.sub(lambda m: bar % m.group(2), page, count=1)
+    if "</main>" not in page:
+        closes = [m.start() for m in re.finditer(r"</body\s*>", page, flags=re.IGNORECASE)]
+        if closes:
+            page = page[:closes[-1]] + "</main>" + page[closes[-1]:]
+    for pattern in EMAIL_ONLY:
+        page = pattern.sub("", page)
+    page = re.sub(r"(font-size:\s*)(\d+(?:\.\d+)?)px", larger_type, page, flags=re.IGNORECASE)
+    return page
+
+
+def restyle_archive(root):
+    """Apply archive_page to every archived issue, including ones restored from earlier runs."""
+    changed = 0
+    for path in sorted((root / ARCHIVE_DIR).glob("*/index.html")):
+        before = path.read_text(encoding="utf-8")
+        after = archive_page(before)
+        if after != before:
+            path.write_text(after, encoding="utf-8")
+            changed += 1
+    return changed
+
 
 def entry_for(campaign, year, month):
     return {
@@ -326,6 +403,10 @@ def main():
     data_path = root / DATA_FILE
     existing = load_existing(data_path)
     print("Existing archive: %d issues" % len(existing))
+
+    restyled = restyle_archive(root)
+    if restyled:
+        print("Restyled %d archived issues" % restyled)
 
     key = os.environ.get("EMAILOCTOPUS_API_KEY", "").strip()
     if not key:
