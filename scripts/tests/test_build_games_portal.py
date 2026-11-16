@@ -139,7 +139,9 @@ class Main(unittest.TestCase):
 
     def test_failures_leave_the_file_unchanged(self):
         for responses in ([urllib.error.URLError("down"), ConnectionResetError()],
-                          [sheet([row("GID_001")]), 'Game ID,Title\n"unclosed']):
+                          [sheet([row("GID_001")]), 'Game ID,Title\n"unclosed'],
+                          # A cell over the csv module's field size limit raises csv.Error while parsing.
+                          [csv.Error("field larger than field limit"), sheet(many(row("GID_001", Description="x" * (csv.field_size_limit() + 1))))]):
             self.assertEqual(self.run_main(responses), 1)
             self.assertEqual(self.saved(), {"games": ["old"]})
         self.assertEqual(os.listdir(os.path.dirname(self.path)), ["open_research_games.json"])
