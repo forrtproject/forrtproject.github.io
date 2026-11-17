@@ -516,7 +516,10 @@ if (termFilter && termGrid) {
     });
     document.querySelector('.glossary-clear').hidden = !query;
     const shown = terms.filter((term) => !term.hidden).length;
-    document.querySelector('.glossary-count').textContent = query && shown ? `${shown} of ${terms.length} terms` : '';
+    // "12 of 260 terms", in the glossary's language (data-format, from layouts/glossary/list.html).
+    const count = document.querySelector('.glossary-count');
+    const format = count.dataset.format || '%s of %s terms';
+    count.textContent = query && shown ? format.replace('%s', shown).replace('%s', terms.length) : '';
   });
   // Cards or a compact list; the choice is kept for the next visit.
   const view = document.querySelector('.glossary-view');
@@ -569,7 +572,7 @@ if (termFilter && termGrid) {
   const clearTerms = document.createElement('button');
   clearTerms.type = 'button';
   clearTerms.className = 'term-filter-clear';
-  clearTerms.textContent = 'Clear';
+  clearTerms.textContent = termFilter.dataset.clear || 'Clear';
   clearTerms.hidden = true;
   termFilter.after(status, clearTerms);
   clearTerms.addEventListener('click', () => { termFilter.value = ''; termFilter.dispatchEvent(new Event('input')); termFilter.focus(); });
@@ -577,7 +580,12 @@ if (termFilter && termGrid) {
     const query = foldTerm(termFilter.value);
     terms.forEach((term) => { term.hidden = !foldTerm(term.textContent).includes(query); });
     const shown = terms.filter((term) => !term.hidden).length;
-    status.textContent = !query ? '' : shown ? `${shown} ${shown === 1 ? 'term' : 'terms'}` : 'No matching terms.';
+    // The page language's plural category picks the wording: Arabic has forms for 1, 2, 3–10, 11–99 and 100 and more.
+    const words = termFilter.dataset;
+    const category = new Intl.PluralRules(termFilter.closest('[lang]')?.lang || 'en').select(shown);
+    const wording = {one: words.single, two: words.two, few: words.few, many: words.many, other: words.other}[category]
+      || (shown === 1 ? words.single : words.many) || '%d terms';
+    status.textContent = !query ? '' : shown ? wording.replace('%d', shown) : words.none || 'No matching terms.';
     clearTerms.hidden = !query;
   });
   // On a phone the list moves up, into a "Find another term" disclosure right after the definition.

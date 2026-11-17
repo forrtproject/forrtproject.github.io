@@ -4,11 +4,11 @@
      site.js filters the terms as the search is typed. */}}
 {{ $lang := .Params.language | default "english" }}
 {{ $labels := dict
-  "english" (dict "view" "View" "cards" "Cards" "list" "List" "language" "Language" "clear" "Clear" "lede" "Community-written definitions of open scholarship terms, described in Nature Human Behaviour (Parsons et al., 2022). [How to cite the glossary](#about-the-glossary)." "search" "Search %d terms" "placeholder" "Type a term, e.g. replication" "about" "About the glossary project, and how to cite it" "letters" "Terms by letter" "none" "No term matches.")
-  "german" (dict "view" "Ansicht" "cards" "Karten" "list" "Liste" "language" "Sprache" "clear" "Löschen" "search" "%d Begriffe durchsuchen" "placeholder" "Begriff eingeben, z. B. Replikation" "about" "Über das Glossar und wie man es zitiert" "letters" "Begriffe nach Buchstaben" "none" "Kein Begriff passt.")
-  "arabic" (dict "view" "العرض" "cards" "بطاقات" "list" "قائمة" "language" "اللغة" "clear" "مسح" "search" "ابحث في %d مصطلحًا" "placeholder" "اكتب مصطلحًا" "about" "عن المسرد وكيفية الاستشهاد به" "letters" "المصطلحات حسب الحرف" "updated" "آخر تحديث:" "none" "لا يوجد مصطلح مطابق.")
-  "turkish" (dict "view" "Görünüm" "cards" "Kartlar" "list" "Liste" "language" "Dil" "clear" "Temizle" "search" "%d terimde ara" "placeholder" "Bir terim yazın" "about" "Sözlük hakkında ve nasıl atıf yapılır" "letters" "Harfe göre terimler" "none" "Eşleşen terim yok.")
-  "chinese" (dict "view" "显示方式" "cards" "卡片" "list" "列表" "language" "语言" "clear" "清除" "search" "搜索 %d 个术语" "placeholder" "输入术语" "about" "关于本术语表及引用方式" "letters" "按字母排列的术语" "none" "没有匹配的术语。") }}
+  "english" (dict "view" "View" "cards" "Cards" "list" "List" "language" "Language" "clear" "Clear" "lede" "Community-written definitions of open scholarship terms, described in Nature Human Behaviour (Parsons et al., 2022). [How to cite the glossary](#about-the-glossary)." "search" "Search %d terms" "placeholder" "Type a term, e.g. replication" "about" "About the glossary project, and how to cite it" "letters" "Terms by letter" "none" "No term matches." "count" "%s of %s terms")
+  "german" (dict "view" "Ansicht" "cards" "Karten" "list" "Liste" "language" "Sprache" "clear" "Löschen" "search" "%d Begriffe durchsuchen" "placeholder" "Begriff eingeben, z. B. Replikation" "about" "Über das Glossar und wie man es zitiert" "letters" "Begriffe nach Buchstaben" "none" "Kein Begriff passt." "count" "%s von %s Begriffen")
+  "arabic" (dict "view" "العرض" "cards" "بطاقات" "list" "قائمة" "language" "اللغة" "clear" "مسح" "search" "ابحث في %d مصطلحًا" "placeholder" "اكتب مصطلحًا" "about" "عن المسرد وكيفية الاستشهاد به" "letters" "المصطلحات حسب الحرف" "updated" "آخر تحديث:" "none" "لا يوجد مصطلح مطابق." "title" "المسرد" "home" "الرئيسية" "breadcrumb" "مسار التنقل" "count" "%s من %s مصطلحًا")
+  "turkish" (dict "view" "Görünüm" "cards" "Kartlar" "list" "Liste" "language" "Dil" "clear" "Temizle" "search" "%d terimde ara" "placeholder" "Bir terim yazın" "about" "Sözlük hakkında ve nasıl atıf yapılır" "letters" "Harfe göre terimler" "none" "Eşleşen terim yok." "count" "%s / %s terim")
+  "chinese" (dict "view" "显示方式" "cards" "卡片" "list" "列表" "language" "语言" "clear" "清除" "search" "搜索 %d 个术语" "placeholder" "输入术语" "about" "关于本术语表及引用方式" "letters" "按字母排列的术语" "none" "没有匹配的术语。" "home" "首页" "breadcrumb" "导航路径" "count" "%s / %s 个术语" "updated" "最后更新：") }}
 {{ $l := index $labels $lang | default (index $labels "english") }}
 {{ $pages := sort (where (where site.RegularPages "Type" "glossary") "File.Dir" .File.Dir) "Params.sort_key" }}
 {{/* Hugo's sort already collates Ä with A. German also files them under one letter (DIN 5007); other languages keep
@@ -40,8 +40,9 @@
   <div class="article-layout article-layout-single article-layout-wide glossary-layout glossary-hub">
     <article class="reading">
       <header class="article-head">
-        {{ partial "doors/crumbs" (dict "page" .) }}
-        <h1>{{ .Title }}</h1>
+        {{/* The Arabic hub's _index.md is titled "Glossary" and ships from main (see the lede below), so its name is set here. */}}
+        {{ partial "doors/crumbs" (dict "page" . "label" ($l.title | default .Title) "home" $l.home "name" $l.breadcrumb) }}
+        <h1>{{ $l.title | default .Title }}</h1>
         {{/* The lede lives here, not in the _index.md pages: data-processing.yml ships content/glossary/ from main,
              so an edit there would not reach the site. */}}
         {{ with $l.lede }}<p class="standfirst">{{ . | markdownify }}</p>{{ end }}
@@ -66,7 +67,7 @@
         <label for="glossary-search">{{ printf $l.search (len $pages) }}</label>
         <div class="glossary-search-row"><input type="search" id="glossary-search" placeholder="{{ $l.placeholder }}" autocomplete="off"><button type="button" class="glossary-clear" hidden>{{ $l.clear }}</button><span class="glossary-view" role="group" aria-label="{{ $l.view }}" hidden><button type="button" data-view="cards" aria-pressed="true">{{ $l.cards }}</button><button type="button" data-view="list" aria-pressed="false">{{ $l.list }}</button></span></div>
         <p class="glossary-none" hidden>{{ $l.none }}</p>
-        <p class="glossary-count" aria-live="polite"></p>
+        <p class="glossary-count" aria-live="polite" data-format="{{ $l.count | default (index $labels "english").count }}"></p>
       </div>
       <nav class="glossary-letters" aria-label="{{ $l.letters }}">
         {{ range $groups }}<a href="#{{ .id }}">{{ .letter }}</a>{{ end }}
