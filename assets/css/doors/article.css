@@ -609,3 +609,17 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
 :is(.article-type-educators-corner,.article-type-pedagogies) .toc-phone{background:var(--edu-bg)}
 /* In the text column (below 1240 px) a call-out keeps its lines under 80 characters, as the text around it does. */
 .article-layout:not(.article-layout-wide) .article-style .callout{max-width:32em}
+/* The end band's heading leads to the whole section (doors/read_next). */
+.read-next h2 a{color:var(--ink);text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:5px}
+.read-next h2 a:hover{color:var(--link)}
+.read-next h2 a span{font-family:var(--text);font-size:.8em;margin-inline-start:4px}
+@media(max-width:760px){.read-next h2 a{display:inline-block;padding:8px 0}}
+/* A picture-less education article in the end band: a plain door on education's colour, saying nothing twice. */
+.ac-panel-door{position:relative}
+.ac-panel-door::after{content:"";position:absolute;left:50%;bottom:0;width:22%;height:62%;transform:translateX(-50%);border-radius:999px 999px 0 0;background:rgb(255 255 255/.16)}
+/* Where the side card names every author beside the title, the byline does not name them again; with more authors
+   than the card names (card-authors-compact), the byline keeps the full list. */
+@media(min-width:1001px){.article-layout:has(>.article-card .card-authors) .byline-authors{display:none}}
+/* On a phone the byline gives the date under the title, so the card at the end gives only an update. */
+@media(max-width:1000px){.article-layout .article-card-article dl>:is(dt:first-child,dt:first-child+dd){display:none}.article-layout .article-card-article dl>dt:nth-child(3){margin-top:0}}
+@media(max-width:1000px){.article-layout .article-card-article dl:not(:has(>dt:nth-child(3))){display:none}}

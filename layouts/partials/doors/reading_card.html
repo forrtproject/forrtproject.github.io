@@ -1,6 +1,7 @@
 {{/* The side card on the reading layout. On an article (news, Educators' Corner, Pedagogies) it says who wrote
-     it, with their photos, role and links (in place of the theme's author box at the foot), when, and where
-     more of the same are; Educators' Corner and Pedagogies are education's, so their card is on its pale
+     it, with their photos, role and links (in place of the theme's author box at the foot), and when; a newsletter
+     also links its archive. The section itself is linked by the breadcrumb and by the heading of the cards at the
+     end (doors/read_next), so the card does not repeat it. Educators' Corner and Pedagogies are education's, so their card is on its pale
      ground (DESIGN.md §6). Every page with headings to jump to also gets its contents here. */}}
 {{ $p := .page }}
 {{ $article := and $p.IsPage (in (slice "post" "educators-corner" "pedagogies") $p.Type) }}
@@ -11,16 +12,10 @@
   {{ $profile := site.GetPage (printf "/authors/%s" (urlize .)) }}
   {{ $authors = $authors | append (dict "name" . "profile" $profile) }}
 {{ end }}{{ end }}
-{{/* Where more of the same are: a newsletter's archive, or the article's section. */}}
+{{/* A newsletter's archive, which neither the breadcrumb nor the cards at the end link. */}}
 {{ $more := "" }}{{ $moreLabel := "" }}
-{{ if $article }}
-  {{ if and (eq $p.Type "post") (in ($p.Params.categories | default slice) "Newsletter") }}
-    {{ with site.GetPage "/newsletters" }}{{ $more = .RelPermalink }}{{ $moreLabel = "All newsletters" }}{{ end }}
-  {{ end }}
-  {{ if not $more }}{{ with $p.Parent }}
-    {{ $more = .RelPermalink }}
-    {{ $moreLabel = index (dict "post" "All news and announcements" "educators-corner" "More from Educators' Corner" "pedagogies" "More pedagogies") $p.Type }}
-  {{ end }}{{ end }}
+{{ if and $article (eq $p.Type "post") (in ($p.Params.categories | default slice) "Newsletter") }}
+  {{ with site.GetPage "/newsletters" }}{{ $more = .RelPermalink }}{{ $moreLabel = "All newsletters" }}{{ end }}
 {{ end }}
 {{/* On a narrow screen the byline shows the publication date for these types (doors/article_header), and the phone
      contents replace the card's, so a card with nothing more than that date is left out there (article.css). */}}

@@ -19,7 +19,9 @@
     {{/* The trail ends with the page itself, as on every other template (doors/crumbs.html). */}}
     <span aria-hidden="true">/</span> <span aria-current="page">{{ $page.LinkTitle }}</span>
   </nav>
-  {{ with .Params.categories }}<div class="article-meta">{{ range . }}<span>{{ . }}</span>{{ end }}</div>{{ end }}
+  {{/* A category the title already names ("Newsletter" above "FORRT Newsletter — May 2026") is left out. */}}
+  {{ $cats := slice }}{{ range .Params.categories }}{{ if not (findRE (printf `(?i)\b%s\b` .) $page.Title 1) }}{{ $cats = $cats | append . }}{{ end }}{{ end }}
+  {{ with $cats }}<div class="article-meta">{{ range . }}<span>{{ . }}</span>{{ end }}</div>{{ end }}
   {{ with .Params.header_logo }}<img class="article-logo" src="{{ . | relURL }}" alt="">{{ end }}
   {{ $heading := .Params.heading_title | default .Title }}
   {{ if .Params.hide_title }}<h1 class="sr-only">{{ $heading }}</h1>{{ else }}<h1>{{ $heading }}</h1>{{ end }}
@@ -43,10 +45,12 @@
       {{ $host := strings.TrimPrefix "www." $u.Host }}
       {{ if strings.HasSuffix (lower $u.Path) ".pdf" }}{{ $where = "PDF" }}
       {{ else if in $u.Path "/presentation/" }}{{ $where = "Google Slides" }}
-      {{ else if or (eq $host "youtube.com") (eq $host "youtu.be") }}{{ $where = cond (in $u.Path "playlist") "YouTube playlist" "YouTube video" }}
+      {{ else if or (eq $host "youtube.com") (eq $host "youtu.be") }}{{ $where = "YouTube" }}
       {{ else if eq $host "osf.io" }}{{ $where = "OSF" }}
       {{ else }}{{ $where = $host }}{{ end }}
-      <li><a href="{{ $link }}"><strong>{{ trim .name " " }}</strong><span>{{ $where }}</span></a></li>
+      {{/* Where it leads, unless the name already says so ("Interview (pdf)", "CREP's OSF page"). */}}
+      {{ if in (lower .name) (lower $where) }}{{ $where = "" }}{{ end }}
+      <li><a href="{{ $link }}"><strong>{{ trim .name " " }}</strong>{{ with $where }}<span>{{ . }}</span>{{ end }}</a></li>
     {{ end }}
   </ul>
   {{ else }}

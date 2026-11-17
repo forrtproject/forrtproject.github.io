@@ -38,8 +38,6 @@ We provide a suite of resources to support the use and implementation of the Cit
 
 {{< action_cards >}}
 Toolkit website | Tools and practices for each stage of the research cycle | /citation-politics/toolkit/
-Manuscript | In Pursuit of Citational Justice: A Toolkit for Equitable Scholarship | https://doi.org/10.31222/osf.io/qjecy_v2
-Video guide | First steps towards citational justice | #video-guide
 {{< /action_cards >}}
 
 ### Manuscript

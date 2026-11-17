@@ -22,7 +22,8 @@
   {{ with $items }}
   {{ $heading := index (dict "post" "More news" "educators-corner" "More from Educators' Corner" "pedagogies" "More pedagogies") $p.Type }}
   <section class="read-next{{ if in (slice "educators-corner" "pedagogies") $p.Type }} read-next-edu{{ end }}" aria-labelledby="read-next-heading">
-    <h2 id="read-next-heading">{{ $heading }}</h2>
+    {{/* The heading is the way to the whole section. */}}
+    <h2 id="read-next-heading">{{ with $p.Parent }}<a href="{{ .RelPermalink }}">{{ $heading }}<span aria-hidden="true"> →</span></a>{{ else }}{{ $heading }}{{ end }}</h2>
     <ul class="announcements-grid">
       {{ range . }}<li>{{ partial "doors/article_card" (dict "page" .page "rel" .rel) }}</li>{{ end }}
     </ul>
