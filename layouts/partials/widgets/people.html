@@ -16,8 +16,13 @@
     {{ $people = $people | append (dict "key" (printf "%s %s" (lower (index $words (sub (len $words) 1))) (lower $name)) "page" .) }}
   {{ end }}
 {{ end }}
+{{/* On a wide screen the introduction and search sit on the left and the people flow around them. */}}
+<div class="people-layout">
+<div class="people-intro">
 {{ with $page.Content }}<div class="people-about">{{ . }}</div>{{ end }}
-{{ partial "doors/list_filter" (dict "label" "Find a person" "placeholder" "Type a name" "noun" "people") }}
+{{ partial "doors/list_filter" (dict "label" "Find a person" "placeholder" "Type a name" "noun" "people" "list" ".people-wall") }}
+</div>
 <ul class="people-wall">
   {{ range sort $people "key" }}{{ partial "widgets/people-card.html" (dict "person" .page) }}{{ end }}
 </ul>
+</div>

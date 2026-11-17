@@ -59,6 +59,7 @@ Every repeated device has to earn its place. In practice:
 - No italics anywhere outside reference lists, including menus, captions, labels and quotes. Emphasis is semi-bold.
 - Headings, buttons and labels are in sentence case.
 - Reading lines stay under 80 characters, measured on the rendered lines. The narrow reading column is for prose; tables, tools, programmes and directories may use the full width.
+- On a wide page, prose never stands alone in the narrow column with an empty band beside it. When a full-width list follows, the list starts beside the prose or flows around it (Community, Teams). Otherwise something useful sits beside the prose, such as a contents card, an image or the page's search. The 80-character limit is for the length of lines, not a reason to leave half the screen empty.
 - Use the FORRT logo as supplied. Century Schoolbook is not a web font here.
 
 ## 8. Shared parts to reuse

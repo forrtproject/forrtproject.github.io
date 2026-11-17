@@ -641,7 +641,8 @@ if (listFilter) {
   const noun = listFilter.dataset.noun || 'entries';
   const sections = [];
   let section = null;
-  for (let node = listFilter.nextElementSibling; node; node = node.nextElementSibling) {
+  const first = listFilter.dataset.list ? document.querySelector(listFilter.dataset.list) : listFilter.nextElementSibling;
+  for (let node = first; node; node = node.nextElementSibling) {
     if (/^H[1-3]$/.test(node.tagName)) { section = {heading: node, items: []}; sections.push(section); }
     else if (/^(UL|OL)$/.test(node.tagName)) {
       // A list straight after the search, with no heading of its own, is a section too (Educators' Corner, the games portal).

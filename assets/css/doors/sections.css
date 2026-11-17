@@ -246,3 +246,19 @@
 .article-layout .article-style .get-involved-card :is(p,li),.get-involved-card .clamp-desc{font-size:17px}
 .get-involved-card .get-involved-link{min-height:44px}
 .click-to-load-link{display:inline-flex;align-items:center;min-height:44px}
+
+/* Wide pages: prose is not left alone in a narrow column beside an empty band (DESIGN.md §7). Community: the
+   introduction and search float on the left and the people flow around them, then use the full width. Teams: the
+   introduction takes the first cell of the grid of teams. */
+@media(min-width:1001px){
+  .people-layout{display:flow-root}
+  .people-intro{float:left;width:min(540px,42%);margin:0 48px 24px 0}
+  .people-intro .people-about>:first-child{margin-top:0}
+  .article-layout .article-style .people-layout .people-wall{display:block;margin:0}
+  .article-layout .article-style .people-layout .people-wall li{display:inline-block;width:200px;margin:0 16px 18px 0;vertical-align:top}
+  .article-layout .article-style .people-layout .people-wall li[hidden]{display:none}
+  .article-layout-wide .article-style .team-layout{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,420px),1fr));gap:28px 40px;margin:24px 0}
+  .article-layout-wide .article-style .team-layout>.feature-rows{display:contents}
+  .team-intro>:first-child{margin-top:0}
+  .team-intro>:last-child{margin-bottom:0}
+}

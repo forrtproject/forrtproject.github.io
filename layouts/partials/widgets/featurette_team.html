@@ -2,8 +2,10 @@
      The button says where it goes: a team's own Slack channel, or #forrt-community for teams without one;
      screen readers also hear the team's name, so a list of the page's links still says which team each joins. */}}
 {{ $page := .page }}
-{{ $page.Content }}
-<ul class="feature-rows team-rows">
+{{/* On a wide screen the introduction takes the first place in the grid of teams, so no empty band sits beside it. */}}
+<div class="team-layout">
+<div class="team-intro">{{ $page.Content }}</div>
+<ul class="feature-rows team-rows" role="list">
   {{ range sort $page.Params.featurealt "name" }}
   {{ $team := .name | plainify }}
   <li>
@@ -21,3 +23,4 @@
   </li>
   {{ end }}
 </ul>
+</div>
