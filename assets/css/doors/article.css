@@ -567,29 +567,18 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
   .read-next .ac-body h3{font-size:19px}
 }
 /* A pedagogy's interview: each question is a one-item numbered list of bold text in the Markdown. Shown as a stop
-   on the way down, in education's colour, so the eleven questions can be skimmed; the words are the authors'. */
-.article-type-pedagogies .article-style ol:has(>li:only-child>strong:first-child){max-width:none;margin:40px 0 18px;padding:18px 22px 18px 3.4em;background:var(--edu-bg);border-radius:var(--r-large)}
+   on the way down, in education's colour, so the eleven questions can be skimmed; the words are the authors'.
+   Text, not a box (DESIGN.md §4: cards are for things to pick between or act on). */
+.article-type-pedagogies .article-style ol:has(>li:only-child>strong:first-child){margin:44px 0 16px;padding:14px 0 0 2.6em;border-top:3px solid var(--edu)}
 .article-type-pedagogies .article-style ol:has(>li:only-child>strong:first-child)>li{margin:0;font:500 22px/1.3 var(--display);color:var(--ink)}
 .article-type-pedagogies .article-style ol:has(>li:only-child>strong:first-child)>li::marker{font:500 30px/1 var(--display);color:var(--edu)}
 .article-type-pedagogies .article-style ol:has(>li:only-child>strong:first-child)>li>strong{font-weight:500}
 .article-layout .article-head .material-cards{margin:30px 0 8px}
 @media(max-width:760px){
-  .article-type-pedagogies .article-style ol:has(>li:only-child>strong:first-child){padding:14px 16px 14px 2.8em}
+  .article-type-pedagogies .article-style ol:has(>li:only-child>strong:first-child){padding:12px 0 0 2.4em}
   .article-type-pedagogies .article-style ol:has(>li:only-child>strong:first-child)>li{font-size:20px}
 }
-/* Pale cards from the card_grid shortcode: a page's parallel items (plans, action points) side by side, so they
-   can be skimmed. On a wide page with call-outs they also take the call-outs' column. */
-.article-layout .article-style .card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr));gap:16px;clear:both;margin:24px 0 30px}
-.article-layout .article-style .card-grid-item{box-sizing:border-box;padding:20px 20px 22px;background:var(--surface);border-radius:var(--r-large)}
-.article-layout .article-style :is(.card-grid-edu,.card-grid-res,.card-grid-jus,.card-grid-com) .card-grid-item{box-shadow:inset 0 5px 0 var(--area);padding-top:24px;background:var(--area-bg)}
-.card-grid-edu{--area:var(--edu);--area-bg:var(--edu-bg)}.card-grid-res{--area:var(--res);--area-bg:var(--res-bg)}
-.card-grid-jus{--area:var(--jus);--area-bg:var(--jus-bg)}.card-grid-com{--area:var(--com);--area-bg:var(--com-bg)}
-.article-layout .article-style .card-grid-item h3{margin:0 0 10px;font-size:22px;line-height:1.2}
-.article-layout .article-style .card-grid-item :is(p,li){font-size:17px;line-height:1.5}
-.article-layout .article-style .card-grid-item ul{margin:0;padding-inline-start:1.2em}
-.article-layout .article-style .card-grid-item>:last-child{margin-bottom:0}
 .article-layout .callout-justice{background:var(--jus-bg)}
-@media(min-width:1240px){.article-layout-callouts .article-style .card-grid{margin-inline-end:-300px}}
 /* On a phone a pedagogy's materials go two to a row, so the interview is not pushed a screen down. */
 @media(max-width:760px){
   .article-layout .article-head .material-cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 5px}

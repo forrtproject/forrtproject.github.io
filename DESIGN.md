@@ -36,6 +36,7 @@ Every repeated device has to earn its place. In practice:
 - Tags: a tag links to the tags page only when at least five pages and at most a quarter of the tagged pages share it (`layouts/partials/functions/tag_counts.html`). Rarer tags are plain keywords; tags on more pages are not shown, because they no longer tell pages apart.
 - In directories of cards (§4, About pages), show descriptions in full. Cut one only when it runs past six lines: show four lines and a "more" button. Dense term lists such as the glossary keep their short previews. Never hide just a line or two behind "more". Without JavaScript the full text shows.
 - Cards for actions are the brick cards of `action_cards`. Lists of tools are rows: a linked title and a sentence, not boxes.
+- Cards are for things a visitor picks between or acts on: articles, teams, partners, resources, materials. Running content, such as plans, lists of points and explanations, stays as text, even on an area's pale colour.
 - Directories of organisations, teams and projects (Partnerships, Teams, Get involved) are pale cards or pictured entries, two or more to a row on a wide screen, so they are easy to skim. Each ends in a button for its action, such as "Visit website" or "Join the team's Slack channel".
 - Framed boxes (cards, panels, toolbars) keep space inside them and between them; text never runs up against a box's edge.
 
@@ -75,7 +76,6 @@ Before writing a new component, check these:
 | Names with links | `doors/name_list.html` |
 | Keywords on a resource | `doors/resource_keywords.html` |
 | Previous and next | `doors/pager.html`: Previous on the left, Next on the right; at the end of an article, `doors/read_next.html` shows them with related articles as the news list's cards |
-| Parallel items as pale cards | `{{< card_grid area="jus" >}}`, one card per `###` heading |
 | Information to keep but not lead with | a `details` disclosure with a plain label |
 
 Images in the first screen are not lazy-loaded.

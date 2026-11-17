@@ -38,6 +38,8 @@ We provide a suite of resources to support the use and implementation of the Cit
 
 {{< action_cards >}}
 Toolkit website | Tools and practices for each stage of the research cycle | /citation-politics/toolkit/
+Manuscript | In Pursuit of Citational Justice: A Toolkit for Equitable Scholarship | https://doi.org/10.31222/osf.io/qjecy_v2
+Video guide | First steps towards citational justice | #video-guide
 {{< /action_cards >}}
 
 ### Manuscript
@@ -55,7 +57,6 @@ You’ve read our manuscript and now you’re wondering how to get started? This
 
 ---
 
-{{< card_grid area="jus" >}}
 ### Citation Self-Audit
 This guide will walk you through using the Citational Justice Toolkit to conduct an audit on your own work and more importantly - how to pinpoint tools and practices to help you make targeted changes. In development in English and Spanish.
 
@@ -64,7 +65,6 @@ This material will help you spread the word about citational justice in your own
 
 ### Diversify Your Content Workshop
 This workshop will guide you through applying the Citational Justice Toolkit to teaching content using focused questions to target changes. In development in English and Spanish.
-{{< /card_grid >}}
 
 # Get involved!
 
@@ -73,7 +73,6 @@ This workshop will guide you through applying the Citational Justice Toolkit to 
 This toolkit and accompanying manuscript are only the first piece of work produced by FORRT’s Team Citation Politics.
 For **FORRT’s Team Citation Politics** [(#citation-politics)](https://forrt.slack.com/archives/C074E9LDES2), we devised a few action points we will be working on:
 
-{{< card_grid area="jus" >}}
 ### Toolkit Expansion and Infrastructure Building
 - Modularize the toolkit by audience: for authors, editors, instructors, students.
 - Create an interactive online dashboard to visualize citation audits
@@ -110,6 +109,5 @@ For **FORRT’s Team Citation Politics** [(#citation-politics)](https://forrt.sl
 - Publish a shorter companion piece for Nature Human Behaviour or The Conversation to distill key points.
 - Use social media and public writing to popularize the metaphor of citation as epistemic infrastructure.
 - Share testimonies of those excluded from citations (e.g., oral histories, blog interviews).
-{{< /card_grid >}}
 
 If you see yourself in any of these plans or have any other ideas or suggestions for development of the toolkit, or other ways of engaging with citational practice or patterns (especially as it relates to open research), get in touch via the [#citation-politics channel on FORRT’s Slack](https://forrt.slack.com/archives/C074E9LDES2), email the team at citation-politics@forrt.org, or DM either Team Co-Lead **Sarah Sauvé** or **Helena Gellersen** on [FORRT’s Slack](https://join.slack.com/t/forrt/shared_invite/enQtODMwODI0OTk4ODgzLTM0ZTQ3NDk5MzA1ZjBmNWJjYTVlN2Y2YTk0ZTJhYTY5NDliMDYzMjg2MWE0ZDRhOTY0ZDY3OTRlNDA4ODQ3NjQ). 
