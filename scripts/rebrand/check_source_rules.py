@@ -27,7 +27,7 @@ SCANNED = ("layouts", "config/_default/menus.toml")
 # Generated paths from CONTRIBUTING.md and AGENTS.md, including announcement bundles.
 GENERATED = re.compile(
     r"^(content/curated_resources/(?!_index\.md$)"
-    r"|content/glossary/(?!.*\.py$)"  # its generators sit beside their output and may change
+    r"|content/glossary/(?!_build_references\.py$|_create_glossaries\.py$)"  # its generators sit beside their output
     r"|content/post/[^/]+/"
     r"|content/contributors/tenzing\.md$"
     r"|content/contributor-analysis/"
