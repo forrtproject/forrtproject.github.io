@@ -304,7 +304,7 @@
 }
 
 /* The booklet: the flipbook on a pale panel, then what it covers in each area, in the area's colour. */
-.article-style .booklet-frame{background:var(--surface);border-radius:var(--r-large)}
+.article-style .booklet-frame{background:var(--surface)!important;border-radius:var(--r-large)}
 .booklet-inside{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:16px;margin:16px 0 8px}
 .booklet-area{--tone:var(--edu);padding:16px 20px 12px;background:var(--edu-bg);border-radius:var(--r-large)}
 .booklet-area-res{--tone:var(--res);background:var(--res-bg)}
