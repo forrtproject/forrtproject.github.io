@@ -222,7 +222,8 @@
               {{ end }}
             </ul>
             {{ end }}
-            {{ with $unlinked }}<p class="term-line term-unlinked-line">{{ delimit . $sep | safeHTML }}</p>{{ end }}
+            {{/* Related terms without a page of their own yet: quiet chips under the cards, not a loose line of text. */}}
+            {{ with $unlinked }}<ul class="term-unlinked-list" role="list">{{ range . }}<li>{{ . | safeHTML }}</li>{{ end }}</ul>{{ end }}
             </section>
             {{ end }}
 
