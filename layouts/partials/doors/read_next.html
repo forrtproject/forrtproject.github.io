@@ -6,8 +6,11 @@
 {{ if and .IsPage (in (slice "post" "educators-corner" "pedagogies") .Type) }}
   {{ $items := slice }}
   {{ $seen := slice .RelPermalink }}
-  {{ with .PrevInSection }}{{ $items = $items | append (dict "page" . "rel" "prev") }}{{ $seen = $seen | append .RelPermalink }}{{ end }}
-  {{ with .NextInSection }}{{ $items = $items | append (dict "page" . "rel" "next") }}{{ $seen = $seen | append .RelPermalink }}{{ end }}
+  {{/* The same Previous and Next as the site's pager (section_pager.html), which swaps them for Educators' Corner. */}}
+  {{ $prev := .PrevInSection }}{{ $next := .NextInSection }}
+  {{ if eq .Type "educators-corner" }}{{ $prev = .NextInSection }}{{ $next = .PrevInSection }}{{ end }}
+  {{ with $prev }}{{ $items = $items | append (dict "page" . "rel" "prev") }}{{ $seen = $seen | append .RelPermalink }}{{ end }}
+  {{ with $next }}{{ $items = $items | append (dict "page" . "rel" "next") }}{{ $seen = $seen | append .RelPermalink }}{{ end }}
   {{ $section := where site.RegularPages "Section" .Section }}
   {{ $others := (site.RegularPages.Related .) | intersect $section }}
   {{ $others = $others | append (sort $section "Date" "desc") }}
