@@ -24,10 +24,10 @@
            the project's own page and its Slack channel follow as plain links. */}}
       <div class="get-involved-actions">
         {{ if .contact_email }}
-          <a href="mailto:{{ .contact_email }}" class="btn btn-sm">Email {{ .contact_name | default "the team" }}</a>
+          <a href="mailto:{{ .contact_email }}" class="btn btn-sm dir-btn">Email {{ .contact_name | default "the team" }}</a>
         {{ else if .contact_name }}
           {{/* No email: the person is reached on FORRT's Slack, so the button joins it. */}}
-          <a href="https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ" target="_blank" rel="noopener" class="btn btn-sm">Join FORRT's Slack to ask {{ .contact_name }}</a>
+          <a href="https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ" target="_blank" rel="noopener" class="btn btn-sm dir-btn">Join FORRT's Slack to ask {{ .contact_name }}</a>
         {{ end }}
         {{ if .slack }}<a href="{{ .slack }}" target="_blank" rel="noopener" class="get-involved-link">Open the team's Slack channel</a>{{ end }}
         {{ if .link }}<a href="{{ .link }}" class="get-involved-link">Visit project</a>{{ end }}

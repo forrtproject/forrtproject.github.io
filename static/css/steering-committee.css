@@ -579,7 +579,7 @@ article.article .article-container .article-title {
 
 /* Doors: readable labels, and a closed profile that no keyboard can reach. Team colours are set in
    assets/css/doors/article.css (.sc-page): area colours only for the four area teams (DESIGN.md §6). */
-.sc-title-label{opacity:1;font-size:15px;letter-spacing:0;text-transform:none}
+.sc-title-label{opacity:1;color:#fff;font-size:15px;letter-spacing:0;text-transform:none}
 .sc-section-desc{color:var(--ink);font-size:16px}
 .sc-section-title{font-size:15px;letter-spacing:0;text-transform:none}
 .sc-nav{justify-content:flex-start;flex-wrap:wrap;gap:6px 14px;padding:0 0 18px;margin:0 0 18px;white-space:normal;overflow:visible}

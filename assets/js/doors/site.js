@@ -641,7 +641,8 @@ if (listFilter) {
   const noun = listFilter.dataset.noun || 'entries';
   const sections = [];
   let section = null;
-  for (let node = listFilter.nextElementSibling; node; node = node.nextElementSibling) {
+  const first = listFilter.dataset.list ? document.querySelector(listFilter.dataset.list) : listFilter.nextElementSibling;
+  for (let node = first; node; node = node.nextElementSibling) {
     if (/^H[1-3]$/.test(node.tagName)) { section = {heading: node, items: []}; sections.push(section); }
     else if (/^(UL|OL)$/.test(node.tagName)) {
       // A list straight after the search, with no heading of its own, is a section too (Educators' Corner, the games portal).
@@ -848,16 +849,17 @@ document.querySelectorAll('.toc-phone').forEach((box) => {
   box.querySelector('.article-toc').append(more);
 });
 
-// Long descriptions in the About directories (Teams, Partnerships, Get involved projects) show their first lines,
-// with a "more" button for the rest (DESIGN.md §4). Without JavaScript the full text shows. A description that is one
-// paragraph is clamped itself, not its wrapper. Whether it runs over is checked again once the web font has loaded
-// and when the width changes, so the button appears exactly where text is cut.
+// Long descriptions in the About directories (Teams, Partnerships, Get involved projects): a description that runs
+// past six lines shows four, with a "more" button for the rest; shorter ones show in full, so "more" never hides a
+// line or two. Without JavaScript the full text shows. A description that is one paragraph is clamped itself, not its
+// wrapper. Lengths are measured again once the web font has loaded and when the width changes.
+const CLAMP_LINES = 4, CLAMP_ABOVE = 6;
 const clamps = [...document.querySelectorAll('.clamp-desc')].map((wrap) => {
   const text = wrap.querySelector(':scope > p:only-child') || wrap;
-  text.classList.add('is-clamped');
   const more = document.createElement('button');
   more.type = 'button';
   more.className = 'clamp-more';
+  more.hidden = true;
   more.setAttribute('aria-expanded', 'false');
   const about = wrap.dataset.clampName ? ` about ${wrap.dataset.clampName}` : '';
   const label = (word) => { more.textContent = word; more.setAttribute('aria-label', word + about); };
@@ -871,8 +873,12 @@ const clamps = [...document.querySelectorAll('.clamp-desc')].map((wrap) => {
   return {text, more};
 });
 const measureClamps = () => clamps.forEach(({text, more}) => {
-  if (!text.classList.contains('is-clamped')) return;
-  more.hidden = text.scrollHeight <= text.clientHeight + 2;
+  if (more.getAttribute('aria-expanded') === 'true') return;
+  text.classList.remove('is-clamped');
+  const line = parseFloat(getComputedStyle(text).lineHeight) || 24;
+  const long = text.scrollHeight > line * CLAMP_ABOVE + 2;
+  text.classList.toggle('is-clamped', long);
+  more.hidden = !long;
 });
 if (clamps.length) {
   measureClamps();

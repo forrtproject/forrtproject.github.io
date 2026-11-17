@@ -31,9 +31,8 @@
     {{ end }}
     <div class="partner-list">
         {{ range $items }}
-                {{/* One row per partner: logo, linked name, description, and any further links as plain links
-             (DESIGN.md §4, §5). The section heading already names the category, so the row does not repeat it;
-             the logo is not a second link to the same address. */}}
+                {{/* One card per partner: logo, linked name, description, further links, and a button to its website.
+             The section heading already names the category, so the card does not repeat it. */}}
         <div class="partner-card" data-cluster="{{ .cluster }}"
             {{ if .status }}data-status="{{ .status }}"{{ end }}
             {{ if .project_specific }}data-project="true"{{ end }}>
@@ -60,6 +59,7 @@
                     {{ end }}
                 </div>
             </div>
+            {{ $name := .name }}{{ with .url }}<p class="partner-buttons"><a href="{{ . }}" class="btn btn-sm dir-btn" target="_blank" rel="noopener">Visit website<span class="sr-only"> of {{ $name }}</span></a></p>{{ end }}
         </div>
         {{ end }}
     </div>

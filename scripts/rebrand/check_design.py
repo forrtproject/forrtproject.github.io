@@ -906,7 +906,7 @@ DIRECTORIES = {
     "about/partnerships/": ".partner-list",
     "contributors/": "#contributor-list",
     "about/community/": ".people-wall",
-    "about/teams/": ".feature-rows",
+    "about/teams/": ".team-layout",  # the grid that holds the introduction and the teams (.feature-rows is display:contents)
     "educators-corner/": ".list-items",
     "pedagogies/": ".list-items",
     "forrt_clusters/academic-life-and-culture/": ".cluster-resources",

@@ -17,6 +17,9 @@
 /* For long compounds. Not in English, where Safari hyphenates any word at a line end. */
 .article-layout .reading h1:lang(de),.article-layout .reading h1:lang(tr){hyphens:auto}
 .article-layout .standfirst{font:500 clamp(21px,1.9vw,23px)/1.4 var(--display);margin:18px 0 0;max-width:30em;color:var(--ink)}
+/* A wide page (directories, programmes) runs its standfirst further, so a one-sentence line does not break halfway
+   across a page whose content fills the width; it stays under 80 characters a line (DESIGN.md §7). */
+.article-layout-wide .standfirst{max-width:32.5em}
 .article-layout .byline{display:flex;flex-wrap:wrap;gap:4px 18px;margin:16px 0 0;font-size:16px}
 .article-layout .byline a{color:var(--link);text-underline-offset:3px;text-decoration:underline}
 .article-layout .byline-authors>*{display:inline}
@@ -205,34 +208,19 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .sc-page .sc-grid .sc-title-card{flex:0 0 100%;grid-column:1/-1;width:100%;aspect-ratio:auto;padding:var(--box-pad-y) var(--box-pad);flex-direction:row;align-items:baseline;justify-content:flex-start;gap:10px}
 .sc-page .sc-title-card :is(.sc-title-label,.sc-title-text){margin:0}
 .sc-page .sc-title-card .sc-title-text{font-size:17px}
-.sc-page .sc-cbar{display:none}
+.sc-page .sc-title-card .sc-cbar{display:none}
 /* "Team" before every team's name says nothing the band doesn't, so only screen readers hear it; on a
    desktop each name has room for two lines, so the photos of neighbouring teams start level. */
 .sc-page .sc-title-card .sc-title-label{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 @media(min-width:761px){.sc-page :is(.sc-team,.sc-grid)>.sc-title-card{min-height:72px;align-items:center}}
-/* Team names on a pale band: an area's own pale colour for the four area teams, neutral for the rest
-   (DESIGN.md §6: area colours only for areas, no dark bands). */
-.sc-page .sc-title-card{background:var(--surface);color:var(--ink);border-inline-start:6px solid var(--line)}
-.sc-page .sc-title-card :is(.sc-title-label,.sc-title-text){color:var(--ink)}
-.sc-page .sc-title-card[data-area=com]{background:var(--com-bg);border-color:var(--com)}
-.sc-page .sc-title-card[data-area=jus]{background:var(--jus-bg);border-color:var(--jus)}
-.sc-page .sc-title-card[data-area=res]{background:var(--res-bg);border-color:var(--res)}
-.sc-page .sc-title-card[data-area=edu]{background:var(--edu-bg);border-color:var(--edu)}
-/* Name and role under the photo, in the page's text, at full size and in sentence case, growing with
-   enlarged text instead of being clipped over the picture (DESIGN.md §7, §12). */
-.sc-page .sc-grid .sc-card{aspect-ratio:auto;box-shadow:none}
-.sc-page .sc-card .sc-card-photo{position:relative!important;inset:auto!important;aspect-ratio:4/5;border-radius:var(--r-small)}
-.sc-page .sc-card-overlay,.sc-page .sc-card::after{display:none}
-.sc-page .sc-card .sc-card-content{position:static;height:auto;padding:8px 0 0;gap:2px}
-/* The name is the card's link, so it looks like one at rest (DESIGN.md §5). */
-.sc-page .sc-card .sc-card-name{display:block;overflow:visible;color:var(--link);font:600 17px/1.3 var(--text);text-decoration:underline;text-underline-offset:3px}
-.sc-page .sc-card:is(:hover,:focus-visible) .sc-card-name{color:var(--ink)}
-/* The four sections head the page's outline, at the page's h2 size in the text colour; steering.js gives them
-   heading semantics. The generated teal, which is no FORRT colour, is not used. */
-.sc-page .sc-section-title{margin:0 0 4px;font:var(--display-weight,500) 30px/1.2 var(--display);color:var(--ink);text-transform:none;letter-spacing:0}
-.sc-page .sc-section-title svg{display:none}
-.sc-page .sc-modal-role{color:var(--soft)}
-.sc-page .sc-card .sc-card-role{display:block;overflow:visible;color:var(--soft);font:400 15px/1.3 var(--text);letter-spacing:0;text-transform:none}
+/* Team bands: the four Strategic Focus Area teams in their own area colour, every other team in slate
+   (DESIGN.md §6: area colours only for areas). steering.js sets data-area from the team's name. */
+.sc-page :is(.sc-card,.sc-title-card){--team-color:var(--soft)!important}
+.sc-page :is(.sc-team,.sc-grid):has(>[data-area=com]) .sc-card,.sc-page .sc-title-card[data-area=com]{--team-color:var(--com)!important}
+.sc-page :is(.sc-team,.sc-grid):has(>[data-area=jus]) .sc-card,.sc-page .sc-title-card[data-area=jus]{--team-color:var(--jus)!important}
+.sc-page :is(.sc-team,.sc-grid):has(>[data-area=res]) .sc-card,.sc-page .sc-title-card[data-area=res]{--team-color:var(--res)!important}
+.sc-page :is(.sc-team,.sc-grid):has(>[data-area=edu]) .sc-card,.sc-page .sc-title-card[data-area=edu]{--team-color:var(--edu)!important}
+.sc-page .sc-section-title{margin:0 0 4px}
 /* 44 px targets (DESIGN.md §9). */
 .sc-page .sc-nav a{display:inline-flex;align-items:center;min-height:44px;padding:0}
 .sc-close-btn,.sc-social-links a{min-width:44px;min-height:44px;display:inline-flex;align-items:center;justify-content:center}

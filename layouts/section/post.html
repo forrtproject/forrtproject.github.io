@@ -1,8 +1,8 @@
 {{- define "main" -}}
-{{/* News and announcements: one row per post, newest first (DESIGN.md §4), its summary cut at 160 characters
-     (about four lines on a phone), with category buttons that
-     filter the rows. A post's own picture shows beside its row; a picture several posts share (the
-     newsletters' stock photo) tells them apart from nothing, so it is left out. */}}
+{{/* News and announcements: a grid of cards, newest first, each with its picture, category, date, title and
+     the start of its summary, with category buttons that filter them. A picture several posts share (the
+     newsletters' stock photo) would make those cards look alike, so they get a coloured panel naming the
+     issue instead, in the brick colours (DESIGN.md §6). */}}
 <div class="wrap news-page">
   <header class="article-head">
     {{ partial "doors/crumbs" (dict "page" .) }}
@@ -22,21 +22,27 @@
     {{ range $cats }}<button class="ac-chip" type="button" aria-pressed="false" data-cat="{{ lower . }}">{{ . }}</button>{{ end }}
   </div>
 
-  <ul class="list-items news-items">
-    {{ $eager := true }}
+  <ul class="announcements-grid">
+    {{ $eager := true }}{{ $n := 0 }}
     {{ range $posts }}
       {{ $cat := "" }}{{ with .Params.categories }}{{ $cat = index . 0 }}{{ end }}
       {{ $img := (.Resources.ByType "image").GetMatch "*featured*" }}
       {{ $alt := .Params.image.alt_text }}
-      {{ if partial "doors/post_image_shared" . }}{{ $img = false }}{{ end }}
-      <li data-cat="{{ lower $cat }}">
-        <article class="list-item{{ if $img }} list-item-image{{ end }}">
-          <div>
-            <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-            <p class="list-meta">{{ with $cat }}{{ . }} · {{ end }}<time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time></p>
-            <p class="list-summary">{{ .Summary | plainify | emojify | truncate 160 }}</p>
+      {{ $shared := partial "doors/post_image_shared" . }}
+      <li class="ac-item" data-cat="{{ lower $cat }}">
+        {{/* The title is a stretched link, so the whole card leads to the post. */}}
+        <article class="announcement-card">
+          {{ if and $img (not $shared) }}
+            <div class="ac-thumb"><img src="{{ ($img.Fill "640x360 Center webp q75").RelPermalink }}" width="640" height="360" alt="{{ $alt }}"{{ if not $eager }} loading="lazy"{{ end }}></div>
+            {{ $eager = false }}
+          {{ else }}
+            <div class="ac-thumb ac-panel ac-panel-{{ add (mod $n 4) 1 }}" aria-hidden="true"><span>{{ $cat | default "News" }}</span><strong>{{ .Date.Format "January 2006" }}</strong></div>{{ $n = add $n 1 }}
+          {{ end }}
+          <div class="ac-body">
+            <p class="ac-meta">{{ with $cat }}<span class="ac-cat">{{ . }}</span>{{ end }}<time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time></p>
+            <h2><a class="ac-link" href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+            <p class="ac-summary">{{ .Summary | plainify | emojify }}</p>
           </div>
-          {{ with $img }}{{ $thumb := .Fill "280x210 Center webp q75" }}<img src="{{ $thumb.RelPermalink }}" width="140" height="105" alt="{{ $alt }}"{{ if not $eager }} loading="lazy"{{ end }}>{{ $eager = false }}{{ end }}
         </article>
       </li>
     {{ end }}
@@ -55,7 +61,7 @@
       chip.classList.add('active');
       chip.setAttribute('aria-pressed', 'true');
       var cat = chip.getAttribute('data-cat');
-      document.querySelectorAll('.news-items > li').forEach(function (item) {
+      document.querySelectorAll('.announcements-grid > li').forEach(function (item) {
         item.hidden = !(cat === 'all' || item.getAttribute('data-cat') === cat);
       });
     });
