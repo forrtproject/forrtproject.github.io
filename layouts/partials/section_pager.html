@@ -25,7 +25,7 @@
     <a href="{{ .RelPermalink }}" rel="prev"><div class="meta-nav"><span aria-hidden="true">← </span>{{ $prevLabel }}</div>
     <p>{{ if $glossary }}{{ partial "doors/term_title" .Title }}{{ else }}{{ .Title }}{{ end }}</p></a>
     {{/* A glossary term's neighbour shows the start of its definition, as the hub's cards do. */}}
-    {{ if $glossary }}{{ with .Params.definition }}<p class="post-nav-def">{{ . | markdownify | plainify | htmlUnescape | replaceRE `\*\*|__` "" | truncate 110 }}</p>{{ end }}{{ end }}
+    {{ if $glossary }}{{ with .Params.definition }}<p class="post-nav-def">{{ . | markdownify | plainify | htmlUnescape | replaceRE `\*\*|__` "" | truncate 80 }}</p>{{ end }}{{ end }}
   </div>
   {{ end }}
   {{ with $next }}
@@ -33,7 +33,7 @@
     <a href="{{ .RelPermalink }}" rel="next"><div class="meta-nav">{{ $nextLabel }}<span aria-hidden="true"> →</span></div>
     <p>{{ if $glossary }}{{ partial "doors/term_title" .Title }}{{ else }}{{ .Title }}{{ end }}</p></a>
     {{/* A glossary term's neighbour shows the start of its definition, as the hub's cards do. */}}
-    {{ if $glossary }}{{ with .Params.definition }}<p class="post-nav-def">{{ . | markdownify | plainify | htmlUnescape | replaceRE `\*\*|__` "" | truncate 110 }}</p>{{ end }}{{ end }}
+    {{ if $glossary }}{{ with .Params.definition }}<p class="post-nav-def">{{ . | markdownify | plainify | htmlUnescape | replaceRE `\*\*|__` "" | truncate 80 }}</p>{{ end }}{{ end }}
   </div>
   {{ end }}
 </div>

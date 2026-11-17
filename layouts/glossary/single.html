@@ -13,6 +13,7 @@
         "alt_definition" "Alternative definition"
         "related_term" "Related term"
         "related_terms" "Related terms"
+        "not_in_glossary" "Not yet in the glossary:"
         "originally_drafted_by" "Originally drafted by"
         "reviewed_by" "Reviewed by"
         "translated_by" "Translated by"
@@ -28,6 +29,7 @@
         "alt_definition" "Alternative Definition"
         "related_term" "Verwandter Begriff"
         "related_terms" "Verwandte Begriffe"
+        "not_in_glossary" "Noch nicht im Glossar:"
         "originally_drafted_by" "Ursprünglich verfasst von"
         "reviewed_by" "Überprüft von"
         "translated_by" "Übersetzt von"
@@ -43,6 +45,7 @@
         "alt_definition" "تعريف بديل"
         "related_term" "مصطلح ذو صلة"
         "related_terms" "مصطلحات ذات صلة"
+        "not_in_glossary" "غير موجودة في المسرد بعد:"
         "originally_drafted_by" "أعدّه في الأصل"
         "reviewed_by" "راجعه"
         "translated_by" "ترجمه"
@@ -64,6 +67,7 @@
         "alt_definition" "Alternatif tanım"
         "related_term" "İlgili terim"
         "related_terms" "İlgili terimler"
+        "not_in_glossary" "Henüz sözlükte yok:"
         "originally_drafted_by" "Orijinal terimi ve tanımını hazırlayanlar"
         "reviewed_by" "Gözden geçirenler"
         "translated_by" "Çevirenler"
@@ -79,6 +83,7 @@
         "alt_definition" "替代定义"
         "related_term" "相关术语"
         "related_terms" "相关术语"
+        "not_in_glossary" "尚未收录："
         "originally_drafted_by" "原稿作者"
         "reviewed_by" "审阅者"
         "translated_by" "翻译者"
@@ -222,8 +227,8 @@
               {{ end }}
             </ul>
             {{ end }}
-            {{/* Related terms without a page of their own yet: quiet chips under the cards, not a loose line of text. */}}
-            {{ with $unlinked }}<ul class="term-unlinked-list" role="list">{{ range . }}<li>{{ . | safeHTML }}</li>{{ end }}</ul>{{ end }}
+            {{/* Related terms without a page of their own yet: a labelled plain list under the cards, so they don't pass for links. */}}
+            {{ with $unlinked }}<div class="term-unlinked-line"><span class="term-unlinked-label">{{ index (index $dictionary $lang) "not_in_glossary" | default "Not yet in the glossary:" }}</span> <ul class="term-unlinked-list" role="list">{{ range . }}<li>{{ . | safeHTML }}</li>{{ end }}</ul></div>{{ end }}
             </section>
             {{ end }}
 
