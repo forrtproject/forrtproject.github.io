@@ -64,10 +64,10 @@
     <div class="nla-top">
       {{ with $latest }}
       <section class="nla-latest{{ if not $latestPost }} nla-latest-short{{ end }}" aria-labelledby="nla-latest-title">
-        <h2 class="nla-latest-label" id="nla-latest-title">Latest issue{{ if .new }} <span class="nla-new">New</span>{{ end }}</h2>
+        <h2 class="nla-latest-label" id="nla-latest-title">Latest issue</h2>
         <p class="nla-latest-month">{{ .month }} {{ $latestYear }}</p>
         {{ with $latestPost }}<p class="nla-latest-summary">{{ .Summary | plainify | emojify }}</p>{{ end }}
-        <a class="nla-latest-link" href="{{ .url }}"{{ if not .local }} target="_blank" rel="noopener"{{ end }}>Read the {{ .month }} {{ $latestYear }} issue{{ if not .local }}<span class="sr-only"> (opens in a new tab)</span>{{ end }}</a>
+        <a class="nla-latest-link" href="{{ .url }}"{{ if not .local }} target="_blank" rel="noopener"{{ end }}>Read the issue<span class="sr-only"> of {{ .month }} {{ $latestYear }}</span>{{ if not .local }}<span class="sr-only"> (opens in a new tab)</span>{{ end }}</a>
       </section>
       {{ end }}
       <div class="nla-subscribe-band">

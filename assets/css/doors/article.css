@@ -531,8 +531,7 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
 .article-layout .article-style .summary-hero a{display:flex;flex-direction:column;align-items:flex-start;height:100%;box-sizing:border-box;padding:24px 30px 36px;background:var(--tone);border-radius:3px;box-shadow:inset 0 -8px 0 rgb(0 0 0/.24);color:#fff;text-decoration:none;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 .summary-hero-count{font:var(--display-weight) clamp(64px,7vw,104px)/.95 var(--display);letter-spacing:-.02em}
 .article-layout .article-style .summary-hero strong{margin:10px 0 8px;font:var(--display-weight) clamp(26px,2.4vw,34px)/1.12 var(--display);color:#fff}
-.summary-hero-text{max-width:28em;margin-bottom:22px;font-size:18px;line-height:1.45}
-.summary-hero-go{display:inline-flex;align-items:center;min-height:44px;margin-top:auto;padding:0 20px;background:#fff;border-radius:999px;color:var(--ink);font-weight:700}
+.summary-hero-text{max-width:28em;font-size:18px;line-height:1.45}
 .article-layout .article-style .summary-hero a:hover strong{text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:5px}
 .article-layout .article-style .summary-hero a:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
 @media(prefers-reduced-motion:no-preference){.summary-hero li{transition:transform .15s}.summary-hero li:hover{transform:translateY(-3px)}}
@@ -546,7 +545,6 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
 .article-layout .article-style .sm-feedback{margin:28px 0 0;padding:22px 24px 6px;background:var(--com-bg);border-radius:var(--r-large)}
 .article-layout .article-style .sm-feedback h3{margin:0 0 10px;font-size:26px}
 .article-layout .article-style .sm-feedback p{max-width:none}
-.article-layout .article-style .sm-side .action-cards{margin:30px 0 8px}
 @media(max-width:900px){.article-layout .article-style .sm-side{margin-top:28px}}
 @media(max-width:760px){.article-layout .article-style .summary-hero{margin:28px 0 36px}.article-layout .article-style .summary-hero a{padding:20px 20px 30px}}
 /* A collection of summaries (layouts/_default/summaries.html): the header on the pale ground of the collection's
@@ -567,6 +565,7 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
 .summaries-side .summary-tools{margin:0}
 .summaries-side:empty{display:none}
 .summaries-side .summary-tools p.summary-count{margin:8px 0 0;font-size:16px}
+.summaries-side .summary-tools p.summary-count:empty{margin:0}
 .summaries-routes ul{margin:0;padding:0;list-style:none;font-size:17px;line-height:1.35}
 /* The link is inline, so the count follows its last word; the padding keeps the tap target 44 px high. */
 .summaries-routes li{margin:0 0 4px;padding:11px 0}

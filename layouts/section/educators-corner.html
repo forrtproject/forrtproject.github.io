@@ -33,7 +33,8 @@
               <div class="ac-thumb ec-thumb-whole"><img src="{{ $fit.RelPermalink }}" width="{{ $fit.Width }}" height="{{ $fit.Height }}" alt="{{ $p.Params.image.alt_text }}"{{ $lazy | safeHTMLAttr }}></div>
             {{ end }}
           {{ else }}
-            <div class="ac-thumb ac-panel ac-panel-{{ add (mod $n 4) 1 }}" aria-hidden="true"><span>Educators' Corner</span><strong>{{ .Date.Format "January 2006" }}</strong></div>{{ $n = add $n 1 }}
+            {{/* A plain brick: the card's title and month are just below, and the page's name is its heading. */}}
+            <div class="ac-thumb ac-panel ac-panel-{{ add (mod $n 4) 1 }}" aria-hidden="true"></div>{{ $n = add $n 1 }}
           {{ end }}
           <div class="ac-body">
             <h2><a class="ac-link" href="{{ $link }}"{{ $target | safeHTMLAttr }}>{{ .Title }}</a></h2>

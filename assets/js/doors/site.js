@@ -307,8 +307,10 @@ if (summaryEntries.length) {
     summaryEntries.forEach((entry) => { entry.hidden = !shown.includes(entry) && !entry.open; });
     more.hidden = shown.length === matches.length;
     const kept = summaryEntries.filter((entry) => !entry.hidden).length - shown.length;
-    const count = query ? `${matches.length} of ${summaryEntries.length} summaries match.` : `Showing ${shown.length} of ${summaryEntries.length} summaries.`;
-    tools.querySelector('[role=status]').textContent = kept ? `${count} ${kept} you opened ${kept === 1 ? 'stays' : 'stay'} in view.` : count;
+    // A collection page's header gives the total, so with no filter and every entry shown the status stays empty.
+    const all = !query && shown.length === summaryEntries.length;
+    const count = query ? `${matches.length} of ${summaryEntries.length} summaries match.` : all && slot ? '' : `Showing ${shown.length} of ${summaryEntries.length} summaries.`;
+    tools.querySelector('[role=status]').textContent = kept ? `${count} ${kept} you opened ${kept === 1 ? 'stays' : 'stay'} in view.`.trim() : count;
   };
   input.addEventListener('input', show);
   addEventListener('hashchange', show);

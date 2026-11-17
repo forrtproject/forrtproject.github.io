@@ -25,18 +25,16 @@ menu:
 {{< summary_collections >}}
 
 <!-- Layout (assets/css/doors/article.css, "Summaries overview"): on a wide screen the overview and "Join and help
-     us" are on the left, and the background, the feedback and the closing bricks beside them; on a phone those
-     follow "Join and help us", so the page ends with its bricks. -->
+     us" are on the left, and the background and the feedback beside them; on a phone those follow "Join and help
+     us". Each ask appears once: feedback in the Feedback panel, joining in "Join and help us". -->
 <div class="sm-layout">
 <div class="sm-overview">
 
 ## Overview
 
-The FORRT community has prepared 100+ summaries of Open and Reproducible Science literature. The purpose of these summaries is to reduce some of the burden on educators looking to incorporate open and reproducible research principles into their teaching as well as facilitate the edification of anyone wishing to learn or disseminate open and reproducible science tenets.
+The FORRT community has prepared these summaries of Open and Reproducible Science literature. The purpose of these summaries is to reduce some of the burden on educators looking to incorporate open and reproducible research principles into their teaching as well as facilitate the edification of anyone wishing to learn or disseminate open and reproducible science tenets.
 
-***These summaries are very much a work in progress***. We would love to receive your [criticism, areas for improvement, ideas, and help](https://docs.google.com/spreadsheets/d/1W12WpzI70Ja1FiVeflXNW8VFPzqFFvu_mL2YkNQ_cHk/edit?usp=sharing). 
-
-We made a distinction between [Open and reproducible science](/summaries/open-reproducible/) summaries and [Diversity, equity and inclusion](/summaries/diversity-equity-inclusion/) summaries to highlight that the topics of social injustices and DEI (diversity, equity and inclusion) are often neglected in academia, and in open and reproducible science literature. If you are an educator, you may also be interested in our [FORRT Syllabus on Open and Reproducible Science (.pdf & G-doc)](https://forrt.org/syllabus), which is based on [FORRT Clusters.](/clusters/)
+We made a distinction between Open and reproducible science summaries and Diversity, equity and inclusion summaries to highlight that the topics of social injustices and DEI (diversity, equity and inclusion) are often neglected in academia, and in open and reproducible science literature. If you are an educator, you may also be interested in our [FORRT Syllabus on Open and Reproducible Science (.pdf & G-doc)](https://forrt.org/syllabus), which is based on [FORRT Clusters.](/clusters/)
 
 </div>
 <div class="sm-join">
@@ -93,14 +91,10 @@ Any and all contributions in FORRT are formally recognized. In large part, these
 
 ### Feedback
 
-Do you have feedback to give us? We would love to receive your [criticism, areas for improvement, ideas, and help](https://docs.google.com/spreadsheets/d/1W12WpzI70Ja1FiVeflXNW8VFPzqFFvu_mL2YkNQ_cHk/edit?usp=sharing). You can also write to us at [info@forrt.org](mailto:info@forrt.org), connect on [Bluesky](https://bsky.app/profile/forrt.bsky.social), or [join our community](https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ).
+**These summaries are very much a work in progress.** We would love to receive your [criticism, areas for improvement, ideas, and help](https://docs.google.com/spreadsheets/d/1W12WpzI70Ja1FiVeflXNW8VFPzqFFvu_mL2YkNQ_cHk/edit?usp=sharing). You can also write to us at [info@forrt.org](mailto:info@forrt.org) or connect on [Bluesky](https://bsky.app/profile/forrt.bsky.social).
 
 </section>
 
-{{< action_cards >}}
-Send feedback on the summaries | Criticism, areas for improvement, ideas and help, in our shared sheet | https://docs.google.com/spreadsheets/d/1W12WpzI70Ja1FiVeflXNW8VFPzqFFvu_mL2YkNQ_cHk/edit?usp=sharing
-Join the FORRT Slack | Where the community talks | https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ
-{{< /action_cards >}}
 
 </div>
 </div>
