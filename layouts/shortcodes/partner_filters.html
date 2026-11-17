@@ -2,8 +2,19 @@
 <div class="filter-container partner-filters" hidden>
 
     {{/* Cluster Filter */}}
-    <div class="filter-section-title">Filter by partner category</div>
-    <div id="pill-bar-cluster" class="pill-bar">
+    <label class="filter-section-title" for="partner-select">Filter by partner category</label>
+    {{/* On a phone the categories are a drop-down; on wider screens, buttons. */}}
+    <select id="partner-select" class="partner-select">
+        <option value="all">All partners</option>
+        <option value="Global Intergovernmental Organizations">Global intergovernmental organizations</option>
+        <option value="Open Science Infrastructure">Open science infrastructure</option>
+        <option value="Reproducibility Networks">Reproducibility networks</option>
+        <option value="Open Research Communities">Open research communities</option>
+        <option value="Education & Training">Education and training</option>
+        <option value="Open Research & Equity">Open research and equity</option>
+        <option value="Higher Education Partners">Higher education partners</option>
+    </select>
+    <div id="pill-bar-cluster" class="pill-bar" role="group" aria-label="Partner category">
         <button type="button" class="filter-pill active" aria-pressed="true" data-group="cluster" data-value="all">All partners</button>
         <button type="button" class="filter-pill" aria-pressed="false" data-group="cluster" data-value="Global Intergovernmental Organizations">Global intergovernmental organizations</button>
         <button type="button" class="filter-pill" aria-pressed="false" data-group="cluster" data-value="Open Science Infrastructure">Open science infrastructure</button>
@@ -25,12 +36,6 @@
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         document.querySelector('.partner-filters').hidden = false;
-        // The row's fading edge shows it scrolls; once it is scrolled to its end, the last button shows in full.
-        const bar = document.getElementById('pill-bar-cluster');
-        const atEnd = () => bar.classList.toggle('is-at-end', bar.scrollLeft + bar.clientWidth >= bar.scrollWidth - 2);
-        bar.addEventListener('scroll', atEnd, { passive: true });
-        addEventListener('resize', atEnd);
-        atEnd();
         const clusterPills = document.querySelectorAll('#pill-bar-cluster .filter-pill');
         const partnerCards = document.querySelectorAll('.partner-card');
         const sections = document.querySelectorAll('.partner-section-group');
@@ -78,15 +83,19 @@
             }
         }
 
-        // Cluster Filters
-        clusterPills.forEach(pill => {
-            pill.addEventListener('click', () => {
-                clusterPills.forEach(p => { p.classList.remove('active'); p.setAttribute('aria-pressed', 'false'); });
-                pill.classList.add('active');
-                pill.setAttribute('aria-pressed', 'true');
-                currentCluster = pill.getAttribute('data-value');
-                filterPartners();
+        // Buttons and drop-down choose the same category and stay in step.
+        const select = document.getElementById('partner-select');
+        function choose(value) {
+            clusterPills.forEach(p => {
+                const on = p.getAttribute('data-value') === value;
+                p.classList.toggle('active', on);
+                p.setAttribute('aria-pressed', String(on));
             });
-        });
+            select.value = value;
+            currentCluster = value;
+            filterPartners();
+        }
+        clusterPills.forEach(pill => pill.addEventListener('click', () => choose(pill.getAttribute('data-value'))));
+        select.addEventListener('change', () => choose(select.value));
     });
 </script>

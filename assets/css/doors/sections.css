@@ -18,11 +18,10 @@
 .article-layout .article-style ul.team-rows>li{font-size:17px}
 .article-layout .article-style .team-rows p.clamp-desc{margin-bottom:0}
 .feature-rows-small .feature-icon{width:96px;font-size:40px;text-align:center;color:var(--link)}
-/* Teams are rows of text: name, sentence, one plain link (DESIGN.md §4, §5). */
+/* Teams: picture, name, description, and a button to join. */
 .article-layout .article-style ul.team-rows{padding:0}
-.article-layout .article-style .team-rows li{display:block}
-.team-rows .team-join{margin:0}
-.team-rows .team-join a{display:inline-flex;align-items:center;min-height:44px;color:var(--link);text-decoration:underline;text-underline-offset:3px}
+.team-rows .team-join{margin:10px 0 0}
+.team-rows .team-join .btn{display:inline-flex;align-items:center;min-height:44px}
 .feature-links{display:flex;flex-wrap:wrap;gap:8px}
 .article-layout .article-style .timeline{margin:18px 0;padding:0;list-style:none;border-inline-start:3px solid var(--line)}
 .article-layout .article-style .timeline li{position:relative;margin:0 0 22px;padding-inline-start:20px;font-size:18px;line-height:1.5}
@@ -81,14 +80,21 @@
 .partner-content{display:grid;grid-template-columns:96px minmax(0,1fr);gap:16px}
 .partner-logo{display:block;width:96px;height:auto;max-height:72px;object-fit:contain}
 .partner-description{font-size:16px}
-/* Partners are rows, not boxes: a line between them, a 17 px description (DESIGN.md §1, §4, §7). */
-.partner-card{padding:0 0 18px;background:none;border-radius:0;border-bottom:1px solid var(--line)}
+/* Partners, teams and projects are pale cards with a 17 px description and an action button at the foot. */
+.partner-card,.get-involved-card{display:flex;flex-direction:column}
+.partner-card .partner-content{flex:1}
+.partner-buttons{margin:16px 0 0;padding-inline-start:112px}
+@media(max-width:760px){.partner-buttons{padding-inline-start:0}}
 .article-layout .article-style .partner-card :is(p,li),.partner-description{font-size:17px}
 .partner-tags{margin:0 0 4px}
 .partner-links{display:flex;flex-wrap:wrap;gap:4px 18px;margin:6px 0 0}
 .partner-links a{display:inline-flex;align-items:center;min-height:44px;color:var(--link);text-decoration:underline;text-underline-offset:3px}
-/* On a phone the categories scroll sideways in one row, so the list starts sooner. */
-@media(max-width:760px){#pill-bar-cluster{flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px}#pill-bar-cluster .filter-pill{flex:0 0 auto}}
+/* On a phone the categories are one drop-down, so the list starts sooner and no button is cut off. */
+.partner-select{display:none}
+@media(max-width:760px){
+  .partner-filters #pill-bar-cluster{display:none}
+  .partner-select{display:block;width:100%;min-height:48px;margin:0 0 8px;padding:10px 40px 10px 14px;border:1.5px solid var(--soft);border-radius:999px;font:600 16px/1.3 var(--text);color:var(--ink);-webkit-appearance:none;appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%23262d35' stroke-width='2'/%3E%3C/svg%3E") no-repeat right 16px center}
+}
 .get-involved-card>:last-child{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
 
 /* Directories hold cards and lists rather than running text, so a wide screen takes two or more columns. */
@@ -200,13 +206,12 @@
 .get-involved-card[hidden]{display:none}
 .get-involved-card .get-involved-link{display:inline-flex;align-items:center;min-height:40px;padding:0;color:var(--link);font-weight:600;text-decoration:underline;text-underline-offset:3px}
 
-/* About directories, round 2. Long descriptions: two lines, three on a phone, then "more" (site.js, DESIGN.md §4). */
-.is-clamped{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2;overflow:hidden}
+/* About directories: only a description much longer than its neighbours is cut, to four lines, with "more"
+   (site.js); short ones show in full. */
+.is-clamped{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4;line-clamp:4;overflow:hidden}
 .clamp-desc>p:only-child{margin-bottom:0}
 .clamp-more[hidden]{display:none}
 .clamp-more{display:inline-flex;align-self:flex-start;min-width:44px;align-items:center;min-height:44px;padding:0;border:0;background:none;color:var(--link);font:600 16px/1.3 var(--text);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
-@media(max-width:760px){.is-clamped{-webkit-line-clamp:3;line-clamp:3}}
-.team-rows-heading{margin-top:28px}
 /* Partners: the linked name is a 44 px target; on a phone the logo is small, so the text has the width,
    and the category row fades at its edge to show it scrolls (DESIGN.md §9, §4). */
 .partner-title a{display:inline-flex;align-items:center;min-height:44px}
@@ -216,12 +221,8 @@
 @media(max-width:760px){
   .partner-content{grid-template-columns:48px minmax(0,1fr)}
   .partner-logo{width:48px}
-  #pill-bar-cluster{-webkit-mask-image:linear-gradient(to right,#000 85%,transparent);mask-image:linear-gradient(to right,#000 85%,transparent)}
-  #pill-bar-cluster.is-at-end{-webkit-mask-image:none;mask-image:none}
 }
-/* Get involved projects: rows, not boxes, with 17 px text and 44 px actions (DESIGN.md §1, §4, §7, §9). */
-.get-involved-card{padding:0 0 18px;background:none;border-radius:0;border-bottom:1px solid var(--line)}
+/* Get involved projects: 17 px text and 44 px actions (DESIGN.md §7, §9). */
 .article-layout .article-style .get-involved-card :is(p,li),.get-involved-card .clamp-desc{font-size:17px}
 .get-involved-card .btn,.get-involved-card .get-involved-link{min-height:44px}
-.get-involved-card .get-involved-actions{margin-top:0;padding-top:6px}
 .click-to-load-link{display:inline-flex;align-items:center;min-height:44px}

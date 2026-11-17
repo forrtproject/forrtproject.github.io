@@ -1,23 +1,20 @@
-{{/* Teams: a short intro, then one row per team: its name, what it does, and one plain link to join it.
-     The team pictures are left out: several teams share one, so they told the teams apart from nothing
-     (DESIGN.md §4). The link says where it goes: a team's own Slack channel, or FORRT's Slack invite,
-     which half the teams use. */}}
+{{/* Teams: a short intro, then the teams A to Z, each with its picture, name, description and a button to join it.
+     The button says where it goes: a team's own Slack channel, or FORRT's Slack invite, which half the teams use;
+     screen readers also hear the team's name, so a list of the page's links still says which team each joins. */}}
 {{ $page := .page }}
 {{ $page.Content }}
-{{/* A–Z by name, so a visitor can find a team; a heading separates the list from the introduction. */}}
-<h2 class="team-rows-heading">All {{ len $page.Params.featurealt }} teams</h2>
 <ul class="feature-rows team-rows">
   {{ range sort $page.Params.featurealt "name" }}
   {{ $team := .name | plainify }}
   <li>
+    {{ if .img }}{{ $dims := partial "functions/static_img_dims" .img | default (safeHTMLAttr `width="96" height="96"`) }}<img src="{{ (printf "img/%s" .img) | relURL }}" {{ $dims }} alt="">{{ end }}
     <div>
       <h3>{{ .name | markdownify | emojify }}</h3>
       {{ with .description }}<p class="clamp-desc" data-clamp-name="{{ $team }}">{{ . | markdownify | emojify }}</p>{{ end }}
       {{ with .buttonurl }}
-        {{/* Each label names its team, so a list of the page's links still says which team each joins. */}}
-        {{ $label := printf "Join %s" $team }}
-        {{ if in . "slack.com/archives/" }}{{ $label = printf "Join the Slack channel of %s" $team }}{{ else if in . "join.slack.com" }}{{ $label = printf "Join FORRT's Slack to find %s" $team }}{{ end }}
-        <p class="team-join"><a href="{{ . }}">{{ $label }}</a></p>
+        {{ $label := "Join the team" }}
+        {{ if in . "slack.com/archives/" }}{{ $label = "Join the team's Slack channel" }}{{ else if in . "join.slack.com" }}{{ $label = "Join FORRT's Slack to find the team" }}{{ end }}
+        <p class="team-join"><a href="{{ . }}" class="btn btn-outline-primary btn-sm">{{ $label }}<span class="sr-only">: {{ $team }}</span></a></p>
       {{ end }}
     </div>
   </li>

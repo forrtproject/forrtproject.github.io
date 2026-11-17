@@ -1,8 +1,7 @@
 {{/* The community wall on /about/community/: everyone with a profile, or the listed groups.
      Sorted by family name, with titles ("Dr", "Prof.") and anything after a comma ("PhD") set aside, so
      a visitor can find someone by surname; FORRT's own account is not a person and is left out.
-     The search and the list come first, so they are in the first screen (DESIGN.md §2); the section's own text
-     (values and numbers) follows them. */}}
+     The section's own text introduces the list, then come the search and the people. */}}
 {{ $page := .page }}
 {{ $authors := where (where site.Pages "Section" "authors") "Params.name" "!=" nil }}
 {{ if not ($page.Params.content.show_all | default false) }}
@@ -17,8 +16,8 @@
     {{ $people = $people | append (dict "key" (printf "%s %s" (lower (index $words (sub (len $words) 1))) (lower $name)) "page" .) }}
   {{ end }}
 {{ end }}
+{{ with $page.Content }}<div class="people-about">{{ . }}</div>{{ end }}
 {{ partial "doors/list_filter" (dict "label" "Find a person" "placeholder" "Type a name" "noun" "people") }}
 <ul class="people-wall">
   {{ range sort $people "key" }}{{ partial "widgets/people-card.html" (dict "person" .page) }}{{ end }}
 </ul>
-{{ with $page.Content }}<div class="people-about">{{ . }}</div>{{ end }}
