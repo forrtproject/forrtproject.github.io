@@ -43,14 +43,26 @@ ul.list-items>li[hidden]{display:none}
 .ac-chip{min-height:44px;padding:5px 16px;background:#fff;border:1.5px solid var(--soft);border-radius:999px;color:var(--ink);font:600 16px/1.3 var(--text)}
 .ac-chip:hover{border-color:var(--ink)}
 .ac-chip.active{background:var(--ink);border-color:var(--ink);color:#fff}
-.news-items{max-width:46em}
-/* Summaries keep to a reading measure even where a row has no picture (DESIGN.md §7). */
-.news-items .list-summary{max-width:36em}
-/* On a phone a news row leads with its title; the picture sits beside the text, not above it. */
-@media(max-width:760px){
-  .news-items .list-item-image{display:grid;flex-direction:initial;grid-template-columns:minmax(0,1fr) 88px;gap:12px}
-  .news-items .list-item-image img{width:88px;height:66px}
-}
+/* News: cards with a picture (DESIGN.md §1). */
+.announcements-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,290px),1fr));gap:20px;margin:0;padding:0;list-style:none}
+.announcements-grid>li[hidden]{display:none}
+.announcement-card{position:relative;display:flex;flex-direction:column;height:100%;background:var(--surface);border-radius:var(--r-large);overflow:hidden}
+.ac-thumb img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+.ac-panel{display:flex;flex-direction:column;justify-content:flex-end;aspect-ratio:16/9;padding:18px 20px;color:#fff}
+.ac-panel span{font-size:15px;font-weight:600}
+.ac-panel strong{font:var(--display-weight) 30px/1.1 var(--display)}
+.ac-panel-1{background:var(--brick1)}.ac-panel-2{background:var(--brick2)}.ac-panel-3{background:var(--brick3)}.ac-panel-4{background:var(--brick4)}
+.ac-body{padding:14px 18px 20px}
+.ac-meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 6px;font-size:15px;color:var(--soft)}
+.ac-cat{padding:1px 8px;background:#fff;border-radius:var(--r-small);font-weight:600;color:var(--ink)}
+.article-layout .ac-body h2,.ac-body h2{margin:0 0 6px;font-size:22px;line-height:1.2}
+.ac-link{color:var(--link);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1.5px}
+.ac-link::after{content:"";position:absolute;inset:0}
+.announcement-card:hover .ac-link{color:var(--ink)}
+.ac-link:focus-visible{outline:none}
+.announcement-card:has(.ac-link:focus-visible){outline:3px solid var(--ink);outline-offset:3px}
+/* The start of the summary: four lines; the card leads to the rest. */
+.ac-summary{margin:0;font-size:17px;line-height:1.45;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4;line-clamp:4;overflow:hidden}
 .tags-note{max-width:40em;font-size:17px}
 .tags-note a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
 .tag-cloud{display:flex;flex-wrap:wrap;gap:6px;margin:18px 0 0}

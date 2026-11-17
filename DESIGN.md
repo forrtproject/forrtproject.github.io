@@ -9,6 +9,7 @@ Styles live in `assets/css/doors/`, with colours and type defined once in `token
 - FORRT is an organisation with several facets, run by a community. Pages should feel lively and communal: not sleek or corporate, not a newspaper, blog or severe institution, and not dark, menacing or heavy.
 - The site has one idea of its own, the castle and its doors, which runs across pages without becoming tiresome. It must not depend on content that has to be refilled constantly.
 - Avoid the generic template look: no ivory-serif-and-rust formula, no tracked capitals as labels above headings, no hairline-ruled columns as the main organising device, no grids of identical cards. Short schedule labels, such as MORNING and AFTERNOON in a programme, are the exception: tracked capitals help there.
+- Pictures, colour and cards make pages inviting and easier to skim. Keep them where they help, and show pictures large enough to see (an announcement's picture, a team's photo). Do not strip them out to make pages plainer or more uniform; the rules below are about clarity, not about removing character.
 - Real content only: no invented statistics, quotes or examples.
 
 ## 2. Lead with what visitors came for

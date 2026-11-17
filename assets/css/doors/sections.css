@@ -21,7 +21,10 @@
 /* Teams: picture, name, description, and a button to join. */
 .article-layout .article-style ul.team-rows{padding:0}
 .team-rows .team-join{margin:10px 0 0}
-.team-rows .team-join .btn{display:inline-flex;align-items:center;min-height:44px}
+/* Directory buttons are small and quiet beside the card's text (DESIGN.md §3); an invisible margin around each
+   makes a 44 px tap target (§9). */
+.article-layout .article-style .dir-btn{position:relative;display:inline-flex;align-items:center;min-height:34px;padding:4px 14px!important;font-size:15px!important;line-height:1.3!important}
+.dir-btn::after{content:"";position:absolute;inset:-5px 0}
 .feature-links{display:flex;flex-wrap:wrap;gap:8px}
 .article-layout .article-style .timeline{margin:18px 0;padding:0;list-style:none;border-inline-start:3px solid var(--line)}
 .article-layout .article-style .timeline li{position:relative;margin:0 0 22px;padding-inline-start:20px;font-size:18px;line-height:1.5}
@@ -84,6 +87,7 @@
 .partner-card,.get-involved-card{display:flex;flex-direction:column}
 .partner-card .partner-content{flex:1}
 .partner-buttons{margin:16px 0 0;padding-inline-start:112px}
+.partner-description>:last-child{margin-bottom:0}
 @media(max-width:760px){.partner-buttons{padding-inline-start:0}}
 .article-layout .article-style .partner-card :is(p,li),.partner-description{font-size:17px}
 .partner-tags{margin:0 0 4px}
@@ -218,11 +222,27 @@
 /* Long names wrap within the column, also at 200% text (DESIGN.md §12). */
 .partner-title{overflow-wrap:anywhere}
 .partner-filters[hidden]{display:none}
+/* On a phone the logo sits beside the name only; the description, links and button use the card's full width,
+   so they all start at the same edge. */
 @media(max-width:760px){
-  .partner-content{grid-template-columns:48px minmax(0,1fr)}
-  .partner-logo{width:48px}
+  .partner-content{grid-template-columns:56px minmax(0,1fr);column-gap:12px;row-gap:6px;align-items:center}
+  .partner-info{display:contents}
+  .partner-info>*{grid-column:1/-1}
+  .partner-info>.partner-tags{order:-2}
+  .partner-logo-container{order:-1}
+  .partner-info>.partner-title{order:-1;grid-column:2;margin:0!important}
+  .partner-logo{width:56px;max-height:48px}
+  /* Teams likewise: the picture beside the name, then text and button across the full width. */
+  .article-layout .article-style ul.team-rows>li{grid-template-columns:48px minmax(0,1fr);column-gap:12px;row-gap:0;align-items:center}
+  .team-rows li>div{display:contents}
+  .team-rows li>div>*{grid-column:1/-1}
+  .article-layout .article-style .team-rows li>div>h3{grid-column:2;margin:0}
+  .team-rows li>img{width:48px;height:48px;padding:6px}
+  .team-rows .clamp-desc{margin-top:8px}
+  .partner-content>.partner-logo-container:empty{display:none}
+  .partner-content:has(>.partner-logo-container:empty) .partner-title{grid-column:1/-1}
 }
 /* Get involved projects: 17 px text and 44 px actions (DESIGN.md §7, §9). */
 .article-layout .article-style .get-involved-card :is(p,li),.get-involved-card .clamp-desc{font-size:17px}
-.get-involved-card .btn,.get-involved-card .get-involved-link{min-height:44px}
+.get-involved-card .get-involved-link{min-height:44px}
 .click-to-load-link{display:inline-flex;align-items:center;min-height:44px}

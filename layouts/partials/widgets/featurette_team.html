@@ -1,5 +1,5 @@
 {{/* Teams: a short intro, then the teams A to Z, each with its picture, name, description and a button to join it.
-     The button says where it goes: a team's own Slack channel, or FORRT's Slack invite, which half the teams use;
+     The button says where it goes: a team's own Slack channel, or #forrt-community for teams without one;
      screen readers also hear the team's name, so a list of the page's links still says which team each joins. */}}
 {{ $page := .page }}
 {{ $page.Content }}
@@ -12,9 +12,10 @@
       <h3>{{ .name | markdownify | emojify }}</h3>
       {{ with .description }}<p class="clamp-desc" data-clamp-name="{{ $team }}">{{ . | markdownify | emojify }}</p>{{ end }}
       {{ with .buttonurl }}
-        {{ $label := "Join the team" }}
-        {{ if in . "slack.com/archives/" }}{{ $label = "Join the team's Slack channel" }}{{ else if in . "join.slack.com" }}{{ $label = "Join FORRT's Slack to find the team" }}{{ end }}
-        <p class="team-join"><a href="{{ . }}" class="btn btn-outline-primary btn-sm">{{ $label }}<span class="sr-only">: {{ $team }}</span></a></p>
+        {{/* A team without a channel of its own is reached through #forrt-community, not a bare workspace invite. */}}
+        {{ $url := . }}{{ $label := "Join the team" }}
+        {{ if in . "slack.com/archives/" }}{{ $label = "Join the team's Slack channel" }}{{ else if in . "join.slack.com" }}{{ $url = "https://forrt.slack.com/archives/CM6344P5E" }}{{ $label = "Ask about the team in #forrt-community" }}{{ end }}
+        <p class="team-join"><a href="{{ $url }}" class="btn btn-sm dir-btn">{{ $label }}<span class="sr-only">: {{ $team }}</span></a></p>
       {{ end }}
     </div>
   </li>
