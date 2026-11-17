@@ -102,8 +102,13 @@
         const filterResults = document.getElementById('filter-results');
         const filterInfo = document.getElementById('filter-info');
 
+        // The letter index and sections (newer generated markup) only make sense for the whole list.
+        const filtering = Boolean(params.project || params.role);
+        const letterIndex = document.querySelector('.contributor-az');
+        if (letterIndex) letterIndex.hidden = filtering;
+
         // If no filters, hide results section and show everything
-        if (!params.project && !params.role) {
+        if (!filtering) {
             if (filterResults) filterResults.style.display = 'none';
             
             document.querySelectorAll('.contributor-group').forEach(group => {
@@ -177,6 +182,14 @@
                 group.style.display = 'none';
             }
         });
+
+        // A match may sit among a contributor's further projects: open them. A letter left with no one hides.
+        if (filtering) {
+            contributorList.querySelectorAll('.contributions-more').forEach(more => { more.open = true; });
+            contributorList.querySelectorAll('.contributor-letter').forEach(letter => {
+                letter.hidden = ![...letter.querySelectorAll('.contributor-group')].some(group => group.style.display !== 'none');
+            });
+        }
 
         // Update filter info with count
         if (filterInfo) {

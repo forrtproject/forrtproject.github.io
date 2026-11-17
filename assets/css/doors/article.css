@@ -405,22 +405,28 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .article-layout .article-style li .spoiler>summary::before{content:"▸";display:inline-block;margin-inline-end:6px;text-decoration:none;transition:transform .15s}
 .article-layout .article-style li .spoiler[open]>summary::before{transform:rotate(90deg)}
 .article-layout .article-style .btn.btn-outline-primary{padding:10px 22px!important;border-radius:999px!important;font-size:17px!important;line-height:1.3!important}
-/* Replication status beside an effect (site.js): tinted by outcome, dark text throughout. */
-.status-chip{display:inline-block;margin:0 2px 0 0;padding:1px 9px;border-radius:999px;font:600 15px/1.4 var(--text);color:var(--ink);background:var(--surface);vertical-align:1px}
-.status-replicated{background:var(--edu-bg)}
-.status-not-replicated{background:var(--com-bg)}
-.status-reversed{background:var(--jus-bg)}
-.status-mixed{background:var(--res-bg)}
-/* A list with a search over it (the effects on /reversals/) reads as rows: no bullets, a rule between entries. */
+/* Replication outcomes on /reversals/ (site.js): each has a colour of its own, along a scale from replicated (green)
+   to reversed (wine), kept clear of the area colours (DESIGN.md §6), with "no status" in grey. The strong colour marks
+   an entry's edge and its part of the outcome bar; the pale one is the chip, the button and the entry's ground. */
+:root{
+  --out-replicated:#2b7a4b;--out-replicated-bg:#e3f1e7;
+  --out-mixed:#a77600;--out-mixed-bg:#f8edcf;
+  --out-not-replicated:#b4462b;--out-not-replicated-bg:#fae4dd;
+  --out-reversed:#7e2f6c;--out-reversed-bg:#f4e2f0;
+  --out-no-status:#7b8794;--out-no-status-bg:#eef1f3;
+}
+.status-replicated,.outcome-replicated{--out:var(--out-replicated);--out-bg:var(--out-replicated-bg)}
+.status-mixed,.outcome-mixed{--out:var(--out-mixed);--out-bg:var(--out-mixed-bg)}
+.status-not-replicated,.outcome-not-replicated{--out:var(--out-not-replicated);--out-bg:var(--out-not-replicated-bg)}
+.status-reversed,.outcome-reversed{--out:var(--out-reversed);--out-bg:var(--out-reversed-bg)}
+.status-no-status,.outcome-no-status{--out:var(--out-no-status);--out-bg:var(--out-no-status-bg)}
+.status-chip{display:inline-block;margin:0 2px 0 0;padding:1px 9px;border-radius:999px;font:600 15px/1.4 var(--text);color:var(--ink);background:var(--out-bg,var(--surface));box-shadow:inset 0 0 0 1.5px var(--out,transparent);vertical-align:1px}
+/* A list with a search over it (the games portal, Educators' Corner) reads as rows: no bullets, a rule between entries. */
 .article-layout .article-style .list-filter~ul{list-style:none;padding-inline-start:0}
 .article-layout .article-style .list-filter~ul>li{margin:0;padding:12px 0 6px;border-bottom:1px solid var(--line)}
 .article-layout .article-style .list-filter~ul>li>p{margin:0 0 4px}
 .article-layout .article-style .list-filter-jump{display:flex;align-items:center;gap:8px;margin:10px 0 0;font:600 16px/1.3 var(--text)}
 .article-layout .article-style .list-filter-jump select{flex:1;padding:8px 10px;border:1.5px solid var(--line);border-radius:var(--r-small);background:#fff;font:400 16px/1.3 var(--text);color:var(--ink)}
-.article-layout .article-style .list-filter-status{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 0}
-.article-layout .article-style .list-filter-status button{border:1.5px solid transparent;cursor:pointer;padding:3px 10px}
-.article-layout .article-style .list-filter-status button[aria-pressed=true]{border-color:var(--ink)}
-.status-no-status{background:var(--surface);color:var(--soft)}
 
 /* A page's opening with its picture in view (partials/doors/page_hero.html: the AWoP and citation wheels, a banner): on a
    desktop the title, lede and actions sit beside a large image and span the side card and text below;
@@ -453,11 +459,15 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 
 /* /reversals/ (site.js): the search, outcome and Go to controls are one toolbar that stays at the top of the screen
    while the effects scroll, up to the end of the list; on a phone only the search row and count stay. Rows reached
-   by Tab or Go to stop below it (the scroll padding is its measured height). The entries are rows, not prose, so
-   they keep the reading width of a paragraph, with the Statistics toggle inside it. */
+   by Tab or Go to stop below it (the scroll padding is its measured height). */
 html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px) + 16px)}
-.article-layout .article-style .list-filter-section{max-width:27em}
-.article-layout .article-style .list-filter-section>ul{max-width:none}
+.article-layout .article-style .list-filter-section{max-width:none}
+.article-layout .article-style .list-filter-section>p{max-width:34em}
+/* The effects are a directory, not prose: on a wide screen the list runs on into the band right of the text column
+   (the half of the spare width there; the contents card holds the left), and takes two columns once it has room. */
+@media(min-width:1241px){
+  .article-layout:has(>.article-card) .article-style .list-filter-section{width:calc(100% + max(0px,(min(1280px,100vw - 112px) - 908px) / 2))}
+}
 .article-layout .article-style .list-filter-section>.list-filter{position:sticky;top:0;z-index:6;display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;max-width:none;margin:8px 0 18px;padding:10px 14px;box-shadow:0 2px 0 var(--page)}
 /* The bar itself is square and page-coloured, with its rounded panel drawn behind the controls, so text scrolling
    under the stuck bar does not show at its corners. */
@@ -471,10 +481,44 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
 .article-layout .article-style .list-filter-section .list-filter input{grid-column:2;grid-row:1/3;padding:7px 14px;font-size:16px}
 .article-layout .article-style .list-filter-section .list-filter-jump{margin:0;font-size:16px}
 .article-layout .article-style .list-filter-section .list-filter-jump select{flex:none;max-width:170px;padding:6px 8px;font-size:15px}
-.article-layout .article-style .list-filter-section .list-filter-status{flex:1 1 100%;gap:4px;margin:0}
 /* Beside the "On this page" card, which lists every section, the toolbar needs no Go to menu. */
 @media(min-width:1001px){.article-layout:has(>.article-card) .article-style .list-filter-section .list-filter-jump{display:none}}
-.article-layout .article-style .list-filter-section .list-filter-status button{padding:0 6px;font-size:15px}
+/* The outcomes: one bar, each part as long as its share of the effects, over the buttons that filter by outcome.
+   Choosing one keeps its part strong and fades the others. */
+.article-layout .article-style .list-filter-status{flex:1 1 100%;margin:2px 0 0}
+.outcome-bar{display:flex;gap:2px;height:14px;margin:0 0 8px;border-radius:4px;overflow:hidden}
+.outcome-bar span{flex:1 1 0;min-width:4px;background:var(--out);cursor:pointer;transition:opacity .15s}
+.is-chosen .outcome-bar span:not(.is-chosen){opacity:.25}
+.outcome-buttons{display:flex;flex-wrap:wrap;gap:6px}
+.article-layout .article-style .outcome-buttons button{display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:2px 12px;border:0;cursor:pointer}
+.outcome-buttons button:not([data-status=""])::before{content:"";width:10px;height:10px;border-radius:2px;background:var(--out)}
+.outcome-many{font-weight:400}
+.article-layout .article-style .outcome-buttons button[aria-pressed=true]{box-shadow:inset 0 0 0 2px var(--ink)}
+.article-layout .article-style .outcome-buttons button:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+/* Each effect is a card in its outcome's pale colour with a strong edge, so the outcomes show down the page; on a
+   wide list, two to a row. */
+/* The doubled class outranks the reading-width cap on unclassed lists (top of this file). */
+.article-layout .article-style .list-filter-section.list-filter-section>ul{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:12px;max-width:none;margin:0 0 36px}
+.article-layout .article-style .list-filter-section>ul>li{position:relative;padding:12px 16px;border:0;border-inline-start:5px solid var(--out,var(--line));border-radius:var(--r-small);--entry-ground:color-mix(in srgb,var(--out-bg,var(--surface)) 65%,#fff);background:var(--entry-ground)}
+.article-layout .article-style .list-filter-section>ul>li>p{margin:0}
+/* The Statistics toggle sits on the name's line, so the closed disclosure adds no height of its own. */
+.article-layout .article-style .list-filter-section li:has(>.entry-text)>.spoiler:not([open]){margin:0}
+.article-layout .article-style .list-filter-section li:has(>.entry-text)>.spoiler[open]{margin:10px 0 0}
+.article-layout .article-style .list-filter-section>ul>li[hidden]{display:none}
+.article-layout .article-style .list-filter-section .entry-text{max-width:none}
+.article-layout .article-style .list-filter-section .entry-text::before{content:"";float:inline-end;width:96px;height:1px}
+/* DESIGN.md §4: the description shows in full; one that runs past six lines shows four and a "more" button, and while
+   a search is typed the matching effects show in full. */
+.article-layout .article-style .list-filter-section .is-long:not(.is-open)>.entry-text{max-height:calc(4 * 1.6em);max-height:calc(4 * 1lh);overflow:hidden}
+.article-layout .article-style .list-filter-section:is(.is-searching,.is-measuring) .entry-text{max-height:none!important}
+.article-layout .article-style .list-filter-section li:has(>.entry-text)>.spoiler>summary{position:absolute;top:14px;inset-inline-end:16px}
+.article-layout .article-style .list-filter-section li .spoiler[open]{background:rgb(255 255 255/.7)}
+.article-layout .article-style .list-filter-section .entry-more{display:none}
+.article-layout .article-style .list-filter-section .is-long>.entry-more{display:block;position:absolute;top:calc(12px + 3 * 1.6em);top:calc(12px + 3lh);inset-inline-end:16px;padding:0;padding-inline-start:2.4em;border:0;background:linear-gradient(to right,transparent,var(--entry-ground) 2em);font:inherit;font-weight:600;color:var(--link);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+/* In right-to-left text the fade runs the other way. */
+.article-layout .article-style .list-filter-section .is-long>.entry-more:dir(rtl){background:linear-gradient(to left,transparent,var(--entry-ground) 2em)}
+.article-layout .article-style .list-filter-section .is-open>.entry-more{position:static;display:inline-block;margin:0 0 6px;padding:0;background:none;font-size:16px}
+.article-layout .article-style .list-filter-section.is-searching .entry-more{display:none}
 @media(max-width:760px){
   .article-layout .article-style .list-filter-section>.list-filter{display:contents}
   .article-layout .article-style .list-filter-section .list-filter-search{position:sticky;top:0;z-index:6;grid-template-columns:1fr auto;align-items:baseline;gap:4px 10px;margin:8px -20px 10px;padding:8px 20px;background:var(--surface);box-shadow:0 1px 0 var(--line)}
@@ -482,21 +526,10 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
   .article-layout .article-style .list-filter-section .list-filter input{grid-column:1/-1;grid-row:2;padding:7px 14px}
   .article-layout .article-style .list-filter-section .list-filter label.list-filter-jump{margin:4px 0 14px}
   .article-layout .article-style .list-filter-section .list-filter-jump select{flex:1;max-width:none}
-  /* Below the sticky row there is room, so the outcome buttons get their usual size and spacing back. */
-  .article-layout .article-style .list-filter-section .list-filter-status{gap:8px;margin:0 0 24px}
-  .article-layout .article-style .list-filter-section .list-filter-status button{padding:3px 10px}
+  /* Below the sticky row there is room, so the outcome buttons get full-size tap targets. */
+  .article-layout .article-style .list-filter-status{margin:0 0 24px}
+  .article-layout .article-style .outcome-buttons button{min-height:44px}
+  .article-layout .article-style .list-filter-section>ul>li{padding:10px 14px}
+  .article-layout .article-style .list-filter-section li:has(>.entry-text)>.spoiler>summary{top:12px;inset-inline-end:14px}
+  .article-layout .article-style .list-filter-section .is-long>.entry-more{top:calc(10px + 3 * 1.6em);top:calc(10px + 3lh);inset-inline-end:14px}
 }
-/* Each effect shows its first lines (three on a phone), with the Statistics toggle on the name's line and a
-   "more" button where the text runs longer; while a search is typed the matching effects show in full. */
-.article-layout .article-style .list-filter-section>ul>li{position:relative;--entry-lines:2}
-.article-layout .article-style .list-filter-section .entry-text{max-width:none;max-height:calc(var(--entry-lines) * 1.6em);max-height:calc(var(--entry-lines) * 1lh);overflow:hidden}
-.article-layout .article-style .list-filter-section .entry-text::before{content:"";float:inline-end;width:96px;height:1px}
-.article-layout .article-style .list-filter-section :is(.is-open,.is-searching li)>.entry-text{max-height:none}
-.article-layout .article-style .list-filter-section li:has(>.entry-text)>.spoiler>summary{position:absolute;top:14px;inset-inline-end:0}
-.article-layout .article-style .list-filter-section .entry-more{display:none}
-.article-layout .article-style .list-filter-section .is-long>.entry-more{display:block;position:absolute;top:calc(12px + (var(--entry-lines) - 1) * 1lh);inset-inline-end:0;padding:0;padding-inline-start:2.4em;border:0;background:linear-gradient(to right,transparent,var(--page) 2em);font:inherit;font-weight:600;color:var(--link);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
-/* In right-to-left text the fade runs the other way. */
-.article-layout .article-style .list-filter-section .is-long>.entry-more:dir(rtl){background:linear-gradient(to left,transparent,var(--page) 2em)}
-.article-layout .article-style .list-filter-section .is-open>.entry-more{position:static;display:inline-block;margin:0 0 6px;padding:0;background:none;font-size:16px}
-.article-layout .article-style .list-filter-section.is-searching .entry-more{display:none}
-@media(max-width:760px){.article-layout .article-style .list-filter-section>ul>li{--entry-lines:3}}

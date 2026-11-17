@@ -17,6 +17,7 @@ import os
 import re
 import html
 import json
+import unicodedata
 
 # Load environment variables from .env file (for local development)
 from dotenv import load_dotenv
@@ -329,9 +330,11 @@ merged_data['special_role'] = False
 merged_data = pd.concat([df_roles, merged_data], axis=0)
 merged_data.reset_index(drop=True, inplace=True)
 
-# Sort based on surname
-merged_data['sort_order'] = merged_data['Surname']
-merged_data = merged_data.sort_values(by='sort_order') 
+# Sort based on surname, ignoring case and accents, so that each letter of the A–Z index is one run
+merged_data['sort_order'] = merged_data['Surname'].map(
+    lambda surname: unicodedata.normalize('NFKD', surname.strip().lstrip('*')).encode('ascii', 'ignore').decode().casefold()
+    if isinstance(surname, str) else '')
+merged_data = merged_data.sort_values(by='sort_order', kind='stable')
 merged_data = merged_data.drop(columns='sort_order')
 
 # Strip spaces from 'ORCID iD' in merged data
@@ -386,28 +389,50 @@ def normalize_for_attribute(text):
     return name
 
 
-# Group by 'ORCID iD' and concatenate the contributions
+# Group by 'ORCID iD' and build each contributor's card: the name as a heading (linked to ORCID where known),
+# then one line per project, the project linked and its roles after it in plain text. A contributor with more
+# than SHOWN_PROJECTS + 1 projects shows the first SHOWN_PROJECTS and the rest behind a disclosure, so no card
+# runs on for a screen; the filter (static/js/contributor-filter.js) opens it when it narrows the list.
+# Keep the exact attribute class="contributor-group": layouts/partials/doors/home/about.html counts it.
+SHOWN_PROJECTS = 4
+
+
+def role_labels(row):
+    """The roles of one contribution as a list of labels, from its "Contributions" text."""
+    text = row['Contributions']
+    if pd.isna(text) or text == '':
+        return []
+    if row['special_role']:
+        return [text.strip()]
+    labels = []
+    if re.search(r'as\s+Project\s+Manager', text, re.IGNORECASE):
+        labels.append('Project manager')
+    labels.extend(match.strip() for match in re.findall(r'\*([^*]+)\*', text))
+    return labels
+
 
 def concatenate_contributions(group):
     # Minimum original order for sorting later
     min_order = group['original_order'].min()
 
-    # Format name once
-    full_name = format_name(group.iloc[0])
+    # Format name once; the letter is the surname's on the row that places the contributor in the list
+    full_name = html.escape(format_name(group.iloc[0]), quote=False)
+    letter = surname_letter(group.loc[group['original_order'].idxmin(), 'Surname'])
     # Sort: special roles first, then alphabetically by project name
     group = group.sort_values(by=['special_role', 'Project Name'], ascending=[False, True])
 
     orcid_id = group.iloc[0]['ORCID iD']
+    orcid_id = orcid_id.strip() if isinstance(orcid_id, str) else ''
 
     # Build name HTML
     if orcid_id:
-        name_html = f'<strong><a href="https://orcid.org/{orcid_id.strip()}">{full_name}</a></strong>'
+        name_html = f'<h3 class="contributor-name"><a href="https://orcid.org/{orcid_id}">{full_name}</a></h3>'
     else:
-        name_html = f'<strong>{full_name}</strong>'
+        name_html = f'<h3 class="contributor-name">{full_name}</h3>'
 
     # Build individual contribution items
     contribution_items = []
-    
+
     for _, row in group.iterrows():
         project_name = row['Project Name']
         if pd.isna(project_name) or project_name == '':
@@ -415,33 +440,14 @@ def concatenate_contributions(group):
 
         # Normalize for data attributes
         normalized_project = normalize_for_attribute(project_name)
-        
-        # Extract roles for this specific contribution
+
+        # Roles for the filter: Project Manager, a special role, and the roles marked with *
+        labels = role_labels(row)
         contribution_roles = []
-        contributions_text = row['Contributions']
-        
-        if pd.notna(contributions_text):
-            # Extract "Project Manager" if present (regardless of special_role)
-            pm_match = re.search(r'as\s+Project\s+Manager(?:\s+and\s+with)?', contributions_text, re.IGNORECASE)
-            if pm_match:
-                if 'project-manager' not in contribution_roles:
-                    contribution_roles.append('project-manager')
-            
-            # Extract special roles (for special_role=True cases)
-            if row['special_role']:
-                special_role_match = re.search(r'(?:as\s+)?(.+?)(?:\s+and\s+with|\s+and|$)', contributions_text)
-                if special_role_match:
-                    special_role_text = special_role_match.group(1).strip()
-                    normalized_special = normalize_for_attribute(special_role_text)
-                    if normalized_special not in contribution_roles:
-                        contribution_roles.append(normalized_special)
-            
-            # Extract roles marked with *
-            role_matches = re.findall(r'\*([^*]+)\*', contributions_text)
-            for role_match in role_matches:
-                normalized_role = normalize_for_attribute(role_match)
-                if normalized_role not in contribution_roles:
-                    contribution_roles.append(normalized_role)
+        for label in labels:
+            normalized_role = normalize_for_attribute(label)
+            if normalized_role and normalized_role not in contribution_roles:
+                contribution_roles.append(normalized_role)
 
         # Build project HTML
         if pd.notna(row['Project URL']) and row['Project URL'] != '':
@@ -449,15 +455,7 @@ def concatenate_contributions(group):
         else:
             project_html = project_name
 
-        # Convert *role* → <em>role</em>
-        contrib_html = re.sub(r'\*([^*]+)\*', r'<em>\1</em>', contributions_text) if pd.notna(contributions_text) else ''
-
-        # Handle special role phrasing
-        if row['special_role']:
-            # Use the actual special role text from contributions_text
-            full_contrib = f'{project_html} as {contributions_text}'
-        else:
-            full_contrib = f'{project_html} {contrib_html}'
+        roles_html = f' <span class="contribution-roles">{html.escape(", ".join(labels), quote=False)}</span>' if labels else ''
 
         # Create data attributes for this contribution
         projects_attr = html.escape(normalized_project, quote=True)
@@ -466,25 +464,49 @@ def concatenate_contributions(group):
         # Build the contribution <li>
         contribution_items.append(
             f'    <li class="contribution" data-projects="{projects_attr}" '
-            f'data-roles="{roles_attr}">{full_contrib}</li>'
+            f'data-roles="{roles_attr}">{project_html}{roles_html}</li>'
         )
 
-        # Build the complete contributor group HTML
-        contributions_list = '\n'.join(contribution_items)
+    if not contribution_items:
+        return min_order, letter, ''
 
-        # Add id attribute if ORCID exists
-        id_attr = f' id="{orcid_id.strip()}"' if orcid_id else ''
+    # Add id attribute if ORCID exists
+    id_attr = f' id="{orcid_id}"' if orcid_id else ''
 
-        final_html = (
-            f'<li class="contributor-group"{id_attr}>\n'
-            f'  {name_html} contributed to\n'
+    shown = contribution_items
+    more = ''
+    if len(contribution_items) > SHOWN_PROJECTS + 1:
+        shown = contribution_items[:SHOWN_PROJECTS]
+        rest = contribution_items[SHOWN_PROJECTS:]
+        more = (
+            f'  <details class="contributions-more">\n'
+            f'  <summary>{len(rest)} more projects</summary>\n'
             f'  <ul class="contributions-list">\n'
-            f'{contributions_list}\n'
+            + '\n'.join(rest) + '\n'
             f'  </ul>\n'
-            f'</li>\n'
+            f'  </details>\n'
         )
 
-    return min_order, final_html
+    final_html = (
+        f'<li class="contributor-group"{id_attr}>\n'
+        f'  {name_html}\n'
+        f'  <ul class="contributions-list">\n'
+        + '\n'.join(shown) + '\n'
+        f'  </ul>\n'
+        + more +
+        f'</li>\n'
+    )
+
+    return min_order, letter, final_html
+
+
+def surname_letter(surname):
+    """The letter a surname files under: its first letter without accents, or # for anything else."""
+    if not isinstance(surname, str):
+        return '#'
+    plain = unicodedata.normalize('NFKD', surname.strip().lstrip('*')).encode('ascii', 'ignore').decode()
+    letter = plain[:1].upper()
+    return letter if 'A' <= letter <= 'Z' else '#'
 
 
 def extract_orcid_id(value):
@@ -512,18 +534,43 @@ summary = (merged_data.groupby(merged_data['ORCID iD'].fillna(merged_data['Name'
                        .apply(concatenate_contributions)
                        .reset_index())
 
-# Separate the tuple into two columns
-summary[['original_order', 'Contributions']] = pd.DataFrame(summary[0].tolist(), index=summary.index)
+# Separate the tuple into its columns
+summary[['original_order', 'Letter', 'Contributions']] = pd.DataFrame(summary[0].tolist(), index=summary.index)
+summary = summary[summary['Contributions'] != '']
 
 # Drop the old column
 summary.drop(columns=[0], inplace=True)
 
 # Sort by the original order and drop the helper column
-summary = summary.sort_values(by='original_order').drop(columns='original_order')
+summary = summary.sort_values(by='original_order')
 
 # Reset the index if needed
 summary = summary.reset_index(drop=True)
-summary_string = '\n\n'.join(summary['Contributions'])
+
+# One section per letter of the surnames, with an index of the letters above the list. A contributor placed at
+# the end out of order (above) stays at the end, in the last section.
+sections = []
+for _, cards in summary.groupby((summary['Letter'] != summary['Letter'].shift()).cumsum(), sort=False):
+    first = cards['Letter'].iloc[0]
+    if sections and len(cards) == 1 and cards['original_order'].iloc[0] == 99999:
+        sections[-1][1].append(cards['Contributions'].iloc[0])
+        continue
+    sections.append((first, list(cards['Contributions'])))
+
+anchor = lambda letter: 'contributors-other' if letter == '#' else f'contributors-{letter.lower()}'
+letter_index = (
+    '<nav class="contributor-az" aria-label="Contributors by surname">\n'
+    + '\n'.join(f'<a href="#{anchor(letter)}">{letter}</a>' for letter, _ in sections)
+    + '\n</nav>\n\n<div id="contributor-list">\n\n'
+)
+summary_string = letter_index + '\n\n'.join(
+    f'<section class="contributor-letter" id="{anchor(letter)}">\n'
+    f'<h2 class="contributor-letter-heading">{letter}</h2>\n'
+    f'<ul class="contributor-cards">\n\n'
+    + '\n'.join(cards)
+    + '\n</ul>\n</section>'
+    for letter, cards in sections
+)
 
 
 # Get project and role names for dropdown filters
@@ -563,7 +610,7 @@ filter_data = {
 
 # Add closing tags and JavaScript include
 footer_content = f"""
-</ul>
+</div>
 <script>
 // Value-labels for filtering menus 
 window.filterData = {json.dumps(filter_data, indent=2)};
