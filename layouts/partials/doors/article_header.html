@@ -55,11 +55,6 @@
 </header>
 {{/* With a hero image (doors/page_hero), that is the page's one picture at the top. */}}
 {{ if not .Params.hero_image }}
-{{/* A news post without a picture of its own opens with the coloured panel the news list shows for it. */}}
-{{ $tone := cond (and (eq .Type "post") .IsPage) (index (partialCached "doors/post_panels" site "post-panels") .RelPermalink) false }}
-{{ with $tone }}
-<div class="article-panel ac-panel ac-panel-{{ . }}" aria-hidden="true"><span>{{ with $page.Params.categories }}{{ index . 0 }}{{ else }}News{{ end }}</span><strong>{{ $page.Date.Format "January 2006" }}</strong></div>
-{{ end }}
 {{ if and .Params.header.image (not (and $featured (not .Params.image.preview_only))) }}
 <figure class="article-image">
   {{ $src := urls.Parse .Params.header.image }}
