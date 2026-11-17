@@ -40,3 +40,6 @@
   .welcome-areas .area .welcome-links a{font-size:20px}
   .welcome-community{margin-top:36px;padding:20px 18px}
 }
+/* 44 px targets on phones (DESIGN.md §9). */
+@media(max-width:760px){.welcome-areas .area .welcome-links a{display:inline-flex;align-items:center;min-height:44px;padding:0}}
+@media(max-width:760px){.welcome-buttons .btn{display:inline-flex;align-items:center;min-height:44px}}

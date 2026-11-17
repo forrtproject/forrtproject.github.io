@@ -45,7 +45,7 @@ summary = "Learn more about FORRT in the interactive flipbook below: If you pref
   ]
 +++
 
-A 20-page introduction to FORRT: what it is, projects from each of its four areas, and its plans for a curriculum hub and the Replication Hub.
+A 20-page introduction to FORRT: what it is, projects from each of its four areas, and its vision for FORRT's future.
 
 {{< dearflip id="forrt-booklet" pdf="/files/FORRT_Booklet(A5).pdf" open="2" >}}
 

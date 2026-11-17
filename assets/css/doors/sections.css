@@ -315,3 +315,8 @@
 .article-layout .article-style .booklet-area li{max-width:none;margin:0;padding:4px 0;font-size:17px;line-height:1.4}
 .article-layout .article-style .booklet-area a{display:inline-block;padding:2px 0;color:var(--ink);text-decoration-color:color-mix(in srgb,var(--tone) 55%,transparent)}
 .article-layout .article-style .booklet-area a:hover{color:var(--tone);text-decoration-color:currentColor}
+/* 44 px targets on phones for the booklet's and lesson plans' links (DESIGN.md §9). */
+@media(max-width:760px){
+  .article-layout .article-style .booklet-area li{padding:0}
+  .article-layout .article-style .booklet-area a,.article-layout .article-style .lesson-plan-list>ul>li>a{display:inline-flex;align-items:center;min-height:44px;padding:0}
+}

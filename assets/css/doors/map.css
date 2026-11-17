@@ -31,3 +31,4 @@
   .map-after{margin-top:28px}
   .map-join{padding:18px}
 }
+@media(max-width:760px){.map-buttons .btn{display:inline-flex;align-items:center;min-height:44px}}
