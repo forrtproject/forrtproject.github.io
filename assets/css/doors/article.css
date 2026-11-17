@@ -595,3 +595,13 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
   .article-layout .article-head .material-cards strong{font-size:20px;overflow-wrap:anywhere}
   .article-layout .article-head .material-cards span{font-size:15px}
 }
+/* Several authors beside a contents list: their photos in a row and their names, so the contents stay in view. */
+.article-layout .card-authors-compact{margin:0 0 16px}
+.article-layout .card-author-photos{display:flex;margin:0 0 8px;padding-inline-start:8px}
+.article-layout .card-author-photos img{width:40px;height:40px;margin-inline-start:-8px;border:2px solid #fff;border-radius:50%;object-fit:cover;background:#fff}
+.article-layout .card-author-names{margin:0;font-size:15px;line-height:1.45}
+.article-layout .card-author-names a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
+/* An Educators' Corner or Pedagogies article without a picture, in the end band: education's colour, white text. */
+.ac-panel-edu{background:var(--edu)}
+/* The phone contents of an education article match its side card. */
+:is(.article-type-educators-corner,.article-type-pedagogies) .toc-phone{background:var(--edu-bg)}

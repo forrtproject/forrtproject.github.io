@@ -7,9 +7,12 @@
 {{ $img := (($p.Resources.ByType "image").GetMatch "*featured*") }}
 <article class="announcement-card">
   {{ if and $img (not $tone) }}
-    <div class="ac-thumb"><img src="{{ ($img.Fill "640x360 Center webp q75").RelPermalink }}" width="640" height="360" alt="" loading="lazy"></div>
+    <div class="ac-thumb"><img src="{{ ($img.Fill "640x360 Center webp q75").RelPermalink }}" width="640" height="360" alt="{{ $p.Params.image.alt_text }}" loading="lazy"></div>
   {{ else }}
-    <div class="ac-thumb ac-panel ac-panel-{{ $tone | default 1 }}" aria-hidden="true"><span>{{ $cat | default ($p.Parent.LinkTitle) }}</span><strong>{{ $p.Date.Format "January 2006" }}</strong></div>
+    {{/* A news post's panel takes its brick colour from the news list; an Educators' Corner or Pedagogies article
+         without a picture takes education's colour (DESIGN.md §6). */}}
+    {{ $panel := cond (eq $p.Type "post") (printf "ac-panel-%v" ($tone | default 1)) "ac-panel-edu" }}
+    <div class="ac-thumb ac-panel {{ $panel }}" aria-hidden="true"><span>{{ $cat | default ($p.Parent.LinkTitle) }}</span><strong>{{ $p.Date.Format "January 2006" }}</strong></div>
   {{ end }}
   <div class="ac-body">
     <p class="ac-meta">{{ with .rel }}<span class="ac-cat">{{ cond (eq . "prev") "Previous" "Next" }}</span>{{ else }}{{ with $cat }}<span class="ac-cat">{{ . }}</span>{{ end }}{{ end }}<time datetime="{{ $p.Date.Format "2006-01-02" }}">{{ $p.Date.Format "2 January 2006" }}</time></p>
