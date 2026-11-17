@@ -3,6 +3,7 @@ title = "FORRT Booklet"
 type = "widget_page"
 headless = false
 url = "/booklet"
+phone_toc = false  # Two short sections; a contents list on phones would push the flipbook off the first screen
 summary = "Learn more about FORRT in the interactive flipbook below: If you prefer, you can also download the PDF directly."
 
 # The booklet's pages on each area, from its table of contents, shown under the flipbook

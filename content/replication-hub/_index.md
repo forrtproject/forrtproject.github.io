@@ -83,7 +83,7 @@ cards:
       - url: "https://forrt.org/love-replications-week/"
         format: "Event"
         label: "Love Replications Week"
-        note: "A week of best practices, contact with experts and open community."
+        note: "Recordings from Love Replications Week 2026."
       - url: "https://forrt.org/replicatethis/"
         format: "Prototype"
         label: "ReplicateThis Nomination Portal (demo)"

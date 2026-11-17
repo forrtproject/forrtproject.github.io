@@ -26,7 +26,7 @@
 @media(max-width:760px){
   .map-page{padding:20px 0 36px}
   .map-head-grid{grid-template-columns:minmax(0,1fr)}
-  .map-figures{justify-self:start;padding:12px 18px}
+  .map-figures{justify-self:stretch;padding:12px 18px}
   .map-frame{margin-top:18px}
   .map-after{margin-top:28px}
   .map-join{padding:18px}

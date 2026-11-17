@@ -43,3 +43,11 @@
 /* 44 px targets on phones (DESIGN.md §9). */
 @media(max-width:760px){.welcome-areas .area .welcome-links a{display:inline-flex;align-items:center;min-height:44px;padding:0}}
 @media(max-width:760px){.welcome-buttons .btn{display:inline-flex;align-items:center;min-height:44px}}
+
+/* On a phone the home page shrinks its doors to a thumbnail beside the text; here, with fewer links per door,
+   the illustration stands above the text at a size that reads. */
+@media(max-width:760px){
+  .welcome-areas .area{grid-template-columns:minmax(0,1fr);row-gap:10px}
+  .welcome-areas .area-plate{width:176px;height:150px}
+  .welcome-areas .area-plate img{inset:20px 14px 4px;width:calc(100% - 28px);height:calc(100% - 24px)}
+}
