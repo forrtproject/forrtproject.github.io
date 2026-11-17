@@ -170,6 +170,7 @@
   .article-layout .doc-section:has(>.pub-intro){display:flex;flex-direction:column}
   .article-layout .doc-section>.pub-intro{display:contents}
   .article-layout .doc-section:has(>.pub-intro)>.citation-container{order:1;margin-top:28px}
+  .article-layout .doc-section:has(>.pub-intro)>.pub-section-group:last-of-type{order:2}
 }
 
 .reading:has(.pub-intro) .article-head{margin-bottom:14px}

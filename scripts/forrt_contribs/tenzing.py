@@ -415,8 +415,11 @@ def concatenate_contributions(group):
     # Minimum original order for sorting later
     min_order = group['original_order'].min()
 
-    # Format name once; the letter is the surname's on the row that places the contributor in the list
-    full_name = html.escape(format_name(group.iloc[0]), quote=False)
+    # A contributor's rows may spell the name differently (with or without a middle initial, a sheet's typo): the
+    # card shows the spelling most rows use, the earliest row breaking a tie, so the choice does not depend on row
+    # order. The letter is the surname's on the row that places the contributor in the list.
+    spellings = [format_name(row) for _, row in group.sort_values('original_order').iterrows()]
+    full_name = html.escape(max(spellings, key=lambda name: (spellings.count(name), -spellings.index(name))), quote=False)
     letter = surname_letter(group.loc[group['original_order'].idxmin(), 'Surname'])
     # Sort: special roles first, then alphabetically by project name
     group = group.sort_values(by=['special_role', 'Project Name'], ascending=[False, True])

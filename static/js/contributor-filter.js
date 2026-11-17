@@ -185,7 +185,11 @@
 
         // A match may sit among a contributor's further projects: open them. A letter left with no one hides.
         if (filtering) {
-            contributorList.querySelectorAll('.contributions-more').forEach(more => { more.open = true; });
+            contributorList.querySelectorAll('.contributions-more').forEach(more => {
+                more.open = true;
+                more.querySelector('summary').hidden = true;
+                more.hidden = ![...more.querySelectorAll('.contribution')].some(contrib => contrib.style.display !== 'none');
+            });
             contributorList.querySelectorAll('.contributor-letter').forEach(letter => {
                 letter.hidden = ![...letter.querySelectorAll('.contributor-group')].some(group => group.style.display !== 'none');
             });
@@ -223,6 +227,12 @@
 
     // Initialize on page load
     document.addEventListener('DOMContentLoaded', function() {
+        // The letter index stays at the top of the screen; a letter jumped to stops below it, however many rows it takes.
+        const letterIndex = document.querySelector('.contributor-az');
+        if (letterIndex && window.ResizeObserver) {
+            new ResizeObserver(() => document.documentElement.style.setProperty('--contributor-az', letterIndex.offsetHeight + 'px')).observe(letterIndex);
+        }
+
         // Check if filter should be collapsed
         const isCollapsed = handleCollapsedFilter();
 
