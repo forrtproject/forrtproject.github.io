@@ -49,6 +49,8 @@ Hard checks (exit 1 if any fails):
       or hidden, so its links are tab stops only once opened. Every in-page link in the clusters map
       reaches an id on the page.
   22. The FLoRA page (replication-hub/flora/) contains the FLoRA citation DOI.
+  23. On a translated glossary page, no related term links to an English term page
+      that has a page in the same language (per the English page's hreflang links).
   24. Every other name an English glossary term page shows ("Also known as") is in
       that term's data-term on the glossary hub, so the hub's filter finds it.
 
@@ -105,6 +107,9 @@ class PageParser(HTMLParser):
         self.citations = []
         self.crumb_links = []
         self._in_crumbs = False
+        self.alternates = []
+        self.related_links = []
+        self._in_related = False
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
@@ -114,6 +119,12 @@ class PageParser(HTMLParser):
             self.ids.add(attrs["id"])
         if tag == "nav" and "crumbs" in (attrs.get("class") or "").split():
             self._in_crumbs = True
+        if tag == "link" and attrs.get("rel") == "alternate" and attrs.get("hreflang") and attrs.get("href"):
+            self.alternates.append(attrs["href"])
+        if tag == "p" and "term-related" in (attrs.get("class") or "").split():
+            self._in_related = True
+        if tag == "a" and self._in_related:
+            self.related_links.append(attrs.get("href") or "")
         if tag == "a" and self._in_crumbs:
             self.crumb_links.append(attrs.get("href") or "")
         if tag == "a" and "cite" in attrs.get("class", "").split():
@@ -151,6 +162,8 @@ class PageParser(HTMLParser):
     def handle_endtag(self, tag):
         if tag == "nav":
             self._in_crumbs = False
+        if tag == "p":
+            self._in_related = False
         if tag == "script" and self._inline_script is not None:
             self.largest_inline_script = max(self.largest_inline_script, self._inline_script)
             self._inline_script = None
@@ -218,6 +231,8 @@ class Page:
         self.citations = parser.citations
         self.gloss_terms = parser.gloss_terms
         self.crumb_links = parser.crumb_links
+        self.alternates = parser.alternates
+        self.related_links = parser.related_links
 
     def loads(self, needle):
         return any(needle in url for url in self.urls)
@@ -272,6 +287,26 @@ def check_glossary_links(pages):
             url = urlparse(urljoin(page.canonical or "/" + path, href))
             if not href or url.scheme not in ("", "http", "https") or (url.netloc, unquote(url.path)) not in english:
                 failures.append("%s (%s)" % (page.path, href or "missing href"))
+    return failures
+
+
+def check_glossary_related_language(pages):
+    """A translated term page links its related terms to pages in its own language where they exist."""
+    english = {}
+    for page in pages:
+        path = page.path.replace(os.sep, "/")
+        if path.startswith("glossary/english/"):
+            english["/" + path.removesuffix("index.html")] = [unquote(urlparse(h).path) for h in page.alternates]
+    failures = []
+    for page in pages:
+        parts = page.path.replace(os.sep, "/").split("/")
+        if len(parts) < 4 or parts[0] != "glossary" or parts[1] == "english":
+            continue
+        own = "/glossary/%s/" % parts[1]
+        for href in page.related_links:
+            target = unquote(urlparse(href).path)
+            if any(alt.startswith(own) for alt in english.get(target, [])):
+                failures.append("%s (%s)" % (page.path, href))
     return failures
 
 
@@ -778,6 +813,7 @@ def main(public_dir):
         "20. cluster pages show no literal <i>/<em>/<scp> title markup": check_cluster_title_markup(public_dir),
         "21. the clusters map's names are named and counted, its drawing hidden, its panels closed and its links have targets": check_clusters_map(public_dir),
         "22. FLoRA page shows the citation": check_flora_citation(public_dir),
+        "23. translated glossary pages link related terms in their own language": check_glossary_related_language(pages),
         "24. the glossary hub's filter finds each term by its other names": check_glossary_aka_filter(public_dir),
     }
     conditional = check_conditional_assets(pages)

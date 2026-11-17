@@ -188,7 +188,9 @@
 
             {{ with .Params.related_terms }}
             {{/* Related terms link to their pages, found by title: this language's terms first, then English;
-                 a translated term is also found by the English name in its brackets. A name is matched in full first, so
+                 a translated term is also found by its English name (`en_title`), which its title shows in square brackets
+                 only when the translated title does not already contain the English words, e.g. "Ödeme Duvarı (Paywall)".
+                 A name is matched in full first, so
                  "Model (philosophy)" and "Model (statistical)" stay apart, then without its bracketed qualifier. */}}
             {{ $index := dict }}{{ $exact := dict }}
             {{ range slice "english" $lang }}
@@ -196,6 +198,7 @@
                 {{ $page := . }}
                 {{ $names := slice .Title }}
                 {{ with findRESubmatch `\[(.*)\]\s*$` .Title 1 }}{{ $names = $names | append (index (index . 0) 1) }}{{ end }}
+                {{ with .Params.en_title }}{{ $names = $names | append . }}{{ end }}
                 {{ range $names }}
                   {{ $key := . | replaceRE `[*\\]` "" | replaceRE `\s*\(.*?\)` "" | replaceRE `\s*\[.*\]\s*$` "" | lower | replaceRE `[^\p{L}\p{N}]+` "" }}
                   {{ if $key }}{{ $index = merge $index (dict $key $page) }}{{ end }}
