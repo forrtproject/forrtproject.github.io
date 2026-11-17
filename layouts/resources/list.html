@@ -16,19 +16,19 @@
         <h1>{{ .Params.heading }}</h1>
         <p class="lede">{{ printf .Params.lede (lang.FormatNumber 0 $total) }}</p>
         {{/* Ready-made teaching materials as the way in: each brick opens the directory filtered to one
-             material type (resources.js reads ?type=). Counts come from the type filter. The bricks take
-             the brick colours, which carry no meaning (DESIGN.md §6). */}}
+             material type (resources.js reads ?type=), shown only when that type has resources. No counts: the type
+             filters just below carry them. The bricks take the brick colours, which carry no meaning (DESIGN.md §6). */}}
         {{ $typeCounts := dict }}
         {{ range $index.facets }}{{ if eq .key "type" }}{{ range .values }}{{ $typeCounts = merge $typeCounts (dict .slug .count) }}{{ end }}{{ end }}{{ end }}
         {{ $starts := slice
-          (dict "slug" "syllabus" "title" "Syllabi" "noun" "course outlines to adapt")
-          (dict "slug" "full-course" "title" "Full courses" "noun" "courses with their materials")
-          (dict "slug" "lesson" "title" "Lessons" "noun" "single sessions")
-          (dict "slug" "activity" "title" "Activities" "noun" "exercises for class") }}
+          (dict "slug" "syllabus" "title" "Syllabi" "noun" "Course outlines to adapt")
+          (dict "slug" "full-course" "title" "Full courses" "noun" "Courses with their materials")
+          (dict "slug" "lesson" "title" "Lessons" "noun" "Single sessions")
+          (dict "slug" "activity" "title" "Activities" "noun" "Exercises for class") }}
         <nav class="res-start brick-row" aria-labelledby="res-start-h">
           <h2 id="res-start-h">Ready to teach with</h2>
           <ul class="action-cards">
-            {{ range $s := $starts }}{{ with index $typeCounts $s.slug }}<li><a href="{{ printf "resources/?type=%s" $s.slug | relLangURL }}"><strong>{{ $s.title }}</strong><span>{{ . }} {{ $s.noun }}</span></a></li>{{ end }}{{ end }}
+            {{ range $s := $starts }}{{ with index $typeCounts $s.slug }}<li><a href="{{ printf "resources/?type=%s" $s.slug | relLangURL }}"><strong>{{ $s.title }}</strong><span>{{ $s.noun }}</span></a></li>{{ end }}{{ end }}
           </ul>
         </nav>
       </div>

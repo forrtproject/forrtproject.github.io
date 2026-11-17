@@ -18,13 +18,8 @@
   // no page carries that tag: then the list and the search come back, filled with the term (below).
   if (!new URLSearchParams(window.location.search).get("tag")) box.hidden = false;
   var top = document.querySelector(".tag-top");
-  var letters = document.querySelector(".tag-letters");
   var groups = Array.prototype.slice.call(document.querySelectorAll(".tag-group"));
   var count = box.querySelector(".tag-filter-count");
-  // While the letter bar is pinned (above 760 px), a letter's heading lands below it, however many rows it wraps to.
-  if (letters && window.ResizeObserver) new ResizeObserver(function () {
-    document.documentElement.style.setProperty("--tag-letters", letters.offsetHeight + "px");
-  }).observe(letters);
   // Each letter shows its most used tags (twelve on a phone, sixteen otherwise) and a button for the rest, so the list stays walkable.
   var FIRST = window.matchMedia("(max-width: 760px)").matches ? 12 : 16;
   {
@@ -71,7 +66,6 @@
       group.hidden = !any;
     });
     if (top) top.hidden = Boolean(query);
-    if (letters) letters.hidden = Boolean(query);
     count.textContent = !query ? "" : shown ? shown + (shown === 1 ? " tag matches" : " tags match") : "No tag matches.";
     return shown;
   });

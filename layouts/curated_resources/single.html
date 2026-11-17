@@ -109,7 +109,7 @@
       <nav class="article-widget" aria-labelledby="resource-pager-label">
         {{/* The cluster's name opens the directory filtered to it, with the slug resources.js reads from the address. */}}
         {{ $directory := relref $ "/resources" }}
-        <p class="post-nav-scope" id="resource-pager-label">{{ with $cluster }}More from the cluster <a href="{{ $directory }}?cluster={{ $cluster | lower | replaceRE "[^a-z0-9]+" "-" }}">{{ $cluster }}</a>{{ else }}More <a href="{{ $directory }}">resources</a>{{ end }}, A to Z</p>
+        <p class="post-nav-scope" id="resource-pager-label">{{ with $cluster }}{{/* With one cluster, named in the card just above, "this cluster"; with several, the name says which. */}}More from {{ if eq (len $clusterItems) 1 }}<a href="{{ $directory }}?cluster={{ $cluster | lower | replaceRE "[^a-z0-9]+" "-" }}">this cluster</a>{{ else }}the cluster <a href="{{ $directory }}?cluster={{ $cluster | lower | replaceRE "[^a-z0-9]+" "-" }}">{{ $cluster }}</a>{{ end }}{{ else }}More <a href="{{ $directory }}">resources</a>{{ end }}, A to Z</p>
         <div class="post-nav">
           {{ with .prev }}
           <div class="post-nav-item post-nav-prev">

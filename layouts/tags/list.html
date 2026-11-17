@@ -32,7 +32,8 @@
     <p class="tag-results-all"><a href="{{ "tags/" | relURL }}">Choose another tag</a></p>
   </div>
 
-  {{/* The twelve most used as bricks, then the common tags A to Z with letter links. */}}
+  {{/* The twelve most used as bricks, then the common tags A to Z under letter headings. No row of letters to jump
+       by: many letters hold two or three tags, and Find a tag reaches any of them. */}}
   {{ $sorted := sort $rows "tag" }}
   {{ $groups := slice }}{{ $current := "" }}{{ $items := slice }}
   {{ range $sorted }}
@@ -51,7 +52,6 @@
     </section>
     <section class="tag-all">
       <h2>All common tags, A to Z</h2>
-      <nav class="tag-letters" aria-label="Tags by letter">{{ range $groups }}<a href="#tags-{{ .letter | urlize | default "other" }}">{{ .letter }}</a>{{ end }}</nav>
       {{ range $groups }}
       <div class="tag-group" id="tags-{{ .letter | urlize | default "other" }}">
         <h3>{{ .letter }}</h3>
