@@ -559,7 +559,7 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
   .read-next .ac-thumb{display:flex;flex:0 0 112px}
   .read-next .ac-thumb img{width:112px;height:100%;min-height:112px;aspect-ratio:auto}
   .read-next .ac-panel{aspect-ratio:auto;padding:12px}
-  .read-next .ac-panel span{font-size:14px}
+  .read-next .ac-panel span{font-size:15px;line-height:1.2}
   .read-next .ac-panel strong{font-size:19px}
   .read-next .ac-body{padding:12px 14px 14px}
   .read-next .ac-body h3{font-size:19px}
@@ -605,3 +605,5 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
 .ac-panel-edu{background:var(--edu)}
 /* The phone contents of an education article match its side card. */
 :is(.article-type-educators-corner,.article-type-pedagogies) .toc-phone{background:var(--edu-bg)}
+/* In the text column (below 1240 px) a call-out keeps its lines under 80 characters, as the text around it does. */
+.article-layout:not(.article-layout-wide) .article-style .callout{max-width:32em}
