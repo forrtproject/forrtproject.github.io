@@ -247,7 +247,7 @@
               {{ $references := delimit .Params.references ", " | len }}
               {{ if ne $references 0 }}
                 <h2 class="term-references-heading">{{ if gt (len .Params.references) 1 }}{{ index (index $dictionary $lang) "references" }}{{ else }}{{ index (index $dictionary $lang) "reference" }}{{ end }}</h2>
-                {{/* English references sit in a panel of their own, left to right, inside an Arabic page. */}}
+                {{/* English references read left to right inside an Arabic page. */}}
                 <ul class="references-list term-references">
                   {{ $keys := partialCached "citations/keys" . "bibliography-keys" }}
                   {{ range .Params.references }}

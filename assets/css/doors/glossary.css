@@ -201,7 +201,7 @@ main:lang(zh) .glossary-layout :is(.reading h1,.term-list a){word-break:keep-all
   .term-group ul{grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr))}
 }
 .term-grid.is-list .term-group li{border-width:0 0 1px;border-color:var(--line)}
-/* A term page: related terms as the hub's cards, with the start of their definitions; references in a panel;
+/* A term page: related terms as the hub's cards, with the start of their definitions; references as a plain list with a hanging indent;
    the previous and next terms as two cards with the start of theirs. */
 .glossary-layout .article-style .term-related{margin:28px 0 8px}
 .glossary-layout .article-style :is(.term-related>h2,.term-references-heading){margin:28px 0 12px;font-size:24px;color:var(--edu)}
@@ -219,13 +219,13 @@ main:lang(zh) .glossary-layout :is(.reading h1,.term-list a){word-break:keep-all
 .glossary-layout .article-style .term-unlinked-list li+li::before{content:", "}
 main:lang(ar) .glossary-layout .article-style .term-unlinked-list li+li::before{content:"، "}
 .glossary-layout .article-style .term-unlinked-list .term-unlinked{color:inherit}
-.glossary-layout .article-style .term-references{margin:0 0 8px;padding:14px 18px;list-style:none;background:var(--surface);border-radius:var(--r-large);font-size:16px;line-height:1.5}
+.glossary-layout .article-style .term-references{margin:0 0 8px;padding:0;list-style:none;font-size:16px;line-height:1.5}
 /* As wide as the definition and the cards above it (article.css caps reference lists at 29.8em). */
 .glossary-layout .article-style ul.term-references.references-list{max-width:none}
 .glossary-layout .article-style .term-references li{max-width:30em;margin:0 0 10px;padding-inline-start:1.5em;text-indent:-1.5em;list-style:none}
 .glossary-layout .article-style .term-references li::before{content:none}
 .glossary-layout .article-style .term-references li:last-child{margin-bottom:0}
-main:lang(ar) .glossary-layout .article-style .term-references{direction:ltr;padding:14px 18px}
+main:lang(ar) .glossary-layout .article-style .term-references{direction:ltr;padding:0}
 .glossary-layout .article-foot .post-nav{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .glossary-layout .article-foot .post-nav-item{max-width:none;padding:14px 16px;background:var(--edu-bg);border-radius:var(--r-large)}
 .glossary-layout .article-foot .post-nav-next:only-child{grid-column:2}
