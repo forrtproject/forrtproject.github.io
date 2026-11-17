@@ -63,7 +63,7 @@
 
     <div class="nla-top">
       {{ with $latest }}
-      <section class="nla-latest" aria-labelledby="nla-latest-title">
+      <section class="nla-latest{{ if not $latestPost }} nla-latest-short{{ end }}" aria-labelledby="nla-latest-title">
         <h2 class="nla-latest-label" id="nla-latest-title">Latest issue{{ if .new }} <span class="nla-new">New</span>{{ end }}</h2>
         <p class="nla-latest-month">{{ .month }} {{ $latestYear }}</p>
         {{ with $latestPost }}<p class="nla-latest-summary">{{ .Summary | plainify | emojify }}</p>{{ end }}

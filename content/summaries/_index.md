@@ -24,6 +24,12 @@ menu:
 
 {{< summary_collections >}}
 
+<!-- Layout (assets/css/doors/article.css, "Summaries overview"): on a wide screen the overview and "Join and help
+     us" are on the left, and the background, the feedback and the closing bricks beside them; on a phone those
+     follow "Join and help us", so the page ends with its bricks. -->
+<div class="sm-layout">
+<div class="sm-overview">
+
 ## Overview
 
 The FORRT community has prepared 100+ summaries of Open and Reproducible Science literature. The purpose of these summaries is to reduce some of the burden on educators looking to incorporate open and reproducible research principles into their teaching as well as facilitate the edification of anyone wishing to learn or disseminate open and reproducible science tenets.
@@ -31,6 +37,16 @@ The FORRT community has prepared 100+ summaries of Open and Reproducible Science
 ***These summaries are very much a work in progress***. We would love to receive your [criticism, areas for improvement, ideas, and help](https://docs.google.com/spreadsheets/d/1W12WpzI70Ja1FiVeflXNW8VFPzqFFvu_mL2YkNQ_cHk/edit?usp=sharing). 
 
 We made a distinction between [Open and reproducible science](/summaries/open-reproducible/) summaries and [Diversity, equity and inclusion](/summaries/diversity-equity-inclusion/) summaries to highlight that the topics of social injustices and DEI (diversity, equity and inclusion) are often neglected in academia, and in open and reproducible science literature. If you are an educator, you may also be interested in our [FORRT Syllabus on Open and Reproducible Science (.pdf & G-doc)](https://forrt.org/syllabus), which is based on [FORRT Clusters.](/clusters/)
+
+</div>
+<div class="sm-join">
+
+### Join and help us
+
+**Help us** make better education for everyone, [join our community](https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ). **Help us** support educators and elevate their efforts. **Help us** facilitate the process of integrating open and reproducible science into the pipeline of all teachers and mentors in Higher-Ed. **Help us** advocate for open educational resources and expedite access to open and reproducible science trainings. **Help us** spread the word by sharing this FORRT resource via your professional listservs and other social media.
+
+</div>
+<div class="sm-side">
 
 <details class="spoiler">
 <summary>Why make these summaries?</summary>
@@ -73,15 +89,18 @@ Any and all contributions in FORRT are formally recognized. In large part, these
 </div>
 </details>
 
+<section class="sm-feedback" aria-labelledby="feedback">
+
 ### Feedback
 
 Do you have feedback to give us? We would love to receive your [criticism, areas for improvement, ideas, and help](https://docs.google.com/spreadsheets/d/1W12WpzI70Ja1FiVeflXNW8VFPzqFFvu_mL2YkNQ_cHk/edit?usp=sharing). You can also write to us at [info@forrt.org](mailto:info@forrt.org), connect on [Bluesky](https://bsky.app/profile/forrt.bsky.social), or [join our community](https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ).
 
-### Join and help us
-
-**Help us** make better education for everyone, [join our community](https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ). **Help us** support educators and elevate their efforts. **Help us** facilitate the process of integrating open and reproducible science into the pipeline of all teachers and mentors in Higher-Ed. **Help us** advocate for open educational resources and expedite access to open and reproducible science trainings. **Help us** spread the word by sharing this FORRT resource via your professional listservs and other social media.
+</section>
 
 {{< action_cards >}}
 Send feedback on the summaries | Criticism, areas for improvement, ideas and help, in our shared sheet | https://docs.google.com/spreadsheets/d/1W12WpzI70Ja1FiVeflXNW8VFPzqFFvu_mL2YkNQ_cHk/edit?usp=sharing
 Join the FORRT Slack | Where the community talks | https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ
 {{< /action_cards >}}
+
+</div>
+</div>

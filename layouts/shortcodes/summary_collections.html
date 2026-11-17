@@ -1,7 +1,7 @@
-{{/* The two collections of summaries as action bricks (the action_cards markup), each in its area's colour
-     (DESIGN.md §6: a brick that stands for something with a colour of its own takes that colour) and with its
-     count, counted as doors/summary_entries lists them. */}}
-<ul class="action-cards summary-collections">
-  <li style="--tone:var(--res)"><a href="{{ relref .Page "/summaries/open-reproducible" }}"><strong>Read open and reproducible science summaries</strong><span>{{ partial "doors/summary_count" false }} summaries: takeaways, abstracts and references, with a filter</span></a></li>
-  <li style="--tone:var(--jus)"><a href="{{ relref .Page "/summaries/diversity-equity-inclusion" }}"><strong>Read diversity, equity and inclusion summaries</strong><span>{{ partial "doors/summary_count" true }} summaries on diversity, equity and inclusion in academia</span></a></li>
+{{/* The summaries overview opens with its two collections as a hero of two large bricks, each in its area's colour
+     (DESIGN.md §6: a brick that stands for something with a colour of its own takes that colour) and led by its
+     count, set as large as on the collection pages and counted as doors/summary_entries lists them. */}}
+<ul class="summary-hero">
+  <li class="summary-hero-res"><a href="{{ relref .Page "/summaries/open-reproducible" }}"><span class="summary-hero-count">{{ partial "doors/summary_count" false }}</span><strong>Open and reproducible science summaries</strong><span class="summary-hero-text">Takeaways, abstracts and references, with a filter</span><span class="summary-hero-go">Read the summaries</span></a></li>
+  <li class="summary-hero-jus"><a href="{{ relref .Page "/summaries/diversity-equity-inclusion" }}"><span class="summary-hero-count">{{ partial "doors/summary_count" true }}</span><strong>Diversity, equity and inclusion summaries</strong><span class="summary-hero-text">On diversity, equity and inclusion in academia</span><span class="summary-hero-go">Read the summaries</span></a></li>
 </ul>

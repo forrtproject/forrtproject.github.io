@@ -82,6 +82,9 @@ ul.list-items>li[hidden]{display:none}
 .nla-latest-month{margin:4px 0 12px;font:var(--display-weight) clamp(40px,4.4vw,60px)/1.02 var(--display);letter-spacing:-.01em}
 .nla-latest-summary{max-width:34em;margin:0 0 18px;font-size:18px;line-height:1.5}
 .nla-latest-link{display:inline-flex;align-items:center;min-height:44px;margin-top:auto;padding:0 20px;background:#fff;border-radius:999px;color:var(--ink);font-weight:700;text-decoration:none}
+/* Without a summary the brick is only as tall as its month and button, instead of stretching to the sign-up's height. */
+.nla-latest-short{align-self:start}
+.nla-latest-short .nla-latest-link{margin-top:6px}
 .nla-latest-link:hover{text-decoration:underline;text-underline-offset:3px}
 .nla-latest-link:focus-visible{outline:3px solid #fff;outline-offset:3px}
 .nla-subscribe-band{padding:24px 26px;background:var(--surface);border-radius:var(--r-large)}
