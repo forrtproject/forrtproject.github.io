@@ -47,7 +47,7 @@
 
 /* Filters on the publications and partners pages. */
 .filter-container{margin:0 0 24px}
-.filter-section-title{margin:0 0 6px;font-size:16px;font-weight:700}
+.filter-section-title{display:block;margin:0 0 6px;font-size:16px;font-weight:700}
 .pill-bar{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 16px}
 .filter-pill{min-height:44px;padding:5px 14px;background:#fff;border:1.5px solid var(--soft);border-radius:999px;color:var(--ink);font:600 15px/1.3 var(--text)}
 .filter-pill:hover{border-color:var(--ink)}
@@ -239,8 +239,8 @@
   .article-layout .article-style .team-rows li>div>h3{grid-column:2;margin:0}
   .team-rows li>img{width:48px;height:48px;padding:6px}
   .team-rows .clamp-desc{margin-top:8px}
-  .partner-content>.partner-logo-container:empty{display:none}
-  .partner-content:has(>.partner-logo-container:empty) .partner-title{grid-column:1/-1}
+  .partner-content>.partner-logo-container:not(:has(img)){display:none}
+  .partner-content:has(>.partner-logo-container:not(:has(img))) .partner-title{grid-column:1/-1}
 }
 /* Get involved projects: 17 px text and 44 px actions (DESIGN.md §7, §9). */
 .article-layout .article-style .get-involved-card :is(p,li),.get-involved-card .clamp-desc{font-size:17px}
@@ -252,7 +252,7 @@
    introduction takes the first cell of the grid of teams. */
 @media(min-width:1001px){
   .people-layout{display:flow-root}
-  .people-intro{float:left;width:min(540px,42%);margin:0 48px 24px 0}
+  .people-intro{float:inline-start;width:min(540px,42%);margin-block:0 24px;margin-inline:0 48px}
   .people-intro .people-about>:first-child{margin-top:0}
   .article-layout .article-style .people-layout .people-wall{display:block;margin:0}
   .article-layout .article-style .people-layout .people-wall li{display:inline-block;width:200px;margin:0 16px 18px 0;vertical-align:top}

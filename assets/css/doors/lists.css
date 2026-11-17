@@ -59,10 +59,9 @@ ul.list-items>li[hidden]{display:none}
 .ac-link{color:var(--link);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1.5px}
 .ac-link::after{content:"";position:absolute;inset:0}
 .announcement-card:hover .ac-link{color:var(--ink)}
-.ac-link:focus-visible{outline:none}
-.announcement-card:has(.ac-link:focus-visible){outline:3px solid var(--ink);outline-offset:3px}
+@supports selector(:has(*)){.ac-link:focus-visible{outline:none}.announcement-card:has(.ac-link:focus-visible){outline:3px solid var(--ink);outline-offset:3px}}
 /* The start of the summary: four lines; the card leads to the rest. */
-.ac-summary{margin:0;font-size:17px;line-height:1.45;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4;line-clamp:4;overflow:hidden}
+.ac-summary{margin:0;overflow-wrap:anywhere;font-size:17px;line-height:1.45;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4;line-clamp:4;overflow:hidden}
 .tags-note{max-width:40em;font-size:17px}
 .tags-note a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
 .tag-cloud{display:flex;flex-wrap:wrap;gap:6px;margin:18px 0 0}
