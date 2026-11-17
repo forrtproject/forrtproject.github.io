@@ -30,10 +30,36 @@
     {{ if and (in (slice "post" "educators-corner" "pedagogies") .Type) (not .Date.IsZero) }}<time class="byline-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time>{{ end }}
     {{ if and (eq .Type "post") (ge .ReadingTime 3) }}<span class="byline-time">{{ .ReadingTime }} {{ i18n "minute_read" }}</span>{{ end }}
   </div>
+  {{/* A pedagogy's materials (syllabus, slides, videos, the interview) are what a teacher came for: bricks,
+       each saying where it leads (DESIGN.md §4 action cards). */}}
+  {{ if and (eq .Type "pedagogies") .IsPage .Params.links }}
+  <ul class="action-cards material-cards">
+    {{ range .Params.links }}
+      {{ $link := .url | default "" }}{{ $where := "" }}
+      {{ $u := urls.Parse $link }}
+      {{ if not $u.Scheme }}
+        {{ with $page.Resources.GetMatch $link }}{{ $link = .RelPermalink }}{{ else }}{{ $link = $link | relURL }}{{ end }}
+      {{ end }}
+      {{ $host := strings.TrimPrefix "www." $u.Host }}
+      {{ if strings.HasSuffix (lower $u.Path) ".pdf" }}{{ $where = "PDF" }}
+      {{ else if in $u.Path "/presentation/" }}{{ $where = "Google Slides" }}
+      {{ else if or (eq $host "youtube.com") (eq $host "youtu.be") }}{{ $where = cond (in $u.Path "playlist") "YouTube playlist" "YouTube video" }}
+      {{ else if eq $host "osf.io" }}{{ $where = "OSF" }}
+      {{ else }}{{ $where = $host }}{{ end }}
+      <li><a href="{{ $link }}"><strong>{{ trim .name " " }}</strong><span>{{ $where }}</span></a></li>
+    {{ end }}
+  </ul>
+  {{ else }}
   {{ partial "page_links_div.html" $page }}
+  {{ end }}
 </header>
 {{/* With a hero image (doors/page_hero), that is the page's one picture at the top. */}}
 {{ if not .Params.hero_image }}
+{{/* A news post without a picture of its own opens with the coloured panel the news list shows for it. */}}
+{{ $tone := cond (and (eq .Type "post") .IsPage) (index (partialCached "doors/post_panels" site "post-panels") .RelPermalink) false }}
+{{ with $tone }}
+<div class="article-panel ac-panel ac-panel-{{ . }}" aria-hidden="true"><span>{{ with $page.Params.categories }}{{ index . 0 }}{{ else }}News{{ end }}</span><strong>{{ $page.Date.Format "January 2006" }}</strong></div>
+{{ end }}
 {{ if and .Params.header.image (not (and $featured (not .Params.image.preview_only))) }}
 <figure class="article-image">
   {{ $src := urls.Parse .Params.header.image }}

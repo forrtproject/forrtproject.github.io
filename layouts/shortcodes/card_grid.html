@@ -1,0 +1,13 @@
+{{/* Pale cards, two or more to a row on a wide screen, from the Markdown inside: each `###` heading starts a card
+     and takes what follows it up to the next. Anything before the first heading stays as text above the cards.
+     Optional: area ("edu", "res", "jus" or "com"), for the pale ground of the area the cards belong to
+     (DESIGN.md §6). e.g. {{< card_grid area="jus" >}}### Planning ... ### Writing ...{{< /card_grid >}} */}}
+{{ $html := .Page.RenderString (dict "display" "block") (trim .Inner "\n") }}
+{{ $parts := split $html "<h3" }}
+{{ with index $parts 0 }}{{ with trim . " \n" }}{{ . | safeHTML }}{{ end }}{{ end }}
+{{ if gt (len $parts) 1 }}
+<div class="card-grid{{ with .Get "area" }} card-grid-{{ . }}{{ end }}">
+  {{ range after 1 $parts }}<div class="card-grid-item">{{ printf "<h3%s" . | safeHTML }}</div>
+  {{ end }}
+</div>
+{{ end }}

@@ -1,16 +1,60 @@
-{{/* The side card on the reading layout: dates, and contents when there are headings to jump to. */}}
+{{/* The side card on the reading layout. On an article (news, Educators' Corner, Pedagogies) it says who wrote
+     it, with their photos, role and links (in place of the theme's author box at the foot), when, and where
+     more of the same are; Educators' Corner and Pedagogies are education's, so their card is on its pale
+     ground (DESIGN.md §6). Every page with headings to jump to also gets its contents here. */}}
 {{ $p := .page }}
+{{ $article := and $p.IsPage (in (slice "post" "educators-corner" "pedagogies") $p.Type) }}
+{{ $updated := ne ($p.Lastmod.Format "2006-01-02") ($p.Date.Format "2006-01-02") }}
+{{/* Authors with a profile page, photo first; the rest by name. */}}
+{{ $authors := slice }}
+{{ if $article }}{{ range $p.Params.authors }}
+  {{ $profile := site.GetPage (printf "/authors/%s" (urlize .)) }}
+  {{ $authors = $authors | append (dict "name" . "profile" $profile) }}
+{{ end }}{{ end }}
+{{/* Where more of the same are: a newsletter's archive, or the article's section. */}}
+{{ $more := "" }}{{ $moreLabel := "" }}
+{{ if $article }}
+  {{ if and (eq $p.Type "post") (in ($p.Params.categories | default slice) "Newsletter") }}
+    {{ with site.GetPage "/newsletters" }}{{ $more = .RelPermalink }}{{ $moreLabel = "All newsletters" }}{{ end }}
+  {{ end }}
+  {{ if not $more }}{{ with $p.Parent }}
+    {{ $more = .RelPermalink }}
+    {{ $moreLabel = index (dict "post" "All news and announcements" "educators-corner" "More from Educators' Corner" "pedagogies" "More pedagogies") $p.Type }}
+  {{ end }}{{ end }}
+{{ end }}
 {{/* On a narrow screen the byline shows the publication date for these types (doors/article_header), and the phone
      contents replace the card's, so a card with nothing more than that date is left out there (article.css). */}}
-{{ $updated := ne ($p.Lastmod.Format "2006-01-02") ($p.Date.Format "2006-01-02") }}
-{{ $repeats := and .hasDates (not $updated) (in (slice "post" "educators-corner" "pedagogies") $p.Type) (not $p.Date.IsZero) }}
-<section class="article-card{{ if $repeats }} article-card-repeats{{ end }}" aria-label="About this article">
+{{ $repeats := and .hasDates (not $updated) $article (not $p.Date.IsZero) (not $authors) (not $more) }}
+<section class="article-card{{ if $repeats }} article-card-repeats{{ end }}{{ if $article }} article-card-article{{ end }}{{ if in (slice "educators-corner" "pedagogies") $p.Type }} article-card-edu{{ end }}" aria-label="About this article">
+  {{ with $authors }}
+  {{ $shown := first 4 . }}
+  <ul class="card-authors">
+    {{ range $shown }}
+    <li>
+      {{ with .profile }}
+        {{ $avatar := (.Resources.ByType "image").GetMatch "*avatar*" }}
+        {{ with $avatar }}<img src="{{ (.Fill "112x112 Center webp q80").RelPermalink }}" width="56" height="56" alt="" loading="lazy">{{ end }}
+        <div>
+          <a class="card-author-name" href="{{ .RelPermalink }}">{{ .Title }}</a>
+          {{ with .Params.role }}<p class="card-author-role">{{ . | markdownify | emojify }}</p>{{ end }}
+          {{ if eq (len $authors) 1 }}{{ with .Params.bio }}<p class="card-author-bio">{{ . | markdownify | emojify }}</p>{{ end }}{{ end }}
+          {{ if .Params.social }}{{ partial "social_links" . }}{{ end }}
+        </div>
+      {{ else }}
+        <div><span class="card-author-name">{{ .name }}</span></div>
+      {{ end }}
+    </li>
+    {{ end }}
+  </ul>
+  {{ if gt (len .) 4 }}<p class="card-authors-more">and {{ sub (len .) 4 }} more, named above</p>{{ end }}
+  {{ end }}
   {{ if .hasDates }}
   <dl>
     <dt>Published</dt><dd>{{ $p.Date.Format "2 January 2006" }}</dd>
     {{ if $updated }}<dt>Updated</dt><dd>{{ $p.Lastmod.Format "2 January 2006" }}</dd>{{ end }}
   </dl>
   {{ end }}
+  {{ with $more }}<p class="card-more"><a href="{{ . }}">{{ $moreLabel }}</a></p>{{ end }}
   {{ if gt (len .headings) 1 }}
   <h2>On this page</h2>
   <div class="article-toc">

@@ -13,6 +13,11 @@
     {{ if hasSuffix .url (printf "/%s/" $month) }}{{ $body = replaceRE `https://eocampaign1\.com/web-version[^"]*"( target="_blank" rel="noopener")?` (printf `%s"` (relURL .url)) $body | safeHTML }}{{ end }}
   {{ end }}
 {{ end }}
+{{/* A news post's one call to action, a paragraph that is nothing but a link ("Read the newsletter",
+     "Try the chatbot"), is a button; only the first, so the post keeps one main action (DESIGN.md §3). */}}
+{{ if and (eq .Type "post") .IsPage }}
+  {{ $body = replaceRE `<p>\s*<a href="([^"]+)"([^>]*)>([^<]+)</a>\s*</p>` `<p class="post-action"><a class="btn btn-primary" href="$1"$2>$3</a></p>` $body 1 | safeHTML }}
+{{ end }}
 {{ $contents := cond (findRE `(?i)<h1\b` .Content 1 | len | lt 0) slice (findRE `<li` .TableOfContents 1) }}
 {{ $written := findRESubmatch `<h2[^>]*\bid="?([^"> ]+)"?[^>]*>([\s\S]*?)</h2>` $body }}
 {{/* A short page's real sections can sit a level down. */}}
@@ -25,7 +30,7 @@
 {{ $card := "" }}
 {{ if $hasCard }}{{ $card = partial "doors/reading_card" (dict "page" . "hasDates" $hasDates "headings" $headings "contents" $contents "written" $written) }}{{ end }}
 <div class="wrap">
-  <div class="article-layout{{ if $hasCallouts }} article-layout-callouts{{ else if not $hasCard }} article-layout-single{{ end }}{{ if $wide }} article-layout-wide{{ end }}">
+  <div class="article-layout article-type-{{ .Type | urlize }}{{ if $hasCallouts }} article-layout-callouts{{ else if not $hasCard }} article-layout-single{{ end }}{{ if $wide }} article-layout-wide{{ end }}">
     {{/* A page whose picture is the thing itself opens with it beside the heading (doors/page_hero). */}}
     {{ $hero := and .Params.hero_image (not .Params.hide_page_header) }}
     {{ if $hero }}{{ partial "doors/page_hero" (dict "page" . "head" (partial "doors/article_header" .)) }}{{ end }}
@@ -54,4 +59,5 @@
       </div>
     </article>
   </div>
+  {{ partial "doors/read_next" . }}
 </div>
