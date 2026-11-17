@@ -616,3 +616,6 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
 /* On a phone the byline gives the date under the title, so the card at the end gives only an update. */
 @media(max-width:1000px){.article-layout .article-card-article dl>:is(dt:first-child,dt:first-child+dd){display:none}.article-layout .article-card-article dl>dt:nth-child(3){margin-top:0}}
 @media(max-width:1000px){.article-layout .article-card-article dl:not(:has(>dt:nth-child(3))){display:none}}
+/* Below 1001 px the card comes after the text and the byline has already named every author; the compact block
+   (photos and names only, no roles or links) would just repeat them, so it is left out there. */
+@media(max-width:1000px){.article-layout .card-authors-compact{display:none}.article-layout .article-card-article:not(:has(.card-authors,.card-more,dl>dt:nth-child(3))){display:none}}
