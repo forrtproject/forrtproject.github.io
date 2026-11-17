@@ -306,9 +306,14 @@ ARCHIVE_STYLE = (
     # The social icons are 24 px pictures; padding makes each a 44 px target (DESIGN.md §9).
     '#main [class*="mcnFollow"] a{display:inline-block;padding:10px}'
     '#main td.mcnFollowIconContent{width:auto!important}#main [class*="mcnFollow"] img{max-width:none!important}'
-    ".forrt-pager{max-width:640px;margin:32px auto 0;padding:16px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;"
+    ".forrt-pager{max-width:640px;margin:32px auto 0;padding:16px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:4px 24px;"
     'font:17px/1.4 "Source Sans 3",system-ui,sans-serif}'
     ".forrt-pager a{display:inline-flex;align-items:center;min-height:44px;color:#0b5a87;text-decoration:underline;text-underline-offset:3px}"
+    # One layout at every width and text size, in reading order: previous on the left and next on the right
+    # (DESIGN.md §8), the archive centred below them. Empty placeholders keep their cells; long labels wrap.
+    ".forrt-pager>:nth-child(2){justify-self:end;text-align:right}"
+    ".forrt-pager>:nth-child(3){grid-column:1/-1;justify-self:center}"
+    ".forrt-pager a{overflow-wrap:anywhere}"
     ".forrt-skip{position:absolute;left:-9999px}"
     ".forrt-skip:focus{left:16px;top:8px;z-index:9;padding:8px 14px;background:#fff;color:#1f2a37}"
     '.forrt-archive-bar{max-width:640px;margin:0 auto;padding:20px 16px 16px;font:17px/1.4 "Source Sans 3",system-ui,sans-serif;color:#1f2a37}'
@@ -401,11 +406,11 @@ def issue_label(folder):
 
 
 def with_pager(page, previous, following):
-    """Previous and next issue links at the end of the newsletter, with the archive between them."""
+    """Previous and next issue links at the end of the newsletter, then the archive."""
     parts = []
     parts.append('<a href="/newsletters/%s/" rel="prev">&larr; %s</a>' % (previous, issue_label(previous)) if previous else "<span></span>")
-    parts.append('<a href="/newsletters/">Newsletter archive</a>')
     parts.append('<a href="/newsletters/%s/" rel="next">%s &rarr;</a>' % (following, issue_label(following)) if following else "<span></span>")
+    parts.append('<a href="/newsletters/">Newsletter archive</a>')
     nav = '<nav class="forrt-pager" aria-label="Other issues">%s</nav>' % "".join(parts)
     page = PAGER.sub("", page)
     return page.replace("</main>", nav + "</main>", 1)

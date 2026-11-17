@@ -83,7 +83,7 @@
     group = "Who we are"
 
 [[main]]
-  name = "Get Involved"
+  name = "Get involved"
   url = "about/get-involved"
   weight = 20
   parent = "about"

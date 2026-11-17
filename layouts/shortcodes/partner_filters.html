@@ -25,6 +25,12 @@
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         document.querySelector('.partner-filters').hidden = false;
+        // The row's fading edge shows it scrolls; once it is scrolled to its end, the last button shows in full.
+        const bar = document.getElementById('pill-bar-cluster');
+        const atEnd = () => bar.classList.toggle('is-at-end', bar.scrollLeft + bar.clientWidth >= bar.scrollWidth - 2);
+        bar.addEventListener('scroll', atEnd, { passive: true });
+        addEventListener('resize', atEnd);
+        atEnd();
         const clusterPills = document.querySelectorAll('#pill-bar-cluster .filter-pill');
         const partnerCards = document.querySelectorAll('.partner-card');
         const sections = document.querySelectorAll('.partner-section-group');
