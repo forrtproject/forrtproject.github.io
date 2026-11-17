@@ -192,6 +192,17 @@ ul.list-items>li[hidden]{display:none}
 .brick-row.tag-top .action-cards a{min-height:0;padding:10px 14px 14px;box-shadow:inset 0 -4px 0 rgb(0 0 0/.24)}
 .brick-row.tag-top .action-cards strong{font-size:19px;line-height:1.15;overflow-wrap:anywhere}
 .brick-row.tag-top .action-cards span{font-size:15px}
+/* Every brick the same height, so a brick's size never reads as how much a tag is used; the count says that.
+   On phones one brick a row, so a long name takes two lines rather than four. */
+.brick-row.tag-top .action-cards{grid-auto-rows:1fr}
+.brick-row.tag-top .action-cards>li{display:flex}
+.brick-row.tag-top .action-cards>li>a{flex:1}
+@media(max-width:760px){
+  .brick-row.tag-top.tag-top .action-cards{grid-template-columns:minmax(0,1fr);grid-auto-rows:auto;gap:10px}
+  .brick-row.tag-top.tag-top .action-cards>li>a{flex-direction:row;flex-wrap:nowrap;justify-content:space-between;align-items:baseline;gap:12px}
+  .brick-row.tag-top.tag-top .action-cards strong{flex:1 1 auto;min-width:0;margin:0}
+  .brick-row.tag-top.tag-top .action-cards span{flex:none;margin:0}
+}
 @media(max-width:760px){.brick-row.tag-top .action-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.brick-row.tag-top .action-cards a{padding:8px 10px 10px}.brick-row.tag-top .action-cards strong{font-size:17px}}
 /* /forrt_clusters/<term>/ (doors/topic_resources.html): material types as filters, then the titles under letter
    headings with a row of letters to jump by, so a list of several hundred has places to skim by (DESIGN.md §4). */
