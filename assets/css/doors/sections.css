@@ -223,44 +223,46 @@
   .contributors-head .filter-grid>.filter-field:last-child{grid-column:1/-1}
 }
 @media(max-width:560px){.article-layout .filter-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.article-layout .filter-grid>.filter-field:last-child{grid-column:1/-1}}
-/* The letters of the surnames: a row of small bricks (the castle's action cards in miniature) that jump to each
-   letter, staying at the top of the screen while the list scrolls. The colours run through the bricks and carry
-   no meaning (DESIGN.md §6). */
-.contributor-az{position:sticky;top:0;z-index:5;display:flex;flex-wrap:wrap;gap:12px 4px;margin:28px 0 8px;padding:14px 0 8px;background:var(--page);box-shadow:0 1px 0 var(--line)}
-.article-layout .article-style .contributor-az a{position:relative;display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;padding:0 4px 4px;background:var(--brick);border-radius:3px;box-shadow:inset 0 -4px 0 rgb(0 0 0/.24);color:#fff;font:500 21px/1 var(--display);text-decoration:none}
-.contributor-az a::before{content:"";position:absolute;left:6px;right:6px;top:-5px;height:5px;background:linear-gradient(90deg,var(--brick) 0 8px,transparent 8px) left top/14px 5px space no-repeat;border-radius:2px 2px 0 0}
-.article-layout .article-style .contributor-az a:hover{text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:3px}
+/* The letters of the surnames: one row of plain letters that jump to each letter, staying at the top of the screen
+   while the list scrolls (the glossary's letter links, at 44 px). */
+.contributor-az{position:sticky;top:0;z-index:5;display:flex;flex-wrap:wrap;gap:6px 4px;margin:28px 0 8px;padding:12px 0 10px;background:var(--page);box-shadow:0 1px 0 var(--line)}
+.article-layout .article-style .contributor-az a{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;border-radius:var(--r-small);background:var(--surface);color:var(--ink);font:600 17px/1 var(--text);text-decoration:none}
+.article-layout .article-style .contributor-az a:hover{background:var(--res-bg);text-decoration:underline;text-underline-offset:3px}
 .contributor-az a:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
-:is(.contributor-az a,.contributor-letter):nth-of-type(4n+1){--brick:var(--brick1)}
-:is(.contributor-az a,.contributor-letter):nth-of-type(4n+2){--brick:var(--brick2)}
-:is(.contributor-az a,.contributor-letter):nth-of-type(4n+3){--brick:var(--brick3)}
-:is(.contributor-az a,.contributor-letter):nth-of-type(4n){--brick:var(--brick4)}
 html:has(.contributor-az){scroll-padding-top:calc(var(--contributor-az,72px) + 12px)}
 @media(max-width:760px){
   /* On a phone the letters are one line that scrolls sideways, so the list keeps the screen (DESIGN.md §9). The
      right edge fades out, with an arrow, until the line is scrolled to its end (contributor-filter.js), so the
      letters past the edge are seen to be there. */
-  .contributor-az{flex-wrap:nowrap;gap:5px;margin:20px -20px 8px;padding:12px 20px 8px;overflow-x:auto;scrollbar-width:none}
+  .contributor-az{flex-wrap:nowrap;gap:4px;margin:20px -20px 8px;padding:10px 20px 8px;overflow-x:auto;scrollbar-width:none}
   .article-layout .article-style .contributor-az a{flex:none}
-  .contributor-az::after{content:"›";position:sticky;right:-20px;flex:none;display:flex;align-items:center;justify-content:flex-end;width:56px;margin:-12px -20px -8px -56px;padding:0 10px 4px 0;background:linear-gradient(90deg,rgb(254 253 246/0),var(--page) 55%);color:var(--ink);font:600 30px/1 var(--text);pointer-events:none}
+  .contributor-az::after{content:"›";position:sticky;right:-20px;flex:none;display:flex;align-items:center;justify-content:flex-end;width:56px;margin:-10px -20px -8px -56px;padding:0 10px 2px 0;background:linear-gradient(90deg,rgb(254 253 246/0),var(--page) 55%);color:var(--ink);font:600 30px/1 var(--text);pointer-events:none}
   .contributor-az.is-at-end::after{visibility:hidden}
 }
-/* Each letter: its letter large in its brick's colour, then the contributors as pale cards in rows, so the
-   alphabetical order reads from left to right. */
+/* Each letter: its heading, then one row per person across the width, the name on the left and the projects, each
+   with its roles after it, on the right, with a hairline between people. Contributions are very unequal, so a
+   heavy contributor makes a taller row and leaves no gap beside it (DESIGN.md §4). On a phone the name sits above. */
 .contributor-letter{margin:0 0 28px}
-.article-layout .article-style .contributor-letter-heading{margin:24px 0 12px;padding:0 0 4px;font:500 44px/1 var(--display);color:var(--brick);border-bottom:3px solid var(--brick)}
-.article-layout .article-style ul.contributor-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr));gap:14px;align-items:start;max-width:none;margin:0;padding:0;list-style:none}
-.article-layout .article-style .contributor-cards>.contributor-group{display:block;max-width:none;margin:0;padding:14px 16px;background:var(--surface);border-radius:var(--r-large);font-size:16px;line-height:1.4}
-.article-layout .article-style .contributor-name{margin:0 0 6px;font:500 21px/1.2 var(--display)}
+.article-layout .article-style .contributor-letter-heading{margin:28px 0 0;padding:0 0 6px;font:500 36px/1 var(--display);color:var(--ink);border-bottom:2px solid var(--ink)}
+.article-layout .article-style ul.contributor-rows{max-width:none;margin:0;padding:0;list-style:none}
+.article-layout .article-style .contributor-rows>.contributor-group{display:grid;grid-template-columns:240px minmax(0,1fr);column-gap:28px;align-items:baseline;max-width:none;margin:0;padding:12px 0;border-bottom:1px solid var(--line);font-size:17px;line-height:1.45}
+.article-layout .article-style .contributor-rows>.contributor-group>:not(.contributor-name){grid-column:2}
+.article-layout .article-style .contributor-name{grid-row:1/span 2;margin:0;font:500 20px/1.3 var(--display)}
 .article-layout .article-style .contributor-name a{color:var(--link)}
-.article-layout .article-style .contributor-cards .contributions-list{margin:0;padding:0;list-style:none}
-.article-layout .article-style .contributor-cards .contribution{margin:0 0 6px;font-size:16px;line-height:1.4}
-.article-layout .article-style .contributor-cards .contribution:last-child{margin-bottom:0}
-.contribution-roles{display:block;color:var(--soft);font-size:15px}
-.article-layout .article-style .contributions-more{margin:6px 0 0}
+.article-layout .article-style .contributor-rows .contributions-list{max-width:none;margin:0;padding:0;list-style:none}
+.article-layout .article-style .contributor-rows .contribution{max-width:27em;margin:0 0 4px;font-size:17px;line-height:1.45}
+.article-layout .article-style .contributor-rows .contribution:last-child{margin-bottom:0}
+.contribution-roles{color:var(--soft);font-size:16px}
+.contribution-roles::before{content:"— "}
+.article-layout .article-style .contributions-more{margin:4px 0 0}
 .article-layout .article-style .contributions-more>summary{display:inline-flex;align-items:center;min-height:36px;color:var(--link);font-weight:600;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
-.article-layout .article-style .contributions-more[open]>summary{margin:0 0 6px}
-@media(max-width:760px){.article-layout .article-style .contributions-more>summary{min-height:44px}}
+.article-layout .article-style .contributions-more[open]>summary{margin:0 0 4px}
+@media(max-width:760px){
+  .article-layout .article-style .contributor-rows>.contributor-group{grid-template-columns:minmax(0,1fr)}
+  .article-layout .article-style .contributor-rows>.contributor-group>:not(.contributor-name){grid-column:1}
+  .article-layout .article-style .contributor-name{grid-row:auto;margin:0 0 4px}
+  .article-layout .article-style .contributions-more>summary{min-height:44px}
+}
 
 /* Testimonials: portraits float beside the text on a wide screen and sit above it on a phone.
    Their inline size would leave the text a strip about 200 px wide. */

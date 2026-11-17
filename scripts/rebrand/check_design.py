@@ -124,7 +124,10 @@ AUDIT = """() => {
     }
     return Math.round(Math.max(0, ...Object.values(lines)));
   };
+  // A grid's columns sit side by side but are not one line (a contributor's name beside their projects): its items
+  // are measured on their own instead.
   const long = [...main.querySelectorAll('.reading p,.reading li,.lede,.about-statement p,.forward p')]
+    .filter((el) => getComputedStyle(el).display !== 'grid')
     .filter((el) => el.getClientRects().length && lineChars(el) >= 80)
     .map((el) => lineChars(el) + ': ' + el.textContent.trim().slice(0, 40));
   return {

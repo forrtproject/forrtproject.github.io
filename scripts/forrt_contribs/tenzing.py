@@ -397,9 +397,9 @@ def normalize_for_attribute(text):
     return name
 
 
-# Group by 'ORCID iD' and build each contributor's card: the name as a heading (linked to ORCID where known),
+# Group by 'ORCID iD' and build each contributor's row: the name as a heading (linked to ORCID where known),
 # then one line per project, the project linked and its roles after it in plain text. A contributor with more
-# than SHOWN_PROJECTS + 1 projects shows the first SHOWN_PROJECTS and the rest behind a disclosure, so no card
+# than SHOWN_PROJECTS + 1 projects shows the first SHOWN_PROJECTS and the rest behind a disclosure, so no row
 # runs on for a screen; the filter (static/js/contributor-filter.js) opens it when it narrows the list.
 # Keep the exact attribute class="contributor-group": layouts/partials/doors/home/about.html counts it.
 SHOWN_PROJECTS = 4
@@ -424,7 +424,7 @@ def concatenate_contributions(group):
     min_order = group['original_order'].min()
 
     # A contributor's rows may spell the name differently (with or without a middle initial, a sheet's typo): the
-    # card shows the spelling most rows use, the earliest row breaking a tie, so the choice does not depend on row
+    # row shows the spelling most rows use, the earliest row breaking a tie, so the choice does not depend on row
     # order. The letter is the surname's on the row that places the contributor in the list.
     spellings = [format_name(row) for _, row in group.sort_values('original_order').iterrows()]
     full_name = html.escape(max(spellings, key=lambda name: (spellings.count(name), -spellings.index(name))), quote=False)
@@ -472,11 +472,11 @@ def concatenate_contributions(group):
         projects_attr = html.escape(normalized_project, quote=True)
         roles_attr = html.escape(','.join(contribution_roles), quote=True)
 
-        # Build the contribution <li>
-        contribution_items.append(
-            f'    <li class="contribution" data-projects="{projects_attr}" '
-            f'data-roles="{roles_attr}">{project_html}{roles_html}</li>'
-        )
+        # Build the contribution <li>; a sheet that lists the same project and roles twice shows them once
+        item = (f'    <li class="contribution" data-projects="{projects_attr}" '
+                f'data-roles="{roles_attr}">{project_html}{roles_html}</li>')
+        if item not in contribution_items:
+            contribution_items.append(item)
 
     if not contribution_items:
         return min_order, letter, ''
@@ -558,12 +558,12 @@ summary = summary.reset_index(drop=True)
 # One section per letter of the surnames, with an index of the letters above the list. A contributor placed at
 # the end out of order (above) stays at the end, in the last section.
 sections = []
-for _, cards in summary.groupby((summary['Letter'] != summary['Letter'].shift()).cumsum(), sort=False):
-    first = cards['Letter'].iloc[0]
-    if sections and len(cards) == 1 and cards['original_order'].iloc[0] == 99999:
-        sections[-1][1].append(cards['Contributions'].iloc[0])
+for _, people in summary.groupby((summary['Letter'] != summary['Letter'].shift()).cumsum(), sort=False):
+    first = people['Letter'].iloc[0]
+    if sections and len(people) == 1 and people['original_order'].iloc[0] == 99999:
+        sections[-1][1].append(people['Contributions'].iloc[0])
         continue
-    sections.append((first, list(cards['Contributions'])))
+    sections.append((first, list(people['Contributions'])))
 
 anchor = lambda letter: 'contributors-other' if letter == '#' else f'contributors-{letter.lower()}'
 letter_index = (
@@ -574,10 +574,10 @@ letter_index = (
 summary_string = letter_index + '\n\n'.join(
     f'<section class="contributor-letter" id="{anchor(letter)}">\n'
     f'<h2 class="contributor-letter-heading">{letter}</h2>\n'
-    f'<ul class="contributor-cards">\n\n'
-    + '\n'.join(cards)
+    f'<ul class="contributor-rows">\n\n'
+    + '\n'.join(people)
     + '\n</ul>\n</section>'
-    for letter, cards in sections
+    for letter, people in sections
 )
 
 

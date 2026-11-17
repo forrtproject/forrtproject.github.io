@@ -112,10 +112,10 @@
             if (filterResults) filterResults.style.display = 'none';
             
             document.querySelectorAll('.contributor-group').forEach(group => {
-                group.style.display = 'list-item';
+                group.style.display = '';
             });
             document.querySelectorAll('.contribution').forEach(contrib => {
-                contrib.style.display = 'list-item';
+                contrib.style.display = '';
             });
             return;
         }
@@ -167,7 +167,7 @@
 
                 // Show/hide this contribution
                 if (matches) {
-                    contrib.style.display = 'list-item';
+                    contrib.style.display = '';
                     visibleContributions++;
                 } else {
                     contrib.style.display = 'none';
@@ -176,7 +176,7 @@
 
             // Show/hide the entire group based on visible contributions
             if (visibleContributions > 0) {
-                group.style.display = 'list-item';
+                group.style.display = '';
                 totalMatches++;
             } else {
                 group.style.display = 'none';

@@ -43,23 +43,7 @@
 
                 <div class="pub-header">
                     <div class="pub-tags">
-                        {{/* Content Type Pill */}}
-                        {{ $typeLabel := index $typeMap .type }}
-                        {{ if not $typeLabel }}
-                        {{ $typeLabel = .type | humanize | title }}
-                        {{ end }}
-
-                        {{ $typeClass := "" }}
-                        {{ if $typeLabel }}
-                        {{ $typeClass = printf "pill-%s" ($typeLabel | urlize) }}
-                        {{ else }}
-                        {{ $typeClass = printf "pill-%s" (.type | urlize) }}
-                        {{ end }}
-
-                        {{ if eq .type "wip" }}{{ $typeClass = "pill-working-papers" }}{{ end }}
-
-                        <span class="pub-pill {{ $typeClass }}">{{ $typeLabel }}</span>
-
+                        {{/* No content-type tag: each section holds one type, and its heading names it. */}}
                         {{/* Focus Area Pill */}}
                         {{ if .focus_area }}
                         {{ $focusClass := printf "pill-%s" (.focus_area | urlize) }}
