@@ -35,7 +35,19 @@
       map.setMinZoom(0);
       map.invalidateSize();
       view();
-      map.setMinZoom(Math.min(map.getZoom(), map.getBoundsZoom([[-60, -180], [78, 180]])));
+      // Down to the whole world, and always at least one step below this view: on a phone the members already
+      // span the world, and a map that cannot zoom out from its first view feels stuck.
+      var lowest = Math.min(map.getZoom(), map.getBoundsZoom([[-60, -180], [78, 180]]));
+      if (lowest >= map.getZoom()) lowest = map.getZoom() - (map.options.zoomSnap || 1);
+      map.setMinZoom(lowest);
+      // Below zoom 0 the base map would vanish; let it draw its zoom-0 tiles, scaled down, instead.
+      map.eachLayer(function(layer) {
+        if (layer instanceof win.L.TileLayer && layer.options.minZoom > lowest) {
+          layer.options.minZoom = lowest;
+          layer.options.minNativeZoom = 0;
+          layer.redraw();
+        }
+      });
       // Its reset button would go back to zoom 2; make it come back to this view.
       win.document.addEventListener('click', function(event) {
         if (event.target.closest && event.target.closest('.easy-button-button')) {

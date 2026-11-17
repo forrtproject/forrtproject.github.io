@@ -7,7 +7,7 @@
   <section class="booklet-area booklet-area-{{ .key }}" aria-labelledby="booklet-{{ .key }}">
     <h3 id="booklet-{{ .key }}">{{ .title }}</h3>
     <ul>
-      {{ range .pages }}{{ $title := $.Page.RenderString .title }}<li>{{ with .url }}{{ $away := and (hasPrefix . "http") (not (hasPrefix . "https://forrt.org")) }}<a href="{{ cond (hasPrefix . "http") . (relLangURL .) }}">{{ $title }}{{ if $away }} <i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="visually-hidden"> (another website)</span>{{ end }}</a>{{ else }}{{ $title }}{{ end }}</li>{{ end }}
+      {{ range .pages }}{{ $title := $.Page.RenderString .title }}<li>{{ with .url }}{{ $host := strings.TrimPrefix "www." (urls.Parse .).Host }}{{ $away := and $host (ne $host site.Params.doors.host) }}<a href="{{ cond (hasPrefix . "http") . (relLangURL .) }}">{{ $title }}{{ if $away }} <i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="visually-hidden"> (another website)</span>{{ end }}</a>{{ else }}{{ $title }}{{ end }}</li>{{ end }}
     </ul>
   </section>
   {{ end }}
