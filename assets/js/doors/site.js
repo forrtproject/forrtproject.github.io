@@ -737,7 +737,12 @@ if (listFilter) {
         item.hidden = !match;
         if (match) { any = true; shown += 1; }
       });
-      if (heading) heading.hidden = Boolean(query || status || chosen.length) && !any;
+      if (heading) {
+        heading.hidden = Boolean(query || status || chosen.length) && !any;
+        // Its link in a row of letters (/forrt_clusters/<term>/) goes with it.
+        const jumpLink = heading.id && document.querySelector(`.topic-letters a[href="#${heading.id}"]`);
+        if (jumpLink) jumpLink.hidden = heading.hidden;
+      }
     });
     count.textContent = query && !shown ? `No ${noun} match “${input.value.trim()}”.` : `Showing ${shown} of ${total} ${noun}`;
     if (empty) empty.hidden = shown > 0;

@@ -9,13 +9,15 @@
   </div>
 
   {{/* The fields as the way in, in the first screen on a phone too: a brick for each, with its counts, linking to its
-       panel below. Brick colours carry no meaning (DESIGN.md §6); the fields' own panels keep their colours. */}}
+       panel below. Each brick takes the strong colour of its panel's pale one (disciplines/colors.html, by the field's
+       place in the list, as field_section.html does), so a field keeps one colour on the page. */}}
+  {{ $arrow := (partial "disciplines/colors.html").arrowColors }}
   {{ with site.Data.disciplines }}
   <nav class="wrap disc-fields brick-row" aria-labelledby="disc-fields-h">
     <h2 id="disc-fields-h" class="disc-fields__h">Choose your field</h2>
     <ul class="action-cards">
-      {{ range .fields }}{{ $res := 0 }}{{ range .disciplines }}{{ $res = add $res (len .resources) }}{{ end }}
-      <li><a href="#field-{{ int .number }}"><strong>{{ .name }}</strong><span>{{ len .disciplines }} discipline{{ if ne (len .disciplines) 1 }}s{{ end }} · {{ $res }} resources</span></a></li>
+      {{ range $fi, $f := .fields }}{{ $res := 0 }}{{ range .disciplines }}{{ $res = add $res (len .resources) }}{{ end }}
+      <li style="--brick: {{ index $arrow (mod $fi (len $arrow)) | safeCSS }}"><a href="#field-{{ int .number }}"><strong>{{ .name }}</strong><span>{{ len .disciplines }} discipline{{ if ne (len .disciplines) 1 }}s{{ end }} · {{ $res }} resources</span></a></li>
       {{ end }}
     </ul>
   </nav>

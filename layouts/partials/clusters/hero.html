@@ -7,6 +7,11 @@
 {{ $refs := 0 }}{{ range $c.sub_clusters }}{{ $refs = add $refs (len .publications) }}{{ end }}
 <header class="wrap cluster-hero" style="--c: var(--cl{{ $n }}); --c-bg: var(--cl{{ $n }}-bg);">
   <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ "" | relLangURL }}">Home</a> <span aria-hidden="true">/</span> <a href="{{ "nexus/" | relLangURL }}">Educational Nexus</a> <span aria-hidden="true">/</span> <a href="{{ "clusters/" | relLangURL }}">Clusters</a> <span aria-hidden="true">/</span> <span aria-current="page">{{ .page.Params.heading_title | default .page.Title }}</span></nav>
+</header>
+{{/* The panel sits in the same inset band as the filters and sub-clusters below (the 15 px of .cluster-full-width, without that class, which clusters-page.js reads for back to top), so their left
+     edges line up at every width; the breadcrumb stays at the page gutter, as on other pages. */}}
+<div class="cluster-hero-band" style="--c: var(--cl{{ $n }}); --c-bg: var(--cl{{ $n }}-bg);">
+  <div class="wrap">
   <div class="cluster-hero__panel">
     <div class="cluster-hero__text">
       <p class="cluster-hero__kicker">Cluster {{ $n }} of {{ .total }}</p>
@@ -17,4 +22,5 @@
     </div>
     <div class="cluster-hero__mark">{{ partial "clusters/icon.html" $n }}</div>
   </div>
-</header>
+  </div>
+</div>

@@ -96,10 +96,19 @@ function drawCard(index) {
   item.c.forEach((position, i) => {
     const chip = document.querySelector(`.facet[data-facet=cluster] .chip[data-value="${data.facets.cluster[position]}"]`);
     if (!chip) return;
-    if (tag.childNodes.length) tag.append(', ');
+    // A comma for screen readers only: on screen each cluster sits apart, its mark beside its name.
+    if (tag.childNodes.length) {
+      const comma = document.createElement('span');
+      comma.className = 'visually-hidden';
+      comma.textContent = ', ';
+      tag.append(comma);
+    }
     const name = document.createElement('span');
     name.className = 'res-cl';
-    if (chip.dataset.cl) name.style.setProperty('--c', `var(--cl${chip.dataset.cl})`);
+    if (chip.dataset.cl) {
+      name.dataset.cl = chip.dataset.cl;
+      name.style.setProperty('--c', `var(--cl${chip.dataset.cl})`);
+    }
     name.textContent = labelOf(chip);
     tag.append(name);
   });

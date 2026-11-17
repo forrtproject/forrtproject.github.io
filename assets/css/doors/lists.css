@@ -213,8 +213,28 @@ ul.list-items>li[hidden]{display:none}
 .article-style h2.topic-letter[hidden]{display:none}
 @media(max-width:760px){.article-style.cluster-resources-list .topic-letters a{min-width:44px;height:44px}.topic-types__chips{flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px;margin-inline-end:-16px;padding-inline-end:16px;-webkit-mask-image:linear-gradient(90deg,#000 85%,transparent);mask-image:linear-gradient(90deg,#000 85%,transparent)}.topic-types .ac-chip{flex:none}.topic-types legend{float:none;padding:0 0 8px}.article-style h2.topic-letter{scroll-margin-top:16px}}
 .topic-head{display:grid;min-width:0;grid-template-columns:minmax(0,1fr) 230px;gap:32px;align-items:end;max-width:1240px;margin-bottom:8px}
-.topic-head__tools>.topic-tools{margin-top:0}
+.article-layout .article-style .topic-head__tools>.list-filter.topic-tools{margin-top:0}
+.article-style.cluster-resources-list .topic-letters a[hidden]{display:none}
 .topic-plate{margin:0;background:var(--edu-bg);border-radius:999px 999px 0 0;padding:28px 18px 8px}
 .topic-plate img{display:block;width:100%;height:auto;max-height:160px;object-fit:contain}
 @media(max-width:1000px){.topic-head{grid-template-columns:minmax(0,1fr)}.topic-plate{display:none}}
 .article-style.cluster-resources-list ul.cluster-resources{margin:10px 0 0;padding:0}
+/* The illustration in the head of /forrt_clusters/ pages (_default/list.html): beside the title on the index; on a
+   term page only below 1001 px, small, as on /resources/ (DESIGN.md §9: same information on a phone). */
+.topic-heading{display:grid;grid-template-columns:minmax(0,1fr) 230px;column-gap:32px;align-items:end}
+.topic-heading>*{grid-column:1}
+.topic-heading>.topic-plate-head{grid-column:2;grid-row:1/span 3;align-self:end;margin:0;background:var(--edu-bg);border-radius:999px 999px 0 0;padding:28px 18px 8px}
+.topic-plate-head img{display:block;width:100%;height:auto;max-height:160px;object-fit:contain}
+.topic-heading--term{grid-template-columns:minmax(0,1fr)}
+.topic-heading--term>.topic-plate-head{display:none}
+@media(max-width:1000px){
+  .topic-heading,.topic-heading--term{grid-template-columns:minmax(0,1fr) 92px;column-gap:14px}
+  .topic-heading>.crumbs,.topic-heading>.standfirst{grid-column:1/-1}
+  .topic-heading>.topic-plate-head,.topic-heading--term>.topic-plate-head{display:block;grid-row:2;align-self:end;padding:14px 8px 4px}
+  .topic-plate-head img{max-height:80px}
+}
+.brick-row.topic-index .action-cards{grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr));gap:16px 5px;margin:28px 0 18px}
+.brick-row.topic-index .action-cards strong{font-size:22px;line-height:1.15}
+@media(max-width:760px){.brick-row.topic-index .action-cards{grid-template-columns:minmax(0,1fr)}}
+.topic-index__links{font-size:18px}
+.topic-index__links a{text-decoration:underline;text-underline-offset:3px}

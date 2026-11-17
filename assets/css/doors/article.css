@@ -502,4 +502,17 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
 .article-layout .article-style .list-filter-section.is-searching .entry-more{display:none}
 @media(max-width:760px){.article-layout .article-style .list-filter-section>ul>li{--entry-lines:3}}
 /* A cluster's small mark in its colour from the clusters wheel (resource pages' "About this resource"; DESIGN.md §6). */
-.cl-mark{display:inline-block;width:10px;height:10px;margin-inline-end:6px;border-radius:2px;background:var(--c,var(--soft));-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.cl-mark{display:inline-block;flex:none;width:10px;height:10px;margin-inline-end:6px;border-radius:2px;background:var(--c,var(--soft));-webkit-print-color-adjust:exact;print-color-adjust:exact}
+/* A resource's card in its first cluster's pale colour, with that cluster's wheel icon in a small door
+   (curated_resources/single.html; the cluster page's head mark, clusters.css .cluster-hero__mark, at card size). */
+.article-layout .article-card--cluster{background:var(--c-bg)}
+@media(max-width:1000px){.article-layout .article-card--cluster{position:relative}}
+/* On a phone a little less padding keeps a long cluster name and its mark on one line from about 390 px. */
+@media(max-width:760px){.article-layout .article-card--cluster{padding-inline:18px}}
+@media print{.article-card__door{display:none}}
+.article-layout .article-card--cluster h2{padding-inline-end:52px}
+.article-card__door{position:absolute;top:18px;inset-inline-end:18px;display:grid;place-items:center;width:40px;height:48px;background:var(--c);border-radius:20px 20px 3px 3px;box-shadow:inset 0 -4px 0 rgb(0 0 0/.22);color:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.article-card__door svg{width:20px;height:20px;margin-top:5px}
+.article-card dd.cl-list{display:flex;flex-direction:column;gap:4px}
+.cl-item{display:flex;align-items:baseline}
+.cl-item .cl-mark{transform:translateY(-1px)}

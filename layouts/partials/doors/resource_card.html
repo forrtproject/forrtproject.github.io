@@ -7,5 +7,5 @@
   <p class="res-format"><span class="res-type">{{ delimit .types ", " }}</span> {{/* Two levels at most, then a count, so rows keep an even rhythm; the full list is on the resource page. */}}<span class="res-level">{{ delimit (first 2 .levels) ", " }}{{ if gt (len .levels) 2 }} +{{ sub (len .levels) 2 }}{{ end }}</span></p>
   <h2 class="res-title"><a href="{{ .url }}">{{ .title }}</a></h2>
   <p class="res-desc">{{ .desc }}</p>
-  <p class="res-tag">{{ range $i, $c := .clusters }}{{ if $i }}, {{ end }}<span class="res-cl"{{ with index $num (lower $c | urlize) }} style="--c: var(--cl{{ . }})"{{ end }}>{{ $c }}</span>{{ end }}</p>
+  <p class="res-tag">{{ range $i, $c := .clusters }}{{ if $i }}<span class="visually-hidden">, </span>{{ end }}<span class="res-cl"{{ with index $num (lower $c | urlize) }} data-cl="{{ . }}" style="--c: var(--cl{{ . }})"{{ end }}>{{ $c }}</span>{{ end }}</p>
 </article>

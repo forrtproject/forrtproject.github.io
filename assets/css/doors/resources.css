@@ -109,8 +109,11 @@
    from the clusters wheel; the cluster filters carry the same marks (DESIGN.md §6). */
 .res-desc{margin:2px 0 2px;font-size:16px;line-height:1.45;color:var(--ink);display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2;overflow:hidden}
 .res-desc:empty{display:none}
-.res-cl::before,.chip[data-cl]::before{content:"";display:inline-block;width:10px;height:10px;margin-inline-end:6px;border-radius:2px;background:var(--c,var(--soft));vertical-align:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
-.res-cl{white-space:normal}
+.res-cl[data-cl]::before,.chip[data-cl]::before{content:"";display:inline-block;width:10px;height:10px;margin-inline-end:6px;border-radius:2px;background:var(--c,var(--soft));vertical-align:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+/* Each cluster apart from the next, with its mark kept beside its name; a long name wraps under itself. */
+.res-tag:has(.res-cl){display:flex;flex-wrap:wrap;gap:2px 16px}
+.res-cl{display:inline-flex;align-items:baseline;white-space:normal}
+.res-cl[data-cl]::before{flex:none;transform:translateY(-1px)}
 .chip[data-cl]::before{flex:none;align-self:center;margin-inline-end:0}
 .chip[aria-pressed=true][data-cl]::before{outline:1.5px solid #fff}
 /* Ready-made materials as bricks under the lede (the action_cards pattern, article.css). */
