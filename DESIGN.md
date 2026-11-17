@@ -50,7 +50,7 @@ Every repeated device has to earn its place. In practice:
 
 - FORRT works in four areas of equal standing: Education & Pedagogy, Meta-Science & Research, Social Justice & DEIA, and Community & Sustainability. Each has its colour: education `--edu` (green), research `--res` (dark blue), social justice `--jus` (purple), community `--com` (brown). Pages and cards that belong to an area use its colour and its pale background (`--edu-bg` and so on). Area colours appear only for their areas.
 - The 11 FORRT clusters are not areas. Each keeps a colour of its own, and together they span the spectrum (`layouts/partials/clusters/colors.html`), so the clusters can be told apart. Strong cluster colours are for small marks; their backgrounds stay pale.
-- Replication outcomes (Reversals) have a scale of their own, from green for replicated to wine for reversed, with grey for no status (`--out-*` in `article.css`). An effect's chip, its card and its part of the outcome bar share the colour.
+- Replication outcomes (Reversals) have a scale of their own, from green for replicated to wine for reversed, with grey for no status (`--out-*` in `tokens.css`). An effect's chip, its card and its part of the outcome bar share the colour.
 - Rows of action bricks run through four brick colours of their own (`--brick1` to `--brick4`: wine, olive, slate and ochre), chosen to stay clear of the area colours. They add variety and carry no meaning. Where each brick stands for something that has a colour of its own, such as the Replication Hub's stages, it takes that colour instead. Do not use shades of one colour for variety: they read as more and less important.
 - `--hot` (orange) is for highlights, `--urgent` (red) only for urgency. White is a clean ground.
 - Colour is fresh but not loud: no large areas of saturated colour, no intense full-bleed colour, no dark band across the page, no grey-and-beige, and no beige highlights.
@@ -85,7 +85,7 @@ Images in the first screen are not lazy-loaded.
 
 - Show the same information as on desktop, in a different order if needed. Hide a part only when it repeats something already on the screen; for example, the home page's secondary actions are hidden at 760 px and below.
 - Tap targets are at least 44 px, including small close buttons. A small visible control can have a larger invisible tap area.
-- A toolbar may stay on screen while a long list scrolls. On a phone only its search row stays, so the list keeps most of the screen.
+- A toolbar may stay on screen while a long list scrolls. On a phone only one row of it stays, its search row or a letter index (Contributors), so the list keeps most of the screen. A row that scrolls sideways fades at its edge so that what lies past it is seen to be there.
 - Do not repeat navigation: hide a "Go to" menu where the side contents card already lists the same sections.
 - The phone menu keeps the chosen section visible, opens its submenu directly below it, and has a visible way to close it.
 

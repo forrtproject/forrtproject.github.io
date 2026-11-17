@@ -330,12 +330,20 @@ merged_data['special_role'] = False
 merged_data = pd.concat([df_roles, merged_data], axis=0)
 merged_data.reset_index(drop=True, inplace=True)
 
-# Sort based on surname, ignoring case and accents, so that each letter of the A–Z index is one run
-merged_data['sort_order'] = merged_data['Surname'].map(
-    lambda surname: unicodedata.normalize('NFKD', surname.strip().lstrip('*')).encode('ascii', 'ignore').decode().casefold()
-    if isinstance(surname, str) else '')
-merged_data = merged_data.sort_values(by='sort_order', kind='stable')
-merged_data = merged_data.drop(columns='sort_order')
+def name_key(name):
+    """A name as it sorts: letter by letter, ignoring case, accents, spaces, hyphens and apostrophes, so that
+    "Alarie" comes before "Al-Hoorie". A particle stays part of the surname as entered: "de Bruijn" files under D."""
+    if not isinstance(name, str):
+        return ''
+    plain = unicodedata.normalize('NFKD', name).encode('ascii', 'ignore').decode().casefold()
+    return ''.join(char for char in plain if char.isalnum())
+
+
+# Sort by surname, then first name, so that each letter of the A–Z index is one run in alphabetical order
+merged_data['sort_surname'] = merged_data['Surname'].map(name_key)
+merged_data['sort_first'] = merged_data['First name'].map(name_key)
+merged_data = merged_data.sort_values(by=['sort_surname', 'sort_first'], kind='stable')
+merged_data = merged_data.drop(columns=['sort_surname', 'sort_first'])
 
 # Strip spaces from 'ORCID iD' in merged data
 merged_data['ORCID iD'] = merged_data['ORCID iD'].str.strip()
@@ -504,11 +512,8 @@ def concatenate_contributions(group):
 
 
 def surname_letter(surname):
-    """The letter a surname files under: its first letter without accents, or # for anything else."""
-    if not isinstance(surname, str):
-        return '#'
-    plain = unicodedata.normalize('NFKD', surname.strip().lstrip('*')).encode('ascii', 'ignore').decode()
-    letter = plain[:1].upper()
+    """The letter a surname files under: the first letter of its sort key (name_key), or # for anything else."""
+    letter = name_key(surname)[:1].upper()
     return letter if 'A' <= letter <= 'Z' else '#'
 
 

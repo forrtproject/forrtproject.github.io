@@ -232,6 +232,13 @@
         if (letterIndex && window.ResizeObserver) {
             new ResizeObserver(() => document.documentElement.style.setProperty('--contributor-az', letterIndex.offsetHeight + 'px')).observe(letterIndex);
         }
+        // On a phone the letters scroll sideways; the fade at the right edge goes once the last letter is in view.
+        if (letterIndex) {
+            const markEnd = () => letterIndex.classList.toggle('is-at-end', letterIndex.scrollLeft + letterIndex.clientWidth >= letterIndex.scrollWidth - 2);
+            letterIndex.addEventListener('scroll', markEnd, { passive: true });
+            window.addEventListener('resize', markEnd);
+            markEnd();
+        }
 
         // Check if filter should be collapsed
         const isCollapsed = handleCollapsedFilter();

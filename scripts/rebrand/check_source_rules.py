@@ -42,7 +42,7 @@ GENERATED = re.compile(
 )
 
 # First outputs of generators added on the branch, committed with them; main has no copy yet.
-NEW_OUTPUTS = {"data/open_research_games.json"}
+NEW_OUTPUTS = {"data/open_research_games.json", "data/scholar_citations.json"}
 
 
 def repo_files(root="."):

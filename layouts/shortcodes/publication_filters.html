@@ -14,18 +14,12 @@
   (slice "Working Papers & Ongoing Projects" "Working papers and ongoing projects")
   (slice "Affiliated Projects" "Affiliated projects")
 }}
-{{ $areas := slice
-  (slice "all" "All areas" "")
-  (slice "Meta-Research & Scientific Reform" "Meta-research and scientific reform" "res")
-  (slice "Equity, Diversity & Social Justice" "Equity, diversity and social justice" "jus")
-  (slice "Community, Governance & Sustainability" "Community, governance and sustainability" "com")
-  (slice "Education & Pedagogy" "Education and pedagogy" "edu")
-}}
+{{ $areas := partial "functions/publication_areas.html" . }}
 <div class="filter-container pub-filters" hidden>
 
     <div class="pub-filter-group">
         <label class="filter-section-title" for="pub-type-select">Content type</label>
-        <select id="pub-type-select" class="partner-select">
+        <select id="pub-type-select" class="partner-select" autocomplete="off">
             {{ range $types }}<option value="{{ index . 0 }}">{{ index . 1 }}</option>
             {{ end }}
         </select>
@@ -37,12 +31,14 @@
 
     <div class="pub-filter-group">
         <label class="filter-section-title" for="pub-focus-select">Research area</label>
-        <select id="pub-focus-select" class="partner-select">
-            {{ range $areas }}<option value="{{ index . 0 }}">{{ index . 1 }}</option>
+        <select id="pub-focus-select" class="partner-select" autocomplete="off">
+            <option value="all">All areas</option>
+            {{ range $areas }}<option value="{{ .value }}">{{ .label }}</option>
             {{ end }}
         </select>
         <div id="pill-bar-focus" class="pill-bar" role="group" aria-label="Research area">
-            {{ range $i, $a := $areas }}<button type="button" class="filter-pill{{ if eq $i 0 }} active{{ end }}" aria-pressed="{{ if eq $i 0 }}true{{ else }}false{{ end }}" data-group="focus" data-value="{{ index $a 0 }}"{{ with index $a 2 }} data-area="{{ . }}"{{ end }}>{{ index $a 1 }}</button>
+            <button type="button" class="filter-pill active" aria-pressed="true" data-group="focus" data-value="all">All areas</button>
+            {{ range $areas }}<button type="button" class="filter-pill" aria-pressed="false" data-group="focus" data-value="{{ .value }}" data-area="{{ .area }}">{{ .label }}</button>
             {{ end }}
         </div>
     </div>

@@ -405,16 +405,8 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .article-layout .article-style li .spoiler>summary::before{content:"▸";display:inline-block;margin-inline-end:6px;text-decoration:none;transition:transform .15s}
 .article-layout .article-style li .spoiler[open]>summary::before{transform:rotate(90deg)}
 .article-layout .article-style .btn.btn-outline-primary{padding:10px 22px!important;border-radius:999px!important;font-size:17px!important;line-height:1.3!important}
-/* Replication outcomes on /reversals/ (site.js): each has a colour of its own, along a scale from replicated (green)
-   to reversed (wine), kept clear of the area colours (DESIGN.md §6), with "no status" in grey. The strong colour marks
-   an entry's edge and its part of the outcome bar; the pale one is the chip, the button and the entry's ground. */
-:root{
-  --out-replicated:#2b7a4b;--out-replicated-bg:#e3f1e7;
-  --out-mixed:#a77600;--out-mixed-bg:#f8edcf;
-  --out-not-replicated:#b4462b;--out-not-replicated-bg:#fae4dd;
-  --out-reversed:#7e2f6c;--out-reversed-bg:#f4e2f0;
-  --out-no-status:#7b8794;--out-no-status-bg:#eef1f3;
-}
+/* Replication outcomes on /reversals/ (site.js), in the colours of --out-* in tokens.css. The strong colour marks an
+   entry's edge and its part of the outcome bar; the pale one is the chip, the button and the entry's ground. */
 .status-replicated,.outcome-replicated{--out:var(--out-replicated);--out-bg:var(--out-replicated-bg)}
 .status-mixed,.outcome-mixed{--out:var(--out-mixed);--out-bg:var(--out-mixed-bg)}
 .status-not-replicated,.outcome-not-replicated{--out:var(--out-not-replicated);--out-bg:var(--out-not-replicated-bg)}

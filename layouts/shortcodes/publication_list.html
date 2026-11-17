@@ -17,12 +17,8 @@
 
 {{/* Each research area has its FORRT area colour (DESIGN.md §6): the card takes the area's pale ground and its tag
      the area's colour, so the areas show down the page. A card without an area stays neutral. */}}
-{{ $areaMap := dict
-"Meta-Research & Scientific Reform" "res"
-"Equity, Diversity & Social Justice" "jus"
-"Community, Governance & Sustainability" "com"
-"Education & Pedagogy" "edu"
-}}
+{{ $areaMap := dict }}
+{{ range partial "functions/publication_areas.html" . }}{{ $areaMap = merge $areaMap (dict .value .area) }}{{ end }}
 
 <div class="pub-section-group">
     {{ $description := .Get "description" }}
