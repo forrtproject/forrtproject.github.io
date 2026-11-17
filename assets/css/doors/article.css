@@ -535,7 +535,7 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
 .article-layout .card-authors .network-icon a:hover{color:var(--ink)}
 .article-layout .card-authors-more{margin:-6px 0 16px;font-size:15px}
 .article-layout .card-more{margin:0 0 4px}
-.article-layout .card-more a{display:inline-block;padding:10px 0;font-weight:600;color:var(--link);text-decoration:underline;text-underline-offset:3px}
+.article-layout .card-more a{display:inline-block;padding:11px 0;font-weight:600;color:var(--link);text-decoration:underline;text-underline-offset:3px}
 .article-layout .card-more a::after{content:"\2192";margin-inline-start:6px;text-decoration:none}
 .article-layout .card-more+h2{margin-top:14px}
 @media(max-width:1000px){.article-layout .card-authors .network-icon a{min-width:44px;min-height:44px}}

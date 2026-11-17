@@ -33,7 +33,7 @@
     <li>
       {{ with .profile }}
         {{ $avatar := (.Resources.ByType "image").GetMatch "*avatar*" }}
-        {{ with $avatar }}<img src="{{ (.Fill "112x112 Center webp q80").RelPermalink }}" width="56" height="56" alt="" loading="lazy">{{ end }}
+        {{ with $avatar }}<img src="{{ (.Fill "112x112 Center webp q80").RelPermalink }}" width="56" height="56" alt="">{{ end }}
         <div>
           <a class="card-author-name" href="{{ .RelPermalink }}">{{ .Title }}</a>
           {{ with .Params.role }}<p class="card-author-role">{{ . | markdownify | emojify }}</p>{{ end }}
@@ -46,7 +46,7 @@
     </li>
     {{ end }}
   </ul>
-  {{ if gt (len .) 4 }}<p class="card-authors-more">and {{ sub (len .) 4 }} more, named above</p>{{ end }}
+  {{ if gt (len .) 4 }}<p class="card-authors-more">and {{ sub (len .) 4 }} more</p>{{ end }}
   {{ end }}
   {{ if .hasDates }}
   <dl>
