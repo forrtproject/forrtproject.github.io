@@ -15,6 +15,15 @@
 "data" "Data, Code & Packages"
 }}
 
+{{/* Each research area has its FORRT area colour (DESIGN.md §6): the card takes the area's pale ground and its tag
+     the area's colour, so the areas show down the page. A card without an area stays neutral. */}}
+{{ $areaMap := dict
+"Meta-Research & Scientific Reform" "res"
+"Equity, Diversity & Social Justice" "jus"
+"Community, Governance & Sustainability" "com"
+"Education & Pedagogy" "edu"
+}}
+
 <div class="pub-section-group">
     {{ $description := .Get "description" }}
     {{ if $title }}
@@ -31,7 +40,8 @@
     <div class="pub-list">
         {{ range $i, $_ := $items }}
         {{ $dataType := index $typeMap .type | default .type }}
-        <div class="pub-card" data-aos="fade-up" data-type="{{ $dataType }}"
+        {{ $area := "" }}{{ with .focus_area }}{{ $area = index $areaMap . | default "" }}{{ end }}
+        <div class="pub-card" data-aos="fade-up" data-type="{{ $dataType }}"{{ with $area }} data-area="{{ . }}"{{ end }}
             data-focus="{{ if .focus_area }}{{ .focus_area }}{{ else }}uncategorized{{ end }}">
             <div class="pub-card-body">
 
@@ -57,7 +67,7 @@
                         {{/* Focus Area Pill */}}
                         {{ if .focus_area }}
                         {{ $focusClass := printf "pill-%s" (.focus_area | urlize) }}
-                        <span class="pub-pill {{ $focusClass }}">{{ .focus_area }}</span>
+                        <span class="pub-pill pub-pill-area {{ $focusClass }}">{{ .focus_area }}</span>
                         {{ end }}
                     </div>
                     <span class="pub-year">{{ .year }}</span>

@@ -1,34 +1,50 @@
-<div class="filter-container">
+{{/* Filters for /publications/: content type and research area. On a phone each is a drop-down; on wider screens,
+     buttons, kept in step with the drop-downs (the pattern of partner_filters.html). The research areas wear their
+     area colours (DESIGN.md §6), so their buttons are also the key to the coloured cards below. Hidden until the
+     script runs: without it the controls would do nothing. */}}
+{{ $types := slice
+  (slice "all" "All")
+  (slice "Publications" "Publications")
+  (slice "Preprints" "Preprints")
+  (slice "Policy Briefs" "Policy briefs")
+  (slice "Op-Eds" "Op-eds")
+  (slice "Teaching Materials" "Teaching materials")
+  (slice "Interactive Tools / Apps" "Interactive tools and apps")
+  (slice "Data, Code & Packages" "Data, code and packages")
+  (slice "Working Papers & Ongoing Projects" "Working papers and ongoing projects")
+  (slice "Affiliated Projects" "Affiliated projects")
+}}
+{{ $areas := slice
+  (slice "all" "All areas" "")
+  (slice "Meta-Research & Scientific Reform" "Meta-research and scientific reform" "res")
+  (slice "Equity, Diversity & Social Justice" "Equity, diversity and social justice" "jus")
+  (slice "Community, Governance & Sustainability" "Community, governance and sustainability" "com")
+  (slice "Education & Pedagogy" "Education and pedagogy" "edu")
+}}
+<div class="filter-container pub-filters" hidden>
 
-    {{/* Content Type Filter */}}
-    <div class="filter-section-title">Filter by Content Type</div>
-    <div id="pill-bar-type" class="pill-bar">
-        <button type="button" class="filter-pill active" aria-pressed="true" data-group="type" data-value="all">All</button>
-        <button type="button" class="filter-pill" aria-pressed="false" data-group="type" data-value="Publications">Publications</button>
-        <button type="button" class="filter-pill" aria-pressed="false" data-group="type" data-value="Preprints">Preprints</button>
-        <button type="button" class="filter-pill" aria-pressed="false" data-group="type" data-value="Policy Briefs">Policy Briefs</button>
-        <button type="button" class="filter-pill" aria-pressed="false" data-group="type" data-value="Op-Eds">Op-Eds</button>
-        <button type="button" class="filter-pill" aria-pressed="false" data-group="type" data-value="Teaching Materials">Teaching Materials</button>
-        <button type="button" class="filter-pill" aria-pressed="false" data-group="type" data-value="Interactive Tools / Apps">Interactive Tools /
-            Apps</button>
-        <button type="button" class="filter-pill" aria-pressed="false" data-group="type" data-value="Data, Code & Packages">Data, Code & Packages</button>
-        <button type="button" class="filter-pill" aria-pressed="false" data-group="type" data-value="Working Papers & Ongoing Projects">Working Papers &
-            Ongoing Projects</button>
-        <button type="button" class="filter-pill" aria-pressed="false" data-group="type" data-value="Affiliated Projects">Affiliated Projects</button>
+    <div class="pub-filter-group">
+        <label class="filter-section-title" for="pub-type-select">Content type</label>
+        <select id="pub-type-select" class="partner-select">
+            {{ range $types }}<option value="{{ index . 0 }}">{{ index . 1 }}</option>
+            {{ end }}
+        </select>
+        <div id="pill-bar-type" class="pill-bar" role="group" aria-label="Content type">
+            {{ range $i, $t := $types }}<button type="button" class="filter-pill{{ if eq $i 0 }} active{{ end }}" aria-pressed="{{ if eq $i 0 }}true{{ else }}false{{ end }}" data-group="type" data-value="{{ index $t 0 }}">{{ index $t 1 }}</button>
+            {{ end }}
+        </div>
     </div>
 
-    
-    {{/* Focus Area Filter */}}
-    <div class="filter-section-title">Filter by Research Area</div>
-    <div id="pill-bar-focus" class="pill-bar">
-        <button type="button" class="filter-pill active" aria-pressed="true" data-group="focus" data-value="all">All Areas</button>
-        <button type="button" class="filter-pill" aria-pressed="false" data-group="focus" data-value="Meta-Research & Scientific Reform">Meta-Research &
-            Scientific Reform</button>
-        <button type="button" class="filter-pill" aria-pressed="false" data-group="focus" data-value="Equity, Diversity & Social Justice">Equity, Diversity &
-            Social Justice</button>
-        <button type="button" class="filter-pill" aria-pressed="false" data-group="focus" data-value="Community, Governance & Sustainability">Community,
-            Governance & Sustainability</button>
-        <button type="button" class="filter-pill" aria-pressed="false" data-group="focus" data-value="Education & Pedagogy">Education & Pedagogy</button>
+    <div class="pub-filter-group">
+        <label class="filter-section-title" for="pub-focus-select">Research area</label>
+        <select id="pub-focus-select" class="partner-select">
+            {{ range $areas }}<option value="{{ index . 0 }}">{{ index . 1 }}</option>
+            {{ end }}
+        </select>
+        <div id="pill-bar-focus" class="pill-bar" role="group" aria-label="Research area">
+            {{ range $i, $a := $areas }}<button type="button" class="filter-pill{{ if eq $i 0 }} active{{ end }}" aria-pressed="{{ if eq $i 0 }}true{{ else }}false{{ end }}" data-group="focus" data-value="{{ index $a 0 }}"{{ with index $a 2 }} data-area="{{ . }}"{{ end }}>{{ index $a 1 }}</button>
+            {{ end }}
+        </div>
     </div>
 
     {{/* Empty State Warning */}}
@@ -41,8 +57,7 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        const typePills = document.querySelectorAll('#pill-bar-type .filter-pill');
-        const focusPills = document.querySelectorAll('#pill-bar-focus .filter-pill');
+        document.querySelector('.pub-filters').hidden = false;
         const pubs = document.querySelectorAll('.pub-card');
         const sections = document.querySelectorAll('.pub-section-group');
         const warningDiv = document.getElementById('no-resources-warning');
@@ -85,41 +100,31 @@
             // Hide empty sections
             sections.forEach(section => {
                 const visibleCards = section.querySelectorAll('.pub-card:not([style*="display: none"])');
-                if (visibleCards.length === 0) {
-                    section.style.display = "none";
-                } else {
-                    section.style.display = "";
-                }
+                section.style.display = visibleCards.length === 0 ? "none" : "";
             });
 
             // Show warning if no resources found
-            if (visibleCount === 0) {
-                warningDiv.style.display = "block";
-            } else {
-                warningDiv.style.display = "none";
-            }
+            warningDiv.style.display = visibleCount === 0 ? "block" : "none";
         }
 
-        // Type Filters
-        typePills.forEach(pill => {
-            pill.addEventListener('click', () => {
-                typePills.forEach(p => { p.classList.remove('active'); p.setAttribute('aria-pressed', 'false'); });
-                pill.classList.add('active');
-                pill.setAttribute('aria-pressed', 'true');
-                currentType = pill.getAttribute('data-value');
+        // Each group's buttons and drop-down choose the same value and stay in step.
+        function group(barId, selectId, set) {
+            const pills = document.querySelectorAll('#' + barId + ' .filter-pill');
+            const select = document.getElementById(selectId);
+            function choose(value) {
+                pills.forEach(p => {
+                    const on = p.getAttribute('data-value') === value;
+                    p.classList.toggle('active', on);
+                    p.setAttribute('aria-pressed', String(on));
+                });
+                select.value = value;
+                set(value);
                 filterPublications();
-            });
-        });
-
-        // Focus Filters
-        focusPills.forEach(pill => {
-            pill.addEventListener('click', () => {
-                focusPills.forEach(p => { p.classList.remove('active'); p.setAttribute('aria-pressed', 'false'); });
-                pill.classList.add('active');
-                pill.setAttribute('aria-pressed', 'true');
-                currentFocus = pill.getAttribute('data-value');
-                filterPublications();
-            });
-        });
+            }
+            pills.forEach(pill => pill.addEventListener('click', () => choose(pill.getAttribute('data-value'))));
+            select.addEventListener('change', () => choose(select.value));
+        }
+        group('pill-bar-type', 'pub-type-select', value => { currentType = value; });
+        group('pill-bar-focus', 'pub-focus-select', value => { currentFocus = value; });
     });
 </script>

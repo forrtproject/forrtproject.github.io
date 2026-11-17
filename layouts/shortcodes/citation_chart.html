@@ -1,0 +1,24 @@
+{{/* Citations to FORRT's work per year, from Google Scholar, for /publications/. scripts/gs-cite/google_scholar.py
+     writes data/scholar_citations.json (and the picture content/publications/citation_chart.webp) on each data
+     run; the chart is drawn here in the site's type and colours, with the picture as the fallback where the numbers
+     are missing. A year still running is drawn lighter and labelled "so far". */}}
+{{ $profile := "https://scholar.google.com/citations?user=JrBcgGMAAAAJ&hl=en" }}
+{{ with hugo.Data.scholar_citations }}
+{{ $max := 1 }}{{ range .years }}{{ if gt (int .citations) $max }}{{ $max = int .citations }}{{ end }}{{ end }}
+{{ $thisYear := now.Year }}
+<figure class="citation-container cite-chart">
+  <p class="cite-total"><strong>{{ lang.FormatNumber 0 .total_citations }}</strong> citations</p>
+  <p class="cite-index">h-index {{ .h_index }} · i10-index {{ .i10_index }}</p>
+  <ol class="cite-bars" aria-label="Citations per year">
+    {{ range .years }}{{ $partial := eq (int .year) $thisYear }}
+    <li{{ if $partial }} class="is-partial"{{ end }} style="--v:{{ div (float .citations) $max }}"><span class="cite-n">{{ .citations }}</span><span class="cite-bar"></span><span class="cite-year">{{ .year }}{{ if $partial }}<span class="cite-so-far"> so far</span>{{ end }}</span></li>
+    {{ end }}
+  </ol>
+  <figcaption><a href="{{ $profile }}">Details on Google Scholar</a></figcaption>
+</figure>
+{{ else }}
+<figure class="citation-container">
+  <img src="citation_chart.webp" alt="Bar chart of citations to FORRT's work per year, with its total citations, h-index and i10-index, from Google Scholar">
+  <figcaption><a href="{{ $profile }}">Details on Google Scholar</a></figcaption>
+</figure>
+{{ end }}

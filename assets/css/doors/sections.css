@@ -101,6 +101,27 @@
 }
 .get-involved-card>:last-child{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
 
+/* Publications: the filters as two drop-downs on a phone (as on Partnerships), buttons on wider screens. The research
+   areas wear their area colours (DESIGN.md §6): the area buttons carry a mark of the colour and fill with it when
+   chosen, and each card takes its area's pale ground, a band of the colour along its top and a tag in the colour. */
+.pub-filter-group{margin:0 0 6px}
+@media(max-width:760px){
+  .pub-filters .pill-bar{display:none}
+  .pub-filters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 10px}
+  .pub-filters #no-resources-warning{grid-column:1/-1}
+  .pub-filters .partner-select{padding-inline-start:12px;font-size:15px}
+}
+.filter-pill[data-area]{display:inline-flex;align-items:center;gap:7px;border-color:var(--area)}
+.filter-pill[data-area]::before{content:"";width:10px;height:10px;border-radius:2px;background:var(--area)}
+.filter-pill[data-area].active{background:var(--area);border-color:var(--area)}
+.filter-pill[data-area].active::before{background:#fff}
+:is(.pub-card,.filter-pill)[data-area=res]{--area:var(--res);--area-bg:var(--res-bg)}
+:is(.pub-card,.filter-pill)[data-area=jus]{--area:var(--jus);--area-bg:var(--jus-bg)}
+:is(.pub-card,.filter-pill)[data-area=com]{--area:var(--com);--area-bg:var(--com-bg)}
+:is(.pub-card,.filter-pill)[data-area=edu]{--area:var(--edu);--area-bg:var(--edu-bg)}
+.pub-card[data-area]{background:var(--area-bg);box-shadow:inset 0 6px 0 var(--area)}
+.pub-card[data-area] .pub-pill-area{background:var(--area);color:#fff}
+
 /* Directories hold cards and lists rather than running text, so a wide screen takes two or more columns. */
 .article-layout-wide :is(.pub-list,.partner-list){grid-template-columns:repeat(auto-fill,minmax(min(100%,420px),1fr));gap:16px}
 .article-layout-wide .article-style .feature-rows{grid-template-columns:repeat(auto-fill,minmax(min(100%,420px),1fr));gap:28px 40px}
@@ -126,6 +147,30 @@
   .pub-intro>:not(figure){grid-column:1}
 }
 @media(min-width:761px) and (max-width:1000px){.pub-intro{grid-template-columns:minmax(0,1fr) 260px;gap:32px}}
+/* The citation chart (shortcodes/citation_chart.html): the total in display type, then a bar for each year in the
+   link colour, its count above it and the year below; the year still running is lighter. */
+.cite-chart .cite-total{margin:0;font:400 17px/1.2 var(--text);color:var(--ink)}
+.cite-chart .cite-total strong{display:block;font:500 44px/1 var(--display)}
+.article-layout .article-style .cite-chart .cite-index{margin:4px 0 14px;font-size:15px;color:var(--soft)}
+.article-layout .article-style .cite-bars{display:flex;align-items:flex-end;gap:6px;max-width:none;margin:0 0 8px;padding:0;list-style:none}
+.article-layout .article-style .cite-bars li{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;margin:0;font-size:14px;line-height:1.2}
+.cite-bars .cite-bar{display:block;flex:none;width:100%;height:calc(var(--v) * 110px);min-height:2px;background:var(--link);border-radius:3px 3px 0 0}
+.cite-bars .is-partial .cite-bar{background:repeating-linear-gradient(135deg,var(--res-bg) 0 4px,#9fc0d6 4px 7px);box-shadow:inset 0 0 0 1.5px var(--link)}
+.cite-bars .cite-n{margin:0 0 3px;font-weight:600;color:var(--ink)}
+.cite-bars .cite-year{min-height:2.4em;margin-top:4px;color:var(--soft);white-space:nowrap;text-align:center}
+.cite-bars .cite-so-far{display:block;font-size:14px}
+/* The introduction is cut to four lines only on a phone; beside the chart on a wider screen it shows in full. */
+@media(min-width:761px){
+  .pub-intro .is-clamped{display:block;-webkit-line-clamp:unset;line-clamp:unset;overflow:visible}
+  .pub-intro .clamp-more{display:none}
+}
+/* On a phone the chart, which is background, follows the publications (DESIGN.md §2), so the filters and the first
+   card come into the first screen. */
+@media(max-width:760px){
+  .article-layout .doc-section:has(>.pub-intro){display:flex;flex-direction:column}
+  .article-layout .doc-section>.pub-intro{display:contents}
+  .article-layout .doc-section:has(>.pub-intro)>.citation-container{order:1;margin-top:28px}
+}
 
 .reading:has(.pub-intro) .article-head{margin-bottom:14px}
 .reading:has(.pub-intro) .doc-section>hr:first-child{margin:0 0 20px}
@@ -166,11 +211,13 @@
 .article-layout .filter-title{margin:0 0 4px;font-weight:600;border-bottom:1px solid var(--line)}
 .article-layout #filter-collapsed a{color:var(--link);font-weight:600}
 .article-layout .contribution{font-size:17px;line-height:1.45}
-@media(min-width:1001px){
-  .contributors-head{display:grid;grid-template-columns:minmax(0,34em) minmax(0,520px);justify-content:space-between;gap:48px;align-items:start;margin:0 0 8px}
+@media(min-width:901px){
+  .contributors-head{display:grid;grid-template-columns:minmax(0,34em) minmax(340px,480px);justify-content:space-between;gap:40px;align-items:start;margin:0 0 8px}
   .contributors-head #filter-menu{margin:0}
+  .contributors-head .filter-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .contributors-head .filter-grid>.filter-field:last-child{grid-column:1/-1}
 }
-@media(max-width:560px){.article-layout .filter-grid{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:560px){.article-layout .filter-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.article-layout .filter-grid>.filter-field:last-child{grid-column:1/-1}}
 /* The letters of the surnames: a row of small bricks (the castle's action cards in miniature) that jump to each
    letter, staying at the top of the screen while the list scrolls. The colours run through the bricks and carry
    no meaning (DESIGN.md §6). */

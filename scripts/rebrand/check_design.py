@@ -964,7 +964,7 @@ def check_directory_widths(browser, base, failures):
     expect(order, "a short news post keeps its own image, after its link")
     page.goto(base + "publications/", wait_until="load")
     chart_width, share = page.evaluate("""() => {
-      const box = document.querySelector('.citation-container img').getBoundingClientRect();
+      const box = document.querySelector('.cite-chart, .citation-container img').getBoundingClientRect();
       const seen = Math.max(0, Math.min(box.bottom, innerHeight) - Math.max(box.top, 0));
       return [box.width, seen * box.width / (innerWidth * innerHeight)];
     }""")
