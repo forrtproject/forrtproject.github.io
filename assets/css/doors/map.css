@@ -1,0 +1,33 @@
+/* The community map page (layouts/community-map/single.html). */
+.map-page{padding:32px 0 56px}
+.map-head .crumbs{margin-bottom:18px}
+.map-head h1{font-size:clamp(36px,4.2vw,58px);line-height:1.06;margin:0 0 12px}
+.map-head .standfirst{max-width:30em;margin:0}
+.map-head-grid{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px 48px;align-items:end}
+/* The figures in the community colour: the map is part of Community & Sustainability. */
+.map-figures{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 28px;padding:14px 22px;background:var(--com-bg);border-radius:var(--r-large)}
+.map-figures p{margin:0;font-size:17px;color:var(--ink)}
+.map-figures strong{display:block;font:var(--display-weight) clamp(34px,3.4vw,46px)/1.05 var(--display);color:var(--com)}
+.map-figures .map-date{flex-basis:100%;font-size:15px;color:var(--soft)}
+.map-frame{margin:24px 0 0;overflow:hidden;border:1px solid var(--line);border-radius:var(--r-large)}
+.map-legend{display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px;margin:10px 0 0}
+.map-legend-title{margin:0;font-size:15px;font-weight:600}
+.map-legend ul{display:flex;flex-wrap:wrap;gap:6px 14px;margin:0;padding:0;list-style:none}
+.map-legend li{display:inline-flex;align-items:center;gap:6px;margin:0;font-size:15px}
+.map-swatch{width:14px;height:14px;border:1px solid #444;border-radius:50%}
+.map-after{display:grid;grid-template-columns:minmax(0,580px) minmax(0,420px);justify-content:space-between;gap:28px 56px;align-items:start;margin-top:40px}
+.map-text p{max-width:none}
+.map-text>:first-child{margin-top:0}
+.map-join{padding:22px 24px;background:var(--com-bg);border-radius:var(--r-large)}
+.map-join h2{margin:0 0 6px;font:var(--display-weight) 30px/1.15 var(--display)}
+.map-join p{margin:0 0 14px;font-size:17px;line-height:1.5}
+.map-buttons{display:flex;flex-wrap:wrap;gap:8px;margin:0!important}
+@media(max-width:1000px){.map-after{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:760px){
+  .map-page{padding:20px 0 36px}
+  .map-head-grid{grid-template-columns:minmax(0,1fr)}
+  .map-figures{justify-self:start;padding:12px 18px}
+  .map-frame{margin-top:18px}
+  .map-after{margin-top:28px}
+  .map-join{padding:18px}
+}

@@ -21,6 +21,7 @@
 {{ if eq .Type "contributors_analysis" }}{{ $screen = slice "analysis" }}{{ end }}
 {{ if eq .Type "widget_page" }}{{ $screen = slice "sections" }}{{ end }}
 {{ if in (slice "clusters" "disciplines") .Section }}{{ $screen = slice "clusters" }}{{ end }}
+{{ if eq .Section "community-map" }}{{ $screen = slice "map" }}{{ end }}
 {{ if eq .Type "welcome" }}{{ $screen = slice "home" "welcome" }}{{ end }}
 {{ if eq .Type "games_portal" }}{{ $screen = slice "page" "resources" "games" }}{{ end }}
 {{ with $screen }}

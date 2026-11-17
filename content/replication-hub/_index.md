@@ -8,7 +8,7 @@ image_alt: "FORRT Replication Hub diagram showing four areas: Track, Explore, Co
 sharing_image_resource: "replication_hub.webp"
 sharing_image_alt: "FORRT Replication Hub diagram showing four areas: Track, Explore, Conduct, Disseminate"
 
-lede: "Tools and guidance for reproduction and replication studies."
+lede: "Evidence worth building on. Tools and guidance for reproduction and replication studies."
 
 # A link with no `label` takes its name from the main menu, so renaming a menu entry renames it here.
 # Four common starting points, shown under the introduction, in the order of the stages (hub.css colours them).
@@ -83,7 +83,7 @@ cards:
       - url: "https://forrt.org/love-replications-week/"
         format: "Event"
         label: "Love Replications Week"
-        note: "Recordings from Love Replications Week 2026."
+        note: "A week of best practices, contact with experts and open community."
       - url: "https://forrt.org/replicatethis/"
         format: "Prototype"
         label: "ReplicateThis Nomination Portal (demo)"

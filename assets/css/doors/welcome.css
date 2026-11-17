@@ -23,7 +23,6 @@
 .welcome-areas .area .welcome-links a{display:inline-block;padding:4px 0;font:var(--display-weight) 21px/1.25 var(--display);color:var(--tone);text-decoration-color:color-mix(in srgb,var(--tone) 55%,transparent)}
 .welcome-areas .area .welcome-links a:hover{text-decoration-color:currentColor;text-decoration-thickness:2px}
 .welcome-areas .area .welcome-links p{margin:2px 0 0;font-size:16px;line-height:1.45;color:var(--ink)}
-@media(min-width:1241px){.welcome-areas .area .welcome-links a{min-height:2.5em}}
 
 /* Staying in touch: the community's colour, with Slack and the newsletter first and where to follow FORRT after. */
 .welcome-community{margin-top:48px;padding:26px 28px;background:var(--com-bg);border-radius:var(--r-large)}

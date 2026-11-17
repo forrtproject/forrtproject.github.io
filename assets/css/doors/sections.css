@@ -206,7 +206,7 @@
 .get-involved-card .get-involved-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:12px}
 /* Get Involved is a wide page: its projects fill the width, as many to a row as fit. */
 .article-layout-wide .article-style .get-involved-projects{grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));max-width:none}
-.article-layout-wide .article-style .action-cards{max-width:960px}
+.article-layout-wide .article-style .action-cards{max-width:none}
 .get-involved-card[hidden]{display:none}
 .get-involved-card .get-involved-link{display:inline-flex;align-items:center;min-height:40px;padding:0;color:var(--link);font-weight:600;text-decoration:underline;text-underline-offset:3px}
 
@@ -279,13 +279,39 @@
 .article-layout .article-style .lesson-plan-list>ul>li>a:first-child:hover{text-decoration-color:currentColor;text-decoration-thickness:2px}
 .article-layout .article-style .lesson-plan-list>ul>li>br+a,.article-layout .article-style .lesson-plan-list>ul>li>a+a{color:var(--edu)}
 .article-layout .article-style .lesson-plan-list>h3{margin:26px 0 0;font-size:24px}
-/* Motivation: the example lesson plan beside the text on a wide screen, after it on a narrow one. */
-.lesson-plan-motivation{display:flex;flex-direction:column}
-.article-layout .article-style .lesson-plan-sample{order:1;width:min(100%,340px);margin:4px 0 0;padding:14px 14px 10px;background:var(--edu-bg);border-radius:var(--r-large)}
+/* Beside the prose on a wide screen, after it on a narrow one: the example lesson plan beside the introduction
+   that lists what each plan gives, and the article about the plans beside the motivation (DESIGN.md §7). */
+.lesson-plan-intro,.lesson-plan-motivation{display:flex;flex-direction:column}
+.article-layout .article-style .lesson-plan-sample{order:1;width:min(100%,340px);margin:4px 0 8px;padding:14px 14px 10px;background:var(--edu-bg);border-radius:var(--r-large)}
 .lesson-plan-sample img{display:block;width:100%;height:auto;aspect-ratio:1218/980;object-fit:cover;object-position:top;background:#fff;border:1px solid var(--line);border-radius:4px}
 .lesson-plan-sample figcaption{margin:8px 2px 0;font-size:15px;line-height:1.4;text-align:start}
+.lesson-plan-article{order:1;margin:8px 0 0;padding:18px 20px 6px;background:var(--edu-bg);border-radius:var(--r-large)}
+.article-layout .article-style .lesson-plan-article p{font-size:17px}
+.article-layout .article-style .lesson-plan-article .spoiler{background:#fff}
 @media(min-width:1001px){
-  .lesson-plan-motivation{display:grid;grid-template-columns:minmax(0,580px) minmax(0,340px);justify-content:start;column-gap:56px;align-items:start}
-  .lesson-plan-motivation>*{grid-column:1}
-  .article-layout .article-style .lesson-plan-sample{grid-column:2;grid-row:1/span 6;width:auto;margin:0}
+  :is(.lesson-plan-intro,.lesson-plan-motivation){display:grid;grid-template-columns:minmax(0,580px) minmax(0,380px);justify-content:start;column-gap:64px;align-items:start}
+  :is(.lesson-plan-intro,.lesson-plan-motivation)>*{grid-column:1}
+  .article-layout .article-style :is(.lesson-plan-sample,.lesson-plan-article){grid-column:2;grid-row:1/span 6;width:auto;margin:0}
+  .lesson-plan-intro>:first-child+p{margin-top:0}
 }
+
+/* Get involved: a wide page, so "About FORRT" puts its guide call-out beside the text rather than under it,
+   and no empty band is left beside the prose (DESIGN.md §7). */
+@media(min-width:1001px){
+  .article-layout-wide .doc-section:has(>aside.callout){display:grid;grid-template-columns:minmax(0,580px) minmax(0,440px);justify-content:start;column-gap:64px;align-items:start}
+  .article-layout-wide .doc-section:has(>aside.callout)>*{grid-column:1}
+  .article-layout-wide .article-style .doc-section>aside.callout{grid-column:2;grid-row:1/span 8;max-width:none;margin:6px 0 0}
+}
+
+/* The booklet: the flipbook on a pale panel, then what it covers in each area, in the area's colour. */
+.article-style .booklet-frame{background:var(--surface);border-radius:var(--r-large)}
+.booklet-inside{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:16px;margin:16px 0 8px}
+.booklet-area{--tone:var(--edu);padding:16px 20px 12px;background:var(--edu-bg);border-radius:var(--r-large)}
+.booklet-area-res{--tone:var(--res);background:var(--res-bg)}
+.booklet-area-jus{--tone:var(--jus);background:var(--jus-bg)}
+.booklet-area-com{--tone:var(--com);background:var(--com-bg)}
+.article-layout .article-style .booklet-area h3{margin:0 0 6px;font-size:22px;line-height:1.2;color:var(--tone)}
+.article-layout .article-style .booklet-area ul{max-width:none;margin:0;padding:0;list-style:none}
+.article-layout .article-style .booklet-area li{max-width:none;margin:0;padding:4px 0;font-size:17px;line-height:1.4}
+.article-layout .article-style .booklet-area a{display:inline-block;padding:2px 0;color:var(--ink);text-decoration-color:color-mix(in srgb,var(--tone) 55%,transparent)}
+.article-layout .article-style .booklet-area a:hover{color:var(--tone);text-decoration-color:currentColor}

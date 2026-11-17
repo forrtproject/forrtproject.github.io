@@ -1,0 +1,15 @@
+{{/* What the FORRT booklet covers, from its table of contents: its pages on each of FORRT's four areas, in the
+     area's colour, each linked to its page on this site where there is one. Data: `inside` in the booklet's
+     front matter (content/about/booklet/_index.md). */}}
+{{ with .Page.Params.inside }}
+<div class="booklet-inside">
+  {{ range . }}
+  <section class="booklet-area booklet-area-{{ .key }}" aria-labelledby="booklet-{{ .key }}">
+    <h3 id="booklet-{{ .key }}">{{ .title }}</h3>
+    <ul>
+      {{ range .pages }}{{ $title := $.Page.RenderString .title }}<li>{{ with .url }}<a href="{{ cond (hasPrefix . "http") . (relLangURL .) }}">{{ $title }}</a>{{ else }}{{ $title }}{{ end }}</li>{{ end }}
+    </ul>
+  </section>
+  {{ end }}
+</div>
+{{ end }}

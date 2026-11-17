@@ -1,7 +1,8 @@
 /* The Replication Hub. Loaded only on /replication-hub/. */
 .heading-plate-plain{margin:0;justify-self:end;width:100%;max-width:400px}
 .heading-plate-plain img{display:block;width:100%;height:auto}
-@media(max-width:760px){.heading-plate-plain{display:none}}
+/* On a phone the diagram follows the standfirst, smaller: it shows how the four stages below fit together. */
+@media(max-width:760px){.heading-plate-plain{justify-self:start;max-width:280px;margin:18px 0 0}}
 .stage-jumps{display:none;--tone:#44598c}
 @media(max-width:760px){
   .stage-jumps{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
@@ -49,3 +50,11 @@
   .tool p.tool-format{padding:0;margin:0 0 2px}
 }
 @media(prefers-reduced-motion:no-preference){.tool{transition:background-color .15s}}
+
+/* Each stage stands on its own pale ground in its stage colour, so the four read as four parts on every screen.
+   A tool's hover and focus turn its row white, since the stage's tint is already the ground. */
+.stage{padding:14px 20px 10px;background:var(--tint);border-radius:0 0 var(--r-large) var(--r-large)}
+.tool:hover,.tool:focus-within{background:#fff}
+.tool{border-bottom-color:color-mix(in srgb,var(--tone) 22%,transparent)}
+.tool:last-child{border-bottom:0}
+@media(max-width:600px){.stage{padding:12px 14px 6px}}
