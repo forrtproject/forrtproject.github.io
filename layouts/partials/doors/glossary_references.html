@@ -1,0 +1,68 @@
+{{/* The glossary's reference list (/glossary/references/), laid out as the glossary hub: a search and the letters in
+     a panel beside the title, then every reference A to Z under large letters, each with the English terms that
+     cite it. The references come from apa_lookup.json (citations/keys removes duplicates) and the terms from their
+     own pages, so the list does not depend on the page body, which data-processing.yml ships from main.
+     site.js runs the search and the letters as on the hub. Input: the page. */}}
+{{ $keys := partialCached "citations/keys" . "bibliography-keys" }}
+{{/* The English terms citing each reference, keyed by the reference's md5. */}}
+{{ $cited := newScratch }}
+{{ range sort (where site.RegularPages "File.Dir" "glossary/english/") "Params.sort_key" }}
+  {{ $term := . }}
+  {{ range .Params.references }}{{ if . }}{{ $cited.Add (md5 .) (slice $term) }}{{ end }}{{ end }}
+{{ end }}
+{{ $items := slice }}
+{{ range $apa, $key := $keys }}
+  {{ $sk := $apa | plainify | htmlUnescape | replaceRE `^[^\p{L}\p{N}]+` "" | lower }}
+  {{ $items = $items | append (dict "apa" $apa "key" $key "sk" $sk) }}
+{{ end }}
+{{/* Grouped by first letter, accents set aside, as the collated sort already files Ö with O. */}}
+{{ $groups := slice }}{{ $current := "" }}{{ $members := slice }}
+{{ range sort $items "sk" }}
+  {{ $first := upper (substr .sk 0 1) | replaceRE "[ÀÁÂÃÄÅ]" "A" | replaceRE "[ÇĆČ]" "C" | replaceRE "[ÈÉÊË]" "E" | replaceRE "[ÌÍÎÏ]" "I" | replaceRE "[ÑŃ]" "N" | replaceRE "[ÒÓÔÕÖØ]" "O" | replaceRE "[ŠŚ]" "S" | replaceRE "[ÙÚÛÜ]" "U" | replaceRE "[ÝŸ]" "Y" | replaceRE "[ŽŹŻ]" "Z" }}
+  {{ if not (findRE `^[A-Z]$` $first) }}{{ $first = "#" }}{{ end }}
+  {{ if ne $first $current }}
+    {{ if $members }}{{ $groups = $groups | append (dict "letter" $current "items" $members) }}{{ end }}
+    {{ $current = $first }}{{ $members = slice }}
+  {{ end }}
+  {{ $members = $members | append . }}
+{{ end }}
+{{ if $members }}{{ $groups = $groups | append (dict "letter" $current "items" $members) }}{{ end }}
+<div class="wrap">
+  <div class="article-layout article-layout-single article-layout-wide glossary-layout glossary-hub glossary-references">
+    <article class="reading">
+      <header class="article-head">
+        {{/* Home / Glossary / List of References, as on a term page. The glossary section has no page of its own
+             (/glossary/ redirects), so the trail leads to the English glossary, which these references serve. */}}
+        <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ "" | relLangURL }}">Home</a> <span aria-hidden="true">/</span> <a href="{{ "glossary/english/" | relLangURL }}">Glossary</a> <span aria-hidden="true">/</span> <span aria-current="page">{{ .Title }}</span></nav>
+        <h1>{{ .Title }}</h1>
+        <p class="standfirst">Every source used to write the glossary, A to Z, with links to the terms whose definitions cite it.</p>
+      </header>
+      <div class="glossary-tools">
+        <div class="glossary-find">
+          <label for="glossary-search">Search {{ len $items }} references</label>
+          <div class="glossary-search-row"><input type="search" id="glossary-search" placeholder="An author, title or year" autocomplete="off"><button type="button" class="glossary-clear" hidden>Clear</button></div>
+          <p class="glossary-none" hidden>No reference matches.</p>
+          <p class="glossary-count" aria-live="polite" data-format="%s of %s references"></p>
+        </div>
+        <nav class="glossary-letters" aria-label="References by letter">
+          {{ range $groups }}<a href="#letter-{{ if eq .letter "#" }}other{{ else }}{{ lower .letter }}{{ end }}">{{ .letter }}</a>{{ end }}
+        </nav>
+      </div>
+      <div class="term-grid">
+        {{ range $groups }}
+        <section class="term-group" id="letter-{{ if eq .letter "#" }}other{{ else }}{{ lower .letter }}{{ end }}">
+          <h2>{{ .letter }}</h2>
+          <ul class="references-list">
+            {{ range .items }}
+            <li id="ref-{{ .key }}" data-term="{{ .sk }}">
+              <div class="reference-apa">{{ partial "citations/authors" (.apa | markdownify) }}</div>
+              {{ with $cited.Get (md5 .apa) }}<p class="reference-cited">Cited in {{ range $i, $t := . }}{{ if $i }}, {{ end }}<a href="{{ $t.RelPermalink }}">{{ partial "doors/term_title" $t.Title }}</a>{{ end }}</p>{{ end }}
+            </li>
+            {{ end }}
+          </ul>
+        </section>
+        {{ end }}
+      </div>
+    </article>
+  </div>
+</div>
