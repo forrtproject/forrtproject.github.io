@@ -320,3 +320,4 @@
   .article-layout .article-style .booklet-area li{padding:0}
   .article-layout .article-style .booklet-area a,.article-layout .article-style .lesson-plan-list>ul>li>a{display:inline-flex;align-items:center;min-height:44px;padding:0}
 }
+.booklet-area .fa-external-link-alt{margin-inline-start:2px;font-size:13px;color:var(--soft)}

@@ -1,5 +1,5 @@
 {{/* What the FORRT booklet covers, from its table of contents: its pages on each of FORRT's four areas, in the
-     area's colour, each linked to its page on this site where there is one. Data: `inside` in the booklet's
+     area's colour, each linked to its page on this site where there is one; a link that leaves forrt.org carries the external-link icon (DESIGN.md §3). Data: `inside` in the booklet's
      front matter (content/about/booklet/_index.md). */}}
 {{ with .Page.Params.inside }}
 <div class="booklet-inside">
@@ -7,7 +7,7 @@
   <section class="booklet-area booklet-area-{{ .key }}" aria-labelledby="booklet-{{ .key }}">
     <h3 id="booklet-{{ .key }}">{{ .title }}</h3>
     <ul>
-      {{ range .pages }}{{ $title := $.Page.RenderString .title }}<li>{{ with .url }}<a href="{{ cond (hasPrefix . "http") . (relLangURL .) }}">{{ $title }}</a>{{ else }}{{ $title }}{{ end }}</li>{{ end }}
+      {{ range .pages }}{{ $title := $.Page.RenderString .title }}<li>{{ with .url }}{{ $away := and (hasPrefix . "http") (not (hasPrefix . "https://forrt.org")) }}<a href="{{ cond (hasPrefix . "http") . (relLangURL .) }}">{{ $title }}{{ if $away }} <i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="visually-hidden"> (another website)</span>{{ end }}</a>{{ else }}{{ $title }}{{ end }}</li>{{ end }}
     </ul>
   </section>
   {{ end }}

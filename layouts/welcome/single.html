@@ -30,7 +30,7 @@
       {{ range . }}
       {{ $image := resources.Get (printf "images/doors/%s.webp" .image) }}
       <article class="area area-{{ .key }}" aria-labelledby="welcome-area-{{ .key }}">
-        <div class="area-plate"><img src="{{ $image.RelPermalink }}" alt="{{ .alt }}" width="{{ $image.Width }}" height="{{ $image.Height }}" loading="lazy"></div>
+        <div class="area-plate"><img src="{{ $image.RelPermalink }}" alt="{{ .alt }}" width="{{ $image.Width }}" height="{{ $image.Height }}"></div>
         <div class="area-body">
           <h3 id="welcome-area-{{ .key }}">{{ .title }}</h3>
           <ul class="welcome-links">

@@ -24,7 +24,6 @@
     }
     frame.addEventListener('load', hideLegend);
     if (frame.contentDocument && frame.contentDocument.readyState === 'complete') hideLegend();
-    if (frame.clientWidth >= 700) return;
     function fit(tries) {
       var win = frame.contentWindow;
       var widget = win && win.HTMLWidgets && win.HTMLWidgets.find('.leaflet');
@@ -46,8 +45,15 @@
         }
       }, true);
     }
-    function start() { fit(50); }
+    // Once, as soon as the frame is narrow: on load, or after a resize or turn of the phone.
+    var fitted = false;
+    function start() {
+      if (fitted || frame.clientWidth >= 700) return;
+      fitted = true;
+      fit(50);
+    }
     frame.addEventListener('load', start);
+    window.addEventListener('resize', start);
     if (frame.contentDocument && frame.contentDocument.readyState === 'complete' && frame.contentWindow.location.href !== 'about:blank') start();
   })();
 </script>

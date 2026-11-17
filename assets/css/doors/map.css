@@ -2,7 +2,7 @@
 .map-page{padding:32px 0 56px}
 .map-head .crumbs{margin-bottom:18px}
 .map-head h1{font-size:clamp(36px,4.2vw,58px);line-height:1.06;margin:0 0 12px}
-.map-head .standfirst{max-width:30em;margin:0}
+.map-head .standfirst{font:500 clamp(19px,1.6vw,22px)/1.35 var(--display);max-width:30em;margin:0;color:var(--ink)}
 .map-head-grid{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px 48px;align-items:end}
 /* The figures in the community colour: the map is part of Community & Sustainability. */
 .map-figures{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 28px;padding:14px 22px;background:var(--com-bg);border-radius:var(--r-large)}
@@ -16,7 +16,11 @@
 .map-legend li{display:inline-flex;align-items:center;gap:6px;margin:0;font-size:15px}
 .map-swatch{width:14px;height:14px;border:1px solid #444;border-radius:50%}
 .map-after{display:grid;grid-template-columns:minmax(0,580px) minmax(0,420px);justify-content:space-between;gap:28px 56px;align-items:start;margin-top:40px}
-.map-text p{max-width:none}
+/* The page's own layout sits outside .article-layout, so its text takes the article's type here. */
+.map-text{font-size:18px;line-height:1.6;color:var(--ink)}
+.map-text p{max-width:none;margin:0 0 16px}
+.map-text a:not([class]){color:var(--link);text-decoration:underline;text-underline-offset:3px}
+.map-text a:not([class]):hover{color:var(--ink)}
 .map-text>:first-child{margin-top:0}
 .map-join{padding:22px 24px;background:var(--com-bg);border-radius:var(--r-large)}
 .map-join h2{margin:0 0 6px;font:var(--display-weight) 30px/1.15 var(--display)}
@@ -31,4 +35,5 @@
   .map-after{margin-top:28px}
   .map-join{padding:18px}
 }
-@media(max-width:760px){.map-buttons .btn{display:inline-flex;align-items:center;min-height:44px}}
+/* 44 px targets at every width: tablets are touch screens too. */
+.map-buttons .btn{display:inline-flex;align-items:center;min-height:44px}

@@ -80,7 +80,7 @@ Read our publications | Meta-scientific peer-reviewed papers & policies, and our
 Find teaching resources | Open educational resources in our Educational Nexus | /nexus
 Read our mission | Our goals and values | /about/mission
 Meet the teams | Who we are and our organizational structure | /about/teams
-Get involved | Ways to get involved more with FORRT | /about/get-involved
+Get involved | Ways to get involved with FORRT | /about/get-involved
 Open the booklet | Learn more about FORRT in the interactive flipbook | /booklet/
 {{< /action_cards >}}
 
