@@ -32,8 +32,13 @@
 {{ $groups = (where $groups "letter" "!=" "#") | append $numbers }}
 {{ $types := slice }}
 {{ range $index.facets }}{{ if eq .key "type" }}{{ range $v := .values }}{{ with index $typeCount $v.slug }}{{ $types = $types | append (dict "slug" $v.slug "label" $v.label "count" .) }}{{ end }}{{ end }}{{ end }}{{ end }}
+{{ $plate := resources.Get "images/doors/area-education.webp" }}
 <div class="article-style cluster-resources-list">
-  <div class="list-filter topic-tools" data-noun="resources" data-no-jump hidden>
+  {{/* The tools beside the directory's own illustration, as these are resources from the same collection. site.js
+       filters the lists from the row of letters on (data-list), as they are outside this block. */}}
+  <div class="topic-head">
+  <div class="topic-head__tools">
+  <div class="list-filter topic-tools" data-noun="resources" data-no-jump data-list="#topic-letters" hidden>
     <label for="list-filter-input">Search these resources</label>
     <input type="search" id="list-filter-input" placeholder="A word from the title or type" autocomplete="off">
     <p class="list-filter-count" aria-live="polite"></p>
@@ -49,7 +54,10 @@
     <button class="text-button list-filter-reset" type="button" hidden>Reset filters and search</button>
   </div>
   {{ end }}
-  <nav class="tag-letters topic-letters" aria-label="Resources by first letter">{{ range $groups }}<a href="#letter-{{ .letter | urlize | default "other" }}">{{ .letter }}</a>{{ end }}</nav>
+  </div>
+  <figure class="heading-plate topic-plate"><img src="{{ $plate.RelPermalink }}" alt="A brick pencil standing on an open green book." width="{{ $plate.Width }}" height="{{ $plate.Height }}"></figure>
+  </div>
+  <nav class="tag-letters topic-letters" id="topic-letters" aria-label="Resources by first letter">{{ range $groups }}<a href="#letter-{{ .letter | urlize | default "other" }}">{{ .letter }}</a>{{ end }}</nav>
   {{ range $groups }}
   <h2 class="topic-letter" id="letter-{{ .letter | urlize | default "other" }}">{{ .letter }}</h2>
   <ul class="cluster-resources">

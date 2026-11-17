@@ -1,6 +1,6 @@
 {{/* The head of a cluster's own page (/clusters/cluster-N/): a panel in the cluster's pale colour with its number,
      name, description and counts, and its icon from the clusters wheel in a door-shaped mark in the cluster's colour,
-     so the page carries the wheel's colour and icon. A long description (cluster 11's) shows four lines and "more"
+     so the page carries the wheel's colour and icon. The line above the name gives its number. A long description (cluster 11's) shows four lines and "more"
      (site.js .clamp-desc). Expects dict: page, cluster, total (number of clusters). */}}
 {{ $c := .cluster }}
 {{ $n := int $c.number }}
@@ -9,8 +9,9 @@
   <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ "" | relLangURL }}">Home</a> <span aria-hidden="true">/</span> <a href="{{ "nexus/" | relLangURL }}">Educational Nexus</a> <span aria-hidden="true">/</span> <a href="{{ "clusters/" | relLangURL }}">Clusters</a> <span aria-hidden="true">/</span> <span aria-current="page">{{ .page.Params.heading_title | default .page.Title }}</span></nav>
   <div class="cluster-hero__panel">
     <div class="cluster-hero__text">
-      <p class="cluster-hero__kicker"><span class="cluster-hero__num" aria-hidden="true">{{ $n }}</span>Cluster {{ $n }} of {{ .total }}</p>
-      <h1 class="clusters-site-heading" itemprop="headline">{{ .page.Params.heading_title | default .page.Title }}</h1>
+      <p class="cluster-hero__kicker">Cluster {{ $n }} of {{ .total }}</p>
+      {{/* The name alone: the line above already gives the number. */}}
+      <h1 class="clusters-site-heading" itemprop="headline">{{ $c.name }}</h1>
       {{ with $c.description }}<div class="clamp-desc cluster-hero__desc" data-clamp-name="this cluster"><p>{{ . }}</p></div>{{ end }}
       <p class="cluster-hero__counts">{{ len $c.sub_clusters }} sub-clusters · {{ $refs }} references</p>
     </div>
