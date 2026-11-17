@@ -1,27 +1,43 @@
-/* The welcome page for new members. */
-.welcome-page{padding:32px 0 44px}
+/* The welcome page for new members. It loads after home.css, whose area doors it reuses. */
+.welcome-page{padding:32px 0 56px}
 .welcome-page h1{font-size:clamp(36px,4.2vw,58px);line-height:1.06;margin:0 0 12px}
 .welcome-page .crumbs{margin-bottom:18px}
-.welcome-page .standfirst{font:500 clamp(19px,1.6vw,22px)/1.35 var(--display);max-width:34em;margin:0 0 14px}
+.welcome-page .standfirst{font:500 clamp(19px,1.6vw,22px)/1.35 var(--display);max-width:34em;margin:0}
+.welcome-page h2{margin:0;font:var(--display-weight) clamp(28px,2.6vw,36px)/1.15 var(--display)}
 .welcome-buttons{display:flex;flex-wrap:wrap;gap:8px;margin:0}
-.welcome-content{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:28px}
-.welcome-content>*{min-width:0}
-.welcome-content>:is(h2,p,ul,div:not(.card)){grid-column:1/-1}
-.welcome-content h2{margin:22px 0 2px;font-size:30px}
-.step-card,.resource-card{position:relative;padding:18px 20px;background:var(--surface);border-radius:var(--r-large);font-size:16px;line-height:1.45}
-.step-badge{float:right;margin-inline-start:10px;width:30px;height:30px;line-height:30px;background:var(--ink);border-radius:50%;color:#fff;text-align:center;font-weight:700}
-.step-title,.resource-title{margin:0 0 6px;font:var(--display-weight) 22px/1.2 var(--display)}
-.step-description,.resource-description{margin:0 0 10px}
-.step-button,.resource-button{font-weight:700;color:var(--link);text-decoration:underline;text-underline-offset:3px}
-.step-button i,.resource-button i{margin-inline-start:4px;font-size:15px}
-.resource-header{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;margin:0 0 6px}
-.resource-header>div:first-child{display:flex;align-items:center;gap:10px}
-.resource-icon{display:flex;align-items:center;justify-content:center;flex:none;width:36px;height:36px;background:#fff;border-radius:50%;color:var(--link)}
-.resource-title{margin:0}
-.resource-count{display:inline-flex;align-items:center;gap:6px;font-size:15px;font-weight:600;color:var(--soft)}
-.social-media-grid{display:flex;flex-wrap:wrap;gap:6px}
-.social-btn{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;background:#fff;border:1.5px solid var(--soft);border-radius:999px;color:var(--ink);font-size:15px;font-weight:600}
-.social-btn:hover{border-color:var(--ink);color:var(--ink)}
-.welcome-community{margin-top:32px;padding:22px 24px;background:var(--edu-bg);border-radius:var(--r-large)}
-.welcome-community h2{margin:0 0 6px;font-size:30px}
-@media(max-width:760px){.welcome-page{padding:20px 0 28px}.welcome-content{grid-template-columns:minmax(0,1fr)}}
+
+/* Four steps: numbered bricks (the action_cards bricks of article.css), in order on every screen. */
+.welcome-start{margin-top:36px}
+.welcome-start .action-cards.welcome-steps{margin:30px 0 0}
+.welcome-steps a::before{content:"Step " counter(list-item);font:600 15px/1.3 var(--text);color:#fff;opacity:.9}
+@media(min-width:1001px){.welcome-start .action-cards.welcome-steps{grid-template-columns:repeat(4,minmax(0,1fr));gap:0 4px}}
+@media(min-width:761px) and (max-width:1000px){.welcome-start .action-cards.welcome-steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* The areas: the home page's arched doors, each with two of FORRT's projects in that area. */
+.welcome-areas{margin-top:56px}
+.welcome-areas .areas{padding-top:24px}
+.welcome-areas .area h3{min-height:0}
+.welcome-areas .area ul.welcome-links{margin:0;padding:10px 0 0}
+.welcome-areas .area .welcome-links li{margin:0;padding:10px 0 0}
+.welcome-areas .area .welcome-links li+li{margin-top:6px;border-top:1px solid color-mix(in srgb,var(--tone) 25%,transparent)}
+.welcome-areas .area .welcome-links a{display:inline-block;padding:4px 0;font:var(--display-weight) 21px/1.25 var(--display);color:var(--tone);text-decoration-color:color-mix(in srgb,var(--tone) 55%,transparent)}
+.welcome-areas .area .welcome-links a:hover{text-decoration-color:currentColor;text-decoration-thickness:2px}
+.welcome-areas .area .welcome-links p{margin:2px 0 0;font-size:16px;line-height:1.45;color:var(--ink)}
+@media(min-width:1241px){.welcome-areas .area .welcome-links a{min-height:2.5em}}
+
+/* Staying in touch: the community's colour, with Slack and the newsletter first and where to follow FORRT after. */
+.welcome-community{margin-top:48px;padding:26px 28px;background:var(--com-bg);border-radius:var(--r-large)}
+.welcome-community>p{max-width:40em;margin:8px 0 16px;font-size:18px;line-height:1.5}
+.welcome-community h3{margin:24px 0 4px;font:600 17px/1.3 var(--text)}
+.welcome-follow{display:flex;flex-wrap:wrap;gap:0 22px;margin:0;padding:0;list-style:none}
+.welcome-follow a{display:inline-flex;align-items:center;min-height:44px;font-size:17px;color:var(--ink);text-decoration:underline;text-decoration-color:color-mix(in srgb,var(--com) 55%,transparent);text-underline-offset:3px}
+.welcome-follow a:hover{color:var(--com);text-decoration-color:currentColor}
+
+@media(max-width:760px){
+  .welcome-page{padding:20px 0 36px}
+  .welcome-start{margin-top:26px}
+  .welcome-areas{margin-top:40px}
+  .welcome-areas .areas{padding-top:16px}
+  .welcome-areas .area .welcome-links a{font-size:20px}
+  .welcome-community{margin-top:36px;padding:20px 18px}
+}

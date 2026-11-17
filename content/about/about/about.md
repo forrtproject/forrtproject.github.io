@@ -73,25 +73,18 @@ FORRT provides a pedagogical infrastructure and open educational resources desig
 2. Generate a conversation about the ethics and social impact of a higher education pedagogy that emphasizes openness, epistemic uncertainty and research credibility
 3. Promote a reflection about the perceived importance of different academic activities and advocate for greater recognition of educational resources 
 
-<br>
-
-Learn more about FORRT in the interactive flipbook:
-
-<a href="/booklet/" class="btn btn-primary">FORRT Booklet</a>
-
 ## Want to learn more about us?
 
-Our community has [**published**](/publications) meta-scientific peer-reviewed papers & policies (and we also have ongoing **manuscripts** being written) so please consider reading our award-winning scholarship on the FORRT's [Publications page](/publications), or start with our manifesto on the [OSF](https://osf.io/bnh7p).
+{{< action_cards >}}
+Read our publications | Meta-scientific peer-reviewed papers & policies, and our award-winning scholarship | /publications
+Find teaching resources | Open educational resources in our Educational Nexus | /nexus
+Read our mission | Our goals and values | /about/mission
+Meet the teams | Who we are and our organizational structure | /about/teams
+Get involved | Ways to get involved more with FORRT | /about/get-involved
+Open the booklet | Learn more about FORRT in the interactive flipbook | /booklet/
+{{< /action_cards >}}
 
-If you’re looking for **open educational resources**, please take a look at our [Educational Nexus](/nexus) and our [FORRT Pedagogies](/pedagogies).
-
-For more information about our **goals and values**, read our [Mission Statement](/about/mission), [Code of Conduct](/coc), and our quest towards [Principled Teaching and Mentoring](/about/principles).
-
-If you’re looking for information about who we are or our **organizational structure**, take a look at the [teams that compose FORRT](/about/teams), the institutions and initiatives with which [we are partners](/about/partnerships), and [our community members](/about/community).
-
-Would you like to **get involved** more with FORRT? Check out our [getting involved page](/about/get-involved)!
-
-Would you like to help us be or do better? Give us (anonymous) feedback in our [feedback page](/feedback).
+More about FORRT: [our manifesto on the OSF](https://osf.io/bnh7p), [FORRT Pedagogies](/pedagogies), our [Code of Conduct](/coc), [Principled Teaching and Mentoring](/about/principles), the institutions and initiatives with which [we are partners](/about/partnerships), and [our community members](/about/community). Would you like to help us be or do better? Give us (anonymous) feedback in our [feedback page](/feedback).
 
 {{< youtube i8cL3Q6A3HE >}}
 
