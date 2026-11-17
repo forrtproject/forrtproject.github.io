@@ -550,7 +550,8 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
 @media(max-width:900px){.article-layout .article-style .sm-side{margin-top:28px}}
 @media(max-width:760px){.article-layout .article-style .summary-hero{margin:28px 0 36px}.article-layout .article-style .summary-hero a{padding:20px 20px 30px}}
 /* A collection of summaries (layouts/_default/summaries.html): the header on the pale ground of the collection's
-   area with its count, the filter and the other collection beside the list on a wide screen (after it on a phone), and each entry a
+   area with its count; the filter and the routes to the other collection beside the list on a wide screen (on a phone the
+   filter above the list and the routes after it); and each entry a
    title with its citation below it. An open entry takes the area's pale ground. */
 .summaries-res{--area:var(--res);--area-bg:var(--res-bg)}
 .summaries-jus{--area:var(--jus);--area-bg:var(--jus-bg)}

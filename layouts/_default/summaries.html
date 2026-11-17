@@ -1,8 +1,9 @@
 {{- define "main" -}}
 {{/* A collection of summaries (front matter `layout: summaries`, `summaries: all` or `dei`). The header sits on the
      pale ground of the collection's area (DESIGN.md §6: open and reproducible science is research, DEI is social
-     justice) with its count. On a wide screen the filter, which site.js builds into .summary-tools-slot, stays
-     beside the list, above the routes to the other collection (after the list on a phone); the entries are doors/summary_entries. */}}
+     justice) with its count. The filter, which site.js builds into .summary-tools-slot, comes before the list:
+     on a wide screen it stays beside the list, above the routes to the other collection; on a phone it sits above the
+     list and the routes follow the list. The entries are doors/summary_entries. */}}
 {{ $dei := eq .Params.summaries "dei" }}
 {{ $count := partial "doors/summary_count" $dei }}
 {{ $body := partial "doors/content" .Content }}

@@ -279,7 +279,8 @@ if (summaryEntries.length) {
   const tools = document.createElement('div');
   tools.className = 'summary-tools';
   tools.innerHTML = '<label>Filter these summaries <input type="search" autocomplete="off" spellcheck="false"></label><p class="summary-count" role="status"></p>';
-  // A collection page (layouts/_default/summaries.html) keeps the filter beside the list, with a placeholder of its own.
+  // A collection page (layouts/_default/summaries.html) puts the filter in its slot, with a placeholder of its own:
+  // beside the list on a wide screen, above it on a phone.
   const slot = document.querySelector('.summary-tools-slot');
   if (slot?.dataset.placeholder) tools.querySelector('input').placeholder = slot.dataset.placeholder;
   if (slot) slot.append(tools); else summaryEntries[0].before(tools);
