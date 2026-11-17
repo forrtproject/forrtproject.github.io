@@ -50,7 +50,9 @@
       {{ else }}{{ $where = $host }}{{ end }}
       {{/* Where it leads, unless the name already says so ("Interview (pdf)", "CREP's OSF page"). */}}
       {{ if in (lower .name) (lower $where) }}{{ $where = "" }}{{ end }}
-      <li><a href="{{ $link }}"><strong>{{ trim .name " " }}</strong>{{ with $where }}<span>{{ . }}</span>{{ end }}</a></li>
+      {{/* Materials open beside the article, as the theme's buttons for them did and as Doors list entries and menu
+           links to other sites do (doors/list_item, doors/menu_link). */}}
+      <li><a href="{{ $link }}" target="_blank" rel="noopener"><strong>{{ trim .name " " }}</strong>{{ with $where }}<span>{{ . }}</span>{{ end }}</a></li>
     {{ end }}
   </ul>
   {{ else }}

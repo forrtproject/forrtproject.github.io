@@ -608,7 +608,11 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
 .ac-panel-door::after{content:"";position:absolute;left:50%;bottom:0;width:22%;height:62%;transform:translateX(-50%);border-radius:999px 999px 0 0;background:rgb(255 255 255/.16)}
 /* Where the side card sits beside the title (above 1000 px) it names every author, so the byline does not name them
    again; below that the card comes after the text and the byline keeps the names. */
-@media(min-width:1001px){.article-layout:has(>.article-card :is(.card-authors,.card-authors-compact)) .byline-authors{display:none}}
+@media(min-width:1001px){
+  .article-layout:has(>.article-card :is(.card-authors,.card-authors-compact)) .byline-authors{display:none}
+  /* The date is in the card too (byline-date is for narrow screens), so a byline with no reading time left is empty. */
+  .article-layout:has(>.article-card :is(.card-authors,.card-authors-compact)) .byline:not(:has(.byline-time)){display:none}
+}
 /* On a phone the byline gives the date under the title, so the card at the end gives only an update. */
 @media(max-width:1000px){.article-layout .article-card-article dl>:is(dt:first-child,dt:first-child+dd){display:none}.article-layout .article-card-article dl>dt:nth-child(3){margin-top:0}}
 @media(max-width:1000px){.article-layout .article-card-article dl:not(:has(>dt:nth-child(3))){display:none}}
