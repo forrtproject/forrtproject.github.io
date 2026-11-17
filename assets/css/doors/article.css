@@ -515,6 +515,7 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
 .article-layout .article-style .nl-times{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 18px}
 .nl-times>span{flex:1 1 130px;box-sizing:border-box;padding:12px 16px 14px;background:#fff;border-radius:var(--r-small);font-size:20px;font-weight:600;line-height:1.25}
 .nl-times strong{display:block;font:var(--display-weight) 28px/1.15 var(--display);color:var(--com)}
+@media(max-width:480px){.nl-times>span{flex-basis:120px;padding:10px 12px 12px;font-size:18px}.nl-times strong{font-size:23px}}
 .article-layout .article-style .nl-side .action-cards{margin:22px 0 8px}
 @media(max-width:1000px){.article-layout .article-style .nl-meetings{margin-top:32px}}
 /* A collection of summaries (layouts/_default/summaries.html): the header on the pale ground of the collection's
@@ -535,8 +536,9 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
 .summaries-side:empty{display:none}
 .summaries-side .summary-tools p.summary-count{margin:8px 0 0;font-size:16px}
 .summaries-routes ul{margin:0;padding:0;list-style:none;font-size:17px;line-height:1.35}
-.summaries-routes li{display:flex;flex-wrap:wrap;align-items:center;column-gap:6px;margin:0 0 4px}
-.summaries-routes a{display:inline-flex;align-items:center;min-height:44px;color:var(--link);text-decoration:underline;text-underline-offset:3px}
+/* The link is inline, so the count follows its last word; the padding keeps the tap target 44 px high. */
+.summaries-routes li{margin:0 0 4px;padding:11px 0}
+.summaries-routes a{padding:11px 0;color:var(--link);text-decoration:underline;text-underline-offset:3px}
 .summaries-routes span{color:var(--soft);font-size:15px}
 @media(min-width:1001px){
   .summaries-body{grid-template-columns:300px minmax(0,780px);grid-template-rows:auto 1fr;column-gap:56px;row-gap:16px}

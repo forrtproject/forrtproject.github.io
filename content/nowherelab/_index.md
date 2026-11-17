@@ -1,6 +1,8 @@
 ---
 title: Nowhere Lab
 subtitle: An online lab community for those without a lab
+# The meta description: the body starts inside layout wrappers, so its automatic summary stops before the list.
+summary: "We are Nowhere Lab. Anyone from any field is welcome to join who doesn't have a lab but would like the lab meeting experience: new faculty who have no one in their lab yet, ex-academics who now work in industry, freelance sci-commers and consultants, people in a toxic lab, people between jobs and keen undergrads."
 date: 2026-04-28
 sharing_image: "img/nowherelab-logo.png"
 header_logo: "img/nowherelab-logo.png"
