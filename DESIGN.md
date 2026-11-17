@@ -33,8 +33,9 @@ Every repeated device has to earn its place. In practice:
 - Pills and chips are for controls: filters, toggles, language switches. A list of links, such as related glossary terms, is a plain list. One exception: an item may carry one quiet tag for a category that visitors filter by on the same page, such as a resource's purpose.
 - Search and filters belong on long lists (the glossary, the resources directory, Reversals). A list of fewer than about twenty items needs neither, and a longer one may do without when another clear route through it exists, such as a contents list.
 - Tags: a tag links to the tags page only when at least five pages and at most a quarter of the tagged pages share it (`layouts/partials/functions/tag_counts.html`). Rarer tags are plain keywords; tags on more pages are not shown, because they no longer tell pages apart.
-- In long lists of long entries, show the first two lines of each description (three on a phone) with a "more" button. Without JavaScript the full text shows.
+- Show descriptions in full. Cut one only when it runs well past its neighbours (more than six lines): show four lines and a "more" button. Never hide just a line or two behind "more". Without JavaScript the full text shows.
 - Cards for actions are the brick cards of `action_cards`. Lists of tools are rows: a linked title and a sentence, not boxes.
+- Directories of organisations, teams and projects (Partnerships, Teams, Get involved) are pale cards or pictured entries, two or more to a row on a wide screen, so they are easy to skim. Each ends in a button for its action, such as "Visit website" or "Join the team's Slack channel".
 - Framed boxes (cards, panels, toolbars) keep space inside them and between them; text never runs up against a box's edge.
 
 ## 5. Links look like links
