@@ -51,10 +51,3 @@
 }
 @media(prefers-reduced-motion:no-preference){.tool{transition:background-color .15s}}
 
-/* Each stage stands on its own pale ground in its stage colour, so the four read as four parts on every screen.
-   A tool's hover and focus turn its row white, since the stage's tint is already the ground. */
-.stage{padding:14px 20px 10px;background:var(--tint);border-radius:0 0 var(--r-large) var(--r-large)}
-.tool:hover,.tool:focus-within{background:#fff}
-.tool{border-bottom-color:color-mix(in srgb,var(--tone) 22%,transparent)}
-.tool:last-child{border-bottom:0}
-@media(max-width:600px){.stage{padding:12px 14px 6px}}

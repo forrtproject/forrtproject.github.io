@@ -78,13 +78,13 @@ FORRT provides a pedagogical infrastructure and open educational resources desig
 {{< action_cards >}}
 Read our publications | Meta-scientific peer-reviewed papers & policies, and our award-winning scholarship | /publications
 Find teaching resources | Open educational resources in our Educational Nexus | /nexus
-Read our mission | Our goals and values | /about/mission
+Read our mission | What FORRT advocates for, and why | /about/mission
 Meet the teams | Who we are and our organizational structure | /about/teams
 Get involved | Ways to get involved with FORRT | /about/get-involved
-Open the booklet | Learn more about FORRT in the interactive flipbook | /booklet/
+Open the booklet | A 20-page introduction to FORRT, as a flipbook | /booklet/
 {{< /action_cards >}}
 
-More about FORRT: [our manifesto on the OSF](https://osf.io/bnh7p), [FORRT Pedagogies](/pedagogies), our [Code of Conduct](/coc), [Principled Teaching and Mentoring](/about/principles), the institutions and initiatives with which [we are partners](/about/partnerships), and [our community members](/about/community). Would you like to help us be or do better? Give us (anonymous) feedback in our [feedback page](/feedback).
+See also [our manifesto on the OSF](https://osf.io/bnh7p), [FORRT Pedagogies](/pedagogies), our [Code of Conduct](/coc), [Principled Teaching and Mentoring](/about/principles), the institutions and initiatives with which [we are partners](/about/partnerships), and [our community members](/about/community). Would you like to help us be or do better? Give us (anonymous) feedback in our [feedback page](/feedback).
 
 {{< youtube i8cL3Q6A3HE >}}
 

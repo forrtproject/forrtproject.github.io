@@ -60,9 +60,9 @@ Add your idea | Suggest an activity in the Table of Activities | https://docs.go
 ## Topics
 
 <div class="lesson-plan-intro">
-<figure class="lesson-plan-sample"><a href="LessonPlans1.pdf"><img src="LessonPlansTemplate.webp" alt="The first page of the lesson plan on interpreting effect sizes and confidence intervals: a table giving the suitable context, total time, prerequisites, related resources and learning outcomes, then the activities with their timings and instructor notes." width="1218" height="1530" loading="lazy"></a><figcaption>The lesson plan on <a href="LessonPlans1.pdf">interpreting effect sizes and confidence intervals</a> (PDF), in the template's format.</figcaption></figure>
+<figure class="lesson-plan-sample"><a href="LessonPlans1.pdf"><img src="LessonPlansTemplate.webp" alt="The first page of the lesson plan on interpreting effect sizes and confidence intervals: a table giving the suitable context, total time, prerequisites, related resources and learning outcomes, then the activities with their timings and instructor notes." width="1218" height="1530" loading="lazy"></a><figcaption>The first page of the effect sizes lesson plan, in the template's format.</figcaption></figure>
 
-You can find *all lesson plans* [in this OSF repository](https://osf.io/th254/), and here's one example about [Interpreting effect sizes and confidence intervals](LessonPlans1.pdf) and another on [Prediction Markets](LessonPlans2.pdf).
+You can find *all lesson plans* in FORRT's OSF repository, and here's one example about [Interpreting effect sizes and confidence intervals](LessonPlans1.pdf) and another on [Prediction Markets](LessonPlans2.pdf).
 
 Each has suitable context: (e.g., entry-level/undergraduate/postgraduate), total time: (e.g., 1 hour, 2 hours, 1 day, etc.), pre-requisites, related resources (e.g. slides, assignment materials, lecture recordings, etc), learning outcomes, broken down per activity length (10min, 30min, etc.). Here are all the topics for which we have prepared Lesson Plans so far:
 
@@ -72,26 +72,16 @@ Each has suitable context: (e.g., entry-level/undergraduate/postgraduate), total
 
 ### In the OSF repository
 
-- [Interpreting effect sizes and confidence intervals](https://osf.io/8jmbu/)  
-  Lesson plan on OSF
-- [Registered Replication Report](https://osf.io/2znr4/)  
-  Lesson plan on OSF
-- [How to be critical not cynical](https://osf.io/7qz38/)  
-  Lesson plan on OSF
-- [Intro to Open Science lesson plan](https://osf.io/d8ctf)  
-  Lesson plan on OSF
-- [Understanding the replication crisis with app activities](https://osf.io/cwaqj/)  
-  Lesson plan on OSF
-- [Dodgy papers](https://osf.io/hrzwj/)  
-  Lesson plan on OSF
-- [Research paradigms and open science](https://osf.io/r8ymj/)  
-  Lesson plan on OSF
-- [Open Data and Qualitative Research](https://osf.io/nyfqx/)  
-  Lesson plan on OSF
-- [Diversity and inclusion in (br)open science](https://osf.io/r6qsw/)  
-  Lesson plan on OSF
-- [Differentiating between correlation vs causation](https://osf.io/fvnj5)  
-  Lesson plan on OSF
+- [Interpreting effect sizes and confidence intervals](https://osf.io/8jmbu/)
+- [Registered Replication Report](https://osf.io/2znr4/)
+- [How to be critical not cynical](https://osf.io/7qz38/)
+- [Intro to Open Science lesson plan](https://osf.io/d8ctf)
+- [Understanding the replication crisis with app activities](https://osf.io/cwaqj/)
+- [Dodgy papers](https://osf.io/hrzwj/)
+- [Research paradigms and open science](https://osf.io/r8ymj/)
+- [Open Data and Qualitative Research](https://osf.io/nyfqx/)
+- [Diversity and inclusion in (br)open science](https://osf.io/r6qsw/)
+- [Differentiating between correlation vs causation](https://osf.io/fvnj5)
 
 ### In the Neurodiversity lesson bank
 

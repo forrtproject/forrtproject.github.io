@@ -285,9 +285,8 @@
 .article-layout .article-style .lesson-plan-sample{order:1;width:min(100%,340px);margin:4px 0 8px;padding:14px 14px 10px;background:var(--edu-bg);border-radius:var(--r-large)}
 .lesson-plan-sample img{display:block;width:100%;height:auto;aspect-ratio:1218/980;object-fit:cover;object-position:top;background:#fff;border:1px solid var(--line);border-radius:4px}
 .lesson-plan-sample figcaption{margin:8px 2px 0;font-size:15px;line-height:1.4;text-align:start}
-.lesson-plan-article{order:1;margin:8px 0 0;padding:18px 20px 6px;background:var(--edu-bg);border-radius:var(--r-large)}
+.lesson-plan-article{order:1;margin:8px 0 0}
 .article-layout .article-style .lesson-plan-article p{font-size:17px}
-.article-layout .article-style .lesson-plan-article .spoiler{background:#fff}
 @media(min-width:1001px){
   :is(.lesson-plan-intro,.lesson-plan-motivation){display:grid;grid-template-columns:minmax(0,580px) minmax(0,380px);justify-content:start;column-gap:64px;align-items:start}
   :is(.lesson-plan-intro,.lesson-plan-motivation)>*{grid-column:1}
@@ -303,13 +302,14 @@
   .article-layout-wide .article-style .doc-section>aside.callout{grid-column:2;grid-row:1/span 8;max-width:none;margin:6px 0 0}
 }
 
-/* The booklet: the flipbook on a pale panel, then what it covers in each area, in the area's colour. */
+/* The booklet: the flipbook on a pale panel, then what it covers in each area: a heading in the area's colour over a
+   plain list of links, not a box (DESIGN.md §4). */
 .article-style .booklet-frame{background:var(--surface)!important;border-radius:var(--r-large)}
-.booklet-inside{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:16px;margin:16px 0 8px}
-.booklet-area{--tone:var(--edu);padding:16px 20px 12px;background:var(--edu-bg);border-radius:var(--r-large)}
-.booklet-area-res{--tone:var(--res);background:var(--res-bg)}
-.booklet-area-jus{--tone:var(--jus);background:var(--jus-bg)}
-.booklet-area-com{--tone:var(--com);background:var(--com-bg)}
+.booklet-inside{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:20px 32px;margin:12px 0 8px}
+.booklet-area{--tone:var(--edu);padding-top:10px;border-top:4px solid var(--tone)}
+.booklet-area-res{--tone:var(--res)}
+.booklet-area-jus{--tone:var(--jus)}
+.booklet-area-com{--tone:var(--com)}
 .article-layout .article-style .booklet-area h3{margin:0 0 6px;font-size:22px;line-height:1.2;color:var(--tone)}
 .article-layout .article-style .booklet-area ul{max-width:none;margin:0;padding:0;list-style:none}
 .article-layout .article-style .booklet-area li{max-width:none;margin:0;padding:4px 0;font-size:17px;line-height:1.4}
