@@ -90,7 +90,19 @@ function drawCard(index) {
   };
   node.querySelector('.res-type').textContent = labels('type', item.y);
   node.querySelector('.res-level').textContent = labels('level', item.l, 2);
-  node.querySelector('.res-tag').textContent = labels('cluster', item.c);
+  node.querySelector('.res-desc').textContent = item.s || '';
+  // Clusters as on the server-drawn cards: each name with a mark in its colour, taken from its filter chip.
+  const tag = node.querySelector('.res-tag');
+  item.c.forEach((position, i) => {
+    const chip = document.querySelector(`.facet[data-facet=cluster] .chip[data-value="${data.facets.cluster[position]}"]`);
+    if (!chip) return;
+    if (tag.childNodes.length) tag.append(', ');
+    const name = document.createElement('span');
+    name.className = 'res-cl';
+    if (chip.dataset.cl) name.style.setProperty('--c', `var(--cl${chip.dataset.cl})`);
+    name.textContent = labelOf(chip);
+    tag.append(name);
+  });
   return node;
 }
 

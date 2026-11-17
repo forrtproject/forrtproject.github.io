@@ -86,7 +86,9 @@
         {{/* The clusters the directory filters by, from forrt_clusters_new; none when that is empty. */}}
         {{ with index (partialCached "doors/resource_index" (site.GetPage "/resources") "resources").items .RelPermalink }}{{ with .clusters }}
           {{ $names := slice }}
-          {{ range $name := . }}{{ with index $clusterPages (lower $name) }}{{ $names = $names | append (printf `<a href="%s">%s</a>` . ($name | htmlEscape)) }}{{ else }}{{ $names = $names | append ($name | htmlEscape) }}{{ end }}{{ end }}
+          {{/* Each with the small mark in its colour from the clusters wheel, as in the directory. */}}
+          {{ $num := partialCached "doors/cluster_numbers.html" "n" }}
+          {{ range $name := . }}{{ $mark := "" }}{{ with index $num (lower $name | urlize) }}{{ $mark = printf `<span class="cl-mark" style="--c: var(--cl%d)" aria-hidden="true"></span>` . }}{{ end }}{{ with index $clusterPages (lower $name) }}{{ $names = $names | append (printf `%s<a href="%s">%s</a>` $mark . ($name | htmlEscape)) }}{{ else }}{{ $names = $names | append (printf `%s%s` $mark ($name | htmlEscape)) }}{{ end }}{{ end }}
           <dt>{{ cond (gt (len $names) 1) "Clusters" "Cluster" }}</dt><dd>{{ delimit $names ", " | safeHTML }}</dd>
         {{ end }}{{ end }}
         <dt>Last updated</dt><dd>{{ .Lastmod.Format "2 January 2006" }}</dd>

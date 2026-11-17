@@ -1,8 +1,11 @@
 {{/* One card in the resources directory. Rendered here for the page's own results, and once
      empty inside a <template> for assets/js/doors/resources.js to fill in, so both look the same.
-     Input: dict with `title`, `url`, `types`, `levels`, `clusters`. */}}
+     Input: dict with `title`, `url`, `desc`, `types`, `levels`, `clusters`. Each cluster carries a small mark in
+     its colour from the clusters wheel (DESIGN.md §6). */}}
+{{ $num := partialCached "doors/cluster_numbers.html" "n" }}
 <article class="res">
   <p class="res-format"><span class="res-type">{{ delimit .types ", " }}</span> {{/* Two levels at most, then a count, so rows keep an even rhythm; the full list is on the resource page. */}}<span class="res-level">{{ delimit (first 2 .levels) ", " }}{{ if gt (len .levels) 2 }} +{{ sub (len .levels) 2 }}{{ end }}</span></p>
   <h2 class="res-title"><a href="{{ .url }}">{{ .title }}</a></h2>
-  <p class="res-tag">{{ delimit .clusters ", " }}</p>
+  <p class="res-desc">{{ .desc }}</p>
+  <p class="res-tag">{{ range $i, $c := .clusters }}{{ if $i }}, {{ end }}<span class="res-cl"{{ with index $num (lower $c | urlize) }} style="--c: var(--cl{{ . }})"{{ end }}>{{ $c }}</span>{{ end }}</p>
 </article>

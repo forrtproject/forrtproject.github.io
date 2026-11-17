@@ -54,15 +54,14 @@
         {{ end }}
       </details>
 
-      <p class="intro-paragraph">
-        Jump to your field and discipline from the list of fields. Resources are grouped into five areas:
-      </p>
-      <ul class="disciplines-areas">
-        <li><span class="badge" style="background:var(--soft);color:#fff;">General</span></li>
-        <li><span class="badge" style="background:var(--res);color:#fff;">Open Data</span></li>
-        <li><span class="badge" style="background:var(--edu);color:#fff;">Open Methods</span></li>
-        <li><span class="badge" style="background:var(--com);color:#fff;">Open Outputs</span></li>
-        <li><span class="badge" style="background:var(--jus);color:#fff;">Open Education</span></li>
+      {{/* A key to the labels on each resource (field_section.html), not filters: a swatch and a name, not pills. */}}
+      <p class="intro-paragraph" id="disc-key-h">Resources are grouped into five areas, each shown by a label in its colour:</p>
+      <ul class="disciplines-areas" aria-labelledby="disc-key-h">
+        <li><span class="disc-key" style="--k:var(--soft)">General</span></li>
+        <li><span class="disc-key" style="--k:var(--res)">Open Data</span></li>
+        <li><span class="disc-key" style="--k:var(--edu)">Open Methods</span></li>
+        <li><span class="disc-key" style="--k:var(--com)">Open Outputs</span></li>
+        <li><span class="disc-key" style="--k:var(--jus)">Open Education</span></li>
       </ul>
       <p class="intro-paragraph">
         If you have resources or disciplines to add, or spot errors, please <a href="https://docs.google.com/forms/d/e/1FAIpQLSfs-BCYWGet5QNZAWQ8IQVZ05TAUUwvD4mkc31Ehrm5tK8q3Q/viewform" target="_blank" rel="noopener">fill out this form</a>.

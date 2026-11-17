@@ -32,7 +32,7 @@
     <p class="tag-results-all"><a href="{{ "tags/" | relURL }}">Choose another tag</a></p>
   </div>
 
-  {{/* The twelve most used as larger pills, then the common tags A to Z with letter links. */}}
+  {{/* The twelve most used as bricks, then the common tags A to Z with letter links. */}}
   {{ $sorted := sort $rows "tag" }}
   {{ $groups := slice }}{{ $current := "" }}{{ $items := slice }}
   {{ range $sorted }}
@@ -43,9 +43,11 @@
   {{ end }}
   {{ if $items }}{{ $groups = $groups | append (dict "letter" $current "rows" $items) }}{{ end }}
   <div id="tag-cloud">
-    <section class="tag-top">
+    {{/* The twelve most used tags are the page's way in: bricks in the brick colours, which carry no meaning
+         (DESIGN.md §6), each with its count in words. */}}
+    <section class="tag-top brick-row">
       <h2>Most used</h2>
-      <div class="tag-cloud">{{ range first 12 $rows }}<a href="{{ printf "tags/?tag=%s" (.tag | urlquery) | relURL }}">{{ .tag }} <span class="tag-count">{{ .count }}</span></a>{{ end }}</div>
+      <ul class="action-cards">{{ range first 12 $rows }}<li><a href="{{ printf "tags/?tag=%s" (.tag | urlquery) | relURL }}"><strong>{{ .tag }}</strong><span>{{ .count }} pages</span></a></li>{{ end }}</ul>
     </section>
     <section class="tag-all">
       <h2>All common tags, A to Z</h2>

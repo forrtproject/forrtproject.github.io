@@ -657,7 +657,8 @@ if (listFilter) {
   }
   // A menu of the sections that hold entries, with their counts, to jump straight to one.
   const withItems = sections.filter(({heading, items}) => heading && items.length && items.length < 400);
-  if (withItems.length > 3) {
+  // A list with its own row of letters to jump by (data-no-jump, /forrt_clusters/<term>/) needs no menu as well.
+  if (withItems.length > 3 && !listFilter.hasAttribute('data-no-jump')) {
     const jump = document.createElement('label');
     jump.className = 'list-filter-jump';
     jump.textContent = 'Go to ';

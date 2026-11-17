@@ -131,7 +131,7 @@
 
   /** The tag's own spelling, from the list on this page, for a term the address gives in lower case or as a slug. */
   function spelling(term) {
-    var links = document.querySelectorAll(".tag-group li a, .tag-top .tag-cloud a");
+    var links = document.querySelectorAll(".tag-group li a, .tag-top a");
     for (var i = 0; i < links.length; i += 1) {
       var name = links[i].firstChild.textContent.trim();
       if (name.toLowerCase() === term) return name;

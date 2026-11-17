@@ -15,8 +15,24 @@
       <div>
         <h1>{{ .Params.heading }}</h1>
         <p class="lede">{{ printf .Params.lede (lang.FormatNumber 0 $total) }}</p>
+        {{/* Ready-made teaching materials as the way in: each brick opens the directory filtered to one
+             material type (resources.js reads ?type=). Counts come from the type filter. The bricks take
+             the brick colours, which carry no meaning (DESIGN.md §6). */}}
+        {{ $typeCounts := dict }}
+        {{ range $index.facets }}{{ if eq .key "type" }}{{ range .values }}{{ $typeCounts = merge $typeCounts (dict .slug .count) }}{{ end }}{{ end }}{{ end }}
+        {{ $starts := slice
+          (dict "slug" "syllabus" "title" "Syllabi" "noun" "course outlines to adapt")
+          (dict "slug" "full-course" "title" "Full courses" "noun" "courses with their materials")
+          (dict "slug" "lesson" "title" "Lessons" "noun" "single sessions")
+          (dict "slug" "activity" "title" "Activities" "noun" "exercises for class") }}
+        <nav class="res-start brick-row" aria-labelledby="res-start-h">
+          <h2 id="res-start-h">Ready to teach with</h2>
+          <ul class="action-cards">
+            {{ range $s := $starts }}{{ with index $typeCounts $s.slug }}<li><a href="{{ printf "resources/?type=%s" $s.slug | relLangURL }}"><strong>{{ $s.title }}</strong><span>{{ . }} {{ $s.noun }}</span></a></li>{{ end }}{{ end }}
+          </ul>
+        </nav>
       </div>
-      <figure class="heading-plate"><img src="{{ $plate.RelPermalink }}" alt="A brick pencil standing on an open green book." width="{{ $plate.Width }}" height="{{ $plate.Height }}"></figure>
+      <figure class="heading-plate res-plate"><img src="{{ $plate.RelPermalink }}" alt="A brick pencil standing on an open green book." width="{{ $plate.Width }}" height="{{ $plate.Height }}"></figure>
     </div>
   </header>
 
@@ -28,7 +44,7 @@
         <fieldset class="facet" data-facet="{{ .key }}">
           <legend class="filter-title">{{ .name }}</legend>
           <div class="chips">
-            {{ range .values }}<button class="chip" type="button" aria-pressed="false" data-value="{{ .slug }}">{{ .label }} <span class="chip-count">{{ .count }}</span></button>{{ end }}
+            {{ range .values }}<button class="chip" type="button" aria-pressed="false" data-value="{{ .slug }}"{{ with .num }} data-cl="{{ . }}" style="--c: var(--cl{{ . }})"{{ end }}>{{ .label }} <span class="chip-count">{{ .count }}</span></button>{{ end }}
           </div>
         </fieldset>
         {{ end }}
@@ -74,7 +90,7 @@
     <details class="collection-about"><summary>How the collection grew</summary>{{ .Content }}</details>
   </section>
 </div>
-<template id="resCard">{{ partial "doors/resource_card" (dict "title" "" "url" "" "types" slice "levels" slice "clusters" slice) }}</template>
+<template id="resCard">{{ partial "doors/resource_card" (dict "title" "" "url" "" "desc" "" "types" slice "levels" slice "clusters" slice) }}</template>
 {{ $js := resources.Get "js/doors/resources.js" | js.Build (dict "minify" true "format" "iife" "target" "es2019") | fingerprint "md5" }}
 <script src="{{ $js.RelPermalink }}" defer></script>
 {{ end }}
