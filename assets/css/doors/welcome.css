@@ -24,8 +24,8 @@
 .welcome-areas .area .welcome-links a:hover{text-decoration-color:currentColor;text-decoration-thickness:2px}
 .welcome-areas .area .welcome-links p{margin:2px 0 0;font-size:16px;line-height:1.45;color:var(--ink)}
 
-/* Staying in touch: the community's colour, with Slack and the newsletter first and where to follow FORRT after. */
-.welcome-community{margin-top:48px;padding:26px 28px;background:var(--com-bg);border-radius:var(--r-large)}
+/* Staying in touch: plain text, not a panel, with Slack and the newsletter first and where to follow FORRT after. */
+.welcome-community{margin-top:48px}
 .welcome-community>p{max-width:40em;margin:8px 0 16px;font-size:18px;line-height:1.5}
 .welcome-community h3{margin:24px 0 4px;font:600 17px/1.3 var(--text)}
 .welcome-follow{display:flex;flex-wrap:wrap;gap:0 22px;margin:0;padding:0;list-style:none}
@@ -38,7 +38,7 @@
   .welcome-areas{margin-top:40px}
   .welcome-areas .areas{padding-top:16px}
   .welcome-areas .area .welcome-links a{font-size:20px}
-  .welcome-community{margin-top:36px;padding:20px 18px}
+  .welcome-community{margin-top:36px}
 }
 /* 44 px targets on phones (DESIGN.md §9). */
 @media(max-width:760px){.welcome-areas .area .welcome-links a{display:inline-flex;align-items:center;min-height:44px;padding:0}}

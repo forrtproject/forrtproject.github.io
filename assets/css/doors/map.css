@@ -22,9 +22,8 @@
 .map-text a:not([class]){color:var(--link);text-decoration:underline;text-underline-offset:3px}
 .map-text a:not([class]):hover{color:var(--ink)}
 .map-text>:first-child{margin-top:0}
-.map-join{padding:22px 24px;background:var(--com-bg);border-radius:var(--r-large)}
+.map-join{padding-top:4px}
 .map-join h2{margin:0 0 14px;font:var(--display-weight) 30px/1.15 var(--display)}
-.map-join p{margin:0 0 14px;font-size:17px;line-height:1.5}
 .map-buttons{display:flex;flex-wrap:wrap;gap:8px;margin:0!important}
 @media(max-width:1000px){.map-after{grid-template-columns:minmax(0,1fr)}}
 @media(max-width:760px){
@@ -33,7 +32,6 @@
   .map-figures{justify-self:start}
   .map-frame{margin-top:18px}
   .map-after{margin-top:28px}
-  .map-join{padding:18px}
 }
 /* 44 px targets at every width: tablets are touch screens too. */
 .map-buttons .btn{display:inline-flex;align-items:center;min-height:44px}
