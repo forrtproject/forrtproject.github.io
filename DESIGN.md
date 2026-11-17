@@ -47,7 +47,7 @@ Every repeated device has to earn its place. In practice:
 
 ## 6. Colour carries meaning
 
-- FORRT works in four areas of equal standing: Education & Pedagogy, Meta-Science & Research, Social Justice & DEIA, and Community & Sustainability. Each has its colour: education `--edu` (green), research `--res` (dark blue), social justice `--jus` (purple), community `--com` (brown). Pages and cards that belong to an area use its colour and its pale background (`--edu-bg` and so on). Area colours appear only for their areas.
+- FORRT works in four areas of equal standing: Education & Pedagogy, Meta-Science & Research, Social Justice & DEIA, and Community & Sustainability. Each has its colour: education `--edu` (green), research `--res` (dark blue), social justice `--jus` (purple), community `--com` (brown). Pages and cards that belong to an area use its colour and its pale background (`--edu-bg` and so on), and so do the articles of an area's sections: Educators' Corner and Pedagogies are education's. Area colours appear only for their areas.
 - The 11 FORRT clusters are not areas. Each keeps a colour of its own, and together they span the spectrum (`layouts/partials/clusters/colors.html`), so the clusters can be told apart. Strong cluster colours are for small marks; their backgrounds stay pale.
 - Rows of action bricks run through four brick colours of their own (`--brick1` to `--brick4`: wine, olive, slate and ochre), chosen to stay clear of the area colours. They add variety and carry no meaning. Where each brick stands for something that has a colour of its own, such as the Replication Hub's stages, it takes that colour instead. Do not use shades of one colour for variety: they read as more and less important.
 - `--hot` (orange) is for highlights, `--urgent` (red) only for urgency. White is a clean ground.
@@ -59,7 +59,7 @@ Every repeated device has to earn its place. In practice:
 - No italics anywhere outside reference lists, including menus, captions, labels and quotes. Emphasis is semi-bold.
 - Headings, buttons and labels are in sentence case.
 - Reading lines stay under 80 characters, measured on the rendered lines. The narrow reading column is for prose; tables, tools, programmes and directories may use the full width.
-- On a wide page, prose never stands alone in the narrow column with an empty band beside it. When a full-width list follows, the list starts beside the prose or flows around it (Community, Teams). Otherwise something useful sits beside the prose, such as a contents card, an image, or the search of a list long enough to need one (§4). The 80-character limit is for the length of lines, not a reason to leave half the screen empty.
+- On a wide page, prose never stands alone in the narrow column with an empty band beside it. When a full-width list follows, the list starts beside the prose or flows around it (Community, Teams). Otherwise something useful sits beside the prose, such as a contents card, an image, the article's authors with their photos, or the search of a list long enough to need one (§4). A date alone is not enough. The 80-character limit is for the length of lines, not a reason to leave half the screen empty.
 - Use the FORRT logo as supplied. Century Schoolbook is not a web font here.
 
 ## 8. Shared parts to reuse
@@ -74,7 +74,8 @@ Before writing a new component, check these:
 | Contents on a phone | `doors/toc_phone.html`: an open, labelled list; a list of more than six sections shows the first five, with a button for the rest |
 | Names with links | `doors/name_list.html` |
 | Keywords on a resource | `doors/resource_keywords.html` |
-| Previous and next | `doors/pager.html`: Previous on the left, Next on the right |
+| Previous and next | `doors/pager.html`: Previous on the left, Next on the right; at the end of an article, `doors/read_next.html` shows them with related articles as the news list's cards |
+| Parallel items as pale cards | `{{< card_grid area="jus" >}}`, one card per `###` heading |
 | Information to keep but not lead with | a `details` disclosure with a plain label |
 
 Images in the first screen are not lazy-loaded.
