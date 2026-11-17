@@ -4,7 +4,11 @@
 {{ $page := .page }}
 {{/* On a wide screen the introduction takes the first place in the grid of teams, so no empty band sits beside it. */}}
 <div class="team-layout">
-<div class="team-intro">{{ $page.Content }}</div>
+<div class="team-intro">{{ $page.Content }}
+{{/* Team channels open only for members of FORRT's Slack, and signing in directly works only with some email
+     addresses, so the invitation comes first. */}}
+<p class="team-slack-note">New to FORRT's Slack? <a href="https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ">Join with the invitation link</a> first; the team buttons then open each team's channel.</p>
+</div>
 <ul class="feature-rows team-rows" role="list">
   {{ range sort $page.Params.featurealt "name" }}
   {{ $team := .name | plainify }}

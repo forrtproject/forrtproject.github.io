@@ -262,3 +262,5 @@
   .team-intro>:first-child{margin-top:0}
   .team-intro>:last-child{margin-bottom:0}
 }
+.team-slack-note{margin:14px 0 0;padding:12px 16px;background:var(--surface);border-radius:var(--r-large);font-size:17px}
+.team-slack-note a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
