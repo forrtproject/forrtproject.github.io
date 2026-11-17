@@ -226,7 +226,7 @@ main:lang(ar) .glossary-layout .article-style .term-references{direction:ltr;pad
 /* The reference list: the hub's panel and letters, with each reference a row in a hanging indent and the terms
    that cite it underneath. */
 .glossary-references .term-group ul.references-list{display:block;max-width:none;margin:0;padding:0}
-.glossary-references .term-group ul.references-list>li{max-width:44em;margin:0;padding:12px 0 12px 1.5em;text-indent:-1.5em;background:none;border:0;border-bottom:1px solid var(--line);border-radius:0;font-size:17px;line-height:1.5}
+.glossary-references .term-group ul.references-list>li{max-width:44em;margin:0;padding:12px 0 12px 1.5em;text-indent:-1.5em;background:none;border:0;border-bottom:1px solid var(--line);border-radius:0;line-height:1.5}
 .glossary-references .term-group ul.references-list>li:hover{border-color:var(--line)}
 .glossary-references .reference-apa a{color:var(--link);text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
 .glossary-references .reference-cited{display:block;margin:6px 0 0;text-indent:0;font-size:16px;color:var(--soft)}
