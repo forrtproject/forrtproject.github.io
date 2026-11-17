@@ -1,14 +1,12 @@
 {{- define "main" -}}
 {{- /* Issues come from two sources: data/newsletters.json, generated from
        EmailOctopus by scripts/sync_newsletters.py and hosted on forrt.org,
-       and the front matter, which holds earlier issues. Each year keeps the
-       palette colour at its index modulo 5 (no longer shown).
+       and the front matter, which holds earlier issues.
        The newest issue carries a "New" badge for two months after sending. */ -}}
 {{- $listed := .Params.newsletters | default slice -}}
 {{- $synced := index (hugo.Data.newsletters | default dict) "issues" | default slice -}}
 {{- /* Newest issue first; the URLs end in YYYY-MM/, so they sort by issue month. */ -}}
 {{- $synced = sort $synced "url" "desc" -}}
-{{- $palette := slice "#3b82c4" "#2c7a7b" "#b83280" "#6b46c1" "#c05621" -}}
 {{- $years := slice -}}
 {{- range $synced }}{{ $years = $years | append (int .year) }}{{ end -}}
 {{- range $listed }}{{ $years = $years | append (int .year) }}{{ end -}}
@@ -17,7 +15,6 @@
 {{- with $synced }}{{ $newestID = (index . 0).id }}{{ end -}}
 {{- $newsletters := slice -}}
 {{- range $year := $years -}}
-  {{- $color := index $palette (mod $year (len $palette)) -}}
   {{- $issues := slice -}}
   {{- range $synced -}}
     {{- if eq (int .year) $year -}}
@@ -38,7 +35,21 @@
     {{- end -}}
   {{- end -}}
   {{- with $issues -}}
-    {{- $newsletters = $newsletters | append (dict "year" $year "color" $color "issues" .) -}}
+    {{- $newsletters = $newsletters | append (dict "year" $year "issues" .) -}}
+  {{- end -}}
+{{- end }}
+
+{{- /* The newest issue leads, as a large brick beside the sign-up; when the news list has a post on that issue
+       (its folder starts with the issue's month, e.g. 2026-05-newsletter), the post's summary says what is in it. */ -}}
+{{- $latest := dict -}}{{- $latestYear := 0 -}}
+{{- with $newsletters }}{{ $first := index . 0 }}{{ $latest = index $first.issues 0 }}{{ $latestYear = $first.year }}{{ end -}}
+{{- $latestPost := false -}}
+{{- with $latest -}}
+  {{- with index (findRE `\d{4}-\d{2}` .url 1) 0 -}}
+    {{- $month := . -}}
+    {{- range where site.RegularPages "Section" "post" -}}
+      {{- if and .File (hasPrefix .File.ContentBaseName $month) (strings.Contains (lower .File.ContentBaseName) "newsletter") -}}{{- $latestPost = . -}}{{- end -}}
+    {{- end -}}
   {{- end -}}
 {{- end }}
 
@@ -50,23 +61,40 @@
   </header>
   <div class="nla-container">
 
-    <div class="nla-subscribe-band">
-      <p class="nla-subscribe-label">Subscribe to the FORRT newsletter to receive the latest news, initiatives, events, and opportunities straight to your inbox.</p>
-      {{ partial "doors/newsletter" . }}
+    <div class="nla-top">
+      {{ with $latest }}
+      <section class="nla-latest" aria-labelledby="nla-latest-title">
+        <h2 class="nla-latest-label" id="nla-latest-title">Latest issue{{ if .new }} <span class="nla-new">New</span>{{ end }}</h2>
+        <p class="nla-latest-month">{{ .month }} {{ $latestYear }}</p>
+        {{ with $latestPost }}<p class="nla-latest-summary">{{ .Summary | plainify | emojify }}</p>{{ end }}
+        <a class="nla-latest-link" href="{{ .url }}"{{ if not .local }} target="_blank" rel="noopener"{{ end }}>Read the {{ .month }} {{ $latestYear }} issue{{ if not .local }}<span class="sr-only"> (opens in a new tab)</span>{{ end }}</a>
+      </section>
+      {{ end }}
+      <div class="nla-subscribe-band">
+        <h2 class="nla-subscribe-title">Get the next issue</h2>
+        <p class="nla-subscribe-label">Subscribe to the FORRT newsletter to receive the latest news, initiatives, events, and opportunities straight to your inbox.</p>
+        {{ partial "doors/newsletter" . }}
+      </div>
     </div>
 
-    <h2 class="nla-archive-title">Archive</h2>
-    {{/* One heading per year and its issues as a line of month links, newest first. */}}
-    {{ range $newsletters }}
-    {{ $y := . }}
+    <h2 class="nla-archive-title">Earlier issues</h2>
+    {{/* One heading per year and its issues as month bricks, newest first, running through the four brick colours
+         (DESIGN.md §6), which say nothing about the issue. The latest issue is the large brick above. */}}
+    {{ $n := 0 }}
+    {{ range $yi, $y := $newsletters }}
+    {{ $issues := $y.issues }}
+    {{ if eq $yi 0 }}{{ $issues = after 1 $issues }}{{ end }}
+    {{ with $issues }}
     <section class="nla-year" aria-labelledby="nla-{{ $y.year }}">
       <h3 id="nla-{{ $y.year }}">{{ $y.year }}</h3>
       <ul class="nla-months">
-        {{ range $i, $issue := $y.issues }}{{ with $issue }}
-        <li>{{ if $i }}<span class="nla-sep" aria-hidden="true">·</span>{{ end }}<a href="{{ .url }}"{{ if not .local }} target="_blank" rel="noopener"{{ end }}>{{ .month }}<span class="sr-only"> {{ $y.year }}{{ if not .local }} (opens in a new tab){{ end }}</span></a>{{ if .new }}<span class="nla-new">New</span>{{ end }}</li>
-        {{ end }}{{ end }}
+        {{ range . }}
+        <li class="nla-brick-{{ add (mod $n 4) 1 }}"><a href="{{ .url }}"{{ if not .local }} target="_blank" rel="noopener"{{ end }}>{{ .month }}<span class="sr-only"> {{ $y.year }}{{ if not .local }} (opens in a new tab){{ end }}</span></a>{{ if .new }}<span class="nla-new">New</span>{{ end }}</li>
+        {{ $n = add $n 1 }}
+        {{ end }}
       </ul>
     </section>
+    {{ end }}
     {{ end }}
 
   </div>

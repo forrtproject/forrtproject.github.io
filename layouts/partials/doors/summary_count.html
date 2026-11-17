@@ -1,0 +1,5 @@
+{{/* How many summaries a collection lists, by the rule doors/summary_entries uses: every entry with a title, or for
+     the DEI collection (input true) those marked ⌺. Used by the collections' headers and the overview's cards. */}}
+{{ $n := 0 }}
+{{ range hugo.Data.summaries }}{{ if and .Title (or (not $) (in .Title "⌺")) }}{{ $n = add $n 1 }}{{ end }}{{ end }}
+{{ return $n }}

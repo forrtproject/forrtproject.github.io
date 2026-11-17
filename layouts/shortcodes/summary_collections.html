@@ -1,0 +1,7 @@
+{{/* The two collections of summaries as action bricks (the action_cards markup), each in its area's colour
+     (DESIGN.md §6: a brick that stands for something with a colour of its own takes that colour) and with its
+     count, counted as doors/summary_entries lists them. */}}
+<ul class="action-cards summary-collections">
+  <li style="--tone:var(--res)"><a href="{{ relref .Page "/summaries/open-reproducible" }}"><strong>Read open and reproducible science summaries</strong><span>{{ partial "doors/summary_count" false }} summaries: takeaways, abstracts and references, with a filter</span></a></li>
+  <li style="--tone:var(--jus)"><a href="{{ relref .Page "/summaries/diversity-equity-inclusion" }}"><strong>Read diversity, equity and inclusion summaries</strong><span>{{ partial "doors/summary_count" true }} summaries on diversity, equity and inclusion in academia</span></a></li>
+</ul>

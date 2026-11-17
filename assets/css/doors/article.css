@@ -500,3 +500,66 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
 .article-layout .article-style .list-filter-section .is-open>.entry-more{position:static;display:inline-block;margin:0 0 6px;padding:0;background:none;font-size:16px}
 .article-layout .article-style .list-filter-section.is-searching .entry-more{display:none}
 @media(max-width:760px){.article-layout .article-style .list-filter-section>ul>li{--entry-lines:3}}
+/* Nowhere Lab (content/nowherelab/_index.md): on a wide screen, how to take part (the meetings, Slack and the
+   PhD Survival Guide) is a column beside the introduction and the story; on narrower ones it follows the
+   introduction. The meetings sit on the community area's pale ground (DESIGN.md §6), with their two times set large. */
+@media(min-width:1001px){
+  .article-layout-wide .article-style .nl-layout{display:grid;grid-template-columns:minmax(0,620px) minmax(320px,500px);grid-template-areas:"intro side" "story side";column-gap:64px;align-items:start}
+  .nl-intro{grid-area:intro}.nl-side{grid-area:side}.nl-story{grid-area:story}
+}
+.article-layout .article-style .nl-side>h2{margin-top:36px}
+.article-layout .article-style .nl-panel{margin:0 0 20px;padding:22px 24px 8px;background:var(--surface);border-radius:var(--r-large)}
+.article-layout .article-style .nl-meetings{background:var(--com-bg)}
+.article-layout .article-style .nl-panel h2{margin:0 0 14px;font-size:28px}
+.article-layout .article-style .nl-panel p{max-width:none}
+.article-layout .article-style .nl-times{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 18px}
+.nl-times>span{flex:1 1 130px;box-sizing:border-box;padding:12px 16px 14px;background:#fff;border-radius:var(--r-small);font-size:20px;font-weight:600;line-height:1.25}
+.nl-times strong{display:block;font:var(--display-weight) 28px/1.15 var(--display);color:var(--com)}
+.article-layout .article-style .nl-side .action-cards{margin:22px 0 8px}
+@media(max-width:1000px){.article-layout .article-style .nl-meetings{margin-top:32px}}
+/* A collection of summaries (layouts/_default/summaries.html): the header on the pale ground of the collection's
+   area with its count, the filter and the other collection beside the list on a wide screen (after it on a phone), and each entry a
+   title with its citation below it. An open entry takes the area's pale ground. */
+.summaries-res{--area:var(--res);--area-bg:var(--res-bg)}
+.summaries-jus{--area:var(--jus);--area-bg:var(--jus-bg)}
+.summaries-band{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px 40px;padding:26px 32px 30px;background:var(--area-bg);border-radius:var(--r-large)}
+.summaries-band .article-head{flex:1 1 520px;margin:0}
+.article-layout .summaries-band .article-head h1{font-size:clamp(34px,3.6vw,52px)}
+.article-layout .summaries-band .standfirst{max-width:34em}
+.summaries-band .byline:empty{display:none}
+.summaries-count{margin:0;font-size:18px;font-weight:600;line-height:1.1}
+.summaries-count strong{display:block;font:var(--display-weight) clamp(48px,5vw,72px)/1 var(--display);color:var(--area)}
+.article-layout.summaries-layout{row-gap:28px}
+.summaries-body{display:grid;grid-template-columns:minmax(0,1fr);gap:20px}
+.summaries-side .summary-tools{margin:0}
+.summaries-side:empty{display:none}
+.summaries-side .summary-tools p.summary-count{margin:8px 0 0;font-size:16px}
+.summaries-routes ul{margin:0;padding:0;list-style:none;font-size:17px;line-height:1.35}
+.summaries-routes li{display:flex;flex-wrap:wrap;align-items:center;column-gap:6px;margin:0 0 4px}
+.summaries-routes a{display:inline-flex;align-items:center;min-height:44px;color:var(--link);text-decoration:underline;text-underline-offset:3px}
+.summaries-routes span{color:var(--soft);font-size:15px}
+@media(min-width:1001px){
+  .summaries-body{grid-template-columns:300px minmax(0,780px);grid-template-rows:auto 1fr;column-gap:56px;row-gap:16px}
+  .summaries-body>.reading{grid-column:2;grid-row:1/span 2}
+  .summaries-side{grid-column:1;grid-row:1}
+  .summaries-routes{grid-column:1;grid-row:2;align-self:start}
+}
+.summaries-layout .article-style>p:first-child{margin-bottom:12px;color:var(--soft);font-size:16px}
+.article-layout.summaries-layout .article-style .summary-entry{margin:0;padding:0 14px;border-bottom:1px solid var(--line);border-radius:var(--r-small)}
+.article-layout.summaries-layout .article-style .summary-entry>summary{display:grid;grid-template-columns:30px minmax(0,1fr);gap:12px;align-items:start;padding:14px 0;list-style:none}
+.summaries-layout .summary-entry>summary::-webkit-details-marker{display:none}
+.summaries-layout .summary-entry>summary::before{content:"+";display:flex;align-items:center;justify-content:center;width:30px;height:30px;margin-top:1px;background:var(--area-bg);border-radius:50%;color:var(--area);font:700 20px/1 var(--text)}
+.summaries-layout .summary-entry[open]>summary::before{content:"−";background:#fff}
+.summaries-layout .summary-entry>summary:hover .summary-title{text-decoration:underline;text-underline-offset:3px}
+.article-layout.summaries-layout .article-style .summary-entry>summary h2{display:block;font-size:22px;line-height:1.25}
+.summary-title,.summary-cite{display:block}
+.summaries-layout .summary-cite{margin-top:3px;font:400 16px/1.35 var(--text);color:var(--soft)}
+.article-layout.summaries-layout .article-style .summary-entry[open]{margin:6px 0;padding-bottom:14px;background:var(--area-bg);border-bottom-color:transparent}
+.summaries-layout .summary-entry[open]>:not(summary){margin-inline-start:42px}
+@media(max-width:760px){
+  .summaries-band{padding:20px 18px 22px}
+  .summaries-count{display:flex;align-items:baseline;gap:8px}
+  .summaries-count strong{display:inline;font-size:40px}
+  .article-layout.summaries-layout .article-style .summary-entry{padding:0 8px}
+  .summaries-layout .summary-entry[open]>:not(summary){margin-inline-start:0}
+}

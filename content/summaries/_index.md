@@ -22,10 +22,7 @@ menu:
     weight: 1
 ---
 
-{{< action_cards >}}
-Read open and reproducible science summaries | Takeaways, abstracts and references, with a filter | /summaries/open-reproducible/
-Read diversity, equity and inclusion summaries | On diversity, equity and inclusion in academia | /summaries/diversity-equity-inclusion/
-{{< /action_cards >}}
+{{< summary_collections >}}
 
 ## Overview
 
@@ -35,7 +32,9 @@ The FORRT community has prepared 100+ summaries of Open and Reproducible Science
 
 We made a distinction between [Open and reproducible science](/summaries/open-reproducible/) summaries and [Diversity, equity and inclusion](/summaries/diversity-equity-inclusion/) summaries to highlight that the topics of social injustices and DEI (diversity, equity and inclusion) are often neglected in academia, and in open and reproducible science literature. If you are an educator, you may also be interested in our [FORRT Syllabus on Open and Reproducible Science (.pdf & G-doc)](https://forrt.org/syllabus), which is based on [FORRT Clusters.](/clusters/)
 
-### Why make these summaries?
+<details class="spoiler">
+<summary>Why make these summaries?</summary>
+<div class="spoiler-body">
 
 FORRT’s summaries are a community-curated resource that aims to satisfy three of [FORRT’s Goals](/about/mission/): 
 *   Support scholars in their efforts to learn and stay up-to-date on best practices regarding open and reproducible research;
@@ -49,7 +48,12 @@ and four of [FORRT’s Mission](/about/mission/):
 *   Building capacity for advocacy; and
 *   Advocacy for the creation and maintenance of educational resources.
 
-### Future plans
+</div>
+</details>
+
+<details class="spoiler">
+<summary>Future plans</summary>
+<div class="spoiler-body">
 
 Our community will continue to curate and expand on these summaries. Our goal is to keep integrating community feedback and its multitude of perspectives hoping to produce ever more useful summaries. We also would like community feedback on how to best classify the summaries into useful and didactic categories and distill its knowledge (at this stage, we also intend to make the methodology used transparent). 
 
@@ -57,9 +61,17 @@ One idea to achieve these goals would be to plan a hackathon to make these summa
 
 We also aim to further integrate this initiative with other FORRT initiatives. First, we want to make sure that all open and reproducible sources cited in the [FORRT’s Manuscript](https://forrt.org/manuscript/) have an associated summary to facilitate the reading of FORRT’s manifesto. Finally, we also hope to include each summary as a resource in [FORRT’s curated list of resources](https://forrt.org/resources/), as well include [FORRT Clusters’](/clusters/) tags for each summary. Not yet at a 'plans' stage, but we are considering formalizing this initiative with the drafting of a manuscript, summarizing lessons we learned and hopefully making it a more useful resource to the community.
 
-### Process and credit
+</div>
+</details>
+
+<details class="spoiler">
+<summary>Process and credit</summary>
+<div class="spoiler-body">
 
 Any and all contributions in FORRT are formally recognized. In large part, these summaries are a result of the heroic effort of Mahmoud Elsherif, a cherished member of FORRT community, who bore the brunt of most of the initial work. Flavio Azevedo conceptualized the project, reviewed summaries, and managed the initiative. This project would not have been possible without the tireless work of Leticia Micheli, Martin Vasilev, Jacob Miranda, Tamara Marques, Esther Plomp, Alice Rees, and Catia Oliveira who revised and improved the summaries to its current stage. Furthermore, members of [CSCCE community](https://www.cscce.org/) have done a fair bit of reviewing of the DEI summaries. We would like to thank CSCCE  for editing, commenting, and enriching it. These summaries are truly a community effort in the name of supporting scholars in their efforts to learn, stay up-to-date and teach open and reproducible science in Higher Education.
+
+</div>
+</details>
 
 ### Feedback
 
@@ -68,3 +80,8 @@ Do you have feedback to give us? We would love to receive your [criticism, areas
 ### Join and help us
 
 **Help us** make better education for everyone, [join our community](https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ). **Help us** support educators and elevate their efforts. **Help us** facilitate the process of integrating open and reproducible science into the pipeline of all teachers and mentors in Higher-Ed. **Help us** advocate for open educational resources and expedite access to open and reproducible science trainings. **Help us** spread the word by sharing this FORRT resource via your professional listservs and other social media.
+
+{{< action_cards >}}
+Send feedback on the summaries | Criticism, areas for improvement, ideas and help, in our shared sheet | https://docs.google.com/spreadsheets/d/1W12WpzI70Ja1FiVeflXNW8VFPzqFFvu_mL2YkNQ_cHk/edit?usp=sharing
+Join the FORRT Slack | Where the community talks | https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ
+{{< /action_cards >}}

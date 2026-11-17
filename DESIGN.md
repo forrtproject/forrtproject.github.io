@@ -35,7 +35,7 @@ Every repeated device has to earn its place. In practice:
 - Search and filters belong on long lists (the glossary, the resources directory, Reversals). A list of fewer than about twenty items needs neither, and a longer one may do without when another clear route through it exists, such as a contents list.
 - Tags: a tag links to the tags page only when at least five pages and at most a quarter of the tagged pages share it (`layouts/partials/functions/tag_counts.html`). Rarer tags are plain keywords; tags on more pages are not shown, because they no longer tell pages apart.
 - In directories of cards (§4, About pages), show descriptions in full. Cut one only when it runs past six lines: show four lines and a "more" button. Dense term lists such as the glossary keep their short previews. Never hide just a line or two behind "more". Without JavaScript the full text shows.
-- Cards for actions are the brick cards of `action_cards`. Lists of tools are rows: a linked title and a sentence, not boxes.
+- Cards for actions are the brick cards of `action_cards`. Lists of tools are rows: a linked title and a sentence, not boxes. Lists of things a visitor opens and reads, such as posts, articles and newsletter issues, are cards with their picture (the news list, Educators' Corner); one without a picture of its own gets a panel in a brick colour that names it.
 - Directories of organisations, teams and projects (Partnerships, Teams, Get involved) are pale cards or pictured entries, two or more to a row on a wide screen, so they are easy to skim. Each ends in a button for its action, such as "Visit website" or "Join the team's Slack channel".
 - Framed boxes (cards, panels, toolbars) keep space inside them and between them; text never runs up against a box's edge.
 
@@ -59,7 +59,7 @@ Every repeated device has to earn its place. In practice:
 - No italics anywhere outside reference lists, including menus, captions, labels and quotes. Emphasis is semi-bold.
 - Headings, buttons and labels are in sentence case.
 - Reading lines stay under 80 characters, measured on the rendered lines. The narrow reading column is for prose; tables, tools, programmes and directories may use the full width.
-- On a wide page, prose never stands alone in the narrow column with an empty band beside it. When a full-width list follows, the list starts beside the prose or flows around it (Community, Teams). Otherwise something useful sits beside the prose, such as a contents card, an image, or the search of a list long enough to need one (§4). The 80-character limit is for the length of lines, not a reason to leave half the screen empty.
+- On a wide page, prose never stands alone in the narrow column with an empty band beside it. When a full-width list follows, the list starts beside the prose or flows around it (Community, Teams). Otherwise something useful sits beside the prose, such as a contents card, an image, the ways to take part (Nowhere Lab), or the search of a list long enough to need one (§4). A card holding only dates does not count. The 80-character limit is for the length of lines, not a reason to leave half the screen empty.
 - Use the FORRT logo as supplied. Century Schoolbook is not a web font here.
 
 ## 8. Shared parts to reuse

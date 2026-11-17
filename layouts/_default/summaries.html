@@ -1,0 +1,41 @@
+{{- define "main" -}}
+{{/* A collection of summaries (front matter `layout: summaries`, `summaries: all` or `dei`). The header sits on the
+     pale ground of the collection's area (DESIGN.md §6: open and reproducible science is research, DEI is social
+     justice) with its count. On a wide screen the filter, which site.js builds into .summary-tools-slot, stays
+     beside the list, above the routes to the other collection (after the list on a phone); the entries are doors/summary_entries. */}}
+{{ $dei := eq .Params.summaries "dei" }}
+{{ $count := partial "doors/summary_count" $dei }}
+{{ $body := partial "doors/content" .Content }}
+{{/* The summaries mark their DEI entries with ⌺, which few fonts have and which shows as an empty box. */}}
+{{ $body = replace $body "⌺" `<span class="dei-mark">DEI</span>` | safeHTML }}
+<div class="wrap">
+  <div class="article-layout article-layout-wide summaries-layout summaries-{{ cond $dei "jus" "res" }}">
+    <div class="summaries-band">
+      {{ partial "doors/article_header" . }}
+      <p class="summaries-count"><strong>{{ $count }}</strong> summaries</p>
+    </div>
+    <div class="summaries-body">
+      <div class="summaries-side summary-tools-slot" data-placeholder="{{ cond $dei "e.g. gender, eminence, mentoring" "e.g. preregistration, replication, p-hacking" }}"></div>
+      <article class="reading">
+        <div class="article-style">
+          {{ $body }}
+        </div>
+        <div class="article-foot">
+          <p class="share-link"><button class="copy-link" type="button" data-copy-link="{{ .Permalink }}">Copy article link</button> <span role="status"></span></p>
+          {{ partial "page_footer" . }}
+        </div>
+      </article>
+      <nav class="summaries-routes" aria-label="Other summaries">
+        <ul>
+          {{ if $dei }}
+          <li><a href="{{ relref . "/summaries/open-reproducible" }}">Open and reproducible science summaries</a> <span>({{ partial "doors/summary_count" false }})</span></li>
+          {{ else }}
+          <li><a href="{{ relref . "/summaries/diversity-equity-inclusion" }}">Diversity, equity and inclusion summaries</a> <span>({{ partial "doors/summary_count" true }})</span></li>
+          {{ end }}
+          <li><a href="{{ relref . "/summaries" }}">About the summaries and how to help</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+{{- end -}}
