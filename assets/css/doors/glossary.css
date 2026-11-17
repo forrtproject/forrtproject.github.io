@@ -190,6 +190,8 @@ main:lang(zh) .glossary-layout :is(.reading h1,.term-list a){word-break:keep-all
   .glossary-hub .glossary-letters a.is-empty{background:transparent}
   .glossary-hub:has(.glossary-tools) .term-group{scroll-margin-top:16px}
   .glossary-hub .standfirst{max-width:none}
+  /* Two cards a row beside the panel, so a card's lines stay under 80 characters (DESIGN.md §7). */
+  .term-group ul{grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr))}
 }
 @media(min-width:1240px){
   .term-group{display:grid;grid-template-columns:88px minmax(0,1fr);column-gap:24px;align-items:start;margin-top:28px}
@@ -213,7 +215,7 @@ main:lang(zh) .glossary-layout :is(.reading h1,.term-list a){word-break:keep-all
 .glossary-layout .article-style .term-references{margin:0 0 8px;padding:14px 18px 14px 36px;background:var(--surface);border-radius:var(--r-large);font-size:16px;line-height:1.5}
 /* As wide as the definition and the cards above it (article.css caps reference lists at 29.8em). */
 .glossary-layout .article-style ul.term-references.references-list{max-width:none}
-.glossary-layout .article-style .term-references li{margin:0 0 6px}
+.glossary-layout .article-style .term-references li{max-width:30em;margin:0 0 6px}
 .glossary-layout .article-style .term-references li:last-child{margin-bottom:0}
 main:lang(ar) .glossary-layout .article-style .term-references{direction:ltr;padding:14px 18px 14px 36px}
 .glossary-layout .article-foot .post-nav{display:grid;grid-template-columns:1fr 1fr;gap:12px}
