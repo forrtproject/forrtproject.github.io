@@ -35,6 +35,10 @@
   --out-not-replicated:#b4462b;--out-not-replicated-bg:#fae4dd;
   --out-reversed:#7e2f6c;--out-reversed-bg:#f4e2f0;
   --out-no-status:#7b8794;--out-no-status-bg:#eef1f3;
+  /* An effect's card ground: its pale colour lightened a third of the way to white. Plain hex, not color-mix(), so
+     that the contrast check in check_design.py reads it (it parses rgb() only). */
+  --out-replicated-ground:#edf6ef;--out-mixed-ground:#faf3e0;--out-not-replicated-ground:#fcede9;
+  --out-reversed-ground:#f8ecf5;--out-no-status-ground:#f4f6f7;
   /* Type */
   --display:'Newsreader',Georgia,'Apple Symbols','Segoe UI Symbol','Noto Sans Symbols 2',serif;
   --text:'Source Sans 3','Source Sans Pro',system-ui,'Apple Symbols','Segoe UI Symbol','Noto Sans Symbols 2',sans-serif;

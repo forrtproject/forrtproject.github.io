@@ -153,12 +153,12 @@
 .cite-chart .cite-total strong{display:block;font:500 44px/1 var(--display)}
 .article-layout .article-style .cite-chart .cite-index{margin:4px 0 14px;font-size:15px;color:var(--soft)}
 .article-layout .article-style .cite-bars{display:flex;align-items:flex-end;gap:6px;max-width:none;margin:0 0 8px;padding:0;list-style:none}
-.article-layout .article-style .cite-bars li{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;margin:0;font-size:14px;line-height:1.2}
+.article-layout .article-style .cite-bars li{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;margin:0;font-size:15px;line-height:1.2}
 .cite-bars .cite-bar{display:block;flex:none;width:100%;height:calc(var(--v) * 110px);min-height:2px;background:var(--link);border-radius:3px 3px 0 0}
 .cite-bars .is-partial .cite-bar{background:repeating-linear-gradient(135deg,var(--res-bg) 0 4px,#9fc0d6 4px 7px);box-shadow:inset 0 0 0 1.5px var(--link)}
 .cite-bars .cite-n{margin:0 0 3px;font-weight:600;color:var(--ink)}
 .cite-bars .cite-year{min-height:2.4em;margin-top:4px;color:var(--soft);white-space:nowrap;text-align:center}
-.cite-bars .cite-so-far{display:block;font-size:14px}
+.cite-bars .cite-so-far{display:block;font-size:15px}
 .cite-summary{display:none}
 /* The introduction is cut to four lines only on a phone; beside the chart on a wider screen it shows in full. */
 @media(min-width:761px){
