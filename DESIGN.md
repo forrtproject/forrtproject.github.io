@@ -36,7 +36,7 @@ Every repeated device has to earn its place. In practice:
 - Tags: a tag links to the tags page only when at least five pages and at most a quarter of the tagged pages share it (`layouts/partials/functions/tag_counts.html`). Rarer tags are plain keywords; tags on more pages are not shown, because they no longer tell pages apart.
 - In directories of cards (§4, About pages), show descriptions in full. Cut one only when it runs past six lines: show four lines and a "more" button. Dense term lists such as the glossary keep their short previews. Never hide just a line or two behind "more". Without JavaScript the full text shows.
 - Cards for actions are the brick cards of `action_cards`. Lists of tools are rows: a linked title and a sentence, not boxes.
-- A list of more than about thirty items has something to skim by: groups under headings (letters, types), a row of letters to jump by, or filters with counts. One unbroken run of hundreds of links is a wall, however tidy.
+- A list of more than about thirty items has something to skim by: filters with counts, groups under headings, or, for names and terms people look up by their first letter, letters to jump by. Titles of resources or articles are not looked up that way, so they get filters and search, not letters. One unbroken run of hundreds of links is a wall, however tidy.
 - Directories of organisations, teams and projects (Partnerships, Teams, Get involved) are pale cards or pictured entries, two or more to a row on a wide screen, so they are easy to skim. Each ends in a button for its action, such as "Visit website" or "Join the team's Slack channel".
 - Framed boxes (cards, panels, toolbars) keep space inside them and between them; text never runs up against a box's edge.
 

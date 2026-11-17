@@ -1,9 +1,9 @@
 {{/* /forrt_clusters/<term>/: the resources filed under one of the earlier FORRT cluster names (layouts/_default/list.html).
      One toolbar: the search of shortcodes/list_filter.html (same markup; site.js filters every list after it and keeps
      the count), the material types as filters with their counts (the directory's groupings, doors/resource_index.html,
-     run by site.js as .list-filter-facets), and the routes to the directory and the clusters. Then the titles A to Z
-     under letter headings, with a row of letters to jump by (lists.css .tag-letters, as on Tags), each title with its
-     type as plain text. The directory's cluster filter uses the current clusters (forrt_clusters_new), not these
+     run by site.js as .list-filter-facets), and the routes to the directory and the clusters. Then the titles A to Z,
+     each with its type as plain text. No letters to jump by: resource titles are not names people look up by their
+     first letter, and the type filters and search already narrow the list. The directory's cluster filter uses the current clusters (forrt_clusters_new), not these
      tags, so there is no pre-filtered link to it, and the page takes no cluster colour. Input: the term page. */}}
 {{ $page := . }}
 {{ $index := partialCached "doors/resource_index" (site.GetPage "/resources") "resources" }}
@@ -16,29 +16,18 @@
   {{ range $types }}{{ $s := . | lower | replaceRE "[^a-z0-9]+" "-" }}{{ $slugs = $slugs | append $s }}{{ $typeCount = merge $typeCount (dict $s (add 1 (index $typeCount $s | default 0))) }}{{ end }}
   {{ $title := .Title | plainify | htmlUnescape }}
   {{ $bare := strings.TrimLeft "\"“‘'#(*[¿¡ " $title }}
-  {{ $first := upper (substr $bare 0 1) }}
-  {{ if not (findRE `^[A-Z]$` $first) }}{{ $first = "#" }}{{ end }}
-  {{ $rows = $rows | append (dict "key" (lower $bare) "letter" $first "page" . "facets" (delimit $slugs " ")) }}
+  {{ $rows = $rows | append (dict "key" (lower $bare) "page" . "facets" (delimit $slugs " ")) }}
 {{ end }}
 {{ $rows = sort $rows "key" }}
-{{ $groups := slice }}{{ $current := "" }}{{ $items := slice }}
-{{ range $rows }}
-  {{ if ne .letter $current }}{{ if $items }}{{ $groups = $groups | append (dict "letter" $current "rows" $items) }}{{ end }}{{ $current = .letter }}{{ $items = slice }}{{ end }}
-  {{ $items = $items | append . }}
-{{ end }}
-{{ if $items }}{{ $groups = $groups | append (dict "letter" $current "rows" $items) }}{{ end }}
-{{/* "#" (titles that start with a number) sorts first; it reads better last, as on Tags. */}}
-{{ $numbers := where $groups "letter" "#" }}
-{{ $groups = (where $groups "letter" "!=" "#") | append $numbers }}
 {{ $types := slice }}
 {{ range $index.facets }}{{ if eq .key "type" }}{{ range $v := .values }}{{ with index $typeCount $v.slug }}{{ $types = $types | append (dict "slug" $v.slug "label" $v.label "count" .) }}{{ end }}{{ end }}{{ end }}{{ end }}
 {{ $plate := resources.Get "images/doors/area-education.webp" }}
 <div class="article-style cluster-resources-list">
   {{/* The tools beside the directory's own illustration, as these are resources from the same collection. site.js
-       filters the lists from the row of letters on (data-list), as they are outside this block. */}}
+       filters the list (data-list), as it is outside this block. */}}
   <div class="topic-head">
   <div class="topic-head__tools">
-  <div class="list-filter topic-tools" data-noun="resources" data-no-jump data-list="#topic-letters" hidden>
+  <div class="list-filter topic-tools" data-noun="resources" data-list="#topic-list" hidden>
     <label for="list-filter-input">Search these resources</label>
     <input type="search" id="list-filter-input" placeholder="A word from the title or type" autocomplete="off">
     <p class="list-filter-count" aria-live="polite"></p>
@@ -57,11 +46,7 @@
   </div>
   <figure class="heading-plate topic-plate"><img src="{{ $plate.RelPermalink }}" alt="A brick pencil standing on an open green book." width="{{ $plate.Width }}" height="{{ $plate.Height }}"></figure>
   </div>
-  <nav class="tag-letters topic-letters" id="topic-letters" aria-label="Resources by first letter">{{ range $groups }}<a href="#letter-{{ .letter | urlize | default "other" }}">{{ .letter }}</a>{{ end }}</nav>
-  {{ range $groups }}
-  <h2 class="topic-letter" id="letter-{{ .letter | urlize | default "other" }}">{{ .letter }}</h2>
-  <ul class="cluster-resources">
-    {{ range $r := .rows }}{{ with $r.page }}<li data-facets="{{ $r.facets }}"><a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ with .Params.material_type }}<span class="cluster-resources__type"> · {{ delimit . ", " }}</span>{{ end }}</li>{{ end }}{{ end }}
+  <ul class="cluster-resources" id="topic-list">
+    {{ range $r := $rows }}{{ with $r.page }}<li data-facets="{{ $r.facets }}"><a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ with .Params.material_type }}<span class="cluster-resources__type"> · {{ delimit . ", " }}</span>{{ end }}</li>{{ end }}{{ end }}
   </ul>
-  {{ end }}
 </div>

@@ -217,15 +217,9 @@ ul.list-items>li[hidden]{display:none}
 .topic-types .ac-chip[aria-pressed=true] .chip-count{color:inherit}
 .topic-types .list-filter-reset{display:inline-flex;align-items:center;min-height:44px;margin-top:6px}
 .topic-types .list-filter-reset[hidden]{display:none}
-.cluster-resources-list .topic-letters{max-width:1080px}
-.article-style.cluster-resources-list .topic-letters a{min-width:36px;height:36px;text-decoration:none}
-.cluster-resources-list .topic-letters a:hover{background:var(--ink);color:#fff}
-.article-style h2.topic-letter{margin:26px 0 4px;padding-bottom:4px;border-bottom:2px solid var(--edu);max-width:1080px;font:var(--display-weight) 28px/1.2 var(--display);color:var(--ink);scroll-margin-top:60px}
-.article-style h2.topic-letter[hidden]{display:none}
-@media(max-width:760px){.article-style.cluster-resources-list .topic-letters a{min-width:44px;height:44px}.topic-types__chips{flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px;margin-inline-end:-16px;padding-inline-end:16px;-webkit-mask-image:linear-gradient(90deg,#000 85%,transparent);mask-image:linear-gradient(90deg,#000 85%,transparent)}.topic-types .ac-chip{flex:none}.topic-types legend{float:none;padding:0 0 8px}.article-style h2.topic-letter{scroll-margin-top:16px}}
+@media(max-width:760px){.topic-types__chips{flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px;margin-inline-end:-16px;padding-inline-end:16px;-webkit-mask-image:linear-gradient(90deg,#000 85%,transparent);mask-image:linear-gradient(90deg,#000 85%,transparent)}.topic-types .ac-chip{flex:none}.topic-types legend{float:none;padding:0 0 8px}}
 .topic-head{display:grid;min-width:0;grid-template-columns:minmax(0,1fr) 230px;gap:32px;align-items:end;max-width:1240px;margin-bottom:8px}
 .article-layout .article-style .topic-head__tools>.list-filter.topic-tools{margin-top:0}
-.article-style.cluster-resources-list .topic-letters a[hidden]{display:none}
 .topic-plate{margin:0;background:var(--edu-bg);border-radius:999px 999px 0 0;padding:28px 18px 8px}
 .topic-plate img{display:block;width:100%;height:auto;max-height:160px;object-fit:contain}
 @media(max-width:1000px){.topic-head{grid-template-columns:minmax(0,1fr)}.topic-plate{display:none}}

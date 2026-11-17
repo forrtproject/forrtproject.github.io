@@ -657,8 +657,7 @@ if (listFilter) {
   }
   // A menu of the sections that hold entries, with their counts, to jump straight to one.
   const withItems = sections.filter(({heading, items}) => heading && items.length && items.length < 400);
-  // A list with its own row of letters to jump by (data-no-jump, /forrt_clusters/<term>/) needs no menu as well.
-  if (withItems.length > 3 && !listFilter.hasAttribute('data-no-jump')) {
+  if (withItems.length > 3) {
     const jump = document.createElement('label');
     jump.className = 'list-filter-jump';
     jump.textContent = 'Go to ';
@@ -737,12 +736,7 @@ if (listFilter) {
         item.hidden = !match;
         if (match) { any = true; shown += 1; }
       });
-      if (heading) {
-        heading.hidden = Boolean(query || status || chosen.length) && !any;
-        // Its link in a row of letters (/forrt_clusters/<term>/) goes with it.
-        const jumpLink = heading.id && document.querySelector(`.topic-letters a[href="#${heading.id}"]`);
-        if (jumpLink) jumpLink.hidden = heading.hidden;
-      }
+      if (heading) heading.hidden = Boolean(query || status || chosen.length) && !any;
     });
     count.textContent = query && !shown ? `No ${noun} match “${input.value.trim()}”.` : `Showing ${shown} of ${total} ${noun}`;
     if (empty) empty.hidden = shown > 0;
