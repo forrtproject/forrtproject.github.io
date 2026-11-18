@@ -458,14 +458,11 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
   .article-layout:not(.article-layout-wide):has(.list-filter[data-noun=effects]:not([hidden]))>.article-card{width:auto;padding:18px 14px 18px 18px}
 }
 .reading:has(.list-filter[data-noun=effects]:not([hidden])) .toc-phone{display:none}
-.article-layout:has(.list-filter[data-noun=effects]) .article-toc #TableOfContents a{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:8px;padding:4px 6px;border-radius:6px;color:var(--ink);text-decoration:none}
+.article-layout:has(.list-filter[data-noun=effects]) .article-toc #TableOfContents a{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:8px;padding:3px 6px;border-radius:6px;font-size:16px;line-height:1.3;color:var(--ink);text-decoration:none}
 .article-layout:has(.list-filter[data-noun=effects]) .article-toc #TableOfContents a:hover{color:var(--link);text-decoration:underline}
 .article-layout:has(.list-filter[data-noun=effects]) .article-toc #TableOfContents a[aria-current]{background:#fff;font-weight:600}
 .article-layout:has(.list-filter[data-noun=effects]) .article-toc #TableOfContents a.is-empty{color:var(--soft)}
-/* While the list is filtered, the card's counts follow the filter and the bars, which show every effect, step aside. */
-.article-card.is-filtered .outcome-bar{display:none}
 .toc-many{font-size:15px;font-weight:400;text-align:end}
-.article-toc a>.outcome-bar{grid-column:1/-1;height:6px;margin:3px 0 0;border-radius:2px;gap:1px}
 /* The note that the project has ended is one band, its button beside the text. */
 @media(min-width:761px){
   .article-layout:has(.list-filter[data-noun=effects]) .article-style div.alert{max-width:none}
@@ -475,7 +472,8 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 }
 /* The board: a tile per outcome, its bricks one per effect. */
 .outcome-board{margin:30px 0 10px}
-.article-layout .article-style .outcome-board h2{margin:0 0 14px;font-size:clamp(25px,2.4vw,31px);line-height:1.15}
+.article-layout .article-style .outcome-board h2{margin:0 0 4px;font-size:clamp(25px,2.4vw,31px);line-height:1.15}
+.article-layout .article-style .outcome-hint{margin:0 0 14px;font-size:17px}
 .outcome-tiles{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
 .article-layout .article-style .outcome-tile{display:flex;flex-wrap:wrap;align-content:flex-start;align-items:baseline;column-gap:8px;min-width:0;margin:0;padding:17px 12px 14px;border:0;border-radius:var(--r-small);background:var(--out-bg);box-shadow:inset 0 5px 0 var(--out);color:var(--ink);text-align:start;cursor:pointer}
 .outcome-tile .outcome-many{font:var(--display-weight) 44px/1 var(--display)}
@@ -489,8 +487,6 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 /* Where "not replicated" takes two lines, every tile keeps two, so that the bricks start level. */
 @media(min-width:761px) and (max-width:1240px){.outcome-tile .outcome-word{min-height:2.4em}}
 .article-layout .article-style .outcome-note{max-width:34em;margin:12px 0 0;font-size:16px;line-height:1.45}
-.outcome-bar{display:flex;gap:2px;height:8px;overflow:hidden;border-radius:3px}
-.outcome-bar span{flex:1 1 0;min-width:3px;background:var(--out)}
 /* The toolbar stays at the top of the screen while the effects scroll, up to the end of the list; on a phone only the
    search row and count stay. Rows reached by Tab or Go to stop below it (the scroll padding is its measured height). */
 html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px) + 16px)}
@@ -499,7 +495,7 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
 .article-layout .article-style .list-filter-section>.list-filter{position:sticky;top:0;z-index:6;display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;max-width:none;margin:22px 0 8px;padding:10px 14px;box-shadow:0 2px 0 var(--page)}
 /* The bar itself is square and page-coloured, with its rounded panel drawn behind the controls, so text scrolling
    under the stuck bar does not show at its corners. */
-@media(min-width:761px){
+@media(min-width:601px){
   .article-layout .article-style .list-filter-section>.list-filter{background:var(--page);border-radius:0}
   .article-layout .article-style .list-filter-section>.list-filter::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:var(--r-large);background:var(--surface)}
 }
@@ -508,18 +504,22 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
 .article-layout .article-style .list-filter-section .list-filter-count{grid-row:2;margin:0;font-size:15px;line-height:1.2;white-space:nowrap}
 .article-layout .article-style .list-filter-section .list-filter input{grid-column:2;grid-row:1/3;padding:7px 14px;font-size:16px}
 .article-layout .article-style .list-filter-section .list-filter-jump{margin:0;font-size:16px}
-.article-layout .article-style .list-filter-section .list-filter-jump select{flex:none;max-width:170px;padding:6px 8px;font-size:15px}
+.article-layout .article-style .list-filter-section .list-filter-jump select{flex:none;max-width:130px;padding:6px 8px;font-size:15px}
 .article-layout .article-style .outcome-clear{min-height:36px;padding:4px 12px;border:1.5px solid var(--ink);border-radius:999px;background:#fff;font:600 16px/1.2 var(--text);color:var(--ink);cursor:pointer}
 .article-layout .article-style .outcome-clear[hidden]{display:none}
 /* Beside the "On this page" card, which lists every section, the toolbar needs no Go to menu. */
 @media(min-width:1001px){.article-layout:has(>.article-card) .article-style .list-filter-section .list-filter-jump{display:none}}
-/* A discipline opens with its mix of outcomes; beside the contents card, which shows it, the heading needs none. */
+/* A discipline opens with one brick per effect. Filtered by outcome, the others fade; during a search they step aside. */
 .article-layout .article-style .list-filter-section>h2{margin:44px 0 10px;font-size:clamp(28px,2.6vw,34px);line-height:1.15}
-.article-layout .article-style .list-filter-section>.section-mix{margin:0 0 4px}
-.article-layout .article-style .list-filter-section>.section-mix[hidden]{display:none}
-@media(min-width:1001px){.article-layout .article-style .list-filter-section>.section-mix{display:none}}
-/* Where the heading shows the mix, the bar is the rule above the first effect. */
-@media(max-width:1000px){.article-layout .article-style .list-filter-section.list-filter-section>.section-mix+ul{border-top:0}}
+.article-layout .article-style .list-filter-section>.section-mix{margin:0 0 12px}
+.article-layout .article-style .list-filter-section>h2[hidden]+.section-mix,.article-layout .article-style .list-filter-section.is-searching>.section-mix{display:none}
+.list-filter-section[data-outcome=replicated] .section-mix i:not(.status-replicated),.list-filter-section[data-outcome=mixed] .section-mix i:not(.status-mixed),.list-filter-section[data-outcome=not-replicated] .section-mix i:not(.status-not-replicated),.list-filter-section[data-outcome=reversed] .section-mix i:not(.status-reversed),.list-filter-section[data-outcome=no-status] .section-mix i:not(.status-no-status){opacity:.25}
+/* Nothing matches: the toolbar stays in view with the message under it. */
+.article-layout .article-style .list-filter-section.is-empty{min-height:40vh}
+.article-layout .article-style .list-filter-none{margin:18px 0;font-size:18px}
+.article-layout .article-style .list-filter-none[hidden]{display:none}
+.article-layout .article-style .list-filter-none button{min-height:44px;margin-inline-start:8px;padding:4px 14px;border:1.5px solid var(--ink);border-radius:999px;background:#fff;font:600 16px/1.2 var(--text);color:var(--ink);cursor:pointer}
+.article-layout .article-style .list-filter-none button:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
 /* The effects are rows, not cards (DESIGN.md §4): the outcome in a column of its own, so that the names line up, then
    the name, the description and the statistics in the reading measure. */
 /* The doubled class outranks the reading-width cap on unclassed lists (top of this file). */
@@ -552,14 +552,17 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
 .article-layout .article-style .list-filter-section .spoiler-body ul{margin:4px 0 0;padding:0;list-style:none;font-size:16px;line-height:1.45}
 .article-layout .article-style .list-filter-section .spoiler-body li{margin:0 0 10px;overflow-wrap:anywhere}
 .stat-label{display:block;font-weight:700}
-@media(max-width:760px){
+/* On a phone the search row alone stays on screen; the band runs to the screen's edges and holds the other controls too. */
+@media(max-width:600px){
   .article-layout .article-style .list-filter-section>.list-filter{display:contents}
-  .article-layout .article-style .list-filter-section .list-filter-search{position:sticky;top:0;z-index:6;grid-template-columns:1fr auto;align-items:baseline;gap:4px 10px;margin:18px -20px 10px;padding:8px 20px;background:var(--surface);box-shadow:0 1px 0 var(--line)}
+  .article-layout .article-style .list-filter-section .list-filter-search{position:sticky;top:0;z-index:6;grid-template-columns:1fr auto;align-items:baseline;gap:4px 10px;margin:18px -20px 0;padding:8px 20px;background:var(--surface);box-shadow:0 1px 0 var(--line)}
   .article-layout .article-style .list-filter-section .list-filter label,.article-layout .article-style .list-filter-section .list-filter-count{grid-row:1}
   .article-layout .article-style .list-filter-section .list-filter input{grid-column:1/-1;grid-row:2;padding:7px 14px}
-  .article-layout .article-style .list-filter-section .list-filter label.list-filter-jump{margin:4px 0 8px}
+  .article-layout .article-style .list-filter-section .list-filter label.list-filter-jump{margin:0 -20px;padding:8px 20px;background:var(--surface)}
   .article-layout .article-style .list-filter-section .list-filter-jump select{flex:1;min-height:44px;max-width:none}
-  .article-layout .article-style .outcome-clear{min-height:44px;margin:0 0 8px}
+  .article-layout .article-style .outcome-clear{display:block;box-sizing:content-box;width:100%;min-height:44px;margin:0 -20px;padding:0 20px 10px;border:0;border-radius:0;background:var(--surface);text-align:start;text-decoration:underline;text-underline-offset:3px}
+}
+@media(max-width:760px){
   /* A tile is a row: count and word, then its bricks. */
   .outcome-tiles{grid-template-columns:minmax(0,1fr)}
   .article-layout .article-style .outcome-tile{display:grid;grid-template-columns:112px minmax(0,1fr);column-gap:12px;align-items:center;padding:17px 12px 11px}

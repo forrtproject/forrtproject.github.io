@@ -731,20 +731,15 @@ if (listFilter) {
   const outcomes = ['replicated', 'mixed', 'not replicated', 'reversed', 'no status']
     .map((word) => ({word, key: word.replace(' ', '-'), many: document.querySelectorAll(`.list-filter ~ ul .status-${word.replace(' ', '-')}`).length}))
     .filter(({many}) => many);
-  // Each discipline's mix of outcomes, as a bar whose parts are as long as their shares.
-  const outcomeMix = (items) => {
-    const bar = document.createElement('span');
-    bar.className = 'outcome-bar';
-    bar.setAttribute('aria-hidden', 'true');
-    outcomes.forEach(({key}) => {
-      const many = items.filter((item) => item.querySelector(`.status-${key}`)).length;
-      if (!many) return;
-      const part = document.createElement('span');
-      part.className = `status-${key}`;
-      part.style.flexGrow = many;
-      bar.append(part);
-    });
-    return bar;
+  // One brick per effect in its outcome's colour, in the board's order: the board's picture, at a discipline's scale.
+  const outcomeBricks = (items) => {
+    const bricks = document.createElement('div');
+    bricks.className = 'outcome-bricks section-mix';
+    bricks.setAttribute('aria-hidden', 'true');
+    outcomes.forEach(({key}) => items.filter((item) => item.querySelector(`.status-${key}`)).forEach(() => {
+      bricks.append(Object.assign(document.createElement('i'), {className: `status-${key}`}));
+    }));
+    return bricks;
   };
   const tocCounts = new Map();
   if (outcomes.length) {
@@ -754,6 +749,9 @@ if (listFilter) {
     const title = document.createElement('h2');
     title.id = 'outcome-board-title';
     title.textContent = `What replications found for ${outcomes.reduce((sum, {many}) => sum + many, 0)} effects`;
+    const hint = document.createElement('p');
+    hint.className = 'outcome-hint';
+    hint.textContent = 'Choose an outcome to list only those effects.';
     const row = document.createElement('div');
     row.className = 'outcome-tiles';
     row.setAttribute('role', 'group');
@@ -768,6 +766,7 @@ if (listFilter) {
       statusWord = word;
       row.querySelectorAll('button').forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.status === key)));
       board.classList.toggle('is-chosen', Boolean(key));
+      if (key) listFilter.parentElement.dataset.outcome = key; else delete listFilter.parentElement.dataset.outcome;
       clear.hidden = !key;
       input.dispatchEvent(new Event('input'));
     };
@@ -782,24 +781,18 @@ if (listFilter) {
       button.addEventListener('click', () => (status === key ? choose('', '') : choose(key, word)));
       row.append(button);
     });
-    board.append(title, row);
+    board.append(title, hint, row);
     listFilter.before(board);
     listFilter.append(clear);
-    // The contents card and each heading carry the discipline's mix; the card's count follows the filters.
+    // Each discipline opens with its bricks, and the contents card gives its count, which follows the filters.
     withItems.forEach(({heading, items}) => {
-      if (items.length >= 5) {
-        const mix = outcomeMix(items);
-        mix.classList.add('section-mix');
-        heading.after(mix);
-      }
+      heading.after(outcomeBricks(items));
       const link = document.querySelector(`.article-card a[href="#${heading.id}"]`);
       if (!link) return;
       const many = document.createElement('span');
       many.className = 'toc-many';
       many.textContent = items.length;
       link.append(' ', many);
-      // Below five effects a share says little, so the count stands alone.
-      if (items.length >= 5) link.append(outcomeMix(items));
       tocCounts.set(heading, many);
     });
   }
@@ -848,16 +841,14 @@ if (listFilter) {
         if (match) { any = true; shown += 1; }
       });
       if (heading) heading.hidden = Boolean(query || status || chosen.length) && !any;
-      if (heading?.nextElementSibling?.matches('.section-mix')) heading.nextElementSibling.hidden = heading.hidden;
       const inCard = tocCounts.get(heading);
       if (inCard) {
         inCard.textContent = items.filter((item) => !item.hidden).length;
         inCard.parentElement.classList.toggle('is-empty', !any);
       }
     });
-    count.textContent = query && !shown ? `No ${noun} match “${input.value.trim()}”.` : !query && 'quiet' in listFilter.dataset ? '' : statusWord ? `${shown} of ${total} ${noun}: ${statusWord}` : `Showing ${shown} of ${total} ${noun}`;
+    count.textContent = query && !shown ? `No ${noun} match “${input.value.trim()}”.` : !query && 'quiet' in listFilter.dataset ? '' : statusWord ? `${shown} of ${total} ${noun}: ${statusWord}` : !query && tocCounts.size ? '' : `Showing ${shown} of ${total} ${noun}`;
     if (empty) empty.hidden = shown > 0;
-    document.querySelector('.article-card')?.classList.toggle('is-filtered', Boolean(tocCounts.size && (query || status)));
     if (reset) reset.hidden = !query && !chosen.length;
   });
   input.dispatchEvent(new Event('input'));
@@ -910,6 +901,27 @@ if (entries.length) {
   });
   // While a search is typed, the matching entries show in full, so the match can be seen wherever it is.
   const query = entryFilter.querySelector('input');
+  // When nothing matches, the list says so under the toolbar and offers the way back.
+  const none = document.createElement('p');
+  none.className = 'list-filter-none';
+  none.hidden = true;
+  const noneText = document.createElement('span');
+  const clearSearch = document.createElement('button');
+  clearSearch.type = 'button';
+  clearSearch.textContent = 'Clear search';
+  clearSearch.addEventListener('click', () => { query.value = ''; query.dispatchEvent(new Event('input')); query.focus(); });
+  none.append(noneText, ' ', clearSearch);
+  entryFilter.after(none);
+  const showNone = () => {
+    const empty = !entries.some((item) => !item.hidden);
+    none.hidden = !empty;
+    section.classList.toggle('is-empty', empty);
+    noneText.textContent = `No effects match “${query.value.trim()}”.`;
+    if (!empty) return;
+    entryFilter.querySelector('.list-filter-count').textContent = '';
+    none.scrollIntoView({block: 'nearest'});
+  };
+  query.addEventListener('input', showNone);
   // DESIGN.md §4: a description shows in full unless it runs past six lines; then it shows four and the button.
   // The heights are read with the cut lifted (.is-measuring), all at once, then the entries are marked.
   const measure = () => {
@@ -934,17 +946,24 @@ if (entries.length) {
     measure();
   }).observe(section);
   document.fonts?.ready.then(measure);
-  // The contents card marks the discipline on screen and keeps it in view inside the card.
+  // The contents card marks the section being read and keeps it in view inside the card.
   const card = document.querySelector('.article-card');
-  const links = new Map([...section.querySelectorAll('h2[id]')].map((heading) => [heading, card?.querySelector(`a[href="#${heading.id}"]`)]));
-  const spy = new IntersectionObserver((seen) => seen.forEach(({isIntersecting, target}) => {
-    const link = links.get(target);
-    if (!isIntersecting || !link) return;
-    links.forEach((other) => other?.removeAttribute('aria-current'));
-    link.setAttribute('aria-current', 'true');
-    if (card.scrollHeight > card.clientHeight) card.scrollTop = link.offsetTop - card.clientHeight / 2;
-  }), {rootMargin: '0px 0px -75% 0px'});
-  links.forEach((link, heading) => { if (link) spy.observe(heading); });
+  const marks = [...document.querySelectorAll('.article-style h2[id]')]
+    .map((heading) => [heading, card?.querySelector(`a[href="#${heading.id}"]`)]).filter(([, link]) => link);
+  let marking = false;
+  const mark = () => {
+    marking = false;
+    const line = innerHeight * .3;
+    const current = marks.filter(([heading]) => !heading.hidden && heading.getBoundingClientRect().top < line).pop()?.[1];
+    marks.forEach(([, link]) => { if (link !== current) link.removeAttribute('aria-current'); });
+    if (!current || current.hasAttribute('aria-current')) return;
+    current.setAttribute('aria-current', 'true');
+    if (card.scrollHeight > card.clientHeight) card.scrollTop = current.offsetTop - card.clientHeight / 2;
+  };
+  const markSoon = () => { if (!marking) { marking = true; requestAnimationFrame(mark); } };
+  addEventListener('scroll', markSoon, {passive: true});
+  query.addEventListener('input', markSoon);
+  mark();
 }
 
 // A table wider than the screen scrolls in its own box, so keyboard users must be able to focus it.
