@@ -222,7 +222,7 @@ main:lang(ar) .glossary-layout .article-style .term-unlinked-list li+li::before{
 .glossary-layout .article-style .term-references{margin:0 0 8px;padding:0;list-style:none;font-size:16px;line-height:1.5}
 /* As wide as the definition and the cards above it (article.css caps reference lists at 29.8em). */
 .glossary-layout .article-style ul.term-references.references-list{max-width:none}
-.glossary-layout .article-style .term-references li{max-width:30em;margin:0 0 10px;padding-inline-start:1.5em;text-indent:-1.5em;list-style:none}
+.glossary-layout .article-style .term-references li{max-width:29em;margin:0 0 10px;padding-inline-start:1.5em;text-indent:-1.5em;list-style:none}
 .glossary-layout .article-style .term-references li::before{content:none}
 .glossary-layout .article-style .term-references li:last-child{margin-bottom:0}
 main:lang(ar) .glossary-layout .article-style .term-references{direction:ltr;padding:0}
