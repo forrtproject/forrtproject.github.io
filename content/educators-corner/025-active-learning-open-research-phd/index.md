@@ -15,6 +15,7 @@ draft: false
 # Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
 image:
   caption: "Bronfenbrenner's ecological systems model adapted for PhD researchers' open research practices"
+  alt_text: "Bronfenbrenner's ecological systems model adapted for PhD researchers' open research practices"
   focal_point: "Center"
   preview_only: true
 

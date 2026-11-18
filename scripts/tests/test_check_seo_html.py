@@ -36,5 +36,24 @@ class DescriptionEntityCheck(unittest.TestCase):
                 self.assertIn(entity, failures[0])
 
 
+def card_failures(alt):
+    """Check 11 on one listing page holding the post's card image."""
+    with tempfile.TemporaryDirectory() as public:
+        html = "<html><body><img src='%s_hu_1.webp' alt='%s'></body></html>"
+        page = html % (seo.ALT_TEXT_CARD_IMAGE, alt)
+        (Path(public) / "index.html").write_text(page, encoding="utf-8")
+        return seo.check_card_alt_text(seo.load_pages(public))
+
+
+class CardAltTextCheck(unittest.TestCase):
+    def test_supplied_alt_text_passes(self):
+        self.assertEqual(card_failures("Bronfenbrenner ecological systems model"), [])
+
+    def test_fallback_alt_text_fails(self):
+        for alt in ("Featured image for From Awareness to Action", "From Awareness to Action"):
+            with self.subTest(alt):
+                self.assertEqual(card_failures(alt), ["index.html"])
+
+
 if __name__ == "__main__":
     unittest.main()

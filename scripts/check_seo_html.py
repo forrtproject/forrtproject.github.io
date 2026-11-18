@@ -28,6 +28,8 @@ Hard checks (exit 1 if any fails):
      non-empty meta description (#864).
   10. No meta description contains a double-escaped entity such as `&amp;ldquo;`
      (#864). Text that merely looks like an entity (`&name;`) is not one.
+  11. List cards use a page's `image.alt_text` (#1203), tested on a post that
+     sets it.
 
 Report-only sections (never fail): pages with zero or several <h1>, the
 site-wide share of images that carry both width and height, pages whose
@@ -345,6 +347,16 @@ def check_description_entities(pages):
     return failures
 
 
+ALT_TEXT_CARD_IMAGE = "/educators-corner/025-active-learning-open-research-phd/featured"
+ALT_TEXT_CARD_START = "Bronfenbrenner"
+
+
+def check_card_alt_text(pages):
+    return [p.path for p in pages for img in p.imgs
+            if ALT_TEXT_CARD_IMAGE in (img.get("src") or "")
+            and not (img.get("alt") or "").startswith(ALT_TEXT_CARD_START)]
+
+
 def description_report(pages, home):
     """Report-only: generic, duplicated and markup-containing descriptions on indexable pages."""
     described = [(p, p.descriptions[0].strip()) for p in pages
@@ -388,6 +400,7 @@ def main(public_dir):
         "7. breadcrumb JSON-LD is well formed": check_breadcrumbs(pages),
         "9. every indexable page has a meta description": check_description_present(pages),
         "10. no double-escaped entity in a meta description": check_description_entities(pages),
+        "11. list cards use image.alt_text": check_card_alt_text(pages),
     }
     conditional = check_conditional_assets(pages)
     results["3. conditional highlight.js / mermaid loading"] = [
