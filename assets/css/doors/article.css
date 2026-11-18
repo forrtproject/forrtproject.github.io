@@ -351,6 +351,7 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .article-layout .article-style .btn-primary,.article-layout .article-style .btn-lg{padding:10px 22px!important;border-radius:999px!important;font-size:17px!important;line-height:1.3!important}
 .article-layout .article-style .btn-block{display:inline-block;width:auto}
 .booklet-open .btn{margin-inline-end:10px}
+@media(max-width:760px){.booklet-open{display:flex;flex-direction:column;align-items:flex-start;gap:8px}.booklet-open .btn{margin-inline-end:0}}
 @media(max-width:1000px){.profile-head .profile-org{font-weight:400}.profile-head ul.network-icon{margin:4px 0 0}.profile-head ul.network-icon a{text-decoration:none}}
 .article-layout .article-style .btn.btn-primary,.article-layout .article-style .btn.btn-lg{padding:10px 22px!important;font-size:17px!important}
 .byline-date{display:none}

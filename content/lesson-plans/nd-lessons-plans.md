@@ -85,16 +85,11 @@ Each has suitable context: (e.g., entry-level/undergraduate/postgraduate), total
 
 ### In the Neurodiversity lesson bank
 
-- [Implicit Bias](../neurodiversity-lessonbank/implicit_bias/)  
-  Lesson page
-- [Diversity as one of the core values of Open Science](../neurodiversity-lessonbank/community-psychology-diversity/)  
-  Lesson page
-- [Diversity and research](../neurodiversity-lessonbank/diversity-and-research/)  
-  Lesson page
-- [Oppression and Power](../neurodiversity-lessonbank/masterstools/)  
-  Lesson page
-- [Generalizability Crisis](../neurodiversity-lessonbank/generalizability/)  
-  Lesson page
+- [Implicit Bias](../neurodiversity-lessonbank/implicit_bias/)
+- [Diversity as one of the core values of Open Science](../neurodiversity-lessonbank/community-psychology-diversity/)
+- [Diversity and research](../neurodiversity-lessonbank/diversity-and-research/)
+- [Oppression and Power](../neurodiversity-lessonbank/masterstools/)
+- [Generalizability Crisis](../neurodiversity-lessonbank/generalizability/)
 - [The myth of the normality: How neurodiversity dismantles the generalisability crisis](../neurodiversity-lessonbank/Lesson_Plans/The_myth_of_the_normality_How_neurodiversity_dismantles_the_generalisability_crisis.pdf)  
   Lesson plan (PDF) · [Text 1](https://journalofethics.ama-assn.org/article/myth-normal-brain-embracing-neurodiversity/2015-04) · [Text 2](https://www.cambridge.org/core/journals/behavioral-and-brain-sciences/article/abs/generalizability-crisis/AD386115BA539A759ACB3093760F4824)
 - [Neurodiversity Culture and Teaching](../neurodiversity-lessonbank/Lesson_Plans/Neuro_para.pdf)  

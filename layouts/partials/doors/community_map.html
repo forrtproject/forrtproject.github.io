@@ -4,8 +4,8 @@
      and layouts/community-map/single.html. */}}
 <style>
   .community-map-frame{display:block;width:100%;height:var(--map-height);border:none}
-  /* A world map is wider than it is tall, so a tall frame on a phone is mostly empty sea. */
-  @media (max-width:760px){.community-map-frame{height:min(var(--map-height),440px)}}
+  /* On a phone the map is fitted to the frame's width, so a frame shaped like the map leaves no empty bands. */
+  @media (max-width:760px){.community-map-frame{height:auto;aspect-ratio:3/2}}
 </style>
 <iframe src="{{ "apps/community_map.html" | relURL }}" class="community-map-frame"{{ if .ownLegend }} data-own-legend="true"{{ end }}
         title="FORRT Community Map"{{ if not .eager }} loading="lazy"{{ end }}

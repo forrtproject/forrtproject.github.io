@@ -11,7 +11,7 @@ steps:
     text: "Start with our mission and the three-pronged approach we use to support open science education."
     url: "/about/us/"
   - title: "Explore the 11 clusters"
-    text: "Our framework sorts open science teaching into 11 clusters."
+    text: "Our framework for sorting open science teaching."
     url: "/clusters/"
   - title: "Browse {resources} resources"
     text: "Find open scholarship materials for your teaching."

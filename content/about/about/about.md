@@ -79,8 +79,8 @@ FORRT provides a pedagogical infrastructure and open educational resources desig
 Read our publications | Meta-scientific peer-reviewed papers & policies, and our award-winning scholarship | /publications
 Find teaching resources | Open educational resources in our Educational Nexus | /nexus
 Read our mission | What FORRT advocates for, and why | /about/mission
-Meet the teams | Who we are and our organizational structure | /about/teams
-Get involved | Ways to get involved with FORRT | /about/get-involved
+Meet the teams | The teams and projects that make up FORRT | /about/teams
+Get involved | Join FORRT's Slack, find a project or get the newsletter | /about/get-involved
 Open the booklet | A 20-page introduction to FORRT, as a flipbook | /booklet/
 {{< /action_cards >}}
 
