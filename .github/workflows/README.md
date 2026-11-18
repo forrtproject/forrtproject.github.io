@@ -78,7 +78,7 @@ Triggers `deploy.yaml` after successful processing via `repository_dispatch`.
 
 ## Quality Checks
 
-### [google-forms-check.yml](workflows/google-forms-check.yml)
+### [google-forms-check.yml](google-forms-check.yml)
 **Keeps the site's forms in step with Google**
 
 | Trigger | Action |

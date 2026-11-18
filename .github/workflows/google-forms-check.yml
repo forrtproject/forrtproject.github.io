@@ -27,7 +27,27 @@ env:
   SYNC_BRANCH: google-forms-sync
 
 jobs:
-  check:
+  # Runs code from the pull request, so it gets no write access and no secrets.
+  verify:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Compare the definitions with the live forms
+        run: python3 scripts/build_google_forms.py --check
+
+  # Runs only the code on main, because it holds a token that can write to the repository.
+  sync:
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -55,7 +75,7 @@ jobs:
 
       - name: Propose updated definitions
         id: propose
-        if: steps.compare.outputs.code == '1' && github.event_name != 'pull_request'
+        if: steps.compare.outputs.code == '1'
         continue-on-error: true  # The issue below must still be opened.
         env:
           GH_TOKEN: ${{ secrets.FORRT_PAT || github.token }}
@@ -80,7 +100,7 @@ jobs:
           echo "url=$url" >> "$GITHUB_OUTPUT"
 
       - name: Report the change in an issue
-        if: steps.compare.outputs.code == '1' && github.event_name != 'pull_request'
+        if: steps.compare.outputs.code == '1'
         env:
           GH_TOKEN: ${{ github.token }}
           PR_URL: ${{ steps.propose.outputs.url }}
@@ -106,7 +126,7 @@ jobs:
           fi
 
       - name: Close the issue once the forms match
-        if: steps.compare.outputs.code == '0' && github.event_name != 'pull_request'
+        if: steps.compare.outputs.code == '0'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |

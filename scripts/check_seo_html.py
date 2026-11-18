@@ -418,7 +418,7 @@ def check_native_google_forms(public_dir, form_ids):
             with open(path, encoding="utf-8", errors="replace") as handle:
                 text = handle.read()
             for form_id in form_ids:
-                if 'data-embed-src="https://docs.google.com/forms/d/e/%s/' % form_id in text:
+                if 'src="https://docs.google.com/forms/d/e/%s/' % form_id in text:
                     problems.append("%s embeds %s" % (os.path.relpath(path, public_dir), form_id))
     return problems
 

@@ -203,7 +203,7 @@ def differences(saved, live):
     """List what differs between a saved definition and the live form."""
     if saved is None:
         return ["no saved definition"]
-    changes = [f"{key} changed" for key in ("title", "description", "confirmation", "collect_email")
+    changes = [f"{key} changed" for key in ("id", "title", "description", "confirmation", "collect_email")
                if saved.get(key) != live.get(key)]
     old = {question.get("entry", question["title"]): question for question in saved["items"]}
     new = {question.get("entry", question["title"]): question for question in live["items"]}

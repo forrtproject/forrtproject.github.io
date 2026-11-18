@@ -90,6 +90,10 @@ class Differences(unittest.TestCase):
         self.live["items"].append({"type": "short", "entry": "5", "title": "<b>New</b> one", "required": True})
         self.assertEqual(forms.differences(self.saved, self.live), ["question added: New one"])
 
+    def test_definition_for_another_form_is_reported(self):
+        self.live["id"] = "other"
+        self.assertEqual(forms.differences(self.saved, self.live), ["id changed"])
+
     def test_email_collection_is_reported(self):
         self.live["collect_email"] = True
         self.assertEqual(forms.differences(self.saved, self.live), ["collect_email changed"])
@@ -122,8 +126,13 @@ class NativeFormCheck(unittest.TestCase):
         self.assertEqual(self.failures('<form action="https://docs.google.com/forms/d/e/abc/formResponse">'), [])
 
     def test_embedded_form_fails(self):
-        html = '<div data-embed-src="https://docs.google.com/forms/d/e/abc/viewform?embedded=true">'
-        self.assertEqual(len(self.failures(html)), 1)
+        for attribute in ("data-embed-src", "src"):
+            with self.subTest(attribute):
+                html = '<div %s="https://docs.google.com/forms/d/e/abc/viewform?embedded=true">' % attribute
+                self.assertEqual(len(self.failures(html)), 1)
+
+    def test_link_to_the_google_form_passes(self):
+        self.assertEqual(self.failures('<a href="https://docs.google.com/forms/d/e/abc/viewform">Open</a>'), [])
 
 
 if __name__ == "__main__":

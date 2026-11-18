@@ -65,7 +65,7 @@ If you decline or do not choose, Google Analytics does not load.
 
 ## Embedded content {#embedded-content}
 
-Other services, some of them in the USA, host our videos, forms, calendars and some teaching activities. Each one shows a placeholder until you select **Load**, or a thumbnail until you press play. Your click is your consent for that item on that page view (Art. 6(1)(a) GDPR). Once it loads, the provider receives your IP address and browser data, may set cookies, and handles the data under its own privacy policy.
+Other services, some of them in the USA, host our videos, calendars and some of our forms and teaching activities. Each one shows a placeholder until you select **Load**, or a thumbnail until you press play. Your click is your consent for that item on that page view (Art. 6(1)(a) GDPR). Once it loads, the provider receives your IP address and browser data, may set cookies, and handles the data under its own privacy policy.
 
 | Provider | Content |
 |---|---|
