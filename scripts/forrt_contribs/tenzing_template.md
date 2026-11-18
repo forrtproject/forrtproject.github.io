@@ -113,7 +113,7 @@ subtitle = ""
   align-items: start;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 47.9375em) {
   .filter-grid {
     grid-template-columns: 1fr;
   }
