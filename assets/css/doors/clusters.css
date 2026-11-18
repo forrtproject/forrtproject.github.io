@@ -2618,7 +2618,7 @@ summary.clusters-overview__heading::before{content:"";width:0;height:0;border-le
 .brick-row.disc-fields .action-cards strong{font-size:20px;line-height:1.15}
 .brick-row.disc-fields .action-cards span{font-size:15px}
 /* Disciplines on a phone: the field bricks in rows of one height, whatever the length of a field's name. */
-@media(max-width:760px){.brick-row.disc-fields .action-cards{grid-auto-rows:1fr}.brick-row.disc-fields .action-cards>li{display:flex}.brick-row.disc-fields .action-cards>li>a{flex:1}}
+@media(max-width:760px){.brick-row.disc-fields .action-cards{grid-auto-rows:1fr}.brick-row.disc-fields .action-cards>li{display:flex}.brick-row.disc-fields .action-cards>li>a{flex:1;min-width:0}.brick-row.disc-fields .action-cards strong{overflow-wrap:anywhere}}
 @media(max-width:760px){.brick-row.disc-fields .action-cards{grid-template-columns:repeat(2,minmax(0,1fr));margin-bottom:24px}.brick-row.disc-fields .action-cards strong{font-size:17px}.brick-row.disc-fields .action-cards a{padding:8px 10px 12px}}
 .disciplines-areas{gap:6px 18px}
 .disc-key{display:inline-flex;align-items:center;gap:7px;font:600 16px/1.3 var(--text);color:var(--ink)}

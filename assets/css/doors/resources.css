@@ -124,7 +124,8 @@
 /* Every brick as tall as the tallest, so none looks bigger for a longer line. */
 .page-heading .res-start .action-cards{grid-auto-rows:1fr}
 .page-heading .res-start .action-cards>li{display:flex}
-.page-heading .res-start .action-cards>li>a{flex:1}
+.page-heading .res-start .action-cards>li>a{flex:1;min-width:0}
+.page-heading .res-start .action-cards strong{overflow-wrap:anywhere}
 .page-heading .res-start .action-cards strong{font-size:21px}
 .page-heading .res-start .action-cards span{font-size:15px;line-height:1.35}
 @media(max-width:1000px){.page-heading .res-start .action-cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 5px}}

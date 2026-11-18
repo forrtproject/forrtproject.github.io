@@ -53,13 +53,13 @@
   {{ range $clusters }}{{ $clusterCount = merge $clusterCount (dict (urlize .) (add 1 (index $clusterCount (urlize .) | default 0))) }}{{ end }}
   {{ $title := .Title | markdownify | plainify | htmlUnescape }}
   {{/* The opening of the abstract, cut at a word, for the card's one-line description. None when the abstract opens
-       with the whole title and the title runs to four words or more: the line would repeat the title just above it.
+       with the whole title, ending at a word, and the title runs to four words or more: the line would repeat the title just above it.
        A short name opening a sentence ("DAGitty is a browser-based environment…") stays. */}}
   {{ $plainAbstract := .Params.abstract | default "" | markdownify | plainify | htmlUnescape | replaceRE `\s+` " " | strings.TrimSpace }}
   {{ $desc := $plainAbstract | truncate 170 "…" }}
   {{ $t := $title | lower | replaceRE `[^\p{L}\p{N}]+` " " | strings.TrimSpace }}
   {{ $a := $plainAbstract | lower | replaceRE `[^\p{L}\p{N}]+` " " | strings.TrimSpace }}
-  {{ if and (ge (len (split $t " ")) 4) (hasPrefix $a $t) }}{{ $desc = "" }}{{ end }}
+  {{ if and (ge (len (split $t " ")) 4) (or (eq $a $t) (hasPrefix $a (printf "%s " $t))) }}{{ $desc = "" }}{{ end }}
   {{ $items = merge $items (dict .RelPermalink (dict "title" $title "url" .RelPermalink "desc" $desc "types" $types "levels" $levels "clusters" $clusters)) }}
 {{ end }}
 

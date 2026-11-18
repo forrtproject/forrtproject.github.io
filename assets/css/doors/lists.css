@@ -113,7 +113,7 @@ ul.list-items>li[hidden]{display:none}
 .article-layout .article-style .topic-tools .list-filter-count{grid-column:2;grid-row:2;margin:0;white-space:nowrap}
 .topic-tools__links{flex:1 1 260px;margin:0;padding:0 0 10px;font-size:16px;line-height:1.45;color:var(--soft)}
 .topic-tools__links a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
-@media(max-width:760px){.topic-tools .list-filter-search{grid-template-columns:1fr}.article-layout .article-style .topic-tools .list-filter-count{grid-column:1;grid-row:3;margin:8px 0 0}.topic-tools__links{padding:0}}
+@media(max-width:760px){.topic-tools .list-filter-search{grid-template-columns:minmax(0,1fr);min-width:0}.article-layout .article-style .topic-tools .list-filter-count{grid-column:1;grid-row:3;margin:8px 0 0;white-space:normal}.topic-tools__links{padding:0}}
 /* /forrt_clusters/<term>/: one column of underlined titles, each with its type as plain text. */
 .article-style .cluster-resources{display:block;margin:10px 0 0;padding:0;list-style:none;max-width:none}
 .article-style ul.cluster-resources>li{margin:0;padding:7px 0;border:0;font-size:17px;line-height:1.4}
@@ -183,7 +183,7 @@ ul.list-items>li[hidden]{display:none}
    On phones one brick a row, so a long name takes two lines rather than four. */
 .brick-row.tag-top .action-cards{grid-auto-rows:1fr}
 .brick-row.tag-top .action-cards>li{display:flex}
-.brick-row.tag-top .action-cards>li>a{flex:1}
+.brick-row.tag-top .action-cards>li>a{flex:1;min-width:0}
 @media(max-width:760px){
   .brick-row.tag-top.tag-top .action-cards{grid-template-columns:minmax(0,1fr);grid-auto-rows:auto;gap:10px}
   .brick-row.tag-top.tag-top .action-cards>li>a{flex-direction:row;flex-wrap:nowrap;justify-content:space-between;align-items:baseline;gap:12px}
@@ -236,5 +236,6 @@ ul.list-items>li[hidden]{display:none}
    as the tallest; on a phone's tag rows room for a two-line name, the name centred. */
 .brick-row.topic-index .action-cards{grid-auto-rows:1fr}
 .brick-row.topic-index .action-cards>li{display:flex}
-.brick-row.topic-index .action-cards>li>a{flex:1}
+.brick-row.topic-index .action-cards>li>a{flex:1;min-width:0}
+.brick-row.topic-index .action-cards strong{overflow-wrap:anywhere}
 @media(max-width:760px){.brick-row.tag-top.tag-top .action-cards>li>a{min-height:62px;align-items:center}}

@@ -18,8 +18,9 @@
       {{/* The name alone: the line above already gives the number. */}}
       <h1 class="clusters-site-heading" itemprop="headline">{{ $c.name }}</h1>
       {{ with $c.description }}<div class="clamp-desc cluster-hero__desc" data-clamp-name="this cluster"><p>{{ . }}</p></div>{{ end }}
-      {{/* The references only: the description says how many sub-clusters there are, and the list below shows them. */}}
-      <p class="cluster-hero__counts">{{ $refs }} references</p>
+      {{/* The number of sub-clusters only where the description does not already state it. */}}
+      {{ $stated := findRE `(?i)\b\d+\s+sub-?\s?clusters?\b` ($c.description | default "") 1 }}
+      <p class="cluster-hero__counts">{{ if not $stated }}{{ len $c.sub_clusters }} sub-clusters · {{ end }}{{ $refs }} references</p>
     </div>
     <div class="cluster-hero__mark">{{ partial "clusters/icon.html" $n }}</div>
   </div>
