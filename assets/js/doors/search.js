@@ -1,10 +1,12 @@
-/* Site search over the theme's index.json, using the theme's Fuse options, so results rank as they
-   did. site.js loads this on the first search and calls window.doorsSearch with the query. */
+/* Site search over the theme's index.json. A close match comes first, so "games" does not also find
+   "James"; the theme's looser tolerance applies only when that finds nothing, which keeps typos
+   working. site.js loads this on the first search and calls window.doorsSearch with the query. */
 const dialog = document.getElementById('searchDialog');
 const input = document.getElementById('searchQuery');
 const status = document.getElementById('searchStatus');
 const hits = document.getElementById('searchHits');
 const LIMIT = 100;
+const CLOSE_MATCH = 0.1;
 const SECTIONS = {
   curated_resources: 'Resource', glossary: 'Glossary', post: 'News', authors: 'Person',
   'educators-corner': "Educators' Corner", pedagogies: 'Pedagogies', summaries: 'Summary',
@@ -32,24 +34,32 @@ function ready() {
         if (!response.ok) throw new Error(response.statusText);
         return response.json();
       })
-      .then((index) => new window.Fuse(index, {
-        shouldSort: true,
-        includeMatches: true,
-        tokenize: true,
-        threshold: Number(dialog.dataset.threshold),
-        location: 0,
-        distance: 100,
-        maxPatternLength: 32,
-        minMatchCharLength: Number(dialog.dataset.minLength),
-        keys: [
-          { name: 'title', weight: 0.99 },
-          { name: 'summary', weight: 0.6 },
-          { name: 'authors', weight: 0.5 },
-          { name: 'content', weight: 0.2 },
-          { name: 'tags', weight: 0.5 },
-          { name: 'categories', weight: 0.5 },
-        ],
-      }))
+      .then((index) => {
+        const options = {
+          shouldSort: true,
+          includeMatches: true,
+          tokenize: true,
+          threshold: Number(dialog.dataset.threshold),
+          location: 0,
+          distance: 100,
+          maxPatternLength: 32,
+          minMatchCharLength: Number(dialog.dataset.minLength),
+          keys: [
+            { name: 'title', weight: 0.99 },
+            { name: 'summary', weight: 0.6 },
+            { name: 'authors', weight: 0.5 },
+            { name: 'content', weight: 0.2 },
+            { name: 'tags', weight: 0.5 },
+            { name: 'categories', weight: 0.5 },
+          ],
+        };
+        const close = new window.Fuse(index, { ...options, threshold: CLOSE_MATCH });
+        const loose = new window.Fuse(index, options);
+        return (query) => {
+          const results = close.search(query);
+          return results.length ? results : loose.search(query);
+        };
+      })
       .catch((error) => {
         fuse = undefined;
         throw error;
@@ -110,8 +120,8 @@ async function run(query) {
     return;
   }
   try {
-    const engine = await ready();
-    if (attempt === latest) show(engine.search(query), query);
+    const search = await ready();
+    if (attempt === latest) show(search(query), query);
   } catch {
     if (attempt === latest) status.textContent = 'Search is unavailable right now. Reload the page and try again.';
   }
