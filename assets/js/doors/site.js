@@ -516,17 +516,22 @@ if (termFilter && termGrid) {
     });
     document.querySelector('.glossary-clear').hidden = !query;
     const shown = terms.filter((term) => !term.hidden).length;
-    document.querySelector('.glossary-count').textContent = query && shown ? `${shown} of ${terms.length} terms` : '';
+    // "12 of 260 terms", in the glossary's language (data-format, from layouts/glossary/list.html).
+    const count = document.querySelector('.glossary-count');
+    const format = count.dataset.format || '%s of %s terms';
+    count.textContent = query && shown ? format.replace('%s', shown).replace('%s', terms.length) : '';
   });
   // Cards or a compact list; the choice is kept for the next visit.
+  // The reference list (layouts/partials/doors/glossary_references.html) has neither the views nor the about box.
   const view = document.querySelector('.glossary-view');
   const setView = (list) => {
+    if (!view) return;
     termGrid.classList.toggle('is-list', list);
     view.querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', String((b.dataset.view === 'list') === list)));
     try { localStorage.setItem('glossary-view', list ? 'list' : 'cards'); } catch (e) { /* storage blocked: the choice lasts this visit */ }
   };
-  view.hidden = false;
-  view.querySelectorAll('button').forEach((b) => b.addEventListener('click', () => setView(b.dataset.view === 'list')));
+  if (view) view.hidden = false;
+  view?.querySelectorAll('button').forEach((b) => b.addEventListener('click', () => setView(b.dataset.view === 'list')));
   // Phones start with the compact list; a stored choice wins.
   let stored = null;
   try { stored = localStorage.getItem('glossary-view'); } catch (e) { /* no stored choice */ }
@@ -557,7 +562,7 @@ if (termFilter && termGrid) {
   if (asked) { termFilter.value = asked; termFilter.dispatchEvent(new Event('input')); }
   // "How to cite" links to the closed disclosure under the heading; following the link opens it.
   const about = document.getElementById('about-the-glossary');
-  const openAbout = () => { if (location.hash === '#about-the-glossary') about.open = true; };
+  const openAbout = () => { if (about && location.hash === '#about-the-glossary') about.open = true; };
   window.addEventListener('hashchange', openAbout);
   openAbout();
 } else if (termFilter) {

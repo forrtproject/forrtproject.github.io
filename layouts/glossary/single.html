@@ -1,4 +1,7 @@
 {{- define "main" -}}
+{{/* The reference list is a page of this section but is laid out as the glossary hub. Chosen here rather than by
+     `layout` in its front matter, because its index.md ships from main (data-processing.yml). */}}
+{{ if eq .File.Dir "glossary/references/" }}{{ partial "doors/glossary_references" . }}{{ else }}
 
 {{ $lang := .Params.language | default "english" }}
 {{ $references_url := relref . "/glossary/references" }}
@@ -10,6 +13,7 @@
         "alt_definition" "Alternative definition"
         "related_term" "Related term"
         "related_terms" "Related terms"
+        "not_in_glossary" "Not yet in the glossary:"
         "originally_drafted_by" "Originally drafted by"
         "reviewed_by" "Reviewed by"
         "translated_by" "Translated by"
@@ -25,6 +29,7 @@
         "alt_definition" "Alternative Definition"
         "related_term" "Verwandter Begriff"
         "related_terms" "Verwandte Begriffe"
+        "not_in_glossary" "Noch nicht im Glossar:"
         "originally_drafted_by" "Ursprünglich verfasst von"
         "reviewed_by" "Überprüft von"
         "translated_by" "Übersetzt von"
@@ -40,6 +45,7 @@
         "alt_definition" "تعريف بديل"
         "related_term" "مصطلح ذو صلة"
         "related_terms" "مصطلحات ذات صلة"
+        "not_in_glossary" "غير موجودة في المسرد بعد:"
         "originally_drafted_by" "أعدّه في الأصل"
         "reviewed_by" "راجعه"
         "translated_by" "ترجمه"
@@ -61,6 +67,7 @@
         "alt_definition" "Alternatif tanım"
         "related_term" "İlgili terim"
         "related_terms" "İlgili terimler"
+        "not_in_glossary" "Henüz sözlükte yok:"
         "originally_drafted_by" "Orijinal terimi ve tanımını hazırlayanlar"
         "reviewed_by" "Gözden geçirenler"
         "translated_by" "Çevirenler"
@@ -76,6 +83,7 @@
         "alt_definition" "替代定义"
         "related_term" "相关术语"
         "related_terms" "相关术语"
+        "not_in_glossary" "尚未收录："
         "originally_drafted_by" "原稿作者"
         "reviewed_by" "审阅者"
         "translated_by" "翻译者"
@@ -193,7 +201,9 @@
                 {{ end }}
               {{ end }}
             {{ end }}
-            {{ $related_links := slice }}
+            {{/* Terms with a page are cards with the start of their definition, as on the glossary hub; terms without
+                 one follow as plain text (DESIGN.md §5). */}}
+            {{ $related_pages := slice }}{{ $unlinked := slice }}
             {{ range . }}
             {{ $term_str := printf "%s" . }}
             {{ $key := $term_str | replaceRE "\u00a0" " " | replaceRE `[*\\]` "" | replaceRE `\s*\(.*?\)` "" | lower | replaceRE `[^\p{L}\p{N}]+` "" }}
@@ -202,15 +212,24 @@
             {{/* A term found in this language is named as its page is, without the English name in brackets. */}}
             {{ $name := $term_str }}
             {{ if and (ne $lang "english") (eq .Params.language $lang) }}{{ $name = replaceRE `\s*\[.*\]\s*$` "" .Title }}{{ end }}
-            {{ $related_links = $related_links | append (printf "<a href='%s'>%s</a>" .RelPermalink ($name | htmlEscape | markdownify)) }}
+            {{ $related_pages = $related_pages | append (dict "page" . "name" $name) }}
             {{ else }}
-            {{/* No page of its own yet: a plain chip. */}}
-            {{ $related_links = $related_links | append (printf "<span class='term-unlinked'>%s</span>" ($term_str | htmlEscape | markdownify | string)) }}
+            {{ $unlinked = $unlinked | append (printf "<span class='term-unlinked'>%s</span>" ($term_str | htmlEscape | markdownify | string)) }}
             {{ end }}
             {{ end }}
-            {{/* A plain list in the page's own separator: the page already has enough pill shapes. */}}
-            {{ $related_links_string := delimit $related_links $sep | safeHTML }}
-            <p class="term-line term-related"><strong>{{ if gt (len $related_links) 1 }}{{ index (index $dictionary $lang) "related_terms" }}{{ else }}{{ index (index $dictionary $lang) "related_term" }}{{ end }}: </strong>{{ $related_links_string }}</p>
+            <section class="term-related" aria-labelledby="term-related-heading">
+            <h2 id="term-related-heading">{{ if gt (add (len $related_pages) (len $unlinked)) 1 }}{{ index (index $dictionary $lang) "related_terms" }}{{ else }}{{ index (index $dictionary $lang) "related_term" }}{{ end }}</h2>
+            {{ with $related_pages }}
+            <ul class="term-cards">
+              {{ range . }}
+              <li{{ if ne .page.Params.language $lang }} lang="en"{{ end }}><a href="{{ .page.RelPermalink }}">{{ .name | htmlEscape | markdownify }}</a>
+                {{ with .page.Params.definition }}<p>{{ . | markdownify | plainify | htmlUnescape | replaceRE `\*\*|__` "" | truncate 150 }}</p>{{ end }}</li>
+              {{ end }}
+            </ul>
+            {{ end }}
+            {{/* Related terms without a page of their own yet: a labelled plain list under the cards, so they don't pass for links. */}}
+            {{ with $unlinked }}<div class="term-unlinked-line"><span class="term-unlinked-label">{{ index (index $dictionary $lang) "not_in_glossary" | default "Not yet in the glossary:" }}</span> <ul class="term-unlinked-list" role="list">{{ range . }}<li>{{ . | safeHTML }}</li>{{ end }}</ul></div>{{ end }}
+            </section>
             {{ end }}
 
             {{ if .Params.alt_related_terms }}
@@ -227,8 +246,9 @@
             {{ if .Params.references }}
               {{ $references := delimit .Params.references ", " | len }}
               {{ if ne $references 0 }}
-                <p class="term-line"><b>{{ if gt (len .Params.references) 1 }}{{ index (index $dictionary $lang) "references" }}{{ else }}{{ index (index $dictionary $lang) "reference" }}{{ end }}: </b></p>
-                <ul class="references-list">
+                <h2 class="term-references-heading">{{ if gt (len .Params.references) 1 }}{{ index (index $dictionary $lang) "references" }}{{ else }}{{ index (index $dictionary $lang) "reference" }}{{ end }}</h2>
+                {{/* English references read left to right inside an Arabic page. */}}
+                <ul class="references-list term-references">
                   {{ $keys := partialCached "citations/keys" . "bibliography-keys" }}
                   {{ range .Params.references }}
                     {{ $key := index $keys . | default (printf "local-%s" (md5 .)) }}
@@ -276,4 +296,5 @@
   </div>
 </div>
 
+{{ end }}
 {{- end -}}
