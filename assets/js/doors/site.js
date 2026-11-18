@@ -783,7 +783,7 @@ if (listFilter) {
     });
     board.append(title, hint, row);
     listFilter.before(board);
-    listFilter.append(clear);
+    searchRow.append(clear);
     // Each discipline opens with its bricks, and the contents card gives its count, which follows the filters.
     withItems.forEach(({heading, items}) => {
       heading.after(outcomeBricks(items));
@@ -847,7 +847,7 @@ if (listFilter) {
         inCard.parentElement.classList.toggle('is-empty', !any);
       }
     });
-    count.textContent = query && !shown ? `No ${noun} match “${input.value.trim()}”.` : !query && 'quiet' in listFilter.dataset ? '' : statusWord ? `${shown} of ${total} ${noun}: ${statusWord}` : !query && tocCounts.size ? '' : `Showing ${shown} of ${total} ${noun}`;
+    count.textContent = query && !shown ? `No ${noun} match “${input.value.trim()}”.` : !query && 'quiet' in listFilter.dataset ? '' : tocCounts.size ? (query || statusWord ? `${shown} of ${total} ${noun}${statusWord ? `: ${statusWord}` : ''}` : '') : `Showing ${shown} of ${total} ${noun}`;
     if (empty) empty.hidden = shown > 0;
     if (reset) reset.hidden = !query && !chosen.length;
   });
@@ -917,9 +917,10 @@ if (entries.length) {
     none.hidden = !empty;
     section.classList.toggle('is-empty', empty);
     noneText.textContent = `No effects match “${query.value.trim()}”.`;
-    if (!empty) return;
-    entryFilter.querySelector('.list-filter-count').textContent = '';
-    none.scrollIntoView({block: 'nearest'});
+    if (empty) entryFilter.querySelector('.list-filter-count').textContent = '';
+    // Typed further down the page, a search would leave its results above the screen: the list comes back to its start.
+    const above = section.getBoundingClientRect().top;
+    if (query.value.trim() && above < 0) scrollBy(0, above);
   };
   query.addEventListener('input', showNone);
   // DESIGN.md §4: a description shows in full unless it runs past six lines; then it shows four and the button.
