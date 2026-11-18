@@ -48,13 +48,12 @@
     const answers = () => {
       const data = new URLSearchParams();
       new FormData(form).forEach((value, name) => {
-        const text = value.trim();
-        if (!text) return;
+        if (!value.trim()) return;
         if (name.endsWith('.other_option_response')) {
           const choice = form.querySelector(`input[name="${name.replace('.other_option_response', '')}"][value="${OTHER}"]`);
           if (!choice.checked) return;
         }
-        data.append(name, text);
+        data.append(name, value);
       });
       return data;
     };
@@ -69,6 +68,7 @@
       try {
         await fetch(form.action, {
           method: 'POST', mode: 'no-cors', credentials: 'omit', referrerPolicy: 'no-referrer', body: answers(),
+          signal: AbortSignal.timeout(60000),
         });
         body.hidden = true;
         status.textContent = form.dataset.gformConfirmation;
