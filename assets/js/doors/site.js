@@ -964,6 +964,9 @@ if (entries.length) {
   const markSoon = () => { if (!marking) { marking = true; requestAnimationFrame(mark); } };
   addEventListener('scroll', markSoon, {passive: true});
   query.addEventListener('input', markSoon);
+  // Anything that moves the headings without scrolling: a new window size, late fonts, an opened entry.
+  addEventListener('resize', markSoon);
+  new ResizeObserver(markSoon).observe(section);
   mark();
 }
 
