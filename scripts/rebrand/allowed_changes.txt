@@ -21,6 +21,14 @@ js/load-theme.js                 # The theme's day/night script, gone with the t
 js/academic.min.FINGERPRINT.js   # The theme's script bundle, without its search, under a new name while some pages still need it
 curated_resources/page/*/index.html  # Decision D17: paginated lists removed, and the 404 page sends old links to /resources/
 forrt_clusters/*/page/*/index.html   # Decision D17: paginated lists removed, and the 404 page sends old links to the cluster's page
+forrt_clusters/index.html            # #1188: titled "Earlier FORRT Clusters" (was "Forrt_clusters"), with its own description
+forrt_clusters/academic-life-and-culture/index.html  # #1188: only the breadcrumb data changes, naming the index above by its new title. Remove once main has it
+forrt_clusters/conceptual-and-statistical-knowledge/index.html  # #1188: only the breadcrumb data changes, naming the index above by its new title. Remove once main has it
+forrt_clusters/open-data-and-materials/index.html  # #1188: only the breadcrumb data changes, naming the index above by its new title. Remove once main has it
+forrt_clusters/preregistration/index.html  # #1188: only the breadcrumb data changes, naming the index above by its new title. Remove once main has it
+forrt_clusters/replication-research/index.html  # #1188: only the breadcrumb data changes, naming the index above by its new title. Remove once main has it
+forrt_clusters/reproducibility-and-replicability-knowledge/index.html  # #1188: only the breadcrumb data changes, naming the index above by its new title. Remove once main has it
+forrt_clusters/reproducible-analyses/index.html  # #1188: only the breadcrumb data changes, naming the index above by its new title. Remove once main has it
 tag/index.html                       # The migration plan's one 404 rule replaces the /tag/ stubs
 tag/*/index.html                     # The migration plan's one 404 rule replaces the /tag/ stubs
 tag/*/*/index.html                   # The same, for the one tag with a slash in it
@@ -87,3 +95,4 @@ summaries/index.html           # Its breadcrumb name is now "Summaries", as its 
 summaries/open-reproducible/index.html     # A written description instead of the symbol legend, and the same breadcrumb name
 summaries/diversity-equity-inclusion/index.html  # A written meta description instead of the symbol legend, and "Summaries" as the breadcrumb name
 lesson-plans/index.html   # Its body now opens with action cards, so its description is set to the first sentence of its Motivation
+publications/index.html  # #1191: the citation chart moved after the introduction, so the description no longer opens with its "Details on Google Scholar" link. Exempts all its SEO tags: remove once main has the change

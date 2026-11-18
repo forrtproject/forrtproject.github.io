@@ -23,20 +23,21 @@
   </div>
 
   <ul class="announcements-grid">
-    {{ $eager := true }}{{ $n := 0 }}
+    {{ $eager := true }}
+    {{ $tones := partialCached "doors/post_panels" site "post-panels" }}
     {{ range $posts }}
       {{ $cat := "" }}{{ with .Params.categories }}{{ $cat = index . 0 }}{{ end }}
       {{ $img := (.Resources.ByType "image").GetMatch "*featured*" }}
       {{ $alt := .Params.image.alt_text }}
-      {{ $shared := partial "doors/post_image_shared" . }}
       <li class="ac-item" data-cat="{{ lower $cat }}">
         {{/* The title is a stretched link, so the whole card leads to the post. */}}
         <article class="announcement-card">
-          {{ if and $img (not $shared) }}
+          {{ $tone := index $tones .RelPermalink }}
+          {{ if not $tone }}
             <div class="ac-thumb"><img src="{{ ($img.Fill "640x360 Center webp q75").RelPermalink }}" width="640" height="360" alt="{{ $alt }}"{{ if not $eager }} loading="lazy"{{ end }}></div>
             {{ $eager = false }}
           {{ else }}
-            <div class="ac-thumb ac-panel ac-panel-{{ add (mod $n 4) 1 }}" aria-hidden="true"><span>{{ $cat | default "News" }}</span><strong>{{ .Date.Format "January 2006" }}</strong></div>{{ $n = add $n 1 }}
+            <div class="ac-thumb ac-panel ac-panel-{{ $tone }}" aria-hidden="true"><span>{{ $cat | default "News" }}</span><strong>{{ .Date.Format "January 2006" }}</strong></div>
           {{ end }}
           <div class="ac-body">
             <p class="ac-meta">{{ with $cat }}<span class="ac-cat">{{ . }}</span>{{ end }}<time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time></p>

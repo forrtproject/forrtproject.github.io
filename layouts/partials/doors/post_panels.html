@@ -1,0 +1,16 @@
+{{/* Which news posts show a coloured panel instead of a picture, and in which brick colour: posts with no
+     picture of their own, or one several posts share (the newsletters' stock photo), take the four brick
+     colours in turn, newest first (DESIGN.md §6). One map, so the news list and each post agree.
+     Input: site. Returns a dict of a post's RelPermalink to 1–4. Call it with partialCached. */}}
+{{ $tones := dict }}
+{{ $n := 0 }}
+{{ with site.GetPage "/post" }}
+  {{ range sort .Pages "Date" "desc" }}
+    {{ $img := (.Resources.ByType "image").GetMatch "*featured*" }}
+    {{ if or (not $img) (partial "doors/post_image_shared" .) }}
+      {{ $tones = merge $tones (dict .RelPermalink (add (mod $n 4) 1)) }}
+      {{ $n = add $n 1 }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+{{ return $tones }}

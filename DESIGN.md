@@ -36,6 +36,8 @@ Every repeated device has to earn its place. In practice:
 - Tags: a tag links to the tags page only when at least five pages and at most a quarter of the tagged pages share it (`layouts/partials/functions/tag_counts.html`). Rarer tags are plain keywords; tags on more pages are not shown, because they no longer tell pages apart.
 - In directories of cards (§4, About pages), show descriptions in full. Cut one only when it runs past six lines: show four lines and a "more" button. Dense term lists such as the glossary keep their short previews, and break into chapters under large letters on the area's pale ground, so a long run of cards has landmarks. Never hide just a line or two behind "more". Without JavaScript the full text shows.
 - Cards for actions are the brick cards of `action_cards`. Lists of tools are rows: a linked title and a sentence, not boxes. A collection of materials that belongs to one area, such as the lesson plans, may be pale cards in that area's colour, as many to a row as fit, each a linked title, with a note on what the link opens only where the cards differ.
+- Not everything is a card. Cards are for things a visitor picks between or acts on: articles, teams, partners, resources, materials, publications. Running content, such as plans, lists of points and explanations, stays as text, even on an area's pale colour, and so do long uniform lists unless the box carries information: Reversals' effects and Contributors are rows with a hairline between them, so a long entry makes a taller row and leaves no gap beside it.
+- A list of more than about thirty items has something to skim by: filters with counts, groups under headings, or, for names and terms people look up by their first letter, letters to jump by. Titles of resources or articles are not looked up that way, so they get filters and search, not letters. One unbroken run of hundreds of links is a wall, however tidy. A colour that carries meaning (an outcome, an area) or a summary at the top (Reversals' outcome bar) also helps a long list to be skimmed. Hairline rules alone are not enough (§1).
 - Directories of organisations, teams and projects (Partnerships, Teams, Get involved) are pale cards or pictured entries, two or more to a row on a wide screen, so they are easy to skim. Each ends in a button for its action, such as "Visit website" or "Join the team's Slack channel".
 - Framed boxes (cards, panels, toolbars) keep space inside them and between them; text never runs up against a box's edge.
 
@@ -47,9 +49,10 @@ Every repeated device has to earn its place. In practice:
 
 ## 6. Colour carries meaning
 
-- FORRT works in four areas of equal standing: Education & Pedagogy, Meta-Science & Research, Social Justice & DEIA, and Community & Sustainability. Each has its colour: education `--edu` (green), research `--res` (dark blue), social justice `--jus` (purple), community `--com` (brown). Pages and cards that belong to an area use its colour and its pale background (`--edu-bg` and so on). Area colours appear only for their areas.
-- The 11 FORRT clusters are not areas. Each keeps a colour of its own, and together they span the spectrum (`layouts/partials/clusters/colors.html`), so the clusters can be told apart. Strong cluster colours are for small marks; their backgrounds stay pale.
-- Rows of action bricks run through four brick colours of their own (`--brick1` to `--brick4`: wine, olive, slate and ochre), chosen to stay clear of the area colours. They add variety and carry no meaning. Where each brick stands for something that has a colour of its own, such as the Replication Hub's stages, it takes that colour instead. Do not use shades of one colour for variety: they read as more and less important.
+- FORRT works in four areas of equal standing: Education & Pedagogy, Meta-Science & Research, Social Justice & DEIA, and Community & Sustainability. Each has its colour: education `--edu` (green), research `--res` (dark blue), social justice `--jus` (purple), community `--com` (brown). Pages and cards that belong to an area use its colour and its pale background (`--edu-bg` and so on), and so do the articles of an area's sections: Educators' Corner and Pedagogies are education's. Area colours appear only for their areas.
+- The 11 FORRT clusters are not areas. Each keeps a colour of its own, and together they span the spectrum (`layouts/partials/clusters/colors.html`), so the clusters can be told apart. Strong cluster colours are for small marks, such as the square beside a resource's cluster, and for the door-shaped mark that holds a cluster's icon in white: large in a cluster page's head, small on a resource's "About this resource" card. Backgrounds in a cluster's colour stay pale. A cluster's own page, and a resource's card, take the colour and icon of the cluster from the clusters diagram.
+- Replication outcomes (Reversals) have a scale of their own, from green for replicated to wine for reversed, with grey for no status (`--out-*` in `tokens.css`). An effect's chip and its part of the outcome bar share the colour; the rows themselves stay on the page's ground.
+- Rows of action bricks run through four brick colours of their own (`--brick1` to `--brick4`: wine, olive, slate and ochre), chosen to stay clear of the area colours. They add variety and carry no meaning, so a page with no colour of its own, such as Tags, Disciplines or the resources directory, may use them for its lead entry points (outside an article, through the `brick-row` class). Where each brick stands for something that has a colour of its own, such as the Replication Hub's stages, it takes that colour instead. Do not use shades of one colour for variety: they read as more and less important.
 - `--hot` (orange) is for highlights, `--urgent` (red) only for urgency. White is a clean ground.
 - Colour is fresh but not loud: no large areas of saturated colour, no intense full-bleed colour, no dark band across the page, no grey-and-beige, and no beige highlights.
 
@@ -59,7 +62,7 @@ Every repeated device has to earn its place. In practice:
 - No italics anywhere outside reference lists, including menus, captions, labels and quotes. Emphasis is semi-bold.
 - Headings, buttons and labels are in sentence case.
 - Reading lines stay under 80 characters, measured on the rendered lines. The narrow reading column is for prose; tables, tools, programmes and directories may use the full width.
-- On a wide page, prose never stands alone in the narrow column with an empty band beside it. When a full-width list follows, the list starts beside the prose or flows around it (Community, Teams). Otherwise something useful sits beside the prose, such as a contents card, an image, or the search of a list long enough to need one (§4). The 80-character limit is for the length of lines, not a reason to leave half the screen empty.
+- On a wide page, prose never stands alone in the narrow column with an empty band beside it. When a full-width list follows, the list starts beside the prose or flows around it (Community, Teams). Otherwise something useful sits beside the prose, such as a contents card, an image, the article's authors with their photos, or the search of a list long enough to need one (§4). A date alone is not enough: on news, Educators' Corner and Pedagogies articles the card also names the authors (`doors/reading_card.html`). Nothing beside or around the prose says the same thing twice: the card names the authors so the byline beside it does not, and the section is linked by the breadcrumb and the heading of the cards at the end, not again in the card. The 80-character limit is for the length of lines, not a reason to leave half the screen empty.
 - Use the FORRT logo as supplied. Century Schoolbook is not a web font here.
 
 ## 8. Shared parts to reuse
@@ -74,7 +77,7 @@ Before writing a new component, check these:
 | Contents on a phone | `doors/toc_phone.html`: an open, labelled list; a list of more than six sections shows the first five, with a button for the rest |
 | Names with links | `doors/name_list.html` |
 | Keywords on a resource | `doors/resource_keywords.html` |
-| Previous and next | `doors/pager.html`: Previous on the left, Next on the right |
+| Previous and next | `doors/pager.html`: Previous on the left, Next on the right; at the end of an article, `doors/read_next.html` shows them with related articles as the news list's cards |
 | Information to keep but not lead with | a `details` disclosure with a plain label |
 
 Images in the first screen are not lazy-loaded.
@@ -83,7 +86,7 @@ Images in the first screen are not lazy-loaded.
 
 - Show the same information as on desktop, in a different order if needed. Hide a part only when it repeats something already on the screen; for example, the home page's secondary actions are hidden at 760 px and below.
 - Tap targets are at least 44 px, including small close buttons. A small visible control can have a larger invisible tap area.
-- A toolbar may stay on screen while a long list scrolls. On a phone only its search row stays, so the list keeps most of the screen.
+- A toolbar may stay on screen while a long list scrolls. On a phone only one row of it stays, its search row or a letter index (Contributors), so the list keeps most of the screen. A row that scrolls sideways fades at its edge so that what lies past it is seen to be there.
 - Do not repeat navigation: hide a "Go to" menu where the side contents card already lists the same sections.
 - The phone menu keeps the chosen section visible, opens its submenu directly below it, and has a visible way to close it.
 

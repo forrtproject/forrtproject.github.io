@@ -1,0 +1,25 @@
+{{/* One article as a news-list card (section/post.html): its picture, or the brick panel a newsletter has on the
+     news list, then its date and title, linked as a whole. Input: dict "page", and "rel" ("prev", "next" or ""),
+     which labels the card Previous or Next. */}}
+{{ $p := .page }}
+{{ $cat := "" }}{{ if eq $p.Type "post" }}{{ with $p.Params.categories }}{{ $cat = index . 0 }}{{ end }}{{ end }}
+{{ $tone := cond (eq $p.Type "post") (index (partialCached "doors/post_panels" site "post-panels") $p.RelPermalink) false }}
+{{ $img := (($p.Resources.ByType "image").GetMatch "*featured*") }}
+<article class="announcement-card">
+  {{ if and $img (not $tone) }}
+    <div class="ac-thumb"><img src="{{ ($img.Fill "640x360 Center webp q75").RelPermalink }}" width="640" height="360" alt="{{ $p.Params.image.alt_text }}" loading="lazy"></div>
+  {{ else }}
+    {{/* A news post's panel takes its brick colour from the news list; an Educators' Corner or Pedagogies article
+         without a picture takes education's colour (DESIGN.md §6). */}}
+    {{/* An education article's panel would only repeat the band's heading and the card's date, so it shows a door. */}}
+    {{ if eq $p.Type "post" }}
+    <div class="ac-thumb ac-panel ac-panel-{{ $tone | default 1 }}" aria-hidden="true"><span>{{ $cat | default "News" }}</span><strong>{{ $p.Date.Format "January 2006" }}</strong></div>
+    {{ else }}
+    <div class="ac-thumb ac-panel ac-panel-edu ac-panel-door" aria-hidden="true"></div>
+    {{ end }}
+  {{ end }}
+  <div class="ac-body">
+    <p class="ac-meta">{{ with .rel }}<span class="ac-cat">{{ cond (eq . "prev") "Previous" "Next" }}</span>{{ else }}{{ if and $img (not $tone) }}{{ with $cat }}<span class="ac-cat">{{ . }}</span>{{ end }}{{ end }}{{ end }}<time datetime="{{ $p.Date.Format "2006-01-02" }}">{{ $p.Date.Format "2 January 2006" }}</time></p>
+    <h3><a class="ac-link" href="{{ $p.RelPermalink }}"{{ with .rel }} rel="{{ . }}"{{ end }}>{{ $p.Title }}</a></h3>
+  </div>
+</article>

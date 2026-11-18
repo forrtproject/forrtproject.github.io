@@ -1,21 +1,21 @@
 {{ $page := . }}
-
-
+{{/* News, Educators' Corner and Pedagogies articles name their authors in the side card (doors/reading_card) and end
+     with cards for the previous, next and related articles (doors/read_next), so they skip the theme's versions. */}}
+{{ $article := and .IsPage (in (slice "post" "educators-corner" "pedagogies") .Type) }}
 
 {{ if ne .RelPermalink "/about/steering-committee/" }}
   {{ partial "page_edit" . }}
 {{ end }}
 {{ partial "tags" . }}
 {{ partial "share" . }}
-{{ partial "page_author" . }}
+{{ if not $article }}{{ partial "page_author" . }}{{ end }}
 {{ partial "comments" . }}
 
-  {{ if not (in (slice "page") $page.Type) }}
-
+{{ if and (not (in (slice "page") $page.Type)) (not $article) }}
 {{ if site.Params.section_pager }}
 <div class="article-widget">
   {{ partial "section_pager" . }}
 </div>
 {{ end }}
-    {{ end }}
-{{ partial "page_related" . }}
+{{ end }}
+{{ if not $article }}{{ partial "page_related" . }}{{ end }}
