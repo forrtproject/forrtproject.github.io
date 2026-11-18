@@ -571,7 +571,7 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
   .outcome-tile .outcome-many{grid-column:1;font-size:36px}
   .outcome-tile .outcome-word{grid-column:1;min-height:0;font-size:16px}
   .outcome-bricks{grid-column:2;grid-row:1/span 2;margin:0}
-  .article-layout .article-style .list-filter-section>ul>li{grid-template-columns:minmax(0,1fr);padding:14px 0 6px}
+  .article-layout .article-style .list-filter-section>ul>li{grid-template-columns:minmax(0,29em);padding:14px 0 6px}
   .article-layout .article-style .list-filter-section>ul>li>*{grid-column:1}
   .article-layout .article-style .list-filter-section>ul>li>.status-chip{grid-row:auto;margin:0 0 6px}
   .article-layout .article-style .list-filter-section li:has(>.entry-text)>.spoiler>summary{min-height:44px}
