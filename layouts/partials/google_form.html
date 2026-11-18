@@ -1,0 +1,69 @@
+{{/* A Google Form rendered as the site's own form, from a definition in assets/gforms/.
+     Nothing loads from Google. Pressing Submit posts the answers to the form's response address
+     (static/js/google-form.js); without JavaScript the browser posts them and lands on Google's
+     confirmation page. Styles: assets/scss/custom.scss (.gform). */}}
+{{ $form := .form }}
+{{ $prefix := printf "gform-%s" (substr $form.id -8) }}
+<form class="gform" action="https://docs.google.com/forms/d/e/{{ $form.id }}/formResponse" method="post"
+      data-gform-confirmation="{{ $form.confirmation }}">
+  <div class="gform-body">
+    {{ if .heading }}{{ with $form.title }}<h3 class="gform-heading">{{ . }}</h3>{{ end }}{{ end }}
+    {{ with $form.description }}<p class="gform-description">{{ . | safeHTML }}</p>{{ end }}
+
+    {{ if $form.collect_email }}
+      <div class="gform-question">
+        <label class="gform-title" for="{{ $prefix }}-email">Email <span class="gform-required">*</span></label>
+        <input class="gform-input" id="{{ $prefix }}-email" type="email" name="emailAddress" required autocomplete="email">
+      </div>
+    {{ end }}
+
+    {{ range $form.items }}
+      {{ $id := printf "%s-%s" $prefix (.entry | default "") }}
+      {{ $name := printf "entry.%s" (.entry | default "") }}
+      {{ $question := . }}
+      {{ if eq .type "text" }}
+        <p class="gform-text">{{ .title | safeHTML }}</p>
+      {{ else if in (slice "short" "paragraph") .type }}
+        <div class="gform-question">
+          <label class="gform-title" for="{{ $id }}">{{ .title | safeHTML }}{{ if .required }} <span class="gform-required">*</span>{{ end }}</label>
+          {{ with .help }}<p class="gform-help" id="{{ $id }}-help">{{ . | safeHTML }}</p>{{ end }}
+          {{ if eq .type "short" }}
+            <input class="gform-input" id="{{ $id }}" type="text" name="{{ $name }}"{{ if .required }} required{{ end }}{{ with .help }} aria-describedby="{{ $id }}-help"{{ end }}>
+          {{ else }}
+            <textarea class="gform-input" id="{{ $id }}" name="{{ $name }}" rows="3"{{ if .required }} required{{ end }}{{ with .help }} aria-describedby="{{ $id }}-help"{{ end }}></textarea>
+          {{ end }}
+        </div>
+      {{ else if in (slice "radio" "checkbox") .type }}
+        {{ $type := .type }}
+        <fieldset class="gform-question"{{ if and .required (eq $type "checkbox") }} data-gform-pick-one{{ end }}>
+          <legend class="gform-title">{{ .title | safeHTML }}{{ if .required }} <span class="gform-required">*</span>{{ end }}</legend>
+          {{ with .help }}<p class="gform-help">{{ . | safeHTML }}</p>{{ end }}
+          {{ range .options }}
+            <label class="gform-option">
+              <input type="{{ $type }}" name="{{ $name }}" value="{{ . }}"{{ if and $question.required (eq $type "radio") }} required{{ end }}>
+              <span>{{ . }}</span>
+            </label>
+          {{ end }}
+          {{ if .other }}
+            <div class="gform-option gform-other">
+              <label>
+                <input type="{{ $type }}" name="{{ $name }}" value="__other_option__"{{ if and $question.required (eq $type "radio") }} required{{ end }}>
+                <span>Other:</span>
+              </label>
+              <input class="gform-input" type="text" name="{{ $name }}.other_option_response" aria-label="Other answer">
+            </div>
+          {{ end }}
+          {{ if and (eq $type "radio") (not .required) }}
+            <button class="gform-clear" type="button" hidden>Clear selection</button>
+          {{ end }}
+        </fieldset>
+      {{ end }}
+    {{ end }}
+
+    <input type="hidden" name="fvv" value="1">
+    <input type="hidden" name="pageHistory" value="0">
+    <button class="gform-submit" type="submit">Submit</button>
+    <p class="gform-note">This data will be submitted to our Google account when you press Submit. <a href="{{ "privacy/" | relURL }}#forms">See our privacy policy</a>.</p>
+  </div>
+  <p class="gform-status" role="status" tabindex="-1"></p>
+</form>

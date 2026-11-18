@@ -31,6 +31,7 @@ Hard checks (exit 1 if any fails):
   11. The FLoRA page (replication-hub/flora/) contains the FLoRA citation DOI.
   13. List cards use a page's `image.alt_text` (#1203), tested on a post that
      sets it.
+  14. No page embeds a Google Form that assets/gforms/ defines as the site's own form.
 
 Report-only sections (never fail): pages with zero or several <h1>, the
 site-wide share of images that carry both width and height, pages whose
@@ -406,6 +407,27 @@ def check_third_party_forms(pages):
     return sorted(p.path for p in pages if p.loads("recaptcha") or p.loads("eocampaign1.com"))
 
 
+def check_native_google_forms(public_dir, form_ids):
+    """Forms defined in assets/gforms/ are never embedded from Google."""
+    problems = []
+    for folder, _, files in os.walk(public_dir):
+        for name in files:
+            if not name.endswith(".html"):
+                continue
+            path = os.path.join(folder, name)
+            with open(path, encoding="utf-8", errors="replace") as handle:
+                text = handle.read()
+            for form_id in form_ids:
+                if 'data-embed-src="https://docs.google.com/forms/d/e/%s/' % form_id in text:
+                    problems.append("%s embeds %s" % (os.path.relpath(path, public_dir), form_id))
+    return problems
+
+
+def native_google_form_ids():
+    folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "assets", "gforms")
+    return [name[:-len(".json")] for name in sorted(os.listdir(folder)) if name.endswith(".json")]
+
+
 def main(public_dir):
     pages = load_pages(public_dir)
     home = next((p for p in pages if p.path == "index.html"), None)
@@ -428,6 +450,8 @@ def main(public_dir):
         item for items in conditional.values() for item in items]
     results["8. curated resources carry one clean LearningResource"] = check_learning_resource(pages)
     results["12. no page loads EmailOctopus or reCAPTCHA before a visitor subscribes"] = check_third_party_forms(pages)
+    results["14. Google Forms in assets/gforms are native, not embedded"] = check_native_google_forms(
+        public_dir, native_google_form_ids())
 
     print("\nSummary")
     for title in sorted(results, key=lambda t: int(t.split(".")[0])):

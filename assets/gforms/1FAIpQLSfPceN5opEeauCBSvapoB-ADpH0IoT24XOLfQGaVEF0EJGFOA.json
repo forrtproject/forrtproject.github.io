@@ -1,0 +1,172 @@
+{
+  "id": "1FAIpQLSfPceN5opEeauCBSvapoB-ADpH0IoT24XOLfQGaVEF0EJGFOA",
+  "title": "Resource Submission for FORRT",
+  "description": "Dear Colleagues,<br><br>FORRT is collecting online resources on open and reproducible science topics to be catalogued and enriched to increase its findability, accessibility, interoperability, and reusability (FAIR). As a part of FORRT's mission, we aim to provide pedagogical materials for educators who are interested in teaching the next generation of researchers and consumers of science open and reproducible practices and embed its principles on their teaching.<br><br>Note that by submitting a resource, there is no transfer of copyright or licence. FORRT merely lists externally hosted resources and tries to keep it updated, tagged with educational metadata, and increase these resources' FAIR use.<br><br>For more information about FORRT, see: <a href=\"https://forrt.org\" target=\"_blank\" rel=\"noopener\">https://forrt.org</a>",
+  "confirmation": "Your response has been recorded.",
+  "collect_email": false,
+  "items": [
+    {
+      "type": "paragraph",
+      "entry": "343628871",
+      "title": "Title",
+      "help": "",
+      "required": true
+    },
+    {
+      "type": "paragraph",
+      "entry": "2106837918",
+      "title": "URL/DOI (please check DOI by collating DOI at the end of <a href=\"https://doi.org/\" target=\"_blank\" rel=\"noopener\">https://doi.org/</a> )",
+      "help": "",
+      "required": true
+    },
+    {
+      "type": "paragraph",
+      "entry": "1189322724",
+      "title": "Provider/Creators",
+      "help": "Separate creators with commas, writing each name as it would appear in a by-line (first name(s), then family name), e.g. Jane Q. Smith, Wei Zhang, Center for Open Science. Please don't use \"and\" or \"&amp;\", citation style (Smith, J.), or titles and degrees (Dr, PhD). If an organisation's name contains a comma, leave the comma out.",
+      "required": true
+    },
+    {
+      "type": "checkbox",
+      "entry": "521976517",
+      "title": "Material Type (see: <a href=\"https://help.oercommons.org/support/solutions/articles/42000046908-material-types\" target=\"_blank\" rel=\"noopener\">https://help.oercommons.org/support/solutions/articles/42000046908-material-types</a> for Glossary of terms)",
+      "help": "",
+      "required": true,
+      "other": true,
+      "options": [
+        "Activity/Lab",
+        "Asssessment",
+        "Case Study",
+        "Data Set",
+        "Diagram/Illustration",
+        "Full Course",
+        "Game",
+        "Homework/Assignment",
+        "Interactive",
+        "Lecture",
+        "Lecture Notes",
+        "Lesson",
+        "Lesson Plan",
+        "Module",
+        "Primary Source",
+        "Reading",
+        "Simulation",
+        "Student Guide",
+        "Syllabus",
+        "Teaching/Learning Strategy",
+        "Textbook",
+        "Unit of Study"
+      ]
+    },
+    {
+      "type": "checkbox",
+      "entry": "418720899",
+      "title": "Education Level",
+      "help": "",
+      "required": true,
+      "options": [
+        "College / Upper Division (Undergraduates)",
+        "Graduate / Professional",
+        "Career / Technical",
+        "Adult Education"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "entry": "1474814934",
+      "title": "Abstract",
+      "help": "",
+      "required": true
+    },
+    {
+      "type": "checkbox",
+      "entry": "739787223",
+      "title": "Language",
+      "help": "",
+      "required": true,
+      "other": true,
+      "options": [
+        "English",
+        "French",
+        "Spanish",
+        "German"
+      ]
+    },
+    {
+      "type": "checkbox",
+      "entry": "911686928",
+      "title": "Conditions of Use",
+      "help": "",
+      "required": true,
+      "options": [
+        "Public Domain",
+        "CC BY",
+        "CC BY-ND",
+        "CC BY-SA",
+        "CC BY-NC",
+        "CC BY-NC-SA",
+        "CC BY-NC-ND",
+        "I don't see any of these"
+      ]
+    },
+    {
+      "type": "checkbox",
+      "entry": "1021404143",
+      "title": "Primary User",
+      "help": "",
+      "required": true,
+      "other": true,
+      "options": [
+        "Student",
+        "Teacher",
+        "Administrator",
+        "Parent",
+        "Librarian"
+      ]
+    },
+    {
+      "type": "checkbox",
+      "entry": "429156235",
+      "title": "Subject Areas",
+      "help": "",
+      "required": true,
+      "options": [
+        "Applied Science",
+        "Arts and Humanities",
+        "Business and Communication",
+        "Career and Technical Education",
+        "Education",
+        "English Language Arts",
+        "History",
+        "Law",
+        "Life Science",
+        "Math & Statistics",
+        "Physical Science",
+        "Social Science"
+      ]
+    },
+    {
+      "type": "checkbox",
+      "entry": "2005582855",
+      "title": "FORRT Clusters  | see: <a href=\"https://forrt.org/clusters\" target=\"_blank\" rel=\"noopener\">https://forrt.org/clusters</a>",
+      "help": "",
+      "required": true,
+      "options": [
+        "Reproducibility and Replicability Knowledge",
+        "Conceptual and Statistical Knowledge",
+        "Reproducible Analyses",
+        "Preregistration",
+        "Open Data and Materials",
+        "Replication Research",
+        "Academic Life and Culture"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "entry": "422644170",
+      "title": "User Tags (separate by comma if more than one; capitalize each word, except for prepositions)",
+      "help": "",
+      "required": true
+    }
+  ]
+}

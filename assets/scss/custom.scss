@@ -3445,6 +3445,43 @@ form.newsletter-form p.newsletter-note { margin: 6px 0 0; color: #4a5568; font-s
 .newsletter-form.is-done .newsletter-status { margin-top: 0; }
 
 /* ============================================================
+ *  Google Forms rendered as the site's own forms (layouts/partials/google_form.html)
+ * ============================================================ */
+.gform {
+  max-width: 720px; margin: 1.5rem auto; padding: 24px;
+  color: #2d3748; font-size: 1rem; line-height: 1.5; text-align: left; overflow-wrap: anywhere;
+  background: #fff; border: 1px solid #d9d4c5; border-radius: 4px;
+}
+.gform .gform-heading { margin: 0 0 8px; font-size: 1.4rem; }
+.gform p.gform-description, .gform p.gform-text { margin: 0 0 20px; font-size: 1rem; }
+.gform-question { min-width: 0; margin: 0 0 22px; padding: 0; border: 0; }
+.gform .gform-title { display: block; width: 100%; margin: 0 0 6px; font-size: 1rem; font-weight: 600; }
+.gform .gform-title:has(b) { font-weight: 400; }
+.gform-required { color: #a3271f; }
+.gform p.gform-help { margin: 0 0 8px; color: #4a5568; font-size: 0.9rem; }
+.gform-input {
+  display: block; width: 100%; padding: 8px 10px;
+  color: #2d3748; font-size: 1rem; background: #fff; border: 1px solid #718096; border-radius: 4px;
+}
+.gform-input:focus { border-color: #004055; outline: 2px solid #004055; outline-offset: 0; }
+.gform .gform-option { display: flex; gap: 8px; align-items: flex-start; margin: 0 0 6px; font-weight: 400; }
+.gform-option input[type=radio], .gform-option input[type=checkbox] { flex: none; margin-top: 5px; }
+.gform .gform-other { flex-wrap: wrap; align-items: center; }
+.gform-other label { display: flex; gap: 8px; margin: 0; font-weight: 400; }
+.gform-other .gform-input { flex: 1 1 200px; width: auto; padding: 4px 8px; }
+.gform-clear { padding: 0; color: #004055; font-size: 0.9rem; text-decoration: underline; background: none; border: 0; }
+.gform-submit { padding: 10px 24px; color: #fff; font-weight: 600; background: #004055; border: 0; border-radius: 4px; }
+.gform-submit:hover { background: #00566f; }
+.gform-submit:focus-visible { outline: 3px solid #2d3748; outline-offset: 2px; }
+.gform-submit:disabled { background: #718096; cursor: progress; }
+.gform p.gform-note { margin: 10px 0 0; color: #4a5568; font-size: 0.875rem; line-height: 1.4; }
+.gform-note a { color: inherit; text-decoration: underline; }
+.gform p.gform-status { margin: 12px 0 0; font-size: 1rem; font-weight: 600; }
+.gform p.gform-status:empty { display: none; }
+.gform p.gform-status.is-error { color: #a3271f; }
+.gform-status:focus:not(:focus-visible) { outline: none; }
+
+/* ============================================================
  *  Combined Achievements & Awards section (two columns)
  * ============================================================ */
 .aa-grid {

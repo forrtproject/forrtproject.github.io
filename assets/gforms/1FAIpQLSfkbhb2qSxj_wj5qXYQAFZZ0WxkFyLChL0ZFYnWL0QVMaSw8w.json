@@ -1,0 +1,74 @@
+{
+  "id": "1FAIpQLSfkbhb2qSxj_wj5qXYQAFZZ0WxkFyLChL0ZFYnWL0QVMaSw8w",
+  "title": "Mentor sign-up form",
+  "description": "In this form, we aim to collect information about potential mentors (i.e., those providing help) as part of FORRT's \"Support for underprivileged and underrepresented ERCs\" as well as FORRT's Remote Mentorship program. <br><br>Please note you will only be contacted in case there is a possible match, which you can accept or not.",
+  "confirmation": "Thank you for submitting your response. We have received your data and should soon come back to you.",
+  "collect_email": true,
+  "items": [
+    {
+      "type": "short",
+      "entry": "413603008",
+      "title": "What is your name?",
+      "help": "",
+      "required": false
+    },
+    {
+      "type": "radio",
+      "entry": "1285476145",
+      "title": "What's your current position or job description?",
+      "help": "",
+      "required": false,
+      "other": true,
+      "options": [
+        "Professor",
+        "Associate Professor / Senior Lecturer",
+        "Assistant Professor / Lecturer",
+        "Transitioned to industry",
+        "Postdoc / Research Associate / Senior Researcher",
+        "PhD / graduate student"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "entry": "392756963",
+      "title": "What's your field of expertise? Be as specific as possible but mention all areas on which you may be knowledgeable (e.g., cognitive psychology, behavioral economics, etc.)",
+      "help": "",
+      "required": false
+    },
+    {
+      "type": "checkbox",
+      "entry": "1257320734",
+      "title": "What can you help with?",
+      "help": "",
+      "required": false,
+      "other": true,
+      "options": [
+        "Revising application materials for academic positions",
+        "Revising grant/funding proposals for academic positions/research",
+        "Revising application materials for transitioning out of academia to industry",
+        "I have a research project in my area that I would onboard a underprivileged/underrepresented early-career research (specify details below)",
+        "Providing feedback on a manuscript (wherein underrepresented minority is the writer/first author)",
+        "Provide feedback on research idea/development",
+        "Provide help with statistical analyses",
+        "Provide help with specifics of Open and Reproducible Science (e.g., preregistrations, registered reports, multiverse analyses)",
+        "Provide help with written (academic) English and/or copy-editing",
+        "Provide external remote mentorship for a Bachelor thesis",
+        "Provide external remote mentorship for a Master thesis"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "entry": "283543367",
+      "title": "If you chosen provide remote mentorship above, please describe as best as you can the topics you would be willing to be a mentor. We will always consult with the Mentor when we found a potential match before contacting the mentee.",
+      "help": "",
+      "required": false
+    },
+    {
+      "type": "paragraph",
+      "entry": "408042070",
+      "title": "Please leave any comments or remarks (e.g., suggestions for this form, remarks about availability, your expertise, etc.)",
+      "help": "",
+      "required": false
+    }
+  ]
+}
