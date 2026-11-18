@@ -227,7 +227,7 @@
    while the list scrolls (the glossary's letter links, at 44 px). */
 .contributor-az{position:sticky;top:0;z-index:5;display:flex;flex-wrap:wrap;gap:6px 4px;margin:28px 0 8px;padding:12px 0 10px;background:var(--page);box-shadow:0 1px 0 var(--line)}
 .article-layout .article-style .contributor-az a{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;border-radius:var(--r-small);background:var(--surface);color:var(--ink);font:600 17px/1 var(--text);text-decoration:none}
-.article-layout .article-style .contributor-az a:hover{background:var(--res-bg);text-decoration:underline;text-underline-offset:3px}
+.article-layout .article-style .contributor-az a:hover{background:var(--foot);text-decoration:underline;text-underline-offset:3px}
 .contributor-az a:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
 html:has(.contributor-az){scroll-padding-top:calc(var(--contributor-az,72px) + 12px)}
 @media(max-width:760px){

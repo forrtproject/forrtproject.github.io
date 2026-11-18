@@ -450,6 +450,7 @@ def concatenate_contributions(group):
 
     # Build individual contribution items
     contribution_items = []
+    item_projects = []
 
     for _, row in group.iterrows():
         project_name = row['Project Name']
@@ -484,6 +485,7 @@ def concatenate_contributions(group):
                 f'data-roles="{roles_attr}">{project_html}{roles_html}</li>')
         if item not in contribution_items:
             contribution_items.append(item)
+            item_projects.append(normalized_project)
 
     if not contribution_items:
         return min_order, letter, ''
@@ -496,9 +498,12 @@ def concatenate_contributions(group):
     if len(contribution_items) > SHOWN_PROJECTS + 1:
         shown = contribution_items[:SHOWN_PROJECTS]
         rest = contribution_items[SHOWN_PROJECTS:]
+        # One project under two roles is one project, and a project already listed above is not one more.
+        new_projects = len(set(item_projects[SHOWN_PROJECTS:]) - set(item_projects[:SHOWN_PROJECTS]))
+        label = f'{new_projects} more project{"" if new_projects == 1 else "s"}' if new_projects else 'More roles'
         more = (
             f'  <details class="contributions-more">\n'
-            f'  <summary>{len(rest)} more projects</summary>\n'
+            f'  <summary>{label}</summary>\n'
             f'  <ul class="contributions-list">\n'
             + '\n'.join(rest) + '\n'
             f'  </ul>\n'

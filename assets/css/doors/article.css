@@ -485,9 +485,10 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
 /* The effects are one list in the reading measure (DESIGN.md §4): each a row with its outcome chip, in the outcome's
    colour, before its name, and a hairline between rows. */
 /* The doubled class outranks the reading-width cap on unclassed lists (top of this file). */
-.article-layout .article-style .list-filter-section.list-filter-section>ul{max-width:29em;margin:0 0 36px;padding:0;list-style:none}
+.article-layout .article-style .list-filter-section.list-filter-section>ul{max-width:29em;margin:0 0 36px;padding:0;border-top:1px solid var(--line);list-style:none}
+/* A list whose entries are all filtered out leaves no rule or gap behind. */
+.article-layout .article-style .list-filter-section.list-filter-section>ul:not(:has(>li:not([hidden]))){display:none}
 .article-layout .article-style .list-filter-section>ul>li{position:relative;margin:0;padding:14px 0;border:0;border-bottom:1px solid var(--line);--entry-ground:var(--page)}
-.article-layout .article-style .list-filter-section>ul>li:first-child{border-top:1px solid var(--line)}
 .article-layout .article-style .list-filter-section>ul>li>p{margin:0}
 /* The Statistics toggle sits on the name's line, so the closed disclosure adds no height of its own. */
 .article-layout .article-style .list-filter-section li:has(>.entry-text)>.spoiler:not([open]){margin:0}
