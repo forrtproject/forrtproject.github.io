@@ -94,12 +94,11 @@ ul.list-items>li[hidden]{display:none}
 .nla-year{display:grid;grid-template-columns:96px minmax(0,1fr);gap:8px 16px;align-items:start;margin:14px 0 0}
 .nla-year h3{margin:0;padding-top:14px;font-size:26px}
 .nla-months{display:grid;grid-template-columns:repeat(auto-fill,minmax(max(132px,calc((100% - 25px)/6)),1fr));gap:6px 5px;margin:0;padding:0;list-style:none}
-.nla-months li{position:relative;--tone:var(--brick1)}
+.nla-months li{--tone:var(--brick1)}
 .nla-months .nla-brick-2{--tone:var(--brick2)}.nla-months .nla-brick-3{--tone:var(--brick3)}.nla-months .nla-brick-4{--tone:var(--brick4)}
 .nla-months a{display:flex;align-items:flex-end;box-sizing:border-box;min-height:64px;height:100%;padding:10px 14px 14px;background:var(--tone);border-radius:3px;box-shadow:inset 0 -5px 0 rgb(0 0 0/.24);color:#fff;font:var(--display-weight) 22px/1.1 var(--display);text-decoration:none;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 .nla-months a:hover{text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:4px}
 .nla-months a:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
-.nla-months .nla-new{position:absolute;top:8px;inset-inline-end:8px;margin:0;pointer-events:none}
 @media(max-width:900px){.nla-top{grid-template-columns:minmax(0,1fr)}}
 @media(max-width:760px){
   .nla-top{margin:18px 0 34px;gap:22px}
@@ -110,7 +109,6 @@ ul.list-items>li[hidden]{display:none}
   .nla-months{grid-template-columns:repeat(auto-fill,minmax(108px,1fr))}
   .nla-months a{min-height:56px;padding:10px 10px 12px;font-size:19px}
 }
-.nla-new{margin-inline-start:4px;padding:1px 7px;background:var(--res-bg);border-radius:var(--r-small);color:var(--ink);font-size:15px;font-weight:700}
 @media(max-width:760px){
   .news-page,.tags-page,.nla-page{padding:20px 0 28px}
   .list-item-image{grid-template-columns:minmax(0,1fr) 88px;gap:12px}

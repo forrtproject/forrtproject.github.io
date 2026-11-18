@@ -10,8 +10,8 @@ sharing_image_alt: "Nowhere Lab logo"
 ---
 
 <!-- Layout (assets/css/doors/article.css, "Nowhere Lab"): on a wide screen the meetings, Slack and the guide sit
-     beside the introduction and the story. The meeting times are given once, set large in the
-     meetings panel. -->
+     beside the introduction and the story. The meeting times are given once, set large under
+     "Weekly meetings". -->
 <div class="nl-layout">
 <div class="nl-intro">
 
@@ -33,7 +33,7 @@ We are Nowhere Lab. Anyone from any field is welcome to join who doesn't have a 
 
 </div>
 <div class="nl-side">
-<section class="nl-panel nl-meetings" aria-labelledby="weekly-meetings">
+<section class="nl-section nl-meetings" aria-labelledby="weekly-meetings">
 
 ## Weekly meetings
 
@@ -42,7 +42,7 @@ We are Nowhere Lab. Anyone from any field is welcome to join who doesn't have a 
 We hold two meetings a week, at different times to accommodate members in different time zones. They are catch-up and co-work only, lasting approximately 1 hour. Members can set up other activities, such as practising a talk, by reaching out to our community on Slack.
 
 </section>
-<section class="nl-panel nl-slack" aria-labelledby="slack-channel">
+<section class="nl-section nl-slack" aria-labelledby="slack-channel">
 
 ## Slack channel
 

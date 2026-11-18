@@ -91,7 +91,7 @@ Any and all contributions in FORRT are formally recognized. In large part, these
 
 ### Feedback
 
-**These summaries are very much a work in progress.** We would love to receive your [criticism, areas for improvement, ideas, and help](https://docs.google.com/spreadsheets/d/1W12WpzI70Ja1FiVeflXNW8VFPzqFFvu_mL2YkNQ_cHk/edit?usp=sharing). You can also write to us at [info@forrt.org](mailto:info@forrt.org) or connect on [Bluesky](https://bsky.app/profile/forrt.bsky.social).
+**These summaries are very much a work in progress.** We would love to receive your [criticism, areas for improvement, ideas, and help<i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="sr-only"> (another website)</span>](https://docs.google.com/spreadsheets/d/1W12WpzI70Ja1FiVeflXNW8VFPzqFFvu_mL2YkNQ_cHk/edit?usp=sharing). You can also write to us at [info@forrt.org](mailto:info@forrt.org) or connect on [Bluesky<i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="sr-only"> (another website)</span>](https://bsky.app/profile/forrt.bsky.social).
 
 </section>
 

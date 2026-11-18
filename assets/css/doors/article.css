@@ -502,28 +502,26 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
 @media(max-width:760px){.article-layout .article-style .list-filter-section>ul>li{--entry-lines:3}}
 /* Nowhere Lab (content/nowherelab/_index.md): on a wide screen, how to take part (the meetings, Slack and the
    PhD Survival Guide) is a column beside the introduction and the story; on narrower ones it follows the
-   introduction. The meetings sit on the community area's pale ground (DESIGN.md §6), with their two times set large. */
+   introduction. The meetings and Slack are plain text, not boxes: only the two meeting times are set large, in the
+   community area's colour, and the guide is a brick because it is something to open. */
 @media(min-width:1001px){
   .article-layout-wide .article-style .nl-layout{display:grid;grid-template-columns:minmax(0,620px) minmax(320px,500px);grid-template-areas:"intro side" "story side";column-gap:64px;align-items:start}
   .nl-intro{grid-area:intro}.nl-side{grid-area:side}.nl-story{grid-area:story}
 }
-.article-layout .article-style .nl-side>h2{margin-top:36px}
-.article-layout .article-style .nl-panel{margin:0 0 20px;padding:22px 24px 8px;background:var(--surface);border-radius:var(--r-large)}
-.article-layout .article-style .nl-meetings{background:var(--com-bg)}
-.article-layout .article-style .nl-panel h2{margin:0 0 14px;font-size:28px}
-.article-layout .article-style .nl-panel p{max-width:none}
-.article-layout .article-style .nl-times{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 18px}
-.nl-times>span{flex:1 1 130px;box-sizing:border-box;padding:12px 16px 14px;background:#fff;border-radius:var(--r-small);font-size:20px;font-weight:600;line-height:1.25}
-.nl-times strong{display:block;font:var(--display-weight) 28px/1.15 var(--display);color:var(--com)}
-@media(max-width:480px){.nl-times>span{flex-basis:120px;padding:10px 12px 12px;font-size:18px}.nl-times strong{font-size:23px}}
+.article-layout .article-style .nl-section{margin:0 0 8px}
+.article-layout .article-style .nl-section h2{margin:0 0 12px}
+.article-layout .article-style .nl-section~.nl-section h2,.article-layout .article-style .nl-side>h2{margin-top:36px}
+.article-layout .article-style .nl-times{display:flex;flex-wrap:wrap;gap:8px 36px;margin:0 0 14px}
+.nl-times>span{font-size:19px;font-weight:600;line-height:1.25}
+.nl-times strong{display:block;font:var(--display-weight) 30px/1.15 var(--display);color:var(--com)}
 .article-layout .article-style .nl-side .action-cards{margin:22px 0 8px}
-@media(max-width:1000px){.article-layout .article-style .nl-meetings{margin-top:32px}}
+@media(max-width:1000px){.article-layout .article-style .nl-meetings h2{margin-top:36px}}
 /* A logo beside a page's title (header_logo, Nowhere Lab): on a wide page the heading runs the full width, so the
    logo leads the title instead of sitting alone at the far edge. */
 @media(min-width:761px){.article-layout-wide .article-logo{float:inline-start;margin:6px 24px 8px 0}}
 /* Summaries overview (content/summaries/_index.md, a wide page): the two collections as a hero of two large bricks
    in their areas' colours, each led by its count; then the overview and "Join and help us" on the left, and the
-   background, the feedback and the closing bricks beside them. */
+   folded background and the feedback ask, as plain text, beside them. */
 .article-layout .article-style .summary-hero{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:24px 6px;max-width:none;margin:34px 0 48px;padding:0;list-style:none}
 .article-layout .article-style .summary-hero li{position:relative;max-width:none;margin:0}
 .summary-hero-res{--tone:var(--res)}.summary-hero-jus{--tone:var(--jus)}
@@ -542,9 +540,9 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
 }
 @media(min-width:1001px){.article-layout-wide .article-style .sm-layout{column-gap:64px}}
 .article-layout .article-style .sm-side .spoiler{max-width:none}
-.article-layout .article-style .sm-feedback{margin:28px 0 0;padding:22px 24px 6px;background:var(--com-bg);border-radius:var(--r-large)}
-.article-layout .article-style .sm-feedback h3{margin:0 0 10px;font-size:26px}
-.article-layout .article-style .sm-feedback p{max-width:none}
+.article-layout .article-style .sm-feedback h3{margin-top:32px}
+/* Inline, not the icon font's inline-block, so the icon never wraps away from the last word of its link. */
+.sm-feedback .fa-external-link-alt{display:inline;margin-inline-start:4px;font-size:.72em}
 @media(max-width:900px){.article-layout .article-style .sm-side{margin-top:28px}}
 @media(max-width:760px){.article-layout .article-style .summary-hero{margin:28px 0 36px}.article-layout .article-style .summary-hero a{padding:20px 20px 30px}}
 /* A collection of summaries (layouts/_default/summaries.html): the header on the pale ground of the collection's

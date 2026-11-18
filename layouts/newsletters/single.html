@@ -11,15 +11,12 @@
 {{- range $synced }}{{ $years = $years | append (int .year) }}{{ end -}}
 {{- range $listed }}{{ $years = $years | append (int .year) }}{{ end -}}
 {{- $years = sort (uniq $years) "value" "desc" -}}
-{{- $newestID := "" -}}
-{{- with $synced }}{{ $newestID = (index . 0).id }}{{ end -}}
 {{- $newsletters := slice -}}
 {{- range $year := $years -}}
   {{- $issues := slice -}}
   {{- range $synced -}}
     {{- if eq (int .year) $year -}}
-      {{- $new := and (eq .id $newestID) ((time .sent_at).After (now.AddDate 0 -2 0)) -}}
-      {{- $issues = $issues | append (dict "month" .month "url" (relURL .url) "local" true "new" $new) -}}
+      {{- $issues = $issues | append (dict "month" .month "url" (relURL .url) "local" true) -}}
     {{- end -}}
   {{- end -}}
   {{- range $listed -}}
@@ -89,7 +86,7 @@
       <h3 id="nla-{{ $y.year }}">{{ $y.year }}</h3>
       <ul class="nla-months">
         {{ range . }}
-        <li class="nla-brick-{{ add (mod $n 4) 1 }}"><a href="{{ .url }}"{{ if not .local }} target="_blank" rel="noopener"{{ end }}>{{ .month }}<span class="sr-only"> {{ $y.year }}{{ if not .local }} (opens in a new tab){{ end }}</span></a>{{ if .new }}<span class="nla-new">New</span>{{ end }}</li>
+        <li class="nla-brick-{{ add (mod $n 4) 1 }}"><a href="{{ .url }}"{{ if not .local }} target="_blank" rel="noopener"{{ end }}>{{ .month }}<span class="sr-only"> {{ $y.year }}{{ if not .local }} (opens in a new tab){{ end }}</span></a></li>
         {{ $n = add $n 1 }}
         {{ end }}
       </ul>
