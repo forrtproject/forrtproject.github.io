@@ -32,6 +32,7 @@ FORMS = {
     "resources": "1FAIpQLSfPceN5opEeauCBSvapoB-ADpH0IoT24XOLfQGaVEF0EJGFOA",
     "lesson plans feedback": "1FAIpQLSckPkeCR6_hsmxqV9yQ66oLgLOhnnHBrk4ejgIBTsOQ0mZ6gg",
     "anonymous feedback": "1FAIpQLSebwqYgFmH3QJIMtPFUhuKeU1Rdbz5WqwP8iXd2cUPgZvUHRg",
+    "FLoRA submission": "1FAIpQLSeMCwdtP0TPgL55stniuyyTxnNwyC34mO4VUuLcQwYrLI89sQ",
 }
 
 OUTPUT_DIR = Path(__file__).resolve().parent.parent / "assets" / "gforms"

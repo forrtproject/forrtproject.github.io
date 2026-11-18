@@ -1,0 +1,173 @@
+{
+  "id": "1FAIpQLSeMCwdtP0TPgL55stniuyyTxnNwyC34mO4VUuLcQwYrLI89sQ",
+  "title": "Submit Replication or Reproduction Study to FLoRA",
+  "description": "Please use this form if you would like to submit a reproduction or replication study in a brief and semi-structured format.<br><b>When can a study be considered to be a <i>reproduction</i>?</b><br>The study is assigned to one original study that tested at least one same hypothesis.<br>The study uses the <b>same dataset</b> as the original study.<br><b>When can a study be considered to be a <i>replication</i>?</b><br>The study is assigned to one original study that tested at least one same hypothesis.<br>The study tries to mirror the methods of the original study and justify deviations<br>Replicated and reported tests use <b>data that differ</b> from the data used in the original study.<br><br><b>Is this form for references, studies, or findings?</b><br>In this form, we ask you to enter references that include at least one replication or reproduction. You can indicate how many studies are included in the reference. Specifically, we are looking for unique pairs of 'original study + replication study'.<br><br><b>Will I become a contributor to the FORRT Library of Reproduction and Replication Attempts (FLoRA) by using this form?</b><br>You need to submit at least five new and correct entries via this form and write an email to lukas.roeseler@uni-muenster.de if you would like to be listed as a contributor to the FORRT Replication Database.<br><br><b>How long does it take for my entry to be added to the FORRT Replication Database?</b><br>As of spring 2026, the database is undergoing major expansion. Time for addition may range from one week to multiple months. Please send us an email if you want to learn about the status of your submission.",
+  "confirmation": "Your response has been recorded.",
+  "collect_email": false,
+  "items": [
+    {
+      "type": "text",
+      "title": "This form is part of the <a href=\"https://forrt.org/replication-hub\" target=\"_blank\" rel=\"noopener\">FORRT Replication Hub</a>. For more info send an e-mail to Lukas Röseler."
+    },
+    {
+      "type": "radio",
+      "entry": "737171809",
+      "title": "I have read the instructions and confirm that this study is not already listed in FLoRA. For this, I have searched for it via the <a href=\"https://forrt.org/flora-replication-atlas/\" target=\"_blank\" rel=\"noopener\">Replication Atlas</a>.",
+      "help": "",
+      "required": true,
+      "options": [
+        "I confirm."
+      ]
+    },
+    {
+      "type": "radio",
+      "entry": "595177222",
+      "title": "<b>Type of \"Repetition\" Study</b>",
+      "help": "",
+      "required": true,
+      "options": [
+        "Replication (different data)",
+        "Reproduction (same data)",
+        "Both"
+      ]
+    },
+    {
+      "type": "radio",
+      "entry": "1677363533",
+      "title": "<b>Type of Replication Reference </b>(must be a complete and citable study, i.e., no preregistration, no email exchange, no published data without report; if there are multiple replication studies of the same target study in a paper, please try to code what the authors say about each individual study with one filled-out form per study)",
+      "help": "",
+      "required": true,
+      "other": true,
+      "options": [
+        "Individual Study (i.e., one paper with one study)",
+        "Multiple Studies (i.e., one paper with multiple studies)",
+        "Multilab Replication",
+        "Results only (i.e., there is no paper with a thorough description of the study)"
+      ]
+    },
+    {
+      "type": "radio",
+      "entry": "1334392718",
+      "title": "<b>Meta Paper</b>: For a replication reference that includes multiple studies: Are all <b>studies on the same topic</b> or does it include <b>unrelated replications/reproductions</b> (e.g., <a href=\"https://doi.org/10.1126/science.aac4716\" target=\"_blank\" rel=\"noopener\">Open Science Collaboration, 2015</a> includes many unrelated studies). For example, <a href=\"https://mgto.org/wp-content/uploads/2021/07/Chen-et-al-hindsight-bias-replications-extensions-print.pdf\" target=\"_blank\" rel=\"noopener\">a paper reporting replications of two different original papers</a> would not be considered a meta paper.",
+      "help": "",
+      "required": true,
+      "options": [
+        "Does not apply (single-study report)",
+        "All studies are on the same topic",
+        "Studies are not all on the same topic"
+      ]
+    },
+    {
+      "type": "short",
+      "entry": "1001824025",
+      "title": "<b>Field </b>(e.g., Psychology, Management Science, ...)",
+      "help": "",
+      "required": false
+    },
+    {
+      "type": "short",
+      "entry": "1957272128",
+      "title": "<b>Description</b> (e.g., \"cascade effect (eye tracking) \", \"red romance effect\", \"people are more sensitive to the dosage of harm-based transgressions than purity transgressions\")",
+      "help": "",
+      "required": true
+    },
+    {
+      "type": "paragraph",
+      "entry": "355822122",
+      "title": "<b>Reference - Original</b> in APA format with DOI",
+      "help": "",
+      "required": true
+    },
+    {
+      "type": "paragraph",
+      "entry": "2125624621",
+      "title": "<b>Reference - Replication </b>in APA format with DOI<br><i>If your submission is referring to a study included in a meta-paper that is not also published as a stand-alone report (e.g., Open Science Collaboration, 2015), please paste here the reference to the meta-paper.</i>",
+      "help": "",
+      "required": true
+    },
+    {
+      "type": "short",
+      "entry": "2047756561",
+      "title": "<b>Report URL - Replication</b><br><i>If your submission is referring to a study included in a meta-paper OR if your reference has not been assigned a DOI please put here the (stable) URL to the individual report.</i>",
+      "help": "",
+      "required": false
+    },
+    {
+      "type": "radio",
+      "entry": "46854000",
+      "title": "<b>Current Review Status of the Replication</b>",
+      "help": "",
+      "required": false,
+      "other": true,
+      "options": [
+        "Peer-reviewed (published in a journal)",
+        "Peer-reviewed (independent community such as PCI)",
+        "Thesis",
+        "Not peer-reviewed (e.g., preprint)"
+      ]
+    },
+    {
+      "type": "radio",
+      "entry": "748965106",
+      "title": "<b>Replication outcome</b> as reported by the replication authors (please select)",
+      "help": "",
+      "required": true,
+      "options": [
+        "Success",
+        "Failure",
+        "Mixed",
+        "Uninformative (should is coded if the replication authors explicitly say so, e.g., because their sample was too small)",
+        "Statistically successful but flawed (refers to replications where that is the main message [e.g., “we replicated x using the original methods, but show that they are not a valid test of the hypotheses”])",
+        "Descriptive / not applicable (when consistency with original is not of interest, e.g. for some qualitative replications)",
+        "Does not apply because it is a reproduction [please fill out next question]"
+      ]
+    },
+    {
+      "type": "radio",
+      "entry": "1895061627",
+      "title": "<b>Reproduction outcome</b> as reported by th reproduction authors (please select)",
+      "help": "",
+      "required": true,
+      "options": [
+        "computationally successful, robust",
+        "computationally successful, robustness challenges",
+        "computationally successful, robustness not checked",
+        "computational issues, robust",
+        "computational issues, robustness challenges",
+        "computational issues, robustness not checked",
+        "computation not checked, robust",
+        "computation not checked, robustness challenges",
+        "computation not checked, robustness not checked",
+        "Does not apply because it is a reproduction [please fill out previous question]"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "entry": "2141826125",
+      "title": "<b>Replication abstract</b><br>Paste abstract from the replication study here. Note that this will not be part of the published dataset.",
+      "help": "",
+      "required": true
+    },
+    {
+      "type": "short",
+      "entry": "1231534344",
+      "title": "<b>Outcome quote</b><br>Copy the part from the <b>replication </b>abstract or text that describes the replication outcome, if there is no phrase in the abstract, check conclusion &gt; discussion &gt; results).",
+      "help": "",
+      "required": true
+    },
+    {
+      "type": "short",
+      "entry": "706143012",
+      "title": "<b>Outcome page number </b>(location of the quote, e.g., \"abstract\", \"p. 2\")",
+      "help": "",
+      "required": true
+    },
+    {
+      "type": "short",
+      "entry": "1126723589",
+      "title": "<b>Contributor </b>(first &amp; last name and email address, only required if you would like to become a contributor)",
+      "help": "",
+      "required": false
+    }
+  ]
+}
