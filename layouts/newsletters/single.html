@@ -60,7 +60,7 @@
 
     <div class="nla-top">
       {{ with $latest }}
-      <section class="nla-latest{{ if not $latestPost }} nla-latest-short{{ end }}" aria-labelledby="nla-latest-title">
+      <section class="nla-latest nla-brick-{{ add (mod $latestYear 4) 1 }}{{ if not $latestPost }} nla-latest-short{{ end }}" aria-labelledby="nla-latest-title">
         <h2 class="nla-latest-label" id="nla-latest-title">Latest issue</h2>
         <p class="nla-latest-month">{{ .month }} {{ $latestYear }}</p>
         {{ with $latestPost }}<p class="nla-latest-summary">{{ .Summary | plainify | emojify }}</p>{{ end }}
@@ -77,7 +77,7 @@
     <h2 class="nla-archive-title">Earlier issues</h2>
     {{/* One heading per year and its issues as month bricks, newest first. Each year has one of the four brick colours
          (DESIGN.md §6), set by the year's number so that it stays the same as years are added. The latest issue is the
-         large brick above. */}}
+         large brick above, in its year's colour. */}}
     {{ range $yi, $y := $newsletters }}
     {{ $issues := $y.issues }}
     {{ if eq $yi 0 }}{{ $issues = after 1 $issues }}{{ end }}
