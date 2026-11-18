@@ -13,18 +13,14 @@
     {{ if hasSuffix .url (printf "/%s/" $month) }}{{ $body = replaceRE `https://eocampaign1\.com/web-version[^"]*"( target="_blank" rel="noopener")?` (printf `%s"` (relURL .url)) $body | safeHTML }}{{ end }}
   {{ end }}
 {{ end }}
-{{/* A news post's one call to action, a paragraph that is nothing but a link ("Try the chatbot"), is a button;
-     only the first, so the post keeps one main action (DESIGN.md §3). A newsletter post's link to its issue is a
-     brick instead, in the colour the news list gives that issue (doors/post_panels), labelled with what it does
-     rather than repeating the title's month. */}}
+{{/* A news post's one call to action, a paragraph that is nothing but a link ("Try the chatbot"), is a brick; only
+     the first, so the post keeps one main action (DESIGN.md §3). A newsletter's brick takes the colour the news list
+     gives that issue (doors/post_panels) and says what it does rather than repeating the title's month. */}}
 {{ if and (eq .Type "post") .IsPage }}
   {{ $link := `<p>\s*<a href="([^"]+)"([^>]*)>([^<]+)</a>\s*</p>` }}
-  {{ $tone := index (partialCached "doors/post_panels" site "post-panels") .RelPermalink }}
-  {{ if and $tone (in (.Params.categories | default slice) "Newsletter") }}
-    {{ $body = replaceRE $link (printf `<p class="post-action"><a class="issue-brick ac-panel-%v" href="$1"$2>Read the full issue</a></p>` $tone) $body 1 | safeHTML }}
-  {{ else }}
-    {{ $body = replaceRE $link `<p class="post-action"><a class="btn btn-primary" href="$1"$2>$3</a></p>` $body 1 | safeHTML }}
-  {{ end }}
+  {{ $tone := index (partialCached "doors/post_panels" site "post-panels") .RelPermalink | default 1 }}
+  {{ $label := cond (in (.Params.categories | default slice) "Newsletter") "Read the full issue" "$3" }}
+  {{ $body = replaceRE $link (printf `<p class="post-action"><a class="post-brick ac-panel-%v" href="$1"$2>%s</a></p>` $tone $label) $body 1 | safeHTML }}
 {{ end }}
 {{ $contents := cond (findRE `(?i)<h1\b` .Content 1 | len | lt 0) slice (findRE `<li` .TableOfContents 1) }}
 {{ $written := findRESubmatch `<h2[^>]*\bid="?([^"> ]+)"?[^>]*>([\s\S]*?)</h2>` $body }}

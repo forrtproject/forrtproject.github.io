@@ -21,12 +21,13 @@
      contents replace the card's, so a card with nothing more than that date is left out there (article.css). */}}
 {{ $repeats := and .hasDates (not $updated) $article (not $p.Date.IsZero) (not $authors) (not $more) }}
 <section class="article-card{{ if $repeats }} article-card-repeats{{ end }}{{ if $article }} article-card-article{{ end }}{{ if in (slice "educators-corner" "pedagogies") $p.Type }} article-card-edu{{ end }}" aria-label="About this article">
-  {{/* With several authors and a contents list, the authors go compact (up to five photos in a row, then every name,
-       linked), so the card keeps the whole contents in view; the byline beside it then leaves the names out. */}}
-  {{ $compact := and (gt (len $authors) 1) (or (gt (len .headings) 1) (gt (len $authors) 4)) }}
+  {{/* With several authors and a contents list, or more than three authors, the authors go compact (every name, linked),
+       so the card keeps the whole contents in view; the byline beside it then leaves the names out. Photos show only
+       for up to three authors: a few faces above a longer list of names would look like a selection. */}}
+  {{ $compact := and (gt (len $authors) 1) (or (gt (len .headings) 1) (gt (len $authors) 3)) }}
   {{ if $compact }}
   <div class="card-authors-compact">
-    <p class="card-author-photos" aria-hidden="true">{{ range first 5 $authors }}{{ with .profile }}{{ with (.Resources.ByType "image").GetMatch "*avatar*" }}<img src="{{ (.Fill "80x80 Center webp q80").RelPermalink }}" width="40" height="40" alt="">{{ end }}{{ end }}{{ end }}</p>
+    {{ if le (len $authors) 3 }}<p class="card-author-photos" aria-hidden="true">{{ range $authors }}{{ with .profile }}{{ with (.Resources.ByType "image").GetMatch "*avatar*" }}<img src="{{ (.Fill "80x80 Center webp q80").RelPermalink }}" width="40" height="40" alt="">{{ end }}{{ end }}{{ end }}</p>{{ end }}
     <p class="card-author-names">{{ range $i, $a := $authors }}{{ if $i }}, {{ end }}{{ with $a.profile }}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ else }}{{ $a.name }}{{ end }}{{ end }}</p>
   </div>
   {{ else }}
