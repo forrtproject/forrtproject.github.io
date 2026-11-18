@@ -78,15 +78,14 @@ Triggers `deploy.yaml` after successful processing via `repository_dispatch`.
 
 ## Quality Checks
 
-### [google-forms-check.yml](google-forms-check.yml)
-**Keeps the site's forms in step with Google**
+### [link-check.yaml](link-check.yaml)
+**Weekly link check, and a check that the site's forms match Google**
 
-| Trigger | Action |
-|---------|--------|
-| Hourly schedule, manual dispatch | Compares `assets/gforms/` with the live Google Forms |
-| PR touching the definitions or this check | Runs the same comparison |
+| Trigger | Runs on |
+|---------|---------|
+| Mondays at 01:30 UTC, manual dispatch | `main` |
 
-If a form has changed, the scheduled run opens a pull request with the updated definitions and one issue assigned to the site maintainer. Merge that pull request promptly, because Google may discard responses sent from the site until then. The issue closes itself once the definitions match again.
+Besides checking links, it compares `assets/gforms/` with the live Google Forms. If a form has changed, it opens an issue assigned to the site maintainer. Fix it promptly by running `python3 scripts/build_google_forms.py` and committing the result, because Google may discard responses sent from the site until then. The issue closes itself once the definitions match again.
 
 ### [spell-check.yaml](workflows/spell-check.yaml)
 **Spelling validation using codespell**

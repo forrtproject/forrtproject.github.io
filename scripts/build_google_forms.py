@@ -12,8 +12,8 @@ response that no longer matches the form and the visitor is not told. The script
 feature the site's form does not reproduce (sections, branching, answer validation, other
 question types) rather than writing a definition that would lose responses.
 
-.github/workflows/google-forms-check.yml runs --check every hour. It exits 1 if a form has changed
-or can no longer be reproduced, and 2 if Google could not be reached.
+.github/workflows/link-check.yaml runs --check every Monday and opens an issue if a form differs.
+It exits 1 if a form has changed or can no longer be reproduced, and 2 if Google could not be reached.
 """
 
 import html
