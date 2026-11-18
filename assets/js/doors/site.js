@@ -621,9 +621,9 @@ document.querySelectorAll('.area-more button').forEach((button) => {
   });
 });
 
-// An entry of a searchable list whose details give "Status: …" (the effects on /reversals/) shows that status as a
-// chip at the start of its text, and the entry takes the outcome's colour (article.css). Every entry with details gets
-// one, so the outcome counts add up to the number of entries.
+// An entry of a searchable list whose details give "Status: …" (the effects on /reversals/) is laid out from its one
+// run of text: the outcome as a chip, the name on a line of its own and the description under it (article.css). Every
+// entry with details gets a chip, so the outcome counts add up to the number of entries.
 document.querySelectorAll('.list-filter ~ ul > li').forEach((item) => {
   const details = item.querySelector(':scope > .spoiler');
   if (!details) return;
@@ -634,6 +634,7 @@ document.querySelectorAll('.list-filter ~ ul > li').forEach((item) => {
     item.prepend(p);
   }
   const text = item.firstElementChild;
+  text.classList.add('entry-text');
   const line = [...item.querySelectorAll('.spoiler li')].find((li) => /^\s*status:/i.test(li.textContent));
   const status = line ? line.textContent.replace(/^\s*status:\s*/i, '').trim().toLowerCase() : '';
   // One word set for the chips; any qualifier stays in the statistics and in the chip's title.
@@ -644,8 +645,40 @@ document.querySelectorAll('.list-filter ~ ul > li').forEach((item) => {
   chip.className = `status-chip status-${key}`;
   chip.textContent = label;
   if (status !== label) chip.title = status;
-  text.prepend(chip, ' ');
+  // The name, with any other names it goes by in brackets, leaves the sentence; the punctuation that joined them goes.
+  const name = document.createElement('p');
+  name.className = 'entry-name';
+  const strong = text.querySelector(':scope > strong');
+  if (strong && !strong.previousSibling?.textContent.replace(/[\s\u200b]/g, '')) {
+    name.append(strong);
+    while (text.firstChild && text.firstChild.nodeType === 3 && !text.firstChild.data.replace(/[\s\u200b]/g, '')) text.firstChild.remove();
+    const rest = text.firstChild;
+    if (rest?.nodeType === 3) {
+      const other = rest.data.match(/^\s*(\([^()]*\))\s*/);
+      if (other) {
+        const also = document.createElement('span');
+        also.className = 'entry-also';
+        also.textContent = other[1];
+        name.append(' ', also);
+        rest.data = rest.data.slice(other[0].length);
+      }
+      rest.data = rest.data.replace(/^[\s.,:;–—-]+/, '');
+    }
+  }
+  item.prepend(chip, name);
   item.classList.add(`outcome-${key}`);
+  // The statistics read as labelled rows; a plain status is already the chip.
+  details.querySelectorAll('.spoiler-body > ul > li').forEach((row) => {
+    const first = row.firstChild;
+    const found = first?.nodeType === 3 && first.data.match(/^\s*([^:]{2,40}):\s*/);
+    if (!found) return;
+    if (row === line && status === label) { row.remove(); return; }
+    const title = document.createElement('strong');
+    title.className = 'stat-label';
+    title.textContent = found[1].trim();
+    first.data = first.data.slice(found[0].length);
+    row.prepend(title, ' ');
+  });
 });
 
 // A search over the list items after it (shortcodes/list_filter.html): items match on their text, and a
@@ -690,51 +723,85 @@ if (listFilter) {
     jump.append(select);
     listFilter.append(jump);
   }
-  // When the entries carry status chips, the outcomes are one bar, each part as long as its share of the entries
-  // and in its outcome's colour, over a row of buttons that show one outcome at a time. The buttons are the controls;
-  // the bar's parts are a shortcut for the pointer, too narrow to tap for the rarer outcomes.
+  // When the entries carry status chips, the outcomes open the list as a board: one tile per outcome with its count and
+  // one small brick per effect, so the tiles compare at a glance. A tile shows that outcome alone; pressed again, or
+  // with the toolbar's button, it shows them all.
   let status = '';
+  let statusWord = '';
   const outcomes = ['replicated', 'mixed', 'not replicated', 'reversed', 'no status']
     .map((word) => ({word, key: word.replace(' ', '-'), many: document.querySelectorAll(`.list-filter ~ ul .status-${word.replace(' ', '-')}`).length}))
     .filter(({many}) => many);
-  if (outcomes.length) {
-    const box = document.createElement('div');
-    box.className = 'list-filter-status';
-    const bar = document.createElement('div');
+  // Each discipline's mix of outcomes, as a bar whose parts are as long as their shares.
+  const outcomeMix = (items) => {
+    const bar = document.createElement('span');
     bar.className = 'outcome-bar';
     bar.setAttribute('aria-hidden', 'true');
-    const row = document.createElement('div');
-    row.className = 'outcome-buttons';
-    row.setAttribute('role', 'group');
-    row.setAttribute('aria-label', 'Show by outcome');
-    const choose = (button) => {
-      status = button.dataset.status;
-      row.querySelectorAll('button').forEach((other) => other.setAttribute('aria-pressed', String(other === button)));
-      box.classList.toggle('is-chosen', Boolean(status));
-      bar.querySelectorAll('span').forEach((part) => part.classList.toggle('is-chosen', part.dataset.status === status));
-      input.dispatchEvent(new Event('input'));
-    };
-    [{word: 'all', key: '', many: 0}, ...outcomes].forEach(({word, key, many}) => {
-      const button = document.createElement('button');
-      button.type = 'button';
-      button.className = key ? `status-chip status-${key}` : 'status-chip';
-      button.dataset.status = key;
-      button.innerHTML = key ? `<span class="outcome-word"></span> <span class="outcome-many">${many}</span>` : '<span class="outcome-word"></span>';
-      button.querySelector('.outcome-word').textContent = word === 'all' ? 'all outcomes' : word;
-      button.setAttribute('aria-pressed', String(!key));
-      button.addEventListener('click', () => choose(button));
-      row.append(button);
-      if (!key) return;
+    outcomes.forEach(({key}) => {
+      const many = items.filter((item) => item.querySelector(`.status-${key}`)).length;
+      if (!many) return;
       const part = document.createElement('span');
       part.className = `status-${key}`;
-      part.dataset.status = key;
       part.style.flexGrow = many;
-      part.title = `${word}: ${many}`;
-      part.addEventListener('click', () => choose(part.classList.contains('is-chosen') ? row.firstElementChild : button));
       bar.append(part);
     });
-    box.append(bar, row);
-    listFilter.append(box);
+    return bar;
+  };
+  const tocCounts = new Map();
+  if (outcomes.length) {
+    const board = document.createElement('section');
+    board.className = 'outcome-board';
+    board.setAttribute('aria-labelledby', 'outcome-board-title');
+    const title = document.createElement('h2');
+    title.id = 'outcome-board-title';
+    title.textContent = `What replications found for ${outcomes.reduce((sum, {many}) => sum + many, 0)} effects`;
+    const row = document.createElement('div');
+    row.className = 'outcome-tiles';
+    row.setAttribute('role', 'group');
+    row.setAttribute('aria-label', 'Show by outcome');
+    const clear = document.createElement('button');
+    clear.type = 'button';
+    clear.className = 'outcome-clear';
+    clear.textContent = 'Show all outcomes';
+    clear.hidden = true;
+    const choose = (key, word) => {
+      status = key;
+      statusWord = word;
+      row.querySelectorAll('button').forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.status === key)));
+      board.classList.toggle('is-chosen', Boolean(key));
+      clear.hidden = !key;
+      input.dispatchEvent(new Event('input'));
+    };
+    clear.addEventListener('click', () => choose('', ''));
+    outcomes.forEach(({word, key, many}) => {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = `outcome-tile status-${key}`;
+      button.dataset.status = key;
+      button.setAttribute('aria-pressed', 'false');
+      button.innerHTML = `<span class="outcome-many">${many}</span> <span class="outcome-word">${word}</span><span class="outcome-bricks" aria-hidden="true">${'<i></i>'.repeat(many)}</span>`;
+      button.addEventListener('click', () => (status === key ? choose('', '') : choose(key, word)));
+      row.append(button);
+    });
+    board.append(title, row);
+    listFilter.before(board);
+    listFilter.append(clear);
+    // The contents card and each heading carry the discipline's mix; the card's count follows the filters.
+    withItems.forEach(({heading, items}) => {
+      if (items.length >= 5) {
+        const mix = outcomeMix(items);
+        mix.classList.add('section-mix');
+        heading.after(mix);
+      }
+      const link = document.querySelector(`.article-card a[href="#${heading.id}"]`);
+      if (!link) return;
+      const many = document.createElement('span');
+      many.className = 'toc-many';
+      many.textContent = items.length;
+      link.append(' ', many);
+      // Below five effects a share says little, so the count stands alone.
+      if (items.length >= 5) link.append(outcomeMix(items));
+      tocCounts.set(heading, many);
+    });
   }
   // Filter buttons (the games portal): each group (fieldset[data-facet]) narrows the list to entries whose
   // data-facets name one of its pressed values; pressing values in several groups narrows by each of them.
@@ -781,25 +848,35 @@ if (listFilter) {
         if (match) { any = true; shown += 1; }
       });
       if (heading) heading.hidden = Boolean(query || status || chosen.length) && !any;
+      if (heading?.nextElementSibling?.matches('.section-mix')) heading.nextElementSibling.hidden = heading.hidden;
+      const inCard = tocCounts.get(heading);
+      if (inCard) {
+        inCard.textContent = items.filter((item) => !item.hidden).length;
+        inCard.parentElement.classList.toggle('is-empty', !any);
+      }
     });
-    count.textContent = query && !shown ? `No ${noun} match “${input.value.trim()}”.` : !query && 'quiet' in listFilter.dataset ? '' : `Showing ${shown} of ${total} ${noun}`;
+    count.textContent = query && !shown ? `No ${noun} match “${input.value.trim()}”.` : !query && 'quiet' in listFilter.dataset ? '' : statusWord ? `${shown} of ${total} ${noun}: ${statusWord}` : `Showing ${shown} of ${total} ${noun}`;
     if (empty) empty.hidden = shown > 0;
+    document.querySelector('.article-card')?.classList.toggle('is-filtered', Boolean(tocCounts.size && (query || status)));
     if (reset) reset.hidden = !query && !chosen.length;
   });
   input.dispatchEvent(new Event('input'));
 }
 
-// /reversals/: the search, outcome and Go to controls are a toolbar that stays at the top of the screen while the
-// effects scroll under it (on a phone only the search row stays), and each effect shows the start of its
-// description, with a "more" button for the rest.
+// /reversals/: the search and Go to controls are a toolbar that stays at the top of the screen while the effects
+// scroll under it (on a phone only the search row stays), and each effect shows the start of its description, with a
+// "more" button for the rest.
 const entryFilter = document.querySelector('.list-filter:not([hidden])');
 const entries = entryFilter ? [...document.querySelectorAll('.list-filter ~ ul > li')]
-  .filter((item) => item.firstElementChild?.matches('p') && item.querySelector(':scope > .spoiler')) : [];
+  .filter((item) => item.querySelector(':scope > .entry-text') && item.querySelector(':scope > .spoiler')) : [];
 if (entries.length) {
   // The toolbar sticks only within the list: one box from the toolbar to the last entry's list.
   const section = document.createElement('div');
   section.className = 'list-filter-section';
   const last = entries[entries.length - 1].parentElement;
+  // The sentence about the full list belongs with the board, above the toolbar.
+  const note = entryFilter.nextElementSibling;
+  if (note?.matches('p')) { note.classList.add('outcome-note'); entryFilter.before(note); }
   entryFilter.before(section);
   for (let node = entryFilter; node;) {
     const next = node.nextSibling;
@@ -815,14 +892,13 @@ if (entries.length) {
   bars.observe(searchRow);
   // A long description is cut to its first lines and gets the button.
   entries.forEach((item) => {
-    const text = item.firstElementChild;
-    text.classList.add('entry-text');
+    const text = item.querySelector(':scope > .entry-text');
     const more = document.createElement('button');
     more.type = 'button';
     more.className = 'entry-more';
     more.setAttribute('aria-expanded', 'false');
     // The label names the effect for screen readers; it is an attribute, not hidden text, so it adds nothing to the line.
-    const about = ` about ${text.querySelector('strong')?.textContent.trim() || 'this effect'}`;
+    const about = ` about ${item.querySelector('.entry-name strong')?.textContent.trim() || 'this effect'}`;
     const label = (word) => { more.textContent = word; more.setAttribute('aria-label', word + about); };
     label('more');
     more.addEventListener('click', () => {
@@ -830,7 +906,7 @@ if (entries.length) {
       more.setAttribute('aria-expanded', String(open));
       label(open ? 'less' : 'more');
     });
-    text.after(more);
+    text.append(more);
   });
   // While a search is typed, the matching entries show in full, so the match can be seen wherever it is.
   const query = entryFilter.querySelector('input');
@@ -841,7 +917,7 @@ if (entries.length) {
     section.classList.add('is-measuring');
     const long = entries.map((item) => {
       if (item.hidden) return null;
-      const text = item.firstElementChild;
+      const text = item.querySelector(':scope > .entry-text');
       return text.scrollHeight > 6 * parseFloat(getComputedStyle(text).lineHeight) + 2;
     });
     section.classList.remove('is-measuring');
@@ -858,6 +934,17 @@ if (entries.length) {
     measure();
   }).observe(section);
   document.fonts?.ready.then(measure);
+  // The contents card marks the discipline on screen and keeps it in view inside the card.
+  const card = document.querySelector('.article-card');
+  const links = new Map([...section.querySelectorAll('h2[id]')].map((heading) => [heading, card?.querySelector(`a[href="#${heading.id}"]`)]));
+  const spy = new IntersectionObserver((seen) => seen.forEach(({isIntersecting, target}) => {
+    const link = links.get(target);
+    if (!isIntersecting || !link) return;
+    links.forEach((other) => other?.removeAttribute('aria-current'));
+    link.setAttribute('aria-current', 'true');
+    if (card.scrollHeight > card.clientHeight) card.scrollTop = link.offsetTop - card.clientHeight / 2;
+  }), {rootMargin: '0px 0px -75% 0px'});
+  links.forEach((link, heading) => { if (link) spy.observe(heading); });
 }
 
 // A table wider than the screen scrolls in its own box, so keyboard users must be able to focus it.

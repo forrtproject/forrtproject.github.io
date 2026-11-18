@@ -8,7 +8,7 @@ headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 2  # Order that this section will appear.
 
-title = "Reversals & Replications"
+title = "Replications & Reversals"
 subtitle = ""
 
 [design]
@@ -51,6 +51,8 @@ subtitle = ""
  css_class = ""
 +++
 
+FORRT's Replications and Reversals project collected replications of effects in the social sciences, especially reversals: effects whose direction flipped when they were replicated. It was a crowd-sourced, community-driven collection to help scholars and educators keep up with which effects in their field replicate and which do not.
+
 {{% alert note %}}
 
 **This project has concluded.** Its work continues in the [FORRT Replication Hub](/replication-hub/), and its outcomes are described in the preprint [Tracking and Mainstreaming Replications in the Social, Cognitive, and Behavioral Sciences](https://osf.io/preprints/metaarxiv/ad2w6_v1). The effects below were crowdsourced and not consistently validated, so check specific claims before relying on them, and please [report errors](https://github.com/forrtproject/forrtproject.github.io/issues/612).
@@ -58,76 +60,6 @@ subtitle = ""
 <a class="btn btn-primary" href="/annotator/">Find more replications in FLoRA</a>
 
 {{% /alert %}}
-
-## **Summary**
-
-<br>
-
-FORRT's Replications and Reversals project collected replications of effects in the social sciences, especially reversals: effects whose direction flipped when they were replicated. It was a crowd-sourced, community-driven collection to help scholars and educators keep up with which effects in their field replicate and which do not.
-
-
-<br>
-
-### **How to cite**
-
-Please cite this source as Hartmann H, Azevedo F, Röseler L, Wallrich L, Aldoh A, Elsherif MM, et al. Tracking and mainstreaming replications in the social, cognitive, and behavioral sciences. MetaArXiv. https://doi.org/10.31222/osf.io/ad2w6_v1. Contributors are listed at [forrt.org/contributors](/contributors/).
-
-<br>
-
-{{< spoiler text="About this project: motivation, history and how to contribute" >}}
-
-
-
-### **Motivation**
-
-The purpose of collating these reversal effects in social science is to encourage educators to incorporate replications of these effects into their students' project (e.g., third-year, thesis, course work) to provide them the opportunity to experience the research process directly, assess their ability to perform and report scientific research, and to help evaluate the robustness of the original study, thereby also helping them become good consumers of research. The below crowdsourced and community-curated resource aims to satisfy three of [FORRT’s Goals](https://forrt.org/about/mission/):
-
-* Support scholars in their efforts to learn and stay up-to-date on best practices regarding open and reproducible research;
-* Facilitating conversations about the ethics and social impact of teaching substantive topics with due regard to scientific openness, epistemic uncertainty and the credibility revolution;
-* Foster social justice through the democratization of scientific educational resources and its pedagogies.
-
-and four of [FORRT’s Mission](https://forrt.org/about/mission/):
-
-* Dismantling hierarchies surrounding research, teaching, and service;
-* Building community among educators and various non-academic communities working to improve scientific communication and literacy across academia and the general public;
-* Building capacity for advocacy; and
-* Advocacy for the creation and maintenance of educational resources.
-
-<br>
-
-### **Current Status**
-
-The original project was organized in five stages: 
-
-- [x] **Proof of Concept Phase** (adaptation of original project into FORRT, inclusion of effects from social and cognitive psychology, using Gavin Leech's collection as a basis) → ~150 entries finished in 2021.
-
-- [x] **Team Science Expansion Phase Across Disciplines** (crowd-sourcing entries and refine existing entries), started at the end of 2021. Drafting of first 'output' piece. Currently including a total of 600+ effects spanning 22 disciplines.
-
-- [x] **Database'ification and merging**, converting the spreadsheet and all effects into a meta-analytic database and merging it with existing replication databases.
-
-- [x] **Review Phase** (open review to identify inconsistencies, missing data, and errors). Publishing of output piece.
-
-- [x] **Update Phases** (dynamically adding new effects). Now continued through the Replication Hub projects.
-
-### **Recognition**
-
-- Shortlisted for the **Einstein Foundation Award for Promoting Quality in Research 2023**, Early Career Award ([finalists](https://web.archive.org/web/20231204000615/https://www.einsteinfoundation.de/en/award/events/meet-the-finalists/))
-- **Open Science Fund 2023** from the Dutch Research Council, NWO ([awarded grants](https://www.nwo.nl/en/researchprogrammes/open-science/open-science-fund/open-science-fund-2023-awarded-grants))
-- **SIPS 2023 commendation** from the Society for the Improvement of Psychological Science ([awards page](https://improvingpsych.org/mission/awards/))
-
-<br>
-
-### **How to contribute?**
-
-This specific reversals project has concluded, and its work has been integrated into the broader [FORRT Replication Hub](https://forrt.org/replication-hub/). To contribute replication data, please submit new entries through the [Replication Hub](/replication-hub/submit/) or contact Lukas Röseler at lukas.roeseler@uni-muenster.de for any questions.
-
-All **past or current project contributors** are listed at the [bottom of this page](#contributors).
-
-<br><br>
-
-{{< /spoiler >}}
-
----------------
 
 {{< list_filter label="Search the effects" placeholder="e.g. priming, Bargh, ego depletion" noun="effects" >}}
 
@@ -4161,11 +4093,62 @@ Critiques: [Gelman and Loken 2013](http://www.stat.columbia.edu/~gelman/research
 * Replication effect size: Martinez et al. (2012): SCL and extraversion: _r<sup>2</sup>_= .15. Otto et al. (2007): _r_ = -.13 for general conditions, and _r_= -.16 for differential conditioning. Pineles et al. (2009): partial _r_ = .14 for warmth, partial _r_ = .17 for activity. 
 {{< /spoiler >}}
 
+## **How to cite**
+
+Please cite this source as Hartmann H, Azevedo F, Röseler L, Wallrich L, Aldoh A, Elsherif MM, et al. Tracking and mainstreaming replications in the social, cognitive, and behavioral sciences. MetaArXiv. https://doi.org/10.31222/osf.io/ad2w6_v1. Contributors are listed at [forrt.org/contributors](/contributors/).
+
+{{< spoiler text="About this project: motivation, history and how to contribute" >}}
+
+
+
+### **Motivation**
+
+The purpose of collating these reversal effects in social science is to encourage educators to incorporate replications of these effects into their students' project (e.g., third-year, thesis, course work) to provide them the opportunity to experience the research process directly, assess their ability to perform and report scientific research, and to help evaluate the robustness of the original study, thereby also helping them become good consumers of research. The below crowdsourced and community-curated resource aims to satisfy three of [FORRT’s Goals](https://forrt.org/about/mission/):
+
+* Support scholars in their efforts to learn and stay up-to-date on best practices regarding open and reproducible research;
+* Facilitating conversations about the ethics and social impact of teaching substantive topics with due regard to scientific openness, epistemic uncertainty and the credibility revolution;
+* Foster social justice through the democratization of scientific educational resources and its pedagogies.
+
+and four of [FORRT’s Mission](https://forrt.org/about/mission/):
+
+* Dismantling hierarchies surrounding research, teaching, and service;
+* Building community among educators and various non-academic communities working to improve scientific communication and literacy across academia and the general public;
+* Building capacity for advocacy; and
+* Advocacy for the creation and maintenance of educational resources.
+
 <br>
 
----------
+### **Current Status**
+
+The original project was organized in five stages: 
+
+- [x] **Proof of Concept Phase** (adaptation of original project into FORRT, inclusion of effects from social and cognitive psychology, using Gavin Leech's collection as a basis) → ~150 entries finished in 2021.
+
+- [x] **Team Science Expansion Phase Across Disciplines** (crowd-sourcing entries and refine existing entries), started at the end of 2021. Drafting of first 'output' piece. Currently including a total of 600+ effects spanning 22 disciplines.
+
+- [x] **Database'ification and merging**, converting the spreadsheet and all effects into a meta-analytic database and merging it with existing replication databases.
+
+- [x] **Review Phase** (open review to identify inconsistencies, missing data, and errors). Publishing of output piece.
+
+- [x] **Update Phases** (dynamically adding new effects). Now continued through the Replication Hub projects.
+
+### **Recognition**
+
+- Shortlisted for the **Einstein Foundation Award for Promoting Quality in Research 2023**, Early Career Award ([finalists](https://web.archive.org/web/20231204000615/https://www.einsteinfoundation.de/en/award/events/meet-the-finalists/))
+- **Open Science Fund 2023** from the Dutch Research Council, NWO ([awarded grants](https://www.nwo.nl/en/researchprogrammes/open-science/open-science-fund/open-science-fund-2023-awarded-grants))
+- **SIPS 2023 commendation** from the Society for the Improvement of Psychological Science ([awards page](https://improvingpsych.org/mission/awards/))
 
 <br>
+
+### **How to contribute?**
+
+This specific reversals project has concluded, and its work has been integrated into the broader [FORRT Replication Hub](https://forrt.org/replication-hub/). To contribute replication data, please submit new entries through the [Replication Hub](/replication-hub/submit/) or contact Lukas Röseler at lukas.roeseler@uni-muenster.de for any questions.
+
+All **past or current project contributors** are listed at the [bottom of this page](#contributors).
+
+<br><br>
+
+{{< /spoiler >}}
 
 ## **Further literature**
 
