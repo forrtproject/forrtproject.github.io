@@ -6,11 +6,9 @@ document.addEventListener('click', function (event) {
   var el;
   if (data.embedScript) {
     el = document.createElement('div');
-    if (data.embedForm) el.id = 'octopus-form-' + data.embedForm;
     var script = document.createElement('script');
     script.async = true;
     script.src = data.embedSrc;
-    if (data.embedForm) script.dataset.form = data.embedForm;
     el.appendChild(script);
   } else {
     el = document.createElement('iframe');
