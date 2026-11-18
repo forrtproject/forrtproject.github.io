@@ -533,7 +533,6 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
 .article-layout .card-authors .network-icon{display:flex;flex-wrap:wrap;gap:0 2px;margin:4px 0 0 -8px;padding:0;list-style:none}
 .article-layout .card-authors .network-icon a{display:inline-flex;align-items:center;justify-content:center;min-width:34px;min-height:34px;color:var(--link);font-size:17px}
 .article-layout .card-authors .network-icon a:hover{color:var(--ink)}
-.article-layout .card-authors-more{margin:-6px 0 16px;font-size:15px}
 .article-layout .card-more{margin:0 0 4px}
 .article-layout .card-more a{display:inline-block;padding:11px 0;font-weight:600;color:var(--link);text-decoration:underline;text-underline-offset:3px}
 .article-layout .card-more a::after{content:"\2192";margin-inline-start:6px;text-decoration:none}
@@ -616,6 +615,10 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
 /* On a phone the byline gives the date under the title, so the card at the end gives only an update. */
 @media(max-width:1000px){.article-layout .article-card-article dl>:is(dt:first-child,dt:first-child+dd){display:none}.article-layout .article-card-article dl>dt:nth-child(3){margin-top:0}}
 @media(max-width:1000px){.article-layout .article-card-article dl:not(:has(>dt:nth-child(3))){display:none}}
-/* Below 1001 px the card comes after the text and the byline has already named every author; the compact block
-   (photos and names only, no roles or links) would just repeat them, so it is left out there. */
-@media(max-width:1000px){.article-layout .card-authors-compact{display:none}.article-layout .article-card-article:not(:has(.card-authors,.card-more,dl>dt:nth-child(3))){display:none}}
+/* Below 1001 px the card comes after the text and the byline has already named every author. The compact block, and
+   any entry with no photo, role, bio or links, would only repeat those names, so they are left out there, and so is a
+   card with nothing else to show. */
+@media(max-width:1000px){
+  .article-layout :is(.card-authors-compact,.card-author-plain,.card-authors:not(:has(li:not(.card-author-plain)))){display:none}
+  .article-layout .article-card-article:not(:has(.card-authors li:not(.card-author-plain),.card-more,dl>dt:nth-child(3))){display:none}
+}

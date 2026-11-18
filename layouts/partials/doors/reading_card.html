@@ -31,10 +31,13 @@
   </div>
   {{ else }}
   {{ with $authors }}
-  {{ $shown := first 4 . }}
+  {{/* At 1000 px and below this card follows the text and the byline has named everyone, so an entry that adds no
+       photo, role, bio or links is left out there (article.css). */}}
   <ul class="card-authors">
-    {{ range $shown }}
-    <li>
+    {{ range . }}
+    {{ $adds := false }}
+    {{ with .profile }}{{ $adds = or ((.Resources.ByType "image").GetMatch "*avatar*") .Params.role (and (eq (len $authors) 1) .Params.bio) .Params.social }}{{ end }}
+    <li{{ if not $adds }} class="card-author-plain"{{ end }}>
       {{ with .profile }}
         {{ $avatar := (.Resources.ByType "image").GetMatch "*avatar*" }}
         {{ with $avatar }}<img src="{{ (.Fill "112x112 Center webp q80").RelPermalink }}" width="56" height="56" alt="">{{ end }}
@@ -50,7 +53,6 @@
     </li>
     {{ end }}
   </ul>
-  {{ if gt (len .) 4 }}<p class="card-authors-more">and {{ sub (len .) 4 }} more</p>{{ end }}
   {{ end }}
   {{ end }}
   {{ if .hasDates }}
