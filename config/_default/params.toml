@@ -337,6 +337,8 @@ plugins_js  = []
 ## Doors redesign
 ############################
 [doors]
+  # FORRT's own host, without scheme. A link to any other host is marked as leaving the site (booklet_contents).
+  host = "forrt.org"
   # The 3D castle on the home page. Set to false to show only the still image.
   castle = true
   # Pages whose tables, maps, cards or lists need the full width: their paragraphs stay at reading width.

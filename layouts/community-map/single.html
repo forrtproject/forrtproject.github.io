@@ -1,3 +1,52 @@
 {{- define "main" -}}
-{{ partial "doors/reading" . }}
+{{/* The community map: the title with the map's own figures (members and cities, read from the generated map at
+     static/apps/community_map.html), the map, its legend, then the page's text beside a panel for joining.
+     The figures and legend show only when the map's data has the expected form, so a map regenerated in another
+     format loses them quietly. Content: content/community-map/index.md. */}}
+{{ $raw := "" }}
+{{ with os.Stat "static/apps/community_map.html" }}{{ $raw = readFile "static/apps/community_map.html" }}{{ end }}
+{{ $members := 0 }}{{ $cities := 0 }}
+{{ range findRESubmatch `"[^"<>]+: (\d+) members?"` $raw }}{{ $members = add $members (int (index . 1)) }}{{ $cities = add $cities 1 }}{{ end }}
+{{ $legend := slice }}
+{{ with index (findRESubmatch `"colors":\[([^\]]*)\],"labels":\[([^\]]*)\]` $raw 1) 0 }}
+  {{ $colours := findRE `#[0-9A-Fa-f]{6}` (index . 1) }}
+  {{ $labels := findRE `[^",]+` (index . 2) }}
+  {{ if eq (len $colours) (len $labels) }}{{ range $i, $c := $colours }}{{ $legend = $legend | append (dict "colour" $c "label" (index $labels $i)) }}{{ end }}{{ end }}
+{{ end }}
+<div class="wrap map-page">
+  <header class="article-head map-head">
+    {{ partial "doors/crumbs" (dict "page" .) }}
+    <div class="map-head-grid">
+      <div>
+        <h1>{{ .Title }}</h1>
+        <p class="standfirst">Where FORRT's members are, city by city. Zoom in, and select a circle to see its city and number of members.</p>
+      </div>
+      {{ if gt $members 0 }}
+      <div class="map-figures">
+        <p><strong>{{ lang.FormatNumberCustom 0 $members }}</strong> members</p>
+        <p><strong>{{ $cities }}</strong> cities</p>
+        {{ with .Params.snapshot }}<p class="map-date">{{ . }}</p>{{ end }}
+      </div>
+      {{ end }}
+    </div>
+  </header>
+  <div class="map-frame">
+    {{ partial "doors/community_map" (dict "height" 600 "ownLegend" (gt (len $legend) 0) "eager" true) }}
+  </div>
+  {{ with $legend }}
+  <div class="map-legend">
+    <p class="map-legend-title">Members per city</p>
+    <ul>{{ range . }}<li><span class="map-swatch" style="background:{{ .colour | safeCSS }}" aria-hidden="true"></span>{{ .label }}</li>{{ end }}</ul>
+  </div>
+  {{ end }}
+  <div class="map-after">
+    <div class="article-style map-text">
+      {{ partial "doors/content" .Content }}
+    </div>
+    <section class="map-join" aria-labelledby="map-join-h">
+      <h2 id="map-join-h">Take part</h2>
+      <p class="map-buttons"><a class="btn btn-primary" href="https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ">Join FORRT's Slack</a> <a class="btn" href="{{ "about/get-involved/" | relLangURL }}">Find a project</a></p>
+    </section>
+  </div>
+</div>
 {{- end -}}

@@ -141,7 +141,7 @@
 {{ $pdf := .Get "pdf" | default "/files/FORRT_Booklet(A5).pdf" }}
 {{ $id := printf "flipbook-%s" (.Get "id" | default "default") }}
 <p class="booklet-open"><a class="btn btn-primary" href="{{ $pdf }}">Open the PDF</a> to read it full screen or save it.</p>
-<div class="_df_book" id="{{ $id }}" source="{{ $pdf }}" style="height:{{ .Get "height" | default "80vh" }};margin:20px 0;min-height:500px;max-height:1200px;"></div>
+<div class="_df_book booklet-frame" id="{{ $id }}" source="{{ $pdf }}" style="height:{{ .Get "height" | default "80vh" }};margin:20px 0;min-height:500px;max-height:1200px;"></div>
 
 <script>
   if (typeof window !== 'undefined' && !window.pdfjsWorkerSrc) {
@@ -153,7 +153,9 @@
     // window that does not (a desktop browser, an iPad, a headless browser) turned to a spread
     // too small to read. Its options take a page mode: 1 is one page, 2 turns it like a booklet.
     var narrow = book.clientWidth < 700;
-    window['option_' + book.id] = narrow ? { pageMode: 1, singlePageMode: 2 } : {};
+    // On a wide screen the book may open at a spread (`open`, a page number), so it fills its frame; a phone
+    // starts at the cover. The frame's own colour shows around the pages (the panel in sections.css).
+    window['option_' + book.id] = narrow ? { pageMode: 1, singlePageMode: 2, backgroundColor: 'transparent' } : { openPage: {{ .Get "open" | default 1 }}, backgroundColor: 'transparent' };
 
     function size() {
       var height;

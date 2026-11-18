@@ -311,7 +311,7 @@ html:has(.contributor-az){scroll-padding-top:calc(var(--contributor-az,72px) + 1
 .get-involved-card .get-involved-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:12px}
 /* Get Involved is a wide page: its projects fill the width, as many to a row as fit. */
 .article-layout-wide .article-style .get-involved-projects{grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));max-width:none}
-.article-layout-wide .article-style .action-cards{max-width:960px}
+.article-layout-wide .article-style .action-cards{max-width:none}
 .get-involved-card[hidden]{display:none}
 .get-involved-card .get-involved-link{display:inline-flex;align-items:center;min-height:40px;padding:0;color:var(--link);font-weight:600;text-decoration:underline;text-underline-offset:3px}
 
@@ -369,3 +369,60 @@ html:has(.contributor-az){scroll-padding-top:calc(var(--contributor-az,72px) + 1
 }
 .team-slack-note{margin:14px 0 0;padding:12px 16px;background:var(--surface);border-radius:var(--r-large);font-size:17px}
 .team-slack-note a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
+
+/* About us: the FORRT tower in its arched door, as on the home page, beside "Build your own FORRT tower". */
+.article-layout .article-style .tower-picture{float:inline-end;width:min(42%,260px);margin:4px 0 16px 28px;padding:18px 10px 6px;background:var(--edu-bg);border-radius:999px 999px var(--r-small) var(--r-small)}
+.tower-picture img{display:block;width:100%;height:auto}
+.doc-section:has(.tower-picture){display:flow-root}
+@media(max-width:760px){.article-layout .article-style .tower-picture{width:min(40%,150px);margin:2px 0 10px 16px;padding:12px 6px 4px}}
+
+/* Lesson plans: an Education & Pedagogy page, so its plans are pale education cards, as many to a row as fit;
+   each names its plan as a link with what the link opens below it. */
+.article-layout .article-style .lesson-plan-list>ul{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:12px;max-width:none;margin:12px 0 30px;padding:0;list-style:none}
+.article-layout .article-style .lesson-plan-list>ul>li{max-width:none;margin:0;padding:14px 18px 16px;background:var(--edu-bg);border-radius:var(--r-large);font-size:16px;line-height:1.45;color:var(--ink)}
+.article-layout .article-style .lesson-plan-list>ul>li>a:first-child{font:var(--display-weight) 21px/1.25 var(--display);color:var(--edu);text-decoration-color:color-mix(in srgb,var(--edu) 55%,transparent)}
+.article-layout .article-style .lesson-plan-list>ul>li>a:first-child:hover{text-decoration-color:currentColor;text-decoration-thickness:2px}
+.article-layout .article-style .lesson-plan-list>ul>li>br+a,.article-layout .article-style .lesson-plan-list>ul>li>a+a{color:var(--edu)}
+.article-layout .article-style .lesson-plan-list>h3{margin:26px 0 0;font-size:24px}
+/* Beside the prose on a wide screen, after it on a narrow one: the example lesson plan beside the introduction
+   that lists what each plan gives, and the article about the plans beside the motivation (DESIGN.md §7). */
+.lesson-plan-intro,.lesson-plan-motivation{display:flex;flex-direction:column}
+.article-layout .article-style .lesson-plan-sample{order:1;width:min(100%,340px);margin:4px 0 8px;padding:14px 14px 10px;background:var(--edu-bg);border-radius:var(--r-large)}
+.lesson-plan-sample img{display:block;width:100%;height:auto;aspect-ratio:1218/980;object-fit:cover;object-position:top;background:#fff;border:1px solid var(--line);border-radius:4px}
+.lesson-plan-sample figcaption{margin:8px 2px 0;font-size:15px;line-height:1.4;text-align:start}
+.lesson-plan-article{order:1;margin:8px 0 0}
+.article-layout .article-style .lesson-plan-article p{font-size:17px}
+@media(min-width:1001px){
+  :is(.lesson-plan-intro,.lesson-plan-motivation){display:grid;grid-template-columns:minmax(0,580px) minmax(0,380px);justify-content:start;column-gap:64px;align-items:start}
+  :is(.lesson-plan-intro,.lesson-plan-motivation)>*{grid-column:1}
+  .article-layout .article-style :is(.lesson-plan-sample,.lesson-plan-article){grid-column:2;grid-row:1/span 6;width:auto;margin:0}
+  .lesson-plan-intro>:first-child+p{margin-top:0}
+}
+
+/* Get involved: a wide page, so "About FORRT" puts its guide call-out beside the text rather than under it,
+   and no empty band is left beside the prose (DESIGN.md §7). */
+@media(min-width:1001px){
+  .article-layout-wide .doc-section:has(>aside.callout){display:grid;grid-template-columns:minmax(0,580px) minmax(0,440px);justify-content:start;column-gap:64px;align-items:start}
+  .article-layout-wide .doc-section:has(>aside.callout)>*{grid-column:1}
+  .article-layout-wide .article-style .doc-section>aside.callout{grid-column:2;grid-row:1/span 8;max-width:none;margin:6px 0 0}
+}
+
+/* The booklet: the flipbook on a pale panel, then what it covers in each area: a heading in the area's colour over a
+   plain list of links, not a box (DESIGN.md §4). */
+.article-style .booklet-frame{background:var(--surface)!important;border-radius:var(--r-large)}
+.booklet-inside{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:20px 32px;margin:12px 0 8px}
+.booklet-area{--tone:var(--edu);padding-top:10px;border-top:4px solid var(--tone)}
+.booklet-area-res{--tone:var(--res)}
+.booklet-area-jus{--tone:var(--jus)}
+.booklet-area-com{--tone:var(--com)}
+.article-layout .article-style .booklet-area h3{margin:0 0 6px;font-size:22px;line-height:1.2;color:var(--tone)}
+.article-layout .article-style .booklet-area ul{max-width:none;margin:0;padding:0;list-style:none}
+.article-layout .article-style .booklet-area li{max-width:none;margin:0;padding:6px 0;font-size:17px;line-height:1.4}
+.article-layout .article-style .booklet-area a{color:var(--ink);text-decoration-color:color-mix(in srgb,var(--tone) 55%,transparent)}
+.article-layout .article-style .booklet-area a:hover{color:var(--tone);text-decoration-color:currentColor}
+/* 44 px targets on phones for the booklet's and lesson plans' links (DESIGN.md §9). */
+@media(max-width:760px){
+  .article-layout .article-style .booklet-area li{display:flex;align-items:center;min-height:44px;padding:0}
+  .article-layout .article-style .booklet-area a,.article-layout .article-style .lesson-plan-list>ul>li>a{display:inline-flex;align-items:center;min-height:44px;padding:0}
+}
+.booklet-area .fa-external-link-alt{margin-inline-start:2px;font-size:13px;color:var(--soft)}
