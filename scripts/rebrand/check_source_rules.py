@@ -41,7 +41,7 @@ GENERATED = re.compile(
     r"|data/(?!partners\.json$|publications\.yaml$|themes/|fonts/)[^/]+$)"
 )
 
-# First outputs of generators added on the branch, committed with them; main has no copy yet.
+# First outputs of generators, or of outputs newly added to a generator, on the branch; main has no copy yet.
 NEW_OUTPUTS = {"data/open_research_games.json", "data/scholar_citations.json"}
 
 

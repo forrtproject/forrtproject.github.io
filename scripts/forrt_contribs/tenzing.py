@@ -330,12 +330,19 @@ merged_data['special_role'] = False
 merged_data = pd.concat([df_roles, merged_data], axis=0)
 merged_data.reset_index(drop=True, inplace=True)
 
+# Letters that Unicode does not split into a base letter and an accent, so the ASCII fold below would drop them.
+UNFOLDED_LETTERS = str.maketrans({
+    'Ł': 'L', 'ł': 'l', 'Ø': 'O', 'ø': 'o', 'Đ': 'D', 'đ': 'd', 'Ð': 'D', 'ð': 'd', 'Æ': 'AE', 'æ': 'ae',
+    'Œ': 'OE', 'œ': 'oe', 'ß': 'ss', 'Þ': 'Th', 'þ': 'th', 'ı': 'i',
+})
+
+
 def name_key(name):
     """A name as it sorts: letter by letter, ignoring case, accents, spaces, hyphens and apostrophes, so that
     "Alarie" comes before "Al-Hoorie". A particle stays part of the surname as entered: "de Bruijn" files under D."""
     if not isinstance(name, str):
         return ''
-    plain = unicodedata.normalize('NFKD', name).encode('ascii', 'ignore').decode().casefold()
+    plain = unicodedata.normalize('NFKD', name.translate(UNFOLDED_LETTERS)).encode('ascii', 'ignore').decode().casefold()
     return ''.join(char for char in plain if char.isalnum())
 
 

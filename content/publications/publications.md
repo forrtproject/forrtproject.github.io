@@ -96,6 +96,8 @@ This page showcases the diverse scholarly and public-facing outputs produced by 
 
 <br>
 
+{{< citation_chart place="end" >}}
+
 <div class="pub-section-group">
   <div class="section-heading" align="center">
       <h1>Find More About Ongoing Projects</h1>

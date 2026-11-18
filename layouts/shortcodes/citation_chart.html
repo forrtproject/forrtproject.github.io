@@ -1,14 +1,18 @@
 {{/* Citations to FORRT's work per year, from Google Scholar, for /publications/. scripts/gs-cite/google_scholar.py
      writes data/scholar_citations.json (and the picture content/publications/citation_chart.webp) on each data
      run; the chart is drawn here in the site's type and colours, with the picture as the fallback where the numbers
-     are missing. A year still running is drawn lighter and labelled "so far". On a phone, where the chart follows the
-     publications, a line with the total stays above the filters and links down to it. */}}
+     are missing. A year still running is drawn lighter and labelled "so far". The page places the chart twice: beside
+     the introduction on a wide screen, and with place="end" after the publications on a phone, where a line with the
+     total stays above the filters and links down to it. Only one shows, so reading and Tab order follow the screen. */}}
+{{ $atEnd := eq (.Get "place") "end" }}
+{{ $place := cond $atEnd "cite-at-end" "cite-at-start" }}
 {{ $profile := "https://scholar.google.com/citations?user=JrBcgGMAAAAJ&hl=en" }}
 {{ with hugo.Data.scholar_citations }}
 {{ $max := 1 }}{{ range .years }}{{ if gt (int .citations) $max }}{{ $max = int .citations }}{{ end }}{{ end }}
+{{ $dated := 0 }}{{ range .years }}{{ $dated = add $dated (int .citations) }}{{ end }}
 {{ $thisYear := now.Year }}
-<p class="cite-summary"><strong>{{ lang.FormatNumber 0 .total_citations }}</strong> citations on Google Scholar · <a href="#citation-chart">by year</a></p>
-<figure class="citation-container cite-chart" id="citation-chart">
+{{ if not $atEnd }}<p class="cite-summary"><strong>{{ lang.FormatNumber 0 .total_citations }}</strong> citations on Google Scholar · <a href="#citation-chart">by year</a></p>{{ end }}
+<figure class="citation-container cite-chart {{ $place }}"{{ if $atEnd }} id="citation-chart"{{ end }}>
   <p class="cite-total"><strong>{{ lang.FormatNumber 0 .total_citations }}</strong> citations</p>
   <p class="cite-index">h-index {{ .h_index }} · i10-index {{ .i10_index }}</p>
   <ol class="cite-bars" aria-label="Citations per year">
@@ -16,10 +20,11 @@
     <li{{ if $partial }} class="is-partial"{{ end }} style="--v:{{ div (float .citations) $max }}"><span class="cite-n">{{ .citations }}</span><span class="cite-bar"></span><span class="cite-year">{{ .year }}{{ if $partial }}<span class="cite-so-far"> so far</span>{{ end }}</span></li>
     {{ end }}
   </ol>
+  {{ if lt $dated (int .total_citations) }}<p class="cite-note">{{ lang.FormatNumber 0 $dated }} of these are listed by year.</p>{{ end }}
   <figcaption><a href="{{ $profile }}">Details on Google Scholar</a></figcaption>
 </figure>
 {{ else }}
-<figure class="citation-container">
+<figure class="citation-container {{ $place }}">
   <img src="citation_chart.webp" alt="Bar chart of citations to FORRT's work per year, with its total citations, h-index and i10-index, from Google Scholar">
   <figcaption><a href="{{ $profile }}">Details on Google Scholar</a></figcaption>
 </figure>
