@@ -25,7 +25,7 @@ The `tenzing.py` script:
    - Generate HTML for display on the Contributors page
    - Add `data-*` attributes to enable filtering by project/role
    - Add `id` attributes (when ORCID is available) to enable anchor links (e.g., `https://forrt.org/contributors#0000-0000-0000-0000`)
-   - Generate a JSON object with all unique projects and roles to populate filter dropdown menus
+   - Generate a JSON object with all unique projects and roles to populate the searchable project and role filters
 
 3. Creates the final output by:
    - Reading `tenzing_template.md`
@@ -41,8 +41,8 @@ The Contributors page supports URL parameters to filter and customize the view:
 
 | Parameter | Description | Example |
 |-----------|-------------|---------|
-| `project` | Filter by project name (normalized) | `?project=glossary` |
-| `role` | Filter by contribution role (normalized) | `?role=writing` |
+| `project` | Filter by project name (normalized). Separate several projects with commas; a contribution matches any of them | `?project=glossary` or `?project=glossary,educators-corner` |
+| `role` | Filter by contribution role (normalized). Separate several roles with commas; a contribution matches any of them | `?role=writing` or `?role=investigation,software` |
 | `collapse-filter` | Hide the filter menu and show a simple "show all" link | `?project=glossary&collapse-filter` |
 
 

@@ -110,21 +110,105 @@ subtitle = ""
   display: grid;
   grid-template-columns: 1fr 1fr auto;
   gap: 15px;
-  align-items: end;
+  align-items: start;
 }
 
-.filter-field label {
+@media (max-width: 767px) {
+  .filter-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.filter-field {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.filter-field legend {
   display: block;
+  width: auto;
   margin-bottom: 5px;
+  padding: 0;
+  border: 0;
+  font-size: inherit;
   font-weight: bold;
 }
 
-.filter-field select {
+.filter-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.filter-field input[type="search"] {
   width: 100%;
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 14px;
+}
+
+.filter-options {
+  max-height: 12em;
+  margin-top: 6px;
+  padding: 4px 8px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.filter-field .filter-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 0;
+  padding: 3px 0;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.filter-field .filter-option[hidden] {
+  display: none;
+}
+
+.filter-option input {
+  flex: none;
+  margin-top: 4px;
+}
+
+.filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.filter-chip {
+  padding: 2px 10px;
+  border: 1px solid #8e0000;
+  border-radius: 14px;
+  background-color: transparent;
+  color: #8e0000;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.filter-chip:hover {
+  background-color: #8e0000;
+  color: white;
+}
+
+.filter-status {
+  margin: 4px 0 0;
+  font-size: 0.85em;
 }
 
 #apply-filter {
@@ -202,18 +286,22 @@ FORRT is driven by a **large and diverse community of contributors** that shape 
 <div id="filter-menu">
   <h3>Filter Contributors</h3>
   <div class="filter-grid">
-    <div class="filter-field">
-      <label for="project-select">Project:</label>
-      <select id="project-select">
-        <option value="">All</option>
-      </select>
-    </div>
-    <div class="filter-field">
-      <label for="role-select">Role:</label>
-      <select id="role-select">
-        <option value="">All</option>
-      </select>
-    </div>
+    <fieldset class="filter-field">
+      <legend>Project</legend>
+      <label class="filter-sr-only" for="project-search">Search projects</label>
+      <input type="search" id="project-search" placeholder="Search projects…" autocomplete="off" aria-controls="project-options">
+      <div id="project-selected" class="filter-chips"></div>
+      <div id="project-options" class="filter-options" role="group" aria-label="Projects"></div>
+      <p id="project-status" class="filter-status" aria-live="polite"></p>
+    </fieldset>
+    <fieldset class="filter-field">
+      <legend>Role</legend>
+      <label class="filter-sr-only" for="role-search">Search roles</label>
+      <input type="search" id="role-search" placeholder="Search roles…" autocomplete="off" aria-controls="role-options">
+      <div id="role-selected" class="filter-chips"></div>
+      <div id="role-options" class="filter-options" role="group" aria-label="Roles"></div>
+      <p id="role-status" class="filter-status" aria-live="polite"></p>
+    </fieldset>
     <div class="filter-field">
       <button id="apply-filter">Apply Filter</button>
     </div>
