@@ -211,7 +211,7 @@ main:lang(zh) .glossary-layout :is(.reading h1,.term-list a){word-break:keep-all
 .glossary-layout .article-style .term-cards li:hover{border-color:var(--edu)}
 .glossary-layout .article-style .term-cards a{font:600 18px/1.3 var(--text)}
 .glossary-layout .article-style .term-cards p{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin:4px 0 0;font-size:16px;line-height:1.45}
-.glossary-layout .article-style .term-unlinked-line{margin:12px 0 0;font-size:16px;line-height:1.5;color:var(--soft)}
+.glossary-layout .article-style .term-unlinked-line{max-width:32em;margin:12px 0 0;font-size:16px;line-height:1.5;color:var(--soft)}
 .glossary-layout .article-style .term-unlinked-label{font-weight:600}
 .glossary-layout .article-style .term-unlinked-list{display:inline;margin:0;padding:0;list-style:none}
 .glossary-layout .article-style .term-unlinked-list li{display:inline;margin:0;padding:0}
