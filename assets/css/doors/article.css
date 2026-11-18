@@ -454,9 +454,7 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
    by Tab or Go to stop below it (the scroll padding is its measured height). */
 html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px) + 16px)}
 .article-layout .article-style .list-filter-section{max-width:none}
-.article-layout .article-style .list-filter-section{--list-measure:522px}
 .article-layout .article-style .list-filter-section>p{max-width:29em}
-@media(min-width:761px){.article-layout .article-style .list-filter-section>.list-filter{max-width:var(--list-measure)}}
 .article-layout .article-style .list-filter-section>.list-filter{position:sticky;top:0;z-index:6;display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;max-width:none;margin:8px 0 18px;padding:10px 14px;box-shadow:0 2px 0 var(--page)}
 /* The bar itself is square and page-coloured, with its rounded panel drawn behind the controls, so text scrolling
    under the stuck bar does not show at its corners. */
@@ -485,8 +483,7 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
 .article-layout .article-style .outcome-buttons button[aria-pressed=true]{box-shadow:inset 0 0 0 2px var(--ink)}
 .article-layout .article-style .outcome-buttons button:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
 /* The effects are one list in the reading measure (DESIGN.md §4): each a row with its outcome chip, in the outcome's
-   colour, before its name, and a hairline between rows. The toolbar above takes the same width, so the column has one
-   right edge. */
+   colour, before its name, and a hairline between rows. */
 /* The doubled class outranks the reading-width cap on unclassed lists (top of this file). */
 .article-layout .article-style .list-filter-section.list-filter-section>ul{max-width:29em;margin:0 0 36px;padding:0;list-style:none}
 .article-layout .article-style .list-filter-section>ul>li{position:relative;margin:0;padding:14px 0;border:0;border-bottom:1px solid var(--line);--entry-ground:var(--page)}
