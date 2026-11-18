@@ -85,7 +85,7 @@ Triggers `deploy.yaml` after successful processing via `repository_dispatch`.
 |---------|---------|
 | Mondays at 01:30 UTC, manual dispatch | `main` |
 
-Besides checking links, it compares `assets/gforms/` with the live Google Forms. If a form has changed, it opens an issue assigned to the site maintainer. Fix it promptly by running `python3 scripts/build_google_forms.py` and committing the result, because Google may discard responses sent from the site until then. The issue closes itself once the definitions match again.
+Besides checking links, it compares `assets/gforms/` with the live Google Forms. If a form has changed, it opens an issue assigned to the site maintainer. Fix it promptly by running `python3 scripts/build_google_forms.py` and committing the result, because Google may discard responses sent from the site until then. If the script stops with an error, the site cannot reproduce the change: undo it in Google or update `layouts/partials/google_form.html`. The issue closes itself once the definitions match again.
 
 ### [spell-check.yaml](workflows/spell-check.yaml)
 **Spelling validation using codespell**

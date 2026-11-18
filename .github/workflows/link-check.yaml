@@ -541,6 +541,6 @@ jobs:
             gh issue close "$EXISTING" --comment "The site's copy matches the live forms again."
           fi
 
-      - name: Fail the run if Google could not be reached
-        if: steps.compare.outputs.code == '2'
+      - name: Fail the run if the comparison could not finish
+        if: steps.compare.outputs.code != '0' && steps.compare.outputs.code != '1'
         run: exit 1
