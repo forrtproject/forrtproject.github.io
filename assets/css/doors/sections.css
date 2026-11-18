@@ -78,6 +78,10 @@
 .pub-citation-section{margin:10px 0;font-size:15px}
 .pub-footer,.partner-footer{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin-top:10px}
 .pub-buttons,.partner-buttons{display:flex;flex-wrap:wrap;gap:6px}
+/* A publication's links are one set of buttons: the same size and colours, with the icon and label centred. */
+.article-layout .article-style .pub-card .pub-buttons .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:10px 22px!important;border-color:var(--link);border-radius:999px!important;color:var(--link);font-size:17px!important;line-height:1.3!important}
+.article-layout .article-style .pub-card .pub-buttons .btn:is(:hover,:focus-visible){border-color:var(--ink);background:var(--ink);color:#fff}
+.pub-card .pub-buttons .btn i{line-height:1}
 .pub-metrics{display:flex;gap:10px}
 .pub-metric-label{display:block;font-size:15px}
 .partner-content{display:grid;grid-template-columns:96px minmax(0,1fr);gap:16px}
