@@ -79,16 +79,26 @@
       </div>
       {{ partial "doors/resource_keywords" . }}
     </article>
-    <section class="article-card" aria-label="About this resource">
+    {{/* The clusters the directory filters by, from forrt_clusters_new; none when that is empty. Each with the small
+         mark in its colour from the clusters wheel, as in the directory, and on a line of its own. The card takes the
+         pale colour and door icon of the first cluster that has one, the cluster Previous and Next follow; with none it
+         stays neutral. */}}
+    {{ $clusterItems := slice }}{{ $lead := 0 }}
+    {{ with index (partialCached "doors/resource_index" (site.GetPage "/resources") "resources").items .RelPermalink }}{{ with .clusters }}
+      {{ $num := partialCached "doors/cluster_numbers.html" "n" }}
+      {{ range $name := . }}
+        {{ $n := index $num (lower $name | urlize) }}{{ $mark := "" }}
+        {{ with $n }}{{ $mark = printf `<span class="cl-mark" style="--c: var(--cl%d)" aria-hidden="true"></span>` . }}{{ if not $lead }}{{ $lead = . }}{{ end }}{{ end }}
+        {{ $label := $name | htmlEscape }}{{ with index $clusterPages (lower $name) }}{{ $label = printf `<a href="%s">%s</a>` . $label }}{{ end }}
+        {{ $clusterItems = $clusterItems | append (printf `<span class="cl-item">%s<span>%s</span></span>` $mark $label) }}
+      {{ end }}
+    {{ end }}{{ end }}
+    <section class="article-card{{ with $lead }} article-card--cluster{{ end }}" aria-label="About this resource"{{ with $lead }} style="--c: var(--cl{{ . }}); --c-bg: var(--cl{{ . }}-bg);"{{ end }}>
       <h2>About this resource</h2>
+      {{ with $lead }}<span class="article-card__door" aria-hidden="true">{{ partial "clusters/icon.html" . }}</span>{{ end }}
       <dl>
         {{ range $details }}{{ if .values }}<dt{{ with .class }} class="{{ . }}"{{ end }}>{{ cond (gt (len .values) 1) .labels .label }}</dt><dd{{ with .class }} class="{{ . }}"{{ end }}>{{ delimit .values ", " }}</dd>{{ end }}{{ end }}
-        {{/* The clusters the directory filters by, from forrt_clusters_new; none when that is empty. */}}
-        {{ with index (partialCached "doors/resource_index" (site.GetPage "/resources") "resources").items .RelPermalink }}{{ with .clusters }}
-          {{ $names := slice }}
-          {{ range $name := . }}{{ with index $clusterPages (lower $name) }}{{ $names = $names | append (printf `<a href="%s">%s</a>` . ($name | htmlEscape)) }}{{ else }}{{ $names = $names | append ($name | htmlEscape) }}{{ end }}{{ end }}
-          <dt>{{ cond (gt (len $names) 1) "Clusters" "Cluster" }}</dt><dd>{{ delimit $names ", " | safeHTML }}</dd>
-        {{ end }}{{ end }}
+        {{ with $clusterItems }}<dt>{{ cond (gt (len .) 1) "Clusters" "Cluster" }}</dt><dd class="cl-list">{{ delimit . "" | safeHTML }}</dd>{{ end }}
         <dt>Last updated</dt><dd>{{ .Lastmod.Format "2 January 2006" }}</dd>
       </dl>
     </section>
@@ -99,7 +109,7 @@
       <nav class="article-widget" aria-labelledby="resource-pager-label">
         {{/* The cluster's name opens the directory filtered to it, with the slug resources.js reads from the address. */}}
         {{ $directory := relref $ "/resources" }}
-        <p class="post-nav-scope" id="resource-pager-label">{{ with $cluster }}More from the cluster <a href="{{ $directory }}?cluster={{ $cluster | lower | replaceRE "[^a-z0-9]+" "-" }}">{{ $cluster }}</a>{{ else }}More <a href="{{ $directory }}">resources</a>{{ end }}, A to Z</p>
+        <p class="post-nav-scope" id="resource-pager-label">{{ with $cluster }}{{/* With one cluster, named in the card just above, "this cluster"; with several, the name says which. */}}More from {{ if eq (len $clusterItems) 1 }}<a href="{{ $directory }}?cluster={{ $cluster | lower | replaceRE "[^a-z0-9]+" "-" }}">this cluster</a>{{ else }}the cluster <a href="{{ $directory }}?cluster={{ $cluster | lower | replaceRE "[^a-z0-9]+" "-" }}">{{ $cluster }}</a>{{ end }}{{ else }}More <a href="{{ $directory }}">resources</a>{{ end }}, A to Z</p>
         <div class="post-nav">
           {{ with .prev }}
           <div class="post-nav-item post-nav-prev">

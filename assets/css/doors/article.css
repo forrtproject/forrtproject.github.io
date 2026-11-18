@@ -378,21 +378,22 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 /* Starting points (the action_cards shortcode and the Replication Hub's Start here): solid bricks with studs,
    laid edge to edge like a short wall. The bricks are for a handful of actions; long lists are rows (hub.css).
    A row runs through the four brick colours (--brick1 to --brick4 in tokens.css), which stay clear of the
-   area colours and carry no meaning. The Replication Hub's bricks take their stages' colours instead (hub.css). */
+   area colours and carry no meaning. The Replication Hub's bricks take their stages' colours instead (hub.css).
+   Outside an article, a container with the class brick-row takes the same bricks (the resources directory, Tags). */
 .action-cards li:nth-child(4n+1){--tone:var(--brick1)}.action-cards li:nth-child(4n+2){--tone:var(--brick2)}
 .action-cards li:nth-child(4n+3){--tone:var(--brick3)}.action-cards li:nth-child(4n+4){--tone:var(--brick4)}
-:is(.article-layout .article-style,.article-layout .article-head,.hub-start) .action-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:16px 5px;list-style:none;margin:26px 0 32px;padding:0;max-width:none}
-:is(.article-layout .article-style,.article-layout .article-head,.hub-start) .action-cards li{position:relative;margin:0;--brick:var(--tone)}
+:is(.article-layout .article-style,.article-layout .article-head,.hub-start,.brick-row) .action-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:16px 5px;list-style:none;margin:26px 0 32px;padding:0;max-width:none}
+:is(.article-layout .article-style,.article-layout .article-head,.hub-start,.brick-row) .action-cards li{position:relative;margin:0;--brick:var(--tone)}
 /* The studs: short blocks along the top edge, on a pseudo-element so the text sits on a plain fill. */
-:is(.article-layout .article-style,.article-layout .article-head,.hub-start) .action-cards li::before{content:"";position:absolute;left:14px;right:14px;top:-8px;height:8px;background:linear-gradient(90deg,transparent 6px,var(--brick) 6px 28px,transparent 28px) left top/34px 8px space no-repeat;border-radius:3px 3px 0 0;pointer-events:none}
-:is(.article-layout .article-style,.article-layout .article-head,.hub-start) .action-cards a{display:flex;flex-direction:column;gap:4px;height:100%;box-sizing:border-box;min-height:96px;padding:16px 18px 22px;background:var(--brick);border-radius:3px;box-shadow:inset 0 -6px 0 rgb(0 0 0/.24);color:#fff;text-decoration:none;-webkit-print-color-adjust:exact;print-color-adjust:exact}
-:is(.article-layout .article-style,.article-layout .article-head,.hub-start) .action-cards strong{font:500 24px/1.15 var(--display);color:#fff}
-:is(.article-layout .article-style,.article-layout .article-head,.hub-start) .action-cards span{font:400 17px/1.4 var(--text);color:#fff}
-:is(.article-layout .article-style,.article-layout .article-head,.hub-start) .action-cards a:hover strong{text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:4px}
-:is(.article-layout .article-style,.article-layout .article-head,.hub-start) .action-cards a:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+:is(.article-layout .article-style,.article-layout .article-head,.hub-start,.brick-row) .action-cards li::before{content:"";position:absolute;left:14px;right:14px;top:-8px;height:8px;background:linear-gradient(90deg,transparent 6px,var(--brick) 6px 28px,transparent 28px) left top/34px 8px space no-repeat;border-radius:3px 3px 0 0;pointer-events:none}
+:is(.article-layout .article-style,.article-layout .article-head,.hub-start,.brick-row) .action-cards a{display:flex;flex-direction:column;gap:4px;height:100%;box-sizing:border-box;min-height:96px;padding:16px 18px 22px;background:var(--brick);border-radius:3px;box-shadow:inset 0 -6px 0 rgb(0 0 0/.24);color:#fff;text-decoration:none;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+:is(.article-layout .article-style,.article-layout .article-head,.hub-start,.brick-row) .action-cards strong{font:500 24px/1.15 var(--display);color:#fff}
+:is(.article-layout .article-style,.article-layout .article-head,.hub-start,.brick-row) .action-cards span{font:400 17px/1.4 var(--text);color:#fff}
+:is(.article-layout .article-style,.article-layout .article-head,.hub-start,.brick-row) .action-cards a:hover strong{text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:4px}
+:is(.article-layout .article-style,.article-layout .article-head,.hub-start,.brick-row) .action-cards a:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
 @media(prefers-reduced-motion:no-preference){
-  :is(.article-layout .article-style,.article-layout .article-head,.hub-start) .action-cards li{transition:transform .15s}
-  :is(.article-layout .article-style,.article-layout .article-head,.hub-start) .action-cards li:hover{transform:translateY(-3px)}
+  :is(.article-layout .article-style,.article-layout .article-head,.hub-start,.brick-row) .action-cards li{transition:transform .15s}
+  :is(.article-layout .article-style,.article-layout .article-head,.hub-start,.brick-row) .action-cards li:hover{transform:translateY(-3px)}
 }
 /* A disclosure inside a list item (the effects on /reversals/) is a small toggle under the entry, not a full-width bar. */
 .article-layout .article-style li .spoiler{margin:4px 0 12px;background:none;border-radius:0}
@@ -631,3 +632,19 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
   .article-layout :is(.card-authors-compact,.card-author-plain,.card-authors:not(:has(li:not(.card-author-plain)))){display:none}
   .article-layout .article-card-article:not(:has(.card-authors li:not(.card-author-plain),.card-more,dl>dt:nth-child(3))){display:none}
 }
+/* A cluster's small mark in its colour from the clusters wheel (resource pages' "About this resource"; DESIGN.md §6). */
+.cl-mark{display:inline-block;flex:none;width:10px;height:10px;margin-inline-end:6px;border-radius:2px;background:var(--c,var(--soft));-webkit-print-color-adjust:exact;print-color-adjust:exact}
+/* A resource's card in its first cluster's pale colour, with that cluster's wheel icon in a small door
+   (curated_resources/single.html; the cluster page's head mark, clusters.css .cluster-hero__mark, at card size). */
+.article-layout .article-card--cluster{background:var(--c-bg)}
+@media(max-width:1000px){.article-layout .article-card--cluster{position:relative}}
+/* On a phone a little less padding keeps a long cluster name and its mark on one line from about 390 px. */
+@media(max-width:760px){.article-layout .article-card--cluster{padding-inline:18px}}
+.article-layout .article-card--cluster h2{padding-inline-end:52px}
+.article-card__door{position:absolute;top:18px;inset-inline-end:18px;display:grid;place-items:center;width:40px;height:48px;background:var(--c);border-radius:20px 20px 3px 3px;box-shadow:inset 0 -4px 0 rgb(0 0 0/.22);color:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.article-card__door svg{width:20px;height:20px;margin-top:5px}
+.article-card dd.cl-list{display:flex;flex-direction:column;gap:4px}
+.cl-item{display:flex;align-items:baseline}
+.cl-item .cl-mark{transform:translateY(-1px)}
+/* In print the card keeps the plain print styling above, without the cluster fill or door. */
+@media print{.article-layout .article-card--cluster{background:none;padding:0}.article-card__door{display:none}}

@@ -1,0 +1,10 @@
+{{/* /forrt_clusters/: the seven earlier cluster names (the FORRT_clusters taxonomy) as bricks with their counts, largest
+     first, in the brick colours, which carry no meaning (DESIGN.md §6): the current clusters' colours belong to the 11
+     clusters, which these terms do not map onto. Then the routes to the directory and the current clusters.
+     Input: the taxonomy page. */}}
+{{ $page := . }}
+<section class="brick-row topic-index">
+  <h2 class="visually-hidden">Earlier clusters</h2>
+  <ul class="action-cards">{{ range $page.Data.Terms.ByCount }}<li><a href="{{ .Page.RelPermalink }}"><strong>{{ .Page.Title }}</strong><span>{{ .Count }} resources</span></a></li>{{ end }}</ul>
+</section>
+<p class="topic-index__links">Search and filter all resources in the <a href="{{ relref $page "/resources" }}">resources directory</a>, or browse <a href="{{ relref $page "/clusters" }}">the {{ with hugo.Data.clusters_v4 }}{{ len .clusters }}{{ else }}11{{ end }} current clusters</a>.</p>

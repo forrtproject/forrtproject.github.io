@@ -1,0 +1,19 @@
+{{/* Previous and next cluster at the foot of a cluster's page, each in its own colour with its wheel icon; Previous
+     on the left, Next on the right (DESIGN.md §8). The first cluster has no previous and the last no next.
+     Expects dict: data (clusters_v4), n (this cluster's number). */}}
+{{ $prev := false }}{{ $next := false }}
+{{ range .data.clusters }}
+  {{ if eq (int .number) (sub $.n 1) }}{{ $prev = . }}{{ end }}
+  {{ if eq (int .number) (add $.n 1) }}{{ $next = . }}{{ end }}
+{{ end }}
+{{ if or $prev $next }}
+<nav class="cluster-neighbours" aria-label="Neighbouring clusters">
+  {{ range $i, $c := slice $prev $next }}{{ with $c }}
+  {{ $m := int .number }}
+  <a class="cluster-neighbours__link cluster-neighbours__link--{{ cond (eq $i 0) "prev" "next" }}" href="{{ printf "/clusters/cluster-%d/" $m | relURL }}" rel="{{ cond (eq $i 0) "prev" "next" }}" style="--c: var(--cl{{ $m }}); --c-bg: var(--cl{{ $m }}-bg);">
+    <span class="cluster-neighbours__mark">{{ partial "clusters/icon.html" $m }}</span>
+    <span class="cluster-neighbours__text"><span class="cluster-neighbours__dir">{{ cond (eq $i 0) "Previous" "Next" }}: cluster {{ $m }}</span><span class="cluster-neighbours__name">{{ .name }}</span></span>
+  </a>
+  {{ end }}{{ end }}
+</nav>
+{{ end }}
