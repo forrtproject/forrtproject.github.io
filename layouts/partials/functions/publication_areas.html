@@ -1,0 +1,9 @@
+{{/* The research areas of /publications/, in the order the filter shows them: each is its value in
+     data/publications.yaml (focus_area), its filter label, and its FORRT area colour (DESIGN.md §6).
+     Used by shortcodes/publication_filters.html and shortcodes/publication_list.html. */}}
+{{ return slice
+  (dict "value" "Meta-Research & Scientific Reform" "label" "Meta-research and scientific reform" "area" "res")
+  (dict "value" "Equity, Diversity & Social Justice" "label" "Equity, diversity and social justice" "area" "jus")
+  (dict "value" "Community, Governance & Sustainability" "label" "Community, governance and sustainability" "area" "com")
+  (dict "value" "Education & Pedagogy" "label" "Education and pedagogy" "area" "edu")
+}}

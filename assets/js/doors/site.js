@@ -615,20 +615,31 @@ document.querySelectorAll('.area-more button').forEach((button) => {
   });
 });
 
-// An entry whose details give "Status: …" (the effects on /reversals/) shows that status as a chip beside its name.
-document.querySelectorAll('.article-style li > p > strong:first-child').forEach((name) => {
-  const item = name.closest('li');
-  if (!item.querySelector('.spoiler')) return;
+// An entry of a searchable list whose details give "Status: …" (the effects on /reversals/) shows that status as a
+// chip at the start of its text, and the entry takes the outcome's colour (article.css). Every entry with details gets
+// one, so the outcome counts add up to the number of entries.
+document.querySelectorAll('.list-filter ~ ul > li').forEach((item) => {
+  const details = item.querySelector(':scope > .spoiler');
+  if (!details) return;
+  // Markdown leaves an entry's text bare in a tight list; it gets the paragraph the other entries have.
+  if (!item.firstElementChild.matches('p')) {
+    const p = document.createElement('p');
+    while (item.firstChild !== details) p.append(item.firstChild);
+    item.prepend(p);
+  }
+  const text = item.firstElementChild;
   const line = [...item.querySelectorAll('.spoiler li')].find((li) => /^\s*status:/i.test(li.textContent));
   const status = line ? line.textContent.replace(/^\s*status:\s*/i, '').trim().toLowerCase() : '';
   // One word set for the chips; any qualifier stays in the statistics and in the chip's title.
   // An entry with no status says so, so that it can still be found by outcome.
   const label = ['not replicated', 'reversed', 'mixed', 'replicated'].find((word) => status.startsWith(word) || status.includes(word)) || 'no status';
+  const key = label.replace(/[^a-z]+/g, '-');
   const chip = document.createElement('span');
-  chip.className = `status-chip status-${label.replace(/[^a-z]+/g, '-')}`;
+  chip.className = `status-chip status-${key}`;
   chip.textContent = label;
   if (status !== label) chip.title = status;
-  name.before(chip, ' ');
+  text.prepend(chip, ' ');
+  item.classList.add(`outcome-${key}`);
 });
 
 // A search over the list items after it (shortcodes/list_filter.html): items match on their text, and a
@@ -673,29 +684,51 @@ if (listFilter) {
     jump.append(select);
     listFilter.append(jump);
   }
-  // Status buttons, when the entries carry status chips: show one outcome at a time.
+  // When the entries carry status chips, the outcomes are one bar, each part as long as its share of the entries
+  // and in its outcome's colour, over a row of buttons that show one outcome at a time. The buttons are the controls;
+  // the bar's parts are a shortcut for the pointer, too narrow to tap for the rarer outcomes.
   let status = '';
-  const outcomes = ['not replicated', 'reversed', 'mixed', 'replicated', 'no status'].filter((word) => document.querySelector(`.status-${word.replace(' ', '-')}`));
+  const outcomes = ['replicated', 'mixed', 'not replicated', 'reversed', 'no status']
+    .map((word) => ({word, key: word.replace(' ', '-'), many: document.querySelectorAll(`.list-filter ~ ul .status-${word.replace(' ', '-')}`).length}))
+    .filter(({many}) => many);
   if (outcomes.length) {
+    const box = document.createElement('div');
+    box.className = 'list-filter-status';
+    const bar = document.createElement('div');
+    bar.className = 'outcome-bar';
+    bar.setAttribute('aria-hidden', 'true');
     const row = document.createElement('div');
-    row.className = 'list-filter-status';
+    row.className = 'outcome-buttons';
     row.setAttribute('role', 'group');
     row.setAttribute('aria-label', 'Show by outcome');
-    ['all', ...outcomes].forEach((word) => {
+    const choose = (button) => {
+      status = button.dataset.status;
+      row.querySelectorAll('button').forEach((other) => other.setAttribute('aria-pressed', String(other === button)));
+      box.classList.toggle('is-chosen', Boolean(status));
+      bar.querySelectorAll('span').forEach((part) => part.classList.toggle('is-chosen', part.dataset.status === status));
+      input.dispatchEvent(new Event('input'));
+    };
+    [{word: 'all', key: '', many: 0}, ...outcomes].forEach(({word, key, many}) => {
       const button = document.createElement('button');
       button.type = 'button';
-      button.className = word === 'all' ? 'status-chip' : `status-chip status-${word.replace(' ', '-')}`;
-      const many = word === 'all' ? '' : ` ${document.querySelectorAll(`.list-filter ~ ul .status-${word.replace(' ', '-')}`).length}`;
-      button.textContent = word + many;
-      button.setAttribute('aria-pressed', String(word === 'all'));
-      button.addEventListener('click', () => {
-        status = word === 'all' ? '' : word.replace(' ', '-');
-        row.querySelectorAll('button').forEach((other) => other.setAttribute('aria-pressed', String(other === button)));
-        input.dispatchEvent(new Event('input'));
-      });
+      button.className = key ? `status-chip status-${key}` : 'status-chip';
+      button.dataset.status = key;
+      button.innerHTML = key ? `<span class="outcome-word"></span> <span class="outcome-many">${many}</span>` : '<span class="outcome-word"></span>';
+      button.querySelector('.outcome-word').textContent = word === 'all' ? 'all outcomes' : word;
+      button.setAttribute('aria-pressed', String(!key));
+      button.addEventListener('click', () => choose(button));
       row.append(button);
+      if (!key) return;
+      const part = document.createElement('span');
+      part.className = `status-${key}`;
+      part.dataset.status = key;
+      part.style.flexGrow = many;
+      part.title = `${word}: ${many}`;
+      part.addEventListener('click', () => choose(part.classList.contains('is-chosen') ? row.firstElementChild : button));
+      bar.append(part);
     });
-    listFilter.append(row);
+    box.append(bar, row);
+    listFilter.append(box);
   }
   // Filter buttons (the games portal): each group (fieldset[data-facet]) narrows the list to entries whose
   // data-facets name one of its pressed values; pressing values in several groups narrows by each of them.
@@ -774,7 +807,7 @@ if (entries.length) {
   const bars = new ResizeObserver(pad);
   bars.observe(entryFilter);
   bars.observe(searchRow);
-  // The description is cut to its first lines; an entry whose text runs longer gets the button.
+  // A long description is cut to its first lines and gets the button.
   entries.forEach((item) => {
     const text = item.firstElementChild;
     text.classList.add('entry-text');
@@ -790,17 +823,23 @@ if (entries.length) {
       const open = item.classList.toggle('is-open');
       more.setAttribute('aria-expanded', String(open));
       label(open ? 'less' : 'more');
-      // The width may have changed while it was open, so check again whether the text still runs over.
-      if (!open) item.classList.toggle('is-long', text.scrollHeight > text.clientHeight + 2);
     });
     text.after(more);
   });
   // While a search is typed, the matching entries show in full, so the match can be seen wherever it is.
   const query = entryFilter.querySelector('input');
+  // DESIGN.md §4: a description shows in full unless it runs past six lines; then it shows four and the button.
+  // The heights are read with the cut lifted (.is-measuring), all at once, then the entries are marked.
   const measure = () => {
     if (section.classList.contains('is-searching')) return;
-    const long = entries.map((item) => !item.hidden && !item.classList.contains('is-open') && item.firstElementChild.scrollHeight > item.firstElementChild.clientHeight + 2);
-    entries.forEach((item, i) => { if (!item.hidden && !item.classList.contains('is-open')) item.classList.toggle('is-long', long[i]); });
+    section.classList.add('is-measuring');
+    const long = entries.map((item) => {
+      if (item.hidden) return null;
+      const text = item.firstElementChild;
+      return text.scrollHeight > 6 * parseFloat(getComputedStyle(text).lineHeight) + 2;
+    });
+    section.classList.remove('is-measuring');
+    entries.forEach((item, i) => { if (long[i] !== null) item.classList.toggle('is-long', long[i]); });
   };
   query.addEventListener('input', () => {
     section.classList.toggle('is-searching', Boolean(query.value.trim()));

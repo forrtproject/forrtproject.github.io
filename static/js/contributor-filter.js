@@ -102,15 +102,20 @@
         const filterResults = document.getElementById('filter-results');
         const filterInfo = document.getElementById('filter-info');
 
+        // The letter index and sections (newer generated markup) only make sense for the whole list.
+        const filtering = Boolean(params.project || params.role);
+        const letterIndex = document.querySelector('.contributor-az');
+        if (letterIndex) letterIndex.hidden = filtering;
+
         // If no filters, hide results section and show everything
-        if (!params.project && !params.role) {
+        if (!filtering) {
             if (filterResults) filterResults.style.display = 'none';
             
             document.querySelectorAll('.contributor-group').forEach(group => {
-                group.style.display = 'list-item';
+                group.style.display = '';
             });
             document.querySelectorAll('.contribution').forEach(contrib => {
-                contrib.style.display = 'list-item';
+                contrib.style.display = '';
             });
             return;
         }
@@ -162,7 +167,7 @@
 
                 // Show/hide this contribution
                 if (matches) {
-                    contrib.style.display = 'list-item';
+                    contrib.style.display = '';
                     visibleContributions++;
                 } else {
                     contrib.style.display = 'none';
@@ -171,12 +176,24 @@
 
             // Show/hide the entire group based on visible contributions
             if (visibleContributions > 0) {
-                group.style.display = 'list-item';
+                group.style.display = '';
                 totalMatches++;
             } else {
                 group.style.display = 'none';
             }
         });
+
+        // A match may sit among a contributor's further projects: open them. A letter left with no one hides.
+        if (filtering) {
+            contributorList.querySelectorAll('.contributions-more').forEach(more => {
+                more.open = true;
+                more.querySelector('summary').hidden = true;
+                more.hidden = ![...more.querySelectorAll('.contribution')].some(contrib => contrib.style.display !== 'none');
+            });
+            contributorList.querySelectorAll('.contributor-letter').forEach(letter => {
+                letter.hidden = ![...letter.querySelectorAll('.contributor-group')].some(group => group.style.display !== 'none');
+            });
+        }
 
         // Update filter info with count
         if (filterInfo) {
@@ -210,6 +227,19 @@
 
     // Initialize on page load
     document.addEventListener('DOMContentLoaded', function() {
+        // The letter index stays at the top of the screen; a letter jumped to stops below it, however many rows it takes.
+        const letterIndex = document.querySelector('.contributor-az');
+        if (letterIndex && window.ResizeObserver) {
+            new ResizeObserver(() => document.documentElement.style.setProperty('--contributor-az', letterIndex.offsetHeight + 'px')).observe(letterIndex);
+        }
+        // On a phone the letters scroll sideways; the fade at the right edge goes once the last letter is in view.
+        if (letterIndex) {
+            const markEnd = () => letterIndex.classList.toggle('is-at-end', letterIndex.scrollLeft + letterIndex.clientWidth >= letterIndex.scrollWidth - 2);
+            letterIndex.addEventListener('scroll', markEnd, { passive: true });
+            window.addEventListener('resize', markEnd);
+            markEnd();
+        }
+
         // Check if filter should be collapsed
         const isCollapsed = handleCollapsedFilter();
 

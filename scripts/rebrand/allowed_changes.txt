@@ -94,3 +94,4 @@ about/principles/index.html    # Its description opens with the first heading, n
 summaries/index.html           # Its breadcrumb name is now "Summaries", as its heading, instead of "Overview"
 summaries/open-reproducible/index.html     # A written description instead of the symbol legend, and the same breadcrumb name
 summaries/diversity-equity-inclusion/index.html  # A written meta description instead of the symbol legend, and "Summaries" as the breadcrumb name
+publications/index.html  # #1191: the citation chart moved after the introduction, so the description no longer opens with its "Details on Google Scholar" link. Exempts all its SEO tags: remove once main has the change
