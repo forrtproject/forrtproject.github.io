@@ -1,0 +1,28 @@
+{
+  "updated": "2026-11-17",
+  "total_citations": 1044,
+  "h_index": 13,
+  "i10_index": 15,
+  "years": [
+    {
+      "year": 2022,
+      "citations": 45
+    },
+    {
+      "year": 2023,
+      "citations": 138
+    },
+    {
+      "year": 2024,
+      "citations": 209
+    },
+    {
+      "year": 2025,
+      "citations": 316
+    },
+    {
+      "year": 2026,
+      "citations": 308
+    }
+  ]
+}

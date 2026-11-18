@@ -19,7 +19,9 @@
     {{/* The trail ends with the page itself, as on every other template (doors/crumbs.html). */}}
     <span aria-hidden="true">/</span> <span aria-current="page">{{ $page.LinkTitle }}</span>
   </nav>
-  {{ with .Params.categories }}<div class="article-meta">{{ range . }}<span>{{ . }}</span>{{ end }}</div>{{ end }}
+  {{/* A category the title already names ("Newsletter" above "FORRT Newsletter — May 2026") is left out. */}}
+  {{ $cats := slice }}{{ range .Params.categories }}{{ if not (findRE (printf `(?i)\b%s\b` .) $page.Title 1) }}{{ $cats = $cats | append . }}{{ end }}{{ end }}
+  {{ with $cats }}<div class="article-meta">{{ range . }}<span>{{ . }}</span>{{ end }}</div>{{ end }}
   {{ with .Params.header_logo }}<img class="article-logo" src="{{ . | relURL }}" alt="">{{ end }}
   {{ $heading := .Params.heading_title | default .Title }}
   {{ if .Params.hide_title }}<h1 class="sr-only">{{ $heading }}</h1>{{ else }}<h1>{{ $heading }}</h1>{{ end }}
@@ -30,7 +32,32 @@
     {{ if and (in (slice "post" "educators-corner" "pedagogies") .Type) (not .Date.IsZero) }}<time class="byline-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time>{{ end }}
     {{ if and (eq .Type "post") (ge .ReadingTime 3) }}<span class="byline-time">{{ .ReadingTime }} {{ i18n "minute_read" }}</span>{{ end }}
   </div>
+  {{/* A pedagogy's materials (syllabus, slides, videos, the interview) are what a teacher came for: bricks,
+       each saying where it leads (DESIGN.md §4 action cards). */}}
+  {{ if and (eq .Type "pedagogies") .IsPage .Params.links }}
+  <ul class="action-cards material-cards">
+    {{ range .Params.links }}
+      {{ $link := .url | default "" }}{{ $where := "" }}
+      {{ $u := urls.Parse $link }}
+      {{ if not $u.Scheme }}
+        {{ with $page.Resources.GetMatch $link }}{{ $link = .RelPermalink }}{{ else }}{{ $link = $link | relURL }}{{ end }}
+      {{ end }}
+      {{ $host := strings.TrimPrefix "www." $u.Host }}
+      {{ if strings.HasSuffix (lower $u.Path) ".pdf" }}{{ $where = "PDF" }}
+      {{ else if in $u.Path "/presentation/" }}{{ $where = "Google Slides" }}
+      {{ else if or (eq $host "youtube.com") (eq $host "youtu.be") }}{{ $where = "YouTube" }}
+      {{ else if eq $host "osf.io" }}{{ $where = "OSF" }}
+      {{ else }}{{ $where = $host }}{{ end }}
+      {{/* Where it leads, unless the name already says so ("Interview (pdf)", "CREP's OSF page"). */}}
+      {{ if in (lower .name) (lower $where) }}{{ $where = "" }}{{ end }}
+      {{/* Materials open beside the article, as the theme's buttons for them did and as Doors list entries and menu
+           links to other sites do (doors/list_item, doors/menu_link). */}}
+      <li><a href="{{ $link }}" target="_blank" rel="noopener"><strong>{{ trim .name " " }}</strong>{{ with $where }}<span>{{ . }}</span>{{ end }}</a></li>
+    {{ end }}
+  </ul>
+  {{ else }}
   {{ partial "page_links_div.html" $page }}
+  {{ end }}
 </header>
 {{/* With a hero image (doors/page_hero), that is the page's one picture at the top. */}}
 {{ if not .Params.hero_image }}

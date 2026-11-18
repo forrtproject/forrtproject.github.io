@@ -1,19 +1,58 @@
 {{- define "main" -}}
-{{/* The welcome page for new members: where to start, the teams and the resources. */}}
+{{/* The welcome page for new members: four first steps as numbered bricks, FORRT's projects behind the four
+     area doors of the home page, and a panel for staying in touch. Content: content/welcome/index.md. */}}
+{{ $count := len (where site.RegularPages "Section" "curated_resources") }}
+{{ $resources := "" }}
+{{ if ge $count 100 }}{{ $resources = printf "%s+" (lang.FormatNumberCustom 0 (mul (div $count 100) 100)) }}{{ end }}
 <div class="wrap welcome-page">
   <header class="article-head">
     {{ partial "doors/crumbs" (dict "page" .) }}
     <h1>{{ .Title }}</h1>
     <p class="standfirst">For new FORRT members: an introduction to our work and ways to take part.</p>
-    <p class="welcome-buttons"><a href="{{ "" | relLangURL }}" class="btn btn-primary">Get started</a> <a href="{{ "resources/" | relLangURL }}" class="btn">Explore resources</a></p>
   </header>
-  <div class="welcome-content">
-    {{ partial "doors/content" .Content }}
-  </div>
-  <section class="welcome-community">
-    <h2>Join our community</h2>
-    <p>Meet educators, researchers and students who work on open and reproducible science.</p>
-    <p class="welcome-buttons"><a href="{{ "about/get-involved/" | relLangURL }}" class="btn btn-primary">Get involved</a> <a href="{{ "about/community/" | relLangURL }}" class="btn">Community</a></p>
+
+  {{ with .Params.steps }}
+  <section class="welcome-start" aria-labelledby="welcome-steps-h">
+    <h2 id="welcome-steps-h">Four steps to get started</h2>
+    <ol class="action-cards welcome-steps">
+      {{ range . }}
+      {{ $title := replace .title "{resources}" $resources | replaceRE `\s+` " " | strings.TrimSpace }}
+      <li><a href="{{ .url | relLangURL }}"><strong>{{ $title }}</strong><span>{{ .text }}</span></a></li>
+      {{ end }}
+    </ol>
+  </section>
+  {{ end }}
+
+  {{ with .Params.areas }}
+  <section class="welcome-areas" aria-labelledby="welcome-areas-h">
+    <h2 id="welcome-areas-h">FORRT's work in its four areas</h2>
+    <div class="areas">
+      {{ range . }}
+      {{ $image := resources.Get (printf "images/doors/%s.webp" .image) }}
+      <article class="area area-{{ .key }}" aria-labelledby="welcome-area-{{ .key }}">
+        <div class="area-plate"><img src="{{ $image.RelPermalink }}" alt="{{ .alt }}" width="{{ $image.Width }}" height="{{ $image.Height }}"></div>
+        <div class="area-body">
+          <h3 id="welcome-area-{{ .key }}">{{ .title }}</h3>
+          <ul class="welcome-links">
+            {{ range .links }}<li><a href="{{ .url | relLangURL }}">{{ .title }}</a><p>{{ .text }}</p></li>{{ end }}
+          </ul>
+        </div>
+      </article>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+  <section class="welcome-community" aria-labelledby="welcome-community-h">
+    <h2 id="welcome-community-h">Stay in touch</h2>
+    <p>Most of FORRT's work and conversation happens on Slack. The newsletter brings news, events and opportunities.</p>
+    <p class="welcome-buttons"><a href="https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ" class="btn btn-primary">Join FORRT's Slack</a> <a href="{{ "about/get-involved/#newsletter" | relLangURL }}" class="btn">Get the newsletter</a></p>
+    {{ with .Params.follow }}
+    <h3 id="welcome-follow-h">Follow FORRT</h3>
+    <ul class="welcome-follow" aria-labelledby="welcome-follow-h">
+      {{ range . }}<li><a href="{{ .url }}">{{ .label }}</a></li>{{ end }}
+    </ul>
+    {{ end }}
   </section>
 </div>
 {{- end -}}

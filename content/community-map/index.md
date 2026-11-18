@@ -1,6 +1,9 @@
 ---
 title: FORRT Community Map
 summary: An interactive map illustrating the global reach and diversity of the FORRT community.
+# The date of the map's data, shown with its figures (layouts/community-map/single.html). The page draws the map
+# itself, above this text.
+snapshot: September 2026
 ---
 The FORRT Community Map is a visualization tool that illustrates the global reach and
  diversity of the Framework for Open and Reproducible Research Training (FORRT) community.
@@ -10,7 +13,6 @@ The FORRT Community Map is a visualization tool that illustrates the global reac
  The map underscores FORRT's dedication to inclusivity and its efforts to build a 
  diverse network of scholars, educators, and researchers united in advancing open science principles.
 
-{{< community_map 600 >}}
 
 
 <!-- FORRT Community Map iframe temporarily disabled. The code below represents the planned future rendering of the map. -->

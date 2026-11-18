@@ -15,6 +15,11 @@
 "data" "Data, Code & Packages"
 }}
 
+{{/* Each research area has its FORRT area colour (DESIGN.md §6): the card takes the area's pale ground and its tag
+     the area's colour, so the areas show down the page. A card without an area stays neutral. */}}
+{{ $areaMap := dict }}
+{{ range partial "functions/publication_areas.html" . }}{{ $areaMap = merge $areaMap (dict .value .area) }}{{ end }}
+
 <div class="pub-section-group">
     {{ $description := .Get "description" }}
     {{ if $title }}
@@ -31,33 +36,18 @@
     <div class="pub-list">
         {{ range $i, $_ := $items }}
         {{ $dataType := index $typeMap .type | default .type }}
-        <div class="pub-card" data-aos="fade-up" data-type="{{ $dataType }}"
+        {{ $area := "" }}{{ with .focus_area }}{{ $area = index $areaMap . | default "" }}{{ end }}
+        <div class="pub-card" data-aos="fade-up" data-type="{{ $dataType }}"{{ with $area }} data-area="{{ . }}"{{ end }}
             data-focus="{{ if .focus_area }}{{ .focus_area }}{{ else }}uncategorized{{ end }}">
             <div class="pub-card-body">
 
                 <div class="pub-header">
                     <div class="pub-tags">
-                        {{/* Content Type Pill */}}
-                        {{ $typeLabel := index $typeMap .type }}
-                        {{ if not $typeLabel }}
-                        {{ $typeLabel = .type | humanize | title }}
-                        {{ end }}
-
-                        {{ $typeClass := "" }}
-                        {{ if $typeLabel }}
-                        {{ $typeClass = printf "pill-%s" ($typeLabel | urlize) }}
-                        {{ else }}
-                        {{ $typeClass = printf "pill-%s" (.type | urlize) }}
-                        {{ end }}
-
-                        {{ if eq .type "wip" }}{{ $typeClass = "pill-working-papers" }}{{ end }}
-
-                        <span class="pub-pill {{ $typeClass }}">{{ $typeLabel }}</span>
-
+                        {{/* No content-type tag: each section holds one type, and its heading names it. */}}
                         {{/* Focus Area Pill */}}
                         {{ if .focus_area }}
                         {{ $focusClass := printf "pill-%s" (.focus_area | urlize) }}
-                        <span class="pub-pill {{ $focusClass }}">{{ .focus_area }}</span>
+                        <span class="pub-pill pub-pill-area {{ $focusClass }}">{{ .focus_area }}</span>
                         {{ end }}
                     </div>
                     <span class="pub-year">{{ .year }}</span>

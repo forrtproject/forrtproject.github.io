@@ -78,6 +78,10 @@
 .pub-citation-section{margin:10px 0;font-size:15px}
 .pub-footer,.partner-footer{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin-top:10px}
 .pub-buttons,.partner-buttons{display:flex;flex-wrap:wrap;gap:6px}
+/* A publication's links are one set of buttons: the same size and colours, with the icon and label centred. */
+.article-layout .article-style .pub-card .pub-buttons .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:10px 22px!important;border-color:var(--link);border-radius:999px!important;color:var(--link);font-size:17px!important;line-height:1.3!important}
+.article-layout .article-style .pub-card .pub-buttons .btn:is(:hover,:focus-visible){border-color:var(--ink);background:var(--ink);color:#fff}
+.pub-card .pub-buttons .btn i{line-height:1}
 .pub-metrics{display:flex;gap:10px}
 .pub-metric-label{display:block;font-size:15px}
 .partner-content{display:grid;grid-template-columns:96px minmax(0,1fr);gap:16px}
@@ -101,6 +105,27 @@
 }
 .get-involved-card>:last-child{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
 
+/* Publications: the filters as two drop-downs on a phone (as on Partnerships), buttons on wider screens. The research
+   areas wear their area colours (DESIGN.md §6): the area buttons carry a mark of the colour and fill with it when
+   chosen, and each card takes its area's pale ground, a band of the colour along its top and a tag in the colour. */
+.pub-filter-group{margin:0 0 6px}
+@media(max-width:760px){
+  .pub-filters .pill-bar{display:none}
+  .pub-filters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 10px}
+  .pub-filters #no-resources-warning{grid-column:1/-1}
+  .pub-filters .partner-select{padding-inline-start:12px;font-size:15px}
+}
+.filter-pill[data-area]{display:inline-flex;align-items:center;gap:7px;border-color:var(--area)}
+.filter-pill[data-area]::before{content:"";width:10px;height:10px;border-radius:2px;background:var(--area)}
+.filter-pill[data-area].active{background:var(--area);border-color:var(--area)}
+.filter-pill[data-area].active::before{background:#fff}
+:is(.pub-card,.filter-pill)[data-area=res]{--area:var(--res);--area-bg:var(--res-bg)}
+:is(.pub-card,.filter-pill)[data-area=jus]{--area:var(--jus);--area-bg:var(--jus-bg)}
+:is(.pub-card,.filter-pill)[data-area=com]{--area:var(--com);--area-bg:var(--com-bg)}
+:is(.pub-card,.filter-pill)[data-area=edu]{--area:var(--edu);--area-bg:var(--edu-bg)}
+.pub-card[data-area]{background:var(--area-bg);box-shadow:inset 0 6px 0 var(--area)}
+.pub-card[data-area] .pub-pill-area{background:var(--area);color:#fff}
+
 /* Directories hold cards and lists rather than running text, so a wide screen takes two or more columns. */
 .article-layout-wide :is(.pub-list,.partner-list){grid-template-columns:repeat(auto-fill,minmax(min(100%,420px),1fr));gap:16px}
 .article-layout-wide .article-style .feature-rows{grid-template-columns:repeat(auto-fill,minmax(min(100%,420px),1fr));gap:28px 40px}
@@ -108,8 +133,9 @@
 .article-layout-wide .pub-card,.article-layout-wide .pub-card-body{display:flex;flex-direction:column}
 .article-layout-wide .pub-card-body{flex:1}
 .article-layout-wide .pub-footer{margin-top:auto;padding-top:10px}
-@media(min-width:1001px){.article-layout-wide #contributor-list{columns:3;column-gap:40px}}
-@media(min-width:761px) and (max-width:1000px){.article-layout-wide #contributor-list{columns:2;column-gap:32px}}
+/* Contributors in the older generated markup (one bulleted list), until the next data run replaces it. */
+@media(min-width:1001px){.article-layout-wide ul#contributor-list{columns:3;column-gap:40px}}
+@media(min-width:761px) and (max-width:1000px){.article-layout-wide ul#contributor-list{columns:2;column-gap:32px}}
 .article-layout-wide .contributor-group{max-width:none;break-inside:avoid}
 .article-layout-wide .article-style center{text-align:start}
 
@@ -125,6 +151,35 @@
   .pub-intro>:not(figure){grid-column:1}
 }
 @media(min-width:761px) and (max-width:1000px){.pub-intro{grid-template-columns:minmax(0,1fr) 260px;gap:32px}}
+/* The citation chart (shortcodes/citation_chart.html): the total in display type, then a bar for each year in the
+   link colour, its count above it and the year below; the year still running is lighter. */
+.cite-chart .cite-total{margin:0;font:400 17px/1.2 var(--text);color:var(--ink)}
+.cite-chart .cite-total strong{display:block;font:500 44px/1 var(--display)}
+.article-layout .article-style .cite-chart .cite-index{margin:4px 0 14px;font-size:15px;color:var(--soft)}
+.article-layout .article-style .cite-bars{display:flex;align-items:flex-end;gap:6px;max-width:none;margin:0 0 8px;padding:0;list-style:none}
+.article-layout .article-style .cite-bars li{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;margin:0;font-size:15px;line-height:1.2}
+.cite-bars .cite-bar{display:block;flex:none;width:100%;height:calc(var(--v) * 110px);min-height:2px;background:var(--link);border-radius:3px 3px 0 0}
+.cite-bars .is-partial .cite-bar{background:repeating-linear-gradient(135deg,var(--res-bg) 0 4px,#9fc0d6 4px 7px);box-shadow:inset 0 0 0 1.5px var(--link)}
+.cite-bars .cite-n{margin:0 0 3px;font-weight:600;color:var(--ink)}
+.cite-bars .cite-year{min-height:2.4em;margin-top:4px;color:var(--soft);white-space:nowrap;text-align:center}
+.cite-bars .cite-so-far{display:block;font-size:15px}
+.cite-summary{display:none}
+.article-layout .article-style .cite-chart .cite-note{margin:0 0 6px;font-size:15px;line-height:1.3;color:var(--soft)}
+@media(min-width:761px){.article-layout .article-style .cite-at-end{display:none}}
+/* The introduction is cut to four lines only on a phone; beside the chart on a wider screen it shows in full. */
+@media(min-width:761px){
+  .pub-intro .is-clamped{display:block;-webkit-line-clamp:unset;line-clamp:unset;overflow:visible}
+  .pub-intro .clamp-more{display:none}
+}
+/* On a phone the chart, which is background, follows the publications (DESIGN.md §2), so the filters and the first
+   card come into the first screen. */
+@media(max-width:760px){
+  .article-layout .article-style .cite-at-start{display:none}
+  .article-layout .article-style .cite-at-end{margin:28px 0 10px}
+  .article-layout .article-style .cite-summary{display:block;margin:0 0 10px;font-size:16px;color:var(--soft)}
+  #citation-chart{scroll-margin-top:24px}
+  .cite-summary strong{color:var(--ink);font:500 22px/1 var(--display)}
+}
 
 .reading:has(.pub-intro) .article-head{margin-bottom:14px}
 .reading:has(.pub-intro) .doc-section>hr:first-child{margin:0 0 20px}
@@ -152,16 +207,66 @@
 }
 @media(min-width:1001px) and (max-width:1279px){.article-layout-wide .doc-section:has(>#just-os-fullpage){grid-template-columns:repeat(2,minmax(0,1fr));column-gap:32px}}
 
-/* Contributors: its generated page carries an older inline style, so these rules name the same ids. */
-.article-layout #filter-menu,.article-layout #filter-collapsed{padding:16px 18px;margin:0 0 22px;background:var(--surface);border:0;border-radius:var(--r-large)}
-.article-layout #filter-menu h3{margin:0 0 10px;color:var(--ink);font-size:22px;font-weight:var(--display-weight)}
-.article-layout .filter-field label{font-size:15px}
-.article-layout .filter-field select{width:100%;padding:7px 10px;background:#fff;border:1.5px solid var(--soft);border-radius:var(--r-small);font-size:16px}
-.article-layout #apply-filter,.article-layout #clear-filters{padding:8px 16px;background:var(--link);border-radius:999px;color:#fff;font:600 15px/1.3 var(--text)}
+/* Contributors (scripts/forrt_contribs/tenzing.py and its template). The filter sits beside the introduction on a
+   wide screen; the older generated page names the same ids, so these rules serve both. */
+.article-layout #filter-menu,.article-layout #filter-collapsed{padding:16px 18px;margin:0 0 22px;background:var(--surface);border:0;border-left:0;border-radius:var(--r-large)}
+.article-layout #filter-menu :is(h2,h3){margin:0 0 10px;color:var(--ink);font-size:22px;font-weight:var(--display-weight)}
+.article-layout .filter-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr)) auto;gap:12px;align-items:end}
+.article-layout .filter-field label{display:block;margin:0 0 4px;font-size:15px;font-weight:600}
+.article-layout .filter-field select{width:100%;min-height:44px;padding:7px 10px;background:#fff;border:1.5px solid var(--soft);border-radius:var(--r-small);font-size:16px}
+.article-layout #apply-filter,.article-layout #clear-filters{min-height:44px;padding:8px 16px;border:0;background:var(--link);border-radius:999px;color:#fff;font:600 15px/1.3 var(--text);cursor:pointer}
 .article-layout #apply-filter:hover,.article-layout #clear-filters:hover{background:var(--ink)}
-.article-layout .filter-title{border-bottom:1px solid var(--line)}
-.article-layout #filter-collapsed a{color:var(--link)}
+.article-layout #filter-results{margin-top:12px;font-size:16px}
+.article-layout .filter-title{margin:0 0 4px;font-weight:600;border-bottom:1px solid var(--line)}
+.article-layout #filter-collapsed a{color:var(--link);font-weight:600}
 .article-layout .contribution{font-size:17px;line-height:1.45}
+@media(min-width:901px){
+  .contributors-head{display:grid;grid-template-columns:minmax(0,34em) minmax(340px,480px);justify-content:space-between;gap:40px;align-items:start;margin:0 0 8px}
+  .contributors-head #filter-menu{margin:0}
+  .contributors-head .filter-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .contributors-head .filter-grid>.filter-field:last-child{grid-column:1/-1}
+}
+@media(max-width:560px){.article-layout .filter-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.article-layout .filter-grid>.filter-field:last-child{grid-column:1/-1}}
+/* The letters of the surnames: one row of plain letters that jump to each letter, staying at the top of the screen
+   while the list scrolls (the glossary's letter links, at 44 px). */
+.contributor-az{position:sticky;top:0;z-index:5;display:flex;flex-wrap:wrap;gap:6px 4px;margin:28px 0 8px;padding:12px 0 10px;background:var(--page);box-shadow:0 1px 0 var(--line)}
+.article-layout .article-style .contributor-az a{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;border-radius:var(--r-small);background:var(--surface);color:var(--ink);font:600 17px/1 var(--text);text-decoration:none}
+.article-layout .article-style .contributor-az a:hover{background:var(--foot);text-decoration:underline;text-underline-offset:3px}
+.contributor-az a:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+html:has(.contributor-az){scroll-padding-top:calc(var(--contributor-az,72px) + 12px)}
+@media(max-width:760px){
+  /* On a phone the letters are one line that scrolls sideways, so the list keeps the screen (DESIGN.md §9). The
+     right edge fades out, with an arrow, until the line is scrolled to its end (contributor-filter.js), so the
+     letters past the edge are seen to be there. */
+  .contributor-az{flex-wrap:nowrap;gap:4px;margin:20px -20px 8px;padding:10px 20px 8px;overflow-x:auto;scrollbar-width:none}
+  .article-layout .article-style .contributor-az a{flex:none}
+  .contributor-az::after{content:"›";position:sticky;right:-20px;flex:none;display:flex;align-items:center;justify-content:flex-end;width:56px;margin:-10px -20px -8px -56px;padding:0 10px 2px 0;background:linear-gradient(90deg,rgb(254 253 246/0),var(--page) 55%);color:var(--ink);font:600 30px/1 var(--text);pointer-events:none}
+  .contributor-az.is-at-end::after{visibility:hidden}
+}
+/* Each letter: its heading, then one row per person across the width, the name on the left and the projects, each
+   with its roles after it, on the right, with a hairline between people. Contributions are very unequal, so a
+   heavy contributor makes a taller row and leaves no gap beside it (DESIGN.md §4). On a phone the name sits above. */
+.contributor-letter{margin:0 0 28px}
+.article-layout .article-style .contributor-letter-heading{margin:28px 0 0;padding:0 0 6px;font:500 36px/1 var(--display);color:var(--ink);border-bottom:2px solid var(--ink)}
+.article-layout .article-style ul.contributor-rows{max-width:none;margin:0;padding:0;list-style:none}
+.article-layout .article-style .contributor-rows>.contributor-group{display:grid;grid-template-columns:240px minmax(0,1fr);column-gap:28px;align-items:baseline;max-width:none;margin:0;padding:12px 0;border-bottom:1px solid var(--line);font-size:17px;line-height:1.45}
+.article-layout .article-style .contributor-rows>.contributor-group>:not(.contributor-name){grid-column:2}
+.article-layout .article-style .contributor-name{grid-row:1/span 2;margin:0;font:500 20px/1.3 var(--display)}
+.article-layout .article-style .contributor-name a{color:var(--link)}
+.article-layout .article-style .contributor-rows .contributions-list{max-width:none;margin:0;padding:0;list-style:none}
+.article-layout .article-style .contributor-rows .contribution{max-width:27em;margin:0 0 4px;font-size:17px;line-height:1.45}
+.article-layout .article-style .contributor-rows .contribution:last-child{margin-bottom:0}
+.contribution-roles{color:var(--soft);font-size:16px}
+.contribution-roles::before{content:"— "}
+.article-layout .article-style .contributions-more{margin:4px 0 0}
+.article-layout .article-style .contributions-more>summary{display:inline-flex;align-items:center;min-height:36px;color:var(--link);font-weight:600;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.article-layout .article-style .contributions-more[open]>summary{margin:0 0 4px}
+@media(max-width:760px){
+  .article-layout .article-style .contributor-rows>.contributor-group{grid-template-columns:minmax(0,1fr)}
+  .article-layout .article-style .contributor-rows>.contributor-group>:not(.contributor-name){grid-column:1}
+  .article-layout .article-style .contributor-name{grid-row:auto;margin:0 0 4px}
+  .article-layout .article-style .contributions-more>summary{min-height:44px}
+}
 
 /* Testimonials: portraits float beside the text on a wide screen and sit above it on a phone.
    Their inline size would leave the text a strip about 200 px wide. */
@@ -206,7 +311,7 @@
 .get-involved-card .get-involved-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:12px}
 /* Get Involved is a wide page: its projects fill the width, as many to a row as fit. */
 .article-layout-wide .article-style .get-involved-projects{grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));max-width:none}
-.article-layout-wide .article-style .action-cards{max-width:960px}
+.article-layout-wide .article-style .action-cards{max-width:none}
 .get-involved-card[hidden]{display:none}
 .get-involved-card .get-involved-link{display:inline-flex;align-items:center;min-height:40px;padding:0;color:var(--link);font-weight:600;text-decoration:underline;text-underline-offset:3px}
 
@@ -264,3 +369,60 @@
 }
 .team-slack-note{margin:14px 0 0;padding:12px 16px;background:var(--surface);border-radius:var(--r-large);font-size:17px}
 .team-slack-note a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
+
+/* About us: the FORRT tower in its arched door, as on the home page, beside "Build your own FORRT tower". */
+.article-layout .article-style .tower-picture{float:inline-end;width:min(42%,260px);margin:4px 0 16px 28px;padding:18px 10px 6px;background:var(--edu-bg);border-radius:999px 999px var(--r-small) var(--r-small)}
+.tower-picture img{display:block;width:100%;height:auto}
+.doc-section:has(.tower-picture){display:flow-root}
+@media(max-width:760px){.article-layout .article-style .tower-picture{width:min(40%,150px);margin:2px 0 10px 16px;padding:12px 6px 4px}}
+
+/* Lesson plans: an Education & Pedagogy page, so its plans are pale education cards, as many to a row as fit;
+   each names its plan as a link with what the link opens below it. */
+.article-layout .article-style .lesson-plan-list>ul{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:12px;max-width:none;margin:12px 0 30px;padding:0;list-style:none}
+.article-layout .article-style .lesson-plan-list>ul>li{max-width:none;margin:0;padding:14px 18px 16px;background:var(--edu-bg);border-radius:var(--r-large);font-size:16px;line-height:1.45;color:var(--ink)}
+.article-layout .article-style .lesson-plan-list>ul>li>a:first-child{font:var(--display-weight) 21px/1.25 var(--display);color:var(--edu);text-decoration-color:color-mix(in srgb,var(--edu) 55%,transparent)}
+.article-layout .article-style .lesson-plan-list>ul>li>a:first-child:hover{text-decoration-color:currentColor;text-decoration-thickness:2px}
+.article-layout .article-style .lesson-plan-list>ul>li>br+a,.article-layout .article-style .lesson-plan-list>ul>li>a+a{color:var(--edu)}
+.article-layout .article-style .lesson-plan-list>h3{margin:26px 0 0;font-size:24px}
+/* Beside the prose on a wide screen, after it on a narrow one: the example lesson plan beside the introduction
+   that lists what each plan gives, and the article about the plans beside the motivation (DESIGN.md §7). */
+.lesson-plan-intro,.lesson-plan-motivation{display:flex;flex-direction:column}
+.article-layout .article-style .lesson-plan-sample{order:1;width:min(100%,340px);margin:4px 0 8px;padding:14px 14px 10px;background:var(--edu-bg);border-radius:var(--r-large)}
+.lesson-plan-sample img{display:block;width:100%;height:auto;aspect-ratio:1218/980;object-fit:cover;object-position:top;background:#fff;border:1px solid var(--line);border-radius:4px}
+.lesson-plan-sample figcaption{margin:8px 2px 0;font-size:15px;line-height:1.4;text-align:start}
+.lesson-plan-article{order:1;margin:8px 0 0}
+.article-layout .article-style .lesson-plan-article p{font-size:17px}
+@media(min-width:1001px){
+  :is(.lesson-plan-intro,.lesson-plan-motivation){display:grid;grid-template-columns:minmax(0,580px) minmax(0,380px);justify-content:start;column-gap:64px;align-items:start}
+  :is(.lesson-plan-intro,.lesson-plan-motivation)>*{grid-column:1}
+  .article-layout .article-style :is(.lesson-plan-sample,.lesson-plan-article){grid-column:2;grid-row:1/span 6;width:auto;margin:0}
+  .lesson-plan-intro>:first-child+p{margin-top:0}
+}
+
+/* Get involved: a wide page, so "About FORRT" puts its guide call-out beside the text rather than under it,
+   and no empty band is left beside the prose (DESIGN.md §7). */
+@media(min-width:1001px){
+  .article-layout-wide .doc-section:has(>aside.callout){display:grid;grid-template-columns:minmax(0,580px) minmax(0,440px);justify-content:start;column-gap:64px;align-items:start}
+  .article-layout-wide .doc-section:has(>aside.callout)>*{grid-column:1}
+  .article-layout-wide .article-style .doc-section>aside.callout{grid-column:2;grid-row:1/span 8;max-width:none;margin:6px 0 0}
+}
+
+/* The booklet: the flipbook on a pale panel, then what it covers in each area: a heading in the area's colour over a
+   plain list of links, not a box (DESIGN.md §4). */
+.article-style .booklet-frame{background:var(--surface)!important;border-radius:var(--r-large)}
+.booklet-inside{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:20px 32px;margin:12px 0 8px}
+.booklet-area{--tone:var(--edu);padding-top:10px;border-top:4px solid var(--tone)}
+.booklet-area-res{--tone:var(--res)}
+.booklet-area-jus{--tone:var(--jus)}
+.booklet-area-com{--tone:var(--com)}
+.article-layout .article-style .booklet-area h3{margin:0 0 6px;font-size:22px;line-height:1.2;color:var(--tone)}
+.article-layout .article-style .booklet-area ul{max-width:none;margin:0;padding:0;list-style:none}
+.article-layout .article-style .booklet-area li{max-width:none;margin:0;padding:6px 0;font-size:17px;line-height:1.4}
+.article-layout .article-style .booklet-area a{color:var(--ink);text-decoration-color:color-mix(in srgb,var(--tone) 55%,transparent)}
+.article-layout .article-style .booklet-area a:hover{color:var(--tone);text-decoration-color:currentColor}
+/* 44 px targets on phones for the booklet's and lesson plans' links (DESIGN.md §9). */
+@media(max-width:760px){
+  .article-layout .article-style .booklet-area li{display:flex;align-items:center;min-height:44px;padding:0}
+  .article-layout .article-style .booklet-area a,.article-layout .article-style .lesson-plan-list>ul>li>a{display:inline-flex;align-items:center;min-height:44px;padding:0}
+}
+.booklet-area .fa-external-link-alt{margin-inline-start:2px;font-size:13px;color:var(--soft)}

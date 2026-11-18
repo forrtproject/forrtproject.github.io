@@ -124,7 +124,10 @@ AUDIT = """() => {
     }
     return Math.round(Math.max(0, ...Object.values(lines)));
   };
+  // A grid's columns sit side by side but are not one line (a contributor's name beside their projects): its items
+  // are measured on their own instead.
   const long = [...main.querySelectorAll('.reading p,.reading li,.lede,.about-statement p,.forward p')]
+    .filter((el) => getComputedStyle(el).display !== 'grid')
     .filter((el) => el.getClientRects().length && lineChars(el) >= 80)
     .map((el) => lineChars(el) + ': ' + el.textContent.trim().slice(0, 40));
   return {
@@ -964,7 +967,7 @@ def check_directory_widths(browser, base, failures):
     expect(order, "a short news post keeps its own image, after its link")
     page.goto(base + "publications/", wait_until="load")
     chart_width, share = page.evaluate("""() => {
-      const box = document.querySelector('.citation-container img').getBoundingClientRect();
+      const box = document.querySelector('.cite-chart, .citation-container img').getBoundingClientRect();
       const seen = Math.max(0, Math.min(box.bottom, innerHeight) - Math.max(box.top, 0));
       return [box.width, seen * box.width / (innerWidth * innerHeight)];
     }""")

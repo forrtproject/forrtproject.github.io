@@ -1,3 +1,4 @@
+import datetime
 import json
 import matplotlib.pyplot as plt
 import os
@@ -33,6 +34,18 @@ i10_index = cited_by_info[2]["i10_index"]["all"]
 graph_data = data["cited_by"]["graph"]
 years = [item["year"] for item in graph_data]
 citations = [item["citations"] for item in graph_data]
+
+# The numbers for the chart that layouts/shortcodes/citation_chart.html draws on /publications/ in the site's own
+# type and colours. The picture below stays as its fallback where this file is missing.
+with open("data/scholar_citations.json", "w") as f:
+    json.dump({
+        "updated": datetime.date.today().isoformat(),
+        "total_citations": total_citations,
+        "h_index": h_index,
+        "i10_index": i10_index,
+        "years": [{"year": year, "citations": count} for year, count in zip(years, citations)],
+    }, f, indent=2)
+print("Citation data saved as data/scholar_citations.json")
 
 # Create figure with specified background color
 fig, ax = plt.subplots(figsize=(6, 4), facecolor="#fefdf6")

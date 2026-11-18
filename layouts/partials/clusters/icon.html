@@ -1,0 +1,5 @@
+{{/* A cluster's wheel icon (clusters/map_icons.html) as an inline SVG in currentColor. Input: the cluster number. */}}
+{{ $icons := partialCached "clusters/map_icons.html" "icons" }}
+{{ $name := index $icons.by_cluster (printf "%d" (int .)) | default $icons.fallback }}
+{{ $p := index $icons.paths $name }}
+{{ return (printf `<svg viewBox="0 0 %v %v" fill="currentColor" aria-hidden="true" focusable="false"><path d="%s"/></svg>` $p.w $p.h $p.d | safeHTML) }}
