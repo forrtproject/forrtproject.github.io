@@ -523,28 +523,30 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
    back to the section; Educators' Corner and Pedagogies are education's, on its pale ground (DESIGN.md §6). */
 .article-layout .article-card-edu{background:var(--edu-bg);box-shadow:inset 0 6px 0 var(--edu);padding-top:26px}
 .article-layout .card-authors{display:grid;gap:14px;margin:0 0 18px;padding:0;list-style:none}
-.article-layout .card-authors li{display:flex;gap:12px;align-items:flex-start;margin:0}
-.article-layout .card-authors img{flex:none;width:56px;height:56px;border-radius:50%;object-fit:cover;background:#fff}
-.article-layout .card-authors li>div{min-width:0}
+/* Photo and name side by side, with the author's links on a row of their own beneath, where even six fit at full size. */
+.article-layout .card-authors>li{display:grid;grid-template-columns:56px minmax(0,1fr);column-gap:12px;align-items:start;margin:0}
+.article-layout .card-authors>li>div{display:contents}
+.article-layout .card-authors>li>div>*{grid-column:2}
+.article-layout .card-authors>li:not(:has(>img))>div>*{grid-column:1/-1}
+.article-layout .card-authors img{grid-row:1/span 3;width:56px;height:56px;border-radius:50%;object-fit:cover;background:#fff}
 .article-layout .card-author-name{font:500 19px/1.2 var(--display);color:var(--ink);overflow-wrap:anywhere}
 .article-layout a.card-author-name{color:var(--link);text-decoration:underline;text-underline-offset:3px}
 .article-layout a.card-author-name:hover{color:var(--ink)}
 .article-layout .card-author-role,.article-layout .card-author-bio{margin:3px 0 0;font-size:15px;line-height:1.4}
-.article-layout .card-authors .network-icon{display:flex;flex-wrap:wrap;gap:0 2px;margin:4px 0 0 -8px;padding:0;list-style:none}
-.article-layout .card-authors .network-icon a{display:inline-flex;align-items:center;justify-content:center;min-width:34px;min-height:34px;color:var(--link);font-size:17px}
+.article-layout .card-authors>li>div>.network-icon{grid-column:1/-1;grid-row:4;display:flex;flex-wrap:nowrap;gap:0;width:max-content;margin:6px 0 0 -8px;padding:0;list-style:none}
+.article-layout .card-authors .network-icon li{flex:none;margin:0}
+.article-layout .card-authors .network-icon a{display:flex;align-items:center;justify-content:center;width:34px;height:34px;color:var(--link);font-size:17px}
 .article-layout .card-authors .network-icon a:hover{color:var(--ink)}
 .article-layout .card-more{margin:0 0 4px}
 .article-layout .card-more a{display:inline-block;padding:11px 0;font-weight:600;color:var(--link);text-decoration:underline;text-underline-offset:3px}
 .article-layout .card-more a::after{content:"\2192";margin-inline-start:6px;text-decoration:none}
 .article-layout .card-more+h2{margin-top:14px}
-@media(max-width:1000px){.article-layout .card-authors .network-icon a{min-width:44px;min-height:44px}}
-/* Beside the text the card is narrow: an author's links share one row, however many there are. */
-@media(min-width:1001px){
-  .article-layout .card-authors li>div{flex:1}
-  .article-layout .card-authors .network-icon{flex-wrap:nowrap}
-  .article-layout .card-authors .network-icon li{flex:0 1 34px;min-width:0}
-  .article-layout .card-authors .network-icon a{flex:1;min-width:0}
+@media(max-width:1000px){
+  .article-layout .card-authors>li>div>.network-icon{margin-inline-start:-13px}
+  .article-layout .card-authors .network-icon a{width:44px;height:44px}
 }
+/* On the narrowest phones six 44 px links are wider than the card. */
+@media(max-width:359px){.article-layout .card-authors>li>div>.network-icon{flex-wrap:wrap;width:auto}}
 /* A news post's single action: one brick with studs (doors/reading). A newsletter's takes the colour the news list
    gives that issue (doors/post_panels). */
 .article-layout .article-style .post-brick{position:relative;display:inline-block;box-sizing:border-box;min-width:min(100%,280px);max-width:100%;min-height:76px;margin-top:10px;padding:20px 26px 26px;background:var(--brick);border-radius:3px;box-shadow:inset 0 -6px 0 rgb(0 0 0/.24);font:500 26px/1.15 var(--display);color:#fff;text-decoration:none;-webkit-print-color-adjust:exact;print-color-adjust:exact}
