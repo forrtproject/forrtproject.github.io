@@ -1,0 +1,1626 @@
+{
+  "activities": [
+    {
+      "clusters": [
+        "Academic Life and Culture"
+      ],
+      "title": "Hackathon on Hackathons",
+      "description": [
+        {
+          "text": "Hackathons are a way to collaborate and problem solve that may be new to many students. This resource introduces the concept of hackathons and how to lead one."
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "Know how to effectively plan and lead a hackathon"
+        }
+      ],
+      "medium": "Google Doc",
+      "delivery": "Hackathon",
+      "time": "anything from 2 hours to days",
+      "resources": [
+        {
+          "text": "docs.google.com",
+          "url": "https://docs.google.com/document/d/1aC5MdVQhmZ_SQzvrv7fxWF1Asf5sVhYD2nPv2eE0gRE/edit"
+        }
+      ],
+      "reference": []
+    },
+    {
+      "clusters": [
+        "Academic Life and Culture"
+      ],
+      "title": "Psychology Job Wiki",
+      "description": [
+        {
+          "text": "This crowdsourced site is intended to provide information to applicants about the status of academic job searches occurring in the academic year in all areas of psychology. The wikis for previous years are still available."
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "Available jobs in psychology (tenure track and other)"
+        }
+      ],
+      "medium": "Job wiki",
+      "delivery": "Sending link to students",
+      "time": "5 minutes",
+      "resources": [
+        {
+          "text": "psychjobsearch.wikidot.com",
+          "url": "http://psychjobsearch.wikidot.com/"
+        }
+      ],
+      "reference": []
+    },
+    {
+      "clusters": [
+        "Academic Life and Culture"
+      ],
+      "title": "Whose open science are we talking about? Research paradigm and open science",
+      "description": [
+        {
+          "text": "have a structured discussion on how open science is conceptualised and identify challenges associated with different types of research (paradigms). Questions for discussion: what comes to your mind when you think about open science? what are the controversies around open science? what are your concerns for adopting open science? how would you define open science in a discipline-specific manner?"
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "develop a more holistic and critical understanding of open science; address potential concerns and/or misconceptions about open science; promote epistemological pluralism"
+        }
+      ],
+      "medium": "discussion",
+      "delivery": "group activity",
+      "time": "1hour",
+      "resources": [
+        {
+          "text": "bpspsychub.onlinelibrary.wiley.com",
+          "url": "https://bpspsychub.onlinelibrary.wiley.com/hub/journal/20448309/homepage/callforpapersopenscience"
+        }
+      ],
+      "reference": []
+    },
+    {
+      "clusters": [
+        "Academic Life and Culture"
+      ],
+      "title": "Open science can enhance research quality and collaboration\nInterview with Dr Ineke Wessel, associate professor in Experimental Psychopathology at the Faculty of Behavioural and Social Sciences",
+      "description": [
+        {
+          "text": "Interview with University of Groningen researcher. Comments on the process of \"convert\"ing to open science. She recommends \"a lecture by Zoltan Dienes, based on Gelman and Loken’s famous paper that compared data analysis to a garden of forking paths,\" and \"The Seven Deadly Sins of Psychology by Chris Chambers.\" She notes being \"a direct witness of the Stapel affair.\" She describes why she is a supporter of pre-registrations. She notes obstacles such as P&T incentives. She describes teaching on the topic of open science. She shares an experience (at a prior SIPS!) where she felt vulnerable as someone new to R in a session. Overall, there are a lot of helpful personal stories that may be useful for persona-development or simply sharing when interacting in conversations on this topic."
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "Quickly and informally getting an introduction to basic open science terms"
+        }
+      ],
+      "medium": "Blog Post (Website)",
+      "delivery": "Discussion group session or portion of a broader lesson",
+      "time": "10 minutes",
+      "resources": [
+        {
+          "text": "rug.nl",
+          "url": "https://www.rug.nl/library/open-access/blog/open-science-can-enhance-research-quality-and-collaboration-10-02-2020?lang=en"
+        }
+      ],
+      "reference": []
+    },
+    {
+      "clusters": [
+        "Academic Life and Culture"
+      ],
+      "title": "50 Ways to Jumpstart Academic Integrity Discussions in Your Class",
+      "description": [
+        {
+          "text": "This is a starting point for a discussion activity that can be targeted to specific integrity issue conversations in a class. Here is an activity plan currently being drafted based on this: "
+        },
+        {
+          "text": "docs.google.com",
+          "url": "https://docs.google.com/document/d/1e-VuvePAbU893QA9YGy0-oDywxBDPSU-ib8IkmmyPaQ/edit"
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "Broadening students' horizons about academic integrity. Understanding the concept, and being able to have solid discussions about the topic."
+        }
+      ],
+      "medium": "Paper and lesson plan",
+      "delivery": "Seminar",
+      "time": "1 hour",
+      "resources": [
+        {
+          "text": "drive.google.com",
+          "url": "https://drive.google.com/file/d/1UqNNmW7Rb3Qr3RplxAzBDMS6gJhzm9pH/view?usp=sharing"
+        }
+      ],
+      "reference": [
+        {
+          "text": "Developed by Renée Gravois Lee, Sam Houston State University and Lisa M. Burns, Quinnipiac University"
+        }
+      ]
+    },
+    {
+      "clusters": [
+        "Academic Life and Culture"
+      ],
+      "title": "Optimism about the future of Psychological Science",
+      "description": [
+        {
+          "text": "Paper about \"psychology's renaissance\": the period following the replication crisis where the focus was on methodological reflection and improvement"
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "- Getting an understanding of the replication crisis and the period that followed afterwards. - Getting an overview of what has improved, and what can still be improved in psychological science"
+        }
+      ],
+      "medium": "Paper",
+      "delivery": "Discussion",
+      "time": "30 minutes",
+      "resources": [
+        {
+          "text": "urisohn.com",
+          "url": "https://urisohn.com/sohn_files/wp/wordpress/wp-content/uploads/2019/01/Psychologys-Renaissance-2018.pdf"
+        }
+      ],
+      "reference": []
+    },
+    {
+      "clusters": [
+        "Academic Life and Culture"
+      ],
+      "title": "Feminist voices in psychology",
+      "description": [
+        {
+          "text": "Psychology's Feminist Voices (PFV) is a web resource which houses oral histories of leading feminist figures in psychology. This may be used in the context of open/reproducible science to demonstrate how history is often told through a particular lens, and there are other diverse voices that have been neglected from mainstream histories. This could spark a discussion about inclusion and diversity in open science"
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "- To familiarise oneself with the diverse history of psychology and to understand how the (re)telling of history in psychology is often done through a biased lens"
+        }
+      ],
+      "medium": "Web based resource",
+      "delivery": "Discussion/independent research",
+      "time": "",
+      "resources": [
+        {
+          "text": "feministvoices.com",
+          "url": "https://feministvoices.com/"
+        }
+      ],
+      "reference": []
+    },
+    {
+      "clusters": [
+        "All potentially"
+      ],
+      "title": "Hagen Cumulative Science Project",
+      "description": [
+        {
+          "text": "Steps to use replication as a target outcome for final year projects emphasis on using original data first then developing to preregistration and so on with aim for publication outcome"
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "Lots really, open science princ, replication, higher level analysis methods as access to larger data sets to start with with guided analysis in class"
+        }
+      ],
+      "medium": "Lecture, seminar, one-to-one support",
+      "delivery": "As needed, would work with online and in person",
+      "time": "Long, final year strategy",
+      "resources": [
+        {
+          "text": "journals.sagepub.com",
+          "url": "https://journals.sagepub.com/doi/pdf/10.1177/1475725719868149"
+        }
+      ],
+      "reference": []
+    },
+    {
+      "clusters": [
+        "Conceptual and statistical knowledge"
+      ],
+      "title": "p-hacking",
+      "description": [
+        {
+          "text": "Demonstrate an example of how a researcher might p-hack using a shiny app"
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "Get a feeling for how p-hacking works"
+        }
+      ],
+      "medium": "Shiny app",
+      "delivery": "In class demo?",
+      "time": "10 minutes",
+      "resources": [
+        {
+          "text": "shinyapps.org/apps/p-hacker",
+          "url": "https://shinyapps.org/apps/p-hacker/"
+        },
+        {
+          "text": ", "
+        },
+        {
+          "text": "projects.fivethirtyeight.com/p-hacking",
+          "url": "https://projects.fivethirtyeight.com/p-hacking/"
+        }
+      ],
+      "reference": []
+    },
+    {
+      "clusters": [
+        "Conceptual and statistical knowledge"
+      ],
+      "title": "Correlation is not causation",
+      "description": [
+        {
+          "text": "A website which demonstrates how two variables can be closely correlated, but are clearly unrelated. Helps students to understand how correlation does not equal causation, using 'real world' data"
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "Gain a clear overview of how correlation is not causation"
+        }
+      ],
+      "medium": "Website",
+      "delivery": "Resource to share with students, can include in lecture slides",
+      "time": "5 mins",
+      "resources": [
+        {
+          "text": "tylervigen.com/spurious-correlations",
+          "url": "http://www.tylervigen.com/spurious-correlations"
+        }
+      ],
+      "reference": []
+    },
+    {
+      "clusters": [
+        "Conceptual and statistical knowledge"
+      ],
+      "title": "Use simulation to understand False Positives",
+      "description": [
+        {
+          "text": "use simulation to recreate the conditions in Simmons et al 2011 to help students understand the extent to which certain research practices inflate the Type I error rate."
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "understand QRP such as p hacking; write simple R codes for simulation;"
+        }
+      ],
+      "medium": "R",
+      "delivery": "flexible, group/individual/homework",
+      "time": "1hour",
+      "resources": [
+        {
+          "text": "journals.sagepub.com",
+          "url": "https://journals.sagepub.com/doi/full/10.1177/0956797611417632"
+        },
+        {
+          "text": "; "
+        },
+        {
+          "text": "osf.io/43zfq",
+          "url": "https://osf.io/43zfq/"
+        }
+      ],
+      "reference": []
+    },
+    {
+      "clusters": [
+        "Conceptual and statistical knowledge"
+      ],
+      "title": "Hypothesis testing with proverbs",
+      "description": [
+        {
+          "text": "The current exercise consisted of developing a hypothesis to test a proverb as if it were a theory, designing and conducting a relevant study, and producing a poster to present the findings. The exercise is presented as an alternative or complement to writing laboratory reports in undergraduate psychology research methods classes. A standard poster presentation was used as the assessment for this task"
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "(a) be familiar with the basic principles of research design and sampling, (b) be able to consider ethical issues relevant to research in psychology, (c) be able to write and format psychological laboratory reports according to American Psychological Association guidelines, and (d) be able to plan and conduct a psychology experiment."
+        }
+      ],
+      "medium": "Research methods class",
+      "delivery": "flexible, group/individual/homework",
+      "time": "1 week+",
+      "resources": [
+        {
+          "text": "journals.sagepub.com",
+          "url": "https://journals.sagepub.com/doi/full/10.1177/0098628319853937"
+        }
+      ],
+      "reference": [
+        {
+          "text": "Gamble, T., Turner-Cobb, J. M., Walker, I., & Holt, N. (2019). Putting Proverbs to the Test: An Engaging Approach for Developing Students’ Hypothesis Testing Skills. Teaching of Psychology, 46(3), 230–235. "
+        },
+        {
+          "text": "doi.org/10.1177/0098628319853937",
+          "url": "https://doi.org/10.1177/0098628319853937"
+        }
+      ]
+    },
+    {
+      "clusters": [
+        "Conceptual and statistical knowledge"
+      ],
+      "title": "Effect size (Cohen's d)",
+      "description": [
+        {
+          "text": "Demonstrate an example of how a researcher might check Cohen's d using a shiny app"
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "Understand how Cohen's D and effect sizes work"
+        }
+      ],
+      "medium": "Shiny app",
+      "delivery": "In class demo?",
+      "time": "5 minutes",
+      "resources": [
+        {
+          "text": "rpsychologist.com/cohend",
+          "url": "https://rpsychologist.com/cohend/"
+        }
+      ],
+      "reference": []
+    },
+    {
+      "clusters": [
+        "Conceptual and statistical knowledge"
+      ],
+      "title": "Visual interpretation of correlation (coefficients)",
+      "description": [
+        {
+          "text": "Demonstrate how to interpret strength of correlation in a scatterplot"
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "Understand how to interpret the strength of a correlation in a scatterplot"
+        }
+      ],
+      "medium": "Website",
+      "delivery": "In-class demo/ Virtual learning environment resources",
+      "time": "10 mins",
+      "resources": [
+        {
+          "text": "guessthecorrelation.com",
+          "url": "http://guessthecorrelation.com/"
+        }
+      ],
+      "reference": []
+    },
+    {
+      "clusters": [
+        "Conceptual and statistical knowledge"
+      ],
+      "title": "Using parapsychology as a way to communicate about false positives",
+      "description": [
+        {
+          "text": "Wiseman et al (2019) compared two types of journal articles published in the European Journal of Parapsychology- a type of Registered Report, and typical (non-preregistered) articles. They showed that the non-preregistered articles were much more likely to report a positive result than the pre-registered articles. If you can get students to accept that people are probably not psychic, and that therefore, positive effects are likely to be false positive errors,"
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "-Understand false positive errors; understand how publication bias allows false positives to proliferate; understand how pre-registration reduces the false positive error rate"
+        }
+      ],
+      "medium": "Podcast and article-based lecture",
+      "delivery": "Seminar",
+      "time": "2 hours",
+      "resources": [
+        {
+          "text": "peerj.com/articles/6232",
+          "url": "https://peerj.com/articles/6232/"
+        },
+        {
+          "text": "; "
+        },
+        {
+          "text": "theskepticsguide.org",
+          "url": "https://www.theskepticsguide.org/podcasts/episode-798"
+        }
+      ],
+      "reference": []
+    },
+    {
+      "clusters": [
+        "Conceptual and statistical knowledge"
+      ],
+      "title": "Methodological Thinking Drills",
+      "description": [
+        {
+          "text": "A novel technique for improving introductory psychology students’ ability to identify and evaluate methodological concepts in real-life media by prompting them to analyze secondary source news and blog articles."
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "Improving critical thinking about research concepts and methods"
+        }
+      ],
+      "medium": "Seminar/workshop",
+      "delivery": "Individual/group activity",
+      "time": "60 mins?",
+      "resources": [
+        {
+          "text": "journals.sagepub.com",
+          "url": "https://journals.sagepub.com/doi/full/10.1177/0098628319888093"
+        }
+      ],
+      "reference": [
+        {
+          "text": "Cascio, T. V. (2020). Methodological Thinking Drills: A Novel Technique for Boosting Real-World Methodological Thinking Ability. Teaching of Psychology, 47(1), 63–67. "
+        },
+        {
+          "text": "doi.org/10.1177/0098628319888093",
+          "url": "https://doi.org/10.1177/0098628319888093"
+        }
+      ]
+    },
+    {
+      "clusters": [
+        "Conceptual and statistical knowledge"
+      ],
+      "title": "Teaching Integrity in Empirical Research: A Protocol for Documenting Data Management and Analysis",
+      "description": [
+        {
+          "text": "paper showing a workflow for teaching students how to document their data and analyses"
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "Increasing understanding of how to document their data and analysis"
+        }
+      ],
+      "medium": "Journal article",
+      "delivery": "Reading",
+      "time": "60 minutes?",
+      "resources": [
+        {
+          "text": "bitss.org",
+          "url": "https://www.bitss.org/wp-content/uploads/2014/06/teaching-integrity-in-empirical-research-required1.pdf"
+        }
+      ],
+      "reference": [
+        {
+          "text": "Ball, R., & Medeiros, N. (2012). Teaching integrity in empirical research: A protocol for documenting data management and analysis. The Journal of Economic Education, 43(2), 182-189."
+        }
+      ]
+    },
+    {
+      "clusters": [
+        "Conceptual and statistical knowledge"
+      ],
+      "title": "Teaching of Type I and Type II error",
+      "description": [
+        {
+          "text": "A paper that shows a good practice for teaching of Type I and Type 2 error. It makes intuitive parallels between null hypothesis significance testing and the judicial process."
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "Understanding of Type I/ II errors"
+        }
+      ],
+      "medium": "Journal article",
+      "delivery": "Reading",
+      "time": "15 mins",
+      "resources": [
+        {
+          "text": "doi.org/10.1080/00031305.1971.10478908",
+          "url": "https://doi.org/10.1080/00031305.1971.10478908"
+        }
+      ],
+      "reference": [
+        {
+          "text": "Feinberg, W. E. (1971). Teaching the type I and type II errors: The judicial process. The American Statistician, 25(3), 30-32."
+        }
+      ]
+    },
+    {
+      "clusters": [
+        "Conceptual and statistical knowledge"
+      ],
+      "title": "Interpreting Confidence Intervals",
+      "description": [
+        {
+          "text": "Teach students about various ways to represent variance in data, such as SD, SE, or confidence intervals. Work out together what method might be best."
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "Explain how to interpret CI and how to think about a CI"
+        }
+      ],
+      "medium": "Workshop, interactive. First presentation, later workshop.",
+      "delivery": "Seminar.",
+      "time": "30-40 minutes.",
+      "resources": [
+        {
+          "text": "rpsychologist.com/d3/CI",
+          "url": "https://rpsychologist.com/d3/CI/"
+        }
+      ],
+      "reference": []
+    },
+    {
+      "clusters": [
+        "Conceptual and statistical knowledge"
+      ],
+      "title": "Debunking Handbook",
+      "description": [
+        {
+          "text": "summarises the current state of the science of misinformation and its debunking. It was written by a team of 22 prominent scholars of misinformation and its debunking, and it represents the current consensus on the science of debunking for engaged citizens, policymakers, journalists, and other practitioners."
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "Learn to identify misinformation; effectively prevent and debunk misinformation"
+        }
+      ],
+      "medium": "Website",
+      "delivery": "Reading/seminar",
+      "time": "1 hour",
+      "resources": [
+        {
+          "text": "skepticalscience.com",
+          "url": "https://skepticalscience.com/debunking-handbook-2020-downloads-translations.html"
+        }
+      ],
+      "reference": []
+    },
+    {
+      "clusters": [
+        "Conceptual and statistical knowledge"
+      ],
+      "title": "Statistical rethinking",
+      "description": [
+        {
+          "text": "A blog on statistical rethinking"
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "Reading and seeing R code about statistical rethinking."
+        }
+      ],
+      "medium": "Blog post",
+      "delivery": "Reading",
+      "time": "15 minutes",
+      "resources": [
+        {
+          "text": "david-salazar.github.io",
+          "url": "https://david-salazar.github.io/2020/04/19/statistical-rethinking-week-1/"
+        }
+      ],
+      "reference": []
+    },
+    {
+      "clusters": [
+        "Conceptual and statistical knowledge"
+      ],
+      "title": "Identify and Evaluate Sources: Evaluate Science Literature > Question the Science",
+      "description": [
+        {
+          "text": "Library Guide from Nazarbayev University Library with example questions related to identifying bias and other methodological concerns in scientific literature. Contains \"Reading Scholarly Papers\" infographic. Suitable for introductory contexts."
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "Getting tools to critically evaluate scientific papers"
+        }
+      ],
+      "medium": "Library Guide (Website)",
+      "delivery": "Seminar",
+      "time": "2 hours discussion",
+      "resources": [
+        {
+          "text": "nu.kz.libguides.com/c.php",
+          "url": "https://nu.kz.libguides.com/c.php?g=683093&p=4875096"
+        }
+      ],
+      "reference": []
+    },
+    {
+      "clusters": [
+        "Conceptual and statistical knowledge"
+      ],
+      "title": "Understanding Bayesian parameter estimation",
+      "description": [
+        {
+          "text": "A practical example of how Bayesian parameter works by using a case study of estimating a prisoner's IQ. Useful for introductory courses to (Bayesian) statistics"
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "Develop an understanding of how Bayesian parameter estimation works"
+        }
+      ],
+      "medium": "Paper/ Shiny app",
+      "delivery": "Seminar",
+      "time": "15 mins",
+      "resources": [],
+      "reference": [
+        {
+          "text": "journals.sagepub.com",
+          "url": "https://journals.sagepub.com/doi/abs/10.1177/0963721416643289"
+        }
+      ]
+    },
+    {
+      "clusters": [
+        "Conceptual and statistical knowledge"
+      ],
+      "title": "Understanding Bayesian parameter estimation",
+      "description": [
+        {
+          "text": "RIOTS lecture by E.-J. Wagenmakers about Bayesian estimation"
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "Understand Bayes Theorem"
+        }
+      ],
+      "medium": "Video",
+      "delivery": "Lecture",
+      "time": "1 hour",
+      "resources": [
+        {
+          "text": "youtube.com/watch",
+          "url": "https://www.youtube.com/watch?v=VCxXkMFhu5o&ab_channel=RIOTScienceClub"
+        }
+      ],
+      "reference": []
+    },
+    {
+      "clusters": [
+        "Conceptual and statistical knowledge"
+      ],
+      "title": "Preprints",
+      "description": [
+        {
+          "text": "At some point in the curricula, students are introduced to the system of peer-review. While peer-review is one of the hallmarks of science, it also slows down the process of dissemination of knowledge. Preprints are versions of manuscripts that are not peer-reviewed (yet). They are often uploaded to preprint servers at the same time that they are submitted to a journal."
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "Introduce students to preprints"
+        }
+      ],
+      "medium": "Powerpoint",
+      "delivery": "Seminar",
+      "time": "10 minutes",
+      "resources": [
+        {
+          "text": "docs.google.com",
+          "url": "https://docs.google.com/presentation/d/1KbysZCt7C-RDE7v8Sa_aIB14ZQGTwhe5k2TZrJOHCM0/edit#slide=id.g6031556d35_0_24"
+        }
+      ],
+      "reference": []
+    },
+    {
+      "clusters": [
+        "Conceptual and statistical knowledge"
+      ],
+      "title": "Practice approaching research questions from different epistemologies",
+      "description": [
+        {
+          "text": "The goal of this activity is to teach students to consider different ways of knowing and how these shape our research questions and hypotheses. A detailed plan is linked in the Supporting Resources column"
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "Students will be able to identify epistemological biases that have influenced other researchers, understand that that isn't a bad thing, and approach their own question and hypothesis development situated within an epistemology"
+        }
+      ],
+      "medium": "Lesson plan",
+      "delivery": "Lecture + reading on epistemology, in-class activity",
+      "time": "Flexible, 1 hr",
+      "resources": [
+        {
+          "text": "docs.google.com",
+          "url": "https://docs.google.com/document/d/1naQ5QVR0KrKAVzXrGFXqLDFrj4Qp4D3vwhW9YqQbYi8/edit?usp=sharing"
+        }
+      ],
+      "reference": [
+        {
+          "text": "PoPS 16(4): "
+        },
+        {
+          "text": "journals.sagepub.com/toc/pps/16/4",
+          "url": "https://journals.sagepub.com/toc/pps/16/4"
+        }
+      ]
+    },
+    {
+      "clusters": [
+        "Conceptual and statistical knowledge"
+      ],
+      "title": "Bem's \"Feeling the Future\" - the importance of prior plausibility",
+      "description": [
+        {
+          "text": "Students are introduced to Bem's feeling the future studies as an example of a hypothesis with very low prior plausibility. Use this as a springboard for discussing what can and cannot be inferred from p values"
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "Interpretation of p values; understanding the role of plausibility in scientific inference"
+        }
+      ],
+      "medium": "Seminar",
+      "delivery": "Seminar/pre-seminar reading",
+      "time": "1 hour",
+      "resources": [
+        {
+          "text": "psycnet.apa.org/record/2011-01894-001",
+          "url": "https://psycnet.apa.org/record/2011-01894-001"
+        }
+      ],
+      "reference": []
+    },
+    {
+      "clusters": [
+        "FAIR"
+      ],
+      "title": "Changing the Culture of Data Management and Sharing: A Workshop",
+      "description": [
+        {
+          "text": "A series of videos about data management"
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "Teaches about and discusses data management"
+        }
+      ],
+      "medium": "Video followed by discussion",
+      "delivery": "Video",
+      "time": "approximately 10 minutes per video + discussion time",
+      "resources": [
+        {
+          "text": "youtube.com/playlist",
+          "url": "https://www.youtube.com/playlist?list=PLGTMA6QkejfgsxahcRn0HwFuF8m8lOnOQ"
+        }
+      ],
+      "reference": []
+    },
+    {
+      "clusters": [
+        "FORRT"
+      ],
+      "title": "Gilad Feldman",
+      "description": [
+        {
+          "text": "Course materials, course and workshop videos, and workshop materials of courses Gilad Feldman teaches"
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "Depends per course"
+        }
+      ],
+      "medium": "Lectures/full courses",
+      "delivery": "Syllabus, prerecorded videos",
+      "time": "weeks",
+      "resources": [
+        {
+          "text": "mgto.org/teaching-courses",
+          "url": "https://mgto.org/teaching-courses/"
+        }
+      ],
+      "reference": []
+    },
+    {
+      "clusters": [
+        "Open data and materials"
+      ],
+      "title": "Information on PsychoPy/Converting it to Pavlovia/JS code",
+      "description": [
+        {
+          "text": "Crib sheet on how to convert your psychoPy experiment to Pavlovia/JS, common errors and how to solve them."
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "Increase understanding of both PsychoPy and Pavlovia and how to convert from python to javascript. This is probably only relevant for students who are programming an experiment in PsychoPy and who want to conduct that experiment as an online study"
+        }
+      ],
+      "medium": "Website",
+      "delivery": "Seminars/Workshops",
+      "time": "asynchronous",
+      "resources": [
+        {
+          "text": "youtube.com/user/peircej",
+          "url": "https://www.youtube.com/user/peircej"
+        },
+        {
+          "text": "  "
+        },
+        {
+          "text": "docs.google.com",
+          "url": "https://docs.google.com/document/d/183xmwDgSbnJZHMGf3yWpieV9Bx8y7fOCm3QKkMOOXFQ/edit"
+        }
+      ],
+      "reference": []
+    },
+    {
+      "clusters": [
+        "Open data and materials"
+      ],
+      "title": "Creative Commons Licences",
+      "description": [
+        {
+          "text": "Whenever you use data/code/materials of others, it is important to know what you are allowed to do with it. This is specified in a licence. A class of popular licences in science are the Creative Commons licences. You can discuss these six Creative Commons licences with students, to make sure they understand what they mean when they encounter them. Here’s a description of the licences, as provided by Creative Commons"
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "Understanding creative commons licenses"
+        }
+      ],
+      "medium": "Powerpoint",
+      "delivery": "Verbal discussion",
+      "time": "10 minutes",
+      "resources": [
+        {
+          "text": "docs.google.com",
+          "url": "https://docs.google.com/presentation/d/1KbysZCt7C-RDE7v8Sa_aIB14ZQGTwhe5k2TZrJOHCM0/edit#slide=id.g6031556d35_0_152"
+        }
+      ],
+      "reference": []
+    },
+    {
+      "clusters": [
+        "Open data and materials"
+      ],
+      "title": "Open access",
+      "description": [
+        {
+          "text": "If you want to dive deeper into the topic of Open Access, you can introduce students to the various formats of Open Access publishing: e.g. full open access journals (gold), open access repositories (green), (see "
+        },
+        {
+          "text": "openaccess.nl/nl/wat-is-open-access",
+          "url": "https://www.openaccess.nl/nl/wat-is-open-access"
+        },
+        {
+          "text": ")."
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "Raise awareness of open access papers"
+        }
+      ],
+      "medium": "Powerpoint",
+      "delivery": "Lecture",
+      "time": "30 minutes",
+      "resources": [
+        {
+          "text": "Part of: "
+        },
+        {
+          "text": "figshare.com",
+          "url": "https://figshare.com/articles/presentation/Lecture_Open_Science_for_masterstudents/9963161"
+        }
+      ],
+      "reference": []
+    },
+    {
+      "clusters": [
+        "Open data and materials"
+      ],
+      "title": "A FAIRy tale",
+      "description": [
+        {
+          "text": "Sharing data, materials or code is only useful if it is shared such that it is Findable, Accessible, Interoperable and Reusable. These are the FAIR principles, which are further specified in The FAIR Guiding Principles for scientific data management and stewardship. A nice format to introduce the FAIR principles is by using the brochure ‘A FAIRy tale’, in which the FAIR principles are introduced in fairytale story. \n\nA possible teaching format is:\nSplit the group in four, each group has one topic:\nFindable, Accessible, Interoperable, Reusable\nStudents read the sections of the FAIRytale regarding their topic (30-45 minutes)\nStudents present to fellow students (4x 5 minutes)\nImportantly, students should strive to implement the FAIR principles when sharing data, materials or code. As a supervisor, you can use the FAIR principles as a check-list, to evaluate whether students comply with the FAIR principles."
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "Learning about FAIR data"
+        }
+      ],
+      "medium": "Brochure",
+      "delivery": "Seminar",
+      "time": "30-120 minutes",
+      "resources": [
+        {
+          "text": "forskningsdata.dk/fairytale/index.html",
+          "url": "https://forskningsdata.dk/fairytale/index.html"
+        }
+      ],
+      "reference": []
+    },
+    {
+      "clusters": [
+        "Open data and materials",
+        "Academic Life and Culture"
+      ],
+      "title": "How to be FAIR with your data: A teaching and training handbook for higher education institutions",
+      "description": [
+        {
+          "text": "A handbook which provides guidance, competence profiles and lesson plans on how to make research data FAIR. The main target groups are teachers and trainers at HE institutions."
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "e.g. general principles and concepts of data management, data management planning, metadata, persistent identifiers, backup, data publishing - for more details consult the book, chapter 3.3."
+        }
+      ],
+      "medium": "Handbook",
+      "delivery": "",
+      "time": "",
+      "resources": [],
+      "reference": [
+        {
+          "text": "Engelhardt, C. et al. (2022). How to be FAIR with your data. Universitätsverlag Göttingen. "
+        },
+        {
+          "text": "doi.org/10.17875/gup2022-1915",
+          "url": "https://doi.org/10.17875/gup2022-1915"
+        }
+      ]
+    },
+    {
+      "clusters": [
+        "Preregistration"
+      ],
+      "title": "Registered Reports work",
+      "description": [
+        {
+          "text": "Scheel et al (2021) showed that Registered Reports report support for their hypothesis about 40% of the time, compared to about 95% of standard articles"
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "-We have the solutions to address many of these issues, and they work!"
+        }
+      ],
+      "medium": "Paper",
+      "delivery": "Discussion",
+      "time": "30 minutes",
+      "resources": [
+        {
+          "text": "journals.sagepub.com",
+          "url": "https://journals.sagepub.com/doi/pdf/10.1177/25152459211007467"
+        }
+      ],
+      "reference": []
+    },
+    {
+      "clusters": [
+        "Preregistration"
+      ],
+      "title": "Fake preregistration",
+      "description": [
+        {
+          "text": "Students use an existing study to construct a hypothetical pre-registration for the same study using the information provided in the existing study"
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "Gain an understanding of preregistration"
+        }
+      ],
+      "medium": "Paper-based discussion",
+      "delivery": "Group activity/take home exercise",
+      "time": "30 mins?",
+      "resources": [
+        {
+          "text": "preregistration templates: "
+        },
+        {
+          "text": "osf.io/zab38/wiki/home",
+          "url": "https://osf.io/zab38/wiki/home/"
+        }
+      ],
+      "reference": []
+    },
+    {
+      "clusters": [
+        "Preregistration"
+      ],
+      "title": "Analytic flexibility",
+      "description": [
+        {
+          "text": "Provide student groups with the same dataset and ask them all to test the same hypotheses and cross-examine results from different groups to demonstrate how analytic flexibility changes results, and the importance of pre-registration, etc"
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "Get a feeling for analytic flexibility and how to prevent it"
+        }
+      ],
+      "medium": "Paper-based discussion",
+      "delivery": "Group activity/take home exercise",
+      "time": "30 minutes",
+      "resources": [
+        {
+          "text": "journals.sagepub.com",
+          "url": "https://journals.sagepub.com/doi/10.1177/2515245917747646"
+        }
+      ],
+      "reference": [
+        {
+          "text": "Silberzahn, R., Uhlmann, E. L., Martin, D. P., Anselmi, P., Aust, F., Awtrey, E., Bahník, Š., Bai, F., Bannard, C., Bonnier, E., Carlsson, R., Cheung, F., Christensen, G., Clay, R., Craig, M. A., Dalla Rosa, A., Dam, L., Evans, M. H., Flores Cervantes, I., … Nosek, B. A. (2018). Many Analysts, One Data Set: Making Transparent How Variations in Analytic Choices Affect Results. Advances in Methods and Practices in Psychological Science, 337–356. "
+        },
+        {
+          "text": "doi.org/10.1177/2515245917747646",
+          "url": "https://doi.org/10.1177/2515245917747646"
+        }
+      ]
+    },
+    {
+      "clusters": [
+        "Preregistration"
+      ],
+      "title": "Preregistration for Dissertation Projects",
+      "description": [
+        {
+          "text": "Document for students about to start their dissertation getting them to preregister their dissertation ideas ahead of meeting with the supervisor"
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "Learning how to preregister dissertation ideas ahead of meeting the supervisor"
+        }
+      ],
+      "medium": "Out of class/Within final research methods classes",
+      "delivery": "At-home assignment: preregistering your thesis",
+      "time": "a week?",
+      "resources": [
+        {
+          "text": "osf.io/preprints/metaarxiv/epgjd",
+          "url": "https://osf.io/preprints/metaarxiv/epgjd/"
+        }
+      ],
+      "reference": []
+    },
+    {
+      "clusters": [
+        "Reproducibility and replicability knowledge"
+      ],
+      "title": "Link to RIOT Science Club",
+      "description": [
+        {
+          "text": "Link to the RIOT Science club, links to videos that demonstrate concepts in an easy way."
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "Understand concepts such as simulation, interpreting replications, and tons of others"
+        }
+      ],
+      "medium": "Website",
+      "delivery": "Seminars/extra material",
+      "time": "Around two hours per seminar/workshop",
+      "resources": [
+        {
+          "text": "riotscience.co.uk",
+          "url": "http://riotscience.co.uk/"
+        }
+      ],
+      "reference": []
+    },
+    {
+      "clusters": [
+        "Reproducibility and replicability knowledge"
+      ],
+      "title": "Reproducibilitea",
+      "description": [
+        {
+          "text": "Link to Reproducibilitea, links to Reproducibilitea that discusses reproducibility from grassroot movements"
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "Intro to open science"
+        }
+      ],
+      "medium": "Website",
+      "delivery": "Journal club",
+      "time": "1-2 hours per reproducibilitea session",
+      "resources": [
+        {
+          "text": "reproducibilitea.org",
+          "url": "https://reproducibilitea.org/"
+        }
+      ],
+      "reference": []
+    },
+    {
+      "clusters": [
+        "Reproducibility and replicability knowledge"
+      ],
+      "title": "\"Error Tight\"",
+      "description": [
+        {
+          "text": "Set of exercises for lab groups to identify places in their research workflow where errors may occur and pinpoint ways to address them. It is intended to be completed during a lab meeting."
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "Avoiding errors in research, for example for students' theses"
+        }
+      ],
+      "medium": "Discussion",
+      "delivery": "Lab meeting",
+      "time": "1 hour",
+      "resources": [
+        {
+          "text": "carleton.edu",
+          "url": "https://www.carleton.edu/perception-lab/open-science/error-tight/"
+        }
+      ],
+      "reference": [
+        {
+          "text": "Strand, J. (2021). Error Tight: Exercises for Lab Groups to Prevent Research Mistakes. Retrieved from: ErrorTight.com. "
+        },
+        {
+          "text": "doi:10.31234/osf.io/rsn5y",
+          "url": "https://doi.org/10.31234/osf.io/rsn5y"
+        }
+      ]
+    },
+    {
+      "clusters": [
+        "Reproducibility and replicability knowledge"
+      ],
+      "title": "Reappraising classic studies",
+      "description": [
+        {
+          "text": "Demonstrate importance of replicability as a means of reappraising robustness of 'classic' social psychology studies, e.g., Milgram"
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "Gain understanding of why replicating studies, even classic studies, is important"
+        }
+      ],
+      "medium": "Paper-based discussion",
+      "delivery": "Share supporting resource and discuss, with particular attention to the section on \"From Replication to Reinterpretation\"",
+      "time": "30-60 mins",
+      "resources": [
+        {
+          "text": "journals.sagepub.com",
+          "url": "https://journals.sagepub.com/doi/full/10.1177/0098628316677644#_i1"
+        }
+      ],
+      "reference": [
+        {
+          "text": "Griggs, R. A. (2017). Milgram’s obedience study: A contentious classic reinterpreted. Teaching of Psychology, 44(1), 32-37."
+        }
+      ]
+    },
+    {
+      "clusters": [
+        "Reproducibility and replicability knowledge"
+      ],
+      "title": "UK Consortium for undergraduate reproducible research projects",
+      "description": [
+        {
+          "text": "Multi-site collaboration between universities for running undergraduate research projects in a reproducible manner. Students learn about open research practices, issues with the literature in psychology, methodological rigour etc and they participate in the design of the study which is preregistered on OSF before data collection. Student contributions are credited and they become co-authors on any final research outputs."
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "Gain hands-on experience on how to make research reproducible"
+        }
+      ],
+      "medium": "Thesis projects",
+      "delivery": "Thesis projects",
+      "time": "Duration of final year research projects (institution-dependent)",
+      "resources": [],
+      "reference": [
+        {
+          "text": "Button, K. S., Chambers, C. D., Lawrence, N., & Munafò, M. R. Grassroots Training for Reproducible Science: A Consortium-Based Approach to Empirical Dissertation. Psychology Learning & Teaching. "
+        },
+        {
+          "text": "doi.org/10.1177/1475725719857659",
+          "url": "https://doi.org/10.1177/1475725719857659"
+        }
+      ]
+    },
+    {
+      "clusters": [
+        "Reproducibility and replicability knowledge"
+      ],
+      "title": "\"Prediction Markets\"",
+      "description": [
+        {
+          "text": "After teaching students about the Replication Crisis, I use the following activity within a seminar to reinforce learning. This is an exercise where students are shown a classic study (e.g., Srull & Wyer, 1979) and the associated findings, and then are given some preliminary detail about an associated Registered Replication Report (RRR; e.g., McCarthy et al., 2017) and are asked a series of questions such as \"Do you think this will replicate or not?\", \"Why do you think it will replicate or not?\", \"are there any differences between when the study was performed and now, which might explain differences in findings? (e.g., historical, contextual)?\""
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "- To understand replication within the scientific method. - To distinguish direct/exact and conceptual replications. - To understand contemporary issues in psychology, i.e., the replication crisis. - To critically assess original research findings and replication attempts."
+        }
+      ],
+      "medium": "PowerPoint Slides summarising findings and outlining questions and/or original papers provided to groups of 3-6.",
+      "delivery": "Group activity/discussion",
+      "time": "30 minutes",
+      "resources": [
+        {
+          "text": "See references to use for this activity >"
+        }
+      ],
+      "reference": [
+        {
+          "text": "Developed by Charlotte Pennington using the following original studies and their RRRs:  Srull, T. K., & Wyer, R. S. (1979). The role of category accessibility\nin the interpretation of information about persons: Some determinants and implications. Journal of Personality and\nSocial Psychology, 37, 1660–1672. "
+        },
+        {
+          "text": "doi:10.1037/0022-3514.37.10.1660",
+          "url": "https://doi.org/10.1037/0022-3514.37.10.1660"
+        },
+        {
+          "text": " McCarthy, R. J., Skowronski, J. J., Verschuere, B., Meijer, E. H., Jim, A., Hoogesteyn, K., ... & Yıldız, E. (2018). Registered replication report on Srull and Wyer (1979). Advances in Methods and Practices in Psychological Science, 1(3), 321-336. Verschuere, B., Meijer, E. H., Jim, A., Hoogesteyn, K., Orthey, R., McCarthy, R. J., ... & Yıldız, E. (2018). Registered replication report on Mazar, Amir, and Ariely (2008). Advances in Methods and Practices in Psychological Science, 1(3), 299-317. Experiment 1 from Mazar, N., Amir, O., & Ariely, D. (2008). The dishonesty of honest\r\npeople: A theory of self-concept maintenance. Journal of Marketing Research, 45, 633–644. "
+        },
+        {
+          "text": "doi:10.1509/jmkr.45.6.633",
+          "url": "https://doi.org/10.1509/jmkr.45.6.633"
+        }
+      ]
+    },
+    {
+      "clusters": [
+        "Reproducibility and replicability knowledge"
+      ],
+      "title": "The Turing Way",
+      "description": [
+        {
+          "text": "The Turing Way is an open source community-driven guide to reproducible, ethical, inclusive and collaborative data science."
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "General overview/intro to open and reproducible science"
+        }
+      ],
+      "medium": "Website",
+      "delivery": "Reading",
+      "time": "Weeks to read and discuss chapters",
+      "resources": [
+        {
+          "text": "book.the-turing-way.org",
+          "url": "https://book.the-turing-way.org/"
+        }
+      ],
+      "reference": []
+    },
+    {
+      "clusters": [
+        "Reproducibility and replicability knowledge"
+      ],
+      "title": "Publication bias - harms of file drawing of null effects",
+      "description": [
+        {
+          "text": "Ben Goldacre's TedX talk on publication bias can serve as a really nice springboard for discussions about the consequences of publication bias, ethics of publishing, pre-registration, and so on"
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "Understanding academic publishing and publication bias"
+        }
+      ],
+      "medium": "Video followed by discussion",
+      "delivery": "Seminar",
+      "time": "30-45 mins",
+      "resources": [
+        {
+          "text": "youtube.com/watch",
+          "url": "https://www.youtube.com/watch?v=RKmxL8VYy0M"
+        }
+      ],
+      "reference": []
+    },
+    {
+      "clusters": [
+        "Reproducibility and replicability knowledge"
+      ],
+      "title": "Myth-Busting With Infographics",
+      "description": [
+        {
+          "text": "a creative and engaging myth refutation assignment that uses an infographic format to promote the refutation of psychological misconceptions"
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "Improve students' abilities to spot and assess myths in psychology"
+        }
+      ],
+      "medium": "Individual or group assignment",
+      "delivery": "Assignment",
+      "time": "15 hours",
+      "resources": [
+        {
+          "text": "journals.sagepub.com",
+          "url": "https://journals.sagepub.com/na101/home/literatum/publisher/sage/journals/content/topa/2021/topa_48_2/0098628320977269/20210306/images/large/10.1177_0098628320977269-table3.jpeg"
+        }
+      ],
+      "reference": [
+        {
+          "text": "Cavazos, J. T., Stern, W., Stephenson, E., & Heddy, B. (2021). Myth-Busting With Infographics: Do Creative Assignments Help Students Learn? Teaching of Psychology, 48(2), 117–123. "
+        },
+        {
+          "text": "doi.org/10.1177/0098628320977269",
+          "url": "https://doi.org/10.1177/0098628320977269"
+        }
+      ]
+    },
+    {
+      "clusters": [
+        "Reproducibility and replicability knowledge"
+      ],
+      "title": "Intro and History of Open Science",
+      "description": [
+        {
+          "text": "Paper offering a link to an introductory lecture on the reproducibility crisis in psychology ("
+        },
+        {
+          "text": "osf.io/mh9pe",
+          "url": "https://osf.io/mh9pe/"
+        },
+        {
+          "text": "). Based on this paper, teachers can create their own lecture"
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "Increase awareness and understanding of the reproducibility crisis"
+        }
+      ],
+      "medium": "Lecture",
+      "delivery": "Lecture",
+      "time": "a few hours to create the lecture, approximately 2 hours for the actual lecture",
+      "resources": [
+        {
+          "text": "journals.sagepub.com",
+          "url": "https://journals.sagepub.com/doi/10.1177/0098628318762900"
+        }
+      ],
+      "reference": [
+        {
+          "text": "Chopik WJ, Bremner RH, Defever AM, Keller VN. How (and Whether) to Teach Undergraduates About the Replication Crisis in Psychological Science. Teaching of Psychology. 2018;45(2):158-163. "
+        },
+        {
+          "text": "doi:10.1177/0098628318762900",
+          "url": "https://doi.org/10.1177/0098628318762900"
+        }
+      ]
+    },
+    {
+      "clusters": [
+        "Reproducibility and replicability knowledge"
+      ],
+      "title": "\"Open Lunch\" series at UoL",
+      "description": [
+        {
+          "text": "Recordings and discussion from regular series of talks at the University of Leeds exploring the culture and practice of open and reproducible research in different disciplines"
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "General (preprints, preregistration, open data, barriers to open research)"
+        }
+      ],
+      "medium": "Blog/video",
+      "delivery": "Reading/viewing",
+      "time": "1 hour per lunch session",
+      "resources": [
+        {
+          "text": "leedsunilibrary.wordpress.com",
+          "url": "https://leedsunilibrary.wordpress.com/tag/open-lunch/"
+        }
+      ],
+      "reference": []
+    },
+    {
+      "clusters": [
+        "Reproducibility and replicability knowledge"
+      ],
+      "title": "Lecture on if to teach about the replication crisis or not, how to avoid turning students away from the area",
+      "description": [
+        {
+          "text": "Lecture session covering replication crisis but emphasis on being a positive"
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "Getting familiar with the replication crisis and main terms of open science, as well as initiatives to improve psychological science. Students also learn how to do good research themselves"
+        }
+      ],
+      "medium": "Lecture",
+      "delivery": "Lecture",
+      "time": "1 hour",
+      "resources": [
+        {
+          "text": "osf.io/mh9pe",
+          "url": "https://osf.io/mh9pe/"
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "journals.sagepub.com",
+          "url": "https://journals.sagepub.com/doi/abs/10.1177/0098628318762900"
+        }
+      ],
+      "reference": []
+    },
+    {
+      "clusters": [
+        "Reproducibility and replicability knowledge"
+      ],
+      "title": "CREP project",
+      "description": [
+        {
+          "text": "Project that was e.g. conducted by Bachelor students as part of a intro to stats course. Contains information on how to do a full replication, with which students got practical experience with replications"
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "Getting hands-on experience with replication"
+        }
+      ],
+      "medium": "Assignment",
+      "delivery": "Practicals",
+      "time": "Weeks",
+      "resources": [
+        {
+          "text": "osf.io/stv7w",
+          "url": "https://osf.io/stv7w/"
+        },
+        {
+          "text": ", "
+        },
+        {
+          "text": "osf.io/3vaem",
+          "url": "https://osf.io/3vaem/"
+        }
+      ],
+      "reference": [
+        {
+          "text": "online.ucpress.edu",
+          "url": "https://online.ucpress.edu/collabra/article/5/1/5/112984/A-Demonstration-of-the-Collaborative-Replication"
+        }
+      ]
+    },
+    {
+      "clusters": [
+        "Reproducibility and replicability knowledge"
+      ],
+      "title": "Teaching the how and why of replication studies",
+      "description": [
+        {
+          "text": "Module 1: The credibility crisis. Module 2: Replications as a way of highlighting what is known. Module 3: Resource planning and piloting. Module 4: Preregistration"
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "Module 1 Learning goals: The credibility crisis revealed weaknesses in research; these weaknesses are caused by hidden processes that don’t show up in published reports. Module 2 Learning goals: Close replications test the credibility of a finding. They work best with good documentation & structured ways of choosing replication targets. Module 3 Learning goals: Resources are critical for making your replication precise; you should think through the sample your resources allow & use those to calculate your power. Module 4 Learning goals: To preregister something, create an OSF project & put the replication recipe in the registry. There’s evidence this helps make research more credible"
+        }
+      ],
+      "medium": "Lectures and seminars",
+      "delivery": "Lectures/seminars",
+      "time": "4 weeks?",
+      "resources": [
+        {
+          "text": "forrt.org",
+          "url": "https://forrt.org/educators-corner/004-teaching-why-how-replication/"
+        }
+      ],
+      "reference": [
+        {
+          "text": "Credit to Patrick Forscher: "
+        },
+        {
+          "text": "forrt.org",
+          "url": "https://forrt.org/educators-corner/004-teaching-why-how-replication/"
+        }
+      ]
+    },
+    {
+      "clusters": [
+        "Reproducibility and replicability knowledge"
+      ],
+      "title": "Is there a reproducibility crisis in science? - Matt Anticole",
+      "description": [
+        {
+          "text": "Very brief video introduction to reproducibility crisis in science. Talks about incentive structure in academia. Very broad, approachable and short. Could be useful for UG students."
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "Raise awareness of reproducibility issues in Science"
+        }
+      ],
+      "medium": "Youtube video",
+      "delivery": "Animation",
+      "time": "5 mins",
+      "resources": [
+        {
+          "text": "youtube.com/watch",
+          "url": "https://www.youtube.com/watch?v=FpCrY7x5nEE"
+        }
+      ],
+      "reference": []
+    },
+    {
+      "clusters": [
+        "Reproducibility and replicability knowledge",
+        "Conceptual and statistical knowledge"
+      ],
+      "title": "Escape Room Review Activity",
+      "description": [
+        {
+          "text": "An exam review activity in which students answered questions and solved puzzles in order to escape the review session. In a research methods in psychology (300-level) course, students solved a series of puzzles and review questions."
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "Can be used to cover a range of learning outcomes depending on content used. Particularly helpful for gaining a better understanding of basic research methods, key ideas in reproducibility, and statistical concepts."
+        }
+      ],
+      "medium": "Workshop",
+      "delivery": "Online/in class",
+      "time": "1-3 hours (flexible)",
+      "resources": [
+        {
+          "text": "journals.sagepub.com",
+          "url": "https://journals.sagepub.com/doi/full/10.1177/0098628320901383"
+        }
+      ],
+      "reference": [
+        {
+          "text": "LaPaglia, J. A. (2020). Escape the Evil Professor! Escape Room Review Activity. Teaching of Psychology, 47(2), 141–146. "
+        },
+        {
+          "text": "doi.org/10.1177/0098628320901383",
+          "url": "https://doi.org/10.1177/0098628320901383"
+        }
+      ]
+    },
+    {
+      "clusters": [
+        "Resource"
+      ],
+      "title": "Student initiative for open science workshops",
+      "description": [
+        {
+          "text": "Workshops and recorded lectures targeting psychology students from psychology students"
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "Depends per lecture/workshop"
+        }
+      ],
+      "medium": "Lecture/workshop",
+      "delivery": "Classes",
+      "time": "2 hours per session",
+      "resources": [
+        {
+          "text": "web.archive.org",
+          "url": "https://web.archive.org/web/20230326212847/https://studentinitiativeopenscience.com/workshops/"
+        }
+      ],
+      "reference": []
+    }
+  ],
+  "clusters": [
+    "Academic Life and Culture",
+    "All potentially",
+    "Conceptual and statistical knowledge",
+    "FAIR",
+    "FORRT",
+    "Open data and materials",
+    "Preregistration",
+    "Reproducibility and replicability knowledge",
+    "Resource"
+  ]
+}
