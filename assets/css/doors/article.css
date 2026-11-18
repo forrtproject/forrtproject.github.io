@@ -486,7 +486,7 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .article-layout .article-style .outcome-tile:focus-visible,.article-layout .article-style .outcome-clear:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
 /* Where "not replicated" takes two lines, every tile keeps two, so that the bricks start level. */
 @media(min-width:761px) and (max-width:1240px){.outcome-tile .outcome-word{min-height:2.4em}}
-.article-layout .article-style .outcome-note{max-width:34em;margin:12px 0 0;font-size:16px;line-height:1.45}
+.article-layout .article-style .outcome-note{max-width:31em;margin:12px 0 0;font-size:16px;line-height:1.45}
 /* The toolbar stays at the top of the screen while the effects scroll, up to the end of the list; on a phone only the
    search row and count stay. Rows reached by Tab or Go to stop below it (the scroll padding is its measured height). */
 html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px) + 16px)}
