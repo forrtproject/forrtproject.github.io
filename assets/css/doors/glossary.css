@@ -164,3 +164,82 @@ main:lang(ar) .glossary-layout .article-style .term-credit{font-size:18px}
 /* Chinese titles break at punctuation such as 、 rather than inside a word (工业 / 化); a title with no break
    opportunity still wraps, through the page's overflow-wrap. */
 main:lang(zh) .glossary-layout :is(.reading h1,.term-list a){word-break:keep-all}
+/* Chapters: each letter is a large Newsreader letter on the education area's pale ground (the glossary belongs to
+   Education & Pedagogy, DESIGN.md §6), so a long run of terms breaks into chapters. On a wide screen the letter
+   stands in a column beside its terms and stays in view while they scroll by; elsewhere it heads them as a band. */
+.term-group>h2{display:flex;align-items:center;margin:32px 0 12px;padding:4px 16px;min-height:56px;box-sizing:border-box;background:var(--edu-bg);border-radius:var(--r-large);color:var(--edu);font:500 40px/1 var(--display)}
+.term-grid>.term-group:first-child>h2{margin-top:8px}
+.term-group li{background:#fff;border:1.5px solid var(--line)}
+.term-group li:hover{border-color:var(--edu)}
+@media(max-width:760px){.term-group>h2{min-height:48px;margin:24px 0 10px;font-size:32px}}
+/* Wide screens: the search, the view and the letters in a pale green panel beside the title, which stays in view
+   while the terms scroll by. Letter jumps then land at the top of the screen. */
+@media(min-width:1001px){
+  .glossary-hub .reading{display:grid;grid-template-columns:minmax(0,1fr) 320px;column-gap:40px;align-items:start}
+  .glossary-hub .reading>*{grid-column:1}
+  .glossary-hub .reading>.glossary-tools{grid-column:2;grid-row:1/span 20;align-self:start;position:sticky;top:16px;margin:0;padding:20px;border:0;border-radius:var(--r-large);background:var(--edu-bg)}
+  .glossary-hub .glossary-find{margin:0;max-width:none}
+  .glossary-hub .glossary-find label{font-size:23px;color:var(--edu)}
+  .glossary-hub .glossary-search-row{flex-wrap:wrap}
+  .glossary-hub .glossary-search-row input{flex:1 1 100%}
+  .glossary-hub .glossary-view{margin-top:2px}
+  .glossary-hub .glossary-letters{display:grid;grid-template-columns:repeat(auto-fill,minmax(36px,1fr));gap:6px;margin:16px 0 0;padding:16px 0 0;border-top:1px solid rgba(45,87,80,.25)}
+  .glossary-hub .glossary-letters a{min-width:0;height:38px;background:#fff;font-size:17px}
+  .glossary-hub .glossary-letters a:hover{background:var(--edu);color:#fff}
+  .glossary-hub .glossary-letters a.is-current{background:var(--edu);color:#fff}
+  .glossary-hub .glossary-letters a.is-empty{background:transparent}
+  .glossary-hub:has(.glossary-tools) .term-group{scroll-margin-top:16px}
+  .glossary-hub .standfirst{max-width:32.5em}
+  /* Two cards a row beside the panel, so a card's lines stay under 80 characters (DESIGN.md §7). */
+  .term-group ul{grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr))}
+}
+@media(min-width:1240px){
+  .term-group{display:grid;grid-template-columns:88px minmax(0,1fr);column-gap:24px;align-items:start;margin-top:28px}
+  .term-group>h2{position:sticky;top:16px;justify-content:center;width:88px;height:88px;margin:0;padding:0;font-size:56px}
+  .term-grid>.term-group:first-child{margin-top:8px}
+  .term-grid>.term-group:first-child>h2{margin-top:0}
+  .term-group ul{grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr))}
+}
+.term-grid.is-list .term-group li{border-width:0 0 1px;border-color:var(--line)}
+/* A term page: related terms as the hub's cards, with the start of their definitions; references as a plain list with a hanging indent;
+   the previous and next terms as two cards with the start of theirs. */
+.glossary-layout .article-style .term-related{margin:28px 0 8px}
+.glossary-layout .article-style :is(.term-related>h2,.term-references-heading){margin:28px 0 12px;font-size:24px;color:var(--edu)}
+.glossary-layout .article-style .term-related>h2{margin-top:0}
+.glossary-layout .article-style .term-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr));gap:10px;max-width:none;margin:0 0 10px;padding:0;list-style:none}
+.glossary-layout .article-style .term-cards li{max-width:none;margin:0;padding:12px 16px;background:#fff;border:1.5px solid var(--line);border-radius:var(--r-large);font-size:16px;line-height:1.45}
+.glossary-layout .article-style .term-cards li:hover{border-color:var(--edu)}
+.glossary-layout .article-style .term-cards a{font:600 18px/1.3 var(--text)}
+.glossary-layout .article-style .term-cards p{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin:4px 0 0;font-size:16px;line-height:1.45}
+.glossary-layout .article-style .term-unlinked-line{max-width:32em;margin:12px 0 0;font-size:16px;line-height:1.5;color:var(--soft)}
+.glossary-layout .article-style .term-unlinked-label{font-weight:600}
+.glossary-layout .article-style .term-unlinked-list{display:inline;margin:0;padding:0;list-style:none}
+.glossary-layout .article-style .term-unlinked-list li{display:inline;margin:0;padding:0}
+.glossary-layout .article-style .term-unlinked-list li::before{content:none}
+.glossary-layout .article-style .term-unlinked-list li+li::before{content:", "}
+main:lang(ar) .glossary-layout .article-style .term-unlinked-list li+li::before{content:"، "}
+.glossary-layout .article-style .term-unlinked-list .term-unlinked{color:inherit}
+.glossary-layout .article-style .term-references{margin:0 0 8px;padding:0;list-style:none;font-size:16px;line-height:1.5}
+/* As wide as the definition and the cards above it (article.css caps reference lists at 29.8em). */
+.glossary-layout .article-style ul.term-references.references-list{max-width:none}
+.glossary-layout .article-style .term-references li{max-width:29em;margin:0 0 10px;padding-inline-start:1.5em;text-indent:-1.5em;list-style:none}
+.glossary-layout .article-style .term-references li::before{content:none}
+.glossary-layout .article-style .term-references li:last-child{margin-bottom:0}
+main:lang(ar) .glossary-layout .article-style .term-references{direction:ltr;padding:0}
+.glossary-layout .article-foot .post-nav{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.glossary-layout .article-foot .post-nav-item{max-width:none;padding:14px 16px;background:var(--edu-bg);border-radius:var(--r-large)}
+.glossary-layout .article-foot .post-nav-next:only-child{grid-column:2}
+.glossary-layout .article-foot .post-nav-item>a{display:block;color:var(--ink);text-decoration:none}
+.glossary-layout .article-foot .post-nav-item>a p{margin:2px 0 0;color:var(--link);font:600 18px/1.3 var(--text)}
+.glossary-layout .article-foot .post-nav-item p.post-nav-def{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin:6px 0 0;font-size:15px;color:var(--ink)}
+@media(max-width:560px){.glossary-layout .article-foot .post-nav{grid-template-columns:1fr}.glossary-layout .article-foot .post-nav-next:only-child{grid-column:1}}
+/* The reference list: the hub's panel and letters, with each reference a row in a hanging indent and the terms
+   that cite it underneath. */
+.glossary-references .term-group ul.references-list{display:block;max-width:none;margin:0;padding:0}
+.glossary-references .term-group ul.references-list>li{max-width:29em;margin:0;padding:12px 0 12px 1.5em;text-indent:-1.5em;background:none;border:0;border-bottom:1px solid var(--line);border-radius:0;line-height:1.5}
+.glossary-references .term-group ul.references-list>li:hover{border-color:var(--line)}
+.glossary-references .reference-apa a{color:var(--link);text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.glossary-references .reference-cited{display:block;margin:6px 0 0;text-indent:0;font-size:16px;color:var(--soft)}
+.glossary-references .reference-cited a{color:var(--link);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.glossary-references .reference-cited .term-en{display:none}
+.glossary-references .standfirst{max-width:30em}

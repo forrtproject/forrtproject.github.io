@@ -23,8 +23,11 @@ The Citational Justice Toolkit organizes a collection of tools and practices by 
 
 The aim of this toolkit is to encourage individual researchers to become conscientious in their citation practices, using their citation choices to distribute power more equitably in the academy. We invite you to explore the Citational Justice Toolkit and join us in promoting equity and justice in academia.
 
-***Cite as:***
-> Sauvé, S. A., Middleton, S. L., Gellersen, H., & Azevedo, F. (2025, July 31). In Pursuit of Citational Justice: A Toolkit for Equitable Scholarship. https://doi.org/10.31222/osf.io/qjecy_v2
+{{< callout title="Cite as" tone="justice" >}}
+Sauvé, S. A., Middleton, S. L., Gellersen, H., & Azevedo, F. (2025, July 31). In Pursuit of Citational Justice: A Toolkit for Equitable Scholarship. https://doi.org/10.31222/osf.io/qjecy_v2
+{{< /callout >}}
+
+
 
 
 # Toolkit
@@ -32,10 +35,6 @@ The aim of this toolkit is to encourage individual researchers to become conscie
 ---
 
 We provide a suite of resources to support the use and implementation of the Citational Justice Toolkit:
-
-<a href="/citation-politics/toolkit/" class="btn btn-primary btn-lg btn-block" style="line-height:1;border-radius:6px; font-size:1.5rem;">
-  Toolkit Website
-</a>
 
 ### Manuscript
 
@@ -105,9 +104,4 @@ For **FORRT’s Team Citation Politics** [(#citation-politics)](https://forrt.sl
 - Use social media and public writing to popularize the metaphor of citation as epistemic infrastructure.
 - Share testimonies of those excluded from citations (e.g., oral histories, blog interviews).
 
-<br>
-
 If you see yourself in any of these plans or have any other ideas or suggestions for development of the toolkit, or other ways of engaging with citational practice or patterns (especially as it relates to open research), get in touch via the [#citation-politics channel on FORRT’s Slack](https://forrt.slack.com/archives/C074E9LDES2), email the team at citation-politics@forrt.org, or DM either Team Co-Lead **Sarah Sauvé** or **Helena Gellersen** on [FORRT’s Slack](https://join.slack.com/t/forrt/shared_invite/enQtODMwODI0OTk4ODgzLTM0ZTQ3NDk5MzA1ZjBmNWJjYTVlN2Y2YTk0ZTJhYTY5NDliMDYzMjg2MWE0ZDRhOTY0ZDY3OTRlNDA4ODQ3NjQ). 
-
-***Cite as:***
-> Sauvé, S. A., Middleton, S. L., Gellersen, H., & Azevedo, F. (2025, July 31). In Pursuit of Citational Justice: A Toolkit for Equitable Scholarship. https://doi.org/10.31222/osf.io/qjecy_v2

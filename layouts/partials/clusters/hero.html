@@ -1,0 +1,28 @@
+{{/* The head of a cluster's own page (/clusters/cluster-N/): a panel in the cluster's pale colour with its number,
+     name, description and counts, and its icon from the clusters wheel in a door-shaped mark in the cluster's colour,
+     so the page carries the wheel's colour and icon. The line above the name gives its number, so the breadcrumb ends at "Cluster N". A long description (cluster 11's) shows four lines and "more"
+     (site.js .clamp-desc). Expects dict: page, cluster, total (number of clusters). */}}
+{{ $c := .cluster }}
+{{ $n := int $c.number }}
+{{ $refs := 0 }}{{ range $c.sub_clusters }}{{ $refs = add $refs (len .publications) }}{{ end }}
+<header class="wrap cluster-hero" style="--c: var(--cl{{ $n }}); --c-bg: var(--cl{{ $n }}-bg);">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ "" | relLangURL }}">Home</a> <span aria-hidden="true">/</span> <a href="{{ "nexus/" | relLangURL }}">Educational Nexus</a> <span aria-hidden="true">/</span> <a href="{{ "clusters/" | relLangURL }}">Clusters</a> <span aria-hidden="true">/</span> <span aria-current="page">Cluster {{ $n }}</span></nav>
+</header>
+{{/* The panel sits in the same inset band as the filters and sub-clusters below (the 15 px of .cluster-full-width, without that class, which clusters-page.js reads for back to top), so their left
+     edges line up at every width; the breadcrumb stays at the page gutter, as on other pages. */}}
+<div class="cluster-hero-band" style="--c: var(--cl{{ $n }}); --c-bg: var(--cl{{ $n }}-bg);">
+  <div class="wrap">
+  <div class="cluster-hero__panel">
+    <div class="cluster-hero__text">
+      <p class="cluster-hero__kicker">Cluster {{ $n }} of {{ .total }}</p>
+      {{/* The name alone: the line above already gives the number. */}}
+      <h1 class="clusters-site-heading" itemprop="headline">{{ $c.name }}</h1>
+      {{ with $c.description }}<div class="clamp-desc cluster-hero__desc" data-clamp-name="this cluster"><p>{{ . }}</p></div>{{ end }}
+      {{/* The number of sub-clusters only where the description does not already state it. */}}
+      {{ $stated := findRE `(?i)\b\d+\s+sub-?\s?clusters?\b` ($c.description | default "") 1 }}
+      <p class="cluster-hero__counts">{{ if not $stated }}{{ len $c.sub_clusters }} sub-clusters · {{ end }}{{ $refs }} references</p>
+    </div>
+    <div class="cluster-hero__mark">{{ partial "clusters/icon.html" $n }}</div>
+  </div>
+  </div>
+</div>
