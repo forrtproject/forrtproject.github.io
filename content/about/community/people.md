@@ -8,7 +8,7 @@ active = true  # Activate this widget? true/false
 weight = 20  # Order that this section will appear.
 
 title = "Our community"
-subtitle = "*Embedding open, rigorous, and inclusive scholarship in research and education.*"
+subtitle = "*The people who make FORRT, and how we work together.*"
 
 [content]
   # Choose which groups/teams of users to display.
@@ -51,12 +51,8 @@ subtitle = "*Embedding open, rigorous, and inclusive scholarship in research and
  # css_class = ""
 +++
 
+FORRT is a community of more than 1,500 Slack members and 647 contributors across over 100 projects. We want everyone to be able to take part. We treat one another with respect, argue from evidence, and take responsibility when we get things wrong.
 
-FORRT is committed to building an inclusive, collaborative community where everyone can participate. We seek to treat one another with dignity and respect, fostering civil discourse grounded in critical thinking, reasoned argument, shared knowledge, and verifiable evidence. We recognise we will not always get this right; when mistakes occur, we expect members to listen, take responsibility, and learn from their impact.
+We welcome people of every age, culture, identity, background and ability, and every approach to research: different ways of knowing make open scholarship stronger. Discrimination, harassment and exclusion have no place here.
 
-We value diversity across age, culture, disability, ethnicity, gender identity and expression, language, national origin, neurodiversity, profession, race, religion, sexual orientation, socioeconomic background, technical ability, and other aspects of identity and experience. Discrimination, harassment, and exclusion have no place here.
-
-We also champion epistemological and methodological pluralism. Welcoming diverse approaches to knowledge strengthens Open Scholarship. It broadens the questions we ask, helps challenge assumptions, and contributes to more open, rigorous, inclusive, and equitable higher education.
-
-We are comprised of 1,500+ Slack members, 647 contributors across 100+ projects, 1,200+ newsletter subscribers, and 2,000+ followers on Bluesky (1,000+ on LinkedIn)—and below you find the profiles of our community members.
-For more information on the leadership of the community, please visit the [Steering Committee ](/about/steering-committee/).
+Below are community members with a profile. The [Steering Committee](/about/steering-committee/) leads the community.
