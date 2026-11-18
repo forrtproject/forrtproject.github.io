@@ -749,7 +749,7 @@ if (listFilter) {
       });
       if (heading) heading.hidden = Boolean(query || status || chosen.length) && !any;
     });
-    count.textContent = query && !shown ? `No ${noun} match “${input.value.trim()}”.` : `Showing ${shown} of ${total} ${noun}`;
+    count.textContent = query && !shown ? `No ${noun} match “${input.value.trim()}”.` : !query && 'quiet' in listFilter.dataset ? '' : `Showing ${shown} of ${total} ${noun}`;
     if (empty) empty.hidden = shown > 0;
     if (reset) reset.hidden = !query && !chosen.length;
   });

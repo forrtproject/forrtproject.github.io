@@ -4,6 +4,7 @@ subtitle: An online lab community for those without a lab
 # The meta description: the body starts inside layout wrappers, so its automatic summary stops before the list.
 summary: "We are Nowhere Lab. Anyone from any field is welcome to join who doesn't have a lab but would like the lab meeting experience: new faculty who have no one in their lab yet, ex-academics who now work in industry, freelance sci-commers and consultants, people in a toxic lab, people between jobs and keen undergrads."
 date: 2026-04-28
+phone_toc: false  # A contents box would push the map and the introduction down a screen
 sharing_image: "img/nowherelab-logo.png"
 header_logo: "img/nowherelab-logo.png"
 sharing_image_alt: "Nowhere Lab logo"
@@ -49,8 +50,6 @@ We hold two meetings a week, at different times to accommodate members in differ
 We have a [Slack channel](https://forrt.slack.com/archives/C0B0FKG3GH2) which is the base for our community — somewhere members can interact even if they're unable to attend meetings. Here we share resources, memes, support, and more.
 
 </section>
-
-## Resources
 
 {{< action_cards >}}
 Read the PhD Survival Guide | Collected advice from Nowhere Lab members for anyone considering or starting a PhD | /nowherelab/phd-survival-guide/

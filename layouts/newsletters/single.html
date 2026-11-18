@@ -75,19 +75,18 @@
     </div>
 
     <h2 class="nla-archive-title">Earlier issues</h2>
-    {{/* One heading per year and its issues as month bricks, newest first, running through the four brick colours
-         (DESIGN.md §6), which say nothing about the issue. The latest issue is the large brick above. */}}
-    {{ $n := 0 }}
+    {{/* One heading per year and its issues as month bricks, newest first. Each year has one of the four brick colours
+         (DESIGN.md §6), set by the year's number so that it stays the same as years are added. The latest issue is the
+         large brick above. */}}
     {{ range $yi, $y := $newsletters }}
     {{ $issues := $y.issues }}
     {{ if eq $yi 0 }}{{ $issues = after 1 $issues }}{{ end }}
     {{ with $issues }}
     <section class="nla-year" aria-labelledby="nla-{{ $y.year }}">
       <h3 id="nla-{{ $y.year }}">{{ $y.year }}</h3>
-      <ul class="nla-months">
+      <ul class="nla-months nla-brick-{{ add (mod $y.year 4) 1 }}">
         {{ range . }}
-        <li class="nla-brick-{{ add (mod $n 4) 1 }}"><a href="{{ .url }}"{{ if not .local }} target="_blank" rel="noopener"{{ end }}>{{ .month }}<span class="sr-only"> {{ $y.year }}{{ if not .local }} (opens in a new tab){{ end }}</span></a></li>
-        {{ $n = add $n 1 }}
+        <li><a href="{{ .url }}"{{ if not .local }} target="_blank" rel="noopener"{{ end }}>{{ .month }}<span class="sr-only"> {{ $y.year }}{{ if not .local }} (opens in a new tab){{ end }}</span></a></li>
         {{ end }}
       </ul>
     </section>

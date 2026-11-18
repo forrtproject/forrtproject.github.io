@@ -19,7 +19,7 @@ menu:
 weight: 2
 ---
 
-◈ marks work that was not peer reviewed. ⌺ marks summaries on diversity, equity and inclusion.
+◈ marks work that was not peer reviewed.<br>⌺ marks summaries on diversity,&nbsp;equity&nbsp;and&nbsp;inclusion.
 
 
 {{< summaries >}}

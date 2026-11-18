@@ -510,11 +510,11 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
 }
 .article-layout .article-style .nl-section{margin:0 0 8px}
 .article-layout .article-style .nl-section h2{margin:0 0 12px}
-.article-layout .article-style .nl-section~.nl-section h2,.article-layout .article-style .nl-side>h2{margin-top:36px}
+.article-layout .article-style .nl-section~.nl-section h2{margin-top:36px}
 .article-layout .article-style .nl-times{display:flex;flex-wrap:wrap;gap:8px 36px;margin:0 0 14px}
 .nl-times>span{font-size:19px;font-weight:600;line-height:1.25}
 .nl-times strong{display:block;font:var(--display-weight) 30px/1.15 var(--display);color:var(--com)}
-.article-layout .article-style .nl-side .action-cards{margin:22px 0 8px}
+.article-layout .article-style .nl-side .action-cards{margin:40px 0 8px}
 @media(max-width:1000px){.article-layout .article-style .nl-meetings h2{margin-top:36px}}
 /* A logo beside a page's title (header_logo, Nowhere Lab): on a wide page the heading runs the full width, so the
    logo leads the title instead of sitting alone at the far edge. */
@@ -575,7 +575,7 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
   .summaries-side{grid-column:1;grid-row:1}
   .summaries-routes{grid-column:1;grid-row:2;align-self:start}
 }
-.summaries-layout .article-style>p:first-child{margin-bottom:12px;color:var(--soft);font-size:16px}
+.summaries-layout .article-style>p:first-child{max-width:none;margin-bottom:12px;color:var(--soft);font-size:16px}
 .article-layout.summaries-layout .article-style .summary-entry{margin:0;padding:0 14px;border-bottom:1px solid var(--line);border-radius:var(--r-small)}
 .article-layout.summaries-layout .article-style .summary-entry>summary{display:grid;grid-template-columns:30px minmax(0,1fr);gap:12px;align-items:start;padding:14px 0;list-style:none}
 .summaries-layout .summary-entry>summary::-webkit-details-marker{display:none}

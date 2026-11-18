@@ -11,10 +11,9 @@
   </header>
   <div class="ec-intro">
     {{ with .Content }}<div class="article-style">{{ partial "doors/content" . }}</div>{{ end }}
-    {{ partial "doors/list_filter" (dict "label" "Search the posts" "placeholder" "e.g. mentoring, Bayesian, peer review" "noun" "posts" "class" "list-filter-posts" "list" ".ec-grid") }}
+    {{ partial "doors/list_filter" (dict "label" "Search the posts" "placeholder" "e.g. mentoring, Bayesian, peer review" "noun" "posts" "class" "list-filter-posts" "list" ".ec-grid" "quiet" true) }}
   </div>
   <ul class="announcements-grid ec-grid">
-    {{ $n := 0 }}
     {{ range $i, $p := .Pages.ByDate.Reverse }}
       {{ $link := .RelPermalink }}{{ $target := "" }}
       {{ with .Params.external_link }}{{ $link = . }}{{ $target = ` target="_blank" rel="noopener"` }}{{ end }}
@@ -33,8 +32,9 @@
               <div class="ac-thumb ec-thumb-whole"><img src="{{ $fit.RelPermalink }}" width="{{ $fit.Width }}" height="{{ $fit.Height }}" alt="{{ $p.Params.image.alt_text }}"{{ $lazy | safeHTMLAttr }}></div>
             {{ end }}
           {{ else }}
-            {{/* A plain brick: the card's title and month are just below, and the page's name is its heading. */}}
-            <div class="ac-thumb ac-panel ac-panel-{{ add (mod $n 4) 1 }}" aria-hidden="true"></div>{{ $n = add $n 1 }}
+            {{/* A plain door on education's colour, as on the article pages' cards (doors/article_card): the card's
+                 title and month are just below. */}}
+            <div class="ac-thumb ac-panel ac-panel-edu ac-panel-door" aria-hidden="true"></div>
           {{ end }}
           <div class="ac-body">
             <h2><a class="ac-link" href="{{ $link }}"{{ $target | safeHTMLAttr }}>{{ .Title }}</a></h2>
