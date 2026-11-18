@@ -16,7 +16,7 @@ The aim of the FORRT Library of Reproduction and Replication Attempts (FLoRA) is
 
 **Replications** can range from close/direct (same methods, same population) to conceptual (testing the same hypothesis with different methods), as long as the above criteria are met. The plugin tags replication outcomes as Successful, Failed, or Mixed, based on how the replication authors characterise their results.
 
-The labels do not say why a replication failed. Chance, low power, problems in how the replication was run, or differences in sample, setting or materials can all produce a failure, so one failed replication does not show that the original finding was false. A successful replication shows that the result appeared again under similar conditions. It does not confirm the original explanation. Read the reports and compare all replications of a finding before drawing conclusions.
+The labels do not say why a replication failed. Chance, low power, problems in how the replication was run, or differences in sample, setting or materials can all produce a failure, so one failed replication does not show that the original finding was false. A successful replication shows that the result appeared again. It does not confirm the original explanation. Read the reports and compare all replications of a finding before drawing conclusions.
 
 **Reproductions** are attempts to computationally verify whether reported results can be obtained from the original study's data and methods. Reproductions are coded along two dimensions:
 
