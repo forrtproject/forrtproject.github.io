@@ -1,5 +1,7 @@
 {{/* One cluster block (used on /clusters/ and /clusters/cluster-N/). Expects dict: cluster, ci, colors, marks;
-     link true (on /clusters/) makes the heading a link to the cluster's own page. */}}
+     link true (on /clusters/) makes the heading a link to the cluster's own page; own true (on the cluster's own
+     page, whose head, clusters/hero.html, already shows the name, description and counts) heads the block
+     "Sub-clusters" and leaves those out. */}}
 {{ $cluster := .cluster }}
 {{ $ci := .ci }}
 {{ $colors := .colors }}
@@ -21,17 +23,21 @@
 {{ $hasFeatured := and $featuredEnabled $featuredData }}
 
 {{ $mark := "var(--soft)" }}{{ with .marks }}{{ $mark = index . (mod $ci (len .)) }}{{ end }}
-<section id="{{ $cid }}" class="cluster-section cluster-section--cluster" style="background-color: {{ $color | safeCSS }}; --c: {{ $mark | safeCSS }};">
+<section id="{{ $cid }}" class="cluster-section cluster-section--cluster{{ if .own }} cluster-section--own{{ end }}" style="background-color: {{ $color | safeCSS }}; --c: {{ $mark | safeCSS }};">
   <div class="cluster-header">
+    {{ if .own }}
+    <h2 class="cluster-title">Sub-clusters</h2>
+    {{ else }}
     <h2 class="cluster-title">
       <span class="cluster-number">{{ (int $cluster.number) }}</span>
       {{ if .link }}<a href="{{ printf "/clusters/cluster-%d/" (int $cluster.number) | relURL }}">{{ $cluster.name }}</a>{{ else }}{{ $cluster.name }}{{ end }}
     </h2>
     <span class="cluster-stats">{{ len $cluster.sub_clusters }} sub-clusters &middot; {{ $totalPubs }} references</span>
+    {{ end }}
     <button class="acc-toggle-all" data-cluster="{{ $cid }}">Expand all</button>
   </div>
 
-  {{ if $cluster.description }}
+  {{ if and $cluster.description (not .own) }}
   <p class="cluster-description">{{ $cluster.description }}</p>
   {{ end }}
 

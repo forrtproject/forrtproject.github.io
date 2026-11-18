@@ -105,3 +105,36 @@
   .search-option{flex:1 1 0;min-width:0;padding:8px 10px;font-size:15px}
 }
 .pager[hidden]{display:none}
+/* Each row carries the opening of its abstract, two lines at most, and each cluster a small mark in its colour
+   from the clusters wheel; the cluster filters carry the same marks (DESIGN.md §6). */
+.res-desc{margin:2px 0 2px;font-size:16px;line-height:1.45;color:var(--ink);display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2;overflow:hidden}
+.res-desc:empty{display:none}
+.res-cl[data-cl]::before,.chip[data-cl]::before{content:"";display:inline-block;width:10px;height:10px;margin-inline-end:6px;border-radius:2px;background:var(--c,var(--soft));vertical-align:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+/* Each cluster apart from the next, with its mark kept beside its name; a long name wraps under itself. */
+.res-tag:has(.res-cl){display:flex;flex-wrap:wrap;gap:2px 16px}
+.res-cl{display:inline-flex;align-items:baseline;white-space:normal}
+.res-cl[data-cl]::before{flex:none;transform:translateY(-1px)}
+.chip[data-cl]::before{flex:none;align-self:center;margin-inline-end:0}
+.chip[aria-pressed=true][data-cl]::before{outline:1.5px solid #fff}
+/* Ready-made materials as bricks under the lede (the action_cards pattern, article.css). */
+.res-start{margin-top:26px}
+.res-start h2{margin:0 0 18px;font:var(--display-weight) 22px/1.2 var(--display)}
+.page-heading .res-start .action-cards{grid-template-columns:repeat(4,minmax(0,1fr));margin:0}
+.page-heading .res-start .action-cards a{min-height:84px;padding:12px 14px 18px}
+/* Every brick as tall as the tallest, so none looks bigger for a longer line. */
+.page-heading .res-start .action-cards{grid-auto-rows:1fr}
+.page-heading .res-start .action-cards>li{display:flex}
+.page-heading .res-start .action-cards>li>a{flex:1;min-width:0}
+.page-heading .res-start .action-cards strong{overflow-wrap:anywhere}
+.page-heading .res-start .action-cards strong{font-size:21px}
+.page-heading .res-start .action-cards span{font-size:15px;line-height:1.35}
+@media(max-width:1000px){.page-heading .res-start .action-cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 5px}}
+/* On a phone the illustration stays, small, beside the lede (DESIGN.md §9: same information). */
+@media(max-width:760px){
+  .heading-grid:has(.res-plate){grid-template-columns:minmax(0,1fr) 92px;gap:14px;align-items:start}
+  .heading-grid .res-plate{display:block;grid-row:1;grid-column:2;max-width:92px;padding:14px 8px 4px}
+  .heading-grid .res-plate img{max-height:80px}
+  .res-start{margin-top:18px}
+  .res-start h2{font-size:20px}
+}
+@media(max-width:760px){.heading-grid:has(.res-plate)>div{grid-column:1/-1;grid-row:1}.heading-grid:has(.res-plate) h1,.heading-grid:has(.res-plate) .lede{margin-inline-end:100px}}
