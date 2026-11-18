@@ -279,7 +279,11 @@ if (summaryEntries.length) {
   const tools = document.createElement('div');
   tools.className = 'summary-tools';
   tools.innerHTML = '<label>Filter these summaries <input type="search" autocomplete="off" spellcheck="false"></label><p class="summary-count" role="status"></p>';
-  summaryEntries[0].before(tools);
+  // A collection page (layouts/_default/summaries.html) puts the filter in its slot, with a placeholder of its own:
+  // beside the list on a wide screen, above it on a phone.
+  const slot = document.querySelector('.summary-tools-slot');
+  if (slot?.dataset.placeholder) tools.querySelector('input').placeholder = slot.dataset.placeholder;
+  if (slot) slot.append(tools); else summaryEntries[0].before(tools);
   const more = document.createElement('button');
   more.className = 'btn summary-more';
   more.type = 'button';
@@ -303,8 +307,10 @@ if (summaryEntries.length) {
     summaryEntries.forEach((entry) => { entry.hidden = !shown.includes(entry) && !entry.open; });
     more.hidden = shown.length === matches.length;
     const kept = summaryEntries.filter((entry) => !entry.hidden).length - shown.length;
-    const count = query ? `${matches.length} of ${summaryEntries.length} summaries match.` : `Showing ${shown.length} of ${summaryEntries.length} summaries.`;
-    tools.querySelector('[role=status]').textContent = kept ? `${count} ${kept} you opened ${kept === 1 ? 'stays' : 'stay'} in view.` : count;
+    // A collection page's header gives the total, so with no filter and every entry shown the status stays empty.
+    const all = !query && shown.length === summaryEntries.length;
+    const count = query ? `${matches.length} of ${summaryEntries.length} summaries match.` : all && slot ? '' : `Showing ${shown.length} of ${summaryEntries.length} summaries.`;
+    tools.querySelector('[role=status]').textContent = kept ? `${count} ${kept} you opened ${kept === 1 ? 'stays' : 'stay'} in view.`.trim() : count;
   };
   input.addEventListener('input', show);
   addEventListener('hashchange', show);
@@ -776,7 +782,7 @@ if (listFilter) {
       });
       if (heading) heading.hidden = Boolean(query || status || chosen.length) && !any;
     });
-    count.textContent = query && !shown ? `No ${noun} match “${input.value.trim()}”.` : `Showing ${shown} of ${total} ${noun}`;
+    count.textContent = query && !shown ? `No ${noun} match “${input.value.trim()}”.` : !query && 'quiet' in listFilter.dataset ? '' : `Showing ${shown} of ${total} ${noun}`;
     if (empty) empty.hidden = shown > 0;
     if (reset) reset.hidden = !query && !chosen.length;
   });

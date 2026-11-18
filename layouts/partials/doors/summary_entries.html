@@ -13,12 +13,18 @@
 {{ if $dei }}<span class="summaries-dei" hidden></span>{{ end }}
 {{ range $summaries }}{{ if and .Title (or (not $dei) (in .Title "⌺")) }}
 <details class="summary-entry">
-{{/* ◈ (not peer reviewed) sits at the end of the title with even spacing, and screen readers hear its meaning. */}}
-{{ $title := .Title }}{{ $npr := in $title "◈" }}
-{{ if $npr }}{{ $title = replaceRE `[\s\p{Z}]*◈[\s\p{Z}]*` "" $title }}{{ end }}
-{{/* The DEI mark's own margin spaces it from the title, so spaces before it in the source are dropped. */}}
-{{ $title = replaceRE `[\s\p{Z}]+⌺` "⌺" $title }}
-<summary><h2 id="{{ .Id }}">{{ $title | markdownify }}{{ if $npr }} <span class="npr-mark" aria-hidden="true">◈</span><span class="sr-only"> (not peer reviewed)</span>{{ end }}</h2></summary>
+{{/* The title on its own line, then the citation, "(Author, year)", on a quieter one, so the titles are easy to
+     skim. ◈ (not peer reviewed) and ⌺ (DEI) follow the title, and screen readers hear what ◈ means. The citation
+     stays in the heading: people search and link by author. A title without a trailing citation shows whole. */}}
+{{ $title := .Title }}{{ $npr := in $title "◈" }}{{ $isDei := in $title "⌺" }}
+{{ $title = trim (replaceRE `[\s\p{Z}]*[◈⌺][\s\p{Z}]*` " " $title) " \u00a0" }}
+{{ $cite := "" }}
+{{ with findRESubmatch `^([\s\S]*?)[\s\p{Z}]*(\([^()]*\d{4}[a-z]?\))$` $title 1 }}{{ $title = index (index . 0) 1 }}{{ $cite = index (index . 0) 2 }}{{ end }}
+{{/* The marks stay on the line of the title's last word (summary-tail), never alone on a line of their own. The
+     titles carry no Markdown markup, so splitting before markdownify is safe. */}}
+{{ $head := "" }}{{ $tail := $title }}
+{{ with findRESubmatch `^([\s\S]*\S)\s+(\S+)$` $title 1 }}{{ $head = index (index . 0) 1 }}{{ $tail = index (index . 0) 2 }}{{ end }}
+<summary><h2 id="{{ .Id }}"><span class="summary-title">{{ if or $isDei $npr }}{{ with $head }}{{ . | markdownify }} {{ end }}<span class="summary-tail">{{ $tail | markdownify }}{{ if $isDei }}⌺{{ end }}{{ if $npr }} <span class="npr-mark" aria-hidden="true">◈</span><span class="sr-only"> (not peer reviewed)</span>{{ end }}</span>{{ else }}{{ $title | markdownify }}{{ end }}</span>{{ with $cite }} <span class="summary-cite">{{ . }}</span>{{ end }}</h2></summary>
 <h3>Main takeaways</h3>
 <ul>
   {{ range .Main_Takeaways }}<li>{{ . }}</li>{{ end }}

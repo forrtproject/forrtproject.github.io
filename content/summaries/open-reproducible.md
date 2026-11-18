@@ -4,6 +4,9 @@ linktitle: Open and reproducible science
 description: "Community-written summaries of papers on open and reproducible research, each with its main takeaways, abstract and reference."
 toc: true
 type: docs
+layout: summaries  # layouts/_default/summaries.html
+summaries: all
+subtitle: "Each summary gives a paper's main takeaways and reference, written by the FORRT community."
 date: "2019-05-05T00:00:00+01:00"
 draft: false
 menu:
@@ -16,7 +19,7 @@ menu:
 weight: 2
 ---
 
-◈ marks work that was not peer reviewed. ⌺ marks summaries on diversity, equity and inclusion.
+◈ marks work that was not peer reviewed.<br>⌺ marks summaries on diversity,&nbsp;equity&nbsp;and&nbsp;inclusion.
 
 
 {{< summaries >}}

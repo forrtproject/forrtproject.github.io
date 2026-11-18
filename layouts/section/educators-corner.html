@@ -1,19 +1,49 @@
 {{- define "main" -}}
-{{/* Educators' Corner: its introduction, then every post on one page, newest first, with a search over them.
-     The section is short enough for one page, which also lets the browser's find reach every post. The 404 page
-     sends the retired /educators-corner/page/N/ addresses here. */}}
-<div class="wrap">
-  <div class="article-layout article-layout-wide">
-    <article class="reading">
-      <header class="article-head">
-        {{ partial "doors/crumbs" (dict "page" .) }}
-        <h1>{{ .Title }}</h1>
-        {{ with .Params.subtitle }}<p class="standfirst">{{ . | markdownify | emojify }}</p>{{ end }}
-      </header>
-      {{ with .Content }}<div class="article-style">{{ partial "doors/content" . }}</div>{{ end }}
-      {{ partial "doors/list_filter" (dict "label" "Search the posts" "placeholder" "e.g. mentoring, Bayesian, peer review" "noun" "posts" "class" "list-filter-posts") }}
-      <ul class="list-items">{{ range .Pages.ByDate.Reverse }}<li>{{ partial "doors/list_item" . }}</li>{{ end }}</ul>
-    </article>
+{{/* Educators' Corner: its introduction with the search beside it, then every post on one page as a card, newest
+     first, in the news list's cards (layouts/section/post.html): picture, title, authors and date, the start of the
+     summary. The section is short enough for one page, which also lets the browser's find reach every post. The 404
+     page sends the retired /educators-corner/page/N/ addresses here. */}}
+<div class="wrap news-page ec-page">
+  <header class="article-head">
+    {{ partial "doors/crumbs" (dict "page" .) }}
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.subtitle }}<p class="standfirst">{{ . | markdownify | emojify }}</p>{{ end }}
+  </header>
+  <div class="ec-intro">
+    {{ with .Content }}<div class="article-style">{{ partial "doors/content" . }}</div>{{ end }}
+    {{ partial "doors/list_filter" (dict "label" "Search the posts" "placeholder" "e.g. mentoring, Bayesian, peer review" "noun" "posts" "class" "list-filter-posts" "list" ".ec-grid" "quiet" true) }}
   </div>
+  <ul class="announcements-grid ec-grid">
+    {{ range $i, $p := .Pages.ByDate.Reverse }}
+      {{ $link := .RelPermalink }}{{ $target := "" }}
+      {{ with .Params.external_link }}{{ $link = . }}{{ $target = ` target="_blank" rel="noopener"` }}{{ end }}
+      {{ $img := (.Resources.ByType "image").GetMatch "*featured*" }}
+      {{/* The first row loads at once; the rest as they scroll into view. */}}
+      {{ $lazy := cond (ge $i 4) ` loading="lazy"` "" }}
+      <li>
+        <article class="announcement-card">
+          {{ with $img }}
+            {{/* A photo near the card's shape fills it; a logo, a figure or a tall picture is shown whole on white. */}}
+            {{ $ratio := div (float .Width) .Height }}
+            {{ if and (ge $ratio 1.68) (le $ratio 1.9) }}
+              <div class="ac-thumb"><img src="{{ (.Fill "640x360 Center webp q75").RelPermalink }}" width="640" height="360" alt="{{ $p.Params.image.alt_text }}"{{ $lazy | safeHTMLAttr }}></div>
+            {{ else }}
+              {{ $fit := .Fit "600x320 webp q80" }}
+              <div class="ac-thumb ec-thumb-whole"><img src="{{ $fit.RelPermalink }}" width="{{ $fit.Width }}" height="{{ $fit.Height }}" alt="{{ $p.Params.image.alt_text }}"{{ $lazy | safeHTMLAttr }}></div>
+            {{ end }}
+          {{ else }}
+            {{/* A plain door on education's colour, as on the article pages' cards (doors/article_card): the card's
+                 title and month are just below. */}}
+            <div class="ac-thumb ac-panel ac-panel-edu ac-panel-door" aria-hidden="true"></div>
+          {{ end }}
+          <div class="ac-body">
+            <h2><a class="ac-link" href="{{ $link }}"{{ $target | safeHTMLAttr }}>{{ .Title }}</a></h2>
+            <p class="ec-meta">{{ with .Params.authors }}<span class="ec-authors">{{ partial "page_metadata_authors" $p }}</span>{{ end }}{{ if .Params.date }}<time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2006" }}</time>{{ end }}</p>
+            <p class="ac-summary">{{ if .Params.summary }}{{ .Params.summary | plainify | emojify }}{{ else if .Params.abstract }}{{ .Params.abstract | plainify | emojify }}{{ else }}{{ .Summary | plainify | emojify }}{{ end }}</p>
+          </div>
+        </article>
+      </li>
+    {{ end }}
+  </ul>
 </div>
 {{- end -}}

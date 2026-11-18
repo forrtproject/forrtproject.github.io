@@ -670,3 +670,101 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
 .cl-item .cl-mark{transform:translateY(-1px)}
 /* In print the card keeps the plain print styling above, without the cluster fill or door. */
 @media print{.article-layout .article-card--cluster{background:none;padding:0}.article-card__door{display:none}}
+/* Nowhere Lab (content/nowherelab/_index.md): on a wide screen, how to take part (the meetings, Slack and the
+   PhD Survival Guide) is a column beside the introduction and the story; on narrower ones it follows the
+   introduction. The meetings and Slack are plain text, not boxes: only the two meeting times are set large, in the
+   community area's colour, and the guide is a brick because it is something to open. */
+@media(min-width:1001px){
+  .article-layout-wide .article-style .nl-layout{display:grid;grid-template-columns:minmax(0,620px) minmax(320px,500px);grid-template-areas:"intro side" "story side";column-gap:64px;align-items:start}
+  .nl-intro{grid-area:intro}.nl-side{grid-area:side}.nl-story{grid-area:story}
+}
+.article-layout .article-style .nl-section{margin:0 0 8px}
+.article-layout .article-style .nl-section h2{margin:0 0 12px}
+.article-layout .article-style .nl-section~.nl-section h2{margin-top:36px}
+.article-layout .article-style .nl-times{display:flex;flex-wrap:wrap;gap:8px 36px;margin:0 0 14px}
+.nl-times>span{font-size:19px;font-weight:600;line-height:1.25}
+.nl-times strong{display:block;font:var(--display-weight) 30px/1.15 var(--display);color:var(--com)}
+.article-layout .article-style .nl-side .action-cards{margin:40px 0 8px}
+@media(max-width:1000px){.article-layout .article-style .nl-meetings h2{margin-top:36px}}
+/* A logo beside a page's title (header_logo, Nowhere Lab): on a wide page the heading runs the full width, so the
+   logo leads the title instead of sitting alone at the far edge. */
+@media(min-width:761px){.article-layout-wide .article-logo{float:inline-start;margin:6px 24px 8px 0}}
+/* Summaries overview (content/summaries/_index.md, a wide page): the two collections as a hero of two large bricks
+   in their areas' colours, each led by its count; then the overview and "Join and help us" on the left, and the
+   folded background and the feedback ask, as plain text, beside them. */
+.article-layout .article-style .summary-hero{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:24px 6px;max-width:none;margin:34px 0 48px;padding:0;list-style:none}
+.article-layout .article-style .summary-hero li{position:relative;max-width:none;margin:0}
+.summary-hero-res{--tone:var(--res)}.summary-hero-jus{--tone:var(--jus)}
+.summary-hero li::before{content:"";position:absolute;left:18px;right:18px;top:-10px;height:10px;background:linear-gradient(90deg,transparent 7px,var(--tone) 7px 34px,transparent 34px) left top/41px 10px space no-repeat;border-radius:3px 3px 0 0;pointer-events:none}
+.article-layout .article-style .summary-hero a{display:flex;flex-direction:column;align-items:flex-start;height:100%;box-sizing:border-box;padding:24px 30px 36px;background:var(--tone);border-radius:3px;box-shadow:inset 0 -8px 0 rgb(0 0 0/.24);color:#fff;text-decoration:none;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.summary-hero-count{font:var(--display-weight) clamp(64px,7vw,104px)/.95 var(--display);letter-spacing:-.02em}
+.article-layout .article-style .summary-hero strong{margin:10px 0 8px;font:var(--display-weight) clamp(26px,2.4vw,34px)/1.12 var(--display);color:#fff}
+.summary-hero-text{max-width:28em;font-size:18px;line-height:1.45}
+.article-layout .article-style .summary-hero a:hover strong{text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:5px}
+.article-layout .article-style .summary-hero a:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+@media(prefers-reduced-motion:no-preference){.summary-hero li{transition:transform .15s}.summary-hero li:hover{transform:translateY(-3px)}}
+@media(min-width:901px){
+  .article-layout-wide .article-style .sm-layout{display:grid;grid-template-columns:minmax(0,620px) minmax(340px,1fr);grid-template-areas:"overview side" "join side";grid-template-rows:auto 1fr;column-gap:40px;align-items:start}
+  .sm-overview{grid-area:overview}.sm-join{grid-area:join}.sm-side{grid-area:side}
+  .article-layout .article-style .sm-overview>h2:first-child{margin-top:0}
+}
+@media(min-width:1001px){.article-layout-wide .article-style .sm-layout{column-gap:64px}}
+.article-layout .article-style .sm-side .spoiler{max-width:none}
+.article-layout .article-style .sm-feedback h3{margin-top:32px}
+/* Inline, not the icon font's inline-block, so the icon never wraps away from the last word of its link. */
+.sm-feedback .fa-external-link-alt{display:inline;margin-inline-start:4px;font-size:.72em}
+@media(max-width:900px){.article-layout .article-style .sm-side{margin-top:28px}}
+@media(max-width:760px){.article-layout .article-style .summary-hero{margin:28px 0 36px}.article-layout .article-style .summary-hero a{padding:20px 20px 30px}}
+/* A collection of summaries (layouts/_default/summaries.html): the header on the pale ground of the collection's
+   area with its count; the filter and the routes to the other collection beside the list on a wide screen (on a phone the
+   filter above the list and the routes after it); and each entry a
+   title with its citation below it. An open entry takes the area's pale ground. */
+.summaries-res{--area:var(--res);--area-bg:var(--res-bg)}
+.summaries-jus{--area:var(--jus);--area-bg:var(--jus-bg)}
+.summaries-band{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px 40px;padding:26px 32px 30px;background:var(--area-bg);border-radius:var(--r-large)}
+.summaries-band .article-head{flex:1 1 520px;margin:0}
+.article-layout .summaries-band .article-head h1{font-size:clamp(34px,3.6vw,52px)}
+.article-layout .summaries-band .standfirst{max-width:34em}
+.summaries-band .byline:empty{display:none}
+.summaries-count{margin:0;font-size:18px;font-weight:600;line-height:1.1}
+.summaries-count strong{display:block;font:var(--display-weight) clamp(48px,5vw,72px)/1 var(--display);color:var(--area)}
+.article-layout.summaries-layout{row-gap:28px}
+.summaries-body{display:grid;grid-template-columns:minmax(0,1fr);gap:20px}
+.summaries-side .summary-tools{margin:0}
+.summaries-side:empty{display:none}
+.summaries-side .summary-tools p.summary-count{margin:8px 0 0;font-size:16px}
+.summaries-side .summary-tools p.summary-count:empty{margin:0}
+.summaries-routes ul{margin:0;padding:0;list-style:none;font-size:17px;line-height:1.35}
+/* The link is inline, so the count follows its last word; the padding keeps the tap target 44 px high. */
+.summaries-routes li{margin:0 0 4px;padding:11px 0}
+.summaries-routes a{padding:11px 0;color:var(--link);text-decoration:underline;text-underline-offset:3px}
+.summaries-routes span{color:var(--soft);font-size:15px}
+@media(min-width:1001px){
+  .summaries-body{grid-template-columns:300px minmax(0,780px);grid-template-rows:auto 1fr;column-gap:56px;row-gap:16px}
+  .summaries-body>.reading{grid-column:2;grid-row:1/span 2}
+  .summaries-side{grid-column:1;grid-row:1}
+  .summaries-routes{grid-column:1;grid-row:2;align-self:start}
+}
+.summaries-layout .article-style>p:first-child{max-width:none;margin-bottom:12px;color:var(--soft);font-size:16px}
+.article-layout.summaries-layout .article-style .summary-entry{margin:0;padding:0 14px;border-bottom:1px solid var(--line);border-radius:var(--r-small)}
+.article-layout.summaries-layout .article-style .summary-entry>summary{display:grid;grid-template-columns:30px minmax(0,1fr);gap:12px;align-items:start;padding:14px 0;list-style:none}
+.summaries-layout .summary-entry>summary::-webkit-details-marker{display:none}
+.summaries-layout .summary-entry>summary::before{content:"+";display:flex;align-items:center;justify-content:center;width:30px;height:30px;margin-top:1px;background:var(--area-bg);border-radius:50%;color:var(--area);font:700 20px/1 var(--text)}
+.summaries-layout .summary-entry[open]>summary::before{content:"−";background:#fff}
+.summaries-layout .summary-entry>summary:hover .summary-title{text-decoration:underline;text-underline-offset:3px}
+.article-layout.summaries-layout .article-style .summary-entry>summary h2{display:block;font-size:22px;line-height:1.25}
+.summary-title,.summary-cite{display:block}
+.summary-tail{white-space:nowrap}
+/* The section's previous and next links would repeat the link to the other collection (.summaries-routes), which on
+   a phone sits right after them. */
+.summaries-layout .article-foot .post-nav{display:none}
+.summaries-layout .summary-cite{margin-top:3px;font:400 16px/1.35 var(--text);color:var(--soft)}
+.article-layout.summaries-layout .article-style .summary-entry[open]{margin:6px 0;padding-bottom:14px;background:var(--area-bg);border-bottom-color:transparent}
+.summaries-layout .summary-entry[open]>:not(summary){margin-inline-start:42px}
+@media(max-width:760px){
+  .summaries-band{padding:20px 18px 22px}
+  .summaries-count{display:flex;align-items:baseline;gap:8px}
+  .summaries-count strong{display:inline;font-size:40px}
+  .article-layout.summaries-layout .article-style .summary-entry{padding:0 8px}
+  .summaries-layout .summary-entry[open]>:not(summary){margin-inline-start:0}
+}

@@ -15,7 +15,7 @@ header:
   image: ""
 ---
 
-To write for Educators' Corner, [email us your idea](mailto:info@forrt.org?subject=Educators%27%20Corner%3A%20article%20idea).
+To write for us, [email us your idea](mailto:info@forrt.org?subject=Educators%27%20Corner%3A%20article%20idea).
 
 <details class="list-about">
 <summary>About Educators' Corner</summary>

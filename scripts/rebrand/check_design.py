@@ -910,7 +910,7 @@ DIRECTORIES = {
     "contributors/": "#contributor-list",
     "about/community/": ".people-wall",
     "about/teams/": ".team-layout",  # the grid that holds the introduction and the teams (.feature-rows is display:contents)
-    "educators-corner/": ".list-items",
+    "educators-corner/": ".ec-grid",
     "pedagogies/": ".list-items",
     "forrt_clusters/academic-life-and-culture/": ".cluster-resources",
     "syllabus/": ".catalogue",

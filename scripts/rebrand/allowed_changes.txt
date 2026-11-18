@@ -96,3 +96,4 @@ summaries/open-reproducible/index.html     # A written description instead of th
 summaries/diversity-equity-inclusion/index.html  # A written meta description instead of the symbol legend, and "Summaries" as the breadcrumb name
 lesson-plans/index.html   # Its body now opens with action cards, so its description is set to the first sentence of its Motivation
 publications/index.html  # #1191: the citation chart moved after the introduction, so the description no longer opens with its "Details on Google Scholar" link. Exempts all its SEO tags: remove once main has the change
+nowherelab/index.html  # #1193: its description is now a written summary; the layout wrappers around the page's text cut the automatic one at "…not limited to:"
