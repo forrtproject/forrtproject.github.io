@@ -225,6 +225,45 @@
         return true;
     }
 
+    // Find a name: as the visitor types, only the people whose name contains it stay, with their whole rows, and
+    // the line under the filters counts them. Accents, case and letters such as ø and ß are folded, so "aczel" finds "Aczél" and "jorgen" finds "Jørgen". It works
+    // together with the project and role filters, which reload the page, and is left out of the URL.
+    function setUpNameSearch() {
+        const input = document.getElementById('name-search');
+        const count = document.getElementById('contributor-count');
+        const list = document.getElementById('contributor-list');
+        if (!input || !list) return;
+        // Letters that are not a base letter plus an accent (ø, æ, ß, ł, ...) are spelled out, so "jorgen" finds "Jørgen".
+        const letters = { 'ø': 'o', 'æ': 'ae', 'œ': 'oe', 'ß': 'ss', 'ł': 'l', 'đ': 'd', 'ð': 'd', 'þ': 'th', 'ı': 'i' };
+        const plain = text => text.toLowerCase().normalize('NFD').replace(/\p{M}/gu, '')
+            .replace(/[øæœßłđðþı]/g, c => letters[c]).replace(/\s+/g, ' ').trim();
+        const groups = [...list.querySelectorAll('.contributor-group')].map(group => {
+            const name = group.querySelector('.contributor-name');
+            return { group, name: plain(name ? name.textContent : '') };
+        });
+        const letterIndex = document.querySelector('.contributor-az');
+        const filtered = Boolean(getURLParams().project || getURLParams().role);
+        const shown = ({ group }) => group.style.display !== 'none' && !group.classList.contains('is-name-hidden');
+        const people = n => `${n} contributor${n === 1 ? '' : 's'}`;
+        const update = () => {
+            const query = plain(input.value);
+            groups.forEach(entry => entry.group.classList.toggle('is-name-hidden', Boolean(query) && !entry.name.includes(query)));
+            list.querySelectorAll('.contributor-letter').forEach(letter => {
+                letter.hidden = ![...letter.querySelectorAll('.contributor-group')].some(group => shown({ group }));
+            });
+            if (letterIndex) letterIndex.hidden = filtered || Boolean(query);
+            const total = groups.filter(entry => entry.group.style.display !== 'none').length;
+            const matches = groups.filter(shown).length;
+            count.textContent = !query ? `${people(total)}${filtered ? ' match the filter' : ''}`
+                : matches ? `${matches} of ${people(total)} match \u201c${input.value.trim()}\u201d`
+                : `No contributor\u2019s name contains \u201c${input.value.trim()}\u201d`;
+        };
+        input.closest('.filter-field').hidden = false;
+        count.hidden = false;
+        input.addEventListener('input', update);
+        update();
+    }
+
     // Initialize on page load
     document.addEventListener('DOMContentLoaded', function() {
         // The letter index stays at the top of the screen; a letter jumped to stops below it, however many rows it takes.
@@ -265,5 +304,6 @@
 
         // Apply filters based on current URL
         filterContributors();
+        setUpNameSearch();
     });
 })();

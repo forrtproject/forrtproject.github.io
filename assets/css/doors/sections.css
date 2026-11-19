@@ -239,6 +239,10 @@
 .article-layout .filter-field select{width:100%;min-height:44px;padding:7px 10px;background:#fff;border:1.5px solid var(--soft);border-radius:var(--r-small);font-size:16px}
 .article-layout #apply-filter,.article-layout #clear-filters{min-height:44px;padding:8px 16px;border:0;background:var(--link);border-radius:999px;color:#fff;font:600 15px/1.3 var(--text);cursor:pointer}
 .article-layout #apply-filter:hover,.article-layout #clear-filters:hover{background:var(--ink)}
+.article-layout .filter-name{grid-column:1/-1}
+.article-layout .filter-field input[type=search]{width:100%;min-height:44px;padding:7px 10px;background:#fff;border:1.5px solid var(--soft);border-radius:var(--r-small);font-size:16px}
+.article-layout .article-style .contributor-count{margin:6px 0 0;font-size:16px;color:var(--soft)}
+.contributor-group.is-name-hidden{display:none!important}
 .article-layout #filter-results{margin-top:12px;font-size:16px}
 .article-layout .filter-title{margin:0 0 4px;font-weight:600;border-bottom:1px solid var(--line)}
 .article-layout #filter-collapsed a{color:var(--link);font-weight:600}
@@ -246,6 +250,9 @@
 @media(min-width:901px){
   .contributors-head{display:grid;grid-template-columns:minmax(0,34em) minmax(340px,480px);justify-content:space-between;gap:40px;align-items:start;margin:0 0 8px}
   .contributors-head #filter-menu{margin:0}
+  /* The introduction is cut short only while it stands above the finder (narrower than 901 px); beside it, it shows in full. */
+  .contributors-intro .is-clamped{display:block;-webkit-line-clamp:unset;line-clamp:unset;overflow:visible}
+  .contributors-head>.clamp-more{display:none!important}
   .contributors-head .filter-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .contributors-head .filter-grid>.filter-field:last-child{grid-column:1/-1}
 }
@@ -282,6 +289,11 @@ html:has(.contributor-az){scroll-padding-top:calc(var(--contributor-az,72px) + 1
 .article-layout .article-style .contributor-rows .contributions-list{max-width:none;margin:0;padding:0;list-style:none}
 .article-layout .article-style .contributor-rows .contribution{max-width:27em;margin:0 0 4px;font-size:17px;line-height:1.45}
 .article-layout .article-style .contributor-rows .contribution:last-child{margin-bottom:0}
+/* On a wide screen a long list of projects runs in two columns, so the row uses the width beside the name. */
+@media(min-width:1200px){
+  .article-layout .article-style .contributor-rows .contributions-list{columns:2;column-gap:32px}
+  .article-layout .article-style .contributor-rows .contribution{break-inside:avoid}
+}
 .contribution-roles{color:var(--soft);font-size:16px}
 .contribution-roles::before{content:"— "}
 .article-layout .article-style .contributions-more{margin:4px 0 0}
@@ -292,6 +304,8 @@ html:has(.contributor-az){scroll-padding-top:calc(var(--contributor-az,72px) + 1
   .article-layout .article-style .contributor-rows>.contributor-group>:not(.contributor-name){grid-column:1}
   .article-layout .article-style .contributor-name{grid-row:auto;margin:0 0 4px}
   .article-layout .article-style .contributions-more>summary{min-height:44px}
+  /* A project's roles that wrap hang under its title, so the next project's title stands out at the margin. */
+  .article-layout .article-style .contributor-rows .contribution{padding-left:1em;text-indent:-1em}
 }
 
 /* Testimonials: portraits float beside the text on a wide screen and sit above it on a phone.
