@@ -409,7 +409,29 @@
       var syncHereSubs = function () {
         hereSubs.hidden = !subBodies.some(function (body) { return !body.classList.contains('acc-collapsed'); });
       };
-      var hereObserver = new MutationObserver(syncHereSubs);
+      /* The sub-cluster being read is marked in the list: the last open one whose heading has passed the
+         sticky filters. */
+      var hereLinks = Array.prototype.slice.call(hereSubs.querySelectorAll('a.sc-nav-link'));
+      var markHere = function () {
+        if (hereSubs.hidden) return;
+        var line = (controls ? controls.getBoundingClientRect().bottom : 72) + 40;
+        var currentId = null;
+        subBodies.forEach(function (body) {
+          var section = body.parentElement;
+          if (!body.classList.contains('acc-collapsed') && section.getBoundingClientRect().top <= line) currentId = section.id;
+        });
+        hereLinks.forEach(function (link) {
+          if (link.getAttribute('href') === '#' + currentId) link.setAttribute('aria-current', 'location');
+          else link.removeAttribute('aria-current');
+        });
+      };
+      var markPending = false;
+      window.addEventListener('scroll', function () {
+        if (markPending) return;
+        markPending = true;
+        requestAnimationFrame(function () { markPending = false; markHere(); });
+      }, { passive: true });
+      var hereObserver = new MutationObserver(function () { syncHereSubs(); markHere(); });
       subBodies.forEach(function (body) {
         hereObserver.observe(body, { attributes: true, attributeFilter: ['class'] });
       });

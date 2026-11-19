@@ -23,7 +23,7 @@
           <span class="cluster-nav-name">{{ $cluster.name }}</span>
         </a>
         {{ if $isActive }}
-        <ul class="cluster-nav-subs cluster-nav-subs--here" hidden>
+        <ul class="cluster-nav-subs cluster-nav-subs--here" style="{{ printf "--here-colour:%s" $arrowColor | safeCSS }}" hidden>
         {{ else }}
         <ul class="cluster-nav-subs" style="display:none;">
         {{ end }}
@@ -62,7 +62,7 @@
           {{ end }}
           <li class="nav-item">
             <a href="{{ $subHref }}" class="nav-link sc-nav-link" data-cluster="{{ $cid }}" data-tab="{{ $scid }}-tab">
-              <span class="cluster-nav-name">{{ $sc.name }}</span>
+              <span class="cluster-nav-name"{{ if $isActive }} title="{{ $sc.name }}"{{ end }}>{{ $sc.name }}</span>
               <span class="badge badge-pill">{{ len $sc.publications }}</span>
             </a>
           </li>
