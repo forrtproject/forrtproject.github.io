@@ -164,6 +164,7 @@
 
 /* The citation chart supports the introduction: beside it on a wide screen, after it on a narrow one. */
 .pub-intro{display:flex;flex-direction:column;margin-bottom:28px}
+.pub-intro>.pub-filters{margin-bottom:0}
 .article-layout .article-style .citation-container{order:1;width:min(100%,320px);margin:6px 0 10px}
 .citation-container img{display:block;width:100%;height:auto}
 .citation-container figcaption{margin-top:6px;text-align:start}
