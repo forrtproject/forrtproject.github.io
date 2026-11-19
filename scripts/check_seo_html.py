@@ -593,11 +593,18 @@ def check_flora_citation(public_dir):
 GLOSSARY_HUB = os.path.join("glossary", "english", "index.html")
 AKA_LINE = re.compile(r'<p class="term-aka">(.*?)</p>', re.S)
 HUB_TERM = re.compile(r'<li data-term="([^"]*)">\s*<a href="([^"]+)"')
+# A preview build serves the site under a prefix (e.g. /rebrand-doors/), so links are keyed from /glossary/ on.
+GLOSSARY_PATH = re.compile(r"/glossary/.*$")
+
+
+def glossary_key(href):
+    match = GLOSSARY_PATH.search(urlparse(unescape(href)).path)
+    return match.group(0) if match else None
 
 
 def glossary_aka_failures(hub_html, term_pages):
     """term_pages: {URL path of the term page: its HTML}. Returns the names the hub filter misses."""
-    filter_text = {urlparse(unescape(href)).path: unescape(term) for term, href in HUB_TERM.findall(hub_html)}
+    filter_text = {glossary_key(href): unescape(term) for term, href in HUB_TERM.findall(hub_html)}
     failures = []
     for url_path, html in sorted(term_pages.items()):
         match = AKA_LINE.search(html)
@@ -614,7 +621,7 @@ def glossary_aka_failures(hub_html, term_pages):
 def check_glossary_aka_filter(public_dir):
     hub_path = os.path.join(public_dir, GLOSSARY_HUB)
     if not os.path.exists(hub_path):
-        return []
+        return ["%s (page not found)" % GLOSSARY_HUB]
     with open(hub_path, encoding="utf-8") as handle:
         hub_html = handle.read()
     term_pages = {}
