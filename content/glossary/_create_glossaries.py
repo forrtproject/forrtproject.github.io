@@ -4,6 +4,12 @@ Source: the Glossary sheet (DEFAULT_SHEET_ID / DEFAULT_GID; override with the
 GLOSSARY_SHEET_ID and GLOSSARY_SHEET_GID environment variables). Each `XX_` column
 prefix is a language, mapped to a folder by `language_map`.
 
+Related terms come from the sheet's `related_terms` tab (one row per term and
+related name) and other names from `related_terms_linking` (RELATED_GID and
+LINKING_GID; override with GLOSSARY_RELATED_GID and GLOSSARY_LINKING_GID);
+scripts/glossary_related.py resolves them. The old `Related_terms`
+column on the main tab is no longer read.
+
 Writes content/glossary/{english,german,arabic,chinese,turkish}/*.md (each folder's
 hand-written _index.md is kept) and _glossaries.json, writes missing_references.txt
 when a term cites a reference missing from apa_lookup.json, and rewrites the
@@ -31,6 +37,7 @@ script_dir = os.path.dirname(os.path.abspath(__file__))
 
 sys.path.insert(0, str(Path(script_dir).resolve().parents[1] / 'scripts'))
 from generated_lastmod import load_previous, resolve_lastmod, git_commit_dates
+from glossary_related import build_related, build_also_known_as
 language_map = {
     'EN': 'english',
     'AR': 'arabic',
@@ -42,16 +49,37 @@ language_map = {
 # Configuration
 DEFAULT_SHEET_ID = '1IelzKlB7_UmnwbqgpEZnkFubB0ks-qFaIxhqEJGBH2g'
 DEFAULT_GID = '955789150'
+RELATED_GID = '797603478'   # tab related_terms: term | related
+LINKING_GID = '1822900481'  # tab related_terms_linking: name | term | type | show_as_aka
 sheet_id = os.getenv('GLOSSARY_SHEET_ID', DEFAULT_SHEET_ID)
 gid = os.getenv('GLOSSARY_SHEET_GID', DEFAULT_GID)
-csv_url = f'https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv&gid={gid}'
 
-# Fetch and parse data
-response = requests.get(csv_url)
-response.raise_for_status()
-response.encoding = 'utf-8'
 
-df = pd.read_csv(StringIO(response.text))
+def fetch_tab(tab_gid, **read_csv_args):
+    url = f'https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv&gid={tab_gid}'
+    response = requests.get(url)
+    response.raise_for_status()
+    response.encoding = 'utf-8'
+    return pd.read_csv(StringIO(response.text), **read_csv_args)
+
+
+df = fetch_tab(gid)
+
+# Read every cell as text: a related name such as "NA" or "None" must not become empty.
+def fetch_rows(tab_gid, columns):
+    tab = fetch_tab(tab_gid, dtype=str, keep_default_na=False)
+    missing = [c for c in columns if c not in tab.columns]
+    if missing:
+        raise SystemExit(f"Glossary sheet tab gid={tab_gid} lacks columns {missing}")
+    return tab.to_dict('records')
+
+en_titles = [t.strip() for t in df['EN_title'].dropna().astype(str) if t.strip()]
+linking_rows = fetch_rows(os.getenv('GLOSSARY_LINKING_GID', LINKING_GID), ['name', 'term', 'show_as_aka'])
+related_by_term, related_warnings = build_related(
+    fetch_rows(os.getenv('GLOSSARY_RELATED_GID', RELATED_GID), ['term', 'related']), linking_rows, en_titles)
+also_known_as = build_also_known_as(linking_rows, en_titles)
+for warning in related_warnings:
+    print(f"Warning: {warning}")
 
 # Extract unique language codes from column names
 language_prefixes = set()
@@ -231,7 +259,6 @@ for language_code in languages_to_process:
     # Get relevant columns
     language_columns = [col for col in df.columns if col.startswith(f'{language_code}_') and '_hide' not in col]
     common_columns = [
-        'Related_terms', 
         'Reference', 
         'Originally drafted by', 
         'Drafted by',
@@ -287,7 +314,7 @@ for language_code in languages_to_process:
             "title": title,
             "sort_key": sort_key_for_language(title, language_code),
             "definition": definition,
-            "related_terms": list(dict.fromkeys(safe_get(row, "Related_terms").split("; "))) if safe_get(row, "Related_terms") else [],
+            "related_terms": related_by_term.get(en_title, []),
             "references": processed_references,
             "drafted_by": [safe_get(row, "Originally drafted by") or safe_get(row, "Drafted by")] if (safe_get(row, "Originally drafted by") or safe_get(row, "Drafted by")) else [],
             "reviewed_by": list(dict.fromkeys(safe_get(row, "Reviewed (or Edited) by").replace("Reviewed (or Edited) by : ", "").split("; "))) if safe_get(row, "Reviewed (or Edited) by") else [],
@@ -305,6 +332,10 @@ for language_code in languages_to_process:
                 entry["translated_by"] = [name.strip() for name in re.split(r'[,;]', transl_val) if name.strip()]
             if review_val:
                 entry["translation_reviewed_by"] = [name.strip() for name in re.split(r'[,;]', review_val) if name.strip()]
+
+        # Other names for the term (English only; they are English names)
+        if language_code == "EN" and also_known_as.get(en_title):
+            entry["also_known_as"] = also_known_as[en_title]
 
         # Add aliases for English entries
         if language_code == "EN":
