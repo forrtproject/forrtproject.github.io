@@ -20,7 +20,7 @@ FORRT's Slack: [join&nbsp;it](https://join.slack.com/t/forrt/shared_invite/zt-al
 
 {{% callout title="Getting Started with FORRT" %}}
 
-Before you join, read [**the guide**](https://docs.google.com/document/d/e/2PACX-1vR_OKOxDlrbPcXn6SZLYlq19139ofcYDInBu9E392jWG5yzbp2VjF7E1_fwtzTz4Wxo9i4ddHZTbHfT/pub). It is organised by how involved you want to be:
+Before you join, read [**the guide**](https://docs.google.com/document/d/e/2PACX-1vR_OKOxDlrbPcXn6SZLYlq19139ofcYDInBu9E392jWG5yzbp2VjF7E1_fwtzTz4Wxo9i4ddHZTbHfT/pub) (a Google Doc). It is organised by how involved you want to be:
 
 1. General information about FORRT, its Slack channels and community, with links to resources.
 2. The current initiatives that would benefit from your help, with authorship opportunities and no required involvement in the organisation.

@@ -189,7 +189,7 @@
 .cite-summary{display:none}
 .article-layout .article-style .cite-chart .cite-note{margin:0 0 6px;font-size:15px;line-height:1.3;color:var(--soft)}
 @media(min-width:761px){.article-layout .article-style .cite-at-end{display:none}}
-/* The introduction is cut to four lines only on a phone; beside the chart on a wider screen it shows in full. */
+/* The introduction is cut to six lines only on a phone; beside the chart on a wider screen it shows in full. */
 @media(min-width:761px){
   .pub-intro .is-clamped{display:block;-webkit-line-clamp:unset;line-clamp:unset;overflow:visible}
   .pub-intro .clamp-more{display:none}
@@ -341,7 +341,8 @@ html:has(.contributor-az){scroll-padding-top:calc(var(--contributor-az,72px) + 1
 /* About directories: only a description much longer than its neighbours is cut, to four lines, with "more"
    (site.js); short ones show in full. */
 .is-clamped{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4;line-clamp:4;overflow:hidden}
-/* On a phone a directory description shows six lines before "more" (site.js clamps only past eight). */
+/* On a phone every clamped description (directories, the Publications introduction) shows six lines before "more";
+   site.js clamps only past eight there. The cluster hero has the same rule in clusters.css. */
 @media(max-width:760px){:is(.clamp-desc.is-clamped,.clamp-desc>.is-clamped){-webkit-line-clamp:6;line-clamp:6}}
 .clamp-desc>p:only-child{margin-bottom:0}
 .clamp-more[hidden]{display:none}

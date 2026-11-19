@@ -74,7 +74,7 @@
                 {{ $toggle := "var panel = document.getElementById(this.getAttribute('aria-controls')); var open = panel.classList.toggle('show'); this.classList.toggle('active', open); this.setAttribute('aria-expanded', open);" }}
                 {{ $links := slice }}
                 {{ if and .links.url (ne .links.url $main) }}{{ $links = $links | append (dict "href" .links.url "label" "Read online") }}{{ end }}
-                {{ if and .links.postprint (ne .links.postprint $main) }}{{ $links = $links | append (dict "href" .links.postprint "label" "Get PDF") }}{{ end }}
+                {{ if and .links.postprint (ne .links.postprint $main) }}{{ $links = $links | append (dict "href" .links.postprint "label" "Free copy") }}{{ end }}
                 {{ if and .links.pdf (ne .links.pdf $main) }}{{ $links = $links | append (dict "href" .links.pdf "label" "Get PDF") }}{{ end }}
                 {{ if and .links.project (ne .links.project $main) }}{{ $links = $links | append (dict "href" .links.project "label" "Project") }}{{ end }}
                 <div class="pub-footer">

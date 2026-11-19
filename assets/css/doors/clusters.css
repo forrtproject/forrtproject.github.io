@@ -2578,6 +2578,8 @@ summary.clusters-overview__heading::before{content:"";width:0;height:0;border-le
 .cluster-hero__desc{max-width:42em;margin-top:16px}
 .cluster-hero__desc p{margin:0;font-size:18px;line-height:1.55;color:var(--ink)}
 .cluster-hero-band .is-clamped{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4;line-clamp:4;overflow:hidden}
+/* On a phone the description shows six lines before "more", as the directories do (site.js clamps only past eight). */
+@media(max-width:760px){.cluster-hero-band .is-clamped{-webkit-line-clamp:6;line-clamp:6}}
 /* "more" as on the About directories (sections.css, which these pages do not load). */
 .cluster-hero-band .clamp-more[hidden]{display:none}
 .cluster-hero-band .clamp-more{display:inline-flex;align-items:center;min-width:44px;min-height:44px;margin-top:2px;padding:0;border:0;background:none;color:var(--link);font:600 16px/1.3 var(--text);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
