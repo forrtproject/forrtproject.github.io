@@ -66,7 +66,7 @@ if (window.location.hash) {
 
 
 <div class="contributors-head">
-<div class="contributors-intro">
+<div class="contributors-intro clamp-desc" data-clamp-name="FORRT's contributors">
 
 FORRT is driven by a **large and diverse community of contributors** that shape one or more of our projects. Below you can see everyone's scientific contributions in detail. Note that many also contribute to maintaining our community - we are equally grateful for their efforts. You can find out more about the scale of contributions at FORRT, including an interactive network graph, on our <a href="/contributor-analysis">contributor analysis</a> page.
 
@@ -77,7 +77,8 @@ FORRT is driven by a **large and diverse community of contributors** that shape 
   <div class="filter-grid">
     <div class="filter-field filter-name" hidden>
       <label for="name-search">Find a name</label>
-      <input id="name-search" type="search" autocomplete="off" spellcheck="false">
+      <input id="name-search" type="search" autocomplete="off" spellcheck="false" aria-describedby="contributor-count">
+      <p id="contributor-count" class="contributor-count" role="status" hidden></p>
     </div>
     <div class="filter-field">
       <label for="project-select">Project</label>
@@ -95,7 +96,6 @@ FORRT is driven by a **large and diverse community of contributors** that shape 
       <button id="apply-filter">Apply filter</button>
     </div>
   </div>
-  <p id="contributor-count" class="contributor-count" role="status" hidden></p>
   <div id="filter-results" style="display: none;">
     <p class="filter-title">Filtered results</p>
     <div id="filter-info"></div>
