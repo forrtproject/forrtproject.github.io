@@ -35,6 +35,9 @@
         "reviewed_by" "Überprüft von"
         "translated_by" "Übersetzt von"
         "translation_reviewed_by" "Übersetzung überprüft von"
+        "home" "Startseite"
+        "also_available_in" "Auch verfügbar auf"
+        "languages" (dict "arabic" "Arabisch" "chinese" "Chinesisch" "english" "Englisch" "turkish" "Türkisch")
         "note" (printf "Wir arbeiten momentan daran, die Referenzen direkt zu verlinken. Momentan kann hier die <a href = '%s'>vollständige Referenzliste</a> eingesehen werden." $references_url)
         "reference" "Referenz"
         "references" "Referenzen"
@@ -73,6 +76,9 @@
         "reviewed_by" "Gözden geçirenler"
         "translated_by" "Çevirenler"
         "translation_reviewed_by" "Çeviriyi gözden geçirenler"
+        "home" "Ana sayfa"
+        "also_available_in" "Diğer diller"
+        "languages" (dict "arabic" "Arapça" "chinese" "Çince" "english" "İngilizce" "german" "Almanca")
         "note" (printf "Kaynakları doğrudan ilişkilendirmek için çalışmalarımız devam etmektedir. Şimdilik kaynakların tam listesine <a href='%s'>buraya tıklayarak</a> ulaşabilirsiniz." $references_url)
         "reference" "Kaynak"
         "references" "Kaynakça"
@@ -89,6 +95,9 @@
         "reviewed_by" "审阅者"
         "translated_by" "翻译者"
         "translation_reviewed_by" "译稿审阅者"
+        "home" "首页"
+        "also_available_in" "其他语言"
+        "languages" (dict "arabic" "阿拉伯语" "english" "英语" "german" "德语" "turkish" "土耳其语")
         "note" (printf "我们正在努力将参考文献直接链接起来。目前，完整的参考文献列表可在<a href='%s'>此处</a>查看。" $references_url)
         "reference" "参考文献"
         "references" "参考文献"
@@ -178,7 +187,11 @@
 
       <div class="article-style">
         {{ with .Params.definition }}
-        <div class="term-definition"><p class="term-definition-label">{{ index $dict "definition" }}</p><p>{{ . | markdownify }}</p></div>
+        {{/* In Arabic text a Latin citation in brackets, "(Open Science Collaboration, 2015)", is isolated left to right,
+             so it does not split into "Open Science)" and "(Collaboration, 2015" across a line. */}}
+        {{ $def := . | markdownify }}
+        {{ if eq $lang "arabic" }}{{ $def = replaceRE `\(([^()\p{Arabic}]*\p{Latin}[^()\p{Arabic}]*)\)` `<bdi dir="ltr">($1)</bdi>` $def }}{{ end }}
+        <div class="term-definition"><p class="term-definition-label">{{ index $dict "definition" }}</p><p>{{ $def | safeHTML }}</p></div>
         {{ end }}
 
             {{ partial "doors/content" .Content }}
@@ -229,7 +242,9 @@
             <ul class="term-cards">
               {{ range . }}
               <li{{ if ne .page.Params.language $lang }} lang="en"{{ end }}><a href="{{ .page.RelPermalink }}">{{ .name | htmlEscape | markdownify }}</a>
-                {{ with .page.Params.definition }}<p>{{ . | markdownify | plainify | htmlUnescape | replaceRE `\*\*|__` "" | truncate 150 }}</p>{{ end }}</li>
+                {{/* The start of the definition, without its in-text citations ("(Dickersin & Min, 1993)"), which a two-line
+                     preview would cut mid-way; cut into a Latin run inside Arabic text, the clamp hid the run's start. */}}
+                {{ with .page.Params.definition }}<p>{{ . | markdownify | plainify | htmlUnescape | replaceRE `\*\*|__` "" | replaceRE `\s*[(（][^()（）]*\d{4}[a-z]?[^()（）]*[)）]` "" | truncate 150 }}</p>{{ end }}</li>
               {{ end }}
             </ul>
             {{ end }}

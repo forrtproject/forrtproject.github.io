@@ -138,3 +138,50 @@
   .res-start h2{font-size:20px}
 }
 @media(max-width:760px){.heading-grid:has(.res-plate)>div{grid-column:1/-1;grid-row:1}.heading-grid:has(.res-plate) h1,.heading-grid:has(.res-plate) .lede{margin-inline-end:100px}}
+/* A resource's own page (curated_resources/single.html; its grid is in article.css). One panel, as wide as the
+   abstract, holds the facts a teacher needs before opening the resource: its clusters with the first one's door, what
+   it is and who it is for, the button, and a quiet last row with the rest. It takes the first cluster's pale colour;
+   without a cluster it is neutral. */
+.resource-decide{box-sizing:border-box;max-width:28.4em;margin:8px 0 30px;padding:18px 22px 16px;background:var(--surface);border-radius:var(--r-large)}
+.resource-decide--cluster{background:var(--c-bg)}
+.resource-decide__head{display:flex;align-items:center;gap:14px;margin:0 0 16px}
+.resource-decide .article-card__door{position:static;flex:none}
+.resource-clusters{display:flex;flex-direction:column;gap:2px;margin:0;font-size:17px;line-height:1.35}
+.resource-clusters__label{font:700 15px/1.3 var(--text);color:var(--ink)}
+.resource-clusters a{color:var(--link);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+/* The door carries the colour of a single cluster; with several, each keeps its small mark. */
+.resource-clusters:not(:has(.cl-item+.cl-item)) .cl-mark{display:none}
+/* What it is and who it is for: each label beside its value. */
+.resource-fit{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:8px 18px;margin:0 0 18px;align-items:baseline}
+.resource-fit>div{display:contents}
+.resource-fit dt{font:700 15px/1.3 var(--text);color:var(--ink)}
+.resource-fit dd{margin:0;font-size:17px;line-height:1.4}
+/* The byline keeps to the width of the panel and the abstract under it. */
+.article-layout-resource .byline{max-width:511px}
+.resource-decide .resource-open{margin:0}
+.resource-decide .resource-host{color:var(--ink)}
+.resource-facts{display:flex;flex-wrap:wrap;gap:2px 20px;margin:16px 0 0;padding:12px 0 0;border-top:1px solid rgb(0 0 0/.12);font-size:15px;line-height:1.4;color:var(--ink)}
+.resource-facts>div{display:flex;gap:6px}
+.resource-facts dt{font-weight:600}
+.resource-facts dd{margin:0}
+/* Previous and Next in the cluster: the side card on a desktop, after the entry on a phone. Each is its label over the
+   linked title, read from the start of the line. */
+.article-layout .article-card.resource-nav{background:#fff;border:1.5px solid var(--line);font-size:16px;line-height:1.4}
+.article-layout .resource-nav .post-nav-scope{margin:0 0 14px}
+.article-layout .resource-nav .post-nav{flex-direction:column;gap:14px;margin:0}
+.article-layout .resource-nav .post-nav .post-nav-item{max-width:none;margin:0;text-align:start}
+.article-layout .resource-nav .meta-nav{font-size:15px;font-weight:700;color:var(--soft)}
+.article-layout .resource-nav .post-nav-item a{color:var(--link)}
+.article-layout .resource-nav .post-nav-item p{margin:2px 0 0}
+.article-layout-resource:not(:has(>.resource-nav)) .article-foot{margin-top:0}
+@media(max-width:1000px){
+  .article-layout.article-layout-resource{row-gap:28px}
+  .article-layout.article-layout-resource .resource-keywords{margin-bottom:0}
+}
+@media(max-width:760px){
+  .resource-decide{max-width:none;margin:4px 0 26px;padding:16px 16px 14px}
+  .resource-decide__head{margin-bottom:12px}
+  .resource-fit{gap:6px 12px;margin-bottom:14px}
+  .resource-fit dd{font-size:16px}
+  .resource-decide .resource-host{flex-basis:100%}
+}
