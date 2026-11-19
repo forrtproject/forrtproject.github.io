@@ -253,8 +253,9 @@ html:has(.contributor-az){scroll-padding-top:calc(var(--contributor-az,72px) + 1
 .article-layout .article-style .contributor-rows>.contributor-group>:not(.contributor-name){grid-column:2}
 .article-layout .article-style .contributor-name{grid-row:1/span 2;margin:0;font:500 20px/1.3 var(--display)}
 /* A name is a link to its ORCID record, a tap target of its own beside the project links: 44 px tall (DESIGN.md §9),
-   with the extra height invisible, so a linked name sits exactly where an unlinked one does. */
-.article-layout .article-style .contributor-name a{display:inline-block;padding-block:9px;margin-block:-9px;color:var(--link)}
+   with the extra height invisible, so a linked name sits exactly where an unlinked one does. The extra height lies
+   mostly above the name, in the row's own top space, and only 4 px below it, the gap before the first project link. */
+.article-layout .article-style .contributor-name a{display:inline-block;padding:14px 0 4px;margin:-14px 0 -4px;color:var(--link)}
 .article-layout .article-style .contributor-rows .contributions-list{max-width:none;margin:0;padding:0;list-style:none}
 .article-layout .article-style .contributor-rows .contribution{max-width:27em;margin:0 0 4px;font-size:17px;line-height:1.45}
 .article-layout .article-style .contributor-rows .contribution:last-child{margin-bottom:0}
