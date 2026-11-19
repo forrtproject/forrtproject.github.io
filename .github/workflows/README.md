@@ -87,12 +87,14 @@ Triggers `deploy.yaml` after successful processing via `repository_dispatch`.
 
 
 
-### [cluster-tests.yaml](cluster-tests.yaml)
-**Clusters parser regression tests and stated sub-cluster counts**
+### [script-tests.yaml](script-tests.yaml)
+**Unit tests for the scripts**
 
 | Trigger | Runs on |
 |---------|---------|
-| Pull requests changing the clusters data, parser or tests | PR branches |
+| Pull requests | PR branches |
+
+Runs every test in `scripts/tests/` (including the SEO checks and the clusters parser and sub-cluster counts) and `scripts/test_parse_disciplines_gdoc.py`.
 
 ### [check_images.yaml](workflows/check_images.yaml)
 **Image validation in PRs**
