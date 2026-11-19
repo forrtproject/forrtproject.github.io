@@ -14,15 +14,19 @@ lede: "Evidence worth building on. Tools and guidance for reproduction and repli
 # Four common starting points, shown under the introduction, in the order of the stages (hub.css colours them).
 start:
   - title: "Submit a replication"
+    stage: track  # the diagram's circle this step belongs to
     text: "Add your study to FLoRA"
     url: "replication-hub/submit/"
   - title: "Check a paper"
+    stage: explore  # the diagram's circle this step belongs to
     text: "Find replications of the studies a paper cites"
     url: "annotator/"
   - title: "Plan a replication"
+    stage: conduct  # the diagram's circle this step belongs to
     text: "The handbook for reproductions and replications"
     url: "https://forrt.org/replication-handbook/"
   - title: "Publish a replication"
+    stage: disseminate  # the diagram's circle this step belongs to
     text: "In Replication Research (R2), a diamond open access journal"
     url: "https://replicationresearch.org"
 cards:
