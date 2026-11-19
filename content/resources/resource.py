@@ -102,7 +102,7 @@ def wrangle_data(df):
 
 # Titles and abstracts pasted from publisher pages can carry HTML entities such as
 # "&ldquo;". Hugo escapes the "&" again, so pages showed "&ldquo;" as text and the
-# meta description failed check 10 of scripts/check_seo_html.py. Only complete
+# meta description failed scripts/seo_checks/description_entities.py. Only complete
 # entities ending in ";" are decoded, so a bare "&" stays as it is, and a name is
 # decoded only if the whole name is an HTML entity. "<" and ">" stay encoded:
 # abstracts are rendered as Markdown with raw HTML allowed, so decoding them
