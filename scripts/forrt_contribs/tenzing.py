@@ -635,7 +635,7 @@ footer_content = f"""
 // Value-labels for filtering menus 
 window.filterData = {json.dumps(filter_data, indent=2)};
 </script>
-<script src="/js/contributor-filter.js"></script>
+<script src="../js/contributor-filter.js"></script>
 """
 
 # Log the final deduplicated number of contributors

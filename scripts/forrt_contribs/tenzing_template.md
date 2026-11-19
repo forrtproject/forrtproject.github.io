@@ -73,8 +73,12 @@ FORRT is driven by a **large and diverse community of contributors** that shape 
 </div>
 
 <div id="filter-menu">
-  <h2>Filter contributors</h2>
+  <h2>Find contributors</h2>
   <div class="filter-grid">
+    <div class="filter-field filter-name" hidden>
+      <label for="name-search">Find a name</label>
+      <input id="name-search" type="search" autocomplete="off" spellcheck="false">
+    </div>
     <div class="filter-field">
       <label for="project-select">Project</label>
       <select id="project-select">
@@ -91,6 +95,7 @@ FORRT is driven by a **large and diverse community of contributors** that shape 
       <button id="apply-filter">Apply filter</button>
     </div>
   </div>
+  <p id="contributor-count" class="contributor-count" role="status" hidden></p>
   <div id="filter-results" style="display: none;">
     <p class="filter-title">Filtered results</p>
     <div id="filter-info"></div>
