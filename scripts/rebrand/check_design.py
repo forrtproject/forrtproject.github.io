@@ -319,11 +319,15 @@ def read_settled(page, expression):
 
 
 def check_samples(browser, base, failures):
-    """Nothing runs wider than the screen or hides a button on the sample pages, with their retained
-    templates too."""
+    """Nothing runs wider than the screen, past its footer or hides a button on the sample pages, with
+    their retained templates too."""
     with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "sample_pages.json"), encoding="utf-8") as handle:
         samples = json.load(handle)
     wider = "document.documentElement.scrollWidth - document.documentElement.clientWidth"
+    # A collapsed panel clips what it holds, unless something in it escapes to the page; then the page
+    # scrolls on past its footer into blank space.
+    below = """() => { const footer = document.querySelector('footer');
+      return footer ? Math.round(document.documentElement.scrollHeight - footer.getBoundingClientRect().bottom - scrollY) : 0; }"""
     for width in WIDTHS:
         page = new_page(browser, width)
         for name, path in samples.items():
@@ -332,6 +336,9 @@ def check_samples(browser, base, failures):
             over = read_settled(page, wider)
             if over > 0:
                 failures.append(f"{name} at {width}: {over} px wider than the screen")
+            tail = read_settled(page, below)
+            if tail > 2:
+                failures.append(f"{name} at {width}: the page runs {tail} px past its footer")
             hidden = read_settled(page, f"({HIDDEN_BUTTONS})(document.querySelector('main') || document.body)")
             if hidden:
                 failures.append(f"{name} at {width}: hidden buttons: {hidden[:2]}")
@@ -345,6 +352,10 @@ def check_other_widths(browser, base, failures):
       sizes.forEach(([el, size]) => { el.style.fontSize = size * 2 + 'px'; });
     }"""
     wider = "document.documentElement.scrollWidth - document.documentElement.clientWidth"
+    # A collapsed panel clips what it holds, unless something in it escapes to the page; then the page
+    # scrolls on past its footer into blank space.
+    below = """() => { const footer = document.querySelector('footer');
+      return footer ? Math.round(document.documentElement.scrollHeight - footer.getBoundingClientRect().bottom - scrollY) : 0; }"""
     for name, path in SCREENS.items():
         for width in (761, 1000, 1001, 1240, 1241):
             page = new_page(browser, width)
