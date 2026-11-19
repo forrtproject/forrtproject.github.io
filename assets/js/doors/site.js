@@ -1008,18 +1008,19 @@ if (badges.length) {
 }
 
 // Replication Hub: a "Start here" brick traces the outline of its stage's circle on the diagram while pointed at or
-// focused (replication_hub/list.html, clusters.css); the outline stays still with reduced motion.
+// focused (replication_hub/list.html, hub.css); the outline stays still with reduced motion. The outline stays lit
+// while the brick is pointed at or has focus, whichever ends last.
 const hubLobes = document.querySelector('.hub-lobes');
 if (hubLobes) {
   document.querySelectorAll('.hub-start a[data-stage]').forEach((brick) => {
     const lobe = hubLobes.querySelector(`.hub-lobe[data-stage="${brick.dataset.stage}"]`);
     if (!lobe) return;
-    const on = () => lobe.classList.add('is-lit');
-    const off = () => lobe.classList.remove('is-lit');
-    brick.addEventListener('pointerenter', on);
-    brick.addEventListener('pointerleave', off);
-    brick.addEventListener('focus', on);
-    brick.addEventListener('blur', off);
+    let pointed = false;
+    const sync = () => lobe.classList.toggle('is-lit', pointed || document.activeElement === brick);
+    brick.addEventListener('pointerenter', () => { pointed = true; sync(); });
+    brick.addEventListener('pointerleave', () => { pointed = false; sync(); });
+    brick.addEventListener('focus', sync);
+    brick.addEventListener('blur', sync);
   });
 }
 
