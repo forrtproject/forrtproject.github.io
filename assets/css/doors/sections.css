@@ -250,7 +250,7 @@
 @media(min-width:901px){
   .contributors-head{display:grid;grid-template-columns:minmax(0,34em) minmax(340px,480px);justify-content:space-between;gap:40px;align-items:start;margin:0 0 8px}
   .contributors-head #filter-menu{margin:0}
-  /* The introduction is cut to six lines only on a phone, where it stands between the heading and the finder. */
+  /* The introduction is cut short only while it stands above the finder (narrower than 901 px); beside it, it shows in full. */
   .contributors-intro .is-clamped{display:block;-webkit-line-clamp:unset;line-clamp:unset;overflow:visible}
   .contributors-head>.clamp-more{display:none!important}
   .contributors-head .filter-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
