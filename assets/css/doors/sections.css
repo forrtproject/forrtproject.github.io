@@ -399,6 +399,7 @@ html:has(.contributor-az){scroll-padding-top:calc(var(--contributor-az,72px) + 1
 @media(max-width:760px){.article-layout .article-style .tower-picture{float:none;width:min(60%,220px);margin:4px auto 14px}}
 /* A video's note runs the video's width. */
 .article-layout .article-style .video-note{max-width:none}
+.article-layout-wide .article-style .video-note{max-width:960px}
 /* The closed contents on a phone (toc_phone_after_first): one line that opens the list. */
 .toc-phone--closed>summary{display:flex;align-items:center;gap:8px;min-height:44px;margin:0;cursor:pointer;list-style:none}
 .toc-phone--closed[open]>summary{margin-bottom:6px}
