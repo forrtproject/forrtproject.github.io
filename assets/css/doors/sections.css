@@ -75,13 +75,33 @@
 .btn-toggle-abstract.active i{transform:rotate(90deg)}
 .publication-card-abstract{display:none;margin:8px 0}
 .publication-card-abstract.show{display:block}
-.pub-citation-section{margin:10px 0;font-size:15px}
 .pub-footer,.partner-footer{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin-top:10px}
-.pub-buttons,.partner-buttons{display:flex;flex-wrap:wrap;gap:6px}
-/* A publication's links are one set of buttons: the same size and colours, with the icon and label centred. */
-.article-layout .article-style .pub-card .pub-buttons .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:10px 22px!important;border-color:var(--link);border-radius:999px!important;color:var(--link);font-size:17px!important;line-height:1.3!important}
-.article-layout .article-style .pub-card .pub-buttons .btn:is(:hover,:focus-visible){border-color:var(--ink);background:var(--ink);color:#fff}
-.pub-card .pub-buttons .btn i{line-height:1}
+.partner-buttons{display:flex;flex-wrap:wrap;gap:6px}
+/* A publication's title is its main link, so its other ways in are plain links in a row, each a 44 px target. */
+.article-layout .article-style .pub-links{display:flex;flex-wrap:wrap;gap:0 20px;margin:0;padding:0;list-style:none}
+.article-layout .article-style .pub-links li{margin:0}
+.article-layout .article-style .pub-links a{display:inline-flex;align-items:center;min-height:44px;font-weight:600}
+.article-layout .article-style .pub-title a{color:var(--ink);text-decoration-color:var(--link);text-decoration-thickness:1px;text-underline-offset:4px}
+.article-layout .article-style .pub-title a:is(:hover,:focus-visible){text-decoration-thickness:2px}
+.article-layout .article-style .pub-title a:hover{color:var(--link)}
+/* The card's foot: the three toggles, then the links, in one row that wraps on a narrow card. */
+.article-layout .article-style .pub-card .pub-footer{justify-content:flex-start;gap:0 20px;padding-top:6px}
+.pub-toggles{display:flex;flex-wrap:wrap;gap:0 18px}
+.pub-toggles .btn-toggle-abstract{display:inline-flex;align-items:center;gap:5px;min-height:44px;text-decoration:none}
+/* Only the label is underlined, so the chevron turns without an underline turning with it. */
+.pub-toggles .btn-toggle-abstract span{text-decoration:underline;text-underline-offset:3px}
+.pub-toggles .btn-toggle-abstract:hover span{text-decoration-thickness:2px}
+/* The links lead off the page, so on a wide card they sit apart from the toggles, at the row's end. */
+.article-layout .article-style .pub-card .pub-footer{align-items:center}
+@media(min-width:761px){.article-layout .article-style .pub-card .pub-links{margin-inline-start:auto}}
+/* Opened panels: a hairline between two that are open together. */
+.publication-card-abstract.show~.publication-card-abstract.show{margin-top:10px;padding-top:12px;border-top:1px solid var(--line)}
+/* The year stays top right on every card: a long area tag wraps beside it rather than pushing it down. */
+.pub-header{flex-wrap:nowrap;align-items:flex-start;column-gap:14px}
+.pub-header .pub-year{flex:none;line-height:28px}
+.pub-toggles .btn-toggle-abstract[hidden]{display:none}
+.pub-cite .citation-text{padding:var(--box-pad);background:#fff;border-radius:var(--r-small);font-size:15px}
+.pub-attention[hidden]{display:none}
 .pub-metrics{display:flex;gap:10px}
 .pub-metric-label{display:block;font-size:15px}
 .partner-content{display:grid;grid-template-columns:96px minmax(0,1fr);gap:16px}
@@ -107,7 +127,7 @@
 
 /* Publications: the filters as two drop-downs on a phone (as on Partnerships), buttons on wider screens. The research
    areas wear their area colours (DESIGN.md §6): the area buttons carry a mark of the colour and fill with it when
-   chosen, and each card takes its area's pale ground, a band of the colour along its top and a tag in the colour. */
+   chosen, and each card takes its area's pale ground and a tag in the colour. */
 .pub-filter-group{margin:0 0 6px}
 @media(max-width:760px){
   .pub-filters .pill-bar{display:none}
@@ -123,7 +143,7 @@
 :is(.pub-card,.filter-pill)[data-area=jus]{--area:var(--jus);--area-bg:var(--jus-bg)}
 :is(.pub-card,.filter-pill)[data-area=com]{--area:var(--com);--area-bg:var(--com-bg)}
 :is(.pub-card,.filter-pill)[data-area=edu]{--area:var(--edu);--area-bg:var(--edu-bg)}
-.pub-card[data-area]{background:var(--area-bg);box-shadow:inset 0 6px 0 var(--area)}
+.pub-card[data-area]{background:var(--area-bg)}
 .pub-card[data-area] .pub-pill-area{background:var(--area);color:#fff}
 
 /* Directories hold cards and lists rather than running text, so a wide screen takes two or more columns. */
@@ -287,13 +307,6 @@ html:has(.contributor-az){scroll-padding-top:calc(var(--contributor-az,72px) + 1
 .article-layout .article-style .jos-team img{display:block;width:96px;height:96px;border-radius:50%;object-fit:cover;margin:0 0 12px}
 .article-layout .article-style .jos-team h3{margin:0 0 6px;font-size:20px}
 .article-layout .article-style .jos-team p{margin:0;font-size:16px;line-height:1.45;color:var(--soft)}
-/* "Cite this" reads like "Show Abstract" above it, and opens the full reference. */
-.pub-citation-section{margin:4px 0 10px}
-.pub-citation-section>summary{display:inline-block;cursor:pointer;color:var(--link);font:600 15px/1.4 var(--text);text-decoration:underline;text-underline-offset:3px}
-.pub-citation-section>summary::-webkit-details-marker{display:none}
-.pub-citation-section>summary i{transition:transform .15s}
-.pub-citation-section[open]>summary i{transform:rotate(90deg)}
-.pub-citation-section .citation-text{margin-top:8px;padding:var(--box-pad);background:#fff;border-radius:var(--r-small)}
 #just-os-fullpage{margin-bottom:24px}
 /* On a phone the empty chat takes about half the screen, so its question box is in view at once; it is the site's card, not a shadowed box. */
 #just-os-fullpage{border-color:var(--line)!important;border-radius:var(--r-large)!important;box-shadow:none!important}

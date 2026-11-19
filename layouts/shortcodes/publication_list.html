@@ -53,7 +53,9 @@
                     <span class="pub-year">{{ .year }}</span>
                 </div>
 
-                <h3 class="pub-title">{{ .title | markdownify }}</h3>
+                {{/* The title is the way to the work: its DOI, else its page, else a copy of it (DESIGN.md §5). */}}
+                {{ $main := or .links.doi .links.url .links.postprint .links.pdf .links.project }}
+                <h3 class="pub-title">{{ with $main }}<a href="{{ . }}" target="_blank" rel="noopener">{{ end }}{{ .title | markdownify }}{{ with $main }}</a>{{ end }}</h3>
 
                 <div class="pub-authors">
                     {{ .authors | markdownify }}
@@ -66,73 +68,68 @@
                     {{ end }}
                 </div>
 
-                <div class="pub-abstract-toggle">
-                    {{ $abstractID := printf "abstract-%d-%d" $.Ordinal $i }}
-                    <button type="button" class="btn-toggle-abstract" aria-expanded="false" aria-controls="{{ $abstractID }}"
-                        onclick="var open = this.parentElement.nextElementSibling.classList.toggle('show'); this.classList.toggle('active', open); this.setAttribute('aria-expanded', open); this.querySelector('.toggle-label').textContent = open ? 'Hide Abstract' : 'Show Abstract';">
-                        <i class="fas fa-chevron-right" aria-hidden="true"></i> <span class="toggle-label">Show Abstract</span>
-                    </button>
-                </div>
-                <div class="publication-card-abstract" id="{{ $abstractID }}">
-                    <p>{{ .abstract | markdownify }}</p>
-                </div>
-
-                {{/* The card already shows title, authors and venue, so the full reference waits behind "Cite". */}}
-                <details class="pub-citation-section">
-                    <summary><i class="fas fa-chevron-right" aria-hidden="true"></i> Cite this</summary>
-                    <div class="citation-text">
-                        {{ .citation | markdownify }}
-                    </div>
-                </details>
-
+                {{/* One row at the foot of the card: the abstract, the reference and the attention scores open below
+                     it, and the further links sit at its end. The title already carries the main link. */}}
+                {{ $id := printf "%d-%d" $.Ordinal $i }}
+                {{ $toggle := "var panel = document.getElementById(this.getAttribute('aria-controls')); var open = panel.classList.toggle('show'); this.classList.toggle('active', open); this.setAttribute('aria-expanded', open);" }}
+                {{ $links := slice }}
+                {{ if and .links.url (ne .links.url $main) }}{{ $links = $links | append (dict "href" .links.url "label" "Read more") }}{{ end }}
+                {{ if and .links.postprint (ne .links.postprint $main) }}{{ $links = $links | append (dict "href" .links.postprint "label" "Download the paper") }}{{ end }}
+                {{ if and .links.pdf (ne .links.pdf $main) }}{{ $links = $links | append (dict "href" .links.pdf "label" "Download the PDF") }}{{ end }}
+                {{ if and .links.project (ne .links.project $main) }}{{ $links = $links | append (dict "href" .links.project "label" "Project") }}{{ end }}
                 <div class="pub-footer">
-                    <div class="pub-buttons">
-                        {{ if .links.doi }}
-                        <a href="{{ .links.doi }}" target="_blank" class="btn btn-outline-primary btn-sm">
-                            <i class="fas fa-external-link-alt"></i> DOI
-                        </a>
+                    <div class="pub-toggles">
+                        {{ with .abstract }}
+                        <button type="button" class="btn-toggle-abstract" aria-expanded="false" aria-controls="abstract-{{ $id }}"
+                            onclick="{{ $toggle | safeJS }} this.querySelector('.toggle-label').textContent = open ? 'Hide Abstract' : 'Show Abstract';">
+                            <i class="fas fa-chevron-right" aria-hidden="true"></i> <span class="toggle-label">Show Abstract</span>
+                        </button>
                         {{ end }}
-                        {{ if .links.postprint }}
-                        <a href="{{ .links.postprint }}" target="_blank" class="btn btn-outline-success btn-sm">
-                            <i class="fas fa-file-pdf"></i> Download the Paper
-                        </a>
+                        {{ with .citation }}
+                        <button type="button" class="btn-toggle-abstract" aria-expanded="false" aria-controls="cite-{{ $id }}" onclick="{{ $toggle | safeJS }}">
+                            <i class="fas fa-chevron-right" aria-hidden="true"></i> <span>Cite this</span>
+                        </button>
                         {{ end }}
-                        {{ if .links.pdf }}
-                        <a href="{{ .links.pdf }}" target="_blank" class="btn btn-outline-danger btn-sm">
-                            <i class="fas fa-file-pdf"></i> Download the PDF
-                        </a>
-                        {{ end }}
-                        {{ if .links.project }}
-                        <a href="{{ .links.project }}" target="_blank" class="btn btn-outline-info btn-sm">
-                            <i class="fas fa-project-diagram"></i> Project
-                        </a>
-                        {{ end }}
-                        {{ if .links.url }}
-                        <a href="{{ .links.url }}" target="_blank" class="btn btn-outline-primary btn-sm">
-                            <i class="fas fa-link"></i> Read more
-                        </a>
+                        {{ if or .altmetric_doi .altmetric_doi_2 }}
+                        <button type="button" class="btn-toggle-abstract" aria-expanded="false" aria-controls="attention-{{ $id }}" onclick="{{ $toggle | safeJS }}">
+                            <i class="fas fa-chevron-right" aria-hidden="true"></i> <span>Attention</span>
+                        </button>
                         {{ end }}
                     </div>
-
-                    {{ if or .altmetric_doi .altmetric_doi_2 }}
+                    {{ with $links }}
+                    <ul class="pub-links">
+                        {{ range . }}<li><a href="{{ .href }}" target="_blank" rel="noopener">{{ .label }}</a></li>{{ end }}
+                    </ul>
+                    {{ end }}
+                </div>
+                {{ with .abstract }}
+                <div class="publication-card-abstract" id="abstract-{{ $id }}"><p>{{ . | markdownify }}</p></div>
+                {{ end }}
+                {{ with .citation }}
+                <div class="publication-card-abstract pub-cite" id="cite-{{ $id }}"><div class="citation-text">{{ . | markdownify }}</div></div>
+                {{ end }}
+                {{/* Altmetric's scores; a version with no mentions shows no badge (data-hide-no-mentions), and where no
+                     version has any, site.js hides the panel and its button. */}}
+                {{ if or .altmetric_doi .altmetric_doi_2 }}
+                <div class="publication-card-abstract pub-attention" id="attention-{{ $id }}">
                     <div class="pub-metrics">
                         {{ if .altmetric_doi }}
                         <div class="pub-metric">
                             {{ if .altmetric_doi_2 }}<span class="pub-metric-label">Published article</span>{{ end }}
-                            <div class="altmetric-embed" data-badge-type="donut" data-role="box"
+                            <div class="altmetric-embed" data-badge-type="donut" data-badge-details="right" data-hide-no-mentions="true"
                                 data-doi="{{ .altmetric_doi }}"></div>
                         </div>
                         {{ end }}
                         {{ if .altmetric_doi_2 }}
                         <div class="pub-metric">
                             <span class="pub-metric-label">Preprint</span>
-                            <div class="altmetric-embed" data-badge-type="donut" data-role="box"
+                            <div class="altmetric-embed" data-badge-type="donut" data-badge-details="right" data-hide-no-mentions="true"
                                 data-doi="{{ .altmetric_doi_2 }}"></div>
                         </div>
                         {{ end }}
                     </div>
-                    {{ end }}
                 </div>
+                {{ end }}
 
             </div>
         </div>
