@@ -90,7 +90,8 @@
         {{ end }}
         {{/* The remaining facts, a quiet last row. */}}
         <dl class="resource-facts">
-          {{ range $details }}{{ if .values }}<div><dt>{{ cond (gt (len .values) 1) .labels .label }}</dt><dd>{{ delimit .values ", " }}</dd></div>{{ end }}{{ end }}
+          {{/* A language other than English alone is already named beside the button ("In German"). */}}
+          {{ range $details }}{{ if and .values (not (and $inLang (eq .label "Language"))) }}<div><dt>{{ cond (gt (len .values) 1) .labels .label }}</dt><dd>{{ delimit .values ", " }}</dd></div>{{ end }}{{ end }}
           <div><dt>Last updated</dt><dd>{{ .Lastmod.Format "2 January 2006" }}</dd></div>
         </dl>
       </div>

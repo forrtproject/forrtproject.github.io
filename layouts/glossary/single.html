@@ -188,9 +188,10 @@
       <div class="article-style">
         {{ with .Params.definition }}
         {{/* In Arabic text a Latin citation in brackets, "(Open Science Collaboration, 2015)", is isolated left to right,
-             so it does not split into "Open Science)" and "(Collaboration, 2015" across a line. */}}
+             so it does not split into "Open Science)" and "(Collaboration, 2015" across a line. Only a bracket after a space
+             or an Arabic letter counts, and never one inside a tag, so a link such as …/Foo_(bar) stays whole. */}}
         {{ $def := . | markdownify }}
-        {{ if eq $lang "arabic" }}{{ $def = replaceRE `\(([^()\p{Arabic}]*\p{Latin}[^()\p{Arabic}]*)\)` `<bdi dir="ltr">($1)</bdi>` $def }}{{ end }}
+        {{ if eq $lang "arabic" }}{{ $def = replaceRE `(^|[\s\p{Arabic}])\(([^()\p{Arabic}<>"]*\p{Latin}[^()\p{Arabic}<>"]*)\)` `$1<bdi dir="ltr">($2)</bdi>` $def }}{{ end }}
         <div class="term-definition"><p class="term-definition-label">{{ index $dict "definition" }}</p><p>{{ $def | safeHTML }}</p></div>
         {{ end }}
 
