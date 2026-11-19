@@ -986,22 +986,19 @@ document.fonts?.ready.then(() => tables.forEach(focusableTable));
 const badges = document.querySelectorAll('.altmetric-embed');
 if (badges.length) {
   const nameBadges = () => badges.forEach((badge) => {
-    const label = badge.previousElementSibling?.classList.contains('pub-metric-label') ? badge.previousElementSibling.textContent : 'publication';
-    badge.querySelector('a:not([aria-label])')?.setAttribute('aria-label', `Altmetric attention for this ${label.toLowerCase()}`);
+    const label = badge.previousElementSibling?.classList.contains('pub-metric-label') ? badge.previousElementSibling.textContent.trim().toLowerCase() : '';
+    badge.querySelector('a:not([aria-label])')?.setAttribute('aria-label', label ? `Altmetric attention for the ${label} version` : 'Altmetric attention for this publication');
   });
-  // A version with no mentions shows no badge (data-hide-no-mentions); where no version has any, the panel and its
-  // button go too. The state is set both ways, so a badge that arrives later brings them back.
+  // A version with no mentions shows no badge (data-hide-no-mentions); its label goes with it, and the scores'
+  // place in the row where no version has any. Set both ways, so a badge that arrives later brings them back.
   const silent = (embed) => embed.classList.contains('altmetric-hidden') || embed.style.display === 'none';
-  const emptyAttention = () => document.querySelectorAll('.pub-attention').forEach((box) => {
-    const embeds = [...box.querySelectorAll('.altmetric-embed')];
-    const empty = embeds.length > 0 && embeds.every(silent);
-    box.hidden = empty;
-    const button = document.querySelector(`[aria-controls="${box.id}"]`);
-    if (button) button.hidden = empty;
-    box.querySelectorAll('.pub-metric').forEach((metric) => {
+  const emptyAttention = () => document.querySelectorAll('.pub-metrics').forEach((box) => {
+    const metrics = [...box.querySelectorAll('.pub-metric')];
+    metrics.forEach((metric) => {
       const embed = metric.querySelector('.altmetric-embed');
-      if (embed) metric.hidden = silent(embed);
+      metric.hidden = Boolean(embed) && silent(embed);
     });
+    box.hidden = metrics.length > 0 && metrics.every((metric) => metric.hidden);
   });
   new MutationObserver(emptyAttention).observe(document.querySelector('.pub-list, .article-style') || document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['class', 'style'] });
   emptyAttention();
@@ -1027,10 +1024,11 @@ document.querySelectorAll('.toc-phone').forEach((box) => {
 });
 
 // Long descriptions in the About directories (Teams, Partnerships, Get involved projects): a description that runs
-// past six lines shows four, with a "more" button for the rest; shorter ones show in full, so "more" never hides a
-// line or two. Without JavaScript the full text shows. A description that is one paragraph is clamped itself, not its
+// past six lines shows four, with a "more" button for the rest; on a phone, past eight lines shows six. Shorter ones
+// show in full, so "more" never hides a line or two. Without JavaScript the full text shows. A description that is one paragraph is clamped itself, not its
 // wrapper. Lengths are measured again once the web font has loaded and when the width changes.
-const CLAMP_LINES = 4, CLAMP_ABOVE = 6;
+const CLAMP_ABOVE = 6, CLAMP_ABOVE_PHONE = 8;
+const phoneClamp = matchMedia('(max-width: 760px)');
 const clamps = [...document.querySelectorAll('.clamp-desc')].map((wrap) => {
   const text = wrap.querySelector(':scope > p:only-child') || wrap;
   const more = document.createElement('button');
@@ -1053,7 +1051,7 @@ const measureClamps = () => clamps.forEach(({text, more}) => {
   if (more.getAttribute('aria-expanded') === 'true') return;
   text.classList.remove('is-clamped');
   const line = parseFloat(getComputedStyle(text).lineHeight) || 24;
-  const long = text.scrollHeight > line * CLAMP_ABOVE + 2;
+  const long = text.scrollHeight > line * (phoneClamp.matches ? CLAMP_ABOVE_PHONE : CLAMP_ABOVE) + 2;
   text.classList.toggle('is-clamped', long);
   more.hidden = !long;
 });

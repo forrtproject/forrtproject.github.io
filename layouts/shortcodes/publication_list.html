@@ -68,14 +68,14 @@
                     {{ end }}
                 </div>
 
-                {{/* One row at the foot of the card: the abstract, the reference and the attention scores open below
-                     it, and the further links sit at its end. The title already carries the main link. */}}
+                {{/* One row at the foot of the card: the abstract and the reference open below it, and the further links
+                     and the attention scores sit at its end. The title already carries the main link. */}}
                 {{ $id := printf "%d-%d" $.Ordinal $i }}
                 {{ $toggle := "var panel = document.getElementById(this.getAttribute('aria-controls')); var open = panel.classList.toggle('show'); this.classList.toggle('active', open); this.setAttribute('aria-expanded', open);" }}
                 {{ $links := slice }}
-                {{ if and .links.url (ne .links.url $main) }}{{ $links = $links | append (dict "href" .links.url "label" "Read more") }}{{ end }}
-                {{ if and .links.postprint (ne .links.postprint $main) }}{{ $links = $links | append (dict "href" .links.postprint "label" "Download the paper") }}{{ end }}
-                {{ if and .links.pdf (ne .links.pdf $main) }}{{ $links = $links | append (dict "href" .links.pdf "label" "Download the PDF") }}{{ end }}
+                {{ if and .links.url (ne .links.url $main) }}{{ $links = $links | append (dict "href" .links.url "label" "Read online") }}{{ end }}
+                {{ if and .links.postprint (ne .links.postprint $main) }}{{ $links = $links | append (dict "href" .links.postprint "label" "Get PDF") }}{{ end }}
+                {{ if and .links.pdf (ne .links.pdf $main) }}{{ $links = $links | append (dict "href" .links.pdf "label" "Get PDF") }}{{ end }}
                 {{ if and .links.project (ne .links.project $main) }}{{ $links = $links | append (dict "href" .links.project "label" "Project") }}{{ end }}
                 <div class="pub-footer">
                     <div class="pub-toggles">
@@ -90,16 +90,31 @@
                             <i class="fas fa-chevron-right" aria-hidden="true"></i> <span>Cite this</span>
                         </button>
                         {{ end }}
-                        {{ if or .altmetric_doi .altmetric_doi_2 }}
-                        <button type="button" class="btn-toggle-abstract" aria-expanded="false" aria-controls="attention-{{ $id }}" onclick="{{ $toggle | safeJS }}">
-                            <i class="fas fa-chevron-right" aria-hidden="true"></i> <span>Attention</span>
-                        </button>
-                        {{ end }}
                     </div>
                     {{ with $links }}
                     <ul class="pub-links">
                         {{ range . }}<li><a href="{{ .href }}" target="_blank" rel="noopener">{{ .label }}</a></li>{{ end }}
                     </ul>
+                    {{ end }}
+                    {{/* Altmetric's scores show on the card, at the row's end; a version with no mentions shows no badge
+                         (data-hide-no-mentions), and the breakdown opens on hover or focus (data-badge-popover). */}}
+                    {{ if or .altmetric_doi .altmetric_doi_2 }}
+                    <div class="pub-metrics">
+                        {{ if .altmetric_doi }}
+                        <div class="pub-metric">
+                            {{ if .altmetric_doi_2 }}<span class="pub-metric-label">Published</span>{{ end }}
+                            <div class="altmetric-embed" data-badge-type="donut" data-badge-popover="left" data-hide-no-mentions="true"
+                                data-doi="{{ .altmetric_doi }}"></div>
+                        </div>
+                        {{ end }}
+                        {{ if .altmetric_doi_2 }}
+                        <div class="pub-metric">
+                            <span class="pub-metric-label">Preprint</span>
+                            <div class="altmetric-embed" data-badge-type="donut" data-badge-popover="left" data-hide-no-mentions="true"
+                                data-doi="{{ .altmetric_doi_2 }}"></div>
+                        </div>
+                        {{ end }}
+                    </div>
                     {{ end }}
                 </div>
                 {{ with .abstract }}
@@ -107,28 +122,6 @@
                 {{ end }}
                 {{ with .citation }}
                 <div class="publication-card-abstract pub-cite" id="cite-{{ $id }}"><div class="citation-text">{{ . | markdownify }}</div></div>
-                {{ end }}
-                {{/* Altmetric's scores; a version with no mentions shows no badge (data-hide-no-mentions), and where no
-                     version has any, site.js hides the panel and its button. */}}
-                {{ if or .altmetric_doi .altmetric_doi_2 }}
-                <div class="publication-card-abstract pub-attention" id="attention-{{ $id }}">
-                    <div class="pub-metrics">
-                        {{ if .altmetric_doi }}
-                        <div class="pub-metric">
-                            {{ if .altmetric_doi_2 }}<span class="pub-metric-label">Published article</span>{{ end }}
-                            <div class="altmetric-embed" data-badge-type="donut" data-badge-details="right" data-hide-no-mentions="true"
-                                data-doi="{{ .altmetric_doi }}"></div>
-                        </div>
-                        {{ end }}
-                        {{ if .altmetric_doi_2 }}
-                        <div class="pub-metric">
-                            <span class="pub-metric-label">Preprint</span>
-                            <div class="altmetric-embed" data-badge-type="donut" data-badge-details="right" data-hide-no-mentions="true"
-                                data-doi="{{ .altmetric_doi_2 }}"></div>
-                        </div>
-                        {{ end }}
-                    </div>
-                </div>
                 {{ end }}
 
             </div>
