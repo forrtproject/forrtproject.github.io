@@ -65,10 +65,9 @@ This page showcases the diverse scholarly and public-facing outputs produced by 
 
 {{< citation_chart >}}
 
+{{< publication_filters >}}
 
 </div>
-
-{{< publication_filters >}}
 
 
 {{< publication_list type="journal" title="Academic peer-reviewed publications" >}}
