@@ -25,7 +25,9 @@ Read our mission | What FORRT advocates for, and why | /about/mission
 Get involved | Join FORRT's Slack, find a project or get the newsletter | /about/get-involved
 {{< /action_cards >}}
 
-You can also [read our publications](/publications), [find teaching resources](/nexus) in our Educational Nexus, or [open the booklet](/booklet/), a 20-page introduction to FORRT.
+- [Read our publications](/publications): meta-scientific papers and policies
+- [Find teaching resources](/nexus) in our Educational Nexus
+- [Open the booklet](/booklet/): a 20-page introduction to FORRT
 
 See also [our manifesto on the OSF](https://osf.io/bnh7p), [FORRT Pedagogies](/pedagogies), our [Code of Conduct](/coc), [Principled Teaching and Mentoring](/about/principles), the institutions and initiatives with which [we are partners](/about/partnerships), and [our community members](/about/community). Would you like to help us be or do better? Give us (anonymous) feedback in our [feedback page](/feedback).
 
