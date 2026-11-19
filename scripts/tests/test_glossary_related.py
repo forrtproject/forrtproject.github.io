@@ -41,9 +41,14 @@ class BuildRelated(unittest.TestCase):
         self.assertEqual(out["Anonymity"], ["Research ethics", "NA"])
 
     def test_unknown_host_is_reported_not_published(self):
-        out, warnings = related([("Anonimity", "Type I error"), ("", "Type I error"), ("Anonymity", "")])
+        out, warnings = related([("Not a term", "Type I error"), ("", "Type I error"), ("Anonymity", "")])
         self.assertEqual(out, {})
-        self.assertEqual(warnings, ["related_terms: 'Anonimity' is not an entry title"])
+        self.assertEqual(warnings, ["related_terms: 'Not a term' is not an entry title"])
+
+    def test_term_and_linking_targets_take_the_entry_title_case(self):
+        linking = LINKING + [{"name": "Crowdsourced science", "term": "citizen science", "show_as_aka": "FALSE"}]
+        out, _ = related([("anonymity", "Crowdsourced science")], linking)
+        self.assertEqual(out, {"Anonymity": ["Citizen Science"]})
 
 
 class BuildAlsoKnownAs(unittest.TestCase):

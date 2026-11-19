@@ -30,16 +30,18 @@ def build_related(related_rows, linking_rows, titles):
     for row in linking_rows:
         name, term = _clean(row.get("name")), _clean(row.get("term"))
         if name and term:
-            by_name.setdefault(name.lower(), []).append(term)
+            # An entry not written yet keeps the name as typed (it shows as plain text until it exists).
+            by_name.setdefault(name.lower(), []).append(by_title.get(term.lower(), term))
 
     related, warnings = {}, []
     for row in related_rows:
         term, name = _clean(row.get("term")), _clean(row.get("related"))
         if not term or not name:
             continue
-        if term not in titles:
+        if term.lower() not in by_title:
             warnings.append(f"related_terms: '{term}' is not an entry title")
             continue
+        term = by_title[term.lower()]
         if name.lower() in by_title:
             targets = [by_title[name.lower()]]
         else:
