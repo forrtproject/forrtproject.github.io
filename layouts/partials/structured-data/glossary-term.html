@@ -8,7 +8,7 @@
   {{/* Defense-in-depth: stop a literal </script from terminating the tag. */}}
   {{- $desc = replaceRE "(?i)</script" "<\\/script" $desc -}}
   {{- $languageName := .Params.language | default "english" -}}
-  {{- $langMap := dict "arabic" "ar" "chinese" "zh" "english" "en" "german" "de" "turkish" "tr" -}}
+  {{- $langMap := dict "arabic" "ar" "bulgarian" "bg" "chinese" "zh" "english" "en" "german" "de" "turkish" "tr" -}}
   {{- $lang := index $langMap $languageName | default "en" -}}
   {{- $set := dict
       "@type" "DefinedTermSet"

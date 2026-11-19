@@ -1,4 +1,8 @@
 {
+    "bulgarian": {
+        "The Troubling Trio": ["tревожещата_тройка", "tревожещата_троика"],
+        "Single-blind peer review": ["едностранно_анонимна_реценция"]
+    },
     "arabic": {
         "Adversarial (collaborative) commentary": [
             "collaborative_commentary_الت_عليق_الت_عاوني_العدايي"
