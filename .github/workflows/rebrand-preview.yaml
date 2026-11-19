@@ -93,12 +93,17 @@ jobs:
       # The data artifact's Contributors page comes from main's generator, which writes the old
       # markup until the redesign launches. Regenerate it with this branch's generator, from the
       # contributor cache the same artifact carries (no credentials needed). Only the branch
-      # build does this; the reference keeps main's page.
+      # build does this; the reference keeps main's page. The generator also reads two published
+      # Sheets (column names and extra roles); if they cannot be reached, the build goes ahead
+      # with the artifact's page and a warning.
       - name: Rebuild the Contributors page with this branch's generator
         run: |
           pip install --quiet numpy==1.24.4 pandas==2.0.3 python-dotenv  # pinned as in requirements.txt
-          python3 scripts/forrt_contribs/tenzing.py
-          mv scripts/forrt_contribs/tenzing.md content/contributors/tenzing.md
+          if python3 scripts/forrt_contribs/tenzing.py; then
+            mv scripts/forrt_contribs/tenzing.md content/contributors/tenzing.md
+          else
+            echo "::warning::Could not regenerate the Contributors page; the preview shows the data artifact's copy."
+          fi
 
       # "Compare with main" builds the reference from these same files, not from whatever
       # data run is newest by the time it starts.
