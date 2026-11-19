@@ -109,7 +109,7 @@ class PageParser(HTMLParser):
         self._in_crumbs = False
         self.alternates = []
         self.related_links = []
-        self._in_related = False
+        self._related_tag = None  # the element holding a term page's related terms (section.term-related)
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
@@ -121,9 +121,9 @@ class PageParser(HTMLParser):
             self._in_crumbs = True
         if tag == "link" and attrs.get("rel") == "alternate" and attrs.get("hreflang") and attrs.get("href"):
             self.alternates.append(attrs["href"])
-        if tag == "p" and "term-related" in (attrs.get("class") or "").split():
-            self._in_related = True
-        if tag == "a" and self._in_related:
+        if self._related_tag is None and "term-related" in (attrs.get("class") or "").split():
+            self._related_tag = tag
+        if tag == "a" and self._related_tag:
             self.related_links.append(attrs.get("href") or "")
         if tag == "a" and self._in_crumbs:
             self.crumb_links.append(attrs.get("href") or "")
@@ -162,8 +162,8 @@ class PageParser(HTMLParser):
     def handle_endtag(self, tag):
         if tag == "nav":
             self._in_crumbs = False
-        if tag == "p":
-            self._in_related = False
+        if tag == self._related_tag:
+            self._related_tag = None
         if tag == "script" and self._inline_script is not None:
             self.largest_inline_script = max(self.largest_inline_script, self._inline_script)
             self._inline_script = None
@@ -290,13 +290,22 @@ def check_glossary_links(pages):
     return failures
 
 
+# A preview build serves the site under a prefix (e.g. /rebrand-doors/); glossary URLs are compared from /glossary/ on.
+GLOSSARY_URL_PATH = re.compile(r"/glossary/.*$")
+
+
+def glossary_url_key(href):
+    match = GLOSSARY_URL_PATH.search(unquote(urlparse(href).path))
+    return match.group(0) if match else None
+
+
 def check_glossary_related_language(pages):
     """A translated term page links its related terms to pages in its own language where they exist."""
     english = {}
     for page in pages:
         path = page.path.replace(os.sep, "/")
         if path.startswith("glossary/english/"):
-            english["/" + path.removesuffix("index.html")] = [unquote(urlparse(h).path) for h in page.alternates]
+            english["/" + path.removesuffix("index.html")] = [glossary_url_key(h) or "" for h in page.alternates]
     failures = []
     for page in pages:
         parts = page.path.replace(os.sep, "/").split("/")
@@ -304,7 +313,7 @@ def check_glossary_related_language(pages):
             continue
         own = "/glossary/%s/" % parts[1]
         for href in page.related_links:
-            target = unquote(urlparse(href).path)
+            target = glossary_url_key(href)
             if any(alt.startswith(own) for alt in english.get(target, [])):
                 failures.append("%s (%s)" % (page.path, href))
     return failures
@@ -628,18 +637,11 @@ def check_flora_citation(public_dir):
 GLOSSARY_HUB = os.path.join("glossary", "english", "index.html")
 AKA_LINE = re.compile(r'<p class="term-aka">(.*?)</p>', re.S)
 HUB_TERM = re.compile(r'<li data-term="([^"]*)">\s*<a href="([^"]+)"')
-# A preview build serves the site under a prefix (e.g. /rebrand-doors/), so links are keyed from /glossary/ on.
-GLOSSARY_PATH = re.compile(r"/glossary/.*$")
-
-
-def glossary_key(href):
-    match = GLOSSARY_PATH.search(urlparse(unescape(href)).path)
-    return match.group(0) if match else None
 
 
 def glossary_aka_failures(hub_html, term_pages):
     """term_pages: {URL path of the term page: its HTML}. Returns the names the hub filter misses."""
-    filter_text = {glossary_key(href): unescape(term) for term, href in HUB_TERM.findall(hub_html)}
+    filter_text = {glossary_url_key(unescape(href)): unescape(term) for term, href in HUB_TERM.findall(hub_html)}
     failures = []
     for url_path, html in sorted(term_pages.items()):
         match = AKA_LINE.search(html)

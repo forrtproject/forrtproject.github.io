@@ -327,7 +327,7 @@ class FloraCitationCheck(unittest.TestCase):
         self.assertIn("not found", flora_failures(None)[0])
 
 
-def related_language_failures(target_alternates):
+def related_language_failures(target_alternates, prefix=""):
     """Check 23: a Turkish page links its related term to the English Paywall page."""
     with tempfile.TemporaryDirectory() as public:
         english = Path(public) / "glossary/english/paywall"
@@ -337,12 +337,18 @@ def related_language_failures(target_alternates):
         links = "".join("<link rel='alternate' hreflang='x' href='%s'>" % h for h in target_alternates)
         (english / "index.html").write_text("<html><head>%s</head></html>" % links, encoding="utf-8")
         (turkish / "index.html").write_text(
-            "<p class='term-line term-related'><a href='/glossary/english/paywall/'>Paywall</a></p>"
-            "<p><a href='/glossary/english/paywall/'>elsewhere</a></p>", encoding="utf-8")
+            "<section class='term-related'><h2>Related term</h2><ul class='term-cards'>"
+            "<li><a href='%s/glossary/english/paywall/'>Paywall</a><p>Definition</p></li></ul></section>"
+            "<p><a href='/glossary/english/paywall/'>elsewhere</a></p>" % prefix, encoding="utf-8")
         return seo.check_glossary_related_language(seo.load_pages(public))
 
 
 class GlossaryRelatedLanguageCheck(unittest.TestCase):
+    def test_preview_prefix_is_ignored(self):
+        failures = related_language_failures(["https://forrt.org/rebrand-doors/glossary/turkish/odeme_duvar%C4%B1_paywall_/"],
+                                             prefix="/rebrand-doors")
+        self.assertEqual(len(failures), 1)
+
     def test_link_to_english_when_no_translation_exists_passes(self):
         self.assertEqual(related_language_failures(["https://forrt.org/glossary/german/bezahlschranke/"]), [])
 
