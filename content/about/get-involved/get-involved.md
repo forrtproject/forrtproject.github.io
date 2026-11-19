@@ -16,7 +16,7 @@ subtitle = ""
 +++
 
 These projects are looking for collaborators now. Most of them coordinate on
-FORRT's Slack: join it, then contact the person named on the project.
+FORRT's Slack: [join it](https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ), then contact the person named on the project.
 
 {{% callout title="Getting Started with FORRT" %}}
 

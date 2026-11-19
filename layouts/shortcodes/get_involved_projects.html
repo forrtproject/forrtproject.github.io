@@ -21,9 +21,9 @@
           <a href="mailto:{{ .contact_email }}" class="btn btn-sm dir-btn">Email {{ .contact_name | default "the team" }}</a>
         {{ else if .contact_name }}
           {{/* No email: the person is reached on FORRT's Slack, so the button joins it. */}}
-          <a href="https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ" target="_blank" rel="noopener" class="btn btn-sm dir-btn">Ask {{ .contact_name }} on Slack</a>
+          <a href="https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ" target="_blank" rel="noopener" class="btn btn-sm dir-btn">Join Slack to ask {{ .contact_name }}</a>
         {{ end }}
-        {{ if .slack }}<a href="{{ .slack }}" target="_blank" rel="noopener" class="get-involved-link">Slack channel</a>{{ end }}
+        {{ if .slack }}<a href="{{ .slack }}" target="_blank" rel="noopener" class="get-involved-link">Slack channel<span class="visually-hidden"> for {{ .name }}</span></a>{{ end }}
       </div>
     </div>
   {{ end }}
