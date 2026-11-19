@@ -397,6 +397,20 @@
 
     initAccordionToggle();
 
+    /* On a cluster's own page the sidebar lists its sub-clusters only while one of them is open: closed, the
+       page's list beside it already shows them all; open, the page runs long and the sidebar jumps between them. */
+    var hereSubs = root.querySelector('.cluster-nav-subs--here');
+    if (hereSubs) {
+      var syncHereSubs = function () {
+        hereSubs.hidden = !root.querySelector('.acc-section:not([id$="-featured"]) > .acc-body:not(.acc-collapsed)');
+      };
+      var hereObserver = new MutationObserver(syncHereSubs);
+      root.querySelectorAll('.acc-section:not([id$="-featured"]) > .acc-body').forEach(function (body) {
+        hereObserver.observe(body, { attributes: true, attributeFilter: ['class'] });
+      });
+      syncHereSubs();
+    }
+
     var mobileToggle = document.getElementById('clusters-mobile-toggle');
     var sidebar = document.getElementById('clusters-sidebar');
     var backToTopBtn = document.getElementById('clusters-back-to-top');
@@ -541,9 +555,11 @@
         var subList = group.querySelector('.cluster-nav-subs');
         var arrow = group.querySelector('.cluster-nav-toggle');
 
-        /* Arrow click: always toggle expand/collapse, never navigate */
+        /* Arrow click: always toggle expand/collapse, never navigate. The current cluster's list
+           follows its open sub-clusters instead (syncHereSubs). */
         if (clickedArrow) {
           e.preventDefault();
+          if (this.hasAttribute('aria-current')) return;
           if (!subList || !arrow) return;
           var isHidden = subList.style.display === 'none';
           subList.style.display = isHidden ? 'block' : 'none';
