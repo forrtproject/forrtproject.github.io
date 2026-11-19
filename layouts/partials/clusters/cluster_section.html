@@ -21,7 +21,7 @@
 
 {{/* Lesson-plan sets for this cluster, keyed by sub-cluster slug (keys validated in lesson_plans.html) */}}
 {{ $lpSets := index (partialCached "clusters/lesson_plans.html" "lesson-plans") (printf "%d" (int $cluster.number)) | default dict }}
-{{ $lpLabel := "Has lesson plans and slides" }}
+{{ $lpLabel := "Has teaching materials" }}
 
 <section id="{{ $cid }}" class="cluster-section" style="background-color: {{ $color }};"{{ if $lpSets }} data-lp{{ end }}>
   <div class="cluster-header">
@@ -29,7 +29,7 @@
       <span class="cluster-number">{{ (int $cluster.number) }}</span>
       {{ $cluster.name }}
     </h2>
-    <span class="cluster-stats">{{ len $cluster.sub_clusters }} sub-clusters &middot; {{ $totalPubs }} references{{ with len $lpSets }} &middot; <span class="lp-dot" aria-hidden="true"></span> {{ . }} with lesson plans{{ end }}</span>
+    <span class="cluster-stats">{{ len $cluster.sub_clusters }} sub-clusters &middot; {{ $totalPubs }} references{{ with len $lpSets }} &middot; <span class="lp-dot" aria-hidden="true"></span> {{ . }} with teaching materials{{ end }}</span>
     <button class="acc-toggle-all" data-cluster="{{ $cid }}">Expand all</button>
   </div>
 

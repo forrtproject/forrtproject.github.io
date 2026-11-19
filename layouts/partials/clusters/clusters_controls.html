@@ -32,12 +32,12 @@
         <span>Show specialist resources</span>
       </label>
     </div>
-    {{/* Lesson-plan filter; also the legend for the green dot used on headers and in the sidebar */}}
+    {{/* Teaching-materials (lesson-plan) filter; also the legend for the green dot used on headers and in the sidebar */}}
     {{ if partialCached "clusters/lesson_plans.html" "lesson-plans" }}
     <div class="fr-filter-group">
       <label class="fr-specificity-toggle lp-filter-toggle">
         <input type="checkbox" id="lp-filter-checkbox">
-        <span>Only sub-clusters with <span class="lp-dot" aria-hidden="true"></span>lesson plans</span>
+        <span>Only sub-clusters with <span class="lp-dot" aria-hidden="true"></span>teaching materials</span>
       </label>
     </div>
     {{ end }}
