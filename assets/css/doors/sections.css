@@ -401,6 +401,17 @@ html:has(.contributor-az){scroll-padding-top:calc(var(--contributor-az,72px) + 1
 .tower-picture img{display:block;width:100%;height:auto}
 .doc-section:has(.tower-picture){display:flow-root}
 @media(max-width:760px){.article-layout .article-style .tower-picture{width:min(40%,150px);margin:2px 0 10px 16px;padding:12px 6px 4px}}
+/* On a phone the tower stands above its text, so the text keeps the column's width. */
+@media(max-width:760px){.article-layout .article-style .tower-picture{float:none;width:min(60%,220px);margin:4px auto 14px}}
+/* A video's note runs the video's width. */
+.article-layout .article-style .video-note{max-width:none}
+.article-layout-wide .article-style .video-note{max-width:960px}
+/* The closed contents on a phone (toc_phone_after_first): one line that opens the list. */
+.toc-phone--closed>summary{display:flex;align-items:center;gap:8px;min-height:44px;margin:0;cursor:pointer;list-style:none}
+.toc-phone--closed[open]>summary{margin-bottom:6px}
+.toc-phone--closed>summary::-webkit-details-marker{display:none}
+.toc-phone--closed>summary::after{content:"";width:8px;height:8px;margin-inline-start:auto;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translateY(-2px);transition:transform .15s}
+.toc-phone--closed[open]>summary::after{transform:rotate(-135deg) translateY(-2px)}
 
 /* Lesson plans: an Education & Pedagogy page, so its plans are pale education cards, as many to a row as fit;
    each names its plan as a link with what the link opens below it. */
