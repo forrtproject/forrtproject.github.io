@@ -226,7 +226,7 @@
 
 /* The chatbot's page is a tool: on a wide screen its input is in view beside the introduction. */
 @media(min-width:1001px){
-  .article-layout-wide .doc-section:has(>#just-os-fullpage){display:grid;grid-template-columns:minmax(0,560px) minmax(0,1fr);column-gap:0 48px;align-items:start}
+  .article-layout-wide .doc-section:has(>#just-os-fullpage){display:grid;grid-template-columns:minmax(0,560px) minmax(0,1fr);column-gap:48px;align-items:start}
   .article-layout-wide .doc-section:has(>#just-os-fullpage)>*{grid-column:1}
   .article-layout-wide .doc-section>#just-os-fullpage{grid-column:2;grid-row:1/span 30;height:min(calc(100vh - 260px),640px)!important;min-height:420px;margin:0!important}
   .article-layout-wide .doc-section:has(>#just-os-fullpage)>br{display:none}
