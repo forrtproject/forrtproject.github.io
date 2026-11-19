@@ -401,11 +401,16 @@
        page's list beside it already shows them all; open, the page runs long and the sidebar jumps between them. */
     var hereSubs = root.querySelector('.cluster-nav-subs--here');
     if (hereSubs) {
+      /* Every section's body but Recommended's, told by its header. */
+      var subBodies = Array.prototype.filter.call(root.querySelectorAll('.acc-section > .acc-body'), function (body) {
+        var header = body.previousElementSibling;
+        return !(header && header.classList.contains('acc-header--rec'));
+      });
       var syncHereSubs = function () {
-        hereSubs.hidden = !root.querySelector('.acc-section:not(:has(> .acc-header--rec)) > .acc-body:not(.acc-collapsed)');
+        hereSubs.hidden = !subBodies.some(function (body) { return !body.classList.contains('acc-collapsed'); });
       };
       var hereObserver = new MutationObserver(syncHereSubs);
-      root.querySelectorAll('.acc-section:not(:has(> .acc-header--rec)) > .acc-body').forEach(function (body) {
+      subBodies.forEach(function (body) {
         hereObserver.observe(body, { attributes: true, attributeFilter: ['class'] });
       });
       syncHereSubs();
