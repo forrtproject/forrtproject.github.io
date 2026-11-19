@@ -1009,7 +1009,8 @@ if (badges.length) {
 }
 
 // Phone contents (doors/toc_phone): a list of more than six sections shows its first five and a button for the rest.
-document.querySelectorAll('.toc-phone').forEach((box) => {
+// A closed contents line (.toc-phone--closed) opens to the whole list, so it is not shortened.
+document.querySelectorAll('.toc-phone:not(.toc-phone--closed)').forEach((box) => {
   const items = [...box.querySelectorAll('nav > ul > li')];
   if (items.length <= 6) return;
   items.slice(5).forEach((item) => item.classList.add('toc-extra'));
