@@ -1,0 +1,24 @@
+{{/* A list card's picture (news list, Educators' Corner). A photo near the card's 16:9 shape fills the slot. Anything
+     else is shown whole, on a ground that matches its own, read from its top left corner, so it never sits as a box
+     inside a box: a picture on white lies on the card's tint with its white blended into it (lists.css), any other
+     on a mat of its ground's colour. Where `figures` is true (Educators' Corner, whose pictures are often charts and
+     logos), a picture with a pale main colour counts as a figure even at a photo's shape.
+     Input: dict "img" (image resource), "large" (the lead card: about twice as wide), "lazy", "alt", "figures". */}}
+{{ $img := .img }}
+{{ $ratio := div (float $img.Width) $img.Height }}
+{{ $main := index $img.Colors 0 }}
+{{ $photo := and (ge $ratio 1.3) (le $ratio 2.05) }}
+{{ if and .figures (ge $main.Luminance 0.8) }}{{ $photo = false }}{{ end }}
+{{ $lazy := cond .lazy ` loading="lazy"` "" }}
+{{ if $photo }}
+  {{ $small := $img.Fill "640x360 Center webp q75" }}{{ $large := $img.Fill "1080x608 Center webp q75" }}
+  <div class="ac-thumb"><img src="{{ $small.RelPermalink }}" srcset="{{ $small.RelPermalink }} 640w, {{ $large.RelPermalink }} 1080w" sizes="(max-width: 760px) 100vw, {{ if .large }}50vw{{ else }}30vw{{ end }}" width="640" height="360" alt="{{ .alt }}"{{ $lazy | safeHTMLAttr }}></div>
+{{ else }}
+  {{ $fit := $img.Fit (cond .large "1200x640 webp q80" "600x320 webp q80") }}
+  {{/* The picture's own ground, read from its top left corner; as a JPEG, so a transparent corner reads as white. */}}
+  {{ $ground := index ($img.Crop "4x4 TopLeft jpg").Colors 0 }}
+  {{/* A corner far from the picture's main colour is part of the picture, not its ground: then the card's tint. */}}
+  {{ $odd := gt (math.Abs (sub $ground.Luminance $main.Luminance)) 0.2 }}
+  {{ $onTint := or (ge $ground.Luminance 0.93) $odd }}
+  <div class="ac-thumb ec-thumb-whole{{ if $onTint }} ec-thumb-blend{{ end }}"{{ if not $onTint }} style="--mat:{{ $ground.ColorHex }}"{{ end }}><img src="{{ $fit.RelPermalink }}" width="{{ $fit.Width }}" height="{{ $fit.Height }}" alt="{{ .alt }}"{{ $lazy | safeHTMLAttr }}></div>
+{{ end }}

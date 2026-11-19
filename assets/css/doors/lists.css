@@ -259,12 +259,85 @@ ul.list-items>li[hidden]{display:none}
 .ec-intro .list-filter-posts input{width:100%;box-sizing:border-box;min-height:44px;padding:10px 16px;border:1.5px solid var(--ink);border-radius:999px;background:#fff;font:400 17px/1.3 var(--text);color:var(--ink)}
 .ec-intro .list-filter-count{margin:8px 0 0;font-size:16px;color:var(--soft)}
 .ec-intro .list-filter-count:empty{margin:0}
-.ec-grid{grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:24px}
+.ec-grid{grid-template-columns:repeat(auto-fill,minmax(min(100%,360px),1fr));gap:28px 24px}
 /* A logo, a figure or a tall picture shown whole on white, in the same frame as a photo. */
-.ec-thumb-whole{position:relative;aspect-ratio:16/9;background:#fff;border-bottom:1px solid var(--line)}
+.ec-thumb-whole{position:relative;aspect-ratio:16/9;background:var(--mat,#fff);border-bottom:1px solid var(--line)}
+.ec-thumb-whole[style]{border-bottom:0}
+/* A picture on white, or on a pale ground of its own, is multiplied onto its ground, so its white background takes
+   the card's tint (or its mat) and it does not sit as a box inside a box. */
+.ec-thumb-blend{border-bottom:0}
+.ec-thumb-blend:not([style]){background:transparent}
+.ec-thumb-blend img{mix-blend-mode:multiply}
 .ec-thumb-whole img{position:absolute;inset:14px 18px;width:calc(100% - 36px);height:calc(100% - 28px);aspect-ratio:auto;object-fit:contain}
 .ec-meta{margin:0 0 8px;font-size:15px;line-height:1.4;color:var(--soft)}
 .ec-meta>*+time::before{content:" · "}
 /* Author names link to their profiles, above the card's own link. */
 .ec-authors a{position:relative;z-index:1;color:inherit;text-decoration:underline;text-underline-offset:2px}
 .ec-authors a:hover{color:var(--ink)}
+/* News list: a post without a picture of its own is a brick (layouts/section/post.html): the card in its brick colour,
+   its category and date said once at the top, the title and summary in white, a castle wall's merlons above it as on
+   the newsletter archive's latest issue. */
+.news-page .ac-brick{overflow:visible;background:var(--tone);border-radius:3px;box-shadow:inset 0 -6px 0 rgb(0 0 0/.24);color:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.news-page .ac-brick::before{content:"";position:absolute;left:14px;right:14px;top:-9px;height:9px;background:linear-gradient(90deg,transparent 6px,var(--tone) 6px 28px,transparent 28px) left top/34px 9px space no-repeat;border-radius:2px 2px 0 0}
+.news-page .ac-brick .ac-body{display:flex;flex-direction:column;flex:1;padding:22px 22px 24px}
+.news-page .ac-brick .ac-meta{order:3;margin:auto 0 0;padding-top:14px;color:#fff}
+.news-page .ac-brick .ac-cat{background:#fff;color:var(--ink)}
+.news-page .ac-brick h2{margin:0 0 10px;font-size:27px;line-height:1.15}
+.news-page .ac-brick .ac-link,.news-page .ac-brick:hover .ac-link{color:#fff}
+.news-page .ac-brick:hover .ac-link{text-decoration-thickness:3px}
+@supports selector(:has(*)){.news-page .ac-brick:has(.ac-link:focus-visible){outline-color:var(--ink)}}
+/* Summaries end at a whole word: a long word moves to the next line rather than breaking. */
+.news-page .ac-summary{overflow-wrap:break-word}
+/* On a wide screen a brick is as tall as the picture cards beside it, so its excerpt runs longer to fill it. */
+@media(min-width:761px){.news-page .ac-brick h2{font-size:29px}.news-page .ac-brick .ac-summary{-webkit-line-clamp:7;line-clamp:7}}
+/* Room between rows for the bricks' merlons. */
+.news-page .announcements-grid{row-gap:30px}
+@media(max-width:760px){
+  /* A brick on a phone is short: its title, two lines and its date, so a run of bricks is not a wall of colour. */
+  .news-page .ac-brick .ac-body{padding:16px 18px 18px}
+  .news-page .ac-brick h2{font-size:23px}
+  .news-page .ac-brick .ac-summary{-webkit-line-clamp:2;line-clamp:2}
+  .news-page .ac-brick .ac-meta{padding-top:10px}
+  /* A logo or figure shown whole needs less height than a photo, except the lead's. */
+  .ec-thumb-whole{aspect-ratio:2/1}
+  .news-page :is(.announcements-grid,.ec-list)>li:nth-child(1 of :not([hidden])) .ec-thumb-whole{aspect-ratio:4/3}
+}
+/* Educators' Corner: education's pale ground on every card (DESIGN.md §6). */
+.ec-page .announcement-card{background:var(--edu-bg)}
+/* A long author list: the first three names, then a button, "and 9 more", that shows the rest in the same line. Its
+   ::after gives it a 44 px target without spacing out the line (DESIGN.md §9). */
+.ec-rest[hidden]{display:none}
+.ec-more{position:relative;z-index:1;margin:0;padding:0;border:0;background:none;color:var(--link);font:600 15px/1.4 var(--text);text-decoration:underline;text-underline-offset:2px;cursor:pointer}
+.ec-more::after{content:"";position:absolute;inset:-12px -4px}
+.ec-more:hover{color:var(--ink)}
+.ec-more:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+/* The newest post shown leads across the row on a wide screen, its picture on the left half and its text beside it,
+   larger. When a filter or search hides it, the first post still shown leads instead. */
+@media(min-width:1001px){
+  .news-page :is(.announcements-grid,.ec-list)>li:nth-child(1 of :not([hidden])){grid-column:1/-1}
+  .news-page :is(.announcements-grid,.ec-list)>li:nth-child(1 of :not([hidden]))>.announcement-card:not(.ac-brick){display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center}
+  .news-page :is(.announcements-grid,.ec-list)>li:nth-child(1 of :not([hidden])) .ac-thumb{align-self:stretch}
+  .news-page :is(.announcements-grid,.ec-list)>li:nth-child(1 of :not([hidden])) .ac-thumb:not(.ec-thumb-whole) img{height:100%;min-height:100%;object-fit:cover}
+  .news-page :is(.announcements-grid,.ec-list)>li:nth-child(1 of :not([hidden])) .ec-thumb-whole{aspect-ratio:auto;min-height:340px;border-bottom:0;border-right:1px solid var(--line)}
+  .news-page :is(.announcements-grid,.ec-list)>li:nth-child(1 of :not([hidden])) .ac-body{padding:28px 40px 32px 36px}
+  .news-page :is(.announcements-grid,.ec-list)>li:nth-child(1 of :not([hidden])) h2{font-size:32px;line-height:1.12;margin-bottom:12px}
+  .news-page :is(.announcements-grid,.ec-list)>li:nth-child(1 of :not([hidden])) .ac-summary{font-size:18px;-webkit-line-clamp:6;line-clamp:6;max-width:34em}
+  .news-page :is(.announcements-grid,.ec-list)>li:nth-child(1 of :not([hidden])) .ec-meta{font-size:16px;margin-bottom:12px}
+  .news-page :is(.announcements-grid,.ec-list)>li:nth-child(1 of :not([hidden])) .ac-brick .ac-body{padding:30px 40px 36px}
+  .news-page :is(.announcements-grid,.ec-list)>li:nth-child(1 of :not([hidden])) .ac-brick h2{font-size:40px;max-width:24em}
+}
+/* Educators' Corner: the list shares its grid with the invitation to write (layouts/section/educators-corner.html). */
+.ec-list{display:contents;margin:0;padding:0;list-style:none}
+.ec-list>li[hidden]{display:none}
+/* The invitation to write: an action brick (DESIGN.md §4) with the home page's education door, the pencil on a book,
+   in an arch of education's pale ground, and its button at the foot. */
+.ec-write-card{display:flex;flex-direction:column;align-items:flex-start;height:100%;box-sizing:border-box;padding:20px 24px 30px;background:var(--brick4);border-radius:3px;box-shadow:inset 0 -8px 0 rgb(0 0 0/.24);color:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.ec-write-plate{display:flex;align-items:flex-end;justify-content:center;align-self:center;width:62%;aspect-ratio:4/3;margin:0 0 18px;padding:18px 18px 0;box-sizing:border-box;background:var(--edu-bg);border-radius:999px 999px 0 0}
+.ec-write-plate img{display:block;width:auto;max-width:100%;height:auto;max-height:100%}
+.news-page .ec-write-card h2{margin:0 0 8px;font-size:28px;line-height:1.15;color:#fff}
+.ec-write-card p{margin:0 0 18px;font-size:17px;line-height:1.45}
+.ec-write-link{display:inline-flex;align-items:center;min-height:44px;margin-top:auto;padding:0 20px;background:#fff;border-radius:999px;color:var(--ink);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.ec-write-link:hover{color:var(--link)}
+.ec-write-link:focus-visible{outline:3px solid #fff;outline-offset:3px}
+/* The search box takes education's pale ground too. */
+.ec-intro .list-filter-posts{background:var(--edu-bg)}
