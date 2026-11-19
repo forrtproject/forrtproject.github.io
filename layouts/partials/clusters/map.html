@@ -131,7 +131,7 @@
       {{ range $spots }}{{ $s := index $byNum (string .num) }}{{ $seg := index $oring (string .num) }}
       <g class="clusters-map__ray" data-cluster="{{ .num }}" style="--c: {{ $s.color | safeCSS }}">
         {{/* The line ends just inside the box, at its point nearest the hub, so it stays clear of the neighbouring boxes. */}}
-        <path class="clusters-map__line" d="M{{ $seg.from }}L{{ printf "%.1f %.1f" (math.Max (sub .x (div .w 2) -12) (math.Min $cx (add .x (div .w 2) -12))) (math.Max (sub .y (div .h 2) -12) (math.Min $cy (add .y (div .h 2) -12))) }}"></path>
+        <path class="clusters-map__line" pathLength="1" d="M{{ $seg.from }}L{{ printf "%.1f %.1f" (math.Max (sub .x (div .w 2) -12) (math.Min $cx (add .x (div .w 2) -12))) (math.Max (sub .y (div .h 2) -12) (math.Min $cy (add .y (div .h 2) -12))) }}"></path>
         <path class="clusters-map__segment" d="{{ $seg.seg }}"></path>
         <path class="clusters-map__icon" transform="{{ $seg.icon }}" d="{{ $s.icon.d }}"></path>
       </g>

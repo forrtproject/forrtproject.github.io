@@ -51,3 +51,10 @@
 }
 @media(prefers-reduced-motion:no-preference){.tool{transition:background-color .15s}}
 
+
+/* The diagram's four circles as outlines over the image: a "Start here" brick traces its stage's circle while
+   pointed at or focused (site.js), in 0.3 s; with reduced motion the outline simply appears (base.css). */
+.hub-diagram{position:relative}
+.hub-lobes{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
+.hub-lobe{fill:none;stroke:var(--ink);stroke-width:9;stroke-dasharray:1;stroke-dashoffset:1;opacity:0;transition:stroke-dashoffset .3s ease-out,opacity .12s}
+.hub-lobe.is-lit{stroke-dashoffset:0;opacity:1}

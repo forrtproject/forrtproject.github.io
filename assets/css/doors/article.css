@@ -822,3 +822,10 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
   .article-layout.summaries-layout .article-style .summary-entry{padding:0 8px}
   .summaries-layout .summary-entry[open]>:not(summary){margin-inline-start:0}
 }
+
+/* Reversals: choosing an outcome raises its bricks in each discipline's strip, in a ripple from the left that ends
+   within about half a second (site.js marks them .is-match), and draws the chosen tile's outline. With reduced motion
+   the change is immediate (base.css). */
+.section-mix i{transform-origin:50% 100%;transition:opacity .22s ease-out,transform .22s ease-out;transition-delay:calc(min(var(--i,0),40) * 7ms)}
+.section-mix i.is-match{transform:scaleY(1.5)}
+.article-layout .article-style .outcome-tile{transition:box-shadow .2s ease-out}

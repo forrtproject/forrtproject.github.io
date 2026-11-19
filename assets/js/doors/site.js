@@ -738,7 +738,9 @@ if (listFilter) {
     bricks.className = 'outcome-bricks section-mix';
     bricks.setAttribute('aria-hidden', 'true');
     outcomes.forEach(({key}) => items.filter((item) => item.querySelector(`.status-${key}`)).forEach(() => {
-      bricks.append(Object.assign(document.createElement('i'), {className: `status-${key}`}));
+      const brick = Object.assign(document.createElement('i'), {className: `status-${key}`});
+      brick.style.setProperty('--i', bricks.childElementCount);  // its place in the strip, for the ripple
+      bricks.append(brick);
     }));
     return bricks;
   };
@@ -768,6 +770,8 @@ if (listFilter) {
       row.querySelectorAll('button').forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.status === key)));
       board.classList.toggle('is-chosen', Boolean(key));
       if (key) listFilter.parentElement.dataset.outcome = key; else delete listFilter.parentElement.dataset.outcome;
+      // The chosen outcome's bricks rise in each discipline's strip, left to right (article.css).
+      document.querySelectorAll('.section-mix i').forEach((brick) => brick.classList.toggle('is-match', Boolean(key) && brick.classList.contains(`status-${key}`)));
       clear.hidden = !key;
       input.dispatchEvent(new Event('input'));
     };
@@ -1003,6 +1007,22 @@ if (badges.length) {
   new MutationObserver(emptyAttention).observe(document.querySelector('.pub-list, .article-style') || document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['class', 'style'] });
   emptyAttention();
   new MutationObserver(nameBadges).observe(document.querySelector('.pub-list, .article-style') || document.body, { childList: true, subtree: true });
+}
+
+// Replication Hub: a "Start here" brick traces the outline of its stage's circle on the diagram while pointed at or
+// focused (replication_hub/list.html, clusters.css); the outline stays still with reduced motion.
+const hubLobes = document.querySelector('.hub-lobes');
+if (hubLobes) {
+  document.querySelectorAll('.hub-start a[data-stage]').forEach((brick) => {
+    const lobe = hubLobes.querySelector(`.hub-lobe[data-stage="${brick.dataset.stage}"]`);
+    if (!lobe) return;
+    const on = () => lobe.classList.add('is-lit');
+    const off = () => lobe.classList.remove('is-lit');
+    brick.addEventListener('pointerenter', on);
+    brick.addEventListener('pointerleave', off);
+    brick.addEventListener('focus', on);
+    brick.addEventListener('blur', off);
+  });
 }
 
 // Phone contents (doors/toc_phone): a list of more than six sections shows its first five and a button for the rest.
