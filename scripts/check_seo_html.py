@@ -32,7 +32,7 @@ Hard checks (exit 1 if any fails):
   13. List cards use a page's `image.alt_text` (#1203), tested on a post that
      sets it.
   14. No URL in sitemap.xml (or the sitemaps a sitemap index lists) is a page
-     with robots noindex. A missing sitemap fails the check.
+     with robots noindex. A missing sitemap, or one that lists no URLs, fails.
 
 Report-only sections (never fail): pages with zero or several <h1>, the
 site-wide share of images that carry both width and height, pages whose
@@ -394,6 +394,8 @@ def check_sitemap_noindex(public_dir, pages):
         listed = sitemap_paths(public_dir)
     except FileNotFoundError as missing:
         return ["%s (not found)" % os.path.relpath(missing.filename, public_dir)]
+    if not listed:
+        return ["sitemap.xml (lists no URLs)"]
     noindexed = {p.url_path for p in pages if p.noindex}
     return [p for p in listed if p in noindexed]
 

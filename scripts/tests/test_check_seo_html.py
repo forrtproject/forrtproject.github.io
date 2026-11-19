@@ -117,6 +117,11 @@ class SitemapNoindexCheck(unittest.TestCase):
     def test_missing_sitemap_fails(self):
         self.assertEqual(sitemap_failures([], write_sitemap=False), ["sitemap.xml (not found)"])
 
+    def test_empty_sitemap_fails(self):
+        for index in (False, True):
+            with self.subTest(index=index):
+                self.assertEqual(sitemap_failures([], index=index), ["sitemap.xml (lists no URLs)"])
+
     def test_missing_child_sitemap_fails(self):
         self.assertEqual(sitemap_failures([], index=True, write_sitemap=False),
                          ["en/sitemap.xml (not found)"])
