@@ -1541,6 +1541,16 @@ def check_no_theme(root, failures):
     print(f"  pages still loading theme assets: {len(found)} kinds", flush=True)
 
 
+_SERVERS = {}
+
+
+def worker_server(public, subfolder):
+    """One local server per process, for all the sections that process runs."""
+    if (public, subfolder) not in _SERVERS:
+        _SERVERS[public, subfolder] = serve(public, subfolder)
+    return _SERVERS[public, subfolder]
+
+
 def run_section(job):
     """Run one section in its own browser and server, and return what it printed and found."""
     title, name, extra, public, url, subfolder, engine = job
@@ -1548,7 +1558,7 @@ def run_section(job):
     start = time.monotonic()
     try:
         with contextlib.redirect_stdout(out):
-            base = url or serve(public, subfolder)
+            base = url or worker_server(public, subfolder)
             with sync_playwright() as playwright:
                 browser = getattr(playwright, engine).launch()
                 try:

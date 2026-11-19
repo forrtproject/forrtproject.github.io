@@ -90,6 +90,22 @@ jobs:
           scripts/rebrand/apply_artifacts.sh . \
             "$RUNNER_TEMP/artifacts/data" "$RUNNER_TEMP/artifacts/announcements"
 
+      # "Compare with main" builds the reference from these same files, not from whatever
+      # data run is newest by the time it starts.
+      - name: Pack the artifacts for the reference build
+        run: |
+          mkdir -p "$RUNNER_TEMP/artifacts/data" "$RUNNER_TEMP/artifacts/announcements"
+          tar -cf inputs.tar -C "$RUNNER_TEMP" artifacts
+
+      - name: Upload the artifacts for the reference build
+        uses: actions/upload-artifact@v7
+        with:
+          name: rebrand-inputs-${{ github.run_number }}
+          path: inputs.tar
+          retention-days: 1
+          overwrite: true
+          if-no-files-found: error
+
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@75d2e84710de30f6ff7268e08f310b60ef14033f
         with:
@@ -146,32 +162,15 @@ jobs:
       - name: Check out the merge base with main as the reference
         run: git worktree add --detach "$RUNNER_TEMP/reference" "$(git merge-base origin/main HEAD)"
 
-      - name: Download data artifact
-        uses: dawidd6/action-download-artifact@07ab29fd4a977ae4d2b275087cf67563dfdf0295
-        continue-on-error: true
+      - name: Download the artifacts the branch was built with
+        uses: actions/download-artifact@v7
         with:
-          workflow: data-processing.yml
-          name: data-artifact
-          path: ${{ runner.temp }}/artifacts/data
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          search_artifacts: true
-          branch: main
-          if_no_artifact_found: warn
-
-      - name: Download announcements artifact
-        uses: dawidd6/action-download-artifact@07ab29fd4a977ae4d2b275087cf67563dfdf0295
-        continue-on-error: true
-        with:
-          workflow: create_announcements.yml
-          name: announcements-artifact
-          path: ${{ runner.temp }}/artifacts/announcements
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          search_artifacts: true
-          branch: main
-          if_no_artifact_found: warn
+          name: rebrand-inputs-${{ github.run_number }}
+          path: ${{ runner.temp }}
 
       - name: Apply the same artifacts to the reference
         run: |
+          tar -xf "$RUNNER_TEMP/inputs.tar" -C "$RUNNER_TEMP"
           scripts/rebrand/apply_artifacts.sh "$RUNNER_TEMP/reference" \
             "$RUNNER_TEMP/artifacts/data" "$RUNNER_TEMP/artifacts/announcements"
 
