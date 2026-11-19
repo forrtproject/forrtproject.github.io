@@ -1,4 +1,4 @@
-{{/* One field block. Expects dict: field, fi, colors, show_leads */}}
+{{/* One field block. Expects dict: field, fi, colors, show_leads, most (the largest discipline's resource count) */}}
 {{ $field := .field }}
 {{ $fi := .fi }}
 {{ $colors := .colors }}
@@ -7,17 +7,22 @@
 {{ $color := index $colors (mod $fi (len $colors)) }}
 {{ $totalRes := 0 }}{{ range $field.disciplines }}{{ $totalRes = add $totalRes (len .resources) }}{{ end }}
 
-{{/* Category badge colors */}}
+{{/* Category badge colors, in the key's order (all_fields.html) */}}
 {{ $catColors := dict "General" "var(--soft)" "Open Data" "var(--res)" "Open Methods" "var(--edu)" "Open Outputs" "var(--com)" "Open Education" "var(--jus)" }}
+{{ $catOrder := slice "General" "Open Data" "Open Methods" "Open Outputs" "Open Education" }}
+{{/* Resources of each kind across the field, for its bar of kinds. */}}
+{{ $fieldKinds := dict }}
+{{ range $field.disciplines }}{{ range .resources }}{{ $fieldKinds = merge $fieldKinds (dict .category (add (index $fieldKinds .category | default 0) 1)) }}{{ end }}{{ end }}
 
 <section id="{{ $fid }}" class="cluster-section" style="background-color: {{ $color | safeCSS }};">
   <div class="cluster-header">
-    <h2 class="cluster-title">
-      <span class="cluster-number">{{ (int $field.number) }}</span>
-      {{ $field.name }}
-    </h2>
+    <h2 class="cluster-title">{{ $field.name }}</h2>
     <span class="cluster-stats">{{ len $field.disciplines }} discipline{{ if gt (len $field.disciplines) 1 }}s{{ end }} &middot; {{ $totalRes }} resources</span>
-    {{ if gt (len $field.disciplines) 0 }}
+    {{/* A field of one discipline shows its bar on that discipline's row only. */}}
+    {{ if gt (len $field.disciplines) 1 }}
+    {{ partial "disciplines/kinds_bar.html" (dict "kinds" $fieldKinds "order" $catOrder "colors" $catColors "class" "disc-mix disc-mix--field") }}
+    {{ end }}
+    {{ if gt (len $field.disciplines) 1 }}
     <button class="acc-toggle-all" data-cluster="{{ $fid }}">Expand all</button>
     {{ end }}
   </div>
@@ -51,6 +56,8 @@
         </span>
         {{ end }}
         {{ end }}
+        {{ $kinds := dict }}{{ range $disc.resources }}{{ $kinds = merge $kinds (dict .category (add (index $kinds .category | default 0) 1)) }}{{ end }}
+        {{ partial "disciplines/kinds_bar.html" (dict "kinds" $kinds "order" $catOrder "colors" $catColors "class" "disc-mix" "share" (mul 100.0 (math.Sqrt (div (float (len $disc.resources)) $.most)))) }}
         <span class="acc-count">{{ len $disc.resources }} resource{{ if ne (len $disc.resources) 1 }}s{{ end }}</span>
         <button type="button" class="acc-copy-link" data-anchor="{{ $did }}" aria-label="Copy link to this discipline" title="Copy link to this discipline">
           <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M6.5 9.5l3-3M7 4.5l1-1a3 3 0 014.25 4.25l-1 1M9 11.5l-1 1a3 3 0 01-4.25-4.25l1-1"/></svg>

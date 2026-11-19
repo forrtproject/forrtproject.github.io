@@ -1,4 +1,6 @@
-{{/* Shared color palettes for disciplines page — 11 fields */}}
-{{ $colors := slice "var(--res-bg)" "var(--jus-bg)" "var(--edu-bg)" "var(--com-bg)" "var(--surface)" }}
-{{ $arrowColors := slice "var(--res)" "var(--jus)" "var(--edu)" "var(--com)" "var(--soft)" }}
+{{/* Colours for the disciplines page. Fields are not FORRT's areas, and their order means nothing, so they share one
+     neutral treatment (DESIGN.md §6): the panels are the site's surface and the bricks and arrows one brick colour (wine), apart from the resource kinds' colours.
+     Colour on the page means one thing: a resource's kind, in its label and in the bars of kinds, explained by the key above the index. */}}
+{{ $colors := slice "var(--surface)" }}
+{{ $arrowColors := slice "var(--brick1)" }}
 {{ return dict "colors" $colors "arrowColors" $arrowColors }}

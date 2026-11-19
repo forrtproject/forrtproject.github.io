@@ -9,15 +9,15 @@
   </div>
 
   {{/* The fields as the way in, in the first screen on a phone too: a brick for each, linking to its panel below, whose
-       head gives its counts. Each brick takes the strong colour of its panel's pale one (disciplines/colors.html, by the field's
-       place in the list, as field_section.html does), so a field keeps one colour on the page. */}}
+       head gives its counts. All bricks share one colour (disciplines/colors.html): fields are not areas. */}}
   {{ $arrow := (partial "disciplines/colors.html").arrowColors }}
   {{ with site.Data.disciplines }}
   <nav class="wrap disc-fields brick-row" aria-labelledby="disc-fields-h">
     <h2 id="disc-fields-h" class="disc-fields__h">Choose your field</h2>
     <ul class="action-cards">
       {{ range $fi, $f := .fields }}
-      <li style="--brick: {{ index $arrow (mod $fi (len $arrow)) | safeCSS }}"><a href="#field-{{ int .number }}"><strong>{{ .name }}</strong></a></li>
+      {{ $res := 0 }}{{ range .disciplines }}{{ $res = add $res (len .resources) }}{{ end }}
+      <li style="--brick: {{ index $arrow (mod $fi (len $arrow)) | safeCSS }}"><a href="#field-{{ int .number }}"><strong>{{ .name }}</strong><span>{{ $res }} resources</span></a></li>
       {{ end }}
     </ul>
   </nav>
@@ -34,6 +34,9 @@
   <section class="cluster-full-width clusters-display-section">
     <div class="wrap">
       {{ partial "disciplines/all_fields.html" . }}
+      <p class="intro-paragraph disciplines-form">
+        If you have resources or disciplines to add, or spot errors, please <a href="https://docs.google.com/forms/d/e/1FAIpQLSfs-BCYWGet5QNZAWQ8IQVZ05TAUUwvD4mkc31Ehrm5tK8q3Q/viewform" target="_blank" rel="noopener">fill out this form</a>.
+      </p>
       {{ partial "disciplines/citation.html" . }}
     </div>
   </section>
