@@ -2675,3 +2675,7 @@ summary.clusters-overview__heading::before{content:"";width:0;height:0;border-le
   .clusters-map__ring .is-active .clusters-map__line{stroke-dasharray:1;animation:clusters-map-trace .26s ease-out}
 }
 @keyframes clusters-map-trace{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+/* The current cluster's sub-clusters, shown in its sidebar once one is open (clusters-page.js): the one being read has a
+   bar in the cluster's colour, and long names stop at three lines (the full name is the link's title and the main panel's heading). */
+.cluster-nav-subs--here .nav-link[aria-current]{background:none;box-shadow:inset 3px 0 0 var(--here-colour,var(--link));color:var(--ink);font-weight:600}
+.cluster-nav-subs--here .cluster-nav-name{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;line-clamp:3;overflow:hidden}

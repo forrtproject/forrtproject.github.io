@@ -1,6 +1,7 @@
 {{/* Sidebar: link_mode "anchor" (#cluster-N on hub) or "subpath" (/clusters/cluster-N/ on subpages). On a cluster's own
-     page (subpath) its group is marked as the current page and lists no sub-clusters: the page's own list beside the
-     sidebar has them, with their counts. */}}
+     page (subpath) its group is marked as the current page. Its sub-clusters link within the page and stay hidden
+     while every sub-cluster is closed, as the page's own list beside the sidebar has them; once one is open the page
+     is long, and clusters-page.js shows them here as a way to jump between them. */}}
 {{ $data := .data }}
 {{ $arrowColors := .arrowColors }}
 {{ $link_mode := .link_mode | default "anchor" }}
@@ -21,8 +22,11 @@
           <span class="cluster-nav-toggle" style="color:{{ $arrowColor | safeCSS }};" aria-hidden="true">{{ if $isActive }}&#9679;{{ else }}&#9656;{{ end }}</span>
           <span class="cluster-nav-name">{{ $cluster.name }}</span>
         </a>
-        {{ if not $isActive }}
+        {{ if $isActive }}
+        <ul class="cluster-nav-subs cluster-nav-subs--here" style="{{ printf "--here-colour:%s" $arrowColor | safeCSS }}" hidden>
+        {{ else }}
         <ul class="cluster-nav-subs" style="display:none;">
+        {{ end }}
           {{/* Featured "Recommended" link — first if present */}}
           {{ $featEnabled := site.Params.enable_featured_resources }}
           {{ $hasFeat := false }}
@@ -37,6 +41,8 @@
           {{ $featHref := printf "#%s" $cid }}
           {{ if and (eq $link_mode "subpath") (not $isActive) }}
             {{ $featHref = printf "/clusters/cluster-%d/#%s" (int $cluster.number) $fid | relURL }}
+          {{ else if $isActive }}
+            {{ $featHref = printf "#%s" $fid }}
           {{ end }}
           <li class="nav-item">
             <a href="{{ $featHref }}" class="nav-link sc-nav-link fr-nav-featured" data-cluster="{{ $cid }}" data-tab="{{ $fid }}-tab">
@@ -51,16 +57,17 @@
           {{ $subHref := printf "#%s" $cid }}
           {{ if and (eq $link_mode "subpath") (not $isActive) }}
             {{ $subHref = printf "/clusters/cluster-%d/#%s" (int $cluster.number) $scid | relURL }}
+          {{ else if $isActive }}
+            {{ $subHref = printf "#%s" $scid }}
           {{ end }}
           <li class="nav-item">
             <a href="{{ $subHref }}" class="nav-link sc-nav-link" data-cluster="{{ $cid }}" data-tab="{{ $scid }}-tab">
-              <span class="cluster-nav-name">{{ $sc.name }}</span>
+              <span class="cluster-nav-name"{{ if $isActive }} title="{{ $sc.name }}"{{ end }}>{{ $sc.name }}</span>
               <span class="badge badge-pill">{{ len $sc.publications }}</span>
             </a>
           </li>
           {{ end }}
         </ul>
-        {{ end }}
       </div>
       {{ end }}
     </nav>
