@@ -451,77 +451,131 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
   .article-layout .page-hero:not(.page-hero-landscape) .page-hero-media{width:min(100%,280px)}
 }
 
-/* /reversals/ (site.js): the search, outcome and Go to controls are one toolbar that stays at the top of the screen
-   while the effects scroll, up to the end of the list; on a phone only the search row and count stay. Rows reached
-   by Tab or Go to stop below it (the scroll padding is its measured height). */
+/* /reversals/ (site.js). The page is wider than an article: the contents card, with each discipline's mix of outcomes,
+   stays beside the list, and the board of outcomes opens it. */
+@media(min-width:1001px){
+  .article-layout:has(.list-filter[data-noun=effects]:not([hidden])){grid-template-columns:256px minmax(0,1fr);gap:48px;max-width:1064px;margin-inline:auto}
+  .article-layout:not(.article-layout-wide):has(.list-filter[data-noun=effects]:not([hidden]))>.article-card{width:auto;padding:18px 14px 18px 18px}
+}
+.reading:has(.list-filter[data-noun=effects]:not([hidden])) .toc-phone{display:none}
+.article-layout:has(.list-filter[data-noun=effects]) .article-toc #TableOfContents a{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:8px;padding:3px 6px;border-radius:6px;font-size:16px;line-height:1.3;color:var(--ink);text-decoration:none}
+.article-layout:has(.list-filter[data-noun=effects]) .article-toc #TableOfContents a:hover{color:var(--link);text-decoration:underline}
+.article-layout:has(.list-filter[data-noun=effects]) .article-toc #TableOfContents a[aria-current]{background:#fff;font-weight:600}
+.article-layout:has(.list-filter[data-noun=effects]) .article-toc #TableOfContents a.is-empty{color:var(--soft)}
+.toc-many{font-size:15px;font-weight:400;text-align:end}
+/* The note that the project has ended is one band, its button beside the text. */
+@media(min-width:761px){
+  .article-layout:has(.list-filter[data-noun=effects]) .article-style div.alert{max-width:none}
+  .article-layout:has(.list-filter[data-noun=effects]) .article-style div.alert>div{display:flex;align-items:center;gap:24px}
+  .article-layout:has(.list-filter[data-noun=effects]) .article-style div.alert>div>p{margin:0}
+  .article-layout:has(.list-filter[data-noun=effects]) .article-style div.alert>div>p:has(>.btn){flex:none}
+}
+/* The board: a tile per outcome, its bricks one per effect. */
+.outcome-board{margin:30px 0 10px}
+.article-layout .article-style .outcome-board h2{margin:0 0 4px;font-size:clamp(25px,2.4vw,31px);line-height:1.15}
+.article-layout .article-style .outcome-hint{margin:0 0 14px;font-size:17px}
+.outcome-tiles{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+.article-layout .article-style .outcome-tile{display:flex;flex-wrap:wrap;align-content:flex-start;align-items:baseline;column-gap:8px;min-width:0;margin:0;padding:17px 12px 14px;border:0;border-radius:var(--r-small);background:var(--out-bg);box-shadow:inset 0 5px 0 var(--out);color:var(--ink);text-align:start;cursor:pointer}
+.outcome-tile .outcome-many{font:var(--display-weight) 44px/1 var(--display)}
+.outcome-tile .outcome-word{flex:1 1 100%;margin-top:2px;font:600 17px/1.2 var(--text)}
+.outcome-bricks{flex:1 1 100%;display:flex;flex-wrap:wrap;gap:2px;margin-top:10px}
+.outcome-bricks i{width:9px;height:6px;border-radius:1px;background:var(--out);transition:opacity .15s}
+.is-chosen .outcome-tile[aria-pressed=false] .outcome-bricks i{opacity:.3}
+.article-layout .article-style .outcome-tile[aria-pressed=true]{box-shadow:inset 0 5px 0 var(--out),inset 0 0 0 2px var(--ink)}
+.article-layout .article-style .outcome-tile:hover .outcome-word{text-decoration:underline;text-underline-offset:3px}
+.article-layout .article-style .outcome-tile:focus-visible,.article-layout .article-style .outcome-clear:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+/* Where "not replicated" takes two lines, every tile keeps two, so that the bricks start level. */
+@media(min-width:761px) and (max-width:1240px){.outcome-tile .outcome-word{min-height:2.4em}}
+.article-layout .article-style .outcome-note{max-width:31em;margin:12px 0 0;font-size:16px;line-height:1.45}
+/* The toolbar stays at the top of the screen while the effects scroll, up to the end of the list; on a phone only the
+   search row and count stay. Rows reached by Tab or Go to stop below it (the scroll padding is its measured height). */
 html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px) + 16px)}
 .article-layout .article-style .list-filter-section{max-width:none}
-.article-layout .article-style .list-filter-section>p{max-width:29em}
-.article-layout .article-style .list-filter-section>.list-filter{position:sticky;top:0;z-index:6;display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;max-width:none;margin:8px 0 18px;padding:10px 14px;box-shadow:0 2px 0 var(--page)}
+.article-layout .article-style .list-filter-section>br{display:none}
+.article-layout .article-style .list-filter-section>.list-filter{position:sticky;top:0;z-index:6;display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;max-width:none;margin:22px 0 8px;padding:10px 14px;box-shadow:0 2px 0 var(--page)}
 /* The bar itself is square and page-coloured, with its rounded panel drawn behind the controls, so text scrolling
    under the stuck bar does not show at its corners. */
-@media(min-width:761px){
+@media(min-width:601px){
   .article-layout .article-style .list-filter-section>.list-filter{background:var(--page);border-radius:0}
   .article-layout .article-style .list-filter-section>.list-filter::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:var(--r-large);background:var(--surface)}
 }
-.article-layout .article-style .list-filter-section .list-filter-search{flex:1 1 300px;display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;column-gap:12px}
+.article-layout .article-style .list-filter-section .list-filter-search{flex:1 1 300px;display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;column-gap:12px}
 .article-layout .article-style .list-filter-section .list-filter label{grid-row:1;margin:0;font-size:16px;line-height:1.2}
 .article-layout .article-style .list-filter-section .list-filter-count{grid-row:2;margin:0;font-size:15px;line-height:1.2;white-space:nowrap}
 .article-layout .article-style .list-filter-section .list-filter input{grid-column:2;grid-row:1/3;padding:7px 14px;font-size:16px}
 .article-layout .article-style .list-filter-section .list-filter-jump{margin:0;font-size:16px}
-.article-layout .article-style .list-filter-section .list-filter-jump select{flex:none;max-width:170px;padding:6px 8px;font-size:15px}
+.article-layout .article-style .list-filter-section .list-filter-jump select{flex:none;max-width:130px;padding:6px 8px;font-size:15px}
+.article-layout .article-style .outcome-clear{grid-column:3;grid-row:1/3;min-height:36px;padding:4px 12px;border:1.5px solid var(--ink);border-radius:999px;background:#fff;font:600 16px/1.2 var(--text);color:var(--ink);cursor:pointer}
+.article-layout .article-style .outcome-clear[hidden]{display:none}
+/* With an outcome chosen the search row needs the full width, and the Go to menu takes a row of its own. */
+@media(min-width:601px) and (max-width:1000px){.article-layout .article-style .list-filter-section .list-filter-search:has(.outcome-clear:not([hidden])){flex-basis:100%}}
 /* Beside the "On this page" card, which lists every section, the toolbar needs no Go to menu. */
 @media(min-width:1001px){.article-layout:has(>.article-card) .article-style .list-filter-section .list-filter-jump{display:none}}
-/* The outcomes: one bar, each part as long as its share of the effects, over the buttons that filter by outcome.
-   Choosing one keeps its part strong and fades the others. */
-.article-layout .article-style .list-filter-status{flex:1 1 100%;margin:2px 0 0}
-.outcome-bar{display:flex;gap:2px;height:14px;margin:0 0 8px;border-radius:4px;overflow:hidden}
-.outcome-bar span{flex:1 1 0;min-width:4px;background:var(--out);cursor:pointer;transition:opacity .15s}
-.is-chosen .outcome-bar span:not(.is-chosen){opacity:.25}
-.outcome-buttons{display:flex;flex-wrap:wrap;gap:6px}
-.article-layout .article-style .outcome-buttons button{display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:2px 12px;border:0;cursor:pointer}
-.outcome-buttons button:not([data-status=""])::before{content:"";width:10px;height:10px;border-radius:2px;background:var(--out)}
-.outcome-many{font-weight:400}
-.article-layout .article-style .outcome-buttons button[aria-pressed=true]{box-shadow:inset 0 0 0 2px var(--ink)}
-.article-layout .article-style .outcome-buttons button:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
-/* The effects are one list in the reading measure (DESIGN.md §4): each a row with its outcome chip, in the outcome's
-   colour, before its name, and a hairline between rows. */
+/* A discipline opens with one brick per effect. Filtered by outcome, the others fade; during a search they step aside. */
+.article-layout .article-style .list-filter-section>h2{margin:44px 0 10px;font-size:clamp(28px,2.6vw,34px);line-height:1.15}
+.article-layout .article-style .list-filter-section>.section-mix{margin:0 0 12px}
+.article-layout .article-style .list-filter-section>h2[hidden]+.section-mix,.article-layout .article-style .list-filter-section.is-searching>.section-mix{display:none}
+.list-filter-section[data-outcome=replicated] .section-mix i:not(.status-replicated),.list-filter-section[data-outcome=mixed] .section-mix i:not(.status-mixed),.list-filter-section[data-outcome=not-replicated] .section-mix i:not(.status-not-replicated),.list-filter-section[data-outcome=reversed] .section-mix i:not(.status-reversed),.list-filter-section[data-outcome=no-status] .section-mix i:not(.status-no-status){opacity:.25}
+.article-layout .article-style .list-filter-none{margin:18px 0;font-size:18px}
+.article-layout .article-style .list-filter-none[hidden]{display:none}
+.article-layout .article-style .list-filter-none button{min-height:44px;margin-inline-start:8px;padding:4px 14px;border:1.5px solid var(--ink);border-radius:999px;background:#fff;font:600 16px/1.2 var(--text);color:var(--ink);cursor:pointer}
+.article-layout .article-style .list-filter-none button:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+/* The effects are rows, not cards (DESIGN.md §4): the outcome in a column of its own, so that the names line up, then
+   the name, the description and the statistics in the reading measure. */
 /* The doubled class outranks the reading-width cap on unclassed lists (top of this file). */
-.article-layout .article-style .list-filter-section.list-filter-section>ul{max-width:29em;margin:0 0 36px;padding:0;border-top:1px solid var(--line);list-style:none}
+.article-layout .article-style .list-filter-section.list-filter-section>ul{max-width:none;margin:0 0 20px;padding:0;border-top:2px solid var(--ink);list-style:none}
 /* A list whose entries are all filtered out leaves no rule or gap behind. */
 .article-layout .article-style .list-filter-section.list-filter-section>ul:not(:has(>li:not([hidden]))){display:none}
-.article-layout .article-style .list-filter-section>ul>li{position:relative;margin:0;padding:14px 0;border:0;border-bottom:1px solid var(--line);--entry-ground:var(--page)}
-.article-layout .article-style .list-filter-section>ul>li>p{margin:0}
-/* The Statistics toggle sits on the name's line, so the closed disclosure adds no height of its own. */
-.article-layout .article-style .list-filter-section li:has(>.entry-text)>.spoiler:not([open]){margin:0}
-.article-layout .article-style .list-filter-section li:has(>.entry-text)>.spoiler[open]{margin:10px 0 0}
+.article-layout .article-style .list-filter-section>ul>li{display:grid;grid-template-columns:140px minmax(0,29em);column-gap:28px;align-items:start;margin:0;padding:16px 0 10px;border:0;border-bottom:1px solid var(--line)}
+.article-layout .article-style .list-filter-section>ul>li>*{grid-column:2}
+.article-layout .article-style .list-filter-section>ul>li>.status-chip{grid-column:1;grid-row:1/span 3;justify-self:start;margin:3px 0 0}
 .article-layout .article-style .list-filter-section>ul>li[hidden]{display:none}
-.article-layout .article-style .list-filter-section .entry-text{max-width:none}
-.article-layout .article-style .list-filter-section .entry-text::before{content:"";float:inline-end;width:96px;height:1px}
+.article-layout .article-style .list-filter-section .entry-name{margin:0 0 3px;font:var(--display-weight) 23px/1.2 var(--display)}
+.article-layout .article-style .list-filter-section .entry-name strong{font-weight:inherit}
+.entry-also{display:inline-block;font:400 16px/1.3 var(--text);color:var(--soft)}
+.article-layout .article-style .list-filter-section .entry-text{position:relative;max-width:none;margin:0}
+.article-layout .article-style .list-filter-section .entry-text:empty{display:none}
 /* DESIGN.md §4: the description shows in full; one that runs past six lines shows four and a "more" button, and while
    a search is typed the matching effects show in full. */
 .article-layout .article-style .list-filter-section .is-long:not(.is-open)>.entry-text{max-height:calc(4 * 1.6em);max-height:calc(4 * 1lh);overflow:hidden}
 .article-layout .article-style .list-filter-section:is(.is-searching,.is-measuring) .entry-text{max-height:none!important}
-.article-layout .article-style .list-filter-section li:has(>.entry-text)>.spoiler>summary{position:absolute;top:16px;inset-inline-end:0}
 .article-layout .article-style .list-filter-section .entry-more{display:none}
-.article-layout .article-style .list-filter-section .is-long>.entry-more{display:block;position:absolute;top:calc(14px + 3 * 1.6em);top:calc(14px + 3lh);inset-inline-end:0;padding:0;padding-inline-start:2.4em;border:0;background:linear-gradient(to right,transparent,var(--entry-ground) 2em);font:inherit;font-weight:600;color:var(--link);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.article-layout .article-style .list-filter-section .is-long>.entry-text>.entry-more{display:block;position:absolute;bottom:0;inset-inline-end:0;padding:0;padding-inline-start:2.4em;border:0;background:linear-gradient(to right,transparent,var(--page) 2em);font:inherit;font-weight:600;color:var(--link);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
 /* In right-to-left text the fade runs the other way. */
-.article-layout .article-style .list-filter-section .is-long>.entry-more:dir(rtl){background:linear-gradient(to left,transparent,var(--entry-ground) 2em)}
-.article-layout .article-style .list-filter-section .is-open>.entry-more{position:static;display:inline-block;margin:0 0 6px;padding:0;background:none;font-size:16px}
-.article-layout .article-style .list-filter-section.is-searching .entry-more{display:none}
-@media(max-width:760px){
+.article-layout .article-style .list-filter-section .is-long>.entry-text>.entry-more:dir(rtl){background:linear-gradient(to left,transparent,var(--page) 2em)}
+.article-layout .article-style .list-filter-section .is-open>.entry-text>.entry-more{position:static;display:inline;padding:0 0 0 6px;background:none}
+.article-layout .article-style .list-filter-section.is-searching .entry-more{display:none!important}
+/* The statistics are a quiet toggle under the description; open, their rows are labelled. */
+.article-layout .article-style .list-filter-section li:has(>.entry-text)>.spoiler{margin:4px 0 0}
+.article-layout .article-style .list-filter-section li:has(>.entry-text)>.spoiler>summary{display:inline-flex;align-items:center;min-height:32px;padding:0;font-size:16px}
+.article-layout .article-style .list-filter-section li:has(>.entry-text)>.spoiler[open]{margin:8px 0 8px;padding:6px var(--box-pad) 10px}
+.article-layout .article-style .list-filter-section .spoiler-body ul{margin:4px 0 0;padding:0;list-style:none;font-size:16px;line-height:1.45}
+.article-layout .article-style .list-filter-section .spoiler-body li{margin:0 0 10px;overflow-wrap:anywhere}
+.stat-label{display:block;font-weight:700}
+/* On a phone the search row alone stays on screen; the band runs to the screen's edges and holds the other controls too. */
+@media(max-width:600px){
   .article-layout .article-style .list-filter-section>.list-filter{display:contents}
-  .article-layout .article-style .list-filter-section .list-filter-search{position:sticky;top:0;z-index:6;grid-template-columns:1fr auto;align-items:baseline;gap:4px 10px;margin:8px -20px 10px;padding:8px 20px;background:var(--surface);box-shadow:0 1px 0 var(--line)}
+  .article-layout .article-style .list-filter-section .list-filter-search{position:sticky;top:0;z-index:6;grid-template-columns:1fr auto;align-items:baseline;gap:4px 10px;margin:18px -20px 0;padding:8px 20px;background:var(--surface);box-shadow:0 1px 0 var(--line)}
   .article-layout .article-style .list-filter-section .list-filter label,.article-layout .article-style .list-filter-section .list-filter-count{grid-row:1}
   .article-layout .article-style .list-filter-section .list-filter input{grid-column:1/-1;grid-row:2;padding:7px 14px}
-  .article-layout .article-style .list-filter-section .list-filter label.list-filter-jump{margin:4px 0 14px}
-  .article-layout .article-style .list-filter-section .list-filter-jump select{flex:1;max-width:none}
-  /* Below the sticky row there is room, so the outcome buttons get full-size tap targets. */
-  .article-layout .article-style .list-filter-status{margin:0 0 24px}
-  .article-layout .article-style .outcome-buttons button{min-height:44px}
-  .article-layout .article-style .list-filter-section>ul>li{padding:12px 0}
-  .article-layout .article-style .list-filter-section li:has(>.entry-text)>.spoiler>summary{top:14px}
-  .article-layout .article-style .list-filter-section .is-long>.entry-more{top:calc(12px + 3 * 1.6em);top:calc(12px + 3lh)}
+  .article-layout .article-style .list-filter-section .list-filter label.list-filter-jump{margin:0 -20px;padding:8px 20px;background:var(--surface)}
+  .article-layout .article-style .list-filter-section .list-filter-jump select{flex:1;min-height:44px;max-width:none}
+  /* With an outcome chosen, the count and the way back take the label's place on the row that stays on screen. */
+  .article-layout .article-style .list-filter-search:has(.outcome-clear:not([hidden]))>label{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+  .article-layout .article-style .outcome-clear{grid-column:2;grid-row:1;min-height:44px}
+}
+@media(max-width:760px){
+  /* A tile is a row: count and word, then its bricks. */
+  .outcome-tiles{grid-template-columns:minmax(0,1fr)}
+  .article-layout .article-style .outcome-tile{display:grid;grid-template-columns:112px minmax(0,1fr);column-gap:12px;align-items:center;padding:17px 12px 11px}
+  .outcome-tile .outcome-many{grid-column:1;font-size:36px}
+  .outcome-tile .outcome-word{grid-column:1;min-height:0;font-size:16px}
+  .outcome-bricks{grid-column:2;grid-row:1/span 2;margin:0}
+  .article-layout .article-style .list-filter-section>ul>li{grid-template-columns:minmax(0,29em);padding:14px 0 6px}
+  .article-layout .article-style .list-filter-section>ul>li>*{grid-column:1}
+  .article-layout .article-style .list-filter-section>ul>li>.status-chip{grid-row:auto;margin:0 0 6px}
+  .article-layout .article-style .list-filter-section li:has(>.entry-text)>.spoiler>summary{min-height:44px}
+  .article-layout .article-style .list-filter-section .is-long>.entry-text>.entry-more{min-height:1lh}
 }
 /* News cards with a picture (DESIGN.md §1): the news list (section/post.html) and the end of each article (doors/read_next). */
 .announcements-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,290px),1fr));gap:20px;margin:0;padding:0;list-style:none}
