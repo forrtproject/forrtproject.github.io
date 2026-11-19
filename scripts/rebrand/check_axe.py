@@ -78,7 +78,12 @@ def main():
                 try:
                     violations = audit(page, url, base, axe)
                 except PlaywrightError as error:
-                    # A page that moves on while axe runs destroys its context. Name it, and try once more.
+                    # A page that moves on while axe runs destroys its context. Name it, and try once more;
+                    # anything else, such as a page that does not load in time, fails at once.
+                    if "context was destroyed" not in str(error) and "navigat" not in str(error):
+                        failures.append(f"{name} at {width}: {path}: {str(error)[:160]}")
+                        page.close()
+                        continue
                     print(f"{name} at {width}: {path}: trying again after {str(error)[:120]}")
                     page.close()
                     page = context.new_page()

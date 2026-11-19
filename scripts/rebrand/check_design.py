@@ -14,6 +14,7 @@ jQuery and Font Awesome stay until Phase 3.
 """
 
 import argparse
+import ast
 import concurrent.futures
 import contextlib
 import functools
@@ -1511,7 +1512,11 @@ def check_no_redirects(root, failures):
     so the check would test the live site, or stop when the move lands."""
     with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "sample_pages.json"), encoding="utf-8") as handle:
         named = set(json.load(handle).values())
-    named |= set(SCREENS.values()) | set(FLOATING_PAGES) | set(DIRECTORIES) | set(TOOL_PAGES)
+    # Every path written into this file, as well as the shared list.
+    with open(os.path.abspath(__file__), encoding="utf-8") as handle:
+        named |= {node.value for node in ast.walk(ast.parse(handle.read()))
+                  if isinstance(node, ast.Constant) and isinstance(node.value, str)
+                  and re.fullmatch(r"/?[a-z0-9_\-]+(/[a-z0-9_\-]+)*/", node.value)}
     for path in sorted(named):
         page = os.path.join(root, path.strip("/"), "index.html")
         if os.path.exists(page):

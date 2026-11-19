@@ -25,7 +25,7 @@ on:
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
-  PYTHONUNBUFFERED: "1"  # Log lines carry the time they were printed, so slow sections show.
+  PYTHONUNBUFFERED: "1"  # Output is flushed as it is printed, so the log's timestamps show which section is slow.
   HUGO_VERSION: "0.158.0"
   HUGO_EXTENDED: true
   PREVIEW_BASE: /rebrand-doors/
