@@ -5,14 +5,13 @@
     "sort_key": "p-curve",
     "definition": "P-curve is a tool for identifying potential publication bias and makes use of the distribution of significant *p*\\-values in a series of independent findings. The deviation from the expected right-skewed distribution can be used to assess the existence and degree of publication bias: if the curve is right-skewed, there are more low, highly significant *p*\\-values, reflecting an underlying true effect. If the curve is left-skewed, there are many barely significant results just under the 0.05-threshold. This suggests that the studies lack evidential value and may be underpinned by questionable research practices (QRPs; e.g., p-hacking). In the case of no true effect present (true null hypothesis) and unbiased *p*\\-value reporting, the *p*\\-curve should be a flat, horizontal line, representing the typical distribution of *p*\\-values.",
     "related_terms": [
-        "File-drawer",
+        "Publication bias (File Drawer Problem)",
         "Hypothesis",
         "p-hacking",
         "p-value",
-        "Publication bias (File Drawer Problem)",
         "Questionable Research Practices or Questionable Reporting Practices (QRPs)",
         "Selective reporting",
-        "Z-curve"
+        "Z-Curve"
     ],
     "references": [
         "Bruns, S. B., & Ioannidis, J. P. (2016). P-curve and p-hacking in observational research. <i>PLoS ONE</i>, <i>11</i>(2), e0149144. https://doi.org/10.1371/journal.pone.0149144",
@@ -37,5 +36,5 @@
     "aliases": [
         "/glossary/p_curve"
     ],
-    "lastmod": "2026-11-08"
+    "lastmod": "2026-11-19"
 }

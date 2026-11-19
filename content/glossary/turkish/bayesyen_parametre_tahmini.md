@@ -6,8 +6,7 @@
     "definition": "Model parametreleri hakkındaki önceden var olan inançları (yani önsel dağılım) olasılık fonksiyonu aracılığıyla yeni kanıtlarla (yani gözlemlenen veriler) güncelleyerek parametre değerlerini tahmin etmeye yönelik bir Bayesyen yaklaşımdır. Bu süreç, sonsal dağılım ile sonuçlanır. Sonsal dağılım, nokta tahminleri (sonsal olasılık dağılımının ortalaması/modu/medyanı), tanımlanmış sınırların aralıkları ve tanımlanmış kütlenin aralıkları (genellikle güvenilir aralık olarak adlandırılır) dahil olmak üzere çeşitli şekillerde özetlenebilir. Dolayısıyla, sonsal dağılım, sonraki bir tahminde ön dağılım haline gelebilir. Sonsal dağılım, karmaşık model belirsizliklerini belirlemek için kullanılabilen Markov Zinciri Monte-Carlo yöntemleri kullanılarak da örneklenebilir (örn., Foreman-Mackey vd., 2013).",
     "related_terms": [
         "Bayes Factor",
-        "Bayesian inference",
-        "Bayesian statistics",
+        "Bayesian Inference",
         "Null Hypothesis Significance Testing (NHST)"
     ],
     "references": [
@@ -37,5 +36,5 @@
     "translation_reviewed_by": [
         "Elif Baştan"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

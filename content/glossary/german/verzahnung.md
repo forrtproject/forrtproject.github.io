@@ -10,8 +10,7 @@
         "Diversity",
         "Inclusion",
         "Intersectionality",
-        "Open Science",
-        "Social Justice"
+        "Open Science"
     ],
     "references": [
         "Ledgerwood, A., Hudson, S. T. J., Lewis, Jr., N. A., Maddox, K. B., Pickett, C., Remedios, J. D., & Wilkins, C. L. (2021). <i>The Pandemic as a Portal: Reimagining Psychological Science as Truly Open and Inclusive</i>. https://doi.org/10.31234/osf.io/gdzue"
@@ -37,5 +36,5 @@
         "Susanne Vogel",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

@@ -5,7 +5,7 @@
     "sort_key": "ckan",
     "definition": "Das Comprehensive Knowledge Archive Network (CKAN, dt. ) ist eine Open-Source-Datenplattform und freie Software, die darauf abzielt, Werkzeuge für optimierte Veröffentlichung und Datenaustausch zur Verfügung zu stellen. CKAN unterstützt Regierungen, Forschungseinrichtungen und andere Organisationen bei der Verwaltung und Veröffentlichung großer Datenmengen.",
     "related_terms": [
-        "Data platforms",
+        "Repository",
         "Data sharing"
     ],
     "references": [
@@ -30,5 +30,5 @@
         "Susanne Vogel",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

@@ -5,10 +5,8 @@
     "sort_key": "open peer review",
     "definition": "A scholarly review mechanism providing disclosure of any combination of author and referee identities, as well as peer-review reports and editorial decision letters, to one another or publicly at any point during or after the peer review or publication process. It may also refer to the removal of restrictions on who can participate in peer review and the platforms for doing so. Note that ‘open peer review’ has been used interchangeably to refer to any, or all, of the above practices.",
     "related_terms": [
-        "Non-anonymised peer review",
-        "Open science",
-        "PRO (peer review openness) initiative",
-        "Transparent peer review"
+        "Open Science",
+        "PRO (peer review openness) initiative"
     ],
     "references": [
         "Ross-Hellauer, T. (2017). What is open peer review? A systematic review [version 2; peer review: 4 approved]. <i>F1000Research</i>, <i>6</i>, 588. https://doi.org/10.12688/f1000research.11369.2"
@@ -30,5 +28,5 @@
     "aliases": [
         "/glossary/open_peer_review"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

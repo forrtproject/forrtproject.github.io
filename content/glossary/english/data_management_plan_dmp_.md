@@ -5,11 +5,9 @@
     "sort_key": "data management plan (dmp)",
     "definition": "A structured document that describes the process of data acquisition, analysis, management and storage during a research project. It also describes data ownership and how the data will be preserved and shared during and upon completion of a project. Data management templates also provide guidance on how to make research data FAIR and where possible, openly available.",
     "related_terms": [
-        "Data archiving",
         "Data sharing",
-        "Data storage",
         "FAIR principles",
-        "Open data"
+        "Open Data"
     ],
     "references": [
         "Burnette, M., Williams, S., & Imker, H. (2016). From Plan to Action: Successful Data Management Plan Implementation in a Multidisciplinary Project. <i>Journal of eScience Librarianship</i>, <i>5</i>(1), e1101. https://doi.org/10.7191/jeslib.2016.1101",
@@ -33,5 +31,5 @@
     "aliases": [
         "/glossary/data_management_plan_dmp_"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

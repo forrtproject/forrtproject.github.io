@@ -7,7 +7,6 @@
     "related_terms": [
         "Many Labs",
         "Multiverse analysis",
-        "Sensitivity analyses",
         "Specification Curve Analysis"
     ],
     "references": [
@@ -34,5 +33,5 @@
         "Susanne Vogel",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

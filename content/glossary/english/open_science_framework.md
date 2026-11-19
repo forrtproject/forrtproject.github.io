@@ -5,7 +5,7 @@
     "sort_key": "open science framework",
     "definition": "A free and open source platform for researchers to organize and share their research project and to encourage collaboration. Often used as an open repository for research code, data and materials, preprints and preregistrations, while managing a more efficient workflow. Created and maintained by the Center for Open Science.",
     "related_terms": [
-        "Archive",
+        "Repository",
         "Center for Open Science (COS)",
         "Open Code",
         "Open Data",
@@ -31,5 +31,5 @@
     "aliases": [
         "/glossary/open_science_framework"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

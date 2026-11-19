@@ -5,14 +5,14 @@
     "sort_key": "replikasyonda yaratizciz yizkizm yaklaszizmiz [creative destruction approach to replication]",
     "definition": "Bu yaklaşıma göre replikasyon çabalarının amacı yalnızca mevcut bulguları desteklemek ya da sorgulamak değil, aynı zamanda bu bulguların yerine daha güçlü ve açıklayıcı gücü yüksek kuramlar koymak olmalıdır. Dolayısıyla bu yaklaşım, mevcut kuramların ‘budanmasını’, alternatif tüm kuramların karşılaştırılmasını ve replikasyon çalışmalarının daha üretken ve kuram geliştirmeye yönelik süreçler haline getirilmesini içerir (Tierney vd., 2020, 2021).",
     "related_terms": [
-        "Crowdsourced research",
+        "Crowdsourced Research",
         "Falsification",
-        "Replication",
+        "Replicability",
         "Theory"
     ],
     "references": [
-        "Tierney, W., Hardy III, J. H., Ebersole, C. R., Leavitt, K., Viganola, D., Clemente, E. G., & others. (2020). Creative destruction in science. <i>Organizational Behavior and Human Decision Processes</i>, <i>161</i>, 291–309. https://doi.org/10.1016/j.obhdp.2020.07.002",
-        "Tierney, W., Hardy III, J., Ebersole, C. R., Viganola, D., Clemente, E. G., Gordon, M., & others. (2021). A creative destruction approach to replication: Implicit work and sex morality across cultures. <i>Journal of Experimental Social Psychology</i>, <i>93</i>, 104060. https://doi.org/10.1016/j.jesp.2020.104060"
+        "Tierney, W., Hardy III, J. H., Ebersole, C. R., Leavitt, K., Viganola, D., Clemente, E. G., et al. (2020). Creative destruction in science. <i>Organizational Behavior and Human Decision Processes</i>, <i>161</i>, 291–309. https://doi.org/10.1016/j.obhdp.2020.07.002",
+        "Tierney, W., Hardy III, J., Ebersole, C. R., Viganola, D., Clemente, E. G., Gordon, M., et al. (2021). A creative destruction approach to replication: Implicit work and sex morality across cultures. <i>Journal of Experimental Social Psychology</i>, <i>93</i>, 104060. https://doi.org/10.1016/j.jesp.2020.104060"
     ],
     "drafted_by": [
         "Mahmoud Elsherif"
@@ -35,5 +35,5 @@
     "translation_reviewed_by": [
         "Ege Emek"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

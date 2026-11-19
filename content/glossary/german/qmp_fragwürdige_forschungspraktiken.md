@@ -6,9 +6,7 @@
     "definition": "Entscheidungen von Forschenden, die Zweifel an der Gültigkeit der in einer Studie verwendeten Messgrößen und letztlich an den endgültigen Schlussfolgerungen der Studie aufkommen lassen (Flake & Fried, 2020). Probleme ergeben sich aus mangelnder Transparenz bei der Berichterstattung über Messpraktiken, einem Versäumnis, die Konstruktvalidität zu berücksichtigen, Nachlässigkeit, Unwissenheit oder einer absichtlichen Falschdarstellung von Informationen.",
     "related_terms": [
         "Construct validity",
-        "Measurement schmeasurement",
         "p-hacking",
-        "Psychometrics",
         "Questionable Research Practices or Questionable Reporting Practices (QRPs)",
         "Validity"
     ],
@@ -36,5 +34,5 @@
         "Helena Hartmann",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-11-08"
+    "lastmod": "2026-11-19"
 }

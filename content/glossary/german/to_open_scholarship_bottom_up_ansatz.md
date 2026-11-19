@@ -5,8 +5,7 @@
     "sort_key": "to open scholarship bottom-up ansatz [bottom-up approach (to open scholarship)]",
     "definition": "In der akademischen Welt ein Ansatz, der sich auf das intrinsische Interesse von Akademiker:innen konzentriert, die Qualität der Forschung und der Forschungskultur zu verbessern, z. B. indem man sie unterstützend, kooperativ, kreativ und inklusiv gestaltet. In der Regel geht die Führung von Nachwuchswissenschaftler:innen aus, die durch Enthusiasmus und Innovation Veränderungen in wissenschaftlicher Methodik vorantreiben, im Gegensatz zu einem \"Top-down\"-Ansatz, der von erfahrenen Forscher:innen initiiert wird. \"Bottom-up approaches take into account the specific local circumstances of the case itself, often using empirical data, lived experience, personal accounts, and circumstances as the starting point for developing policy solutions.\" (dt. Bottom-up-Ansätze berücksichtigen die spezifischen lokalen Umstände des jeweiligen Falles und verwenden oft empirische Daten, direkte Erfahrungen, persönliche Berichte und Umstände als Ausgangspunkt für die Entwicklung politischer Lösungen; Meslin, 2010, p. 208\\)",
     "related_terms": [
-        "Early Career Researchers (ECRs)",
-        "Grassroot initiatives"
+        "Early career researchers (ECRs)"
     ],
     "references": [
         "Button, K. S., Lawrence, N. S., Chambers, C. D., & Munafò, M. R. (2016). Instilling scientific rigour at the grassroots. <i>Psychologist</i>, <i>29</i>(3), 158–159.",
@@ -39,5 +38,5 @@
         "Susanne Vogel",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

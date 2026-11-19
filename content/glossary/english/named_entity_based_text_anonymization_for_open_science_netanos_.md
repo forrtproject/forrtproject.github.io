@@ -6,7 +6,6 @@
     "definition": "A free, open-source anonymisation software that identifies and modifies named entities (e.g. persons, locations, times, dates). Its key feature is that it preserves critical context needed for secondary analyses. The aim is to assist researchers in sharing their raw text data, while adhering to research ethics.",
     "related_terms": [
         "Anonymity",
-        "Confidentiality",
         "Data sharing",
         "Research ethics"
     ],
@@ -29,5 +28,5 @@
     "aliases": [
         "/glossary/named_entity_based_text_anonymization_for_open_science_netanos_"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

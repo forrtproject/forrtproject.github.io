@@ -5,9 +5,7 @@
     "sort_key": "tek-kozr hakemlik [single-blind peer review]",
     "definition": "Araştırma ürünlerinin nitelikli uzmanlar tarafından değerlendirildiği ve hakem(ler)in yazar(lar)ın kimliğini bildiği, ancak yazar(lar)ın hakem(ler)in kimliğini bilmediği yöntemdir.",
     "related_terms": [
-        "Anonymous review",
         "Double-blind peer review",
-        "Masked review",
         "Open Peer Review",
         "Peer review",
         "Triple-blind peer review"
@@ -34,5 +32,5 @@
     "translation_reviewed_by": [
         "Neslihan Özhan"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

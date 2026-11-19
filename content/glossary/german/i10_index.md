@@ -5,10 +5,9 @@
     "sort_key": "i10-index",
     "definition": "Eine von Google Scholar erstellte Forschungsmetrik. Sie gibt für eine/n Forschenden die Anzahl der Publikationen mit mindestens 10 Zitationen an.",
     "related_terms": [
-        "Citation",
         "DORA",
         "H-index",
-        "Impact"
+        "Academic Impact"
     ],
     "references": [
         "Cornell University. (2020). <i>Measuring your research impact: i10 index</i>. Cornell University Library. https://guides.library.cornell.edu/impact/author-impact-10"
@@ -31,5 +30,5 @@
         "Helena Hartmann",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

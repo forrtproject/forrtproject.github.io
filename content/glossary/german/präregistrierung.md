@@ -7,9 +7,8 @@
     "related_terms": [
         "Confirmation bias",
         "Confirmatory analyses",
-        "Exploratory Data Analysis",
+        "Exploratory data analysis",
         "HARKing",
-        "Pre-analysis plan",
         "Questionable Research Practices or Questionable Reporting Practices (QRPs)",
         "Registered Report",
         "Research Protocol",
@@ -47,5 +46,5 @@
         "Helena Hartmann",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

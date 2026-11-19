@@ -5,21 +5,16 @@
     "sort_key": "questionable research practices or questionable reporting practices (qrps)",
     "definition": "A range of activities that intentionally or unintentionally distort data in favour of a researcher’s own hypotheses \\- or omissions in reporting such practices \\- including; selective inclusion of data, hypothesising after the results are known (HARKing), and *p*\\-hacking. Popularized by John et al. (2012).",
     "related_terms": [
-        "Creative use of outliers",
-        "Fabrication",
-        "File-drawer",
+        "Scientific misconduct",
+        "Publication bias (File Drawer Problem)",
         "Garden of forking paths",
         "HARKing",
-        "Nonpublication of data",
         "p-hacking",
-        "p-value fishing",
-        "Partial publication of data",
-        "Post-hoc storytelling",
+        "Salami slicing",
         "Preregistration",
         "Questionable Measurement Practices (QMP)",
         "Researcher degrees of freedom",
-        "Reverse p-hacking",
-        "Salami slicing"
+        "Reverse p-hacking"
     ],
     "references": [
         "Banks, G. C., Rogelberg, S. G., Woznyj, H. M., Landis, R. S., & Rupp, D. E. (2016). Editorial: Evidence on questionable research practices: The good, the bad, and the ugly. <i>Journal of Business and Psychology</i>, <i>31</i>(3), 323–338. https://doi.org/10.1007/s10869-016-9456-7",
@@ -49,5 +44,5 @@
     "aliases": [
         "/glossary/questionable_research_practices_or_questionable_reporting_practices_qrps_"
     ],
-    "lastmod": "2026-11-08"
+    "lastmod": "2026-11-19"
 }

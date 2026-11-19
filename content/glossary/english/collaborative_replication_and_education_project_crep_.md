@@ -5,11 +5,10 @@
     "sort_key": "collaborative replication and education project (crep)",
     "definition": "The Collaborative Replication and Education Project (CREP) is an initiative designed to organize and structure replication efforts of highly-cited empirical studies in psychology to satisfy the dual needs for more high-quality direct replications and more training in empirical research techniques for psychology students. CREP aims to address the need for replications of highly cited studies, and to provide training, support and professional growth opportunities for academics completing replication projects.",
     "related_terms": [
-        "Direct replication",
-        "Exact replication"
+        "Direct replication"
     ],
     "references": [
-        "Wagge, J. R., Baciu, C., Banas, K., Nadler, J. T., Schwarz, S., Weisberg, Y., & others. (2019). A demonstration of the collaborative replication and education project: Replication attempts of the red-romance effect. <i>Collabra: Psychology</i>, <i>5</i>(1). https://doi.org/10.1525/collabra.177"
+        "Wagge, J. R., Baciu, C., Banas, K., Nadler, J. T., Schwarz, S., Weisberg, Y., et al. (2019). A demonstration of the collaborative replication and education project: Replication attempts of the red-romance effect. <i>Collabra: Psychology</i>, <i>5</i>(1). https://doi.org/10.1525/collabra.177"
     ],
     "drafted_by": [
         "Connor Keating"
@@ -27,5 +26,5 @@
     "aliases": [
         "/glossary/collaborative_replication_and_education_project_crep_"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

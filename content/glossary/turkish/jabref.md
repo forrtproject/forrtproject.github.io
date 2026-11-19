@@ -5,7 +5,7 @@
     "sort_key": "jabref",
     "definition": "Ücretsiz olarak sunulan, açık kaynaklı ve platformlar arası çalışan bir atıf ve kaynakça yönetim aracıdır. BibTeX dosyalarını düzenlemeye, çevrim içi bilimsel veritabanlarından veri aktarmaya ve BibTeX dosyalarını yönetmeye ve aramaya olanak tanır.",
     "related_terms": [
-        "Open source software"
+        "Open Source software"
     ],
     "references": [
         "JabRef Development Team. (2021). <i>JabRef - An open-source, cross-platform citation and reference management software</i>. https://www.jabref.org"
@@ -29,5 +29,5 @@
     "translation_reviewed_by": [
         "Merve Öztürk"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

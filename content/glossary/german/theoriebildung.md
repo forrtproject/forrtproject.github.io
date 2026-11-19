@@ -7,9 +7,7 @@
     "related_terms": [
         "Hypothesis",
         "Model (philosophy)",
-        "Theory",
-        "Theoretical contribution",
-        "Theoretical model"
+        "Theory"
     ],
     "references": [
         "Borsboom, D., van der Maas, H., Dalege, J., Kievit, R., & Haig, B. (2020). <i>Theory Construction Methodology: A practical framework for theory formation in psychology</i>. https://doi.org/10.31234/osf.io/w5tp8",
@@ -36,5 +34,5 @@
         "Susanne Vogel",
         "Joris Frese"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

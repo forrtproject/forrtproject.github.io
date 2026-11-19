@@ -5,8 +5,8 @@
     "sort_key": "atizf yanlizlizgziz [citation bias]",
     "definition": "Kaynaklar bölümünde atıf yapılan ve yer verilen makalelerin veya yazarların yanlı seçimi. Bu tür bir yanlılık çoğu zaman, yazar(lar)ın veya hakemlerin lehine olacak şekilde, istatistiksel olarak anlamlı sonuçlar içeren çalışmaların aşırı temsil edilmesiyle ya da cinsiyet ve ırk temelli yaygın ön yargıların yansıması olarak ortaya çıkar (Brooks, 1985; Jannot vd., 2013; Zurn vd., 2020). Önerilen çözümlerden biri, yazarların atıf uygulamalarını değerlendirip ortaya çıkmış olabilecek yanlılıkları tespit ettikleri Atıf Çeşitliliği Beyanlarının (Citation Diversity Statements) kullanılmasıdır (Zurn vd., 2020).",
     "related_terms": [
-        "Citation diversity statement",
-        "Reporting bias"
+        "Citation Diversity Statement",
+        "Selective reporting"
     ],
     "references": [
         "Brooks, T. A. (1985). Private acts and public objects: An investigation of citer motivations. <i>Journal of the American Society for Information Science</i>, <i>36</i>(4), 223–229. https://doi.org/10.1002/asi.4630360402",
@@ -36,5 +36,5 @@
     "translation_reviewed_by": [
         "Elif Baştan"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

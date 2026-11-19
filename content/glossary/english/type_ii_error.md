@@ -9,9 +9,8 @@
         "Null Hypothesis Significance Testing (NHST)",
         "Questionable Research Practices or Questionable Reporting Practices (QRPs)",
         "Reproducibility crisis (aka Replicability or replication crisis)",
-        "Scientific integrity",
+        "Research integrity",
         "Statistical power",
-        "True positive result",
         "Type I error"
     ],
     "references": [
@@ -29,8 +28,11 @@
         null
     ],
     "language": "english",
+    "also_known_as": [
+        "False negative result"
+    ],
     "aliases": [
         "/glossary/type_ii_error"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

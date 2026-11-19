@@ -5,10 +5,9 @@
     "sort_key": "h-index",
     "definition": "Hirsch’s index, abbreviated as H-index, intends to measure both productivity and research impact by combining the number of publications and the number of citations to these publications. Hirsch (2005) defined the index as “the number of papers with citation number ≥ *h*” (p. 16569). That is, the greatest number such that an author (or journal) has published at least that many papers that have been cited at least that many times. The index is perceived as a superior measure to measures that only assess, for instance, the number of citations and number of publications but this index has been criticised for the purpose of researcher assessment (e.g. Wendl, 2007).",
     "related_terms": [
-        "Citation",
         "DORA",
-        "I10-index",
-        "Impact"
+        "i10-index",
+        "Academic Impact"
     ],
     "references": [
         "Hirsch, J. E. (2005). An index to quantify an individual’s scientific research output. <i>Proceedings of the National Academy of Sciences</i>, <i>102</i>(46), 16569–16572. https://doi.org/10.1073/pnas.0507655102",
@@ -30,5 +29,5 @@
     "aliases": [
         "/glossary/h_index"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

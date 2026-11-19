@@ -5,8 +5,7 @@
     "sort_key": "duzszmanca i̇sz birligzi [adversarial collaboration]",
     "definition": "Karşıt veya çelişkili teorik görüşlere sahip—ve muhtemelen çalışma sonuçları hakkında ayrışan tahminlerde bulunan—iki veya daha fazla araştırmacının ortak bir projede iş birliği yapması. Amaç, yanlılıkları ve yöntemsel zayıflıkları en aza indirmek ve rakip teorilerin hesaba katması gereken ortak bir olgular tabanı oluşturmaktır.",
     "related_terms": [
-        "Collaboration",
-        "Many Analysts",
+        "Multi-Analyst Studies",
         "Many Labs",
         "Preregistration",
         "Publication bias (File Drawer Problem)"
@@ -39,5 +38,5 @@
     "translation_reviewed_by": [
         "Elif Baştan"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

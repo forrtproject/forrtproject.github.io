@@ -5,7 +5,7 @@
     "sort_key": "epistemology",
     "definition": "Alongside ethics, logic, and metaphysics, epistemology is one of the four main branches of philosophy. Epistemology is largely concerned with nature, origin, and scope of knowledge, as well as the rationality of beliefs.",
     "related_terms": [
-        "Meta-science or Meta-research ",
+        "Meta-science or Meta-research",
         "Ontology (Artificial Intelligence)"
     ],
     "references": [
@@ -27,5 +27,5 @@
     "aliases": [
         "/glossary/epistemology"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

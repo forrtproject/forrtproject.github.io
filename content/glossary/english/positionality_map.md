@@ -7,7 +7,6 @@
     "related_terms": [
         "Positionality",
         "Qualitative research",
-        "Social identity map",
         "Transparency"
     ],
     "references": [
@@ -26,8 +25,11 @@
         null
     ],
     "language": "english",
+    "also_known_as": [
+        "Social identity map"
+    ],
     "aliases": [
         "/glossary/positionality_map"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

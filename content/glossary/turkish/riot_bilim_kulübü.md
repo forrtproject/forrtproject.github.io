@@ -6,8 +6,6 @@
     "definition": "RIOT Bilim Kulübü, Yeniden Üretilebilir (Reproducible), Yorumlanabilir (Interpretable), Açık (Open) ve Şeffaf (Transparent) bilim uygulamalarına yönelik farkındalık yaratan ve eğitim sağlayan, çok merkezli bir seminer serisidir. Kulüp, düzenli olarak açık erişimli ve ilgili merkezlerin web siteleri ile YouTube kanallarından tekrar izlenebilir konuşmalar, atölyeler ve konferanslar sunar.",
     "related_terms": [
         "Early career researchers (ECRs)",
-        "Interpretability",
-        "Openness",
         "Reproducibility",
         "Transparency"
     ],
@@ -33,5 +31,5 @@
     "translation_reviewed_by": [
         "Neslihan Özhan"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

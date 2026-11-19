@@ -5,11 +5,8 @@
     "sort_key": "quantitative research",
     "definition": "Quantitative research encompasses a diverse range of methods to systematically investigate a range of phenomena via the use of numerical data which can be analysed with statistics.",
     "related_terms": [
-        "Measuring",
         "Qualitative research",
-        "Sample size",
-        "Statistical power",
-        "Statistics"
+        "Statistical power"
     ],
     "references": [
         "Goertzen, M. J. (2017). Introduction to Quantitative Research and Data. <i>Library Technology Reports</i>, <i>53</i>(4), 12–18."
@@ -29,5 +26,5 @@
     "aliases": [
         "/glossary/quantitative_research"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

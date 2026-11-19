@@ -5,8 +5,7 @@
     "sort_key": "aleatorische unsicherheit [aleatoric uncertainty]",
     "definition": "Die Variabilität von Ergebnissen aufgrund von unbekannten oder inhärent zufälligen Faktoren. Die stochastische Komponente der Ergebnisunsicherheit, die nicht durch zusätzliche Informationsquellen reduziert werden kann. Ein Beispiel: Beim Werfen einer Münze ist ungewiss, ob sie auf Kopf oder Zahl fällt.",
     "related_terms": [
-        "Epistemic uncertainty",
-        "Knightian uncertainty"
+        "Epistemic uncertainty"
     ],
     "references": [
         "Der Kiureghian, A., & Ditlevsen, O. (2009). Aleatory or epistemic? Does it matter? <i>Structural Safety</i>, <i>31</i>(2), 105–112. https://doi.org/10.1016/j.strusafe.2008.06.020"
@@ -32,5 +31,5 @@
         "Susanne Vogel",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

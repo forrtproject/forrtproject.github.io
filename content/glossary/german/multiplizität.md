@@ -5,10 +5,7 @@
     "sort_key": "multiplizität [multiplicity]",
     "definition": "Potenzielle Inflation der Typ I \\- Fehlerraten (fälschliche Zurückweisung der Nullhypothese) aufgrund mehrfacher statistischer Tests, z. B. mehrere Ergebnisse, mehrere Follow-up-Zeitpunkte oder mehrere Teilgruppenanalysen. Um Probleme mit der Multiplizität zu überwinden, wenden Forschende häufig Kontrollverfahren an (z. B. Bonferroni, Holm-Bonferroni; Tukey), die den Alpha-Wert korrigieren, um die Inflation von Typ-I-Fehlern zu kontrollieren. Durch die Kontrolle von Fehlern des Typs I kann jedoch die Möglichkeit von Fehlern des Typs II (d. h. das falsche Beibehalten der Nullhypothese) erhöht werden.",
     "related_terms": [
-        "Alpha",
-        "False Discovery Rate",
-        "Multiple comparisons problem",
-        "Multiple testing",
+        "Statistical significance",
         "Null Hypothesis Significance Testing (NHST)"
     ],
     "references": [
@@ -35,5 +32,5 @@
         "Helena Hartmann",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

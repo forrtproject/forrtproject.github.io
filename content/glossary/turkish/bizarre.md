@@ -5,7 +5,6 @@
     "sort_key": "bizarre",
     "definition": "Bu kısaltma, Yavan, Kurumsal, Hayvanat Bahçesi ve Diğer Nadir Yetiştirme Ortamları anlamına gelmektedir (BIZARRE; Barren, Institutional, Zoo, and other Rare Rearing Environments) ve her kelimenin baş harflerinden oluşmaktadır. Şempanzelerle ilgili araştırmaların çoğu bu özel örneklem üzerinde yürütülmektedir. Bu durum, şempanze popülasyonunda yapılan çok sayıda araştırma bulgusunun genellenebilirliğini sınırlamaktadır. BIZARRE’nin, “şempanze nedir” sorusuna ilişkin evrensel bir kavramı yansıttığı öne sürülmüştür (bkz. WEIRD’ın, “insan nedir” sorusuna yönelik evrensel bir kavram olduğu öne sürülmüştür).",
     "related_terms": [
-        "Populations",
         "STRANGE",
         "WEIRD"
     ],
@@ -30,5 +29,5 @@
     "translation_reviewed_by": [
         "Elif Baştan"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

@@ -6,7 +6,7 @@
     "definition": "Araştırma Değerlendirmesi üzerine San Francisco Deklarasyonu (DORA; The San Francisco Declaration on Research Assessment), dergi temelli ölçütlere (örn., dergi etki faktörü ve atıf sayısı) olan bağımlılığı azaltmayı amaçlayan bir girişimdir. Bunun yerine, araştırmanın özündeki değeri vurgulayan bir akademik kültürün teşvik edilmesini hedefler.  DORA deklarasyonu; araştırmayı fonlayan kuruluşları, yayınevlerini, araştırma kurumlarını ve araştırmacıları hedef alır ve bu deklarasyonu imzalamak, araştırma uygulamalarının ve süreçlerinin deklarasyon ilkeleriyle uyumlu hale getirilmesine yönelik bir taahhüdü ifade eder.",
     "related_terms": [
         "Generalizability",
-        "Journal Impact Factor",
+        "Journal Impact Factor™",
         "Open Science"
     ],
     "references": [
@@ -30,5 +30,5 @@
     "translation_reviewed_by": [
         "Ege Emek"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

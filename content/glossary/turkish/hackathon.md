@@ -4,10 +4,7 @@
     "title": "Hackathon",
     "sort_key": "hackathon",
     "definition": "Uzmanların, tasarımcıların veya araştırmacıların belirli bir proje ya da problem üzerinde kısa bir süre içinde yoğun biçimde birlikte çalıştıkları etkinliklerdir. Terim, bilgisayar programcıları ve yazılım geliştiricileri için düzenlenen; genellikle birkaç saatten birkaç güne kadar sürebilen ve etkinlik sonunda tam işlevsel bir ürün (kaynaklar, araştırma, yazılım ya da donanım) ortaya koymayı amaçlayan etkinliklerden türemiştir.",
-    "related_terms": [
-        "Collaboration",
-        "Edithaton"
-    ],
+    "related_terms": [],
     "references": [
         "Kienzler, H., & Fontanesi, C. (2017). Learning through inquiry: A global health hackathon. <i>Teaching in Higher Education</i>, <i>22</i>(2), 129–142. https://doi.org/10.1080/13562517.2016.1221805"
     ],
@@ -29,5 +26,5 @@
     "translation_reviewed_by": [
         "Ege Emek"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

@@ -5,11 +5,10 @@
     "sort_key": "goodhart yasasiz [goodhart’s law]",
     "definition": "Ekonomist Charles Goodhart tarafından ortaya atılan bu terim, bir şeyi ölçmenin, ölçülen davranışı doğrudan değiştirdiği gözlemine dayanır. Sınav performansıyla ilgili olarak Strathern (1997) şöyle der: “Bir ölçüt hedef haline geldiğinde, artık iyi bir ölçüt olmaktan çıkar” (s. 308). Açık bilim uygulamaları ve akademideki teşvik yapıları bağlamında Goodhart Yasası, bilimsel değerlendirme ölçütlerinin kötüye kullanılacağını veya istismar edileceğini öngörür. Muller’in (2019) çalışması da bu durumu belgeleyen örneklerden biridir.",
     "related_terms": [
-        "Campbell's law",
-        "DORA",
-        "Reification (fallacy)"
+        "DORA"
     ],
     "references": [
+        "Campbell, D. T. (1979). Assessing the impact of planned social change. <i>Evaluation and Program Planning</i>, <i>2</i>(1), 67–90. https://doi.org/10.1016/0149-7189(79)90048-X",
         "Muller, J. Z. (2018). <i>The Tyranny of Metrics</i>. Princeton University Press.",
         "Strathern, M. (1997). ‘Improving ratings’: audit in the British University system. <i>European Review</i>, <i>5</i>(3), 305–321. https://doi.org/10.1002/(SICI)1234-981X(199707)5:3%3C305::AID-EURO184%3E3.0.CO;2-4"
     ],
@@ -30,5 +29,5 @@
     "translation_reviewed_by": [
         "Ege Emek"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

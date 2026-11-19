@@ -6,10 +6,7 @@
     "definition": "Dijital kaynaklarda (örn., dosyalar, internet siteleri, programlar) zaman içinde yapılan değişikliklerin yönetilmesi ve kaydedilmesidir. Bu sayede önceki sürümler daha sonra geri getirilebilir. Versiyon kontrol sistemleri, yapılan değişikliklerin tarihçesini (kim, ne, ne zaman) kaydetmek ve yanlış sürüm üzerinde çalışma gibi insan hatalarını önlemeye yardımcı olmak için tasarlanmıştır. Örneğin, Git adlı sürüm kontrol sistemi, başlangıçta yazılım geliştiricilerin ortak kod üzerinde çalışırken sürüm takibi yapabilmeleri için geliştirilmiştir. Günümüzde ise birçok bilimsel alanda dosyaları yönetmek ve paylaşmak amacıyla yaygın olarak kullanılmaktadır.",
     "related_terms": [
         "Git",
-        "Reproducibility",
-        "Software configuration management",
-        "Source code management",
-        "Source control"
+        "Reproducibility"
     ],
     "references": [
         "Git. (n.d.). <i>Git—About Version Control</i>. https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control"
@@ -38,5 +35,5 @@
     "translation_reviewed_by": [
         "Neslihan Özhan"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

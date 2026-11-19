@@ -5,8 +5,6 @@
     "sort_key": "korrigendum [corrigendum]",
     "definition": "Ein Korrigendum (pl. Korrigenda, lat.: \"berichtigen\") dokumentiert einen oder mehrere Fehler in einer veröffentlichten Arbeit, die die zentrale Aussage oder die Schlussfolgerungen nicht verändern und somit nicht den Standard erreichen, der ein Zurückziehen der Arbeit erfordert. Korrigenda werden in der Regel neben dem Originalwerk veröffentlicht, um die Transparenz zu erhöhen. Einige Verlage bezeichnen dieses Dokument als Erratum (pl. errata, lateinisch: \"Fehler\"), während andere eine Unterscheidung zwischen beiden treffen (Corrigenda als Fehler der Autor:innen und Errata als Verlagsfehler).",
     "related_terms": [
-        "Correction",
-        "Errata",
         "Retraction"
     ],
     "references": [
@@ -33,5 +31,5 @@
         "Helena Hartmann",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

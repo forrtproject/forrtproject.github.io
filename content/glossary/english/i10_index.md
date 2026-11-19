@@ -5,10 +5,9 @@
     "sort_key": "i10-index",
     "definition": "A research metric created by Google Scholar that represents the number of publications a researcher has with at least 10 citations.",
     "related_terms": [
-        "Citation",
         "DORA",
         "H-index",
-        "Impact"
+        "Academic Impact"
     ],
     "references": [
         "Cornell University. (2020). <i>Measuring your research impact: i10 index</i>. Cornell University Library. https://guides.library.cornell.edu/impact/author-impact-10"
@@ -27,5 +26,5 @@
     "aliases": [
         "/glossary/i10_index"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

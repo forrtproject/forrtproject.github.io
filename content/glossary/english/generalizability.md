@@ -7,8 +7,6 @@
     "related_terms": [
         "Conceptual replication",
         "External Validity",
-        "Opportunistic sampling",
-        "Sampling bias",
         "WEIRD"
     ],
     "references": [
@@ -36,5 +34,5 @@
     "aliases": [
         "/glossary/generalizability"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

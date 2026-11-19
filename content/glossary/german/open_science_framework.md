@@ -5,7 +5,7 @@
     "sort_key": "open science framework",
     "definition": "Eine kostenlose open-source Plattform für Forschende zur Organisation und gemeinsamen Nutzung ihrer Forschungsprojekte und zur Förderung der Zusammenarbeit. Sie wird häufig als offenes Repositorium für Forschungscode, Daten und Materialien, Preprints und Präregistrierungen verwendet und ermöglicht gleichzeitig einen effizienteren Arbeitsablauf. Erstellt und gepflegt durch das Center for Open Science.",
     "related_terms": [
-        "Archive",
+        "Repository",
         "Center for Open Science (COS)",
         "Open Code",
         "Open Data",
@@ -35,5 +35,5 @@
         "Helena Hartmann",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

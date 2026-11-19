@@ -5,10 +5,8 @@
     "sort_key": "offene begutachtung [open peer review]",
     "definition": "Ein wissenschaftlicher Begutachtungsmechanismus, der die Offenlegung der Identität von Autor:innen und Gutachter:innen sowie von Peer-Review-Gutachten und editorischen Entscheidungsschreiben untereinander oder gegenüber der Öffentlichkeit zu jedem Zeitpunkt während oder nach dem Peer-Review- oder Veröffentlichungsprozess ermöglicht. Der Begriff kann sich auch auf die Aufhebung von Beschränkungen für die Teilnahme am Peer-Review-Verfahren und die entsprechenden Plattformen dafür beziehen. Beachten Sie, dass der Begriff \"offene Begutachtung\" austauschbar verwendet wird, um sich auf jede der oben genannten Praktiken oder auf alle zu beziehen.",
     "related_terms": [
-        "Non-anonymised peer review",
-        "Open science",
-        "PRO (peer review openness) initiative",
-        "Transparent peer review"
+        "Open Science",
+        "PRO (peer review openness) initiative"
     ],
     "references": [
         "Ross-Hellauer, T. (2017). What is open peer review? A systematic review [version 2; peer review: 4 approved]. <i>F1000Research</i>, <i>6</i>, 588. https://doi.org/10.12688/f1000research.11369.2"
@@ -34,5 +32,5 @@
         "Helena Hartmann",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

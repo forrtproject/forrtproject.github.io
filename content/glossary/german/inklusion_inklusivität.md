@@ -6,8 +6,7 @@
     "definition": "Inklusion oder Inklusivität bezieht sich auf eine Kultur des Willkommens und des Respekts in der Zusammenarbeit an einem bestimmten Projekt oder in einem Umfeld (z. B. im akademischen Bereich), wobei Vielfalt (Diversität) hier ein breites Spektrum an unterschiedlichen Hintergründen, Perspektiven und Erfahrungen bedeutet. Bemühungen zur Erhöhung der Inklusivität beinhalten die Verminderung der Folgen oder die komplette Beseitigung systemischer Barrieren für benachteiligte Gruppen und Minderheiten.",
     "related_terms": [
         "Diversity",
-        "Equity",
-        "Social Justice"
+        "Equity"
     ],
     "references": [
         "Calvert, D. (2019). <i>How to Make Inclusivity More Than Just an Office Buzzword</i>. Retrieved from https://insight.kellogg.northwestern.edu/article/how-to-make-inclusivity-more-than-just-an-office-buzzword",
@@ -34,5 +33,5 @@
         "Susanne Vogel",
         "Helena Hartmann"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

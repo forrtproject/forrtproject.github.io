@@ -7,7 +7,6 @@
     "related_terms": [
         "Positionality",
         "Qualitative research",
-        "Social identity map",
         "Transparency"
     ],
     "references": [
@@ -32,5 +31,5 @@
     "translation_reviewed_by": [
         "Nihan Selin Soylu-Konak"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

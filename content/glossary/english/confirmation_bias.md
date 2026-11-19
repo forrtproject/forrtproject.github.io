@@ -4,11 +4,7 @@
     "title": "Confirmation bias",
     "sort_key": "confirmation bias",
     "definition": "The tendency to seek out, interpret, favor and recall information in a way that supports one’s prior values, beliefs, expectations, or hypothesis.",
-    "related_terms": [
-        "Confirmatory bias",
-        "Congeniality bias",
-        "Myside bias"
-    ],
+    "related_terms": [],
     "references": [
         "Bishop, D. V. (2020). The psychology of experimental psychologists: Overcoming cognitive constraints to improve research: The 47th Sir Frederic Bartlett Lecture. <i>Quarterly Journal of Experimental Psychology</i>, <i>73</i>(1), 1–19. https://doi.org/10.1177/1747021819886519",
         "Nickerson, R. S. (1998). Confirmation bias: A ubiquitous phenomenon in many guises. <i>Review of General Psychology</i>, <i>2</i>(2), 175–220. https://doi.org/10.1037/1089-2680.2.2.175",
@@ -28,8 +24,12 @@
         null
     ],
     "language": "english",
+    "also_known_as": [
+        "Congeniality bias",
+        "Myside bias"
+    ],
     "aliases": [
         "/glossary/confirmation_bias"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

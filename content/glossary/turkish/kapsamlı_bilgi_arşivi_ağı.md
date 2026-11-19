@@ -5,7 +5,7 @@
     "sort_key": "kapsamliz bilgi arszivi agziz [ckan]",
     "definition": "Kapsamlı Bilgi Arşivi Ağı (CKAN; Comprehensive Knowledge Archive Network), yayımlamayı ve veri paylaşımını kolaylaştırmayı amaçlayan açık kaynaklı bir veri platformudur. CKAN hükümetlere, araştırma kuruluşlarına ve diğer organizasyonlara büyük miktarda verinin yönetimi ve yayımlanması konusunda destek verir.",
     "related_terms": [
-        "Data platforms",
+        "Repository",
         "Data sharing"
     ],
     "references": [
@@ -29,5 +29,5 @@
     "translation_reviewed_by": [
         "Elif Baştan"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

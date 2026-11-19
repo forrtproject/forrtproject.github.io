@@ -6,8 +6,8 @@
     "definition": "Analitik yaklaşımlar ve modeller, verilerin belirli özelliklere sahip olduğunu varsayar (örn., istatistiksel bağımsızlık, rastgele örneklem, normallik, eşit varyans). Bir analiz yapılmadan önce bu varsayımlar kontrol edilmelidir; çünkü varsayımların ihlali, çalışmanın sonuçlarını ve çıkarımlarını değiştirebilir. Açık ve yeniden üretilebilir bilimde iyi bir uygulama, doğrulanan varsayımlar ile uygulanan kontrollerin veya düzeltmelerin sonuçlarının raporlanmasıdır.",
     "related_terms": [
         "Null Hypothesis Significance Testing (NHST)",
-        "Statistical Significance",
-        "Statistical Validity",
+        "Statistical significance",
+        "Statistical validity",
         "Transparency",
         "Type I error",
         "Type II error",
@@ -39,5 +39,5 @@
     "translation_reviewed_by": [
         "Neslihan Özhan"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

@@ -5,10 +5,8 @@
     "sort_key": "credibility revolution",
     "definition": "The problems and the solutions resulting from a growing distrust in scientific findings, following concerns about the credibility of scientific claims (e.g., low replicability). The term has been proposed as a more positive alternative to the term replicability crisis, and includes the many solutions to improve the credibility of research, such as preregistration, transparency, and replication.",
     "related_terms": [
-        "Credibility of scientific claims",
-        "High standards of evidence",
-        "Openness",
-        "Open Science;Reproducibility crisis (aka Replicability or replication crisis)",
+        "Open Science",
+        "Reproducibility crisis (aka Replicability or replication crisis)",
         "Transparency"
     ],
     "references": [
@@ -38,5 +36,5 @@
     "aliases": [
         "/glossary/credibility_revolution"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

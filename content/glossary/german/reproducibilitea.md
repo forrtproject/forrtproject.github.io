@@ -5,9 +5,8 @@
     "sort_key": "reproducibilitea",
     "definition": "Eine basisdemokratische Initiative, die Forschenden hilft, an ihren Universitäten lokale Journal Clubs zu gründen, um verschiedene Themen im Zusammenhang mit offener Forschung und Scholarship zu diskutieren. Im Mittelpunkt eines jeden Treffens steht in der Regel eine bestimmte Veröffentlichung, in der z. B. Reproduzierbarkeit, Forschungspraxis, Forschungsqualität, soziale Gerechtigkeit und Inklusion sowie Ideen zur Verbesserung der Wissenschaft erörtert werden.",
     "related_terms": [
-        "Grassroots initiative",
-        "Journal club",
-        "Open science",
+        "Bottom-up approach (to Open Scholarship)",
+        "Open Science",
         "Reproducibility"
     ],
     "references": [
@@ -36,5 +35,5 @@
         "Susanne Vogel",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

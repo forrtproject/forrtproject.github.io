@@ -5,7 +5,7 @@
     "sort_key": "plan s",
     "definition": "Plan S ist eine im September 2018 von cOAlition S, einem Konsortium von drittmittelgebenden Organisationen, gestartete Initiative, die den Übergang zu vollständigem und sofortigem Open Access beschleunigen soll. Die teilnehmenden Förderorganisationen verlangen von den Empfänger:innen von Forschungsgeldern, dass sie ab 2021 in Open-Access-konformen Zeitschriften publizieren oder ihre Arbeiten sofort offen zugänglich machen. Die Förderer von cOAlition S haben sich verpflichtet, keine \"hybriden\" Open-Access-Publikationsgebühren in auf Abonnementen basierenden Publikationsplattformen finanziell zu unterstützen. Autor:innen können jedoch Plan S einhalten, indem sie Open Access in einer zu abonnierenden Zeitschrift im Rahmen einer \"transformativen Vereinbarung\" veröffentlichen, wie in den Durchführungsleitlinien näher beschrieben. Das \"S\" in Plan S steht für Schock.",
     "related_terms": [
-        "Open Access",
+        "Open access",
         "DORA",
         "Repository"
     ],
@@ -32,5 +32,5 @@
         "Jennifer Mattschey",
         "Susanne Vogel"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

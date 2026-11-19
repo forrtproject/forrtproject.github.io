@@ -5,10 +5,9 @@
     "sort_key": "literaturzusammenfassung [literature review]",
     "definition": "Wissenschaftler:innen sichten häufig Forschungsarbeiten zu einem bestimmten Thema, um die Auswirkungen und Phänomene, die von Interesse sind, besser zu verstehen, bevor sie ein neues Forschungsprojekt in Angriff nehmen. Dies unterstützt dabei, zu verstehen, wie die Theorie mit den Beweisen zusammenhängt, oder dabei, gemeinsame Themen und Richtungen bestehender Studienergebnisse und Aussagen zu untersuchen. Abhängig von der Forschungsfrage und dem Umfang der Literatur können verschiedene Arten von Literaturzusammenfassungen (Literature Reviews) durchgeführt werden. Um den Umfang und die wichtigsten Konzepte in einem bestimmten Bereich zu bestimmen, können Forscher ein Scoping Literature Review durchführen. Systematische Literaturzusammenfassungen zielen darauf ab, alle verfügbaren Aufzeichnungen aufzurufen und zu überprüfen, um eine möglichst genaue und unvoreingenommene Darstellung der vorhandenen Literatur zu erhalten. Nicht systematische oder fokussierte Literature Reviews fassen Informationen aus einer Auswahl von Studien zusammen, die für die Forschungsfrage relevant sind, obwohl sie aufgrund der Anfälligkeit für Voreingenommenheit (z. B. Voreingenommenheit des Forschenden; Siddaway et al., 2019\\) selten sind.",
     "related_terms": [
-        "Evidence synthesis",
-        "Meta-research",
-        "Narrative reviews",
-        "Systematic reviews"
+        "Evidence Synthesis",
+        "Meta-science or Meta-research",
+        "Systematic Review"
     ],
     "references": [
         "Huelin, R., Iheanacho, I., Payne, K., & Sandman, K. (2015). What’s in a name? Systematic and non-systematic literature reviews, and why the distinction matters. <i>The Evidence Forum</i>, 34–37. Retrieved from https://www.evidera.com/wp-content/uploads/2015/06/Whats-in-a-Name-Systematic-and-Non-Systematic-Literature-Reviews-and-Why-the-Distinction-Matters.pdf",
@@ -31,5 +30,5 @@
         "Helena Hartmann",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-11-08"
+    "lastmod": "2026-11-19"
 }

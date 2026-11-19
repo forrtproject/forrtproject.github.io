@@ -7,8 +7,8 @@
     "related_terms": [
         "Epistemic uncertainty",
         "Hypothesis",
-        "Statistical assumptions",
-        "Hidden moderators"
+        "Statistical Assumptions",
+        "Hidden Moderators"
     ],
     "references": [
         "Dienes, Z. (2008). <i>Understanding psychology as a science: An introduction to scientific and statistical inference</i>. Macmillan International Higher Education.",
@@ -36,5 +36,5 @@
         "Susanne Vogel",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

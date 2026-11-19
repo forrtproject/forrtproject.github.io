@@ -5,9 +5,7 @@
     "sort_key": "research workflow",
     "definition": "The process of conducting research from conceptualisation to dissemination. A typical workflow may look like the following: Starting with conceptualisation to identify a research question and design a study. After study design, researchers need to gain ethical approval (if necessary) and may decide to preregister the final version. Researchers then collect and analyse their data. Finally, the process ends with dissemination; moving between pre-print and post-print stages as the manuscript is submitted to a journal.",
     "related_terms": [
-        "Open Research Workflow",
-        "Research cycle",
-        "Research pipeline"
+        "Research Cycle"
     ],
     "references": [
         "Kathawalla, U., Silverstein, P., & Syed, M. (2020). Easing into Open Science: A Guide for Graduate Students and Their Advisors. <i>Collabra: Psychology</i>. https://doi.org/10.31234/osf.io/vzjdp Retrieved from https://psyarxiv.com/vzjdp",
@@ -29,8 +27,11 @@
         null
     ],
     "language": "english",
+    "also_known_as": [
+        "Research pipeline"
+    ],
     "aliases": [
         "/glossary/research_workflow"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

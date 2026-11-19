@@ -5,16 +5,13 @@
     "sort_key": "psychometric meta-analysis",
     "definition": "Psychometric meta-analyses aim to correct for attenuation of the effect sizes of interest due to measurement error and other artifacts by using procedures based on psychometric principles, e.g. reliability of the measures. These procedures should be implemented before using the synthesised effect sizes in correlational or experimental meta-analysis, as making these corrections tends to lead to larger and less variable effect sizes.",
     "related_terms": [
-        "Correlational meta-analysis",
-        "Hunter-Schmidt meta-analysis",
         "Meta-analysis",
         "Non-Intervention, Reproducible, and Open Systematic Reviews (NIRO-SR)",
-        "Publication bias (File Drawer Problem)",
-        "Validity generalization"
+        "Publication bias (File Drawer Problem)"
     ],
     "references": [
         "Borenstein, M., Hedges, L. V., Higgins, J. P., & Rothstein, H. R. (2011). <i>Introduction to meta-analysis</i>. John Wiley & Sons.",
-        "Hunter, J. E., & Schmidt, F. L. (2015). <i>Methods of Meta-Analysis: Correcting Error and Bias in Research Findings</i> (Third). SAGE."
+        "Hunter, J. E., & Schmidt, F. L. (2015). <i>Methods of Meta-Analysis: Correcting Error and Bias in Research Findings</i> (3rd ed.). SAGE."
     ],
     "drafted_by": [
         "Adrien Fillon"
@@ -30,8 +27,12 @@
         null
     ],
     "language": "english",
+    "also_known_as": [
+        "Hunter-Schmidt meta-analysis",
+        "Validity generalization"
+    ],
     "aliases": [
         "/glossary/psychometric_meta_analysis"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

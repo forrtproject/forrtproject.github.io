@@ -7,12 +7,8 @@
     "related_terms": [
         "Literature Review",
         "Meta-analysis",
-        "Meta-synthesis",
         "Meta-science or Meta-research",
-        "Narrative review",
-        "Scoping review",
-        "Systematic map",
-        "Systematic review"
+        "Systematic Review"
     ],
     "references": [
         "Centre for Evaluation. (n.d.). <i>Evidence Synthesis</i>. https://www.lshtm.ac.uk/research/centres/centre-evaluation/evidence-synthesis",
@@ -39,5 +35,5 @@
         "Helena Hartmann",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

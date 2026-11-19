@@ -5,12 +5,7 @@
     "sort_key": "anonymity",
     "definition": "Anonymising data refers to removing, generalising, aggregating or distorting any information which may potentially identify participants, peer-reviewers, and authors, among others. Data should be anonymised so that participants are not personally identifiable. The most basic level of anonymisation is to replace participants’ names with pseudonyms (fake names) and remove references to specific places. Anonymity is particularly important for open data and data may not be made open for anonymity concerns. Anonymity and open data has been discussed within qualitative research which often focuses on personal experiences and opinions, and in quantitative research that includes participants from clinical populations.",
     "related_terms": [
-        "Anonymising",
-        "Clinical populations",
-        "Confidentiality",
-        "Research ethics",
-        "Research participants",
-        "Vulnerable population"
+        "Research ethics"
     ],
     "references": [
         "Braun, V., & Clarke, V. (2013). <i>Successful Qualitative Research</i>. SAGE Publications."
@@ -33,8 +28,13 @@
         null
     ],
     "language": "english",
+    "also_known_as": [
+        "De-identification",
+        "Anonymisation",
+        "Anonymization"
+    ],
     "aliases": [
         "/glossary/anonymity"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

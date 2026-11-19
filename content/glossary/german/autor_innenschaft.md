@@ -5,9 +5,8 @@
     "sort_key": "autor:innenschaft [authorship]",
     "definition": "Mit der Autor:innenschaft (Authorship) werden Forschungsergebnisse (z. B. Manuskripte, Daten und Software) anerkannt und die Verantwortlichkeit für den Inhalt geregelt (McNutt et al. 2018; Patience et al. 2019). Die Konventionen unterscheiden sich zwischen verschiedenen Disziplinen, Kulturen und sogar Forschungsgruppen. Es gibt unterschiedliche Ansichten welche Beiträge zur Forschung Autor:innenschaft verdienen, was die Reihenfolge von Autor:innen bedeutet (wenn überhaupt etwas), wie viel Verantwortung für die Forschung der/die Korrespondenzautor:in (Corresponding Author) übernimmt und inwieweit die Autor:innen für Aspekte der Arbeit verantwortlich sind, die sie selbst nicht persönlich durchgeführt haben.",
     "related_terms": [
-        "Co-authorship",
         "Consortium authorship",
-        "Contributorship",
+        "Contribution",
         "CRediT",
         "First-last-author-emphasis norm (FLAE)",
         "Gift (or Guest) Authorship",
@@ -42,5 +41,5 @@
         "Susanne Vogel",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

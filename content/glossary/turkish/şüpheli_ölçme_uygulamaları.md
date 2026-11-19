@@ -6,9 +6,7 @@
     "definition": "Araştırmacıların, bir çalışmada kullanılan ölçüm araçlarının geçerliliği ve dolayısıyla çalışmanın nihai sonuçları hakkında şüphe uyandırabilecek kararlar almalarıdır (Flake ve Fried, 2020). Bu sorunlar genellikle; ölçme uygulamalarının şeffaf biçimde raporlanmaması, yapı geçerliğine yeterince değinilmemesi, ihmalkârlık, bilgisizlik ya da bilgilerin kasıtlı olarak yanlış sunulması gibi durumlardan kaynaklanır.",
     "related_terms": [
         "Construct validity",
-        "Measurement schmeasurement",
         "p-hacking",
-        "Psychometrics",
         "Questionable Research Practices or Questionable Reporting Practices (QRPs)",
         "Validity"
     ],
@@ -35,5 +33,5 @@
     "translation_reviewed_by": [
         "Nihan Selin Soylu-Konak"
     ],
-    "lastmod": "2026-11-08"
+    "lastmod": "2026-11-19"
 }

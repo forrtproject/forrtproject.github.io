@@ -5,17 +5,14 @@
     "sort_key": "transparenz [transparency]",
     "definition": "Transparenz bedeutet, das eigene Handeln offen und zugänglich für eine externe Bewertung zu machen. Transparent zu forschen bedeutet, dass Forschende sämtliche theoretischen, methodischen und analytischen Entscheidungen nachvollziehbar offenlegen, die sie im Laufe des Forschungsprozesses getroffen haben. Transparenz kann in \"wissenschaftlich relevante Transparenz\" und \"gesellschaftlich relevante Transparenz\" unterschieden werden. Während erstere im Mittelpunkt der frühen Open-Science Diskurse stand, ist letztere erforderlich, um wissenschaftliche Informationen in einer Weise bereitzustellen, die für Entscheidungsträger und die Öffentlichkeit relevant ist",
     "related_terms": [
-        "Credibility of scientific claims",
-        "Open science",
+        "Open Science",
         "Preregistration",
-        "Reproducibility",
-        "Trustworthiness"
+        "Reproducibility"
     ],
     "references": [
         "Elliott, K. C., & Resnik, D. B. (2019). Making open science work for science and society. <i>Environmental Health Perspectives</i>, <i>127</i>(7). https://doi.org/10.1289/EHP4808",
         "Lyon, L. (2016). Transparency: The Emerging Third Dimension of Open Science and Open Data. <i>LIBER Quarterly</i>, <i>25</i>(4), 153–171. http://doi.org/10.18352/lq.10113",
-        "Syed, M. (2019). The Open Science Movement is for all of us. <i>PsyArXiv</i>.",
-        "[Syed (2019)](https://psyarxiv.com/cteyb/)"
+        "Syed, M. (2019). The Open Science Movement is for all of us. <i>PsyArXiv</i>. https://doi.org/10.31234/osf.io/cteyb"
     ],
     "drafted_by": [
         "William Ngiam"
@@ -38,5 +35,5 @@
         "Susanne Vogel",
         "Joris Frese"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

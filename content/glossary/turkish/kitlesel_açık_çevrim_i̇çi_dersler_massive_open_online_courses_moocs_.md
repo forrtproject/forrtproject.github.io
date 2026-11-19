@@ -6,9 +6,7 @@
     "definition": "Tamamen çevrimiçi olan, herhangi bir öğrencinin herhangi bir zamanda erişebildiği derslerdir. Genellikle erişimi ücretsizdir (açık lisanslı olmasa da) ve video tabanlı talimatlar ile indirilebilir veri setleri ve alıştırmalar sağlar. \"Kitlesel\" kelimesi, esnekliği, düşük ücretli veya ücretsiz olması ve materyallerin çevrimiçi niteliği nedeniyle herhangi bir zamanda derslere çok sayıda öğrencinin erişebilmesini ifade eder.",
     "related_terms": [
         "Accessibility",
-        "Distance education",
-        "Inclusion",
-        "Open learning"
+        "Inclusion"
     ],
     "references": [
         "Baturay, M. H. (2015). An overview of the world of MOOCs. <i>Procedia-Social and Behavioral Sciences</i>, <i>174</i>, 427–433. https://doi.org/10.1016/j.sbspro.2015.01.685",
@@ -34,5 +32,5 @@
     "translation_reviewed_by": [
         "Merve Öztürk"
     ],
-    "lastmod": "2026-11-08"
+    "lastmod": "2026-11-19"
 }

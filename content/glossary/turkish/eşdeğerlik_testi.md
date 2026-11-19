@@ -3,16 +3,10 @@
     "en_title": "Equivalence Testing",
     "title": "Eşdeğerlik Testi [Equivalence Testing]",
     "sort_key": "eszdegzerlik testi [equivalence testing]",
-    "definition": "Eşdeğerlik testleri, belirli bir etkinin anlamlı sayılabilmesi için gerekli olan minimum değeri aştığı yönündeki sıfır hipotezini istatistiksel olarak değerlendirir. Bu nedenle, sıfır hipotezinin reddedilmesi, anlamlı bir etkinin bulunmadığına dair kanıt sağlar. Frekansçı istatistiğe dayanan bu testlerde, öncelikle eşdeğerlik sınırları belirlenir: ilgi duyulan en küçük etki büyüklüğünü yansıtan alt ve üst sınır değerleri. Ardından, bu sınırların her biriyle karşılaştırmak üzere iki tane tek yönlü t-testi yapılır. Bu sayede, etkilerin anlamlı olup olmadıkları değerlendirilebilir (bkz. Schuirmann, 1972; Lakens vd., 2018; 2020).",
+    "definition": "Eşdeğerlik testleri, belirli bir etkinin anlamlı sayılabilmesi için gerekli olan minimum değeri aştığı yönündeki sıfır hipotezini istatistiksel olarak değerlendirir. Bu nedenle, sıfır hipotezinin reddedilmesi, anlamlı bir etkinin bulunmadığına dair kanıt sağlar. Frekansçı istatistiğe dayanan bu testlerde, öncelikle eşdeğerlik sınırları belirlenir: ilgi duyulan en küçük etki büyüklüğünü yansıtan alt ve üst sınır değerleri. Ardından, bu sınırların her biriyle karşılaştırmak üzere iki tane tek yönlü t-testi yapılır. Bu sayede, etkilerin anlamlı olup olmadıkları değerlendirilebilir (bkz. Schuirmann, 1987; Lakens vd., 2018; 2020).",
     "related_terms": [
-        "Equivalence bounds",
         "Falsification",
-        "Frequentist analyses",
-        "Inference by confidence intervals",
-        "Null Hypothesis Significance Testing (NHST)",
-        "Smallest effect size of interest (SESOI)",
-        "TOSTER",
-        "TOST procedure."
+        "Null Hypothesis Significance Testing (NHST)"
     ],
     "references": [
         "Lakens, D., Scheel, A. M., & Isager, P. M. (2018). Equivalence testing for psychological research: A tutorial. <i>Advances in Methods and Practices in Psychological Science</i>, <i>1</i>(2), 259–269. https://doi.org/10.1177/2515245918770963",
@@ -39,5 +33,5 @@
     "translation_reviewed_by": [
         "Ege Emek"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

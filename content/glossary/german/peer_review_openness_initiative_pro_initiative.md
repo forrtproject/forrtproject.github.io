@@ -5,10 +5,8 @@
     "sort_key": "peer review openness initiative pro initiative",
     "definition": "Die Vereinbarung mehrerer Forschender, dass sie ein Manuskript nur dann begutachten, wenn bestimmte Bedingungen erfüllt sind. Insbesondere sollten die Autor:innen des Manuskripts sicherstellen, dass die Daten und Materialien öffentlich zugänglich gemacht werden (oder begründen, warum sie nicht frei verfügbar sind oder weitergegeben werden), eine Dokumentation bereitstellen, in der detailliert beschrieben wird, wie Dateien oder Code zu interpretieren und auszuführen sind, und im Manuskript angeben, wo diese Dateien zu finden sind.",
     "related_terms": [
-        "Non-anonymised peer review",
-        "Open Science",
         "Open Peer Review",
-        "Transparent peer review"
+        "Open Science"
     ],
     "references": [
         "Morey, R. D., Chambers, C. D., Etchells, P. J., Harris, C. R., Hoekstra, R., Lakens, D., Lewandowsky, S., Morey, C. C., Newman, D. P., Schönbrodt, F. D., Vanpaemel, W., Wagenmakers, E.-J., & Zwaan, R. A. (2016). The Peer Reviewers’ Openness Initiative: incentivizing open research practices through peer review. <i>Royal Society Open Science</i>, <i>3</i>(1). https://doi.org/10.1098/rsos.150547"
@@ -33,5 +31,5 @@
         "Helena Hartmann",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

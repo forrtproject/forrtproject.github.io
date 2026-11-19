@@ -5,12 +5,11 @@
     "sort_key": "akran toplulugzu i̇czinde degzerlendirme sistemi (pci; peer community in)",
     "definition": "PCI, alanlarındaki en az iki araştırmacı tarafından gerçekleştirilen yüksek kaliteli hakem değerlendirmelerine dayanarak yayımlanmamış ön-baskıları inceleyen ve öneren araştırmacı toplulukları oluşturan kar amacı gütmeyen bir organizasyondur. Bu ön-baskılara sonrasında bir dergi makalesine benzer şekilde Dijital Nesne Tanımlayıcısı (DOI; Digital Object Identifier) atanır. PCI, ön-baskıların değerlendirilmesi ve önerilmesine dayanan ücretsiz, şeffaf ve kamuya açık bir bilimsel yayın sistemi kurmak amacıyla geliştirilmiştir.",
     "related_terms": [
-        "Open Access",
-        "Open Archives",
+        "Open access",
         "Open Peer Review",
         "PCI Registered Reports",
         "Peer review",
-        "Preprints"
+        "Preprint"
     ],
     "references": [
         "<i>PCI IN A FEW LINES</i>. (n.d.). https://peercommunityin.org/"
@@ -35,5 +34,5 @@
     "translation_reviewed_by": [
         "Nihan Selin Soylu-Konak"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

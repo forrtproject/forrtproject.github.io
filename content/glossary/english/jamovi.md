@@ -6,7 +6,7 @@
     "definition": "Free and open source software for data analysis based on the R language. The software has a graphical user interface and provides the R code to the analyses. Jamovi supports computational reproducibility by saving the data, code, analyses, and results in a single file.",
     "related_terms": [
         "JASP",
-        "Open source",
+        "Open Source software",
         "R",
         "Reproducibility"
     ],
@@ -28,5 +28,5 @@
     "aliases": [
         "/glossary/jamovi"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

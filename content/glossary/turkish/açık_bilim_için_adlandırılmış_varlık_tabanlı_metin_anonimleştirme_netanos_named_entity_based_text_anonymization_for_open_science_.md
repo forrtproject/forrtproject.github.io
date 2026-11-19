@@ -6,7 +6,6 @@
     "definition": "Adlandırılmış varlıkları (örn. kişiler, konumlar, saatler, tarihler) tanımlayan ve değiştiren ücretsiz, açık kaynaklı bir anonimleştirme yazılımıdır. Temel özelliği, ikincil analizler için gereken kritik bağlamı korumasıdır. Amaç, araştırmacıların araştırma etiğine uyarak ham metin verilerini paylaşmalarına yardımcı olmaktır.",
     "related_terms": [
         "Anonymity",
-        "Confidentiality",
         "Data sharing",
         "Research ethics"
     ],
@@ -32,5 +31,5 @@
     "translation_reviewed_by": [
         "Merve Öztürk"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

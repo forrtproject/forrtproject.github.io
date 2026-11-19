@@ -6,8 +6,8 @@
     "definition": "Araştırma verileri ve makalelerdeki raporlama hatalarını veya tutarsızlıkları inceleme sürecine genel olarak hata tespiti denir. Sıklıkla tartışılan yöntemler arasında; betimsel istatistiklerdeki tutarsızlıkların kontrolü (örn., örneklem büyüklüğü ve ölçüm özelliklerine göre mümkün olmayan özet istatistikler; Brown ve Heathers, 2017; Heathers vd., 2018), raporlanan istatistiklerdeki çelişkiler (örn., bildirilen p-değerinin F istatistiği ve serbestlik dereceleriyle uyuşmaması; Epskamp ve Nuijten, 2016; Nuijten vd., 2016) ve görsel manipülasyonlar (Bik vd., 2016) yer alır. Hata tespiti, verilerin ve analiz kodlarının açık şekilde paylaşılması yönündeki çağrıların nedenlerinden biridir; böylece hakem değerlendirmesi sürecinde bulgular doğrulanabilir ya da makale halihazırda yayımlanmışsa, kayıtlar sonradan düzeltilebilir. Tespit edilen hatalar, yayımlanmış makalelerde düzeltme ya da geri çekme ile sonuçlanabilir; ancak bu tür adımlar genellikle geç atılır ve yanlış bulgular çoktan başka araştırmaları etkilemiş olabilir.",
     "related_terms": [
         "Research integrity",
-        "correction",
-        "retraction"
+        "Corrigendum",
+        "Retraction"
     ],
     "references": [
         "Bik, E. M., Casadevall, A., & Fang, F. C. (2016). The prevalence of inappropriate image duplication in biomedical research publications. <i>MBio</i>, <i>7</i>(3), e00809-16.",
@@ -38,5 +38,5 @@
     "translation_reviewed_by": [
         "Ege Emek"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

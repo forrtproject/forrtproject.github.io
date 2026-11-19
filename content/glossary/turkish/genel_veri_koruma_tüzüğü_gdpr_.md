@@ -6,7 +6,7 @@
     "definition": "Genel Veri Koruma Tüzüğü (GDPR), bireylerin kişisel verilerini korumayı amaçlayan ve Avrupa Birliği (AB) genelinde uygulanan yedi ilkeye dayalı bir yasal çerçevedir. Bu tüzük, vatandaşlara kendi verileri üzerinde kontrol hakkı tanırken, bu verileri saklayan ve işleyen tarafları da düzenlemeye tabi tutar. Ayrıca, kişisel bilgilerin AB içinde ve dışında serbestçe dolaşımını düzenler. Bu nedenle, araştırmacıların bir çalışma tasarlarken ve yürütürken bu düzenlemeyi dikkate almaları gerekir.",
     "related_terms": [
         "Anonymity",
-        "Data Management Plan (DMP)",
+        "Data management plan (DMP)",
         "Data sharing",
         "Repeatability",
         "Replicability",
@@ -36,5 +36,5 @@
     "translation_reviewed_by": [
         "Ege Emek"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

@@ -5,8 +5,7 @@
     "sort_key": "adversarial collaboration",
     "definition": "A collaboration where two or more researchers with opposing or contradictory theoretical views —and likely diverging predictions about study results— work together on one project. The aim is to minimise biases and methodological weaknesses as well as to establish a shared base of facts for which competing theories must account.",
     "related_terms": [
-        "Collaboration",
-        "Many Analysts",
+        "Multi-Analyst Studies",
         "Many Labs",
         "Preregistration",
         "Publication bias (File Drawer Problem)"
@@ -36,5 +35,5 @@
     "aliases": [
         "/glossary/adversarial_collaboration"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

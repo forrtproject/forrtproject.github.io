@@ -5,14 +5,8 @@
     "sort_key": "co-production",
     "definition": "An approach to research where stakeholders who are not traditionally involved in the research process are empowered to collaborate, either at the start of the project or throughout the research lifecycle. For example, co-produced health research may involve health professionals and patients, while co-produced education research may involve teaching staff and pupils/students. This is motivated by principles such as respecting and valuing the experiences of non-researchers, addressing power dynamics, and building mutually beneficial relationships.",
     "related_terms": [
-        "Citizen science",
-        "Collaboration",
-        "Collaborative research",
-        "Crowd science",
-        "Engaged scholarship",
-        "Integrated Knowledge Translation (IKT)",
-        "Mode 2 of knowledge production",
-        "Participatory research",
+        "Citizen Science",
+        "Participatory Research",
         "Patient and Public Involvement (PPI)"
     ],
     "references": [
@@ -38,5 +32,5 @@
     "aliases": [
         "/glossary/co_production"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

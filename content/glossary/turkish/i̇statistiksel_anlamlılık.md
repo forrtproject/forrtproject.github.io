@@ -5,12 +5,9 @@
     "sort_key": "i̇statistiksel anlamlizlizk [statistical significance]",
     "definition": "Sıfır Hipotezi Anlamlılık Testi (NHST; Null Hypothesis Significance Testing) kullanılarak elde edilen bir sonucun, belirli bir anlamlılık düzeyine göre, sıfır hipotezi doğru olduğunda ortaya çıkmasının olasılıksız kabul edilmesi durumudur. Tenny ve Abdelgawad (2017), istatistiksel anlamlılığı şu şekilde tanımlamıştır: “Sıfır hipotezinin doğru olduğu varsayımı altında, veri setinizi ya da daha uç verileri elde etme olasılığının, kabul edilebilir bir belirsizlik düzeyi ile karşılaştırılmasıdır” (s.1). Anlamlılık eşiğinin belirlenmesine dair yaygın yöntemler, uygulamaya ve disipline göre farklılık gösterir, ancak nihayetinde araştırmacının makul derecedeki hata payına ilişkin değerlendirmesine bağlıdır. Amerikan İstatistik Derneği’nin açıklamasında (Wasserstein ve Lazar, 2016) şu ifade yer alır: “Araştırmacılar genellikle bir p-değerini, sıfır hipotezinin doğruluğuna ya da gözlemlenen verilerin rastlantı eseri elde edilmiş olma olasılığına dair bir ifadeye dönüştürmek isterler. Oysa, p-değeri bunların hiçbiri değildir. P-değeri, belirli bir varsayımsal açıklamayla ilişkili olarak veriye dair bir ifadedir; açıklamanın kendisine dair bir ifade değildir” (s.131).",
     "related_terms": [
-        "Alpha error",
-        "Frequentist statistics",
-        "Null hypothesis",
+        "Type I error",
         "Null Hypothesis Significance Testing (NHST)",
-        "p-value",
-        "Type I error **Incorrect definition:** Statistical significance describes the likelihood of the observed result against chance (regardless of the null hypotheses)"
+        "p-value"
     ],
     "references": [
         "Cassidy, S. A., Dimova, R., Giguère, B., Spence, J. R., & Stanley, D. J. (2019). Failing grade: 89% of introduction-to-psychology textbooks that define or explain statistical significance do so incorrectly. <i>Advances in Methods and Practices in Psychological Science</i>, <i>2</i>(3), 233–239. https://doi.org/10.1177/2515245919858072",
@@ -39,5 +36,5 @@
     "translation_reviewed_by": [
         "Neslihan Özhan"
     ],
-    "lastmod": "2026-11-08"
+    "lastmod": "2026-11-19"
 }

@@ -4,11 +4,7 @@
     "title": "Veri Görselleştirme [Data visualisation]",
     "sort_key": "veri gozrsellesztirme [data visualisation]",
     "definition": "Veri ya da bilgilerin görsel olarak sunulmasıdır. Veri görselleştirme, insanların gelişmiş görsel işleme kapasitesinden faydalanarak veriye dayalı anlam çıkarmayı ve temel bilgileri etkili şekilde aktarmayı amaçlar. Veri görselleştirmeleri genellikle ham verileri, betimleyici istatistikleri ve/veya çıkarımsal istatistikleri gösterir.",
-    "related_terms": [
-        "Figure",
-        "Graph",
-        "Plot"
-    ],
+    "related_terms": [],
     "references": [
         "Healy, K. (2018). <i>Data visualization: A practical introduction</i>. Princeton University Press.",
         "Tufte, E. R. (1983). <i>The visual display of quantitative information</i>. Graphics Press."
@@ -31,5 +27,5 @@
     "translation_reviewed_by": [
         "Ege Emek"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

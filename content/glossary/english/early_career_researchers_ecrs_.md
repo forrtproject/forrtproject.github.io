@@ -4,9 +4,7 @@
     "title": "Early career researchers (ECRs)",
     "sort_key": "early career researchers (ecrs)",
     "definition": "A label given to researchers who “range from senior doctoral students to postdoctoral workers who may have up to 10 years postdoctoral education; the latter group may therefore include early career or junior academics” (Eley et al., 2012, p. 3). What specifically (e.g. age, time since PhD inclusive or exclusive of career breaks and leave, title, funding awarded) constitutes an ECR can vary across funding bodies, academic organisations, and countries.",
-    "related_terms": [
-        "Early Career Investigator"
-    ],
+    "related_terms": [],
     "references": [
         "Bazeley, P. (2003). Defining “Early Career” in Research. <i>Higher Education</i>, <i>45</i>, 257–279. https://doi.org/10.1023/A:1022698529612",
         "Eley, A. R. (2012). <i>Becoming a successful early career researcher</i>. Routledge. Retrieved from http://www.worldcat.org/oclc/934369360",
@@ -26,8 +24,11 @@
         null
     ],
     "language": "english",
+    "also_known_as": [
+        "Early Career Investigator"
+    ],
     "aliases": [
         "/glossary/early_career_researchers_ecrs_"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

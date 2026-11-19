@@ -6,8 +6,7 @@
     "definition": "Ein Ansatz, der die gesellschaftlichen Auswirkungen und Erwartungen in Bezug auf Forschung und Innovation berücksichtigt, mit dem Ziel, Inklusivität und Nachhaltigkeit zu fördern. Er trägt der Tatsache Rechnung, dass wissenschaftliche Bemühungen nicht von ihren breiteren Auswirkungen isoliert sind und dass die Forschung durch Faktoren motiviert wird, die über das Streben nach Wissen hinausgehen. Bei der Förderung einer verantwortungsvollen Forschung spielen daher viele Parteien eine wichtige Rolle, darunter Drittmittelgeber:innen, Forschungsteams, Interessensgruppen, Aktivist:innen und Mitglieder der Öffentlichkeit.",
     "related_terms": [
         "Citizen Science",
-        "Public Engagement",
-        "Transdisciplinary Research"
+        "Patient and Public Involvement (PPI)"
     ],
     "references": [
         "European Commission. (2021). <i>Responsible research & innovation</i>. Retrieved from https://web.archive.org/web/20220218023041/https://ec.europa.eu/programmes/horizon2020/en/h2020-section/responsible-research-innovation"
@@ -32,5 +31,5 @@
         "Helena Hartmann",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

@@ -5,14 +5,13 @@
     "sort_key": "p-quxian",
     "definition": "P-曲线是一种用于识别潜在发表偏倚的工具，其通过分析一系列独立研究结果中显著性p值的分布特征来实现。该技术基于对预期右偏分布偏离程度的评估，来判断发表偏倚的存在及其程度：若曲线呈现右偏态，则表明存在更多低而显著的p值，反映潜在真实效应的存在；若曲线呈现左偏态，则说明许多p值仅略低于0.05，暗示结果几乎不显著，揭示了研究证据的不足，并表明可能暗藏p值操纵等不当研究行为。在不存在真实效应（即真零假设成立）的情况下，如果p值的报告是完全无偏的，那么p曲线应该是一条平坦的水平线，代表p值的典型分布。",
     "related_terms": [
-        "File-drawer",
+        "Publication bias (File Drawer Problem)",
         "Hypothesis",
         "p-hacking",
         "p-value",
-        "Publication bias (File Drawer Problem)",
         "Questionable Research Practices or Questionable Reporting Practices (QRPs)",
         "Selective reporting",
-        "Z-curve"
+        "Z-Curve"
     ],
     "references": [
         "Bruns, S. B., & Ioannidis, J. P. (2016). P-curve and p-hacking in observational research. <i>PLoS ONE</i>, <i>11</i>(2), e0149144. https://doi.org/10.1371/journal.pone.0149144",
@@ -43,5 +42,5 @@
         "Ruoting Liu",
         "Shuxian Jin"
     ],
-    "lastmod": "2026-11-08"
+    "lastmod": "2026-11-19"
 }

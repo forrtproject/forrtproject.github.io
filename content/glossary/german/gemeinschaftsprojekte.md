@@ -6,7 +6,7 @@
     "definition": "Kooperationsprojekte, an denen Forschende aus verschiedenen Karrierestufen, Disziplinen, Einrichtungen oder Ländern beteiligt sind. Die Projekte können unterschiedliche Ziele verfolgen, darunter gegenseitige Unterstützung und Lernen voneinander, Durchführen von Forschung, Lehre und Ausbildung. Sie können kurzfristig (z. B. Konferenzveranstaltungen oder Hackathons) oder langfristig (z. B. Journal Clubs oder von einem Konsortium geleitete Forschungsprojekte) sein. Eine Kultur der Zusammenarbeit und der Aufbau einer Gemeinschaft sind der Schlüssel zum Erreichen der Projektziele.",
     "related_terms": [
         "Bottom-up approach (to Open Scholarship)",
-        "Crowdsourced research",
+        "Crowdsourced Research",
         "Hackathon",
         "Many Labs",
         "ReproducibiliTea"
@@ -37,5 +37,5 @@
         "Susanne Vogel",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

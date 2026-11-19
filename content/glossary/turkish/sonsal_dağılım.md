@@ -6,8 +6,8 @@
     "definition": "Bayesyen çıkarımda, önceden sahip olunan bilgi ile gözlemlenen veriyi dengeleyerek güncellenmiş bilgiyi özetlemenin bir yoludur. İstatistiksel terimlerle, sonsal dağılımlar, olasılık fonksiyonu ile önsel bilginin çarpımına orantılıdır. Sonsal olasılık dağılımı, belirli bir parametre değeri hakkındaki belirsizliği veya kesinliği yansıtır.",
     "related_terms": [
         "Bayes Factor",
-        "Bayesian inference",
-        "Bayesian parameter estimation",
+        "Bayesian Inference",
+        "Bayesian Parameter Estimation",
         "Likelihood function",
         "Prior distribution"
     ],
@@ -36,5 +36,5 @@
     "translation_reviewed_by": [
         "Nihan Selin Soylu-Konak"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

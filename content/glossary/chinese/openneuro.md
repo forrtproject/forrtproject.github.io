@@ -6,10 +6,10 @@
     "definition": "OpenNeuro是一个免费的平台，研究人员可以在此免费、公开地分享、浏览、下载并再利用大脑影像数据（如MRI、MEG、EEG、iEEG、ECoG、ASL和PET数据）。",
     "related_terms": [
         "BIDS data structure",
-        "Open data",
-        "OpenfMRI"
+        "Open Data"
     ],
     "references": [
+        "Markiewicz, C. J., Gorgolewski, K. J., Feingold, F., Blair, R., Halchenko, Y. O., Miller, E., Hardcastle, N., Wexler, J., Esteban, O., Goncalves, M., Jwa, A., & Poldrack, R. (2021). The OpenNeuro resource for sharing of neuroscience data. <i>eLife</i>, <i>10</i>, e71774. https://doi.org/10.7554/eLife.71774",
         "Poldrack, R. A., Barch, D. M., Mitchell, J. P., Wager, T. D., Wagner, A. D., Devlin, J. T., Cumba, C., Koyejo, O., & Milham, M. P. (2013). Toward open sharing of task-based fMRI data: The OpenfMRI project. <i>Frontiers in Neuroinformatics</i>, <i>7</i>, 1–12. https://doi.org/10.3389/fninf.2013.00012",
         "Poldrack, R. A., & Gorgolewski, K. J. (2014). Making big data open: Data sharing in neuroimaging. <i>Nature Neuroscience</i>, <i>17</i>(11), 1510–1517. https://doi.org/10.1038/nn.3818",
         "OpenNeuro. (n.d.). <i>A free and open platform for sharing MRI, MEG, EEG, iEEG, ECoG, ASL, and PET data—OpenNeuro</i>. <i>OpenNeuro</i>. https://openneuro.org/"
@@ -33,5 +33,5 @@
         "Ruoting Liu",
         "Shuxian Jin"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

@@ -7,7 +7,6 @@
     "related_terms": [
         "Preregistration",
         "Publication bias (File Drawer Problem)",
-        "Results-free review",
         "PCI (Peer Community In)",
         "Research Protocol"
     ],
@@ -44,5 +43,5 @@
     "translation_reviewed_by": [
         "Nihan Selin Soylu-Konak"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

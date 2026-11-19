@@ -5,9 +5,8 @@
     "sort_key": "reproducibilitea",
     "definition": "A grassroots initiative that helps researchers create local journal clubs at their universities to discuss a range of topics relating to open research and scholarship. Each meeting usually centres around a specific paper that discusses, for example, reproducibility, research practice, research quality, social justice and inclusion, and ideas for improving science.",
     "related_terms": [
-        "Grassroots initiative",
-        "Journal club",
-        "Open science",
+        "Bottom-up approach (to Open Scholarship)",
+        "Open Science",
         "Reproducibility"
     ],
     "references": [
@@ -32,5 +31,5 @@
     "aliases": [
         "/glossary/reproducibilitea"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

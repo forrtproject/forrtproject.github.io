@@ -5,13 +5,12 @@
     "sort_key": "yayizn yanlizlizgziz (dosya czekmecesi problemi) [publication bias (file drawer problem)]",
     "definition": "‘Çalışma bulgularının yönü veya gücüne dayalı olarak sonuçların yayımlanmaması’ durumu (Dickersin ve Min, 1993, s. 135). Bu yanlılık, genellikle, yeni ve anlamlı sonuçların, replikasyon çalışmalarına ve anlamsız sonuçlara göre yayımlanmaya daha değerli olduğu yönündeki eğilimle birlikte, bir çalışmanın yayımlanabilirliğinin değerlendirilmesinin, orantısız bir şekilde çalışmanın sonucuna bağlı olduğu durumlarda ortaya çıkar. Bu yanlılık, genellikle orantısız sayıda anlamlı bulgu ve şişirilmiş etki büyüklükleri şeklinde gerçekleşir. Bu süreç, yayımlanan bilimsel literatürün tüm araştırmaların genelini temsil etmemesine ve özellikle anlamsız bulguların yetersiz temsil edilmesine yol açar. Bu tür bulgular, dolayısıyla, hiçbir zaman yayımlanmadıkları ve bulunabilir bir dokümantasyona sahip olmadıkları ‘dosya çekmecesi’ olarak adlandırılan yerde kalır.",
     "related_terms": [
-        "Dissemination bias",
         "P-curve",
-        "P-hacking",
+        "p-hacking",
         "Selective reporting",
         "Statistical significance",
-        "Trim and fill",
-        "Meta-Analysis"
+        "Trim-and-fill method",
+        "Meta-analysis"
     ],
     "references": [
         "Dickersin, K., & Min, Y. (1993). Publication Bias: The Problem That Won’t Go Away. <i>Annals of the New York Academy of Sciences</i>, <i>703</i>(1), 135–148. https://doi.org/10.1111/j.1749-6632.1993.tb26343.x",
@@ -46,5 +45,5 @@
     "translation_reviewed_by": [
         "Nihan Selin Soylu-Konak"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

@@ -5,11 +5,8 @@
     "sort_key": "yavasz bilim [slow science]",
     "definition": "Açık Akademi uygulamalarının benimsenmesi, araştırma sürecini genel olarak uzatır; çünkü bu süreçte şeffaflık, yeniden üretilebilirlik, tekrarlanabilirlik ve nitelik, çıktı sayısından daha çok önemsenir. Yavaş bilim, \"yayımla ya da yok ol\" (publish-or-perish) kültürüne karşı çıkar ve daha az ama daha kaliteli ve şeffaf çıktıların üretilebildiği, zamana ve kaynaklara olanak tanıyan bir akademik sistemi tanımlar. Örneğin, bu yaklaşımda araştırmacıların zamanları; daha fazla veri toplamak, alan yazını daha derinlemesine okumak, bulgularının alan yazınla nasıl örtüştüğünü düşünmek, araştırma materyallerini belgelemek ve paylaşmak gibi nitelikli süreçlere yönlendirilir. Böylece, yeni çalışmalar yapma baskısı yerine araştırmanın sağlamlığını artırmaya odaklanılır.",
     "related_terms": [
-        "collaboration",
         "Incentive structure",
-        "Publish or Perish",
-        "research culture",
-        "research quality"
+        "Publish or Perish"
     ],
     "references": [
         "Slow Science Academy. (2010). <i>The Slow Science Manifesto</i>. Slow Science. http://slow-science.org/",
@@ -36,5 +33,5 @@
     "translation_reviewed_by": [
         "Neslihan Özhan"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

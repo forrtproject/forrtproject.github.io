@@ -5,7 +5,6 @@
     "sort_key": "codebuch [codebook]",
     "definition": "Ein Codebook (Codebuch) ist eine Zusammenfassung, die den Inhalt, die Struktur, die Art und das Layout eines Datensatzes beschreibt. Ein gut dokumentiertes Codebuch enthält Informationen, die für jede Variable in einer Datendatei vollständig selbsterklärend sind, z. B. den Wortlaut und die Kodierung des Items und das zugrunde liegende Konstrukt. Ein Codebook schafft Transparenz für Forschende, die mit den Daten nicht vertraut sind, aber Analysen reproduzieren oder die Daten wiederverwenden möchten.",
     "related_terms": [
-        "Data dictionary",
         "Metadata"
     ],
     "references": [
@@ -32,5 +31,5 @@
         "Susanne Vogel",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

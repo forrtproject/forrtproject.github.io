@@ -6,8 +6,7 @@
     "definition": "Bracketing interviews are commonly used within qualitative approaches. During these interviews researchers explore their personal subjectivities and assumptions surrounding their ongoing research. This allows researchers to be aware of their own interests and helps them to become both more reflective and critical about their research, considering how their own experiences may impact the research process. Bracketing interviews can also be subject to qualitative analysis.",
     "related_terms": [
         "Qualitative research",
-        "Reflexivity",
-        "Researcher bias"
+        "Reflexivity"
     ],
     "references": [
         "Rolls, L., & Relf, M. (2006). Bracketing interviews: addressing methodological challenges in qualitative interviewing in bereavement and palliative care. <i>Mortality</i>, <i>11</i>(3), 286–305. https://doi.org/10.1080/13576270600774893",
@@ -29,5 +28,5 @@
     "aliases": [
         "/glossary/bracketing_interviews"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

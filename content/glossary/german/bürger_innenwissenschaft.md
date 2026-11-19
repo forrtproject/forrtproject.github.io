@@ -5,8 +5,7 @@
     "sort_key": "bürger:innenwissenschaft [citizen science]",
     "definition": "Citizen Science (Bürger:innenwissenschaft) bezieht sich auf Projekte, die die breite Öffentlichkeit aktiv in den wissenschaftlichen Prozess mit einbeziehen, mit dem Ziel, Wissenschaft zu demokratisieren. Bürgerwissenschaftler:innen können in alle Phasen der Forschung eingebunden werden und als Mitarbeiter:innen, Mitwirkende oder Projektleiter:innen fungieren. Ein Beispiel für ein großes Citizen Science Projekt war die Identifizierung von astronomischen Körpern durch Einzelpersonen (Lintott, 2008).",
     "related_terms": [
-        "Crowd science",
-        "Crowdsourcing"
+        "Crowdsourced Research"
     ],
     "references": [
         "Cohn, J. P. (2008). Citizen science: Can volunteers do real research? <i>BioScience</i>, <i>58</i>(3), 192–197. https://doi.org/10.1641/B580303",
@@ -33,5 +32,5 @@
         "Susanne Vogel",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

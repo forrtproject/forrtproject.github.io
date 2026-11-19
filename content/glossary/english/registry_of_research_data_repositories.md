@@ -6,7 +6,7 @@
     "definition": "A global registry of research data repositories from different academic disciplines. It includes repositories that enable permanent storage of, description via metadata and access to, data sets by researchers, funding bodies, publishers, and scholarly institutions.",
     "related_terms": [
         "Metadata",
-        "Open Access",
+        "Open access",
         "Open Data",
         "Open Material",
         "Repository"
@@ -30,5 +30,5 @@
     "aliases": [
         "/glossary/registry_of_research_data_repositories"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

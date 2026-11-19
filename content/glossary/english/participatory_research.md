@@ -5,13 +5,11 @@
     "sort_key": "participatory research",
     "definition": "Participatory research refers to incorporating the views of people from relevant communities in the entire research process to achieve shared goals between researchers and the communities. This approach takes a collaborative stance that seeks to reduce the power imbalance between the researcher and those researched through a “systematic cocreation of new knowledge” (Andersson, 2018).",
     "related_terms": [
-        "Collaborative research",
         "Inclusion",
-        "Neurodiversity",
-        "Patient and Public Involvement (PPI)",
-        "Transformative paradigm"
+        "Patient and Public Involvement (PPI)"
     ],
     "references": [
+        "Andersson, N. (2018). Participatory research—a modernizing science for primary health care. <i>Journal of General and Family Medicine</i>, <i>19</i>(5), 154–159. https://doi.org/10.1002/jgf2.187",
         "Cornwall, A., & Jewkes, R. (1995). What is participatory research? <i>Social Science & Medicine</i>, <i>41</i>(12), 1667–1676. https://doi.org/10.1016/0277-9536(95)00127-S",
         "Fletcher-Watson, S., Adams, J., Brook, K., Charman, T., Crane, L., Cusack, J., Leekam, S., Milton, D., Parr, J. R., & Pellicano, E. (2019). Making the Future Together: Shaping Autism Research Through Meaningful Participation. <i>Autism</i>, <i>23</i>(4), 943–953.",
         "Kiernan, C. (1999). Participation in research by people with learning disability: Origins and issues. <i>British Journal of Learning Disabilities</i>, <i>27</i>(2), 43–47. https://doi.org/10.1111/j.1468-3156.1999.tb00084.x",
@@ -35,5 +33,5 @@
     "aliases": [
         "/glossary/participatory_research"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

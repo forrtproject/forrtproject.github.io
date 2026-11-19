@@ -6,7 +6,6 @@
     "definition": "AMNESIA 是一款免费的匿名化工具，用于移除数据中的身份识别信息。用户上传包含个人信息的数据集后，该工具会转换原始数据集，生成一个在个人和敏感信息方面实现匿名化的数据集。",
     "related_terms": [
         "Anonymity",
-        "Confidentiality",
         "Research ethics"
     ],
     "references": [
@@ -33,5 +32,5 @@
         "Ruoting Liu",
         "Shuxian Jin"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

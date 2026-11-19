@@ -5,17 +5,14 @@
     "sort_key": "szeffaflizk [transparency]",
     "definition": "Kişinin eylemlerinin dış değerlendirmeye açık ve erişilebilir olması durumudur. Şeffaflık, araştırmacıların araştırma süreci boyunca aldıkları kuramsal, yöntemsel ve analitik kararlar konusunda dürüst olmalarını ifade eder. Şeffaflık, ‘bilimsellikle ilgili şeffaflık’ ve ‘toplumsallıkla ilgili şeffaflık’ şeklinde anlamlı bir şekilde ayrıştırılabilir. İlki, Açık Bilim söylemlerinin erken dönemlerinde odak noktası olmuştur; ikincisi ise bilimsel bilgilerin karar mekanizmaları ve toplum için anlamlı olacak biçimlerde sunulması açısından gereklidir (Elliott ve Resnik, 2019).",
     "related_terms": [
-        "Credibility of scientific claims",
-        "Open science",
+        "Open Science",
         "Preregistration",
-        "Reproducibility",
-        "Trustworthiness"
+        "Reproducibility"
     ],
     "references": [
         "Elliott, K. C., & Resnik, D. B. (2019). Making open science work for science and society. <i>Environmental Health Perspectives</i>, <i>127</i>(7). https://doi.org/10.1289/EHP4808",
         "Lyon, L. (2016). Transparency: The Emerging Third Dimension of Open Science and Open Data. <i>LIBER Quarterly</i>, <i>25</i>(4), 153–171. http://doi.org/10.18352/lq.10113",
-        "Syed, M. (2019). The Open Science Movement is for all of us. <i>PsyArXiv</i>.",
-        "[Syed (2019)](https://psyarxiv.com/cteyb/)"
+        "Syed, M. (2019). The Open Science Movement is for all of us. <i>PsyArXiv</i>. https://doi.org/10.31234/osf.io/cteyb"
     ],
     "drafted_by": [
         "William Ngiam"
@@ -36,5 +33,5 @@
     "translation_reviewed_by": [
         "Neslihan Özhan"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

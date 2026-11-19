@@ -5,7 +5,7 @@
     "sort_key": "jabref",
     "definition": "Ein kostenloses, quell-offenes, plattformübergreifendes Tool zur Verwaltung von Zitationen und Referenzen. Es ermöglicht die Bearbeitung von BibTeX-Dateien, den Import von Daten aus wissenschaftlichen Online-Datenbanken sowie die Verwaltung und Suche von BibTeX-Dateien.",
     "related_terms": [
-        "Open source software"
+        "Open Source software"
     ],
     "references": [
         "JabRef Development Team. (2021). <i>JabRef - An open-source, cross-platform citation and reference management software</i>. https://www.jabref.org"
@@ -30,5 +30,5 @@
         "Susanne Vogel",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

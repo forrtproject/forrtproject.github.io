@@ -6,8 +6,7 @@
     "definition": "Bracketing Interviews (Klammer-Interviews) werden üblicherweise im Rahmen qualitativer Ansätze verwendet. Während dieser Interviews erkunden Forschende ihre persönlichen Subjektivitäten und Annahmen im Zusammenhang mit ihrer laufenden Forschung. Dies ermöglicht es den Forschenden, sich ihrer eigenen Interessen bewusst zu werden, hilft ihnen, ihre Forschung zu reflektieren und kritisch zu betrachten, und zu überlegen, wie ihre eigenen Erfahrungen den Forschungsprozess beeinflussen können. Klammer-Interviews können auch einer qualitativen Analyse unterzogen werden.",
     "related_terms": [
         "Qualitative research",
-        "Reflexivity",
-        "Researcher bias"
+        "Reflexivity"
     ],
     "references": [
         "Rolls, L., & Relf, M. (2006). Bracketing interviews: addressing methodological challenges in qualitative interviewing in bereavement and palliative care. <i>Mortality</i>, <i>11</i>(3), 286–305. https://doi.org/10.1080/13576270600774893",
@@ -33,5 +32,5 @@
         "Susanne Vogel",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

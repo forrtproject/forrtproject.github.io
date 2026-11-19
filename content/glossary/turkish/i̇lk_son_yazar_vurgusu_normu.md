@@ -6,8 +6,8 @@
     "definition": "Bir yazarın katkısına bağlı olarak yazar sırasının belirlendiği, ancak yazar sıralamasında en çok ilk ve son sıranın önemsendiği bir yazarlık sistemidir. Bu sisteme göre, iki ana yazar ilk ve son sırada belirtilir; ilk ve son yazar arasında yer alan yazarların sırası ise katkı miktarına göre azalan şekilde düzenlenir.",
     "related_terms": [
         "Authorship",
-        "Author contributions",
-        "CreDit taxonomy"
+        "Contribution",
+        "CRediT"
     ],
     "references": [
         "Tscharntke, T., Hochberg, M. E., Rand, T. A., Resh, V. H., & Krauss, J. (2007). Author sequence and credit for contributions in multiauthored publications. <i>PLoS Biology</i>, <i>5</i>(1), e18. https://doi.org/10.1371/journal.pbio.0050018"
@@ -28,5 +28,5 @@
     "translation_reviewed_by": [
         "Ege Emek"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

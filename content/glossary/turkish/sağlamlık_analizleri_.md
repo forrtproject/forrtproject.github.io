@@ -7,7 +7,6 @@
     "related_terms": [
         "Many Labs",
         "Multiverse analysis",
-        "Sensitivity analyses",
         "Specification Curve Analysis"
     ],
     "references": [
@@ -33,5 +32,5 @@
     "translation_reviewed_by": [
         "Neslihan Özhan"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

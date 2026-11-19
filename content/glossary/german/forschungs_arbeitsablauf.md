@@ -5,9 +5,7 @@
     "sort_key": "forschungs-arbeitsablauf [research workflow]",
     "definition": "Der Prozess der Durchführung von Forschungsarbeiten von der Konzeption bis zur Verbreitung. Ein typischer Arbeitsablauf (workflow) könnte folgendermaßen aussehen: Beginnend mit der Konzeptualisierung, um eine Forschungsfrage zu ermitteln und eine Studie zu entwerfen. Nach der Konzeption der Studie müssen die Forschenden eine ethische Genehmigung einholen (falls erforderlich) und können beschließen, die endgültige Version zu präregistrieren. Anschließend erheben die Forschenden ihre Daten und analysieren sie. Schließlich endet der Prozess mit der Verbreitung, wobei zwischen Preprint- und Postprint-Phasen unterschieden wird, wenn das Manuskript bei einer Zeitschrift eingereicht wird.",
     "related_terms": [
-        "Open Research Workflow",
-        "Research cycle",
-        "Research pipeline"
+        "Research Cycle"
     ],
     "references": [
         "Kathawalla, U., Silverstein, P., & Syed, M. (2020). Easing into Open Science: A Guide for Graduate Students and Their Advisors. <i>Collabra: Psychology</i>. https://doi.org/10.31234/osf.io/vzjdp Retrieved from https://psyarxiv.com/vzjdp",
@@ -36,5 +34,5 @@
         "Susanne Vogel",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

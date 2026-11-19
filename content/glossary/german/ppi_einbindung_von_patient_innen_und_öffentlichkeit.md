@@ -6,7 +6,7 @@
     "definition": "Aktive Forschungszusammenarbeit mit der interessierenden Population, im Gegensatz zur Forschung \"über\" sie. Forschende können die Lebenserfahrung und das Fachwissen von Patient:innen und der Öffentlichkeit in allen Phasen des Forschungsprozesses einbeziehen. So können Patient:innen beispielsweise bei der Entwicklung von Forschungsfragen helfen, die Eignung eines Studiendesigns überprüfen, Zusammenfassungen in einfacher Sprache für Drittmittel-/Ethikanträge und die Verbreitung genehmigen, Daten erheben und analysieren und bei der Veröffentlichung eines Projekts helfen. Dies wird zunehmend empfohlen und sogar von Drittmittelgebern gefordert (Boivin et al., 2018).",
     "related_terms": [
         "Co-production",
-        "Participatory research"
+        "Participatory Research"
     ],
     "references": [
         "Boivin, A., Richards, T., Forsythe, L., Gregoire, A., L’Esperance, A., Abelson, J., & Carman, K. L. (2018). Evaluating the patient and public involvement in research. <i>British Medical Journal</i>, <i>363</i>, k5147. https://doi.org/10.1136/bmj.k5147",
@@ -31,5 +31,5 @@
         "Helena Hartmann",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

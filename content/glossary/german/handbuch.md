@@ -5,10 +5,8 @@
     "sort_key": "handbuch [compendium]",
     "definition": "Eine Sammlung von Dateien, die von Forschenden zur Unterstützung eines Berichts oder einer Veröffentlichung erstellt wurden und die Daten, Metadaten, Programmiercodes, Softwareabhängigkeiten, Lizenzen und andere Anweisungen enthalten, die andere Forschende benötigen, um die in dem Bericht oder der Veröffentlichung dargestellten Ergebnisse unabhängig zu reproduzieren.",
     "related_terms": [
-        "Compendia",
-        "Replication",
-        "Reproducibility",
-        "Research compendium;"
+        "Replicability",
+        "Reproducibility"
     ],
     "references": [
         "Claerbout, J. F., & Karrenbach, M. (1992). Electronic documents give reproducible research a new meaning. <i>SEG Technical Program Expanded Abstracts 1992</i>, 601–604. http://sepwww.stanford.edu/doku.php?id=sep:research:reproducible:seg92",
@@ -34,5 +32,5 @@
         "Helena Hartmann",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

@@ -3,11 +3,10 @@
     "en_title": "Optional Stopping",
     "title": "Optional Stopping",
     "sort_key": "optional stopping",
-    "definition": "The practice of (repeatedly) analyzing data during the data collection process and deciding to stop data collection if a statistical criterion (e.g. *p*\\-value, or bayes factor) reaches a specified threshold. If appropriate methodological precautions are taken to control the type 1 error rate, this can be an efficient analysis procedure (e.g. Lakens, 2014). However, without transparent reporting or appropriate error control the type 1 error can increase greatly and optional stopping could be considered a Questionable Research Practice (QRP) or a form of p-hacking.",
+    "definition": "The practice of (repeatedly) analyzing data during the data collection process and deciding to stop data collection if a statistical criterion (e.g. *p*\\-value, or bayes factor) reaches a specified threshold. If appropriate methodological precautions are taken to control the type 1 error rate, this can be an efficient analysis procedure, known as sequential testing or sequential analysis (e.g. Lakens, 2014). However, without transparent reporting or appropriate error control the type 1 error can increase greatly and optional stopping could be considered a Questionable Research Practice (QRP) or a form of p-hacking.",
     "related_terms": [
         "p-hacking",
-        "Questionable Research Practices or Questionable Reporting Practices (QRPs)",
-        "Sequential testing"
+        "Questionable Research Practices or Questionable Reporting Practices (QRPs)"
     ],
     "references": [
         "Beffara Bret, B., Beffara Bret, A., & Nalborczyk, L. (2021). A fully automated, transparent, reproducible, and blind protocol for sequential analyses. <i>Meta-Psychology</i>, <i>5</i>. https://doi.org/10.15626/MP.2018.869",
@@ -31,5 +30,5 @@
     "aliases": [
         "/glossary/optional_stopping"
     ],
-    "lastmod": "2026-11-08"
+    "lastmod": "2026-11-19"
 }

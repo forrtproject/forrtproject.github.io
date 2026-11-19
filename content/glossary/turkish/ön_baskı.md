@@ -5,10 +5,8 @@
     "sort_key": "ozn-baskiz [preprint]",
     "definition": "Herhangi bir türdeki bilimsel makale ya da araştırma çıktısının, resmi yayımdan önce kamuya açık olarak sunulan versiyonudur ve Yeşil Açık Erişim biçimi olarak kabul edilir. Ön-baskılar genellikle araştırma sonuçlarının geleneksel yayıma kıyasla daha hızlı şekilde paylaşılmasını sağlayan bir arşivde (örn., arXiv) barındırılır. Ön-baskı arşivleri genellikle bu çalışmalara kalıcı tanımlayıcılar (örn., Dijital Nesne Tanımlayıcısı - DOI; Digital Object Identifier) atar. Ön-baskılar araştırma döngüsünün herhangi bir aşamasında yayımlanabilir, ancak en yaygın olarak gönderim aşamasında (yani hakem değerlendirmesinden önce) paylaşılır. Kabul edilmiş ve hakem değerlendirmesinden geçmiş versiyonları da sıklıkla ön-baskı sunucularına yüklenir ve bunlara son-baskı adı verilir.",
     "related_terms": [
-        "Open Access",
-        "DOI (digital object identifier)",
-        "Postprint",
-        "Working Paper"
+        "Open access",
+        "DOI (digital object identifier)"
     ],
     "references": [
         "Bourne, P. E., Polka, J. K., Vale, R. D., & Kiley, R. (2017). Ten simple rules to consider regarding preprint submission. <i>PLoS Computational Biology</i>, <i>13</i>(5), e1005473. https://doi.org/10.1371/journal.pcbi.1005473",
@@ -34,5 +32,5 @@
     "translation_reviewed_by": [
         "Nihan Selin Soylu-Konak"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

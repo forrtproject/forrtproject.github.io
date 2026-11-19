@@ -5,9 +5,8 @@
     "sort_key": "ozzet yanlizlizgziz [abstract bias]",
     "definition": "Makalenin ana gövdesinde anlamlı olmayan sonuçları rapor ederken, özet kısmında sadece anlamlı sonuçları rapor etme eğilimi (anlamlı olmayan sonuçları tamamen rapor etmemek seçici raporlama anlamına gelir). Özet yanlılığı, anlamlı olmayan bulgular bildiren çalışmaların, başlık, özet ve anahtar kelimelerdeki bilgilere dayanan standart meta-analitik arama prosedürleriyle yakalanamamasına ve dolayısıyla meta-analizlerin sonuçlarının saptırılmasına sebep olmaktadır.",
     "related_terms": [
-        "Cherry-picking",
-        "Publication bias (File Drawer Problem)",
-        "Selective reporting"
+        "Selective reporting",
+        "Publication bias (File Drawer Problem)"
     ],
     "references": [
         "Duyx, B., Swaen, G. M., Urlings, M. J., Bouter, L. M., & Zeegers, M. P. (2019). The strong focus on positive results in abstracts may cause bias in systematic reviews: A case study on abstract reporting bias. <i>Systematic Reviews</i>, <i>8</i>(1), 1–8."
@@ -33,5 +32,5 @@
     "translation_reviewed_by": [
         "Elif Baştan"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

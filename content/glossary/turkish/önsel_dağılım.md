@@ -6,7 +6,7 @@
     "definition": "Araştırmacıların, ek kanıtlar dikkate alınmadan önce, bir istatistiksel modeldeki parametreler hakkında sahip oldukları inançlardır. ‘Önsel’, bir olasılık dağılımı olarak ifade edilir ve çeşitli yollarla belirlenebilir (örn., önceki araştırmalar, öznel değerlendirmeler, kısıtlar verilerek entropiyi maksimize etme gibi ilkeler). Genellikle, Bayes teoremi kullanılarak olasılık fonksiyonu (likelihood function) ile birleştirilir ve böylece sonsal dağılım (posterior distribution) elde edilir.",
     "related_terms": [
         "Bayes Factor",
-        "Bayesian inference",
+        "Bayesian Inference",
         "Bayesian Parameter Estimation",
         "Likelihood function",
         "Posterior distribution"
@@ -31,5 +31,5 @@
     "translation_reviewed_by": [
         "Nihan Selin Soylu-Konak"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

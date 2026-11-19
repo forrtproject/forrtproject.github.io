@@ -5,8 +5,7 @@
     "sort_key": "p-hackleme [p-hacking]",
     "definition": "İstatistiksel olarak anlamlı bir sonuca ulaşma olasılığını, standart istatistiksel anlamlılık kriterini (genellikle α = .05) karşılayarak yapay şekilde artırabilecek tekniklerin kötüye kullanılması. Örneğin, birden fazla analiz yapıp ve yalnızca p < .05 olanları raporlamak, p < .05 olana kadar verileri seçici olarak çıkarmak, analizlerde kullanılacak değişkenleri bu parametrelerin istatistiksel olarak anlamlı olup olmamasına göre seçmek.",
     "related_terms": [
-        "Analytic flexibility",
-        "Fishing",
+        "Analytic Flexibility",
         "Garden of forking paths",
         "HARKing",
         "Questionable Research Practices or Questionable Reporting Practices (QRPs)",
@@ -35,5 +34,5 @@
     "translation_reviewed_by": [
         "Nihan Selin Soylu-Konak"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

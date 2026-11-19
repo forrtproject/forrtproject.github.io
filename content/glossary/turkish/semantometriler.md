@@ -6,7 +6,7 @@
     "definition": "Akademik yayınların tam metinleri kullanılarak, yayınlar arasındaki anlamsal benzerliği ölçen ve bir makalenin bilimsel tartışmaların ilerlemesine yaptığı katkıyı değerlendiren ölçütler sınıfıdır. Semantometrik yöntemler, bibliometrik, webometrik ve altmetrik araçların bir uzantısıdır.",
     "related_terms": [
         "Bibliometrics",
-        "Contribution(p)"
+        "Research Contribution Metric (*p*)"
     ],
     "references": [
         "Herrmannova, D., & Knoth, P. (n.d.). <i>Semantometrics Towards Full text-based Research Evaluation</i>. Retrieved from https://arxiv.org/pdf/1605.04180.pdf",
@@ -31,5 +31,5 @@
     "translation_reviewed_by": [
         "Neslihan Özhan"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

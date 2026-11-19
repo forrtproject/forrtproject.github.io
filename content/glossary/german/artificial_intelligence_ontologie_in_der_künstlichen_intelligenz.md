@@ -5,9 +5,7 @@
     "sort_key": "artificial intelligence ontologie in der künstlichen intelligenz [ontology (artificial intelligence)]",
     "definition": "Eine Sammlung von Grundregeln (axioms) in einem Fachgebiet, die zur Klassifizierung und Erklärung der Art der untersuchten Einheiten und der Beziehungen zwischen ihnen beitragen.",
     "related_terms": [
-        "Axiology",
-        "Epistemology",
-        "Taxonomy"
+        "Epistemology"
     ],
     "references": [
         "Noy, N. F., & McGuinness, D. L. (2001). <i>Ontology development 101: A guide to creating your first ontology</i>. https://corais.org/sites/default/files/ontology_development_101_aguide_to_creating_your_first_ontology.pdf"
@@ -30,5 +28,5 @@
         "Helena Hartmann",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

@@ -5,8 +5,7 @@
     "sort_key": "citizen science",
     "definition": "Citizen science refers to projects that actively involve the general public in the scientific endeavour, with the goal of democratizing science. Citizen scientists can be involved in all stages of research, acting as collaborators, contributors or project leaders. An example of a major citizen science project involved individuals identifying astronomical bodies (Lintott, 2008).",
     "related_terms": [
-        "Crowd science",
-        "Crowdsourcing"
+        "Crowdsourced Research"
     ],
     "references": [
         "Cohn, J. P. (2008). Citizen science: Can volunteers do real research? <i>BioScience</i>, <i>58</i>(3), 192–197. https://doi.org/10.1641/B580303",
@@ -26,8 +25,11 @@
         null
     ],
     "language": "english",
+    "also_known_as": [
+        "Crowd science"
+    ],
     "aliases": [
         "/glossary/citizen_science"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

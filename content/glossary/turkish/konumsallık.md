@@ -5,9 +5,7 @@
     "sort_key": "konumsallizk [positionality]",
     "definition": "Üretilen araştırma dahilinde, sınırları tanımlamak için hem araştırma ortamı hem araştırmacının bağlamsallaştırılması (Jafar, 2018). Konumsallık, genellikle nitel araştırmalarda merkezde tutulur ve önemsenir; ancak son zamanlarda bunun nicel araştırmalarda da kullanılmasına yönelik çağrılar yapılmıştır. Araştırmacının kendi geçmişini ve araştırma içerisindeki ve araştırmaya dair 'konumunu' belirttiği konumsallık ifadeleri, araştırmacı ön yargısını tanımak ve merkeze almak için önerilen yöntemlerden biri olarak önerilmiştir.",
     "related_terms": [
-        "Bias",
-        "Reflexivity",
-        "Perspective"
+        "Reflexivity"
     ],
     "references": [
         "Jafar, A. J. N. (2018). What is positionality and should it be expressed in quantitative studies? <i>Emergency Medicine Journal</i>, <i>35</i>(5), 323–324. https://doi.org/10.1136/emermed-2017-207158",
@@ -32,5 +30,5 @@
     "translation_reviewed_by": [
         "Nihan Selin Soylu-Konak"
     ],
-    "lastmod": "2026-11-08"
+    "lastmod": "2026-11-19"
 }

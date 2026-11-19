@@ -5,9 +5,7 @@
     "sort_key": "objektivität [objectivity]",
     "definition": "Die Idee, dass wissenschaftliche Behauptungen, Methoden, Ergebnisse und Wissenschaftler:innen selbst wertfrei und unvoreingenommen bleiben sollten und somit nicht von kulturellen, politischen, herkunftsbezogenen oder religiösen Vorurteilen sowie persönlichen Interessen beeinflusst werden sollten (Merton, 1942).",
     "related_terms": [
-        "Communality",
-        "Mertonian norms",
-        "Neutrality"
+        "Communality"
     ],
     "references": [
         "Macfarlane, B., & Cheng, M. (2008). Communism, Universalism and Disinterestedness: Re-examining Contemporary Support among Academics for Merton’s Scientific Norms. <i>Journal of Academic Ethics</i>, <i>6</i>(1), 67–78. https://doi.org/10.1007/s10805-008-9055-y",
@@ -34,5 +32,5 @@
         "Susanne Vogel",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

@@ -5,8 +5,7 @@
     "sort_key": "aleatoric uncertainty",
     "definition": "Variability in outcomes due to unknowable or inherently random factors. The stochastic component of outcome uncertainty that cannot be reduced through additional sources of information. For example, when flipping a coin, uncertainty about whether it will land on heads or tails.",
     "related_terms": [
-        "Epistemic uncertainty",
-        "Knightian uncertainty"
+        "Epistemic uncertainty"
     ],
     "references": [
         "Der Kiureghian, A., & Ditlevsen, O. (2009). Aleatory or epistemic? Does it matter? <i>Structural Safety</i>, <i>31</i>(2), 105–112. https://doi.org/10.1016/j.strusafe.2008.06.020"
@@ -28,5 +27,5 @@
     "aliases": [
         "/glossary/aleatoric_uncertainty"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

@@ -7,8 +7,6 @@
     "related_terms": [
         "Conceptual replication",
         "External Validity",
-        "Opportunistic sampling",
-        "Sampling bias",
         "WEIRD"
     ],
     "references": [
@@ -39,5 +37,5 @@
     "translation_reviewed_by": [
         "Ege Emek"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

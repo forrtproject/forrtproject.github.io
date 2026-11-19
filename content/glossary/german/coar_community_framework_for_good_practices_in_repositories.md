@@ -6,11 +6,11 @@
     "definition": "Ein Leitfaden, der die besten Praktiken für wissenschaftliche Repositorien und Bewertungskriterien für diese Praktiken identifiziert. Sein flexibler und mehrdimensionaler Ansatz bedeutet, dass er auf verschiedene Typen von Repositorien angewendet werden kann, einschließlich solcher, die Publikationen oder Daten bereitstellen, über geografische und thematische Kontexte hinweg.",
     "related_terms": [
         "Metadata",
-        "Open Access",
+        "Open access",
         "Open Data",
         "Open Material",
         "Repository",
-        "TRUST principles"
+        "TRUST Principles"
     ],
     "references": [
         "Confederation of Open Access Repositories. (2020). <i>COAR Community Framework for Best Practices in Repositories (Version 1)</i>. Zenodo. https://doi.org/10.5281/zenodo.4110829"
@@ -35,5 +35,5 @@
         "Susanne Vogel",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

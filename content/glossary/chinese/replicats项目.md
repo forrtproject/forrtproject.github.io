@@ -5,11 +5,10 @@
     "sort_key": "replicatsxiangmu",
     "definition": "CATs（Collaborative Assessment for Trustworthy Science）项目是指对值得信赖的科学的协作评估。RepliCATs 项目的目标是通过众包方式预测已发表研究的可靠性和可重复性，该项目主要关注8个社会科学领域，包括商业研究、犯罪学、经济学、教育学、政治学、心理学、公共管理和社会学。",
     "related_terms": [
-        "Replicability",
-        "Trustworthiness"
+        "Replicability"
     ],
     "references": [
-        "Fraser, H., Bush, M., Wintle, B., Mody, F., Smith, E., Hanea, A., & others. (2021). <i>Predicting reliability through structured expert elicitation with repliCATS (Collaborative Assessments for Trustworthy Science)</i>.",
+        "Fraser, H., Bush, M., Wintle, B., Mody, F., Smith, E., Hanea, A., et al. (2021). <i>Predicting reliability through structured expert elicitation with repliCATS (Collaborative Assessments for Trustworthy Science)</i>.",
         "RepliCATS project. (2020). <i>Collaborative Assessment for Trustworthy Science</i>. The University of Melbourne. https://replicats.research.unimelb.edu.au/"
     ],
     "drafted_by": [
@@ -35,5 +34,5 @@
         "Ruoting Liu",
         "Shuxian Jin"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

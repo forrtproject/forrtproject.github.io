@@ -5,9 +5,7 @@
     "sort_key": "ontoloji (yapay zeka) [ontology (artificial intelligence)]",
     "definition": "İncelenen varlıkların doğasını ve aralarındaki ilişkileri sınıflandırmaya ve açıklamaya yardımcı olan bir konu alanındaki aksiyomlar kümesi.",
     "related_terms": [
-        "Axiology",
-        "Epistemology",
-        "Taxonomy"
+        "Epistemology"
     ],
     "references": [
         "Noy, N. F., & McGuinness, D. L. (2001). <i>Ontology development 101: A guide to creating your first ontology</i>. https://corais.org/sites/default/files/ontology_development_101_aguide_to_creating_your_first_ontology.pdf"
@@ -29,5 +27,5 @@
     "translation_reviewed_by": [
         "Merve Öztürk"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

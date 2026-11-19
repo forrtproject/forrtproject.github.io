@@ -6,13 +6,12 @@
     "definition": "Ein Online-Archiv für die Speicherung digitaler Objekte wie Forschungsergebnisse, Manuskripte, Analysecodes und/oder Daten. Beispiele sind Preprint-Server wie bioRxiv, MetaArXiv, PsyArXiv, institutionelle Forschungsrepositorien sowie Datenrepositorien, die Datensätze sammeln und speichern, z. B. zenodo.org, PsychData und Code-Repositorien wie Github, oder allgemeinere Repositorien für alle Arten von Forschungsdaten wie das Open Science Framework (OSF). Digitale Objekte, die in Repositorien gespeichert werden, werden in der Regel durch Metadaten beschrieben, die das Auffinden in verschiedenen Speicherorten erlauben.",
     "related_terms": [
         "Data sharing",
-        "Github",
         "Metadata",
-        "Open Access",
-        "Open data",
+        "Open access",
+        "Open Data",
         "Open Material",
         "Open Science Framework",
-        "Open Source",
+        "Open Source software",
         "Preprint"
     ],
     "references": [
@@ -39,5 +38,5 @@
         "Susanne Vogel",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

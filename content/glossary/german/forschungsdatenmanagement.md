@@ -5,12 +5,9 @@
     "sort_key": "forschungsdatenmanagement [research data management]",
     "definition": "Research Data Management (dt. Forschungsdatenmanagement, FDM) ist ein weit gefasstes Konzept, das Prozesse zur Erstellung organisierter, dokumentierter, zugänglicher und wiederverwendbarer hochwertiger Forschungsdaten umfasst. Ein angemessenes Forschungsdatenmanagement bietet viele Vorteile, unter anderem eine geringere Wahrscheinlichkeit von Datenverlusten, eine größere Sichtbarkeit und Zusammenarbeit durch die gemeinsame Nutzung von Daten sowie die Demonstration von Integrität und Rechenschaft in der Forschung.",
     "related_terms": [
-        "Data curation",
-        "Data documentation",
         "Data management plan (DMP)",
         "Data sharing",
-        "Metadata",
-        "Research data management"
+        "Metadata"
     ],
     "references": [
         "CESSDA. (n.d.). <i>Data Management Expert Guide—CESSDA TRAINING</i>. https://www.cessda.eu/Training/Training-Resources/Library/Data-Management-Expert-Guide",
@@ -36,5 +33,5 @@
         "Helena Hartmann",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

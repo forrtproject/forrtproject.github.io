@@ -7,7 +7,6 @@
     "related_terms": [
         "Preregistration",
         "Publication bias (File Drawer Problem)",
-        "Results-free review",
         "PCI (Peer Community In)",
         "Research Protocol"
     ],
@@ -38,8 +37,12 @@
         null
     ],
     "language": "english",
+    "also_known_as": [
+        "Results blind",
+        "Results-free review"
+    ],
     "aliases": [
         "/glossary/registered_report"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

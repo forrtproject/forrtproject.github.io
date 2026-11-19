@@ -5,7 +5,6 @@
     "sort_key": "kommunalität [communality]",
     "definition": "Das geteilte öffentliche Eigentum wissenschaftlicher Ergebnisse und Methoden und das daraus folgende Gebot, beides frei zu teilen. Die Kommunalität beruht auf der Tatsache, dass jede wissenschaftliche Erkenntnis das Ergebnis der Bemühungen einer Reihe von Akteuren ist. Um diese Norm zu befolgen, teilen Forschende ihre neuen Erkenntnisse offen mit Kolleg:innen.",
     "related_terms": [
-        "Mertonian norms",
         "Objectivity"
     ],
     "references": [
@@ -34,5 +33,5 @@
         "Helena Hartmann",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

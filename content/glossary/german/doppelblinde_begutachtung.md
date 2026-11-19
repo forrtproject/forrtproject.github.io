@@ -7,13 +7,10 @@
     "related_terms": [
         "Ad hominem bias",
         "Affiliation bias",
-        "Anonymous review",
-        "Masked review",
-        "Open peer review",
+        "Open Peer Review",
         "Peer review",
         "Single-blind peer review",
-        "Traditional peer review",
-        "Triple-Blind peer review"
+        "Triple-blind peer review"
     ],
     "references": [
         "Largent, E. A., & Snodgrass, R. T. (2016). Blind peer review by academic journals. In C. T. Robertson & A. S. Kesselheim (Eds.), <i>Blinding as a solution to bias: Strengthening biomedical science, forensic science, and law</i> (pp. 75–95). Academic Press. https://doi.org/10.1016/B978-0-12-802460-7.00005-X",
@@ -39,5 +36,5 @@
         "Helena Hartmann",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

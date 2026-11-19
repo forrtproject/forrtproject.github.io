@@ -5,14 +5,12 @@
     "sort_key": "open code",
     "definition": "Making computer code (e.g., programming, analysis code, stimuli generation) freely and publicly available in order to make research methodology and analysis transparent and allow for reproducibility and collaboration. Code can be made available via open code websites, such as GitHub, the Open Science Framework, and Codeshare (to name a few), enabling others to evaluate and correct errors and re-use and modify the code for subsequent research.",
     "related_terms": [
-        "Computational Reproducibility",
-        "Open Access",
-        "Open Licensing",
+        "Computational reproducibility",
+        "Open access",
+        "Open Licenses",
         "Open Material",
-        "Open Source",
-        "Open Source Software",
-        "Reproducibility",
-        "Syntax"
+        "Open Source software",
+        "Reproducibility"
     ],
     "references": [
         "Easterbrook, S. M. (2014). Open code for open science? <i>Nature Geoscience</i>, <i>7</i>(11), 779–781. https://doi.org/10.1038/ngeo2283"
@@ -33,5 +31,5 @@
     "aliases": [
         "/glossary/open_code"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

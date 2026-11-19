@@ -7,7 +7,6 @@
     "related_terms": [
         "Many Labs",
         "Multiverse analysis",
-        "Sensitivity analyses",
         "Specification Curve Analysis"
     ],
     "references": [
@@ -30,5 +29,5 @@
     "aliases": [
         "/glossary/robustness_analyses_"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

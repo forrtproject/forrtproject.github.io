@@ -7,7 +7,7 @@
     "related_terms": [
         "FAIR principles",
         "Metadata",
-        "Open Access",
+        "Open access",
         "Open Data",
         "Open Material",
         "Repository"
@@ -38,5 +38,5 @@
         "Xiujuan Wen",
         "Shuxian Jin"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

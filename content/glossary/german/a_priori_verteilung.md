@@ -6,7 +6,7 @@
     "definition": "Überzeugungen, die Forscher:innen über die Parameter eines statistischen Modells haben, bevor weitere Erkenntnisse berücksichtigt werden. Ein \"Prior\" wird als Wahrscheinlichkeitsverteilung ausgedrückt und kann auf verschiedene Weise bestimmt werden (z. B. frühere Forschung, subjektive Einschätzung, Grundsätze wie die Maximierung der Entropie bei gegebenen Einschränkungen) und wird in der Regel mit der Likelihood Funktion unter Verwendung des Satzes von Bayes kombiniert, um eine Posterior-Verteilung zu erhalten.",
     "related_terms": [
         "Bayes Factor",
-        "Bayesian inference",
+        "Bayesian Inference",
         "Bayesian Parameter Estimation",
         "Likelihood function",
         "Posterior distribution"
@@ -32,5 +32,5 @@
         "Susanne Vogel",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

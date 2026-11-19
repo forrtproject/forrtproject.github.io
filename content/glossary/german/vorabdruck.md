@@ -5,10 +5,8 @@
     "sort_key": "vorabdruck [preprint]",
     "definition": "Eine öffentlich zugängliche Version eines wissenschaftlichen Manuskripts/Forschungsergebnisses, die der offiziellen Veröffentlichung vorausgeht und als eine Form des Grünen Open Access gilt. Preprints werden in der Regel auf einem Repository (z. B. arXiv) bereitgestellt, das die Verbreitung von Forschungsergebnissen durch eine schnellere Weitergabe als bei einer herkömmlichen Veröffentlichung erleichtert. Preprint-Repositorien vergeben in der Regel dauerhafte Identifikatoren (z. B. DOIs) für Preprints. Preprints können zu jedem Zeitpunkt des Forschungszyklus veröffentlicht werden, werden aber meist bei der Einreichung (d. h. vor der Begutachtung durch Fachkollegen über Peer Review) veröffentlicht. Angenommene und begutachtete Versionen von Artikeln werden ebenfalls häufig auf Preprintserver hochgeladen und als Postprints bezeichnet.",
     "related_terms": [
-        "Open Access",
-        "DOI (digital object identifier)",
-        "Postprint",
-        "Working Paper"
+        "Open access",
+        "DOI (digital object identifier)"
     ],
     "references": [
         "Bourne, P. E., Polka, J. K., Vale, R. D., & Kiley, R. (2017). Ten simple rules to consider regarding preprint submission. <i>PLoS Computational Biology</i>, <i>13</i>(5), e1005473. https://doi.org/10.1371/journal.pcbi.1005473",
@@ -35,5 +33,5 @@
         "Susanne Vogel",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

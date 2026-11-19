@@ -4,11 +4,7 @@
     "title": "Datenvisualisierung [Data visualisation]",
     "sort_key": "datenvisualisierung [data visualisation]",
     "definition": "Grafische Darstellung von Daten oder Informationen. Die Datenvisualisierung nutzt die gut entwickelte visuelle Verarbeitungskapazität des Menschen, um Erkenntnisse und wichtige Informationen zu vermitteln. Datenvisualisierungen zeigen oft die Rohdaten, deskriptive Statistiken und/oder Inferenzstatistiken.",
-    "related_terms": [
-        "Figure",
-        "Graph",
-        "Plot"
-    ],
+    "related_terms": [],
     "references": [
         "Healy, K. (2018). <i>Data visualization: A practical introduction</i>. Princeton University Press.",
         "Tufte, E. R. (1983). <i>The visual display of quantitative information</i>. Graphics Press."
@@ -32,5 +28,5 @@
         "Susanne Vogel",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

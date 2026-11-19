@@ -5,7 +5,7 @@
     "sort_key": "kumulative wissenschaft [cumulative science]",
     "definition": "Ziel jeder empirischen Wissenschaft ist \"the construction of a cumulative base of knowledge upon which the future of the science may be built” (dt. das Erschaffen einer kumulativen Wissensbasis, auf der die Zukunft der Wissenschaft aufgebaut werden kann, Curran, 2009, S. 1). Die Idee, dass Wissenschaft in Abhängigkeit von der Menge der gesammelten Evidenz und Daten immer vollständigere und genauere Theorien entwickelt. Die kumulative Wissenschaft entwickelt sich in graduellen und aufeinander aufbauenden Schritten, im Gegensatz zu einer plötzlichen Entdeckung. Während revolutionäre Wissenschaft selten vorkommt, ist die kumulative Wissenschaft die häufigste Form der Wissenschaft.",
     "related_terms": [
-        "Slow Science"
+        "Slow science"
     ],
     "references": [
         "Curran, P. J. (2009). The seemingly quixotic pursuit of a cumulative psychological science: Introduction to the special issue. <i>Psychological Methods</i>, <i>14</i>(2), 77–80. https://doi.org/10.1037/a0015972",
@@ -36,5 +36,5 @@
         "Helena Hartmann",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

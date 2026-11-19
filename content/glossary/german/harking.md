@@ -8,9 +8,8 @@
         "Analytic Flexibility",
         "Confirmatory analyses",
         "Exploratory data analysis",
-        "Fudging",
         "Garden of forking paths",
-        "P-hacking",
+        "p-hacking",
         "Questionable Research Practices or Questionable Reporting Practices (QRPs)"
     ],
     "references": [
@@ -37,5 +36,5 @@
         "Helena Hartmann",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

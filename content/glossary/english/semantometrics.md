@@ -6,7 +6,7 @@
     "definition": "A class of metrics for evaluating research using full publication text to measure semantic similarity of publications and highlighting an article’s contribution to the progress of scholarly discussion. It is an extension of tools such as bibliometrics, webometrics, and altmetrics.",
     "related_terms": [
         "Bibliometrics",
-        "Contribution(p)"
+        "Research Contribution Metric (*p*)"
     ],
     "references": [
         "Herrmannova, D., & Knoth, P. (n.d.). <i>Semantometrics Towards Full text-based Research Evaluation</i>. Retrieved from https://arxiv.org/pdf/1605.04180.pdf",
@@ -28,5 +28,5 @@
     "aliases": [
         "/glossary/semantometrics"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

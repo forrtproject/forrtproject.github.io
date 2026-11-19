@@ -5,18 +5,14 @@
     "sort_key": "research integrity",
     "definition": "Research integrity is defined by a set of good research practices based on fundamental principles: honesty, reliability, respect and accountability (ALLEA, 2017). Good research practices —which are based on fundamental principles of research integrity and should guide researchers in their work as well as in their engagement with the practical, ethical and intellectual challenges inherent in research— refer to areas such as: research environment (e.g., research institutions and organisations promote awareness and ensure a prevailing culture of research integrity), training, supervision and mentoring (e.g., Research institutions and organisations develop appropriate and adequate training in ethics and research integrity to ensure that all concerned are made aware of the relevant codes and regulations), research procedures (e.g., researchers report their results in a way that is compatible with the standards of the discipline and, where applicable, can be verified and reproduced), safeguards (e.g., researchers have due regard for the health, safety and welfare of the community, of collaborators and others connected with their research), data practices and management (e.g., researchers, research institutions and organisations provide transparency about how to access or make use of their data and research materials), collaborative working, publication and dissemination (e.g., authors and publishers consider negative results to be as valid as positive findings for publication and dissemination), reviewing, evaluating and editing (e.g., researchers review and evaluate submissions for publication, funding, appointment, promotion or reward in a transparent and justifiable manner).",
     "related_terms": [
-        "Credibility of scientific claims",
         "Error detection",
-        "Ethics",
-        "Open research",
+        "Research ethics",
+        "Open Scholarship",
         "Questionable Research Practices or Questionable Reporting Practices (QRPs)",
-        "Responsible Research Practices",
-        "Rigour",
-        "Transparency",
-        "Trustworthy research"
+        "Transparency"
     ],
     "references": [
-        "ALLEA - All European Academies. (2023). <i>The European Code of Conduct for Research Integrity</i> (Revised Edition 2023). ALLEA - All European Academies. https://doi.org/10.26356/ECoC",
+        "ALLEA - All European Academies. (2017). <i>The European Code of Conduct for Research Integrity</i> (Revised Edition). ALLEA - All European Academies. https://allea.org/wp-content/uploads/2017/05/ALLEA-European-Code-of-Conduct-for-Research-Integrity-2017.pdf",
         "Medin, D. L. (2012). Rigor without rigor mortis: The APS Board discusses research integrity. <i>APS Observer</i>, <i>25</i>(5–9), 27–28. https://www.psychologicalscience.org/observer/scientific-rigor",
         "Moher, D., Bouter, L., Kleinert, S., Glasziou, P., Sham, M. H., Barbour, V., & Dirnagl, U. (2020). The Hong Kong Principles for assessing researchers: Fostering research integrity. <i>PLoS Biology</i>, <i>18</i>(7), e3000737. https://doi.org/10.1371/journal.pbio.3000737"
     ],
@@ -34,8 +30,11 @@
         null
     ],
     "language": "english",
+    "also_known_as": [
+        "Scientific integrity"
+    ],
     "aliases": [
         "/glossary/research_integrity"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

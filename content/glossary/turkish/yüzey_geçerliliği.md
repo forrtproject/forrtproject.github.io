@@ -5,10 +5,8 @@
     "sort_key": "yuzzey geczerliligzi [face validity]",
     "definition": "Bir ölçüm aracının yüzeyde ne kadar uygun göründüğüne, yani ne kadar iyi operasyonelleştirildiğine dair öznel bir değerlendirmedir. Bir anketin maddelerinin ilgili psikolojik yapıyla görünürde ne kadar ilişkili olduğuna karar vermek bu tür bir değerlendirmeye örnektir. Yüzey geçerliliği, yapı geçerliliğiyle ilişkilidir; ancak öznel/resmi olmayan bir değerlendirme biçimi olduğu için, geçerlilik türleri arasında kolay ama zayıf bir geçerlilik türü olarak kabul edilir.",
     "related_terms": [
-        "Construct Validity",
-        "Content Validity",
-        "Logical Validity",
-        "Operationalization",
+        "Construct validity",
+        "Content validity",
         "Validity"
     ],
     "references": [
@@ -33,5 +31,5 @@
     "translation_reviewed_by": [
         "Ege Emek"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

@@ -6,9 +6,7 @@
     "definition": "Kurse, die ausschließlich online stattfinden, für jeden Lernenden jederzeit zugänglich sind, in der Regel kostenlos sind (wenn auch nicht unbedingt offen lizenziert) und videobasierte Anleitungen sowie herunterladbare Datensätze und Übungen bieten. Der Aspekt \"massive\" beschreibt die große Anzahl von Lernenden, die aufgrund der Flexibilität, der geringen oder gar nicht anfallenden Kosten und der Online-Natur der Materialien gleichzeitig auf den Kurs zugreifen können.",
     "related_terms": [
         "Accessibility",
-        "Distance education",
-        "Inclusion",
-        "Open learning"
+        "Inclusion"
     ],
     "references": [
         "Baturay, M. H. (2015). An overview of the world of MOOCs. <i>Procedia-Social and Behavioral Sciences</i>, <i>174</i>, 427–433. https://doi.org/10.1016/j.sbspro.2015.01.685",
@@ -35,5 +33,5 @@
         "Helena Hartmann",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

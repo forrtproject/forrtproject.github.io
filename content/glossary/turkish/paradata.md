@@ -5,11 +5,7 @@
     "sort_key": "paradata",
     "definition": "Bir bireyden toplanan birincil verilere ilişkin özellikler ve bağlam hakkında elde edilen verilerdir; metaveriden farklıdır. Paradata, bir katılımcının bir anket veya deneyle mikro düzeydeki etkileşimini incelemek için kullanılabilir. En kolay şekilde bilgisayar aracılığıyla yürütülen anketler sırasında toplanabilir, ancak bunlarla sınırlı değildir. Örnekler arasında, anket sorularına verilen yanıt süreleri, tüm sorular için aynı cevabın seçilmesi gibi tekrarlayan yanıt desenleri, katılımcının görevlerde iyi performans göstermesini kısıtlayan engeller gibi bağlamsal özellikleri, bir deneyde uyarıcılara verilen vaktinden erken yanıtların sayısı yer alır. Paradata, ölçüm ve örnekleme hatalarının araştırılması ve düzeltilmesinde kullanılmıştır.",
     "related_terms": [
-        "Auxiliary data",
-        "Data collection",
-        "Data quality",
-        "Metadata",
-        "Process information"
+        "Metadata"
     ],
     "references": [
         "Kreuter, F. (Ed.). (2013). <i>Improving Surveys with Paradata</i>. https://doi.org/10.1002/9781118596869"
@@ -33,5 +29,5 @@
     "translation_reviewed_by": [
         "Nihan Selin Soylu-Konak"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

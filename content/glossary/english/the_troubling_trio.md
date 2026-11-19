@@ -5,7 +5,7 @@
     "sort_key": "the troubling trio",
     "definition": "Described as a combination of low statistical power, a surprising result, and a *p*\\-value only slightly lower than .05.",
     "related_terms": [
-        "Replication",
+        "Replicability",
         "Reproducibility",
         "Null Hypothesis Significance Testing (NHST)",
         "p-hacking",
@@ -30,5 +30,5 @@
     "aliases": [
         "/glossary/the_troubling_trio"
     ],
-    "lastmod": "2026-11-08"
+    "lastmod": "2026-11-19"
 }

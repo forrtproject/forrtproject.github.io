@@ -5,14 +5,8 @@
     "sort_key": "ortak uzretim [co-production]",
     "definition": "Ortak üretim, geleneksel olarak araştırma sürecine dahil olmayan paydaşların, araştırmanın başlangıcında ya da tüm araştırma süreci boyunca iş birliği yapmaya teşvik edildiği bir araştırma yaklaşımıdır. Örneğin, ortak üretimle yürütülen sağlık araştırmalarında sağlık çalışanları ve hastaları; eğitim araştırmalarında ise öğretmenler ve öğrenciler araştırma sürecine aktif olarak dahil edebilir. Bu yaklaşım, araştırmacı olmayan kişilerin deneyimlerine saygı gösterme ve bu deneyimleri değerli görme, güç dinamiklerini sorgulama ve karşılıklı faydaya dayalı ilişkiler kurma gibi ilkelere dayanmaktadır.",
     "related_terms": [
-        "Citizen science",
-        "Collaboration",
-        "Collaborative research",
-        "Crowd science",
-        "Engaged scholarship",
-        "Integrated Knowledge Translation (IKT)",
-        "Mode 2 of knowledge production",
-        "Participatory research",
+        "Citizen Science",
+        "Participatory Research",
         "Patient and Public Involvement (PPI)"
     ],
     "references": [
@@ -41,5 +35,5 @@
     "translation_reviewed_by": [
         "Ege Emek"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

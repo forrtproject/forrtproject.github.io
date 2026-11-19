@@ -5,20 +5,16 @@
     "sort_key": "geczerlilik [validity]",
     "definition": "Geçerlilik, istatistiksel ilkelerin uygulanarak iyi temellendirilmiş—yani büyük olasılıkla gerçek dünyayla doğru bir şekilde örtüşen—kavramlara, sonuçlara veya ölçümlere ulaşılmasını ifade eder. Psikometrik bağlamda ise geçerlik, bir ölçüm aracının amaçladığı ya da iddia ettiği şeyi ne ölçüde gerçekten ölçtüğünü ifade eder. Bu genel kavram altında çeşitli geçerlik türleri bulunur (örneğin; iç geçerlilik, yapı geçerliliği, yüzey geçerliliği, ölçüt geçerliliği, tanısal geçerlilik, ayırt edici geçerlilik, eş zamanlı geçerlilik, yakınsak geçerlilik, yordayıcı geçerlilik, dış geçerlilik).",
     "related_terms": [
-        "Causality",
         "Construct validity",
         "Content validity",
         "Criterion validity",
-        "External validity",
+        "External Validity",
         "Face validity",
-        "Internal validity",
-        "Measurement",
+        "Internal Validity",
         "Questionable Measurement Practices (QMP)",
-        "Psychometry",
         "Reliability",
         "Statistical power",
-        "Statistical validity",
-        "Test"
+        "Statistical validity"
     ],
     "references": [
         "Campbell, D. T. (1957). Factors relevant to the validity of experiments in social settings. <i>Psychological Bulletin</i>, <i>54</i>(4), 297–312. https://doi.org/10.1037/h0040950",
@@ -46,5 +42,5 @@
     "translation_reviewed_by": [
         "Neslihan Özhan"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

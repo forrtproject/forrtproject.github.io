@@ -5,10 +5,7 @@
     "sort_key": "strange",
     "definition": "STRANGE“框架”是一套旨在帮助动物行为研究人员在规划、执行和解释动物研究时，考量抽样偏差的提案及系列问题。STRANGE是一个缩写词，揭示了动物研究中抽样偏差的潜在来源，例如动物的社会背景（Social background）、可捕获性与自主选择性（Trappability and self-selection）、饲养史（Rearing history）、适应性与习惯化（Acclimation and habituation）、反应能力的自然波动（Natural changes in responsiveness）、遗传背景（Genetic make-up）以及个体经历（Experience）。",
     "related_terms": [
-        "Bias",
         "Constraints on Generality (COG)",
-        "Populations",
-        "Sampling bias",
         "WEIRD"
     ],
     "references": [
@@ -38,5 +35,5 @@
         "Xiujuan Wen",
         "Shuxian Jin"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

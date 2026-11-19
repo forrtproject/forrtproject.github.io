@@ -5,8 +5,7 @@
     "sort_key": "r",
     "definition": "R, istatistiksel analizler yapmak ve verileri görselleştirmek için kullanılabilen, ücretsiz ve açık kaynaklı bir programlama dili ve yazılım ortamıdır. R, Ross Ihaka ve Robert Gentleman tarafından Auckland Üniversitesi'nde geliştirilmiştir. R, araştırmacıların yeniden üretilebilir analiz betikleri paylaşmasına olanak tanır; bu da bir çalışmanın şeffaflığını artırır. Çoğunlukla R, dili kullanmayı kolaylaştıran bir entegre geliştirme ortamı (IDE; Integrated Development Environment) ile birlikte kullanılır; örneğin RStudio, Visual Studio Code veya Tinn-R.",
     "related_terms": [
-        "Open-source",
-        "Statistical analysis"
+        "Open Source software"
     ],
     "references": [
         "R Project for Statistical Computing. (n.d.). <i>R: The R Project for Statistical Computing</i>. R Project. https://www.r-project.org/",
@@ -31,5 +30,5 @@
     "translation_reviewed_by": [
         "Nihan Selin Soylu-Konak"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

@@ -5,16 +5,14 @@
     "sort_key": "statistical power",
     "definition": "Statistical power is the long-run probability that a statistical test correctly rejects the null hypothesis if the alternative hypothesis is true. It ranges from 0 to 1, but is often expressed as a percentage. Power can be estimated using the significance criterion (alpha), effect size, and sample size used for a specific analysis technique. There are two main applications of statistical power. A priori power where the researcher asks the question “given an effect size, how many participants would I need for X% power?”. Sensitivity power asks the question “given a known sample size, what effect size could I detect with X% power?”.",
     "related_terms": [
-        "Effect Size",
+        "Effect size",
         "Meta-analysis",
         "Null Hypothesis Significance Testing (NHST)",
-        "Power Analysis",
-        "Positive Predictive Value",
         "Quantitative research",
-        "Sample size",
-        "Significance criterion (alpha)",
+        "Statistical significance",
         "Type I error",
-        "Type II error"
+        "Type II error",
+        "GPower"
     ],
     "references": [
         "Carter, A., Tilling, K., & Munafo, M. R. (2021). <i>Considerations of sample size and power calculations given a range of analytical scenarios</i>. https://doi.org/10.31234/osf.io/tcqrn",
@@ -50,5 +48,5 @@
     "aliases": [
         "/glossary/statistical_power"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

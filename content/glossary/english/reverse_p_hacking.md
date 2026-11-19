@@ -5,9 +5,9 @@
     "sort_key": "reverse p-hacking",
     "definition": "Exploiting researcher degrees of freedom during statistical analysis in order to increase the likelihood of accepting the null hypothesis (for instance, *p* \\> .05).",
     "related_terms": [
-        "Analytic flexibility",
+        "Analytic Flexibility",
         "HARKing",
-        "P-hacking",
+        "p-hacking",
         "Questionable Research Practices or Questionable Reporting Practices (QRPs)",
         "Researcher degrees of freedom",
         "Selective reporting"
@@ -31,5 +31,5 @@
     "aliases": [
         "/glossary/reverse_p_hacking"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

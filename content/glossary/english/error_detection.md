@@ -6,8 +6,8 @@
     "definition": "Broadly refers to examining research data and manuscripts for mistakes or inconsistencies in reporting. Commonly discussed approaches include: checking inconsistencies in descriptive statistics (e.g. summary statistics that are not possible given the sample size and measure characteristics; Brown & Heathers, 2017; Heathers et al. 2018), inconsistencies in reported statistics (e.g. *p*\\-values that do not match the reported *F* statistics and accompanying degrees of freedom; Epskamp, & Nuijten, 2016; Nuijten et al. 2016), and image manipulation (Bik et al., 2016). Error detection is one motivation for data and analysis code to be openly available, so that peer review can confirm a manuscript’s findings, or if already published, the record can be corrected. Detected errors can result in corrections or retractions of published articles, though these actions are often delayed, long after erroneous findings have influenced and impacted further research.",
     "related_terms": [
         "Research integrity",
-        "correction",
-        "retraction"
+        "Corrigendum",
+        "Retraction"
     ],
     "references": [
         "Bik, E. M., Casadevall, A., & Fang, F. C. (2016). The prevalence of inappropriate image duplication in biomedical research publications. <i>MBio</i>, <i>7</i>(3), e00809-16.",
@@ -35,5 +35,5 @@
     "aliases": [
         "/glossary/error_detection"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

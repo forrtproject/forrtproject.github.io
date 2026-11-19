@@ -5,12 +5,8 @@
     "sort_key": "many authors",
     "definition": "Large-scale collaborative projects involving tens or hundreds of authors from different institutions. This kind of approach has become increasingly common in psychology and other sciences in recent years as opposed to research carried out by small teams of authors, following earlier trends which have been observed e.g. for high-energy physics or biomedical research in the 1990s. These large international scientific consortia work on a research project to bring together a broader range of expertise and work collaboratively to produce manuscripts.",
     "related_terms": [
-        "Collaboration",
-        "Consortia",
         "Consortium authorship",
-        "Crowdsourcing",
-        "Hyperauthorship",
-        "Multiple-authors",
+        "Crowdsourced Research",
         "Team science"
     ],
     "references": [
@@ -32,8 +28,11 @@
         null
     ],
     "language": "english",
+    "also_known_as": [
+        "Hyperauthorship"
+    ],
     "aliases": [
         "/glossary/many_authors"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

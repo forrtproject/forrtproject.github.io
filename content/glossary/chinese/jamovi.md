@@ -6,7 +6,7 @@
     "definition": "Jamovi是一款基于 R 语言的免费、开源数据分析软件。该软件具有图形用户界面，能够为数据分析提供 R 代码。Jamovi将数据、代码、分析过程与结果保存在一个文件中，支持了计算可重复性。",
     "related_terms": [
         "JASP",
-        "Open source",
+        "Open Source software",
         "R",
         "Reproducibility"
     ],
@@ -34,5 +34,5 @@
         "Ruoting Liu",
         "Shuxian Jin"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }
