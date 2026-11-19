@@ -2665,7 +2665,9 @@ summary.clusters-overview__heading::before{content:"";width:0;height:0;border-le
 @media(max-width:760px){.cluster-full-width.clusters-display-section{margin-left:0!important;margin-right:0!important}}
 
 /* Clusters wheel: pointing at or focusing a cluster's label traces its line from the hub (0.26 s) and outlines its
-   wedge; with reduced motion both appear at once. */
+   wedge; with reduced motion both appear at once. A panel that closes goes at once (opening still fades in), so its
+   text never shows through the next one. */
+.clusters-map__panel{transition:none}
 .clusters-map__ring .clusters-map__segment{transition:stroke-width .2s ease-out}
 .clusters-map__ring .is-active .clusters-map__segment{stroke:var(--ink);stroke-width:3}
 @media(prefers-reduced-motion:no-preference){

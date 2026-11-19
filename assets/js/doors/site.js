@@ -738,9 +738,7 @@ if (listFilter) {
     bricks.className = 'outcome-bricks section-mix';
     bricks.setAttribute('aria-hidden', 'true');
     outcomes.forEach(({key}) => items.filter((item) => item.querySelector(`.status-${key}`)).forEach(() => {
-      const brick = Object.assign(document.createElement('i'), {className: `status-${key}`});
-      brick.style.setProperty('--i', bricks.childElementCount);  // its place in the strip, for the ripple
-      bricks.append(brick);
+      bricks.append(Object.assign(document.createElement('i'), {className: `status-${key}`}));
     }));
     return bricks;
   };

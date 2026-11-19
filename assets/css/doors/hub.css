@@ -58,3 +58,5 @@
 .hub-lobes{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
 .hub-lobe{fill:none;stroke:var(--ink);stroke-width:9;stroke-dasharray:1;stroke-dashoffset:1;opacity:0;transition:stroke-dashoffset .3s ease-out,opacity .12s}
 .hub-lobe.is-lit{stroke-dashoffset:0;opacity:1}
+/* Each brick names the stage it belongs to, so the link to the diagram holds on touch screens and for screen readers. */
+.hub-start .action-cards .hub-start-stage{order:-1;font:600 15px/1.2 var(--text);opacity:.9}  /* sentence case, not tracked capitals (DESIGN.md §1) */
