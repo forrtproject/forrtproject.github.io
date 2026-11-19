@@ -5,8 +5,7 @@
     "sort_key": "epistemic uncertainty",
     "definition": "Systematic uncertainty due to limited data, measurement precision, model or process specification, or lack of knowledge. That is, uncertainty due to lack of knowledge that could, in theory, be reduced through conducting additional research to increase understanding. Such uncertainty is said to be personal, since knowledge differs across scientists, and temporary since it can change as new data become available.",
     "related_terms": [
-        "Aleatoric uncertainty",
-        "Knightian uncertainty"
+        "Aleatoric uncertainty"
     ],
     "references": [
         "Der Kiureghian, A., & Ditlevsen, O. (2009). Aleatory or epistemic? Does it matter? <i>Structural Safety</i>, <i>31</i>(2), 105–112. https://doi.org/10.1016/j.strusafe.2008.06.020",
@@ -28,5 +27,5 @@
     "aliases": [
         "/glossary/epistemic_uncertainty"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

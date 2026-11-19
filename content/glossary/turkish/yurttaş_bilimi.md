@@ -5,8 +5,7 @@
     "sort_key": "yurttasz bilimi [citizen science]",
     "definition": "Yurttaş bilimi, toplumu bilimsel çalışmalara aktif olarak dahil eden projeleri ifade eder ve amacı bilimi demokratikleştirmektir. Yurttaş bilim insanları, araştırmanın tüm aşamalarında iş birliği yapanlar, katkı sağlayanlar ya da proje liderleri olarak yer alabilirler. Büyük çaplı yurttaş bilimi projelerine bir örnek olarak, bireylerin astronomik cisimleri tanımlaması verilebilir (Lintott, 2008).",
     "related_terms": [
-        "Crowd science",
-        "Crowdsourcing"
+        "Crowdsourced Research"
     ],
     "references": [
         "Cohn, J. P. (2008). Citizen science: Can volunteers do real research? <i>BioScience</i>, <i>58</i>(3), 192–197. https://doi.org/10.1641/B580303",
@@ -32,5 +31,5 @@
     "translation_reviewed_by": [
         "Elif Baştan"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

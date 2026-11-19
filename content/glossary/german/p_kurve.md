@@ -5,14 +5,13 @@
     "sort_key": "p-kurve [p-curve]",
     "definition": "Die P-Kurve ist ein Instrument zur Erkennung potenzieller Publikationsverzerrungen (bias) und nutzt die Verteilung signifikanter *p*\\-Werte in einer Reihe unabhängiger Befunde. Die Abweichung von der erwarteten rechtsschiefen Verteilung kann verwendet werden, um das Vorhandensein und das Ausmaß von Publikationsverzerrungen zu bewerten: Wenn die Kurve rechtsschief ist, gibt es mehr niedrige, hochsignifikante *p*\\-Werte, die einen zugrunde liegenden wahren Effekt widerspiegeln. Wenn die Kurve linksschief ist, gibt es viele kaum signifikante Ergebnisse knapp unter der .05-Schwelle. Dies deutet darauf hin, dass die Studien nicht aussagekräftig sind und möglicherweise durch fragwürdige Forschungspraktiken (questionable research practices, QRPs; z. B. *p*\\-hacking) untermauert werden. Wenn kein echter Effekt vorliegt (wahre Nullhypothese) und der p-Wert unverzerrt angegeben wird, sollte die P-Kurve eine flache, horizontale Linie sein, was die typische Verteilung der *p*\\-Werte darstellt.",
     "related_terms": [
-        "File-drawer",
+        "Publication bias (File Drawer Problem)",
         "Hypothesis",
         "p-hacking",
         "p-value",
-        "Publication bias (File Drawer Problem)",
         "Questionable Research Practices or Questionable Reporting Practices (QRPs)",
         "Selective reporting",
-        "Z-curve"
+        "Z-Curve"
     ],
     "references": [
         "Bruns, S. B., & Ioannidis, J. P. (2016). P-curve and p-hacking in observational research. <i>PLoS ONE</i>, <i>11</i>(2), e0149144. https://doi.org/10.1371/journal.pone.0149144",
@@ -41,5 +40,5 @@
         "Susanne Vogel",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-11-08"
+    "lastmod": "2026-11-19"
 }

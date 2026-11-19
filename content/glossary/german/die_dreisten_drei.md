@@ -5,7 +5,7 @@
     "sort_key": "die dreisten drei [the troubling trio]",
     "definition": "Beschrieben als eine Kombination aus geringer statistischer Teststärke (Power), einem überraschenden Ergebnis und einem *p*\\-Wert, der nur geringfügig niedriger als .05 ist.",
     "related_terms": [
-        "Replication",
+        "Replicability",
         "Reproducibility",
         "Null Hypothesis Significance Testing (NHST)",
         "p-hacking",
@@ -34,5 +34,5 @@
         "Susanne Vogel",
         "Joris Frese"
     ],
-    "lastmod": "2026-11-08"
+    "lastmod": "2026-11-19"
 }

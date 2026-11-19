@@ -5,17 +5,15 @@
     "sort_key": "barrierefreiheit [accessibility]",
     "definition": "Barrierefreiheit (Accessibility) bezieht sich auf den einfachen Zugriff auf und die Wiederverwendung von Materialien (z. B. Daten, Code, Ergebnisse, Veröffentlichungen) für akademische Zwecke, wobei insbesondere Menschen mit einer chronischen Krankheit, einer Behinderung und/oder Neurodivergenz der Zugang erleichtert wird. Diese Gruppen sind mit zahlreichen finanziellen, rechtlichen und/oder technischen Hindernissen in der Forschung konfrontiert, einschließlich (aber nicht beschränkt auf) dem Erwerb von angemessen formatierten Materialien und dem physischen Zugang zu Räumen. Accessibility umfasst auch strukturelle Anliegen wie Diversität, Gleichberechtigung, Inklusion und Repräsentation (Pownall et al., 2021). Bei der Gestaltung von Benutzer:innenoberflächen, Veranstaltungen und Räumen sollte auf Barrierefreiheit geachtet werden, um eine uneingeschränkte Teilnahme zu gewährleisten. Beispielsweise kann sichergestellt werden, dass webbasierte Bilder erkennbar für farbenblinde Menschen sind und über Bildbeschreibungen verfügen, oder indem bei Veranstaltungen Live-Untertitel eingeblendet werden (Brown et al., 2018; Pollet & Bond, 2021; World Wide Web Consortium, 2021).",
     "related_terms": [
-        "Availability",
-        "Data availability statements",
         "Inclusion",
-        "Open Access",
+        "Open access",
         "Under-representation",
         "Universal design for learning (UDL)"
     ],
     "references": [
         "Brown, N., Thompson, P., & Leigh, J. S. (2018). Making academia more accessible. <i>Journal of Perspectives in Applied Academic Practice</i>, <i>6</i>(2), 82–90. https://doi.org/10.14297/jpaap.v6i2.348",
         "Pollet, I. L., & Bond, A. L. (2021). Evaluation and recommendations for greater accessibility of colour figures in ornithology. <i>Ibis</i>, <i>163</i>, 292–295. https://doi.org/10.1111/ibi.12887",
-        "Suber, P. (2004). The primacy of authors in achieving Open Access. In <i>Nature</i>. Retrieved from http://dash.harvard.edu/handle/1/4391161)",
+        "Suber, P. (2004). The primacy of authors in achieving Open Access. In <i>Nature</i>. Retrieved from http://dash.harvard.edu/handle/1/4391161",
         "World Wide Web Consortium. (2021). <i>Web Accessibility Initiative</i>. https://www.w3.org/WAI/",
         "Pownall, M., Talbot, C. V., Henschel, A., Lautarescu, A., Lloyd, K. E., Hartmann, H., Darda, K. M., Tang, K. T. Y., Carmichael-Murphy, P., & Siegel, J. A. (2021). Navigating Open Science as Early Career Feminist Researchers. <i>Psychology of Women Quarterly</i>, <i>45</i>(4), 526–539. https://doi.org/10.1177/03616843211029255"
     ],
@@ -46,5 +44,5 @@
         "Susanne Vogel",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

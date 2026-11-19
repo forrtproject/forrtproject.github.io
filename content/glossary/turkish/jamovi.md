@@ -6,7 +6,7 @@
     "definition": "R diline dayalı veri analizi için kullanılan ücretsiz ve açık kaynaklı bir yazılım. Yazılımın grafiksel bir kullanıcı arayüzü vardır ve analizlere R kodunu sağlar. Jamovi, verileri, kodu, analizleri ve sonuçları tek bir dosyada kaydederek hesaplamalı yeniden üretilebilirliği destekler.",
     "related_terms": [
         "JASP",
-        "Open source",
+        "Open Source software",
         "R",
         "Reproducibility"
     ],
@@ -31,5 +31,5 @@
     "translation_reviewed_by": [
         "Merve Öztürk"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

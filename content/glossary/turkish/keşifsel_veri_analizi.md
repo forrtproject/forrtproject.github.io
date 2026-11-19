@@ -5,9 +5,7 @@
     "sort_key": "keszifsel veri analizi [exploratory data analysis]",
     "definition": "Keşifsel veri analizi, verideki örüntüleri keşfetmeye ve bu yolla hipotez geliştirme ve mevcut hipotezleri gözden geçirmeye olanak tanıyan kavramsal ve işlemsel araçlar sunan köklü bir istatistiksel yaklaşımdır. Bu analizin sunduğu araçlar ve yaklaşım biçimi, doğrulayıcı veri analizinde (confirmatory data analysis) kullanılan hipotez testlerini tamamlayıcı niteliktedir. Teoriler net bir şekilde tanımlanmış olsa dahi, keşifsel veri analizi, doğrulayıcı veri analizinin sonuçlarının yorumlanmasına katkı sağlar ve verideki beklenmedik ya da yanıltıcı örüntülerin ortaya çıkmasına yardımcı olur.",
     "related_terms": [
-        "Confirmatory analyses",
-        "Data-driven research",
-        "Exploratory research"
+        "Confirmatory analyses"
     ],
     "references": [
         "Behrens, J. T. (1997). Principles and procedures of exploratory data analysis. <i>Psychological Methods</i>, <i>2</i>(2), 131–160. https://doi.org/10.1037/1082-989X.2.2.131",
@@ -34,5 +32,5 @@
     "translation_reviewed_by": [
         "Ege Emek"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

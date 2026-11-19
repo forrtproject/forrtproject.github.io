@@ -6,10 +6,7 @@
     "definition": "Different individuals have different starting positions (cf. “opportunity gaps”) and needs. Whereas equal treatment focuses on treating all individuals *equally*, equitable treatment aims to level the playing field by actively increasing opportunities for under-represented minorities. Equitable treatment aims to attain equality through “fairness”: taking into account different needs for support for different individuals, instead of focusing merely on the needs of the majority.",
     "related_terms": [
         "Diversity",
-        "Equality",
-        "Fairness",
-        "Inclusion",
-        "Social justice"
+        "Inclusion"
     ],
     "references": [
         "Albayrak-Aydemir, N. (2020). <i>The hidden costs of being a scholar from the global south</i>. Retrieved from https://blogs.lse.ac.uk/highereducation/2020/02/20/the-hidden-costs-of-being-a-scholar-from-the-global-south/",
@@ -33,5 +30,5 @@
     "aliases": [
         "/glossary/equity"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

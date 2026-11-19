@@ -6,8 +6,6 @@
     "definition": "RIOT科学俱乐部是一个多地举办的系列研讨会，旨在提升对可重复、可解释、开放和透明科学实践的认知，并提供培训。它定期提供讲座、研讨会和会议，所有这些内容均公开可用，并可在相关网站和Youtube上重播观看。",
     "related_terms": [
         "Early career researchers (ECRs)",
-        "Interpretability",
-        "Openness",
         "Reproducibility",
         "Transparency"
     ],
@@ -36,5 +34,5 @@
         "Ruoting Liu",
         "Shuxian Jin"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

@@ -5,9 +5,7 @@
     "sort_key": "bilgi edinme [knowledge acquisition]",
     "definition": "Zihnin, yeni bilgiyi çözümlediği veya çıkardığı, depoladığı ve uzun süreli bellekteki mevcut bilgilerle ilişkilendirdiği süreçtir. Bilginin karmaşık yapısı ve doğası göz önüne alındığında, bu süreç hem felsefenin bilgi kuramı (epistemoloji) alanında hem de psikolojinin öğrenme ve bellek alanında incelenir.",
     "related_terms": [
-        "Epistemology",
-        "Information",
-        "Learning"
+        "Epistemology"
     ],
     "references": [
         "Brule, J., & Blount, A. (1989). <i>Knowledge acquisition</i>. McGraw-Hill."
@@ -31,5 +29,5 @@
     "translation_reviewed_by": [
         "Merve Öztürk"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

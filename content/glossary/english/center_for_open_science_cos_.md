@@ -5,14 +5,10 @@
     "sort_key": "center for open science (cos)",
     "definition": "A non-profit technology organization based in Charlottesville, Virginia with the mission “to increase openness, integrity, and reproducibility of research.” Among other resources, the COS hosts the Open Science Framework (OSF) and the Open Scholarship Knowledge Base.",
     "related_terms": [
-        "Open Science badges",
+        "Badges (Open Science)",
         "Open Science Framework",
-        "OSF collections",
-        "OSF institutions",
-        "OSF meetings",
-        "OSF preprints",
-        "OSF registries",
-        "Registrations (Preregistrations & Registered Reports)",
+        "Preregistration",
+        "Registered Report",
         "Transparency and Openness Promotion Guidelines (TOP)"
     ],
     "references": [
@@ -34,5 +30,5 @@
     "aliases": [
         "/glossary/center_for_open_science_cos_"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

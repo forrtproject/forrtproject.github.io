@@ -6,7 +6,7 @@
     "definition": "Farklı akademik disiplinlerden araştırma veri depolarının küresel bir kayıt arşividir. Bu arşiv, araştırmacıların, fon sağlayıcıların, yayınevlerinin ve akademik kurumların veri setlerini kalıcı olarak depolamasına, metaveri ile tanımlamasına ve bu verilere erişmesine olanak tanıyan depoları içerir.",
     "related_terms": [
         "Metadata",
-        "Open Access",
+        "Open access",
         "Open Data",
         "Open Material",
         "Repository"
@@ -33,5 +33,5 @@
     "translation_reviewed_by": [
         "Neslihan Özhan"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

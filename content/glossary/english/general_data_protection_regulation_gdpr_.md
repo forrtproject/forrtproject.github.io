@@ -6,7 +6,7 @@
     "definition": "A legal framework of seven principles implemented across the European Union (EU) that aims to safeguard individuals’ information. The framework seeks to commission citizens with control over their personal data, whilst regulating the parties involved in storing and processing these data. This set of legislation dictates the free movement of individuals’ personal information both within and outside the EU and must be considered by researchers when designing and running studies.",
     "related_terms": [
         "Anonymity",
-        "Data Management Plan (DMP)",
+        "Data management plan (DMP)",
         "Data sharing",
         "Repeatability",
         "Replicability",
@@ -33,5 +33,5 @@
     "aliases": [
         "/glossary/general_data_protection_regulation_gdpr_"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

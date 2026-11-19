@@ -6,11 +6,11 @@
     "definition": "Bilimsel repolar için en iyi uygulamaları ve bu uygulamalar için değerlendirme kriterlerini belirleyen bir platformdur. Esnek ve çok boyutlu yaklaşımı sayesinde, farklı coğrafi ve tematik bağlamlardaki yayın veya veri barındıran çeşitli repo türlerine uygulanabilir.",
     "related_terms": [
         "Metadata",
-        "Open Access",
+        "Open access",
         "Open Data",
         "Open Material",
         "Repository",
-        "TRUST principles"
+        "TRUST Principles"
     ],
     "references": [
         "Confederation of Open Access Repositories. (2020). <i>COAR Community Framework for Best Practices in Repositories (Version 1)</i>. Zenodo. https://doi.org/10.5281/zenodo.4110829"
@@ -34,5 +34,5 @@
     "translation_reviewed_by": [
         "Elif Baştan"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

@@ -5,9 +5,9 @@
     "sort_key": "fanxiangpzhicaozong",
     "definition": "反向p值操纵是指在统计分析中，利用研究人员的自由度增加接受零假设（如 p > .05）的可能性。",
     "related_terms": [
-        "Analytic flexibility",
+        "Analytic Flexibility",
         "HARKing",
-        "P-hacking",
+        "p-hacking",
         "Questionable Research Practices or Questionable Reporting Practices (QRPs)",
         "Researcher degrees of freedom",
         "Selective reporting"
@@ -37,5 +37,5 @@
         "Ruoting Liu",
         "Shuxian Jin"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

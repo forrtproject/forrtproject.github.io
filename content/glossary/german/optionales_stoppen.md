@@ -6,8 +6,7 @@
     "definition": "Die Praxis der (wiederholten) Analyse von Daten während der Datenerhebung und die Entscheidung, die Datenerhebung zu beenden, wenn ein statistisches Kriterium (z. B. der *p*\\-Wert oder der Bayes-Faktor) einen bestimmten Schwellenwert erreicht. Wenn geeignete methodische Vorkehrungen zur Kontrolle der Fehlerquote vom Typ 1 getroffen werden, kann dies ein effizientes Analyseverfahren sein (z. B. Lakens, 2014). Ohne eine transparente Berichterstattung oder eine angemessene Fehlerkontrolle kann der Typ-1-Fehler jedoch stark ansteigen, und Optionales Stoppen könnte als fragwürdige Forschungspraxis (questionable research practice; QRP) oder als eine Form des *p*\\-hacking betrachtet werden.",
     "related_terms": [
         "p-hacking",
-        "Questionable Research Practices or Questionable Reporting Practices (QRPs)",
-        "Sequential testing"
+        "Questionable Research Practices or Questionable Reporting Practices (QRPs)"
     ],
     "references": [
         "Beffara Bret, B., Beffara Bret, A., & Nalborczyk, L. (2021). A fully automated, transparent, reproducible, and blind protocol for sequential analyses. <i>Meta-Psychology</i>, <i>5</i>. https://doi.org/10.15626/MP.2018.869",
@@ -35,5 +34,5 @@
         "Helena Hartmann",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-11-08"
+    "lastmod": "2026-11-19"
 }

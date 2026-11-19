@@ -5,9 +5,9 @@
     "sort_key": "open washing",
     "definition": "Open Washing, benannt nach dem Ausdruck \"Greenwashing\", bezieht sich auf die Behauptung von Offenheit, um den Eindruck von Rigorosität (Sorgfalt) oder Prestige zu erwecken, die mit offenen Praktiken verbunden sind. Der Begriff wurde verwendet, um die Marketingstrategie von Softwareunternehmen zu charakterisieren, die den Anschein von Open-Source und Open-Licensing erwecken, während sie proprietäre Praktiken anwenden. Open Washing ist ein wachsendes Problem für diejenigen, die offene wissenschaftliche Praktiken anwenden, da ihre Maßnahmen durch eine irreführende Verwendung der Praktiken untergraben werden und Maßnahmen zur Erleichterung fortschrittlicher Entwicklungen auf ein \"Abhaken von Checklisten\" ohne klare Qualitätskontrolle reduziert werden.",
     "related_terms": [
-        "Open Access",
+        "Open access",
         "Open Data",
-        "Open Source"
+        "Open Source software"
     ],
     "references": [
         "Farrow, R. (2017). Open Education and Critical Pedagogy. <i>Learning, Media and Technology</i>, <i>42</i>(2), 130–146. https://doi.org/10.1080/17439884.2016.1113991",
@@ -36,5 +36,5 @@
         "Susanne Vogel",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

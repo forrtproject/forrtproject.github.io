@@ -7,7 +7,6 @@
     "related_terms": [
         "Positionality",
         "Qualitative research",
-        "Social identity map",
         "Transparency"
     ],
     "references": [
@@ -33,5 +32,5 @@
         "Jennifer Mattschey",
         "Susanne Vogel"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

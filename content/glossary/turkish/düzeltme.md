@@ -5,8 +5,6 @@
     "sort_key": "duzzeltme [corrigendum]",
     "definition": "Düzeltme (corrigendum) terimi, yayımlanmış bir çalışmada, çalışmanın temel iddiasını ya da sonuçlarını değiştirmeyen bir veya birden fazla hatayı belgelemek için kullanılır ve bu nedenle eserin geri çekilmesini gerektirmez. Düzeltmeler genellikle şeffaflığı sağlamak amacıyla orijinal eserle birlikte yayımlanır. Bazı yayınevleri bu belgeyi erratum (çoğulu: errata, İngilizce: ‘error’) olarak da adlandırırken, bazıları ise ikisi arasında şöyle bir ayrım yapar: düzeltme yazar kaynaklı hataları, erratum ise yayınevi kaynaklı hataları ifade eder.",
     "related_terms": [
-        "Correction",
-        "Errata",
         "Retraction"
     ],
     "references": [
@@ -32,5 +30,5 @@
     "translation_reviewed_by": [
         "Ege Emek"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

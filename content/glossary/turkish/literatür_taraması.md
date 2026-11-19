@@ -5,10 +5,9 @@
     "sort_key": "literatuzr taramasiz [literature review]",
     "definition": "Araştırmacılar, yeni bir araştırma projesine başlamadan önce, ilgi duydukları etkileri ve olguları daha iyi anlamak, kuram ile kanıt arasındaki bağlantıyı kavramak ya da mevcut çalışma sonuçları ve iddialarındaki ortak temaları ve yönelimleri incelemek amacıyla belirli bir konuya ilişkin araştırma kayıtlarını sıklıkla gözden geçirirler. Araştırma sorusuna ve literatürün kapsamına bağlı olarak farklı türlerde taramalar yapılabilir. Belirli bir alandaki kapsamı ve temel kavramları belirlemek için araştırmacılar bir kapsam belirleyici literatür taraması (scoping review) yapmak isteyebilirler. Sistematik taramalar, mevcut literatürün en doğru ve tarafsız temsili için tüm mevcut kayıtlara erişmeyi ve bunları incelemeyi amaçlar. Sistematik olmayan veya odaklanmış literatür taramaları ise araştırma sorusuyla ilgili seçilmiş çalışmalardan bilgi sentezler; ancak yanlılıklara (örn., araştırmacı önyargısı; Siddaway vd., 2019) yatkın olmaları nedeniyle daha az yaygındır.",
     "related_terms": [
-        "Evidence synthesis",
-        "Meta-research",
-        "Narrative reviews",
-        "Systematic reviews"
+        "Evidence Synthesis",
+        "Meta-science or Meta-research",
+        "Systematic Review"
     ],
     "references": [
         "Huelin, R., Iheanacho, I., Payne, K., & Sandman, K. (2015). What’s in a name? Systematic and non-systematic literature reviews, and why the distinction matters. <i>The Evidence Forum</i>, 34–37. Retrieved from https://www.evidera.com/wp-content/uploads/2015/06/Whats-in-a-Name-Systematic-and-Non-Systematic-Literature-Reviews-and-Why-the-Distinction-Matters.pdf",
@@ -30,5 +29,5 @@
     "translation_reviewed_by": [
         "Merve Öztürk"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

@@ -5,7 +5,7 @@
     "sort_key": "kuzmuzlatif bilim [cumulative science]",
     "definition": "Herhangi bir deneysel bilimin hedeflerinden biridir ve “bilimin geleceğinin üzerine inşa edilebileceği bir bilgi birikimi temeli oluşturma” sürecini ifade eder (Curran, 2009, s.1). Kümülatif bilim, toplanan veri ve kanıt miktarına bağlı olarak daha kapsamlı ve doğru kuramların gelişeceği fikrine dayanır. Bu tür bilimsel ilerleme ani keşiflerden çok, aşamalı ve artan adımlarla gerçekleşir. Devrimsel bilim nadiren ortaya çıkarken, kümülatif bilim bilimsel üretimin en yaygın biçimidir.",
     "related_terms": [
-        "Slow Science"
+        "Slow science"
     ],
     "references": [
         "Curran, P. J. (2009). The seemingly quixotic pursuit of a cumulative psychological science: Introduction to the special issue. <i>Psychological Methods</i>, <i>14</i>(2), 77–80. https://doi.org/10.1037/a0015972",
@@ -35,5 +35,5 @@
     "translation_reviewed_by": [
         "Ege Emek"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

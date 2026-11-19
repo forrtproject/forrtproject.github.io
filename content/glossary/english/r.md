@@ -5,8 +5,7 @@
     "sort_key": "r",
     "definition": "R is a free, open-source programming language and software environment that can be used to conduct statistical analyses and plot data. R was created by Ross Ihaka and Robert Gentleman at the University of Auckland. R enables authors to share reproducible analysis scripts, which increases the transparency of a study. Often, R is used in conjunction with an integrated development environment (IDE) which simplifies working with the language, for example RStudio or Visual Studio Code, or Tinn-R .",
     "related_terms": [
-        "Open-source",
-        "Statistical analysis"
+        "Open Source software"
     ],
     "references": [
         "R Project for Statistical Computing. (n.d.). <i>R: The R Project for Statistical Computing</i>. R Project. https://www.r-project.org/",
@@ -28,5 +27,5 @@
     "aliases": [
         "/glossary/r"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

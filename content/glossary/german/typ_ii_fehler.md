@@ -9,9 +9,8 @@
         "Null Hypothesis Significance Testing (NHST)",
         "Questionable Research Practices or Questionable Reporting Practices (QRPs)",
         "Reproducibility crisis (aka Replicability or replication crisis)",
-        "Scientific integrity",
+        "Research integrity",
         "Statistical power",
-        "True positive result",
         "Type I error"
     ],
     "references": [
@@ -37,5 +36,5 @@
         "Susanne Vogel",
         "Joris Frese"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

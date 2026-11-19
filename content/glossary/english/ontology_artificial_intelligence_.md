@@ -5,9 +5,7 @@
     "sort_key": "ontology (artificial intelligence)",
     "definition": "A set of axioms in a subject area that help classify and explain the nature of the entities under study and the relationships between them.",
     "related_terms": [
-        "Axiology",
-        "Epistemology",
-        "Taxonomy"
+        "Epistemology"
     ],
     "references": [
         "Noy, N. F., & McGuinness, D. L. (2001). <i>Ontology development 101: A guide to creating your first ontology</i>. https://corais.org/sites/default/files/ontology_development_101_aguide_to_creating_your_first_ontology.pdf"
@@ -26,5 +24,5 @@
     "aliases": [
         "/glossary/ontology_artificial_intelligence_"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

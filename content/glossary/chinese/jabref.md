@@ -5,7 +5,7 @@
     "sort_key": "jabref",
     "definition": "JabRef是一款开源、跨平台、免费的引文与参考文献管理工具。它支持编辑 BibTeX 文件、从在线科学数据库导入数据、以及管理和搜索 BibTeX 文件。",
     "related_terms": [
-        "Open source software"
+        "Open Source software"
     ],
     "references": [
         "JabRef Development Team. (2021). <i>JabRef - An open-source, cross-platform citation and reference management software</i>. https://www.jabref.org"
@@ -32,5 +32,5 @@
         "Ruoting Liu",
         "Shuxian Jin"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

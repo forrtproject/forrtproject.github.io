@@ -5,10 +5,9 @@
     "sort_key": "i-10 indeksi [i10-index]",
     "definition": "Google Akademik tarafından oluşturulan, bir araştırmacının en az 10 atıf almış yayınlarının sayısını temsil eden bir araştırma metriğidir.",
     "related_terms": [
-        "Citation",
         "DORA",
         "H-index",
-        "Impact"
+        "Academic Impact"
     ],
     "references": [
         "Cornell University. (2020). <i>Measuring your research impact: i10 index</i>. Cornell University Library. https://guides.library.cornell.edu/impact/author-impact-10"
@@ -30,5 +29,5 @@
     "translation_reviewed_by": [
         "Merve Öztürk"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

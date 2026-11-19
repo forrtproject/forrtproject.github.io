@@ -5,8 +5,7 @@
     "sort_key": "epistemik belirsizlik [epistemic uncertainty]",
     "definition": "Sınırlı veri, ölçüm hassasiyetinin zayıflığı, model ya da süreç tanımlamalarındaki eksiklikler ya da bilgi eksikliğinden kaynaklanan sistematik bir belirsizliktir. Yani, bilgi eksikliğinden doğan ve teoride, daha fazla araştırma yapılarak ve konunun daha iyi anlaşılmasıyla azaltılabilecek bir belirsizliktir. Bu tür belirsizlik kişiseldir, çünkü bilgi düzeyi bilim insanları farklılık gösterebilir; aynı zamanda geçicidir, çünkü yeni veriler elde edildikçe bu belirsizlik durumu değişebilir.",
     "related_terms": [
-        "Aleatoric uncertainty",
-        "Knightian uncertainty"
+        "Aleatoric uncertainty"
     ],
     "references": [
         "Der Kiureghian, A., & Ditlevsen, O. (2009). Aleatory or epistemic? Does it matter? <i>Structural Safety</i>, <i>31</i>(2), 105–112. https://doi.org/10.1016/j.strusafe.2008.06.020",
@@ -31,5 +30,5 @@
     "translation_reviewed_by": [
         "Ege Emek"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

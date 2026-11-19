@@ -5,12 +5,8 @@
     "sort_key": "czoklu laboratuvarliz [many labs]",
     "definition": "Açık Bilim İş birliği ( Open Science Collaboration) (2015) tarafından yürütülen, çeşitli üniversitelerden yüzlerce bağımsız araştırma grubunun yayınlanmış etkilerin tekrarlama çalışmalarını yürüttüğü bir kitle kaynaklı girişimdir. Bu girişim aynı zamanda \"Many Labs I\" olarak da bilinir ve daha sonra örneklemler ve bağlamlar arasında tekrarlama sonuçlarındaki farklılıkları değerlendiren \"Many Labs II\" projesiyle devam etmiştir. Benzer projeler arasında ManyBabies (Çoklu Bebek Araştırmaları), EEGManyLabs (Çoklu EEG Laboratuvarları) ve Psychological Science Accelerator (Psikoloji Bilimi Hızlandırıcı) yer almaktadır.",
     "related_terms": [
-        "Collaboration",
-        "Many analysts",
-        "Many Labs I",
-        "Many Labs II",
-        "Open Science Collaboration",
-        "Replication"
+        "Multi-Analyst Studies",
+        "Replicability"
     ],
     "references": [
         "Ebersole, C. R., Atherton, O. E., Belanger, A. L., Skulborstad, H. M., Allen, J. M., Banks, J. B., & Nosek, B. A. (2016). Many Labs 3: Evaluating participant pool quality across the academic semester via replication. <i>Journal of Experimental Social Psychology</i>, <i>67</i>, 68–82. https://doi.org/10.1016/j.jesp.2015.10.012",
@@ -39,5 +35,5 @@
     "translation_reviewed_by": [
         "Merve Öztürk"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

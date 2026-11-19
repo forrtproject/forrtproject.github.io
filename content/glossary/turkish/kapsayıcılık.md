@@ -6,8 +6,7 @@
     "definition": "Kapsayıcılık (dahil etme) ya da kapsayıcı anlayış, belirli bir iş birliği projesi ya da ortamında (akademi gibi) bir hoş karşılanma ve saygı görme hissine işaret ederken; çeşitlilik basitçe geniş bir arka plan, bakış açısı ve deneyim yelpazesini ifade eder. Kapsayıcılık çabaları ise daha da ileri giderek, aksi takdirde dışlanabilecek olan çeşitli bireyler arasında katılımı ve eşit değer görmeyi teşvik etmeyi amaçlar. Kapsayıcı anlayışı artırmak genellikle erişilebilirlik ve katılım üzerindeki sistematik engellerin etkisini en aza indirmeyi ya da  tamamen ortadan kaldırmayı içerir.",
     "related_terms": [
         "Diversity",
-        "Equity",
-        "Social Justice"
+        "Equity"
     ],
     "references": [
         "Calvert, D. (2019). <i>How to Make Inclusivity More Than Just an Office Buzzword</i>. Retrieved from https://insight.kellogg.northwestern.edu/article/how-to-make-inclusivity-more-than-just-an-office-buzzword",
@@ -33,5 +32,5 @@
     "translation_reviewed_by": [
         "Merve Öztürk"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

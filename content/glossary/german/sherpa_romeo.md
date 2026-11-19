@@ -5,7 +5,7 @@
     "sort_key": "sherpa romeo",
     "definition": "Eine Online-Ressource, die die Open-Access-Richtlinien von wissenschaftlichen Verlagen aus der ganzen Welt sammelt und Zusammenfassungen der Urheberrechts- und Open-Access-Archivierungsrichtlinien der einzelnen Zeitschriften bereitstellt.",
     "related_terms": [
-        "Embargo period",
+        "Embargo Period",
         "Open access",
         "Paywall",
         "Preprint",
@@ -35,5 +35,5 @@
         "Susanne Vogel",
         "Joris Frese"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

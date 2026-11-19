@@ -6,8 +6,8 @@
     "definition": "Ein System der Autor:innenschaft, das die Reihenfolge der Autor:innen in Abhängigkeit von den Leistungen einer/eines bestimmten Autorin/Autors festlegt und gleichzeitig die erste und letzte Position der Autor:innenreihenfolge am höchsten bewertet. Nach diesem System werden die beiden Hauptautoren als erster und letzter Autor angegeben \\- die Reihenfolge der Autor:innen zwischen der ersten und letzten Position wird durch den Leistungsumfang in absteigender Reihenfolge bestimmt.",
     "related_terms": [
         "Authorship",
-        "Author contributions",
-        "CreDit taxonomy"
+        "Contribution",
+        "CRediT"
     ],
     "references": [
         "Tscharntke, T., Hochberg, M. E., Rand, T. A., Resh, V. H., & Krauss, J. (2007). Author sequence and credit for contributions in multiauthored publications. <i>PLoS Biology</i>, <i>5</i>(1), e18. https://doi.org/10.1371/journal.pbio.0050018"
@@ -29,5 +29,5 @@
         "Susanne Vogel",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

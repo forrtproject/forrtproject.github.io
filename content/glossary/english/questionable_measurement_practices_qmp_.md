@@ -6,9 +6,7 @@
     "definition": "Decisions researchers make that raise doubts about the validity of measures used in a study, and ultimately the study’s final conclusions (Flake & Fried, 2020). Issues arise from a lack of transparency in reporting measurement practices, a failure to address construct validity, negligence, ignorance, or deliberate misrepresentation of information.",
     "related_terms": [
         "Construct validity",
-        "Measurement schmeasurement",
         "p-hacking",
-        "Psychometrics",
         "Questionable Research Practices or Questionable Reporting Practices (QRPs)",
         "Validity"
     ],
@@ -32,5 +30,5 @@
     "aliases": [
         "/glossary/questionable_measurement_practices_qmp_"
     ],
-    "lastmod": "2026-11-08"
+    "lastmod": "2026-11-19"
 }

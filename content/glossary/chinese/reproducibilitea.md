@@ -5,9 +5,8 @@
     "sort_key": "reproducibilitea",
     "definition": "ReproducibiliTea 是一项旨在帮助研究人员在大学中建立本地期刊俱乐部的基层倡议，以讨论开放研究和学术相关的广泛议题。每次会议通常围绕一篇特定论文展开，讨论内容可能涵盖可重复性、研究实践、研究质量、社会正义与包容性，以及改进科学的创新思路。",
     "related_terms": [
-        "Grassroots initiative",
-        "Journal club",
-        "Open science",
+        "Bottom-up approach (to Open Scholarship)",
+        "Open Science",
         "Reproducibility"
     ],
     "references": [
@@ -38,5 +37,5 @@
         "Ruoting Liu",
         "Shuxian Jin"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

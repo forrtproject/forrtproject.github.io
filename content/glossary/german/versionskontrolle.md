@@ -6,10 +6,7 @@
     "definition": "Die Praxis der Verwaltung und Aufzeichnung von Änderungen an digitalen Ressourcen (z. B. Dateien, Websites, Programme usw.) im Laufe der Zeit, sodass Sie bestimmte Versionen später wieder aufrufen können. Versionskontrollsysteme sind so konzipiert, dass sie den Verlauf der Änderungen (wer, was und wann) aufzeichnen und dazu beitragen, menschliche Fehler (z. B. die Arbeit an der falschen Version) zu vermeiden. Das Versionskontrollsystem Git beispielsweise ist ein weit verbreitetes Softwaretool, das ursprünglich Softwareentwickelnden bei der Versionskontrolle von gemeinsamem Code half und heute in vielen wissenschaftlichen Disziplinen zur Verwaltung und gemeinsamen Nutzung von Dateien eingesetzt wird.",
     "related_terms": [
         "Git",
-        "Reproducibility",
-        "Software configuration management",
-        "Source code management",
-        "Source control"
+        "Reproducibility"
     ],
     "references": [
         "Git. (n.d.). <i>Git—About Version Control</i>. https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control"
@@ -39,5 +36,5 @@
         "Susanne Vogel",
         "Joris Frese"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

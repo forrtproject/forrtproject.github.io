@@ -5,12 +5,11 @@
     "sort_key": "altmetrics",
     "definition": "Departing from traditional citation measures, altmetrics (short for “alternative metrics”) provide an assessment of the attention and broader impact of research work based on diverse sources such as social media (e.g. Twitter), digital news media, number of preprint downloads, etc. Altmetrics have been criticized in that sensational claims usually receive more attention than serious research (Ali, 2021).",
     "related_terms": [
-        "Academic impact",
+        "Academic Impact",
         "Alternative metrics",
         "Bibliometrics",
         "H-index",
-        "Impact assessment",
-        "Journal impact factor"
+        "Journal Impact Factor™"
     ],
     "references": [
         "Ali, M. J. (2021). Understanding the Altmetrics. <i>Seminars in Ophthalmology</i>. https://doi.org/10.1080/08820538.2021.1930806",
@@ -32,5 +31,5 @@
     "aliases": [
         "/glossary/altmetrics"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

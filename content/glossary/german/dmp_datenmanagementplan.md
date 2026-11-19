@@ -5,11 +5,9 @@
     "sort_key": "dmp; datenmanagementplan [data management plan (dmp)]",
     "definition": "Ein strukturiertes Dokument, das den Prozess der Datenerhebung, \\-analyse, \\-verwaltung und \\-speicherung während eines Forschungsprojekts beschreibt. Es beschreibt auch die Eigentumsrechte an den Daten und wie die Daten während und nach Abschluss eines Projekts aufbewahrt und geteilt werden. Vorlagen für das Datenmanagement bieten auch Anhaltspunkte dafür, wie Forschungsdaten FAIR und, wenn möglich, offen zugänglich gemacht werden können.",
     "related_terms": [
-        "Data archiving",
         "Data sharing",
-        "Data storage",
         "FAIR principles",
-        "Open data"
+        "Open Data"
     ],
     "references": [
         "Burnette, M., Williams, S., & Imker, H. (2016). From Plan to Action: Successful Data Management Plan Implementation in a Multidisciplinary Project. <i>Journal of eScience Librarianship</i>, <i>5</i>(1), e1101. https://doi.org/10.7191/jeslib.2016.1101",
@@ -37,5 +35,5 @@
         "Helena Hartmann",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

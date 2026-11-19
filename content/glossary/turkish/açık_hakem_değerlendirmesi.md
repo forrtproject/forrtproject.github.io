@@ -5,10 +5,8 @@
     "sort_key": "aczizk hakem degzerlendirmesi [open peer review]",
     "definition": "Yazar ve hakem kimliklerinin, hakem raporlarının ve editöryal karar mektuplarının herhangi bir kombinasyonunun akademik yayın süresince veya yayın sonrasındaki herhangi bir aşamada birbirlerine veya kamuya açıklanmasını içeren bir akademik değerlendirme süreci. Hakem değerlendirmesi sürecine kimlerin katılabileceğine ve hangi platformlarda yapılabileceğine dair kısıtlamaların kaldırılmasını da ifade edebilir. Not olarak, ‘açık hakem değerlendirmesi’ terimi, yukarıda belirtilen uygulamaların herhangi birini ya da tamamını tanımlamak için birbiriyle dönüşümlü olarak kullanılmıştır.",
     "related_terms": [
-        "Non-anonymised peer review",
-        "Open science",
-        "PRO (peer review openness) initiative",
-        "Transparent peer review"
+        "Open Science",
+        "PRO (peer review openness) initiative"
     ],
     "references": [
         "Ross-Hellauer, T. (2017). What is open peer review? A systematic review [version 2; peer review: 4 approved]. <i>F1000Research</i>, <i>6</i>, 588. https://doi.org/10.12688/f1000research.11369.2"
@@ -33,5 +31,5 @@
     "translation_reviewed_by": [
         "Nihan Selin Soylu-Konak"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

@@ -5,10 +5,7 @@
     "sort_key": "czokluluk [multiplicity]",
     "definition": "Birden fazla istatistiksel test, örneğin birden fazla sonuç, birden fazla takip zaman noktası veya birden fazla alt grup analizi, nedeniyle Tip I hata oranlarının (sıfır hipotezini yanlış bir şekilde reddetme) potansiyel olarak artması durumudur. Çoklulukla ilgili sorunların üstesinden gelmek için araştırmacılar genellikle Tip I hata artışını kontrol etmek için alfa değerini düzelten kontrol prosedürlerini (örn. Bonferroni, Holm-Bonferroni; Tukey) uygularlar. Ancak, Tip I hatalarını kontrol ederken, Tip II hata (yani, sıfır hipotezini yanlış kabul etme) olasılığı artırılabilir.",
     "related_terms": [
-        "Alpha",
-        "False Discovery Rate",
-        "Multiple comparisons problem",
-        "Multiple testing",
+        "Statistical significance",
         "Null Hypothesis Significance Testing (NHST)"
     ],
     "references": [
@@ -34,5 +31,5 @@
     "translation_reviewed_by": [
         "Merve Öztürk"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

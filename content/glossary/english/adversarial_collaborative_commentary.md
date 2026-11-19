@@ -5,8 +5,7 @@
     "sort_key": "adversarial (collaborative) commentary",
     "definition": "A commentary in which the original authors of a work and critics of said work collaborate to draft a consensus statement. The aim is to draft a commentary that is free of ad hominem attacks and communicates a common understanding or at least identifies where both parties agree and disagree. In doing so, it provides a clear take-home message and path forward, rather than leaving the reader to decide between opposing views conveyed in separate commentaries.",
     "related_terms": [
-        "Adversarial collaboration",
-        "Collaborative commentary"
+        "Adversarial collaboration"
     ],
     "references": [
         "Heyman, T., Moors, P., & Rabagliati, H. (2020). The benefits of adversarial collaboration for commentaries. <i>Nature Human Behavior</i>, <i>4</i>, 1217. https://doi.org/10.1038/s41562-020-00978-6",
@@ -30,5 +29,5 @@
     "aliases": [
         "/glossary/adversarial_collaborative_commentary"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

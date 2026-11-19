@@ -5,12 +5,9 @@
     "sort_key": "offene lizenzen [open licenses]",
     "definition": "Offene Lizenzen werden mit offenen Daten und offener Software (z. B. Analysecode) bereitgestellt, um festzulegen, wie andere das lizenzierte Material (wieder-)verwenden können. Indem sie die Rechte und Einschränkungen festlegen, erlauben offene Lizenzen oft den uneingeschränkten Zugang, die Wiederverwendung und die Weitergabe der Originalarbeit einer:s Autor:in. Datensätze werden in der Regel unter einer Art von offener Lizenz lizenziert, die als Creative-Commons-Lizenz bekannt ist (z. B. MIT, Apache und GPL). Diese können sich auf relativ subtile Weise unterscheiden, wobei die GPL-Lizenzen (und ihre Varianten) Copyleft-Lizenzen sind, die verlangen, dass jede abgeleitete Arbeit unter denselben Bedingungen wie das Original lizenziert wird.",
     "related_terms": [
-        "Creative Commons (CC) License",
-        "Copyleft",
-        "Copyright",
-        "Licence",
+        "Creative Commons (CC) license",
         "Open Data",
-        "Open Source"
+        "Open Source software"
     ],
     "references": [
         "Anon. (n.d.). <i>Licenses & Standards | Open Source Initiative</i>. Retrieved from https://opensource.org/licenses"
@@ -35,5 +32,5 @@
         "Helena Hartmann",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

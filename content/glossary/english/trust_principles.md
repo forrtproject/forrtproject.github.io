@@ -7,7 +7,7 @@
     "related_terms": [
         "FAIR principles",
         "Metadata",
-        "Open Access",
+        "Open access",
         "Open Data",
         "Open Material",
         "Repository"
@@ -31,5 +31,5 @@
     "aliases": [
         "/glossary/trust_principles"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

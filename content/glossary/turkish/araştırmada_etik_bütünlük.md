@@ -5,18 +5,14 @@
     "sort_key": "arasztizrmada etik buztuznluzk [research integrity]",
     "definition": "Araştırmada etik bütünlük; dürüstlük, güvenilirlik, saygı ve hesap verebilirlik temel ilkelerine dayanan bir dizi iyi araştırma uygulamaları ile tanımlanır (ALLEA, 2017). Araştırmada etik bütünlüğün temel ilkelerine dayanan ve araştırmacıların çalışmalarında olduğu kadar araştırmanın doğasında bulunan pratik, etik ve entelektüel zorluklarla başa çıkmalarında da yol gösterici olması gereken iyi araştırma uygulamaları şu gibi alanları kapsar: araştırma ortamı (örn., araştırma kurumları ve organizasyonları farkındalığı artırır ve araştırmada etik bütünlük kültürünün yaygınlaşmasını sağlar), eğitim, danışmanlık ve mentorluk (örn., araştırma kurumları ve organizasyonları, ilgili herkesin geçerli kodlar ve düzenlemeler hakkında bilinçlenmesini sağlayan etik ve araştırmada etik bütünlüğü konularında uygun ve yeterli eğitimler geliştirir), araştırma prosedürleri (örn., araştırmacılar, sonuçlarını, gerektiğinde doğrulanabilir ve yeniden üretilebilir şekilde, o alanın standartlarıyla uyumlu şekilde raporlar), güvenceler (örn., araştırmacılar, toplumun, iş birliği yaptıkları kişilerin ve araştırmayla bağlantılı diğer kişilerin sağlık, güvenlik ve refahına gerekli özeni gösterir), veri uygulamaları ve yönetimi (örn., araştırmacılar, araştırma kurumları ve organizasyonlar, verilerine ve araştırma materyallerine nasıl erişileceği veya bunların nasıl kullanılacağı konusunda şeffaflık sağlar), iş birliği, yayın ve yayım (örn., yazarlar ve yayıncılar, olumsuz bulguların da olumlu bulgular kadar yayın ve yayım açısından geçerli olduğunu kabul eder), hakemlik, değerlendirme ve düzenleme (örn., araştırmacılar, yayın, fonlama, atama, terfi veya ödüllendirme için yapılan başvuruları şeffaf ve gerekçelendirilebilir bir biçimde gözden geçirir ve değerlendirir).",
     "related_terms": [
-        "Credibility of scientific claims",
         "Error detection",
-        "Ethics",
-        "Open research",
+        "Research ethics",
+        "Open Scholarship",
         "Questionable Research Practices or Questionable Reporting Practices (QRPs)",
-        "Responsible Research Practices",
-        "Rigour",
-        "Transparency",
-        "Trustworthy research"
+        "Transparency"
     ],
     "references": [
-        "ALLEA - All European Academies. (2023). <i>The European Code of Conduct for Research Integrity</i> (Revised Edition 2023). ALLEA - All European Academies. https://doi.org/10.26356/ECoC",
+        "ALLEA - All European Academies. (2017). <i>The European Code of Conduct for Research Integrity</i> (Revised Edition). ALLEA - All European Academies. https://allea.org/wp-content/uploads/2017/05/ALLEA-European-Code-of-Conduct-for-Research-Integrity-2017.pdf",
         "Medin, D. L. (2012). Rigor without rigor mortis: The APS Board discusses research integrity. <i>APS Observer</i>, <i>25</i>(5–9), 27–28. https://www.psychologicalscience.org/observer/scientific-rigor",
         "Moher, D., Bouter, L., Kleinert, S., Glasziou, P., Sham, M. H., Barbour, V., & Dirnagl, U. (2020). The Hong Kong Principles for assessing researchers: Fostering research integrity. <i>PLoS Biology</i>, <i>18</i>(7), e3000737. https://doi.org/10.1371/journal.pbio.3000737"
     ],
@@ -40,5 +36,5 @@
     "translation_reviewed_by": [
         "Neslihan Özhan"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

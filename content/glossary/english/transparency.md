@@ -5,17 +5,14 @@
     "sort_key": "transparency",
     "definition": "Having one’s actions open and accessible for external evaluation. Transparency pertains to researchers being honest about theoretical, methodological, and analytical decisions made throughout the research cycle. Transparency can be usefully differentiated into “scientifically relevant transparency” and “socially relevant transparency”. While the former has been the focus of early Open Science discourses, the latter is needed to provide scientific information in ways that are relevant to decision makers and members of the public (Elliott & Resnik, 2019).",
     "related_terms": [
-        "Credibility of scientific claims",
-        "Open science",
+        "Open Science",
         "Preregistration",
-        "Reproducibility",
-        "Trustworthiness"
+        "Reproducibility"
     ],
     "references": [
         "Elliott, K. C., & Resnik, D. B. (2019). Making open science work for science and society. <i>Environmental Health Perspectives</i>, <i>127</i>(7). https://doi.org/10.1289/EHP4808",
         "Lyon, L. (2016). Transparency: The Emerging Third Dimension of Open Science and Open Data. <i>LIBER Quarterly</i>, <i>25</i>(4), 153–171. http://doi.org/10.18352/lq.10113",
-        "Syed, M. (2019). The Open Science Movement is for all of us. <i>PsyArXiv</i>.",
-        "[Syed (2019)](https://psyarxiv.com/cteyb/)"
+        "Syed, M. (2019). The Open Science Movement is for all of us. <i>PsyArXiv</i>. https://doi.org/10.31234/osf.io/cteyb"
     ],
     "drafted_by": [
         "William Ngiam"
@@ -33,5 +30,5 @@
     "aliases": [
         "/glossary/transparency"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

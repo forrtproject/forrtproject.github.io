@@ -6,8 +6,7 @@
     "definition": "Paranteze alma görüşmeleri, nitel yaklaşımlarda sıklıkla kullanılır. Bu görüşmeler sırasında araştırmacılar, devam eden araştırmalarıyla ilgili kişisel öznelliklerini ve varsayımlarını keşfederler. Bu, araştırmacıların kendi ilgi alanlarının farkında olmalarını ve kendi deneyimlerinin araştırma sürecini nasıl etkileyebileceğini göz önünde bulundurarak araştırmaları hakkında hem daha düşünceli hem de eleştirel olmalarını sağlar. Paranteze alma görüşmeleri nitel analize de tabi tutulabilir.",
     "related_terms": [
         "Qualitative research",
-        "Reflexivity",
-        "Researcher bias"
+        "Reflexivity"
     ],
     "references": [
         "Rolls, L., & Relf, M. (2006). Bracketing interviews: addressing methodological challenges in qualitative interviewing in bereavement and palliative care. <i>Mortality</i>, <i>11</i>(3), 286–305. https://doi.org/10.1080/13576270600774893",
@@ -32,5 +31,5 @@
     "translation_reviewed_by": [
         "Elif Baştan"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

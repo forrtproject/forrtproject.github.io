@@ -5,8 +5,7 @@
     "sort_key": "duzszmanca (i̇sz birlikczi) yorumlama [adversarial (collaborative) commentary]",
     "definition": "Bir çalışmanın orijinal yazarları ve söz konusu çalışmanın eleştirmenlerinin iş birliği yaparak bir konsensüs bildirisi hazırladıkları bir yorum. Amaç, ad hominem safsatalarından uzak, ortak bir anlayışı aktaran veya en azından her iki tarafın hemfikir olduğu ve olmadığı noktaları belirleyen bir yorum hazırlamaktır. Böylelikle, okuyucuyu ayrı yorumlarda aktarılan karşıt görüşler arasında seçim yapmaya bırakmak yerine, net bir mesaj ve ileriye dönük bir yol sunar.",
     "related_terms": [
-        "Adversarial collaboration",
-        "Collaborative commentary"
+        "Adversarial collaboration"
     ],
     "references": [
         "Heyman, T., Moors, P., & Rabagliati, H. (2020). The benefits of adversarial collaboration for commentaries. <i>Nature Human Behavior</i>, <i>4</i>, 1217. https://doi.org/10.1038/s41562-020-00978-6",
@@ -33,5 +32,5 @@
     "translation_reviewed_by": [
         "Elif Baştan"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

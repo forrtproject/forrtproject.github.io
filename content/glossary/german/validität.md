@@ -5,20 +5,16 @@
     "sort_key": "validität [validity]",
     "definition": "Validität bezieht sich auf die Anwendung statistischer Prinzipien, um zu fundierten \\- d. h. wahrscheinlich genau der realen Welt entsprechenden \\- Konzepten, Schlussfolgerungen oder Messungen zu gelangen. In der Psychometrie bezieht sich die Validität auf das Ausmaß, in dem etwas das misst, was es zu messen beabsichtigt oder vorgibt zu messen. Unter diesem Oberbegriff gibt es verschiedene Arten von Validität (z. B. interne Validität, Konstruktvalidität, Augenscheinvalidität, Kriteriumsvalidität, diagnostische Validität, diskriminante Validität, übereinstimmende Validität, konvergente Validität, prädiktive Validität, externe Validität).",
     "related_terms": [
-        "Causality",
         "Construct validity",
         "Content validity",
         "Criterion validity",
-        "External validity",
+        "External Validity",
         "Face validity",
-        "Internal validity",
-        "Measurement",
+        "Internal Validity",
         "Questionable Measurement Practices (QMP)",
-        "Psychometry",
         "Reliability",
         "Statistical power",
-        "Statistical validity",
-        "Test"
+        "Statistical validity"
     ],
     "references": [
         "Campbell, D. T. (1957). Factors relevant to the validity of experiments in social settings. <i>Psychological Bulletin</i>, <i>54</i>(4), 297–312. https://doi.org/10.1037/h0040950",
@@ -47,5 +43,5 @@
         "Helena Hartmann",
         "Joris Frese"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

@@ -5,8 +5,7 @@
     "sort_key": "null hypothesis significance testing (nhst)",
     "definition": "A frequentist approach to inference used to test the probability of an observed effect against the null hypothesis of no effect/relationship (Pernet, 2015). Such a conclusion is arrived at through use of an index called the *p*\\-value. Specifically, researchers will conclude an effect is present when an a priori alpha threshold, set by the researchers, is satisfied; this determines the acceptable level of uncertainty and is closely related to Type I error.",
     "related_terms": [
-        "Inference",
-        "P-value",
+        "p-value",
         "Statistical significance",
         "Type I error"
     ],
@@ -31,5 +30,5 @@
     "aliases": [
         "/glossary/null_hypothesis_significance_testing_nhst_"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

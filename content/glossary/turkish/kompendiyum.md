@@ -5,10 +5,8 @@
     "sort_key": "kompendiyum [compendium]",
     "definition": "Bir araştırmacı tarafından, bir raporu veya yayını desteklemek amacıyla hazırlanan; veri, metaveri, programlama kodları, yazılım bağımlılıkları, lisanslar ve bir başka araştırmacının söz konusu rapor ya da yayındaki bulguları bağımsız olarak yeniden üretebilmesi için gerekli diğer talimatları içeren dosya koleksiyonu.",
     "related_terms": [
-        "Compendia",
-        "Replication",
-        "Reproducibility",
-        "Research compendium;"
+        "Replicability",
+        "Reproducibility"
     ],
     "references": [
         "Claerbout, J. F., & Karrenbach, M. (1992). Electronic documents give reproducible research a new meaning. <i>SEG Technical Program Expanded Abstracts 1992</i>, 601–604. http://sepwww.stanford.edu/doku.php?id=sep:research:reproducible:seg92",
@@ -33,5 +31,5 @@
     "translation_reviewed_by": [
         "Elif Baştan"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

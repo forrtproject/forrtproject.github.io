@@ -5,8 +5,7 @@
     "sort_key": "moops [massively open online papers (moops)]",
     "definition": "Im Gegensatz zum traditionellen kollaborativen Artikel folgt ein MOOP einem offenen, partizipativen und dynamischen Modell, das nicht durch eine vorgegebene Liste von Mitwirkenden eingeschränkt ist.",
     "related_terms": [
-        "Citizen science",
-        "Collaboration",
+        "Citizen Science",
         "Crowdsourced Research",
         "Many authors",
         "Team science"
@@ -30,5 +29,5 @@
         "Helena Hartmann",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

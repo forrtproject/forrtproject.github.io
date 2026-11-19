@@ -5,7 +5,7 @@
     "sort_key": "sherpa romeo",
     "definition": "Sherpa Romeo是一个在线平台，汇总并展示全球出版商的开放获取政策，提供各期刊在版权与开放获取存档政策方面的概览信息。",
     "related_terms": [
-        "Embargo period",
+        "Embargo Period",
         "Open access",
         "Paywall",
         "Preprint",
@@ -37,5 +37,5 @@
         "Xiujuan Wen",
         "Shuxian Jin"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

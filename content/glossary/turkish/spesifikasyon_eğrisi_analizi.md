@@ -6,10 +6,9 @@
     "definition": "Belirli bir araştırma sorusu için makul olan tüm analiz seçeneklerinin belirlenmesi, hesaplanması, görselleştirilmesi ve çıkarımsal istatistikler aracılığıyla yorumlanmasından oluşan analitik bir yaklaşımdır (bkz., Simonsohn vd., 2015). Spesifikasyon eğrisi analizi, bilimsel süreçte araştırmacı tarafından yapılan ve çoğu zaman keyfi gibi görünen kararların (örn., deney tasarımı, yapıların işlemselleştirilmesi, istatistiksel modeller veya bunların birkaçının birlikte kullanımı) sonuçlar üzerindeki etkisini şeffaf hale getirmeye yardımcı olur. Bu analiz, araştırma sorusuna yönelik yinelemeli olmayan ve anlamlı tüm testlerin kapsamlı şekilde raporlanmasını sağlar. Voracek vd. (2019), spesifikasyon eğrisi analizinin çok yönlü analizden grafiksel gösterimler (histogram ve karo grafik (tile-plot) yerine spesifikasyon eğrisi grafiği) ve bulguların yorumlanmasında çıkarımsal istatistiklerin kullanımı açısından farklılaştığını belirtir.",
     "related_terms": [
         "Multiverse analysis",
-        "Research synthesis",
+        "Evidence Synthesis",
         "Robustness (analyses)",
-        "Selective reporting",
-        "Vibration of effects"
+        "Selective reporting"
     ],
     "references": [
         "Simonsohn, U., Simmons, J. P., & Nelson, L. D. (2015). <i>Specification curve: Descriptive and inferential statistics on all reasonable specifications</i>. http://sticerd.lse.ac.uk/seminarpapers/psyc16022016.pdf",
@@ -34,5 +33,5 @@
     "translation_reviewed_by": [
         "Neslihan Özhan"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

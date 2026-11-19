@@ -5,11 +5,8 @@
     "sort_key": "nicel arasztizrma [quantitative research]",
     "definition": "Nicel araştırma, istatistiksel olarak analiz edilebilen sayısal verilerin kullanımıyla çeşitli olguları sistematik olarak incelemek için geniş bir yöntem yelpazesini kapsar.",
     "related_terms": [
-        "Measuring",
         "Qualitative research",
-        "Sample size",
-        "Statistical power",
-        "Statistics"
+        "Statistical power"
     ],
     "references": [
         "Goertzen, M. J. (2017). Introduction to Quantitative Research and Data. <i>Library Technology Reports</i>, <i>53</i>(4), 12–18."
@@ -32,5 +29,5 @@
     "translation_reviewed_by": [
         "Nihan Selin Soylu-Konak"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

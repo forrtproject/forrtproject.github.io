@@ -7,7 +7,7 @@
     "related_terms": [
         "FAIR principles",
         "Metadata",
-        "Open Access",
+        "Open access",
         "Open Data",
         "Open Material",
         "Repository"
@@ -34,5 +34,5 @@
     "translation_reviewed_by": [
         "Neslihan Özhan"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

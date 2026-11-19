@@ -6,7 +6,6 @@
     "definition": "Araştırma yayımlandıktan sonra gerçekleştirilen hakem değerlendirmesidir. Genellikle özel bir platformda (örn., PubPeer) paylaşılır. Orijinal makalenin yer aldığı dergide yayımlanan ve genellikle kendisi de hakem değerlendirmesinden geçen geleneksel yorum makalelerinden (commentary) farklıdır.",
     "related_terms": [
         "Open Peer Review",
-        "PeerPub",
         "Peer review"
     ],
     "references": [],
@@ -27,5 +26,5 @@
     "translation_reviewed_by": [
         "Nihan Selin Soylu-Konak"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

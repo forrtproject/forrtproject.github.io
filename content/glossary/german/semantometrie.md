@@ -6,7 +6,7 @@
     "definition": "Eine Klasse von Metriken zur Bewertung von Forschung unter Verwendung des vollständigen Veröffentlichungstextes zur Messung der semantischen Ähnlichkeit von Veröffentlichungen und zur Hervorhebung des Beitrags eines Artikels zum Fortschritt der wissenschaftlichen Diskussion. Sie ist eine Erweiterung von Instrumenten wie Bibliometrie, Webometrie und Altmetrik.",
     "related_terms": [
         "Bibliometrics",
-        "Contribution(p)"
+        "Research Contribution Metric (*p*)"
     ],
     "references": [
         "Herrmannova, D., & Knoth, P. (n.d.). <i>Semantometrics Towards Full text-based Research Evaluation</i>. Retrieved from https://arxiv.org/pdf/1605.04180.pdf",
@@ -32,5 +32,5 @@
         "Helena Hartmann",
         "Joris Frese"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

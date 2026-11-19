@@ -5,9 +5,7 @@
     "sort_key": "single-blind peer review",
     "definition": "Evaluation of research products by qualified experts where the reviewer(s) knows the identity of the author(s), but the reviewer(s) remains anonymous to the author(s).",
     "related_terms": [
-        "Anonymous review",
         "Double-blind peer review",
-        "Masked review",
         "Open Peer Review",
         "Peer review",
         "Triple-blind peer review"
@@ -28,8 +26,11 @@
         null
     ],
     "language": "english",
+    "also_known_as": [
+        "Anonymous review"
+    ],
     "aliases": [
         "/glossary/single_blind_peer_review"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

@@ -5,9 +5,9 @@
     "sort_key": "likelihood-funktion [likelihood function]",
     "definition": "Eine Likelihood-Funktion ist ein statistisches Modell von Daten in frequentistischen und Bayes’schen Analysen und stellt die Wahrscheinlichkeit verschiedener Parameter für ihre Verteilung gegeben den Daten dar. Da Wahrscheinlichkeitsverteilungen unbekannte Populationsparameter haben, gibt die Likelihood-Funktion an, wie gut die Stichprobendaten diese Parameter zusammenfassen. Die Likelihood-Funktion gibt also Aufschluss darüber, wie gut ein Modell an die Stichprobendaten für einen bestimmten Satz von Werten der unbekannten Populationsparameter angepasst ist.",
     "related_terms": [
-        "Bayes factor",
-        "Bayesian inference",
-        "Bayesian parameter estimation",
+        "Bayes Factor",
+        "Bayesian Inference",
+        "Bayesian Parameter Estimation",
         "Posterior distribution",
         "Prior distribution"
     ],
@@ -39,5 +39,5 @@
         "Susanne Vogel",
         "Jennifer Matschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

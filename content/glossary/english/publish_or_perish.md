@@ -6,10 +6,10 @@
     "definition": "An aphorism describing the pressure researchers feel to publish academic manuscripts, often in high prestige academic journals, in order to have a successful academic career. This pressure to publish a high quantity of manuscripts can go at the expense of the quality of the manuscripts. This institutional pressure is exacerbated by hiring procedures and funding decisions strongly focusing on the number and impact of publications.",
     "related_terms": [
         "Incentive structure",
-        "Journal Impact Factor",
+        "Journal Impact Factor™",
         "Reproducibility crisis (aka Replicability or replication crisis)",
         "Salami slicing",
-        "Slow Science"
+        "Slow science"
     ],
     "references": [
         "Case, C. M. (1928). Scholarship in Sociology. <i>Sociology and Social Research</i>, <i>12</i>, 323–340. http://www.sudoc.fr/036493414",
@@ -34,5 +34,5 @@
     "aliases": [
         "/glossary/publish_or_perish"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

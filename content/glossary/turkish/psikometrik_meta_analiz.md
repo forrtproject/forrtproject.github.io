@@ -5,12 +5,9 @@
     "sort_key": "psikometrik meta-analiz [psychometric meta-analysis]",
     "definition": "Psikometrik meta-analizler, ilgilenilen etki büyüklüklerinin ölçüm hatası ve diğer yapay etkiler nedeniyle azalmasını, psikometrik ilkelere dayanan prosedürler kullanarak (örn., ölçümlerin güvenilirliği) düzeltmeyi amaçlar. Bu prosedürler, sentezlenen etki büyüklükleri korelasyonel veya deneysel meta-analizde kullanılmadan önce uygulanmalıdır, çünkü bu düzeltmeleri yapmak genellikle daha büyük ve daha az değişken etki büyüklüklerine yol açar.",
     "related_terms": [
-        "Correlational meta-analysis",
-        "Hunter-Schmidt meta-analysis",
         "Meta-analysis",
         "Non-Intervention, Reproducible, and Open Systematic Reviews (NIRO-SR)",
-        "Publication bias (File Drawer Problem)",
-        "Validity generalization"
+        "Publication bias (File Drawer Problem)"
     ],
     "references": [
         "Borenstein, M., Hedges, L. V., Higgins, J. P., & Rothstein, H. R. (2011). <i>Introduction to meta-analysis</i>. John Wiley & Sons.",
@@ -36,5 +33,5 @@
     "translation_reviewed_by": [
         "Nihan Selin Soylu-Konak"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

@@ -5,9 +5,8 @@
     "sort_key": "yazarlizk [authorship]",
     "definition": "Yazarlık, araştırma çıktıları (örneğin makaleler, veriler ve yazılımlar) için hem kredi hem de içerik açısından sorumluluk atfeder (McNutt vd., 2018; Patience vd., 2019). Ne tür katkıların yazarlık için gerekli olduğu, yazar sırasının neyi ifade ettiği (eğer bir şey ifade ediyorsa), sorumlu yazarın araştırma üzerindeki sorumluluğunun derecesi ve yazarların bizzat yürütmedikleri çalışmalardaki bölümlerden ne ölçüde sorumlu tutulacağı gibi beklentiler; disiplinler, kültürler ve hatta araştırma grupları arasında farklılık gösterir.",
     "related_terms": [
-        "Co-authorship",
         "Consortium authorship",
-        "Contributorship",
+        "Contribution",
         "CRediT",
         "First-last-author-emphasis norm (FLAE)",
         "Gift (or Guest) Authorship",
@@ -41,5 +40,5 @@
     "translation_reviewed_by": [
         "Elif Baştan"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

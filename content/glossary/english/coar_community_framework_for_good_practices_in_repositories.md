@@ -6,11 +6,11 @@
     "definition": "A framework which identifies best practices for scientific repositories and evaluation criteria for these practices. Its flexible and multidimensional approach means that it can be applied to different types of repositories, including those which host publications or data, across geographical and thematic contexts.",
     "related_terms": [
         "Metadata",
-        "Open Access",
+        "Open access",
         "Open Data",
         "Open Material",
         "Repository",
-        "TRUST principles"
+        "TRUST Principles"
     ],
     "references": [
         "Confederation of Open Access Repositories. (2020). <i>COAR Community Framework for Best Practices in Repositories (Version 1)</i>. Zenodo. https://doi.org/10.5281/zenodo.4110829"
@@ -31,5 +31,5 @@
     "aliases": [
         "/glossary/coar_community_framework_for_good_practices_in_repositories"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

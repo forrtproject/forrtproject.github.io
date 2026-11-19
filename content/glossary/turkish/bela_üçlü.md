@@ -5,7 +5,7 @@
     "sort_key": "bela uzczluz [the troubling trio]",
     "definition": "Düşük istatistiksel güç, şaşırtıcı bir sonuç ve .05’ten sadece biraz daha düşük bir p-değeri kombinasyonu olarak tanımlanır.",
     "related_terms": [
-        "Replication",
+        "Replicability",
         "Reproducibility",
         "Null Hypothesis Significance Testing (NHST)",
         "p-hacking",
@@ -33,5 +33,5 @@
     "translation_reviewed_by": [
         "Neslihan Özhan"
     ],
-    "lastmod": "2026-11-08"
+    "lastmod": "2026-11-19"
 }

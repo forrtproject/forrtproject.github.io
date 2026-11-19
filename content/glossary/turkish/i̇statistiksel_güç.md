@@ -5,16 +5,14 @@
     "sort_key": "i̇statistiksel guzcz [statistical power]",
     "definition": "İstatistiksel güç, alternatif hipotez doğru olduğunda, bir istatistiksel testin sıfır hipotezini doğru bir şekilde reddetme olasılığını ifade eder. 0 ile 1 arasında bir değere sahiptir, ancak genellikle bir yüzdelik olarak ifade edilir. Güç; belirli bir analiz tekniği için alınan anlamlılık seviyesi (alfa), etki büyüklüğü ve örneklem büyüklüğü kullanılarak tahmin edilebilir. İstatistiksel gücün iki temel uygulama alanı vardır: A priori güç, araştırmacının “Belirli bir etki büyüklüğü için, %X güç elde etmek adına kaç katılımcıya ihtiyacım var?” sorusunu sorduğu durumdur. Duyarlılık gücü (sensitivity power) ise, araştırmacının “Belirli bir örneklem büyüklüğüyle, %X güçle nasıl bir etki büyüklüğünü tespit edebilirim?” sorusunu sorduğu durumdur.",
     "related_terms": [
-        "Effect Size",
+        "Effect size",
         "Meta-analysis",
         "Null Hypothesis Significance Testing (NHST)",
-        "Power Analysis",
-        "Positive Predictive Value",
         "Quantitative research",
-        "Sample size",
-        "Significance criterion (alpha)",
+        "Statistical significance",
         "Type I error",
-        "Type II error"
+        "Type II error",
+        "GPower"
     ],
     "references": [
         "Carter, A., Tilling, K., & Munafo, M. R. (2021). <i>Considerations of sample size and power calculations given a range of analytical scenarios</i>. https://doi.org/10.31234/osf.io/tcqrn",
@@ -53,5 +51,5 @@
     "translation_reviewed_by": [
         "Neslihan Özhan"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

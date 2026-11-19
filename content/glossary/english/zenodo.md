@@ -6,14 +6,12 @@
     "definition": "An open science repository where researchers can deposit research papers, reports, data sets, research software, and any other research-related digital artifacts. Zenodo creates a persistent digital object identifier (DOI) for each submission to make it citable. This platform was developed under the European OpenAIRE program and operated by CERN.",
     "related_terms": [
         "DOI (digital object identifier)",
-        "figshare",
-        "Open data",
+        "Open Data",
         "Open Science Framework",
         "Preprint"
     ],
     "references": [
-        "Zenodo. (n.d.). <i>Zenodo—Research. Shared.</i> https://www.zenodo.org/",
-        "[www.zenodo.org](http://www.zenodo.org)"
+        "Zenodo. (n.d.). <i>Zenodo—Research. Shared.</i> https://www.zenodo.org/"
     ],
     "drafted_by": [
         "Ali H. Al-Hoorie"
@@ -26,5 +24,5 @@
     "aliases": [
         "/glossary/zenodo"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

@@ -5,9 +5,9 @@
     "sort_key": "i̇statistiksel geczerlilik [statistical validity]",
     "definition": "Bir istatistiksel testten elde edilen sonuçların, evrende bulunan gerçek etkiyi ne ölçüde doğru ve yansıtıcı şekilde temsil ettiğidir. Başka bir deyişle, iki değişken arasında bir ilişkinin gerçekten var olup olmadığı ve yapılan analizlerle bu ilişkinin doğru şekilde tespit edilip edilemediğidir. İstatistiksel geçerliği tehdit eden unsurlar arasında, ulaşılan sonuçların güvenirliğini ve genellenebilirliğini etkileyebilen düşük istatistiksel güç, varsayımların ihlali, ölçümlerin güvenirliği gibi faktörler yer alır.",
     "related_terms": [
-        "Power",
+        "Statistical power",
         "Validity",
-        "Statistical assumptions"
+        "Statistical Assumptions"
     ],
     "references": [
         "Cook, T. D., & Campbell, D. T. (1979). <i>Quasi-Experimentation</i>. Rand McNally.",
@@ -30,5 +30,5 @@
     "translation_reviewed_by": [
         "Neslihan Özhan"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

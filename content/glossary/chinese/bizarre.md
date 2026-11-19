@@ -5,7 +5,6 @@
     "sort_key": "bizarre",
     "definition": "缩略词BIZARRE指的是贫乏的、制度化的、圈养的和其他罕见的饲养环境。目前大多数对黑猩猩的研究都是基于这种特定样本。这种做法限制了研究结果在黑猩猩群体中的普遍适用性。有人认为，BIZARRE样本被错误地视为黑猩猩的普遍代表（参见WEIRD群体被视为人类的普遍代表）。",
     "related_terms": [
-        "Populations",
         "STRANGE",
         "WEIRD"
     ],
@@ -33,5 +32,5 @@
         "Ruoting Liu",
         "Shuxian Jin"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

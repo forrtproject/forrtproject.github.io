@@ -6,8 +6,8 @@
     "definition": "An authorship system that assigns the order of authorship depending on the contributions of a given author while simultaneously valuing the first and last position of the authorship order most. According to this system, the two main authors are indicated as the first and last author \\- the order of the authors between the first and last position is determined by contribution in a descending order.",
     "related_terms": [
         "Authorship",
-        "Author contributions",
-        "CreDit taxonomy"
+        "Contribution",
+        "CRediT"
     ],
     "references": [
         "Tscharntke, T., Hochberg, M. E., Rand, T. A., Resh, V. H., & Krauss, J. (2007). Author sequence and credit for contributions in multiauthored publications. <i>PLoS Biology</i>, <i>5</i>(1), e18. https://doi.org/10.1371/journal.pbio.0050018"
@@ -25,5 +25,5 @@
     "aliases": [
         "/glossary/first_last_author_emphasis_norm_flae_"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

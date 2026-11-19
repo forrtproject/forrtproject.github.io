@@ -5,11 +5,9 @@
     "sort_key": "model (computational)",
     "definition": "Computational models aim to mathematically translate the phenomena under study to better understand, communicate and predict complex behaviours.",
     "related_terms": [
-        "algorithms",
-        "data simulation",
-        "hypothesis",
-        "theory",
-        "theory building"
+        "Hypothesis",
+        "Theory",
+        "Theory building"
     ],
     "references": [
         "Guest, O., & Martin, A. E. (2020). How computational modeling can force theory building in psychological science. <i>Perspectives on Psychological Science</i>. https://doi.org/10.1177/1745691620970585",
@@ -32,5 +30,5 @@
     "aliases": [
         "/glossary/model_computational_"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

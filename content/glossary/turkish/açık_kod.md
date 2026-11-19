@@ -5,14 +5,12 @@
     "sort_key": "aczizk kod [open code]",
     "definition": "Araştırma metodolojisini ve analizini şeffaf hale getirmek ve yeniden üretilebilirlik ve iş birliğine olanak sağlamak için bilgisayar kodunu (örn. programlama, analiz kodu, uyaran üretimi) serbestçe ve herkese açık hale getirmek. Kod, GitHub, Open Science Framework ve Codeshare (birkaçını saymak gerekirse) gibi açık kod web siteleri aracılığıyla kullanılabilir hale getirilebilir ve bu da başkalarının hataları değerlendirip düzeltmesini ve sonraki araştırmalar için kodu yeniden kullanmasını ve değiştirmesini sağlar.",
     "related_terms": [
-        "Computational Reproducibility",
-        "Open Access",
-        "Open Licensing",
+        "Computational reproducibility",
+        "Open access",
+        "Open Licenses",
         "Open Material",
-        "Open Source",
-        "Open Source Software",
-        "Reproducibility",
-        "Syntax"
+        "Open Source software",
+        "Reproducibility"
     ],
     "references": [
         "Easterbrook, S. M. (2014). Open code for open science? <i>Nature Geoscience</i>, <i>7</i>(11), 779–781. https://doi.org/10.1038/ngeo2283"
@@ -36,5 +34,5 @@
     "translation_reviewed_by": [
         "Merve Öztürk"
     ],
-    "lastmod": "2026-11-08"
+    "lastmod": "2026-11-19"
 }

@@ -5,7 +5,6 @@
     "sort_key": "kod kitabiz [codebook]",
     "definition": "Kod kitabı, bir veri setinin içeriğini, yapısını, doğasını ve düzenini açıklayan üst düzey bir özettir. İyi belgelenmiş bir kod kitabı, veri dosyasındaki her bir değişken için eksiksiz ve açıklayıcı olması amaçlanan değişkenin ifadesi, kodlaması ve dayandığı kavramsal yapı (construct) gibi bilgileri içerir. Kod kitabı, veriye aşina olmayan ancak analizleri yeniden üretmek veya veriyi yeniden kullanmak isteyen araştırmacılar için şeffaflık sağlar.",
     "related_terms": [
-        "Data dictionary",
         "Metadata"
     ],
     "references": [
@@ -31,5 +30,5 @@
     "translation_reviewed_by": [
         "Elif Baştan"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

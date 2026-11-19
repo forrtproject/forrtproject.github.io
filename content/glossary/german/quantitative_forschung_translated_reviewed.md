@@ -5,11 +5,8 @@
     "sort_key": "quantitative forschung  translated, reviewed [quantitative research]",
     "definition": "Quantitative Forschung umfasst ein breites Spektrum von Methoden zur systematischen Untersuchung einer Reihe von Phänomenen mit Hilfe von numerischen Daten, die mit Hilfe von Statistik analysiert werden können.",
     "related_terms": [
-        "Measuring",
         "Qualitative research",
-        "Sample size",
-        "Statistical power",
-        "Statistics"
+        "Statistical power"
     ],
     "references": [
         "Goertzen, M. J. (2017). Introduction to Quantitative Research and Data. <i>Library Technology Reports</i>, <i>53</i>(4), 12–18."
@@ -33,5 +30,5 @@
         "Helena Hartmann",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

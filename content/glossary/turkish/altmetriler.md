@@ -5,12 +5,11 @@
     "sort_key": "altmetriler [altmetrics]",
     "definition": "Geleneksel atıf ölçütlerinden farklı olarak, altmetriler (kısaca “alternatif metriler”) sosyal medya (örneğin Twitter), dijital haber medyası, ön-baskı indirme sayısı gibi çeşitli kaynaklara dayalı olarak araştırma çıktılarının elde ettiği ilgi ve daha geniş anlamda etkisini değerlendirir. Altmetriler, sansasyonel iddiaların genellikle ciddi araştırmalardan daha fazla ilgi görmesi nedeniyle eleştirilmektedir (Ali, 2021).",
     "related_terms": [
-        "Academic impact",
+        "Academic Impact",
         "Alternative metrics",
         "Bibliometrics",
         "H-index",
-        "Impact assessment",
-        "Journal impact factor"
+        "Journal Impact Factor™"
     ],
     "references": [
         "Ali, M. J. (2021). Understanding the Altmetrics. <i>Seminars in Ophthalmology</i>. https://doi.org/10.1080/08820538.2021.1930806",
@@ -35,5 +34,5 @@
     "translation_reviewed_by": [
         "Elif Baştan"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

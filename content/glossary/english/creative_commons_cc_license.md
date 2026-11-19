@@ -5,8 +5,7 @@
     "sort_key": "creative commons (cc) license",
     "definition": "A set of free and easy-to-use copyright licences that define the rights of the authors and users of open data and materials in a standardized way. CC licenses enable authors or creators to share copyright-law-protected work with the public and come in different varieties with more or less clauses. For example, the Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) allows you to share and adapt the material, under the condition that you; give credit to the original creators, indicate if changes were made, and share under the same license as the original, and you cannot use the material for commercial purposes.",
     "related_terms": [
-        "Copyright",
-        "Licence"
+        "Open Licenses"
     ],
     "references": [
         "Anon. (n.d.). <i>About CC Licenses</i>. Retrieved from https://creativecommons.org/about/cclicenses/"
@@ -28,5 +27,5 @@
     "aliases": [
         "/glossary/creative_commons_cc_license"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

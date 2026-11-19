@@ -6,8 +6,6 @@
     "definition": "Tüm katkılar, bakış açıları ve topluluk üyeleri yeterince temsil edilmediğinde yetersiz temsil durumu ortaya çıkar. Genellikle, bir grubun katkıları ya da bakış açılarının baskın hale gelmesiyle ortaya çıkar ve diğerlerinin marjinalize edilmesiyle sonuçlanır. Bu durum çoğunlukla, belirli kişisel özellikler açısından azınlıkta kalan grupları etkiler.",
     "related_terms": [
         "Equity",
-        "Fairness",
-        "Inequality",
         "WEIRD"
     ],
     "references": [],
@@ -31,5 +29,5 @@
     "translation_reviewed_by": [
         "Neslihan Özhan"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

@@ -5,8 +5,7 @@
     "sort_key": "pzhicaozong",
     "definition": "p值操纵是指利用某些技术手段，人为提高研究结果达到统计学显著性标准（通常为α = .05）的可能性。比如，通过多次分析后只报告p < .05的结果，选择性地删除数据直到p < .05，或者仅基于统计显著性选择用于分析的变量。",
     "related_terms": [
-        "Analytic flexibility",
-        "Fishing",
+        "Analytic Flexibility",
         "Garden of forking paths",
         "HARKing",
         "Questionable Research Practices or Questionable Reporting Practices (QRPs)",
@@ -38,5 +37,5 @@
         "Ruoting Liu",
         "Shuxian Jin"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

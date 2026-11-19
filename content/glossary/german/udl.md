@@ -5,15 +5,13 @@
     "sort_key": "udl [universal design for learning (udl)]",
     "definition": "Ein Konzept zur Verbesserung des Lernens und zur Optimierung des Unterrichtens, das auf wissenschaftlichen Erkenntnissen darüber beruht, wie Menschen lernen. Es wird häufig als evidenzbasierter und wissenschaftlich fundierter Rahmen für die pädagogische Praxis angesehen, der aus drei Schlüsselprinzipien besteht: Engagement, Repräsentation sowie Aktion und Ausdruck. Darüber hinaus ist UDL in den Higher Education Opportunity Act von 2008 aufgenommen worden (Edyburn, 2010).",
     "related_terms": [
-        "Equal opportunities",
-        "Inclusivity",
-        "Pedagogy",
-        "Teaching practice"
+        "Inclusion"
     ],
     "references": [
         "Hitchcock, C., Meyer, A., Rose, D., & Jackson, R. (2002). Providing new access to the general curriculum: Universal design for learning. <i>Teaching Exceptional Children</i>, <i>35</i>(2), 8–17. https://www.proquest.com/scholarly-journals/providing-new-access-general-curriculum/docview/201139970/se-2?accountid=8630",
         "Rose, D. (2000). Universal design for learning. <i>Journal of Special Education Technology</i>, <i>15</i>(3), 45–49. https://doi.org/10.1177/016264340001500307",
-        "Rose, D. H., & Meyer, A. (2002). Teaching every student in the digital age: Universal design for learning. In <i>The Corsini Encyclopedia of Psychology</i>. Association for Supervision."
+        "Rose, D. H., & Meyer, A. (2002). Teaching every student in the digital age: Universal design for learning. In <i>The Corsini Encyclopedia of Psychology</i>. Association for Supervision.",
+        "Edyburn, D. L. (2010). Would you recognize universal design for learning if you saw it? Ten propositions for new directions for the second decade of UDL. <i>Learning Disability Quarterly</i>, <i>33</i>(1), 33–41. https://doi.org/10.1177/073194871003300103"
     ],
     "drafted_by": [
         "Charlotte R. Pennington"
@@ -36,5 +34,5 @@
         "Susanne Vogel",
         "Joris Frese"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

@@ -5,9 +5,8 @@
     "sort_key": "etkileszim yanizlgizsiz [interaction fallacy]",
     "definition": "Anlamlı bir korelasyon ile anlamlı olmayan bir korelasyon  (ya da olasılık oranı gibi diğer ölçümler) arasındaki farkı değerlendirmek için uygun bir test yapılmadığında ortaya çıkan istatistiksel bir yanılgıdır. Bu yanılgı, biri anlamlı, diğeri anlamlı olmayan iki korelasyon katsayısının istatistiksel olarak anlamlı bir farkı temsil ettiği varsayıldığında, ancak bu karşılaştırmanın açıkça test edilmediği durumlarda meydana gelir.",
     "related_terms": [
-        "Comparison of Correlations",
         "Null Hypothesis Significance Testing (NHST)",
-        "Statistical Validity",
+        "Statistical validity",
         "Type I error",
         "Type II error"
     ],
@@ -35,5 +34,5 @@
     "translation_reviewed_by": [
         "Merve Öztürk"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

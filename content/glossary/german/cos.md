@@ -5,14 +5,10 @@
     "sort_key": "cos [center for open science (cos)]",
     "definition": "Eine gemeinnützige Organisation im Technologiesektor mit Sitz in Charlottesville, Virginia, die sich zum Ziel gesetzt hat, \"to increase openness, integrity, and reproducibility of research” (cos.io; dt.: die Offenheit, Integrität und Reproduzierbarkeit von Forschung zu verbessern). Neben anderen Ressourcen betreibt das COS das Open Science Framework (OSF) und die Open Scholarship Knowledge Base.",
     "related_terms": [
-        "Open Science badges",
+        "Badges (Open Science)",
         "Open Science Framework",
-        "OSF collections",
-        "OSF institutions",
-        "OSF meetings",
-        "OSF preprints",
-        "OSF registries",
-        "Registrations (Preregistrations & Registered Reports)",
+        "Preregistration",
+        "Registered Report",
         "Transparency and Openness Promotion Guidelines (TOP)"
     ],
     "references": [
@@ -38,5 +34,5 @@
         "Helena Hartmann",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

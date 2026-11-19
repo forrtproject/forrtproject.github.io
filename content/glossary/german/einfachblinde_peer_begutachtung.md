@@ -5,9 +5,7 @@
     "sort_key": "einfachblinde peer begutachtung [single-blind peer review]",
     "definition": "Bewertung von Forschungsergebnissen durch qualifizierte Expert:innen, wobei die Gutachter:innen die Identität der Autor:innen kennen, die Begutachtenden aber gegenüber den Autor:innen anonym bleiben.",
     "related_terms": [
-        "Anonymous review",
         "Double-blind peer review",
-        "Masked review",
         "Open Peer Review",
         "Peer review",
         "Triple-blind peer review"
@@ -35,5 +33,5 @@
         "Helena Hartmann",
         "Joris Frese"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

@@ -5,11 +5,8 @@
     "sort_key": "slow science",
     "definition": "Adopting Open Scholarship practices leads to a longer research process overall, with more focus on transparency, reproducibility, replicability and quality, over the quantity of outputs. Slow Science opposes publish-or-perish culture and describes an academic system that allows time and resources to produce fewer higher-quality and transparent outputs, for instance prioritising researcher time towards collecting more data, more time to read the literature, think about how their findings fit the literature and documenting and sharing research materials instead of running additional studies.",
     "related_terms": [
-        "collaboration",
         "Incentive structure",
-        "Publish or Perish",
-        "research culture",
-        "research quality"
+        "Publish or Perish"
     ],
     "references": [
         "Slow Science Academy. (2010). <i>The Slow Science Manifesto</i>. Slow Science. http://slow-science.org/",
@@ -33,5 +30,5 @@
     "aliases": [
         "/glossary/slow_science"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

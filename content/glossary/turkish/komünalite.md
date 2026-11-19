@@ -5,7 +5,6 @@
     "sort_key": "komuznalite [communality]",
     "definition": "Bilimsel sonuçların ve yöntemlerin ortak mülkiyeti ve bunun sonucunda her ikisinin de serbestçe paylaşılması zorunluluğu. Komünalite, her bilimsel bulgunun çok sayıda kişinin çabasının ürünü olduğu anlayışına dayanır. Bilim insanları yeni bulgularını meslektaşlarıyla açık bir şekilde paylaştığında bu norm izlenmiş olur.",
     "related_terms": [
-        "Mertonian norms",
         "Objectivity"
     ],
     "references": [
@@ -33,5 +32,5 @@
     "translation_reviewed_by": [
         "Elif Baştan"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

@@ -5,8 +5,8 @@
     "sort_key": "zitations-verzerrung [citation bias]",
     "definition": "Eine verzerrte (“biased”) Auswahl von Arbeiten oder Autor:innen, die im Text zitiert und in die Referenzen mit aufgenommen werden. Wenn eine Verzerrung von Zitationen vorliegt, geschieht dies häufig in einer Weise, die der/dem/den Autor:innen oder Gutachter:innen zugute kommt, statistisch signifikante Studien überrepräsentiert oder weitreichende geschlechts- oder herkunftsspezifische Vorurteile widerspiegelt (Brooks, 1985; Jannot et al., 2013; Zurn et al., 2020). Eine vorgeschlagene Lösung ist die Verwendung von Citation Diversity Statements (Zitations-Vielfalt-Angaben), in denen Autor:innen ihre Zitierpraxis reflektieren und Verzerrungen aufzeigen, die möglicherweise aufgetreten sind (Zurn et al., 2020).",
     "related_terms": [
-        "Citation diversity statement",
-        "Reporting bias"
+        "Citation Diversity Statement",
+        "Selective reporting"
     ],
     "references": [
         "Brooks, T. A. (1985). Private acts and public objects: An investigation of citer motivations. <i>Journal of the American Society for Information Science</i>, <i>36</i>(4), 223–229. https://doi.org/10.1002/asi.4630360402",
@@ -37,5 +37,5 @@
         "Susanne Vogel",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

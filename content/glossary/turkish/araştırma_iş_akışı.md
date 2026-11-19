@@ -5,9 +5,7 @@
     "sort_key": "arasztizrma isz akizsziz [research workflow]",
     "definition": "Araştırma iş akışı, fikir aşamasından yayımlanmaya kadar uzanan araştırma yürütme sürecidir. Tipik bir iş akışı şu şekilde ilerleyebilir: Araştırma sorusunun belirlenmesi ve çalışmanın tasarlanması ile başlayan kavramsallaştırma aşamasıyla başlanır. Çalışma tasarlandıktan sonra, araştırmacıların eğer gerekiyorsa etik onay alması ve çalışmanın nihai versiyonunu ön-kayıt altına alması gerekebilir. Ardından araştırmacılar verilerini toplar ve analiz eder. Süreç sonunda ise, yayım aşaması gelir; makale bir dergiye gönderilirken ön-baskı ve son-baskı aşamaları arasında ilerlenir.",
     "related_terms": [
-        "Open Research Workflow",
-        "Research cycle",
-        "Research pipeline"
+        "Research Cycle"
     ],
     "references": [
         "Kathawalla, U., Silverstein, P., & Syed, M. (2020). Easing into Open Science: A Guide for Graduate Students and Their Advisors. <i>Collabra: Psychology</i>. https://doi.org/10.31234/osf.io/vzjdp Retrieved from https://psyarxiv.com/vzjdp",
@@ -35,5 +33,5 @@
     "translation_reviewed_by": [
         "Neslihan Özhan"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

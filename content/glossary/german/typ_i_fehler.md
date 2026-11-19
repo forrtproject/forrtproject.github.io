@@ -5,15 +5,12 @@
     "sort_key": "typ-i-fehler [type i error]",
     "definition": "Incorrect rejection of a null hypothesis” (dt. fälschliches Verwerfen einer Nullhypothese; Simmons et al., 2011, S. 1359), d.h. das Auffinden von Beweisen, um die Nullhypothese, dass es keinen Effekt gibt, zu verwerfen, wenn die Beweise tatsächlich für die Beibehaltung der Nullhypothese sprechen, dass es keinen Effekt gibt (z. B. ein Richter, der eine unschuldige Person inhaftiert). Die Schlussfolgerung, dass ein signifikanter Effekt vorliegt, und die Zurückweisung der Nullhypothese, wenn die Ergebnisse tatsächlich zufällig entstanden sind.",
     "related_terms": [
-        "Frequentist statistics",
         "Null Hypothesis Significance Testing (NHST)",
-        "Null Result",
         "p-value",
         "Questionable Research Practices or Questionable Reporting Practices (QRPs)",
         "Reproducibility crisis (aka Replicability or replication crisis)",
-        "Scientific integrity",
+        "Research integrity",
         "Statistical power",
-        "True positive result",
         "Type II error"
     ],
     "references": [
@@ -45,5 +42,5 @@
         "Susanne Vogel",
         "Joris Frese"
     ],
-    "lastmod": "2026-11-08"
+    "lastmod": "2026-11-19"
 }

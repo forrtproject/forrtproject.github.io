@@ -3,10 +3,10 @@
     "en_title": "CRediT",
     "title": "CRediT",
     "sort_key": "credit",
-    "definition": "Die Contributor Roles Taxonomy (CRediT; dt. Klassifikation der Rollen von Mitwirkenden, [https://credit.niso.org/](https://credit.niso.org/)) ist eine übergeordnete Taxonomie, die dazu dient, die Rollen zu beschreiben, die typischerweise von Mitwirkenden an wissenschaftlichen Arbeiten eingenommen werden. Gegenwärtig gibt es 14 Rollen, die den spezifischen Beitrag eines jeden Mitwirkenden zur Veröffentlichung beschreiben. Sie können verschiedenen Autor:innen mehrfach zugewiesen werden, und einer:m Autor:in können auch mehrere Rollen zugewiesen werden. CRediT umfasst die folgenden Rollen: Konzeptualisierung, Datenkuratierung, formale Analyse, Akquise von Drittmitteln, Untersuchung, Methodik, Projektverwaltung, Ressourcen, Software, Betreuung, Validierung, Visualisierung, Schreiben \\- ursprünglicher Entwurf, Schreiben \\- Überprüfung und Bearbeitung. Eine Beschreibung der verschiedenen Rollen findet sich in der Arbeit von Brand et al. (2015).",
+    "definition": "Die Contributor Roles Taxonomy (CRediT; dt. Klassifikation der Rollen von Mitwirkenden, [credit.niso.org](https://credit.niso.org/)) ist eine übergeordnete Taxonomie, die dazu dient, die Rollen zu beschreiben, die typischerweise von Mitwirkenden an wissenschaftlichen Arbeiten eingenommen werden. Gegenwärtig gibt es 14 Rollen, die den spezifischen Beitrag eines jeden Mitwirkenden zur Veröffentlichung beschreiben. Sie können verschiedenen Autor:innen mehrfach zugewiesen werden, und einer:m Autor:in können auch mehrere Rollen zugewiesen werden. CRediT umfasst die folgenden Rollen: Konzeptualisierung, Datenkuratierung, formale Analyse, Akquise von Drittmitteln, Untersuchung, Methodik, Projektverwaltung, Ressourcen, Software, Betreuung, Validierung, Visualisierung, Schreiben \\- ursprünglicher Entwurf, Schreiben \\- Überprüfung und Bearbeitung. Eine Beschreibung der verschiedenen Rollen findet sich in der Arbeit von Brand et al. (2015).",
     "related_terms": [
         "Authorship",
-        "Contributions"
+        "Contribution"
     ],
     "references": [
         "Brand, A., Allen, L., Altman, M., Hlava, M., & Scott, J. (2015). Beyond authorship: attribution, contribution, collaboration, and credit. <i>Learned Publishing</i>, <i>28</i>(2), 151–155. https://doi.org/10.1087/20150211",
@@ -35,5 +35,5 @@
         "Helena Hartmann",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

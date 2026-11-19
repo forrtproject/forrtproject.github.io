@@ -7,7 +7,6 @@
     "related_terms": [
         "Preregistration",
         "Publication bias (File Drawer Problem)",
-        "Results-free review",
         "PCI (Peer Community In)",
         "Research Protocol"
     ],
@@ -45,5 +44,5 @@
         "Helena Hartmann",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

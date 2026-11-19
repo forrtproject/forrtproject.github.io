@@ -6,16 +6,15 @@
     "definition": "Yazarın, bir çalışmada kullanılan “anket maddeleri, uyaran materyallerini ve deney programları” gibi materyalleri kamuya açık şekilde paylaşmasıdır (Kidwell vd., 2016, s. 3). Dijital olarak paylaşılabilir materyaller, bunları herkese açık ve erişilebilir kılan açık erişimli depolara gönderilir. Lisanslamaya bağlı olarak, materyal diğer yazarlar tarafından kendi çalışmalarında yeniden kullanılabilir. Dijital olarak paylaşılamayan bileşenler (örn. biyolojik materyaller, ekipman) yeniden üretilebilirliğe izin verecek kadar ayrıntılı olarak tanımlanmalıdır.",
     "related_terms": [
         "Badges (Open Science)",
-        "Credibility of scientific claims",
         "FAIR principles",
-        "Open Access",
+        "Open access",
         "Open Code",
         "Open Data",
         "Reproducibility",
         "Transparency"
     ],
     "references": [
-        "Blohowiak, B. B., Cohoon, J., de Wit, L., Eich, E., Farach, F. J., Hasselman, F., & others. (2020). <i>Badges to Acknowledge Open Practices</i>. Retrieved from https://osf.io/tvyxz",
+        "Blohowiak, B. B., Cohoon, J., de Wit, L., Eich, E., Farach, F. J., Hasselman, F., et al. (2020). <i>Badges to Acknowledge Open Practices</i>. Retrieved from https://osf.io/tvyxz",
         "Kidwell, M. C., Lazarević, L. B., Baranski, E., Hardwicke, T. E., Piechowski, S., Falkenberg, L. S., & Nosek, B. A. (2016). Badges to acknowledge open practices: A simple, low-cost, effective method for increasing transparency. <i>PLoS Biology</i>, <i>14</i>(5), e1002456. https://doi.org/10.1371/journal.pbio.1002456"
     ],
     "drafted_by": [
@@ -38,5 +37,5 @@
     "translation_reviewed_by": [
         "Merve Öztürk"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

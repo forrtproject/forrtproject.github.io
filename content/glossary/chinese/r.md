@@ -5,8 +5,7 @@
     "sort_key": "r",
     "definition": "R是一种免费开源的编程语言和软件环境，可用于统计分析和数据可视化，由奥克兰大学的Ross Ihaka和Robert Gentleman开发。R支持研究者共享可重复的分析脚本，从而提高研究透明度。研究者常会配合集成开发环境（integrated development environment，简称IDE）使用R，例如RStudio、Visual Studio Code或Tinn-R，以简化操作。",
     "related_terms": [
-        "Open-source",
-        "Statistical analysis"
+        "Open Source software"
     ],
     "references": [
         "R Project for Statistical Computing. (n.d.). <i>R: The R Project for Statistical Computing</i>. R Project. https://www.r-project.org/",
@@ -34,5 +33,5 @@
         "Ruoting Liu",
         "Shuxian Jin"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

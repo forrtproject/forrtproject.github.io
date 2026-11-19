@@ -5,15 +5,12 @@
     "sort_key": "type i error",
     "definition": "“Incorrect rejection of a null hypothesis” (Simmons et al., 2011, p. 1359), i.e. finding evidence to reject the null hypothesis that there is no effect when the evidence is actually in favouring of retaining the null that there is no effect (For example, a judge imprisoning an innocent person). Concluding that there is a significant effect and rejecting the null hypothesis when your findings actually occurred by chance.",
     "related_terms": [
-        "Frequentist statistics",
         "Null Hypothesis Significance Testing (NHST)",
-        "Null Result",
         "p-value",
         "Questionable Research Practices or Questionable Reporting Practices (QRPs)",
         "Reproducibility crisis (aka Replicability or replication crisis)",
-        "Scientific integrity",
+        "Research integrity",
         "Statistical power",
-        "True positive result",
         "Type II error"
     ],
     "references": [
@@ -37,8 +34,12 @@
         null
     ],
     "language": "english",
+    "also_known_as": [
+        "False positive result",
+        "Alpha error"
+    ],
     "aliases": [
         "/glossary/type_i_error"
     ],
-    "lastmod": "2026-11-08"
+    "lastmod": "2026-11-19"
 }

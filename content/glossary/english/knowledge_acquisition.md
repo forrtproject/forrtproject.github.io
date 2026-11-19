@@ -5,9 +5,7 @@
     "sort_key": "knowledge acquisition",
     "definition": "The process by which the mind decodes or extracts, stores, and relates new information to existing information in long term memory. Given the complex structure and nature of knowledge, this process is studied in the philosophical field of epistemology, as well as the psychological field of learning and memory.",
     "related_terms": [
-        "Epistemology",
-        "Information",
-        "Learning"
+        "Epistemology"
     ],
     "references": [
         "Brule, J., & Blount, A. (1989). <i>Knowledge acquisition</i>. McGraw-Hill."
@@ -28,5 +26,5 @@
     "aliases": [
         "/glossary/knowledge_acquisition"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

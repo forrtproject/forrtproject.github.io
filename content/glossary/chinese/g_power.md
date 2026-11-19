@@ -5,9 +5,6 @@
     "sort_key": "g*power",
     "definition": "G*Power 是一款免费的统计软件，专用于进行功效分析。用户需选择统计检验类型（例如，t检验、回归、方差分析）以及以下四项中的三项：组数/观察数、效应量大小、显著性水平或统计功效，以便计算未指定的参数。",
     "related_terms": [
-        "Power analysis",
-        "Sample size justification",
-        "Sample size planning",
         "Statistical power"
     ],
     "references": [
@@ -35,5 +32,5 @@
         "Ruoting Liu",
         "Shuxian Jin"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

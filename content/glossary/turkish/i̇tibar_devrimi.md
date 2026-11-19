@@ -5,10 +5,8 @@
     "sort_key": "i̇tibar devrimi [credibility revolution]",
     "definition": "Bilimsel bulgulara yönelik artan güvensizlikle birlikte ortaya çıkan sorunları ve bu sorunlara yönelik çözümleri ifade eder. Bu güvensizlik, özellikle bilimsel iddiaların itibarına ilişkin endişelerden (örn., düşük tekrarlanabilirlik) kaynaklanmaktadır. Bu terim, tekrarlanabilirlik krizi terimine daha olumlu bir alternatif olarak önerilmiş olup, ön-kayıt, şeffaflık ve replikasyon çalışmaları gibi bilimsel araştırmaların itibarını artırmaya yönelik çeşitli çözüm yollarını kapsar.",
     "related_terms": [
-        "Credibility of scientific claims",
-        "High standards of evidence",
-        "Openness",
-        "Open Science;Reproducibility crisis (aka Replicability or replication crisis)",
+        "Open Science",
+        "Reproducibility crisis (aka Replicability or replication crisis)",
         "Transparency"
     ],
     "references": [
@@ -41,5 +39,5 @@
     "translation_reviewed_by": [
         "Ege Emek"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

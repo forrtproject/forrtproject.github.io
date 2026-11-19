@@ -6,14 +6,8 @@
     "definition": "Bilim insanları ve onların çalışmaları için geçerli olan değerlendirme ve ödüllendirme mekanizmalarının (açık ve örtük) bütünüdür. Daha geniş yapı içerisinde teşvik edilen alanlar arasında işe alım ve terfi uygulamaları, fon sağlama geçmişi ve yüksek etki faktörüne sahip dergilerde yayımlanan makaleler, davetli sunumlar, editörlükler ve ödüller gibi prestij göstergeleri vardır. Bu kriterlerin genellikle bilimin amacı (telos) ile uyumsuz olduğu ve bu nedenle titiz bilimsel çıktıları teşvik etmediği yaygın olarak kabul edilmektedir. DORA gibi girişimler, alanın dergi etki faktörleri gibi değerlendirme ölçütlerine olan bağımlılığını azaltarak, araştırma çıktılarının içsel kalitesine dayalı değerlendirmeleri tercih etmeyi amaçlamaktadır.",
     "related_terms": [
         "DORA",
-        "Metrics",
-        "Pressure",
-        "Publish or perish",
-        "Quantity",
-        "Reward structure",
-        "Scientific publications",
-        "Slow science",
-        "Structural factors"
+        "Publish or Perish",
+        "Slow science"
     ],
     "references": [
         "Koole, S. L., & Lakens, D. (2012). Rewarding replications: A sure and simple way to improve psychological science. <i>Perspectives on Psychological Science</i>, <i>7</i>(6), 608–614. https://doi.org/10.1177/1745691612462586",
@@ -41,5 +35,5 @@
     "translation_reviewed_by": [
         "Merve Öztürk"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

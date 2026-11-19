@@ -5,13 +5,12 @@
     "sort_key": "file drawer problem publikationsverzerrung; aktenschubladenproblem [publication bias (file drawer problem)]",
     "definition": "Der Fehler, Ergebnisse nur auf der Grundlage der \"direction or strength of the study findings\" (dt. Richtung oder Stärke der Studienergebnisse) zu veröffentlichen (Dickersin & Min, 1993, S. 135). Die Voreingenommenheit (Bias) entsteht, wenn die Bewertung der Veröffentlichungswürdigkeit einer Studie unverhältnismäßig stark vom Ergebnis der Studie abhängt, oft mit der Tendenz, dass neuartige und signifikante Ergebnisse es mehr wert seien, veröffentlicht zu werden als Replikationen und Null-Befunde. Diese Voreingenommenheit äußert sich in der Regel durch eine unverhältnismäßig hohe Anzahl signifikanter Ergebnisse und überhöhte Effektgrößen. Dieser Prozess führt dazu, dass die veröffentlichte wissenschaftliche Literatur nicht repräsentativ für das gesamte Ausmaß der Forschung ist und insbesondere Null-Befunde unterrepräsentiert sind. Solche Ergebnisse wiederum landen in der so genannten \"Aktenschublade\" (File Drawer), wo sie nie veröffentlicht werden und keine auffindbare Dokumentation haben.",
     "related_terms": [
-        "Dissemination bias",
         "P-curve",
-        "P-hacking",
+        "p-hacking",
         "Selective reporting",
         "Statistical significance",
-        "Trim and fill",
-        "Meta-Analysis"
+        "Trim-and-fill method",
+        "Meta-analysis"
     ],
     "references": [
         "Dickersin, K., & Min, Y. (1993). Publication Bias: The Problem That Won’t Go Away. <i>Annals of the New York Academy of Sciences</i>, <i>703</i>(1), 135–148. https://doi.org/10.1111/j.1749-6632.1993.tb26343.x",
@@ -47,5 +46,5 @@
         "Helena Hartmann",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

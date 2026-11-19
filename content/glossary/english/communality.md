@@ -5,7 +5,6 @@
     "sort_key": "communality",
     "definition": "The common ownership of scientific results and methods and the consequent imperative to share both freely. Communality is based on the fact that every scientific finding is seen as a product of the effort of a number of agents. This norm is followed when scientists openly share their new findings with colleagues.",
     "related_terms": [
-        "Mertonian norms",
         "Objectivity"
     ],
     "references": [
@@ -30,5 +29,5 @@
     "aliases": [
         "/glossary/communality"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

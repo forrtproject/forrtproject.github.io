@@ -5,8 +5,8 @@
     "sort_key": "citation bias",
     "definition": "A biased selection of papers or authors cited and included in the references section. When citation bias is present, it is often in a way which would benefit the author(s) or reviewers, over-represents statistically significant studies, or reflects pervasive gender or racial biases (Brooks, 1985; Jannot et al., 2013; Zurn et al., 2020). One proposed solution is the use of Citation Diversity Statements, in which authors reflect on their citation practices and identify biases which may have emerged (Zurn et al., 2020).",
     "related_terms": [
-        "Citation diversity statement",
-        "Reporting bias"
+        "Citation Diversity Statement",
+        "Selective reporting"
     ],
     "references": [
         "Brooks, T. A. (1985). Private acts and public objects: An investigation of citer motivations. <i>Journal of the American Society for Information Science</i>, <i>36</i>(4), 223–229. https://doi.org/10.1002/asi.4630360402",
@@ -33,5 +33,5 @@
     "aliases": [
         "/glossary/citation_bias"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

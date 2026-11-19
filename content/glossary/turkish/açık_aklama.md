@@ -5,9 +5,9 @@
     "sort_key": "aczizk aklama [open washing]",
     "definition": "‘Yeşil aklama (greenwashing)’ teriminden türetilen açık aklama (open washing), açıklık uygulamalarıyla ilişkilendirilen titizlik veya prestij algısını sağlamak amacıyla açıklık iddiasında bulunma eylemini ifade eder. Bu terim, açık kaynaklı ve açık lisanslı gibi görünen ancak aslında tescilli uygulamalarda bulunan yazılım şirketlerinin pazarlama stratejisini tanımlamak için kullanılmıştır. Açık aklama, açık bilim uygulamalarını benimseyenler için giderek artan bir endişe kaynağıdır; çünkü bu kişilerin eylemleri, açık uygulamaların yanıltıcı kullanımlarıyla gölgelenmekte ve ilerlemeye yönelik gelişmeleri kolaylaştırmak amacıyla tasarlanan eylemler, net bir kalite kontrolü olmaksızın sadece ‘kutucuk işaretleme’ye indirgenmektedir.",
     "related_terms": [
-        "Open Access",
+        "Open access",
         "Open Data",
-        "Open Source"
+        "Open Source software"
     ],
     "references": [
         "Farrow, R. (2017). Open Education and Critical Pedagogy. <i>Learning, Media and Technology</i>, <i>42</i>(2), 130–146. https://doi.org/10.1080/17439884.2016.1113991",
@@ -35,5 +35,5 @@
     "translation_reviewed_by": [
         "Nihan Selin Soylu-Konak"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

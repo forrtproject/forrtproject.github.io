@@ -5,12 +5,9 @@
     "sort_key": "psychometrische metaanalyse [psychometric meta-analysis]",
     "definition": "Psychometrische Meta-Analysen zielen darauf ab, die Abschwächung der interessierenden Effektgrößen aufgrund von Messfehlern und anderen Artefakten durch Verfahren zu korrigieren, die auf psychometrischen Grundsätzen beruhen, z. B. der Zuverlässigkeit (Reliabilität) der Messgrößen. Diese Verfahren sollten durchgeführt werden, bevor die synthetisierten Effektgrößen in Korrelations- oder experimentellen Meta-Analysen verwendet werden, da die Durchführung dieser Korrekturen tendenziell zu größeren und weniger variablen Effektgrößen führt.",
     "related_terms": [
-        "Correlational meta-analysis",
-        "Hunter-Schmidt meta-analysis",
         "Meta-analysis",
         "Non-Intervention, Reproducible, and Open Systematic Reviews (NIRO-SR)",
-        "Publication bias (File Drawer Problem)",
-        "Validity generalization"
+        "Publication bias (File Drawer Problem)"
     ],
     "references": [
         "Borenstein, M., Hedges, L. V., Higgins, J. P., & Rothstein, H. R. (2011). <i>Introduction to meta-analysis</i>. John Wiley & Sons.",
@@ -37,5 +34,5 @@
         "Susanne Vogel",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

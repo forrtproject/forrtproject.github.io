@@ -4,9 +4,7 @@
     "title": "Forschungszyklus [Research Cycle]",
     "sort_key": "forschungszyklus [research cycle]",
     "definition": "Beschreibt den zirkulären Prozess der wissenschaftlichen Forschung, bei dem Forschende in verschiedenen Stadien der Untersuchung arbeiten, von eher vorsichtigen und explorativen Untersuchungen bis hin zur Prüfung definierterer und gut belegter Behauptungen (aus dem Engl. “researchers working at various stages of inquiry, from more tentative and exploratory investigations to the testing of more definitive and well-supported claims”, Lieberman, 2020, S. 42). Der Zyklus umfasst die Literaturrecherche und Hypothesenbildung, die Datenerhebung und \\-analyse sowie die Verbreitung der Ergebnisse (z. B. durch die Veröffentlichung in Fachzeitschriften mit Peer-Review), aus der wiederum die Theorie und neue Hypothesen/Forschungen hervorgehen.",
-    "related_terms": [
-        "Research process"
-    ],
+    "related_terms": [],
     "references": [
         "Bramoullé, Y., & Saint-Paul, G. (2010). Research cycles. In <i>Journal of Economic Theory</i> (Vol. 145, pp. 1890–1920). https://doi.org/10.2139/ssrn.965816",
         "Lieberman, E. (2020). Research Cycles. In C. Elman, J. Gerring, & J. Mahoney (Eds.), <i>The Production of Knowledge: Enhancing Progress in Social Science</i> (pp. 42–70). Cambridge University Press. https://doi.org/10.1017/9781108762519.003"
@@ -31,5 +29,5 @@
         "Susanne Vogel",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

@@ -5,9 +5,9 @@
     "sort_key": "tersine p-hackleme [reverse p-hacking]",
     "definition": "İstatistiksel veri analizi sırasında, araştırmacının serbestlik derecesini kötüye kullanarak sıfır hipotezinin kabul edilme olasılığını artırmaya yönelik manipülasyonlardır (örneğin, p > .05 elde etmeye çalışmak).",
     "related_terms": [
-        "Analytic flexibility",
+        "Analytic Flexibility",
         "HARKing",
-        "P-hacking",
+        "p-hacking",
         "Questionable Research Practices or Questionable Reporting Practices (QRPs)",
         "Researcher degrees of freedom",
         "Selective reporting"
@@ -34,5 +34,5 @@
     "translation_reviewed_by": [
         "Neslihan Özhan"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

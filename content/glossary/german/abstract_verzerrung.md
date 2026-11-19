@@ -5,9 +5,8 @@
     "sort_key": "abstract-verzerrung [abstract bias]",
     "definition": "Die Tendenz, nur signifikante Ergebnisse in der Zusammenfassung (Abstract) zu berichten, obwohl nicht-signifikante Ergebnisse im Hauptteil des Manuskripts berichtet werden (die nicht-signifikanten Ergebnisse gar nicht zu berichten wäre selektives Berichten (selective reporting)). Die Folge von Abstract Verzerrung ist, dass Studien mit nicht-signifikanten Ergebnissen möglicherweise durch übliche Suchstrategien für Metaanalysen (die auf Informationen in Titel, Abstract und Keywords beruhen) nicht gefunden werden und damit die Ergebnisse von Metaanalysen verfälscht (biased) werden.",
     "related_terms": [
-        "Cherry-picking",
-        "Publication bias (File Drawer Problem)",
-        "Selective reporting"
+        "Selective reporting",
+        "Publication bias (File Drawer Problem)"
     ],
     "references": [
         "Duyx, B., Swaen, G. M., Urlings, M. J., Bouter, L. M., & Zeegers, M. P. (2019). The strong focus on positive results in abstracts may cause bias in systematic reviews: A case study on abstract reporting bias. <i>Systematic Reviews</i>, <i>8</i>(1), 1–8."
@@ -34,5 +33,5 @@
         "Helena Hartmann",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

@@ -5,8 +5,7 @@
     "sort_key": "kitlesel aczizk czevrim i̇czi makaleler (moops; massively open online papers)",
     "definition": "Geleneksel ortak yazarlı makaleden farklı olarak, MOOP, önceden belirlenmiş bir katkıcı listesiyle sınırlı olmayan, açık katılımcı ve dinamik bir modeli izler.",
     "related_terms": [
-        "Citizen science",
-        "Collaboration",
+        "Citizen Science",
         "Crowdsourced Research",
         "Many authors",
         "Team science"
@@ -29,5 +28,5 @@
     "translation_reviewed_by": [
         "Merve Öztürk"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

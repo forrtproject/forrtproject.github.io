@@ -6,8 +6,8 @@
     "definition": "Eine Möglichkeit, das aktualisierte Wissen bei der Bayes'schen Inferenz zusammenzufassen, wobei das vorherige Wissen (prior knowledge) mit den beobachteten Daten abgeglichen wird. In der Statistik sind Posterior-Verteilungen proportional zum Produkt aus der Wahrscheinlichkeitsfunktion und dem Prior. Eine Posterior-Wahrscheinlichkeitsverteilung gibt die (Un-)Gewissheit über einen bestimmten Parameterwert an.",
     "related_terms": [
         "Bayes Factor",
-        "Bayesian inference",
-        "Bayesian parameter estimation",
+        "Bayesian Inference",
+        "Bayesian Parameter Estimation",
         "Likelihood function",
         "Prior distribution"
     ],
@@ -37,5 +37,5 @@
         "Helena Hartmann",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

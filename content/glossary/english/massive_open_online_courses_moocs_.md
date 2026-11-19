@@ -6,9 +6,7 @@
     "definition": "Exclusively online courses which are accessible to any learner at any time, are typically free to access (while not necessarily openly licensed), and provide video-based instructions and downloadable data sets and exercises. The “massive” aspect describes the high volume of students that can access the course at any one time due to their flexibility, low or no cost, and online nature of the materials.",
     "related_terms": [
         "Accessibility",
-        "Distance education",
-        "Inclusion",
-        "Open learning"
+        "Inclusion"
     ],
     "references": [
         "Baturay, M. H. (2015). An overview of the world of MOOCs. <i>Procedia-Social and Behavioral Sciences</i>, <i>174</i>, 427–433. https://doi.org/10.1016/j.sbspro.2015.01.685",
@@ -31,5 +29,5 @@
     "aliases": [
         "/glossary/massive_open_online_courses_moocs_"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

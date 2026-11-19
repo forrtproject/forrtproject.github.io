@@ -5,11 +5,8 @@
     "sort_key": "langsame forschung [slow science]",
     "definition": "Open Scholarship-Praktiken umzusetzen führt zu einem längeren Forschungsprozess, bei dem mehr Wert auf Transparenz, Reproduzierbarkeit, Replizierbarkeit und Qualität als auf die Quantität der Ergebnisse gelegt wird. Langsame Forschung (Slow science) wendet sich gegen die \"*publish-or-perish*\"-Kultur (dt. Publizieren oder untergehen) und bezeichnet ein akademisches System, das Zeit und Ressourcen für die Produktion von hochwertigen und transparenten Ergebnissen bereitstellt, beispielsweise indem Forschende mehr Zeit für Datenerhebung, für das Lesen der Literatur, für das Nachdenken darüber, wie ihre Ergebnisse zur bestehenden Literatur passen, und für die Dokumentation, Bereitstellung und Austausch von Forschungsmaterialien aufwenden, anstatt zusätzliche Studien durchzuführen.",
     "related_terms": [
-        "collaboration",
         "Incentive structure",
-        "Publish or Perish",
-        "research culture",
-        "research quality"
+        "Publish or Perish"
     ],
     "references": [
         "Slow Science Academy. (2010). <i>The Slow Science Manifesto</i>. Slow Science. http://slow-science.org/",
@@ -38,5 +35,5 @@
         "Susanne Vogel",
         "Joris Frese"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

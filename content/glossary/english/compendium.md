@@ -5,10 +5,8 @@
     "sort_key": "compendium",
     "definition": "A collection of files prepared by a researcher to support a report or publication that include the data, metadata, programming code, software dependencies, licenses, and other instructions necessary for another researcher to independently reproduce the findings presented in the report or publication.",
     "related_terms": [
-        "Compendia",
-        "Replication",
-        "Reproducibility",
-        "Research compendium;"
+        "Replicability",
+        "Reproducibility"
     ],
     "references": [
         "Claerbout, J. F., & Karrenbach, M. (1992). Electronic documents give reproducible research a new meaning. <i>SEG Technical Program Expanded Abstracts 1992</i>, 601–604. http://sepwww.stanford.edu/doku.php?id=sep:research:reproducible:seg92",
@@ -30,5 +28,5 @@
     "aliases": [
         "/glossary/compendium"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

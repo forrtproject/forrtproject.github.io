@@ -5,12 +5,9 @@
     "sort_key": "arasztizrma verisi yoznetimi (avy) [research data management]",
     "definition": "Araştırma Verisi Yönetimi (AVY) (RDM; Research Data Management), düzenli, belgelenmiş, erişilebilir ve yeniden kullanılabilir nitelikli araştırma verisi oluşturmak için yürütülen süreçleri kapsayan geniş bir kavramdır. Uygun araştırma verisi yönetimi, veri kaybı olasılığının azalması, veri paylaşımı sayesinde görünürlüğün ve iş birliklerinin artması, araştırmada etik bütünlüğün ve hesap verebilirliğin gösterilmesi gibi birçok fayda sağlar.",
     "related_terms": [
-        "Data curation",
-        "Data documentation",
         "Data management plan (DMP)",
         "Data sharing",
-        "Metadata",
-        "Research data management"
+        "Metadata"
     ],
     "references": [
         "CESSDA. (n.d.). <i>Data Management Expert Guide—CESSDA TRAINING</i>. https://www.cessda.eu/Training/Training-Resources/Library/Data-Management-Expert-Guide",
@@ -35,5 +32,5 @@
     "translation_reviewed_by": [
         "Neslihan Özhan"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

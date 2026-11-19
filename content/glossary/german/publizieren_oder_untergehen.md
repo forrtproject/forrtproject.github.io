@@ -6,10 +6,10 @@
     "definition": "Ein Aphorismus, der den Druck beschreibt, unter dem Forschende stehen, akademische Manuskripte zu veröffentlichen, oft in hoch angesehenen akademischen Zeitschriften, um eine erfolgreiche akademische Karriere zu haben. Dieser Druck, eine große Anzahl von Manuskripten zu veröffentlichen, kann auf Kosten der Qualität der Manuskripte gehen. Dieser institutionelle Druck wird durch Einstellungs- und Berufungsverfahren und Finanzierungsentscheidungen verschärft, die sich stark an der Anzahl und dem Einfluss der Veröffentlichungen orientieren.",
     "related_terms": [
         "Incentive structure",
-        "Journal Impact Factor",
+        "Journal Impact Factor™",
         "Reproducibility crisis (aka Replicability or replication crisis)",
         "Salami slicing",
-        "Slow Science"
+        "Slow science"
     ],
     "references": [
         "Case, C. M. (1928). Scholarship in Sociology. <i>Sociology and Social Research</i>, <i>12</i>, 323–340. http://www.sudoc.fr/036493414",
@@ -38,5 +38,5 @@
         "Helena Hartmann",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

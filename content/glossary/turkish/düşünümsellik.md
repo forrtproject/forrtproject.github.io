@@ -6,7 +6,7 @@
     "definition": "Düşünümsellik süreci, araştırma yoluyla ürettiğimiz bilgiyi, bu bilginin nasıl üretildiğini ve araştırmacılar olarak bu bilgiyi üretmedeki kendi rolümüzü eleştirel biçimde değerlendirmeyi ifade eder. Düşünümselliğin farklı türleri vardır: kişisel düşünümsellik, araştırmacıların kendi kişisel deneyimlerinin etkisini dikkate aldığı durumdur, ve işlevsel düşünümsellik, araştırma araçlarımızın ve yöntemlerimizin bilgi üretimini nasıl etkileyebileceğini değerlendirmeyi içerir. Düşünümsellik, araştırma sorularının geliştirilmesi, veri toplama ve analiz dâhil olmak üzere araştırma sürecini etkileyebilecek örtük faktörlere dikkat çekmeyi amaçlar.",
     "related_terms": [
         "Bracketing Interviews",
-        "Qualitative Research"
+        "Qualitative research"
     ],
     "references": [
         "Braun, V., & Clarke, V. (2013). <i>Successful Qualitative Research</i>. SAGE Publications.",
@@ -29,5 +29,5 @@
     "translation_reviewed_by": [
         "Nihan Selin Soylu-Konak"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

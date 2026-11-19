@@ -8,7 +8,7 @@
         "Bropenscience",
         "BIZARRE",
         "Decolonisation",
-        "Double Consciousness",
+        "Double consciousness",
         "Equity",
         "Inclusion",
         "STRANGE",
@@ -38,5 +38,5 @@
     "aliases": [
         "/glossary/diversity"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

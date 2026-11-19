@@ -5,12 +5,8 @@
     "sort_key": "many labs",
     "definition": "A series of crowdsourced replication projects in which independent research teams use shared study protocols to examine the replicability of published psychological effects and variation in results across samples and settings. The first project, Many Labs 1 (Klein et al., 2014), tested 13 effects across 36 independent samples involving 6,344 participants. It was followed by Many Labs 2 (Klein et al., 2018) and further projects investigating different facets of replicability. Similar collaborative initiatives include ManyBabies, EEGManyLabs, and the Psychological Science Accelerator.",
     "related_terms": [
-        "Collaboration",
-        "Many analysts",
-        "Many Labs I",
-        "Many Labs II",
-        "Open Science Collaboration",
-        "Replication"
+        "Multi-Analyst Studies",
+        "Replicability"
     ],
     "references": [
         "Ebersole, C. R., Atherton, O. E., Belanger, A. L., Skulborstad, H. M., Allen, J. M., Banks, J. B., & Nosek, B. A. (2016). Many Labs 3: Evaluating participant pool quality across the academic semester via replication. <i>Journal of Experimental Social Psychology</i>, <i>67</i>, 68–82. https://doi.org/10.1016/j.jesp.2015.10.012",
@@ -36,5 +32,5 @@
     "aliases": [
         "/glossary/many_labs"
     ],
-    "lastmod": "2026-10-11"
+    "lastmod": "2026-11-19"
 }

@@ -5,21 +5,16 @@
     "sort_key": "szuzpheli arasztizrma uygulamalariz veya szuzpheli raporlama uygulamalariz [questionable research practices or questionable reporting practices (qrps)]",
     "definition": "Araştırmacının kendi hipotezlerini destekleyecek şekilde verileri kasıtlı ya da kasıtsız olarak çarpıtmasına veya bu tür uygulamaların raporlanmasında yapılan ihmallere yönelik bir dizi etkinliği kapsar. Bunlar arasında; verilerin seçici olarak dahil edilmesi, sonuçlar bilindikten sonra hipotez kurma (HARKing) ve p-hackleme gibi uygulamalar yer alır. Bu kavram, John vd. (2012) tarafından popülerleştirilmiştir.",
     "related_terms": [
-        "Creative use of outliers",
-        "Fabrication",
-        "File-drawer",
+        "Scientific misconduct",
+        "Publication bias (File Drawer Problem)",
         "Garden of forking paths",
         "HARKing",
-        "Nonpublication of data",
         "p-hacking",
-        "p-value fishing",
-        "Partial publication of data",
-        "Post-hoc storytelling",
+        "Salami slicing",
         "Preregistration",
         "Questionable Measurement Practices (QMP)",
         "Researcher degrees of freedom",
-        "Reverse p-hacking",
-        "Salami slicing"
+        "Reverse p-hacking"
     ],
     "references": [
         "Banks, G. C., Rogelberg, S. G., Woznyj, H. M., Landis, R. S., & Rupp, D. E. (2016). Editorial: Evidence on questionable research practices: The good, the bad, and the ugly. <i>Journal of Business and Psychology</i>, <i>31</i>(3), 323–338. https://doi.org/10.1007/s10869-016-9456-7",
@@ -52,5 +47,5 @@
     "translation_reviewed_by": [
         "Nihan Selin Soylu-Konak"
     ],
-    "lastmod": "2026-11-08"
+    "lastmod": "2026-11-19"
 }

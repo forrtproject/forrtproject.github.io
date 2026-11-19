@@ -5,8 +5,7 @@
     "sort_key": "r",
     "definition": "R ist eine freie, quelloffene Programmiersprache und Softwareumgebung, die zur Durchführung statistischer Analysen und zur Darstellung von Daten verwendet werden kann. R wurde von Ross Ihaka und Robert Gentleman an der Universität von Auckland entwickelt. R ermöglicht es Forschenden , reproduzierbare Analyseskripte weiterzugeben, was die Transparenz einer Studie erhöht. Häufig wird R in Verbindung mit einer integrierten Entwicklungsumgebung (integrated development environment, IDE) verwendet, die die Arbeit mit der Sprache vereinfacht, z. B. RStudio oder Visual Studio Code oder Tinn-R.",
     "related_terms": [
-        "Open-source",
-        "Statistical analysis"
+        "Open Source software"
     ],
     "references": [
         "R Project for Statistical Computing. (n.d.). <i>R: The R Project for Statistical Computing</i>. R Project. https://www.r-project.org/",
@@ -32,5 +31,5 @@
         "Susanne Vogel",
         "Jennifer Mattschey"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

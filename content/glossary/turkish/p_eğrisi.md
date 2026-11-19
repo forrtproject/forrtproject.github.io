@@ -5,14 +5,13 @@
     "sort_key": "p-egzrisi [p-curve]",
     "definition": "P-eğrisi, olası yayın yanlılığını belirlemek için kullanılan bir araçtır ve bağımsız bulgular dizisindeki anlamlı p-değerlerinin dağılımını kullanır. Beklenen sağa çarpık dağılımdan sapma, yayın yanlılığının varlığı ve derecesini değerlendirmek için kullanılabilir: eğer eğri sağa çarpıksa, bu düşük, yüksek anlamlı p-değerlerinin daha fazla olduğu ve altında gerçek bir etkinin olduğu anlamına gelir. Eğer eğri sola çarpıksa, 0.05 eşik değerinin hemen altında çok sayıda zar zor (marjinal olarak) anlamlı sonuç var demektir. Bu durum, çalışmaların kanıt değeri taşımadığını ve şüpheli araştırma uygulamalarına (QRPs; Questionable Research Practices) (örn., p-hackleme) dayandığını gösterir. Gerçek bir etkinin bulunmadığı (gerçek sıfır hipotezi) ve p-değeri raporlamasında yanlılık olmadığı durumda, p-eğrisi p-değerlerinin tipik dağılımını yansıtan düz, yatay bir çizgi şeklinde olmalıdır.",
     "related_terms": [
-        "File-drawer",
+        "Publication bias (File Drawer Problem)",
         "Hypothesis",
         "p-hacking",
         "p-value",
-        "Publication bias (File Drawer Problem)",
         "Questionable Research Practices or Questionable Reporting Practices (QRPs)",
         "Selective reporting",
-        "Z-curve"
+        "Z-Curve"
     ],
     "references": [
         "Bruns, S. B., & Ioannidis, J. P. (2016). P-curve and p-hacking in observational research. <i>PLoS ONE</i>, <i>11</i>(2), e0149144. https://doi.org/10.1371/journal.pone.0149144",
@@ -40,5 +39,5 @@
     "translation_reviewed_by": [
         "Nihan Selin Soylu-Konak"
     ],
-    "lastmod": "2026-11-08"
+    "lastmod": "2026-11-19"
 }

@@ -5,15 +5,12 @@
     "sort_key": "tip i hata [type i error]",
     "definition": "“Sıfır hipotezinin yanlış bir şekilde reddedilmesi” (Simmons vd., 2011, s. 1359), yani aslında etki olmadığı durumda, sıfır hipotezinin reddedilmesini destekleyen yanlış bir kanıt bulma durumudur. Örneğin, bir hâkimin masum bir kişiyi hapse atması. Bulguların aslında rastlantı sonucu ortaya çıkmasına rağmen anlamlı bir etki olduğu sonucuna varmak ve sıfır hipotezini reddetmek.",
     "related_terms": [
-        "Frequentist statistics",
         "Null Hypothesis Significance Testing (NHST)",
-        "Null Result",
         "p-value",
         "Questionable Research Practices or Questionable Reporting Practices (QRPs)",
         "Reproducibility crisis (aka Replicability or replication crisis)",
-        "Scientific integrity",
+        "Research integrity",
         "Statistical power",
-        "True positive result",
         "Type II error"
     ],
     "references": [
@@ -43,5 +40,5 @@
     "translation_reviewed_by": [
         "Neslihan Özhan"
     ],
-    "lastmod": "2026-11-08"
+    "lastmod": "2026-11-19"
 }

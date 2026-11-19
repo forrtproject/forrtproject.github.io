@@ -7,7 +7,7 @@
     "related_terms": [
         "Authorship",
         "Consortium authorship",
-        "Contributions",
+        "Contribution",
         "CRediT"
     ],
     "references": [
@@ -38,5 +38,5 @@
         "Xiujuan Wen",
         "Shuxian Jin"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }

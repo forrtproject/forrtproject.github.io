@@ -5,10 +5,8 @@
     "sort_key": "pro (peer review openness) initiative",
     "definition": "The agreement made by several academics that they will not provide a peer review of a manuscript unless certain conditions are met. Specifically, the manuscript authors should ensure the data and materials will be made publicly available (or give a justification as to why they are not freely available or shared), provide documentation detailing how to interpret and run any files or code and detail where these files can be located via the manuscript itself.",
     "related_terms": [
-        "Non-anonymised peer review",
-        "Open Science",
         "Open Peer Review",
-        "Transparent peer review"
+        "Open Science"
     ],
     "references": [
         "Morey, R. D., Chambers, C. D., Etchells, P. J., Harris, C. R., Hoekstra, R., Lakens, D., Lewandowsky, S., Morey, C. C., Newman, D. P., Schönbrodt, F. D., Vanpaemel, W., Wagenmakers, E.-J., & Zwaan, R. A. (2016). The Peer Reviewers’ Openness Initiative: incentivizing open research practices through peer review. <i>Royal Society Open Science</i>, <i>3</i>(1). https://doi.org/10.1098/rsos.150547"
@@ -29,5 +27,5 @@
     "aliases": [
         "/glossary/pro_peer_review_openness_initiative"
     ],
-    "lastmod": "2026-08-05"
+    "lastmod": "2026-11-19"
 }
