@@ -583,7 +583,8 @@ jobs:
             echo "No sub-sites to preserve."
             exit 0
           fi
-          git -C "$CURRENT" sparse-checkout set --no-cone "${SLUGS[@]/%//}"
+          # Anchored, so same-named folders nested elsewhere are not downloaded.
+          printf '/%s/\n' "${SLUGS[@]}" | git -C "$CURRENT" sparse-checkout set --no-cone --stdin
           git -C "$CURRENT" -c http.extraHeader="$AUTH" checkout --quiet
           for slug in "${SLUGS[@]}"; do
             if [ -e "$DEST/$slug" ]; then
