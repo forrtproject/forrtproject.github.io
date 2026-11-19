@@ -74,6 +74,9 @@ class DescriptionURLReport(unittest.TestCase):
             flora = Path(public) / seo.FLORA_PAGE
             flora.parent.mkdir(parents=True)
             flora.write_text("<meta name='description' content='FLoRA'><h1>FLoRA</h1><p>https://doi.org/10.17605/OSF.IO/9R62X</p>", encoding="utf-8")
+            hub = Path(public) / seo.GLOSSARY_HUB
+            hub.parent.mkdir(parents=True)
+            hub.write_text("<meta name='description' content='Glossary'><h1>Glossary</h1>", encoding="utf-8")
             output = StringIO()
             with redirect_stdout(output):
                 self.assertEqual(seo.main(public), 0)
@@ -322,6 +325,35 @@ class FloraCitationCheck(unittest.TestCase):
     def test_missing_citation_or_page_fails(self):
         self.assertIn("DOI", flora_failures("<p>How to cite:</p>")[0])
         self.assertIn("not found", flora_failures(None)[0])
+
+
+class GlossaryAkaFilterCheck(unittest.TestCase):
+    HUB = ('<li data-term="type i error · false-positive · alpha error">\n  <a href="/glossary/english/type_i_error/">Type I error</a></li>'
+           '<li data-term="p-hacking · fishing · p-value fishing"><a href="/glossary/english/p_hacking/">p-hacking</a></li>')
+
+    def page(self, names):
+        return '<h1>T</h1><p class="term-aka"><span class="term-aka-label">Also known as:</span> %s</p>' % names
+
+    def test_names_in_the_hub_filter_pass(self):
+        pages = {"/glossary/english/type_i_error/": self.page("False-positive, Alpha error"),
+                 "/glossary/english/p_hacking/": self.page("Fishing, <em>p</em>-value fishing"),
+                 "/glossary/english/other/": "<h1>No other names</h1>"}
+        self.assertEqual(seo.glossary_aka_failures(self.HUB, pages), [])
+
+    def test_preview_prefix_on_hub_links_is_ignored(self):
+        hub = self.HUB.replace('href="/glossary/', 'href="/rebrand-doors/glossary/')
+        pages = {"/glossary/english/type_i_error/": self.page("Alpha error")}
+        self.assertEqual(seo.glossary_aka_failures(hub, pages), [])
+
+    def test_missing_hub_fails(self):
+        with tempfile.TemporaryDirectory() as public:
+            self.assertEqual(seo.check_glossary_aka_filter(public), ["%s (page not found)" % seo.GLOSSARY_HUB])
+
+    def test_name_missing_from_the_hub_filter_fails(self):
+        pages = {"/glossary/english/type_i_error/": self.page("Alpha error, Type 1 error"),
+                 "/glossary/english/missing/": self.page("Lost")}
+        self.assertEqual(seo.glossary_aka_failures(self.HUB, pages),
+                         ["/glossary/english/missing/ (Lost)", "/glossary/english/type_i_error/ (Type 1 error)"])
 
 
 if __name__ == "__main__":

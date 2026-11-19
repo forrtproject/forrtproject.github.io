@@ -13,6 +13,7 @@
         "alt_definition" "Alternative definition"
         "related_term" "Related term"
         "related_terms" "Related terms"
+        "also_known_as" "Also known as"
         "not_in_glossary" "Not yet in the glossary:"
         "originally_drafted_by" "Originally drafted by"
         "reviewed_by" "Reviewed by"
@@ -104,6 +105,8 @@
       <header class="article-head">
         <nav class="crumbs" aria-label="{{ $dict.breadcrumb | default "Breadcrumb" }}"><a href="{{ "" | relLangURL }}">{{ $dict.home | default "Home" }}</a> <span aria-hidden="true">/</span> {{ with .Parent }}<a href="{{ .RelPermalink | default (printf "/%s/" (strings.Trim .Path "/") | relLangURL) }}">{{ $dict.glossary | default .Title }}</a> <span aria-hidden="true">/</span> {{ end }}<span aria-current="page">{{ partial "doors/term_title" .Title }}</span></nav>
         <h1{{ if gt (strings.RuneCount .Title) 60 }} class="long-title"{{ end }}>{{ partial "doors/term_title" .Title }}</h1>
+        {{/* Other names for the term, from the Glossary sheet's related_terms_linking tab (English pages only). */}}
+        {{ with .Params.also_known_as }}<p class="term-aka"><span class="term-aka-label">{{ $dict.also_known_as | default "Also known as" }}:</span> {{ range $i, $name := . }}{{ if $i }}{{ $sep }}{{ end }}{{ $name | htmlEscape | markdownify }}{{ end }}</p>{{ end }}
       </header>
 
 <div class="language-switcher">

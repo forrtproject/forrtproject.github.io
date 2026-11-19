@@ -23,5 +23,9 @@
       "url" .Permalink
       "inLanguage" $lang
       "inDefinedTermSet" $set -}}
+  {{- with .Params.also_known_as -}}
+    {{- $alt := slice -}}{{- range . -}}{{- $alt = $alt | append (. | plainify | replaceRE `\*+` "") -}}{{- end -}}
+    {{- $term = merge $term (dict "alternateName" $alt) -}}
+  {{- end -}}
   <script type="application/ld+json">{{ $term | jsonify | safeJS }}</script>
 {{- end -}}
