@@ -183,7 +183,7 @@
   .pub-intro{grid-template-columns:minmax(0,1fr) 240px;gap:0 64px}
   .article-layout .article-style .pub-intro .citation-container{grid-row:1/span 3}
   .pub-intro>.pub-filters{grid-column:1}
-  .pub-intro>.pub-intro-text{max-width:36em}
+  .pub-intro>.pub-intro-text{max-width:540px}
 }
 /* The citation chart (shortcodes/citation_chart.html): the total in display type, then a bar for each year in the
    link colour, its count above it and the year below; the year still running is lighter. */
