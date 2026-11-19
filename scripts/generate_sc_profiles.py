@@ -232,8 +232,7 @@ MODAL_TEMPLATE = r"""
                 </div>
                 <div class="sc-modal-main">
                     <h3 class="sc-modal-name">{name}</h3>
-                    <p class="sc-modal-role">{role}</p>
-                    {bio_block}
+                    <p class="sc-modal-role">{role}</p>{bio_block}
                 </div>
             </div>
         </div>
@@ -274,15 +273,18 @@ def display_name(name):
     return name
 
 def strip_title(name):
-    """Drop a leading 'Dr'/'Prof' and any post-nominals so initials come from the names."""
-    name = name.split(',')[0]
-    return re.sub(r'^(Dr|Prof)\.?\s+', '', name, flags=re.IGNORECASE).strip()
+    """Drop a leading 'Dr'/'Prof', post-nominals and parenthesised titles such as
+    '(Assist. Prof)', so initials and folder names come from the names alone."""
+    name = re.sub(r'\([^)]*\)', ' ', name).split(',')[0]
+    name = re.sub(r'^(Dr|Prof)\.?\s+', '', name.strip(), flags=re.IGNORECASE)
+    return re.sub(r'\s+', ' ', name).strip()
 
 def render_bio(bio):
-    """Bio paragraph for a modal; nothing at all when no bio was supplied."""
+    """Bio line for MODAL_TEMPLATE's {bio_block}, indented to sit under the role; an empty
+    string when no bio was supplied, so the modal has no bio line at all."""
     if not bio:
         return ""
-    return f'<div class="sc-modal-bio">{html.escape(bio)}</div>'
+    return f'\n                    <div class="sc-modal-bio">{html.escape(bio)}</div>'
 
 def match_key(name):
     """normalize_name() without post-nominals (', PhD') or notes such as '(gmail)', so the
@@ -336,16 +338,6 @@ def find_existing_author_dir(personal_name, authors_dir):
         if score > best_score:
             best_score = score
             best_match = existing_dir.name
-    if best_match is None:
-        # Folders added by hand are sometimes slugged without separators
-        # (e.g. "ruthvanderhallenphd"); match those on letters and digits alone.
-        # Use this only when exactly one folder matches, so the result never depends on
-        # directory order.
-        compact_target = re.sub(r'[^a-z0-9]', '', normalized_target)
-        compact_matches = [d.name for d in authors_dir.iterdir()
-                           if d.is_dir() and d.name.replace('-', '') == compact_target]
-        if len(compact_matches) == 1:
-            return compact_matches[0]
     return best_match
 
 def sanitize_filename(name):
@@ -544,17 +536,21 @@ def main():
         if personal_data is not None:
             personal_name = personal_data['Full Name']
         else:
-            matching_name = find_match(member_name, personal_dict.keys(), threshold=0.65)
+            # A wrong match gives this member another person's bio, photo and email. In the
+            # Nov 2026 sheets, spelling variants of one person score >= 0.80 and different
+            # people <= 0.62 (Tom Heyman vs Thomas Rhys Evan), so 0.75 keeps both margins.
+            matching_name = find_match(member_name, personal_dict.keys(), threshold=0.75)
             if matching_name:
                 personal_data = personal_dict[matching_name]
                 personal_name = personal_data['Full Name']
 
         # Handle image
         img_url = ""
+        bare_name = strip_title(display_name(personal_name))
         sanitized_name = (
             find_existing_author_dir(personal_name, AUTHORS_DIR)
-            or find_existing_author_dir(strip_title(display_name(personal_name)), AUTHORS_DIR)
-            or sanitize_filename(personal_name)
+            or find_existing_author_dir(bare_name, AUTHORS_DIR)
+            or sanitize_filename(bare_name)
         )
         author_dir = AUTHORS_DIR / sanitized_name
         author_dir.mkdir(parents=True, exist_ok=True)
@@ -661,14 +657,11 @@ def main():
                 else:
                     img_content_large = f'<span style="font-size: 2rem; color: #94a3b8; font-weight: 600;">{member["initials"]}</span>'
 
-                bio_block = render_bio(member["bio"])
-                # Without a bio, drop the template's bio line entirely (no blank line).
-                modal_template = MODAL_TEMPLATE if bio_block else MODAL_TEMPLATE.replace("\n                    {bio_block}", "")
-                modals_html += modal_template.format(
+                modals_html += MODAL_TEMPLATE.format(
                     id=render_id,
                     name=member["name"],
                     role=member["role_title"] or member["role"],
-                    bio_block=bio_block,
+                    bio_block=render_bio(member["bio"]),
                     img_content_large=img_content_large,
                     social_links=generate_social_links(member)
                 ).strip()
