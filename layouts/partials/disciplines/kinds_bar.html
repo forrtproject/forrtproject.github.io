@@ -1,0 +1,13 @@
+{{/* A thin bar of a field's or discipline's resources by kind, one segment per kind in the key's colours and in
+     proportion to its count (as Reversals shows outcomes). Expects dict: kinds (kind -> count), order, colors, class, and optionally share (the bar's length as a percentage of
+     its track, for row bars scaled to the largest discipline).
+     The bar is a picture of the counts; the text beside it says them for screen readers. */}}
+{{ $total := 0 }}{{ range $k, $n := .kinds }}{{ $total = add $total $n }}{{ end }}
+{{ if gt $total 0 }}
+{{ $parts := slice }}
+{{ range $kind := .order }}{{ with index $.kinds $kind }}{{ $parts = $parts | append (printf "%d %s" . $kind) }}{{ end }}{{ end }}
+<span class="{{ .class }}" title="{{ delimit $parts ", " }}"{{ with .share }} style="--share:{{ printf "%.1f" . }}%"{{ end }}>
+  <span class="disc-mix__bar">{{ range .order }}{{ $n := index $.kinds . }}{{ if $n }}<i style="--k:{{ index $.colors . | safeCSS }};flex:{{ $n }}"></i>{{ end }}{{ end }}</span>
+  <span class="visually-hidden">By kind: {{ delimit $parts ", " }}</span>
+</span>
+{{ end }}

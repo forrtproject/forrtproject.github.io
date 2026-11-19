@@ -2629,3 +2629,37 @@ summary.clusters-overview__heading::before{content:"";width:0;height:0;border-le
 .disc-key{display:inline-flex;align-items:center;gap:7px;font:600 16px/1.3 var(--text);color:var(--ink)}
 .disc-key::before{content:"";width:14px;height:14px;border-radius:3px;background:var(--k);-webkit-print-color-adjust:exact;print-color-adjust:exact}
 #disciplines-layout .cluster-number{background:var(--ink);color:#fff;font-size:15px;width:1.8em;height:1.8em}
+
+/* Disciplines: a bar of each field's and discipline's resources by kind, in the key's colours (kinds_bar.html). */
+/* A row's bar sits in a fixed track and runs to its share of the largest discipline; the field's bar has its own line. */
+.disc-mix{display:inline-block;width:240px;height:8px;vertical-align:middle}
+.disc-mix__bar{display:flex;gap:1px;width:var(--share,100%);min-width:6px;height:100%;border-radius:2px;overflow:hidden}
+.disc-mix i{display:block;min-width:2px;background:var(--k)}
+.disc-mix--field{display:block;width:min(100%,320px);height:10px;margin:8px 0 6px}
+/* On a wide screen the name takes a column of about 52 characters, then the bar and its count, so a row reads
+   across without a long gap; the bars still line up down the page, and the copy link keeps the far edge. */
+#disciplines-layout .acc-header .disc-mix{flex:none;margin-inline-start:24px}
+#disciplines-layout .acc-header .acc-count{min-width:7.5em;margin-inline-start:12px}
+@media(min-width:761px){
+  #disciplines-layout .acc-header .acc-label{flex:0 1 52ch}
+  #disciplines-layout .acc-header .acc-copy-link{margin-inline-start:auto}
+}
+/* The introduction and the closing invitation keep to the reading measure. */
+.clusters-intro:has(.disciplines-partner) .intro-paragraph,.disciplines-form{max-width:38em}
+.clusters-display-section > .wrap > .disciplines-attribution{margin-left:0}
+/* The bricks above lead to the fields, so on a wide screen the side list would repeat them; the panels take the width.
+   Phones keep the list as their drawer. */
+@media(min-width:992px){
+  #disciplines-layout #clusters-sidebar{display:none}
+  #disciplines-layout .clusters-content{flex:0 0 100%;max-width:100%}
+}
+.disciplines-form a{text-decoration:underline;text-underline-offset:3px}
+@media(max-width:760px){
+  .brick-row.disc-fields .action-cards>li:last-child:nth-child(odd){grid-column:1/-1}
+  /* On a phone the bar and its count share the second line, under the name, so a long name keeps the width. */
+  #disciplines-layout .acc-header .acc-label{flex:1 1 calc(100% - 72px)}
+  #disciplines-layout .acc-header .disc-mix{order:3;width:120px;margin-inline-start:24px}
+  #disciplines-layout .acc-header .acc-count{order:4;flex-basis:auto;min-width:0;margin-left:10px}
+}
+/* On a phone the index shares the page's gutter, so it lines up with the introduction above it. */
+@media(max-width:760px){.cluster-full-width.clusters-display-section{margin-left:0!important;margin-right:0!important}}
