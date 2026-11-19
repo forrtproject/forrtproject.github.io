@@ -16,11 +16,11 @@ subtitle = ""
 +++
 
 These projects are looking for collaborators now. Most of them coordinate on
-FORRT's Slack: [join it](https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ), then contact the person named on the project.
+FORRT's Slack: [join&nbsp;it](https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ), then contact the person named on the project.
 
 {{% callout title="Getting Started with FORRT" %}}
 
-Before you join, read our guide, [**Getting Started with FORRT**](https://docs.google.com/document/d/e/2PACX-1vR_OKOxDlrbPcXn6SZLYlq19139ofcYDInBu9E392jWG5yzbp2VjF7E1_fwtzTz4Wxo9i4ddHZTbHfT/pub). It is organised by how involved you want to be:
+Before you join, read [**the guide**](https://docs.google.com/document/d/e/2PACX-1vR_OKOxDlrbPcXn6SZLYlq19139ofcYDInBu9E392jWG5yzbp2VjF7E1_fwtzTz4Wxo9i4ddHZTbHfT/pub). It is organised by how involved you want to be:
 
 1. General information about FORRT, its Slack channels and community, with links to resources.
 2. The current initiatives that would benefit from your help, with authorship opportunities and no required involvement in the organisation.

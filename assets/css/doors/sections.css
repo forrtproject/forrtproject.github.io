@@ -57,7 +57,7 @@
 /* Publications, partners and projects: a shared card. */
 .article-layout .article-style :is(.pub-section-group,.partner-section-group)>.section-heading h2{margin-top:34px}
 .article-layout .article-style :is(.pub-section-group,.partner-section-group) hr{display:none}
-.pub-section-description,.partner-section-description{margin:0 0 12px;font-size:18px}
+.pub-section-description,.partner-section-description{max-width:38em;margin:0 0 12px;font-size:18px}
 .pub-list,.partner-list,.get-involved-projects{display:grid;gap:14px;margin:14px 0}
 .pub-card,.partner-card,.get-involved-card{padding:18px 20px;background:var(--surface);border-radius:var(--r-large);font-size:16px;line-height:1.45}
 .article-layout .article-style :is(.pub-card,.partner-card,.get-involved-card) :is(p,li){font-size:16px;line-height:1.45}
@@ -93,7 +93,7 @@
 .pub-toggles .btn-toggle-abstract:hover span{text-decoration-thickness:2px}
 /* The links lead off the page, so on a wide card they sit apart from the toggles, at the row's end. */
 .article-layout .article-style .pub-card .pub-footer{align-items:center}
-@media(min-width:761px){.article-layout .article-style .pub-card .pub-links{margin-inline-start:auto}}
+@media(min-width:761px){.article-layout .article-style .pub-card .pub-links,.article-layout .article-style .pub-card .pub-toggles+.pub-metrics{margin-inline-start:auto}}
 /* The scores close the row: small rings, labelled when a work has two versions. */
 .article-layout .article-style .pub-card .pub-metrics{display:flex;gap:12px;align-items:flex-end}
 .pub-metrics[hidden],.pub-metric[hidden]{display:none}
@@ -330,7 +330,7 @@ html:has(.contributor-az){scroll-padding-top:calc(var(--contributor-az,72px) + 1
 /* One row height whether or not a 44 px link sits beside the button, so the buttons share a line across a row. */
 .get-involved-card .get-involved-actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center;min-height:56px;margin-top:auto;padding-top:12px}
 /* The cards wear the colour of the "Find a project" brick that leads to them, as a straight band along their top. */
-.get-involved-card{position:relative;overflow:hidden;background:color-mix(in srgb,var(--brick2) 15%,#fff)}
+.get-involved-card{position:relative;overflow:hidden;background:#e6e7dd}  /* --brick2 (#56621a) at 15% on white */
 .get-involved-card::before{content:"";position:absolute;inset:0 0 auto;height:4px;background:var(--brick2)}
 /* Get Involved is a wide page: its projects fill the width, as many to a row as fit. */
 .article-layout-wide .article-style .get-involved-projects{grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));max-width:none}
