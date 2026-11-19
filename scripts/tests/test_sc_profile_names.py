@@ -53,6 +53,23 @@ class AuthorDirTests(unittest.TestCase):
             sc.find_existing_author_dir("Ruth Van der Hallen, PhD", self.root),
             "RuthVanDerHallenPhD")
 
+    def test_exact_slug_wins_over_lookalikes(self):
+        self.make("annalee", "anna-lee")
+        self.assertEqual(sc.find_existing_author_dir("Anna Lee", self.root), "anna-lee")
+
+    def test_ambiguous_separator_free_match_returns_none(self):
+        self.make("annalee", "anna-lee")
+        self.assertIsNone(sc.find_existing_author_dir("Ann Alee", self.root))
+
+    def test_ambiguous_fuzzy_match_returns_none(self):
+        self.make("hannah-smyth", "hannah-smithe")
+        self.assertIsNone(sc.find_existing_author_dir("Hannah Smith", self.root))
+
+    def test_single_close_folder_is_reused(self):
+        self.make("giorgia-andreolli", "john-roe")
+        self.assertEqual(
+            sc.find_existing_author_dir("Dr Giorgia Andreoli", self.root), "giorgia-andreolli")
+
 
 class BioTests(unittest.TestCase):
     def test_empty_bio_renders_nothing(self):

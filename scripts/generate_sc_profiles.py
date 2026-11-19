@@ -315,30 +315,29 @@ def find_existing_author_dir(personal_name, authors_dir):
     (extra/missing hyphen, "Dr" prefix, middle initial) — matching a fresh slug from
     sanitize_filename() alone would create a duplicate directory every time one of those
     sources disagrees with what's already on disk.
+
+    Returns None when no folder matches or the name fits more than one folder: a wrong
+    folder shows another person's photo, while a new folder at worst duplicates one.
     """
+    dirs = sorted(d.name for d in authors_dir.iterdir() if d.is_dir())
+    exact = sanitize_filename(personal_name)
+    if exact in dirs:
+        return exact
     normalized_target = normalize_name(personal_name)
     # Folders slugged without separators (e.g. "ruthvanderhallenphd") only match once
     # spaces and punctuation are ignored on both sides.
     compact_target = re.sub(r'[^a-z0-9]', '', normalized_target)
-    compact_matches = [d.name for d in authors_dir.iterdir()
-                       if d.is_dir() and re.sub(r'[^a-z0-9]', '', d.name.lower()) == compact_target]
-    if len(compact_matches) == 1:
-        return compact_matches[0]
-    best_match = None
+    compact_matches = [d for d in dirs if re.sub(r'[^a-z0-9]', '', d.lower()) == compact_target]
+    if compact_matches:
+        return compact_matches[0] if len(compact_matches) == 1 else None
     # 0.9 is deliberately strict: legitimate spelling variants of the SAME person
     # (Dr prefix, missing middle initial, hyphen vs space in a surname) all score >=0.95
-    # against their existing folder, while two DIFFERENT people never do. A looser
-    # threshold risks collapsing distinct authors onto one folder (overwriting avatars).
-    best_score = 0.9
-    for existing_dir in authors_dir.iterdir():
-        if not existing_dir.is_dir():
-            continue
-        candidate = normalize_name(existing_dir.name.replace('-', ' '))
-        score = similarity(normalized_target, candidate)
-        if score > best_score:
-            best_score = score
-            best_match = existing_dir.name
-    return best_match
+    # against their existing folder, while different people rarely do (the two closest
+    # existing folders, Nov 2026, score 0.75). A looser threshold risks collapsing
+    # distinct authors onto one folder and showing one person's photo for another.
+    close = [d for d in dirs
+             if similarity(normalized_target, normalize_name(d.replace('-', ' '))) > 0.9]
+    return close[0] if len(close) == 1 else None
 
 def sanitize_filename(name):
     name = normalize_name(name)
