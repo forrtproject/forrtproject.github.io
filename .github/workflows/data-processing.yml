@@ -6,8 +6,8 @@ name: Data Processing
 # 
 # Triggers:
 # - Scheduled: daily at midnight UTC. On scheduled runs some steps run less often:
-#   FReD citation on Sundays; contributor analysis and the GA data PR on the 1st of the month.
-# - Manual (workflow_dispatch): skips the Sunday and 1st-of-month guards, so those steps run too.
+#   contributor analysis and the GA data PR on the 1st of the month.
+# - Manual (workflow_dispatch): skips the 1st-of-month guards, so those steps run too.
 #   GA data is downloaded only if `regenerate_ga` is set; glossary terms are regenerated
 #   (and a PR opened) only if `regenerate_glossary` is set.
 #
@@ -19,6 +19,7 @@ name: Data Processing
 # 5. FReD citation (Python)
 # 6. Google Scholar citations (Python)
 # 7. Contributor analysis (R) - monthly
+# 8. Newsletter archive from EmailOctopus (Python)
 #
 # Outputs:
 # - On main, `data-artifact`, which deploy.yaml unpacks before Hugo builds
@@ -250,6 +251,31 @@ jobs:
         run: python3 scripts/build_get_involved.py
 
       #========================================
+      # Archive newsletter issues sent through EmailOctopus
+      # Restores the earlier archive from build-resources first, so issues and
+      # images already copied survive API outages; the script only adds new
+      # issues and leaves the archive as it is when the API is unavailable.
+      #========================================
+      - name: Restore previous newsletter archive
+        continue-on-error: true
+        run: |
+          git fetch origin +refs/heads/build-resources:refs/remotes/origin/build-resources || true
+          git archive origin/build-resources data/newsletters.json | tar -x || true
+          git archive origin/build-resources static/newsletters | tar -x || true
+          if [ -f data/newsletters.json ]; then
+            echo "✅ Previous newsletter archive: $(grep -c '"id"' data/newsletters.json) issues"
+          else
+            echo "⚠️ No previous newsletter archive on build-resources; the script starts afresh"
+          fi
+
+      - name: Sync newsletter archive
+        id: newsletters
+        continue-on-error: true
+        env:
+          EMAILOCTOPUS_API_KEY: ${{ secrets.EMAILOCTOPUS_API_KEY }}
+        run: python3 scripts/sync_newsletters.py
+
+      #========================================
       # Fetch the previous generated curated resources from the build-resources
       # branch, so unchanged entries keep their lastmod date.
       # If the branch or the extraction is unavailable, the directory stays
@@ -327,14 +353,6 @@ jobs:
           node bibtex_to_apa.js -o '../content/glossary/apa_lookup.json'
 
       #========================================
-      # Regenerate the glossary reference list page from apa_lookup.json so the
-      # public "List of References" stays in sync with the dynamic glossary.
-      #========================================
-      - name: Build glossary reference list
-        continue-on-error: true  # Continue even if this step fails
-        run: python3 content/glossary/_build_references.py
-
-      #========================================
       # Process and generate glossary files
       #========================================
       - name: Run Glossary Generation script
@@ -343,6 +361,14 @@ jobs:
         continue-on-error: true  # Continue even if this step fails
         run: python3 content/glossary/_create_glossaries.py
         # Execute the glossary script that generates glossary markdown files
+
+      #========================================
+      # Regenerate the glossary reference list page from the term files, so it
+      # lists the references the terms cite and links back to those terms.
+      #========================================
+      - name: Build glossary reference list
+        continue-on-error: true  # Continue even if this step fails
+        run: python3 content/glossary/_build_references.py
 
       - name: Check for missing references
         if: always()
@@ -422,22 +448,15 @@ jobs:
           fi
 
       #========================================
-      # Update FReD citation (Weekly or Manual)
+      # Update FReD citation on every run: the artifact's static/data/ replaces
+      # the deployed copy, so a skipped fetch would ship main's older committed
+      # file. The cite_us and FLoRA pages render it at build time.
       #========================================
       - name: Update FReD Citation
         id: fred-citation
         continue-on-error: true  # Continue even if this step fails
         run: |
           echo "=== Updating FReD citation ==="
-          
-          # Check if it's a Sunday (day 0) OR manually triggered
-          CURRENT_DAY_OF_WEEK=$(date +%u)
-          if [ "$CURRENT_DAY_OF_WEEK" != "7" ] && [ "${{ github.event_name }}" != "workflow_dispatch" ]; then
-            echo "ℹ️ Skipping FReD citation update (not Sunday and not manual trigger)"
-            exit 0
-          fi
-          
-          echo "🔄 Running FReD citation update..."
           python3 scripts/update_fred_citation.py
           
           if [ -f "static/data/fred_citation.txt" ]; then
@@ -538,6 +557,7 @@ jobs:
             !data/publications.yaml
             static/data/
             static/partials/
+            static/newsletters/
             content/contributor-analysis/
             content/publications/citation_chart.webp
           retention-days: 7
@@ -569,12 +589,6 @@ jobs:
             mkdir -p /tmp/generated-resources/static/data
             cp static/data/fred_citation.txt /tmp/generated-resources/static/data/fred_citation.txt
           fi
-
-          # Copy updated FLoRA index if it exists
-          if [ -f content/replication-hub/flora/_index.md ]; then
-            mkdir -p /tmp/generated-resources/flora
-            cp content/replication-hub/flora/_index.md /tmp/generated-resources/flora/_index.md
-          fi
           
           # Copy additional generated files
           mkdir -p /tmp/generated-resources/contributor-analysis
@@ -588,6 +602,14 @@ jobs:
           
           if [ -f data/summaries.json ]; then
             cp data/summaries.json /tmp/generated-resources/summaries.json
+          fi
+
+          if [ -f data/newsletters.json ]; then
+            cp data/newsletters.json /tmp/generated-resources/newsletters.json
+          fi
+          if [ -d static/newsletters ]; then
+            mkdir -p /tmp/generated-resources/static
+            cp -r static/newsletters /tmp/generated-resources/static/
           fi
 
           if [ "${{ github.event.inputs.regenerate_glossary }}" = "true" ]; then
@@ -610,7 +632,7 @@ jobs:
           pushd "$WORKTREE_DIR"
 
           # Ensure target directories exist
-          mkdir -p content/curated_resources content/contributors data content/contributor-analysis content/publications static/data content/replication-hub/flora
+          mkdir -p content/curated_resources content/contributors data content/contributor-analysis content/publications static/data
 
           # Remove old generated resource files (but keep _index.md)
           find content/curated_resources -type f ! -name '_index.md' -delete 2>/dev/null || true
@@ -629,11 +651,16 @@ jobs:
           if [ -f /tmp/generated-resources/static/data/fred_citation.txt ]; then
             cp /tmp/generated-resources/static/data/fred_citation.txt static/data/fred_citation.txt
           fi
-          if [ -f /tmp/generated-resources/flora/_index.md ]; then
-            cp /tmp/generated-resources/flora/_index.md content/replication-hub/flora/_index.md
-          fi
           if [ -f /tmp/generated-resources/summaries.json ]; then
             cp /tmp/generated-resources/summaries.json data/summaries.json
+          fi
+          if [ -f /tmp/generated-resources/newsletters.json ]; then
+            cp /tmp/generated-resources/newsletters.json data/newsletters.json
+          fi
+          # Add to the archive without deleting: earlier copies must survive.
+          if [ -d /tmp/generated-resources/static/newsletters ]; then
+            mkdir -p static/newsletters
+            cp -r /tmp/generated-resources/static/newsletters/. static/newsletters/
           fi
           if [ -f /tmp/generated-resources/featured_resources.json ]; then
             cp /tmp/generated-resources/featured_resources.json data/featured_resources.json
@@ -665,8 +692,8 @@ jobs:
             rsync -av --exclude='_index.md' --exclude='_create_glossaries.py' /tmp/generated-resources/glossary/ content/glossary/
           fi
 
-          # Check if there are any changes to commit
-          if git diff --quiet && git diff --cached --quiet; then
+          # Check if there are any changes to commit (new untracked files count)
+          if [ -z "$(git status --porcelain)" ]; then
             echo "ℹ️ No changes to commit"
           else
             echo "✓ Changes detected, committing..."
@@ -680,8 +707,8 @@ jobs:
             git add data/pub_cards.json 2>/dev/null || true
             git add data/get_involved_projects.json 2>/dev/null || true
             git add static/data/fred_citation.txt 2>/dev/null || true
-            git add content/replication-hub/flora/_index.md 2>/dev/null || true
             git add data/summaries.json 2>/dev/null || true
+            git add data/newsletters.json static/newsletters/ 2>/dev/null || true
             git add content/contributor-analysis/ 2>/dev/null || true
             git add static/partials/network-graph.html 2>/dev/null || true
             git add content/publications/citation_chart.webp 2>/dev/null || true
@@ -785,6 +812,14 @@ jobs:
             python3 scripts/create_workflow_failure_issue.py "Curated Resources Processing" "The curated resources processing step failed during execution." "$WORKFLOW_RUN_URL" || echo "Failed to create issue for Curated Resources"
           fi
           
+          # Newsletter archive (the script warns instead of failing on API outages,
+          # so a failure here is a bug in the script)
+          if [ "${{ steps.newsletters.outcome }}" == "failure" ]; then
+            echo "❌ Newsletter archive sync failed"
+            FAILURES_FOUND=true
+            python3 scripts/create_workflow_failure_issue.py "Newsletter Archive" "The newsletter archive sync step (scripts/sync_newsletters.py) failed during execution." "$WORKFLOW_RUN_URL" || echo "Failed to create issue for Newsletter Archive"
+          fi
+
           # Tenzing Output Validation
           if [ "${{ steps.tenzing-output.outcome }}" == "failure" ]; then
             echo "❌ Tenzing output validation failed"

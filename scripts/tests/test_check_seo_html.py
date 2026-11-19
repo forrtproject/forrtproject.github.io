@@ -37,6 +37,46 @@ class DescriptionEntityCheck(unittest.TestCase):
                 self.assertIn(entity, failures[0])
 
 
+def flora_failures(html):
+    """Check 11 on a FLoRA page with this HTML (None: no page)."""
+    with tempfile.TemporaryDirectory() as public:
+        if html is not None:
+            page = Path(public) / seo.FLORA_PAGE
+            page.parent.mkdir(parents=True)
+            page.write_text(html, encoding="utf-8")
+        return seo.check_flora_citation(public)
+
+
+class FloraCitationCheck(unittest.TestCase):
+    DOI = '<a href="https://doi.org/10.17605/OSF.IO/9R62X">https://doi.org/10.17605/OSF.IO/9R62X</a>'
+
+    def test_citation_passes(self):
+        self.assertEqual(flora_failures("<p>Wallrich, L.*, ... %s</p>" % self.DOI), [])
+
+    def test_missing_citation_or_page_fails(self):
+        self.assertIn("DOI", flora_failures("<p>How to cite:</p>")[0])
+        self.assertIn("not found", flora_failures(None)[0])
+
+
+def card_failures(alt):
+    """Check 13 on one listing page holding the post's card image."""
+    with tempfile.TemporaryDirectory() as public:
+        html = "<html><body><img src='%s_hu_1.webp' alt='%s'></body></html>"
+        page = html % (seo.ALT_TEXT_CARD_IMAGE, alt)
+        (Path(public) / "index.html").write_text(page, encoding="utf-8")
+        return seo.check_card_alt_text(seo.load_pages(public))
+
+
+class CardAltTextCheck(unittest.TestCase):
+    def test_supplied_alt_text_passes(self):
+        self.assertEqual(card_failures("Bronfenbrenner ecological systems model"), [])
+
+    def test_fallback_alt_text_fails(self):
+        for alt in ("Featured image for From Awareness to Action", "From Awareness to Action"):
+            with self.subTest(alt):
+                self.assertEqual(card_failures(alt), ["index.html"])
+
+
 class BulgarianGlossaryCheck(unittest.TestCase):
     def page(self, path, body):
         parser = seo.PageParser()
