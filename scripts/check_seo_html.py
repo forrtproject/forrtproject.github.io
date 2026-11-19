@@ -28,11 +28,11 @@ Hard checks (exit 1 if any fails):
      non-empty meta description (#864).
   10. No meta description contains a double-escaped entity such as `&amp;ldquo;`
      (#864). Text that merely looks like an entity (`&name;`) is not one.
+  15. Bulgarian glossary pages have Bulgarian DefinedTerm metadata, mark the
+     English heading suffix, and link only to existing internal glossary routes.
   11. The FLoRA page (replication-hub/flora/) contains the FLoRA citation DOI.
   13. List cards use a page's `image.alt_text` (#1203), tested on a post that
      sets it.
-  14. Bulgarian glossary pages have Bulgarian DefinedTerm metadata, mark the
-     English heading suffix, and link only to existing internal glossary routes.
 
 Report-only sections (never fail): pages with zero or several <h1>, the
 site-wide share of images that carry both width and height, pages whose
@@ -483,7 +483,7 @@ def main(public_dir):
         "10. no double-escaped entity in a meta description": check_description_entities(pages),
         "11. FLoRA page shows the citation": check_flora_citation(public_dir),
         "13. list cards use image.alt_text": check_card_alt_text(pages),
-        "14. Bulgarian glossary language metadata, headings and links": check_bulgarian_glossary(pages),
+        "15. Bulgarian glossary language metadata, headings and links": check_bulgarian_glossary(pages),
     }
     conditional = check_conditional_assets(pages)
     results["3. conditional highlight.js / mermaid loading"] = [
