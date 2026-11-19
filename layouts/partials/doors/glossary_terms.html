@@ -11,7 +11,8 @@
   <input type="search" id="glossary-search" class="form-control" autocomplete="off">
   <nav class="term-list" aria-label="{{ .labels.list_of_terms }}">
     <ul>
-      {{ range sort $pages "Params.sort_key" }}<li><a href="{{ .RelPermalink }}"{{ if eq .RelPermalink $page.RelPermalink }} aria-current="page"{{ end }}>{{ partial "doors/term_title" .Title }}</a></li>{{ end }}
+      {{/* A term with other names carries them in data-term for the filter; the rest match on their text. */}}
+      {{ range sort $pages "Params.sort_key" }}{{ $title := .Title }}<li{{ with .Params.also_known_as }} data-term="{{ delimit (slice $title | append .) " · " | plainify | replaceRE `[*\\]` "" | lower }}"{{ end }}><a href="{{ .RelPermalink }}"{{ if eq .RelPermalink $page.RelPermalink }} aria-current="page"{{ end }}>{{ partial "doors/term_title" .Title }}</a></li>{{ end }}
     </ul>
   </nav>
 </section>

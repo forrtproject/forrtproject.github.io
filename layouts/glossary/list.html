@@ -78,7 +78,9 @@
           <h2>{{ .letter }}</h2>
           <ul>
             {{ range .pages }}
-            <li data-term="{{ .Title | plainify | lower }}">
+            {{/* The filter matches a term's name and its other names (also_known_as). */}}
+            {{ $names := slice .Title }}{{ with .Params.also_known_as }}{{ $names = $names | append . }}{{ end }}
+            <li data-term="{{ delimit $names " · " | plainify | replaceRE `[*\\]` "" | lower }}">
               <a href="{{ .RelPermalink }}">{{ partial "doors/term_title" .Title }}</a>
               {{ with .Params.definition }}<p>{{ . | markdownify | plainify | htmlUnescape | replaceRE `\*\*|__` "" | truncate 150 }}</p>{{ end }}
             </li>

@@ -586,7 +586,8 @@ if (termFilter && termGrid) {
   clearTerms.addEventListener('click', () => { termFilter.value = ''; termFilter.dispatchEvent(new Event('input')); termFilter.focus(); });
   termFilter.addEventListener('input', () => {
     const query = foldTerm(termFilter.value);
-    terms.forEach((term) => { term.hidden = !foldTerm(term.textContent).includes(query); });
+    // data-term holds the term's name and its other names.
+    terms.forEach((term) => { term.hidden = !foldTerm(term.dataset.term || term.textContent).includes(query); });
     const shown = terms.filter((term) => !term.hidden).length;
     status.textContent = !query ? '' : shown ? `${shown} ${shown === 1 ? 'term' : 'terms'}` : 'No matching terms.';
     clearTerms.hidden = !query;

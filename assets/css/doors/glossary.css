@@ -18,6 +18,9 @@ a.gloss-term:focus {
    breadcrumb names only the term; English references read left to right inside an Arabic page. */
 .glossary-layout .reading h1 bdi{display:block;margin-top:6px;font-size:.6em;line-height:1.2;color:var(--soft)}
 .glossary-layout .crumbs [aria-current=page] bdi{display:none}
+/* Other names for the term, under its heading. */
+.glossary-layout .reading .term-aka{margin:10px 0 0;font-size:17px;line-height:1.45;color:var(--soft)}
+.glossary-layout .reading .term-aka-label{font-weight:600}
 main:lang(ar) .glossary-layout .references-list li{direction:ltr;text-align:left}
 .term-list-jump{display:none}
 @media(max-width:1000px){

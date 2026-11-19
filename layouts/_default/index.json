@@ -36,6 +36,10 @@
     {{- else -}}
       {{- $desc = .Summary -}}
     {{- end -}}
+    {{- /* A glossary term is also found by its other names, which lead its summary. */ -}}
+    {{- with .Params.also_known_as -}}
+      {{- $desc = printf "Also known as %s. %s" (delimit . ", " | replaceRE `\*` "") $desc -}}
+    {{- end -}}
 
     {{- /* Glossary terms and curated resources have JSON front matter and no
            markdown body (`.Plain` is empty), but their `summary` above
