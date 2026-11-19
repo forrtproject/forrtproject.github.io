@@ -226,14 +226,17 @@
     }
 
     // Find a name: as the visitor types, only the people whose name contains it stay, with their whole rows, and
-    // the line under the filters counts them. Accents and case are ignored, so "aczel" finds "Aczél". It works
+    // the line under the filters counts them. Accents, case and letters such as ø and ß are folded, so "aczel" finds "Aczél" and "jorgen" finds "Jørgen". It works
     // together with the project and role filters, which reload the page, and is left out of the URL.
     function setUpNameSearch() {
         const input = document.getElementById('name-search');
         const count = document.getElementById('contributor-count');
         const list = document.getElementById('contributor-list');
         if (!input || !list) return;
-        const plain = text => text.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase().replace(/\s+/g, ' ').trim();
+        // Letters that are not a base letter plus an accent (ø, æ, ß, ł, ...) are spelled out, so "jorgen" finds "Jørgen".
+        const letters = { 'ø': 'o', 'æ': 'ae', 'œ': 'oe', 'ß': 'ss', 'ł': 'l', 'đ': 'd', 'ð': 'd', 'þ': 'th', 'ı': 'i' };
+        const plain = text => text.toLowerCase().normalize('NFD').replace(/\p{M}/gu, '')
+            .replace(/[øæœßłđðþı]/g, c => letters[c]).replace(/\s+/g, ' ').trim();
         const groups = [...list.querySelectorAll('.contributor-group')].map(group => {
             const name = group.querySelector('.contributor-name');
             return { group, name: plain(name ? name.textContent : '') };
