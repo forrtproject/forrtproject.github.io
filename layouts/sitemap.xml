@@ -1,10 +1,12 @@
 {{/* Override of Hugo's built-in sitemap template, kept deliberately close to it
-     so it stays easy to diff against upstream. The thin-`tags`-archive filter
-     it was added for went with the taxonomy, so output now differs only in line
-     breaks; retained as the hook for future filtering. */ -}}
+     so it stays easy to diff against upstream. It leaves out author profiles that
+     custom_head.html marks noindex (same condition there), so the sitemap never
+     lists a page it asks search engines not to index (check 14 in
+     scripts/check_seo_html.py). */ -}}
 {{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   {{- range .Pages }}
+  {{- if and (eq .Section "authors") .Params.name (not (partial "authors/is-substantive.html" .)) }}{{ continue }}{{ end }}
   <url>
     <loc>{{ .Permalink }}</loc>
     {{- if not .Lastmod.IsZero }}

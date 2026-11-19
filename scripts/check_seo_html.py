@@ -31,6 +31,8 @@ Hard checks (exit 1 if any fails):
   11. The FLoRA page (replication-hub/flora/) contains the FLoRA citation DOI.
   13. List cards use a page's `image.alt_text` (#1203), tested on a post that
      sets it.
+  14. No URL in sitemap.xml (or the sitemaps a sitemap index lists) is a page
+     with robots noindex.
 
 Report-only sections (never fail): pages with zero or several <h1>, the
 site-wide share of images that carry both width and height, pages whose
@@ -46,8 +48,10 @@ from collections import Counter
 from html.entities import html5
 from html.parser import HTMLParser
 from urllib.parse import unquote, urlparse
+from xml.etree import ElementTree
 
 MAX_LISTED = 20
+SITEMAP_NS = "http://www.sitemaps.org/schemas/sitemap/0.9"
 # Markup that survived flattening, e.g. an indented HTML block rendered as code.
 HTML_TAG = re.compile(r"</?[A-Za-z][A-Za-z0-9]*(\s[^<>]*)?/?>")
 # Attribute values arrive already unescaped, so any entity left in them was
@@ -372,6 +376,26 @@ def check_card_alt_text(pages):
             and not (img.get("alt") or "").startswith(ALT_TEXT_CARD_START)]
 
 
+def sitemap_paths(public_dir, name="sitemap.xml"):
+    """URL paths listed in a sitemap, following a sitemap index into its sitemaps."""
+    path = os.path.join(public_dir, name)
+    if not os.path.exists(path):
+        return []
+    root = ElementTree.parse(path).getroot()
+    locs = [unquote(urlparse(loc.text.strip()).path)
+            for loc in root.iter("{%s}loc" % SITEMAP_NS) if loc.text]
+    if root.tag == "{%s}sitemapindex" % SITEMAP_NS:
+        return [p for loc in locs for p in sitemap_paths(public_dir, loc.lstrip("/"))]
+    return locs
+
+
+def check_sitemap_noindex(public_dir, pages):
+    """A sitemap URL that is noindexed sends search engines contradictory signals."""
+    noindexed = {"/" + (os.path.dirname(p.path).replace(os.sep, "/") + "/").lstrip("/")
+                 for p in pages if p.noindex}
+    return [p for p in sitemap_paths(public_dir) if p in noindexed]
+
+
 def description_report(pages, home):
     """Report-only: generic, duplicated and markup-containing descriptions on indexable pages."""
     described = [(p, p.descriptions[0].strip()) for p in pages
@@ -422,6 +446,7 @@ def main(public_dir):
         "10. no double-escaped entity in a meta description": check_description_entities(pages),
         "11. FLoRA page shows the citation": check_flora_citation(public_dir),
         "13. list cards use image.alt_text": check_card_alt_text(pages),
+        "14. no noindexed page is listed in the sitemap": check_sitemap_noindex(public_dir, pages),
     }
     conditional = check_conditional_assets(pages)
     results["3. conditional highlight.js / mermaid loading"] = [

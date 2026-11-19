@@ -76,5 +76,41 @@ class CardAltTextCheck(unittest.TestCase):
                 self.assertEqual(card_failures(alt), ["index.html"])
 
 
+NOINDEX = "<html><head><meta name='robots' content='noindex, follow'></head></html>"
+INDEXED = "<html><head></head></html>"
+URLSET = ("<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>%s</urlset>")
+
+
+def sitemap_failures(sitemap_locs, index=False):
+    """Check 14 on a site with an indexed home page and a noindexed /authors/stub/."""
+    with tempfile.TemporaryDirectory() as public:
+        root = Path(public)
+        (root / "authors" / "stub").mkdir(parents=True)
+        (root / "index.html").write_text(INDEXED, encoding="utf-8")
+        (root / "authors" / "stub" / "index.html").write_text(NOINDEX, encoding="utf-8")
+        urls = "".join("<url><loc>https://forrt.org%s</loc></url>" % loc for loc in sitemap_locs)
+        if index:
+            (root / "en").mkdir()
+            (root / "en" / "sitemap.xml").write_text(URLSET % urls, encoding="utf-8")
+            (root / "sitemap.xml").write_text(
+                "<sitemapindex xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>"
+                "<sitemap><loc>https://forrt.org/en/sitemap.xml</loc></sitemap>"
+                "</sitemapindex>", encoding="utf-8")
+        else:
+            (root / "sitemap.xml").write_text(URLSET % urls, encoding="utf-8")
+        return seo.check_sitemap_noindex(public, seo.load_pages(public))
+
+
+class SitemapNoindexCheck(unittest.TestCase):
+    def test_indexed_pages_pass(self):
+        self.assertEqual(sitemap_failures(["/"]), [])
+
+    def test_noindexed_page_fails(self):
+        self.assertEqual(sitemap_failures(["/", "/authors/stub/"]), ["/authors/stub/"])
+
+    def test_sitemap_index_is_followed(self):
+        self.assertEqual(sitemap_failures(["/authors/stub/"], index=True), ["/authors/stub/"])
+
+
 if __name__ == "__main__":
     unittest.main()
