@@ -70,7 +70,8 @@ document.querySelectorAll('.ec-rest').forEach(function (rest) {
     more.previousSibling.remove();
     more.remove();
     var first = rest.querySelector('a');
-    if (first) first.focus();
+    if (!first) { rest.tabIndex = -1; first = rest; }
+    first.focus();
   });
 });
 </script>
