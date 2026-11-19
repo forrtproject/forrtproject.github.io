@@ -783,7 +783,8 @@
       /* Counting the lesson-plan toggle as a filter auto-expands the remaining sub-clusters,
          so their teaching-materials strips are visible straight away. */
       var isFiltered = activeFocus !== 'all' || activeType !== 'all' || tokens.length > 0 || lpOnly;
-      if (clearBtn) clearBtn.hidden = !isFiltered;
+      /* The specialist toggle widens the results, so it shows Clear without auto-expanding. */
+      if (clearBtn) clearBtn.hidden = !(isFiltered || showNarrow);
       if (syncUrl) {
         writeUrl({
           query: searchInput ? searchInput.value.trim() : '',
