@@ -402,10 +402,10 @@
     var hereSubs = root.querySelector('.cluster-nav-subs--here');
     if (hereSubs) {
       var syncHereSubs = function () {
-        hereSubs.hidden = !root.querySelector('.acc-section:not([id$="-featured"]) > .acc-body:not(.acc-collapsed)');
+        hereSubs.hidden = !root.querySelector('.acc-section:not(:has(> .acc-header--rec)) > .acc-body:not(.acc-collapsed)');
       };
       var hereObserver = new MutationObserver(syncHereSubs);
-      root.querySelectorAll('.acc-section:not([id$="-featured"]) > .acc-body').forEach(function (body) {
+      root.querySelectorAll('.acc-section:not(:has(> .acc-header--rec)) > .acc-body').forEach(function (body) {
         hereObserver.observe(body, { attributes: true, attributeFilter: ['class'] });
       });
       syncHereSubs();
