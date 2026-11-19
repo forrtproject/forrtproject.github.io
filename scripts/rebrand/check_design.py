@@ -300,6 +300,10 @@ CARD_GAP = """() => {
   return box.left < right ? 0 : box.left - right;
 }"""
 CARD_GAP_LIMIT = 80
+# How far the page scrolls on past its footer. A collapsed panel clips what it holds, unless something in it
+# escapes to the page (a positioned label with no positioned ancestor); then the page runs on into blank space.
+PAST_FOOTER = """() => { const footer = document.querySelector('footer');
+  return footer ? Math.round(document.documentElement.scrollHeight - footer.getBoundingClientRect().bottom - scrollY) : 0; }"""
 
 
 def press_tab(page):
@@ -319,8 +323,8 @@ def read_settled(page, expression):
 
 
 def check_samples(browser, base, failures):
-    """Nothing runs wider than the screen or hides a button on the sample pages, with their retained
-    templates too."""
+    """Nothing runs wider than the screen, past its footer or hides a button on the sample pages, with
+    their retained templates too."""
     with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "sample_pages.json"), encoding="utf-8") as handle:
         samples = json.load(handle)
     wider = "document.documentElement.scrollWidth - document.documentElement.clientWidth"
@@ -332,6 +336,9 @@ def check_samples(browser, base, failures):
             over = read_settled(page, wider)
             if over > 0:
                 failures.append(f"{name} at {width}: {over} px wider than the screen")
+            tail = read_settled(page, PAST_FOOTER)
+            if tail > 2:
+                failures.append(f"{name} at {width}: the page runs {tail} px past its footer")
             hidden = read_settled(page, f"({HIDDEN_BUTTONS})(document.querySelector('main') || document.body)")
             if hidden:
                 failures.append(f"{name} at {width}: hidden buttons: {hidden[:2]}")
@@ -353,6 +360,9 @@ def check_other_widths(browser, base, failures):
             over = page.evaluate(wider)
             if over > 0:
                 failures.append(f"{name} at {width}: {over} px wider than the screen")
+            tail = page.evaluate(PAST_FOOTER)
+            if tail > 2:
+                failures.append(f"{name} at {width}: the page runs {tail} px past its footer")
             page.context.close()
         for width in (390, 760, 1024, 1440):
             page = new_page(browser, width)

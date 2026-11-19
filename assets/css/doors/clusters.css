@@ -510,6 +510,9 @@
   z-index: 5;
 }
 .acc-body {
+  /* Positioned, so that what it holds positioned (screen-reader labels among it) is clipped with it
+     while collapsed, rather than stretching the page below its footer. */
+  position: relative;
   padding: 0 0.15rem 0.45rem 1rem;
   overflow: hidden;
   transition: max-height 0.3s ease, opacity 0.25s ease;
