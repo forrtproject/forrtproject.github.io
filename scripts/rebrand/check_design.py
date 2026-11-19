@@ -80,7 +80,7 @@ AUDIT = """() => {
     if (el.closest('.df-container,._df_book')) continue;
     const style = getComputedStyle(el);
     // Decision D15: real italics only inside references. Same selector as base.css.
-    const reference = el.closest('.references-list,.csl-bib-body') || el.matches(':is(h2,h3,h4)[id^=references i]~:is(ul,ol,p) *');
+    const reference = el.closest('.references-list,.csl-bib-body,.pub-journal .journal-name') || el.matches(':is(h2,h3,h4)[id^=references i]~:is(ul,ol,p) *');
     if (style.fontStyle !== 'normal' && !reference) {
       italic.push(el.textContent.trim().slice(0, 40));
     }
