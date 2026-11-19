@@ -989,6 +989,20 @@ if (badges.length) {
     const label = badge.previousElementSibling?.classList.contains('pub-metric-label') ? badge.previousElementSibling.textContent : 'publication';
     badge.querySelector('a:not([aria-label])')?.setAttribute('aria-label', `Altmetric attention for this ${label.toLowerCase()}`);
   });
+  // A version with no mentions shows no badge (data-hide-no-mentions); where no version has any, the disclosure goes too.
+  const emptyAttention = () => document.querySelectorAll('.pub-attention').forEach((box) => {
+    const embeds = [...box.querySelectorAll('.altmetric-embed')];
+    if (embeds.every((embed) => embed.classList.contains('altmetric-hidden') || embed.style.display === 'none')) {
+      box.hidden = true;
+      const button = document.querySelector(`[aria-controls="${box.id}"]`);
+      if (button) button.hidden = true;
+    }
+    box.querySelectorAll('.pub-metric').forEach((metric) => {
+      const embed = metric.querySelector('.altmetric-embed');
+      metric.hidden = embed.classList.contains('altmetric-hidden') || embed.style.display === 'none';
+    });
+  });
+  new MutationObserver(emptyAttention).observe(document.querySelector('.pub-list, .article-style') || document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['class', 'style'] });
   new MutationObserver(nameBadges).observe(document.querySelector('.pub-list, .article-style') || document.body, { childList: true, subtree: true });
 }
 
