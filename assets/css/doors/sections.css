@@ -308,7 +308,11 @@ html:has(.contributor-az){scroll-padding-top:calc(var(--contributor-az,72px) + 1
 .get-involved-card .btn:hover{background:var(--link)!important;color:#fff!important}
 /* Project cards share one footer line of actions. */
 .get-involved-card{display:flex;flex-direction:column}
-.get-involved-card .get-involved-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:12px}
+/* One row height whether or not a 44 px link sits beside the button, so the buttons share a line across a row. */
+.get-involved-card .get-involved-actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center;min-height:56px;margin-top:auto;padding-top:12px}
+/* The cards wear the colour of the "Find a project" brick that leads to them, as a straight band along their top. */
+.get-involved-card{position:relative;overflow:hidden}
+.get-involved-card::before{content:"";position:absolute;inset:0 0 auto;height:4px;background:var(--brick2)}
 /* Get Involved is a wide page: its projects fill the width, as many to a row as fit. */
 .article-layout-wide .article-style .get-involved-projects{grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));max-width:none}
 .article-layout-wide .article-style .action-cards{max-width:none}
@@ -405,6 +409,23 @@ html:has(.contributor-az){scroll-padding-top:calc(var(--contributor-az,72px) + 1
   .article-layout-wide .doc-section:has(>aside.callout){display:grid;grid-template-columns:minmax(0,580px) minmax(0,440px);justify-content:start;column-gap:64px;align-items:start}
   .article-layout-wide .doc-section:has(>aside.callout)>*{grid-column:1}
   .article-layout-wide .article-style .doc-section>aside.callout{grid-column:2;grid-row:1/span 8;max-width:none;margin:6px 0 0}
+  /* "Ongoing projects": the introduction takes the first card column and the guide the other two, so both line up
+     with the projects, which take the full width below them. */
+  .article-layout-wide .article-style .doc-section:has(>.get-involved-projects){grid-template-columns:minmax(0,1fr) minmax(0,2fr);grid-template-rows:auto 1fr;column-gap:14px}
+  .article-layout-wide .article-style .doc-section:has(>.get-involved-projects)>aside.callout{grid-row:1/span 2;max-width:none}
+  .article-layout-wide .article-style .doc-section:has(>.get-involved-projects)>aside.callout>*{max-width:32em}
+  .article-layout-wide .article-style .doc-section:has(>aside.callout)>.get-involved-projects{grid-column:1/-1}
+}
+/* Where the guide spans two card columns, its introduction and its list sit side by side, each a short line. */
+@media(min-width:1240px){
+  .article-layout-wide .article-style .doc-section:has(>.get-involved-projects)>aside.callout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:28px;align-content:start}
+  .article-layout-wide .article-style .doc-section:has(>.get-involved-projects)>aside.callout>:not(ol){grid-column:1}
+  .article-layout-wide .article-style .doc-section:has(>.get-involved-projects)>aside.callout>ol{grid-column:2;grid-row:1/span 3;margin-top:0}
+}
+/* On a narrower screen the guide follows the projects, so "Find a project" lands on them. */
+@media(max-width:1000px){
+  .article-layout-wide .article-style .doc-section:has(>.get-involved-projects){display:flex;flex-direction:column}
+  .article-layout-wide .article-style .doc-section:has(>.get-involved-projects)>aside.callout{order:1}
 }
 
 /* The booklet: the flipbook on a pale panel, then what it covers in each area: a heading in the area's colour over a

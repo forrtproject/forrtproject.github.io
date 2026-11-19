@@ -10,27 +10,20 @@
 <div class="get-involved-projects">
   {{ range $projects }}
     <div class="get-involved-card">
-      <h3>
-        {{ if .link }}
-          <a href="{{ .link }}">{{ .name }}</a>
-        {{ else }}
-          {{ .name }}
-        {{ end }}
-      </h3>
+      {{/* Every card has the same parts in the same places: the name (a link to the project's page, where it has
+           one), what the project does, and one way to reach its contact, with the team's Slack channel after it. */}}
+      <h3>{{ if .link }}<a href="{{ .link }}">{{ .name }}</a>{{ else }}{{ .name }}{{ end }}</h3>
       <div class="clamp-desc" data-clamp-name="{{ .name }}">
         {{ .description | markdownify }}
       </div>
-      {{/* One outlined action to reach a person, quieter than the three cards at the top of the page (DESIGN.md §3);
-           the project's own page and its Slack channel follow as plain links. */}}
       <div class="get-involved-actions">
         {{ if .contact_email }}
           <a href="mailto:{{ .contact_email }}" class="btn btn-sm dir-btn">Email {{ .contact_name | default "the team" }}</a>
         {{ else if .contact_name }}
           {{/* No email: the person is reached on FORRT's Slack, so the button joins it. */}}
-          <a href="https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ" target="_blank" rel="noopener" class="btn btn-sm dir-btn">Join FORRT's Slack to ask {{ .contact_name }}</a>
+          <a href="https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ" target="_blank" rel="noopener" class="btn btn-sm dir-btn">Join Slack to ask {{ .contact_name }}<span class="visually-hidden"> (opens in a new tab)</span></a>
         {{ end }}
-        {{ if .slack }}<a href="{{ .slack }}" target="_blank" rel="noopener" class="get-involved-link">Open the team's Slack channel</a>{{ end }}
-        {{ if .link }}<a href="{{ .link }}" class="get-involved-link">Visit project</a>{{ end }}
+        {{ if .slack }}<a href="{{ .slack }}" target="_blank" rel="noopener" class="get-involved-link">Slack channel<span class="visually-hidden"> for {{ .name }} (opens in a new tab)</span></a>{{ end }}
       </div>
     </div>
   {{ end }}

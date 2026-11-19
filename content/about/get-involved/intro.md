@@ -58,6 +58,3 @@ Join our Slack | Where most of FORRT's work and conversation happens | https://j
 Find a project | Initiatives looking for collaborators right now | #get-involved
 Get the newsletter | News, events and opportunities, in your inbox | #newsletter
 {{< /action_cards >}}
-
-
-We use Slack to keep everyone up to date, share resources, coordinate teams and projects, and discuss FORRT's organisation and mission.
