@@ -10,14 +10,16 @@
   {{ range index $.Params . }}{{ if . }}{{ $values = $values | append (cond (eq $field "creators") . (strings.FirstUpper .)) }}{{ end }}{{ end }}
   {{ $clean = merge $clean (dict . $values) }}
 {{ end }}
-{{/* The type also shows above the title, so on a phone its row in the card is left out. */}}
-{{/* Each label in the singular or the plural, by how many values it has. */}}
+{{/* The rest, as a quiet last row of the panel. Each label in the singular or the plural, by how many values it has. */}}
 {{ $details := slice
-  (dict "label" "Type" "labels" "Types" "values" $clean.material_type "class" "resource-type")
-  (dict "label" "Education level" "labels" "Education levels" "values" $clean.education_level)
-  (dict "label" "Primary user" "labels" "Primary users" "values" $clean.primary_user)
   (dict "label" "Subject area" "labels" "Subject areas" "values" $clean.subject_areas)
   (dict "label" "Language" "labels" "Languages" "values" $clean.language)
+}}
+{{/* What the resource is and who it is for, beside the button, so a teacher can judge it before opening it. */}}
+{{ $fit := slice
+  (dict "label" "Type" "labels" "Types" "values" $clean.material_type)
+  (dict "label" "Education level" "labels" "Education levels" "values" $clean.education_level)
+  (dict "label" "Primary user" "labels" "Primary users" "values" $clean.primary_user)
 }}
 {{/* Cluster pages by name, matched in lower case, so a cluster in the card can link to its page. */}}
 {{ $clusterPages := dict }}
@@ -31,6 +33,20 @@
   {{ $host = lower (urls.Parse .).Hostname | strings.TrimPrefix "www." }}
   {{ if eq $host "dx.doi.org" }}{{ $host = "doi.org" }}{{ end }}
 {{ end }}
+{{/* The clusters the directory filters by, from forrt_clusters_new; none when that is empty. Each with the small
+     mark in its colour from the clusters wheel, as in the directory, and on a line of its own. They head the panel
+     with the button, which takes the pale colour and door icon of the first cluster that has one; Previous and Next
+     follow that cluster. With none, the panel stays neutral. */}}
+{{ $clusterItems := slice }}{{ $lead := 0 }}
+{{ with index (partialCached "doors/resource_index" (site.GetPage "/resources") "resources").items .RelPermalink }}{{ with .clusters }}
+  {{ $num := partialCached "doors/cluster_numbers.html" "n" }}
+  {{ range $name := . }}
+    {{ $n := index $num (lower $name | urlize) }}{{ $mark := "" }}
+    {{ with $n }}{{ $mark = printf `<span class="cl-mark" style="--c: var(--cl%d)" aria-hidden="true"></span>` . }}{{ if not $lead }}{{ $lead = . }}{{ end }}{{ end }}
+    {{ $label := $name | htmlEscape }}{{ with index $clusterPages (lower $name) }}{{ $label = printf `<a href="%s">%s</a>` . $label }}{{ end }}
+    {{ $clusterItems = $clusterItems | append (printf `<span class="cl-item">%s<span>%s</span></span>` $mark $label) }}
+  {{ end }}
+{{ end }}{{ end }}
 {{/* Long creator lists show the first six names and keep the rest behind a disclosure, so the button stays in view. */}}
 {{ $shown := 6 }}
 <div class="wrap">
@@ -39,7 +55,6 @@
       <header class="article-head">
         {{/* The trail stops at Resources: the title follows straight after, and repeating a long one pushed the button below a phone's first screen. */}}
         <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ "" | relLangURL }}">Home</a> <span aria-hidden="true">/</span> <a href="{{ relref . "/resources" }}">Resources</a></nav>
-        {{ with $clean.material_type }}<p class="resource-kind">{{ delimit . ", " }}</p>{{ end }}
         <h1{{ if gt (strings.RuneCount .Title) 90 }} class="long-title"{{ end }}>{{ .Title }}</h1>
         {{ with .Params.subtitle }}<p class="standfirst">{{ . | markdownify | emojify }}</p>{{ end }}
         {{ with $clean.creators }}
@@ -61,9 +76,25 @@
         {{ else }}{{ $inLang = printf "In %s and %d more languages" (delimit (first 3 $langs) ", ") (sub (len $langs) 3) }}{{ end }}
       {{ end }}
       {{ $described := slice }}{{ if $host }}{{ $described = $described | append "resource-host" }}{{ end }}{{ if $inLang }}{{ $described = $described | append "resource-lang" }}{{ end }}
-      {{ with $url }}
-      <p class="resource-open"><a class="btn btn-primary" href="{{ . }}"{{ with $described }} aria-describedby="{{ delimit . " " }}"{{ end }}>Open this resource{{ if and $host (ne $host "forrt.org") }} <i class="fas fa-external-link-alt" aria-hidden="true"></i>{{ end }}</a>{{ with $host }} <span class="resource-host" id="resource-host">{{ . }}</span>{{ end }}{{ with $inLang }} <span class="resource-host resource-lang" id="resource-lang">{{ . }}</span>{{ end }}</p>
-      {{ end }}
+      {{ $fitRows := slice }}{{ range $fit }}{{ if .values }}{{ $fitRows = $fitRows | append . }}{{ end }}{{ end }}
+      <div class="resource-decide{{ with $lead }} resource-decide--cluster{{ end }}"{{ with $lead }} style="--c: var(--cl{{ . }}); --c-bg: var(--cl{{ . }}-bg);"{{ end }}>
+        {{ with $clusterItems }}
+        <div class="resource-decide__head">
+          {{ with $lead }}<span class="article-card__door" aria-hidden="true">{{ partial "clusters/icon.html" . }}</span>{{ end }}
+          <p class="resource-clusters"><span class="resource-clusters__label">{{ cond (gt (len .) 1) "Clusters" "Cluster" }}</span>{{ delimit . "" | safeHTML }}</p>
+        </div>
+        {{ end }}
+        {{ with $fitRows }}<dl class="resource-fit">{{ range . }}<div><dt>{{ cond (gt (len .values) 1) .labels .label }}</dt><dd>{{ delimit .values ", " }}</dd></div>{{ end }}</dl>{{ end }}
+        {{ with $url }}
+        <p class="resource-open"><a class="btn btn-primary" href="{{ . }}"{{ with $described }} aria-describedby="{{ delimit . " " }}"{{ end }}>Open this resource{{ if and $host (ne $host "forrt.org") }} <i class="fas fa-external-link-alt" aria-hidden="true"></i>{{ end }}</a>{{ with $host }} <span class="resource-host" id="resource-host">{{ . }}</span>{{ end }}{{ with $inLang }} <span class="resource-host resource-lang" id="resource-lang">{{ . }}</span>{{ end }}</p>
+        {{ end }}
+        {{/* The remaining facts, a quiet last row. */}}
+        <dl class="resource-facts">
+          {{/* A language other than English alone is already named beside the button ("In German"). */}}
+          {{ range $details }}{{ if and .values (not (and $inLang (le (len $langs) 3) (eq .label "Language"))) }}<div><dt>{{ cond (gt (len .values) 1) .labels .label }}</dt><dd>{{ delimit .values ", " }}</dd></div>{{ end }}{{ end }}
+          <div><dt>Last updated</dt><dd>{{ .Lastmod.Format "2 January 2006" }}</dd></div>
+        </dl>
+      </div>
       <div class="article-style">
         {{/* Abstracts come from a sheet, where a single line break often ends a line of a list or a heading
              ("Methods", "modular: …"), which Markdown would run into one paragraph. A break stays where the next line
@@ -79,53 +110,31 @@
       </div>
       {{ partial "doors/resource_keywords" . }}
     </article>
-    {{/* The clusters the directory filters by, from forrt_clusters_new; none when that is empty. Each with the small
-         mark in its colour from the clusters wheel, as in the directory, and on a line of its own. The card takes the
-         pale colour and door icon of the first cluster that has one, the cluster Previous and Next follow; with none it
-         stays neutral. */}}
-    {{ $clusterItems := slice }}{{ $lead := 0 }}
-    {{ with index (partialCached "doors/resource_index" (site.GetPage "/resources") "resources").items .RelPermalink }}{{ with .clusters }}
-      {{ $num := partialCached "doors/cluster_numbers.html" "n" }}
-      {{ range $name := . }}
-        {{ $n := index $num (lower $name | urlize) }}{{ $mark := "" }}
-        {{ with $n }}{{ $mark = printf `<span class="cl-mark" style="--c: var(--cl%d)" aria-hidden="true"></span>` . }}{{ if not $lead }}{{ $lead = . }}{{ end }}{{ end }}
-        {{ $label := $name | htmlEscape }}{{ with index $clusterPages (lower $name) }}{{ $label = printf `<a href="%s">%s</a>` . $label }}{{ end }}
-        {{ $clusterItems = $clusterItems | append (printf `<span class="cl-item">%s<span>%s</span></span>` $mark $label) }}
-      {{ end }}
-    {{ end }}{{ end }}
-    <section class="article-card{{ with $lead }} article-card--cluster{{ end }}" aria-label="About this resource"{{ with $lead }} style="--c: var(--cl{{ . }}); --c-bg: var(--cl{{ . }}-bg);"{{ end }}>
-      <h2>About this resource</h2>
-      {{ with $lead }}<span class="article-card__door" aria-hidden="true">{{ partial "clusters/icon.html" . }}</span>{{ end }}
-      <dl>
-        {{ range $details }}{{ if .values }}<dt{{ with .class }} class="{{ . }}"{{ end }}>{{ cond (gt (len .values) 1) .labels .label }}</dt><dd{{ with .class }} class="{{ . }}"{{ end }}>{{ delimit .values ", " }}</dd>{{ end }}{{ end }}
-        {{ with $clusterItems }}<dt>{{ cond (gt (len .) 1) "Clusters" "Cluster" }}</dt><dd class="cl-list">{{ delimit . "" | safeHTML }}</dd>{{ end }}
-        <dt>Last updated</dt><dd>{{ .Lastmod.Format "2 January 2006" }}</dd>
-      </dl>
-    </section>
-    <div class="article-foot">
-      {{/* Previous and Next stay within the resource's first cluster, A to Z as in the directory. */}}
-      {{ if site.Params.section_pager }}{{ with index (partialCached "doors/resource_neighbours" (site.GetPage "/resources") "resources") .RelPermalink }}{{ if or .prev .next }}
-      {{ $cluster := .cluster }}
-      <nav class="article-widget" aria-labelledby="resource-pager-label">
-        {{/* The cluster's name opens the directory filtered to it, with the slug resources.js reads from the address. */}}
-        {{ $directory := relref $ "/resources" }}
-        <p class="post-nav-scope" id="resource-pager-label">{{ with $cluster }}{{/* With one cluster, named in the card just above, "this cluster"; with several, the name says which. */}}More from {{ if eq (len $clusterItems) 1 }}<a href="{{ $directory }}?cluster={{ $cluster | lower | replaceRE "[^a-z0-9]+" "-" }}">this cluster</a>{{ else }}the cluster <a href="{{ $directory }}?cluster={{ $cluster | lower | replaceRE "[^a-z0-9]+" "-" }}">{{ $cluster }}</a>{{ end }}{{ else }}More <a href="{{ $directory }}">resources</a>{{ end }}, A to Z</p>
-        <div class="post-nav">
-          {{ with .prev }}
-          <div class="post-nav-item post-nav-prev">
-            <a href="{{ .RelPermalink }}" rel="prev"><div class="meta-nav"><span aria-hidden="true">← </span>{{ i18n "previous" }}</div>
-            <p>{{ .Title }}</p></a>
-          </div>
-          {{ end }}
-          {{ with .next }}
-          <div class="post-nav-item post-nav-next">
-            <a href="{{ .RelPermalink }}" rel="next"><div class="meta-nav">{{ i18n "next" }}<span aria-hidden="true"> →</span></div>
-            <p>{{ .Title }}</p></a>
-          </div>
-          {{ end }}
+    {{/* Previous and Next stay within the resource's first cluster, A to Z as in the directory. On a desktop they are
+       the side card, beside the entry, the way a glossary term has its list of terms; on a phone they follow it. */}}
+    {{ if site.Params.section_pager }}{{ with index (partialCached "doors/resource_neighbours" (site.GetPage "/resources") "resources") .RelPermalink }}{{ if or .prev .next }}
+    {{ $cluster := .cluster }}
+    <nav class="article-card resource-nav" aria-labelledby="resource-pager-label">
+      {{/* The cluster's name opens the directory filtered to it, with the slug resources.js reads from the address. */}}
+      {{ $directory := relref $ "/resources" }}
+      <p class="post-nav-scope" id="resource-pager-label">{{ with $cluster }}{{/* With one cluster, named in the panel by the button, "this cluster"; with several, the name says which. */}}More from {{ if eq (len $clusterItems) 1 }}<a href="{{ $directory }}?cluster={{ $cluster | lower | replaceRE "[^a-z0-9]+" "-" }}">this cluster</a>{{ else }}the cluster <a href="{{ $directory }}?cluster={{ $cluster | lower | replaceRE "[^a-z0-9]+" "-" }}">{{ $cluster }}</a>{{ end }}{{ else }}More <a href="{{ $directory }}">resources</a>{{ end }}, A&nbsp;to&nbsp;Z</p>
+      <div class="post-nav">
+        {{ with .prev }}
+        <div class="post-nav-item post-nav-prev">
+          <a href="{{ .RelPermalink }}" rel="prev"><div class="meta-nav"><span aria-hidden="true">← </span>{{ i18n "previous" }}</div>
+          <p>{{ .Title }}</p></a>
         </div>
-      </nav>
-      {{ end }}{{ end }}{{ end }}
+        {{ end }}
+        {{ with .next }}
+        <div class="post-nav-item post-nav-next">
+          <a href="{{ .RelPermalink }}" rel="next"><div class="meta-nav">{{ i18n "next" }}<span aria-hidden="true"> →</span></div>
+          <p>{{ .Title }}</p></a>
+        </div>
+        {{ end }}
+      </div>
+    </nav>
+    {{ end }}{{ end }}{{ end }}
+    <div class="article-foot">
       {{ partial "page_related" . }}
     </div>
   </div>

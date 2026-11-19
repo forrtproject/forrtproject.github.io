@@ -246,3 +246,40 @@ main:lang(ar) .glossary-layout .article-style .term-references{direction:ltr;pad
 .glossary-references .reference-cited a{color:var(--link);font-weight:600;text-decoration:underline;text-underline-offset:3px}
 .glossary-references .reference-cited .term-en{display:none}
 .glossary-references .standfirst{max-width:30em}
+/* A term page's related terms take the reading width: one related term is one wide card, more share the row.
+   The start of each definition keeps to the reading measure inside a wide card (DESIGN.md §7). */
+.glossary-layout .article-style .term-cards{grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr))}
+.glossary-layout .article-style .term-cards p{max-width:31em}
+/* The first and the last term have one neighbour: its card takes the whole row and reads from the start. */
+.glossary-layout .article-foot .post-nav-item:only-child{grid-column:1/-1;text-align:start}
+/* Phones: the languages are one row, scrolled sideways and faded at its end, so the definition starts higher. */
+@media(max-width:760px){
+  .glossary-layout .language-switcher{flex-wrap:nowrap;overflow-x:auto;margin-inline-end:-16px;padding:0 16px 4px 0;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,#000 85%,transparent);mask-image:linear-gradient(90deg,#000 85%,transparent)}
+  .glossary-layout .language-switcher::-webkit-scrollbar{display:none}
+  .glossary-layout .language-switcher>*{flex:none}
+  main:lang(ar) .glossary-layout .language-switcher{margin-inline-end:-16px;-webkit-mask-image:linear-gradient(270deg,#000 85%,transparent);mask-image:linear-gradient(270deg,#000 85%,transparent)}
+}
+/* A term's definition is the page's main passage: the largest text on the page, on the page ground, with an edge in
+   the Education colour on the side where lines start, so it does not read as one more box like the cards below it. */
+.glossary-layout .article-style .term-definition{margin:6px 0 22px;padding:2px 0 4px;padding-inline:22px 0;background:none;border-radius:0;border-inline-start:5px solid var(--edu)}
+.glossary-layout .article-style .term-definition p{font-size:21px;line-height:1.55}
+@media(max-width:760px){
+  .glossary-layout .article-style .term-definition{padding-inline:16px 0;border-inline-start-width:4px}
+  .glossary-layout .article-style .term-definition p{font-size:19px}
+}
+main:lang(ar) .glossary-layout .article-style .term-definition p{font-size:22px}
+/* A lone neighbour fills the row (article.css pushes Next to the end with an automatic margin). */
+.glossary-layout .article-foot .post-nav-item:only-child{margin-inline-start:0}
+/* Stacked on a phone, both neighbours read from the start of the line. */
+@media(max-width:560px){.glossary-layout .article-foot .post-nav-item{text-align:start}}
+/* The list of terms beside the entry fades at its top and bottom, where it scrolls on. */
+@media(min-width:1001px){.glossary-layout .glossary-card .term-list{-webkit-mask-image:linear-gradient(transparent,#000 20px,#000 calc(100% - 28px),transparent);mask-image:linear-gradient(transparent,#000 20px,#000 calc(100% - 28px),transparent);padding-block:8px}}
+/* A credited name and its comma move to the next line together; a long value, such as a sentence about a tool,
+   wraps in the line instead. */
+.glossary-layout .term-credit .term-name-item:has(>bdi.term-name){display:inline-block;max-width:100%}
+/* An English citation inside Arabic text stays on one line where it fits, brackets included. */
+main:lang(ar) .glossary-layout .term-definition bdi[dir=ltr]{display:inline-block;max-width:100%}
+/* Stacked on a phone, a neighbour's English name lines up with its Arabic one. */
+@media(max-width:560px){main:lang(ar) .glossary-layout .post-nav .term-en{text-align:right}}
+/* Stacked on a phone, both neighbours read from the start of the line (outweighs article.css's end alignment). */
+@media(max-width:560px){.glossary-layout .article-foot .post-nav .post-nav-item:nth-child(n){margin-inline-start:0;text-align:start}}

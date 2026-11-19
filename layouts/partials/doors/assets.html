@@ -15,6 +15,8 @@
 {{ $screen := slice }}
 {{ if .IsHome }}{{ $screen = slice "home" }}{{ end }}
 {{ if eq .Type "resources" }}{{ $screen = slice "page" "resources" }}{{ end }}
+{{/* A resource's own page shares the directory's bundle, which holds its decision panel (resources.css). */}}
+{{ if eq .Type "curated_resources" }}{{ $screen = slice "page" "resources" }}{{ end }}
 {{ if eq .Type "replication_hub" }}{{ $screen = slice "page" "hub" }}{{ end }}
 {{ if and .IsNode (not .IsHome) (not (in (slice "resources" "replication_hub" "glossary") .Type)) }}{{ $screen = slice "lists" }}{{ end }}
 {{ if or (eq .Type "tags") (eq .Path "/newsletters") }}{{ $screen = slice "lists" }}{{ end }}

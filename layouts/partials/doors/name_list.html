@@ -4,5 +4,8 @@
 {{ $out := slice }}
 {{/* Each name is escaped before Markdown, as in term_title, so only the list's own markup is trusted. A name stays
      on one line; a long value (a list of links, say) may wrap. */}}
-{{ range .names }}{{ $text := . | htmlEscape | markdownify }}{{ $out = $out | append (printf "<bdi%s>%s</bdi>" (cond (lt (len (plainify $text)) 40) ` class="term-name"` "") $text) }}{{ end }}
-{{ return (delimit $out .sep | safeHTML) }}
+{{/* Each name keeps the comma after it, so a line never starts with a comma, in Arabic as in English. */}}
+{{ $comma := strings.TrimRight " " .sep }}
+{{ $last := sub (len .names) 1 }}
+{{ range $i, $name := .names }}{{ $text := $name | htmlEscape | markdownify }}{{ $out = $out | append (printf "<span class=\"term-name-item\"><bdi%s>%s</bdi>%s</span>" (cond (lt (len (plainify $text)) 40) ` class="term-name"` "") $text (cond (lt $i $last) $comma "")) }}{{ end }}
+{{ return (delimit $out " " | safeHTML) }}
