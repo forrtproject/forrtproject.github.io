@@ -5,7 +5,7 @@
 {{ $total := 0 }}{{ range $k, $n := .kinds }}{{ $total = add $total $n }}{{ end }}
 {{ if gt $total 0 }}
 {{ $parts := slice }}
-{{ range .order }}{{ with index $.kinds . }}{{ $parts = $parts | append (printf "%d %s" . $) }}{{ end }}{{ end }}
+{{ range $kind := .order }}{{ with index $.kinds $kind }}{{ $parts = $parts | append (printf "%d %s" . $kind) }}{{ end }}{{ end }}
 <span class="{{ .class }}" title="{{ delimit $parts ", " }}"{{ with .share }} style="--share:{{ printf "%.1f" . }}%"{{ end }}>
   <span class="disc-mix__bar">{{ range .order }}{{ $n := index $.kinds . }}{{ if $n }}<i style="--k:{{ index $.colors . | safeCSS }};flex:{{ $n }}"></i>{{ end }}{{ end }}</span>
   <span class="visually-hidden">By kind: {{ delimit $parts ", " }}</span>

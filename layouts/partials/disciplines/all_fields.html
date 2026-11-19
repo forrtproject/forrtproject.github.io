@@ -21,11 +21,7 @@
     {{/* A key to the labels on each resource (field_section.html), not filters: a swatch and a name, not pills. */}}
     <p class="intro-paragraph" id="disc-key-h">Resources are of five kinds, each with its own colour:</p>
     <ul class="disciplines-areas" aria-labelledby="disc-key-h">
-      <li><span class="disc-key" style="--k:var(--soft)">General</span></li>
-      <li><span class="disc-key" style="--k:var(--res)">Open Data</span></li>
-      <li><span class="disc-key" style="--k:var(--edu)">Open Methods</span></li>
-      <li><span class="disc-key" style="--k:var(--com)">Open Outputs</span></li>
-      <li><span class="disc-key" style="--k:var(--jus)">Open Education</span></li>
+      {{ range $palette.kinds }}<li><span class="disc-key" style="--k:{{ .color | safeCSS }}">{{ .name }}</span></li>{{ end }}
     </ul>
   </div>
 

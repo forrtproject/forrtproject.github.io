@@ -7,9 +7,9 @@
 {{ $color := index $colors (mod $fi (len $colors)) }}
 {{ $totalRes := 0 }}{{ range $field.disciplines }}{{ $totalRes = add $totalRes (len .resources) }}{{ end }}
 
-{{/* Category badge colors, in the key's order (all_fields.html) */}}
-{{ $catColors := dict "General" "var(--soft)" "Open Data" "var(--res)" "Open Methods" "var(--edu)" "Open Outputs" "var(--com)" "Open Education" "var(--jus)" }}
-{{ $catOrder := slice "General" "Open Data" "Open Methods" "Open Outputs" "Open Education" }}
+{{/* Category badge colors, in the key's order (disciplines/colors.html) */}}
+{{ $catColors := dict }}{{ $catOrder := slice }}
+{{ range (partial "disciplines/colors.html").kinds }}{{ $catColors = merge $catColors (dict .name .color) }}{{ $catOrder = $catOrder | append .name }}{{ end }}
 {{/* Resources of each kind across the field, for its bar of kinds. */}}
 {{ $fieldKinds := dict }}
 {{ range $field.disciplines }}{{ range .resources }}{{ $fieldKinds = merge $fieldKinds (dict .category (add (index $fieldKinds .category | default 0) 1)) }}{{ end }}{{ end }}
