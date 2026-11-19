@@ -418,13 +418,13 @@ if os.path.exists(partials_file_path):
 else:
     print(f"File not found: {partials_file_path}")
 
-# Report missing references
+# Report missing references. The file lists only this run's misses, so a run without any removes it.
+missing_refs_file = os.path.join(script_dir, 'missing_references.txt')
 if missing_refs:
     print(f"Missing reference keys found: {len(missing_refs)}")
     print("Missing keys:", sorted(missing_refs))
 
     # Save missing references for GitHub Actions
-    missing_refs_file = os.path.join(script_dir, 'missing_references.txt')
     with open(missing_refs_file, 'w') as f:
         f.write("Missing Reference Keys:\n")
         f.write("======================\n\n")
@@ -433,5 +433,7 @@ if missing_refs:
     print(f"Missing references logged to: {missing_refs_file}")
 else:
     print("All references found in lookup!")
+    if os.path.exists(missing_refs_file):
+        os.remove(missing_refs_file)
 
 print("Data successfully processed.")
