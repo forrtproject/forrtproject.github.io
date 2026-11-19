@@ -32,7 +32,7 @@ Hard checks (exit 1 if any fails):
   13. List cards use a page's `image.alt_text` (#1203), tested on a post that
      sets it.
   14. No URL in sitemap.xml (or the sitemaps a sitemap index lists) is a page
-     with robots noindex.
+     with robots noindex. A missing sitemap fails the check.
 
 Report-only sections (never fail): pages with zero or several <h1>, the
 site-wide share of images that carry both width and height, pages whose
@@ -378,11 +378,9 @@ def check_card_alt_text(pages):
 
 def sitemap_paths(public_dir, name="sitemap.xml"):
     """URL paths listed in a sitemap, following a sitemap index into its sitemaps (read
-    from public_dir by URL path, as Hugo writes them alongside the pages)."""
-    path = os.path.join(public_dir, name)
-    if not os.path.exists(path):
-        return []
-    root = ElementTree.parse(path).getroot()
+    from public_dir by URL path, as Hugo writes them alongside the pages). Raises
+    FileNotFoundError for a missing sitemap, so a check never passes on no URLs."""
+    root = ElementTree.parse(os.path.join(public_dir, name)).getroot()
     locs = [unquote(urlparse(loc.text.strip()).path)
             for loc in root.iter("{%s}loc" % SITEMAP_NS) if loc.text]
     if root.tag == "{%s}sitemapindex" % SITEMAP_NS:
@@ -392,8 +390,12 @@ def sitemap_paths(public_dir, name="sitemap.xml"):
 
 def check_sitemap_noindex(public_dir, pages):
     """A sitemap URL that is noindexed sends search engines contradictory signals."""
+    try:
+        listed = sitemap_paths(public_dir)
+    except FileNotFoundError as missing:
+        return ["%s (not found)" % os.path.relpath(missing.filename, public_dir)]
     noindexed = {p.url_path for p in pages if p.noindex}
-    return [p for p in sitemap_paths(public_dir) if p in noindexed]
+    return [p for p in listed if p in noindexed]
 
 
 def description_report(pages, home):
