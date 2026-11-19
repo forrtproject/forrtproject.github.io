@@ -3,9 +3,10 @@
 {{- range $i, $raw := . -}}
   {{- $profile := site.GetPage (printf "/authors/%s" (urlize $raw)) -}}
   {{- if gt $i 0 }}, {{ end -}}
+  {{- $name := $raw -}}{{- with $profile -}}{{- with .Params.name -}}{{- $name = . -}}{{- end -}}{{- end -}}
   {{- if and $profile $profile.Params.name (site.Params.link_authors | default true) -}}
-    <a href="{{ $profile.RelPermalink }}">{{ $profile.Params.name }}</a>
+    <a href="{{ $profile.RelPermalink }}">{{ $name }}</a>
   {{- else -}}
-    {{ $raw }}
+    {{ $name }}
   {{- end -}}
 {{- end -}}

@@ -275,7 +275,7 @@ ul.list-items>li[hidden]{display:none}
 .ec-authors a{position:relative;z-index:1;color:inherit;text-decoration:underline;text-underline-offset:2px}
 .ec-authors a:hover{color:var(--ink)}
 /* News list: a post without a picture of its own is a brick (layouts/section/post.html): the card in its brick colour,
-   its category and date said once at the top, the title and summary in white, a castle wall's merlons above it as on
+   its category and date said once at the foot, the title and summary in white, a castle wall's merlons above it as on
    the newsletter archive's latest issue. */
 .news-page .ac-brick{overflow:visible;background:var(--tone);border-radius:3px;box-shadow:inset 0 -6px 0 rgb(0 0 0/.24);color:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 .news-page .ac-brick::before{content:"";position:absolute;left:14px;right:14px;top:-9px;height:9px;background:linear-gradient(90deg,transparent 6px,var(--tone) 6px 28px,transparent 28px) left top/34px 9px space no-repeat;border-radius:2px 2px 0 0}
