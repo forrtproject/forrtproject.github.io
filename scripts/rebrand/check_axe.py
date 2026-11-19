@@ -15,7 +15,7 @@ import os
 import sys
 from urllib.parse import quote
 
-from playwright.sync_api import sync_playwright
+from playwright.sync_api import Error as PlaywrightError, sync_playwright
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
@@ -41,6 +41,18 @@ def level(tags):
     return "A" if tags & LEVEL_A else "AA" if tags & LEVEL_AA else "best-practice"
 
 
+def audit(page, url, base, axe):
+    """Axe's violations on one page; None if it failed to load, [] if it left the site."""
+    response = page.goto(url, wait_until="load", timeout=120000)
+    if not response or not response.ok:
+        return None
+    page.wait_for_timeout(800)
+    if base not in page.url:
+        return []
+    page.evaluate(axe)
+    return page.evaluate(RUN)
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("public", nargs="?")
@@ -61,18 +73,24 @@ def main():
         for width in (390, 1440):
             context = browser.new_context(viewport={"width": width, "height": 900}, reduced_motion="reduce")
             for name, path in sample.items():
+                url = base + quote(path.lstrip("/"), safe="/%")
                 page = context.new_page()
-                response = page.goto(base + quote(path.lstrip("/"), safe="/%"), wait_until="load", timeout=120000)
-                if not response or not response.ok:
+                try:
+                    violations = audit(page, url, base, axe)
+                except PlaywrightError as error:
+                    # A page that moves on while axe runs destroys its context. Name it, and try once more.
+                    print(f"{name} at {width}: {path}: trying again after {str(error)[:120]}")
+                    page.close()
+                    page = context.new_page()
+                    try:
+                        violations = audit(page, url, base, axe)
+                    except PlaywrightError as error:
+                        failures.append(f"{name} at {width}: {path}: axe stopped twice: {str(error)[:160]}")
+                        violations = []
+                if violations is None:
                     failures.append(f"{name} at {width}: {path} did not load")
-                    page.close()
-                    continue
-                page.wait_for_timeout(800)
-                if base not in page.url:
-                    page.close()
-                    continue
-                page.evaluate(axe)
-                for violation in page.evaluate(RUN):
+                    violations = []
+                for violation in violations:
                     grade = level(violation["tags"])
                     findings.append({"page": name, "width": width, "level": grade, **{k: violation[k] for k in ("id", "impact", "count", "sample")}})
                     if grade == "best-practice":

@@ -61,6 +61,7 @@ Features:
 - Uses the same data and announcement artifacts as `deploy.yaml`, with noindex and no analytics
 - Compares each build with its merge base with `main`: URL list, structured data, SEO tags and internal links. See `scripts/rebrand/README.md`
 - A failed check marks the run red but still updates the preview
+- After the build, the comparison, the designed-screens check and the accessibility check run as three jobs side by side; the designed-screens check runs four browsers at once
 - Delete this workflow when the redesign launches
 
 ## Data Workflows

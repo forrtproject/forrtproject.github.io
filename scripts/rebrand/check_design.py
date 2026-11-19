@@ -14,14 +14,19 @@ jQuery and Font Awesome stay until Phase 3.
 """
 
 import argparse
+import concurrent.futures
+import contextlib
 import functools
 import http.server
+import io
 import json
+import multiprocessing
 import os
 import re
 import sys
 import tempfile
 import threading
+import time
 from urllib.parse import urlsplit
 
 from playwright.sync_api import Error as PlaywrightError, sync_playwright
@@ -213,10 +218,8 @@ def article_paths(root):
     return chosen
 
 
-def check_articles(browser, base, root, failures):
+def check_articles(browser, base, paths, failures):
     """The reading layout across its pages: content varies more than the layout does."""
-    paths = article_paths(root)
-    print(f"  {len(paths)} pages")
     for width in WIDTHS:
         page = new_page(browser, width)
         for path in paths:
@@ -817,11 +820,11 @@ BACK_TO_TOP_SHOWN = """() => { const el = document.querySelector('.clusters-back
 # Where the floating controls are checked: long pages of text, cards and lists, the pages with back to top,
 # and a page on the reading layout, whose empty margin the invitation may use.
 FLOATING_PAGES = ("contributors/", "citation-politics/toolkit/", "disciplines/", "clusters/", "clusters/cluster-1/",
-                  "publications/", "about/teams/", "about/", "contributor-analysis/")
+                  "publications/", "about/teams/", "about/us/", "contributor-analysis/")
 FLOATING_WIDTHS = (390, 1024, 1280, 1440, 1800)  # From 1800 px the launcher has its hover and focus label.
 
 
-def check_floating_controls(browser, base, failures):
+def check_floating_controls(browser, base, widths, failures):
     """The chat launcher, its invitation and label, and back to top cover nothing of the page, wherever it is scrolled.
     Below 1440 px the launcher and back to top float in the bottom corner, so mid-page they need only keep off each
     other; at the end of the page, which the footer pads for them, they still cover nothing.
@@ -830,11 +833,12 @@ def check_floating_controls(browser, base, failures):
     ten-second cycle runs at once), at the top, a third and two thirds of the way down, and at the end of each page.
     The disciplines page has a field open, cluster 1 has every sub-cluster open, and the clusters page on a phone has its navigation drawer open at the end.
     The invitation is to stay (decision D19), so it must also show somewhere, and back to top must show beside
-    the fields or clusters and hide while the drawer is open.
+    the fields or clusters and hide while the drawer is open. Runs for some of FLOATING_WIDTHS at a time, and
+    returns where the invitation showed, for main() to check across them all.
     """
     expect = expectation(failures, "floating controls")
     invited = set()
-    for width in FLOATING_WIDTHS:
+    for width in widths:
         page = new_page(browser, width)
         page.context.add_cookies([{"name": "forrt_analytics_choice", "value": "deny", "url": base}])  # Banner shut.
         page.clock.install()
@@ -900,7 +904,7 @@ def check_floating_controls(browser, base, failures):
             if not covered:
                 expect(True, f"{path} at {width} px covers nothing")
         page.context.close()
-    expect(invited, f"the invitation shows where there is room for it ({', '.join(sorted(invited)[:3]) or 'nowhere'})")
+    return invited
 
 
 # Pages of cards or lists, with the element that holds them: a wide screen is not to leave them in the reading column.
@@ -1435,7 +1439,7 @@ def check_review_pages(browser, base, failures):
     page.context.close()
 
 
-def report_budgets(browser, base, root, subfolder):
+def report_budgets(browser, base, root, subfolder, failures):
     from capture_pages import weigh
 
     parts = urlsplit(base)
@@ -1502,6 +1506,21 @@ def check_on_request(root, failures):
     print(f"  pages loading these before anyone asks: {len(found)}", flush=True)
 
 
+def check_no_redirects(root, failures):
+    """Pages the checks visit by name are real pages. A redirect stub sends the browser to forrt.org mid-check,
+    so the check would test the live site, or stop when the move lands."""
+    with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "sample_pages.json"), encoding="utf-8") as handle:
+        named = set(json.load(handle).values())
+    named |= set(SCREENS.values()) | set(FLOATING_PAGES) | set(DIRECTORIES) | set(TOOL_PAGES)
+    for path in sorted(named):
+        page = os.path.join(root, path.strip("/"), "index.html")
+        if os.path.exists(page):
+            with open(page, encoding="utf-8", errors="ignore") as handle:
+                if re.search(r'http-equiv="?refresh', handle.read(3000)):
+                    failures.append(f"/{path.strip('/')}/ is a redirect; check the page it moved to instead")
+    print(f"  pages named in the checks: {len(named)}", flush=True)
+
+
 def check_no_theme(root, failures):
     """No page loads the theme's stylesheet, Font Awesome's CDN sheet or jQuery from the CDN."""
     found = {}
@@ -1517,6 +1536,25 @@ def check_no_theme(root, failures):
     print(f"  pages still loading theme assets: {len(found)} kinds", flush=True)
 
 
+def run_section(job):
+    """Run one section in its own browser and server, and return what it printed and found."""
+    title, name, extra, public, url, subfolder, engine = job
+    failures, out, value = [], io.StringIO(), None
+    start = time.monotonic()
+    try:
+        with contextlib.redirect_stdout(out):
+            base = url or serve(public, subfolder)
+            with sync_playwright() as playwright:
+                browser = getattr(playwright, engine).launch()
+                try:
+                    value = globals()[name](browser, base, *extra, failures)
+                finally:
+                    browser.close()
+    except Exception as error:  # A crash fails the section rather than dropping it.
+        failures.append(f"{title}: the check stopped with an error: {str(error)[:300]}")
+    return title, out.getvalue(), failures, time.monotonic() - start, value
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("public", nargs="?")
@@ -1524,52 +1562,81 @@ def main():
     parser.add_argument("--base", default="/", help="subfolder the build expects to be served from")
     parser.add_argument("--browser", default="chromium", choices=("chromium", "firefox", "webkit"),
                         help="engine to run in; the throttled layout-shift test and the budgets need Chromium")
+    parser.add_argument("--jobs", type=int, default=min(4, os.cpu_count() or 1),
+                        help="browsers to run side by side (default: up to 4)")
     args = parser.parse_args()
-    base = args.url.rstrip("/") + "/" if args.url else serve(os.path.abspath(args.public), args.base)
+    public = os.path.abspath(args.public) if args.public else None
+    url = args.url.rstrip("/") + "/" if args.url else None
     failures = []
-    if args.public:
+    if public:
         print("Icons")
-        check_icons(os.path.abspath(args.public), failures)
+        check_icons(public, failures)
+        print("Pages named in the checks are not redirects")
+        check_no_redirects(public, failures)
         print("Theme assets")
-        check_no_theme(os.path.abspath(args.public), failures)
+        check_no_theme(public, failures)
         print("Embeds load on request")
-        check_on_request(os.path.abspath(args.public), failures)
-    with sync_playwright() as playwright:
-        browser = getattr(playwright, args.browser).launch()
-        print("Screens")
-        check_screens(browser, base, failures)
-        print("Breakpoints and enlarged text")
-        check_other_widths(browser, base, failures)
-        if args.public:
-            print("Every article page")
-            check_articles(browser, base, os.path.abspath(args.public), failures)
-            print("Call-outs")
-            check_callouts(browser, base, os.path.abspath(args.public), failures)
-        print("Sample pages")
-        check_samples(browser, base, failures)
-        print("Home page")
-        check_home(browser, base, failures)
-        print("Reading on a phone")
-        check_phone_reading(browser, base, failures)
-        print("Floating controls")
-        check_floating_controls(browser, base, failures)
-        check_directory_widths(browser, base, failures)
-        print("Specialist resources on cluster pages")
-        check_specialist_cards(browser, base, failures)
-        print("Clusters map")
-        check_clusters_map(browser, base, failures)
-        print("Conference programme")
-        check_conference(browser, base, failures)
-        print("Final review fixes")
-        check_review_pages(browser, base, failures)
-        print("Contributor network")
-        check_contributor_network(browser, base, failures)
-        print("Resources directory")
-        check_directory(browser, base, failures)
-        if args.public and args.browser == "chromium":
-            print("Budgets, report only")
-            report_budgets(browser, base, os.path.abspath(args.public), args.base)
-        browser.close()
+        check_on_request(public, failures)
+
+    # Each section opens its own pages, so sections run side by side, each with its own browser
+    # and server. The longest are split into parts and start first.
+    # The floating controls take longest, so they go first, one section per width.
+    sections = [(f"Floating controls at {width} px", "check_floating_controls", ((width,),)) for width in FLOATING_WIDTHS]
+    if public:
+        paths = article_paths(public)
+        print(f"Every article page: {len(paths)} pages", flush=True)
+        shards = max(1, 2 * args.jobs)
+        sections += [(f"Every article page, part {i + 1} of {shards}", "check_articles", (paths[i::shards],))
+                     for i in range(shards) if paths[i::shards]]
+    sections += [
+        ("Screens", "check_screens", ()),
+        ("Breakpoints and enlarged text", "check_other_widths", ()),
+    ]
+    if public:
+        sections.append(("Call-outs", "check_callouts", (public,)))
+    sections += [
+        ("Sample pages", "check_samples", ()),
+        ("Reading on a phone", "check_phone_reading", ()),
+        ("Directory widths", "check_directory_widths", ()),
+        ("Specialist resources on cluster pages", "check_specialist_cards", ()),
+        ("Clusters map", "check_clusters_map", ()),
+        ("Conference programme", "check_conference", ()),
+        ("Final review fixes", "check_review_pages", ()),
+        ("Contributor network", "check_contributor_network", ()),
+        ("Resources directory", "check_directory", ()),
+    ]
+    jobs = [(title, name, extra, public, url, args.base, args.browser) for title, name, extra in sections]
+    if args.jobs > 1:
+        with concurrent.futures.ProcessPoolExecutor(args.jobs, mp_context=multiprocessing.get_context("spawn")) as pool:
+            futures = [pool.submit(run_section, job) for job in jobs]
+            results = []
+            for job, future in zip(jobs, futures):
+                try:
+                    results.append(future.result())
+                except Exception as error:  # The worker itself died.
+                    results.append((job[0], "", [f"{job[0]}: the check stopped with an error: {str(error)[:300]}"], 0, None))
+    else:
+        results = [run_section(job) for job in jobs]
+    invited = set()
+    for title, output, found, seconds, value in results:
+        print(f"{title} ({seconds:.0f} s)")
+        print(output, end="", flush=True)
+        failures += found
+        if title.startswith("Floating controls"):
+            invited |= value or set()
+    # The invitation is to stay (decision D19), so it must show somewhere.
+    expectation(failures, "floating controls")(
+        invited, f"the invitation shows where there is room for it ({', '.join(sorted(invited)[:3]) or 'nowhere'})")
+
+    # These measure timing (a throttled phone, pauses, page weight), so they run alone.
+    alone = [("Home page", "check_home", ())]
+    if public and args.browser == "chromium":
+        alone.append(("Budgets, report only", "report_budgets", (public, args.base)))
+    for title, name, extra in alone:
+        title, output, found, seconds, _ = run_section((title, name, extra, public, url, args.base, args.browser))
+        print(f"{title} ({seconds:.0f} s)")
+        print(output, end="", flush=True)
+        failures += found
     print(json.dumps({"failures": failures}, indent=1))
     sys.exit(1 if failures else 0)
 

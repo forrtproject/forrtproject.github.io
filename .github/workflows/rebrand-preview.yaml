@@ -9,6 +9,9 @@ name: Doors preview
 # Checks: Every run also builds the merge base with main from the same data, then compares
 #         the two builds.
 #         A failed check shows on the run but does not hold back the preview.
+# Layout: "Build" builds the branch and shares it as an artifact. Three jobs then check it
+#         side by side: the comparison with main, the designed screens and the accessibility
+#         rules. "Check results" fails if any of them did.
 # Note: Uses the same data and announcement artifacts as deploy.yaml. Delete this
 #       workflow when the redesign launches.
 
@@ -22,6 +25,11 @@ on:
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+  PYTHONUNBUFFERED: "1"  # Log lines carry the time they were printed, so slow sections show.
+  HUGO_VERSION: "0.158.0"
+  HUGO_EXTENDED: true
+  PREVIEW_BASE: /rebrand-doors/
+  PREVIEW_URL: https://forrt.org/rebrand-doors/
 
 concurrency:
   group: rebrand-preview-${{ github.ref }}
@@ -29,40 +37,26 @@ concurrency:
 
 jobs:
   build:
-    name: Build and check
+    name: Build
     runs-on: ubuntu-22.04
     # Fork PRs get no artifacts token and have no preview to update.
     if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
     permissions:
       contents: read
       actions: read  # Needed for artifact access
-    env:
-      HUGO_VERSION: "0.158.0"
-      HUGO_EXTENDED: true
-      PREVIEW_BASE: /rebrand-doors/
-      PREVIEW_URL: https://forrt.org/rebrand-doors/
-    outputs:
-      source-rules: ${{ steps.source-rules.outcome }}
-      compare: ${{ steps.compare.outcome }}
-      links: ${{ steps.links.outcome }}
-      seo: ${{ steps.seo.outcome }}
-      design: ${{ steps.design.outcome }}
-      axe: ${{ steps.axe.outcome }}
     steps:
+      # Full history for Hugo's Git dates, with file contents fetched only for the commit
+      # checked out (as in staging-aggregate.yaml).
       - name: Checkout repository
         uses: actions/checkout@v6
         with:
           fetch-depth: 0
+          filter: blob:none
 
       # See deploy.yaml: Git quotes non-ASCII paths unless this is off, and Hugo
       # then finds no date for them.
       - name: Let Git report non-ASCII paths unquoted
         run: git config core.quotepath false
-
-      # The point where the branch last took main, not main's tip: otherwise anything landing
-      # on main shows up here as a change, until main is next merged in.
-      - name: Check out the merge base with main as the reference
-        run: git worktree add --detach "$RUNNER_TEMP/reference" "$(git merge-base origin/main HEAD)"
 
       # =======================
       # Artifacts, as in deploy.yaml
@@ -91,16 +85,11 @@ jobs:
           branch: main  # as in deploy.yaml: only main's runs, never a branch test run (#960)
           if_no_artifact_found: warn
 
-      - name: Apply artifacts to both checkouts
+      - name: Apply artifacts
         run: |
-          for checkout in . "$RUNNER_TEMP/reference"; do
-            scripts/rebrand/apply_artifacts.sh "$checkout" \
-              "$RUNNER_TEMP/artifacts/data" "$RUNNER_TEMP/artifacts/announcements"
-          done
+          scripts/rebrand/apply_artifacts.sh . \
+            "$RUNNER_TEMP/artifacts/data" "$RUNNER_TEMP/artifacts/announcements"
 
-      # =======================
-      # Builds
-      # =======================
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@75d2e84710de30f6ff7268e08f310b60ef14033f
         with:
@@ -113,20 +102,101 @@ jobs:
         env:
           HUGO_ENV: staging
 
+      - name: Point root-relative links at the subfolder
+        run: python3 scripts/rebrand/preview_paths.py public --base "$PREVIEW_BASE"
+
+      # One file uploads and downloads far faster than the site's thousands.
+      - name: Pack the site
+        run: tar -cf site.tar -C public .
+
+      - name: Upload site artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: rebrand-preview-${{ github.run_number }}
+          path: site.tar
+          retention-days: 1
+          compression-level: 1
+          overwrite: true  # A rerun reuses the run number.
+          if-no-files-found: error
+
+  compare:
+    name: Compare with main
+    runs-on: ubuntu-22.04
+    needs: build
+    permissions:
+      contents: read
+      actions: read  # Needed for artifact access
+    outputs:
+      source-rules: ${{ steps.source-rules.outcome }}
+      compare: ${{ steps.compare.outcome }}
+      links: ${{ steps.links.outcome }}
+      seo: ${{ steps.seo.outcome }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          filter: blob:none
+
+      - name: Let Git report non-ASCII paths unquoted
+        run: git config core.quotepath false
+
+      # The point where the branch last took main, not main's tip: otherwise anything landing
+      # on main shows up here as a change, until main is next merged in.
+      - name: Check out the merge base with main as the reference
+        run: git worktree add --detach "$RUNNER_TEMP/reference" "$(git merge-base origin/main HEAD)"
+
+      - name: Download data artifact
+        uses: dawidd6/action-download-artifact@07ab29fd4a977ae4d2b275087cf67563dfdf0295
+        continue-on-error: true
+        with:
+          workflow: data-processing.yml
+          name: data-artifact
+          path: ${{ runner.temp }}/artifacts/data
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          search_artifacts: true
+          branch: main
+          if_no_artifact_found: warn
+
+      - name: Download announcements artifact
+        uses: dawidd6/action-download-artifact@07ab29fd4a977ae4d2b275087cf67563dfdf0295
+        continue-on-error: true
+        with:
+          workflow: create_announcements.yml
+          name: announcements-artifact
+          path: ${{ runner.temp }}/artifacts/announcements
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          search_artifacts: true
+          branch: main
+          if_no_artifact_found: warn
+
+      - name: Apply the same artifacts to the reference
+        run: |
+          scripts/rebrand/apply_artifacts.sh "$RUNNER_TEMP/reference" \
+            "$RUNNER_TEMP/artifacts/data" "$RUNNER_TEMP/artifacts/announcements"
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@75d2e84710de30f6ff7268e08f310b60ef14033f
+        with:
+          hugo-version: ${{ env.HUGO_VERSION }}
+          extended: ${{ env.HUGO_EXTENDED }}
+
       - name: Build the reference from the same data
         working-directory: ${{ runner.temp }}/reference
-        run: hugo --gc --minify --destination "$RUNNER_TEMP/public-reference" --baseURL "$PREVIEW_URL"
+        run: |
+          hugo --gc --minify --destination "$RUNNER_TEMP/public-reference" --baseURL "$PREVIEW_URL"
+          python3 "$GITHUB_WORKSPACE/scripts/rebrand/preview_paths.py" "$RUNNER_TEMP/public-reference" --base "$PREVIEW_BASE"
         env:
           HUGO_ENV: staging
 
-      - name: Point root-relative links at the subfolder
-        run: |
-          python3 scripts/rebrand/preview_paths.py public --base "$PREVIEW_BASE"
-          python3 scripts/rebrand/preview_paths.py "$RUNNER_TEMP/public-reference" --base "$PREVIEW_BASE"
+      - name: Download the branch's build
+        uses: actions/download-artifact@v7
+        with:
+          name: rebrand-preview-${{ github.run_number }}
 
-      # =======================
-      # Checks
-      # =======================
+      - name: Unpack the site
+        run: mkdir public && tar -xf site.tar -C public
+
       - name: Templates and generated paths
         id: source-rules
         continue-on-error: true
@@ -149,9 +219,23 @@ jobs:
         continue-on-error: true
         run: python3 scripts/check_seo_html.py public
 
-      - name: Designed screens in a browser (overflow, position, layout shift, pause, directory)
-        id: design
-        continue-on-error: true
+  design:
+    name: Designed screens
+    runs-on: ubuntu-22.04
+    needs: build
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Download the branch's build
+        uses: actions/download-artifact@v7
+        with:
+          name: rebrand-preview-${{ github.run_number }}
+
+      - name: Unpack the site
+        run: mkdir public && tar -xf site.tar -C public
+
+      - name: Install Playwright
         run: |
           pip install --quiet playwright==1.63.0 pillow
           # The runner image already has Chromium's libraries; --with-deps adds fonts from the
@@ -160,23 +244,39 @@ jobs:
             echo "::warning::Could not install Chromium's system packages; installing the browser without them"
             playwright install chromium
           }
-          python3 scripts/rebrand/check_design.py public --base "$PREVIEW_BASE"
+
+      # Runs its sections in four browsers side by side; each section's time is in the log.
+      - name: Designed screens in a browser (overflow, position, layout shift, pause, directory)
+        run: python3 scripts/rebrand/check_design.py public --base "$PREVIEW_BASE" --jobs 4
+
+  axe:
+    name: Accessibility rules
+    runs-on: ubuntu-22.04
+    needs: build
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Download the branch's build
+        uses: actions/download-artifact@v7
+        with:
+          name: rebrand-preview-${{ github.run_number }}
+
+      - name: Unpack the site
+        run: mkdir public && tar -xf site.tar -C public
+
+      - name: Install Playwright
+        run: |
+          pip install --quiet playwright==1.63.0
+          playwright install --with-deps chromium || {
+            echo "::warning::Could not install Chromium's system packages; installing the browser without them"
+            playwright install chromium
+          }
 
       - name: Accessibility rules in a browser (axe-core, by WCAG level)
-        id: axe
-        continue-on-error: true
         run: |
           curl -fsSL https://cdn.jsdelivr.net/npm/axe-core@4.11.1/axe.min.js -o "$RUNNER_TEMP/axe.min.js"
           python3 scripts/rebrand/check_axe.py public --base "$PREVIEW_BASE" --axe "$RUNNER_TEMP/axe.min.js"
-
-      - name: Upload site artifact
-        if: github.event_name != 'pull_request'
-        uses: actions/upload-artifact@v7
-        with:
-          name: rebrand-preview-${{ github.run_number }}
-          path: public/
-          retention-days: 1
-          if-no-files-found: error
 
   deploy:
     name: Deploy preview
@@ -189,7 +289,9 @@ jobs:
         uses: actions/download-artifact@v7
         with:
           name: rebrand-preview-${{ github.run_number }}
-          path: public
+
+      - name: Unpack the site
+        run: mkdir public && tar -xf site.tar -C public
 
       # No cname: the repository inherits the organisation site's forrt.org domain, which
       # is what puts it at forrt.org/rebrand-doors/. force_orphan keeps one commit, so the
@@ -206,23 +308,27 @@ jobs:
   checks:
     name: Check results
     runs-on: ubuntu-22.04
-    needs: build
+    needs: [build, compare, design, axe]
+    # Report even when a check job failed; skip only when the build was skipped (fork PRs).
+    if: always() && needs.build.result != 'skipped'
     steps:
       - name: Fail if any check failed
         env:
-          SOURCE_RULES: ${{ needs.build.outputs.source-rules }}
-          COMPARE: ${{ needs.build.outputs.compare }}
-          LINKS: ${{ needs.build.outputs.links }}
-          SEO: ${{ needs.build.outputs.seo }}
-          DESIGN: ${{ needs.build.outputs.design }}
-          AXE: ${{ needs.build.outputs.axe }}
+          BUILD: ${{ needs.build.result }}
+          SOURCE_RULES: ${{ needs.compare.outputs.source-rules }}
+          COMPARE: ${{ needs.compare.outputs.compare }}
+          LINKS: ${{ needs.compare.outputs.links }}
+          SEO: ${{ needs.compare.outputs.seo }}
+          DESIGN: ${{ needs.design.result }}
+          AXE: ${{ needs.axe.result }}
         run: |
+          echo "Build: $BUILD"
           echo "Templates and generated paths: $SOURCE_RULES"
           echo "URL list, structured data and SEO tags: $COMPARE"
           echo "Internal links: $LINKS"
           echo "Built HTML: $SEO"
           echo "Designed screens: $DESIGN"
           echo "Accessibility rules: $AXE"
-          for result in "$SOURCE_RULES" "$COMPARE" "$LINKS" "$SEO" "$DESIGN" "$AXE"; do
+          for result in "$BUILD" "$SOURCE_RULES" "$COMPARE" "$LINKS" "$SEO" "$DESIGN" "$AXE"; do
             [ "$result" = "success" ] || exit 1
           done
