@@ -29,10 +29,10 @@ DATA_PATHS = (
     "content/contributors/tenzing.md",
     "scripts/forrt_contribs/contributors_cache.csv",
     "content/curated_resources", "content/glossary", "data", "static/data",
-    "static/partials", "content/contributor-analysis",
+    "static/partials", "static/newsletters", "content/contributor-analysis",
     "content/publications/citation_chart.webp",
 )
-EXCLUDED = {"data/partners.json", "data/publications.yaml"}
+EXCLUDED = {"data/lesson_plans.json", "data/partners.json", "data/publications.yaml"}
 
 
 def git(root, *args):

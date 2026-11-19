@@ -230,6 +230,16 @@ layout: single
         <p class="sc-card-role">Confidential Advisor</p>
     </div>
     <span class="sc-cbar"></span>
+</div><div class="sc-card" onclick="openModal('jonas-zaman')" style="--team-color:#be123c;--bar-extend:calc(1rem + 1px)">
+    <div class="sc-card-photo">
+        <img src="/authors/jonas-zaman/avatar.webp" alt="Jonas Zaman (Assist. Prof)" class="sc-card-img" />
+        <div class="sc-card-overlay"></div>
+    </div>
+    <div class="sc-card-content">
+        <h4 class="sc-card-name">Jonas Zaman (Assist. Prof)</h4>
+        <p class="sc-card-role">Confidential Advisor</p>
+    </div>
+    <span class="sc-cbar"></span>
 </div><div class="sc-card" onclick="openModal('thomas-rhys-evans')" style="--team-color:#be123c;--bar-extend:0px">
     <div class="sc-card-photo">
         <img src="/authors/thomas-rhys-evans/avatar.webp" alt="Thomas Rhys Evans" class="sc-card-img" />
@@ -450,6 +460,15 @@ layout: single
     </div>
     <div class="sc-card-content">
         <h4 class="sc-card-name">Dr Ruth Van der Hallen</h4>
+        <p class="sc-card-role">Confidential Advisor</p>
+    </div>
+</div><div class="sc-card" onclick="openModal('jonas-zaman-2')">
+    <div class="sc-card-photo">
+        <img src="/authors/jonas-zaman/avatar.webp" alt="Jonas Zaman (Assist. Prof)" class="sc-card-img" />
+        <div class="sc-card-overlay"></div>
+    </div>
+    <div class="sc-card-content">
+        <h4 class="sc-card-name">Jonas Zaman (Assist. Prof)</h4>
         <p class="sc-card-role">Confidential Advisor</p>
     </div>
 </div><div class="sc-card" onclick="openModal('thomas-rhys-evans-2')">
@@ -867,6 +886,33 @@ In FORRT, she has been involved in co-leading Team Citation Politics and is very
                     <h3 class="sc-modal-name">Dr Ruth Van der Hallen</h3>
                     <p class="sc-modal-role">Confidential Advisor</p>
                     <div class="sc-modal-bio">Ruth Van der Hallen is an Associate Professor in Clinical Psychology at Erasmus University Rotterdam, where she combines teaching, research, and academic leadership. She coordinates the Master’s specialisation in Clinical Psychology and leads projects that connect academic training with professional practice in clinical settings. In addition, she serves as a confidential counsellor for students and staff at the university. At FORRT, she acts as a confidential advisor and offers a safe and independent point of contact for community members seeking advice or support when navigating sensitive situations involving inappropriate behaviour, interpersonal conflicts, and concerns related to integrity and professional conduct.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><div id="modal-jonas-zaman" class="sc-modal-backdrop">
+    <div class="sc-modal-content">
+        <div class="sc-modal-header">
+            <button onclick="closeModal('jonas-zaman')" class="sc-close-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 18 12"/></svg>
+            </button>
+        </div>
+        <div class="sc-modal-body">
+            <div class="sc-modal-layout">
+                <div class="sc-modal-sidebar">
+                    <div class="sc-modal-img">
+                        <img src="/authors/jonas-zaman/avatar.webp" alt="Jonas Zaman (Assist. Prof)" />
+                    </div>
+                    <div class="sc-social-links">
+                        <a href="https://scholar.google.com/citations?user=T-LiYuwAAAAJ&hl=nl" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
+                    </div>
+                </div>
+                <div class="sc-modal-main">
+                    <h3 class="sc-modal-name">Jonas Zaman (Assist. Prof)</h3>
+                    <p class="sc-modal-role">Confidential Advisor</p>
+                    <div class="sc-modal-bio">Jonas Zaman is an Assistant Professor at Hasselt University, Belgium. His research lies at the intersection of experimental psychopathology, cognitive psychology, and computational psychiatry. His work combines experimental paradigms, psychophysiological measurements, and computational modelling to investigate the cognitive and perceptual mechanisms underlying fear learning and generalization. A central aim of his research is to understand how perception, memory, semantics and learning interact to shape adaptive and maladaptive responses, particularly in the context of anxiety and chronic pain.
+
+He leads the PRISM research lab at Hasselt University and coordinates the Generalization Across Domains Initiative (GADI), an international research network bringing together scholars from different disciplines to advance the understanding of generalization. His research seeks to bridge fundamental psychological science and clinical applications, particularly in improving interventions for anxiety-related conditions.</div>
                 </div>
             </div>
         </div>
@@ -1316,6 +1362,33 @@ I am also very interested in Open Science and an avid R user. In that space, I e
                     <h3 class="sc-modal-name">Dr Ruth Van der Hallen</h3>
                     <p class="sc-modal-role">Confidential Advisor</p>
                     <div class="sc-modal-bio">Ruth Van der Hallen is an Associate Professor in Clinical Psychology at Erasmus University Rotterdam, where she combines teaching, research, and academic leadership. She coordinates the Master’s specialisation in Clinical Psychology and leads projects that connect academic training with professional practice in clinical settings. In addition, she serves as a confidential counsellor for students and staff at the university. At FORRT, she acts as a confidential advisor and offers a safe and independent point of contact for community members seeking advice or support when navigating sensitive situations involving inappropriate behaviour, interpersonal conflicts, and concerns related to integrity and professional conduct.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><div id="modal-jonas-zaman-2" class="sc-modal-backdrop">
+    <div class="sc-modal-content">
+        <div class="sc-modal-header">
+            <button onclick="closeModal('jonas-zaman-2')" class="sc-close-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 18 12"/></svg>
+            </button>
+        </div>
+        <div class="sc-modal-body">
+            <div class="sc-modal-layout">
+                <div class="sc-modal-sidebar">
+                    <div class="sc-modal-img">
+                        <img src="/authors/jonas-zaman/avatar.webp" alt="Jonas Zaman (Assist. Prof)" />
+                    </div>
+                    <div class="sc-social-links">
+                        <a href="https://scholar.google.com/citations?user=T-LiYuwAAAAJ&hl=nl" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
+                    </div>
+                </div>
+                <div class="sc-modal-main">
+                    <h3 class="sc-modal-name">Jonas Zaman (Assist. Prof)</h3>
+                    <p class="sc-modal-role">Confidential Advisor</p>
+                    <div class="sc-modal-bio">Jonas Zaman is an Assistant Professor at Hasselt University, Belgium. His research lies at the intersection of experimental psychopathology, cognitive psychology, and computational psychiatry. His work combines experimental paradigms, psychophysiological measurements, and computational modelling to investigate the cognitive and perceptual mechanisms underlying fear learning and generalization. A central aim of his research is to understand how perception, memory, semantics and learning interact to shape adaptive and maladaptive responses, particularly in the context of anxiety and chronic pain.
+
+He leads the PRISM research lab at Hasselt University and coordinates the Generalization Across Domains Initiative (GADI), an international research network bringing together scholars from different disciplines to advance the understanding of generalization. His research seeks to bridge fundamental psychological science and clinical applications, particularly in improving interventions for anxiety-related conditions.</div>
                 </div>
             </div>
         </div>

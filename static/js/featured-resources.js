@@ -626,6 +626,9 @@
     var specCheckbox = document.getElementById('fr-global-specificity-checkbox');
     var searchInput = document.getElementById('clusters-inline-search-input');
     var clearBtn = document.getElementById('fr-global-clear');
+    /* Lesson-plan checkbox: sets .lp-filter-on on the layout; CSS then hides clusters,
+       sub-clusters and sidebar entries without [data-lp]. It filters sections, not cards. */
+    var lpCheckbox = document.getElementById('lp-filter-checkbox');
 
     // --- Pre-cache card data so filtering never queries the DOM for text ---
     var sectionCache = [];
@@ -664,6 +667,7 @@
         body: body,
         chevron: header ? header.querySelector('.acc-chevron') : null,
         ownText: ownText,
+        hasLp: section.hasAttribute('data-lp'),
         cards: cards
       });
     });
@@ -682,12 +686,15 @@
 
     if (specCheckbox) specCheckbox.addEventListener('change', applyGlobalFilters);
 
+    if (lpCheckbox) lpCheckbox.addEventListener('change', applyGlobalFilters);
+
     if (clearBtn) {
       clearBtn.addEventListener('click', function () {
         if (searchInput) searchInput.value = '';
         resetGroupToAll(focusGroup);
         resetGroupToAll(typeGroup);
         if (specCheckbox) specCheckbox.checked = false;
+        if (lpCheckbox) lpCheckbox.checked = false;
         applyGlobalFilters();
         if (searchInput) searchInput.focus();
       });
@@ -708,6 +715,49 @@
       });
     }
 
+    /* Filters live in the query string so a filtered view can be shared:
+       ?search=<text>&focus=<tag>&type=<tag>&specialist=1&materials=1. Only the clusters
+       filter bar syncs; the disciplines page reuses the search input ID.
+       Not ?q=, which opens the theme's site-wide search overlay. */
+    var syncUrl = !!document.getElementById('clusters-filter-bar') && !!window.history.replaceState;
+    var URL_KEYS = ['search', 'focus', 'type', 'specialist', 'materials'];
+
+    function selectTag(group, value) {
+      if (!group || !value) return;
+      var wanted = value.toLowerCase();
+      var match = null;
+      group.querySelectorAll('.fr-tag-btn').forEach(function (b) {
+        if ((b.getAttribute('data-value') || '').toLowerCase() === wanted) match = b;
+      });
+      /* Unknown values (e.g. a tag renamed in the sheet) leave the group on "All". */
+      if (!match) return;
+      group.querySelectorAll('.fr-tag-btn').forEach(function (b) { b.classList.toggle('active', b === match); });
+    }
+
+    function restoreFromUrl() {
+      var params = new URLSearchParams(window.location.search);
+      if (searchInput && params.get('search')) searchInput.value = params.get('search');
+      selectTag(focusGroup, params.get('focus'));
+      selectTag(typeGroup, params.get('type'));
+      if (specCheckbox && params.get('specialist') === '1') specCheckbox.checked = true;
+      if (lpCheckbox && params.get('materials') === '1') lpCheckbox.checked = true;
+    }
+
+    function writeUrl(state) {
+      var params = new URLSearchParams(window.location.search);
+      URL_KEYS.forEach(function (k) { params.delete(k); });
+      if (state.query) params.set('search', state.query);
+      if (state.focus !== 'all') params.set('focus', state.focus);
+      if (state.type !== 'all') params.set('type', state.type);
+      if (state.showNarrow) params.set('specialist', '1');
+      if (state.lpOnly) params.set('materials', '1');
+      var search = params.toString();
+      var url = window.location.pathname + (search ? '?' + search : '') + window.location.hash;
+      try { window.history.replaceState(window.history.state, '', url); } catch (err) {}
+    }
+
+    if (syncUrl) restoreFromUrl();
+
     /* Start in the state the controls show: specialist resources stay hidden
        until their checkbox is ticked. Only pages with the checkbox can reveal them. */
     if (specCheckbox) applyGlobalFilters();
@@ -726,8 +776,21 @@
       var showNarrow = specCheckbox ? specCheckbox.checked : false;
       var query = searchInput ? searchInput.value.toLowerCase().trim() : '';
       var tokens = query ? query.split(/\s+/) : [];
-      var isFiltered = activeFocus !== 'all' || activeType !== 'all' || tokens.length > 0;
-      if (clearBtn) clearBtn.hidden = !isFiltered;
+      var lpOnly = lpCheckbox ? lpCheckbox.checked : false;
+      document.querySelectorAll('.clusters-layout').forEach(function (el) {
+        el.classList.toggle('lp-filter-on', lpOnly);
+      });
+      /* Counting the lesson-plan toggle as a filter auto-expands the remaining sub-clusters,
+         so their teaching-materials strips are visible straight away. */
+      var isFiltered = activeFocus !== 'all' || activeType !== 'all' || tokens.length > 0 || lpOnly;
+      /* The specialist toggle widens the results, so it shows Clear without auto-expanding. */
+      if (clearBtn) clearBtn.hidden = !(isFiltered || showNarrow);
+      if (syncUrl) {
+        writeUrl({
+          query: searchInput ? searchInput.value.trim() : '',
+          focus: activeFocus, type: activeType, showNarrow: showNarrow, lpOnly: lpOnly
+        });
+      }
 
       // --- Pass 1: compute visibility from cached data (no DOM reads) ---
       var sectionResults = [];
@@ -760,6 +823,10 @@
           }
         }
 
+        /* With the lesson-plan filter on, a sub-cluster with a set stays open even if no card
+           matches the other filters: its teaching-materials strip is what the user asked for. */
+        if (lpOnly && sec.hasLp) ownTextMatches = true;
+
         sectionResults.push({ matchCount: matchCount, cardVis: cardVis, ownTextMatches: ownTextMatches });
       }
 
@@ -780,7 +847,7 @@
         if (!header || !body) continue;
 
         if (res.matchCount === 0 && !res.ownTextMatches) {
-          if (!header.classList.contains('acc-disabled')) {
+          if (!header.dataset.wasOpen) {
             header.dataset.wasOpen = body.classList.contains('acc-collapsed') ? '0' : '1';
           }
           header.classList.add('acc-disabled');

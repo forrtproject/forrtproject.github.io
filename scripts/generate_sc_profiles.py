@@ -9,6 +9,12 @@ This script:
 4. Sub-groups members into Teams based on 'Team' column
 5. Generates a single Hugo content file with static HTML and Vanilla JS
 6. Downloads profile pictures from Google Drive
+
+!! content/about/steering-committee/index.md IS GENERATED — DO NOT EDIT IT DIRECTLY !!
+    Each run rewrites the whole file. Pictures are downloaded to
+    content/authors/<name>/avatar.webp only when that file is missing. Fix a member's details in the steering committee or personal-details sheet
+    (SC_CSV_URL, PERSONAL_CSV_URL, or PERSONAL_FALLBACK_CSV_URL below), then re-run and commit the output. No
+    workflow runs this script.
 """
 
 import os
@@ -247,6 +253,8 @@ def normalize_name(name):
     name = str(name).strip()
     name = re.sub(r'\b(Dr|Dr\.|Mr|Mr\.|Ms|Ms\.|Mrs|Prof|Prof\.)\s+', '', name, flags=re.IGNORECASE)
     name = re.sub(r'\*', '', name)
+    # Parenthesised notes such as "(gmail)" or "(Assist. Prof)" are not part of the name.
+    name = re.sub(r'\([^)]*\)', '', name)
     name = unicodedata.normalize('NFKD', name)
     name = name.encode('ascii', 'ignore').decode('ascii')
     name = re.sub(r'\s+', ' ', name).strip()
@@ -307,6 +315,13 @@ def find_existing_author_dir(personal_name, authors_dir):
     sources disagrees with what's already on disk.
     """
     normalized_target = normalize_name(personal_name)
+    # Folders slugged without separators (e.g. "ruthvanderhallenphd") only match once
+    # spaces and punctuation are ignored on both sides.
+    compact_target = re.sub(r'[^a-z0-9]', '', normalized_target)
+    compact_matches = [d.name for d in authors_dir.iterdir()
+                       if d.is_dir() and re.sub(r'[^a-z0-9]', '', d.name.lower()) == compact_target]
+    if len(compact_matches) == 1:
+        return compact_matches[0]
     best_match = None
     # 0.9 is deliberately strict: legitimate spelling variants of the SAME person
     # (Dr prefix, missing middle initial, hyphen vs space in a surname) all score >=0.95
