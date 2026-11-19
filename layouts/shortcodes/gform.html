@@ -1,10 +1,19 @@
-{{ $url := printf "https://docs.google.com/forms/d/e/%s/viewform" (.Get "src") }}
-{{ partial "click_to_load.html" (dict
-  "src" (printf "%s?embedded=true" $url)
-  "link" $url
-  "provider" "Google Forms"
-  "label" "This form"
-  "title" "Google Form"
-  "width" (.Get "width")
-  "height" (.Get "height")
-) }}
+{{/* A Google Form. Forms with a definition in assets/gforms/ (scripts/build_google_forms.py) render
+     as the site's own form; any other form stays behind a click-to-load placeholder.
+     Set heading="false" where the page already names the form. */}}
+{{ $id := .Get "src" }}
+{{ $heading := ne (.Get "heading") "false" }}
+{{ with resources.Get (printf "gforms/%s.json" $id) }}
+  {{ partial "google_form.html" (dict "form" (. | transform.Unmarshal) "heading" $heading) }}
+{{ else }}
+  {{ $url := printf "https://docs.google.com/forms/d/e/%s/viewform" $id }}
+  {{ partial "click_to_load.html" (dict
+    "src" (printf "%s?embedded=true" $url)
+    "link" $url
+    "provider" "Google Forms"
+    "label" "This form"
+    "title" "Google Form"
+    "width" (.Get "width")
+    "height" (.Get "height")
+  ) }}
+{{ end }}

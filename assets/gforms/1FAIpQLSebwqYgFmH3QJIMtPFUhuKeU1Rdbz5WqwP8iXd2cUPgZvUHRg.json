@@ -1,0 +1,16 @@
+{
+  "id": "1FAIpQLSebwqYgFmH3QJIMtPFUhuKeU1Rdbz5WqwP8iXd2cUPgZvUHRg",
+  "title": "FORRT's Anonymous Feedback Form",
+  "description": "Give us feedback. Any feedback. Anonymously.",
+  "confirmation": "Your response has been recorded.",
+  "collect_email": false,
+  "items": [
+    {
+      "type": "paragraph",
+      "entry": "1734919805",
+      "title": "Anonymity is an effective way of gaining honest and unbiased feedback. It is our hope that the anonymous form below allows us to address issues that we would otherwise be unaware of, and be able to make decisions faster and more effectively uninhibited feedback. If you have any feedback concerning our community, our open educational materials, our website, our Slack, our Publications, … we would be more than happy to hear from you!",
+      "help": "",
+      "required": false
+    }
+  ]
+}

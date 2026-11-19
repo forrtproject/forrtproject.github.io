@@ -1,10 +1,10 @@
 ---
 title: Privacy policy
 date: 2026-11-03
-lastmod: 2026-11-11
+lastmod: 2026-11-18
 ---
 
-*Last updated: 11 November 2026*
+*Last updated: 18 November 2026*
 
 This policy explains what happens to personal data when you use forrt.org, why, and what rights you have.
 
@@ -19,7 +19,7 @@ We have not appointed a data protection officer.
 ## Summary
 
 - Google Analytics runs only if you allow it.
-- Videos, forms, calendars and teaching activities load only if you click to load them.
+- Videos, calendars, teaching activities and a few forms load only if you click to load them. Other forms are part of our pages and send your answers to Google only when you press Submit.
 - The newsletter form contacts EmailOctopus and Google reCAPTCHA only when you press **Subscribe**.
 - Our host receives your IP address and other technical data each time you open a page, and so do the services listed below on the few pages that use them.
 
@@ -65,7 +65,7 @@ If you decline or do not choose, Google Analytics does not load.
 
 ## Embedded content {#embedded-content}
 
-Other services, some of them in the USA, host our videos, forms, calendars and some teaching activities. Each one shows a placeholder until you select **Load**, or a thumbnail until you press play. Your click is your consent for that item on that page view (Art. 6(1)(a) GDPR). Once it loads, the provider receives your IP address and browser data, may set cookies, and handles the data under its own privacy policy.
+Other services, some of them in the USA, host our videos, calendars and some of our forms and teaching activities. Each one shows a placeholder until you select **Load**, or a thumbnail until you press play. Your click is your consent for that item on that page view (Art. 6(1)(a) GDPR). Once it loads, the provider receives your IP address and browser data, may set cookies, and handles the data under its own privacy policy.
 
 | Provider | Content |
 |---|---|
@@ -78,7 +78,7 @@ Videos use the `youtube-nocookie.com` player.
 
 <span id="newsletter"></span>**Newsletter.** The sign-up form is part of our pages and loads nothing from other services until you press **Subscribe**. Pressing it loads Google reCAPTCHA, which checks for spam: Google receives your IP address and browser data, may set cookies, and handles this data under its [privacy policy](https://policies.google.com/privacy). Your email address then goes to EmailOctopus (Three Hearts Digital Ltd, 86-90 Paul Street, London EC2A 4NE, UK), which stores it as our processor, under the data processing schedule in its terms, and we use it to send the newsletter. Its [sub-processors are listed here](https://emailoctopus.com/legal/subprocessors). The legal basis is your consent (Art. 6(1)(a) GDPR). You can unsubscribe through the link in every email, and we then remove you from the list. The European Commission has found that the UK provides adequate protection.
 
-**Forms and feedback.** Our Google Forms and the feedback forms on glossary and other pages store what you enter, and any email address you choose to give, in Google Sheets. We hold this in our forrtproject@gmail.com account, and use it to act on your message or application. We keep it for as long as we need it for that purpose, and then delete it. The legal basis is our legitimate interest in improving our resources and running our programmes (Art. 6(1)(f) GDPR), or your consent where a form asks for it. Google stores this data and may process it in the USA, as described under Analytics.
+<span id="forms"></span>**Forms and feedback.** Forms that are part of our pages load nothing from Google until you press **Submit**. Pressing it sends your answers to Google, which also receives your IP address and browser data. Our Google Forms and the feedback forms on glossary and other pages store what you enter, and any email address you choose to give, in Google Sheets. We hold this in our forrtproject@gmail.com account, and use it to act on your message or application. We keep it for as long as we need it for that purpose, and then delete it. The legal basis is our legitimate interest in improving our resources and running our programmes (Art. 6(1)(f) GDPR), or your consent where a form asks for it. Google stores this data and may process it in the USA, as described under Analytics.
 
 **Email.** If you email us, we use your message and address to reply (Art. 6(1)(f) GDPR). Google Mail hosts our email. We keep messages for as long as we need them to deal with your request.
 

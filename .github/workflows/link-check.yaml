@@ -3,9 +3,11 @@ name: Link Checker
 # =======================
 # Website Link Validation
 # =======================
-# Purpose: Downloads the latest built site and checks all links (internal + external)
+# Purpose: Downloads the latest built site and checks all links (internal + external), and
+#          compares the site's copies of Google Forms (assets/gforms/) with the live forms
 # Triggers: Weekly on Mondays at 01:30 UTC or manual dispatch
-# Reports: Updates the existing open "link-check"-labeled issue (or creates one if none exists)
+# Reports: Updates the existing open "link-check"-labeled issue (or creates one if none exists).
+#          A changed Google Form gets its own issue, which closes once the copies match again
 # Config: See .lychee.toml for exclusion patterns and request settings
 
 on:
@@ -494,3 +496,51 @@ jobs:
             gh issue create --title "$TITLE" --body-file "$BODY_FILE" --label link-check
           fi
 
+  google-forms:
+    name: Check Google Forms
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GH_REPO: ${{ github.repository }}
+      ISSUE_TITLE: A Google Form on forrt.org has changed
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Compare the site's forms with the live Google Forms
+        id: compare
+        run: |
+          set +e
+          python3 scripts/build_google_forms.py --check 2>&1 | tee /tmp/google-forms.txt
+          echo "code=${PIPESTATUS[0]}" >> "$GITHUB_OUTPUT"
+
+      - name: Create or update the issue
+        if: steps.compare.outputs.code == '1'
+        run: |
+          {
+            echo "A Google Form shown on forrt.org no longer matches the copy the site uses. Until this is fixed, Google may discard responses sent from the site, and visitors are not told."
+            echo
+            echo '```'
+            cat /tmp/google-forms.txt
+            echo '```'
+            echo
+            echo "**To fix:** run \`python3 scripts/build_google_forms.py\` and commit the result. If it stops with an error, the site cannot reproduce the change: undo it in Google or update \`layouts/partials/google_form.html\`."
+          } > /tmp/google-forms-issue.md
+          EXISTING=$(gh issue list --state open --search "\"$ISSUE_TITLE\" in:title" --json number --jq '.[0].number // empty')
+          if [ -n "$EXISTING" ]; then
+            gh issue edit "$EXISTING" --body-file /tmp/google-forms-issue.md
+          else
+            gh issue create --title "$ISSUE_TITLE" --body-file /tmp/google-forms-issue.md --assignee LukasWallrich
+          fi
+
+      - name: Close the issue once the forms match
+        if: steps.compare.outputs.code == '0'
+        run: |
+          EXISTING=$(gh issue list --state open --search "\"$ISSUE_TITLE\" in:title" --json number --jq '.[0].number // empty')
+          if [ -n "$EXISTING" ]; then
+            gh issue close "$EXISTING" --comment "The site's copy matches the live forms again."
+          fi
+
+      - name: Fail the run if the comparison could not finish
+        if: steps.compare.outputs.code != '0' && steps.compare.outputs.code != '1'
+        run: exit 1
