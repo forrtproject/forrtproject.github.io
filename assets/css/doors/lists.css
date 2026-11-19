@@ -259,7 +259,7 @@ ul.list-items>li[hidden]{display:none}
 .ec-intro .list-filter-posts input{width:100%;box-sizing:border-box;min-height:44px;padding:10px 16px;border:1.5px solid var(--ink);border-radius:999px;background:#fff;font:400 17px/1.3 var(--text);color:var(--ink)}
 .ec-intro .list-filter-count{margin:8px 0 0;font-size:16px;color:var(--soft)}
 .ec-intro .list-filter-count:empty{margin:0}
-.ec-grid{grid-template-columns:repeat(auto-fill,minmax(min(100%,360px),1fr));gap:28px 24px}
+.ec-grid{grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:28px 24px}
 /* A logo, a figure or a tall picture shown whole on white, in the same frame as a photo. */
 .ec-thumb-whole{position:relative;aspect-ratio:16/9;background:var(--mat,#fff);border-bottom:1px solid var(--line)}
 .ec-thumb-whole[style]{border-bottom:0}

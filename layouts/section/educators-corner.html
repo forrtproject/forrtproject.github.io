@@ -26,7 +26,7 @@
       <li>
         <article class="announcement-card">
           {{ with $img }}
-            {{ partial "doors/card_picture" (dict "img" . "large" (eq $i 0) "lazy" (ge $i 3) "alt" $p.Params.image.alt_text "figures" true) }}
+            {{ partial "doors/card_picture" (dict "img" . "large" (eq $i 0) "lazy" (ge $i 4) "alt" $p.Params.image.alt_text "figures" true) }}
           {{ else }}
             {{/* A plain door on education's colour, as on the article pages' cards (doors/article_card): the card's
                  title and month are just below. */}}

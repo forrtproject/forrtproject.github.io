@@ -25,7 +25,7 @@
   </div>
 
   <ul class="announcements-grid">
-    {{ $eager := true }}
+    {{ $eager := true }}{{ $lead := true }}
     {{ $tones := partialCached "doors/post_panels" site "post-panels" }}
     {{ range $posts }}
       {{ $cat := "" }}{{ with .Params.categories }}{{ $cat = index . 0 }}{{ end }}
@@ -37,7 +37,7 @@
         {{ $issue := and $tone (eq (lower $cat) "newsletter") }}
         <article class="announcement-card{{ if $tone }} ac-brick nla-brick-{{ $tone }}{{ end }}{{ if $issue }} ac-issue{{ end }}">
           {{ if not $tone }}
-            {{ partial "doors/card_picture" (dict "img" $img "large" $eager "lazy" (not $eager) "alt" $alt) }}
+            {{ partial "doors/card_picture" (dict "img" $img "large" $lead "lazy" (not $eager) "alt" $alt) }}
             {{ $eager = false }}
           {{ end }}
           <div class="ac-body">
@@ -47,7 +47,7 @@
             <p class="ac-summary">{{ .Summary | plainify | emojify }}</p>
           </div>
         </article>
-      </li>
+      </li>{{ $lead = false }}
     {{ end }}
   </ul>
 </div>

@@ -820,10 +820,11 @@ if (listFilter) {
     input.dispatchEvent(new Event('input'));
     input.focus();
   });
-  // Each entry's text is read once, so controls added to the entries later (their "more" buttons) are not searched.
+  // Each entry's text is read once, without its buttons (such as "and 9 more"), so controls are never searched.
   // Accents are set aside on both sides, so "Roseler" finds Röseler and "Lazic" finds Lazić.
   const plain = (text) => text.normalize('NFD').replace(/\p{M}/gu, '');
-  const texts = new Map(sections.flatMap(({items}) => items.map((item) => [item, plain(item.textContent)])));
+  const words_of = (item) => { const copy = item.cloneNode(true); copy.querySelectorAll('button').forEach((b) => b.remove()); return copy.textContent; };
+  const texts = new Map(sections.flatMap(({items}) => items.map((item) => [item, plain(words_of(item))])));
   const tokens = new Map([...texts.keys()].map((item) => [item, new Set((item.dataset.facets || '').split(' '))]));
   const total = texts.size;
   let words = /./;
