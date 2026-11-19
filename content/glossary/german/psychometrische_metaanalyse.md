@@ -11,7 +11,7 @@
     ],
     "references": [
         "Borenstein, M., Hedges, L. V., Higgins, J. P., & Rothstein, H. R. (2011). <i>Introduction to meta-analysis</i>. John Wiley & Sons.",
-        "Hunter, J. E., & Schmidt, F. L. (2015). <i>Methods of Meta-Analysis: Correcting Error and Bias in Research Findings</i> (Third). SAGE."
+        "Hunter, J. E., & Schmidt, F. L. (2015). <i>Methods of Meta-Analysis: Correcting Error and Bias in Research Findings</i> (3rd ed.). SAGE."
     ],
     "drafted_by": [
         "Adrien Fillon"

@@ -692,7 +692,7 @@
                     "Hardwicke, T. E., Bohn, M., MacDonald, K., Hembacher, E., Nuijten, M. B., Peloquin, B. N., deMayo, B. E., Long, B., Yoon, E. J., & Frank, M. C. (2020). Analytic reproducibility in articles receiving open data badges at the journal Psychological Science: an observational study. <i>Royal Society Open Science</i>, <i>8</i>(1), 201494. https://doi.org/10.1098/rsos.201494",
                     "Kidwell, M. C., Lazarević, L. B., Baranski, E., Hardwicke, T. E., Piechowski, S., Falkenberg, L. S., & Nosek, B. A. (2016). Badges to acknowledge open practices: A simple, low-cost, effective method for increasing transparency. <i>PLoS Biology</i>, <i>14</i>(5), e1002456. https://doi.org/10.1371/journal.pbio.1002456",
                     "Rowhani-Farid, A., Aldcroft, A., & Barnett, A. G. (2020). Did awarding badges increase data sharing in BMJ Open? A randomized controlled trial. <i>Royal Society Open Science</i>, <i>7</i>(3), 191818. https://doi.org/10.1098/rsos.191818",
-                    "Science, C. (n.d.). <i>Open science badges</i>. https://www.cos.io/initiatives/badges"
+                    "Center for Open Science. (n.d.). <i>Open science badges</i>. https://www.cos.io/initiatives/badges"
                 ],
                 "drafted_by": [
                     "Jacob Miranda"
@@ -774,7 +774,7 @@
                 "en_title": "Bayesian Inference",
                 "title": "الاستدلال البايزي [Bayesian Inference]",
                 "sort_key": "الاستدلال البايزي [bayesian inference]",
-                "definition": "طريقة للاستدلال الإحصائي تعتمد على نظرية بايز، والتي تستخدم (عدم) اليقين المعرفي باستخدام اللغة الرياضية للاحتمالات. يعتمد الاستدلال البايزي على تخصيص (وإعادة تخصيص ، بناء على البيانات أو الأدلة التي تمت ملاحظتها حديثا) والمصداقية عبر الاحتمالات. هناك طريقتان للاستدلال البايزي يشملان \"عوامل بايز\" وتقدير معامل بايزي.",
+                "definition": "طريقة للاستدلال الإحصائي تعتمد على نظرية بايز، والتي تستخدم (عدم) اليقين المعرفي باستخدام اللغة الرياضية للاحتمالات. يعتمد الاستدلال البايزي على تخصيص (وإعادة تخصيص ، بناء على البيانات أو الأدلة التي تمت ملاحظتها حديثا) والمصداقية عبر الاحتمالات. هناك طريقتان للاستدلال البايزي تشملان \"عوامل بايز\" وتقدير معامل بايزي.",
                 "related_terms": [
                     "Bayes Factor",
                     "Bayesian Parameter Estimation"
@@ -1239,7 +1239,7 @@
                 "en_title": "Citizen Science",
                 "title": "علم المواطن [Citizen Science]",
                 "sort_key": "علم المواطن [citizen science]",
-                "definition": "يشير مصطلح علم المواطن إلى المشاريع العلميَّة التي تتضمَّن مشاركة فعَّالة من قبل الجمهور في المساعي العلميَّة بهدف إضفاء الطَّابع الدِّيمقراطي على العلوم.  يمكن أن يشارك العلماء المواطنون في جميع مراحل البحث، حيث يعملون كمتعاونين، أو مساهمين أو قادة مشاريع. من الأمثلة على مشروع علمي كبير للمواطنين هو تحديد الأفراد للأجسام الفلكيَّة (Lintott, 2008). ال التَّعريف البديل: (إن أمكن) في الماضي كان علم المواطن يشير في الغالب إلى المتطوعين الذين يشاركون كمساعدين ميدانيين في الدِّراسات العلميَّة (Cohn, 2008, p. 193).",
+                "definition": "يشير مصطلح علم المواطن إلى المشاريع العلميَّة التي تتضمَّن مشاركة فعَّالة من قبل الجمهور في المساعي العلميَّة بهدف إضفاء الطَّابع الدِّيمقراطي على العلوم.  يمكن أن يشارك العلماء المواطنون في جميع مراحل البحث، حيث يعملون كمتعاونين، أو مساهمين أو قادة مشاريع. من الأمثلة على مشروع علمي كبير للمواطنين هو تحديد الأفراد للأجسام الفلكيَّة (Lintott, 2008). **التَّعريف البديل:** في الماضي كان علم المواطن يشير في الغالب إلى المتطوعين الذين يشاركون كمساعدين ميدانيين في الدِّراسات العلميَّة (Cohn, 2008, p. 193).",
                 "related_terms": [
                     "Crowdsourced Research"
                 ],
@@ -5100,7 +5100,7 @@
                 "en_title": "Matthew effect (in science)",
                 "title": "تأثير ماثيو في العلوم [Matthew effect (in science)]",
                 "sort_key": "تأثير ماثيو في العلوم [matthew effect (in science)]",
-                "definition": "هو إعادة صياغة لمبدأ ماثيو الإنجيلي (الأثرياء يصبحون أكثر ثراءً؛ الفقراء يصبحون أكثر فقرًا)، حيث يُنسب إلى العلماء البارزين، والباحثين في بداية حياتهم المهنيَّة الحاصلين على زمالة مرموقة مستوياتٍ أعلى من السُّمعة، والتَّمويل بشكل غير متناسب مع مساهماتهم العلميَّة، في حين أنَّ الباحثين غير المعروفين نسبيًا أو الباحثين في بداية حياتهم المهنيَّة دون زمالة مرموقة لا يحصلون على سمعة تتناسب مع مثل هذه المساهمات. ويمثل هذا التَّأثير ميزة تراكميَّة كبيرة تنتج عن تراكم مزايا أوليَّة متواضعة (والعكس صحيح). .",
+                "definition": "هو إعادة صياغة لمبدأ ماثيو الإنجيلي (الأثرياء يصبحون أكثر ثراءً؛ الفقراء يصبحون أكثر فقرًا)، حيث يُنسب إلى العلماء البارزين، والباحثين في بداية حياتهم المهنيَّة الحاصلين على زمالة مرموقة مستوياتٍ أعلى من السُّمعة، والتَّمويل بشكل غير متناسب مع مساهماتهم العلميَّة، في حين أنَّ الباحثين غير المعروفين نسبيًا أو الباحثين في بداية حياتهم المهنيَّة دون زمالة مرموقة لا يحصلون على سمعة تتناسب مع مثل هذه المساهمات. ويمثل هذا التَّأثير ميزة تراكميَّة كبيرة تنتج عن تراكم مزايا أوليَّة متواضعة (والعكس صحيح).",
                 "related_terms": [],
                 "references": [
                     "Bol, T., de Vaan, M., & van de Rijt, A. (2018). The Matthew effect in science funding. <i>Proceedings of the National Academy of Sciences</i>, <i>115</i>(19), 4887–4890. https://doi.org/10.1073/pnas.1719557115",
@@ -5665,7 +5665,7 @@
                 "en_title": "Objectivity",
                 "title": "الموضوعيَّة [Objectivity]",
                 "sort_key": "الموضوعيَّة [objectivity]",
-                "definition": "تشير الموضوعيَّة إلى أنَّه يجب أنْ تكون الادِّعاءات، والطُّرق، والنَّتائج العلميَّة غير منحازة، وذلك يشمل عدم انحياز العلماء أنفسهم، وبالتَّالي عدم تأثرهم بالتَّحيُّز الثَّقافي، أو السِّياسي، أو العرقي، أو الدِّيني وكذلك أي مصالح شخصيَّة (ميرتون ، 1942).  **المصطلحات ذات الصِّة:** التَّشاركيَّة، قواعد ميرتون، الحياديَّة",
+                "definition": "تشير الموضوعيَّة إلى أنَّه يجب أنْ تكون الادِّعاءات، والطُّرق، والنَّتائج العلميَّة غير منحازة، وذلك يشمل عدم انحياز العلماء أنفسهم، وبالتَّالي عدم تأثرهم بالتَّحيُّز الثَّقافي، أو السِّياسي، أو العرقي، أو الدِّيني وكذلك أي مصالح شخصيَّة (ميرتون ، 1942).",
                 "related_terms": [
                     "Communality"
                 ],
@@ -7525,7 +7525,7 @@
                 ],
                 "references": [
                     "Borenstein, M., Hedges, L. V., Higgins, J. P., & Rothstein, H. R. (2011). <i>Introduction to meta-analysis</i>. John Wiley & Sons.",
-                    "Hunter, J. E., & Schmidt, F. L. (2015). <i>Methods of Meta-Analysis: Correcting Error and Bias in Research Findings</i> (Third). SAGE."
+                    "Hunter, J. E., & Schmidt, F. L. (2015). <i>Methods of Meta-Analysis: Correcting Error and Bias in Research Findings</i> (3rd ed.). SAGE."
                 ],
                 "drafted_by": [
                     "Adrien Fillon"
@@ -9366,7 +9366,7 @@
                 "en_title": "Society for Open, Reliable, and Transparent Ecology and Evolutionary biology (SORTEE)",
                 "title": "جمعيَّة علم البيئة والبيولوجيا التَّطوريَّة المنفتحة والموثوقة والشَّفافة [Society for Open, Reliable, and Transparent Ecology and Evolutionary biology (SORTEE)]",
                 "sort_key": "جمعيَّة علم البيئة والبيولوجيا التَّطوريَّة المنفتحة والموثوقة والشَّفافة [society for open, reliable, and transparent ecology and evolutionary biology (sortee)]",
-                "definition": "مجتمع دولي يهدف إلى تحسين شفافيَّة وموثوقيَّة نتائج البحوث في مجالات البيئة والتَّطور والتَّخصُّصات ذات الصِّلة من خلال التَّغييرات الثَّقافية والمؤسّسيَّة ([sortee.org](https://www.sortee.org/)). تم إطلاق الجمعية في ديسمبر 2020 وهي متاحة لأي شخص مهتم بتحسين البحث في هذه التَّخصُّصات، بغض النَّظر عن الخبرة، فالجمعيَّة دوليَّة في نطاقها وعضويتها وأهدافها. تضم الجمعيَّة أكثر من 600 عضوا اعتبارًاًمن مايو 2021\\.",
+                "definition": "مجتمع دولي يهدف إلى تحسين شفافيَّة وموثوقيَّة نتائج البحوث في مجالات البيئة والتَّطور والتَّخصُّصات ذات الصِّلة من خلال التَّغييرات الثَّقافية والمؤسّسيَّة ([sortee.org](https://www.sortee.org/)). تم إطلاق الجمعية في ديسمبر 2020 وهي متاحة لأي شخص مهتم بتحسين البحث في هذه التَّخصُّصات، بغض النَّظر عن الخبرة، فالجمعيَّة دوليَّة في نطاقها وعضويتها وأهدافها. تضم الجمعيَّة أكثر من 600 عضوا اعتبارًا من مايو 2021\\.",
                 "related_terms": [
                     "Society for the Improvement of Psychological Science (SIPS)"
                 ],
@@ -11387,7 +11387,7 @@
                     "Hardwicke, T. E., Bohn, M., MacDonald, K., Hembacher, E., Nuijten, M. B., Peloquin, B. N., deMayo, B. E., Long, B., Yoon, E. J., & Frank, M. C. (2020). Analytic reproducibility in articles receiving open data badges at the journal Psychological Science: an observational study. <i>Royal Society Open Science</i>, <i>8</i>(1), 201494. https://doi.org/10.1098/rsos.201494",
                     "Kidwell, M. C., Lazarević, L. B., Baranski, E., Hardwicke, T. E., Piechowski, S., Falkenberg, L. S., & Nosek, B. A. (2016). Badges to acknowledge open practices: A simple, low-cost, effective method for increasing transparency. <i>PLoS Biology</i>, <i>14</i>(5), e1002456. https://doi.org/10.1371/journal.pbio.1002456",
                     "Rowhani-Farid, A., Aldcroft, A., & Barnett, A. G. (2020). Did awarding badges increase data sharing in BMJ Open? A randomized controlled trial. <i>Royal Society Open Science</i>, <i>7</i>(3), 191818. https://doi.org/10.1098/rsos.191818",
-                    "Science, C. (n.d.). <i>Open science badges</i>. https://www.cos.io/initiatives/badges"
+                    "Center for Open Science. (n.d.). <i>Open science badges</i>. https://www.cos.io/initiatives/badges"
                 ],
                 "drafted_by": [
                     "Jacob Miranda"
@@ -18068,7 +18068,7 @@
                 ],
                 "references": [
                     "Borenstein, M., Hedges, L. V., Higgins, J. P., & Rothstein, H. R. (2011). <i>Introduction to meta-analysis</i>. John Wiley & Sons.",
-                    "Hunter, J. E., & Schmidt, F. L. (2015). <i>Methods of Meta-Analysis: Correcting Error and Bias in Research Findings</i> (Third). SAGE."
+                    "Hunter, J. E., & Schmidt, F. L. (2015). <i>Methods of Meta-Analysis: Correcting Error and Bias in Research Findings</i> (3rd ed.). SAGE."
                 ],
                 "drafted_by": [
                     "Adrien Fillon"
@@ -21904,7 +21904,7 @@
                     "Hardwicke, T. E., Bohn, M., MacDonald, K., Hembacher, E., Nuijten, M. B., Peloquin, B. N., deMayo, B. E., Long, B., Yoon, E. J., & Frank, M. C. (2020). Analytic reproducibility in articles receiving open data badges at the journal Psychological Science: an observational study. <i>Royal Society Open Science</i>, <i>8</i>(1), 201494. https://doi.org/10.1098/rsos.201494",
                     "Kidwell, M. C., Lazarević, L. B., Baranski, E., Hardwicke, T. E., Piechowski, S., Falkenberg, L. S., & Nosek, B. A. (2016). Badges to acknowledge open practices: A simple, low-cost, effective method for increasing transparency. <i>PLoS Biology</i>, <i>14</i>(5), e1002456. https://doi.org/10.1371/journal.pbio.1002456",
                     "Rowhani-Farid, A., Aldcroft, A., & Barnett, A. G. (2020). Did awarding badges increase data sharing in BMJ Open? A randomized controlled trial. <i>Royal Society Open Science</i>, <i>7</i>(3), 191818. https://doi.org/10.1098/rsos.191818",
-                    "Science, C. (n.d.). <i>Open science badges</i>. https://www.cos.io/initiatives/badges"
+                    "Center for Open Science. (n.d.). <i>Open science badges</i>. https://www.cos.io/initiatives/badges"
                 ],
                 "drafted_by": [
                     "Jacob Miranda"
@@ -28253,7 +28253,7 @@
                 ],
                 "references": [
                     "Borenstein, M., Hedges, L. V., Higgins, J. P., & Rothstein, H. R. (2011). <i>Introduction to meta-analysis</i>. John Wiley & Sons.",
-                    "Hunter, J. E., & Schmidt, F. L. (2015). <i>Methods of Meta-Analysis: Correcting Error and Bias in Research Findings</i> (Third). SAGE."
+                    "Hunter, J. E., & Schmidt, F. L. (2015). <i>Methods of Meta-Analysis: Correcting Error and Bias in Research Findings</i> (3rd ed.). SAGE."
                 ],
                 "drafted_by": [
                     "Adrien Fillon"
@@ -31842,7 +31842,7 @@
                     "Hardwicke, T. E., Bohn, M., MacDonald, K., Hembacher, E., Nuijten, M. B., Peloquin, B. N., deMayo, B. E., Long, B., Yoon, E. J., & Frank, M. C. (2020). Analytic reproducibility in articles receiving open data badges at the journal Psychological Science: an observational study. <i>Royal Society Open Science</i>, <i>8</i>(1), 201494. https://doi.org/10.1098/rsos.201494",
                     "Kidwell, M. C., Lazarević, L. B., Baranski, E., Hardwicke, T. E., Piechowski, S., Falkenberg, L. S., & Nosek, B. A. (2016). Badges to acknowledge open practices: A simple, low-cost, effective method for increasing transparency. <i>PLoS Biology</i>, <i>14</i>(5), e1002456. https://doi.org/10.1371/journal.pbio.1002456",
                     "Rowhani-Farid, A., Aldcroft, A., & Barnett, A. G. (2020). Did awarding badges increase data sharing in BMJ Open? A randomized controlled trial. <i>Royal Society Open Science</i>, <i>7</i>(3), 191818. https://doi.org/10.1098/rsos.191818",
-                    "Science, C. (n.d.). <i>Open science badges</i>. https://www.cos.io/initiatives/badges"
+                    "Center for Open Science. (n.d.). <i>Open science badges</i>. https://www.cos.io/initiatives/badges"
                 ],
                 "drafted_by": [
                     "Jacob Miranda"
@@ -37574,7 +37574,7 @@
                 ],
                 "references": [
                     "Borenstein, M., Hedges, L. V., Higgins, J. P., & Rothstein, H. R. (2011). <i>Introduction to meta-analysis</i>. John Wiley & Sons.",
-                    "Hunter, J. E., & Schmidt, F. L. (2015). <i>Methods of Meta-Analysis: Correcting Error and Bias in Research Findings</i> (Third). SAGE."
+                    "Hunter, J. E., & Schmidt, F. L. (2015). <i>Methods of Meta-Analysis: Correcting Error and Bias in Research Findings</i> (3rd ed.). SAGE."
                 ],
                 "drafted_by": [
                     "Adrien Fillon"
@@ -40914,7 +40914,7 @@
                     "Hardwicke, T. E., Bohn, M., MacDonald, K., Hembacher, E., Nuijten, M. B., Peloquin, B. N., deMayo, B. E., Long, B., Yoon, E. J., & Frank, M. C. (2020). Analytic reproducibility in articles receiving open data badges at the journal Psychological Science: an observational study. <i>Royal Society Open Science</i>, <i>8</i>(1), 201494. https://doi.org/10.1098/rsos.201494",
                     "Kidwell, M. C., Lazarević, L. B., Baranski, E., Hardwicke, T. E., Piechowski, S., Falkenberg, L. S., & Nosek, B. A. (2016). Badges to acknowledge open practices: A simple, low-cost, effective method for increasing transparency. <i>PLoS Biology</i>, <i>14</i>(5), e1002456. https://doi.org/10.1371/journal.pbio.1002456",
                     "Rowhani-Farid, A., Aldcroft, A., & Barnett, A. G. (2020). Did awarding badges increase data sharing in BMJ Open? A randomized controlled trial. <i>Royal Society Open Science</i>, <i>7</i>(3), 191818. https://doi.org/10.1098/rsos.191818",
-                    "Science, C. (n.d.). <i>Open science badges</i>. https://www.cos.io/initiatives/badges"
+                    "Center for Open Science. (n.d.). <i>Open science badges</i>. https://www.cos.io/initiatives/badges"
                 ],
                 "drafted_by": [
                     "Jacob Miranda"
@@ -46939,7 +46939,7 @@
                 ],
                 "references": [
                     "Borenstein, M., Hedges, L. V., Higgins, J. P., & Rothstein, H. R. (2011). <i>Introduction to meta-analysis</i>. John Wiley & Sons.",
-                    "Hunter, J. E., & Schmidt, F. L. (2015). <i>Methods of Meta-Analysis: Correcting Error and Bias in Research Findings</i> (Third). SAGE."
+                    "Hunter, J. E., & Schmidt, F. L. (2015). <i>Methods of Meta-Analysis: Correcting Error and Bias in Research Findings</i> (3rd ed.). SAGE."
                 ],
                 "drafted_by": [
                     "Adrien Fillon"
