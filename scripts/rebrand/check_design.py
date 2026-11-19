@@ -291,7 +291,7 @@ CARD_GAP = """() => {
   if (!reading || !card) return 0;
   const box = card.getBoundingClientRect();
   const text = reading.getBoundingClientRect();
-  if (box.top > text.bottom) return 0;
+  if (!box.width || !box.height || box.top > text.bottom) return 0;  // A hidden card measures 0 by 0 at the corner.
   // The card sits left of the text on a desktop (right in right-to-left pages).
   if (box.right <= text.left) return text.left - box.right;
   const lines = [...reading.querySelectorAll('.article-style p')].filter((p) => p.getClientRects().length);
