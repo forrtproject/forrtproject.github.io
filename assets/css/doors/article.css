@@ -532,7 +532,7 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
 .article-layout .article-style .list-filter-section>ul>li[hidden]{display:none}
 .article-layout .article-style .list-filter-section .entry-name{margin:0 0 3px;font:var(--display-weight) 23px/1.2 var(--display)}
 .article-layout .article-style .list-filter-section .entry-name strong{font-weight:inherit}
-.entry-also{display:inline-block;font:400 16px/1.3 var(--text);color:var(--soft)}
+.entry-also{display:inline-block;max-width:29em;font:400 16px/1.3 var(--text);color:var(--soft)}
 .article-layout .article-style .list-filter-section .entry-text{position:relative;max-width:none;margin:0}
 .article-layout .article-style .list-filter-section .entry-text:empty{display:none}
 /* DESIGN.md §4: the description shows in full; one that runs past six lines shows four and a "more" button, and while
