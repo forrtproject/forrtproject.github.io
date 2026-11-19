@@ -989,20 +989,22 @@ if (badges.length) {
     const label = badge.previousElementSibling?.classList.contains('pub-metric-label') ? badge.previousElementSibling.textContent : 'publication';
     badge.querySelector('a:not([aria-label])')?.setAttribute('aria-label', `Altmetric attention for this ${label.toLowerCase()}`);
   });
-  // A version with no mentions shows no badge (data-hide-no-mentions); where no version has any, the disclosure goes too.
+  // A version with no mentions shows no badge (data-hide-no-mentions); where no version has any, the panel and its
+  // button go too. The state is set both ways, so a badge that arrives later brings them back.
+  const silent = (embed) => embed.classList.contains('altmetric-hidden') || embed.style.display === 'none';
   const emptyAttention = () => document.querySelectorAll('.pub-attention').forEach((box) => {
     const embeds = [...box.querySelectorAll('.altmetric-embed')];
-    if (embeds.every((embed) => embed.classList.contains('altmetric-hidden') || embed.style.display === 'none')) {
-      box.hidden = true;
-      const button = document.querySelector(`[aria-controls="${box.id}"]`);
-      if (button) button.hidden = true;
-    }
+    const empty = embeds.length > 0 && embeds.every(silent);
+    box.hidden = empty;
+    const button = document.querySelector(`[aria-controls="${box.id}"]`);
+    if (button) button.hidden = empty;
     box.querySelectorAll('.pub-metric').forEach((metric) => {
       const embed = metric.querySelector('.altmetric-embed');
-      metric.hidden = embed.classList.contains('altmetric-hidden') || embed.style.display === 'none';
+      if (embed) metric.hidden = silent(embed);
     });
   });
   new MutationObserver(emptyAttention).observe(document.querySelector('.pub-list, .article-style') || document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['class', 'style'] });
+  emptyAttention();
   new MutationObserver(nameBadges).observe(document.querySelector('.pub-list, .article-style') || document.body, { childList: true, subtree: true });
 }
 
