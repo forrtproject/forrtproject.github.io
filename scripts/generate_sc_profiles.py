@@ -287,8 +287,10 @@ def render_bio(bio):
     return f'\n                    <div class="sc-modal-bio">{html.escape(bio)}</div>'
 
 def match_key(name):
-    """normalize_name() without post-nominals (', PhD') or notes such as '(gmail)', so the
-    roster, the personal-details form and the fallback sheet agree on who is who."""
+    """Key that identifies one person across the roster, the personal-details form and the
+    fallback sheet: normalize_name() of the name without post-nominals (', PhD') or
+    parenthesised notes ('(gmail)'). Notes go first, so a comma inside one cannot cut the
+    name short."""
     if pd.isna(name): return ""
     name = re.sub(r'\([^)]*\)', ' ', str(name)).split(',')[0]
     return normalize_name(name)
@@ -330,11 +332,10 @@ def find_existing_author_dir(personal_name, authors_dir):
     compact_matches = [d for d in dirs if re.sub(r'[^a-z0-9]', '', d.lower()) == compact_target]
     if compact_matches:
         return compact_matches[0] if len(compact_matches) == 1 else None
-    # 0.9 is deliberately strict: legitimate spelling variants of the SAME person
-    # (Dr prefix, missing middle initial, hyphen vs space in a surname) all score >=0.95
-    # against their existing folder, while different people rarely do (the two closest
-    # existing folders, Nov 2026, score 0.75). A looser threshold risks collapsing
-    # distinct authors onto one folder and showing one person's photo for another.
+    # 0.9 is deliberately strict. A typo or a missing middle initial in a longer name
+    # still clears it ('giorgia a andreolli' scores 0.94; 'jane a doe' only 0.89), while
+    # the two closest existing folders of different people score 0.75 (Nov 2026). A
+    # looser threshold risks giving one person another's folder and photo.
     close = [d for d in dirs
              if similarity(normalized_target, normalize_name(d.replace('-', ' '))) > 0.9]
     return close[0] if len(close) == 1 else None

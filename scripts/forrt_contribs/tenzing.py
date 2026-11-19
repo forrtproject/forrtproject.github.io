@@ -198,6 +198,7 @@ FORRT_ORG_ORCID = '0000-0002-7562-5342'
 
 def drop_organisation_rows(df):
     """Remove rows that credit FORRT itself rather than an individual contributor."""
+    # Sheets give some iDs as full orcid.org URLs; compare the bare iD.
     orcid = df['ORCID iD'].astype(str).str.strip().str.split('/').str[-1]
     first = df['First name'].astype(str).str.strip().str.upper()
     surname = df['Surname'].astype(str).str.strip().str.upper()
@@ -416,7 +417,7 @@ def concatenate_contributions(group):
     group = group.sort_values(by=['special_role', 'Project Name'], ascending=[False, True])
 
     orcid_id = group.iloc[0]['ORCID iD']
-    # Missing iDs can arrive as NaN rather than None (newer pandas); treat them as absent.
+    # NaN is truthy, so a missing iD stored as NaN would otherwise become an orcid.org/nan link.
     if not (isinstance(orcid_id, str) and orcid_id.strip()):
         orcid_id = None
 

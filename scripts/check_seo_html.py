@@ -132,10 +132,10 @@ class Page:
                           if (m.get("name") or "").lower() == "robots")
         refresh = any((m.get("http-equiv") or "").lower() == "refresh"
                       for m in parser.metas)
-        own = "/" + os.path.dirname(path).replace(os.sep, "/")
-        own = own.rstrip("/") + "/"
+        url_path = "/" + os.path.dirname(path).replace(os.sep, "/")
+        self.url_path = url_path.rstrip("/") + "/"
         elsewhere = (parser.canonical is not None and
-                     unquote(urlparse(parser.canonical).path) != unquote(own))
+                     unquote(urlparse(parser.canonical).path) != unquote(self.url_path))
         # Redirect stubs, noindexed pages and pages canonicalised to another URL
         # (pagination pages point at page 1) never reach search results as such.
         self.noindex = "noindex" in robots
@@ -377,7 +377,8 @@ def check_card_alt_text(pages):
 
 
 def sitemap_paths(public_dir, name="sitemap.xml"):
-    """URL paths listed in a sitemap, following a sitemap index into its sitemaps."""
+    """URL paths listed in a sitemap, following a sitemap index into its sitemaps (read
+    from public_dir by URL path, as Hugo writes them alongside the pages)."""
     path = os.path.join(public_dir, name)
     if not os.path.exists(path):
         return []
@@ -391,8 +392,7 @@ def sitemap_paths(public_dir, name="sitemap.xml"):
 
 def check_sitemap_noindex(public_dir, pages):
     """A sitemap URL that is noindexed sends search engines contradictory signals."""
-    noindexed = {"/" + (os.path.dirname(p.path).replace(os.sep, "/") + "/").lstrip("/")
-                 for p in pages if p.noindex}
+    noindexed = {p.url_path for p in pages if p.noindex}
     return [p for p in sitemap_paths(public_dir) if p in noindexed]
 
 
