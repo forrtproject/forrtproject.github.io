@@ -96,7 +96,7 @@ jobs:
       # build does this; the reference keeps main's page.
       - name: Rebuild the Contributors page with this branch's generator
         run: |
-          pip install --quiet pandas==2.0.3 python-dotenv  # as in requirements.txt
+          pip install --quiet numpy==1.24.4 pandas==2.0.3 python-dotenv  # pinned as in requirements.txt
           python3 scripts/forrt_contribs/tenzing.py
           mv scripts/forrt_contribs/tenzing.md content/contributors/tenzing.md
 
