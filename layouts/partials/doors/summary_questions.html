@@ -1,22 +1,26 @@
 {{/* Questions to start a collection from, each leading to one summary that answers it, for readers who come to
-     browse rather than to look up a paper. They come from data/summary_questions.yaml, keyed by the collection
-     page's file name (open-reproducible, diversity-equity-inclusion). Each item has "question", "summary" (the
-     summary's anchor, its Id in data/summaries.json, as in a link to it: #h.…) and "topic", and optionally
-     "takeaway", which of its takeaways answers the question (1 for the first, the default; the card shows its first
-     sentence whole), or "answer", words quoted from one of its takeaways to show instead. A question whose summary
-     is not in this collection, or whose takeaway it lacks, is left out with a warning; an answer not found in the
-     summary's takeaways warns too. Without the file, or without questions for this collection, the partial renders
-     nothing.
+     browse rather than to look up a paper. They are the collection page's front matter "questions" (in
+     content/summaries/, written by hand: the summaries themselves are generated into data/summaries.json). Each item:
+       question  FORRT's prompt, in plain words and short (about three lines of a card), no wider than its answer
+                 supports: name the study's sample, place or period where the answer is about one study.
+       summary   the summary's anchor, its Id in data/summaries.json (the #h.… in a link to it).
+       takeaway  which takeaway answers the question (1 for the first, the default); the card shows its first
+                 sentence whole.
+       answer    instead, words quoted exactly from one of the summary's takeaways; a quote may start mid-sentence
+                 (CSS capitalises its first letter).
+       topic     a broad topic; questions shown together come from different topics.
+     A question whose summary is not in this collection, or whose takeaway it lacks, is left out with a warning; an
+     answer not found in the summary's takeaways warns too. Without questions the partial renders nothing.
      Every question is in the page; CSS shows the first three on a wide screen and the first one on a phone. The
-     script after the list shuffles them on each load, so that each run of three draws on different topics where it
-     can, and never shows one summary twice; without it the file's order stands. It also shows a button beside the
-     heading ("Another question" on a phone, "More questions" on a wide screen) that moves the shown questions to the
-     end of the list.
+     script after the list shuffles them on each load, so that each run of three draws on different topics and
+     summaries where it can; without it the front matter's order stands. It also shows a button beside the heading
+     ("Another question" on a phone, "More questions" on a wide screen) that moves the shown questions to the end of
+     the list.
      Each question is a choice to pick, so it is a card (DESIGN.md): the question in display type, the answer, the
      paper's citation. The link opens the summary in place (site.js opens the entry a link points to). Input: dict
      "page" and "dei". */}}
 {{ $dei := .dei }}
-{{ $questions := index (hugo.Data.summary_questions | default dict) .page.File.ContentBaseName }}
+{{ $questions := .page.Params.questions }}
 {{ $entries := slice }}
 {{ range partialCached "doors/summary_chapters" $dei $dei }}{{ $entries = $entries | append .entries }}{{ end }}
 {{ $found := slice }}
@@ -24,15 +28,15 @@
   {{ $q := . }}{{ $match := false }}
   {{ range $entries }}{{ if eq .s.Id $q.summary }}{{ $match = . }}{{ end }}{{ end }}
   {{ $n := int ($q.takeaway | default 0) }}
-  {{ if not $match }}{{ warnf "data/summary_questions.yaml: %q is not a summary in %s" $q.summary $.page.File.ContentBaseName }}
-  {{ else if or (lt $n 0) (gt $n (len $match.s.Main_Takeaways)) }}{{ warnf "data/summary_questions.yaml: %q has no takeaway %v; the question is left out" $q.summary $n }}
+  {{ if not $match }}{{ warnf "%s: questions: %q is not a summary in this collection" $.page.File.Path $q.summary }}
+  {{ else if or (lt $n 0) (gt $n (len $match.s.Main_Takeaways)) }}{{ warnf "%s: questions: %q has no takeaway %v; the question is left out" $.page.File.Path $q.summary $n }}
   {{ else }}
     {{/* An answer is the summary's own words: compared as summary_gist cleans a takeaway (spaces folded,
          entities decoded) and in lower case, so that a quote may start mid-sentence with a capital. */}}
     {{ with $q.answer }}
       {{ $a := lower (htmlUnescape (replaceRE `[\s\p{Z}]+` " " .)) }}{{ $quoted := false }}
       {{ range $match.s.Main_Takeaways }}{{ if in (lower (htmlUnescape (replaceRE `[\s\p{Z}]+` " " .))) $a }}{{ $quoted = true }}{{ end }}{{ end }}
-      {{ if not $quoted }}{{ warnf "data/summary_questions.yaml: the answer to %q is not in the takeaways of %q" $q.question $q.summary }}{{ end }}
+      {{ if not $quoted }}{{ warnf "%s: questions: the answer to %q is not in the takeaways of %q" $.page.File.Path $q.question $q.summary }}{{ end }}
     {{ end }}
     {{ $found = $found | append (dict "question" $q.question "topic" ($q.topic | default "") "t" $match.t "id" $match.s.Id "answer" ($q.answer | default (partial "doors/summary_gist" (dict "s" $match.s "n" $n)).sentence)) }}
   {{ end }}

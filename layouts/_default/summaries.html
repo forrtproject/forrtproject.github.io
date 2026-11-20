@@ -6,7 +6,7 @@
      into .summary-tools-slot, shortens the bars to the matches. On a wide screen the filter, the years and the routes
      to the other collection stay in view beside the list; on a phone the filter and a menu of the years (site.js)
      share one row that stays in view while the list scrolls, and the routes follow the list. Questions to start
-     from (doors/summary_questions, from data/summary_questions.yaml) lead the list when the collection has any.
+     from (doors/summary_questions, from the page's front matter) lead the list when the collection has any.
      The entries are doors/summary_entries. */}}
 {{ $dei := eq .Params.summaries "dei" }}
 {{ $count := partial "doors/summary_count" $dei }}
