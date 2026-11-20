@@ -101,8 +101,13 @@
     // The heading over the list says what matched; the line under the field says it to screen readers as you type.
     if (allHeading) allHeading.textContent = query ? said + " “" + input.value.trim() + "”" : allText;
     count.textContent = said;
-    // A short list of matches needs no letters to jump by.
-    if (az) az.hidden = Boolean(query) && shown < 20;
+    // A short list of matches needs no letters to jump by, nor letter headings: it is one list, most used first.
+    var flat = Boolean(query) && shown < 20;
+    if (az) az.hidden = flat;
+    document.querySelector(".tag-all").classList.toggle("is-flat", flat);
+    Array.prototype.forEach.call(document.querySelectorAll(".tag-group li"), function (item) {
+      item.style.order = flat ? String(-Number(item.querySelector(".tag-count").textContent)) : "";
+    });
     return shown;
   });
   // Enter opens the best match: the tag as typed, then the same letters without spaces or hyphens, then one that
@@ -190,6 +195,7 @@
       var standfirst = document.querySelector(".tags-page .standfirst");
       if (title) title.textContent = label;
       if (standfirst) standfirst.textContent = pages.length === 1 ? "One page carries this tag." : pages.length + " pages carry this tag.";
+      if (standfirst) lead(standfirst);
       // The trail leads back to every tag: Home / Tags / this tag.
       var here = document.querySelector(".crumbs [aria-current]");
       if (here) {
@@ -252,10 +258,22 @@
       .sort(function (a, b) { return counts[b] - counts[a] || a.localeCompare(b); });
     var bar = results.querySelector(".tag-types");
     if (bar && pages.length > 12 && names.length > 1) {
+      // When most pages are of one type, only the others are labelled, and a note above the list says so.
+      var main = names[0];
+      if (counts[main] * 2 > pages.length) {
+        items.forEach(function (item) {
+          var note = item.querySelector(".tag-section");
+          if (note && item.dataset.types === "|" + main + "|") note.remove();
+        });
+        var said = results.querySelector(".tag-types-note");
+        if (said) { said.textContent = "Type: " + main + ", unless marked."; said.hidden = false; }
+      }
       var chips = [];
       var choose = function (chip) {
         chips.forEach(function (other) { other.setAttribute("aria-pressed", String(other === chip)); });
         var kind = chip.dataset.kind;
+        // With one type chosen, the labels and the note say nothing new.
+        results.classList.toggle("is-one-type", Boolean(kind));
         if (!kind) {
           items.forEach(function (item, index) { item.hidden = index >= STEP; });
           if (more) { more.hidden = false; more.textContent = showing(); }
@@ -279,6 +297,11 @@
         bar.appendChild(chip);
       });
       bar.hidden = false;
+      // On a phone the chips are one row that scrolls sideways; its fade goes at the end of the row.
+      var end = function () { bar.classList.toggle("is-at-end", bar.scrollLeft + bar.clientWidth >= bar.scrollWidth - 4); };
+      bar.addEventListener("scroll", end, { passive: true });
+      window.addEventListener("resize", end);
+      end();
     }
 
     results.hidden = false;
@@ -295,6 +318,33 @@
     // The results have a link back to every tag, so the cloud would only push the footer away.
     if (cloud) cloud.hidden = true;
     related(pages);
+  }
+
+  /** Where the tag is also a glossary term, the line under the title is the start of its definition, with a link to it.
+      Author-year citations are dropped, as in the glossary's own previews; the count is on the "All" filter. */
+  function lead(standfirst) {
+    var meta = document.querySelector('meta[name="glossary-index"]');
+    if (!meta) return;
+    fetch(meta.content).then(function (response) { return response.ok ? response.json() : {}; }).then(function (terms) {
+      var key = label.toLowerCase();
+      var term = terms[key] || terms[key.replace(/-/g, "")] || terms[key.replace(/-/g, " ")];
+      if (!term || !term.summary) return;
+      var text = term.summary.replace(/\s*[(（][^()（）]*[,，،]\s*\d{4}[a-z]?[^()（）]*[)）]/g, "");
+      var count = standfirst.textContent;
+      standfirst.textContent = text + " ";
+      var link = document.createElement("a");
+      link.href = term.url;
+      link.textContent = "More in the glossary";
+      standfirst.appendChild(link);
+      standfirst.classList.add("tag-lead");
+      // Without the filters, the count has nowhere else to go.
+      if (document.querySelector(".tag-types").hidden) {
+        var line = document.createElement("p");
+        line.className = "tag-results-count";
+        line.textContent = count;
+        standfirst.after(line);
+      }
+    }).catch(function () {});
   }
 
   /** The listed tags that most often share a page with this one, most shared first. */

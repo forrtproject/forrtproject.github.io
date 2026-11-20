@@ -31,6 +31,7 @@
     <div class="tag-results-head">
       <h2 id="tag-results-heading"></h2>
       <div class="tag-types" role="group" aria-label="Show by type" hidden></div>
+      <p class="tag-types-note" hidden></p>
     </div>
     <aside class="tag-related" aria-labelledby="tag-related-heading" hidden>
       <h2 id="tag-related-heading">Often tagged with it</h2>
@@ -70,7 +71,7 @@
       {{ range $groups }}
       <div class="tag-group" id="tags-{{ .letter | urlize | default "other" }}">
         <h3>{{ .letter }}</h3>
-        <ul>{{ range .rows }}<li><a href="{{ printf "tags/?tag=%s" (.tag | urlquery) | relURL }}"><span class="tag-name">{{ .tag }}</span> <span class="tag-count" style="--w:{{ add 4 (math.Round (mul 60 (math.Sqrt (div (float .count) $most)))) }}px">{{ .count }}</span></a></li>{{ end }}</ul>
+        <ul>{{ range .rows }}<li><a href="{{ printf "tags/?tag=%s" (.tag | urlquery) | relURL }}"><span class="tag-name">{{ .tag }}</span> <span class="tag-count" style="--r:{{ printf "%.3f" (math.Sqrt (div (float .count) $most)) }}">{{ .count }}</span></a></li>{{ end }}</ul>
       </div>
       {{ end }}
       </div>
