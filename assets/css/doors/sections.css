@@ -326,7 +326,7 @@ html:has(.contributor-az){scroll-padding-top:calc(var(--contributor-az,72px) + 1
 /* Filtered to one project, a row gives only the person's roles in it, as the heading names the project; the rows are
    then short, so a wide screen takes three columns of them. */
 .article-layout .article-style #contributor-list.is-project-filtered .contribution{max-width:none;margin:0;padding:0;text-indent:0;font-size:0}
-.article-layout .article-style #contributor-list.is-project-filtered .contribution-roles{font-size:16px;line-height:1.45}
+.article-layout .article-style #contributor-list.is-project-filtered .contribution-roles{display:block;max-width:30em;font-size:16px;line-height:1.45}
 #contributor-list.is-project-filtered .contribution-roles::before{content:none}
 @media(min-width:1100px){.article-layout .article-style #contributor-list.is-project-filtered ul.contributor-rows{columns:3;column-gap:40px}}
 /* Each letter: its heading, then one row per person, the name on the left and the projects, each with its roles
@@ -352,7 +352,7 @@ html:has(.contributor-az){scroll-padding-top:calc(var(--contributor-az,72px) + 1
   .article-layout .article-style ul.contributor-rows{columns:2;column-gap:56px}
   .article-layout .article-style .contributor-rows>.contributor-group{display:block;break-inside:avoid}
   .article-layout .article-style .contributor-rows .contributor-name{margin:0 0 4px}
-  .article-layout .article-style .contributor-rows .contribution{max-width:32em}
+  .article-layout .article-style .contributor-rows .contribution{max-width:28em}
 }
 .contribution-roles{color:var(--soft);font-size:16px}
 /* Project links in the rows have a quieter underline than the names, at full strength under the pointer or focus, so
