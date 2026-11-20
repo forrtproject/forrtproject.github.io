@@ -181,6 +181,32 @@ class InlineScriptCheck(unittest.TestCase):
         self.assertEqual(self.failures("<script>window.DATA = '%s';" % data), ["index.html (200 KB)"])
 
 
+class SummaryTakeawayLinkCheck(unittest.TestCase):
+    path = "summaries/open-reproducible/index.html"
+
+    def check(self, link, after=""):
+        html = '<ul class="summary-takeaways"><li>' + link + '</li></ul>' + after
+        return seo.check_summary_takeaway_links([page_from_html(html, self.path)])
+
+    def test_google_redirect_fails(self):
+        href = "https://www.google.com/url?q=https://example.org/paper&sa=D"
+        self.assertEqual(self.check(f'<a href="{escape(href)}">Paper</a>'), [f"{self.path}: {href!r}"])
+
+    def test_missing_or_placeholder_href_fails(self):
+        self.assertEqual(self.check("<a>Paper</a>"), [f"{self.path}: ''"])
+        for href in ("", "#", "#ZgotmplZ"):
+            with self.subTest(href=href):
+                self.assertEqual(self.check(f'<a href="{href}">Paper</a>'), [f"{self.path}: {href!r}"])
+
+    def test_direct_links_pass(self):
+        for href in ("https://example.org/paper", "#h.study", "/summaries/open-reproducible/#h.study"):
+            with self.subTest(href=href):
+                self.assertEqual(self.check(f'<a href="{href}">Paper</a>'), [])
+
+    def test_other_links_are_ignored(self):
+        self.assertEqual(self.check("Plain takeaway", '<ul><li><a href="#">Related paper</a></li></ul>'), [])
+
+
 class CitationTargetCheck(unittest.TestCase):
     def check(self, html):
         parser = seo.PageParser()

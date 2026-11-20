@@ -22,10 +22,9 @@
         "name" $name
         "headline" $name
         "url" $url
-        "inLanguage" "en"
-        "publisher" (dict "@type" "Organization" "name" "FORRT" "url" "https://forrt.org") -}}
+        "inLanguage" "en" -}}
     {{- with $s.Abstract -}}
-      {{- $abs := . | plainify | truncate 500 "…" -}}
+      {{- $abs := . | plainify | truncate 200 "…" -}}
       {{- $abs = replaceRE "(?i)</script" "<\\/script" $abs -}}
       {{- $article = merge $article (dict "abstract" $abs) -}}
     {{- end -}}
@@ -43,6 +42,7 @@
       "@type" "CollectionPage"
       "name" $page.Title
       "url" $page.Permalink
+      "publisher" (dict "@type" "Organization" "name" "FORRT" "url" "https://forrt.org")
       "isPartOf" (dict "@type" "WebSite" "name" "FORRT" "url" "https://forrt.org")
       "numberOfItems" (len $parts)
       "hasPart" $parts -}}
