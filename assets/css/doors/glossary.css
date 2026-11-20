@@ -236,16 +236,38 @@ main:lang(ar) .glossary-layout .article-style .term-references{direction:ltr;pad
 .glossary-layout .article-foot .post-nav-item>a p{margin:2px 0 0;color:var(--link);font:600 18px/1.3 var(--text)}
 .glossary-layout .article-foot .post-nav-item p.post-nav-def{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin:6px 0 0;font-size:15px;color:var(--ink)}
 @media(max-width:560px){.glossary-layout .article-foot .post-nav{grid-template-columns:1fr}.glossary-layout .article-foot .post-nav-next:only-child{grid-column:1}}
-/* The reference list: the hub's panel and letters, with each reference a row in a hanging indent and the terms
-   that cite it underneath. */
+/* The reference list: one reference per row so surnames align along a single scan edge, with an adjacent "Cited in"
+   column on wide screens so the glossary links occupy a predictable rail without empty dead space. */
+.glossary-references .term-group{content-visibility:auto;contain-intrinsic-size:auto 900px}
 .glossary-references .term-group ul.references-list{display:block;max-width:none;margin:0;padding:0}
-.glossary-references .term-group ul.references-list>li{max-width:29em;margin:0;padding:12px 0 12px 1.5em;text-indent:-1.5em;background:none;border:0;border-bottom:1px solid var(--line);border-radius:0;line-height:1.5}
+.glossary-references .term-group ul.references-list>li{max-width:none;margin:0;padding:14px 0;background:none;border:0;border-bottom:1px solid var(--line);border-radius:0;font-size:16px;line-height:1.52}
 .glossary-references .term-group ul.references-list>li:hover{border-color:var(--line)}
+.glossary-references .reference-apa{max-width:34em;padding-inline-start:1.5em;text-indent:-1.5em}
 .glossary-references .reference-apa a{color:var(--link);text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
-.glossary-references .reference-cited{display:block;margin:6px 0 0;text-indent:0;font-size:16px;color:var(--soft)}
+.glossary-references .ref-authors-toggle{padding:0;margin:0;background:none;border:0;border-radius:0;font-size:15px;text-decoration:underline;text-underline-offset:2px}
+.glossary-references .ref-authors-toggle:hover{color:var(--ink)}
+.glossary-references .reference-cited{display:block;margin:8px 0 0;padding:6px 12px;text-indent:0;background:var(--edu-bg);border-radius:var(--r-small);font-size:15px;line-height:1.45;color:var(--ink)}
+.glossary-references .reference-cited-label{font-weight:600;color:var(--edu);margin-inline-end:4px}
 .glossary-references .reference-cited a{color:var(--link);font-weight:600;text-decoration:underline;text-underline-offset:3px}
 .glossary-references .reference-cited .term-en{display:none}
-.glossary-references .standfirst{max-width:30em}
+@media(min-width:1180px){
+  .glossary-references .term-group ul.references-list>li{display:grid;grid-template-columns:minmax(0,34em) minmax(240px,1fr);column-gap:32px;align-items:start}
+  .glossary-references .reference-cited{margin:0;padding:7px 14px}
+  .glossary-references .reference-cited-label{display:block;margin:0 0 2px;font-size:14px}
+}
+.glossary-references .standfirst{max-width:34em}
+.glossary-references .standfirst a{color:var(--link);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.glossary-ref-scope{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 0}
+.glossary-ref-scope[hidden]{display:none}
+.glossary-ref-scope button{min-height:44px;padding:6px 12px;background:#fff;border:1.5px solid var(--edu);border-radius:999px;color:var(--ink);font:600 15px/1.2 var(--text);cursor:pointer}
+.glossary-ref-scope button[aria-pressed="true"]{background:var(--edu);color:#fff}
+.glossary-references .glossary-letters a.is-current,.glossary-references .glossary-letters a[aria-current]{background:var(--edu);color:#fff}
+@media(max-width:760px){
+  /* Only the search row pins on phones (DESIGN.md §9); the scope buttons scroll away with the letters. */
+  .glossary-references .glossary-ref-scope{margin:8px 0 2px}
+  .glossary-references .term-group ul.references-list>li{font-size:16px;padding:12px 0}
+  .glossary-references .reference-apa{padding-inline-start:1.25em;text-indent:-1.25em}
+}
 /* A term page's related terms take the reading width: one related term is one wide card, more share the row.
    The start of each definition keeps to the reading measure inside a wide card (DESIGN.md §7). */
 .glossary-layout .article-style .term-cards{grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr))}
