@@ -11,10 +11,10 @@
   "FLoRA"           "res"
   "Lighthouse"      "res"
   "Best-Practice"   "res"
-  "JUST-OS"         "res"
   "Clusters"        "edu"
   "OS Games"        "edu"
   "Re-SearchTerms"  "edu"
+  "JUST-OS"         "edu"
   "Nowhere Lab"     "com"
   "Mapping Open"    "com"
   "Storytelling"    "com"
@@ -23,6 +23,7 @@
   (dict "key" "res" "title" "Meta-Science & Research" "img" "images/doors/area-research.webp")
   (dict "key" "edu" "title" "Education & Pedagogy" "img" "images/doors/area-education.webp")
   (dict "key" "com" "title" "Community & Sustainability" "img" "images/doors/area-community.webp")
+  (dict "key" "other" "title" "Other initiatives" "img" "")
 }}
 {{ $buckets := newScratch }}
 {{ $teams := slice }}
@@ -30,10 +31,14 @@
   {{ if or (hasPrefix .name "Team ") (eq .name "Feedback") }}
     {{ $teams = $teams | append . }}
   {{ else }}
-    {{ $area := "res" }}
+    {{ $area := "" }}
     {{ $name := .name }}
     {{ range $prefix, $k := $areaOf }}
       {{ if in $name $prefix }}{{ $area = $k }}{{ end }}
+    {{ end }}
+    {{ if not $area }}
+      {{ warnf "get_involved_projects: unmapped project %q — add it to $areaOf in layouts/shortcodes/get_involved_projects.html" $name }}
+      {{ $area = "other" }}
     {{ end }}
     {{ $buckets.Add $area (slice .) }}
   {{ end }}
@@ -44,7 +49,7 @@
     {{ $area := .key }}
     {{ $items := $buckets.Get $area | default slice }}
     {{ if gt (len $items) 0 }}
-    {{ $plate := resources.Get .img }}
+    {{ $plate := "" }}{{ with .img }}{{ $plate = resources.Get . }}{{ end }}
     <div class="gi-area-block" data-area="{{ $area }}">
       <div class="gi-area-head">
         {{ with $plate }}{{ $w := .Resize "140x webp q80" }}<span class="gi-area-plate" aria-hidden="true"><img src="{{ $w.RelPermalink }}" width="{{ $w.Width }}" height="{{ $w.Height }}" alt=""></span>{{ end }}

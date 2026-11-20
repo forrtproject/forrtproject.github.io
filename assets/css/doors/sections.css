@@ -363,6 +363,7 @@ html:has(.contributor-az){scroll-padding-top:calc(var(--contributor-az,72px) + 1
 .get-involved-card .btn{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:8px 16px!important;border:1.5px solid var(--link)!important;border-radius:999px!important;background:#fff!important;color:var(--link)!important;font:600 15px/1.2 var(--text)!important}
 .get-involved-card .btn:hover{background:var(--link)!important;color:#fff!important}
 .get-involved-card{position:relative;display:flex;flex-direction:column;padding:20px 22px;background:var(--gi-bg,var(--surface));border:0;border-radius:var(--r-large)}
+@media(max-width:760px){.get-involved-card{padding:16px}}
 .get-involved-card--team{background:var(--surface);border:1.5px solid color-mix(in srgb,var(--brick3) 22%,transparent)}
 .article-layout .article-style .get-involved-card h4{margin:0 0 8px;font:var(--display-weight) 22px/1.2 var(--display);color:var(--ink)}
 .article-layout .article-style .get-involved-card h4 a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--link);text-decoration-thickness:1.5px;text-underline-offset:3px}
