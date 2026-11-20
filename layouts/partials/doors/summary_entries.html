@@ -11,13 +11,11 @@
   {{ if or (not $dei) (in .Title "⌺") }}{{ $shown = merge $shown (dict .Id true) }}{{ end }}
 {{ end }}{{ end }}
 {{ if $dei }}<span class="summaries-dei" hidden></span>{{ end }}
-{{ range $i, $c := partialCached "doors/summary_chapters" $dei $dei }}
+{{ range partialCached "doors/summary_chapters" $dei $dei }}
 <section class="summary-chapter" id="{{ .id }}" aria-labelledby="{{ .id }}-head">
 {{/* The chapter's year in large type on a pale tab in the area's colour, standing on a rule across the list; the
      index of years gives its count. */}}
 <h2 class="summary-chapter-head" id="{{ .id }}-head"><span>{{ .label }}</span></h2>
-{{/* On a phone the index of years gives way to a menu, so its note on the order comes under the first year. */}}
-{{ if eq $i 0 }}<p class="summary-order-note">Within a year, A to Z by first author.</p>{{ end }}
 {{ range .entries }}{{ $t := .t }}{{ $retracted := .retracted }}{{ with .s }}
 <details class="summary-entry">
 {{/* The title on its own line, then the citation, "(Author, year)", on a quieter one, so the titles are easy to
@@ -32,7 +30,7 @@
      where the takeaways follow in full. A retracted paper shows "Retracted" in its place, which screen readers do
      hear (doors/summary_chapters reads it from the first takeaway). */}}
 {{ if $retracted }}<span class="summary-gist summary-retracted">Retracted</span>{{ else }}
-{{ $gist := partial "doors/summary_gist" . }}
+{{ $gist := partial "doors/summary_gist" (dict "s" .) }}
 {{ with $gist.long }}<span class="summary-gist" aria-hidden="true"><span class="summary-gist-long">{{ . }}</span><span class="summary-gist-short">{{ $gist.short }}</span></span>{{ end }}
 {{ end }}</summary>
 <h4>Main takeaways</h4>

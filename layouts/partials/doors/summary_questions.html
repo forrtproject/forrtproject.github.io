@@ -1,7 +1,8 @@
 {{/* Questions to start a collection from, each leading to one summary that answers it, for readers who come to
      browse rather than to look up a paper. They come from data/summary_questions.yaml, keyed by the collection
      page's file name (open-reproducible, diversity-equity-inclusion); each item has "question" and "summary", the
-     summary's anchor (its Id in data/summaries.json, as in a link to it: #h.…). A question whose summary is not in
+     summary's anchor (its Id in data/summaries.json, as in a link to it: #h.…), and optionally "takeaway", which of
+     its takeaways answers the question (1 for the first, the default). A question whose summary is not in
      this collection is left out with a warning, and a collection with no questions shows nothing. Each question is
      a choice to pick, so it is a card (DESIGN.md): the question in display type, the start of the answer, the
      paper's citation. The link opens the summary in place (site.js opens the entry a link points to). Input: dict
@@ -14,7 +15,7 @@
 {{ range $questions }}
   {{ $q := . }}{{ $match := false }}
   {{ range $entries }}{{ if eq .s.Id $q.summary }}{{ $match = . }}{{ end }}{{ end }}
-  {{ if $match }}{{ $found = $found | append (dict "question" $q.question "t" $match.t "id" $match.s.Id "gist" (partial "doors/summary_gist" $match.s)) }}
+  {{ if $match }}{{ $found = $found | append (dict "question" $q.question "t" $match.t "id" $match.s.Id "gist" (partial "doors/summary_gist" (dict "s" $match.s "n" ($q.takeaway | default 0)))) }}
   {{ else }}{{ warnf "data/summary_questions.yaml: %q is not a summary in %s" $q.summary $.page.File.ContentBaseName }}{{ end }}
 {{ end }}
 {{ with $found }}
@@ -22,9 +23,9 @@
   <h2 id="summary-questions-head">Start with a question</h2>
   <ul>
     {{ range . }}
-    {{/* The question, the start of the answer (the summary's first takeaway, doors/summary_gist) and the paper's
+    {{/* The question, the start of the answer (the chosen takeaway, doors/summary_gist) and the paper's
          citation. */}}
-    {{ $g := .gist }}<li><a href="#{{ .id }}"><span class="summary-question">{{ .question }}</span>{{ with .gist.long }}<span class="summary-question-gist"><span class="summary-gist-long">{{ . }}</span><span class="summary-gist-short">{{ $g.short }}</span></span>{{ end }}{{ with .t.cite }}<span class="summary-question-cite">{{ . }}</span>{{ end }}</a></li>
+    <li><a href="#{{ .id }}"><span class="summary-question">{{ .question }}</span>{{ with .gist.long }}<span class="summary-question-gist">{{ . }}</span>{{ end }}{{ with .t.cite }}<span class="summary-question-cite">{{ . }}</span>{{ end }}</a></li>
     {{ end }}
   </ul>
 </section>

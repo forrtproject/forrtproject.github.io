@@ -327,13 +327,16 @@ if (summaryEntries.length) {
       const at = text.toLowerCase().indexOf(query);
       if (at < 0) continue;
       const before = text.slice(0, at);
+      const after = at + query.length;
       let start = Math.max(before.search(/[^.!?]*$/), 0);
-      let end = text.slice(at).search(/[.!?](\s|$)/);
-      end = end < 0 ? text.length : at + end + 1;
-      // A sentence cut short is marked with "…" where it was cut.
-      const cutStart = at - start > 60;
-      if (cutStart) start = text.indexOf(' ', at - 60) + 1;
-      if (end - at > 90) end = text.lastIndexOf(' ', at + 90);
+      // The sentence ends at the first full stop after the whole match, so a match like "e.g. what" stays whole.
+      let end = text.slice(after).search(/[.!?](\s|$)/);
+      end = end < 0 ? text.length : after + end + 1;
+      // A sentence cut short is marked with "…" where it was cut, always at a space before the match and after it.
+      const space = at - start > 60 ? text.indexOf(' ', at - 60) : -1;
+      const cutStart = space >= 0 && space < at;
+      if (cutStart) start = space + 1;
+      if (end - after > 90) end = Math.max(text.lastIndexOf(' ', after + 90), after);
       const said = text.slice(start, end).trim();
       return `${cutStart ? '…' : ''}${said}${end < text.length && !/[.!?]$/.test(said) ? '…' : ''}`;
     }
@@ -405,6 +408,23 @@ if (summaryEntries.length) {
   };
   input.addEventListener('input', show);
   addEventListener('hashchange', show);
+  // A line of topics to try leads the list of a collection page: each fills in the filter and goes to the first match.
+  const topics = slot?.dataset.try?.split(',').map((topic) => topic.trim()).filter(Boolean);
+  if (topics?.length) {
+    const line = document.createElement('p');
+    line.className = 'summary-try';
+    line.append(document.querySelector('.summary-questions') ? 'Or try a topic: ' : 'Try a topic: ');
+    topics.forEach((topic, i) => {
+      const button = Object.assign(document.createElement('button'), { type: 'button', textContent: topic });
+      button.addEventListener('click', () => {
+        input.value = topic;
+        show();
+        document.querySelector('.summary-chapter:not([hidden])')?.scrollIntoView();
+      });
+      line.append(...(i ? [' · ', button] : [button]));
+    });
+    document.querySelector('.summaries-layout .reading .article-style')?.before(line);
+  }
   // The year whose summaries are on screen is marked in the index of years, which on a phone scrolls to keep it in view.
   const yearLinks = [...document.querySelectorAll('.summary-years a')];
   if ('IntersectionObserver' in window && yearLinks.length) {

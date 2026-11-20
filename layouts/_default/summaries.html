@@ -30,7 +30,7 @@
     </div>
     <div class="summaries-body">
       <div class="summaries-side">
-        <div class="summary-tools-slot" data-placeholder="{{ cond $dei "Filter, e.g. gender" "Filter, e.g. p-hacking" }}"></div>
+        <div class="summary-tools-slot" data-placeholder="{{ cond $dei "Filter, e.g. gender" "Filter, e.g. p-hacking" }}" data-try="{{ cond $dei "gender, career, COVID, socioeconomic" "replication, p-hacking, pre-registration, peer review, power" }}"></div>
         {{ $chapters := partialCached "doors/summary_chapters" $dei $dei }}
         {{ $max := 1 }}{{ range $chapters }}{{ $max = math.Max $max .count }}{{ end }}
         <div class="summary-years" style="--max:{{ $max }}">
@@ -42,7 +42,8 @@
               {{ end }}
             </ol>
           </nav>
-          <p class="summary-years-note">Within a year, A to Z by first author.</p>
+          {{ $retracted := false }}{{ range $chapters }}{{ range .entries }}{{ if .retracted }}{{ $retracted = true }}{{ end }}{{ end }}{{ end }}
+          <p class="summary-years-note">Within a year, A to Z by first author{{ if $retracted }}; retracted papers last{{ end }}.</p>
         </div>
         <nav class="summaries-routes summaries-routes-side" aria-label="Other summaries">{{ $routes | safeHTML }}</nav>
       </div>
