@@ -78,13 +78,17 @@ def parse_summaries(source):
             if item.name == "h3":
                 summary.update(Title=text.strip(), Id=item["id"])
             elif re.search(r"Main Takeaway[s]*.*", text):
-                takeaways = list(item.find_next().children)
-                summary["Main_Takeaways"] = [each.get_text().strip() for each in takeaways]
                 # Keep the plain strings for readers of existing data and for previews.
+                takeaways = []
                 linked = {}
-                for index, takeaway in enumerate(takeaways):
+                for takeaway in item.find_next().children:
+                    label = takeaway.get_text().strip()
+                    if not label:
+                        continue
                     if parts := takeaway_link_parts(takeaway):
-                        linked[str(index)] = parts
+                        linked[str(len(takeaways))] = parts
+                    takeaways.append(label)
+                summary["Main_Takeaways"] = takeaways
                 if linked:
                     summary["Main_Takeaway_Links"] = linked
                 else:
@@ -98,7 +102,10 @@ def parse_summaries(source):
             elif re.search(r"[Yy]ou may also be interested in.*", text):
                 related = []
                 for each in item.find_next().children:
-                    reference = {"Relevant_ref": each.get_text().strip()}
+                    label = each.get_text().strip()
+                    if not label:
+                        continue
+                    reference = {"Relevant_ref": label}
                     if isinstance(each, Tag):
                         # A reference can itself be a link, or contain one.
                         anchor = each if each.name == "a" and each.has_attr("href") else each.find("a", href=True)
@@ -107,7 +114,8 @@ def parse_summaries(source):
                     related.append(reference)
                 if related:
                     summary["You_may_also_be_interested_in"] = related
-        summaries[f"summary_{number}"] = summary
+        if summary.get("Title"):
+            summaries[f"summary_{number}"] = summary
     if not summaries:
         raise ValueError("No summaries found in the published document")
     return summaries
