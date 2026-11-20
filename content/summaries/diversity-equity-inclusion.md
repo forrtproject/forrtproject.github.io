@@ -19,7 +19,7 @@ weight: 3
 # Questions to start from (layouts/partials/doors/summary_questions.html, which says how to write them): a few
 # show, picked at random from different topics; without JavaScript, the first three (one on a phone).
 questions:
-  - question: "How did US graduates' university enrolment differ by family income in 2013?"
+  - question: "How did US high-school graduates' university enrolment differ by family income in 2013?"
     summary: h.8o4sw2yfyebr    # Is science only for the rich? (Lee, 2016)
     answer: "only about 40% of high-school graduates in the lowest-income bracket enrolled in a university in 2013, versus about 68% of those born to families with the highest incomes."
     topic: class
