@@ -402,8 +402,7 @@ html:has(.tag-az){scroll-padding-top:84px}
 /* Phones: a last brick alone in its row takes the row. */
 @media(max-width:760px){.brick-row.topic-index .action-cards>li:last-child:nth-child(odd){grid-column:1/-1}}
 .topic-index__actions .btn{margin:0}
-.topic-index__links{font-size:18px;max-width:32em}
-.topic-index__links a,.standfirst a{text-decoration:underline;text-underline-offset:3px}
+.taxonomy-head .standfirst a{text-decoration:underline;text-underline-offset:3px}
 
 /* /forrt_clusters/<term>/ (doors/topic_resources.html). The head: a chart of where the resources are now, one row per
    current cluster, its bar in the cluster's colour and laid in bricks; the directory's illustration beside it. */

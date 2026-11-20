@@ -20,7 +20,7 @@
 {{ $pager := .Paginate (sort .Data.Pages "Date" "desc") }}
 {{ $count := len .Data.Pages }}
 <div class="wrap news-page category-page">
-  <header class="article-head">
+  <header class="article-head taxonomy-head">
     {{ partial "doors/crumbs" (dict "page" . "label" (index $plural $key | default .Title)) }}
     <h1>{{ index $plural $key | default .Title }}</h1>
     <p class="standfirst">{{ with index $about $key }}{{ . | safeHTML }}{{ else }}News posts filed under {{ $page.Title }}.{{ end }}</p>
