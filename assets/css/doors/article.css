@@ -635,15 +635,6 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
 .article-layout .article-card .toc-cite{display:none}
 /* Below 1000 px the card follows the text and leaves its contents out, so the citation needs no rule above it. */
 @media(max-width:1000px){.article-layout .card-cite{margin-top:0;padding-top:0;border-top:0}}
-/* A team's plans, as on Citational Justice: running text on the area's pale ground, in two balanced columns where
-   they fit, so six lists read as one set rather than a long column. */
-.article-layout .article-style .plan-board{columns:2 260px;column-gap:36px;margin:24px 0 28px;padding:24px 28px 8px;background:var(--jus-bg);border-radius:var(--r-large)}
-.article-layout .article-style .plan-board>div{break-inside:avoid;padding-bottom:4px}
-.article-layout .article-style .plan-board h3{margin:0 0 8px;font-size:21px;line-height:1.2}
-.article-layout .article-style .plan-board ul{margin:0 0 18px;padding-inline-start:1.1em}
-.article-layout .article-style .plan-board ul ul{margin:6px 0 0}
-.article-layout .article-style .plan-board li{font-size:17px;line-height:1.45;margin-bottom:6px}
-@media(max-width:760px){.article-layout .article-style .plan-board{padding:18px 18px 4px}}
 @media(max-width:1000px){
   .article-layout .card-authors>li>div>.network-icon{margin-inline-start:-13px}
   .article-layout .card-authors .network-icon a{width:44px;height:44px}

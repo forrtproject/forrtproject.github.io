@@ -324,16 +324,14 @@ html:has(.contributor-az){scroll-padding-top:calc(var(--contributor-az,72px) + 1
 .article-layout .article-style .contributor-result a{display:inline-flex;align-items:center;min-height:44px;color:var(--link);font-weight:600}
 .contributor-result+#contributor-list .contributor-letter-heading,.contributor-result+.contributor-az+#contributor-list .contributor-letter-heading{margin-top:16px}
 /* Filtered to one project, a row gives only the person's roles in it, as the heading names the project (the script
-   hides the project's name, link and all); the rows are then short, so a wide screen takes three columns of them. */
+   hides the project's name, link and all). */
 .article-layout .article-style #contributor-list.is-project-filtered .contribution{max-width:30em;margin:0;padding:0;text-indent:0;font-size:16px;line-height:1.45}
 .article-layout .article-style #contributor-list.is-project-filtered .contribution>[hidden]{display:none}
 #contributor-list.is-project-filtered .contribution-roles{display:inline}
 #contributor-list.is-project-filtered .contribution-roles::before{content:none}
-@media(min-width:1100px){.article-layout .article-style #contributor-list.is-project-filtered ul.contributor-rows{columns:3;column-gap:40px}}
 /* Each letter: its heading, then one row per person, the name on the left and the projects, each with its roles
    after it, on the right, with a hairline between people. Contributions are very unequal, so a heavy contributor
-   makes a taller row and leaves no gap beside it (DESIGN.md §4). On a wide screen the rows run in two columns, the
-   name above its projects (below); on a phone the name sits above too. */
+   makes a taller row and leaves no gap beside it (DESIGN.md §4). On a phone the name sits above its projects. */
 .contributor-letter{margin:0 0 28px}
 .article-layout .article-style .contributor-letter-heading{margin:28px 0 0;padding:0 0 6px;font:500 36px/1 var(--display);color:var(--ink);border-bottom:2px solid var(--ink)}
 .article-layout .article-style ul.contributor-rows{max-width:none;margin:0;padding:0;list-style:none}
@@ -347,13 +345,10 @@ html:has(.contributor-az){scroll-padding-top:calc(var(--contributor-az,72px) + 1
 .article-layout .article-style .contributor-rows .contributions-list{max-width:none;margin:0;padding:0;list-style:none}
 .article-layout .article-style .contributor-rows .contribution{max-width:27em;margin:0 0 4px;font-size:17px;line-height:1.45}
 .article-layout .article-style .contributor-rows .contribution:last-child{margin-bottom:0}
-/* On a wide screen the people of a letter run in two columns, down the first and on in the second, as in an index;
-   each name stands over its projects, so most rows fill their column instead of leaving the right half empty. */
-@media(min-width:1100px){
-  .article-layout .article-style ul.contributor-rows{columns:2;column-gap:56px}
-  .article-layout .article-style .contributor-rows>.contributor-group{display:block;break-inside:avoid}
-  .article-layout .article-style .contributor-rows .contributor-name{margin:0 0 4px}
-  .article-layout .article-style .contributor-rows .contribution{max-width:28em}
+/* On a wide screen a long list of projects runs in two columns, so the row uses the width beside the name. */
+@media(min-width:1200px){
+  .article-layout .article-style #contributor-list:not(.is-project-filtered) .contributor-rows .contributions-list{columns:2;column-gap:32px}
+  .article-layout .article-style .contributor-rows .contribution{break-inside:avoid}
 }
 .contribution-roles{color:var(--soft);font-size:16px}
 /* Project links in the rows have a quieter underline than the names, at full strength under the pointer or focus, so

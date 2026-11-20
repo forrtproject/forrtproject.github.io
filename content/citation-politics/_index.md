@@ -25,10 +25,6 @@ The Citational Justice Toolkit organizes a collection of tools and practices by 
 
 The aim of this toolkit is to encourage individual researchers to become conscientious in their citation practices, using their citation choices to distribute power more equitably in the academy. We invite you to explore the Citational Justice Toolkit and join us in promoting equity and justice in academia.
 
-
-
-
-
 # Toolkit
 
 ---
@@ -43,12 +39,10 @@ We provide a suite of resources to support the use and implementation of the Cit
 Decades of empirical research across disciplines reveal the pervasiveness of citation biases along axes of gender, race, geography, and epistemology. Who we cite reflects and reinforces both the boundaries and hierarchies of academic knowledge, covertly shaping not only whose research is legitimized and valued but also whose careers are advanced. Citations, the currency of the academy with power to reinforce or dismantle hierarchies that privilege dominant knowledge systems cannot thus be a neutral, apolitical act. This paper unpacks the concept of ***citation politics*** and its role in sustaining epistemic hierarchies within scholarly communities. Rather than framing citation bias as a matter of individual oversight, we position it as a systemic issue tied to academic structures, norms, and incentive systems. We introduce a comprehensive and openly accessible Citational Justice Toolkit, developed by the FORRT community, which curates actionable resources, tools, and practices helping scholars and institutions to audit, diversify, and reflect on their citation practices across the research cycle. Our aim is to support a shift from tokenistic inclusion toward epistemically accountable, socially responsible, and structurally aware scholarship. We argue that reimagining citation as an ethical and epistemic practice is foundational to building a just and inclusive academic ecosystem, fostering pluralism, transparency, and integrity in knowledge production.
 {{< /expand >}}
 
-
 ### Video guide
 You’ve read our manuscript and now you’re wondering how to get started? This video will walk you through the first steps you can take on your journey towards citational justice, featuring several tools and practices from our toolkit.
 
 {{< youtube HuQEmrME6uk >}}
-
 
 # Coming Up
 
@@ -70,20 +64,11 @@ This workshop will guide you through applying the Citational Justice Toolkit to 
 This toolkit and accompanying manuscript are only the first piece of work produced by FORRT’s Team Citation Politics.
 For **FORRT’s Team Citation Politics** [(#citation-politics)](https://forrt.slack.com/archives/C074E9LDES2), we devised a few action points we will be working on:
 
-<!-- The team's plans on the area's pale ground, two to a row on wide screens (assets/css/doors/article.css). -->
-<div class="plan-board">
-
-<div>
-
 ### Toolkit Expansion and Infrastructure Building
 - Modularize the toolkit by audience: for authors, editors, instructors, students.
 - Create an interactive online dashboard to visualize citation audits
 - Add discipline-specific add-ons (e.g., citational politics in psychology vs. physics vs. education).
 - Translate into multiple languages (for inclusivity and global engagement).
-
-</div>
-
-<div>
 
 ### Empirical Research Agenda
 - Launch a study or dashboard documenting uptake of the toolkit.
@@ -93,18 +78,10 @@ For **FORRT’s Team Citation Politics** [(#citation-politics)](https://forrt.sl
 - Integrate and expand categories with those of the Academic Wheel of Privilege. 
 - Study via Dimensions & Altmetric data to see whether citations across papers with low and high diversity rank higher or lower on Dimensions & Altmetric areas.
 
-</div>
-
-<div>
-
 ### Pedagogical Integration
 - Develop lesson plans or mini-courses on citational justice for undergrad and graduate levels.
 - Offer “Citation Justice Audits” as a classroom or lab-based activity.
 - Build partnerships with educational institutions, writing centers, and PhD programs to mainstream ethical citation training.
-
-</div>
-
-<div>
 
 ### Institutional Policy Engagement
 - Collaborate with academic publishers, funding agencies, and research offices to:
@@ -112,27 +89,15 @@ For **FORRT’s Team Citation Politics** [(#citation-politics)](https://forrt.sl
   - Include citation audits in grant application protocols or DEIA reviews.
   - Propose policy changes within hiring, tenure, and promotion frameworks.
 
-</div>
-
-<div>
-
 ### Coalition-Building
 - Form a FORRT-led network of citation justice advocates.
 - Organize a citational justice conference or symposium with panels on data ethics, metrics reform, and DEI in publishing.
 - Partner with initiatives like DORA, CRediT, AfricArXiv, or PREreview to co-develop standards.
-
-</div>
-
-<div>
 
 ### Critical Discourse Amplification
 
 - Publish a shorter companion piece for Nature Human Behaviour or The Conversation to distill key points.
 - Use social media and public writing to popularize the metaphor of citation as epistemic infrastructure.
 - Share testimonies of those excluded from citations (e.g., oral histories, blog interviews).
-
-</div>
-
-</div>
 
 If you see yourself in any of these plans or have any other ideas or suggestions for development of the toolkit, or other ways of engaging with citational practice or patterns (especially as it relates to open research), get in touch via the [#citation-politics channel on FORRT’s Slack](https://forrt.slack.com/archives/C074E9LDES2), email the team at citation-politics@forrt.org, or DM either Team Co-Lead **Sarah Sauvé** or **Helena Gellersen** on [FORRT’s Slack](https://join.slack.com/t/forrt/shared_invite/enQtODMwODI0OTk4ODgzLTM0ZTQ3NDk5MzA1ZjBmNWJjYTVlN2Y2YTk0ZTJhYTY5NDliMDYzMjg2MWE0ZDRhOTY0ZDY3OTRlNDA4ODQ3NjQ). 
