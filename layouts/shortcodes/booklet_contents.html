@@ -7,7 +7,7 @@
 {{ $pdf := .Get "pdf" | default "/files/FORRT_Booklet(A5).pdf" }}
 {{ $book := printf "flipbook-%s" (.Get "book" | default "default") }}
 {{ with .Page.Params.inside }}
-<p class="booklet-inside-note">Linked titles open their page on this site; page numbers turn the booklet to that page.</p>
+<p class="booklet-inside-note">Titles open the project's page; page numbers turn the booklet to that page.</p>
 <div class="booklet-inside" data-book="{{ $book }}">
   {{ range . }}
   {{ $first := 0 }}{{ $last := 0 }}
