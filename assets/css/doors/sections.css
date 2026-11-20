@@ -279,9 +279,60 @@ html:has(.contributor-az){scroll-padding-top:calc(var(--contributor-az,72px) + 1
   .contributor-az::after{content:"›";position:sticky;right:-20px;flex:none;display:flex;align-items:center;justify-content:flex-end;width:56px;margin:-10px -20px -8px -56px;padding:0 10px 2px 0;background:linear-gradient(90deg,rgb(254 253 246/0),var(--page) 55%);color:var(--ink);font:600 30px/1 var(--text);pointer-events:none}
   .contributor-az.is-at-end::after{visibility:hidden}
 }
-/* Each letter: its heading, then one row per person across the width, the name on the left and the projects, each
-   with its roles after it, on the right, with a hairline between people. Contributions are very unequal, so a
-   heavy contributor makes a taller row and leaves no gap beside it (DESIGN.md §4). On a phone the name sits above. */
+/* The board of the largest projects (tenzing.py), as Reversals opens with its outcomes: one ranked chart, a row per
+   project with the number of its contributors and, under its name, a bar for its share of the largest, on a track
+   of the same width in every row, so lengths compare across the board. Six rows to a column on a wide screen, the
+   largest first; on a phone one column, the first six until "Show all 12 projects". Each row is a link that filters
+   the list to its project; the chosen one turns solid. */
+.article-layout .article-style .project-board{max-width:none;margin:28px 0 8px}
+.article-layout .article-style .project-board h2{margin:0 0 4px;font-size:clamp(25px,2.4vw,31px);line-height:1.15}
+.article-layout .article-style .project-board-hint{margin:0 0 12px;font-size:17px}
+.article-layout .article-style ul.project-tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(6,auto);grid-auto-flow:column;gap:2px 56px;max-width:none;margin:0;padding:0;list-style:none}
+.article-layout .article-style .project-tiles li{max-width:none;margin:0}
+.article-layout .article-style .project-tiles a{display:grid;grid-template-columns:52px minmax(0,1fr);column-gap:14px;align-items:baseline;height:100%;box-sizing:border-box;padding:8px 0 10px;border-radius:var(--r-small);color:var(--ink);text-decoration:none}
+.project-tiles .project-tile-many{grid-row:1/span 2;font:var(--display-weight) 30px/1 var(--display);text-align:end;white-space:nowrap}
+.project-tiles .project-tile-name{color:var(--link);font:600 17px/1.3 var(--text);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+.project-tiles .project-tile-bar{position:relative;grid-column:2;height:8px;margin-top:6px;border-radius:2px;background:rgb(255 107 0/.18);overflow:hidden}
+.project-tiles .project-tile-bar::before{content:"";position:absolute;inset:0 auto 0 0;width:calc(var(--share,1)*100%);background:var(--hot);transform-origin:0 50%}
+.article-layout .article-style .project-tiles a:hover{background:var(--surface)}
+.article-layout .article-style .project-tiles a:hover .project-tile-name{text-decoration-thickness:2px}
+.article-layout .article-style .project-tiles a:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.article-layout .article-style .project-tiles a[aria-current]{background:var(--link);color:#fff}
+.project-tiles a[aria-current] .project-tile-name{color:#fff}
+.project-tiles a[aria-current] .project-tile-bar{background:rgb(255 255 255/.28)}
+.article-layout .article-style .project-tiles a[aria-current]{margin-inline:-10px;padding-inline:10px}
+/* With a project chosen, the other bars fade, so the board shows which one the list is filtered to. */
+.project-tiles:has(a[aria-current]) a:not([aria-current]) .project-tile-bar::before{opacity:.35}
+.project-board-more{display:none}
+@media(max-width:760px){
+  .article-layout .article-style ul.project-tiles{grid-template-columns:minmax(0,1fr);grid-template-rows:none;grid-auto-flow:row}
+  .article-layout .article-style .project-tiles.is-short li:nth-child(n+7){display:none}
+  .article-layout .article-style .project-tiles a{grid-template-columns:44px minmax(0,1fr);column-gap:12px;padding:8px 0 10px}
+  .project-tiles .project-tile-many{font-size:26px}
+  .article-layout .article-style .project-board-more{display:inline-flex;align-items:center;min-height:44px;margin:4px 0 0;padding:0;border:0;background:none;color:var(--link);font:600 17px/1.3 var(--text);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+  .article-layout .article-style .project-board-more[hidden]{display:none}
+}
+/* The first time the board is in view, each bar grows to its length in 0.4 s, 25 ms after the one before
+   (contributor-filter.js), so the ranking shows as a share of the largest. With reduced motion the bars are simply there. */
+@media(prefers-reduced-motion:no-preference){
+  .project-board.is-previewing .project-tile-bar::before{transform:scaleX(0)}
+  .project-board.is-seen .project-tile-bar::before{transform:none;transition:transform .4s ease-out calc(var(--i,0)*25ms)}
+}
+/* Filtered by project or role: the heading above the list names the filter and counts the people, with the way back. */
+.contributor-result{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 20px;margin:40px 0 0}
+.article-layout .article-style .contributor-result h2{margin:0;font-size:clamp(25px,2.4vw,31px);line-height:1.15}
+.article-layout .article-style .contributor-result a{display:inline-flex;align-items:center;min-height:44px;color:var(--link);font-weight:600}
+.contributor-result+#contributor-list .contributor-letter-heading,.contributor-result+.contributor-az+#contributor-list .contributor-letter-heading{margin-top:16px}
+/* Filtered to one project, a row gives only the person's roles in it, as the heading names the project; the rows are
+   then short, so a wide screen takes three columns of them. */
+.article-layout .article-style #contributor-list.is-project-filtered .contribution{max-width:none;margin:0;padding:0;text-indent:0;font-size:0}
+.article-layout .article-style #contributor-list.is-project-filtered .contribution-roles{font-size:16px;line-height:1.45}
+#contributor-list.is-project-filtered .contribution-roles::before{content:none}
+@media(min-width:1100px){.article-layout .article-style #contributor-list.is-project-filtered ul.contributor-rows{columns:3;column-gap:40px}}
+/* Each letter: its heading, then one row per person, the name on the left and the projects, each with its roles
+   after it, on the right, with a hairline between people. Contributions are very unequal, so a heavy contributor
+   makes a taller row and leaves no gap beside it (DESIGN.md §4). On a wide screen the rows run in two columns, the
+   name above its projects (below); on a phone the name sits above too. */
 .contributor-letter{margin:0 0 28px}
 .article-layout .article-style .contributor-letter-heading{margin:28px 0 0;padding:0 0 6px;font:500 36px/1 var(--display);color:var(--ink);border-bottom:2px solid var(--ink)}
 .article-layout .article-style ul.contributor-rows{max-width:none;margin:0;padding:0;list-style:none}
@@ -295,12 +346,19 @@ html:has(.contributor-az){scroll-padding-top:calc(var(--contributor-az,72px) + 1
 .article-layout .article-style .contributor-rows .contributions-list{max-width:none;margin:0;padding:0;list-style:none}
 .article-layout .article-style .contributor-rows .contribution{max-width:27em;margin:0 0 4px;font-size:17px;line-height:1.45}
 .article-layout .article-style .contributor-rows .contribution:last-child{margin-bottom:0}
-/* On a wide screen a long list of projects runs in two columns, so the row uses the width beside the name. */
-@media(min-width:1200px){
-  .article-layout .article-style .contributor-rows .contributions-list{columns:2;column-gap:32px}
-  .article-layout .article-style .contributor-rows .contribution{break-inside:avoid}
+/* On a wide screen the people of a letter run in two columns, down the first and on in the second, as in an index;
+   each name stands over its projects, so most rows fill their column instead of leaving the right half empty. */
+@media(min-width:1100px){
+  .article-layout .article-style ul.contributor-rows{columns:2;column-gap:56px}
+  .article-layout .article-style .contributor-rows>.contributor-group{display:block;break-inside:avoid}
+  .article-layout .article-style .contributor-rows .contributor-name{margin:0 0 4px}
+  .article-layout .article-style .contributor-rows .contribution{max-width:32em}
 }
 .contribution-roles{color:var(--soft);font-size:16px}
+/* Project links in the rows have a quieter underline than the names, at full strength under the pointer or focus, so
+   the names lead in a long run of rows. */
+.article-layout .article-style .contribution>a:not([class]){text-decoration-color:rgb(0 90 135/.45)}
+.article-layout .article-style .contribution>a:not([class]):is(:hover,:focus-visible){text-decoration-color:currentColor}
 .contribution-roles::before{content:"— "}
 .article-layout .article-style .contributions-more{margin:4px 0 0}
 .article-layout .article-style .contributions-more>summary{display:inline-flex;align-items:center;min-height:36px;color:var(--link);font-weight:600;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
@@ -310,8 +368,10 @@ html:has(.contributor-az){scroll-padding-top:calc(var(--contributor-az,72px) + 1
   .article-layout .article-style .contributor-rows>.contributor-group>:not(.contributor-name){grid-column:1}
   .article-layout .article-style .contributor-name{grid-row:auto;margin:0 0 4px}
   .article-layout .article-style .contributions-more>summary{min-height:44px}
-  /* A project's roles that wrap hang under its title, so the next project's title stands out at the margin. */
-  .article-layout .article-style .contributor-rows .contribution{padding-left:1em;text-indent:-1em}
+  /* A project's roles take a line of their own under its title, so a wrapped line never starts with a role. */
+  .article-layout .article-style .contributor-rows .contribution{margin-bottom:8px}
+  .contributor-rows .contribution-roles{display:block}
+  .contributor-rows .contribution-roles::before{content:none}
 }
 
 /* Testimonials: portraits float beside the text on a wide screen and sit above it on a phone.

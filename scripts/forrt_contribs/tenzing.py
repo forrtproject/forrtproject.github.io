@@ -488,7 +488,7 @@ def concatenate_contributions(group):
             item_projects.append(normalized_project)
 
     if not contribution_items:
-        return min_order, letter, ''
+        return min_order, letter, '', []
 
     # Add id attribute if ORCID exists
     id_attr = f' id="{orcid_id}"' if orcid_id else ''
@@ -520,7 +520,8 @@ def concatenate_contributions(group):
         f'</li>\n'
     )
 
-    return min_order, letter, final_html
+    # The projects this person is credited on, once each, for the board's counts.
+    return min_order, letter, final_html, sorted(set(item_projects))
 
 
 def surname_letter(surname):
@@ -555,7 +556,7 @@ summary = (merged_data.groupby(merged_data['ORCID iD'].fillna(merged_data['Name'
                        .reset_index())
 
 # Separate the tuple into its columns
-summary[['original_order', 'Letter', 'Contributions']] = pd.DataFrame(summary[0].tolist(), index=summary.index)
+summary[['original_order', 'Letter', 'Contributions', 'Projects']] = pd.DataFrame(summary[0].tolist(), index=summary.index)
 summary = summary[summary['Contributions'] != '']
 
 # Drop the old column
@@ -621,6 +622,37 @@ roles_list = sorted(
     [{"value": k, "label": v} for k, v in roles_dict.items()],
     key=lambda x: x["label"]
 )
+
+# The board above the list: the projects with the most contributors, each a link that filters the list to it (as the
+# Project menu does), with the number of people the filter then shows. People are counted once per project, also for
+# projects behind a row's "more projects".
+BOARD_PROJECTS = 12
+project_labels = {}
+for p in projects_list:
+    project_labels.setdefault(p['value'], p['label'])
+project_counts = {}
+for projects in summary['Projects']:
+    for value in projects:
+        project_counts[value] = project_counts.get(value, 0) + 1
+largest = sorted(project_counts.items(), key=lambda item: (-item[1], project_labels.get(item[0], item[0]).lower()))
+largest = [(value, count) for value, count in largest if value in project_labels][:BOARD_PROJECTS]
+if largest:
+    tiles = '\n'.join(
+        f'<li><a href="?project={html.escape(value, quote=True)}#contributor-results" data-project="{html.escape(value, quote=True)}">'
+        f'<span class="project-tile-many">{count}<span class="visually-hidden"> contributors to</span></span> '
+        f'<span class="project-tile-name">{html.escape(project_labels[value], quote=False)}</span>'
+        f'<span class="project-tile-bar" style="--share:{count / largest[0][1]:.3f}" aria-hidden="true"></span></a></li>'
+        for value, count in largest
+    )
+    board = (
+        '<section class="project-board" aria-labelledby="project-board-heading">\n'
+        f'<h2 id="project-board-heading">The {len(largest)} largest projects</h2>\n'
+        f'<p class="project-board-hint">By number of contributors. Choose one to see who worked on it; '
+        f'the Project menu lists all {len(project_labels)}.</p>\n'
+        f'<ul class="project-tiles">\n{tiles}\n</ul>\n'
+        '</section>\n\n'
+    )
+    summary_string = board + summary_string
 
 # Save in json format
 filter_data = {

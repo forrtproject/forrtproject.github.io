@@ -43,7 +43,9 @@ The Contributors page supports URL parameters to filter and customize the view:
 |-----------|-------------|---------|
 | `project` | Filter by project name (normalized) | `?project=glossary` |
 | `role` | Filter by contribution role (normalized) | `?role=writing` |
-| `collapse-filter` | Hide the filter menu and show a simple "show all" link | `?project=glossary&collapse-filter` |
+| `collapse-filter` | Hide the filter menu and the board of projects and show a simple "show all" link | `?project=glossary&collapse-filter` |
+
+With a project or role in the address, a heading above the list names the filter and counts the people, with a link to clear it; `#contributor-results` in the address scrolls to it. Above the list, `tenzing.py` writes a board of the 12 projects with the most contributors, each counted once per project, and each linking to `?project=<value>#contributor-results`.
 
 
 ## Local Development

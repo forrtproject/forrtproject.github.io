@@ -90,7 +90,7 @@
         
         // Navigate to new URL (or clear params if both empty)
         const newURL = params.toString() 
-            ? `${window.location.pathname}?${params.toString()}` 
+            ? `${window.location.pathname}?${params.toString()}${document.getElementById('filter-results') ? '' : '#contributor-results'}` 
             : window.location.pathname;
         window.location.href = newURL;
     }
@@ -123,14 +123,22 @@
         // Show filter results section
         if (filterResults) filterResults.style.display = 'block';
 
-        // Build filter info text
+        // Build filter info text, with the project's and role's own names where the filter data has them
+        const label = (kind, value) => {
+            const found = window.filterData && (window.filterData[kind] || []).find(item => item.value === normalize(value));
+            return found ? found.label : formatForDisplay(value);
+        };
         let filterText = [];
         if (params.project) {
-            filterText.push(`<strong>Project:</strong> ${escapeHtml(formatForDisplay(params.project))}`);
+            filterText.push(`<strong>Project:</strong> ${escapeHtml(label('projects', params.project))}`);
         }
         if (params.role) {
-            filterText.push(`<strong>Role:</strong> ${escapeHtml(formatForDisplay(params.role))}`);
+            filterText.push(`<strong>Role:</strong> ${escapeHtml(label('roles', params.role))}`);
         }
+        // The board marks the project the list is filtered to.
+        document.querySelectorAll('.project-tiles a[data-project]').forEach(tile => {
+            if (params.project && tile.dataset.project === normalize(params.project)) tile.setAttribute('aria-current', 'true');
+        });
         if (filterInfo) filterInfo.innerHTML = filterText.join('<br>');
 
         // Get all contributor groups
@@ -195,9 +203,27 @@
             });
         }
 
-        // Update filter info with count
+        // Update filter info with count (the older generated page shows it in the filter panel)
+        const matchesText = `${totalMatches} contributor${totalMatches !== 1 ? 's' : ''}`;
         if (filterInfo) {
-            filterInfo.innerHTML += `<br><strong>Matches:</strong> ${totalMatches} contributor${totalMatches !== 1 ? 's' : ''}`;
+            filterInfo.innerHTML += `<br><strong>Matches:</strong> ${matchesText}`;
+        }
+        // The newer page names the filter and its count in a heading above the list, with the way back to everyone. A
+        // project chosen on the board lands on this heading (its link ends in #contributor-results).
+        if (!filterResults) {
+            const heading = matchesText
+                + (params.project ? ` to ${label('projects', params.project)}` : '')
+                + (params.role ? ` as ${label('roles', params.role)}` : '');
+            const result = document.createElement('div');
+            result.className = 'contributor-result';
+            result.id = 'contributor-results';
+            result.innerHTML = `<h2>${escapeHtml(heading)}</h2>`
+                + (params.collapseFilter ? '' : `<a href="${window.location.pathname}">Clear filter</a>`);
+            const before = document.querySelector('.contributor-az') || contributorList;
+            before.parentNode.insertBefore(result, before);
+            // Filtered to one project, the rows need not name it again: each shows its roles (sections.css).
+            if (params.project) contributorList.classList.add('is-project-filtered');
+            if (window.location.hash === '#contributor-results') result.scrollIntoView();
         }
     }
 
@@ -219,8 +245,10 @@
         collapsedView.id = 'filter-collapsed';
         collapsedView.innerHTML = '<a href="' + window.location.pathname + '">← Show contributions to all projects</a>';
 
-        // Replace the filter menu with the collapsed view
+        // Replace the filter menu with the collapsed view; the board of projects goes with it
         filterMenu.parentNode.replaceChild(collapsedView, filterMenu);
+        const board = document.querySelector('.project-board');
+        if (board) board.hidden = true;
 
         return true;
     }
@@ -254,12 +282,13 @@
             if (letterIndex) letterIndex.hidden = filtered || Boolean(query);
             const total = groups.filter(entry => entry.group.style.display !== 'none').length;
             const matches = groups.filter(shown).length;
+            // Filtered, the heading above the list gives the count, so the line waits for a name.
+            count.hidden = filtered && !query && Boolean(document.getElementById('contributor-results'));
             count.textContent = !query ? `${people(total)}${filtered ? ' match the filter' : ''}`
                 : matches ? `${matches} of ${people(total)} match \u201c${input.value.trim()}\u201d`
                 : `No contributor\u2019s name contains \u201c${input.value.trim()}\u201d`;
         };
         input.closest('.filter-field').hidden = false;
-        count.hidden = false;
         input.addEventListener('input', update);
         update();
     }
@@ -277,6 +306,39 @@
             letterIndex.addEventListener('scroll', markEnd, { passive: true });
             window.addEventListener('resize', markEnd);
             markEnd();
+        }
+
+        // The board of projects: on a phone the first six show until "Show all"; the first time it is in view, each bar
+        // grows to its length (sections.css), unless the visitor prefers reduced motion.
+        const board = document.querySelector('.project-board');
+        const tiles = board && board.querySelector('.project-tiles');
+        if (tiles) {
+            const items = [...tiles.children];
+            items.forEach((item, i) => item.style.setProperty('--i', i));
+            const chosen = items.findIndex(item => item.querySelector('a').dataset.project === normalize(getURLParams().project || ''));
+            if (items.length > 6 && chosen < 6) {
+                tiles.classList.add('is-short');
+                const more = document.createElement('button');
+                more.type = 'button';
+                more.className = 'project-board-more';
+                more.textContent = `Show all ${items.length} projects`;
+                more.addEventListener('click', () => {
+                    tiles.classList.remove('is-short');
+                    more.hidden = true;
+                    items[6].querySelector('a').focus();
+                });
+                tiles.after(more);
+            }
+            if ('IntersectionObserver' in window && window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+                board.classList.add('is-previewing');
+                const seen = new IntersectionObserver(entries => {
+                    if (!entries.some(entry => entry.isIntersecting)) return;
+                    seen.disconnect();
+                    requestAnimationFrame(() => requestAnimationFrame(() => board.classList.add('is-seen')));
+                    setTimeout(() => board.classList.remove('is-previewing', 'is-seen'), 400 + items.length * 25 + 200);
+                }, { threshold: 0.25 });
+                seen.observe(tiles);
+            }
         }
 
         // Check if filter should be collapsed
