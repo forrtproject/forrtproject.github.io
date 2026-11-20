@@ -138,7 +138,15 @@
         titleEl.target = '_blank';
         titleEl.rel = 'noopener';
         titleEl.className = 'lsrp-name-link';
-        titleEl.textContent = entry.name;
+        titleEl.appendChild(document.createTextNode(entry.name + ' '));
+        var icon = document.createElement('i');
+        icon.className = 'fas fa-external-link-alt';
+        icon.setAttribute('aria-hidden', 'true');
+        titleEl.appendChild(icon);
+        var sr = document.createElement('span');
+        sr.className = 'visually-hidden';
+        sr.textContent = ' (another website, opens in a new tab)';
+        titleEl.appendChild(sr);
       } else {
         titleEl = document.createElement('span');
         titleEl.className = 'lsrp-name-plain';

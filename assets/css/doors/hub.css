@@ -66,7 +66,9 @@
 .rh-head{padding-bottom:28px}
 .rh-head .page-actions{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0 0}
 .rh-head .page-actions .btn{display:inline-flex;align-items:center;min-height:44px}
-.rh-two-col{display:grid;grid-template-columns:minmax(0,38em) minmax(0,380px);justify-content:space-between;gap:32px 56px;align-items:start}
+.rh-two-col{display:grid;grid-template-columns:minmax(0,38em) minmax(0,380px);grid-template-areas:"main panel";justify-content:space-between;gap:32px 56px;align-items:start}
+.rh-main{grid-area:main}
+.rh-panel{grid-area:panel}
 .rh-main .article-style{max-width:38em}
 .rh-main .article-style>:first-child{margin-top:0}
 /* Inline links sit outside .article-layout here, so restore Doors text-link underlines (DESIGN.md §5, WCAG 1.4.1). */
@@ -103,8 +105,8 @@
 .rh-submit .rh-main .article-style .click-to-load p{margin:0 0 14px;font-size:16px;line-height:1.5}
 .rh-submit .rh-main .article-style .click-to-load .btn-primary{margin-inline-end:14px}
 @media(max-width:1000px){
-  .rh-two-col{grid-template-columns:1fr;gap:24px}
-  .rh-flora .rh-panel{order:-1}
+  .rh-two-col{grid-template-columns:1fr;grid-template-areas:none;gap:24px}
+  .rh-main,.rh-panel{grid-area:auto}
 }
 @media(max-width:760px){
   .rh-submit .rh-head .heading-plate{display:none}

@@ -22,12 +22,6 @@
   </header>
 
   <div class="rh-two-col">
-    <article class="reading rh-main">
-      <div class="article-style">
-        {{ $body }}
-      </div>
-    </article>
-
     <aside class="rh-panel" aria-label="FLoRA at a glance">
       <h2>FLoRA at a glance</h2>
       <dl class="rh-glance">
@@ -55,6 +49,12 @@
       <p class="rh-panel-meta">Updated {{ .Lastmod.Format "2 January 2006" }}</p>
       {{ end }}
     </aside>
+
+    <article class="reading rh-main">
+      <div class="article-style">
+        {{ $body }}
+      </div>
+    </article>
   </div>
 </div>
 {{- end -}}
