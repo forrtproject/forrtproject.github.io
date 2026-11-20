@@ -52,6 +52,8 @@
   {{/* The clusters' names by their number on the clusters wheel, for the marks on each resource (list.json has the numbers). */}}
   {{ $clusterNum := partialCached "doors/cluster_numbers.html" "n" }}
   {{ $names := dict }}
+  {{/* Every cluster on the wheel by its own name, then the shorter labels the resources directory uses where it has one. */}}
+  {{ with hugo.Data.clusters_v4 }}{{ range .clusters }}{{ $names = merge $names (dict (string (int .number)) .name) }}{{ end }}{{ end }}
   {{ range $label := (site.GetPage "/resources").Params.clusters }}{{ with index $clusterNum (lower $label | urlize) }}{{ $names = merge $names (dict (string .) $label) }}{{ end }}{{ end }}
   <script type="application/json" id="tag-cluster-names">{{ $names | jsonify | safeJS }}</script>
 

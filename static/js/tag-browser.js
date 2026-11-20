@@ -251,7 +251,8 @@
     var said = page.d ? fold(page.d).replace(/[^\p{L}\p{N} ]/gu, " ").replace(/ +/g, " ").trim() : "";
     var named = fold(page.t).replace(/[^\p{L}\p{N} ]/gu, " ").replace(/ +/g, " ").trim();
     var rest = said.replace(named, "").trim();
-    if (said && named.indexOf(said) === -1 && rest.split(" ").length > 3) {
+    // So does one that opens with the whole title ("<title>. This document…"): the title is already above it.
+    if (said && named.indexOf(said) === -1 && said.indexOf(named + " ") !== 0 && rest.split(" ").length > 3) {
       var desc = document.createElement("p");
       desc.className = "res-desc";
       // A cut that falls just after a full stop ends there, without an ellipsis.
@@ -564,8 +565,12 @@
       var count = document.createElement("span");
       count.className = "tag-shared";
       count.textContent = shared[term];
+      var unit = document.createElement("span");
+      unit.className = "visually-hidden";
+      unit.textContent = shared[term] === 1 ? " page in common" : " pages in common";
       link.appendChild(name);
       link.appendChild(count);
+      link.appendChild(unit);
       item.appendChild(link);
       list.appendChild(item);
     });
