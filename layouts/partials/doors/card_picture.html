@@ -23,9 +23,10 @@
        Only near-pure white grounds (luminance >= 0.93) blend cleanly through multiply onto the card tint. */}}
   {{ $odd := gt (math.Abs (sub $ground.Luminance $main.Luminance)) 0.2 }}
   {{ $onTint := or (ge $ground.Luminance 0.93) $odd }}
+  {{/* Among figure images that took the non-photo branch (pale main colour), wide 1.75–2.15 diagrams keep full phone
+       height (.ec-thumb-diagram), while non-portrait logos/emblems use the compact 144 px band (.ec-thumb-logo).
+       Dark 16:9 photos intentionally stay on the full-bleed $photo branch above. */}}
   {{ $diagram := and .figures (ge $ratio 1.75) (le $ratio 2.15) }}
-  {{/* Gate the compact phone logo band on .figures and non-portrait aspect ratio (>= 0.85) so news cards and
-       portrait book/poster covers keep their full phone height. */}}
   {{ $logoBand := and .figures (not $diagram) (ge $ratio 0.85) }}
   <div class="ac-thumb ec-thumb-whole{{ if $diagram }} ec-thumb-diagram{{ else if $logoBand }} ec-thumb-logo{{ end }}{{ if $onTint }} ec-thumb-blend{{ end }}"{{ if not $onTint }} style="--mat:{{ $ground.ColorHex }}"{{ end }}><img src="{{ $fit.RelPermalink }}" width="{{ $fit.Width }}" height="{{ $fit.Height }}" alt="{{ .alt }}"{{ $lazy | safeHTMLAttr }}></div>
 {{ end }}
