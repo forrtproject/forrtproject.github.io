@@ -468,7 +468,7 @@ html:has(.tag-az){scroll-padding-top:84px}
 .topic-group a:hover{color:var(--ink)}
 .topic-group__count{font:600 15px/1.3 var(--text);color:var(--soft)}
 .article-style ul.cluster-resources{margin:0;padding:0 16px;list-style:none;max-width:1240px}
-.article-style ul.cluster-resources>li{max-width:none;display:block;margin:0;padding:7px 0;border-bottom:1px solid var(--line);font-size:17px;line-height:1.4;break-inside:avoid}
+.article-style ul.cluster-resources>li{max-width:30em;display:block;margin:0;padding:7px 0;border-bottom:1px solid var(--line);font-size:17px;line-height:1.4;break-inside:avoid}
 .article-style ul.cluster-resources>li[hidden]{display:none}
 .cluster-resources a{color:var(--link);font-weight:400;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
 .cluster-resources a:hover{color:var(--ink)}

@@ -87,7 +87,7 @@
     <span class="topic-group__text">{{ if $url }}<a href="{{ $url }}">{{ .label }}<span aria-hidden="true">&nbsp;→</span></a>{{ else }}{{ .label }}{{ end }}
     <span class="topic-group__count">{{ .count }} {{ cond (eq .count 1) "resource" "resources" }}</span></span>
   </h2>
-  <ul class="cluster-resources{{ if gt .count 6 }} cluster-resources--cols{{ end }}">
+  <ul class="cluster-resources{{ if gt .count 2 }} cluster-resources--cols{{ end }}">
     {{ $typed := false }}{{ $first := true }}{{ range $r := $rows }}{{ if eq (urlize $r.group | default "none") $g.key }}{{ with $r.page }}{{ $mark := and (not $r.shown) $typed $first }}{{ if $r.shown }}{{ $typed = true }}{{ else }}{{ $first = false }}{{ end }}<li data-facets="{{ $r.facets }}"{{ if $mark }} class="is-first-reading"{{ end }}><a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ with $r.shown }}<span class="cluster-resources__type">{{ delimit . ", " }}</span>{{ end }}</li>{{ end }}{{ end }}{{ end }}
   </ul>
   {{ if gt .count 16 }}<button class="text-button topic-showall" type="button" aria-expanded="false" hidden>Show all {{ .count }} in {{ .label }}</button>{{ end }}
