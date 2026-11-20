@@ -308,6 +308,23 @@ if (summaryEntries.length) {
     const shown = query ? matches : matches.slice(0, limit);
     // An entry someone has opened, perhaps from a link to it, stays in view.
     summaryEntries.forEach((entry) => { entry.hidden = !shown.includes(entry) && !entry.open; });
+    // The typed words are marked where they show in a closed row: its title, citation and preview.
+    if (window.CSS?.highlights && window.Highlight) {
+      const ranges = [];
+      if (query) shown.forEach((entry) => entry.querySelectorAll('summary h3, .summary-gist').forEach((part) => {
+        const walker = document.createTreeWalker(part, NodeFilter.SHOW_TEXT);
+        for (let node = walker.nextNode(); node; node = walker.nextNode()) {
+          const text = node.data.toLowerCase();
+          for (let at = text.indexOf(query); at >= 0; at = text.indexOf(query, at + query.length)) {
+            const range = new Range();
+            range.setStart(node, at);
+            range.setEnd(node, at + query.length);
+            ranges.push(range);
+          }
+        }
+      }));
+      CSS.highlights.set('summary-match', new Highlight(...ranges));
+    }
     // A chapter with nothing left in it goes, and the bars in the index of years show how the matches spread over
     // the years.
     const lefts = chapters.map((chapter) => chapter.querySelectorAll('.summary-entry:not([hidden])').length);

@@ -13,8 +13,9 @@
 {{ if $dei }}<span class="summaries-dei" hidden></span>{{ end }}
 {{ range partialCached "doors/summary_chapters" $dei $dei }}
 <section class="summary-chapter" id="{{ .id }}" aria-labelledby="{{ .id }}-head">
-{{/* The chapter's year in large type on the area's pale ground; the index of years gives its count. */}}
-<h2 class="summary-chapter-head" id="{{ .id }}-head">{{ .label }}</h2>
+{{/* The chapter's year in large type on a pale tab in the area's colour, standing on a rule across the list; the
+     index of years gives its count. */}}
+<h2 class="summary-chapter-head" id="{{ .id }}-head"><span>{{ .label }}</span></h2>
 {{ range .entries }}{{ $t := .t }}{{ with .s }}
 <details class="summary-entry">
 {{/* The title on its own line, then the citation, "(Author, year)", on a quieter one, so the titles are easy to

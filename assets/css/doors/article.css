@@ -849,8 +849,9 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
 .summary-years a.is-empty .summary-years-year{color:var(--soft);text-decoration:none}
 .summary-years a.is-empty .summary-years-bar{width:0}
 @media(prefers-reduced-motion:reduce){.summary-years-bar{transition:none}}
-/* Chapters: the year in large type on the area's pale ground. */
-.article-layout .article-style .summary-chapter-head{margin:30px 0 4px;padding:8px 16px 6px;background:var(--area-bg);border-radius:var(--r-large);color:var(--area);font:500 40px/1.1 var(--display)}
+/* Chapters: the year in large type on a pale tab in the area's colour, standing on a rule across the list. */
+.article-layout .article-style .summary-chapter-head{margin:34px 0 4px;border-bottom:2px solid var(--area);color:var(--area);font:500 40px/1.1 var(--display)}
+.summary-chapter-head>span{display:inline-block;padding:6px 18px 2px;background:var(--area-bg);border-radius:var(--r-large) var(--r-large) 0 0}
 .article-layout .article-style .summary-chapter:first-of-type .summary-chapter-head{margin-top:6px}
 .summary-chapter{scroll-margin-top:16px}
 .summary-chapter[hidden]{display:none}
@@ -875,7 +876,7 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
   .summaries-routes{order:2}
   .summaries-side .summary-tools{background:var(--area-bg)}
   .summary-years-label{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
-  .summary-years nav{position:sticky;top:0;z-index:5;padding:6px 0;background:var(--page)}
+  .summary-years nav{position:sticky;top:0;z-index:5;padding:6px 0;background:var(--page);box-shadow:0 1px 0 var(--line),0 6px 8px -6px rgb(0 0 0/.12)}
   .summary-years ol{display:flex;gap:6px;margin:0;overflow-x:auto;padding-bottom:2px;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 28px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 28px),transparent)}
   .summary-years li{flex:none}
   .summary-years ol li:last-child{padding-inline-end:28px}
@@ -887,11 +888,13 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
   .summary-years-bar{grid-column:1/-1;grid-row:2;width:max(3px,calc(var(--n) / var(--max) * 56px));height:6px}
   .summary-years-n{text-align:start}
   .article-layout .summary-years .summary-years-note{order:0;margin-top:-8px}
-  .article-layout .article-style .summary-chapter-head{padding:6px 14px 4px;font-size:30px}
+  .article-layout .article-style .summary-chapter-head{margin-top:26px;font-size:28px}
+  .summary-chapter-head>span{padding:4px 14px 1px}
   .summary-chapter{scroll-margin-top:64px}
 }
 .summaries-layout .article-style>p:first-child{max-width:none;margin-bottom:12px;color:var(--soft);font-size:16px}
-.article-layout.summaries-layout .article-style .summary-entry{margin:0;padding:0 14px;border-bottom:1px solid var(--line);border-radius:var(--r-small)}
+.article-layout.summaries-layout .article-style .summary-entry{margin:0;padding:0 14px;border-bottom:1px solid var(--line)}
+.article-layout.summaries-layout .article-style .summary-entry[open]{border-radius:var(--r-small)}
 .article-layout.summaries-layout .article-style .summary-entry>summary{display:grid;grid-template-columns:30px minmax(0,1fr);gap:0 12px;align-items:start;padding:14px 0;list-style:none}
 .summaries-layout .summary-entry>summary::-webkit-details-marker{display:none}
 .summaries-layout .summary-entry>summary::before{content:"+";display:flex;align-items:center;justify-content:center;width:30px;height:30px;margin-top:1px;background:var(--area-bg);border-radius:50%;color:var(--area);font:700 20px/1 var(--text)}
@@ -900,11 +903,13 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
 .article-layout.summaries-layout .article-style .summary-entry>summary h3{display:block;margin:0;font-size:22px;line-height:1.25}
 .article-layout.summaries-layout .article-style .summary-entry>summary>*{grid-column:2}
 /* The first takeaway, two lines at most, under the citation; the open entry gives the takeaways in full. */
-.summary-gist{display:block;max-width:560px;margin-top:6px;font-size:17px;line-height:1.45;color:var(--ink)}
+.summary-gist{display:block;max-width:540px;margin-top:6px;font-size:17px;line-height:1.45;color:var(--ink)}
 .summary-gist-short{display:none}
 @media(max-width:760px){.summary-gist-long{display:none}.summary-gist-short{display:inline}}
 .summary-entry[open] .summary-gist{display:none}
 .article-layout.summaries-layout .article-style .summary-entry>summary h3{max-width:560px}
+/* Filter matches in the titles, citations and previews (site.js, through the CSS highlight API where the browser has it). */
+::highlight(summary-match){background:color-mix(in srgb,var(--hot) 30%,#fff);color:var(--ink)}
 .summaries-layout .article-style>p:first-child .dei-mark{margin-inline-start:0}
 /* Wide screens: the list takes the rest of the width, and each row's citation stands in a column of its own on the
    right, so the authors, A to Z within each year, read down one edge. The title's heading spans the title and the
@@ -914,7 +919,7 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
   .article-layout.summaries-layout .article-style .summary-entry>summary{grid-template-columns:30px minmax(0,560px) minmax(180px,1fr);column-gap:12px}
   .article-layout.summaries-layout .article-style .summary-entry>summary h3{grid-column:2/4;display:grid;grid-template-columns:subgrid;max-width:none;column-gap:32px}
   .article-layout.summaries-layout .article-style .summary-entry>summary .summary-gist{grid-column:2}
-  .summaries-layout .summary-entry>summary h3 .summary-cite{margin-top:4px}
+  .summaries-layout .summary-entry>summary h3 .summary-cite{margin-top:4px;color:var(--ink)}
   .summaries-layout .summary-entry[open]>:not(summary){max-width:780px}
 }
 .summary-title,.summary-cite{display:block}
@@ -926,9 +931,22 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
 .article-layout.summaries-layout .article-style .summary-entry[open]{margin:6px 0;padding-bottom:14px;background:var(--area-bg);border-bottom-color:transparent}
 .summaries-layout .summary-entry[open]>:not(summary){margin-inline-start:42px}
 @media(max-width:760px){
-  .summaries-band{padding:20px 18px 22px}
+  /* Phones: a compact head, filter and notes, and smaller titles, so the list starts in the first screen. */
+  .summaries-band{padding:14px 18px 16px;gap:6px}
+  .article-layout .summaries-band .article-head h1{font-size:30px}
+  .article-layout .summaries-band .standfirst{margin-top:10px;font-size:18px}
+  .summaries-side .summary-tools{padding:10px 14px}
+  .summaries-side .summary-tools input{margin-top:4px}
+  .summaries-layout .article-style>p:first-child{margin-bottom:8px;font-size:14px;line-height:1.45}
+  .article-layout.summaries-layout{row-gap:14px}
+  .summaries-band .standfirst+*,.summaries-count{margin-top:0}
+  .summary-years nav{padding:4px 0}
+  .article-layout.summaries-layout .article-style .summary-entry>summary h3{font-size:19px}
+  .article-layout.summaries-layout .article-style .summary-entry>summary{padding:12px 0}
+  .summaries-layout .summary-cite{font-size:15px}
+  .summary-gist{margin-top:4px;font-size:16px;line-height:1.4}
   .summaries-count{display:flex;align-items:baseline;gap:8px}
-  .summaries-count strong{display:inline;font-size:40px}
+  .summaries-count strong{display:inline;font-size:32px}
   .article-layout.summaries-layout .article-style .summary-entry{padding:0 8px}
   .summaries-layout .summary-entry[open]>:not(summary){margin-inline-start:0}
 }
