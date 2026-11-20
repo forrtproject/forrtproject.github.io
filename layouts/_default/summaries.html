@@ -29,7 +29,7 @@
           <nav aria-labelledby="summary-years-label">
             <ol>
               {{ range $chapters }}
-              <li><a href="#{{ .id }}" data-chapter="{{ .id }}"><span class="summary-years-year">{{ .label }}</span><span class="summary-years-bar" style="--n:{{ .count }}" aria-hidden="true"></span><span class="summary-years-n">{{ .count }}</span></a></li>
+              <li><a href="#{{ .id }}" data-chapter="{{ .id }}"><span class="summary-years-year">{{ .label }}</span><span class="summary-years-bar" style="--n:{{ .count }};--t:{{ .count }}" aria-hidden="true"></span><span class="summary-years-n">{{ .count }}</span></a></li>
               {{ end }}
             </ol>
           </nav>

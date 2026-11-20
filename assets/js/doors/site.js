@@ -308,7 +308,17 @@ if (summaryEntries.length) {
     const shown = query ? matches : matches.slice(0, limit);
     // An entry someone has opened, perhaps from a link to it, stays in view.
     summaryEntries.forEach((entry) => { entry.hidden = !shown.includes(entry) && !entry.open; });
-    // The typed words are marked where they show in a closed row: its title, citation and preview.
+    // A row that matches only in its hidden text says so; otherwise the typed words are marked where they show in
+    // the closed row: its title, citation and preview.
+    summaryEntries.forEach((entry) => {
+      const head = entry.querySelector('summary');
+      const seen = [...head.querySelectorAll('h3, .summary-gist')].some((part) => part.textContent.toLowerCase().includes(query));
+      let hit = head.querySelector('.summary-hit');
+      if (query && !seen && !entry.hidden) {
+        if (!hit) { hit = document.createElement('span'); hit.className = 'summary-hit'; head.append(hit); }
+        hit.textContent = `“${input.value.trim()}” is in the full summary`;
+      } else hit?.remove();
+    });
     if (window.CSS?.highlights && window.Highlight) {
       const ranges = [];
       if (query) shown.forEach((entry) => entry.querySelectorAll('summary h3, .summary-gist').forEach((part) => {
@@ -328,7 +338,6 @@ if (summaryEntries.length) {
     // A chapter with nothing left in it goes, and the bars in the index of years show how the matches spread over
     // the years.
     const lefts = chapters.map((chapter) => chapter.querySelectorAll('.summary-entry:not([hidden])').length);
-    document.querySelector('.summary-years')?.style.setProperty('--max', Math.max(1, ...lefts));
     chapters.forEach((chapter, i) => {
       const left = lefts[i];
       chapter.hidden = !left;
