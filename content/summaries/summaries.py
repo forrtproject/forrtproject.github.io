@@ -1,70 +1,125 @@
-import requests
-import bs4
-import lxml
-import re
+"""Refresh data/summaries.json from the published FORRT summaries Google Doc."""
+
 import json
+from pathlib import Path
+import re
+from urllib.parse import parse_qs, urlsplit
+from urllib.request import urlopen
 
-source = requests.get('https://docs.google.com/document/d/e/2PACX-1vRNgJAnhc-Vn8fiRDwX-vUZeP6ytm2Haa0Z_oTIehg3W_u3mBNcJ6lEkswMjcpw5WaBnu4PXg-lXv5w/pub').text
+from bs4 import BeautifulSoup, Tag
 
-soup = bs4.BeautifulSoup(source, 'html.parser')
-for match in soup.findAll('span'):
-    match.unwrap()
-
-trs = soup.find("hr", attrs={'style':'page-break-before:always;display:none;'})
-
-d = {"summary_0": {}}
-i=0
-
-for item in trs.find_all_next():
-    if item == trs:
-        i += 1
-        print("Creating summary_{0}".format(i))
-        d["summary_{0}".format(i)] = {}
-        for x in item.find_all_next():
-            if x != item:
-                if len(x.text) == 0:
-                    pass
-                else:
-                    if x.name == "h3":
-                        title = {'Title': x.text.strip()}
-                        title_id = {'Id': x['id']}
-                        d["summary_{0}".format(i)].update(title)
-                        d["summary_{0}".format(i)].update(title_id)
-                    elif re.search(r"Main Takeaway[s]*.*", x.text.strip()):
-                        takeaways = {'Main_Takeaways': []}
-                        for each in x.find_next().children:
-                            takeaways['Main_Takeaways'].append(each.text.strip())
-                        d["summary_{0}".format(i)].update(takeaways)
-                    elif re.search(r"[Qq]uote[s]*.*", x.text):
-                        quote = {'Quote': x.find_next().text.strip()}
-                        d["summary_{0}".format(i)].update(quote)
-                    elif re.search(r"[Aa]bstract.*", x.text):
-                        abstract = {'Abstract': x.find_next().text.strip()}
-                        d["summary_{0}".format(i)].update(abstract)
-                    elif re.search(r"APA Style Reference.*", x.text):
-                        print(x.find_next().text)
-                        ref = {'Reference': x.find_next().text}
-                        d["summary_{0}".format(i)].update(ref)
-                    elif re.search(r"[Yy]ou may also be interested in.*", x.text):
-                        interest = {'You_may_also_be_interested_in': []}
-                        for each in x.find_next().children:
-                            if re.search(r"href=", str(each)): # detect if there is href= somewhere in the string
-                                interest_href = each.find('a')['href']
-                                interest_id = each.text.strip()
-                                interest_dict = {'Relevant_ref': interest_id, 'href': interest_href}
-                            else:
-                                interest_id = each.text.strip()
-                                interest_dict = {'Relevant_ref': interest_id}
+SOURCE = (
+    "https://docs.google.com/document/d/e/"
+    "2PACX-1vRNgJAnhc-Vn8fiRDwX-vUZeP6ytm2Haa0Z_oTIehg3W_u3mBNcJ6lEkswMjcpw5WaBnu4PXg-lXv5w/pub"
+)
+PAGE_BREAK = "page-break-before:always;display:none;"
 
 
-                            interest['You_may_also_be_interested_in'].append(interest_dict)
-                            d["summary_{0}".format(i)].update(interest)
-#                     else:
-#                         d["summary_{0}".format(i)].append(x.content)
-            elif x == item: # breking the loop when encountering a new summary
-#                 print('passing because', x==item, x, item)
+def takeaway_href(href):
+    """Unwrap Google's redirect and keep web URLs and in-page links."""
+    try:
+        url = urlsplit(href)
+        if url.scheme in ("http", "https") and url.hostname == "www.google.com" and url.path == "/url":
+            href = parse_qs(url.query).get("q", [""])[0]
+            url = urlsplit(href)
+        if re.search(r"[\s\\\x00-\x1f\x7f]", href):
+            return None
+        if (href.startswith("#") and url.fragment) or (url.scheme in ("http", "https") and url.hostname):
+            return href
+    except ValueError:
+        return None
+    return None
+
+
+def takeaway_link_parts(takeaway):
+    """Return plain text fragments with optional hrefs for a linked takeaway."""
+    parts = []
+    for text in takeaway.strings:
+        anchor = text.find_parent("a", href=True)
+        href = takeaway_href(anchor["href"]) if anchor else None
+        if parts and parts[-1].get("href") == href:
+            parts[-1]["text"] += str(text)
+        else:
+            part = {"text": str(text)}
+            if href:
+                part["href"] = href
+            parts.append(part)
+
+    # Trim as in Main_Takeaways, including whitespace across link boundaries.
+    while parts and not parts[0]["text"].strip():
+        parts.pop(0)
+    while parts and not parts[-1]["text"].strip():
+        parts.pop()
+    if not any(part.get("href") and part["text"].strip() for part in parts):
+        return []
+    parts[0]["text"] = parts[0]["text"].lstrip()
+    parts[-1]["text"] = parts[-1]["text"].rstrip()
+    return parts
+
+
+def parse_summaries(source):
+    soup = BeautifulSoup(source, "html.parser")
+    for span in soup.find_all("span"):
+        span.unwrap()
+
+    first_break = soup.find("hr", style=PAGE_BREAK)
+    if first_break is None:
+        raise ValueError("No summary page break found in the published document")
+
+    summaries = {}
+    for number, marker in enumerate(first_break.find_all_next("hr", style=PAGE_BREAK), 1):
+        summary = {}
+        for item in marker.find_all_next():
+            if item.name == "hr" and item.get("style") == PAGE_BREAK:
                 break
-del d['summary_0']
+            text = item.get_text()
+            if not text:
+                continue
+            if item.name == "h3":
+                summary.update(Title=text.strip(), Id=item["id"])
+            elif re.search(r"Main Takeaway[s]*.*", text):
+                takeaways = list(item.find_next().children)
+                summary["Main_Takeaways"] = [each.get_text().strip() for each in takeaways]
+                # Keep the plain strings for readers of existing data and for previews.
+                linked = {}
+                for index, takeaway in enumerate(takeaways):
+                    if parts := takeaway_link_parts(takeaway):
+                        linked[str(index)] = parts
+                if linked:
+                    summary["Main_Takeaway_Links"] = linked
+                else:
+                    summary.pop("Main_Takeaway_Links", None)
+            elif re.search(r"[Qq]uote[s]*.*", text):
+                summary["Quote"] = item.find_next().get_text().strip()
+            elif re.search(r"[Aa]bstract.*", text):
+                summary["Abstract"] = item.find_next().get_text().strip()
+            elif re.search(r"APA Style Reference.*", text):
+                summary["Reference"] = item.find_next().get_text()
+            elif re.search(r"[Yy]ou may also be interested in.*", text):
+                related = []
+                for each in item.find_next().children:
+                    reference = {"Relevant_ref": each.get_text().strip()}
+                    if isinstance(each, Tag):
+                        # A reference can itself be a link, or contain one.
+                        anchor = each if each.name == "a" and each.has_attr("href") else each.find("a", href=True)
+                        if anchor:
+                            reference["href"] = anchor["href"]
+                    related.append(reference)
+                if related:
+                    summary["You_may_also_be_interested_in"] = related
+        summaries[f"summary_{number}"] = summary
+    if not summaries:
+        raise ValueError("No summaries found in the published document")
+    return summaries
 
-with open('../../data/summaries.json', 'w') as outfile:
-    json.dump(d, outfile)
+
+def main():
+    with urlopen(SOURCE, timeout=60) as response:
+        summaries = parse_summaries(response.read())
+    destination = Path(__file__).resolve().parents[2] / "data" / "summaries.json"
+    with destination.open("w", encoding="utf-8") as output:
+        json.dump(summaries, output)
+
+
+if __name__ == "__main__":
+    main()
