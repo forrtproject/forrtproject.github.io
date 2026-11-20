@@ -4,10 +4,10 @@
      justice) with its count. The entries come in chapters by the year of the paper (doors/summary_chapters), and an
      index of those years, a bar each for how many summaries it holds, leads to them. The filter, which site.js builds
      into .summary-tools-slot, shortens the bars to the matches. On a wide screen the filter, the years and the routes
-     to the other collection stay in view beside the list; on a phone the filter and the years come above the list,
-     the years as one row that scrolls sideways and stays in view while the list scrolls, and the routes follow the
-     list. The entries are
-     doors/summary_entries. */}}
+     to the other collection stay in view beside the list; on a phone the filter and a menu of the years (site.js)
+     share one row that stays in view while the list scrolls, and the routes follow the list. Questions to start
+     from (doors/summary_questions, from data/summary_questions.yaml) lead the list when the collection has any.
+     The entries are doors/summary_entries. */}}
 {{ $dei := eq .Params.summaries "dei" }}
 {{ $count := partial "doors/summary_count" $dei }}
 {{ $body := partial "doors/content" .Content }}
@@ -16,6 +16,12 @@
 {{/* The legend ties "diversity, equity and inclusion" together with no-break spaces, which on a phone pushes the
      phrase onto a line of its own; ordinary spaces let it wrap. */}}
 {{ $body = replace $body "diversity,\u00a0equity\u00a0and\u00a0inclusion" "diversity, equity and inclusion" | safeHTML }}
+{{/* The routes to the other collection and the overview: beside the list on a wide screen, after it on a phone. Each
+     place has its own copy, shown at its widths only, so that the reading and tab order follow what is seen. */}}
+{{ $routes := "" }}
+{{ if $dei }}{{ $routes = printf `<li><a href="%s">Open and reproducible science summaries</a> <span>(%v)</span></li>` (relref . "/summaries/open-reproducible") (partial "doors/summary_count" false) }}
+{{ else }}{{ $routes = printf `<li><a href="%s">Diversity, equity and inclusion summaries</a> <span>(%v)</span></li>` (relref . "/summaries/diversity-equity-inclusion") (partial "doors/summary_count" true) }}{{ end }}
+{{ $routes = printf `<ul>%s<li><a href="%s">About the summaries and how to help</a></li></ul>` $routes (relref . "/summaries") }}
 <div class="wrap">
   <div class="article-layout article-layout-wide summaries-layout summaries-{{ cond $dei "jus" "res" }}">
     <div class="summaries-band">
@@ -24,7 +30,7 @@
     </div>
     <div class="summaries-body">
       <div class="summaries-side">
-        <div class="summary-tools-slot" data-placeholder="{{ cond $dei "e.g. gender, mentoring" "e.g. replication, p-hacking" }}"></div>
+        <div class="summary-tools-slot" data-placeholder="{{ cond $dei "Filter, e.g. gender" "Filter, e.g. p-hacking" }}"></div>
         {{ $chapters := partialCached "doors/summary_chapters" $dei $dei }}
         {{ $max := 1 }}{{ range $chapters }}{{ $max = math.Max $max .count }}{{ end }}
         <div class="summary-years" style="--max:{{ $max }}">
@@ -38,18 +44,12 @@
           </nav>
           <p class="summary-years-note">Within a year, A to Z by first author.</p>
         </div>
-        <nav class="summaries-routes" aria-label="Other summaries">
-          <ul>
-            {{ if $dei }}
-            <li><a href="{{ relref . "/summaries/open-reproducible" }}">Open and reproducible science summaries</a> <span>({{ partial "doors/summary_count" false }})</span></li>
-            {{ else }}
-            <li><a href="{{ relref . "/summaries/diversity-equity-inclusion" }}">Diversity, equity and inclusion summaries</a> <span>({{ partial "doors/summary_count" true }})</span></li>
-            {{ end }}
-            <li><a href="{{ relref . "/summaries" }}">About the summaries and how to help</a></li>
-          </ul>
-        </nav>
+        <nav class="summaries-routes summaries-routes-side" aria-label="Other summaries">{{ $routes | safeHTML }}</nav>
       </div>
       <article class="reading">
+        {{ partial "doors/summary_questions" (dict "page" . "dei" $dei) }}
+        {{/* On a phone the index of years gives way to a menu, so its note on the order comes here, by the list. */}}
+        <p class="summary-order-note">Within a year, A to Z by first author.</p>
         <div class="article-style">
           {{ $body }}
         </div>
@@ -57,6 +57,7 @@
           {{ partial "page_footer" . }}
         </div>
       </article>
+      <nav class="summaries-routes summaries-routes-foot" aria-label="Other summaries">{{ $routes | safeHTML }}</nav>
     </div>
   </div>
 </div>

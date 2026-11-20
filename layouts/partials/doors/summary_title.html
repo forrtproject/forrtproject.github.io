@@ -5,7 +5,7 @@
      the entries. Used by doors/summary_entries, doors/summary_chapters and the overview's sample summary
      (shortcodes/summary_collections.html). */}}
 {{ $title := . }}{{ $npr := in $title "◈" }}{{ $isDei := in $title "⌺" }}
-{{ $title = trim (replaceRE `[\s\p{Z}]*[◈⌺][\s\p{Z}]*` " " $title) "  " }}
+{{ $title = trim (replaceRE `[\s\p{Z}]*[◈⌺][\s\p{Z}]*` " " $title) "  " }}
 {{ $cite := "" }}
 {{ with findRESubmatch `^([\s\S]*?)[\s\p{Z}]*(\([^()]*\d{4}[a-z]?\))$` $title 1 }}{{ $title = index (index . 0) 1 }}{{ $cite = index (index . 0) 2 }}{{ end }}
 {{ $head := "" }}{{ $tail := $title }}

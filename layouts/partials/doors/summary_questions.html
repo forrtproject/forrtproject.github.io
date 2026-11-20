@@ -1,0 +1,30 @@
+{{/* Questions to start a collection from, each leading to one summary that answers it, for readers who come to
+     browse rather than to look up a paper. They come from data/summary_questions.yaml, keyed by the collection
+     page's file name (open-reproducible, diversity-equity-inclusion); each item has "question" and "summary", the
+     summary's anchor (its Id in data/summaries.json, as in a link to it: #h.…). A question whose summary is not in
+     this collection is left out with a warning, and a collection with no questions shows nothing. Each question is
+     a choice to pick, so it is a card (DESIGN.md): the question in display type, the paper under it. The link opens
+     the summary in place (site.js opens the entry a link points to). Input: dict "page" and "dei". */}}
+{{ $dei := .dei }}
+{{ $questions := index (hugo.Data.summary_questions | default dict) .page.File.ContentBaseName }}
+{{ $entries := slice }}
+{{ range partialCached "doors/summary_chapters" $dei $dei }}{{ $entries = $entries | append .entries }}{{ end }}
+{{ $found := slice }}
+{{ range $questions }}
+  {{ $q := . }}{{ $match := false }}
+  {{ range $entries }}{{ if eq .s.Id $q.summary }}{{ $match = . }}{{ end }}{{ end }}
+  {{ if $match }}{{ $found = $found | append (dict "question" $q.question "t" $match.t "id" $match.s.Id) }}
+  {{ else }}{{ warnf "data/summary_questions.yaml: %q is not a summary in %s" $q.summary $.page.File.ContentBaseName }}{{ end }}
+{{ end }}
+{{ with $found }}
+<section class="summary-questions" aria-labelledby="summary-questions-head">
+  <h2 id="summary-questions-head">Start with a question</h2>
+  <ul>
+    {{ range . }}
+    {{/* A question that is the paper's own title is not repeated: the citation alone follows it. */}}
+    {{ $same := eq (lower (trim .question " ?.")) (lower (trim .t.title " ?.")) }}
+    <li><a href="#{{ .id }}"><span class="summary-question">{{ .question }}</span><span class="summary-question-paper">{{ if not $same }}{{ .t.title | markdownify }} {{ end }}{{ with .t.cite }}<span class="summary-question-cite">{{ . }}</span>{{ end }}</span></a></li>
+    {{ end }}
+  </ul>
+</section>
+{{ end }}

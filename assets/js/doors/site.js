@@ -279,12 +279,29 @@ const summaryEntries = [...document.querySelectorAll('.summary-entry')];
 if (summaryEntries.length) {
   const tools = document.createElement('div');
   tools.className = 'summary-tools';
-  tools.innerHTML = '<label>Filter these summaries <input type="search" autocomplete="off" spellcheck="false"></label><p class="summary-count" role="status"></p>';
+  tools.innerHTML = '<label><span class="summary-tools-label">Filter these summaries</span> <input type="search" autocomplete="off" spellcheck="false"></label><p class="summary-count" role="status"></p>';
   // A collection page (layouts/_default/summaries.html) puts the filter in its slot, with a placeholder of its own:
   // beside the list on a wide screen, above it on a phone.
   const slot = document.querySelector('.summary-tools-slot');
   if (slot?.dataset.placeholder) tools.querySelector('input').placeholder = slot.dataset.placeholder;
   if (slot) slot.append(tools); else summaryEntries[0].before(tools);
+  // A collection in chapters also gets a menu of its years beside the filter. On a phone the two share one row that
+  // stays at the top of the screen, so a reader can refine or jump mid-list; a wide screen has the index of years
+  // instead and hides the menu.
+  const chapters = [...document.querySelectorAll('.summary-chapter')];
+  const pick = chapters.length ? document.createElement('select') : null;
+  if (pick) {
+    pick.className = 'summary-year-pick';
+    pick.setAttribute('aria-label', 'Go to a year');
+    pick.append(new Option('Year', ''));
+    chapters.forEach((chapter) => pick.append(new Option(chapter.querySelector('.summary-chapter-head').textContent, chapter.id)));
+    pick.options[0].disabled = true;
+    const row = document.createElement('div');
+    row.className = 'summary-tools-row';
+    row.append(tools.querySelector('label'), pick);
+    tools.prepend(row);
+    pick.addEventListener('change', () => document.getElementById(pick.value)?.scrollIntoView());
+  }
   const more = document.createElement('button');
   more.className = 'btn summary-more';
   more.type = 'button';
@@ -300,7 +317,6 @@ if (summaryEntries.length) {
   }));
   // Pages of 30, unless that would hide only a few: then every entry shows. A collection page shows every entry in
   // chapters by year, with an index of years to jump by, so it needs no pages.
-  const chapters = [...document.querySelectorAll('.summary-chapter')];
   let limit = summaryEntries.length > 40 && !chapters.length ? 30 : summaryEntries.length;
   const show = () => {
     const query = input.value.trim().toLowerCase();
@@ -314,7 +330,7 @@ if (summaryEntries.length) {
       const head = entry.querySelector('summary');
       const seen = [...head.querySelectorAll('h3, .summary-gist')].some((part) => part.textContent.toLowerCase().includes(query));
       let hit = head.querySelector('.summary-hit');
-      if (query && !seen && !entry.hidden) {
+      if (query && !seen && shown.includes(entry)) {
         if (!hit) { hit = document.createElement('span'); hit.className = 'summary-hit'; head.append(hit); }
         hit.textContent = `“${input.value.trim()}” is in the full summary`;
       } else hit?.remove();
@@ -325,6 +341,8 @@ if (summaryEntries.length) {
         const walker = document.createTreeWalker(part, NodeFilter.SHOW_TEXT);
         for (let node = walker.nextNode(); node; node = walker.nextNode()) {
           const text = node.data.toLowerCase();
+          // Lower case can change a text's length (İ becomes two characters), and then the places found would not fit it.
+          if (text.length !== node.data.length) continue;
           for (let at = text.indexOf(query); at >= 0; at = text.indexOf(query, at + query.length)) {
             const range = new Range();
             range.setStart(node, at);
@@ -344,9 +362,15 @@ if (summaryEntries.length) {
       const link = document.querySelector(`.summary-years a[data-chapter="${chapter.id}"]`);
       if (!link) return;
       link.classList.toggle('is-empty', !left);
-      link.tabIndex = left ? 0 : -1;
+      // A year with no matches is not a link while its chapter is hidden.
+      if (left) link.href = `#${chapter.id}`; else link.removeAttribute('href');
       link.querySelector('.summary-years-bar').style.setProperty('--n', left);
       link.querySelector('.summary-years-n').textContent = left;
+    });
+    if (pick) chapters.forEach((chapter, i) => {
+      const option = pick.options[i + 1];
+      option.disabled = !lefts[i];
+      option.textContent = `${chapter.querySelector('.summary-chapter-head').textContent} (${lefts[i]})`;
     });
     more.hidden = shown.length === matches.length;
     const kept = summaryEntries.filter((entry) => !entry.hidden).length - shown.length;
@@ -365,6 +389,7 @@ if (summaryEntries.length) {
     const mark = () => {
       // At the top of the page nothing is marked yet: the list has not started.
       const current = scrollY > 0 && [...seen.entries()].find(([, on]) => on)?.[0];
+      if (pick) pick.value = current || '';
       if (!current) { yearLinks.forEach((a) => a.classList.remove('is-current')); strip.scrollLeft = 0; return; }
       yearLinks.forEach((a) => {
         const on = a.dataset.chapter === current;

@@ -830,6 +830,7 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
 .summaries-routes li{margin:0 0 4px;padding:11px 0}
 .summaries-routes a{padding:11px 0;color:var(--link);text-decoration:underline;text-underline-offset:3px}
 .summaries-routes span{color:var(--soft);font-size:15px}
+@media(min-width:1001px){.summaries-routes-foot{display:none}}
 /* The index of years: a row for each chapter, its bar as long as the share of summaries it holds (--t of --max).
    While the filter is in use, site.js sets --n to the chapter's matches and the bar fills only that far; it also
    marks the year on screen as current. */
@@ -855,6 +856,26 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
 .article-layout .article-style .summary-chapter:first-of-type .summary-chapter-head{margin-top:6px}
 .summary-chapter{scroll-margin-top:16px}
 .summary-chapter[hidden]{display:none}
+/* Questions to start from (doors/summary_questions): a card for each, on white with a top edge in the area's colour,
+   so they stand apart from the pale filter panel beside them; the question in display type, the paper under it. */
+.summary-questions{margin:0 0 26px}
+.article-layout .summary-questions h2{margin:0 0 12px;font:700 17px/1.3 var(--text);color:var(--ink)}
+.summary-questions ul{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:14px;margin:0;padding:0;list-style:none}
+.summary-questions li{margin:0}
+.summary-questions a{display:flex;flex-direction:column;gap:12px;height:100%;box-sizing:border-box;padding:16px 20px 18px;background:#fff;border:1px solid var(--line);border-top:6px solid var(--area);border-radius:var(--r-small);color:var(--ink);text-decoration:none}
+.summary-question{font:500 25px/1.15 var(--display);color:var(--area);text-wrap:balance}
+.summary-question-paper{margin-top:auto;font-size:15px;line-height:1.4;color:var(--soft)}
+.summary-question-cite{white-space:nowrap}
+.summary-questions a:hover .summary-question{text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1.5px}
+.summary-questions a:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+/* A retracted paper says so where the others preview their first takeaway. */
+.summary-gist.summary-retracted{display:inline-block;width:fit-content;padding:1px 8px;border:1.5px solid currentColor;border-radius:var(--r-small);font-weight:600;font-size:15px;line-height:1.35}
+/* The filter's label is read out but not shown: the field's placeholder says what it does, so that on a phone the
+   field and the menu of years fit one row. The menu shows only there (site.js). */
+.summary-tools-row .summary-tools-label{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.summary-tools-row input{margin-top:0}
+.summary-year-pick{display:none}
+.summary-order-note{display:none}
 @media(min-width:1001px){
   .summaries-body{grid-template-columns:300px minmax(0,780px);column-gap:56px}
   .summaries-body>.reading{grid-column:2;grid-row:1}
@@ -874,6 +895,7 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
   .summaries-side,.summary-years{display:contents}
   .summaries-body>.reading{order:1}
   .summaries-routes{order:2}
+  .summaries-routes-side{display:none}
   .summaries-side .summary-tools{background:var(--area-bg)}
   .summary-years-label{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
   .summary-years nav{position:sticky;top:0;z-index:5;padding:6px 0;background:var(--page);box-shadow:0 1px 0 var(--line),0 6px 8px -6px rgb(0 0 0/.12)}
@@ -891,6 +913,18 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
   .article-layout .article-style .summary-chapter-head{margin-top:26px;font-size:28px}
   .summary-chapter-head>span{padding:4px 14px 1px}
   .summary-chapter{scroll-margin-top:64px}
+  /* With the menu of years in place, the filter row is what stays at the top of the screen, and the row of years
+     goes. */
+  .summaries-body:has(.summary-year-pick) .summary-tools-slot{display:contents}
+  .summaries-side .summary-tools:has(.summary-year-pick){position:sticky;top:0;z-index:5;box-shadow:0 6px 10px -8px rgb(0 0 0/.3)}
+  .summaries-body:has(.summary-year-pick) .summary-years nav{display:none}
+  .summaries-body:has(.summary-year-pick) .summary-years-note{display:none}
+  .summaries-layout:has(.summary-year-pick) .summary-order-note{display:block;margin:0 0 4px;color:var(--soft);font-size:15px;line-height:1.45}
+  .summary-tools-row{display:flex;gap:8px;align-items:center}
+  .summary-tools-row label{flex:1;min-width:0}
+  .summary-year-pick{display:block;flex:none;width:7.4em;min-height:44px;padding:8px 30px 8px 14px;text-overflow:ellipsis;-webkit-appearance:none;appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23222' stroke-width='2'/%3E%3C/svg%3E") no-repeat right 13px center;border:1.5px solid var(--area);border-radius:999px;color:var(--ink);font:600 16px/1.3 var(--text)}
+  .summaries-layout:has(.summary-year-pick) .summary-chapter{scroll-margin-top:84px}
+  .summaries-layout:has(.summary-year-pick) .summary-entry h3{scroll-margin-top:84px}
 }
 .summaries-layout .article-style>p:first-child{max-width:none;margin-bottom:12px;color:var(--soft);font-size:16px}
 .article-layout.summaries-layout .article-style .summary-entry{margin:0;padding:0 14px;border-bottom:1px solid var(--line)}
@@ -902,7 +936,8 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
 .summaries-layout .summary-entry>summary:hover .summary-title{text-decoration:underline;text-underline-offset:3px}
 .article-layout.summaries-layout .article-style .summary-entry>summary h3{display:block;margin:0;font-size:22px;line-height:1.25}
 .article-layout.summaries-layout .article-style .summary-entry>summary>*{grid-column:2}
-/* The first takeaway, two lines at most, under the citation; the open entry gives the takeaways in full. */
+/* The first takeaway under the citation, cut by length in doors/summary_entries (about two or three lines, a whole
+   first sentence where one fits); the open entry gives the takeaways in full. */
 .summary-gist{display:block;max-width:29em;text-wrap:pretty;margin-top:6px;font-size:17px;line-height:1.45;color:var(--ink)}
 .summary-gist-short{display:none}
 @media(max-width:760px){.summary-gist-long{display:none}.summary-gist-short{display:inline}}
@@ -939,6 +974,11 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
   .article-layout .summaries-band .article-head h1{font-size:30px}
   .article-layout .summaries-band .standfirst{margin-top:10px;font-size:18px}
   .summaries-side .summary-tools{padding:10px 14px}
+  .summary-questions{margin-bottom:18px}
+  .summary-questions ul{gap:10px}
+  .summary-questions a{gap:8px;padding:12px 16px 14px;border-top-width:5px}
+  .article-layout .summary-questions h2{margin-bottom:10px}
+  .summary-question{font-size:21px}
   .summaries-side .summary-tools input{margin-top:4px}
   .summaries-layout .article-style>p:first-child{margin-bottom:8px;font-size:15px;line-height:1.45}
   .article-layout.summaries-layout{row-gap:14px}
