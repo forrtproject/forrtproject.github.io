@@ -17,7 +17,7 @@
     {{ end }}
   </header>
 
-  <ul class="ped-grid" role="list">
+  <ul class="ped-grid list-items" role="list">
     {{ range $i, $p := $pages }}
       {{ $link := $p.RelPermalink }}{{ $target := "" }}
       {{ with $p.Params.external_link }}{{ $link = . }}{{ $target = ` target="_blank" rel="noopener"` }}{{ end }}
