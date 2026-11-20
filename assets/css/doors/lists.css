@@ -307,7 +307,7 @@ ul.list-items>li[hidden]{display:none}
 /* A long author list: the first three names, then a button, "and 9 more", that shows the rest in the same line. Its
    ::after gives it a 44 px target without spacing out the line (DESIGN.md §9). */
 .ec-rest[hidden]{display:none}
-.ec-more{position:relative;z-index:1;margin:0;padding:0;border:0;background:none;color:var(--link);font:600 15px/1.4 var(--text);text-decoration:underline;text-underline-offset:2px;cursor:pointer}
+.ec-more{position:relative;z-index:1;display:inline-block;min-height:24px;margin:0;padding:0 2px;border:0;background:none;color:var(--link);font:600 15px/24px var(--text);vertical-align:baseline;text-decoration:underline;text-underline-offset:2px;cursor:pointer}
 .ec-more::after{content:"";position:absolute;inset:-12px -4px}
 .ec-more:hover{color:var(--ink)}
 .ec-more:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
