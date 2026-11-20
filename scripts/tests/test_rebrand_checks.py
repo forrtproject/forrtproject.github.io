@@ -251,6 +251,9 @@ class CompareTests(unittest.TestCase):
                       "description=Open Source Guides(https://opensource.guide/) are a collection…"):
             with self.subTest(after=after):
                 self.assertIn("a", compare_heads({"a": [before]}, {"a": [after]}))
+        # Without a removed space, even a cut description that ends a word later is a real edit.
+        self.assertIn("a", compare_heads({"a": ["description=Software and the web…"]},
+                                         {"a": ["description=Software and the web application…"]}))
         # Only descriptions: the same change in a title still counts.
         self.assertIn("a", compare_heads({"a": ["title=A ( b)"]}, {"a": ["title=A (b)"]}))
 

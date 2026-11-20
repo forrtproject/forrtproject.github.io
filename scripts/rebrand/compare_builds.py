@@ -118,9 +118,13 @@ _OPENER_SPACE = re.compile(r"""([(\[“«]|(?:^|(?<=\s))")\s+""")
 def _same_description(old, new):
     """True when two descriptions differ only by spaces just inside an opening bracket or quote. Losing such a space
     can move the cut of a long description ("…") on by a word, so the cut text may then end one or two words later."""
+    removed = len(_OPENER_SPACE.findall(old)) + len(_OPENER_SPACE.findall(new))
     old, new = _OPENER_SPACE.sub(r"\1", old), _OPENER_SPACE.sub(r"\1", new)
     if old == new:
         return True
+    # A later cut is only explained by a removed space; without one, any difference is a real edit.
+    if not removed:
+        return False
     stems = [text[:-1].rstrip() if text.endswith("…") else text for text in (old, new)]
     short = 0 if len(stems[0]) < len(stems[1]) else 1
     shorter, longer = stems[short], stems[1 - short]
