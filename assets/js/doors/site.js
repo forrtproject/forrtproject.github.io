@@ -2,7 +2,7 @@
    Closing rules follow the Doors mock: Escape, a click outside and a second click all close,
    and an opened menu is next in the Tab order because it follows its button in the page. */
 import './citations.js';
-import './references.js';
+import { copyWithFeedback } from './references.js';
 import './glossary.js';
 
 const toggle = document.querySelector('.menu-toggle');
@@ -212,17 +212,18 @@ document.querySelectorAll('.newsletter-form').forEach((form) => {
   });
 });
 
-// An article's "Copy article link" button.
+// The copy buttons of the scripts in static/js (the chat, cluster and discipline pages) share the feedback of the
+// site's own (references.js).
+window.forrtCopy = copyWithFeedback;
+
+// An article's "Copy article link" button. The button itself says when the link is copied; the line beside it
+// explains what to do if copying fails.
 document.querySelectorAll('[data-copy-link]').forEach((button) => {
   const status = button.parentElement.querySelector('[role=status]');
-  button.addEventListener('click', async () => {
-    try {
-      await navigator.clipboard.writeText(button.dataset.copyLink);
-      status.textContent = 'Link copied.';
-    } catch {
-      status.textContent = 'Copy the address from your browser to share this page.';
-    }
-  });
+  button.addEventListener('click', () => copyWithFeedback(button, button.dataset.copyLink, {
+    said: 'Link copied.',
+    onFail: () => { status.textContent = 'Copy the address from your browser to share this page.'; },
+  }));
 });
 
 // Code blocks, on the pages that load Highlight.js and Mermaid (site_head.html decides).
@@ -767,6 +768,8 @@ if (listFilter) {
       statusWord = word;
       row.querySelectorAll('button').forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.status === key)));
       board.classList.toggle('is-chosen', Boolean(key));
+      // Choosing an outcome ends the bricks' first-view preview at once, so the dimming of the others shows (article.css).
+      board.classList.remove('is-previewing');
       if (key) listFilter.parentElement.dataset.outcome = key; else delete listFilter.parentElement.dataset.outcome;
       // The chosen outcome's bricks rise in each discipline's strip, left to right (article.css).
       document.querySelectorAll('.section-mix i').forEach((brick) => brick.classList.toggle('is-match', Boolean(key) && brick.classList.contains(`status-${key}`)));
@@ -780,12 +783,38 @@ if (listFilter) {
       button.className = `outcome-tile status-${key}`;
       button.dataset.status = key;
       button.setAttribute('aria-pressed', 'false');
-      button.innerHTML = `<span class="outcome-many">${many}</span> <span class="outcome-word">${word}</span><span class="outcome-bricks" aria-hidden="true">${'<i></i>'.repeat(many)}</span>`;
+      const bricks = Array.from({length: many}, (_, n) => `<i style="--n:${n}"></i>`).join('');
+      button.innerHTML = `<span class="outcome-many">${many}</span> <span class="outcome-word">${word}</span><span class="outcome-bricks" aria-hidden="true">${bricks}</span>`;
       button.addEventListener('click', () => (status === key ? choose('', '') : choose(key, word)));
       row.append(button);
     });
     board.append(title, hint, row);
     listFilter.before(board);
+    // Once the reversed tile's bricks are wholly in view, and a moment later, every tile lays its bricks at the same
+    // pace, so the rare outcomes finish at once and the common ones keep going for about 1.4 s (article.css). Where the
+    // tiles stack (phones), a tile seen above it waits no more than 0.9 s, so no brick space stays empty on screen.
+    // It runs once.
+    const brickRows = [...row.querySelectorAll('.outcome-bricks')];
+    if ('IntersectionObserver' in window && brickRows.length) {
+      const reversedRow = row.querySelector('.status-reversed .outcome-bricks') || brickRows[brickRows.length - 1];
+      board.classList.add('is-previewing');
+      let timer;
+      const start = (wait) => {
+        if (timer && wait >= 900) return;
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+          seen.disconnect();
+          board.classList.add('is-seen');
+          // The longest tile's last brick starts 10 ms per brick in and takes 0.14 s (article.css).
+          const longest = Math.max(...brickRows.map((bricks) => bricks.children.length));
+          setTimeout(() => board.classList.remove('is-previewing', 'is-seen'), 140 + longest * 10 + 100);
+        }, wait);
+      };
+      const seen = new IntersectionObserver((entries) => {
+        entries.filter((entry) => entry.isIntersecting).forEach((entry) => start(entry.target === reversedRow ? 350 : 900));
+      }, {threshold: 0.95});
+      brickRows.forEach((bricks) => seen.observe(bricks));
+    }
     searchRow.append(clear);
     // Each discipline opens with its bricks, and the contents card gives its count, which follows the filters.
     withItems.forEach(({heading, items}) => {

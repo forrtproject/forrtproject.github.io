@@ -866,3 +866,11 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
 .section-mix i{transform-origin:50% 100%;transition:opacity .18s ease-out,transform .18s ease-out}
 .section-mix i.is-match{transform:scaleY(1.5)}
 .article-layout .article-style .outcome-tile{transition:box-shadow .2s ease-out}
+/* Reversals: the first time the outcome board is in view, each tile lays its bricks at the same pace, 10 ms apart
+   (site.js), so 14 reversals are done at once while the common outcomes take about 1.4 s. Bricks still to come
+   wait unseen; with reduced motion they are all there from the start. */
+@media(prefers-reduced-motion:no-preference){
+  .outcome-board.is-previewing .outcome-tile .outcome-bricks i{animation:outcome-brick .14s ease-out calc(var(--n)*10ms) backwards paused}
+  .outcome-board.is-seen .outcome-tile .outcome-bricks i{animation-play-state:running}
+}
+@keyframes outcome-brick{from{opacity:0;transform:scale(.2)}}

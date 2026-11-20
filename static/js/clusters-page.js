@@ -667,28 +667,6 @@
     window.addEventListener('hashchange', applyClusterUrlHash);
 
     /* Per-sub-cluster "copy link" buttons: copy a shareable URL to the section. */
-    function copyTextToClipboard(text) {
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        return navigator.clipboard.writeText(text);
-      }
-      return new Promise(function (resolve, reject) {
-        try {
-          var ta = document.createElement('textarea');
-          ta.value = text;
-          ta.setAttribute('readonly', '');
-          ta.style.position = 'absolute';
-          ta.style.left = '-9999px';
-          document.body.appendChild(ta);
-          ta.select();
-          var ok = document.execCommand('copy');
-          document.body.removeChild(ta);
-          ok ? resolve() : reject();
-        } catch (err) {
-          reject(err);
-        }
-      });
-    }
-
     root.addEventListener('click', function (e) {
       var btn = e.target.closest('.acc-copy-link');
       if (!btn) return;
@@ -703,14 +681,10 @@
       }
       /* Reflect the anchor in the address bar without re-scrolling (no hashchange). */
       try { window.history.replaceState(null, '', '#' + anchor); } catch (err) {}
-      copyTextToClipboard(url).then(function () {
-        btn.classList.add('is-copied');
-        if (btn._copiedTimer) clearTimeout(btn._copiedTimer);
-        btn._copiedTimer = setTimeout(function () { btn.classList.remove('is-copied'); }, 1600);
-      }).catch(function () {
-        /* Clipboard blocked (e.g. insecure context): prompt the user with the URL. */
-        window.prompt('Copy this link:', url);
-      });
+      /* The site's copy feedback (assets/js/doors/references.js): a check in the icon's place, only once copied;
+         if the clipboard is blocked, the link is offered to copy by hand. */
+      if (window.forrtCopy) window.forrtCopy(btn, url, { said: 'Link copied.', onFail: function () { window.prompt('Copy this link:', url); } });
+      else window.prompt('Copy this link:', url);
     });
 
     /* (Tab click handler removed — all sub-clusters are now visible sections) */

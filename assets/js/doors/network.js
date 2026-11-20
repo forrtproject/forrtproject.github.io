@@ -88,6 +88,17 @@ if (canvas) {
   let followFit = true;
   let raf = 0;
   let animation = 0;
+  // A new selection draws its lines outward once the view has moved to it (0.26 s, moveTo): a chosen person's lines
+  // to their projects alone for 0.4 s, then the projects' lines on to their people in 0.25 s; a chosen project's
+  // lines to its people in 0.25 s. Nodes and names stay where they are; with reduced motion the lines are there at
+  // once.
+  const CAMERA = 260;
+  const FIRST = 400;
+  const SECOND = 250;
+  let growth = null;
+  function grow(from) {
+    growth = reduced.matches ? null : { from, began: performance.now() + CAMERA };
+  }
 
   /* What is shown. Choosing a person replaces chosen projects, and the other way round. */
   function emphasis() {
@@ -236,18 +247,24 @@ if (canvas) {
     context.fill();
   }
 
-  function lines(pairs, stroke, width) {
+  // Lines from each pair's first node towards its second, `reach` of the way (1 draws them whole).
+  function lines(pairs, stroke, width, reach = 1) {
+    if (reach <= 0) return;
     context.strokeStyle = stroke;
     context.lineWidth = width;
     context.beginPath();
     pairs.forEach(([from, to]) => {
-      context.moveTo(screenX(from.x), screenY(from.y));
-      context.lineTo(screenX(to.x), screenY(to.y));
+      const x = screenX(from.x);
+      const y = screenY(from.y);
+      context.moveTo(x, y);
+      context.lineTo(x + (screenX(to.x) - x) * reach, y + (screenY(to.y) - y) * reach);
     });
     context.stroke();
   }
 
-  const spokes = (items) => items.flatMap((project) => project.members.map((member) => [member, project]));
+  const spokes = (items) => items.flatMap((project) => project.members.map((member) => [project, member]));
+  // How far a growing selection's lines reach between `start` and `end` of its time (0 to 1), eased.
+  const reachOf = (t, start, end) => 1 - (1 - Math.min(1, Math.max(0, (t - start) / (end - start)))) ** 3;
 
   /* Greedy labels: most important first, skipping any that would land on another. */
   function labels(wanted) {
@@ -292,8 +309,29 @@ if (canvas) {
     context.globalAlpha = 1;
 
     if (active) {
-      lines(spokes([...hubs]), ink.project, 0.9);
-      if (state.person) lines(state.person.projects.map((project) => [state.person, project]), ink.focus, 2.2);
+      // Time since the lines began to grow (negative while the view is still moving), and whose lines they are. A
+      // switch to reduced motion part-way through settles them at once.
+      if (reduced.matches) growth = null;
+      const person = growth && growth.from === state.person;
+      const t = growth ? performance.now() - growth.began : Infinity;
+      const growing = t < (person ? FIRST + SECOND : SECOND) ? growth.from : null;
+      const still = [...hubs].filter((project) => !growing || (!person && growing !== project));
+      // Around a chosen person, their projects' other people are a lighter second ring, so the person's own lines
+      // to their projects stay readable.
+      context.globalAlpha = state.person ? 0.45 : 1;
+      lines(spokes(still), ink.project, 0.9);
+      if (growing) lines(spokes([...hubs].filter((project) => !still.includes(project))), ink.project, 0.9, person ? reachOf(t, FIRST, FIRST + SECOND) : reachOf(t, 0, SECOND));
+      context.globalAlpha = 1;
+      if (state.person) {
+        // The person's own lines, on a white casing so they stay apart from the blue lines they cross.
+        const own = state.person.projects.map((project) => [state.person, project]);
+        const reach = growing && person ? reachOf(t, 0, FIRST) : 1;
+        const width = narrow() ? 3.2 : 2.8;
+        lines(own, ink.card, width + 3, reach);
+        lines(own, ink.focus, width, reach);
+      }
+      if (growing) draw();
+      else growth = null;
       lit.forEach((person) => dot(person, person.radius * size + 0.5, ink.ink));
       hubs.forEach((project) => square(project, project.radius * size + 1, ink.project));
       if (state.person) {
@@ -425,6 +463,7 @@ if (canvas) {
   }
 
   function choosePerson(person) {
+    if (state.person !== person) grow(person);
     state.person = person;
     state.chosen.clear();
     personBox.input.value = person.name;
@@ -436,7 +475,10 @@ if (canvas) {
     state.person = null;
     personBox.input.value = '';
     if (state.chosen.has(project)) state.chosen.delete(project);
-    else state.chosen.add(project);
+    else {
+      state.chosen.add(project);
+      grow(project);
+    }
     showPanelText();
     frameSelection();
   }
@@ -444,6 +486,7 @@ if (canvas) {
   function chooseOnly(project) {
     state.person = null;
     personBox.input.value = '';
+    if (!state.chosen.has(project) || state.chosen.size > 1) grow(project);
     state.chosen.clear();
     state.chosen.add(project);
     showPanelText();

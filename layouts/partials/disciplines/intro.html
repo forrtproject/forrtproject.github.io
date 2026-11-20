@@ -40,24 +40,10 @@
     web: {{ with site.Data.disciplines_citation }}{{ .web | default "" | jsonify | safeJS }}{{ else }}""{{ end }}
   };
 
-  async function copyDisciplinesCitation(button, key) {
+  // The site's copy feedback (assets/js/doors/references.js): a check in the icon's place, only once copied.
+  function copyDisciplinesCitation(button, key) {
     var text = disciplinesCitations[key] || '';
-    try {
-      await navigator.clipboard.writeText(text);
-    } catch (err) {
-      var textarea = document.createElement('textarea');
-      textarea.value = text;
-      document.body.appendChild(textarea);
-      textarea.select();
-      document.execCommand('copy');
-      document.body.removeChild(textarea);
-    }
-    var copyIcon = button.innerHTML;
-    button.innerHTML = '<svg class="copy-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Copied!';
-    button.classList.add('copied');
-    setTimeout(function () {
-      button.innerHTML = copyIcon;
-      button.classList.remove('copied');
-    }, 2000);
+    if (window.forrtCopy) window.forrtCopy(button, text);
+    else window.prompt('Copy this text:', text);
   }
 </script>

@@ -492,23 +492,6 @@
 .acc-header:focus-within .acc-copy-link { opacity: 1; }
 .acc-copy-link:hover { color: var(--soft); background: rgba(0,0,0,0.05); }
 .acc-copy-link:focus-visible { opacity: 1; outline: 2px solid rgba(0,0,0,0.25); outline-offset: 1px; }
-.acc-copy-link.is-copied { color: #2e7d32; opacity: 1; }
-.acc-copy-link.is-copied::after {
-  content: "Copied!";
-  position: absolute;
-  bottom: calc(100% + 4px);
-  right: 0;
-  background: #2e7d32;
-  color: #fff;
-  font-size: 0.55rem;
-  font-weight: 600;
-  line-height: 1;
-  padding: 0.25rem 0.4rem;
-  border-radius: 3px;
-  white-space: nowrap;
-  pointer-events: none;
-  z-index: 5;
-}
 .acc-body {
   /* Positioned, so that what it holds positioned (screen-reader labels among it) is clipped with it
      while collapsed, rather than stretching the page below its footer. */
@@ -1844,11 +1827,6 @@ h1.clusters-site-heading.clusters-hub-page__title {
 .ref-copy-btn:hover {
   background: rgba(0,64,85,0.14);
 }
-.ref-copy-btn.copied {
-  background: #d4e4d9;
-  color: #2a6a3a;
-  border-color: rgba(42,106,58,0.2);
-}
 .ref-copy-btn svg {
   width: 11px;
   height: 11px;
@@ -2197,7 +2175,6 @@ h1.clusters-site-heading.clusters-hub-page__title {
 }
 .rl-detail-copy svg { width: 11px; height: 11px; display: block; }
 .rl-detail-copy:hover { color: #004055; border-color: #004055; }
-.rl-detail-copy.copied { color: #2a6a3a; border-color: #2a6a3a; background: #e6f4ea; }
 /* Abstract with inline show more/less */
 .rl-detail-abstract-wrap {
   margin-top: 0.3rem;
@@ -2388,6 +2365,7 @@ body.clusters-mobile-nav-open .clusters-back-to-top{display:none}
 .acc-section+.acc-section{border-top-color:var(--line)}
 .acc-count{color:var(--soft)!important;font-variant-numeric:tabular-nums}
 .acc-copy-link{opacity:1;color:var(--soft);width:32px;height:32px;border-radius:999px}
+.acc-copy-link.is-copied{color:var(--ink)}  /* its check (base.css) is darker than the resting link icon */
 .acc-copy-link svg{width:15px;height:15px}
 .acc-copy-link:hover{color:var(--link);background:rgba(0,90,135,.08)}
 .acc-toggle-all{background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:6px 14px;color:var(--ink);font-weight:600}
