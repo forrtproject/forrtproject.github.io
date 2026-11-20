@@ -323,10 +323,11 @@ html:has(.contributor-az){scroll-padding-top:calc(var(--contributor-az,72px) + 1
 .article-layout .article-style .contributor-result h2{margin:0;font-size:clamp(25px,2.4vw,31px);line-height:1.15}
 .article-layout .article-style .contributor-result a{display:inline-flex;align-items:center;min-height:44px;color:var(--link);font-weight:600}
 .contributor-result+#contributor-list .contributor-letter-heading,.contributor-result+.contributor-az+#contributor-list .contributor-letter-heading{margin-top:16px}
-/* Filtered to one project, a row gives only the person's roles in it, as the heading names the project; the rows are
-   then short, so a wide screen takes three columns of them. */
-.article-layout .article-style #contributor-list.is-project-filtered .contribution{max-width:none;margin:0;padding:0;text-indent:0;font-size:0}
-.article-layout .article-style #contributor-list.is-project-filtered .contribution-roles{display:block;max-width:30em;font-size:16px;line-height:1.45}
+/* Filtered to one project, a row gives only the person's roles in it, as the heading names the project (the script
+   hides the project's name, link and all); the rows are then short, so a wide screen takes three columns of them. */
+.article-layout .article-style #contributor-list.is-project-filtered .contribution{max-width:30em;margin:0;padding:0;text-indent:0;font-size:16px;line-height:1.45}
+.article-layout .article-style #contributor-list.is-project-filtered .contribution>[hidden]{display:none}
+#contributor-list.is-project-filtered .contribution-roles{display:inline}
 #contributor-list.is-project-filtered .contribution-roles::before{content:none}
 @media(min-width:1100px){.article-layout .article-style #contributor-list.is-project-filtered ul.contributor-rows{columns:3;column-gap:40px}}
 /* Each letter: its heading, then one row per person, the name on the left and the projects, each with its roles

@@ -45,7 +45,7 @@ The Contributors page supports URL parameters to filter and customize the view:
 | `role` | Filter by contribution role (normalized) | `?role=writing` |
 | `collapse-filter` | Hide the filter menu and the board of projects and show a simple "show all" link | `?project=glossary&collapse-filter` |
 
-With a project or role in the address, a heading above the list names the filter and counts the people, with a link to clear it; `#contributor-results` in the address scrolls to it. Above the list, `tenzing.py` writes a board of the 12 projects with the most contributors, each counted once per project, and each linking to `?project=<value>#contributor-results`.
+On a page generated from the current template, a project or role in the address adds a heading above the list that names the filter and counts the people, with a "Clear filter" link (left out in `collapse-filter` mode, which has its own "show all" link), and `#contributor-results` in the address scrolls to that heading. Above the list, `tenzing.py` writes a board of the 12 projects with the most contributors, each counted once per project, and each linking to `?project=<value>#contributor-results`. A page generated before this template has no board and no heading: it keeps its "Filtered results" block in the filter panel, which `collapse-filter` mode removes together with the panel.
 
 
 ## Local Development

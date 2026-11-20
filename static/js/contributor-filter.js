@@ -1,6 +1,10 @@
 (function() {
     'use strict';
 
+    // A page generated from the older template shows filter results in a block in the filter panel; it is noted
+    // before collapse-filter mode takes the panel away, so that page keeps its old behaviour in both modes.
+    let olderPage = false;
+
     // Parse URL parameters
     function getURLParams() {
         const params = new URLSearchParams(window.location.search);
@@ -90,7 +94,7 @@
         
         // Navigate to new URL (or clear params if both empty)
         const newURL = params.toString() 
-            ? `${window.location.pathname}?${params.toString()}${document.getElementById('filter-results') ? '' : '#contributor-results'}` 
+            ? `${window.location.pathname}?${params.toString()}${olderPage ? '' : '#contributor-results'}` 
             : window.location.pathname;
         window.location.href = newURL;
     }
@@ -210,7 +214,7 @@
         }
         // The newer page names the filter and its count in a heading above the list, with the way back to everyone. A
         // project chosen on the board lands on this heading (its link ends in #contributor-results).
-        if (!filterResults) {
+        if (!olderPage) {
             const heading = matchesText
                 + (params.project ? ` to ${label('projects', params.project)}` : '')
                 + (params.role ? ` as ${label('roles', params.role)}` : '');
@@ -222,7 +226,23 @@
             const before = document.querySelector('.contributor-az') || contributorList;
             before.parentNode.insertBefore(result, before);
             // Filtered to one project, the rows need not name it again: each shows its roles (sections.css).
-            if (params.project) contributorList.classList.add('is-project-filtered');
+            // The project's name (a link, or plain text where the sheet gives no address) is hidden, not just made
+            // invisible, so it also leaves the Tab order.
+            if (params.project) {
+                contributorList.classList.add('is-project-filtered');
+                contributorList.querySelectorAll('.contribution').forEach(contrib => {
+                    [...contrib.childNodes].forEach(node => {
+                        if (node.nodeType === Node.ELEMENT_NODE && !node.classList.contains('contribution-roles')) {
+                            node.hidden = true;
+                        } else if (node.nodeType === Node.TEXT_NODE && node.textContent.trim()) {
+                            const name = document.createElement('span');
+                            name.hidden = true;
+                            node.replaceWith(name);
+                            name.append(node);
+                        }
+                    });
+                });
+            }
             if (window.location.hash === '#contributor-results') result.scrollIntoView();
         }
     }
@@ -340,6 +360,8 @@
                 seen.observe(tiles);
             }
         }
+
+        olderPage = Boolean(document.getElementById('filter-results'));
 
         // Check if filter should be collapsed
         const isCollapsed = handleCollapsedFilter();
