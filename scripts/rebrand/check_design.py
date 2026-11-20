@@ -31,6 +31,7 @@ import time
 from urllib.parse import urlsplit
 
 from playwright.sync_api import Error as PlaywrightError, sync_playwright
+from playwright.sync_api import TimeoutError as PlaywrightTimeoutError
 
 WIDTHS = {390: 844, 1024: 768, 1440: 900}
 SCREENS = {
@@ -425,15 +426,26 @@ def check_home(browser, base, failures):
     page.on("request", lambda request: requests.append(request.url))
     page.goto(base, wait_until="load")
     current = "[...document.querySelectorAll('.quote')].findIndex(q => q.classList.contains('is-active'))"
+
+    def expect_quote_change(previous, message):
+        try:
+            page.wait_for_function(
+                f"previous => {{ const active = {current}; return active >= 0 && active !== previous; }}",
+                arg=previous, polling=100,
+            )
+        except PlaywrightTimeoutError:
+            expect(False, message)
+        else:
+            expect(True, message)
+
     expect(page.evaluate("document.querySelector('.tower .motion-toggle').getBoundingClientRect().width") <= 1,
            "the castle's pause button is out of sight at rest")
     page.evaluate("document.querySelector('.quotes').scrollIntoView({block:'center'})")
     page.mouse.move(2, 2)
     first = page.evaluate(current)
-    page.wait_for_timeout(6500)
-    expect(page.evaluate(current) != first, "the quotes change on their own")
+    expect_quote_change(first, "the quotes change on their own")
+    page.hover(".quotes")
     held = page.evaluate(current)
-    page.hover(".quote.is-active")
     page.wait_for_timeout(6500)
     expect(page.evaluate(current) == held, "a pointer on the quotes holds them")
     page.mouse.move(2, 2)
@@ -441,8 +453,7 @@ def check_home(browser, base, failures):
     page.wait_for_timeout(6500)
     expect(page.evaluate(current) == held, "the quotes stay put off screen")
     page.evaluate("document.querySelector('.quotes').scrollIntoView({block:'center'})")
-    page.wait_for_timeout(6500)
-    expect(page.evaluate(current) != held, "the quotes resume when seen again")
+    expect_quote_change(held, "the quotes resume when seen again")
     # A real Tab from the heading above, so that the browser counts it as keyboard focus.
     page.evaluate("document.querySelector('.quotes').previousElementSibling.setAttribute('tabindex', '-1')")
     page.evaluate("document.querySelector('.quotes').previousElementSibling.focus()")
