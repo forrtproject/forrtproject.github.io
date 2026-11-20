@@ -408,20 +408,24 @@ if (summaryEntries.length) {
   };
   input.addEventListener('input', show);
   addEventListener('hashchange', show);
-  // A line of topics to try leads the list of a collection page: each fills in the filter and goes to the first match.
+  // A line of topics to try, each with its number of matches, leads the list of a collection page: each fills in the
+  // filter and goes to the first match.
   const topics = slot?.dataset.try?.split(',').map((topic) => topic.trim()).filter(Boolean);
   if (topics?.length) {
     const line = document.createElement('p');
     line.className = 'summary-try';
     line.append(document.querySelector('.summary-questions') ? 'Or try a topic: ' : 'Try a topic: ');
-    topics.forEach((topic, i) => {
+    topics.forEach((topic) => {
+      const count = summaryEntries.filter((entry) => words.get(entry).includes(topic.toLowerCase())).length;
+      if (!count) return;
       const button = Object.assign(document.createElement('button'), { type: 'button', textContent: topic });
+      button.append(Object.assign(document.createElement('span'), { className: 'summary-try-n', textContent: ` ${count}` }));
       button.addEventListener('click', () => {
         input.value = topic;
         show();
         document.querySelector('.summary-chapter:not([hidden])')?.scrollIntoView();
       });
-      line.append(...(i ? [' · ', button] : [button]));
+      line.append(button);
     });
     document.querySelector('.summaries-layout .reading .article-style')?.before(line);
   }
