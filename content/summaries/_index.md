@@ -12,6 +12,8 @@ draft: false  # Is this a draft? true/false
 toc: false  # Show table of contents? true/false
 phone_toc: false  # The two collections come first; a contents list on phones would push them down
 type: docs  # Do not modify.
+# The summary the overview shows as an example, by the start of its title (layouts/shortcodes/summary_collections.html).
+sample_summary: "False-Positive Psychology"
 
 # Add menu entry to sidebar.
 # - name: Declare this menu item as a parent with ID `name`.
@@ -24,9 +26,9 @@ menu:
 
 {{< summary_collections >}}
 
-<!-- Layout (assets/css/doors/article.css, "Summaries overview"): on a wide screen the overview and "Join and help
-     us" are on the left, and the background and the feedback beside them; on a phone those follow "Join and help
-     us". Each ask appears once: feedback in the Feedback panel, joining in "Join and help us". -->
+<!-- Layout (assets/css/doors/article.css, "Summaries overview"): on a wide screen the overview and the folded
+     background are on the left, and the two asks, "Join and help us" and Feedback, beside them; on a phone the asks
+     follow the overview. Each ask appears once: feedback in the Feedback section, joining in "Join and help us". -->
 <div class="sm-layout">
 <div class="sm-overview">
 
@@ -37,11 +39,22 @@ The FORRT community has prepared these summaries of Open and Reproducible Scienc
 We made a distinction between Open and reproducible science summaries and Diversity, equity and inclusion summaries to highlight that the topics of social injustices and DEI (diversity, equity and inclusion) are often neglected in academia, and in open and reproducible science literature. If you are an educator, you may also be interested in our [FORRT Syllabus on Open and Reproducible Science (.pdf & G-doc)](https://forrt.org/syllabus), which is based on [FORRT Clusters.](/clusters/)
 
 </div>
+<div class="sm-help">
 <div class="sm-join">
 
 ### Join and help us
 
 **Help us** make better education for everyone, [join our community](https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ). **Help us** support educators and elevate their efforts. **Help us** facilitate the process of integrating open and reproducible science into the pipeline of all teachers and mentors in Higher-Ed. **Help us** advocate for open educational resources and expedite access to open and reproducible science trainings. **Help us** spread the word by sharing this FORRT resource via your professional listservs and other social media.
+
+</div>
+
+<section class="sm-feedback" aria-labelledby="feedback">
+
+### Feedback
+
+**These summaries are very much a work in progress.** We would love to receive your [criticism, areas for improvement, ideas, and help<i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="sr-only"> (another website)</span>](https://docs.google.com/spreadsheets/d/1W12WpzI70Ja1FiVeflXNW8VFPzqFFvu_mL2YkNQ_cHk/edit?usp=sharing). You can also write to us at [info@forrt.org](mailto:info@forrt.org) or connect on [Bluesky<i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="sr-only"> (another website)</span>](https://bsky.app/profile/forrt.bsky.social).
+
+</section>
 
 </div>
 <div class="sm-side">
@@ -86,15 +99,6 @@ Any and all contributions in FORRT are formally recognized. In large part, these
 
 </div>
 </details>
-
-<section class="sm-feedback" aria-labelledby="feedback">
-
-### Feedback
-
-**These summaries are very much a work in progress.** We would love to receive your [criticism, areas for improvement, ideas, and help<i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="sr-only"> (another website)</span>](https://docs.google.com/spreadsheets/d/1W12WpzI70Ja1FiVeflXNW8VFPzqFFvu_mL2YkNQ_cHk/edit?usp=sharing). You can also write to us at [info@forrt.org](mailto:info@forrt.org) or connect on [Bluesky<i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="sr-only"> (another website)</span>](https://bsky.app/profile/forrt.bsky.social).
-
-</section>
-
 
 </div>
 </div>

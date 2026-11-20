@@ -433,27 +433,81 @@ html:has(.contributor-az){scroll-padding-top:calc(var(--contributor-az,72px) + 1
 .toc-phone--closed>summary::after{content:"";width:8px;height:8px;margin-inline-start:auto;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translateY(-2px);transition:transform .15s}
 .toc-phone--closed[open]>summary::after{transform:rotate(-135deg) translateY(-2px)}
 
-/* Lesson plans: an Education & Pedagogy page, so its plans are pale education cards, as many to a row as fit;
-   each names its plan as a link with what the link opens below it. */
-.article-layout .article-style .lesson-plan-list>ul{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:12px;max-width:none;margin:12px 0 30px;padding:0;list-style:none}
-.article-layout .article-style .lesson-plan-list>ul>li{max-width:none;margin:0;padding:14px 18px 16px;background:var(--edu-bg);border-radius:var(--r-large);font-size:16px;line-height:1.45;color:var(--ink)}
-.article-layout .article-style .lesson-plan-list>ul>li>a:first-child{font:var(--display-weight) 21px/1.25 var(--display);color:var(--edu);text-decoration-color:color-mix(in srgb,var(--edu) 55%,transparent)}
-.article-layout .article-style .lesson-plan-list>ul>li>a:first-child:hover{text-decoration-color:currentColor;text-decoration-thickness:2px}
-.article-layout .article-style .lesson-plan-list>ul>li>br+a,.article-layout .article-style .lesson-plan-list>ul>li>a+a{color:var(--edu)}
-.article-layout .article-style .lesson-plan-list>h3{margin:26px 0 0;font-size:24px}
-/* Beside the prose on a wide screen, after it on a narrow one: the example lesson plan beside the introduction
-   that lists what each plan gives, and the article about the plans beside the motivation (DESIGN.md §7). */
-.lesson-plan-intro,.lesson-plan-motivation{display:flex;flex-direction:column}
-.article-layout .article-style .lesson-plan-sample{order:1;width:min(100%,340px);margin:4px 0 8px;padding:14px 14px 10px;background:var(--edu-bg);border-radius:var(--r-large)}
-.lesson-plan-sample img{display:block;width:100%;height:auto;aspect-ratio:1218/980;object-fit:cover;object-position:top;background:#fff;border:1px solid var(--line);border-radius:4px}
-.lesson-plan-sample figcaption{margin:8px 2px 0;font-size:15px;line-height:1.4;text-align:start}
-.lesson-plan-article{order:1;margin:8px 0 0}
+/* Lesson plans (content/lesson-plans/nd-lessons-plans.md): an Education & Pedagogy page. On a phone the lessons
+   follow the introduction straight away, and the way into the whole collection (one brick in education's colour)
+   with the quieter routes for writing a plan and for feedback comes after them; on a wide screen those routes stand
+   beside the introduction, above the lessons. */
+.lesson-plan-top{display:flex;flex-direction:column}
+.lesson-plan-intro{order:0}.lesson-plan-list{order:1}.lesson-plan-routes{order:2}
+.article-layout .article-style .lesson-plan-routes{max-width:none;margin:0}
+.article-layout .article-style .lesson-plan-routes .action-cards{grid-template-columns:1fr;margin:30px 0 14px}
+.article-layout .article-style .lesson-plan-routes .action-cards li:first-child{--tone:var(--edu)}
+.article-layout .article-style .lesson-plan-route{margin:0 0 8px;font-size:17px;line-height:1.5}
+.article-layout .article-style .lesson-plan-intro>h2:first-child{margin-top:24px}
+@media(min-width:1001px){
+  .lesson-plan-top{display:grid;grid-template-columns:minmax(0,580px) minmax(0,400px) minmax(0,1fr);grid-template-areas:"intro routes ." "list list list";column-gap:64px;align-items:start}
+  .lesson-plan-intro{grid-area:intro}.lesson-plan-routes{grid-area:routes}.lesson-plan-list{grid-area:list}
+  .article-layout .article-style .lesson-plan-routes .action-cards{margin-top:40px}
+}
+/* The plans are pale education cards, three to a row on a wide screen, each its plan's title as a link; a plan that
+   opens as a PDF says so in quieter type, with its companion texts on a labelled line of their own. The effect sizes
+   plan's card is larger and shows the plan's first page, to look inside before choosing. */
+.article-layout .article-style .lesson-plan-group{max-width:none}
+.article-layout .article-style .lesson-plan-group>h3{margin:30px 0 12px;font-size:21px}
+.article-layout .article-style .lesson-plan-group ul{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:12px;max-width:none;margin:0 0 12px;padding:0;list-style:none}
+.article-layout .article-style .lesson-plan-group li{display:flex;flex-direction:column;max-width:none;margin:0;padding:14px 18px 16px;background:var(--edu-bg);border-radius:var(--r-large);font-size:16px;line-height:1.45;color:var(--ink)}
+.article-layout .article-style .lesson-plan-group li>a:first-child{font:var(--display-weight) 21px/1.25 var(--display);color:var(--edu);text-decoration-color:color-mix(in srgb,var(--edu) 55%,transparent)}
+.article-layout .article-style .lesson-plan-group li>a:first-child:hover{text-decoration-color:currentColor;text-decoration-thickness:2px}
+.lesson-plan-kind{margin-top:4px;font-size:15px;color:var(--soft)}
+.lesson-plan-texts{padding-top:8px;font-size:15px;color:var(--soft)}
+.article-layout .article-style .lesson-plan-texts a{color:var(--edu)}
+.article-layout .article-style .lesson-plan-sample{margin:12px 0 0;padding:0}
+.lesson-plan-sample>a{display:block}
+.lesson-plan-sample img{display:block;width:100%;height:auto;aspect-ratio:1218/820;object-fit:cover;object-position:50% 22%;background:#fff;border:1px solid var(--line);border-radius:4px;box-shadow:0 6px 16px -10px rgb(0 0 0/.35)}
+.article-layout .article-style .lesson-plan-sample figcaption{margin:8px 0 0;font-size:15px;line-height:1.4;text-align:start;color:var(--soft)}
+.article-layout .article-style .lesson-plan-open{display:inline-block;margin-top:6px;font-size:16px;font-weight:600;color:var(--edu);text-decoration:underline;text-underline-offset:3px}
+@media(min-width:761px){
+  .article-layout .article-style .lesson-plan-group ul{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+/* On a wide screen the effect sizes plan's card runs the width of the grid, its title, caption and link beside a large
+   crop of the plan's first page; the other plans follow three to a row. The Neurodiversity lesson bank's pages
+   go five to a row, and its PDF plans, with their companion texts, four to a row. */
+@media(min-width:1001px){
+  .article-layout .article-style .lesson-plan-group ul{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .article-layout .article-style .lesson-plan-osf li:first-child{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.7fr);grid-template-rows:auto auto auto 1fr;column-gap:36px;padding:22px 24px}
+  .lesson-plan-osf li:first-child>a:first-child{grid-column:1;grid-row:1;align-self:start}
+  .article-layout .article-style .lesson-plan-osf li:first-child>a:first-child{font-size:26px}
+  .lesson-plan-osf li:first-child .lesson-plan-sample{display:contents}
+  .lesson-plan-osf li:first-child .lesson-plan-sample>a{grid-column:2;grid-row:1/span 4;align-self:start}
+  .article-layout .article-style .lesson-plan-osf li:first-child .lesson-plan-sample figcaption{grid-column:1;grid-row:2;margin-top:14px;font-size:16px}
+  .article-layout .article-style .lesson-plan-osf li:first-child .lesson-plan-open{grid-column:1;grid-row:3;justify-self:start;margin-top:8px}
+  /* The crop opens at the plan's own table: its class, context, time and prerequisites. */
+  .lesson-plan-osf li:first-child .lesson-plan-sample img{aspect-ratio:1218/460;object-position:50% 24%}
+  .article-layout .article-style .lesson-plan-nd li:not(:has(.lesson-plan-kind))>a:first-child{font-size:19px}
+  .article-layout .article-style .lesson-plan-nd ul{grid-template-columns:repeat(20,minmax(0,1fr))}
+  .article-layout .article-style .lesson-plan-nd li{grid-column:span 4}
+  .article-layout .article-style .lesson-plan-nd li:has(.lesson-plan-kind){grid-column:span 5}
+}
+/* On a phone a one-line plan makes a short card, still a 44 px target. */
+@media(max-width:760px){.article-layout .article-style .lesson-plan-group li{padding:6px 14px 8px}.article-layout .article-style .lesson-plan-group li>a:first-child{font-size:19px}.article-layout .article-style .lesson-plan-group ul{gap:8px}.article-layout .article-style .lesson-plan-group li:has(.lesson-plan-sample){padding-bottom:16px}}
+/* Two short sections side by side on a wide screen, so no prose stands alone with an empty band beside it
+   (DESIGN.md §7): the external plans and the feedback ask, then contributing and its credit. The article about the
+   plans stands beside the motivation. */
+.article-layout .article-style .lesson-plan-pair{max-width:none}
+@media(min-width:1001px){
+  .lesson-plan-pair{display:grid;grid-template-columns:minmax(0,580px) minmax(0,440px);justify-content:start;column-gap:64px;align-items:start}
+  .lesson-plan-pair>div>:is(h2,h3):first-child{margin-top:48px}
+}
+.article-layout .article-style .lesson-plan-sheet>h3{margin-top:36px}
+.lesson-plan-motivation{display:flex;flex-direction:column}
+/* The note on the article about the plans is a pale side panel, so it reads as an aside to the motivation. */
+.article-layout .article-style .lesson-plan-article{order:1;margin:8px 0 0;padding:20px 22px;background:var(--edu-bg);border-radius:var(--r-large)}
+.article-layout .article-style .lesson-plan-article>p:first-child{margin-top:0}
 .article-layout .article-style .lesson-plan-article p{font-size:17px}
 @media(min-width:1001px){
-  :is(.lesson-plan-intro,.lesson-plan-motivation){display:grid;grid-template-columns:minmax(0,580px) minmax(0,380px);justify-content:start;column-gap:64px;align-items:start}
-  :is(.lesson-plan-intro,.lesson-plan-motivation)>*{grid-column:1}
-  .article-layout .article-style :is(.lesson-plan-sample,.lesson-plan-article){grid-column:2;grid-row:1/span 6;width:auto;margin:0}
-  .lesson-plan-intro>:first-child+p{margin-top:0}
+  .lesson-plan-motivation{display:grid;grid-template-columns:minmax(0,580px) minmax(0,380px);justify-content:start;column-gap:64px;align-items:start}
+  .lesson-plan-motivation>*{grid-column:1}
+  .article-layout .article-style .lesson-plan-article{grid-column:2;grid-row:1/span 6;width:auto;margin:0}
 }
 
 /* Get involved: a wide page, so "About FORRT" puts its guide call-out beside the text rather than under it,
@@ -477,22 +531,67 @@ html:has(.contributor-az){scroll-padding-top:calc(var(--contributor-az,72px) + 1
 }
 
 
-/* The booklet: the flipbook on a pale panel, then what it covers in each area: a heading in the area's colour over a
-   plain list of links, not a box (DESIGN.md §4). */
+/* The booklet: the introduction, "Open the PDF" with a line on what the PDF is for and, until the contents stand
+   beside the flipbook, a jump to them; the flipbook on a pale panel; then the booklet's table of contents, area by
+   area: a heading in the area's colour over its pages, each a link to its page on the site with the booklet's page
+   number after a dotted leader (DESIGN.md §4: a plain list, not boxes). On a wide screen the flipbook turns one page
+   at a time in a column of its own, with the introduction and the contents beside it. */
+.booklet-open{display:flex;flex-wrap:wrap;align-items:center;gap:10px 12px;margin:22px 0 4px}
+.article-layout .article-style .booklet-open-note{flex-basis:100%;margin:0;font-size:16px;color:var(--ink)}
 .article-style .booklet-frame{background:var(--surface)!important;border-radius:var(--r-large)}
-.booklet-inside{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:20px 32px;margin:12px 0 8px}
+.article-layout .article-style .booklet-inside-note{margin:0 0 14px;font-size:16px;color:var(--soft)}
+.booklet-inside{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:28px 36px;margin:12px 0 8px}
 .booklet-area{--tone:var(--edu);padding-top:10px;border-top:4px solid var(--tone)}
 .booklet-area-res{--tone:var(--res)}
 .booklet-area-jus{--tone:var(--jus)}
 .booklet-area-com{--tone:var(--com)}
-.article-layout .article-style .booklet-area h3{margin:0 0 6px;font-size:22px;line-height:1.2;color:var(--tone)}
+.article-layout .article-style .booklet-area h3{margin:0;font-size:22px;line-height:1.2;color:var(--tone)}
+.article-layout .article-style .booklet-area-pages{margin:2px 0 6px;font-size:15px}
 .article-layout .article-style .booklet-area ul{max-width:none;margin:0;padding:0;list-style:none}
-.article-layout .article-style .booklet-area li{max-width:none;margin:0;padding:6px 0;font-size:17px;line-height:1.4}
+.article-layout .article-style .booklet-area li{display:flex;align-items:baseline;max-width:none;margin:0;padding:5px 0;font-size:17px;line-height:1.4}
+.booklet-entry{min-width:0}
+.booklet-leader{flex:1 1 32px;min-width:32px;margin:0 8px;border-bottom:2px dotted color-mix(in srgb,var(--tone) 45%,transparent);transform:translateY(-4px)}
 .article-layout .article-style .booklet-area a{color:var(--ink);text-decoration-color:color-mix(in srgb,var(--tone) 55%,transparent)}
 .article-layout .article-style .booklet-area a:hover{color:var(--tone);text-decoration-color:currentColor}
+.article-layout .article-style .booklet-area a.booklet-page{flex:none;color:var(--tone);font:600 17px/1.4 var(--text);font-variant-numeric:tabular-nums;text-decoration:underline;text-decoration-color:currentColor;text-decoration-thickness:1.5px;text-underline-offset:3px}
+.article-layout .article-style .booklet-area li>a.booklet-page{min-width:1.6em;text-align:end}
+.article-layout .article-style .booklet-area-pages a.booklet-page{font-size:15px}
+@media(min-width:1001px){
+  .article-layout .article-style .booklet-layout{display:grid;grid-template-columns:minmax(0,480px) minmax(0,1fr);grid-template-areas:"book intro" "book open" "book index";grid-template-rows:auto auto 1fr;column-gap:56px;align-items:start;max-width:none}
+  .booklet-viewer{display:contents}
+  .booklet-intro{grid-area:intro}.booklet-viewer>.booklet-open{grid-area:open;margin-top:6px}.booklet-viewer>._df_book{grid-area:book}.booklet-index{grid-area:index}
+  .article-layout .article-style .booklet-intro>p:first-child{margin-top:0}
+  .article-style .booklet-layout ._df_book{width:100%;margin:0!important}
+  /* d-wide-none: hidden on purpose where the contents stand beside the flipbook. */
+  .booklet-jump.d-wide-none{display:none}
+  .article-layout .article-style .booklet-index>h2:first-child{margin-top:30px}
+}
+/* The flipbook's toolbar: 44 px buttons, Previous and Next in words and the page position in readable type, also on a
+   phone, where the library would hide the position; zoom and share give way there, since a phone pinches to zoom. */
+.article-style ._df_book .df-ui-controls{height:44px}
+.article-style ._df_book .df-ui-controls>.df-ui-btn{height:44px;padding-top:13px}
+.article-style ._df_book .df-ui-controls>:is(.df-ui-prev,.df-ui-next){width:auto;padding-inline:12px;font:600 16px/1 var(--text);color:var(--ink)}
+.article-style ._df_book .df-ui-controls>:is(.df-ui-prev,.df-ui-next)>span{display:inline;margin-inline-start:6px;font-size:16px;color:var(--ink)}
+.article-style ._df_book .df-ui-controls>:is(.df-ui-prev,.df-ui-next).disabled>span{color:#767676}
+.article-style ._df_book .df-ui-controls>.df-ui-next{display:flex;flex-direction:row-reverse;align-items:center;gap:6px}
+.article-style ._df_book .df-ui-controls>.df-ui-next>span{margin-inline-start:0}
+.article-style ._df_book .df-ui-controls>.df-ui-prev{display:flex;align-items:center}
+.article-layout .article-style ._df_book.df-container .df-ui-controls>.df-ui-btn.df-ui-page{display:inline-block!important;width:auto;min-width:92px;padding:0 8px}
+.article-style ._df_book label[for=df_book_page_number]{height:44px;padding-top:13px;font-size:16px!important}
+.article-style ._df_book label[for=df_book_page_number]::before{content:"Page "}
+.article-style ._df_book .df-ui-share{display:none!important}
+/* The toolbar keeps Previous, the page, Next and full screen: zoom gives way to full screen, the thumbnails to the
+   contents beside or below the flipbook, and the menu, which holds the download, to "Open the PDF". */
+.article-style ._df_book .df-ui-controls>:is(.df-ui-zoomin,.df-ui-zoomout,.df-ui-thumbnail,.df-ui-more){display:none!important}
+.article-style ._df_book .df-ui-controls>.df-ui-fullscreen{width:44px}
+@media(max-width:760px){.article-style ._df_book .df-ui-controls>:is(.df-ui-prev,.df-ui-next){padding-inline:10px}}
+.article-style ._df_book .df-ui-controls>.df-ui-btn:not(.disabled)::before{color:var(--ink)!important}
+.article-style ._df_book .df-ui-controls>.df-ui-fullscreen::before{font-size:20px!important}
 /* 44 px targets on phones for the booklet's and lesson plans' links (DESIGN.md §9). */
 @media(max-width:760px){
-  .article-layout .article-style .booklet-area li{display:flex;align-items:center;min-height:44px;padding:0}
-  .article-layout .article-style .booklet-area a,.article-layout .article-style .lesson-plan-list>ul>li>a{display:inline-flex;align-items:center;min-height:44px;padding:0}
+  .article-layout .article-style .booklet-area li{min-height:44px;padding:0;align-items:center}
+  .article-layout .article-style .booklet-area a.booklet-page{display:inline-flex;align-items:center;justify-content:flex-end;min-width:44px;min-height:44px}
+  .booklet-leader{transform:none;align-self:center}
+  .article-layout .article-style .booklet-area a,.article-layout .article-style .lesson-plan-group li>a:first-child{display:inline-flex;align-items:center;min-height:44px;padding:0}
 }
 .booklet-area .fa-external-link-alt{margin-inline-start:2px;font-size:13px;color:var(--soft)}

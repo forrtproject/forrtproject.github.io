@@ -1,0 +1,11 @@
+{{/* A summary's title from data/summaries.json, taken apart: the title without its marks, the citation that ends it
+     ("(Author, year)") if any, whether it is marked ◈ (not peer reviewed) or ⌺ (DEI), and the title split before its
+     last word, so that the marks can stay on that word's line. Used by doors/summary_entries and the overview's
+     sample summary (shortcodes/summary_collections.html). */}}
+{{ $title := . }}{{ $npr := in $title "◈" }}{{ $isDei := in $title "⌺" }}
+{{ $title = trim (replaceRE `[\s\p{Z}]*[◈⌺][\s\p{Z}]*` " " $title) "  " }}
+{{ $cite := "" }}
+{{ with findRESubmatch `^([\s\S]*?)[\s\p{Z}]*(\([^()]*\d{4}[a-z]?\))$` $title 1 }}{{ $title = index (index . 0) 1 }}{{ $cite = index (index . 0) 2 }}{{ end }}
+{{ $head := "" }}{{ $tail := $title }}
+{{ with findRESubmatch `^([\s\S]*\S)\s+(\S+)$` $title 1 }}{{ $head = index (index . 0) 1 }}{{ $tail = index (index . 0) 2 }}{{ end }}
+{{ return dict "title" $title "cite" $cite "npr" $npr "dei" $isDei "head" $head "tail" $tail }}

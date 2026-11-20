@@ -350,8 +350,6 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 /* One primary button: old pages give theirs inline sizes, corners and full widths; all take the "Open this resource" pill. */
 .article-layout .article-style .btn-primary,.article-layout .article-style .btn-lg{padding:10px 22px!important;border-radius:999px!important;font-size:17px!important;line-height:1.3!important}
 .article-layout .article-style .btn-block{display:inline-block;width:auto}
-.booklet-open .btn{margin-inline-end:10px}
-@media(max-width:760px){.booklet-open{display:flex;flex-direction:column;align-items:flex-start;gap:8px}.booklet-open .btn{margin-inline-end:0}}
 @media(max-width:1000px){.profile-head .profile-org{font-weight:400}.profile-head ul.network-icon{margin:4px 0 0}.profile-head ul.network-icon a{text-decoration:none}}
 .article-layout .article-style .btn.btn-primary,.article-layout .article-style .btn.btn-lg{padding:10px 22px!important;font-size:17px!important}
 .byline-date{display:none}
@@ -743,24 +741,62 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
 /* A logo beside a page's title (header_logo, Nowhere Lab): on a wide page the heading runs the full width, so the
    logo leads the title instead of sitting alone at the far edge. */
 @media(min-width:761px){.article-layout-wide .article-logo{float:inline-start;margin:6px 24px 8px 0}}
-/* Summaries overview (content/summaries/_index.md, a wide page): the two collections as a hero of two large bricks
-   in their areas' colours, each led by its count; then the overview and "Join and help us" on the left, and the
-   folded background and the feedback ask, as plain text, beside them. */
-.article-layout .article-style .summary-hero{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:24px 6px;max-width:none;margin:34px 0 48px;padding:0;list-style:none}
+/* Summaries overview (content/summaries/_index.md, a wide page): the two collections as bricks in their areas'
+   colours, each led by its name with its count in the action at its foot; a wall of one small brick per summary,
+   the DEI ones purple, to show that collection is part of the whole; one real summary on the research area's pale
+   ground; then the overview, with the two asks, "Join and help us" and Feedback, beside it, and the folded
+   background in a row of three below them. */
+.article-layout .article-style .summary-lead{margin:6px 0 0;font-size:19px}
+.article-layout .article-style .summary-hero{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:24px 6px;max-width:none;margin:34px 0 0;padding:0;list-style:none}
 .article-layout .article-style .summary-hero li{position:relative;max-width:none;margin:0}
 .summary-hero-res{--tone:var(--res)}.summary-hero-jus{--tone:var(--jus)}
 .summary-hero li::before{content:"";position:absolute;left:18px;right:18px;top:-10px;height:10px;background:linear-gradient(90deg,transparent 7px,var(--tone) 7px 34px,transparent 34px) left top/41px 10px space no-repeat;border-radius:3px 3px 0 0;pointer-events:none}
-.article-layout .article-style .summary-hero a{display:flex;flex-direction:column;align-items:flex-start;height:100%;box-sizing:border-box;padding:24px 30px 36px;background:var(--tone);border-radius:3px;box-shadow:inset 0 -8px 0 rgb(0 0 0/.24);color:#fff;text-decoration:none;-webkit-print-color-adjust:exact;print-color-adjust:exact}
-.summary-hero-count{font:var(--display-weight) clamp(64px,7vw,104px)/.95 var(--display);letter-spacing:-.02em}
-.article-layout .article-style .summary-hero strong{margin:10px 0 8px;font:var(--display-weight) clamp(26px,2.4vw,34px)/1.12 var(--display);color:#fff}
+.article-layout .article-style .summary-hero a{display:flex;flex-direction:column;align-items:flex-start;height:100%;box-sizing:border-box;padding:26px 30px 34px;background:var(--tone);border-radius:3px;box-shadow:inset 0 -8px 0 rgb(0 0 0/.24);color:#fff;text-decoration:none;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.article-layout .article-style .summary-hero strong{margin:0 0 8px;font:var(--display-weight) clamp(28px,2.6vw,36px)/1.12 var(--display);color:#fff;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:6px;text-decoration-color:rgb(255 255 255/.5)}
 .summary-hero-text{max-width:28em;font-size:18px;line-height:1.45}
-.article-layout .article-style .summary-hero a:hover strong{text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:5px}
+.summary-hero-go{margin-top:auto;padding-top:18px;font-weight:600;font-size:18px}
+.summary-hero-go>span{display:inline-block;margin-inline-start:6px;transition:transform .15s}
+.article-layout .article-style .summary-hero a:hover strong{text-decoration-color:#fff}
+.summary-hero a:hover .summary-hero-go>span{transform:translateX(4px)}
 .article-layout .article-style .summary-hero a:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
-@media(prefers-reduced-motion:no-preference){.summary-hero li{transition:transform .15s}.summary-hero li:hover{transform:translateY(-3px)}}
+@media(prefers-reduced-motion:reduce){.summary-hero-go>span{transition:none}}
+/* The wall: one small brick per summary, in a wrapping row. */
+.article-layout .article-style .summary-wall{max-width:none;margin:22px 0 0}
+.summary-wall-bricks{display:flex;flex-wrap:wrap;gap:3px;padding:0}
+.summary-wall-bricks span{flex:0 0 22px;height:10px;border-radius:2px;background:color-mix(in srgb,var(--res) 32%,var(--res-bg))}
+.summary-wall-bricks span.is-dei{background:var(--jus)}
+/* Once, when the wall comes into view: every brick shows in the research blue, then the DEI ones turn purple in
+   their order, within about a second and a half (DESIGN.md §11). Without JavaScript, or with reduced motion, the
+   wall shows its end state. */
+.summary-wall.is-waiting .summary-wall-bricks span.is-dei{background:color-mix(in srgb,var(--res) 32%,var(--res-bg))}
+.summary-wall.is-turning .summary-wall-bricks span.is-dei{background:var(--jus);transition:background-color .35s ease calc(var(--i,0) * 30ms)}
+.article-layout .article-style .summary-wall figcaption{max-width:30em;margin:10px 0 0;font-size:15px;line-height:1.4;color:var(--soft);text-align:start}
+/* The sample summary: its title and first takeaways in the reading measure, its reference and the link to the whole
+   summary beside them on a wide screen. */
+.article-layout .article-style .summary-sample{max-width:none;margin:44px 0 52px;padding:28px 32px 30px;background:var(--res-bg);border-radius:var(--r-large)}
+.article-layout .article-style .summary-sample>h2{margin:0 0 14px;font-size:clamp(24px,2.2vw,30px)}
+.summary-sample-body{display:grid;grid-template-columns:minmax(0,1fr);gap:8px 56px}
+@media(min-width:1001px){.summary-sample-body{grid-template-columns:minmax(0,520px) minmax(0,460px);column-gap:64px;justify-content:start;align-items:start}.summary-sample-main{display:contents}.summary-sample-main>h3{grid-column:1/-1}.summary-sample-main>:not(h3){grid-column:1}.summary-sample-side{grid-column:2;grid-row:2/span 2}}
+.article-layout .article-style .summary-sample h3{max-width:34em;margin:0 0 14px;font-size:clamp(22px,1.9vw,26px);line-height:1.25}
+.article-layout .article-style .summary-sample h3 a{color:var(--res)}
+.article-layout .article-style .summary-sample .summary-cite{display:block;margin-top:4px;font:400 17px/1.4 var(--text);color:var(--soft)}
+.article-layout .article-style .summary-sample-label{margin:0 0 6px;font-weight:600;font-size:17px}
+.article-layout .article-style .summary-sample ul{margin:0;padding-inline-start:22px}
+.article-layout .article-style .summary-sample li{max-width:none;margin:0 0 10px;font-size:17px;line-height:1.5}
+.article-layout .article-style .summary-sample p{max-width:none}
+/* The takeaways keep the reading measure (DESIGN.md §7: under 80 characters a line). */
+.article-layout .article-style .summary-sample ul{max-width:none}
+.article-layout .article-style .summary-sample-main li{max-width:28em}
+.article-layout .article-style .summary-sample-ref{max-width:30em;font-size:16px;line-height:1.5;overflow-wrap:break-word}
+.article-layout .article-style .summary-sample-more{margin:18px 0 6px}
+.article-layout .article-style .summary-sample-note{margin:0;font-size:15px;color:var(--soft)}
+
 @media(min-width:901px){
-  .article-layout-wide .article-style .sm-layout{display:grid;grid-template-columns:minmax(0,620px) minmax(340px,1fr);grid-template-areas:"overview side" "join side";grid-template-rows:auto 1fr;column-gap:40px;align-items:start}
-  .sm-overview{grid-area:overview}.sm-join{grid-area:join}.sm-side{grid-area:side}
-  .article-layout .article-style .sm-overview>h2:first-child{margin-top:0}
+  .article-layout-wide .article-style .sm-layout{display:grid;grid-template-columns:minmax(0,620px) minmax(340px,1fr);grid-template-areas:"overview help" "side side";column-gap:40px;align-items:start}
+  .sm-overview{grid-area:overview}.sm-help{grid-area:help}.sm-side{grid-area:side}
+  .article-layout .article-style :is(.sm-overview>h2,.sm-join>h3):first-child{margin-top:0}
+  .article-layout-wide .article-style .sm-side{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:start;max-width:none;margin-top:28px}
+  .article-layout .article-style .sm-side .spoiler{margin:0}
 }
 @media(min-width:1001px){.article-layout-wide .article-style .sm-layout{column-gap:64px}}
 .article-layout .article-style .sm-side .spoiler{max-width:none}
@@ -768,7 +804,8 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
 /* Inline, not the icon font's inline-block, so the icon never wraps away from the last word of its link. */
 .sm-feedback .fa-external-link-alt{display:inline;margin-inline-start:4px;font-size:.72em}
 @media(max-width:900px){.article-layout .article-style .sm-side{margin-top:28px}}
-@media(max-width:760px){.article-layout .article-style .summary-hero{margin:28px 0 36px}.article-layout .article-style .summary-hero a{padding:20px 20px 30px}}
+.article-layout .article-style .sm-help .sm-feedback{max-width:none}
+@media(max-width:760px){.article-layout .article-style .summary-hero{margin:28px 0 0}.article-layout .article-style .summary-hero a{padding:20px 20px 28px}.summary-wall-bricks{gap:2px}.summary-wall-bricks span{flex-basis:12px;height:7px}.article-layout .article-style .summary-sample{margin:32px 0 40px;padding:22px 18px 24px}}
 /* A collection of summaries (layouts/_default/summaries.html): the header on the pale ground of the collection's
    area with its count; the filter and the routes to the other collection beside the list on a wide screen (on a phone the
    filter above the list and the routes after it); and each entry a

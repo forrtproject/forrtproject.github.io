@@ -1,7 +1,55 @@
-{{/* The summaries overview opens with its two collections as a hero of two large bricks, each in its area's colour
-     (DESIGN.md §6: a brick that stands for something with a colour of its own takes that colour) and led by its
-     count, set as large as on the collection pages and counted as doors/summary_entries lists them. */}}
+{{/* The summaries overview opens with its two collections as bricks in their areas' colours (DESIGN.md §6), each led
+     by its linked name and an action that carries its count, counted as doors/summary_entries lists them. Below them,
+     a wall with one brick per summary in the order of the collection, the DEI ones in their area's colour, shows that
+     the DEI collection is a part of the whole. Then one real summary, chosen by the start of its title in the page's
+     `sample_summary` (the first summary if none matches): its first takeaways, its reference and a link to the rest. */}}
+{{ $page := .Page }}
+{{ $all := partial "doors/summary_count" false }}{{ $dei := partial "doors/summary_count" true }}
+{{ $res := relref $page "/summaries/open-reproducible" }}
+<p class="summary-lead">Each summary gives a paper's main takeaways, its abstract and its reference, written by the FORRT community.</p>
 <ul class="summary-hero">
-  <li class="summary-hero-res"><a href="{{ relref .Page "/summaries/open-reproducible" }}"><span class="summary-hero-count">{{ partial "doors/summary_count" false }}</span><strong>Open and reproducible science summaries</strong><span class="summary-hero-text">Every summary, with its takeaways and reference</span></a></li>
-  <li class="summary-hero-jus"><a href="{{ relref .Page "/summaries/diversity-equity-inclusion" }}"><span class="summary-hero-count">{{ partial "doors/summary_count" true }}</span><strong>Diversity, equity and inclusion summaries</strong><span class="summary-hero-text">The subset on social justice in academia</span></a></li>
+  <li class="summary-hero-res"><a href="{{ $res }}"><strong>Open and reproducible science summaries</strong><span class="summary-hero-text">Every summary, whatever its topic</span><span class="summary-hero-go">Browse all {{ $all }}<span aria-hidden="true">→</span></span></a></li>
+  <li class="summary-hero-jus"><a href="{{ relref $page "/summaries/diversity-equity-inclusion" }}"><strong>Diversity, equity and inclusion summaries</strong><span class="summary-hero-text">The subset on social justice in academia</span><span class="summary-hero-go">Browse {{ $dei }} of the {{ $all }}<span aria-hidden="true">→</span></span></a></li>
 </ul>
+{{ $entries := slice }}{{ range hugo.Data.summaries }}{{ if .Title }}{{ $entries = $entries | append . }}{{ end }}{{ end }}
+<figure class="summary-wall">
+  {{ $n := 0 }}<div class="summary-wall-bricks" aria-hidden="true">{{ range $entries }}{{ if in .Title "⌺" }}<span class="is-dei" style="--i:{{ $n }}"></span>{{ $n = add $n 1 }}{{ else }}<span></span>{{ end }}{{ end }}</div>
+  <figcaption>One brick for each of the {{ $all }} summaries, in the order the collection lists them. The {{ $dei }} in purple are also in the diversity, equity and inclusion collection.</figcaption>
+</figure>
+{{ $pick := index $entries 0 }}
+{{ with $page.Params.sample_summary }}{{ $start := lower . }}{{ range $entries }}{{ if hasPrefix (lower .Title) $start }}{{ $pick = . }}{{ end }}{{ end }}{{ end }}
+{{ with $pick }}
+{{ $t := partial "doors/summary_title" .Title }}
+{{ $href := printf "%s#%s" $res .Id }}
+{{ $shown := first 3 .Main_Takeaways }}{{ $more := sub (len .Main_Takeaways) (len $shown) }}
+<script>
+  (function() {
+    var wall = document.querySelector('.summary-wall');
+    if (!wall || !('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    wall.classList.add('is-waiting');
+    var seen = new IntersectionObserver(function(entries) {
+      if (!entries[0].isIntersecting) return;
+      seen.disconnect();
+      setTimeout(function() { wall.classList.add('is-turning'); wall.classList.remove('is-waiting'); }, 400);
+    }, {threshold: 0.9});
+    seen.observe(wall);
+  })();
+</script>
+<section class="summary-sample" aria-labelledby="summary-sample">
+  <h2 id="summary-sample">What a summary looks like</h2>
+  <div class="summary-sample-body">
+    <div class="summary-sample-main">
+      <h3><a href="{{ $href }}">{{ $t.title | markdownify }}</a>{{ with $t.cite }} <span class="summary-cite">{{ . }}</span>{{ end }}</h3>
+      <p class="summary-sample-label">Main takeaways</p>
+      <ul>{{ range $shown }}<li>{{ . }}</li>{{ end }}</ul>
+    </div>
+    <div class="summary-sample-side">
+      {{ with .Reference }}<p class="summary-sample-label">Reference</p>
+      {{/* A page range after a comma, such as ", 1359-1366", keeps together with a non-breaking hyphen; addresses are left alone. */}}
+      <p class="summary-sample-ref">{{ replaceRE `(https?://[^\s\p{Z}<]*[^\s\p{Z}<.,;)])` `<a href="$1">$1</a>` (replaceRE `(, \d+)-(\d)` "$1‑$2" . | htmlEscape) | safeHTML }}</p>{{ end }}
+      <p class="summary-sample-more"><a class="btn btn-primary" href="{{ $href }}">Read the whole summary</a></p>
+      {{ if gt $more 0 }}<p class="summary-sample-note">{{ $more }} more {{ cond (eq $more 1) "takeaway" "takeaways" }}{{ with .Abstract }} and the abstract{{ end }}</p>{{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
