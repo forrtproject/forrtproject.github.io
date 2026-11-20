@@ -25,15 +25,40 @@
 
   {{/* Filled by the script when a tag is selected; stays empty otherwise. */}}
   <noscript><p class="tags-note">Listing the pages for a tag needs JavaScript. The <a href="{{ "resources/" | relLangURL }}">resources directory</a> lists every resource without it.</p></noscript>
+  {{/* On a wide screen the list and, beside it, the tags that share its pages; on a phone those tags come after the
+       list, folded under one line, so the list follows the filters. A tag on more than thirty pages also gets a search over
+       its titles, and its pages are grouped under their type (static/js/tag-browser.js). */}}
   <div id="tag-results" hidden>
-    <h2 id="tag-results-heading"></h2>
-    <p class="tag-results-switch"><a href="{{ "tags/" | relURL }}">Choose another tag</a></p>
-    <ul id="tag-results-list" class="plain-list"></ul>
-    <p class="tag-results-all"><a href="{{ "tags/" | relURL }}">Choose another tag</a></p>
+    <div class="tag-results-head">
+      <h2 id="tag-results-heading"></h2>
+      <div class="tag-search" hidden>
+        <label for="tag-title-filter">Find a title</label>
+        <input type="search" id="tag-title-filter" autocomplete="off">
+        <p class="tag-search-count" aria-live="polite"></p>
+      </div>
+      <div class="tag-types" role="group" aria-label="Show by type" hidden></div>
+    </div>
+    <aside class="tag-related" aria-labelledby="tag-related-heading" hidden>
+      <h2 id="tag-related-heading">Often tagged with it</h2>
+      <p class="tag-related-key" aria-hidden="true">Pages in common</p>
+      <ul></ul>
+    </aside>
+    <div class="tag-results-body">
+      <div id="tag-results-list"></div>
+      <details class="tag-related-phone" hidden><summary><span class="tag-related-label">Often tagged with it</span> <span class="tag-related-some"></span></summary><p class="tag-related-key" aria-hidden="true">Pages in common</p><ul></ul></details>
+      <p class="tag-results-all"><a href="{{ "tags/" | relURL }}">Choose another tag</a></p>
+    </div>
   </div>
+  {{/* The clusters' names by their number on the clusters wheel, for the marks on each resource (list.json has the numbers). */}}
+  {{ $clusterNum := partialCached "doors/cluster_numbers.html" "n" }}
+  {{ $names := dict }}
+  {{/* Every cluster on the wheel by its own name, then the shorter labels the resources directory uses where it has one. */}}
+  {{ with hugo.Data.clusters_v4 }}{{ range .clusters }}{{ $names = merge $names (dict (string (int .number)) .name) }}{{ end }}{{ end }}
+  {{ range $label := (site.GetPage "/resources").Params.clusters }}{{ with index $clusterNum (lower $label | urlize) }}{{ $names = merge $names (dict (string .) $label) }}{{ end }}{{ end }}
+  <script type="application/json" id="tag-cluster-names">{{ $names | jsonify | safeJS }}</script>
 
-  {{/* The twelve most used as bricks, then the common tags A to Z under letter headings. No row of letters to jump
-       by: many letters hold two or three tags, and Find a tag reaches any of them. */}}
+  {{/* The twelve most used as bricks (six on a phone), then the common tags A to Z as one index under letter
+       headings, with a row of letters to jump by. */}}
   {{ $sorted := sort $rows "tag" }}
   {{ $groups := slice }}{{ $current := "" }}{{ $items := slice }}
   {{ range $sorted }}
@@ -43,21 +68,27 @@
     {{ $items = $items | append . }}
   {{ end }}
   {{ if $items }}{{ $groups = $groups | append (dict "letter" $current "rows" $items) }}{{ end }}
+  {{/* Each count also as a bar, its length from the square root of the count's share of the most used tag's, so the
+       large topics stand out while scanning and the small ones still show as bars rather than dots. */}}
+  {{ $most := (index $rows 0).count }}
   <div id="tag-cloud">
-    {{/* The twelve most used tags are the page's way in: bricks in the brick colours, which carry no meaning
+    {{/* The most used tags are the page's way in: bricks in the brick colours, which carry no meaning
          (DESIGN.md §6), each with its count in words. */}}
     <section class="tag-top brick-row">
       <h2>Most used</h2>
       <ul class="action-cards">{{ range first 12 $rows }}<li><a href="{{ printf "tags/?tag=%s" (.tag | urlquery) | relURL }}"><strong>{{ .tag }}</strong><span>{{ .count }} pages</span></a></li>{{ end }}</ul>
     </section>
-    <section class="tag-all">
-      <h2>All common tags, A to Z</h2>
+    <section class="tag-all" aria-labelledby="tag-all-heading">
+      <h2 id="tag-all-heading">All common tags, A to Z</h2>
+      <nav class="tag-az" aria-label="Tags by first letter">{{ range $groups }}<a href="#tags-{{ .letter | urlize | default "other" }}">{{ .letter }}</a>{{ end }}</nav>
+      <div class="tag-index">
       {{ range $groups }}
       <div class="tag-group" id="tags-{{ .letter | urlize | default "other" }}">
         <h3>{{ .letter }}</h3>
-        <ul>{{ range .rows }}<li><a href="{{ printf "tags/?tag=%s" (.tag | urlquery) | relURL }}"><span class="tag-name">{{ .tag }}</span> <span class="tag-count">{{ .count }}</span></a></li>{{ end }}</ul>
+        <ul>{{ range .rows }}<li><a href="{{ printf "tags/?tag=%s" (.tag | urlquery) | relURL }}"><span class="tag-name">{{ .tag }}</span> <span class="tag-count" style="--r:{{ printf "%.3f" (math.Sqrt (div (float .count) $most)) }}">{{ .count }}</span></a></li>{{ end }}</ul>
       </div>
       {{ end }}
+      </div>
     </section>
   </div>
 </div>
