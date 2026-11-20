@@ -1,0 +1,84 @@
+{{/* Questions to start a collection from, each leading to one summary that answers it, for readers who come to
+     browse rather than to look up a paper. They are the collection page's front matter "questions" (in
+     content/summaries/, written by hand: the summaries themselves are generated into data/summaries.json). Each item:
+       question  FORRT's prompt, in plain words and short (about three lines of a card), no wider than its answer
+                 supports: name the study's sample, place or period where the answer is about one study.
+       summary   the summary's anchor, its Id in data/summaries.json (the #h.… in a link to it).
+       takeaway  which takeaway answers the question (1 for the first, the default); the card shows its first
+                 sentence whole.
+       answer    instead, words quoted exactly from one of the summary's takeaways; a quote may start mid-sentence
+                 (CSS capitalises its first letter).
+       topic     a broad topic; questions shown together come from different topics.
+     A question whose summary is not in this collection, or whose takeaway it lacks, is left out with a warning; an
+     answer not found in the summary's takeaways warns too. Without questions the partial renders nothing.
+     Every question is in the page; CSS shows the first three on a wide screen and the first one on a phone. The
+     script after the list shuffles them on each load, so that each run of three draws on different topics and
+     summaries where it can; without it the front matter's order stands. It also shows a button beside the heading
+     ("Another question" on a phone, "More questions" on a wide screen) that moves the shown questions to the end of
+     the list.
+     Each question is a choice to pick, so it is a card (DESIGN.md): the question in display type, the answer, the
+     paper's citation. The link opens the summary in place (site.js opens the entry a link points to). Input: dict
+     "page" and "dei". */}}
+{{ $dei := .dei }}
+{{ $questions := .page.Params.questions }}
+{{ $entries := slice }}
+{{ range partialCached "doors/summary_chapters" $dei $dei }}{{ $entries = $entries | append .entries }}{{ end }}
+{{ $found := slice }}
+{{ range $questions }}
+  {{ $q := . }}{{ $match := false }}
+  {{ range $entries }}{{ if eq .s.Id $q.summary }}{{ $match = . }}{{ end }}{{ end }}
+  {{ $n := int ($q.takeaway | default 0) }}
+  {{ if not $match }}{{ warnf "%s: questions: %q is not a summary in this collection" $.page.File.Path $q.summary }}
+  {{ else if or (lt $n 0) (gt $n (len $match.s.Main_Takeaways)) }}{{ warnf "%s: questions: %q has no takeaway %v; the question is left out" $.page.File.Path $q.summary $n }}
+  {{ else }}
+    {{/* An answer is the summary's own words: compared as summary_gist cleans a takeaway (spaces folded,
+         entities decoded) and in lower case, so that a quote may start mid-sentence with a capital. */}}
+    {{ with $q.answer }}
+      {{ $a := lower (htmlUnescape (replaceRE `[\s\p{Z}]+` " " .)) }}{{ $quoted := false }}
+      {{ range $match.s.Main_Takeaways }}{{ if in (lower (htmlUnescape (replaceRE `[\s\p{Z}]+` " " .))) $a }}{{ $quoted = true }}{{ end }}{{ end }}
+      {{ if not $quoted }}{{ warnf "%s: questions: the answer to %q is not in the takeaways of %q" $.page.File.Path $q.question $q.summary }}{{ end }}
+    {{ end }}
+    {{ $found = $found | append (dict "question" $q.question "topic" ($q.topic | default "") "t" $match.t "id" $match.s.Id "answer" ($q.answer | default (partial "doors/summary_gist" (dict "s" $match.s "n" $n)).sentence)) }}
+  {{ end }}
+{{ end }}
+{{ with $found }}
+<section class="summary-questions" aria-labelledby="summary-questions-head">
+  <div class="summary-questions-head">
+    <h2 id="summary-questions-head">Start with a question</h2>
+    <button type="button" class="summary-questions-next" hidden><span aria-hidden="true">↻</span> <span class="summary-questions-one">Another question</span><span class="summary-questions-more">More questions</span></button>
+  </div>
+  <ul>
+    {{ range . }}
+    {{/* The question, the answer (the first sentence of the chosen takeaway, doors/summary_gist, or the given
+         answer), and at the foot the paper's citation with a cue that the card opens the summary (the card's link
+         already says where it goes, so screen readers skip the cue). */}}
+    <li data-topic="{{ .topic }}"><a href="#{{ .id }}"><span class="summary-question">{{ .question }}</span>{{ with .answer }}<span class="summary-question-gist">{{ . }}</span>{{ end }}<span class="summary-question-foot">{{ with .t.cite }}<span class="summary-question-cite">{{ . }}</span>{{ end }}<span class="summary-question-go" aria-hidden="true">Read the summary →</span></span></a></li>
+    {{ end }}
+  </ul>
+  <script>
+  (() => {
+    const section = document.currentScript.closest('.summary-questions');
+    const list = section.querySelector('ul');
+    const items = [...list.children];
+    for (let i = items.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [items[i], items[j]] = [items[j], items[i]];
+    }
+    // Each question takes a topic and a summary that the two before it do not have, where one is left, so that any
+    // three in a row differ.
+    const order = [];
+    const key = (item) => [item.dataset.topic, item.querySelector('a').hash];
+    while (items.length) {
+      const recent = order.slice(-2).flatMap(key);
+      const k = items.findIndex((item) => !key(item).some((value) => recent.includes(value)));
+      order.push(items.splice(Math.max(k, 0), 1)[0]);
+    }
+    list.append(...order);
+    const next = section.querySelector('.summary-questions-next');
+    next.hidden = false;
+    const phone = matchMedia('(max-width: 760px)');
+    next.addEventListener('click', () => list.append(...[...list.children].slice(0, phone.matches ? 1 : 3)));
+  })();
+  </script>
+</section>
+{{ end }}
