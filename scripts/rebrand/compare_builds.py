@@ -111,6 +111,38 @@ def _equivalent_social_images(before, after):
     return before, after
 
 
+# A space just inside an opening bracket or quote, as in "( https://…": Markdown links left one there until #1243.
+_OPENER_SPACE = re.compile(r"""([(\[“«]|(?:^|(?<=\s))")\s+""")
+
+
+def _same_description(old, new):
+    """True when two descriptions differ only by spaces just inside an opening bracket or quote. Losing such a space
+    can move the cut of a long description ("…") on by a word, so the cut text may then end one or two words later."""
+    removed = len(_OPENER_SPACE.findall(old)) + len(_OPENER_SPACE.findall(new))
+    old, new = _OPENER_SPACE.sub(r"\1", old), _OPENER_SPACE.sub(r"\1", new)
+    if old == new:
+        return True
+    # A later cut is only explained by a removed space; without one, any difference is a real edit.
+    if not removed:
+        return False
+    stems = [text[:-1].rstrip() if text.endswith("…") else text for text in (old, new)]
+    short = 0 if len(stems[0]) < len(stems[1]) else 1
+    shorter, longer = stems[short], stems[1 - short]
+    # Only a cut description may end earlier than the other, and only by a word or two.
+    return (old, new)[short].endswith("…") and longer.startswith(shorter) and len(longer[len(shorter):].split()) <= 2
+
+
+def _equivalent_descriptions(before, after):
+    """Treat a description as unchanged when it only lost a space inside a bracket or quote (_same_description).
+    Every other tag, and any description that changed otherwise, still compares exactly."""
+    for key in ("description", "og:description", "twitter:description"):
+        old = [tag for tag in before if tag.partition("=")[0] == key]
+        new = [tag for tag in after if tag.partition("=")[0] == key]
+        if len(old) == 1 and len(new) == 1 and old != new and _same_description(old[0][len(key) + 1:], new[0][len(key) + 1:]):
+            after = [old[0] if tag == new[0] else tag for tag in after]
+    return before, after
+
+
 def compare_heads(reference, candidate, allowed=frozenset()):
     """Return {path: (only_before, only_after)} for pages whose SEO tags differ."""
     changes = {}
@@ -121,6 +153,7 @@ def compare_heads(reference, candidate, allowed=frozenset()):
         before = _without_edit_date(tags)
         after = _without_edit_date(candidate[path])
         before, after = _equivalent_social_images(before, after)
+        before, after = _equivalent_descriptions(before, after)
         if before != after:
             before, after = set(before), set(after)
             changes[path] = (sorted(before - after), sorted(after - before))

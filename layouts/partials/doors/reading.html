@@ -14,13 +14,39 @@
   {{ end }}
 {{ end }}
 {{/* A news post's one call to action, a paragraph that is nothing but a link ("Try the chatbot"), is a brick; only
-     the first, so the post keeps one main action (DESIGN.md §3). A newsletter's brick takes the colour the news list
-     gives that issue (doors/post_panels) and says what it does rather than repeating the title's month. */}}
+     the first, so the post keeps one main action (DESIGN.md §3). A newsletter's says what it does rather than repeating
+     the title's month, and is a white button inside the issue's own brick (doors/newsletter_post). */}}
 {{ if and (eq .Type "post") .IsPage }}
   {{ $link := `<p>\s*<a href="([^"]+)"([^>]*)>([^<]+)</a>\s*</p>` }}
   {{ $tone := index (partialCached "doors/post_panels" site "post-panels") .RelPermalink | default 1 }}
   {{ $label := cond (in (.Params.categories | default slice) "Newsletter") "Read the full issue" "$3" }}
   {{ $body = replaceRE $link (printf `<p class="post-action"><a class="post-brick ac-panel-%v" href="$1"$2>%s</a></p>` $tone $label) $body 1 | safeHTML }}
+{{ end }}
+{{/* In an article, a paragraph of nothing but pictures is a figure: as wide as the text, or wider on a wide screen,
+     a pair side by side at one height (article.css), and each picture wider than its share of the text links to its
+     full size. A picture the author already linked is left alone, because it sits inside that link, not alone in the
+     paragraph. */}}
+{{ if and .IsPage (in (slice "post" "educators-corner" "pedagogies") .Type) }}
+  {{ range findRE `<p>\s*(?:<img [^>]*>\s*)+</p>` $body }}
+    {{ $figure := . }}
+    {{ $column := div 512 (len (findRE `<img ` .)) }}
+    {{ range findRESubmatch `<img src="(/[^"]+)"[^>]*? width="(\d+)" height="(\d+)"[^>]*>` . }}
+      {{ $img := index . 0 }}
+      {{ $link := cond (gt (int (index . 2)) $column) (printf `<a class="img-full" href="%s">%s<span class="sr-only"> (full size)</span></a>` (index . 1) $img) $img }}
+      {{ $figure = replace $figure $img (printf `<span class="img-pair-item" style="--w:%s;--h:%s">%s</span>` (index . 2) (index . 3) $link) }}
+    {{ end }}
+    {{ $body = replace $body . (replace $figure "<p>" `<p class="img-row">`) | safeHTML }}
+  {{ end }}
+  {{/* An Educators' Corner essay that opens with a short paragraph, one or two sentences, sets it a step larger as its
+       lead (article.css); a long opening paragraph stays body text. */}}
+  {{ if eq .Type "educators-corner" }}
+    {{ with findRESubmatch `^\s*(?:<br>\s*)*<p>([\s\S]*?)</p>` $body 1 }}
+      {{ if le (len (plainify (index (index . 0) 1))) 200 }}{{ $body = replaceRE `<p>` `<p class="lead">` $body 1 | safeHTML }}{{ end }}
+    {{ end }}
+  {{ end }}
+  {{/* An editor's note set wholly in emphasis read as one bold block: its label stays bold, the note itself is
+       body text (Educators' Corner 001, 007, 012). */}}
+  {{ $body = replaceRE `<p>\s*<em>Editor(?:&rsquo;|’|')s note(?::\s*|</em>:\s*)([\s\S]*?)(?:</em>)?\s*</p>` `<p class="editors-note"><strong>Editor’s note:</strong> $1</p>` $body | safeHTML }}
 {{ end }}
 {{ $contents := cond (findRE `(?i)<h1\b` .Content 1 | len | lt 0) slice (findRE `<li` .TableOfContents 1) }}
 {{ $written := findRESubmatch `<h2[^>]*\bid="?([^"> ]+)"?[^>]*>([\s\S]*?)</h2>` $body }}
@@ -33,6 +59,10 @@
 {{ $hasCallouts := and (not $wide) (strings.Contains $body `<aside class="callout`) }}
 {{ $card := "" }}
 {{ if $hasCard }}{{ $card = partial "doors/reading_card" (dict "page" . "hasDates" $hasDates "headings" $headings "contents" $contents "written" $written) }}{{ end }}
+{{/* A newsletter post is the issue's own brick, with the issues around it (doors/newsletter_post). */}}
+{{ if and .IsPage (eq .Type "post") (in (.Params.categories | default slice) "Newsletter") }}
+{{ partial "doors/newsletter_post" (dict "page" . "body" $body) }}
+{{ else }}
 <div class="wrap">
   <div class="article-layout article-type-{{ .Type | urlize }}{{ if $hasCallouts }} article-layout-callouts{{ else if not $hasCard }} article-layout-single{{ end }}{{ if $wide }} article-layout-wide{{ end }}">
     {{/* A page whose picture is the thing itself opens with it beside the heading (doors/page_hero). */}}
@@ -65,3 +95,4 @@
   </div>
   {{ partial "doors/read_next" . }}
 </div>
+{{ end }}

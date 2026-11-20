@@ -9,7 +9,7 @@
 {{/* Authors with a profile page, photo first; the rest by name. */}}
 {{ $authors := slice }}
 {{ if $article }}{{ range $p.Params.authors }}
-  {{ $profile := site.GetPage (printf "/authors/%s" (urlize .)) }}
+  {{ $profile := partialCached "doors/author_profile" . . }}
   {{ $authors = $authors | append (dict "name" . "profile" $profile) }}
 {{ end }}{{ end }}
 {{/* A newsletter's archive, which neither the breadcrumb nor the cards at the end link. */}}
@@ -41,7 +41,8 @@
     <li{{ if not $adds }} class="card-author-plain"{{ end }}>
       {{ with .profile }}
         {{ $avatar := (.Resources.ByType "image").GetMatch "*avatar*" }}
-        {{ with $avatar }}<img src="{{ (.Fill "112x112 Center webp q80").RelPermalink }}" width="56" height="56" alt="">{{ end }}
+        {{/* On an education article a lone author's portrait is large, as the article's opening picture (article.css). */}}
+        {{ with $avatar }}{{ if and (eq (len $authors) 1) (in (slice "educators-corner" "pedagogies") $p.Type) }}<img class="card-author-portrait" src="{{ (.Fill "368x440 Center webp q80").RelPermalink }}" width="184" height="220" alt="">{{ else }}<img src="{{ (.Fill "112x112 Center webp q80").RelPermalink }}" width="56" height="56" alt="">{{ end }}{{ end }}
         <div>
           <a class="card-author-name" href="{{ .RelPermalink }}">{{ .Title }}</a>
           {{ with .Params.role }}<p class="card-author-role">{{ . | markdownify | emojify }}</p>{{ end }}
