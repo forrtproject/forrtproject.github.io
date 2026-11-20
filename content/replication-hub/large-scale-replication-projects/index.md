@@ -7,14 +7,14 @@ date: 2023-09-09
 Here you can find a list of completed and ongoing projects that summarize replication efforts throughout sciences and humanities.
 
 <table>
+  <thead>
   <tr>
-   <td><strong>Project Name</strong>
-   </td>
-   <td><strong>Topic</strong>
-   </td>
-   <td><strong>Link</strong>
-   </td>
+   <th>Project Name</th>
+   <th>Topic</th>
+   <th>Source</th>
   </tr>
+  </thead>
+  <tbody>
   <tr>
    <td>Reproducibility Project: Psychology
    </td>
@@ -140,7 +140,7 @@ Here you can find a list of completed and ongoing projects that summarize replic
    </td>
    <td>Philosophy
    </td>
-   <td><span style="text-decoration:underline;">h<a href="https://doi.org/10.1007/s13164-018-0400-9">ttps://doi.org/10.1007/s13164-018-0400-9</a> </span>
+   <td><a href="https://doi.org/10.1007/s13164-018-0400-9">https://doi.org/10.1007/s13164-018-0400-9</a>
    </td>
   </tr>
   <tr>
@@ -295,5 +295,6 @@ Here you can find a list of completed and ongoing projects that summarize replic
    <td><a href="https://doi.org/10.1016/j.expneurol.2011.06.017">https://doi.org/10.1016/j.expneurol.2011.06.017</a>
    </td>
   </tr>
+  </tbody>
 </table>
 

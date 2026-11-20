@@ -1,0 +1,60 @@
+{{- define "main" -}}
+{{/* FLoRA (/replication-hub/flora/): gives the generated page (content/replication-hub/flora/_index.md) a Research-area
+     identity matching /replication-hub/ and replaces its date-only side card (issue #1194) with a useful companion
+     panel holding FLoRA's tools, quick distinction and jump links. */}}
+{{/* Keep Hugo's /replication-hub/flora/page/1/ redirect stub matching the baseline section list. */}}
+{{ $_ := .Paginator }}
+{{ $body := replace (partial "doors/content" .Content) "<p><strong>How to cite:</strong>" "<p id=\"how-to-cite\"><strong>How to cite:</strong>" | safeHTML }}
+<div class="wrap rh-subpage rh-flora">
+  <header class="page-heading rh-head">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ "" | relLangURL }}">Home</a> <span aria-hidden="true">/</span> <a href="{{ relref . "/replication-hub" }}">Replication Hub</a> <span aria-hidden="true">/</span> <span aria-current="page">FLoRA</span></nav>
+    <div class="heading-grid">
+      <div>
+        <h1>{{ .Title }}</h1>
+        <p class="lede">FORRT's open, crowd-sourced library tracking replication and computational reproduction attempts across the sciences and humanities.</p>
+        {{ partial "doors/page_actions" . }}
+      </div>
+      {{ with resources.Get "images/doors/area-research.webp" }}
+      {{ $w := .Resize "440x webp q80" }}
+      <figure class="heading-plate heading-plate-research" aria-hidden="true"><img src="{{ $w.RelPermalink }}" width="{{ $w.Width }}" height="{{ $w.Height }}" alt=""></figure>
+      {{ end }}
+    </div>
+  </header>
+
+  <div class="rh-two-col">
+    <article class="reading rh-main">
+      <div class="article-style">
+        {{ $body }}
+      </div>
+    </article>
+
+    <aside class="rh-panel" aria-label="FLoRA at a glance">
+      <h2>FLoRA at a glance</h2>
+      <dl class="rh-glance">
+        <div>
+          <dt>Replication</dt>
+          <dd>New data collected or used to test whether a prior study's findings hold.</dd>
+        </div>
+        <div>
+          <dt>Reproduction</dt>
+          <dd>Original data and methods re-analysed to verify reported results.</dd>
+        </div>
+      </dl>
+
+      <h3>More in the Replication Hub</h3>
+      <ul class="rh-panel-links" role="list">
+        <li><a href="{{ "/annotator/" | relURL }}">FLoRA Annotator</a> — check a reference list</li>
+        <li><a href="{{ relref . "/replication-hub/large-scale-replication-projects" }}">Large-scale replication projects</a></li>
+      </ul>
+
+      <p class="rh-panel-jumps">
+        <a href="#structure-of-flora">Structure of FLoRA</a>
+        <a href="#how-to-cite">How to cite</a>
+      </p>
+      {{ if not .Lastmod.IsZero }}
+      <p class="rh-panel-meta">Updated {{ .Lastmod.Format "2 January 2006" }}</p>
+      {{ end }}
+    </aside>
+  </div>
+</div>
+{{- end -}}
