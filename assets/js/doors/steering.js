@@ -1,7 +1,6 @@
 /* The steering committee page is generated with click-only cards and always-present dialogs, so this
-   gives them what keyboards, screen readers and the Doors layout need. scripts/generate_sc_profiles.py is the source. */
+   gives them what keyboards and screen readers need. scripts/generate_sc_profiles.py is the source. */
 // Keep each team's name with its people, so that small teams can sit side by side.
-// Sections without a team title card (such as Strategic Facilitation & Integration) group their cards together too.
 document.querySelectorAll('.sc-grid').forEach((grid) => {
   let team = null;
   [...grid.children].forEach((tile) => {
@@ -9,48 +8,21 @@ document.querySelectorAll('.sc-grid').forEach((grid) => {
       team = document.createElement('div');
       team.className = 'sc-team';
       tile.before(team);
-    } else if (!team && tile.classList.contains('sc-card')) {
-      team = document.createElement('div');
-      team.className = 'sc-team sc-team-plain';
-      tile.before(team);
     }
     if (team) team.append(tile);
   });
   grid.querySelectorAll('.sc-team').forEach((group) => {
-    const count = group.querySelectorAll('.sc-card').length;
-    group.style.setProperty('--sc-members', count);
-    // Group the member cards inside a clean inner grid so team headers span cleanly above them.
-    const members = document.createElement('div');
-    members.className = 'sc-members';
-    group.querySelectorAll(':scope > .sc-card').forEach((card) => members.append(card));
-    group.append(members);
+    group.style.setProperty('--sc-members', group.querySelectorAll('.sc-card').length);
   });
 });
 
 // The four Strategic Focus Area teams are FORRT's four areas, so they, and only they, take the area
-// colours (DESIGN.md §6); every other team stays neutral. Matched by the team's name in the sheet.
+// colours (DESIGN.md §6); every other team is neutral. Matched by the team's name in the sheet.
 const areas = [[/communit/i, 'com'], [/justice|deia/i, 'jus'], [/research|meta-?science/i, 'res'], [/educat|pedagog/i, 'edu']];
 document.querySelectorAll('#strategic .sc-title-card').forEach((card) => {
   const name = card.querySelector('.sc-title-text')?.textContent || '';
   const area = areas.find(([pattern]) => pattern.test(name));
-  if (area) {
-    card.dataset.area = area[1];
-    const team = card.closest('.sc-team');
-    if (team) team.dataset.area = area[1];
-  }
-});
-
-// Add member counts to the section jump bar so visitors can see the shape of governance at a glance.
-document.querySelectorAll('.sc-nav a[href^="#"]').forEach((link) => {
-  const section = document.querySelector(link.getAttribute('href'));
-  if (!section) return;
-  const count = section.querySelectorAll('.sc-card').length;
-  if (count) {
-    const badge = document.createElement('span');
-    badge.className = 'sc-nav-count';
-    badge.textContent = `(${count})`;
-    link.append(' ', badge);
-  }
+  if (area) card.dataset.area = area[1];
 });
 
 let trigger = null;
@@ -91,6 +63,7 @@ document.querySelectorAll('.sc-card[onclick]').forEach((card) => {
 const observer = new MutationObserver(() => {
   const open = backdrops.find((backdrop) => backdrop.classList.contains('active'));
   if (open) {
+    // The dialog can't take focus until its fade-in has made it visible.
     if (!open.contains(document.activeElement)) setTimeout(() => open.querySelector('.sc-close-btn')?.focus(), 60);
   } else if (trigger) {
     trigger.focus();

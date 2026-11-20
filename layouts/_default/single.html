@@ -3,20 +3,16 @@
      something to put in it. */}}
 {{- define "main" -}}
 {{ if eq .Path "/about/steering-committee" }}
-{{/* Generated with its own stylesheet, heading and Google Fonts link; scripts/generate_sc_profiles.py is the source.
-     Doors replaces the legacy stylesheet so portraits, roles, section headings and modals follow DESIGN.md. */}}
+{{/* Generated with its own stylesheet, heading and Google Fonts link; scripts/generate_sc_profiles.py is the source. */}}
 <div class="wrap sc-page">
   <header class="article-head">
     {{ partial "doors/crumbs" (dict "page" .) }}
     <h1>{{ .Title }}</h1>
-    <p class="standfirst">The directors, stewards and advisors guiding FORRT's four areas, operations and governance. Select any member to read their profile.</p>
   </header>
   {{ $body := partial "doors/content" .Content }}
   {{ $body = replaceRE `<link href="https://fonts\.googleapis[^>]*>` "" $body }}
-  {{ $body = replaceRE `<link rel="stylesheet" href="/css/steering-committee\.css">` "" $body }}
   {{ $body = replaceRE `(?s)<h2 class="sc-page-title">.*?</h2>` "" $body }}
-  {{/* Each section's title heads its part of the page, without the small legacy icon, so Newsreader H2s lead cleanly. */}}
-  {{ $body = replaceRE `(?s)<div class="sc-section-title">\s*<svg[\s\S]*?</svg>\s*<span>(.*?)</span>\s*</div>` `<h2 class="sc-section-title">$1</h2>` $body }}
+  {{/* Each section's title heads its part of the page, so the outline is sections, teams, people, with or without JavaScript. */}}
   {{ $body = replaceRE `(?s)<div class="sc-section-title">(.*?)</div>` `<h2 class="sc-section-title">$1</h2>` $body }}
   {{ replaceRE `(</?)main>` "${1}div>" $body | safeHTML }}
 </div>
