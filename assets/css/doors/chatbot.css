@@ -268,7 +268,8 @@
 }
 
 .just-os-msg.bot:hover .just-os-copy-btn,
-.just-os-msg.bot:focus-within .just-os-copy-btn {
+.just-os-msg.bot:focus-within .just-os-copy-btn,
+.just-os-copy-btn.is-copied {
   opacity: 1;
 }
 

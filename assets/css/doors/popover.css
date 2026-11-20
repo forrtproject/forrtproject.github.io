@@ -5,6 +5,8 @@
 .doors-popover-close:hover,.doors-popover-close:focus{color:var(--ink)}
 .popover-actions{display:flex;flex-wrap:wrap;gap:16px;margin-top:10px;font-size:.9rem}
 .popover-actions a,.popover-actions button{background:none;border:0;padding:0;color:var(--link);text-decoration:underline;font:inherit;cursor:pointer}
+/* "Copied" is a state, not a link, and stays where "Copy reference" began (references.js). */
+.popover-actions button.is-copied{text-decoration:none;text-align:start;color:var(--ink)}
 .doors-popover :is(em,i){font-style:italic!important;font-weight:400}
 @keyframes popover-in{from{opacity:0}to{opacity:1}}
 @media(max-width:599px){.doors-popover{width:calc(100vw - 32px)}}

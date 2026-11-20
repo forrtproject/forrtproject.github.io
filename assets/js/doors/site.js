@@ -2,7 +2,7 @@
    Closing rules follow the Doors mock: Escape, a click outside and a second click all close,
    and an opened menu is next in the Tab order because it follows its button in the page. */
 import './citations.js';
-import './references.js';
+import { copyWithFeedback } from './references.js';
 import './glossary.js';
 
 const toggle = document.querySelector('.menu-toggle');
@@ -212,17 +212,18 @@ document.querySelectorAll('.newsletter-form').forEach((form) => {
   });
 });
 
-// An article's "Copy article link" button.
+// The copy buttons of the scripts in static/js (the chat, cluster and discipline pages) share the feedback of the
+// site's own (references.js).
+window.forrtCopy = copyWithFeedback;
+
+// An article's "Copy article link" button. The button itself says when the link is copied; the line beside it
+// explains what to do if copying fails.
 document.querySelectorAll('[data-copy-link]').forEach((button) => {
   const status = button.parentElement.querySelector('[role=status]');
-  button.addEventListener('click', async () => {
-    try {
-      await navigator.clipboard.writeText(button.dataset.copyLink);
-      status.textContent = 'Link copied.';
-    } catch {
-      status.textContent = 'Copy the address from your browser to share this page.';
-    }
-  });
+  button.addEventListener('click', () => copyWithFeedback(button, button.dataset.copyLink, {
+    said: 'Link copied.',
+    onFail: () => { status.textContent = 'Copy the address from your browser to share this page.'; },
+  }));
 });
 
 // Code blocks, on the pages that load Highlight.js and Mermaid (site_head.html decides).
@@ -780,12 +781,27 @@ if (listFilter) {
       button.className = `outcome-tile status-${key}`;
       button.dataset.status = key;
       button.setAttribute('aria-pressed', 'false');
-      button.innerHTML = `<span class="outcome-many">${many}</span> <span class="outcome-word">${word}</span><span class="outcome-bricks" aria-hidden="true">${'<i></i>'.repeat(many)}</span>`;
+      const bricks = Array.from({length: many}, (_, n) => `<i style="--n:${n}"></i>`).join('');
+      button.innerHTML = `<span class="outcome-many">${many}</span> <span class="outcome-word">${word}</span><span class="outcome-bricks" aria-hidden="true">${bricks}</span>`;
       button.addEventListener('click', () => (status === key ? choose('', '') : choose(key, word)));
       row.append(button);
     });
     board.append(title, hint, row);
     listFilter.before(board);
+    // The first time the reversed tile's bricks (or the last tile's) are wholly in view, and a moment later, every
+    // tile lays its bricks at the same pace, so the rare outcomes finish at once and the common ones keep going for
+    // about 1.4 s (article.css). It runs once.
+    const watched = (row.querySelector('.status-reversed') || row.lastElementChild)?.querySelector('.outcome-bricks');
+    if ('IntersectionObserver' in window && watched) {
+      board.classList.add('is-previewing');
+      const seen = new IntersectionObserver(([entry]) => {
+        if (!entry.isIntersecting) return;
+        seen.disconnect();
+        setTimeout(() => board.classList.add('is-seen'), 350);
+        setTimeout(() => board.classList.remove('is-previewing', 'is-seen'), 2400);
+      }, {threshold: 0.95});
+      seen.observe(watched);
+    }
     searchRow.append(clear);
     // Each discipline opens with its bricks, and the contents card gives its count, which follows the filters.
     withItems.forEach(({heading, items}) => {

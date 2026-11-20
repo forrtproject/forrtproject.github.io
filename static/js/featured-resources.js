@@ -47,6 +47,12 @@
     }).join(' ');
   }
 
+  // The site's copy feedback (assets/js/doors/references.js): a check in the icon's place, only once copied.
+  function copyWithFeedback(button, text) {
+    if (window.forrtCopy) window.forrtCopy(button, text);
+    else navigator.clipboard.writeText(text).catch(function () {});
+  }
+
   function plainText(s) {
     return decodeEntities(s).replace(/<\/?(?:i|em|scp)>/gi, '').replace(/\s+/g, ' ').trim();
   }
@@ -131,13 +137,13 @@
         html += '<div class="ref-section-label">APA reference</div>';
         html += '<div class="ref-apa">' + richText(r.apa) + '</div>';
         html += '<div class="ref-copy-row">';
-        html += '<button class="ref-copy-btn" data-copy="apa" data-doi="' + escHtml(doi) + '">' +
+        html += '<button class="ref-copy-btn" type="button" data-copy="apa" data-doi="' + escHtml(doi) + '">' +
           '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="8" height="10" rx="1"/><path d="M5 3V2a1 1 0 011-1h5a1 1 0 011 1v9a1 1 0 01-1 1h-1"/></svg>' +
-          ' Copy APA</button>';
+          ' <span class="copy-label">Copy APA</span></button>';
         if (r.bibtex) {
-          html += '<button class="ref-copy-btn" data-copy="bibtex" data-doi="' + escHtml(doi) + '">' +
+          html += '<button class="ref-copy-btn" type="button" data-copy="bibtex" data-doi="' + escHtml(doi) + '">' +
             '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="8" height="10" rx="1"/><path d="M5 3V2a1 1 0 011-1h5a1 1 0 011 1v9a1 1 0 01-1 1h-1"/></svg>' +
-            ' Copy BibTeX</button>';
+            ' <span class="copy-label">Copy BibTeX</span></button>';
         }
         html += '</div></div>';
       }
@@ -199,16 +205,7 @@
         var res = resourceIdx[d];
         if (!res) return;
         var text = type === 'bibtex' ? res.bibtex : plainText(res.apa);
-        navigator.clipboard.writeText(text).then(function () {
-          copyBtn.classList.add('copied');
-          var orig = copyBtn.innerHTML;
-          var label = type === 'bibtex' ? 'BibTeX' : 'APA';
-          copyBtn.innerHTML = copyBtn.querySelector('svg').outerHTML + ' Copied!';
-          setTimeout(function () {
-            copyBtn.classList.remove('copied');
-            copyBtn.innerHTML = orig;
-          }, 1500);
-        });
+        copyWithFeedback(copyBtn, text);
         return;
       }
     });
@@ -322,7 +319,7 @@
         if (r.apa) {
           html += '<div class="rl-detail-ref-row">';
           html += '<div class="rl-detail-apa">' + richText(r.apa) + '</div>';
-          html += '<button class="rl-detail-copy" data-copy-apa="' + escHtml(doi) + '" title="Copy APA reference">';
+          html += '<button class="rl-detail-copy" type="button" data-copy-apa="' + escHtml(doi) + '" title="Copy APA reference" aria-label="Copy APA reference">';
           html += '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="8" height="10" rx="1"/><path d="M5 3V2a1 1 0 011-1h5a1 1 0 011 1v9a1 1 0 01-1 1h-1"/></svg>';
           html += '</button>';
           html += '</div>';
@@ -418,10 +415,7 @@
         var d = copyBtn.getAttribute('data-copy-apa');
         var res = resourceIdx[d];
         if (res && res.apa) {
-          navigator.clipboard.writeText(plainText(res.apa)).then(function () {
-            copyBtn.classList.add('copied');
-            setTimeout(function () { copyBtn.classList.remove('copied'); }, 1500);
-          });
+          copyWithFeedback(copyBtn, plainText(res.apa));
         }
         return;
       }
