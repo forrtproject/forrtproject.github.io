@@ -49,7 +49,7 @@
   {{ $buckets.Add $key (slice .) }}
 {{ end }}
 
-<div class="team-page">
+<div class="team-page team-layout">
   <nav class="team-area-nav" aria-label="Jump to teams by area">
     {{ range $groups }}
       {{ $items := $buckets.Get .key | default slice }}

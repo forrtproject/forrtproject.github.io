@@ -216,7 +216,7 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .sc-page .sc-section:last-of-type{margin-bottom:0}
 .sc-page .sc-section-header{margin:0 0 22px;padding-bottom:14px;border-bottom:1.5px solid var(--line)}
 .sc-page .sc-section-title{margin:0 0 6px;font:var(--display-weight) clamp(28px,2.8vw,36px)/1.12 var(--display);color:var(--ink);text-transform:none;letter-spacing:0}
-.sc-page .sc-section-desc{margin:0;max-width:46em;font-size:18px;line-height:1.5;color:var(--soft)}
+.sc-page .sc-section-desc{margin:0;max-width:36em;font-size:18px;line-height:1.5;color:var(--soft)}
 .sc-page .sc-section-desc a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
 .sc-page .sc-grid{display:flex;flex-wrap:wrap;gap:20px;align-items:stretch}
 @media(min-width:1001px){
