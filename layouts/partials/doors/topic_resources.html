@@ -23,8 +23,11 @@
   {{ range $types }}{{ $s := . | lower | replaceRE "[^a-z0-9]+" "-" }}{{ $slugs = $slugs | append $s }}{{ $typeCount = merge $typeCount (dict $s (add 1 (index $typeCount $s | default 0))) }}{{ end }}
   {{ $groupCount = merge $groupCount (dict (urlize $group | default "none") (add 1 (index $groupCount (urlize $group | default "none") | default 0))) }}
   {{ $title := .Title | plainify | htmlUnescape }}
-  {{ $bare := strings.TrimLeft "\"“‘'#(*[¿¡ " $title }}
-  {{ $rows = $rows | append (dict "key" (lower $bare) "page" . "group" $group "types" $types "facets" (delimit $slugs " ")) }}
+  {{/* A to Z from the first letter or digit, so stray marks or spaces at the start do not move a title; within a group,
+       materials other than readings first, so a group's first rows show what an educator most often looks for. */}}
+  {{ $bare := replaceRE `^[^\p{L}\p{N}]+` "" $title }}
+  {{ $shown := slice }}{{ range $types }}{{ if ne . "Reading" }}{{ $shown = $shown | append . }}{{ end }}{{ end }}
+  {{ $rows = $rows | append (dict "key" (printf "%d %s" (cond (gt (len $shown) 0) 0 1) (lower $bare)) "page" . "group" $group "types" $types "shown" $shown "facets" (delimit $slugs " ")) }}
 {{ end }}
 {{ $rows = sort $rows "key" }}
 {{/* The groups, largest first; resources with no current cluster last. */}}
@@ -54,7 +57,6 @@
         </a></li>
         {{ end }}
       </ol>
-      {{ if gt (len $groups) 4 }}<button class="text-button topic-more" type="button" aria-expanded="false" data-more="All {{ len $groups }} clusters" data-less="Fewer clusters" hidden>All {{ len $groups }} clusters</button>{{ end }}
     </section>
     <figure class="heading-plate topic-plate"><img src="{{ $plate.RelPermalink }}" alt="A brick pencil standing on an open green book." width="{{ $plate.Width }}" height="{{ $plate.Height }}"></figure>
   </div>
@@ -74,7 +76,7 @@
     <button class="text-button list-filter-reset" type="button" hidden>Reset filters and search</button>
   </div>
   {{ end }}
-  <p class="topic-types__note">Titles without a type are readings.</p>
+  <p class="topic-types__note">In each cluster, teaching materials come first with their type named, then readings; each A to Z.</p>
   </div>
   <noscript><p class="topic-tools__links">{{ $total }} resources, grouped by current cluster and A to Z within each. Search and filter all resources in the <a href="{{ relref $page "/resources" }}">resources directory</a>.</p></noscript>
   {{/* Headings and lists as siblings, which site.js reads as the sections it filters. */}}
@@ -82,22 +84,22 @@
   <h2 class="topic-group" id="now-{{ .key }}"{{ with .num }} style="--c: var(--cl{{ . }}); --c-bg: var(--cl{{ . }}-bg)"{{ end }}>
     {{ $url := "" }}{{ with .num }}{{ with site.GetPage (printf "/clusters/cluster-%d" .) }}{{ $url = .RelPermalink }}{{ end }}{{ end }}
     {{ with .num }}<span class="article-card__door" aria-hidden="true">{{ partial "clusters/icon.html" . }}</span>{{ end }}
-    <span class="topic-group__text">{{ if $url }}<a href="{{ $url }}">{{ .label }}<span aria-hidden="true"> →</span></a>{{ else }}{{ .label }}{{ end }}
+    <span class="topic-group__text">{{ if $url }}<a href="{{ $url }}">{{ .label }}<span aria-hidden="true">&nbsp;→</span></a>{{ else }}{{ .label }}{{ end }}
     <span class="topic-group__count">{{ .count }} {{ cond (eq .count 1) "resource" "resources" }}</span></span>
   </h2>
   <ul class="cluster-resources{{ if gt .count 10 }} cluster-resources--cols{{ end }}">
-    {{ range $r := $rows }}{{ if eq (urlize $r.group | default "none") $g.key }}{{ with $r.page }}{{ $shown := slice }}{{ range $r.types }}{{ if ne . "Reading" }}{{ $shown = $shown | append . }}{{ end }}{{ end }}<li data-facets="{{ $r.facets }}"><a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ with $shown }}<span class="cluster-resources__type">{{ delimit . ", " }}</span>{{ end }}</li>{{ end }}{{ end }}{{ end }}
+    {{ range $r := $rows }}{{ if eq (urlize $r.group | default "none") $g.key }}{{ with $r.page }}<li data-facets="{{ $r.facets }}"><a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ with $r.shown }}<span class="cluster-resources__type">{{ delimit . ", " }}</span>{{ end }}</li>{{ end }}{{ end }}{{ end }}
   </ul>
   {{ if gt .count 10 }}<button class="text-button topic-showall" type="button" aria-expanded="false" hidden>Show all {{ .count }} in {{ .label }}</button>{{ end }}
   {{ end }}
 </div>
 <script>
-/* On a phone the chart and the material types show their first few, with a button for the rest. Each long group shows
+/* On a phone the material types show the four largest, with a button for the rest. Each long group shows
    its first eight titles, with a button for the rest; a search or a type filter shows every match. Without JavaScript
    everything shows (lists.css). */
 (function () {
   document.querySelectorAll('.topic-more').forEach(function (more) {
-    var box = more.closest('.topic-now, .topic-types');
+    var box = more.closest('.topic-types');
     more.hidden = false;
     box.classList.add('is-collapsible');
     more.addEventListener('click', function () {

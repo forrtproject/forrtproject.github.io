@@ -37,23 +37,32 @@
   {{ $uses := dict }}
   {{ range $pager.Pages }}{{ with (.Resources.ByType "image").GetMatch "*featured*" }}{{ $k := md5 .Content }}{{ $uses = merge $uses (dict $k (add 1 (index $uses $k | default 0))) }}{{ end }}{{ end }}
   {{ $one := eq (len $pager.Pages) 1 }}
-  <ul class="{{ if $one }}announcements-grid category-lead{{ else }}category-grid{{ if eq (len $pager.Pages) 2 }} category-grid--two{{ end }}{{ end }}">
+  <ul class="{{ if $one }}announcements-grid category-lead{{ else }}category-grid{{ if eq (len $pager.Pages) 2 }} category-grid--two{{ end }}{{ if eq $key "newsletter" }} category-grid--issues{{ end }}{{ end }}">
     {{ range $i, $p := $pager.Pages }}
       {{ $own := false }}{{ with ($p.Resources.ByType "image").GetMatch "*featured*" }}{{ $own = eq (index $uses (md5 .Content)) 1 }}{{ end }}
       <li class="ac-item">{{ partial "doors/news_card" (dict "page" $p "lead" $one "lazy" (gt $i 2) "in_category" true "own_picture" $own) }}</li>
     {{ end }}
   </ul>
   {{ partial "doors/pager" $pager }}
+  {{/* Under three posts: the newest posts of other categories that have a picture of their own here (not a newsletter's
+       stock photo, nor one already on the page), so the row reads as pictures, not blank bricks. Otherwise a line to all news. */}}
   {{ if and $news (lt $count 3) }}
     {{ $others := slice }}
-    {{ range sort $news.Pages "Date" "desc" }}{{ if and (lt (len $others) 4) (not (in $page.Data.Pages .)) }}{{ $others = $others | append . }}{{ end }}{{ end }}
+    {{ range sort $news.Pages "Date" "desc" }}
+      {{ $p := . }}
+      {{ if and (lt (len $others) 4) (not (in $page.Data.Pages $p)) (ne (lower (index ($p.Params.categories | default (slice "")) 0)) "newsletter") }}
+        {{ with ($p.Resources.ByType "image").GetMatch "*featured*" }}{{ $k := md5 .Content }}{{ if not (index $uses $k) }}{{ $others = $others | append $p }}{{ $uses = merge $uses (dict $k 1) }}{{ end }}{{ end }}
+      {{ end }}
+    {{ end }}
     {{ with $others }}
-    <section class="read-next category-more" aria-labelledby="read-next-heading">
-      <h2 id="read-next-heading"><a href="{{ $news.RelPermalink }}">More news<span aria-hidden="true"> →</span></a></h2>
+    <section class="category-more" aria-labelledby="category-more-heading">
+      <h2 id="category-more-heading"><a href="{{ $news.RelPermalink }}">More news<span aria-hidden="true">&nbsp;→</span></a></h2>
       <ul class="category-grid category-grid--four">
-        {{ range . }}<li>{{ partial "doors/news_card" (dict "page" . "lazy" true "h" "h3") }}</li>{{ end }}
+        {{ range . }}<li>{{ partial "doors/news_card" (dict "page" . "lazy" true "h" "h3" "own_picture" true) }}</li>{{ end }}
       </ul>
     </section>
     {{ end }}
+  {{ else if $news }}
+    <p class="category-all"><a href="{{ $news.RelPermalink }}">All {{ len $news.Pages }} news posts<span aria-hidden="true">&nbsp;→</span></a></p>
   {{ end }}
 </div>
