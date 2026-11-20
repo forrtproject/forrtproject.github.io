@@ -21,9 +21,12 @@
   {{/* The picture's own ground, read from its top left corner; as a JPEG, so a transparent corner reads as white. */}}
   {{ $ground := index ($img.Crop "4x4 TopLeft jpg").Colors 0 }}
   {{/* A corner far from the picture's main colour is part of the picture, not its ground: then the card's tint.
-       A white ground (luminance >= 0.88) blends cleanly onto the card tint without dimming pale UI screenshots. */}}
+       Only near-pure white grounds (luminance >= 0.93) blend cleanly through multiply onto the card tint. */}}
   {{ $odd := gt (math.Abs (sub $ground.Luminance $main.Luminance)) 0.2 }}
-  {{ $onTint := or (ge $ground.Luminance 0.88) $odd }}
+  {{ $onTint := or (ge $ground.Luminance 0.93) $odd }}
   {{ $diagram := and .figures (ge $ratio 1.75) (le $ratio 2.15) }}
-  <div class="ac-thumb ec-thumb-whole{{ if $diagram }} ec-thumb-diagram{{ else }} ec-thumb-logo{{ end }}{{ if $onTint }} ec-thumb-blend{{ end }}"{{ if not $onTint }} style="--mat:{{ $ground.ColorHex }}"{{ end }}><img src="{{ $fit.RelPermalink }}" width="{{ $fit.Width }}" height="{{ $fit.Height }}" alt="{{ .alt }}"{{ $lazy | safeHTMLAttr }}></div>
+  {{/* Gate the compact phone logo band on .figures and non-portrait aspect ratio (>= 0.85) so news cards and
+       portrait book/poster covers keep their full phone height. */}}
+  {{ $logoBand := and .figures (not $diagram) (ge $ratio 0.85) }}
+  <div class="ac-thumb ec-thumb-whole{{ if $diagram }} ec-thumb-diagram{{ else if $logoBand }} ec-thumb-logo{{ end }}{{ if $onTint }} ec-thumb-blend{{ end }}"{{ if not $onTint }} style="--mat:{{ $ground.ColorHex }}"{{ end }}><img src="{{ $fit.RelPermalink }}" width="{{ $fit.Width }}" height="{{ $fit.Height }}" alt="{{ .alt }}"{{ $lazy | safeHTMLAttr }}></div>
 {{ end }}

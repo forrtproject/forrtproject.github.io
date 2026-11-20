@@ -326,8 +326,8 @@ html:has(.tag-az){scroll-padding-top:84px}
 @media(max-width:760px){
   /* On a phone a panel is a band, not a 16:9 picture, so a run of picture-less posts is not a wall of colour. */
   .news-page .ac-panel{aspect-ratio:auto;min-height:96px;padding:14px 18px}
-  /* Logo and emblem cards on phones take a compact 144 px band (124 px rendered artwork) so headlines lead while
-     emblems, covers and wide diagrams remain legible; 16:9 teaching diagrams keep full height. */
+  /* Landscape and square logo/emblem cards on phones take a compact 144 px band so headlines lead while emblems stay
+     legible; portrait covers and 16:9 teaching diagrams keep their taller 16:9 band. */
   .ec-thumb-whole.ec-thumb-logo{aspect-ratio:auto;height:144px}
   .ec-thumb-whole.ec-thumb-logo img{inset:10px 14px;width:calc(100% - 28px);height:calc(100% - 20px)}
   .ec-thumb-whole.ec-thumb-diagram{aspect-ratio:16/9}

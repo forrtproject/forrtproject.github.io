@@ -39,11 +39,12 @@
                 <span class="ped-materials-label">Materials:</span>
                 <ul class="ped-links" role="list">
                   {{ range . }}
-                    {{ $href := .url }}
+                    {{ $href := .url | htmlUnescape }}
                     {{ if not (or (hasPrefix $href "http://") (hasPrefix $href "https://") (hasPrefix $href "/")) }}
                       {{ $href = printf "%s%s" $p.RelPermalink $href }}
                     {{ end }}
-                    <li><a href="{{ $href }}"{{ if hasPrefix $href "http" }} target="_blank" rel="noopener"{{ end }}>{{ .name | strings.TrimSpace }}</a></li>
+                    {{ $away := or (hasPrefix $href "http://") (hasPrefix $href "https://") }}
+                    <li><a href="{{ $href }}"{{ if $away }} target="_blank" rel="noopener"{{ end }}>{{ .name | strings.TrimSpace }}{{ if $away }} <i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="visually-hidden"> (another website)</span>{{ end }}</a></li>
                   {{ end }}
                 </ul>
               </div>
