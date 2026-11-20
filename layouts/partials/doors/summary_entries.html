@@ -1,6 +1,6 @@
-{{/* The summaries from data/summaries.json, one disclosure each; site.js adds the filter and "Show more".
-     Input: dict "page" and "dei" (true for the DEI collection, which lists only the entries marked ⌺).
-     A related summary that this collection leaves out links to the full collection instead. */}}
+{{/* The summaries from data/summaries.json, one disclosure each, in chapters by year (doors/summary_chapters);
+     site.js adds the filter. Input: dict "page" and "dei" (true for the DEI collection, which lists only the entries
+     marked ⌺). A related summary that this collection leaves out links to the full collection instead. */}}
 {{ $dei := .dei }}
 {{ partial "structured-data/summaries-jsonld.html" (dict "page" .page "deiOnly" $dei) }}
 {{ $summaries := hugo.Data.summaries }}
@@ -11,31 +11,41 @@
   {{ if or (not $dei) (in .Title "⌺") }}{{ $shown = merge $shown (dict .Id true) }}{{ end }}
 {{ end }}{{ end }}
 {{ if $dei }}<span class="summaries-dei" hidden></span>{{ end }}
-{{ range $summaries }}{{ if and .Title (or (not $dei) (in .Title "⌺")) }}
+{{ range partialCached "doors/summary_chapters" $dei $dei }}
+<section class="summary-chapter" id="{{ .id }}" aria-labelledby="{{ .id }}-head">
+{{/* The chapter's year in large type on the area's pale ground; the index of years gives its count. */}}
+<h2 class="summary-chapter-head" id="{{ .id }}-head">{{ .label }}</h2>
+{{ range .entries }}{{ $t := .t }}{{ with .s }}
 <details class="summary-entry">
 {{/* The title on its own line, then the citation, "(Author, year)", on a quieter one, so the titles are easy to
      skim. ◈ (not peer reviewed) and ⌺ (DEI) follow the title, and screen readers hear what ◈ means. The citation
      stays in the heading: people search and link by author. A title without a trailing citation shows whole. */}}
-{{ $t := partial "doors/summary_title" .Title }}
 {{ $title := $t.title }}{{ $cite := $t.cite }}{{ $npr := $t.npr }}{{ $isDei := $t.dei }}{{ $head := $t.head }}{{ $tail := $t.tail }}
 {{/* The marks stay on the line of the title's last word (summary-tail), never alone on a line of their own. The
      titles carry no Markdown markup, so splitting before markdownify is safe. */}}
-<summary><h2 id="{{ .Id }}"><span class="summary-title">{{ if or $isDei $npr }}{{ with $head }}{{ . | markdownify }} {{ end }}<span class="summary-tail">{{ $tail | markdownify }}{{ if $isDei }}⌺{{ end }}{{ if $npr }} <span class="npr-mark" aria-hidden="true">◈</span><span class="sr-only"> (not peer reviewed)</span>{{ end }}</span>{{ else }}{{ $title | markdownify }}{{ end }}</span>{{ with $cite }} <span class="summary-cite">{{ . }}</span>{{ end }}</h2></summary>
-<h3>Main takeaways</h3>
+<summary><h3 id="{{ .Id }}"><span class="summary-title">{{ if or $isDei $npr }}{{ with $head }}{{ . | markdownify }} {{ end }}<span class="summary-tail">{{ $tail | markdownify }}{{ if $isDei }}⌺{{ end }}{{ if $npr }} <span class="npr-mark" aria-hidden="true">◈</span><span class="sr-only"> (not peer reviewed)</span>{{ end }}</span>{{ else }}{{ $title | markdownify }}{{ end }}</span>{{ with $cite }} <span class="summary-cite">{{ . }}</span>{{ end }}</h3>
+{{/* The first takeaway, so that closed entries differ by more than their citations: cut at a word to about two
+     lines, shorter for phones (summary-gist-short) than for wide screens, without the web addresses some takeaways
+     carry. It is hidden from screen readers, which would otherwise hear it as part of the title, and once the entry
+     is open, where the takeaways follow in full. */}}
+{{ $gist := "" }}{{ range .Main_Takeaways }}{{ if and (not $gist) (trim . " \u00a0") }}{{ $gist = . }}{{ end }}{{ end }}
+{{ $gist = trim (replaceRE `[\s\p{Z}]+` " " (replaceRE `:?[\s\p{Z}]*https?://[^\s\p{Z}]+` "" $gist)) " " }}
+{{ with $gist }}<span class="summary-gist" aria-hidden="true"><span class="summary-gist-long">{{ replaceRE `[,;:]…$` "…" (truncate 150 "…" .) | htmlUnescape }}</span><span class="summary-gist-short">{{ replaceRE `[,;:]…$` "…" (truncate 80 "…" .) | htmlUnescape }}</span></span>{{ end }}</summary>
+<h4>Main takeaways</h4>
 <ul>
   {{ range .Main_Takeaways }}<li>{{ . }}</li>{{ end }}
 </ul>
 {{ with .Quote }}
-<h3>Quote</h3>
+<h4>Quote</h4>
 <blockquote class="blockquote font-italic" style="font-size:1rem">{{ . }}</blockquote>
 {{ end }}
-{{ with .Abstract }}<h3>Abstract</h3>
+{{ with .Abstract }}<h4>Abstract</h4>
 <p>{{ . }}</p>{{ end }}
-{{ with .Reference }}<h3>Reference</h3>
+{{ with .Reference }}<h4>Reference</h4>
 {{/* A DOI or other address in the reference becomes a link, without the full stop that may end it. */}}
 <p>{{ replaceRE `(https?://[^\s\p{Z}<]*[^\s\p{Z}<.,;)])` `<a href="$1">$1</a>` (. | htmlEscape) | safeHTML }}</p>{{ end }}
 {{ with .You_may_also_be_interested_in }}
-<h3>You may also be interested in</h3>
+<h4>You may also be interested in</h4>
 <ul>
   {{ range $rel := . }}
   {{ $href := $rel.href }}
@@ -51,3 +61,5 @@
 {{ end }}
 </details>
 {{ end }}{{ end }}
+</section>
+{{ end }}

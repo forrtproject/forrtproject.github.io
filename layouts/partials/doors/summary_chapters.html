@@ -1,0 +1,62 @@
+{{/* A collection's summaries in chapters by the year of the paper, newest first, so a long list has landmarks
+     (DESIGN.md §4). The source document gives no topics, so the year in each title's citation is the grouping the
+     data has. Within a chapter the entries run A to Z by first author. A year with at least $min summaries is a
+     chapter of its own; thinner years join their neighbours until the run reaches $min, and a last run under half
+     of $min joins the chapter before it. Entries whose citation gives no year come last, under "Year not given".
+     Input: true for the DEI collection (the entries marked ⌺). Returns a slice of dicts: label, id, count and
+     entries (each a dict of "s", the entry from data/summaries.json, and "t", doors/summary_title of its title).
+     Used by doors/summary_entries for the list and by layouts/_default/summaries.html for its index of years. */}}
+{{ $dei := . }}
+{{ $items := slice }}
+{{ range hugo.Data.summaries }}{{ if and .Title (or (not $dei) (in .Title "⌺")) }}
+  {{ $t := partial "doors/summary_title" .Title }}
+  {{ $items = $items | append (dict "s" . "t" $t "year" $t.year "key" (printf "%04d %s %s" (sub 9999 $t.year) $t.author (lower $t.title))) }}
+{{ end }}{{ end }}
+{{ $items = sort $items "key" }}
+{{ $min := int (math.Max 4 (math.Round (div (float (len $items)) 20))) }}
+{{/* The years, newest first, with their counts. */}}
+{{ $years := slice }}{{ $counts := dict }}
+{{ range $items }}{{ if gt .year 0 }}
+  {{ $k := string .year }}
+  {{ if not (isset $counts $k) }}{{ $years = $years | append .year }}{{ end }}
+  {{ $counts = merge $counts (dict $k (add (index $counts $k | default 0) 1)) }}
+{{ end }}{{ end }}
+{{/* Runs of years, each a dict of its newest (hi) and oldest (lo) year. */}}
+{{ $runs := slice }}{{ $hi := 0 }}{{ $lo := 0 }}{{ $runN := 0 }}
+{{ range $years }}
+  {{ $n := index $counts (string .) }}
+  {{ if ge $n $min }}
+    {{/* A thin run cut short by a full year joins the run before it, if there is one. */}}
+    {{ if $runN }}
+      {{ $last := dict }}{{ with $runs }}{{ $last = index . (sub (len .) 1) }}{{ end }}
+      {{ if and $last (ne $last.hi $last.lo) }}
+        {{ $runs = $runs | first (sub (len $runs) 1) }}
+        {{ $runs = $runs | append (dict "hi" $last.hi "lo" $lo "n" (add $last.n $runN)) }}
+      {{ else }}{{ $runs = $runs | append (dict "hi" $hi "lo" $lo "n" $runN) }}{{ end }}
+    {{ end }}
+    {{ $runN = 0 }}
+    {{ $runs = $runs | append (dict "hi" . "lo" . "n" $n) }}
+  {{ else }}
+    {{ if not $runN }}{{ $hi = . }}{{ end }}
+    {{ $lo = . }}{{ $runN = add $runN $n }}
+    {{ if ge $runN $min }}{{ $runs = $runs | append (dict "hi" $hi "lo" $lo "n" $runN) }}{{ $runN = 0 }}{{ end }}
+  {{ end }}
+{{ end }}
+{{ if $runN }}
+  {{ if and $runs (lt (mul $runN 2) $min) }}
+    {{ $last := index $runs (sub (len $runs) 1) }}
+    {{ $runs = first (sub (len $runs) 1) $runs }}
+    {{ $runs = $runs | append (dict "hi" $last.hi "lo" $lo "n" (add $last.n $runN)) }}
+  {{ else }}{{ $runs = $runs | append (dict "hi" $hi "lo" $lo "n" $runN) }}{{ end }}
+{{ end }}
+{{ $chapters := slice }}
+{{ range $runs }}
+  {{ $hi := .hi }}{{ $lo := .lo }}
+  {{ $entries := slice }}{{ range $items }}{{ if and (ge .year $lo) (le .year $hi) }}{{ $entries = $entries | append . }}{{ end }}{{ end }}
+  {{ $label := cond (eq $hi $lo) (string $hi) (printf "%d–%d" $lo $hi) }}
+  {{ $id := cond (eq $hi $lo) (printf "year-%d" $hi) (printf "years-%d-%d" $lo $hi) }}
+  {{ $chapters = $chapters | append (dict "label" $label "id" $id "count" (len $entries) "entries" $entries) }}
+{{ end }}
+{{ $undated := where $items "year" 0 }}
+{{ with $undated }}{{ $chapters = $chapters | append (dict "label" "Year not given" "id" "year-not-given" "count" (len .) "entries" .) }}{{ end }}
+{{ return $chapters }}

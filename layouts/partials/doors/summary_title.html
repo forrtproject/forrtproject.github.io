@@ -1,11 +1,20 @@
 {{/* A summary's title from data/summaries.json, taken apart: the title without its marks, the citation that ends it
      ("(Author, year)") if any, whether it is marked ◈ (not peer reviewed) or ⌺ (DEI), and the title split before its
-     last word, so that the marks can stay on that word's line. Used by doors/summary_entries and the overview's
-     sample summary (shortcodes/summary_collections.html). */}}
+     last word, so that the marks can stay on that word's line. Also the citation's year (0 if it gives none) and its
+     first author in lower case ("(CREP; Wagge et al., 2019)" gives "wagge"), by which doors/summary_chapters orders
+     the entries. Used by doors/summary_entries, doors/summary_chapters and the overview's sample summary
+     (shortcodes/summary_collections.html). */}}
 {{ $title := . }}{{ $npr := in $title "◈" }}{{ $isDei := in $title "⌺" }}
-{{ $title = trim (replaceRE `[\s\p{Z}]*[◈⌺][\s\p{Z}]*` " " $title) "  " }}
+{{ $title = trim (replaceRE `[\s\p{Z}]*[◈⌺][\s\p{Z}]*` " " $title) "  " }}
 {{ $cite := "" }}
 {{ with findRESubmatch `^([\s\S]*?)[\s\p{Z}]*(\([^()]*\d{4}[a-z]?\))$` $title 1 }}{{ $title = index (index . 0) 1 }}{{ $cite = index (index . 0) 2 }}{{ end }}
 {{ $head := "" }}{{ $tail := $title }}
 {{ with findRESubmatch `^([\s\S]*\S)\s+(\S+)$` $title 1 }}{{ $head = index (index . 0) 1 }}{{ $tail = index (index . 0) 2 }}{{ end }}
-{{ return dict "title" $title "cite" $cite "npr" $npr "dei" $isDei "head" $head "tail" $tail }}
+{{ $year := 0 }}{{ $author := "" }}
+{{ with findRESubmatch `(\d{4})[a-z]?\)$` $cite 1 }}{{ $year = int (index (index . 0) 1) }}{{ end }}
+{{ with $cite }}
+  {{ $author = replaceRE `^.*;` "" (strings.TrimPrefix "(" .) }}
+  {{ $author = replaceRE `[,&].*$` "" $author }}
+  {{ $author = lower (trim (replaceRE `[\s\p{Z}]+et al\.?$` "" (trim $author "  ")) "  ") }}
+{{ end }}
+{{ return dict "title" $title "cite" $cite "npr" $npr "dei" $isDei "head" $head "tail" $tail "year" $year "author" $author }}

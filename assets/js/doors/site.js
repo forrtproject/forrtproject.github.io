@@ -294,18 +294,34 @@ if (summaryEntries.length) {
   // What a filter looks through: title, takeaways, quote and abstract, not the fixed headings or related links.
   const words = new Map(summaryEntries.map((entry) => {
     const copy = entry.cloneNode(true);
-    copy.querySelectorAll('h3, .sr-only, .npr-mark').forEach((part) => part.remove());
+    copy.querySelectorAll('h4, .sr-only, .npr-mark, .summary-gist').forEach((part) => part.remove());
     copy.querySelector('ul:last-of-type')?.remove();
     return [entry, copy.textContent.toLowerCase()];
   }));
-  // Pages of 30, unless that would hide only a few: then every entry shows.
-  let limit = summaryEntries.length > 40 ? 30 : summaryEntries.length;
+  // Pages of 30, unless that would hide only a few: then every entry shows. A collection page shows every entry in
+  // chapters by year, with an index of years to jump by, so it needs no pages.
+  const chapters = [...document.querySelectorAll('.summary-chapter')];
+  let limit = summaryEntries.length > 40 && !chapters.length ? 30 : summaryEntries.length;
   const show = () => {
     const query = input.value.trim().toLowerCase();
     const matches = summaryEntries.filter((entry) => !query || words.get(entry).includes(query));
     const shown = query ? matches : matches.slice(0, limit);
     // An entry someone has opened, perhaps from a link to it, stays in view.
     summaryEntries.forEach((entry) => { entry.hidden = !shown.includes(entry) && !entry.open; });
+    // A chapter with nothing left in it goes, and the bars in the index of years show how the matches spread over
+    // the years.
+    const lefts = chapters.map((chapter) => chapter.querySelectorAll('.summary-entry:not([hidden])').length);
+    document.querySelector('.summary-years')?.style.setProperty('--max', Math.max(1, ...lefts));
+    chapters.forEach((chapter, i) => {
+      const left = lefts[i];
+      chapter.hidden = !left;
+      const link = document.querySelector(`.summary-years a[data-chapter="${chapter.id}"]`);
+      if (!link) return;
+      link.classList.toggle('is-empty', !left);
+      link.tabIndex = left ? 0 : -1;
+      link.querySelector('.summary-years-bar').style.setProperty('--n', left);
+      link.querySelector('.summary-years-n').textContent = left;
+    });
     more.hidden = shown.length === matches.length;
     const kept = summaryEntries.filter((entry) => !entry.hidden).length - shown.length;
     // A collection page's header gives the total, so with no filter and every entry shown the status stays empty.
@@ -315,6 +331,28 @@ if (summaryEntries.length) {
   };
   input.addEventListener('input', show);
   addEventListener('hashchange', show);
+  // The year whose summaries are on screen is marked in the index of years, which on a phone scrolls to keep it in view.
+  const yearLinks = [...document.querySelectorAll('.summary-years a')];
+  if ('IntersectionObserver' in window && yearLinks.length) {
+    const seen = new Map(chapters.map((chapter) => [chapter.id, false]));
+    const strip = document.querySelector('.summary-years ol');
+    const mark = () => {
+      // At the top of the page nothing is marked yet: the list has not started.
+      const current = scrollY > 0 && [...seen.entries()].find(([, on]) => on)?.[0];
+      if (!current) { yearLinks.forEach((a) => a.classList.remove('is-current')); return; }
+      yearLinks.forEach((a) => {
+        const on = a.dataset.chapter === current;
+        if (on && !a.classList.contains('is-current') && strip.scrollWidth > strip.clientWidth) strip.scrollTo({ left: a.parentElement.offsetLeft - strip.offsetLeft - 16 });
+        a.classList.toggle('is-current', on);
+      });
+    };
+    const watch = new IntersectionObserver((entries) => {
+      entries.forEach((e) => seen.set(e.target.id, e.isIntersecting));
+      mark();
+    }, { rootMargin: '-30% 0px -65% 0px' });
+    chapters.forEach((chapter) => watch.observe(chapter));
+    addEventListener('scroll', () => { if (!scrollY) mark(); }, { passive: true });
+  }
   more.addEventListener('click', () => {
     const next = summaryEntries[limit];
     limit += 30;

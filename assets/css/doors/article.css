@@ -263,7 +263,7 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .video-note a{text-decoration:underline}
 .article-layout .article-style .summary-entry{margin:0;border-bottom:1px solid var(--line)}
 .article-layout .article-style .summary-entry>summary{padding:12px 0;cursor:pointer}
-.article-layout .article-style .summary-entry>summary h2{display:inline;margin:0;font-size:22px;line-height:1.25}
+.article-layout .article-style .summary-entry>summary h3{display:inline;margin:0;font-size:22px;line-height:1.25}
 .article-layout .article-foot .article-widget li{margin-bottom:8px}
 .doi-link,.cite-us-text a{text-decoration:underline;text-underline-offset:3px}
 .toc-phone{display:none}
@@ -299,7 +299,7 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .article-layout:has(.summary-entry) .article-card :is(h2,.article-toc){display:none}
 .dei-mark{margin-inline-start:.3em;padding:0 6px;background:var(--jus-bg);border-radius:var(--r-small);font:600 15px/1.3 var(--text);color:var(--ink);vertical-align:.1em}
 /* Inside an entry, its headings sit below the entry's own 22 px title (DESIGN.md §2). */
-.article-layout .article-style .summary-entry h3{font-size:19px}
+.article-layout .article-style .summary-entry h4{font-size:19px}
 /* In the DEI collection every entry is DEI, so the mark tells nothing apart. */
 .article-layout:has(.summaries-dei) .dei-mark{display:none}
 @media print{.toc-phone{display:none!important}}
@@ -822,7 +822,7 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
 .article-layout.summaries-layout{row-gap:28px}
 .summaries-body{display:grid;grid-template-columns:minmax(0,1fr);gap:20px}
 .summaries-side .summary-tools{margin:0}
-.summaries-side:empty{display:none}
+.summary-tools-slot:empty{display:none}
 .summaries-side .summary-tools p.summary-count{margin:8px 0 0;font-size:16px}
 .summaries-side .summary-tools p.summary-count:empty{margin:0}
 .summaries-routes ul{margin:0;padding:0;list-style:none;font-size:17px;line-height:1.35}
@@ -830,20 +830,80 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
 .summaries-routes li{margin:0 0 4px;padding:11px 0}
 .summaries-routes a{padding:11px 0;color:var(--link);text-decoration:underline;text-underline-offset:3px}
 .summaries-routes span{color:var(--soft);font-size:15px}
+/* The index of years: a row for each chapter, its bar as long as the share of summaries it holds (--n of --max;
+   site.js sets --n to the matches while the filter is in use, and marks the year on screen as current). */
+.article-layout .summary-years p{margin:0;font-size:16px;line-height:1.35}
+.summary-years-label{font-weight:700}
+.article-layout .summary-years .summary-years-note{color:var(--soft);font-size:15px}
+.summary-years ol{margin:8px 0;padding:0;list-style:none}
+.summary-years li{margin:0}
+.summary-years a{display:grid;grid-template-columns:5.6em minmax(0,1fr) 2.2em;align-items:center;gap:10px;min-height:34px;padding:0 8px;border-radius:var(--r-small);color:var(--ink);text-decoration:none;font-size:16px;font-variant-numeric:tabular-nums}
+.summary-years-year{color:var(--link);text-decoration:underline;text-underline-offset:3px}
+.summary-years-bar{display:block;width:max(3px,calc(var(--n) / var(--max) * 100%));height:12px;background:color-mix(in srgb,var(--area) 55%,var(--area-bg));border-radius:2px;transition:width .3s ease}
+.summary-years-n{color:var(--soft);font-size:15px;text-align:end}
+.summary-years a:hover,.summary-years a.is-current{background:#fff}
+.summary-years a:hover .summary-years-year{color:var(--ink)}
+.summary-years a.is-current .summary-years-year{color:var(--ink);font-weight:700}
+.summary-years a.is-current .summary-years-bar{background:var(--area)}
+.summary-years a.is-empty{opacity:.4;pointer-events:none}
+.summary-years a.is-empty .summary-years-bar{width:0}
+@media(prefers-reduced-motion:reduce){.summary-years-bar{transition:none}}
+/* Chapters: the year in large type on the area's pale ground. */
+.article-layout .article-style .summary-chapter-head{margin:30px 0 4px;padding:8px 16px 6px;background:var(--area-bg);border-radius:var(--r-large);color:var(--area);font:500 40px/1.1 var(--display)}
+.article-layout .article-style .summary-chapter:first-of-type .summary-chapter-head{margin-top:6px}
+.summary-chapter{scroll-margin-top:16px}
+.summary-chapter[hidden]{display:none}
 @media(min-width:1001px){
-  .summaries-body{grid-template-columns:300px minmax(0,780px);grid-template-rows:auto 1fr;column-gap:56px;row-gap:16px}
-  .summaries-body>.reading{grid-column:2;grid-row:1/span 2}
-  .summaries-side{grid-column:1;grid-row:1}
-  .summaries-routes{grid-column:1;grid-row:2;align-self:start}
+  .summaries-body{grid-template-columns:300px minmax(0,780px);column-gap:56px}
+  .summaries-body>.reading{grid-column:2;grid-row:1}
+  /* The filter, the years and the routes stay in view beside the list. */
+  .summaries-side{grid-column:1;grid-row:1;align-self:start;position:sticky;top:16px;max-height:calc(100vh - 32px);overflow-y:auto;display:flex;flex-direction:column;gap:14px}
+  .summaries-side .summary-tools,.summary-years{padding:14px 18px;background:var(--area-bg);border-radius:var(--r-large)}
+  .summaries-side .summary-tools{padding-bottom:4px;border-radius:var(--r-large) var(--r-large) 0 0}
+  .summaries-side .summary-tools-slot:not(:empty)+.summary-years{margin-top:-14px;padding-top:10px;border-radius:0 0 var(--r-large) var(--r-large)}
+  .summaries-side .summary-tools-slot:not(:empty)+.summary-years::before{content:"";display:block;margin:0 0 12px;border-top:1px solid color-mix(in srgb,var(--area) 25%,transparent)}
+}
+/* Phones and tablets: the filter and the years come above the list; the years are one row that scrolls sideways,
+   fades at its edge and stays at the top of the screen while the list scrolls (DESIGN.md §9: one row stays). The
+   routes to the other collection follow the list. The body is a flex column, so that the row can stay in view
+   along the whole list. */
+@media(max-width:1000px){
+  .summaries-body{display:flex;flex-direction:column;gap:12px}
+  .summaries-side,.summary-years{display:contents}
+  .summaries-body>.reading{order:1}
+  .summaries-routes{order:2}
+  .summaries-side .summary-tools{background:var(--area-bg)}
+  .summary-years-label{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+  .summary-years nav{position:sticky;top:0;z-index:5;padding:6px 0;background:var(--page)}
+  .summary-years ol{display:flex;gap:6px;margin:0;overflow-x:auto;padding-bottom:2px;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 28px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 28px),transparent)}
+  .summary-years li{flex:none}
+  .summary-years ol li:last-child{padding-inline-end:28px}
+  .summary-years a{grid-template-columns:auto auto;grid-template-rows:auto 6px;gap:3px 6px;min-height:44px;padding:5px 10px 7px;background:var(--area-bg)}
+  .summary-years a.is-current{background:var(--area)}
+  .summary-years a.is-current .summary-years-year,.summary-years a.is-current .summary-years-n{color:#fff}
+  .summary-years a.is-current .summary-years-bar{background:#fff}
+  .summary-years-bar{grid-column:1/-1;grid-row:2;width:max(3px,calc(var(--n) / var(--max) * 56px));height:6px}
+  .summary-years-n{text-align:start}
+  .article-layout .summary-years .summary-years-note{order:0;margin-top:-8px}
+  .article-layout .article-style .summary-chapter-head{padding:6px 14px 4px;font-size:30px}
+  .summary-chapter{scroll-margin-top:64px}
 }
 .summaries-layout .article-style>p:first-child{max-width:none;margin-bottom:12px;color:var(--soft);font-size:16px}
 .article-layout.summaries-layout .article-style .summary-entry{margin:0;padding:0 14px;border-bottom:1px solid var(--line);border-radius:var(--r-small)}
-.article-layout.summaries-layout .article-style .summary-entry>summary{display:grid;grid-template-columns:30px minmax(0,1fr);gap:12px;align-items:start;padding:14px 0;list-style:none}
+.article-layout.summaries-layout .article-style .summary-entry>summary{display:grid;grid-template-columns:30px minmax(0,1fr);gap:0 12px;align-items:start;padding:14px 0;list-style:none}
 .summaries-layout .summary-entry>summary::-webkit-details-marker{display:none}
 .summaries-layout .summary-entry>summary::before{content:"+";display:flex;align-items:center;justify-content:center;width:30px;height:30px;margin-top:1px;background:var(--area-bg);border-radius:50%;color:var(--area);font:700 20px/1 var(--text)}
 .summaries-layout .summary-entry[open]>summary::before{content:"−";background:#fff}
 .summaries-layout .summary-entry>summary:hover .summary-title{text-decoration:underline;text-underline-offset:3px}
-.article-layout.summaries-layout .article-style .summary-entry>summary h2{display:block;font-size:22px;line-height:1.25}
+.article-layout.summaries-layout .article-style .summary-entry>summary h3{display:block;margin:0;font-size:22px;line-height:1.25}
+.article-layout.summaries-layout .article-style .summary-entry>summary>*{grid-column:2}
+/* The first takeaway, two lines at most, under the citation; the open entry gives the takeaways in full. */
+.summary-gist{display:block;max-width:560px;margin-top:6px;font-size:17px;line-height:1.45;color:var(--ink)}
+.summary-gist-short{display:none}
+@media(max-width:760px){.summary-gist-long{display:none}.summary-gist-short{display:inline}}
+.summary-entry[open] .summary-gist{display:none}
+.article-layout.summaries-layout .article-style .summary-entry>summary h3{max-width:560px}
+.summaries-layout .article-style>p:first-child .dei-mark{margin-inline-start:0}
 .summary-title,.summary-cite{display:block}
 .summary-tail{white-space:nowrap}
 /* The section's previous and next links would repeat the link to the other collection (.summaries-routes), which on

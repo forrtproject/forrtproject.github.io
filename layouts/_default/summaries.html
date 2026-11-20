@@ -1,9 +1,13 @@
 {{- define "main" -}}
 {{/* A collection of summaries (front matter `layout: summaries`, `summaries: all` or `dei`). The header sits on the
      pale ground of the collection's area (DESIGN.md §6: open and reproducible science is research, DEI is social
-     justice) with its count. The filter, which site.js builds into .summary-tools-slot, comes before the list:
-     on a wide screen it stays beside the list, above the routes to the other collection; on a phone it sits above the
-     list and the routes follow the list. The entries are doors/summary_entries. */}}
+     justice) with its count. The entries come in chapters by the year of the paper (doors/summary_chapters), and an
+     index of those years, a bar each for how many summaries it holds, leads to them. The filter, which site.js builds
+     into .summary-tools-slot, shortens the bars to the matches. On a wide screen the filter, the years and the routes
+     to the other collection stay in view beside the list; on a phone the filter and the years come above the list,
+     the years as one row that scrolls sideways and stays in view while the list scrolls, and the routes follow the
+     list. The entries are
+     doors/summary_entries. */}}
 {{ $dei := eq .Params.summaries "dei" }}
 {{ $count := partial "doors/summary_count" $dei }}
 {{ $body := partial "doors/content" .Content }}
@@ -16,26 +20,40 @@
       <p class="summaries-count"><strong>{{ $count }}</strong> summaries</p>
     </div>
     <div class="summaries-body">
-      <div class="summaries-side summary-tools-slot" data-placeholder="{{ cond $dei "e.g. gender, mentoring" "e.g. replication, p-hacking" }}"></div>
+      <div class="summaries-side">
+        <div class="summary-tools-slot" data-placeholder="{{ cond $dei "e.g. gender, mentoring" "e.g. replication, p-hacking" }}"></div>
+        {{ $chapters := partialCached "doors/summary_chapters" $dei $dei }}
+        {{ $max := 1 }}{{ range $chapters }}{{ $max = math.Max $max .count }}{{ end }}
+        <div class="summary-years" style="--max:{{ $max }}">
+          <p id="summary-years-label" class="summary-years-label">By year of the paper, newest first</p>
+          <nav aria-labelledby="summary-years-label">
+            <ol>
+              {{ range $chapters }}
+              <li><a href="#{{ .id }}" data-chapter="{{ .id }}"><span class="summary-years-year">{{ .label }}</span><span class="summary-years-bar" style="--n:{{ .count }}" aria-hidden="true"></span><span class="summary-years-n">{{ .count }}</span></a></li>
+              {{ end }}
+            </ol>
+          </nav>
+          <p class="summary-years-note">Within a year, A to Z by first author.</p>
+        </div>
+        <nav class="summaries-routes" aria-label="Other summaries">
+          <ul>
+            {{ if $dei }}
+            <li><a href="{{ relref . "/summaries/open-reproducible" }}">Open and reproducible science summaries</a> <span>({{ partial "doors/summary_count" false }})</span></li>
+            {{ else }}
+            <li><a href="{{ relref . "/summaries/diversity-equity-inclusion" }}">Diversity, equity and inclusion summaries</a> <span>({{ partial "doors/summary_count" true }})</span></li>
+            {{ end }}
+            <li><a href="{{ relref . "/summaries" }}">About the summaries and how to help</a></li>
+          </ul>
+        </nav>
+      </div>
       <article class="reading">
         <div class="article-style">
           {{ $body }}
         </div>
         <div class="article-foot">
-          <p class="share-link"><button class="copy-link" type="button" data-copy-link="{{ .Permalink }}">Copy article link</button> <span role="status"></span></p>
           {{ partial "page_footer" . }}
         </div>
       </article>
-      <nav class="summaries-routes" aria-label="Other summaries">
-        <ul>
-          {{ if $dei }}
-          <li><a href="{{ relref . "/summaries/open-reproducible" }}">Open and reproducible science summaries</a> <span>({{ partial "doors/summary_count" false }})</span></li>
-          {{ else }}
-          <li><a href="{{ relref . "/summaries/diversity-equity-inclusion" }}">Diversity, equity and inclusion summaries</a> <span>({{ partial "doors/summary_count" true }})</span></li>
-          {{ end }}
-          <li><a href="{{ relref . "/summaries" }}">About the summaries and how to help</a></li>
-        </ul>
-      </nav>
     </div>
   </div>
 </div>
