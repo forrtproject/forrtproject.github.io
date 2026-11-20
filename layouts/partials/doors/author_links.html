@@ -1,0 +1,12 @@
+{{/* Author names, comma-separated, each linked to its profile where one exists, as page_metadata_authors does.
+     Input: a slice of names as written in a page's `authors`. */}}
+{{- range $i, $raw := . -}}
+  {{- $profile := site.GetPage (printf "/authors/%s" (urlize $raw)) -}}
+  {{- if gt $i 0 }}, {{ end -}}
+  {{- $name := $raw -}}{{- with $profile -}}{{- with .Params.name -}}{{- $name = . -}}{{- end -}}{{- end -}}
+  {{- if and $profile $profile.Params.name (site.Params.link_authors | default true) -}}
+    <a href="{{ $profile.RelPermalink }}">{{ $name }}</a>
+  {{- else -}}
+    {{ $name }}
+  {{- end -}}
+{{- end -}}

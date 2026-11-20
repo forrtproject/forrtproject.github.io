@@ -1,7 +1,8 @@
 {{- define "main" -}}
 {{/* Educators' Corner: its introduction with the search beside it, then every post on one page as a card, newest
      first, in the news list's cards (layouts/section/post.html): picture, title, authors and date, the start of the
-     summary. The section is short enough for one page, which also lets the browser's find reach every post. The 404
+     summary. The newest leads across the row on a wide screen, its picture beside its title and authors
+     (lists.css). The section is short enough for one page, which also lets the browser's find reach every post. The 404
      page sends the retired /educators-corner/page/N/ addresses here. */}}
 <div class="wrap news-page ec-page">
   <header class="article-head">
@@ -11,26 +12,21 @@
   </header>
   <div class="ec-intro">
     {{ with .Content }}<div class="article-style">{{ partial "doors/content" . }}</div>{{ end }}
-    {{ partial "doors/list_filter" (dict "label" "Search the posts" "placeholder" "e.g. mentoring, Bayesian, peer review" "noun" "posts" "class" "list-filter-posts" "list" ".ec-grid" "quiet" true) }}
+    {{ partial "doors/list_filter" (dict "label" "Search the posts" "placeholder" "e.g. mentoring, Bayesian, peer review" "noun" "posts" "class" "list-filter-posts" "list" ".ec-list" "quiet" true) }}
   </div>
-  <ul class="announcements-grid ec-grid">
+  {{/* The posts and, in the grid's last place, the invitation to write one. The list itself takes no box
+       (display: contents), so the invitation shares its grid, while the search counts only the posts. */}}
+  <div class="announcements-grid ec-grid">
+  <ul class="ec-list" role="list">
     {{ range $i, $p := .Pages.ByDate.Reverse }}
       {{ $link := .RelPermalink }}{{ $target := "" }}
       {{ with .Params.external_link }}{{ $link = . }}{{ $target = ` target="_blank" rel="noopener"` }}{{ end }}
       {{ $img := (.Resources.ByType "image").GetMatch "*featured*" }}
-      {{/* The first row loads at once; the rest as they scroll into view. */}}
-      {{ $lazy := cond (ge $i 4) ` loading="lazy"` "" }}
+      {{/* The lead and the first row load at once; the rest as they scroll into view. */}}
       <li>
         <article class="announcement-card">
           {{ with $img }}
-            {{/* A photo near the card's shape fills it; a logo, a figure or a tall picture is shown whole on white. */}}
-            {{ $ratio := div (float .Width) .Height }}
-            {{ if and (ge $ratio 1.68) (le $ratio 1.9) }}
-              <div class="ac-thumb"><img src="{{ (.Fill "640x360 Center webp q75").RelPermalink }}" width="640" height="360" alt="{{ $p.Params.image.alt_text }}"{{ $lazy | safeHTMLAttr }}></div>
-            {{ else }}
-              {{ $fit := .Fit "600x320 webp q80" }}
-              <div class="ac-thumb ec-thumb-whole"><img src="{{ $fit.RelPermalink }}" width="{{ $fit.Width }}" height="{{ $fit.Height }}" alt="{{ $p.Params.image.alt_text }}"{{ $lazy | safeHTMLAttr }}></div>
-            {{ end }}
+            {{ partial "doors/card_picture" (dict "img" . "large" (eq $i 0) "lazy" (ge $i 4) "alt" $p.Params.image.alt_text "figures" true) }}
           {{ else }}
             {{/* A plain door on education's colour, as on the article pages' cards (doors/article_card): the card's
                  title and month are just below. */}}
@@ -38,12 +34,45 @@
           {{ end }}
           <div class="ac-body">
             <h2><a class="ac-link" href="{{ $link }}"{{ $target | safeHTMLAttr }}>{{ .Title }}</a></h2>
-            <p class="ec-meta">{{ with .Params.authors }}<span class="ec-authors">{{ partial "page_metadata_authors" $p }}</span>{{ end }}{{ if .Params.date }}<time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2006" }}</time>{{ end }}</p>
+            {{/* A long author list names the first three and keeps the rest behind an "and 9 more" button (script
+                 below), so one post's many authors do not stretch its whole row; the newest post, which has the row
+                 to itself, names everyone, and without JavaScript every card does. */}}
+            <p class="ec-meta">{{ with .Params.authors }}<span class="ec-authors">{{ if and (gt (len .) 4) (gt $i 0) }}{{ partial "doors/author_links" (first 3 .) }}<span class="ec-rest" data-more="{{ sub (len .) 3 }}">, {{ partial "doors/author_links" (after 3 .) }}</span>{{ else }}{{ partial "doors/author_links" . }}{{ end }}</span>{{ end }}{{ if .Params.date }}<time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2006" }}</time>{{ end }}</p>
             <p class="ac-summary">{{ if .Params.summary }}{{ .Params.summary | plainify | emojify }}{{ else if .Params.abstract }}{{ .Params.abstract | plainify | emojify }}{{ else }}{{ .Summary | plainify | emojify }}{{ end }}</p>
           </div>
         </article>
       </li>
     {{ end }}
   </ul>
+  <div class="ec-write">
+    {{/* An action, so a brick (DESIGN.md §4), in a brick colour rather than education's, which the door of a post
+         without a picture already uses. */}}
+    <div class="ec-write-card">
+      {{ with resources.Get "images/doors/area-education.webp" }}{{ $w := .Resize "440x webp q80" }}<div class="ec-write-plate"><img src="{{ $w.RelPermalink }}" width="{{ $w.Width }}" height="{{ $w.Height }}" alt="" loading="lazy"></div>{{ end }}
+      <h2>Write for Educators' Corner</h2>
+      <p>Share what you have learnt teaching or mentoring in open research.</p>
+      <a class="ec-write-link" href="mailto:info@forrt.org?subject=Educators%27%20Corner%3A%20article%20idea">Email us your idea</a>
+    </div>
+  </div>
+  </div>
 </div>
+<script>
+document.querySelectorAll('.ec-rest').forEach(function (rest) {
+  var more = document.createElement('button');
+  more.type = 'button';
+  more.className = 'ec-more';
+  more.textContent = 'and ' + rest.dataset.more + ' more';
+  more.setAttribute('aria-expanded', 'false');
+  rest.hidden = true;
+  rest.before(' ', more);
+  more.addEventListener('click', function () {
+    rest.hidden = false;
+    more.previousSibling.remove();
+    more.remove();
+    var first = rest.querySelector('a');
+    if (!first) { rest.tabIndex = -1; first = rest; }
+    first.focus();
+  });
+});
+</script>
 {{- end -}}

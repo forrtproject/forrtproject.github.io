@@ -1,8 +1,10 @@
 {{- define "main" -}}
 {{/* News and announcements: a grid of cards, newest first, each with its picture, category, date, title and
-     the start of its summary, with category buttons that filter them. A picture several posts share (the
-     newsletters' stock photo) would make those cards look alike, so they get a coloured panel naming the
-     issue instead, in the brick colours (DESIGN.md §6). */}}
+     the start of its summary, with category buttons that filter them. The newest shown leads across the row on a
+     wide screen, its picture beside its text (lists.css). A post with no picture of its own, or one several posts
+     share (the newsletters' stock photo), is a brick instead: the card itself in a brick colour (DESIGN.md §6),
+     its category and date said once, a newsletter in its year's colour as on the newsletter archive
+     (doors/post_panels). */}}
 <div class="wrap news-page">
   <header class="article-head">
     {{ partial "doors/crumbs" (dict "page" .) }}
@@ -23,7 +25,7 @@
   </div>
 
   <ul class="announcements-grid">
-    {{ $eager := true }}
+    {{ $eager := true }}{{ $lead := true }}
     {{ $tones := partialCached "doors/post_panels" site "post-panels" }}
     {{ range $posts }}
       {{ $cat := "" }}{{ with .Params.categories }}{{ $cat = index . 0 }}{{ end }}
@@ -31,21 +33,21 @@
       {{ $alt := .Params.image.alt_text }}
       <li class="ac-item" data-cat="{{ lower $cat }}">
         {{/* The title is a stretched link, so the whole card leads to the post. */}}
-        <article class="announcement-card">
-          {{ $tone := index $tones .RelPermalink }}
+        {{ $tone := index $tones .RelPermalink }}
+        {{ $issue := and $tone (eq (lower $cat) "newsletter") }}
+        <article class="announcement-card{{ if $tone }} ac-brick nla-brick-{{ $tone }}{{ end }}{{ if $issue }} ac-issue{{ end }}">
           {{ if not $tone }}
-            <div class="ac-thumb"><img src="{{ ($img.Fill "640x360 Center webp q75").RelPermalink }}" width="640" height="360" alt="{{ $alt }}"{{ if not $eager }} loading="lazy"{{ end }}></div>
+            {{ partial "doors/card_picture" (dict "img" $img "large" $lead "lazy" (not $eager) "alt" $alt) }}
             {{ $eager = false }}
-          {{ else }}
-            <div class="ac-thumb ac-panel ac-panel-{{ $tone }}" aria-hidden="true"><span>{{ $cat | default "News" }}</span><strong>{{ .Date.Format "January 2006" }}</strong></div>
           {{ end }}
           <div class="ac-body">
-            <p class="ac-meta">{{ with $cat }}<span class="ac-cat">{{ . }}</span>{{ end }}<time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time></p>
+            {{/* A newsletter's brick does not name its kind, which its colour and title say. */}}
+            <p class="ac-meta">{{ with $cat }}{{ if not $issue }}<span class="ac-cat">{{ . }}</span>{{ end }}{{ end }}<time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time></p>
             <h2><a class="ac-link" href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
             <p class="ac-summary">{{ .Summary | plainify | emojify }}</p>
           </div>
         </article>
-      </li>
+      </li>{{ $lead = false }}
     {{ end }}
   </ul>
 </div>
