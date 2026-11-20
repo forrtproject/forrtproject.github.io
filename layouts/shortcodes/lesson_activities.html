@@ -1,0 +1,65 @@
+{{/*
+  Renders the teaching activities from data/lesson_activities.json.
+  Regenerate with: python3 scripts/build_lesson_activities.py
+*/}}
+{{ $data := index hugo.Data "lesson_activities" }}
+{{ $total := len $data.activities }}
+
+<div class="activity-browser" id="activity-browser">
+  <details class="filter-container activity-filters" open hidden>
+    <summary>Filter activities</summary>
+    <div class="filter-section-title" id="activity-filter-cluster">Cluster</div>
+    <div class="pill-bar" role="group" aria-labelledby="activity-filter-cluster">
+      <button type="button" class="filter-pill active" data-value="all" aria-pressed="true">All clusters</button>
+      {{ range $data.clusters }}<button type="button" class="filter-pill" data-value="{{ . }}" aria-pressed="false">{{ . }}</button>{{ end }}
+    </div>
+  </details>
+
+  <p class="activity-count" role="status">{{ $total }} activities</p>
+
+  <div class="activity-grid">
+    {{ range $data.activities }}
+    <article class="activity-card" data-clusters="{{ delimit .clusters "|" }}">
+      <h4 class="activity-card-title">{{ .title }}</h4>
+      {{ with .description }}<p class="activity-card-text">{{ partial "lesson_activity_text.html" . }}</p>{{ end }}
+      <dl class="activity-card-details">
+        {{ with .outcomes }}<dt>Learning outcomes</dt><dd>{{ partial "lesson_activity_text.html" . }}</dd>{{ end }}
+        {{ with .medium }}<dt>Medium</dt><dd>{{ . }}</dd>{{ end }}
+        {{ with .delivery }}<dt>Delivery</dt><dd>{{ . }}</dd>{{ end }}
+        {{ with .time }}<dt>Time</dt><dd>{{ . }}</dd>{{ end }}
+        {{ with .resources }}<dt>Supporting resources</dt><dd>{{ partial "lesson_activity_text.html" . }}</dd>{{ end }}
+        {{ with .reference }}<dt>Reference</dt><dd>{{ partial "lesson_activity_text.html" . }}</dd>{{ end }}
+      </dl>
+      {{ with .clusters }}<p class="activity-card-source">{{ delimit . " · " }}</p>{{ end }}
+    </article>
+    {{ end }}
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var browser = document.getElementById('activity-browser');
+    var filters = browser.querySelector('.activity-filters');
+    var cards = browser.querySelectorAll('.activity-card');
+    var count = browser.querySelector('.activity-count');
+
+    filters.hidden = false;
+    filters.open = window.matchMedia('(min-width: 768px)').matches;
+    filters.addEventListener('click', function (event) {
+      var pill = event.target.closest('.filter-pill');
+      if (!pill) return;
+      filters.querySelectorAll('.filter-pill').forEach(function (other) {
+        var active = other === pill;
+        other.classList.toggle('active', active);
+        other.setAttribute('aria-pressed', active ? 'true' : 'false');
+      });
+      var visible = 0;
+      cards.forEach(function (card) {
+        var show = pill.dataset.value === 'all' || card.dataset.clusters.split('|').indexOf(pill.dataset.value) !== -1;
+        card.hidden = !show;
+        if (show) visible += 1;
+      });
+      count.textContent = visible + (visible === 1 ? ' activity' : ' activities');
+    });
+  });
+</script>
