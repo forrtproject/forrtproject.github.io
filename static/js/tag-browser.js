@@ -146,6 +146,11 @@
 (function () {
   "use strict";
 
+  // The site's root as this script was loaded from it, so root-relative paths in the page's metadata also work when the
+  // site is served from a subfolder (the preview at /rebrand-doors/ rewrites links and sources, not meta content).
+  var root = document.currentScript ? new URL("../", document.currentScript.src).pathname : "/";
+  function fromRoot(path) { return path.charAt(0) === "/" ? root + path.slice(1) : path; }
+
   var tag = new URLSearchParams(window.location.search).get("tag");
   if (!tag) return;
 
@@ -321,20 +326,23 @@
     related(pages);
   }
 
-  /** Where the tag is also a glossary term, the line under the title is the start of its definition, with a link to it.
+  /** Where the tag is also a glossary term, the line under the title is the first sentence of its definition, with a link to it.
       Author-year citations are dropped, as in the glossary's own previews; the count is on the "All" filter. */
   function lead(standfirst) {
     var meta = document.querySelector('meta[name="glossary-index"]');
     if (!meta) return;
-    fetch(meta.content).then(function (response) { return response.ok ? response.json() : {}; }).then(function (terms) {
+    fetch(fromRoot(meta.content)).then(function (response) { return response.ok ? response.json() : {}; }).then(function (terms) {
       var key = label.toLowerCase();
       var term = terms[key] || terms[key.replace(/-/g, "")] || terms[key.replace(/-/g, " ")];
       if (!term || !term.summary) return;
       var text = term.summary.replace(/\s*[(（][^()（）]*[,，،]\s*\d{4}[a-z]?[^()（）]*[)）]/g, "");
+      // Its first sentence: a sentence ends where a capital or an opening quote follows the full stop.
+      var first = text.match(/^(.+?[.!?])\s+(?=[A-Z“"(])/);
+      if (first) text = first[1];
       var count = standfirst.textContent;
       standfirst.textContent = text + " ";
       var link = document.createElement("a");
-      link.href = term.url;
+      link.href = fromRoot(term.url);
       link.textContent = "More in the glossary";
       standfirst.appendChild(link);
       standfirst.classList.add("tag-lead");
