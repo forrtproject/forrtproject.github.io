@@ -143,12 +143,13 @@
 
 {{ $pdf := .Get "pdf" | default "/files/FORRT_Booklet(A5).pdf" }}
 {{ $id := printf "flipbook-%s" (.Get "id" | default "default") }}
-{{/* The PDF, and on a phone or a narrow screen a jump past the flipbook to the contents that follow it (`contents`,
-     an anchor); a wide screen has the contents beside the flipbook (sections.css, "The booklet"). */}}
+{{/* "Read full screen" opens the flipbook full screen, through the toolbar's own button, once the flipbook has
+     loaded (until then, and without JavaScript, it stays hidden); "Download the PDF" saves it. On a phone or a narrow
+     screen, a jump past the flipbook to the contents that follow it (`contents`, an anchor). */}}
 <div class="booklet-open">
-  <a class="btn btn-primary" href="{{ $pdf }}">Open the PDF</a>
-  {{ with .Get "contents" }}<a class="btn btn-outline-primary booklet-jump d-wide-none" href="{{ . }}">{{ $.Get "contents_label" | default "Contents" }}</a>{{ end }}
-  <p class="booklet-open-note">The PDF opens full screen, to read or save.</p>
+  <button type="button" class="btn btn-primary booklet-full" data-book="{{ $id }}" hidden>Read full screen</button>
+  <a class="btn btn-outline-primary" href="{{ $pdf }}" download>Download the PDF</a>
+  {{ with .Get "contents" }}<a class="booklet-jump d-wide-none" href="{{ . }}">{{ $.Get "contents_label" | default "Contents" }}</a>{{ end }}
 </div>
 <div class="_df_book booklet-frame" id="{{ $id }}" source="{{ $pdf }}" style="height:{{ .Get "height" | default "80vh" }};margin:20px 0;min-height:500px;max-height:1200px;"></div>
 
@@ -190,8 +191,16 @@
 
     // The library swaps in its own toolbar after it has read the PDF; give it the site's glyphs.
     function remapWhenReady(tries) {
-      if (book.querySelector('.df-ui-btn')) { remapFlipbookIcons(); return; }
+      if (book.querySelector('.df-ui-btn')) { remapFlipbookIcons(); showFullScreen(); return; }
       if (tries > 0) setTimeout(function() { remapWhenReady(tries - 1); }, 200);
+    }
+    // "Read full screen" presses the toolbar's own full-screen button.
+    function showFullScreen() {
+      var full = book.querySelector('.df-ui-fullscreen');
+      var button = document.querySelector('.booklet-full[data-book="{{ $id }}"]');
+      if (!full || !button) return;
+      button.hidden = false;
+      button.addEventListener('click', function() { full.click(); });
     }
     function loadDFlip() {
       var s = document.createElement('script');

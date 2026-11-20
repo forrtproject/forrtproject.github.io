@@ -531,13 +531,12 @@ html:has(.contributor-az){scroll-padding-top:calc(var(--contributor-az,72px) + 1
 }
 
 
-/* The booklet: the introduction, "Open the PDF" with a line on what the PDF is for and, until the contents stand
-   beside the flipbook, a jump to them; the flipbook on a pale panel; then the booklet's table of contents, area by
-   area: a heading in the area's colour over its pages, each a link to its page on the site with the booklet's page
-   number after a dotted leader (DESIGN.md §4: a plain list, not boxes). On a wide screen the flipbook turns one page
-   at a time in a column of its own, with the introduction and the contents beside it. */
+/* The booklet: the introduction; "Read full screen", which opens the flipbook full screen, and "Download the PDF"
+   (with, on a phone, a jump past the flipbook to the contents); the flipbook across the column on a pale panel, two
+   pages to a spread on a wide screen, so it reads and turns as a booklet; then the booklet's table of contents, area
+   by area: a heading in the area's colour over its pages, each a link to its page on the site with the booklet's page
+   number after a dotted leader (DESIGN.md §4: a plain list, not boxes). The page numbers turn the flipbook. */
 .booklet-open{display:flex;flex-wrap:wrap;align-items:center;gap:10px 12px;margin:22px 0 4px}
-.article-layout .article-style .booklet-open-note{flex-basis:100%;margin:0;font-size:16px;color:var(--ink)}
 .article-style .booklet-frame{background:var(--surface)!important;border-radius:var(--r-large)}
 .article-layout .article-style .booklet-inside-note{margin:0 0 14px;font-size:16px;color:var(--soft)}
 .booklet-inside{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:28px 36px;margin:12px 0 8px}
@@ -556,15 +555,11 @@ html:has(.contributor-az){scroll-padding-top:calc(var(--contributor-az,72px) + 1
 .article-layout .article-style .booklet-area a.booklet-page{flex:none;color:var(--tone);font:600 17px/1.4 var(--text);font-variant-numeric:tabular-nums;text-decoration:underline;text-decoration-color:currentColor;text-decoration-thickness:1.5px;text-underline-offset:3px}
 .article-layout .article-style .booklet-area li>a.booklet-page{min-width:1.6em;text-align:end}
 .article-layout .article-style .booklet-area-pages a.booklet-page{font-size:15px}
-@media(min-width:1001px){
-  .article-layout .article-style .booklet-layout{display:grid;grid-template-columns:minmax(0,480px) minmax(0,1fr);grid-template-areas:"book intro" "book open" "book index";grid-template-rows:auto auto 1fr;column-gap:56px;align-items:start;max-width:none}
-  .booklet-viewer{display:contents}
-  .booklet-intro{grid-area:intro}.booklet-viewer>.booklet-open{grid-area:open;margin-top:6px}.booklet-viewer>._df_book{grid-area:book}.booklet-index{grid-area:index}
-  .article-layout .article-style .booklet-intro>p:first-child{margin-top:0}
-  .article-style .booklet-layout ._df_book{width:100%;margin:0!important}
-  /* d-wide-none: hidden on purpose where the contents stand beside the flipbook. */
-  .booklet-jump.d-wide-none{display:none}
-  .article-layout .article-style .booklet-index>h2:first-child{margin-top:30px}
+/* The jump to the contents is a plain link after the two buttons (on a phone on its own line), a 44 px target; a wide screen shows the contents
+   soon after the flipbook and does without it. On a phone the two buttons share a row. */
+.article-layout .article-style .booklet-jump{display:inline-flex;align-items:center;min-height:44px;font-weight:600}
+@media(min-width:1001px){.booklet-jump.d-wide-none{display:none}}
+@media(max-width:760px){.booklet-open .btn{padding-inline:14px}.article-layout .article-style .booklet-jump{flex-basis:100%}}
 }
 /* The flipbook's toolbar: 44 px buttons, Previous and Next in words and the page position in readable type, also on a
    phone, where the library would hide the position; zoom and share give way there, since a phone pinches to zoom. */
@@ -580,9 +575,9 @@ html:has(.contributor-az){scroll-padding-top:calc(var(--contributor-az,72px) + 1
 .article-style ._df_book label[for=df_book_page_number]{height:44px;padding-top:13px;font-size:16px!important}
 .article-style ._df_book label[for=df_book_page_number]::before{content:"Page "}
 .article-style ._df_book .df-ui-share{display:none!important}
-/* The toolbar keeps Previous, the page, Next and full screen: zoom gives way to full screen, the thumbnails to the
-   contents beside or below the flipbook, and the menu, which holds the download, to "Open the PDF". */
-.article-style ._df_book .df-ui-controls>:is(.df-ui-zoomin,.df-ui-zoomout,.df-ui-thumbnail,.df-ui-more){display:none!important}
+/* On a phone the toolbar keeps Previous, the page, Next and full screen, which fit its width: a phone pinches to
+   zoom, and the contents below stand in for the thumbnails. A wider screen has the library's whole toolbar. */
+@media(max-width:760px){.article-style ._df_book .df-ui-controls>:is(.df-ui-zoomin,.df-ui-zoomout,.df-ui-thumbnail,.df-ui-more){display:none!important}}
 .article-style ._df_book .df-ui-controls>.df-ui-fullscreen{width:44px}
 @media(max-width:760px){.article-style ._df_book .df-ui-controls>:is(.df-ui-prev,.df-ui-next){padding-inline:10px}}
 .article-style ._df_book .df-ui-controls>.df-ui-btn:not(.disabled)::before{color:var(--ink)!important}

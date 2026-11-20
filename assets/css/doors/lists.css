@@ -274,30 +274,22 @@ ul.list-items>li[hidden]{display:none}
 /* Author names link to their profiles, above the card's own link. */
 .ec-authors a{position:relative;z-index:1;color:inherit;text-decoration:underline;text-underline-offset:2px}
 .ec-authors a:hover{color:var(--ink)}
-/* News list: a post without a picture of its own is a brick (layouts/section/post.html): the card in its brick colour,
-   its category and date said once at the foot, the title and summary in white, a castle wall's merlons above it as on
-   the newsletter archive's latest issue. */
-.news-page .ac-brick{overflow:visible;background:var(--tone);border-radius:3px;box-shadow:inset 0 -6px 0 rgb(0 0 0/.24);color:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
-.news-page .ac-brick::before{content:"";position:absolute;left:14px;right:14px;top:-9px;height:9px;background:linear-gradient(90deg,transparent 6px,var(--tone) 6px 28px,transparent 28px) left top/34px 9px space no-repeat;border-radius:2px 2px 0 0}
-.news-page .ac-brick .ac-body{display:flex;flex-direction:column;flex:1;padding:22px 22px 24px}
-.news-page .ac-brick .ac-meta{order:3;margin:auto 0 0;padding-top:14px;color:#fff}
-.news-page .ac-brick .ac-cat{background:#fff;color:var(--ink)}
-.news-page .ac-brick h2{margin:0 0 10px;font-size:27px;line-height:1.15}
-.news-page .ac-brick .ac-link,.news-page .ac-brick:hover .ac-link{color:#fff}
-.news-page .ac-brick:hover .ac-link{text-decoration-thickness:3px}
-@supports selector(:has(*)){.news-page .ac-brick:has(.ac-link:focus-visible){outline-color:var(--ink)}}
+/* News list: a post without a picture of its own has a panel in a brick colour in the picture's place
+   (layouts/section/post.html), naming its category; a newsletter's names the issue, as its title. */
+.news-page .ac-panel{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.news-page .ac-panel>strong{font-size:32px}
+.news-page .ac-panel-title{margin:0;font-size:inherit;line-height:1.1}
+.news-page .ac-panel-title .ac-link,.news-page .announcement-card:hover .ac-panel-title .ac-link{display:flex;flex-direction:column;color:#fff;text-decoration:none}
+.news-page .ac-panel-title span{font:600 16px/1.3 var(--text)}
+.news-page .ac-panel-title strong{font:var(--display-weight) 34px/1.1 var(--display);text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:5px}
+.news-page .announcement-card:hover .ac-panel-title strong{text-decoration-thickness:3px}
+.news-page .ac-issue .ac-body{padding-top:16px}
+.news-page .ac-issue .ac-summary{-webkit-line-clamp:5;line-clamp:5}
 /* Summaries end at a whole word: a long word moves to the next line rather than breaking. */
 .news-page .ac-summary{overflow-wrap:break-word}
-/* On a wide screen a brick is as tall as the picture cards beside it, so its excerpt runs longer to fill it. */
-@media(min-width:761px){.news-page .ac-brick h2{font-size:29px}.news-page .ac-brick .ac-summary{-webkit-line-clamp:7;line-clamp:7}}
-/* Room between rows for the bricks' merlons. */
-.news-page .announcements-grid{row-gap:30px}
 @media(max-width:760px){
-  /* A brick on a phone is short: its title, two lines and its date, so a run of bricks is not a wall of colour. */
-  .news-page .ac-brick .ac-body{padding:16px 18px 18px}
-  .news-page .ac-brick h2{font-size:23px}
-  .news-page .ac-brick .ac-summary{-webkit-line-clamp:2;line-clamp:2}
-  .news-page .ac-brick .ac-meta{padding-top:10px}
+  /* On a phone a panel is a band, not a 16:9 picture, so a run of picture-less posts is not a wall of colour. */
+  .news-page .ac-panel{aspect-ratio:auto;min-height:96px;padding:14px 18px}
   /* A logo or figure shown whole needs less height than a photo, except the lead's. */
   .ec-thumb-whole{aspect-ratio:2/1}
   .news-page :is(.announcements-grid,.ec-list)>li:nth-child(1 of :not([hidden])) .ec-thumb-whole{aspect-ratio:4/3}
@@ -316,7 +308,7 @@ ul.list-items>li[hidden]{display:none}
    larger. When a filter or search hides it, the first post still shown leads instead. */
 @media(min-width:1001px){
   .news-page :is(.announcements-grid,.ec-list)>li:nth-child(1 of :not([hidden])){grid-column:1/-1}
-  .news-page :is(.announcements-grid,.ec-list)>li:nth-child(1 of :not([hidden]))>.announcement-card:not(.ac-brick){display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center}
+  .news-page :is(.announcements-grid,.ec-list)>li:nth-child(1 of :not([hidden]))>.announcement-card{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center}
   .news-page :is(.announcements-grid,.ec-list)>li:nth-child(1 of :not([hidden])) .ac-thumb{align-self:stretch}
   .news-page :is(.announcements-grid,.ec-list)>li:nth-child(1 of :not([hidden])) .ac-thumb:not(.ec-thumb-whole) img{height:100%;min-height:100%;object-fit:cover}
   .news-page :is(.announcements-grid,.ec-list)>li:nth-child(1 of :not([hidden])) .ec-thumb-whole{aspect-ratio:auto;min-height:340px;border-bottom:0;border-right:1px solid var(--line)}
@@ -324,8 +316,6 @@ ul.list-items>li[hidden]{display:none}
   .news-page :is(.announcements-grid,.ec-list)>li:nth-child(1 of :not([hidden])) h2{font-size:32px;line-height:1.12;margin-bottom:12px}
   .news-page :is(.announcements-grid,.ec-list)>li:nth-child(1 of :not([hidden])) .ac-summary{font-size:18px;-webkit-line-clamp:6;line-clamp:6;max-width:34em}
   .news-page :is(.announcements-grid,.ec-list)>li:nth-child(1 of :not([hidden])) .ec-meta{font-size:16px;margin-bottom:12px}
-  .news-page :is(.announcements-grid,.ec-list)>li:nth-child(1 of :not([hidden])) .ac-brick .ac-body{padding:30px 40px 36px}
-  .news-page :is(.announcements-grid,.ec-list)>li:nth-child(1 of :not([hidden])) .ac-brick h2{font-size:40px;max-width:24em}
 }
 /* Educators' Corner: the list shares its grid with the invitation to write (layouts/section/educators-corner.html). */
 .ec-list{display:contents;margin:0;padding:0;list-style:none}

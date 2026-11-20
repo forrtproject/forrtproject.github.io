@@ -47,28 +47,16 @@ summary = "Learn more about FORRT in the interactive flipbook below: If you pref
   ]
 +++
 
-<!-- On a wide screen the flipbook stands on the left, with the introduction, "Open the PDF" and the booklet's contents
-     beside it (assets/css/doors/sections.css, "The booklet"); on a phone the contents follow the flipbook, with a
-     jump to them beside "Open the PDF". -->
-<div class="booklet-layout">
-<div class="booklet-intro">
+<!-- The introduction, the flipbook across the column and then the booklet's contents, whose page numbers turn it
+     (assets/css/doors/sections.css, "The booklet"). -->
 
 A 20-page introduction to FORRT: what it is, projects from each of its four areas, and its vision for FORRT's future.
 
-</div>
-<div class="booklet-viewer">
-
 {{< dearflip id="forrt-booklet" pdf="/files/FORRT_Booklet(A5).pdf" contents="#inside-the-booklet" contents_label="Inside the booklet" >}}
-
-</div>
-<div class="booklet-index">
 
 ## Inside the booklet
 
 {{< booklet_contents book="forrt-booklet" pdf="/files/FORRT_Booklet(A5).pdf" >}}
-
-</div>
-</div>
 
 ## Where next
 
