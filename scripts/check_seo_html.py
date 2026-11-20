@@ -53,6 +53,7 @@ Hard checks (exit 1 if any fails):
       that has a page in the same language (per the English page's hreflang links).
   24. Every other name an English glossary term page shows ("Also known as") is in
       that term's data-term on the glossary hub, so the hub's filter finds it.
+  25. No page loads the retired js/newsletter.js (#1170).
 
 Report-only sections (never fail): pages with no <h1>, the
 site-wide share of images that carry both width and height, pages whose
@@ -817,6 +818,7 @@ def main(public_dir):
         "22. FLoRA page shows the citation": check_flora_citation(public_dir),
         "23. translated glossary pages link related terms in their own language": check_glossary_related_language(pages),
         "24. the glossary hub's filter finds each term by its other names": check_glossary_aka_filter(public_dir),
+        "25. no page loads the retired js/newsletter.js": [p.path for p in pages if p.loads("js/newsletter.js")],
     }
     conditional = check_conditional_assets(pages)
     results["3. conditional highlight.js / mermaid loading"] = [
