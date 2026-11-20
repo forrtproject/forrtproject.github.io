@@ -309,7 +309,9 @@ if (canvas) {
     context.globalAlpha = 1;
 
     if (active) {
-      // Time since the lines began to grow (negative while the view is still moving), and whose lines they are.
+      // Time since the lines began to grow (negative while the view is still moving), and whose lines they are. A
+      // switch to reduced motion part-way through settles them at once.
+      if (reduced.matches) growth = null;
       const person = growth && growth.from === state.person;
       const t = growth ? performance.now() - growth.began : Infinity;
       const growing = t < (person ? FIRST + SECOND : SECOND) ? growth.from : null;

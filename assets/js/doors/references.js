@@ -89,8 +89,10 @@ export async function copyWithFeedback(button, text, { onFail, said = 'Copied.' 
     void button.offsetWidth;
   }
   button.classList.add('is-copied');
+  // One status line is shared, so a second copy in quick succession replaces the first one's news.
   line.textContent = '';
-  setTimeout(() => { line.textContent = said; }, 60);
+  clearTimeout(line.copyTimer);
+  line.copyTimer = setTimeout(() => { line.textContent = said; }, 60);
   button.copyReset = setTimeout(() => {
     button.classList.remove('is-copied');
     button.copyRest();

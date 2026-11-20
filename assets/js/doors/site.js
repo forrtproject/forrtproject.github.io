@@ -768,6 +768,8 @@ if (listFilter) {
       statusWord = word;
       row.querySelectorAll('button').forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.status === key)));
       board.classList.toggle('is-chosen', Boolean(key));
+      // Choosing an outcome ends the bricks' first-view preview at once, so the dimming of the others shows (article.css).
+      board.classList.remove('is-previewing');
       if (key) listFilter.parentElement.dataset.outcome = key; else delete listFilter.parentElement.dataset.outcome;
       // The chosen outcome's bricks rise in each discipline's strip, left to right (article.css).
       document.querySelectorAll('.section-mix i').forEach((brick) => brick.classList.toggle('is-match', Boolean(key) && brick.classList.contains(`status-${key}`)));
@@ -803,7 +805,9 @@ if (listFilter) {
         timer = setTimeout(() => {
           seen.disconnect();
           board.classList.add('is-seen');
-          setTimeout(() => board.classList.remove('is-previewing', 'is-seen'), 2000);
+          // The longest tile's last brick starts 10 ms per brick in and takes 0.14 s (article.css).
+          const longest = Math.max(...brickRows.map((bricks) => bricks.children.length));
+          setTimeout(() => board.classList.remove('is-previewing', 'is-seen'), 140 + longest * 10 + 100);
         }, wait);
       };
       const seen = new IntersectionObserver((entries) => {

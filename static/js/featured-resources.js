@@ -50,7 +50,7 @@
   // The site's copy feedback (assets/js/doors/references.js): a check in the icon's place, only once copied.
   function copyWithFeedback(button, text) {
     if (window.forrtCopy) window.forrtCopy(button, text);
-    else navigator.clipboard.writeText(text).catch(function () {});
+    else navigator.clipboard.writeText(text).catch(function () { window.prompt('Copy this text:', text); });
   }
 
   function plainText(s) {
