@@ -69,4 +69,12 @@
     {{ partial "doors/reading_toc" . }}
   </div>
   {{ end }}
+  {{/* How to cite a page that asks to be cited (front matter cite_as), under its contents, so it is in view from the
+     start; on phones the card follows the text with this alone (article.css). */}}
+  {{ with $p.Params.cite_as }}
+  <div class="card-cite">
+    <h2>Cite as</h2>
+    <p>{{ . | markdownify }}</p>
+  </div>
+  {{ end }}
 </section>
