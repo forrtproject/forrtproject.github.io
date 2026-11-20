@@ -1,0 +1,34 @@
+{{- define "main" -}}
+{{/* A taxonomy's index: /forrt_clusters/ (the seven earlier clusters), /categories/ (the news categories) and
+     /publication_types/, which has no terms and shows its own text with a button to Publications. Each keeps its numbered pages, as the 404 page
+     and older links know them (decision D17). */}}
+{{ $_ := .Paginate .Data.Pages }}
+{{ $kind := lower .Type }}
+<div class="wrap">
+  <div class="article-layout article-layout-wide">
+    <article class="reading">
+      {{ $topic := eq $kind "forrt_clusters" }}
+      <header class="article-head{{ if $topic }} topic-heading{{ end }}">
+        {{ partial "doors/crumbs" (dict "page" .) }}
+        <h1>{{ .Title }}</h1>
+        {{ with .Params.subtitle }}<p class="standfirst">{{ . | markdownify | emojify }}</p>{{ end }}
+        {{ if eq $kind "categories" }}<p class="standfirst">Each post in <a href="{{ relref . "/post" }}">news and announcements</a> has one of these {{ len .Data.Terms }} categories.</p>{{ end }}
+        {{/* The directory's illustration beside the title, as these are resources from the same collection. */}}
+        {{ if $topic }}{{ with resources.Get "images/doors/area-education.webp" }}<figure class="topic-plate-head"><img src="{{ .RelPermalink }}" alt="" width="{{ .Width }}" height="{{ .Height }}"></figure>{{ end }}{{ end }}
+        {{ if $topic }}<p class="topic-index__actions"><a class="btn btn-primary" href="{{ relref . "/clusters" }}">Browse the {{ with hugo.Data.clusters_v4 }}{{ len .clusters }}{{ else }}11{{ end }} current clusters</a> <a class="btn btn-outline-primary" href="{{ relref . "/resources" }}">Search all resources</a></p>{{ end }}
+      </header>
+      {{ with .Content }}<div class="article-style">{{ partial "doors/content" . }}</div>{{ end }}
+      {{ if not .Data.Pages }}
+        {{/* A taxonomy with no terms (/publication_types/): its own text and the way to where its pages are. */}}
+        {{ if eq $kind "publication_types" }}<p class="topic-index__actions"><a class="btn btn-primary" href="{{ relref . "/publications" }}">Go to Publications</a></p>{{ end }}
+      {{ else if $topic }}
+        {{ partial "doors/topic_index.html" . }}
+      {{ else if eq $kind "categories" }}
+        {{ partial "doors/category_index.html" . }}
+      {{ else }}
+        <div class="list-items">{{ range .Data.Terms.ByCount }}{{ partial "doors/list_item" .Page }}{{ end }}</div>
+      {{ end }}
+    </article>
+  </div>
+</div>
+{{- end -}}

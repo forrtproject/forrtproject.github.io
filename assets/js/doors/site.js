@@ -712,9 +712,10 @@ if (listFilter) {
   if (sections.some(({items}) => items.some((item) => item.querySelector('.spoiler')))) {
     sections.forEach((s) => { s.items = s.items.filter((item) => item.querySelector('.spoiler')); });
   }
-  // A menu of the sections that hold entries, with their counts, to jump straight to one.
+  // A menu of the sections that hold entries, with their counts, to jump straight to one. A list whose page already
+  // leads to each section (data-no-jump, the earlier clusters' chart) goes without.
   const withItems = sections.filter(({heading, items}) => heading && items.length && items.length < 400);
-  if (withItems.length > 3) {
+  if (withItems.length > 3 && !('noJump' in listFilter.dataset)) {
     const jump = document.createElement('label');
     jump.className = 'list-filter-jump';
     jump.textContent = 'Go to ';

@@ -1,0 +1,59 @@
+{{/* /category/<term>/: the news posts in one category, as the news list's cards (doors/news_card.html), newest first,
+     three to a row on a wide screen (two for two posts), so a short category leaves no lone card in a row; a single post
+     leads across the row, its picture beside its text, as the news list's newest. The head names the category in the
+     plural and says what it holds; the categories follow as links in the news list's chip row, this one pressed, with
+     "All news" first. A category of fewer than three posts would leave the page half empty, so the newest posts of
+     other categories follow under "More news".
+     Categories come from the announcements sheet; one not named below gets the plain sentence.
+     Input: the term page. */}}
+{{ $page := . }}
+{{ $key := lower .Title }}
+{{ $about := dict
+  "event" "Conferences, workshops and other events that FORRT runs or takes part in."
+  "milestone" "Awards, new partners and other steps in FORRT’s growth."
+  "newsletter" (printf `Issues of the FORRT newsletter. Each one is also in the <a href="%s">newsletter archive</a>.` (relref . "/newsletters"))
+  "opportunity" "Calls for submissions and other chances to take part in FORRT’s work."
+  "resource" "Resources, tools and pages from FORRT that are new or newly updated."
+}}
+{{ $plural := dict "event" "Events" "milestone" "Milestones" "newsletter" "Newsletter issues" "opportunity" "Opportunities" "resource" "Resources" }}
+{{ $news := site.GetPage "/post" }}
+{{ $pager := .Paginate (sort .Data.Pages "Date" "desc") }}
+{{ $count := len .Data.Pages }}
+<div class="wrap news-page category-page">
+  <header class="article-head">
+    {{ partial "doors/crumbs" (dict "page" .) }}
+    <h1>{{ index $plural $key | default .Title }}</h1>
+    <p class="standfirst">{{ with index $about $key }}{{ . | safeHTML }}{{ else }}News posts filed under {{ $page.Title }}.{{ end }}</p>
+  </header>
+  {{/* The same row as the news list's category buttons, here as links between the category pages. */}}
+  <nav class="ac-filters category-nav" aria-label="News categories">
+    {{ with $news }}<a class="ac-chip" href="{{ .RelPermalink }}">All news <span class="chip-count">{{ len .Pages }}</span></a>{{ end }}
+    {{ range site.Taxonomies.categories.ByCount }}
+      {{ if eq .Page.RelPermalink $page.RelPermalink }}<a class="ac-chip active" aria-current="page" href="{{ .Page.RelPermalink }}">{{ .Page.Title }} <span class="chip-count">{{ .Count }}</span></a>
+      {{ else }}<a class="ac-chip" href="{{ .Page.RelPermalink }}">{{ .Page.Title }} <span class="chip-count">{{ .Count }}</span></a>{{ end }}
+    {{ end }}
+  </nav>
+  {{/* How many posts on this page use each picture, so a picture shared elsewhere shows where it is the only one here. */}}
+  {{ $uses := dict }}
+  {{ range $pager.Pages }}{{ with (.Resources.ByType "image").GetMatch "*featured*" }}{{ $k := md5 .Content }}{{ $uses = merge $uses (dict $k (add 1 (index $uses $k | default 0))) }}{{ end }}{{ end }}
+  {{ $one := eq (len $pager.Pages) 1 }}
+  <ul class="{{ if $one }}announcements-grid category-lead{{ else }}category-grid{{ if eq (len $pager.Pages) 2 }} category-grid--two{{ end }}{{ end }}">
+    {{ range $i, $p := $pager.Pages }}
+      {{ $own := false }}{{ with ($p.Resources.ByType "image").GetMatch "*featured*" }}{{ $own = eq (index $uses (md5 .Content)) 1 }}{{ end }}
+      <li class="ac-item">{{ partial "doors/news_card" (dict "page" $p "lead" $one "lazy" (gt $i 2) "in_category" true "own_picture" $own) }}</li>
+    {{ end }}
+  </ul>
+  {{ partial "doors/pager" $pager }}
+  {{ if and $news (lt $count 3) }}
+    {{ $others := slice }}
+    {{ range sort $news.Pages "Date" "desc" }}{{ if and (lt (len $others) 4) (not (in $page.Data.Pages .)) }}{{ $others = $others | append . }}{{ end }}{{ end }}
+    {{ with $others }}
+    <section class="read-next category-more" aria-labelledby="read-next-heading">
+      <h2 id="read-next-heading"><a href="{{ $news.RelPermalink }}">More news<span aria-hidden="true"> →</span></a></h2>
+      <ul class="category-grid category-grid--four">
+        {{ range . }}<li>{{ partial "doors/news_card" (dict "page" . "lazy" true "h" "h3") }}</li>{{ end }}
+      </ul>
+    </section>
+    {{ end }}
+  {{ end }}
+</div>

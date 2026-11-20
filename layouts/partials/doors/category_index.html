@@ -1,0 +1,9 @@
+{{/* /categories/: the news categories as bricks with their counts, largest first, in the brick colours, which carry
+     no meaning (DESIGN.md §6), as on /forrt_clusters/ (doors/topic_index.html). Then the way to all news.
+     Input: the taxonomy page. */}}
+{{ $page := . }}
+<section class="brick-row topic-index topic-index--row">
+  <h2 class="visually-hidden">News categories</h2>
+  <ul class="action-cards">{{ range $page.Data.Terms.ByCount }}<li><a href="{{ .Page.RelPermalink }}"><strong>{{ .Page.Title }}</strong><span>{{ .Count }} {{ cond (eq .Count 1) "post" "posts" }}</span></a></li>{{ end }}</ul>
+</section>
+{{ with site.GetPage "/post" }}<p class="topic-index__links">Or read <a href="{{ .RelPermalink }}">all {{ len .Pages }} news posts</a>, newest first.</p>{{ end }}
