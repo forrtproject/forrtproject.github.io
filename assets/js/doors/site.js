@@ -318,26 +318,50 @@ if (summaryEntries.length) {
   // Pages of 30, unless that would hide only a few: then every entry shows. A collection page shows every entry in
   // chapters by year, with an index of years to jump by, so it needs no pages.
   let limit = summaryEntries.length > 40 && !chapters.length ? 30 : summaryEntries.length;
+  // The sentence of an entry's takeaways, quote, abstract or reference that holds the query, cut to about 140
+  // characters around it.
+  const hiddenSentence = (entry, query) => {
+    for (const part of entry.querySelectorAll(':scope > ul:first-of-type li, :scope > blockquote, :scope > p')) {
+      const text = part.textContent.replace(/\s+/g, ' ').trim();
+      if (text.toLowerCase().length !== text.length) continue;
+      const at = text.toLowerCase().indexOf(query);
+      if (at < 0) continue;
+      const before = text.slice(0, at);
+      let start = Math.max(before.search(/[^.!?]*$/), 0);
+      let end = text.slice(at).search(/[.!?](\s|$)/);
+      end = end < 0 ? text.length : at + end + 1;
+      // A sentence cut short is marked with "…" where it was cut.
+      const cutStart = at - start > 60;
+      if (cutStart) start = text.indexOf(' ', at - 60) + 1;
+      if (end - at > 90) end = text.lastIndexOf(' ', at + 90);
+      const said = text.slice(start, end).trim();
+      return `${cutStart ? '…' : ''}${said}${end < text.length && !/[.!?]$/.test(said) ? '…' : ''}`;
+    }
+    return '';
+  };
   const show = () => {
     const query = input.value.trim().toLowerCase();
     const matches = summaryEntries.filter((entry) => !query || words.get(entry).includes(query));
     const shown = query ? matches : matches.slice(0, limit);
     // An entry someone has opened, perhaps from a link to it, stays in view.
     summaryEntries.forEach((entry) => { entry.hidden = !shown.includes(entry) && !entry.open; });
-    // A row that matches only in its hidden text says so; otherwise the typed words are marked where they show in
-    // the closed row: its title, citation and preview.
+    // A row that matches only in its hidden text shows the sentence the words are in; the typed words are marked
+    // where they show in the closed row: its title, citation, preview and that sentence.
     summaryEntries.forEach((entry) => {
       const head = entry.querySelector('summary');
       const seen = [...head.querySelectorAll('h3, .summary-gist')].some((part) => part.textContent.toLowerCase().includes(query));
       let hit = head.querySelector('.summary-hit');
       if (query && !seen && shown.includes(entry)) {
         if (!hit) { hit = document.createElement('span'); hit.className = 'summary-hit'; head.append(hit); }
-        hit.textContent = `“${input.value.trim()}” is in the full summary`;
+        const said = hiddenSentence(entry, query);
+        if (said) {
+          hit.replaceChildren(Object.assign(document.createElement('span'), { className: 'summary-hit-label', textContent: 'In the summary: ' }), Object.assign(document.createElement('span'), { className: 'summary-hit-text', textContent: said }));
+        } else hit.textContent = `“${input.value.trim()}” is in the full summary`;
       } else hit?.remove();
     });
     if (window.CSS?.highlights && window.Highlight) {
       const ranges = [];
-      if (query) shown.forEach((entry) => entry.querySelectorAll('summary h3, .summary-gist').forEach((part) => {
+      if (query) shown.forEach((entry) => entry.querySelectorAll('summary h3, .summary-gist, .summary-hit-text').forEach((part) => {
         const walker = document.createTreeWalker(part, NodeFilter.SHOW_TEXT);
         for (let node = walker.nextNode(); node; node = walker.nextNode()) {
           const text = node.data.toLowerCase();

@@ -48,8 +48,6 @@
       </div>
       <article class="reading">
         {{ partial "doors/summary_questions" (dict "page" . "dei" $dei) }}
-        {{/* On a phone the index of years gives way to a menu, so its note on the order comes here, by the list. */}}
-        <p class="summary-order-note">Within a year, A to Z by first author.</p>
         <div class="article-style">
           {{ $body }}
         </div>

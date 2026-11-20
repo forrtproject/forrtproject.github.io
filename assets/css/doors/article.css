@@ -856,16 +856,18 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
 .article-layout .article-style .summary-chapter:first-of-type .summary-chapter-head{margin-top:6px}
 .summary-chapter{scroll-margin-top:16px}
 .summary-chapter[hidden]{display:none}
-/* Questions to start from (doors/summary_questions): a card for each, on white with a top edge in the area's colour,
-   so they stand apart from the pale filter panel beside them; the question in display type, the paper under it. */
-.summary-questions{margin:0 0 26px}
-.article-layout .summary-questions h2{margin:0 0 12px;font:700 17px/1.3 var(--text);color:var(--ink)}
-.summary-questions ul{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:14px;margin:0;padding:0;list-style:none}
-.summary-questions li{margin:0}
-.summary-questions a{display:flex;flex-direction:column;gap:12px;height:100%;box-sizing:border-box;padding:16px 20px 18px;background:#fff;border:1px solid var(--line);border-top:6px solid var(--area);border-radius:var(--r-small);color:var(--ink);text-decoration:none}
+/* Questions to start from (doors/summary_questions): each a brick, like those on the summaries overview, with
+   studs in the area's colour along its top and a shaded foot; white, so they stand apart from the pale filter panel
+   beside them. The question in display type, the start of the answer, the citation at the foot. */
+.summary-questions{margin:0 0 28px}
+.article-layout .summary-questions h2{margin:0 0 18px;font:700 17px/1.3 var(--text);color:var(--ink)}
+.summary-questions ul{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:22px 12px;margin:0;padding:0;list-style:none}
+.summary-questions li{position:relative;margin:0}
+.summary-questions li::before{content:"";position:absolute;left:12px;right:12px;top:-8px;height:8px;background:linear-gradient(90deg,transparent 5px,var(--area) 5px 27px,transparent 27px) left top/32px 8px space no-repeat;pointer-events:none}
+.summary-questions a{display:flex;flex-direction:column;gap:10px;height:100%;box-sizing:border-box;padding:16px 20px 24px;background:#fff;border:1.5px solid var(--area);border-radius:3px;box-shadow:inset 0 -7px 0 color-mix(in srgb,var(--area) 22%,#fff);color:var(--ink);text-decoration:none}
 .summary-question{font:500 25px/1.15 var(--display);color:var(--area);text-wrap:balance}
-.summary-question-paper{margin-top:auto;font-size:15px;line-height:1.4;color:var(--soft)}
-.summary-question-cite{white-space:nowrap}
+.summary-question-gist{font-size:16px;line-height:1.45}
+.summary-question-cite{margin-top:auto;font-size:15px;line-height:1.4;color:var(--soft)}
 .summary-questions a:hover .summary-question{text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1.5px}
 .summary-questions a:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
 /* A retracted paper says so where the others preview their first takeaway. */
@@ -944,9 +946,11 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
 .summary-entry[open] .summary-gist{display:none}
 .article-layout.summaries-layout .article-style .summary-entry>summary h3{max-width:560px}
 .summary-title{text-wrap:pretty}
-/* Under the filter, a row whose match lies only in its hidden text says so (site.js). */
+/* Under the filter, a row whose match lies only in its hidden text shows the sentence it is in (site.js). */
 .summary-hit{display:block;margin-top:4px;font-size:15px;color:var(--soft)}
 .summary-entry[open] .summary-hit{display:none}
+.summary-hit-label{font-weight:600}
+.summary-hit-text{color:var(--ink)}
 /* Filter matches in the titles, citations and previews (site.js, through the CSS highlight API where the browser has it). */
 ::highlight(summary-match){background:color-mix(in srgb,var(--hot) 30%,#fff);color:var(--ink)}
 .summaries-layout .article-style>p:first-child .dei-mark{margin-inline-start:0}
@@ -974,10 +978,12 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
   .article-layout .summaries-band .article-head h1{font-size:30px}
   .article-layout .summaries-band .standfirst{margin-top:10px;font-size:18px}
   .summaries-side .summary-tools{padding:10px 14px}
-  .summary-questions{margin-bottom:18px}
-  .summary-questions ul{gap:10px}
-  .summary-questions a{gap:8px;padding:12px 16px 14px;border-top-width:5px}
-  .article-layout .summary-questions h2{margin-bottom:10px}
+  /* Phones: the questions as ruled rows, each with an edge in the area's colour, so they take less of the screen. */
+  .summary-questions{margin-bottom:20px}
+  .article-layout .summary-questions h2{margin-bottom:6px}
+  .summary-questions ul{gap:12px}
+  .summary-questions li::before{display:none}
+  .summary-questions a{gap:4px;padding:2px 0 4px 16px;background:none;border:0;border-radius:0;box-shadow:inset 4px 0 0 var(--area)}
   .summary-question{font-size:21px}
   .summaries-side .summary-tools input{margin-top:4px}
   .summaries-layout .article-style>p:first-child{margin-bottom:8px;font-size:15px;line-height:1.45}

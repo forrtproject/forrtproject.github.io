@@ -3,8 +3,9 @@
      page's file name (open-reproducible, diversity-equity-inclusion); each item has "question" and "summary", the
      summary's anchor (its Id in data/summaries.json, as in a link to it: #h.…). A question whose summary is not in
      this collection is left out with a warning, and a collection with no questions shows nothing. Each question is
-     a choice to pick, so it is a card (DESIGN.md): the question in display type, the paper under it. The link opens
-     the summary in place (site.js opens the entry a link points to). Input: dict "page" and "dei". */}}
+     a choice to pick, so it is a card (DESIGN.md): the question in display type, the start of the answer, the
+     paper's citation. The link opens the summary in place (site.js opens the entry a link points to). Input: dict
+     "page" and "dei". */}}
 {{ $dei := .dei }}
 {{ $questions := index (hugo.Data.summary_questions | default dict) .page.File.ContentBaseName }}
 {{ $entries := slice }}
@@ -13,7 +14,7 @@
 {{ range $questions }}
   {{ $q := . }}{{ $match := false }}
   {{ range $entries }}{{ if eq .s.Id $q.summary }}{{ $match = . }}{{ end }}{{ end }}
-  {{ if $match }}{{ $found = $found | append (dict "question" $q.question "t" $match.t "id" $match.s.Id) }}
+  {{ if $match }}{{ $found = $found | append (dict "question" $q.question "t" $match.t "id" $match.s.Id "gist" (partial "doors/summary_gist" $match.s)) }}
   {{ else }}{{ warnf "data/summary_questions.yaml: %q is not a summary in %s" $q.summary $.page.File.ContentBaseName }}{{ end }}
 {{ end }}
 {{ with $found }}
@@ -21,9 +22,9 @@
   <h2 id="summary-questions-head">Start with a question</h2>
   <ul>
     {{ range . }}
-    {{/* A question that is the paper's own title is not repeated: the citation alone follows it. */}}
-    {{ $same := eq (lower (trim .question " ?.")) (lower (trim .t.title " ?.")) }}
-    <li><a href="#{{ .id }}"><span class="summary-question">{{ .question }}</span><span class="summary-question-paper">{{ if not $same }}{{ .t.title | markdownify }} {{ end }}{{ with .t.cite }}<span class="summary-question-cite">{{ . }}</span>{{ end }}</span></a></li>
+    {{/* The question, the start of the answer (the summary's first takeaway, doors/summary_gist) and the paper's
+         citation. */}}
+    {{ $g := .gist }}<li><a href="#{{ .id }}"><span class="summary-question">{{ .question }}</span>{{ with .gist.long }}<span class="summary-question-gist"><span class="summary-gist-long">{{ . }}</span><span class="summary-gist-short">{{ $g.short }}</span></span>{{ end }}{{ with .t.cite }}<span class="summary-question-cite">{{ . }}</span>{{ end }}</a></li>
     {{ end }}
   </ul>
 </section>

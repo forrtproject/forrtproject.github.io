@@ -11,11 +11,13 @@
   {{ if or (not $dei) (in .Title "⌺") }}{{ $shown = merge $shown (dict .Id true) }}{{ end }}
 {{ end }}{{ end }}
 {{ if $dei }}<span class="summaries-dei" hidden></span>{{ end }}
-{{ range partialCached "doors/summary_chapters" $dei $dei }}
+{{ range $i, $c := partialCached "doors/summary_chapters" $dei $dei }}
 <section class="summary-chapter" id="{{ .id }}" aria-labelledby="{{ .id }}-head">
 {{/* The chapter's year in large type on a pale tab in the area's colour, standing on a rule across the list; the
      index of years gives its count. */}}
 <h2 class="summary-chapter-head" id="{{ .id }}-head"><span>{{ .label }}</span></h2>
+{{/* On a phone the index of years gives way to a menu, so its note on the order comes under the first year. */}}
+{{ if eq $i 0 }}<p class="summary-order-note">Within a year, A to Z by first author.</p>{{ end }}
 {{ range .entries }}{{ $t := .t }}{{ $retracted := .retracted }}{{ with .s }}
 <details class="summary-entry">
 {{/* The title on its own line, then the citation, "(Author, year)", on a quieter one, so the titles are easy to
@@ -25,27 +27,13 @@
 {{/* The marks stay on the line of the title's last word (summary-tail), never alone on a line of their own. The
      titles carry no Markdown markup, so splitting before markdownify is safe. */}}
 <summary><h3 id="{{ .Id }}"><span class="summary-title">{{ if or $isDei $npr }}{{ with $head }}{{ . | markdownify }} {{ end }}<span class="summary-tail">{{ $tail | markdownify }}{{ if $isDei }}⌺{{ end }}{{ if $npr }} <span class="npr-mark" aria-hidden="true">◈</span><span class="sr-only"> (not peer reviewed)</span>{{ end }}</span>{{ else }}{{ $title | markdownify }}{{ end }}</span>{{ with $cite }} <span class="summary-cite">{{ . }}</span>{{ end }}</h3>
-{{/* The first takeaway, so that closed entries differ by more than their citations, without the web addresses some
-     takeaways carry. On wide screens it shows whole up to 150 characters; a longer one shows its first sentence if
-     that ends by 200, and is otherwise cut at a word near 150. Phones (summary-gist-short) do the same with 66 and
-     110, about two and three lines. It is hidden from screen readers, which would otherwise hear it as part of the
-     title, and once the entry is open, where the takeaways follow in full. A retracted paper shows "Retracted" in
-     its place, which screen readers do hear (doors/summary_chapters reads it from the first takeaway). */}}
+{{/* The first takeaway (doors/summary_gist), so that closed entries differ by more than their citations. It is
+     hidden from screen readers, which would otherwise hear it as part of the title, and once the entry is open,
+     where the takeaways follow in full. A retracted paper shows "Retracted" in its place, which screen readers do
+     hear (doors/summary_chapters reads it from the first takeaway). */}}
 {{ if $retracted }}<span class="summary-gist summary-retracted">Retracted</span>{{ else }}
-{{ $gist := "" }}{{ range .Main_Takeaways }}{{ if and (not $gist) (trim . " \u00a0") }}{{ $gist = . }}{{ end }}{{ end }}
-{{ $gist = trim (replaceRE `[\s\p{Z}]+` " " (replaceRE `:?[\s\p{Z}]*https?://[^\s\p{Z}]+` "" $gist)) " " }}
-{{ $sentence := "" }}{{ with findRESubmatch `^(.+?[.!?])(?:\s+[A-Z“"(\[]|$)` $gist 1 }}{{ $sentence = index (index . 0) 1 }}{{ end }}
-{{ $cuts := slice }}
-{{ range slice (slice 150 200) (slice 66 110) }}
-  {{ $limit := index . 0 }}{{ $max := index . 1 }}
-  {{ $cut := $gist }}
-  {{ if gt (strings.RuneCount $gist) $limit }}
-    {{ if and $sentence (le (strings.RuneCount $sentence) $max) }}{{ $cut = $sentence }}
-    {{ else }}{{ $cut = replaceRE `[.,;:!?]…$` "…" (truncate $limit "…" $gist) }}{{ end }}
-  {{ end }}
-  {{ $cuts = $cuts | append ($cut | htmlUnescape) }}
-{{ end }}
-{{ with $gist }}<span class="summary-gist" aria-hidden="true"><span class="summary-gist-long">{{ index $cuts 0 }}</span><span class="summary-gist-short">{{ index $cuts 1 }}</span></span>{{ end }}
+{{ $gist := partial "doors/summary_gist" . }}
+{{ with $gist.long }}<span class="summary-gist" aria-hidden="true"><span class="summary-gist-long">{{ . }}</span><span class="summary-gist-short">{{ $gist.short }}</span></span>{{ end }}
 {{ end }}</summary>
 <h4>Main takeaways</h4>
 <ul>
