@@ -431,7 +431,7 @@ def check_home(browser, base, failures):
         try:
             page.wait_for_function(
                 f"previous => {{ const active = {current}; return active >= 0 && active !== previous; }}",
-                arg=previous, timeout=15000,
+                arg=previous, polling=100,
             )
         except PlaywrightTimeoutError:
             expect(False, message)
