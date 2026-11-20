@@ -222,7 +222,7 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 @media(min-width:1001px){
   /* Four equal Strategic Focus Areas sit as a balanced 2x2 grid so row 1 does not leave 45% empty. */
   .sc-page .sc-section:first-of-type .sc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
-  .sc-page .sc-section:first-of-type .sc-members{grid-template-columns:repeat(auto-fill,minmax(168px,196px))}
+  .sc-page .sc-section:first-of-type .sc-members{grid-template-columns:repeat(auto-fit,minmax(min(100%,156px),196px))}
   .sc-page .sc-section:not(:first-of-type) .sc-team{flex:1 1 auto}
 }
 /* Team panels: area pale ground for Strategic Focus Areas (DESIGN.md §6), calm surface for operational teams.
@@ -237,7 +237,7 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .sc-page .sc-title-card .sc-title-label{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 .sc-page .sc-title-card .sc-title-text{margin:0;font:var(--display-weight) 22px/1.2 var(--display);color:var(--sc-head)}
 .sc-page .sc-title-card .sc-cbar,.sc-page .sc-card .sc-cbar,.sc-page .sc-card-overlay{display:none}
-.sc-page .sc-members{display:grid;grid-template-columns:repeat(var(--sc-members,2),minmax(176px,196px));gap:14px}
+.sc-page .sc-members{display:grid;grid-template-columns:repeat(var(--sc-members,2),minmax(min(100%,144px),196px));gap:14px}
 .sc-page .sc-card{display:flex;flex-direction:column;overflow:hidden;background:#fff;border:1.5px solid color-mix(in srgb,var(--sc-accent) 24%,var(--line));border-radius:var(--r-small);cursor:pointer;transition:border-color .15s,transform .15s}
 .sc-page .sc-card:hover,.sc-page .sc-card:focus-visible{border-color:var(--sc-accent);transform:translateY(-2px)}
 .sc-page .sc-card:focus-visible{outline:3px solid var(--ink);outline-offset:2px}

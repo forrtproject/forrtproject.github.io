@@ -13,8 +13,8 @@
   "Team Lesson Plans | Phase 2 | Expansion" "edu"
   "Team Pedagogies" "edu"
   "Team Summaries" "edu"
+  "Team JUST-OS" "edu"
   "Team Impact" "res"
-  "Team JUST-OS" "res"
   "Team Landscape" "res"
   "Team Manuscript" "res"
   "Team Replication Hub" "res"
@@ -36,10 +36,16 @@
   (dict "key" "res" "title" "Meta-Science & Research" "img" "images/doors/area-research.webp" "blurb" "Replications, reversals, literature mapping, impact synthesis and open-research tools.")
   (dict "key" "jus" "title" "Social Justice & DEIA" "img" "images/doors/area-justice.webp" "blurb" "Equity, neurodiversity, citational justice, ethics and global inclusion in open scholarship.")
   (dict "key" "com" "title" "Community & Sustainability" "img" "images/doors/area-community.webp" "blurb" "Cohesion, contributor credit, outreach, new ideas and FORRT's web infrastructure.")
+  (dict "key" "other" "title" "Other teams" "img" "" "blurb" "Cross-cutting and newly added FORRT teams.")
 }}
 {{ $buckets := newScratch }}
 {{ range sort $page.Params.featurealt "name" }}
-  {{ $key := index $areaMap (.name | plainify | strings.TrimSpace) | default "com" }}
+  {{ $teamName := .name | plainify | strings.TrimSpace }}
+  {{ $key := index $areaMap $teamName }}
+  {{ if not $key }}
+    {{ warnf "featurette_team: unmapped team %q — add it to $areaMap in layouts/partials/widgets/featurette_team.html" $teamName }}
+    {{ $key = "other" }}
+  {{ end }}
   {{ $buckets.Add $key (slice .) }}
 {{ end }}
 
@@ -67,12 +73,12 @@
       </p>
     </aside>
   </div>
-  <script>(function(){var d=document.querySelector('.team-about');if(d&&window.matchMedia('(min-width: 761px)').matches)d.open=true;})();</script>
+  <script>(function(){var d=document.querySelector('.team-about');if(!d)return;var mq=window.matchMedia('(min-width: 761px)');function sync(){if(mq.matches)d.open=true;}sync();if(mq.addEventListener)mq.addEventListener('change',sync);else if(mq.addListener)mq.addListener(sync);})();</script>
 
   {{ range $groups }}
     {{ $items := $buckets.Get .key | default slice }}
     {{ if gt (len $items) 0 }}
-    {{ $plate := resources.Get .img }}
+    {{ $plate := "" }}{{ with .img }}{{ $plate = resources.Get . }}{{ end }}
     <section class="team-area-group" id="teams-{{ .key }}" data-area="{{ .key }}" aria-labelledby="teams-h-{{ .key }}">
       <header class="team-area-head">
         {{ with $plate }}{{ $w := .Resize "160x webp q80" }}<span class="team-area-plate" aria-hidden="true"><img src="{{ $w.RelPermalink }}" width="{{ $w.Width }}" height="{{ $w.Height }}" alt=""></span>{{ end }}
@@ -90,11 +96,11 @@
             <h3>{{ .name | markdownify | emojify }}</h3>
           </div>
           {{ with .description }}<p class="clamp-desc" data-clamp-name="{{ $team }}">{{ . | markdownify | emojify }}</p>{{ end }}
+          {{ $url := "https://forrt.slack.com/archives/CM6344P5E" }}{{ $label := "Ask in #forrt-community" }}
           {{ with .buttonurl }}
-            {{ $url := . }}{{ $label := "Join the team" }}
-            {{ if in . "slack.com/archives/" }}{{ $label = "Join the team's Slack channel" }}{{ else if in . "join.slack.com" }}{{ $url = "https://forrt.slack.com/archives/CM6344P5E" }}{{ $label = "Ask in #forrt-community" }}{{ end }}
-            <p class="team-join"><a href="{{ $url }}" class="btn btn-sm dir-btn" target="_blank" rel="noopener">{{ $label }}<span class="sr-only">: {{ $team }} (opens in a new tab)</span></a></p>
+            {{ if in . "slack.com/archives/" }}{{ $url = . }}{{ $label = "Join the team's Slack channel" }}{{ else if not (in . "join.slack.com") }}{{ $url = . }}{{ $label = "Join the team" }}{{ end }}
           {{ end }}
+          <p class="team-join"><a href="{{ $url }}" class="btn btn-sm dir-btn" target="_blank" rel="noopener">{{ $label }}<span class="sr-only">: {{ $team }} (opens in a new tab)</span></a></p>
         </li>
         {{ end }}
       </ul>
