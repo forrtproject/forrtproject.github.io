@@ -231,6 +231,29 @@ class CompareTests(unittest.TestCase):
         changes = compare_heads({"a": ["x", "y"], "b": ["z"]}, {"a": ["x", "w"], "b": ["z"]})
         self.assertEqual(changes, {"a": (["y"], ["w"])})
 
+    def test_a_description_may_lose_the_space_inside_a_bracket(self):
+        before = ["description=Open Source Guides ( https://opensource.guide/) are a collection",
+                  'og:description=He said " The replication" was fine', "title=Page"]
+        after = ["description=Open Source Guides (https://opensource.guide/) are a collection",
+                 'og:description=He said "The replication" was fine', "title=Page"]
+        self.assertEqual(compare_heads({"a": before}, {"a": after}), {})
+
+    def test_a_cut_description_may_then_end_a_word_later(self):
+        before = ["description=Software ( https://jasp-stats.org/) and the web…"]
+        after = ["description=Software (https://jasp-stats.org/) and the web application…"]
+        self.assertEqual(compare_heads({"a": before}, {"a": after}), {})
+
+    def test_other_description_changes_still_count(self):
+        before = "description=Open Source Guides ( https://opensource.guide/) are a collection…"
+        for after in ("description=Open Source Guides (https://opensource.guide/) is a collection…",
+                      "description=Open Source Guides (https://opensource.guide/) are a collection of many more resources…",
+                      "description=Open Source Guides (https://opensource.guide/) are a",
+                      "description=Open Source Guides(https://opensource.guide/) are a collection…"):
+            with self.subTest(after=after):
+                self.assertIn("a", compare_heads({"a": [before]}, {"a": [after]}))
+        # Only descriptions: the same change in a title still counts.
+        self.assertIn("a", compare_heads({"a": ["title=A ( b)"]}, {"a": ["title=A (b)"]}))
+
 
     def social_tags(self, image, image_type="image/webp", width="100", height="50"):
         return sorted(["og:image=" + image, "twitter:image=" + image,
