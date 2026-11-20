@@ -16,8 +16,14 @@
 {{ range $questions }}
   {{ $q := . }}{{ $match := false }}
   {{ range $entries }}{{ if eq .s.Id $q.summary }}{{ $match = . }}{{ end }}{{ end }}
-  {{ if $match }}{{ $found = $found | append (dict "question" $q.question "t" $match.t "id" $match.s.Id "answer" ($q.answer | default (partial "doors/summary_gist" (dict "s" $match.s "n" ($q.takeaway | default 0))).sentence)) }}
-  {{ else }}{{ warnf "data/summary_questions.yaml: %q is not a summary in %s" $q.summary $.page.File.ContentBaseName }}{{ end }}
+  {{/* A takeaway number the summary does not have leaves the question out, with a warning, rather than show an
+       empty card. */}}
+  {{ $n := int ($q.takeaway | default 0) }}
+  {{ if and $match (or (lt $n 0) (gt $n (len $match.s.Main_Takeaways))) }}
+    {{ warnf "data/summary_questions.yaml: %q has no takeaway %v; the question is left out" $q.summary $n }}{{ $match = false }}{{ $n = -1 }}
+  {{ end }}
+  {{ if $match }}{{ $found = $found | append (dict "question" $q.question "t" $match.t "id" $match.s.Id "answer" ($q.answer | default (partial "doors/summary_gist" (dict "s" $match.s "n" $n)).sentence)) }}
+  {{ else if ge $n 0 }}{{ warnf "data/summary_questions.yaml: %q is not a summary in %s" $q.summary $.page.File.ContentBaseName }}{{ end }}
 {{ end }}
 {{ with $found }}
 <section class="summary-questions" aria-labelledby="summary-questions-head">

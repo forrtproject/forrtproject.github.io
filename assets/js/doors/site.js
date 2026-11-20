@@ -409,7 +409,7 @@ if (summaryEntries.length) {
   input.addEventListener('input', show);
   addEventListener('hashchange', show);
   // A line of topics to try, each with its number of matches, leads the list of a collection page: each fills in the
-  // filter and goes to the first match.
+  // filter and goes to the first summary that matches.
   const topics = slot?.dataset.try?.split(',').map((topic) => topic.trim()).filter(Boolean);
   if (topics?.length) {
     const line = document.createElement('p');
@@ -423,7 +423,7 @@ if (summaryEntries.length) {
       button.addEventListener('click', () => {
         input.value = topic;
         show();
-        document.querySelector('.summary-chapter:not([hidden])')?.scrollIntoView();
+        document.querySelector('.summary-entry:not([hidden]) summary h3')?.scrollIntoView();
       });
       line.append(button);
     });
