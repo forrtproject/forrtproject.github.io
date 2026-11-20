@@ -13,7 +13,7 @@
 </ul>
 {{ $entries := slice }}{{ range hugo.Data.summaries }}{{ if .Title }}{{ $entries = $entries | append . }}{{ end }}{{ end }}
 <figure class="summary-wall">
-  {{ $n := 0 }}<div class="summary-wall-bricks" aria-hidden="true">{{ range partialCached "doors/summary_chapters" false false }}{{ range .entries }}{{ with .s }}{{ if in .Title "⌺" }}<span class="is-dei" style="--i:{{ $n }}"></span>{{ $n = add $n 1 }}{{ else }}<span></span>{{ end }}{{ end }}{{ end }}{{ end }}</div>
+  {{ $n := 0 }}<div class="summary-wall-bricks" aria-hidden="true">{{ range partialCached "doors/summary_chapters" false false }}{{ range .entries }}{{ if .t.dei }}<span class="is-dei" style="--i:{{ $n }}"></span>{{ $n = add $n 1 }}{{ else }}<span></span>{{ end }}{{ end }}{{ end }}</div>
   <figcaption>One brick for each of the {{ $all }} summaries, in the order the collection lists them. The {{ $dei }} in purple are also in the diversity, equity and inclusion collection.</figcaption>
 </figure>
 {{ $pick := index $entries 0 }}
@@ -40,6 +40,7 @@
   <div class="summary-sample-body">
     <div class="summary-sample-main">
       <h3><a href="{{ $href }}">{{ $t.title | markdownify }}</a>{{ with $t.cite }} <span class="summary-cite">{{ . }}</span>{{ end }}</h3>
+      {{ with $t.credit }}<p class="summary-credit"><small>Summary by {{ . }}</small></p>{{ end }}
       <p class="summary-sample-label">Main takeaways</p>
       <ul>{{ range $shown }}<li>{{ . }}</li>{{ end }}</ul>
     </div>

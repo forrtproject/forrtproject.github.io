@@ -61,6 +61,6 @@ questions:
     topic: access
 ---
 
-◈ marks work that was not peer reviewed.
+◈ marks work that was not peer reviewed.<br>Summaries written by Dr Tamara Kalandadze carry her name in the entry.
 
 {{< summaries_dei >}}

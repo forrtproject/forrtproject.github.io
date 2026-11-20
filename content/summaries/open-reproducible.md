@@ -30,7 +30,7 @@ questions:
     topic: statistics
   - question: "What does Fogarty argue about crediting students and technicians?"
     summary: h.pe8rcgd61rc2    # Don't erase undergrad researchers and technicians from author lists (Fogarty, 2020)
-    takeaway: 6
+    answer: "The community needs to address the fact that undergraduate students and technicians should not be excluded from authorship lists."
     topic: careers
   - question: "In one experiment, how did reviewers judge results against their own views?"
     summary: h.e0omhrfflv5j    # Publication Prejudices (Mahoney, 1977)
@@ -80,7 +80,7 @@ questions:
     topic: publishing
 ---
 
-◈ marks work that was not peer reviewed.<br>⌺ marks summaries on diversity,&nbsp;equity&nbsp;and&nbsp;inclusion.
+◈ marks work that was not peer reviewed.<br>⌺ marks summaries on diversity,&nbsp;equity&nbsp;and&nbsp;inclusion.<br>Summaries written by Dr Tamara Kalandadze carry her name in the entry.
 
 
 {{< summaries >}}

@@ -328,7 +328,7 @@ if (summaryEntries.length) {
   // What a filter looks through: title, takeaways, quote and abstract, not the fixed headings or related links.
   const words = new Map(summaryEntries.map((entry) => {
     const copy = entry.cloneNode(true);
-    copy.querySelectorAll('h4, .sr-only, .npr-mark, .summary-gist').forEach((part) => part.remove());
+    copy.querySelectorAll('h4, .sr-only, .npr-mark, .summary-gist, .summary-credit').forEach((part) => part.remove());
     copy.querySelector('ul:last-of-type')?.remove();
     return [entry, copy.textContent.toLowerCase()];
   }));
@@ -338,7 +338,7 @@ if (summaryEntries.length) {
   // The sentence of an entry's takeaways, quote, abstract or reference that holds the query, cut to about 140
   // characters around it.
   const hiddenSentence = (entry, query) => {
-    for (const part of entry.querySelectorAll(':scope > ul:first-of-type li, :scope > blockquote, :scope > p')) {
+    for (const part of entry.querySelectorAll(':scope > ul:first-of-type li, :scope > blockquote, :scope > p:not(.summary-credit)')) {
       const text = part.textContent.replace(/\s+/g, ' ').trim();
       if (text.toLowerCase().length !== text.length) continue;
       const at = text.toLowerCase().indexOf(query);

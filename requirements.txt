@@ -11,3 +11,4 @@ pypinyin
 flask
 flask-cors
 pillow
+beautifulsoup4

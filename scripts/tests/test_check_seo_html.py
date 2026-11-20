@@ -77,9 +77,13 @@ class DescriptionURLReport(unittest.TestCase):
             hub = Path(public) / seo.GLOSSARY_HUB
             hub.parent.mkdir(parents=True)
             hub.write_text("<meta name='description' content='Glossary'><h1>Glossary</h1>", encoding="utf-8")
+            for name in ("", "open-reproducible", "diversity-equity-inclusion"):
+                summary_page = Path(public) / "summaries" / name / "index.html"
+                summary_page.parent.mkdir(parents=True, exist_ok=True)
+                summary_page.write_text("<meta name='description' content='Summaries'>", encoding="utf-8")
             output = StringIO()
             with redirect_stdout(output):
-                self.assertEqual(seo.main(public), 0)
+                self.assertEqual(seo.main(public, summaries={}), 0)
             self.assertIn("pages whose meta description contains a raw URL: 1", output.getvalue())
 
     def test_nonindexable_descriptions_are_not_reported(self):
@@ -179,6 +183,73 @@ class InlineScriptCheck(unittest.TestCase):
     def test_unclosed_inline_data_fails(self):
         data = "x" * (seo.MAX_INLINE_SCRIPT + 1)
         self.assertEqual(self.failures("<script>window.DATA = '%s';" % data), ["index.html (200 KB)"])
+
+
+class SummaryTakeawayLinkCheck(unittest.TestCase):
+    path = "summaries/open-reproducible/index.html"
+
+    def check(self, link, after=""):
+        html = '<ul class="summary-takeaways"><li>' + link + '</li></ul>' + after
+        return seo.check_summary_takeaway_links([page_from_html(html, self.path)])
+
+    def test_google_redirect_fails(self):
+        href = "https://www.google.com/url?q=https://example.org/paper&sa=D"
+        self.assertEqual(self.check(f'<a href="{escape(href)}">Paper</a>'), [f"{self.path}: {href!r}"])
+
+    def test_missing_or_placeholder_href_fails(self):
+        self.assertEqual(self.check("<a>Paper</a>"), [f"{self.path}: ''"])
+        for href in ("", "#", "#ZgotmplZ"):
+            with self.subTest(href=href):
+                self.assertEqual(self.check(f'<a href="{href}">Paper</a>'), [f"{self.path}: {href!r}"])
+
+    def test_direct_links_pass(self):
+        for href in ("https://example.org/paper", "#h.study", "/summaries/open-reproducible/#h.study"):
+            with self.subTest(href=href):
+                self.assertEqual(self.check(f'<a href="{href}">Paper</a>'), [])
+
+    def test_other_links_are_ignored(self):
+        self.assertEqual(self.check("Plain takeaway", '<ul><li><a href="#">Related paper</a></li></ul>'), [])
+
+
+class SummaryCreditMarkerCheck(unittest.TestCase):
+    credit = '<p class="summary-credit"><small>Summary by Dr Tamara Kalandadze</small></p>'
+    marked = {"summary_1": {"Title": "Paper ⬦"}, "summary_2": {"Title": "Other paper ⌺⬦"}}
+
+    def check(self, html, *, dei_html="", summaries=None, missing=None):
+        with tempfile.TemporaryDirectory() as public:
+            for slug, body in (("", ""), ("open-reproducible", html), ("diversity-equity-inclusion", dei_html)):
+                if slug == missing:
+                    continue
+                collection = Path(public) / "summaries" / slug / "index.html"
+                collection.parent.mkdir(parents=True, exist_ok=True)
+                collection.write_text(body, encoding="utf-8")
+            return seo.check_summary_credit_marker(public, summaries=summaries or {})
+
+    def test_title_markers_fail_in_html_and_json_ld(self):
+        for html in ("<h3>Paper ⬦</h3>", "<h3>Paper &#x2b26;</h3>",
+                     r'<script type="application/ld+json">{"name":"Paper \u2b26"}</script>'):
+            with self.subTest(html=html):
+                self.assertEqual(self.check(html), ["summaries/open-reproducible/index.html: raw summary author marker"])
+
+    def test_missing_page_fails(self):
+        self.assertEqual(self.check("", missing="diversity-equity-inclusion"),
+                         ["summaries/diversity-equity-inclusion/index.html: missing page"])
+
+    def test_no_credit_needed_for_data_without_author_markers(self):
+        self.assertEqual(self.check("<h3>Paper ◈ ⌺</h3>", summaries={"summary_1": {"Title": "Paper ◈ ⌺"}}), [])
+        self.assertTrue(self.check(self.credit))
+
+    def test_requires_credits_matching_each_collections_data(self):
+        self.assertEqual(self.check(self.credit * 2, dei_html=self.credit, summaries=self.marked), [])
+        failures = self.check(self.credit, dei_html=self.credit.replace("Tamara", "Other"), summaries=self.marked)
+        self.assertEqual(failures, [
+            "summaries/open-reproducible/index.html: expected 2 written credits, found 1 matching out of 1 credit lines",
+            "summaries/diversity-equity-inclusion/index.html: expected 1 written credits, found 0 matching out of 1 credit lines",
+        ])
+
+    def test_minified_credit_followed_by_heading(self):
+        html = self.credit.replace('class="summary-credit"', 'class=summary-credit').removesuffix("</p>")
+        self.assertEqual(self.check(html + "<h4>Main takeaways</h4>", summaries={"summary_1": {"Title": "Paper ⬦"}}), [])
 
 
 class CitationTargetCheck(unittest.TestCase):
