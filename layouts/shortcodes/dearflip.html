@@ -121,6 +121,9 @@
 ._df_book .df-ui-btn:hover:not(.disabled)::before,
 ._df_book .df-ui-btn.df-active::before { color: #0072B2 !important; }
 ._df_book .df-ui-btn.disabled::before { color: #bbb !important; }
+/* A disabled Previous or Next keeps a readable label (4.5:1 on white); the pale arrow shows it is off. */
+._df_book .df-ui-btn.disabled { opacity: 1 !important; }
+._df_book .df-ui-btn.disabled > span { color: #6b6b6b !important; }
 
 /* Side overlay nav arrows stay white for contrast */
 ._df_book .df-ui-nav .df-ui-btn::before {
@@ -244,6 +247,12 @@
     // The toolbar's own previous and next buttons say so in words, beside their arrows.
     document.querySelectorAll('._df_book .df-ui-controls .df-ui-prev > span').forEach(function(el){ el.textContent = 'Previous'; });
     document.querySelectorAll('._df_book .df-ui-controls .df-ui-next > span').forEach(function(el){ el.textContent = 'Next'; });
+    // The library marks an unavailable button only with a class; say so to assistive technology too.
+    document.querySelectorAll('._df_book .df-ui-controls .df-ui-prev, ._df_book .df-ui-controls .df-ui-next').forEach(function(btn){
+      var sync = function(){ if (btn.classList.contains('disabled')) btn.setAttribute('aria-disabled', 'true'); else btn.removeAttribute('aria-disabled'); };
+      sync();
+      new MutationObserver(sync).observe(btn, { attributes: true, attributeFilter: ['class'] });
+    });
     var scope = document.querySelectorAll('._df_book .df-ui-btn, ._df_book .df-share-button');
     scope.forEach(function(el){
       Object.keys(map).forEach(function(ti){
