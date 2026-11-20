@@ -394,9 +394,9 @@ html:has(.tag-az){scroll-padding-top:84px}
 @media(max-width:760px){.brick-row.topic-index .action-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.brick-row.topic-index .action-cards a{min-height:0;padding:12px 12px 16px}.brick-row.topic-index .action-cards strong{font-size:18px;line-height:1.2}.brick-row.topic-index .action-cards span{font-size:15px}}
 .topic-index__actions{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 0}
 /* An earlier cluster's brick names where most of its resources are now, each current cluster with its colour mark. */
-.brick-row.topic-index .action-cards .topic-index__now{display:block;margin-top:auto;padding-top:12px;font-size:15px;line-height:1.4}
-.brick-row.topic-index .action-cards .topic-index__cl{display:inline;font-size:inherit;font-weight:600}
-.topic-index__cl .cl-mark{box-shadow:0 0 0 1.5px #fff;margin-inline-end:5px}
+.brick-row.topic-index .action-cards .topic-index__now{display:block;padding-top:10px;font-size:15px;line-height:1.4}
+.brick-row.topic-index .action-cards .topic-index__cl{display:inline;font-size:inherit}
+.topic-index__cl .cl-mark{width:11px;height:11px;margin-inline:2px 6px;border-radius:2px;box-shadow:0 0 0 2.5px #fff}
 /* Wide screens: the second row of earlier clusters sits half a brick along, as brickwork. */
 @media(min-width:1001px){.brick-row.topic-index--wall .action-cards{grid-template-columns:repeat(8,minmax(0,1fr))}.brick-row.topic-index--wall .action-cards>li{grid-column:span 2}.brick-row.topic-index--wall .action-cards>li:nth-child(5){grid-column:2/span 2}}
 /* Phones: a last brick alone in its row takes the row. */
@@ -453,6 +453,9 @@ html:has(.tag-az){scroll-padding-top:84px}
 /* A long group shows its first eight titles until its button or a search shows the rest (doors/topic_resources.html). */
 .cluster-resources-list:not(.is-filtering) ul.is-collapsed>li:nth-child(n+9){display:none}
 .cluster-resources-list .topic-showall{display:inline-flex;align-items:center;min-height:44px;margin:4px 16px 0;text-align:left}
+/* Readings follow the typed materials, and A to Z starts again with them. */
+.article-style ul.cluster-resources>li.is-first-reading::before{content:"Readings";display:block;margin:4px 0 8px;font-size:15px;font-weight:600;color:var(--soft)}
+.article-style ul.cluster-resources>li.is-first-reading{break-before:auto}
 .cluster-resources-list .topic-showall[hidden],.cluster-resources-list.is-filtering .topic-showall{display:none}
 /* The groups: a heading on the cluster's pale ground with its door mark, leading to the cluster's page; then the
    titles A to Z, flowing down two columns on a wide screen, each with its material type in a column of its own. */
@@ -473,7 +476,8 @@ html:has(.tag-az){scroll-padding-top:84px}
 @media(min-width:1001px){.article-style ul.cluster-resources--cols{columns:2;column-gap:48px}}
 @media(max-width:1000px){.topic-head{grid-template-columns:minmax(0,1fr)}.topic-plate{display:none}}
 @media(max-width:760px){
-  .article-layout .article-style .topic-now__rows a{grid-template-columns:minmax(0,1fr) 8rem;column-gap:10px;min-height:36px;padding:2px 0}
+  .article-layout .article-style .topic-now__rows a{grid-template-columns:minmax(0,1fr);row-gap:2px;min-height:44px;padding:3px 0}
+  .topic-now__name{font-size:15px;line-height:1.25}
   .topic-now__name{font-size:15px}
   .topic-now__bar{height:10px;background:repeating-linear-gradient(90deg,transparent 0 14px,rgb(255 255 255/.55) 14px 16px),var(--c,var(--soft))}
   .topic-now__count{font-size:15px}
@@ -490,6 +494,9 @@ html:has(.tag-az){scroll-padding-top:84px}
   .topic-more{display:inline-flex;align-items:center;min-height:44px;padding:0 6px}
   .article-style h2.topic-group{margin-top:28px;padding:8px 12px;font-size:21px}
   .article-style ul.cluster-resources{padding:0 4px}
+  .cluster-resources-list .topic-showall{margin:4px 4px 0}
+  .article-style ol.topic-now__rows{columns:2;column-gap:16px}
+  .article-style ol.topic-now__rows>li{break-inside:avoid}
 }
 
 /* /category/<term>/ (doors/category_term.html): the news list's head, chips and cards (above, and article.css). */
@@ -512,4 +519,11 @@ html:has(.tag-az){scroll-padding-top:84px}
 @media(min-width:1001px){.category-grid.category-grid--issues{grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}}
 .news-page .category-grid--issues .ac-panel{aspect-ratio:auto;min-height:112px;padding:14px 18px}
 .news-page .category-grid--issues .ac-panel-title strong{font-size:28px}
-@media(max-width:760px){.category-more h2{font-size:26px}.category-all{font-size:21px}}
+.news-page.category-page .category-lead>li:first-child:not([hidden]) .ac-summary{-webkit-line-clamp:12;line-clamp:12}
+@media(max-width:760px){
+  .category-more h2{font-size:26px}.category-all{font-size:21px}
+  .news-page .category-grid--issues .ac-panel{min-height:72px;padding:10px 16px}
+  /* The categories in one row that scrolls sideways, its edge fading where more lie past it (DESIGN.md §9). */
+  .category-nav{flex-wrap:nowrap;overflow-x:auto;margin-inline-end:-16px;padding:0 16px 6px 0;-webkit-mask-image:linear-gradient(90deg,#000 85%,transparent);mask-image:linear-gradient(90deg,#000 85%,transparent)}
+  .category-nav .ac-chip{flex:none}
+}

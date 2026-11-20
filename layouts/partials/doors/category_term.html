@@ -21,7 +21,7 @@
 {{ $count := len .Data.Pages }}
 <div class="wrap news-page category-page">
   <header class="article-head">
-    {{ partial "doors/crumbs" (dict "page" .) }}
+    {{ partial "doors/crumbs" (dict "page" . "label" (index $plural $key | default .Title)) }}
     <h1>{{ index $plural $key | default .Title }}</h1>
     <p class="standfirst">{{ with index $about $key }}{{ . | safeHTML }}{{ else }}News posts filed under {{ $page.Title }}.{{ end }}</p>
   </header>
@@ -33,6 +33,8 @@
       {{ else }}<a class="ac-chip" href="{{ .Page.RelPermalink }}">{{ .Page.Title }} <span class="chip-count">{{ .Count }}</span></a>{{ end }}
     {{ end }}
   </nav>
+  {{/* Where the row scrolls sideways (phones), it starts with this category in view. */}}
+  <script>(function () { var nav = document.currentScript.previousElementSibling, on = nav.querySelector('.active'); if (on && nav.scrollWidth > nav.clientWidth) nav.scrollLeft = on.offsetLeft - nav.offsetLeft - 16; }());</script>
   {{/* How many posts on this page use each picture, so a picture shared elsewhere shows where it is the only one here. */}}
   {{ $uses := dict }}
   {{ range $pager.Pages }}{{ with (.Resources.ByType "image").GetMatch "*featured*" }}{{ $k := md5 .Content }}{{ $uses = merge $uses (dict $k (add 1 (index $uses $k | default 0))) }}{{ end }}{{ end }}
