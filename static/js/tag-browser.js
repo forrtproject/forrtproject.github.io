@@ -449,7 +449,9 @@
         chip.querySelector("span").textContent = n;
         chip.hidden = !n && chip.getAttribute("aria-pressed") !== "true";
       });
-      if (said) said.textContent = !query ? "" : shown ? shown + " of " + pages.length + " titles match" : "No title matches “" + input.value.trim() + "”";
+      var typed = "“" + (input ? input.value.trim() : "") + "”";
+      // A type chosen with no match of its own still says how many the other types have.
+      if (said) said.textContent = !query ? "" : shown ? shown + " of " + pages.length + " titles match" : all ? "No " + chosen + " titles match " + typed + "; " + all + " in all types" : "No title matches " + typed;
     }
 
     if (long && search && input) {
