@@ -34,8 +34,26 @@
 {{ with $gist.long }}<span class="summary-gist" aria-hidden="true"><span class="summary-gist-long">{{ . }}</span><span class="summary-gist-short">{{ $gist.short }}</span></span>{{ end }}
 {{ end }}</summary>
 <h4>Main takeaways</h4>
-<ul>
-  {{ range .Main_Takeaways }}<li>{{ . }}</li>{{ end }}
+{{ $linked := .Main_Takeaway_Links | default dict }}
+<ul class="summary-takeaways">
+  {{ range $index, $text := .Main_Takeaways -}}
+  <li>
+    {{- with index $linked (string $index) -}}
+      {{- range . -}}
+        {{- $href := .href -}}
+        {{- if and $dei $href (hasPrefix $href "#") -}}
+          {{- $id := strings.TrimPrefix "#" $href -}}
+          {{- if and (index $all $id) (not (index $shown $id)) -}}
+            {{- $href = printf "%s%s" (relref $.page "/summaries/open-reproducible") $href -}}
+          {{- end -}}
+        {{- end -}}
+        {{- if $href }}<a href="{{ $href }}">{{ .text }}</a>{{ else }}{{ .text }}{{ end -}}
+      {{- end -}}
+    {{- else -}}
+      {{- $text -}}
+    {{- end -}}
+  </li>
+  {{ end }}
 </ul>
 {{ with .Quote }}
 <h4>Quote</h4>

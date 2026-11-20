@@ -56,6 +56,7 @@ Hard checks (exit 1 if any fails):
   25. No page loads the retired js/newsletter.js (#1170).
   26. The news and Educators' Corner lists use the same picture treatment as
       the related cards below their articles (#1255).
+  27. Summary takeaway links have a destination and bypass Google's redirect (#1256).
 
 Report-only sections (never fail): pages with no <h1>, the
 site-wide share of images that carry both width and height, pages whose
@@ -115,9 +116,15 @@ class PageParser(HTMLParser):
         self.alternates = []
         self.related_links = []
         self._related_tag = None  # the element holding a term page's related terms (section.term-related)
+        self.takeaway_links = []
+        self._in_takeaways = False
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
+        if tag == "ul" and "summary-takeaways" in (attrs.get("class") or "").split():
+            self._in_takeaways = True
+        if tag == "a" and self._in_takeaways:
+            self.takeaway_links.append(attrs.get("href") or "")
         if tag == "div":
             classes = (attrs.get("class") or "").split()
             self._whole_card_picture = "ec-thumb-whole" in classes if "ac-thumb" in classes else None
@@ -173,6 +180,8 @@ class PageParser(HTMLParser):
     def handle_endtag(self, tag):
         if tag == "div":
             self._whole_card_picture = None
+        if tag == "ul":
+            self._in_takeaways = False
         if tag == "nav":
             self._in_crumbs = False
         if tag == self._related_tag:
@@ -247,6 +256,7 @@ class Page:
         self.crumb_links = parser.crumb_links
         self.alternates = parser.alternates
         self.related_links = parser.related_links
+        self.takeaway_links = parser.takeaway_links
 
     def loads(self, needle):
         return any(needle in url for url in self.urls)
@@ -823,6 +833,12 @@ def check_related_card_pictures(pages):
     return failures
 
 
+def check_summary_takeaway_links(pages):
+    redirect = re.compile(r"^https?://www\.google\.com/url(?:[?#]|$)", re.I)
+    return [f"{page.path}: {href!r}" for page in pages for href in page.takeaway_links
+            if href in ("", "#", "#ZgotmplZ") or redirect.match(href)]
+
+
 def main(public_dir):
     pages = load_pages(public_dir)
     home = next((p for p in pages if p.path == "index.html"), None)
@@ -853,6 +869,7 @@ def main(public_dir):
         "23. translated glossary pages link related terms in their own language": check_glossary_related_language(pages),
         "24. the glossary hub's filter finds each term by its other names": check_glossary_aka_filter(public_dir),
         "25. no page loads the retired js/newsletter.js": [p.path for p in pages if p.loads("js/newsletter.js")],
+        "27. summary takeaways link directly to their destinations": check_summary_takeaway_links(pages),
     }
     conditional = check_conditional_assets(pages)
     results["3. conditional highlight.js / mermaid loading"] = [
