@@ -220,9 +220,9 @@ def article_paths(root):
     return chosen
 
 
-def check_articles(browser, base, paths, failures):
+def check_articles(browser, base, paths, failures, widths=WIDTHS):
     """The reading layout across its pages: content varies more than the layout does."""
-    for width in WIDTHS:
+    for width in widths:
         page = new_page(browser, width)
         for path in paths:
             page.goto(base + path, wait_until="load", timeout=120000)
@@ -565,6 +565,12 @@ def check_tower_game(browser, base, expect):
 
 def check_phone_reading(browser, base, failures):
     """On a phone the chat launcher is a small button in the bottom corner, and an embed's panel is not clipped."""
+    # The phone contents list is widest just before the side card appears. These articles have long headings.
+    check_articles(browser, base, (
+        "educators-corner/003-developing-tools/",
+        "educators-corner/018-accessible-feedback-in-research/",
+        "pedagogies/004-thomas-rhys-evans/",
+    ), failures, widths=(1000,))
     expect = expectation(failures, "phone reading")
     page = new_page(browser, 390)
     page.goto(base + "glossary/english/abstract_bias/", wait_until="load")
