@@ -244,7 +244,9 @@ document.querySelectorAll('img.lazyload[data-src]').forEach((image) => {
   image.src = image.dataset.src;
 });
 
-// A video's player replaces its poster when someone asks to play it.
+// A video's player replaces its poster when someone asks to play it. A poster shown small in a side column
+// (inside [data-video-dialog], narrower than 560 px, from 1240 px where side columns appear) plays in a dialog
+// at full size instead; closing the dialog stops the video and returns focus to the poster.
 document.addEventListener('click', (event) => {
   const poster = event.target.closest('[data-video]');
   if (!poster || event.metaKey || event.ctrlKey || event.shiftKey) return;
@@ -254,6 +256,21 @@ document.addEventListener('click', (event) => {
   frame.title = poster.getAttribute('aria-label');
   frame.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
   frame.className = 'video-frame';
+  if (poster.closest('[data-video-dialog]') && poster.offsetWidth < 560 && matchMedia('(min-width: 1240px)').matches) {
+    const dialog = document.createElement('dialog');
+    dialog.className = 'video-dialog';
+    dialog.setAttribute('aria-label', frame.title);
+    dialog.innerHTML = '<button class="btn video-dialog-close" type="button">Close</button>';
+    dialog.append(frame);
+    document.body.append(dialog);
+    dialog.querySelector('button').addEventListener('click', () => dialog.close());
+    // A click on the backdrop closes it too.
+    dialog.addEventListener('click', (e) => { if (e.target === dialog) dialog.close(); });
+    dialog.addEventListener('close', () => { dialog.remove(); poster.focus(); });
+    // Focus starts on Close, so Escape closes the dialog until someone moves into the player.
+    dialog.showModal();
+    return;
+  }
   poster.replaceWith(frame);
   frame.focus();
 });

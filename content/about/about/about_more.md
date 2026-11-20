@@ -34,8 +34,9 @@ See also:
 
 Would you like to help us be or do better? Give us (anonymous) feedback in our [feedback page](/feedback).
 
-<!-- Beside "What FORRT does" and the lists after it on wide screens, here on narrower ones (assets/css/doors/sections.css). -->
-<aside class="callout callout-rail callout-rail-video" aria-label="FORRT Open Day">
+<!-- Beside "What FORRT does" and the lists after it on wide screens, here on narrower ones (assets/css/doors/sections.css).
+     There it plays in a dialog at full size (data-video-dialog, assets/js/doors/site.js). -->
+<aside class="callout callout-rail callout-rail-video" aria-label="FORRT Open Day" data-video-dialog>
 
 ### FORRT Open Day
 

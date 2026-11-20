@@ -249,6 +249,8 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
   .wrap{width:100%}
   .article-layout{display:block;padding:0}
   .article-layout .article-card{position:static;max-height:none;background:none;padding:0}
+  /* A printed page keeps its citation's heading (front matter cite_as). */
+  .article-layout .article-card .card-cite h2{display:block!important}
   .article-layout .article-style,.article-layout .article-style :is(p,li){font-size:12pt}
   a{color:#000}
 }
@@ -622,6 +624,8 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
 .article-layout .article-card .card-cite h2{font-size:21px;margin:0 0 6px}
 .article-layout .card-cite p{margin:0;font-size:15px;line-height:1.45;overflow-wrap:anywhere}
 .article-layout .card-cite a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
+/* Beside the text the citation sits just under the contents, so the contents' link to it is left out there. */
+.article-layout .article-card .toc-cite{display:none}
 /* Below 1000 px the card follows the text and leaves its contents out, so the citation needs no rule above it. */
 @media(max-width:1000px){.article-layout .card-cite{margin-top:0;padding-top:0;border-top:0}}
 /* A team's plans, as on Citational Justice: running text on the area's pale ground, in two balanced columns where

@@ -46,6 +46,11 @@ ul.network-icon a:hover{color:var(--ink)}
 .cite-dialog{width:min(640px,calc(100% - 32px));padding:22px;border:0;border-radius:var(--r-large);background:var(--page);color:var(--ink)}
 .cite-dialog::backdrop{background:rgba(38,45,53,.55)}
 .cite-dialog h2{font-size:26px}
+/* A video from a side column, played at full size (site.js). The close button sits above the player. */
+.video-dialog{width:min(960px,calc(100% - 32px));padding:14px 18px 18px;border:0;border-radius:var(--r-large);background:var(--page);color:var(--ink)}
+.video-dialog::backdrop{background:rgba(38,45,53,.7)}
+.video-dialog-close{display:block;min-height:44px;margin:0 0 10px auto}
+.video-dialog .video-frame{margin:0}
 .cite-dialog pre{max-height:50vh;overflow:auto;padding:12px;background:var(--surface);border-radius:var(--r-small)}
 
 /* Forced colours drop backgrounds, so filled buttons need an edge, and the dark logo needs a light plate. */
