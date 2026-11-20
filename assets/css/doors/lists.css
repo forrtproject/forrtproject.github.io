@@ -296,15 +296,6 @@ html:has(.tag-az){scroll-padding-top:84px}
 .ec-intro .list-filter-count{margin:8px 0 0;font-size:16px;color:var(--soft)}
 .ec-intro .list-filter-count:empty{margin:0}
 .ec-grid{grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:28px 24px}
-/* A logo, a figure or a tall picture shown whole on white, in the same frame as a photo. */
-.ec-thumb-whole{position:relative;aspect-ratio:16/9;background:var(--mat,#fff);border-bottom:1px solid var(--line)}
-.ec-thumb-whole[style]{border-bottom:0}
-/* A picture on white, or on a pale ground of its own, is multiplied onto its ground, so its white background takes
-   the card's tint (or its mat) and it does not sit as a box inside a box. */
-.ec-thumb-blend{border-bottom:0}
-.ec-thumb-blend:not([style]){background:transparent}
-.ec-thumb-blend img{mix-blend-mode:multiply}
-.ec-thumb-whole img{position:absolute;inset:14px 18px;width:calc(100% - 36px);height:calc(100% - 28px);aspect-ratio:auto;object-fit:contain}
 .ec-meta{margin:0 0 8px;font-size:15px;line-height:1.4;color:var(--soft)}
 .ec-meta>*+time::before{content:" · "}
 /* Author names link to their profiles, above the card's own link. */

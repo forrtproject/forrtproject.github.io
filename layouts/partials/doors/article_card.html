@@ -7,7 +7,7 @@
 {{ $img := (($p.Resources.ByType "image").GetMatch "*featured*") }}
 <article class="announcement-card">
   {{ if and $img (not $tone) }}
-    <div class="ac-thumb"><img src="{{ ($img.Fill "640x360 Center webp q75").RelPermalink }}" width="640" height="360" alt="{{ $p.Params.image.alt_text }}" loading="lazy"></div>
+    {{ partial "doors/card_picture" (dict "img" $img "lazy" true "alt" $p.Params.image.alt_text "figures" (eq $p.Type "educators-corner")) }}
   {{ else }}
     {{/* A news post's panel takes its brick colour from the news list; an Educators' Corner or Pedagogies article
          without a picture takes education's colour (DESIGN.md §6). */}}
