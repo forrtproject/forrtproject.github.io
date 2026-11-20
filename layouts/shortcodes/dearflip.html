@@ -249,6 +249,8 @@
     document.querySelectorAll('._df_book .df-ui-controls .df-ui-next > span').forEach(function(el){ el.textContent = 'Next'; });
     // The library marks an unavailable button only with a class; say so to assistive technology too.
     document.querySelectorAll('._df_book .df-ui-controls .df-ui-prev, ._df_book .df-ui-controls .df-ui-next').forEach(function(btn){
+      if (btn.dataset.ariaSynced) return;
+      btn.dataset.ariaSynced = '1';
       var sync = function(){ if (btn.classList.contains('disabled')) btn.setAttribute('aria-disabled', 'true'); else btn.removeAttribute('aria-disabled'); };
       sync();
       new MutationObserver(sync).observe(btn, { attributes: true, attributeFilter: ['class'] });
