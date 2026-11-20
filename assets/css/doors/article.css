@@ -200,41 +200,92 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .profile-card .profile-role{font-weight:700}
 .profile-card a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
 .profile-card ul.network-icon a{text-decoration:none}
-.sc-page{padding:32px 0 40px}
-.sc-page h1{font-size:clamp(36px,4.2vw,58px);line-height:1.06;margin:0 0 18px}
+/* Steering Committee: warm Doors portrait cards on pale team panels, proper Newsreader headings and sentence-case
+   roles (no tracked capitals or dark photo overlays, DESIGN.md §1, §6, §7). */
+.sc-page{padding:32px 0 48px}
+.sc-page h1{font-size:clamp(36px,4.2vw,58px);line-height:1.06;margin:0 0 10px}
+.sc-page .standfirst{max-width:38em;margin:0 0 20px;font-size:19px;line-height:1.5;color:var(--soft)}
 .sc-page .crumbs{margin-bottom:18px}
-.sc-page #sc-container{padding:0;font-family:var(--text);max-width:none}
-/* A team's name heads its own row, so it cannot end one row with its people starting the next. */
-.sc-page .sc-grid .sc-title-card{flex:0 0 100%;grid-column:1/-1;width:100%;aspect-ratio:auto;padding:var(--box-pad-y) var(--box-pad);flex-direction:row;align-items:baseline;justify-content:flex-start;gap:10px}
-.sc-page .sc-title-card :is(.sc-title-label,.sc-title-text){margin:0}
-.sc-page .sc-title-card .sc-title-text{font-size:17px}
-.sc-page .sc-title-card .sc-cbar{display:none}
-/* "Team" before every team's name says nothing the band doesn't, so only screen readers hear it; on a
-   desktop each name has room for two lines, so the photos of neighbouring teams start level. */
+.sc-page #sc-container{padding:0;font-family:var(--text);max-width:none;color:var(--ink)}
+.sc-page .sc-nav{display:flex;flex-wrap:wrap;gap:2px 22px;margin:0 0 32px;padding:0 0 12px;border-bottom:1px solid var(--line)}
+.sc-page .sc-nav a{display:inline-flex;align-items:center;gap:5px;min-height:44px;padding:4px 0;background:none;border:0;border-radius:0;color:var(--link);font:600 16px/1.3 var(--text);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1.5px}
+.sc-page .sc-nav a:hover{color:var(--ink);text-decoration-thickness:2px}
+.sc-page .sc-nav a:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.sc-page .sc-nav-count{color:var(--soft);font-weight:500}
+.sc-page .sc-section{margin:0 0 48px;scroll-margin-top:24px}
+.sc-page .sc-section:last-of-type{margin-bottom:0}
+.sc-page .sc-section-header{margin:0 0 22px;padding-bottom:14px;border-bottom:1.5px solid var(--line)}
+.sc-page .sc-section-title{margin:0 0 6px;font:var(--display-weight) clamp(28px,2.8vw,36px)/1.12 var(--display);color:var(--ink);text-transform:none;letter-spacing:0}
+.sc-page .sc-section-desc{margin:0;max-width:46em;font-size:18px;line-height:1.5;color:var(--soft)}
+.sc-page .sc-section-desc a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
+.sc-page .sc-grid{display:flex;flex-wrap:wrap;gap:20px;align-items:stretch}
+@media(min-width:1001px){
+  /* Four equal Strategic Focus Areas sit as a balanced 2x2 grid so row 1 does not leave 45% empty. */
+  .sc-page .sc-section:first-of-type .sc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+  .sc-page .sc-section:first-of-type .sc-members{grid-template-columns:repeat(auto-fill,minmax(168px,196px))}
+  .sc-page .sc-section:not(:first-of-type) .sc-team{flex:1 1 auto}
+}
+/* Team panels: area pale ground for Strategic Focus Areas (DESIGN.md §6), calm surface for operational teams.
+   Uses --sc-accent rather than --team-color so the inline --team-color on generated .sc-title-card elements
+   cannot leak legacy rainbow hues into headings or borders. */
+.sc-page .sc-team{--sc-accent:var(--soft);--sc-head:var(--ink);--team-bg:var(--surface);display:flex;flex-direction:column;gap:14px;padding:18px 18px 20px;box-sizing:border-box;background:var(--team-bg);border-top:4px solid var(--sc-accent);border-radius:var(--r-large);max-width:100%}
+.sc-page .sc-team[data-area=com]{--sc-accent:var(--com);--sc-head:var(--com);--team-bg:var(--com-bg)}
+.sc-page .sc-team[data-area=jus]{--sc-accent:var(--jus);--sc-head:var(--jus);--team-bg:var(--jus-bg)}
+.sc-page .sc-team[data-area=res]{--sc-accent:var(--res);--sc-head:var(--res);--team-bg:var(--res-bg)}
+.sc-page .sc-team[data-area=edu]{--sc-accent:var(--edu);--sc-head:var(--edu);--team-bg:var(--edu-bg)}
+.sc-page .sc-title-card{display:flex;align-items:baseline;gap:8px;padding:0;background:none!important;border:0}
 .sc-page .sc-title-card .sc-title-label{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
-@media(min-width:761px){.sc-page :is(.sc-team,.sc-grid)>.sc-title-card{min-height:72px;align-items:center}}
-/* Team bands: the four Strategic Focus Area teams in their own area colour, every other team in slate
-   (DESIGN.md §6: area colours only for areas). steering.js sets data-area from the team's name. */
-.sc-page :is(.sc-card,.sc-title-card){--team-color:var(--soft)!important}
-.sc-page :is(.sc-team,.sc-grid):has(>[data-area=com]) .sc-card,.sc-page .sc-title-card[data-area=com]{--team-color:var(--com)!important}
-.sc-page :is(.sc-team,.sc-grid):has(>[data-area=jus]) .sc-card,.sc-page .sc-title-card[data-area=jus]{--team-color:var(--jus)!important}
-.sc-page :is(.sc-team,.sc-grid):has(>[data-area=res]) .sc-card,.sc-page .sc-title-card[data-area=res]{--team-color:var(--res)!important}
-.sc-page :is(.sc-team,.sc-grid):has(>[data-area=edu]) .sc-card,.sc-page .sc-title-card[data-area=edu]{--team-color:var(--edu)!important}
-.sc-page .sc-section-title{margin:0 0 4px}
-/* 44 px targets (DESIGN.md §9). */
-.sc-page .sc-nav a{display:inline-flex;align-items:center;min-height:44px;padding:0}
-.sc-close-btn,.sc-social-links a{min-width:44px;min-height:44px;display:inline-flex;align-items:center;justify-content:center}
-.sc-team{display:contents}
-/* On a phone the cards and team names share one grid: the box gap between them, and a team's name further
-   from the cards of the team before it than from its own. */
-.sc-page .sc-grid{gap:var(--box-gap)}
-/* steering.js wraps each team in .sc-team, so its name card is then the first child of its own wrapper. */
-@media(max-width:760px){.sc-page .sc-grid>.sc-title-card:not(:first-child),.sc-page .sc-grid .sc-team:not(:first-child)>.sc-title-card{margin-top:var(--box-gap)}}
-@media(min-width:761px){
-  .sc-page .sc-grid{gap:28px 40px}
-  .sc-page .sc-team{display:flex;flex-wrap:wrap;align-content:flex-start;gap:1rem;width:calc(var(--sc-members)*190px + (var(--sc-members) - 1)*1rem);max-width:100%}
-  .sc-page .sc-grid .sc-card{width:190px}
-  .sc-page .sc-grid .sc-title-card{flex-wrap:wrap}
+.sc-page .sc-title-card .sc-title-text{margin:0;font:var(--display-weight) 22px/1.2 var(--display);color:var(--sc-head)}
+.sc-page .sc-title-card .sc-cbar,.sc-page .sc-card .sc-cbar,.sc-page .sc-card-overlay{display:none}
+.sc-page .sc-members{display:grid;grid-template-columns:repeat(var(--sc-members,2),minmax(176px,196px));gap:14px}
+.sc-page .sc-card{display:flex;flex-direction:column;overflow:hidden;background:#fff;border:1.5px solid color-mix(in srgb,var(--sc-accent) 24%,var(--line));border-radius:var(--r-small);cursor:pointer;transition:border-color .15s,transform .15s}
+.sc-page .sc-card:hover,.sc-page .sc-card:focus-visible{border-color:var(--sc-accent);transform:translateY(-2px)}
+.sc-page .sc-card:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.sc-page .sc-card-photo{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--surface)}
+.sc-page .sc-card-img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 20%;margin:0}
+.sc-page .sc-card-content{display:flex;flex-direction:column;gap:2px;flex:1;padding:12px 13px 14px;background:#fff}
+.sc-page .sc-card-name{margin:0;font:600 17px/1.25 var(--text);color:var(--ink);text-decoration:underline;text-decoration-color:color-mix(in srgb,var(--link) 62%,transparent);text-decoration-thickness:1.5px;text-underline-offset:3px}
+.sc-page .sc-card:hover .sc-card-name,.sc-page .sc-card:focus-visible .sc-card-name{color:var(--link);text-decoration-color:var(--link);text-decoration-thickness:2px}
+.sc-page .sc-card-role{margin:0;font:400 15px/1.35 var(--text);color:var(--soft);text-transform:none;letter-spacing:0}
+@media(max-width:1000px){
+  .sc-page .sc-team{width:100%}
+  .sc-page .sc-members{grid-template-columns:repeat(auto-fill,minmax(min(100%,168px),1fr))}
+}
+@media(max-width:760px){
+  .sc-page{padding:20px 0 36px}
+  .sc-page .sc-nav{gap:0 16px;margin-bottom:20px;padding-bottom:8px}
+  .sc-page .sc-nav a{font-size:15px}
+  .sc-page .sc-team{padding:14px 14px 16px}
+  .sc-page .sc-members{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  /* Single-member panels on phones use a horizontal portrait card so half the panel is never empty. */
+  .sc-page .sc-members:has(>.sc-card:only-child){grid-template-columns:1fr}
+  .sc-page .sc-card:only-child{flex-direction:row;align-items:center}
+  .sc-page .sc-card:only-child .sc-card-photo{width:112px;flex:none;aspect-ratio:4/5}
+  .sc-page .sc-card:only-child .sc-card-content{padding:12px 14px}
+  .sc-page .sc-card-content{padding:10px 11px 12px}
+  .sc-page .sc-card-name{font-size:16px}
+  .sc-page .sc-card-role{font-size:15px}
+}
+/* Profile dialog: Doors card modal replacing legacy steering-committee.css. */
+.sc-modal-backdrop{position:fixed;inset:0;z-index:1050;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(38,45,53,.62)}
+.sc-modal-backdrop.active{display:flex}
+.sc-modal-content{position:relative;width:min(680px,100%);max-height:90vh;overflow-y:auto;padding:24px 28px 28px;background:var(--page);border-radius:var(--r-large);color:var(--ink);box-shadow:0 20px 48px rgba(0,0,0,.22)}
+.sc-modal-header{display:flex;justify-content:flex-end;margin:-6px -8px 4px 0}
+.sc-close-btn{min-width:44px;min-height:44px;display:inline-flex;align-items:center;justify-content:center;padding:0;background:transparent;border:1.5px solid var(--line);border-radius:50%;color:var(--ink);cursor:pointer}
+.sc-close-btn:hover{background:var(--surface);border-color:var(--ink)}
+.sc-modal-layout{display:grid;grid-template-columns:160px minmax(0,1fr);gap:24px;align-items:start}
+.sc-modal-img{overflow:hidden;border-radius:var(--r-small);aspect-ratio:4/5;background:var(--surface)}
+.sc-modal-img img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 20%}
+.sc-social-links{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.sc-social-links a{min-width:44px;min-height:44px;display:inline-flex;align-items:center;justify-content:center;border:1.5px solid var(--line);border-radius:50%;color:var(--link);background:#fff}
+.sc-social-links a:hover{background:var(--link);border-color:var(--link);color:#fff}
+.sc-modal-name{margin:0 0 4px;font:var(--display-weight) 28px/1.15 var(--display);color:var(--ink)}
+.sc-modal-role{margin:0 0 14px;font:600 16px/1.35 var(--text);color:var(--soft)}
+.sc-modal-bio{font-size:17px;line-height:1.58;color:var(--ink)}
+@media(max-width:640px){
+  .sc-modal-content{padding:18px 18px 22px}
+  .sc-modal-layout{grid-template-columns:1fr;gap:16px}
+  .sc-modal-img{width:140px}
 }
 .article-layout .post-nav-scope{font-size:16px;line-height:1.4;margin:0 0 12px}
 .article-layout .post-nav-scope a{text-decoration:underline}

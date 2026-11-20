@@ -1,30 +1,104 @@
-{{/* Teams: a short intro, then the teams A to Z, each with its picture, name, description and a button to join it.
-     The button says where it goes: a team's own Slack channel, or #forrt-community for teams without one;
-     screen readers also hear the team's name, so a list of the page's links still says which team each joins. */}}
+{{/* Teams: grouped under FORRT's four Strategic Focus Areas, each with its area's Doors illustration and colour
+     (DESIGN.md §6). Each team card shows its icon clearly on a solid area-coloured disc (the team SVGs are white),
+     its name, full description and button to join its Slack channel or ask in #forrt-community. */}}
 {{ $page := .page }}
-{{/* On a wide screen the introduction takes the first place in the grid of teams, so no empty band sits beside it. */}}
-<div class="team-layout">
-<div class="team-intro">{{ $page.Content }}
-{{/* Team channels open only for members of FORRT's Slack, and signing in directly works only with some email
-     addresses, so the invitation comes first. */}}
-<p class="team-slack-note">New to FORRT's Slack? <a href="https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ">Join with the invitation link</a> first; the team buttons then open each team's channel.</p>
-</div>
-<ul class="feature-rows team-rows" role="list">
-  {{ range sort $page.Params.featurealt "name" }}
-  {{ $team := .name | plainify }}
-  <li>
-    {{ if .img }}{{ $dims := partial "functions/static_img_dims" .img | default (safeHTMLAttr `width="96" height="96"`) }}<img src="{{ (printf "img/%s" .img) | relURL }}" {{ $dims }} alt="">{{ end }}
-    <div>
-      <h3>{{ .name | markdownify | emojify }}</h3>
-      {{ with .description }}<p class="clamp-desc" data-clamp-name="{{ $team }}">{{ . | markdownify | emojify }}</p>{{ end }}
-      {{ with .buttonurl }}
-        {{/* A team without a channel of its own is reached through #forrt-community, not a bare workspace invite. */}}
-        {{ $url := . }}{{ $label := "Join the team" }}
-        {{ if in . "slack.com/archives/" }}{{ $label = "Join the team's Slack channel" }}{{ else if in . "join.slack.com" }}{{ $url = "https://forrt.slack.com/archives/CM6344P5E" }}{{ $label = "Ask about the team in #forrt-community" }}{{ end }}
-        <p class="team-join"><a href="{{ $url }}" class="btn btn-sm dir-btn">{{ $label }}<span class="sr-only">: {{ $team }}</span></a></p>
+{{ $areaMap := dict
+  "Team Ambassador Program" "edu"
+  "Team Curations" "edu"
+  "Team Curriculum" "edu"
+  "Team Feedback" "edu"
+  "Team Glossary" "edu"
+  "Team Glossary | Phase 2 | Translation" "edu"
+  "Team Lesson Plans" "edu"
+  "Team Lesson Plans | Phase 2 | Expansion" "edu"
+  "Team Pedagogies" "edu"
+  "Team Summaries" "edu"
+  "Team Impact" "res"
+  "Team JUST-OS" "res"
+  "Team Landscape" "res"
+  "Team Manuscript" "res"
+  "Team Replication Hub" "res"
+  "Team Reversals and Replication" "res"
+  "Team Citation Politics" "jus"
+  "Team Ethics" "jus"
+  "Team Neurodiversity" "jus"
+  "Team Open Science in Developing Countries" "jus"
+  "Team Wheel of Privilege" "jus"
+  "Team Cohesion" "com"
+  "Team Credit" "com"
+  "Team Ideas" "com"
+  "Team Mapping Open Science Communities" "com"
+  "Team Outreach and Impact" "com"
+  "Team Website" "com"
+}}
+{{ $groups := slice
+  (dict "key" "edu" "title" "Education & Pedagogy" "img" "images/doors/area-education.webp" "blurb" "Teaching materials, glossary definitions, lesson plans, summaries and curricula.")
+  (dict "key" "res" "title" "Meta-Science & Research" "img" "images/doors/area-research.webp" "blurb" "Replications, reversals, literature mapping, impact synthesis and open-research tools.")
+  (dict "key" "jus" "title" "Social Justice & DEIA" "img" "images/doors/area-justice.webp" "blurb" "Equity, neurodiversity, citational justice, ethics and global inclusion in open scholarship.")
+  (dict "key" "com" "title" "Community & Sustainability" "img" "images/doors/area-community.webp" "blurb" "Cohesion, contributor credit, outreach, new ideas and FORRT's web infrastructure.")
+}}
+{{ $buckets := newScratch }}
+{{ range sort $page.Params.featurealt "name" }}
+  {{ $key := index $areaMap (.name | plainify | strings.TrimSpace) | default "com" }}
+  {{ $buckets.Add $key (slice .) }}
+{{ end }}
+
+<div class="team-page">
+  <nav class="team-area-nav" aria-label="Jump to teams by area">
+    {{ range $groups }}
+      {{ $items := $buckets.Get .key | default slice }}
+      {{ if gt (len $items) 0 }}
+      <a class="team-area-jump" data-area="{{ .key }}" href="#teams-{{ .key }}"><span class="team-area-dot" aria-hidden="true"></span><span class="team-area-label">{{ .title }}</span> <span class="team-area-count">({{ len $items }})</span></a>
       {{ end }}
-    </div>
-  </li>
+    {{ end }}
+  </nav>
+
+  <div class="team-top">
+    <details class="list-about team-about">
+      <summary>About FORRT teams</summary>
+      <div class="team-intro">{{ $page.Content }}</div>
+    </details>
+    <aside class="team-join-panel" aria-label="Joining a FORRT team">
+      <h2>How to join a team</h2>
+      <p>Join FORRT's Slack workspace first, then use any team's button below to open its channel.</p>
+      <p class="team-join-cta">
+        <a href="https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ" class="btn btn-primary" target="_blank" rel="noopener">Join FORRT's Slack<span class="visually-hidden"> (opens in a new tab)</span></a>
+        <a href="{{ relref $page "/about/get-involved" }}" class="team-more-link">See ongoing projects</a>
+      </p>
+    </aside>
+  </div>
+  <script>(function(){var d=document.querySelector('.team-about');if(d&&window.matchMedia('(min-width: 761px)').matches)d.open=true;})();</script>
+
+  {{ range $groups }}
+    {{ $items := $buckets.Get .key | default slice }}
+    {{ if gt (len $items) 0 }}
+    {{ $plate := resources.Get .img }}
+    <section class="team-area-group" id="teams-{{ .key }}" data-area="{{ .key }}" aria-labelledby="teams-h-{{ .key }}">
+      <header class="team-area-head">
+        {{ with $plate }}{{ $w := .Resize "160x webp q80" }}<span class="team-area-plate" aria-hidden="true"><img src="{{ $w.RelPermalink }}" width="{{ $w.Width }}" height="{{ $w.Height }}" alt=""></span>{{ end }}
+        <div>
+          <h2 id="teams-h-{{ .key }}">{{ .title }}</h2>
+          <p>{{ .blurb }}</p>
+        </div>
+      </header>
+      <ul class="team-cards" role="list">
+        {{ range $items }}
+        {{ $team := .name | plainify }}
+        <li class="team-card">
+          <div class="team-card-head">
+            {{ if .img }}<span class="team-icon" aria-hidden="true"><img src="{{ (printf "img/%s" .img) | relURL }}" width="26" height="26" alt=""></span>{{ end }}
+            <h3>{{ .name | markdownify | emojify }}</h3>
+          </div>
+          {{ with .description }}<p class="clamp-desc" data-clamp-name="{{ $team }}">{{ . | markdownify | emojify }}</p>{{ end }}
+          {{ with .buttonurl }}
+            {{ $url := . }}{{ $label := "Join the team" }}
+            {{ if in . "slack.com/archives/" }}{{ $label = "Join the team's Slack channel" }}{{ else if in . "join.slack.com" }}{{ $url = "https://forrt.slack.com/archives/CM6344P5E" }}{{ $label = "Ask in #forrt-community" }}{{ end }}
+            <p class="team-join"><a href="{{ $url }}" class="btn btn-sm dir-btn" target="_blank" rel="noopener">{{ $label }}<span class="sr-only">: {{ $team }} (opens in a new tab)</span></a></p>
+          {{ end }}
+        </li>
+        {{ end }}
+      </ul>
+    </section>
+    {{ end }}
   {{ end }}
-</ul>
 </div>
