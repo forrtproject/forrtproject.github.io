@@ -347,7 +347,7 @@ html:has(.contributor-az){scroll-padding-top:calc(var(--contributor-az,72px) + 1
 .article-layout .article-style .contributor-rows .contribution:last-child{margin-bottom:0}
 /* On a wide screen a long list of projects runs in two columns, so the row uses the width beside the name. */
 @media(min-width:1200px){
-  .article-layout .article-style .contributor-rows .contributions-list{columns:2;column-gap:32px}
+  .article-layout .article-style #contributor-list:not(.is-project-filtered) .contributor-rows .contributions-list{columns:2;column-gap:32px}
   .article-layout .article-style .contributor-rows .contribution{break-inside:avoid}
 }
 .contribution-roles{color:var(--soft);font-size:16px}
