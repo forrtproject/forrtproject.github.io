@@ -1,7 +1,6 @@
 {{- define "main" -}}
-{{/* A taxonomy's index: /forrt_clusters/ (the seven earlier clusters), /categories/ (the news categories) and
-     /publication_types/, which has no terms and shows its own text with a button to Publications. Each keeps its numbered pages, as the 404 page
-     and older links know them (decision D17). */}}
+{{/* A taxonomy's index: /forrt_clusters/ (the seven earlier clusters) and /categories/ (the news categories). Each
+     keeps its numbered pages, as the 404 page and older links know them (decision D17). */}}
 {{ $_ := .Paginate .Data.Pages }}
 {{ $kind := lower .Type }}
 <div class="wrap">
@@ -18,10 +17,7 @@
         {{ if $topic }}<p class="topic-index__actions"><a class="btn btn-primary" href="{{ relref . "/clusters" }}">Browse the {{ with hugo.Data.clusters_v4 }}{{ len .clusters }}{{ else }}11{{ end }} current clusters</a> <a class="btn btn-outline-primary" href="{{ relref . "/resources" }}">Search all resources</a></p>{{ end }}
       </header>
       {{ with .Content }}<div class="article-style">{{ partial "doors/content" . }}</div>{{ end }}
-      {{ if not .Data.Pages }}
-        {{/* A taxonomy with no terms (/publication_types/): its own text and the way to where its pages are. */}}
-        {{ if eq $kind "publication_types" }}<p class="topic-index__actions"><a class="btn btn-primary" href="{{ relref . "/publications" }}">Go to Publications</a></p>{{ end }}
-      {{ else if $topic }}
+      {{ if $topic }}
         {{ partial "doors/topic_index.html" . }}
       {{ else if eq $kind "categories" }}
         {{ partial "doors/category_index.html" . }}

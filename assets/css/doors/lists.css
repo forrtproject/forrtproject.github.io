@@ -422,8 +422,11 @@ html:has(.tag-az){scroll-padding-top:84px}
 .topic-now__bar{display:block;flex:none;width:calc(var(--w) * .82);min-width:10px;height:16px;border-radius:2px 4px 4px 2px;background:repeating-linear-gradient(90deg,transparent 0 20px,rgb(255 255 255/.55) 20px 22px),var(--c,var(--soft));-webkit-print-color-adjust:exact;print-color-adjust:exact}
 .topic-now__rows a:hover .topic-now__bar{box-shadow:inset 0 -3px 0 rgb(0 0 0/.22)}
 .topic-now__count{font-size:16px;font-weight:600;font-variant-numeric:tabular-nums}
-/* The bars lay their bricks once, row after row, within about 1.7 s; with reduced motion they stand finished (DESIGN.md §11). */
-@media(prefers-reduced-motion:no-preference){.topic-now__bar{animation:topic-bar-lay .7s steps(9,end) calc(.2s + var(--i,0) * 70ms) both}}
+/* The bars lay their bricks once, row after row, within about 1.7 s, when the chart comes into view (the script in
+   doors/topic_resources.html sets is-waiting, then is-laying). Without the script, or with reduced motion, they stand
+   finished (DESIGN.md §11). */
+.topic-now.is-waiting .topic-now__bar{clip-path:inset(0 100% 0 0)}
+.topic-now.is-laying .topic-now__bar{animation:topic-bar-lay .7s steps(9,end) calc(.15s + var(--i,0) * 70ms) both}
 @keyframes topic-bar-lay{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
 /* The toolbar: the search with the way to the directory, then the material types, largest first, wrapping. */
 .article-layout .article-style .list-filter.topic-tools{display:flex;flex-wrap:wrap;align-items:flex-end;gap:12px 40px;max-width:1240px;margin:0 0 14px;padding:18px 20px}
@@ -518,6 +521,9 @@ html:has(.tag-az){scroll-padding-top:84px}
 @media(min-width:1001px){.category-grid.category-grid--issues{grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}}
 .news-page .category-grid--issues .ac-panel{aspect-ratio:auto;min-height:112px;padding:14px 18px}
 .news-page .category-grid--issues .ac-panel-title strong{font-size:28px}
+/* A post without a picture of its own: its title on the panel, in a size that holds a long title in a third of the row. */
+.news-page .ac-panel--post .ac-panel-title strong{font-size:24px;line-height:1.15}
+.news-page .ac-panel--post .ac-panel-title span{margin-bottom:4px}
 .news-page.category-page .category-lead>li:first-child:not([hidden]) .ac-summary{-webkit-line-clamp:12;line-clamp:12}
 @media(max-width:760px){
   .category-more h2{font-size:26px}.category-all{font-size:21px}

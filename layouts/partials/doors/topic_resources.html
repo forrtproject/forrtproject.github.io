@@ -63,7 +63,7 @@
   <div class="topic-toolbar">
   <div class="list-filter topic-tools" data-noun="resources" data-list="#now-{{ (index $groups 0).key }}" data-no-jump hidden>
     <label for="list-filter-input">Search these {{ $total }} resources</label>
-    <input type="search" id="list-filter-input" placeholder="A word from the title" autocomplete="off">
+    <input type="search" id="list-filter-input" placeholder="A word from the title or type" autocomplete="off">
     <p class="list-filter-count" aria-live="polite"></p>
     <p class="topic-tools__links">To filter by level, language or cluster too, use the <a href="{{ relref $page "/resources" }}">resources directory</a>.</p>
   </div>
@@ -109,6 +109,23 @@
       more.textContent = open ? more.dataset.less : more.dataset.more;
     });
   });
+  /* The chart's bars lay their bricks once, when at least a third of the chart is in view, as the Reversals board
+     does (site.js). It starts watching once site.js has shown the toolbar, which on a phone moves the chart down past
+     the first screen. With reduced motion, or without IntersectionObserver, they stay finished. */
+  var chart = document.querySelector('.topic-now');
+  if (chart && 'IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    chart.classList.add('is-waiting');
+    document.addEventListener('DOMContentLoaded', function () {
+      requestAnimationFrame(function () {
+        var seen = new IntersectionObserver(function (entries) {
+          if (!entries.some(function (entry) { return entry.isIntersecting; })) return;
+          seen.disconnect();
+          chart.classList.replace('is-waiting', 'is-laying');
+        }, {threshold: 0.3});
+        seen.observe(chart);
+      });
+    });
+  }
   var list = document.querySelector('.cluster-resources-list');
   document.querySelectorAll('.topic-showall').forEach(function (button) {
     var group = button.previousElementSibling;

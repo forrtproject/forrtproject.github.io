@@ -63,6 +63,8 @@
         {{ range . }}<li>{{ partial "doors/news_card" (dict "page" . "lazy" true "h" "h3" "own_picture" true) }}</li>{{ end }}
       </ul>
     </section>
+    {{ else }}
+    <p class="category-all"><a href="{{ $news.RelPermalink }}">All {{ len $news.Pages }} news posts<span aria-hidden="true">&nbsp;→</span></a></p>
     {{ end }}
   {{ else if $news }}
     <p class="category-all"><a href="{{ $news.RelPermalink }}">All {{ len $news.Pages }} news posts<span aria-hidden="true">&nbsp;→</span></a></p>

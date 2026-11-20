@@ -1,10 +1,10 @@
 {{/* One news post as the news list's card (layouts/section/post.html, whose markup and styles this follows): its
-     picture through doors/card_picture, or the brick panel of doors/post_panels where it has none of its own; a
-     newsletter's panel names the issue and is its title. Used by the category pages (doors/category_term.html).
-     On a category's page ("in_category"), where every card shares the category, the card leaves it out: a panel
-     shows the post's month instead and the date beneath it goes, and an issue's panel shows only its month. There a
-     picture several posts share shows when no other post on the page uses it ("own_picture"): it tells this post apart
-     from the others in view.
+     picture through doors/card_picture, or the brick panel of doors/post_panels where it has none of its own. A panel
+     names the post and is its title, as a newsletter's does on the news list: the category over the title (an issue's
+     month), and the date below it. Used by the category pages (doors/category_term.html).
+     On a category's page ("in_category"), where every card shares the category, the panel's category is read out but
+     not shown. There a picture several posts share shows when no other post on the page uses it ("own_picture"): it
+     tells this post apart from the others in view.
      Input: dict "page", "lead" (the first, wide card), "lazy", "in_category", "own_picture", and "h" (the title's
      heading level, default "h2"). */}}
 {{ $p := .page }}
@@ -22,12 +22,16 @@
       {{ printf "<%s class=\"ac-panel-title\">" $h | safeHTML }}<a class="ac-link" href="{{ $p.RelPermalink }}"><span{{ if .in_category }} class="visually-hidden"{{ end }}>Newsletter</span> <strong>{{ replaceRE `^.*[—–-]\s*` "" $p.Title }}</strong></a>{{ printf "</%s>" $h | safeHTML }}
     </div>
   {{ else }}
-    <div class="ac-thumb ac-panel ac-panel-{{ $tone }}"><strong>{{ if .in_category }}{{ $p.Date.Format "January 2006" }}{{ else }}{{ $cat | default "News" }}{{ end }}</strong></div>
+    <div class="ac-thumb ac-panel ac-panel-{{ $tone }} ac-panel--post">
+      {{ printf "<%s class=\"ac-panel-title\">" $h | safeHTML }}<a class="ac-link" href="{{ $p.RelPermalink }}"><span{{ if .in_category }} class="visually-hidden"{{ end }}>{{ $cat | default "News" }}</span> <strong>{{ $p.Title }}</strong></a>{{ printf "</%s>" $h | safeHTML }}
+    </div>
   {{ end }}
   <div class="ac-body">
-    {{ if not $issue }}
-    {{ if not (and .in_category $tone) }}<p class="ac-meta">{{ with $cat }}{{ if not (or $tone $.in_category) }}<span class="ac-cat">{{ . }}</span>{{ end }}{{ end }}<time datetime="{{ $p.Date.Format "2006-01-02" }}">{{ $p.Date.Format "2 January 2006" }}</time></p>{{ end }}
+    {{ if not $tone }}
+    <p class="ac-meta">{{ with $cat }}{{ if not $.in_category }}<span class="ac-cat">{{ . }}</span>{{ end }}{{ end }}<time datetime="{{ $p.Date.Format "2006-01-02" }}">{{ $p.Date.Format "2 January 2006" }}</time></p>
     {{ printf "<%s>" $h | safeHTML }}<a class="ac-link" href="{{ $p.RelPermalink }}">{{ $p.Title }}</a>{{ printf "</%s>" $h | safeHTML }}
+    {{ else if not $issue }}
+    <p class="ac-meta"><time datetime="{{ $p.Date.Format "2006-01-02" }}">{{ $p.Date.Format "2 January 2006" }}</time></p>
     {{ end }}
     <p class="ac-summary">{{ $p.Summary | plainify | emojify }}</p>
   </div>

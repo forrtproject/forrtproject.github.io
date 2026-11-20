@@ -1,7 +1,8 @@
 {{/* /forrt_clusters/: the seven earlier cluster names (the FORRT_clusters taxonomy) as bricks with their counts, largest
      first, in the brick colours, which carry no meaning (DESIGN.md §6), laid as brickwork on a wide screen. Each brick
-     names the two current clusters most of its resources now sit in (by the first current cluster of each, as on the
-     term page, doors/topic_resources.html), with each one's colour mark, so the index maps the old clusters onto the new.
+     names its two largest groups by current cluster (each resource under the first current cluster it belongs to, as
+     on the term page, doors/topic_resources.html), with each one's colour mark, so the index maps the old clusters onto
+     the new.
      The routes to the current clusters and the directory lead the page (_default/terms.html).
      Input: the taxonomy page. */}}
 {{ $page := . }}
@@ -15,7 +16,7 @@
     {{ $top := slice }}{{ range $k, $n := $count }}{{ $top = $top | append (dict "label" (index $label $k) "n" $n "sort" (sub 10000 $n)) }}{{ end }}
     {{ $top = first 2 (sort $top "sort") }}
     <li><a href="{{ .Page.RelPermalink }}"><strong>{{ .Page.Title }}</strong><span>{{ .Count }} resources</span>
-      {{ with $top }}<span class="topic-index__now">Now mostly in{{ range $i, $t := . }}{{ if $i }} and{{ end }} <span class="topic-index__cl">{{ with index $num (lower $t.label | urlize) }}<span class="cl-mark" style="--c: var(--cl{{ . }})" aria-hidden="true"></span>{{ end }}{{ $t.label }}</span>{{ end }}</span>{{ end }}
+      {{ with $top }}<span class="topic-index__now">Largest groups:{{ range $i, $t := . }}{{ if $i }} and{{ end }} <span class="topic-index__cl">{{ with index $num (lower $t.label | urlize) }}<span class="cl-mark" style="--c: var(--cl{{ . }})" aria-hidden="true"></span>{{ end }}{{ $t.label }}</span>{{ end }}</span>{{ end }}
     </a></li>
   {{ end }}</ul>
 </section>

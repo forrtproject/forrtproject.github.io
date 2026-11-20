@@ -16,7 +16,11 @@
         {{ with .Params.subtitle }}<p class="standfirst">{{ . | markdownify | emojify }}</p>{{ end }}
         {{ if $topic }}
           {{ $earlier := 7 }}{{ with .Parent }}{{ $earlier = len .Pages }}{{ end }}{{ $now := 11 }}{{ with hugo.Data.clusters_v4 }}{{ $now = len .clusters }}{{ end }}
-          <p class="standfirst">One of the {{ $earlier }} earlier FORRT clusters. Its {{ len .Data.Pages }} resources now sit in the {{ $now }} <a href="{{ relref . "/clusters" }}">current clusters</a>, and are listed under the first each belongs to.</p>
+          {{/* How many of its resources have a current cluster (forrt_clusters_new), so the sentence holds for every term. */}}
+          {{ $index := partialCached "doors/resource_index" (site.GetPage "/resources") "resources" }}
+          {{ $placed := 0 }}{{ range .Data.Pages }}{{ with index $index.items .RelPermalink }}{{ if .clusters }}{{ $placed = add $placed 1 }}{{ end }}{{ end }}{{ end }}
+          {{ $total := len .Data.Pages }}{{ $waiting := sub $total $placed }}
+          <p class="standfirst">One of the {{ $earlier }} earlier FORRT clusters. {{ if $waiting }}{{ $placed }} of its {{ $total }} resources now sit{{ else }}All {{ $total }} of its resources now sit{{ end }} in the {{ $now }} <a href="{{ relref . "/clusters" }}">current clusters</a>, listed under the first each belongs to{{ with $waiting }}; {{ . }} {{ cond (eq . 1) "awaits" "await" }} a current cluster{{ end }}.</p>
         {{ end }}
       </header>
       {{ with .Content }}<div class="article-style">{{ partial "doors/content" . }}</div>{{ end }}
