@@ -20,33 +20,62 @@
   var top = document.querySelector(".tag-top");
   var groups = Array.prototype.slice.call(document.querySelectorAll(".tag-group"));
   var count = box.querySelector(".tag-filter-count");
-  // Each letter shows its most used tags (twelve on a phone, sixteen otherwise) and a button for the rest, so the list stays walkable.
-  var FIRST = window.matchMedia("(max-width: 760px)").matches ? 12 : 16;
-  {
-    groups.forEach(function (group) {
-      var items = group.querySelectorAll("li");
-      // Shortened only when it hides more than eight tags; a letter with a few more than the preview shows them all.
-      if (items.length - FIRST <= 8) return;
-      // The preview shows the letter's most used tags, in their alphabetical places.
-      var ranked = Array.prototype.slice.call(items).sort(function (a, b) {
-        return Number(b.querySelector(".tag-count").textContent) - Number(a.querySelector(".tag-count").textContent);
-      });
-      ranked.slice(0, FIRST).forEach(function (item) { item.classList.add("is-top"); });
-      group.classList.add("is-short");
-      var more = document.createElement("button");
-      more.type = "button";
-      more.className = "tag-group-more";
-      more.textContent = "Show all " + items.length + " tags under " + group.querySelector("h3").textContent + " (" + FIRST + " shown)";
-      more.addEventListener("click", function () {
-        // Focus moves to the first tag the button revealed, so keyboard users carry on from there.
-        var next = group.querySelector("li:not(.is-top) a");
-        group.classList.remove("is-short");
-        more.remove();
-        if (next) next.focus();
-      });
-      group.appendChild(more);
+  // The row of letters. Once it has reached the top of the screen, one letter is filled in to say where the reader
+  // is: the letter just chosen, until the reader scrolls on; otherwise, in one column (phones), the last letter whose
+  // heading has reached the row, and in columns the letter at the top of the first column on screen. On a phone,
+  // where the row scrolls sideways, it keeps that letter in view, and its fade goes once it is scrolled to its end.
+  var az = document.querySelector(".tag-az");
+  function letterFor(group) { return az && az.querySelector('a[href="#' + group.id + '"]'); }
+  if (az) {
+    var edge = function () { az.classList.toggle("is-at-end", az.scrollLeft + az.clientWidth >= az.scrollWidth - 4); };
+    az.addEventListener("scroll", edge, { passive: true });
+    window.addEventListener("resize", edge);
+    edge();
+    var chosen = null;
+    var chosenAt = 0;
+    var mark = function () {
+      var stuck = az.getBoundingClientRect().top <= 1;
+      var line = az.getBoundingClientRect().bottom + 60;
+      var shown = groups.filter(function (group) { return !group.hidden; });
+      var current = null;
+      if (stuck && chosen && Math.abs(window.scrollY - chosenAt) < 200) current = chosen;
+      else if (stuck && shown.length) {
+        chosen = null;
+        var left = shown[0].getBoundingClientRect().left;
+        var oneColumn = left === shown[shown.length - 1].getBoundingClientRect().left;
+        shown.forEach(function (group) {
+          var box = group.getBoundingClientRect();
+          if (oneColumn) { if (box.top <= line) current = group; }
+          // In columns: the first letter in reading order with rows below the row of letters.
+          else if (!current && box.bottom > line && box.top < window.innerHeight) current = group;
+        });
+      }
+      var link = current && letterFor(current);
+      Array.prototype.forEach.call(az.querySelectorAll("a"), function (other) { other.classList.toggle("is-current", other === link); });
+      if (!stuck && az.scrollLeft) az.scrollLeft = 0;
+      if (link && az.scrollWidth > az.clientWidth) {
+        var at = link.offsetLeft - az.offsetLeft;
+        if (at < az.scrollLeft || at + link.offsetWidth > az.scrollLeft + az.clientWidth - 56) az.scrollLeft = Math.max(0, at - 4);
+      }
+    };
+    az.addEventListener("click", function (event) {
+      var link = event.target.closest("a");
+      var group = link && document.getElementById(link.getAttribute("href").slice(1));
+      if (!group) return;
+      // After the jump has scrolled the page.
+      window.setTimeout(function () { chosen = group; chosenAt = window.scrollY; mark(); }, 0);
     });
+    var ticking = false;
+    window.addEventListener("scroll", function () {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(function () { ticking = false; mark(); });
+    }, { passive: true });
+    mark();
   }
+  // While searching, the heading over the list names the search.
+  var allHeading = document.getElementById("tag-all-heading");
+  var allText = allHeading ? allHeading.textContent : "";
   /** Spaces and hyphens count as the same, so "p hacking" finds "P-Hacking"; compact() also drops them, so
       "pre registration" finds "Preregistration". */
   function norm(text) { return text.toLowerCase().replace(/[\s-]+/g, " ").trim(); }
@@ -64,9 +93,16 @@
         if (match) { any = true; shown += 1; }
       });
       group.hidden = !any;
+      var link = letterFor(group);
+      if (link) link.hidden = !any;
     });
     if (top) top.hidden = Boolean(query);
-    count.textContent = !query ? "" : shown ? shown + (shown === 1 ? " tag matches" : " tags match") : "No tag matches.";
+    var said = !query ? "" : shown ? shown + (shown === 1 ? " tag matches" : " tags match") : "No tag matches";
+    // The heading over the list says what matched; the line under the field says it to screen readers as you type.
+    if (allHeading) allHeading.textContent = query ? said + " “" + input.value.trim() + "”" : allText;
+    count.textContent = said;
+    // A short list of matches needs no letters to jump by.
+    if (az) az.hidden = Boolean(query) && shown < 20;
     return shown;
   });
   // Enter opens the best match: the tag as typed, then the same letters without spaces or hyphens, then one that
@@ -133,46 +169,70 @@
     return "";
   }
 
+  /** The type to show under a page's title: a resource's material types, or the section of any other page. */
+  function kinds(page) {
+    if (page.y && page.y.length) return page.y;
+    var section = sectionLabel(page.s);
+    return section ? [section] : [];
+  }
+
   function render(pages) {
     var results = document.getElementById("tag-results");
     var heading = document.getElementById("tag-results-heading");
     var list = document.getElementById("tag-results-list");
     if (!results || !heading || !list) return;
 
-    heading.textContent = pages.length
-      ? pages.length + (pages.length === 1 ? " page tagged " : " pages tagged ") + "“" + label + "”"
-      : "No pages are tagged “" + label + "”";
     document.title = (pages.length ? label + ": tagged pages" : "Tags") + " | FORRT";
-    // A section name on every row tells rows apart only when they come from more than one section.
-    var mixed = pages.some(function (page) { return page.s !== pages[0].s; });
+    if (!pages.length) heading.textContent = "No pages are tagged “" + label + "”";
+    else {
+      // The tag is the page's title, and the line under it says how many pages carry it.
+      var title = document.querySelector(".tags-page h1");
+      var standfirst = document.querySelector(".tags-page .standfirst");
+      if (title) title.textContent = label;
+      if (standfirst) standfirst.textContent = pages.length === 1 ? "One page carries this tag." : pages.length + " pages carry this tag.";
+      // The trail leads back to every tag: Home / Tags / this tag.
+      var here = document.querySelector(".crumbs [aria-current]");
+      if (here) {
+        var back = document.createElement("a");
+        back.href = new URL(".", window.location.href).pathname;
+        back.textContent = here.textContent;
+        var slash = document.createElement("span");
+        slash.setAttribute("aria-hidden", "true");
+        slash.textContent = "/";
+        here.before(back, " ", slash, " ");
+        here.textContent = label;
+      }
+      heading.hidden = true;
+    }
 
     var STEP = 50;
-    pages.forEach(function (page, index) {
+    var items = pages.map(function (page, index) {
       var item = document.createElement("li");
       item.hidden = index >= STEP;
-      
       var link = document.createElement("a");
       link.href = page.u;
       link.textContent = page.t;
       item.appendChild(link);
-
-      var label = mixed && sectionLabel(page.s);
-      if (label) {
-        var badge = document.createElement("span");
-        badge.className = "tag-section";
-        badge.textContent = label;
-        item.appendChild(badge);
+      var types = kinds(page);
+      if (types.length) {
+        var note = document.createElement("span");
+        note.className = "tag-section";
+        note.textContent = types.join(", ");
+        item.appendChild(note);
       }
+      item.dataset.types = "|" + types.join("|") + "|";
       list.appendChild(item);
+      return item;
     });
 
+    var more = null;
+    var showing = function () {
+      return "Show more (" + list.querySelectorAll("li:not([hidden])").length + " of " + pages.length + " shown)";
+    };
     if (pages.length > STEP) {
-      var more = document.createElement("button");
+      more = document.createElement("button");
       more.type = "button";
       more.className = "btn tag-show-more";
-      var showing = function () {
-        return "Show more (" + list.querySelectorAll("li:not([hidden])").length + " of " + pages.length + " shown)";
-      };
       more.textContent = showing();
       list.after(more);
       more.addEventListener("click", function () {
@@ -184,11 +244,48 @@
       });
     }
 
+    // Types to narrow a long list by, each with its count, when the pages are of more than one type.
+    var counts = {};
+    pages.forEach(function (page) { kinds(page).forEach(function (kind) { counts[kind] = (counts[kind] || 0) + 1; }); });
+    // A type with one page is left out: its row already names it, and a chip for it would only lengthen the row of chips.
+    var names = Object.keys(counts).filter(function (kind) { return counts[kind] > 1; })
+      .sort(function (a, b) { return counts[b] - counts[a] || a.localeCompare(b); });
+    var bar = results.querySelector(".tag-types");
+    if (bar && pages.length > 12 && names.length > 1) {
+      var chips = [];
+      var choose = function (chip) {
+        chips.forEach(function (other) { other.setAttribute("aria-pressed", String(other === chip)); });
+        var kind = chip.dataset.kind;
+        if (!kind) {
+          items.forEach(function (item, index) { item.hidden = index >= STEP; });
+          if (more) { more.hidden = false; more.textContent = showing(); }
+        } else {
+          items.forEach(function (item) { item.hidden = item.dataset.types.indexOf("|" + kind + "|") === -1; });
+          if (more) more.hidden = true;
+        }
+      };
+      [""].concat(names).forEach(function (kind) {
+        var chip = document.createElement("button");
+        chip.type = "button";
+        chip.className = "tag-type";
+        chip.dataset.kind = kind;
+        chip.setAttribute("aria-pressed", String(!kind));
+        chip.appendChild(document.createTextNode(kind || "All"));
+        var number = document.createElement("span");
+        number.textContent = kind ? counts[kind] : pages.length;
+        chip.appendChild(number);
+        chip.addEventListener("click", function () { choose(chip); });
+        chips.push(chip);
+        bar.appendChild(chip);
+      });
+      bar.hidden = false;
+    }
+
     results.hidden = false;
     var cloud = document.getElementById("tag-cloud");
     if (!pages.length) {
       // Nothing to list: the tags stay, with the search filled in, so the visitor can choose another.
-      Array.prototype.forEach.call(results.querySelectorAll(".tag-results-switch, .tag-results-all"), function (el) { el.hidden = true; });
+      Array.prototype.forEach.call(results.querySelectorAll(".tag-results-all"), function (el) { el.hidden = true; });
       // The message reads first, then the search.
       var find = document.querySelector(".tag-find");
       if (find) find.before(results);
@@ -197,6 +294,42 @@
     }
     // The results have a link back to every tag, so the cloud would only push the footer away.
     if (cloud) cloud.hidden = true;
+    related(pages);
+  }
+
+  /** The listed tags that most often share a page with this one, most shared first. */
+  function related(pages) {
+    var aside = document.querySelector(".tag-related");
+    if (!aside) return;
+    var listed = {};
+    Array.prototype.forEach.call(document.querySelectorAll(".tag-group li a"), function (link) {
+      listed[link.querySelector(".tag-name").textContent.trim().toLowerCase()] = link;
+    });
+    var shared = {};
+    pages.forEach(function (page) {
+      page.g.forEach(function (term) {
+        if (term !== needle && slug(term) !== needle && listed[term]) shared[term] = (shared[term] || 0) + 1;
+      });
+    });
+    var terms = Object.keys(shared).sort(function (a, b) { return shared[b] - shared[a] || a.localeCompare(b); }).slice(0, 10);
+    if (!terms.length) return;
+    var list = aside.querySelector("ul");
+    terms.forEach(function (term) {
+      var item = document.createElement("li");
+      var link = document.createElement("a");
+      link.href = listed[term].getAttribute("href");
+      var name = document.createElement("span");
+      name.className = "tag-name";
+      name.textContent = listed[term].querySelector(".tag-name").textContent;
+      var count = document.createElement("span");
+      count.className = "tag-shared";
+      count.textContent = shared[term] + " of these";
+      link.appendChild(name);
+      link.appendChild(count);
+      item.appendChild(link);
+      list.appendChild(item);
+    });
+    aside.hidden = false;
   }
 
   document.addEventListener("DOMContentLoaded", function () {

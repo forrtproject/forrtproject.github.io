@@ -44,16 +44,6 @@ ul.list-items>li[hidden]{display:none}
 .ac-chip:hover{border-color:var(--ink)}
 .ac-chip.active{background:var(--ink);border-color:var(--ink);color:#fff}
 /* The news cards (.announcement-card) are in article.css: articles end with them too. */
-.tags-note{max-width:40em;font-size:17px}
-.tags-note a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
-.tag-cloud{display:flex;flex-wrap:wrap;gap:6px;margin:18px 0 0}
-.tag-cloud a{padding:3px 10px;background:var(--surface);border-radius:var(--r-small);font-size:15px;font-weight:600;line-height:1.35;color:var(--ink)}
-.tag-cloud a:hover{background:var(--ink);color:#fff}
-.tag-count{margin-inline-start:4px;font-weight:400}
-#tag-results{margin:18px 0;max-width:40em}
-#tag-results h2{font-size:26px}
-.tag-results-switch{margin:-4px 0 12px}
-#tag-results p a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
 .nla-page{padding:32px 0 40px}
 /* The latest issue as a large brick beside the sign-up, then earlier issues as a wall of month bricks, one row of
    bricks per year, each year in one of the four brick colours (DESIGN.md §6: variety, no meaning). */
@@ -97,12 +87,6 @@ ul.list-items>li[hidden]{display:none}
   .article-layout .list-item h2{font-size:21px}
 }
 .list-item .btn-links{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
-.tag-more{flex-basis:100%;margin-top:10px}
-.tag-more>summary{font-weight:700;color:var(--link);cursor:pointer}
-.tag-more .tag-cloud{margin-top:10px}
-.tag-section{display:block;font-size:15px;color:var(--soft)}
-#tag-results li{padding:8px 0;font-size:18px}
-.tag-show-more{margin:14px 0}
 /* Thumbnails are often logos or figures, so they are shown whole on a white panel, not cropped. On phones the
    thumbnail sits above the entry and the text takes the full width. */
 .list-item-image img{object-fit:contain;background:#fff;border:1px solid var(--line);padding:4px}
@@ -129,74 +113,122 @@ ul.list-items>li[hidden]{display:none}
 /* Wide screens: two titles a row, read left to right, so A to Z runs down the page together rather than one column
    ending at K and the next starting at M; one wide column would make lines too long to read. */
 @media(min-width:1001px){.article-style.cluster-resources-list{max-width:none}.article-style ul.cluster-resources{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:48px;max-width:1080px}}
+/* Tags (layouts/tags/list.html, static/js/tag-browser.js). Find a tag, the most used as bricks, then every common
+   tag A to Z as one index that runs down three columns on a wide screen, like the index of a book, so no letter
+   leaves a column empty. A row of letters to jump by stays at the top of the screen while the index scrolls. */
+.tags-note{max-width:40em;font-size:17px}
+.tags-note a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
 .tag-find{max-width:520px;margin:20px 0 6px}
 .tag-find label{display:block;margin:0 0 6px;font:600 17px/1.3 var(--text)}
 .tag-find input{width:100%;box-sizing:border-box;padding:10px 16px;border:1.5px solid var(--ink);border-radius:999px;background:#fff;font:400 17px/1.3 var(--text);color:var(--ink)}
-.tag-filter-count{margin:8px 0 0;font-size:16px;color:var(--soft)}
-.tag-cloud a[hidden]{display:none}
-/* Tags: the most used as larger pills, then A to Z in columns. */
+/* The count of matches is read out as you type; the heading over the list shows it. */
+.tag-filter-count{position:absolute;width:1px;height:1px;margin:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 .tag-top h2,.tag-all h2{margin:28px 0 10px;font-size:24px}
-.tag-top .tag-cloud a{padding:6px 14px;font-size:17px}
-.tag-group h3{margin:20px 0 6px;font-size:22px;color:var(--edu)}
-.tag-group ul{columns:4 220px;column-gap:28px;margin:0;padding:0;list-style:none}
-.tag-group li{break-inside:avoid;margin:0;padding:3px 0}
-.tag-group a{color:var(--link);font-size:16px;text-decoration:none}
-.tag-group a:hover{text-decoration:underline;text-underline-offset:3px}
-.tag-group .tag-count{color:var(--soft);font-size:15px}
-.tag-group[hidden],.tag-group li[hidden]{display:none}
-.tag-group.is-short li:not(.is-top){display:none}
-.tag-all.is-searching .tag-group.is-short li:not([hidden]){display:list-item}
-.tag-all.is-searching .tag-group-more{display:none}
-.tag-group-more{margin:6px 0 0;padding:6px 14px;border:1.5px solid var(--ink);border-radius:999px;background:#fff;color:var(--ink);font:600 15px/1.3 var(--text);cursor:pointer}
-/* Tags carried by one page only are lighter, so the ones in common use stand out. */
-/* A tag's page count as a small badge beside it, not another word of the tag. */
-.tag-group .tag-count,.tag-top .tag-count{display:inline-block;margin-inline-start:4px;padding:0 7px;border-radius:999px;background:var(--surface);color:var(--soft);font-size:15px;line-height:1.5}
-.tag-top .tag-cloud a .tag-count{background:#fff}
-/* A to Z as rows: the tag on the left, its count aligned on the right, a light rule between rows. */
-.tag-group ul{columns:3 240px}
-@media(max-width:760px){.tag-group ul{columns:2 140px}}
-.tag-group li{padding:0;border-bottom:1px solid var(--surface)}
-.tag-group li a{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:5px 2px}
-.tag-group li .tag-count{flex:none}
-.tag-top .tag-cloud a{display:inline-flex;align-items:center}
-/* Tag names read as links at rest (DESIGN.md §5), and their count badges stay plain.
-   Letter headings stay neutral, as the tags span all four areas. */
-.tag-group .tag-name{min-width:0;overflow-wrap:anywhere;text-decoration:underline;text-underline-offset:3px}
-.tag-group h3{color:var(--ink)}
-/* Phones: 44 px targets. */
-@media(max-width:760px){
-  .tag-group{scroll-margin-top:16px}
-  .tag-group li a{min-height:44px;align-items:center;box-sizing:border-box}
-  .tag-top .tag-cloud a{min-height:44px;box-sizing:border-box}
-}
-/* One column on narrow phones, so long tag names and enlarged text keep to the screen. In em, so a larger default text size also gets it. */
-@media(max-width:30em){.tag-group ul{columns:1}}
-/* Phones: the tag view's links and buttons are 44 px targets too (DESIGN.md §9). */
-@media(max-width:760px){
-  #tag-results p a,#tag-results li>a{display:inline-flex;align-items:center;min-height:44px}
-  #tag-results li{padding:6px 0}
-  .tag-show-more,.tag-group-more{min-height:44px}
-}
-.tag-results-all{margin-top:14px}
-/* A list page's "About …" disclosure (content/educators-corner/_index.md): a 44 px target (DESIGN.md §9). */
-.list-about>summary{min-height:44px;padding:10px 0;box-sizing:border-box;cursor:pointer}
-/* Most used: twelve bricks (article.css .brick-row), smaller than a page's action cards, so two rows stay a band. */
-.brick-row.tag-top .action-cards{grid-template-columns:repeat(auto-fill,minmax(min(100%,190px),1fr));gap:14px 5px;margin:22px 0 12px}
-.brick-row.tag-top .action-cards a{min-height:0;padding:10px 14px 14px;box-shadow:inset 0 -4px 0 rgb(0 0 0/.24)}
+/* Most used: twelve bricks (article.css .brick-row), smaller than a page's action cards, so two rows stay a band.
+   Every brick the same height, so a brick's size never reads as how much a tag is used; the count says that. */
+.brick-row.tag-top .action-cards{grid-template-columns:repeat(auto-fill,minmax(min(100%,190px),1fr));grid-auto-rows:1fr;gap:14px 5px;margin:22px 0 12px}
+.brick-row.tag-top .action-cards>li{display:flex}
+.brick-row.tag-top .action-cards>li>a{flex:1;min-width:0;min-height:0;padding:10px 14px 14px;box-shadow:inset 0 -4px 0 rgb(0 0 0/.24)}
 .brick-row.tag-top .action-cards strong{font-size:19px;line-height:1.15;overflow-wrap:anywhere}
 .brick-row.tag-top .action-cards span{font-size:15px}
-/* Every brick the same height, so a brick's size never reads as how much a tag is used; the count says that.
-   On phones one brick a row, so a long name takes two lines rather than four. */
-.brick-row.tag-top .action-cards{grid-auto-rows:1fr}
-.brick-row.tag-top .action-cards>li{display:flex}
-.brick-row.tag-top .action-cards>li>a{flex:1;min-width:0}
+/* Phones: two to a row and smaller, so all twelve fit in about half a screen and the index starts on the second. */
 @media(max-width:760px){
-  .brick-row.tag-top.tag-top .action-cards{grid-template-columns:minmax(0,1fr);grid-auto-rows:auto;gap:10px}
-  .brick-row.tag-top.tag-top .action-cards>li>a{flex-direction:row;flex-wrap:nowrap;justify-content:space-between;align-items:baseline;gap:12px}
-  .brick-row.tag-top.tag-top .action-cards strong{flex:1 1 auto;min-width:0;margin:0}
-  .brick-row.tag-top.tag-top .action-cards span{flex:none;margin:0}
+  .tags-page .brick-row.tag-top .action-cards{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:auto;gap:12px 5px;margin:18px 0 8px}
+  .tags-page .brick-row.tag-top.tag-top .action-cards>li>a{min-height:0;align-items:stretch;gap:2px;padding:7px 10px 10px}
+  .brick-row.tag-top .action-cards strong{font-size:16px;line-height:1.2}
 }
-@media(max-width:760px){.brick-row.tag-top .action-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.brick-row.tag-top .action-cards a{padding:8px 10px 10px}.brick-row.tag-top .action-cards strong{font-size:17px}}
+/* The letters: plain 44 px squares, as on Contributors and the glossary. The letter of the part of the index on
+   screen is filled in ink (tag-browser.js), so the row also says where in the alphabet the reader is. */
+.tag-az{position:sticky;top:0;z-index:5;display:flex;flex-wrap:wrap;gap:6px 4px;margin:14px 0 4px;padding:10px 0 12px;background:var(--page);box-shadow:0 1px 0 var(--line),0 8px 8px -8px rgb(38 45 53/.18)}
+.tag-az a{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;border-radius:var(--r-small);background:var(--surface);color:var(--ink);font:600 17px/1 var(--text);text-decoration:none}
+.tag-az a:hover{background:var(--foot);text-decoration:underline;text-underline-offset:3px}
+.tag-az a.is-current{background:var(--ink);color:#fff}
+.tag-az[hidden]{display:none}
+.tag-az a:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.tag-az a[hidden]{display:none}
+html:has(.tag-az){scroll-padding-top:84px}
+@media(max-width:760px){
+  /* One line that scrolls sideways, fading at its right edge until scrolled to the end (DESIGN.md §9). */
+  .tag-az{flex-wrap:nowrap;gap:4px;margin:14px -20px 4px;padding:10px 20px 8px;overflow-x:auto;scrollbar-width:none}
+  .tag-az a{flex:none}
+  .tag-az::after{content:"›";position:sticky;right:-20px;flex:none;display:flex;align-items:center;justify-content:flex-end;width:56px;margin:-10px -20px -8px -56px;padding:0 10px 2px 0;background:linear-gradient(90deg,rgb(254 253 246/0),var(--page) 55%);color:var(--ink);font:600 30px/1 var(--text);pointer-events:none}
+  .tag-az.is-at-end::after{visibility:hidden}
+  html:has(.tag-az){scroll-padding-top:76px}
+}
+/* The index: letters as large headings over a rule, then rows with the tag on the left and its count on the right. */
+.tag-index{columns:3 260px;column-gap:40px}
+/* A letter is never split between columns, so every column starts with a letter. */
+.tag-group{break-inside:avoid}
+.tag-group h3{margin:0;padding:22px 0 4px;font:500 36px/1 var(--display);color:var(--ink);border-bottom:2px solid var(--ink);break-after:avoid}
+.tag-group ul{margin:0 0 6px;padding:0;list-style:none}
+.tag-group li{margin:0;padding:0;border-bottom:1px solid var(--surface);break-inside:avoid}
+.tag-group li a{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:5px 2px;color:var(--link);font-size:16px;text-decoration:none}
+.tag-group .tag-name{min-width:0;overflow-wrap:anywhere;text-decoration:underline;text-underline-offset:3px}
+.tag-group a:hover .tag-name{text-decoration-thickness:2px}
+/* A tag's page count, with a bar to its left whose length (set in the template, on a log scale) shows the same
+   count, so the large topics stand out down a column. The numbers line up on the right. */
+.tag-group .tag-count{flex:none;display:inline-flex;align-items:center;justify-content:flex-end;gap:8px;min-width:calc(var(--w,4px) + 8px + 3ch);color:var(--soft);font-size:15px;line-height:1.5;font-variant-numeric:tabular-nums}
+.tag-group .tag-count::before{content:"";width:var(--w,4px);height:7px;border-radius:2px;background:var(--brick3)}
+.tag-group[hidden],.tag-group li[hidden]{display:none}
+@media(max-width:760px){
+  .tag-group li a{min-height:44px;align-items:center;box-sizing:border-box}
+}
+/* One column on narrow phones, so long tag names and enlarged text keep to the screen. In em, so a larger default text size also gets it. */
+@media(max-width:30em){.tag-index{columns:1}}
+/* A selected tag: the pages that carry it, each with its type on the right, the types to narrow them by, and beside
+   them on a wide screen the tags that most often share their pages, staying in view while the list scrolls. On a
+   phone those tags come first, as a line of links. */
+#tag-results{margin:18px 0}
+.tag-results-head,.tag-results-body{max-width:44em}
+@media(min-width:1001px){
+  #tag-results:not([hidden]){display:grid;grid-template-columns:minmax(0,44em) minmax(260px,320px);grid-template-areas:"head related" "body related";justify-content:space-between;column-gap:56px;align-items:start}
+  .tag-results-head{grid-area:head}
+  .tag-results-body{grid-area:body}
+  .tag-related{grid-area:related;position:sticky;top:20px}
+}
+#tag-results h2{font-size:26px}
+#tag-results p a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
+#tag-results-list li{display:flex;justify-content:space-between;align-items:baseline;gap:6px 24px;padding:9px 0;font-size:18px}
+#tag-results-list li>a{min-width:0}
+.tag-section{flex:none;max-width:12em;font-size:15px;color:var(--soft);text-align:right}
+.tag-show-more{margin:14px 0}
+.tag-results-all{margin-top:14px}
+.tag-types{display:flex;flex-wrap:wrap;gap:7px;margin:4px 0 14px}
+.tag-types[hidden]{display:none}
+.tag-type{display:inline-flex;align-items:baseline;gap:7px;padding:7px 12px;border:1.5px solid var(--line);border-radius:999px;background:#fff;color:var(--ink);font:400 15px/1.3 var(--text);cursor:pointer}
+.tag-type span{color:var(--soft);font-weight:600}
+.tag-type:hover{border-color:var(--ink)}
+.tag-type[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:#fff}
+.tag-type[aria-pressed=true] span{color:inherit}
+.tag-related{padding:18px 20px 12px;background:var(--surface);border-radius:var(--r-small)}
+.tag-related[hidden]{display:none}
+#tag-results .tag-related h2{margin:0 0 8px;font-size:22px}
+.tag-related ul{margin:0;padding:0;list-style:none}
+.tag-related li{border-bottom:1px solid var(--line)}
+.tag-related li:last-child{border-bottom:0}
+.tag-related a{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:7px 0;color:var(--link);font-size:16px}
+.tag-related .tag-name{text-decoration:underline;text-underline-offset:3px}
+.tag-related .tag-shared{flex:none;color:var(--soft);font-size:15px}
+@media(max-width:1000px){
+  .tag-related{margin:4px 0 18px;padding:12px 16px}
+  #tag-results .tag-related h2{font-size:19px;margin:0 0 4px}
+  .tag-related ul{display:flex;flex-wrap:wrap;column-gap:18px}
+  .tag-related li,.tag-related li:last-child{border:0}
+  .tag-related a{justify-content:flex-start;gap:6px}
+}
+/* Phones: the type goes under the title, and links and buttons are 44 px targets (DESIGN.md §9). */
+@media(max-width:760px){
+  #tag-results-list li{display:block;padding:8px 0 10px}
+  #tag-results p a,#tag-results-list li>a{display:inline-flex;align-items:center;min-height:44px}
+  .tag-section{display:block;max-width:none;margin-top:2px;text-align:left}
+  /* The six that share most pages, so the line stays short above the list. */
+  .tag-related li:nth-child(n+7){display:none}
+  .tag-show-more,.tag-type{min-height:44px}
+  .tag-type{align-items:center}
+  .tag-related a{min-height:44px;align-items:center;box-sizing:border-box}
+}
+/* A list page's "About …" disclosure (content/educators-corner/_index.md): a 44 px target (DESIGN.md §9). */
+.list-about>summary{min-height:44px;padding:10px 0;box-sizing:border-box;cursor:pointer}
 /* /forrt_clusters/<term>/ (doors/topic_resources.html): one A to Z list of titles, with a search and the material
    types as filters with their counts, so a list of several hundred has ways to narrow it (DESIGN.md §4). No letter
    headings or row of letters. */
