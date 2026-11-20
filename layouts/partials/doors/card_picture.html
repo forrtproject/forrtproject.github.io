@@ -1,13 +1,16 @@
-{{/* A list card's picture (news list, Educators' Corner). A photo near the card's 16:9 shape fills the slot. Anything
-     else is shown whole, on a ground that matches its own, read from its top left corner, so it never sits as a box
-     inside a box: a picture on white lies on the card's tint with its white blended into it (lists.css), any other
-     on a mat of its ground's colour. Where `figures` is true (Educators' Corner, whose pictures are often charts and
-     logos), a picture with a pale main colour counts as a figure even at a photo's shape.
-     Input: dict "img" (image resource), "large" (the lead card: about twice as wide), "lazy", "alt", "figures". */}}
+{{/* A list card's picture (news list, Educators' Corner, Pedagogies, read-next cards). A photo near the card's 16:9
+     shape fills the slot unless `whole` is true (Pedagogies, whose thumbnails are slide stills and seals). Anything
+     else (logos, marks, charts, portraits) is shown whole on a ground that matches its own, read from its top left
+     corner, so it never sits as a box inside a box: a picture on white or pale off-white lies on the card's tint with
+     its ground blended into it (lists.css), any other on a mat of its ground's colour.
+     Where `figures` is true, a picture with a pale main colour counts as a figure or logo even at a photo's shape;
+     wide landscape diagrams (ratio 1.75–2.15) keep full reading height on phones (.ec-thumb-diagram), while compact
+     logos and emblems take a shallow strip (.ec-thumb-logo).
+     Input: dict "img" (image resource), "large" (the lead card: about twice as wide), "lazy", "alt", "figures", "whole". */}}
 {{ $img := .img }}
 {{ $ratio := div (float $img.Width) $img.Height }}
 {{ $main := index $img.Colors 0 }}
-{{ $photo := and (ge $ratio 1.3) (le $ratio 2.05) }}
+{{ $photo := and (not .whole) (ge $ratio 1.3) (le $ratio 2.05) }}
 {{ if and .figures (ge $main.Luminance 0.8) }}{{ $photo = false }}{{ end }}
 {{ $lazy := cond .lazy ` loading="lazy"` "" }}
 {{ if $photo }}
@@ -17,8 +20,10 @@
   {{ $fit := $img.Fit (cond .large "1200x640 webp q80" "600x320 webp q80") }}
   {{/* The picture's own ground, read from its top left corner; as a JPEG, so a transparent corner reads as white. */}}
   {{ $ground := index ($img.Crop "4x4 TopLeft jpg").Colors 0 }}
-  {{/* A corner far from the picture's main colour is part of the picture, not its ground: then the card's tint. */}}
+  {{/* A corner far from the picture's main colour is part of the picture, not its ground: then the card's tint.
+       A white ground (luminance >= 0.88) blends cleanly onto the card tint without dimming pale UI screenshots. */}}
   {{ $odd := gt (math.Abs (sub $ground.Luminance $main.Luminance)) 0.2 }}
-  {{ $onTint := or (ge $ground.Luminance 0.93) $odd }}
-  <div class="ac-thumb ec-thumb-whole{{ if $onTint }} ec-thumb-blend{{ end }}"{{ if not $onTint }} style="--mat:{{ $ground.ColorHex }}"{{ end }}><img src="{{ $fit.RelPermalink }}" width="{{ $fit.Width }}" height="{{ $fit.Height }}" alt="{{ .alt }}"{{ $lazy | safeHTMLAttr }}></div>
+  {{ $onTint := or (ge $ground.Luminance 0.88) $odd }}
+  {{ $diagram := and .figures (ge $ratio 1.75) (le $ratio 2.15) }}
+  <div class="ac-thumb ec-thumb-whole{{ if $diagram }} ec-thumb-diagram{{ else }} ec-thumb-logo{{ end }}{{ if $onTint }} ec-thumb-blend{{ end }}"{{ if not $onTint }} style="--mat:{{ $ground.ColorHex }}"{{ end }}><img src="{{ $fit.RelPermalink }}" width="{{ $fit.Width }}" height="{{ $fit.Height }}" alt="{{ .alt }}"{{ $lazy | safeHTMLAttr }}></div>
 {{ end }}

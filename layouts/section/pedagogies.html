@@ -1,18 +1,73 @@
 {{- define "main" -}}
-{{/* A section of articles: its introduction, then the articles newest first, a page at a time. */}}
-{{ $pager := .Paginate .Data.Pages }}
-<div class="wrap">
-  <div class="article-layout article-layout-wide">
-    <article class="reading">
-      <header class="article-head">
-        {{ partial "doors/crumbs" (dict "page" .) }}
-        <h1>{{ .Title }}</h1>
-        {{ with .Params.subtitle }}<p class="standfirst">{{ . | markdownify | emojify }}</p>{{ end }}
-      </header>
-      {{ with .Content }}<div class="article-style">{{ partial "doors/content" . }}</div>{{ end }}
-      <div class="list-items">{{ range $pager.Pages }}{{ partial "doors/list_item" . }}{{ end }}</div>
-      {{ partial "doors/pager" $pager }}
-    </article>
-  </div>
+{{/* Pedagogies: FORRT's worked examples of principled teaching and mentoring. Leads immediately with the pedagogies
+     as Education-tinted cards (DESIGN.md §2, §4, §6), each showing its course preview, educator, summary and plain
+     links to its teaching materials. The background prose follows beside an invitation to contribute, so neither
+     pushes the pedagogies off the first screen nor leaves an empty column on desktop (§7). */}}
+{{/* Keep Hugo's /pedagogies/page/1/ redirect stub matching the baseline section list. */}}
+{{ $_ := .Paginator }}
+{{ $pages := .Data.Pages.ByDate.Reverse }}
+<div class="wrap news-page ec-page ped-page">
+  <header class="article-head ped-head">
+    {{ partial "doors/crumbs" (dict "page" .) }}
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.subtitle }}<p class="standfirst">{{ . | markdownify | emojify }}</p>{{ end }}
+    {{ with resources.Get "images/doors/area-education.webp" }}
+      {{ $w := .Resize "440x webp q80" }}
+      <figure class="topic-plate-head ped-plate" aria-hidden="true"><img src="{{ $w.RelPermalink }}" width="{{ $w.Width }}" height="{{ $w.Height }}" alt=""></figure>
+    {{ end }}
+  </header>
+
+  <ul class="ped-grid" role="list">
+    {{ range $i, $p := $pages }}
+      {{ $link := $p.RelPermalink }}{{ $target := "" }}
+      {{ with $p.Params.external_link }}{{ $link = . }}{{ $target = ` target="_blank" rel="noopener"` }}{{ end }}
+      {{ $img := ($p.Resources.ByType "image").GetMatch "*featured*" }}
+      <li>
+        <article class="announcement-card ped-card">
+          {{ with $img }}
+            {{ partial "doors/card_picture" (dict "img" . "large" false "lazy" (ge $i 4) "alt" $p.Params.image.alt_text "figures" true "whole" true) }}
+          {{ else }}
+            <div class="ac-thumb ac-panel ac-panel-edu ac-panel-door" aria-hidden="true"></div>
+          {{ end }}
+          <div class="ac-body">
+            <h2><a class="ac-link" href="{{ $link }}"{{ $target | safeHTMLAttr }}>{{ $p.Title }}</a></h2>
+            {{ with $p.Params.subtitle }}<p class="ped-subtitle">{{ . | markdownify | emojify }}</p>{{ end }}
+            <p class="ec-meta">{{ with $p.Params.authors }}<span class="ec-authors">{{ partial "doors/author_links" . }}</span>{{ end }}{{ if $p.Params.date }}<time datetime="{{ $p.Date.Format "2006-01-02" }}">{{ $p.Date.Format "January 2006" }}</time>{{ end }}</p>
+            <p class="ped-summary">{{ if $p.Params.summary }}{{ $p.Params.summary | plainify | emojify }}{{ else if $p.Params.abstract }}{{ $p.Params.abstract | plainify | emojify }}{{ else }}{{ $p.Summary | plainify | emojify }}{{ end }}</p>
+            {{ with $p.Params.links }}
+              <div class="ped-materials">
+                <span class="ped-materials-label">Materials:</span>
+                <ul class="ped-links" role="list">
+                  {{ range . }}
+                    {{ $href := .url }}
+                    {{ if not (or (hasPrefix $href "http://") (hasPrefix $href "https://") (hasPrefix $href "/")) }}
+                      {{ $href = printf "%s%s" $p.RelPermalink $href }}
+                    {{ end }}
+                    <li><a href="{{ $href }}"{{ if hasPrefix $href "http" }} target="_blank" rel="noopener"{{ end }}>{{ .name | strings.TrimSpace }}</a></li>
+                  {{ end }}
+                </ul>
+              </div>
+            {{ end }}
+          </div>
+        </article>
+      </li>
+    {{ end }}
+  </ul>
+
+  {{ with .Content }}
+  <section class="ped-about" aria-labelledby="ped-about-h">
+    <div class="ped-about-prose">
+      <h2 id="ped-about-h">About FORRT Pedagogies</h2>
+      <div class="article-style">{{ partial "doors/content" . }}</div>
+    </div>
+    <aside class="ped-contribute" aria-label="Share your pedagogy">
+      <div class="ec-write-card">
+        <h3>Share a pedagogy</h3>
+        <p>Teach a course or module grounded in open and reproducible research? Help other educators adapt your approach.</p>
+        <a class="ec-write-link" href="{{ relref $ "/submit" }}">Submit your pedagogy</a>
+      </div>
+    </aside>
+  </section>
+  {{ end }}
 </div>
 {{- end -}}
