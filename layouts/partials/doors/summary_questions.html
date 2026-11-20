@@ -46,8 +46,9 @@
   <ul aria-live="polite">
     {{ range . }}
     {{/* The question, the answer (the first sentence of the chosen takeaway, doors/summary_gist, or the given
-         answer) and the paper's citation. */}}
-    <li data-topic="{{ .topic }}"><a href="#{{ .id }}"><span class="summary-question">{{ .question }}</span>{{ with .answer }}<span class="summary-question-gist">{{ . }}</span>{{ end }}{{ with .t.cite }}<span class="summary-question-cite">{{ . }}</span>{{ end }}</a></li>
+         answer), and at the foot the paper's citation with a cue that the card opens the summary (the card's link
+         already says where it goes, so screen readers skip the cue). */}}
+    <li data-topic="{{ .topic }}"><a href="#{{ .id }}"><span class="summary-question">{{ .question }}</span>{{ with .answer }}<span class="summary-question-gist">{{ . }}</span>{{ end }}<span class="summary-question-foot">{{ with .t.cite }}<span class="summary-question-cite">{{ . }}</span>{{ end }}<span class="summary-question-go" aria-hidden="true">Read the summary →</span></span></a></li>
     {{ end }}
   </ul>
   <script>

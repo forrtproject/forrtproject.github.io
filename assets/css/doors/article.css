@@ -872,7 +872,9 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
 .summary-question-gist{font-size:16px;line-height:1.5}
 /* A quoted answer may start mid-sentence in lower case. */
 .summary-question-gist::first-letter{text-transform:uppercase}
-.summary-question-cite{margin-top:auto;font-size:15px;line-height:1.4;color:var(--soft)}
+.summary-question-foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:2px 12px;margin-top:auto}
+.summary-question-cite{font-size:15px;line-height:1.4;color:var(--soft)}
+.summary-question-go{margin-inline-start:auto;font-weight:600;font-size:15px;line-height:1.4;color:var(--area);white-space:nowrap}
 .summary-questions a:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
 /* The whole card is the link; the question underlines when it is pointed at or focused. */
 .summary-questions a:is(:hover,:focus-visible) .summary-question{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px}
@@ -1000,7 +1002,7 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
   .summaries-side .summary-tools{padding:10px 14px}
   /* Phones: one brick, tighter, so the list stays near the first screen; "Another question" moves on. */
   .summary-questions{margin-bottom:12px}
-  .summary-questions-head{align-items:center;margin-bottom:16px}
+  .summary-questions-head{align-items:center;margin-bottom:20px}
   .summary-questions-head .summary-questions-next{min-height:44px}
   .summary-questions-one{display:inline}
   .summary-questions-more{display:none}
