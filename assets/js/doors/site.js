@@ -346,42 +346,6 @@ function watchBanner() {
 }
 if (document.readyState === 'complete') watchBanner(); else addEventListener('load', () => setTimeout(watchBanner));
 
-// A citation file, shown in a dialog built on the first click. A page offers one only when it has a cite.bib.
-let citeDialog;
-document.addEventListener('click', async (event) => {
-  const cite = event.target.closest('.js-cite-modal');
-  if (!cite) return;
-  event.preventDefault();
-  if (!citeDialog) {
-    citeDialog = document.createElement('dialog');
-    citeDialog.className = 'cite-dialog';
-    citeDialog.innerHTML = '<h2>Cite</h2><pre tabindex="0"></pre><p role="status"></p><button class="btn btn-primary" type="button" data-copy>Copy</button> <a class="btn" download>Download</a> <button class="btn" type="button" data-close>Close</button>';
-    document.body.append(citeDialog);
-    citeDialog.querySelector('[data-close]').addEventListener('click', () => citeDialog.close());
-    citeDialog.querySelector('[data-copy]').addEventListener('click', async () => {
-      const status = citeDialog.querySelector('[role=status]');
-      try {
-        await navigator.clipboard.writeText(citeDialog.querySelector('pre').textContent);
-        status.textContent = 'Copied.';
-      } catch {
-        status.textContent = 'Select the text above to copy it.';
-      }
-    });
-  }
-  citeDialog.querySelector('a').href = cite.dataset.filename;
-  citeDialog.querySelector('[role=status]').textContent = '';
-  citeDialog.showModal();
-  const text = citeDialog.querySelector('pre');
-  text.textContent = 'Loading.';
-  try {
-    const response = await fetch(cite.dataset.filename);
-    if (!response.ok) throw new Error(response.statusText);
-    text.textContent = await response.text();
-  } catch {
-    text.textContent = 'The citation could not be loaded. Use the Download button.';
-  }
-});
-
 // Whether nothing of the page's own lies under a box (with a 6 px margin): no text, control, image or card,
 // a card being anything with its own background, shadow or side borders that does not span the screen.
 const textRange = document.createRange();
