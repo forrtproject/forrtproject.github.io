@@ -207,7 +207,9 @@
   /** The types before Student guide are materials to teach with; in a long list their groups share education's ground. */
   function teaches(kind) { return rank(kind) < ORDER.indexOf("Student guide"); }
 
-  // More pages than this get type headings and a search over their titles; fewer are one list (DESIGN.md §4).
+  // More pages than GROUP are grouped under type headings; more than LONG also get a search over their titles and
+  // filters by type (DESIGN.md §4: a list under about twenty needs neither). Fewer than GROUP are one list.
+  var GROUP = 12;
   var LONG = 30;
   // Unfiltered, a group longer than BIG shows its first FIRST pages, and a button shows STEP more at a time.
   var BIG = 15;
@@ -292,19 +294,17 @@
     if (!results || !heading || !list) return;
 
     document.title = (pages.length ? label + ": tagged pages" : "Tags") + " | FORRT";
+    var grouped = pages.length > GROUP;
     var long = pages.length > LONG;
     // A long list's filters are its groups, each page under the first of its types, so a filter, its heading and its
-    // rows give the same count. A short list has no headings, and its filters count each page under every type.
+    // rows give the same count, in the headings' order.
     var counted = {};
     pages.forEach(function (page) {
-      var types = kinds(page).slice().sort(byRank);
-      (long ? types.slice(0, 1) : types).forEach(function (kind) { counted[kind] = (counted[kind] || 0) + 1; });
+      var kind = kinds(page).slice().sort(byRank)[0] || "Other";
+      counted[kind] = (counted[kind] || 0) + 1;
     });
-    // In a short list a type with one page gets no filter: its row already names it, and a chip for it would only
-    // lengthen the row. A long list has a filter for each heading, in the headings' order.
-    var names = Object.keys(counted).filter(function (kind) { return long || counted[kind] > 1; })
-      .sort(long ? byRank : function (a, b) { return counted[b] - counted[a] || a.localeCompare(b); });
-    var filtered = pages.length > 12 && names.length > 1;
+    var names = Object.keys(counted).sort(byRank);
+    var filtered = long && names.length > 1;
 
     if (!pages.length) heading.textContent = "No pages are tagged “" + label + "”";
     else {
@@ -352,12 +352,12 @@
     var byKind = {};
     var items = pages.map(function (page) {
       var types = kinds(page).slice().sort(byRank);
-      var kind = long ? (types[0] || "Other") : "";
+      var kind = grouped ? (types[0] || "Other") : "";
       if (!byKind[kind]) {
         byKind[kind] = { kind: kind, items: [], limit: FIRST };
         groups.push(byKind[kind]);
       }
-      var made = row(page, !long ? "h2" : teaches(kind) ? "h4" : "h3");
+      var made = row(page, !grouped ? "h2" : teaches(kind) ? "h4" : "h3");
       var line = document.createElement("span");
       line.className = "res-type";
       made.format.appendChild(line);
@@ -369,7 +369,7 @@
     groups.forEach(function (group) {
       group.el = document.createElement("section");
       group.el.className = "tag-group-results";
-      if (long) {
+      if (grouped) {
         group.heading = document.createElement(teaches(group.kind) ? "h3" : "h2");
         group.heading.appendChild(document.createTextNode((PLURAL[group.kind] || group.kind) + " "));
         group.count = document.createElement("span");
@@ -396,7 +396,7 @@
     // Materials to teach with come first, together on education's pale ground under the heading the resources
     // directory gives them (DESIGN.md §6: the colour says they are education's).
     var teach = null;
-    if (long) {
+    if (grouped) {
       var teaching = groups.filter(function (group) { return teaches(group.kind); });
       if (teaching.length) {
         teach = document.createElement("section");
@@ -418,20 +418,16 @@
     function update() {
       var query = input && long ? fold(input.value) : "";
       var shown = 0;
-      list.classList.toggle("is-one-list", !long || Boolean(chosen));
+      list.classList.toggle("is-one-list", !grouped || Boolean(chosen));
       var found = {};
       var all = 0;
       groups.forEach(function (group) {
         if (group.heading) group.heading.hidden = Boolean(chosen);
-        group.items.forEach(function (item) { typeLine(item, long); });
+        group.items.forEach(function (item) { typeLine(item, grouped); });
         var searched = group.items.filter(function (item) { return !query || item.text.indexOf(query) !== -1; });
         all += searched.length;
-        searched.forEach(function (item) {
-          (long ? [group.kind] : item.types).forEach(function (kind) { found[kind] = (found[kind] || 0) + 1; });
-        });
-        var matches = searched.filter(function (item) {
-          return !chosen || (long ? group.kind === chosen : item.types.indexOf(chosen) !== -1);
-        });
+        found[group.kind] = searched.length;
+        var matches = searched.filter(function () { return !chosen || group.kind === chosen; });
         var cap = long && !chosen && !query && group.items.length > BIG ? group.limit : Infinity;
         group.items.forEach(function (item) { item.el.hidden = true; });
         matches.forEach(function (item, index) { item.el.hidden = index >= cap; });
@@ -444,17 +440,17 @@
         shown += matches.length;
       });
       if (teach) teach.hidden = !teach.querySelector(".tag-group-results:not([hidden])");
-      // While searching, each filter counts the matches.
+      // While searching, each filter counts the matches, and a type with none steps aside.
       chips.forEach(function (chip) {
         var n = chip.dataset.kind ? found[chip.dataset.kind] || 0 : all;
         chip.querySelector("span").textContent = n;
-        chip.disabled = !n && chip.getAttribute("aria-pressed") !== "true";
+        chip.hidden = !n && chip.getAttribute("aria-pressed") !== "true";
       });
       if (said) said.textContent = !query ? "" : shown ? shown + " of " + pages.length + " titles match" : "No title matches “" + input.value.trim() + "”";
     }
 
     if (long && search && input) {
-      input.placeholder = "Search " + pages.length + " titles";
+      input.placeholder = "Search titles";
       input.addEventListener("input", update);
       search.hidden = false;
     }

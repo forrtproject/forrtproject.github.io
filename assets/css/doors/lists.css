@@ -220,15 +220,14 @@ html:has(.tag-az){scroll-padding-top:84px}
 .tag-type:hover{border-color:var(--ink)}
 .tag-type[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:#fff}
 .tag-type[aria-pressed=true] span{color:inherit}
-.tag-type:disabled{opacity:.55;cursor:default}
-.tag-type:disabled:hover{border-color:var(--line)}
+.tag-type[hidden]{display:none}
 /* A type's heading over its pages, with how many are shown. */
 .tag-group-results[hidden]{display:none}
 #tag-results .tag-group-results>:is(h2,h3){margin:30px 0 0;padding:0 0 8px;font:var(--display-weight) 28px/1.2 var(--display);border-bottom:2px solid var(--ink)}
 #tag-results .tag-group-results>:is(h2,h3)[hidden]{display:none}
 #tag-results-list>.tag-group-results:first-child>h2{margin-top:22px}
 /* Materials to teach with, first, on education's pale ground (tag-browser.js). */
-.tag-teach{margin:22px 0 10px;padding:20px 24px 12px;background:var(--edu-bg);border-radius:var(--r-large)}
+.tag-teach{margin:22px -24px 10px;padding:20px 24px 12px;background:var(--edu-bg);border-radius:var(--r-large)}
 .tag-teach[hidden]{display:none}
 #tag-results .tag-teach>h2{margin:0;font-size:32px;color:var(--edu)}
 #tag-results .tag-teach .tag-group-results>h3{margin-top:22px;font-size:24px}
