@@ -170,7 +170,6 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .resource-lang{flex-basis:100%}
 /* A resource entry: the entry, then its details card, then Previous and Next. On a desktop the card
    sits in the left column beside both; the second row takes any extra height of a long card. */
-.article-layout .resource-kind{margin:0 0 12px;max-width:60ch;font-size:16px;font-weight:600;color:var(--soft)}
 .article-layout .byline-more{display:inline}
 .article-layout .byline-more>summary{display:inline-block;margin-inline-start:.3em;color:var(--link);font-weight:600;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
 .article-layout .byline-more>summary:hover{color:var(--ink)}
@@ -185,8 +184,6 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 }
 @media(max-width:1000px){
   .article-layout-resource .article-card{order:0}
-  .article-layout-resource .article-card .resource-type{display:none}
-  .article-layout-resource .article-card .resource-type+dd+dt{margin-top:0}
   .article-layout .byline-more>summary{min-height:44px;display:inline-flex;align-items:center}
 }
 .article-layout .article-tags{margin:0 0 18px}
@@ -829,3 +826,100 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
 .section-mix i{transform-origin:50% 100%;transition:opacity .18s ease-out,transform .18s ease-out}
 .section-mix i.is-match{transform:scaleY(1.5)}
 .article-layout .article-style .outcome-tile{transition:box-shadow .2s ease-out}
+
+/* A paragraph of nothing but pictures in an article (doors/reading): as wide as the text, a pair side by side
+   at one height, each no wider than its file. A picture wider than its share of the text links to its full size. Square corners,
+   so a frame drawn in the picture is not clipped. On a phone the pictures stack. */
+.article-layout .article-style p.img-row{display:flex;gap:12px;align-items:flex-start;max-width:28.4em;margin:28px 0}
+.article-layout .article-style .img-pair-item{flex:calc(var(--w) / var(--h)) 1 0;min-width:0;max-width:calc(var(--w) * 1px)}
+.article-layout .article-style .img-row img{display:block;width:100%;height:auto}
+.article-layout .article-style a.img-full{display:block;cursor:zoom-in}
+.article-layout .article-style a.img-full:hover img{filter:brightness(.94)}
+.article-layout .article-style a.img-full:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+/* On a wide screen a figure runs past the text into the empty band on its right, to the page's edge. */
+@media(min-width:1241px){.article-layout:has(>.article-card):not(.article-layout-callouts,.article-layout-wide) .article-style p.img-row{width:min(calc(50vw + 138px),826px);max-width:none;gap:16px}
+}
+@media(max-width:560px){.article-layout .article-style p.img-row{flex-direction:column}
+.article-layout .article-style .img-pair-item{flex:none;max-width:100%}
+}
+
+/* An editor's note after an article: its label bold and the note at body weight, a size down, under a short rule. */
+.article-layout .article-style .editors-note{max-width:calc(28.4em * 18 / 17);margin:0 0 16px;font-size:17px;line-height:1.55}
+.article-layout .article-style hr:has(+ .editors-note,+ br + .editors-note){width:96px;margin:36px 0 18px;border:0;border-top:3px solid var(--edu)}
+
+/* An education article by one author with a photo (doors/article_header): on a phone or tablet the byline is a band
+   on education's pale ground, in place of the side card at the end; on a wide screen the card has photo and name. */
+.article-layout .byline-portrait :is(.byline-photo,.network-icon){display:none}
+@media(max-width:1000px){.article-layout .byline-portrait{display:grid;grid-template-columns:96px minmax(0,1fr);gap:2px 16px;align-items:center;margin-top:20px;padding:22px 18px 16px;background:var(--edu-bg);border-radius:var(--r-large);box-shadow:inset 0 6px 0 var(--edu)}
+.article-layout .byline-portrait>*{grid-column:2}
+.article-layout .byline-portrait .byline-photo{display:block;grid-column:1;grid-row:1/span 3;width:96px;height:96px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 3px #fff}
+.article-layout .byline-portrait .byline-authors{font:500 21px/1.2 var(--display)}
+.article-layout .byline-portrait .network-icon{display:flex;gap:0;margin:2px 0 0 -10px;padding:0;list-style:none}
+.article-layout .byline-portrait .network-icon li{margin:0}
+.article-layout .byline-portrait .network-icon a{display:flex;align-items:center;justify-content:center;width:44px;height:44px;color:var(--link);font-size:17px}
+.article-layout:has(.byline-portrait) .article-card{display:none}
+}
+.article-layout .article-card-edu .card-authors>li:only-child{grid-template-columns:minmax(0,1fr)}
+.article-layout .article-card-edu .card-authors>li:only-child>img.card-author-portrait{grid-row:auto;width:100%;height:auto;aspect-ratio:184/220;margin:0 0 12px;border-radius:var(--r-small);object-fit:cover}
+.article-layout .article-card-edu .card-authors>li:only-child>div>*{grid-column:1}
+.article-layout .article-card-edu .card-authors>li:only-child .card-author-name{font-size:22px}
+
+/* A newsletter post (doors/newsletter_post): the issue as one large brick in its year's colour, as on the archive,
+   with the issues around it beside it, outlined in their years' colours. */
+.nl-post{padding:32px 0 48px}
+.nl-post .crumbs{margin-bottom:26px}
+.nl-post .nla-brick-1{--tone:var(--brick1)}.nl-post .nla-brick-2{--tone:var(--brick2)}.nl-post .nla-brick-3{--tone:var(--brick3)}.nl-post .nla-brick-4{--tone:var(--brick4)}
+.nl-post-grid{display:grid;grid-template-columns:minmax(0,700px) 280px;gap:56px;justify-content:center;align-items:start}
+.nl-post>.crumbs{max-width:1036px;margin-inline:auto}
+.nl-issue{position:relative;margin-top:12px;padding:30px 40px 40px;background:var(--tone);border-radius:3px;box-shadow:inset 0 -10px 0 rgb(0 0 0/.24);color:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.nl-issue::before{content:"";position:absolute;left:22px;right:22px;top:-12px;height:12px;background:linear-gradient(90deg,transparent 8px,var(--tone) 8px 40px,transparent 40px) left top/48px 12px space no-repeat;border-radius:3px 3px 0 0}
+.nl-issue h1{margin:0 0 22px;color:#fff;font-weight:var(--display-weight);line-height:1}
+.nl-issue-name{display:block;margin-bottom:14px;font:600 19px/1.3 var(--text)}
+.nl-issue-month{display:block;font:var(--display-weight) clamp(46px,5.4vw,76px)/1 var(--display);letter-spacing:-.015em}
+.nl-issue-body{font-size:19px;line-height:1.55}
+.nl-issue-body p{max-width:30em;margin:0 0 16px}
+.nl-issue-body strong{font-weight:700;color:#fff}
+.nl-issue-body a:not(.post-brick){color:#fff;text-decoration:underline;text-underline-offset:3px}
+.nl-issue-body .post-action{margin:26px 0 0}
+.nl-issue .post-brick{display:inline-flex;align-items:center;min-height:52px;padding:0 26px;background:#fff;border-radius:999px;color:var(--ink);font:700 19px/1.2 var(--text);text-decoration:none}
+.nl-issue .post-brick::after{content:"\2192" / "";margin-inline-start:10px}
+.nl-issue .post-brick:hover{text-decoration:underline;text-underline-offset:4px}
+.nl-issue .post-brick:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.nl-issue-foot{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;margin-top:22px}
+.nl-issue-sent{margin:0;font-size:16px}
+.nl-issue .share-link{margin:0}
+.nl-issue .copy-link{min-height:44px;padding:0;background:none;border:0;color:#fff;font:600 16px/1.3 var(--text);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.nl-issue .copy-link:hover{text-decoration-thickness:2px}
+.nl-issue .copy-link:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.nl-around{padding-top:12px}
+.nl-around h2{margin:0 0 14px;font-size:24px;line-height:1.15}
+.nl-year{display:grid;grid-template-columns:56px minmax(0,1fr);gap:8px;align-items:start;margin:0 0 10px}
+.nl-year h3{margin:0;padding-top:10px;font-size:20px;line-height:1.2}
+.nl-year ol{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;margin:0;padding:0;list-style:none}
+.nl-year li{min-width:0;margin:0}
+.nl-year a,.nl-here{display:flex;align-items:flex-end;box-sizing:border-box;min-width:0;overflow-wrap:anywhere;min-height:48px;height:100%;padding:8px 12px 10px;border-radius:3px;font:500 19px/1.1 var(--display)}
+.nl-year a{background:#fff;border:2px solid var(--tone);box-shadow:inset 0 -4px 0 var(--tone);color:var(--tone);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
+.nl-year a:hover{color:var(--ink)}
+.nl-year a:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.nl-here{flex-direction:column;align-items:flex-start;justify-content:flex-end;background:var(--tone);box-shadow:inset 0 -4px 0 rgb(0 0 0/.24);color:#fff}
+.nl-here small{font:600 15px/1.2 var(--text)}
+.nl-all{margin:12px 0 0}
+.nl-all a{display:inline-block;padding:11px 0;font-weight:600;color:var(--link);text-decoration:underline;text-underline-offset:3px}
+.nl-all a::after{content:"\2192";margin-inline-start:6px;text-decoration:none}
+@media(max-width:1000px){.nl-post-grid{grid-template-columns:minmax(0,640px);gap:36px}
+.nl-post>.crumbs{max-width:640px}
+.nl-year ol{grid-template-columns:repeat(auto-fill,minmax(118px,1fr))}
+}
+@media(max-width:760px){.nl-post{padding:20px 0 28px}
+.nl-issue{padding:24px 20px 30px}
+.nl-issue::before{left:12px;right:12px}
+.nl-issue-body{font-size:17px}
+.nl-issue .post-brick{font-size:18px}
+}
+
+/* An Educators' Corner essay's short opening paragraph is a step larger, as its lead (doors/reading), and its
+   standfirst keeps to the text's width. */
+.article-type-educators-corner .article-style p.lead{max-width:25.6em;font-size:20px;line-height:1.55}
+.article-type-educators-corner .standfirst{max-width:22.2em}
+@media(max-width:760px){.article-type-educators-corner .article-style p.lead{font-size:19px}
+}

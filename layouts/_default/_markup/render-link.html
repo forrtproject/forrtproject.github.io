@@ -1,0 +1,3 @@
+{{- /* Markdown links, opening other sites in new tabs. Overrides the theme's hook, whose comment line left a line
+       break before every link: rendered as a space, it split "(" from a link that follows it. */ -}}
+<a href="{{ .Destination | safeURL }}"{{ with .Title}} title="{{ . }}"{{ end }}{{ if strings.HasPrefix .Destination "http" }} target="_blank" rel="noopener"{{ end }}>{{ .Text | safeHTML }}</a>

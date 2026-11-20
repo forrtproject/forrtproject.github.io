@@ -1,0 +1,62 @@
+{{/* A newsletter post (doors/reading): the issue as one large brick in its year's colour, as on the archive
+     (/newsletters/, one brick colour to a year, DESIGN.md §4), holding the title, what is in the issue, the link to
+     read it and when it was sent. Beside it, or below it on a phone, the issues around it by year and month, oldest
+     first, outlined in their years' colours, with this one solid and unlinked. FORRT sends every issue, so the
+     page names no author. Input: dict "page" and "body", the post's text with its link made a brick (doors/reading). */}}
+{{ $p := .page }}
+{{ $tone := add (mod $p.Date.Year 4) 1 }}
+{{/* "FORRT Newsletter — January 2026": the name above, the month large. */}}
+{{ $parts := split $p.Title " — " }}
+{{ $name := cond (eq (len $parts) 2) (index $parts 0) "" }}
+{{ $issue := cond (eq (len $parts) 2) (index $parts 1) $p.Title }}
+{{ $issues := slice }}
+{{ range (where site.RegularPages "Section" "post").ByDate }}
+  {{ if in (.Params.categories | default slice) "Newsletter" }}{{ $issues = $issues | append . }}{{ end }}
+{{ end }}
+{{ $here := 0 }}
+{{ range $i, $q := $issues }}{{ if eq $q.RelPermalink $p.RelPermalink }}{{ $here = $i }}{{ end }}{{ end }}
+{{/* Up to eight issues: three before this one where there are, the rest after. */}}
+{{ $count := len $issues }}
+{{ $start := cond (gt $here 3) (sub $here 3) 0 }}
+{{ if gt (add $start 8) $count }}{{ $start = cond (gt $count 8) (sub $count 8) 0 }}{{ end }}
+{{ $shown := first 8 (after $start $issues) }}
+{{ $years := slice }}
+{{ range $shown }}{{ $years = $years | append .Date.Year }}{{ end }}
+<div class="wrap">
+  <article class="nl-post">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="{{ "" | relLangURL }}">Home</a>
+      {{ with $p.Parent }}<span aria-hidden="true">/</span> <a href="{{ .RelPermalink }}">{{ index (partialCached "doors/menu_labels" . "menu-labels") (strings.Trim .Path "/") | default .LinkTitle }}</a>{{ end }}
+      <span aria-hidden="true">/</span> <span aria-current="page">{{ $p.LinkTitle }}</span>
+    </nav>
+    <div class="nl-post-grid">
+      <section class="nl-issue nla-brick-{{ $tone }}" aria-labelledby="nl-issue-title">
+        <h1 id="nl-issue-title">{{ with $name }}<span class="nl-issue-name">{{ . }}</span> {{ end }}<span class="nl-issue-month">{{ $issue }}</span></h1>
+        <div class="nl-issue-body">{{ .body }}</div>
+        <div class="nl-issue-foot">
+          <p class="nl-issue-sent">Sent <time datetime="{{ $p.Date.Format "2006-01-02" }}">{{ $p.Date.Format "2 January 2006" }}</time></p>
+          <p class="share-link"><button class="copy-link" type="button" data-copy-link="{{ $p.Permalink }}">Copy link</button> <span role="status"></span></p>
+        </div>
+      </section>
+      <nav class="nl-around" aria-labelledby="nl-around-title">
+        <h2 id="nl-around-title">Newsletter issues</h2>
+        {{ range $year := uniq $years }}
+        <div class="nl-year nla-brick-{{ add (mod $year 4) 1 }}">
+          <h3>{{ $year }}</h3>
+          <ol>
+            {{ range $i, $q := $shown }}{{ if eq $q.Date.Year $year }}
+            {{ $at := add $start $i }}
+            {{ if eq $at $here }}
+            <li class="nl-here" aria-current="page"><small>This issue</small>{{ $q.Date.Format "January" }}<span class="sr-only"> {{ $year }}</span></li>
+            {{ else }}
+            <li><a href="{{ $q.RelPermalink }}"{{ if eq $at (sub $here 1) }} rel="prev"{{ else if eq $at (add $here 1) }} rel="next"{{ end }}>{{ $q.Date.Format "January" }}<span class="sr-only"> {{ $year }}</span></a></li>
+            {{ end }}
+            {{ end }}{{ end }}
+          </ol>
+        </div>
+        {{ end }}
+        {{ with site.GetPage "/newsletters" }}<p class="nl-all"><a href="{{ .RelPermalink }}">All newsletters and sign-up</a></p>{{ end }}
+      </nav>
+    </div>
+  </article>
+</div>
