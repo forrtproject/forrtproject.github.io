@@ -320,7 +320,14 @@ if (canvas) {
       lines(spokes(still), ink.project, 0.9);
       if (growing) lines(spokes([...hubs].filter((project) => !still.includes(project))), ink.project, 0.9, person ? reachOf(t, FIRST, FIRST + SECOND) : reachOf(t, 0, SECOND));
       context.globalAlpha = 1;
-      if (state.person) lines(state.person.projects.map((project) => [state.person, project]), ink.focus, narrow() ? 3.2 : 2.8, growing && person ? reachOf(t, 0, FIRST) : 1);
+      if (state.person) {
+        // The person's own lines, on a white casing so they stay apart from the blue lines they cross.
+        const own = state.person.projects.map((project) => [state.person, project]);
+        const reach = growing && person ? reachOf(t, 0, FIRST) : 1;
+        const width = narrow() ? 3.2 : 2.8;
+        lines(own, ink.card, width + 3, reach);
+        lines(own, ink.focus, width, reach);
+      }
       if (growing) draw();
       else growth = null;
       lit.forEach((person) => dot(person, person.radius * size + 0.5, ink.ink));

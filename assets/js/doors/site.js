@@ -788,19 +788,28 @@ if (listFilter) {
     });
     board.append(title, hint, row);
     listFilter.before(board);
-    // The first time the reversed tile's bricks (or the last tile's) are wholly in view, and a moment later, every
-    // tile lays its bricks at the same pace, so the rare outcomes finish at once and the common ones keep going for
-    // about 1.4 s (article.css). It runs once.
-    const watched = (row.querySelector('.status-reversed') || row.lastElementChild)?.querySelector('.outcome-bricks');
-    if ('IntersectionObserver' in window && watched) {
+    // Once the reversed tile's bricks are wholly in view, and a moment later, every tile lays its bricks at the same
+    // pace, so the rare outcomes finish at once and the common ones keep going for about 1.4 s (article.css). Where the
+    // tiles stack (phones), a tile seen above it waits no more than 0.9 s, so no brick space stays empty on screen.
+    // It runs once.
+    const brickRows = [...row.querySelectorAll('.outcome-bricks')];
+    if ('IntersectionObserver' in window && brickRows.length) {
+      const reversedRow = row.querySelector('.status-reversed .outcome-bricks') || brickRows[brickRows.length - 1];
       board.classList.add('is-previewing');
-      const seen = new IntersectionObserver(([entry]) => {
-        if (!entry.isIntersecting) return;
-        seen.disconnect();
-        setTimeout(() => board.classList.add('is-seen'), 350);
-        setTimeout(() => board.classList.remove('is-previewing', 'is-seen'), 2400);
+      let timer;
+      const start = (wait) => {
+        if (timer && wait >= 900) return;
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+          seen.disconnect();
+          board.classList.add('is-seen');
+          setTimeout(() => board.classList.remove('is-previewing', 'is-seen'), 2000);
+        }, wait);
+      };
+      const seen = new IntersectionObserver((entries) => {
+        entries.filter((entry) => entry.isIntersecting).forEach((entry) => start(entry.target === reversedRow ? 350 : 900));
       }, {threshold: 0.95});
-      seen.observe(watched);
+      brickRows.forEach((bricks) => seen.observe(bricks));
     }
     searchRow.append(clear);
     // Each discipline opens with its bricks, and the contents card gives its count, which follows the filters.

@@ -2365,6 +2365,7 @@ body.clusters-mobile-nav-open .clusters-back-to-top{display:none}
 .acc-section+.acc-section{border-top-color:var(--line)}
 .acc-count{color:var(--soft)!important;font-variant-numeric:tabular-nums}
 .acc-copy-link{opacity:1;color:var(--soft);width:32px;height:32px;border-radius:999px}
+.acc-copy-link.is-copied{color:var(--ink)}  /* its check (base.css) is darker than the resting link icon */
 .acc-copy-link svg{width:15px;height:15px}
 .acc-copy-link:hover{color:var(--link);background:rgba(0,90,135,.08)}
 .acc-toggle-all{background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:6px 14px;color:var(--ink);font-weight:600}
