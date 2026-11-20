@@ -3,7 +3,7 @@
 
 title: "Teaching the why and how of replication studies"
 subtitle: "Emphasizing the often neglected issues of the importance of choosing good replication targets and resource constraints in doing good sample size planning, and the use of simulation studies in sample size planning."
-summary: "Patrick S. Forscher  walks us through his workshop on how and hy to conduct replication studies. He shares all his materials so you can become learn and teach these concepts."
+summary: "Patrick S. Forscher walks us through his workshop on how and why to conduct replication studies. He shares all his materials so you can learn and teach these concepts."
 authors: ['Patrick Forscher']
 tags: []
 categories: []
