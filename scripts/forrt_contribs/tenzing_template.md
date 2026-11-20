@@ -96,11 +96,6 @@ FORRT is driven by a **large and diverse community of contributors** that shape 
       <button id="apply-filter">Apply filter</button>
     </div>
   </div>
-  <div id="filter-results" style="display: none;">
-    <p class="filter-title">Filtered results</p>
-    <div id="filter-info"></div>
-    <button id="clear-filters">Reset filter</button>
-  </div>
 </div>
 </div>
 
