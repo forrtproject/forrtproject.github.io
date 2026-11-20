@@ -13,6 +13,9 @@
 {{ $body := partial "doors/content" .Content }}
 {{/* The summaries mark their DEI entries with ⌺, which few fonts have and which shows as an empty box. */}}
 {{ $body = replace $body "⌺" `<span class="dei-mark">DEI</span>` | safeHTML }}
+{{/* The legend ties "diversity, equity and inclusion" together with no-break spaces, which on a phone pushes the
+     phrase onto a line of its own; ordinary spaces let it wrap. */}}
+{{ $body = replace $body "diversity,\u00a0equity\u00a0and\u00a0inclusion" "diversity, equity and inclusion" | safeHTML }}
 <div class="wrap">
   <div class="article-layout article-layout-wide summaries-layout summaries-{{ cond $dei "jus" "res" }}">
     <div class="summaries-band">

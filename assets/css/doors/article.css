@@ -947,7 +947,7 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
   .article-layout.summaries-layout .article-style .summary-entry>summary h3{font-size:19px}
   .article-layout.summaries-layout .article-style .summary-entry>summary{padding:12px 0}
   .summaries-layout .summary-cite{font-size:15px}
-  .summary-gist{margin-top:4px;font-size:16px;line-height:1.4}
+  .summary-gist{margin-top:4px}
   .summaries-count{display:flex;align-items:baseline;gap:8px}
   .summaries-count strong{display:inline;font-size:32px}
   .article-layout.summaries-layout .article-style .summary-entry{padding:0 8px}
