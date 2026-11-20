@@ -27,10 +27,10 @@ jobs:
         with:
           python-version: "3.11"
 
-      # pandas: resource.py; python-docx: the disciplines parser;
+      # pandas: resource.py; python-docx: the disciplines parser; beautifulsoup4: summaries.py;
       # playwright (imported only, no browsers): the Doors preview checks.
       - name: Install test dependencies
-        run: python3 -m pip install pandas python-docx playwright
+        run: python3 -m pip install pandas python-docx playwright beautifulsoup4
 
       - name: Run tests in scripts/tests
         run: python3 -m unittest discover -s scripts/tests
