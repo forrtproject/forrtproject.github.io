@@ -21,4 +21,4 @@ Run both against a build (`hugo -d <dir>`), as `deploy.yaml` does:
 - `python3 scripts/check_seo_html.py <dir>`. Add a regression check here when you fix a template.
 - `python3 scripts/check_sitemap_lastmod.py <dir>/sitemap.xml [--compare-source]` (needs full Git history).
 
-Unit tests: `python3 -m unittest discover -s scripts/tests`. `scripts/test_parse_disciplines_gdoc.py` sits outside that folder and no CI job runs it: `python3 -m unittest discover -s scripts -p 'test_parse_disciplines_gdoc.py'`.
+Unit tests: `python3 -m unittest discover -s scripts/tests` and `python3 -m unittest discover -s scripts -p 'test_parse_disciplines_gdoc.py'`; `script-tests.yaml` runs both on every PR.
