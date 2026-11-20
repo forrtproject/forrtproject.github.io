@@ -249,6 +249,8 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
   .wrap{width:100%}
   .article-layout{display:block;padding:0}
   .article-layout .article-card{position:static;max-height:none;background:none;padding:0}
+  /* A printed page keeps its citation's heading (front matter cite_as). */
+  .article-layout .article-card .card-cite h2{display:block!important}
   .article-layout .article-style,.article-layout .article-style :is(p,li){font-size:12pt}
   a{color:#000}
 }
@@ -282,7 +284,7 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
   /* On phones and tablets the side card never repeats the contents: either the phone list above the text has
      them, or the page left them out on purpose (summaries, phone_toc: false). */
   .article-layout .article-card :is(h2:has(+ .article-toc),.article-toc){display:none}
-  .article-layout:has(.toc-phone) .article-card:not(:has(dl)){display:none}
+  .article-layout:has(.toc-phone) .article-card:not(:has(dl,.card-cite)){display:none}
   .article-layout .article-card-repeats{display:none}
   .glossary-index .reading{display:contents}
   .glossary-index .article-head{order:-2;margin-bottom:0}
@@ -623,6 +625,25 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
 .article-layout .card-more a{display:inline-block;padding:11px 0;font-weight:600;color:var(--link);text-decoration:underline;text-underline-offset:3px}
 .article-layout .card-more a::after{content:"\2192";margin-inline-start:6px;text-decoration:none}
 .article-layout .card-more+h2{margin-top:14px}
+/* How to cite (front matter cite_as), under the contents: set apart by a rule, the DOI free to break. */
+.article-layout .card-cite{margin:20px 0 0;padding:16px 0 0;border-top:1px solid var(--line)}
+.article-layout .card-cite:first-child{margin-top:0;padding-top:0;border-top:0}
+.article-layout .article-card .card-cite h2{font-size:21px;margin:0 0 6px}
+.article-layout .card-cite p{margin:0;font-size:15px;line-height:1.45;overflow-wrap:anywhere}
+.article-layout .card-cite a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
+/* Beside the text the citation sits just under the contents, so the contents' link to it is left out there. */
+.article-layout .article-card .toc-cite{display:none}
+/* Below 1000 px the card follows the text and leaves its contents out, so the citation needs no rule above it. */
+@media(max-width:1000px){.article-layout .card-cite{margin-top:0;padding-top:0;border-top:0}}
+/* A team's plans, as on Citational Justice: running text on the area's pale ground, in two balanced columns where
+   they fit, so six lists read as one set rather than a long column. */
+.article-layout .article-style .plan-board{columns:2 260px;column-gap:36px;margin:24px 0 28px;padding:24px 28px 8px;background:var(--jus-bg);border-radius:var(--r-large)}
+.article-layout .article-style .plan-board>div{break-inside:avoid;padding-bottom:4px}
+.article-layout .article-style .plan-board h3{margin:0 0 8px;font-size:21px;line-height:1.2}
+.article-layout .article-style .plan-board ul{margin:0 0 18px;padding-inline-start:1.1em}
+.article-layout .article-style .plan-board ul ul{margin:6px 0 0}
+.article-layout .article-style .plan-board li{font-size:17px;line-height:1.45;margin-bottom:6px}
+@media(max-width:760px){.article-layout .article-style .plan-board{padding:18px 18px 4px}}
 @media(max-width:1000px){
   .article-layout .card-authors>li>div>.network-icon{margin-inline-start:-13px}
   .article-layout .card-authors .network-icon a{width:44px;height:44px}
