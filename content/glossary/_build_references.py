@@ -2,7 +2,7 @@
 
 The dynamic glossary resolves per-term references from apa_lookup.json (built by
 bibtex_to_apa/bibtex_to_apa.js from the "Glossary BibTex" Google Doc). The public
-"List of References" is rendered from the same file by
+"Glossary references" page is rendered from the same file by
 layouts/partials/doors/glossary_references.html, so the two stay in sync; this
 script writes only the page's front matter and introduction. Run it after
 apa_lookup.json is regenerated:
