@@ -31,6 +31,10 @@
     az.addEventListener("scroll", edge, { passive: true });
     window.addEventListener("resize", edge);
     edge();
+    // A jump to a letter stops below the row of letters, however many lines the row wraps to.
+    var pad = function () { if (!az.hidden) document.documentElement.style.scrollPaddingTop = (az.offsetHeight + 12) + "px"; };
+    window.addEventListener("resize", pad);
+    pad();
     var chosen = null;
     var chosenAt = 0;
     var mark = function () {
@@ -179,11 +183,101 @@
     return "";
   }
 
-  /** The type to show under a page's title: a resource's material types, or the section of any other page. */
+  /** A page's types: a resource's material types, or the section of any other page. */
   function kinds(page) {
     if (page.y && page.y.length) return page.y;
     var section = sectionLabel(page.s);
     return section ? [section] : [];
+  }
+
+  // A tag's pages are grouped under their type, materials ready to teach with first and reading last, so an educator
+  // sees the lessons and courses before a hundred papers. A page with several types sits under the first of them in
+  // this order and names the others. Types not listed here (a section's name) come just before Reading.
+  var ORDER = ["Full course", "Syllabus", "Module", "Lesson", "Lecture", "Activity", "Teaching strategy", "Interactive",
+    "Student guide", "Video", "Podcast", "R code", "Data or tool", "Other", "Reading"];
+  var PLURAL = { "Full course": "Full courses", "Syllabus": "Syllabi", "Module": "Modules", "Lesson": "Lessons",
+    "Lecture": "Lectures", "Activity": "Activities", "Teaching strategy": "Teaching strategies",
+    "Interactive": "Interactive materials", "Student guide": "Student guides", "Video": "Videos", "Podcast": "Podcasts",
+    "Data or tool": "Data and tools" };
+  function rank(kind) {
+    var at = ORDER.indexOf(kind);
+    return at === -1 ? ORDER.length - 1.5 : at;
+  }
+  function byRank(a, b) { return rank(a) - rank(b) || a.localeCompare(b); }
+
+  // More pages than this get type headings and a search over their titles; fewer are one list (DESIGN.md §4).
+  var LONG = 30;
+  // Unfiltered, a group longer than BIG shows its first FIRST pages and a button for the rest.
+  var BIG = 12;
+  var FIRST = 8;
+
+  var clusterNames = {};
+  try { clusterNames = JSON.parse(document.getElementById("tag-cluster-names").textContent); } catch (error) { /* no marks */ }
+
+  /** Spaces and hyphens count as the same, and so do letters with and without accents, so "pre registration" finds "Pre-registration". */
+  function fold(text) {
+    return text.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[\s\-‐–—]+/g, " ").trim();
+  }
+
+  /** The tag's brick colour, 1 to 4: its place among the most used on /tags/, or else from its letters. */
+  function tone(name) {
+    var top = document.querySelectorAll(".tag-top li strong");
+    for (var i = 0; i < top.length; i += 1) if (top[i].textContent.trim().toLowerCase() === name.toLowerCase()) return (i % 4) + 1;
+    var sum = 0;
+    for (var j = 0; j < name.length; j += 1) sum += name.charCodeAt(j);
+    return (sum % 4) + 1;
+  }
+
+  /** One page as a row like the resources directory's: its title, its types, the opening of its description and its clusters. */
+  function row(page, heading) {
+    var item = document.createElement("article");
+    item.className = "res";
+    var title = document.createElement(heading);
+    title.className = "res-title";
+    var link = document.createElement("a");
+    link.href = page.u;
+    link.textContent = page.t;
+    title.appendChild(link);
+    item.appendChild(title);
+    var format = document.createElement("p");
+    format.className = "res-format";
+    item.appendChild(format);
+    // A description that is the title again with a word or two ("Day 1 | <title>") says nothing new.
+    var rest = page.d ? fold(page.d).replace(fold(page.t), "").replace(/[^\p{L}\p{N} ]/gu, "").trim() : "";
+    if (rest.split(" ").length > 3) {
+      var desc = document.createElement("p");
+      desc.className = "res-desc";
+      desc.textContent = page.d;
+      item.appendChild(desc);
+    }
+    var clusters = (page.c || []).filter(function (num) { return clusterNames[num]; });
+    if (clusters.length) {
+      var tags = document.createElement("p");
+      tags.className = "res-tag";
+      clusters.forEach(function (num, index) {
+        if (index) {
+          var comma = document.createElement("span");
+          comma.className = "visually-hidden";
+          comma.textContent = ", ";
+          tags.appendChild(comma);
+        }
+        var mark = document.createElement("span");
+        mark.className = "res-cl";
+        mark.dataset.cl = num;
+        mark.style.setProperty("--c", "var(--cl" + num + ")");
+        mark.textContent = clusterNames[num];
+        tags.appendChild(mark);
+      });
+      item.appendChild(tags);
+    }
+    return { el: item, format: format };
+  }
+
+  /** The type line: every type in a single list; under a type's heading, only the others ("Also Reading"). */
+  function typeLine(item, grouped) {
+    var others = grouped ? item.types.filter(function (kind) { return kind !== item.group.kind; }) : item.types;
+    item.format.hidden = !others.length;
+    item.line.textContent = grouped ? "Also " + others.join(", ") : others.join(", ");
   }
 
   function render(pages) {
@@ -193,14 +287,36 @@
     if (!results || !heading || !list) return;
 
     document.title = (pages.length ? label + ": tagged pages" : "Tags") + " | FORRT";
+    var long = pages.length > LONG;
+    var counted = {};
+    pages.forEach(function (page) { kinds(page).forEach(function (kind) { counted[kind] = (counted[kind] || 0) + 1; }); });
+    // A type with one page gets no filter: its row already names it, and a chip for it would only lengthen the row.
+    var names = Object.keys(counted).filter(function (kind) { return counted[kind] > 1; })
+      .sort(function (a, b) { return counted[b] - counted[a] || a.localeCompare(b); });
+    var filtered = pages.length > 12 && names.length > 1;
+
     if (!pages.length) heading.textContent = "No pages are tagged “" + label + "”";
     else {
-      // The tag is the page's title, and the line under it says how many pages carry it.
+      // The tag is the page's title, on a brick in the colour its brick has on /tags/ (any of the four for a tag not
+      // among the most used; they carry no meaning, DESIGN.md §6), with its number of pages as the bricks there give it.
       var title = document.querySelector(".tags-page h1");
       var standfirst = document.querySelector(".tags-page .standfirst");
-      if (title) title.textContent = label;
-      if (standfirst) standfirst.textContent = pages.length === 1 ? "One page carries this tag." : pages.length + " pages carry this tag.";
-      if (standfirst) lead(standfirst);
+      if (title) {
+        title.textContent = label;
+        var brick = document.createElement("div");
+        brick.className = "tag-head-brick";
+        brick.style.setProperty("--brick", "var(--brick" + tone(label) + ")");
+        title.before(brick);
+        brick.appendChild(title);
+        var number = document.createElement("p");
+        number.textContent = pages.length === 1 ? "1 page" : pages.length + " pages";
+        brick.appendChild(number);
+      }
+      // The line under it is the tag's glossary definition, where it has one.
+      if (standfirst) {
+        standfirst.hidden = true;
+        lead(standfirst);
+      }
       // The trail leads back to every tag: Home / Tags / this tag.
       var here = document.querySelector(".crumbs [aria-current]");
       if (here) {
@@ -216,89 +332,109 @@
       heading.hidden = true;
     }
 
-    var STEP = 50;
-    var items = pages.map(function (page, index) {
-      var item = document.createElement("li");
-      item.hidden = index >= STEP;
-      var link = document.createElement("a");
-      link.href = page.u;
-      link.textContent = page.t;
-      item.appendChild(link);
-      var types = kinds(page);
-      if (types.length) {
-        var note = document.createElement("span");
-        note.className = "tag-section";
-        // At most three types, so a label never runs to several lines; the rest are counted.
-        note.textContent = types.slice(0, 3).join(", ") + (types.length > 3 ? " and " + (types.length - 3) + " more" : "");
-        item.appendChild(note);
+    // Every page once, under the first of its types in ORDER (long lists), or in one list in title order (short ones).
+    var groups = [];
+    var byKind = {};
+    var items = pages.map(function (page) {
+      var types = kinds(page).slice().sort(byRank);
+      var kind = long ? (types[0] || "Other") : "";
+      if (!byKind[kind]) {
+        byKind[kind] = { kind: kind, items: [], expanded: false };
+        groups.push(byKind[kind]);
       }
-      item.dataset.types = "|" + types.join("|") + "|";
-      list.appendChild(item);
+      var made = row(page, long ? "h3" : "h2");
+      var line = document.createElement("span");
+      line.className = "res-type";
+      made.format.appendChild(line);
+      var item = { el: made.el, format: made.format, line: line, types: types, text: fold(page.t), group: byKind[kind] };
+      byKind[kind].items.push(item);
       return item;
     });
+    groups.sort(function (a, b) { return byRank(a.kind, b.kind); });
+    groups.forEach(function (group) {
+      group.el = document.createElement("section");
+      group.el.className = "tag-group-results";
+      if (long) {
+        group.heading = document.createElement("h2");
+        group.heading.textContent = PLURAL[group.kind] || group.kind;
+        group.el.appendChild(group.heading);
+      }
+      group.items.forEach(function (item) { group.el.appendChild(item.el); });
+      if (long && group.items.length > BIG) {
+        group.more = document.createElement("button");
+        group.more.type = "button";
+        group.more.className = "btn tag-show-more";
+        group.more.addEventListener("click", function () {
+          group.expanded = true;
+          var next = group.items[FIRST];
+          update();
+          var link = next && next.el.querySelector("a");
+          if (link) link.focus();
+        });
+        group.el.appendChild(group.more);
+      }
+      list.appendChild(group.el);
+    });
 
-    var more = null;
-    var showing = function () {
-      return "Show more (" + list.querySelectorAll("li:not([hidden])").length + " of " + pages.length + " shown)";
-    };
-    if (pages.length > STEP) {
-      more = document.createElement("button");
-      more.type = "button";
-      more.className = "btn tag-show-more";
-      more.textContent = showing();
-      list.after(more);
-      more.addEventListener("click", function () {
-        var waiting = list.querySelectorAll("li[hidden]");
-        for (var i = 0; i < STEP && i < waiting.length; i += 1) waiting[i].hidden = false;
-        var link = waiting[0].querySelector("a");
-        if (link) link.focus();
-        if (waiting.length <= STEP) more.remove(); else more.textContent = showing();
+    // What is shown follows from three things: the type chosen, the search, and which groups are opened in full.
+    // With a type chosen the pages are one list, without headings, so its filter's count is the only count; the
+    // headings give none, as a page with several types counts under each of its types' filters but sits under one heading.
+    var chosen = "";
+    var search = results.querySelector(".tag-search");
+    var input = document.getElementById("tag-title-filter");
+    var said = results.querySelector(".tag-search-count");
+    function update() {
+      var query = input && long ? fold(input.value) : "";
+      var shown = 0;
+      var grouped = long && !chosen;
+      list.classList.toggle("is-one-list", !grouped);
+      groups.forEach(function (group) {
+        if (group.heading) group.heading.hidden = !grouped;
+        group.items.forEach(function (item) { typeLine(item, grouped); });
+        var matches = group.items.filter(function (item) {
+          return (!chosen || item.types.indexOf(chosen) !== -1) && (!query || item.text.indexOf(query) !== -1);
+        });
+        var cap = !chosen && !query && !group.expanded && group.items.length > BIG ? FIRST : Infinity;
+        group.items.forEach(function (item) { item.el.hidden = true; });
+        matches.forEach(function (item, index) { item.el.hidden = index >= cap; });
+        group.el.hidden = !matches.length;
+        if (group.more) {
+          group.more.hidden = matches.length <= cap;
+          group.more.textContent = "Show " + (matches.length - FIRST) + " more " + (PLURAL[group.kind] || group.kind).toLowerCase();
+        }
+        shown += matches.length;
       });
+      if (said) said.textContent = !query ? "" : shown ? shown + " of " + pages.length + " titles match" : "No title matches “" + input.value.trim() + "”";
     }
 
-    // Types to narrow a long list by, each with its count, when the pages are of more than one type.
-    var counts = {};
-    pages.forEach(function (page) { kinds(page).forEach(function (kind) { counts[kind] = (counts[kind] || 0) + 1; }); });
-    // A type with one page is left out: its row already names it, and a chip for it would only lengthen the row of chips.
-    var names = Object.keys(counts).filter(function (kind) { return counts[kind] > 1; })
-      .sort(function (a, b) { return counts[b] - counts[a] || a.localeCompare(b); });
+    if (long && search && input) {
+      input.placeholder = "Search " + pages.length + " titles";
+      input.addEventListener("input", update);
+      search.hidden = false;
+    }
+
+    // Types to narrow the list by, each with its count; the hidden words name the filter for screen readers.
     var bar = results.querySelector(".tag-types");
-    if (bar && pages.length > 12 && names.length > 1) {
-      // When most pages are of one type, only the others are labelled, and a note above the list says so.
-      var main = names[0];
-      if (counts[main] * 2 > pages.length) {
-        items.forEach(function (item) {
-          var note = item.querySelector(".tag-section");
-          if (note && item.dataset.types === "|" + main + "|") note.remove();
-        });
-        var said = results.querySelector(".tag-types-note");
-        if (said) { said.textContent = "Entries without a type named beside them are of type " + main + "."; said.hidden = false; }
-      }
+    if (bar && filtered) {
       var chips = [];
-      var choose = function (chip) {
-        chips.forEach(function (other) { other.setAttribute("aria-pressed", String(other === chip)); });
-        var kind = chip.dataset.kind;
-        // With one type chosen, the labels and the note say nothing new.
-        results.classList.toggle("is-one-type", Boolean(kind));
-        if (!kind) {
-          items.forEach(function (item, index) { item.hidden = index >= STEP; });
-          if (more) { more.hidden = false; more.textContent = showing(); }
-        } else {
-          items.forEach(function (item) { item.hidden = item.dataset.types.indexOf("|" + kind + "|") === -1; });
-          if (more) more.hidden = true;
-        }
-      };
       [""].concat(names).forEach(function (kind) {
         var chip = document.createElement("button");
         chip.type = "button";
         chip.className = "tag-type";
-        chip.dataset.kind = kind;
         chip.setAttribute("aria-pressed", String(!kind));
         chip.appendChild(document.createTextNode(kind || "All"));
         var number = document.createElement("span");
-        number.textContent = kind ? counts[kind] : pages.length;
+        number.textContent = kind ? counted[kind] : pages.length;
         chip.appendChild(number);
-        chip.addEventListener("click", function () { choose(chip); });
+        var hint = document.createElement("span");
+        hint.className = "visually-hidden";
+        hint.textContent = kind ? ", type" : ", every type";
+        chip.appendChild(hint);
+        chip.addEventListener("click", function () {
+          chosen = kind;
+          chips.forEach(function (other) { other.setAttribute("aria-pressed", String(other === chip)); });
+          update();
+        });
         chips.push(chip);
         bar.appendChild(chip);
       });
@@ -309,6 +445,7 @@
       window.addEventListener("resize", end);
       end();
     }
+    update();
 
     results.hidden = false;
     var cloud = document.getElementById("tag-cloud");
@@ -327,7 +464,7 @@
   }
 
   /** Where the tag is also a glossary term, the line under the title is the first sentence of its definition, with a link to it.
-      Author-year citations are dropped, as in the glossary's own previews; the count is on the "All" filter. */
+      Author-year citations are dropped, as in the glossary's own previews. Without one the line stays hidden. */
   function lead(standfirst) {
     var meta = document.querySelector('meta[name="glossary-index"]');
     if (!meta) return;
@@ -339,26 +476,21 @@
       // Its first sentence: a sentence ends where a capital or an opening quote follows the full stop.
       var first = text.match(/^(.+?[.!?])\s+(?=[A-Z“"(])/);
       if (first) text = first[1];
-      var count = standfirst.textContent;
       standfirst.textContent = text + " ";
       var link = document.createElement("a");
       link.href = fromRoot(term.url);
       link.textContent = "More in the glossary";
       standfirst.appendChild(link);
       standfirst.classList.add("tag-lead");
-      // Without the filters, the count has nowhere else to go.
-      if (document.querySelector(".tag-types").hidden) {
-        var line = document.createElement("p");
-        line.className = "tag-results-count";
-        line.textContent = count;
-        standfirst.after(line);
-      }
+      standfirst.hidden = false;
     }).catch(function () {});
   }
 
-  /** The listed tags that most often share a page with this one, most shared first. */
+  /** The listed tags that most often share a page with this one, most shared first: beside the list on a wide screen,
+      and on a phone after the list, folded under one line that names the first two. */
   function related(pages) {
     var aside = document.querySelector(".tag-related");
+    var phone = document.querySelector(".tag-related-phone");
     if (!aside) return;
     var listed = {};
     Array.prototype.forEach.call(document.querySelectorAll(".tag-group li a"), function (link) {
@@ -383,13 +515,20 @@
       name.textContent = listed[term].querySelector(".tag-name").textContent;
       var count = document.createElement("span");
       count.className = "tag-shared";
-      count.textContent = shared[term] + " of these";
+      count.textContent = shared[term];
       link.appendChild(name);
       link.appendChild(count);
       item.appendChild(link);
       list.appendChild(item);
     });
     aside.hidden = false;
+    document.getElementById("tag-results").classList.add("has-related");
+    if (phone) {
+      phone.querySelector("ul").innerHTML = list.innerHTML;
+      var names = terms.slice(0, 2).map(function (term) { return listed[term].querySelector(".tag-name").textContent; });
+      phone.querySelector(".tag-related-some").textContent = names.join(", ") + (terms.length > 2 ? " and " + (terms.length - 2) + " more" : "");
+      phone.hidden = false;
+    }
   }
 
   document.addEventListener("DOMContentLoaded", function () {

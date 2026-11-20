@@ -180,69 +180,110 @@ html:has(.tag-az){scroll-padding-top:84px}
 }
 /* One column on narrow phones, so long tag names and enlarged text keep to the screen. In em, so a larger default text size also gets it. */
 @media(max-width:30em){.tag-index{columns:1}}
-/* A selected tag: the pages that carry it, each with its type on the right, the types to narrow them by, and beside
-   them on a wide screen the tags that most often share their pages, staying in view while the list scrolls. On a
-   phone those tags come first, as a line of links. */
+/* A selected tag: the pages that carry it as rows like the resources directory's, a search over their titles and the
+   types to narrow them by, and beside them on a wide screen the tags that most often share their pages, staying in
+   view while the list scrolls. A tag on more than thirty pages has them grouped under type headings. On a phone the
+   shared tags follow the list, folded under one line, so the list follows the filters. The tag itself is the title,
+   on a brick in the colour its brick has on /tags/ (the bricks of action_cards, article.css). */
+.tag-head-brick{position:relative;display:inline-flex;flex-direction:column;gap:2px;max-width:100%;box-sizing:border-box;margin:14px 0 18px;padding:16px 26px 24px;background:var(--brick);border-radius:3px;box-shadow:inset 0 -6px 0 rgb(0 0 0/.24);color:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.tag-head-brick::before{content:"";position:absolute;left:14px;right:14px;top:-8px;height:8px;background:linear-gradient(90deg,transparent 6px,var(--brick) 6px 28px,transparent 28px) left top/34px 8px space no-repeat;border-radius:3px 3px 0 0}
+.tags-page .tag-head-brick h1{margin:0;color:#fff;overflow-wrap:anywhere}
+.tag-head-brick p{margin:0;font:400 18px/1.4 var(--text);color:#fff}
 #tag-results{margin:18px 0}
-.tag-results-head,.tag-results-body{max-width:44em}
+.tag-results-head,.tag-results-body{max-width:46em}
+.tags-page .standfirst.tag-lead{margin-top:0}
 @media(min-width:1001px){
-  #tag-results:not([hidden]){display:grid;grid-template-columns:minmax(0,44em) minmax(280px,380px);grid-template-areas:"head related" "body related";column-gap:64px;align-items:start}
+  #tag-results.has-related:not([hidden]){display:grid;grid-template-columns:minmax(0,46em) minmax(280px,360px);grid-template-areas:"head related" "body related";column-gap:56px;align-items:start}
   .tag-results-head{grid-area:head}
   .tag-results-body{grid-area:body}
   .tag-related{grid-area:related;position:sticky;top:20px}
+  .tag-related-phone{display:none}
 }
 #tag-results h2{font-size:26px}
 #tag-results p a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
-#tag-results-list li{display:flex;justify-content:space-between;align-items:baseline;gap:6px 24px;padding:9px 0;font-size:18px}
-#tag-results-list li>a{min-width:0}
-.tag-section{flex:none;max-width:14em;font-size:15px;color:var(--soft);text-align:right}
-.tag-show-more{margin:14px 0}
-.tag-results-all{margin-top:14px}
+.tag-results-all{margin-top:18px}
+.tag-lead a{font:400 17px/1.4 var(--text);color:var(--link);text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+.tags-page .standfirst[hidden]{display:none}
+/* The search over a long tag's titles, in the resources directory's style. */
+.tag-search{margin:4px 0 14px}
+.tag-search[hidden]{display:none}
+.tag-search label{display:block;margin:0 0 6px;font:600 17px/1.3 var(--text)}
+.tag-search input{width:100%;max-width:30em;box-sizing:border-box;padding:11px 14px;border:1.5px solid var(--soft);border-radius:var(--r-small);background:#fff;font:400 17px/1.3 var(--text);color:var(--ink)}
+.tag-search input::placeholder{color:var(--soft);opacity:1}
+.tag-search-count{margin:6px 0 0;font-size:15px;color:var(--soft)}
+.tag-search-count:empty{display:none}
 .tag-types{display:flex;flex-wrap:wrap;gap:7px;margin:4px 0 14px}
-.tag-types[hidden],.tag-types-note[hidden]{display:none}
-.tag-types-note{margin:-4px 0 10px;font-size:16px;color:var(--soft)}
-.is-one-type .tag-section,.is-one-type .tag-types-note{display:none}
-.tag-lead a,.tag-results-count{font:400 17px/1.4 var(--text)}
-.tag-lead a{color:var(--link);text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
-.tag-results-count{margin:8px 0 0;color:var(--soft)}
+.tag-types[hidden]{display:none}
 .tag-type{display:inline-flex;align-items:baseline;gap:7px;padding:7px 12px;border:1.5px solid var(--line);border-radius:999px;background:#fff;color:var(--ink);font:400 15px/1.3 var(--text);cursor:pointer}
 .tag-type span{color:var(--soft);font-weight:600}
 .tag-type:hover{border-color:var(--ink)}
 .tag-type[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:#fff}
 .tag-type[aria-pressed=true] span{color:inherit}
+/* A type's heading over its pages, with how many are shown. */
+.tag-group-results[hidden]{display:none}
+#tag-results .tag-group-results>h2{margin:30px 0 0;padding:0 0 8px;font-size:28px;border-bottom:2px solid var(--ink)}
+#tag-results .tag-group-results>h2[hidden]{display:none}
+#tag-results .tag-group-results:first-child>h2{margin-top:12px}
+/* The rows: the resources directory's (resources.css), which this page does not load. The whole row answers to its title. */
+#tag-results-list .res{position:relative;display:flex;flex-direction:column;gap:4px;padding:14px 12px;border-bottom:1px solid var(--line);min-width:0}
+#tag-results-list .res[hidden]{display:none}
+#tag-results-list .tag-group-results:not(:has(>h2)),#tag-results-list.is-one-list .tag-group-results:first-child{border-top:1px solid var(--line)}
+#tag-results-list .res>*{max-width:640px}
+#tag-results-list .res-format[hidden]{display:none}
+#tag-results-list .res:hover{background:var(--surface)}
+#tag-results-list .res:has(.res-title a:focus-visible){outline:2px solid var(--link);outline-offset:2px}
+#tag-results-list .res-title{margin:0;font:var(--display-weight,500) 20px/1.25 var(--display);overflow-wrap:anywhere}
+#tag-results-list .res-title a{color:var(--link);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+#tag-results-list .res-title a::after{content:"";position:absolute;inset:0}
+#tag-results-list .res-format{margin:0;font-size:15px;line-height:1.45}
+#tag-results-list .res-type{color:var(--ink);font-weight:600}
+#tag-results-list .res-desc{margin:2px 0;font-size:16px;line-height:1.45;color:var(--ink);display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;line-clamp:3;overflow:hidden}
+#tag-results-list .res-tag{display:flex;flex-wrap:wrap;gap:2px 16px;margin:0;font-size:15px;line-height:1.4;color:var(--soft)}
+#tag-results-list .res-cl{display:inline-flex;align-items:baseline}
+#tag-results-list .res-cl[data-cl]::before{content:"";flex:none;display:inline-block;width:10px;height:10px;margin-inline-end:6px;border-radius:2px;background:var(--c,var(--soft));transform:translateY(-1px);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.tag-show-more{margin:14px 0 0}
+.tag-show-more[hidden]{display:none}
 .tag-related{padding:18px 20px 12px;background:var(--surface);border-radius:var(--r-small)}
-.tag-related[hidden]{display:none}
+.tag-related[hidden],.tag-related-phone[hidden]{display:none}
 #tag-results .tag-related h2{margin:0 0 8px;font-size:22px}
-.tag-related ul{margin:0;padding:0;list-style:none}
+.tag-related ul,.tag-related-phone ul{margin:0;padding:0;list-style:none}
 .tag-related li{border-bottom:1px solid var(--line)}
 .tag-related li:last-child{border-bottom:0}
-.tag-related a{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:7px 0;color:var(--link);font-size:16px}
-.tag-related .tag-name{text-decoration:underline;text-underline-offset:3px}
-.tag-related .tag-shared{flex:none;color:var(--soft);font-size:15px}
+.tag-related a,.tag-related-phone a{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:7px 0;color:var(--link);font-size:16px}
+.tag-related .tag-name,.tag-related-phone .tag-name{text-decoration:underline;text-underline-offset:3px}
+.tag-related .tag-shared,.tag-related-phone .tag-shared{flex:none;color:var(--soft);font-size:15px;font-variant-numeric:tabular-nums}
+.tag-related-key{margin:0;color:var(--soft);font-size:15px;text-align:right}
+/* Below 1001 px: the shared tags folded under one line that names the first two. */
 @media(max-width:1000px){
-  /* Before the list, a short wrapping line of links rather than a panel. */
-  .tag-related{margin:0 0 14px;padding:0;background:none}
-  #tag-results .tag-related h2{font:600 17px/1.3 var(--text);margin:0}
-  .tag-related ul{display:flex;flex-wrap:wrap;column-gap:18px}
-  .tag-related li,.tag-related li:last-child{border:0}
-  .tag-related a{justify-content:flex-start;gap:6px}
+  .tag-related{display:none}
+  .tag-related-phone{margin:22px 0 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .tag-related-phone>summary{display:block;min-height:44px;box-sizing:border-box;padding:10px 28px 10px 0;position:relative;cursor:pointer;list-style:none}
+  .tag-related-phone>summary::-webkit-details-marker{display:none}
+  .tag-related-phone>summary::after{content:"";position:absolute;right:6px;top:18px;width:8px;height:8px;border-inline-end:2px solid var(--ink);border-bottom:2px solid var(--ink);transform:rotate(45deg)}
+  .tag-related-phone[open]>summary::after{top:22px;transform:rotate(-135deg)}
+  .tag-related-label{font-weight:600}
+  .tag-related-some{display:block;color:var(--soft);font-size:16px}
+  .tag-related-phone ul{padding:0 0 8px}
+  .tag-related-phone li{border-bottom:1px solid var(--surface)}
+  .tag-related-phone li:last-child{border-bottom:0}
 }
-/* Phones: the type goes under the title, and links and buttons are 44 px targets (DESIGN.md §9). */
+/* Phones: links and buttons are 44 px targets (DESIGN.md §9). */
 @media(max-width:760px){
-  #tag-results-list li{display:block;padding:0 0 8px}
-  #tag-results-list li>a{display:block;padding:9px 0}
   #tag-results p a{display:inline-flex;align-items:center;min-height:44px}
-  .tag-section{display:block;max-width:none;margin-top:-6px;text-align:left}
+  .tag-head-brick{margin:12px 0 14px;padding:12px 18px 20px}
+  .tag-head-brick p{font-size:17px}
+  #tag-results-list .res{padding:12px 0}
+  #tag-results-list .res:hover{background:none}
+  #tag-results-list .res-title{font-size:19px}
+  #tag-results .tag-group-results>h2{font-size:25px}
   /* The type filters: one row that scrolls sideways, fading at its right edge until scrolled to the end (§9). */
   .tag-types{flex-wrap:nowrap;margin:4px -20px 12px;padding:2px 20px;overflow-x:auto;scrollbar-width:none}
   .tag-type{flex:none}
   .tag-types::after{content:"›";position:sticky;right:-20px;flex:none;display:flex;align-items:center;justify-content:flex-end;width:56px;margin:-2px -20px -2px -56px;padding:0 10px 2px 0;background:linear-gradient(90deg,rgb(254 253 246/0),var(--page) 55%);color:var(--ink);font:600 30px/1 var(--text);pointer-events:none}
   .tag-types.is-at-end::after{visibility:hidden}
-  /* The six that share most pages, so the line stays short above the list. */
-  .tag-related li:nth-child(n+7){display:none}
   .tag-show-more,.tag-type{min-height:44px}
   .tag-type{align-items:center}
-  .tag-related a{min-height:44px;align-items:center;box-sizing:border-box}
+  .tag-related-phone a{min-height:44px;align-items:center;box-sizing:border-box}
 }
 /* A list page's "About …" disclosure (content/educators-corner/_index.md): a 44 px target (DESIGN.md §9). */
 .list-about>summary{min-height:44px;padding:10px 0;box-sizing:border-box;cursor:pointer}
