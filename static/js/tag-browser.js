@@ -223,7 +223,8 @@
       if (types.length) {
         var note = document.createElement("span");
         note.className = "tag-section";
-        note.textContent = types.join(", ");
+        // At most three types, so a label never runs to several lines; the rest are counted.
+        note.textContent = types.slice(0, 3).join(", ") + (types.length > 3 ? " and " + (types.length - 3) + " more" : "");
         item.appendChild(note);
       }
       item.dataset.types = "|" + types.join("|") + "|";
@@ -266,7 +267,7 @@
           if (note && item.dataset.types === "|" + main + "|") note.remove();
         });
         var said = results.querySelector(".tag-types-note");
-        if (said) { said.textContent = "Type: " + main + ", unless marked."; said.hidden = false; }
+        if (said) { said.textContent = "Entries without a type named beside them are of type " + main + "."; said.hidden = false; }
       }
       var chips = [];
       var choose = function (chip) {
@@ -361,7 +362,8 @@
         if (term !== needle && slug(term) !== needle && listed[term]) shared[term] = (shared[term] || 0) + 1;
       });
     });
-    var terms = Object.keys(shared).sort(function (a, b) { return shared[b] - shared[a] || a.localeCompare(b); }).slice(0, 10);
+    // A tag that shares only one page says little about the topic.
+    var terms = Object.keys(shared).filter(function (term) { return shared[term] > 1; }).sort(function (a, b) { return shared[b] - shared[a] || a.localeCompare(b); }).slice(0, 10);
     if (!terms.length) return;
     var list = aside.querySelector("ul");
     terms.forEach(function (term) {

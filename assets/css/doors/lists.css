@@ -195,7 +195,7 @@ html:has(.tag-az){scroll-padding-top:84px}
 #tag-results p a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
 #tag-results-list li{display:flex;justify-content:space-between;align-items:baseline;gap:6px 24px;padding:9px 0;font-size:18px}
 #tag-results-list li>a{min-width:0}
-.tag-section{flex:none;max-width:12em;font-size:15px;color:var(--soft);text-align:right}
+.tag-section{flex:none;max-width:14em;font-size:15px;color:var(--soft);text-align:right}
 .tag-show-more{margin:14px 0}
 .tag-results-all{margin-top:14px}
 .tag-types{display:flex;flex-wrap:wrap;gap:7px;margin:4px 0 14px}
