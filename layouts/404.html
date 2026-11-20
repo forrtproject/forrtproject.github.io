@@ -113,6 +113,12 @@
 
   <section class="nf-doors" aria-labelledby="nf-doors-h">
     <h2 id="nf-doors-h">Try one of FORRT's four areas</h2>
+    <ul class="nf-mobile-areas" role="list">
+      <li class="nf-area-edu"><a href="{{ "resources/" | relLangURL }}"><span>Education &amp; Pedagogy</span><span class="nf-arrow" aria-hidden="true">→</span></a></li>
+      <li class="nf-area-res"><a href="{{ "replication-hub/" | relLangURL }}"><span>Meta-Science &amp; Research</span><span class="nf-arrow" aria-hidden="true">→</span></a></li>
+      <li class="nf-area-jus"><a href="{{ "dei/" | relLangURL }}"><span>Social Justice &amp; DEIA</span><span class="nf-arrow" aria-hidden="true">→</span></a></li>
+      <li class="nf-area-com"><a href="{{ "about/us/" | relLangURL }}"><span>Community &amp; Sustainability</span><span class="nf-arrow" aria-hidden="true">→</span></a></li>
+    </ul>
     <div class="nf-area-grid">
       <div class="nf-area nf-area-edu">
         {{ with resources.Get "images/doors/area-education.webp" }}{{ $w := .Resize "180x webp q80" }}<span class="nf-area-plate" aria-hidden="true"><img src="{{ $w.RelPermalink }}" width="{{ $w.Width }}" height="{{ $w.Height }}" alt=""></span>{{ end }}

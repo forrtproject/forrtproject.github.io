@@ -42,7 +42,7 @@ apa_path = os.path.join(script_dir, "apa_lookup.json")
 out_path = os.path.join(script_dir, "references", "index.md")
 
 HEADER = """---
-title: List of References
+title: Glossary references
 ---
 
 You can find the list of all references that were used to create the Glossary.
