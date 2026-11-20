@@ -30,7 +30,7 @@
      is open, where the takeaways follow in full. */}}
 {{ $gist := "" }}{{ range .Main_Takeaways }}{{ if and (not $gist) (trim . " \u00a0") }}{{ $gist = . }}{{ end }}{{ end }}
 {{ $gist = trim (replaceRE `[\s\p{Z}]+` " " (replaceRE `:?[\s\p{Z}]*https?://[^\s\p{Z}]+` "" $gist)) " " }}
-{{ with $gist }}<span class="summary-gist" aria-hidden="true"><span class="summary-gist-long">{{ replaceRE `[,;:]…$` "…" (truncate 150 "…" .) | htmlUnescape }}</span><span class="summary-gist-short">{{ replaceRE `[,;:]…$` "…" (truncate 80 "…" .) | htmlUnescape }}</span></span>{{ end }}</summary>
+{{ with $gist }}<span class="summary-gist" aria-hidden="true"><span class="summary-gist-long">{{ replaceRE `[.,;:!?]…$` "…" (truncate 150 "…" .) | htmlUnescape }}</span><span class="summary-gist-short">{{ replaceRE `[.,;:!?]…$` "…" (truncate 66 "…" .) | htmlUnescape }}</span></span>{{ end }}</summary>
 <h4>Main takeaways</h4>
 <ul>
   {{ range .Main_Takeaways }}<li>{{ . }}</li>{{ end }}

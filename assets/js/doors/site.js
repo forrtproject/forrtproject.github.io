@@ -339,7 +339,7 @@ if (summaryEntries.length) {
     const mark = () => {
       // At the top of the page nothing is marked yet: the list has not started.
       const current = scrollY > 0 && [...seen.entries()].find(([, on]) => on)?.[0];
-      if (!current) { yearLinks.forEach((a) => a.classList.remove('is-current')); return; }
+      if (!current) { yearLinks.forEach((a) => a.classList.remove('is-current')); strip.scrollLeft = 0; return; }
       yearLinks.forEach((a) => {
         const on = a.dataset.chapter === current;
         if (on && !a.classList.contains('is-current') && strip.scrollWidth > strip.clientWidth) strip.scrollTo({ left: a.parentElement.offsetLeft - strip.offsetLeft - 16 });
@@ -352,6 +352,8 @@ if (summaryEntries.length) {
     }, { rootMargin: '-30% 0px -65% 0px' });
     chapters.forEach((chapter) => watch.observe(chapter));
     addEventListener('scroll', () => { if (!scrollY) mark(); }, { passive: true });
+    // Once the row of years has scrolled sideways, its start fades too, to show there is more before it.
+    strip.addEventListener('scroll', () => strip.classList.toggle('is-scrolled', strip.scrollLeft > 4), { passive: true });
   }
   more.addEventListener('click', () => {
     const next = summaryEntries[limit];
