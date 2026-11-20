@@ -269,6 +269,7 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .toc-phone{display:none}
 @media(max-width:1000px){
   .toc-phone{display:block;margin:0 0 20px;padding:var(--box-pad);background:var(--surface);border-radius:var(--r-small)}
+  .toc-phone .article-toc{max-inline-size:28em}
   /* Sentence case in the heading face, as the side card's "On this page" on a desktop (DESIGN.md §1: no tracked capitals). */
   .toc-phone-label{margin:0 0 6px;font:500 20px/1.2 var(--display);color:var(--ink)}
   .toc-phone.is-short .toc-extra{display:none}
