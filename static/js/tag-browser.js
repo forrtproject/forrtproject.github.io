@@ -212,8 +212,8 @@
   var GROUP = 12;
   var LONG = 30;
   // Unfiltered, a group longer than BIG shows its first FIRST pages, and a button shows STEP more at a time.
-  var BIG = 15;
-  var FIRST = 10;
+  var BIG = 8;
+  var FIRST = 6;
   var STEP = 25;
 
   var clusterNames = {};
@@ -254,7 +254,8 @@
     if (said && named.indexOf(said) === -1 && rest.split(" ").length > 3) {
       var desc = document.createElement("p");
       desc.className = "res-desc";
-      desc.textContent = page.d;
+      // A cut that falls just after a full stop ends there, without an ellipsis.
+      desc.textContent = page.d.replace(/([.!?])…$/, "$1");
       item.appendChild(desc);
     }
     var clusters = (page.c || []).filter(function (num) { return clusterNames[num]; });
@@ -280,11 +281,13 @@
     return { el: item, format: format };
   }
 
-  /** The type line: every type in a single list; under a type's heading, only the others ("Also Reading"). */
+  /** The type line: every type in a single list; under a type's heading, the others ("Also Lesson"), leaving out
+      Reading, which most pages are as well, and naming at most three. */
   function typeLine(item, grouped) {
-    var others = grouped ? item.types.filter(function (kind) { return kind !== item.group.kind; }) : item.types;
+    var others = grouped ? item.types.filter(function (kind) { return kind !== item.group.kind && kind !== "Reading"; }) : item.types;
     item.format.hidden = !others.length;
-    item.line.textContent = grouped ? "Also " + others.join(", ") : others.join(", ");
+    var named = others.slice(0, 3).join(", ") + (others.length > 3 ? " and " + (others.length - 3) + " more" : "");
+    item.line.textContent = grouped ? "Also " + named : named;
   }
 
   function render(pages) {
