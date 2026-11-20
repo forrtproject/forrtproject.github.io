@@ -305,7 +305,8 @@ ul.list-items>li[hidden]{display:none}
 /* Educators' Corner: education's pale ground on every card (DESIGN.md §6). */
 .ec-page .announcement-card{background:var(--edu-bg)}
 /* A long author list: the first three names, then a button, "and 9 more", that shows the rest in the same line. Its
-   ::after gives it a 44 px target without spacing out the line (DESIGN.md §9). */
+   box is 24 px tall, the minimum target the accessibility check measures, so its line is 3 px taller than the others;
+   its ::after widens the tap area further (DESIGN.md §9). */
 .ec-rest[hidden]{display:none}
 .ec-more{position:relative;z-index:1;display:inline-block;min-height:24px;margin:0;padding:0 2px;border:0;background:none;color:var(--link);font:600 15px/24px var(--text);vertical-align:baseline;text-decoration:underline;text-underline-offset:2px;cursor:pointer}
 .ec-more::after{content:"";position:absolute;inset:-12px -4px}
