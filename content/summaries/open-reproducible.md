@@ -21,10 +21,10 @@ weight: 2
 # Questions to start from (layouts/partials/doors/summary_questions.html, which says how to write them): a few
 # show, picked at random from different topics; without JavaScript, the first three (one on a phone).
 questions:
-  - question: "How many researchers in Nature's survey had failed to reproduce an experiment?"
+  - question: "How often did Nature's respondents report failing to reproduce others' experiments?"
     summary: h.b6z4jk7jx6u4    # Is there a Reproducibility Crisis? (Baker, 2016)
     topic: replication
-  - question: "What happens when researchers try many ways to analyse their data?"
+  - question: "Why can choosing an analysis after seeing the results raise false-positive risk?"
     summary: h.sxh34fk82cfh    # False-Positive Psychology (Simmons et al., 2011)
     takeaway: 2
     topic: statistics
@@ -36,7 +36,7 @@ questions:
     summary: h.e0omhrfflv5j    # Publication Prejudices (Mahoney, 1977)
     answer: "Reviewers were more likely to show confirmation bias for manuscripts in favour of their theoretical perspective and were more severe for manuscripts that contradict their perspective."
     topic: publishing
-  - question: "In one archive of experiments, how many null results were published?"
+  - question: "In one archive, what share of studies with null results reached publication?"
     summary: h.rkwbar4u93b1    # Publication bias in the social sciences (Franco et al., 2014)
     answer: "Although around half of the total studies in our sample were published, only 20% of those with null results were published."
     topic: publishing
@@ -59,7 +59,7 @@ questions:
     summary: h.1mu3kuufj5he    # Willingness to Share Research Data (Wicherts et al., 2011)
     answer: "Reluctance to share was linked with weaker evidence and higher prevalence of apparent errors to report results."
     topic: integrity
-  - question: "Could participants recall a code word from the consent form they signed?"
+  - question: "How did participants respond when asked for the consent form's code word?"
     summary: h.czpcisyxcdpb    # Participant Attentiveness to Consent Forms (Baker & Chartier, 2018)
     answer: "The vast majority of participants did not respond to the prompt asking for a code word; some provided an incorrect guess using words such as pizza, baseball, and password."
     topic: participants
@@ -67,11 +67,11 @@ questions:
     summary: h.v7kmozf9h8f7    # The mental health of PhD researchers demands urgent attention (Nature, 2019)
     answer: "29% of 5700 respondents to a survey in 2017 listed their mental health as an area of concern"
     topic: careers
-  - question: "By 2012, what had changed in how fast editors retract articles?"
+  - question: "In a 2012 PubMed study, were newer papers retracted sooner?"
     summary: h.2eytwz4yehi     # Why Has the Number of Scientific Retractions Increased? (Steen et al., 2013)
     answer: "Editors are retracting articles significantly faster now than in the past."
     topic: integrity
-  - question: "How was a p-value just above .05 reported in 2005 compared with 1965?"
+  - question: "How did two psychology journals report p-values just above .05 in 1965 and 2005?"
     summary: h.b910lefd5hzk    # The life of p (Leggett et al., 2013)
     answer: "p values close to but over .05 were more likely to be rounded down (e.g. p = .053 becomes p < .05) or incorrectly reported as significant in 2005 than in 1965."
     topic: statistics
