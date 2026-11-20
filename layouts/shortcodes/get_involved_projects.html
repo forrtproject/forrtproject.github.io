@@ -4,27 +4,96 @@
   Regenerate with: python scripts/build_get_involved.py
 */}}
 {{ $data := index hugo.Data "get_involved_projects" }}
-{{ $projects := $data.projects }}
+{{ $all := $data.projects }}
 
-{{/* No search: a list this short is read whole (DESIGN.md §4). */}}
-<div class="get-involved-projects">
-  {{ range $projects }}
-    <div class="get-involved-card">
-      {{/* Every card has the same parts in the same places: the name (a link to the project's page, where it has
-           one), what the project does, and one way to reach its contact, with the team's Slack channel after it. */}}
-      <h3>{{ if .link }}<a href="{{ .link }}">{{ .name }}</a>{{ else }}{{ .name }}{{ end }}</h3>
-      <div class="clamp-desc" data-clamp-name="{{ .name }}">
-        {{ .description | markdownify }}
+{{/* Group ongoing projects by FORRT's real Strategic Focus Areas (DESIGN.md §6) and separate teams running FORRT. */}}
+{{ $areaOf := dict
+  "FLoRA"           "res"
+  "Lighthouse"      "res"
+  "Best-Practice"   "res"
+  "JUST-OS"         "res"
+  "Clusters"        "edu"
+  "OS Games"        "edu"
+  "Re-SearchTerms"  "edu"
+  "Nowhere Lab"     "com"
+  "Mapping Open"    "com"
+  "Storytelling"    "com"
+}}
+{{ $areaGroups := slice
+  (dict "key" "res" "title" "Meta-Science & Research" "img" "images/doors/area-research.webp")
+  (dict "key" "edu" "title" "Education & Pedagogy" "img" "images/doors/area-education.webp")
+  (dict "key" "com" "title" "Community & Sustainability" "img" "images/doors/area-community.webp")
+}}
+{{ $buckets := newScratch }}
+{{ $teams := slice }}
+{{ range $all }}
+  {{ if or (hasPrefix .name "Team ") (eq .name "Feedback") }}
+    {{ $teams = $teams | append . }}
+  {{ else }}
+    {{ $area := "res" }}
+    {{ $name := .name }}
+    {{ range $prefix, $k := $areaOf }}
+      {{ if in $name $prefix }}{{ $area = $k }}{{ end }}
+    {{ end }}
+    {{ $buckets.Add $area (slice .) }}
+  {{ end }}
+{{ end }}
+
+<div class="gi-areas" id="gi-projects">
+  {{ range $areaGroups }}
+    {{ $area := .key }}
+    {{ $items := $buckets.Get $area | default slice }}
+    {{ if gt (len $items) 0 }}
+    {{ $plate := resources.Get .img }}
+    <div class="gi-area-block" data-area="{{ $area }}">
+      <div class="gi-area-head">
+        {{ with $plate }}{{ $w := .Resize "140x webp q80" }}<span class="gi-area-plate" aria-hidden="true"><img src="{{ $w.RelPermalink }}" width="{{ $w.Width }}" height="{{ $w.Height }}" alt=""></span>{{ end }}
+        <h3>{{ .title }}</h3>
       </div>
-      <div class="get-involved-actions">
-        {{ if .contact_email }}
-          <a href="mailto:{{ .contact_email }}" class="btn btn-sm dir-btn">Email {{ .contact_name | default "the team" }}</a>
-        {{ else if .contact_name }}
-          {{/* No email: the person is reached on FORRT's Slack, so the button joins it. */}}
-          <a href="https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ" target="_blank" rel="noopener" class="btn btn-sm dir-btn">Join Slack to ask {{ .contact_name }}<span class="visually-hidden"> (opens in a new tab)</span></a>
+      <div class="get-involved-projects get-involved-projects--count-{{ len $items }}">
+        {{ range $items }}
+        <article class="get-involved-card get-involved-card--area" data-area="{{ $area }}">
+          <h4>{{ if .link }}<a href="{{ .link | relURL }}">{{ .name }}</a>{{ else }}{{ .name }}{{ end }}</h4>
+          <div class="clamp-desc" data-clamp-name="{{ .name }}">
+            {{ .description | markdownify }}
+          </div>
+          <div class="get-involved-actions">
+            {{ if .contact_email }}
+              <a href="mailto:{{ .contact_email }}" class="btn btn-sm dir-btn">Email {{ .contact_name | default "the team" }}</a>
+            {{ else if .contact_name }}
+              <a href="https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ" target="_blank" rel="noopener" class="btn btn-sm dir-btn">Join Slack to ask {{ .contact_name }}<span class="visually-hidden"> (opens in a new tab)</span></a>
+            {{ end }}
+            {{ if .slack }}<a href="{{ .slack }}" target="_blank" rel="noopener" class="get-involved-link">Slack channel<span class="visually-hidden"> for {{ .name }} (opens in a new tab)</span></a>{{ end }}
+          </div>
+        </article>
         {{ end }}
-        {{ if .slack }}<a href="{{ .slack }}" target="_blank" rel="noopener" class="get-involved-link">Slack channel<span class="visually-hidden"> for {{ .name }} (opens in a new tab)</span></a>{{ end }}
       </div>
     </div>
+    {{ end }}
   {{ end }}
+</div>
+
+<div class="gi-group gi-group--teams" id="gi-teams">
+  <div class="gi-group-head">
+    <h3>Teams running FORRT</h3>
+    <p>Teams maintaining FORRT's website, credit, outreach, curriculum and feedback resources. <a href="{{ relref . "/about/teams" }}">See all FORRT teams</a>.</p>
+  </div>
+  <div class="get-involved-projects get-involved-projects--teams get-involved-projects--count-{{ len $teams }}">
+    {{ range $teams }}
+      <article class="get-involved-card get-involved-card--team">
+        <h4>{{ if .link }}<a href="{{ .link | relURL }}">{{ .name }}</a>{{ else }}{{ .name }}{{ end }}</h4>
+        <div class="clamp-desc" data-clamp-name="{{ .name }}">
+          {{ .description | markdownify }}
+        </div>
+        <div class="get-involved-actions">
+          {{ if .contact_email }}
+            <a href="mailto:{{ .contact_email }}" class="btn btn-sm dir-btn">Email {{ .contact_name | default "the team" }}</a>
+          {{ else if .contact_name }}
+            <a href="https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ" target="_blank" rel="noopener" class="btn btn-sm dir-btn">Join Slack to ask {{ .contact_name }}<span class="visually-hidden"> (opens in a new tab)</span></a>
+          {{ end }}
+          {{ if .slack }}<a href="{{ .slack }}" target="_blank" rel="noopener" class="get-involved-link">Slack channel<span class="visually-hidden"> for {{ .name }} (opens in a new tab)</span></a>{{ end }}
+        </div>
+      </article>
+    {{ end }}
+  </div>
 </div>
