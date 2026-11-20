@@ -19,7 +19,7 @@ Much of the site is generated from Google Sheets and Docs, and the generated fil
 
 Run both against a build (`hugo -d <dir>`), as `deploy.yaml` does:
 
-- `python3 scripts/check_seo_html.py <dir>`. Add a regression check here when you fix a template.
+- `python3 scripts/check_seo_html.py <dir>`. When you fix a template, add a regression check as a new module in `scripts/seo_checks/` (a docstring and `check(site)`), with tests in `scripts/tests/test_seo_<module>.py`; the runner finds it, so no shared file changes.
 - `python3 scripts/check_sitemap_lastmod.py <dir>/sitemap.xml [--compare-source]` (needs full Git history).
 
 Unit tests: `python3 -m unittest discover -s scripts/tests`. `scripts/test_parse_disciplines_gdoc.py` sits outside that folder and no CI job runs it: `python3 -m unittest discover -s scripts -p 'test_parse_disciplines_gdoc.py'`.
