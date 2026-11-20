@@ -360,7 +360,7 @@ html:has(.contributor-az){scroll-padding-top:calc(var(--contributor-az,72px) + 1
 .gi-group--teams{margin-top:38px;padding-top:26px;border-top:1.5px solid var(--line)}
 .gi-group-head{margin:0 0 16px}
 .article-layout .article-style .gi-group-head h3{margin:0 0 4px;font-size:26px;line-height:1.2}
-.article-layout .article-style .gi-group-head p{margin:0;max-width:46em;font-size:17px;color:var(--soft)}
+.article-layout .article-style .gi-group-head p{margin:0;max-width:34em;font-size:17px;color:var(--soft)}
 .gi-group-head p a{color:var(--link);font-weight:600;text-decoration:underline;text-underline-offset:3px}
 .get-involved-card .btn{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:8px 16px!important;border:1.5px solid var(--link)!important;border-radius:999px!important;background:#fff!important;color:var(--link)!important;font:600 15px/1.2 var(--text)!important}
 .get-involved-card .btn:hover{background:var(--link)!important;color:#fff!important}
