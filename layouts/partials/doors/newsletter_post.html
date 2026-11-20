@@ -7,8 +7,8 @@
 {{ $tone := add (mod $p.Date.Year 4) 1 }}
 {{/* "FORRT Newsletter — January 2026": the name above, the month large. */}}
 {{ $parts := split $p.Title " — " }}
-{{ $name := cond (eq (len $parts) 2) (index $parts 0) "" }}
-{{ $issue := cond (eq (len $parts) 2) (index $parts 1) $p.Title }}
+{{ $name := "" }}{{ $issue := $p.Title }}
+{{ if eq (len $parts) 2 }}{{ $name = index $parts 0 }}{{ $issue = index $parts 1 }}{{ end }}
 {{ $issues := slice }}
 {{ range (where site.RegularPages "Section" "post").ByDate }}
   {{ if in (.Params.categories | default slice) "Newsletter" }}{{ $issues = $issues | append . }}{{ end }}

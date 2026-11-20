@@ -849,11 +849,14 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
 
 /* An education article by one author with a photo (doors/article_header): on a phone or tablet the byline is a band
    on education's pale ground, in place of the side card at the end; on a wide screen the card has photo and name. */
-.article-layout .byline-portrait :is(.byline-photo,.network-icon){display:none}
+.article-layout .byline-portrait :is(.byline-photo,.network-icon,.byline-role,.byline-bio){display:none}
 @media(max-width:1000px){.article-layout .byline-portrait{display:grid;grid-template-columns:96px minmax(0,1fr);gap:2px 16px;align-items:center;margin-top:20px;padding:22px 18px 16px;background:var(--edu-bg);border-radius:var(--r-large);box-shadow:inset 0 6px 0 var(--edu)}
 .article-layout .byline-portrait>*{grid-column:2}
 .article-layout .byline-portrait .byline-photo{display:block;grid-column:1;grid-row:1/span 3;width:96px;height:96px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 3px #fff}
 .article-layout .byline-portrait .byline-authors{font:500 21px/1.2 var(--display)}
+.article-layout .byline-portrait .byline-role{display:block;font-size:15px;line-height:1.4}
+.article-layout .byline-portrait .byline-bio{display:block;grid-column:1/-1;margin-top:10px;font-size:15px;line-height:1.45}
+.article-layout .byline-portrait :is(.byline-role,.byline-bio) p{margin:0}
 .article-layout .byline-portrait .network-icon{display:flex;gap:0;margin:2px 0 0 -10px;padding:0;list-style:none}
 .article-layout .byline-portrait .network-icon li{margin:0}
 .article-layout .byline-portrait .network-icon a{display:flex;align-items:center;justify-content:center;width:44px;height:44px;color:var(--link);font-size:17px}

@@ -9,7 +9,7 @@
 {{/* Authors with a profile page, photo first; the rest by name. */}}
 {{ $authors := slice }}
 {{ if $article }}{{ range $p.Params.authors }}
-  {{ $profile := site.GetPage (printf "/authors/%s" (urlize .)) }}
+  {{ $profile := partialCached "doors/author_profile" . . }}
   {{ $authors = $authors | append (dict "name" . "profile" $profile) }}
 {{ end }}{{ end }}
 {{/* A newsletter's archive, which neither the breadcrumb nor the cards at the end link. */}}
