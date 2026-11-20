@@ -254,7 +254,7 @@ main:lang(ar) .glossary-layout .article-style .term-references{direction:ltr;pad
 .glossary-layout .article-foot .post-nav-item:only-child{grid-column:1/-1;text-align:start}
 /* Phones: the languages are one row, scrolled sideways and faded at its end, so the definition starts higher. */
 @media(max-width:760px){
-  .glossary-layout .language-switcher{flex-wrap:nowrap;overflow-x:auto;margin-block:-6px -2px;margin-inline:-6px -16px;padding-block:6px;padding-inline:6px 16px;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,#000 85%,transparent);mask-image:linear-gradient(90deg,#000 85%,transparent)}
+  .glossary-layout .language-switcher{flex-wrap:nowrap;overflow-x:auto;margin-block:4px 12px;margin-inline:-6px -16px;padding-block:6px;padding-inline:6px 16px;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,#000 85%,transparent);mask-image:linear-gradient(90deg,#000 85%,transparent)}
   .glossary-layout .language-switcher::-webkit-scrollbar{display:none}
   .glossary-layout .language-switcher>*{flex:none}
   main:lang(ar) .glossary-layout .language-switcher{margin-inline-end:-16px;-webkit-mask-image:linear-gradient(270deg,#000 85%,transparent);mask-image:linear-gradient(270deg,#000 85%,transparent)}
