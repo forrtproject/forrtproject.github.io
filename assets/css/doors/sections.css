@@ -555,9 +555,9 @@ html:has(.contributor-az){scroll-padding-top:calc(var(--contributor-az,72px) + 1
 .article-layout .article-style .booklet-area a.booklet-page{flex:none;color:var(--tone);font:600 17px/1.4 var(--text);font-variant-numeric:tabular-nums;text-decoration:underline;text-decoration-color:currentColor;text-decoration-thickness:1.5px;text-underline-offset:3px}
 .article-layout .article-style .booklet-area li>a.booklet-page{min-width:1.6em;text-align:end}
 .article-layout .article-style .booklet-area-pages a.booklet-page{font-size:15px}
-/* The jump to the contents is a plain link after the two buttons, a 44 px target; a wide screen shows the contents
+/* The jump to the contents is a plain link on its own line after the two buttons, a 44 px target; a wide screen shows the contents
    soon after the flipbook and does without it. On a phone the two buttons share a row. */
-.article-layout .article-style .booklet-jump{display:inline-flex;align-items:center;min-height:44px;font-weight:600}
+.article-layout .article-style .booklet-jump{display:inline-flex;flex-basis:100%;align-items:center;min-height:44px;font-weight:600}
 @media(min-width:1001px){.booklet-jump.d-wide-none{display:none}}
 @media(max-width:760px){.booklet-open .btn{padding-inline:14px}}
 }
