@@ -46,7 +46,8 @@
               <h2 class="ac-panel-title"><a class="ac-link" href="{{ .RelPermalink }}"><span>Newsletter</span> <strong>{{ replaceRE `^.*[—–-]\s*` "" .Title }}</strong></a></h2>
             </div>
           {{ else }}
-            <div class="ac-thumb ac-panel ac-panel-{{ $tone }}" aria-hidden="true"><strong>{{ $cat | default "News" }}</strong></div>
+            {{/* Read out too: the panel stands in for the category chip. */}}
+            <div class="ac-thumb ac-panel ac-panel-{{ $tone }}"><strong>{{ $cat | default "News" }}</strong></div>
           {{ end }}
           <div class="ac-body">
             {{ if not $issue }}
