@@ -189,7 +189,8 @@ html:has(.tag-az){scroll-padding-top:84px}
 .tag-head-brick::before{content:"";position:absolute;left:14px;right:14px;top:-8px;height:8px;background:linear-gradient(90deg,transparent 6px,var(--brick) 6px 28px,transparent 28px) left top/34px 8px space no-repeat;border-radius:3px 3px 0 0}
 .tags-page .tag-head-brick h1{margin:0;color:#fff;overflow-wrap:anywhere}
 .tag-head-brick p{margin:0;font:400 18px/1.4 var(--text);color:#fff}
-#tag-results{margin:18px 0}
+#tag-results{margin:0 0 18px}
+#tag-results .article-head{margin-bottom:6px}
 .tag-results-head,.tag-results-body{max-width:46em}
 .tags-page .standfirst.tag-lead{margin-top:0}
 @media(min-width:1001px){
@@ -214,23 +215,33 @@ html:has(.tag-az){scroll-padding-top:84px}
 .tag-search-count:empty{display:none}
 .tag-types{display:flex;flex-wrap:wrap;gap:7px;margin:4px 0 14px}
 .tag-types[hidden]{display:none}
-.tag-type{display:inline-flex;align-items:baseline;gap:7px;padding:7px 12px;border:1.5px solid var(--line);border-radius:999px;background:#fff;color:var(--ink);font:400 15px/1.3 var(--text);cursor:pointer}
+.tag-type{position:relative;display:inline-flex;align-items:baseline;gap:7px;padding:7px 12px;border:1.5px solid var(--line);border-radius:999px;background:#fff;color:var(--ink);font:400 15px/1.3 var(--text);cursor:pointer}
 .tag-type span{color:var(--soft);font-weight:600}
 .tag-type:hover{border-color:var(--ink)}
 .tag-type[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:#fff}
 .tag-type[aria-pressed=true] span{color:inherit}
+.tag-type:disabled{opacity:.55;cursor:default}
+.tag-type:disabled:hover{border-color:var(--line)}
 /* A type's heading over its pages, with how many are shown. */
 .tag-group-results[hidden]{display:none}
-#tag-results .tag-group-results>h2{margin:30px 0 0;padding:0 0 8px;font-size:28px;border-bottom:2px solid var(--ink)}
-#tag-results .tag-group-results>h2[hidden]{display:none}
-#tag-results .tag-group-results:first-child>h2{margin-top:12px}
+#tag-results .tag-group-results>:is(h2,h3){margin:30px 0 0;padding:0 0 8px;font:var(--display-weight) 28px/1.2 var(--display);border-bottom:2px solid var(--ink)}
+#tag-results .tag-group-results>:is(h2,h3)[hidden]{display:none}
+#tag-results-list>.tag-group-results:first-child>h2{margin-top:22px}
+/* Materials to teach with, first, on education's pale ground (tag-browser.js). */
+.tag-teach{margin:22px 0 10px;padding:20px 24px 12px;background:var(--edu-bg);border-radius:var(--r-large)}
+.tag-teach[hidden]{display:none}
+#tag-results .tag-teach>h2{margin:0;font-size:32px;color:var(--edu)}
+#tag-results .tag-teach .tag-group-results>h3{margin-top:22px;font-size:24px}
+#tag-results-list .tag-teach .res{border-bottom-color:rgb(45 87 80/.22)}
+#tag-results-list .tag-teach .tag-group-results:last-child .res:last-of-type{border-bottom:0}
+.tag-group-count{margin-left:4px;font:600 17px/1 var(--text);color:var(--soft);vertical-align:3px}
 /* The rows: the resources directory's (resources.css), which this page does not load. The whole row answers to its title. */
-#tag-results-list .res{position:relative;display:flex;flex-direction:column;gap:4px;padding:14px 12px;border-bottom:1px solid var(--line);min-width:0}
+#tag-results-list .res{position:relative;display:flex;flex-direction:column;gap:4px;padding:14px 0;border-bottom:1px solid var(--line);min-width:0}
 #tag-results-list .res[hidden]{display:none}
-#tag-results-list .tag-group-results:not(:has(>h2)),#tag-results-list.is-one-list .tag-group-results:first-child{border-top:1px solid var(--line)}
+#tag-results-list .tag-group-results:not(:has(>:is(h2,h3))),#tag-results-list.is-one-list .tag-group-results:first-child{border-top:1px solid var(--line)}
 #tag-results-list .res>*{max-width:640px}
 #tag-results-list .res-format[hidden]{display:none}
-#tag-results-list .res:hover{background:var(--surface)}
+#tag-results-list .res:hover .res-title a{text-decoration-thickness:2px}
 #tag-results-list .res:has(.res-title a:focus-visible){outline:2px solid var(--link);outline-offset:2px}
 #tag-results-list .res-title{margin:0;font:var(--display-weight,500) 20px/1.25 var(--display);overflow-wrap:anywhere}
 #tag-results-list .res-title a{color:var(--link);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
@@ -270,12 +281,14 @@ html:has(.tag-az){scroll-padding-top:84px}
 /* Phones: links and buttons are 44 px targets (DESIGN.md §9). */
 @media(max-width:760px){
   #tag-results p a{display:inline-flex;align-items:center;min-height:44px}
+  #tag-results .tag-lead a{display:inline;min-height:0}
+  .tag-teach{margin:18px -20px 8px;padding:18px 20px 8px;border-radius:0}
   .tag-head-brick{margin:12px 0 14px;padding:12px 18px 20px}
   .tag-head-brick p{font-size:17px}
   #tag-results-list .res{padding:12px 0}
-  #tag-results-list .res:hover{background:none}
   #tag-results-list .res-title{font-size:19px}
-  #tag-results .tag-group-results>h2{font-size:25px}
+  #tag-results .tag-group-results>:is(h2,h3){font-size:25px}
+  #tag-results .tag-teach>h2{font-size:28px}
   /* The type filters: one row that scrolls sideways, fading at its right edge until scrolled to the end (§9). */
   .tag-types{flex-wrap:nowrap;margin:4px -20px 12px;padding:2px 20px;overflow-x:auto;scrollbar-width:none}
   .tag-type{flex:none}
