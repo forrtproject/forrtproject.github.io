@@ -3,7 +3,7 @@
 
 title: "Introducing Nowhere Lab"
 subtitle: "A Remote, Global Lab for Everyone."
-summary: "Nowhere Lab (http://nowherelab.com/) is an online community for people who would like the lab meeting experience but don’t currently have one. We hold weekly meetings and have an active Slack. We have members from across all populated continents and career stages: undergraduate students, master's students, Ph.D. students, postdocs, faculty members, and people working outside academia."
+summary: "Nowhere Lab is an online community for people who would like the lab meeting experience but don’t currently have one. We hold weekly meetings and have an active Slack. We have members from across all populated continents and career stages: undergraduate students, master's students, Ph.D. students, postdocs, faculty members, and people working outside academia."
 authors: ['Priya Silverstein', 'FORRT']
 tags: []
 categories: []
@@ -40,7 +40,7 @@ Throughout my academic career, I loved being in a lab. I looked forward to biwee
 
 **Who we are**
 
-Nowhere Lab ([http://nowherelab.com/](http://nowherelab.com/)) is an online community for people who would like the lab meeting experience but don’t currently have one. We have members from across all populated continents and career stages: undergraduate students, master's students, Ph.D. students, postdocs, faculty members, and people working outside of academia. We hold weekly meetings and have an active Slack ([join here](https://join.slack.com/t/nowherelab/shared_invite/zt-1b9ky398h-z5QaNohPP613EBX~zpXQFw)). 
+[Nowhere Lab](http://nowherelab.com/) is an online community for people who would like the lab meeting experience but don’t currently have one. We have members from across all populated continents and career stages: undergraduate students, master's students, Ph.D. students, postdocs, faculty members, and people working outside of academia. We hold weekly meetings and have an active Slack ([join here](https://join.slack.com/t/nowherelab/shared_invite/zt-1b9ky398h-z5QaNohPP613EBX~zpXQFw)). 
 
 It has been a humbling and often emotional experience to hear the stories of those who have joined Nowhere Lab. Some members have joined when caught at a difficult and awkward time where they don’t feel embedded within their Ph.D. lab (e.g. they’re currently writing up) but also don’t have a new lab. Some members have joined when they get their first faculty job and don’t have any students for their lab yet. Some members have recently left academia and have mixed emotions about this transition. Some have joined because they’re considering postgraduate research but have never had any experience of research due to educational priorities in their country. One member even joined because health issues meant they weren’t able to take on new students and thus no longer had their own lab. We’re a home for the lost and are brought closer together by the stories of why we need Nowhere Lab.
 
