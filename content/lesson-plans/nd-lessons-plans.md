@@ -64,7 +64,7 @@ subtitle = ""
 Browse all lesson plans | The full collection in FORRT's OSF repository | https://osf.io/th254/
 {{< /action_cards >}}
 
-<p class="lesson-plan-route"><strong>Writing a lesson plan?</strong> <a href="https://docs.google.com/document/d/1OMyhKBUUceJHvZRJ0lNSclDXBcoYpQQDCn-zJ_2teXI/edit">Use the template</a> or <a href="https://docs.google.com/spreadsheets/d/1LGdBFlOCFqyfV7NUx11oUjkqR-aVZpWVGCn8RTiQQuk">add your idea to the Table of Activities</a>. <a href="#contribute">How to contribute</a></p>
+<p class="lesson-plan-route"><strong>Writing a lesson plan?</strong> <a href="https://docs.google.com/document/d/1OMyhKBUUceJHvZRJ0lNSclDXBcoYpQQDCn-zJ_2teXI/edit">Use the template <i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="visually-hidden"> (another website)</span></a> or <a href="https://docs.google.com/spreadsheets/d/1LGdBFlOCFqyfV7NUx11oUjkqR-aVZpWVGCn8RTiQQuk">add your idea to the Table of Activities <i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="visually-hidden"> (another website)</span></a>. <a href="#contribute">How to contribute</a></p>
 <p class="lesson-plan-route"><strong>Taught with one?</strong> <a href="#feedback">Give us feedback</a></p>
 
 </aside>

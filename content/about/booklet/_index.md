@@ -42,7 +42,7 @@ summary = "Learn more about FORRT in the interactive flipbook below: If you pref
   pages = [
     { title = "Credit and contributorship", page = 13, url = "contributors/" },
     { title = "Process for projects", page = 13 },
-    { title = "FAIR and CARE", page = 14 },
+    { title = "[FAIR](/glossary/english/fair_principles/) and CARE", page = 14 },
     { title = "FORRT community and community map", page = 15, url = "community-map/" },
   ]
 +++

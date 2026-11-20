@@ -30,7 +30,8 @@
     if (!link || event.metaKey || event.ctrlKey || event.shiftKey) return;
     var app = window[link.closest('.booklet-inside').dataset.book];
     var frame = document.getElementById(link.closest('.booklet-inside').dataset.book);
-    if (!app || typeof app.gotoPage !== 'function' || !frame) return;
+    // Until the flipbook has loaded its pages, the link opens the PDF at that page instead.
+    if (!app || typeof app.gotoPage !== 'function' || !app.target || !frame) return;
     event.preventDefault();
     var box = frame.getBoundingClientRect();
     if (box.top < 0 || box.bottom > window.innerHeight) {
