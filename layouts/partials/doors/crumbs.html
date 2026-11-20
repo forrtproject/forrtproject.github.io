@@ -22,5 +22,7 @@
 {{/* An earlier cluster (/forrt_clusters/<term>/) has their index as parent, its address in a menu entry's form:
      relative to the site, as relLangURL below adds the base. Other taxonomies' terms keep Home as parent. */}}
 {{ if and (not $parent) (eq $page.Kind "term") (eq (lower $page.Type) "forrt_clusters") }}{{ with $page.Parent }}{{ $parent = dict "Name" .LinkTitle "URL" "forrt_clusters/" }}{{ end }}{{ end }}
+{{/* A news category (/category/<term>/) and the list of them (/categories/) have the news list as parent. */}}
+{{ if and (not $parent) (in (slice "term" "taxonomy") $page.Kind) (eq (lower $page.Type) "categories") }}{{ with site.GetPage "/post" }}{{ $parent = dict "Name" .LinkTitle "URL" "post/" }}{{ end }}{{ end }}
 {{ if not $parent }}{{ with $page.Params.crumb_parent }}{{ $name := . }}{{ range site.Menus.main }}{{ if eq .Name $name }}{{ $parent = . }}{{ end }}{{ end }}{{ end }}{{ end }}
 <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ "" | relLangURL }}">Home</a> <span aria-hidden="true">/</span> {{ with $parent }}{{ if ne .Name $label }}{{ if .URL }}<a href="{{ .URL | relLangURL }}">{{ .Name }}</a>{{ else }}{{ .Name }}{{ end }} <span aria-hidden="true">/</span> {{ end }}{{ end }}<span aria-current="page">{{ $label }}</span></nav>

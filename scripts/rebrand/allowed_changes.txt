@@ -21,6 +21,10 @@ js/load-theme.js                 # The theme's day/night script, gone with the t
 js/academic.min.FINGERPRINT.js   # The theme's script bundle, without its search, under a new name while some pages still need it
 curated_resources/page/*/index.html  # Decision D17: paginated lists removed, and the 404 page sends old links to /resources/
 forrt_clusters/*/page/*/index.html   # Decision D17: paginated lists removed, and the 404 page sends old links to the cluster's page
+post/*/featured_hu.webp      # Small thumbnails the old category lists made of posts that now show a brick panel there instead, as on the news list
+publication_types/index.html         # Redirects to /publications/ (an alias): the publication types taxonomy had no terms and is disabled
+publication_types/index.xml          # The disabled publication types taxonomy's empty feed
+publication_types/page/1/index.html  # The disabled publication types taxonomy's empty first page
 forrt_clusters/index.html            # #1188: titled "Earlier FORRT Clusters" (was "Forrt_clusters"), with its own description
 forrt_clusters/academic-life-and-culture/index.html  # #1188: only the breadcrumb data changes, naming the index above by its new title. Remove once main has it
 forrt_clusters/conceptual-and-statistical-knowledge/index.html  # #1188: only the breadcrumb data changes, naming the index above by its new title. Remove once main has it

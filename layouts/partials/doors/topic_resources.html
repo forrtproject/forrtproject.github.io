@@ -1,52 +1,149 @@
-{{/* /forrt_clusters/<term>/: the resources filed under one of the earlier FORRT cluster names (layouts/_default/list.html).
-     One toolbar: the search of shortcodes/list_filter.html (same markup; site.js filters every list after it and keeps
-     the count), the material types as filters with their counts (the directory's groupings, doors/resource_index.html,
-     run by site.js as .list-filter-facets), and the routes to the directory and the clusters. Then the titles A to Z,
-     each with its type as plain text. No letters to jump by: resource titles are not names people look up by their
-     first letter, and the type filters and search already narrow the list. The directory's cluster filter uses the current clusters (forrt_clusters_new), not these
-     tags, so there is no pre-filtered link to it, and the page takes no cluster colour. Input: the term page. */}}
+{{/* /forrt_clusters/<term>/: the resources filed under one of the seven earlier FORRT clusters (_default/term.html),
+     grouped by the current cluster each now belongs to (forrt_clusters_new), so a list of several hundred titles has
+     landmarks (DESIGN.md §4) and each group leads to that cluster's own page. A resource in several current clusters
+     is listed once, under the first, so the count and the filters add up. Grouping by material type would not help:
+     most resources are readings, so one group would hold three quarters of them.
+     Above the list, a chart of the groups (bars in the clusters' colours, the colour as a small mark, DESIGN.md §6),
+     each row a way to its group; beside it the directory's illustration, as these are resources from that collection.
+     Then one toolbar: the search of shortcodes/list_filter.html (site.js filters the groups that follow, hides a
+     heading left empty and keeps the count) and the material types as filters with their counts, largest first.
+     Input: the term page. */}}
 {{ $page := . }}
 {{ $index := partialCached "doors/resource_index" (site.GetPage "/resources") "resources" }}
+{{ $num := partialCached "doors/cluster_numbers.html" "n" }}
+{{ $total := len $page.Data.Pages }}
+{{/* Rows, each with its group (the first current cluster, or "" for none), and the material type counts. */}}
 {{ $rows := slice }}
 {{ $typeCount := dict }}
+{{ $groupCount := dict }}
 {{ range $page.Data.Pages }}
-  {{ $types := slice }}
-  {{ with index $index.items .RelPermalink }}{{ $types = .types }}{{ end }}
+  {{ $types := slice }}{{ $group := "" }}
+  {{ with index $index.items .RelPermalink }}{{ $types = .types }}{{ with .clusters }}{{ $group = index . 0 }}{{ end }}{{ end }}
   {{ $slugs := slice }}
   {{ range $types }}{{ $s := . | lower | replaceRE "[^a-z0-9]+" "-" }}{{ $slugs = $slugs | append $s }}{{ $typeCount = merge $typeCount (dict $s (add 1 (index $typeCount $s | default 0))) }}{{ end }}
+  {{ $groupCount = merge $groupCount (dict (urlize $group | default "none") (add 1 (index $groupCount (urlize $group | default "none") | default 0))) }}
   {{ $title := .Title | plainify | htmlUnescape }}
-  {{ $bare := strings.TrimLeft "\"“‘'#(*[¿¡ " $title }}
-  {{ $rows = $rows | append (dict "key" (lower $bare) "page" . "facets" (delimit $slugs " ")) }}
+  {{/* A to Z from the first letter or digit, so stray marks or spaces at the start do not move a title; within a group,
+       materials other than readings first, so a group's first rows show what an educator most often looks for. */}}
+  {{ $bare := replaceRE `^[^\p{L}\p{N}]+` "" $title }}
+  {{ $shown := slice }}{{ range $types }}{{ if ne . "Reading" }}{{ $shown = $shown | append . }}{{ end }}{{ end }}
+  {{ $rows = $rows | append (dict "key" (printf "%d %s" (cond (gt (len $shown) 0) 0 1) (lower $bare)) "page" . "group" $group "types" $types "shown" $shown "facets" (delimit $slugs " ")) }}
 {{ end }}
 {{ $rows = sort $rows "key" }}
+{{/* The groups, largest first; resources with no current cluster last. */}}
+{{ $groups := slice }}
+{{ range $key, $count := $groupCount }}{{ if ne $key "none" }}
+  {{ $label := "" }}{{ range $rows }}{{ if and (not $label) (eq (urlize .group) $key) }}{{ $label = .group }}{{ end }}{{ end }}
+  {{ $n := index $num (lower $label | urlize) | default 0 }}
+  {{ $groups = $groups | append (dict "key" $key "label" $label "count" $count "num" $n "sort" (sub 10000 $count)) }}
+{{ end }}{{ end }}
+{{ $groups = sort $groups "sort" }}
+{{ with index $groupCount "none" }}{{ $groups = $groups | append (dict "key" "none" "label" "Not yet in a current cluster" "count" . "num" 0) }}{{ end }}
+{{ $most := 1 }}{{ range $groups }}{{ if gt .count $most }}{{ $most = .count }}{{ end }}{{ end }}
+{{/* Material types, largest first; on a phone the first four show and a button shows the rest (lists.css). */}}
 {{ $types := slice }}
-{{ range $index.facets }}{{ if eq .key "type" }}{{ range $v := .values }}{{ with index $typeCount $v.slug }}{{ $types = $types | append (dict "slug" $v.slug "label" $v.label "count" .) }}{{ end }}{{ end }}{{ end }}{{ end }}
+{{ range $index.facets }}{{ if eq .key "type" }}{{ range $v := .values }}{{ with index $typeCount $v.slug }}{{ $types = $types | append (dict "slug" $v.slug "label" $v.label "count" . "sort" (sub 10000 .)) }}{{ end }}{{ end }}{{ end }}{{ end }}
+{{ $types = sort $types "sort" }}
 {{ $plate := resources.Get "images/doors/area-education.webp" }}
 <div class="article-style cluster-resources-list">
-  {{/* The tools beside the directory's own illustration, as these are resources from the same collection. site.js
-       filters the list (data-list), as it is outside this block. */}}
   <div class="topic-head">
-  <div class="topic-head__tools">
-  <div class="list-filter topic-tools" data-noun="resources" data-list="#topic-list" hidden>
-    <label for="list-filter-input">Search these resources</label>
+    <section class="topic-now" aria-labelledby="topic-now-title">
+      <h2 id="topic-now-title" class="visually-hidden">These resources by current cluster</h2>
+      <ol class="topic-now__rows">
+        {{ range $i, $g := $groups }}
+        <li><a href="#now-{{ .key }}" style="--i: {{ $i }};{{ with .num }} --c: var(--cl{{ . }}){{ end }}">
+          <span class="topic-now__name">{{ .label }}<span aria-hidden="true">&nbsp;↓</span></span>
+          <span class="topic-now__val"><span class="topic-now__bar" style="--w: {{ div (mul 100.0 .count) $most }}%"></span><span class="topic-now__count">{{ .count }}</span></span>
+        </a></li>
+        {{ end }}
+      </ol>
+    </section>
+    <figure class="heading-plate topic-plate"><img src="{{ $plate.RelPermalink }}" alt="A brick pencil standing on an open green book." width="{{ $plate.Width }}" height="{{ $plate.Height }}"></figure>
+  </div>
+  <div class="topic-toolbar">
+  <div class="list-filter topic-tools" data-noun="resources" data-list="#now-{{ (index $groups 0).key }}" data-no-jump hidden>
+    <label for="list-filter-input">Search these {{ $total }} resources</label>
     <input type="search" id="list-filter-input" placeholder="A word from the title or type" autocomplete="off">
     <p class="list-filter-count" aria-live="polite"></p>
-    <p class="topic-tools__links">Search and filter all resources in the <a href="{{ relref $page "/resources" }}">resources directory</a>, or browse <a href="{{ relref $page "/clusters" }}">the {{ with hugo.Data.clusters_v4 }}{{ len .clusters }}{{ else }}11{{ end }} clusters</a>.</p>
+    <p class="topic-tools__links">To filter by level, language or cluster too, use the <a href="{{ relref $page "/resources" }}">resources directory</a>.</p>
   </div>
-  <noscript><p class="topic-tools__links">{{ len $page.Data.Pages }} resources, A to Z. Search and filter all resources in the <a href="{{ relref $page "/resources" }}">resources directory</a>, or browse <a href="{{ relref $page "/clusters" }}">the clusters</a>.</p></noscript>
   {{ if gt (len $types) 1 }}
   <div class="list-filter-facets topic-types" hidden>
     <fieldset data-facet="type">
       <legend>Material type</legend>
-      <div class="topic-types__chips">{{ range $types }}<button class="ac-chip" type="button" aria-pressed="false" data-value="{{ .slug }}"><span class="visually-hidden">Material type: </span>{{ .label }} <span class="chip-count">{{ .count }}</span></button>{{ end }}</div>
+      <div class="topic-types__chips">{{ range $i, $t := $types }}<button class="ac-chip{{ if ge $i 4 }} topic-types__extra{{ end }}" type="button" aria-pressed="false" data-value="{{ .slug }}"><span class="visually-hidden">Material type: </span>{{ .label }} <span class="chip-count">{{ .count }}</span></button>{{ end }}{{ if gt (len $types) 4 }}<button class="text-button topic-more" type="button" aria-expanded="false" data-more="All {{ len $types }} types" data-less="Fewer types">All {{ len $types }} types</button>{{ end }}</div>
     </fieldset>
     <button class="text-button list-filter-reset" type="button" hidden>Reset filters and search</button>
   </div>
   {{ end }}
+  <p class="topic-types__note">In each cluster, teaching materials come first with their type named, then readings; each A to Z.</p>
   </div>
-  <figure class="heading-plate topic-plate"><img src="{{ $plate.RelPermalink }}" alt="A brick pencil standing on an open green book." width="{{ $plate.Width }}" height="{{ $plate.Height }}"></figure>
-  </div>
-  <ul class="cluster-resources" id="topic-list">
-    {{ range $r := $rows }}{{ with $r.page }}<li data-facets="{{ $r.facets }}"><a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ with .Params.material_type }}<span class="cluster-resources__type"> · {{ delimit . ", " }}</span>{{ end }}</li>{{ end }}{{ end }}
+  <noscript><p class="topic-tools__links">{{ $total }} resources, grouped by current cluster and A to Z within each. Search and filter all resources in the <a href="{{ relref $page "/resources" }}">resources directory</a>.</p></noscript>
+  {{/* Headings and lists as siblings, which site.js reads as the sections it filters. */}}
+  {{ range $g := $groups }}
+  <h2 class="topic-group" id="now-{{ .key }}"{{ with .num }} style="--c: var(--cl{{ . }}); --c-bg: var(--cl{{ . }}-bg)"{{ end }}>
+    {{ $url := "" }}{{ with .num }}{{ with site.GetPage (printf "/clusters/cluster-%d" .) }}{{ $url = .RelPermalink }}{{ end }}{{ end }}
+    {{ with .num }}<span class="article-card__door" aria-hidden="true">{{ partial "clusters/icon.html" . }}</span>{{ end }}
+    <span class="topic-group__text">{{ if $url }}<a href="{{ $url }}">{{ .label }}<span aria-hidden="true">&nbsp;→</span></a>{{ else }}{{ .label }}{{ end }}
+    <span class="topic-group__count">{{ .count }} {{ cond (eq .count 1) "resource" "resources" }}</span></span>
+  </h2>
+  <ul class="cluster-resources{{ if gt .count 2 }} cluster-resources--cols{{ end }}">
+    {{ $typed := false }}{{ $first := true }}{{ range $r := $rows }}{{ if eq (urlize $r.group | default "none") $g.key }}{{ with $r.page }}{{ $mark := and (not $r.shown) $typed $first }}{{ if $r.shown }}{{ $typed = true }}{{ else }}{{ $first = false }}{{ end }}<li data-facets="{{ $r.facets }}"{{ if $mark }} class="is-first-reading"{{ end }}><a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ with $r.shown }}<span class="cluster-resources__type">{{ delimit . ", " }}</span>{{ end }}</li>{{ end }}{{ end }}{{ end }}
   </ul>
+  {{ if gt .count 16 }}<button class="text-button topic-showall" type="button" aria-expanded="false" hidden>Show all {{ .count }} in {{ .label }}</button>{{ end }}
+  {{ end }}
 </div>
+<script>
+/* On a phone the material types show the four largest, with a button for the rest. Each long group shows
+   its first eight titles, with a button for the rest; a search or a type filter shows every match. Without JavaScript
+   everything shows (lists.css). */
+(function () {
+  document.querySelectorAll('.topic-more').forEach(function (more) {
+    var box = more.closest('.topic-types');
+    more.hidden = false;
+    box.classList.add('is-collapsible');
+    more.addEventListener('click', function () {
+      var open = !box.classList.contains('is-open');
+      box.classList.toggle('is-open', open);
+      more.setAttribute('aria-expanded', String(open));
+      more.textContent = open ? more.dataset.less : more.dataset.more;
+    });
+  });
+  /* The chart's bars lay their bricks once, when at least a third of the chart is in view, as the Reversals board
+     does (site.js). It starts watching once site.js has shown the toolbar, which on a phone moves the chart down past
+     the first screen. With reduced motion, or without IntersectionObserver, they stay finished. */
+  var chart = document.querySelector('.topic-now');
+  if (chart && 'IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    chart.classList.add('is-waiting');
+    document.addEventListener('DOMContentLoaded', function () {
+      requestAnimationFrame(function () {
+        var seen = new IntersectionObserver(function (entries) {
+          if (!entries.some(function (entry) { return entry.isIntersecting; })) return;
+          seen.disconnect();
+          chart.classList.replace('is-waiting', 'is-laying');
+        }, {threshold: 0.3});
+        seen.observe(chart);
+      });
+    });
+  }
+  var list = document.querySelector('.cluster-resources-list');
+  document.querySelectorAll('.topic-showall').forEach(function (button) {
+    var group = button.previousElementSibling;
+    group.classList.add('is-collapsed');
+    button.hidden = false;
+    button.addEventListener('click', function () {
+      var open = group.classList.toggle('is-collapsed') === false;
+      button.setAttribute('aria-expanded', String(open));
+      button.textContent = open ? 'Show fewer' : button.dataset.label;
+      if (!open) group.previousElementSibling.scrollIntoView({block: 'nearest'});
+    });
+    button.dataset.label = button.textContent;
+  });
+  var input = document.getElementById('list-filter-input');
+  var facets = document.querySelector('.topic-types');
+  if (input && list) input.addEventListener('input', function () {
+    var filtering = Boolean(input.value.trim()) || Boolean(facets && facets.querySelector('[aria-pressed=true]'));
+    list.classList.toggle('is-filtering', filtering);
+  });
+}());
+</script>

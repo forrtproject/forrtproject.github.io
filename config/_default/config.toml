@@ -48,7 +48,6 @@ ignoreFiles = ["\\.ipynb$", ".ipynb_checkpoints$", "\\.Rmd$", "\\.Rmarkdown$", "
   # was disabled because it collided with the content/authors/ section, which
   # suppressed every profile whose term slug matched its folder name.
   categories = "/category/:slug/"
-  publication_types = "/publication-type/:slug/"
 
 [outputs]
   home = [ "HTML", "RSS", "JSON", "WebAppManifest" ]
@@ -85,7 +84,9 @@ ignoreFiles = ["\\.ipynb$", ".ipynb_checkpoints$", "\\.Rmd$", "\\.Rmarkdown$", "
   # resource card filter, `[related]` and the /tags/ browser read it as plain
   # front matter.
   category = "categories"
-  publication_type = "publication_types"
+  # `publication_type = "publication_types"` disabled: no page used it, so it built an
+  # empty /publication_types/ page. That address now redirects to /publications/
+  # (an alias in content/publications/index.md).
   # `author = "authors"` taxonomy disabled: it collided with the content/authors/
   # section. Author profiles render as section pages at /authors/<slug>/ instead.
   cluster = "FORRT_clusters"
