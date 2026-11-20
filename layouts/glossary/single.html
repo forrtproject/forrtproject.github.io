@@ -245,7 +245,7 @@
               <li{{ if ne .page.Params.language $lang }} lang="en"{{ end }}><a href="{{ .page.RelPermalink }}">{{ .name | htmlEscape | markdownify }}</a>
                 {{/* The start of the definition, without its in-text citations ("(Dickersin & Min, 1993)"), which a two-line
                      preview would cut mid-way; cut into a Latin run inside Arabic text, the clamp hid the run's start. */}}
-                {{ with .page.Params.definition }}<p>{{ . | markdownify | plainify | htmlUnescape | replaceRE `\*\*|__` "" | replaceRE `\s*[(（][^()（）]*\d{4}[a-z]?[^()（）]*[)）]` "" | truncate 150 }}</p>{{ end }}</li>
+                {{ with .page.Params.definition }}<p>{{ . | markdownify | plainify | htmlUnescape | replaceRE `\*\*|__` "" | replaceRE `\s*[(（][^()（）]*[,，،]\s*\d{4}[a-z]?[^()（）]*[)）]` "" | truncate 150 }}</p>{{ end }}</li>
               {{ end }}
             </ul>
             {{ end }}
