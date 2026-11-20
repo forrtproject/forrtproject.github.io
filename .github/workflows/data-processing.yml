@@ -251,6 +251,15 @@ jobs:
         run: python3 scripts/build_get_involved.py
 
       #========================================
+      # Build the Lesson Plans activity cards from the protected reviewed tab
+      # Keeps the committed data/lesson_activities.json if the sheet is unreachable
+      #========================================
+      - name: Build Lesson Activities data
+        id: lesson-activities
+        continue-on-error: true
+        run: python3 scripts/build_lesson_activities.py
+
+      #========================================
       # Archive newsletter issues sent through EmailOctopus
       # Restores the earlier archive from build-resources first, so issues and
       # images already copied survive API outages; the script only adds new
@@ -584,6 +593,7 @@ jobs:
           cp data/featured_resources.json /tmp/generated-resources/featured_resources.json || true
           cp data/pub_cards.json /tmp/generated-resources/pub_cards.json || true
           cp data/get_involved_projects.json /tmp/generated-resources/get_involved_projects.json || true
+          cp data/lesson_activities.json /tmp/generated-resources/lesson_activities.json || true
 
           # Copy FReD citation if it exists
           if [ -f static/data/fred_citation.txt ]; then
@@ -672,6 +682,9 @@ jobs:
           if [ -f /tmp/generated-resources/get_involved_projects.json ]; then
             cp /tmp/generated-resources/get_involved_projects.json data/get_involved_projects.json
           fi
+          if [ -f /tmp/generated-resources/lesson_activities.json ]; then
+            cp /tmp/generated-resources/lesson_activities.json data/lesson_activities.json
+          fi
           if [ -f /tmp/generated-resources/contributors_cache.csv ]; then
             mkdir -p scripts/forrt_contribs
             cp /tmp/generated-resources/contributors_cache.csv scripts/forrt_contribs/
@@ -707,6 +720,7 @@ jobs:
             git add data/featured_resources.json 2>/dev/null || true
             git add data/pub_cards.json 2>/dev/null || true
             git add data/get_involved_projects.json 2>/dev/null || true
+            git add data/lesson_activities.json 2>/dev/null || true
             git add static/data/fred_citation.txt 2>/dev/null || true
             git add data/summaries.json 2>/dev/null || true
             git add data/newsletters.json static/newsletters/ 2>/dev/null || true
