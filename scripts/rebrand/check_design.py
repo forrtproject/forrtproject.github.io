@@ -31,6 +31,7 @@ import time
 from urllib.parse import urlsplit
 
 from playwright.sync_api import Error as PlaywrightError, sync_playwright
+from playwright.sync_api import TimeoutError as PlaywrightTimeoutError
 
 WIDTHS = {390: 844, 1024: 768, 1440: 900}
 SCREENS = {
@@ -219,9 +220,9 @@ def article_paths(root):
     return chosen
 
 
-def check_articles(browser, base, paths, failures):
+def check_articles(browser, base, paths, failures, widths=WIDTHS):
     """The reading layout across its pages: content varies more than the layout does."""
-    for width in WIDTHS:
+    for width in widths:
         page = new_page(browser, width)
         for path in paths:
             page.goto(base + path, wait_until="load", timeout=120000)
@@ -425,15 +426,26 @@ def check_home(browser, base, failures):
     page.on("request", lambda request: requests.append(request.url))
     page.goto(base, wait_until="load")
     current = "[...document.querySelectorAll('.quote')].findIndex(q => q.classList.contains('is-active'))"
+
+    def expect_quote_change(previous, message):
+        try:
+            page.wait_for_function(
+                f"previous => {{ const active = {current}; return active >= 0 && active !== previous; }}",
+                arg=previous, polling=100,
+            )
+        except PlaywrightTimeoutError:
+            expect(False, message)
+        else:
+            expect(True, message)
+
     expect(page.evaluate("document.querySelector('.tower .motion-toggle').getBoundingClientRect().width") <= 1,
            "the castle's pause button is out of sight at rest")
     page.evaluate("document.querySelector('.quotes').scrollIntoView({block:'center'})")
     page.mouse.move(2, 2)
     first = page.evaluate(current)
-    page.wait_for_timeout(6500)
-    expect(page.evaluate(current) != first, "the quotes change on their own")
+    expect_quote_change(first, "the quotes change on their own")
+    page.hover(".quotes")
     held = page.evaluate(current)
-    page.hover(".quote.is-active")
     page.wait_for_timeout(6500)
     expect(page.evaluate(current) == held, "a pointer on the quotes holds them")
     page.mouse.move(2, 2)
@@ -441,8 +453,7 @@ def check_home(browser, base, failures):
     page.wait_for_timeout(6500)
     expect(page.evaluate(current) == held, "the quotes stay put off screen")
     page.evaluate("document.querySelector('.quotes').scrollIntoView({block:'center'})")
-    page.wait_for_timeout(6500)
-    expect(page.evaluate(current) != held, "the quotes resume when seen again")
+    expect_quote_change(held, "the quotes resume when seen again")
     # A real Tab from the heading above, so that the browser counts it as keyboard focus.
     page.evaluate("document.querySelector('.quotes').previousElementSibling.setAttribute('tabindex', '-1')")
     page.evaluate("document.querySelector('.quotes').previousElementSibling.focus()")
@@ -554,6 +565,12 @@ def check_tower_game(browser, base, expect):
 
 def check_phone_reading(browser, base, failures):
     """On a phone the chat launcher is a small button in the bottom corner, and an embed's panel is not clipped."""
+    # The phone contents list is widest just before the side card appears. These articles have long headings.
+    check_articles(browser, base, (
+        "educators-corner/003-developing-tools/",
+        "educators-corner/018-accessible-feedback-in-research/",
+        "pedagogies/004-thomas-rhys-evans/",
+    ), failures, widths=(1000,))
     expect = expectation(failures, "phone reading")
     page = new_page(browser, 390)
     page.goto(base + "glossary/english/abstract_bias/", wait_until="load")

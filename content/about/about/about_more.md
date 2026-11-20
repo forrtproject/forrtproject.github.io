@@ -19,23 +19,30 @@ FORRT provides a pedagogical infrastructure and open educational resources desig
 
 ## Want to learn more about us?
 
-{{< action_cards >}}
-Meet the teams | The teams and projects that make up FORRT | /about/teams
-Read our mission | What FORRT advocates for, and why | /about/mission
-Get involved | Join FORRT's Slack, find a project or get the newsletter | /about/get-involved
-{{< /action_cards >}}
-
 - [Read our publications](/publications): meta-scientific papers and policies
 - [Find teaching resources](/nexus) in our Educational Nexus
 - [Open the booklet](/booklet/): a 20-page introduction to FORRT
 
-See also [our manifesto on the OSF](https://osf.io/bnh7p), [FORRT Pedagogies](/pedagogies), our [Code of Conduct](/coc), [Principled Teaching and Mentoring](/about/principles), the institutions and initiatives with which [we are partners](/about/partnerships), and [our community members](/about/community). Would you like to help us be or do better? Give us (anonymous) feedback in our [feedback page](/feedback).
+See also:
+
+- [our manifesto on the OSF](https://osf.io/bnh7p)
+- [FORRT Pedagogies](/pedagogies)
+- our [Code of Conduct](/coc)
+- [Principled Teaching and Mentoring](/about/principles)
+- the institutions and initiatives with which [we are partners](/about/partnerships)
+- [our community members](/about/community)
+
+Would you like to help us be or do better? Give us (anonymous) feedback in our [feedback page](/feedback).
+
+<!-- Beside "What FORRT does" and the lists after it on wide screens, here on narrower ones (assets/css/doors/sections.css).
+     There it plays in a dialog at full size (data-video-dialog, assets/js/doors/site.js). -->
+<aside class="callout callout-rail callout-rail-video" aria-label="FORRT Open Day" data-video-dialog>
 
 ### FORRT Open Day
 
 {{< youtube i8cL3Q6A3HE >}}
 
-<br>
+</aside>
 
 {{< expand "The problem FORRT addresses, and how" >}}
 

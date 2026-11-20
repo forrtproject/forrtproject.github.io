@@ -53,6 +53,9 @@ Hard checks (exit 1 if any fails):
       that has a page in the same language (per the English page's hreflang links).
   24. Every other name an English glossary term page shows ("Also known as") is in
       that term's data-term on the glossary hub, so the hub's filter finds it.
+  25. No page loads the retired js/newsletter.js (#1170).
+  26. The news and Educators' Corner lists use the same picture treatment as
+      the related cards below their articles (#1255).
 
 Report-only sections (never fail): pages with no <h1>, the
 site-wide share of images that carry both width and height, pages whose
@@ -87,6 +90,8 @@ class PageParser(HTMLParser):
         self.h1_texts = []
         self.urls = []
         self.imgs = []
+        self.card_pictures = []
+        self._whole_card_picture = None
         self.meta = {}
         self.code_classes = []
         self.metas = []
@@ -113,6 +118,9 @@ class PageParser(HTMLParser):
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
+        if tag == "div":
+            classes = (attrs.get("class") or "").split()
+            self._whole_card_picture = "ec-thumb-whole" in classes if "ac-thumb" in classes else None
         if tag == "script" and not attrs.get("src"):
             self._inline_script = 0
         if attrs.get("id"):
@@ -147,6 +155,9 @@ class PageParser(HTMLParser):
                 self.urls.append(url)
         elif tag == "img":
             self.imgs.append(attrs)
+            if self._whole_card_picture is not None and attrs.get("src"):
+                folder = urlparse(attrs["src"]).path.rpartition("/")[0]
+                self.card_pictures.append((folder, self._whole_card_picture))
         elif tag == "a" and "gloss-term" in (attrs.get("class") or "").split():
             self.gloss_terms.append(attrs.get("href") or "")
         elif tag == "meta":
@@ -160,6 +171,8 @@ class PageParser(HTMLParser):
             self.code_classes.append(attrs.get("class") or "")
 
     def handle_endtag(self, tag):
+        if tag == "div":
+            self._whole_card_picture = None
         if tag == "nav":
             self._in_crumbs = False
         if tag == self._related_tag:
@@ -208,6 +221,7 @@ class Page:
         self.resource_links = parser.resource_links
         self.urls = parser.urls
         self.imgs = parser.imgs
+        self.card_pictures = parser.card_pictures
         self.meta = parser.meta
         self.code_blocks = [cls.split() for cls in parser.code_classes]
         self.descriptions = [m.get("content") or "" for m in parser.metas
@@ -789,6 +803,26 @@ def check_clusters_map(public_dir):
     return failures
 
 
+def check_related_card_pictures(pages):
+    """Compare the picture treatment where the list and related cards share card_picture."""
+    by_path = {page.path: page for page in pages}
+    failures = []
+    # Pedagogies uses list_item for its index, which fits every thumbnail into its row.
+    for section in ("post", "educators-corner"):
+        index = by_path.get(f"{section}/index.html")
+        if index is None:
+            continue
+        # Each article's image derivatives share its bundle folder and have different hashed filenames.
+        index_pictures = dict(index.card_pictures)
+        failures.extend(
+            page.path for page in pages
+            if page is not index and page.path.startswith(f"{section}/")
+            and any(folder in index_pictures and whole != index_pictures[folder]
+                    for folder, whole in page.card_pictures)
+        )
+    return failures
+
+
 def main(public_dir):
     pages = load_pages(public_dir)
     home = next((p for p in pages if p.path == "index.html"), None)
@@ -799,6 +833,7 @@ def main(public_dir):
         "18. glossary titles show no Markdown asterisks": check_glossary_title_markdown(pages),
         "2. homepage free of mermaid/highlight.js assets": check_homepage_assets(home),
         "4. every <img> has an alt attribute": check_img_alt(pages),
+        "26. related cards match the picture treatment in their section list": check_related_card_pictures(pages),
         "5. every homepage <img> has width and height": check_homepage_img_dims(home),
         "6. homepage share image is 1200x630 PNG/JPEG with twitter:card": check_homepage_share_image(home),
         "7. breadcrumb JSON-LD is well formed": check_breadcrumbs(pages),
@@ -817,6 +852,7 @@ def main(public_dir):
         "22. FLoRA page shows the citation": check_flora_citation(public_dir),
         "23. translated glossary pages link related terms in their own language": check_glossary_related_language(pages),
         "24. the glossary hub's filter finds each term by its other names": check_glossary_aka_filter(public_dir),
+        "25. no page loads the retired js/newsletter.js": [p.path for p in pages if p.loads("js/newsletter.js")],
     }
     conditional = check_conditional_assets(pages)
     results["3. conditional highlight.js / mermaid loading"] = [

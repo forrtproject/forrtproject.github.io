@@ -423,6 +423,33 @@ html:has(.contributor-az){scroll-padding-top:calc(var(--contributor-az,72px) + 1
 @media(max-width:760px){.article-layout .article-style .tower-picture{width:min(40%,150px);margin:2px 0 10px 16px;padding:12px 6px 4px}}
 /* On a phone the tower stands above its text, so the text keeps the column's width. */
 @media(max-width:760px){.article-layout .article-style .tower-picture{float:none;width:min(60%,220px);margin:4px auto 14px}}
+/* About us: the three next steps (a callout-rail in content/about/about/about.md). In the text up to 1240 px, after the
+   video, as a row of bricks; on wider screens a column of bricks beside the opening, in the call-outs' third column. */
+.article-layout .article-style .callout-rail{max-width:none;margin:8px 0 28px;padding:0;background:none;border-radius:0}
+.article-layout .article-style .callout-rail .action-cards{margin:18px 0 0}
+@media(min-width:1240px){
+  .article-layout-callouts .article-style .doc-section:has(>.callout-rail){display:grid;grid-template-columns:minmax(0,1fr) 260px;column-gap:40px;align-items:start;margin-inline-end:-300px}
+  .article-layout-callouts .article-style .doc-section:has(>.callout-rail)>*{grid-column:1}
+  .article-layout-callouts .article-style .doc-section>.callout-rail{grid-column:2;grid-row:2/6;float:none;width:auto;margin:0}
+  .article-layout-callouts .article-style .callout-rail .action-cards{grid-template-columns:minmax(0,1fr);gap:22px;margin:8px 0 0}
+  /* The Open Day video stays in view in the same column while "What FORRT does" and the lists after it scroll past:
+     it spans the nine blocks before it in content/about/about/about_more.md. In a grid the gaps no longer collapse,
+     so headings keep their usual space with a smaller margin of their own. */
+  .article-layout-callouts .article-style .doc-section:has(>.callout-rail-video)>h2:not(:first-child){margin-top:18px}
+  .article-layout-callouts .article-style .doc-section>.callout-rail-video{grid-row:1/span 9;align-self:start;position:sticky;top:24px}
+  .article-layout-callouts .article-style .callout-rail-video h3{margin:0 0 10px;font-size:21px}
+  /* The tower stands in the same column, level with its heading. */
+  .article-layout-callouts .article-style .doc-section:has(>.tower-picture){display:grid;grid-template-columns:minmax(0,1fr) 260px;column-gap:40px;align-items:start;margin-inline-end:-300px}
+  .article-layout-callouts .article-style .doc-section:has(>.tower-picture)>*{grid-column:1}
+  .article-layout-callouts .article-style .doc-section>.tower-picture{grid-column:2;grid-row:1/span 2;float:none;width:auto;margin:0}
+}
+/* About us: the introduction's poster is the video's own sketch, drawn across its top on white. The poster shows that
+   band, a little down from its top edge, on the pale ground of the page's boxes (multiply turns the white into it);
+   Play sits beneath the lock. The player that replaces it keeps 16:9 (site.js). */
+.article-layout .article-style .video-poster[data-video="XlL54egjSoA"]{aspect-ratio:16/7;background:var(--surface)}
+.article-layout .article-style .video-poster[data-video="XlL54egjSoA"] img{position:absolute;top:7%;left:0;width:100%;height:auto;object-fit:fill;mix-blend-mode:multiply}
+.video-poster[data-video="XlL54egjSoA"] .video-play{inset-block-start:62%}
+@media(max-width:760px){.article-layout .article-style .video-poster[data-video="XlL54egjSoA"]{aspect-ratio:2/1}}
 /* A video's note runs the video's width. */
 .article-layout .article-style .video-note{max-width:none}
 .article-layout-wide .article-style .video-note{max-width:960px}
