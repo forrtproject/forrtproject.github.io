@@ -97,3 +97,23 @@ summaries/diversity-equity-inclusion/index.html  # A written meta description in
 lesson-plans/index.html   # Its body now opens with action cards, so its description is set to the first sentence of its Motivation
 publications/index.html  # #1191: the citation chart moved after the introduction, so the description no longer opens with its "Details on Google Scholar" link. Exempts all its SEO tags: remove once main has the change
 nowherelab/index.html  # #1193: its description is now a written summary; the layout wrappers around the page's text cut the automatic one at "…not limited to:"
+# #1243: the Markdown link hook no longer puts a line break before each link, so "( https://…" in these generated
+# descriptions becomes "(https://…" (and the description may cut one word later). Only description and
+# og:description change. Remove once main has layouts/_default/_markup/render-link.html.
+curated_resources/open-source-guides/index.html
+curated_resources/preregistration-improve-research-rigor-r/index.html
+curated_resources/registered-report-stage-1-manuscript-tem/index.html
+curated_resources/statistics-with-jasp-and-the-open-scienc/index.html
+educators-corner/013-introducing-nowhere-lab/index.html
+glossary/arabic/oer_commons_مصادر_التع_ل_م_المفتوحة_العام_ة/index.html
+glossary/arabic/sortee_جمعي_ة_علم_البيية_والبيولوجيا_الت_طوري_ة_المنفتحة_والموثوقة_والش_فافة/index.html
+glossary/arabic/البيانات_المفتوحة/index.html
+glossary/arabic/ت_عهد_الت_سجيل_المسبق/index.html
+glossary/arabic/تصنيف_ادوار_المول_فين/index.html
+glossary/english/data_access_and_research_transparency_da_rt_/index.html
+glossary/english/open_data/index.html
+glossary/english/society_for_open_reliable_and_transparent_ecology_and_evolutionary_biology_sortee_/index.html
+glossary/german/da_rt/index.html
+glossary/german/sortee/index.html
+glossary/turkish/acık_guvenilir_ve_seffaf_ekoloji_ve_evrimsel_biyoloji_dernegi/index.html
+positive-changes-replication-crisis/index.html
