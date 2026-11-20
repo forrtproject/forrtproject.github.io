@@ -238,7 +238,6 @@ main:lang(ar) .glossary-layout .article-style .term-references{direction:ltr;pad
 @media(max-width:560px){.glossary-layout .article-foot .post-nav{grid-template-columns:1fr}.glossary-layout .article-foot .post-nav-next:only-child{grid-column:1}}
 /* The reference list: one reference per row so surnames align along a single scan edge, with an adjacent "Cited in"
    column on wide screens so the glossary links occupy a predictable rail without empty dead space. */
-.glossary-references .term-group{content-visibility:auto;contain-intrinsic-size:auto 900px}
 .glossary-references .term-group ul.references-list{display:block;max-width:none;margin:0;padding:0}
 .glossary-references .term-group ul.references-list>li{max-width:none;margin:0;padding:14px 0;background:none;border:0;border-bottom:1px solid var(--line);border-radius:0;line-height:1.52}
 .glossary-references .term-group ul.references-list>li:hover{border-color:var(--line)}
