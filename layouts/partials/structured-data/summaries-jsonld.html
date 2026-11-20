@@ -13,9 +13,9 @@
 {{- $deiOnly := .deiOnly -}}
 {{- $parts := slice -}}
 {{- range $s := hugo.Data.summaries -}}
-  {{- if or (not $deiOnly) (in $s.Title "⌺") -}}
-    {{/* Clean the title: drop the ◈ / ⌺ status symbols and any markdown. */}}
-    {{- $name := trim ($s.Title | replaceRE "[◈⌺]" "" | plainify) " " -}}
+  {{- if and $s.Title (or (not $deiOnly) (in $s.Title "⌺")) -}}
+    {{- $title := partial "doors/summary_title" $s.Title -}}
+    {{- $name := $title.name | plainify -}}
     {{- $url := printf "%s#%s" $page.Permalink $s.Id -}}
     {{- $article := dict
         "@type" "ScholarlyArticle"
@@ -24,7 +24,7 @@
         "url" $url
         "inLanguage" "en" -}}
     {{- with $s.Abstract -}}
-      {{- $abs := . | plainify | truncate 200 "…" -}}
+      {{- $abs := . | plainify | truncate 200 "…" | htmlUnescape -}}
       {{- $abs = replaceRE "(?i)</script" "<\\/script" $abs -}}
       {{- $article = merge $article (dict "abstract" $abs) -}}
     {{- end -}}

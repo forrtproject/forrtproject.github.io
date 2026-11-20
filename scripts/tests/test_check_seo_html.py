@@ -207,6 +207,24 @@ class SummaryTakeawayLinkCheck(unittest.TestCase):
         self.assertEqual(self.check("Plain takeaway", '<ul><li><a href="#">Related paper</a></li></ul>'), [])
 
 
+class SummaryCreditMarkerCheck(unittest.TestCase):
+    def check(self, html):
+        with tempfile.TemporaryDirectory() as public:
+            collection = Path(public) / "summaries" / "open-reproducible" / "index.html"
+            collection.parent.mkdir(parents=True)
+            collection.write_text(html, encoding="utf-8")
+            return seo.check_summary_credit_marker(public)
+
+    def test_title_markers_fail_in_html_and_json_ld(self):
+        for html in ("<h3>Paper ⬦</h3>", "<h3>Paper &#x2b26;</h3>",
+                     r'<script type="application/ld+json">{"name":"Paper \u2b26"}</script>'):
+            with self.subTest(html=html):
+                self.assertEqual(self.check(html), ["summaries/open-reproducible/index.html"])
+
+    def test_written_credit_and_status_symbols_pass(self):
+        self.assertEqual(self.check("<h3>Paper ◈ ⌺</h3><p>Summary by Dr Tamara Kalandadze</p>"), [])
+
+
 class CitationTargetCheck(unittest.TestCase):
     def check(self, html):
         parser = seo.PageParser()

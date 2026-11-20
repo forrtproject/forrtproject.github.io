@@ -80,7 +80,7 @@ questions:
     topic: publishing
 ---
 
-◈ marks work that was not peer reviewed.<br>⌺ marks summaries on diversity,&nbsp;equity&nbsp;and&nbsp;inclusion.
+◈ marks work that was not peer reviewed.<br>⌺ marks summaries on diversity,&nbsp;equity&nbsp;and&nbsp;inclusion.<br>Summaries written by Dr Tamara Kalandadze carry her name in the entry.
 
 
 {{< summaries >}}

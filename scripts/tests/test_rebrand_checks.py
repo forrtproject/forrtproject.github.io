@@ -6,7 +6,6 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
-from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "rebrand"))
 
@@ -15,7 +14,7 @@ from check_internal_links import broken_target, extract_links, find_broken  # no
 from check_preview import (  # noqa: E402
     canonical_problem, off_origin, production_expectation, redirect_ok, redirect_target, resolve_base, robots_problem,
 )
-from check_source_rules import GENERATED, absolute_url_findings, generated_edits  # noqa: E402
+from check_source_rules import GENERATED, absolute_url_findings  # noqa: E402
 from compare_builds import compare_heads, compare_paths, compare_structured  # noqa: E402
 from preview_paths import Rewriter, resolves  # noqa: E402
 from site_inventory import normalise_path, seo_head, template_group  # noqa: E402
@@ -366,15 +365,6 @@ class NetworkFramingTests(unittest.TestCase):
 
 
 class SourceRuleTests(unittest.TestCase):
-    def test_regenerated_summaries_require_the_generator_change(self):
-        data = "M\tdata/summaries.json\n"
-        generator = "M\tcontent/summaries/summaries.py\n"
-        other_data = "M\tdata/ga_data.json\n"
-        with patch("check_source_rules.subprocess.check_output", side_effect=["base\n", data]):
-            self.assertEqual(generated_edits("origin/main"), ["data/summaries.json"])
-        with patch("check_source_rules.subprocess.check_output", side_effect=["base\n", data + generator + other_data]):
-            self.assertEqual(generated_edits("origin/main"), ["data/ga_data.json"])
-
     def test_generated_paths(self):
         for path in [
             "content/glossary/english/x.md",

@@ -57,6 +57,7 @@ Hard checks (exit 1 if any fails):
   26. The news and Educators' Corner lists use the same picture treatment as
       the related cards below their articles (#1255).
   27. Summary takeaway links have a destination and bypass Google's redirect (#1256).
+  28. Summaries use a written credit in place of the source document's author marker.
 
 Report-only sections (never fail): pages with no <h1>, the
 site-wide share of images that carry both width and height, pages whose
@@ -839,6 +840,19 @@ def check_summary_takeaway_links(pages):
             if href in ("", "#", "#ZgotmplZ") or redirect.match(href)]
 
 
+def check_summary_credit_marker(public_dir):
+    failures = []
+    for path in ("summaries/index.html", "summaries/open-reproducible/index.html",
+                 "summaries/diversity-equity-inclusion/index.html"):
+        full_path = os.path.join(public_dir, path)
+        if os.path.isfile(full_path):
+            with open(full_path, encoding="utf-8", errors="replace") as handle:
+                text = unescape(handle.read())
+            if "⬦" in text or r"\u2b26" in text.lower():
+                failures.append(path)
+    return failures
+
+
 def main(public_dir):
     pages = load_pages(public_dir)
     home = next((p for p in pages if p.path == "index.html"), None)
@@ -870,6 +884,7 @@ def main(public_dir):
         "24. the glossary hub's filter finds each term by its other names": check_glossary_aka_filter(public_dir),
         "25. no page loads the retired js/newsletter.js": [p.path for p in pages if p.loads("js/newsletter.js")],
         "27. summary takeaways link directly to their destinations": check_summary_takeaway_links(pages),
+        "28. summaries show written credit without a raw author marker": check_summary_credit_marker(public_dir),
     }
     conditional = check_conditional_assets(pages)
     results["3. conditional highlight.js / mermaid loading"] = [

@@ -10,7 +10,6 @@ Run: python3 scripts/rebrand/check_source_rules.py [--base origin/main]
    lost when the generator next runs. Compared with the merge base, so main's own updates
    arriving through a merge do not count. The first output of a generator the branch adds
    (NEW_OUTPUTS) may be added, but not changed afterwards by hand.
-   A manually run generator update may include its refreshed output (MANUAL_OUTPUTS).
 """
 
 import argparse
@@ -44,8 +43,6 @@ GENERATED = re.compile(
 
 # First outputs of generators, or of outputs newly added to a generator, on the branch; main has no copy yet.
 NEW_OUTPUTS = {"data/open_research_games.json", "data/scholar_citations.json"}
-# Data Processing packages this checked-in file without running its generator.
-MANUAL_OUTPUTS = {"data/summaries.json": "content/summaries/summaries.py"}
 
 
 def repo_files(root="."):
@@ -80,12 +77,9 @@ def generated_edits(base):
     changed = subprocess.check_output(
         ["git", "-c", "core.quotepath=false", "diff", "--name-status", merge_base, "HEAD"], text=True
     ).splitlines()
-    changes = [line.split("\t") for line in changed]
-    added_or_modified = {path for status, path, *_ in changes if status in ("A", "M")}
     edits = []
-    for status, *paths in changes:
-        if status == "M" and MANUAL_OUTPUTS.get(paths[0]) in added_or_modified:
-            continue
+    for line in changed:
+        status, *paths = line.split("\t")
         # A rename lists both paths; moving a generated file away is an edit too.
         if any(GENERATED.match(path) for path in paths) and not (status == "A" and paths[0] in NEW_OUTPUTS):
             edits.append(paths[-1])
