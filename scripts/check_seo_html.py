@@ -57,7 +57,7 @@ Hard checks (exit 1 if any fails):
   26. The news and Educators' Corner lists use the same picture treatment as
       the related cards below their articles (#1255).
   27. Summary takeaway links have a destination and bypass Google's redirect (#1256).
-  28. Summaries use a written credit in place of the source document's author marker.
+  28. Summary pages exist and use the written credits expected from the build's data.
 
 Report-only sections (never fail): pages with no <h1>, the
 site-wide share of images that carry both width and height, pages whose
@@ -840,20 +840,76 @@ def check_summary_takeaway_links(pages):
             if href in ("", "#", "#ZgotmplZ") or redirect.match(href)]
 
 
-def check_summary_credit_marker(public_dir):
+class SummaryCreditParser(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.credits = []
+        self.credit = None
+
+    def finish_credit(self):
+        if self.credit is not None:
+            self.credits.append(" ".join("".join(self.credit).split()))
+            self.credit = None
+
+    def handle_starttag(self, tag, attrs):
+        if tag in ("p", "h4"):
+            # Hugo's minifier can omit </p> before the next paragraph or heading.
+            self.finish_credit()
+        if tag == "p" and "summary-credit" in (dict(attrs).get("class") or "").split():
+            self.credit = []
+
+    def handle_data(self, data):
+        if self.credit is not None:
+            self.credit.append(data)
+
+    def handle_endtag(self, tag):
+        if tag == "p":
+            self.finish_credit()
+
+    def close(self):
+        super().close()
+        self.finish_credit()
+
+
+def check_summary_credit_marker(public_dir, summaries=None):
+    if summaries is None:
+        data_dir = os.environ.get("HUGO_DATADIR", "data")
+        path = os.path.join(data_dir, "summaries.json")
+        try:
+            with open(path, encoding="utf-8") as handle:
+                summaries = json.load(handle)
+        except (OSError, ValueError) as error:
+            return [f"{path}: could not read the build's summaries data ({error})"]
+
+    marked_titles = [s.get("Title") or "" for s in summaries.values() if "⬦" in (s.get("Title") or "")]
+    expected_counts = {
+        "summaries/index.html": None,
+        "summaries/open-reproducible/index.html": len(marked_titles),
+        "summaries/diversity-equity-inclusion/index.html": sum("⌺" in title for title in marked_titles),
+    }
+    credit_text = "Summary by Dr Tamara Kalandadze"
     failures = []
-    for path in ("summaries/index.html", "summaries/open-reproducible/index.html",
-                 "summaries/diversity-equity-inclusion/index.html"):
+    for path, expected in expected_counts.items():
         full_path = os.path.join(public_dir, path)
-        if os.path.isfile(full_path):
-            with open(full_path, encoding="utf-8", errors="replace") as handle:
-                text = unescape(handle.read())
-            if "⬦" in text or r"\u2b26" in text.lower():
-                failures.append(path)
+        if not os.path.isfile(full_path):
+            failures.append(f"{path}: missing page")
+            continue
+        with open(full_path, encoding="utf-8", errors="replace") as handle:
+            html = handle.read()
+        if "⬦" in unescape(html) or r"\u2b26" in html.lower():
+            failures.append(f"{path}: raw summary author marker")
+        if expected is not None:
+            parser = SummaryCreditParser()
+            parser.feed(html)
+            parser.close()
+            if parser.credits != [credit_text] * expected:
+                actual = parser.credits.count(credit_text)
+                failures.append(f"{path}: expected {expected} written credits, found {actual} "
+                                f"matching out of {len(parser.credits)} credit lines")
     return failures
 
 
-def main(public_dir):
+def main(public_dir, summaries=None):
     pages = load_pages(public_dir)
     home = next((p for p in pages if p.path == "index.html"), None)
     print("Checked %d pages under %s" % (len(pages), public_dir))
@@ -884,7 +940,7 @@ def main(public_dir):
         "24. the glossary hub's filter finds each term by its other names": check_glossary_aka_filter(public_dir),
         "25. no page loads the retired js/newsletter.js": [p.path for p in pages if p.loads("js/newsletter.js")],
         "27. summary takeaways link directly to their destinations": check_summary_takeaway_links(pages),
-        "28. summaries show written credit without a raw author marker": check_summary_credit_marker(public_dir),
+        "28. summaries show written credit without a raw author marker": check_summary_credit_marker(public_dir, summaries),
     }
     conditional = check_conditional_assets(pages)
     results["3. conditional highlight.js / mermaid loading"] = [
