@@ -240,7 +240,7 @@ main:lang(ar) .glossary-layout .article-style .term-references{direction:ltr;pad
    column on wide screens so the glossary links occupy a predictable rail without empty dead space. */
 .glossary-references .term-group{content-visibility:auto;contain-intrinsic-size:auto 900px}
 .glossary-references .term-group ul.references-list{display:block;max-width:none;margin:0;padding:0}
-.glossary-references .term-group ul.references-list>li{max-width:none;margin:0;padding:14px 0;background:none;border:0;border-bottom:1px solid var(--line);border-radius:0;font-size:16px;line-height:1.52}
+.glossary-references .term-group ul.references-list>li{max-width:none;margin:0;padding:14px 0;background:none;border:0;border-bottom:1px solid var(--line);border-radius:0;line-height:1.52}
 .glossary-references .term-group ul.references-list>li:hover{border-color:var(--line)}
 .glossary-references .reference-apa{max-width:34em;padding-inline-start:1.5em;text-indent:-1.5em}
 .glossary-references .reference-apa a{color:var(--link);text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
@@ -265,7 +265,7 @@ main:lang(ar) .glossary-layout .article-style .term-references{direction:ltr;pad
 @media(max-width:760px){
   /* Only the search row pins on phones (DESIGN.md §9); the scope buttons scroll away with the letters. */
   .glossary-references .glossary-ref-scope{margin:8px 0 2px}
-  .glossary-references .term-group ul.references-list>li{font-size:16px;padding:12px 0}
+  .glossary-references .term-group ul.references-list>li{padding:12px 0}
   .glossary-references .reference-apa{padding-inline-start:1.25em;text-indent:-1.25em}
 }
 /* A term page's related terms take the reading width: one related term is one wide card, more share the row.
