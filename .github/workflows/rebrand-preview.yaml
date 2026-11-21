@@ -62,7 +62,7 @@ jobs:
               data) workflow=data-processing.yml ;;
               announcements) workflow=create_announcements.yml ;;
             esac
-            runs=$(gh run list --workflow "$workflow" --branch main --status success \
+            runs=$(gh run list --repo "$GITHUB_REPOSITORY" --workflow "$workflow" --branch main --status success \
               --limit 100 --json databaseId)
 
             artifact=$(gh api --paginate "repos/$GITHUB_REPOSITORY/actions/artifacts?name=$input-artifact&per_page=100" \
