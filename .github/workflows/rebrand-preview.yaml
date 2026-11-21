@@ -389,6 +389,8 @@ jobs:
     name: Designed screens
     runs-on: ubuntu-22.04
     needs: [build, pages]
+    # The reference build is intentionally skipped in full mode.
+    if: always() && needs.build.result == 'success' && needs.pages.result == 'success'
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
@@ -438,6 +440,8 @@ jobs:
     name: Accessibility rules
     runs-on: ubuntu-22.04
     needs: [build, pages]
+    # The reference build is intentionally skipped in full mode.
+    if: always() && needs.build.result == 'success' && needs.pages.result == 'success'
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
