@@ -21,6 +21,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 from check_design import serve  # noqa: E402
 
+from changed_pages import load_selection  # noqa: E402
+
 LEVEL_A = {"wcag2a", "wcag21a", "wcag22a"}
 LEVEL_AA = {"wcag2aa", "wcag21aa", "wcag22aa"}
 EXTRA = {
@@ -57,14 +59,24 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("public", nargs="?")
     parser.add_argument("--url")
+    parser.add_argument("--pages", help="JSON from changed_pages.py")
     parser.add_argument("--base", default="/")
     parser.add_argument("--axe", required=True, help="path to axe.min.js")
     parser.add_argument("--out", help="write every finding to this JSON file")
     args = parser.parse_args()
+    mode, pages = load_selection(args.pages)
+    if mode == "none":
+        if args.out:
+            with open(args.out, "w", encoding="utf-8") as handle:
+                json.dump([], handle)
+        return
     base = args.url.rstrip("/") + "/" if args.url else serve(os.path.abspath(args.public), args.base)
     with open(os.path.join(HERE, "sample_pages.json"), encoding="utf-8") as handle:
         sample = {**json.load(handle), **EXTRA}
     sample.pop("404", None)
+    if mode == "changed":
+        names = {path: name for name, path in sample.items()}
+        sample = {names.get(path, path): path for path in sorted(pages)}
     with open(args.axe, encoding="utf-8") as handle:
         axe = handle.read()
     findings, failures, practice = [], [], collections.Counter()

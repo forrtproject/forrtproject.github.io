@@ -9,9 +9,10 @@ name: Doors preview
 # Checks: Every run also builds the merge base with main from the same data, then compares
 #         the two builds.
 #         A failed check shows on the run but does not hold back the preview.
-# Layout: "Build" builds the branch and shares it as an artifact. Three jobs then check it
-#         side by side: the comparison with main, the designed screens and the accessibility
-#         rules. "Check results" fails if any of them did.
+# Layout: Shared inputs feed the branch build and, on scoped PRs, the PR base build.
+#         The browser checks use the changed pages or a core sample for CSS/JS-only changes.
+#         Pushes, the full-checks label, check infrastructure changes and large diffs use the full suite.
+#         "Compare with main" still checks the whole site. "Check results" aggregates failures.
 # Note: Uses the same data and announcement artifacts as deploy.yaml. Delete this
 #       workflow when the redesign launches.
 
@@ -20,6 +21,7 @@ on:
     branches:
       - rebrand-doors
   pull_request:
+    types: [opened, synchronize, reopened, labeled, unlabeled]
     branches:
       - rebrand-doors
 
@@ -28,6 +30,7 @@ env:
   PYTHONUNBUFFERED: "1"  # Output is flushed as it is printed, so the log's timestamps show which section is slow.
   HUGO_VERSION: "0.158.0"
   HUGO_EXTENDED: true
+  PLAYWRIGHT_VERSION: "1.63.0"
   PREVIEW_BASE: /rebrand-doors/
   PREVIEW_URL: https://forrt.org/rebrand-doors/
 
@@ -36,14 +39,16 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
-    name: Build
+  inputs:
+    name: Prepare shared inputs
     runs-on: ubuntu-22.04
     # Fork PRs get no artifacts token and have no preview to update.
     if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
     permissions:
       contents: read
       actions: read  # Needed for artifact access
+    outputs:
+      scoped: ${{ steps.scope.outputs.scoped }}
     steps:
       # Full history for Hugo's Git dates, with file contents fetched only for the commit
       # checked out (as in staging-aggregate.yaml).
@@ -57,6 +62,21 @@ jobs:
       # then finds no date for them.
       - name: Let Git report non-ASCII paths unquoted
         run: git config core.quotepath false
+
+      - name: Select full or scoped checks
+        id: scope
+        env:
+          EVENT: ${{ github.event_name }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          FULL_LABEL: ${{ contains(github.event.pull_request.labels.*.name, 'full-checks') }}
+        run: |
+          if [ "$EVENT" != pull_request ] || [ "$FULL_LABEL" = true ] || \
+            ! git diff --quiet "$BASE_SHA" HEAD -- .github/workflows/rebrand-preview.yaml \
+              ':(glob)scripts/rebrand/check_*.py' scripts/rebrand/changed_pages.py; then
+            echo "scoped=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "scoped=true" >> "$GITHUB_OUTPUT"
+          fi
 
       # =======================
       # Artifacts, as in deploy.yaml
@@ -110,7 +130,8 @@ jobs:
       - name: Pack the artifacts for the reference build
         run: |
           mkdir -p "$RUNNER_TEMP/artifacts/data" "$RUNNER_TEMP/artifacts/announcements"
-          tar -cf inputs.tar -C "$RUNNER_TEMP" artifacts
+          cp content/contributors/tenzing.md "$RUNNER_TEMP/contributors.md"
+          tar -cf inputs.tar -C "$RUNNER_TEMP" artifacts contributors.md
 
       - name: Upload the artifacts for the reference build
         uses: actions/upload-artifact@v7
@@ -120,6 +141,33 @@ jobs:
           retention-days: 1
           overwrite: true
           if-no-files-found: error
+
+  build:
+    name: Build
+    runs-on: ubuntu-22.04
+    needs: inputs
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          filter: blob:none
+
+      - name: Let Git report non-ASCII paths unquoted
+        run: git config core.quotepath false
+
+      - name: Download shared inputs
+        uses: actions/download-artifact@v7
+        with:
+          name: rebrand-inputs-${{ github.run_number }}
+          path: ${{ runner.temp }}
+
+      - name: Apply shared inputs
+        run: |
+          tar -xf "$RUNNER_TEMP/inputs.tar" -C "$RUNNER_TEMP"
+          scripts/rebrand/apply_artifacts.sh . \
+            "$RUNNER_TEMP/artifacts/data" "$RUNNER_TEMP/artifacts/announcements"
+          cp "$RUNNER_TEMP/contributors.md" content/contributors/tenzing.md
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@75d2e84710de30f6ff7268e08f310b60ef14033f
@@ -148,6 +196,110 @@ jobs:
           retention-days: 1
           compression-level: 1
           overwrite: true  # A rerun reuses the run number.
+          if-no-files-found: error
+
+  reference:
+    name: Build PR base
+    runs-on: ubuntu-22.04
+    needs: inputs
+    if: needs.inputs.outputs.scoped == 'true'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          filter: blob:none
+
+      - name: Let Git report non-ASCII paths unquoted
+        run: git config core.quotepath false
+
+      - name: Check out the PR base
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: git worktree add --detach "$RUNNER_TEMP/pr-base" "$BASE_SHA"
+
+      - name: Download shared inputs
+        uses: actions/download-artifact@v7
+        with:
+          name: rebrand-inputs-${{ github.run_number }}
+          path: ${{ runner.temp }}
+
+      - name: Apply shared inputs
+        run: |
+          tar -xf "$RUNNER_TEMP/inputs.tar" -C "$RUNNER_TEMP"
+          scripts/rebrand/apply_artifacts.sh "$RUNNER_TEMP/pr-base" \
+            "$RUNNER_TEMP/artifacts/data" "$RUNNER_TEMP/artifacts/announcements"
+          cp "$RUNNER_TEMP/contributors.md" "$RUNNER_TEMP/pr-base"/content/contributors/tenzing.md
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@75d2e84710de30f6ff7268e08f310b60ef14033f
+        with:
+          hugo-version: ${{ env.HUGO_VERSION }}
+          extended: ${{ env.HUGO_EXTENDED }}
+
+      # HUGO_ENV=staging adds noindex and leaves out Google Analytics.
+      - name: Build the PR base
+        working-directory: ${{ runner.temp }}/pr-base
+        run: hugo --gc --minify --destination "$GITHUB_WORKSPACE/public" --baseURL "$PREVIEW_URL"
+        env:
+          HUGO_ENV: staging
+
+      - name: Point root-relative links at the subfolder
+        run: python3 scripts/rebrand/preview_paths.py public --base "$PREVIEW_BASE"
+
+      - name: Pack pages and bundles
+        working-directory: public
+        run: find . -type f \( -name '*.html' -o -name '*.css' -o -name '*.js' \) -print0 | tar --null -T - -cf ../site.tar
+
+      - name: Upload site artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: rebrand-pr-base-${{ github.run_number }}
+          path: site.tar
+          retention-days: 1
+          compression-level: 1
+          overwrite: true  # A rerun reuses the run number.
+          if-no-files-found: error
+
+  pages:
+    name: Select browser checks
+    runs-on: ubuntu-22.04
+    needs: [inputs, build, reference]
+    if: always() && needs.build.result == 'success' && (needs.reference.result == 'success' || needs.inputs.outputs.scoped == 'false')
+    outputs:
+      mode: ${{ steps.selection.outputs.mode }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/download-artifact@v7
+        if: needs.inputs.outputs.scoped == 'true'
+        with:
+          name: rebrand-preview-${{ github.run_number }}
+          path: head
+      - uses: actions/download-artifact@v7
+        if: needs.inputs.outputs.scoped == 'true'
+        with:
+          name: rebrand-pr-base-${{ github.run_number }}
+          path: base
+      - name: Compare pages and bundles
+        id: selection
+        env:
+          SCOPED: ${{ needs.inputs.outputs.scoped }}
+        run: |
+          if [ "$SCOPED" = true ]; then
+            tar -xf base/site.tar -C base
+            tar -xf head/site.tar -C head
+            python3 scripts/rebrand/changed_pages.py base head --out changed.json | tee selection.log
+          else
+            python3 scripts/rebrand/changed_pages.py --full --out changed.json | tee selection.log
+          fi
+          sed -n 's/^Check mode: /mode=/p' selection.log >> "$GITHUB_OUTPUT"
+        shell: bash
+      - uses: actions/upload-artifact@v7
+        with:
+          name: rebrand-pages-${{ github.run_number }}
+          path: changed.json
+          retention-days: 1
+          overwrite: true
           if-no-files-found: error
 
   compare:
@@ -236,22 +388,40 @@ jobs:
   design:
     name: Designed screens
     runs-on: ubuntu-22.04
-    needs: build
+    needs: [build, pages]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
 
+      - name: Download page selection
+        uses: actions/download-artifact@v7
+        with:
+          name: rebrand-pages-${{ github.run_number }}
+
+      - name: Report check mode and pages
+        run: PYTHONPATH=scripts/rebrand python3 -c 'from changed_pages import load_selection; load_selection("changed.json")'
+
       - name: Download the branch's build
+        if: needs.pages.outputs.mode != 'none'
         uses: actions/download-artifact@v7
         with:
           name: rebrand-preview-${{ github.run_number }}
 
       - name: Unpack the site
+        if: needs.pages.outputs.mode != 'none'
         run: mkdir public && tar -xf site.tar -C public
 
+      - name: Cache Chromium
+        if: needs.pages.outputs.mode != 'none'
+        uses: actions/cache@v5
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ runner.arch }}-${{ env.PLAYWRIGHT_VERSION }}-chromium
+
       - name: Install Playwright
+        if: needs.pages.outputs.mode != 'none'
         run: |
-          pip install --quiet playwright==1.63.0 pillow
+          pip install --quiet "playwright==$PLAYWRIGHT_VERSION" pillow
           # The runner image already has Chromium's libraries; --with-deps adds fonts from the
           # Ubuntu mirror. When the mirror is unreachable, install the browser without them.
           playwright install --with-deps chromium || {
@@ -261,36 +431,56 @@ jobs:
 
       # Runs its sections in four browsers side by side; each section's time is in the log.
       - name: Designed screens in a browser (overflow, position, layout shift, pause, directory)
-        run: python3 scripts/rebrand/check_design.py public --base "$PREVIEW_BASE" --jobs 4
+        if: needs.pages.outputs.mode != 'none'
+        run: python3 scripts/rebrand/check_design.py public --pages changed.json --base "$PREVIEW_BASE" --jobs 4
 
   axe:
     name: Accessibility rules
     runs-on: ubuntu-22.04
-    needs: build
+    needs: [build, pages]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
 
+      - name: Download page selection
+        uses: actions/download-artifact@v7
+        with:
+          name: rebrand-pages-${{ github.run_number }}
+
+      - name: Report check mode and pages
+        run: PYTHONPATH=scripts/rebrand python3 -c 'from changed_pages import load_selection; load_selection("changed.json")'
+
       - name: Download the branch's build
+        if: needs.pages.outputs.mode != 'none'
         uses: actions/download-artifact@v7
         with:
           name: rebrand-preview-${{ github.run_number }}
 
       - name: Unpack the site
+        if: needs.pages.outputs.mode != 'none'
         run: mkdir public && tar -xf site.tar -C public
 
+      - name: Cache Chromium
+        if: needs.pages.outputs.mode != 'none'
+        uses: actions/cache@v5
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ runner.arch }}-${{ env.PLAYWRIGHT_VERSION }}-chromium
+
       - name: Install Playwright
+        if: needs.pages.outputs.mode != 'none'
         run: |
-          pip install --quiet playwright==1.63.0
+          pip install --quiet "playwright==$PLAYWRIGHT_VERSION"
           playwright install --with-deps chromium || {
             echo "::warning::Could not install Chromium's system packages; installing the browser without them"
             playwright install chromium
           }
 
       - name: Accessibility rules in a browser (axe-core, by WCAG level)
+        if: needs.pages.outputs.mode != 'none'
         run: |
           curl -fsSL https://cdn.jsdelivr.net/npm/axe-core@4.11.1/axe.min.js -o "$RUNNER_TEMP/axe.min.js"
-          python3 scripts/rebrand/check_axe.py public --base "$PREVIEW_BASE" --axe "$RUNNER_TEMP/axe.min.js"
+          python3 scripts/rebrand/check_axe.py public --pages changed.json --base "$PREVIEW_BASE" --axe "$RUNNER_TEMP/axe.min.js"
 
   deploy:
     name: Deploy preview
@@ -322,9 +512,9 @@ jobs:
   checks:
     name: Check results
     runs-on: ubuntu-22.04
-    needs: [build, compare, design, axe]
+    needs: [inputs, build, compare, design, axe]
     # Report even when a check job failed; skip only when the build was skipped (fork PRs).
-    if: always() && needs.build.result != 'skipped'
+    if: always() && needs.inputs.result != 'skipped'
     steps:
       - name: Fail if any check failed
         env:
