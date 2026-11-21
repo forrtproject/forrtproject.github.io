@@ -28,10 +28,13 @@ import sys
 import tempfile
 import threading
 import time
+from pathlib import Path
 from urllib.parse import urlsplit
 
 from playwright.sync_api import Error as PlaywrightError, sync_playwright
 from playwright.sync_api import TimeoutError as PlaywrightTimeoutError
+
+from changed_pages import load_selection
 
 WIDTHS = {390: 844, 1024: 768, 1440: 900}
 SCREENS = {
@@ -178,8 +181,10 @@ def new_page(browser, width, errors=None, **options):
     return page
 
 
-def check_screens(browser, base, failures):
+def check_screens(browser, base, failures, selected=None):
     for name, path in SCREENS.items():
+        if selected is not None and "/" + path not in selected:
+            continue
         for width in WIDTHS:
             errors = []
             page = new_page(browser, width, errors)
@@ -201,7 +206,7 @@ def check_screens(browser, base, failures):
             page.context.close()
 
 
-def article_paths(root):
+def article_paths(root, selected=None):
     """Pages drawn on the reading layout, from the build."""
     paths = []
     for directory, _, files in os.walk(root):
@@ -209,6 +214,8 @@ def article_paths(root):
             with open(os.path.join(directory, "index.html"), encoding="utf-8", errors="replace") as handle:
                 if re.search(r'class="?article-layout', handle.read()):
                     paths.append(os.path.relpath(directory, root).replace(os.sep, "/") + "/")
+    if selected is not None:
+        return sorted(path for path in paths if "/" + path in selected)
     # The two generated collections have over a thousand pages from one template, so take a sample.
     chosen = []
     seen = {}
@@ -243,7 +250,7 @@ def check_articles(browser, base, paths, failures, widths=WIDTHS):
         page.context.close()
 
 
-def check_callouts(browser, base, root, failures):
+def check_callouts(browser, base, root, failures, selected=None):
     """Call-outs sit in the right-hand column from 1240px, clear of each other, and in the text below that."""
     paths = []
     for directory, _, files in os.walk(root):
@@ -251,6 +258,10 @@ def check_callouts(browser, base, root, failures):
             with open(os.path.join(directory, "index.html"), encoding="utf-8", errors="replace") as handle:
                 if re.search(r'<aside class="?callout', handle.read()):  # A minified build drops the quote.
                     paths.append(os.path.relpath(directory, root).replace(os.sep, "/") + "/")
+    if selected is not None:
+        paths = [path for path in paths if "/" + path in selected]
+        if not paths:
+            return
     print(f"  {len(paths)} pages")
     if not paths:
         failures.append("no page uses a call-out, so the call-out check tested nothing")
@@ -323,7 +334,7 @@ def read_settled(page, expression):
     return page.evaluate(expression)
 
 
-def check_samples(browser, base, failures):
+def check_samples(browser, base, failures, selected=None):
     """Nothing runs wider than the screen, past its footer or hides a button on the sample pages, with
     their retained templates too."""
     with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "sample_pages.json"), encoding="utf-8") as handle:
@@ -332,6 +343,8 @@ def check_samples(browser, base, failures):
     for width in WIDTHS:
         page = new_page(browser, width)
         for name, path in samples.items():
+            if selected is not None and "/" + path.lstrip("/") not in selected:
+                continue
             page.goto(base + path.lstrip("/"), wait_until="load", timeout=120000)
             page.wait_for_timeout(300)
             over = read_settled(page, wider)
@@ -346,7 +359,7 @@ def check_samples(browser, base, failures):
         page.context.close()
 
 
-def check_other_widths(browser, base, failures):
+def check_other_widths(browser, base, failures, selected=None):
     """No overflow at the layout's breakpoints, or with text enlarged to 200% (checklist C6, C9)."""
     enlarge = """() => {
       const sizes = [...document.querySelectorAll('body *')].map((el) => [el, parseFloat(getComputedStyle(el).fontSize)]);
@@ -354,6 +367,8 @@ def check_other_widths(browser, base, failures):
     }"""
     wider = "document.documentElement.scrollWidth - document.documentElement.clientWidth"
     for name, path in SCREENS.items():
+        if selected is not None and "/" + path not in selected:
+            continue
         for width in (761, 1000, 1001, 1240, 1241):
             page = new_page(browser, width)
             page.goto(base + path, wait_until="load", timeout=120000)
@@ -563,39 +578,45 @@ def check_tower_game(browser, base, expect):
     page.context.close()
 
 
-def check_phone_reading(browser, base, failures):
+def check_phone_reading(browser, base, failures, selected=None):
     """On a phone the chat launcher is a small button in the bottom corner, and an embed's panel is not clipped."""
     # The phone contents list is widest just before the side card appears. These articles have long headings.
-    check_articles(browser, base, (
+    paths = (
         "educators-corner/003-developing-tools/",
         "educators-corner/018-accessible-feedback-in-research/",
         "pedagogies/004-thomas-rhys-evans/",
-    ), failures, widths=(1000,))
+    )
+    check_articles(browser, base, [path for path in paths if selected is None or "/" + path in selected],
+                   failures, widths=(1000,))
     expect = expectation(failures, "phone reading")
     page = new_page(browser, 390)
-    page.goto(base + "glossary/english/abstract_bias/", wait_until="load")
-    page.wait_for_timeout(300)
-    page.evaluate("scrollBy(0, 500)")
-    page.wait_for_timeout(500)
-    box = page.evaluate("(() => { const r = document.getElementById('just-os-btn').getBoundingClientRect();"
-                        " const banner = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--banner')) || 0;"
-                        " return {w: r.width, h: r.height, right: innerWidth - r.right, bottom: innerHeight - r.bottom - banner}; })()")
-    # It rises above the cookie banner while that shows (--banner), so the corner is measured from the banner.
-    expect(0 < box["w"] <= 64 and box["h"] > 0 and 0 <= box["right"] <= 24 and 0 <= box["bottom"] <= 40,
-           f"the launcher is a button of at most 64 px in the bottom corner ({box['w']:.0f} px wide, "
-           f"{box['right']:.0f} px from the side, {box['bottom']:.0f} px from the bottom)")
-    page.locator("#just-os-btn").tap()
-    page.wait_for_timeout(3000)
-    expect(page.evaluate("document.getElementById('just-os-window')?.style.display === 'flex'"), "tapping the launcher opens the chat")
-    page.goto(base + "neurodiversity-lessonbank/implicit_bias/", wait_until="load")
-    page.wait_for_timeout(300)
-    panels = page.locator(".click-to-load").count()
-    expect(panels > 0, f"the lesson page has embed panels ({panels})")
-    clipped = page.evaluate("""[...document.querySelectorAll('.click-to-load')].filter((panel) =>
-      panel.parentElement && getComputedStyle(panel.parentElement).overflow === 'hidden'
-      && panel.getBoundingClientRect().height > panel.parentElement.getBoundingClientRect().height + 1).length""")
-    expect(clipped == 0, f"{clipped} embed panels clipped by their box")
+    if selected is None or "/glossary/english/abstract_bias/" in selected:
+        page.goto(base + "glossary/english/abstract_bias/", wait_until="load")
+        page.wait_for_timeout(300)
+        page.evaluate("scrollBy(0, 500)")
+        page.wait_for_timeout(500)
+        box = page.evaluate("(() => { const r = document.getElementById('just-os-btn').getBoundingClientRect();"
+                            " const banner = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--banner')) || 0;"
+                            " return {w: r.width, h: r.height, right: innerWidth - r.right, bottom: innerHeight - r.bottom - banner}; })()")
+        # It rises above the cookie banner while that shows (--banner), so the corner is measured from the banner.
+        expect(0 < box["w"] <= 64 and box["h"] > 0 and 0 <= box["right"] <= 24 and 0 <= box["bottom"] <= 40,
+               f"the launcher is a button of at most 64 px in the bottom corner ({box['w']:.0f} px wide, "
+               f"{box['right']:.0f} px from the side, {box['bottom']:.0f} px from the bottom)")
+        page.locator("#just-os-btn").tap()
+        page.wait_for_timeout(3000)
+        expect(page.evaluate("document.getElementById('just-os-window')?.style.display === 'flex'"), "tapping the launcher opens the chat")
+    if selected is None or "/neurodiversity-lessonbank/implicit_bias/" in selected:
+        page.goto(base + "neurodiversity-lessonbank/implicit_bias/", wait_until="load")
+        page.wait_for_timeout(300)
+        panels = page.locator(".click-to-load").count()
+        expect(panels > 0, f"the lesson page has embed panels ({panels})")
+        clipped = page.evaluate("""[...document.querySelectorAll('.click-to-load')].filter((panel) =>
+          panel.parentElement && getComputedStyle(panel.parentElement).overflow === 'hidden'
+          && panel.getBoundingClientRect().height > panel.parentElement.getBoundingClientRect().height + 1).length""")
+        expect(clipped == 0, f"{clipped} embed panels clipped by their box")
     page.context.close()
+    if selected is not None and "/clusters/cluster-1/" not in selected:
+        return
     for width in (390, 1024, 1440):
         page = new_page(browser, width)
         page.context.add_cookies([{"name": "forrt_analytics_choice", "value": "deny", "url": base}])  # Banner shut.
@@ -764,18 +785,22 @@ SPECIALIST_SHOWN = """() => {
 }"""
 
 
-def check_specialist_cards(browser, base, failures):
+def check_specialist_cards(browser, base, failures, selected=None):
     """A cluster page hides its specialist resources until their checkbox is ticked, as the box shows."""
     expect = expectation(failures, "specialist resources")
     page = new_page(browser, 1440)
     page.context.add_cookies([{"name": "forrt_analytics_choice", "value": "deny", "url": base}])  # Banner shut.
+    total = 0
     for number in range(1, 12):
+        if selected is not None and f"/clusters/cluster-{number}/" not in selected:
+            continue
         page.goto(base + f"clusters/cluster-{number}/", wait_until="load")
         page.wait_for_timeout(500)
         total, shown = page.evaluate(SPECIALIST_SHOWN)
         if total:
             break
-    expect(total > 0, "a cluster page has specialist resources to test")
+    if selected is None:
+        expect(total > 0, "a cluster page has specialist resources to test")
     if total:
         box = page.locator("#fr-global-specificity-checkbox")
         expect(not box.is_checked(), f"cluster {number}: the box starts unticked")
@@ -852,7 +877,7 @@ FLOATING_PAGES = ("contributors/", "citation-politics/toolkit/", "disciplines/",
 FLOATING_WIDTHS = (390, 1024, 1280, 1440, 1800)  # From 1800 px the launcher has its hover and focus label.
 
 
-def check_floating_controls(browser, base, widths, failures):
+def check_floating_controls(browser, base, widths, paths, failures, selected=None):
     """The chat launcher, its invitation and label, and back to top cover nothing of the page, wherever it is scrolled.
     Below 1440 px the launcher and back to top float in the bottom corner, so mid-page they need only keep off each
     other; at the end of the page, which the footer pads for them, they still cover nothing.
@@ -870,7 +895,9 @@ def check_floating_controls(browser, base, widths, failures):
         page = new_page(browser, width)
         page.context.add_cookies([{"name": "forrt_analytics_choice", "value": "deny", "url": base}])  # Banner shut.
         page.clock.install()
-        for path in FLOATING_PAGES:
+        for path in paths:
+            if selected is not None and "/" + path not in selected:
+                continue
             covered = {}
 
             def look(state, selector="#just-os-bubble", floating=False):
@@ -890,7 +917,8 @@ def check_floating_controls(browser, base, widths, failures):
                 page.locator(".acc-trigger", has_text="Psychology").first.click()
             if path == "clusters/cluster-1/":
                 page.locator(".acc-toggle-all").first.click()  # Every sub-cluster open: the page a reader scrolls.
-            page.clock.run_for(10500)  # The invitation's first turn, at the top of the page.
+            # The invitation interval fires once per jump, without replaying animation frames.
+            page.clock.fast_forward(10500)  # The invitation's first turn, at the top of the page.
             page.wait_for_timeout(400)
             look("invitation at the top")
             end = page.evaluate("document.documentElement.scrollHeight - innerHeight")
@@ -904,7 +932,7 @@ def check_floating_controls(browser, base, widths, failures):
                 look(f"back to top at {where}", ".clusters-back-to-top", floating)
                 back_to_top = back_to_top or page.evaluate(BACK_TO_TOP_SHOWN)
                 for turn in range(2):  # One of two turns of its cycle shows the invitation, where it may show.
-                    page.clock.run_for(10000)
+                    page.clock.fast_forward(10000)
                     page.wait_for_timeout(400)
                     look(f"invitation at {where}")
                 page.hover("#just-os-btn")
@@ -970,75 +998,89 @@ TOOLKIT_SEARCH = """async () => {
 }"""
 
 
-def check_directory_widths(browser, base, failures):
+def check_directory_widths(browser, base, failures, selected=None):
     """At 1440 px directories use the width, the chart on Publications and the toolkit's wheel do not take over
     the first view, and the toolkit's search empties, narrows and restores its entries."""
     expect = expectation(failures, "directory widths")
     page = new_page(browser, 1440)
     page.context.add_cookies([{"name": "forrt_analytics_choice", "value": "deny", "url": base}])  # Banner shut.
     for path, selector in DIRECTORIES.items():
+        if selected is not None and "/" + path not in selected:
+            continue
         page.goto(base + path, wait_until="load")
         width = page.evaluate("(s) => document.querySelector(s)?.getBoundingClientRect().width || 0", selector)
         expect(width >= DIRECTORY_MIN_WIDTH, f"{path}: {selector} is {width:.0f} px wide, at least {DIRECTORY_MIN_WIDTH}")
     for path in TOOL_PAGES:
+        if selected is not None and "/" + path not in selected:
+            continue
         page.goto(base + path, wait_until="load")
         page.evaluate("document.fonts.ready.then(() => null)")
         bottom = page.evaluate("document.querySelector('.page-actions .btn-primary')?.getBoundingClientRect().bottom ?? Infinity")
         expect(bottom <= page.viewport_size["height"], f"{path}: the main action ends {bottom:.0f} px down, within the first view")
     # A picture several posts share (the newsletters' stock photo) is left out; a post's own picture stays,
     # after its link on a short post.
-    page.goto(base + "post/2026-01-newsletter/", wait_until="load")
-    shared = page.evaluate("document.querySelectorAll('.reading .article-image').length")
-    expect(shared == 0, "a newsletter post leaves out the stock picture the newsletters share")
-    page.goto(base + "post/2026-05-chinese-glossary/", wait_until="load")
-    order = page.evaluate("""() => {
-      const link = document.querySelector('.article-style a');
-      const image = document.querySelector('.reading .article-image');
-      return !!link && !!image && !!(link.compareDocumentPosition(image) & Node.DOCUMENT_POSITION_FOLLOWING);
-    }""")
-    expect(order, "a short news post keeps its own image, after its link")
-    page.goto(base + "publications/", wait_until="load")
-    chart_width, share = page.evaluate("""() => {
-      const box = document.querySelector('.cite-chart, .citation-container img').getBoundingClientRect();
-      const seen = Math.max(0, Math.min(box.bottom, innerHeight) - Math.max(box.top, 0));
-      return [box.width, seen * box.width / (innerWidth * innerHeight)];
-    }""")
-    expect(chart_width <= CHART_WIDTH_LIMIT, f"the citation chart is {chart_width:.0f} px wide, limit {CHART_WIDTH_LIMIT}")
-    expect(share <= FIRST_VIEW_IMAGE_LIMIT, f"the citation chart takes {share:.0%} of the first view, limit {FIRST_VIEW_IMAGE_LIMIT:.0%}")
-    page.goto(base + "citation-politics/toolkit/", wait_until="load")
-    wheel_width, share = page.evaluate("""() => {
-      const box = document.querySelector('.cpt-wheel img').getBoundingClientRect();
-      const seen = Math.max(0, Math.min(box.bottom, innerHeight) - Math.max(box.top, 0));
-      return [box.width, seen * box.width / (innerWidth * innerHeight)];
-    }""")
-    expect(wheel_width <= WHEEL_WIDTH_LIMIT, f"the toolkit's wheel is {wheel_width:.0f} px wide, limit {WHEEL_WIDTH_LIMIT}")
-    expect(share <= FIRST_VIEW_IMAGE_LIMIT, f"the toolkit's wheel takes {share:.0%} of the first view, limit {FIRST_VIEW_IMAGE_LIMIT:.0%}")
-    found = page.evaluate(TOOLKIT_SEARCH)
-    expect(found["before"] > 0 and found["none"] == 0 and found["empty"], f"a toolkit search with no match hides every entry and says so: {found}")
-    expect(0 < found["some"] < found["before"], f"a toolkit search for 'gender' narrows the entries: {found}")
-    expect(found["after"] == found["before"] and found["cleared"], f"clearing the toolkit search shows every entry again: {found}")
-    page.goto(base + "just_os_chatbot/", wait_until="load")
-    page.wait_for_selector(".just-os-input")
-    bottom = page.evaluate("document.querySelector('.just-os-input').getBoundingClientRect().bottom - innerHeight")
-    expect(bottom <= 0, f"the chatbot page's input ends {bottom:.0f} px below the first view")
-    page.goto(base + "booklet/", wait_until="load")
-    frame = page.evaluate("(() => { const box = document.querySelector('._df_book').getBoundingClientRect(); return box.width / box.height; })()")
-    expect(frame <= 1.4, f"the booklet's frame is {frame:.2f} times as wide as it is high, so a spread would be clipped; limit 1.4")
-    page.goto(base + "about/steering-committee/", wait_until="load")
-    tops = page.evaluate("[...document.querySelectorAll('.sc-team')].map((team) => Math.round(team.getBoundingClientRect().top))")
-    expect(len(set(tops)) < len(tops), "no small Steering Committee team sits beside another")
+    if selected is None or "/post/2026-01-newsletter/" in selected:
+        page.goto(base + "post/2026-01-newsletter/", wait_until="load")
+        shared = page.evaluate("document.querySelectorAll('.reading .article-image').length")
+        expect(shared == 0, "a newsletter post leaves out the stock picture the newsletters share")
+    if selected is None or "/post/2026-05-chinese-glossary/" in selected:
+        page.goto(base + "post/2026-05-chinese-glossary/", wait_until="load")
+        order = page.evaluate("""() => {
+          const link = document.querySelector('.article-style a');
+          const image = document.querySelector('.reading .article-image');
+          return !!link && !!image && !!(link.compareDocumentPosition(image) & Node.DOCUMENT_POSITION_FOLLOWING);
+        }""")
+        expect(order, "a short news post keeps its own image, after its link")
+    if selected is None or "/publications/" in selected:
+        page.goto(base + "publications/", wait_until="load")
+        chart_width, share = page.evaluate("""() => {
+          const box = document.querySelector('.cite-chart, .citation-container img').getBoundingClientRect();
+          const seen = Math.max(0, Math.min(box.bottom, innerHeight) - Math.max(box.top, 0));
+          return [box.width, seen * box.width / (innerWidth * innerHeight)];
+        }""")
+        expect(chart_width <= CHART_WIDTH_LIMIT, f"the citation chart is {chart_width:.0f} px wide, limit {CHART_WIDTH_LIMIT}")
+        expect(share <= FIRST_VIEW_IMAGE_LIMIT, f"the citation chart takes {share:.0%} of the first view, limit {FIRST_VIEW_IMAGE_LIMIT:.0%}")
+    if selected is None or "/citation-politics/toolkit/" in selected:
+        page.goto(base + "citation-politics/toolkit/", wait_until="load")
+        wheel_width, share = page.evaluate("""() => {
+          const box = document.querySelector('.cpt-wheel img').getBoundingClientRect();
+          const seen = Math.max(0, Math.min(box.bottom, innerHeight) - Math.max(box.top, 0));
+          return [box.width, seen * box.width / (innerWidth * innerHeight)];
+        }""")
+        expect(wheel_width <= WHEEL_WIDTH_LIMIT, f"the toolkit's wheel is {wheel_width:.0f} px wide, limit {WHEEL_WIDTH_LIMIT}")
+        expect(share <= FIRST_VIEW_IMAGE_LIMIT, f"the toolkit's wheel takes {share:.0%} of the first view, limit {FIRST_VIEW_IMAGE_LIMIT:.0%}")
+        found = page.evaluate(TOOLKIT_SEARCH)
+        expect(found["before"] > 0 and found["none"] == 0 and found["empty"], f"a toolkit search with no match hides every entry and says so: {found}")
+        expect(0 < found["some"] < found["before"], f"a toolkit search for 'gender' narrows the entries: {found}")
+        expect(found["after"] == found["before"] and found["cleared"], f"clearing the toolkit search shows every entry again: {found}")
+    if selected is None or "/just_os_chatbot/" in selected:
+        page.goto(base + "just_os_chatbot/", wait_until="load")
+        page.wait_for_selector(".just-os-input")
+        bottom = page.evaluate("document.querySelector('.just-os-input').getBoundingClientRect().bottom - innerHeight")
+        expect(bottom <= 0, f"the chatbot page's input ends {bottom:.0f} px below the first view")
+    if selected is None or "/booklet/" in selected:
+        page.goto(base + "booklet/", wait_until="load")
+        frame = page.evaluate("(() => { const box = document.querySelector('._df_book').getBoundingClientRect(); return box.width / box.height; })()")
+        expect(frame <= 1.4, f"the booklet's frame is {frame:.2f} times as wide as it is high, so a spread would be clipped; limit 1.4")
+    if selected is None or "/about/steering-committee/" in selected:
+        page.goto(base + "about/steering-committee/", wait_until="load")
+        tops = page.evaluate("[...document.querySelectorAll('.sc-team')].map((team) => Math.round(team.getBoundingClientRect().top))")
+        expect(len(set(tops)) < len(tops), "no small Steering Committee team sits beside another")
     page.context.close()
 
 
-def check_directory(browser, base, failures):
+def check_directory(browser, base, failures, selected=None):
     expect = expectation(failures, "directory")
-    topics = new_page(browser, 1440)
-    topics.goto(base, wait_until="load")
-    wanted = topics.evaluate("[...document.querySelectorAll('.topic')].map(a => new URL(a.href).searchParams.get('cluster'))")
-    topics.goto(base + "resources/", wait_until="load")
-    known = topics.evaluate("[...document.querySelectorAll('.facet[data-facet=cluster] .chip')].map(c => c.dataset.value)")
-    expect(wanted and set(wanted) <= set(known), f"every topic button names a real cluster: {sorted(set(wanted) - set(known))}")
-    topics.context.close()
+    if selected is None or {"/", "/resources/"} & selected:
+        topics = new_page(browser, 1440)
+        topics.goto(base, wait_until="load")
+        wanted = topics.evaluate("[...document.querySelectorAll('.topic')].map(a => new URL(a.href).searchParams.get('cluster'))")
+        topics.goto(base + "resources/", wait_until="load")
+        known = topics.evaluate("[...document.querySelectorAll('.facet[data-facet=cluster] .chip')].map(c => c.dataset.value)")
+        expect(wanted and set(wanted) <= set(known), f"every topic button names a real cluster: {sorted(set(wanted) - set(known))}")
+        topics.context.close()
+    if selected is not None and "/resources/" not in selected:
+        return
     page = new_page(browser, 1440)
     requests = []
     page.on("request", lambda request: requests.append(request.url))
@@ -1417,21 +1459,24 @@ PANEL_TEXT = """() => [...document.querySelectorAll('.cluster-description, .acc-
   .filter((el) => el.getClientRects().length).map((el) => Math.round(el.getBoundingClientRect().width))"""
 
 
-def check_review_pages(browser, base, failures):
+def check_review_pages(browser, base, failures, selected=None):
     """Fixes from the final design review: the abstract toggle says what it does, panel text keeps to
     the reading measure on a wide screen, the booklet turns one page at a time on a phone whatever its
     browser calls itself, and the community map opens on its members and can zoom out on a phone."""
     expect = expectation(failures, "review fixes")
     page = new_page(browser, 1440)
-    page.goto(base + "publications/", wait_until="load", timeout=120000)
-    toggle = page.locator(".btn-toggle-abstract").first
-    state = "(el) => [el.textContent.trim(), el.getAttribute('aria-expanded')]"
-    expect(toggle.evaluate(state) == ["Show Abstract", "false"], f"a closed abstract offers Show Abstract: {toggle.evaluate(state)}")
-    toggle.click()
-    expect(toggle.evaluate(state) == ["Hide Abstract", "true"], f"an open abstract offers Hide Abstract: {toggle.evaluate(state)}")
-    toggle.click()
-    expect(toggle.evaluate(state) == ["Show Abstract", "false"], "closing it again offers Show Abstract")
+    if selected is None or "/publications/" in selected:
+        page.goto(base + "publications/", wait_until="load", timeout=120000)
+        toggle = page.locator(".btn-toggle-abstract").first
+        state = "(el) => [el.textContent.trim(), el.getAttribute('aria-expanded')]"
+        expect(toggle.evaluate(state) == ["Show Abstract", "false"], f"a closed abstract offers Show Abstract: {toggle.evaluate(state)}")
+        toggle.click()
+        expect(toggle.evaluate(state) == ["Hide Abstract", "true"], f"an open abstract offers Hide Abstract: {toggle.evaluate(state)}")
+        toggle.click()
+        expect(toggle.evaluate(state) == ["Show Abstract", "false"], "closing it again offers Show Abstract")
     for path in ("clusters/", "disciplines/"):
+        if selected is not None and "/" + path not in selected:
+            continue
         page.goto(base + path, wait_until="load", timeout=120000)
         page.evaluate("document.querySelectorAll('.acc-toggle-all').forEach((b) => b.click())")
         page.wait_for_timeout(300)
@@ -1440,30 +1485,32 @@ def check_review_pages(browser, base, failures):
     page.context.close()
 
     page = new_page(browser, 390)
-    page.goto(base + "booklet/", wait_until="load", timeout=120000)
-    page.wait_for_selector(".df-ui-next:not(.df-ui-alt)", timeout=60000)
-    page.wait_for_timeout(1500)
-    page.locator(".df-ui-next:not(.df-ui-alt)").first.click()
-    page.wait_for_timeout(1500)
-    turned = page.evaluate("document.querySelector('#df_book_page_number')?.value")
-    expect(turned == "2", f"one turn of the booklet at 390 shows page 2, not a spread: page {turned}")
-    page.goto(base + "community-map/", wait_until="load", timeout=120000)
-    frame = "iframe[title='FORRT Community Map']"
-    page.locator(frame).scroll_into_view_if_needed()
-    try:
-        page.wait_for_function(f"""() => {{ const w = document.querySelector("{frame}").contentWindow;
-          const m = w && w.HTMLWidgets && w.HTMLWidgets.find('.leaflet')?.getMap(); return m && m.getMinZoom() < 2; }}""", timeout=30000)
-        ready = True
-    except PlaywrightError:
-        ready = False
-    expect(ready, "the community map is ready, with a minimum zoom below 2, within 30 s at 390")
-    if ready:
-        found = page.frame_locator(frame).locator("body").evaluate("""() => {
-          const m = HTMLWidgets.find('.leaflet').getMap(), b = m.getBounds();
-          return {span: b.getEast() - b.getWest(), zoomOut: m.getZoom() > m.getMinZoom()};
-        }""")
-        expect(found["span"] >= 300, f"the community map opens on its members from America to New Zealand at 390: {found['span']:.0f} degrees across")
-        expect(found["zoomOut"], "the community map can zoom out from its first view at 390")
+    if selected is None or "/booklet/" in selected:
+        page.goto(base + "booklet/", wait_until="load", timeout=120000)
+        page.wait_for_selector(".df-ui-next:not(.df-ui-alt)", timeout=60000)
+        page.wait_for_timeout(1500)
+        page.locator(".df-ui-next:not(.df-ui-alt)").first.click()
+        page.wait_for_timeout(1500)
+        turned = page.evaluate("document.querySelector('#df_book_page_number')?.value")
+        expect(turned == "2", f"one turn of the booklet at 390 shows page 2, not a spread: page {turned}")
+    if selected is None or "/community-map/" in selected:
+        page.goto(base + "community-map/", wait_until="load", timeout=120000)
+        frame = "iframe[title='FORRT Community Map']"
+        page.locator(frame).scroll_into_view_if_needed()
+        try:
+            page.wait_for_function(f"""() => {{ const w = document.querySelector("{frame}").contentWindow;
+              const m = w && w.HTMLWidgets && w.HTMLWidgets.find('.leaflet')?.getMap(); return m && m.getMinZoom() < 2; }}""", timeout=30000)
+            ready = True
+        except PlaywrightError:
+            ready = False
+        expect(ready, "the community map is ready, with a minimum zoom below 2, within 30 s at 390")
+        if ready:
+            found = page.frame_locator(frame).locator("body").evaluate("""() => {
+              const m = HTMLWidgets.find('.leaflet').getMap(), b = m.getBounds();
+              return {span: b.getEast() - b.getWest(), zoomOut: m.getZoom() > m.getMinZoom()};
+            }""")
+            expect(found["span"] >= 300, f"the community map opens on its members from America to New Zealand at 390: {found['span']:.0f} degrees across")
+            expect(found["zoomOut"], "the community map can zoom out from its first view at 390")
     page.context.close()
 
 
@@ -1580,7 +1627,7 @@ def worker_server(public, subfolder):
 
 def run_section(job):
     """Run one section in its own browser and server, and return what it printed and found."""
-    title, name, extra, public, url, subfolder, engine = job
+    title, name, extra, public, url, subfolder, engine, selected = job
     failures, out, value = [], io.StringIO(), None
     start = time.monotonic()
     try:
@@ -1589,7 +1636,13 @@ def run_section(job):
             with sync_playwright() as playwright:
                 browser = getattr(playwright, engine).launch()
                 try:
-                    value = globals()[name](browser, base, *extra, failures)
+                    options = {}
+                    if name in {"check_floating_controls", "check_screens", "check_other_widths",
+                                "check_samples", "check_callouts", "check_phone_reading",
+                                "check_directory_widths", "check_specialist_cards", "check_review_pages",
+                                "check_directory"}:
+                        options["selected"] = selected
+                    value = globals()[name](browser, base, *extra, failures, **options)
                 finally:
                     browser.close()
     except Exception as error:  # A crash fails the section rather than dropping it.
@@ -1601,16 +1654,21 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("public", nargs="?")
     parser.add_argument("--url")
+    parser.add_argument("--pages", help="JSON from changed_pages.py")
     parser.add_argument("--base", default="/", help="subfolder the build expects to be served from")
     parser.add_argument("--browser", default="chromium", choices=("chromium", "firefox", "webkit"),
                         help="engine to run in; the throttled layout-shift test and the budgets need Chromium")
     parser.add_argument("--jobs", type=int, default=min(4, os.cpu_count() or 1),
                         help="browsers to run side by side (default: up to 4)")
     args = parser.parse_args()
+    mode, pages = load_selection(args.pages)
+    if mode == "none":
+        return
+    selected = pages if mode == "changed" else None
     public = os.path.abspath(args.public) if args.public else None
     url = args.url.rstrip("/") + "/" if args.url else None
     failures = []
-    if public:
+    if public and mode == "full":
         print("Icons")
         check_icons(public, failures)
         print("Pages named in the checks are not redirects")
@@ -1622,10 +1680,19 @@ def main():
 
     # Each section opens its own pages, so sections run side by side, each with its own browser
     # and server. The longest are split into parts and start first.
-    # The floating controls take longest, so they go first, one section per width.
-    sections = [(f"Floating controls at {width} px", "check_floating_controls", ((width,),)) for width in FLOATING_WIDTHS]
+    if mode == "core":
+        sections = [
+            (f"Floating controls on {path} at {width} px", "check_floating_controls", ((width,), (path,)))
+            for path in FLOATING_PAGES for width in (390, 1440)
+        ]
+    else:
+        floating = selected is None or any("/" + path in pages for path in FLOATING_PAGES)
+        sections = [(f"Floating controls at {width} px", "check_floating_controls", ((width,), FLOATING_PAGES))
+                    for width in FLOATING_WIDTHS if floating]
     if public:
-        paths = article_paths(public)
+        paths = article_paths(public, selected)
+        if mode == "core":
+            paths = sorted(set(paths[::4]) | set(article_paths(public, pages)))
         print(f"Every article page: {len(paths)} pages", flush=True)
         shards = max(1, 2 * args.jobs)
         sections += [(f"Every article page, part {i + 1} of {shards}", "check_articles", (paths[i::shards],))
@@ -1634,7 +1701,7 @@ def main():
         ("Screens", "check_screens", ()),
         ("Breakpoints and enlarged text", "check_other_widths", ()),
     ]
-    if public:
+    if public and (mode != "core" or pages):
         sections.append(("Call-outs", "check_callouts", (public,)))
     sections += [
         ("Sample pages", "check_samples", ()),
@@ -1647,7 +1714,42 @@ def main():
         ("Contributor network", "check_contributor_network", ()),
         ("Resources directory", "check_directory", ()),
     ]
-    jobs = [(title, name, extra, public, url, args.base, args.browser) for title, name, extra in sections]
+    page_checks = {
+        "check_screens": tuple(SCREENS.values()),
+        "check_other_widths": tuple(SCREENS.values()),
+        "check_samples": tuple(json.loads(
+            (Path(__file__).with_name("sample_pages.json")).read_text(encoding="utf-8")).values()),
+        "check_phone_reading": (
+            "educators-corner/003-developing-tools/",
+            "educators-corner/018-accessible-feedback-in-research/",
+            "pedagogies/004-thomas-rhys-evans/", "glossary/english/abstract_bias/",
+            "neurodiversity-lessonbank/implicit_bias/", "clusters/cluster-1/",
+        ),
+        "check_directory_widths": (*DIRECTORIES, *TOOL_PAGES, "post/2026-01-newsletter/",
+                                   "post/2026-05-chinese-glossary/", "publications/",
+                                   "citation-politics/toolkit/", "just_os_chatbot/", "booklet/",
+                                   "about/steering-committee/"),
+        "check_specialist_cards": tuple(f"clusters/cluster-{i}/" for i in range(1, 12)),
+        "check_clusters_map": ("clusters/",),
+        "check_conference": (CONFERENCE,),
+        "check_review_pages": ("publications/", "clusters/", "disciplines/", "booklet/", "community-map/"),
+        "check_contributor_network": (NETWORK_PATH,),
+        "check_directory": ("", "resources/"),
+    }
+    core = {"check_floating_controls", "check_articles", "check_screens", "check_other_widths", "check_samples"}
+    jobs = []
+    for title, name, extra in sections:
+        if mode == "core" and name in core:
+            section_pages = None
+        else:
+            section_pages = pages if mode in {"changed", "core"} else None
+            if mode == "core" and not pages:
+                continue
+            if section_pages is not None and name in page_checks and not any(
+                "/" + path.lstrip("/") in section_pages for path in page_checks[name]
+            ):
+                continue
+        jobs.append((title, name, extra, public, url, args.base, args.browser, section_pages))
     if args.jobs > 1:
         with concurrent.futures.ProcessPoolExecutor(args.jobs, mp_context=multiprocessing.get_context("spawn")) as pool:
             futures = [pool.submit(run_section, job) for job in jobs]
@@ -1667,15 +1769,16 @@ def main():
         if title.startswith("Floating controls"):
             invited |= value or set()
     # The invitation is to stay (decision D19), so it must show somewhere.
-    expectation(failures, "floating controls")(
-        invited, f"the invitation shows where there is room for it ({', '.join(sorted(invited)[:3]) or 'nowhere'})")
+    if mode == "full":
+        expectation(failures, "floating controls")(
+            invited, f"the invitation shows where there is room for it ({', '.join(sorted(invited)[:3]) or 'nowhere'})")
 
     # These measure timing (a throttled phone, pauses, page weight), so they run alone.
-    alone = [("Home page", "check_home", ())]
-    if public and args.browser == "chromium":
+    alone = [("Home page", "check_home", ())] if selected is None or "/" in pages else []
+    if public and args.browser == "chromium" and mode == "full":
         alone.append(("Budgets, report only", "report_budgets", (public, args.base)))
     for title, name, extra in alone:
-        title, output, found, seconds, _ = run_section((title, name, extra, public, url, args.base, args.browser))
+        title, output, found, seconds, _ = run_section((title, name, extra, public, url, args.base, args.browser, selected))
         print(f"{title} ({seconds:.0f} s)")
         print(output, end="", flush=True)
         failures += found

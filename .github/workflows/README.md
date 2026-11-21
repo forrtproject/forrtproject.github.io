@@ -61,7 +61,10 @@ Features:
 - Uses the same data and announcement artifacts as `deploy.yaml`, with noindex and no analytics
 - Compares each build with its merge base with `main`: URL list, structured data, SEO tags and internal links. See `scripts/rebrand/README.md`
 - A failed check marks the run red but still updates the preview
-- After the build, the comparison, the designed-screens check and the accessibility check run as three jobs side by side; the designed-screens check runs four browsers at once
+- The candidate, PR base and main reference build in parallel from the same pinned production artifacts, including generated Contributors content. Browser checks use the PR-base HTML diff. Changes to static files or non-bundle assets run the full browser suite. The comparison with the merge base with `main` covers the whole site.
+- CSS or JS changes add the core design and axe samples to the changed-page checks. Core design covers the named screens, breakpoints, sample pages, home, floating controls at 390 and 1440 px, and every fourth article in the usual article set.
+- Pushes, PRs labeled `full-checks`, PRs changing this workflow or the check scripts, and diffs over 60 pages run the full browser suite. With no relevant changes, both browser jobs report success without starting Chromium.
+- Design and axe cache Chromium by Playwright version.
 - Delete this workflow when the redesign launches
 
 ## Data Workflows
