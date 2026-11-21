@@ -6,7 +6,7 @@ url: "/replication-hub/submit/"
 <br>
 
 
-We aim to build a comprehensive database of replication studies across all disciplines.
+We aim to build a comprehensive database of replication studies across disciplines.
 If you have conducted a replication study that we have not yet included, or just seen one, 
 please submit it using the form below.
 
