@@ -398,21 +398,48 @@ html:has(.contributor-az){scroll-padding-top:calc(var(--contributor-az,72px) + 1
   .doc-section>#just-os-fullpage{order:-1;margin-top:4px!important}
 }
 @media(max-width:760px){#just-os-fullpage{height:min(52vh,460px)!important;min-height:340px}}
-/* Project cards: their actions as the site's outline pills, one size. */
-.get-involved-card .btn{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:8px 16px!important;border:1.5px solid var(--link)!important;border-radius:999px!important;background:#fff!important;color:var(--link)!important;font:600 15px/1.2 var(--text)!important}
+/* Get involved: projects grouped by FORRT's real areas (using Doors area tints and illustrations, DESIGN.md §6),
+   clearly distinct from the crisp white, slate-framed Getting Started panel above them. */
+.gi-jumps{display:flex;flex-wrap:wrap;gap:0 20px;margin:6px 0 12px;font-size:16px}
+.gi-jumps a{display:inline-flex;align-items:center;min-height:44px;color:var(--link);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.gi-jumps a:hover{color:var(--ink)}
+.gi-areas{display:grid;gap:32px;margin:22px 0 0}
+.gi-area-block[data-area=edu]{--gi-tone:var(--edu);--gi-bg:var(--edu-bg)}
+.gi-area-block[data-area=res]{--gi-tone:var(--res);--gi-bg:var(--res-bg)}
+.gi-area-block[data-area=com]{--gi-tone:var(--com);--gi-bg:var(--com-bg)}
+.gi-area-block[data-area=other]{--gi-tone:var(--ink);--gi-bg:var(--surface)}
+.gi-area-head{display:grid;grid-template-columns:52px minmax(0,1fr);gap:12px;align-items:center;margin:0 0 14px;padding-bottom:8px;border-bottom:2px solid var(--gi-tone)}
+.gi-area-head:not(:has(.gi-area-plate)){grid-template-columns:minmax(0,1fr)}
+.gi-area-plate{display:flex;align-items:flex-end;justify-content:center;width:52px;height:48px;padding:6px 4px 2px;box-sizing:border-box;background:var(--gi-bg);border-radius:999px 999px 6px 6px}
+.gi-area-plate img{display:block;width:100%;height:100%;object-fit:contain;margin:0}
+.article-layout .article-style .gi-area-head h3{margin:0;font-size:24px;line-height:1.18;color:var(--gi-tone)}
+.gi-group--teams{margin-top:38px;padding-top:26px;border-top:1.5px solid var(--line)}
+.gi-group-head{margin:0 0 16px}
+.article-layout .article-style .gi-group-head h3{margin:0 0 4px;font-size:26px;line-height:1.2}
+.article-layout .article-style .gi-group-head p{margin:0;max-width:34em;font-size:17px;color:var(--soft)}
+.gi-group-head p a{color:var(--link);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.get-involved-card .btn{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:8px 16px!important;border:1.5px solid var(--link)!important;border-radius:999px!important;background:#fff!important;color:var(--link)!important;font:600 15px/1.2 var(--text)!important}
 .get-involved-card .btn:hover{background:var(--link)!important;color:#fff!important}
-/* Project cards share one footer line of actions. */
-.get-involved-card{display:flex;flex-direction:column}
-/* One row height whether or not a 44 px link sits beside the button, so the buttons share a line across a row. */
-.get-involved-card .get-involved-actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center;min-height:56px;margin-top:auto;padding-top:12px}
-/* The cards wear the colour of the "Find a project" brick that leads to them, as a straight band along their top. */
-.get-involved-card{position:relative;overflow:hidden;background:#e6e7dd}  /* --brick2 (#56621a) at 15% on white */
-.get-involved-card::before{content:"";position:absolute;inset:0 0 auto;height:4px;background:var(--brick2)}
-/* Get Involved is a wide page: its projects fill the width, as many to a row as fit. */
-.article-layout-wide .article-style .get-involved-projects{grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));max-width:none}
+.get-involved-card{position:relative;display:flex;flex-direction:column;padding:20px 22px;background:var(--gi-bg,var(--surface));border:0;border-radius:var(--r-large)}
+@media(max-width:760px){.get-involved-card{padding:16px}}
+.get-involved-card--team{background:var(--surface);border:1.5px solid color-mix(in srgb,var(--brick3) 22%,transparent)}
+.article-layout .article-style .get-involved-card h4{margin:0 0 8px;font:var(--display-weight) 22px/1.2 var(--display);color:var(--ink)}
+.article-layout .article-style .get-involved-card h4 a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--link);text-decoration-thickness:1.5px;text-underline-offset:3px}
+.article-layout .article-style .get-involved-card h4 a:hover{color:var(--link);text-decoration-thickness:2px}
+.get-involved-card .get-involved-actions{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;min-height:56px;margin-top:auto;padding-top:14px}
+/* Balanced rows on desktop so no single card sits orphaned at the end of a group. */
+.article-layout-wide .article-style .get-involved-projects{grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:16px;max-width:none}
+@media(min-width:1001px){
+  .article-layout-wide .article-style .get-involved-projects--count-4{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .article-layout-wide .article-style .get-involved-projects--count-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .article-layout-wide .article-style .get-involved-projects--count-5{grid-template-columns:repeat(6,minmax(0,1fr))}
+  .article-layout-wide .article-style .get-involved-projects--count-5>.get-involved-card{grid-column:span 2}
+  .article-layout-wide .article-style .get-involved-projects--count-5>.get-involved-card:nth-child(4),
+  .article-layout-wide .article-style .get-involved-projects--count-5>.get-involved-card:nth-child(5){grid-column:span 3}
+}
 .article-layout-wide .article-style .action-cards{max-width:none}
 .get-involved-card[hidden]{display:none}
-.get-involved-card .get-involved-link{display:inline-flex;align-items:center;min-height:40px;padding:0;color:var(--link);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.get-involved-card .get-involved-link{display:inline-flex;align-items:center;min-height:44px;padding:0;color:var(--link);font-weight:600;text-decoration:underline;text-underline-offset:3px}
 
 /* About directories: only a description much longer than its neighbours is cut, to four lines, with "more"
    (site.js); short ones show in full. */
@@ -601,17 +628,25 @@ html:has(.contributor-az){scroll-padding-top:calc(var(--contributor-az,72px) + 1
   .article-layout-wide .article-style .doc-section>aside.callout{grid-column:2;grid-row:1/span 8;max-width:none;margin:6px 0 0}
   /* "Ongoing projects": the introduction takes the first card column and the guide the other two, so both line up
      with the projects, which take the full width below them. */
-  .article-layout-wide .article-style .doc-section:has(>.get-involved-projects){grid-template-columns:minmax(0,1fr) minmax(0,2fr);grid-template-rows:auto 1fr;column-gap:14px}
-  .article-layout-wide .article-style .doc-section:has(>.get-involved-projects)>aside.callout{grid-row:1/span 2;max-width:none}
-  .article-layout-wide .article-style .doc-section:has(>.get-involved-projects)>aside.callout>*{max-width:32em}
-  .article-layout-wide .article-style .doc-section:has(>aside.callout)>.get-involved-projects{grid-column:1/-1}
+  .article-layout-wide .article-style .doc-section:has(.get-involved-projects){grid-template-columns:minmax(0,1fr) minmax(0,2fr);grid-template-rows:auto auto 1fr;column-gap:18px}
+  .article-layout-wide .article-style .doc-section:has(.get-involved-projects)>aside.callout{grid-row:1/span 3;max-width:none}
+  .article-layout-wide .article-style .doc-section:has(.get-involved-projects)>aside.callout>*{max-width:32em}
+  .article-layout-wide .article-style .doc-section:has(>aside.callout)>.gi-areas,
+  .article-layout-wide .article-style .doc-section:has(>aside.callout)>.gi-group{grid-column:1/-1}
+  /* Pair About FORRT and Stay updated side-by-side so neither stands alone in a narrow column (DESIGN.md §7). */
+  .article-layout-wide .article-style:has(#get-involved):has(#about):has(#newsletter){display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:40px;align-items:start}
+  .article-layout-wide .article-style:has(#get-involved):has(#about):has(#newsletter)>.doc-section{grid-column:1/-1}
+  .article-layout-wide .article-style:has(#get-involved):has(#about):has(#newsletter)>#about{grid-column:1;margin-bottom:0}
+  .article-layout-wide .article-style:has(#get-involved):has(#about):has(#newsletter)>#newsletter{grid-column:2;margin-bottom:0;padding:24px 28px;background:var(--surface);border-radius:var(--r-large)}
 }
 /* Where the guide spans two card columns, its introduction and its list sit side by side, each a short line. */
 @media(min-width:1240px){
-  .article-layout-wide .article-style .doc-section:has(>.get-involved-projects)>aside.callout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:28px;align-content:start}
-  .article-layout-wide .article-style .doc-section:has(>.get-involved-projects)>aside.callout>:not(ol){grid-column:1}
-  .article-layout-wide .article-style .doc-section:has(>.get-involved-projects)>aside.callout>ol{grid-column:2;grid-row:1/span 3;margin-top:0}
+  .article-layout-wide .article-style .doc-section:has(.get-involved-projects)>aside.callout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:28px;align-content:start}
+  .article-layout-wide .article-style .doc-section:has(.get-involved-projects)>aside.callout>:not(ol){grid-column:1}
+  .article-layout-wide .article-style .doc-section:has(.get-involved-projects)>aside.callout>ol{grid-column:2;grid-row:1/span 3;margin-top:0}
 }
+/* Getting Started is a crisp white, slate-framed panel so it stands clearly apart from the area-tinted project cards. */
+.doc-section:has(.get-involved-projects)>aside.callout{background:#fff;border:1.5px solid var(--brick3);border-top:5px solid var(--brick3)}
 
 
 /* The booklet: the introduction; "Read full screen", which opens the flipbook full screen, and "Download the PDF"
