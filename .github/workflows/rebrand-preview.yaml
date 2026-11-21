@@ -245,6 +245,8 @@ jobs:
           key: hugo-${{ runner.os }}-${{ runner.arch }}-${{ env.HUGO_VERSION }}-base-${{ github.event.pull_request.base.sha }}
           restore-keys: |
             hugo-${{ runner.os }}-${{ runner.arch }}-${{ env.HUGO_VERSION }}-base-
+            hugo-${{ runner.os }}-${{ runner.arch }}-${{ env.HUGO_VERSION }}-head-${{ github.event.pull_request.base.sha }}
+            hugo-${{ runner.os }}-${{ runner.arch }}-${{ env.HUGO_VERSION }}-head-
 
       # HUGO_ENV=staging adds noindex and leaves out Google Analytics.
       - name: Build the PR base
