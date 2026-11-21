@@ -24,6 +24,7 @@ on:
     types: [opened, synchronize, reopened, labeled, unlabeled]
     branches:
       - rebrand-doors
+      - scratch-doors-benchmark-1278
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
