@@ -16,7 +16,7 @@ Please contact us with any questions at [info@forrt.org](mailto:info@forrt.org)
 
 We have not appointed a data protection officer.
 
-## Summary
+## Policy summary
 
 - Google Analytics runs only if you allow it.
 - Videos, forms, calendars and teaching activities load only if you click to load them.

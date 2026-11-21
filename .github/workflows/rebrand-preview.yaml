@@ -70,9 +70,7 @@ jobs:
           BASE_SHA: ${{ github.event.pull_request.base.sha }}
           FULL_LABEL: ${{ contains(github.event.pull_request.labels.*.name, 'full-checks') }}
         run: |
-          if [ "$EVENT" != pull_request ] || [ "$FULL_LABEL" = true ] || \
-            ! git diff --quiet "$BASE_SHA" HEAD -- .github/workflows/rebrand-preview.yaml \
-              ':(glob)scripts/rebrand/check_*.py' scripts/rebrand/changed_pages.py; then
+          if [ "$EVENT" != pull_request ] || [ "$FULL_LABEL" = true ]; then
             echo "scoped=false" >> "$GITHUB_OUTPUT"
           else
             echo "scoped=true" >> "$GITHUB_OUTPUT"
