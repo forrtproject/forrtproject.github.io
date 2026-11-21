@@ -19,11 +19,11 @@ name: Doors preview
 on:
   push:
     branches:
-      - rebrand-doors
+      - scratch-1278-base
   pull_request:
     types: [opened, synchronize, reopened, labeled, unlabeled]
     branches:
-      - rebrand-doors
+      - scratch-1278-base
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
@@ -573,7 +573,7 @@ jobs:
     name: Deploy preview
     runs-on: ubuntu-22.04
     needs: build
-    if: github.event_name != 'pull_request'
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/rebrand-doors'
     timeout-minutes: 15
     steps:
       - name: Download site artifact
