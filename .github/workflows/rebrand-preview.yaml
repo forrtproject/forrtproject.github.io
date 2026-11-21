@@ -89,6 +89,8 @@ jobs:
             "$RUNNER_TEMP/artifacts/data" "$RUNNER_TEMP/artifacts/announcements"
 
       - name: Rebuild the Contributors page with this branch's generator
+        env:
+          PYTHONHASHSEED: "0"  # The generator picks role labels from a set.
         run: |
           pip install --quiet numpy==1.24.4 pandas==2.0.3 python-dotenv  # pinned as in requirements.txt
           if python3 scripts/forrt_contribs/tenzing.py; then
@@ -218,8 +220,10 @@ jobs:
           scripts/rebrand/apply_artifacts.sh . \
             "$RUNNER_TEMP/artifacts/data" "$RUNNER_TEMP/artifacts/announcements"
 
-      - name: Rebuild the Contributors page with this branch's generator
+      - name: Rebuild the Contributors page with the PR base's generator
         if: steps.scope.outputs.scoped == 'true'
+        env:
+          PYTHONHASHSEED: "0"
         run: |
           pip install --quiet numpy==1.24.4 pandas==2.0.3 python-dotenv  # pinned as in requirements.txt
           if python3 scripts/forrt_contribs/tenzing.py; then
