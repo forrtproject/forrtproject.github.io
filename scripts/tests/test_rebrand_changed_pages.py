@@ -45,6 +45,8 @@ class ChangedPagesTest(unittest.TestCase):
             ({**empty, "bundles_changed": True}, "core", set()),
             ({**empty, "changed": ["/edit/"], "added": ["/new/"], "removed": ["/old/"]},
              "changed", {"/edit/", "/new/"}),
+            ({**empty, "bundles_changed": True, "changed": ["/edit/"], "added": ["/new/"]},
+             "core", {"/edit/", "/new/"}),
             ({**empty, "removed": [f"/{i}/" for i in range(61)]}, "full", set()),
             ({**empty, "force_full": True}, "full", set()),
         ]

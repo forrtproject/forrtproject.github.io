@@ -10,7 +10,7 @@ name: Doors preview
 #         the two builds.
 #         A failed check shows on the run but does not hold back the preview.
 # Layout: The branch and PR base build in parallel. The main comparison uses the branch inputs.
-#         The browser checks use the changed pages or a core sample for CSS/JS-only changes.
+#         The browser checks use changed pages, plus a core sample when CSS/JS changes.
 #         Pushes, the full-checks label, check infrastructure changes and large diffs use the full suite.
 #         "Compare with main" still checks the whole site. "Check results" aggregates failures.
 # Note: Uses the same data and announcement artifacts as deploy.yaml. Delete this
@@ -39,8 +39,32 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  inputs:
+    name: Resolve build inputs
+    runs-on: ubuntu-22.04
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+    permissions:
+      actions: read
+    outputs:
+      data: ${{ steps.inputs.outputs.data }}
+      announcements: ${{ steps.inputs.outputs.announcements }}
+    steps:
+      - name: Pin the production artifacts for both builds
+        id: inputs
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for input in data announcements; do
+            artifact=$(gh api --paginate "repos/$GITHUB_REPOSITORY/actions/artifacts?name=$input-artifact&per_page=100" \
+              | jq -cs '[.[].artifacts[] | select(.workflow_run.head_branch == "main" and (.expired | not))]
+                  | max_by(.created_at, .id) | {id, run_id: .workflow_run.id}')
+            echo "$input=$artifact" >> "$GITHUB_OUTPUT"
+          done
+
   build:
     name: Build
+    needs: inputs
     runs-on: ubuntu-22.04
     # Fork PRs get no artifacts token and have no preview to update.
     if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
@@ -57,31 +81,23 @@ jobs:
       - name: Let Git report non-ASCII paths unquoted
         run: git config core.quotepath false
 
-      # Both builds use main artifacts. A new upload between downloads can add
-      # generated-page diffs, which are included in selection or trigger full checks.
       - name: Download data artifact
-        uses: dawidd6/action-download-artifact@07ab29fd4a977ae4d2b275087cf67563dfdf0295
-        continue-on-error: true
+        if: fromJSON(needs.inputs.outputs.data).id != null
+        uses: actions/download-artifact@v7
         with:
-          workflow: data-processing.yml
-          name: data-artifact
+          artifact-ids: ${{ fromJSON(needs.inputs.outputs.data).id }}
+          run-id: ${{ fromJSON(needs.inputs.outputs.data).run_id }}
+          github-token: ${{ github.token }}
           path: ${{ runner.temp }}/artifacts/data
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          search_artifacts: true
-          branch: main  # as in deploy.yaml: only main's runs, never a branch test run (#960)
-          if_no_artifact_found: warn
 
       - name: Download announcements artifact
-        uses: dawidd6/action-download-artifact@07ab29fd4a977ae4d2b275087cf67563dfdf0295
-        continue-on-error: true
+        if: fromJSON(needs.inputs.outputs.announcements).id != null
+        uses: actions/download-artifact@v7
         with:
-          workflow: create_announcements.yml
-          name: announcements-artifact
+          artifact-ids: ${{ fromJSON(needs.inputs.outputs.announcements).id }}
+          run-id: ${{ fromJSON(needs.inputs.outputs.announcements).run_id }}
+          github-token: ${{ github.token }}
           path: ${{ runner.temp }}/artifacts/announcements
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          search_artifacts: true
-          branch: main  # as in deploy.yaml: only main's runs, never a branch test run (#960)
-          if_no_artifact_found: warn
 
       - name: Apply artifacts
         run: |
@@ -143,7 +159,13 @@ jobs:
 
       # One file uploads and downloads far faster than the site's thousands.
       - name: Pack the site
-        run: tar -cf site.tar -C public .
+        env:
+          DATA_INPUT: ${{ needs.inputs.outputs.data }}
+          ANNOUNCEMENTS_INPUT: ${{ needs.inputs.outputs.announcements }}
+        run: |
+          tar -cf site.tar -C public .
+          jq -n --argjson data "$DATA_INPUT" --argjson announcements "$ANNOUNCEMENTS_INPUT" \
+            '{data: $data, announcements: $announcements}' > site-inputs.json
 
       - name: Upload site artifact
         uses: actions/upload-artifact@v7
@@ -155,8 +177,19 @@ jobs:
           overwrite: true  # A rerun reuses the run number.
           if-no-files-found: error
 
+      - name: Upload site input manifest
+        if: github.event_name == 'push'
+        uses: actions/upload-artifact@v7
+        with:
+          name: rebrand-site-inputs-${{ github.run_number }}
+          path: site-inputs.json
+          retention-days: 1
+          overwrite: true
+          if-no-files-found: error
+
   reference:
     name: Build PR base
+    needs: inputs
     runs-on: ubuntu-22.04
     if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && !contains(github.event.pull_request.labels.*.name, 'full-checks')
     permissions:
@@ -188,40 +221,81 @@ jobs:
             echo "scoped=true" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Download data artifact
+      - name: Reuse a matching push build
         if: steps.scope.outputs.scoped == 'true'
-        uses: dawidd6/action-download-artifact@07ab29fd4a977ae4d2b275087cf67563dfdf0295
-        continue-on-error: true
+        id: reuse
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          BASE_BRANCH: ${{ github.event.pull_request.base.ref }}
+          DATA_INPUT: ${{ needs.inputs.outputs.data }}
+          ANNOUNCEMENTS_INPUT: ${{ needs.inputs.outputs.announcements }}
+        run: |
+          # Require the exact base commit and the same immutable input artifacts.
+          if ! run=$(gh run list --repo "$GITHUB_REPOSITORY" --workflow rebrand-preview.yaml \
+            --branch "$BASE_BRANCH" --event push --status success --commit "$BASE_SHA" \
+            --limit 1 --json databaseId,number --jq '.[0] | select(. != null) | [.databaseId, .number] | @tsv'); then
+            echo "::warning::Could not look up the base push build"
+            exit 0
+          fi
+          if [ -z "$run" ]; then
+            echo "No successful push build for the PR base"
+            exit 0
+          fi
+          read -r run_id run_number <<< "$run"
+          if ! gh run download "$run_id" --repo "$GITHUB_REPOSITORY" \
+            --name "rebrand-site-inputs-$run_number" --dir "$RUNNER_TEMP/base-build"; then
+            echo "Base push input manifest unavailable"
+            exit 0
+          fi
+          if ! jq -e --argjson data "$DATA_INPUT" --argjson announcements "$ANNOUNCEMENTS_INPUT" \
+            '.data == $data and .announcements == $announcements' \
+            "$RUNNER_TEMP/base-build/site-inputs.json" >/dev/null; then
+            echo "Base push artifact has different or unrecorded inputs"
+            exit 0
+          fi
+          if ! gh run download "$run_id" --repo "$GITHUB_REPOSITORY" \
+            --name "rebrand-preview-$run_number" --dir "$RUNNER_TEMP/base-build"; then
+            echo "Base push site artifact unavailable"
+            exit 0
+          fi
+          mkdir -p "$RUNNER_TEMP/base-build/public"
+          if ! tar -xf "$RUNNER_TEMP/base-build/site.tar" -C "$RUNNER_TEMP/base-build/public" \
+            --wildcards '*.html' '*.css' '*.js' || [ ! -f "$RUNNER_TEMP/base-build/public/index.html" ]; then
+            echo "Base push site archive is incomplete"
+            exit 0
+          fi
+          mv "$RUNNER_TEMP/base-build/public" public
+          echo "Reused base push build from run $run_id"
+          echo "reused=true" >> "$GITHUB_OUTPUT"
+
+      - name: Download data artifact
+        if: steps.scope.outputs.scoped == 'true' && steps.reuse.outputs.reused != 'true' && fromJSON(needs.inputs.outputs.data).id != null
+        uses: actions/download-artifact@v7
         with:
-          workflow: data-processing.yml
-          name: data-artifact
+          artifact-ids: ${{ fromJSON(needs.inputs.outputs.data).id }}
+          run-id: ${{ fromJSON(needs.inputs.outputs.data).run_id }}
+          github-token: ${{ github.token }}
           path: ${{ runner.temp }}/artifacts/data
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          search_artifacts: true
-          branch: main  # as in deploy.yaml: only main's runs, never a branch test run (#960)
-          if_no_artifact_found: warn
 
       - name: Download announcements artifact
-        if: steps.scope.outputs.scoped == 'true'
-        uses: dawidd6/action-download-artifact@07ab29fd4a977ae4d2b275087cf67563dfdf0295
-        continue-on-error: true
+        if: steps.scope.outputs.scoped == 'true' && steps.reuse.outputs.reused != 'true' && fromJSON(needs.inputs.outputs.announcements).id != null
+        uses: actions/download-artifact@v7
         with:
-          workflow: create_announcements.yml
-          name: announcements-artifact
+          artifact-ids: ${{ fromJSON(needs.inputs.outputs.announcements).id }}
+          run-id: ${{ fromJSON(needs.inputs.outputs.announcements).run_id }}
+          github-token: ${{ github.token }}
           path: ${{ runner.temp }}/artifacts/announcements
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          search_artifacts: true
-          branch: main  # as in deploy.yaml: only main's runs, never a branch test run (#960)
-          if_no_artifact_found: warn
 
       - name: Apply artifacts
-        if: steps.scope.outputs.scoped == 'true'
+        if: steps.scope.outputs.scoped == 'true' && steps.reuse.outputs.reused != 'true'
         run: |
           scripts/rebrand/apply_artifacts.sh . \
             "$RUNNER_TEMP/artifacts/data" "$RUNNER_TEMP/artifacts/announcements"
 
       - name: Rebuild the Contributors page with the PR base's generator
-        if: steps.scope.outputs.scoped == 'true'
+        if: steps.scope.outputs.scoped == 'true' && steps.reuse.outputs.reused != 'true'
         env:
           PYTHONHASHSEED: "0"
         run: |
@@ -233,14 +307,14 @@ jobs:
           fi
 
       - name: Setup Hugo
-        if: steps.scope.outputs.scoped == 'true'
+        if: steps.scope.outputs.scoped == 'true' && steps.reuse.outputs.reused != 'true'
         uses: peaceiris/actions-hugo@75d2e84710de30f6ff7268e08f310b60ef14033f
         with:
           hugo-version: ${{ env.HUGO_VERSION }}
           extended: ${{ env.HUGO_EXTENDED }}
 
       - name: Cache Hugo resources
-        if: steps.scope.outputs.scoped == 'true'
+        if: steps.scope.outputs.scoped == 'true' && steps.reuse.outputs.reused != 'true'
         uses: actions/cache@v5
         with:
           path: |
@@ -254,13 +328,13 @@ jobs:
 
       # HUGO_ENV=staging adds noindex and leaves out Google Analytics.
       - name: Build the PR base
-        if: steps.scope.outputs.scoped == 'true'
+        if: steps.scope.outputs.scoped == 'true' && steps.reuse.outputs.reused != 'true'
         run: hugo --cacheDir "$RUNNER_TEMP/hugo-cache" --minify --destination public --baseURL "$PREVIEW_URL"
         env:
           HUGO_ENV: staging
 
       - name: Point root-relative links at the subfolder
-        if: steps.scope.outputs.scoped == 'true'
+        if: steps.scope.outputs.scoped == 'true' && steps.reuse.outputs.reused != 'true'
         run: python3 scripts/rebrand/preview_paths.py public --base "$PREVIEW_BASE"
 
       - name: Pack pages and bundles

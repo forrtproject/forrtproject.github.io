@@ -1692,7 +1692,7 @@ def main():
     if public:
         paths = article_paths(public, selected)
         if mode == "core":
-            paths = paths[::4]
+            paths = sorted(set(paths[::4]) | {path for path in paths if "/" + path in pages})
         print(f"Every article page: {len(paths)} pages", flush=True)
         shards = max(1, 2 * args.jobs)
         sections += [(f"Every article page, part {i + 1} of {shards}", "check_articles", (paths[i::shards],))
@@ -1701,7 +1701,7 @@ def main():
         ("Screens", "check_screens", ()),
         ("Breakpoints and enlarged text", "check_other_widths", ()),
     ]
-    if public and mode != "core":
+    if public and (mode != "core" or pages):
         sections.append(("Call-outs", "check_callouts", (public,)))
     sections += [
         ("Sample pages", "check_samples", ()),
@@ -1736,14 +1736,20 @@ def main():
         "check_contributor_network": (NETWORK_PATH,),
         "check_directory": ("", "resources/"),
     }
-    if mode == "changed":
-        sections = [(title, name, extra) for title, name, extra in sections
-                    if name not in page_checks or any("/" + path.lstrip("/") in pages
-                                                     for path in page_checks[name])]
-    if mode == "core":
-        core = {"check_floating_controls", "check_articles", "check_screens", "check_other_widths", "check_samples"}
-        sections = [(title, name, extra) for title, name, extra in sections if name in core]
-    jobs = [(title, name, extra, public, url, args.base, args.browser, selected) for title, name, extra in sections]
+    core = {"check_floating_controls", "check_articles", "check_screens", "check_other_widths", "check_samples"}
+    jobs = []
+    for title, name, extra in sections:
+        if mode == "core" and name in core:
+            section_pages = None
+        else:
+            section_pages = pages if mode in {"changed", "core"} else None
+            if mode == "core" and not pages:
+                continue
+            if section_pages is not None and name in page_checks and not any(
+                "/" + path.lstrip("/") in section_pages for path in page_checks[name]
+            ):
+                continue
+        jobs.append((title, name, extra, public, url, args.base, args.browser, section_pages))
     if args.jobs > 1:
         with concurrent.futures.ProcessPoolExecutor(args.jobs, mp_context=multiprocessing.get_context("spawn")) as pool:
             futures = [pool.submit(run_section, job) for job in jobs]

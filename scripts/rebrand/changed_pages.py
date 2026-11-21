@@ -57,10 +57,10 @@ def load_selection(path):
     total = len(live) + len(diff["removed"])
     if diff.get("force_full") or total > 60:
         mode = "full"
-    elif live:
-        mode = "changed"
     elif diff["bundles_changed"]:
         mode = "core"
+    elif live:
+        mode = "changed"
     else:
         mode = "none"
     print(f"Check mode: {mode}")

@@ -77,6 +77,8 @@ def main():
     if mode == "changed":
         names = {path: name for name, path in sample.items()}
         sample = {names.get(path, path): path for path in sorted(pages)}
+    elif mode == "core":
+        sample.update({path: path for path in sorted(pages - set(sample.values()))})
     with open(args.axe, encoding="utf-8") as handle:
         axe = handle.read()
     findings, failures, practice = [], [], collections.Counter()
