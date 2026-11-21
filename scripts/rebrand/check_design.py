@@ -1692,7 +1692,7 @@ def main():
     if public:
         paths = article_paths(public, selected)
         if mode == "core":
-            paths = sorted(set(paths[::4]) | {path for path in paths if "/" + path in pages})
+            paths = sorted(set(paths[::4]) | set(article_paths(public, pages)))
         print(f"Every article page: {len(paths)} pages", flush=True)
         shards = max(1, 2 * args.jobs)
         sections += [(f"Every article page, part {i + 1} of {shards}", "check_articles", (paths[i::shards],))

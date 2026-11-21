@@ -56,10 +56,26 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           for input in data announcements; do
+            selected='{"id":null,"run_id":null}'
+            case "$input" in
+              data) workflow=data-processing.yml ;;
+              announcements) workflow=create_announcements.yml ;;
+            esac
+            runs=$(gh run list --workflow "$workflow" --branch main --status success \
+              --limit 100 --json databaseId)
+
             artifact=$(gh api --paginate "repos/$GITHUB_REPOSITORY/actions/artifacts?name=$input-artifact&per_page=100" \
-              | jq -cs '[.[].artifacts[] | select(.workflow_run.head_branch == "main" and (.expired | not))]
-                  | max_by(.created_at, .id) | {id, run_id: .workflow_run.id}')
-            echo "$input=$artifact" >> "$GITHUB_OUTPUT"
+              | jq -c -s '[.[].artifacts[] | select(.workflow_run.head_branch == "main" and (.expired | not))]
+                  | sort_by(.created_at, .id) | reverse | .[] | {id, run_id: .workflow_run.id}')
+            while IFS= read -r candidate; do
+              [ -n "$candidate" ] || continue
+              if jq -e --argjson candidate "$candidate" \
+                'any(.[]; .databaseId == $candidate.run_id)' <<< "$runs" >/dev/null; then
+                selected=$candidate
+                break
+              fi
+            done <<< "$artifact"
+            echo "$input=$selected" >> "$GITHUB_OUTPUT"
           done
 
   build:
@@ -104,33 +120,6 @@ jobs:
           scripts/rebrand/apply_artifacts.sh . \
             "$RUNNER_TEMP/artifacts/data" "$RUNNER_TEMP/artifacts/announcements"
 
-      - name: Rebuild the Contributors page with this branch's generator
-        env:
-          PYTHONHASHSEED: "0"  # The generator picks role labels from a set.
-        run: |
-          pip install --quiet numpy==1.24.4 pandas==2.0.3 python-dotenv  # pinned as in requirements.txt
-          if python3 scripts/forrt_contribs/tenzing.py; then
-            mv scripts/forrt_contribs/tenzing.md content/contributors/tenzing.md
-          else
-            echo "::warning::Could not regenerate the Contributors page; the preview shows the data artifact's copy."
-          fi
-
-      # "Compare with main" builds the reference from these same files, not from whatever
-      # data run is newest by the time it starts.
-      - name: Pack the artifacts for the reference build
-        run: |
-          mkdir -p "$RUNNER_TEMP/artifacts/data" "$RUNNER_TEMP/artifacts/announcements"
-          tar -cf inputs.tar -C "$RUNNER_TEMP" artifacts
-
-      - name: Upload the artifacts for the reference build
-        uses: actions/upload-artifact@v7
-        with:
-          name: rebrand-inputs-${{ github.run_number }}
-          path: inputs.tar
-          retention-days: 1
-          overwrite: true
-          if-no-files-found: error
-
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@75d2e84710de30f6ff7268e08f310b60ef14033f
         with:
@@ -165,7 +154,7 @@ jobs:
         run: |
           tar -cf site.tar -C public .
           jq -n --argjson data "$DATA_INPUT" --argjson announcements "$ANNOUNCEMENTS_INPUT" \
-            '{data: $data, announcements: $announcements}' > site-inputs.json
+            '{data: $data, announcements: $announcements, contributors: "artifact"}' > site-inputs.json
 
       - name: Upload site artifact
         uses: actions/upload-artifact@v7
@@ -215,7 +204,9 @@ jobs:
         run: |
           git fetch --no-tags --filter=blob:none origin "$HEAD_SHA"
           if ! git diff --quiet HEAD "$HEAD_SHA" -- .github/workflows/rebrand-preview.yaml \
-              ':(glob)scripts/rebrand/check_*.py' scripts/rebrand/changed_pages.py scripts/rebrand/sample_pages.json; then
+              ':(glob)scripts/rebrand/check_*.py' scripts/rebrand/changed_pages.py scripts/rebrand/sample_pages.json \
+              static assets content ':(exclude,glob)assets/**/*.css' ':(exclude,glob)assets/**/*.scss' \
+              ':(exclude,glob)assets/**/*.js' ':(exclude,glob)content/**/*.md' ':(exclude,glob)content/**/*.markdown'; then
             echo "scoped=false" >> "$GITHUB_OUTPUT"
           else
             echo "scoped=true" >> "$GITHUB_OUTPUT"
@@ -250,7 +241,7 @@ jobs:
             exit 0
           fi
           if ! jq -e --argjson data "$DATA_INPUT" --argjson announcements "$ANNOUNCEMENTS_INPUT" \
-            '.data == $data and .announcements == $announcements' \
+            '.data == $data and .announcements == $announcements and .contributors == "artifact"' \
             "$RUNNER_TEMP/base-build/site-inputs.json" >/dev/null; then
             echo "Base push artifact has different or unrecorded inputs"
             exit 0
@@ -293,18 +284,6 @@ jobs:
         run: |
           scripts/rebrand/apply_artifacts.sh . \
             "$RUNNER_TEMP/artifacts/data" "$RUNNER_TEMP/artifacts/announcements"
-
-      - name: Rebuild the Contributors page with the PR base's generator
-        if: steps.scope.outputs.scoped == 'true' && steps.reuse.outputs.reused != 'true'
-        env:
-          PYTHONHASHSEED: "0"
-        run: |
-          pip install --quiet numpy==1.24.4 pandas==2.0.3 python-dotenv  # pinned as in requirements.txt
-          if python3 scripts/forrt_contribs/tenzing.py; then
-            mv scripts/forrt_contribs/tenzing.md content/contributors/tenzing.md
-          else
-            echo "::warning::Could not regenerate the Contributors page; the preview shows the data artifact's copy."
-          fi
 
       - name: Setup Hugo
         if: steps.scope.outputs.scoped == 'true' && steps.reuse.outputs.reused != 'true'
@@ -353,18 +332,13 @@ jobs:
           overwrite: true  # A rerun reuses the run number.
           if-no-files-found: error
 
-  compare:
-    name: Compare with main
+  main-reference:
+    name: Build main reference
     runs-on: ubuntu-22.04
-    needs: build
+    needs: inputs
     permissions:
       contents: read
-      actions: read  # Needed for artifact access
-    outputs:
-      source-rules: ${{ steps.source-rules.outcome }}
-      compare: ${{ steps.compare.outcome }}
-      links: ${{ steps.links.outcome }}
-      seo: ${{ steps.seo.outcome }}
+      actions: read
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
@@ -380,15 +354,26 @@ jobs:
       - name: Check out the merge base with main as the reference
         run: git worktree add --detach "$RUNNER_TEMP/reference" "$(git merge-base origin/main HEAD)"
 
-      - name: Download the artifacts the branch was built with
+      - name: Download data artifact
+        if: fromJSON(needs.inputs.outputs.data).id != null
         uses: actions/download-artifact@v7
         with:
-          name: rebrand-inputs-${{ github.run_number }}
-          path: ${{ runner.temp }}
+          artifact-ids: ${{ fromJSON(needs.inputs.outputs.data).id }}
+          run-id: ${{ fromJSON(needs.inputs.outputs.data).run_id }}
+          github-token: ${{ github.token }}
+          path: ${{ runner.temp }}/artifacts/data
+
+      - name: Download announcements artifact
+        if: fromJSON(needs.inputs.outputs.announcements).id != null
+        uses: actions/download-artifact@v7
+        with:
+          artifact-ids: ${{ fromJSON(needs.inputs.outputs.announcements).id }}
+          run-id: ${{ fromJSON(needs.inputs.outputs.announcements).run_id }}
+          github-token: ${{ github.token }}
+          path: ${{ runner.temp }}/artifacts/announcements
 
       - name: Apply the same artifacts to the reference
         run: |
-          tar -xf "$RUNNER_TEMP/inputs.tar" -C "$RUNNER_TEMP"
           scripts/rebrand/apply_artifacts.sh "$RUNNER_TEMP/reference" \
             "$RUNNER_TEMP/artifacts/data" "$RUNNER_TEMP/artifacts/announcements"
 
@@ -415,6 +400,48 @@ jobs:
           python3 "$GITHUB_WORKSPACE/scripts/rebrand/preview_paths.py" "$RUNNER_TEMP/public-reference" --base "$PREVIEW_BASE"
         env:
           HUGO_ENV: staging
+
+      - name: Pack the reference site
+        run: tar -cf reference.tar -C "$RUNNER_TEMP/public-reference" .
+
+      - name: Upload the reference site
+        uses: actions/upload-artifact@v7
+        with:
+          name: rebrand-main-reference-${{ github.run_number }}
+          path: reference.tar
+          retention-days: 1
+          compression-level: 1
+          overwrite: true
+          if-no-files-found: error
+
+  compare:
+    name: Compare with main
+    runs-on: ubuntu-22.04
+    needs: [build, main-reference]
+    permissions:
+      contents: read
+    outputs:
+      source-rules: ${{ steps.source-rules.outcome }}
+      compare: ${{ steps.compare.outcome }}
+      links: ${{ steps.links.outcome }}
+      seo: ${{ steps.seo.outcome }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          filter: blob:none
+
+      - name: Let Git report non-ASCII paths unquoted
+        run: git config core.quotepath false
+
+      - name: Download the reference site
+        uses: actions/download-artifact@v7
+        with:
+          name: rebrand-main-reference-${{ github.run_number }}
+
+      - name: Unpack the reference site
+        run: mkdir "$RUNNER_TEMP/public-reference" && tar -xf reference.tar -C "$RUNNER_TEMP/public-reference"
 
       - name: Download the branch's build
         uses: actions/download-artifact@v7
@@ -601,7 +628,7 @@ jobs:
     runs-on: ubuntu-22.04
     needs: [build, reference, compare, design, axe]
     # Report even when a check job failed; skip only when the build was skipped (fork PRs).
-    if: always() && needs.build.result != 'skipped'
+    if: ${{ !cancelled() && needs.build.result != 'skipped' }}
     steps:
       - name: Fail if any check failed
         env:
