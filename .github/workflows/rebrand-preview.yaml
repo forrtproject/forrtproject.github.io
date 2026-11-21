@@ -9,7 +9,7 @@ name: Doors preview
 # Checks: Every run also builds the merge base with main from the same data, then compares
 #         the two builds.
 #         A failed check shows on the run but does not hold back the preview.
-# Layout: Shared inputs feed the branch build and, on scoped PRs, the PR base build.
+# Layout: The branch and PR base build in parallel. The main comparison uses the branch inputs.
 #         The browser checks use the changed pages or a core sample for CSS/JS-only changes.
 #         Pushes, the full-checks label, check infrastructure changes and large diffs use the full suite.
 #         "Compare with main" still checks the whole site. "Check results" aggregates failures.
@@ -39,48 +39,26 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  inputs:
-    name: Prepare shared inputs
+  build:
+    name: Build
     runs-on: ubuntu-22.04
     # Fork PRs get no artifacts token and have no preview to update.
     if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
     permissions:
       contents: read
       actions: read  # Needed for artifact access
-    outputs:
-      scoped: ${{ steps.scope.outputs.scoped }}
     steps:
-      # Full history for Hugo's Git dates, with file contents fetched only for the commit
-      # checked out (as in staging-aggregate.yaml).
       - name: Checkout repository
         uses: actions/checkout@v6
         with:
           fetch-depth: 0
           filter: blob:none
 
-      # See deploy.yaml: Git quotes non-ASCII paths unless this is off, and Hugo
-      # then finds no date for them.
       - name: Let Git report non-ASCII paths unquoted
         run: git config core.quotepath false
 
-      - name: Select full or scoped checks
-        id: scope
-        env:
-          EVENT: ${{ github.event_name }}
-          BASE_SHA: ${{ github.event.pull_request.base.sha }}
-          FULL_LABEL: ${{ contains(github.event.pull_request.labels.*.name, 'full-checks') }}
-        run: |
-          if [ "$EVENT" != pull_request ] || [ "$FULL_LABEL" = true ] || \
-            ! git diff --quiet "$BASE_SHA" HEAD -- .github/workflows/rebrand-preview.yaml \
-              ':(glob)scripts/rebrand/check_*.py' scripts/rebrand/changed_pages.py scripts/rebrand/sample_pages.json; then
-            echo "scoped=false" >> "$GITHUB_OUTPUT"
-          else
-            echo "scoped=true" >> "$GITHUB_OUTPUT"
-          fi
-
-      # =======================
-      # Artifacts, as in deploy.yaml
-      # =======================
+      # Both builds use main artifacts. A new upload between downloads can add
+      # generated-page diffs, which are included in selection or trigger full checks.
       - name: Download data artifact
         uses: dawidd6/action-download-artifact@07ab29fd4a977ae4d2b275087cf67563dfdf0295
         continue-on-error: true
@@ -110,12 +88,6 @@ jobs:
           scripts/rebrand/apply_artifacts.sh . \
             "$RUNNER_TEMP/artifacts/data" "$RUNNER_TEMP/artifacts/announcements"
 
-      # The data artifact's Contributors page comes from main's generator, which writes the old
-      # markup until the redesign launches. Regenerate it with this branch's generator, from the
-      # contributor cache the same artifact carries (no credentials needed). Only the branch
-      # build does this; the reference keeps main's page. The generator also reads two published
-      # Sheets (column names and extra roles); if they cannot be reached, the build goes ahead
-      # with the artifact's page and a warning.
       - name: Rebuild the Contributors page with this branch's generator
         run: |
           pip install --quiet numpy==1.24.4 pandas==2.0.3 python-dotenv  # pinned as in requirements.txt
@@ -130,8 +102,7 @@ jobs:
       - name: Pack the artifacts for the reference build
         run: |
           mkdir -p "$RUNNER_TEMP/artifacts/data" "$RUNNER_TEMP/artifacts/announcements"
-          cp content/contributors/tenzing.md "$RUNNER_TEMP/contributors.md"
-          tar -cf inputs.tar -C "$RUNNER_TEMP" artifacts contributors.md
+          tar -cf inputs.tar -C "$RUNNER_TEMP" artifacts
 
       - name: Upload the artifacts for the reference build
         uses: actions/upload-artifact@v7
@@ -142,42 +113,26 @@ jobs:
           overwrite: true
           if-no-files-found: error
 
-  build:
-    name: Build
-    runs-on: ubuntu-22.04
-    needs: inputs
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v6
-        with:
-          fetch-depth: 0
-          filter: blob:none
-
-      - name: Let Git report non-ASCII paths unquoted
-        run: git config core.quotepath false
-
-      - name: Download shared inputs
-        uses: actions/download-artifact@v7
-        with:
-          name: rebrand-inputs-${{ github.run_number }}
-          path: ${{ runner.temp }}
-
-      - name: Apply shared inputs
-        run: |
-          tar -xf "$RUNNER_TEMP/inputs.tar" -C "$RUNNER_TEMP"
-          scripts/rebrand/apply_artifacts.sh . \
-            "$RUNNER_TEMP/artifacts/data" "$RUNNER_TEMP/artifacts/announcements"
-          cp "$RUNNER_TEMP/contributors.md" content/contributors/tenzing.md
-
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@75d2e84710de30f6ff7268e08f310b60ef14033f
         with:
           hugo-version: ${{ env.HUGO_VERSION }}
           extended: ${{ env.HUGO_EXTENDED }}
 
+      # Keep reusable entries for later builds. Each job restores its own cache snapshot.
+      - name: Cache Hugo resources
+        uses: actions/cache@v5
+        with:
+          path: |
+            ./resources/_gen
+            ${{ runner.temp }}/hugo-cache
+          key: hugo-${{ runner.os }}-${{ runner.arch }}-${{ env.HUGO_VERSION }}-head-${{ github.sha }}
+          restore-keys: |
+            hugo-${{ runner.os }}-${{ runner.arch }}-${{ env.HUGO_VERSION }}-head-
+
       # HUGO_ENV=staging adds noindex and leaves out Google Analytics.
       - name: Build the branch
-        run: hugo --gc --minify --cleanDestinationDir --destination public --baseURL "$PREVIEW_URL"
+        run: hugo --cacheDir "$RUNNER_TEMP/hugo-cache" --minify --cleanDestinationDir --destination public --baseURL "$PREVIEW_URL"
         env:
           HUGO_ENV: staging
 
@@ -201,57 +156,114 @@ jobs:
   reference:
     name: Build PR base
     runs-on: ubuntu-22.04
-    needs: inputs
-    if: needs.inputs.outputs.scoped == 'true'
+    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && !contains(github.event.pull_request.labels.*.name, 'full-checks')
+    permissions:
+      contents: read
+      actions: read
+    outputs:
+      scoped: ${{ steps.scope.outputs.scoped }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
         with:
           fetch-depth: 0
           filter: blob:none
+          ref: ${{ github.event.pull_request.base.sha }}
 
       - name: Let Git report non-ASCII paths unquoted
         run: git config core.quotepath false
 
-      - name: Check out the PR base
+      - name: Select full or scoped checks
+        id: scope
         env:
-          BASE_SHA: ${{ github.event.pull_request.base.sha }}
-        run: git worktree add --detach "$RUNNER_TEMP/pr-base" "$BASE_SHA"
-
-      - name: Download shared inputs
-        uses: actions/download-artifact@v7
-        with:
-          name: rebrand-inputs-${{ github.run_number }}
-          path: ${{ runner.temp }}
-
-      - name: Apply shared inputs
+          HEAD_SHA: ${{ github.sha }}
         run: |
-          tar -xf "$RUNNER_TEMP/inputs.tar" -C "$RUNNER_TEMP"
-          scripts/rebrand/apply_artifacts.sh "$RUNNER_TEMP/pr-base" \
+          git fetch --no-tags --filter=blob:none origin "$HEAD_SHA"
+          if ! git diff --quiet HEAD "$HEAD_SHA" -- .github/workflows/rebrand-preview.yaml \
+              ':(glob)scripts/rebrand/check_*.py' scripts/rebrand/changed_pages.py scripts/rebrand/sample_pages.json; then
+            echo "scoped=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "scoped=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Download data artifact
+        if: steps.scope.outputs.scoped == 'true'
+        uses: dawidd6/action-download-artifact@07ab29fd4a977ae4d2b275087cf67563dfdf0295
+        continue-on-error: true
+        with:
+          workflow: data-processing.yml
+          name: data-artifact
+          path: ${{ runner.temp }}/artifacts/data
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          search_artifacts: true
+          branch: main  # as in deploy.yaml: only main's runs, never a branch test run (#960)
+          if_no_artifact_found: warn
+
+      - name: Download announcements artifact
+        if: steps.scope.outputs.scoped == 'true'
+        uses: dawidd6/action-download-artifact@07ab29fd4a977ae4d2b275087cf67563dfdf0295
+        continue-on-error: true
+        with:
+          workflow: create_announcements.yml
+          name: announcements-artifact
+          path: ${{ runner.temp }}/artifacts/announcements
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          search_artifacts: true
+          branch: main  # as in deploy.yaml: only main's runs, never a branch test run (#960)
+          if_no_artifact_found: warn
+
+      - name: Apply artifacts
+        if: steps.scope.outputs.scoped == 'true'
+        run: |
+          scripts/rebrand/apply_artifacts.sh . \
             "$RUNNER_TEMP/artifacts/data" "$RUNNER_TEMP/artifacts/announcements"
-          cp "$RUNNER_TEMP/contributors.md" "$RUNNER_TEMP/pr-base"/content/contributors/tenzing.md
+
+      - name: Rebuild the Contributors page with this branch's generator
+        if: steps.scope.outputs.scoped == 'true'
+        run: |
+          pip install --quiet numpy==1.24.4 pandas==2.0.3 python-dotenv  # pinned as in requirements.txt
+          if python3 scripts/forrt_contribs/tenzing.py; then
+            mv scripts/forrt_contribs/tenzing.md content/contributors/tenzing.md
+          else
+            echo "::warning::Could not regenerate the Contributors page; the preview shows the data artifact's copy."
+          fi
 
       - name: Setup Hugo
+        if: steps.scope.outputs.scoped == 'true'
         uses: peaceiris/actions-hugo@75d2e84710de30f6ff7268e08f310b60ef14033f
         with:
           hugo-version: ${{ env.HUGO_VERSION }}
           extended: ${{ env.HUGO_EXTENDED }}
 
+      - name: Cache Hugo resources
+        if: steps.scope.outputs.scoped == 'true'
+        uses: actions/cache@v5
+        with:
+          path: |
+            ./resources/_gen
+            ${{ runner.temp }}/hugo-cache
+          key: hugo-${{ runner.os }}-${{ runner.arch }}-${{ env.HUGO_VERSION }}-base-${{ github.event.pull_request.base.sha }}
+          restore-keys: |
+            hugo-${{ runner.os }}-${{ runner.arch }}-${{ env.HUGO_VERSION }}-base-
+
       # HUGO_ENV=staging adds noindex and leaves out Google Analytics.
       - name: Build the PR base
-        working-directory: ${{ runner.temp }}/pr-base
-        run: hugo --gc --minify --destination "$GITHUB_WORKSPACE/public" --baseURL "$PREVIEW_URL"
+        if: steps.scope.outputs.scoped == 'true'
+        run: hugo --cacheDir "$RUNNER_TEMP/hugo-cache" --minify --destination public --baseURL "$PREVIEW_URL"
         env:
           HUGO_ENV: staging
 
       - name: Point root-relative links at the subfolder
+        if: steps.scope.outputs.scoped == 'true'
         run: python3 scripts/rebrand/preview_paths.py public --base "$PREVIEW_BASE"
 
       - name: Pack pages and bundles
+        if: steps.scope.outputs.scoped == 'true'
         working-directory: public
         run: find . -type f \( -name '*.html' -o -name '*.css' -o -name '*.js' \) -print0 | tar --null -T - -cf ../site.tar
 
       - name: Upload site artifact
+        if: steps.scope.outputs.scoped == 'true'
         uses: actions/upload-artifact@v7
         with:
           name: rebrand-pr-base-${{ github.run_number }}
@@ -259,47 +271,6 @@ jobs:
           retention-days: 1
           compression-level: 1
           overwrite: true  # A rerun reuses the run number.
-          if-no-files-found: error
-
-  pages:
-    name: Select browser checks
-    runs-on: ubuntu-22.04
-    needs: [inputs, build, reference]
-    if: ${{ !cancelled() && needs.build.result == 'success' && (needs.reference.result == 'success' || needs.inputs.outputs.scoped == 'false') }}
-    outputs:
-      mode: ${{ steps.selection.outputs.mode }}
-    steps:
-      - uses: actions/checkout@v6
-      - uses: actions/download-artifact@v7
-        if: needs.inputs.outputs.scoped == 'true'
-        with:
-          name: rebrand-preview-${{ github.run_number }}
-          path: head
-      - uses: actions/download-artifact@v7
-        if: needs.inputs.outputs.scoped == 'true'
-        with:
-          name: rebrand-pr-base-${{ github.run_number }}
-          path: base
-      - name: Compare pages and bundles
-        id: selection
-        env:
-          SCOPED: ${{ needs.inputs.outputs.scoped }}
-        run: |
-          if [ "$SCOPED" = true ]; then
-            tar -xf base/site.tar -C base
-            tar -xf head/site.tar -C head
-            python3 scripts/rebrand/changed_pages.py base head --out changed.json | tee selection.log
-          else
-            python3 scripts/rebrand/changed_pages.py --full --out changed.json | tee selection.log
-          fi
-          sed -n 's/^Check mode: /mode=/p' selection.log >> "$GITHUB_OUTPUT"
-        shell: bash
-      - uses: actions/upload-artifact@v7
-        with:
-          name: rebrand-pages-${{ github.run_number }}
-          path: changed.json
-          retention-days: 1
-          overwrite: true
           if-no-files-found: error
 
   compare:
@@ -347,10 +318,20 @@ jobs:
           hugo-version: ${{ env.HUGO_VERSION }}
           extended: ${{ env.HUGO_EXTENDED }}
 
+      - name: Cache Hugo resources
+        uses: actions/cache@v5
+        with:
+          path: |
+            ${{ runner.temp }}/reference/resources/_gen
+            ${{ runner.temp }}/hugo-cache
+          key: hugo-${{ runner.os }}-${{ runner.arch }}-${{ env.HUGO_VERSION }}-main-${{ github.sha }}
+          restore-keys: |
+            hugo-${{ runner.os }}-${{ runner.arch }}-${{ env.HUGO_VERSION }}-main-
+
       - name: Build the reference from the same data
         working-directory: ${{ runner.temp }}/reference
         run: |
-          hugo --gc --minify --destination "$RUNNER_TEMP/public-reference" --baseURL "$PREVIEW_URL"
+          hugo --cacheDir "$RUNNER_TEMP/hugo-cache" --minify --destination "$RUNNER_TEMP/public-reference" --baseURL "$PREVIEW_URL"
           python3 "$GITHUB_WORKSPACE/scripts/rebrand/preview_paths.py" "$RUNNER_TEMP/public-reference" --base "$PREVIEW_BASE"
         env:
           HUGO_ENV: staging
@@ -388,40 +369,51 @@ jobs:
   design:
     name: Designed screens
     runs-on: ubuntu-22.04
-    needs: [build, pages]
+    needs: [build, reference]
     # The reference build is intentionally skipped in full mode.
-    if: ${{ !cancelled() && needs.build.result == 'success' && needs.pages.result == 'success' }}
+    if: ${{ !cancelled() && needs.build.result == 'success' && (needs.reference.result == 'success' || needs.reference.result == 'skipped') }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
 
-      - name: Download page selection
-        uses: actions/download-artifact@v7
-        with:
-          name: rebrand-pages-${{ github.run_number }}
-
-      - name: Report check mode and pages
-        run: PYTHONPATH=scripts/rebrand python3 -c 'from changed_pages import load_selection; load_selection("changed.json")'
-
       - name: Download the branch's build
-        if: needs.pages.outputs.mode != 'none'
         uses: actions/download-artifact@v7
         with:
           name: rebrand-preview-${{ github.run_number }}
 
-      - name: Unpack the site
-        if: needs.pages.outputs.mode != 'none'
+      - uses: actions/download-artifact@v7
+        if: needs.reference.outputs.scoped == 'true'
+        with:
+          name: rebrand-pr-base-${{ github.run_number }}
+          path: base
+      - name: Compare pages and bundles
+        id: selection
+        env:
+          SCOPED: ${{ needs.reference.outputs.scoped }}
+        run: |
+          if [ "$SCOPED" = true ]; then
+            tar -xf base/site.tar -C base
+            mkdir public
+            tar -xf site.tar -C public
+            python3 scripts/rebrand/changed_pages.py base public --out changed.json | tee selection.log
+          else
+            python3 scripts/rebrand/changed_pages.py --full --out changed.json | tee selection.log
+          fi
+          sed -n 's/^Check mode: /mode=/p' selection.log >> "$GITHUB_OUTPUT"
+        shell: bash
+      - name: Unpack the site for full checks
+        if: steps.selection.outputs.mode == 'full' && needs.reference.outputs.scoped != 'true'
         run: mkdir public && tar -xf site.tar -C public
 
       - name: Cache Chromium
-        if: needs.pages.outputs.mode != 'none'
+        if: steps.selection.outputs.mode != 'none'
         uses: actions/cache@v5
         with:
           path: ~/.cache/ms-playwright
           key: playwright-${{ runner.os }}-${{ runner.arch }}-${{ env.PLAYWRIGHT_VERSION }}-chromium
 
       - name: Install Playwright
-        if: needs.pages.outputs.mode != 'none'
+        if: steps.selection.outputs.mode != 'none'
         run: |
           pip install --quiet "playwright==$PLAYWRIGHT_VERSION" pillow
           # The runner image already has Chromium's libraries; --with-deps adds fonts from the
@@ -433,46 +425,57 @@ jobs:
 
       # Runs its sections in four browsers side by side; each section's time is in the log.
       - name: Designed screens in a browser (overflow, position, layout shift, pause, directory)
-        if: needs.pages.outputs.mode != 'none'
+        if: steps.selection.outputs.mode != 'none'
         run: python3 scripts/rebrand/check_design.py public --pages changed.json --base "$PREVIEW_BASE" --jobs 4
 
   axe:
     name: Accessibility rules
     runs-on: ubuntu-22.04
-    needs: [build, pages]
+    needs: [build, reference]
     # The reference build is intentionally skipped in full mode.
-    if: ${{ !cancelled() && needs.build.result == 'success' && needs.pages.result == 'success' }}
+    if: ${{ !cancelled() && needs.build.result == 'success' && (needs.reference.result == 'success' || needs.reference.result == 'skipped') }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
 
-      - name: Download page selection
-        uses: actions/download-artifact@v7
-        with:
-          name: rebrand-pages-${{ github.run_number }}
-
-      - name: Report check mode and pages
-        run: PYTHONPATH=scripts/rebrand python3 -c 'from changed_pages import load_selection; load_selection("changed.json")'
-
       - name: Download the branch's build
-        if: needs.pages.outputs.mode != 'none'
         uses: actions/download-artifact@v7
         with:
           name: rebrand-preview-${{ github.run_number }}
 
-      - name: Unpack the site
-        if: needs.pages.outputs.mode != 'none'
+      - uses: actions/download-artifact@v7
+        if: needs.reference.outputs.scoped == 'true'
+        with:
+          name: rebrand-pr-base-${{ github.run_number }}
+          path: base
+      - name: Compare pages and bundles
+        id: selection
+        env:
+          SCOPED: ${{ needs.reference.outputs.scoped }}
+        run: |
+          if [ "$SCOPED" = true ]; then
+            tar -xf base/site.tar -C base
+            mkdir public
+            tar -xf site.tar -C public
+            python3 scripts/rebrand/changed_pages.py base public --out changed.json | tee selection.log
+          else
+            python3 scripts/rebrand/changed_pages.py --full --out changed.json | tee selection.log
+          fi
+          sed -n 's/^Check mode: /mode=/p' selection.log >> "$GITHUB_OUTPUT"
+        shell: bash
+      - name: Unpack the site for full checks
+        if: steps.selection.outputs.mode == 'full' && needs.reference.outputs.scoped != 'true'
         run: mkdir public && tar -xf site.tar -C public
 
       - name: Cache Chromium
-        if: needs.pages.outputs.mode != 'none'
+        if: steps.selection.outputs.mode != 'none'
         uses: actions/cache@v5
         with:
           path: ~/.cache/ms-playwright
           key: playwright-${{ runner.os }}-${{ runner.arch }}-${{ env.PLAYWRIGHT_VERSION }}-chromium
 
       - name: Install Playwright
-        if: needs.pages.outputs.mode != 'none'
+        if: steps.selection.outputs.mode != 'none'
         run: |
           pip install --quiet "playwright==$PLAYWRIGHT_VERSION"
           playwright install --with-deps chromium || {
@@ -481,7 +484,7 @@ jobs:
           }
 
       - name: Accessibility rules in a browser (axe-core, by WCAG level)
-        if: needs.pages.outputs.mode != 'none'
+        if: steps.selection.outputs.mode != 'none'
         run: |
           curl -fsSL https://cdn.jsdelivr.net/npm/axe-core@4.11.1/axe.min.js -o "$RUNNER_TEMP/axe.min.js"
           python3 scripts/rebrand/check_axe.py public --pages changed.json --base "$PREVIEW_BASE" --axe "$RUNNER_TEMP/axe.min.js"
@@ -516,13 +519,15 @@ jobs:
   checks:
     name: Check results
     runs-on: ubuntu-22.04
-    needs: [inputs, build, compare, design, axe]
+    needs: [build, reference, compare, design, axe]
     # Report even when a check job failed; skip only when the build was skipped (fork PRs).
-    if: always() && needs.inputs.result != 'skipped'
+    if: always() && needs.build.result != 'skipped'
     steps:
       - name: Fail if any check failed
         env:
           BUILD: ${{ needs.build.result }}
+          REFERENCE: ${{ needs.reference.result }}
+          COMPARE_JOB: ${{ needs.compare.result }}
           SOURCE_RULES: ${{ needs.compare.outputs.source-rules }}
           COMPARE: ${{ needs.compare.outputs.compare }}
           LINKS: ${{ needs.compare.outputs.links }}
@@ -537,6 +542,7 @@ jobs:
           echo "Built HTML: $SEO"
           echo "Designed screens: $DESIGN"
           echo "Accessibility rules: $AXE"
-          for result in "$BUILD" "$SOURCE_RULES" "$COMPARE" "$LINKS" "$SEO" "$DESIGN" "$AXE"; do
+          [ "$REFERENCE" = success ] || [ "$REFERENCE" = skipped ] || exit 1
+          for result in "$BUILD" "$COMPARE_JOB" "$SOURCE_RULES" "$COMPARE" "$LINKS" "$SEO" "$DESIGN" "$AXE"; do
             [ "$result" = "success" ] || exit 1
           done

@@ -877,7 +877,7 @@ FLOATING_PAGES = ("contributors/", "citation-politics/toolkit/", "disciplines/",
 FLOATING_WIDTHS = (390, 1024, 1280, 1440, 1800)  # From 1800 px the launcher has its hover and focus label.
 
 
-def check_floating_controls(browser, base, widths, failures, selected=None):
+def check_floating_controls(browser, base, widths, paths, failures, selected=None):
     """The chat launcher, its invitation and label, and back to top cover nothing of the page, wherever it is scrolled.
     Below 1440 px the launcher and back to top float in the bottom corner, so mid-page they need only keep off each
     other; at the end of the page, which the footer pads for them, they still cover nothing.
@@ -895,7 +895,7 @@ def check_floating_controls(browser, base, widths, failures, selected=None):
         page = new_page(browser, width)
         page.context.add_cookies([{"name": "forrt_analytics_choice", "value": "deny", "url": base}])  # Banner shut.
         page.clock.install()
-        for path in FLOATING_PAGES:
+        for path in paths:
             if selected is not None and "/" + path not in selected:
                 continue
             covered = {}
@@ -917,7 +917,8 @@ def check_floating_controls(browser, base, widths, failures, selected=None):
                 page.locator(".acc-trigger", has_text="Psychology").first.click()
             if path == "clusters/cluster-1/":
                 page.locator(".acc-toggle-all").first.click()  # Every sub-cluster open: the page a reader scrolls.
-            page.clock.run_for(10500)  # The invitation's first turn, at the top of the page.
+            # The invitation interval fires once per jump, without replaying animation frames.
+            page.clock.fast_forward(10500)  # The invitation's first turn, at the top of the page.
             page.wait_for_timeout(400)
             look("invitation at the top")
             end = page.evaluate("document.documentElement.scrollHeight - innerHeight")
@@ -931,7 +932,7 @@ def check_floating_controls(browser, base, widths, failures, selected=None):
                 look(f"back to top at {where}", ".clusters-back-to-top", floating)
                 back_to_top = back_to_top or page.evaluate(BACK_TO_TOP_SHOWN)
                 for turn in range(2):  # One of two turns of its cycle shows the invitation, where it may show.
-                    page.clock.run_for(10000)
+                    page.clock.fast_forward(10000)
                     page.wait_for_timeout(400)
                     look(f"invitation at {where}")
                 page.hover("#just-os-btn")
@@ -1679,11 +1680,15 @@ def main():
 
     # Each section opens its own pages, so sections run side by side, each with its own browser
     # and server. The longest are split into parts and start first.
-    # The floating controls take longest, so they go first, one section per width.
-    floating_widths = (390, 1440) if mode == "core" else FLOATING_WIDTHS
-    floating = selected is None or any("/" + path in pages for path in FLOATING_PAGES)
-    sections = [(f"Floating controls at {width} px", "check_floating_controls", ((width,),))
-                for width in floating_widths if floating]
+    if mode == "core":
+        sections = [
+            (f"Floating controls on {path} at {width} px", "check_floating_controls", ((width,), (path,)))
+            for path in FLOATING_PAGES for width in (390, 1440)
+        ]
+    else:
+        floating = selected is None or any("/" + path in pages for path in FLOATING_PAGES)
+        sections = [(f"Floating controls at {width} px", "check_floating_controls", ((width,), FLOATING_PAGES))
+                    for width in FLOATING_WIDTHS if floating]
     if public:
         paths = article_paths(public, selected)
         if mode == "core":
