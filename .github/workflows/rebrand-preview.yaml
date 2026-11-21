@@ -62,16 +62,15 @@ jobs:
               data) workflow=data-processing.yml ;;
               announcements) workflow=create_announcements.yml ;;
             esac
-            runs=$(gh run list --repo "$GITHUB_REPOSITORY" --workflow "$workflow" --branch main --status success \
-              --limit 100 --json databaseId)
-
             artifact=$(gh api --paginate "repos/$GITHUB_REPOSITORY/actions/artifacts?name=$input-artifact&per_page=100" \
               | jq -c -s '[.[].artifacts[] | select(.workflow_run.head_branch == "main" and (.expired | not))]
                   | sort_by(.created_at, .id) | reverse | .[] | {id, run_id: .workflow_run.id}')
             while IFS= read -r candidate; do
               [ -n "$candidate" ] || continue
-              if jq -e --argjson candidate "$candidate" \
-                'any(.[]; .databaseId == $candidate.run_id)' <<< "$runs" >/dev/null; then
+              run_id=$(jq -r '.run_id' <<< "$candidate")
+              run=$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$run_id")
+              if jq -e --arg path ".github/workflows/$workflow" \
+                '.conclusion == "success" and .path == $path' <<< "$run" >/dev/null; then
                 selected=$candidate
                 break
               fi
