@@ -220,7 +220,10 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .sc-page :is(.sc-team,.sc-grid):has(>[data-area=jus]) .sc-card,.sc-page .sc-title-card[data-area=jus]{--team-color:var(--jus)!important}
 .sc-page :is(.sc-team,.sc-grid):has(>[data-area=res]) .sc-card,.sc-page .sc-title-card[data-area=res]{--team-color:var(--res)!important}
 .sc-page :is(.sc-team,.sc-grid):has(>[data-area=edu]) .sc-card,.sc-page .sc-title-card[data-area=edu]{--team-color:var(--edu)!important}
-.sc-page .sc-section-title{margin:0 0 4px}
+.sc-page .sc-section-header{margin-bottom:22px;padding-bottom:12px;border-bottom:1.5px solid var(--line)}
+.sc-page .sc-section-title{gap:10px;margin:0 0 6px;font:var(--display-weight) clamp(26px,2.6vw,34px)/1.15 var(--display);color:var(--ink)}
+.sc-page .sc-section-title svg{width:24px;height:24px;flex:none}
+.sc-page .sc-section-desc{max-width:36em;font-size:17px;line-height:1.5}
 /* 44 px targets (DESIGN.md §9). */
 .sc-page .sc-nav a{display:inline-flex;align-items:center;min-height:44px;padding:0}
 .sc-close-btn,.sc-social-links a{min-width:44px;min-height:44px;display:inline-flex;align-items:center;justify-content:center}
