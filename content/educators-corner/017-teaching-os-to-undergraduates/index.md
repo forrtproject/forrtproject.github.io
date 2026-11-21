@@ -77,3 +77,5 @@ Course content is available on the Open Science Framework, so to download everyt
 
 #### Contact information: 
 Dr. Dermot Lynott, Department of Psychology, Maynooth University (Email: dermot.lynott@mu.ie; [Homepage](https://www.maynoothuniversity.ie/people/dermot-lynott).)
+
+Doors preview timing sample.
