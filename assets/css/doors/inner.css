@@ -66,3 +66,56 @@ ul.network-icon a:hover{color:var(--ink)}
   /* The plug-in's second-button margin and the 140 px minimum would overflow a 320 px screen. */
   .cc-window.cc-window .cc-compliance .cc-btn{flex:1 1 0;min-width:0;margin:0;padding:9px 12px}
 }
+
+/* 404 page (layouts/404.html): castle hero with site search and four area doors. */
+.nf-page{padding:36px 0 56px}
+.nf-hero{display:grid;grid-template-columns:minmax(0,580px) minmax(260px,340px);gap:14px 56px;align-items:start;margin:0 0 40px}
+.nf-hero-head{display:contents}
+.nf-hero h1{grid-column:1;margin:0;font-size:clamp(40px,4.8vw,62px);line-height:1.04}
+.nf-lede{grid-column:1;max-width:34em;margin:0;font-size:19px;line-height:1.5;color:var(--soft)}
+.nf-hero-actions{grid-column:1;margin-top:4px}
+.nf-castle{grid-column:2;grid-row:1/span 3;align-self:start;margin:0;padding:22px 24px 10px;background:var(--edu-bg);border-radius:999px 999px var(--r-large) var(--r-large)}
+.nf-castle img{display:block;width:100%;height:auto;max-height:240px;object-fit:contain;margin:0 auto}
+.nf-search{max-width:540px;margin:0 0 14px;padding:18px 20px;background:var(--surface);border-radius:var(--r-large)}
+.nf-search label{display:block;margin:0 0 8px;font:700 16px/1.3 var(--text);color:var(--ink)}
+.nf-search-row{display:flex;gap:10px;align-items:center}
+.nf-search-row input{flex:1 1 auto;min-width:0;min-height:44px;padding:8px 16px;background:#fff;border:1.5px solid var(--ink);border-radius:999px;font:400 17px/1.3 var(--text);color:var(--ink)}
+.nf-search-row .btn{flex:none;min-height:44px;padding:8px 20px;border-radius:999px;font-weight:700}
+.nf-home-row{margin:0}
+.nf-home-row .btn{display:inline-flex;align-items:center;min-height:44px}
+.nf-doors h2{margin:0 0 18px;font:var(--display-weight) clamp(26px,2.4vw,32px)/1.15 var(--display)}
+.nf-mobile-areas{display:none}
+.nf-area-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.nf-area,.nf-area-edu{--tone:var(--edu);--bg:var(--edu-bg)}
+.nf-area{padding:20px 20px 22px;background:var(--bg);border-top:4px solid var(--tone);border-radius:var(--r-large)}
+.nf-area-res{--tone:var(--res);--bg:var(--res-bg)}
+.nf-area-jus{--tone:var(--jus);--bg:var(--jus-bg)}
+.nf-area-com{--tone:var(--com);--bg:var(--com-bg)}
+.nf-area-plate{display:inline-flex;align-items:flex-end;justify-content:center;width:64px;height:56px;margin:0 0 10px}
+.nf-area-plate img{display:block;width:100%;height:100%;object-fit:contain}
+.nf-area h3{margin:0 0 10px;font:var(--display-weight) 22px/1.2 var(--display);color:var(--tone)}
+.nf-area ul{margin:0;padding:0;list-style:none;display:grid;gap:2px}
+.nf-area li{margin:0}
+.nf-area a{display:inline-flex;align-items:center;min-height:38px;color:var(--ink);font:600 16px/1.35 var(--text);text-decoration:underline;text-decoration-color:color-mix(in srgb,var(--tone) 55%,transparent);text-underline-offset:3px}
+.nf-area a:hover{color:var(--tone);text-decoration-color:currentColor}
+.nf-report{margin:32px 0 0;padding-top:18px;border-top:1px solid var(--line);font-size:16px;line-height:1.5;color:var(--soft)}
+.nf-report a{color:var(--link);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:1080px){.nf-area-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){
+  .nf-page{padding:20px 0 36px}
+  .nf-hero{display:block;margin-bottom:24px}
+  .nf-hero-head{display:block;margin-bottom:16px}
+  .nf-hero-head h1{margin:0 0 8px;font-size:36px}
+  .nf-castle{display:none}
+  .nf-lede{font-size:17px}
+  .nf-search{padding:14px 16px}
+  .nf-search-row{flex-wrap:wrap}
+  .nf-search-row .btn{width:100%}
+  .nf-doors h2{margin:0 0 12px;font-size:22px}
+  .nf-area-grid{display:none}
+  .nf-mobile-areas{display:grid;gap:8px;margin:0;padding:0;list-style:none}
+  .nf-mobile-areas a{display:flex;align-items:center;justify-content:space-between;min-height:48px;padding:10px 16px;background:var(--bg);border-inline-start:4px solid var(--tone);border-radius:var(--r-small);color:var(--ink);font:600 17px/1.3 var(--text);text-decoration:underline;text-decoration-color:color-mix(in srgb,var(--tone) 55%,transparent);text-underline-offset:3px}
+  .nf-mobile-areas a:hover{color:var(--tone);text-decoration-color:currentColor}
+  .nf-mobile-areas .nf-arrow{color:var(--tone);font-weight:700}
+  .nf-report{margin-top:24px}
+}

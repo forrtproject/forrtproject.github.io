@@ -87,26 +87,92 @@
 })();
 </script>
 
-<div class="wrap">
-  <div class="article-layout article-layout-single">
-    <article class="reading">
-      <header class="article-head"><h1>Page not found</h1></header>
-      <div class="article-style">
-        <p>That page can't be found. If you reached it through a broken link, tell us at <a href="mailto:info@forrt.org">info@forrt.org</a> or contact Lukas Wallrich on the <a href="https://forrt.slack.com/" target="_blank" rel="noopener">FORRT Slack</a>.</p>
-        <h2>Useful pages</h2>
-        <ul>
+<div class="wrap nf-page">
+  <section class="nf-hero" aria-labelledby="nf-title">
+    <div class="nf-hero-head">
+      <h1 id="nf-title">Page not found</h1>
+      {{ with resources.Get "images/doors/castle-still.webp" }}
+      {{ $w := .Resize "640x webp q82" }}
+      <figure class="nf-castle" aria-hidden="true">
+        <img src="{{ $w.RelPermalink }}" width="{{ $w.Width }}" height="{{ $w.Height }}" alt="" fetchpriority="high">
+      </figure>
+      {{ end }}
+      <p class="nf-lede">That address does not match a page on forrt.org. It may have moved, or the link may have a typo.</p>
+    </div>
+    <div class="nf-hero-actions">
+      <form class="nf-search" role="search" action="{{ "" | relLangURL }}" method="get">
+        <label for="nf-q">Search forrt.org</label>
+        <div class="nf-search-row">
+          <input id="nf-q" name="q" type="search" placeholder="Try a term, cluster, lesson plan or tool" autocomplete="off">
+          <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+      </form>
+      <p class="nf-home-row"><a class="btn" href="{{ "" | relLangURL }}">Back to the home page</a></p>
+    </div>
+  </section>
+
+  <section class="nf-doors" aria-labelledby="nf-doors-h">
+    <h2 id="nf-doors-h">Try one of FORRT's four areas</h2>
+    <ul class="nf-mobile-areas" role="list">
+      <li class="nf-area-edu"><a href="{{ "resources/" | relLangURL }}"><span>Education &amp; Pedagogy</span><span class="nf-arrow" aria-hidden="true">→</span></a></li>
+      <li class="nf-area-res"><a href="{{ "replication-hub/" | relLangURL }}"><span>Meta-Science &amp; Research</span><span class="nf-arrow" aria-hidden="true">→</span></a></li>
+      <li class="nf-area-jus"><a href="{{ "dei/" | relLangURL }}"><span>Social Justice &amp; DEIA</span><span class="nf-arrow" aria-hidden="true">→</span></a></li>
+      <li class="nf-area-com"><a href="{{ "about/us/" | relLangURL }}"><span>Community &amp; Sustainability</span><span class="nf-arrow" aria-hidden="true">→</span></a></li>
+    </ul>
+    <div class="nf-area-grid">
+      <div class="nf-area nf-area-edu">
+        {{ with resources.Get "images/doors/area-education.webp" }}{{ $w := .Resize "180x webp q80" }}<span class="nf-area-plate" aria-hidden="true"><img src="{{ $w.RelPermalink }}" width="{{ $w.Width }}" height="{{ $w.Height }}" alt=""></span>{{ end }}
+        <h3>Education &amp; Pedagogy</h3>
+        <ul role="list">
+          <li><a href="{{ "resources/" | relLangURL }}">Teaching resources directory</a></li>
+          <li><a href="{{ "glossary/english/" | relLangURL }}">Glossary</a></li>
+          <li><a href="{{ "lesson-plans/" | relLangURL }}">Lesson plans</a></li>
+          <li><a href="{{ "clusters/" | relLangURL }}">FORRT's 11 clusters</a></li>
+        </ul>
+      </div>
+      <div class="nf-area nf-area-res">
+        {{ with resources.Get "images/doors/area-research.webp" }}{{ $w := .Resize "180x webp q80" }}<span class="nf-area-plate" aria-hidden="true"><img src="{{ $w.RelPermalink }}" width="{{ $w.Width }}" height="{{ $w.Height }}" alt=""></span>{{ end }}
+        <h3>Meta-Science &amp; Research</h3>
+        <ul role="list">
+          <li><a href="{{ "replication-hub/" | relLangURL }}">Replication Hub</a></li>
+          <li><a href="{{ "reversals/" | relLangURL }}">Replications &amp; Reversals</a></li>
+          <li><a href="{{ "publications/" | relLangURL }}">Publications</a></li>
+          <li><a href="{{ "disciplines/" | relLangURL }}">Open research across disciplines</a></li>
+        </ul>
+      </div>
+      <div class="nf-area nf-area-jus">
+        {{ with resources.Get "images/doors/area-justice.webp" }}{{ $w := .Resize "180x webp q80" }}<span class="nf-area-plate" aria-hidden="true"><img src="{{ $w.RelPermalink }}" width="{{ $w.Width }}" height="{{ $w.Height }}" alt=""></span>{{ end }}
+        <h3>Social Justice &amp; DEIA</h3>
+        <ul role="list">
+          <li><a href="{{ "awop/" | relLangURL }}">Academic Wheel of Privilege</a></li>
+          <li><a href="{{ "citation-politics/" | relLangURL }}">Towards Citational Justice</a></li>
+          <li><a href="{{ "neurodiversity-lessonbank/" | relLangURL }}">Neurodiversity resources</a></li>
+        </ul>
+      </div>
+      <div class="nf-area nf-area-com">
+        {{ with resources.Get "images/doors/area-community.webp" }}{{ $w := .Resize "180x webp q80" }}<span class="nf-area-plate" aria-hidden="true"><img src="{{ $w.RelPermalink }}" width="{{ $w.Width }}" height="{{ $w.Height }}" alt=""></span>{{ end }}
+        <h3>Community &amp; Sustainability</h3>
+        <ul role="list">
           <li><a href="{{ "about/us/" | relLangURL }}">About FORRT</a></li>
           <li><a href="{{ "about/get-involved/" | relLangURL }}">Get involved</a></li>
-          <li><a href="{{ "resources/" | relLangURL }}">Teaching resources</a></li>
-          <li><a href="{{ "glossary/english/" | relLangURL }}">Glossary</a></li>
-          <li><a href="{{ "replication-hub/" | relLangURL }}">Replication Hub</a></li>
-          <li><a href="{{ "lesson-plans/" | relLangURL }}">Lesson plans</a></li>
-          <li><a href="{{ "publications/" | relLangURL }}">Publications</a></li>
-          <li><a href="{{ "clusters/" | relLangURL }}">FORRT's clusters</a></li>
+          <li><a href="{{ "about/teams/" | relLangURL }}">Teams</a></li>
+          <li><a href="{{ "contributors/" | relLangURL }}">Contributors</a></li>
         </ul>
-        <p>Or go back to the <a href="{{ "" | relLangURL }}">home page</a>.</p>
       </div>
-    </article>
-  </div>
+    </div>
+  </section>
+
+  <p class="nf-report">Reached this page through a broken link? Tell us at <a href="mailto:info@forrt.org">info@forrt.org</a> or contact Lukas Wallrich on the <a href="https://forrt.slack.com/" target="_blank" rel="noopener">FORRT Slack</a>.</p>
 </div>
+<script>
+document.querySelector('.nf-search')?.addEventListener('submit', function (event) {
+  var nav = document.querySelector('.search-nav');
+  var q = event.target.elements.q.value.trim();
+  if (nav && nav.elements && nav.elements.q) {
+    event.preventDefault();
+    nav.elements.q.value = q;
+    nav.dispatchEvent(new Event('submit', { cancelable: true }));
+  }
+});
+</script>
 {{- end -}}
