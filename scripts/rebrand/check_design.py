@@ -1070,7 +1070,7 @@ def check_directory_widths(browser, base, failures, selected=None):
 
 def check_directory(browser, base, failures, selected=None):
     expect = expectation(failures, "directory")
-    if selected is None or {"/", "/resources/"} <= selected:
+    if selected is None or {"/", "/resources/"} & selected:
         topics = new_page(browser, 1440)
         topics.goto(base, wait_until="load")
         wanted = topics.evaluate("[...document.querySelectorAll('.topic')].map(a => new URL(a.href).searchParams.get('cluster'))")
@@ -1078,6 +1078,8 @@ def check_directory(browser, base, failures, selected=None):
         known = topics.evaluate("[...document.querySelectorAll('.facet[data-facet=cluster] .chip')].map(c => c.dataset.value)")
         expect(wanted and set(wanted) <= set(known), f"every topic button names a real cluster: {sorted(set(wanted) - set(known))}")
         topics.context.close()
+    if selected is not None and "/resources/" not in selected:
+        return
     page = new_page(browser, 1440)
     requests = []
     page.on("request", lambda request: requests.append(request.url))
@@ -1727,7 +1729,7 @@ def main():
         "check_conference": (CONFERENCE,),
         "check_review_pages": ("publications/", "clusters/", "disciplines/", "booklet/", "community-map/"),
         "check_contributor_network": (NETWORK_PATH,),
-        "check_directory": ("resources/",),
+        "check_directory": ("", "resources/"),
     }
     if mode == "changed":
         sections = [(title, name, extra) for title, name, extra in sections

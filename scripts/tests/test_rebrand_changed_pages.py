@@ -14,6 +14,8 @@ class ChangedPagesTest(unittest.TestCase):
     def test_fingerprints_and_integrity_do_not_change_html(self):
         old = '<link href=/css/site.min.' + 'a' * 32 + '.css integrity="md5-old">'
         new = '<link href=/css/site.min.' + 'b' * 32 + '.css integrity=md5-new>'
+        old += '<div data-css="/css/chat.' + 'a' * 32 + '.css"></div>'
+        new += '<div data-css="/css/chat.' + 'b' * 32 + '.css"></div>'
         self.assertEqual(normalize(old), normalize(new))
         self.assertNotEqual(normalize(old + '<p>old'), normalize(new + '<p>new'))
 
@@ -41,7 +43,8 @@ class ChangedPagesTest(unittest.TestCase):
         cases = [
             (empty, "none", set()),
             ({**empty, "bundles_changed": True}, "core", set()),
-            ({**empty, "added": ["/new/"], "removed": ["/old/"]}, "changed", {"/new/"}),
+            ({**empty, "changed": ["/edit/"], "added": ["/new/"], "removed": ["/old/"]},
+             "changed", {"/edit/", "/new/"}),
             ({**empty, "removed": [f"/{i}/" for i in range(61)]}, "full", set()),
             ({**empty, "force_full": True}, "full", set()),
         ]

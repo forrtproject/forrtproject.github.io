@@ -72,7 +72,7 @@ jobs:
         run: |
           if [ "$EVENT" != pull_request ] || [ "$FULL_LABEL" = true ] || \
             ! git diff --quiet "$BASE_SHA" HEAD -- .github/workflows/rebrand-preview.yaml \
-              ':(glob)scripts/rebrand/check_*.py' scripts/rebrand/changed_pages.py; then
+              ':(glob)scripts/rebrand/check_*.py' scripts/rebrand/changed_pages.py scripts/rebrand/sample_pages.json; then
             echo "scoped=false" >> "$GITHUB_OUTPUT"
           else
             echo "scoped=true" >> "$GITHUB_OUTPUT"
@@ -265,7 +265,7 @@ jobs:
     name: Select browser checks
     runs-on: ubuntu-22.04
     needs: [inputs, build, reference]
-    if: always() && needs.build.result == 'success' && (needs.reference.result == 'success' || needs.inputs.outputs.scoped == 'false')
+    if: ${{ !cancelled() && needs.build.result == 'success' && (needs.reference.result == 'success' || needs.inputs.outputs.scoped == 'false') }}
     outputs:
       mode: ${{ steps.selection.outputs.mode }}
     steps:
@@ -390,7 +390,7 @@ jobs:
     runs-on: ubuntu-22.04
     needs: [build, pages]
     # The reference build is intentionally skipped in full mode.
-    if: always() && needs.build.result == 'success' && needs.pages.result == 'success'
+    if: ${{ !cancelled() && needs.build.result == 'success' && needs.pages.result == 'success' }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
@@ -441,7 +441,7 @@ jobs:
     runs-on: ubuntu-22.04
     needs: [build, pages]
     # The reference build is intentionally skipped in full mode.
-    if: always() && needs.build.result == 'success' && needs.pages.result == 'success'
+    if: ${{ !cancelled() && needs.build.result == 'success' && needs.pages.result == 'success' }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6

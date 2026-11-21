@@ -13,9 +13,9 @@ INTEGRITY = re.compile(r"""\s+integrity=(?:"[^"]*"|'[^']*'|[^\s>]+)""")
 
 def normalize(html):
     def clean_tag(match):
-        return INTEGRITY.sub("", FINGERPRINT.sub("", match[0]))
+        return INTEGRITY.sub("", match[0])
 
-    return re.sub(r"<(?:link|script)\b[^>]*>", clean_tag, html)
+    return re.sub(r"<(?:link|script)\b[^>]*>", clean_tag, FINGERPRINT.sub("", html))
 
 
 def page_path(path):
