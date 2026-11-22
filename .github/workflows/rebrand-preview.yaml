@@ -4,7 +4,7 @@ name: Doors preview
 # Doors Redesign Preview
 # =======================
 # Purpose: Builds the rebrand-doors branch and publishes it at forrt.org/rebrand-doors/
-# Triggers: Pushes and manual runs on rebrand-doors, PRs into it, and the launch PR into main.
+# Triggers: Pushes to rebrand-doors, PRs into it, the launch PR into main, and manual runs.
 # Target: forrtproject/rebrand-doors, on GitHub Pages under the forrt.org domain.
 #         Only pushes deploy. A failed check does not hold back the preview.
 # Checks: Source, internal links and built HTML run in parallel with the browser checks.
@@ -44,7 +44,7 @@ jobs:
     runs-on: ubuntu-22.04
     if: >-
       github.event_name == 'push' ||
-      (github.event_name == 'workflow_dispatch' && github.ref_name == 'rebrand-doors') ||
+      github.event_name == 'workflow_dispatch' ||
       (github.event_name == 'pull_request' &&
         github.event.pull_request.head.repo.full_name == github.repository &&
         (github.base_ref == 'rebrand-doors' ||
@@ -654,7 +654,7 @@ jobs:
     if: >-
       always() && (
         github.event_name == 'push' ||
-        (github.event_name == 'workflow_dispatch' && github.ref_name == 'rebrand-doors') ||
+        github.event_name == 'workflow_dispatch' ||
         (github.event_name == 'pull_request' &&
           github.event.pull_request.head.repo.full_name == github.repository &&
           (github.base_ref == 'rebrand-doors' ||

@@ -57,7 +57,7 @@ Features:
 | Push to `rebrand-doors` | forrt.org/rebrand-doors/ (`forrtproject/rebrand-doors`) | On push |
 | Same-repository PR into `rebrand-doors` | Checks only | On PR events |
 | Same-repository PR from `rebrand-doors` into `main` | Launch checks | On PR events |
-| Manual run on `rebrand-doors` | Launch checks | On dispatch |
+| Manual run | Launch checks | On dispatch |
 
 Features:
 - Uses the same data and announcement artifacts as `deploy.yaml`, with noindex and no analytics
