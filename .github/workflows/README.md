@@ -61,7 +61,7 @@ Features:
 - Uses the same data and announcement artifacts as `deploy.yaml`, with noindex and no analytics
 - Compares each build with its merge base with `main`: URL list, structured data, SEO tags and internal links. See `scripts/rebrand/README.md`
 - A failed check marks the run red but still updates the preview
-- The candidate, PR base and main reference build in parallel from the same pinned production artifacts, including generated Contributors content. Browser checks use the PR-base HTML diff. Changes to static files or non-bundle assets run the full browser suite. The comparison with the merge base with `main` covers the whole site.
+- On pushes, the branch and the main reference build in parallel from the same pinned production artifacts, including generated Contributors content. Same-repository PRs also get a PR-base site (reused from the last push build when its inputs match) and limit the browser checks to the pages that differ from it. Changes to static files or non-bundle assets run the full browser suite. The comparison with the merge base with `main` covers the whole site.
 - CSS or JS changes add the core design and axe samples to the changed-page checks. Core design covers the named screens, breakpoints, sample pages, home, floating controls at 390 and 1440 px, and every fourth article in the usual article set.
 - Pushes, PRs labeled `full-checks`, PRs changing this workflow or the check scripts, and diffs over 60 pages run the full browser suite. With no relevant changes, both browser jobs report success without starting Chromium.
 - Design and axe cache Chromium by Playwright version.
