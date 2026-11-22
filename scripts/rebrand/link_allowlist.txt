@@ -1,3 +1,12 @@
-# Retired paths that layouts/404.html redirects, one regular expression per line, matched
+# Redirected paths and existing broken links, one regular expression per line, matched
 # against the link's path (scripts/rebrand/check_internal_links.py).
 ^/TenureRun(/|$)  # the game moved to /tenure-run/; the Games Portal's sheet still has the old address
+
+# Historical URLs the 404 page redirects to sister sites.
+^/LoveReplicationsWeek/?$
+^/flora_zotero/?$
+^/replication_handbook/?$
+
+# Existing breakage also found on main (Doors preview run 44909738353).
+^/glossary/bulgarian/?$
+^/talk/openday22/?$
