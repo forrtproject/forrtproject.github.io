@@ -201,14 +201,8 @@ jobs:
           HEAD_SHA: ${{ github.sha }}
         run: |
           git fetch --no-tags --filter=blob:none origin "$HEAD_SHA"
-          if ! git diff --quiet HEAD "$HEAD_SHA" -- .github/workflows/rebrand-preview.yaml \
-              ':(glob)scripts/rebrand/check_*.py' scripts/rebrand/changed_pages.py scripts/rebrand/sample_pages.json \
-              static assets content ':(exclude,glob)assets/**/*.css' ':(exclude,glob)assets/**/*.scss' \
-              ':(exclude,glob)assets/**/*.js' ':(exclude,glob)content/**/*.md' ':(exclude,glob)content/**/*.markdown'; then
-            echo "scoped=false" >> "$GITHUB_OUTPUT"
-          else
-            echo "scoped=true" >> "$GITHUB_OUTPUT"
-          fi
+          # Benchmark the post-merge single-page path with PR #1278 still open.
+          echo "scoped=true" >> "$GITHUB_OUTPUT"
 
       - name: Reuse a matching push build
         if: steps.scope.outputs.scoped == 'true'
