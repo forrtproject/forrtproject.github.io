@@ -21,7 +21,7 @@ on:
   pull_request:
     types: [opened, synchronize, reopened, labeled, unlabeled]
     branches:
-      - rebrand-doors
+      - scratch-doors-page-base-20261122-110635
       - main
   workflow_dispatch:
 
@@ -47,7 +47,7 @@ jobs:
       (github.event_name == 'workflow_dispatch' && github.ref_name == 'rebrand-doors') ||
       (github.event_name == 'pull_request' &&
         github.event.pull_request.head.repo.full_name == github.repository &&
-        (github.base_ref == 'rebrand-doors' ||
+        (github.base_ref == 'scratch-doors-page-base-20261122-110635' ||
           (github.base_ref == 'main' && github.head_ref == 'rebrand-doors')))
     permissions:
       actions: read
@@ -183,7 +183,7 @@ jobs:
     name: Build PR base
     needs: inputs
     runs-on: ubuntu-22.04
-    if: github.event_name == 'pull_request' && github.base_ref == 'rebrand-doors' && github.event.pull_request.head.repo.full_name == github.repository && !contains(github.event.pull_request.labels.*.name, 'full-checks')
+    if: github.event_name == 'pull_request' && github.base_ref == 'scratch-doors-page-base-20261122-110635' && github.event.pull_request.head.repo.full_name == github.repository && !contains(github.event.pull_request.labels.*.name, 'full-checks')
     permissions:
       contents: read
       actions: read
@@ -657,7 +657,7 @@ jobs:
         (github.event_name == 'workflow_dispatch' && github.ref_name == 'rebrand-doors') ||
         (github.event_name == 'pull_request' &&
           github.event.pull_request.head.repo.full_name == github.repository &&
-          (github.base_ref == 'rebrand-doors' ||
+          (github.base_ref == 'scratch-doors-page-base-20261122-110635' ||
             (github.base_ref == 'main' && github.head_ref == 'rebrand-doors'))))
     timeout-minutes: 2
     steps:
@@ -666,7 +666,7 @@ jobs:
           INPUTS: ${{ needs.inputs.result }}
           BUILD: ${{ needs.build.result }}
           PR_BASE: ${{ needs.reference.result }}
-          EXPECTED_PR_BASE: ${{ github.event_name == 'pull_request' && github.base_ref == 'rebrand-doors' && !contains(github.event.pull_request.labels.*.name, 'full-checks') && 'success' || 'skipped' }}
+          EXPECTED_PR_BASE: ${{ github.event_name == 'pull_request' && github.base_ref == 'scratch-doors-page-base-20261122-110635' && !contains(github.event.pull_request.labels.*.name, 'full-checks') && 'success' || 'skipped' }}
           MAIN_REFERENCE: ${{ needs.main-reference.result }}
           COMPARE_JOB: ${{ needs.compare.result }}
           EXPECTED_COMPARISON: ${{ (github.event_name != 'pull_request' || github.base_ref == 'main') && 'success' || 'skipped' }}
