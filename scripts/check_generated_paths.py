@@ -26,7 +26,10 @@ GENERATED = re.compile(
 # Includes the redesign's NEW_OUTPUTS and the summaries generator's output.
 OUTPUT_SOURCES = {
     "data/summaries.json": "the published FORRT summaries Google Doc, then run content/summaries/summaries.py",
-    "data/open_research_games.json": "the Games Portal source sheet, then run scripts/build_games_portal.py",
+    "data/open_research_games.json": (
+        "the Games Portal source sheet, then run scripts/build_games_portal.py on Doors "
+        "or scripts/open_research_games_portal/Open-Research-Games-Portal.R on main"
+    ),
     "data/scholar_citations.json": "the publication citation inputs used by scripts/gs-cite/google_scholar.py",
     "content/publications/citation_chart.webp": "the publication citation inputs used by scripts/gs-cite/google_scholar.py",
     "content/about/steering-committee/index.md": "the steering committee or personal-details sheet, then run scripts/generate_sc_profiles.py",
