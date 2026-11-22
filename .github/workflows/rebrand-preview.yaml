@@ -43,7 +43,12 @@ jobs:
     name: Resolve build inputs
     runs-on: ubuntu-22.04
     if: >-
-      (github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && github.ref_name == 'rebrand-doors') || (github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && (github.base_ref == 'rebrand-doors' || github.head_ref == 'rebrand-doors')))
+      github.event_name == 'push' ||
+      (github.event_name == 'workflow_dispatch' && github.ref_name == 'rebrand-doors') ||
+      (github.event_name == 'pull_request' &&
+        github.event.pull_request.head.repo.full_name == github.repository &&
+        (github.base_ref == 'rebrand-doors' ||
+          (github.base_ref == 'main' && github.head_ref == 'rebrand-doors')))
     permissions:
       actions: read
     outputs:
@@ -348,10 +353,14 @@ jobs:
       - name: Let Git report non-ASCII paths unquoted
         run: git config core.quotepath false
 
-      # The point where the branch last took main, not main's tip: otherwise anything landing
-      # on main shows up here as a change, until main is next merged in.
+      # Use the actual PR head on launch. GitHub's test merge already includes main.
       - name: Check out the merge base with main as the reference
-        run: git worktree add --detach "$RUNNER_TEMP/reference" "$(git merge-base origin/main HEAD)"
+        env:
+          MAIN: ${{ github.event.pull_request.base.sha || 'origin/main' }}
+          CANDIDATE: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          merge_base=$(git merge-base "$MAIN" "$CANDIDATE")
+          git worktree add --detach "$RUNNER_TEMP/reference" "$merge_base"
 
       - name: Download data artifact
         if: fromJSON(needs.inputs.outputs.data).id != null
@@ -422,12 +431,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
-        with:
-          fetch-depth: 0
-          filter: blob:none
-
-      - name: Let Git report non-ASCII paths unquoted
-        run: git config core.quotepath false
 
       - name: Download the reference site
         uses: actions/download-artifact@v7
@@ -446,7 +449,6 @@ jobs:
         run: mkdir public && tar -xf site.tar -C public
 
       - name: URL list, structured data and SEO tags against the reference
-        id: compare
         run: python3 scripts/rebrand/compare_builds.py "$RUNNER_TEMP/public-reference" public
 
   site-checks:
@@ -481,7 +483,7 @@ jobs:
         id: source-rules
         continue-on-error: true
         env:
-          BASE_SHA: ${{ github.base_ref == 'rebrand-doors' && github.event.pull_request.base.sha || 'origin/main' }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha || 'origin/main' }}
         run: python3 scripts/rebrand/check_source_rules.py --base "$BASE_SHA"
 
       - name: Internal links
@@ -647,36 +649,54 @@ jobs:
   checks:
     name: Check results
     runs-on: ubuntu-22.04
-    needs: [build, reference, compare, site-checks, design, axe]
-    # Report even when a check job failed; skip only when the build was skipped (fork PRs).
-    if: ${{ !cancelled() && needs.build.result != 'skipped' }}
+    needs: [inputs, build, reference, main-reference, compare, site-checks, design, axe, deploy]
+    # Run even if a required job was cancelled or skipped.
+    if: >-
+      always() && (
+        github.event_name == 'push' ||
+        (github.event_name == 'workflow_dispatch' && github.ref_name == 'rebrand-doors') ||
+        (github.event_name == 'pull_request' &&
+          github.event.pull_request.head.repo.full_name == github.repository &&
+          (github.base_ref == 'rebrand-doors' ||
+            (github.base_ref == 'main' && github.head_ref == 'rebrand-doors'))))
+    timeout-minutes: 2
     steps:
       - name: Fail if any check failed
         env:
+          INPUTS: ${{ needs.inputs.result }}
           BUILD: ${{ needs.build.result }}
-          REFERENCE: ${{ needs.reference.result }}
+          PR_BASE: ${{ needs.reference.result }}
+          EXPECTED_PR_BASE: ${{ github.event_name == 'pull_request' && github.base_ref == 'rebrand-doors' && !contains(github.event.pull_request.labels.*.name, 'full-checks') && 'success' || 'skipped' }}
+          MAIN_REFERENCE: ${{ needs.main-reference.result }}
           COMPARE_JOB: ${{ needs.compare.result }}
+          EXPECTED_COMPARISON: ${{ (github.event_name != 'pull_request' || github.base_ref == 'main') && 'success' || 'skipped' }}
           SOURCE_RULES: ${{ needs.site-checks.outputs.source-rules }}
-          COMPARISON_REQUIRED: ${{ github.event_name != 'pull_request' || github.base_ref == 'main' }}
           SITE_CHECKS: ${{ needs.site-checks.result }}
           LINKS: ${{ needs.site-checks.outputs.links }}
           SEO: ${{ needs.site-checks.outputs.seo }}
           DESIGN: ${{ needs.design.result }}
           AXE: ${{ needs.axe.result }}
+          DEPLOY: ${{ needs.deploy.result }}
+          EXPECTED_DEPLOY: ${{ github.event_name == 'push' && 'success' || 'skipped' }}
         run: |
-          echo "Build: $BUILD"
-          echo "Templates and generated paths: $SOURCE_RULES"
-          echo "URL list, structured data and SEO tags: $COMPARE_JOB"
-          echo "Internal links: $LINKS"
-          echo "Built HTML: $SEO"
-          echo "Designed screens: $DESIGN"
-          echo "Accessibility rules: $AXE"
-          [ "$REFERENCE" = success ] || [ "$REFERENCE" = skipped ] || exit 1
-          if [ "$COMPARISON_REQUIRED" = true ]; then
-            [ "$COMPARE_JOB" = success ] || exit 1
-          else
-            [ "$COMPARE_JOB" = success ] || [ "$COMPARE_JOB" = skipped ] || exit 1
-          fi
-          for result in "$BUILD" "$SITE_CHECKS" "$SOURCE_RULES" "$LINKS" "$SEO" "$DESIGN" "$AXE"; do
-            [ "$result" = "success" ] || exit 1
-          done
+          failed=0
+          check_result() {
+            local name=$1 result=$2 expected=${3:-success}
+            echo "$name: $result (expected $expected)"
+            if [ "$result" != "$expected" ]; then
+              failed=1
+            fi
+          }
+          check_result "Resolve build inputs" "$INPUTS"
+          check_result "Build" "$BUILD"
+          check_result "Build PR base" "$PR_BASE" "$EXPECTED_PR_BASE"
+          check_result "Build main reference" "$MAIN_REFERENCE" "$EXPECTED_COMPARISON"
+          check_result "Compare with main" "$COMPARE_JOB" "$EXPECTED_COMPARISON"
+          check_result "Source and built site checks" "$SITE_CHECKS"
+          check_result "Templates and generated paths" "$SOURCE_RULES"
+          check_result "Internal links" "$LINKS"
+          check_result "Built HTML" "$SEO"
+          check_result "Designed screens" "$DESIGN"
+          check_result "Accessibility rules" "$AXE"
+          check_result "Deploy preview" "$DEPLOY" "$EXPECTED_DEPLOY"
+          exit "$failed"
