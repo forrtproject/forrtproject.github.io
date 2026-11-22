@@ -1,0 +1,39 @@
+name: Generated paths
+
+on:
+  pull_request:
+    branches: [main, rebrand-doors]
+    types: [opened, synchronize, reopened, labeled, unlabeled]
+
+permissions:
+  contents: read
+
+jobs:
+  generated-paths:
+    name: Check generated paths
+    runs-on: ubuntu-latest
+    steps:
+      # The data-processing workflow opens these PRs with FORRT_PAT.
+      - name: Determine whether this is a generator-output PR
+        id: exemption
+        if: >-
+          contains(github.event.pull_request.labels.*.name, 'generated-output') ||
+          (github.event.pull_request.head.repo.full_name == github.repository &&
+          github.event.pull_request.user.login == 'richarddushime' &&
+          (startsWith(github.head_ref, 'glossary-update-') || startsWith(github.head_ref, 'ga-data-update-')))
+        run: |
+          echo "Generator-output PR is exempt"
+          echo "exempt=true" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/checkout@v6
+        if: steps.exemption.outputs.exempt != 'true'
+        with:
+          fetch-depth: 0
+          filter: blob:none
+          persist-credentials: false
+
+      - name: Check changed paths
+        if: steps.exemption.outputs.exempt != 'true'
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: python3 scripts/check_generated_paths.py --base "$BASE_SHA"
