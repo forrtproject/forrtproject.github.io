@@ -4,15 +4,13 @@ name: Doors preview
 # Doors Redesign Preview
 # =======================
 # Purpose: Builds the rebrand-doors branch and publishes it at forrt.org/rebrand-doors/
-# Triggers: Push to rebrand-doors, and PRs into it (checks only, no deployment)
-# Target: forrtproject/rebrand-doors, on GitHub Pages under the forrt.org domain
-# Checks: Every run also builds the merge base with main from the same data, then compares
-#         the two builds.
-#         A failed check shows on the run but does not hold back the preview.
-# Layout: The branch and PR base build in parallel. The main comparison uses the branch inputs.
-#         The browser checks use changed pages, plus a core sample when CSS/JS changes.
-#         Pushes, the full-checks label, check infrastructure changes and large diffs use the full suite.
-#         "Compare with main" still checks the whole site. "Check results" aggregates failures.
+# Triggers: Pushes and manual runs on rebrand-doors, PRs into it, and the launch PR into main.
+# Target: forrtproject/rebrand-doors, on GitHub Pages under the forrt.org domain.
+#         Only pushes deploy. A failed check does not hold back the preview.
+# Checks: Source, internal links and built HTML run in parallel with the browser checks.
+#         Pushes, manual runs and the launch PR also compare with the merge base with main.
+#         Eligible PRs into rebrand-doors use a PR base build to scope the browser checks.
+#         "Check results" aggregates failures.
 # Note: Uses the same data and announcement artifacts as deploy.yaml. Delete this
 #       workflow when the redesign launches.
 
@@ -24,6 +22,8 @@ on:
     types: [opened, synchronize, reopened, labeled, unlabeled]
     branches:
       - rebrand-doors
+      - main
+  workflow_dispatch:
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
@@ -42,7 +42,8 @@ jobs:
   inputs:
     name: Resolve build inputs
     runs-on: ubuntu-22.04
-    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+    if: >-
+      (github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && github.ref_name == 'rebrand-doors') || (github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && (github.base_ref == 'rebrand-doors' || github.head_ref == 'rebrand-doors')))
     permissions:
       actions: read
     outputs:
@@ -81,8 +82,6 @@ jobs:
     name: Build
     needs: inputs
     runs-on: ubuntu-22.04
-    # Fork PRs get no artifacts token and have no preview to update.
-    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
     permissions:
       contents: read
       actions: read  # Needed for artifact access
@@ -179,7 +178,7 @@ jobs:
     name: Build PR base
     needs: inputs
     runs-on: ubuntu-22.04
-    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && !contains(github.event.pull_request.labels.*.name, 'full-checks')
+    if: github.event_name == 'pull_request' && github.base_ref == 'rebrand-doors' && github.event.pull_request.head.repo.full_name == github.repository && !contains(github.event.pull_request.labels.*.name, 'full-checks')
     permissions:
       contents: read
       actions: read
@@ -333,6 +332,7 @@ jobs:
 
   main-reference:
     name: Build main reference
+    if: github.event_name != 'pull_request' || github.base_ref == 'main'
     runs-on: ubuntu-22.04
     needs: inputs
     permissions:
@@ -419,11 +419,6 @@ jobs:
     needs: [build, main-reference]
     permissions:
       contents: read
-    outputs:
-      source-rules: ${{ steps.source-rules.outcome }}
-      compare: ${{ steps.compare.outcome }}
-      links: ${{ steps.links.outcome }}
-      seo: ${{ steps.seo.outcome }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
@@ -450,22 +445,49 @@ jobs:
       - name: Unpack the site
         run: mkdir public && tar -xf site.tar -C public
 
+      - name: URL list, structured data and SEO tags against the reference
+        id: compare
+        run: python3 scripts/rebrand/compare_builds.py "$RUNNER_TEMP/public-reference" public
+
+  site-checks:
+    name: Source and built site checks
+    runs-on: ubuntu-22.04
+    needs: build
+    permissions:
+      contents: read
+    outputs:
+      source-rules: ${{ steps.source-rules.outcome }}
+      links: ${{ steps.links.outcome }}
+      seo: ${{ steps.seo.outcome }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          filter: blob:none
+
+      - name: Let Git report non-ASCII paths unquoted
+        run: git config core.quotepath false
+
+      - name: Download the branch's build
+        uses: actions/download-artifact@v7
+        with:
+          name: rebrand-preview-${{ github.run_number }}
+
+      - name: Unpack the site
+        run: mkdir public && tar -xf site.tar -C public
+
       - name: Templates and generated paths
         id: source-rules
         continue-on-error: true
-        run: python3 scripts/rebrand/check_source_rules.py --base origin/main
-
-      - name: URL list, structured data and SEO tags against the reference
-        id: compare
-        continue-on-error: true
-        run: python3 scripts/rebrand/compare_builds.py "$RUNNER_TEMP/public-reference" public
+        env:
+          BASE_SHA: ${{ github.base_ref == 'rebrand-doors' && github.event.pull_request.base.sha || 'origin/main' }}
+        run: python3 scripts/rebrand/check_source_rules.py --base "$BASE_SHA"
 
       - name: Internal links
         id: links
         continue-on-error: true
-        run: |
-          python3 scripts/rebrand/check_internal_links.py public --base "$PREVIEW_BASE" \
-            --reference "$RUNNER_TEMP/public-reference"
+        run: python3 scripts/rebrand/check_internal_links.py public --base "$PREVIEW_BASE"
 
       - name: Built HTML (headings, conditional assets, image alt and dimensions)
         id: seo
@@ -599,7 +621,7 @@ jobs:
     name: Deploy preview
     runs-on: ubuntu-22.04
     needs: build
-    if: github.event_name != 'pull_request'
+    if: github.event_name == 'push'
     timeout-minutes: 15
     steps:
       - name: Download site artifact
@@ -625,7 +647,7 @@ jobs:
   checks:
     name: Check results
     runs-on: ubuntu-22.04
-    needs: [build, reference, compare, design, axe]
+    needs: [build, reference, compare, site-checks, design, axe]
     # Report even when a check job failed; skip only when the build was skipped (fork PRs).
     if: ${{ !cancelled() && needs.build.result != 'skipped' }}
     steps:
@@ -634,21 +656,27 @@ jobs:
           BUILD: ${{ needs.build.result }}
           REFERENCE: ${{ needs.reference.result }}
           COMPARE_JOB: ${{ needs.compare.result }}
-          SOURCE_RULES: ${{ needs.compare.outputs.source-rules }}
-          COMPARE: ${{ needs.compare.outputs.compare }}
-          LINKS: ${{ needs.compare.outputs.links }}
-          SEO: ${{ needs.compare.outputs.seo }}
+          SOURCE_RULES: ${{ needs.site-checks.outputs.source-rules }}
+          COMPARISON_REQUIRED: ${{ github.event_name != 'pull_request' || github.base_ref == 'main' }}
+          SITE_CHECKS: ${{ needs.site-checks.result }}
+          LINKS: ${{ needs.site-checks.outputs.links }}
+          SEO: ${{ needs.site-checks.outputs.seo }}
           DESIGN: ${{ needs.design.result }}
           AXE: ${{ needs.axe.result }}
         run: |
           echo "Build: $BUILD"
           echo "Templates and generated paths: $SOURCE_RULES"
-          echo "URL list, structured data and SEO tags: $COMPARE"
+          echo "URL list, structured data and SEO tags: $COMPARE_JOB"
           echo "Internal links: $LINKS"
           echo "Built HTML: $SEO"
           echo "Designed screens: $DESIGN"
           echo "Accessibility rules: $AXE"
           [ "$REFERENCE" = success ] || [ "$REFERENCE" = skipped ] || exit 1
-          for result in "$BUILD" "$COMPARE_JOB" "$SOURCE_RULES" "$COMPARE" "$LINKS" "$SEO" "$DESIGN" "$AXE"; do
+          if [ "$COMPARISON_REQUIRED" = true ]; then
+            [ "$COMPARE_JOB" = success ] || exit 1
+          else
+            [ "$COMPARE_JOB" = success ] || [ "$COMPARE_JOB" = skipped ] || exit 1
+          fi
+          for result in "$BUILD" "$SITE_CHECKS" "$SOURCE_RULES" "$LINKS" "$SEO" "$DESIGN" "$AXE"; do
             [ "$result" = "success" ] || exit 1
           done
