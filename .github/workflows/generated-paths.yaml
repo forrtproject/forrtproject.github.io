@@ -8,6 +8,10 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: generated-paths-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
 jobs:
   generated-paths:
     name: Check generated paths
@@ -28,6 +32,7 @@ jobs:
       - uses: actions/checkout@v6
         if: steps.exemption.outputs.exempt != 'true'
         with:
+          ref: ${{ github.event.pull_request.head.sha }}
           fetch-depth: 0
           filter: blob:none
           persist-credentials: false

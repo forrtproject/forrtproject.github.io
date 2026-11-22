@@ -22,6 +22,8 @@ class GeneratedPathsTest(unittest.TestCase):
             with self.subTest(path=path):
                 self.assertIsNotNone(generated_source(path))
         self.assertIn("content/summaries/summaries.py", generated_source("data/summaries.json"))
+        self.assertIn("Tenzing", generated_source("scripts/forrt_contribs/contributors_cache.csv"))
+        self.assertIn("AGENTS.md", generated_source("static/partials/another-output.html"))
         for path in (
             "data/partners.json",
             "data/publications.yaml",
