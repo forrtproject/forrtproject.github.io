@@ -10,7 +10,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "rebrand"))
 
 from check_design import framing_problems  # noqa: E402
-from check_internal_links import broken_target, extract_links, find_broken  # noqa: E402
+from check_internal_links import broken_target, extract_links, find_broken, load_allowlist  # noqa: E402
 from check_preview import (  # noqa: E402
     canonical_problem, off_origin, production_expectation, redirect_ok, redirect_target, resolve_base, robots_problem,
 )
@@ -160,6 +160,17 @@ class LinkCheckTests(unittest.TestCase):
             "https://forrt.org/retired/", "/rebrand-doors/", "/rebrand-doors/", FILES, SISTERS, [re.compile("^/retired/")]
         )
         self.assertIsNone(target)
+
+    def test_historical_sister_site_redirects_keep_subpaths(self):
+        allow = load_allowlist()
+        for path in ("/LoveReplicationsWeek", "/flora_zotero", "/replication_handbook"):
+            with self.subTest(path=path):
+                self.assertIsNone(broken_target(
+                    path + "/chapter.html", "/rebrand-doors/", "/rebrand-doors/", FILES, SISTERS, allow
+                ))
+                self.assertEqual(broken_target(
+                    path + "-typo/", "/rebrand-doors/", "/rebrand-doors/", FILES, SISTERS, allow
+                ), path + "-typo/")
 
     def test_extract_skips_scripts_templates_and_placeholders(self):
         links = list(

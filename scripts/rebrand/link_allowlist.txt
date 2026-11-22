@@ -3,9 +3,9 @@
 ^/TenureRun(/|$)  # the game moved to /tenure-run/; the Games Portal's sheet still has the old address
 
 # Historical URLs the 404 page redirects to sister sites.
-^/LoveReplicationsWeek/?$
-^/flora_zotero/?$
-^/replication_handbook/?$
+^/LoveReplicationsWeek(/|$)
+^/flora_zotero(/|$)
+^/replication_handbook(/|$)
 
 # Existing breakage also found on main (Doors preview run 44909738353).
 ^/glossary/bulgarian/?$

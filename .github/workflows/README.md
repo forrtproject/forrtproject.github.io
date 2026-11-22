@@ -61,7 +61,7 @@ Features:
 
 Features:
 - Uses the same data and announcement artifacts as `deploy.yaml`, with noindex and no analytics
-- Pushes, manual runs and the launch PR compare URLs, structured data and SEO tags with the merge base with `main`. The launch PR builds GitHub's test merge and finds the reference commit from the PR head. Both builds use the same pinned production artifacts.
+- Pushes, manual runs and the launch PR compare URLs, structured data and SEO tags with the merge base with `main`. The launch PR uses the Doors head as the candidate, so changes unique to `main` stay out of that comparison. Both builds use the same pinned production artifacts.
 - The source rules, internal links and built HTML checks run from the branch build alongside the browser checks. Only pushes update the preview, even if a check fails.
 - Eligible PRs into `rebrand-doors` build their PR base (or reuse the last push build when its inputs match) and limit browser checks to the pages that differ.
 - The final gate checks every job's expected result. The main reference and comparison are skipped on ordinary Doors PRs, the PR base is used only in scoped mode, and only pushes deploy.

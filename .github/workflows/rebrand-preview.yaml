@@ -33,6 +33,9 @@ env:
   PLAYWRIGHT_VERSION: "1.63.0"
   PREVIEW_BASE: /rebrand-doors/
   PREVIEW_URL: https://forrt.org/rebrand-doors/
+  # On launch, compare the Doors head to its merge base so changes on main
+  # since the branches diverged do not appear as additions in the Doors build.
+  CANDIDATE_REF: ${{ (github.base_ref == 'main' && github.event.pull_request.head.sha) || github.sha }}
 
 concurrency:
   group: rebrand-preview-${{ github.ref }}
@@ -94,6 +97,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v6
         with:
+          ref: ${{ env.CANDIDATE_REF }}
           fetch-depth: 0
           filter: blob:none
 
@@ -347,19 +351,18 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v6
         with:
+          ref: ${{ env.CANDIDATE_REF }}
           fetch-depth: 0
           filter: blob:none
 
       - name: Let Git report non-ASCII paths unquoted
         run: git config core.quotepath false
 
-      # Use the actual PR head on launch. GitHub's test merge already includes main.
       - name: Check out the merge base with main as the reference
         env:
           MAIN: ${{ github.event.pull_request.base.sha || 'origin/main' }}
-          CANDIDATE: ${{ github.event.pull_request.head.sha || github.sha }}
         run: |
-          merge_base=$(git merge-base "$MAIN" "$CANDIDATE")
+          merge_base=$(git merge-base "$MAIN" HEAD)
           git worktree add --detach "$RUNNER_TEMP/reference" "$merge_base"
 
       - name: Download data artifact
@@ -431,6 +434,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
+        with:
+          ref: ${{ env.CANDIDATE_REF }}
 
       - name: Download the reference site
         uses: actions/download-artifact@v7
@@ -465,6 +470,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v6
         with:
+          ref: ${{ env.CANDIDATE_REF }}
           fetch-depth: 0
           filter: blob:none
 
@@ -505,6 +511,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
+        with:
+          ref: ${{ env.CANDIDATE_REF }}
 
       - name: Download the branch's build
         uses: actions/download-artifact@v7
@@ -567,6 +575,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
+        with:
+          ref: ${{ env.CANDIDATE_REF }}
 
       - name: Download the branch's build
         uses: actions/download-artifact@v7
