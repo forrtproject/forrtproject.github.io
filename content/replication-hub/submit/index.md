@@ -8,7 +8,7 @@ url: "/replication-hub/submit/"
 
 We aim to build a comprehensive database of replication studies across all disciplines.
 If you have conducted a replication study that we have not yet included, or just seen one, 
-please submit it using the form below.
+please use the form below to tell us about it.
 
 If you want to check if a replication study is already included in the database, 
 the easiest way is to use the 
