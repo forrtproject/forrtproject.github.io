@@ -28,11 +28,13 @@ Hard checks (exit 1 if any fails):
      non-empty meta description (#864).
   10. No meta description contains a double-escaped entity such as `&amp;ldquo;`
      (#864). Text that merely looks like an entity (`&name;`) is not one.
-  15. Bulgarian glossary pages have Bulgarian DefinedTerm metadata, mark the
-     English heading suffix, and link only to existing internal glossary routes.
   11. The FLoRA page (replication-hub/flora/) contains the FLoRA citation DOI.
   13. List cards use a page's `image.alt_text` (#1203), tested on a post that
      sets it.
+  14. No URL in sitemap.xml (or the sitemaps a sitemap index lists) is a page
+     with robots noindex. A missing sitemap, or one that lists no URLs, fails.
+  15. Bulgarian glossary pages have Bulgarian DefinedTerm metadata, mark the
+     English heading suffix, and link only to existing internal glossary routes.
 
 Report-only sections (never fail): pages with zero or several <h1>, the
 site-wide share of images that carry both width and height, pages whose
@@ -48,8 +50,10 @@ from collections import Counter
 from html.entities import html5
 from html.parser import HTMLParser
 from urllib.parse import unquote, urlparse
+from xml.etree import ElementTree
 
 MAX_LISTED = 20
+SITEMAP_NS = "http://www.sitemaps.org/schemas/sitemap/0.9"
 # Markup that survived flattening, e.g. an indented HTML block rendered as code.
 HTML_TAG = re.compile(r"</?[A-Za-z][A-Za-z0-9]*(\s[^<>]*)?/?>")
 # Attribute values arrive already unescaped, so any entity left in them was
@@ -144,10 +148,10 @@ class Page:
                           if (m.get("name") or "").lower() == "robots")
         refresh = any((m.get("http-equiv") or "").lower() == "refresh"
                       for m in parser.metas)
-        own = "/" + os.path.dirname(path).replace(os.sep, "/")
-        own = own.rstrip("/") + "/"
+        url_path = "/" + os.path.dirname(path).replace(os.sep, "/")
+        self.url_path = url_path.rstrip("/") + "/"
         elsewhere = (parser.canonical is not None and
-                     unquote(urlparse(parser.canonical).path) != unquote(own))
+                     unquote(urlparse(parser.canonical).path) != unquote(self.url_path))
         # Redirect stubs, noindexed pages and pages canonicalised to another URL
         # (pagination pages point at page 1) never reach search results as such.
         self.noindex = "noindex" in robots
@@ -390,6 +394,30 @@ def check_card_alt_text(pages):
             and not (img.get("alt") or "").startswith(ALT_TEXT_CARD_START)]
 
 
+def sitemap_paths(public_dir, name="sitemap.xml"):
+    """URL paths listed in a sitemap, following a sitemap index into its sitemaps (read
+    from public_dir by URL path, as Hugo writes them alongside the pages). Raises
+    FileNotFoundError for a missing sitemap, so a check never passes on no URLs."""
+    root = ElementTree.parse(os.path.join(public_dir, name)).getroot()
+    locs = [unquote(urlparse(loc.text.strip()).path)
+            for loc in root.iter("{%s}loc" % SITEMAP_NS) if loc.text]
+    if root.tag == "{%s}sitemapindex" % SITEMAP_NS:
+        return [p for loc in locs for p in sitemap_paths(public_dir, loc.lstrip("/"))]
+    return locs
+
+
+def check_sitemap_noindex(public_dir, pages):
+    """A sitemap URL that is noindexed sends search engines contradictory signals."""
+    try:
+        listed = sitemap_paths(public_dir)
+    except FileNotFoundError as missing:
+        return ["%s (not found)" % os.path.relpath(missing.filename, public_dir)]
+    if not listed:
+        return ["sitemap.xml (lists no URLs)"]
+    noindexed = {p.url_path for p in pages if p.noindex}
+    return [p for p in listed if p in noindexed]
+
+
 def check_bulgarian_glossary(pages):
     """Check the rendered release, including minified/unquoted HTML attributes."""
     known_routes = {"/" + p.path.removesuffix("index.html") for p in pages}
@@ -483,6 +511,7 @@ def main(public_dir):
         "10. no double-escaped entity in a meta description": check_description_entities(pages),
         "11. FLoRA page shows the citation": check_flora_citation(public_dir),
         "13. list cards use image.alt_text": check_card_alt_text(pages),
+        "14. no noindexed page is listed in the sitemap": check_sitemap_noindex(public_dir, pages),
         "15. Bulgarian glossary language metadata, headings and links": check_bulgarian_glossary(pages),
     }
     conditional = check_conditional_assets(pages)

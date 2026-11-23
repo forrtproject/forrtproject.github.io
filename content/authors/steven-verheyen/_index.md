@@ -1,7 +1,7 @@
 ---
 # Display name
-name: "dr. Steven Verheyen"
-title: "dr. Steven Verheyen"
+name: "Dr Steven Verheyen"
+title: "Dr Steven Verheyen"
 
 
 # Is this the primary user of the site?
