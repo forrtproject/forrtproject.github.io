@@ -2,7 +2,7 @@
      so it stays easy to diff against upstream. It leaves out author profiles that
      custom_head.html marks noindex (same condition there), so the sitemap never
      lists a page it asks search engines not to index (check 14 in
-     scripts/check_seo_html.py). */ -}}
+     scripts/check_seo_html.py). It also appends data/external_sitemap.yaml. */ -}}
 {{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   {{- range .Pages }}
@@ -22,6 +22,14 @@
       {{- range .AllTranslations }}
     <xhtml:link rel="alternate" hreflang="{{ .Language.LanguageCode }}" href="{{ .Permalink }}" />
       {{- end }}
+    {{- end }}
+  </url>
+  {{- end }}
+  {{- range site.Data.external_sitemap }}
+  <url>
+    <loc>{{ .loc }}</loc>
+    {{- with .lastmod }}
+    <lastmod>{{ . | safeHTML }}</lastmod>
     {{- end }}
   </url>
   {{- end }}
