@@ -12,8 +12,17 @@ announcements_dir=$3
 
 find "$checkout/content/curated_resources" -maxdepth 1 -type f ! -name '_index.md' -delete
 
+had_static_games=0
+if [ -e "$checkout/static/data/open_research_games.json" ]; then
+  had_static_games=1
+fi
+
 if [ -d "$data_dir/content" ] || [ -d "$data_dir/data" ]; then
   cp -R "$data_dir/." "$checkout/"
+  # Mirror deploy.yaml: do not let a pre-merge data-artifact resurrect the retired static games file (#1151).
+  if [ "$had_static_games" -eq 0 ]; then
+    rm -f "$checkout/static/data/open_research_games.json"
+  fi
 else
   echo "::warning::No data artifact; building from the committed seed copies."
 fi
