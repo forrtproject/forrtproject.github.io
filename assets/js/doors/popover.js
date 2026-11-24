@@ -49,21 +49,26 @@ export function closePopover() {
   if (restoreFocus && trigger.isConnected) trigger.focus({ preventScroll: true });
 }
 
-export function openPopover(trigger, contentNode, { label, hover = false } = {}) {
+export function openPopover(trigger, contentNode, { label, hover = false, className = '' } = {}) {
   closePopover();
   const panel = document.createElement('div');
-  panel.className = 'doors-popover';
+  panel.className = className ? `doors-popover ${className}` : 'doors-popover';
   panel.id = 'doors-popover';
   panel.setAttribute('role', 'dialog');
   panel.setAttribute('aria-label', label);
   panel.append(contentNode);
-  const close = document.createElement('button');
-  close.type = 'button';
-  close.className = 'doors-popover-close';
-  close.setAttribute('aria-label', 'Close');
-  close.textContent = '×';
-  close.addEventListener('click', closePopover);
-  panel.append(close);
+  const inlineClose = panel.querySelector('[data-popover-close]');
+  if (inlineClose) {
+    inlineClose.addEventListener('click', closePopover);
+  } else {
+    const close = document.createElement('button');
+    close.type = 'button';
+    close.className = 'doors-popover-close';
+    close.setAttribute('aria-label', 'Close');
+    close.textContent = '×';
+    close.addEventListener('click', closePopover);
+    panel.append(close);
+  }
   current = { trigger, panel, expanded: trigger.getAttribute('aria-expanded'), controls: trigger.getAttribute('aria-controls'), restoreFocus: !hover };
   trigger.setAttribute('aria-expanded', 'true');
   trigger.setAttribute('aria-controls', panel.id);
@@ -74,7 +79,11 @@ export function openPopover(trigger, contentNode, { label, hover = false } = {})
   panel.addEventListener('pointerenter', () => clearTimeout(closing));
   panel.addEventListener('pointerleave', () => { if (current && !current.restoreFocus) scheduleClose(); });
   panel.addEventListener('focusin', () => { if (current) current.restoreFocus = true; });
-  if (!hover) panel.querySelector(focusable)?.focus({ preventScroll: true });
+  if (!hover) {
+    const target = [...panel.querySelectorAll(focusable)].find((el) => !el.matches('[data-popover-close],.doors-popover-close'))
+      || panel.querySelector(focusable);
+    target?.focus({ preventScroll: true });
+  }
 }
 
 function scheduleClose() {
@@ -82,7 +91,7 @@ function scheduleClose() {
   closing = setTimeout(closePopover, 200);
 }
 
-export function registerPopover(selector, buildContent, { label, hover = false } = {}) {
+export function registerPopover(selector, buildContent, { label, hover = false, className = '' } = {}) {
   const activate = (trigger, fromHover = false) => {
     if (current?.trigger === trigger) {
       if (!fromHover && !current.restoreFocus) {
@@ -93,7 +102,7 @@ export function registerPopover(selector, buildContent, { label, hover = false }
     }
     const content = buildContent(trigger);
     if (!content) return false;
-    openPopover(trigger, content, { label, hover: fromHover });
+    openPopover(trigger, content, { label, hover: fromHover, className });
     return true;
   };
   document.addEventListener('click', (event) => {

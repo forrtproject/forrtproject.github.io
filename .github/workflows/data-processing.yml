@@ -362,6 +362,13 @@ jobs:
           node bibtex_to_apa.js -o '../content/glossary/apa_lookup.json'
 
       #========================================
+      # Enrich cited DOIs with Open Access status and repository links (OpenAlex / Unpaywall)
+      #========================================
+      - name: Enrich citation open-access metadata
+        continue-on-error: true  # Continue even if external OA APIs are unavailable
+        run: python3 scripts/enrich_citation_oa.py
+
+      #========================================
       # Regenerate the glossary reference list page from apa_lookup.json so the
       # public "List of References" stays in sync with the dynamic glossary.
       #========================================

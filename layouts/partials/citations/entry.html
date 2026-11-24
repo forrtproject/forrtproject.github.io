@@ -1,2 +1,3 @@
 {{- $meta := partialCached "citations/metadata" .apa .apa -}}
-<li id="ref-{{ .key }}" data-reference="{{ .key }}" data-first-author="{{ $meta.first }}" data-authors="{{ $meta.names | jsonify }}" data-etal="{{ $meta.etal }}" data-year="{{ $meta.year }}"{{ with $meta.url }} data-source="{{ . }}"{{ end }}>{{ partial "citations/authors" (.apa | markdownify) }}</li>
+{{- $oa := cond (and $meta.doi site.Data.citation_oa) (index site.Data.citation_oa $meta.doi) nil -}}
+<li id="ref-{{ .key }}" data-reference="{{ .key }}" data-first-author="{{ $meta.first }}" data-authors="{{ $meta.names | jsonify }}" data-etal="{{ $meta.etal }}" data-year="{{ $meta.year }}"{{ with $meta.url }} data-source="{{ . }}"{{ end }}{{ with $oa }}{{ with .status }} data-oa-status="{{ . }}"{{ end }}{{ with .url }} data-oa-url="{{ . }}"{{ end }}{{ with .host }} data-oa-host="{{ . }}"{{ end }}{{ if .pdf }} data-oa-pdf="true"{{ end }}{{ end }}>{{ partial "citations/authors" (.apa | markdownify) }}</li>

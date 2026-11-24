@@ -37,4 +37,9 @@
 {{- if not $url -}}
   {{- with findRE `10\.[0-9]{4,9}/(?:[^\s<>()\[\]]|\([^\s<>()\[\]]*\))+` $plain 1 -}}{{- $url = printf "https://doi.org/%s" (index . 0) -}}{{- end -}}
 {{- end -}}
-{{- return (dict "author" $short "names" $names "etal" $etal "first" $first "year" $year "url" (strings.TrimRight ".,;" $url) "plain" $plain) -}}
+{{- $cleanUrl := strings.TrimRight ".,;" $url -}}
+{{- $doi := "" -}}
+{{- with findRESubmatch `^https?://(?:dx\.)?doi\.org/(.+)$` $cleanUrl 1 -}}
+  {{- $doi = lower (index (index . 0) 1) -}}
+{{- end -}}
+{{- return (dict "author" $short "names" $names "etal" $etal "first" $first "year" $year "url" $cleanUrl "doi" $doi "plain" $plain) -}}
