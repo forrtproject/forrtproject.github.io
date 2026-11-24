@@ -209,6 +209,8 @@ jobs:
       # =======================
       - name: Build site
         run: |
+          # Drop retired static/data/open_research_games.json if an older data-artifact unpacked it (#1151).
+          rm -f static/data/open_research_games.json
           hugo --gc --minify --cleanDestinationDir --destination public
         env:
           HUGO_ENV: production

@@ -42,10 +42,10 @@ The Contributors page supports URL parameters to filter and customize the view:
 | Parameter | Description | Example |
 |-----------|-------------|---------|
 | `project` | Filter by project name (normalized) | `?project=glossary` |
-| `role` | Filter by contribution role (normalized) | `?role=writing` |
+| `role` | Filter by one or more contribution roles (normalized, comma-separated or repeated; matches any selected role) | `?role=project-lead,project-co-lead` |
 | `collapse-filter` | Hide the filter menu and the board of projects and show a simple "show all" link | `?project=glossary&collapse-filter` |
 
-On a page generated from the current template, a project or role in the address adds a heading above the list that names the filter and counts the people, with a "Clear filter" link (left out in `collapse-filter` mode, which has its own "show all" link), and `#contributor-results` in the address scrolls to that heading. Above the list, `tenzing.py` writes a board of the 12 projects with the most contributors, each counted once per project, and each linking to `?project=<value>#contributor-results`. A page generated before this template has no board and no heading: it keeps its "Filtered results" block in the filter panel, which `collapse-filter` mode removes together with the panel.
+On a page generated from the current template, `contributor-filter.js` upgrades the project `<select>` into a live searchable combobox with contributor counts and the role `<select>` into a multi-role checklist menu, filtering live without reloading the page and updating the URL. A project or role filter adds a heading above the list that names the filter and counts the people, with a "Clear filter" control (left out in `collapse-filter` mode, which has its own "show all" link), and `#contributor-results` in the address scrolls to that heading. Above the list, `tenzing.py` writes a board of the 12 projects with the most contributors, each counted once per project, and each linking to `?project=<value>#contributor-results`. A page generated before this template has no board and no heading: it keeps its "Filtered results" block in the filter panel, which `collapse-filter` mode removes together with the panel.
 
 
 ## Local Development
