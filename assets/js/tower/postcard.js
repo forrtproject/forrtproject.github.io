@@ -79,8 +79,8 @@ export function renderPostcardCanvas({ sourceCanvas, title, bricks, courses, sta
   ctx.fillText(title, cardX + 40, footY + 56);
 
   const brickWord = bricks === 1 ? 'brick' : 'bricks';
-  const courseWord = courses === 1 ? 'course' : 'courses';
-  const statsText = `${bricks} ${brickWord}  ·  ${courses} ${courseWord} high  ·  ${stability}% stable`;
+  const layerWord = courses === 1 ? 'layer' : 'layers';
+  const statsText = `${bricks} ${brickWord}  ·  ${courses} ${layerWord} high  ·  ${stability}% stable`;
   ctx.fillStyle = '#4c5e72';
   ctx.font = "600 22px 'Source Sans 3', system-ui, sans-serif";
   ctx.fillText(statsText, cardX + 40, footY + 98);
