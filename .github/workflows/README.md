@@ -65,7 +65,7 @@ Features:
 - The source rules, internal links and built HTML checks run from the branch build alongside the browser checks. Only pushes update the preview, even if a check fails.
 - Eligible PRs into `rebrand-doors` build their PR base (or reuse the last push build when its inputs match) and limit browser checks to the pages that differ.
 - The final gate checks every job's expected result. The main reference and comparison are skipped on ordinary Doors PRs, the PR base is used only in scoped mode, and only pushes deploy.
-- CSS or JS changes add the core design and axe samples to the changed-page checks. Core design covers the named screens, breakpoints, sample pages, home, floating controls at 390 and 1440 px, and every fourth article in the usual article set.
+- CSS or JS changes add the core design and axe samples to the changed-page checks. Core design covers the named screens, breakpoints, sample pages, home, phone reading (with the JUST-OS launcher checks), floating controls at 390 and 1440 px, and every fourth article in the usual article set.
 - Pushes, PRs labeled `full-checks`, PRs changing this workflow or the check scripts, and diffs over 60 pages run the full browser suite. With no relevant changes, both browser jobs report success without starting Chromium.
 - Design and axe cache Chromium by Playwright version.
 - Delete this workflow when the redesign launches

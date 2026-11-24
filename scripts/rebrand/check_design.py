@@ -2034,7 +2034,9 @@ def main():
         "check_contributor_network": (NETWORK_PATH,),
         "check_directory": ("", "resources/"),
     }
-    core = {"check_floating_controls", "check_articles", "check_screens", "check_other_widths", "check_samples"}
+    # Phone reading holds the JUST-OS launcher checks, which test CSS and JS rather than one page.
+    core = {"check_floating_controls", "check_articles", "check_screens", "check_other_widths", "check_samples",
+            "check_phone_reading"}
     jobs = []
     for title, name, extra in sections:
         if mode == "core" and name in core:
