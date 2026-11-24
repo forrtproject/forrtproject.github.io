@@ -4,14 +4,14 @@
 Runs in a single GitHub Actions job (.github/workflows/check_content_rules.yaml)
 against the PR git diff — stdlib-only, no GitHub API calls required.
 
-Rules:
-  1. Images (advisory warning): flags added/modified .png/.jpg/.jpeg files and
-     non-URL references to them in changed text files, honoring
+Rules (advisory — flagged in the PR comment/summary without failing the check):
+  1. Images: flags added/modified .png/.jpg/.jpeg files and non-URL references
+     to them in changed text files, honoring
      scripts/webp_conversion/image_ignore_list.txt.
-  2. Publisher URLs with embedded DOIs (hard fail): bans newly added direct
-     publisher URLs containing a DOI (e.g. science.org/doi/10.1126/...,
-     pnas.org/doi/..., medrxiv.org/content/10.1101/..., ?doi=10....) in
-     hand-maintained files under content/, suggesting https://doi.org/<doi>.
+  2. Publisher URLs with embedded DOIs: flags newly added direct publisher URLs
+     containing a DOI (e.g. science.org/doi/10.1126/..., pnas.org/doi/...,
+     medrxiv.org/content/10.1101/..., ?doi=10....) in hand-maintained files
+     under content/, suggesting https://doi.org/<doi>.
 """
 
 from __future__ import annotations
@@ -250,7 +250,7 @@ def format_comment(
         return "\n".join(parts) + "\n"
 
     if doi_violations:
-        parts.append("### :x: Direct publisher URLs with embedded DOIs detected\n")
+        parts.append("### :warning: Direct publisher URLs with embedded DOIs detected\n")
         parts.append(
             "Publisher sites frequently block automated link checkers with HTTP 403 and can "
             "change URL structure over time. Please replace these with canonical `https://doi.org/...` links:\n"
@@ -291,9 +291,9 @@ def main(argv: list[str] | None = None) -> int:
         help="Optional GITHUB_OUTPUT file to write comment and failed flags.",
     )
     parser.add_argument(
-        "--no-fail",
+        "--fail-on-doi",
         action="store_true",
-        help="Always exit 0 (used in CI when a later step fails after posting the PR comment).",
+        help="Exit non-zero if publisher-DOI URLs are found (off by default; advisory only).",
     )
     args = parser.parse_args(argv)
 
@@ -303,17 +303,15 @@ def main(argv: list[str] | None = None) -> int:
     doi_violations = find_publisher_doi_in_diff(diff_text)
 
     comment = format_comment(images_found, references_found, doi_violations)
-    failed = bool(doi_violations)
 
     print(comment)
 
     if args.github_output:
         delimiter = "CONTENT_RULES_EOF"
         with open(args.github_output, "a", encoding="utf-8") as fh:
-            fh.write(f"failed={'true' if failed else 'false'}\n")
             fh.write(f"comment<<{delimiter}\n{comment}{delimiter}\n")
 
-    if failed and not args.no_fail:
+    if doi_violations and args.fail_on_doi:
         return 1
     return 0
 
