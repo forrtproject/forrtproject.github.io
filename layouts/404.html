@@ -52,6 +52,7 @@
 
   var redirects = [
     { pattern: /^\/curated_resources\/.+/, target: base + '/resources/' },
+    { pattern: /^\/educators-corner\/page\/\d+\/?$/, target: base + '/educators-corner/' },
     { pattern: /^\/glossary\/([^/]+)\/.+/, target: base + '/glossary/$1/' },
     { pattern: /^\/author(\/|$)/, target: base + '/contributors/' },
     { pattern: /^\/summaries(\/|$)/, target: base + '/' },

@@ -2,6 +2,8 @@
 fonts/doors/Newsreader-OFL.txt   # Licence beside the self-hosted font, not a page
 fonts/doors/SourceSans3-OFL.txt  # Licence beside the self-hosted font, not a page
 fonts/doors/FontAwesome-LICENSE.txt  # Licence beside the self-hosted icon subset, not a page
+fonts/doors/NotoNaskhArabic-OFL.txt  # Licence beside the self-hosted Arabic heading font, not a page
+fonts/doors/NotoSansArabic-OFL.txt   # Licence beside the self-hosted Arabic text font, not a page
 resources/page/*/index.html  # Crawlable pages of the directory (D16, #868). Their number follows the collection
 resources/directory.json     # The directory's filter data (D16, #868)
 resources/search.json        # The directory's search data, fetched on first search (D16, #868)
@@ -19,6 +21,18 @@ js/load-theme.js                 # The theme's day/night script, gone with the t
 js/academic.min.FINGERPRINT.js   # The theme's script bundle, without its search, under a new name while some pages still need it
 curated_resources/page/*/index.html  # Decision D17: paginated lists removed, and the 404 page sends old links to /resources/
 forrt_clusters/*/page/*/index.html   # Decision D17: paginated lists removed, and the 404 page sends old links to the cluster's page
+post/*/featured_hu.webp      # Small thumbnails the old category lists made of posts that now show a brick panel there instead, as on the news list
+publication_types/index.html         # Redirects to /publications/ (an alias): the publication types taxonomy had no terms and is disabled
+publication_types/index.xml          # The disabled publication types taxonomy's empty feed
+publication_types/page/1/index.html  # The disabled publication types taxonomy's empty first page
+forrt_clusters/index.html            # #1188: titled "Earlier FORRT Clusters" (was "Forrt_clusters"), with its own description
+forrt_clusters/academic-life-and-culture/index.html  # #1188: only the breadcrumb data changes, naming the index above by its new title. Remove once main has it
+forrt_clusters/conceptual-and-statistical-knowledge/index.html  # #1188: only the breadcrumb data changes, naming the index above by its new title. Remove once main has it
+forrt_clusters/open-data-and-materials/index.html  # #1188: only the breadcrumb data changes, naming the index above by its new title. Remove once main has it
+forrt_clusters/preregistration/index.html  # #1188: only the breadcrumb data changes, naming the index above by its new title. Remove once main has it
+forrt_clusters/replication-research/index.html  # #1188: only the breadcrumb data changes, naming the index above by its new title. Remove once main has it
+forrt_clusters/reproducibility-and-replicability-knowledge/index.html  # #1188: only the breadcrumb data changes, naming the index above by its new title. Remove once main has it
+forrt_clusters/reproducible-analyses/index.html  # #1188: only the breadcrumb data changes, naming the index above by its new title. Remove once main has it
 tag/index.html                       # The migration plan's one 404 rule replaces the /tag/ stubs
 tag/*/index.html                     # The migration plan's one 404 rule replaces the /tag/ stubs
 tag/*/*/index.html                   # The same, for the one tag with a slash in it
@@ -59,3 +73,43 @@ awop/index.html                # #1118: its description is now a written summary
 reversals/index.html           # #1118: its description now opens with the concluded-project note at the top of the page
 tags/index.html                # #1118: its description says in one sentence what tags are for
 submit/index.html               # #1133: a new page listing the ways to submit work to FORRT
+educators-corner/page/1/index.html  # Educators' Corner lists all its posts on one page; the 404 page sends old page links to it
+educators-corner/page/2/index.html  # The same
+educators-corner/page/3/index.html  # The same
+educators-corner/index.html  # Its description now comes from front matter, with "O&R" spelled out, as the introduction became a disclosure
+replication-hub/index.html     # Plain copy: the title drops "Transforming Research" and the description says what the Hub offers
+replication-hub/flora/index.html  # The same title, in its breadcrumb data
+replication-hub/large-scale-replication-projects/index.html  # The same
+replication-hub/submit/index.html  # The same
+post/index.html                # News & announcements: its title in sentence case (DESIGN.md §7)
+post/2026-01-newsletter/index.html  # The same name in this post's breadcrumb data
+post/2026-02-newsletter/index.html  # The same name in this post's breadcrumb data
+post/2026-03-newsletter/index.html  # The same name in this post's breadcrumb data
+post/2026-04-newsletter/index.html  # The same name in this post's breadcrumb data
+post/2026-05-chinese-glossary/index.html  # The same name in this post's breadcrumb data
+post/2026-05-get-involved-page/index.html  # The same name in this post's breadcrumb data
+post/2026-05-just-os-chatbot/index.html  # The same name in this post's breadcrumb data
+post/2026-05-newsletter/index.html  # The same name in this post's breadcrumb data
+post/2026-05-nowhere-lab/index.html  # The same name in this post's breadcrumb data
+post/2026-06-ai-metascience-call/index.html  # The same name in this post's breadcrumb data
+post/2026-06-peer-community-in-partner/index.html  # The same name in this post's breadcrumb data
+newsletters/index.html         # Newsletter archive: its title in sentence case
+about/principles/index.html    # Its description opens with the first heading, now in sentence case ("Principled teaching")
+summaries/index.html           # Its breadcrumb name is now "Summaries", as its heading, instead of "Overview"
+summaries/open-reproducible/index.html     # A written description instead of the symbol legend, and the same breadcrumb name
+summaries/diversity-equity-inclusion/index.html  # A written meta description instead of the symbol legend, and "Summaries" as the breadcrumb name
+lesson-plans/index.html   # Its body now opens with action cards, so its description is set to the first sentence of its Motivation
+publications/index.html  # #1191: the citation chart moved after the introduction, so the description no longer opens with its "Details on Google Scholar" link. Exempts all its SEO tags: remove once main has the change
+nowherelab/index.html  # #1193: its description is now a written summary; the layout wrappers around the page's text cut the automatic one at "…not limited to:"
+educators-corner/012-lessons-from-non-academic-jobs/index.html  # #1249: the stray colon at the end of its title removed (approved by Lukas). Remove once main has it
+educators-corner/013-introducing-nowhere-lab/index.html  # #1249: the raw URL moved out of its summary into a link on "Nowhere Lab" (approved by Lukas). Remove once main has it
+educators-corner/004-teaching-why-how-replication/index.html  # typo fix in its summary ("how and hy", "become learn and teach"), approved by Lukas. Remove once main has it
+data/open_research_games.json  # #1151: retired stale Nov 2025 static games JSON; /open-research-games-portal/ builds from data/open_research_games.json
+about/mission/index.html       # #1297: description is now a written summary without the "Mission Statement" heading prefix
+awards/index.html              # #1297: description is now a written summary instead of concatenated heading and body text
+testimonials/index.html        # #1297: description is now a concise written summary under 250 characters without the heading prefix
+neurodiversity-lessonbank/implicit_bias/index.html  # #1016: written meta description replacing auto-summary that opened with "LEAVE FEEDBACK HERE"
+neurodiversity-lessonbank/community-psychology-diversity/index.html  # #1016: written meta description replacing auto-summary that opened with "LEAVE FEEDBACK AND LOOK AT THE LESSON PLAN HERE"
+neurodiversity-lessonbank/diversity-and-research/index.html  # #1016: written meta description replacing truncated auto-summary
+neurodiversity-lessonbank/masterstools/index.html  # #1016: written meta description replacing truncated auto-summary with "neuroptype" typo
+neurodiversity-lessonbank/generalizability/index.html  # #1016: written meta description replacing truncated auto-summary

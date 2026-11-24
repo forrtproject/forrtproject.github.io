@@ -20,7 +20,7 @@ code,pre,kbd,samp{font-style:normal}
 /* An embed from another site, loaded when a visitor asks (layouts/partials/click_to_load.html). */
 .click-to-load{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-height:12rem;margin:0 0 18px;padding:24px;overflow:auto;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-small);text-align:center}
 .click-to-load p{max-width:34rem;margin:0;font-size:16px;line-height:1.45}
-.click-to-load-link{font-size:16px}
+.click-to-load-link{font-size:16px;color:var(--link);text-decoration:underline;text-underline-offset:3px}
 /* A lesson activity in a small frame on a phone is too small to use, so there it opens on the provider's site. */
 @media(max-width:760px){
   .click-to-load[style*="absolute"]:not([data-embed-src*="youtube"]) button{display:none}
@@ -43,9 +43,16 @@ ul.network-icon{display:flex;flex-wrap:wrap;gap:6px 10px;margin:6px 0 0;padding:
 ul.network-icon li{margin:0}
 ul.network-icon a{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;font-size:18px;color:var(--link)}
 ul.network-icon a:hover{color:var(--ink)}
+/* Academicons' Google Scholar glyph is drawn narrower and thinner than Font Awesome's icons; scale and weight it to match. */
+ul.network-icon .ai-google-scholar{font-size:1.24em;line-height:1;-webkit-text-stroke:.35px currentColor}
 .cite-dialog{width:min(640px,calc(100% - 32px));padding:22px;border:0;border-radius:var(--r-large);background:var(--page);color:var(--ink)}
 .cite-dialog::backdrop{background:rgba(38,45,53,.55)}
 .cite-dialog h2{font-size:26px}
+/* A video from a side column, played at full size (site.js). The close button sits above the player. */
+.video-dialog{width:min(960px,calc(100% - 32px));padding:14px 18px 18px;border:0;border-radius:var(--r-large);background:var(--page);color:var(--ink)}
+.video-dialog::backdrop{background:rgba(38,45,53,.7)}
+.video-dialog-close{display:block;min-height:44px;margin:0 0 10px auto}
+.video-dialog .video-frame{margin:0}
 .cite-dialog pre{max-height:50vh;overflow:auto;padding:12px;background:var(--surface);border-radius:var(--r-small)}
 
 /* Forced colours drop backgrounds, so filled buttons need an edge, and the dark logo needs a light plate. */

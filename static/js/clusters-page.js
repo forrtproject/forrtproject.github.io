@@ -397,6 +397,47 @@
 
     initAccordionToggle();
 
+    /* On a cluster's own page the sidebar lists its sub-clusters only while one of them is open: closed, the
+       page's list beside it already shows them all; open, the page runs long and the sidebar jumps between them. */
+    var hereSubs = root.querySelector('.cluster-nav-subs--here');
+    if (hereSubs) {
+      /* Every section's body but Recommended's, told by its header. */
+      var subBodies = Array.prototype.filter.call(root.querySelectorAll('.acc-section > .acc-body'), function (body) {
+        var header = body.previousElementSibling;
+        return !(header && header.classList.contains('acc-header--rec'));
+      });
+      var syncHereSubs = function () {
+        hereSubs.hidden = !subBodies.some(function (body) { return !body.classList.contains('acc-collapsed'); });
+      };
+      /* The sub-cluster being read is marked in the list: the last open one whose heading has passed the
+         sticky filters. */
+      var hereLinks = Array.prototype.slice.call(hereSubs.querySelectorAll('a.sc-nav-link'));
+      var markHere = function () {
+        if (hereSubs.hidden) return;
+        var line = (controls ? controls.getBoundingClientRect().bottom : 72) + 40;
+        var currentId = null;
+        subBodies.forEach(function (body) {
+          var section = body.parentElement;
+          if (!body.classList.contains('acc-collapsed') && section.getBoundingClientRect().top <= line) currentId = section.id;
+        });
+        hereLinks.forEach(function (link) {
+          if (link.getAttribute('href') === '#' + currentId) link.setAttribute('aria-current', 'location');
+          else link.removeAttribute('aria-current');
+        });
+      };
+      var markPending = false;
+      window.addEventListener('scroll', function () {
+        if (markPending) return;
+        markPending = true;
+        requestAnimationFrame(function () { markPending = false; markHere(); });
+      }, { passive: true });
+      var hereObserver = new MutationObserver(function () { syncHereSubs(); markHere(); });
+      subBodies.forEach(function (body) {
+        hereObserver.observe(body, { attributes: true, attributeFilter: ['class'] });
+      });
+      syncHereSubs();
+    }
+
     var mobileToggle = document.getElementById('clusters-mobile-toggle');
     var sidebar = document.getElementById('clusters-sidebar');
     var backToTopBtn = document.getElementById('clusters-back-to-top');
@@ -541,9 +582,11 @@
         var subList = group.querySelector('.cluster-nav-subs');
         var arrow = group.querySelector('.cluster-nav-toggle');
 
-        /* Arrow click: always toggle expand/collapse, never navigate */
+        /* Arrow click: always toggle expand/collapse, never navigate. The current cluster's list
+           follows its open sub-clusters instead (syncHereSubs). */
         if (clickedArrow) {
           e.preventDefault();
+          if (this.hasAttribute('aria-current')) return;
           if (!subList || !arrow) return;
           var isHidden = subList.style.display === 'none';
           subList.style.display = isHidden ? 'block' : 'none';
@@ -624,28 +667,6 @@
     window.addEventListener('hashchange', applyClusterUrlHash);
 
     /* Per-sub-cluster "copy link" buttons: copy a shareable URL to the section. */
-    function copyTextToClipboard(text) {
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        return navigator.clipboard.writeText(text);
-      }
-      return new Promise(function (resolve, reject) {
-        try {
-          var ta = document.createElement('textarea');
-          ta.value = text;
-          ta.setAttribute('readonly', '');
-          ta.style.position = 'absolute';
-          ta.style.left = '-9999px';
-          document.body.appendChild(ta);
-          ta.select();
-          var ok = document.execCommand('copy');
-          document.body.removeChild(ta);
-          ok ? resolve() : reject();
-        } catch (err) {
-          reject(err);
-        }
-      });
-    }
-
     root.addEventListener('click', function (e) {
       var btn = e.target.closest('.acc-copy-link');
       if (!btn) return;
@@ -660,14 +681,10 @@
       }
       /* Reflect the anchor in the address bar without re-scrolling (no hashchange). */
       try { window.history.replaceState(null, '', '#' + anchor); } catch (err) {}
-      copyTextToClipboard(url).then(function () {
-        btn.classList.add('is-copied');
-        if (btn._copiedTimer) clearTimeout(btn._copiedTimer);
-        btn._copiedTimer = setTimeout(function () { btn.classList.remove('is-copied'); }, 1600);
-      }).catch(function () {
-        /* Clipboard blocked (e.g. insecure context): prompt the user with the URL. */
-        window.prompt('Copy this link:', url);
-      });
+      /* The site's copy feedback (assets/js/doors/references.js): a check in the icon's place, only once copied;
+         if the clipboard is blocked, the link is offered to copy by hand. */
+      if (window.forrtCopy) window.forrtCopy(btn, url, { said: 'Link copied.', onFail: function () { window.prompt('Copy this link:', url); } });
+      else window.prompt('Copy this link:', url);
     });
 
     /* (Tab click handler removed — all sub-clusters are now visible sections) */

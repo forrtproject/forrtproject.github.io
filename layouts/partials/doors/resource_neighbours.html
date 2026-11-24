@@ -1,0 +1,26 @@
+{{/* Previous and next for every curated resource, within the first cluster it lists, in the
+     directory's A to Z order. Resources without a cluster step through the others without one.
+     Returns a dict keyed by RelPermalink: `prev` and `next` (pages, or absent) and `cluster` (a name or "").
+     Input: the /resources/ section page. Cache it with partialCached. */}}
+{{ $index := partialCached "doors/resource_index" . "resources" }}
+{{/* Groups are keyed by the cluster's slug, as `merge` does not keep the case of keys. */}}
+{{ $groups := dict }}{{ $names := dict }}{{ $order := slice }}
+{{ range $index.pages }}
+  {{ $cluster := "" }}
+  {{ with index $index.items .RelPermalink }}{{ with .clusters }}{{ $cluster = index . 0 }}{{ end }}{{ end }}
+  {{ $key := urlize $cluster | default "none" }}
+  {{ if not (isset $groups $key) }}{{ $order = $order | append $key }}{{ $names = merge $names (dict $key $cluster) }}{{ end }}
+  {{ $groups = merge $groups (dict $key ((index $groups $key | default slice) | append .)) }}
+{{ end }}
+{{ $out := dict }}
+{{ range $key := $order }}
+  {{ $list := index $groups $key }}
+  {{ $cluster := index $names $key }}
+  {{ range $i, $p := $list }}
+    {{ $entry := dict "cluster" $cluster }}
+    {{ if gt $i 0 }}{{ $entry = merge $entry (dict "prev" (index $list (sub $i 1))) }}{{ end }}
+    {{ if lt (add $i 1) (len $list) }}{{ $entry = merge $entry (dict "next" (index $list (add $i 1))) }}{{ end }}
+    {{ $out = merge $out (dict $p.RelPermalink $entry) }}
+  {{ end }}
+{{ end }}
+{{ return $out }}

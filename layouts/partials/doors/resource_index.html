@@ -1,6 +1,6 @@
 {{/* Every curated resource, with its filters worked out from the sheet's free-text values.
      Returns a dict: `pages` (A to Z), `items` keyed by RelPermalink, and `facets`, the filter
-     values in display order with their counts. Hugo caches it, as pager pages all need it.
+     values in display order with their counts (and, for clusters, `num`, the cluster's number, 0 if none). Hugo caches it, as pager pages all need it.
      Input: the /resources/ section page, whose front matter holds the groupings. */}}
 {{ $section := . }}
 {{/* By file name, which is the title without capitals, quotation marks or stray spaces. */}}
@@ -52,8 +52,19 @@
   {{ range $levels }}{{ $levelCount = merge $levelCount (dict (urlize .) (add 1 (index $levelCount (urlize .) | default 0))) }}{{ end }}
   {{ range $clusters }}{{ $clusterCount = merge $clusterCount (dict (urlize .) (add 1 (index $clusterCount (urlize .) | default 0))) }}{{ end }}
   {{ $title := .Title | markdownify | plainify | htmlUnescape }}
-  {{ $items = merge $items (dict .RelPermalink (dict "title" $title "url" .RelPermalink "types" $types "levels" $levels "clusters" $clusters)) }}
+  {{/* The opening of the abstract, cut at a word, for the card's one-line description. None when the abstract opens
+       with the whole title, ending at a word, and the title runs to four words or more: the line would repeat the title just above it.
+       A short name opening a sentence ("DAGitty is a browser-based environment…") stays. */}}
+  {{ $plainAbstract := .Params.abstract | default "" | markdownify | plainify | htmlUnescape | replaceRE `\s+` " " | strings.TrimSpace }}
+  {{ $desc := $plainAbstract | truncate 170 "…" }}
+  {{ $t := $title | lower | replaceRE `[^\p{L}\p{N}]+` " " | strings.TrimSpace }}
+  {{ $a := $plainAbstract | lower | replaceRE `[^\p{L}\p{N}]+` " " | strings.TrimSpace }}
+  {{ if and (ge (len (split $t " ")) 4) (or (eq $a $t) (hasPrefix $a (printf "%s " $t))) }}{{ $desc = "" }}{{ end }}
+  {{ $items = merge $items (dict .RelPermalink (dict "title" $title "url" .RelPermalink "desc" $desc "types" $types "levels" $levels "clusters" $clusters)) }}
 {{ end }}
+
+{{/* Each cluster's number on the clusters wheel (data/clusters_v4.json), matched by name in any case, for its colour mark. */}}
+{{ $clusterNum := partialCached "doors/cluster_numbers.html" "n" }}
 
 {{ $facets := slice }}
 {{ range slice
@@ -64,7 +75,7 @@
   {{ $counts := .counts }}
   {{ $values := slice }}
   {{ range $label := .order }}
-    {{ with index $counts (urlize $label) }}{{ $values = $values | append (dict "label" $label "slug" ($label | lower | replaceRE "[^a-z0-9]+" "-") "count" .) }}{{ end }}
+    {{ with index $counts (urlize $label) }}{{ $values = $values | append (dict "label" $label "slug" ($label | lower | replaceRE "[^a-z0-9]+" "-") "count" . "num" (index $clusterNum (lower $label | urlize) | default 0)) }}{{ end }}
   {{ end }}
   {{ $facets = $facets | append (dict "key" .key "name" .name "values" $values) }}
 {{ end }}

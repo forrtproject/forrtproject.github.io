@@ -8,7 +8,9 @@ Run: python3 scripts/rebrand/check_source_rules.py [--base origin/main]
    in menus. Links to sister sites are fine, as is FORRT's address in structured data.
 2. Generated paths (CONTRIBUTING.md) must not change on the branch, as a hand edit is
    lost when the generator next runs. Compared with the merge base, so main's own updates
-   arriving through a merge do not count.
+   arriving through a merge do not count. The first output of a generator the branch adds
+   (NEW_OUTPUTS) may be added, and retired outputs listed in REMOVED_OUTPUTS may be deleted
+   (temporary until main drops them), but neither may be edited by hand afterwards.
 """
 
 import argparse
@@ -26,7 +28,7 @@ SCANNED = ("layouts", "config/_default/menus.toml")
 # Generated paths from CONTRIBUTING.md and AGENTS.md, including announcement bundles.
 GENERATED = re.compile(
     r"^(content/curated_resources/(?!_index\.md$)"
-    r"|content/glossary/"
+    r"|content/glossary/(?!_build_references\.py$|_create_glossaries\.py$)"  # its generators sit beside their output
     r"|content/post/[^/]+/"
     r"|content/contributors/tenzing\.md$"
     r"|content/contributor-analysis/"
@@ -39,6 +41,12 @@ GENERATED = re.compile(
     r"|scripts/forrt_contribs/contributors_cache\.csv$"
     r"|data/(?!partners\.json$|publications\.yaml$|themes/|fonts/)[^/]+$)"
 )
+
+# First outputs of generators, or of outputs newly added to a generator, on the branch; main has no copy yet.
+NEW_OUTPUTS = {"data/open_research_games.json", "data/scholar_citations.json", "data/citation_oa.json"}
+# Retired generated files deliberately removed on the branch so they stop being served;
+# temporary until main removes them too (keep narrow, do not use for ordinary edits).
+REMOVED_OUTPUTS = {"static/data/open_research_games.json"}
 
 
 def repo_files(root="."):
@@ -68,12 +76,27 @@ def absolute_url_findings(root=".", sisters=None):
     return findings
 
 
+def is_allowed_generated_change(status, paths):
+    """Return True when a git diff --name-status entry is an explicitly allowed addition or removal."""
+    if status == "A" and len(paths) == 1 and paths[0] in NEW_OUTPUTS:
+        return True
+    if status == "D" and len(paths) == 1 and paths[0] in REMOVED_OUTPUTS:
+        return True
+    return False
+
+
 def generated_edits(base):
     merge_base = subprocess.check_output(["git", "merge-base", base, "HEAD"], text=True).strip()
     changed = subprocess.check_output(
-        ["git", "-c", "core.quotepath=false", "diff", "--name-only", merge_base, "HEAD"], text=True
+        ["git", "-c", "core.quotepath=false", "diff", "--name-status", merge_base, "HEAD"], text=True
     ).splitlines()
-    return [path for path in changed if GENERATED.match(path)]
+    edits = []
+    for line in changed:
+        status, *paths = line.split("\t")
+        # A rename lists both paths; moving a generated file away is an edit too.
+        if any(GENERATED.match(path) for path in paths) and not is_allowed_generated_change(status, paths):
+            edits.append(paths[-1])
+    return edits
 
 
 def main():

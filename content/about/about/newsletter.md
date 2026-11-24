@@ -3,7 +3,7 @@
 
 weight = 20  # Order that this section will appear.
 
-title = "Stay Updated"
+title = "Stay updated"
 subtitle = "Subscribe to our newsletter from FORRT to get the latest news about our initiatives"
 
 [design.spacing]

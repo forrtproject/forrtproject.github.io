@@ -11,6 +11,8 @@ sharing_image_alt: "Towards Citational Justice Across the Whole Research Cycle �
 hero_image: "wheel.webp"
 hero_image_alt: "Towards Citational Justice Across the Whole Research Cycle: a wheel of citation politics tools and practices for the planning, project, paper and publication stages"
 hero_image_link: "Open the full-size wheel"
+# How to cite the toolkit, in the side card under the contents (layouts/partials/doors/reading_card.html).
+cite_as: "Sauvé, S. A., Middleton, S. L., Gellersen, H., & Azevedo, F. (2025, July 31). In Pursuit of Citational Justice: A Toolkit for Equitable Scholarship. https://doi.org/10.31222/osf.io/qjecy_v2"
 ---
 
 # Overview
@@ -23,30 +25,24 @@ The Citational Justice Toolkit organizes a collection of tools and practices by 
 
 The aim of this toolkit is to encourage individual researchers to become conscientious in their citation practices, using their citation choices to distribute power more equitably in the academy. We invite you to explore the Citational Justice Toolkit and join us in promoting equity and justice in academia.
 
-***Cite as:***
-> Sauvé, S. A., Middleton, S. L., Gellersen, H., & Azevedo, F. (2025, July 31). In Pursuit of Citational Justice: A Toolkit for Equitable Scholarship. https://doi.org/10.31222/osf.io/qjecy_v2
-
-
 # Toolkit
 
 ---
 
 We provide a suite of resources to support the use and implementation of the Citational Justice Toolkit:
 
-<a href="/citation-politics/toolkit/" class="btn btn-primary btn-lg btn-block" style="line-height:1;border-radius:6px; font-size:1.5rem;">
-  Toolkit Website
-</a>
-
 ### Manuscript
 
-Decades of empirical research across disciplines reveal the pervasiveness of citation biases along axes of gender, race, geography, and epistemology. Who we cite reflects and reinforces both the boundaries and hierarchies of academic knowledge, covertly shaping not only whose research is legitimized and valued but also whose careers are advanced. Citations, the currency of the academy with power to reinforce or dismantle hierarchies that privilege dominant knowledge systems cannot thus be a neutral, apolitical act. This paper unpacks the concept of ***citation politics*** and its role in sustaining epistemic hierarchies within scholarly communities. Rather than framing citation bias as a matter of individual oversight, we position it as a systemic issue tied to academic structures, norms, and incentive systems. We introduce a comprehensive and openly accessible Citational Justice Toolkit, developed by the FORRT community, which curates actionable resources, tools, and practices helping scholars and institutions to audit, diversify, and reflect on their citation practices across the research cycle. Our aim is to support a shift from tokenistic inclusion toward epistemically accountable, socially responsible, and structurally aware scholarship. We argue that reimagining citation as an ethical and epistemic practice is foundational to building a just and inclusive academic ecosystem, fostering pluralism, transparency, and integrity in knowledge production.
+[Read the paper](https://doi.org/10.31222/osf.io/qjecy_v2)
 
+{{< expand "The manuscript's abstract" >}}
+Decades of empirical research across disciplines reveal the pervasiveness of citation biases along axes of gender, race, geography, and epistemology. Who we cite reflects and reinforces both the boundaries and hierarchies of academic knowledge, covertly shaping not only whose research is legitimized and valued but also whose careers are advanced. Citations, the currency of the academy with power to reinforce or dismantle hierarchies that privilege dominant knowledge systems cannot thus be a neutral, apolitical act. This paper unpacks the concept of ***citation politics*** and its role in sustaining epistemic hierarchies within scholarly communities. Rather than framing citation bias as a matter of individual oversight, we position it as a systemic issue tied to academic structures, norms, and incentive systems. We introduce a comprehensive and openly accessible Citational Justice Toolkit, developed by the FORRT community, which curates actionable resources, tools, and practices helping scholars and institutions to audit, diversify, and reflect on their citation practices across the research cycle. Our aim is to support a shift from tokenistic inclusion toward epistemically accountable, socially responsible, and structurally aware scholarship. We argue that reimagining citation as an ethical and epistemic practice is foundational to building a just and inclusive academic ecosystem, fostering pluralism, transparency, and integrity in knowledge production.
+{{< /expand >}}
 
 ### Video guide
 You’ve read our manuscript and now you’re wondering how to get started? This video will walk you through the first steps you can take on your journey towards citational justice, featuring several tools and practices from our toolkit.
 
 {{< youtube HuQEmrME6uk >}}
-
 
 # Coming Up
 
@@ -82,7 +78,6 @@ For **FORRT’s Team Citation Politics** [(#citation-politics)](https://forrt.sl
 - Integrate and expand categories with those of the Academic Wheel of Privilege. 
 - Study via Dimensions & Altmetric data to see whether citations across papers with low and high diversity rank higher or lower on Dimensions & Altmetric areas.
 
-
 ### Pedagogical Integration
 - Develop lesson plans or mini-courses on citational justice for undergrad and graduate levels.
 - Offer “Citation Justice Audits” as a classroom or lab-based activity.
@@ -105,9 +100,4 @@ For **FORRT’s Team Citation Politics** [(#citation-politics)](https://forrt.sl
 - Use social media and public writing to popularize the metaphor of citation as epistemic infrastructure.
 - Share testimonies of those excluded from citations (e.g., oral histories, blog interviews).
 
-<br>
-
 If you see yourself in any of these plans or have any other ideas or suggestions for development of the toolkit, or other ways of engaging with citational practice or patterns (especially as it relates to open research), get in touch via the [#citation-politics channel on FORRT’s Slack](https://forrt.slack.com/archives/C074E9LDES2), email the team at citation-politics@forrt.org, or DM either Team Co-Lead **Sarah Sauvé** or **Helena Gellersen** on [FORRT’s Slack](https://join.slack.com/t/forrt/shared_invite/enQtODMwODI0OTk4ODgzLTM0ZTQ3NDk5MzA1ZjBmNWJjYTVlN2Y2YTk0ZTJhYTY5NDliMDYzMjg2MWE0ZDRhOTY0ZDY3OTRlNDA4ODQ3NjQ). 
-
-***Cite as:***
-> Sauvé, S. A., Middleton, S. L., Gellersen, H., & Azevedo, F. (2025, July 31). In Pursuit of Citational Justice: A Toolkit for Equitable Scholarship. https://doi.org/10.31222/osf.io/qjecy_v2

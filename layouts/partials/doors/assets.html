@@ -7,20 +7,26 @@
 {{ range $files }}{{ $parts = $parts | append (resources.Get (printf "css/doors/%s.css" .)) }}{{ end }}
 {{ $css := $parts | resources.Concat "css/doors.css" | minify | fingerprint "md5" }}
 <link rel="preload" href="{{ "fonts/doors/source-sans-3-var.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
-{{/* Arabic and Chinese content sets its text in system fonts (decision D18). */}}
+{{/* Arabic content sets its text in the self-hosted Arabic faces, Chinese in system fonts (decision D18). */}}
 {{ $language := partial "functions/page_language.html" . }}
 {{ if not (or (hasPrefix $language "ar") (hasPrefix $language "zh")) }}<link rel="preload" href="{{ "fonts/doors/newsreader-var.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>{{ end }}
+{{ if hasPrefix $language "ar" }}<link rel="preload" href="{{ "fonts/doors/noto-sans-arabic-var.woff2" | relURL }}" as="font" type="font/woff2" crossorigin><link rel="preload" href="{{ "fonts/doors/noto-naskh-arabic-var.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>{{ end }}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}">
 {{ $screen := slice }}
 {{ if .IsHome }}{{ $screen = slice "home" }}{{ end }}
 {{ if eq .Type "resources" }}{{ $screen = slice "page" "resources" }}{{ end }}
-{{ if eq .Type "replication_hub" }}{{ $screen = slice "page" "hub" }}{{ end }}
-{{ if and .IsNode (not .IsHome) (not (in (slice "resources" "replication_hub" "glossary") .Type)) }}{{ $screen = slice "lists" }}{{ end }}
+{{/* A resource's own page shares the directory's bundle, which holds its decision panel (resources.css). */}}
+{{ if eq .Type "curated_resources" }}{{ $screen = slice "page" "resources" }}{{ end }}
+{{ if or (eq .Type "replication_hub") (eq .Section "replication-hub") }}{{ $screen = slice "page" "hub" }}{{ end }}
+{{ if and .IsNode (not .IsHome) (not (in (slice "resources" "replication_hub" "replication-hub" "glossary") .Type)) }}{{ $screen = slice "lists" }}{{ end }}
 {{ if or (eq .Type "tags") (eq .Path "/newsletters") }}{{ $screen = slice "lists" }}{{ end }}
 {{ if eq .Type "contributors_analysis" }}{{ $screen = slice "analysis" }}{{ end }}
 {{ if eq .Type "widget_page" }}{{ $screen = slice "sections" }}{{ end }}
+{{ if in (slice "/neurodiversity" "/syllabus" "/adopting" "/impact") .Path }}{{ $screen = slice "sections" "nexus-pages" }}{{ end }}
 {{ if in (slice "clusters" "disciplines") .Section }}{{ $screen = slice "clusters" }}{{ end }}
-{{ if eq .Type "welcome" }}{{ $screen = slice "welcome" }}{{ end }}
+{{ if eq .Path "/community-map" }}{{ $screen = slice "map" }}{{ end }}
+{{ if eq .Type "welcome" }}{{ $screen = slice "home" "welcome" }}{{ end }}
+{{ if eq .Type "games_portal" }}{{ $screen = slice "page" "resources" "games" }}{{ end }}
 {{ with $screen }}
   {{ $parts := slice }}
   {{ range . }}{{ $parts = $parts | append (resources.Get (printf "css/doors/%s.css" .)) }}{{ end }}
@@ -29,8 +35,8 @@
 {{ end }}
 {{ $js := resources.Get "js/doors/site.js" | js.Build (dict "minify" true "format" "iife" "target" "es2019") | fingerprint "md5" }}
 <script src="{{ $js.RelPermalink }}" defer></script>
-{{/* Without the script, long author lists show in full (layouts/partials/citations/authors.html). */}}
-<noscript><style>.ref-more[hidden]{display:inline!important}.ref-etal,.ref-authors-toggle{display:none}</style></noscript>
+{{/* Without the script, long author lists show in full (layouts/partials/citations/authors.html) and /reversals/ keeps its phone contents list. */}}
+<noscript><style>.ref-more[hidden]{display:inline!important}.ref-etal,.ref-authors-toggle{display:none}@media(max-width:1000px){.reading:has(.list-filter[data-noun=effects]) .toc-phone{display:block}}</style></noscript>
 {{/* Publish a fingerprinted lookup for the glossary feature to fetch on first use. */}}
 {{ $terms := partialCached "doors/glossary_index.html" site }}
 {{ $index := resources.FromString "data/glossary-terms.json" ($terms | jsonify) | fingerprint "md5" }}

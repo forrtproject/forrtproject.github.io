@@ -1,0 +1,8 @@
+{{/* A search over the list items that follow it on the page; site.js hides the items that do not match. One per
+     page: site.js sets up only the first, and the field's id is fixed. Hidden with JavaScript off. Input: dict with optional `label`, `placeholder`, `noun`
+     (for the count, "Showing 12 of 436 effects"), `class`, `list`: a selector for the list when it does not follow the search directly, and `quiet`: true to leave the count empty until someone searches. Used by shortcodes/list_filter.html and by templates. */}}
+<div class="list-filter{{ with .class }} {{ . }}{{ end }}" data-noun="{{ .noun | default "entries" }}"{{ with .list }} data-list="{{ . }}"{{ end }}{{ if .quiet }} data-quiet{{ end }} hidden>
+  <label for="list-filter-input">{{ .label | default "Search this list" }}</label>
+  <input type="search" id="list-filter-input" placeholder="{{ .placeholder }}" autocomplete="off">
+  <p class="list-filter-count" aria-live="polite"></p>
+</div>

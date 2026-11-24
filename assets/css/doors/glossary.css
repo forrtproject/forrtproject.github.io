@@ -18,6 +18,9 @@ a.gloss-term:focus {
    breadcrumb names only the term; English references read left to right inside an Arabic page. */
 .glossary-layout .reading h1 bdi{display:block;margin-top:6px;font-size:.6em;line-height:1.2;color:var(--soft)}
 .glossary-layout .crumbs [aria-current=page] bdi{display:none}
+/* Other names for the term, under its heading. */
+.glossary-layout .reading .term-aka{margin:10px 0 0;font-size:17px;line-height:1.45;color:var(--soft)}
+.glossary-layout .reading .term-aka-label{font-weight:600}
 main:lang(ar) .glossary-layout .references-list li{direction:ltr;text-align:left}
 .term-list-jump{display:none}
 @media(max-width:1000px){
@@ -52,12 +55,17 @@ main:lang(ar) .post-nav-next .term-en{text-align:left}
 .glossary-letters{display:flex;flex-wrap:wrap;gap:4px;margin:14px 0 8px}
 .glossary-letters a{display:inline-flex;align-items:center;justify-content:center;min-width:36px;height:36px;border-radius:var(--r-small);background:var(--surface);color:var(--ink);font:600 16px/1 var(--text);text-decoration:none}
 .glossary-letters a:hover{background:var(--edu-bg)}
+/* On phones each letter is a 44 px target (DESIGN.md §9). */
+@media(max-width:760px){.glossary-letters a{min-width:44px;height:44px}}
 .term-group{scroll-margin-top:16px}
 .term-group h2{margin:28px 0 10px;font-size:28px;color:var(--edu)}
 .term-group ul{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:12px;margin:0;padding:0;list-style:none}
 .term-group li{margin:0;padding:14px 16px;background:var(--surface);border-radius:var(--r-large)}
-.term-group li a{color:var(--link);font:600 18px/1.3 var(--text);text-decoration:none}
-.term-group li a:hover{text-decoration:underline;text-underline-offset:3px}
+/* Term names read as links at rest (DESIGN.md §5). The English name under a translated term is an inline block,
+   which the underline does not reach, so only the term itself is underlined. */
+.term-group li a{color:var(--link);font:600 18px/1.3 var(--text);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+.term-group li a:hover{text-decoration-thickness:2px}
+.term-group li a .term-en{display:inline-block;width:100%}
 .term-group li .term-en{display:block;font-size:15px;font-weight:400;color:var(--soft)}
 .term-group li p{margin:6px 0 0;font-size:16px;line-height:1.45;color:var(--ink)}
 .glossary-about{margin:0 0 20px;padding:4px 20px;background:var(--surface);border-radius:var(--r-large)}
@@ -99,13 +107,17 @@ main:lang(ar) .post-nav-next .term-en{text-align:left}
 .glossary-search-row input{flex:1}
 .glossary-clear{flex:none;padding:10px 16px;border:1.5px solid var(--ink);border-radius:999px;background:#fff;color:var(--ink);font:600 16px/1.2 var(--text);cursor:pointer}
 .glossary-clear[hidden]{display:none}
+/* A letter's heading lands below the sticky search and letters: site.js sets --glossary-tools to their height,
+   which grows when the letters wrap (34 on the Arabic hub). The fixed values are the fallback without JavaScript. */
 .term-group{scroll-margin-top:200px}
 @media(max-width:760px){.glossary-tools .glossary-find label{font-size:17px;margin-bottom:6px}.glossary-find{margin-top:10px}.term-group{scroll-margin-top:150px}}
+.glossary-hub:has(.glossary-tools) .term-group{scroll-margin-top:calc(var(--glossary-tools,212px) + 12px)}
+@media(max-width:760px){.glossary-hub:has(.glossary-tools) .term-group{scroll-margin-top:calc(var(--glossary-tools,160px) + 12px)}}
 .glossary-language-select{display:none}
 @media(max-width:760px){
   .glossary-hub .glossary-languages{display:none}
   .glossary-language-select{display:flex;align-items:center;gap:10px;margin:14px 0 0;font:600 16px/1.3 var(--text)}
-  .glossary-language-select select{flex:1;padding:9px 12px;border:1.5px solid var(--ink);border-radius:var(--r-small);background:#fff;font:400 16px/1.3 var(--text);color:var(--ink)}
+  .glossary-language-select select{flex:1;min-width:0;padding:9px 12px;border:1.5px solid var(--ink);border-radius:var(--r-small);background:#fff;font:400 16px/1.3 var(--text);color:var(--ink)}
 }
 /* Two lines of definition per term on every screen, so each letter reads as an even block. */
 .term-group li p{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
@@ -137,5 +149,137 @@ main:lang(ar) .glossary-layout .article-style .term-definition p{font-size:21px}
    order and its brackets inside right-to-left text. */
 main:lang(ar) .crumbs a,main:lang(ar) .crumbs [aria-current]{unicode-bidi:isolate}
 main:lang(ar) .glossary-layout .article-style a{unicode-bidi:plaintext}
-/* A contributor's name is never split across lines. */
-.glossary-layout .term-credit bdi.term-name{white-space:nowrap}
+/* A contributor's name moves to the next line whole; it wraps inside only when it is wider than the column (text at 200%). */
+.glossary-layout .term-credit bdi.term-name{display:inline-block;max-width:100%;white-space:normal}
+/* Phones: only the search row stays pinned (DESIGN.md §9); the letters scroll away with the page. The toolbar box
+   gives way so the search row can stick for the whole list. Controls are 44 px targets. */
+@media(max-width:760px){
+  .glossary-tools{display:contents}
+  .glossary-find{position:sticky;top:0;z-index:5;padding:6px 0 8px;background:var(--page);border-bottom:1px solid var(--line)}
+  .glossary-letters{margin-top:12px}
+  .glossary-clear,.glossary-view button,.term-filter-clear{min-height:44px}
+  .glossary-layout .language-switcher a{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box}
+}
+/* Arabic text is set at 21 px rather than 18 (article.css); its term lines and credits keep the same steps below it,
+   instead of taking the body size and outgrowing the definition's label. */
+main:lang(ar) .glossary-layout .article-style .term-line{font-size:20px}
+main:lang(ar) .glossary-layout .article-style .term-credit{font-size:18px}
+/* Chinese titles break at punctuation such as 、 rather than inside a word (工业 / 化); a title with no break
+   opportunity still wraps, through the page's overflow-wrap. */
+main:lang(zh) .glossary-layout :is(.reading h1,.term-list a){word-break:keep-all}
+/* Chapters: each letter is a large Newsreader letter on the education area's pale ground (the glossary belongs to
+   Education & Pedagogy, DESIGN.md §6), so a long run of terms breaks into chapters. On a wide screen the letter
+   stands in a column beside its terms and stays in view while they scroll by; elsewhere it heads them as a band. */
+.term-group>h2{display:flex;align-items:center;margin:32px 0 12px;padding:4px 16px;min-height:56px;box-sizing:border-box;background:var(--edu-bg);border-radius:var(--r-large);color:var(--edu);font:500 40px/1 var(--display)}
+.term-grid>.term-group:first-child>h2{margin-top:8px}
+.term-group li{background:#fff;border:1.5px solid var(--line)}
+.term-group li:hover{border-color:var(--edu)}
+@media(max-width:760px){.term-group>h2{min-height:48px;margin:24px 0 10px;font-size:32px}}
+/* Wide screens: the search, the view and the letters in a pale green panel beside the title, which stays in view
+   while the terms scroll by. Letter jumps then land at the top of the screen. */
+@media(min-width:1001px){
+  .glossary-hub .reading{display:grid;grid-template-columns:minmax(0,1fr) 320px;column-gap:40px;align-items:start}
+  .glossary-hub .reading>*{grid-column:1}
+  .glossary-hub .reading>.glossary-tools{grid-column:2;grid-row:1/span 20;align-self:start;position:sticky;top:16px;margin:0;padding:20px;border:0;border-radius:var(--r-large);background:var(--edu-bg)}
+  .glossary-hub .glossary-find{margin:0;max-width:none}
+  .glossary-hub .glossary-find label{font-size:23px;color:var(--edu)}
+  .glossary-hub .glossary-search-row{flex-wrap:wrap}
+  .glossary-hub .glossary-search-row input{flex:1 1 100%}
+  .glossary-hub .glossary-view{margin-top:2px}
+  .glossary-hub .glossary-letters{display:grid;grid-template-columns:repeat(auto-fill,minmax(36px,1fr));gap:6px;margin:16px 0 0;padding:16px 0 0;border-top:1px solid rgba(45,87,80,.25)}
+  .glossary-hub .glossary-letters a{min-width:0;height:38px;background:#fff;font-size:17px}
+  .glossary-hub .glossary-letters a:hover{background:var(--edu);color:#fff}
+  .glossary-hub .glossary-letters a.is-current{background:var(--edu);color:#fff}
+  .glossary-hub .glossary-letters a.is-empty{background:transparent}
+  .glossary-hub:has(.glossary-tools) .term-group{scroll-margin-top:16px}
+  .glossary-hub .standfirst{max-width:32.5em}
+  /* Two cards a row beside the panel, so a card's lines stay under 80 characters (DESIGN.md §7). */
+  .term-group ul{grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr))}
+}
+@media(min-width:1240px){
+  .term-group{display:grid;grid-template-columns:88px minmax(0,1fr);column-gap:24px;align-items:start;margin-top:28px}
+  .term-group>h2{position:sticky;top:16px;justify-content:center;width:88px;height:88px;margin:0;padding:0;font-size:56px}
+  .term-grid>.term-group:first-child{margin-top:8px}
+  .term-grid>.term-group:first-child>h2{margin-top:0}
+  .term-group ul{grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr))}
+}
+.term-grid.is-list .term-group li{border-width:0 0 1px;border-color:var(--line)}
+/* A term page: related terms as the hub's cards, with the start of their definitions; references as a plain list with a hanging indent;
+   the previous and next terms as two cards with the start of theirs. */
+.glossary-layout .article-style .term-related{margin:28px 0 8px}
+.glossary-layout .article-style :is(.term-related>h2,.term-references-heading){margin:28px 0 12px;font-size:24px;color:var(--edu)}
+.glossary-layout .article-style .term-related>h2{margin-top:0}
+.glossary-layout .article-style .term-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr));gap:10px;max-width:none;margin:0 0 10px;padding:0;list-style:none}
+.glossary-layout .article-style .term-cards li{max-width:none;margin:0;padding:12px 16px;background:#fff;border:1.5px solid var(--line);border-radius:var(--r-large);font-size:16px;line-height:1.45}
+.glossary-layout .article-style .term-cards li:hover{border-color:var(--edu)}
+.glossary-layout .article-style .term-cards a{font:600 18px/1.3 var(--text)}
+.glossary-layout .article-style .term-cards p{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin:4px 0 0;font-size:16px;line-height:1.45}
+.glossary-layout .article-style .term-unlinked-line{max-width:32em;margin:12px 0 0;font-size:16px;line-height:1.5;color:var(--soft)}
+.glossary-layout .article-style .term-unlinked-label{font-weight:600}
+.glossary-layout .article-style .term-unlinked-list{display:inline;margin:0;padding:0;list-style:none}
+.glossary-layout .article-style .term-unlinked-list li{display:inline;margin:0;padding:0}
+.glossary-layout .article-style .term-unlinked-list li::before{content:none}
+.glossary-layout .article-style .term-unlinked-list li+li::before{content:", "}
+main:lang(ar) .glossary-layout .article-style .term-unlinked-list li+li::before{content:"، "}
+.glossary-layout .article-style .term-unlinked-list .term-unlinked{color:inherit}
+.glossary-layout .article-style .term-references{margin:0 0 8px;padding:0;list-style:none;font-size:16px;line-height:1.5}
+/* As wide as the definition and the cards above it (article.css caps reference lists at 29.8em). */
+.glossary-layout .article-style ul.term-references.references-list{max-width:none}
+.glossary-layout .article-style .term-references li{max-width:29em;margin:0 0 10px;padding-inline-start:1.5em;text-indent:-1.5em;list-style:none}
+.glossary-layout .article-style .term-references li::before{content:none}
+.glossary-layout .article-style .term-references li:last-child{margin-bottom:0}
+main:lang(ar) .glossary-layout .article-style .term-references{direction:ltr;padding:0}
+.glossary-layout .article-foot .post-nav{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.glossary-layout .article-foot .post-nav-item{max-width:none;padding:14px 16px;background:var(--edu-bg);border-radius:var(--r-large)}
+.glossary-layout .article-foot .post-nav-next:only-child{grid-column:2}
+.glossary-layout .article-foot .post-nav-item>a{display:block;color:var(--ink);text-decoration:none}
+.glossary-layout .article-foot .post-nav-item>a p{margin:2px 0 0;color:var(--link);font:600 18px/1.3 var(--text)}
+.glossary-layout .article-foot .post-nav-item p.post-nav-def{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin:6px 0 0;font-size:15px;color:var(--ink)}
+@media(max-width:560px){.glossary-layout .article-foot .post-nav{grid-template-columns:1fr}.glossary-layout .article-foot .post-nav-next:only-child{grid-column:1}}
+/* The reference list: the hub's panel and letters, with each reference a row in a hanging indent and the terms
+   that cite it underneath. */
+.glossary-references .term-group ul.references-list{display:block;max-width:none;margin:0;padding:0}
+.glossary-references .term-group ul.references-list>li{max-width:29em;margin:0;padding:12px 0 12px 1.5em;text-indent:-1.5em;background:none;border:0;border-bottom:1px solid var(--line);border-radius:0;line-height:1.5}
+.glossary-references .term-group ul.references-list>li:hover{border-color:var(--line)}
+.glossary-references .reference-apa a{color:var(--link);text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.glossary-references .reference-cited{display:block;margin:6px 0 0;text-indent:0;font-size:16px;color:var(--soft)}
+.glossary-references .reference-cited a{color:var(--link);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.glossary-references .reference-cited .term-en{display:none}
+.glossary-references .standfirst{max-width:30em}
+/* A term page's related terms take the reading width: one related term is one wide card, more share the row.
+   The start of each definition keeps to the reading measure inside a wide card (DESIGN.md §7). */
+.glossary-layout .article-style .term-cards{grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr))}
+.glossary-layout .article-style .term-cards p{max-width:31em}
+/* The first and the last term have one neighbour: its card takes the whole row and reads from the start. */
+.glossary-layout .article-foot .post-nav-item:only-child{grid-column:1/-1;text-align:start}
+/* Phones: the languages are one row, scrolled sideways and faded at its end, so the definition starts higher. */
+@media(max-width:760px){
+  .glossary-layout .language-switcher{flex-wrap:nowrap;overflow-x:auto;margin-block:4px 12px;margin-inline:-6px -16px;padding-block:6px;padding-inline:6px 16px;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,#000 85%,transparent);mask-image:linear-gradient(90deg,#000 85%,transparent)}
+  .glossary-layout .language-switcher::-webkit-scrollbar{display:none}
+  .glossary-layout .language-switcher>*{flex:none}
+  main:lang(ar) .glossary-layout .language-switcher{margin-inline-end:-16px;-webkit-mask-image:linear-gradient(270deg,#000 85%,transparent);mask-image:linear-gradient(270deg,#000 85%,transparent)}
+}
+/* A term's definition is the page's main passage: the largest text on the page, on the page ground, with an edge in
+   the Education colour on the side where lines start, so it does not read as one more box like the cards below it. */
+.glossary-layout .article-style .term-definition{margin:6px 0 22px;padding:2px 0 4px;padding-inline:22px 0;background:none;border-radius:0;border-inline-start:5px solid var(--edu)}
+.glossary-layout .article-style .term-definition p{font-size:21px;line-height:1.55}
+@media(max-width:760px){
+  .glossary-layout .article-style .term-definition{padding-inline:16px 0;border-inline-start-width:4px}
+  .glossary-layout .article-style .term-definition p{font-size:19px}
+}
+main:lang(ar) .glossary-layout .article-style .term-definition p{font-size:22px}
+/* A lone neighbour fills the row (article.css pushes Next to the end with an automatic margin). */
+.glossary-layout .article-foot .post-nav-item:only-child{margin-inline-start:0}
+/* Stacked on a phone, both neighbours read from the start of the line. */
+@media(max-width:560px){.glossary-layout .article-foot .post-nav-item{text-align:start}}
+/* The list of terms beside the entry fades at its top and bottom, where it scrolls on. */
+@media(min-width:1001px){.glossary-layout .glossary-card .term-list{-webkit-mask-image:linear-gradient(transparent,#000 20px,#000 calc(100% - 28px),transparent);mask-image:linear-gradient(transparent,#000 20px,#000 calc(100% - 28px),transparent);padding-block:8px}}
+/* A credited name and its comma move to the next line together; a long value, such as a sentence about a tool,
+   wraps in the line instead. */
+.glossary-layout .term-credit .term-name-item:has(>bdi.term-name){display:inline-block;max-width:100%}
+/* An English citation inside Arabic text stays on one line where it fits, brackets included. */
+main:lang(ar) .glossary-layout .term-definition bdi[dir=ltr]{display:inline-block;max-width:100%}
+/* Stacked on a phone, a neighbour's English name lines up with its Arabic one. */
+@media(max-width:560px){main:lang(ar) .glossary-layout .post-nav .term-en{text-align:right}}
+/* Stacked on a phone, both neighbours read from the start of the line (outweighs article.css's end alignment). */
+@media(max-width:560px){.glossary-layout .article-foot .post-nav .post-nav-item:nth-child(n){margin-inline-start:0;text-align:start}}

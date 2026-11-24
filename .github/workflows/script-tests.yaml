@@ -1,0 +1,39 @@
+name: Script Tests
+
+# =======================
+# Script unit tests
+# =======================
+# Purpose: Runs every unit test in scripts/tests/ (SEO checks, data and staging
+#          scripts, clusters parser and stated sub-cluster counts) and the
+#          disciplines parser test. The tests take a few seconds.
+# Triggers: Every pull request, since tests also read data, content and workflows
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  script-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      # pandas: resource.py; python-docx: the disciplines parser; beautifulsoup4: summaries.py;
+      # playwright (imported only, no browsers): the Doors preview checks.
+      - name: Install test dependencies
+        run: python3 -m pip install pandas python-docx playwright beautifulsoup4
+
+      - name: Run tests in scripts/tests
+        run: python3 -m unittest discover -s scripts/tests
+
+      - name: Run the disciplines parser test
+        run: python3 -m unittest discover -s scripts -p 'test_parse_disciplines_gdoc.py'

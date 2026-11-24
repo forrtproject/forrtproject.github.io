@@ -1,0 +1,5 @@
+{{/* The FORRT tower, as drawn on the home page (assets/images/doors/castle-still.webp), in its arched door.
+     Used beside "Build your own FORRT tower" on About us (content/about/about/brickforrt.md). */}}
+{{ $still := resources.Get "images/doors/castle-still.webp" }}
+{{ $img := $still.Crop "720x720 Center webp q80" }}
+<figure class="tower-picture"><img src="{{ $img.RelPermalink }}" alt="A grey brick-built tower with crenellations on top and two arched doorways." width="{{ $img.Width }}" height="{{ $img.Height }}" loading="lazy"></figure>

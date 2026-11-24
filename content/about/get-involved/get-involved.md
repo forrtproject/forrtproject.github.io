@@ -2,9 +2,9 @@
 widget = "blank"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
-weight = 15  # Order that this section will appear.
+weight = 11  # Order that this section will appear.
 
-title = "Ongoing Projects"
+title = "Ongoing projects"
 subtitle = ""
 
 [design]
@@ -15,10 +15,17 @@ subtitle = ""
   padding = ["60px", "0", "60px", "0"]
 +++
 
-The projects below are some of the active initiatives where we are looking
-for collaborators. Most projects coordinate on FORRT's
-[Slack](https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ) —
-join the workspace, then follow the project link or email the contact below
-to get involved.
+These projects are looking for collaborators now. Most of them coordinate on
+FORRT's Slack: [join&nbsp;it](https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ), then contact the person named on the project.
+
+{{% callout title="Getting Started with FORRT" %}}
+
+Before you join, read [**the guide**](https://docs.google.com/document/d/e/2PACX-1vR_OKOxDlrbPcXn6SZLYlq19139ofcYDInBu9E392jWG5yzbp2VjF7E1_fwtzTz4Wxo9i4ddHZTbHfT/pub) (a Google Doc). It is organised by how involved you want to be:
+
+1. General information about FORRT, its Slack channels and community, with links to resources.
+2. The current initiatives that would benefit from your help, with authorship opportunities and no required involvement in the organisation.
+3. How FORRT is organised, and how to take part in running it.
+
+{{% /callout %}}
 
 {{< get_involved_projects >}}

@@ -237,7 +237,7 @@ def finish_page(page, year, month, preview, root):
                            flags=re.IGNORECASE)
     if not (headed and bodied):
         raise ArchiveError("HTML has no <head> or <body>")
-    return page
+    return archive_page(page)
 
 
 # Accessible names for links whose only content is an image with alt="".
@@ -281,6 +281,156 @@ def tidy_page(page):
 
 
 # ---------------------------------------------------------------------------
+
+# The archive page's own parts, in the site's look: a skip link, a breadcrumb, the title and a
+# main landmark around the email, set in the site's fonts (DESIGN.md §7, §12).
+ARCHIVE_STYLE = (
+    '<style id="forrt-archive">'
+    '@font-face{font-family:"Source Sans 3";src:url(/fonts/doors/source-sans-3-var.woff2) format("woff2");'
+    "font-weight:200 900;font-display:swap}"
+    '@font-face{font-family:Newsreader;src:url(/fonts/doors/newsreader-var.woff2) format("woff2");'
+    "font-weight:200 800;font-display:swap}"
+    'body :is(p,li,td,div,span,a,strong,em,b,i):not(:is(h1,h2,h3,h4) *){font-family:"Source Sans 3","Segoe UI",system-ui,sans-serif,'
+    '"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji"!important}'
+    "body :is(h1,h2,h3,h4),body :is(h1,h2,h3,h4) *{font-family:Newsreader,Georgia,serif!important}"
+    "h2[data-email-h1]{font-size:2em}"
+    "#templatePreheader[data-forrt-empty]{display:none!important}"
+    # Images and tables wider than a phone (a 600 px banner) shrink to the screen instead of pushing it sideways.
+    "#main img{max-width:100%!important;height:auto!important}#main table{max-width:100%!important}"
+    # Readable prose and footer (DESIGN.md §6, §7, §12): normal line spacing, the Mailchimp footer's
+    # light grey on mid grey (1.8:1) becomes ink on the page, and its copyright line is not italic.
+    "#main :is(p,li,.mcnTextContent,.text-block){line-height:1.5!important}"
+    "#templateFooter{background:transparent!important}"
+    "#templateFooter,#templateFooter *{color:#1f2a37!important;font-style:normal!important}"
+    "#templateFooter a{color:#0b5a87!important}"
+    # The social icons are 24 px pictures; padding makes each a 44 px target (DESIGN.md §9).
+    '#main [class*="mcnFollow"] a{display:inline-block;padding:10px}'
+    '#main td.mcnFollowIconContent{width:auto!important}#main [class*="mcnFollow"] img{max-width:none!important}'
+    ".forrt-pager{max-width:640px;margin:32px auto 0;padding:16px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:4px 24px;"
+    'font:17px/1.4 "Source Sans 3",system-ui,sans-serif}'
+    ".forrt-pager a{display:inline-flex;align-items:center;min-height:44px;color:#0b5a87;text-decoration:underline;text-underline-offset:3px}"
+    # One layout at every width and text size, in reading order: previous on the left and next on the right
+    # (DESIGN.md §8), the archive centred below them. Empty placeholders keep their cells; long labels wrap.
+    ".forrt-pager>:nth-child(2){justify-self:end;text-align:right}"
+    ".forrt-pager>:nth-child(3){grid-column:1/-1;justify-self:center}"
+    ".forrt-pager a{overflow-wrap:anywhere}"
+    ".forrt-skip{position:absolute;left:-9999px}"
+    ".forrt-skip:focus{left:16px;top:8px;z-index:9;padding:8px 14px;background:#fff;color:#1f2a37}"
+    '.forrt-archive-bar{max-width:640px;margin:0 auto;padding:20px 16px 16px;font:17px/1.4 "Source Sans 3",system-ui,sans-serif;color:#1f2a37}'
+    ".forrt-archive-bar nav{margin-bottom:6px}"
+    ".forrt-archive-bar a{color:#0b5a87;text-decoration:underline;text-underline-offset:3px}"
+    ".forrt-archive-bar h1{margin:0;font:500 32px/1.15 Newsreader,Georgia,serif}"
+    "</style>"
+)
+OLD_STYLE = re.compile(r'<style>h2\[data-email-h1\].*?</style>|<style id="forrt-archive">.*?</style>', re.DOTALL)
+ARCHIVE_BAR = re.compile(r'(?:<a class="forrt-skip"[^>]*>[^<]*</a>)?<(div|header) class="forrt-archive-bar">'
+                         r".*?<h1>(.*?)</h1>.*?</\1>(?:<main id=\"main\"[^>]*>)?", re.DOTALL)
+HIDDEN = re.compile(r"<(\w+)\b[^>]*display:\s*none[^>]*>.*?</\1\s*>", re.DOTALL | re.IGNORECASE)
+
+
+def mark_empty_preheader(page):
+    """Mark a Mailchimp preheader that shows nothing, so the archive hides its empty band. A preheader
+    with an image or visible text (several 2024-25 issues put their banner there) stays."""
+    start = page.find('id="templatePreheader"')
+    if start < 0 or "data-forrt-empty" in page[start:start + 200]:
+        return page
+    end = page.find('id="templateHeader"', start)
+    part = page[page.find(">", start) + 1:end if end > 0 else start + 20000]
+    # The slice ends inside the next section's opening tag; drop that, and Outlook's conditional comments.
+    part = re.sub(r"<!--.*?-->", "", part[:part.rfind("<")], flags=re.DOTALL)
+    if re.search(r"<img\b", part, re.IGNORECASE):
+        return page
+    text = re.sub(r"<[^>]*>|&nbsp;|\s", "", HIDDEN.sub("", part))
+    if text:
+        return page
+    return page[:start] + 'id="templatePreheader" data-forrt-empty' + page[start + len('id="templatePreheader"'):]
+# Lines that only make sense in an inbox.
+EMAIL_ONLY = [
+    re.compile(r'<a\b[^>]*>\s*Add us to your address book\s*</a>(?:<br>\s*)*', re.IGNORECASE),
+    re.compile(r"<strong>\s*Add us to your address book\s*</strong>", re.IGNORECASE),
+    re.compile(r"Want to change how you receive these emails\?<br>\s*You can update your preferences or "
+               r"unsubscribe from this list\.(?:<br>)?", re.IGNORECASE),
+    re.compile(r"<span\b[^>]*>(?:<br>)?\s*You can\s*</span>\s*unsubscribe\s*<span\b[^>]*>\s*at any time from "
+               r"these newsletters\.(?:&nbsp;)?\s*</span>(?:<br>)?", re.IGNORECASE),
+]
+
+
+def larger_type(match):
+    """Email text under 15 px set at the site's sizes: small print 15 px, text 17 px (DESIGN.md §7)."""
+    size = float(match.group(2))
+    if 9 <= size < 12:
+        return match.group(1) + "15px"
+    if 12 <= size < 15:
+        return match.group(1) + "17px"
+    return match.group(0)
+
+
+def archive_page(page):
+    """Give an archived email the site's page parts. Safe to apply more than once."""
+    page = OLD_STYLE.sub("", page)
+    page = re.sub(r"</head>", ARCHIVE_STYLE + "</head>", page, count=1, flags=re.IGNORECASE)
+    bar = (
+        '<a class="forrt-skip" href="#main">Skip to the newsletter</a>'
+        '<header class="forrt-archive-bar"><nav aria-label="Breadcrumb"><a href="/">Home</a> / About FORRT / '
+        '<a href="/newsletters/">Newsletters</a></nav><h1>%s</h1></header><main id="main" tabindex="-1">'
+    )
+    page = ARCHIVE_BAR.sub(lambda m: bar % m.group(2), page, count=1)
+    page = mark_empty_preheader(page)
+    # An email heading with no name (a spacer, or a picture with empty alt text) is a block, not an empty stop for
+    # screen readers. Words, or a picture with alt text, give a heading its name, so those stay headings.
+    page = re.sub(r"<h2 data-email-h1([^>]*)>(.*?)</h2>",
+                  lambda m: m.group(0) if re.sub(r"<[^>]*>|&nbsp;|\s", "", m.group(2))
+                  or re.search(r'<img\b[^>]*\salt="[^"]*[^"\s][^"]*"', m.group(2))
+                  else "<div data-email-h1%s>%s</div>" % (m.group(1), m.group(2)), page, flags=re.DOTALL)
+    # Restore headings an earlier run turned into blocks although a picture's alt text names them.
+    page = re.sub(r"<div data-email-h1([^>]*)>(.*?)</div>",
+                  lambda m: "<h2 data-email-h1%s>%s</h2>" % (m.group(1), m.group(2))
+                  if re.search(r'<img\b[^>]*\salt="[^"]*[^"\s][^"]*"', m.group(2)) and "<div" not in m.group(2)
+                  else m.group(0), page, flags=re.DOTALL)
+    if "</main>" not in page:
+        closes = [m.start() for m in re.finditer(r"</body\s*>", page, flags=re.IGNORECASE)]
+        if closes:
+            page = page[:closes[-1]] + "</main>" + page[closes[-1]:]
+    for pattern in EMAIL_ONLY:
+        page = pattern.sub("", page)
+    page = re.sub(r"(font-size:\s*)(\d+(?:\.\d+)?)px", larger_type, page, flags=re.IGNORECASE)
+    return page
+
+
+PAGER = re.compile(r'<nav class="forrt-pager".*?</nav>', re.DOTALL)
+
+
+def issue_label(folder):
+    year, month = folder.split("-")
+    return "%s %s" % (calendar.month_name[int(month)], year)
+
+
+def with_pager(page, previous, following):
+    """Previous and next issue links at the end of the newsletter, then the archive."""
+    parts = []
+    parts.append('<a href="/newsletters/%s/" rel="prev">&larr; %s</a>' % (previous, issue_label(previous)) if previous else "<span></span>")
+    parts.append('<a href="/newsletters/%s/" rel="next">%s &rarr;</a>' % (following, issue_label(following)) if following else "<span></span>")
+    parts.append('<a href="/newsletters/">Newsletter archive</a>')
+    nav = '<nav class="forrt-pager" aria-label="Other issues">%s</nav>' % "".join(parts)
+    page = PAGER.sub("", page)
+    return page.replace("</main>", nav + "</main>", 1)
+
+
+def restyle_archive(root):
+    """Apply archive_page to every archived issue, including ones restored from earlier runs, and link
+    each issue to the ones before and after it."""
+    changed = 0
+    paths = sorted(p for p in (root / ARCHIVE_DIR).glob("*/index.html") if re.match(r"\d{4}-\d{2}$", p.parent.name))
+    folders = [p.parent.name for p in paths]
+    for i, path in enumerate(paths):
+        before = path.read_text(encoding="utf-8")
+        after = with_pager(archive_page(before), folders[i - 1] if i else None,
+                           folders[i + 1] if i + 1 < len(folders) else None)
+        if after != before:
+            path.write_text(after, encoding="utf-8")
+            changed += 1
+    return changed
+
 
 def entry_for(campaign, year, month):
     return {
@@ -327,6 +477,10 @@ def main():
     existing = load_existing(data_path)
     print("Existing archive: %d issues" % len(existing))
 
+    restyled = restyle_archive(root)
+    if restyled:
+        print("Restyled %d archived issues" % restyled)
+
     key = os.environ.get("EMAILOCTOPUS_API_KEY", "").strip()
     if not key:
         warn("EMAILOCTOPUS_API_KEY is not set; newsletter archive left unchanged.")
@@ -338,6 +492,7 @@ def main():
         return 0
 
     issues = sync(campaigns, root, existing)
+    restyle_archive(root)  # new issues join the previous/next links
     data = json.dumps({"issues": issues}, indent=2, ensure_ascii=False) + "\n"
     if not data_path.exists() or data_path.read_text(encoding="utf-8") != data:
         data_path.parent.mkdir(parents=True, exist_ok=True)

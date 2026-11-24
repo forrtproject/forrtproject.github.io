@@ -1,0 +1,32 @@
+{{/* One article as a news-list card (section/post.html): its picture, or the brick panel a newsletter or
+     picture-less post has on the news list (stating each fact once), then its metadata and title, linked as a whole.
+     Input: dict "page", and "rel" ("prev", "next" or ""), which labels the card Previous or Next. */}}
+{{ $p := .page }}
+{{ $cat := "" }}{{ if eq $p.Type "post" }}{{ with $p.Params.categories }}{{ $cat = index . 0 }}{{ end }}{{ end }}
+{{ $tone := cond (eq $p.Type "post") (index (partialCached "doors/post_panels" site "post-panels") $p.RelPermalink) false }}
+{{ $img := (($p.Resources.ByType "image").GetMatch "*featured*") }}
+{{ $issue := and (eq $p.Type "post") $tone (eq (lower $cat) "newsletter") }}
+<article class="announcement-card{{ if $issue }} ac-issue{{ end }}">
+  {{ if and $img (not $tone) }}
+    {{ partial "doors/card_picture" (dict "img" $img "lazy" true "alt" $p.Params.image.alt_text "figures" (eq $p.Type "educators-corner")) }}
+  {{ else if $issue }}
+    {{/* Newsletter brick: names the issue once as the card's linked title, matching section/post.html. */}}
+    <div class="ac-thumb ac-panel ac-panel-{{ $tone }}">
+      <h3 class="ac-panel-title"><a class="ac-link" href="{{ $p.RelPermalink }}"{{ with .rel }} rel="{{ . }}"{{ end }}><span>{{ with .rel }}{{ cond (eq . "prev") "Previous" "Next" }} · {{ end }}Newsletter</span> <strong>{{ replaceRE `^.*[—–-]\s*` "" $p.Title }}</strong></a></h3>
+    </div>
+  {{ else if eq $p.Type "post" }}
+    {{/* Picture-less news post: brick names the category once (exposed to screen readers as the category chip); metadata below gives date and any Previous/Next label. */}}
+    <div class="ac-thumb ac-panel ac-panel-{{ $tone | default 1 }}"><strong>{{ $cat | default "News" }}</strong></div>
+  {{ else }}
+    {{/* An education article's panel would only repeat the band's heading and the card's date, so it shows a door. */}}
+    <div class="ac-thumb ac-panel ac-panel-edu ac-panel-door" aria-hidden="true"></div>
+  {{ end }}
+  <div class="ac-body">
+    {{ if $issue }}
+    <p class="ac-summary">{{ $p.Summary | plainify | emojify }}</p>
+    {{ else }}
+    <p class="ac-meta">{{ with .rel }}<span class="ac-cat">{{ cond (eq . "prev") "Previous" "Next" }}</span>{{ else }}{{ if and $img (not $tone) }}{{ with $cat }}<span class="ac-cat">{{ . }}</span>{{ end }}{{ end }}{{ end }}<time datetime="{{ $p.Date.Format "2006-01-02" }}">{{ $p.Date.Format "2 January 2006" }}</time></p>
+    <h3><a class="ac-link" href="{{ $p.RelPermalink }}"{{ with .rel }} rel="{{ . }}"{{ end }}>{{ $p.Title }}</a></h3>
+    {{ end }}
+  </div>
+</article>

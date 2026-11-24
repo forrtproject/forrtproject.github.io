@@ -1,5 +1,6 @@
 {{/* The two files resources.js loads: a small one for filtering, and one with every field for
-     searching, fetched on the first search. Built once. Input: dict with `index`. Each row's `d`
+     searching, fetched on the first search. Built once. Input: dict with `index`. Each row's `s` is the
+     card's description (the abstract's opening, resource_index.html), and its `d`
      is the date added, from the form's `timestamp`, as "YYYY-MM-DDTHH:MM:SS" for sorting, or ""
      when there is none. The sheet holds form times ("6/27/2023 14:45:33"), ISO times from the
      2020 import, and a bare "01/01/2020" that stands in for an unknown date, so that counts as none. */}}
@@ -30,7 +31,7 @@
   {{ else }}
     {{ if findRE `^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}` $stamp 1 }}{{ $added = substr $stamp 0 19 }}{{ end }}
   {{ end }}
-  {{ $rows = $rows | append (dict "t" $item.title "u" (path.Base (strings.TrimSuffix "/" .RelPermalink)) "y" $t "l" $l "c" $c "d" $added) }}
+  {{ $rows = $rows | append (dict "t" $item.title "u" (path.Base (strings.TrimSuffix "/" .RelPermalink)) "s" $item.desc "y" $t "l" $l "c" $c "d" $added) }}
   {{/* Every field, as the old page's search had (issue #286). */}}
   {{ $tags := partial "functions/page_tags.html" . }}
   {{ $search = $search | append (lower (delimit (slice

@@ -10,9 +10,11 @@ main:focus{outline:none}
 /* The cookie banner sits over the foot of the screen until dismissed; site.js sets its height. While it shows, 12 px more keeps
    a focused link's focus ring (3 px, offset 3 px) clear of it. */
 html{scroll-padding-block-end:calc(var(--banner,0px) + min(var(--banner,0px),12px))}
-/* The site's content in system fonts where the Doors faces have no glyphs (decision D18). */
+/* Where the Doors faces have no glyphs: Arabic in the self-hosted Noto Naskh and Noto Sans Arabic (fonts.css), with
+   English inside Arabic text in the site's own faces; Chinese in the reader's system fonts, as a CJK web font runs to
+   megabytes (decision D18, revised for Arabic). */
 main:lang(ar),main:lang(zh){font-family:var(--text)}
-main:lang(ar){--display:'Newsreader','Noto Naskh Arabic','Geeza Pro','Traditional Arabic','Times New Roman',serif;--text:'Noto Sans Arabic','Segoe UI','Geeza Pro',Tahoma,sans-serif}
+main:lang(ar){--display:'Newsreader','Noto Naskh Arabic','Geeza Pro','Traditional Arabic','Times New Roman',serif;--text:'Noto Sans Arabic','Source Sans 3','Segoe UI','Geeza Pro',Tahoma,sans-serif}
 main:lang(zh){--display:'Newsreader','Noto Serif CJK SC','Songti SC','STSong',SimSun,serif;--text:'Source Sans 3','Noto Sans CJK SC','PingFang SC','Microsoft YaHei','Hiragino Sans GB',sans-serif}
 
 /* Upright everywhere, with emphasis as semi-bold. Real italics only inside reference lists
@@ -24,6 +26,8 @@ em,i:not([class]),dfn,cite,var{font-weight:600}
 .ref-apa :is(em,i),.rl-detail-apa :is(em,i){font-style:italic!important;font-weight:400}
 /* Publication titles from those lists keep their journal names and species in italics, at the title's weight. */
 :is(.fr-title,.fc-title,.ref-popup-title,.rl-panel-item-title) i{font-style:italic!important;font-weight:inherit}
+/* A publication card's venue is part of its reference, so it is italic like a journal name in a reference list. */
+.pub-journal .journal-name{font-style:italic!important;font-weight:400}
 
 .wrap{width:min(1280px,calc(100% - 96px));margin-inline:auto}
 .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
@@ -39,3 +43,14 @@ em,i:not([class]),dfn,cite,var{font-weight:600}
 @media(max-width:1240px){.wrap{width:calc(100% - 64px)}}
 @media(max-width:760px){:root{--text-size:16px}.wrap{width:calc(100% - 40px)}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+
+/* Copy buttons (references.js copyWithFeedback): once the text is copied, the icon gives way to a check drawn in
+   0.16 s and the label says "Copied" for a few seconds. A label keeps room for "Copied", so the button never changes
+   width. With reduced motion the check simply appears (above). */
+.copy-label{display:inline-grid}
+.copy-label::after{content:"Copied";height:0;overflow:hidden;visibility:hidden}
+.copy-check{fill:none;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;opacity:0}
+.is-copied svg>:not(.copy-check){opacity:0}
+.is-copied .copy-check{opacity:1;animation:copy-check .16s ease-out}
+@keyframes copy-check{from{stroke-dashoffset:1}}
+.copy-check-icon{width:1em;height:1em;margin-inline-end:.35em;vertical-align:-.12em}

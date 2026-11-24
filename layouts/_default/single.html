@@ -12,6 +12,8 @@
   {{ $body := partial "doors/content" .Content }}
   {{ $body = replaceRE `<link href="https://fonts\.googleapis[^>]*>` "" $body }}
   {{ $body = replaceRE `(?s)<h2 class="sc-page-title">.*?</h2>` "" $body }}
+  {{/* Each section's title heads its part of the page, so the outline is sections, teams, people, with or without JavaScript. */}}
+  {{ $body = replaceRE `(?s)<div class="sc-section-title">(.*?)</div>` `<h2 class="sc-section-title">$1</h2>` $body }}
   {{ replaceRE `(</?)main>` "${1}div>" $body | safeHTML }}
 </div>
 {{ $steering := resources.Get "js/doors/steering.js" | js.Build (dict "minify" true "format" "iife" "target" "es2019") | fingerprint "md5" }}

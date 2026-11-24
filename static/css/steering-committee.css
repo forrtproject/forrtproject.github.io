@@ -153,6 +153,12 @@ article.article .article-container .article-title {
        photo cards would sit lower/smaller than title cards and the top bars wouldn't line
        up into one continuous row. */
     border: 0;
+    padding: 0;
+    background: transparent;
+    font: inherit;
+    color: inherit;
+    text-align: left;
+    appearance: none;
     /* Portrait aspect ratio 2:3 */
     aspect-ratio: 2/3;
     transition: box-shadow 0.3s ease;
@@ -428,7 +434,7 @@ article.article .article-container .article-title {
     max-height: 90vh;
     transform: scale(0.95);
     opacity: 0;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .sc-modal-backdrop.active .sc-modal-content {
@@ -450,7 +456,7 @@ article.article .article-container .article-title {
     color: #94a3b8;
     cursor: pointer;
     border-radius: 9999px;
-    transition: all 0.2s;
+    transition: color 0.2s, background-color 0.2s;
 }
 
 .sc-close-btn:hover {
@@ -527,7 +533,7 @@ article.article .article-container .article-title {
     border-radius: 50%;
     background: #f1f5f9;
     color: #0f766e;
-    transition: all 0.2s ease;
+    transition: color 0.2s ease, background-color 0.2s ease;
 }
 
 .sc-social-links a:hover {
@@ -577,12 +583,8 @@ article.article .article-container .article-title {
     font-size: 1.25rem;
 }
 
-/* Doors: one colour per section from the site's palette, readable labels, and a closed profile that
-   no keyboard can reach. The inline --team-color comes from the generated page. */
-#strategic .sc-card,#strategic .sc-title-card{--team-color:var(--edu)!important}
-#operations .sc-card,#operations .sc-title-card{--team-color:var(--res)!important}
-#steering .sc-card,#steering .sc-title-card{--team-color:var(--jus)!important}
-#guidance .sc-card,#guidance .sc-title-card{--team-color:var(--com)!important}
+/* Doors: readable labels, and a closed profile that no keyboard can reach. Team colours are set in
+   assets/css/doors/article.css (.sc-page): area colours only for the four area teams (DESIGN.md §6). */
 .sc-title-label{opacity:1;color:#fff;font-size:15px;letter-spacing:0;text-transform:none}
 .sc-section-desc{color:var(--ink);font-size:16px}
 .sc-section-title{font-size:15px;letter-spacing:0;text-transform:none}
@@ -591,9 +593,14 @@ article.article .article-container .article-title {
 .sc-nav a::after{content:none!important}
 #sc-container>div{padding:0;max-width:none}
 .sc-section{scroll-margin-top:16px}
-.sc-modal-backdrop{visibility:hidden;transition:opacity .3s ease,visibility .3s}
-.sc-modal-backdrop.active{visibility:visible}
-.sc-card:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.sc-modal-backdrop{visibility:hidden;transition:opacity .3s ease,visibility 0s linear .3s}
+.sc-modal-backdrop.active{visibility:visible;transition:opacity .3s ease,visibility 0s}
+.sc-page .sc-card-name{font-family:var(--display,inherit)}
+.sc-card:focus-visible{outline:3px solid var(--ink,#1e293b);outline-offset:2px;box-shadow:0 0 0 2px #fff}
+.sc-close-btn:focus-visible{outline:3px solid var(--ink,#1e293b);outline-offset:2px;color:#0f172a;background-color:#f1f5f9}
+.sc-social-links a:focus-visible{outline:3px solid var(--ink,#1e293b);outline-offset:2px}
+/* Give card focus rings 6px breathing room inside .sc-grid's overflow:hidden clip box (connecting bars stay capped within that 6px margin at wrapped row ends; mobile hides .sc-cbar). */
+.sc-page .sc-grid{padding:6px;margin:-6px}
 @media(max-width:639px){
   .sc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
   .sc-card,.sc-title-card{width:auto!important;max-width:none}

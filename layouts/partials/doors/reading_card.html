@@ -1,16 +1,122 @@
-{{/* The side card on the reading layout: dates, and contents when there are headings to jump to. */}}
+{{/* The side card on the reading layout. On an article (news, Educators' Corner, Pedagogies) it says who wrote
+     it, with their photos, role and links (in place of the theme's author box at the foot), and when; a newsletter
+     also links its archive. The section itself is linked by the breadcrumb and by the heading of the cards at the
+     end (doors/read_next), so the card does not repeat it. Educators' Corner and Pedagogies are education's, so their card is on its pale
+     ground (DESIGN.md §6). Every page with headings to jump to also gets its contents here. */}}
 {{ $p := .page }}
-<section class="article-card" aria-label="About this article">
-  {{ if .hasDates }}
+{{ $article := and $p.IsPage (in (slice "post" "educators-corner" "pedagogies") $p.Type) }}
+{{ $lesson := and $p.IsPage (eq $p.Section "neurodiversity-lessonbank") }}
+{{ $updated := ne ($p.Lastmod.Format "2006-01-02") ($p.Date.Format "2006-01-02") }}
+{{/* Authors with a profile page, photo first; the rest by name. */}}
+{{ $authors := slice }}
+{{ if $article }}{{ range $p.Params.authors }}
+  {{ $profile := site.GetPage (printf "/authors/%s" (urlize .)) }}
+  {{ $authors = $authors | append (dict "name" . "profile" $profile) }}
+{{ end }}{{ end }}
+{{/* A newsletter's archive, which neither the breadcrumb nor the cards at the end link. */}}
+{{ $more := "" }}{{ $moreLabel := "" }}
+{{ if and $article (eq $p.Type "post") (in ($p.Params.categories | default slice) "Newsletter") }}
+  {{ with site.GetPage "/newsletters" }}{{ $more = .RelPermalink }}{{ $moreLabel = "All newsletters" }}{{ end }}
+{{ end }}
+{{/* On a narrow screen the byline shows the publication date for these types (doors/article_header), and the phone
+     contents replace the card's, so a card with nothing more than that date is left out there (article.css). */}}
+{{ $repeats := and .hasDates (not $updated) $article (not $p.Date.IsZero) (not $authors) (not $more) (not $p.Params.contact) }}
+<section class="article-card{{ if $repeats }} article-card-repeats{{ end }}{{ if $article }} article-card-article{{ end }}{{ if in (slice "educators-corner" "pedagogies") $p.Type }} article-card-edu{{ end }}{{ if $lesson }} article-card-jus{{ end }}" aria-label="{{ if $lesson }}About this lesson{{ else }}About this article{{ end }}">
+  {{ if and $lesson (or $p.Params.lesson_plans $p.Params.feedback_url) }}
+  <div class="lesson-card-meta">
+    {{ with $p.Params.lesson_plans }}
+    <ul class="lesson-card-links">
+      {{ range . }}<li><a href="{{ .url }}" target="_blank" rel="noopener">{{ .label }}</a></li>{{ end }}
+    </ul>
+    {{ end }}
+    {{ with $p.Params.feedback_url }}
+    <p class="lesson-card-feedback"><a href="{{ . }}" target="_blank" rel="noopener">Share feedback on this lesson <i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="visually-hidden"> (another website)</span></a></p>
+    {{ end }}
+  </div>
+  {{ end }}
+  {{/* With several authors and a contents list, or more than three authors, the authors go compact (every name, linked),
+       so the card keeps the whole contents in view; the byline beside it then leaves the names out. Photos show only
+       for up to three authors: a few faces above a longer list of names would look like a selection. */}}
+  {{ $compact := and (gt (len $authors) 1) (or (gt (len .headings) 1) (gt (len $authors) 3)) }}
+  {{ if $compact }}
+  <div class="card-authors-compact">
+    {{ if le (len $authors) 3 }}<p class="card-author-photos" aria-hidden="true">{{ range $authors }}{{ with .profile }}{{ with (.Resources.ByType "image").GetMatch "*avatar*" }}<img src="{{ (.Fill "80x80 Center webp q80").RelPermalink }}" width="40" height="40" alt="">{{ end }}{{ end }}{{ end }}</p>{{ end }}
+    <p class="card-author-names">{{ range $i, $a := $authors }}{{ if $i }}, {{ end }}{{ with $a.profile }}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ else }}{{ $a.name }}{{ end }}{{ end }}</p>
+  </div>
+  {{ else }}
+  {{ with $authors }}
+  {{/* At 1000 px and below this card follows the text and the byline has named everyone, so an entry that adds no
+       photo, role, bio or links is left out there (article.css). */}}
+  <ul class="card-authors">
+    {{ range . }}
+    {{ $adds := false }}
+    {{ with .profile }}{{ $adds = or ((.Resources.ByType "image").GetMatch "*avatar*") .Params.role (and (eq (len $authors) 1) .Params.bio) .Params.social }}{{ end }}
+    <li{{ if not $adds }} class="card-author-plain"{{ end }}>
+      {{ with .profile }}
+        {{ $avatar := (.Resources.ByType "image").GetMatch "*avatar*" }}
+        {{ with $avatar }}<img src="{{ (.Fill "112x112 Center webp q80").RelPermalink }}" width="56" height="56" alt="">{{ end }}
+        <div>
+          <a class="card-author-name" href="{{ .RelPermalink }}">{{ .Title }}</a>
+          {{ with .Params.role }}<p class="card-author-role">{{ . | markdownify | emojify }}</p>{{ end }}
+          {{ if eq (len $authors) 1 }}{{ with .Params.bio }}<p class="card-author-bio">{{ . | markdownify | emojify }}</p>{{ end }}{{ end }}
+          {{ if .Params.social }}{{ partial "social_links" . }}{{ end }}
+        </div>
+      {{ else }}
+        <div><span class="card-author-name">{{ .name }}</span></div>
+      {{ end }}
+    </li>
+    {{ end }}
+  </ul>
+  {{ end }}
+  {{ end }}
+  {{ $showDates := and .hasDates (not $lesson) }}
+  {{ if or $showDates $p.Params.contact }}
   <dl>
+    {{ with $p.Params.contact }}
+      {{ $contact := trim (string .) " " }}
+      {{ $pair := findRESubmatch `^(.+?)\s*[(\<]([^\s@()<>]+@[^\s@()<>]+\.[^\s@()<>]+)[)\>]$` $contact 1 }}
+      {{ $contactProfile := site.GetPage (printf "/authors/%s" (urlize $contact)) }}
+      <dt>Contact</dt><dd class="card-contact">
+        {{- if $pair -}}
+          {{- $name := trim (index (index $pair 0) 1) " " -}}
+          {{- $email := index (index $pair 0) 2 -}}
+          {{- $np := site.GetPage (printf "/authors/%s" (urlize $name)) -}}
+          {{- $label := $name -}}{{- with $np -}}{{- $label = .Title -}}{{- end -}}
+          {{- if $np }}<a href="{{ $np.RelPermalink }}">{{ $np.Title }}</a>{{ else }}<span>{{ $name }}</span>{{ end }}
+          <a class="card-contact-email" href="mailto:{{ $email }}" aria-label="Email {{ $label }}" title="Email {{ $label }}"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+        {{- else if $contactProfile -}}
+          <a href="{{ $contactProfile.RelPermalink }}">{{ $contactProfile.Title }}</a>
+        {{- else if findRE `^[^\s@]+@[^\s@]+\.[^\s@]+$` $contact -}}
+          <a class="card-contact-email" href="mailto:{{ $contact }}" aria-label="Email contact" title="Email contact"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+        {{- else -}}
+          {{ $contact | markdownify }}
+        {{- end -}}
+      </dd>
+    {{ end }}
+    {{ if $showDates }}
     <dt>Published</dt><dd>{{ $p.Date.Format "2 January 2006" }}</dd>
-    {{ if ne ($p.Lastmod.Format "2006-01-02") ($p.Date.Format "2006-01-02") }}<dt>Updated</dt><dd>{{ $p.Lastmod.Format "2 January 2006" }}</dd>{{ end }}
+    {{ if $updated }}<dt>Updated</dt><dd>{{ $p.Lastmod.Format "2 January 2006" }}</dd>{{ end }}
+    {{ end }}
   </dl>
   {{ end }}
+  {{ with $more }}<p class="card-more"><a href="{{ . }}">{{ $moreLabel }}</a></p>{{ end }}
   {{ if gt (len .headings) 1 }}
   <h2>On this page</h2>
   <div class="article-toc">
     {{ partial "doors/reading_toc" . }}
+  </div>
+  {{ end }}
+  {{ if $lesson }}
+  <div class="lesson-card-nav">
+    <a href="{{ relref $p "/neurodiversity" }}">Team Neurodiversity</a>
+  </div>
+  {{ end }}
+  {{/* How to cite a page that asks to be cited (front matter cite_as), under its contents, so it is in view from the
+     start; on phones the card follows the text with this alone (article.css). */}}
+  {{ with $p.Params.cite_as }}
+  <div class="card-cite" id="cite-as">
+    <h2>Cite as</h2>
+    <p>{{ . | markdownify }}</p>
   </div>
   {{ end }}
 </section>

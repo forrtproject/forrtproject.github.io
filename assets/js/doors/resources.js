@@ -31,7 +31,8 @@ const PER_OPTIONS = [...perSelect.options].map((option) => Number(option.value))
 
 // What the page shows with nothing chosen, restored when the last filter goes.
 const serverCards = [...results.children];
-const serverCount = countLine.textContent;
+const serverCount = countLine.innerHTML;
+const serverCountText = countLine.textContent;
 
 let data = null;
 let searchText = null;
@@ -43,7 +44,7 @@ let page = serverPage;
 let orders = null;
 
 const chipsOf = (facet) => [...facet.querySelectorAll('.chip')];
-const labelOf = (chip) => chip.firstChild.textContent.trim();
+const labelOf = (chip) => (chip.querySelector('.chip-label') || chip.firstChild).textContent.trim();
 
 function chosen() {
   const picks = {};
@@ -90,7 +91,28 @@ function drawCard(index) {
   };
   node.querySelector('.res-type').textContent = labels('type', item.y);
   node.querySelector('.res-level').textContent = labels('level', item.l, 2);
-  node.querySelector('.res-tag').textContent = labels('cluster', item.c);
+  node.querySelector('.res-desc').textContent = item.s || '';
+  // Clusters as on the server-drawn cards: each name with a mark in its colour, taken from its filter chip.
+  const tag = node.querySelector('.res-tag');
+  item.c.forEach((position, i) => {
+    const chip = document.querySelector(`.facet[data-facet=cluster] .chip[data-value="${data.facets.cluster[position]}"]`);
+    if (!chip) return;
+    // A comma for screen readers only: on screen each cluster sits apart, its mark beside its name.
+    if (tag.childNodes.length) {
+      const comma = document.createElement('span');
+      comma.className = 'visually-hidden';
+      comma.textContent = ', ';
+      tag.append(comma);
+    }
+    const name = document.createElement('span');
+    name.className = 'res-cl';
+    if (chip.dataset.cl) {
+      name.dataset.cl = chip.dataset.cl;
+      name.style.setProperty('--c', `var(--cl${chip.dataset.cl})`);
+    }
+    name.textContent = labelOf(chip);
+    tag.append(name);
+  });
   return node;
 }
 
@@ -189,24 +211,32 @@ function draw() {
     });
   });
 
-  // The order is part of the line, so a new sort is announced even when the range stays the same.
+  // The order stays in a visually-hidden span so screen readers still hear sort changes without repeating the sort menu.
   const order = sort === 'newest' ? 'newest first' : 'A to Z';
+  const setCount = (visible, hiddenOrder) => {
+    countLine.textContent = visible;
+    if (hiddenOrder) {
+      const sr = document.createElement('span');
+      sr.className = 'visually-hidden';
+      sr.textContent = `, ${hiddenOrder}`;
+      countLine.append(sr);
+    }
+  };
   if (asServed) {
     results.replaceChildren(...serverCards);
-    countLine.textContent = serverCount;
+    countLine.innerHTML = serverCount;
   } else {
     const first = (page - 1) * per;
     const shown = hits.slice(first, first + per);
     results.replaceChildren(...shown.map(drawCard));
     const noun = filtering ? 'matching resources' : 'resources';
     const from = filtering ? `, from ${total}` : '';
-    if (!hits.length) countLine.textContent = `No matching resources, from ${total}`;
+    if (!hits.length) setCount(`No matching resources, from ${total}`);
     else if (pages === 1) {
-      countLine.textContent = hits.length === 1
-        ? `Showing 1 matching resource, from ${total}`
-        : `Showing all ${fmt(hits.length)} ${noun}, ${order}${from}`;
+      if (hits.length === 1) setCount(`Showing 1 matching resource, from ${total}`);
+      else setCount(`Showing all ${fmt(hits.length)} ${noun}${from}`, order);
     } else {
-      countLine.textContent = `Showing ${fmt(first + 1)}–${fmt(first + shown.length)} of ${fmt(hits.length)} ${noun}, ${order}${from}`;
+      setCount(`Showing ${fmt(first + 1)}–${fmt(first + shown.length)} of ${fmt(hits.length)} ${noun}${from}`, order);
     }
   }
   if (pager) pager.hidden = !asServed;
@@ -365,5 +395,5 @@ fetch(root.dataset.directoryUrl)
     draw();
   })
   .catch(() => {
-    countLine.textContent = `${serverCount}. Filters could not be loaded, so please use the page links below.`;
+    countLine.textContent = `${serverCountText}. Filters could not be loaded, so please use the page links below.`;
   });

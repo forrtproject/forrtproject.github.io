@@ -35,10 +35,7 @@
 {{ else }}
   {{ partial "clusters/cluster_seo_jsonld.html" (dict "page" . "cluster" $cluster) }}
 
-  <div class="wrap clusters-head">
-    <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ "" | relLangURL }}">Home</a> <span aria-hidden="true">/</span> <a href="{{ "nexus/" | relLangURL }}">Educational Nexus</a> <span aria-hidden="true">/</span> <a href="{{ "clusters/" | relLangURL }}">Clusters</a> <span aria-hidden="true">/</span> <span aria-current="page">{{ .Params.heading_title | default .Title }}</span></nav>
-    <h1 class="clusters-site-heading" itemprop="headline">{{ .Params.heading_title | default .Title }}</h1>
-  </div>
+  {{ partial "clusters/hero.html" (dict "page" . "cluster" $cluster "total" (len $data.clusters)) }}
 
   {{ $palette := partial "clusters/colors.html" }}
   {{ $colors := $palette.colors }}
@@ -61,7 +58,12 @@
               <div class="article-style clusters-cluster-lead">{{ . }}</div>
             </div>
             {{ end }}
-            {{ partial "clusters/cluster_section.html" (dict "cluster" $cluster "ci" $ci "colors" $colors "marks" $arrowColors) }}
+            {{ partial "clusters/cluster_section.html" (dict "cluster" $cluster "ci" $ci "colors" $colors "marks" $arrowColors "own" true) }}
+            {{/* Shown by CSS when the teaching-materials filter hides this whole cluster */}}
+            {{ if not (index (partialCached "clusters/lesson_plans.html" "lesson-plans") (printf "%d" $n)) }}
+            <p class="lp-filter-empty" role="status">This cluster has no teaching materials yet. The clusters navigation lists the clusters that have them.</p>
+            {{ end }}
+            {{ partial "clusters/neighbours.html" (dict "data" $data "n" $n) }}
           </div>
         </div>
       </div>

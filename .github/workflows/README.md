@@ -61,6 +61,7 @@ Features:
 - Uses the same data and announcement artifacts as `deploy.yaml`, with noindex and no analytics
 - Compares each build with its merge base with `main`: URL list, structured data, SEO tags and internal links. See `scripts/rebrand/README.md`
 - A failed check marks the run red but still updates the preview
+- After the build, the comparison, the designed-screens check and the accessibility check run as three jobs side by side; the designed-screens check runs four browsers at once
 - Delete this workflow when the redesign launches
 
 ## Data Workflows
@@ -77,6 +78,7 @@ Processes:
 - Curated resources
 - Google Analytics data
 - Contributor analysis (monthly)
+- Open Research Games Portal: `scripts/build_games_portal.py` reads the published games sheet and writes `data/open_research_games.json` for `/open-research-games-portal/`
 - Newsletter archive: new EmailOctopus issues are copied, with their images, to `static/newsletters/` and listed in `data/newsletters.json` (needs the `EMAILOCTOPUS_API_KEY` secret; earlier copies are restored from `build-resources`)
 
 **Failure Reporting:**
@@ -101,21 +103,25 @@ Triggers `deploy.yaml` after successful processing via `repository_dispatch`.
 
 
 
-### [cluster-tests.yaml](cluster-tests.yaml)
-**Clusters parser regression tests and stated sub-cluster counts**
-
-| Trigger | Runs on |
-|---------|---------|
-| Pull requests changing the clusters data, parser or tests | PR branches |
-
-### [check_images.yaml](check_images.yaml)
-**Image validation in PRs**
+### [script-tests.yaml](script-tests.yaml)
+**Unit tests for the scripts**
 
 | Trigger | Runs on |
 |---------|---------|
 | Pull requests | PR branches |
 
-Validates image files and references.
+Runs every test in `scripts/tests/` (including the SEO checks and the clusters parser and sub-cluster counts) and `scripts/test_parse_disciplines_gdoc.py`.
+
+### [check_content_rules.yaml](check_content_rules.yaml)
+**Content policy checks in PRs**
+
+| Trigger | Runs on |
+|---------|---------|
+| Pull requests | PR branches |
+
+Runs `scripts/check_content_rules.py` in a single runner to flag (via PR comment / summary):
+- PNG/JPG/JPEG image files and local references in added/modified files
+- Newly added direct publisher URLs with embedded DOIs under hand-maintained `content/`, with `https://doi.org/...` replacements
 
 ## Repository Maintenance
 
@@ -138,16 +144,6 @@ Cleans up:
 Protected branches (never deleted): `main`, `gh-pages`
 
 > Note: `staging-aggregate-*` branches are auto-generated and cleaned up separately (keeping 2 most recent).
-
-## Disabled Workflows
-
-| File | Status | Reason |
-|------|--------|--------|
-| `reminder-check.yml_OLD` | Disabled | Not used, too many action runs |
-| `reminder-create.yml_OLD` | Disabled | Not used, too many action runs |
-| `mark-stale.yml_OLD` | Disabled | Not in use, can be restored with better rules |
-| `labeler.yaml_OLD` | Disabled | Not in use, can be restored with better rules |
-| `link-check.yaml_OLD` | Disabled | Broken, can be restored if fixed. |
 
 ## Manual Triggers
 

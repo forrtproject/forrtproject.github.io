@@ -1,0 +1,39 @@
+{{/* The end of an article (news, Educators' Corner, Pedagogies): the previous and next in its section and
+     related ones, as the news list's cards, across the page's width. Next is always the newer article. Related
+     articles come from the same section, a short list is filled with the section's newest, and they run newest
+     first. Replaces the theme's pager and "Related" list
+     on these pages (page_footer.html). */}}
+{{ $p := . }}
+{{ if and .IsPage (in (slice "post" "educators-corner" "pedagogies") .Type) }}
+  {{ $items := slice }}
+  {{ $seen := slice .RelPermalink }}
+  {{ $section := where site.RegularPages "Section" .Section }}
+  {{ $byDate := $section.ByDate }}
+  {{ $here := -1 }}
+  {{ range $i, $q := $byDate }}{{ if eq $q.RelPermalink $p.RelPermalink }}{{ $here = $i }}{{ end }}{{ end }}
+  {{ $prev := false }}{{ $next := false }}
+  {{ if gt $here 0 }}{{ $prev = index $byDate (sub $here 1) }}{{ end }}
+  {{ if and (ge $here 0) (lt (add $here 1) (len $byDate)) }}{{ $next = index $byDate (add $here 1) }}{{ end }}
+  {{ with $prev }}{{ $items = $items | append (dict "page" . "rel" "prev") }}{{ $seen = $seen | append .RelPermalink }}{{ end }}
+  {{ with $next }}{{ $items = $items | append (dict "page" . "rel" "next") }}{{ $seen = $seen | append .RelPermalink }}{{ end }}
+  {{ $others := (site.RegularPages.Related .) | intersect $section }}
+  {{ $others = $others | append (sort $section "Date" "desc") }}
+  {{ $room := sub 4 (len $items) }}
+  {{ $rest := slice }}
+  {{ range $others }}
+    {{ if and (lt (len $rest) $room) (not (in $seen .RelPermalink)) }}
+      {{ $rest = $rest | append . }}{{ $seen = $seen | append .RelPermalink }}
+    {{ end }}
+  {{ end }}
+  {{ range sort $rest "Date" "desc" }}{{ $items = $items | append (dict "page" . "rel" "") }}{{ end }}
+  {{ with $items }}
+  {{ $heading := index (dict "post" "More news" "educators-corner" "More from Educators' Corner" "pedagogies" "More pedagogies") $p.Type }}
+  <section class="read-next{{ if in (slice "educators-corner" "pedagogies") $p.Type }} read-next-edu{{ end }}" aria-labelledby="read-next-heading">
+    {{/* The heading is the way to the whole section. */}}
+    <h2 id="read-next-heading">{{ with $p.Parent }}<a href="{{ .RelPermalink }}">{{ $heading }}<span aria-hidden="true"> →</span></a>{{ else }}{{ $heading }}{{ end }}</h2>
+    <ul class="announcements-grid">
+      {{ range . }}<li>{{ partial "doors/article_card" (dict "page" .page "rel" .rel) }}</li>{{ end }}
+    </ul>
+  </section>
+  {{ end }}
+{{ end }}

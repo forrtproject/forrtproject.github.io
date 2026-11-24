@@ -1,15 +1,30 @@
-{{/* Teams: a short intro, then one row per team with its picture, description and link. */}}
+{{/* Teams: a short intro, then the teams A to Z, each with its picture, name, description and a button to join it.
+     The button says where it goes: a team's own Slack channel, or #forrt-community for teams without one;
+     screen readers also hear the team's name, so a list of the page's links still says which team each joins. */}}
 {{ $page := .page }}
-{{ $page.Content }}
-<ul class="feature-rows">
-  {{ range $page.Params.featurealt }}
+{{/* On a wide screen the introduction takes the first place in the grid of teams, so no empty band sits beside it. */}}
+<div class="team-layout">
+<div class="team-intro">{{ $page.Content }}
+{{/* Team channels open only for members of FORRT's Slack, and signing in directly works only with some email
+     addresses, so the invitation comes first. */}}
+<p class="team-slack-note">New to FORRT's Slack? <a href="https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ">Join with the invitation link</a> first; the team buttons then open each team's channel.</p>
+</div>
+<ul class="feature-rows team-rows" role="list">
+  {{ range sort $page.Params.featurealt "name" }}
+  {{ $team := .name | plainify }}
   <li>
-    {{ if .img }}{{ $dims := partial "functions/static_img_dims" .img }}<img src="{{ (printf "img/%s" .img) | relURL }}" {{ $dims }} alt="{{ .imgalttext }}">{{ end }}
+    {{ if .img }}{{ $dims := partial "functions/static_img_dims" .img | default (safeHTMLAttr `width="96" height="96"`) }}<img src="{{ (printf "img/%s" .img) | relURL }}" {{ $dims }} alt="">{{ end }}
     <div>
       <h3>{{ .name | markdownify | emojify }}</h3>
-      {{ with .description }}<p>{{ . | markdownify | emojify }}</p>{{ end }}
-      {{ with .buttonurl }}<a href="{{ . }}" class="btn btn-outline-primary btn-sm">{{ end }}{{ with .buttondescr }}{{ . | markdownify | emojify }}{{ end }}{{ if .buttonurl }}</a>{{ end }}
+      {{ with .description }}<p class="clamp-desc" data-clamp-name="{{ $team }}">{{ . | markdownify | emojify }}</p>{{ end }}
+      {{ with .buttonurl }}
+        {{/* A team without a channel of its own is reached through #forrt-community, not a bare workspace invite. */}}
+        {{ $url := . }}{{ $label := "Join the team" }}
+        {{ if in . "slack.com/archives/" }}{{ $label = "Join the team's Slack channel" }}{{ else if in . "join.slack.com" }}{{ $url = "https://forrt.slack.com/archives/CM6344P5E" }}{{ $label = "Ask about the team in #forrt-community" }}{{ end }}
+        <p class="team-join"><a href="{{ $url }}" class="btn btn-sm dir-btn">{{ $label }}<span class="sr-only">: {{ $team }}</span></a></p>
+      {{ end }}
     </div>
   </li>
   {{ end }}
 </ul>
+</div>

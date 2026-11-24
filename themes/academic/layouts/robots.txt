@@ -7,4 +7,5 @@ Allow: /
 
 Sitemap: {{ .Site.BaseURL }}sitemap.xml
 Sitemap: https://forrt.org/flora-replication-atlas/sitemap.xml
+Sitemap: https://forrt.org/chromium-extension/sitemap.xml
 {{ end }}

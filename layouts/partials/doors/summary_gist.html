@@ -1,0 +1,30 @@
+{{/* The start of one of a summary's takeaways, without the web addresses some takeaways carry, at two lengths:
+     "long" for wide screens and "short" for phones. A takeaway that fits its limit (150 or 96 characters) shows
+     whole. A longer one shows its first sentence if that ends by 200 or 140 characters (about three or four lines),
+     and is otherwise cut after the last semicolon or colon past half the limit, or else at a word (not at a comma,
+     which can cut off what a sentence turns on); a cut, or a takeaway that ends on a colon, ends in "…". "sentence"
+     is the whole first sentence, however long, or the whole takeaway if no sentence ends in it. Input: dict "s", an entry from data/summaries.json, and
+     optionally "n", which takeaway (1 for the first; by default the first that is not empty). Returns a dict of
+     long, short and sentence, all empty if there is no such takeaway. Used by doors/summary_entries for the closed rows and
+     by doors/summary_questions for the questions' cards. */}}
+{{ $gist := "" }}
+{{ with .n }}{{ if and (ge . 1) (le . (len $.s.Main_Takeaways)) }}{{ $gist = index $.s.Main_Takeaways (sub . 1) | default "" }}{{ end }}
+{{ else }}{{ range .s.Main_Takeaways }}{{ if and (not $gist) (trim . "  ") }}{{ $gist = . }}{{ end }}{{ end }}{{ end }}
+{{ $gist = trim (replaceRE `[\s\p{Z}]+` " " (replaceRE `:?[\s\p{Z}]*https?://[^\s\p{Z}]+` "" $gist)) " " }}
+{{ $sentence := "" }}{{ with findRESubmatch `^(.+?[.!?])(?:\s+[A-Z“"(\[]|$)` $gist 1 }}{{ $sentence = index (index . 0) 1 }}{{ end }}
+{{ $cuts := dict "sentence" (($sentence | default $gist) | htmlUnescape) }}
+{{ range slice (slice "long" 150 200) (slice "short" 96 140) }}
+  {{ $limit := index . 1 }}{{ $max := index . 2 }}
+  {{ $cut := $gist }}
+  {{ if gt (strings.RuneCount $gist) $limit }}
+    {{ if and $sentence (le (strings.RuneCount $sentence) $max) }}{{ $cut = $sentence }}
+    {{ else }}
+      {{ $cut = strings.TrimSuffix "…" (truncate $limit "…" $gist) }}
+      {{ with findRESubmatch (printf `^(.{%d,})[;:]\s` (div $limit 2)) $cut 1 }}{{ $cut = index (index . 0) 1 }}{{ end }}
+      {{ $cut = printf "%s…" $cut }}
+    {{ end }}
+  {{ end }}
+  {{ $cut = replaceRE `[.,;:!?]?…$|:$` "…" $cut }}
+  {{ $cuts = merge $cuts (dict (index . 0) ($cut | htmlUnescape)) }}
+{{ end }}
+{{ return $cuts }}

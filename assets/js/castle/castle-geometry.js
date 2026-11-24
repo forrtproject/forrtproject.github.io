@@ -1,6 +1,4 @@
-/* Common Room v3 copy of assets/web3/castle-geometry.js. The moving bricks and their order are unchanged; the upper courses of all four sides now change colour,
-   and arch tops no longer cut thin bands across the fixed lower walls.
-   A hollow, brick-built keep. Units are metres only by convention: one stud is .30.
+/* A hollow, brick-built keep. Units are metres only by convention: one stud is .30.
    Bricks include their studs in a shared geometry and animate as individual parts. */
 import {
   Group, Mesh, MeshStandardMaterial, Shape, ExtrudeGeometry,
@@ -33,7 +31,7 @@ export function createBrickCastle() {
     color, roughness: .43, metalness: .025
   }));
   const mortar = new MeshStandardMaterial({color: '#444f58', roughness: .48, metalness: .02});
-  // Stable brick identities also index the precomputed loose-brick pile poses.
+  // Brick indices seed the colours and break ties in the assembly order.
   let serial = 1, removedBandBricks = 0;
 
   // The softened lip catches a narrow highlight without the cost of a bevel modifier.
@@ -98,14 +96,11 @@ export function createBrickCastle() {
     });
   }
 
-  // Front and right entrances are openings through the wall, including the arch.
-  // Arches use circular boundaries; upper arrow windows have a small flat lintel.
-  const openings = [
-    [{bottom: FLOOR - .03, spring: .96, radius: .45, top: 1.41}, {bottom: 2.04, top: 2.58, half: .16}],
-    [{bottom: FLOOR - .03, spring: .81, radius: .36, top: 1.17}, {bottom: 2.04, top: 2.58, half: .16}],
-    [{bottom: 2.04, top: 2.58, half: .16}],
-    [{bottom: 2.04, top: 2.58, half: .16}]
-  ];
+  // Opposite walls share the same arched opening. Each wall also has an arrow window.
+  const frontDoor = {bottom: FLOOR - .03, spring: .96, radius: .45, top: 1.41};
+  const sideDoor = {bottom: FLOOR - .03, spring: .81, radius: .36, top: 1.17};
+  const entrances = [frontDoor, sideDoor, frontDoor, sideDoor];
+  const arrowWindow = {bottom: 2.04, top: 2.58, half: .16};
 
   function halfOpening(opening, y) {
     if (opening.half) return opening.half;
@@ -176,7 +171,7 @@ export function createBrickCastle() {
       const fullWidth = side % 2 === course % 2;
       const half = fullWidth ? BODY_HALF : BODY_HALF - WALL;
       const rows = [low, high];
-      const holes = openings[side];
+      const holes = [entrances[side], arrowWindow];
       // An arch top inside a course leaves that course whole; only the bricks over the arch are shaped.
       let archTop = false;
       for (const hole of holes) for (const boundary of [hole.bottom, hole.top]) {
@@ -204,7 +199,7 @@ export function createBrickCastle() {
           }
         }
       }
-      // Serials index the baked heap poses, so the bricks of the removed band keep their numbers.
+      // Reserve indices for the removed band so subsequent bricks keep their numbering.
       if (archTop) {
         const skipped = rectangularIntervals(-half, half, course + side).length;
         serial += skipped;
@@ -237,8 +232,7 @@ export function createBrickCastle() {
       }
     }
   }
-  addArch(0, .45, .96, 7);
-  addArch(1, .36, .81, 7);
+  entrances.forEach(({radius, spring}, side) => addArch(side, radius, spring, 7));
 
   // Narrow sill pieces and lintels give the upper windows a manufactured brick edge.
   for (let side = 0; side < 4; side++) {

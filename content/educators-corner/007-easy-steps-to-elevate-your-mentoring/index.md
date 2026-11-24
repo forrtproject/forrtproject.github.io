@@ -44,8 +44,6 @@ To get a handle on how my students are doing, and if there are issues in the lab
 
 {{< gform src="1FAIpQLScGCi7iACgmVBhFcE7G90oPwuTs-g9CQkrDmOUoQ4FvoT9CfA" width="100%" height="700px" alt="Loading..." >}}
 
-<br><br>
-
 If you would like the direct link to the Google Forms, [please follow this link.](https://docs.google.com/forms/d/e/1FAIpQLScGCi7iACgmVBhFcE7G90oPwuTs-g9CQkrDmOUoQ4FvoT9CfA/viewform)
 
 Over time, I forget which new students I’ve given ‘key advice’ and expectations. So I made a document that I give to all new students. There is a different document for undergraduate Honours Thesis, MSc, and Ph.D. students, since my advice and expectations for those students differ. The document has basic things such as how many weeks ahead to give me drafts and that all students are expected to attend group meetings, and life things like you will work long hours sometimes, but this should be the exception, not the rule.
@@ -53,8 +51,6 @@ Over time, I forget which new students I’ve given ‘key advice’ and expecta
 Reading papers is important but not urgent, so gets delayed. Every 6 months I require a list of papers the students have read, annotating why they might cite it in their thesis. The expected number of papers is scaled over time. The annotations are really helpful to keep on top of reading, as a searchable document when writing, and for me to see what they are reading. Plus, with a large lab studying diverse topics, this really helps me see some papers I otherwise may miss, too! Every single student I have had make these annotations has said this was incredibly useful when writing their thesis and that they were glad they had done it.
 
 Lastly, don't be afraid to try out new ways of mentoring, and toss things that don't work. I've tried a lot of things that just didn't work for my group, or didn't work for *this* group. I touch base frequently to see what works and doesn't, and student's like that I ask and it's adaptable.
-
-<br>
 
 ----
 *Editor's note*: The present text is an adapted version of a widely shared [Twitter thread](https://twitter.com/FlyBehaviour/status/1435285335743864835) that resonated with so many of us. We thought it was of general interest and deserved to be memorialized, and hence we approached Amanda to adapt the thread to post it here.

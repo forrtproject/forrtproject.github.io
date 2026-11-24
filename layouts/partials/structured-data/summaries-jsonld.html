@@ -13,19 +13,18 @@
 {{- $deiOnly := .deiOnly -}}
 {{- $parts := slice -}}
 {{- range $s := hugo.Data.summaries -}}
-  {{- if or (not $deiOnly) (in $s.Title "⌺") -}}
-    {{/* Clean the title: drop the ◈ / ⌺ status symbols and any markdown. */}}
-    {{- $name := trim ($s.Title | replaceRE "[◈⌺]" "" | plainify) " " -}}
+  {{- if and $s.Title (or (not $deiOnly) (in $s.Title "⌺")) -}}
+    {{- $title := partial "doors/summary_title" $s.Title -}}
+    {{- $name := $title.name | plainify -}}
     {{- $url := printf "%s#%s" $page.Permalink $s.Id -}}
     {{- $article := dict
         "@type" "ScholarlyArticle"
         "name" $name
         "headline" $name
         "url" $url
-        "inLanguage" "en"
-        "publisher" (dict "@type" "Organization" "name" "FORRT" "url" "https://forrt.org") -}}
+        "inLanguage" "en" -}}
     {{- with $s.Abstract -}}
-      {{- $abs := . | plainify | truncate 500 "…" -}}
+      {{- $abs := . | plainify | truncate 200 "…" | htmlUnescape -}}
       {{- $abs = replaceRE "(?i)</script" "<\\/script" $abs -}}
       {{- $article = merge $article (dict "abstract" $abs) -}}
     {{- end -}}
@@ -43,6 +42,7 @@
       "@type" "CollectionPage"
       "name" $page.Title
       "url" $page.Permalink
+      "publisher" (dict "@type" "Organization" "name" "FORRT" "url" "https://forrt.org")
       "isPartOf" (dict "@type" "WebSite" "name" "FORRT" "url" "https://forrt.org")
       "numberOfItems" (len $parts)
       "hasPart" $parts -}}

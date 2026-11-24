@@ -2,90 +2,80 @@
 title: "Welcome to FORRT"
 subtitle: "Your Gateway to Open and Reproducible Research"
 type: welcome
+
+# The welcome page for new members (layouts/welcome/single.html).
+# Four first steps, shown as numbered bricks. In a title, {resources} becomes the number of curated
+# resources, rounded down to the hundred ("1,400+").
+steps:
+  - title: "Read about FORRT"
+    text: "Start with our mission and the three-pronged approach we use to support open science education."
+    url: "/about/us/"
+  - title: "Explore the 11 clusters"
+    text: "Our framework for sorting open science teaching."
+    url: "/clusters/"
+  - title: "Browse {resources} resources"
+    text: "Find open scholarship materials for your teaching."
+    url: "/resources/"
+  - title: "Join the community"
+    text: "Meet other educators and find a project to join."
+    url: "/about/get-involved/"
+
+# FORRT's projects by area, each area behind its door with the home page's illustration
+# (assets/images/doors/<image>.webp) and colour.
+areas:
+  - key: edu
+    title: "Education & Pedagogy"
+    image: area-education
+    alt: "A brick pencil standing on an open green book."
+    links:
+      - title: "Educational Nexus"
+        text: "FORRT's teaching projects and resources in one place."
+        url: "/nexus/"
+      - title: "Pedagogies"
+        text: "Worked examples of teaching and mentoring open and reproducible research."
+        url: "/pedagogies/"
+  - key: res
+    title: "Meta-Science & Research"
+    image: area-research
+    alt: "Two near-identical brick towers, one with a single orange brick, seen through a magnifying glass."
+    links:
+      - title: "Replication Hub"
+        text: "Tools and guidance for reproduction and replication studies."
+        url: "/replication-hub/"
+      - title: "Impact & Research"
+        text: "Evidence on how open and reproducible scholarship affects students."
+        url: "/impact/"
+  - key: jus
+    title: "Social Justice & DEIA"
+    image: area-justice
+    alt: "The FORRT tower with its upper courses built in Pride colours."
+    links:
+      - title: "Diversity & Inclusion"
+        text: "Resources focused on equity in open scholarship and supporting neurodiversity in academic settings."
+        url: "/dei/"
+      - title: "Neurodiversity Resources"
+        text: "Team Neurodiversity's lesson plans and resources on neurodiversity in open scholarship."
+        url: "/neurodiversity/"
+  - key: com
+    title: "Community & Sustainability"
+    image: area-community
+    alt: "Brick figures in many colours standing in a circle, with a gap and one more figure arriving."
+    links:
+      - title: "Teams"
+        text: "Find a team or project to join."
+        url: "/about/teams/"
+      - title: "Community map"
+        text: "Where FORRT's members are, city by city."
+        url: "/community-map/"
+
+# Where to follow FORRT, in the closing panel.
+follow:
+  - { label: "Bluesky", url: "https://bsky.app/profile/forrt.bsky.social" }
+  - { label: "Mastodon", url: "https://mastodon.social/@FORRT" }
+  - { label: "LinkedIn", url: "https://linkedin.com/company/forrt" }
+  - { label: "YouTube", url: "https://youtube.com/@forrtproject9995" }
+  - { label: "Instagram", url: "https://instagram.com/forrtproject" }
+  - { label: "Facebook", url: "https://facebook.com/forrtproject" }
+  - { label: "OSF", url: "https://osf.io/forrt" }
+  - { label: "info@forrt.org", url: "mailto:info@forrt.org" }
 ---
-
-## Getting Started Path for Members
-
-{{< welcome 
-    step="1"
-    title="Learn About FORRT"
-    description="Start by understanding our mission and the three-pronged approach we use to support open science education."
-    url="/about/us/"
->}}
-
-{{< welcome 
-    step="2"
-    title="Explore FORRT Clusters"
-    description="Familiarize yourself with our 11-cluster framework that provides a comprehensive structure for teaching open science."
-    url="/clusters"
->}}
-
-{{< welcome 
-    step="3"
-    title="Browse Resources"
-    description="Explore our curated collection of over 1,400 resources to find materials relevant to your teaching needs."
-    url="/resources"
->}}
-
-{{< welcome 
-    step="4"
-    title="Join the Community"
-    description="Connect with other educators, share your experiences, and contribute to the growing FORRT community."
-    url="/about/get-involved"
->}}
-
-## Teams
-
-{{< welcome 
-    title="Explore Our Teams"
-    description="Explore projects, Slack channels and teams and join any that match your interests. The Teams page lists all our current teams."
-    url="/about/teams"
-    button="Explore the Teams page"
-    icon="fas fa-users"
->}}
-
-{{< social-media >}}
-
-## Explore Our Resources
-
-{{< welcome 
-    title="Educational Nexus"
-    description="Our comprehensive e-learning platform with community-driven initiatives and resources for open science education."
-    url="/nexus"
-    icon="fas fa-graduation-cap"
->}}
-
-{{< welcome 
-    title="Pedagogies"
-    description="Teaching methodologies and approaches specifically designed for integrating open science into educational practices."
-    url="/pedagogies"
-    icon="fas fa-lightbulb"
->}}
-
-{{< welcome 
-    title="Diversity & Inclusion"
-    description="Resources focused on equity in open scholarship and supporting neurodiversity in academic settings."
-    url="/dei"
-    icon="fas fa-heart"
->}}
-
-{{< welcome 
-    title="Impact & Research"
-    description="Studies, publications, and evidence about the impact of open and reproducible research on students and education."
-    url="/impact"
-    icon="fas fa-chart-line"
->}}
-
-{{< welcome 
-    title="Replication Hub"
-    description="Curated collection of replications and reversals across social sciences for educational use."
-    url="/replication-hub"
-    icon="fas fa-redo"
->}}
-
-{{< welcome 
-    title="Neurodiversity Resources"
-    description="Specialized lesson plans and materials for promoting neurodiversity awareness in open science education."
-    url="/neurodiversity"
-    icon="fas fa-brain"
->}}

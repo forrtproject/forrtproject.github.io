@@ -11,7 +11,20 @@
       </div>
       {{/* The hub's own diagram of how its parts fit together (front matter `image`). */}}
       {{ with .Resources.GetMatch .Params.image }}
-      <figure class="heading-plate-plain"><img src="{{ .RelPermalink }}" alt="{{ $.Params.image_alt }}" width="{{ .Width }}" height="{{ .Height }}" fetchpriority="high"></figure>
+      {{/* Over the diagram, an outline for each of its four circles (hub-lobes, in the image's own pixels), which a
+           "Start here" brick traces when pointed at or focused, to show the stage it belongs to. */}}
+      <figure class="heading-plate-plain hub-diagram"><img src="{{ .RelPermalink }}" alt="{{ $.Params.image_alt }}" width="{{ .Width }}" height="{{ .Height }}" fetchpriority="high">
+        <svg class="hub-lobes" viewBox="0 0 {{ .Width }} {{ .Height }}" aria-hidden="true" focusable="false">
+          {{/* The outlines stop short of the central "Replication Hub" badge, so they never cross its lettering. */}}
+          <mask id="hub-lobes-mask"><rect width="{{ .Width }}" height="{{ .Height }}" fill="#fff"></rect><circle cx="578" cy="612" r="128" fill="#000"></circle></mask>
+          <g mask="url(#hub-lobes-mask)">
+          <circle class="hub-lobe" data-stage="track" cx="590" cy="298" r="287" pathLength="1"></circle>
+          <circle class="hub-lobe" data-stage="explore" cx="874" cy="582" r="286" pathLength="1"></circle>
+          <circle class="hub-lobe" data-stage="conduct" cx="572" cy="864" r="287" pathLength="1"></circle>
+          <circle class="hub-lobe" data-stage="disseminate" cx="290" cy="570" r="286" pathLength="1"></circle>
+          </g>
+        </svg>
+      </figure>
       {{ end }}
     </div>
   </header>
@@ -19,7 +32,7 @@
   <nav class="hub-start" aria-label="Start here">
     <h2>Start here</h2>
     <ul class="action-cards">
-      {{ range . }}{{ $href := cond (hasPrefix .url "http") .url (.url | relLangURL) }}<li><a href="{{ $href }}"><strong>{{ .title }}</strong><span>{{ .text }}</span></a></li>{{ end }}
+      {{ range . }}{{ $href := cond (hasPrefix .url "http") .url (.url | relLangURL) }}<li><a href="{{ $href }}"{{ with .stage }} data-stage="{{ . }}"{{ end }}>{{ with .stage }}<span class="hub-start-stage">{{ . | title }}</span>{{ end }}<strong>{{ .title }}</strong><span>{{ .text }}</span></a></li>{{ end }}
     </ul>
   </nav>
   {{ end }}

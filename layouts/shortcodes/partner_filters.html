@@ -1,16 +1,27 @@
-<div class="filter-container">
+{{/* Hidden until the script below runs: without it the buttons would do nothing. */}}
+<div class="filter-container partner-filters" hidden>
 
     {{/* Cluster Filter */}}
-    <div class="filter-section-title">Filter by Partner Category</div>
-    <div id="pill-bar-cluster" class="pill-bar">
-        <button type="button" class="filter-pill active" aria-pressed="true" data-group="cluster" data-value="all">All Partners</button>
-        <button type="button" class="filter-pill" aria-pressed="false" data-group="cluster" data-value="Global Intergovernmental Organizations">Global Intergovernmental Organizations</button>
-        <button type="button" class="filter-pill" aria-pressed="false" data-group="cluster" data-value="Reproducibility Networks">Reproducibility Networks</button>
-        <button type="button" class="filter-pill" aria-pressed="false" data-group="cluster" data-value="Open Science Infrastructure">Open Science Infrastructure</button>
-        <button type="button" class="filter-pill" aria-pressed="false" data-group="cluster" data-value="Open Research Communities">Open Research Communities</button>
-        <button type="button" class="filter-pill" aria-pressed="false" data-group="cluster" data-value="Education & Training">Education & Training</button>
-        <button type="button" class="filter-pill" aria-pressed="false" data-group="cluster" data-value="Open Research & Equity">Open Research & Equity</button>
-        <button type="button" class="filter-pill" aria-pressed="false" data-group="cluster" data-value="Higher Education Partners">Higher Education Partners</button>
+    <label class="filter-section-title" for="partner-select">Filter by partner category</label>
+    {{/* On a phone the categories are a drop-down; on wider screens, buttons. */}}
+    {{/* One list of categories (value, label) for both the drop-down and the buttons. */}}
+    {{ $cats := slice
+      (slice "all" "All partners")
+      (slice "Global Intergovernmental Organizations" "Global intergovernmental organizations")
+      (slice "Open Science Infrastructure" "Open science infrastructure")
+      (slice "Reproducibility Networks" "Reproducibility networks")
+      (slice "Open Research Communities" "Open research communities")
+      (slice "Education & Training" "Education and training")
+      (slice "Open Research & Equity" "Open research and equity")
+      (slice "Higher Education Partners" "Higher education partners")
+    }}
+    <select id="partner-select" class="partner-select">
+      {{ range $cats }}<option value="{{ index . 0 }}">{{ index . 1 }}</option>
+      {{ end }}
+    </select>
+    <div id="pill-bar-cluster" class="pill-bar" role="group" aria-label="Partner category">
+      {{ range $i, $c := $cats }}<button type="button" class="filter-pill{{ if eq $i 0 }} active{{ end }}" aria-pressed="{{ if eq $i 0 }}true{{ else }}false{{ end }}" data-group="cluster" data-value="{{ index $c 0 }}">{{ index $c 1 }}</button>
+      {{ end }}
     </div>
 
     {{/* Empty State Warning */}}
@@ -23,6 +34,7 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
+        document.querySelector('.partner-filters').hidden = false;
         const clusterPills = document.querySelectorAll('#pill-bar-cluster .filter-pill');
         const partnerCards = document.querySelectorAll('.partner-card');
         const sections = document.querySelectorAll('.partner-section-group');
@@ -70,15 +82,19 @@
             }
         }
 
-        // Cluster Filters
-        clusterPills.forEach(pill => {
-            pill.addEventListener('click', () => {
-                clusterPills.forEach(p => { p.classList.remove('active'); p.setAttribute('aria-pressed', 'false'); });
-                pill.classList.add('active');
-                pill.setAttribute('aria-pressed', 'true');
-                currentCluster = pill.getAttribute('data-value');
-                filterPartners();
+        // Buttons and drop-down choose the same category and stay in step.
+        const select = document.getElementById('partner-select');
+        function choose(value) {
+            clusterPills.forEach(p => {
+                const on = p.getAttribute('data-value') === value;
+                p.classList.toggle('active', on);
+                p.setAttribute('aria-pressed', String(on));
             });
-        });
+            select.value = value;
+            currentCluster = value;
+            filterPartners();
+        }
+        clusterPills.forEach(pill => pill.addEventListener('click', () => choose(pill.getAttribute('data-value'))));
+        select.addEventListener('change', () => choose(select.value));
     });
 </script>

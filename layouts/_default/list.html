@@ -1,8 +1,7 @@
 {{- define "main" -}}
-{{/* The simple list page, for categories, clusters' resource lists and sections with no template of
-     their own. A section with no children is just its text. Paginated lists keep their numbered
-     pages, except the curated_resources and forrt_clusters ones (decision D17), which the 404 page
-     sends on. */}}
+{{/* The simple list page, for sections with no template of their own. A section with no children is just its text.
+     Paginated lists keep their numbered pages, except the curated_resources one (decision D17), which the 404 page
+     sends on. Taxonomies and their terms have their own templates (_default/terms.html, _default/term.html). */}}
 {{ if not .Data.Pages }}
   {{ $_ := .Paginate .Data.Pages }}
   {{ partial "doors/reading" . }}
@@ -19,25 +18,6 @@
       {{ if eq (.Type | lower) "curated_resources" }}
         <p class="list-count">All {{ len .Data.Pages }} teaching resources are in the directory, where you can search and filter them.</p>
         <p><a class="btn btn-primary" href="{{ relref . "/resources" }}">Open the resources directory</a></p>
-      {{ else if and (eq (.Type | lower) "forrt_clusters") (ne .Kind "taxonomy") }}
-        {{/* One toolbar: the search of shortcodes/list_filter.html (same markup; site.js filters the list
-             items after the h2 that follows it and keeps the count) with the routes to the directory and the
-             clusters beside it. The directory's cluster filter uses the current clusters (forrt_clusters_new),
-             not these tags, so there is no pre-filtered link to it. Then linked titles, two columns on wide
-             screens, each with its type as plain text. */}}
-        <div class="article-style cluster-resources-list">
-          <div class="list-filter topic-tools" data-noun="resources" hidden>
-            <label for="list-filter-input">Search these resources</label>
-            <input type="search" id="list-filter-input" placeholder="A word from the title or type" autocomplete="off">
-            <p class="list-filter-count" aria-live="polite"></p>
-            <p class="topic-tools__links">Search and filter all resources in the <a href="{{ relref . "/resources" }}">resources directory</a>, or browse <a href="{{ relref . "/clusters" }}">the {{ with hugo.Data.clusters_v4 }}{{ len .clusters }}{{ else }}11{{ end }} clusters</a>.</p>
-          </div>
-          <noscript><p class="topic-tools__links">{{ len .Data.Pages }} resources, A to Z. Search and filter all resources in the <a href="{{ relref . "/resources" }}">resources directory</a>, or browse <a href="{{ relref . "/clusters" }}">the clusters</a>.</p></noscript>
-          <h2 id="all-resources" class="visually-hidden">All {{ len .Data.Pages }} resources, A to Z</h2>
-          <ul class="cluster-resources">
-            {{ range sort .Data.Pages "Title" }}<li><a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ with .Params.material_type }}<span class="cluster-resources__type"> · {{ delimit . ", " }}</span>{{ end }}</li>{{ end }}
-          </ul>
-        </div>
       {{ else }}
         {{ $pager := .Paginate .Data.Pages }}
         <div class="list-items">{{ range $pager.Pages }}{{ partial "doors/list_item" . }}{{ end }}</div>

@@ -49,6 +49,20 @@ Hard checks (exit 1 if any fails):
       or hidden, so its links are tab stops only once opened. Every in-page link in the clusters map
       reaches an id on the page.
   22. The FLoRA page (replication-hub/flora/) contains the FLoRA citation DOI.
+  23. On a translated glossary page, no related term links to an English term page
+      that has a page in the same language (per the English page's hreflang links).
+  24. Every other name an English glossary term page shows ("Also known as") is in
+      that term's data-term on the glossary hub, so the hub's filter finds it.
+  25. No page loads the retired js/newsletter.js (#1170).
+  26. The news and Educators' Corner lists use the same picture treatment as
+      the related cards below their articles (#1255).
+  27. Summary takeaway links have a destination and bypass Google's redirect (#1256).
+  28. Summary pages exist and use the written credits expected from the build's data.
+  29. External links on cluster pages do not swallow trailing sentence punctuation (#845).
+  30. List cards use a page's `image.alt_text` (#1203), tested on a post that
+     sets it.
+  31. No URL in sitemap.xml (or the sitemaps a sitemap index lists) is a page
+     with robots noindex. A missing sitemap, or one that lists no URLs, fails.
 
 Report-only sections (never fail): pages with no <h1>, the
 site-wide share of images that carry both width and height, pages whose
@@ -62,17 +76,21 @@ import os
 import re
 import sys
 from collections import Counter
+from html import unescape
 from html.entities import html5
 from html.parser import HTMLParser
 from urllib.parse import unquote, urljoin, urlparse
+from xml.etree import ElementTree
 
 MAX_LISTED = 20
 MAX_INLINE_SCRIPT = 200_000  # bytes in one inline <script> (#993)
+SITEMAP_NS = "http://www.sitemaps.org/schemas/sitemap/0.9"
 # Markup that survived flattening, e.g. an indented HTML block rendered as code.
 HTML_TAG = re.compile(r"</?[A-Za-z][A-Za-z0-9]*(\s[^<>]*)?/?>")
 # Attribute values arrive already unescaped, so any entity left in them was
 # escaped twice in the HTML (e.g. `&amp;ldquo;`).
 DESCRIPTION_URL = re.compile(r"https?://|\bforrt\.org/", re.I)
+SOURCE_URL_TOKEN = re.compile(r'https?://[^\s<>"]+')
 LITERAL_ENTITY = re.compile(r"&(#\d+|#x[0-9a-fA-F]+|[A-Za-z][A-Za-z0-9]*);")
 
 
@@ -82,6 +100,8 @@ class PageParser(HTMLParser):
         self.h1_texts = []
         self.urls = []
         self.imgs = []
+        self.card_pictures = []
+        self._whole_card_picture = None
         self.meta = {}
         self.code_classes = []
         self.metas = []
@@ -99,22 +119,59 @@ class PageParser(HTMLParser):
         self.largest_inline_script = 0
         self._inline_script = None
         self.ids = set()
+        self.references = set()
+        self.reference_sources = []
+        self._ref_source = None
         self.citations = []
         self.crumb_links = []
         self._in_crumbs = False
+        self.alternates = []
+        self.related_links = []
+        self._related_tag = None  # the element holding a term page's related terms (section.term-related)
+        self.takeaway_links = []
+        self._in_takeaways = False
+
+    def _finish_ref_source(self):
+        if self._ref_source is not None:
+            self.reference_sources.append(self._ref_source)
+            self._ref_source = None
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
+        if tag == "li":
+            self._finish_ref_source()
+        if tag == "ul" and "summary-takeaways" in (attrs.get("class") or "").split():
+            self._in_takeaways = True
+        if tag == "a" and self._in_takeaways:
+            self.takeaway_links.append(attrs.get("href") or "")
+        if tag == "div":
+            classes = (attrs.get("class") or "").split()
+            self._whole_card_picture = "ec-thumb-whole" in classes if "ac-thumb" in classes else None
         if tag == "script" and not attrs.get("src"):
             self._inline_script = 0
         if attrs.get("id"):
             self.ids.add(attrs["id"])
+        if attrs.get("data-reference"):
+            self.references.add(attrs["data-reference"])
+        if attrs.get("data-source"):
+            if tag == "li":
+                self._ref_source = (attrs["data-source"], [])
+            else:
+                self.reference_sources.append((attrs["data-source"], []))
+        if tag == "a" and self._ref_source is not None and attrs.get("href"):
+            self._ref_source[1].append(attrs["href"])
         if tag == "nav" and "crumbs" in (attrs.get("class") or "").split():
             self._in_crumbs = True
+        if tag == "link" and attrs.get("rel") == "alternate" and attrs.get("hreflang") and attrs.get("href"):
+            self.alternates.append(attrs["href"])
+        if self._related_tag is None and "term-related" in (attrs.get("class") or "").split():
+            self._related_tag = tag
+        if tag == "a" and self._related_tag:
+            self.related_links.append(attrs.get("href") or "")
         if tag == "a" and self._in_crumbs:
             self.crumb_links.append(attrs.get("href") or "")
         if tag == "a" and "cite" in attrs.get("class", "").split():
-            self.citations.append(attrs.get("href", ""))
+            self.citations.append((attrs.get("href", ""), attrs.get("data-cite", "")))
         if tag == "script" and attrs.get("type") == "application/ld+json":
             self._jsonld_buffer = []
         elif tag == "link" and attrs.get("rel") == "canonical":
@@ -133,6 +190,9 @@ class PageParser(HTMLParser):
                 self.urls.append(url)
         elif tag == "img":
             self.imgs.append(attrs)
+            if self._whole_card_picture is not None and attrs.get("src"):
+                folder = urlparse(attrs["src"]).path.rpartition("/")[0]
+                self.card_pictures.append((folder, self._whole_card_picture))
         elif tag == "a" and "gloss-term" in (attrs.get("class") or "").split():
             self.gloss_terms.append(attrs.get("href") or "")
         elif tag == "meta":
@@ -146,8 +206,16 @@ class PageParser(HTMLParser):
             self.code_classes.append(attrs.get("class") or "")
 
     def handle_endtag(self, tag):
+        if tag in ("li", "ul"):
+            self._finish_ref_source()
+        if tag == "div":
+            self._whole_card_picture = None
+        if tag == "ul":
+            self._in_takeaways = False
         if tag == "nav":
             self._in_crumbs = False
+        if tag == self._related_tag:
+            self._related_tag = None
         if tag == "script" and self._inline_script is not None:
             self.largest_inline_script = max(self.largest_inline_script, self._inline_script)
             self._inline_script = None
@@ -168,12 +236,15 @@ class PageParser(HTMLParser):
 
     def close(self):
         super().close()
+        self._finish_ref_source()
         # A script left open at the end of the file still counts.
         if self._inline_script is not None:
             self.largest_inline_script = max(self.largest_inline_script, self._inline_script)
             self._inline_script = None
 
     def handle_data(self, data):
+        if self._ref_source is not None:
+            self._ref_source[1].extend(m.group(0) for m in SOURCE_URL_TOKEN.finditer(data))
         if self._in_title:
             self.title += data
         if self._inline_script is not None:
@@ -192,6 +263,7 @@ class Page:
         self.resource_links = parser.resource_links
         self.urls = parser.urls
         self.imgs = parser.imgs
+        self.card_pictures = parser.card_pictures
         self.meta = parser.meta
         self.code_blocks = [cls.split() for cls in parser.code_classes]
         self.descriptions = [m.get("content") or "" for m in parser.metas
@@ -200,10 +272,10 @@ class Page:
                           if (m.get("name") or "").lower() == "robots")
         refresh = any((m.get("http-equiv") or "").lower() == "refresh"
                       for m in parser.metas)
-        own = "/" + os.path.dirname(path).replace(os.sep, "/")
-        own = own.rstrip("/") + "/"
+        url_path = "/" + os.path.dirname(path).replace(os.sep, "/")
+        self.url_path = url_path.rstrip("/") + "/"
         elsewhere = (parser.canonical is not None and
-                     unquote(urlparse(parser.canonical).path) != unquote(own))
+                     unquote(urlparse(parser.canonical).path) != unquote(self.url_path))
         # Redirect stubs, noindexed pages and pages canonicalised to another URL
         # never reach search results as such.
         self.noindex = "noindex" in robots
@@ -212,9 +284,14 @@ class Page:
         self.canonical = parser.canonical
         self.largest_inline_script = parser.largest_inline_script
         self.ids = parser.ids
+        self.references = parser.references
+        self.reference_sources = parser.reference_sources
         self.citations = parser.citations
         self.gloss_terms = parser.gloss_terms
         self.crumb_links = parser.crumb_links
+        self.alternates = parser.alternates
+        self.related_links = parser.related_links
+        self.takeaway_links = parser.takeaway_links
 
     def loads(self, needle):
         return any(needle in url for url in self.urls)
@@ -269,6 +346,35 @@ def check_glossary_links(pages):
             url = urlparse(urljoin(page.canonical or "/" + path, href))
             if not href or url.scheme not in ("", "http", "https") or (url.netloc, unquote(url.path)) not in english:
                 failures.append("%s (%s)" % (page.path, href or "missing href"))
+    return failures
+
+
+# A preview build serves the site under a prefix (e.g. /rebrand-doors/); glossary URLs are compared from /glossary/ on.
+GLOSSARY_URL_PATH = re.compile(r"/glossary/.*$")
+
+
+def glossary_url_key(href):
+    match = GLOSSARY_URL_PATH.search(unquote(urlparse(href).path))
+    return match.group(0) if match else None
+
+
+def check_glossary_related_language(pages):
+    """A translated term page links its related terms to pages in its own language where they exist."""
+    english = {}
+    for page in pages:
+        path = page.path.replace(os.sep, "/")
+        if path.startswith("glossary/english/"):
+            english["/" + path.removesuffix("index.html")] = [glossary_url_key(h) or "" for h in page.alternates]
+    failures = []
+    for page in pages:
+        parts = page.path.replace(os.sep, "/").split("/")
+        if len(parts) < 4 or parts[0] != "glossary" or parts[1] == "english":
+            continue
+        own = "/glossary/%s/" % parts[1]
+        for href in page.related_links:
+            target = glossary_url_key(href)
+            if any(alt.startswith(own) for alt in english.get(target, [])):
+                failures.append("%s (%s)" % (page.path, href))
     return failures
 
 
@@ -363,9 +469,27 @@ def check_cluster_title_markup(public_dir):
 
 
 def check_citation_targets(pages):
-    return ["%s (%s)" % (p.path, href or "missing href")
-            for p in pages for href in p.citations
-            if not href.startswith("#ref-") or unquote(href[1:]) not in p.ids]
+    failures = []
+    for p in pages:
+        for href, key in p.citations:
+            if not href.startswith("#ref-") or unquote(href[1:]) not in p.ids:
+                failures.append("%s (%s)" % (p.path, href or "missing href"))
+            elif key and (href != "#ref-" + key or key not in p.references):
+                failures.append("%s (data-cite=%s)" % (p.path, key))
+        for src, inner_urls in p.reference_sources:
+            if src.count("(") != src.count(")"):
+                failures.append("%s (truncated data-source=%s)" % (p.path, src))
+                continue
+            for url in inner_urls:
+                url = url.rstrip(".,;]")
+                while url.endswith(")") and url.count(")") > url.count("("):
+                    url = url[:-1]
+                if url.startswith(src) and len(url) > len(src):
+                    tail = url[len(src):]
+                    if tail != "/" and not tail.startswith("#"):
+                        failures.append("%s (truncated data-source=%s)" % (p.path, src))
+                        break
+    return failures
 
 
 def breadcrumb_lists(page):
@@ -574,6 +698,10 @@ def check_inline_scripts(pages):
 
 
 FLORA_PAGE = "replication-hub/flora/index.html"
+# The dataset citation (static/data/fred_citation.txt, from FReD-data) names FLoRA and links its DOI. The DOI is
+# not fixed here: FReD-data moved it from OSF (10.17605/OSF.IO/9R62X) to Zenodo, and a later version will move it again.
+FLORA_CITATION = re.compile(
+    r"Library of Reproduction and Replication Attempts \(FLoRA\).{0,300}?href=[\"']?https://doi\.org/10\.\d{4,9}/", re.S)
 
 
 def check_flora_citation(public_dir):
@@ -582,9 +710,80 @@ def check_flora_citation(public_dir):
         return ["%s (page not found)" % FLORA_PAGE]
     with open(path, encoding="utf-8") as handle:
         html = handle.read()
-    if "doi.org/10.17605/OSF.IO/9R62X" not in html:
+    if not FLORA_CITATION.search(html):
         return ["%s (no FLoRA DOI in the citation)" % FLORA_PAGE]
     return []
+
+
+GLOSSARY_HUB = os.path.join("glossary", "english", "index.html")
+AKA_LINE = re.compile(r'<p class="term-aka">(.*?)</p>', re.S)
+HUB_TERM = re.compile(r'<li data-term="([^"]*)">\s*<a href="([^"]+)"')
+
+
+def glossary_aka_failures(hub_html, term_pages):
+    """term_pages: {URL path of the term page: its HTML}. Returns the names the hub filter misses."""
+    filter_text = {glossary_url_key(unescape(href)): unescape(term) for term, href in HUB_TERM.findall(hub_html)}
+    failures = []
+    for url_path, html in sorted(term_pages.items()):
+        match = AKA_LINE.search(html)
+        if not match:
+            continue
+        line = unescape(re.sub(r"<[^>]+>", "", re.sub(r'<span class="term-aka-label">.*?</span>', "", match.group(1))))
+        searchable = filter_text.get(url_path)
+        for name in (n.strip() for n in line.split(", ")):
+            if name and (searchable is None or name.lower().replace("*", "") not in searchable):
+                failures.append("%s (%s)" % (url_path, name))
+    return failures
+
+
+def check_glossary_aka_filter(public_dir):
+    hub_path = os.path.join(public_dir, GLOSSARY_HUB)
+    if not os.path.exists(hub_path):
+        return ["%s (page not found)" % GLOSSARY_HUB]
+    with open(hub_path, encoding="utf-8") as handle:
+        hub_html = handle.read()
+    term_pages = {}
+    english = os.path.dirname(hub_path)
+    for slug in os.listdir(english):
+        path = os.path.join(english, slug, "index.html")
+        if os.path.isfile(path):
+            with open(path, encoding="utf-8") as handle:
+                term_pages["/glossary/english/%s/" % slug] = handle.read()
+    return glossary_aka_failures(hub_html, term_pages)
+
+
+ALT_TEXT_CARD_IMAGE = "/educators-corner/025-active-learning-open-research-phd/featured"
+ALT_TEXT_CARD_START = "Bronfenbrenner"
+
+
+def check_card_alt_text(pages):
+    return [p.path for p in pages for img in p.imgs
+            if ALT_TEXT_CARD_IMAGE in (img.get("src") or "")
+            and not (img.get("alt") or "").startswith(ALT_TEXT_CARD_START)]
+
+
+def sitemap_paths(public_dir, name="sitemap.xml"):
+    """URL paths listed in a sitemap, following a sitemap index into its sitemaps (read
+    from public_dir by URL path, as Hugo writes them alongside the pages). Raises
+    FileNotFoundError for a missing sitemap, so a check never passes on no URLs."""
+    root = ElementTree.parse(os.path.join(public_dir, name)).getroot()
+    locs = [unquote(urlparse(loc.text.strip()).path)
+            for loc in root.iter("{%s}loc" % SITEMAP_NS) if loc.text]
+    if root.tag == "{%s}sitemapindex" % SITEMAP_NS:
+        return [p for loc in locs for p in sitemap_paths(public_dir, loc.lstrip("/"))]
+    return locs
+
+
+def check_sitemap_noindex(public_dir, pages):
+    """A sitemap URL that is noindexed sends search engines contradictory signals."""
+    try:
+        listed = sitemap_paths(public_dir)
+    except FileNotFoundError as missing:
+        return ["%s (not found)" % os.path.relpath(missing.filename, public_dir)]
+    if not listed:
+        return ["sitemap.xml (lists no URLs)"]
+    noindexed = {p.url_path for p in pages if p.noindex}
+    return [p for p in listed if p in noindexed]
 
 
 def description_report(pages, home):
@@ -705,7 +904,141 @@ def check_clusters_map(public_dir):
     return failures
 
 
-def main(public_dir):
+def check_related_card_pictures(pages):
+    """Compare the picture treatment where the list and related cards share card_picture."""
+    by_path = {page.path: page for page in pages}
+    failures = []
+    # Pedagogies uses list_item for its index, which fits every thumbnail into its row.
+    for section in ("post", "educators-corner"):
+        index = by_path.get(f"{section}/index.html")
+        if index is None:
+            continue
+        # Each article's image derivatives share its bundle folder and have different hashed filenames.
+        index_pictures = dict(index.card_pictures)
+        failures.extend(
+            page.path for page in pages
+            if page is not index and page.path.startswith(f"{section}/")
+            and any(folder in index_pictures and whole != index_pictures[folder]
+                    for folder, whole in page.card_pictures)
+        )
+    return failures
+
+
+def check_summary_takeaway_links(pages):
+    redirect = re.compile(r"^https?://www\.google\.com/url(?:[?#]|$)", re.I)
+    return [f"{page.path}: {href!r}" for page in pages for href in page.takeaway_links
+            if href in ("", "#", "#ZgotmplZ") or redirect.match(href)]
+
+
+class SummaryCreditParser(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.credits = []
+        self.credit = None
+
+    def finish_credit(self):
+        if self.credit is not None:
+            self.credits.append(" ".join("".join(self.credit).split()))
+            self.credit = None
+
+    def handle_starttag(self, tag, attrs):
+        if tag in ("p", "h4"):
+            # Hugo's minifier can omit </p> before the next paragraph or heading.
+            self.finish_credit()
+        if tag == "p" and "summary-credit" in (dict(attrs).get("class") or "").split():
+            self.credit = []
+
+    def handle_data(self, data):
+        if self.credit is not None:
+            self.credit.append(data)
+
+    def handle_endtag(self, tag):
+        if tag == "p":
+            self.finish_credit()
+
+    def close(self):
+        super().close()
+        self.finish_credit()
+
+
+def check_summary_credit_marker(public_dir, summaries=None):
+    if summaries is None:
+        data_dir = os.environ.get("HUGO_DATADIR", "data")
+        path = os.path.join(data_dir, "summaries.json")
+        try:
+            with open(path, encoding="utf-8") as handle:
+                summaries = json.load(handle)
+        except (OSError, ValueError) as error:
+            return [f"{path}: could not read the build's summaries data ({error})"]
+
+    marked_titles = [s.get("Title") or "" for s in summaries.values() if "⬦" in (s.get("Title") or "")]
+    expected_counts = {
+        "summaries/index.html": None,
+        "summaries/open-reproducible/index.html": len(marked_titles),
+        "summaries/diversity-equity-inclusion/index.html": sum("⌺" in title for title in marked_titles),
+    }
+    credit_text = "Summary by Dr Tamara Kalandadze"
+    failures = []
+    for path, expected in expected_counts.items():
+        full_path = os.path.join(public_dir, path)
+        if not os.path.isfile(full_path):
+            failures.append(f"{path}: missing page")
+            continue
+        with open(full_path, encoding="utf-8", errors="replace") as handle:
+            html = handle.read()
+        if "⬦" in unescape(html) or r"\u2b26" in html.lower():
+            failures.append(f"{path}: raw summary author marker")
+        if expected is not None:
+            parser = SummaryCreditParser()
+            parser.feed(html)
+            parser.close()
+            if parser.credits != [credit_text] * expected:
+                actual = parser.credits.count(credit_text)
+                failures.append(f"{path}: expected {expected} written credits, found {actual} "
+                                f"matching out of {len(parser.credits)} credit lines")
+    return failures
+
+
+CLUSTER_EXTERNAL_HREF = re.compile(r'<a\b[^>]*\bhref="(https?://[^"]+)"', re.I)
+
+
+def has_trailing_sentence_punctuation(href):
+    """True when an external href ends with trailing prose punctuation or an unmatched closer."""
+    if not href:
+        return False
+    if href[-1] in ".,;:!?":
+        return True
+    if href.endswith(")") and href.count(")") > href.count("("):
+        return True
+    if href.endswith("]") and href.count("]") > href.count("["):
+        return True
+    return False
+
+
+def check_cluster_link_punctuation(public_dir):
+    """Fallback cluster reference links must not include trailing sentence punctuation (#845)."""
+    clusters_dir = os.path.join(public_dir, "clusters")
+    if not os.path.isdir(clusters_dir):
+        return []
+    failures = []
+    for root, _, names in os.walk(clusters_dir):
+        for name in sorted(names):
+            if name != "index.html":
+                continue
+            full_path = os.path.join(root, name)
+            rel = os.path.relpath(full_path, public_dir).replace(os.sep, "/")
+            with open(full_path, encoding="utf-8", errors="replace") as handle:
+                text = handle.read()
+            bad = sorted({
+                href for href in CLUSTER_EXTERNAL_HREF.findall(text)
+                if has_trailing_sentence_punctuation(href)
+            })
+            if bad:
+                failures.append("%s (%s)" % (rel, ", ".join(bad[:3])))
+    return sorted(failures)
+
+
+def main(public_dir, summaries=None):
     pages = load_pages(public_dir)
     home = next((p for p in pages if p.path == "index.html"), None)
     print("Checked %d pages under %s" % (len(pages), public_dir))
@@ -715,6 +1048,7 @@ def main(public_dir):
         "18. glossary titles show no Markdown asterisks": check_glossary_title_markdown(pages),
         "2. homepage free of mermaid/highlight.js assets": check_homepage_assets(home),
         "4. every <img> has an alt attribute": check_img_alt(pages),
+        "26. related cards match the picture treatment in their section list": check_related_card_pictures(pages),
         "5. every homepage <img> has width and height": check_homepage_img_dims(home),
         "6. homepage share image is 1200x630 PNG/JPEG with twitter:card": check_homepage_share_image(home),
         "7. breadcrumb JSON-LD is well formed": check_breadcrumbs(pages),
@@ -731,6 +1065,14 @@ def main(public_dir):
         "20. cluster pages show no literal <i>/<em>/<scp> title markup": check_cluster_title_markup(public_dir),
         "21. the clusters map's names are named and counted, its drawing hidden, its panels closed and its links have targets": check_clusters_map(public_dir),
         "22. FLoRA page shows the citation": check_flora_citation(public_dir),
+        "23. translated glossary pages link related terms in their own language": check_glossary_related_language(pages),
+        "24. the glossary hub's filter finds each term by its other names": check_glossary_aka_filter(public_dir),
+        "25. no page loads the retired js/newsletter.js": [p.path for p in pages if p.loads("js/newsletter.js")],
+        "27. summary takeaways link directly to their destinations": check_summary_takeaway_links(pages),
+        "28. summaries show written credit without a raw author marker": check_summary_credit_marker(public_dir, summaries),
+        "29. cluster links carry no trailing sentence punctuation": check_cluster_link_punctuation(public_dir),
+        "30. list cards use image.alt_text": check_card_alt_text(pages),
+        "31. no noindexed page is listed in the sitemap": check_sitemap_noindex(public_dir, pages),
     }
     conditional = check_conditional_assets(pages)
     results["3. conditional highlight.js / mermaid loading"] = [

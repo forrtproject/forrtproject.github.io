@@ -34,6 +34,7 @@ REDIRECTS = {
     "glossary/vbeta/": "glossary/english/",
     "curated_resources/no-such-resource/": "resources/",
     "curated_resources/page/3/": "resources/",
+    "educators-corner/page/2/": "educators-corner/",
     "forrt_clusters/academic-life-and-culture/page/2/": "forrt_clusters/academic-life-and-culture/",
     "tag/": "tags/",
     "tag/open-science/": "tags/?tag=open-science",
