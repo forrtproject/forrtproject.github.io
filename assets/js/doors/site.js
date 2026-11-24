@@ -755,7 +755,7 @@ if (chatWidget) {
       chatLoading = false;
       chatFailed = true;
       document.getElementById('just-os-window')?.remove();
-      if (fromMenu && !isVisibleControl(chatButton) && navJustOs?.dataset.href) {
+      if (fromMenu && navJustOs?.dataset.href) {
         location.href = navJustOs.dataset.href;
         return;
       }
