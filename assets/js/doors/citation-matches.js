@@ -23,7 +23,8 @@ export function citationMatches(text, references) {
       : String.raw`,\s*${escapeRE(name)}`).join('');
     let others = full;
     if (ref.etal) others = full ? String.raw`(?:\s+et\s+al\.?|${full})` : String.raw`\s+et\s+al\.?`;
-    const pattern = new RegExp(String.raw`(?<![\p{L}\p{M}\p{N}])${escapeRE(ref.first)}${others}(?:(?:,\s*|\s+)${escapeRE(ref.year)}|\s+\(${escapeRE(ref.year)}(?:,\s*pp?\.\s*\d+(?:[–-]\d+)?)?\))(?![\p{L}\p{N}])`, 'giu');
+    const locator = String.raw`(?:(?:,\s*|\s+)pp?\.\s*\d+(?:[–-]\d+)?)?`;
+    const pattern = new RegExp(String.raw`(?<![\p{L}\p{M}\p{N}])${escapeRE(ref.first)}${others}(?:(?:,\s*|\s+)${escapeRE(ref.year)}${locator}|\s+\(${escapeRE(ref.year)}${locator}\))(?![\p{L}\p{M}\p{N}])`, 'giu');
     for (let match; (match = pattern.exec(text));) {
       // A coauthor or the end of a longer surname is not the first author.
       const before = text.slice(0, match.index);

@@ -83,6 +83,7 @@ HTML_TAG = re.compile(r"</?[A-Za-z][A-Za-z0-9]*(\s[^<>]*)?/?>")
 # Attribute values arrive already unescaped, so any entity left in them was
 # escaped twice in the HTML (e.g. `&amp;ldquo;`).
 DESCRIPTION_URL = re.compile(r"https?://|\bforrt\.org/", re.I)
+SOURCE_URL_TOKEN = re.compile(r'https?://[^\s<>"]+')
 LITERAL_ENTITY = re.compile(r"&(#\d+|#x[0-9a-fA-F]+|[A-Za-z][A-Za-z0-9]*);")
 
 
@@ -113,6 +114,7 @@ class PageParser(HTMLParser):
         self.ids = set()
         self.references = set()
         self.reference_sources = []
+        self._ref_source = None
         self.citations = []
         self.crumb_links = []
         self._in_crumbs = False
@@ -122,8 +124,15 @@ class PageParser(HTMLParser):
         self.takeaway_links = []
         self._in_takeaways = False
 
+    def _finish_ref_source(self):
+        if self._ref_source is not None:
+            self.reference_sources.append(self._ref_source)
+            self._ref_source = None
+
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
+        if tag == "li":
+            self._finish_ref_source()
         if tag == "ul" and "summary-takeaways" in (attrs.get("class") or "").split():
             self._in_takeaways = True
         if tag == "a" and self._in_takeaways:
@@ -138,7 +147,12 @@ class PageParser(HTMLParser):
         if attrs.get("data-reference"):
             self.references.add(attrs["data-reference"])
         if attrs.get("data-source"):
-            self.reference_sources.append(attrs["data-source"])
+            if tag == "li":
+                self._ref_source = (attrs["data-source"], [])
+            else:
+                self.reference_sources.append((attrs["data-source"], []))
+        if tag == "a" and self._ref_source is not None and attrs.get("href"):
+            self._ref_source[1].append(attrs["href"])
         if tag == "nav" and "crumbs" in (attrs.get("class") or "").split():
             self._in_crumbs = True
         if tag == "link" and attrs.get("rel") == "alternate" and attrs.get("hreflang") and attrs.get("href"):
@@ -185,6 +199,8 @@ class PageParser(HTMLParser):
             self.code_classes.append(attrs.get("class") or "")
 
     def handle_endtag(self, tag):
+        if tag in ("li", "ul"):
+            self._finish_ref_source()
         if tag == "div":
             self._whole_card_picture = None
         if tag == "ul":
@@ -213,12 +229,15 @@ class PageParser(HTMLParser):
 
     def close(self):
         super().close()
+        self._finish_ref_source()
         # A script left open at the end of the file still counts.
         if self._inline_script is not None:
             self.largest_inline_script = max(self.largest_inline_script, self._inline_script)
             self._inline_script = None
 
     def handle_data(self, data):
+        if self._ref_source is not None:
+            self._ref_source[1].extend(m.group(0) for m in SOURCE_URL_TOKEN.finditer(data))
         if self._in_title:
             self.title += data
         if self._inline_script is not None:
@@ -450,9 +469,19 @@ def check_citation_targets(pages):
                 failures.append("%s (%s)" % (p.path, href or "missing href"))
             elif key and (href != "#ref-" + key or key not in p.references):
                 failures.append("%s (data-cite=%s)" % (p.path, key))
-        for src in p.reference_sources:
-            if src.count("(") > src.count(")"):
+        for src, inner_urls in p.reference_sources:
+            if src.count("(") != src.count(")"):
                 failures.append("%s (truncated data-source=%s)" % (p.path, src))
+                continue
+            for url in inner_urls:
+                url = url.rstrip(".,;]")
+                while url.endswith(")") and url.count(")") > url.count("("):
+                    url = url[:-1]
+                if url.startswith(src) and len(url) > len(src):
+                    tail = url[len(src):]
+                    if tail != "/" and not tail.startswith("#"):
+                        failures.append("%s (truncated data-source=%s)" % (p.path, src))
+                        break
     return failures
 
 

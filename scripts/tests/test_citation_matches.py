@@ -57,6 +57,9 @@ const localRefs = [
 assert.deepEqual(keys('As argued by Jackson (1998, p.8) and (HESA, 2020) and (Dubois-Shaik & Fesulier, 2015)', localRefs),
                  ['local-jackson', 'local-hesa', 'local-dubois']);
 assert.deepEqual(keys('Jackson (1998, pp. 8–10)', localRefs), ['local-jackson']);
+const parenLoc = '(Jackson, 1998, pp. 8–10; Victor et al., 2021a p.34)';
+assert.deepEqual(citationMatches(parenLoc, localRefs).map((m) => parenLoc.slice(m.start, m.end)),
+                 ['Jackson, 1998, pp. 8–10', 'Victor et al., 2021a p.34']);
 assert.deepEqual(keys('(Henrich, Heine & Norenzayan, 2010; Victor et al., 2021a)', localRefs),
                  ['local-henrich', 'local-victor-a']);
 assert.deepEqual(keys('similar to Victor et al. (2021b)', localRefs), ['local-victor-b']);

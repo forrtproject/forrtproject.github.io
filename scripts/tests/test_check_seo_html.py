@@ -278,8 +278,10 @@ class CitationTargetCheck(unittest.TestCase):
         self.assertEqual(self.check('<a href="#elsewhere">Link</a>'), [])
 
     def test_truncated_parenthetical_doi_in_data_source_fails(self):
-        self.assertEqual(self.check('<li id="ref-K" data-reference="K" data-source="https://doi.org/10.1002/(SICI)1099">Ref</li>'), [])
+        self.assertEqual(self.check('<li id="ref-K" data-reference="K" data-source="https://doi.org/10.1002/(SICI)1099">Ref <a href="https://doi.org/10.1002/(SICI)1099">DOI</a></li>'), [])
         self.assertTrue(self.check('<li id="ref-K" data-reference="K" data-source="https://doi.org/10.1002/(SICI">Ref</li>'))
+        self.assertTrue(self.check('<li id="ref-K" data-reference="K" data-source="https://doi.org/10.1002/">Ref <a href="https://doi.org/10.1002/(SICI)1099">DOI</a></li>'))
+        self.assertTrue(self.check('<li id="ref-K" data-reference="K" data-source="https://doi.org/10.1002/">Ref https://doi.org/10.1002/(SICI)1099</li>'))
 
 
 class GlossaryTitleMarkdownCheck(unittest.TestCase):
