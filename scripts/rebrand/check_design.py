@@ -24,6 +24,7 @@ import json
 import multiprocessing
 import os
 import re
+import struct
 import sys
 import tempfile
 import threading
@@ -522,6 +523,90 @@ def check_tower_game(browser, base, expect):
     page.keyboard.press("Escape")
     page.wait_for_function("document.querySelector('#tower-game')?.open === false")
     page.context.close()
+
+    # Interactive gameplay checks under reduced motion (deterministic, instant physics settle):
+    # blueprints, brick placement, keyboard controls, stability meter, sound toggle, snapshot export, topple + undo.
+    page = new_page(browser, 1440, reduced_motion="reduce")
+    requests = []
+    page.on("request", lambda request: requests.append(request.url))
+    page.goto(base, wait_until="load")
+    page.hover(".castle-stage")
+    page.locator(".tower-entry").click()
+    page.wait_for_function("document.querySelector('#tower-game')?.open === true", timeout=20000)
+    page.locator("#tg-note-go").click()
+    expect(page.locator(".tg-plan-pill").count() >= 5, "blueprint picker offers Free build and FORRT blueprints")
+    expect(page.locator("#tg-stability").get_attribute("role") == "meter", "stability gauge exposes meter semantics")
+    expect(page.locator("#tg-sound").get_attribute("aria-pressed") == "true", "sound toggle starts on")
+    page.locator("#tg-sound").click()
+    expect(page.locator("#tg-sound").get_attribute("aria-pressed") == "false", "clicking sound toggle mutes sound")
+    page.keyboard.press("m")
+    expect(page.locator("#tg-sound").get_attribute("aria-pressed") == "true", "M key restores sound")
+    # Keyboard building on Free build
+    page.locator("#tg-stage").focus()
+    page.keyboard.press("3")
+    page.keyboard.press("ArrowRight")
+    page.keyboard.press("r")
+    page.keyboard.press("t")
+    page.keyboard.press("Enter")
+    expect("1 brick" in page.locator("#tg-count").text_content(), "keyboard controls place a brick")
+    # Blueprint switching, progress tracking & completion
+    page.locator("#tg-restart").click()
+    page.locator(".tg-plan-pill[data-plan='arch']").click()
+    expect(page.locator("#tg-prog").is_visible(), "selecting a blueprint shows live progress")
+    page.locator("#tg-next").click()
+    expect("1 /" in page.locator("#tg-prog-text").text_content(), "Place next advances blueprint progress")
+    page.locator("#tg-finish").click()
+    expect(page.locator("#tg-done").text_content().strip() == "Build on", "Build rest completes the blueprint")
+    expect(page.locator("#tg-prog-text").text_content().strip() == "22 / 22", "Open arch completes all 22 slots")
+    expect(int(page.locator("#tg-stability").get_attribute("aria-valuenow")) > 0, "stability meter reports a live score")
+    # Snapshot export downloads a valid 1200x900 PNG postcard
+    with page.expect_download() as download_info:
+        page.locator("#tg-photo").click()
+    dl = download_info.value
+    expect(dl.suggested_filename.endswith(".png"), "Save photo downloads a PNG postcard")
+    postcard_path = dl.path()
+    with open(postcard_path, "rb") as handle:
+        header = handle.read(24)
+    expect(header[:8] == b"\x89PNG\r\n\x1a\n" and struct.unpack(">II", header[16:24]) == (1200, 900),
+           "postcard download is a valid 1200x900 PNG")
+    # Topple lazily loads physics.bundle.js and Undo restores every brick and blueprint progress
+    expect(not any("/js/tower/physics" in url for url in requests), "physics stays unloaded until Topple or wobble")
+    before_topple = page.locator("#tg-count").text_content()
+    page.locator("#tg-topple").click()
+    page.wait_for_function("document.querySelector('#tg-hint').textContent.includes('Down it came')", timeout=15000)
+    expect(any("/js/tower/physics" in url for url in requests), "Topple fetches physics.bundle.js on demand")
+    page.locator("#tg-undo").click()
+    expect(page.locator("#tg-count").text_content() == before_topple, "Undo snaps the toppled tower right back")
+    expect(page.locator("#tg-prog-text").text_content().strip() == "22 / 22", "Undo restores completed blueprint progress")
+    page.context.close()
+
+    # Landscape phone (844x390): controls scroll cleanly and Done + Undo stay reachable with >= 44 px targets.
+    ctx = browser.new_context(viewport={"width": 844, "height": 390}, has_touch=True, is_mobile=True, reduced_motion="reduce")
+    page = ctx.new_page()
+    page.route("**/*", lambda route: route.abort() if BLOCK.search(route.request.url) else route.continue_())
+    page.goto(base, wait_until="load")
+    page.locator(".tower").scroll_into_view_if_needed()
+    page.locator(".castle-stage").tap()
+    page.wait_for_timeout(400)
+    page.locator(".tower-entry").tap()
+    page.wait_for_function("document.querySelector('#tower-game')?.open === true", timeout=20000)
+    page.locator("#tg-note-go").tap()
+    page.locator("#tg-done").scroll_into_view_if_needed()
+    land_metrics = page.evaluate("""() => {
+      const done = document.querySelector('#tg-done').getBoundingClientRect();
+      const undo = document.querySelector('#tg-undo').getBoundingClientRect();
+      const topple = document.querySelector('#tg-topple').getBoundingClientRect();
+      const pill = document.querySelector('.tg-plan-pill').getBoundingClientRect();
+      return {
+        doneBottom: Math.round(done.bottom), undoBottom: Math.round(undo.bottom),
+        doneH: Math.round(done.height), toppleH: Math.round(topple.height), pillH: Math.round(pill.height)
+      };
+    }""")
+    expect(land_metrics["doneBottom"] <= 390 and land_metrics["undoBottom"] <= 390,
+           f"landscape phone reaches Done/Undo inside 390 px height: {land_metrics}")
+    expect(min(land_metrics["doneH"], land_metrics["toppleH"], land_metrics["pillH"]) >= 44,
+           f"landscape phone keeps >= 44 px tap targets: {land_metrics}")
+    ctx.close()
 
     # A first tap exactly where the button will appear reveals it. It must not open the game.
     page = new_page(browser, 390)

@@ -1,35 +1,68 @@
-/* Tower game prototype: free building by real Lego rules on a stud grid.
+/* Tower game: free and blueprint building by real Lego rules on a stud grid.
    Every brick covers whole stud squares, every height is a whole number of plates, and a brick
    comes down from above onto the highest thing under it, so it can never slide into a gap.
-   One stud is enough to hold a brick, though a placement that would overload a joint is refused with a warning. The supply is unlimited, and any of ten bricks (keys 1 to 9 and 0) and three looks can be chosen at any time.
-   Reused from the castle: its brick and arch geometry (cut to a flat foundation) and lighting.
-   New: grid and rules, picking by height map, brick picker, looks, how-to-play note, hints with a planned tower, undo, dialog, tests. */
+   One stud is enough to hold a brick, though a placement that would overload a joint is refused with a warning.
+   The supply is unlimited, and any of ten bricks (keys 1 to 9 and 0) and three looks can be chosen at any time.
+   Includes playable FORRT blueprints, live stability gauge, deliberate topple physics, Web Audio feedback,
+   tactile landing juice, milestones, and PNG postcard export. */
 import {
   Scene, OrthographicCamera, WebGLRenderer, HemisphereLight, DirectionalLight, Mesh, PlaneGeometry, BoxGeometry, EdgesGeometry,
-  LineSegments, LineBasicMaterial, Group, ShadowMaterial, Vector3, Box3, PCFSoftShadowMap, SRGBColorSpace,
+  LineSegments, LineBasicMaterial, Group, ShadowMaterial, Vector3, Box3, PCFShadowMap, SRGBColorSpace,
   ACESFilmicToneMapping, Color, MeshBasicMaterial, Raycaster, Vector2, BackSide, AlwaysStencilFunc, NotEqualStencilFunc, ReplaceStencilOp
 } from 'three';
 import { createFoundation } from './source-copies/lego-foundation.js';
 import { createCollapse } from './collapse.js';
+import { createSoundEngine } from './audio.js';
+import { BLUEPRINTS, BLUEPRINT_MAP } from './blueprints.js';
+import { createEffects } from './effects.js';
+import { renderPostcardCanvas, downloadPostcard } from './postcard.js';
 
 const css = `
 html.tg-lock{overflow:hidden;scrollbar-gutter:stable}
-#tower-game{touch-action:none;width:min(1000px,100vw);max-width:100vw;height:min(800px,100dvh);max-height:100dvh;padding:0;border:0;border-radius:18px;background:#e3efec;color:#262d35;overflow:hidden}
+#tower-game{touch-action:none;width:min(1040px,100vw);max-width:100vw;height:min(840px,100dvh);max-height:100dvh;padding:0;border:0;border-radius:18px;background:#e3efec;color:#262d35;overflow:hidden;font-family:'Source Sans 3',system-ui,sans-serif}
 #tower-game::backdrop{background:rgba(38,45,53,.55)}
 #tower-game .tg-wrap{display:flex;flex-direction:column;height:100%}
-#tower-game .tg-head{display:flex;align-items:center;gap:12px;padding:10px 12px 4px 18px}
-#tower-game h2{font:500 clamp(20px,3vw,26px)/1.1 'Newsreader',Georgia,serif;margin:0;flex:1}
-#tower-game .tg-count{font-weight:600;font-size:16px;white-space:nowrap}
-#tower-game .tg-field{position:relative;flex:1;min-height:0}
+#tower-game .tg-panel{display:contents}
+#tower-game .tg-head{display:flex;align-items:center;gap:8px;padding:10px 12px 4px 18px;order:1}
+#tower-game h2{font:500 clamp(19px,3vw,26px)/1.1 'Newsreader',Georgia,serif;margin:0;flex:1;min-width:0}
+#tower-game .tg-head-actions{display:flex;align-items:center;gap:6px;flex:none}
+#tower-game .tg-bar{display:flex;align-items:center;justify-content:space-between;gap:8px 12px;padding:4px 12px 6px 18px;flex-wrap:wrap;order:2}
+#tower-game .tg-plans{display:flex;align-items:center;gap:5px;min-width:0;max-width:100%;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding:2px 0}
+#tower-game .tg-plans::-webkit-scrollbar{display:none}
+#tower-game button.tg-plan-pill{flex:none;min-height:36px;padding:5px 12px;border:1.5px solid #9db3ae;border-radius:999px;background:#f6faf9;color:#262d35;font:600 14px/1.2 'Source Sans 3',system-ui,sans-serif;cursor:pointer;white-space:nowrap}
+@media(hover:hover){#tower-game button.tg-plan-pill:hover{background:#fff;border-color:#2d5750}}
+#tower-game button.tg-plan-pill[aria-pressed=true]{background:#2d5750;border-color:#2d5750;color:#fff}
+#tower-game .tg-status{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-left:auto}
+#tower-game .tg-count{font-weight:600;font-size:15px;white-space:nowrap;color:#262d35}
+#tower-game .tg-prog{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:999px;background:#fff;border:1px solid #bfd2cd;font:600 14px/1.2 'Source Sans 3',system-ui,sans-serif;color:#115e69;white-space:nowrap}
+#tower-game .tg-prog[hidden]{display:none}
+#tower-game .tg-prog.tg-prog-done{background:#e3f1e7;border-color:#2b7a4b;color:#1d5e37}
+#tower-game .tg-prog-track{width:42px;height:6px;border-radius:999px;background:#d6e6e3;overflow:hidden}
+#tower-game .tg-prog-fill{display:block;height:100%;width:0;background:#14808f;border-radius:999px;transition:width .2s}
+#tower-game .tg-prog.tg-prog-done .tg-prog-fill{background:#2b7a4b}
+#tower-game .tg-meter{display:inline-flex;align-items:center;gap:7px;padding:3px 10px;border-radius:999px;background:#fff;border:1px solid #bfd2cd;font:600 14px/1.2 'Source Sans 3',system-ui,sans-serif;white-space:nowrap;color:#1d5e37}
+#tower-game .tg-meter-track{width:54px;height:7px;border-radius:999px;background:#e4ecea;overflow:hidden;flex:none}
+#tower-game .tg-meter-fill{display:block;height:100%;width:100%;border-radius:999px;background:#2b7a4b;transition:width .15s,background-color .15s}
+#tower-game .tg-meter[data-state=leaning]{color:#7a4f00;border-color:#d8b35a}
+#tower-game .tg-meter[data-state=leaning] .tg-meter-fill{background:#b87a00}
+#tower-game .tg-meter[data-state=risky]{color:#9a4106;border-color:#df9359}
+#tower-game .tg-meter[data-state=risky] .tg-meter-fill{background:#d96614}
+#tower-game .tg-meter[data-state=wobbly]{color:#a51c16;border-color:#d9534f;background:#fdf2f2}
+#tower-game .tg-meter[data-state=wobbly] .tg-meter-fill{background:#d92d20}
+#tower-game .tg-field{position:relative;flex:1;min-height:0;order:3}
 #tower-game .tg-stage{position:absolute;inset:0;touch-action:none;user-select:none;-webkit-user-select:none}
-#tower-game .tg-over{position:absolute;top:6px;display:flex;gap:6px}
+#tower-game .tg-over{position:absolute;top:6px;display:flex;gap:6px;z-index:2}
 #tower-game .tg-over[hidden]{display:none}
 #tower-game .tg-plan{left:8px}
 #tower-game .tg-again{right:8px}
+#tower-game .tg-toast{position:absolute;top:8px;left:50%;transform:translateX(-50%);z-index:3;display:inline-flex;align-items:center;gap:7px;padding:7px 14px;border-radius:999px;background:#262d35;color:#fff;font:600 14px/1.2 'Source Sans 3',system-ui,sans-serif;box-shadow:0 6px 18px rgba(38,45,53,.24);pointer-events:none;white-space:nowrap;max-width:calc(100% - 24px);overflow:hidden;text-overflow:ellipsis;transition:opacity .22s,transform .22s}
+#tower-game .tg-toast[hidden]{display:none}
+#tower-game .tg-toast-dot{width:9px;height:9px;border-radius:50%;background:#e8b52c;flex:none}
+#tower-game .tg-toast.tg-toast-plan .tg-toast-dot{background:#2b985b}
 #tower-game .tg-stage.tg-keys:focus{outline:3px solid #005a87;outline-offset:-3px}
 #tower-game canvas{position:absolute;inset:0;width:100%;height:100%;display:block;cursor:crosshair}
-#tower-game .tg-tray{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:4px;padding:4px 12px;touch-action:none;user-select:none;-webkit-user-select:none}
-#tower-game button.tg-style{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:0;min-height:58px;min-width:0;padding:3px 1px 4px;border:2px solid transparent;border-radius:10px;background:#f6faf9;font:600 13px/1.1 'Source Sans 3',system-ui,sans-serif;color:#262d35}
+#tower-game .tg-tray{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:4px;padding:4px 12px;touch-action:none;user-select:none;-webkit-user-select:none;order:4}
+#tower-game button.tg-style{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:0;min-height:58px;min-width:0;padding:3px 1px 4px;border:2px solid transparent;border-radius:10px;background:#f6faf9;font:600 13px/1.1 'Source Sans 3',system-ui,sans-serif;color:#262d35;cursor:pointer}
 @media(hover:hover){#tower-game button.tg-style:hover{background:#fff;color:#262d35;border-color:#2d5750}}
 #tower-game button.tg-style[aria-pressed=true]{background:#fff;color:#262d35;border-color:#b34e0a;box-shadow:0 0 0 1px #b34e0a}
 #tower-game .tg-style img{width:100%;max-width:62px;height:34px;object-fit:contain;display:block;pointer-events:none;transition:transform .15s}
@@ -46,40 +79,95 @@ html.tg-lock{overflow:hidden;scrollbar-gutter:stable}
 #tower-game .tg-look[data-look=grey] i{background:#5c6870}
 #tower-game .tg-look[data-look=brick] i{background:#963a27}
 #tower-game .tg-look[data-look=pride] i{background:linear-gradient(#7046a3 0 17%,#2672b8 17% 33%,#2b985b 33% 50%,#e8b52c 50% 67%,#e98434 67% 83%,#ce4742 83%)}
-#tower-game .tg-note{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:8px;background:rgba(38,45,53,.45)}
+#tower-game .tg-note{position:absolute;inset:0;z-index:5;display:flex;align-items:center;justify-content:center;padding:8px;background:rgba(38,45,53,.45)}
 #tower-game .tg-note[hidden]{display:none}
-#tower-game .tg-card{display:flex;flex-direction:column;width:min(500px,100%);max-height:100%;padding:14px 18px 12px;border-radius:14px;background:#fff;box-shadow:0 10px 30px rgba(38,45,53,.3)}
+#tower-game .tg-card{display:flex;flex-direction:column;width:min(520px,100%);max-height:100%;padding:14px 18px 12px;border-radius:14px;background:#fff;box-shadow:0 10px 30px rgba(38,45,53,.3)}
 #tower-game .tg-card h3{font:500 22px/1.1 'Newsreader',Georgia,serif;margin:0 0 6px}
-#tower-game .tg-card .tg-steps{min-height:0;overflow:auto;touch-action:pan-y;margin:0 0 10px;padding:0;list-style:none;font-size:15px;line-height:1.3}
+#tower-game .tg-card .tg-steps{min-height:0;overflow:auto;touch-action:pan-y;margin:0 0 10px;padding:0;list-style:none;font-size:15px;line-height:1.35}
 #tower-game .tg-card li{margin:0 0 7px}
 #tower-game .tg-warn-text{margin:0 0 12px;font-size:17px;line-height:1.35}
 #tower-game .tg-warn-row{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:8px}
 #tower-game .tg-turns{display:flex;align-items:center;gap:4px;float:right;margin:0 0 2px 8px;font-size:20px;color:#5a666e}
 #tower-game .tg-turns img{width:58px;height:36px;object-fit:contain;display:block}
 #tower-game .tg-style.tg-suggested::after{content:'';position:absolute;top:4px;right:4px;width:9px;height:9px;border-radius:50%;background:#14808f}
-#tower-game .tg-foot{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;padding:4px 12px 12px 18px}
+#tower-game .tg-foot{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;padding:4px 12px 12px 18px;order:5}
 #tower-game .tg-hint{flex:1 1 240px;margin:0;font-size:15px;line-height:1.3;height:2.6em;overflow:hidden}
-#tower-game .tg-btn{white-space:nowrap;min-height:44px;padding:8px 14px;border:1.5px solid #2d5750;border-radius:999px;background:#fff;color:#262d35;font:600 15px/1.2 'Source Sans 3',system-ui,sans-serif;cursor:pointer}
-#tower-game .tg-close{min-width:44px;padding:8px 12px}
+#tower-game .tg-btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;min-height:44px;padding:8px 14px;border:1.5px solid #2d5750;border-radius:999px;background:#fff;color:#262d35;font:600 15px/1.2 'Source Sans 3',system-ui,sans-serif;cursor:pointer}
+#tower-game .tg-btn svg{width:18px;height:18px;flex:none}
+#tower-game .tg-close{min-width:44px;padding:8px 11px}
+#tower-game .tg-sound .tg-ic-off{display:none}
+#tower-game .tg-sound[aria-pressed=false] .tg-ic-on{display:none}
+#tower-game .tg-sound[aria-pressed=false] .tg-ic-off{display:block}
+#tower-game .tg-sound[aria-pressed=true],#tower-game .tg-sound[aria-pressed=true]:hover{background:#fff;border-color:#2d5750;color:#262d35}
+@media(hover:hover){#tower-game .tg-sound[aria-pressed=true]:hover{background:#2d5750;color:#fff}}
+#tower-game .tg-sound[aria-pressed=false]{background:#eef3f2;border-color:#7d9490;color:#4c5e72}
 @media(hover:hover){#tower-game .tg-btn:hover:not(:disabled){background:#2d5750;color:#fff}}
 #tower-game .tg-btn:disabled{opacity:.45;cursor:default}
 #tower-game .tg-btn.tg-main{flex:0 0 5.4em;padding-left:4px;padding-right:4px;background:#b34e0a;border-color:#b34e0a;color:#fff}
 #tower-game .tg-btn.tg-main:disabled{background:#fff;border-color:#2d5750;color:#262d35}
 @media(hover:hover){#tower-game .tg-btn.tg-main:hover:not(:disabled){background:#8f3e07}}
 #tower-game .tg-card .tg-btn.tg-main{align-self:flex-end;flex:none;padding:8px 16px}
-#tower-game .tg-btn[aria-pressed=true],#tower-game .tg-btn[aria-pressed=true]:hover{background:#14808f;border-color:#14808f;color:#fff}
+#tower-game .tg-btn[aria-pressed=true]:not(.tg-sound),#tower-game .tg-btn[aria-pressed=true]:not(.tg-sound):hover{background:#14808f;border-color:#14808f;color:#fff}
 #tower-game button:focus-visible{outline:3px solid #005a87;outline-offset:2px}
 #tower-game .tg-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
-@media(max-width:760px){#tower-game .tg-tray{grid-template-columns:repeat(5,minmax(0,1fr));padding:2px 8px}#tower-game .tg-foot{padding:4px 8px 8px}#tower-game .tg-hint{flex-basis:100%}#tower-game .tg-foot .tg-btn:not(.tg-main){padding:8px 11px;flex:1 1 auto}#tower-game .tg-plan{flex-direction:column}#tower-game .tg-over .tg-btn{padding:8px 11px}}
-@media(max-width:600px){#tower-game{border-radius:0;width:100vw;height:100dvh}#tower-game button.tg-style{min-height:52px}#tower-game .tg-style img{height:28px}}
-@media(max-width:360px){#tower-game button.tg-look{padding:4px 7px 4px 5px}#tower-game .tg-foot .tg-btn:not(.tg-main){padding:8px 6px}#tower-game button.tg-style{min-height:44px}#tower-game .tg-style img{height:22px}#tower-game .tg-style small{display:none}#tower-game .tg-hint{font-size:14px}}
-@media(max-height:480px){#tower-game .tg-card{padding:8px 14px}#tower-game .tg-card h3{font-size:18px;margin-bottom:3px}#tower-game .tg-card .tg-steps{font-size:14px;line-height:1.25;margin-bottom:5px}#tower-game .tg-card li{margin-bottom:3px}#tower-game .tg-turns img{height:24px;width:40px}#tower-game .tg-wrap{display:grid;grid-template-columns:1fr 300px;grid-template-rows:auto auto 1fr}
- #tower-game .tg-head{grid-column:2;grid-row:1;padding:6px 8px 0 4px}#tower-game .tg-field{grid-column:1;grid-row:1/4}#tower-game .tg-plan{flex-direction:column}#tower-game .tg-over .tg-btn{padding:8px 11px}#tower-game .tg-tray{grid-column:2;grid-row:2;grid-template-columns:repeat(5,minmax(0,1fr));padding:2px 8px 2px 4px}
- #tower-game button.tg-style{min-height:44px}#tower-game .tg-style img{height:20px}#tower-game .tg-style small{display:none}
- #tower-game .tg-foot{grid-column:2;grid-row:3;align-content:flex-end;padding:2px 8px 8px 4px}#tower-game .tg-foot .tg-btn:not(.tg-main){padding:6px 8px;flex:1 1 auto}#tower-game .tg-hint{flex:1 1 100%;font-size:14px}}
+@media(pointer:coarse){#tower-game button.tg-plan-pill{min-height:44px;padding:6px 13px}}
+@media(max-width:760px){
+  #tower-game .tg-head{padding:8px 10px 2px 12px;gap:6px}
+  #tower-game .tg-bar{padding:2px 10px 4px 12px;gap:4px 8px}
+  #tower-game .tg-plans{width:100%;padding-right:28px;scroll-padding-inline:16px;-webkit-mask-image:linear-gradient(to right,#000 93%,transparent);mask-image:linear-gradient(to right,#000 93%,transparent)}
+  #tower-game .tg-status{width:100%;margin-left:0;justify-content:space-between;gap:6px}
+  #tower-game .tg-toast{padding:6px 11px;font-size:13px;max-width:calc(100% - 196px)}
+  #tower-game .tg-tray{grid-template-columns:repeat(5,minmax(0,1fr));padding:2px 8px}
+  #tower-game .tg-foot{padding:4px 8px 8px}
+  #tower-game .tg-hint{flex-basis:100%}
+  #tower-game .tg-foot .tg-btn:not(.tg-main){padding:8px 10px;flex:1 1 auto}
+  #tower-game .tg-plan{flex-direction:column}
+  #tower-game .tg-again{flex-direction:column;align-items:flex-end}
+  #tower-game .tg-over .tg-btn{padding:8px 11px}
+}
+@media(max-width:600px){
+  #tower-game{border-radius:0;width:100vw;height:100dvh}
+  #tower-game .tg-btn-text{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+  #tower-game #tg-photo{min-width:44px;padding:8px 11px}
+  #tower-game button.tg-style{min-height:50px}
+  #tower-game .tg-style img{height:26px}
+  #tower-game .tg-meter-track{width:42px}
+}
+@media(max-width:360px){
+  #tower-game button.tg-look{padding:4px 7px 4px 5px}
+  #tower-game .tg-foot .tg-btn:not(.tg-main){padding:8px 6px}
+  #tower-game button.tg-style{min-height:44px}
+  #tower-game .tg-style img{height:22px}
+  #tower-game .tg-style small{display:none}
+  #tower-game .tg-hint{font-size:14px}
+  #tower-game .tg-meter-track{width:34px}
+}
+@media(max-height:480px){
+  #tower-game{border-radius:0;width:100vw;height:100dvh}
+  #tower-game .tg-card{padding:8px 14px}#tower-game .tg-card h3{font-size:18px;margin-bottom:3px}#tower-game .tg-card .tg-steps{font-size:14px;line-height:1.25;margin-bottom:5px}#tower-game .tg-card li{margin-bottom:3px}#tower-game .tg-turns img{height:24px;width:40px}
+  #tower-game .tg-wrap{display:grid;grid-template-columns:1fr min(360px,48vw);grid-template-rows:1fr}
+  #tower-game .tg-field{grid-column:1;grid-row:1;min-height:0}
+  #tower-game .tg-panel{display:flex;flex-direction:column;grid-column:2;grid-row:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;touch-action:pan-y;padding-bottom:6px;border-left:1px solid #c9dcd7}
+  #tower-game .tg-head{padding:6px 8px 2px 10px;gap:6px;flex-wrap:wrap}
+  #tower-game h2{font-size:18px}
+  #tower-game .tg-btn-text{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+  #tower-game #tg-photo{min-width:44px;padding:8px 11px}
+  #tower-game .tg-bar{padding:2px 8px 4px 10px;gap:4px}
+  #tower-game .tg-bar .tg-plans{width:100%;padding-right:20px}
+  #tower-game .tg-bar .tg-status{width:100%;margin-left:0;justify-content:space-between;gap:6px}
+  #tower-game .tg-plan{flex-direction:column}
+  #tower-game .tg-again{flex-direction:column;align-items:flex-end}
+  #tower-game .tg-over .tg-btn{padding:8px 11px;min-height:44px}
+  #tower-game .tg-tray{grid-template-columns:repeat(5,minmax(0,1fr));padding:4px 8px 4px 10px}
+  #tower-game button.tg-style{min-height:44px}#tower-game .tg-style img{height:20px}#tower-game .tg-style small{display:none}
+  #tower-game .tg-foot{padding:4px 8px 8px 10px;gap:6px}#tower-game .tg-foot .tg-btn:not(.tg-main){padding:8px 10px;flex:1 1 auto}#tower-game .tg-hint{flex:1 1 100%;font-size:14px;height:auto;min-height:2.4em}
+}
+@media(prefers-reduced-motion:reduce){
+  #tower-game .tg-prog-fill,#tower-game .tg-meter-fill,#tower-game .tg-toast,#tower-game .tg-style img{transition:none}
+}
 `;
 
-/* The physics file sits beside this one, and is fetched only by someone who reaches the wobble warning. */
+/* The physics file sits beside this one, and is fetched only by someone who reaches a wobble warning or clicks Topple. */
 const scriptUrl = document.currentScript?.src || location.href;
 let physics = null;
 function loadPhysics() {
@@ -116,33 +204,13 @@ const NOTHING = -1000;
 const STRAIN_LIMIT = 80;
 /* The top is cells -4 to 3. Bricks may reach four studs past it, up to 16 bricks high. */
 const MIN_CELL = -8, MAX_CELL = 7, MAX_PLATES = 48, MAX_BRICKS = 400;
-/* The tower the hints show: two courses of wall with a window on the front and right, a ring of plates, then a crown. */
-function buildPlan() {
-  const plan = [];
-  const add = (type, i, j, rot, level) => plan.push({ type, i, j, rot, level });
-  // First course: corners, then each wall between them. Front (j 3) and right (i 3) leave a window at -1..0.
-  for (const [i, j] of [[-4, -4], [3, -4], [-4, 3], [3, 3]]) add('b1x1', i, j, 0, 0);
-  add('b1x2', -3, 3, 0, 0); add('b1x2', 1, 3, 0, 0);
-  add('b1x2', 3, -3, 1, 0); add('b1x2', 3, 1, 1, 0);
-  for (const i of [-3, -1, 1]) add('b1x2', i, -4, 0, 0);
-  for (const j of [-3, -1, 1]) add('b1x2', -4, j, 1, 0);
-  // Second course: long bricks bridge the windows.
-  add('b1x2', -4, 3, 0, 3); add('b1x4', -2, 3, 0, 3); add('b1x2', 2, 3, 0, 3);
-  for (const i of [-4, -2, 0, 2]) add('b1x2', i, -4, 0, 3);
-  for (const j of [-3, -1, 1]) add('b1x2', -4, j, 1, 3);
-  add('b1x1', 3, -3, 0, 3); add('b1x4', 3, -2, 1, 3); add('b1x1', 3, 2, 0, 3);
-  // Plates in a pinwheel, overhanging the wall by one stud.
-  for (const i of [-5, -1]) add('p2x4', i, 3, 0, 6);
-  for (const j of [-3, 1]) add('p2x4', 3, j, 1, 6);
-  for (const i of [-3, 1]) add('p2x4', i, -5, 0, 6);
-  for (const j of [-5, -1]) add('p2x4', -5, j, 1, 6);
-  // Crown: corners and the middle of each side.
-  for (const [i, j] of [[-5, 3], [3, 3], [3, -5], [-5, -5], [-1, 3], [3, -1], [-1, -5], [-5, -1]]) add('b2x2', i, j, 0, 7);
-  return plan;
-}
+
 const footprint = (type, rot) => (rot ? [TYPES[type].nz, TYPES[type].nx] : [TYPES[type].nx, TYPES[type].nz]);
 const isSquare = type => TYPES[type].nx === TYPES[type].nz;
 const cellX = i => .15 + PITCH * i;
+
+const CAMERA_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>';
+const SOUND_ICON = '<svg class="tg-ic-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg><svg class="tg-ic-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>';
 
 let ui, game;
 
@@ -152,38 +220,71 @@ function buildDialog() {
   d.id = 'tower-game'; d.setAttribute('aria-labelledby', 'tg-title');
   const tray = TYPE_KEYS.map((k, n) => `<button type="button" class="tg-style" data-type="${k}" aria-pressed="false" aria-label="${TYPES[k].label}" aria-keyshortcuts="${keyOf(n)}"><kbd>${keyOf(n)}</kbd><img alt=""><span>${TYPES[k].size}</span><small>${TYPES[k].word}</small></button>`).join('');
   const looks = Object.entries(LOOKS).map(([k, name]) => `<button type="button" class="tg-look" data-look="${k}" aria-pressed="false"><i></i>${name}</button>`).join('');
+  const planButtons = BLUEPRINTS.map(bp => `<button type="button" class="tg-plan-pill" data-plan="${bp.id}" aria-pressed="${bp.id === 'free'}">${bp.name}</button>`).join('');
   const tap = coarse.matches ? 'tap' : 'click';
   const steps = [
+    `<strong>Pick a blueprint or build freely</strong> from the row at the top. Each blueprint guides you brick by brick with teal outlines.`,
     `<strong>Pick a brick</strong> from the row below${coarse.matches ? '' : ', or press its number: 1 to 9, then 0 for the tenth'}.`,
-    `<strong>Point and ${tap}.</strong> ${coarse.matches ? 'Drag first to see a copy of the brick, edged in orange, where it will land; a plain tap places it at once.' : 'A copy of the brick, edged in orange, shows where it will land.'} One stud is enough to hold a brick, but a red edge means the pile would be too wobbly.`,
-    `<span class="tg-turns" aria-hidden="true"><img id="tg-turn-a" alt="">↻<img id="tg-turn-b" alt=""></span><strong>Rotate${coarse.matches ? '' : ' (or R)'}</strong> turns the brick a quarter turn before you place it. Square bricks stay the same.`,
-    `<strong>View${coarse.matches ? '' : ' (or T)'}</strong> turns the whole tower, so you can reach the far side.`,
-    '<strong>Grey, Brick and Pride</strong> set the look of your next bricks, so you can mix them. Pride colours follow the height.',
-    '<strong>Undo</strong> takes a brick back. <strong>Hints</strong> shows a planned tower, if you would like one.'
+    `<strong>Point and ${tap}.</strong> ${coarse.matches ? 'Drag first to see a copy of the brick, edged in orange, where it will land; a plain tap places it at once.' : 'A copy of the brick, edged in orange, shows where it will land.'} Watch the <strong>Stability</strong> meter on overhangs.`,
+    `<span class="tg-turns" aria-hidden="true"><img id="tg-turn-a" alt="">↻<img id="tg-turn-b" alt=""></span><strong>Rotate${coarse.matches ? '' : ' (or R)'}</strong> turns the brick a quarter turn before you place it. <strong>View${coarse.matches ? '' : ' (or T)'}</strong> turns the whole tower.`,
+    '<strong>Grey, Brick and Pride</strong> set the look of your next bricks. <strong>Topple</strong> knocks the tower down for fun; <strong>Undo</strong> snaps it straight back.',
+    '<strong>Done</strong> launches a pride-stripe celebration, and <strong>Save photo</strong> downloads a postcard of your build.'
   ].map(t => `<li>${t}</li>`).join('');
 
   d.innerHTML = `<div class="tg-wrap">
-    <div class="tg-head"><h2 id="tg-title">Build the tower</h2><span class="tg-count" id="tg-count"></span>
-      <button type="button" class="tg-btn tg-close" id="tg-help" aria-label="How to play">?</button>
-      <button type="button" class="tg-btn tg-close" id="tg-close" aria-label="Close the game">✕</button></div>
+    <div class="tg-panel">
+      <div class="tg-head"><h2 id="tg-title">Build the tower</h2>
+        <div class="tg-head-actions">
+          <button type="button" class="tg-btn" id="tg-photo" aria-label="Save photo of your tower" disabled>${CAMERA_ICON}<span class="tg-btn-text">Save photo</span></button>
+          <button type="button" class="tg-btn tg-close tg-sound" id="tg-sound" aria-pressed="true" aria-label="Sound on" title="Toggle sound effects">${SOUND_ICON}</button>
+          <button type="button" class="tg-btn tg-close" id="tg-help" aria-label="How to play">?</button>
+          <button type="button" class="tg-btn tg-close" id="tg-close" aria-label="Close the game">✕</button>
+        </div>
+      </div>
+      <div class="tg-bar">
+        <div class="tg-plans" id="tg-plans" role="group" aria-label="Choose a blueprint">${planButtons}</div>
+        <div class="tg-status">
+          <span class="tg-count" id="tg-count">0 bricks</span>
+          <span class="tg-prog" id="tg-prog" hidden><span class="tg-prog-track" aria-hidden="true"><span class="tg-prog-fill" id="tg-prog-fill"></span></span><span id="tg-prog-text">0 / 0</span></span>
+          <div class="tg-meter" id="tg-stability" role="meter" aria-label="Tower stability" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100" aria-valuetext="Solid, 100%" data-state="solid">
+            <span class="tg-meter-track" aria-hidden="true"><span class="tg-meter-fill" id="tg-stability-fill"></span></span>
+            <span id="tg-stability-text">Solid</span>
+          </div>
+        </div>
+      </div>
+      <div class="tg-tray" id="tg-tray" role="group" aria-label="Choose a brick">${tray}</div>
+      <div class="tg-foot"><p class="tg-hint" id="tg-hint"></p>
+        <button type="button" class="tg-btn" id="tg-rotate" aria-label="Rotate the brick">Rotate</button>
+        <button type="button" class="tg-btn" id="tg-view" aria-label="Turn the view">View</button>
+        <button type="button" class="tg-btn" id="tg-undo">Undo</button>
+        <button type="button" class="tg-btn" id="tg-hints" aria-pressed="false" aria-label="Show blueprint hints">Hints</button>
+        <button type="button" class="tg-btn tg-main" id="tg-done">Done</button></div>
+    </div>
     <div class="tg-field"><div class="tg-stage" id="tg-stage" tabindex="0" role="application" aria-label="Building area. Number keys choose a brick, arrow keys move it, R rotates it, T turns the view, Enter places it."><canvas id="tg-canvas" aria-hidden="true"></canvas></div>
-      <div class="tg-over tg-plan" id="tg-plan" hidden><button type="button" class="tg-btn" id="tg-next" title="Places the next brick of the planned tower" aria-label="Place the next brick of the plan">Place next</button>
-      <button type="button" class="tg-btn" id="tg-finish" title="Builds the rest of the planned tower. Undo takes it all back" aria-label="Build the rest of the plan for me">Build rest</button></div>
-      <div class="tg-over tg-again"><button type="button" class="tg-btn" id="tg-restart">Start again</button></div>
+      <div class="tg-toast" id="tg-toast" hidden aria-hidden="true"><span class="tg-toast-dot"></span><span id="tg-toast-text"></span></div>
+      <div class="tg-over tg-plan" id="tg-plan" hidden><button type="button" class="tg-btn" id="tg-next" title="Places the next brick of the chosen blueprint" aria-label="Place next brick of the blueprint">Place next</button>
+      <button type="button" class="tg-btn" id="tg-finish" title="Builds the rest of the chosen blueprint. Undo takes it all back" aria-label="Build rest of the blueprint">Build rest</button></div>
+      <div class="tg-over tg-again"><button type="button" class="tg-btn" id="tg-topple" title="Knock your tower down with physics. Undo puts it straight back" disabled>Topple</button><button type="button" class="tg-btn" id="tg-restart">Start again</button></div>
       <div class="tg-over tg-looks" id="tg-looks" role="group" aria-label="Look of your next bricks">${looks}</div></div>
-    <div class="tg-tray" id="tg-tray" role="group" aria-label="Choose a brick">${tray}</div>
-    <div class="tg-foot"><p class="tg-hint" id="tg-hint"></p>
-      <button type="button" class="tg-btn" id="tg-rotate" aria-label="Rotate the brick">Rotate</button>
-      <button type="button" class="tg-btn" id="tg-view" aria-label="Turn the view">View</button>
-      <button type="button" class="tg-btn" id="tg-undo">Undo</button>
-      <button type="button" class="tg-btn" id="tg-hints" aria-pressed="false" aria-label="Show hints">Hints</button>
-      <button type="button" class="tg-btn tg-main" id="tg-done">Done</button></div>
     <div class="tg-sr" role="status" aria-live="polite" id="tg-live"></div></div>
     <div class="tg-note" id="tg-note" hidden><div class="tg-card" role="group" aria-labelledby="tg-note-title"><h3 id="tg-note-title">How to play</h3><ul class="tg-steps" id="tg-steps" tabindex="0">${steps}</ul><button type="button" class="tg-btn tg-main" id="tg-note-go">Start building</button></div></div>
-    <div class="tg-note" id="tg-warn" hidden><div class="tg-card" role="alertdialog" aria-modal="true" aria-labelledby="tg-warn-title" aria-describedby="tg-warn-text"><h3 id="tg-warn-title">Careful!</h3><p class="tg-warn-text" id="tg-warn-text">Placing it here would bring FORRT down. We only build on solid foundations.</p><div class="tg-warn-row"><button type="button" class="tg-btn" id="tg-warn-anyway">Place it anyway</button><button type="button" class="tg-btn tg-main" id="tg-warn-go">Move it</button></div></div></div>`;
+    <div class="tg-note" id="tg-warn" hidden><div class="tg-card" role="alertdialog" aria-modal="true" aria-labelledby="tg-warn-title" aria-describedby="tg-warn-text"><h3 id="tg-warn-title">Careful</h3><p class="tg-warn-text" id="tg-warn-text">Placing it here would bring FORRT down. We only build on solid foundations.</p><div class="tg-warn-row"><button type="button" class="tg-btn" id="tg-warn-anyway">Place it anyway</button><button type="button" class="tg-btn tg-main" id="tg-warn-go">Move it</button></div></div></div>`;
   document.body.appendChild(d);
   const $ = id => d.querySelector('#' + id);
-  return { d, canvas: $('tg-canvas'), stage: $('tg-stage'), tray: $('tg-tray'), count: $('tg-count'), hint: $('tg-hint'), rotate: $('tg-rotate'), view: $('tg-view'), next: $('tg-next'), plan: $('tg-plan'), restart: $('tg-restart'), undo: $('tg-undo'), hints: $('tg-hints'), finish: $('tg-finish'), done: $('tg-done'), close: $('tg-close'), live: $('tg-live'), styles: [...d.querySelectorAll('.tg-style')], looks: [...d.querySelectorAll('.tg-look')], wrap: d.querySelector('.tg-wrap'), note: $('tg-note'), noteGo: $('tg-note-go'), help: $('tg-help'), warn: $('tg-warn'), warnGo: $('tg-warn-go'), warnAnyway: $('tg-warn-anyway') };
+  return {
+    d, canvas: $('tg-canvas'), stage: $('tg-stage'), tray: $('tg-tray'), count: $('tg-count'), hint: $('tg-hint'),
+    rotate: $('tg-rotate'), view: $('tg-view'), next: $('tg-next'), plan: $('tg-plan'), restart: $('tg-restart'),
+    topple: $('tg-topple'), undo: $('tg-undo'), hints: $('tg-hints'), finish: $('tg-finish'), done: $('tg-done'),
+    close: $('tg-close'), live: $('tg-live'), photo: $('tg-photo'), sound: $('tg-sound'),
+    prog: $('tg-prog'), progFill: $('tg-prog-fill'), progText: $('tg-prog-text'),
+    stability: $('tg-stability'), stabilityFill: $('tg-stability-fill'), stabilityText: $('tg-stability-text'),
+    toast: $('tg-toast'), toastText: $('tg-toast-text'),
+    planPills: [...d.querySelectorAll('.tg-plan-pill')],
+    styles: [...d.querySelectorAll('.tg-style')],
+    looks: [...d.querySelectorAll('.tg-look')],
+    wrap: d.querySelector('.tg-wrap'), note: $('tg-note'), noteGo: $('tg-note-go'), help: $('tg-help'),
+    warn: $('tg-warn'), warnGo: $('tg-warn-go'), warnAnyway: $('tg-warn-anyway')
+  };
 }
 
 function createGame() {
@@ -193,7 +294,7 @@ function createGame() {
   renderer.toneMapping = ACESFilmicToneMapping;
   renderer.toneMappingExposure = 1.05;
   renderer.shadowMap.enabled = true;
-  renderer.shadowMap.type = PCFSoftShadowMap;
+  renderer.shadowMap.type = PCFShadowMap;
   const scene = new Scene();
   const camera = new OrthographicCamera(-3.7, 3.7, 3, -3, .1, 60);
   scene.add(new HemisphereLight(0xffffff, 0x8b8379, 1.75));
@@ -215,6 +316,9 @@ function createGame() {
   const ground = new Mesh(new PlaneGeometry(60, 60), new ShadowMaterial({ opacity: .18 }));
   ground.rotation.x = -Math.PI / 2; ground.position.y = -.035; ground.receiveShadow = true;
   scene.add(ground);
+
+  const sound = createSoundEngine();
+  const effects = createEffects(scene, reduced);
 
   const Y = new Vector3(0, 1, 0);
   const mesh = part => part.object.children[0];
@@ -291,17 +395,60 @@ function createGame() {
     return worst;
   }
   const tooWobbly = t => strainWith(holdOf(t.type, t.i, t.j, t.rot, t.level)) > STRAIN_LIMIT;
-
-  /* The planned tower. A place opens once the plan bricks below it are in, or can no longer be: a free build may have covered them. */
-  const slots = buildPlan().map(p => ({ ...p, filled: null }));
-  for (const s of slots) {
-    const [nx, nz] = footprint(s.type, s.rot);
-    s.needs = slots.filter(o => {
-      if (o.level >= s.level) return false;
-      const [ox, oz] = footprint(o.type, o.rot);
-      return o.i < s.i + nx && s.i < o.i + ox && o.j < s.j + nz && s.j < o.j + oz;
-    });
+  function stabilityInfo(strain) {
+    if (strain > STRAIN_LIMIT) return { pct: 0, state: 'wobbly', label: 'Too wobbly' };
+    const pct = Math.max(1, Math.min(100, Math.round(100 * (1 - strain / STRAIN_LIMIT))));
+    if (pct < 25) return { pct, state: 'risky', label: `Risky ${pct}%` };
+    if (pct < 60) return { pct, state: 'leaning', label: `Leaning ${pct}%` };
+    return { pct, state: 'solid', label: `Solid ${pct}%` };
   }
+
+  const bricks = [], history = [];
+  const placedCount = () => bricks.filter(p => p.state === 'placed').length;
+  const maxPlates = () => history.reduce((m, p) => Math.max(m, p.cell.level + TYPES[p.type].plates), 0);
+  const maxCourses = () => Math.ceil(maxPlates() / 3);
+
+  /* Playable blueprints. `slots` is mutated in place so references stay live across blueprint switches. */
+  const hintStrong = new MeshBasicMaterial({ color: '#14808f', transparent: true, opacity: .42, depthWrite: false, depthTest: false });
+  const hintFaint = new MeshBasicMaterial({ color: '#14808f', transparent: true, opacity: .14, depthWrite: false, depthTest: false });
+  const hintLine = new LineBasicMaterial({ color: '#0b5a65', transparent: true, depthTest: false });
+  const hintLineFaint = new LineBasicMaterial({ color: '#0b5a65', transparent: true, opacity: .45, depthTest: false });
+  const slots = [];
+  let currentPlan = 'free', lastNamedPlan = 'castle', planCompletedAnnounced = false;
+
+  function loadBlueprintSlots(planId) {
+    for (const s of slots) overlay.remove(s.hint);
+    slots.length = 0;
+    for (const p of history) p.slot = null;
+    const bp = BLUEPRINT_MAP[planId] || BLUEPRINT_MAP.free;
+    const raw = bp.build();
+    for (const entry of raw) {
+      const s = { ...entry, filled: null };
+      const w = worldOf(s.type, s.i, s.j, s.rot, s.level);
+      s.hint = new Group();
+      s.hint.position.set(w.x, w.y, w.z); s.hint.rotation.y = w.rotY; s.hint.visible = false;
+      s.body = new Mesh(boxOf[s.type], hintFaint); s.body.renderOrder = 4;
+      s.line = new LineSegments(edgesOf[s.type], hintLineFaint); s.line.renderOrder = 5;
+      s.hint.add(s.body, s.line);
+      overlay.add(s.hint);
+      slots.push(s);
+    }
+    for (const s of slots) {
+      const [nx, nz] = footprint(s.type, s.rot);
+      s.needs = slots.filter(o => {
+        if (o.level >= s.level) return false;
+        const [ox, oz] = footprint(o.type, o.rot);
+        return o.i < s.i + nx && s.i < o.i + ox && o.j < s.j + nz && s.j < o.j + oz;
+      });
+    }
+    // Re-match any existing bricks on the board to the newly selected blueprint.
+    for (const p of history) {
+      const match = slots.find(s => !s.filled && s.type === p.type && s.i === p.cell.i && s.j === p.cell.j && s.rot === p.cell.rot && s.level === p.cell.level);
+      if (match) { match.filled = p; p.slot = match; }
+    }
+    planCompletedAnnounced = slots.length > 0 && slots.every(s => s.filled);
+  }
+
   const covered = s => { const r = landing(s.type, s.i, s.j, s.rot); return !r || r.level > s.level; };
   const openSlots = type => slots.filter(s => {
     if (s.filled || (type && s.type !== type) || !s.needs.every(n => n.filled || covered(n))) return false;
@@ -309,8 +456,6 @@ function createGame() {
     return r && r.level === s.level && strainWith(holdOf(s.type, s.i, s.j, s.rot, s.level)) <= STRAIN_LIMIT;
   });
 
-  const bricks = [], history = [];
-  const placedCount = () => bricks.filter(p => p.state === 'placed').length;
   /* What colour a brick is. Grey and Brick vary a little from brick to brick; Pride follows the height it sits at. */
   const colourOf = (brickLook, shade, level) => (brickLook === 'pride' ? stripeAt(level) : brickLook === 'brick' ? BRICK_REDS[shade % BRICK_REDS.length] : stones[shade % stones.length].color);
   function paint(part, level) {
@@ -343,27 +488,12 @@ function createGame() {
   ghostSkin.transparent = true;
   const ghostBody = new Mesh(geometryOf[selected], ghostSkin);
   const ghostLine = new LineSegments(edgesOf[selected], new LineBasicMaterial({ color: '#ff8a1f', transparent: true, depthTest: false, toneMapped: false }));
-  /* A slightly larger box seen from inside draws a rim round the whole brick, a little over two pixels at any zoom. A grey brick on the grey tower needs it.
-     The mask marks the brick's own shape first, so the box paints only the rim and never across the brick or whatever hides it. */
   const ghostMask = new Mesh(geometryOf[selected], new MeshBasicMaterial({ colorWrite: false, transparent: true, depthWrite: false, depthTest: false, stencilWrite: true, stencilFunc: AlwaysStencilFunc, stencilRef: 1, stencilZPass: ReplaceStencilOp }));
   const ghostRim = new Mesh(boxOf[selected], new MeshBasicMaterial({ color: '#ff8a1f', side: BackSide, transparent: true, depthWrite: false, depthTest: false, toneMapped: false, stencilWrite: true, stencilFunc: NotEqualStencilFunc, stencilRef: 1 }));
   ghostMask.renderOrder = 4; ghostRim.renderOrder = 5; ghostBody.renderOrder = 6; ghostLine.renderOrder = 7; ghost.add(ghostMask, ghostRim, ghostBody, ghostLine);
 
-  const hintStrong = new MeshBasicMaterial({ color: '#14808f', transparent: true, opacity: .42, depthWrite: false, depthTest: false });
-  const hintFaint = new MeshBasicMaterial({ color: '#14808f', transparent: true, opacity: .14, depthWrite: false, depthTest: false });
-  const hintLine = new LineBasicMaterial({ color: '#0b5a65', transparent: true, depthTest: false });
-  const hintLineFaint = new LineBasicMaterial({ color: '#0b5a65', transparent: true, opacity: .45, depthTest: false });
-  for (const s of slots) {
-    const w = worldOf(s.type, s.i, s.j, s.rot, s.level);
-    s.hint = new Group();
-    s.hint.position.set(w.x, w.y, w.z); s.hint.rotation.y = w.rotY; s.hint.visible = false;
-    s.body = new Mesh(boxOf[s.type], hintFaint); s.body.renderOrder = 4;
-    s.line = new LineSegments(edgesOf[s.type], hintLineFaint); s.line.renderOrder = 5;
-    s.hint.add(s.body, s.line);
-    overlay.add(s.hint);
-  }
   function showHints() {
-    const open = hintsOn && !done ? openSlots() : [];
+    const open = hintsOn && !done && !toppling && slots.length ? openSlots() : [];
     for (const s of slots) s.hint.visible = false;
     for (const s of open) {
       const mine = s.type === selected;
@@ -385,9 +515,7 @@ function createGame() {
     camera.updateMatrixWorld(true);
   }
   function wantedBounds() {
-    // On short screens the lower wall runs off the bottom, so the part being built on stays large enough to aim at.
     const floor = frame.height < 480 ? heightOf(0) - .75 : -.035;
-    // The view widens in steps and stays centred on the tower, so most placements do not move anything on screen.
     let reach = 1.56, room = frame.height < 480 ? 9 : 13;
     for (const p of history) {
       const [nx, nz] = footprint(p.type, p.cell.rot);
@@ -402,14 +530,16 @@ function createGame() {
       v.set(x, y, z).applyMatrix4(inv);
       l = Math.min(l, v.x); r = Math.max(r, v.x); b = Math.min(b, v.y); t = Math.max(t, v.y);
     }
-    // Rubble counts only as far as it reaches, so the view widens no more than it must.
     for (const p of bricks) if (p.state === 'debris') {
       v.copy(p.object.position).applyMatrix4(inv);
       l = Math.min(l, v.x - .8); r = Math.max(r, v.x + .8); b = Math.min(b, v.y - .8); t = Math.max(t, v.y + .8);
     }
     const margin = 1.03, aspect = frame.width / frame.height;
-    const halfH = Math.max((t - b) / 2, (r - l) / 2 / aspect) * margin, halfW = halfH * aspect;
-    const cx = (l + r) / 2, cy = (t + b) / 2;
+    // On narrow portrait screens, lift the tower slightly so the bottom look-picker pills never cover the front doorway.
+    const bottomPad = frame.width <= 600 && frame.height > 260 ? (t - b) * .11 : 0;
+    const adjB = b - bottomPad;
+    const halfH = Math.max((t - adjB) / 2, (r - l) / 2 / aspect) * margin, halfW = halfH * aspect;
+    const cx = (l + r) / 2, cy = (t + adjB) / 2;
     return { l: cx - halfW, r: cx + halfW, t: cy + halfH, b: cy - halfH };
   }
   function applyBounds() {
@@ -439,8 +569,6 @@ function createGame() {
     for (const [lo, hi] of spans[c]) if (y >= heightOf(lo) && y <= heightOf(hi) + above) return true;
     return false;
   }
-  /* The square whose surface the pointer is on: walk along the pointer's line from above until it meets something solid.
-     A gap under an overhang stays a gap, so what shows through it can be pointed at. */
   function surfaceCell(point) {
     const { origin: o, direction: d } = castRay(point);
     const t0 = (heightOf(MAX_PLATES) + .06 - o.y) / d.y, t1 = (heightOf(0) - .12 - o.y) / d.y;
@@ -451,8 +579,6 @@ function createGame() {
     return null;
   }
   const SNAP_RADIUS = 34, TOUCH_LIFT = 60, TAP_SLOP = 10, STACK_RADIUS = coarse.matches ? 10 : 6, BOUNCE_MS = 60;
-  /* Clicking again without moving away stacks straight on the brick just placed. Left to the pointer alone, the taller stack
-     would put its side under the pointer, and each brick would land a stud across from the last. */
   const stillOn = point => lastPlaced && Math.hypot(point.x - lastPlaced.x, point.y - lastPlaced.y) <= STACK_RADIUS;
   function targetAt(point) {
     if (stillOn(point)) {
@@ -464,7 +590,6 @@ function createGame() {
     }
     return freeTargetAt(point);
   }
-  /* The spot for the chosen brick under the pointer. Only distance on screen decides between spots. */
   function freeTargetAt(point) {
     const type = selected, turn = selectedRot(), [nx, nz] = footprint(type, turn);
     const floorOf = (i, j, r) => { const w = worldOf(type, i, j, turn, r.level); return project(new Vector3(w.x, w.floor, w.z)); };
@@ -478,44 +603,112 @@ function createGame() {
     const hit = surfaceCell(point);
     if (hit) for (let a = hit.i - nx + 1; a <= hit.i; a++) for (let b = hit.j - nz + 1; b <= hit.j; b++) consider(a, b);
     if (best) return makeTarget(type, best.i, best.j, turn, best.r);
-    // Pointing at air beside the tower: the nearest spot, so bricks can hang over the edge.
     for (let i = MIN_CELL; i <= MAX_CELL; i++) for (let j = MIN_CELL; j <= MAX_CELL; j++) consider(i, j);
     return best && bestD <= SNAP_RADIUS ? makeTarget(type, best.i, best.j, turn, best.r) : null;
   }
 
-  let dirty = true, running = false, raf = 0, last = 0, drag = null, celebrate = null, aim = null, cursor = null, lastPoint = null, cleared = null, batches = 0, lastPlaced = null, doneAt = -1000;
-  const flights = new Set(), rubbleOut = new Set();
-  let toppling = false, awaitingPhysics = false, collapse = null, collapseWait = 0, cannon = null, lastCollapse = null, reframeIn = 0;
-  const stats = { refused: 0, toppled: 0, misses: 0, drops: 0, undos: 0, lost: 0, frames: 0, rotates: 0, turns: 0, keyboard: 0 };
+  let dirty = true, running = false, raf = 0, last = 0, drag = null, celebrate = null, aim = null, aimState = 'solid', aimRisky = false, wasWobbly = false;
+  let cursor = null, lastPoint = null, cleared = null, batches = 0, lastPlaced = null, doneAt = -1000, toastTimer = 0, tremorPhase = 0;
+  const flights = new Set(), rubbleOut = new Set(), milestones = new Set();
+  let toppling = false, awaitingPhysics = false, collapse = null, collapseWait = 0, cannon = null, lastCollapse = null, reframeIn = 0, physicsToken = 0;
+  const stats = { refused: 0, toppled: 0, misses: 0, drops: 0, undos: 0, lost: 0, frames: 0, rotates: 0, turns: 0, keyboard: 0, photos: 0, milestones: 0 };
 
   const say = text => { ui.live.textContent = text; };
+  function showToast(text, isPlan = false) {
+    clearTimeout(toastTimer);
+    ui.toastText.textContent = text;
+    ui.toast.classList.toggle('tg-toast-plan', isPlan);
+    ui.toast.hidden = false;
+    toastTimer = setTimeout(() => { ui.toast.hidden = true; }, 3400);
+  }
+  function hideToast() { clearTimeout(toastTimer); ui.toast.hidden = true; }
+
+  function updateStabilityMeter(strain) {
+    const info = history.length === 0 && !aim ? { pct: 100, state: 'solid', label: 'Solid' } : stabilityInfo(strain);
+    ui.stability.dataset.state = info.state;
+    ui.stability.setAttribute('aria-valuenow', String(info.pct));
+    ui.stability.setAttribute('aria-valuetext', `${info.label}`);
+    ui.stabilityFill.style.width = `${info.pct}%`;
+    ui.stabilityText.textContent = info.label;
+    return info;
+  }
+
   const WOBBLY_HINT = 'Too wobbly here: a brick in this spot would bring the tower down.';
   const defaultHint = () => {
-    const open = hintsOn ? openSlots() : [];
-    if (hintsOn && open.length) return "Teal boxes show the plan's next places. Dark ones fit your brick; dotted bricks fit the rest.";
-    if (hintsOn) return slots.every(s => s.filled) ? 'The planned tower is complete. Keep building if you like.' : 'Your build has covered the rest of the plan, or left it too wobbly. Keep building, or undo to bring it back.';
+    const bp = BLUEPRINT_MAP[currentPlan];
+    const open = hintsOn && slots.length ? openSlots() : [];
+    if (currentPlan !== 'free' && hintsOn && open.length) return `${bp.name}: teal outlines show the next places. Dark ones fit your brick; dotted bricks fit the rest.`;
+    if (currentPlan !== 'free' && slots.length && slots.every(s => s.filled)) return `${bp.name} complete. Press Done for the pride-stripe parade, or pick another blueprint.`;
+    if (currentPlan !== 'free' && hintsOn) return `Your build has covered the rest of ${bp.name}, or left it too wobbly. Keep building, or undo to bring it back.`;
     return coarse.matches ? 'Pick a brick, then tap the tower. Drag to aim, and turn bricks with Rotate.' : 'Press 1 to 9 or 0 for a brick, then click the tower. R rotates the brick and T turns the view.';
   };
   function refresh() {
-    const n = placedCount();
-    ui.count.textContent = n === 1 ? '1 brick' : `${n} bricks`;
+    const n = placedCount(), h = maxCourses();
+    ui.count.textContent = n === 0 ? '0 bricks' : `${n === 1 ? '1 brick' : `${n} bricks`} · ${h} high`;
+    const hasPlan = currentPlan !== 'free' && slots.length > 0;
+    const filled = hasPlan ? slots.filter(s => s.filled && s.filled.state === 'placed').length : 0;
+    const planDone = hasPlan && filled === slots.length;
+    const hasDebris = bricks.some(p => p.state === 'debris');
+    ui.prog.hidden = !hasPlan;
+    if (hasPlan) {
+      ui.progText.textContent = `${filled} / ${slots.length}`;
+      ui.progFill.style.width = `${Math.round((filled / slots.length) * 100)}%`;
+      ui.prog.classList.toggle('tg-prog-done', planDone);
+    }
+    for (const b of ui.planPills) b.setAttribute('aria-pressed', String(b.dataset.plan === currentPlan));
+    ui.hints.setAttribute('aria-pressed', String(hintsOn && hasPlan));
     ui.done.textContent = done ? 'Build on' : 'Done';
     ui.done.setAttribute('aria-label', done ? 'Build on' : 'Done building');
     ui.done.disabled = toppling || (!history.length && !done);
     ui.undo.disabled = awaitingPhysics || (!history.length && !cleared);
-    ui.restart.disabled = !history.length;
-    ui.plan.hidden = !hintsOn;
+    ui.restart.disabled = !history.length && !hasDebris;
+    ui.topple.disabled = toppling || awaitingPhysics || !history.length;
+    ui.photo.disabled = toppling || awaitingPhysics || !n || flights.size > 0;
+    ui.plan.hidden = !(hintsOn && hasPlan && !done && !planDone);
     const open = showHints();
     ui.next.disabled = ui.finish.disabled = toppling || !open.length;
+    if (!aim) updateStabilityMeter(strainWith());
     if (!done && !drag && !toppling) ui.hint.textContent = defaultHint();
     dirty = true;
   }
-  function select(type) {
+  function selectBlueprint(planId, announce = true) {
+    if (!BLUEPRINT_MAP[planId]) return;
+    const changed = currentPlan !== planId;
+    if (changed) {
+      if (done) leaveDone();
+      // Switching plans cancels any pending completion callback from a previous plan's Build rest.
+      for (const f of flights) { f.part.finishing = false; f.part.finishPlan = null; }
+      for (const p of history) { p.finishing = false; p.finishPlan = null; }
+    }
+    currentPlan = planId;
+    if (planId !== 'free') { lastNamedPlan = planId; hintsOn = true; }
+    else hintsOn = false;
+    loadBlueprintSlots(planId);
+    if (changed && announce) {
+      sound.pick();
+      const pill = ui.planPills.find(b => b.dataset.plan === planId);
+      pill?.scrollIntoView?.({ inline: 'center', block: 'nearest', behavior: reduced.matches ? 'auto' : 'smooth' });
+    }
+    refresh();
+    updateAim();
+    if (announce) {
+      const bp = BLUEPRINT_MAP[planId];
+      const msg = planId === 'free'
+        ? 'Free build selected. Build anything you like.'
+        : history.length
+          ? `${bp.name} blueprint selected (${slots.length} bricks). Start again for a clear deck, or build on top.`
+          : `${bp.name} selected: ${bp.summary}`;
+      if (!done && !toppling) ui.hint.textContent = msg;
+      say(msg);
+    }
+  }
+  function select(type, playSound = false) {
     selected = type;
     for (const b of ui.styles) b.setAttribute('aria-pressed', String(b.dataset.type === type));
     ghostBody.geometry = ghostMask.geometry = geometryOf[type]; ghostLine.geometry = edgesOf[type]; ghostRim.geometry = boxOf[type];
     updateFlips();
     ui.rotate.disabled = isSquare(type);
+    if (playSound) sound.pick();
     refresh();
     updateAim();
   }
@@ -525,26 +718,36 @@ function createGame() {
     for (const b of ui.styles) b.querySelector('img').src = pictures[look][b.dataset.type];
     updateAim();
   }
-  /* The picture of a turned brick is close to its mirror image, and turning the view swaps which way bricks appear to run. */
   function updateFlips() { for (const b of ui.styles) b.classList.toggle('tg-flip', !isSquare(b.dataset.type) && (rot + view) % 2 === 1); }
   function rotateBrick() {
     if (isSquare(selected)) return;
-    rot = 1 - rot; stats.rotates++; updateFlips(); updateAim();
+    rot = 1 - rot; stats.rotates++; sound.rotate(); updateFlips(); updateAim();
     if (!done && !drag) ui.hint.textContent = 'Brick rotated. The pictures below show which way it now runs.';
     say(rot ? 'Brick rotated.' : 'Brick rotated back.');
   }
   function setAim(target) {
     aim = target;
     ghost.visible = Boolean(target);
-    const wobbly = Boolean(target) && tooWobbly(target);
+    let wobbly = false, risky = false;
     if (target) {
+      const strain = strainWith(holdOf(target.type, target.i, target.j, target.rot, target.level));
+      const info = updateStabilityMeter(strain);
+      aimState = info.state;
+      wobbly = info.state === 'wobbly';
+      risky = info.state === 'risky';
       ghost.position.set(target.x, target.y, target.z); ghost.rotation.y = target.rotY;
       ghostSkin.color.set(wobbly ? '#e01414' : colourOf(currentLook, nextShade(), target.level));
       ghostSkin.opacity = wobbly ? .6 : 1;
-      const edge = wobbly ? '#e01414' : '#ff8a1f', t = TYPES[target.type], rim = 2.5 / frame.scale * 2, solid = n => n - .014;
+      const edge = wobbly ? '#e01414' : risky ? '#d97706' : '#ff8a1f', t = TYPES[target.type], rim = 2.5 / frame.scale * 2, solid = n => n - .014;
       ghostLine.material.color.set(edge); ghostRim.material.color.set(edge);
       ghostRim.scale.set((solid(t.nx * PITCH) + rim) / solid(t.nx * PITCH), (solid(t.plates * PLATE) + rim) / solid(t.plates * PLATE), (solid(t.nz * PITCH) + rim) / solid(t.nz * PITCH));
+      if (wobbly && !wasWobbly) sound.creak();
+    } else {
+      aimState = 'solid';
+      updateStabilityMeter(strainWith());
     }
+    wasWobbly = wobbly;
+    aimRisky = wobbly || risky;
     ui.canvas.style.cursor = wobbly ? 'not-allowed' : '';
     if (wobbly) ui.hint.textContent = WOBBLY_HINT;
     else if (ui.hint.textContent === WOBBLY_HINT) ui.hint.textContent = defaultHint();
@@ -555,6 +758,42 @@ function createGame() {
     else if (drag && drag.point) setAim(targetAt(drag.point));
     else if (cursor) keyAim();
     else if (lastPoint) setAim(targetAt(lastPoint));
+  }
+
+  function checkMilestones(part) {
+    if (part.silent) return;
+    const unlocked = [];
+    const unlock = (id, label) => {
+      if (milestones.has(id)) return;
+      milestones.add(id);
+      stats.milestones++;
+      unlocked.push(label);
+    };
+    const count = placedCount(), courses = maxCourses();
+    const [nx, nz] = footprint(part.type, part.cell.rot);
+    if (count >= 4) unlock('first_course', 'First course laid');
+    if (part.hold && part.hold.under.size >= 2) unlock('open_span', 'Open span bridged');
+    if (part.cell.i < -4 || part.cell.i + nx > 4 || part.cell.j < -4 || part.cell.j + nz > 4) unlock('overhang', 'Bold overhang');
+    if (courses >= 6) unlock('skyline', 'Skyline reached: 6 courses high');
+    if (courses >= 10) unlock('towering', 'Towering height: 10 courses');
+    if (count >= 25) unlock('master', 'Master builder: 25 bricks');
+
+    const planJustDone = currentPlan !== 'free' && slots.length > 0 && slots.every(s => s.filled) && !planCompletedAnnounced;
+    if (planJustDone) {
+      planCompletedAnnounced = true;
+      const name = BLUEPRINT_MAP[currentPlan].name;
+      showToast(`${name} complete`, true);
+      sound.celebrate();
+      effects.confetti(heightOf(maxPlates()), STRIPES);
+      say(`${name} blueprint complete.`);
+      return;
+    }
+    if (unlocked.length) {
+      const text = unlocked[unlocked.length - 1];
+      showToast(text, false);
+      sound.milestone();
+      say(`Milestone: ${text}.`);
+    }
   }
 
   function commit(part, target) {
@@ -572,15 +811,25 @@ function createGame() {
   }
   function land(part) {
     part.state = 'placed';
+    part.object.visible = true;
     part.object.position.copy(part.rest);
-    say(`${TYPES[part.type].label} placed. ${placedCount()} in all.`);
+    part.object.scale.set(1, 1, 1);
+    const t = TYPES[part.type], [nx, nz] = footprint(part.type, part.cell.rot);
+    const willFinish = Boolean(part.finishing && !flights.size && part.finishPlan === currentPlan);
+    if (!part.silent) {
+      sound.snap(part.cell.level, part.hold ? part.hold.studs : 2);
+      effects.bounce(part, t.plates * PLATE / 2);
+      effects.burstAt(part.rest.x, heightOf(part.cell.level), part.rest.z, nx * PITCH / 2, nz * PITCH / 2, part.stone, Boolean(part.slot));
+      say(`${t.label} placed. ${placedCount()} in all.`);
+    }
+    if (!willFinish) checkMilestones(part);
     refresh();
-    if (part.finishing && !flights.size) finishRun();
+    if (willFinish) { part.finishing = false; part.finishPlan = null; finishRun(); }
     if (part.topples) { part.topples = false; startCollapse(); }
   }
   /* Every brick comes straight down, the only way it can reach its place. */
   function drop(part, delay = 0) {
-    const d = reduced.matches ? 0 : .24, high = part.rest.y + .7;
+    const d = reduced.matches ? 0 : .22, high = part.rest.y + .7;
     part.object.position.set(part.rest.x, high, part.rest.z);
     if (delay > 0 && !reduced.matches) part.object.visible = false;
     if (!d) { land(part); return; }
@@ -589,7 +838,7 @@ function createGame() {
   }
   function placeBrick(target, anyway = false) {
     if (toppling) return null;
-    if (bricks.length >= MAX_BRICKS) { ui.hint.textContent = `That is ${MAX_BRICKS} bricks, the most this version allows.`; return null; }
+    if (history.length >= MAX_BRICKS) { ui.hint.textContent = `That is ${MAX_BRICKS} bricks, the most this version allows.`; return null; }
     if (!anyway && tooWobbly(target)) { showWarning(target); return null; }
     if (done) leaveDone();
     cleared = null;
@@ -605,6 +854,7 @@ function createGame() {
   let warnCursor = null, warnTarget = null;
   function showWarning(target) {
     stats.refused++;
+    sound.creak();
     warnTarget = target;
     loadPhysics().catch(() => {});
     warnCursor = cursor && document.activeElement === ui.stage ? { ...cursor } : null;
@@ -622,15 +872,20 @@ function createGame() {
   async function placeAnyway() {
     const target = warnTarget;
     hideWarning();
+    const token = ++physicsToken;
     toppling = awaitingPhysics = true;
     refresh();
-    // Undo waits for the file too, or it would change the tower under the waiting brick.
-    try { cannon = await loadPhysics(); } catch { toppling = awaitingPhysics = false; refresh(); ui.hint.textContent = 'The physics file did not load, so nothing was placed.'; return; }
+    try { cannon = await loadPhysics(); } catch {
+      if (token !== physicsToken) return;
+      toppling = awaitingPhysics = false; refresh(); ui.hint.textContent = 'The physics file did not load, so nothing was placed.'; return;
+    }
+    if (token !== physicsToken || !running) return;
     awaitingPhysics = false;
     if (!toppling) { refresh(); return; }
     const before = snapshot();
     toppling = false;
     const part = placeBrick(target, true);
+    if (!part) { refresh(); return; }
     toppling = true;
     cleared = before;
     cleared.wipe = true;
@@ -639,9 +894,41 @@ function createGame() {
     refresh();
     if (part.state === 'placed' && part.topples) { part.topples = false; startCollapse(); }
   }
+  /* Deliberate Topple button: knock the whole tower down with Cannon-es physics. Undo snaps it straight back. */
+  async function toppleTower() {
+    if (toppling || awaitingPhysics || !history.length) return;
+    sound.unlock();
+    if (flights.size) {
+      for (const f of [...flights]) {
+        flights.delete(f);
+        f.part.finishing = false; f.part.finishPlan = null; f.part.topples = false;
+        f.part.object.visible = true;
+        f.part.silent = true; land(f.part); f.part.silent = false;
+      }
+    }
+    celebrate = null; done = false; model.rotation.y = 0; hideToast();
+    setAim(null);
+    const token = ++physicsToken;
+    toppling = awaitingPhysics = true;
+    ui.hint.textContent = 'Preparing the tumble…';
+    refresh();
+    try { cannon = await loadPhysics(); } catch {
+      if (token !== physicsToken) return;
+      toppling = awaitingPhysics = false; refresh(); ui.hint.textContent = 'The physics file did not load, so the tower stayed up.'; return;
+    }
+    if (token !== physicsToken || !running) return;
+    awaitingPhysics = false;
+    if (!toppling || !history.length) { toppling = false; refresh(); return; }
+    const before = snapshot();
+    cleared = before;
+    cleared.wipe = true;
+    clearRubble();
+    sound.creak();
+    ui.hint.textContent = 'Timber…';
+    startDeliberateCollapse();
+    if (toppling) refresh();
+  }
   const snapshot = () => history.map(p => ({ type: p.type, cell: p.cell, batch: p.batch, look: p.look, shade: p.shade }));
-  /* Which bricks fall: the one with the worst load, then everything above it, even what also rests elsewhere: left standing, that would hold the load up.
-     If what stays is still overloaded, it goes round again. */
   function failingBricks() {
     const fallen = [], grips = [], leans = [];
     for (let round = 0; round < 60 && strainWith() > STRAIN_LIMIT; round++) {
@@ -675,18 +962,50 @@ function createGame() {
   }
   function startCollapse() {
     lastPlaced = null;
+    hideToast();
+    effects.clear();
     const { fallen, grips, leans } = failingBricks();
     const index = new Map(fallen.map((p, k) => [p, k]));
     const pieces = fallen.map(p => ({ object: p.object, ...boxOfPart(p) }));
     collapse = createCollapse(cannon, {
       pieces, shell: foundationBoxes(), standing: history.map(boxOfPart), groundY: -.035,
       grips: grips.map(g => ({ a: index.get(g.a), b: index.get(g.b), studs: g.studs })),
-      leans: leans.map(l => ({ piece: index.get(l.part), x: l.x, z: l.z }))
+      leans: leans.map(l => ({ piece: index.get(l.part), x: l.x, z: l.z })),
+      onImpact: speed => { if (running) sound.clatter(speed); }
     });
     stats.toppled++;
     lastCollapse = { fell: fallen.length, stayed: history.length, clumpsAtStart: collapse.clumps };
     collapseWait = reduced.matches ? 0 : .14;
-    if (reduced.matches) { collapse.finish(); endCollapse(); }
+    if (reduced.matches) { collapse.advanceBudget(16, 40); if (collapse.settled) endCollapse(); }
+    dirty = true;
+  }
+  function startDeliberateCollapse() {
+    lastPlaced = null;
+    effects.clear();
+    const fallen = history.slice();
+    const grips = [];
+    for (const p of fallen) {
+      for (const [q, studs] of p.hold.under) grips.push({ a: p, b: q, studs });
+    }
+    history.length = 0;
+    for (const p of fallen) { if (p.slot) p.slot.filled = null; p.slot = null; p.state = 'debris'; p.object.visible = true; }
+    rebuildGrid();
+    const index = new Map(fallen.map((p, k) => [p, k]));
+    const pieces = fallen.map(p => ({ object: p.object, ...boxOfPart(p) }));
+    // Push forward-right relative to the current camera angle so the tumble plays right across the stage.
+    const pushDir = new Vector3(1.1, 0, 1.35).applyAxisAngle(Y, viewAngle);
+    const impulse = { vx: pushDir.x * 1.45, vy: 1.5, vz: pushDir.z * 1.45, spinX: pushDir.z * 1.8, spinZ: -pushDir.x * 1.8 };
+    collapse = createCollapse(cannon, {
+      pieces, shell: foundationBoxes(), standing: [], groundY: -.035,
+      grips: grips.map(g => ({ a: index.get(g.a), b: index.get(g.b), studs: g.studs })),
+      leans: [],
+      impulse,
+      onImpact: speed => { if (running) sound.clatter(speed); }
+    });
+    stats.toppled++;
+    lastCollapse = { fell: fallen.length, stayed: 0, clumpsAtStart: collapse.clumps, deliberate: true };
+    collapseWait = reduced.matches ? 0 : .08;
+    if (reduced.matches) { collapse.advanceBudget(16, 40); if (collapse.settled) endCollapse(); }
     dirty = true;
   }
   function endCollapse() {
@@ -724,11 +1043,17 @@ function createGame() {
     for (let s = openSlots().sort((a, b) => a.level - b.level)[0]; s; s = openSlots().sort((a, b) => a.level - b.level)[0]) {
       part = spawn(s.type);
       part.batch = batches;
+      part.silent = true;
       commit(part, planTarget(s));
       drop(part, delay);
-      delay += .07;
+      delay += .055;
     }
-    if (part) { part.finishing = true; if (!flights.size) finishRun(); }
+    if (part) {
+      part.silent = false;
+      part.finishing = true;
+      part.finishPlan = currentPlan;
+      if (!flights.size) { part.finishing = false; part.finishPlan = null; finishRun(); }
+    }
     refresh();
   }
   function rebuildGrid() {
@@ -740,7 +1065,7 @@ function createGame() {
   function refit() { framing = { from: { ...bounds }, to: wantedBounds(), t: 0 }; dirty = true; }
   let framing = null;
   function leaveDone() { lastPlaced = null; done = false; celebrate = null; model.rotation.y = 0; paintStone(); }
-  /* Undo takes back the last action: one brick, everything Build rest added, or Start again. */
+  /* Undo takes back the last action: one brick, everything Build rest added, a Topple, or Start again. */
   function undo() {
     if (drag || awaitingPhysics) return;
     lastPlaced = null;
@@ -752,9 +1077,10 @@ function createGame() {
     while (history.length && history[history.length - 1].batch === batch) {
       const part = history.pop();
       for (const f of flights) if (f.part === part) flights.delete(f);
-      if (part.slot) part.slot.filled = null;
+      if (part.slot) { part.slot.filled = null; planCompletedAnnounced = false; }
       discard(part);
     }
+    sound.undo();
     stats.undos++;
     rebuildGrid();
     refit();
@@ -762,9 +1088,10 @@ function createGame() {
     refresh();
     updateAim();
   }
-  /* Everything off the board, with no record kept: the way back to how things stood before a collapse. */
   function wipe() {
-    collapse = null; toppling = false; celebrate = null; done = false; model.rotation.y = 0; flights.clear(); rubbleOut.clear(); history.length = 0;
+    physicsToken++;
+    collapse = null; toppling = false; awaitingPhysics = false; celebrate = null; done = false; model.rotation.y = 0;
+    flights.clear(); rubbleOut.clear(); effects.clear(); history.length = 0;
     for (const s of slots) s.filled = null;
     for (const p of [...bricks]) discard(p);
     rebuildGrid();
@@ -774,25 +1101,34 @@ function createGame() {
       const part = spawn(type, look);
       part.shade = shade ?? part.shade;
       part.batch = batch;
+      part.silent = true;
       commit(part, makeTarget(type, cell.i, cell.j, cell.rot, { level: cell.level, studs: 0 }));
       land(part);
+      part.silent = false;
     }
     cleared = null;
+    planCompletedAnnounced = slots.length > 0 && slots.every(s => s.filled);
+    sound.undo();
     stats.undos++;
     refit();
     say(`Build restored. ${placedCount()} bricks.`);
     refresh();
+    updateAim();
   }
   function restart() {
+    physicsToken++;
     lastPlaced = null;
     const keep = cleared?.wipe ? cleared : history.length ? snapshot() : null;
-    collapse = null; toppling = false; rubbleOut.clear();
+    collapse = null; toppling = false; awaitingPhysics = false; rubbleOut.clear(); effects.clear(); hideToast();
     cleared = keep;
-    celebrate = null; done = false; flights.clear(); model.rotation.y = 0; history.length = 0; rot = 0; updateFlips();
+    celebrate = null; done = false; flights.clear(); model.rotation.y = 0; history.length = 0; rot = 0;
+    milestones.clear(); planCompletedAnnounced = false;
+    updateFlips();
     for (const s of slots) s.filled = null;
     for (const p of [...bricks]) discard(p);
     rebuildGrid();
     refit();
+    sound.undo();
     say('All bricks cleared. Undo brings them back.');
     refresh();
     if (cleared) ui.hint.textContent = 'All bricks cleared. Undo brings them back.';
@@ -800,18 +1136,60 @@ function createGame() {
   }
   function paintStone() { for (const p of bricks) p.material.color.copy(p.stone); dirty = true; }
   function finishRun() {
+    const focusInPlan = ui.plan.contains(document.activeElement);
     done = true;
     setAim(null);
-    const plan = slots.every(s => s.filled) && history.every(p => p.slot);
-    const n = history.length;
-    ui.hint.textContent = plan ? 'Tower built to the plan.' : `Your tower is finished: ${n} ${n === 1 ? 'brick' : 'bricks'}. Build on, or start again.`;
+    const hasPlan = currentPlan !== 'free' && slots.length > 0;
+    const planDone = hasPlan && slots.every(s => s.filled && s.filled.state === 'placed');
+    const bpName = BLUEPRINT_MAP[currentPlan].name;
+    const n = placedCount();
+    ui.hint.textContent = planDone
+      ? `${bpName} complete (${n} ${n === 1 ? 'brick' : 'bricks'}). Save a photo, build on, or try another blueprint.`
+      : `Your tower is finished: ${n} ${n === 1 ? 'brick' : 'bricks'}, ${maxCourses()} high. Save a photo, build on, or start again.`;
     say(ui.hint.textContent);
-    // Pride stripes up the tower, as on the homepage: grey bricks take the colour of their height. Bricks given a look keep it.
+    if (planDone) { planCompletedAnnounced = true; showToast(`${bpName} complete`, true); }
     const levels = history.map(p => p.cell.level);
     for (const p of history) { if (p.look === 'grey') p.pride.set(stripeAt(p.cell.level)); else p.pride.copy(p.stone); }
+    sound.celebrate();
     refresh();
+    if (focusInPlan && !ui.done.disabled) ui.done.focus({ preventScroll: true });
     if (reduced.matches) { for (const p of bricks) p.material.color.copy(p.pride); dirty = true; return; }
+    effects.confetti(heightOf(Math.max(3, ...levels)), STRIPES);
     celebrate = { t: 0, top: Math.max(1, ...levels) };
+  }
+
+  async function savePhoto() {
+    if (!placedCount() || flights.size || toppling || awaitingPhysics) return;
+    sound.unlock();
+    const prevGhost = ghost.visible;
+    const prevHints = slots.map(s => s.hint.visible);
+    ghost.visible = false;
+    for (const s of slots) s.hint.visible = false;
+    renderer.render(scene, camera);
+    const hasPlan = currentPlan !== 'free' && slots.length > 0;
+    const planDone = hasPlan && slots.every(s => s.filled && s.filled.state === 'placed');
+    const title = hasPlan ? `FORRT ${BLUEPRINT_MAP[currentPlan].name}` : 'My FORRT tower';
+    const stab = stabilityInfo(strainWith());
+    const postcard = renderPostcardCanvas({
+      sourceCanvas: ui.canvas,
+      title,
+      bricks: placedCount(),
+      courses: maxCourses(),
+      stability: stab.pct,
+      blueprintDone: planDone
+    });
+    ghost.visible = prevGhost;
+    slots.forEach((s, i) => { s.hint.visible = prevHints[i]; });
+    dirty = true;
+    stats.photos++;
+    sound.pick();
+    const slug = hasPlan ? currentPlan : 'tower';
+    await downloadPostcard(postcard, `forrt-${slug}.png`);
+    const msg = `Postcard saved as forrt-${slug}.png.`;
+    showToast('Postcard saved', false);
+    if (!done && !toppling) ui.hint.textContent = msg;
+    say(msg);
+    return { width: postcard.width, height: postcard.height, filename: `forrt-${slug}.png` };
   }
 
   /* Pointing. A mouse shows where the brick would go before pressing. On touch, a tap places under the finger;
@@ -827,8 +1205,8 @@ function createGame() {
   }
   const insideCanvas = p => p.x >= 0 && p.y >= 0 && p.x <= frame.width && p.y <= frame.height;
   function onDown(e) {
-    // A finished tower is only looked at: Build on goes back to building.
     if (drag || !running || done || toppling || (e.pointerType === 'mouse' && e.button !== 0)) return;
+    sound.unlock();
     const point = toCanvas(e);
     e.preventDefault();
     if (!stillOn(point)) lastPlaced = null;
@@ -841,7 +1219,8 @@ function createGame() {
   function onTrayDown(e) {
     const b = e.target.closest('.tg-style');
     if (!b || drag || !running) return;
-    select(b.dataset.type);
+    sound.unlock();
+    select(b.dataset.type, true);
     b.releasePointerCapture?.(e.pointerId);
     drag = { id: e.pointerId, down: toCanvas(e), lift: e.pointerType === 'touch' ? TOUCH_LIFT : 0, fromTray: true, point: null };
     cursor = null;
@@ -863,10 +1242,8 @@ function createGame() {
     const { fromTray, point } = drag, cancelled = e.type !== 'pointerup';
     const release = !cancelled && point && drag.point;
     drag = null;
-    // A short press on the picker only chooses the brick.
     if (release && !done && !toppling) {
       const target = targetAt(point), now = performance.now();
-      // Faster than anyone clicks on purpose, this is a switch bouncing or a finger landing twice.
       const repeat = lastPlaced && now - lastPlaced.t < BOUNCE_MS && stillOn(point);
       if (target && !repeat && placeBrick(target)) { stats.drops++; lastPlaced = { t: now, x: point.x, y: point.y, i: target.i, j: target.j }; }
       else if (!target && !fromTray && !repeat) { stats.misses++; ui.hint.textContent = surfaceCell(point) ? 'That stack has reached the height limit.' : 'No studs there. Point at the top of the tower.'; }
@@ -875,7 +1252,6 @@ function createGame() {
     lastPoint = e.pointerType === 'mouse' ? lastPoint : null;
   }
   let keyTabbing = false;
-  /* Keyboard: a cursor moves over the squares, as a pointer would, and Enter places the brick. */
   function keyAim() {
     const [nx, nz] = footprint(selected, selectedRot());
     cursor.i = Math.min(cursor.i, MAX_CELL - nx + 1); cursor.j = Math.min(cursor.j, MAX_CELL - nz + 1);
@@ -886,11 +1262,12 @@ function createGame() {
   function onKey(e) {
     const k = e.key.toLowerCase();
     if (e.ctrlKey || e.metaKey || e.altKey || !ui.note.hidden || !ui.warn.hidden) return;
-    // By physical key, because some keyboards need Shift for digits.
+    sound.unlock();
     const digit = /^(?:Digit|Numpad)(\d)$/.exec(e.code)?.[1] ?? (/^\d$/.test(k) ? k : null);
-    if (digit !== null) { const type = TYPE_KEYS[(+digit + 9) % 10]; select(type); say(`${TYPES[type].label} chosen.`); return; }
+    if (digit !== null) { const type = TYPE_KEYS[(+digit + 9) % 10]; select(type, true); say(`${TYPES[type].label} chosen.`); return; }
     if (k === 'r') { rotateBrick(); return; }
     if (k === 't') { turnView(); return; }
+    if (k === 'm') { toggleSound(); return; }
     if (k === 'tab') keyTabbing = true;
     if (e.target !== ui.stage) return;
     const steps = { arrowleft: [-1, 0], arrowright: [1, 0], arrowup: [0, -1], arrowdown: [0, 1] }[k];
@@ -917,6 +1294,7 @@ function createGame() {
     if (turning) return;
     lastPlaced = null;
     view = (view + 1) % 4; stats.turns++;
+    sound.turn();
     turning = { from: viewAngle, to: viewAngle + Math.PI / 2, t: 0 };
     updateFlips();
     setAim(null);
@@ -928,6 +1306,13 @@ function createGame() {
     viewAngle = turning.to % (Math.PI * 2); turning = false;
     aimCamera(); fitNow(); updateAim();
   }
+  function toggleSound() {
+    sound.enabled = !sound.enabled;
+    ui.sound.setAttribute('aria-pressed', String(sound.enabled));
+    ui.sound.setAttribute('aria-label', sound.enabled ? 'Sound on' : 'Sound off');
+    if (sound.enabled) { sound.unlock(); sound.pick(); }
+    say(sound.enabled ? 'Sound effects on.' : 'Sound effects muted.');
+  }
 
   ui.canvas.addEventListener('pointerdown', onDown);
   ui.tray.addEventListener('pointerdown', onTrayDown);
@@ -938,34 +1323,49 @@ function createGame() {
   ui.canvas.addEventListener('pointerleave', () => { if (!drag) { lastPoint = null; setAim(null); } });
   ui.stage.addEventListener('focus', () => { ui.stage.classList.toggle('tg-keys', keyTabbing); keyTabbing = false; });
   ui.stage.addEventListener('blur', () => { if (cursor) { cursor = null; setAim(null); } });
-  ui.tray.addEventListener('click', e => { const b = e.target.closest('.tg-style'); if (b) { select(b.dataset.type); say(`${TYPES[b.dataset.type].label} chosen.`); } });
+  ui.tray.addEventListener('click', e => { const b = e.target.closest('.tg-style'); if (b) { sound.unlock(); select(b.dataset.type, false); say(`${TYPES[b.dataset.type].label} chosen.`); } });
+  ui.d.querySelector('#tg-plans').addEventListener('click', e => {
+    const b = e.target.closest('.tg-plan-pill');
+    if (!b) return;
+    sound.unlock();
+    selectBlueprint(b.dataset.plan, true);
+  });
   ui.d.querySelector('#tg-looks').addEventListener('click', e => {
     const b = e.target.closest('.tg-look');
     if (!b) return;
+    sound.unlock();
+    sound.pick();
     setLook(b.dataset.look);
     const text = { grey: 'New bricks will be grey. Done gives grey bricks their pride stripes.', brick: 'New bricks will be red brick. Bricks already placed keep their look.', pride: 'New bricks take a pride colour from their height, so stripes rise as you build.' }[b.dataset.look];
     if (!done && !drag) ui.hint.textContent = text;
     say(text);
   });
   ui.warnGo.addEventListener('click', hideWarning);
-  ui.warnAnyway.addEventListener('click', placeAnyway);
-  // Holding Enter must not dismiss the warning and set it off again.
+  ui.warnAnyway.addEventListener('click', () => { sound.unlock(); placeAnyway(); });
   ui.warn.addEventListener('keydown', e => { if (e.repeat) e.preventDefault(); });
-  ui.rotate.addEventListener('click', rotateBrick);
-  ui.view.addEventListener('click', turnView);
-  ui.undo.addEventListener('click', undo);
-  ui.next.addEventListener('click', placeNext);
-  ui.finish.addEventListener('click', finishAll);
-  ui.restart.addEventListener('click', restart);
+  ui.rotate.addEventListener('click', () => { sound.unlock(); rotateBrick(); });
+  ui.view.addEventListener('click', () => { sound.unlock(); turnView(); });
+  ui.undo.addEventListener('click', () => { sound.unlock(); undo(); });
+  ui.next.addEventListener('click', () => { sound.unlock(); placeNext(); });
+  ui.finish.addEventListener('click', () => { sound.unlock(); finishAll(); });
+  ui.restart.addEventListener('click', () => { sound.unlock(); restart(); });
+  ui.topple.addEventListener('click', toppleTower);
+  ui.photo.addEventListener('click', () => { savePhoto(); });
+  ui.sound.addEventListener('click', toggleSound);
   ui.done.addEventListener('click', () => {
-    // Done and Build on share a button, so a double press must not count twice.
     if (performance.now() - doneAt < 400) return;
     doneAt = performance.now();
+    sound.unlock();
     if (done) { leaveDone(); refresh(); updateAim(); } else if (history.length) finishRun();
   });
   ui.hints.addEventListener('click', () => {
+    sound.unlock();
+    sound.pick();
+    if (currentPlan === 'free') {
+      selectBlueprint(lastNamedPlan, true);
+      return;
+    }
     hintsOn = !hintsOn;
-    ui.hints.setAttribute('aria-pressed', String(hintsOn));
     refresh();
     updateAim();
     say(hintsOn ? `Hints on. ${openSlots().length} places outlined.` : 'Hints off.');
@@ -990,14 +1390,26 @@ function createGame() {
       if (p === 1) { flights.delete(f); landed.push(f.part); }
     }
     for (const part of landed) { land(part); if (!framing) refit(); }
-    if (collapse) {
-      collapseWait -= dt;
-      if (collapseWait <= 0) collapse.advance(dt);
+    if (effects.tick(dt)) dirty = true;
+    // Subtle micro-tremor on risky or wobbly ghost previews (skipped under reduced motion).
+    if (aim && aimRisky && ghost.visible && !reduced.matches) {
+      tremorPhase += dt * (aimState === 'wobbly' ? 42 : 24);
+      const amp = aimState === 'wobbly' ? .018 : .008;
+      ghost.position.set(aim.x + Math.sin(tremorPhase) * amp, aim.y, aim.z + Math.cos(tremorPhase * 1.3) * amp);
       dirty = true;
-      // The view widens if the rubble reaches past it.
-      reframeIn -= dt;
-      if (reframeIn <= 0 && !framing) { reframeIn = .25; const want = wantedBounds(); if (want.t - want.b > bounds.t - bounds.b + .01) refit(); }
-      if (collapse.settled) endCollapse();
+    }
+    if (collapse) {
+      if (reduced.matches) {
+        collapse.advanceBudget(16, 40);
+        if (collapse.settled) { dirty = true; endCollapse(); }
+      } else {
+        collapseWait -= dt;
+        if (collapseWait <= 0) collapse.advance(dt);
+        dirty = true;
+        reframeIn -= dt;
+        if (reframeIn <= 0 && !framing) { reframeIn = .25; const want = wantedBounds(); if (want.t - want.b > bounds.t - bounds.b + .01) refit(); }
+        if (collapse.settled) endCollapse();
+      }
     }
     for (const out of [...rubbleOut]) {
       out.t += dt / .25;
@@ -1031,7 +1443,12 @@ function createGame() {
     raf = requestAnimationFrame(tick);
   }
   const start = () => { if (running) return; running = true; last = 0; dirty = true; raf = requestAnimationFrame(tick); };
-  const stop = () => { running = false; cancelAnimationFrame(raf); raf = 0; if (drag) onUp({ pointerId: drag.id, type: 'pointercancel' }); if (!ui.warn.hidden) { warnCursor = null; hideWarning(); } setAim(null); };
+  const stop = () => {
+    running = false; physicsToken++; awaitingPhysics = false; cancelAnimationFrame(raf); raf = 0; hideToast(); effects.clear(); sound.close();
+    if (drag) onUp({ pointerId: drag.id, type: 'pointercancel' });
+    if (!ui.warn.hidden) { warnCursor = null; hideWarning(); }
+    setAim(null);
+  };
 
   /* Pictures for the picker, drawn once in each look with the game's own bricks and lights. */
   const pictures = { grey: {}, brick: {}, pride: {} };
@@ -1046,10 +1463,9 @@ function createGame() {
     renderer.setSize(164, 100, false);
     const red = stones[4].clone(); red.color.set(BRICK_REDS[0]);
     const pale = stones[4].clone(); pale.color.set('#d5dadc');
-    // Pride pictures are washed with all six stripes, because the colour a brick gets depends on where it lands.
     const wash = document.createElement('canvas'); wash.width = 164; wash.height = 100;
     const x = wash.getContext('2d'), bands = x.createLinearGradient(30, 0, 134, 0);
-    STRIPES.forEach((c, n) => { bands.addColorStop(n / 6, c); bands.addColorStop((n + 1) / 6, c); });
+    STRIPES.forEach((col, n) => { bands.addColorStop(n / 6, col); bands.addColorStop((n + 1) / 6, col); });
     for (const k of TYPE_KEYS) {
       m.geometry = geometryOf[k];
       m.material = stones[4]; renderer.render(s, c); pictures.grey[k] = ui.canvas.toDataURL();
@@ -1060,10 +1476,10 @@ function createGame() {
       x.globalCompositeOperation = 'destination-in'; x.drawImage(ui.canvas, 0, 0);
       pictures.pride[k] = wash.toDataURL();
     }
-    // The same long brick both ways round, for the how-to-play note.
     m.geometry = geometryOf.b1x4; m.material = stones[4];
     renderer.render(s, c); ui.d.querySelector('#tg-turn-a').src = ui.canvas.toDataURL();
     m.rotation.y = Math.PI / 2; renderer.render(s, c); ui.d.querySelector('#tg-turn-b').src = ui.canvas.toDataURL();
+    red.dispose(); pale.dispose();
   }
 
   drawPicker();
@@ -1071,9 +1487,23 @@ function createGame() {
   resize();
   new ResizeObserver(() => { resize(); if (running) renderer.render(scene, camera); }).observe(ui.stage);
   setLook(currentLook);
+  selectBlueprint('free', false);
   select(selected);
 
-  return { hideWarning, strainWith, holdOf, tooWobbly, STRAIN_LIMIT, ghostSkin, ghostLine, ghostBody, colourOf, start, stop, resize, renderer, stats, bricks, slots, camera, scene, model, ghost, overlay, project, placedCount, frame, openSlots, landing, targetAt, freeTargetAt, surfaceCell, history, flights, commit, land, spawn, restart, undo, select, rotateBrick, turnView, placeBrick, makeTarget, castRay, raycaster, get drag() { return drag; }, get aim() { return aim; }, get cursor() { return cursor; }, get busy() { return Boolean(flights.size || framing || turning || toppling); }, get toppling() { return toppling; }, get collapse() { return collapse; }, get lastCollapse() { return lastCollapse; }, get worstHold() { return worstHold; }, get selected() { return selected; }, get look() { return currentLook; }, get view() { return view; }, get hintsOn() { return hintsOn; }, get done() { return done; }, get rot() { return selectedRot(); }, MIN_CELL, MAX_CELL, MAX_PLATES, mesh, foundationTop, TYPES, TYPE_KEYS, footprint, heightOf };
+  return {
+    hideWarning, strainWith, holdOf, tooWobbly, stabilityInfo, STRAIN_LIMIT, ghostSkin, ghostLine, ghostBody, colourOf,
+    start, stop, resize, renderer, stats, bricks, slots, camera, scene, model, ghost, overlay, project, placedCount,
+    maxPlates, maxCourses, frame, openSlots, landing, targetAt, freeTargetAt, surfaceCell, history, flights,
+    commit, land, spawn, restart, undo, select, selectBlueprint, rotateBrick, turnView, placeBrick, makeTarget,
+    toppleTower, savePhoto, toggleSound, castRay, raycaster, sound, effects, milestones,
+    get currentPlan() { return currentPlan; },
+    get drag() { return drag; }, get aim() { return aim; }, get cursor() { return cursor; },
+    get busy() { return Boolean(flights.size || framing || turning || toppling); },
+    get toppling() { return toppling; }, get collapse() { return collapse; }, get lastCollapse() { return lastCollapse; },
+    get worstHold() { return worstHold; }, get selected() { return selected; }, get look() { return currentLook; },
+    get view() { return view; }, get hintsOn() { return hintsOn; }, get done() { return done; }, get rot() { return selectedRot(); },
+    MIN_CELL, MAX_CELL, MAX_PLATES, mesh, foundationTop, TYPES, TYPE_KEYS, BLUEPRINTS, footprint, heightOf
+  };
 }
 
 /* The how-to-play note: shown the first time the game opens, and again from the ? button. */
@@ -1093,7 +1523,6 @@ function open() {
     ui.close.addEventListener('click', () => ui.d.close());
     ui.help.addEventListener('click', showNote);
     ui.noteGo.addEventListener('click', hideNote);
-    // While the note is up, Escape puts it away rather than closing the game.
     ui.d.addEventListener('cancel', e => {
       if (!ui.note.hidden) { e.preventDefault(); hideNote(); }
       else if (!ui.warn.hidden) { e.preventDefault(); game.hideWarning(); }
@@ -1124,10 +1553,9 @@ function open() {
 window.towerGame = { open, close: () => ui?.d.close() };
 
 if (__DEBUG__) {
-  /* Test hooks. Excluded from the size figures. */
+  /* Test hooks. Excluded from the production bundle. */
   Object.defineProperty(window.towerGame, 'g', { get: () => game });
   const idx = p => game.bricks.indexOf(p);
-  /* Stud centres, read from the rendered mesh's own vertices rather than from the game's bookkeeping. */
   function studCentres(m) {
     m.updateWorldMatrix(true, false);
     const pos = m.geometry.attributes.position, v = new Vector3();
@@ -1143,7 +1571,6 @@ if (__DEBUG__) {
     }
     return { top, studs: [...groups.values()].map(g => ({ x: g.x / g.n, z: g.z / g.n })) };
   }
-  /* The brick that a real ray hits first, against the rendered meshes. Shares no code with the game's height-map picking. */
   function meshUnder(point) {
     const g = game;
     g.castRay(point);
@@ -1155,91 +1582,49 @@ if (__DEBUG__) {
   Object.assign(window.towerGame, {
     state() {
       const g = game;
-      return { placed: g.placedCount(), used: g.history.length, slotsFilled: g.slots.filter(s => s.filled).length, open: ui.d.open, hintsShown: g.slots.filter(s => s.hint.visible).length, last: g.history.length ? { ...g.history[g.history.length - 1].cell, type: g.history[g.history.length - 1].type } : null, stats: g.stats, hint: ui.hint.textContent, selected: g.selected, rot: g.rot, view: g.view, done: g.done, aim: g.aim && { i: g.aim.i, j: g.aim.j, rot: g.aim.rot, level: g.aim.level, type: g.aim.type }, ghost: g.ghost.visible, warning: !ui.warn.hidden, toppling: g.toppling, lastCollapse: g.lastCollapse, rubble: g.bricks.filter(p => p.state === 'debris').length, strain: +g.strainWith().toFixed(1), wobblyAim: Boolean(g.aim) && g.tooWobbly(g.aim), ghostColour: '#' + g.ghostSkin.color.getHexString(), lastColour: g.history.length ? '#' + g.history[g.history.length - 1].stone.getHexString() : null, ghostEdge: '#' + g.ghostLine.material.color.getHexString() };
+      return {
+        placed: g.placedCount(), used: g.history.length, courses: g.maxCourses(),
+        plan: g.currentPlan, slotsTotal: g.slots.length, slotsFilled: g.slots.filter(s => s.filled).length,
+        open: ui.d.open, hintsShown: g.slots.filter(s => s.hint.visible).length,
+        last: g.history.length ? { ...g.history[g.history.length - 1].cell, type: g.history[g.history.length - 1].type } : null,
+        stats: g.stats, hint: ui.hint.textContent, selected: g.selected, rot: g.rot, view: g.view, done: g.done,
+        soundOn: g.sound.enabled, milestones: [...g.milestones],
+        stability: g.stabilityInfo(g.strainWith()),
+        aim: g.aim && { i: g.aim.i, j: g.aim.j, rot: g.aim.rot, level: g.aim.level, type: g.aim.type },
+        ghost: g.ghost.visible, warning: !ui.warn.hidden, toppling: g.toppling, lastCollapse: g.lastCollapse,
+        rubble: g.bricks.filter(p => p.state === 'debris').length, strain: +g.strainWith().toFixed(1),
+        wobblyAim: Boolean(g.aim) && g.tooWobbly(g.aim),
+        ghostColour: '#' + g.ghostSkin.color.getHexString(),
+        lastColour: g.history.length ? '#' + g.history[g.history.length - 1].stone.getHexString() : null,
+        ghostEdge: '#' + g.ghostLine.material.color.getHexString()
+      };
     },
     settled() { return !game.busy && !game.drag; },
     frameSize() { return { w: game.frame.width, h: game.frame.height }; },
     meshUnder,
-    /* Screen point of the centre of a stud square's surface. */
     cellPoint(i, j, level) { return game.project(new Vector3(.15 + .3 * i, game.heightOf(level) + .002, .15 + .3 * j)); },
-    /* Every spot the rules allow for the chosen brick and direction, right now. */
     legalSpots() {
       const g = game, out = [];
       for (let i = g.MIN_CELL; i <= g.MAX_CELL; i++) for (let j = g.MIN_CELL; j <= g.MAX_CELL; j++) { const r = g.landing(g.selected, i, j, g.rot); if (r) out.push(`${i},${j},${r.level}`); }
       return out;
     },
-    /* Screen centre of a spot's underside, or null if the spot is off the canvas. */
     spotPoint(i, j, level) {
       const g = game, [nx, nz] = g.footprint(g.selected, g.rot);
       const q = g.project(new Vector3(.15 + .3 * (i + (nx - 1) / 2), g.heightOf(level), .15 + .3 * (j + (nz - 1) / 2)));
       return q.x >= 0 && q.y >= 0 && q.x <= g.frame.width && q.y <= g.frame.height ? q : null;
     },
-    /* Sweep the pointer in fine steps over the area around the legal spots and collect every spot it can reach. */
-    sweep(step = 3) {
-      const g = game, w = window.towerGame, seen = new Set(), spots = w.legalSpots().map(s => s.split(',').map(Number)).map(([i, j, l]) => w.spotPoint(i, j, l)).filter(Boolean);
-      const x0 = Math.max(0, Math.min(...spots.map(q => q.x)) - 36), x1 = Math.min(g.frame.width, Math.max(...spots.map(q => q.x)) + 36);
-      const y0 = Math.max(0, Math.min(...spots.map(q => q.y)) - 36), y1 = Math.min(g.frame.height, Math.max(...spots.map(q => q.y)) + 36);
-      for (let y = y0; y < y1; y += step) for (let x = x0; x < x1; x += step) { const t = g.freeTargetAt({ x, y }); if (t) seen.add(`${t.i},${t.j},${t.level}`); }
-      return [...seen];
-    },
-    /* The pixel nearest a spot's centre at which the pointer chooses that spot. */
-    aimFor(i, j, level) {
-      const g = game, c = window.towerGame.spotPoint(i, j, level);
-      if (!c) return null;
-      let best = null, bestD = Infinity;
-      for (let dy = -48; dy <= 48; dy += 2) for (let dx = -48; dx <= 48; dx += 2) {
-        const d = Math.hypot(dx, dy);
-        if (d >= bestD) continue;
-        const t = g.freeTargetAt({ x: c.x + dx, y: c.y + dy });
-        if (t && t.i === i && t.j === j && t.level === level) { best = { x: c.x + dx, y: c.y + dy }; bestD = d; }
-      }
-      return best;
-    },
-    /* Raw pointer points against what a real ray hits on the rendered meshes. */
-    fidelity(n) {
-      const g = game, F = g.foundationTop;
-      // Ray tests read world matrices, which otherwise update only when a frame is drawn.
-      g.scene.updateMatrixWorld(true);
-      const out = { points: 0, exact: 0, withinOne: 0, seam: 0, far: [], none: 0 };
-      for (let k = 0; k < n; k++) {
-        const point = { x: Math.random() * g.frame.width, y: Math.random() * g.frame.height };
-        const hit = meshUnder(point);
-        if (!hit || hit.y < F - .1) continue;
-        out.points++;
-        const t = g.freeTargetAt(point);
-        if (!t) { out.none++; continue; }
-        const [nx, nz] = g.footprint(t.type, t.rot);
-        const dx = hit.cell[0] < t.i ? t.i - hit.cell[0] : Math.max(0, hit.cell[0] - (t.i + nx - 1));
-        const dz = hit.cell[1] < t.j ? t.j - hit.cell[1] : Math.max(0, hit.cell[1] - (t.j + nz - 1));
-        if (dx === 0 && dz === 0) out.exact++;
-        else if (dx <= 1 && dz <= 1) out.withinOne++;
-        else {
-          // A ray can slip through the hairline joint between bricks or graze a brick's edge. If a pixel 2 px away agrees with the game, it was only that.
-          const near = [[-2, 0], [2, 0], [0, -2], [0, 2]].map(([a, b]) => meshUnder({ x: point.x + a, y: point.y + b })).filter(q => q && q.cell[0] >= t.i - 1 && q.cell[0] <= t.i + nx && q.cell[1] >= t.j - 1 && q.cell[1] <= t.j + nz);
-          // Or the ray only caught the rim of a stud with air right beside it: the game treats that sliver as the air next to it.
-          const rim = !g.surfaceCell(point) && [[-1, 0], [1, 0], [0, -1], [0, 1]].some(([a, b]) => !meshUnder({ x: point.x + a, y: point.y + b }));
-          if (near.length >= 1 || rim) out.seam++;
-          else if (out.far.length < 8) out.far.push({ point, hit, t: [t.i, t.j, t.rot, t.level] });
-        }
-      }
-      return out;
-    },
-    /* The same way in as a click: the rule applies and the warning shows. */
     tryPlace(type, i, j, rot = 0) { const g = game, r = g.landing(type, i, j, rot); if (!r) return 'none'; const wasFlying = g.placeBrick(g.makeTarget(type, i, j, rot, r)); if (wasFlying) { g.land(wasFlying); for (const f of [...g.flights]) if (f.part === wasFlying) g.flights.delete(f); return 'placed'; } g.hideWarning(); return 'refused'; },
-    place(type, i, j, rot = 0) { const g = game, r = g.landing(type, i, j, rot); if (!r) return null; const p = g.spawn(type); g.commit(p, g.makeTarget(type, i, j, rot, r)); g.land(p); return r; },
-    /* Independent audit, from world positions and mesh vertices only. Uses none of the game's rule code. */
+    place(type, i, j, rot = 0) { const g = game, r = g.landing(type, i, j, rot); if (!r) return null; const p = g.spawn(type); p.silent = true; g.commit(p, g.makeTarget(type, i, j, rot, r)); g.land(p); p.silent = false; return r; },
     audit() {
       const g = game, F = g.foundationTop, placed = g.history.filter(p => p.state === 'placed');
       const offGrid = [], wrongLevel = [], unconnected = [], collisions = [], slidIn = [];
       const eps = 1e-3;
       const onLattice = v => Math.abs((v - .15) / .3 - Math.round((v - .15) / .3)) < eps;
-      // Foundation studs, from the merged mesh vertices at the very top: walls and deck.
       const fixed = g.model.children.filter(o => o.isMesh && o.name === 'Fixed castle masonry');
       let foundationStuds = [], foundationStudTop = -Infinity;
       for (const m of fixed) { const c = studCentres(m); if (c.top > foundationStudTop + eps) { foundationStudTop = c.top; foundationStuds = c.studs; } else if (Math.abs(c.top - foundationStudTop) < eps) foundationStuds.push(...c.studs); }
       const foundationOffGrid = foundationStuds.filter(s => !(onLattice(s.x) && onLattice(s.z)));
       const foundationCells = new Set(foundationStuds.map(s => Math.round((s.x - .15) / .3) + ',' + Math.round((s.z - .15) / .3)));
-      // Column map, filled brick by brick in placing order.
       const col = new Map();
       for (const p of placed) {
         const t = g.TYPES[p.type], rot = Math.abs(Math.sin(p.object.rotation.y)) > .5;
@@ -1254,7 +1639,6 @@ if (__DEBUG__) {
         for (let a = i0; a < i0 + nx; a++) for (let b = j0; b < j0 + nz; b++) {
           const key = a + ',' + b, here = col.get(key) || [];
           if (here.some(([lo, hi]) => lo < bottom + h - eps && hi > bottom + eps)) collisions.push(idx(p));
-          // Anything already above its underside in its own column means it could not have come from above.
           if (here.some(([, hi]) => hi > bottom + eps)) trapped = true;
           if (here.some(([, hi]) => Math.abs(hi - bottom) < eps) || (Math.abs(bottom - F) < eps && foundationCells.has(key))) touches++;
         }
@@ -1264,20 +1648,20 @@ if (__DEBUG__) {
       }
       return { placed: placed.length, offGrid: offGrid.length, wrongLevel: wrongLevel.length, unconnected: unconnected.length, collisions: collisions.length, slidIn: slidIn.length, foundationStuds: foundationStuds.length, foundationOffGrid: foundationOffGrid.length };
     },
-    /* Rule-only games, without flights. 'plan': random order through the plan. 'free': random bricks at random legal spots. */
-    simulate(mode, runs, bricks = 60) {
+    simulate(mode, runs, bricks = 60, planId = 'castle') {
       const g = game; let stuck = 0, completed = 0, faults = 0, placed = 0;
+      if (mode === 'plan') g.selectBlueprint(planId, false);
       for (let r = 0; r < runs; r++) {
         g.restart();
         if (mode === 'plan') {
-          for (let open = g.openSlots(); open.length; open = g.openSlots()) { const s = open[Math.floor(Math.random() * open.length)]; const p = g.spawn(s.type); g.commit(p, g.makeTarget(s.type, s.i, s.j, s.rot, g.landing(s.type, s.i, s.j, s.rot))); g.land(p); }
+          for (let open = g.openSlots(); open.length; open = g.openSlots()) { const s = open[Math.floor(Math.random() * open.length)]; const p = g.spawn(s.type); p.silent = true; g.commit(p, g.makeTarget(s.type, s.i, s.j, s.rot, g.landing(s.type, s.i, s.j, s.rot))); g.land(p); p.silent = false; }
           if (g.slots.every(s => s.filled)) completed++; else stuck++;
         } else {
           for (let n = 0; n < bricks; n++) {
             const type = g.TYPE_KEYS[Math.floor(Math.random() * g.TYPE_KEYS.length)], rot = Math.floor(Math.random() * 2), spots = [];
             for (let i = g.MIN_CELL; i <= g.MAX_CELL; i++) for (let j = g.MIN_CELL; j <= g.MAX_CELL; j++) { if (g.landing(type, i, j, rot)) spots.push([i, j]); }
             const [i, j] = spots[Math.floor(Math.random() * spots.length)];
-            const part = g.spawn(type); g.commit(part, g.makeTarget(type, i, j, rot, g.landing(type, i, j, rot))); g.land(part);
+            const part = g.spawn(type); part.silent = true; g.commit(part, g.makeTarget(type, i, j, rot, g.landing(type, i, j, rot))); g.land(part); part.silent = false;
           }
           completed++;
         }
@@ -1286,13 +1670,7 @@ if (__DEBUG__) {
         faults += a.offGrid + a.wrongLevel + a.unconnected + a.collisions + a.slidIn;
       }
       g.restart();
-      return { mode, runs, stuck, completed, faults, placed };
-    },
-    sizes() {
-      const g = game, w = window.towerGame;
-      const a = w.cellPoint(-1, -1, 0), b = w.cellPoint(0, -1, 0), c = w.cellPoint(-1, 0, 0);
-      const px = (p, q) => +Math.hypot(p.x - q.x, p.y - q.y).toFixed(1);
-      return { canvas: [g.frame.width, g.frame.height], pxPerUnit: +g.frame.scale.toFixed(1), studStepAcross: px(a, b), studStepAlong: px(a, c) };
+      return { mode, planId, runs, stuck, completed, faults, placed };
     }
   });
 }

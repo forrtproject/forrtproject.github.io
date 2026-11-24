@@ -4,7 +4,7 @@
 const GRAVITY = -26, FRICTION = .55, BOUNCE = .18, DENSITY = 20;
 const BREAK_SPEED = 1.6, BREAK_PER_SPEED = .75, BURST = .9, TIP = .55, TUMBLE = 2.2, EARLIEST_REST = 1.2, SHAKE_AT = .7, SHAKE = 9, TOP_SPEED = 15, TOP_SPIN = 12, TIME_LIMIT = 5, STEP = 1 / 60;
 
-export function createCollapse(C, { pieces, grips, standing, shell, groundY, leans, random = Math.random }) {
+export function createCollapse(C, { pieces, grips, standing, shell, groundY, leans, random = Math.random, onImpact = null, impulse = null }) {
   const world = new C.World({ gravity: new C.Vec3(0, GRAVITY, 0), allowSleep: true });
   world.broadphase = new C.SAPBroadphase(world);
   world.solver.iterations = 18;
@@ -40,8 +40,9 @@ export function createCollapse(C, { pieces, grips, standing, shell, groundY, lea
     }
     const clump = { body, members, offsets, level, from: body.position.clone() };
     body.addEventListener('collide', e => {
-      if (members.length < 2) return;
       const speed = Math.abs(e.contact.getImpactVelocityAlongNormal());
+      if (onImpact && speed > 1.0) onImpact(speed);
+      if (members.length < 2) return;
       if (speed > BREAK_SPEED) hits.set(clump, Math.max(hits.get(clump) || 0, speed));
     });
     world.addBody(body);
@@ -75,13 +76,17 @@ export function createCollapse(C, { pieces, grips, standing, shell, groundY, lea
   }
 
   const start = new C.Quaternion(), at = new C.Vec3(), none = new C.Vec3();
-  for (const members of groupsOf(pieces.map((_, k) => k), 0)) {
-    const clump = makeClump(members, k => new C.Vec3(pieces[k].x, pieces[k].y, pieces[k].z), at, start, () => none.clone(), none, 0);
+  for (const members of groupsOf(pieces.map((_, k) => k), impulse ? 1.5 : 0)) {
+    const clump = makeClump(members, k => new C.Vec3(pieces[k].x, pieces[k].y, pieces[k].z), at, start, () => none.clone(), none, impulse ? 1.5 : 0);
     // The grip lets go on the far side first, so the clump starts to turn over the edge it is leaning past.
     const lean = leans.find(l => members.includes(l.piece));
     if (lean) {
       const dx = clump.body.position.x - lean.x, dz = clump.body.position.z - lean.z, d = Math.hypot(dx, dz) || 1;
       clump.body.angularVelocity.set(dz / d * TIP, 0, -dx / d * TIP);
+    } else if (impulse) {
+      const jitter = () => (random() - .5) * .6;
+      clump.body.velocity.set(impulse.vx + jitter(), impulse.vy + random() * .5, impulse.vz + jitter());
+      clump.body.angularVelocity.set(impulse.spinX + jitter(), jitter(), impulse.spinZ + jitter());
     }
   }
 
@@ -126,6 +131,16 @@ export function createCollapse(C, { pieces, grips, standing, shell, groundY, lea
   return {
     /* Frames that run long slow the fall down rather than piling up steps. */
     advance(dt) { carry += dt; for (let n = 0; carry >= STEP && n < 3; n++) { tick(); carry -= STEP; } carry = Math.min(carry, STEP); draw(); },
+    /* Non-blocking fast-forward for reduced-motion settles: steps within a small frame budget and draws once settled. */
+    advanceBudget(maxMs = 16, maxSteps = 40) {
+      const startMs = performance.now();
+      let steps = 0;
+      while (!atRest() && steps < maxSteps && (steps === 0 || performance.now() - startMs < maxMs)) {
+        tick();
+        steps++;
+      }
+      if (atRest()) draw();
+    },
     finish() { while (!atRest()) tick(); draw(); },
     get settled() { return atRest(); },
     get time() { return time; },
