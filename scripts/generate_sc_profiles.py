@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!modal) return;
         modal.classList.remove('active');
         document.body.style.overflow = '';
-        if (lastTrigger && typeof lastTrigger.focus === 'function') {
+        if (!window.__scManaged && lastTrigger && typeof lastTrigger.focus === 'function') {
             lastTrigger.focus();
             lastTrigger = null;
         }
@@ -122,13 +122,15 @@ document.addEventListener('DOMContentLoaded', () => {
     window.openModal = (id) => {
         const modal = document.getElementById(`modal-${id}`);
         if (modal) {
-            if (document.activeElement && document.activeElement !== document.body) {
+            if (!window.__scManaged && document.activeElement && document.activeElement !== document.body) {
                 lastTrigger = document.activeElement;
             }
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
-            const closeBtn = modal.querySelector('.sc-close-btn');
-            if (closeBtn) closeBtn.focus();
+            if (!window.__scManaged) {
+                const closeBtn = modal.querySelector('.sc-close-btn');
+                if (closeBtn) closeBtn.focus();
+            }
         }
     };
 
@@ -145,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
+        if (e.key === 'Escape' && !window.__scManaged) {
             closeActiveModal(document.querySelector('.sc-modal-backdrop.active'));
         }
     });
@@ -417,6 +419,21 @@ def render_member_card(member_id, name, role, img_content, color=None, is_last=F
         extend="0px" if is_last else BAR_EXTEND,
     ).strip()
 
+def render_card_image(img_url, initials):
+    """Card portrait or initials placeholder (phrasing content inside <button>).
+    Uses alt="" because the person's name is rendered right inside the same button."""
+    if img_url:
+        return f'<img src="{html.escape(str(img_url), quote=True)}" alt="" class="sc-card-img" />'
+    return f'<span class="sc-placeholder" aria-hidden="true">{html.escape(str(initials))}</span>'
+
+
+def render_modal_image(img_url, initials):
+    """Modal portrait or initials placeholder. Uses alt="" because the modal's <h3> names the person."""
+    if img_url:
+        return f'<img src="{html.escape(str(img_url), quote=True)}" alt="" />'
+    return f'<span aria-hidden="true" style="font-size: 2rem; color: #94a3b8; font-weight: 600;">{html.escape(str(initials))}</span>'
+
+
 def render_modal(member_id, name, role, bio, img_content_large, social_links=""):
     """Profile modal dialog for one steering committee member."""
     return MODAL_TEMPLATE.format(
@@ -620,12 +637,7 @@ def main():
                 seen_ids[base_id] = occurrence
                 render_id = base_id if occurrence == 1 else f"{base_id}-{occurrence}"
 
-                img_content = ""
-                if member["imgUrl"]:
-                    img_content = f'<img src="{html.escape(member["imgUrl"], quote=True)}" alt="" class="sc-card-img" />'
-                else:
-                    # Placeholder for missing image (phrasing content inside <button>)
-                    img_content = f'<span class="sc-placeholder" aria-hidden="true">{html.escape(member["initials"])}</span>'
+                img_content = render_card_image(member["imgUrl"], member["initials"])
 
                 cards_html += render_member_card(
                     render_id, member["name"], member["role"], img_content,
@@ -634,11 +646,7 @@ def main():
                 )
 
                 # Generate Modal for this member
-                img_content_large = ""
-                if member["imgUrl"]:
-                    img_content_large = f'<img src="{html.escape(member["imgUrl"], quote=True)}" alt="{html.escape(member["name"], quote=True)}" />'
-                else:
-                    img_content_large = f'<span aria-hidden="true" style="font-size: 2rem; color: #94a3b8; font-weight: 600;">{html.escape(member["initials"])}</span>'
+                img_content_large = render_modal_image(member["imgUrl"], member["initials"])
 
                 modals_html += render_modal(
                     render_id,

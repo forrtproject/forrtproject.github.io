@@ -384,7 +384,7 @@ def artifact_ab(launch_dir, groups, doors_ref, hugo, logs):
         shutil.rmtree(kept)
     shutil.copytree(first, kept, symlinks=True)
     for rel in groups["resurrected"]:
-        (launch_dir / rel).unlink()
+        (launch_dir / rel).unlink(missing_ok=True)
     for rel in groups["reverted"] + groups["overridden"]:
         (launch_dir / rel).write_bytes(blob(doors_ref, rel))
     second = build(launch_dir, hugo, logs, "launch-without-stale-files")

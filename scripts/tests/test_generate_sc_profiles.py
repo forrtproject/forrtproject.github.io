@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""The steering committee generator keeps each person's existing author folder."""
+"""Tests for scripts/generate_sc_profiles.py: author folder matching and accessible card/modal HTML."""
 import html.parser
 import sys
 import tempfile
@@ -130,6 +130,22 @@ class AccessibleMarkupTests(unittest.TestCase):
         links = [attrs for tag, attrs in tags if tag == "a"]
         self.assertEqual([link.get("aria-label") for link in links], ["Website", "Email"])
         self.assertIn("Bio with &lt;script&gt; &amp; notes.", modal)
+
+    def test_image_helpers_escape_and_use_decorative_alt(self):
+        card_img = sc.render_card_image('/authors/a"b/avatar.webp', "AB")
+        self.assertIn('alt=""', card_img)
+        self.assertIn('src="/authors/a&quot;b/avatar.webp"', card_img)
+        card_placeholder = sc.render_card_image("", "<A>")
+        self.assertTrue(card_placeholder.startswith("<span "))
+        self.assertIn('aria-hidden="true"', card_placeholder)
+        self.assertIn("&lt;A&gt;", card_placeholder)
+
+        modal_img = sc.render_modal_image('/authors/a"b/avatar.webp', "AB")
+        self.assertIn('alt=""', modal_img)
+        self.assertIn('src="/authors/a&quot;b/avatar.webp"', modal_img)
+        modal_placeholder = sc.render_modal_image("", "<A>")
+        self.assertIn('aria-hidden="true"', modal_placeholder)
+        self.assertIn("&lt;A&gt;", modal_placeholder)
 
 
 if __name__ == "__main__":

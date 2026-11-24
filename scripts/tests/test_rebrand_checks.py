@@ -9,6 +9,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "rebrand"))
 
+from unittest.mock import patch
+
 from check_design import framing_problems  # noqa: E402
 from check_internal_links import broken_target, extract_links, find_broken  # noqa: E402
 from check_preview import (  # noqa: E402
@@ -17,6 +19,7 @@ from check_preview import (  # noqa: E402
 from check_source_rules import GENERATED, absolute_url_findings, is_allowed_generated_change  # noqa: E402
 from compare_builds import compare_heads, compare_paths, compare_structured  # noqa: E402
 from preview_paths import Rewriter, resolves  # noqa: E402
+import rehearse_launch  # noqa: E402
 from site_inventory import normalise_path, seo_head, template_group  # noqa: E402
 
 FILES = {
@@ -395,6 +398,17 @@ class SourceRuleTests(unittest.TestCase):
         self.assertTrue(is_allowed_generated_change("D", ["static/data/open_research_games.json"]))
         self.assertFalse(is_allowed_generated_change("M", ["static/data/open_research_games.json"]))
         self.assertFalse(is_allowed_generated_change("D", ["static/data/fred_citation.txt"]))
+
+    def test_artifact_ab_tolerates_already_removed_resurrected_file(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            launch = root / "launch"
+            (launch / "public").mkdir(parents=True)
+            (launch / "public" / "index.html").write_text("ok")
+            groups = {"reverted": [], "overridden": [], "resurrected": ["static/data/open_research_games.json"]}
+            with patch.object(rehearse_launch, "build", return_value=launch / "public"):
+                diff = rehearse_launch.artifact_ab(launch, groups, "HEAD", "hugo", root / "logs")
+            self.assertEqual(diff, [])
 
     def test_absolute_urls_in_templates(self):
         with tempfile.TemporaryDirectory() as root:

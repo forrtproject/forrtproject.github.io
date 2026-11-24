@@ -25,8 +25,8 @@ document.querySelectorAll('#strategic .sc-title-card').forEach((card) => {
   if (area) card.dataset.area = area[1];
 });
 
+window.__scManaged = true;
 let trigger = null;
-let focusTimer = null;
 const backdrops = [...document.querySelectorAll('.sc-modal-backdrop')];
 
 backdrops.forEach((backdrop) => {
@@ -81,26 +81,27 @@ const closeOpenModal = (open) => {
 };
 
 // Into the dialog when it opens, back to the card when it closes, and Escape / Tab stay handled while open.
+const focusDialog = (open) => {
+  const closeBtn = open.querySelector('.sc-close-btn');
+  if (!closeBtn || open.contains(document.activeElement)) return;
+  closeBtn.focus();
+  if (document.activeElement !== closeBtn) {
+    requestAnimationFrame(() => {
+      if (open.classList.contains('active') && !open.contains(document.activeElement)) closeBtn.focus();
+    });
+  }
+};
+
 const observer = new MutationObserver(() => {
   const open = backdrops.find((backdrop) => backdrop.classList.contains('active'));
   if (open) {
     if (!trigger && document.activeElement?.closest?.('.sc-card')) {
       trigger = document.activeElement.closest('.sc-card');
     }
-    // The dialog can't take focus until its visibility flips on.
-    if (!open.contains(document.activeElement)) {
-      clearTimeout(focusTimer);
-      focusTimer = setTimeout(() => {
-        if (open.classList.contains('active')) open.querySelector('.sc-close-btn')?.focus();
-      }, 60);
-    }
-  } else {
-    clearTimeout(focusTimer);
-    focusTimer = null;
-    if (trigger) {
-      trigger.focus();
-      trigger = null;
-    }
+    focusDialog(open);
+  } else if (trigger) {
+    trigger.focus();
+    trigger = null;
   }
 });
 backdrops.forEach((backdrop) => observer.observe(backdrop, { attributes: true, attributeFilter: ['class'] }));
