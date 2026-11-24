@@ -41,7 +41,7 @@
       <a class="lesson-quick-link" href="{{ .url }}" target="_blank" rel="noopener">{{ .label }}</a>
     {{ end }}
     {{ with .Params.feedback_url }}
-      <a class="lesson-quick-link" href="{{ . }}" target="_blank" rel="noopener">Share feedback</a>
+      <a class="lesson-quick-link" href="{{ . }}" target="_blank" rel="noopener">Share feedback <i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="visually-hidden"> (another website)</span></a>
     {{ end }}
   </div>
   {{ end }}

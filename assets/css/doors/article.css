@@ -363,10 +363,11 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 @media(min-width:1001px){
   .article-layout .article-style .lessonbank-workshop{display:grid;grid-template-columns:minmax(0,520px) minmax(0,560px);justify-content:start;column-gap:48px;align-items:start}
 }
-@media(max-width:760px){
-  .article-style .lesson-card .lesson-materials a,.article-layout .article-style .lessonbank-aside-links a{display:inline-flex;align-items:center;min-height:44px}
-  .article-style .lesson-card .lesson-materials{gap:0 16px;padding-top:6px}
+@media(max-width:1000px){
+  .article-layout .article-style .lesson-card .lesson-materials a,.article-layout .article-style .lessonbank-aside-links a{display:inline-flex;align-items:center;min-height:44px}
+  .article-layout .article-style .lesson-card .lesson-materials{gap:0 16px;padding-top:6px}
 }
+.article-layout :is(.lesson-materials,.lesson-card-feedback,.lesson-quick-bar) .fa-external-link-alt{margin-inline-start:4px;font-size:.78em}
 
 /* Individual lesson pages: Social Justice (--jus) side card, mobile bar, structured activity blocks and pager. */
 .article-layout .lesson-kicker{margin:0 0 8px;font-size:16px;font-weight:700;color:var(--jus)}

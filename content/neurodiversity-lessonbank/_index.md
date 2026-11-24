@@ -72,8 +72,8 @@ Teaching materials created by FORRT's Team Neurodiversity for university courses
   <p class="lesson-num">Lesson 7 · Lesson plan and readings</p>
   <h3>The myth of the normality: How neurodiversity dismantles the generalisability crisis</h3>
   <ul class="lesson-materials">
-    <li><a href="https://journalofethics.ama-assn.org/article/myth-normal-brain-embracing-neurodiversity/2015-04" target="_blank" rel="noopener">Text 1</a></li>
-    <li><a href="https://www.cambridge.org/core/journals/behavioral-and-brain-sciences/article/abs/generalizability-crisis/AD386115BA539A759ACB3093760F4824" target="_blank" rel="noopener">Text 2</a></li>
+    <li><a href="https://journalofethics.ama-assn.org/article/myth-normal-brain-embracing-neurodiversity/2015-04" target="_blank" rel="noopener">Text 1 <i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="visually-hidden"> (another website)</span></a></li>
+    <li><a href="https://www.cambridge.org/core/journals/behavioral-and-brain-sciences/article/abs/generalizability-crisis/AD386115BA539A759ACB3093760F4824" target="_blank" rel="noopener">Text 2 <i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="visually-hidden"> (another website)</span></a></li>
     <li><a href="./Lesson_Plans/The_myth_of_the_normality_How_neurodiversity_dismantles_the_generalisability_crisis.pdf" target="_blank" rel="noopener">Lesson plan (PDF)</a></li>
   </ul>
 </li>
@@ -81,7 +81,7 @@ Teaching materials created by FORRT's Team Neurodiversity for university courses
   <p class="lesson-num">Lesson 8 · Lesson plan and reading</p>
   <h3>Neurodiversity Culture and Teaching</h3>
   <ul class="lesson-materials">
-    <li><a href="http://web.archive.org/web/20240802211120/https://www.rapidintellect.com/AEQweb/ed-5971.pdf" target="_blank" rel="noopener">Text</a></li>
+    <li><a href="http://web.archive.org/web/20240802211120/https://www.rapidintellect.com/AEQweb/ed-5971.pdf" target="_blank" rel="noopener">Text <i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="visually-hidden"> (another website)</span></a></li>
     <li><a href="./Lesson_Plans/Neuro_para.pdf" target="_blank" rel="noopener">Lesson plan (PDF)</a></li>
   </ul>
 </li>
@@ -89,7 +89,7 @@ Teaching materials created by FORRT's Team Neurodiversity for university courses
   <p class="lesson-num">Lesson 9 · Lesson plan and reading</p>
   <h3>Avoiding ableist language to diversify OS</h3>
   <ul class="lesson-materials">
-    <li><a href="https://www.liebertpub.com/doi/10.1089/aut.2020.0014" target="_blank" rel="noopener">Text</a></li>
+    <li><a href="https://www.liebertpub.com/doi/10.1089/aut.2020.0014" target="_blank" rel="noopener">Text <i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="visually-hidden"> (another website)</span></a></li>
     <li><a href="./Lesson_Plans/Avoiding_ableist%20language_to_diversify_open_scholarship.pdf" target="_blank" rel="noopener">Lesson plan (PDF)</a></li>
   </ul>
 </li>
@@ -97,8 +97,8 @@ Teaching materials created by FORRT's Team Neurodiversity for university courses
   <p class="lesson-num">Lesson 10 · Lesson plan and readings</p>
   <h3>How can Open Scholarship address structural ableism and racism?</h3>
   <ul class="lesson-materials">
-    <li><a href="https://www.apa.org/science/about/psa/2019/02/open-science" target="_blank" rel="noopener">Text 1</a></li>
-    <li><a href="https://doi.org/10.1080/09638288.2023.2173315" target="_blank" rel="noopener">Text 2</a></li>
+    <li><a href="https://www.apa.org/science/about/psa/2019/02/open-science" target="_blank" rel="noopener">Text 1 <i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="visually-hidden"> (another website)</span></a></li>
+    <li><a href="https://doi.org/10.1080/09638288.2023.2173315" target="_blank" rel="noopener">Text 2 <i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="visually-hidden"> (another website)</span></a></li>
     <li><a href="./Lesson_Plans/How_can_we_Open%20Scholarship_to_address_the%20structural_ableism_and_racism_in_our_society.pdf" target="_blank" rel="noopener">Lesson plan (PDF)</a></li>
   </ul>
 </li>
