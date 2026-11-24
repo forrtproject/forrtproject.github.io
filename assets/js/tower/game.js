@@ -1443,7 +1443,8 @@ function createGame() {
   }
   const start = () => { if (running) return; running = true; last = 0; dirty = true; raf = requestAnimationFrame(tick); };
   const stop = () => {
-    running = false; physicsToken++; awaitingPhysics = false; collapse = null; toppling = false;
+    running = false; physicsToken++; awaitingPhysics = false;
+    if (!collapse && ![...flights].some(f => f.part.topples)) toppling = false;
     cancelAnimationFrame(raf); raf = 0; hideToast(); effects.clear(); sound.close();
     if (drag) onUp({ pointerId: drag.id, type: 'pointercancel' });
     if (!ui.warn.hidden) { warnCursor = null; hideWarning(); }
