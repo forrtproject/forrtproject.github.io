@@ -9,33 +9,13 @@ active = true  # Activate this widget? true/false
 weight = 10  # Order that this section will appear.
 
 title = "Open and Reproducible Science Syllabus"
-subtitle = ""
+subtitle = "FORRT’s 9-week seminar syllabus and a curated collection of open science syllabi"
 
 [design]
   # Choose how many columns the section has. Valid values: 1 or 2.
   columns = "1"
 
 [design.background]
-  # Apply a background color, gradient, or image.
-  #   Uncomment (by removing `#`) an option to apply it.
-  #   Choose a light or dark text color by setting `text_color_light`.
-  #   Any HTML color name or Hex value is valid.
-
-  # Background color.
-  # color = "#fefdf6"
-  # color = "#69b3a2" # greenish
-  
-  # Background gradient.
-  # gradient_start = "DeepSkyBlue"
-  # gradient_end = "SkyBlue"
-  
-  # Background image.
-  # image = "headers/bubbles-wide.webp"  # Name of image in `static/img/`.
-  # image_darken = 0.6  # Darken the image? Range 0-1 where 0 is transparent and 1 is opaque.
-  # image_size = "cover"  #  Options are `cover` (default), `contain`, or `actual` size.
-  # image_position = "center"  # Options include `left`, `center` (default), or `right`.
-  # image_parallax = true  # Use a fun parallax-like fixed background effect? true/false
-
   # Text color (true=light or false=dark).
   text_color_light = false
 
@@ -44,29 +24,57 @@ subtitle = ""
   padding = ["60px", "0", "60px", "0"]
 
 [advanced]
- # Custom CSS. 
+ # Custom CSS.
  css_style = ""
- 
+
  # CSS class.
  css_class = ""
 +++
 
-## Motivation
+<div class="nx-hero-band nx-hero-band--syllabus">
 
-To provide educators with an example of how they can draw resources from FORRT’s educational nexus to integrate open scholarship into their teaching, FORRT has developed an Open and Reproducible Science 101 syllabus. 
+<aside class="nx-panel" aria-label="FORRT’s Open and Reproducible Science Syllabus">
 
-FORRT’s syllabus was developed as a seminar series covering 9 weeks of teaching. In an attempt to be comprehensive of the open scholarship literature, the syllabus builds on [FORRT’s cluster framework](https://forrt.org/clusters). As such, the proposed topic for each week is one of FORRT’s clusters and its related literature. For each week, there are suggestions of core and additional readings. The syllabus is comprised of a series of assignments and proposed activities for students. 
+## FORRT’s Open and Reproducible Science Syllabus
+
+A 9-week seminar series built around [FORRT’s cluster framework](/clusters/), with core and additional readings, assignments and proposed activities you can use as-is or adapt for your course.
+
+<div class="nx-actions">
+<a class="nx-btn-primary" href="https://docs.google.com/document/d/1pfFro5MbwBHzzXTeM_lE1gjFuq7AnnKWSDWkVwOBAtE/edit#" target="_blank" rel="noopener">Open the syllabus (editable Google Doc or Word)</a>
+</div>
+
+<ul class="nx-panel-list" role="list">
+<li><a href="#list-of-open-science-syllabi">Browse the curated list of 80 open science syllabi</a></li>
+<li><a href="/clusters/">Explore FORRT’s cluster framework</a></li>
+<li><a href="/lesson-plans/">See FORRT’s ready-to-use lesson plans</a></li>
+</ul>
+
+</aside>
+
+<div>
+
+## Motivation {#motivation .nx-syl-lead-heading}
+
+To provide educators with an example of how they can draw resources from FORRT’s educational nexus to integrate open scholarship into their teaching, FORRT has developed an Open and Reproducible Science 101 syllabus.
+
+FORRT’s syllabus was developed as a seminar series covering 9 weeks of teaching. In an attempt to be comprehensive of the open scholarship literature, the syllabus builds on [FORRT’s cluster framework](/clusters/). As such, the proposed topic for each week is one of FORRT’s clusters and its related literature. For each week, there are suggestions of core and additional readings. The syllabus is comprised of a series of assignments and proposed activities for students.
 
 Importantly, this syllabus is not intended to be a “one size fits all” approach. While educators are welcome to use this syllabus in its current format, they can also adapt it to meet their current courses and needs. We hope it can serve as a starting point for your class.
 
-> ### FORRT's Open and Reproducible Science Syllabus
-> * [Open the syllabus (editable Google Doc or Word)](https://docs.google.com/document/d/1pfFro5MbwBHzzXTeM_lE1gjFuq7AnnKWSDWkVwOBAtE/edit#)
+</div>
 
-## List of Open Science Syllabi
+</div>
 
-To further facilitate the creation, the updating, improvement, and maintenance of Open Science syllabi, we also curate a list of (possibly) useful other syllabi.
+<div class="nx-section">
+<div class="nx-section-head">
 
-To suggest a syllabus for this list, email us at [info@forrt.org](mailto:info@forrt.org).
+## List of open science syllabi {#list-of-open-science-syllabi}
+
+To further facilitate the creation, the updating, improvement, and maintenance of Open Science syllabi, we also curate a list of (possibly) useful other syllabi. To suggest a syllabus for this list, email us at [info@forrt.org](mailto:info@forrt.org).
+
+</div>
+
+{{< syllabus_filter >}}
 
 <div class="catalogue">
 
@@ -185,4 +193,5 @@ To suggest a syllabus for this list, email us at [info@forrt.org](mailto:info@fo
 
 </div>
 
+</div>
 </div>

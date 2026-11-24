@@ -35,14 +35,14 @@
   {{ with $st.Params.design.background.color }}{{ if not (in (slice "#fefdf6" "#FEFDF6") .) }}{{ $tinted = true }}{{ end }}{{ end }}
   {{ $rendered = $rendered | append (dict "id" $hash_id "title" (cond (gt $index 0) $title "") "subtitle" (cond (gt $index 0) ($st.Params.subtitle | default "") "") "body" $body "widget" $widget "tinted" $tinted) }}
 {{ end }}
-{{ $wide := in site.Params.doors.wide_pages .Path }}
+{{ $wide := or .Params.wide (in site.Params.doors.wide_pages .Path) }}
 {{ $hasCard := and (not $wide) (gt (len $toc) 1) }}
 {{ $hasCallouts = and $hasCallouts (not $wide) }}
 {{ $card := "" }}
 {{ if $hasCard }}{{ $card = partial "doors/toc_card" $toc }}{{ end }}
 
 <div class="wrap">
-  <div class="article-layout{{ if $hasCallouts }} article-layout-callouts{{ else if not $hasCard }} article-layout-single{{ end }}{{ if $wide }} article-layout-wide{{ end }}">
+  <div class="article-layout{{ if $hasCallouts }} article-layout-callouts{{ else if not $hasCard }} article-layout-single{{ end }}{{ if $wide }} article-layout-wide{{ end }}{{ with .Params.page_class }} {{ . }}{{ end }}">
     {{ with .Params.hero_image }}
       {{ $head := partial "doors/page_head" (dict "page" $page "h1" $h1 "lede" $lede) }}
       {{ partial "doors/page_hero" (dict "page" $page "head" $head) }}
