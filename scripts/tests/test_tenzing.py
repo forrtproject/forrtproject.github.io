@@ -71,6 +71,7 @@ class DeterministicFilterLists(unittest.TestCase):
         self.assertEqual(tenzing.safe_project_url("JAVASCRIPT:alert(1)"), "")
         self.assertEqual(tenzing.safe_project_url("data:text/html,<script>"), "")
         self.assertEqual(tenzing.safe_project_url("//evil.example/x"), "")
+        self.assertEqual(tenzing.safe_project_url("https://[abc"), "")
         self.assertEqual(tenzing.safe_project_url(None), "")
 
     def test_partition_contributions_counts_distinct_projects(self):

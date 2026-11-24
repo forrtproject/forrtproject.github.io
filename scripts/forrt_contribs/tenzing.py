@@ -320,10 +320,10 @@ def build_projects_list(project_names):
 
 # Group by 'ORCID iD' and build each contributor's row: the name as a heading (linked to ORCID where known),
 # then one line per project, the project linked and its roles after it in plain text. A contributor with
-# COLLAPSE_THRESHOLD or more entries shows the first SHOWN_PROJECTS (one balanced two-column row on desktop)
-# and the rest behind a disclosure, so long lists never push rows tall while short lists (1–4) show in full.
-# The filter (static/js/contributor-filter.js) opens the disclosure when it narrows the list.
-# Keep the exact attribute class="contributor-group": layouts/partials/doors/home/about.html counts it.
+# COLLAPSE_THRESHOLD or more distinct projects shows all entries for the first SHOWN_PROJECTS distinct projects
+# and the remaining projects behind a disclosure, so long lists never push rows tall while short lists (1–4
+# projects) show in full. The filter (static/js/contributor-filter.js) opens the disclosure when it narrows
+# the list. Keep the exact attribute class="contributor-group": layouts/partials/doors/home/about.html counts it.
 SHOWN_PROJECTS = 2
 COLLAPSE_THRESHOLD = 5
 
@@ -335,7 +335,10 @@ def safe_project_url(raw_url):
     url = str(raw_url).strip()
     if not url:
         return ''
-    parsed = urlparse(url)
+    try:
+        parsed = urlparse(url)
+    except ValueError:
+        return ''
     if parsed.scheme in ('http', 'https') and parsed.netloc:
         return url
     if not parsed.scheme and not parsed.netloc and url.startswith('/') and not url.startswith('//'):
