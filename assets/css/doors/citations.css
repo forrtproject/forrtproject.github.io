@@ -1,7 +1,8 @@
 a.cite{color:inherit;text-decoration:underline dotted 1px var(--soft);text-underline-offset:3px}
 a.cite:hover,a.cite:focus{color:var(--link)}
-/* Hanging-indent APA reference lists on articles and pages (glossary term/hub lists set their own rules in glossary.css). */
-.article-layout .article-style ul.references-list:not(.term-references){margin:0 0 22px;padding:0;list-style:none}
+/* Hanging-indent APA reference lists on articles and pages (glossary term/hub lists set their own rules in glossary.css).
+   Keep to the 28.4em paragraph measure so hanging-indented first lines stay under 80 characters. */
+.article-layout .article-style ul.references-list:not(.term-references){margin:0 0 22px;padding:0;list-style:none;max-width:28.4em}
 .article-layout .article-style ul.references-list:not(.term-references) li{margin:0 0 10px;padding-inline-start:1.5em;text-indent:-1.5em;list-style:none;overflow-wrap:anywhere}
 .article-layout .article-style ul.references-list:not(.term-references) li:last-child{margin-bottom:0}
 /* Inline control that expands a shortened author list (layouts/partials/citations/authors.html). */
