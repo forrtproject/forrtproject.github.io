@@ -1,5 +1,6 @@
 ---
 title: List of References
+description: "The 557 references cited in the FORRT Glossary, each linked to the terms that cite it."
 ---
 
 These are the 557 references cited in the [FORRT Glossary](/glossary/).

@@ -121,8 +121,10 @@ def main():
     body.append("</div>\n")
 
     nav = "".join(f'<a href="#{l.lower() if l != "#" else "other"}">{l}</a>' for l in letters)
+    # A description of its own, so the page's meta description is not the start of the body (the letter bar).
     header = f"""---
 title: List of References
+description: "The {len(citations)} references cited in the FORRT Glossary, each linked to the terms that cite it."
 ---
 
 These are the {len(citations)} references cited in the [FORRT Glossary](/glossary/).
