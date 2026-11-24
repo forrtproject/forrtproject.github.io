@@ -791,7 +791,9 @@ html:has(.contributor-az){scroll-padding-top:calc(var(--contributor-az,72px) + 1
 .article-layout-wide .article-style .award-card>p:not([class]){max-width:29em;margin:0 0 10px;font-size:17px;line-height:1.5}
 .article-layout-wide .article-style .award-card>p:not([class]):last-child{margin-bottom:0}
 .article-layout-wide .article-style .award-card-links{display:flex;flex-wrap:wrap;gap:4px 18px;max-width:none;margin:auto 0 0;padding-top:6px}
-.article-layout-wide .article-style .award-card-links a{display:inline-flex;align-items:center;min-height:44px;font-size:16px;font-weight:600}
+.article-layout-wide .article-style .award-card-links a{display:inline-flex;align-items:center;gap:6px;min-height:44px;font-size:16px;font-weight:600}
+.article-layout-wide .article-style .award-card-links .fa-external-link-alt,.article-layout-wide .article-style .award-featured-actions .fa-external-link-alt{font-size:.78em}
+.article-layout-wide .article-style .award-featured-actions .fa-external-link-alt{margin-inline-start:6px}
 /* Impact & achievements: plain hairline-ruled list (DESIGN.md §4: running points stay text, not boxes). */
 .article-layout-wide .article-style ul.impact-list{max-width:none;margin:14px 0 0;padding:0;list-style:none;border-top:1px solid var(--line)}
 .article-layout-wide .article-style ul.impact-list li{max-width:29em;margin:0;padding:12px 0;font-size:18px;line-height:1.5;border-bottom:1px solid var(--line)}

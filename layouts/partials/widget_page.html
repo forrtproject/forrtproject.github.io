@@ -71,7 +71,7 @@
           {{ $r.body }}
         </section>
         {{/* There the reader has met the page's point, so the contents are one closed line they can open. */}}
-        {{ if and (eq $i 0) $hasCard $page.Params.toc_phone_after_first }}
+        {{ if and (eq $i 0) $hasCard $page.Params.toc_phone_after_first (ne $page.Params.phone_toc false) }}
         <details class="toc-phone toc-phone--closed"><summary class="toc-phone-label">On this page</summary><div class="article-toc">{{ $page.Scratch.Get "doors_toc_phone" | safeHTML }}</div></details>
         {{ end }}
         {{ end }}

@@ -67,7 +67,7 @@ subtitle = ""
       <img src="./Leo_Waaijers_Open_Science_Award_2026/4.webp" width="600" height="750" alt="Summary card describing FORRT as a community-driven initiative promoting open science, reproducibility, and ethical research practices">
     </div>
     <p><strong>The Leo Waaijers Open Science Award</strong> aims to recognise and reward outstanding contributions to open science in the Netherlands by highlighting these achievements. The award seeks to inspire others to apply and promote open science, stimulate innovation and strengthen the open science movement.</p>
-    <p class="award-featured-actions"><a href="https://www.openscience.nl/en/news/forrt-awarded-with-the-leo-waaijers-open-science-award-2026" class="btn dir-btn" target="_blank" rel="noopener">Read more</a></p>
+    <p class="award-featured-actions"><a href="https://www.openscience.nl/en/news/forrt-awarded-with-the-leo-waaijers-open-science-award-2026" class="btn dir-btn" target="_blank" rel="noopener">Read more <i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="visually-hidden"> (another website)</span></a></p>
   </article>
 
   <article class="award-featured award-featured-unesco">
@@ -77,7 +77,7 @@ subtitle = ""
       <img src="unesco_recognition.webp" width="200" height="207" alt="FORWARD: A UNESCO Decade of Science Programme" class="award-unesco-badge">
       <div>
         <p><strong>FORRT</strong> is one of the few initiatives worldwide to be formally endorsed as a <strong>Programme</strong> of the <a href="https://www.un-sciences-decade.org/en/endorsed-activities/forward-forrt-world-development-fostering-open-research-reproducibility-worldwide-accessible?hub=63" target="_blank" rel="noopener">International Decade of Sciences for Sustainable Development (IDSSD, 2024–2033)</a>, led by UNESCO and the United Nations (UN). This endorsement reflects the highest level of UN policy recognition and positions FORRT’s work in Education &amp; Pedagogy (Curriculum Hub), Metascience &amp; Research (Replication Hub) and Social Justice &amp; DEIA as an <strong>essential contribution to the UN’s strategy for achieving the Sustainable Development Goals (SDGs)</strong>.</p>
-        <p class="award-featured-actions"><a href="https://www.un-sciences-decade.org/en/endorsed-activities/forward-forrt-world-development-fostering-open-research-reproducibility-worldwide-accessible?hub=63" class="btn dir-btn" target="_blank" rel="noopener">Read the official UNESCO announcement</a></p>
+        <p class="award-featured-actions"><a href="https://www.un-sciences-decade.org/en/endorsed-activities/forward-forrt-world-development-fostering-open-research-reproducibility-worldwide-accessible?hub=63" class="btn dir-btn" target="_blank" rel="noopener">Read the official UNESCO announcement <i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="visually-hidden"> (another website)</span></a></p>
       </div>
     </div>
     {{< forward_unesco_sdgs_card >}}
@@ -94,7 +94,7 @@ subtitle = ""
     </div>
     <h3>Mission Award — Educational resources on the replication crisis</h3>
     <p>In 2025, FORRT received the <strong><a href="/positive-changes-replication-crisis/">Mission Award for Educational resources on the replication crisis</a></strong> from the Society for the Improvement of Psychological Science.</p>
-    <p class="award-card-links"><a href="https://improvingpsych.org/mission/awards/#:~:text=SEMA3-,June%202025,Educational%20resources%20on%20the%20replication%20crisis,-June%202025" target="_blank" rel="noopener">Announcement</a></p>
+    <p class="award-card-links"><a href="https://improvingpsych.org/mission/awards/#:~:text=SEMA3-,June%202025,Educational%20resources%20on%20the%20replication%20crisis,-June%202025" target="_blank" rel="noopener">Announcement <i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="visually-hidden"> (another website)</span></a></p>
   </article>
 
   <article class="award-card">
@@ -104,7 +104,7 @@ subtitle = ""
     </div>
     <h3>Commendation Award — Pownall et al. (2023)</h3>
     <p>In 2025, FORRT received a <strong>Commendation Award for <a href="https://doi.org/10.1098/rsos.221255" target="_blank" rel="noopener">Pownall et al. (2023): Teaching open and reproducible scholarship: a critical review of the evidence base for current pedagogical methods and their outcomes</a></strong> from the Society for the Improvement of Psychological Science.</p>
-    <p class="award-card-links"><a href="https://improvingpsych.org/mission/awards/" target="_blank" rel="noopener">Announcement</a></p>
+    <p class="award-card-links"><a href="https://improvingpsych.org/mission/awards/" target="_blank" rel="noopener">Announcement <i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="visually-hidden"> (another website)</span></a></p>
   </article>
 
   <article class="award-card">
@@ -114,7 +114,7 @@ subtitle = ""
     </div>
     <h3>Commendation Award — Open Science in the Developing World</h3>
     <p>In 2025, FORRT received a <strong>Commendation Award for <a href="/os-developing-world/">Open Science in the Developing World: A Collection of Practical Guides for Researchers in Developing Countries</a></strong> from the Society for the Improvement of Psychological Science.</p>
-    <p class="award-card-links"><a href="https://doi.org/10.1177/25152459251357565" target="_blank" rel="noopener">Published article</a> <a href="https://improvingpsych.org/mission/awards/" target="_blank" rel="noopener">Announcement</a></p>
+    <p class="award-card-links"><a href="https://doi.org/10.1177/25152459251357565" target="_blank" rel="noopener">Published article <i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="visually-hidden"> (another website)</span></a> <a href="https://improvingpsych.org/mission/awards/" target="_blank" rel="noopener">Announcement <i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="visually-hidden"> (another website)</span></a></p>
   </article>
 
   <article class="award-card">
@@ -124,7 +124,7 @@ subtitle = ""
     </div>
     <h3>Commendation Award — International Initiatives Systematic Mapping Review</h3>
     <p>In 2025, FORRT received a <strong>Commendation Award for <a href="https://doi.org/10.1098/rsos.241726" target="_blank" rel="noopener">International Initiatives to Enhance Awareness and Uptake of Open Research in Psychology: A Systematic Mapping Review</a></strong> from the Society for the Improvement of Psychological Science.</p>
-    <p class="award-card-links"><a href="https://improvingpsych.org/mission/awards/" target="_blank" rel="noopener">Announcement</a></p>
+    <p class="award-card-links"><a href="https://improvingpsych.org/mission/awards/" target="_blank" rel="noopener">Announcement <i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="visually-hidden"> (another website)</span></a></p>
   </article>
 
   <article class="award-card">
@@ -134,7 +134,7 @@ subtitle = ""
     </div>
     <h3>Commendation Award — FORRT Credit Project</h3>
     <p>In 2025, FORRT received a <strong><a href="/contributors/">Commendation Award for FORRT Credit Project</a></strong> from the Society for the Improvement of Psychological Science.</p>
-    <p class="award-card-links"><a href="https://improvingpsych.org/mission/awards/" target="_blank" rel="noopener">Announcement</a></p>
+    <p class="award-card-links"><a href="https://improvingpsych.org/mission/awards/" target="_blank" rel="noopener">Announcement <i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="visually-hidden"> (another website)</span></a></p>
   </article>
 </div>
 
@@ -166,7 +166,7 @@ subtitle = ""
     </div>
     <h3>OSC Award — Open Educational Resources</h3>
     <p>In 2023, FORRT received an <strong><a href="https://osc-international.com/osc-amsterdam/looking-back-oscawards/" target="_blank" rel="noopener">OSC Award</a></strong> in the Open Educational Resources / Open Education / Open Online Courses category from Open Science Community Amsterdam, receiving €200. This was for our paper, <a href="https://doi.org/10.1186/s13104-022-05944-1" target="_blank" rel="noopener">The role of pedagogical communities</a>.</p>
-    <p class="award-card-links"><a href="https://youtu.be/7wYW7xpqbUY" target="_blank" rel="noopener">Watch our successful pitch on YouTube</a></p>
+    <p class="award-card-links"><a href="https://youtu.be/7wYW7xpqbUY" target="_blank" rel="noopener">Watch our successful pitch on YouTube <i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="visually-hidden"> (another website)</span></a></p>
   </article>
 
   <article class="award-card">
@@ -176,7 +176,7 @@ subtitle = ""
     </div>
     <h3>Mission Award</h3>
     <p>In 2023, FORRT received the <strong>Mission Award</strong> from the Society for the Improvement of Psychological Science for its overall initiatives.</p>
-    <p class="award-card-links"><a href="https://improvingpsych.org/mission/awards/" target="_blank" rel="noopener">Announcement by SIPS</a></p>
+    <p class="award-card-links"><a href="https://improvingpsych.org/mission/awards/" target="_blank" rel="noopener">Announcement by SIPS <i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="visually-hidden"> (another website)</span></a></p>
   </article>
 
   <article class="award-card">
@@ -195,7 +195,7 @@ subtitle = ""
     </div>
     <h3>Commendation Award — Replications &amp; Reversals</h3>
     <p>In 2023, FORRT received a <strong>Commendation award</strong> from the Society for the Improvement of Psychological Science for its <a href="/reversals/">Replications &amp; Reversals</a> project.</p>
-    <p class="award-card-links"><a href="https://improvingpsych.org/2023/08/22/sips-2023-awards-announced/" target="_blank" rel="noopener">Announcement by SIPS</a></p>
+    <p class="award-card-links"><a href="https://improvingpsych.org/2023/08/22/sips-2023-awards-announced/" target="_blank" rel="noopener">Announcement by SIPS <i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="visually-hidden"> (another website)</span></a></p>
   </article>
 </div>
 
@@ -249,7 +249,7 @@ subtitle = ""
     </div>
     <h3>HiddenREF Commendation</h3>
     <p>In 2021, FORRT has received a <strong>Commendation</strong> from the <a href="https://hidden-ref.org/" target="_blank" rel="noopener">HiddenREF</a> for its initiatives advancing training materials and resources on open and reproducible science.</p>
-    <p class="award-card-links"><a href="https://youtu.be/btjRNG0NANg?t=1070" target="_blank" rel="noopener">Watch a recording of the award ceremony on YouTube</a></p>
+    <p class="award-card-links"><a href="https://youtu.be/btjRNG0NANg?t=1070" target="_blank" rel="noopener">Watch a recording of the award ceremony on YouTube <i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="visually-hidden"> (another website)</span></a></p>
   </article>
 
   <article class="award-card">
@@ -279,7 +279,7 @@ subtitle = ""
       <p class="award-org">Society for the Improvement of Psychological Science</p>
     </div>
     <h3>Commendation — Introducing FORRT</h3>
-    <p>In 2020, FORRT has received a <strong>Commendation</strong> from the <a href="http://improvingpsych.org/mission/awards/" target="_blank" rel="noopener">Society for the Improvement of Psychological Science</a> for its manuscript <a href="https://osf.io/bnh7p/" target="_blank" rel="noopener">“Introducing a Framework for Open and Reproducible Research Training (FORRT)”</a>.</p>
+    <p>In 2020, FORRT has received a <strong>Commendation</strong> from the <a href="https://improvingpsych.org/mission/awards/" target="_blank" rel="noopener">Society for the Improvement of Psychological Science</a> for its manuscript <a href="https://osf.io/bnh7p/" target="_blank" rel="noopener">“Introducing a Framework for Open and Reproducible Research Training (FORRT)”</a>.</p>
   </article>
 </div>
 

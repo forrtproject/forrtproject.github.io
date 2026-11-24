@@ -26,7 +26,7 @@ classtitle = "text-center"
 <section class="governance-contacts" aria-label="Who to contact">
   <div class="governance-card">
     <div class="governance-card-head">
-      <img src="/authors/ruthvanderhallenphd/avatar.webp" alt="Ruth Van der Hallen, PhD" width="72" height="72" class="governance-avatar">
+      <img src="/authors/ruthvanderhallenphd/avatar.webp" alt="" width="72" height="72" class="governance-avatar">
       <div>
         <p class="governance-role">Confidential Advisor</p>
         <p class="governance-name">Ruth Van der Hallen, PhD</p>
@@ -40,7 +40,7 @@ classtitle = "text-center"
   </div>
   <div class="governance-card">
     <div class="governance-card-head">
-      <img src="/authors/thomas-rhys-evans/avatar.webp" alt="Thomas Rhys Evans" width="72" height="72" class="governance-avatar">
+      <img src="/authors/thomas-rhys-evans/avatar.webp" alt="" width="72" height="72" class="governance-avatar">
       <div>
         <p class="governance-role">Ombuds</p>
         <p class="governance-name">Thomas Rhys Evans</p>
