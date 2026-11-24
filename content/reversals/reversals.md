@@ -440,7 +440,7 @@ The full list of effects is in [this spreadsheet](https://docs.google.com/spread
 * Replication effect size: Pollet et al.: Hedges’ _g_ (meta-analysis)=0.02. Hedges’ _g_ = -0.13 to 0.18.​
 {{< /spoiler >}}
 
-* **Bystander effect:** claims that the feeling of responsibility diffuses with an increasing number of other observers. Research about the bystander effect was sparked by the 1964 murder of Catherine “Kitty” Genovese. See this _[New York Times article](https://www.nytimes.com/1964/03/27/archives/37-who-saw-murder-didnt-call-the-police-apathy-at-stabbing-of.html)_ for details. Here’s a more detailed [resource](http://bps.stanford.edu/?page_id=3671).  
+* **Bystander effect:** claims that the feeling of responsibility diffuses with an increasing number of other observers. Research about the bystander effect was sparked by the 1964 murder of Catherine “Kitty” Genovese. See this _[New York Times article](https://web.archive.org/web/20260117225143/https://www.nytimes.com/1964/03/27/archives/37-who-saw-murder-didnt-call-the-police-apathy-at-stabbing-of.html)_ for details. Here’s a more detailed [resource](http://bps.stanford.edu/?page_id=3671).  
 {{< spoiler text="Statistics" >}} 
 * Status: mixed
 * Original paper(s): ‘[Bystander Interventions in Emergencies: Diffusion of Responsibility](https://web.archive.org/web/20170808145205id_/http://faculty.uncfsu.edu/tvancantfort/syllabi/gresearch/readings/a_darley.pdf)’, Darley et al. 1968, experiment, n = 59. [citations = 4413 (GS, August 2022)]. 
