@@ -1,0 +1,273 @@
+{{- define "main" -}}
+{{/* Replication Hub sub-pages (/replication-hub/large-scale-replication-projects/ and /replication-hub/submit/):
+     give both pages the Research-area (--res) identity of /replication-hub/, add filtering and search to the 35-project
+     directory, and pair the submission form with a companion guide on desktop (DESIGN.md §4, §6, §7). */}}
+{{ $body := partial "doors/content" .Content }}
+{{ if eq .Path "/replication-hub/large-scale-replication-projects" }}
+<div class="wrap rh-subpage rh-lsrp">
+  <header class="page-heading rh-head">
+    {{ partial "doors/crumbs" (dict "page" .) }}
+    <div class="heading-grid">
+      <div>
+        <h1>{{ .Title }}</h1>
+        <p class="lede">Completed and ongoing large-scale projects summarising replication and computational reproducibility efforts across sciences and humanities.</p>
+      </div>
+      {{ with resources.Get "images/doors/area-research.webp" }}
+      {{ $w := .Resize "440x webp q80" }}
+      <figure class="heading-plate heading-plate-research" aria-hidden="true"><img src="{{ $w.RelPermalink }}" width="{{ $w.Width }}" height="{{ $w.Height }}" alt=""></figure>
+      {{ end }}
+    </div>
+  </header>
+
+  <div class="rh-lsrp-tools" hidden>
+    <div class="rh-lsrp-search-wrap">
+      <label for="lsrp-search">Search projects</label>
+      <div class="rh-lsrp-input-row">
+        <input type="search" id="lsrp-search" placeholder="e.g. Many Labs, Economics, Medicine" autocomplete="off">
+        <button type="button" id="lsrp-clear" class="rh-lsrp-clear" hidden>Clear</button>
+      </div>
+      <p class="rh-lsrp-count" id="lsrp-count" aria-live="polite"></p>
+    </div>
+    <div class="rh-lsrp-fields" id="lsrp-fields" role="group" aria-label="Filter by discipline"></div>
+  </div>
+
+  <div class="article-style rh-lsrp-body">
+    {{ $body }}
+  </div>
+
+  <div class="rh-lsrp-groups" id="lsrp-groups" hidden></div>
+
+  <p class="rh-lsrp-empty" id="lsrp-empty" hidden>No projects match that filter.</p>
+
+  <nav class="rh-subfoot" aria-label="More in the Replication Hub">
+    <a href="{{ relref . "/replication-hub/flora" }}">About FLoRA</a>
+    <a href="{{ relref . "/replication-hub/submit" }}">Submit a replication</a>
+  </nav>
+</div>
+<script>
+(function () {
+  var table = document.querySelector('.rh-lsrp-body table');
+  if (!table) return;
+  var rows = [].slice.call(table.querySelectorAll('tbody tr'));
+  if (!rows.length) rows = [].slice.call(table.querySelectorAll('tr')).slice(1);
+  if (!rows.length) return;
+
+  function classify(topic) {
+    var t = topic.toLowerCase();
+    if (/psycholog|jdm|decision|baby|babies/.test(t)) return 'Psychology';
+    if (/econom|management/.test(t)) return 'Economics & Management';
+    if (/medicine|health|spinal|clinical|trial/.test(t)) return 'Medicine & Health';
+    if (/social|political|behaviour|behavior|human/.test(t)) return 'Social & Political Sciences';
+    return 'Biology, Philosophy & Other';
+  }
+
+  function hostLabel(href) {
+    try {
+      var u = new URL(href);
+      var h = u.hostname.replace(/^www\./, '');
+      if (h === 'doi.org' || h === 'dx.doi.org') return 'DOI article';
+      if (h === 'osf.io') return 'OSF project';
+      return h;
+    } catch (e) {
+      return 'Project link';
+    }
+  }
+
+  var counts = { All: rows.length };
+  var entries = rows.map(function (tr) {
+    var cells = tr.querySelectorAll('td');
+    if (cells.length < 3) return null;
+    var nameText = cells[0].textContent.trim();
+    var topicText = cells[1].textContent.trim();
+    var link = cells[2].querySelector('a[href]');
+    var field = classify(topicText);
+    counts[field] = (counts[field] || 0) + 1;
+    var href = link ? link.getAttribute('href') : '';
+    var source = href ? hostLabel(href) : '';
+    return {
+      name: nameText,
+      topic: topicText,
+      href: href,
+      source: source,
+      field: field,
+      search: (nameText + ' ' + topicText + ' ' + field + ' ' + source).toLowerCase()
+    };
+  }).filter(Boolean);
+
+  var tools = document.querySelector('.rh-lsrp-tools');
+  var fieldsBox = document.getElementById('lsrp-fields');
+  var groupsBox = document.getElementById('lsrp-groups');
+  var search = document.getElementById('lsrp-search');
+  var clear = document.getElementById('lsrp-clear');
+  var countEl = document.getElementById('lsrp-count');
+  var emptyEl = document.getElementById('lsrp-empty');
+  var order = ['All', 'Psychology', 'Social & Political Sciences', 'Economics & Management', 'Medicine & Health', 'Biology, Philosophy & Other'];
+  var activeField = 'All';
+
+  // Group entries under the five discipline headings as clean 2-column Research directory lists on desktop.
+  var sections = [];
+  order.slice(1).forEach(function (field) {
+    var groupEntries = entries.filter(function (e) { return e.field === field; });
+    if (!groupEntries.length) return;
+    var sec = document.createElement('section');
+    sec.className = 'rh-lsrp-group';
+    sec.dataset.field = field;
+    var head = document.createElement('header');
+    head.className = 'rh-lsrp-group-head';
+    var h2 = document.createElement('h2');
+    h2.textContent = field;
+    var badge = document.createElement('span');
+    badge.className = 'rh-lsrp-group-count';
+    badge.textContent = groupEntries.length + (groupEntries.length === 1 ? ' project' : ' projects');
+    head.appendChild(h2);
+    head.appendChild(badge);
+    sec.appendChild(head);
+
+    var ul = document.createElement('ul');
+    ul.className = 'rh-lsrp-list';
+    ul.setAttribute('role', 'list');
+    var nodes = groupEntries.map(function (entry) {
+      var li = document.createElement('li');
+      li.className = 'rh-lsrp-item';
+      li.dataset.search = entry.search;
+      li.dataset.field = entry.field;
+      var titleEl;
+      if (entry.href) {
+        titleEl = document.createElement('a');
+        titleEl.href = entry.href;
+        titleEl.target = '_blank';
+        titleEl.rel = 'noopener';
+        titleEl.className = 'lsrp-name-link';
+        titleEl.appendChild(document.createTextNode(entry.name + ' '));
+        var icon = document.createElement('i');
+        icon.className = 'fas fa-external-link-alt';
+        icon.setAttribute('aria-hidden', 'true');
+        titleEl.appendChild(icon);
+        var sr = document.createElement('span');
+        sr.className = 'visually-hidden';
+        sr.textContent = ' (another website, opens in a new tab)';
+        titleEl.appendChild(sr);
+      } else {
+        titleEl = document.createElement('span');
+        titleEl.className = 'lsrp-name-plain';
+        titleEl.textContent = entry.name;
+      }
+      var titleWrap = document.createElement('div');
+      titleWrap.className = 'lsrp-item-title';
+      titleWrap.appendChild(titleEl);
+      li.appendChild(titleWrap);
+
+      var meta = document.createElement('p');
+      meta.className = 'lsrp-item-meta';
+      meta.textContent = entry.source ? (entry.topic + ' · ' + entry.source) : entry.topic;
+      li.appendChild(meta);
+      ul.appendChild(li);
+      return li;
+    });
+    sec.appendChild(ul);
+    groupsBox.appendChild(sec);
+    sections.push({ el: sec, countEl: badge, nodes: nodes, field: field });
+  });
+
+  table.hidden = true;
+  groupsBox.hidden = false;
+
+  order.forEach(function (label) {
+    if (!counts[label]) return;
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'rh-field-pill' + (label === 'All' ? ' is-active' : '');
+    btn.setAttribute('aria-pressed', label === 'All' ? 'true' : 'false');
+    btn.dataset.field = label;
+    btn.textContent = label + ' (' + counts[label] + ')';
+    btn.addEventListener('click', function () {
+      activeField = label;
+      fieldsBox.querySelectorAll('.rh-field-pill').forEach(function (b) {
+        var on = b.dataset.field === activeField;
+        b.classList.toggle('is-active', on);
+        b.setAttribute('aria-pressed', String(on));
+      });
+      apply();
+    });
+    fieldsBox.appendChild(btn);
+  });
+
+  function apply() {
+    var q = search.value.trim().toLowerCase();
+    clear.hidden = !q;
+    var shown = 0;
+    sections.forEach(function (sec) {
+      var okField = activeField === 'All' || sec.field === activeField;
+      var secShown = 0;
+      sec.nodes.forEach(function (li) {
+        var show = okField && (!q || li.dataset.search.indexOf(q) !== -1);
+        li.hidden = !show;
+        if (show) { secShown++; shown++; }
+      });
+      sec.el.hidden = secShown === 0;
+      sec.countEl.textContent = secShown + (secShown === 1 ? ' project' : ' projects');
+    });
+    countEl.textContent = 'Showing ' + shown + ' of ' + entries.length + ' projects';
+    emptyEl.hidden = shown > 0;
+    groupsBox.hidden = shown === 0;
+  }
+
+  search.addEventListener('input', apply);
+  clear.addEventListener('click', function () { search.value = ''; apply(); search.focus(); });
+  function syncScrollHint() {
+    var atEnd = fieldsBox.scrollLeft + fieldsBox.clientWidth >= fieldsBox.scrollWidth - 4;
+    fieldsBox.classList.toggle('is-at-end', atEnd);
+  }
+  fieldsBox.addEventListener('scroll', syncScrollHint, { passive: true });
+  window.addEventListener('resize', syncScrollHint);
+  tools.hidden = false;
+  apply();
+  syncScrollHint();
+})();
+</script>
+{{ else if eq .Path "/replication-hub/submit" }}
+<div class="wrap rh-subpage rh-submit">
+  <header class="page-heading rh-head">
+    {{ partial "doors/crumbs" (dict "page" .) }}
+    <div class="heading-grid">
+      <div>
+        <h1>{{ .Title }}</h1>
+      </div>
+      {{ with resources.Get "images/doors/area-research.webp" }}
+      {{ $w := .Resize "440x webp q80" }}
+      <figure class="heading-plate heading-plate-research" aria-hidden="true"><img src="{{ $w.RelPermalink }}" width="{{ $w.Width }}" height="{{ $w.Height }}" alt=""></figure>
+      {{ end }}
+    </div>
+  </header>
+
+  <div class="rh-two-col">
+    <article class="reading rh-main">
+      <div class="article-style">
+        {{ $body }}
+      </div>
+    </article>
+
+    <aside class="rh-panel" aria-label="What FLoRA includes">
+      <h2>What FLoRA includes</h2>
+      <dl class="rh-glance">
+        <div>
+          <dt>Replications</dt>
+          <dd>Studies that intentionally repeat prior research with new data collected or used.</dd>
+        </div>
+        <div>
+          <dt>Reproductions</dt>
+          <dd>Studies that re-analyse the original study's data and methods to verify reported results.</dd>
+        </div>
+      </dl>
+      <h3>Related pages</h3>
+      <ul class="rh-panel-links" role="list">
+        <li><a href="{{ relref . "/replication-hub/flora" }}">About FLoRA and inclusion criteria</a></li>
+        <li><a href="{{ relref . "/replication-hub/large-scale-replication-projects" }}">Large-scale replication projects</a></li>
+      </ul>
+    </aside>
+  </div>
+</div>
+{{ else }}
+{{ partial "doors/reading" . }}
+{{ end }}
+{{- end -}}

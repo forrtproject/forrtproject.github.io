@@ -76,31 +76,27 @@ FORRT is driven by a **large and diverse community of contributors** that shape 
   <h2>Find contributors</h2>
   <div class="filter-grid">
     <div class="filter-field filter-name" hidden>
-      <label for="name-search">Find a name</label>
-      <input id="name-search" type="search" autocomplete="off" spellcheck="false" aria-describedby="contributor-count">
-      <p id="contributor-count" class="contributor-count" role="status" hidden></p>
+      <label for="name-search">Name</label>
+      <input id="name-search" type="search" autocomplete="off" spellcheck="false" placeholder="Search names" aria-describedby="contributor-count">
     </div>
-    <div class="filter-field">
-      <label for="project-select">Project</label>
-      <select id="project-select">
-        <option value="">All</option>
-      </select>
-    </div>
-    <div class="filter-field">
+    <div class="filter-field filter-role">
       <label for="role-select">Role</label>
       <select id="role-select">
-        <option value="">All</option>
+        <option value="">All roles</option>
       </select>
     </div>
-    <div class="filter-field">
-      <button id="apply-filter">Apply filter</button>
+    <div class="filter-field filter-project">
+      <label for="project-select">Project</label>
+      <select id="project-select">
+        <option value="">All projects</option>
+      </select>
+    </div>
+    <div class="filter-field filter-apply">
+      <button id="apply-filter" type="button">Apply filter</button>
     </div>
   </div>
-  <div id="filter-results" style="display: none;">
-    <p class="filter-title">Filtered results</p>
-    <div id="filter-info"></div>
-    <button id="clear-filters">Reset filter</button>
-  </div>
+  <div id="active-contributor-filters" class="contributor-active-filters" hidden></div>
+  <p id="contributor-count" class="contributor-count" hidden></p>
 </div>
 </div>
 

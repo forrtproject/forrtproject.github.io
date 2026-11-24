@@ -3,15 +3,12 @@ title: "Submit a Replication to FLoRA"
 url: "/replication-hub/submit/"
 ---
 
-<br>
-
-
 We aim to build a comprehensive database of replication studies across all disciplines.
 If you have conducted a replication study that we have not yet included, or just seen one, 
 please submit it using the form below.
 
 If you want to check if a replication study is already included in the database, 
 the easiest way is to use the 
-<a href="/annotator" target="_blank">FLoRA References Annotator</a>
+<a href="https://forrt.org/flora-replication-atlas/" target="_blank" rel="noopener">FLoRA Replication Atlas</a>.
 
-{{< click_to_load src="https://docs.google.com/forms/d/e/1FAIpQLSeMCwdtP0TPgL55stniuyyTxnNwyC34mO4VUuLcQwYrLI89sQ/viewform" provider="Google" label="This document" title="Form to submit a replication" width="100%" height="800px" >}}
+{{< click_to_load src="https://docs.google.com/forms/d/e/1FAIpQLSeMCwdtP0TPgL55stniuyyTxnNwyC34mO4VUuLcQwYrLI89sQ/viewform" provider="Google" label="The submission form" button="Load submission form" title="Form to submit a replication" width="100%" height="800px" >}}

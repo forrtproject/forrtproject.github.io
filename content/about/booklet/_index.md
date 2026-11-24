@@ -21,7 +21,7 @@ summary = "Learn more about FORRT in the interactive flipbook below: If you pref
   ]
 [[inside]]
   key = "res"
-  title = "Metascience & Research"
+  title = "Meta-Science & Research"
   pages = [
     { title = "Replications: FReD and the Annotator", page = 7, url = "replication-hub/" },
     { title = "Handbook for reproduction and replication studies", page = 8, url = "https://forrt.org/replication-handbook/" },

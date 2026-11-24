@@ -43,6 +43,8 @@ ul.network-icon{display:flex;flex-wrap:wrap;gap:6px 10px;margin:6px 0 0;padding:
 ul.network-icon li{margin:0}
 ul.network-icon a{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;font-size:18px;color:var(--link)}
 ul.network-icon a:hover{color:var(--ink)}
+/* Academicons' Google Scholar glyph is drawn narrower and thinner than Font Awesome's icons; scale and weight it to match. */
+ul.network-icon .ai-google-scholar{font-size:1.24em;line-height:1;-webkit-text-stroke:.35px currentColor}
 .cite-dialog{width:min(640px,calc(100% - 32px));padding:22px;border:0;border-radius:var(--r-large);background:var(--page);color:var(--ink)}
 .cite-dialog::backdrop{background:rgba(38,45,53,.55)}
 .cite-dialog h2{font-size:26px}

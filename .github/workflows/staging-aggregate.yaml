@@ -559,6 +559,42 @@ jobs:
             echo "- ✅ Shows combined state of all compatible PRs"
           } >> deployment-summary.md
 
+      # Other FORRT repositories deploy their own sites into sub-folders of the
+      # staging branch (e.g. /flora-explorer/), each marked with a `.staging-subsite`
+      # file. The deploy below replaces the whole branch, so copy every marked
+      # folder into the new build first. Only marked folders are kept: pages from
+      # closed website PRs still disappear. A website path always wins over a
+      # sub-site with the same name.
+      - name: Preserve sub-sites deployed by other repositories
+        if: needs.build.result == 'success' && needs.build.outputs.site-built == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.STAGING_GITHUB_TOKEN }}
+          DEST: ${{ github.repository }}/forrt-website
+        run: |
+          AUTH="AUTHORIZATION: basic $(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)"
+          CURRENT="$RUNNER_TEMP/staging-current"
+          # Blobless, no checkout: only the marked folders are downloaded.
+          git -c http.extraHeader="$AUTH" clone --quiet --depth 1 --filter=blob:none \
+            --no-checkout --branch staging \
+            https://github.com/forrtproject/webpage-staging.git "$CURRENT"
+          mapfile -t SLUGS < <(git -C "$CURRENT" ls-tree --name-only -r HEAD \
+            | sed -n 's#^\([^/]*\)/\.staging-subsite$#\1#p')
+          if [ ${#SLUGS[@]} -eq 0 ]; then
+            echo "No sub-sites to preserve."
+            exit 0
+          fi
+          # Anchored, so same-named folders nested elsewhere are not downloaded.
+          printf '/%s/\n' "${SLUGS[@]}" | git -C "$CURRENT" sparse-checkout set --no-cone --stdin
+          git -C "$CURRENT" -c http.extraHeader="$AUTH" checkout --quiet
+          for slug in "${SLUGS[@]}"; do
+            if [ -e "$DEST/$slug" ]; then
+              echo "::warning::Not preserving sub-site '$slug': the website build already has /$slug/."
+              continue
+            fi
+            cp -r "$CURRENT/$slug" "$DEST/$slug"
+            echo "Preserved sub-site /$slug/"
+          done
+
       - name: Deploy - GitHub Pages
         if: needs.build.result == 'success' && needs.build.outputs.site-built == 'true'
         uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453 # v4.1.0

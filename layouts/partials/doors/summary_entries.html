@@ -33,9 +33,28 @@
 {{ $gist := partial "doors/summary_gist" (dict "s" .) }}
 {{ with $gist.long }}<span class="summary-gist" aria-hidden="true"><span class="summary-gist-long">{{ . }}</span><span class="summary-gist-short">{{ $gist.short }}</span></span>{{ end }}
 {{ end }}</summary>
+{{ with $t.credit }}<p class="summary-credit"><small>Summary by {{ . }}</small></p>{{ end }}
 <h4>Main takeaways</h4>
-<ul>
-  {{ range .Main_Takeaways }}<li>{{ . }}</li>{{ end }}
+{{ $linked := .Main_Takeaway_Links | default dict }}
+<ul class="summary-takeaways">
+  {{ range $index, $text := .Main_Takeaways -}}
+  <li>
+    {{- with index $linked (string $index) -}}
+      {{- range . -}}
+        {{- $href := .href -}}
+        {{- if and $dei $href (hasPrefix $href "#") -}}
+          {{- $id := strings.TrimPrefix "#" $href -}}
+          {{- if and (index $all $id) (not (index $shown $id)) -}}
+            {{- $href = printf "%s%s" (relref $.page "/summaries/open-reproducible") $href -}}
+          {{- end -}}
+        {{- end -}}
+        {{- if $href }}<a href="{{ $href }}">{{ .text }}</a>{{ else }}{{ .text }}{{ end -}}
+      {{- end -}}
+    {{- else -}}
+      {{- $text -}}
+    {{- end -}}
+  </li>
+  {{ end }}
 </ul>
 {{ with .Quote }}
 <h4>Quote</h4>
@@ -51,13 +70,14 @@
 <ul>
   {{ range $rel := . }}
   {{ $href := $rel.href }}
+  {{ $label := trim (replace $rel.Relevant_ref "⬦" "") "  " }}
   {{/* A related entry with no address, or an id the source no longer has: find the entry by its title,
        or show the title unlinked. */}}
   {{ if or (not $href) (and (hasPrefix $href "#") (not (index $all (strings.TrimPrefix "#" $href)))) }}
     {{ $href = "" }}{{ with index $byTitle (replaceRE `[^a-z0-9]` "" (lower $rel.Relevant_ref)) }}{{ $href = printf "#%s" . }}{{ end }}
   {{ end }}
   {{ if and $dei $href (hasPrefix $href "#") (not (index $shown (strings.TrimPrefix "#" $href))) }}{{ $href = printf "%s%s" (relref $.page "/summaries/open-reproducible") $href }}{{ end }}
-  <li>{{ with $href }}<a href="{{ . }}">{{ $rel.Relevant_ref }}</a>{{ else }}{{ $rel.Relevant_ref }}{{ end }}</li>
+  <li>{{ with $href }}<a href="{{ . }}">{{ $label }}</a>{{ else }}{{ $label }}{{ end }}</li>
   {{ end }}
 </ul>
 {{ end }}

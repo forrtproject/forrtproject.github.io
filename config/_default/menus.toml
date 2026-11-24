@@ -6,7 +6,7 @@
 
 [[main]]
   name = "About FORRT"
-  url = ""
+  url = "about/us"
   weight = 10
   identifier = "about"
 
@@ -407,6 +407,14 @@
     group = "Track"
 
 [[main]]
+  name = "FLoRA"
+  url = "replication-hub/flora/"
+  weight = 61.5
+  parent = "replications"
+  [main.params]
+    group = "Track"
+
+[[main]]
   name = "Replication Atlas"
   url = "https://forrt.org/flora-replication-atlas/"
   weight = 63
@@ -439,7 +447,7 @@
     group = "Explore"
 
 [[main]]
-  name = "FORRT ORE browser extension"
+  name = "Browser Extension"
   url = "https://forrt.org/chromium-extension/"
   weight = 67
   parent = "replications"

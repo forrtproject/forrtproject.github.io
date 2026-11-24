@@ -78,7 +78,10 @@
 
 {{- else -}}
 {{/* =========================================================================
-     Authors index  (/authors/) — lists every author who has a profile page.
+     Authors index  (/authors/) — lists authors whose profile page has content
+     (see partials/authors/is-substantive.html); empty template stubs stay
+     reachable by URL but are noindexed, left out of the sitemap and not linked
+     from here.
      ========================================================================= */}}
 <div class="wrap">
   <div class="article-layout article-layout-single">
@@ -90,7 +93,9 @@
       {{ with $page.Content }}<div class="article-style">{{ partial "doors/content" . }}</div>{{ end }}
       <ul class="plain-list authors-index">
         {{ range $page.Pages.ByParam "name" }}
+          {{ if partial "authors/is-substantive.html" . }}
           <li><a href="{{ .RelPermalink }}">{{ .Params.name | default .Title }}</a></li>
+          {{ end }}
         {{ end }}
       </ul>
     </article>
