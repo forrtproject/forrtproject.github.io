@@ -4,6 +4,7 @@ import json
 from contextlib import redirect_stdout
 from io import StringIO
 from html import escape
+import os
 import shutil
 import subprocess
 import sys
@@ -624,8 +625,9 @@ class ReversalsOutcomeBoardCheck(unittest.TestCase):
         wrapped_board = valid.replace('<section class="outcome-board"', '<div><section class="outcome-board"').replace('</section><div class="list-filter"', '</section></div><div class="list-filter"')
         self.assertIn("must immediately precede .list-filter", self.check(wrapped_board)[0])
 
-    @unittest.skipUnless(shutil.which("hugo"), "hugo not installed")
+    @unittest.skipUnless(os.environ.get("CI") or shutil.which("hugo"), "hugo not installed")
     def test_hugo_outcome_board_partial_edge_cases(self):
+        self.assertIsNotNone(shutil.which("hugo"), "hugo must be installed in CI")
         repo = Path(__file__).resolve().parents[2]
         partial = repo / "layouts" / "partials" / "doors" / "outcome_board.html"
         with tempfile.TemporaryDirectory() as tmp:

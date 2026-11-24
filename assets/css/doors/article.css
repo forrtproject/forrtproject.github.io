@@ -480,9 +480,9 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .article-layout .article-style .outcome-board h2{margin:0 0 4px;font-size:clamp(25px,2.4vw,31px);line-height:1.15}
 .article-layout .article-style .outcome-hint{margin:0 0 14px;font-size:17px}
 .article-layout .article-style .outcome-board .outcome-hint[hidden]{display:block!important;visibility:hidden}
-.outcome-tiles{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+.outcome-tiles{container-type:inline-size;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;--brick-cols:11}
 .article-layout .article-style .outcome-tile{display:flex;flex-wrap:wrap;align-content:flex-start;align-items:baseline;column-gap:8px;box-sizing:border-box;min-width:0;margin:0;padding:17px 12px 14px;border:0;border-radius:var(--r-small);background:var(--out-bg);box-shadow:inset 0 5px 0 var(--out);color:var(--ink);text-align:start}
-.article-layout .article-style .outcome-tile:not(:has(.outcome-bricks)){min-height:calc(105px + round(up,var(--max-many,0)/11,1) * 8px)}
+.article-layout .article-style .outcome-tile:not(:has(.outcome-bricks)){min-height:calc(105px + round(up,var(--max-many,0)/var(--brick-cols),1) * 8px)}
 .article-layout .article-style button.outcome-tile{cursor:pointer}
 .outcome-tile .outcome-many{font:var(--display-weight) 44px/1 var(--display)}
 .outcome-tile .outcome-word{flex:1 1 100%;margin-top:2px;font:600 17px/1.2 var(--text)}
@@ -492,10 +492,17 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .article-layout .article-style .outcome-tile[aria-pressed=true]{box-shadow:inset 0 5px 0 var(--out),inset 0 0 0 2px var(--ink)}
 .article-layout .article-style button.outcome-tile:hover .outcome-word{text-decoration:underline;text-underline-offset:3px}
 .article-layout .article-style .outcome-tile:focus-visible,.article-layout .article-style .outcome-clear:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+/* Brick columns in a 5-tile row follow the rendered container width (each brick is 9 px + 2 px gap, so k bricks
+   need 55k + 142 px on .outcome-tiles), avoiding height shift at any viewport width during enhancement. */
+@container (max-width:746.9px){.article-layout .article-style .outcome-tile:not(:has(.outcome-bricks)){--brick-cols:10}}
+@container (max-width:691.9px){.article-layout .article-style .outcome-tile:not(:has(.outcome-bricks)){--brick-cols:9}}
+@container (max-width:636.9px){.article-layout .article-style .outcome-tile:not(:has(.outcome-bricks)){--brick-cols:8}}
+@container (max-width:581.9px){.article-layout .article-style .outcome-tile:not(:has(.outcome-bricks)){--brick-cols:7}}
+@container (max-width:526.9px){.article-layout .article-style .outcome-tile:not(:has(.outcome-bricks)){--brick-cols:6}}
 /* Where "not replicated" takes two lines, every tile keeps two, so that the bricks start level. */
 @media(min-width:761px) and (max-width:1240px){
   .outcome-tile .outcome-word{min-height:2.4em}
-  .article-layout .article-style .outcome-tile:not(:has(.outcome-bricks)){min-height:calc(126px + round(up,var(--max-many,0)/9,1) * 8px)}
+  .article-layout .article-style .outcome-tile:not(:has(.outcome-bricks)){min-height:calc(126px + round(up,var(--max-many,0)/var(--brick-cols),1) * 8px)}
 }
 .article-layout .article-style .outcome-note{max-width:31em;margin:12px 0 0;font-size:16px;line-height:1.45}
 /* The toolbar stays at the top of the screen while the effects scroll, up to the end of the list; on a phone only the
@@ -577,10 +584,21 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
 }
 @media(max-width:760px){
   /* A tile is a row: count and word, then its bricks. Before site.js runs, keep the same 5-row stack and reserve
-     each tile's brick height so enhancement causes no shift; <noscript> collapses it into a compact 2-column grid. */
-  .outcome-tiles{grid-template-columns:minmax(0,1fr)}
+     each tile's brick height from the rendered container width (k bricks need 11k + 146 px on .outcome-tiles);
+     <noscript> collapses it into a compact 2-column grid. */
+  .outcome-tiles{grid-template-columns:minmax(0,1fr);--brick-cols:21}
   .article-layout .article-style .outcome-tile{display:grid;grid-template-columns:112px minmax(0,1fr);column-gap:12px;align-items:center;padding:17px 12px 11px}
-  .article-layout .article-style .outcome-tile:not(:has(.outcome-bricks)){min-height:calc(26px + round(up,var(--many,0)/18,1) * 8px)}
+  .article-layout .article-style .outcome-tile:not(:has(.outcome-bricks)){min-height:calc(26px + round(up,var(--many,0)/var(--brick-cols),1) * 8px)}
+  @container (min-width:377px){.article-layout .article-style .outcome-tile:not(:has(.outcome-bricks)){--brick-cols:21}}
+  @container (max-width:376.9px){.article-layout .article-style .outcome-tile:not(:has(.outcome-bricks)){--brick-cols:20}}
+  @container (max-width:365.9px){.article-layout .article-style .outcome-tile:not(:has(.outcome-bricks)){--brick-cols:19}}
+  @container (max-width:354.9px){.article-layout .article-style .outcome-tile:not(:has(.outcome-bricks)){--brick-cols:18}}
+  @container (max-width:343.9px){.article-layout .article-style .outcome-tile:not(:has(.outcome-bricks)){--brick-cols:17}}
+  @container (max-width:332.9px){.article-layout .article-style .outcome-tile:not(:has(.outcome-bricks)){--brick-cols:16}}
+  @container (max-width:321.9px){.article-layout .article-style .outcome-tile:not(:has(.outcome-bricks)){--brick-cols:15}}
+  @container (max-width:310.9px){.article-layout .article-style .outcome-tile:not(:has(.outcome-bricks)){--brick-cols:14}}
+  @container (max-width:299.9px){.article-layout .article-style .outcome-tile:not(:has(.outcome-bricks)){--brick-cols:13}}
+  @container (max-width:288.9px){.article-layout .article-style .outcome-tile:not(:has(.outcome-bricks)){--brick-cols:12}}
   .outcome-tile .outcome-many{grid-column:1;font-size:36px}
   .outcome-tile .outcome-word{grid-column:1;min-height:0;font-size:16px}
   .outcome-bricks{grid-column:2;grid-row:1/span 2;margin:0}
@@ -590,7 +608,6 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
   .article-layout .article-style .list-filter-section li:has(>.entry-text)>.spoiler>summary{min-height:44px}
   .article-layout .article-style .list-filter-section .is-long>.entry-text>.entry-more{min-height:1lh}
 }
-@media(max-width:360px){.article-layout .article-style .outcome-tile:not(:has(.outcome-bricks)){min-height:calc(26px + round(up,var(--many,0)/12,1) * 8px)}}
 /* News cards with a picture (DESIGN.md §1): the news list (section/post.html) and the end of each article (doors/read_next). */
 .announcements-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,290px),1fr));gap:20px;margin:0;padding:0;list-style:none}
 .announcements-grid>li[hidden]{display:none}
