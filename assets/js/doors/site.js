@@ -580,6 +580,7 @@ if (chatWidget) {
   const chatDismiss = chatWidget.querySelector('#just-os-dismiss');
   const chatBubble = chatWidget.querySelector('#just-os-bubble');
   const navJustOs = document.getElementById('nav-just-os');
+  const extraJustOs = [...document.querySelectorAll('[data-open-just-os]')];
   let chatLoading = false;
   let chatFailed = false;
   let lastOpener = null;
@@ -604,6 +605,7 @@ if (chatWidget) {
     const open = chatOpen();
     if (chatButton.tagName === 'BUTTON') chatButton.setAttribute('aria-expanded', String(open));
     if (navJustOs?.tagName === 'BUTTON') navJustOs.setAttribute('aria-expanded', String(open));
+    extraJustOs.forEach((btn) => btn.setAttribute('aria-expanded', String(open)));
   };
   const launcherFocused = () => {
     try {
@@ -731,7 +733,7 @@ if (chatWidget) {
     }
   });
 
-  const openOrToggleChat = ({ fromMenu = false } = {}) => {
+  const openOrToggleChat = ({ fallbackHref = '' } = {}) => {
     if (window.toggleJustOS) {
       window.toggleJustOS();
       syncExpanded();
@@ -755,8 +757,8 @@ if (chatWidget) {
       chatLoading = false;
       chatFailed = true;
       document.getElementById('just-os-window')?.remove();
-      if (fromMenu && navJustOs?.dataset.href) {
-        location.href = navJustOs.dataset.href;
+      if (fallbackHref) {
+        location.href = fallbackHref;
         return;
       }
       chatBubble.textContent = 'The chat did not load. Try again in a moment.';
@@ -776,9 +778,15 @@ if (chatWidget) {
       closeMenus();
       closePhoneMenu();
       lastOpener = toggle;
-      openOrToggleChat({ fromMenu: true });
+      openOrToggleChat({ fallbackHref: navJustOs.dataset.href });
     });
   }
+  extraJustOs.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      lastOpener = btn;
+      openOrToggleChat({ fallbackHref: btn.dataset.href });
+    });
+  });
 }
 
 // Glossary pages: filter the list of terms, and show the current term inside its card.

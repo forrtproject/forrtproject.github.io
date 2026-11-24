@@ -621,6 +621,26 @@ def check_phone_reading(browser, base, failures):
                          " && !document.getElementById('just-os-btn').getClientRects().length"
                          " && document.activeElement?.classList.contains('menu-toggle')"),
            "Escape closes the chat, keeps the corner launcher hidden, and returns focus to Menu")
+    # On the home page, phones also get a visible inline "Ask JUST-OS" button right below the hero actions.
+    page.goto(base, wait_until="load")
+    page.wait_for_timeout(300)
+    hero_btn = page.evaluate("""() => {
+      const el = document.querySelector('.hero-justos');
+      if (!el) return null;
+      const r = el.getBoundingClientRect();
+      const img = el.querySelector('img');
+      return {text: el.textContent.trim(), h: r.height, w: r.width, icon: Boolean(img && img.complete && img.naturalWidth > 0)};
+    }""")
+    expect(bool(hero_btn and hero_btn["text"] == "Ask JUST-OS" and hero_btn["h"] >= 44 and hero_btn["icon"]),
+           f"on a phone the home page hero includes a visible 'Ask JUST-OS' button ({hero_btn})")
+    page.locator(".hero-justos").tap()
+    page.wait_for_function("document.getElementById('just-os-window')?.style.display === 'flex'", timeout=15000)
+    page.wait_for_function("document.activeElement?.classList.contains('just-os-input')", timeout=5000)
+    page.keyboard.press("Escape")
+    page.wait_for_timeout(300)
+    expect(page.evaluate("document.getElementById('just-os-window')?.style.display !== 'flex'"
+                         " && document.activeElement?.classList.contains('hero-justos')"),
+           "Escape closes the chat opened from the home page hero and returns focus to it")
     # With the cookie banner unanswered on /reversals/, the corner launcher stays hidden on phones.
     page.goto(base + "reversals/", wait_until="load")
     page.wait_for_selector(".cc-window", timeout=10000)
