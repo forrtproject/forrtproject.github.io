@@ -4,6 +4,8 @@ import json
 from contextlib import redirect_stdout
 from io import StringIO
 from html import escape
+import shutil
+import subprocess
 import sys
 import tempfile
 import unittest
@@ -81,6 +83,22 @@ class DescriptionURLReport(unittest.TestCase):
                 summary_page = Path(public) / "summaries" / name / "index.html"
                 summary_page.parent.mkdir(parents=True, exist_ok=True)
                 summary_page.write_text("<meta name='description' content='Summaries'>", encoding="utf-8")
+            reversals = Path(public) / seo.REVERSALS_PAGE
+            reversals.parent.mkdir(parents=True)
+            reversals.write_text(
+                "<meta name='description' content='Reversals'><h1>Reversals</h1>"
+                "<section class='outcome-board' aria-labelledby='outcome-board-title'>"
+                "<h2 id='outcome-board-title'>What replications found for 1 effects</h2>"
+                "<p class='outcome-hint' hidden>Choose an outcome to list only those effects.</p>"
+                "<div class='outcome-tiles' role='list'>"
+                "<div class='outcome-tile status-reversed' data-status='reversed' role='listitem'>"
+                "<span class='outcome-many'>1</span> <span class='outcome-word'>reversed</span></div>"
+                "</div></section>"
+                "<div class='list-filter' data-noun='effects' hidden></div>"
+                "<ul><li><p>Effect</p><details class='spoiler'><summary>Statistics</summary>"
+                "<div class='spoiler-body'><ul><li>Status: reversed</li></ul></div></details></li></ul>",
+                encoding="utf-8",
+            )
             output = StringIO()
             with redirect_stdout(output):
                 self.assertEqual(seo.main(public, summaries={}), 0)
@@ -456,6 +474,207 @@ class GlossaryAkaFilterCheck(unittest.TestCase):
                  "/glossary/english/missing/": self.page("Lost")}
         self.assertEqual(seo.glossary_aka_failures(self.HUB, pages),
                          ["/glossary/english/missing/ (Lost)", "/glossary/english/type_i_error/ (Type 1 error)"])
+
+
+class ReversalsOutcomeBoardCheck(unittest.TestCase):
+    def check(self, html):
+        with tempfile.TemporaryDirectory() as public:
+            if html is not None:
+                page = Path(public) / seo.REVERSALS_PAGE
+                page.parent.mkdir(parents=True)
+                page.write_text(html, encoding="utf-8")
+            return seo.check_reversals_outcome_board(public)
+
+    @staticmethod
+    def build_page(tiles, effects, *, title=None, hint_hidden=True, include_board=True, extra_spoiler=False):
+        total = len(effects)
+        heading = title if title is not None else f"What replications found for {total} effects"
+        hint_attr = " hidden" if hint_hidden else ""
+        tile_html = "".join(
+            f'<div class="outcome-tile status-{k}" data-status="{k}" role="listitem">'
+            f'<span class="outcome-many">{n}</span> <span class="outcome-word">{w}</span></div>'
+            for k, n, w in tiles
+        )
+        board = (
+            f'<section class="outcome-board" aria-labelledby="outcome-board-title">'
+            f'<h2 id="outcome-board-title">{heading}</h2>'
+            f'<p class="outcome-hint"{hint_attr}>Choose an outcome to list only those effects.</p>'
+            f'<div class="outcome-tiles" role="list">{tile_html}</div></section>'
+            if include_board else ""
+        )
+        effect_html = "".join(
+            f'<li><p><strong>Effect {i}</strong></p><details class="spoiler ">'
+            f'<summary>Statistics</summary><div class="spoiler-body"><ul>{body}</ul></div></details></li>'
+            for i, body in enumerate(effects)
+        )
+        standalone = (
+            '<details class="spoiler "><summary>About this project</summary>'
+            '<div class="spoiler-body"><h3>Motivation</h3><p>History</p></div></details>'
+            if extra_spoiler else ""
+        )
+        return f'{board}<div class="list-filter" data-noun="effects" hidden></div><ul>{effect_html}</ul>{standalone}'
+
+    def test_matching_five_outcome_board_and_standalone_spoiler_pass(self):
+        tiles = [
+            ("replicated", 1, "replicated"),
+            ("mixed", 1, "mixed"),
+            ("not-replicated", 2, "not replicated"),
+            ("reversed", 1, "reversed"),
+            ("no-status", 1, "no status"),
+        ]
+        effects = [
+            "<li>Status: replicated</li>",
+            "<li>Status: mixed</li><li>Status: replicated</li>",
+            "<li>Status: not replicated/[retracted]</li>",
+            "<li>Status: mixed (core hypothesis not replicated)</li>",
+            "<li>Status: reversed</li>",
+            "<li>Status: NA</li>",
+        ]
+        self.assertEqual(self.check(self.build_page(tiles, effects, extra_spoiler=True)), [])
+
+    def test_minified_html_without_closing_li_or_quotes_passes(self):
+        html = (
+            "<section class=outcome-board aria-labelledby=outcome-board-title>"
+            "<h2 id=outcome-board-title>What replications found for 2 effects</h2>"
+            "<p class=outcome-hint hidden>Choose an outcome to list only those effects.</p>"
+            "<div class=outcome-tiles role=list>"
+            "<div class='outcome-tile status-replicated' data-status=replicated role=listitem>"
+            "<span class=outcome-many>1</span> <span class=outcome-word>replicated</span></div>"
+            "<div class='outcome-tile status-reversed' data-status=reversed role=listitem>"
+            "<span class=outcome-many>1</span> <span class=outcome-word>reversed</span></div>"
+            "</div></section>"
+            "<div class=list-filter data-noun=effects hidden></div>"
+            "<ul><li><p>A<details class=spoiler><summary>Statistics</summary>"
+            "<div class=spoiler-body><ul><li>Status: replicated<li>Original paper: X</ul></div></details>"
+            "<li><p>B<details class=spoiler><summary>Statistics</summary>"
+            "<div class=spoiler-body><ul><li>Status: reversed</ul></div></details></ul>"
+        )
+        self.assertEqual(self.check(html), [])
+
+    def test_missing_board_or_page_fails(self):
+        self.assertIn("page not found", self.check(None)[0])
+        html = self.build_page([], ["<li>Status: reversed</li>"], include_board=False)
+        self.assertIn("expected 1 static outcome board, found 0", self.check(html)[0])
+
+    def test_mismatched_totals_or_heading_or_visible_hint_fail(self):
+        effects = ["<li>Status: replicated</li>", "<li>Status: reversed</li>"]
+        wrong_count = self.build_page([("replicated", 2, "replicated"), ("reversed", 1, "reversed")], effects)
+        self.assertIn("do not match listed effects", self.check(wrong_count)[0])
+
+        wrong_title = self.build_page(
+            [("replicated", 1, "replicated"), ("reversed", 1, "reversed")],
+            effects,
+            title="What replications found for 99 effects",
+        )
+        self.assertIn("outcome board heading", self.check(wrong_title)[0])
+
+        visible_hint = self.build_page(
+            [("replicated", 1, "replicated"), ("reversed", 1, "reversed")],
+            effects,
+            hint_hidden=False,
+        )
+        self.assertIn("outcome-hint should be hidden", self.check(visible_hint)[0])
+
+    def test_trailing_note_and_nested_status_lists_match_js(self):
+        tiles = [
+            ("not-replicated", 1, "not replicated"),
+            ("reversed", 1, "reversed"),
+        ]
+        html = (
+            '<section class="outcome-board" aria-labelledby="outcome-board-title">'
+            '<h2 id="outcome-board-title">What replications found for 2 effects</h2>'
+            '<p class="outcome-hint" hidden>Choose an outcome to list only those effects.</p>'
+            '<div class="outcome-tiles" role="list">'
+            '<div class="outcome-tile status-not-replicated" data-status="not-replicated" role="listitem">'
+            '<span class="outcome-many">1</span> <span class="outcome-word">not replicated</span></div>'
+            '<div class="outcome-tile status-reversed" data-status="reversed" role="listitem">'
+            '<span class="outcome-many">1</span> <span class="outcome-word">reversed</span></div>'
+            '</div></section>'
+            '<div class="list-filter" data-noun="effects" hidden></div>'
+            '<ul>'
+            '<li><p><strong>A</strong></p><details class="spoiler"><summary>Statistics</summary>'
+            '<div class="spoiler-body"><ul><li>Status: mixed<ul><li>One result was not replicated</li></ul></li></ul></div>'
+            '</details><p>Source note after details.</p></li>'
+            '<li><p><strong>B</strong></p><details class="spoiler"><summary>Statistics</summary>'
+            '<div class="spoiler-body"><ul><li>Evidence<ul><li>Status: reversed</li></ul></li></ul></div>'
+            '</details></li>'
+            '</ul>'
+        )
+        self.assertEqual(self.check(html), [])
+        # Sanity check: wrongly classifying the nested not-replicated child as mixed fails
+        wrong = (
+            html.replace('status-not-replicated', 'status-mixed')
+            .replace('data-status="not-replicated"', 'data-status="mixed"')
+            .replace('>not replicated<', '>mixed<')
+        )
+        self.assertIn("do not match listed effects", self.check(wrong)[0])
+
+    def test_hidden_or_non_adjacent_board_fails(self):
+        effects = ["<li>Status: reversed</li>"]
+        valid = self.build_page([("reversed", 1, "reversed")], effects)
+        hidden_board = valid.replace('<section class="outcome-board"', '<section class="outcome-board" hidden')
+        self.assertIn("must not be hidden", self.check(hidden_board)[0])
+
+        wrapped_hidden = f'<div hidden>{valid}</div>'
+        self.assertIn("must not be hidden", self.check(wrapped_hidden)[0])
+
+        misplaced = valid.replace('</section><div class="list-filter"', '</section><p>Gap</p><div class="list-filter"')
+        self.assertIn("must immediately precede .list-filter", self.check(misplaced)[0])
+
+        wrapped_board = valid.replace('<section class="outcome-board"', '<div><section class="outcome-board"').replace('</section><div class="list-filter"', '</section></div><div class="list-filter"')
+        self.assertIn("must immediately precede .list-filter", self.check(wrapped_board)[0])
+
+    @unittest.skipUnless(shutil.which("hugo"), "hugo not installed")
+    def test_hugo_outcome_board_partial_edge_cases(self):
+        repo = Path(__file__).resolve().parents[2]
+        partial = repo / "layouts" / "partials" / "doors" / "outcome_board.html"
+        with tempfile.TemporaryDirectory() as tmp:
+            site = Path(tmp)
+            (site / "layouts" / "_default").mkdir(parents=True)
+            (site / "layouts" / "partials" / "doors").mkdir(parents=True)
+            (site / "content" / "reversals").mkdir(parents=True)
+            shutil.copy(partial, site / "layouts" / "partials" / "doors" / "outcome_board.html")
+            (site / "hugo.toml").write_text(
+                'baseURL = "https://example.org/"\n[markup.goldmark.renderer]\nunsafe = true\n',
+                encoding="utf-8",
+            )
+            (site / "layouts" / "_default" / "single.html").write_text(
+                '{{ partial "doors/outcome_board" .Content }}',
+                encoding="utf-8",
+            )
+            (site / "content" / "reversals" / "index.md").write_text(
+                "---\ntitle: Reversals\n---\n"
+                '<div class="list-filter" data-noun="effects" hidden></div>\n'
+                "<ul>\n"
+                '  <li><p><strong>Effect 1</strong></p><details class="spoiler "><summary>Statistics</summary>'
+                '<div class="spoiler-body"><ul><li>Status: mixed<ul><li>One result was not replicated</li></ul></li></ul></div>'
+                "</details><p>Source note after details.</p></li>\n"
+                '  <li><p><strong>Effect 2</strong></p><details class="spoiler "><summary>Statistics</summary>'
+                '<div class="spoiler-body"><ul><li>Evidence<ul><li>Status: reversed</li></ul></li></ul></div>'
+                "</details></li>\n"
+                '  <li><p><strong>Effect 3</strong></p><details class="spoiler "><summary>Notes</summary>'
+                '<div class="spoiler-body"><ul><li>No status here</li></ul></div></details>'
+                '<details class="spoiler "><summary>Statistics</summary>'
+                '<div class="spoiler-body"><ul><li>Status: mixed</li></ul></div></details></li>\n'
+                '  <li><p><strong>Wrapped non-direct spoiler (ignored)</strong></p><div><details class="spoiler ">'
+                '<summary>Statistics</summary><div class="spoiler-body"><ul><li>Status: replicated</li></ul></div>'
+                "</details></div></li>\n"
+                "</ul>\n"
+                '<details class="spoiler "><summary>About this project</summary>'
+                '<div class="spoiler-body"><ul><li>Status: reversed</li></ul></div></details>\n',
+                encoding="utf-8",
+            )
+            for flags in ([], ["--minify"]):
+                out = site / ("public_min" if flags else "public_raw")
+                subprocess.run(["hugo", "-s", str(site), "-d", str(out), *flags], check=True, capture_output=True)
+                html = (out / "reversals" / "index.html").read_text(encoding="utf-8")
+                with self.subTest(flags=flags):
+                    self.assertEqual(seo.check_reversals_outcome_board(str(out)), [])
+                    self.assertIn("What replications found for 3 effects", html)
+                    self.assertNotIn("status-replicated", html)
+                    self.assertIn("status-mixed", html)
+                    self.assertIn("status-not-replicated", html)
+                    self.assertIn("status-reversed", html)
 
 
 if __name__ == "__main__":
