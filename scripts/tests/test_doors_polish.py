@@ -10,6 +10,9 @@ class DoorsPolishContractTests(unittest.TestCase):
     def test_disciplines_doi_links_use_accessible_link_token(self):
         css = (ROOT / "assets/css/doors/clusters.css").read_text(encoding="utf-8")
         self.assertNotIn("#1c7ed6", css, "Low-contrast #1c7ed6 should stay replaced by var(--link)")
+        for selector in (".sc-description a", ".publication-item a", ".ref-doi-link", ".rl-detail-doi-link"):
+            pattern = rf"{re.escape(selector)}\s*\{{[^}}]*color:\s*var\(--link\)"
+            self.assertRegex(css, pattern, f"{selector} should use color: var(--link)")
         self.assertIn(".rl-pill-count{font-size:14px", css)
         self.assertIn(".disciplines-foot{", css)
 
@@ -33,23 +36,29 @@ class DoorsPolishContractTests(unittest.TestCase):
         self.assertIn('class="byline-updated"', hdr)
         self.assertIn(".article-layout:not(:has(>.article-card)) :is(.byline-date,.byline-updated){display:inline}", css)
 
-    def test_edu_read_next_mobile_avoids_cropping_figures(self):
+    def test_edu_read_next_mobile_avoids_cropping_figures_without_styling_panels(self):
         css = (ROOT / "assets/css/doors/article.css").read_text(encoding="utf-8")
-        self.assertIn(".read-next-edu .ac-thumb:not(.ec-thumb-whole) img{width:100%;height:auto;min-height:0;object-fit:contain}", css)
+        self.assertIn(".read-next-edu .ac-thumb:not(.ec-thumb-whole,.ac-panel){", css)
+        self.assertIn(".read-next-edu .ac-thumb:not(.ec-thumb-whole,.ac-panel) img{width:100%;height:auto;min-height:0;object-fit:contain}", css)
 
-    def test_resource_keywords_plain_text_not_double_escaped(self):
+    def test_resource_keywords_template_avoids_double_escape_on_plain_keywords(self):
         tpl = (ROOT / "layouts/partials/doors/resource_keywords.html").read_text(encoding="utf-8")
         self.assertIn("{{ $plain = $plain | append . }}", tpl)
+        self.assertNotIn("$plain | append (. | htmlEscape)", tpl)
         self.assertIn("Other keywords", tpl)
 
     def test_crumbs_honors_explicit_label(self):
         tpl = (ROOT / "layouts/partials/doors/crumbs.html").read_text(encoding="utf-8")
         self.assertEqual(len(re.findall(r"if not \$\.label", tpl)), 2)
 
-    def test_clusters_default_count_explains_hidden_specialist_items(self):
+    def test_clusters_default_count_gates_hidden_specialist_label_on_is_filtered(self):
         js = (ROOT / "static/js/featured-resources.js").read_text(encoding="utf-8")
-        self.assertIn("specialist hidden", js)
-        self.assertIn("if (isFiltered)", js)
+        pattern = (
+            r"if \(sec\.countWrap\) \{\s*"
+            r"if \(isFiltered\) \{[^}]*' of '[^}]*\}\s*"
+            r"else if \(res\.matchCount < sec\.totalCount\) \{[^}]*specialist hidden"
+        )
+        self.assertRegex(js, pattern)
 
 
 if __name__ == "__main__":

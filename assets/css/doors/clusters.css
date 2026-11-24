@@ -2397,7 +2397,7 @@ body.clusters-mobile-nav-open .clusters-back-to-top{display:none}
 .disciplines-foot__main .disciplines-form{margin:0 0 10px}
 .disciplines-foot__main .disciplines-attribution{margin:0;max-width:none}
 .disciplines-foot .disciplines-partner{display:flex;align-items:center;gap:12px;max-width:none;margin:0;text-align:start}
-.disciplines-foot .disciplines-partner img{width:64px;height:64px;flex:none}
+.disciplines-partner img{width:64px;height:64px;flex:none}
 .disciplines-foot .disciplines-partner__caption{margin:0;font-size:15px}
 @media (max-width:768px){
   .disciplines-partner{display:flex;align-items:center;gap:12px;align-self:flex-start;max-width:none}

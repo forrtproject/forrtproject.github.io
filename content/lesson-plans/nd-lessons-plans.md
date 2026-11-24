@@ -170,7 +170,7 @@ Contribute to [FORRT's Lesson Plans (Google sheets)](https://docs.google.com/spr
 
 </div>
 
-{{< click_to_load src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRxqwa1rfgn-mB2hdCd3DzQHYMV7bOpQw6hRwXQodSnKjL1QvV4r5Aaf0kr-AVKc9zk60ejgDhZ-FLV/pubhtml?widget=true&headers=false" provider="Google" label="This document" title="Table of lesson plans" width="100%" height="700" >}}
+{{< click_to_load src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRxqwa1rfgn-mB2hdCd3DzQHYMV7bOpQw6hRwXQodSnKjL1QvV4r5Aaf0kr-AVKc9zk60ejgDhZ-FLV/pubhtml?widget=true&headers=false" provider="Google" label="This document" title="Table of lesson plans" height="700" style="width:100%;" >}}
 
 </div>
 
