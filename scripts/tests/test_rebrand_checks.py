@@ -14,7 +14,7 @@ from check_internal_links import broken_target, extract_links, find_broken  # no
 from check_preview import (  # noqa: E402
     canonical_problem, off_origin, production_expectation, redirect_ok, redirect_target, resolve_base, robots_problem,
 )
-from check_source_rules import GENERATED, absolute_url_findings  # noqa: E402
+from check_source_rules import GENERATED, absolute_url_findings, is_allowed_generated_change  # noqa: E402
 from compare_builds import compare_heads, compare_paths, compare_structured  # noqa: E402
 from preview_paths import Rewriter, resolves  # noqa: E402
 from site_inventory import normalise_path, seo_head, template_group  # noqa: E402
@@ -388,6 +388,13 @@ class SourceRuleTests(unittest.TestCase):
             "content/home/1-hero.md",
         ]:
             self.assertFalse(GENERATED.match(path), path)
+
+    def test_allowed_generated_additions_and_removals(self):
+        self.assertTrue(is_allowed_generated_change("A", ["data/open_research_games.json"]))
+        self.assertFalse(is_allowed_generated_change("M", ["data/open_research_games.json"]))
+        self.assertTrue(is_allowed_generated_change("D", ["static/data/open_research_games.json"]))
+        self.assertFalse(is_allowed_generated_change("M", ["static/data/open_research_games.json"]))
+        self.assertFalse(is_allowed_generated_change("D", ["static/data/fred_citation.txt"]))
 
     def test_absolute_urls_in_templates(self):
         with tempfile.TemporaryDirectory() as root:

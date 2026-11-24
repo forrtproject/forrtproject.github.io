@@ -565,6 +565,7 @@ jobs:
             !data/partners.json
             !data/publications.yaml
             static/data/
+            !static/data/open_research_games.json
             static/partials/
             static/newsletters/
             content/contributor-analysis/
@@ -662,6 +663,8 @@ jobs:
           if [ -f /tmp/generated-resources/static/data/fred_citation.txt ]; then
             cp /tmp/generated-resources/static/data/fred_citation.txt static/data/fred_citation.txt
           fi
+          # Remove retired stale static games JSON (#1151); the portal now builds from data/open_research_games.json.
+          git rm -f --ignore-unmatch static/data/open_research_games.json 2>/dev/null || rm -f static/data/open_research_games.json
           if [ -f /tmp/generated-resources/summaries.json ]; then
             cp /tmp/generated-resources/summaries.json data/summaries.json
           fi

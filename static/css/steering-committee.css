@@ -153,6 +153,12 @@ article.article .article-container .article-title {
        photo cards would sit lower/smaller than title cards and the top bars wouldn't line
        up into one continuous row. */
     border: 0;
+    padding: 0;
+    background: transparent;
+    font: inherit;
+    color: inherit;
+    text-align: left;
+    appearance: none;
     /* Portrait aspect ratio 2:3 */
     aspect-ratio: 2/3;
     transition: box-shadow 0.3s ease;
@@ -589,7 +595,11 @@ article.article .article-container .article-title {
 .sc-section{scroll-margin-top:16px}
 .sc-modal-backdrop{visibility:hidden;transition:opacity .3s ease,visibility .3s}
 .sc-modal-backdrop.active{visibility:visible}
-.sc-card:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.sc-card:focus-visible{outline:3px solid var(--ink,#1e293b);outline-offset:2px;box-shadow:0 0 0 2px #fff}
+.sc-close-btn:focus-visible{outline:3px solid var(--ink,#1e293b);outline-offset:2px;color:#0f172a;background-color:#f1f5f9}
+.sc-social-links a:focus-visible{outline:3px solid var(--ink,#1e293b);outline-offset:2px}
+/* Leave room for the card's focus ring while still clipping horizontal connecting bars at row edges. */
+.sc-page .sc-grid{padding:6px;margin:-6px}
 @media(max-width:639px){
   .sc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
   .sc-card,.sc-title-card{width:auto!important;max-width:none}

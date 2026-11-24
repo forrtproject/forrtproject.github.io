@@ -156,10 +156,14 @@ def make_checkouts(work, main_ref, doors_ref):
 def apply_artifacts(checkout, data_dir, announcements_dir):
     """deploy.yaml's steps, in its order: clear the seed, unpack the data artifact over the checkout
     (adds and overwrites, never deletes), then replace the post bundles if a tarball exists."""
+    had_static_games = (checkout / "static/data/open_research_games.json").exists()
     for path in (checkout / "content/curated_resources").iterdir():
         if path.is_file() and path.name != "_index.md":
             path.unlink()
     shutil.copytree(data_dir, checkout, dirs_exist_ok=True)
+    # Mirror deploy.yaml: do not let an older data-artifact resurrect the retired static games file (#1151).
+    if not had_static_games:
+        (checkout / "static/data/open_research_games.json").unlink(missing_ok=True)
     tarball = announcements_dir / "announcements.tar.gz"
     if tarball.exists():
         for path in (checkout / "content/post").iterdir():

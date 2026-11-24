@@ -134,7 +134,10 @@ class FreshnessTests(unittest.TestCase):
 
     def test_excluded_files_are_not_packaged(self):
         self.write(self.root, "data/partners.json", "partner configuration")
-        self.assertNotIn("data/partners.json", self.manifest()["files"])
+        self.write(self.root, "static/data/open_research_games.json", "{}")
+        files = self.manifest()["files"]
+        self.assertNotIn("data/partners.json", files)
+        self.assertNotIn("static/data/open_research_games.json", files)
 
 
 if __name__ == "__main__":

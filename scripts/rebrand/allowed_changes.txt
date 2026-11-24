@@ -104,3 +104,4 @@ nowherelab/index.html  # #1193: its description is now a written summary; the la
 educators-corner/012-lessons-from-non-academic-jobs/index.html  # #1249: the stray colon at the end of its title removed (approved by Lukas). Remove once main has it
 educators-corner/013-introducing-nowhere-lab/index.html  # #1249: the raw URL moved out of its summary into a link on "Nowhere Lab" (approved by Lukas). Remove once main has it
 educators-corner/004-teaching-why-how-replication/index.html  # typo fix in its summary ("how and hy", "become learn and teach"), approved by Lukas. Remove once main has it
+data/open_research_games.json  # #1151: retired stale Nov 2025 static games JSON; /open-research-games-portal/ builds from data/open_research_games.json
