@@ -723,8 +723,9 @@ function createGame() {
       ui.progFill.style.width = `${Math.round((filled / slots.length) * 100)}%`;
       ui.prog.classList.toggle('tg-prog-done', planDone);
     }
-    ui.offplan.hidden = !(hasPlan && offPlan > 0);
-    if (hasPlan && offPlan > 0) {
+    const showOffPlan = hasPlan && hintsOn && !done && !toppling && offPlan > 0;
+    ui.offplan.hidden = !showOffPlan;
+    if (showOffPlan) {
       ui.offplan.textContent = `${offPlan} off plan`;
       ui.offplan.title = `${offPlan === 1 ? '1 brick' : `${offPlan} bricks`} placed outside the blueprint. Undo adjusts it, or keep building freely.`;
     }
