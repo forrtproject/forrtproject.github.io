@@ -51,6 +51,12 @@ export function closePopover() {
   if (restoreFocus && trigger.isConnected) trigger.focus({ preventScroll: true });
 }
 
+function focusInitial(panel) {
+  const target = [...panel.querySelectorAll(focusable)].find((el) => !el.matches('[data-popover-close],.doors-popover-close'))
+    || panel.querySelector(focusable);
+  target?.focus({ preventScroll: true });
+}
+
 export function openPopover(trigger, contentNode, { label, hover = false, className = '' } = {}) {
   closePopover();
   const panel = document.createElement('div');
@@ -81,11 +87,7 @@ export function openPopover(trigger, contentNode, { label, hover = false, classN
   panel.addEventListener('pointerenter', () => clearTimeout(closing));
   panel.addEventListener('pointerleave', () => { if (current && !current.restoreFocus) scheduleClose(); });
   panel.addEventListener('focusin', () => { if (current) current.restoreFocus = true; });
-  if (!hover) {
-    const target = [...panel.querySelectorAll(focusable)].find((el) => !el.matches('[data-popover-close],.doors-popover-close'))
-      || panel.querySelector(focusable);
-    target?.focus({ preventScroll: true });
-  }
+  if (!hover) focusInitial(panel);
 }
 
 function scheduleClose() {
@@ -98,7 +100,7 @@ export function registerPopover(selector, buildContent, { label, hover = false, 
     if (current?.trigger === trigger) {
       if (!fromHover && !current.restoreFocus) {
         current.restoreFocus = true;
-        current.panel.querySelector(focusable)?.focus();
+        focusInitial(current.panel);
       } else if (!fromHover) closePopover();
       return true;
     }
