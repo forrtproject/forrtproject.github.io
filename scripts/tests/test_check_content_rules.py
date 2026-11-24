@@ -27,11 +27,15 @@ class TestExtractPublisherDoi(unittest.TestCase):
             ("https://pubs.asha.org/doi/10.1044/2016_JSLHR-L-15-0440?rfr_dat=x", "10.1044/2016_JSLHR-L-15-0440"),
             ("https://www.medrxiv.org/content/10.1101/2022.12.15.22283474v1#p-5", "10.1101/2022.12.15.22283474"),
             ("https://www.biorxiv.org/content/10.1101/2020.08.13.249847v2.full", "10.1101/2020.08.13.249847"),
+            ("https://www.biorxiv.org/content/10.1101/2020.08.13.249847v2.full-text", "10.1101/2020.08.13.249847"),
             ("https://www.scienceopen.com/hosted-document?doi=10.13169/intljofdissocjus.5.3.0002", "10.13169/intljofdissocjus.5.3.0002"),
         ]
         for url, expected in cases:
             with self.subTest(url=url):
                 self.assertEqual(extract_publisher_doi(url), expected)
+
+    def test_handles_malformed_ipv6_url_without_raising(self):
+        self.assertIsNone(extract_publisher_doi("https://[unclosed/doi/10.1234/abc"))
 
     def test_preserves_balanced_parens_and_strips_markdown_closer(self):
         self.assertEqual(
@@ -62,9 +66,10 @@ class TestFindPublisherDoiInDiff(unittest.TestCase):
             "diff --git a/content/reversals/reversals.md b/content/reversals/reversals.md",
             "--- a/content/reversals/reversals.md",
             "+++ b/content/reversals/reversals.md",
-            "@@ -10,2 +10,3 @@",
+            "@@ -10,2 +10,4 @@",
             "-Old [paper](https://www.science.org/doi/10.1126/science.old1)",
             "+New [good](https://doi.org/10.1126/science.old1)",
+            "+++ https://www.science.org/doi/10.1126/science.111",
             "+Bad [paper](https://www.pnas.org/doi/full/10.1073/pnas.1208724109).",
             "diff --git a/content/curated_resources/foo.md b/content/curated_resources/foo.md",
             "--- a/content/curated_resources/foo.md",
@@ -84,9 +89,15 @@ class TestFindPublisherDoiInDiff(unittest.TestCase):
                 DoiViolation(
                     path="content/reversals/reversals.md",
                     line=11,
+                    url="https://www.science.org/doi/10.1126/science.111",
+                    doi="10.1126/science.111",
+                ),
+                DoiViolation(
+                    path="content/reversals/reversals.md",
+                    line=12,
                     url="https://www.pnas.org/doi/full/10.1073/pnas.1208724109",
                     doi="10.1073/pnas.1208724109",
-                )
+                ),
             ],
         )
 

@@ -21,7 +21,7 @@ ZENODO_API_HEADERS = {
 }
 
 _ZENODO_RECORD_RE = re.compile(
-    r"^/records?/(\d+)(?:/files/([^?#]+))?/?$",
+    r"^/records?/(\d+)(?:/files/([^/?#]+))?/?$",
     re.IGNORECASE,
 )
 _ZENODO_COMMUNITY_RE = re.compile(
@@ -30,22 +30,19 @@ _ZENODO_COMMUNITY_RE = re.compile(
 )
 
 
-def parse_zenodo_url(url: str) -> tuple[str, str | None, str | None] | None:
+def parse_zenodo_url(url: str) -> tuple[str, str, str | None] | None:
     """Classify a Zenodo URL into an API-verifiable target.
 
     Returns:
-      ("root", None, None) for https://(www.)zenodo.org/
       ("record", record_id, filename_or_None) for /record(s)/<id>[/files/<name>]
       ("community", slug, None) for /communities/<slug>[/...]
-      None for non-Zenodo URLs or Zenodo paths without a clean API endpoint.
+      None for non-Zenodo URLs, the Zenodo homepage, or paths without a clean API endpoint.
     """
     parsed = urllib.parse.urlparse(url)
     host = parsed.netloc.lower()
     if host not in ("zenodo.org", "www.zenodo.org"):
         return None
     path = parsed.path or "/"
-    if path == "/":
-        return ("root", None, None)
     m = _ZENODO_RECORD_RE.match(path)
     if m:
         record_id = m.group(1)
@@ -106,7 +103,7 @@ def verify_zenodo_urls(
         (u, parse_zenodo_url(u)) for u in urls
     ]
 
-    api_targets: dict[tuple[str, str | None], str] = {}
+    api_targets: dict[tuple[str, str], str] = {}
     for _, parsed in parsed_items:
         if parsed is None:
             continue
@@ -114,12 +111,10 @@ def verify_zenodo_urls(
         key = (kind, ident)
         if key in api_targets:
             continue
-        if kind == "root":
-            api_targets[key] = "https://zenodo.org/api/records?size=1"
-        elif kind == "record":
+        if kind == "record":
             api_targets[key] = f"https://zenodo.org/api/records/{ident}"
         elif kind == "community":
-            api_targets[key] = f"https://zenodo.org/api/communities/{urllib.parse.quote(ident or '', safe='')}"
+            api_targets[key] = f"https://zenodo.org/api/communities/{urllib.parse.quote(ident, safe='')}"
 
     api_results: dict[tuple[str, str | None], tuple[int | None, dict | None]] = {}
     if api_targets:

@@ -4,7 +4,7 @@ name: Check Content Rules
 # PR Content Rules Check
 # =======================
 # Purpose: Validates PR content policies in one lightweight runner (advisory warnings):
-#   1. WebP image policy (flags non-WebP files/references)
+#   1. WebP image policy (flags PNG/JPG/JPEG files and local references)
 #   2. Canonical DOI links (flags newly added publisher URLs with embedded DOIs)
 # Triggers: PR opened, synchronized, or reopened
 

@@ -120,7 +120,7 @@ Runs every test in `scripts/tests/` (including the SEO checks and the clusters p
 | Pull requests | PR branches |
 
 Runs `scripts/check_content_rules.py` in a single runner to flag (via PR comment / summary):
-- Non-WebP image files and local references in added/modified files
+- PNG/JPG/JPEG image files and local references in added/modified files
 - Newly added direct publisher URLs with embedded DOIs under hand-maintained `content/`, with `https://doi.org/...` replacements
 
 ## Repository Maintenance

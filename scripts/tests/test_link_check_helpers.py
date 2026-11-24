@@ -35,8 +35,12 @@ class TestParseZenodoUrl(unittest.TestCase):
             ),
             ("record", "1234", "my file.pdf"),
         )
+        self.assertEqual(
+            parse_zenodo_url("https://zenodo.org/records/1234/files/a.pdf/"),
+            ("record", "1234", "a.pdf"),
+        )
 
-    def test_community_and_root_urls(self):
+    def test_community_and_unverified_root_urls(self):
         self.assertEqual(
             parse_zenodo_url("https://zenodo.org/communities/forrt/records?q=&l=list"),
             ("community", "forrt", None),
@@ -45,8 +49,8 @@ class TestParseZenodoUrl(unittest.TestCase):
             parse_zenodo_url("https://zenodo.org/communities/civica-open-social-science"),
             ("community", "civica-open-social-science", None),
         )
-        self.assertEqual(parse_zenodo_url("https://zenodo.org/"), ("root", None, None))
-        self.assertEqual(parse_zenodo_url("https://www.zenodo.org"), ("root", None, None))
+        self.assertIsNone(parse_zenodo_url("https://zenodo.org/"))
+        self.assertIsNone(parse_zenodo_url("https://www.zenodo.org"))
 
     def test_non_zenodo_or_unrecognized(self):
         self.assertIsNone(parse_zenodo_url("https://example.org/records/123"))

@@ -54,7 +54,10 @@ RXIV_DOI_RE = re.compile(
 )
 RXIV_PATH_RE = re.compile(r"^/content/(10\.1101/[^?#]+)", re.IGNORECASE)
 QUERY_DOI_RE = re.compile(r"(?:^|&)(?:doi)=(10\.\d{4,9}/[^&#]+)", re.IGNORECASE)
-PREPRINT_SUFFIX_RE = re.compile(r"(?:v\d+)?(?:\.full(?:\.pdf)?|\.abstract)?$", re.IGNORECASE)
+PREPRINT_SUFFIX_RE = re.compile(
+    r"(?:v\d+)?(?:\.(?:full-text|full(?:\.pdf(?:\+html)?)?|abstract|article-info|article-metrics|supplementary-material))?$",
+    re.IGNORECASE,
+)
 HUNK_RE = re.compile(r"^@@ -\d+(?:,\d+)? \+(\d+)(?:,\d+)? @@")
 
 TRAIL_PUNCT = ".,;:!?\"'`"
@@ -94,7 +97,10 @@ def _clean_url_token(raw: str) -> str:
 def extract_publisher_doi(url: str) -> str | None:
     """Return the embedded DOI if url is a non-doi.org publisher URL, else None."""
     cleaned = _clean_url_token(url)
-    parsed = urllib.parse.urlparse(cleaned)
+    try:
+        parsed = urllib.parse.urlparse(cleaned)
+    except ValueError:
+        return None
     host = parsed.netloc.lower()
     if not host:
         return None
@@ -137,24 +143,33 @@ def find_publisher_doi_in_diff(diff_text: str) -> list[DoiViolation]:
     """Scan unified-0 git diff text and return publisher-DOI violations on added lines."""
     violations: list[DoiViolation] = []
     current_file: str | None = None
+    in_hunk = False
     line_no = 0
     seen: set[tuple[str, int, str]] = set()
 
     for raw_line in diff_text.splitlines():
-        if raw_line.startswith("+++ b/"):
-            current_file = raw_line[6:]
+        if raw_line.startswith("diff --git "):
+            current_file = None
+            in_hunk = False
             line_no = 0
             continue
-        if raw_line.startswith("+++ "):
-            current_file = None
-            continue
+        if not in_hunk:
+            if raw_line.startswith("+++ b/"):
+                current_file = raw_line[6:]
+                line_no = 0
+                continue
+            if raw_line.startswith("+++ "):
+                current_file = None
+                continue
         if raw_line.startswith("@@ "):
             m = HUNK_RE.match(raw_line)
-            line_no = int(m.group(1)) if m else 0
+            if m:
+                line_no = int(m.group(1))
+                in_hunk = True
             continue
-        if not current_file or not is_checked_content_path(current_file):
+        if not in_hunk or not current_file or not is_checked_content_path(current_file):
             continue
-        if raw_line.startswith("+") and not raw_line.startswith("+++"):
+        if raw_line.startswith("+"):
             added = raw_line[1:]
             for m in URL_RE.finditer(added):
                 url = _clean_url_token(m.group(0))
