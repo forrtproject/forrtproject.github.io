@@ -65,6 +65,11 @@ from urllib.parse import parse_qs, urlsplit
 from docx import Document
 from docx.text.hyperlink import Hyperlink
 
+_SCRIPT_DIR = str(Path(__file__).resolve().parent)
+if _SCRIPT_DIR not in sys.path:
+    sys.path.insert(0, _SCRIPT_DIR)
+from parse_disciplines_to_json import LINK_REPAIRS, repair_url  # noqa: E402
+
 # Google Sheet that drives the FORRT disciplines Hugo page.
 DISCIPLINES_SHEET_ID = "1mSlduu86_nE1sY1gXobw3Pp1vI73B_0iHBsJqjtsJU4"
 
@@ -89,10 +94,6 @@ SHOW_FIELDS = {
 # (a common artifact when Google Docs hyperlinks are stripped) split cleanly.
 URL_RE = re.compile(r"https?://[^\s<>]+?(?=https?://|\s|$|[<>])")
 DOI_RE = re.compile(r"\b10\.\d{4,9}/[^\s<>]+", re.I)
-# Word HYPERLINK field switches occasionally leak into the stored target
-# (e.g. `...10.1038/nrn.2016.167%22%20/o%20%22...%22%20/t%20%22_blank`).
-WORD_FIELD_SWITCH_RE = re.compile(r'(?:%22|")(?:\s|%20)+/[a-z](?:\s|%20)+.*$', re.I)
-LINK_REPAIRS = json.loads(Path(__file__).with_name("disciplines_link_repairs.json").read_text())
 CATEGORY_ALIASES = {
     "": "General",
     "Equitable Open Research": "General",
@@ -107,17 +108,12 @@ def clean_url(url):
     url = url.strip().rstrip(".,;")
     if urlsplit(url).hostname and urlsplit(url).hostname.endswith(".safelinks.protection.outlook.com"):
         url = parse_qs(urlsplit(url).query).get("url", [url])[0]
-    url = WORD_FIELD_SWITCH_RE.sub("", url)
-    # Word sometimes includes the space after a hyperlink in its target.
-    url = re.sub(r"(?:%20|%09|%0a|%0d)+$", "", url.strip(), flags=re.I)
+    url = repair_url(url)
     # Parentheses inside DOIs are significant; only remove unmatched closers
     # added by prose such as '(see https://example.org/paper)'.
     while url.endswith(")") and url.count(")") > url.count("("):
         url = url[:-1]
-    return LINK_REPAIRS.get(
-        url,
-        LINK_REPAIRS.get(url.rstrip("/"), LINK_REPAIRS.get(url.rstrip("/") + "/", url)),
-    )
+    return repair_url(url)
 
 
 def paragraph_text_links(paragraph):

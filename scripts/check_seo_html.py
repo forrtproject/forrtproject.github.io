@@ -955,7 +955,20 @@ def check_summary_credit_marker(public_dir, summaries=None):
     return failures
 
 
-CLUSTER_TRAILING_PUNCT = re.compile(r'<a\b[^>]*\bhref="(https?://[^"]*[.,;:!?])"', re.I)
+CLUSTER_EXTERNAL_HREF = re.compile(r'<a\b[^>]*\bhref="(https?://[^"]+)"', re.I)
+
+
+def has_trailing_sentence_punctuation(href):
+    """True when an external href ends with trailing prose punctuation or an unmatched closer."""
+    if not href:
+        return False
+    if href[-1] in ".,;:!?":
+        return True
+    if href.endswith(")") and href.count(")") > href.count("("):
+        return True
+    if href.endswith("]") and href.count("]") > href.count("["):
+        return True
+    return False
 
 
 def check_cluster_link_punctuation(public_dir):
@@ -972,7 +985,10 @@ def check_cluster_link_punctuation(public_dir):
             rel = os.path.relpath(full_path, public_dir).replace(os.sep, "/")
             with open(full_path, encoding="utf-8", errors="replace") as handle:
                 text = handle.read()
-            bad = sorted(set(CLUSTER_TRAILING_PUNCT.findall(text)))
+            bad = sorted({
+                href for href in CLUSTER_EXTERNAL_HREF.findall(text)
+                if has_trailing_sentence_punctuation(href)
+            })
             if bad:
                 failures.append("%s (%s)" % (rel, ", ".join(bad[:3])))
     return sorted(failures)

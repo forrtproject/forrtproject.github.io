@@ -154,8 +154,9 @@ jobs:
                   with urllib.request.urlopen(req, timeout=30) as r:
                       return url, r.status < 400
               except urllib.error.HTTPError as e:
-                  # 401/429 mean "authenticate" / "slow down", not "gone".
-                  return url, e.code < 400 or e.code in (401, 429)
+                  # 429 means "slow down", not "gone". Keep 401 unverified so
+                  # auth-gated failures are never silently reported as recovered.
+                  return url, e.code < 400 or e.code == 429
               except Exception:
                   return url, False
 
