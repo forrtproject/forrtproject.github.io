@@ -63,6 +63,33 @@ class DeterministicFilterLists(unittest.TestCase):
             ],
         )
 
+    def test_safe_project_url_rejects_unsafe_schemes(self):
+        self.assertEqual(tenzing.safe_project_url("https://forrt.org/glossary/"), "https://forrt.org/glossary/")
+        self.assertEqual(tenzing.safe_project_url(" http://example.org/p "), "http://example.org/p")
+        self.assertEqual(tenzing.safe_project_url("/glossary/"), "/glossary/")
+        self.assertEqual(tenzing.safe_project_url("javascript:alert(1)"), "")
+        self.assertEqual(tenzing.safe_project_url("JAVASCRIPT:alert(1)"), "")
+        self.assertEqual(tenzing.safe_project_url("data:text/html,<script>"), "")
+        self.assertEqual(tenzing.safe_project_url("//evil.example/x"), "")
+        self.assertEqual(tenzing.safe_project_url(None), "")
+
+    def test_partition_contributions_counts_distinct_projects(self):
+        # 5 records across only 4 distinct projects stay uncollapsed.
+        items_4 = [f"<li>{i}</li>" for i in range(5)]
+        projs_4 = ["a", "a", "b", "c", "d"]
+        shown, rest, extra = tenzing.partition_contributions(items_4, projs_4)
+        self.assertEqual(shown, items_4)
+        self.assertEqual(rest, [])
+        self.assertEqual(extra, 0)
+
+        # 6 records across 5 distinct projects keep all records for the first 2 distinct projects together.
+        items_5 = [f"<li>{i}</li>" for i in range(6)]
+        projs_5 = ["a", "b", "a", "c", "d", "e"]
+        shown, rest, extra = tenzing.partition_contributions(items_5, projs_5)
+        self.assertEqual(shown, ["<li>0</li>", "<li>1</li>", "<li>2</li>"])
+        self.assertEqual(rest, ["<li>3</li>", "<li>4</li>", "<li>5</li>"])
+        self.assertEqual(extra, 3)
+
 
 if __name__ == "__main__":
     unittest.main()

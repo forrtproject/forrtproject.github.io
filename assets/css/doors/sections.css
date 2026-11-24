@@ -423,7 +423,9 @@ html:has(.contributor-az:not([hidden])){scroll-padding-top:calc(var(--contributo
 .article-layout .article-style .contribution>a:not([class]):is(:hover,:focus-visible){text-decoration-color:currentColor}
 .contribution-roles::before{content:"— "}
 .article-layout .article-style .contributions-more{margin:3px 0 0}
+.article-layout .article-style .contributions-more[hidden]{display:none}
 .article-layout .article-style .contributions-more>summary{display:inline-flex;align-items:center;min-height:44px;padding:10px 0;margin:-10px 0 -10px;color:var(--link);font-size:15px;font-weight:600;text-decoration:underline;text-underline-offset:3px;cursor:pointer;list-style:none;box-sizing:border-box}
+.article-layout .article-style .contributions-more>summary[hidden]{display:none}
 .article-layout .article-style .contributions-more>summary::-webkit-details-marker{display:none}
 .article-layout .article-style .contributions-more[open]>summary{margin:-10px 0 -4px}
 @media(max-width:760px){

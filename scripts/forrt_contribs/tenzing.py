@@ -18,6 +18,7 @@ import re
 import html
 import json
 import unicodedata
+from urllib.parse import urlparse
 
 # Load environment variables from .env file (optional, for local development)
 try:
@@ -327,6 +328,38 @@ SHOWN_PROJECTS = 2
 COLLAPSE_THRESHOLD = 5
 
 
+def safe_project_url(raw_url):
+    """Return a trimmed URL if it uses an approved scheme (http/https) or a root-relative path, else ''."""
+    if raw_url is None or (isinstance(raw_url, float) and pd.isna(raw_url)):
+        return ''
+    url = str(raw_url).strip()
+    if not url:
+        return ''
+    parsed = urlparse(url)
+    if parsed.scheme in ('http', 'https') and parsed.netloc:
+        return url
+    if not parsed.scheme and not parsed.netloc and url.startswith('/') and not url.startswith('//'):
+        return url
+    return ''
+
+
+def partition_contributions(contribution_items, item_projects, shown_projects=SHOWN_PROJECTS, collapse_threshold=COLLAPSE_THRESHOLD):
+    """Split contribution rows into visible and disclosure lists based on distinct normalized projects.
+
+    Only collapses when a contributor has at least `collapse_threshold` distinct projects, and keeps all
+    records belonging to the first `shown_projects` distinct projects in the visible list so a single
+    project is never split across the boundary.
+    """
+    distinct_order = list(dict.fromkeys(item_projects))
+    if len(distinct_order) < collapse_threshold:
+        return list(contribution_items), [], 0
+    keep_projects = set(distinct_order[:shown_projects])
+    shown = [item for item, proj in zip(contribution_items, item_projects) if proj in keep_projects]
+    rest = [item for item, proj in zip(contribution_items, item_projects) if proj not in keep_projects]
+    new_projects = len(distinct_order) - len(keep_projects)
+    return shown, rest, new_projects
+
+
 def role_labels(row):
     """The roles of one contribution as a list of labels, from its "Contributions" text."""
     text = row['Contributions']
@@ -384,10 +417,11 @@ def concatenate_contributions(group):
             if normalized_role and normalized_role not in contribution_roles:
                 contribution_roles.append(normalized_role)
 
-        # Build project HTML
+        # Build project HTML (only allow approved http/https or root-relative URLs)
         escaped_project = html.escape(project_name, quote=False)
-        if pd.notna(row['Project URL']) and str(row['Project URL']).strip() != '':
-            project_url = html.escape(str(row['Project URL']).strip(), quote=True)
+        safe_url = safe_project_url(row['Project URL'])
+        if safe_url:
+            project_url = html.escape(safe_url, quote=True)
             project_html = f'<a href="{project_url}">{escaped_project}</a>'
         else:
             project_html = f'<span class="contribution-project">{escaped_project}</span>'
@@ -411,13 +445,9 @@ def concatenate_contributions(group):
     # Add id attribute if ORCID exists
     id_attr = f' id="{orcid_id}"' if orcid_id else ''
 
-    shown = contribution_items
+    shown, rest, new_projects = partition_contributions(contribution_items, item_projects)
     more = ''
-    if len(contribution_items) >= COLLAPSE_THRESHOLD:
-        shown = contribution_items[:SHOWN_PROJECTS]
-        rest = contribution_items[SHOWN_PROJECTS:]
-        # One project under two roles is one project, and a project already listed above is not one more.
-        new_projects = len(set(item_projects[SHOWN_PROJECTS:]) - set(item_projects[:SHOWN_PROJECTS]))
+    if rest:
         label = f'+{new_projects} more project{"" if new_projects == 1 else "s"}' if new_projects else 'More roles'
         more = (
             f'  <details class="contributions-more">\n'
