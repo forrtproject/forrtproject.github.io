@@ -1,0 +1,80 @@
+{{/* FORRT's four Strategic Focus Areas (issue #938): each area in its own Doors colour and pale ground
+     (DESIGN.md §6), with its arched-door illustration from assets/images/doors/ and authentic descriptions
+     and links drawn from the FORRT Booklet and Handbook. Used on /about/us/ and /about/mission/. */}}
+{{- $areas := slice
+  (dict
+    "key" "edu"
+    "title" "Education & Pedagogy"
+    "image" "area-education"
+    "alt" "A brick pencil standing on an open green book."
+    "text" "Creating pedagogical infrastructure and open educational resources so educators and learners can understand and integrate open and reproducible science principles into teaching and mentoring — from curated resources and the glossary to lesson plans, games and JUST-OS."
+    "links" (slice
+      (dict "label" "Educational Nexus" "url" "nexus/")
+      (dict "label" "Curated resources" "url" "resources/")
+      (dict "label" "Glossary" "url" "glossary/")
+      (dict "label" "Lesson plans" "url" "lesson-plans/")
+      (dict "label" "Games Portal" "url" "open-research-games-portal/")
+      (dict "label" "JUST-OS" "url" "just_os_chatbot/")
+    )
+  )
+  (dict
+    "key" "res"
+    "title" "Meta-Science & Research"
+    "image" "area-research"
+    "alt" "Two near-identical brick towers, one with a single orange brick, seen through a magnifying glass."
+    "text" "Tracking, exploring, conducting and sharing reproductions and replications, and reviewing the evidence on teaching open scholarship — through the Replication Hub, FReD and the Annotator, the Handbook for Reproduction and Replication Studies, and the diamond open-access Replication Research (R2) journal."
+    "links" (slice
+      (dict "label" "Replication Hub" "url" "replication-hub/")
+      (dict "label" "Replication Handbook" "url" "https://forrt.org/replication-handbook/")
+      (dict "label" "Impact on students" "url" "impact/")
+      (dict "label" "Replication Research (R2)" "url" "https://replicationresearch.org" "external" true)
+    )
+  )
+  (dict
+    "key" "jus"
+    "title" "Social Justice & DEIA"
+    "image" "area-justice"
+    "alt" "The FORRT tower with its upper courses built in Pride colours."
+    "text" "Framing open science as inclusive scholarship by addressing systemic barriers, authorship inequity and citation practices, and supporting neurodivergent and underrepresented scholars across higher education and research."
+    "links" (slice
+      (dict "label" "Social justice initiatives" "url" "dei/")
+      (dict "label" "Academic Wheel of Privilege" "url" "awop/")
+      (dict "label" "Citation politics" "url" "citation-politics/")
+      (dict "label" "Team Neurodiversity" "url" "neurodiversity/")
+    )
+  )
+  (dict
+    "key" "com"
+    "title" "Community & Sustainability"
+    "image" "area-community"
+    "alt" "Brick figures in many colours standing in a circle, with a gap and one more figure arriving."
+    "text" "Building a welcoming, worldwide, volunteer-based community guided by FAIR and CARE principles, transparent project workflows, and fair credit and contributorship through CRediT and Tenzing."
+    "links" (slice
+      (dict "label" "FORRT teams" "url" "about/teams/")
+      (dict "label" "Contributors & credit" "url" "contributors/")
+      (dict "label" "Community map" "url" "community-map/")
+      (dict "label" "Get involved" "url" "about/get-involved/")
+    )
+  )
+-}}
+<div class="focus-areas">
+  {{- range $areas }}
+  {{- $img := resources.Get (printf "images/doors/%s.webp" .image) }}
+  <article class="focus-area focus-area-{{ .key }}">
+    <div class="focus-area-head">
+      <div class="focus-area-plate">
+        <img src="{{ $img.RelPermalink }}" alt="{{ .alt }}" width="{{ $img.Width }}" height="{{ $img.Height }}" loading="lazy">
+      </div>
+      <h3>{{ .title }}</h3>
+    </div>
+    <p>{{ .text }}</p>
+    <ul class="focus-area-links">
+      {{- range .links }}
+      {{- $href := cond (hasPrefix .url "http") .url (.url | relLangURL) }}
+      <li><a href="{{ $href }}">{{ .label }}{{ if .external }} <i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="visually-hidden"> (another website)</span>{{ end }}</a></li>
+      {{- end }}
+    </ul>
+  </article>
+  {{- end }}
+</div>
+<p class="focus-areas-note">Explore projects from all four areas in the <a href="{{ "booklet/" | relLangURL }}">FORRT Booklet</a> or read how FORRT coordinates its volunteer teams in the <a href="https://forrt.org/handbook/">Project Management Handbook</a>.</p>

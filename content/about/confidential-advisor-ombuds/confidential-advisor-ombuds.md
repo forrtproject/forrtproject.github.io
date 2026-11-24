@@ -1,56 +1,70 @@
 +++
-# A Demo section created with the Blank widget.
-# Any elements can be added in the body: https://sourcethemes.com/academic/docs/writing-markdown-latex/
-# Add more sections by duplicating this file and customizing to your requirements.
-
-widget = "blank"  # See https://sourcethemes.com/academic/docs/page-builder/
-headless = true  # This file represents a page section.
-active = true  # Activate this widget? true/false
-weight = 20  # Order that this section will appear.
+widget = "blank"
+headless = true
+active = true
+weight = 20
 
 title = "Confidential Advisor & Ombuds"
 subtitle = ""
 classtitle = "text-center"
 
 [design]
-  # Choose how many columns the section has. Valid values: 1 or 2.
   columns = "1"
 
 [design.background]
-  # Background color.
   color = "#fefdf6"
-
-  # Text color (true=light or false=dark).
   text_color_light = false
 
 [design.spacing]
-  # Customize the section spacing. Order is top, right, bottom, left.
   padding = ["60px", "0", "60px", "0"]
 
-
 [advanced]
- # Custom CSS.
- css_style = ""
-
- # CSS class.
- css_class = ""
+  css_style = ""
+  css_class = ""
 +++
+
+<section class="governance-contacts" aria-label="Who to contact">
+  <div class="governance-card">
+    <div class="governance-card-head">
+      <img src="/authors/ruthvanderhallenphd/avatar.webp" alt="Ruth Van der Hallen, PhD" width="72" height="72" class="governance-avatar">
+      <div>
+        <p class="governance-role">Confidential Advisor</p>
+        <p class="governance-name">Ruth Van der Hallen, PhD</p>
+      </div>
+    </div>
+    <p class="governance-scope">Individual concerns, interpersonal conflicts, inappropriate behaviour, or integrity questions.</p>
+    <p class="governance-actions">
+      <a href="mailto:confidential-advisor@forrt.org" class="btn dir-btn">Email Confidential Advisor</a>
+      <a href="#confidential-advisor" class="governance-more">About this role</a>
+    </p>
+  </div>
+  <div class="governance-card">
+    <div class="governance-card-head">
+      <img src="/authors/thomas-rhys-evans/avatar.webp" alt="Thomas Rhys Evans" width="72" height="72" class="governance-avatar">
+      <div>
+        <p class="governance-role">Ombuds</p>
+        <p class="governance-name">Thomas Rhys Evans</p>
+      </div>
+    </div>
+    <p class="governance-scope">Broader cultural, systemic or structural concerns, policies, processes, or Code of Conduct breaches.</p>
+    <p class="governance-actions">
+      <a href="mailto:ombuds@forrt.org" class="btn dir-btn">Email Ombuds</a>
+      <a href="#ombuds" class="governance-more">About this role</a>
+    </p>
+  </div>
+</section>
 
 The Confidential Advisor and Ombuds roles within FORRT exist to support members by providing independent, fair, and confidential support when concerns arise regarding conduct, collaboration, or community practices within FORRT. While the two roles have distinct responsibilities, they work together to help maintain a respectful, inclusive, and professional community.
 
 Depending on the nature of a concern, matters raised with one role may be discussed or referred to the other (anonymously wherever possible), unless the individual explicitly requests otherwise, to ensure that issues are addressed appropriately and that opportunities for learning and improvement are identified. Below is a brief introduction to both roles.
 
-<br>
+<aside class="callout callout-rail callout-rail-top callout-governance" aria-label="Confidentiality and related policies">
+  <p class="callout-title">Confidentiality</p>
+  <p>Contacting either role does not initiate a formal process or complaint. Information will not be shared without consent, unless there is a serious risk of harm to someone's safety. Matters may be discussed with the other role (anonymously wherever possible) unless you request otherwise.</p>
+  <p>Related policies: <a href="/coc/">Code of Conduct</a> and <a href="/feedback/">anonymous feedback</a>.</p>
+</aside>
 
 ## Confidential Advisor
-
-<div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;">
-  <img src="/authors/ruthvanderhallenphd/avatar.webp" alt="Ruth Van der Hallen, PhD" class="avatar-circle" style="width:80px;height:80px;object-fit:cover;flex-shrink:0;">
-  <div style="text-align:left;">
-    <strong>Ruth Van der Hallen, PhD</strong><br>
-    <a href="mailto:confidential-advisor@forrt.org">confidential-advisor@forrt.org</a>
-  </div>
-</div>
 
 Members of the FORRT community can reach out to the Confidential Advisor regarding inappropriate behaviour, interpersonal conflicts, concerns related to integrity or professional conduct, or other issues that affect their experience within the community. The Confidential Advisor provides a safe and confidential space in which individuals can discuss concerns, reflect on their situation, and explore possible next steps.
 
@@ -66,17 +80,7 @@ Conversations are treated with care and confidentiality. Information will not be
 
 FORRT community members can contact the Confidential Advisor via email at: [confidential-advisor@forrt.org](mailto:confidential-advisor@forrt.org)
 
-<br>
-
 ## Ombuds
-
-<div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;">
-  <img src="/authors/thomas-rhys-evans/avatar.webp" alt="Thomas Rhys Evans" class="avatar-circle" style="width:80px;height:80px;object-fit:cover;flex-shrink:0;">
-  <div style="text-align:left;">
-    <strong>Thomas Rhys Evans</strong><br>
-    <a href="mailto:ombuds@forrt.org">ombuds@forrt.org</a>
-  </div>
-</div>
 
 The Ombuds role is designed to ensure that the culture, structures and systems of FORRT are fair, inclusive and effective. As such, members of the FORRT community who have been impacted by, or who identify potential concerns within, FORRT policies, practices, or processes are encouraged to raise these with the Ombuds as a means of promoting positive change. Examples might include: unfair methods of recognising contributions to a project, projects that have been designed in such a way that they exclude certain groups, inadequate mechanisms for providing constructive feedback, improper handling of Code of Conduct violations, etc.
 

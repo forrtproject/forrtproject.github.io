@@ -60,7 +60,7 @@
       {{ $nav := printf `<nav aria-label="On this page"><ul>%s</ul></nav>` $items }}
       {{/* A page whose first section is its point (toc_phone_after_first, e.g. About us with its introduction and
            video) puts the phone contents after that section, so the point comes first. */}}
-      {{ if not .Params.toc_phone_after_first }}{{ partial "doors/toc_phone" $nav }}{{ end }}
+      {{ if and (not .Params.toc_phone_after_first) (ne .Params.phone_toc false) }}{{ partial "doors/toc_phone" $nav }}{{ end }}
       {{ $page.Scratch.Set "doors_toc_phone" $nav }}
       {{ end }}
       <div class="article-style">
