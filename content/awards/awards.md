@@ -191,7 +191,7 @@ subtitle = ""
       <p class="award-org">JISC</p>
     </div>
     <h3>Community Champion</h3>
-    <p>In 2023, FORRT was named a <strong><a href="https://www.jisc.ac.uk/news/all/jisc-announces-2023-community-champions" target="_blank" rel="noopener">Community Champion for UK education and research communities</a></strong> by JISC.</p>
+    <p>In 2023, FORRT was named a <strong><a href="https://web.archive.org/web/20250922093443/https://www.jisc.ac.uk/news/all/jisc-announces-2023-community-champions" target="_blank" rel="noopener">Community Champion for UK education and research communities</a></strong> by JISC.</p>
   </article>
 
   <article class="award-card">
@@ -264,7 +264,7 @@ subtitle = ""
       <p class="award-org">Open Scholarship Community Galway</p>
     </div>
     <h3>Open Scholarship Award (2nd Place)</h3>
-    <p>In 2021, FORRT has received an <strong>Open Scholarship Award (2nd Place)</strong> from the <a href="https://osc-galway.ie/competition/" target="_blank" rel="noopener">Open Scholarship Community Galway</a> for its overall initiatives.</p>
+    <p>In 2021, FORRT has received an <strong>Open Scholarship Award (2nd Place)</strong> from the <a href="https://web.archive.org/web/20221127083915/https://osc-galway.ie/competition/" target="_blank" rel="noopener">Open Scholarship Community Galway</a> for its overall initiatives.</p>
   </article>
 
   <article class="award-card">

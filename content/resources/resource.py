@@ -98,6 +98,7 @@ def wrangle_data(df):
                             df.columns[df.columns.str.contains(pat = 'user tags')][0]: 'tags'},
               inplace = True)
     df.fillna('', inplace=True)
+    df['link_to_resource'] = df['link_to_resource'].astype(str).str.strip()
 
 
 # Titles and abstracts pasted from publisher pages can carry HTML entities such as

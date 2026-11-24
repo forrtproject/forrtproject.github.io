@@ -18,9 +18,13 @@ exclude = [
   "127\\.0\\.0\\.1",
 
   # Social media sites that block automated requests
+  "://(?:[^/]*\\.)?facebook\\.com(?:/|$)",
   "linkedin\\.com",
   "twitter\\.com",
-  "x\\.com",
+  "://(?:[^/]*\\.)?x\\.com(?:/|$)",
+
+  # Newsletter signup form action (POST-only endpoint; HEAD/GET always returns 405)
+  "^https://eocampaign1\\.com/form/",
 
   # Web Archive — often slow or flaky
   "web\\.archive\\.org",
@@ -52,8 +56,9 @@ exclude_path = ["newsletters/[0-9]{4}-[0-9]{2}/"]
 user_agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 
 # Accept 2xx/3xx and 429 (rate limiting)
-# Note: 403 is NOT accepted — those are re-verified and categorised by the
-# workflow's post-processing step, since many publishers block bots.
+# Note: 403/405/409/412 are NOT accepted — those are re-verified with full
+# browser GET headers and categorised by the workflow's post-processing step,
+# since many publishers and WAFs block bots or reject HEAD probes.
 accept = ["100..=399", "429"]
 
 # Timeout per request in seconds

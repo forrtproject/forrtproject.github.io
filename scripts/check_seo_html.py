@@ -58,6 +58,7 @@ Hard checks (exit 1 if any fails):
       the related cards below their articles (#1255).
   27. Summary takeaway links have a destination and bypass Google's redirect (#1256).
   28. Summary pages exist and use the written credits expected from the build's data.
+  29. External links on cluster pages do not swallow trailing sentence punctuation (#845).
 
 Report-only sections (never fail): pages with no <h1>, the
 site-wide share of images that carry both width and height, pages whose
@@ -954,6 +955,29 @@ def check_summary_credit_marker(public_dir, summaries=None):
     return failures
 
 
+CLUSTER_TRAILING_PUNCT = re.compile(r'<a\b[^>]*\bhref="(https?://[^"]*[.,;:!?])"', re.I)
+
+
+def check_cluster_link_punctuation(public_dir):
+    """Fallback cluster reference links must not include trailing sentence punctuation (#845)."""
+    clusters_dir = os.path.join(public_dir, "clusters")
+    if not os.path.isdir(clusters_dir):
+        return []
+    failures = []
+    for root, _, names in os.walk(clusters_dir):
+        for name in sorted(names):
+            if name != "index.html":
+                continue
+            full_path = os.path.join(root, name)
+            rel = os.path.relpath(full_path, public_dir).replace(os.sep, "/")
+            with open(full_path, encoding="utf-8", errors="replace") as handle:
+                text = handle.read()
+            bad = sorted(set(CLUSTER_TRAILING_PUNCT.findall(text)))
+            if bad:
+                failures.append("%s (%s)" % (rel, ", ".join(bad[:3])))
+    return sorted(failures)
+
+
 def main(public_dir, summaries=None):
     pages = load_pages(public_dir)
     home = next((p for p in pages if p.path == "index.html"), None)
@@ -986,6 +1010,7 @@ def main(public_dir, summaries=None):
         "25. no page loads the retired js/newsletter.js": [p.path for p in pages if p.loads("js/newsletter.js")],
         "27. summary takeaways link directly to their destinations": check_summary_takeaway_links(pages),
         "28. summaries show written credit without a raw author marker": check_summary_credit_marker(public_dir, summaries),
+        "29. cluster links carry no trailing sentence punctuation": check_cluster_link_punctuation(public_dir),
     }
     conditional = check_conditional_assets(pages)
     results["3. conditional highlight.js / mermaid loading"] = [

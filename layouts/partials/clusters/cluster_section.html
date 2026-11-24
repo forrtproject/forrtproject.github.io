@@ -183,7 +183,7 @@
                 {{ $ref = replaceRE `\s+$` "" $ref }}
                 {{ $ref = replaceRE `<script[^>]*>.*?</script>` "" $ref }}
                 {{ $ref = replaceRE `<iframe[^>]*>.*?</iframe>` "" $ref }}
-                {{ $ref = replaceRE `(https?://\S+)` `<a href="$1" target="_blank" rel="noopener">$1</a>` $ref }}
+                {{ $ref = replaceRE `(https?://[^\s<]*[^\s<.,;:!?)\]])` `<a href="$1" target="_blank" rel="noopener">$1</a>` $ref }}
                 {{ $ref | safeHTML }}
                 {{ if .doi }}
                   {{ $doiURL := printf "https://doi.org/%s" .doi }}

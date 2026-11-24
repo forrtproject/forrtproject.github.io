@@ -659,7 +659,7 @@ The full list of effects is in [this spreadsheet](https://docs.google.com/spread
 * **Modulation of 1/f noise on the weapon identification task**. Making an effort to modulate the use of racial information decreases the emission of 1/f noise.
 {{< spoiler text="Statistics" >}}
 * Status: not replicated 
-* Original paper: ‘[1/f noise and effort on implicit measures of bias](http://psych.colorado.edu/~jclab/pdfs/Correll%20(2008).pdf)’, Correll 2008; mixed-model design experiment, Study 2: n= 71. [citations=88 (GS, October 2022)].
+* Original paper: ‘[1/f noise and effort on implicit measures of bias](https://doi.org/10.1037/0022-3514.94.1.48)’, Correll 2008; mixed-model design experiment, Study 2: n= 71. [citations=88 (GS, October 2022)].
 * Critiques: [Madurski and LeBel 2015](https://etiennelebel.com/documents/m&l(2015,pbr).pdf) [Sample 1: n=148, Sample 2: n=148, citations=6 (GS, October 2022)]. 
 * Original effect size: _d_=.59. 
 * Replication effect size: Madurski and LeBel: Sample 1: _d_=.16; Sample 2: _d_=-0.09.​
@@ -2532,7 +2532,7 @@ The full list of effects is in [this spreadsheet](https://docs.google.com/spread
 {{< spoiler text="Statistics" >}}
 * Status: mixed (social distance replicated, but weaker | self-enhancement replicated | self-enhancement over temporal distance reversed | core hypothesis about temporal distance not replicated)  
 * Original paper: ‘[Temporal differences in trait self-ascription : When the self is seen as an other](https://doi.org/10.1037/0022-3514.90.2.197)’, Pronin and Ross, 2006; study 1: 2 (between - temporal distance: past vs. present) x 2 (between - social distance: self vs friend); study 2: between, temporal distance - present vs future self; study 3: 3 (between - temporal distance: past vs present vs future self) x 2 (within - valence of trait attributions : positive vs negative), study 1: n=167 (students = 123, staff = 44); study 2: n=40; study 3: n=75. [citations=345(GS, June 2022)]​.
-* Critiques: [Adelina and Feldman 2021](https://www.rips-irsp.com/article/10.5334/irsp.571/) [n=911, citations = 1(GS, November 2022)].
+* Critiques: [Adelina and Feldman 2021](https://doi.org/10.5334/irsp.571) [n=911, citations = 1(GS, November 2022)].
 * Original effect size: People attribute more dispositional traits to others compared to themselves (social distance), _f_ = 0.35 [0.03, 0.16]; People attribute more positive, compared to negative, traits when making self-assessments (self-enhancement), _f_ = 0.77 [0.29, 1.25], and this ratio does not increase with temporal distance, _f_ = 0.16 [0.00, 0.36]; People ascribe more dispositional traits when making assessments about their temporally distant self compared to their present self (temporal distance), _f_ = 0.54 [0.27, 0.77].
 * Replication effect size: Adelina and Feldman: Social distance: _f_ = 0.10 [0.03, 0.16]; Self-enhancement: _f_ = 0.88 [0.50, 1.26], ratio increases with temporal distance, _f_ = 0.33 [0.22, 0.42]; Tempn the psychology of experimental surprise oral distance: _f_ = 0.02 [0.00, 0.06].
 {{< /spoiler >}}
@@ -3956,7 +3956,7 @@ Critiques: [Gelman and Loken 2013](http://www.stat.columbia.edu/~gelman/research
 {{< spoiler text="Statistics" >}}
 * Status: mixed
 * Original paper: [‘Are cross-linguistically frequent semantic systems easier to learn? The case of evidentiality’](https://par.nsf.gov/biblio/10147297), Saratsli et al. 2019; between-group study design, n1=34, n2=34, n3=33. [citation=1(GS, June 2022)]​.
-* Critiques: [Saratsli et al. 2020](https://doi.org/10.1016/j.cognition.2020.104194) [n1=111, n2=101, n3=98; citations=13(GS, June 2022)]. [Saratsli and  Papafragou 2021](https://escholarship.org/uc/item/5560w80r) [n=64, citation=0(GS, June 2022)]. [Ilchovska and Culbertson 2019](https://publikationen.uni-tuebingen.de/xmlui/handle/10900/91253) [n=36, citations=0(GS, June 2022)]. 
+* Critiques: [Saratsli et al. 2020](https://doi.org/10.1016/j.cognition.2020.104194) [n1=111, n2=101, n3=98; citations=13(GS, June 2022)]. [Saratsli and  Papafragou 2021](https://escholarship.org/uc/item/5560w80r) [n=64, citation=0(GS, June 2022)]. [Ilchovska and Culbertson 2019](https://doi.org/10.15496/publikation-32634) [n=36, citations=0(GS, June 2022)]. 
 * Original effect size: NA.
 * Replication effect size: Saratsli et al.: NA. Saratsli and Papafragou: NA. Ilchovska and Culbertson: _d_ on the response times [[calculated from t using this formula]](https://haiyangjin.github.io/2020/05/eta2d/#conversion-between-cohens-d-and-partial-eta-squared)= 5.50 (System 1 vs. 2), -4.41 (Systems 1,2 vs. 4), 14.63 (Years English)= NA. ​
 {{< /spoiler >}}

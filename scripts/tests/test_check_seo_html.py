@@ -470,5 +470,28 @@ class GlossaryAkaFilterCheck(unittest.TestCase):
                          ["/glossary/english/missing/ (Lost)", "/glossary/english/type_i_error/ (Type 1 error)"])
 
 
+class ClusterLinkPunctuationCheck(unittest.TestCase):
+    def test_trailing_sentence_punctuation_in_cluster_href_fails(self):
+        with tempfile.TemporaryDirectory() as public:
+            cluster = Path(public) / "clusters" / "cluster-1"
+            cluster.mkdir(parents=True)
+            (cluster / "index.html").write_text(
+                '<div class="fc-summary">See <a href="https://example.org/article.">https://example.org/article.</a></div>',
+                encoding="utf-8",
+            )
+            failures = seo.check_cluster_link_punctuation(public)
+            self.assertEqual(failures, ["clusters/cluster-1/index.html (https://example.org/article.)"])
+
+    def test_clean_cluster_href_passes(self):
+        with tempfile.TemporaryDirectory() as public:
+            cluster = Path(public) / "clusters" / "cluster-1"
+            cluster.mkdir(parents=True)
+            (cluster / "index.html").write_text(
+                '<div class="fc-summary">See <a href="https://example.org/article">https://example.org/article</a>.</div>',
+                encoding="utf-8",
+            )
+            self.assertEqual(seo.check_cluster_link_punctuation(public), [])
+
+
 if __name__ == "__main__":
     unittest.main()

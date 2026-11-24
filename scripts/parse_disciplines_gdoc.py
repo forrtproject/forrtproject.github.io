@@ -89,6 +89,9 @@ SHOW_FIELDS = {
 # (a common artifact when Google Docs hyperlinks are stripped) split cleanly.
 URL_RE = re.compile(r"https?://[^\s<>]+?(?=https?://|\s|$|[<>])")
 DOI_RE = re.compile(r"\b10\.\d{4,9}/[^\s<>]+", re.I)
+# Word HYPERLINK field switches occasionally leak into the stored target
+# (e.g. `...10.1038/nrn.2016.167%22%20/o%20%22...%22%20/t%20%22_blank`).
+WORD_FIELD_SWITCH_RE = re.compile(r'(?:%22|")(?:\s|%20)+/[a-z](?:\s|%20)+.*$', re.I)
 LINK_REPAIRS = json.loads(Path(__file__).with_name("disciplines_link_repairs.json").read_text())
 CATEGORY_ALIASES = {
     "": "General",
@@ -100,17 +103,21 @@ CATEGORY_ALIASES = {
 
 
 def clean_url(url):
-    """Unwrap Outlook links and retain repairs previously made in the sheet (#855)."""
+    """Unwrap Outlook links, strip Word field switches, and retain sheet repairs (#855, #845)."""
     url = url.strip().rstrip(".,;")
     if urlsplit(url).hostname and urlsplit(url).hostname.endswith(".safelinks.protection.outlook.com"):
         url = parse_qs(urlsplit(url).query).get("url", [url])[0]
+    url = WORD_FIELD_SWITCH_RE.sub("", url)
     # Word sometimes includes the space after a hyperlink in its target.
     url = re.sub(r"(?:%20|%09|%0a|%0d)+$", "", url.strip(), flags=re.I)
     # Parentheses inside DOIs are significant; only remove unmatched closers
     # added by prose such as '(see https://example.org/paper)'.
     while url.endswith(")") and url.count(")") > url.count("("):
         url = url[:-1]
-    return LINK_REPAIRS.get(url, LINK_REPAIRS.get(url.rstrip("/"), url))
+    return LINK_REPAIRS.get(
+        url,
+        LINK_REPAIRS.get(url.rstrip("/"), LINK_REPAIRS.get(url.rstrip("/") + "/", url)),
+    )
 
 
 def paragraph_text_links(paragraph):

@@ -92,7 +92,7 @@ Here you can find a list of completed and ongoing projects that summarize replic
    </td>
    <td>Studies on Human Behavior from Nature and Science
    </td>
-   <td><a href="http://www.socialsciencesreplicationproject.com">http://www.socialsciencesreplicationproject.com</a> 
+   <td><a href="https://osf.io/pfdyw/">https://osf.io/pfdyw/</a> 
    </td>
   </tr>
   <tr>
@@ -188,7 +188,7 @@ Here you can find a list of completed and ongoing projects that summarize replic
    </td>
    <td>Biology
    </td>
-   <td><a href="https://reprosci.epfl.ch">https://reprosci.epfl.ch</a>
+   <td><a href="https://doi.org/10.7554/eLife.108403">https://doi.org/10.7554/eLife.108403</a>
    </td>
   </tr>
   <tr>
