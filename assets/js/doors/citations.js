@@ -199,7 +199,7 @@ registerPopover('a.cite[data-cite]', (trigger) => {
   copy.className = 'cite-copy-btn';
   const copyLabel = document.createElement('span');
   copyLabel.className = 'copy-label';
-  copyLabel.textContent = 'Copy APA';
+  copyLabel.textContent = 'Copy reference';
   copy.append(svgIcon(COPY_PATHS, 'cite-copy-icon'), copyLabel);
   copy.addEventListener('click', () => copyWithFeedback(copy, referenceText(entry)));
 
