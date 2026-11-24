@@ -6,7 +6,7 @@ The site serves two prebuilt files from `static/js/tower/`, which have to stay i
 
 | File | Size gzipped | Fetched when |
 |---|---|---|
-| `game.bundle.js` | 174 KB, with its own copy of Three.js | The visitor presses the button |
+| `game.bundle.js` | 176 KB, with its own copy of Three.js | The visitor presses the button |
 | `physics.bundle.js` | 25 KB | The first wobble warning or Topple |
 
 The sources are here, and Hugo does not read them. Rebuilding is the one step that needs Node, and only on the machine doing it. From the repository's root:

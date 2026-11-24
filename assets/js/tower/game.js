@@ -8,7 +8,7 @@
 import {
   Scene, OrthographicCamera, WebGLRenderer, HemisphereLight, DirectionalLight, Mesh, PlaneGeometry, BoxGeometry, EdgesGeometry,
   LineSegments, LineBasicMaterial, Group, ShadowMaterial, Vector3, Box3, PCFShadowMap, SRGBColorSpace,
-  ACESFilmicToneMapping, Color, MeshBasicMaterial, Raycaster, Vector2, BackSide, AlwaysStencilFunc, NotEqualStencilFunc, ReplaceStencilOp
+  ACESFilmicToneMapping, Color, MeshBasicMaterial, MeshStandardMaterial, Raycaster, Vector2, BackSide, AlwaysStencilFunc, NotEqualStencilFunc, ReplaceStencilOp
 } from 'three';
 import { createFoundation } from './source-copies/lego-foundation.js';
 import { createCollapse } from './collapse.js';
@@ -40,6 +40,8 @@ html.tg-lock{overflow:hidden;scrollbar-gutter:stable}
 #tower-game .tg-prog-track{width:42px;height:6px;border-radius:999px;background:#d6e6e3;overflow:hidden}
 #tower-game .tg-prog-fill{display:block;height:100%;width:0;background:#14808f;border-radius:999px;transition:width .2s}
 #tower-game .tg-prog.tg-prog-done .tg-prog-fill{background:#2b7a4b}
+#tower-game .tg-offplan{display:inline-flex;align-items:center;padding:3px 9px;border-radius:999px;background:#fef4e2;border:1px solid #d8a956;font:600 14px/1.2 'Source Sans 3',system-ui,sans-serif;color:#7a4f00;white-space:nowrap}
+#tower-game .tg-offplan[hidden]{display:none}
 #tower-game .tg-meter{display:inline-flex;align-items:center;gap:7px;padding:3px 10px;border-radius:999px;background:#fff;border:1px solid #bfd2cd;font:600 14px/1.2 'Source Sans 3',system-ui,sans-serif;white-space:nowrap;color:#1d5e37}
 #tower-game .tg-meter-track{width:54px;height:7px;border-radius:999px;background:#e4ecea;overflow:hidden;flex:none}
 #tower-game .tg-meter-fill{display:block;height:100%;width:100%;border-radius:999px;background:#2b7a4b;transition:width .15s,background-color .15s}
@@ -89,6 +91,8 @@ html.tg-lock{overflow:hidden;scrollbar-gutter:stable}
 #tower-game .tg-warn-row{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:8px}
 #tower-game .tg-turns{display:flex;align-items:center;gap:4px;float:right;margin:0 0 2px 8px;font-size:20px;color:#5a666e}
 #tower-game .tg-turns img{width:58px;height:36px;object-fit:contain;display:block}
+#tower-game button.tg-style.tg-suggested{background:#e6f4f6;border-color:#6ab5c0}
+#tower-game button.tg-style.tg-suggested[aria-pressed=true]{background:#fff;border-color:#b34e0a}
 #tower-game .tg-style.tg-suggested::after{content:'';position:absolute;top:4px;right:4px;width:9px;height:9px;border-radius:50%;background:#14808f}
 #tower-game .tg-foot{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;padding:4px 12px 12px 18px;order:5}
 #tower-game .tg-hint{flex:1 1 240px;margin:0;font-size:15px;line-height:1.3;height:2.6em;overflow:hidden}
@@ -222,9 +226,9 @@ function buildDialog() {
   const planButtons = BLUEPRINTS.map(bp => `<button type="button" class="tg-plan-pill" data-plan="${bp.id}" aria-pressed="${bp.id === 'free'}">${bp.name}</button>`).join('');
   const tap = coarse.matches ? 'tap' : 'click';
   const steps = [
-    `<strong>Pick a blueprint or build freely</strong> from the row at the top. Each blueprint guides you brick by brick with teal outlines.`,
-    `<strong>Pick a brick</strong> from the row below${coarse.matches ? '' : ', or press its number: 1 to 9, then 0 for the tenth'}.`,
-    `<strong>Point and ${tap}.</strong> ${coarse.matches ? 'Drag first to see a copy of the brick, edged in orange, where it will land; a plain tap places it at once.' : 'A copy of the brick, edged in orange, shows where it will land.'} Watch the <strong>Stability</strong> meter on overhangs.`,
+    `<strong>Pick a blueprint or build freely</strong> from the row at the top. Faint ghosts show the whole build, teal studded outlines show the next layer, and your preview turns green on an exact match.`,
+    `<strong>Pick a brick</strong> from the row below${coarse.matches ? '' : ', or press its number: 1 to 9, then 0 for the tenth'}. Bricks highlighted in teal fit the next layer.`,
+    `<strong>Point and ${tap}.</strong> ${coarse.matches ? 'Drag first to see a copy of the brick where it will land; a plain tap places it at once.' : 'A copy of the brick shows where it will land.'} You can always build off-plan; off-plan bricks get a subtle amber cue while Hints is on.`,
     `<span class="tg-turns" aria-hidden="true"><img id="tg-turn-a" alt="">↻<img id="tg-turn-b" alt=""></span><strong>Rotate${coarse.matches ? '' : ' (or R)'}</strong> turns the brick a quarter turn before you place it. <strong>View${coarse.matches ? '' : ' (or T)'}</strong> turns the whole tower.`,
     '<strong>Grey, Brick and Pride</strong> set the look of your next bricks. <strong>Topple</strong> knocks the tower down for fun; <strong>Undo</strong> snaps it straight back.',
     '<strong>Done</strong> launches a pride-stripe celebration, and <strong>Save photo</strong> downloads a postcard of your build.'
@@ -245,6 +249,7 @@ function buildDialog() {
         <div class="tg-status">
           <span class="tg-count" id="tg-count">0 bricks</span>
           <span class="tg-prog" id="tg-prog" hidden><span class="tg-prog-track" aria-hidden="true"><span class="tg-prog-fill" id="tg-prog-fill"></span></span><span id="tg-prog-text">0 / 0</span></span>
+          <span class="tg-offplan" id="tg-offplan" hidden></span>
           <div class="tg-meter" id="tg-stability" role="meter" aria-label="Tower stability" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100" aria-valuetext="Solid, 100%" data-state="solid">
             <span class="tg-meter-track" aria-hidden="true"><span class="tg-meter-fill" id="tg-stability-fill"></span></span>
             <span id="tg-stability-text">Solid</span>
@@ -275,7 +280,7 @@ function buildDialog() {
     rotate: $('tg-rotate'), view: $('tg-view'), next: $('tg-next'), plan: $('tg-plan'), restart: $('tg-restart'),
     topple: $('tg-topple'), undo: $('tg-undo'), hints: $('tg-hints'), finish: $('tg-finish'), done: $('tg-done'),
     close: $('tg-close'), live: $('tg-live'), photo: $('tg-photo'), sound: $('tg-sound'),
-    prog: $('tg-prog'), progFill: $('tg-prog-fill'), progText: $('tg-prog-text'),
+    prog: $('tg-prog'), progFill: $('tg-prog-fill'), progText: $('tg-prog-text'), offplan: $('tg-offplan'),
     stability: $('tg-stability'), stabilityFill: $('tg-stability-fill'), stabilityText: $('tg-stability-text'),
     toast: $('tg-toast'), toastText: $('tg-toast-text'),
     planPills: [...d.querySelectorAll('.tg-plan-pill')],
@@ -407,11 +412,17 @@ function createGame() {
   const maxPlates = () => history.reduce((m, p) => Math.max(m, p.cell.level + TYPES[p.type].plates), 0);
   const maxCourses = () => Math.ceil(maxPlates() / 3);
 
-  /* Playable blueprints. `slots` is mutated in place so references stay live across blueprint switches. */
-  const hintStrong = new MeshBasicMaterial({ color: '#14808f', transparent: true, opacity: .42, depthWrite: false, depthTest: false });
-  const hintFaint = new MeshBasicMaterial({ color: '#14808f', transparent: true, opacity: .14, depthWrite: false, depthTest: false });
-  const hintLine = new LineBasicMaterial({ color: '#0b5a65', transparent: true, depthTest: false });
-  const hintLineFaint = new LineBasicMaterial({ color: '#0b5a65', transparent: true, opacity: .45, depthTest: false });
+  /* Playable blueprints. `slots` is mutated in place so references stay live across blueprint switches.
+     Open slots use lit studded brick geometry so thin plates are unmistakable from bricks; upper layers show as a faint full-build ghost silhouette. */
+  const hintMatch = new MeshStandardMaterial({ color: '#14808f', emissive: '#0c4f59', emissiveIntensity: .22, roughness: .42, metalness: .02, transparent: true, opacity: .62, depthWrite: false, depthTest: true });
+  const hintTurn = new MeshStandardMaterial({ color: '#1e8899', roughness: .45, metalness: .02, transparent: true, opacity: .42, depthWrite: false, depthTest: true });
+  const hintOther = new MeshStandardMaterial({ color: '#2b8a99', roughness: .48, metalness: .02, transparent: true, opacity: .28, depthWrite: false, depthTest: true });
+  const hintFuture = new MeshStandardMaterial({ color: '#4f9aa6', roughness: .55, metalness: 0, transparent: true, opacity: .11, depthWrite: false, depthTest: true });
+  const hintLineMatch = new LineBasicMaterial({ color: '#064b54', transparent: true, opacity: .95, depthTest: false });
+  const hintLineTurn = new LineBasicMaterial({ color: '#0b5a65', transparent: true, opacity: .72, depthTest: false });
+  const hintLineOther = new LineBasicMaterial({ color: '#0e616d', transparent: true, opacity: .48, depthTest: false });
+  const hintLineFuture = new LineBasicMaterial({ color: '#3b7a85', transparent: true, opacity: .24, depthTest: true });
+  const offPlanLineMat = new LineBasicMaterial({ color: '#c96a08', transparent: true, opacity: .78, depthTest: false });
   const slots = [];
   let currentPlan = 'free', lastNamedPlan = 'castle', planCompletedAnnounced = false;
 
@@ -426,8 +437,9 @@ function createGame() {
       const w = worldOf(s.type, s.i, s.j, s.rot, s.level);
       s.hint = new Group();
       s.hint.position.set(w.x, w.y, w.z); s.hint.rotation.y = w.rotY; s.hint.visible = false;
-      s.body = new Mesh(boxOf[s.type], hintFaint); s.body.renderOrder = 4;
-      s.line = new LineSegments(edgesOf[s.type], hintLineFaint); s.line.renderOrder = 5;
+      // Lit studded geometry makes thin plates (and their stud counts) immediately legible.
+      s.body = new Mesh(geometryOf[s.type], hintOther); s.body.renderOrder = 3;
+      s.line = new LineSegments(edgesOf[s.type], hintLineOther); s.line.renderOrder = 4;
       s.hint.add(s.body, s.line);
       overlay.add(s.hint);
       slots.push(s);
@@ -469,9 +481,14 @@ function createGame() {
     const m = new Mesh(geometryOf[type], material);
     m.castShadow = true; m.receiveShadow = true;
     object.add(m);
+    const offLine = new LineSegments(edgesOf[type], offPlanLineMat);
+    offLine.visible = false;
+    offLine.renderOrder = 5;
+    offLine.raycast = () => {};
+    object.add(offLine);
     object.name = TYPES[type].label;
     model.add(object);
-    const part = { object, type, look, shade, state: 'flying', material, stone: new Color(), pride: new Color(), slot: null, cell: null, rest: new Vector3() };
+    const part = { object, offLine, type, look, shade, state: 'flying', material, stone: new Color(), pride: new Color(), slot: null, cell: null, rest: new Vector3() };
     bricks.push(part);
     return part;
   }
@@ -492,11 +509,37 @@ function createGame() {
   ghostMask.renderOrder = 4; ghostRim.renderOrder = 5; ghostBody.renderOrder = 6; ghostLine.renderOrder = 7; ghost.add(ghostMask, ghostRim, ghostBody, ghostLine);
 
   function showHints() {
-    const open = hintsOn && !done && !toppling && slots.length ? openSlots() : [];
-    for (const s of slots) s.hint.visible = false;
-    for (const s of open) {
-      const mine = s.type === selected;
-      s.hint.visible = true; s.body.material = mine ? hintStrong : hintFaint; s.line.material = mine ? hintLine : hintLineFaint;
+    const active = hintsOn && !done && !toppling && currentPlan !== 'free' && slots.length > 0;
+    const open = active ? openSlots() : [];
+    const openSet = new Set(open);
+    const curRot = selectedRot();
+    for (const s of slots) {
+      if (!active || s.filled) {
+        s.hint.visible = false;
+        continue;
+      }
+      if (openSet.has(s)) {
+        const sameType = s.type === selected;
+        const sameRot = isSquare(s.type) || s.rot === curRot;
+        s.hint.visible = true;
+        s.body.material = sameType ? (sameRot ? hintMatch : hintTurn) : hintOther;
+        s.line.material = sameType ? (sameRot ? hintLineMatch : hintLineTurn) : hintLineOther;
+        s.body.renderOrder = 3;
+        s.line.renderOrder = 4;
+      } else if (!covered(s)) {
+        // Faint full-build ghost silhouette of upper layers so players can see the whole shape they are building.
+        s.hint.visible = true;
+        s.body.material = hintFuture;
+        s.line.material = hintLineFuture;
+        s.body.renderOrder = 2;
+        s.line.renderOrder = 2;
+      } else {
+        s.hint.visible = false;
+      }
+    }
+    // Subtle amber edge outline on off-plan bricks only while blueprint Hints are on; never alters brick colour or blocks free play.
+    for (const p of bricks) {
+      if (p.offLine) p.offLine.visible = active && p.state === 'placed' && !p.slot;
     }
     for (const b of ui.styles) b.classList.toggle('tg-suggested', open.some(s => s.type === b.dataset.type));
     dirty = true;
@@ -633,12 +676,37 @@ function createGame() {
   }
 
   const WOBBLY_HINT = 'Too wobbly here: a brick in this spot would bring the tower down.';
+  const keyForType = type => keyOf(TYPE_KEYS.indexOf(type));
+  const footprintsOverlap = (i1, j1, nx1, nz1, i2, j2, nx2, nz2) => i1 < i2 + nx2 && i2 < i1 + nx1 && j1 < j2 + nz2 && j2 < j1 + nz1;
+  let aimHintActive = false, lastAimMatch = 'free';
+  function analyzeAim(target) {
+    if (!target || currentPlan === 'free' || !slots.length || !hintsOn) return { kind: 'free', slot: null };
+    const open = openSlots();
+    const exact = open.find(s => s.type === target.type && s.i === target.i && s.j === target.j && s.rot === target.rot && s.level === target.level);
+    if (exact) return { kind: 'exact', slot: exact };
+    const [nx, nz] = footprint(target.type, target.rot);
+    const tPlates = TYPES[target.type].plates;
+    let rotateSlot = null, blockedSlot = null;
+    for (const s of open) {
+      const [sx, sz] = footprint(s.type, s.rot);
+      if (!footprintsOverlap(target.i, target.j, nx, nz, s.i, s.j, sx, sz)) continue;
+      const sPlates = TYPES[s.type].plates;
+      if (s.level === target.level && s.type === target.type && !isSquare(s.type) && s.rot !== target.rot) {
+        rotateSlot = s;
+        break;
+      }
+      if (!blockedSlot && s.level < target.level + tPlates && s.level + sPlates > target.level) blockedSlot = s;
+    }
+    if (rotateSlot) return { kind: 'rotate', slot: rotateSlot };
+    if (blockedSlot) return { kind: 'blocks', slot: blockedSlot };
+    return { kind: 'free', slot: null };
+  }
   const defaultHint = () => {
     const bp = BLUEPRINT_MAP[currentPlan];
     const open = hintsOn && slots.length ? openSlots() : [];
-    if (currentPlan !== 'free' && hintsOn && open.length) return `${bp.name}: teal outlines show the next places. Dark ones fit your brick; dotted bricks fit the rest.`;
+    if (currentPlan !== 'free' && hintsOn && open.length) return `${bp.name}: teal studded shapes show the next layer; green preview means an exact match. Free play is always open.`;
     if (currentPlan !== 'free' && slots.length && slots.every(s => s.filled)) return `${bp.name} complete. Press Done for the pride-stripe parade, or pick another blueprint.`;
-    if (currentPlan !== 'free' && hintsOn) return `Your build has covered the rest of ${bp.name}, or left it too wobbly. Keep building, or undo to bring it back.`;
+    if (currentPlan !== 'free' && hintsOn) return `Your build has covered the rest of ${bp.name}, or left it too wobbly. Keep freestyling, or undo to adjust.`;
     return coarse.matches ? 'Pick a brick, then tap the tower. Drag to aim, and turn bricks with Rotate.' : 'Press 1 to 9 or 0 for a brick, then click the tower. R rotates the brick and T turns the view.';
   };
   function refresh() {
@@ -646,6 +714,7 @@ function createGame() {
     ui.count.textContent = n === 0 ? '0 bricks' : `${n === 1 ? '1 brick' : `${n} bricks`} · ${h} high`;
     const hasPlan = currentPlan !== 'free' && slots.length > 0;
     const filled = hasPlan ? slots.filter(s => s.filled && s.filled.state === 'placed').length : 0;
+    const offPlan = hasPlan ? history.filter(p => p.state === 'placed' && !p.slot).length : 0;
     const planDone = hasPlan && filled === slots.length;
     const hasDebris = bricks.some(p => p.state === 'debris');
     ui.prog.hidden = !hasPlan;
@@ -653,6 +722,11 @@ function createGame() {
       ui.progText.textContent = `${filled} / ${slots.length}`;
       ui.progFill.style.width = `${Math.round((filled / slots.length) * 100)}%`;
       ui.prog.classList.toggle('tg-prog-done', planDone);
+    }
+    ui.offplan.hidden = !(hasPlan && offPlan > 0);
+    if (hasPlan && offPlan > 0) {
+      ui.offplan.textContent = `${offPlan} off plan`;
+      ui.offplan.title = `${offPlan === 1 ? '1 brick' : `${offPlan} bricks`} placed outside the blueprint. Undo adjusts it, or keep building freely.`;
     }
     for (const b of ui.planPills) b.setAttribute('aria-pressed', String(b.dataset.plan === currentPlan));
     ui.hints.setAttribute('aria-pressed', String(hintsOn && hasPlan));
@@ -720,14 +794,16 @@ function createGame() {
   function updateFlips() { for (const b of ui.styles) b.classList.toggle('tg-flip', !isSquare(b.dataset.type) && (rot + view) % 2 === 1); }
   function rotateBrick() {
     if (isSquare(selected)) return;
-    rot = 1 - rot; stats.rotates++; sound.rotate(); updateFlips(); updateAim();
-    if (!done && !drag) ui.hint.textContent = 'Brick rotated. The pictures below show which way it now runs.';
+    rot = 1 - rot; stats.rotates++; sound.rotate(); updateFlips(); showHints(); updateAim();
+    if (!done && !drag && !aimHintActive) ui.hint.textContent = 'Brick rotated. The pictures below show which way it now runs.';
     say(rot ? 'Brick rotated.' : 'Brick rotated back.');
   }
   function setAim(target) {
     aim = target;
     ghost.visible = Boolean(target);
-    let wobbly = false, risky = false;
+    let wobbly = false, risky = false, nextHint = null;
+    const match = analyzeAim(target);
+    lastAimMatch = match.kind;
     if (target) {
       const strain = strainWith(holdOf(target.type, target.i, target.j, target.rot, target.level));
       const info = updateStabilityMeter(strain);
@@ -737,10 +813,23 @@ function createGame() {
       ghost.position.set(target.x, target.y, target.z); ghost.rotation.y = target.rotY;
       ghostSkin.color.set(wobbly ? '#e01414' : colourOf(currentLook, nextShade(), target.level));
       ghostSkin.opacity = wobbly ? .6 : 1;
-      const edge = wobbly ? '#e01414' : risky ? '#d97706' : '#ff8a1f', t = TYPES[target.type], rim = 2.5 / frame.scale * 2, solid = n => n - .014;
+      const edge = wobbly ? '#e01414' : risky ? '#d97706' : match.kind === 'exact' ? '#2b7a4b' : match.kind === 'blocks' ? '#c96a08' : '#ff8a1f';
+      const t = TYPES[target.type], rim = 2.5 / frame.scale * 2, solid = n => n - .014;
       ghostLine.material.color.set(edge); ghostRim.material.color.set(edge);
       ghostRim.scale.set((solid(t.nx * PITCH) + rim) / solid(t.nx * PITCH), (solid(t.plates * PLATE) + rim) / solid(t.plates * PLATE), (solid(t.nz * PITCH) + rim) / solid(t.nz * PITCH));
       if (wobbly && !wasWobbly) sound.creak();
+      if (wobbly) {
+        nextHint = WOBBLY_HINT;
+      } else if (match.kind === 'exact') {
+        const verb = coarse.matches ? 'Tap' : 'Click';
+        nextHint = `Matches ${BLUEPRINT_MAP[currentPlan].name}: ${verb.toLowerCase()} to snap this ${t.label} into place.`;
+      } else if (match.kind === 'rotate') {
+        nextHint = `Almost fits: press ${coarse.matches ? 'Rotate' : 'R (or Rotate)'} to align this ${TYPES[match.slot.type].label} with the outline.`;
+      } else if (match.kind === 'blocks') {
+        const want = TYPES[match.slot.type];
+        const keyHint = coarse.matches ? '' : ` (key ${keyForType(match.slot.type)})`;
+        nextHint = `Blueprint wants a ${want.label}${keyHint} here. Place anyway to freestyle.`;
+      }
     } else {
       aimState = 'solid';
       updateStabilityMeter(strainWith());
@@ -748,8 +837,8 @@ function createGame() {
     wasWobbly = wobbly;
     aimRisky = wobbly || risky;
     ui.canvas.style.cursor = wobbly ? 'not-allowed' : '';
-    if (wobbly) ui.hint.textContent = WOBBLY_HINT;
-    else if (ui.hint.textContent === WOBBLY_HINT) ui.hint.textContent = defaultHint();
+    if (nextHint) { ui.hint.textContent = nextHint; aimHintActive = true; }
+    else if (aimHintActive) { aimHintActive = false; if (!done && !toppling) ui.hint.textContent = defaultHint(); }
     dirty = true;
   }
   function updateAim() {
@@ -823,6 +912,19 @@ function createGame() {
     }
     if (!willFinish) checkMilestones(part);
     refresh();
+    if (!part.silent && !willFinish && !part.topples && currentPlan !== 'free' && slots.length > 0 && !part.slot) {
+      const blocked = slots.find(s => {
+        if (s.filled || !covered(s)) return false;
+        const [sx, sz] = footprint(s.type, s.rot);
+        return footprintsOverlap(part.cell.i, part.cell.j, nx, nz, s.i, s.j, sx, sz)
+          && s.level < part.cell.level + t.plates && s.level + TYPES[s.type].plates > part.cell.level;
+      });
+      const devMsg = blocked
+        ? `Off blueprint: this covers a ${TYPES[blocked.type].label} spot. Press Undo to adjust, or keep freestyling.`
+        : 'Extra brick placed outside the blueprint. Press Undo to adjust, or keep freestyling.';
+      if (!done && !toppling) { ui.hint.textContent = devMsg; aimHintActive = false; }
+      say(devMsg);
+    }
     if (willFinish) { part.finishing = false; part.finishPlan = null; finishRun(); }
     if (part.topples) { part.topples = false; startCollapse(); }
   }
@@ -1162,8 +1264,10 @@ function createGame() {
     sound.unlock();
     const prevGhost = ghost.visible;
     const prevHints = slots.map(s => s.hint.visible);
+    const prevOff = bricks.map(p => Boolean(p.offLine?.visible));
     ghost.visible = false;
     for (const s of slots) s.hint.visible = false;
+    for (const p of bricks) if (p.offLine) p.offLine.visible = false;
     renderer.render(scene, camera);
     const hasPlan = currentPlan !== 'free' && slots.length > 0;
     const planDone = hasPlan && slots.every(s => s.filled && s.filled.state === 'placed');
@@ -1179,6 +1283,7 @@ function createGame() {
     });
     ghost.visible = prevGhost;
     slots.forEach((s, i) => { s.hint.visible = prevHints[i]; });
+    bricks.forEach((p, i) => { if (p.offLine) p.offLine.visible = prevOff[i]; });
     dirty = true;
     stats.photos++;
     sound.pick();
@@ -1499,6 +1604,7 @@ function createGame() {
     commit, land, spawn, restart, undo, select, selectBlueprint, rotateBrick, turnView, placeBrick, makeTarget,
     toppleTower, savePhoto, toggleSound, castRay, raycaster, sound, effects, milestones,
     get currentPlan() { return currentPlan; },
+    get aimMatch() { return lastAimMatch; },
     get drag() { return drag; }, get aim() { return aim; }, get cursor() { return cursor; },
     get busy() { return Boolean(flights.size || framing || turning || toppling); },
     get toppling() { return toppling; }, get collapse() { return collapse; }, get lastCollapse() { return lastCollapse; },
@@ -1587,6 +1693,8 @@ if (__DEBUG__) {
       return {
         placed: g.placedCount(), used: g.history.length, courses: g.maxCourses(),
         plan: g.currentPlan, slotsTotal: g.slots.length, slotsFilled: g.slots.filter(s => s.filled).length,
+        offPlan: g.currentPlan === 'free' ? 0 : g.history.filter(p => p.state === 'placed' && !p.slot).length,
+        aimMatch: g.aimMatch,
         open: ui.d.open, hintsShown: g.slots.filter(s => s.hint.visible).length,
         last: g.history.length ? { ...g.history[g.history.length - 1].cell, type: g.history[g.history.length - 1].type } : null,
         stats: g.stats, hint: ui.hint.textContent, selected: g.selected, rot: g.rot, view: g.view, done: g.done,

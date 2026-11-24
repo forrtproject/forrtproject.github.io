@@ -549,10 +549,19 @@ def check_tower_game(browser, base, expect):
     page.keyboard.press("t")
     page.keyboard.press("Enter")
     expect("1 brick" in page.locator("#tg-count").text_content(), "keyboard controls place a brick")
-    # Blueprint switching, progress tracking & completion
+    # Blueprint switching, progress tracking, off-plan free play cue & completion
     page.locator("#tg-restart").click()
     page.locator(".tg-plan-pill[data-plan='arch']").click()
     expect(page.locator("#tg-prog").is_visible(), "selecting a blueprint shows live progress")
+    # Free play stays open during a blueprint: placing an extra brick succeeds and flags 1 off plan until undone.
+    page.locator("#tg-stage").focus()
+    page.keyboard.press("1")
+    page.keyboard.press("ArrowRight")
+    page.keyboard.press("Enter")
+    expect(page.locator("#tg-offplan").is_visible() and "1 off plan" in page.locator("#tg-offplan").text_content(),
+           "off-plan placement is allowed and shown as a non-blocking deviation cue")
+    page.locator("#tg-undo").click()
+    expect(not page.locator("#tg-offplan").is_visible(), "Undo clears the off-plan cue")
     page.locator("#tg-next").click()
     expect("1 /" in page.locator("#tg-prog-text").text_content(), "Place next advances blueprint progress")
     page.locator("#tg-finish").click()
