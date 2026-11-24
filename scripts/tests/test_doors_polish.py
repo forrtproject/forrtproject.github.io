@@ -41,6 +41,8 @@ class DoorsPolishContractTests(unittest.TestCase):
         self.assertIn("$p.Params.contact", card)
         self.assertIn("<dt>Contact</dt>", card)
         self.assertIn("mailto:{{ $email }}", card)
+        self.assertIn('class="fas fa-envelope"', card)
+        self.assertNotIn("{{ $email }}</a>", card)
         ann = (ROOT / "scripts/create_announcements.R").read_text(encoding="utf-8")
         self.assertIn('"Contact" %in% names(row)', ann)
 

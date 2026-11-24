@@ -62,16 +62,18 @@
       {{ $contact := trim (string .) " " }}
       {{ $pair := findRESubmatch `^(.+?)\s*[(\<]([^\s@()<>]+@[^\s@()<>]+\.[^\s@()<>]+)[)\>]$` $contact 1 }}
       {{ $contactProfile := site.GetPage (printf "/authors/%s" (urlize $contact)) }}
-      <dt>Contact</dt><dd>
+      <dt>Contact</dt><dd class="card-contact">
         {{- if $pair -}}
           {{- $name := trim (index (index $pair 0) 1) " " -}}
           {{- $email := index (index $pair 0) 2 -}}
           {{- $np := site.GetPage (printf "/authors/%s" (urlize $name)) -}}
-          {{- if $np }}<a href="{{ $np.RelPermalink }}">{{ $np.Title }}</a>{{ else }}{{ $name }}{{ end }}<br><a href="mailto:{{ $email }}">{{ $email }}</a>
+          {{- $label := $name -}}{{- with $np -}}{{- $label = .Title -}}{{- end -}}
+          {{- if $np }}<a href="{{ $np.RelPermalink }}">{{ $np.Title }}</a>{{ else }}<span>{{ $name }}</span>{{ end }}
+          <a class="card-contact-email" href="mailto:{{ $email }}" aria-label="Email {{ $label }}" title="Email {{ $label }}"><i class="fas fa-envelope" aria-hidden="true"></i></a>
         {{- else if $contactProfile -}}
           <a href="{{ $contactProfile.RelPermalink }}">{{ $contactProfile.Title }}</a>
         {{- else if findRE `^[^\s@]+@[^\s@]+\.[^\s@]+$` $contact -}}
-          <a href="mailto:{{ $contact }}">{{ $contact }}</a>
+          <a class="card-contact-email" href="mailto:{{ $contact }}" aria-label="Email contact" title="Email contact"><i class="fas fa-envelope" aria-hidden="true"></i></a>
         {{- else -}}
           {{ $contact | markdownify }}
         {{- end -}}
