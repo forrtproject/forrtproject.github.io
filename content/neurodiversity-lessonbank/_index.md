@@ -89,7 +89,7 @@ Teaching materials created by FORRT's Team Neurodiversity for university courses
   <p class="lesson-num">Lesson 9 · Lesson plan and reading</p>
   <h3>Avoiding ableist language to diversify OS</h3>
   <ul class="lesson-materials">
-    <li><a href="https://www.liebertpub.com/doi/10.1089/aut.2020.0014" target="_blank" rel="noopener">Text <i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="visually-hidden"> (another website)</span></a></li>
+    <li><a href="https://doi.org/10.1089/aut.2020.0014" target="_blank" rel="noopener">Text <i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="visually-hidden"> (another website)</span></a></li>
     <li><a href="./Lesson_Plans/Avoiding_ableist%20language_to_diversify_open_scholarship.pdf" target="_blank" rel="noopener">Lesson plan (PDF)</a></li>
   </ul>
 </li>

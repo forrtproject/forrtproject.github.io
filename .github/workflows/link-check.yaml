@@ -56,9 +56,12 @@ jobs:
         if: steps.lychee.outputs.exit_code != 0
         run: |
           python3 << 'PYEOF'
-          import json, re, time, urllib.error, urllib.parse, urllib.request
+          import json, re, sys, time, urllib.error, urllib.parse, urllib.request
           from concurrent.futures import ThreadPoolExecutor, as_completed
           from datetime import datetime, timezone
+
+          sys.path.insert(0, "scripts")
+          from link_check_helpers import verify_zenodo_urls
 
           with open("/tmp/lychee/out.md") as f:
               content = f.read()
@@ -218,15 +221,26 @@ jobs:
                       return "unknown", None
               return "unknown", None
 
-          recovered, blocked_fresh, blocked_stale, blocked_never, blocked_untested = [], [], [], [], []
+          zenodo_recovered, recovered, blocked_fresh, blocked_stale, blocked_never, blocked_untested = [], [], [], [], [], []
           if forbidden_errors:
-              print(f"Re-checking {len(forbidden_errors)} bot-blocked/method-restricted URLs with full browser headers...")
+              zenodo_recovered, zenodo_broken, remaining_forbidden = verify_zenodo_urls(list(forbidden_errors))
+              for zurl, zstatus in zenodo_broken.items():
+                  info = forbidden_errors.pop(zurl)
+                  main_errors[zurl] = {"status": zstatus, "pages": info["pages"]}
+              if zenodo_recovered or zenodo_broken:
+                  print(
+                      f"Zenodo API verification: {len(zenodo_recovered)} live, "
+                      f"{len(zenodo_broken)} broken (promoted to Broken links)"
+                  )
+
               still_blocked = []
-              with ThreadPoolExecutor(max_workers=8) as pool:
-                  for fut in as_completed([pool.submit(recheck, u) for u in forbidden_errors]):
-                      url, ok = fut.result()
-                      (recovered if ok else still_blocked).append(url)
-              print(f"  {len(recovered)} recovered, {len(still_blocked)} still blocked")
+              if remaining_forbidden:
+                  print(f"Re-checking {len(remaining_forbidden)} bot-blocked/method-restricted URLs with full browser headers...")
+                  with ThreadPoolExecutor(max_workers=8) as pool:
+                      for fut in as_completed([pool.submit(recheck, u) for u in remaining_forbidden]):
+                          url, ok = fut.result()
+                          (recovered if ok else still_blocked).append(url)
+                  print(f"  {len(recovered)} recovered, {len(still_blocked)} still blocked")
 
               # Wayback lookups run at low concurrency: CDX tolerates a few parallel
               # requests but individual queries can take a minute on deep-crawled
@@ -270,10 +284,17 @@ jobs:
 
               output += (
                   f"\n## Bot-blocked / method-restricted (403/405/409/412) — {len(forbidden_errors)} URLs, re-verified\n\n"
-                  f"These refused lychee. Each was re-requested with full browser headers, and "
-                  f"whatever still refused was dated against its most recent successful Wayback "
-                  f"capture — the question being *when was this last known to work*, not whether "
-                  f"it ever existed.\n\n"
+                  f"These refused lychee. Zenodo records/files/communities were verified via Zenodo's "
+                  f"public REST API (missing records or files are promoted to **Broken links** above); "
+                  f"remaining URLs were re-requested with full browser headers, and whatever still "
+                  f"refused was dated against its most recent successful Wayback capture — the question "
+                  f"being *when was this last known to work*, not whether it ever existed.\n\n"
+              )
+              if zenodo_recovered:
+                  output += (
+                      f"* ✅ **{len(zenodo_recovered)}** verified via the Zenodo REST API — not broken.\n"
+                  )
+              output += (
                   f"* ✅ **{len(recovered)}** responded normally to a browser request — not broken.\n"
                   f"* 🗄️ **{len(blocked_fresh)}** blocked, but archived within the last "
                   f"{STALE_AFTER_DAYS} days — alive recently.\n"
@@ -312,6 +333,15 @@ jobs:
                   output += f"\n<details>\n<summary>{label}</summary>\n\n"
                   for url, when in sorted(bucket):
                       output += f"* <{url}>" + (f" — last archived `{when}`\n" if when else "\n")
+                  output += "\n</details>\n"
+
+              if zenodo_recovered:
+                  output += (
+                      f"\n<details>\n<summary>✅ Verified via Zenodo REST API "
+                      f"({len(zenodo_recovered)} URLs — not broken)</summary>\n\n"
+                  )
+                  for url in sorted(zenodo_recovered):
+                      output += f"* <{url}>\n"
                   output += "\n</details>\n"
 
               if recovered:
@@ -507,6 +537,7 @@ jobs:
           set -euo pipefail
           TITLE="Link Checker Report"
           BODY_FILE=/tmp/lychee/out.md
+          python3 -c 'import sys; sys.path.insert(0, "scripts"); from link_check_helpers import format_limitations_section; open("/tmp/lychee/out.md", "a", encoding="utf-8").write(format_limitations_section(".lychee.toml"))'
           EXISTING=$(gh issue list --label link-check --state open --limit 1 --json number --jq '.[0].number // empty')
           if [ -n "$EXISTING" ]; then
             echo "Updating existing issue #$EXISTING"

@@ -23,6 +23,11 @@ exclude = [
   "twitter\\.com",
   "://(?:[^/]*\\.)?x\\.com(?:/|$)",
 
+  # Slack workspace & invite links — always return 403 to unauthenticated
+  # automated HTTP requests (verified separately; cannot be checked in CI)
+  "://forrt\\.slack\\.com(?:/|$)",
+  "://join\\.slack\\.com(?:/|$)",
+
   # Newsletter signup form action (POST-only endpoint; HEAD/GET always returns 405)
   "^https://eocampaign1\\.com/form/",
 
