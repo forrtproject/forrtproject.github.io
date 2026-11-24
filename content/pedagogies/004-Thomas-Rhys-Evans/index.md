@@ -114,7 +114,9 @@ If you’re starting a course from scratch, or even picking up a pre-existing mo
 
 ### Suggested citation: 
 
-- Evans, T.R., Wolska, J., Andreolli, G., Woodward, A.M., Merighi, A., & Micheli, L. (2024). FORRT Pedagogies. From mental-health breakfast interventions to evidence-based practice: Teaching students how to critically engage with science. (https://doi.org/10.17605/OSF.IO/SB5VE)
+{{< citation-card >}}
+Evans, T.R., Wolska, J., Andreolli, G., Woodward, A.M., Merighi, A., & Micheli, L. (2024). FORRT Pedagogies. From mental-health breakfast interventions to evidence-based practice: Teaching students how to critically engage with science. (https://doi.org/10.17605/OSF.IO/SB5VE)
+{{< /citation-card >}}
 
 ### Team Pedagogies Contributors:
 

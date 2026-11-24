@@ -259,8 +259,14 @@ class CitationTargetCheck(unittest.TestCase):
         return seo.check_citation_targets([seo.Page("example/index.html", parser)])
 
     def test_reference_after_citation(self):
-        self.assertEqual(self.check('<a class="cite" href="#ref-Key">Author, 2020</a>'
-                                    '<li id="ref-Key">Reference</li>'), [])
+        self.assertEqual(self.check('<a class="cite" href="#ref-Key" data-cite="Key">Author, 2020</a>'
+                                    '<li id="ref-Key" data-reference="Key">Reference</li>'), [])
+
+    def test_missing_data_reference_or_mismatched_key_fails(self):
+        self.assertTrue(self.check('<a class="cite" href="#ref-Key" data-cite="Key">Author, 2020</a>'
+                                   '<li id="ref-Key">Reference</li>'))
+        self.assertTrue(self.check('<a class="cite" href="#ref-Key" data-cite="Other">Author, 2020</a>'
+                                   '<li id="ref-Key" data-reference="Other">Reference</li>'))
 
     def test_missing_reference_or_nonlocal_link(self):
         for href in ('#ref-Unknown', '/other/#ref-Key', '#Key', ''):
@@ -270,6 +276,12 @@ class CitationTargetCheck(unittest.TestCase):
 
     def test_other_links_are_ignored(self):
         self.assertEqual(self.check('<a href="#elsewhere">Link</a>'), [])
+
+    def test_truncated_parenthetical_doi_in_data_source_fails(self):
+        self.assertEqual(self.check('<li id="ref-K" data-reference="K" data-source="https://doi.org/10.1002/(SICI)1099">Ref <a href="https://doi.org/10.1002/(SICI)1099">DOI</a></li>'), [])
+        self.assertTrue(self.check('<li id="ref-K" data-reference="K" data-source="https://doi.org/10.1002/(SICI">Ref</li>'))
+        self.assertTrue(self.check('<li id="ref-K" data-reference="K" data-source="https://doi.org/10.1002/">Ref <a href="https://doi.org/10.1002/(SICI)1099">DOI</a></li>'))
+        self.assertTrue(self.check('<li id="ref-K" data-reference="K" data-source="https://doi.org/10.1002/">Ref https://doi.org/10.1002/(SICI)1099</li>'))
 
 
 class GlossaryTitleMarkdownCheck(unittest.TestCase):
@@ -456,6 +468,39 @@ class GlossaryAkaFilterCheck(unittest.TestCase):
                  "/glossary/english/missing/": self.page("Lost")}
         self.assertEqual(seo.glossary_aka_failures(self.HUB, pages),
                          ["/glossary/english/missing/ (Lost)", "/glossary/english/type_i_error/ (Type 1 error)"])
+
+
+class ClusterLinkPunctuationCheck(unittest.TestCase):
+    def test_trailing_sentence_punctuation_in_cluster_href_fails(self):
+        with tempfile.TemporaryDirectory() as public:
+            cluster = Path(public) / "clusters" / "cluster-1"
+            cluster.mkdir(parents=True)
+            (cluster / "index.html").write_text(
+                '<div class="fc-summary">'
+                '<a href="https://example.org/article.">a</a> '
+                '<a href="https://example.org/paren)">b</a> '
+                '<a href="https://example.org/bracket]">c</a>'
+                '</div>',
+                encoding="utf-8",
+            )
+            failures = seo.check_cluster_link_punctuation(public)
+            self.assertEqual(
+                failures,
+                ["clusters/cluster-1/index.html (https://example.org/article., https://example.org/bracket], https://example.org/paren))"],
+            )
+
+    def test_clean_and_balanced_cluster_href_passes(self):
+        with tempfile.TemporaryDirectory() as public:
+            cluster = Path(public) / "clusters" / "cluster-1"
+            cluster.mkdir(parents=True)
+            (cluster / "index.html").write_text(
+                '<div class="fc-summary">'
+                'See <a href="https://example.org/article">https://example.org/article</a>. '
+                'And <a href="https://en.wikipedia.org/wiki/Open_science_(movement)">wiki</a>.'
+                '</div>',
+                encoding="utf-8",
+            )
+            self.assertEqual(seo.check_cluster_link_punctuation(public), [])
 
 
 if __name__ == "__main__":

@@ -238,45 +238,103 @@
 
 /* Contributors (scripts/forrt_contribs/tenzing.py and its template). The filter sits beside the introduction on a
    wide screen; the older generated page names the same ids, so these rules serve both. */
-.article-layout #filter-menu,.article-layout #filter-collapsed{padding:16px 18px;margin:0 0 22px;background:var(--surface);border:0;border-left:0;border-radius:var(--r-large)}
+.article-layout #filter-menu,.article-layout #filter-collapsed{padding:16px 18px;margin:0 0 20px;background:var(--surface);border:0;border-left:0;border-radius:var(--r-large)}
 .article-layout #filter-menu :is(h2,h3){margin:0 0 10px;color:var(--ink);font-size:22px;font-weight:var(--display-weight)}
-.article-layout .filter-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr)) auto;gap:12px;align-items:end}
-.article-layout .filter-field label{display:block;margin:0 0 4px;font-size:15px;font-weight:600}
-.article-layout .filter-field select{width:100%;min-height:44px;padding:7px 10px;background:#fff;border:1.5px solid var(--soft);border-radius:var(--r-small);font-size:16px}
+.article-layout .filter-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 12px;align-items:end}
+.article-layout .filter-field{min-width:0}
+.article-layout .filter-field[hidden]{display:none}
+.article-layout .filter-field label,.article-layout .filter-field-label{display:block;margin:0 0 4px;font-size:15px;font-weight:600;color:var(--ink)}
+.article-layout .filter-field select,.article-layout .filter-field input[type=search],.article-layout .filter-field input[type=text]{width:100%;min-height:44px;padding:7px 10px;background:#fff;border:1.5px solid var(--soft);border-radius:var(--r-small);font:400 16px/1.3 var(--text);color:var(--ink);box-sizing:border-box}
+.article-layout .filter-field :is(input[type=search],input[type=text])::placeholder{color:var(--soft);opacity:1}
 .article-layout #apply-filter,.article-layout #clear-filters{min-height:44px;padding:8px 16px;border:0;background:var(--link);border-radius:999px;color:#fff;font:600 15px/1.3 var(--text);cursor:pointer}
 .article-layout #apply-filter:hover,.article-layout #clear-filters:hover{background:var(--ink)}
-.article-layout .filter-name{grid-column:1/-1}
-.article-layout .filter-field input[type=search]{width:100%;min-height:44px;padding:7px 10px;background:#fff;border:1.5px solid var(--soft);border-radius:var(--r-small);font-size:16px}
-.article-layout .article-style .contributor-count{margin:6px 0 0;font-size:16px;color:var(--soft)}
+/* Project search spans the full panel width so long project titles stay readable. */
+.article-layout .filter-project{grid-column:1/-1}
+.project-combobox{position:relative}
+.article-layout .project-combobox input[type=text]{padding-inline-end:44px}
+.combobox-clear{position:absolute;top:50%;inset-inline-end:0;transform:translateY(-50%);display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;padding:0;border:0;background:none;color:var(--soft);font:600 22px/1 var(--text);cursor:pointer;border-radius:var(--r-small)}
+.combobox-clear[hidden]{display:none}
+.combobox-clear:hover{color:var(--ink)}
+.combobox-clear:focus-visible{outline:3px solid var(--ink);outline-offset:-2px}
+.project-listbox-wrap{position:absolute;top:calc(100% + 4px);inset-inline:0;z-index:950;background:#fff;border:1.5px solid var(--ink);border-radius:var(--r-small);box-shadow:0 8px 24px rgb(38 45 53/.14);overflow:hidden}
+.project-listbox-wrap[hidden]{display:none}
+.article-layout .article-style .project-listbox-status{max-width:none;margin:0;padding:8px 12px;background:var(--surface);border-bottom:1px solid var(--line);font-size:15px;color:var(--soft)}
+.article-layout .article-style .project-listbox-status[hidden]{display:none}
+.article-layout .article-style ul.project-listbox{max-width:none;max-height:280px;margin:0;padding:4px 0;list-style:none;overflow-y:auto}
+.article-layout .article-style ul.project-listbox[hidden]{display:none}
+.article-layout .article-style .project-listbox li{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:44px;max-width:none;margin:0;padding:8px 12px;font-size:15px;line-height:1.35;color:var(--ink);cursor:pointer;box-sizing:border-box}
+.article-layout .article-style .project-listbox li:hover,.article-layout .article-style .project-listbox li.is-active{background:var(--res-bg)}
+.article-layout .article-style .project-listbox li.is-selected{font-weight:600;color:var(--link)}
+.article-layout .article-style .project-listbox li.is-selected .project-opt-name::before{content:"\2713  "}
+.article-layout .article-style .project-listbox li.is-zero .project-opt-count{color:var(--soft)}
+.project-opt-name{min-width:0;overflow-wrap:anywhere}
+.project-opt-count{flex:none;color:var(--soft);font-size:15px;font-variant-numeric:tabular-nums}
+/* Multi-role filter dropdown with live checkboxes and counts. */
+.role-dropdown{position:relative}
+.role-trigger{display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%;min-height:44px;padding:7px 12px;background:#fff;border:1.5px solid var(--soft);border-radius:var(--r-small);font:400 16px/1.3 var(--text);color:var(--ink);text-align:start;cursor:pointer;box-sizing:border-box}
+.role-trigger:hover{border-color:var(--ink)}
+.role-trigger:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.role-trigger>span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.role-trigger::after{content:"";flex:none;width:8px;height:8px;margin-top:-3px;border-inline-end:2px solid var(--ink);border-bottom:2px solid var(--ink);transform:rotate(45deg)}
+.role-trigger[aria-expanded=true]::after{margin-top:3px;transform:rotate(-135deg)}
+.role-panel{position:absolute;top:calc(100% + 4px);inset-inline-end:0;z-index:950;width:max(100%,280px);max-width:calc(100vw - 40px);background:#fff;border:1.5px solid var(--ink);border-radius:var(--r-small);box-shadow:0 8px 24px rgb(38 45 53/.14);overflow:hidden;box-sizing:border-box}
+.role-panel[hidden]{display:none}
+.role-panel-head{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 12px;background:var(--surface);border-bottom:1px solid var(--line);font-size:15px}
+.role-panel-hint{color:var(--soft);font-weight:600}
+.role-clear-btn{min-height:44px;padding:10px 8px;margin:-10px -4px;border:0;background:none;color:var(--link);font:600 15px/1.2 var(--text);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.role-clear-btn[hidden]{display:none}
+.article-layout .article-style ul.role-options{max-width:none;max-height:280px;margin:0;padding:4px 0;list-style:none;overflow-y:auto}
+.article-layout .article-style .role-options li{max-width:none;margin:0}
+.article-layout .filter-field label.role-option{display:flex;align-items:center;gap:10px;min-height:44px;margin:0;padding:6px 12px;font:400 15px/1.3 var(--text);color:var(--ink);cursor:pointer;box-sizing:border-box}
+.article-layout .filter-field label.role-option:hover{background:var(--res-bg)}
+.role-option input[type=checkbox]{flex:none;width:18px;height:18px;margin:0;accent-color:var(--link);cursor:pointer}
+.role-option-name{flex:1;min-width:0;overflow-wrap:anywhere}
+.role-option-count{flex:none;color:var(--soft);font-size:15px;font-variant-numeric:tabular-nums}
+/* Active filter chips (Doors resources pattern). */
+.contributor-active-filters{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:10px 0 0}
+.contributor-active-filters[hidden]{display:none}
+.contributor-active-chip{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:6px 14px;border:1.5px solid var(--ink);border-radius:999px;background:#fff;color:var(--ink);font:600 15px/1.25 var(--text);cursor:pointer;max-width:100%;text-align:start;overflow-wrap:anywhere;box-sizing:border-box}
+.contributor-active-chip::after{content:"\00d7";flex:none;font-size:18px;line-height:1}
+.contributor-active-chip:hover{background:var(--ink);color:#fff}
+.contributor-active-chip:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.contributor-clear-all{min-height:44px;padding:6px 8px;border:0;background:none;color:var(--link);font:600 15px/1.25 var(--text);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.article-layout .article-style .contributor-count{margin:8px 0 0;font-size:15px;color:var(--soft)}
+.article-layout .article-style .contributor-count[hidden]{display:none}
 .contributor-group.is-name-hidden{display:none!important}
 .article-layout #filter-results{margin-top:12px;font-size:16px}
 .article-layout .filter-title{margin:0 0 4px;font-weight:600;border-bottom:1px solid var(--line)}
 .article-layout #filter-collapsed a{color:var(--link);font-weight:600}
-.article-layout .contribution{font-size:17px;line-height:1.45}
+.article-layout .contribution{font-size:17px;line-height:1.4}
+/* Older generated pages omit the Name input, so let Role span the full width too. */
+.article-layout .filter-grid:not(:has(.filter-name:not([hidden]))) .filter-role{grid-column:1/-1}
 @media(min-width:901px){
-  .contributors-head{display:grid;grid-template-columns:minmax(0,34em) minmax(340px,480px);justify-content:space-between;gap:40px;align-items:start;margin:0 0 8px}
+  .contributors-head{display:grid;grid-template-columns:minmax(0,34em) minmax(360px,500px);justify-content:space-between;gap:36px;align-items:start;margin:0 0 8px}
   .contributors-head #filter-menu{margin:0}
   /* The introduction is cut short only while it stands above the finder (narrower than 901 px); beside it, it shows in full. */
   .contributors-intro .is-clamped{display:block;-webkit-line-clamp:unset;line-clamp:unset;overflow:visible}
   .contributors-head>.clamp-more{display:none!important}
   .contributors-head .filter-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .contributors-head .filter-grid>.filter-field:last-child{grid-column:1/-1}
 }
-@media(max-width:560px){.article-layout .filter-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.article-layout .filter-grid>.filter-field:last-child{grid-column:1/-1}}
+@media(max-width:560px){
+  .article-layout .filter-grid{grid-template-columns:minmax(0,1fr);gap:10px}
+  .role-panel{inset-inline:0;width:100%}
+}
 /* The letters of the surnames: one row of plain letters that jump to each letter, staying at the top of the screen
    while the list scrolls (the glossary's letter links, at 44 px). */
-.contributor-az{position:sticky;top:0;z-index:5;display:flex;flex-wrap:wrap;gap:6px 4px;margin:28px 0 8px;padding:12px 0 10px;background:var(--page);box-shadow:0 1px 0 var(--line)}
+.contributor-az{position:sticky;top:0;z-index:5;display:flex;flex-wrap:wrap;gap:6px 4px;margin:20px 0 6px;padding:10px 0 8px;background:var(--page);box-shadow:0 1px 0 var(--line)}
+.contributor-az[hidden]{display:none}
 .article-layout .article-style .contributor-az a{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;border-radius:var(--r-small);background:var(--surface);color:var(--ink);font:600 17px/1 var(--text);text-decoration:none}
+.article-layout .article-style .contributor-az a[hidden]{display:none}
 .article-layout .article-style .contributor-az a:hover{background:var(--foot);text-decoration:underline;text-underline-offset:3px}
 .contributor-az a:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
-html:has(.contributor-az){scroll-padding-top:calc(var(--contributor-az,72px) + 12px)}
+html:has(.contributor-az:not([hidden])){scroll-padding-top:calc(var(--contributor-az,72px) + 12px)}
 @media(max-width:760px){
   /* On a phone the letters are one line that scrolls sideways, so the list keeps the screen (DESIGN.md §9). The
      right edge fades out, with an arrow, until the line is scrolled to its end (contributor-filter.js), so the
      letters past the edge are seen to be there. */
-  .contributor-az{flex-wrap:nowrap;gap:4px;margin:20px -20px 8px;padding:10px 20px 8px;overflow-x:auto;scrollbar-width:none}
+  .contributor-az{flex-wrap:nowrap;gap:4px;margin:16px -20px 6px;padding:8px 20px;overflow-x:auto;scrollbar-width:none}
   .article-layout .article-style .contributor-az a{flex:none}
-  .contributor-az::after{content:"›";position:sticky;right:-20px;flex:none;display:flex;align-items:center;justify-content:flex-end;width:56px;margin:-10px -20px -8px -56px;padding:0 10px 2px 0;background:linear-gradient(90deg,rgb(254 253 246/0),var(--page) 55%);color:var(--ink);font:600 30px/1 var(--text);pointer-events:none}
+  .contributor-az::after{content:"›";position:sticky;right:-20px;flex:none;display:flex;align-items:center;justify-content:flex-end;width:56px;margin:-8px -20px -8px -56px;padding:0 10px 2px 0;background:linear-gradient(90deg,rgb(254 253 246/0),var(--page) 55%);color:var(--ink);font:600 30px/1 var(--text);pointer-events:none}
   .contributor-az.is-at-end::after{visibility:hidden}
 }
 /* The board of the largest projects (tenzing.py), as Reversals opens with its outcomes: one ranked chart, a row per
@@ -284,15 +342,15 @@ html:has(.contributor-az){scroll-padding-top:calc(var(--contributor-az,72px) + 1
    of the same width in every row, so lengths compare across the board. Six rows to a column on a wide screen, the
    largest first; on a phone one column, the first six until "Show all 12 projects". Each row is a link that filters
    the list to its project; the chosen one turns solid. */
-.article-layout .article-style .project-board{max-width:none;margin:28px 0 8px}
-.article-layout .article-style .project-board h2{margin:0 0 4px;font-size:clamp(25px,2.4vw,31px);line-height:1.15}
-.article-layout .article-style .project-board-hint{margin:0 0 12px;font-size:17px}
-.article-layout .article-style ul.project-tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(6,auto);grid-auto-flow:column;gap:2px 56px;max-width:none;margin:0;padding:0;list-style:none}
+.article-layout .article-style .project-board{max-width:none;margin:20px 0 6px}
+.article-layout .article-style .project-board h2{margin:0 0 4px;font-size:clamp(24px,2.3vw,30px);line-height:1.15}
+.article-layout .article-style .project-board-hint{margin:0 0 10px;font-size:16px;color:var(--soft)}
+.article-layout .article-style ul.project-tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(6,auto);grid-auto-flow:column;gap:0 48px;max-width:none;margin:0;padding:0;list-style:none}
 .article-layout .article-style .project-tiles li{max-width:none;margin:0}
-.article-layout .article-style .project-tiles a{display:grid;grid-template-columns:52px minmax(0,1fr);column-gap:14px;align-items:baseline;height:100%;box-sizing:border-box;padding:8px 0 10px;border-radius:var(--r-small);color:var(--ink);text-decoration:none}
-.project-tiles .project-tile-many{grid-row:1/span 2;font:var(--display-weight) 30px/1 var(--display);text-align:end;white-space:nowrap}
-.project-tiles .project-tile-name{color:var(--link);font:600 17px/1.3 var(--text);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
-.project-tiles .project-tile-bar{position:relative;grid-column:2;height:8px;margin-top:6px;border-radius:2px;background:rgb(255 107 0/.18);overflow:hidden}
+.article-layout .article-style .project-tiles a{display:grid;grid-template-columns:48px minmax(0,1fr);column-gap:12px;align-items:baseline;height:100%;box-sizing:border-box;padding:6px 0 8px;border-radius:var(--r-small);color:var(--ink);text-decoration:none}
+.project-tiles .project-tile-many{grid-row:1/span 2;font:var(--display-weight) 26px/1 var(--display);text-align:end;white-space:nowrap}
+.project-tiles .project-tile-name{color:var(--link);font:600 16px/1.3 var(--text);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+.project-tiles .project-tile-bar{position:relative;grid-column:2;height:7px;margin-top:5px;border-radius:2px;background:rgb(255 107 0/.18);overflow:hidden}
 .project-tiles .project-tile-bar::before{content:"";position:absolute;inset:0 auto 0 0;width:calc(var(--share,1)*100%);background:var(--hot);transform-origin:0 50%}
 .article-layout .article-style .project-tiles a:hover{background:var(--surface)}
 .article-layout .article-style .project-tiles a:hover .project-tile-name{text-decoration-thickness:2px}
@@ -307,9 +365,9 @@ html:has(.contributor-az){scroll-padding-top:calc(var(--contributor-az,72px) + 1
 @media(max-width:760px){
   .article-layout .article-style ul.project-tiles{grid-template-columns:minmax(0,1fr);grid-template-rows:none;grid-auto-flow:row}
   .article-layout .article-style .project-tiles.is-short li:nth-child(n+7){display:none}
-  .article-layout .article-style .project-tiles a{grid-template-columns:44px minmax(0,1fr);column-gap:12px;padding:8px 0 10px}
-  .project-tiles .project-tile-many{font-size:26px}
-  .article-layout .article-style .project-board-more{display:inline-flex;align-items:center;min-height:44px;margin:4px 0 0;padding:0;border:0;background:none;color:var(--link);font:600 17px/1.3 var(--text);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+  .article-layout .article-style .project-tiles a{grid-template-columns:44px minmax(0,1fr);column-gap:12px;padding:7px 0 9px}
+  .project-tiles .project-tile-many{font-size:24px}
+  .article-layout .article-style .project-board-more{display:inline-flex;align-items:center;min-height:44px;margin:4px 0 0;padding:0;border:0;background:none;color:var(--link);font:600 16px/1.3 var(--text);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
   .article-layout .article-style .project-board-more[hidden]{display:none}
 }
 /* The first time the board is in view, each bar grows to its length in 0.4 s, 25 ms after the one before
@@ -319,36 +377,44 @@ html:has(.contributor-az){scroll-padding-top:calc(var(--contributor-az,72px) + 1
   .project-board.is-seen .project-tile-bar::before{transform:none;transition:transform .4s ease-out calc(var(--i,0)*25ms)}
 }
 /* Filtered by project or role: the heading above the list names the filter and counts the people, with the way back. */
-.contributor-result{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 20px;margin:40px 0 0}
-.article-layout .article-style .contributor-result h2{margin:0;font-size:clamp(25px,2.4vw,31px);line-height:1.15}
-.article-layout .article-style .contributor-result a{display:inline-flex;align-items:center;min-height:44px;color:var(--link);font-weight:600}
-.contributor-result+#contributor-list .contributor-letter-heading,.contributor-result+.contributor-az+#contributor-list .contributor-letter-heading{margin-top:16px}
+.contributor-result{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 20px;margin:28px 0 0}
+.article-layout .article-style .contributor-result h2{margin:0;font-size:clamp(24px,2.3vw,30px);line-height:1.15}
+.article-layout .article-style .contributor-result :is(a,.contributor-result-clear){display:inline-flex;align-items:center;min-height:44px;padding:0;border:0;background:none;color:var(--link);font:600 16px/1.3 var(--text);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.contributor-result+#contributor-list .contributor-letter-heading,.contributor-result+.contributor-az+#contributor-list .contributor-letter-heading{margin-top:12px}
 /* Filtered to one project, a row gives only the person's roles in it, as the heading names the project (the script
    hides the project's name, link and all). */
-.article-layout .article-style #contributor-list.is-project-filtered .contribution{max-width:30em;margin:0;padding:0;text-indent:0;font-size:16px;line-height:1.45}
+.article-layout .article-style #contributor-list.is-project-filtered .contribution{display:block;max-width:30em;margin:0;padding:0;text-indent:0;font-size:16px;line-height:1.4}
 .article-layout .article-style #contributor-list.is-project-filtered .contribution>[hidden]{display:none}
 #contributor-list.is-project-filtered .contribution-roles{display:inline}
 #contributor-list.is-project-filtered .contribution-roles::before{content:none}
-/* Each letter: its heading, then one row per person, the name on the left and the projects, each with its roles
-   after it, on the right, with a hairline between people. Contributions are very unequal, so a heavy contributor
-   makes a taller row and leaves no gap beside it (DESIGN.md §4). On a phone the name sits above its projects. */
-.contributor-letter{margin:0 0 28px}
-.article-layout .article-style .contributor-letter-heading{margin:28px 0 0;padding:0 0 6px;font:500 36px/1 var(--display);color:var(--ink);border-bottom:2px solid var(--ink)}
+/* Each letter: its heading, then one strictly aligned row per person across the full width (name on the left,
+   projects on the right, hairline between people). Columns are used only inside a row: single-project rows keep
+   "Project — roles" together on one line using an intrinsic two-track grid so roles stay right beside short titles
+   without wrapping prematurely; multi-project rows run in two columns inside their row (issue #1277, DESIGN.md §4). */
+.contributor-letter{margin:0 0 18px}
+.article-layout .article-style .contributor-letter-heading{margin:18px 0 0;padding:0 0 4px;font:500 28px/1 var(--display);color:var(--ink);border-bottom:2px solid var(--ink)}
 .article-layout .article-style ul.contributor-rows{max-width:none;margin:0;padding:0;list-style:none}
-.article-layout .article-style .contributor-rows>.contributor-group{display:grid;grid-template-columns:240px minmax(0,1fr);column-gap:28px;align-items:baseline;max-width:none;margin:0;padding:12px 0;border-bottom:1px solid var(--line);font-size:17px;line-height:1.45}
+.article-layout .article-style .contributor-rows>.contributor-group{display:grid;grid-template-columns:225px minmax(0,1fr);column-gap:24px;align-items:baseline;max-width:none;margin:0;padding:7px 0;border-bottom:1px solid var(--line);font-size:17px;line-height:1.4}
 .article-layout .article-style .contributor-rows>.contributor-group>:not(.contributor-name){grid-column:2}
-.article-layout .article-style .contributor-name{grid-row:1/span 2;margin:0;font:500 20px/1.3 var(--display)}
+.article-layout .article-style .contributor-name{grid-row:1/span 2;margin:0;font:500 19px/1.3 var(--display)}
 /* A name is a link to its ORCID record, a tap target of its own beside the project links: 44 px tall (DESIGN.md §9),
-   with the extra height invisible, so a linked name sits exactly where an unlinked one does. The extra height lies
-   mostly above the name, in the row's own top space, and only 4 px below it, the gap before the first project link. */
-.article-layout .article-style .contributor-name a{display:inline-block;padding:14px 0 4px;margin:-14px 0 -4px;color:var(--link)}
+   with the extra height invisible, so a linked name sits exactly where an unlinked one does. */
+.article-layout .article-style .contributor-name a{display:inline-block;padding:10px 0 10px;margin:-10px 0 -10px;color:var(--link)}
 .article-layout .article-style .contributor-rows .contributions-list{max-width:none;margin:0;padding:0;list-style:none}
-.article-layout .article-style .contributor-rows .contribution{max-width:27em;margin:0 0 4px;font-size:17px;line-height:1.45}
+.article-layout .article-style .contributor-rows .contributions-list[hidden]{display:none}
+.article-layout .article-style .contributor-rows .contributions-list[hidden]+.contributions-more{margin-top:0}
+.article-layout .article-style .contributor-rows .contribution{max-width:27em;margin:0 0 3px;font-size:17px;line-height:1.4}
 .article-layout .article-style .contributor-rows .contribution:last-child{margin-bottom:0}
-/* On a wide screen a long list of projects runs in two columns, so the row uses the width beside the name. */
-@media(min-width:1200px){
-  .article-layout .article-style #contributor-list:not(.is-project-filtered) .contributor-rows .contributions-list{columns:2;column-gap:32px}
-  .article-layout .article-style .contributor-rows .contribution{break-inside:avoid}
+/* On wider screens, a single-project row keeps "Project — roles" together on one line (capped per track so neither
+   exceeds the 80-char measure), while multi-project rows use a two-column grid inside the row. */
+@media(min-width:901px){
+  .article-layout .article-style #contributor-list:not(.is-project-filtered) .contributor-rows .contributions-list:is(:not(:has(>.contribution:nth-child(2))),.is-single-visible)>.contribution{display:grid;grid-template-columns:minmax(0,max-content) minmax(0,1fr);column-gap:6px;align-items:baseline;max-width:none}
+  .article-layout .article-style #contributor-list:not(.is-project-filtered) .contributor-rows .contributions-list:is(:not(:has(>.contribution:nth-child(2))),.is-single-visible)>.contribution>:first-child{max-width:27em}
+  .article-layout .article-style #contributor-list:not(.is-project-filtered) .contributor-rows .contributions-list:is(:not(:has(>.contribution:nth-child(2))),.is-single-visible)>.contribution .contribution-roles{max-width:34em}
+}
+@media(min-width:1001px){
+  .article-layout .article-style #contributor-list:not(.is-project-filtered) .contributor-rows .contributions-list:has(>.contribution:nth-child(2)):not(.is-single-visible){display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 24px;align-items:start}
+  .article-layout .article-style #contributor-list:not(.is-project-filtered) .contributor-rows .contributions-list:has(>.contribution:nth-child(2)):not(.is-single-visible)>.contribution{max-width:27em;margin:0}
 }
 .contribution-roles{color:var(--soft);font-size:16px}
 /* Project links in the rows have a quieter underline than the names, at full strength under the pointer or focus, so
@@ -356,17 +422,20 @@ html:has(.contributor-az){scroll-padding-top:calc(var(--contributor-az,72px) + 1
 .article-layout .article-style .contribution>a:not([class]){text-decoration-color:rgb(0 90 135/.45)}
 .article-layout .article-style .contribution>a:not([class]):is(:hover,:focus-visible){text-decoration-color:currentColor}
 .contribution-roles::before{content:"— "}
-.article-layout .article-style .contributions-more{margin:4px 0 0}
-.article-layout .article-style .contributions-more>summary{display:inline-flex;align-items:center;min-height:36px;color:var(--link);font-weight:600;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
-.article-layout .article-style .contributions-more[open]>summary{margin:0 0 4px}
+.article-layout .article-style .contributions-more{margin:3px 0 0}
+.article-layout .article-style .contributions-more[hidden]{display:none}
+.article-layout .article-style .contributions-more>summary{display:inline-flex;align-items:center;min-height:44px;padding:10px 0;margin:-10px 0 -10px;color:var(--link);font-size:15px;font-weight:600;text-decoration:underline;text-underline-offset:3px;cursor:pointer;list-style:none;box-sizing:border-box}
+.article-layout .article-style .contributions-more>summary[hidden]{display:none}
+.article-layout .article-style .contributions-more>summary::-webkit-details-marker{display:none}
+.article-layout .article-style .contributions-more[open]>summary{margin:-10px 0 -4px}
 @media(max-width:760px){
-  .article-layout .article-style .contributor-rows>.contributor-group{grid-template-columns:minmax(0,1fr)}
+  .article-layout .article-style .contributor-rows>.contributor-group{grid-template-columns:minmax(0,1fr);padding:8px 0}
   .article-layout .article-style .contributor-rows>.contributor-group>:not(.contributor-name){grid-column:1}
-  .article-layout .article-style .contributor-name{grid-row:auto;margin:0 0 4px}
-  .article-layout .article-style .contributions-more>summary{min-height:44px}
+  .article-layout .article-style .contributor-name{grid-row:auto;margin:0 0 2px;font-size:18px;line-height:1.25}
+  .article-layout .article-style .contributor-name a{padding:11px 0 11px;margin:-11px 0 -11px}
   /* A project's roles take a line of their own under its title, so a wrapped line never starts with a role. */
-  .article-layout .article-style .contributor-rows .contribution{margin-bottom:8px}
-  .contributor-rows .contribution-roles{display:block}
+  .article-layout .article-style .contributor-rows .contribution{margin-bottom:5px;font-size:17px;line-height:1.35}
+  .contributor-rows .contribution-roles{display:block;font-size:15px;line-height:1.35}
   .contributor-rows .contribution-roles::before{content:none}
 }
 
@@ -582,6 +651,7 @@ html:has(.contributor-az){scroll-padding-top:calc(var(--contributor-az,72px) + 1
   .lesson-plan-pair>div>:is(h2,h3):first-child{margin-top:48px}
 }
 .article-layout .article-style .lesson-plan-sheet>h3{margin-top:36px}
+@media(min-width:761px){.narrow-screen-only{display:none}}
 .lesson-plan-motivation{display:flex;flex-direction:column}
 /* The note on the article about the plans is a pale side panel, so it reads as an aside to the motivation. */
 .article-layout .article-style .lesson-plan-article{order:1;margin:8px 0 0;padding:20px 22px;background:var(--edu-bg);border-radius:var(--r-large)}
@@ -673,3 +743,192 @@ html:has(.contributor-az){scroll-padding-top:calc(var(--contributor-az,72px) + 1
   .article-layout .article-style .booklet-area a,.article-layout .article-style .lesson-plan-group li>a:first-child{display:inline-flex;align-items:center;min-height:44px;padding:0}
 }
 .booklet-area .fa-external-link-alt{margin-inline-start:2px;font-size:13px;color:var(--soft)}
+
+/* Callout rails pinned to the top of their section on desktop (Mission, Principles, Confidential Advisor &
+   Ombuds): the rail sits at the end of the section in DOM so mobile leads with prose/contacts first, while
+   desktop places it in column 2 from row 1. Update the span if any of those sections grows past 12 blocks. */
+@media(min-width:1240px){
+  .article-layout-callouts .article-style .doc-section>.callout-rail.callout-rail-top{grid-row:1/span 12}
+}
+
+/* Four Strategic Focus Areas (shortcodes/focus_areas.html, issue #938): editorial four-part overview on
+   /about/us/ with area-colour accent rules (DESIGN.md §6), distinct from the homepage door cards. */
+.article-layout .article-style ul.focus-areas{list-style:none;margin:20px 0 16px;padding:0;max-width:none;border-top:1px solid var(--line)}
+.article-layout .article-style .focus-area{--tone:var(--edu);margin:0;padding:18px 0 14px 18px;max-width:none;border-bottom:1px solid var(--line);border-inline-start:4px solid var(--tone)}
+.article-layout .article-style .focus-area-res{--tone:var(--res)}
+.article-layout .article-style .focus-area-jus{--tone:var(--jus)}
+.article-layout .article-style .focus-area-com{--tone:var(--com)}
+.article-layout .article-style .focus-area h3{margin:0 0 6px;font-size:22px;line-height:1.2;color:var(--tone)}
+.article-layout .article-style .focus-area>p{margin:0 0 8px;max-width:29em;font-size:17px;line-height:1.55;color:var(--ink)}
+.article-layout .article-style ul.focus-area-links{display:flex;flex-wrap:wrap;gap:0 16px;max-width:none;margin:0;padding:0;list-style:none}
+.article-layout .article-style .focus-area-links li{margin:0;font-size:16px;line-height:1.4}
+.article-layout .article-style .focus-area-links a{display:inline-flex;align-items:center;min-height:44px;color:var(--ink);font-weight:600;text-decoration:underline;text-decoration-color:color-mix(in srgb,var(--tone) 55%,transparent);text-underline-offset:3px}
+.article-layout .article-style .focus-area-links a:hover{color:var(--tone);text-decoration-color:currentColor}
+.focus-area-links .fa-external-link-alt{margin-inline-start:4px;font-size:13px;color:var(--soft)}
+.article-layout .article-style .focus-areas-note{margin:12px 0 0;font-size:16px;color:var(--soft)}
+
+/* Mission & Principles: neutral mission statement panel (covers all four areas, DESIGN.md §6) and calm
+   Education & Pedagogy advantages panels on Principles. */
+.article-layout .article-style blockquote.mission-statement{margin:0 0 28px;padding:22px 24px;background:var(--surface);border-inline-start:4px solid var(--ink);border-radius:var(--r-small) var(--r-large) var(--r-large) var(--r-small);max-width:none}
+.article-layout .article-style blockquote.mission-statement p{margin:0;max-width:30em;font:500 clamp(19px,1.7vw,21px)/1.5 var(--display);color:var(--ink)}
+.principle-panel{margin:10px 0 24px;padding:18px 22px;background:var(--edu-bg);border-radius:var(--r-large)}
+.article-layout .article-style .principle-panel h3{margin:0 0 10px;font-size:21px;color:var(--edu)}
+.article-layout .article-style .principle-panel ul{margin:0;padding-inline-start:1.3em}
+.article-layout .article-style .principle-panel li:last-child{margin-bottom:0}
+@media(max-width:760px){
+  .article-layout .article-style blockquote.mission-statement{padding:16px 18px}
+  .principle-panel{padding:16px}
+}
+
+/* Confidential Advisor & Ombuds: two equal-height contact cards spanning the reading column (no competing
+   sidebar cards), compact on phones so both fit inside the first 844 px screen. */
+.governance-contacts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:0 0 14px}
+.governance-card{display:flex;flex-direction:column;min-width:0;padding:18px 20px;background:var(--surface);border-radius:var(--r-large)}
+.governance-card-head{display:flex;align-items:center;gap:14px;margin:0 0 10px}
+.article-layout .article-style .governance-avatar{display:block;flex:none;width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:50% 20%}
+.article-layout .article-style .governance-role{margin:0 0 2px;font-size:15px;font-weight:700;color:var(--soft);line-height:1.25}
+.article-layout .article-style .governance-name{margin:0;font:500 20px/1.2 var(--display);color:var(--ink)}
+.article-layout .article-style .governance-scope{margin:0 0 14px;max-width:28em;font-size:16px;line-height:1.45;color:var(--ink)}
+.article-layout .article-style .governance-actions{display:flex;flex-direction:column;align-items:flex-start;gap:2px;margin:auto 0 0;max-width:none}
+.article-layout .article-style .governance-more{display:inline-flex;align-items:center;min-height:44px;font-size:15px;font-weight:600;color:var(--link);text-decoration:underline;text-underline-offset:3px}
+.article-layout .article-style .governance-note{margin:0 0 24px;padding:0 0 18px;max-width:none;font-size:16px;line-height:1.5;color:var(--soft);border-bottom:1px solid var(--line)}
+.article-layout .article-style .governance-note span{display:block;max-width:29em}
+@media(max-width:760px){
+  .governance-contacts{grid-template-columns:minmax(0,1fr);gap:12px;margin:0 0 14px}
+  .governance-card{padding:14px 16px}
+  .governance-card-head{gap:12px;margin:0 0 6px}
+  .article-layout .article-style .governance-avatar{width:54px;height:54px}
+  .article-layout .article-style .governance-name{font-size:19px}
+  .article-layout .article-style .governance-scope{margin:0 0 8px;font-size:15px;line-height:1.4}
+  .article-layout .article-style .governance-actions{flex-direction:row;flex-wrap:wrap;align-items:center;gap:4px 14px}
+}
+
+/* Awards & Impact (wide page): intro paired with jump links, full-width horizontal featured bands (zero
+   stretched void), year-grouped 2-col award cards, and a plain hairline-ruled Impact & achievements list. */
+.awards-head{display:grid;grid-template-columns:minmax(0,1fr);gap:14px;margin:0 0 28px;padding-bottom:18px;border-bottom:1px solid var(--line)}
+@media(min-width:1001px){
+  .awards-head{grid-template-columns:minmax(0,29em) minmax(0,1fr);gap:40px;align-items:end}
+}
+.article-layout-wide .article-style .awards-intro{max-width:29em;margin:0;font-size:19px;line-height:1.55}
+.awards-jump{display:flex;flex-wrap:wrap;gap:4px 18px;margin:0;padding:0}
+@media(min-width:1001px){.awards-jump{justify-content:flex-end}}
+.article-layout .article-style .awards-jump a{display:inline-flex;align-items:center;min-height:44px;font-size:16px;font-weight:600;color:var(--link);text-decoration:underline;text-underline-offset:3px}
+.article-layout .article-style .awards-jump a:hover{color:var(--ink)}
+.article-layout .article-style .awards-section-heading{margin:32px 0 16px;font-size:clamp(26px,2.4vw,32px)}
+.awards-featured-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:24px;margin:0 0 36px}
+.award-featured{display:flex;flex-direction:column;min-width:0;padding:26px 28px;background:var(--surface);border-radius:var(--r-large);border-top:4px solid var(--link)}
+.article-layout .article-style .award-kicker{margin:0 0 4px;max-width:none;font-size:15px;font-weight:700;color:var(--soft)}
+.article-layout .article-style .award-featured h3{margin:0 0 16px;font-size:clamp(24px,2.2vw,28px);line-height:1.15}
+.article-layout .article-style .award-featured h3 a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--link);text-decoration-thickness:1.5px;text-underline-offset:4px}
+.article-layout .article-style .award-featured h3 a:hover{color:var(--link)}
+.award-gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:0 0 18px}
+.award-gallery img{display:block;width:100%;height:auto;border-radius:var(--r-small);background:#fff}
+.award-featured-foot{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:14px 32px}
+.article-layout-wide .article-style .award-featured p:not([class]){max-width:29em;margin:0;font-size:17px;line-height:1.55}
+.article-layout-wide .article-style .award-featured-actions{margin:0;max-width:none}
+.award-featured-unesco{display:grid;grid-template-columns:minmax(0,1fr);gap:22px;align-items:center}
+@media(min-width:1040px){
+  .award-featured-unesco{grid-template-columns:minmax(0,1.25fr) minmax(360px,1fr);gap:32px}
+}
+.award-unesco-body{display:grid;grid-template-columns:136px minmax(0,1fr);gap:20px;align-items:start}
+.award-unesco-body .award-featured-actions{margin-top:14px}
+.award-unesco-badge{display:block;width:136px;height:auto;border-radius:var(--r-small);background:#fff}
+.award-unesco-sdgs .forward-card-container{padding-top:0}
+.award-unesco-sdgs .forward-sdg-card{max-width:none}
+.article-layout .article-style .awards-year-heading{margin:36px 0 16px;padding:0 0 6px;font-size:clamp(28px,2.6vw,34px);line-height:1.1;border-bottom:2px solid var(--ink)}
+.awards-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:0 0 12px}
+.awards-grid-single{grid-template-columns:minmax(0,620px)}
+.award-card{display:flex;flex-direction:column;min-width:0;padding:20px 22px;background:var(--surface);border-radius:var(--r-large)}
+.award-card-head{display:flex;align-items:center;gap:14px;margin:0 0 12px}
+.award-card-head-plain{min-height:44px}
+.award-logo-plate{flex:none;display:flex;align-items:center;justify-content:center;width:116px;height:52px;padding:6px 10px;background:#fff;border-radius:var(--r-small);box-sizing:border-box}
+.award-logo-plate img{display:block;max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
+.article-layout-wide .article-style .award-org{margin:0;max-width:none;font-size:15px;font-weight:600;line-height:1.3;color:var(--soft)}
+.article-layout .article-style .award-card h3{margin:0 0 8px;font-size:21px;line-height:1.22}
+.article-layout-wide .article-style .award-card>p:not([class]){max-width:29em;margin:0 0 10px;font-size:17px;line-height:1.5}
+.article-layout-wide .article-style .award-card>p:not([class]):last-child{margin-bottom:0}
+.article-layout-wide .article-style .award-card-links{display:flex;flex-wrap:wrap;gap:4px 18px;max-width:none;margin:auto 0 0;padding-top:6px}
+.article-layout-wide .article-style .award-card-links a{display:inline-flex;align-items:center;gap:6px;min-height:44px;font-size:16px;font-weight:600}
+.article-layout-wide .article-style .award-card-links .fa-external-link-alt,.article-layout-wide .article-style .award-featured-actions .fa-external-link-alt{font-size:.78em}
+.article-layout-wide .article-style .award-featured-actions .fa-external-link-alt{margin-inline-start:6px}
+/* Impact & achievements: plain hairline-ruled list (DESIGN.md §4: running points stay text, not boxes). */
+.article-layout-wide .article-style ul.impact-list{max-width:none;margin:14px 0 0;padding:0;list-style:none;border-top:1px solid var(--line)}
+.article-layout-wide .article-style ul.impact-list li{max-width:29em;margin:0;padding:12px 0;font-size:18px;line-height:1.5;border-bottom:1px solid var(--line)}
+@media(min-width:1001px){
+  .article-layout-wide .article-style ul.impact-list{columns:2;column-gap:48px;border-top:0}
+  .article-layout-wide .article-style ul.impact-list li{break-inside:avoid;border-top:1px solid var(--line);border-bottom:0}
+}
+@media(max-width:760px){
+  .award-featured{padding:16px}
+  .award-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .award-unesco-body{grid-template-columns:minmax(0,1fr);gap:14px}
+  .award-unesco-badge{width:136px}
+  .awards-grid,.awards-grid-single{grid-template-columns:minmax(0,1fr);gap:14px}
+  .award-card{padding:16px}
+  .award-logo-plate{width:96px;height:46px}
+}
+
+/* Community stories & testimonials (wide page): intro paired with invitation, portrait jump directory
+   (not filter pills, DESIGN.md §4), and alternating warm Community story cards (DESIGN.md §6: --com-bg).
+   On wide screens (>= 1180 px) each story places its author's closing takeaway in a third column beside
+   the reading prose so no empty band sits beside long stories (DESIGN.md §7). */
+.stories-head{display:grid;grid-template-columns:minmax(0,1fr);gap:20px;margin:0 0 22px}
+@media(min-width:1080px){
+  .stories-head{grid-template-columns:minmax(0,560px) minmax(0,380px);justify-content:space-between;align-items:start;gap:48px}
+}
+@media(max-width:1079px){.stories-head-note{display:none}}
+.article-layout-wide .article-style .stories-intro{max-width:29em;margin:0;font-size:18px;line-height:1.6}
+.stories-head-note{padding:18px 20px;background:var(--com-bg);border-radius:var(--r-large);border-inline-start:4px solid var(--com)}
+.article-layout-wide .article-style .stories-head-note-title{margin:0 0 6px;max-width:none;font:500 21px/1.2 var(--display);color:var(--com)}
+.article-layout-wide .article-style .stories-head-note p:last-child{margin:0;max-width:28em;font-size:16px;line-height:1.5}
+.stories-jump{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,210px),1fr));gap:10px 14px;margin:0 0 8px;padding:16px 0 4px;border-top:1px solid var(--line)}
+.article-layout .article-style .stories-jump a{display:flex;align-items:center;gap:10px;min-height:48px;padding:6px 12px 6px 8px;background:var(--surface);border-radius:var(--r-small);color:var(--ink);font-size:16px;font-weight:600;text-decoration:none}
+.article-layout .article-style .stories-jump a span{text-decoration:underline;text-decoration-color:color-mix(in srgb,var(--com) 55%,transparent);text-underline-offset:3px}
+.article-layout .article-style .stories-jump a:hover{background:var(--com-bg);color:var(--com)}
+.article-layout .article-style .stories-jump a:hover span{text-decoration-color:currentColor}
+.article-layout .article-style .stories-jump img{display:block;flex:none;width:40px;height:40px;border-radius:50%;object-fit:cover;object-position:50% 20%}
+.story-card{display:grid;grid-template-columns:minmax(0,1fr);gap:18px;align-items:start;padding:20px 18px;border-radius:var(--r-large);scroll-margin-top:24px}
+.story-card-warm{background:var(--com-bg)}
+.story-card-calm{background:var(--surface)}
+.story-person{display:flex;flex-direction:row;align-items:center;text-align:start;gap:14px}
+.story-portrait{flex:none;width:84px;height:84px;border-radius:50%;overflow:hidden;background:#fff;box-shadow:0 0 0 3px #fff}
+.article-layout .article-style .story-portrait img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+.story-identity{min-width:0}
+.article-layout-wide .article-style .story-author{margin:0 0 2px;max-width:none;font:500 21px/1.2 var(--display);color:var(--ink)}
+.article-layout-wide .article-style .story-role{margin:0 0 6px;max-width:none;font-size:15px;line-height:1.35;color:var(--soft)}
+.story-links{display:flex;flex-wrap:wrap;justify-content:flex-start;gap:6px;margin-top:6px}
+.article-layout .article-style .story-links a{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;background:#fff;color:var(--link);font-size:20px;text-decoration:none}
+.article-layout .article-style .story-links a:hover{background:var(--ink);color:#fff}
+.story-body{min-width:0}
+.article-layout .article-style .story-body h2{margin:0 0 14px;font-size:clamp(24px,2.2vw,30px);line-height:1.18}
+.article-layout-wide .article-style .story-body p{max-width:29em;margin:0 0 14px;font-size:17px;line-height:1.6}
+.article-layout-wide .article-style .story-body p:last-child{margin-bottom:0}
+.article-layout-wide .article-style .story-body p.story-closing{margin:18px 0 0;padding:14px 16px;background:rgb(255 255 255/.76);border-inline-start:3px solid var(--com);border-radius:0 var(--r-small) var(--r-small) 0;font-weight:600}
+@media(min-width:901px){
+  .story-card{grid-template-columns:200px minmax(0,1fr);gap:28px;padding:26px 28px}
+  .story-person{flex-direction:column;align-items:center;text-align:center;gap:0}
+  .story-portrait{width:156px;height:156px;box-shadow:0 0 0 4px #fff}
+  .article-layout-wide .article-style .story-author{margin:14px 0 2px;font-size:22px}
+  .story-links{justify-content:center;margin-top:8px}
+  .article-layout-wide .article-style .story-body p{font-size:18px}
+}
+@media(min-width:1180px){
+  /* Three columns: author on the left, story prose at reading measure in the centre, and the author's closing
+     takeaway beside it on the right so no wide empty band sits beside long stories (DESIGN.md §7). */
+  .story-card{grid-template-columns:200px minmax(0,29em) minmax(240px,1fr);gap:0 32px;padding:28px 32px}
+  .story-person{grid-column:1;grid-row:1/span 12}
+  .story-body{display:contents}
+  .article-layout .article-style .story-body h2{grid-column:2/4;grid-row:1;margin:0 0 14px}
+  .article-layout-wide .article-style .story-body p:not(.story-closing){grid-column:2}
+  .article-layout-wide .article-style .story-body p.story-closing{grid-column:3;grid-row:2/span 8;align-self:start;margin:0;padding:18px 20px;font-size:17px;line-height:1.55}
+}
+.stories-invite{padding:26px 28px;background:var(--com-bg);border-radius:var(--r-large);border-top:4px solid var(--com)}
+.article-layout .article-style .stories-invite h2{margin:0 0 10px;font-size:26px}
+.article-layout-wide .article-style .stories-invite p{max-width:29em;margin:0 0 16px;font-size:18px;line-height:1.55}
+.article-layout-wide .article-style .stories-invite-actions{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;max-width:none;margin:0}
+@media(max-width:760px){
+  .stories-jump{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .article-layout .article-style .stories-jump a{padding:6px 8px;font-size:15px}
+  .article-layout .article-style .stories-jump img{width:34px;height:34px}
+  .stories-invite{padding:18px 16px}
+}

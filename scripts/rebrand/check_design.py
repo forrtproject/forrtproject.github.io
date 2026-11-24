@@ -24,6 +24,7 @@ import json
 import multiprocessing
 import os
 import re
+import struct
 import sys
 import tempfile
 import threading
@@ -538,6 +539,103 @@ def check_tower_game(browser, base, expect):
     page.wait_for_function("document.querySelector('#tower-game')?.open === false")
     page.context.close()
 
+    # Interactive gameplay checks under reduced motion (deterministic, instant physics settle):
+    # blueprints, brick placement, keyboard controls, stability meter, sound toggle, snapshot export, topple + undo.
+    page = new_page(browser, 1440, reduced_motion="reduce")
+    requests = []
+    page.on("request", lambda request: requests.append(request.url))
+    page.goto(base, wait_until="load")
+    page.hover(".castle-stage")
+    page.locator(".tower-entry").click()
+    page.wait_for_function("document.querySelector('#tower-game')?.open === true", timeout=20000)
+    page.locator("#tg-note-go").click()
+    expect(page.locator(".tg-plan-pill").count() >= 5, "blueprint picker offers Free build and FORRT blueprints")
+    expect(page.locator("#tg-stability").get_attribute("role") == "meter", "stability gauge exposes meter semantics")
+    expect(page.locator("#tg-sound").get_attribute("aria-pressed") == "true", "sound toggle starts on")
+    page.locator("#tg-sound").click()
+    expect(page.locator("#tg-sound").get_attribute("aria-pressed") == "false", "clicking sound toggle mutes sound")
+    page.keyboard.press("m")
+    expect(page.locator("#tg-sound").get_attribute("aria-pressed") == "true", "M key restores sound")
+    # Keyboard building on Free build
+    page.locator("#tg-stage").focus()
+    page.keyboard.press("3")
+    page.keyboard.press("ArrowRight")
+    page.keyboard.press("r")
+    page.keyboard.press("t")
+    page.keyboard.press("Enter")
+    expect("1 brick" in page.locator("#tg-count").text_content(), "keyboard controls place a brick")
+    # Blueprint switching, progress tracking, off-plan free play cue & completion
+    page.locator("#tg-restart").click()
+    page.locator(".tg-plan-pill[data-plan='arch']").click()
+    expect(page.locator("#tg-prog").is_visible(), "selecting a blueprint shows live progress")
+    # Free play stays open during a blueprint: placing an extra brick succeeds and flags 1 off plan until undone.
+    page.locator("#tg-stage").focus()
+    page.keyboard.press("1")
+    page.keyboard.press("ArrowRight")
+    page.keyboard.press("Enter")
+    expect(page.locator("#tg-offplan").is_visible() and "1 off plan" in page.locator("#tg-offplan").text_content(),
+           "off-plan placement is allowed and shown as a non-blocking deviation cue")
+    page.locator("#tg-undo").click()
+    expect(not page.locator("#tg-offplan").is_visible(), "Undo clears the off-plan cue")
+    page.locator("#tg-next").click()
+    expect("1 /" in page.locator("#tg-prog-text").text_content(), "Place next advances blueprint progress")
+    page.locator("#tg-finish").click()
+    expect(page.locator("#tg-done").text_content().strip() == "Build on", "Build rest completes the blueprint")
+    expect(page.locator("#tg-prog-text").text_content().strip() == "22 / 22", "Open arch completes all 22 slots")
+    expect(int(page.locator("#tg-stability").get_attribute("aria-valuenow")) > 0, "stability meter reports a live score")
+    # Snapshot export downloads a valid 1200x900 PNG postcard
+    with page.expect_download() as download_info:
+        page.locator("#tg-photo").click()
+    dl = download_info.value
+    expect(dl.suggested_filename.endswith(".png"), "Save photo downloads a PNG postcard")
+    postcard_path = dl.path()
+    with open(postcard_path, "rb") as handle:
+        header = handle.read(24)
+    expect(header[:8] == b"\x89PNG\r\n\x1a\n" and struct.unpack(">II", header[16:24]) == (1200, 900),
+           "postcard download is a valid 1200x900 PNG")
+    # Topple lazily loads physics.bundle.js and Undo restores every brick and blueprint progress
+    expect(not any("/js/tower/physics" in url for url in requests), "physics stays unloaded until Topple or wobble")
+    before_topple = page.locator("#tg-count").text_content()
+    page.locator("#tg-topple").click()
+    page.wait_for_function("document.querySelector('#tg-hint').textContent.includes('Down it came')", timeout=15000)
+    expect(any("/js/tower/physics" in url for url in requests), "Topple fetches physics.bundle.js on demand")
+    page.locator("#tg-undo").click()
+    expect(page.locator("#tg-count").text_content() == before_topple, "Undo snaps the toppled tower right back")
+    expect(page.locator("#tg-prog-text").text_content().strip() == "22 / 22", "Undo restores completed blueprint progress")
+    page.context.close()
+
+    # Landscape phone (844x390): controls scroll cleanly and Done + Undo stay reachable with >= 44 px targets.
+    landscape_opts = {"viewport": {"width": 844, "height": 390}, "has_touch": True, "reduced_motion": "reduce"}
+    if browser.browser_type.name != "firefox":  # Firefox has no mobile mode in Playwright.
+        landscape_opts["is_mobile"] = True
+    ctx = browser.new_context(**landscape_opts)
+    page = ctx.new_page()
+    page.route("**/*", lambda route: route.abort() if BLOCK.search(route.request.url) else route.continue_())
+    page.goto(base, wait_until="load")
+    page.locator(".tower").scroll_into_view_if_needed()
+    page.locator(".castle-stage").tap()
+    page.wait_for_timeout(400)
+    page.locator(".tower-entry").tap()
+    page.wait_for_function("document.querySelector('#tower-game')?.open === true", timeout=20000)
+    page.locator("#tg-note-go").tap()
+    page.locator("#tg-done").scroll_into_view_if_needed()
+    land_metrics = page.evaluate("""() => {
+      const done = document.querySelector('#tg-done').getBoundingClientRect();
+      const undo = document.querySelector('#tg-undo').getBoundingClientRect();
+      const topple = document.querySelector('#tg-topple').getBoundingClientRect();
+      const pill = document.querySelector('.tg-plan-pill').getBoundingClientRect();
+      return {
+        doneBottom: Math.round(done.bottom), undoBottom: Math.round(undo.bottom),
+        doneH: Math.round(done.height), undoH: Math.round(undo.height),
+        toppleH: Math.round(topple.height), pillH: Math.round(pill.height)
+      };
+    }""")
+    expect(land_metrics["doneBottom"] <= 390 and land_metrics["undoBottom"] <= 390,
+           f"landscape phone reaches Done/Undo inside 390 px height: {land_metrics}")
+    expect(min(land_metrics["doneH"], land_metrics["undoH"], land_metrics["toppleH"], land_metrics["pillH"]) >= 44,
+           f"landscape phone keeps >= 44 px tap targets: {land_metrics}")
+    ctx.close()
+
     # A first tap exactly where the button will appear reveals it. It must not open the game.
     page = new_page(browser, 390)
     requests = []
@@ -579,7 +677,9 @@ def check_tower_game(browser, base, expect):
 
 
 def check_phone_reading(browser, base, failures, selected=None):
-    """On a phone the chat launcher is a small button in the bottom corner, and an embed's panel is not clipped."""
+    """On a phone JUST-OS moves into the Menu (no corner launcher, no extra footer space), tablets keep the Menu
+    entry up to 979 px and hide the corner launcher while content sits beneath it (with or without the cookie banner),
+    and an embed's panel is not clipped."""
     # The phone contents list is widest just before the side card appears. These articles have long headings.
     paths = (
         "educators-corner/003-developing-tools/",
@@ -595,16 +695,84 @@ def check_phone_reading(browser, base, failures, selected=None):
         page.wait_for_timeout(300)
         page.evaluate("scrollBy(0, 500)")
         page.wait_for_timeout(500)
-        box = page.evaluate("(() => { const r = document.getElementById('just-os-btn').getBoundingClientRect();"
-                            " const banner = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--banner')) || 0;"
-                            " return {w: r.width, h: r.height, right: innerWidth - r.right, bottom: innerHeight - r.bottom - banner}; })()")
-        # It rises above the cookie banner while that shows (--banner), so the corner is measured from the banner.
-        expect(0 < box["w"] <= 64 and box["h"] > 0 and 0 <= box["right"] <= 24 and 0 <= box["bottom"] <= 40,
-               f"the launcher is a button of at most 64 px in the bottom corner ({box['w']:.0f} px wide, "
-               f"{box['right']:.0f} px from the side, {box['bottom']:.0f} px from the bottom)")
-        page.locator("#just-os-btn").tap()
+        phone_launcher = page.evaluate("""() => {
+          const btn = document.getElementById('just-os-btn');
+          const foot = document.querySelector('.site-foot');
+          return {
+            hidden: !btn || !btn.getClientRects().length || getComputedStyle(btn).visibility === 'hidden',
+            footPad: foot ? parseFloat(getComputedStyle(foot).paddingBottom) : 0,
+          };
+        }""")
+        expect(phone_launcher["hidden"], "on a phone the floating corner launcher is hidden")
+        expect(phone_launcher["footPad"] <= 40,
+               f"on a phone the footer drops extra launcher space ({phone_launcher['footPad']:.0f} px bottom padding)")
+        page.evaluate("scrollTo(0, 0)")
+        page.locator(".menu-toggle").tap()
+        page.wait_for_timeout(200)
+        menu_row = page.evaluate("""() => {
+          const row = document.getElementById('nav-just-os');
+          if (!row) return null;
+          const r = row.getBoundingClientRect();
+          const img = row.querySelector('img');
+          return {
+            text: row.textContent.trim(),
+            h: r.height,
+            w: r.width,
+            icon: Boolean(img && img.complete && img.naturalWidth > 0),
+            firstLevel: row.parentElement?.id === 'primaryNav',
+          };
+        }""")
+        expect(bool(menu_row and menu_row["text"] == "Ask JUST-OS" and menu_row["firstLevel"]
+                    and menu_row["h"] >= 44 and menu_row["w"] > 100 and menu_row["icon"]),
+               f"the phone Menu has a first-level 'Ask JUST-OS' row with mascot and >=44 px tap target ({menu_row})")
+        page.locator("#nav-just-os").tap()
         page.wait_for_timeout(3000)
-        expect(page.evaluate("document.getElementById('just-os-window')?.style.display === 'flex'"), "tapping the launcher opens the chat")
+        expect(page.evaluate("document.getElementById('just-os-window')?.style.display === 'flex'"),
+               "tapping 'Ask JUST-OS' in the phone Menu opens the chat")
+        expect(page.evaluate("document.querySelector('nav.primary')?.dataset.open !== 'true'"),
+               "opening the chat closes the phone Menu")
+        page.keyboard.press("Escape")
+        page.wait_for_timeout(300)
+        expect(page.evaluate("document.getElementById('just-os-window')?.style.display !== 'flex'"
+                             " && !document.getElementById('just-os-btn').getClientRects().length"
+                             " && document.activeElement?.classList.contains('menu-toggle')"),
+               "Escape closes the chat, keeps the corner launcher hidden, and returns focus to Menu")
+    if selected is None or "/" in selected:
+        # On the home page, phones also get a visible inline "Ask JUST-OS" button right below the hero actions.
+        page.goto(base, wait_until="load")
+        page.wait_for_timeout(300)
+        hero_btn = page.evaluate("""() => {
+          const el = document.querySelector('.hero-justos');
+          if (!el) return null;
+          const r = el.getBoundingClientRect();
+          const s = getComputedStyle(el);
+          const img = el.querySelector('img');
+          return {
+            text: el.textContent.trim(),
+            h: r.height,
+            w: r.width,
+            visible: s.display !== 'none' && s.visibility !== 'hidden' && parseFloat(s.opacity) >= 0.9,
+            icon: Boolean(img && img.complete && img.naturalWidth > 0),
+          };
+        }""")
+        expect(bool(hero_btn and hero_btn["text"] == "Ask JUST-OS" and hero_btn["visible"]
+                    and page.locator(".hero-justos").is_visible() and hero_btn["h"] >= 44 and hero_btn["icon"]),
+               f"on a phone the home page hero includes a visible 'Ask JUST-OS' button ({hero_btn})")
+        page.locator(".hero-justos").tap()
+        page.wait_for_function("document.getElementById('just-os-window')?.style.display === 'flex'", timeout=15000)
+        page.wait_for_function("document.activeElement?.classList.contains('just-os-input')", timeout=5000)
+        page.keyboard.press("Escape")
+        page.wait_for_timeout(300)
+        expect(page.evaluate("document.getElementById('just-os-window')?.style.display !== 'flex'"
+                             " && document.activeElement?.classList.contains('hero-justos')"),
+               "Escape closes the chat opened from the home page hero and returns focus to it")
+    if selected is None or "/reversals/" in selected:
+        # With the cookie banner unanswered on /reversals/, the corner launcher stays hidden on phones.
+        page.goto(base + "reversals/", wait_until="load")
+        page.wait_for_selector(".cc-window", timeout=10000)
+        page.wait_for_timeout(400)
+        expect(page.evaluate("!document.getElementById('just-os-btn').getClientRects().length"),
+               "at 390 px with the cookie banner open on /reversals/, the corner launcher stays hidden")
     if selected is None or "/neurodiversity-lessonbank/implicit_bias/" in selected:
         page.goto(base + "neurodiversity-lessonbank/implicit_bias/", wait_until="load")
         page.wait_for_timeout(300)
@@ -615,8 +783,106 @@ def check_phone_reading(browser, base, failures, selected=None):
           && panel.getBoundingClientRect().height > panel.parentElement.getBoundingClientRect().height + 1).length""")
         expect(clipped == 0, f"{clipped} embed panels clipped by their box")
     page.context.close()
+
+    if selected is None or "/reversals/" in selected:
+        # Portrait tablet (768 px, touch): Menu row is still available (up to 979 px), touch dismiss target is >=44 px
+        # inside the viewport, and dismissing/reopening the cookie banner re-evaluates the launcher (including with
+        # reduced motion, where transitionend does not fire).
+        page = new_page(browser, 768, has_touch=True)
+        page.goto(base + "reversals/", wait_until="load")
+        page.wait_for_selector(".cc-window", timeout=10000)
+        page.wait_for_timeout(500)
+        page.locator(".menu-toggle").click()
+        page.wait_for_timeout(150)
+        expect(page.evaluate("document.getElementById('nav-just-os')?.getBoundingClientRect().height >= 44"),
+               "at 768 px the Menu still offers the 'Ask JUST-OS' row")
+        page.keyboard.press("Escape")
+        page.evaluate("scrollTo(0, 500); dispatchEvent(new Event('scroll'))")
+        page.wait_for_timeout(500)
+        banner_open = page.evaluate("parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--banner')) || 0")
+        expect(banner_open > 0, f"at 768 px the open cookie banner sets --banner ({banner_open:.0f} px)")
+        expect(not page.locator("#just-os-btn").is_visible(),
+               "at 768 px on /reversals/ at scroll 500 with banner open, the launcher hides over content")
+        page.locator(".cc-deny").click()
+        page.wait_for_timeout(1500)
+        banner_closed = page.evaluate("parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--banner')) || 0")
+        expect(banner_closed == 0, f"dismissing the cookie banner resets --banner to 0 ({banner_closed:.0f} px)")
+        expect(page.locator("#just-os-btn").is_visible(),
+               "at 768 px on /reversals/ at scroll 500 after dismissing the banner, the launcher reappears over empty space")
+        expect(not page.evaluate(FLOATING_OVER, "#just-os-btn") and not page.evaluate(FLOATING_OVER, "#just-os-dismiss"),
+               "at 768 px on /reversals/ after dismissing the cookie banner, the launcher covers nothing")
+        touch_dismiss = page.evaluate("""() => {
+          const d = document.getElementById('just-os-dismiss');
+          const r = d.getBoundingClientRect();
+          const after = getComputedStyle(d, '::after');
+          const aw = parseFloat(after.width) || 0, ah = parseFloat(after.height) || 0;
+          const cx = (r.left + r.right) / 2;
+          return {w: aw, h: ah, rightGap: innerWidth - (cx + aw / 2)};
+        }""")
+        expect(touch_dismiss["w"] >= 44 and touch_dismiss["h"] >= 44 and touch_dismiss["rightGap"] >= -0.5,
+               f"on touch tablets the dismiss tap target is at least 44 px and stays inside the viewport ({touch_dismiss})")
+        page.locator("[data-cookie-settings]").scroll_into_view_if_needed()
+        page.locator("[data-cookie-settings]").click()
+        page.wait_for_timeout(400)
+        page.evaluate("scrollTo(0, 500); dispatchEvent(new Event('scroll'))")
+        page.wait_for_timeout(500)
+        banner_reopened = page.evaluate("parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--banner')) || 0")
+        expect(banner_reopened > 0 and not page.locator("#just-os-btn").is_visible(),
+               "reopening Cookie settings raises --banner and hides the launcher again at scroll 500")
+        page.context.close()
+
+    if selected is None or "/reversals/" in selected:
+        # Reduced motion: dismissing the cookie banner collapses it immediately instead of waiting on transitionend.
+        page = new_page(browser, 768, has_touch=True, reduced_motion="reduce")
+        page.goto(base + "reversals/", wait_until="load")
+        page.wait_for_selector(".cc-window", timeout=10000)
+        page.wait_for_timeout(400)
+        page.evaluate("scrollTo(0, 500); dispatchEvent(new Event('scroll'))")
+        page.wait_for_timeout(400)
+        page.locator(".cc-deny").click()
+        page.wait_for_timeout(300)
+        reduced_state = page.evaluate("""() => ({
+          bannerH: document.querySelector('.cc-window')?.offsetHeight || 0,
+          bannerVar: parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--banner')) || 0,
+          covered: document.getElementById('just-os-widget').classList.contains('is-covered'),
+        })""")
+        expect(reduced_state["bannerH"] == 0 and reduced_state["bannerVar"] == 0 and not reduced_state["covered"],
+               f"with reduced motion, dismissing the banner collapses it immediately and restores the launcher ({reduced_state})")
+        page.context.close()
+
+    # Async redraw without scroll (/resources/ search) and focus restoration when chat closes over covered content.
+    page = new_page(browser, 1024)
+    page.set_viewport_size({"width": 1024, "height": 660})
+    page.context.add_cookies([{"name": "forrt_analytics_choice", "value": "deny", "url": base}])
+    if selected is None or "/resources/" in selected:
+        page.goto(base + "resources/", wait_until="load")
+        page.wait_for_timeout(400)
+        page.fill("#resource-search", "zzzzqqqq")
+        page.wait_for_function("!document.getElementById('empty').hidden", timeout=15000)
+        page.fill("#resource-search", "")
+        page.wait_for_timeout(500)
+        expect(not page.evaluate(FLOATING_OVER, "#just-os-btn") and not page.evaluate(FLOATING_OVER, "#just-os-dismiss"),
+               "clearing /resources/ search re-evaluates the launcher after async redraw without scrolling")
+    if selected is None or "/about/get-involved/" in selected:
+        page.set_viewport_size({"width": 1024, "height": 768})
+        page.goto(base + "about/get-involved/", wait_until="load")
+        page.wait_for_timeout(400)
+        page.evaluate("scrollTo(0, document.documentElement.scrollHeight - innerHeight); dispatchEvent(new Event('scroll'))")
+        page.wait_for_timeout(400)
+        page.locator("#just-os-btn").click()
+        page.wait_for_function("document.getElementById('just-os-window')?.style.display === 'flex'", timeout=15000)
+        page.wait_for_function("document.activeElement?.classList.contains('just-os-input')", timeout=5000)
+        page.evaluate("scrollTo(0, 600); dispatchEvent(new Event('scroll'))")
+        page.keyboard.press("Escape")
+        page.wait_for_timeout(400)
+        focus_after = page.evaluate("({covered: document.getElementById('just-os-widget').classList.contains('is-covered'),"
+                                    " active: document.activeElement?.tagName + '#' + (document.activeElement?.id || '')})")
+        expect(focus_after["covered"] and focus_after["active"] not in ("BODY#top", "BODY#", "BUTTON#just-os-btn"),
+               f"closing chat after scrolling over content hides the launcher and keeps focus off body ({focus_after})")
+    page.context.close()
     if selected is not None and "/clusters/cluster-1/" not in selected:
         return
+
     for width in (390, 1024, 1440):
         page = new_page(browser, width)
         page.context.add_cookies([{"name": "forrt_analytics_choice", "value": "deny", "url": base}])  # Banner shut.
@@ -624,20 +890,30 @@ def check_phone_reading(browser, base, failures, selected=None):
         page.wait_for_timeout(800)
         page.evaluate("scrollBy(0, 1500)")
         page.wait_for_timeout(800)
-        hit = page.evaluate("""() => {
-          const box = document.getElementById('just-os-btn').getBoundingClientRect();
-          return !!document.elementFromPoint(box.left + box.width / 2, box.top + box.height / 2)?.closest('#just-os-btn');
-        }""")
-        # When back to top shows is check_floating_controls' job (only beside the fields or clusters,
-        # so not over this page's foot at a fixed scroll); here it must not sit on the launcher.
-        clash = page.evaluate("""() => {
-          const top = document.querySelector('.clusters-back-to-top.is-visible');
-          if (!top) return false;
-          const a = top.getBoundingClientRect(), b = document.getElementById('just-os-btn').getBoundingClientRect();
-          return a.left < b.right && b.left < a.right && a.top < b.bottom && b.top < a.bottom;
-        }""")
-        expect(not clash, f"back to top does not sit on the chat launcher on a cluster page at {width} px")
-        expect(hit, f"the chat launcher can be clicked on a cluster page at {width} px")
+        if width <= 760:
+            expect(page.evaluate("!document.getElementById('just-os-btn').getClientRects().length"),
+                   f"the floating launcher stays hidden on a cluster page at {width} px")
+        else:
+            shown = page.locator("#just-os-btn").is_visible()
+            # When back to top shows is check_floating_controls' job (only beside the fields or clusters,
+            # so not over this page's foot at a fixed scroll); here it must not sit on the launcher.
+            clash = shown and page.evaluate("""() => {
+              const top = document.querySelector('.clusters-back-to-top.is-visible');
+              if (!top) return false;
+              const a = top.getBoundingClientRect(), b = document.getElementById('just-os-btn').getBoundingClientRect();
+              return a.left < b.right && b.left < a.right && a.top < b.bottom && b.top < a.bottom;
+            }""")
+            expect(not clash, f"back to top does not sit on the chat launcher on a cluster page at {width} px")
+            if width < 1440 and not shown:
+                page.evaluate("scrollTo(0, document.documentElement.scrollHeight - innerHeight); dispatchEvent(new Event('scroll'))")
+                page.wait_for_timeout(500)
+            hit = page.evaluate("""() => {
+              const btn = document.getElementById('just-os-btn');
+              if (getComputedStyle(btn).visibility === 'hidden') return false;
+              const box = btn.getBoundingClientRect();
+              return !!document.elementFromPoint(box.left + box.width / 2, box.top + box.height / 2)?.closest('#just-os-btn');
+            }""")
+            expect(hit, f"the chat launcher can be clicked on a cluster page at {width} px")
         if width > 760:
             past = page.evaluate("""() => {
               const style = getComputedStyle(document.querySelector('.clusters-sidebar-inner'));
@@ -878,9 +1154,10 @@ FLOATING_WIDTHS = (390, 1024, 1280, 1440, 1800)  # From 1800 px the launcher has
 
 
 def check_floating_controls(browser, base, widths, paths, failures, selected=None):
-    """The chat launcher, its invitation and label, and back to top cover nothing of the page, wherever it is scrolled.
-    Below 1440 px the launcher and back to top float in the bottom corner, so mid-page they need only keep off each
-    other; at the end of the page, which the footer pads for them, they still cover nothing.
+    """The chat launcher, its dismiss cross, invitation and label, and back to top cover nothing of the page,
+    wherever it is scrolled. On phones (<=760 px) the corner launcher stays hidden; between 761 and 1439 px
+    it hides whenever text, a card or a control sits beneath its resting footprint and reappears over empty space
+    (including the padded footer). Back to top still floats mid-page below 1440 px and keeps off the launcher.
 
     The launcher is checked closed, hovered, focused from the keyboard and inviting (on a fake clock, so that its
     ten-second cycle runs at once), at the top, a third and two thirds of the way down, and at the end of each page.
@@ -902,8 +1179,8 @@ def check_floating_controls(browser, base, widths, paths, failures, selected=Non
 
             def look(state, selector="#just-os-bubble", floating=False):
                 for item in page.evaluate(FLOATING_OVER, selector):
-                    # Below 1440 px the chat button and back to top float over the page as it scrolls by;
-                    # there they must only keep off each other, and cover nothing once the page is at its end.
+                    # Below 1440 px back to top still floats over the page as it scrolls by;
+                    # there it must keep off the chat launcher and cover nothing once the page is at its end.
                     if floating and not re.search(r"just-os|back-to-top", item):
                         continue
                     covered.setdefault(state, []).append(item)
@@ -912,11 +1189,14 @@ def check_floating_controls(browser, base, widths, paths, failures, selected=Non
 
             back_to_top = False
             page.goto(base + path, wait_until="load", timeout=120000)
+            page.clock.run_for(300)
             page.wait_for_timeout(300)
             if path == "disciplines/":
                 page.locator(".acc-trigger", has_text="Psychology").first.click()
+                page.clock.run_for(300)
             if path == "clusters/cluster-1/":
                 page.locator(".acc-toggle-all").first.click()  # Every sub-cluster open: the page a reader scrolls.
+                page.clock.run_for(300)
             # The invitation interval fires once per jump, without replaying animation frames.
             page.clock.fast_forward(10500)  # The invitation's first turn, at the top of the page.
             page.wait_for_timeout(400)
@@ -926,29 +1206,46 @@ def check_floating_controls(browser, base, widths, paths, failures, selected=Non
                 where = f"scrolled {y} px"
                 page.mouse.move(1, 1)
                 page.evaluate(f"scrollTo(0, {y}); dispatchEvent(new Event('scroll'))")
-                page.wait_for_timeout(400)
-                floating = width < 1440 and y != end
-                look(f"launcher at {where}", "#just-os-btn", floating)
-                look(f"back to top at {where}", ".clusters-back-to-top", floating)
+                page.clock.run_for(300)
+                page.wait_for_function(
+                    "() => { const w = document.getElementById('just-os-widget'), b = document.getElementById('just-os-btn');"
+                    " if (!w || !b || !w.classList.contains('is-covered')) return true;"
+                    " return parseFloat(getComputedStyle(b).opacity) < 0.1; }",
+                    timeout=3000,
+                )
+                page.wait_for_timeout(200)
+                floating_top = width < 1440 and y != end
+                look(f"launcher at {where}", "#just-os-btn", False)
+                look(f"dismiss at {where}", "#just-os-dismiss", False)
+                look(f"back to top at {where}", ".clusters-back-to-top", floating_top)
                 back_to_top = back_to_top or page.evaluate(BACK_TO_TOP_SHOWN)
+                if width <= 760:
+                    expect(not page.locator("#just-os-btn").is_visible(),
+                           f"{path} at {width} px, {where}: corner launcher stays hidden on phones")
+                elif y == end:
+                    expect(page.locator("#just-os-btn").is_visible(),
+                           f"{path} at {width} px, {where}: launcher shows over the footer")
                 for turn in range(2):  # One of two turns of its cycle shows the invitation, where it may show.
                     page.clock.fast_forward(10000)
                     page.wait_for_timeout(400)
                     look(f"invitation at {where}")
-                page.hover("#just-os-btn")
-                page.wait_for_timeout(400)
-                look(f"hover label at {where}")
-                page.mouse.move(1, 1)
-                page.keyboard.press("Tab")  # Keyboard use first, so that the launcher's focus shows as it would.
-                page.focus("#just-os-btn")
-                page.wait_for_timeout(400)
-                look(f"focus label at {where}")
-                page.evaluate("document.activeElement.blur()")
+                if page.locator("#just-os-btn").is_visible():
+                    page.hover("#just-os-btn")
+                    page.wait_for_timeout(400)
+                    look(f"hover label at {where}")
+                    page.mouse.move(1, 1)
+                    page.keyboard.press("Tab")  # Keyboard use first, so that the launcher's focus shows as it would.
+                    page.focus("#just-os-btn")
+                    page.wait_for_timeout(400)
+                    look(f"focus label at {where}")
+                    page.evaluate("document.activeElement.blur()")
+                    page.clock.run_for(50)
             if path == "clusters/" and width < 992:
                 toggle = page.locator("#clusters-mobile-toggle")
                 toggle.scroll_into_view_if_needed()
                 toggle.click()
                 page.evaluate("scrollBy(0, 600)")
+                page.clock.run_for(300)
                 page.wait_for_timeout(400)
                 look("back to top over the open drawer", ".clusters-back-to-top")
                 look("launcher over the open drawer", "#just-os-btn")
@@ -1723,7 +2020,8 @@ def main():
             "educators-corner/003-developing-tools/",
             "educators-corner/018-accessible-feedback-in-research/",
             "pedagogies/004-thomas-rhys-evans/", "glossary/english/abstract_bias/",
-            "neurodiversity-lessonbank/implicit_bias/", "clusters/cluster-1/",
+            "neurodiversity-lessonbank/implicit_bias/", "clusters/cluster-1/", "", "reversals/",
+            "resources/", "about/get-involved/",
         ),
         "check_directory_widths": (*DIRECTORIES, *TOOL_PAGES, "post/2026-01-newsletter/",
                                    "post/2026-05-chinese-glossary/", "publications/",

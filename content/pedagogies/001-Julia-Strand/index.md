@@ -72,7 +72,7 @@ I want students to come away from this course with an appreciation for how resea
 
 2. **Could you share your thoughts on how well the students grappled with the material and assignment in this course? Do you have an impression of whether this course influenced your students’ approaches to their own research projects?**
 
-***Julia***: Students can really get into this content! I’ve found that talking about open science has a relatively low barrier to entry, even for undergrads. Although it may take time to build up enough subject area expertise to evaluate psychological theories or models, students can readily understand why misplaced incentives will affect behavior, why questionable research practices lead to findings that can’t replicate, and so on. For example, I’ll describe two studies that are intended to test the same question (i.e., studies on age-related priming conducted by [John Bargh](https://psych.unl.edu/mdodd/Psy498/BarghPrime.pdf) vs [Stéphane Doyen](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0029081)) but differ in methodology. Students then brainstorm all the reasons why the two studies may have reached different conclusions. They are incredibly thoughtful and thorough in identifying all the ways the choices that researchers make can influence the outcome of the study.
+***Julia***: Students can really get into this content! I’ve found that talking about open science has a relatively low barrier to entry, even for undergrads. Although it may take time to build up enough subject area expertise to evaluate psychological theories or models, students can readily understand why misplaced incentives will affect behavior, why questionable research practices lead to findings that can’t replicate, and so on. For example, I’ll describe two studies that are intended to test the same question (i.e., studies on age-related priming conducted by [John Bargh](https://doi.org/10.1037/0022-3514.71.2.230) vs [Stéphane Doyen](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0029081)) but differ in methodology. Students then brainstorm all the reasons why the two studies may have reached different conclusions. They are incredibly thoughtful and thorough in identifying all the ways the choices that researchers make can influence the outcome of the study.
 
 I ask my students for their impressions of how the course has changed how they engage with the literature, and they almost uniformly say they read more critically. They also regularly say (to my great delight!) that they pay much more attention to the methods sections.
 
@@ -139,7 +139,9 @@ See Julia’s response to all these technical questions in this great video she 
 
 ***Suggested Citation***
 
+{{< citation-card >}}
 Strand, J. (2020) Open and Reproducible Science walks into a classroom: Insights from teaching a course on Psychology’s Credibility Revolution. *FORRT Pedagogies*. https://doi.org/10.17605/OSF.IO/ZPB8A
+{{< /citation-card >}}
 
 **Team-Pedagogy Contributors**:
 ________

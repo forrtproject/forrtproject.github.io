@@ -48,7 +48,6 @@ nav.primary>a[aria-current]{text-decoration:underline;text-underline-offset:5px}
   .head-inner{gap:16px}
   .search-nav{display:none}
   .search-open{display:flex}
-  .site-foot{padding-bottom:96px}
   .foot-top{grid-template-columns:repeat(3,minmax(0,1fr))}
   .foot-top>div:first-child{grid-column:1/-1}
 }

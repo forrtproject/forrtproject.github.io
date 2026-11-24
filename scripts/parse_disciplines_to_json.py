@@ -24,7 +24,10 @@ Data sources (Google Sheet 1mSlduu86_nE1sY1gXobw3Pp1vI73B_0iHBsJqjtsJU4):
 
     To fix a broken link on /disciplines/, edit the Link cell in the Resources tab
     (or the Examples prose in the Disciplines tab), then re-run this script and
-    commit the regenerated JSON.
+    commit the regenerated JSON. Verified link repairs in
+    `scripts/disciplines_link_repairs.json` (and Word hyperlink field-switch
+    cleanup) are also applied automatically during export so known fixes survive
+    until the upstream sheet is updated.
 
     Broken links repaired at source on 2026-08-05 (link-checker issue #845), all
     verified 200 before the edit — 20 cells in Resources plus one in Disciplines:
@@ -55,6 +58,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import subprocess
 import sys
 
@@ -62,8 +66,31 @@ SHEET_ID = "1mSlduu86_nE1sY1gXobw3Pp1vI73B_0iHBsJqjtsJU4"
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)
 OUTPUT_PATH = os.path.join(PROJECT_ROOT, "data", "disciplines.json")
+REPAIRS_PATH = os.path.join(SCRIPT_DIR, "disciplines_link_repairs.json")
 
 CACHE_DIR = "/tmp/forrt_disciplines_cache"
+
+WORD_FIELD_SWITCH_RE = re.compile(r'(?:%22|")(?:\s|%20)+/[a-z](?:\s|%20)+.*$', re.I)
+MD_LINK_TARGET_RE = re.compile(r"\]\((https?://[^)\s]+)\)")
+with open(REPAIRS_PATH, encoding="utf-8") as _f:
+    LINK_REPAIRS = json.load(_f)
+
+
+def repair_url(url: str) -> str:
+    """Strip leaked Word field switches and apply verified link repairs."""
+    cleaned = WORD_FIELD_SWITCH_RE.sub("", url.strip())
+    cleaned = re.sub(r"(?:%20|%09|%0a|%0d)+$", "", cleaned.strip(), flags=re.I)
+    if not cleaned:
+        return ""
+    return LINK_REPAIRS.get(
+        cleaned,
+        LINK_REPAIRS.get(cleaned.rstrip("/"), LINK_REPAIRS.get(cleaned.rstrip("/") + "/", cleaned)),
+    )
+
+
+def repair_markdown_links(text: str) -> str:
+    """Apply `repair_url` to Markdown link destinations inside examples prose."""
+    return MD_LINK_TARGET_RE.sub(lambda m: f"]({repair_url(m.group(1))})", text)
 
 
 def fetch_sheet(sheet_name: str, use_cache: bool = False) -> list[list[str]]:
@@ -158,7 +185,7 @@ def build_json(fields_rows, disciplines_rows, resources_rows) -> dict:
     for row in disciplines_rows[1:]:
         field_name = row[0] if len(row) > 0 else ""
         disc_name = row[1] if len(row) > 1 else ""
-        examples = row[2] if len(row) > 2 else ""
+        examples = repair_markdown_links(row[2]) if len(row) > 2 else ""
         disc_by_field.setdefault(field_name, []).append({
             "name": disc_name,
             "examples": examples,
@@ -170,7 +197,7 @@ def build_json(fields_rows, disciplines_rows, resources_rows) -> dict:
     for row in resources_rows[1:]:
         disc_name = row[0] if len(row) > 0 else ""
         title = row[1] if len(row) > 1 else ""
-        link = row[2] if len(row) > 2 else ""
+        link = repair_url(row[2]) if len(row) > 2 else ""
         category = row[3] if len(row) > 3 else ""
         res_by_disc.setdefault(disc_name, []).append({
             "title": title,

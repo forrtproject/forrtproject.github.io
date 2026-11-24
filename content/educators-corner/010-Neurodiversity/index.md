@@ -106,16 +106,14 @@ This project began on the 24th June 2021 meeting of the Society for the Improvem
 
 
 
-{{< references >}}
+## References
 
-### Other references
-
+{{< local-references heading="none" >}}
 Bertilsdotter Rosqvist, H., Kourti, M., Jackson-Perry, D., Brownlow, C., Fletcher, K., Bendelman, D., & O'Dell, L. (2019). Doing it differently: emancipatory autism studies within a neurodiverse academic space. Disability & Society, 34(7-8), 1082-1101. https://doi.org/10.1080/09687599.2019.1603102
 
 Botha M. (2021). Academic, Activist, or Advocate? Angry, Entangled, and Emerging: A Critical Reflection on Autism Knowledge Production. Frontiers in psychology, 12, 727542. https://doi.org/10.3389/fpsyg.2021.727542
 
 Brown, N., & Leigh, J. (2018). Ableism in academia: where are the disabled and ill academics?. Disability & Society, 33(6), 985-989.  https:/doi.org/10.1080/09687599.2018.1455627
-
 
 Burns, K. E., Pattani, R., Lorens, E., Straus, S. E., & Hawker, G. A. (2021). The impact of organizational culture on professional fulfillment and burnout in an academic department of medicine. PloS one, 16(6), e0252778. https://doi.org/10.1371/journal.pone.0252778
 
@@ -147,7 +145,7 @@ Leadbitter, K., Buckle, K. L., Ellis, C., & Dekker, M. (2021). Autistic self-adv
 
 Levitis, E., Van Praag, C. D. G., Gau, R., Heunis, S., DuPre, E., Kiar, G., ... & Maumet, C. (2021). Centering inclusivity in the design of online conferences—An OHBM–Open Science perspective. GigaScience, 10(8), giab051.https://doi.org/10.1093/gigascience/giab051
 
-Lloyd, T. (2019). An audit of ADHD service provision for adults in England.  https://www.adhdfoundation.org.uk/wp-content/uploads/2019/07/Takeda_Will-the-doctor-see-me-now_ADHD-Report.pdf
+Lloyd, T. (2019). An audit of ADHD service provision for adults in England.  https://web.archive.org/web/20260919122551/https://www.adhdfoundation.org.uk/wp-content/uploads/2019/07/Takeda_Will-the-doctor-see-me-now_ADHD-Report.pdf
 
 Lorde, A. (2018). The master's tools will never dismantle the master's house. Penguin UK.
 
@@ -172,6 +170,7 @@ Strang, J. F., Knauss, M., van der Miesen, A., McGuire, J. K., Kenworthy, L., Ca
 Victor, S. E., Schleider, J. L., Ammerman, B. A., Bradford, D. E., Devendorf, A., Gruber, J., … Stage, D. L. (2021a, July 12). Leveraging the Strengths of Psychologists with Lived Experience of Psychopathology. https://doi.org/10.31234/osf.io/ksnfd
 
 Victor, S. E., Devendorf, A., Lewis, S., ROTTENBERG, J., Muehlenkamp, J. J., Stage, D. L., & Miller, R. (2021b, July 12). Only human: Mental health difficulties among clinical, counseling, and school psychology faculty and trainees. https://doi.org/10.31234/osf.io/xbfr6
+{{< /local-references >}}
 
 <br>
 

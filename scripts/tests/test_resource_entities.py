@@ -48,6 +48,21 @@ class DecodeEntitiesTests(unittest.TestCase):
         url = "https://example.org/?a=1&amp;b=2"
         self.assertEqual(self.decode(title="x", link_to_resource=url)["link_to_resource"], url)
 
+    def test_wrangle_data_strips_resource_url_whitespace(self):
+        df = pd.DataFrame({
+            "Provider": ["Alice"],
+            "URL": [" \nhttps://doi.org/10.1016/j.jclinepi.2024.111264  "],
+            "Material Type": ["Article"],
+            "Education Level": ["Graduate"],
+            "Conditions of Use": ["CC-BY"],
+            "Primary User": ["Researcher"],
+            "Subject Areas": ["Psychology"],
+            "Clusters": ["1"],
+            "User Tags": ["open science"],
+        })
+        curated.wrangle_data(df)
+        self.assertEqual(df.iloc[0]["link_to_resource"], "https://doi.org/10.1016/j.jclinepi.2024.111264")
+
 
 if __name__ == "__main__":
     unittest.main()

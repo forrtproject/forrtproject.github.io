@@ -109,7 +109,7 @@ FORRT’s Team Pedagogies took the opportunity to ask Jordan, Jasmine, and Amy s
 
 **_Jasmine_**: I agree with the point about APA style as well as improving my ability to read scientific papers and their different sections. All students are contributing to every section of the research process, including the literature review. I believe the constant exposure to papers makes me feel **more confident in understanding scientific papers**, knowing I can write similarly... I think students need to build that confidence because nobody wants to sound stupid. By practicing in class, reading gets easier. Nobody is perfect at it, but practice helps get us there.
 
-**_Jordan_**: I originally chose one study to replicate, but now I choose a pool of studies I am willing to lead and have students vote on which one they would like to do. All students in my class write their own papers and get exposure to all parts of the process. I see CREP **as a model to implement your own learning outcomes**, those of your department, and [APA’s listed 2.0 outcomes](https://www.apa.org/ed/precollege/about/undergraduate-major). We are currently **working on a resource putting together writing assignments that would align with different learning outcomes**. Instructors can then pick and choose assignments that suit the learning outcomes of their courses or departments.
+**_Jordan_**: I originally chose one study to replicate, but now I choose a pool of studies I am willing to lead and have students vote on which one they would like to do. All students in my class write their own papers and get exposure to all parts of the process. I see CREP **as a model to implement your own learning outcomes**, those of your department, and [APA’s listed 2.0 outcomes](https://web.archive.org/web/20220120205834/https://www.apa.org/ed/precollege/about/undergraduate-major). We are currently **working on a resource putting together writing assignments that would align with different learning outcomes**. Instructors can then pick and choose assignments that suit the learning outcomes of their courses or departments.
 
 <br>
 
@@ -175,7 +175,9 @@ Regarding tips, **I don’t believe I have to be the ‘perfect’ teacher**. I 
 
 ## Suggested citation
 
-Wagge, J., Beltran, J., & Hernandez, A. (2023). *Open Science education through student participation: Integrating replication training into the classroom.* FORRT Pedagogies. [https://doi.org/10.17605/OSF.IO/4JRFA](https://doi.org/10.17605/OSF.IO/4JRFA) 
+{{< citation-card >}}
+Wagge, J., Beltran, J., & Hernandez, A. (2023). *Open Science education through student participation: Integrating replication training into the classroom.* FORRT Pedagogies. [https://doi.org/10.17605/OSF.IO/4JRFA](https://doi.org/10.17605/OSF.IO/4JRFA)
+{{< /citation-card >}}
 
 <br>
 

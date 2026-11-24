@@ -116,7 +116,7 @@ A hidden goal of this module is to demonstrate how under-resourced most past res
 
 ![SESOI smallest-effect-size-of-interest workflow](fig8.webp "SESOI smallest-effect-size-of-interest workflow")
 
-As another example, when I illustrate the smallest-effect-size-of-interest workflow, I assume that the target effect is part of an interaction. Interactions require about [16 times](https://statmodeling.stat.columbia.edu/2018/03/15/need-16-times-sample-size-estimate-interaction-estimate-main-effect/) the sample size to detect than main effects, a fact that is illustrated vividly in the simulation-based power curve from this part of the module.
+As another example, when I illustrate the smallest-effect-size-of-interest workflow, I assume that the target effect is part of an interaction. Interactions require about [16 times](https://statmodeling.stat.columbia.edu/2018/03/15/need16/) the sample size to detect than main effects, a fact that is illustrated vividly in the simulation-based power curve from this part of the module.
 
 ![Notes](fig9.webp "Notes")
 
