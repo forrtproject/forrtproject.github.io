@@ -44,6 +44,8 @@ classtitle = ""
 
 Instead of encouraging an atmosphere of competition, we are compiling best practices in teaching open science, scientific literacy, and related topics, while advocating for structural change to foster a collaborative and conducive environment. FORRT supports endeavors to seriously examine current practices in higher education around the perceived relative importance of different academic activities and elevating teaching-related activities within those hierarchies.
 
+See how FORRT puts this mission into practice across its [four strategic focus areas](/about/us/#pillars).
+
 <aside class="callout callout-rail callout-rail-top" aria-label="Next steps">
 
 {{< action_cards >}}

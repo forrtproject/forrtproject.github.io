@@ -36,7 +36,7 @@
   {{ $rendered = $rendered | append (dict "id" $hash_id "title" (cond (gt $index 0) $title "") "subtitle" (cond (gt $index 0) ($st.Params.subtitle | default "") "") "body" $body "widget" $widget "tinted" $tinted) }}
 {{ end }}
 {{ $wide := in site.Params.doors.wide_pages .Path }}
-{{ $hasCard := and (not $wide) (gt (len $toc) 1) }}
+{{ $hasCard := and (not $wide) (gt (len $toc) 1) (ne .Params.toc false) }}
 {{ $hasCallouts = and $hasCallouts (not $wide) }}
 {{ $card := "" }}
 {{ if $hasCard }}{{ $card = partial "doors/toc_card" $toc }}{{ end }}

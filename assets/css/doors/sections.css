@@ -681,35 +681,21 @@ html:has(.contributor-az){scroll-padding-top:calc(var(--contributor-az,72px) + 1
   .article-layout-callouts .article-style .doc-section>.callout-rail.callout-rail-top{grid-row:1/span 12}
 }
 
-/* Four Strategic Focus Areas (shortcodes/focus_areas.html, issue #938): each area in its own Doors colour
-   and pale ground (DESIGN.md §6), with its arched-door brick illustration and direct links to FORRT's work. */
-.focus-areas{display:grid;grid-template-columns:minmax(0,1fr);gap:16px;margin:20px 0 14px}
-@media(min-width:900px){
-  .focus-areas{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
-}
-@media(min-width:1240px){
-  .article-layout-callouts .article-style .focus-areas{clear:both;width:calc(100% + 300px);max-width:none}
-}
-.focus-area{--tone:var(--edu);--tint:var(--edu-bg);display:flex;flex-direction:column;min-width:0;padding:20px 22px;background:var(--tint);border-radius:var(--r-large);border-top:4px solid var(--tone)}
-.focus-area-res{--tone:var(--res);--tint:var(--res-bg)}
-.focus-area-jus{--tone:var(--jus);--tint:var(--jus-bg)}
-.focus-area-com{--tone:var(--com);--tint:var(--com-bg)}
-.focus-area-head{display:grid;grid-template-columns:96px minmax(0,1fr);gap:16px;align-items:center;margin:0 0 12px}
-.focus-area-plate{display:flex;align-items:flex-end;justify-content:center;width:96px;height:104px;padding:12px 10px 6px;background:#ffffffc4;border-radius:999px 999px var(--r-small) var(--r-small);box-sizing:border-box}
-.article-layout .article-style .focus-area-plate img{display:block;width:100%;height:100%;object-fit:contain}
-.article-layout .article-style .focus-area h3{margin:0;font-size:23px;line-height:1.15;color:var(--tone)}
-.article-layout .article-style .focus-area>p{margin:0 0 14px;max-width:29em;font-size:17px;line-height:1.5;color:var(--ink)}
-.article-layout .article-style ul.focus-area-links{display:flex;flex-wrap:wrap;gap:0 16px;max-width:none;margin:auto 0 0;padding:8px 0 0;list-style:none;border-top:1px solid color-mix(in srgb,var(--tone) 22%,transparent)}
+/* Four Strategic Focus Areas (shortcodes/focus_areas.html, issue #938): editorial four-part overview on
+   /about/us/ with area-colour accent rules (DESIGN.md §6), distinct from the homepage door cards. */
+.article-layout .article-style ol.focus-areas{list-style:none;margin:20px 0 16px;padding:0;max-width:none;border-top:1px solid var(--line)}
+.article-layout .article-style .focus-area{--tone:var(--edu);margin:0;padding:18px 0 14px 18px;max-width:none;border-bottom:1px solid var(--line);border-inline-start:4px solid var(--tone)}
+.article-layout .article-style .focus-area-res{--tone:var(--res)}
+.article-layout .article-style .focus-area-jus{--tone:var(--jus)}
+.article-layout .article-style .focus-area-com{--tone:var(--com)}
+.article-layout .article-style .focus-area h3{margin:0 0 6px;font-size:22px;line-height:1.2;color:var(--tone)}
+.article-layout .article-style .focus-area>p{margin:0 0 8px;max-width:29em;font-size:17px;line-height:1.55;color:var(--ink)}
+.article-layout .article-style ul.focus-area-links{display:flex;flex-wrap:wrap;gap:0 16px;max-width:none;margin:0;padding:0;list-style:none}
 .article-layout .article-style .focus-area-links li{margin:0;font-size:16px;line-height:1.4}
 .article-layout .article-style .focus-area-links a{display:inline-flex;align-items:center;min-height:44px;color:var(--ink);font-weight:600;text-decoration:underline;text-decoration-color:color-mix(in srgb,var(--tone) 55%,transparent);text-underline-offset:3px}
 .article-layout .article-style .focus-area-links a:hover{color:var(--tone);text-decoration-color:currentColor}
 .focus-area-links .fa-external-link-alt{margin-inline-start:4px;font-size:13px;color:var(--soft)}
-.article-layout .article-style .focus-areas-note{margin:6px 0 0;font-size:16px;color:var(--soft)}
-@media(max-width:760px){
-  .focus-area{padding:16px}
-  .focus-area-head{grid-template-columns:80px minmax(0,1fr);gap:14px}
-  .focus-area-plate{width:80px;height:88px;padding:10px 8px 4px}
-}
+.article-layout .article-style .focus-areas-note{margin:12px 0 0;font-size:16px;color:var(--soft)}
 
 /* Mission & Principles: neutral mission statement panel (covers all four areas, DESIGN.md §6) and calm
    Education & Pedagogy advantages panels on Principles. */
@@ -724,20 +710,21 @@ html:has(.contributor-az){scroll-padding-top:calc(var(--contributor-az,72px) + 1
   .principle-panel{padding:16px}
 }
 
-/* Confidential Advisor & Ombuds: both contacts side by side in the first screen (compact on phones so both
-   fit inside 844 px), plus a calm Confidentiality rail on desktop. */
-.article-layout .article-style .callout-governance{padding:18px 20px;background:var(--surface);border-radius:var(--r-large);border-inline-start:4px solid var(--link)}
-.governance-contacts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:0 0 24px}
+/* Confidential Advisor & Ombuds: two equal-height contact cards spanning the reading column (no competing
+   sidebar cards), compact on phones so both fit inside the first 844 px screen. */
+.governance-contacts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:0 0 14px}
 .governance-card{display:flex;flex-direction:column;min-width:0;padding:18px 20px;background:var(--surface);border-radius:var(--r-large)}
 .governance-card-head{display:flex;align-items:center;gap:14px;margin:0 0 10px}
-.article-layout .article-style .governance-avatar{display:block;flex:none;width:72px;height:72px;border-radius:50%;object-fit:cover;object-position:50% 20%}
+.article-layout .article-style .governance-avatar{display:block;flex:none;width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:50% 20%}
 .article-layout .article-style .governance-role{margin:0 0 2px;font-size:15px;font-weight:700;color:var(--soft);line-height:1.25}
-.article-layout .article-style .governance-name{margin:0;font:500 21px/1.2 var(--display);color:var(--ink)}
+.article-layout .article-style .governance-name{margin:0;font:500 20px/1.2 var(--display);color:var(--ink)}
 .article-layout .article-style .governance-scope{margin:0 0 14px;max-width:28em;font-size:16px;line-height:1.45;color:var(--ink)}
 .article-layout .article-style .governance-actions{display:flex;flex-direction:column;align-items:flex-start;gap:2px;margin:auto 0 0;max-width:none}
 .article-layout .article-style .governance-more{display:inline-flex;align-items:center;min-height:44px;font-size:15px;font-weight:600;color:var(--link);text-decoration:underline;text-underline-offset:3px}
+.article-layout .article-style .governance-note{margin:0 0 24px;padding:0 0 18px;max-width:none;font-size:16px;line-height:1.5;color:var(--soft);border-bottom:1px solid var(--line)}
+.article-layout .article-style .governance-note span{display:block;max-width:29em}
 @media(max-width:760px){
-  .governance-contacts{grid-template-columns:minmax(0,1fr);gap:12px;margin:0 0 20px}
+  .governance-contacts{grid-template-columns:minmax(0,1fr);gap:12px;margin:0 0 14px}
   .governance-card{padding:14px 16px}
   .governance-card-head{gap:12px;margin:0 0 6px}
   .article-layout .article-style .governance-avatar{width:54px;height:54px}
@@ -746,8 +733,8 @@ html:has(.contributor-az){scroll-padding-top:calc(var(--contributor-az,72px) + 1
   .article-layout .article-style .governance-actions{flex-direction:row;flex-wrap:wrap;align-items:center;gap:4px 14px}
 }
 
-/* Awards & Impact (wide page): intro paired with jump links, side-by-side featured 2026 & UNESCO panels on
-   wide screens, year-grouped 2-col award cards, and a plain hairline-ruled Impact & achievements list. */
+/* Awards & Impact (wide page): intro paired with jump links, full-width horizontal featured bands (zero
+   stretched void), year-grouped 2-col award cards, and a plain hairline-ruled Impact & achievements list. */
 .awards-head{display:grid;grid-template-columns:minmax(0,1fr);gap:14px;margin:0 0 28px;padding-bottom:18px;border-bottom:1px solid var(--line)}
 @media(min-width:1001px){
   .awards-head{grid-template-columns:minmax(0,29em) minmax(0,1fr);gap:40px;align-items:end}
@@ -758,26 +745,26 @@ html:has(.contributor-az){scroll-padding-top:calc(var(--contributor-az,72px) + 1
 .article-layout .article-style .awards-jump a{display:inline-flex;align-items:center;min-height:44px;font-size:16px;font-weight:600;color:var(--link);text-decoration:underline;text-underline-offset:3px}
 .article-layout .article-style .awards-jump a:hover{color:var(--ink)}
 .article-layout .article-style .awards-section-heading{margin:32px 0 16px;font-size:clamp(26px,2.4vw,32px)}
-.awards-featured-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:22px;margin:0 0 36px}
-@media(min-width:1100px){
-  .awards-featured-grid{grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch}
-}
-.award-featured{display:flex;flex-direction:column;min-width:0;padding:24px 26px;background:var(--surface);border-radius:var(--r-large);border-top:4px solid var(--link)}
-.award-featured-unesco .forward-sdg-card{max-width:none}
+.awards-featured-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:24px;margin:0 0 36px}
+.award-featured{display:flex;flex-direction:column;min-width:0;padding:26px 28px;background:var(--surface);border-radius:var(--r-large);border-top:4px solid var(--link)}
 .article-layout .article-style .award-kicker{margin:0 0 4px;max-width:none;font-size:15px;font-weight:700;color:var(--soft)}
-.article-layout .article-style .award-featured h3{margin:0 0 14px;font-size:clamp(24px,2.2vw,28px);line-height:1.15}
+.article-layout .article-style .award-featured h3{margin:0 0 16px;font-size:clamp(24px,2.2vw,28px);line-height:1.15}
 .article-layout .article-style .award-featured h3 a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--link);text-decoration-thickness:1.5px;text-underline-offset:4px}
 .article-layout .article-style .award-featured h3 a:hover{color:var(--link)}
-.award-gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:0 0 18px}
-@media(min-width:1100px){
-  .award-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
-}
+.award-gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:0 0 18px}
 .award-gallery img{display:block;width:100%;height:auto;border-radius:var(--r-small);background:#fff}
-.article-layout-wide .article-style .award-featured p:not([class]){max-width:29em;font-size:17px;line-height:1.55}
-.article-layout-wide .article-style .award-featured-actions{margin:auto 0 0;padding-top:6px;max-width:none}
-.award-unesco-body{display:grid;grid-template-columns:144px minmax(0,1fr);gap:20px;align-items:start;margin:0 0 14px}
-.award-unesco-badge{display:block;width:144px;height:auto;border-radius:var(--r-small);background:#fff}
-.award-featured-unesco .forward-card-container{margin-top:auto}
+.award-featured-foot{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:14px 32px}
+.article-layout-wide .article-style .award-featured p:not([class]){max-width:29em;margin:0;font-size:17px;line-height:1.55}
+.article-layout-wide .article-style .award-featured-actions{margin:0;max-width:none}
+.award-featured-unesco{display:grid;grid-template-columns:minmax(0,1fr);gap:22px;align-items:center}
+@media(min-width:1040px){
+  .award-featured-unesco{grid-template-columns:minmax(0,1.25fr) minmax(360px,1fr);gap:32px}
+}
+.award-unesco-body{display:grid;grid-template-columns:136px minmax(0,1fr);gap:20px;align-items:start}
+.award-unesco-body .award-featured-actions{margin-top:14px}
+.award-unesco-badge{display:block;width:136px;height:auto;border-radius:var(--r-small);background:#fff}
+.award-unesco-sdgs .forward-card-container{padding-top:0}
+.award-unesco-sdgs .forward-sdg-card{max-width:none}
 .article-layout .article-style .awards-year-heading{margin:36px 0 16px;padding:0 0 6px;font-size:clamp(28px,2.6vw,34px);line-height:1.1;border-bottom:2px solid var(--ink)}
 .awards-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:0 0 12px}
 .awards-grid-single{grid-template-columns:minmax(0,620px)}

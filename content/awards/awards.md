@@ -57,7 +57,7 @@ subtitle = ""
 <h2 id="featured-recognitions" class="awards-section-heading">Featured recognitions</h2>
 
 <div class="awards-featured-grid">
-  <article class="award-featured">
+  <article class="award-featured award-featured-leo">
     <p class="award-kicker">2026 · Open Science NL</p>
     <h3><a href="https://www.openscience.nl/en/news/forrt-awarded-with-the-leo-waaijers-open-science-award-2026" target="_blank" rel="noopener">The Leo Waaijers Open Science Award 2026</a></h3>
     <div class="award-gallery">
@@ -66,21 +66,27 @@ subtitle = ""
       <img src="./Leo_Waaijers_Open_Science_Award_2026/3.webp" width="600" height="750" alt="Jury quote: FORRT has made an excellent contribution to the Dutch and international open science community">
       <img src="./Leo_Waaijers_Open_Science_Award_2026/4.webp" width="600" height="750" alt="Summary card describing FORRT as a community-driven initiative promoting open science, reproducibility, and ethical research practices">
     </div>
-    <p><strong>The Leo Waaijers Open Science Award</strong> aims to recognise and reward outstanding contributions to open science in the Netherlands by highlighting these achievements. The award seeks to inspire others to apply and promote open science, stimulate innovation and strengthen the open science movement.</p>
-    <p class="award-featured-actions"><a href="https://www.openscience.nl/en/news/forrt-awarded-with-the-leo-waaijers-open-science-award-2026" class="btn dir-btn" target="_blank" rel="noopener">Read more <i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="visually-hidden"> (another website)</span></a></p>
+    <div class="award-featured-foot">
+      <p><strong>The Leo Waaijers Open Science Award</strong> aims to recognise and reward outstanding contributions to open science in the Netherlands by highlighting these achievements. The award seeks to inspire others to apply and promote open science, stimulate innovation and strengthen the open science movement.</p>
+      <p class="award-featured-actions"><a href="https://www.openscience.nl/en/news/forrt-awarded-with-the-leo-waaijers-open-science-award-2026" class="btn dir-btn" target="_blank" rel="noopener">Read more <i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="visually-hidden"> (another website)</span></a></p>
+    </div>
   </article>
 
   <article class="award-featured award-featured-unesco">
-    <p class="award-kicker">2024–2033 · UNESCO &amp; United Nations</p>
-    <h3><a href="../educators-corner/023-forward-a-unesco-decade-of-science-programme/">FORWARD: A UNESCO Decade of Science Programme</a></h3>
-    <div class="award-unesco-body">
-      <img src="unesco_recognition.webp" width="200" height="207" alt="FORWARD: A UNESCO Decade of Science Programme" class="award-unesco-badge">
-      <div>
-        <p><strong>FORRT</strong> is one of the few initiatives worldwide to be formally endorsed as a <strong>Programme</strong> of the <a href="https://www.un-sciences-decade.org/en/endorsed-activities/forward-forrt-world-development-fostering-open-research-reproducibility-worldwide-accessible?hub=63" target="_blank" rel="noopener">International Decade of Sciences for Sustainable Development (IDSSD, 2024–2033)</a>, led by UNESCO and the United Nations (UN). This endorsement reflects the highest level of UN policy recognition and positions FORRT’s work in Education &amp; Pedagogy (Curriculum Hub), Metascience &amp; Research (Replication Hub) and Social Justice &amp; DEIA as an <strong>essential contribution to the UN’s strategy for achieving the Sustainable Development Goals (SDGs)</strong>.</p>
-        <p class="award-featured-actions"><a href="https://www.un-sciences-decade.org/en/endorsed-activities/forward-forrt-world-development-fostering-open-research-reproducibility-worldwide-accessible?hub=63" class="btn dir-btn" target="_blank" rel="noopener">Read the official UNESCO announcement <i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="visually-hidden"> (another website)</span></a></p>
+    <div class="award-unesco-main">
+      <p class="award-kicker">2024–2033 · UNESCO &amp; United Nations</p>
+      <h3><a href="../educators-corner/023-forward-a-unesco-decade-of-science-programme/">FORWARD: A UNESCO Decade of Science Programme</a></h3>
+      <div class="award-unesco-body">
+        <img src="unesco_recognition.webp" width="200" height="207" alt="FORWARD: A UNESCO Decade of Science Programme" class="award-unesco-badge">
+        <div>
+          <p><strong>FORRT</strong> is one of the few initiatives worldwide to be formally endorsed as a <strong>Programme</strong> of the <a href="https://www.un-sciences-decade.org/en/endorsed-activities/forward-forrt-world-development-fostering-open-research-reproducibility-worldwide-accessible?hub=63" target="_blank" rel="noopener">International Decade of Sciences for Sustainable Development (IDSSD, 2024–2033)</a>, led by UNESCO and the United Nations (UN). This endorsement reflects the highest level of UN policy recognition and positions FORRT’s work in Education &amp; Pedagogy (Curriculum Hub), Metascience &amp; Research (Replication Hub) and Social Justice &amp; DEIA as an <strong>essential contribution to the UN’s strategy for achieving the Sustainable Development Goals (SDGs)</strong>.</p>
+          <p class="award-featured-actions"><a href="https://www.un-sciences-decade.org/en/endorsed-activities/forward-forrt-world-development-fostering-open-research-reproducibility-worldwide-accessible?hub=63" class="btn dir-btn" target="_blank" rel="noopener">Read the official UNESCO announcement <i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="visually-hidden"> (another website)</span></a></p>
+        </div>
       </div>
     </div>
-    {{< forward_unesco_sdgs_card >}}
+    <div class="award-unesco-sdgs">
+      {{< forward_unesco_sdgs_card >}}
+    </div>
   </article>
 </div>
 

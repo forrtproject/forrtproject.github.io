@@ -54,15 +54,11 @@ classtitle = "text-center"
   </div>
 </section>
 
+<p class="governance-note"><span>Contacting either role does not initiate a formal process or complaint. Related: <a href="/coc/">Code of Conduct</a> · <a href="/feedback/">anonymous feedback</a>.</span></p>
+
 The Confidential Advisor and Ombuds roles within FORRT exist to support members by providing independent, fair, and confidential support when concerns arise regarding conduct, collaboration, or community practices within FORRT. While the two roles have distinct responsibilities, they work together to help maintain a respectful, inclusive, and professional community.
 
 Depending on the nature of a concern, matters raised with one role may be discussed or referred to the other (anonymously wherever possible), unless the individual explicitly requests otherwise, to ensure that issues are addressed appropriately and that opportunities for learning and improvement are identified. Below is a brief introduction to both roles.
-
-<aside class="callout callout-rail callout-rail-top callout-governance" aria-label="Confidentiality and related policies">
-  <p class="callout-title">Confidentiality</p>
-  <p>Contacting either role does not initiate a formal process or complaint. Information will not be shared without consent, unless there is a serious risk of harm to someone's safety. Matters may be discussed with the other role (anonymously wherever possible) unless you request otherwise.</p>
-  <p>Related policies: <a href="/coc/">Code of Conduct</a> and <a href="/feedback/">anonymous feedback</a>.</p>
-</aside>
 
 ## Confidential Advisor
 
