@@ -83,13 +83,13 @@ class DeterministicFilterLists(unittest.TestCase):
         self.assertEqual(rest, [])
         self.assertEqual(extra, 0)
 
-        # 6 records across 5 distinct projects keep all records for the first 2 distinct projects together.
+        # 6 records across 5 distinct projects keep all records for the first 4 distinct projects together.
         items_5 = [f"<li>{i}</li>" for i in range(6)]
         projs_5 = ["a", "b", "a", "c", "d", "e"]
         shown, rest, extra = tenzing.partition_contributions(items_5, projs_5)
-        self.assertEqual(shown, ["<li>0</li>", "<li>1</li>", "<li>2</li>"])
-        self.assertEqual(rest, ["<li>3</li>", "<li>4</li>", "<li>5</li>"])
-        self.assertEqual(extra, 3)
+        self.assertEqual(shown, ["<li>0</li>", "<li>1</li>", "<li>2</li>", "<li>3</li>", "<li>4</li>"])
+        self.assertEqual(rest, ["<li>5</li>"])
+        self.assertEqual(extra, 1)
 
 
 if __name__ == "__main__":

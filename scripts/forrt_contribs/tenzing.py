@@ -324,7 +324,7 @@ def build_projects_list(project_names):
 # and the remaining projects behind a disclosure, so long lists never push rows tall while short lists (1–4
 # projects) show in full. The filter (static/js/contributor-filter.js) opens the disclosure when it narrows
 # the list. Keep the exact attribute class="contributor-group": layouts/partials/doors/home/about.html counts it.
-SHOWN_PROJECTS = 2
+SHOWN_PROJECTS = 4
 COLLAPSE_THRESHOLD = 5
 
 
