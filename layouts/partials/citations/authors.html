@@ -12,11 +12,11 @@
 {{- end -}}
 {{- $html := trim (string $raw) " \n\r\t" -}}
 {{- $i18n := dict
-  "english" (dict "all" "Show all %d authors" "listed" "Show listed authors" "less" "Show fewer authors" "attr" "")
-  "arabic"  (dict "all" "عرض جميع المؤلفين (%d)" "listed" "عرض المؤلفين المدرجين" "less" "إخفاء المؤلفين" "attr" ` lang="ar" dir="rtl"`)
-  "german"  (dict "all" "Alle %d Autor:innen anzeigen" "listed" "Aufgeführte Autor:innen anzeigen" "less" "Weniger Autor:innen anzeigen" "attr" "")
-  "turkish" (dict "all" "Tüm %d yazarı göster" "listed" "Listelenen yazarları göster" "less" "Daha az yazar göster" "attr" "")
-  "chinese" (dict "all" "显示全部 %d 位作者" "listed" "显示已列出的作者" "less" "收起作者" "attr" "")
+  "english" (dict "all" "Show all %d authors" "more" "Show all authors" "less" "Show fewer authors" "attr" "")
+  "arabic"  (dict "all" "عرض جميع المؤلفين (%d)" "more" "عرض جميع المؤلفين" "less" "إخفاء المؤلفين" "attr" ` lang="ar" dir="rtl"`)
+  "german"  (dict "all" "Alle %d Autor:innen anzeigen" "more" "Alle Autor:innen anzeigen" "less" "Weniger Autor:innen anzeigen" "attr" "")
+  "turkish" (dict "all" "Tüm %d yazarı göster" "more" "Tüm yazarları göster" "less" "Daha az yazar göster" "attr" "")
+  "chinese" (dict "all" "显示全部 %d 位作者" "more" "显示全部作者" "less" "收起作者" "attr" "")
 -}}
 {{- $t := index $i18n $lang | default (index $i18n "english") -}}
 {{/* A surname and initials, with "Jr." or a particle where the bibliography generator puts them:
@@ -37,7 +37,7 @@
   {{- $collapse := cond $complete (gt $count 6) (ge $count 6) -}}
   {{- with and $collapse (findRE (printf `^(?:%s\s*,\s*(?:&(?:amp;)?\s*)?){2}%s` $name $name) $authors 1) -}}
     {{- $first := index . 0 -}}
-    {{- $more := cond $complete (printf $t.all $count) $t.listed -}}
+    {{- $more := cond $complete (printf $t.all $count) $t.more -}}
     {{- $out = printf `<span class="ref-authors">%s<span class="ref-more" hidden>%s</span><span class="ref-etal">, et al.</span> <button type="button" class="ref-authors-toggle" aria-expanded="false" data-more="%s" data-less="%s"%s>%s</button></span>%s` $first (strings.TrimPrefix $first $authors) $more $t.less $t.attr $more $after -}}
   {{- end -}}
 {{- end -}}

@@ -17,13 +17,9 @@
 {{ if and $article (eq $p.Type "post") (in ($p.Params.categories | default slice) "Newsletter") }}
   {{ with site.GetPage "/newsletters" }}{{ $more = .RelPermalink }}{{ $moreLabel = "All newsletters" }}{{ end }}
 {{ end }}
-{{/* On an ordinary news post authored only by FORRT (no newsletter archive link, contents list or citation), a
-     side card would only repeat the FORRT byline and dates, so it is omitted (the byline shows the date). */}}
-{{ $forrtOnly := and $article (eq $p.Type "post") (not $more) (le (len .headings) 1) (not $p.Params.cite_as) (or (not $p.Params.authors) (and (eq (len $p.Params.authors) 1) (eq (lower (index $p.Params.authors 0)) "forrt"))) }}
 {{/* On a narrow screen the byline shows the publication date for these types (doors/article_header), and the phone
      contents replace the card's, so a card with nothing more than that date is left out there (article.css). */}}
-{{ $repeats := and .hasDates (not $updated) $article (not $p.Date.IsZero) (not $authors) (not $more) }}
-{{ if not $forrtOnly }}
+{{ $repeats := and .hasDates (not $updated) $article (not $p.Date.IsZero) (not $authors) (not $more) (not $p.Params.contact) }}
 <section class="article-card{{ if $repeats }} article-card-repeats{{ end }}{{ if $article }} article-card-article{{ end }}{{ if in (slice "educators-corner" "pedagogies") $p.Type }} article-card-edu{{ end }}" aria-label="About this article">
   {{/* With several authors and a contents list, or more than three authors, the authors go compact (every name, linked),
        so the card keeps the whole contents in view; the byline beside it then leaves the names out. Photos show only
@@ -60,10 +56,17 @@
   </ul>
   {{ end }}
   {{ end }}
-  {{ if .hasDates }}
+  {{ if or .hasDates $p.Params.contact }}
   <dl>
+    {{ with $p.Params.contact }}
+      {{ $contact := trim (string .) " " }}
+      {{ $contactProfile := site.GetPage (printf "/authors/%s" (urlize $contact)) }}
+      <dt>Contact</dt><dd>{{ if $contactProfile }}<a href="{{ $contactProfile.RelPermalink }}">{{ $contactProfile.Title }}</a>{{ else if findRE `^[^\s@]+@[^\s@]+\.[^\s@]+$` $contact }}<a href="mailto:{{ $contact }}">{{ $contact }}</a>{{ else }}{{ $contact | markdownify }}{{ end }}</dd>
+    {{ end }}
+    {{ if .hasDates }}
     <dt>Published</dt><dd>{{ $p.Date.Format "2 January 2006" }}</dd>
     {{ if $updated }}<dt>Updated</dt><dd>{{ $p.Lastmod.Format "2 January 2006" }}</dd>{{ end }}
+    {{ end }}
   </dl>
   {{ end }}
   {{ with $more }}<p class="card-more"><a href="{{ . }}">{{ $moreLabel }}</a></p>{{ end }}
@@ -82,4 +85,3 @@
   </div>
   {{ end }}
 </section>
-{{ end }}

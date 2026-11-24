@@ -16,13 +16,18 @@ class DoorsPolishContractTests(unittest.TestCase):
         self.assertIn(".rl-pill-count{font-size:14px", css)
         self.assertIn(".disciplines-foot{", css)
 
-    def test_citations_authors_threshold_and_honest_incomplete_label(self):
+    def test_disciplines_search_removes_include_resources_checkbox(self):
+        tpl = (ROOT / "layouts/partials/disciplines/controls.html").read_text(encoding="utf-8")
+        self.assertNotIn("clusters-search-include-refs", tpl)
+        self.assertNotIn("Include resources", tpl)
+
+    def test_citations_authors_threshold_and_labels(self):
         tpl = (ROOT / "layouts/partials/citations/authors.html").read_text(encoding="utf-8")
         self.assertIn("cond $complete (gt $count 6) (ge $count 6)", tpl)
         self.assertIn("Show all %d authors", tpl)
-        self.assertIn("Show listed authors", tpl)
+        self.assertIn("Show all authors", tpl)
         self.assertNotIn("Show more authors", tpl)
-        self.assertNotIn("Show all %d+ authors", tpl)
+        self.assertNotIn("Show listed authors", tpl)
         self.assertIn('lang="ar" dir="rtl"', tpl)
 
     def test_article_card_pictureless_news_category_is_accessible(self):
@@ -30,22 +35,18 @@ class DoorsPolishContractTests(unittest.TestCase):
         self.assertIn('<div class="ac-thumb ac-panel ac-panel-{{ $tone | default 1 }}"><strong>', tpl)
         self.assertNotIn('ac-panel-{{ $tone | default 1 }}" aria-hidden="true"', tpl)
 
-    def test_forrt_only_news_keeps_updated_date_in_byline(self):
-        hdr = (ROOT / "layouts/partials/doors/article_header.html").read_text(encoding="utf-8")
-        css = (ROOT / "assets/css/doors/article.css").read_text(encoding="utf-8")
-        self.assertIn('class="byline-updated"', hdr)
-        self.assertIn(".article-layout:not(:has(>.article-card)) :is(.byline-date,.byline-updated){display:inline}", css)
+    def test_reading_card_keeps_forrt_box_and_supports_contact(self):
+        card = (ROOT / "layouts/partials/doors/reading_card.html").read_text(encoding="utf-8")
+        self.assertNotIn("$forrtOnly", card)
+        self.assertIn("$p.Params.contact", card)
+        self.assertIn("<dt>Contact</dt>", card)
+        ann = (ROOT / "scripts/create_announcements.R").read_text(encoding="utf-8")
+        self.assertIn('"Contact" %in% names(row)', ann)
 
     def test_edu_read_next_mobile_avoids_cropping_figures_without_styling_panels(self):
         css = (ROOT / "assets/css/doors/article.css").read_text(encoding="utf-8")
         self.assertIn(".read-next-edu .ac-thumb:not(.ec-thumb-whole,.ac-panel){", css)
         self.assertIn(".read-next-edu .ac-thumb:not(.ec-thumb-whole,.ac-panel) img{width:100%;height:auto;min-height:0;object-fit:contain}", css)
-
-    def test_resource_keywords_template_avoids_double_escape_on_plain_keywords(self):
-        tpl = (ROOT / "layouts/partials/doors/resource_keywords.html").read_text(encoding="utf-8")
-        self.assertIn("{{ $plain = $plain | append . }}", tpl)
-        self.assertNotIn("$plain | append (. | htmlEscape)", tpl)
-        self.assertIn("Other keywords", tpl)
 
     def test_crumbs_honors_explicit_label(self):
         tpl = (ROOT / "layouts/partials/doors/crumbs.html").read_text(encoding="utf-8")

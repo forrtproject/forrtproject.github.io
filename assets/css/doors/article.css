@@ -355,8 +355,7 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .article-layout .article-style .btn-block{display:inline-block;width:auto}
 @media(max-width:1000px){.profile-head .profile-org{font-weight:400}.profile-head ul.network-icon{margin:4px 0 0}.profile-head ul.network-icon a{text-decoration:none}}
 .article-layout .article-style .btn.btn-primary,.article-layout .article-style .btn.btn-lg{padding:10px 22px!important;font-size:17px!important}
-.byline-date,.byline-updated{display:none}
-.article-layout:not(:has(>.article-card)) :is(.byline-date,.byline-updated){display:inline}
+.byline-date{display:none}
 @media(max-width:1000px){.article-layout .byline-date{display:inline}}
 /* A search over a long list on the page (shortcodes/list_filter.html). */
 .article-layout :is(.article-style .list-filter,.list-filter-posts){max-width:520px;margin:8px 0 22px;padding:16px 18px;background:var(--surface);border-radius:var(--r-large)}

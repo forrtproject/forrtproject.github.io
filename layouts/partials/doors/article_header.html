@@ -31,7 +31,6 @@
     {{/* The side card carries the date on a wide screen; on a narrow one it would come after the article. */}}
     {{ if and (in (slice "post" "educators-corner" "pedagogies") .Type) (not .Date.IsZero) }}<time class="byline-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time>{{ end }}
     {{ if and (eq .Type "post") (ge .ReadingTime 3) }}<span class="byline-time">{{ .ReadingTime }} {{ i18n "minute_read" }}</span>{{ end }}
-    {{ if and (in (slice "post" "educators-corner" "pedagogies") .Type) (not .Date.IsZero) (ne (.Lastmod.Format "2006-01-02") (.Date.Format "2006-01-02")) }}<span class="byline-updated">Updated <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod.Format "2 January 2006" }}</time></span>{{ end }}
   </div>
   {{/* A pedagogy's materials (syllabus, slides, videos, the interview) are what a teacher came for: bricks,
        each saying where it leads (DESIGN.md §4 action cards). */}}

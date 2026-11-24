@@ -57,10 +57,6 @@
 .collection-history{margin-top:24px;padding-top:16px;border-top:1px solid var(--line);max-width:44em}
 .collection-about p{font-size:16px;line-height:1.55;margin-top:16px}
 .collection-about a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
-/* Keywords on resource pages: non-linked rarer keywords sit cleanly in body ink, separated from linked tags so they never read as broken links. */
-.article-layout .resource-keywords{color:var(--ink)}
-.article-layout .resource-keywords-plain{display:block;margin-top:4px;color:var(--ink)}
-.article-layout .resource-keywords-sep{color:var(--soft)}
 
 @media(max-width:1000px){
   .directory{grid-template-columns:minmax(0,250px) minmax(0,1fr);gap:28px}

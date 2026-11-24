@@ -10,7 +10,7 @@
 # Run on a schedule by .github/workflows/create_announcements.yml.
 #
 # Sheet columns: Slug, Title, Description, imageUrl, webUrl, LinkText, Date,
-#                Author, Category, Show
+#                Author, Category, Show (optional: Contact)
 
 library(googlesheets4)
 library(httr)
@@ -161,6 +161,11 @@ get_image <- function(url, bundle_dir) {
 # Writes content/post/<Slug>/index.md for one sheet row (a named list) and fetches its image.
 create_post <- function(row) {
   date <- row[["Date"]]
+  contact <- if ("Contact" %in% names(row) && !is.null(row[["Contact"]]) && !is.na(row[["Contact"]])) {
+    trimws(as.character(row[["Contact"]]))
+  } else {
+    ""
+  }
   post_content <- paste0(
     "---\n",
     "title: \"", row["Title"], "\"\n",
@@ -169,6 +174,7 @@ create_post <- function(row) {
     "categories:\n",
     "  - ", row["Category"], "\n",
     "authors: [\"", row["Author"], "\"]\n",
+    if (nzchar(contact)) paste0("contact: \"", gsub("\"", "\\\\\"", contact), "\"\n") else "",
     "---\n\n",
     gsub("\n", "\n  ", row["Description"]), "\n  \n", # Spaces keep the sheet's line breaks in the rendered Markdown
     "<!--more-->\n\n", # Card teasers show only the text above this divider, so the link stays out of them
