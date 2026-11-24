@@ -5,5 +5,5 @@ a.cite:hover,a.cite:focus{color:var(--link)}
 .article-layout .article-style ul.references-list:not(.term-references) li{margin:0 0 10px;padding-inline-start:1.5em;text-indent:-1.5em;list-style:none;overflow-wrap:anywhere}
 .article-layout .article-style ul.references-list:not(.term-references) li:last-child{margin-bottom:0}
 /* Inline control that expands a shortened author list (layouts/partials/citations/authors.html). */
-.ref-authors-toggle{display:inline;margin:0 .15em;padding:0;background:none;border:0;color:var(--link);font:inherit;font-size:.92em;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:2px;white-space:nowrap;cursor:pointer;vertical-align:baseline}
+.ref-authors-toggle{display:inline;margin:0 .15em;padding:0;background:none;border:0;color:var(--link);font:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:2px;white-space:nowrap;cursor:pointer;vertical-align:baseline}
 .ref-authors-toggle:hover{color:var(--ink)}
