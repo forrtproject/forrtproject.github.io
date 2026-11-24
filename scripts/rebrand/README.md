@@ -4,22 +4,22 @@ Tools for the long-lived `rebrand-doors` branch, which moves forrt.org to the Do
 
 Only `check_preview.py --production` runs against production, after launch; everything else checks the branch, its builds or the preview. Delete this folder after launch unless a check has been promoted into the normal workflows.
 
-## What runs on every push and PR
+## Preview checks
 
-`.github/workflows/rebrand-preview.yaml` builds the branch and its merge base with `main` from the same data and announcement artifacts as `deploy.yaml`, with Hugo 0.158.0 and `HUGO_ENV=staging`, and then runs:
+`.github/workflows/rebrand-preview.yaml` uses the same data and announcement artifacts as `deploy.yaml`, with Hugo 0.158.0 and `HUGO_ENV=staging`. Pushes, manual runs and the launch PR also build the merge base with `main` for the comparison. Ordinary same-repository PRs into `rebrand-doors` run the other checks, and use their PR base to scope browser checks when eligible.
 
 | Check | Script | Fails when |
 |---|---|---|
 | Source rules | `check_source_rules.py` | A template or menu hard-codes one of this site's own forrt.org URLs (use `relref`), or the branch edits a generated path |
 | Builds compared | `compare_builds.py` | A page, feed or data file appears or goes, a structured-data count falls, JSON-LD is invalid, or a page's SEO tags change |
-| Internal links | `check_internal_links.py` | A link broken here is not also broken at the merge base. Lychee excludes forrt.org, so nothing else checks these |
+| Internal links | `check_internal_links.py` | An internal link is broken and its target is outside the documented exceptions in `link_allowlist.txt` |
 | Built HTML | `../check_seo_html.py` | The site's standing rules on headings, conditional assets, image `alt` and home-page images |
 | Designed screens | `check_design.py` | On the designed screens and every page on the reading layout (a sample of the three large collections): sideways overflow, italics, line length, small text, low contrast, broken images or more than one `h1`; an icon outside the subset or a theme asset loaded anywhere; the home page's topics too far down (A14), layout shift, pause control or the resources directory misbehaving; a call-out over the text, the card or another call-out; the chat launcher, its invitation or label, or back to top over text, a card or a control at any of several scroll positions (below 1440 px, where the launcher and back to top float in the corner, over each other mid-page or over anything at the end), or the invitation showing nowhere; specialist resources shown on a cluster page while their box is unticked; the conference programme's day tabs, abstract dialog or width misbehaving, or any of its days failing the audit with JavaScript off; the contributor network off centre or too small on its canvas, reaching another site, or not answering to its search boxes, pointer, keyboard or reduced motion; an abstract toggle that does not say Hide when open, panel text wider than the reading measure on `/clusters/` or `/disciplines/`, the booklet turning to a spread at 390 px, or the community map opening at 390 px without its members in view or unable to zoom out |
 | Accessibility rules | `check_axe.py` | axe-core reports a Level A or AA problem on a sample page at 390 or 1440 px, apart from the provider's markup listed in `KNOWN` |
 
-Pushes also run `preview_paths.py`, which prefixes root-relative paths for the subfolder and adds noindex to every HTML file, and then deploy. A failed check marks the run red but does not hold the preview back. Tests are in `../tests/test_rebrand_checks.py`.
+`preview_paths.py` prefixes root-relative paths for the subfolder and adds noindex to every HTML file. Pushes deploy the preview as soon as the build is ready, alongside the checks. Tests are in `../tests/test_rebrand_checks.py`.
 
-Agreed exceptions go in `allowed_changes.txt` (URL list) and `link_allowlist.txt` (retired paths the 404 page redirects), with a comment saying why. `link_allowlist.txt` holds `/TenureRun/`, which the Games Portal's sheet still links; it can go when the sheet has the game's new address.
+Agreed exceptions go in `allowed_changes.txt` (URL list) and `link_allowlist.txt` (retired or grandfathered link targets), with a comment saying why. `link_allowlist.txt` holds `/TenureRun/`, which the Games Portal's sheet still links. Remove the exception when the sheet has the game's new address.
 
 ## Baseline
 
