@@ -108,3 +108,8 @@ data/open_research_games.json  # #1151: retired stale Nov 2025 static games JSON
 about/mission/index.html       # #1297: description is now a written summary without the "Mission Statement" heading prefix
 awards/index.html              # #1297: description is now a written summary instead of concatenated heading and body text
 testimonials/index.html        # #1297: description is now a concise written summary under 250 characters without the heading prefix
+neurodiversity-lessonbank/implicit_bias/index.html  # #1016: written meta description replacing auto-summary that opened with "LEAVE FEEDBACK HERE"
+neurodiversity-lessonbank/community-psychology-diversity/index.html  # #1016: written meta description replacing auto-summary that opened with "LEAVE FEEDBACK AND LOOK AT THE LESSON PLAN HERE"
+neurodiversity-lessonbank/diversity-and-research/index.html  # #1016: written meta description replacing truncated auto-summary
+neurodiversity-lessonbank/masterstools/index.html  # #1016: written meta description replacing truncated auto-summary with "neuroptype" typo
+neurodiversity-lessonbank/generalizability/index.html  # #1016: written meta description replacing truncated auto-summary
