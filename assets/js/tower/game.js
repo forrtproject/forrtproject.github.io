@@ -859,11 +859,11 @@ function createGame() {
     };
     const count = placedCount(), courses = maxCourses();
     const [nx, nz] = footprint(part.type, part.cell.rot);
-    if (count >= 4) unlock('first_course', 'First course laid');
+    if (count >= 4) unlock('first_course', 'Off to a start: 4 bricks');
     if (part.hold && part.hold.under.size >= 2) unlock('open_span', 'Open span bridged');
     if (part.cell.i < -4 || part.cell.i + nx > 4 || part.cell.j < -4 || part.cell.j + nz > 4) unlock('overhang', 'Bold overhang');
-    if (courses >= 6) unlock('skyline', 'Skyline reached: 6 courses high');
-    if (courses >= 10) unlock('towering', 'Towering height: 10 courses');
+    if (courses >= 6) unlock('skyline', 'Skyline reached: 6 layers high');
+    if (courses >= 10) unlock('towering', 'Towering height: 10 layers');
     if (count >= 25) unlock('master', 'Master builder: 25 bricks');
 
     const planJustDone = currentPlan !== 'free' && slots.length > 0 && slots.every(s => s.filled) && !planCompletedAnnounced;
