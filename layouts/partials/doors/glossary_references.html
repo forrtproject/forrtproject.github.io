@@ -1,22 +1,38 @@
-{{/* The glossary's reference list (/glossary/references/), laid out as the glossary hub: a search, filter and A–Z
-     letters in a pale Education panel beside the title, then every reference A to Z under large sticky letters in two
-     readable columns on wide screens, each with the English terms that cite it. The references come from apa_lookup.json
-     (citations/keys removes duplicates) and the terms from their own pages, so the list does not depend on the page
-     body, which data-processing.yml ships from main. Input: the page. */}}
+{{/* The glossary's reference list (/glossary/references/), laid out as the glossary hub: a search and the letters in
+     a panel beside the title, then every reference a glossary term cites, A to Z under large letters, each with the
+     terms that cite it: the English terms, or the terms in other languages where no English term cites it. The
+     references and terms come from the term pages, and the anchor keys from apa_lookup.json (citations/keys), so the
+     list does not depend on the page body, which data-processing.yml ships from main.
+     site.js runs the search and the letters as on the hub. Input: the page. */}}
 {{ $keys := partialCached "citations/keys" . "bibliography-keys" }}
-{{/* The English terms citing each reference, keyed by the reference's md5. */}}
+{{/* Each cited reference, and the terms citing it, keyed by the reference's md5. */}}
+{{ $refs := newScratch }}
 {{ $cited := newScratch }}
-{{ range sort (where site.RegularPages "File.Dir" "glossary/english/") "Params.sort_key" }}
-  {{ $term := . }}
-  {{ range .Params.references }}{{ if . }}{{ $cited.Add (md5 .) (slice $term) }}{{ end }}{{ end }}
+{{ $labels := dict "english" "" "german" "DE" "arabic" "AR" "chinese" "ZH" "turkish" "TR" }}
+{{ range $lang := slice "english" "german" "arabic" "chinese" "turkish" }}
+  {{ range sort (where site.RegularPages "File.Dir" (printf "glossary/%s/" $lang)) "Params.sort_key" }}
+    {{ $term := . }}
+    {{ range .Params.references }}{{ with trim . " \n\t" }}
+      {{ $md := md5 . }}
+      {{ $refs.Set $md . }}
+      {{ $cited.Add (printf "%s-%s" $lang $md) (slice $term) }}
+    {{ end }}{{ end }}
+  {{ end }}
 {{ end }}
 {{ $items := slice }}
-{{ $citedCount := 0 }}
-{{ range $apa, $key := $keys }}
+{{ range $md, $apa := $refs.Values }}
+  {{ $key := index $keys $apa | default (printf "g%s" (substr $md 0 10)) }}
   {{ $sk := $apa | plainify | htmlUnescape | replaceRE `^[^\p{L}\p{N}]+` "" | lower }}
-  {{ $terms := $cited.Get (md5 $apa) }}
-  {{ if $terms }}{{ $citedCount = add $citedCount 1 }}{{ end }}
-  {{ $items = $items | append (dict "apa" $apa "key" $key "sk" $sk "cited" (gt (len ($terms | default slice)) 0) "terms" $terms) }}
+  {{/* English terms where any cite the reference; otherwise the citing terms in other languages, labelled. */}}
+  {{ $terms := slice }}
+  {{ with $cited.Get (printf "english-%s" $md) }}
+    {{ range . }}{{ $terms = $terms | append (dict "page" . "label" "") }}{{ end }}
+  {{ else }}
+    {{ range $lang := slice "german" "arabic" "chinese" "turkish" }}
+      {{ range $cited.Get (printf "%s-%s" $lang $md) }}{{ $terms = $terms | append (dict "page" . "label" (index $labels $lang)) }}{{ end }}
+    {{ end }}
+  {{ end }}
+  {{ $items = $items | append (dict "apa" $apa "key" $key "sk" $sk "terms" $terms) }}
 {{ end }}
 {{/* Grouped by first letter, accents set aside, as the collated sort already files Ö with O. */}}
 {{ $groups := slice }}{{ $current := "" }}{{ $members := slice }}
@@ -38,18 +54,14 @@
              (/glossary/ redirects), so the trail leads to the English glossary, which these references serve. */}}
         <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ "" | relLangURL }}">Home</a> <span aria-hidden="true">/</span> <a href="{{ "glossary/english/" | relLangURL }}">Glossary</a> <span aria-hidden="true">/</span> <span aria-current="page">{{ .Title }}</span></nav>
         <h1>{{ .Title }}</h1>
-        <p class="standfirst">Sources behind the FORRT Glossary, A to Z, with links to the English terms that cite them. <a href="{{ "glossary/english/" | relLangURL }}">Browse the English glossary</a>.</p>
+        <p class="standfirst">Every source the glossary terms cite, A to Z, with links to the terms that cite it. <a href="{{ "glossary/english/" | relLangURL }}">Browse the English glossary</a>.</p>
       </header>
       <div class="glossary-tools">
         <div class="glossary-find">
-          <label for="glossary-search">Search references</label>
+          <label for="glossary-search">Search {{ len $items }} references</label>
           <div class="glossary-search-row"><input type="search" id="glossary-search" placeholder="An author, title or year" autocomplete="off"><button type="button" class="glossary-clear" hidden>Clear</button></div>
           <p class="glossary-none" hidden>No reference matches.</p>
           <p class="glossary-count" aria-live="polite" data-format="%s of %s references"></p>
-        </div>
-        <div class="glossary-ref-scope" role="group" aria-label="Filter references" hidden>
-          <button type="button" data-scope="all" aria-pressed="true">All ({{ len $items }})</button>
-          <button type="button" data-scope="cited" aria-pressed="false">Linked to terms ({{ $citedCount }})</button>
         </div>
         <nav class="glossary-letters" aria-label="References by letter">
           {{ range $groups }}<a href="#letter-{{ if eq .letter "#" }}other{{ else }}{{ lower .letter }}{{ end }}">{{ .letter }}</a>{{ end }}
@@ -61,9 +73,9 @@
           <h2>{{ .letter }}</h2>
           <ul class="references-list">
             {{ range .items }}
-            <li id="ref-{{ .key }}" data-term="{{ .sk }}" data-cited="{{ if .cited }}1{{ else }}0{{ end }}">
+            <li id="ref-{{ .key }}" data-term="{{ .sk }}">
               <div class="reference-apa">{{ partial "citations/authors" (.apa | markdownify) }}</div>
-              {{ with .terms }}<p class="reference-cited"><span class="reference-cited-label">Cited in</span> {{ range $i, $t := . }}{{ if $i }}, {{ end }}<a href="{{ $t.RelPermalink }}">{{ partial "doors/term_title" $t.Title }}</a>{{ end }}</p>{{ end }}
+              {{ with .terms }}<p class="reference-cited"><span class="reference-cited-label">Cited in</span> {{ range $i, $t := . }}{{ if $i }}, {{ end }}<a href="{{ $t.page.RelPermalink }}">{{ partial "doors/term_title" $t.page.Title }}</a>{{ with $t.label }} ({{ . }}){{ end }}{{ end }}</p>{{ end }}
             </li>
             {{ end }}
           </ul>
@@ -73,51 +85,3 @@
     </article>
   </div>
 </div>
-<script>
-(function () {
-  var scopeBar = document.querySelector('.glossary-ref-scope');
-  var input = document.getElementById('glossary-search');
-  var grid = document.querySelector('.glossary-references .term-grid');
-  if (!scopeBar || !grid) return;
-  scopeBar.hidden = false;
-  var scope = 'all';
-  var items = [].slice.call(grid.querySelectorAll('li[data-term]'));
-  var groups = [].slice.call(grid.querySelectorAll('.term-group'));
-  var none = document.querySelector('.glossary-none');
-  var count = document.querySelector('.glossary-count');
-
-  function syncScope() {
-    var citedOnly = scope === 'cited';
-    var q = input ? input.value.trim() : '';
-    items.forEach(function (li) {
-      if (citedOnly && li.dataset.cited !== '1') li.hidden = true;
-    });
-    groups.forEach(function (group) {
-      var hasVisible = !!group.querySelector('li:not([hidden])');
-      group.hidden = !hasVisible;
-      var letter = document.querySelector('.glossary-letters a[href="#' + group.id + '"]');
-      if (letter) {
-        letter.classList.toggle('is-empty', !hasVisible);
-        if (!hasVisible) letter.setAttribute('tabindex', '-1'); else letter.removeAttribute('tabindex');
-      }
-    });
-    if (none) none.hidden = groups.some(function (g) { return !g.hidden; });
-    if (count && (citedOnly || q)) {
-      var shown = items.filter(function (li) { return !li.hidden; }).length;
-      count.textContent = shown + ' of ' + items.length + ' references';
-    }
-  }
-
-  scopeBar.querySelectorAll('button').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      scope = btn.dataset.scope;
-      scopeBar.querySelectorAll('button').forEach(function (b) {
-        b.setAttribute('aria-pressed', String(b.dataset.scope === scope));
-      });
-      if (input) input.dispatchEvent(new Event('input'));
-      syncScope();
-    });
-  });
-  if (input) input.addEventListener('input', function () { setTimeout(syncScope, 0); });
-})();
-</script>

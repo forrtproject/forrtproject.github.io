@@ -12,8 +12,9 @@ from docx.oxml.ns import qn
 from docx.opc.constants import RELATIONSHIP_TYPE
 
 from parse_disciplines_gdoc import (
-    cell_text_links, parse_cell_resources, parse_docx, preserve_sheet_columns,
+    cell_text_links, clean_url, parse_cell_resources, parse_docx, preserve_sheet_columns,
 )
+import parse_disciplines_to_json as disciplines_json
 
 
 def hyperlink(paragraph, label, url):
@@ -70,6 +71,32 @@ class DocumentConversionTests(unittest.TestCase):
     def test_encoded_trailing_space_is_removed(self):
         rows = parse_cell_resources("General", "Paper. https://doi.org/10.1234/paper%20")
         self.assertEqual(rows[0]["link"], "https://doi.org/10.1234/paper")
+
+    def test_word_hyperlink_field_switches_are_stripped(self):
+        mangled = 'https://doi.org/10.1038/nrn.2016.167%22%20/o%20%22https://doi.org/10.1038/nrn.2016.167%22%20/t%20%22_blank'
+        self.assertEqual(clean_url(mangled), "https://doi.org/10.1038/nrn.2016.167")
+        self.assertEqual(disciplines_json.repair_url(mangled), "https://doi.org/10.1038/nrn.2016.167")
+
+    def test_json_exporter_applies_link_repairs_without_trailing_slash_mismatch(self):
+        built = disciplines_json.build_json(
+            [["Name", "Summary", "Show"], ["Humanities", "Sum", "TRUE"]],
+            [["Field", "Discipline", "Examples"],
+             ["Humanities", "History", "See [RSE](http://www.royalsoced.org.uk)"]],
+            [["Discipline", "Title", "Link", "Category"],
+             ["History", "Open Archaeology", "https://www.degruyter.com/view/journals/opar/opar-overview.xml?tab_body=overview", "Open Outputs"],
+             ["History", "E-LIS", "http://eprints.rclis.org", "Open Outputs"],
+             ["History", "Poldrack", "https://doi.org/10.1038/nrn.2016.167%22%20/o%20%22https://doi.org/10.1038/nrn.2016.167%22%20/t%20%22_blank", "General"]],
+        )
+        disc = built["fields"][0]["disciplines"][0]
+        self.assertEqual(disc["examples"], "See [RSE](https://rse.org.uk/)")
+        self.assertEqual(
+            [r["link"] for r in disc["resources"]],
+            [
+                "https://www.degruyterbrill.com/journal/key/opar/html",
+                "https://eprints.rclis.org/",
+                "https://doi.org/10.1038/nrn.2016.167",
+            ],
+        )
 
     def test_parentheses_in_doi_are_not_left_in_title(self):
         url = "https://doi.org/10.1016/S0313-5926(09)50047-1"

@@ -34,10 +34,20 @@
   <section class="cluster-full-width clusters-display-section">
     <div class="wrap">
       {{ partial "disciplines/all_fields.html" . }}
-      <p class="intro-paragraph disciplines-form">
-        If you have resources or disciplines to add, or spot errors, please <a href="https://docs.google.com/forms/d/e/1FAIpQLSfs-BCYWGet5QNZAWQ8IQVZ05TAUUwvD4mkc31Ehrm5tK8q3Q/viewform" target="_blank" rel="noopener">fill out this form</a>.
-      </p>
-      {{ partial "disciplines/citation.html" . }}
+      <div class="disciplines-foot">
+        <div class="disciplines-foot__main">
+          <p class="intro-paragraph disciplines-form">
+            If you have resources or disciplines to add, or spot errors, please <a href="https://docs.google.com/forms/d/e/1FAIpQLSfs-BCYWGet5QNZAWQ8IQVZ05TAUUwvD4mkc31Ehrm5tK8q3Q/viewform" target="_blank" rel="noopener">fill out this form</a>.
+          </p>
+          {{ partial "disciplines/citation.html" . }}
+        </div>
+        <div class="disciplines-partner">
+          <p class="disciplines-partner__caption">Supported by</p>
+          <a href="https://www.ukrn.org/" target="_blank" rel="noopener">
+            <img src="UKRN.webp" alt="UK Reproducibility Network (UKRN)" title="UK Reproducibility Network" width="275" height="275">
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 {{ end }}

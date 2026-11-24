@@ -244,7 +244,9 @@ document.querySelectorAll('img.lazyload[data-src]').forEach((image) => {
   image.src = image.dataset.src;
 });
 
-// A video's player replaces its poster when someone asks to play it.
+// A video's player replaces its poster when someone asks to play it. A poster shown small in a side column
+// (inside [data-video-dialog], narrower than 560 px, from 1240 px where side columns appear) plays in a dialog
+// at full size instead; closing the dialog stops the video and returns focus to the poster.
 document.addEventListener('click', (event) => {
   const poster = event.target.closest('[data-video]');
   if (!poster || event.metaKey || event.ctrlKey || event.shiftKey) return;
@@ -254,6 +256,21 @@ document.addEventListener('click', (event) => {
   frame.title = poster.getAttribute('aria-label');
   frame.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
   frame.className = 'video-frame';
+  if (poster.closest('[data-video-dialog]') && poster.offsetWidth < 560 && matchMedia('(min-width: 1240px)').matches) {
+    const dialog = document.createElement('dialog');
+    dialog.className = 'video-dialog';
+    dialog.setAttribute('aria-label', frame.title);
+    dialog.innerHTML = '<button class="btn video-dialog-close" type="button">Close</button>';
+    dialog.append(frame);
+    document.body.append(dialog);
+    dialog.querySelector('button').addEventListener('click', () => dialog.close());
+    // A click on the backdrop closes it too.
+    dialog.addEventListener('click', (e) => { if (e.target === dialog) dialog.close(); });
+    dialog.addEventListener('close', () => { dialog.remove(); poster.focus(); });
+    // Focus starts on Close, so Escape closes the dialog until someone moves into the player.
+    dialog.showModal();
+    return;
+  }
   poster.replaceWith(frame);
   frame.focus();
 });
@@ -279,12 +296,29 @@ const summaryEntries = [...document.querySelectorAll('.summary-entry')];
 if (summaryEntries.length) {
   const tools = document.createElement('div');
   tools.className = 'summary-tools';
-  tools.innerHTML = '<label>Filter these summaries <input type="search" autocomplete="off" spellcheck="false"></label><p class="summary-count" role="status"></p>';
+  tools.innerHTML = '<label><span class="summary-tools-label">Filter these summaries</span> <input type="search" autocomplete="off" spellcheck="false"></label><p class="summary-count" role="status"></p>';
   // A collection page (layouts/_default/summaries.html) puts the filter in its slot, with a placeholder of its own:
   // beside the list on a wide screen, above it on a phone.
   const slot = document.querySelector('.summary-tools-slot');
   if (slot?.dataset.placeholder) tools.querySelector('input').placeholder = slot.dataset.placeholder;
   if (slot) slot.append(tools); else summaryEntries[0].before(tools);
+  // A collection in chapters also gets a menu of its years beside the filter. On a phone the two share one row that
+  // stays at the top of the screen, so a reader can refine or jump mid-list; a wide screen has the index of years
+  // instead and hides the menu.
+  const chapters = [...document.querySelectorAll('.summary-chapter')];
+  const pick = chapters.length ? document.createElement('select') : null;
+  if (pick) {
+    pick.className = 'summary-year-pick';
+    pick.setAttribute('aria-label', 'Go to a year');
+    pick.append(new Option('Year', ''));
+    chapters.forEach((chapter) => pick.append(new Option(chapter.querySelector('.summary-chapter-head').textContent, chapter.id)));
+    pick.options[0].disabled = true;
+    const row = document.createElement('div');
+    row.className = 'summary-tools-row';
+    row.append(tools.querySelector('label'), pick);
+    tools.prepend(row);
+    pick.addEventListener('change', () => document.getElementById(pick.value)?.scrollIntoView());
+  }
   const more = document.createElement('button');
   more.className = 'btn summary-more';
   more.type = 'button';
@@ -294,18 +328,94 @@ if (summaryEntries.length) {
   // What a filter looks through: title, takeaways, quote and abstract, not the fixed headings or related links.
   const words = new Map(summaryEntries.map((entry) => {
     const copy = entry.cloneNode(true);
-    copy.querySelectorAll('h3, .sr-only, .npr-mark').forEach((part) => part.remove());
+    copy.querySelectorAll('h4, .sr-only, .npr-mark, .summary-gist, .summary-credit').forEach((part) => part.remove());
     copy.querySelector('ul:last-of-type')?.remove();
     return [entry, copy.textContent.toLowerCase()];
   }));
-  // Pages of 30, unless that would hide only a few: then every entry shows.
-  let limit = summaryEntries.length > 40 ? 30 : summaryEntries.length;
+  // Pages of 30, unless that would hide only a few: then every entry shows. A collection page shows every entry in
+  // chapters by year, with an index of years to jump by, so it needs no pages.
+  let limit = summaryEntries.length > 40 && !chapters.length ? 30 : summaryEntries.length;
+  // The sentence of an entry's takeaways, quote, abstract or reference that holds the query, cut to about 140
+  // characters around it.
+  const hiddenSentence = (entry, query) => {
+    for (const part of entry.querySelectorAll(':scope > ul:first-of-type li, :scope > blockquote, :scope > p:not(.summary-credit)')) {
+      const text = part.textContent.replace(/\s+/g, ' ').trim();
+      if (text.toLowerCase().length !== text.length) continue;
+      const at = text.toLowerCase().indexOf(query);
+      if (at < 0) continue;
+      const before = text.slice(0, at);
+      const after = at + query.length;
+      let start = Math.max(before.search(/[^.!?]*$/), 0);
+      // The sentence ends at the first full stop after the whole match, so a match like "e.g. what" stays whole.
+      let end = text.slice(after).search(/[.!?](\s|$)/);
+      end = end < 0 ? text.length : after + end + 1;
+      // A sentence cut short is marked with "…" where it was cut, always at a space before the match and after it.
+      const space = at - start > 60 ? text.indexOf(' ', at - 60) : -1;
+      const cutStart = space >= 0 && space < at;
+      if (cutStart) start = space + 1;
+      if (end - after > 90) end = Math.max(text.lastIndexOf(' ', after + 90), after);
+      const said = text.slice(start, end).trim();
+      return `${cutStart ? '…' : ''}${said}${end < text.length && !/[.!?]$/.test(said) ? '…' : ''}`;
+    }
+    return '';
+  };
   const show = () => {
     const query = input.value.trim().toLowerCase();
     const matches = summaryEntries.filter((entry) => !query || words.get(entry).includes(query));
     const shown = query ? matches : matches.slice(0, limit);
     // An entry someone has opened, perhaps from a link to it, stays in view.
     summaryEntries.forEach((entry) => { entry.hidden = !shown.includes(entry) && !entry.open; });
+    // A row that matches only in its hidden text shows the sentence the words are in; the typed words are marked
+    // where they show in the closed row: its title, citation, preview and that sentence.
+    summaryEntries.forEach((entry) => {
+      const head = entry.querySelector('summary');
+      const seen = [...head.querySelectorAll('h3, .summary-gist')].some((part) => part.textContent.toLowerCase().includes(query));
+      let hit = head.querySelector('.summary-hit');
+      if (query && !seen && shown.includes(entry)) {
+        if (!hit) { hit = document.createElement('span'); hit.className = 'summary-hit'; head.append(hit); }
+        const said = hiddenSentence(entry, query);
+        if (said) {
+          hit.replaceChildren(Object.assign(document.createElement('span'), { className: 'summary-hit-label', textContent: 'In the summary: ' }), Object.assign(document.createElement('span'), { className: 'summary-hit-text', textContent: said }));
+        } else hit.textContent = `“${input.value.trim()}” is in the full summary`;
+      } else hit?.remove();
+    });
+    if (window.CSS?.highlights && window.Highlight) {
+      const ranges = [];
+      if (query) shown.forEach((entry) => entry.querySelectorAll('summary h3, .summary-gist, .summary-hit-text').forEach((part) => {
+        const walker = document.createTreeWalker(part, NodeFilter.SHOW_TEXT);
+        for (let node = walker.nextNode(); node; node = walker.nextNode()) {
+          const text = node.data.toLowerCase();
+          // Lower case can change a text's length (İ becomes two characters), and then the places found would not fit it.
+          if (text.length !== node.data.length) continue;
+          for (let at = text.indexOf(query); at >= 0; at = text.indexOf(query, at + query.length)) {
+            const range = new Range();
+            range.setStart(node, at);
+            range.setEnd(node, at + query.length);
+            ranges.push(range);
+          }
+        }
+      }));
+      CSS.highlights.set('summary-match', new Highlight(...ranges));
+    }
+    // A chapter with nothing left in it goes, and the bars in the index of years show how the matches spread over
+    // the years.
+    const lefts = chapters.map((chapter) => chapter.querySelectorAll('.summary-entry:not([hidden])').length);
+    chapters.forEach((chapter, i) => {
+      const left = lefts[i];
+      chapter.hidden = !left;
+      const link = document.querySelector(`.summary-years a[data-chapter="${chapter.id}"]`);
+      if (!link) return;
+      link.classList.toggle('is-empty', !left);
+      // A year with no matches is not a link while its chapter is hidden.
+      if (left) link.href = `#${chapter.id}`; else link.removeAttribute('href');
+      link.querySelector('.summary-years-bar').style.setProperty('--n', left);
+      link.querySelector('.summary-years-n').textContent = left;
+    });
+    if (pick) chapters.forEach((chapter, i) => {
+      const option = pick.options[i + 1];
+      option.disabled = !lefts[i];
+      option.textContent = `${chapter.querySelector('.summary-chapter-head').textContent} (${lefts[i]})`;
+    });
     more.hidden = shown.length === matches.length;
     const kept = summaryEntries.filter((entry) => !entry.hidden).length - shown.length;
     // A collection page's header gives the total, so with no filter and every entry shown the status stays empty.
@@ -315,6 +425,52 @@ if (summaryEntries.length) {
   };
   input.addEventListener('input', show);
   addEventListener('hashchange', show);
+  // A line of topics to try, each with its number of matches, leads the list of a collection page: each fills in the
+  // filter and goes to the first summary that matches.
+  const topics = slot?.dataset.try?.split(',').map((topic) => topic.trim()).filter(Boolean);
+  if (topics?.length) {
+    const line = document.createElement('p');
+    line.className = 'summary-try';
+    line.append(document.querySelector('.summary-questions') ? 'Or try a topic: ' : 'Try a topic: ');
+    topics.forEach((topic) => {
+      const count = summaryEntries.filter((entry) => words.get(entry).includes(topic.toLowerCase())).length;
+      if (!count) return;
+      const button = Object.assign(document.createElement('button'), { type: 'button', textContent: topic });
+      button.append(Object.assign(document.createElement('span'), { className: 'summary-try-n', textContent: ` ${count}` }));
+      button.addEventListener('click', () => {
+        input.value = topic;
+        show();
+        document.querySelector('.summary-entry:not([hidden]) summary h3')?.scrollIntoView();
+      });
+      line.append(button);
+    });
+    document.querySelector('.summaries-layout .reading .article-style')?.before(line);
+  }
+  // The year whose summaries are on screen is marked in the index of years, which on a phone scrolls to keep it in view.
+  const yearLinks = [...document.querySelectorAll('.summary-years a')];
+  if ('IntersectionObserver' in window && yearLinks.length) {
+    const seen = new Map(chapters.map((chapter) => [chapter.id, false]));
+    const strip = document.querySelector('.summary-years ol');
+    const mark = () => {
+      // At the top of the page nothing is marked yet: the list has not started.
+      const current = scrollY > 0 && [...seen.entries()].find(([, on]) => on)?.[0];
+      if (pick) pick.value = current || '';
+      if (!current) { yearLinks.forEach((a) => a.classList.remove('is-current')); strip.scrollLeft = 0; return; }
+      yearLinks.forEach((a) => {
+        const on = a.dataset.chapter === current;
+        if (on && !a.classList.contains('is-current') && strip.scrollWidth > strip.clientWidth) strip.scrollTo({ left: a.parentElement.offsetLeft - strip.offsetLeft - 16 });
+        a.classList.toggle('is-current', on);
+      });
+    };
+    const watch = new IntersectionObserver((entries) => {
+      entries.forEach((e) => seen.set(e.target.id, e.isIntersecting));
+      mark();
+    }, { rootMargin: '-30% 0px -65% 0px' });
+    chapters.forEach((chapter) => watch.observe(chapter));
+    addEventListener('scroll', () => { if (!scrollY) mark(); }, { passive: true });
+    // Once the row of years has scrolled sideways, its start fades too, to show there is more before it.
+    strip.addEventListener('scroll', () => strip.classList.toggle('is-scrolled', strip.scrollLeft > 4), { passive: true });
+  }
   more.addEventListener('click', () => {
     const next = summaryEntries[limit];
     limit += 30;
@@ -335,52 +491,49 @@ document.addEventListener('click', (event) => {
 });
 
 // The cookie banner covers the foot of the screen, so scrolling and side cards leave room for it.
+const bannerListeners = [];
+let bannerWatched = false;
+const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 function watchBanner() {
+  if (bannerWatched) return;
   const banner = document.querySelector('.cc-window');
   if (!banner) return;
+  bannerWatched = true;
   banner.lang = 'en';
   banner.dir = 'ltr';
+  let bannerShown = !banner.classList.contains('cc-invisible') && banner.offsetHeight > 0;
+  const hideIfReduced = () => {
+    const invisible = banner.classList.contains('cc-invisible');
+    if (!invisible) {
+      bannerShown = true;
+      return;
+    }
+    // base.css disables transitions under prefers-reduced-motion, so cookieconsent's transitionend
+    // listener never fires; collapse the banner once dismissed (not during its initial fade-in).
+    if (bannerShown && reducedMotion.matches) {
+      banner.style.display = 'none';
+    }
+  };
+  new MutationObserver(hideIfReduced).observe(banner, { attributes: true, attributeFilter: ['class'] });
+  hideIfReduced();
   new ResizeObserver(() => {
     document.documentElement.style.setProperty('--banner', `${banner.offsetHeight}px`);
+    bannerListeners.forEach((fn) => fn());
   }).observe(banner);
 }
-if (document.readyState === 'complete') watchBanner(); else addEventListener('load', () => setTimeout(watchBanner));
-
-// A citation file, shown in a dialog built on the first click. A page offers one only when it has a cite.bib.
-let citeDialog;
-document.addEventListener('click', async (event) => {
-  const cite = event.target.closest('.js-cite-modal');
-  if (!cite) return;
-  event.preventDefault();
-  if (!citeDialog) {
-    citeDialog = document.createElement('dialog');
-    citeDialog.className = 'cite-dialog';
-    citeDialog.innerHTML = '<h2>Cite</h2><pre tabindex="0"></pre><p role="status"></p><button class="btn btn-primary" type="button" data-copy>Copy</button> <a class="btn" download>Download</a> <button class="btn" type="button" data-close>Close</button>';
-    document.body.append(citeDialog);
-    citeDialog.querySelector('[data-close]').addEventListener('click', () => citeDialog.close());
-    citeDialog.querySelector('[data-copy]').addEventListener('click', async () => {
-      const status = citeDialog.querySelector('[role=status]');
-      try {
-        await navigator.clipboard.writeText(citeDialog.querySelector('pre').textContent);
-        status.textContent = 'Copied.';
-      } catch {
-        status.textContent = 'Select the text above to copy it.';
-      }
-    });
-  }
-  citeDialog.querySelector('a').href = cite.dataset.filename;
-  citeDialog.querySelector('[role=status]').textContent = '';
-  citeDialog.showModal();
-  const text = citeDialog.querySelector('pre');
-  text.textContent = 'Loading.';
-  try {
-    const response = await fetch(cite.dataset.filename);
-    if (!response.ok) throw new Error(response.statusText);
-    text.textContent = await response.text();
-  } catch {
-    text.textContent = 'The citation could not be loaded. Use the Download button.';
-  }
-});
+if (document.readyState === 'complete') {
+  watchBanner();
+} else {
+  addEventListener('load', () => setTimeout(watchBanner));
+}
+if (!bannerWatched && document.body) {
+  const bannerWait = new MutationObserver(() => {
+    if (!document.querySelector('.cc-window')) return;
+    bannerWait.disconnect();
+    watchBanner();
+  });
+  bannerWait.observe(document.body, { childList: true });
+}
 
 // Whether nothing of the page's own lies under a box (with a 6 px margin): no text, control, image or card,
 // a card being anything with its own background, shadow or side borders that does not span the screen.
@@ -404,8 +557,15 @@ function emptyAt(el, x, y) {
   return true;
 }
 function overEmptySpace(box) {
-  for (let x = box.left - 6; x <= box.right + 6; x += 6) {
-    for (let y = box.top - 6; y <= box.bottom + 6; y += 6) {
+  if (!box || box.width <= 0 || box.height <= 0) return false;
+  const maxX = document.documentElement.clientWidth - 1;
+  const maxY = document.documentElement.clientHeight - 1;
+  const left = Math.max(0, box.left - 6);
+  const right = Math.min(maxX, box.right + 6);
+  const top = Math.max(0, box.top - 6);
+  const bottom = Math.min(maxY, box.bottom + 6);
+  for (let x = left; x <= right; x += 6) {
+    for (let y = top; y <= bottom; y += 6) {
       const el = document.elementsFromPoint(x, y).find((e) => !e.closest('#just-os-widget'));
       if (el && !emptyAt(el, x, y)) return false;
     }
@@ -417,62 +577,221 @@ function overEmptySpace(box) {
 const chatWidget = document.getElementById('just-os-widget');
 if (chatWidget) {
   const chatButton = chatWidget.querySelector('#just-os-btn');
+  const chatDismiss = chatWidget.querySelector('#just-os-dismiss');
   const chatBubble = chatWidget.querySelector('#just-os-bubble');
+  const navJustOs = document.getElementById('nav-just-os');
+  const extraJustOs = [...document.querySelectorAll('[data-open-just-os]')];
   let chatLoading = false;
   let chatFailed = false;
-  const dismissed = () => sessionStorage.getItem('just-os-dismissed');
-  if (dismissed()) chatWidget.hidden = true;
-  chatWidget.querySelector('#just-os-dismiss').addEventListener('click', () => {
-    chatWidget.hidden = true;
-    sessionStorage.setItem('just-os-dismissed', '1');
+  let lastOpener = null;
+  const dismissed = () => {
+    try { return Boolean(sessionStorage.getItem('just-os-dismissed')); } catch { return false; }
+  };
+  if (dismissed()) chatWidget.classList.add('is-dismissed');
+  chatDismiss.addEventListener('click', () => {
+    chatWidget.classList.add('is-dismissed');
+    chatBubble.classList.remove('bubble-visible');
+    try { sessionStorage.setItem('just-os-dismissed', '1'); } catch { /* storage blocked */ }
   });
-  // The invitation shows and hides on a slow cycle, as it always has, and rests while the chat is open.
-  // It shows only over empty space, so it never covers text, a card or a control.
-  // Where the launcher is a tab (launcher.css) the margin is too narrow for it: there it is offered once, at the top of the page.
   const chatOpen = () => document.getElementById('just-os-window')?.style.display === 'flex';
-  const tabbed = () => matchMedia('(max-width:1439px)').matches;
+  const mediumWidth = matchMedia('(min-width: 761px) and (max-width: 1439px)');
+  const belowDesktop = () => matchMedia('(max-width: 1439px)').matches;
+  const isVisibleControl = (el) => {
+    if (!el || !el.getClientRects().length) return false;
+    if (el.closest('#just-os-widget.is-covered, #just-os-widget.is-dismissed')) return false;
+    return getComputedStyle(el).visibility !== 'hidden';
+  };
+  const syncExpanded = () => {
+    const open = chatOpen();
+    if (chatButton.tagName === 'BUTTON') chatButton.setAttribute('aria-expanded', String(open));
+    if (navJustOs?.tagName === 'BUTTON') navJustOs.setAttribute('aria-expanded', String(open));
+    extraJustOs.forEach((btn) => btn.setAttribute('aria-expanded', String(open)));
+  };
+  const launcherFocused = () => {
+    try {
+      return chatButton.matches(':focus-visible') || chatDismiss.matches(':focus-visible');
+    } catch {
+      return false;
+    }
+  };
+  // Measure the launcher's resting footprint including its dismiss cross and any expanded touch tap target
+  // (valid even while .is-covered uses visibility: hidden).
+  const launcherFootprint = () => {
+    const btn = chatButton.getBoundingClientRect();
+    if (!btn.width || !btn.height) return null;
+    let { left, top, right, bottom } = btn;
+    const cross = chatDismiss.getBoundingClientRect();
+    if (cross.width > 0 && cross.height > 0) {
+      let cLeft = cross.left;
+      let cTop = cross.top;
+      let cRight = cross.right;
+      let cBottom = cross.bottom;
+      const after = getComputedStyle(chatDismiss, '::after');
+      if (after.content && after.content !== 'none') {
+        const aw = parseFloat(after.width) || 0;
+        const ah = parseFloat(after.height) || 0;
+        if (aw > cross.width) {
+          const cx = (cross.left + cross.right) / 2;
+          cLeft = Math.min(cLeft, cx - aw / 2);
+          cRight = Math.max(cRight, cx + aw / 2);
+        }
+        if (ah > cross.height) {
+          const cy = (cross.top + cross.bottom) / 2;
+          cTop = Math.min(cTop, cy - ah / 2);
+          cBottom = Math.max(cBottom, cy + ah / 2);
+        }
+      }
+      left = Math.min(left, cLeft);
+      top = Math.min(top, cTop);
+      right = Math.max(right, cRight);
+      bottom = Math.max(bottom, cBottom);
+    }
+    return { left, top, right, bottom, width: right - left, height: bottom - top };
+  };
+  // Between 761 and 1439 px, hide the floating launcher whenever text, a card or a control sits beneath it.
+  const updateLauncherVisibility = () => {
+    if (dismissed()) return;
+    if (!mediumWidth.matches) {
+      chatWidget.classList.remove('is-covered');
+      return;
+    }
+    if (chatOpen() || launcherFocused()) return;
+    const box = launcherFootprint();
+    if (!box) return;
+    const covered = !overEmptySpace(box);
+    chatWidget.classList.toggle('is-covered', covered);
+    if (covered) chatBubble.classList.remove('bubble-visible');
+  };
+  let settleTimer;
+  const scheduleLauncherCheck = (delay = 150) => {
+    if (!mediumWidth.matches) {
+      clearTimeout(settleTimer);
+      chatWidget.classList.remove('is-covered');
+      return;
+    }
+    clearTimeout(settleTimer);
+    settleTimer = setTimeout(updateLauncherVisibility, delay);
+  };
+  bannerListeners.push(updateLauncherVisibility);
+  updateLauncherVisibility();
+  addEventListener('load', updateLauncherVisibility);
+  document.fonts?.ready.then(updateLauncherVisibility);
+  const mainEl = document.querySelector('main');
+  const layoutObserver = new MutationObserver(() => scheduleLauncherCheck(80));
+  const syncObservers = () => {
+    layoutObserver.disconnect();
+    if (!mediumWidth.matches) return;
+    if (mainEl) layoutObserver.observe(mainEl, { childList: true, subtree: true, attributes: true, attributeFilter: ['hidden', 'class', 'open'] });
+    if (nav) layoutObserver.observe(nav, { attributes: true, attributeFilter: ['data-open'] });
+    if (head) layoutObserver.observe(head, { subtree: true, attributes: true, attributeFilter: ['hidden', 'aria-expanded'] });
+  };
+  syncObservers();
+  mediumWidth.addEventListener('change', () => {
+    syncObservers();
+    updateLauncherVisibility();
+  });
+  addEventListener('resize', () => scheduleLauncherCheck(120), { passive: true });
+  window.visualViewport?.addEventListener('resize', () => scheduleLauncherCheck(120), { passive: true });
+  if ('onscrollend' in window) {
+    addEventListener('scrollend', () => {
+      clearTimeout(settleTimer);
+      updateLauncherVisibility();
+    }, { passive: true });
+  }
+  document.addEventListener('toggle', () => scheduleLauncherCheck(50), true);
+  document.addEventListener('click', (event) => {
+    if (!event.target.closest('#just-os-widget')) scheduleLauncherCheck(80);
+  });
+  document.addEventListener('input', () => scheduleLauncherCheck(180));
+  chatWidget.addEventListener('focusout', () => scheduleLauncherCheck(0));
+
+  // The invitation shows and hides on a slow cycle, as it always has, and rests while the chat is open or hidden.
+  // It shows only over empty space, so it never covers text, a card or a control.
+  // Below 1440 px it is offered at most once, at the top of the page.
   let offered = false;
   const invitation = setInterval(() => {
     if (dismissed() || chatFailed) return clearInterval(invitation);
-    if (chatOpen()) return;
+    if (chatOpen() || !isVisibleControl(chatButton)) return;
     const shown = chatBubble.classList.contains('bubble-visible');
     chatBubble.classList.remove('bubble-visible');
-    if (tabbed() && (offered || scrollY > 0)) return clearInterval(invitation);
+    if (belowDesktop() && (offered || scrollY > 0)) return clearInterval(invitation);
     offered = true;
     if (!shown && overEmptySpace(chatBubble.getBoundingClientRect())) chatBubble.classList.add('bubble-visible');
   }, 10000);
-  // Any scroll hides it, and the message that the chat did not load, which replaces it after a click.
-  addEventListener('scroll', () => chatBubble.classList.remove('bubble-visible'), { passive: true });
-  if (chatButton.tagName === 'BUTTON') {
-    chatButton.addEventListener('click', () => {
-      if (window.toggleJustOS) {
-        window.toggleJustOS();
-        chatButton.setAttribute('aria-expanded', String(chatOpen()));
+  // Any scroll hides the invitation bubble, and schedules the overlap check once scrolling settles.
+  addEventListener('scroll', () => {
+    chatBubble.classList.remove('bubble-visible');
+    scheduleLauncherCheck(150);
+  }, { passive: true });
+
+  document.addEventListener('just-os:toggle', (event) => {
+    syncExpanded();
+    if (!event.detail?.open) {
+      updateLauncherVisibility();
+      const target = [lastOpener, chatButton, toggle, document.getElementById('main')].find(isVisibleControl);
+      if (target) target.focus({ preventScroll: true });
+    }
+  });
+
+  let pendingFallbackHref = '';
+  const openOrToggleChat = ({ fallbackHref = '' } = {}) => {
+    if (window.toggleJustOS) {
+      window.toggleJustOS();
+      syncExpanded();
+      return;
+    }
+    if (fallbackHref) pendingFallbackHref = fallbackHref;
+    if (chatLoading) return;
+    chatLoading = true;
+    const styles = document.createElement('link');
+    styles.rel = 'stylesheet';
+    styles.href = chatWidget.dataset.css;
+    document.head.append(styles);
+    chatWidget.append(document.getElementById('just-os-template').content.cloneNode(true));
+    const script = document.createElement('script');
+    script.src = chatWidget.dataset.js;
+    script.onload = () => {
+      chatLoading = false;
+      pendingFallbackHref = '';
+      window.toggleJustOS();
+      syncExpanded();
+    };
+    script.onerror = () => {
+      chatLoading = false;
+      chatFailed = true;
+      const href = pendingFallbackHref;
+      pendingFallbackHref = '';
+      document.getElementById('just-os-window')?.remove();
+      if (href) {
+        location.href = href;
         return;
       }
-      if (chatLoading) return;
-      chatLoading = true;
-      const styles = document.createElement('link');
-      styles.rel = 'stylesheet';
-      styles.href = chatWidget.dataset.css;
-      document.head.append(styles);
-      chatWidget.append(document.getElementById('just-os-template').content.cloneNode(true));
-      const script = document.createElement('script');
-      script.src = chatWidget.dataset.js;
-      script.onload = () => {
-        window.toggleJustOS();
-        chatButton.setAttribute('aria-expanded', 'true');
-      };
-      script.onerror = () => {
-        chatLoading = false;
-        chatFailed = true;
-        document.getElementById('just-os-window')?.remove();
-        chatBubble.textContent = 'The chat did not load. Try again in a moment.';
-        chatBubble.classList.add('bubble-visible');
-      };
-      document.head.append(script);
+      chatBubble.textContent = 'The chat did not load. Try again in a moment.';
+      chatBubble.classList.add('bubble-visible');
+    };
+    document.head.append(script);
+  };
+
+  if (chatButton.tagName === 'BUTTON') {
+    chatButton.addEventListener('click', () => {
+      lastOpener = chatButton;
+      openOrToggleChat();
     });
   }
+  if (navJustOs?.tagName === 'BUTTON') {
+    navJustOs.addEventListener('click', () => {
+      closeMenus();
+      closePhoneMenu();
+      lastOpener = toggle;
+      openOrToggleChat({ fallbackHref: navJustOs.dataset.href });
+    });
+  }
+  extraJustOs.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      lastOpener = btn;
+      openOrToggleChat({ fallbackHref: btn.dataset.href });
+    });
+  });
 }
 
 // Glossary pages: filter the list of terms, and show the current term inside its card.
@@ -573,6 +892,17 @@ if (termFilter && termGrid) {
   window.addEventListener('hashchange', openAbout);
   openAbout();
 } else if (termFilter) {
+  if (!termFilter.placeholder) {
+    const lang = (document.documentElement.lang || 'en').slice(0, 2).toLowerCase();
+    const placeholders = {
+      en: 'e.g. replication',
+      de: 'z. B. Replikation',
+      ar: 'اكتب مصطلحًا',
+      tr: 'Bir terim yazın',
+      zh: '输入术语',
+    };
+    termFilter.placeholder = placeholders[lang] || placeholders.en;
+  }
   const terms = [...document.querySelectorAll('.term-list li')];
   // A count, a no-results line and a clear button under the filter.
   const status = document.createElement('p');
@@ -593,14 +923,14 @@ if (termFilter && termGrid) {
     status.textContent = !query ? '' : shown ? `${shown} ${shown === 1 ? 'term' : 'terms'}` : 'No matching terms.';
     clearTerms.hidden = !query;
   });
-  // On a phone the list moves up, into a "Find another term" disclosure right after the definition.
+  // On a phone the list moves up, into a disclosure right after the definition, keeping the same label as desktop.
   const card = document.getElementById('glossary-terms');
   const definition = document.querySelector('.term-definition');
   if (card && definition && window.matchMedia('(max-width: 1000px)').matches) {
     const finder = document.createElement('details');
     finder.className = 'term-finder';
     const summary = document.createElement('summary');
-    summary.textContent = document.documentElement.lang.startsWith('en') ? 'Find another term' : (card.querySelector('h2')?.textContent || 'Find another term');
+    summary.textContent = card.querySelector('h2')?.textContent || 'List of terms';
     finder.append(summary, card);
     definition.after(finder);
     document.querySelector('.term-list-jump')?.remove();

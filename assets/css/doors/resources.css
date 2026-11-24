@@ -4,6 +4,8 @@
 .filters{background:var(--surface);border-radius:var(--r-large);padding:22px 20px;min-width:0}
 .filter-drawer>summary{list-style:none;font-weight:700;line-height:1.35}
 .filter-drawer>summary::-webkit-details-marker{display:none}
+/* When open, the three facet legends are right below, so don't repeat them in the summary. */
+.filter-drawer[open] .filter-summary-detail{display:none}
 .filter-badge{font-weight:600}
 .facet{border:0;margin:18px 0 0;padding:0;min-width:0}
 .filter-title{padding:0;font:var(--display-weight) 20px/1.2 var(--display);margin:0 0 10px;color:var(--ink)}
@@ -11,8 +13,13 @@
 .chip{display:inline-flex;align-items:baseline;gap:7px;background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:7px 12px;font:400 15px/1.3 var(--text);color:var(--ink);text-align:start;max-width:100%;cursor:pointer}
 .chip:hover{border-color:var(--ink)}
 .chip[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:#fff}
-.chip-count{color:var(--soft);font-size:15px;font-weight:600}
+.chip-count{color:var(--soft);font-size:15px;font-weight:600;font-variant-numeric:tabular-nums}
 .chip[aria-pressed=true] .chip-count{color:inherit}
+/* Cluster filters have multi-word names: stack as uniform full-width rows (two-line height at normal text size, expanding for longer labels or enlarged text) with colour swatch left and count right. */
+.facet[data-facet="cluster"] .chips{flex-direction:column;gap:6px}
+.facet[data-facet="cluster"] .chip{width:100%;min-height:56px;box-sizing:border-box;align-items:center;border-radius:var(--r-small);padding:8px 12px;gap:9px}
+.facet[data-facet="cluster"] .chip-label{flex:1 1 auto;min-width:0;line-height:1.3}
+.facet[data-facet="cluster"] .chip-count{margin-inline-start:auto;flex:none}
 .filter-note{margin:12px 0 0;font-size:16px}
 .catalogue{min-width:0}
 .search-label{display:block;font:var(--display-weight) 22px/1.2 var(--display);margin:0 0 10px}
@@ -47,6 +54,7 @@
 .collection-note{margin-top:64px;max-width:44em}
 .collection-note h2{font-size:clamp(28px,2.6vw,36px);margin:0 0 10px}
 .collection-note p{margin:0 0 12px}
+.collection-history{margin-top:24px;padding-top:16px;border-top:1px solid var(--line);max-width:44em}
 .collection-about p{font-size:16px;line-height:1.55;margin-top:16px}
 .collection-about a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
 

@@ -256,14 +256,8 @@ main:lang(ar) .glossary-layout .article-style .term-references{direction:ltr;pad
 }
 .glossary-references .standfirst{max-width:34em}
 .glossary-references .standfirst a{color:var(--link);font-weight:600;text-decoration:underline;text-underline-offset:3px}
-.glossary-ref-scope{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 0}
-.glossary-ref-scope[hidden]{display:none}
-.glossary-ref-scope button{min-height:44px;padding:6px 12px;background:#fff;border:1.5px solid var(--edu);border-radius:999px;color:var(--ink);font:600 15px/1.2 var(--text);cursor:pointer}
-.glossary-ref-scope button[aria-pressed="true"]{background:var(--edu);color:#fff}
 .glossary-references .glossary-letters a.is-current,.glossary-references .glossary-letters a[aria-current]{background:var(--edu);color:#fff}
 @media(max-width:760px){
-  /* Only the search row pins on phones (DESIGN.md §9); the scope buttons scroll away with the letters. */
-  .glossary-references .glossary-ref-scope{margin:8px 0 2px}
   .glossary-references .term-group ul.references-list>li{padding:12px 0}
   .glossary-references .reference-apa{padding-inline-start:1.25em;text-indent:-1.25em}
 }

@@ -30,7 +30,7 @@
     <h4 class="section-title">If you want to cite FORRT, in general, cite:</h4>
 
     <div class="cite-us-item">
-        <div class="cite-us-text"><p>{{ partial "citations/authors" `Azevedo, F., Parsons, S., Micheli, L., Strand, J., Rinke, E., … & FORRT (2019, December 13). Introducing a Framework for Open and Reproducible Research Training (FORRT). <a href="https://doi.org/10.31219/osf.io/bnh7p" target="_blank" class="doi-link">https://doi.org/10.31219/osf.io/bnh7p</a>` }}</p></div>
+        <div class="cite-us-text"><p>{{ partial "citations/authors" (dict "html" `Azevedo, F., Parsons, S., Micheli, L., Strand, J., Rinke, E., … & FORRT (2019, December 13). Introducing a Framework for Open and Reproducible Research Training (FORRT). <a href="https://doi.org/10.31219/osf.io/bnh7p" target="_blank" class="doi-link">https://doi.org/10.31219/osf.io/bnh7p</a>` "limit" 10) }}</p></div>
         <button type="button" class="copy-button" data-copy-reference>
             <svg class="copy-icon" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -42,7 +42,7 @@
     </div>
 
     <div class="cite-us-item">
-        <div class="cite-us-text"><p>{{ partial "citations/authors" `Azevedo, F., Liu, M., Pennington, C. R., Pownall, M., Evans, T. R., Parsons, S., Elsherif, M. M., Micheli, L., Westwood, S., & FORRT. (2022). Towards a culture of open scholarship: The role of pedagogical communities. BMC Research Notes, 15(1), 1-5. <a href="https://doi.org/10.1186/s13104-022-05944-1" target="_blank" class="doi-link">https://doi.org/10.1186/s13104-022-05944-1</a>` }}</p></div>
+        <div class="cite-us-text"><p>{{ partial "citations/authors" (dict "html" `Azevedo, F., Liu, M., Pennington, C. R., Pownall, M., Evans, T. R., Parsons, S., Elsherif, M. M., Micheli, L., Westwood, S., & FORRT. (2022). Towards a culture of open scholarship: The role of pedagogical communities. BMC Research Notes, 15(1), 1-5. <a href="https://doi.org/10.1186/s13104-022-05944-1" target="_blank" class="doi-link">https://doi.org/10.1186/s13104-022-05944-1</a>` "limit" 10) }}</p></div>
         <button type="button" class="copy-button" data-copy-reference>
             <svg class="copy-icon" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -59,7 +59,7 @@
     <h4 class="section-title">Citational Justice Toolkit:</h4>
 
     <div class="cite-us-item">
-        <div class="cite-us-text"><p>{{ partial "citations/authors" `Sauvé, S. A., Middleton, S. L., Gellersen, H., & Azevedo, F. (2025, July 31). In Pursuit of Citational Justice: A Toolkit for Equitable Scholarship. <a href="https://doi.org/10.31222/osf.io/qjecy_v2" target="_blank" class="doi-link">https://doi.org/10.31222/osf.io/qjecy_v2</a>` }}</p></div>
+        <div class="cite-us-text"><p>{{ partial "citations/authors" (dict "html" `Sauvé, S. A., Middleton, S. L., Gellersen, H., & Azevedo, F. (2025, July 31). In Pursuit of Citational Justice: A Toolkit for Equitable Scholarship. <a href="https://doi.org/10.31222/osf.io/qjecy_v2" target="_blank" class="doi-link">https://doi.org/10.31222/osf.io/qjecy_v2</a>` "limit" 10) }}</p></div>
         <button type="button" class="copy-button" data-copy-reference>
             <svg class="copy-icon" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -75,7 +75,7 @@
     <h4 class="section-title">The Academic Wheel of Privilege (AWoP):</h4>
 
     <div class="cite-us-item">
-        <div class="cite-us-text"><p>{{ partial "citations/authors" `Middleton, S. L., Sulik, J., Iley, B., Elsherif, M. M., & Azevedo, F. (2026). The Academic Wheel of Privilege: An equity-based tool for authorship order. [Preprint] <a href="https://doi.org/10.31222/osf.io/af4nk_v1" target="_blank" class="doi-link">https://doi.org/10.31222/osf.io/af4nk_v1</a>` }}</p></div>
+        <div class="cite-us-text"><p>{{ partial "citations/authors" (dict "html" `Middleton, S. L., Sulik, J., Iley, B., Elsherif, M. M., & Azevedo, F. (2026). The Academic Wheel of Privilege: An equity-based tool for authorship order. [Preprint] <a href="https://doi.org/10.31222/osf.io/af4nk_v1" target="_blank" class="doi-link">https://doi.org/10.31222/osf.io/af4nk_v1</a>` "limit" 10) }}</p></div>
         <button type="button" class="copy-button" data-copy-reference>
             <svg class="copy-icon" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -91,7 +91,7 @@
     <h4 class="section-title">If you want to cite FReD, cite:</h4>
 
     <div class="cite-us-item">
-        <div class="cite-us-text"><p>{{ partial "citations/authors" $fredCitation }}</p>{{ with $fredNote }}<p class="ref-note">{{ . | safeHTML }}</p>{{ end }}</div>
+        <div class="cite-us-text"><p>{{ partial "citations/authors" (dict "html" $fredCitation "limit" 10) }}</p>{{ with $fredNote }}<p class="ref-note">{{ . | safeHTML }}</p>{{ end }}</div>
         <button type="button" class="copy-button" data-copy-reference>
             <svg class="copy-icon" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

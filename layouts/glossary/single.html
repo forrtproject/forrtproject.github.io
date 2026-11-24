@@ -4,7 +4,6 @@
 {{ if eq .File.Dir "glossary/references/" }}{{ partial "doors/glossary_references" . }}{{ else }}
 
 {{ $lang := .Params.language | default "english" }}
-{{ $references_url := relref . "/glossary/references" }}
 {{ $dictionary := dict
     "english" (dict
         "list_of_terms" "List of terms"
@@ -19,7 +18,6 @@
         "reviewed_by" "Reviewed by"
         "translated_by" "Translated by"
         "translation_reviewed_by" "Translation reviewed by"
-        "note" (printf "We are currently working to link the references directly. For now, the complete reference list can be viewed <a href='%s'>here</a>." $references_url)
         "reference" "Reference"
         "references" "References"
     )
@@ -38,7 +36,6 @@
         "home" "Startseite"
         "also_available_in" "Auch verfügbar auf"
         "languages" (dict "arabic" "Arabisch" "chinese" "Chinesisch" "english" "Englisch" "turkish" "Türkisch")
-        "note" (printf "Wir arbeiten momentan daran, die Referenzen direkt zu verlinken. Momentan kann hier die <a href = '%s'>vollständige Referenzliste</a> eingesehen werden." $references_url)
         "reference" "Referenz"
         "references" "Referenzen"
     )
@@ -54,7 +51,6 @@
         "reviewed_by" "راجعه"
         "translated_by" "ترجمه"
         "translation_reviewed_by" "راجع ترجمته"
-        "note" (printf "نحن نعمل حاليًا على آلية تلقائية لربط المراجع المذكورة أعلاه بنسختها الكاملة التي يمكن العثور عليها في <a href='%s'>قائمة المراجع الكاملة</a>." $references_url)
         "reference" "مرجع"
         "references" "مراجع"
         "home" "الرئيسية"
@@ -79,7 +75,6 @@
         "home" "Ana sayfa"
         "also_available_in" "Diğer diller"
         "languages" (dict "arabic" "Arapça" "chinese" "Çince" "english" "İngilizce" "german" "Almanca")
-        "note" (printf "Kaynakları doğrudan ilişkilendirmek için çalışmalarımız devam etmektedir. Şimdilik kaynakların tam listesine <a href='%s'>buraya tıklayarak</a> ulaşabilirsiniz." $references_url)
         "reference" "Kaynak"
         "references" "Kaynakça"
     )
@@ -98,7 +93,6 @@
         "home" "首页"
         "also_available_in" "其他语言"
         "languages" (dict "arabic" "阿拉伯语" "english" "英语" "german" "德语" "turkish" "土耳其语")
-        "note" (printf "我们正在努力将参考文献直接链接起来。目前，完整的参考文献列表可在<a href='%s'>此处</a>查看。" $references_url)
         "reference" "参考文献"
         "references" "参考文献"
     )
@@ -274,7 +268,7 @@
                   {{ $keys := partialCached "citations/keys" . "bibliography-keys" }}
                   {{ range .Params.references }}
                     {{ $key := index $keys . | default (printf "local-%s" (md5 .)) }}
-                    {{ partial "citations/entry" (dict "key" $key "apa" .) }}
+                    {{ partial "citations/entry" (dict "key" $key "apa" . "lang" $lang) }}
                   {{ end }}
                 </ul>
               {{ end }}

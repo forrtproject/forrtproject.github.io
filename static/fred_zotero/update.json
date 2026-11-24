@@ -1,0 +1,19 @@
+{
+  "addons": {
+    "replication-checker@forrt.org": {
+      "updates": [
+        {
+          "version": "0.1.15",
+          "update_link": "https://github.com/forrtproject/flora-zotero/releases/download/v0.1.15/replication-checker-for-zotero.xpi",
+          "update_hash": "sha512:dd7d9b80d04a53f07e73ae0a06caca7a61904711fab5b8bdb9de1bfea7ea2c55d08cb94a6e0acfe1c2280ded115cc17ee71d059bf55e8b67795c83a009e8b43c",
+          "applications": {
+            "zotero": {
+              "strict_min_version": "6.999",
+              "strict_max_version": "999.*"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

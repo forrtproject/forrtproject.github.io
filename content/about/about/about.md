@@ -63,4 +63,13 @@ In a nutshell, FORRT is a ***F***ramework for ***O***pen and ***R***eproducible 
 
 {{< youtube XlL54egjSoA >}}
 
-<br>
+<!-- The three next steps: beside the opening on wide screens, after the video on narrower ones (assets/css/doors/sections.css). -->
+<aside class="callout callout-rail" aria-label="Next steps">
+
+{{< action_cards >}}
+Meet the teams | The teams and projects that make up FORRT | /about/teams
+Read our mission | What FORRT advocates for, and why | /about/mission
+Get involved | Join FORRT's Slack, find a project or get the newsletter | /about/get-involved
+{{< /action_cards >}}
+
+</aside>

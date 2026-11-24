@@ -56,7 +56,7 @@ To download course content, please enrol at the [PaPOR TRaIL](https://open.ucc.i
 
 All course materials will be made available on our OSF page in 2022, following any refinements required in the course based on initial student feedback.
 
-Details of the course development can be found here: [https://hrbopenresearch.org/articles/3-84](https://hrbopenresearch.org/articles/3-84)
+Details of the course development can be found here: [https://doi.org/10.12688/hrbopenres.13171.1](https://doi.org/10.12688/hrbopenres.13171.1)
 
 Further information, including our PaPOR TRaIL video, can be found here: [https://osf.io/863ks/](https://osf.io/863ks/)
 

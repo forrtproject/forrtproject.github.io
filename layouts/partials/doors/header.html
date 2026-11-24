@@ -45,6 +45,23 @@
           {{ partial "doors/menu_link" (dict "entry" . "page" $page) }}
         {{ end }}
       {{ end }}
+      {{ $justosIcon := (resources.Get "images/doors/just-os-icon.webp").Resize "116x webp" }}
+      {{ $justosActive := true }}
+      {{ if isset site.Params "justos_chatbot" }}
+        {{ $justosActive = default true (index site.Params.justos_chatbot "active") }}
+      {{ end }}
+      {{ $justosUrl := relref $page "/just_os_chatbot" }}
+      {{ if and $justosActive (ne $page.Path "/just_os_chatbot") }}
+      <button class="nav-justos" id="nav-just-os" type="button" aria-expanded="false" data-href="{{ $justosUrl }}">
+        <img src="{{ $justosIcon.RelPermalink }}" width="32" height="32" alt="">
+        <span>Ask JUST-OS</span>
+      </button>
+      {{ else }}
+      <a href="{{ $justosUrl }}" class="nav-justos{{ if not $justosActive }} is-offline{{ end }}" id="nav-just-os"{{ if eq $page.Path "/just_os_chatbot" }} aria-current="page"{{ end }}>
+        <img src="{{ $justosIcon.RelPermalink }}" width="32" height="32" alt="">
+        <span>{{ if $justosActive }}Ask JUST-OS{{ else }}JUST-OS (offline){{ end }}</span>
+      </a>
+      {{ end }}
     </nav>
     {{ if site.Params.search.engine }}
     <form class="search-nav" role="search" action="{{ $page.RelPermalink }}" method="get">

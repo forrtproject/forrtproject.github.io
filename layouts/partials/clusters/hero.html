@@ -20,7 +20,7 @@
       {{ with $c.description }}<div class="clamp-desc cluster-hero__desc" data-clamp-name="this cluster"><p>{{ . }}</p></div>{{ end }}
       {{/* The number of sub-clusters only where the description does not already state it. */}}
       {{ $stated := findRE `(?i)\b\d+\s+sub-?\s?clusters?\b` ($c.description | default "") 1 }}
-      <p class="cluster-hero__counts">{{ if not $stated }}{{ len $c.sub_clusters }} sub-clusters · {{ end }}{{ $refs }} references</p>
+      <p class="cluster-hero__counts">{{ if not $stated }}{{ len $c.sub_clusters }} sub-clusters · {{ end }}{{ $refs }} references{{ with len (index (partialCached "clusters/lesson_plans.html" "lesson-plans") (printf "%d" $n) | default dict) }} · <span class="lp-dot" aria-hidden="true"></span> {{ . }} with teaching materials{{ end }}</p>
     </div>
     <div class="cluster-hero__mark">{{ partial "clusters/icon.html" $n }}</div>
   </div>

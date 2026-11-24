@@ -1,0 +1,2 @@
+{{- /* Returns the anchor slug for a sub-cluster name. Sub-cluster ids (c<N>-<slug>), sidebar links and the keys of data/lesson_plans.json all use it. */ -}}
+{{- return (. | lower | replaceRE "[^a-z0-9]+" "-" | replaceRE "^-+|-+$" "") -}}
