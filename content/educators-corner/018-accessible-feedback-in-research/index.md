@@ -77,7 +77,7 @@ Research Fellow: Magda Skubera, m.skubera@greenwich.ac.uk
 
 - Chong, S. W., & Mason, S. (2021). Demystifying the process of scholarly peer-review: an autoethnographic investigation of feedback literacy of two award-winning peer reviewers. *Humanities and Social Sciences Communications*, 8(1), 1-11.
 
-- Dubois-Shaik & Fesulier (2015). Academic careers and gender inequality: Leaky pipeline and interrelated phenomena in seven European countries. Available at: [https://eige.europa.eu/sites/default/files/garcia_working_paper_5_academic_careers_gender_inequality.pdf](https://eige.europa.eu/sites/default/files/garcia_working_paper_5_academic_careers_gender_inequality.pdf)
+- Dubois-Shaik & Fesulier (2015). Academic careers and gender inequality: Leaky pipeline and interrelated phenomena in seven European countries. Available at: [https://web.archive.org/web/20261015110204/https://eige.europa.eu/sites/default/files/garcia_working_paper_5_academic_careers_gender_inequality.pdf](https://web.archive.org/web/20261015110204/https://eige.europa.eu/sites/default/files/garcia_working_paper_5_academic_careers_gender_inequality.pdf)
 
 - Evans, T. R. (2022). Developments in Open Data Norms. *Journal of Open Psychology Data*, 10(1), 3.
 

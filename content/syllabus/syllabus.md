@@ -116,7 +116,7 @@ To further facilitate the creation, the updating, improvement, and maintenance o
 
 ### Replication and the credibility revolution
 
-* [Good Science, Bad Science](http://www.ejwagenmakers.com/GSBS/GSBS.html)
+* [Good Science, Bad Science](https://www.ejwagenmakers.com/GSBS/GSBS.html)
 * [Teaching Replication in Psychology: A Guide for Teachers and Students](https://osf.io/28r6g/)
 * [Teaching Replication in Social Sciences](https://osf.io/g3k5t/)
 * [Psychology as a Robust Science](https://osf.io/sxrkn/)
@@ -177,7 +177,7 @@ To further facilitate the creation, the updating, improvement, and maintenance o
 * [Project Tier](https://www.projecttier.org/tier-classroom/course-materials/#modal354)
 * [Data Management Syllabus](https://docs.google.com/document/d/1z15bL9cP84re6d4zdkO60q06lnknnN3xEktN7GnLFFQ/edit)
 * [Open Science Workshop Materials of the LMU Open Science Center](https://osf.io/zjrhu/)
-* [Course on Open Science and Research Data Management (Slides/Recordings by Elli Papadopoulou)](https://www.openaire.eu/component/zoo/item/chist-era-course-on-open-science-and-research-data-management)
+* [Course on Open Science and Research Data Management (Slides/Recordings by Elli Papadopoulou)](https://web.archive.org/web/20251212220958/https://www.openaire.eu/component/zoo/item/chist-era-course-on-open-science-and-research-data-management)
 * [Open Science Talks and Workshops by Gilad Feldman (for reuse of Slides/Materials)](https://osf.io/df9tj/) and [Resources](https://mgto.org/open-science/)
 
 </div>

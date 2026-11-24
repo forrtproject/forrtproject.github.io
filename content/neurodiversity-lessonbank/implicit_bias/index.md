@@ -231,7 +231,7 @@ Look at some examples of language taken from these and other articles published 
 Post your reflection below.
 
 <div class="lesson-embed">
-{{< click_to_load src="https://padlet.com/magdalena_carlo/xfzxjebag7ln693r" provider="Padlet" label="This board" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" >}}
+{{< click_to_load src="https://padlet.com/magdalena_carlo/discussion-forum-xfzxjebag7ln693r" provider="Padlet" label="This board" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" >}}
 </div>
 
 Posts are moderated so they may not appear immediately.

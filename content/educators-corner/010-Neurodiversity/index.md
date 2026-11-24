@@ -145,7 +145,7 @@ Leadbitter, K., Buckle, K. L., Ellis, C., & Dekker, M. (2021). Autistic self-adv
 
 Levitis, E., Van Praag, C. D. G., Gau, R., Heunis, S., DuPre, E., Kiar, G., ... & Maumet, C. (2021). Centering inclusivity in the design of online conferences—An OHBM–Open Science perspective. GigaScience, 10(8), giab051.https://doi.org/10.1093/gigascience/giab051
 
-Lloyd, T. (2019). An audit of ADHD service provision for adults in England.  https://www.adhdfoundation.org.uk/wp-content/uploads/2019/07/Takeda_Will-the-doctor-see-me-now_ADHD-Report.pdf
+Lloyd, T. (2019). An audit of ADHD service provision for adults in England.  https://web.archive.org/web/20260919122551/https://www.adhdfoundation.org.uk/wp-content/uploads/2019/07/Takeda_Will-the-doctor-see-me-now_ADHD-Report.pdf
 
 Lorde, A. (2018). The master's tools will never dismantle the master's house. Penguin UK.
 

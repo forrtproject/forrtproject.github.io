@@ -321,7 +321,7 @@ Our work has been featured in:
 <li>NASA’s Transformation To Open Science initiative, via an <a href="https://web.archive.org/web/20220919002540/https://science.nasa.gov/open-science/transform-to-open-science/stories/dr-flavio-azevedo?s=09">interview with Team Neurodiversity member Flavio Azevedo</a>.</li>
 <li>Stimpunks Foundation’s glossary of disability and neurodiversity terms, within the <a href="https://stimpunks.org/glossary/neurodivergent/">entry for “neurodivergent”</a>.</li>
 <li>UNESCO’s Inclusive Policy Lab, in an <a href="https://web.archive.org/web/20251011074448/https://en.unesco.org/inclusivepolicylab/analytics/trust-science-%E2%80%93-factor-culture-and-belief">article by Team ND member Justin Sulik</a> about trust in science.</li>
-<li><a href="https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(22)02486-2/fulltext?rss=yes">Lancet correspondence</a> about internalized racism and medicine.</li>
+<li><a href="https://doi.org/10.1016/S0140-6736(22)02486-2">Lancet correspondence</a> about internalized racism and medicine.</li>
 <li>Multiple conferences, seminars and journal clubs (we’re available to talk - <a href="mailto:info@forrt.org">get in contact</a> if you’re interested!).</li>
 </ul>
 

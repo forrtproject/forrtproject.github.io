@@ -128,7 +128,7 @@ Including sources in your syllabus that discuss open and transparent research ca
   * Write their own pre-registration or compare a pre-registration with the published manuscript.
     * [Pre Registration Templates: A curated OSF collection linking to major preregistration templates, each with brief guidance.](https://osf.io/7xrn9)
   * Learn more about the value of [preprints](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3000151).
-  * Learn about the importance of statistical power and use [online tutorials](https://journalofcognition.org/articles/10.5334/joc.72) to work this out for studies.
+  * Learn about the importance of statistical power and use [online tutorials](https://doi.org/10.5334/joc.72) to work this out for studies.
   * Learn about the process of science and how these are used to produce knowledge by taking the free online [Science Literacy course](https://www.coursera.org/learn/science-literacy) (by Dr. Claire Scavuzzo & Dr. Rachel Buertl at Alberta University).
   * Share outcomes from journal club/reproducibiliTea discussions via blogs, PubPeer, or other avenues. [PubPeer](https://www.pubpeer.com) is a post publication peer review platform where researchers can anonymously share thoughts on research articles. If in a journal club you notice certain shortcomings or inconsistencies, this may be the place to publish them.
   * Run a published article or preprint through [MetaCheck](https://www.scienceverse.org/metacheck/) to assess basic scientific criteria (e.g., whether retracted studies were cited, whether results are reproducible, whether OSF links are working) with the goal of evaluating the credibility, transparency, and reproducibility of the research
@@ -158,7 +158,7 @@ Including sources in your syllabus that discuss open and transparent research ca
   * [The ORION Open Science Podcast](https://orionopenscience.podbean.com/): A podcast about the good, the bad, and the ugly of the current scientific system, and what open science practices can do to improve the way we do science
   * [Quantitude: A podcast dedicated to all things quantitative](https://quantitudepod.org/)
   * [ReproducibiliTea: A podcast highlighting the great work of early career researchers](https://soundcloud.com/reproducibilitea)
-  * [Within & Between: A podcast about the methods and metascience of developmental science](https://podtail.com/en/podcast/within-between/)
+  * [Within & Between: A podcast about the methods and metascience of developmental science](https://podtail.com/podcast/within-between)
 
 </div>
 </details>
@@ -208,7 +208,7 @@ Open educational resources allow community members to make contributions and con
 
 <figure class="nx-figure nx-figure--white nx-figure--512" style="margin-top: 18px;">
 <a href="/img/Garciaetal2020.webp"><img src="/img/Garciaetal2020.webp" width="512" height="277" alt="Garcia et al. (2020) Figure 1: Ten simple rules for making training materials FAIR" loading="lazy"></a>
-<figcaption>Figure 2: An illustration from the paper “Ten simple rules for making training materials FAIR” by <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1007854">Garcia et al. (2020)</a>. Credit: Luc Wiegers and Celia van Gelder (<a href="https://zenodo.org/record/3593258#.X3J4W2hKgUE">2019</a>) under Creative Commons <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a> license. No modifications have been made to the original.</figcaption>
+<figcaption>Figure 2: An illustration from the paper “Ten simple rules for making training materials FAIR” by <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1007854">Garcia et al. (2020)</a>. Credit: Luc Wiegers and Celia van Gelder (<a href="https://doi.org/10.5281/zenodo.3593258">2019</a>) under Creative Commons <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a> license. No modifications have been made to the original.</figcaption>
 </figure>
 </section>
 

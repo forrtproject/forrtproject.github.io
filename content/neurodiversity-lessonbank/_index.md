@@ -89,7 +89,7 @@ Teaching materials created by FORRT's Team Neurodiversity for university courses
   <p class="lesson-num">Lesson 9 · Lesson plan and reading</p>
   <h3>Avoiding ableist language to diversify OS</h3>
   <ul class="lesson-materials">
-    <li><a href="https://www.liebertpub.com/doi/10.1089/aut.2020.0014" target="_blank" rel="noopener">Text <i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="visually-hidden"> (another website)</span></a></li>
+    <li><a href="https://doi.org/10.1089/aut.2020.0014" target="_blank" rel="noopener">Text <i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="visually-hidden"> (another website)</span></a></li>
     <li><a href="./Lesson_Plans/Avoiding_ableist%20language_to_diversify_open_scholarship.pdf" target="_blank" rel="noopener">Lesson plan (PDF)</a></li>
   </ul>
 </li>
@@ -97,7 +97,7 @@ Teaching materials created by FORRT's Team Neurodiversity for university courses
   <p class="lesson-num">Lesson 10 · Lesson plan and readings</p>
   <h3>How can Open Scholarship address structural ableism and racism?</h3>
   <ul class="lesson-materials">
-    <li><a href="https://www.apa.org/science/about/psa/2019/02/open-science" target="_blank" rel="noopener">Text 1 <i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="visually-hidden"> (another website)</span></a></li>
+    <li><a href="https://web.archive.org/web/20210603040606/https://www.apa.org/science/about/psa/2019/02/open-science" target="_blank" rel="noopener">Text 1 <i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="visually-hidden"> (another website)</span></a></li>
     <li><a href="https://doi.org/10.1080/09638288.2023.2173315" target="_blank" rel="noopener">Text 2 <i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="visually-hidden"> (another website)</span></a></li>
     <li><a href="./Lesson_Plans/How_can_we_Open%20Scholarship_to_address_the%20structural_ableism_and_racism_in_our_society.pdf" target="_blank" rel="noopener">Lesson plan (PDF)</a></li>
   </ul>

@@ -62,8 +62,8 @@ As psychologists, we rarely cross borders, whether real or imagined (e.g., depar
 **Here’s what you can do to collaborate across fields and disciplines within psychological science:**
 
 * Participate in scholarly events outside of psychology, such as the [Minority Politics Online Seminar Series](https://minoritypolitics.netlify.app/) 
-* Invite speakers from other disciplines to department- or University-led symposiums or conferences; provide remote options for attendance and accessibility grants to stimulate broader participation (e.g., the [University of Virginia Diversifying Scholarship Conference](https://uva.theopenscholar.com/diversifyingscholarship/))
-* Initiate cross-discipline collaborations (e.g., [Gaither & Sims, 2022](https://www.mdpi.com/2076-0760/11/3/90))
+* Invite speakers from other disciplines to department- or University-led symposiums or conferences; provide remote options for attendance and accessibility grants to stimulate broader participation (e.g., the [University of Virginia Diversifying Scholarship Conference](https://global.virginia.edu/events/diversifying-scholarship-conference))
+* Initiate cross-discipline collaborations (e.g., [Gaither & Sims, 2022](https://doi.org/10.3390/socsci11030090))
 * Leverage existing networks such as Academic Twitter to incorporate the views of people from relevant disciplines and achieve shared goals (e.g., a systematic co-creation of new knowledge on a specific topic) 
 
 ### 4. Strengthening theory

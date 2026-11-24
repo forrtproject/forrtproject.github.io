@@ -112,14 +112,16 @@ Triggers `deploy.yaml` after successful processing via `repository_dispatch`.
 
 Runs every test in `scripts/tests/` (including the SEO checks and the clusters parser and sub-cluster counts) and `scripts/test_parse_disciplines_gdoc.py`.
 
-### [check_images.yaml](check_images.yaml)
-**Image validation in PRs**
+### [check_content_rules.yaml](check_content_rules.yaml)
+**Content policy checks in PRs**
 
 | Trigger | Runs on |
 |---------|---------|
 | Pull requests | PR branches |
 
-Validates image files and references.
+Runs `scripts/check_content_rules.py` in a single runner to flag (via PR comment / summary):
+- PNG/JPG/JPEG image files and local references in added/modified files
+- Newly added direct publisher URLs with embedded DOIs under hand-maintained `content/`, with `https://doi.org/...` replacements
 
 ## Repository Maintenance
 

@@ -110,9 +110,9 @@ Each has suitable context: (e.g., entry-level/undergraduate/postgraduate), total
 - [Neurodiversity Culture and Teaching](../neurodiversity-lessonbank/Lesson_Plans/Neuro_para.pdf) <span class="lesson-plan-kind">Lesson plan (PDF)</span>
   <span class="lesson-plan-texts">Companion text: [Academic Exchange Quarterly](http://web.archive.org/web/20240802211120/https://www.rapidintellect.com/AEQweb/ed-5971.pdf)</span>
 - [Avoiding ableist language to diversify OS](../neurodiversity-lessonbank/Lesson_Plans/Avoiding_ableist%20language_to_diversify_open_scholarship.pdf) <span class="lesson-plan-kind">Lesson plan (PDF)</span>
-  <span class="lesson-plan-texts">Companion text: [Autism in Adulthood](https://www.liebertpub.com/doi/10.1089/aut.2020.0014)</span>
+  <span class="lesson-plan-texts">Companion text: [Autism in Adulthood](https://doi.org/10.1089/aut.2020.0014)</span>
 - [How can Open Scholarship address structural ableism and racism?](../neurodiversity-lessonbank/Lesson_Plans/How_can_we_Open%20Scholarship_to_address_the%20structural_ableism_and_racism_in_our_society.pdf) <span class="lesson-plan-kind">Lesson plan (PDF)</span>
-  <span class="lesson-plan-texts">Companion texts: [Psychological Science Agenda](https://www.apa.org/science/about/psa/2019/02/open-science) · [Disability and Rehabilitation](https://doi.org/10.1080/09638288.2023.2173315)</span>
+  <span class="lesson-plan-texts">Companion texts: [Psychological Science Agenda](https://web.archive.org/web/20210603040606/https://www.apa.org/science/about/psa/2019/02/open-science) · [Disability and Rehabilitation](https://doi.org/10.1080/09638288.2023.2173315)</span>
 
 </section>
 </div>
