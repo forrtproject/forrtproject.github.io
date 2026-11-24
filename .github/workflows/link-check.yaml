@@ -56,9 +56,12 @@ jobs:
         if: steps.lychee.outputs.exit_code != 0
         run: |
           python3 << 'PYEOF'
-          import json, re, time, urllib.error, urllib.parse, urllib.request
+          import json, re, sys, time, urllib.error, urllib.parse, urllib.request
           from concurrent.futures import ThreadPoolExecutor, as_completed
           from datetime import datetime, timezone
+
+          sys.path.insert(0, "scripts")
+          from link_check_helpers import verify_zenodo_urls
 
           with open("/tmp/lychee/out.md") as f:
               content = f.read()
@@ -80,14 +83,31 @@ jobs:
 
           # Parse errors, tracking which pages each URL appears on
           # url -> {"status": str, "pages": [str]}
+          # Statuses commonly returned by WAFs or HEAD-rejecting servers get a
+          # second-pass browser GET + Wayback check rather than being reported
+          # straight away as broken links. 401/404/5xx/ERROR/TIMEOUT stay in
+          # main_errors so broken auth-gated forms (e.g. restricted Google Forms)
+          # are never silently marked recovered.
+          BOT_BLOCK_STATUSES = {"403", "405", "409", "412"}
           url_info = {}
-          main_errors = {}    # non-403
-          forbidden_errors = {}  # 403
+          main_errors = {}    # genuine errors / timeouts / auth failures
+          forbidden_errors = {}  # bot-blocked / method-restricted
           current_page = ""
+          in_actionable_section = True
 
           for line in error_lines:
-              # Track section headers (### Errors in /tmp/site/.../index.html)
-              page_match = re.match(r"^### Errors in /tmp/site/[^/]+/(.+)", line)
+              # Only collect bullets from Errors / Timeouts sections so future
+              # lychee sections such as "## Ignored per input" are not parsed
+              # as broken links.
+              if line.startswith("## "):
+                  current_page = ""
+                  in_actionable_section = line.startswith(("## Errors", "## Timeouts"))
+                  continue
+              if not in_actionable_section:
+                  continue
+
+              # Track section headers (### Errors in /tmp/site/... or ### Timeouts in /tmp/site/...)
+              page_match = re.match(r"^### (?:Errors|Timeouts) in /tmp/site/[^/]+/(.+)", line)
               if page_match:
                   # Convert file path to URL path
                   path = page_match.group(1)
@@ -100,20 +120,21 @@ jobs:
                   continue
               status, url = m.group(1), m.group(2)
 
-              target = forbidden_errors if status == "403" else main_errors
+              target = forbidden_errors if status in BOT_BLOCK_STATUSES else main_errors
               if url not in target:
                   target[url] = {"status": status, "pages": []}
               if current_page and current_page not in target[url]["pages"]:
                   target[url]["pages"].append(current_page)
 
           # ------------------------------------------------------------------
-          # Second-pass verification of 403s.
+          # Second-pass verification of bot-blocked / method-restricted URLs
+          # (403, 405, 409, 412).
           #
           # lychee already sends a browser User-Agent (see .lychee.toml), but some
           # WAFs additionally gate on Accept/Accept-Language or on the HEAD method.
           # Rather than excluding these domains outright — which silently drops a
           # large share of the site's outbound links from any checking at all — we
-          # re-request each 403 with full browser headers and a GET.
+          # re-request each candidate with full browser headers and a GET.
           #
           # Whatever still refuses is genuinely unverifiable over HTTP, so we ask the
           # Wayback availability API whether a snapshot exists. "Blocked, and never
@@ -136,8 +157,9 @@ jobs:
                   with urllib.request.urlopen(req, timeout=30) as r:
                       return url, r.status < 400
               except urllib.error.HTTPError as e:
-                  # 401/429 mean "authenticate" / "slow down", not "gone".
-                  return url, e.code < 400 or e.code in (401, 429)
+                  # 429 means "slow down", not "gone". Keep 401 unverified so
+                  # auth-gated failures are never silently reported as recovered.
+                  return url, e.code < 400 or e.code == 429
               except Exception:
                   return url, False
 
@@ -199,15 +221,26 @@ jobs:
                       return "unknown", None
               return "unknown", None
 
-          recovered, blocked_fresh, blocked_stale, blocked_never, blocked_untested = [], [], [], [], []
+          zenodo_recovered, recovered, blocked_fresh, blocked_stale, blocked_never, blocked_untested = [], [], [], [], [], []
           if forbidden_errors:
-              print(f"Re-checking {len(forbidden_errors)} 403s with full browser headers...")
+              zenodo_recovered, zenodo_broken, remaining_forbidden = verify_zenodo_urls(list(forbidden_errors))
+              for zurl, zstatus in zenodo_broken.items():
+                  info = forbidden_errors.pop(zurl)
+                  main_errors[zurl] = {"status": zstatus, "pages": info["pages"]}
+              if zenodo_recovered or zenodo_broken:
+                  print(
+                      f"Zenodo API verification: {len(zenodo_recovered)} live, "
+                      f"{len(zenodo_broken)} broken (promoted to Broken links)"
+                  )
+
               still_blocked = []
-              with ThreadPoolExecutor(max_workers=8) as pool:
-                  for fut in as_completed([pool.submit(recheck, u) for u in forbidden_errors]):
-                      url, ok = fut.result()
-                      (recovered if ok else still_blocked).append(url)
-              print(f"  {len(recovered)} recovered, {len(still_blocked)} still blocked")
+              if remaining_forbidden:
+                  print(f"Re-checking {len(remaining_forbidden)} bot-blocked/method-restricted URLs with full browser headers...")
+                  with ThreadPoolExecutor(max_workers=8) as pool:
+                      for fut in as_completed([pool.submit(recheck, u) for u in remaining_forbidden]):
+                          url, ok = fut.result()
+                          (recovered if ok else still_blocked).append(url)
+                  print(f"  {len(recovered)} recovered, {len(still_blocked)} still blocked")
 
               # Wayback lookups run at low concurrency: CDX tolerates a few parallel
               # requests but individual queries can take a minute on deep-crawled
@@ -231,8 +264,8 @@ jobs:
           output += (
               f"\n\n> **Actionable total: {len(main_errors)} broken links.** "
               f"The `Errors` figure above is lychee's raw per-occurrence count and is "
-              f"dominated by bot-blocking responses; see the 403 section for how those "
-              f"were resolved.\n"
+              f"dominated by bot-blocking responses; see the bot-blocked section for "
+              f"how those were resolved.\n"
           )
           output += "\n## Broken links\n\n"
 
@@ -242,7 +275,7 @@ jobs:
                   page_str = f" (in {pages[0]})" if len(pages) == 1 else f" (in {len(pages)} pages)"
                   output += f"* [{info['status']}] <{url}>{page_str}\n"
           else:
-              output += "No broken links found (excluding 403s).\n"
+              output += "No broken links found (excluding bot-blocked/method-restricted URLs).\n"
 
           if forbidden_errors:
               def with_pages(url):
@@ -250,11 +283,18 @@ jobs:
                   return f" (in {pages[0]})" if len(pages) == 1 else f" (in {len(pages)} pages)"
 
               output += (
-                  f"\n## Bot-blocked (403) — {len(forbidden_errors)} URLs, re-verified\n\n"
-                  f"These refused lychee. Each was re-requested with full browser headers, and "
-                  f"whatever still refused was dated against its most recent successful Wayback "
-                  f"capture — the question being *when was this last known to work*, not whether "
-                  f"it ever existed.\n\n"
+                  f"\n## Bot-blocked / method-restricted (403/405/409/412) — {len(forbidden_errors)} URLs, re-verified\n\n"
+                  f"These refused lychee. Zenodo records/files/communities were verified via Zenodo's "
+                  f"public REST API (missing records or files are promoted to **Broken links** above); "
+                  f"remaining URLs were re-requested with full browser headers, and whatever still "
+                  f"refused was dated against its most recent successful Wayback capture — the question "
+                  f"being *when was this last known to work*, not whether it ever existed.\n\n"
+              )
+              if zenodo_recovered:
+                  output += (
+                      f"* ✅ **{len(zenodo_recovered)}** verified via the Zenodo REST API — not broken.\n"
+                  )
+              output += (
                   f"* ✅ **{len(recovered)}** responded normally to a browser request — not broken.\n"
                   f"* 🗄️ **{len(blocked_fresh)}** blocked, but archived within the last "
                   f"{STALE_AFTER_DAYS} days — alive recently.\n"
@@ -293,6 +333,15 @@ jobs:
                   output += f"\n<details>\n<summary>{label}</summary>\n\n"
                   for url, when in sorted(bucket):
                       output += f"* <{url}>" + (f" — last archived `{when}`\n" if when else "\n")
+                  output += "\n</details>\n"
+
+              if zenodo_recovered:
+                  output += (
+                      f"\n<details>\n<summary>✅ Verified via Zenodo REST API "
+                      f"({len(zenodo_recovered)} URLs — not broken)</summary>\n\n"
+                  )
+                  for url in sorted(zenodo_recovered):
+                      output += f"* <{url}>\n"
                   output += "\n</details>\n"
 
               if recovered:
@@ -354,6 +403,10 @@ jobs:
               rel_parts = page_file.relative_to(SITE_ROOT).parts[1:]
               page = "/" + "/".join(rel_parts)
               page = re.sub(r"/index\.html$", "/", page)
+              # Match .lychee.toml's exclude_path: archived newsletter issues are
+              # historical copies of sent emails and are not maintained.
+              if re.match(r"^/newsletters/\d{4}-\d{2}/", page):
+                  continue
               for m in DOI_RE.finditer(text):
                   # Entities survive into the captured group (SICI DOIs are written
                   # &lt;...&gt; in HTML); decode them so the DOI matches what was minted.
@@ -484,6 +537,7 @@ jobs:
           set -euo pipefail
           TITLE="Link Checker Report"
           BODY_FILE=/tmp/lychee/out.md
+          python3 -c 'import sys; sys.path.insert(0, "scripts"); from link_check_helpers import format_limitations_section; open("/tmp/lychee/out.md", "a", encoding="utf-8").write(format_limitations_section(".lychee.toml"))'
           EXISTING=$(gh issue list --label link-check --state open --limit 1 --json number --jq '.[0].number // empty')
           if [ -n "$EXISTING" ]; then
             echo "Updating existing issue #$EXISTING"

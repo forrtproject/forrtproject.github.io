@@ -25,19 +25,26 @@ document.querySelectorAll('#strategic .sc-title-card').forEach((card) => {
   if (area) card.dataset.area = area[1];
 });
 
+window.__scManaged = true;
 let trigger = null;
 const backdrops = [...document.querySelectorAll('.sc-modal-backdrop')];
 
 backdrops.forEach((backdrop) => {
   const name = backdrop.querySelector('.sc-modal-name');
-  backdrop.setAttribute('role', 'dialog');
-  backdrop.setAttribute('aria-modal', 'true');
+  if (!backdrop.getAttribute('role')) backdrop.setAttribute('role', 'dialog');
+  if (!backdrop.getAttribute('aria-modal')) backdrop.setAttribute('aria-modal', 'true');
   if (name) {
     name.id = name.id || `${backdrop.id}-name`;
-    backdrop.setAttribute('aria-labelledby', name.id);
+    if (!backdrop.getAttribute('aria-labelledby')) backdrop.setAttribute('aria-labelledby', name.id);
   }
-  backdrop.querySelector('.sc-close-btn')?.setAttribute('aria-label', 'Close this profile');
+  const closeBtn = backdrop.querySelector('.sc-close-btn');
+  if (closeBtn) {
+    if (!closeBtn.hasAttribute('type')) closeBtn.setAttribute('type', 'button');
+    if (!closeBtn.getAttribute('aria-label')) closeBtn.setAttribute('aria-label', 'Close profile');
+    closeBtn.querySelector('svg')?.setAttribute('aria-hidden', 'true');
+  }
   backdrop.querySelectorAll('.sc-social-links a').forEach((link) => {
+    link.querySelector('svg')?.setAttribute('aria-hidden', 'true');
     if (!link.getAttribute('aria-label')) {
       const host = new URL(link.href, location.href);
       link.setAttribute('aria-label', host.protocol === 'mailto:' ? 'Email' : host.hostname.replace(/^www\./, ''));
@@ -46,25 +53,52 @@ backdrops.forEach((backdrop) => {
 });
 
 document.querySelectorAll('.sc-card[onclick]').forEach((card) => {
-  const name = card.querySelector('.sc-card-name');
-  card.setAttribute('role', 'button');
-  card.tabIndex = 0;
-  card.setAttribute('aria-label', `Open the profile of ${name ? name.textContent.trim() : 'this person'}`);
-  card.addEventListener('click', () => { trigger = card; });
-  card.addEventListener('keydown', (event) => {
-    if (event.key === 'Enter' || event.key === ' ') {
-      event.preventDefault();
-      card.click();
+  const isButton = card.tagName === 'BUTTON';
+  if (!card.getAttribute('aria-haspopup')) card.setAttribute('aria-haspopup', 'dialog');
+  if (!isButton) {
+    const name = card.querySelector('.sc-card-name')?.textContent.trim();
+    const role = card.querySelector('.sc-card-role')?.textContent.trim();
+    card.setAttribute('role', 'button');
+    card.tabIndex = 0;
+    if (!card.getAttribute('aria-label')) {
+      const label = name ? (role ? `${name}, ${role}` : name) : 'View profile';
+      card.setAttribute('aria-label', label);
     }
-  });
+    card.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        card.click();
+      }
+    });
+  }
+  card.addEventListener('click', () => { trigger = card; }, true);
 });
 
-// Into the dialog when it opens, back to the card when it closes, and Tab stays inside while open.
+const closeOpenModal = (open) => {
+  if (!open) return;
+  open.classList.remove('active');
+  document.body.style.overflow = '';
+};
+
+// Into the dialog when it opens, back to the card when it closes, and Escape / Tab stay handled while open.
+const focusDialog = (open) => {
+  const closeBtn = open.querySelector('.sc-close-btn');
+  if (!closeBtn || open.contains(document.activeElement)) return;
+  closeBtn.focus();
+  if (document.activeElement !== closeBtn) {
+    requestAnimationFrame(() => {
+      if (open.classList.contains('active') && !open.contains(document.activeElement)) closeBtn.focus();
+    });
+  }
+};
+
 const observer = new MutationObserver(() => {
   const open = backdrops.find((backdrop) => backdrop.classList.contains('active'));
   if (open) {
-    // The dialog can't take focus until its fade-in has made it visible.
-    if (!open.contains(document.activeElement)) setTimeout(() => open.querySelector('.sc-close-btn')?.focus(), 60);
+    if (!trigger && document.activeElement?.closest?.('.sc-card')) {
+      trigger = document.activeElement.closest('.sc-card');
+    }
+    focusDialog(open);
   } else if (trigger) {
     trigger.focus();
     trigger = null;
@@ -73,10 +107,17 @@ const observer = new MutationObserver(() => {
 backdrops.forEach((backdrop) => observer.observe(backdrop, { attributes: true, attributeFilter: ['class'] }));
 
 document.addEventListener('keydown', (event) => {
-  if (event.key !== 'Tab') return;
   const open = backdrops.find((backdrop) => backdrop.classList.contains('active'));
   if (!open) return;
-  const stops = [...open.querySelectorAll('a[href],button')].filter((el) => el.getClientRects().length);
+  if (event.key === 'Escape') {
+    event.preventDefault();
+    closeOpenModal(open);
+    return;
+  }
+  if (event.key !== 'Tab') return;
+  const stops = [...open.querySelectorAll('a[href],button:not([disabled]),[tabindex]:not([tabindex="-1"])')]
+    .filter((el) => el.getClientRects().length);
+  if (!stops.length) return;
   const first = stops[0];
   const last = stops[stops.length - 1];
   if (!open.contains(document.activeElement)) {

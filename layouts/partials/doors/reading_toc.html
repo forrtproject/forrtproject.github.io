@@ -1,7 +1,12 @@
-{{/* A reading page's contents: Hugo's own, or the headings a shortcode wrote. */}}
-{{ if .contents }}{{ .page.TableOfContents }}
+{{/* A reading page's contents: Hugo's own, or the headings a shortcode wrote. A page with front matter cite_as
+     ends them with a link to its citation in the side card (doors/reading_card), which follows the text on phones;
+     beside the text, where the citation is already in view under the contents, that link is hidden (article.css). */}}
+{{ $cite := "" }}
+{{ if .page.Params.cite_as }}{{ $cite = `<li class="toc-cite"><a href="#cite-as">Cite as</a></li>` }}{{ end }}
+{{ if .contents }}{{ replaceRE `</ul>\s*</nav>\s*$` (printf "%s</ul>\n</nav>" $cite) (string .page.TableOfContents) | safeHTML }}
 {{ else }}
 <nav id="TableOfContents"><ul>
   {{ range .written }}<li><a href="#{{ index . 1 }}">{{ index . 2 | plainify }}</a></li>{{ end }}
+  {{ $cite | safeHTML }}
 </ul></nav>
 {{ end }}

@@ -54,7 +54,7 @@ classtitle = ""
 +++
 
 {{< action_cards >}}
-Join our Slack | Where most of FORRT's work and conversation happens | https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ
+Join FORRT's Slack | Where most of FORRT's work and conversation happens | https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ
 Find a project | Initiatives looking for collaborators right now | #get-involved
 Get the newsletter | News, events and opportunities, in your inbox | #newsletter
 {{< /action_cards >}}

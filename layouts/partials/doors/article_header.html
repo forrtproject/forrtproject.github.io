@@ -17,11 +17,14 @@
     {{ with $section }}<span aria-hidden="true">/</span> {{ if .URL }}<a href="{{ .URL | relLangURL }}">{{ .Name }}</a>{{ else }}{{ .Name }}{{ end }}{{ end }}
     {{ end }}{{ end }}
     {{/* The trail ends with the page itself, as on every other template (doors/crumbs.html). */}}
-    <span aria-hidden="true">/</span> <span aria-current="page">{{ $page.LinkTitle }}</span>
+    <span aria-hidden="true">/</span> <span aria-current="page">{{ $page.Params.heading_title | default $page.LinkTitle }}</span>
   </nav>
   {{/* A category the title already names ("Newsletter" above "FORRT Newsletter — May 2026") is left out. */}}
   {{ $cats := slice }}{{ range .Params.categories }}{{ if not (findRE (printf `(?i)\b%s\b` .) $page.Title 1) }}{{ $cats = $cats | append . }}{{ end }}{{ end }}
   {{ with $cats }}<div class="article-meta">{{ range . }}<span>{{ . }}</span>{{ end }}</div>{{ end }}
+  {{ if and .IsPage (eq .Section "neurodiversity-lessonbank") }}
+    {{ with .Params.lesson_number }}<p class="lesson-kicker">{{ . }}{{ with $page.Params.lesson_duration }} · {{ . }}{{ end }}</p>{{ end }}
+  {{ end }}
   {{ with .Params.header_logo }}<img class="article-logo" src="{{ . | relURL }}" alt="">{{ end }}
   {{ $heading := .Params.heading_title | default .Title }}
   {{ if .Params.hide_title }}<h1 class="sr-only">{{ $heading }}</h1>{{ else }}<h1>{{ $heading }}</h1>{{ end }}
@@ -32,6 +35,16 @@
     {{ if and (in (slice "post" "educators-corner" "pedagogies") .Type) (not .Date.IsZero) }}<time class="byline-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time>{{ end }}
     {{ if and (eq .Type "post") (ge .ReadingTime 3) }}<span class="byline-time">{{ .ReadingTime }} {{ i18n "minute_read" }}</span>{{ end }}
   </div>
+  {{ if and .IsPage (eq .Section "neurodiversity-lessonbank") (or .Params.lesson_plans .Params.feedback_url) }}
+  <div class="lesson-quick-bar">
+    {{ range .Params.lesson_plans }}
+      <a class="lesson-quick-link" href="{{ .url }}" target="_blank" rel="noopener">{{ .label }}</a>
+    {{ end }}
+    {{ with .Params.feedback_url }}
+      <a class="lesson-quick-link" href="{{ . }}" target="_blank" rel="noopener">Share feedback <i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="visually-hidden"> (another website)</span></a>
+    {{ end }}
+  </div>
+  {{ end }}
   {{/* A pedagogy's materials (syllabus, slides, videos, the interview) are what a teacher came for: bricks,
        each saying where it leads (DESIGN.md §4 action cards). */}}
   {{ if and (eq .Type "pedagogies") .IsPage .Params.links }}

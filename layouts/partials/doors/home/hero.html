@@ -12,8 +12,28 @@
       <nav class="quick" aria-label="Go straight to">
         {{ range .Params.quick }}{{ $link := partial "doors/link" . }}<a href="{{ $link.href }}">{{ $link.label }}</a>{{ end }}
       </nav>
-      {{/* A quieter second line of links on wide screens; hidden on phones (home.css). */}}
-      {{ with .Params.more }}<nav class="quick-more" aria-label="More ways in">{{ range . }}{{ $link := partial "doors/link" . }}<a href="{{ $link.href }}">{{ $link.label }}</a>{{ end }}</nav>{{ end }}
+      {{/* A quieter second line on wide screens (`more` hides on phones), paired with an inline JUST-OS
+           entry so the chatbot stays reachable on the home page even where the corner launcher hides. */}}
+      {{ $justosIcon := (resources.Get "images/doors/just-os-icon.webp").Resize "116x webp" }}
+      {{ $justosActive := true }}
+      {{ if isset site.Params "justos_chatbot" }}
+        {{ $justosActive = default true (index site.Params.justos_chatbot "active") }}
+      {{ end }}
+      {{ $justosUrl := relref . "/just_os_chatbot" }}
+      <div class="quick-secondary">
+        {{ with .Params.more }}<nav class="quick-more" aria-label="More ways in">{{ range . }}{{ $link := partial "doors/link" . }}<a href="{{ $link.href }}">{{ $link.label }}</a>{{ end }}</nav>{{ end }}
+        {{ if $justosActive }}
+        <button class="hero-justos" type="button" data-open-just-os aria-expanded="false" data-href="{{ $justosUrl }}">
+          <img src="{{ $justosIcon.RelPermalink }}" width="28" height="28" alt="">
+          <span>Ask JUST-OS</span>
+        </button>
+        {{ else }}
+        <a class="hero-justos is-offline" href="{{ $justosUrl }}">
+          <img src="{{ $justosIcon.RelPermalink }}" width="28" height="28" alt="">
+          <span>JUST-OS (offline)</span>
+        </a>
+        {{ end }}
+      </div>
     </div>
     <figure class="tower" data-motion-host>
       <div class="castle-stage" aria-hidden="true">
