@@ -70,7 +70,7 @@ Other services, some of them in the USA, host our videos, forms, calendars and s
 | Provider | Content |
 |---|---|
 | Google (YouTube, Forms, Calendar, Sheets), [privacy policy](https://policies.google.com/privacy) | Videos, forms, calendars, spreadsheets |
-| LearningApps, Padlet, Rebus Press, NeuroQueer, GitHub Pages | Teaching activities and pages in the neurodiversity lesson bank |
+| LearningApps, Padlet, Rebus Press, NeuroQueer | Teaching activities and pages in the neurodiversity lesson bank |
 
 Videos use the `youtube-nocookie.com` player.
 

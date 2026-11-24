@@ -5,6 +5,7 @@
      ground (DESIGN.md §6). Every page with headings to jump to also gets its contents here. */}}
 {{ $p := .page }}
 {{ $article := and $p.IsPage (in (slice "post" "educators-corner" "pedagogies") $p.Type) }}
+{{ $lesson := and $p.IsPage (eq $p.Section "neurodiversity-lessonbank") }}
 {{ $updated := ne ($p.Lastmod.Format "2006-01-02") ($p.Date.Format "2006-01-02") }}
 {{/* Authors with a profile page, photo first; the rest by name. */}}
 {{ $authors := slice }}
@@ -20,7 +21,19 @@
 {{/* On a narrow screen the byline shows the publication date for these types (doors/article_header), and the phone
      contents replace the card's, so a card with nothing more than that date is left out there (article.css). */}}
 {{ $repeats := and .hasDates (not $updated) $article (not $p.Date.IsZero) (not $authors) (not $more) }}
-<section class="article-card{{ if $repeats }} article-card-repeats{{ end }}{{ if $article }} article-card-article{{ end }}{{ if in (slice "educators-corner" "pedagogies") $p.Type }} article-card-edu{{ end }}" aria-label="About this article">
+<section class="article-card{{ if $repeats }} article-card-repeats{{ end }}{{ if $article }} article-card-article{{ end }}{{ if in (slice "educators-corner" "pedagogies") $p.Type }} article-card-edu{{ end }}{{ if $lesson }} article-card-jus{{ end }}" aria-label="{{ if $lesson }}About this lesson{{ else }}About this article{{ end }}">
+  {{ if and $lesson (or $p.Params.lesson_plans $p.Params.feedback_url) }}
+  <div class="lesson-card-meta">
+    {{ with $p.Params.lesson_plans }}
+    <ul class="lesson-card-links">
+      {{ range . }}<li><a href="{{ .url }}" target="_blank" rel="noopener">{{ .label }}</a></li>{{ end }}
+    </ul>
+    {{ end }}
+    {{ with $p.Params.feedback_url }}
+    <p class="lesson-card-feedback"><a href="{{ . }}" target="_blank" rel="noopener">Share feedback on this lesson <i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="visually-hidden"> (another website)</span></a></p>
+    {{ end }}
+  </div>
+  {{ end }}
   {{/* With several authors and a contents list, or more than three authors, the authors go compact (every name, linked),
        so the card keeps the whole contents in view; the byline beside it then leaves the names out. Photos show only
        for up to three authors: a few faces above a longer list of names would look like a selection. */}}
@@ -56,7 +69,7 @@
   </ul>
   {{ end }}
   {{ end }}
-  {{ if .hasDates }}
+  {{ if and .hasDates (not $lesson) }}
   <dl>
     <dt>Published</dt><dd>{{ $p.Date.Format "2 January 2006" }}</dd>
     {{ if $updated }}<dt>Updated</dt><dd>{{ $p.Lastmod.Format "2 January 2006" }}</dd>{{ end }}
@@ -67,6 +80,11 @@
   <h2>On this page</h2>
   <div class="article-toc">
     {{ partial "doors/reading_toc" . }}
+  </div>
+  {{ end }}
+  {{ if $lesson }}
+  <div class="lesson-card-nav">
+    <a href="{{ relref $p "/neurodiversity" }}">Team Neurodiversity</a>
   </div>
   {{ end }}
   {{/* How to cite a page that asks to be cited (front matter cite_as), under its contents, so it is in view from the

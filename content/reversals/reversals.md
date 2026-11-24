@@ -61,6 +61,8 @@ FORRT's Replications and Reversals project collected replications of effects in 
 
 {{% /alert %}}
 
+<p class="outcome-summary">Of the 436 effects listed below, 141 replicated, 143 had mixed results, 123 did not replicate, 14 reversed, and 15 have no status.</p>
+
 {{< list_filter label="Search the effects" placeholder="e.g. priming, Bargh" noun="effects" >}}
 
 The full list of effects is in [this spreadsheet](https://docs.google.com/spreadsheets/d/1IY56xdDmoU9VasdE0sry2xvsGFkWPrqbKXAs1Rw-9LA/edit#gid=0); not all of them are shown below (last updated 13 July 2023).

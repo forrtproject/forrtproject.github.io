@@ -1,0 +1,66 @@
+{{/* FORRT's four Strategic Focus Areas (issue #938): an editorial four-part overview on /about/us/
+     with area-colour accent rules (DESIGN.md §6) and initiatives drawn from the FORRT Booklet and
+     Project Management Handbook, complementing rather than repeating the homepage doors. */}}
+{{- $areas := slice
+  (dict
+    "key" "edu"
+    "title" "Education & Pedagogy"
+    "text" "Building pedagogical infrastructure and open educational resources so educators and learners can integrate open, reproducible, and transparent science principles into teaching and mentoring — from curated teaching materials and the crowdsourced glossary to lesson plans, educational games, and JUST-OS."
+    "links" (slice
+      (dict "label" "Educational Nexus" "url" "nexus/")
+      (dict "label" "Curated resources" "url" "resources/")
+      (dict "label" "Glossary" "url" "glossary/")
+      (dict "label" "Lesson plans" "url" "lesson-plans/")
+      (dict "label" "Games Portal" "url" "open-research-games-portal/")
+      (dict "label" "JUST-OS" "url" "just_os_chatbot/")
+    )
+  )
+  (dict
+    "key" "res"
+    "title" "Meta-Science & Research"
+    "text" "Tracking, conducting, and sharing reproductions and replications, and synthesising evidence on how open scholarship affects students and research practice — through the Replication Hub, FReD and the FLoRA Annotator, the Handbook for Reproduction and Replication Studies, and the diamond open-access Replication Research (R2) journal."
+    "links" (slice
+      (dict "label" "Replication Hub" "url" "replication-hub/")
+      (dict "label" "Replication Handbook" "url" "https://forrt.org/replication-handbook/")
+      (dict "label" "Impact on students" "url" "impact/")
+      (dict "label" "Replication Research (R2)" "url" "https://replicationresearch.org" "external" true)
+    )
+  )
+  (dict
+    "key" "jus"
+    "title" "Social Justice & DEIA"
+    "text" "Framing open science as inclusive scholarship by examining systemic barriers, authorship inequity, and citation politics, and creating practical resources that support neurodivergent and underrepresented scholars across higher education and research."
+    "links" (slice
+      (dict "label" "Social justice initiatives" "url" "dei/")
+      (dict "label" "Academic Wheel of Privilege" "url" "awop/")
+      (dict "label" "Citation politics" "url" "citation-politics/")
+      (dict "label" "Team Neurodiversity" "url" "neurodiversity/")
+    )
+  )
+  (dict
+    "key" "com"
+    "title" "Community & Sustainability"
+    "text" "Growing a welcoming, international, volunteer-driven community guided by FAIR and CARE principles, transparent governance and project workflows, and fair credit and contributorship through CRediT and Tenzing."
+    "links" (slice
+      (dict "label" "FORRT teams" "url" "about/teams/")
+      (dict "label" "Contributors & credit" "url" "contributors/")
+      (dict "label" "Community map" "url" "community-map/")
+      (dict "label" "Get involved" "url" "about/get-involved/")
+    )
+  )
+-}}
+<ul class="focus-areas">
+  {{- range $areas }}
+  <li class="focus-area focus-area-{{ .key }}">
+    <h3>{{ .title }}</h3>
+    <p>{{ .text }}</p>
+    <ul class="focus-area-links">
+      {{- range .links }}
+      {{- $href := cond (hasPrefix .url "http") .url (.url | relLangURL) }}
+      <li><a href="{{ $href }}">{{ .label }}{{ if .external }} <i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="visually-hidden"> (another website)</span>{{ end }}</a></li>
+      {{- end }}
+    </ul>
+  </li>
+  {{- end }}
+</ul>
+<p class="focus-areas-note">Explore projects from all four areas in the <a href="{{ "booklet/" | relLangURL }}">FORRT Booklet</a> or read how FORRT coordinates its volunteer teams in the <a href="https://forrt.org/handbook/">Project Management Handbook</a>.</p>

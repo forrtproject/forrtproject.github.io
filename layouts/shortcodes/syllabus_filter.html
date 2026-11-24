@@ -1,0 +1,165 @@
+{{/* Progressive-enhancement search and category filters for /syllabus/.
+     Without JavaScript, all five .catalogue-group lists remain visible and usable as plain HTML. */}}
+<div class="nx-syl-tools" id="nx-syl-tools" hidden>
+  <div class="nx-syl-search-row">
+    <div class="nx-syl-search-wrap">
+      <label for="nx-syl-search">Search syllabi</label>
+      <div class="nx-syl-input-row">
+        <input type="search" id="nx-syl-search" placeholder="e.g. psychology, replication, statistics, Portuguese" autocomplete="off" spellcheck="false">
+        <button type="button" id="nx-syl-clear" class="nx-syl-clear" hidden>Clear</button>
+      </div>
+    </div>
+    <p class="nx-syl-count" id="nx-syl-count" role="status" aria-live="polite"></p>
+  </div>
+  <div class="nx-syl-cats" id="nx-syl-cats" role="group" aria-label="Filter syllabi by category"></div>
+</div>
+<p class="nx-syl-empty" id="nx-syl-empty" hidden>No syllabi match that filter. <button type="button" id="nx-syl-reset" class="nx-syl-reset">Show all syllabi</button></p>
+<script>
+(function () {
+  function init() {
+    var catalogue = document.querySelector('.nx-syllabus .catalogue');
+    var tools = document.getElementById('nx-syl-tools');
+    if (!catalogue || !tools) return;
+
+    var groups = [].slice.call(catalogue.querySelectorAll('.catalogue-group'));
+    if (!groups.length) return;
+
+    var search = document.getElementById('nx-syl-search');
+    var clearBtn = document.getElementById('nx-syl-clear');
+    var countEl = document.getElementById('nx-syl-count');
+    var catsBox = document.getElementById('nx-syl-cats');
+    var emptyEl = document.getElementById('nx-syl-empty');
+    var resetBtn = document.getElementById('nx-syl-reset');
+
+    var fold = function (s) {
+      return (s || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+    };
+
+    var total = 0;
+    var parsed = groups.map(function (group, idx) {
+      var heading = group.querySelector('h3');
+      var title = heading ? heading.textContent.trim() : ('Group ' + (idx + 1));
+      var items = [].slice.call(group.querySelectorAll('li'));
+      total += items.length;
+
+      if (heading) {
+        var head = document.createElement('div');
+        head.className = 'nx-syl-group-head';
+        var badge = document.createElement('span');
+        badge.className = 'nx-syl-group-count';
+        badge.textContent = items.length + (items.length === 1 ? ' syllabus' : ' syllabi');
+        heading.parentNode.insertBefore(head, heading);
+        head.appendChild(heading);
+        head.appendChild(badge);
+      }
+
+      var records = items.map(function (li) {
+        return { el: li, text: fold(li.textContent + ' ' + title) };
+      });
+      return {
+        el: group,
+        key: String(idx),
+        title: title,
+        badge: group.querySelector('.nx-syl-group-count'),
+        items: records
+      };
+    });
+
+    var activeCat = 'all';
+
+    var pills = {};
+    function makePill(key, label, count) {
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'nx-syl-pill' + (key === 'all' ? ' is-active' : '');
+      btn.dataset.cat = key;
+      btn.dataset.label = label;
+      btn.setAttribute('aria-pressed', key === 'all' ? 'true' : 'false');
+      btn.textContent = label + ' (' + count + ')';
+      btn.addEventListener('click', function () {
+        activeCat = key;
+        catsBox.querySelectorAll('.nx-syl-pill').forEach(function (b) {
+          var on = b.dataset.cat === activeCat;
+          b.classList.toggle('is-active', on);
+          b.setAttribute('aria-pressed', String(on));
+        });
+        apply();
+      });
+      pills[key] = btn;
+      return btn;
+    }
+
+    catsBox.appendChild(makePill('all', 'All', total));
+    parsed.forEach(function (g) {
+      catsBox.appendChild(makePill(g.key, g.title, g.items.length));
+    });
+
+    function apply() {
+      var q = fold(search.value.trim());
+      clearBtn.hidden = !q;
+      var shown = 0;
+      var queryTotal = 0;
+      parsed.forEach(function (g) {
+        var catOk = activeCat === 'all' || g.key === activeCat;
+        var groupQueryMatches = 0;
+        var groupShown = 0;
+        g.items.forEach(function (rec) {
+          var qOk = !q || rec.text.indexOf(q) !== -1;
+          if (qOk) { groupQueryMatches++; queryTotal++; }
+          var ok = catOk && qOk;
+          rec.el.hidden = !ok;
+          if (ok) { groupShown++; shown++; }
+        });
+        g.el.hidden = groupShown === 0;
+        if (g.badge) {
+          g.badge.textContent = groupShown + (groupShown === 1 ? ' syllabus' : ' syllabi');
+        }
+        if (pills[g.key]) {
+          pills[g.key].textContent = pills[g.key].dataset.label + ' (' + groupQueryMatches + ')';
+        }
+      });
+      if (pills.all) {
+        pills.all.textContent = pills.all.dataset.label + ' (' + queryTotal + ')';
+      }
+      countEl.textContent = 'Showing ' + shown + ' of ' + total + ' syllabi';
+      emptyEl.hidden = shown > 0;
+      catalogue.hidden = shown === 0;
+    }
+
+    search.addEventListener('input', apply);
+    clearBtn.addEventListener('click', function () {
+      search.value = '';
+      apply();
+      search.focus();
+    });
+    resetBtn.addEventListener('click', function () {
+      search.value = '';
+      activeCat = 'all';
+      catsBox.querySelectorAll('.nx-syl-pill').forEach(function (b) {
+        var on = b.dataset.cat === 'all';
+        b.classList.toggle('is-active', on);
+        b.setAttribute('aria-pressed', String(on));
+      });
+      apply();
+      search.focus();
+    });
+
+    function syncScrollHint() {
+      var atEnd = catsBox.scrollLeft + catsBox.clientWidth >= catsBox.scrollWidth - 4;
+      catsBox.classList.toggle('is-at-end', atEnd);
+    }
+    catsBox.addEventListener('scroll', syncScrollHint, { passive: true });
+    window.addEventListener('resize', syncScrollHint);
+
+    tools.hidden = false;
+    apply();
+    syncScrollHint();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
