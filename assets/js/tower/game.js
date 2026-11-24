@@ -15,7 +15,7 @@ import { createCollapse } from './collapse.js';
 import { createSoundEngine } from './audio.js';
 import { BLUEPRINTS, BLUEPRINT_MAP } from './blueprints.js';
 import { createEffects } from './effects.js';
-import { renderPostcardCanvas, downloadPostcard } from './postcard.js';
+import { STRIPES, renderPostcardCanvas, downloadPostcard } from './postcard.js';
 
 const css = `
 html.tg-lock{overflow:hidden;scrollbar-gutter:stable}
@@ -196,7 +196,6 @@ const TYPE_KEYS = Object.keys(TYPES);
 const keyOf = n => String((n + 1) % 10);
 const LOOKS = { grey: 'Grey', brick: 'Brick', pride: 'Pride' };
 const BRICK_REDS = ['#8e3524', '#963a27', '#833022', '#9c432c', '#8a3828', '#7b2d20', '#984631'];
-const STRIPES = ['#7046a3', '#2672b8', '#2b985b', '#e8b52c', '#e98434', '#ce4742'];
 /* Stripes rise with height, one colour per brick height. Anything set on top of a whole course starts the next colour. */
 const stripeAt = level => STRIPES[Math.ceil(level / 3) % STRIPES.length];
 const NOTHING = -1000;
@@ -1444,10 +1443,12 @@ function createGame() {
   }
   const start = () => { if (running) return; running = true; last = 0; dirty = true; raf = requestAnimationFrame(tick); };
   const stop = () => {
-    running = false; physicsToken++; awaitingPhysics = false; cancelAnimationFrame(raf); raf = 0; hideToast(); effects.clear(); sound.close();
+    running = false; physicsToken++; awaitingPhysics = false; collapse = null; toppling = false;
+    cancelAnimationFrame(raf); raf = 0; hideToast(); effects.clear(); sound.close();
     if (drag) onUp({ pointerId: drag.id, type: 'pointercancel' });
     if (!ui.warn.hidden) { warnCursor = null; hideWarning(); }
     setAim(null);
+    refresh();
   };
 
   /* Pictures for the picker, drawn once in each look with the game's own bricks and lights. */

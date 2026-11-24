@@ -41,7 +41,8 @@ export function createCollapse(C, { pieces, grips, standing, shell, groundY, lea
     const clump = { body, members, offsets, level, from: body.position.clone() };
     body.addEventListener('collide', e => {
       const speed = Math.abs(e.contact.getImpactVelocityAlongNormal());
-      if (onImpact && speed > 1.0) onImpact(speed);
+      // Static bodies carry no collide listener; between two dynamic clumps, fire once via id order.
+      if (onImpact && speed > 1.0 && (!e.body || e.body.mass === 0 || body.id < e.body.id)) onImpact(speed);
       if (members.length < 2) return;
       if (speed > BREAK_SPEED) hits.set(clump, Math.max(hits.get(clump) || 0, speed));
     });

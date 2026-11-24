@@ -5,6 +5,7 @@
 export function createSoundEngine() {
   const AudioCtx = window.AudioContext || window.webkitAudioContext;
   let ctx = null;
+  let master = null;
   let noiseBuf = null;
   let enabled = true;
   let lastClatter = 0;
@@ -15,12 +16,15 @@ export function createSoundEngine() {
     try {
       if (!ctx) {
         ctx = new AudioCtx();
+        master = ctx.createGain();
+        master.gain.value = enabled ? 1 : 0;
+        master.connect(ctx.destination);
         const len = Math.floor(ctx.sampleRate * 0.14);
         noiseBuf = ctx.createBuffer(1, len, ctx.sampleRate);
         const data = noiseBuf.getChannelData(0);
         for (let i = 0; i < len; i++) data[i] = Math.random() * 2 - 1;
       }
-      if (ctx.state === 'suspended') ctx.resume().catch(() => {});
+      if (ctx.state === 'suspended' || ctx.state === 'interrupted') ctx.resume().catch(() => {});
       return ctx.state === 'closed' ? null : ctx;
     } catch {
       return null;
@@ -29,7 +33,7 @@ export function createSoundEngine() {
 
   function tone(freq, freqEnd, dur, type, vol, delay = 0) {
     const c = ensure();
-    if (!c) return;
+    if (!c || !master) return;
     const t0 = c.currentTime + delay;
     const osc = c.createOscillator();
     const gain = c.createGain();
@@ -40,7 +44,7 @@ export function createSoundEngine() {
     gain.gain.linearRampToValueAtTime(vol, t0 + 0.004);
     gain.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
     osc.connect(gain);
-    gain.connect(c.destination);
+    gain.connect(master);
     osc.onended = () => { osc.disconnect(); gain.disconnect(); };
     osc.start(t0);
     osc.stop(t0 + dur + 0.01);
@@ -48,7 +52,7 @@ export function createSoundEngine() {
 
   function noise(filterFreq, q, dur, vol, delay = 0, filterType = 'bandpass') {
     const c = ensure();
-    if (!c || !noiseBuf) return;
+    if (!c || !master || !noiseBuf) return;
     const t0 = c.currentTime + delay;
     const src = c.createBufferSource();
     src.buffer = noiseBuf;
@@ -62,7 +66,7 @@ export function createSoundEngine() {
     gain.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
     src.connect(filter);
     filter.connect(gain);
-    gain.connect(c.destination);
+    gain.connect(master);
     src.onended = () => { src.disconnect(); filter.disconnect(); gain.disconnect(); };
     src.start(t0);
     src.stop(t0 + Math.min(dur + 0.01, noiseBuf.duration));
@@ -73,7 +77,12 @@ export function createSoundEngine() {
 
   return {
     get enabled() { return enabled; },
-    set enabled(v) { enabled = Boolean(v); },
+    set enabled(v) {
+      enabled = Boolean(v);
+      if (master && ctx && ctx.state !== 'closed') {
+        master.gain.setValueAtTime(enabled ? 1 : 0, ctx.currentTime);
+      }
+    },
     unlock() { ensure(); },
     /* Crisp ABS plastic snap, pitched subtly by brick height and weight. */
     snap(level = 0, studs = 2) {
@@ -129,6 +138,7 @@ export function createSoundEngine() {
         ctx.close().catch(() => {});
       }
       ctx = null;
+      master = null;
       noiseBuf = null;
     }
   };

@@ -1,6 +1,6 @@
 /* Renders a clean PNG postcard of the visitor's finished tower and triggers a download. */
 
-const STRIPES = ['#7046a3', '#2672b8', '#2b985b', '#e8b52c', '#e98434', '#ce4742'];
+export const STRIPES = ['#7046a3', '#2672b8', '#2b985b', '#e8b52c', '#e98434', '#ce4742'];
 
 function roundRect(ctx, x, y, w, h, r) {
   ctx.beginPath();

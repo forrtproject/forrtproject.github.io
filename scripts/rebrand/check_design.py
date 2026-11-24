@@ -581,7 +581,10 @@ def check_tower_game(browser, base, expect):
     page.context.close()
 
     # Landscape phone (844x390): controls scroll cleanly and Done + Undo stay reachable with >= 44 px targets.
-    ctx = browser.new_context(viewport={"width": 844, "height": 390}, has_touch=True, is_mobile=True, reduced_motion="reduce")
+    landscape_opts = {"viewport": {"width": 844, "height": 390}, "has_touch": True, "reduced_motion": "reduce"}
+    if browser.browser_type.name != "firefox":  # Firefox has no mobile mode in Playwright.
+        landscape_opts["is_mobile"] = True
+    ctx = browser.new_context(**landscape_opts)
     page = ctx.new_page()
     page.route("**/*", lambda route: route.abort() if BLOCK.search(route.request.url) else route.continue_())
     page.goto(base, wait_until="load")
@@ -599,12 +602,13 @@ def check_tower_game(browser, base, expect):
       const pill = document.querySelector('.tg-plan-pill').getBoundingClientRect();
       return {
         doneBottom: Math.round(done.bottom), undoBottom: Math.round(undo.bottom),
-        doneH: Math.round(done.height), toppleH: Math.round(topple.height), pillH: Math.round(pill.height)
+        doneH: Math.round(done.height), undoH: Math.round(undo.height),
+        toppleH: Math.round(topple.height), pillH: Math.round(pill.height)
       };
     }""")
     expect(land_metrics["doneBottom"] <= 390 and land_metrics["undoBottom"] <= 390,
            f"landscape phone reaches Done/Undo inside 390 px height: {land_metrics}")
-    expect(min(land_metrics["doneH"], land_metrics["toppleH"], land_metrics["pillH"]) >= 44,
+    expect(min(land_metrics["doneH"], land_metrics["undoH"], land_metrics["toppleH"], land_metrics["pillH"]) >= 44,
            f"landscape phone keeps >= 44 px tap targets: {land_metrics}")
     ctx.close()
 
