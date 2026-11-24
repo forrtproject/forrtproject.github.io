@@ -866,33 +866,17 @@ if (listFilter) {
   };
   const tocCounts = new Map();
   if (outcomes.length) {
-    const existingBoard = listFilter.previousElementSibling?.classList.contains('outcome-board')
-      ? listFilter.previousElementSibling
-      : null;
-    const board = existingBoard || document.createElement('section');
+    const board = document.createElement('section');
     board.className = 'outcome-board';
     board.setAttribute('aria-labelledby', 'outcome-board-title');
-    let title = board.querySelector('#outcome-board-title');
-    if (!title) {
-      title = document.createElement('h2');
-      title.id = 'outcome-board-title';
-      board.prepend(title);
-    }
+    const title = document.createElement('h2');
+    title.id = 'outcome-board-title';
     title.textContent = `What replications found for ${outcomes.reduce((sum, {many}) => sum + many, 0)} effects`;
-    let hint = board.querySelector('.outcome-hint');
-    if (!hint) {
-      hint = document.createElement('p');
-      hint.className = 'outcome-hint';
-      title.after(hint);
-    }
+    const hint = document.createElement('p');
+    hint.className = 'outcome-hint';
     hint.textContent = 'Choose an outcome to list only those effects.';
-    hint.hidden = false;
-    let row = board.querySelector('.outcome-tiles');
-    if (!row) {
-      row = document.createElement('div');
-      row.className = 'outcome-tiles';
-      hint.after(row);
-    }
+    const row = document.createElement('div');
+    row.className = 'outcome-tiles';
     row.setAttribute('role', 'group');
     row.setAttribute('aria-label', 'Show by outcome');
     const clear = document.createElement('button');
@@ -914,10 +898,8 @@ if (listFilter) {
       input.dispatchEvent(new Event('input'));
     };
     clear.addEventListener('click', () => choose('', ''));
-    const existingTiles = new Map([...row.querySelectorAll('.outcome-tile[data-status]')].map((tile) => [tile.dataset.status, tile]));
-    const buttons = outcomes.map(({word, key, many}) => {
-      const existing = existingTiles.get(key);
-      const button = existing?.tagName === 'BUTTON' ? existing : document.createElement('button');
+    outcomes.forEach(({word, key, many}) => {
+      const button = document.createElement('button');
       button.type = 'button';
       button.className = `outcome-tile status-${key}`;
       button.dataset.status = key;
@@ -925,10 +907,10 @@ if (listFilter) {
       const bricks = Array.from({length: many}, (_, n) => `<i style="--n:${n}"></i>`).join('');
       button.innerHTML = `<span class="outcome-many">${many}</span> <span class="outcome-word">${word}</span><span class="outcome-bricks" aria-hidden="true">${bricks}</span>`;
       button.addEventListener('click', () => (status === key ? choose('', '') : choose(key, word)));
-      return button;
+      row.append(button);
     });
-    row.replaceChildren(...buttons);
-    if (!existingBoard) listFilter.before(board);
+    board.append(title, hint, row);
+    listFilter.before(board);
     // Once the reversed tile's bricks are wholly in view, and a moment later, every tile lays its bricks at the same
     // pace, so the rare outcomes finish at once and the common ones keep going for about 1.4 s (article.css). Where the
     // tiles stack (phones), a tile seen above it waits no more than 0.9 s, so no brick space stays empty on screen.

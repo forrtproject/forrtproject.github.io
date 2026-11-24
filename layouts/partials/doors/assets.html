@@ -34,10 +34,8 @@
 {{ end }}
 {{ $js := resources.Get "js/doors/site.js" | js.Build (dict "minify" true "format" "iife" "target" "es2019") | fingerprint "md5" }}
 <script src="{{ $js.RelPermalink }}" defer></script>
-{{/* Without the script, long author lists show in full (layouts/partials/citations/authors.html), and the
-     /reversals/ static outcome board drops its JS enhancement space reservation, restores the phone contents
-     list, and uses compact tiles. */}}
-<noscript><style>.ref-more[hidden]{display:inline!important}.ref-etal,.ref-authors-toggle{display:none}.article-layout .article-style .outcome-board .outcome-hint[hidden]{display:none!important}.article-layout .article-style .outcome-board:has(.outcome-hint[hidden]) h2{margin-bottom:14px}.article-layout .article-style .outcome-tile:not(:has(.outcome-bricks)){min-height:0}.article-layout .article-style .outcome-tile:not(:has(.outcome-bricks)) .outcome-word{min-height:0}@media(max-width:1000px){.reading:has(.list-filter[data-noun=effects]) .toc-phone{display:block}}@media(max-width:760px){.outcome-tiles:not(:has(.outcome-bricks)){grid-template-columns:repeat(2,minmax(0,1fr))}.article-layout .article-style .outcome-tile:not(:has(.outcome-bricks)){display:flex;padding:15px 12px 12px}}</style></noscript>
+{{/* Without the script, long author lists show in full (layouts/partials/citations/authors.html) and /reversals/ keeps its phone contents list. */}}
+<noscript><style>.ref-more[hidden]{display:inline!important}.ref-etal,.ref-authors-toggle{display:none}@media(max-width:1000px){.reading:has(.list-filter[data-noun=effects]) .toc-phone{display:block}}</style></noscript>
 {{/* Publish a fingerprinted lookup for the glossary feature to fetch on first use. */}}
 {{ $terms := partialCached "doors/glossary_index.html" site }}
 {{ $index := resources.FromString "data/glossary-terms.json" ($terms | jsonify) | fingerprint "md5" }}

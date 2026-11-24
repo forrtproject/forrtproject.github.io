@@ -27,13 +27,6 @@ jobs:
         with:
           python-version: "3.11"
 
-      # Hugo: tests for templates/partials such as doors/outcome_board.html.
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@75d2e84710de30f6ff7268e08f310b60ef14033f
-        with:
-          hugo-version: "0.158.0"
-          extended: true
-
       # pandas: resource.py; python-docx: the disciplines parser; beautifulsoup4: summaries.py;
       # playwright (imported only, no browsers): the Doors preview checks.
       - name: Install test dependencies

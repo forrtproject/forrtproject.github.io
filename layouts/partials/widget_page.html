@@ -31,7 +31,6 @@
     {{ $text := index . 2 | plainify | strings.TrimSpace }}
     {{ if $text }}{{ $toc = $toc | append (dict "id" (index . 1) "title" $text) }}{{ end }}
   {{ end }}
-  {{ $body = partial "doors/outcome_board" $body }}
   {{ $tinted := false }}
   {{ with $st.Params.design.background.color }}{{ if not (in (slice "#fefdf6" "#FEFDF6") .) }}{{ $tinted = true }}{{ end }}{{ end }}
   {{ $rendered = $rendered | append (dict "id" $hash_id "title" (cond (gt $index 0) $title "") "subtitle" (cond (gt $index 0) ($st.Params.subtitle | default "") "") "body" $body "widget" $widget "tinted" $tinted) }}
