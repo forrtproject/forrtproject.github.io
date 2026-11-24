@@ -77,7 +77,7 @@ subtitle = ""
       <p class="award-kicker">2024–2033 · UNESCO &amp; United Nations</p>
       <h3><a href="../educators-corner/023-forward-a-unesco-decade-of-science-programme/">FORWARD: A UNESCO Decade of Science Programme</a></h3>
       <div class="award-unesco-body">
-        <img src="unesco_recognition.webp" width="200" height="207" alt="FORWARD: A UNESCO Decade of Science Programme" class="award-unesco-badge">
+        <img src="unesco_recognition.webp" width="200" height="207" alt="" class="award-unesco-badge">
         <div>
           <p><strong>FORRT</strong> is one of the few initiatives worldwide to be formally endorsed as a <strong>Programme</strong> of the <a href="https://www.un-sciences-decade.org/en/endorsed-activities/forward-forrt-world-development-fostering-open-research-reproducibility-worldwide-accessible?hub=63" target="_blank" rel="noopener">International Decade of Sciences for Sustainable Development (IDSSD, 2024–2033)</a>, led by UNESCO and the United Nations (UN). This endorsement reflects the highest level of UN policy recognition and positions FORRT’s work in Education &amp; Pedagogy (Curriculum Hub), Metascience &amp; Research (Replication Hub) and Social Justice &amp; DEIA as an <strong>essential contribution to the UN’s strategy for achieving the Sustainable Development Goals (SDGs)</strong>.</p>
           <p class="award-featured-actions"><a href="https://www.un-sciences-decade.org/en/endorsed-activities/forward-forrt-world-development-fostering-open-research-reproducibility-worldwide-accessible?hub=63" class="btn dir-btn" target="_blank" rel="noopener">Read the official UNESCO announcement <i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="visually-hidden"> (another website)</span></a></p>

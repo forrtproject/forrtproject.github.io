@@ -752,7 +752,7 @@ html:has(.contributor-az:not([hidden])){scroll-padding-top:calc(var(--contributo
 
 /* Four Strategic Focus Areas (shortcodes/focus_areas.html, issue #938): editorial four-part overview on
    /about/us/ with area-colour accent rules (DESIGN.md §6), distinct from the homepage door cards. */
-.article-layout .article-style ol.focus-areas{list-style:none;margin:20px 0 16px;padding:0;max-width:none;border-top:1px solid var(--line)}
+.article-layout .article-style ul.focus-areas{list-style:none;margin:20px 0 16px;padding:0;max-width:none;border-top:1px solid var(--line)}
 .article-layout .article-style .focus-area{--tone:var(--edu);margin:0;padding:18px 0 14px 18px;max-width:none;border-bottom:1px solid var(--line);border-inline-start:4px solid var(--tone)}
 .article-layout .article-style .focus-area-res{--tone:var(--res)}
 .article-layout .article-style .focus-area-jus{--tone:var(--jus)}
