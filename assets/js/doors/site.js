@@ -892,6 +892,17 @@ if (termFilter && termGrid) {
   window.addEventListener('hashchange', openAbout);
   openAbout();
 } else if (termFilter) {
+  if (!termFilter.placeholder) {
+    const lang = (document.documentElement.lang || 'en').slice(0, 2).toLowerCase();
+    const placeholders = {
+      en: 'e.g. replication',
+      de: 'z. B. Replikation',
+      ar: 'اكتب مصطلحًا',
+      tr: 'Bir terim yazın',
+      zh: '输入术语',
+    };
+    termFilter.placeholder = placeholders[lang] || placeholders.en;
+  }
   const terms = [...document.querySelectorAll('.term-list li')];
   // A count, a no-results line and a clear button under the filter.
   const status = document.createElement('p');
@@ -912,14 +923,14 @@ if (termFilter && termGrid) {
     status.textContent = !query ? '' : shown ? `${shown} ${shown === 1 ? 'term' : 'terms'}` : 'No matching terms.';
     clearTerms.hidden = !query;
   });
-  // On a phone the list moves up, into a "Find another term" disclosure right after the definition.
+  // On a phone the list moves up, into a disclosure right after the definition, keeping the same label as desktop.
   const card = document.getElementById('glossary-terms');
   const definition = document.querySelector('.term-definition');
   if (card && definition && window.matchMedia('(max-width: 1000px)').matches) {
     const finder = document.createElement('details');
     finder.className = 'term-finder';
     const summary = document.createElement('summary');
-    summary.textContent = document.documentElement.lang.startsWith('en') ? 'Find another term' : (card.querySelector('h2')?.textContent || 'Find another term');
+    summary.textContent = card.querySelector('h2')?.textContent || 'List of terms';
     finder.append(summary, card);
     definition.after(finder);
     document.querySelector('.term-list-jump')?.remove();
