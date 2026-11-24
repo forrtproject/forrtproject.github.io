@@ -355,7 +355,8 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .article-layout .article-style .btn-block{display:inline-block;width:auto}
 @media(max-width:1000px){.profile-head .profile-org{font-weight:400}.profile-head ul.network-icon{margin:4px 0 0}.profile-head ul.network-icon a{text-decoration:none}}
 .article-layout .article-style .btn.btn-primary,.article-layout .article-style .btn.btn-lg{padding:10px 22px!important;font-size:17px!important}
-.byline-date{display:none}
+.byline-date,.byline-updated{display:none}
+.article-layout:not(:has(>.article-card)) :is(.byline-date,.byline-updated){display:inline}
 @media(max-width:1000px){.article-layout .byline-date{display:inline}}
 /* A search over a long list on the page (shortcodes/list_filter.html). */
 .article-layout :is(.article-style .list-filter,.list-filter-posts){max-width:520px;margin:8px 0 22px;padding:16px 18px;background:var(--surface);border-radius:var(--r-large)}
@@ -601,8 +602,8 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
 .ac-link::after{content:"";position:absolute;inset:0}
 .announcement-card:hover .ac-link{color:var(--ink)}
 @supports selector(:has(*)){.ac-link:focus-visible{outline:none}.announcement-card:has(.ac-link:focus-visible){outline:3px solid var(--ink);outline-offset:3px}}
-/* The start of the summary: four lines; the card leads to the rest. */
-.ac-summary{margin:0;overflow-wrap:anywhere;font-size:17px;line-height:1.45;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4;line-clamp:4;overflow:hidden}
+/* The start of the summary: four lines, breaking between words rather than mid-word; the card leads to the rest. */
+.ac-summary{margin:0;overflow-wrap:break-word;font-size:17px;line-height:1.45;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4;line-clamp:4;overflow:hidden}
 /* Articles (news, Educators' Corner, Pedagogies). The side card names the authors, with their photos, and leads
    back to the section; Educators' Corner and Pedagogies are education's, on its pale ground (DESIGN.md §6). */
 .article-layout .article-card-edu{background:var(--edu-bg);box-shadow:inset 0 6px 0 var(--edu);padding-top:26px}
@@ -621,6 +622,7 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
 .article-layout .card-authors .network-icon li{flex:none;margin:0}
 .article-layout .card-authors .network-icon a{display:flex;align-items:center;justify-content:center;width:34px;height:34px;color:var(--link);font-size:17px}
 .article-layout .card-authors .network-icon a:hover{color:var(--ink)}
+.article-layout .card-authors .network-icon .ai-google-scholar{font-size:21px;line-height:1;-webkit-text-stroke:.35px currentColor}
 .article-layout .card-more{margin:0 0 4px}
 .article-layout .card-more a{display:inline-block;padding:11px 0;font-weight:600;color:var(--link);text-decoration:underline;text-underline-offset:3px}
 .article-layout .card-more a::after{content:"\2192";margin-inline-start:6px;text-decoration:none}
@@ -655,6 +657,13 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
 .read-next h2{margin:0 0 18px;font-size:30px;line-height:1.15}
 .read-next .announcements-grid{grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr))}
 .read-next-edu .announcement-card{background:var(--edu-bg)}
+.read-next .ac-panel{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.read-next .ac-panel-title{margin:0;font-size:inherit;line-height:1.1}
+.read-next .ac-panel-title .ac-link,.read-next .announcement-card:hover .ac-panel-title .ac-link{display:flex;flex-direction:column;gap:2px;color:#fff;text-decoration:none}
+.read-next .ac-panel-title span{font:600 15px/1.25 var(--text)}
+.read-next .ac-panel-title strong{font:var(--display-weight) 28px/1.1 var(--display);text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:4px}
+.read-next .announcement-card:hover .ac-panel-title strong{text-decoration-thickness:2.5px}
+.read-next .ac-issue .ac-summary{font-size:16px;-webkit-line-clamp:3;line-clamp:3}
 @media(max-width:760px){
   .read-next{padding-bottom:32px}
   .read-next h2{font-size:26px}
@@ -662,10 +671,12 @@ html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px
   .read-next .announcement-card{flex-direction:row}
   .read-next .ac-thumb{display:flex;flex:0 0 112px}
   .read-next .ac-thumb:not(.ec-thumb-whole) img{width:112px;height:100%;min-height:112px;aspect-ratio:auto}
+  .read-next-edu .ac-thumb:not(.ec-thumb-whole){align-items:center;padding:6px;box-sizing:border-box;background:#fff}
+  .read-next-edu .ac-thumb:not(.ec-thumb-whole) img{width:100%;height:auto;min-height:0;object-fit:contain}
   .read-next .ec-thumb-whole{aspect-ratio:auto;min-height:112px}
   .read-next .ac-panel{aspect-ratio:auto;padding:12px}
   .read-next .ac-panel span{font-size:15px;line-height:1.2}
-  .read-next .ac-panel strong{font-size:19px}
+  .read-next .ac-panel strong,.read-next .ac-panel-title strong{font-size:19px}
   .read-next .ac-body{padding:12px 14px 14px}
   .read-next .ac-body h3{font-size:19px}
 }

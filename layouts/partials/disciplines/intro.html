@@ -10,26 +10,12 @@
 <link rel="stylesheet" href="{{ "css/cite_us.css" | relURL }}">
 {{ end }}
 
-{{ $webCitation := "" }}
-{{ $webCitationHTML := "" }}
-{{ with site.Data.disciplines_citation }}
-  {{ $webCitation = .web | default "" }}
-  {{ $webCitationHTML = .web_html | default "" }}
-{{ end }}
-
 <div class="clusters-intro">
   <div class="intro-hero">
     <div class="intro-hero-text">
       <p class="intro-paragraph">
         Open research applies to all disciplines. If the concept of open research is new to you, it might be difficult to determine how you can apply open research practices to your research. This page provides resources and examples of open research practices relevant to your discipline. As a starting point, it may be useful to read the <a href="https://www.ukrn.org/primers/" target="_blank" rel="noopener">UK Reproducibility Network primers</a>.
       </p>
-    </div>
-
-    <div class="intro-hero-image disciplines-partner">
-      <p class="disciplines-partner__caption">Supported by</p>
-      <a href="https://www.ukrn.org/" target="_blank" rel="noopener">
-        <img src="UKRN.webp" alt="UK Reproducibility Network (UKRN)" title="UK Reproducibility Network" width="275" height="275">
-      </a>
     </div>
   </div>
 </div>

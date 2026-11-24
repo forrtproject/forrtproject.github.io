@@ -582,6 +582,7 @@ html:has(.contributor-az){scroll-padding-top:calc(var(--contributor-az,72px) + 1
   .lesson-plan-pair>div>:is(h2,h3):first-child{margin-top:48px}
 }
 .article-layout .article-style .lesson-plan-sheet>h3{margin-top:36px}
+@media(min-width:761px){.narrow-screen-only{display:none}}
 .lesson-plan-motivation{display:flex;flex-direction:column}
 /* The note on the article about the plans is a pale side panel, so it reads as an aside to the motivation. */
 .article-layout .article-style .lesson-plan-article{order:1;margin:8px 0 0;padding:20px 22px;background:var(--edu-bg);border-radius:var(--r-large)}

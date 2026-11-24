@@ -164,13 +164,13 @@ These resources were created as part of the Society for Improving Psychological 
 
 <div class="lesson-plan-sheet-links">
 
-[Open the full table](https://docs.google.com/spreadsheets/d/e/2PACX-1vRxqwa1rfgn-mB2hdCd3DzQHYMV7bOpQw6hRwXQodSnKjL1QvV4r5Aaf0kr-AVKc9zk60ejgDhZ-FLV/pubhtml) in Google Sheets. On a narrow screen, the table below scrolls sideways.
+[Open the full table](https://docs.google.com/spreadsheets/d/e/2PACX-1vRxqwa1rfgn-mB2hdCd3DzQHYMV7bOpQw6hRwXQodSnKjL1QvV4r5Aaf0kr-AVKc9zk60ejgDhZ-FLV/pubhtml) in Google Sheets.<span class="narrow-screen-only"> On a narrow screen, the table below scrolls sideways.</span>
 
 Contribute to [FORRT's Lesson Plans (Google sheets)](https://docs.google.com/spreadsheets/d/1LGdBFlOCFqyfV7NUx11oUjkqR-aVZpWVGCn8RTiQQuk)
 
 </div>
 
-{{< click_to_load src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRxqwa1rfgn-mB2hdCd3DzQHYMV7bOpQw6hRwXQodSnKjL1QvV4r5Aaf0kr-AVKc9zk60ejgDhZ-FLV/pubhtml?widget=true&headers=false" provider="Google" label="This document" title="Table of lesson plans" height="700" style="border:0px; width:100%;" >}}
+{{< click_to_load src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRxqwa1rfgn-mB2hdCd3DzQHYMV7bOpQw6hRwXQodSnKjL1QvV4r5Aaf0kr-AVKc9zk60ejgDhZ-FLV/pubhtml?widget=true&headers=false" provider="Google" label="This document" title="Table of lesson plans" width="100%" height="700" >}}
 
 </div>
 

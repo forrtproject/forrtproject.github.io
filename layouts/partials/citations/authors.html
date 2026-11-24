@@ -1,9 +1,24 @@
 {{/* Shortens a long author list in a full reference to its first three authors and "et al.", with a
      button that shows the rest in place (assets/js/doors/references.js). Takes a reference as rendered
-     HTML. A reference with five authors or fewer, or whose authors aren't followed by a "(year" date,
-     comes back unchanged. The hidden authors stay in the page, so copying gives the full APA text,
-     and without JavaScript they show (layouts/partials/doors/assets.html). */}}
-{{- $html := trim (string .) " \n\r\t" -}}
+     HTML, or a dict with `html` and `lang` (for translated pages). A reference with six authors or fewer
+     (which would hide three names or fewer), or whose authors aren't followed by a "(year" date, comes
+     back unchanged. The hidden authors stay in the page, so copying gives the full APA text, and without
+     JavaScript they show (layouts/partials/doors/assets.html). */}}
+{{- $raw := . -}}
+{{- $lang := "english" -}}
+{{- if reflect.IsMap . -}}
+  {{- $raw = .html -}}
+  {{- $lang = .lang | default "english" -}}
+{{- end -}}
+{{- $html := trim (string $raw) " \n\r\t" -}}
+{{- $i18n := dict
+  "english" (dict "all" "Show all %d authors" "listed" "Show listed authors" "less" "Show fewer authors" "attr" "")
+  "arabic"  (dict "all" "عرض جميع المؤلفين (%d)" "listed" "عرض المؤلفين المدرجين" "less" "إخفاء المؤلفين" "attr" ` lang="ar" dir="rtl"`)
+  "german"  (dict "all" "Alle %d Autor:innen anzeigen" "listed" "Aufgeführte Autor:innen anzeigen" "less" "Weniger Autor:innen anzeigen" "attr" "")
+  "turkish" (dict "all" "Tüm %d yazarı göster" "listed" "Listelenen yazarları göster" "less" "Daha az yazar göster" "attr" "")
+  "chinese" (dict "all" "显示全部 %d 位作者" "listed" "显示已列出的作者" "less" "收起作者" "attr" "")
+-}}
+{{- $t := index $i18n $lang | default (index $i18n "english") -}}
 {{/* A surname and initials, with "Jr." or a particle where the bibliography generator puts them:
      "Lewis, Jr., N. A.", "Elm, E. von". */}}
 {{- $name := `(?:[^,&…<>()]|&[a-z]+;|&#[0-9]+;)+?(?:,\s*[JS]r\.)?,\s*\p{Lu}\p{Ll}?\.(?:[\s-]*\p{Lu}\p{Ll}?\.)*(?:\s+(?:von|van|de|der|den|du|da|di|del|dos|das|la|le|ter|ten)\b)*\*?` -}}
@@ -12,16 +27,16 @@
   {{- $authors := index (index . 0) 1 -}}
   {{- $after := strings.TrimPrefix $authors $html -}}
   {{- $plain := htmlUnescape $authors -}}
-  {{/* Bibliography entries can end in "& others" or "et al.": then, as after an ellipsis, the
-       list is incomplete and the button doesn't give a number. */}}
+  {{/* Bibliography entries can end in "& others", "et al." or an ellipsis: then the list is
+       incomplete and the button offers the listed authors without claiming an exact total. */}}
   {{- $complete := not (findRE `…|\.\s?\.\s?\.|\bothers\b|\bet al\b` $plain) -}}
   {{- $marked := replaceRE `\bet al\.?|\bothers\b` "" (replaceRE $name "§" $plain) -}}
   {{/* Corporate authors such as "FORRT" are whatever is left between the separators. */}}
   {{- $count := add (len (findRE `§` $marked)) (len (findRE `[^\s,&…§.][^,&…§]*` $marked)) -}}
-  {{- with and (gt $count 5) (findRE (printf `^(?:%s\s*,\s*(?:&(?:amp;)?\s*)?){2}%s` $name $name) $authors 1) -}}
+  {{- with and (gt $count 6) (findRE (printf `^(?:%s\s*,\s*(?:&(?:amp;)?\s*)?){2}%s` $name $name) $authors 1) -}}
     {{- $first := index . 0 -}}
-    {{- $more := cond $complete (printf "Show all %d authors" $count) "Show more authors" -}}
-    {{- $out = printf `<span class="ref-authors">%s<span class="ref-more" hidden>%s</span><span class="ref-etal">, et al.</span> <button type="button" class="ref-authors-toggle" aria-expanded="false" data-more="%s" data-less="Show fewer authors">%s</button></span>%s` $first (strings.TrimPrefix $first $authors) $more $more $after -}}
+    {{- $more := cond $complete (printf $t.all $count) $t.listed -}}
+    {{- $out = printf `<span class="ref-authors">%s<span class="ref-more" hidden>%s</span><span class="ref-etal">, et al.</span> <button type="button" class="ref-authors-toggle" aria-expanded="false" data-more="%s" data-less="%s"%s>%s</button></span>%s` $first (strings.TrimPrefix $first $authors) $more $t.less $t.attr $more $after -}}
   {{- end -}}
 {{- end -}}
 {{- $out | safeHTML -}}
