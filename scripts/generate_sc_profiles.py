@@ -107,38 +107,48 @@ PAGE_TEMPLATE = r"""
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
+    let lastTrigger = null;
+
+    const closeActiveModal = (modal) => {
+        if (!modal) return;
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+        if (!window.__scManaged && lastTrigger && typeof lastTrigger.focus === 'function') {
+            lastTrigger.focus();
+            lastTrigger = null;
+        }
+    };
+
     window.openModal = (id) => {
         const modal = document.getElementById(`modal-${id}`);
         if (modal) {
+            if (!window.__scManaged && document.activeElement && document.activeElement !== document.body) {
+                lastTrigger = document.activeElement;
+            }
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
+            if (!window.__scManaged) {
+                const closeBtn = modal.querySelector('.sc-close-btn');
+                if (closeBtn) closeBtn.focus();
+            }
         }
     };
 
     window.closeModal = (id) => {
-        const modal = document.getElementById(`modal-${id}`);
-        if (modal) {
-            modal.classList.remove('active');
-            document.body.style.overflow = '';
-        }
+        closeActiveModal(document.getElementById(`modal-${id}`));
     };
 
     document.querySelectorAll('.sc-modal-backdrop').forEach(backdrop => {
         backdrop.addEventListener('click', (e) => {
             if (e.target === backdrop) {
-                backdrop.classList.remove('active');
-                document.body.style.overflow = '';
+                closeActiveModal(backdrop);
             }
         });
     });
 
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            const activeModal = document.querySelector('.sc-modal-backdrop.active');
-            if (activeModal) {
-                activeModal.classList.remove('active');
-                document.body.style.overflow = '';
-            }
+        if (e.key === 'Escape' && !window.__scManaged) {
+            closeActiveModal(document.querySelector('.sc-modal-backdrop.active'));
         }
     });
 });
@@ -183,40 +193,41 @@ TEAM_TITLE_CARD_TEMPLATE = r"""
 """
 
 # Connected member card (teams with a title card): coloured connecting bar links it to its team.
+# Uses only phrasing content inside <button> so the generated HTML is valid HTML5.
 MEMBER_CARD_TEMPLATE = r"""
-<div class="sc-card" onclick="openModal('{id}')" style="--team-color:{color};--bar-extend:{extend}">
-    <div class="sc-card-photo">
+<button type="button" class="sc-card" onclick="openModal('{id}')" aria-haspopup="dialog" aria-controls="modal-{id}" style="--team-color:{color};--bar-extend:{extend}">
+    <span class="sc-card-photo">
         {img_content}
-        <div class="sc-card-overlay"></div>
-    </div>
-    <div class="sc-card-content">
-        <h4 class="sc-card-name">{name}</h4>
-        <p class="sc-card-role">{role}</p>
-    </div>
-    <span class="sc-cbar"></span>
-</div>
+        <span class="sc-card-overlay" aria-hidden="true"></span>
+    </span>
+    <span class="sc-card-content">
+        <span class="sc-card-name">{name}</span>
+        <span class="sc-card-role">{role}</span>
+    </span>
+    <span class="sc-cbar" aria-hidden="true"></span>
+</button>
 """
 
 # Plain member card (sections without team titles, e.g. Steering & Guidance): no team bar.
 MEMBER_CARD_PLAIN_TEMPLATE = r"""
-<div class="sc-card" onclick="openModal('{id}')">
-    <div class="sc-card-photo">
+<button type="button" class="sc-card" onclick="openModal('{id}')" aria-haspopup="dialog" aria-controls="modal-{id}">
+    <span class="sc-card-photo">
         {img_content}
-        <div class="sc-card-overlay"></div>
-    </div>
-    <div class="sc-card-content">
-        <h4 class="sc-card-name">{name}</h4>
-        <p class="sc-card-role">{role}</p>
-    </div>
-</div>
+        <span class="sc-card-overlay" aria-hidden="true"></span>
+    </span>
+    <span class="sc-card-content">
+        <span class="sc-card-name">{name}</span>
+        <span class="sc-card-role">{role}</span>
+    </span>
+</button>
 """
 
 MODAL_TEMPLATE = r"""
-<div id="modal-{id}" class="sc-modal-backdrop">
+<div id="modal-{id}" class="sc-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-{id}-name">
     <div class="sc-modal-content">
         <div class="sc-modal-header">
-            <button onclick="closeModal('{id}')" class="sc-close-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 18 12"/></svg>
+            <button type="button" onclick="closeModal('{id}')" class="sc-close-btn" aria-label="Close profile">
+                <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 18 12"/></svg>
             </button>
         </div>
         <div class="sc-modal-body">
@@ -230,9 +241,8 @@ MODAL_TEMPLATE = r"""
                     </div>
                 </div>
                 <div class="sc-modal-main">
-                    <h3 class="sc-modal-name">{name}</h3>
-                    <p class="sc-modal-role">{role}</p>
-                    <div class="sc-modal-bio">{bio}</div>
+                    <h3 id="modal-{id}-name" class="sc-modal-name">{name}</h3>
+                    <p class="sc-modal-role">{role}</p>{bio_block}
                 </div>
             </div>
         </div>
@@ -241,10 +251,10 @@ MODAL_TEMPLATE = r"""
 """
 
 ICONS = {
-    "twitter": '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-12.7 12.5S1.2 13 5.3 11c-4.5-1.4-5-7.3-1.9-8.8C7 5 9 9 10 9s-1-1.5-1-4c0-2 .5-4 2.5-4 1.3 0 2.5 1 2.5 1 1.5 0 2.5-1 2.5-1 .5 1.5 1 2.5 1 2.5z"/></svg>',
-    "linkedin": '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>',
-    "globe": '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>',
-    "mail": '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>'
+    "twitter": '<svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-12.7 12.5S1.2 13 5.3 11c-4.5-1.4-5-7.3-1.9-8.8C7 5 9 9 10 9s-1-1.5-1-4c0-2 .5-4 2.5-4 1.3 0 2.5 1 2.5 1 1.5 0 2.5-1 2.5-1 .5 1.5 1 2.5 1 2.5z"/></svg>',
+    "linkedin": '<svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>',
+    "globe": '<svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>',
+    "mail": '<svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>'
 }
 
 def normalize_name(name):
@@ -252,20 +262,58 @@ def normalize_name(name):
     name = str(name).strip()
     name = re.sub(r'\b(Dr|Dr\.|Mr|Mr\.|Ms|Ms\.|Mrs|Prof|Prof\.)\s+', '', name, flags=re.IGNORECASE)
     name = re.sub(r'\*', '', name)
+    # Parenthesised notes such as "(gmail)" or "(Assist. Prof)" are not part of the name.
+    name = re.sub(r'\([^)]*\)', '', name)
     name = unicodedata.normalize('NFKD', name)
     name = name.encode('ascii', 'ignore').decode('ascii')
     name = re.sub(r'\s+', ' ', name).strip()
     return name.lower()
 
+def display_name(name):
+    """Name as supplied on the personal-details form, in one house style: 'Dr' without a
+    full stop (also for 'dr.'), and a trailing ', PhD' shown as a leading 'Dr'. Other
+    titles ('Prof', ', M.Sc.', ', PhD Student') stay as supplied."""
+    name = re.sub(r'\s+', ' ', str(name)).strip()
+    name = re.sub(r'^dr\.?\s+', 'Dr ', name, flags=re.IGNORECASE)
+    phd = re.match(r'^(.*?),\s*PhD$', name)
+    if phd:
+        name = phd.group(1).strip()
+        if not re.match(r'^(Dr|Prof)\b', name):
+            name = f"Dr {name}"
+    return name
+
+def strip_title(name):
+    """Drop a leading 'Dr'/'Prof', post-nominals and parenthesised titles such as
+    '(Assist. Prof)', so initials and folder names come from the names alone."""
+    name = re.sub(r'\([^)]*\)', ' ', name).split(',')[0]
+    name = re.sub(r'^(Dr|Prof)\.?\s+', '', name.strip(), flags=re.IGNORECASE)
+    return re.sub(r'\s+', ' ', name).strip()
+
+def render_bio(bio):
+    """Bio line for MODAL_TEMPLATE's {bio_block}, indented to sit under the role; an empty
+    string when no bio was supplied, so the modal has no bio line at all."""
+    if not bio:
+        return ""
+    return f'\n                    <div class="sc-modal-bio">{html.escape(bio)}</div>'
+
+def match_key(name):
+    """Key that identifies one person across the roster, the personal-details form and the
+    fallback sheet: normalize_name() of the name without post-nominals (', PhD') or
+    parenthesised notes ('(gmail)'). Notes go first, so a comma inside one cannot cut the
+    name short."""
+    if pd.isna(name): return ""
+    name = re.sub(r'\([^)]*\)', ' ', str(name)).split(',')[0]
+    return normalize_name(name)
+
 def similarity(a, b):
     return SequenceMatcher(None, a, b).ratio()
 
 def find_match(name, candidates, threshold=0.6):
-    normalized = normalize_name(name)
+    normalized = match_key(name)
     best_match = None
     best_score = threshold
     for candidate in candidates:
-        normalized_candidate = normalize_name(candidate)
+        normalized_candidate = match_key(candidate)
         score = similarity(normalized, normalized_candidate)
         if score > best_score:
             best_score = score
@@ -279,31 +327,28 @@ def find_existing_author_dir(personal_name, authors_dir):
     (extra/missing hyphen, "Dr" prefix, middle initial) — matching a fresh slug from
     sanitize_filename() alone would create a duplicate directory every time one of those
     sources disagrees with what's already on disk.
+
+    Returns None when no folder matches or the name fits more than one folder: a wrong
+    folder shows another person's photo, while a new folder at worst duplicates one.
     """
+    dirs = sorted(d.name for d in authors_dir.iterdir() if d.is_dir())
+    exact = sanitize_filename(personal_name)
+    if exact in dirs:
+        return exact
     normalized_target = normalize_name(personal_name)
-    # Some folders run the words together ("ruthvanderhallenphd"), which similarity undervalues.
+    # Folders slugged without separators (e.g. "ruthvanderhallenphd") only match once
+    # spaces and punctuation are ignored on both sides.
     compact_target = re.sub(r'[^a-z0-9]', '', normalized_target)
-    compact_matches = [
-        existing_dir.name for existing_dir in authors_dir.iterdir()
-        if existing_dir.is_dir() and re.sub(r'[^a-z0-9]', '', normalize_name(existing_dir.name)) == compact_target
-    ]
-    if len(compact_matches) == 1:
-        return compact_matches[0]
-    best_match = None
-    # 0.9 is deliberately strict: legitimate spelling variants of the SAME person
-    # (Dr prefix, missing middle initial, hyphen vs space in a surname) all score >=0.95
-    # against their existing folder, while two DIFFERENT people never do. A looser
-    # threshold risks collapsing distinct authors onto one folder (overwriting avatars).
-    best_score = 0.9
-    for existing_dir in authors_dir.iterdir():
-        if not existing_dir.is_dir():
-            continue
-        candidate = normalize_name(existing_dir.name.replace('-', ' '))
-        score = similarity(normalized_target, candidate)
-        if score > best_score:
-            best_score = score
-            best_match = existing_dir.name
-    return best_match
+    compact_matches = [d for d in dirs if re.sub(r'[^a-z0-9]', '', d.lower()) == compact_target]
+    if compact_matches:
+        return compact_matches[0] if len(compact_matches) == 1 else None
+    # 0.9 is deliberately strict. A typo or a missing middle initial in a longer name
+    # still clears it ('giorgia a andreolli' scores 0.94; 'jane a doe' only 0.89), while
+    # the two closest existing folders of different people score 0.75 (Nov 2026). A
+    # looser threshold risks giving one person another's folder and photo.
+    close = [d for d in dirs
+             if similarity(normalized_target, normalize_name(d.replace('-', ' '))) > 0.9]
+    return close[0] if len(close) == 1 else None
 
 def sanitize_filename(name):
     name = normalize_name(name)
@@ -355,14 +400,18 @@ def download_image(url, filepath):
 def generate_social_links(member):
     links = []
     if member.get('twitter'):
-        links.append(f'<a href="{member["twitter"]}" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-teal-600 transition-colors">{ICONS["twitter"]}</a>')
+        href = html.escape(str(member["twitter"]), quote=True)
+        links.append(f'<a href="{href}" target="_blank" rel="noopener noreferrer" aria-label="Twitter" class="text-slate-400 hover:text-teal-600 transition-colors">{ICONS["twitter"]}</a>')
     if member.get('linkedin'):
-        links.append(f'<a href="{member["linkedin"]}" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-blue-700 transition-colors">{ICONS["linkedin"]}</a>')
+        href = html.escape(str(member["linkedin"]), quote=True)
+        links.append(f'<a href="{href}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="text-slate-400 hover:text-blue-700 transition-colors">{ICONS["linkedin"]}</a>')
     if member.get('website'):
-        links.append(f'<a href="{member["website"]}" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors">{ICONS["globe"]}</a>')
+        href = html.escape(str(member["website"]), quote=True)
+        links.append(f'<a href="{href}" target="_blank" rel="noopener noreferrer" aria-label="Website" class="text-slate-400 hover:text-slate-800 transition-colors">{ICONS["globe"]}</a>')
     email = str(member.get('email') or '').strip()
     if email and email.lower() != 'nan' and '@' in email:
-        links.append(f'<a href="mailto:{email}" class="text-slate-400 hover:text-slate-800 transition-colors">{ICONS["mail"]}</a>')
+        href = html.escape(email, quote=True)
+        links.append(f'<a href="mailto:{href}" aria-label="Email" class="text-slate-400 hover:text-slate-800 transition-colors">{ICONS["mail"]}</a>')
     return "".join(links)
 
 def normalize_website_url(url):
@@ -388,17 +437,46 @@ def render_title_card(name, color, has_members):
 def render_member_card(member_id, name, role, img_content, color=None, is_last=False):
     """Member tile. With a colour it carries the team's connecting bar; without, it is plain
     (used by sections that have no team titles, e.g. Steering & Guidance)."""
+    safe_id = html.escape(str(member_id), quote=True)
+    safe_name = html.escape(str(name))
+    safe_role = html.escape(str(role))
     if color is None:
         return MEMBER_CARD_PLAIN_TEMPLATE.format(
-            id=member_id, name=name, role=role, img_content=img_content
+            id=safe_id, name=safe_name, role=safe_role, img_content=img_content
         ).strip()
     return MEMBER_CARD_TEMPLATE.format(
-        id=member_id,
-        name=name,
-        role=role,
+        id=safe_id,
+        name=safe_name,
+        role=safe_role,
         img_content=img_content,
-        color=color,
+        color=html.escape(str(color), quote=True),
         extend="0px" if is_last else BAR_EXTEND,
+    ).strip()
+
+def render_card_image(img_url, initials):
+    """Card portrait or initials placeholder (phrasing content inside <button>).
+    Uses alt="" because the person's name is rendered right inside the same button."""
+    if img_url:
+        return f'<img src="{html.escape(str(img_url), quote=True)}" alt="" class="sc-card-img" />'
+    return f'<span class="sc-placeholder" aria-hidden="true">{html.escape(str(initials))}</span>'
+
+
+def render_modal_image(img_url, initials):
+    """Modal portrait or initials placeholder. Uses alt="" because the modal's <h3> names the person."""
+    if img_url:
+        return f'<img src="{html.escape(str(img_url), quote=True)}" alt="" />'
+    return f'<span aria-hidden="true" style="font-size: 2rem; color: #94a3b8; font-weight: 600;">{html.escape(str(initials))}</span>'
+
+
+def render_modal(member_id, name, role, bio, img_content_large, social_links=""):
+    """Profile modal dialog for one steering committee member."""
+    return MODAL_TEMPLATE.format(
+        id=html.escape(str(member_id), quote=True),
+        name=html.escape(str(name)),
+        role=html.escape(str(role)),
+        bio_block=render_bio(bio),
+        img_content_large=img_content_large,
+        social_links=social_links,
     ).strip()
 
 def main():
@@ -431,7 +509,7 @@ def main():
         full_name = row.get('Full Name (incl academic title)', '')
         if pd.isna(full_name) or str(full_name).strip() == '':
             return
-        normalized = normalize_name(str(full_name))
+        normalized = match_key(str(full_name))
         if not allow_overwrite and normalized in target:
             return
         target[normalized] = {
@@ -494,21 +572,29 @@ def main():
             team_name = section if pd.notna(section) else "General"
 
         # Try to find matching personal details
-        normalized_member = normalize_name(member_name)
+        normalized_member = match_key(member_name)
         personal_data = personal_dict.get(normalized_member)
         personal_name = member_name
 
         if personal_data is not None:
             personal_name = personal_data['Full Name']
         else:
-            matching_name = find_match(member_name, personal_dict.keys(), threshold=0.65)
+            # A wrong match gives this member another person's bio, photo and email. In the
+            # Nov 2026 sheets, spelling variants of one person score >= 0.80 and different
+            # people <= 0.62 (Tom Heyman vs Thomas Rhys Evan), so 0.75 keeps both margins.
+            matching_name = find_match(member_name, personal_dict.keys(), threshold=0.75)
             if matching_name:
                 personal_data = personal_dict[matching_name]
                 personal_name = personal_data['Full Name']
 
         # Handle image
         img_url = ""
-        sanitized_name = find_existing_author_dir(personal_name, AUTHORS_DIR) or sanitize_filename(personal_name)
+        bare_name = strip_title(display_name(personal_name))
+        sanitized_name = (
+            find_existing_author_dir(personal_name, AUTHORS_DIR)
+            or find_existing_author_dir(bare_name, AUTHORS_DIR)
+            or sanitize_filename(bare_name)
+        )
         author_dir = AUTHORS_DIR / sanitized_name
         author_dir.mkdir(parents=True, exist_ok=True)
         avatar_path = author_dir / "avatar.webp"
@@ -525,17 +611,18 @@ def main():
         # Build member object
         bio_text = ""
         if personal_data and personal_data.get('Bio'):
-            bio_text = str(personal_data.get('Bio'))
+            bio_text = str(personal_data.get('Bio')).strip()
             if bio_text.lower() == 'nan':
                 bio_text = ""
         
+        shown_name = display_name(personal_name)
         member_obj = {
             "id": sanitized_name,
-            "name": personal_name,
+            "name": shown_name,
             "role": role if pd.notna(role) else "",
             "role_title": role_title if pd.notna(role_title) else (role if pd.notna(role) else ""),
             "imgUrl": img_url,
-            "initials": get_initials(personal_name),
+            "initials": get_initials(strip_title(shown_name)),
             "bio": bio_text,
             "email": personal_data.get('Email', '') if personal_data else '',
             "website": normalize_website_url(personal_data.get('Weblink', '') if personal_data else ''),
@@ -593,12 +680,7 @@ def main():
                 seen_ids[base_id] = occurrence
                 render_id = base_id if occurrence == 1 else f"{base_id}-{occurrence}"
 
-                img_content = ""
-                if member["imgUrl"]:
-                    img_content = f'<img src="{member["imgUrl"]}" alt="{member["name"]}" class="sc-card-img" />'
-                else:
-                    # Placeholder for missing image
-                    img_content = f'<div class="sc-placeholder">{member["initials"]}</div>'
+                img_content = render_card_image(member["imgUrl"], member["initials"])
 
                 cards_html += render_member_card(
                     render_id, member["name"], member["role"], img_content,
@@ -607,20 +689,16 @@ def main():
                 )
 
                 # Generate Modal for this member
-                img_content_large = ""
-                if member["imgUrl"]:
-                    img_content_large = f'<img src="{member["imgUrl"]}" alt="{member["name"]}" />'
-                else:
-                    img_content_large = f'<span style="font-size: 2rem; color: #94a3b8; font-weight: 600;">{member["initials"]}</span>'
+                img_content_large = render_modal_image(member["imgUrl"], member["initials"])
 
-                modals_html += MODAL_TEMPLATE.format(
-                    id=render_id,
-                    name=member["name"],
-                    role=member["role_title"] or member["role"],
-                    bio=html.escape(member["bio"] or "Bio coming soon."),
-                    img_content_large=img_content_large,
-                    social_links=generate_social_links(member)
-                ).strip()
+                modals_html += render_modal(
+                    render_id,
+                    member["name"],
+                    member["role_title"] or member["role"],
+                    member["bio"],
+                    img_content_large,
+                    social_links=generate_social_links(member),
+                )
 
         content_html += SECTION_TEMPLATE.format(
             type=cat_key,

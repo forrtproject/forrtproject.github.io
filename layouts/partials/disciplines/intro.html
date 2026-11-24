@@ -10,26 +10,12 @@
 <link rel="stylesheet" href="{{ "css/cite_us.css" | relURL }}">
 {{ end }}
 
-{{ $webCitation := "" }}
-{{ $webCitationHTML := "" }}
-{{ with site.Data.disciplines_citation }}
-  {{ $webCitation = .web | default "" }}
-  {{ $webCitationHTML = .web_html | default "" }}
-{{ end }}
-
 <div class="clusters-intro">
   <div class="intro-hero">
     <div class="intro-hero-text">
       <p class="intro-paragraph">
         Open research applies to all disciplines. If the concept of open research is new to you, it might be difficult to determine how you can apply open research practices to your research. This page provides resources and examples of open research practices relevant to your discipline. As a starting point, it may be useful to read the <a href="https://www.ukrn.org/primers/" target="_blank" rel="noopener">UK Reproducibility Network primers</a>.
       </p>
-    </div>
-
-    <div class="intro-hero-image disciplines-partner">
-      <p class="disciplines-partner__caption">Supported by</p>
-      <a href="https://www.ukrn.org/" target="_blank" rel="noopener">
-        <img src="UKRN.webp" alt="UK Reproducibility Network (UKRN)" title="UK Reproducibility Network" width="275" height="275">
-      </a>
     </div>
   </div>
 </div>
@@ -40,24 +26,10 @@
     web: {{ with site.Data.disciplines_citation }}{{ .web | default "" | jsonify | safeJS }}{{ else }}""{{ end }}
   };
 
-  async function copyDisciplinesCitation(button, key) {
+  // The site's copy feedback (assets/js/doors/references.js): a check in the icon's place, only once copied.
+  function copyDisciplinesCitation(button, key) {
     var text = disciplinesCitations[key] || '';
-    try {
-      await navigator.clipboard.writeText(text);
-    } catch (err) {
-      var textarea = document.createElement('textarea');
-      textarea.value = text;
-      document.body.appendChild(textarea);
-      textarea.select();
-      document.execCommand('copy');
-      document.body.removeChild(textarea);
-    }
-    var copyIcon = button.innerHTML;
-    button.innerHTML = '<svg class="copy-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Copied!';
-    button.classList.add('copied');
-    setTimeout(function () {
-      button.innerHTML = copyIcon;
-      button.classList.remove('copied');
-    }, 2000);
+    if (window.forrtCopy) window.forrtCopy(button, text);
+    else window.prompt('Copy this text:', text);
   }
 </script>

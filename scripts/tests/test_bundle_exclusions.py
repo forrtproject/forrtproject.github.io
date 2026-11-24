@@ -1,4 +1,4 @@
-"""Hugo's ignoreFiles keeps generator scripts and drafts in content/ out of the site (#976).
+"""Hugo's ignoreFiles keeps generator scripts, caches and drafts out of the site (#976).
 
 Run: python3 -m unittest discover -s scripts/tests -p test_bundle_exclusions.py
 """
@@ -21,6 +21,13 @@ class BundleExclusionTests(unittest.TestCase):
         for path in sorted(ROOT.glob("content/**/*.py")) + sorted(ROOT.glob("content/**/*.mdOUT")):
             with self.subTest(path=path):
                 self.assertTrue(ignored(str(path.relative_to(ROOT))))
+
+    def test_python_bytecode_and_cache_directories_are_ignored(self):
+        for path in ("content/resources/resource.pyc", "content/resources/__pycache__",
+                     "content/resources/__pycache__/cache-tag",
+                     r"content\resources\__pycache__\cache-tag"):
+            with self.subTest(path=path):
+                self.assertTrue(ignored(path))
 
     def test_pages_and_bundle_assets_are_not_ignored(self):
         for path in ("content/summaries/_index.md", "content/summaries/FORRT_O&R_101_Syllabus.pdf",

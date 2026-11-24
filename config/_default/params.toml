@@ -318,12 +318,8 @@ plugins_js  = []
 ############################
 [cms]
   # Loads the Netlify Identity widget on the home page, as a render-blocking
-  # script. Turned off because it cannot work here: `static/admin/config.yml`
-  # uses the `git-gateway` backend, which authenticates through Netlify
-  # Identity, but the site is deployed to GitHub Pages (see
-  # `.github/workflows/deploy.yaml`) and `netlify.toml` is retained only as
-  # `netlify.toml.deprecated`. Set back to `true` if the admin panel is ever
-  # moved to a backend that needs the widget.
+  # script. Keep this off: the site has no CMS admin panel, and the templates
+  # treat a missing value as `true`.
   netlify_cms = false
 
 ############################
@@ -342,7 +338,7 @@ plugins_js  = []
   # The 3D castle on the home page. Set to false to show only the still image.
   castle = true
   # Pages whose tables, maps, cards or lists need the full width: their paragraphs stay at reading width.
-  wide_pages = ["/about/get-involved", "/about/visitors", "/replication-hub/large-scale-replication-projects", "/citation-politics/toolkit", "/publications", "/about/partnerships", "/contributors", "/about/community", "/about/teams", "/cv", "/manuscript", "/about/booklet", "/just_os_chatbot", "/community-map", "/lesson-plans", "/neurodiversity-lessonbank/implicit_bias", "/neurodiversity-lessonbank/masterstools", "/neurodiversity-lessonbank/diversity-and-research", "/neurodiversity-lessonbank/community-psychology-diversity", "/neurodiversity-lessonbank/generalizability", "/ai-metascience", "/syllabus", "/neurodiversity-lessonbank", "/nowherelab", "/summaries"]
+  wide_pages = ["/about/get-involved", "/about/visitors", "/replication-hub/large-scale-replication-projects", "/citation-politics/toolkit", "/publications", "/about/partnerships", "/contributors", "/about/community", "/about/teams", "/cv", "/manuscript", "/about/booklet", "/just_os_chatbot", "/community-map", "/lesson-plans", "/ai-metascience", "/syllabus", "/neurodiversity-lessonbank", "/nowherelab", "/summaries", "/awards", "/testimonials"]
   # Direct actions under a tool page's title (layouts/partials/doors/page_actions.html); the first is the main one.
   [[doors.page_actions]]
     path = "/awop"

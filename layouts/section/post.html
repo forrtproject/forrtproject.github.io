@@ -2,9 +2,10 @@
 {{/* News and announcements: a grid of cards, newest first, each with its picture, category, date, title and
      the start of its summary, with category buttons that filter them. The newest shown leads across the row on a
      wide screen, its picture beside its text (lists.css). A post with no picture of its own, or one several posts
-     share (the newsletters' stock photo), is a brick instead: the card itself in a brick colour (DESIGN.md §6),
-     its category and date said once, a newsletter in its year's colour as on the newsletter archive
-     (doors/post_panels). */}}
+     share (the newsletters' stock photo), has a panel in a brick colour in the picture's place (DESIGN.md §6), a
+     newsletter's in its year's colour as on the newsletter archive (doors/post_panels). Each fact is said once: the
+     panel names the category, so the chip goes; a newsletter's panel names the issue and is its title, so the card
+     needs neither date nor a title repeating "Newsletter" and the month. */}}
 <div class="wrap news-page">
   <header class="article-head">
     {{ partial "doors/crumbs" (dict "page" .) }}
@@ -35,15 +36,24 @@
         {{/* The title is a stretched link, so the whole card leads to the post. */}}
         {{ $tone := index $tones .RelPermalink }}
         {{ $issue := and $tone (eq (lower $cat) "newsletter") }}
-        <article class="announcement-card{{ if $tone }} ac-brick nla-brick-{{ $tone }}{{ end }}{{ if $issue }} ac-issue{{ end }}">
+        <article class="announcement-card{{ if $issue }} ac-issue{{ end }}">
           {{ if not $tone }}
             {{ partial "doors/card_picture" (dict "img" $img "large" $lead "lazy" (not $eager) "alt" $alt) }}
             {{ $eager = false }}
+          {{ else if $issue }}
+            {{/* "FORRT Newsletter — May 2026" shows as "Newsletter" over "May 2026". */}}
+            <div class="ac-thumb ac-panel ac-panel-{{ $tone }}">
+              <h2 class="ac-panel-title"><a class="ac-link" href="{{ .RelPermalink }}"><span>Newsletter</span> <strong>{{ replaceRE `^.*[—–-]\s*` "" .Title }}</strong></a></h2>
+            </div>
+          {{ else }}
+            {{/* Read out too: the panel stands in for the category chip. */}}
+            <div class="ac-thumb ac-panel ac-panel-{{ $tone }}"><strong>{{ $cat | default "News" }}</strong></div>
           {{ end }}
           <div class="ac-body">
-            {{/* A newsletter's brick does not name its kind, which its colour and title say. */}}
-            <p class="ac-meta">{{ with $cat }}{{ if not $issue }}<span class="ac-cat">{{ . }}</span>{{ end }}{{ end }}<time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time></p>
+            {{ if not $issue }}
+            <p class="ac-meta">{{ with $cat }}{{ if not $tone }}<span class="ac-cat">{{ . }}</span>{{ end }}{{ end }}<time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time></p>
             <h2><a class="ac-link" href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+            {{ end }}
             <p class="ac-summary">{{ .Summary | plainify | emojify }}</p>
           </div>
         </article>

@@ -52,7 +52,7 @@ My students need more from me than validity and reliability and transparency and
 
 So, this semester I introduced a single class session focused on the importance of representation in science. I borrowed ideas from Jessica Remedios ([see her terrific Twitter thread, which ends with her slides](https://twitter.com/jdremedios/status/1303700486277812226?s=20)).  
 
-I had them read this work about [the diversity-innovation paradox by Hofstra and colleagues](https://www.pnas.org/content/117/17/9284).
+I had them read this work about [the diversity-innovation paradox by Hofstra and colleagues](https://doi.org/10.1073/pnas.1915378117).
 
 I also invited them to watch the [Picture a Scientist film](https://web.archive.org/web/20210529203210/https://www.pictureascientist.com/) and/or listen to the Everything Hertz podcast ([@hertzpodcast](https://twitter.com/hertzpodcast)) about Diversity in science [with Jess Wade](https://web.archive.org/web/20210116220326/https://everythinghertz.com/114). 
 

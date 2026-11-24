@@ -1,7 +1,7 @@
-{{/* A list card's picture (news list, Educators' Corner). A photo near the card's 16:9 shape fills the slot. Anything
-     else is shown whole, on a ground that matches its own, read from its top left corner, so it never sits as a box
-     inside a box: a picture on white lies on the card's tint with its white blended into it (lists.css), any other
-     on a mat of its ground's colour. Where `figures` is true (Educators' Corner, whose pictures are often charts and
+{{/* A card's picture (news list, Educators' Corner and end-of-article cards). A photo near the card's 16:9 shape
+     fills the slot. Anything else is shown whole, on a ground read from its top left corner: a picture on white
+     blends into the card's tint (article.css), and other pictures sit on a mat of their own background colour.
+     Where `figures` is true (Educators' Corner, whose pictures are often charts and
      logos), a picture with a pale main colour counts as a figure even at a photo's shape.
      Input: dict "img" (image resource), "large" (the lead card: about twice as wide), "lazy", "alt", "figures". */}}
 {{ $img := .img }}

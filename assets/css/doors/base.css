@@ -43,3 +43,14 @@ em,i:not([class]),dfn,cite,var{font-weight:600}
 @media(max-width:1240px){.wrap{width:calc(100% - 64px)}}
 @media(max-width:760px){:root{--text-size:16px}.wrap{width:calc(100% - 40px)}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+
+/* Copy buttons (references.js copyWithFeedback): once the text is copied, the icon gives way to a check drawn in
+   0.16 s and the label says "Copied" for a few seconds. A label keeps room for "Copied", so the button never changes
+   width. With reduced motion the check simply appears (above). */
+.copy-label{display:inline-grid}
+.copy-label::after{content:"Copied";height:0;overflow:hidden;visibility:hidden}
+.copy-check{fill:none;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;opacity:0}
+.is-copied svg>:not(.copy-check){opacity:0}
+.is-copied .copy-check{opacity:1;animation:copy-check .16s ease-out}
+@keyframes copy-check{from{stroke-dashoffset:1}}
+.copy-check-icon{width:1em;height:1em;margin-inline-end:.35em;vertical-align:-.12em}

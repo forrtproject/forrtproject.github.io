@@ -121,6 +121,9 @@
 ._df_book .df-ui-btn:hover:not(.disabled)::before,
 ._df_book .df-ui-btn.df-active::before { color: #0072B2 !important; }
 ._df_book .df-ui-btn.disabled::before { color: #bbb !important; }
+/* A disabled Previous or Next keeps a readable label (4.5:1 on white); the pale arrow shows it is off. */
+._df_book .df-ui-btn.disabled { opacity: 1 !important; }
+._df_book .df-ui-btn.disabled > span { color: #6b6b6b !important; }
 
 /* Side overlay nav arrows stay white for contrast */
 ._df_book .df-ui-nav .df-ui-btn::before {
@@ -140,7 +143,14 @@
 
 {{ $pdf := .Get "pdf" | default "/files/FORRT_Booklet(A5).pdf" }}
 {{ $id := printf "flipbook-%s" (.Get "id" | default "default") }}
-<p class="booklet-open"><a class="btn btn-primary" href="{{ $pdf }}">Open the PDF</a> to read it full screen or save it.</p>
+{{/* "Read full screen" opens the flipbook full screen, through the toolbar's own button, once the flipbook has
+     loaded (until then, and without JavaScript, it stays hidden); "Download the PDF" saves it. On a phone or a narrow
+     screen, a jump past the flipbook to the contents that follow it (`contents`, an anchor). */}}
+<div class="booklet-open">
+  <button type="button" class="btn btn-primary booklet-full" data-book="{{ $id }}" hidden>Read full screen</button>
+  <a class="btn btn-outline-primary" href="{{ $pdf }}" download>Download the PDF</a>
+  {{ with .Get "contents" }}<a class="booklet-jump d-wide-none" href="{{ . }}">{{ $.Get "contents_label" | default "Contents" }}</a>{{ end }}
+</div>
 <div class="_df_book booklet-frame" id="{{ $id }}" source="{{ $pdf }}" style="height:{{ .Get "height" | default "80vh" }};margin:20px 0;min-height:500px;max-height:1200px;"></div>
 
 <script>
@@ -155,13 +165,21 @@
     var narrow = book.clientWidth < 700;
     // On a wide screen the book may open at a spread (`open`, a page number), so it fills its frame; a phone
     // starts at the cover. The frame's own colour shows around the pages (the panel in sections.css).
-    window['option_' + book.id] = narrow ? { pageMode: 1, singlePageMode: 2, backgroundColor: 'transparent' } : { openPage: {{ .Get "open" | default 1 }}, backgroundColor: 'transparent' };
+    // Half a second a turn, so paging through the booklet does not drag.
+    window['option_' + book.id] = narrow ? { pageMode: 1, singlePageMode: 2, backgroundColor: 'transparent', duration: 500 } : { openPage: {{ .Get "open" | default 1 }}, backgroundColor: 'transparent', duration: 500 };
+    // The page turns without its animation, and silently, for anyone who asks for reduced motion (DESIGN.md §11).
+    if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      window['option_' + book.id].duration = 0;
+      window['option_' + book.id].soundEnable = false;
+    }
 
     function size() {
       var height;
       if (narrow) {
         // One A5 page across the frame (210 by 148 mm), with room for the toolbar below it.
+        // In a column beside the contents on a wide screen, the page also fits the window's height.
         height = Math.round(book.clientWidth * 210 / 148) + 70;
+        if (window.innerWidth > 1000) height = Math.min(height, Math.max(500, window.innerHeight - 80));
         book.style.minHeight = '0';
       } else {
         height = Math.max(500, Math.min(1200, Math.floor((window.innerHeight || document.documentElement.clientHeight) * 0.8)));
@@ -173,8 +191,16 @@
 
     // The library swaps in its own toolbar after it has read the PDF; give it the site's glyphs.
     function remapWhenReady(tries) {
-      if (book.querySelector('.df-ui-btn')) { remapFlipbookIcons(); return; }
+      if (book.querySelector('.df-ui-btn')) { remapFlipbookIcons(); showFullScreen(); return; }
       if (tries > 0) setTimeout(function() { remapWhenReady(tries - 1); }, 200);
+    }
+    // "Read full screen" presses the toolbar's own full-screen button.
+    function showFullScreen() {
+      var full = book.querySelector('.df-ui-fullscreen');
+      var button = document.querySelector('.booklet-full[data-book="{{ $id }}"]');
+      if (!full || !button) return;
+      button.hidden = false;
+      button.addEventListener('click', function() { full.click(); });
     }
     function loadDFlip() {
       var s = document.createElement('script');
@@ -227,6 +253,17 @@
       'ti-twitter':'df-icon-twitter',
       'ti-close':'df-icon-close'
     };
+    // The toolbar's own previous and next buttons say so in words, beside their arrows.
+    document.querySelectorAll('._df_book .df-ui-controls .df-ui-prev > span').forEach(function(el){ el.textContent = 'Previous'; });
+    document.querySelectorAll('._df_book .df-ui-controls .df-ui-next > span').forEach(function(el){ el.textContent = 'Next'; });
+    // The library marks an unavailable button only with a class; say so to assistive technology too.
+    document.querySelectorAll('._df_book .df-ui-controls .df-ui-prev, ._df_book .df-ui-controls .df-ui-next').forEach(function(btn){
+      if (btn.dataset.ariaSynced) return;
+      btn.dataset.ariaSynced = '1';
+      var sync = function(){ if (btn.classList.contains('disabled')) btn.setAttribute('aria-disabled', 'true'); else btn.removeAttribute('aria-disabled'); };
+      sync();
+      new MutationObserver(sync).observe(btn, { attributes: true, attributeFilter: ['class'] });
+    });
     var scope = document.querySelectorAll('._df_book .df-ui-btn, ._df_book .df-share-button');
     scope.forEach(function(el){
       Object.keys(map).forEach(function(ti){

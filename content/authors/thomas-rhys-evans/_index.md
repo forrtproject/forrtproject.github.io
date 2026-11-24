@@ -28,5 +28,3 @@ user_groups:
 social:
 # No social links
 ---
-
-Coming soon.

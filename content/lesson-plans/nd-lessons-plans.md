@@ -51,16 +51,26 @@ subtitle = ""
  css_class = ""
 +++
 
+<!-- Layout (assets/css/doors/sections.css, "Lesson plans"): on a wide screen the introduction, with the way into the
+     whole collection and the quieter routes for writing a plan and for feedback beside it; on a phone the lessons
+     follow the introduction straight away and those routes come after them. The effect sizes plan's card shows the
+     plan's first page. Then the external plans and feedback, contributing with the table of activities, and the
+     background, each with something beside it on a wide screen. -->
+<div class="lesson-plan-top">
+
+<aside class="lesson-plan-routes" aria-label="Ways in">
+
 {{< action_cards >}}
 Browse all lesson plans | The full collection in FORRT's OSF repository | https://osf.io/th254/
-Use the template | Write a lesson plan in the same format | https://docs.google.com/document/d/1OMyhKBUUceJHvZRJ0lNSclDXBcoYpQQDCn-zJ_2teXI/edit
-Add your idea | Suggest an activity in the Table of Activities | https://docs.google.com/spreadsheets/d/1LGdBFlOCFqyfV7NUx11oUjkqR-aVZpWVGCn8RTiQQuk
 {{< /action_cards >}}
 
-## Topics
+<p class="lesson-plan-route"><strong>Writing a lesson plan?</strong> <a href="https://docs.google.com/document/d/1OMyhKBUUceJHvZRJ0lNSclDXBcoYpQQDCn-zJ_2teXI/edit">Use the template <i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="visually-hidden"> (another website)</span></a> or <a href="https://docs.google.com/spreadsheets/d/1LGdBFlOCFqyfV7NUx11oUjkqR-aVZpWVGCn8RTiQQuk">add your idea to the Table of Activities <i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="visually-hidden"> (another website)</span></a>. <a href="#contribute">How to contribute</a></p>
+<p class="lesson-plan-route"><strong>Taught with one?</strong> <a href="#feedback">Give us feedback</a></p>
 
+</aside>
 <div class="lesson-plan-intro">
-<figure class="lesson-plan-sample"><a href="LessonPlans1.pdf"><img src="LessonPlansTemplate.webp" alt="The first page of the lesson plan on interpreting effect sizes and confidence intervals: a table giving the suitable context, total time, prerequisites, related resources and learning outcomes, then the activities with their timings and instructor notes." width="1218" height="1530" loading="lazy"></a><figcaption>The first page of the effect sizes lesson plan, in the template's format.</figcaption></figure>
+
+## Topics
 
 You can find *all lesson plans* in FORRT's OSF repository, and here's one example about [Interpreting effect sizes and confidence intervals](LessonPlans1.pdf) and another on [Prediction Markets](LessonPlans2.pdf).
 
@@ -70,9 +80,11 @@ Each has suitable context: (e.g., entry-level/undergraduate/postgraduate), total
 
 <div class="lesson-plan-list">
 
+<section class="lesson-plan-group lesson-plan-osf" aria-labelledby="in-the-osf-repository">
+
 ### In the OSF repository
 
-- [Interpreting effect sizes and confidence intervals](https://osf.io/8jmbu/)
+- [Interpreting effect sizes and confidence intervals](https://osf.io/8jmbu/) <figure class="lesson-plan-sample"><a href="LessonPlans1.pdf"><img src="LessonPlansTemplate.webp" alt="The first page of the lesson plan on interpreting effect sizes and confidence intervals: a table giving the suitable context, total time, prerequisites, related resources and learning outcomes, then the activities with their timings and instructor notes." width="1218" height="1530"></a><figcaption>The first page of the effect sizes lesson plan, in the template's format.</figcaption><a class="lesson-plan-open" href="LessonPlans1.pdf">Open the whole plan (PDF)</a></figure>
 - [Registered Replication Report](https://osf.io/2znr4/)
 - [How to be critical not cynical](https://osf.io/7qz38/)
 - [Intro to Open Science lesson plan](https://osf.io/d8ctf)
@@ -83,6 +95,9 @@ Each has suitable context: (e.g., entry-level/undergraduate/postgraduate), total
 - [Diversity and inclusion in (br)open science](https://osf.io/r6qsw/)
 - [Differentiating between correlation vs causation](https://osf.io/fvnj5)
 
+</section>
+<section class="lesson-plan-group lesson-plan-nd" aria-labelledby="in-the-neurodiversity-lesson-bank">
+
 ### In the Neurodiversity lesson bank
 
 - [Implicit Bias](../neurodiversity-lessonbank/implicit_bias/)
@@ -90,19 +105,82 @@ Each has suitable context: (e.g., entry-level/undergraduate/postgraduate), total
 - [Diversity and research](../neurodiversity-lessonbank/diversity-and-research/)
 - [Oppression and Power](../neurodiversity-lessonbank/masterstools/)
 - [Generalizability Crisis](../neurodiversity-lessonbank/generalizability/)
-- [The myth of the normality: How neurodiversity dismantles the generalisability crisis](../neurodiversity-lessonbank/Lesson_Plans/The_myth_of_the_normality_How_neurodiversity_dismantles_the_generalisability_crisis.pdf)  
-  Lesson plan (PDF) · [Text 1](https://journalofethics.ama-assn.org/article/myth-normal-brain-embracing-neurodiversity/2015-04) · [Text 2](https://www.cambridge.org/core/journals/behavioral-and-brain-sciences/article/abs/generalizability-crisis/AD386115BA539A759ACB3093760F4824)
-- [Neurodiversity Culture and Teaching](../neurodiversity-lessonbank/Lesson_Plans/Neuro_para.pdf)  
-  Lesson plan (PDF) · [Text](http://web.archive.org/web/20240802211120/https://www.rapidintellect.com/AEQweb/ed-5971.pdf)
-- [Avoiding ableist language to diversify OS](../neurodiversity-lessonbank/Lesson_Plans/Avoiding_ableist%20language_to_diversify_open_scholarship.pdf)  
-  Lesson plan (PDF) · [Text](https://www.liebertpub.com/doi/10.1089/aut.2020.0014)
-- [How can Open Scholarship address structural ableism and racism?](../neurodiversity-lessonbank/Lesson_Plans/How_can_we_Open%20Scholarship_to_address_the%20structural_ableism_and_racism_in_our_society.pdf)  
-  Lesson plan (PDF) · [Text 1](https://www.apa.org/science/about/psa/2019/02/open-science) · [Text 2](https://doi.org/10.1080/09638288.2023.2173315)
+- [The myth of the normality: How neurodiversity dismantles the generalisability crisis](../neurodiversity-lessonbank/Lesson_Plans/The_myth_of_the_normality_How_neurodiversity_dismantles_the_generalisability_crisis.pdf) <span class="lesson-plan-kind">Lesson plan (PDF)</span>
+  <span class="lesson-plan-texts">Companion texts: [AMA Journal of Ethics](https://journalofethics.ama-assn.org/article/myth-normal-brain-embracing-neurodiversity/2015-04) · [Behavioral and Brain Sciences](https://www.cambridge.org/core/journals/behavioral-and-brain-sciences/article/abs/generalizability-crisis/AD386115BA539A759ACB3093760F4824)</span>
+- [Neurodiversity Culture and Teaching](../neurodiversity-lessonbank/Lesson_Plans/Neuro_para.pdf) <span class="lesson-plan-kind">Lesson plan (PDF)</span>
+  <span class="lesson-plan-texts">Companion text: [Academic Exchange Quarterly](http://web.archive.org/web/20240802211120/https://www.rapidintellect.com/AEQweb/ed-5971.pdf)</span>
+- [Avoiding ableist language to diversify OS](../neurodiversity-lessonbank/Lesson_Plans/Avoiding_ableist%20language_to_diversify_open_scholarship.pdf) <span class="lesson-plan-kind">Lesson plan (PDF)</span>
+  <span class="lesson-plan-texts">Companion text: [Autism in Adulthood](https://doi.org/10.1089/aut.2020.0014)</span>
+- [How can Open Scholarship address structural ableism and racism?](../neurodiversity-lessonbank/Lesson_Plans/How_can_we_Open%20Scholarship_to_address_the%20structural_ableism_and_racism_in_our_society.pdf) <span class="lesson-plan-kind">Lesson plan (PDF)</span>
+  <span class="lesson-plan-texts">Companion texts: [Psychological Science Agenda](https://web.archive.org/web/20210603040606/https://www.apa.org/science/about/psa/2019/02/open-science) · [Disability and Rehabilitation](https://doi.org/10.1080/09638288.2023.2173315)</span>
+
+</section>
+<section class="lesson-plan-group lesson-plan-phd" id="open-research-phd" aria-labelledby="for-phd-researchers">
+
+### For PhD researchers
+
+- [Open Research in Practice: Building Confidence to Act, Community to Thrive and Skills for Life](LessonPlan_OpenResearchPhD.pdf) <span class="lesson-plan-kind">Lesson plan (PDF)</span>
+  <span class="lesson-plan-texts">Also: [editable Word version](LessonPlan_OpenResearchPhD.docx) · [workshop slides on OSF](https://osf.io/82t9c/overview) · Abbie Cahoon describes how the workshop was designed and evaluated in [an Educators' Corner post](/educators-corner/025-active-learning-open-research-phd/)</span>
+
+</section>
+</div>
+</div>
+
+<div class="lesson-plan-pair">
+<div>
+
+## Relevant External Lesson Plans
+
+* United Nations' Sustainable Development Goals (SDG) [Open Pedagogy](https://tru.arcabc.ca/islandora/object/unsdg%3Aroot) has several lesson plans on how to teach about the UN's SDGs (e.g., SDG 04: Quality Education, SDG 05: Gender Equality, SDG 08: Decent Work and Economic Growth, SDG 10: Reduced Inequalities, SDG 16: Peace, Justice, and Strong Institutions and more.)
 
 </div>
+<div>
+
+## Feedback
+
+Please consider [giving us your feedback (critical or otherwise) when using these materials so that we can learn how to improve these resources](https://docs.google.com/forms/d/e/1FAIpQLSckPkeCR6_hsmxqV9yQ66oLgLOhnnHBrk4ejgIBTsOQ0mZ6gg/viewform?usp=sf_link). 
+
+{{< gform src="1FAIpQLSckPkeCR6_hsmxqV9yQ66oLgLOhnnHBrk4ejgIBTsOQ0mZ6gg" width="100%" height="700px" alt="Loading..." >}}
+
+</div>
+</div>
+
+<div class="lesson-plan-pair lesson-plan-contribute">
+<div>
+
+## Contribute
+
+You can still contribute to the collection of Lesson Plans by adding your ideas in the Google sheet below. Furthermore, if you would like your lesson plans to be included among the several others [in this OSF repository](https://osf.io/th254/), please use the [Lesson Plan's template](https://docs.google.com/document/d/1OMyhKBUUceJHvZRJ0lNSclDXBcoYpQQDCn-zJ_2teXI/edit) and contact Madeleine Pownall or Flavio Azevedo at FORRT's slack channel. Or feel free to email [info@forrt.org](mailto:info@forrt.org).
 
 We hope to keep producing more Lesson Plans, so please check this space. Our community is working on this ["Table of Activities"](https://docs.google.com/spreadsheets/d/1LGdBFlOCFqyfV7NUx11oUjkqR-aVZpWVGCn8RTiQQuk/edit#gid=0) to which you can add your own ideas (see how to contribute below) and help us empower educators and stakeholders with high quality and accessible lesson plans (and educational materials) to accelerate institutional change towards the integration of open and reproducible science into Higher Education curricula!
 
+</div>
+<div>
+
+### Contributorship
+
+In line with principles enshrined in FORRT, this google-sheet is an open online contributorship project. The work of all contributors is valued and formally recognized. With this, we hope to expand the scope and diversity of FORRT’s mission and its team.
+
+These resources were created as part of the Society for Improving Psychological Science (SIPS) hackathon at the 2021 Annual Conference, and we detail this collaborative process in the [article](https://doi.org/10.1037/stl0000307).
+
+</div>
+</div>
+
+<div class="lesson-plan-sheet">
+
+### Pedagogical Activities
+
+<div class="lesson-plan-sheet-links">
+
+[Open the full table](https://docs.google.com/spreadsheets/d/e/2PACX-1vRxqwa1rfgn-mB2hdCd3DzQHYMV7bOpQw6hRwXQodSnKjL1QvV4r5Aaf0kr-AVKc9zk60ejgDhZ-FLV/pubhtml) in Google Sheets.<span class="narrow-screen-only"> On a narrow screen, the table below scrolls sideways.</span>
+
+Contribute to [FORRT's Lesson Plans (Google sheets)](https://docs.google.com/spreadsheets/d/1LGdBFlOCFqyfV7NUx11oUjkqR-aVZpWVGCn8RTiQQuk)
+
+</div>
+
+{{< click_to_load src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRxqwa1rfgn-mB2hdCd3DzQHYMV7bOpQw6hRwXQodSnKjL1QvV4r5Aaf0kr-AVKc9zk60ejgDhZ-FLV/pubhtml?widget=true&headers=false" provider="Google" label="This document" title="Table of lesson plans" height="700" style="width:100%;" >}}
+
+</div>
 
 ## Motivation
 
@@ -133,31 +211,3 @@ Recently, there has been a growing emphasis on embedding open and reproducible a
 </aside>
 
 </div>
-
-## Feedback
-
-Please consider [giving us your feedback (critical or otherwise) when using these materials so that we can learn how to improve these resources](https://docs.google.com/forms/d/e/1FAIpQLSckPkeCR6_hsmxqV9yQ66oLgLOhnnHBrk4ejgIBTsOQ0mZ6gg/viewform?usp=sf_link). 
-
-{{< gform src="1FAIpQLSckPkeCR6_hsmxqV9yQ66oLgLOhnnHBrk4ejgIBTsOQ0mZ6gg" width="100%" height="700px" alt="Loading..." >}}
-
-## Relevant External Lesson Plans
-
-* United Nations' Sustainable Development Goals (SDG) [Open Pedagogy](https://tru.arcabc.ca/islandora/object/unsdg%3Aroot) has several lesson plans on how to teach about the UN's SDGs (e.g., SDG 04: Quality Education, SDG 05: Gender Equality, SDG 08: Decent Work and Economic Growth, SDG 10: Reduced Inequalities, SDG 16: Peace, Justice, and Strong Institutions and more.)
-
-## Contribute
-
-You can still contribute to the collection of Lesson Plans by adding your ideas in the Google sheet below. Furthermore, if you would like your lesson plans to be included among the several others [in this OSF repository](https://osf.io/th254/), please use the [Lesson Plan's template](https://docs.google.com/document/d/1OMyhKBUUceJHvZRJ0lNSclDXBcoYpQQDCn-zJ_2teXI/edit) and contact Madeleine Pownall or Flavio Azevedo at FORRT's slack channel. Or feel free to email [info@forrt.org](mailto:info@forrt.org).
-
-## Pedagogical Activities
-
-[Open the full table](https://docs.google.com/spreadsheets/d/e/2PACX-1vRxqwa1rfgn-mB2hdCd3DzQHYMV7bOpQw6hRwXQodSnKjL1QvV4r5Aaf0kr-AVKc9zk60ejgDhZ-FLV/pubhtml) in Google Sheets. On a narrow screen, the table below scrolls sideways.
-
-{{< click_to_load src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRxqwa1rfgn-mB2hdCd3DzQHYMV7bOpQw6hRwXQodSnKjL1QvV4r5Aaf0kr-AVKc9zk60ejgDhZ-FLV/pubhtml?widget=true&headers=false" provider="Google" label="This document" title="Table of lesson plans" height="700" style="border:0px; width:100%;" >}}
-
-Contribute to [FORRT's Lesson Plans (Google sheets)](https://docs.google.com/spreadsheets/d/1LGdBFlOCFqyfV7NUx11oUjkqR-aVZpWVGCn8RTiQQuk)
-
-These resources were created as part of the Society for Improving Psychological Science (SIPS) hackathon at the 2021 Annual Conference, and we detail this collaborative process in the [article](https://doi.org/10.1037/stl0000307).
-
-### Contributorship
-
-In line with principles enshrined in FORRT, this google-sheet is an open online contributorship project. The work of all contributors is valued and formally recognized. With this, we hope to expand the scope and diversity of FORRT’s mission and its team.

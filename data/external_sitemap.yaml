@@ -1,0 +1,29 @@
+# Sub-site pages with no sitemap of their own, appended to /sitemap.xml by layouts/sitemap.xml.
+# A sub-site that publishes its own sitemap goes in themes/academic/layouts/robots.txt instead.
+# lastmod (quoted to stay a string): last commit to the page's source in that repo.
+
+# forrtproject/flora-zotero; documentation pages are sliced from README.md per docs/_data/docs_nav.yml.
+- loc: https://forrt.org/flora-zotero/
+  lastmod: "2026-11-17T17:38:59+00:00"
+- loc: https://forrt.org/flora-zotero/documentation/
+  lastmod: "2026-11-18T10:46:47+00:00"
+- loc: https://forrt.org/flora-zotero/documentation/installation/
+  lastmod: "2026-11-18T10:46:47+00:00"
+- loc: https://forrt.org/flora-zotero/documentation/running-a-check/
+  lastmod: "2026-11-18T10:46:47+00:00"
+- loc: https://forrt.org/flora-zotero/documentation/what-gets-added/
+  lastmod: "2026-11-18T10:46:47+00:00"
+- loc: https://forrt.org/flora-zotero/documentation/preferences/
+  lastmod: "2026-11-18T10:46:47+00:00"
+- loc: https://forrt.org/flora-zotero/documentation/outcomes/
+  lastmod: "2026-11-18T10:46:47+00:00"
+- loc: https://forrt.org/flora-zotero/documentation/how-matching-works/
+  lastmod: "2026-11-18T10:46:47+00:00"
+- loc: https://forrt.org/flora-zotero/documentation/languages/
+  lastmod: "2026-11-18T10:46:47+00:00"
+- loc: https://forrt.org/flora-zotero/documentation/citation/
+  lastmod: "2026-11-18T10:46:47+00:00"
+- loc: https://forrt.org/flora-zotero/contributing/
+  lastmod: "2026-11-10T08:03:03+00:00"
+- loc: https://forrt.org/flora-zotero/release-guide/
+  lastmod: "2026-11-10T08:03:03+00:00"

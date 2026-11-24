@@ -6,53 +6,57 @@ url = "/booklet"
 phone_toc = false  # Two short sections; a contents list on phones would push the flipbook off the first screen
 summary = "Learn more about FORRT in the interactive flipbook below: If you prefer, you can also download the PDF directly."
 
-# The booklet's pages on each area, from its table of contents, shown under the flipbook
-# (layouts/shortcodes/booklet_contents.html). A page with a `url` links to its page on this site.
+# The booklet's pages on each area, from its table of contents, shown beside the flipbook
+# (layouts/shortcodes/booklet_contents.html). A page with a `url` links to its page on this site; `page` is the
+# page of the booklet it is on, which turns the flipbook to it.
 [[inside]]
   key = "edu"
   title = "Education & Pedagogy"
   pages = [
-    { title = "Curated resources", url = "resources/" },
-    { title = "Glossary", url = "glossary/" },
-    { title = "Lesson plans", url = "lesson-plans/" },
-    { title = "Open Research Games Portal", url = "open-research-games-portal/" },
-    { title = "JUST-OS", url = "just_os_chatbot/" },
+    { title = "Curated resources", page = 4, url = "resources/" },
+    { title = "Glossary", page = 4, url = "glossary/" },
+    { title = "Lesson plans", page = 5, url = "lesson-plans/" },
+    { title = "Open Research Games Portal", page = 5, url = "open-research-games-portal/" },
+    { title = "JUST-OS", page = 6, url = "just_os_chatbot/" },
   ]
 [[inside]]
   key = "res"
-  title = "Metascience & Research"
+  title = "Meta-Science & Research"
   pages = [
-    { title = "Replications: FReD and the Annotator", url = "replication-hub/" },
-    { title = "Handbook for reproduction and replication studies", url = "https://forrt.org/replication-handbook/" },
-    { title = "Impact of open science on students", url = "impact/" },
-    { title = "Replication Research (R2) journal", url = "https://replicationresearch.org" },
+    { title = "Replications: FReD and the Annotator", page = 7, url = "replication-hub/" },
+    { title = "Handbook for reproduction and replication studies", page = 8, url = "https://forrt.org/replication-handbook/" },
+    { title = "Impact of open science on students", page = 9, url = "impact/" },
+    { title = "Replication Research (R2) journal", page = 9, url = "https://replicationresearch.org" },
   ]
 [[inside]]
   key = "jus"
   title = "Social Justice & DEIA in Academia"
   pages = [
-    { title = "Academic Wheel of Privilege", url = "awop/" },
-    { title = "Citation politics", url = "citation-politics/" },
-    { title = "Team Neurodiversity", url = "neurodiversity/" },
+    { title = "Academic Wheel of Privilege", page = 10, url = "awop/" },
+    { title = "Citation politics", page = 11, url = "citation-politics/" },
+    { title = "Team Neurodiversity", page = 12, url = "neurodiversity/" },
   ]
 [[inside]]
   key = "com"
   title = "Community & Sustainability"
   pages = [
-    { title = "Credit and contributorship", url = "contributors/" },
-    { title = "Process for projects" },
-    { title = "[FAIR](/glossary/english/fair_principles/) and CARE" },
-    { title = "FORRT community and community map", url = "community-map/" },
+    { title = "Credit and contributorship", page = 13, url = "contributors/" },
+    { title = "Process for projects", page = 13 },
+    { title = "[FAIR](/glossary/english/fair_principles/) and CARE", page = 14 },
+    { title = "FORRT community and community map", page = 15, url = "community-map/" },
   ]
 +++
 
+<!-- The introduction, the flipbook across the column and then the booklet's contents, whose page numbers turn it
+     (assets/css/doors/sections.css, "The booklet"). -->
+
 A 20-page introduction to FORRT: what it is, projects from each of its four areas, and its vision for FORRT's future.
 
-{{< dearflip id="forrt-booklet" pdf="/files/FORRT_Booklet(A5).pdf" >}}
+{{< dearflip id="forrt-booklet" pdf="/files/FORRT_Booklet(A5).pdf" contents="#inside-the-booklet" contents_label="Inside the booklet" >}}
 
 ## Inside the booklet
 
-{{< booklet_contents >}}
+{{< booklet_contents book="forrt-booklet" pdf="/files/FORRT_Booklet(A5).pdf" >}}
 
 ## Where next
 

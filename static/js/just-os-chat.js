@@ -20,7 +20,6 @@
   // Inline SVGs (stroke = currentColor, so they inherit the button's colour).
   const SVG_ATTRS = 'fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"';
   const COPY_ICON = '<svg viewBox="0 0 24 24" ' + SVG_ATTRS + '><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';
-  const CHECK_ICON = '<svg viewBox="0 0 24 24" ' + SVG_ATTRS + '><polyline points="20 6 9 17 4 12"/></svg>';
   const INFO_ICON = '<svg viewBox="0 0 24 24" ' + SVG_ATTRS + '><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>';
 
   const state = {
@@ -556,24 +555,9 @@
     if (refs && refs.length) {
       text += '\n\nReferences:\n' + formatReferencesText(refs);
     }
-    navigator.clipboard.writeText(text).then(function () {
-      const orig = btn.innerHTML;
-      btn.innerHTML = CHECK_ICON;
-      setTimeout(function () { btn.innerHTML = orig; }, 1500);
-    }).catch(function () {
-      // Fallback
-      const ta = document.createElement('textarea');
-      ta.value = text;
-      ta.style.position = 'fixed';
-      ta.style.opacity = '0';
-      document.body.appendChild(ta);
-      ta.select();
-      document.execCommand('copy');
-      document.body.removeChild(ta);
-      const orig = btn.innerHTML;
-      btn.innerHTML = CHECK_ICON;
-      setTimeout(function () { btn.innerHTML = orig; }, 1500);
-    });
+    // The site's copy feedback (assets/js/doors/references.js): a check in the icon's place, only once copied.
+    if (window.forrtCopy) { window.forrtCopy(btn, text, { said: 'Response copied.' }); return; }
+    navigator.clipboard.writeText(text).catch(function () {});
   }
 
   /* -------------------------------------------------- */
@@ -1078,9 +1062,11 @@
       win.style.width = '';
       win.style.height = '';
       updateFloatIcon(win);
+      document.dispatchEvent(new CustomEvent('just-os:toggle', { detail: { open: false } }));
     } else {
       win.style.display = 'flex';
       bubble.classList.remove('bubble-visible');
+      document.dispatchEvent(new CustomEvent('just-os:toggle', { detail: { open: true } }));
       var input = getInputEl(win);
       if (input) setTimeout(function () { input.focus(); }, 100);
     }
@@ -1103,7 +1089,12 @@
         const launcher = document.getElementById('just-os-btn');
         if (launcher) {
           launcher.setAttribute('aria-expanded', 'false');
-          launcher.focus();
+          if (!document.activeElement || document.activeElement === document.body) {
+            if (!launcher.closest('#just-os-widget.is-covered, #just-os-widget.is-dismissed')
+                && launcher.getClientRects().length > 0 && getComputedStyle(launcher).visibility !== 'hidden') {
+              launcher.focus({ preventScroll: true });
+            }
+          }
         }
       }
       return;

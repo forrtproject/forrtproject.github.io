@@ -44,16 +44,6 @@ ul.list-items>li[hidden]{display:none}
 .ac-chip:hover{border-color:var(--ink)}
 .ac-chip.active{background:var(--ink);border-color:var(--ink);color:#fff}
 /* The news cards (.announcement-card) are in article.css: articles end with them too. */
-.tags-note{max-width:40em;font-size:17px}
-.tags-note a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
-.tag-cloud{display:flex;flex-wrap:wrap;gap:6px;margin:18px 0 0}
-.tag-cloud a{padding:3px 10px;background:var(--surface);border-radius:var(--r-small);font-size:15px;font-weight:600;line-height:1.35;color:var(--ink)}
-.tag-cloud a:hover{background:var(--ink);color:#fff}
-.tag-count{margin-inline-start:4px;font-weight:400}
-#tag-results{margin:18px 0;max-width:40em}
-#tag-results h2{font-size:26px}
-.tag-results-switch{margin:-4px 0 12px}
-#tag-results p a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
 .nla-page{padding:32px 0 40px}
 /* The latest issue as a large brick beside the sign-up, then earlier issues as a wall of month bricks, one row of
    bricks per year, each year in one of the four brick colours (DESIGN.md §6: variety, no meaning). */
@@ -97,12 +87,6 @@ ul.list-items>li[hidden]{display:none}
   .article-layout .list-item h2{font-size:21px}
 }
 .list-item .btn-links{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
-.tag-more{flex-basis:100%;margin-top:10px}
-.tag-more>summary{font-weight:700;color:var(--link);cursor:pointer}
-.tag-more .tag-cloud{margin-top:10px}
-.tag-section{display:block;font-size:15px;color:var(--soft)}
-#tag-results li{padding:8px 0;font-size:18px}
-.tag-show-more{margin:14px 0}
 /* Thumbnails are often logos or figures, so they are shown whole on a white panel, not cropped. On phones the
    thumbnail sits above the entry and the text takes the full width. */
 .list-item-image img{object-fit:contain;background:#fff;border:1px solid var(--line);padding:4px}
@@ -110,140 +94,192 @@ ul.list-items>li[hidden]{display:none}
   .list-item-image{display:flex;flex-direction:column-reverse;align-items:flex-start;gap:12px}
   .list-item-image img{width:120px;height:72px}
 }
-/* /forrt_clusters/<term>/: one toolbar across the list, the search (label above, count beside the box) on
-   the left and the routes to the directory and the clusters on the right; on a phone they stack. */
-.article-layout .article-style .list-filter.topic-tools{display:flex;flex-wrap:wrap;align-items:flex-end;gap:12px 40px;max-width:1080px;margin:4px 0 20px;padding:18px 20px}
-.topic-tools .list-filter-search{flex:0 1 520px;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;column-gap:16px}
-.topic-tools .list-filter-search label{grid-column:1/-1}
-.topic-tools .list-filter-search input{grid-column:1;grid-row:2}
-.article-layout .article-style .topic-tools .list-filter-count{grid-column:2;grid-row:2;margin:0;white-space:nowrap}
-.topic-tools__links{flex:1 1 260px;margin:0;padding:0 0 10px;font-size:16px;line-height:1.45;color:var(--soft)}
-.topic-tools__links a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
-@media(max-width:760px){.topic-tools .list-filter-search{grid-template-columns:minmax(0,1fr);min-width:0}.article-layout .article-style .topic-tools .list-filter-count{grid-column:1;grid-row:3;margin:8px 0 0;white-space:normal}.topic-tools__links{padding:0}}
-/* /forrt_clusters/<term>/: one column of underlined titles, each with its type as plain text. */
-.article-style .cluster-resources{display:block;margin:10px 0 0;padding:0;list-style:none;max-width:none}
-.article-style ul.cluster-resources>li{margin:0;padding:7px 0;border:0;font-size:17px;line-height:1.4}
-.cluster-resources a{color:var(--link);font-weight:600;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
-.cluster-resources a:hover{color:var(--ink)}
-.cluster-resources__type{color:var(--soft);font-size:16px}
-/* Wide screens: two titles a row, read left to right, so A to Z runs down the page together rather than one column
-   ending at K and the next starting at M; one wide column would make lines too long to read. */
-@media(min-width:1001px){.article-style.cluster-resources-list{max-width:none}.article-style ul.cluster-resources{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:48px;max-width:1080px}}
+/* Tags (layouts/tags/list.html, static/js/tag-browser.js). Find a tag, the most used as bricks, then every common
+   tag A to Z as one index that runs down three columns on a wide screen, like the index of a book, so no letter
+   leaves a column empty. A row of letters to jump by stays at the top of the screen while the index scrolls. */
+.tags-note{max-width:40em;font-size:17px}
+.tags-note a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
 .tag-find{max-width:520px;margin:20px 0 6px}
 .tag-find label{display:block;margin:0 0 6px;font:600 17px/1.3 var(--text)}
 .tag-find input{width:100%;box-sizing:border-box;padding:10px 16px;border:1.5px solid var(--ink);border-radius:999px;background:#fff;font:400 17px/1.3 var(--text);color:var(--ink)}
-.tag-filter-count{margin:8px 0 0;font-size:16px;color:var(--soft)}
-.tag-cloud a[hidden]{display:none}
-/* Tags: the most used as larger pills, then A to Z in columns. */
+/* The count of matches is read out as you type; the heading over the list shows it. */
+.tag-filter-count{position:absolute;width:1px;height:1px;margin:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 .tag-top h2,.tag-all h2{margin:28px 0 10px;font-size:24px}
-.tag-top .tag-cloud a{padding:6px 14px;font-size:17px}
-.tag-group h3{margin:20px 0 6px;font-size:22px;color:var(--edu)}
-.tag-group ul{columns:4 220px;column-gap:28px;margin:0;padding:0;list-style:none}
-.tag-group li{break-inside:avoid;margin:0;padding:3px 0}
-.tag-group a{color:var(--link);font-size:16px;text-decoration:none}
-.tag-group a:hover{text-decoration:underline;text-underline-offset:3px}
-.tag-group .tag-count{color:var(--soft);font-size:15px}
-.tag-group[hidden],.tag-group li[hidden]{display:none}
-.tag-group.is-short li:not(.is-top){display:none}
-.tag-all.is-searching .tag-group.is-short li:not([hidden]){display:list-item}
-.tag-all.is-searching .tag-group-more{display:none}
-.tag-group-more{margin:6px 0 0;padding:6px 14px;border:1.5px solid var(--ink);border-radius:999px;background:#fff;color:var(--ink);font:600 15px/1.3 var(--text);cursor:pointer}
-/* Tags carried by one page only are lighter, so the ones in common use stand out. */
-/* A tag's page count as a small badge beside it, not another word of the tag. */
-.tag-group .tag-count,.tag-top .tag-count{display:inline-block;margin-inline-start:4px;padding:0 7px;border-radius:999px;background:var(--surface);color:var(--soft);font-size:15px;line-height:1.5}
-.tag-top .tag-cloud a .tag-count{background:#fff}
-/* A to Z as rows: the tag on the left, its count aligned on the right, a light rule between rows. */
-.tag-group ul{columns:3 240px}
-@media(max-width:760px){.tag-group ul{columns:2 140px}}
-.tag-group li{padding:0;border-bottom:1px solid var(--surface)}
-.tag-group li a{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:5px 2px}
-.tag-group li .tag-count{flex:none}
-.tag-top .tag-cloud a{display:inline-flex;align-items:center}
-/* Tag names read as links at rest (DESIGN.md §5), and their count badges stay plain.
-   Letter headings stay neutral, as the tags span all four areas. */
-.tag-group .tag-name{min-width:0;overflow-wrap:anywhere;text-decoration:underline;text-underline-offset:3px}
-.tag-group h3{color:var(--ink)}
-/* Phones: 44 px targets. */
-@media(max-width:760px){
-  .tag-group{scroll-margin-top:16px}
-  .tag-group li a{min-height:44px;align-items:center;box-sizing:border-box}
-  .tag-top .tag-cloud a{min-height:44px;box-sizing:border-box}
-}
-/* One column on narrow phones, so long tag names and enlarged text keep to the screen. In em, so a larger default text size also gets it. */
-@media(max-width:30em){.tag-group ul{columns:1}}
-/* Phones: the tag view's links and buttons are 44 px targets too (DESIGN.md §9). */
-@media(max-width:760px){
-  #tag-results p a,#tag-results li>a{display:inline-flex;align-items:center;min-height:44px}
-  #tag-results li{padding:6px 0}
-  .tag-show-more,.tag-group-more{min-height:44px}
-}
-.tag-results-all{margin-top:14px}
-/* A list page's "About …" disclosure (content/educators-corner/_index.md): a 44 px target (DESIGN.md §9). */
-.list-about>summary{min-height:44px;padding:10px 0;box-sizing:border-box;cursor:pointer}
-/* Most used: twelve bricks (article.css .brick-row), smaller than a page's action cards, so two rows stay a band. */
-.brick-row.tag-top .action-cards{grid-template-columns:repeat(auto-fill,minmax(min(100%,190px),1fr));gap:14px 5px;margin:22px 0 12px}
-.brick-row.tag-top .action-cards a{min-height:0;padding:10px 14px 14px;box-shadow:inset 0 -4px 0 rgb(0 0 0/.24)}
+/* Most used: twelve bricks (article.css .brick-row), smaller than a page's action cards, so two rows stay a band.
+   Every brick the same height, so a brick's size never reads as how much a tag is used; the count says that. */
+.brick-row.tag-top .action-cards{grid-template-columns:repeat(auto-fill,minmax(min(100%,190px),1fr));grid-auto-rows:1fr;gap:14px 5px;margin:22px 0 12px}
+.brick-row.tag-top .action-cards>li{display:flex}
+.brick-row.tag-top .action-cards>li>a{flex:1;min-width:0;min-height:0;padding:10px 14px 14px;box-shadow:inset 0 -4px 0 rgb(0 0 0/.24)}
 .brick-row.tag-top .action-cards strong{font-size:19px;line-height:1.15;overflow-wrap:anywhere}
 .brick-row.tag-top .action-cards span{font-size:15px}
-/* Every brick the same height, so a brick's size never reads as how much a tag is used; the count says that.
-   On phones one brick a row, so a long name takes two lines rather than four. */
-.brick-row.tag-top .action-cards{grid-auto-rows:1fr}
-.brick-row.tag-top .action-cards>li{display:flex}
-.brick-row.tag-top .action-cards>li>a{flex:1;min-width:0}
+/* Phones: two to a row and smaller, so all twelve fit in about half a screen and the index starts on the second. */
 @media(max-width:760px){
-  .brick-row.tag-top.tag-top .action-cards{grid-template-columns:minmax(0,1fr);grid-auto-rows:auto;gap:10px}
-  .brick-row.tag-top.tag-top .action-cards>li>a{flex-direction:row;flex-wrap:nowrap;justify-content:space-between;align-items:baseline;gap:12px}
-  .brick-row.tag-top.tag-top .action-cards strong{flex:1 1 auto;min-width:0;margin:0}
-  .brick-row.tag-top.tag-top .action-cards span{flex:none;margin:0}
+  .tags-page .brick-row.tag-top .action-cards{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:auto;gap:12px 5px;margin:18px 0 8px}
+  .tags-page .brick-row.tag-top.tag-top .action-cards>li>a{min-height:0;align-items:stretch;gap:2px;padding:7px 10px 10px}
+  .brick-row.tag-top .action-cards strong{font-size:16px;line-height:1.2}
 }
-@media(max-width:760px){.brick-row.tag-top .action-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.brick-row.tag-top .action-cards a{padding:8px 10px 10px}.brick-row.tag-top .action-cards strong{font-size:17px}}
-/* /forrt_clusters/<term>/ (doors/topic_resources.html): one A to Z list of titles, with a search and the material
-   types as filters with their counts, so a list of several hundred has ways to narrow it (DESIGN.md §4). No letter
-   headings or row of letters. */
-.topic-types{max-width:1080px;margin:0 0 18px}
-.topic-types[hidden]{display:none}
-.topic-types fieldset{margin:0;padding:0;border:0;min-width:0}
-.topic-types legend{float:left;margin:0 14px 0 0;padding:10px 0;font-weight:700}
-.topic-types__chips{position:relative;display:flex;flex-wrap:wrap;gap:6px}
-.topic-types .ac-chip{display:inline-flex;align-items:center;gap:7px}
-.topic-types .ac-chip[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:#fff}
-.topic-types .chip-count{color:var(--soft);font-size:15px;font-weight:600}
-.topic-types .ac-chip[aria-pressed=true] .chip-count{color:inherit}
-.topic-types .list-filter-reset{display:inline-flex;align-items:center;min-height:44px;margin-top:6px}
-.topic-types .list-filter-reset[hidden]{display:none}
-@media(max-width:760px){.topic-types__chips{flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px;margin-inline-end:-16px;padding-inline-end:16px;-webkit-mask-image:linear-gradient(90deg,#000 85%,transparent);mask-image:linear-gradient(90deg,#000 85%,transparent)}.topic-types .ac-chip{flex:none}.topic-types legend{float:none;padding:0 0 8px}}
-.topic-head{display:grid;min-width:0;grid-template-columns:minmax(0,1fr) 230px;gap:32px;align-items:end;max-width:1240px;margin-bottom:8px}
-.article-layout .article-style .topic-head__tools>.list-filter.topic-tools{margin-top:0}
-.topic-plate{margin:0;background:var(--edu-bg);border-radius:999px 999px 0 0;padding:28px 18px 8px}
-.topic-plate img{display:block;width:100%;height:auto;max-height:160px;object-fit:contain}
-@media(max-width:1000px){.topic-head{grid-template-columns:minmax(0,1fr)}.topic-plate{display:none}}
-.article-style.cluster-resources-list ul.cluster-resources{margin:10px 0 0;padding:0}
-/* The illustration in the head of /forrt_clusters/ pages (_default/list.html): beside the title on the index; on a
-   term page only below 1001 px, small, as on /resources/ (DESIGN.md §9: same information on a phone). */
-.topic-heading{display:grid;grid-template-columns:minmax(0,1fr) 230px;column-gap:32px;align-items:end}
-.topic-heading>*{grid-column:1}
-.topic-heading>.topic-plate-head{grid-column:2;grid-row:1/span 3;align-self:end;margin:0;background:var(--edu-bg);border-radius:999px 999px 0 0;padding:28px 18px 8px}
-.topic-plate-head img{display:block;width:100%;height:auto;max-height:160px;object-fit:contain}
-.topic-heading--term{grid-template-columns:minmax(0,1fr)}
-.topic-heading--term>.topic-plate-head{display:none}
+/* The letters: plain 44 px squares, as on Contributors and the glossary. The letter of the part of the index on
+   screen is filled in ink (tag-browser.js), so the row also says where in the alphabet the reader is. */
+.tag-az{position:sticky;top:0;z-index:5;display:flex;flex-wrap:wrap;gap:6px 4px;margin:14px 0 4px;padding:10px 0 12px;background:var(--page);box-shadow:0 1px 0 var(--line),0 8px 8px -8px rgb(38 45 53/.18)}
+.tag-az a{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;border-radius:var(--r-small);background:var(--surface);color:var(--ink);font:600 17px/1 var(--text);text-decoration:none}
+.tag-az a:hover{background:var(--foot);text-decoration:underline;text-underline-offset:3px}
+.tag-az a.is-current{background:var(--ink);color:#fff}
+.tag-az[hidden]{display:none}
+.tag-az a:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.tag-az a[hidden]{display:none}
+html:has(.tag-az){scroll-padding-top:84px}
+@media(max-width:760px){
+  /* One line that scrolls sideways, fading at its right edge until scrolled to the end (DESIGN.md §9). */
+  .tag-az{flex-wrap:nowrap;gap:4px;margin:14px -20px 4px;padding:10px 20px 8px;overflow-x:auto;scrollbar-width:none}
+  .tag-az a{flex:none}
+  .tag-az::after{content:"›";position:sticky;right:-20px;flex:none;display:flex;align-items:center;justify-content:flex-end;width:56px;margin:-10px -20px -8px -56px;padding:0 10px 2px 0;background:linear-gradient(90deg,rgb(254 253 246/0),var(--page) 55%);color:var(--ink);font:600 30px/1 var(--text);pointer-events:none}
+  .tag-az.is-at-end::after{visibility:hidden}
+  html:has(.tag-az){scroll-padding-top:76px}
+}
+/* The index: letters as large headings over a rule, then rows with the tag on the left and its count on the right. */
+.tag-index{columns:3 260px;column-gap:40px}
+/* A letter is never split between columns, so every column starts with a letter. */
+.tag-group{break-inside:avoid}
+.tag-group h3{margin:0;padding:22px 0 4px;font:500 36px/1 var(--display);color:var(--ink);border-bottom:2px solid var(--ink);break-after:avoid}
+.tag-group ul{margin:0 0 6px;padding:0;list-style:none}
+.tag-group li{margin:0;padding:0;border-bottom:1px solid var(--surface);break-inside:avoid}
+.tag-group li a{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:5px 2px;color:var(--link);font-size:16px;text-decoration:none}
+.tag-group .tag-name{min-width:0;overflow-wrap:anywhere;text-decoration:underline;text-underline-offset:3px}
+.tag-group a:hover .tag-name{text-decoration-thickness:2px}
+/* A tag's page count, with a bar to its left whose length (set in the template, on a log scale) shows the same
+   count, so the large topics stand out down a column. The numbers line up on the right. */
+.tag-group .tag-count{--w:calc(4px + var(--r,0) * 116px);flex:none;display:inline-flex;align-items:center;justify-content:flex-end;gap:8px;min-width:calc(var(--w) + 8px + 3ch);color:var(--soft);font-size:15px;line-height:1.5;font-variant-numeric:tabular-nums}
+.tag-group .tag-count::before{content:"";width:var(--w);height:7px;border-radius:2px;background:var(--brick3)}
+@media(max-width:760px){.tag-group .tag-count{--w:calc(4px + var(--r,0) * 72px)}}
+/* A search with fewer than twenty matches: one list, most used first (tag-browser.js), without letters. */
+.tag-all.is-flat .tag-index{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));column-gap:40px;align-content:start;columns:auto}
+.tag-all.is-flat .tag-group:not([hidden]),.tag-all.is-flat .tag-group ul{display:contents}
+.tag-all.is-flat .tag-group h3{display:none}
+.tag-group[hidden],.tag-group li[hidden]{display:none}
+@media(max-width:760px){
+  .tag-group li a{min-height:44px;align-items:center;box-sizing:border-box}
+}
+/* One column on narrow phones, so long tag names and enlarged text keep to the screen. In em, so a larger default text size also gets it. */
+@media(max-width:30em){.tag-index{columns:1}}
+/* A selected tag: the pages that carry it as rows like the resources directory's, a search over their titles and the
+   types to narrow them by, and beside them on a wide screen the tags that most often share their pages, staying in
+   view while the list scrolls. A tag on more than thirty pages has them grouped under type headings. On a phone the
+   shared tags follow the list, folded under one line, so the list follows the filters. The tag itself is the title,
+   on a brick in the colour its brick has on /tags/ (the bricks of action_cards, article.css). */
+.tag-head-brick{position:relative;display:inline-flex;flex-direction:column;gap:2px;max-width:100%;box-sizing:border-box;margin:14px 0 18px;padding:16px 26px 24px;background:var(--brick);border-radius:3px;box-shadow:inset 0 -6px 0 rgb(0 0 0/.24);color:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.tag-head-brick::before{content:"";position:absolute;left:14px;right:14px;top:-8px;height:8px;background:linear-gradient(90deg,transparent 6px,var(--brick) 6px 28px,transparent 28px) left top/34px 8px space no-repeat;border-radius:3px 3px 0 0}
+.tags-page .tag-head-brick h1{margin:0;color:#fff;overflow-wrap:anywhere}
+.tag-head-brick p{margin:0;font:400 18px/1.4 var(--text);color:#fff}
+#tag-results{margin:0 0 18px}
+#tag-results .article-head{margin-bottom:6px}
+.tag-results-head,.tag-results-body{max-width:660px}
+.tags-page .standfirst.tag-lead{margin-top:0}
+@media(min-width:1001px){
+  #tag-results.has-related:not([hidden]){display:grid;grid-template-columns:minmax(0,660px) minmax(280px,360px);grid-template-areas:"head related" "body related";column-gap:72px;justify-content:space-between;align-items:start}
+  .tag-results-head{grid-area:head}
+  .tag-results-body{grid-area:body}
+  .tag-related{grid-area:related;position:sticky;top:20px}
+  .tag-related-phone{display:none}
+}
+#tag-results h2{font-size:26px}
+#tag-results p a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
+.tag-results-all{margin-top:18px}
+.tag-lead a{font:400 17px/1.4 var(--text);color:var(--link);text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+.tags-page .standfirst[hidden]{display:none}
+/* The search over a long tag's titles, in the resources directory's style. */
+.tag-search{margin:4px 0 14px}
+.tag-search[hidden]{display:none}
+.tag-search label{display:block;margin:0 0 6px;font:600 17px/1.3 var(--text)}
+.tag-search input{width:100%;max-width:30em;box-sizing:border-box;padding:11px 14px;border:1.5px solid var(--soft);border-radius:var(--r-small);background:#fff;font:400 17px/1.3 var(--text);color:var(--ink)}
+.tag-search input::placeholder{color:var(--soft);opacity:1}
+.tag-search-count{margin:6px 0 0;font-size:15px;color:var(--soft)}
+.tag-search-count:empty{display:none}
+.tag-types{display:flex;flex-wrap:wrap;gap:7px;margin:4px 0 14px}
+.tag-types[hidden]{display:none}
+.tag-type{position:relative;display:inline-flex;align-items:baseline;gap:7px;padding:7px 12px;border:1.5px solid var(--line);border-radius:999px;background:#fff;color:var(--ink);font:400 15px/1.3 var(--text);cursor:pointer}
+.tag-type span{color:var(--soft);font-weight:600}
+.tag-type:hover{border-color:var(--ink)}
+.tag-type[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:#fff}
+.tag-type[aria-pressed=true] span{color:inherit}
+.tag-type[hidden]{display:none}
+/* A type's heading over its pages, with how many are shown. */
+.tag-group-results[hidden]{display:none}
+#tag-results .tag-group-results>:is(h2,h3){margin:30px 0 0;padding:0 0 8px;font:var(--display-weight) 28px/1.2 var(--display);border-bottom:2px solid var(--ink)}
+#tag-results .tag-group-results>:is(h2,h3)[hidden]{display:none}
+#tag-results-list>.tag-group-results:first-child>h2{margin-top:22px}
+/* Materials to teach with, first, on education's pale ground (tag-browser.js). */
+.tag-teach{margin:22px -24px 10px;padding:20px 24px 12px;background:var(--edu-bg);border-radius:var(--r-large)}
+.tag-teach[hidden]{display:none}
+#tag-results .tag-teach>h2{margin:0;font-size:32px;color:var(--edu)}
+#tag-results .tag-teach .tag-group-results>h3{margin-top:22px;font-size:24px}
+#tag-results-list .tag-teach .res{border-bottom-color:rgb(45 87 80/.22)}
+#tag-results-list .tag-teach .tag-group-results:last-child .res:last-of-type{border-bottom:0}
+.tag-group-count{margin-left:4px;font:600 17px/1 var(--text);color:var(--soft);vertical-align:3px}
+/* The rows: the resources directory's (resources.css), which this page does not load. The whole row answers to its title. */
+#tag-results-list .res{position:relative;display:flex;flex-direction:column;gap:4px;padding:14px 0;border-bottom:1px solid var(--line);min-width:0}
+#tag-results-list .res[hidden]{display:none}
+#tag-results-list .tag-group-results:not(:has(>:is(h2,h3))),#tag-results-list.is-one-list .tag-group-results:first-child{border-top:1px solid var(--line)}
+#tag-results-list .res-format[hidden]{display:none}
+#tag-results-list .res:hover .res-title a{text-decoration-thickness:2px}
+#tag-results-list .res:has(.res-title a:focus-visible){outline:2px solid var(--link);outline-offset:2px}
+#tag-results-list .res-title{margin:0;font:var(--display-weight,500) 20px/1.25 var(--display);overflow-wrap:anywhere}
+#tag-results-list .res-title a{color:var(--link);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+#tag-results-list .res-title a::after{content:"";position:absolute;inset:0}
+#tag-results-list .res-format{margin:0;font-size:15px;line-height:1.45}
+#tag-results-list .res-type{color:var(--soft)}
+#tag-results-list .res-desc{max-width:31em;margin:2px 0;font-size:16px;line-height:1.45;color:var(--ink);display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;line-clamp:3;overflow:hidden}
+#tag-results-list .res-tag{display:flex;flex-wrap:wrap;gap:2px 16px;margin:0;font-size:15px;line-height:1.4;color:var(--soft)}
+#tag-results-list .res-cl{display:inline-flex;align-items:baseline}
+#tag-results-list .res-cl[data-cl]::before{content:"";flex:none;display:inline-block;width:10px;height:10px;margin-inline-end:6px;border-radius:2px;background:var(--c,var(--soft));transform:translateY(-1px);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.tag-show-more{margin:14px 0 0}
+.tag-show-more[hidden]{display:none}
+.tag-related{padding:18px 20px 12px;background:var(--surface);border-radius:var(--r-small)}
+.tag-related[hidden],.tag-related-phone[hidden]{display:none}
+#tag-results .tag-related h2{margin:0 0 8px;font-size:22px}
+.tag-related ul,.tag-related-phone ul{margin:0;padding:0;list-style:none}
+.tag-related li{border-bottom:1px solid var(--line)}
+.tag-related li:last-child{border-bottom:0}
+.tag-related a,.tag-related-phone a{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:7px 0;color:var(--link);font-size:16px}
+.tag-related .tag-name,.tag-related-phone .tag-name{text-decoration:underline;text-underline-offset:3px}
+.tag-related .tag-shared,.tag-related-phone .tag-shared{flex:none;color:var(--soft);font-size:15px;font-variant-numeric:tabular-nums}
+.tag-related-key{margin:0;color:var(--soft);font-size:15px;text-align:right}
+/* Below 1001 px: the shared tags folded under one line that names the first two. */
 @media(max-width:1000px){
-  .topic-heading,.topic-heading--term{grid-template-columns:minmax(0,1fr) 92px;column-gap:14px}
-  .topic-heading>.crumbs,.topic-heading>.standfirst{grid-column:1/-1}
-  .topic-heading>.topic-plate-head,.topic-heading--term>.topic-plate-head{display:block;grid-row:2;align-self:end;padding:14px 8px 4px}
-  .topic-plate-head img{max-height:80px}
+  .tag-related{display:none}
+  .tag-related-phone{margin:22px 0 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .tag-related-phone>summary{display:block;min-height:44px;box-sizing:border-box;padding:10px 28px 10px 0;position:relative;cursor:pointer;list-style:none}
+  .tag-related-phone>summary::-webkit-details-marker{display:none}
+  .tag-related-phone>summary::after{content:"";position:absolute;right:6px;top:18px;width:8px;height:8px;border-inline-end:2px solid var(--ink);border-bottom:2px solid var(--ink);transform:rotate(45deg)}
+  .tag-related-phone[open]>summary::after{top:22px;transform:rotate(-135deg)}
+  .tag-related-label{font-weight:600}
+  .tag-related-some{display:block;color:var(--soft);font-size:16px}
+  .tag-related-phone ul{padding:0 0 8px}
+  .tag-related-phone li{border-bottom:1px solid var(--surface)}
+  .tag-related-phone li:last-child{border-bottom:0}
 }
-.brick-row.topic-index .action-cards{grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr));gap:16px 5px;margin:28px 0 18px}
-.brick-row.topic-index .action-cards strong{font-size:22px;line-height:1.15}
-@media(max-width:760px){.brick-row.topic-index .action-cards{grid-template-columns:minmax(0,1fr)}}
-.topic-index__links{font-size:18px;max-width:32em}
-.article-layout-wide .topic-heading>.standfirst{max-width:30em}
-.topic-index__links a{text-decoration:underline;text-underline-offset:3px}
-/* Bricks of one height, so a brick's size never seems to mean anything: on the earlier clusters index every row as tall
-   as the tallest; on a phone's tag rows room for a two-line name, the name centred. */
-.brick-row.topic-index .action-cards{grid-auto-rows:1fr}
-.brick-row.topic-index .action-cards>li{display:flex}
-.brick-row.topic-index .action-cards>li>a{flex:1;min-width:0}
-.brick-row.topic-index .action-cards strong{overflow-wrap:anywhere}
+/* Phones: links and buttons are 44 px targets (DESIGN.md §9). */
+@media(max-width:760px){
+  #tag-results p a{display:inline-flex;align-items:center;min-height:44px}
+  #tag-results .tag-lead a{display:inline;min-height:0}
+  .tag-teach{margin:18px -20px 8px;padding:18px 20px 8px;border-radius:0}
+  .tag-head-brick{margin:12px 0 14px;padding:12px 18px 20px}
+  .tag-head-brick p{font-size:17px}
+  #tag-results-list .res{padding:12px 0}
+  #tag-results-list .res-title{font-size:19px}
+  #tag-results .tag-group-results>:is(h2,h3){font-size:25px}
+  #tag-results .tag-teach>h2{font-size:28px}
+  /* The type filters: one row that scrolls sideways, fading at its right edge until scrolled to the end (§9). */
+  .tag-types{flex-wrap:nowrap;margin:4px -20px 12px;padding:2px 20px;overflow-x:auto;scrollbar-width:none}
+  .tag-type{flex:none}
+  .tag-types::after{content:"›";position:sticky;right:-20px;flex:none;display:flex;align-items:center;justify-content:flex-end;width:56px;margin:-2px -20px -2px -56px;padding:0 10px 2px 0;background:linear-gradient(90deg,rgb(254 253 246/0),var(--page) 55%);color:var(--ink);font:600 30px/1 var(--text);pointer-events:none}
+  .tag-types.is-at-end::after{visibility:hidden}
+  .tag-show-more,.tag-type{min-height:44px}
+  .tag-type{align-items:center}
+  .tag-related-phone a{min-height:44px;align-items:center;box-sizing:border-box}
+}
+/* A list page's "About …" disclosure (content/educators-corner/_index.md): a 44 px target (DESIGN.md §9). */
+.list-about>summary{min-height:44px;padding:10px 0;box-sizing:border-box;cursor:pointer}
+/* A phone's tag rows have room for a two-line name, the name centred. */
 @media(max-width:760px){.brick-row.tag-top.tag-top .action-cards>li>a{min-height:62px;align-items:center}}
 /* Educators' Corner: the news cards (DESIGN.md §4, pictured items you open). The introduction and the search
    share a row on a wide screen; without JavaScript the search is hidden and the introduction takes the row. */
@@ -260,44 +296,27 @@ ul.list-items>li[hidden]{display:none}
 .ec-intro .list-filter-count{margin:8px 0 0;font-size:16px;color:var(--soft)}
 .ec-intro .list-filter-count:empty{margin:0}
 .ec-grid{grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:28px 24px}
-/* A logo, a figure or a tall picture shown whole on white, in the same frame as a photo. */
-.ec-thumb-whole{position:relative;aspect-ratio:16/9;background:var(--mat,#fff);border-bottom:1px solid var(--line)}
-.ec-thumb-whole[style]{border-bottom:0}
-/* A picture on white, or on a pale ground of its own, is multiplied onto its ground, so its white background takes
-   the card's tint (or its mat) and it does not sit as a box inside a box. */
-.ec-thumb-blend{border-bottom:0}
-.ec-thumb-blend:not([style]){background:transparent}
-.ec-thumb-blend img{mix-blend-mode:multiply}
-.ec-thumb-whole img{position:absolute;inset:14px 18px;width:calc(100% - 36px);height:calc(100% - 28px);aspect-ratio:auto;object-fit:contain}
 .ec-meta{margin:0 0 8px;font-size:15px;line-height:1.4;color:var(--soft)}
 .ec-meta>*+time::before{content:" · "}
 /* Author names link to their profiles, above the card's own link. */
 .ec-authors a{position:relative;z-index:1;color:inherit;text-decoration:underline;text-underline-offset:2px}
 .ec-authors a:hover{color:var(--ink)}
-/* News list: a post without a picture of its own is a brick (layouts/section/post.html): the card in its brick colour,
-   its category and date said once at the foot, the title and summary in white, a castle wall's merlons above it as on
-   the newsletter archive's latest issue. */
-.news-page .ac-brick{overflow:visible;background:var(--tone);border-radius:3px;box-shadow:inset 0 -6px 0 rgb(0 0 0/.24);color:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
-.news-page .ac-brick::before{content:"";position:absolute;left:14px;right:14px;top:-9px;height:9px;background:linear-gradient(90deg,transparent 6px,var(--tone) 6px 28px,transparent 28px) left top/34px 9px space no-repeat;border-radius:2px 2px 0 0}
-.news-page .ac-brick .ac-body{display:flex;flex-direction:column;flex:1;padding:22px 22px 24px}
-.news-page .ac-brick .ac-meta{order:3;margin:auto 0 0;padding-top:14px;color:#fff}
-.news-page .ac-brick .ac-cat{background:#fff;color:var(--ink)}
-.news-page .ac-brick h2{margin:0 0 10px;font-size:27px;line-height:1.15}
-.news-page .ac-brick .ac-link,.news-page .ac-brick:hover .ac-link{color:#fff}
-.news-page .ac-brick:hover .ac-link{text-decoration-thickness:3px}
-@supports selector(:has(*)){.news-page .ac-brick:has(.ac-link:focus-visible){outline-color:var(--ink)}}
+/* News list: a post without a picture of its own has a panel in a brick colour in the picture's place
+   (layouts/section/post.html), naming its category; a newsletter's names the issue, as its title. */
+.news-page .ac-panel{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.news-page .ac-panel>strong{font-size:32px}
+.news-page .ac-panel-title{margin:0;font-size:inherit;line-height:1.1}
+.news-page .ac-panel-title .ac-link,.news-page .announcement-card:hover .ac-panel-title .ac-link{display:flex;flex-direction:column;color:#fff;text-decoration:none}
+.news-page .ac-panel-title span{font:600 16px/1.3 var(--text)}
+.news-page .ac-panel-title strong{font:var(--display-weight) 34px/1.1 var(--display);text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:5px}
+.news-page .announcement-card:hover .ac-panel-title strong{text-decoration-thickness:3px}
+.news-page .ac-issue .ac-body{padding-top:16px}
+.news-page .ac-issue .ac-summary{-webkit-line-clamp:5;line-clamp:5}
 /* Summaries end at a whole word: a long word moves to the next line rather than breaking. */
 .news-page .ac-summary{overflow-wrap:break-word}
-/* On a wide screen a brick is as tall as the picture cards beside it, so its excerpt runs longer to fill it. */
-@media(min-width:761px){.news-page .ac-brick h2{font-size:29px}.news-page .ac-brick .ac-summary{-webkit-line-clamp:7;line-clamp:7}}
-/* Room between rows for the bricks' merlons. */
-.news-page .announcements-grid{row-gap:30px}
 @media(max-width:760px){
-  /* A brick on a phone is short: its title, two lines and its date, so a run of bricks is not a wall of colour. */
-  .news-page .ac-brick .ac-body{padding:16px 18px 18px}
-  .news-page .ac-brick h2{font-size:23px}
-  .news-page .ac-brick .ac-summary{-webkit-line-clamp:2;line-clamp:2}
-  .news-page .ac-brick .ac-meta{padding-top:10px}
+  /* On a phone a panel is a band, not a 16:9 picture, so a run of picture-less posts is not a wall of colour. */
+  .news-page .ac-panel{aspect-ratio:auto;min-height:96px;padding:14px 18px}
   /* A logo or figure shown whole needs less height than a photo, except the lead's. */
   .ec-thumb-whole{aspect-ratio:2/1}
   .news-page :is(.announcements-grid,.ec-list)>li:nth-child(1 of :not([hidden])) .ec-thumb-whole{aspect-ratio:4/3}
@@ -316,7 +335,7 @@ ul.list-items>li[hidden]{display:none}
    larger. When a filter or search hides it, the first post still shown leads instead. */
 @media(min-width:1001px){
   .news-page :is(.announcements-grid,.ec-list)>li:nth-child(1 of :not([hidden])){grid-column:1/-1}
-  .news-page :is(.announcements-grid,.ec-list)>li:nth-child(1 of :not([hidden]))>.announcement-card:not(.ac-brick){display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center}
+  .news-page :is(.announcements-grid,.ec-list)>li:nth-child(1 of :not([hidden]))>.announcement-card{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center}
   .news-page :is(.announcements-grid,.ec-list)>li:nth-child(1 of :not([hidden])) .ac-thumb{align-self:stretch}
   .news-page :is(.announcements-grid,.ec-list)>li:nth-child(1 of :not([hidden])) .ac-thumb:not(.ec-thumb-whole) img{height:100%;min-height:100%;object-fit:cover}
   .news-page :is(.announcements-grid,.ec-list)>li:nth-child(1 of :not([hidden])) .ec-thumb-whole{aspect-ratio:auto;min-height:340px;border-bottom:0;border-right:1px solid var(--line)}
@@ -324,8 +343,6 @@ ul.list-items>li[hidden]{display:none}
   .news-page :is(.announcements-grid,.ec-list)>li:nth-child(1 of :not([hidden])) h2{font-size:32px;line-height:1.12;margin-bottom:12px}
   .news-page :is(.announcements-grid,.ec-list)>li:nth-child(1 of :not([hidden])) .ac-summary{font-size:18px;-webkit-line-clamp:6;line-clamp:6;max-width:34em}
   .news-page :is(.announcements-grid,.ec-list)>li:nth-child(1 of :not([hidden])) .ec-meta{font-size:16px;margin-bottom:12px}
-  .news-page :is(.announcements-grid,.ec-list)>li:nth-child(1 of :not([hidden])) .ac-brick .ac-body{padding:30px 40px 36px}
-  .news-page :is(.announcements-grid,.ec-list)>li:nth-child(1 of :not([hidden])) .ac-brick h2{font-size:40px;max-width:24em}
 }
 /* Educators' Corner: the list shares its grid with the invitation to write (layouts/section/educators-corner.html). */
 .ec-list{display:contents;margin:0;padding:0;list-style:none}
@@ -342,3 +359,167 @@ ul.list-items>li[hidden]{display:none}
 .ec-write-link:focus-visible{outline:3px solid #fff;outline-offset:3px}
 /* The search box takes education's pale ground too. */
 .ec-intro .list-filter-posts{background:var(--edu-bg)}
+/* ==== Taxonomy pages (layouts/_default/terms.html, term.html): the earlier FORRT clusters (/forrt_clusters/),
+   the news categories (/categories/, /category/<term>/). Keep these rules together in this block. ==== */
+/* The illustration in the head of /forrt_clusters/, beside the title; on narrower screens small, below the crumbs. */
+.topic-heading{display:grid;grid-template-columns:minmax(0,1fr) 230px;column-gap:32px;align-items:end}
+.topic-heading>*{grid-column:1}
+.topic-heading>.topic-plate-head{grid-column:2;grid-row:1/span 4;align-self:end;margin:0;background:var(--edu-bg);border-radius:999px 999px 0 0;padding:28px 18px 8px}
+.topic-plate-head img{display:block;width:100%;height:auto;max-height:160px;object-fit:contain}
+.topic-heading--term{grid-template-columns:minmax(0,1fr)}
+@media(max-width:1000px){
+  .topic-heading{grid-template-columns:minmax(0,1fr) 92px;column-gap:14px}
+  .topic-heading--term{grid-template-columns:minmax(0,1fr)}
+  .topic-heading>.crumbs,.topic-heading>.standfirst,.topic-heading>.topic-index__actions{grid-column:1/-1}
+  .topic-heading>.topic-plate-head{grid-row:2;padding:14px 8px 4px}
+  .topic-plate-head img{max-height:80px}
+}
+.article-layout-wide .topic-heading>.standfirst{max-width:30em}
+/* The indexes: one brick per term with its count; on a phone two to a row, so seven take two screens less. */
+.brick-row.topic-index .action-cards{grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr));gap:16px 5px;margin:28px 0 18px}
+/* The news categories, five or so, in one row on a wide screen. */
+.brick-row.topic-index--row .action-cards{grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr))}
+.brick-row.topic-index .action-cards>li{display:flex}
+.brick-row.topic-index .action-cards>li>a{flex:1;min-width:0}
+.brick-row.topic-index .action-cards strong{font-size:22px;line-height:1.15;overflow-wrap:anywhere}
+@media(max-width:760px){.brick-row.topic-index .action-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.brick-row.topic-index .action-cards a{min-height:0;padding:12px 12px 16px}.brick-row.topic-index .action-cards strong{font-size:18px;line-height:1.2}.brick-row.topic-index .action-cards span{font-size:15px}}
+.topic-index__actions{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 0}
+/* An earlier cluster's brick names where most of its resources are now, each current cluster with its colour mark. */
+.brick-row.topic-index .action-cards .topic-index__now{display:block;padding-top:10px;font-size:15px;line-height:1.4}
+.brick-row.topic-index .action-cards .topic-index__cl{display:inline;font-size:inherit}
+.topic-index__cl .cl-mark{width:11px;height:11px;margin-inline:2px 6px;border-radius:2px;box-shadow:0 0 0 2.5px #fff}
+/* Wide screens: the second row of earlier clusters sits half a brick along, as brickwork. */
+@media(min-width:1001px){.brick-row.topic-index--wall .action-cards{grid-template-columns:repeat(8,minmax(0,1fr))}.brick-row.topic-index--wall .action-cards>li{grid-column:span 2}.brick-row.topic-index--wall .action-cards>li:nth-child(5){grid-column:2/span 2}}
+/* Phones: a last brick alone in its row takes the row. */
+@media(max-width:760px){.brick-row.topic-index .action-cards>li:last-child:nth-child(odd){grid-column:1/-1}}
+.topic-index__actions .btn{margin:0}
+.taxonomy-head .standfirst a{text-decoration:underline;text-underline-offset:3px}
+
+/* /forrt_clusters/<term>/ (doors/topic_resources.html). The head: a chart of where the resources are now, one row per
+   current cluster, its bar in the cluster's colour and laid in bricks; the directory's illustration beside it. */
+.article-style.cluster-resources-list{max-width:none}
+.topic-head{display:grid;min-width:0;grid-template-columns:minmax(0,1fr) 230px;gap:48px;align-items:end;max-width:1240px;margin:4px 0 26px}
+.topic-plate{margin:0;background:var(--edu-bg);border-radius:999px 999px 0 0;padding:28px 18px 8px}
+.topic-plate img{display:block;width:100%;height:auto;max-height:160px;object-fit:contain}
+.article-style .topic-now h2{margin:0 0 4px;font-size:26px;line-height:1.2}
+.article-style .topic-now__note{max-width:40em;margin:0 0 14px;font-size:16px;line-height:1.45;color:var(--soft)}
+.topic-now__note a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
+.article-style ol.topic-now__rows{margin:0;padding:0;list-style:none;max-width:none}
+.article-style ol.topic-now__rows>li{margin:0;padding:0;max-width:none}
+.article-layout .article-style .topic-now__rows a{display:grid;grid-template-columns:minmax(0,19rem) minmax(0,1fr);align-items:center;column-gap:16px;min-height:32px;padding:3px 0;color:var(--ink);text-decoration:none}
+.topic-now__name{font-size:16px;line-height:1.25;color:var(--link);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+.topic-now__rows a:hover .topic-now__name{color:var(--ink)}
+.topic-now__val{display:flex;align-items:center;gap:10px;min-width:0}
+.topic-now__bar{display:block;flex:none;width:calc(var(--w) * .82);min-width:10px;height:16px;border-radius:2px 4px 4px 2px;background:repeating-linear-gradient(90deg,transparent 0 20px,rgb(255 255 255/.55) 20px 22px),var(--c,var(--soft));-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.topic-now__rows a:hover .topic-now__bar{box-shadow:inset 0 -3px 0 rgb(0 0 0/.22)}
+.topic-now__count{font-size:16px;font-weight:600;font-variant-numeric:tabular-nums}
+/* The bars lay their bricks once, row after row, within about 1.7 s, when the chart comes into view (the script in
+   doors/topic_resources.html sets is-waiting, then is-laying). Without the script, or with reduced motion, they stand
+   finished (DESIGN.md §11). */
+.topic-now.is-waiting .topic-now__bar{clip-path:inset(0 100% 0 0)}
+.topic-now.is-laying .topic-now__bar{animation:topic-bar-lay .7s steps(9,end) calc(.15s + var(--i,0) * 70ms) both}
+@keyframes topic-bar-lay{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+/* The toolbar: the search with the way to the directory, then the material types, largest first, wrapping. */
+.article-layout .article-style .list-filter.topic-tools{display:flex;flex-wrap:wrap;align-items:flex-end;gap:12px 40px;max-width:1240px;margin:0 0 14px;padding:18px 20px}
+.topic-tools .list-filter-search{flex:0 1 560px;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;column-gap:16px}
+.topic-tools .list-filter-search label{grid-column:1/-1}
+.topic-tools .list-filter-search input{grid-column:1;grid-row:2}
+.article-layout .article-style .topic-tools .list-filter-count{grid-column:2;grid-row:2;margin:0;white-space:nowrap}
+.topic-tools__links{flex:1 1 260px;margin:0;padding:0 0 10px;font-size:16px;line-height:1.45;color:var(--soft)}
+.topic-tools__links a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
+.topic-types{max-width:1240px;margin:0 0 8px}
+.topic-types[hidden]{display:none}
+.topic-types fieldset{margin:0;padding:0;border:0;min-width:0}
+.topic-types legend{float:left;margin:0 14px 0 0;padding:10px 0;font-weight:700}
+.topic-types__chips{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.topic-types .ac-chip{display:inline-flex;align-items:center;gap:7px}
+.topic-types .ac-chip[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:#fff}
+.topic-types .chip-count{color:var(--soft);font-size:15px;font-weight:600}
+.topic-types .ac-chip[aria-pressed=true] .chip-count{color:inherit}
+.cluster-resources-list .text-button{background:none;border:0;padding:0;font:700 16px/1.4 var(--text);color:var(--link);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.topic-more{display:none}
+/* Wide screens: the chart in two columns, so the list starts in the first screen. */
+@media(min-width:1001px){.article-style ol.topic-now__rows{columns:2;column-gap:40px}.article-style ol.topic-now__rows>li{break-inside:avoid}.article-layout .article-style .topic-now__rows a{grid-template-columns:minmax(0,12.5rem) minmax(0,1fr);column-gap:12px}}
+.topic-types .list-filter-reset{display:inline-flex;align-items:center;min-height:44px;margin-top:6px}
+.topic-types .list-filter-reset[hidden]{display:none}
+.article-style .topic-types__note{max-width:none;margin:0;font-size:15px;color:var(--soft)}
+/* A long group shows its first eight titles until its button or a search shows the rest (doors/topic_resources.html). */
+.cluster-resources-list:not(.is-filtering) ul.is-collapsed>li:nth-child(n+9){display:none}
+.cluster-resources-list .topic-showall{display:inline-flex;align-items:center;min-height:44px;margin:4px 16px 0;text-align:left}
+/* Readings follow the typed materials, and A to Z starts again with them. */
+.article-style ul.cluster-resources>li.is-first-reading::before{content:"Readings";display:block;margin:4px 0 8px;font-size:15px;font-weight:600;color:var(--soft)}
+.article-style ul.cluster-resources>li.is-first-reading{break-before:auto}
+.cluster-resources-list .topic-showall[hidden],.cluster-resources-list.is-filtering .topic-showall{display:none}
+/* The groups: a heading on the cluster's pale ground with its door mark, leading to the cluster's page; then the
+   titles A to Z, flowing down two columns on a wide screen, each with its material type in a column of its own. */
+.article-style h2.topic-group{display:flex;align-items:center;gap:14px;max-width:1240px;margin:34px 0 8px;padding:10px 16px;background:var(--c-bg,var(--surface));border-radius:var(--r-small);font-size:24px;line-height:1.2}
+.article-style h2.topic-group[hidden]{display:none}
+.topic-group .article-card__door{position:static;flex:none;width:34px;height:40px;border-radius:17px 17px 3px 3px}
+.topic-group .article-card__door svg{width:17px;height:17px;margin-top:4px}
+.topic-group__text{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;min-width:0}
+.topic-group a{color:var(--link);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1.5px}
+.topic-group a:hover{color:var(--ink)}
+.topic-group__count{font:600 15px/1.3 var(--text);color:var(--soft)}
+.article-style ul.cluster-resources{margin:0;padding:0 16px;list-style:none;max-width:1240px}
+.article-style ul.cluster-resources>li{max-width:30em;display:block;margin:0;padding:7px 0;border-bottom:1px solid var(--line);font-size:17px;line-height:1.4;break-inside:avoid}
+.article-style ul.cluster-resources>li[hidden]{display:none}
+.cluster-resources a{color:var(--link);font-weight:400;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+.cluster-resources a:hover{color:var(--ink)}
+.cluster-resources__type{display:block;margin-top:2px;color:var(--soft);font-size:15px;line-height:1.35}
+@media(min-width:1001px){.article-style ul.cluster-resources--cols{columns:2;column-gap:48px}}
+@media(max-width:1000px){.topic-head{grid-template-columns:minmax(0,1fr)}.topic-plate{display:none}}
+@media(max-width:760px){
+  .article-layout .article-style .topic-now__rows a{grid-template-columns:minmax(0,1fr);row-gap:2px;min-height:44px;padding:3px 0}
+  .topic-now__name{font-size:15px;line-height:1.25}
+  .topic-now__name{font-size:15px}
+  .topic-now__bar{height:10px;background:repeating-linear-gradient(90deg,transparent 0 14px,rgb(255 255 255/.55) 14px 16px),var(--c,var(--soft))}
+  .topic-now__count{font-size:15px}
+  /* The search and types come before the chart, so a phone's first screen reaches them. */
+  .article-style.cluster-resources-list{display:flex;flex-direction:column}
+  .cluster-resources-list>.topic-toolbar{order:-1;margin-bottom:22px}
+  .cluster-resources-list>.topic-head{margin-bottom:0}
+  .topic-tools .list-filter-search{grid-template-columns:minmax(0,1fr);min-width:0}
+  .article-layout .article-style .topic-tools .list-filter-count{grid-column:1;grid-row:3;margin:8px 0 0;white-space:normal}
+  .topic-tools__links{padding:0}
+  .topic-types legend{float:none;padding:0 0 8px}
+  .topic-types.is-collapsible:not(.is-open) .topic-types__extra{display:none}
+  .topic-more[hidden]{display:none}
+  .topic-more{display:inline-flex;align-items:center;min-height:44px;padding:0 6px}
+  .article-style h2.topic-group{margin-top:28px;padding:8px 12px;font-size:21px}
+  .article-style ul.cluster-resources{padding:0 4px}
+  .cluster-resources-list .topic-showall{margin:4px 4px 0}
+  .article-style ol.topic-now__rows{columns:2;column-gap:16px}
+  .article-style ol.topic-now__rows>li{break-inside:avoid}
+}
+
+/* /category/<term>/ (doors/category_term.html): the news list's head, chips and cards (above, and article.css). */
+.category-nav .ac-chip{display:inline-flex;align-items:center;gap:7px;text-decoration:none}
+.category-nav .chip-count{color:var(--soft);font-size:15px;font-weight:600}
+.category-nav .ac-chip.active .chip-count{color:inherit}
+.category-page .standfirst a{color:var(--link)}
+.category-page .pager:not(:has(a)){display:none}
+/* Several posts: three to a row (two for two), no lead, so no card stands alone in a row. One post leads across the row. */
+.category-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,290px),1fr));gap:20px;margin:0;padding:0;list-style:none}
+@media(min-width:1001px){.category-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.category-grid--two{grid-template-columns:repeat(2,minmax(0,1fr))}.news-page.category-page .category-lead>li:first-child:not([hidden]) .ac-summary{-webkit-line-clamp:12;line-clamp:12}.category-grid--four{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.category-more{padding:40px 0 0}
+.category-more h2{margin:0 0 18px;font-size:30px;line-height:1.15}
+.category-more h2 a,.category-all a{color:var(--ink);text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:5px}
+.category-more h2 a:hover,.category-all a:hover{color:var(--link)}
+.category-more .ac-body h3{font-size:22px}
+.category-all{margin:32px 0 0;font:var(--display-weight) 24px/1.2 var(--display)}
+/* Newsletter issues: low bricks, as many to a row as fit, as on the newsletter archive. */
+.category-grid--issues{grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr))}
+@media(min-width:1001px){.category-grid.category-grid--issues{grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}}
+.news-page .category-grid--issues .ac-panel{aspect-ratio:auto;min-height:112px;padding:14px 18px}
+.news-page .category-grid--issues .ac-panel-title strong{font-size:28px}
+/* A post without a picture of its own: its title on the panel, in a size that holds a long title in a third of the row. */
+.news-page .ac-panel--post .ac-panel-title strong{font-size:24px;line-height:1.15}
+.news-page .ac-panel--post .ac-panel-title span{margin-bottom:4px}
+.news-page.category-page .category-lead>li:first-child:not([hidden]) .ac-summary{-webkit-line-clamp:12;line-clamp:12}
+@media(max-width:760px){
+  .category-more h2{font-size:26px}.category-all{font-size:21px}
+  .news-page .category-grid--issues .ac-panel{min-height:72px;padding:10px 16px}
+  /* The categories in one row that scrolls sideways, its edge fading where more lie past it (DESIGN.md §9). */
+  .category-nav{flex-wrap:nowrap;overflow-x:auto;margin-inline-end:-16px;padding:0 16px 6px 0;-webkit-mask-image:linear-gradient(90deg,#000 85%,transparent);mask-image:linear-gradient(90deg,#000 85%,transparent)}
+  .category-nav .ac-chip{flex:none}
+}
