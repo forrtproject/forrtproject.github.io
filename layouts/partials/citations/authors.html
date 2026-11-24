@@ -33,7 +33,9 @@
   {{- $marked := replaceRE `\bet al\.?|\bothers\b` "" (replaceRE $name "§" $plain) -}}
   {{/* Corporate authors such as "FORRT" are whatever is left between the separators. */}}
   {{- $count := add (len (findRE `§` $marked)) (len (findRE `[^\s,&…§.][^,&…§]*` $marked)) -}}
-  {{- with and (gt $count 6) (findRE (printf `^(?:%s\s*,\s*(?:&(?:amp;)?\s*)?){2}%s` $name $name) $authors 1) -}}
+  {{- /* Collapse only when at least four authors would be hidden: > 6 on a complete list, or >= 6 named authors plus "& others"/"et al."/"…" (7+ authors in total). */ -}}
+  {{- $collapse := cond $complete (gt $count 6) (ge $count 6) -}}
+  {{- with and $collapse (findRE (printf `^(?:%s\s*,\s*(?:&(?:amp;)?\s*)?){2}%s` $name $name) $authors 1) -}}
     {{- $first := index . 0 -}}
     {{- $more := cond $complete (printf $t.all $count) $t.listed -}}
     {{- $out = printf `<span class="ref-authors">%s<span class="ref-more" hidden>%s</span><span class="ref-etal">, et al.</span> <button type="button" class="ref-authors-toggle" aria-expanded="false" data-more="%s" data-less="%s"%s>%s</button></span>%s` $first (strings.TrimPrefix $first $authors) $more $t.less $t.attr $more $after -}}

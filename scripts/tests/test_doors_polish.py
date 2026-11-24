@@ -18,7 +18,7 @@ class DoorsPolishContractTests(unittest.TestCase):
 
     def test_citations_authors_threshold_and_honest_incomplete_label(self):
         tpl = (ROOT / "layouts/partials/citations/authors.html").read_text(encoding="utf-8")
-        self.assertIn("(gt $count 6)", tpl)
+        self.assertIn("cond $complete (gt $count 6) (ge $count 6)", tpl)
         self.assertIn("Show all %d authors", tpl)
         self.assertIn("Show listed authors", tpl)
         self.assertNotIn("Show more authors", tpl)
