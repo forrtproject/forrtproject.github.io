@@ -74,7 +74,7 @@ class DescriptionURLReport(unittest.TestCase):
             cluster.write_text("<meta name='description' content='Cluster 1'><h1>Cluster 1</h1>", encoding="utf-8")
             flora = Path(public) / seo.FLORA_PAGE
             flora.parent.mkdir(parents=True)
-            flora.write_text("<meta name='description' content='FLoRA'><h1>FLoRA</h1><p>https://doi.org/10.17605/OSF.IO/9R62X</p>", encoding="utf-8")
+            flora.write_text("<meta name='description' content='FLoRA'><h1>FLoRA</h1><p>FORRT Library of Reproduction and Replication Attempts (FLoRA) [Data set]. <a href=https://doi.org/10.17605/OSF.IO/9R62X>https://doi.org/10.17605/OSF.IO/9R62X</a></p>", encoding="utf-8")
             hub = Path(public) / seo.GLOSSARY_HUB
             hub.parent.mkdir(parents=True)
             hub.write_text("<meta name='description' content='Glossary'><h1>Glossary</h1>", encoding="utf-8")
@@ -401,13 +401,19 @@ def flora_failures(html):
 
 
 class FloraCitationCheck(unittest.TestCase):
-    DOI = '<a href="https://doi.org/10.17605/OSF.IO/9R62X">https://doi.org/10.17605/OSF.IO/9R62X</a>'
+    TITLE = "Azevedo, F. (2026). FORRT Library of Reproduction and Replication Attempts (FLoRA) [Data set]. "
+    OSF = 'OSF. <a href="https://doi.org/10.17605/OSF.IO/9R62X">https://doi.org/10.17605/OSF.IO/9R62X</a>'
+    ZENODO = 'Zenodo. <a href=https://doi.org/10.5281/zenodo.24461022>https://doi.org/10.5281/zenodo.24461022</a>'
 
-    def test_citation_passes(self):
-        self.assertEqual(flora_failures("<p>Wallrich, L.*, ... %s</p>" % self.DOI), [])
+    def test_citation_passes_whichever_doi_it_links(self):
+        for doi in (self.OSF, self.ZENODO):
+            with self.subTest(doi):
+                self.assertEqual(flora_failures("<p>Wallrich, L.*, ... %s%s</p>" % (self.TITLE, doi)), [])
 
     def test_missing_citation_or_page_fails(self):
         self.assertIn("DOI", flora_failures("<p>How to cite:</p>")[0])
+        self.assertIn("DOI", flora_failures("<p>%sOSF.</p><p><a href='https://doi.org/10.1/x'>other</a></p>" % self.TITLE.replace("(FLoRA)", "(FLoRA)" + " x" * 200))[0])
+        self.assertIn("DOI", flora_failures("<p>See https://doi.org/10.5281/zenodo.24461022</p>")[0])
         self.assertIn("not found", flora_failures(None)[0])
 
 
