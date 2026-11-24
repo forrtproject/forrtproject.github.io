@@ -59,7 +59,7 @@ subtitle = "A Collection of Practical Guides"
 ## The what, how, and why of Open Science in the Developing World
 ---------------------
 
-**Open Science in the Developing World** is a completed, large-scale international collaboration by 49 open scientists from 12 developing countries, led and supported by FORRT members, that culminated in several community resources (see below) and a peer-reviewed publication in the journal *Advances in Methods and Practices in Psychological Science* (AMPPS), entitled ["Open Science in the Developing World: A Collection of Practical Guides for Researchers in Developing Countries."](https://doi.org/10.1177/25152459251357565) See our postprint [here](http://osf.io/7ubk2).
+**Open Science in the Developing World** is a completed, large-scale international collaboration by 49 open scientists from 12 developing countries, led and supported by FORRT members, that culminated in several community resources (see below) and a peer-reviewed publication in the journal *Advances in Methods and Practices in Psychological Science* (AMPPS), entitled ["Open Science in the Developing World: A Collection of Practical Guides for Researchers in Developing Countries."](https://doi.org/10.1177/25152459251357565) See our postprint [here](https://osf.io/7ubk2).
 
 The project responds to a central tension in the open science movement:
 
@@ -228,7 +228,7 @@ The paper also directly informs FORRT’s ongoing work on:
 
 - [x] Re-structure the first draft of the whole paper.
 
-- [x] Final preprint of the paper is available [here](http://osf.io/7ubk2).
+- [x] Final preprint of the paper is available [here](https://osf.io/7ubk2).
 
 - [x] Final Publication is available [here](https://doi.org/10.1177/25152459251357565).
 
@@ -249,7 +249,7 @@ The paper also directly informs FORRT’s ongoing work on:
 
 ## Peer-reviewed Publication
 
-The open access **<font style="color:#0e2a38">publication</font>** can be found [here](https://doi.org/10.1177/25152459251357565), and the **<font style="color:#0e2a38">postprint</font>** can [be found here (osf.io/7ubk2)](http://osf.io/7ubk2). Download the supplementary material [here](https://doi.org/10.1177/25152459251357565).
+The open access **<font style="color:#0e2a38">publication</font>** can be found [here](https://doi.org/10.1177/25152459251357565), and the **<font style="color:#0e2a38">postprint</font>** can [be found here (osf.io/7ubk2)](https://osf.io/7ubk2). Download the supplementary material [here](https://doi.org/10.1177/25152459251357565).
 
 > Hu, C.-P., Xu, Z., Lazić, A., Bhattacharya, P., Seda, L., Hossain, S., Jeftić, A., Özdoğru, A. A., Amaral, O. B., Miljković, N., Ilchovska, Z. G., Lazarevic, L. B., Bao, H. W. S., Ghodke, N., Moreau, D., Elsherif, M., C., C., Ghai, S., Carneiro, C. F. D., ... Azevedo, F. (2025). **Open Science in the Developing World: A Collection of Practical Guides for Researchers in Developing Countries.** *Advances in Methods and Practices in Psychological Science*, *8*(3), 25152459251357565. [https://doi.org/10.1177/25152459251357565](https://doi.org/10.1177/25152459251357565) 
 

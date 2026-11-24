@@ -9,11 +9,11 @@
 {{ range site.Menus.main }}
   {{ $top := . }}
   {{ if eq (strings.TrimSuffix "/" (.URL | relLangURL)) $here }}
-    {{ $label = .Name }}
+    {{ if not $.label }}{{ $label = .Name }}{{ end }}
   {{ else }}
     {{ range .Children }}
       {{ if eq (strings.TrimSuffix "/" (.URL | relLangURL)) $here }}
-        {{ $label = .Name }}
+        {{ if not $.label }}{{ $label = .Name }}{{ end }}
         {{ $parent = $top }}
       {{ end }}
     {{ end }}

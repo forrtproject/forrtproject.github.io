@@ -1,0 +1,75 @@
+name: Check Content Rules
+
+# =======================
+# PR Content Rules Check
+# =======================
+# Purpose: Validates PR content policies in one lightweight runner (advisory warnings):
+#   1. WebP image policy (flags PNG/JPG/JPEG files and local references)
+#   2. Canonical DOI links (flags newly added publisher URLs with embedded DOIs)
+# Triggers: PR opened, synchronized, or reopened
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+
+jobs:
+  check-content-rules:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.x'
+
+      - name: Run content rules check
+        id: content_rules
+        run: |
+          python3 scripts/check_content_rules.py \
+            --base "${{ github.event.pull_request.base.sha }}" \
+            --head HEAD
+
+      # Same-repo PRs: the token can write, so post/update the result as a PR comment.
+      - name: Find Comment
+        if: github.event.pull_request.head.repo.full_name == github.repository
+        uses: peter-evans/find-comment@v4
+        id: fc
+        with:
+          issue-number: ${{ github.event.pull_request.number }}
+          comment-author: 'github-actions[bot]'
+          body-includes: '<!-- content-rules-check -->'
+
+      - name: Create or update comment
+        if: github.event.pull_request.head.repo.full_name == github.repository
+        uses: peter-evans/create-or-update-comment@v5
+        with:
+          comment-id: ${{ steps.fc.outputs.comment-id }}
+          issue-number: ${{ github.event.pull_request.number }}
+          body: ${{ steps.content_rules.outputs.comment }}
+          edit-mode: replace
+
+      # Fork PRs: the GITHUB_TOKEN is read-only, so a PR comment would 403.
+      # Surface the same result as a job-summary report in the workflow run instead.
+      - name: Content rules report (fork PR)
+        if: github.event.pull_request.head.repo.full_name != github.repository
+        env:
+          REPORT: ${{ steps.content_rules.outputs.comment }}
+        run: |
+          {
+            echo "## Content rules report"
+            echo ""
+            echo "> This PR is from a fork, so the workflow cannot post a PR comment"
+            echo "> (fork runs receive a read-only token). The result is shown below."
+            echo ""
+            echo "$REPORT"
+          } >> "$GITHUB_STEP_SUMMARY"

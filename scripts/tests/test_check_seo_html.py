@@ -68,18 +68,23 @@ class DescriptionURLReport(unittest.TestCase):
                     "<meta property='og:image:height' content='630'>"
                     "<meta name='twitter:card' content='summary_large_image'>")
             (Path(public) / "index.html").write_text(html, encoding="utf-8")
+            (Path(public) / "sitemap.xml").write_text(URLSET % "<url><loc>https://forrt.org/</loc></url>", encoding="utf-8")
             cluster = Path(public) / "clusters" / "cluster-1" / "index.html"
             cluster.parent.mkdir(parents=True)
             cluster.write_text("<meta name='description' content='Cluster 1'><h1>Cluster 1</h1>", encoding="utf-8")
             flora = Path(public) / seo.FLORA_PAGE
             flora.parent.mkdir(parents=True)
-            flora.write_text("<meta name='description' content='FLoRA'><h1>FLoRA</h1><p>https://doi.org/10.17605/OSF.IO/9R62X</p>", encoding="utf-8")
+            flora.write_text("<meta name='description' content='FLoRA'><h1>FLoRA</h1><p>FORRT Library of Reproduction and Replication Attempts (FLoRA) [Data set]. <a href=https://doi.org/10.17605/OSF.IO/9R62X>https://doi.org/10.17605/OSF.IO/9R62X</a></p>", encoding="utf-8")
             hub = Path(public) / seo.GLOSSARY_HUB
             hub.parent.mkdir(parents=True)
             hub.write_text("<meta name='description' content='Glossary'><h1>Glossary</h1>", encoding="utf-8")
+            for name in ("", "open-reproducible", "diversity-equity-inclusion"):
+                summary_page = Path(public) / "summaries" / name / "index.html"
+                summary_page.parent.mkdir(parents=True, exist_ok=True)
+                summary_page.write_text("<meta name='description' content='Summaries'>", encoding="utf-8")
             output = StringIO()
             with redirect_stdout(output):
-                self.assertEqual(seo.main(public), 0)
+                self.assertEqual(seo.main(public, summaries={}), 0)
             self.assertIn("pages whose meta description contains a raw URL: 1", output.getvalue())
 
     def test_nonindexable_descriptions_are_not_reported(self):
@@ -181,6 +186,73 @@ class InlineScriptCheck(unittest.TestCase):
         self.assertEqual(self.failures("<script>window.DATA = '%s';" % data), ["index.html (200 KB)"])
 
 
+class SummaryTakeawayLinkCheck(unittest.TestCase):
+    path = "summaries/open-reproducible/index.html"
+
+    def check(self, link, after=""):
+        html = '<ul class="summary-takeaways"><li>' + link + '</li></ul>' + after
+        return seo.check_summary_takeaway_links([page_from_html(html, self.path)])
+
+    def test_google_redirect_fails(self):
+        href = "https://www.google.com/url?q=https://example.org/paper&sa=D"
+        self.assertEqual(self.check(f'<a href="{escape(href)}">Paper</a>'), [f"{self.path}: {href!r}"])
+
+    def test_missing_or_placeholder_href_fails(self):
+        self.assertEqual(self.check("<a>Paper</a>"), [f"{self.path}: ''"])
+        for href in ("", "#", "#ZgotmplZ"):
+            with self.subTest(href=href):
+                self.assertEqual(self.check(f'<a href="{href}">Paper</a>'), [f"{self.path}: {href!r}"])
+
+    def test_direct_links_pass(self):
+        for href in ("https://example.org/paper", "#h.study", "/summaries/open-reproducible/#h.study"):
+            with self.subTest(href=href):
+                self.assertEqual(self.check(f'<a href="{href}">Paper</a>'), [])
+
+    def test_other_links_are_ignored(self):
+        self.assertEqual(self.check("Plain takeaway", '<ul><li><a href="#">Related paper</a></li></ul>'), [])
+
+
+class SummaryCreditMarkerCheck(unittest.TestCase):
+    credit = '<p class="summary-credit"><small>Summary by Dr Tamara Kalandadze</small></p>'
+    marked = {"summary_1": {"Title": "Paper ⬦"}, "summary_2": {"Title": "Other paper ⌺⬦"}}
+
+    def check(self, html, *, dei_html="", summaries=None, missing=None):
+        with tempfile.TemporaryDirectory() as public:
+            for slug, body in (("", ""), ("open-reproducible", html), ("diversity-equity-inclusion", dei_html)):
+                if slug == missing:
+                    continue
+                collection = Path(public) / "summaries" / slug / "index.html"
+                collection.parent.mkdir(parents=True, exist_ok=True)
+                collection.write_text(body, encoding="utf-8")
+            return seo.check_summary_credit_marker(public, summaries=summaries or {})
+
+    def test_title_markers_fail_in_html_and_json_ld(self):
+        for html in ("<h3>Paper ⬦</h3>", "<h3>Paper &#x2b26;</h3>",
+                     r'<script type="application/ld+json">{"name":"Paper \u2b26"}</script>'):
+            with self.subTest(html=html):
+                self.assertEqual(self.check(html), ["summaries/open-reproducible/index.html: raw summary author marker"])
+
+    def test_missing_page_fails(self):
+        self.assertEqual(self.check("", missing="diversity-equity-inclusion"),
+                         ["summaries/diversity-equity-inclusion/index.html: missing page"])
+
+    def test_no_credit_needed_for_data_without_author_markers(self):
+        self.assertEqual(self.check("<h3>Paper ◈ ⌺</h3>", summaries={"summary_1": {"Title": "Paper ◈ ⌺"}}), [])
+        self.assertTrue(self.check(self.credit))
+
+    def test_requires_credits_matching_each_collections_data(self):
+        self.assertEqual(self.check(self.credit * 2, dei_html=self.credit, summaries=self.marked), [])
+        failures = self.check(self.credit, dei_html=self.credit.replace("Tamara", "Other"), summaries=self.marked)
+        self.assertEqual(failures, [
+            "summaries/open-reproducible/index.html: expected 2 written credits, found 1 matching out of 1 credit lines",
+            "summaries/diversity-equity-inclusion/index.html: expected 1 written credits, found 0 matching out of 1 credit lines",
+        ])
+
+    def test_minified_credit_followed_by_heading(self):
+        html = self.credit.replace('class="summary-credit"', 'class=summary-credit').removesuffix("</p>")
+        self.assertEqual(self.check(html + "<h4>Main takeaways</h4>", summaries={"summary_1": {"Title": "Paper ⬦"}}), [])
+
+
 class CitationTargetCheck(unittest.TestCase):
     def check(self, html):
         parser = seo.PageParser()
@@ -188,8 +260,14 @@ class CitationTargetCheck(unittest.TestCase):
         return seo.check_citation_targets([seo.Page("example/index.html", parser)])
 
     def test_reference_after_citation(self):
-        self.assertEqual(self.check('<a class="cite" href="#ref-Key">Author, 2020</a>'
-                                    '<li id="ref-Key">Reference</li>'), [])
+        self.assertEqual(self.check('<a class="cite" href="#ref-Key" data-cite="Key">Author, 2020</a>'
+                                    '<li id="ref-Key" data-reference="Key">Reference</li>'), [])
+
+    def test_missing_data_reference_or_mismatched_key_fails(self):
+        self.assertTrue(self.check('<a class="cite" href="#ref-Key" data-cite="Key">Author, 2020</a>'
+                                   '<li id="ref-Key">Reference</li>'))
+        self.assertTrue(self.check('<a class="cite" href="#ref-Key" data-cite="Other">Author, 2020</a>'
+                                   '<li id="ref-Key" data-reference="Other">Reference</li>'))
 
     def test_missing_reference_or_nonlocal_link(self):
         for href in ('#ref-Unknown', '/other/#ref-Key', '#Key', ''):
@@ -199,6 +277,12 @@ class CitationTargetCheck(unittest.TestCase):
 
     def test_other_links_are_ignored(self):
         self.assertEqual(self.check('<a href="#elsewhere">Link</a>'), [])
+
+    def test_truncated_parenthetical_doi_in_data_source_fails(self):
+        self.assertEqual(self.check('<li id="ref-K" data-reference="K" data-source="https://doi.org/10.1002/(SICI)1099">Ref <a href="https://doi.org/10.1002/(SICI)1099">DOI</a></li>'), [])
+        self.assertTrue(self.check('<li id="ref-K" data-reference="K" data-source="https://doi.org/10.1002/(SICI">Ref</li>'))
+        self.assertTrue(self.check('<li id="ref-K" data-reference="K" data-source="https://doi.org/10.1002/">Ref <a href="https://doi.org/10.1002/(SICI)1099">DOI</a></li>'))
+        self.assertTrue(self.check('<li id="ref-K" data-reference="K" data-source="https://doi.org/10.1002/">Ref https://doi.org/10.1002/(SICI)1099</li>'))
 
 
 class GlossaryTitleMarkdownCheck(unittest.TestCase):
@@ -317,13 +401,19 @@ def flora_failures(html):
 
 
 class FloraCitationCheck(unittest.TestCase):
-    DOI = '<a href="https://doi.org/10.17605/OSF.IO/9R62X">https://doi.org/10.17605/OSF.IO/9R62X</a>'
+    TITLE = "Azevedo, F. (2026). FORRT Library of Reproduction and Replication Attempts (FLoRA) [Data set]. "
+    OSF = 'OSF. <a href="https://doi.org/10.17605/OSF.IO/9R62X">https://doi.org/10.17605/OSF.IO/9R62X</a>'
+    ZENODO = 'Zenodo. <a href=https://doi.org/10.5281/zenodo.24461022>https://doi.org/10.5281/zenodo.24461022</a>'
 
-    def test_citation_passes(self):
-        self.assertEqual(flora_failures("<p>Wallrich, L.*, ... %s</p>" % self.DOI), [])
+    def test_citation_passes_whichever_doi_it_links(self):
+        for doi in (self.OSF, self.ZENODO):
+            with self.subTest(doi):
+                self.assertEqual(flora_failures("<p>Wallrich, L.*, ... %s%s</p>" % (self.TITLE, doi)), [])
 
     def test_missing_citation_or_page_fails(self):
         self.assertIn("DOI", flora_failures("<p>How to cite:</p>")[0])
+        self.assertIn("DOI", flora_failures("<p>%sOSF.</p><p><a href='https://doi.org/10.1/x'>other</a></p>" % self.TITLE.replace("(FLoRA)", "(FLoRA)" + " x" * 200))[0])
+        self.assertIn("DOI", flora_failures("<p>See https://doi.org/10.5281/zenodo.24461022</p>")[0])
         self.assertIn("not found", flora_failures(None)[0])
 
 
@@ -385,6 +475,109 @@ class GlossaryAkaFilterCheck(unittest.TestCase):
                  "/glossary/english/missing/": self.page("Lost")}
         self.assertEqual(seo.glossary_aka_failures(self.HUB, pages),
                          ["/glossary/english/missing/ (Lost)", "/glossary/english/type_i_error/ (Type 1 error)"])
+
+
+class ClusterLinkPunctuationCheck(unittest.TestCase):
+    def test_trailing_sentence_punctuation_in_cluster_href_fails(self):
+        with tempfile.TemporaryDirectory() as public:
+            cluster = Path(public) / "clusters" / "cluster-1"
+            cluster.mkdir(parents=True)
+            (cluster / "index.html").write_text(
+                '<div class="fc-summary">'
+                '<a href="https://example.org/article.">a</a> '
+                '<a href="https://example.org/paren)">b</a> '
+                '<a href="https://example.org/bracket]">c</a>'
+                '</div>',
+                encoding="utf-8",
+            )
+            failures = seo.check_cluster_link_punctuation(public)
+            self.assertEqual(
+                failures,
+                ["clusters/cluster-1/index.html (https://example.org/article., https://example.org/bracket], https://example.org/paren))"],
+            )
+
+    def test_clean_and_balanced_cluster_href_passes(self):
+        with tempfile.TemporaryDirectory() as public:
+            cluster = Path(public) / "clusters" / "cluster-1"
+            cluster.mkdir(parents=True)
+            (cluster / "index.html").write_text(
+                '<div class="fc-summary">'
+                'See <a href="https://example.org/article">https://example.org/article</a>. '
+                'And <a href="https://en.wikipedia.org/wiki/Open_science_(movement)">wiki</a>.'
+                '</div>',
+                encoding="utf-8",
+            )
+            self.assertEqual(seo.check_cluster_link_punctuation(public), [])
+
+
+def card_failures(alt):
+    """Check 30 on one listing page holding the post's card image."""
+    with tempfile.TemporaryDirectory() as public:
+        html = "<html><body><img src='%s_hu_1.webp' alt='%s'></body></html>"
+        page = html % (seo.ALT_TEXT_CARD_IMAGE, alt)
+        (Path(public) / "index.html").write_text(page, encoding="utf-8")
+        return seo.check_card_alt_text(seo.load_pages(public))
+
+
+class CardAltTextCheck(unittest.TestCase):
+    def test_supplied_alt_text_passes(self):
+        self.assertEqual(card_failures("Bronfenbrenner ecological systems model"), [])
+
+    def test_fallback_alt_text_fails(self):
+        for alt in ("Featured image for From Awareness to Action", "From Awareness to Action"):
+            with self.subTest(alt):
+                self.assertEqual(card_failures(alt), ["index.html"])
+
+
+NOINDEX = "<html><head><meta name='robots' content='noindex, follow'></head></html>"
+INDEXED = "<html><head></head></html>"
+URLSET = ("<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>%s</urlset>")
+
+
+def sitemap_failures(sitemap_locs, index=False, write_sitemap=True):
+    """Check 31 on a site with an indexed home page and a noindexed /authors/stub/.
+    With index=True, sitemap.xml is an index of en/sitemap.xml, which write_sitemap=False
+    leaves out; otherwise write_sitemap=False leaves out sitemap.xml itself."""
+    with tempfile.TemporaryDirectory() as public:
+        root = Path(public)
+        (root / "authors" / "stub").mkdir(parents=True)
+        (root / "index.html").write_text(INDEXED, encoding="utf-8")
+        (root / "authors" / "stub" / "index.html").write_text(NOINDEX, encoding="utf-8")
+        urls = "".join("<url><loc>https://forrt.org%s</loc></url>" % loc for loc in sitemap_locs)
+        if index:
+            (root / "sitemap.xml").write_text(
+                "<sitemapindex xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>"
+                "<sitemap><loc>https://forrt.org/en/sitemap.xml</loc></sitemap>"
+                "</sitemapindex>", encoding="utf-8")
+            if write_sitemap:
+                (root / "en").mkdir()
+                (root / "en" / "sitemap.xml").write_text(URLSET % urls, encoding="utf-8")
+        elif write_sitemap:
+            (root / "sitemap.xml").write_text(URLSET % urls, encoding="utf-8")
+        return seo.check_sitemap_noindex(public, seo.load_pages(public))
+
+
+class SitemapNoindexCheck(unittest.TestCase):
+    def test_indexed_pages_pass(self):
+        self.assertEqual(sitemap_failures(["/"]), [])
+
+    def test_noindexed_page_fails(self):
+        self.assertEqual(sitemap_failures(["/", "/authors/stub/"]), ["/authors/stub/"])
+
+    def test_sitemap_index_is_followed(self):
+        self.assertEqual(sitemap_failures(["/authors/stub/"], index=True), ["/authors/stub/"])
+
+    def test_missing_sitemap_fails(self):
+        self.assertEqual(sitemap_failures([], write_sitemap=False), ["sitemap.xml (not found)"])
+
+    def test_empty_sitemap_fails(self):
+        for index in (False, True):
+            with self.subTest(index=index):
+                self.assertEqual(sitemap_failures([], index=index), ["sitemap.xml (lists no URLs)"])
+
+    def test_missing_child_sitemap_fails(self):
+        self.assertEqual(sitemap_failures([], index=True, write_sitemap=False),
+                         ["en/sitemap.xml (not found)"])
 
 
 if __name__ == "__main__":

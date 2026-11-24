@@ -38,6 +38,15 @@
           </label>
           <span class="fr-filter-hint" id="fr-specialist-hint">Resources on narrow, specialist topics stay hidden until this is ticked.</span>
         </div>
+        {{/* Teaching-materials filter; also the legend for the green dot on headers and in the sidebar */}}
+        {{ if partialCached "clusters/lesson_plans.html" "lesson-plans" }}
+        <div class="fr-filter-group">
+          <label class="fr-specificity-toggle lp-filter-toggle">
+            <input type="checkbox" id="lp-filter-checkbox">
+            <span>Only sub-clusters with <span class="lp-dot" aria-hidden="true"></span>teaching materials</span>
+          </label>
+        </div>
+        {{ end }}
       </div>
     </details>
     <script>(function () { var d = document.getElementById('fr-filter-more'); if (matchMedia('(min-width: 761px)').matches) d.open = true; })();</script>

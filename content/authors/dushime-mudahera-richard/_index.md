@@ -32,5 +32,3 @@ social:
   icon_pack: fas
   link: https://richarddushime.netlify.app/
 ---
-
-nan

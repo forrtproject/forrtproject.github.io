@@ -1,7 +1,7 @@
 ---
 # Display name
-name: "Dr. Lukas Röseler"
-title: "Dr. Lukas Röseler"
+name: "Dr Lukas Röseler"
+title: "Dr Lukas Röseler"
 
 
 # Is this the primary user of the site?
@@ -36,4 +36,4 @@ social:
   link: https://lukasroeseler.github.io/home/
 ---
 
-Lukas studied consumer behavior and market research, PhD in psychology, and currently managing director of the Münster Center for Open Science where he is responsible to support members of the University of Münster with respect to Open Science. Lukas is heavily invested in repetitive research and has been creating open resources and open infrastructure to support replications and reproductions (e.g., a database, handbook, and academic journal).
+Lukas studied consumer behavior and market research, holds a PhD in psychology, and is currently managing director of the Münster Center for Open Science, where he supports members of the University of Münster with respect to Open Science. Lukas is heavily invested in repetitive research and has been creating open resources and open infrastructure to support replications and reproductions (e.g., a database, handbook, and academic journal).
