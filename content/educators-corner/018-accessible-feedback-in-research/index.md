@@ -72,6 +72,7 @@ Research Fellow: Magda Skubera, m.skubera@greenwich.ac.uk
 
 ### References
 
+{{< local-references heading="none" >}}
 - Chambers, C. D., & Tzavella, L. (2021). The past, present and future of Registered Reports. *Nature Human Behaviour*, 6, 29-42.
 
 - Chong, S. W., & Mason, S. (2021). Demystifying the process of scholarly peer-review: an autoethnographic investigation of feedback literacy of two award-winning peer reviewers. *Humanities and Social Sciences Communications*, 8(1), 1-11.
@@ -87,3 +88,4 @@ Research Fellow: Magda Skubera, m.skubera@greenwich.ac.uk
 - HESA (2020) Higher Education Staff Statistics: UK, 2020/21. Available at: [https://www.hesa.ac.uk/news/01-02-2022/sb261-higher-education-staff-statistics](https://www.hesa.ac.uk/news/01-02-2022/sb261-higher-education-staff-statistics)
 
 - Smith, O. M., Davis, K. L., Pizza, R. B., Waterman, R., Dobson, K. C., Foster, B., ... & Davis, C. L. (2023). Peer review perpetuates barriers for historically excluded groups. *Nature Ecology & Evolution*, 7(4), 512-523.
+{{< /local-references >}}

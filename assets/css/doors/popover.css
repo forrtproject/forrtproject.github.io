@@ -1,5 +1,5 @@
-/* Shared by citation and term popovers. Below the header, cookie banner and chat. */
-.doors-popover{position:fixed;z-index:800;box-sizing:border-box;width:min(28rem,calc(100vw - 32px));max-height:calc(100vh - 32px);overflow:auto;background:#fff;border:1px solid var(--line);border-radius:var(--r-small);box-shadow:0 8px 24px rgba(38,45,53,.18);padding:14px 36px 14px 16px;color:var(--ink);font:400 .95rem/1.5 var(--text)}
+/* Shared by citation and term popovers. Above the chat launcher (900); below the header (1000), cookie banner and open chat (10000). */
+.doors-popover{position:fixed;z-index:950;box-sizing:border-box;width:min(28rem,calc(100vw - 32px));max-height:calc(100vh - 32px);overflow:auto;background:#fff;border:1px solid var(--line);border-radius:var(--r-small);box-shadow:0 8px 24px rgba(38,45,53,.18);padding:14px 36px 14px 16px;color:var(--ink);font:400 .95rem/1.5 var(--text)}
 .doors-popover{animation:popover-in 120ms ease}
 .doors-popover-close{position:absolute;top:2px;right:2px;width:32px;height:32px;padding:0;background:none;border:0;color:var(--soft);font:inherit;font-size:1.3rem;cursor:pointer}
 .doors-popover-close:hover,.doors-popover-close:focus{color:var(--ink)}

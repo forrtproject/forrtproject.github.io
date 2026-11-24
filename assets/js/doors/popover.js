@@ -15,14 +15,19 @@ function position() {
   if (!current) return;
   const { trigger, panel } = current;
   const rect = trigger.getBoundingClientRect();
-  panel.style.maxHeight = 'calc(100vh - 32px)';
+  // Stay clear of the sticky header and the bottom cookie banner (both sit above the popover).
+  const head = document.querySelector('.site-head');
+  const topInset = Math.max(16, (head ? Math.max(0, head.getBoundingClientRect().bottom) : 0) + 8);
+  const banner = document.querySelector('.cc-window:not(.cc-invisible)');
+  const bottomInset = (banner ? banner.offsetHeight : 0) + 16;
+  panel.style.maxHeight = `${Math.max(64, innerHeight - topInset - bottomInset)}px`;
   const height = panel.offsetHeight;
-  const below = innerHeight - rect.bottom - 16;
-  const above = rect.top - 16;
+  const below = innerHeight - bottomInset - rect.bottom;
+  const above = rect.top - topInset;
   const flip = below < height && above > below;
   panel.style.maxHeight = `${Math.max(32, flip ? above : below)}px`;
   panel.style.left = `${innerWidth < 600 ? 16 : Math.max(16, Math.min(rect.left, innerWidth - panel.offsetWidth - 16))}px`;
-  panel.style.top = `${Math.max(16, flip ? rect.top - panel.offsetHeight : rect.bottom)}px`;
+  panel.style.top = `${Math.max(topInset, flip ? rect.top - panel.offsetHeight : rect.bottom)}px`;
 }
 
 export function closePopover() {

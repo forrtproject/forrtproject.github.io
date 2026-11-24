@@ -1,5 +1,9 @@
 a.cite{color:inherit;text-decoration:underline dotted 1px var(--soft);text-underline-offset:3px}
 a.cite:hover,a.cite:focus{color:var(--link)}
+/* Hanging-indent APA reference lists on articles and pages (glossary term/hub lists set their own rules in glossary.css). */
+.article-layout .article-style ul.references-list:not(.term-references){margin:0 0 22px;padding:0;list-style:none}
+.article-layout .article-style ul.references-list:not(.term-references) li{margin:0 0 10px;padding-inline-start:1.5em;text-indent:-1.5em;list-style:none;overflow-wrap:anywhere}
+.article-layout .article-style ul.references-list:not(.term-references) li:last-child{margin-bottom:0}
 /* The button that shows a reference's full author list (layouts/partials/citations/authors.html). */
 .ref-authors-toggle{display:inline;margin:0 .15em;padding:0 .55em;background:#fff;border:1px solid var(--line);border-radius:999px;color:var(--link);font:600 15px/1.45 var(--text);white-space:nowrap;cursor:pointer;vertical-align:baseline}
 .ref-authors-toggle:hover{border-color:var(--link);text-decoration:underline}

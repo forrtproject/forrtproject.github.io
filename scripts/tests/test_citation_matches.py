@@ -43,5 +43,23 @@ assert.deepEqual(keys('(Munafò et al., 2017)', accents), ['m']);
 const text = '(Duval & Tweedie, 2000; Nosek et al., 2018)';
 assert.deepEqual(citationMatches(text, refs).map((m) => text.slice(m.start, m.end)),
                  ['Duval & Tweedie, 2000', 'Nosek et al., 2018']);
+// Page-local references: narrative page locators, lettered years, corporate & 3-author forms, and strict mismatch rejection.
+const localRefs = [
+  {key: 'local-jackson', first: 'Jackson', year: '1998', authors: ['Jackson']},
+  {key: 'local-hesa', first: 'HESA', year: '2020', authors: ['HESA']},
+  {key: 'local-dubois', first: 'Dubois-Shaik & Fesulier', year: '2015', authors: ['Dubois-Shaik & Fesulier']},
+  {key: 'local-henrich', first: 'Henrich', year: '2010', authors: ['Henrich', 'Heine', 'Norenzayan'], etal: true},
+  {key: 'local-victor-a', first: 'Victor', year: '2021a', authors: ['Victor', 'Schleider', 'Stage'], etal: true},
+  {key: 'local-victor-b', first: 'Victor', year: '2021b', authors: ['Victor', 'Devendorf', 'Miller'], etal: true},
+  {key: 'local-chong', first: 'Chong', year: '2021', authors: ['Chong', 'Mason']},
+  {key: 'local-said', first: 'Said', year: '1978', authors: ['Said']},
+];
+assert.deepEqual(keys('As argued by Jackson (1998, p.8) and (HESA, 2020) and (Dubois-Shaik & Fesulier, 2015)', localRefs),
+                 ['local-jackson', 'local-hesa', 'local-dubois']);
+assert.deepEqual(keys('Jackson (1998, pp. 8–10)', localRefs), ['local-jackson']);
+assert.deepEqual(keys('(Henrich, Heine & Norenzayan, 2010; Victor et al., 2021a)', localRefs),
+                 ['local-henrich', 'local-victor-a']);
+assert.deepEqual(keys('similar to Victor et al. (2021b)', localRefs), ['local-victor-b']);
+assert.deepEqual(keys('(Chong & Masson, 2021; Said, 1976)', localRefs), []);
 """)
         self.assertEqual(result.returncode, 0, result.stderr)

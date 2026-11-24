@@ -2,6 +2,8 @@
      {{< citation-card key="Asai2026OpenScholar" />}}, or write the reference inside the shortcode.
      Long author lists show three authors until the reader asks for all (citations/authors);
      the copy button always copies the full reference (assets/js/doors/references.js). */}}
+{{- if not (.Page.Store.Get "cite_us_css") -}}
+{{- .Page.Store.Set "cite_us_css" true -}}
 {{ $css := resources.Get "css/cite_us.css" }}
 {{ if $css }}
   {{ $style := $css | minify | fingerprint }}
@@ -10,6 +12,7 @@
   {{ warnf "CSS not found: css/cite_us.css. Using static version" }}
   <link rel="stylesheet" href="{{ "css/cite_us.css" | relURL }}">
 {{ end }}
+{{- end -}}
 
 {{ $reference := "" }}
 {{ with .Get "key" }}

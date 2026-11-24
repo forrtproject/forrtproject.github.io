@@ -95,8 +95,10 @@ Hence, we at FORRT, have devised ***4 ways*** to be proactive in the outreach to
 
 ### References
 
+{{< local-references heading="none" >}}
 * Henrich, J., Heine, S. J., & Norenzayan, A. (2010). Most people are not WEIRD. Nature, 466(7302), 29-29.
 * Lee, J. J. (2016). Is science only for the rich?. Nature, 537(7621), 466-467.
 * Steltenpohl, C. N., Anderson, A. J., & Daniels, K. M. (2019). Giving Community Psychology Away: A case for open access publishing. Global Journal of Community Psychology Practice, 10(3). https://doi.org/10.17161/gjcpp.v10i3.20693
 * Roberson, M. L. (2020). On supporting early-career Black scholars. Nature Human Behaviour, 4(8), 773-773. https://doi.org/10.1038/s41562-020-0926-6
+{{< /local-references >}}
 

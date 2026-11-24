@@ -111,6 +111,8 @@ class PageParser(HTMLParser):
         self.largest_inline_script = 0
         self._inline_script = None
         self.ids = set()
+        self.references = set()
+        self.reference_sources = []
         self.citations = []
         self.crumb_links = []
         self._in_crumbs = False
@@ -133,6 +135,10 @@ class PageParser(HTMLParser):
             self._inline_script = 0
         if attrs.get("id"):
             self.ids.add(attrs["id"])
+        if attrs.get("data-reference"):
+            self.references.add(attrs["data-reference"])
+        if attrs.get("data-source"):
+            self.reference_sources.append(attrs["data-source"])
         if tag == "nav" and "crumbs" in (attrs.get("class") or "").split():
             self._in_crumbs = True
         if tag == "link" and attrs.get("rel") == "alternate" and attrs.get("hreflang") and attrs.get("href"):
@@ -144,7 +150,7 @@ class PageParser(HTMLParser):
         if tag == "a" and self._in_crumbs:
             self.crumb_links.append(attrs.get("href") or "")
         if tag == "a" and "cite" in attrs.get("class", "").split():
-            self.citations.append(attrs.get("href", ""))
+            self.citations.append((attrs.get("href", ""), attrs.get("data-cite", "")))
         if tag == "script" and attrs.get("type") == "application/ld+json":
             self._jsonld_buffer = []
         elif tag == "link" and attrs.get("rel") == "canonical":
@@ -252,6 +258,8 @@ class Page:
         self.canonical = parser.canonical
         self.largest_inline_script = parser.largest_inline_script
         self.ids = parser.ids
+        self.references = parser.references
+        self.reference_sources = parser.reference_sources
         self.citations = parser.citations
         self.gloss_terms = parser.gloss_terms
         self.crumb_links = parser.crumb_links
@@ -435,9 +443,17 @@ def check_cluster_title_markup(public_dir):
 
 
 def check_citation_targets(pages):
-    return ["%s (%s)" % (p.path, href or "missing href")
-            for p in pages for href in p.citations
-            if not href.startswith("#ref-") or unquote(href[1:]) not in p.ids]
+    failures = []
+    for p in pages:
+        for href, key in p.citations:
+            if not href.startswith("#ref-") or unquote(href[1:]) not in p.ids:
+                failures.append("%s (%s)" % (p.path, href or "missing href"))
+            elif key and (href != "#ref-" + key or key not in p.references):
+                failures.append("%s (data-cite=%s)" % (p.path, key))
+        for src in p.reference_sources:
+            if src.count("(") > src.count(")"):
+                failures.append("%s (truncated data-source=%s)" % (p.path, src))
+    return failures
 
 
 def breadcrumb_lists(page):

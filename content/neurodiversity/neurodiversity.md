@@ -143,9 +143,11 @@ Not all people conform to socially constructed norms, nor should they have to. N
 
 {{< /expand >}}
 
-{{< spoiler text= "Bibliographic Reference" >}} 
+{{< spoiler text= "Bibliographic Reference" >}}
 
+{{< citation-card >}}
 Phan, J.M., Middleton, S.L., Azevedo, F., Iley, B.J., Grose‐Hodge, M., Tyler, S.L., Kapp, S.K., Yeung, S.K., Shaw, J.J., Hartmann, H. and FORRT, 2025. Bridging Neurodiversity and Open Scholarship: How Shared Values Can Guide Best Practices for Research Integrity, Social Justice, and Principled Education. *Journal of Social Issues*, *81*(4), p.e70035.
+{{< /citation-card >}}
 
 {{< /spoiler >}}
 
@@ -186,9 +188,11 @@ Explore the Academic Wheel of Privilege tool on our [/awop](/awop) page, includi
 
 Our article in the BPS Cognitive Psychology Bulletin discusses how participatory research can benefit open scholarship and vice versa, leading to a more generalizable and accurate science of human behavior and cognition. [Read the preprint.](https://osf.io/preprints/metaarxiv/jq23s/)
 
-{{< spoiler text= "Bibliographic Reference" >}} 
+{{< spoiler text= "Bibliographic Reference" >}}
 
- Gourdon-Kanhukamwe, A., Kalandadze, T., Yeung, S.K., Azevedo, F., Iley, B., Phan, J.M., Ramji, A.V., Shaw, J.J., Zaneva, M., Dokovova, M., Hartmann, H., Kapp, S.K., Warrington, K.L., Elsherif, M.M. (2023). Opening up understanding of neurodiversity: A call for applying participatory and open scholarship practices. *The Cognitive Psychology Bulletin*, *8*, 23-27. https://doi.org/10.53841/bpscog.2023.1.8.23
+{{< citation-card >}}
+Gourdon-Kanhukamwe, A., Kalandadze, T., Yeung, S.K., Azevedo, F., Iley, B., Phan, J.M., Ramji, A.V., Shaw, J.J., Zaneva, M., Dokovova, M., Hartmann, H., Kapp, S.K., Warrington, K.L., Elsherif, M.M. (2023). Opening up understanding of neurodiversity: A call for applying participatory and open scholarship practices. *The Cognitive Psychology Bulletin*, *8*, 23-27. https://doi.org/10.53841/bpscog.2023.1.8.23
+{{< /citation-card >}}
 
 {{< /spoiler >}}
 
