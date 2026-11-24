@@ -274,7 +274,7 @@
                   {{ $keys := partialCached "citations/keys" . "bibliography-keys" }}
                   {{ range .Params.references }}
                     {{ $key := index $keys . | default (printf "local-%s" (md5 .)) }}
-                    {{ partial "citations/entry" (dict "key" $key "apa" .) }}
+                    {{ partial "citations/entry" (dict "key" $key "apa" . "lang" $lang) }}
                   {{ end }}
                 </ul>
               {{ end }}

@@ -20,7 +20,7 @@
 {{ end }}
 {{/* On a narrow screen the byline shows the publication date for these types (doors/article_header), and the phone
      contents replace the card's, so a card with nothing more than that date is left out there (article.css). */}}
-{{ $repeats := and .hasDates (not $updated) $article (not $p.Date.IsZero) (not $authors) (not $more) }}
+{{ $repeats := and .hasDates (not $updated) $article (not $p.Date.IsZero) (not $authors) (not $more) (not $p.Params.contact) }}
 <section class="article-card{{ if $repeats }} article-card-repeats{{ end }}{{ if $article }} article-card-article{{ end }}{{ if in (slice "educators-corner" "pedagogies") $p.Type }} article-card-edu{{ end }}{{ if $lesson }} article-card-jus{{ end }}" aria-label="{{ if $lesson }}About this lesson{{ else }}About this article{{ end }}">
   {{ if and $lesson (or $p.Params.lesson_plans $p.Params.feedback_url) }}
   <div class="lesson-card-meta">
@@ -69,10 +69,34 @@
   </ul>
   {{ end }}
   {{ end }}
-  {{ if and .hasDates (not $lesson) }}
+  {{ $showDates := and .hasDates (not $lesson) }}
+  {{ if or $showDates $p.Params.contact }}
   <dl>
+    {{ with $p.Params.contact }}
+      {{ $contact := trim (string .) " " }}
+      {{ $pair := findRESubmatch `^(.+?)\s*[(\<]([^\s@()<>]+@[^\s@()<>]+\.[^\s@()<>]+)[)\>]$` $contact 1 }}
+      {{ $contactProfile := site.GetPage (printf "/authors/%s" (urlize $contact)) }}
+      <dt>Contact</dt><dd class="card-contact">
+        {{- if $pair -}}
+          {{- $name := trim (index (index $pair 0) 1) " " -}}
+          {{- $email := index (index $pair 0) 2 -}}
+          {{- $np := site.GetPage (printf "/authors/%s" (urlize $name)) -}}
+          {{- $label := $name -}}{{- with $np -}}{{- $label = .Title -}}{{- end -}}
+          {{- if $np }}<a href="{{ $np.RelPermalink }}">{{ $np.Title }}</a>{{ else }}<span>{{ $name }}</span>{{ end }}
+          <a class="card-contact-email" href="mailto:{{ $email }}" aria-label="Email {{ $label }}" title="Email {{ $label }}"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+        {{- else if $contactProfile -}}
+          <a href="{{ $contactProfile.RelPermalink }}">{{ $contactProfile.Title }}</a>
+        {{- else if findRE `^[^\s@]+@[^\s@]+\.[^\s@]+$` $contact -}}
+          <a class="card-contact-email" href="mailto:{{ $contact }}" aria-label="Email contact" title="Email contact"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+        {{- else -}}
+          {{ $contact | markdownify }}
+        {{- end -}}
+      </dd>
+    {{ end }}
+    {{ if $showDates }}
     <dt>Published</dt><dd>{{ $p.Date.Format "2 January 2006" }}</dd>
     {{ if $updated }}<dt>Updated</dt><dd>{{ $p.Lastmod.Format "2 January 2006" }}</dd>{{ end }}
+    {{ end }}
   </dl>
   {{ end }}
   {{ with $more }}<p class="card-more"><a href="{{ . }}">{{ $moreLabel }}</a></p>{{ end }}

@@ -42,8 +42,6 @@
 .tool:hover h3 a{text-decoration-thickness:2px}
 .tool:focus-within{outline:3px solid var(--ink);outline-offset:2px;background:var(--tint)}
 .tool h3 a:focus-visible{outline:none}
-/* Each stage's starting point keeps its emphasis as a title in the stage colour. */
-.tool:first-child h3 a{color:var(--tone)}
 @media(max-width:600px){
   .tool{grid-template-columns:1fr;padding:12px 4px}
   .tool p.tool-format,.tool h3,.tool p:not(.tool-format){grid-column:1;grid-row:auto}

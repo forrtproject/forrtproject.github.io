@@ -45,7 +45,7 @@ cards:
 
   - key: explore
     title: Explore
-    summary: Find replication evidence for a study or the studies a paper cites.
+    summary: Discover and explore replications.
     links:
       - url: "https://forrt.org/flora-replication-atlas/"
         format: "Web app"
@@ -63,17 +63,19 @@ cards:
         note: "Find replication evidence in the FORRT Replication Database."
       - url: "https://forrt.org/fred/index.html"
         format: "R package"
+        label: "FReD"
         note: "Work with replication data in your own analyses."
       - url: "https://forrt.org/flora-zotero/"
-        format: "Zotero plug-in"
+        format: "Plug-in"
         note: "Check your references for replication evidence."
       - url: "https://forrt.org/chromium-extension/"
         format: "Browser extension"
+        label: "FORRT ORE"
         note: "See replication evidence, retractions, PubPeer comments and open-access copies for the papers you read."
 
   - key: conduct
     title: Conduct
-    summary: Plan and run a replication.
+    summary: Resources and guidance to run high-quality replications.
     links:
       - url: "https://forrt.org/replication-handbook/"
         format: "Guide"
@@ -95,7 +97,7 @@ cards:
 
   - key: disseminate
     title: Disseminate
-    summary: Publish and read replication studies.
+    summary: Get replications to the people who need them.
     links:
       - url: "https://replicationresearch.org"
         format: "Journal"

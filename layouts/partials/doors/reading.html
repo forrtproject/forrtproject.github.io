@@ -30,7 +30,7 @@
 {{ $hasDates := and .Params.date (not (in (slice "page") .Type)) }}
 {{ $wide := in site.Params.doors.wide_pages .Path }}
 {{ $lesson := and .IsPage (eq .Section "neurodiversity-lessonbank") }}
-{{ $hasCard := and (not $wide) (or $hasDates $lesson (gt (len $headings) 1)) }}
+{{ $hasCard := and (not $wide) (or $hasDates $lesson .Params.contact (gt (len $headings) 1)) }}
 {{ $hasCallouts := and (not $wide) (strings.Contains $body `<aside class="callout`) }}
 {{ $card := "" }}
 {{ if $hasCard }}{{ $card = partial "doors/reading_card" (dict "page" . "hasDates" $hasDates "headings" $headings "contents" $contents "written" $written) }}{{ end }}

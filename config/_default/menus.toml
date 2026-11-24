@@ -6,7 +6,7 @@
 
 [[main]]
   name = "About FORRT"
-  url = ""
+  url = "about/us"
   weight = 10
   identifier = "about"
 

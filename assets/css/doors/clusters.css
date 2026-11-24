@@ -552,12 +552,12 @@
 }
 
 .sc-description a {
-  color: #1c7ed6;
+  color: var(--link);
   word-break: break-word;
 }
 
 .sc-description a:hover {
-  color: #1264ab;
+  color: var(--ink);
 }
 
 /* ---- Publication list ---- */
@@ -574,12 +574,12 @@
 }
 
 .publication-item a {
-  color: #1c7ed6;
+  color: var(--link);
   word-break: break-all;
 }
 
 .publication-item a:hover {
-  color: #1264ab;
+  color: var(--ink);
 }
 
 /* ---- Responsive ---- */
@@ -1199,7 +1199,7 @@ h1.clusters-site-heading.clusters-hub-page__title {
 }
 
 .clusters-back-to-top:focus {
-  outline: 2px solid #1c7ed6;
+  outline: 2px solid var(--link);
   outline-offset: 2px;
 }
 
@@ -1851,11 +1851,12 @@ h1.clusters-site-heading.clusters-hub-page__title {
   font-size: 0.75rem;
 }
 .ref-doi-link {
-  color: #1c7ed6;
+  color: var(--link);
   word-break: break-all;
-  text-decoration: none;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
-.ref-doi-link:hover { text-decoration: underline; }
+.ref-doi-link:hover { color: var(--ink); }
 
 .ref-oa-badge {
   display: inline-flex;
@@ -2214,8 +2215,9 @@ h1.clusters-site-heading.clusters-hub-page__title {
   font-size: 15px;
 }
 .rl-detail-doi-link {
-  color: #006080 !important;
-  text-decoration: none;
+  color: var(--link) !important;
+  text-decoration: underline;
+  text-underline-offset: 3px;
   word-break: break-all;
 }
 .rl-detail-doi-link:hover { text-decoration: underline; }
@@ -2384,9 +2386,19 @@ body.clusters-mobile-nav-open .clusters-back-to-top{display:none}
 .clusters-head h1.clusters-site-heading{font-weight:var(--display-weight);letter-spacing:-.01em;text-wrap:balance}
 /* The closed reading-list panel cast its shadow back onto the page edge. */
 .rl-panel:not(.open){box-shadow:none}
+/* Keep the reading-list pill and its count badge at legible UI sizes (DESIGN.md §7). */
+.rl-pill{font-size:15px;padding:7px 14px 7px 12px}
+.rl-pill-count{font-size:14px;min-width:1.5em;height:1.5em}
 /* Introductions keep to a reading measure; the explorer and diagram keep the full width. */
 .clusters-intro .intro-paragraph{max-width:70ch}
-/* On a phone the sponsor is a small credit line, so the search follows the introduction closely. */
+/* Closing attribution row on /disciplines/: form + citation beside the UKRN credit on wide screens, stacked on phones. */
+.disciplines-foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:20px 40px;margin-top:24px;padding-top:20px;border-top:1px solid var(--line)}
+.disciplines-foot__main{flex:1 1 380px;min-width:0}
+.disciplines-foot__main .disciplines-form{margin:0 0 10px}
+.disciplines-foot__main .disciplines-attribution{margin:0;max-width:none}
+.disciplines-foot .disciplines-partner{display:flex;align-items:center;gap:12px;max-width:none;margin:0;text-align:start}
+.disciplines-partner img{width:64px;height:64px;flex:none}
+.disciplines-foot .disciplines-partner__caption{margin:0;font-size:15px}
 @media (max-width:768px){
   .disciplines-partner{display:flex;align-items:center;gap:12px;align-self:flex-start;max-width:none}
   .disciplines-partner img{width:56px;height:56px}
@@ -2611,7 +2623,6 @@ summary.clusters-overview__heading::before{content:"";width:0;height:0;border-le
 .disciplines-areas{gap:6px 18px}
 .disc-key{display:inline-flex;align-items:center;gap:7px;font:600 16px/1.3 var(--text);color:var(--ink)}
 .disc-key::before{content:"";width:14px;height:14px;border-radius:3px;background:var(--k);-webkit-print-color-adjust:exact;print-color-adjust:exact}
-#disciplines-layout .cluster-number{background:var(--ink);color:#fff;font-size:15px;width:1.8em;height:1.8em}
 
 /* Disciplines: a bar of each field's and discipline's resources by kind, in the key's colours (kinds_bar.html). */
 /* A row's bar sits in a fixed track and runs to its share of the largest discipline; the field's bar has its own line. */

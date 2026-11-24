@@ -760,9 +760,12 @@
 
       if (!container && !ownText.trim()) return;
 
+      var countWrap = section.querySelector('.acc-count');
       sectionCache.push({
         el: section,
         countEl: section.querySelector('.acc-count-match'),
+        countWrap: countWrap,
+        totalCount: (countWrap && parseInt(countWrap.getAttribute('data-total'), 10)) || cards.length,
         header: header,
         body: body,
         chevron: header ? header.querySelector('.acc-chevron') : null,
@@ -912,7 +915,21 @@
           sec.cards[c].el.style.display = res.cardVis[c] ? '' : 'none';
         }
 
-        if (sec.countEl) sec.countEl.textContent = res.matchCount;
+        if (sec.countWrap) {
+          if (isFiltered) {
+            sec.countWrap.textContent = res.matchCount + ' of ' + sec.totalCount + ' shown';
+            sec.countWrap.title = 'References shown with the current filters, of all in this group';
+          } else if (res.matchCount < sec.totalCount) {
+            var hiddenSpecialist = sec.totalCount - res.matchCount;
+            sec.countWrap.textContent = res.matchCount + (res.matchCount === 1 ? ' reference' : ' references') + ' (' + hiddenSpecialist + ' specialist hidden)';
+            sec.countWrap.title = 'Tick "Show specialist resources" above to include specialist references';
+          } else {
+            sec.countWrap.textContent = sec.totalCount + (sec.totalCount === 1 ? ' reference' : ' references');
+            sec.countWrap.removeAttribute('title');
+          }
+        } else if (sec.countEl) {
+          sec.countEl.textContent = res.matchCount;
+        }
 
         var header = sec.header;
         var body = sec.body;
