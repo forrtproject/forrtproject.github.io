@@ -42,4 +42,9 @@
 {{- with findRESubmatch `^https?://(?:dx\.)?doi\.org/(.+)$` $cleanUrl 1 -}}
   {{- $doi = lower (index (index . 0) 1) -}}
 {{- end -}}
+{{- if not $doi -}}
+  {{- with findRE `10\.[0-9]{4,9}/(?:[^\s<>()\[\]]|\([^\s<>()\[\]]*\))+` $plain 1 -}}
+    {{- $doi = lower (strings.TrimRight ".,;" (index . 0)) -}}
+  {{- end -}}
+{{- end -}}
 {{- return (dict "author" $short "names" $names "etal" $etal "first" $first "year" $year "url" $cleanUrl "doi" $doi "plain" $plain) -}}

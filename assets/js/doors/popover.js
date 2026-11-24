@@ -1,11 +1,13 @@
 /* Shared, non-modal popovers (citations #200, glossary terms #227).
    import { openPopover, closePopover, registerPopover } from './popover.js'.
-   openPopover(trigger, contentNode, {label, hover = false}) replaces the current popover.
-   registerPopover(selector, (trigger) => contentNode | null, {label, hover = false})
+   openPopover(trigger, contentNode, {label, hover = false, className = ''}) replaces the current popover.
+   registerPopover(selector, (trigger) => contentNode | null, {label, hover = false, className = ''})
    delegates click/Enter; opt-in hover opens after 250ms, closes after 200ms away from both.
-   A null builder leaves the original link alone. Hover never takes focus; other opens focus
-   the first control. label is required by both opening APIs. closePopover() restores focus
-   to the trigger, including outside-click dismissal as specified. No feature data lives here. */
+   A null builder leaves the original link alone. If contentNode provides its own [data-popover-close]
+   button, it is wired instead of appending the corner × button. Hover never takes focus; other opens
+   focus the first non-close focusable control (falling back to the close button). label is required
+   by both opening APIs. closePopover() restores focus to the trigger, including outside-click
+   dismissal as specified. No feature data lives here. */
 let current = null;
 let opening;
 let closing;

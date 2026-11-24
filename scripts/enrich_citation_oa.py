@@ -38,7 +38,6 @@ KNOWN_OA_PREFIXES = (
     "10.17605/",  # OSF Projects & Data
     "10.1101/",   # bioRxiv / medRxiv
     "10.48550/",  # arXiv
-    "10.5281/",   # Zenodo
     "10.6084/",   # Figshare
 )
 
@@ -204,7 +203,7 @@ def query_unpaywall(doi: str, today: str) -> dict | None:
     url = f"https://api.unpaywall.org/v2/{urllib.parse.quote(doi, safe='')}?email={urllib.parse.quote(MAILTO)}"
     try:
         data = fetch_json(url, timeout=15)
-    except (urllib.error.HTTPError, urllib.error.URLError, TimeoutError, ValueError):
+    except (OSError, ValueError):
         return None
     return record_from_unpaywall(data, doi, today)
 

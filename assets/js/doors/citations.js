@@ -84,10 +84,13 @@ const COPY_PATHS = [
   ['path', { d: 'M8 16H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2m-6 12h8a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-8a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2z' }],
 ];
 
-// Trim a standalone trailing URL link from the displayed reference so the footer
-// action links stay clean (Copy APA always reads the full unmodified entry).
-function stripTrailingSourceLink(container, sourceUrl) {
-  if (!sourceUrl) return;
+const normUrl = (url) => (url || '').trim().replace(/^https?:\/\/(?:dx\.)?doi\.org\//i, 'https://doi.org/').replace(/\/+$/, '').toLowerCase();
+
+// Trim a standalone trailing URL link from the displayed reference only when it
+// duplicates one of the footer action URLs (Copy reference always reads the full entry).
+function stripTrailingSourceLink(container, footerUrls) {
+  const targets = new Set(footerUrls.map(normUrl).filter(Boolean));
+  if (!targets.size) return;
   let last = container.lastChild;
   while (last && last.nodeType === Node.TEXT_NODE && /^[\s.)\]]*$/.test(last.textContent)) {
     const prev = last.previousSibling;
@@ -100,6 +103,7 @@ function stripTrailingSourceLink(container, sourceUrl) {
   if (!last || last.nodeType !== Node.ELEMENT_NODE || last.tagName !== 'A') return;
   const text = last.textContent.trim();
   if (!/^https?:\/\//i.test(text) && !/^doi:/i.test(text)) return;
+  if (!targets.has(normUrl(last.getAttribute('href') || last.href))) return;
   // Remove trailing punctuation text node right after the link (e.g. "." or ")").
   while (last.nextSibling && last.nextSibling.nodeType === Node.TEXT_NODE && /^[\s.)\]]*$/.test(last.nextSibling.textContent)) {
     last.nextSibling.remove();
@@ -130,7 +134,7 @@ registerPopover('a.cite[data-cite]', (trigger) => {
   const { source = '', oaStatus = '', oaUrl = '', oaHost = '', oaPdf = '' } = entry.dataset;
   const isFree = ['diamond', 'gold', 'hybrid', 'bronze'].includes(oaStatus);
   const isGreen = oaStatus === 'green' && Boolean(oaUrl);
-  const isClosed = oaStatus === 'closed' || (oaStatus === 'green' && !oaUrl);
+  const isClosed = oaStatus === 'closed';
 
   const content = document.createElement('div');
   content.className = 'cite-pop';
@@ -163,7 +167,21 @@ registerPopover('a.cite[data-cite]', (trigger) => {
   const reference = document.createElement('div');
   reference.className = 'cite-pop-body';
   reference.append(...[...entry.childNodes].map((node) => node.cloneNode(true)));
-  stripTrailingSourceLink(reference, source || oaUrl);
+  const footerUrls = [];
+  if (isGreen) {
+    footerUrls.push(oaUrl);
+    if (source) footerUrls.push(source);
+  } else if (isFree) {
+    if (oaUrl && oaPdf === 'true') {
+      footerUrls.push(oaUrl);
+      if (source) footerUrls.push(source);
+    } else if (oaUrl || source) {
+      footerUrls.push(oaUrl || source);
+    }
+  } else if (source) {
+    footerUrls.push(source);
+  }
+  stripTrailingSourceLink(reference, footerUrls);
   content.append(reference);
 
   const foot = document.createElement('div');
@@ -178,8 +196,8 @@ registerPopover('a.cite[data-cite]', (trigger) => {
     if (oaUrl && oaPdf === 'true') {
       links.append(externalLink(oaUrl, 'Read PDF ↗', 'cite-link-primary'));
       if (source) links.append(externalLink(source, 'DOI ↗', 'cite-link-secondary'));
-    } else if (source || oaUrl) {
-      links.append(externalLink(source || oaUrl, 'Read article ↗', 'cite-link-primary'));
+    } else if (oaUrl || source) {
+      links.append(externalLink(oaUrl || source, 'Read article ↗', 'cite-link-primary'));
     }
   } else if (isClosed && source) {
     links.append(externalLink(source, 'Publisher DOI ↗', 'cite-link-primary'));

@@ -20,7 +20,7 @@
 .cite-pop-close{position:relative;width:30px;height:30px;padding:0;border:0;border-radius:6px;background:none;color:var(--soft);font:inherit;font-size:1.25rem;line-height:1;cursor:pointer;display:grid;place-items:center;flex-shrink:0}
 .cite-pop-close::after{content:"";position:absolute;inset:-7px}
 .cite-pop-close:hover,.cite-pop-close:focus-visible{background:var(--surface);color:var(--ink)}
-.cite-pop-body{padding:6px 16px 12px;overflow-y:auto;overflow-wrap:anywhere;font-size:.93rem;line-height:1.5;color:var(--ink)}
+.cite-pop-body{padding:var(--box-pad);overflow-y:auto;overflow-wrap:anywhere;font-size:.93rem;line-height:1.5;color:var(--ink)}
 .cite-pop-foot{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px 12px;padding:9px 14px;background:var(--surface);border-top:1px solid var(--foot)}
 .cite-pop-links{display:flex;align-items:center;flex-wrap:wrap;gap:12px}
 .cite-link-primary{font-size:.86rem;font-weight:600;color:var(--link);text-decoration:underline;text-underline-offset:2px;white-space:nowrap}
