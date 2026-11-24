@@ -9,7 +9,8 @@ Run: python3 scripts/rebrand/check_source_rules.py [--base origin/main]
 2. Generated paths (CONTRIBUTING.md) must not change on the branch, as a hand edit is
    lost when the generator next runs. Compared with the merge base, so main's own updates
    arriving through a merge do not count. The first output of a generator the branch adds
-   (NEW_OUTPUTS) may be added, but not changed afterwards by hand.
+   (NEW_OUTPUTS) may be added, and retired outputs listed in REMOVED_OUTPUTS may be deleted
+   (temporary until main drops them), but neither may be edited by hand afterwards.
 """
 
 import argparse
@@ -43,7 +44,8 @@ GENERATED = re.compile(
 
 # First outputs of generators, or of outputs newly added to a generator, on the branch; main has no copy yet.
 NEW_OUTPUTS = {"data/open_research_games.json", "data/scholar_citations.json"}
-# Retired generated files deliberately removed on the branch so they stop being served.
+# Retired generated files deliberately removed on the branch so they stop being served;
+# temporary until main removes them too (keep narrow, do not use for ordinary edits).
 REMOVED_OUTPUTS = {"static/data/open_research_games.json"}
 
 

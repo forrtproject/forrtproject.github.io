@@ -139,6 +139,12 @@ class FreshnessTests(unittest.TestCase):
         self.assertNotIn("data/partners.json", files)
         self.assertNotIn("static/data/open_research_games.json", files)
 
+    def test_excluded_file_in_artifact_is_not_overlaid(self):
+        self.write(self.download, "static/data/open_research_games.json", '{"stale": true}')
+        result = self.overlay()
+        self.assertEqual(result, {})
+        self.assertFalse((self.root / "static/data/open_research_games.json").exists())
+
 
 if __name__ == "__main__":
     unittest.main()

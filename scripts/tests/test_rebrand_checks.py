@@ -403,12 +403,18 @@ class SourceRuleTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             launch = root / "launch"
-            (launch / "public").mkdir(parents=True)
-            (launch / "public" / "index.html").write_text("ok")
+            first = launch / "public"
+            rebuilt = root / "rebuilt"
+            first.mkdir(parents=True)
+            rebuilt.mkdir(parents=True)
+            (first / "index.html").write_text("ok")
+            (rebuilt / "index.html").write_text("ok")
+            (rebuilt / "extra.html").write_text("changed")
             groups = {"reverted": [], "overridden": [], "resurrected": ["static/data/open_research_games.json"]}
-            with patch.object(rehearse_launch, "build", return_value=launch / "public"):
+            with patch.object(rehearse_launch, "build", return_value=rebuilt) as mocked_build:
                 diff = rehearse_launch.artifact_ab(launch, groups, "HEAD", "hugo", root / "logs")
-            self.assertEqual(diff, [])
+            mocked_build.assert_called_once()
+            self.assertEqual(diff, ["extra.html"])
 
     def test_absolute_urls_in_templates(self):
         with tempfile.TemporaryDirectory() as root:
