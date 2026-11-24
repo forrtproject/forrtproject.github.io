@@ -455,10 +455,12 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 /* /reversals/ (site.js). The page is wider than an article: the contents card, with each discipline's mix of outcomes,
    stays beside the list, and the board of outcomes opens it. */
 @media(min-width:1001px){
-  .article-layout:has(.list-filter[data-noun=effects]:not([hidden])){grid-template-columns:256px minmax(0,1fr);gap:48px;max-width:1064px;margin-inline:auto}
-  .article-layout:not(.article-layout-wide):has(.list-filter[data-noun=effects]:not([hidden]))>.article-card{width:auto;padding:18px 14px 18px 18px}
+  .article-layout:has(.list-filter[data-noun=effects]){grid-template-columns:256px minmax(0,1fr);gap:48px;max-width:1064px;margin-inline:auto}
+  .article-layout:not(.article-layout-wide):has(.list-filter[data-noun=effects])>.article-card{width:auto;padding:18px 14px 18px 18px}
 }
-.reading:has(.list-filter[data-noun=effects]:not([hidden])) .toc-phone{display:none}
+/* With JavaScript enabled, the toolbar's Go to menu replaces the phone contents list (assets.html's <noscript>
+   style restores .toc-phone when JavaScript is off), avoiding a jump when site.js unhides the toolbar. */
+.reading:has(.list-filter[data-noun=effects]) .toc-phone{display:none}
 .article-layout:has(.list-filter[data-noun=effects]) .article-toc #TableOfContents a{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:8px;padding:3px 6px;border-radius:6px;font-size:16px;line-height:1.3;color:var(--ink);text-decoration:none}
 .article-layout:has(.list-filter[data-noun=effects]) .article-toc #TableOfContents a:hover{color:var(--link);text-decoration:underline}
 .article-layout:has(.list-filter[data-noun=effects]) .article-toc #TableOfContents a[aria-current]{background:#fff;font-weight:600}
@@ -471,7 +473,8 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
   .article-layout:has(.list-filter[data-noun=effects]) .article-style div.alert>div>p{margin:0}
   .article-layout:has(.list-filter[data-noun=effects]) .article-style div.alert>div>p:has(>.btn){flex:none}
 }
-/* The board: a tile per outcome, its bricks one per effect. */
+/* The board: a tile per outcome, its bricks one per effect. Once inserted, it replaces the static summary line. */
+.outcome-summary:has(+.outcome-board){display:none}
 .outcome-board{margin:30px 0 10px}
 .article-layout .article-style .outcome-board h2{margin:0 0 4px;font-size:clamp(25px,2.4vw,31px);line-height:1.15}
 .article-layout .article-style .outcome-hint{margin:0 0 14px;font-size:17px}
