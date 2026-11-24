@@ -2681,6 +2681,8 @@ summary.clusters-overview__heading::before{content:"";width:0;height:0;border-le
 /* Sidebar sub-cluster: the dot sits beside the reference count so it never wraps onto a line of its own. */
 .cluster-nav-subs .badge .lp-dot{margin:0 6px 0 0;vertical-align:.05em}
 .lp-filter-toggle .lp-dot{margin:0 6px 0 0}
+/* A cluster heading in the sidebar: the dot keeps to the right edge, beside the sub-clusters' counts, however the name wraps. */
+.cluster-nav-heading .lp-dot{margin-left:auto}
 .lp-strip{background:#fff;border:1px solid var(--line);border-left:4px solid var(--edu);border-radius:var(--r-small);padding:10px 14px;margin:4px 0 14px;max-width:760px}
 .lp-strip__label{display:block;font:700 15px/1.35 var(--text);color:var(--edu);margin-bottom:6px}
 /* The set's topic, shown only when it differs from the sub-cluster it sits under (data: "heading"). */

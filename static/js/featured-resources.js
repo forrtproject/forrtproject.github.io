@@ -957,12 +957,15 @@
         if (!(lpOnly && !sectionCache[r].hasLp)) shownCards += sectionResults[r].matchCount;
         allCards += sectionCache[r].cards.length;
       }
+      /* On a cluster page with no teaching materials, the page's own message (.lp-filter-empty) says so instead. */
+      var noLpHere = lpOnly && !sectionCache.some(function (sec) { return sec.hasLp; });
       if (statusEl) {
         var message = '';
-        if (isFiltered && shownCards === 0) message = 'No resources match.';
+        if (noLpHere) message = '';
+        else if (isFiltered && shownCards === 0) message = 'No resources match.';
         else if (isFiltered) message = shownCards + ' of ' + allCards + ' resources shown' + (onHub ? ' in the clusters below.' : '.');
         if (statusEl.textContent !== message) statusEl.textContent = message;
-        var none = isFiltered && shownCards === 0;
+        var none = isFiltered && shownCards === 0 && !noLpHere;
         if (resultClear) resultClear.hidden = !none;
         /* One Clear button at a time: the message's while nothing matches, the bar's otherwise. */
         if (clearBtn && none) clearBtn.hidden = true;
