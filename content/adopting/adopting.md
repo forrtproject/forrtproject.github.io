@@ -158,7 +158,7 @@ Including sources in your syllabus that discuss open and transparent research ca
   * [The ORION Open Science Podcast](https://orionopenscience.podbean.com/): A podcast about the good, the bad, and the ugly of the current scientific system, and what open science practices can do to improve the way we do science
   * [Quantitude: A podcast dedicated to all things quantitative](https://quantitudepod.org/)
   * [ReproducibiliTea: A podcast highlighting the great work of early career researchers](https://soundcloud.com/reproducibilitea)
-  * [Within & Between: A podcast about the methods and metascience of developmental science](https://podtail.com/en/podcast/within-between/)
+  * [Within & Between: A podcast about the methods and metascience of developmental science](https://podtail.com/podcast/within-between)
 
 </div>
 </details>
