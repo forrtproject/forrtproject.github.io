@@ -52,7 +52,7 @@
 .article-layout .article-style blockquote p:last-child{margin-bottom:0}
 .article-layout .article-style figure{margin:28px 0}
 .article-layout .article-style img{max-width:100%;height:auto}
-.article-layout .article-style div[style*="display:flex"]{flex-wrap:wrap}
+.article-layout .article-style div[style*="display:flex"],.article-layout .article-style div[style*="display: flex"]{flex-wrap:wrap}
 .article-layout .article-style iframe,.article-layout .article-style video{max-width:100%}
 /* A hand-coloured red button in one lesson. Our red keeps its meaning and passes on the page. */
 .article-layout .article-style .btn[style*="color:red"]{color:var(--urgent)!important}
@@ -243,6 +243,25 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .article-layout .post-nav-item:only-child{max-width:none}
 .article-layout .post-nav-item:last-child:not(:first-child){text-align:end}
 .article-logo{float:inline-end;width:96px;height:96px;margin:0 0 12px 18px;border-radius:var(--r-small)}
+/* FORWARD UNESCO Sustainable Development Goals card (shortcodes/forward_unesco_sdgs_card.html), shared by
+   /awards/ and Educators' Corner 023. */
+.forward-card-container{width:100%;padding:12px 0 0;box-sizing:border-box}
+.forward-sdg-card{border:1px solid var(--line);border-radius:var(--r-large);padding:20px 22px;background:var(--page);margin:0;max-width:900px;text-align:center;font-family:var(--text)}
+.article-layout .article-style .forward-header .forward-sdg-title{margin:0 0 4px;max-width:none;color:var(--ink);font:500 22px/1.2 var(--display)}
+.article-layout .article-style .forward-header .forward-sdg-sub{margin:0 0 16px;max-width:none;color:var(--soft);font-size:16px;line-height:1.4}
+.sdg-icons-wrapper{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:14px}
+.sdg-icons-wrapper a{position:relative;display:inline-block;text-decoration:none;border-radius:var(--r-small)}
+.sdg-icons-wrapper .sdg-ext{position:absolute;right:4px;bottom:4px;display:grid;place-items:center;width:20px;height:20px;border-radius:4px;background:rgba(255,255,255,.92);color:var(--ink);font-size:10px;line-height:1;box-shadow:0 1px 2px rgba(0,0,0,.18);pointer-events:none}
+.article-layout .article-style .sdg-icons-wrapper img{display:block;width:78px;height:78px;border-radius:var(--r-small);background:#fff;margin:0}
+@media(prefers-reduced-motion:no-preference){
+  .sdg-icons-wrapper a{transition:transform .16s ease}
+  .sdg-icons-wrapper a:is(:hover,:focus-visible){transform:translateY(-3px)}
+}
+@media(max-width:640px){
+  .forward-sdg-card{padding:16px}
+  .sdg-icons-wrapper{gap:10px}
+  .article-layout .article-style .sdg-icons-wrapper img{width:64px;height:64px}
+}
 @media print{
   .site-head,.site-foot,.article-foot,.skip,.cc-window,.article-toc,.article-card h2{display:none!important}
   body{background:#fff;color:#000;font-size:12pt}
@@ -319,14 +338,146 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .article-style .catalogue-group:has(li:nth-child(15)){break-inside:auto}
 .article-style .catalogue-group:has(li:nth-child(15)) h3{break-after:avoid-column}
 
-/* Lesson bank: one card per lesson, with its plan and texts. */
-.article-layout .article-style .lesson-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:18px;margin:20px 0 40px;padding:0;list-style:none}
-.article-style .lesson-grid>.lesson-card{max-width:none;margin:0;padding:18px 20px;background:var(--surface);border-radius:var(--r-large)}
-.article-style .lesson-card .lesson-num{margin:0 0 4px;font-size:15px;font-weight:700;color:var(--soft)}
-.article-style .lesson-card h3{margin:0 0 10px;font-size:22px;line-height:1.2}
-.article-style .lesson-card .lesson-materials{margin:0;padding:0;list-style:none}
-.article-style .lesson-card .lesson-materials li{margin:0 0 4px;font-size:16px}
-.article-style .lesson-card .lesson-note{margin:0;font-size:16px;color:var(--soft)}
+/* Neurodiversity Lesson Bank: index cards, workshop layout, and Social Justice (--jus) lesson pages.
+   On phones and tablets the lessons follow the intro straight away (DESIGN.md §2) and the Team Neurodiversity
+   panel moves below them; on desktop the panel stands beside the intro above the grid. */
+.article-layout .article-style .lessonbank-flow{display:flex;flex-direction:column;gap:0;max-width:none}
+.article-layout .article-style .lessonbank-intro{order:0}
+.article-layout .article-style .lessonbank-lessons{order:1}
+.article-layout .article-style .lessonbank-aside{order:2;max-width:none;margin:0 0 28px;padding:24px 22px 20px;background:var(--jus-bg);box-shadow:inset 0 5px 0 var(--jus);border-radius:var(--r-large)}
+.article-layout .article-style .lessonbank-intro p{margin:0 0 14px}
+.article-layout .article-style .lessonbank-intro p:last-child{margin-bottom:0}
+.article-layout .article-style .lessonbank-aside h2{margin:0 0 8px;font-size:22px;line-height:1.2}
+.article-layout .article-style .lessonbank-aside p{margin:0 0 12px;font-size:17px;line-height:1.5;max-width:none}
+.article-layout .article-style .lessonbank-aside-links{display:flex;flex-direction:column;gap:6px;margin:0;padding:0;list-style:none}
+.article-layout .article-style .lessonbank-aside-links li{margin:0;max-width:none;font-size:16px}
+.article-layout .article-style .lessonbank-aside-links a{color:var(--jus);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.article-layout .article-style .lessonbank-aside-links a:hover{color:var(--ink)}
+@media(min-width:1001px){
+  .article-layout .article-style .lessonbank-flow{display:grid;grid-template-columns:minmax(0,580px) minmax(0,420px) minmax(0,1fr);grid-template-areas:"intro aside ." "lessons lessons lessons";column-gap:56px;align-items:start}
+  .article-layout .article-style .lessonbank-intro{grid-area:intro}
+  .article-layout .article-style .lessonbank-aside{grid-area:aside;margin:0}
+  .article-layout .article-style .lessonbank-lessons{grid-area:lessons}
+}
+.article-layout .article-style .lesson-grid-note{margin:0 0 18px;font-size:16px;color:var(--soft)}
+.article-layout .article-style .lesson-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:18px;margin:20px 0 40px;padding:0;list-style:none;max-width:none}
+.article-layout .article-style .lesson-grid>.lesson-card{display:flex;flex-direction:column;max-width:none;margin:0;padding:20px 22px;background:var(--surface);border-radius:var(--r-large)}
+.article-layout .article-style .lesson-grid>.lesson-card-online{background:var(--jus-bg);box-shadow:inset 0 5px 0 var(--jus);padding-top:24px}
+.article-layout .article-style .lesson-card .lesson-num{margin:0 0 6px;font-size:15px;font-weight:700;color:var(--soft);max-width:none}
+.article-layout .article-style .lesson-card-online .lesson-num{color:var(--jus)}
+.article-layout .article-style .lesson-card h3{margin:0 0 8px;font-size:22px;line-height:1.2}
+.article-layout .article-style .lesson-card-online h3 a{color:var(--jus);text-decoration-color:color-mix(in srgb,var(--jus) 55%,transparent)}
+.article-layout .article-style .lesson-card-online h3 a:hover{color:var(--ink);text-decoration-color:currentColor}
+.article-layout .article-style .lesson-card .lesson-summary{margin:0 0 14px;font-size:16px;line-height:1.45;color:var(--ink);max-width:none}
+.article-layout .article-style .lesson-card .lesson-materials{margin:auto 0 0;padding:12px 0 0;border-top:1px solid color-mix(in srgb,var(--ink) 14%,transparent);list-style:none;display:flex;flex-wrap:wrap;gap:6px 14px}
+.article-layout .article-style .lesson-card .lesson-materials li{margin:0;font-size:15px;max-width:none}
+.article-layout .article-style .lesson-card .lesson-materials a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
+.article-layout .article-style .lesson-card-online .lesson-materials a{color:var(--jus)}
+.article-layout .article-style .lesson-card-online .lesson-materials a:hover{color:var(--ink)}
+.article-style .lesson-card .lesson-note{margin:auto 0 0;padding-top:12px;border-top:1px solid color-mix(in srgb,var(--ink) 14%,transparent);font-size:15px;color:var(--soft);max-width:none}
+.article-layout .article-style .lessonbank-workshop{display:flex;flex-direction:column;gap:20px;margin:16px 0 0;max-width:none}
+.article-layout .article-style .lessonbank-workshop-media{min-width:0}
+.article-layout .article-style .lessonbank-workshop-links{display:flex;flex-wrap:wrap;gap:10px 18px;margin:16px 0 0;padding:0;list-style:none}
+.article-layout .article-style .lessonbank-workshop-links li{margin:0}
+@media(min-width:1001px){
+  .article-layout .article-style .lessonbank-workshop{display:grid;grid-template-columns:minmax(0,520px) minmax(0,560px);justify-content:start;column-gap:48px;align-items:start}
+}
+@media(max-width:1000px){
+  .article-layout .article-style .lesson-card .lesson-materials a,.article-layout .article-style .lessonbank-aside-links a{display:inline-flex;align-items:center;min-height:44px}
+  .article-layout .article-style .lesson-card .lesson-materials{gap:0 16px;padding-top:6px}
+}
+.article-layout :is(.lesson-materials,.lesson-card-feedback,.lesson-quick-bar) .fa-external-link-alt{margin-inline-start:4px;font-size:.78em}
+
+/* Individual lesson pages: Social Justice (--jus) side card, mobile bar, structured activity blocks and pager. */
+.article-layout .lesson-kicker{margin:0 0 8px;font-size:16px;font-weight:700;color:var(--jus)}
+.article-layout .article-card-jus{background:var(--jus-bg);box-shadow:inset 0 6px 0 var(--jus);padding-top:26px}
+.article-layout .article-card-jus .article-toc #TableOfContents a{color:var(--jus)}
+.article-layout .article-card-jus .article-toc #TableOfContents a:hover{color:var(--ink)}
+.article-type-neurodiversity-lessonbank .toc-phone{background:var(--jus-bg)}
+.article-type-neurodiversity-lessonbank .toc-phone a{color:var(--jus)}
+.article-layout .lesson-card-meta{margin:0 0 18px;padding:0 0 14px;border-bottom:1px solid color-mix(in srgb,var(--jus) 22%,transparent)}
+.article-layout .lesson-card-links{margin:0;padding:0;list-style:none}
+.article-layout .lesson-card-links li{margin:0 0 6px;font-size:15px}
+.article-layout .lesson-card-links a,.article-layout .lesson-card-feedback a,.article-layout .lesson-card-nav a{color:var(--jus);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.article-layout .lesson-card-links a:hover,.article-layout .lesson-card-feedback a:hover,.article-layout .lesson-card-nav a:hover{color:var(--ink)}
+.article-layout .lesson-card-feedback{margin:10px 0 0;font-size:15px}
+.article-layout .lesson-card-nav{display:flex;flex-direction:column;gap:6px;margin:18px 0 0;padding:14px 0 0;border-top:1px solid color-mix(in srgb,var(--jus) 22%,transparent);font-size:15px}
+.article-layout .lesson-quick-bar{display:none}
+@media(max-width:1000px){
+  .article-layout .article-card-jus{display:none}
+  .article-layout .lesson-quick-bar{display:flex;flex-wrap:wrap;gap:6px 14px;margin:14px 0 0;padding:10px 14px;background:var(--jus-bg);border-radius:var(--r-small)}
+  .article-layout .lesson-quick-link{display:inline-flex;align-items:center;min-height:44px;font-size:15px;font-weight:600;color:var(--jus);text-decoration:underline;text-underline-offset:3px}
+  .article-layout .lesson-quick-link:hover{color:var(--ink)}
+}
+.article-type-neurodiversity-lessonbank .article-style blockquote{background:var(--jus-bg)}
+.article-layout .article-style .lesson-objectives{margin:0 0 28px;padding:18px 22px;background:var(--jus-bg);border-inline-start:4px solid var(--jus);border-radius:var(--r-small)}
+.article-layout .article-style .lesson-objectives h2{margin:0 0 10px;font-size:22px;line-height:1.2}
+.article-layout .article-style .lesson-objectives ul{margin:0;padding-inline-start:1.3em}
+.article-layout .article-style .lesson-objectives li:last-child{margin-bottom:0}
+.article-layout .article-style .lesson-media-pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:16px;margin:24px 0}
+.article-layout .article-style .lesson-media-pair img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:contain;padding:8px;box-sizing:border-box;background:#fff;border:1px solid var(--line);border-radius:var(--r-small)}
+.article-layout .article-style .lesson-figure{margin:24px 0;max-width:580px}
+.article-layout .article-style .lesson-figure-sm{max-width:420px}
+.article-layout .article-style .lesson-figure img{display:block;width:100%;height:auto;border-radius:var(--r-small)}
+.article-layout .article-style .lesson-figure figcaption{margin-top:8px;font-size:15px;line-height:1.4;color:var(--soft);text-align:start}
+.article-layout .article-style .lesson-note-box{margin:24px 0;padding:16px 20px;background:var(--jus-bg);border-inline-start:4px solid var(--jus);border-radius:var(--r-small);max-width:31em}
+.article-layout .article-style .lesson-note-box p:last-child{margin-bottom:0}
+.article-layout .article-style .lesson-prompt-box{margin:20px 0;padding:16px 20px;background:var(--surface);border-inline-start:4px solid var(--soft);border-radius:var(--r-small);max-width:31em}
+.article-layout .article-style .lesson-prompt-box p:last-child,.article-layout .article-style .lesson-prompt-box ul:last-child{margin-bottom:0}
+.article-layout .article-style .lesson-excerpt{margin:20px 0;padding:18px 22px;background:var(--surface);border-radius:var(--r-large);max-width:31em}
+.article-layout .article-style .lesson-excerpt p:last-child{margin-bottom:0}
+.article-layout .article-style .lesson-annotated-excerpt{margin:20px 0 28px;padding:22px 24px;background:var(--surface);border-inline-start:4px solid var(--jus);border-radius:var(--r-large);max-width:31em}
+.article-layout .article-style .lesson-excerpt-head{margin:0 0 16px;padding:0 0 12px;border-bottom:1px solid var(--line)}
+.article-layout .article-style .lesson-excerpt-title{margin:0 0 4px;font:500 21px/1.25 var(--display);color:var(--ink)}
+.article-layout .article-style .lesson-excerpt-byline{margin:0;font-size:15px;color:var(--soft)}
+.article-layout .article-style .lesson-passage{margin:0 0 18px;padding:0 0 16px;border-bottom:1px solid color-mix(in srgb,var(--ink) 12%,transparent)}
+.article-layout .article-style .lesson-passage:last-of-type{margin-bottom:14px;padding-bottom:14px}
+.article-layout .article-style .lesson-passage p{margin:0 0 10px}
+.article-layout .article-style .lesson-passage .lesson-ellipsis{margin:0 0 10px;font-weight:600;color:var(--soft)}
+.article-layout .article-style .lesson-hint{margin:8px 0 0;background:var(--jus-bg);border-radius:var(--r-small)}
+.article-layout .article-style .lesson-hint>summary{display:flex;align-items:center;min-height:44px;padding:6px 14px;font-size:16px;font-weight:600;color:var(--jus);cursor:pointer;list-style:none}
+.article-layout .article-style .lesson-hint>summary::-webkit-details-marker{display:none}
+.article-layout .article-style .lesson-hint>summary::before{content:"▸";display:inline-block;flex:none;margin-inline-end:8px;transition:transform .15s}
+.article-layout .article-style .lesson-hint[open]>summary::before{transform:rotate(90deg)}
+.article-layout .article-style .lesson-hint>summary:hover{color:var(--ink)}
+.article-layout .article-style .lesson-hint-body{padding:0 14px 14px;font-size:16px;line-height:1.5;color:var(--ink)}
+.article-layout .article-style .lesson-hint-body p:last-child{margin-bottom:0}
+.article-layout .article-style .lesson-quiz{margin:16px 0 24px;max-width:31em}
+.article-layout .article-style .lesson-quiz .spoiler{margin:0 0 10px;background:var(--jus-bg);border-radius:var(--r-small)}
+.article-layout .article-style .lesson-quiz .spoiler>summary{display:flex;align-items:baseline;min-height:44px;padding:10px 16px;font-size:17px;color:var(--ink);list-style:none}
+.article-layout .article-style .lesson-quiz .spoiler>summary::-webkit-details-marker{display:none}
+.article-layout .article-style .lesson-quiz .spoiler>summary::before{content:"▸";display:inline-block;flex:none;margin-inline-end:10px;color:var(--jus);transition:transform .15s}
+.article-layout .article-style .lesson-quiz .spoiler[open]>summary::before{transform:rotate(90deg)}
+.article-layout .article-style .lesson-quiz .spoiler>summary:hover{color:var(--jus)}
+.article-layout .article-style .lesson-quiz .spoiler-body{padding:0 16px 14px;font-size:16px;line-height:1.5}
+.article-layout .article-style .lesson-attribution{margin:12px 0 0;font-size:15px;line-height:1.45;color:var(--soft);max-width:34em}
+.article-layout .article-style .lesson-attribution a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
+.article-layout .article-style .lesson-attribution .fa-external-link-alt{margin-inline-start:3px;font-size:.78em}
+.article-layout .article-style .lesson-action-row{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin:16px 0 22px;max-width:none}
+.article-layout .article-style .lesson-action-row .btn{min-height:44px;display:inline-flex;align-items:center;text-decoration:none}
+.article-layout .article-style .lesson-action-host{font-size:15px;color:var(--soft)}
+.article-layout .article-style .lesson-embed{position:relative;margin:20px 0 24px;border-radius:var(--r-small);overflow:hidden}
+.article-layout .article-style .lesson-embed:has(>iframe){aspect-ratio:4/3}
+.article-layout .article-style .lesson-embed-video:has(>iframe){aspect-ratio:16/9}
+.article-layout .article-style .lesson-embed-tall:has(>iframe){aspect-ratio:4/5;min-height:460px}
+.article-layout .article-style .lesson-options{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:16px;margin:20px 0}
+.article-layout .article-style .lesson-option-card{padding:18px 20px;background:var(--jus-bg);border-radius:var(--r-large)}
+.article-layout .article-style .lesson-option-card h3{margin:0 0 8px;font-size:19px;line-height:1.25;color:var(--ink)}
+.article-layout .article-style .lesson-option-card p{margin:0;font-size:16px;line-height:1.5;max-width:none}
+.article-layout .article-style .lesson-option-card ul{margin:10px 0 0;padding-inline-start:1.2em;font-size:16px;line-height:1.45}
+.article-layout .article-style .lesson-option-card li{margin-bottom:4px;max-width:none}
+.article-layout .article-style .lesson-option-card li:last-child{margin-bottom:0}
+.article-layout .article-style .lesson-quotes{counter-reset:lesson-quote;margin:18px 0 24px;padding:0;list-style:none;display:flex;flex-direction:column;gap:14px;max-width:30em}
+.article-layout .article-style .lesson-quotes li{counter-increment:lesson-quote;margin:0;padding:16px 20px;background:var(--jus-bg);border-inline-start:4px solid var(--jus);border-radius:var(--r-small)}
+.article-layout .article-style .lesson-quotes li::before{content:counter(lesson-quote) ". ";font-weight:700;color:var(--jus)}
+.article-layout .article-style .lesson-cases{margin:18px 0 24px;padding-inline-start:1.4em;max-width:29.8em}
+.article-layout .article-style .lesson-cases li{margin:0;padding:12px 0;border-bottom:1px solid var(--line)}
+.article-layout .article-style .lesson-cases li:last-child{border-bottom:0}
+.article-layout .article-style .lesson-reading{margin:32px 0 0;padding:20px 22px;background:var(--surface);border-radius:var(--r-large);max-width:31em}
+.article-layout .article-style .lesson-reading h2{margin:0 0 6px;font-size:24px}
+.article-layout .article-style .lesson-reading p,.article-layout .article-style .lesson-reading li{font-size:16px;line-height:1.5;overflow-wrap:anywhere}
+.article-layout .article-style .lesson-reading p:last-child,.article-layout .article-style .lesson-reading ul:last-child{margin-bottom:0}
+.article-layout .post-nav-lesson{margin-top:12px;padding-top:16px;border-top:1px solid var(--line)}
 
 /* A tool page's direct actions, under its title (doors/page_actions). */
 .article-layout .page-actions{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 28px}
@@ -455,10 +606,12 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 /* /reversals/ (site.js). The page is wider than an article: the contents card, with each discipline's mix of outcomes,
    stays beside the list, and the board of outcomes opens it. */
 @media(min-width:1001px){
-  .article-layout:has(.list-filter[data-noun=effects]:not([hidden])){grid-template-columns:256px minmax(0,1fr);gap:48px;max-width:1064px;margin-inline:auto}
-  .article-layout:not(.article-layout-wide):has(.list-filter[data-noun=effects]:not([hidden]))>.article-card{width:auto;padding:18px 14px 18px 18px}
+  .article-layout:has(.list-filter[data-noun=effects]){grid-template-columns:256px minmax(0,1fr);gap:48px;max-width:1064px;margin-inline:auto}
+  .article-layout:not(.article-layout-wide):has(.list-filter[data-noun=effects])>.article-card{width:auto;padding:18px 14px 18px 18px}
 }
-.reading:has(.list-filter[data-noun=effects]:not([hidden])) .toc-phone{display:none}
+/* With JavaScript enabled, the toolbar's Go to menu replaces the phone contents list (assets.html's <noscript>
+   style restores .toc-phone when JavaScript is off), avoiding a jump when site.js unhides the toolbar. */
+.reading:has(.list-filter[data-noun=effects]) .toc-phone{display:none}
 .article-layout:has(.list-filter[data-noun=effects]) .article-toc #TableOfContents a{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:8px;padding:3px 6px;border-radius:6px;font-size:16px;line-height:1.3;color:var(--ink);text-decoration:none}
 .article-layout:has(.list-filter[data-noun=effects]) .article-toc #TableOfContents a:hover{color:var(--link);text-decoration:underline}
 .article-layout:has(.list-filter[data-noun=effects]) .article-toc #TableOfContents a[aria-current]{background:#fff;font-weight:600}
@@ -471,7 +624,8 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
   .article-layout:has(.list-filter[data-noun=effects]) .article-style div.alert>div>p{margin:0}
   .article-layout:has(.list-filter[data-noun=effects]) .article-style div.alert>div>p:has(>.btn){flex:none}
 }
-/* The board: a tile per outcome, its bricks one per effect. */
+/* The board: a tile per outcome, its bricks one per effect. Once inserted, it replaces the static summary line. */
+.outcome-summary:has(+.outcome-board){display:none}
 .outcome-board{margin:30px 0 10px}
 .article-layout .article-style .outcome-board h2{margin:0 0 4px;font-size:clamp(25px,2.4vw,31px);line-height:1.15}
 .article-layout .article-style .outcome-hint{margin:0 0 14px;font-size:17px}

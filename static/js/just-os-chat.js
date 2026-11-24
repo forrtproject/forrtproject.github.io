@@ -1062,9 +1062,11 @@
       win.style.width = '';
       win.style.height = '';
       updateFloatIcon(win);
+      document.dispatchEvent(new CustomEvent('just-os:toggle', { detail: { open: false } }));
     } else {
       win.style.display = 'flex';
       bubble.classList.remove('bubble-visible');
+      document.dispatchEvent(new CustomEvent('just-os:toggle', { detail: { open: true } }));
       var input = getInputEl(win);
       if (input) setTimeout(function () { input.focus(); }, 100);
     }
@@ -1087,7 +1089,12 @@
         const launcher = document.getElementById('just-os-btn');
         if (launcher) {
           launcher.setAttribute('aria-expanded', 'false');
-          launcher.focus();
+          if (!document.activeElement || document.activeElement === document.body) {
+            if (!launcher.closest('#just-os-widget.is-covered, #just-os-widget.is-dismissed')
+                && launcher.getClientRects().length > 0 && getComputedStyle(launcher).visibility !== 'hidden') {
+              launcher.focus({ preventScroll: true });
+            }
+          }
         }
       }
       return;

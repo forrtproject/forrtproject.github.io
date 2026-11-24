@@ -174,7 +174,7 @@ create_post <- function(row) {
     "categories:\n",
     "  - ", row["Category"], "\n",
     "authors: [\"", row["Author"], "\"]\n",
-    if (nzchar(contact)) paste0("contact: \"", gsub("\"", "\\\\\"", contact), "\"\n") else "",
+    if (nzchar(contact)) paste0("contact: \"", gsub("\"", "\\\\\"", gsub("\\\\", "\\\\\\\\", contact)), "\"\n") else "",
     "---\n\n",
     gsub("\n", "\n  ", row["Description"]), "\n  \n", # Spaces keep the sheet's line breaks in the rendered Markdown
     "<!--more-->\n\n", # Card teasers show only the text above this divider, so the link stays out of them

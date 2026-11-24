@@ -107,38 +107,48 @@ PAGE_TEMPLATE = r"""
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
+    let lastTrigger = null;
+
+    const closeActiveModal = (modal) => {
+        if (!modal) return;
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+        if (!window.__scManaged && lastTrigger && typeof lastTrigger.focus === 'function') {
+            lastTrigger.focus();
+            lastTrigger = null;
+        }
+    };
+
     window.openModal = (id) => {
         const modal = document.getElementById(`modal-${id}`);
         if (modal) {
+            if (!window.__scManaged && document.activeElement && document.activeElement !== document.body) {
+                lastTrigger = document.activeElement;
+            }
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
+            if (!window.__scManaged) {
+                const closeBtn = modal.querySelector('.sc-close-btn');
+                if (closeBtn) closeBtn.focus();
+            }
         }
     };
 
     window.closeModal = (id) => {
-        const modal = document.getElementById(`modal-${id}`);
-        if (modal) {
-            modal.classList.remove('active');
-            document.body.style.overflow = '';
-        }
+        closeActiveModal(document.getElementById(`modal-${id}`));
     };
 
     document.querySelectorAll('.sc-modal-backdrop').forEach(backdrop => {
         backdrop.addEventListener('click', (e) => {
             if (e.target === backdrop) {
-                backdrop.classList.remove('active');
-                document.body.style.overflow = '';
+                closeActiveModal(backdrop);
             }
         });
     });
 
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            const activeModal = document.querySelector('.sc-modal-backdrop.active');
-            if (activeModal) {
-                activeModal.classList.remove('active');
-                document.body.style.overflow = '';
-            }
+        if (e.key === 'Escape' && !window.__scManaged) {
+            closeActiveModal(document.querySelector('.sc-modal-backdrop.active'));
         }
     });
 });
@@ -183,40 +193,41 @@ TEAM_TITLE_CARD_TEMPLATE = r"""
 """
 
 # Connected member card (teams with a title card): coloured connecting bar links it to its team.
+# Uses only phrasing content inside <button> so the generated HTML is valid HTML5.
 MEMBER_CARD_TEMPLATE = r"""
-<div class="sc-card" onclick="openModal('{id}')" style="--team-color:{color};--bar-extend:{extend}">
-    <div class="sc-card-photo">
+<button type="button" class="sc-card" onclick="openModal('{id}')" aria-haspopup="dialog" aria-controls="modal-{id}" style="--team-color:{color};--bar-extend:{extend}">
+    <span class="sc-card-photo">
         {img_content}
-        <div class="sc-card-overlay"></div>
-    </div>
-    <div class="sc-card-content">
-        <h4 class="sc-card-name">{name}</h4>
-        <p class="sc-card-role">{role}</p>
-    </div>
-    <span class="sc-cbar"></span>
-</div>
+        <span class="sc-card-overlay" aria-hidden="true"></span>
+    </span>
+    <span class="sc-card-content">
+        <span class="sc-card-name">{name}</span>
+        <span class="sc-card-role">{role}</span>
+    </span>
+    <span class="sc-cbar" aria-hidden="true"></span>
+</button>
 """
 
 # Plain member card (sections without team titles, e.g. Steering & Guidance): no team bar.
 MEMBER_CARD_PLAIN_TEMPLATE = r"""
-<div class="sc-card" onclick="openModal('{id}')">
-    <div class="sc-card-photo">
+<button type="button" class="sc-card" onclick="openModal('{id}')" aria-haspopup="dialog" aria-controls="modal-{id}">
+    <span class="sc-card-photo">
         {img_content}
-        <div class="sc-card-overlay"></div>
-    </div>
-    <div class="sc-card-content">
-        <h4 class="sc-card-name">{name}</h4>
-        <p class="sc-card-role">{role}</p>
-    </div>
-</div>
+        <span class="sc-card-overlay" aria-hidden="true"></span>
+    </span>
+    <span class="sc-card-content">
+        <span class="sc-card-name">{name}</span>
+        <span class="sc-card-role">{role}</span>
+    </span>
+</button>
 """
 
 MODAL_TEMPLATE = r"""
-<div id="modal-{id}" class="sc-modal-backdrop">
+<div id="modal-{id}" class="sc-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-{id}-name">
     <div class="sc-modal-content">
         <div class="sc-modal-header">
-            <button onclick="closeModal('{id}')" class="sc-close-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 18 12"/></svg>
+            <button type="button" onclick="closeModal('{id}')" class="sc-close-btn" aria-label="Close profile">
+                <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 18 12"/></svg>
             </button>
         </div>
         <div class="sc-modal-body">
@@ -230,7 +241,7 @@ MODAL_TEMPLATE = r"""
                     </div>
                 </div>
                 <div class="sc-modal-main">
-                    <h3 class="sc-modal-name">{name}</h3>
+                    <h3 id="modal-{id}-name" class="sc-modal-name">{name}</h3>
                     <p class="sc-modal-role">{role}</p>
                     <div class="sc-modal-bio">{bio}</div>
                 </div>
@@ -241,10 +252,10 @@ MODAL_TEMPLATE = r"""
 """
 
 ICONS = {
-    "twitter": '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-12.7 12.5S1.2 13 5.3 11c-4.5-1.4-5-7.3-1.9-8.8C7 5 9 9 10 9s-1-1.5-1-4c0-2 .5-4 2.5-4 1.3 0 2.5 1 2.5 1 1.5 0 2.5-1 2.5-1 .5 1.5 1 2.5 1 2.5z"/></svg>',
-    "linkedin": '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>',
-    "globe": '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>',
-    "mail": '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>'
+    "twitter": '<svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-12.7 12.5S1.2 13 5.3 11c-4.5-1.4-5-7.3-1.9-8.8C7 5 9 9 10 9s-1-1.5-1-4c0-2 .5-4 2.5-4 1.3 0 2.5 1 2.5 1 1.5 0 2.5-1 2.5-1 .5 1.5 1 2.5 1 2.5z"/></svg>',
+    "linkedin": '<svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>',
+    "globe": '<svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>',
+    "mail": '<svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>'
 }
 
 def normalize_name(name):
@@ -355,14 +366,18 @@ def download_image(url, filepath):
 def generate_social_links(member):
     links = []
     if member.get('twitter'):
-        links.append(f'<a href="{member["twitter"]}" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-teal-600 transition-colors">{ICONS["twitter"]}</a>')
+        href = html.escape(str(member["twitter"]), quote=True)
+        links.append(f'<a href="{href}" target="_blank" rel="noopener noreferrer" aria-label="Twitter" class="text-slate-400 hover:text-teal-600 transition-colors">{ICONS["twitter"]}</a>')
     if member.get('linkedin'):
-        links.append(f'<a href="{member["linkedin"]}" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-blue-700 transition-colors">{ICONS["linkedin"]}</a>')
+        href = html.escape(str(member["linkedin"]), quote=True)
+        links.append(f'<a href="{href}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="text-slate-400 hover:text-blue-700 transition-colors">{ICONS["linkedin"]}</a>')
     if member.get('website'):
-        links.append(f'<a href="{member["website"]}" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-800 transition-colors">{ICONS["globe"]}</a>')
+        href = html.escape(str(member["website"]), quote=True)
+        links.append(f'<a href="{href}" target="_blank" rel="noopener noreferrer" aria-label="Website" class="text-slate-400 hover:text-slate-800 transition-colors">{ICONS["globe"]}</a>')
     email = str(member.get('email') or '').strip()
     if email and email.lower() != 'nan' and '@' in email:
-        links.append(f'<a href="mailto:{email}" class="text-slate-400 hover:text-slate-800 transition-colors">{ICONS["mail"]}</a>')
+        href = html.escape(email, quote=True)
+        links.append(f'<a href="mailto:{href}" aria-label="Email" class="text-slate-400 hover:text-slate-800 transition-colors">{ICONS["mail"]}</a>')
     return "".join(links)
 
 def normalize_website_url(url):
@@ -388,17 +403,46 @@ def render_title_card(name, color, has_members):
 def render_member_card(member_id, name, role, img_content, color=None, is_last=False):
     """Member tile. With a colour it carries the team's connecting bar; without, it is plain
     (used by sections that have no team titles, e.g. Steering & Guidance)."""
+    safe_id = html.escape(str(member_id), quote=True)
+    safe_name = html.escape(str(name))
+    safe_role = html.escape(str(role))
     if color is None:
         return MEMBER_CARD_PLAIN_TEMPLATE.format(
-            id=member_id, name=name, role=role, img_content=img_content
+            id=safe_id, name=safe_name, role=safe_role, img_content=img_content
         ).strip()
     return MEMBER_CARD_TEMPLATE.format(
-        id=member_id,
-        name=name,
-        role=role,
+        id=safe_id,
+        name=safe_name,
+        role=safe_role,
         img_content=img_content,
-        color=color,
+        color=html.escape(str(color), quote=True),
         extend="0px" if is_last else BAR_EXTEND,
+    ).strip()
+
+def render_card_image(img_url, initials):
+    """Card portrait or initials placeholder (phrasing content inside <button>).
+    Uses alt="" because the person's name is rendered right inside the same button."""
+    if img_url:
+        return f'<img src="{html.escape(str(img_url), quote=True)}" alt="" class="sc-card-img" />'
+    return f'<span class="sc-placeholder" aria-hidden="true">{html.escape(str(initials))}</span>'
+
+
+def render_modal_image(img_url, initials):
+    """Modal portrait or initials placeholder. Uses alt="" because the modal's <h3> names the person."""
+    if img_url:
+        return f'<img src="{html.escape(str(img_url), quote=True)}" alt="" />'
+    return f'<span aria-hidden="true" style="font-size: 2rem; color: #94a3b8; font-weight: 600;">{html.escape(str(initials))}</span>'
+
+
+def render_modal(member_id, name, role, bio, img_content_large, social_links=""):
+    """Profile modal dialog for one steering committee member."""
+    return MODAL_TEMPLATE.format(
+        id=html.escape(str(member_id), quote=True),
+        name=html.escape(str(name)),
+        role=html.escape(str(role)),
+        bio=html.escape(str(bio or "Bio coming soon.")),
+        img_content_large=img_content_large,
+        social_links=social_links,
     ).strip()
 
 def main():
@@ -593,12 +637,7 @@ def main():
                 seen_ids[base_id] = occurrence
                 render_id = base_id if occurrence == 1 else f"{base_id}-{occurrence}"
 
-                img_content = ""
-                if member["imgUrl"]:
-                    img_content = f'<img src="{member["imgUrl"]}" alt="{member["name"]}" class="sc-card-img" />'
-                else:
-                    # Placeholder for missing image
-                    img_content = f'<div class="sc-placeholder">{member["initials"]}</div>'
+                img_content = render_card_image(member["imgUrl"], member["initials"])
 
                 cards_html += render_member_card(
                     render_id, member["name"], member["role"], img_content,
@@ -607,20 +646,16 @@ def main():
                 )
 
                 # Generate Modal for this member
-                img_content_large = ""
-                if member["imgUrl"]:
-                    img_content_large = f'<img src="{member["imgUrl"]}" alt="{member["name"]}" />'
-                else:
-                    img_content_large = f'<span style="font-size: 2rem; color: #94a3b8; font-weight: 600;">{member["initials"]}</span>'
+                img_content_large = render_modal_image(member["imgUrl"], member["initials"])
 
-                modals_html += MODAL_TEMPLATE.format(
-                    id=render_id,
-                    name=member["name"],
-                    role=member["role_title"] or member["role"],
-                    bio=html.escape(member["bio"] or "Bio coming soon."),
-                    img_content_large=img_content_large,
-                    social_links=generate_social_links(member)
-                ).strip()
+                modals_html += render_modal(
+                    render_id,
+                    member["name"],
+                    member["role_title"] or member["role"],
+                    member["bio"] or "Bio coming soon.",
+                    img_content_large,
+                    social_links=generate_social_links(member),
+                )
 
         content_html += SECTION_TEMPLATE.format(
             type=cat_key,
