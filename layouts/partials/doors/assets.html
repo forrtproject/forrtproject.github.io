@@ -22,6 +22,7 @@
 {{ if or (eq .Type "tags") (eq .Path "/newsletters") }}{{ $screen = slice "lists" }}{{ end }}
 {{ if eq .Type "contributors_analysis" }}{{ $screen = slice "analysis" }}{{ end }}
 {{ if eq .Type "widget_page" }}{{ $screen = slice "sections" }}{{ end }}
+{{ if in (slice "/neurodiversity" "/syllabus" "/adopting" "/impact") .Path }}{{ $screen = slice "sections" "nexus-pages" }}{{ end }}
 {{ if in (slice "clusters" "disciplines") .Section }}{{ $screen = slice "clusters" }}{{ end }}
 {{ if eq .Path "/community-map" }}{{ $screen = slice "map" }}{{ end }}
 {{ if eq .Type "welcome" }}{{ $screen = slice "home" "welcome" }}{{ end }}
