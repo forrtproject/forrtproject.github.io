@@ -129,7 +129,7 @@ The full list of effects is in [this spreadsheet](https://docs.google.com/spread
 {{< spoiler text="Statistics" >}}
 * Status: mixed
 * Original paper: ‘[A Single Exposure to the American Flag Shifts Support Toward Republicanism up to 8 Months Later’, ](https://doi.org/10.1177/0956797611414726)Carter et al. 2011; experimental design, 2 studies with n = 191 completed three sessions and 71 completed the fourth session, Experiment 2: n = 70. [citations = 186 (GS, October 2021)].
-* Critique: [Klein et al. 2014](https://doi.org/10.1027/1864-9335/a000178) [n=6,082, citations = 957 (GS, October 2021)].
+* Critique: {{< cite key="Klein2014" bare="true" text="Klein et al. 2014" >}} [n=6,082, citations = 957 (GS, October 2021)].
 * Original effect size: _d_ = 0.50.
 * Replication effect size: All effect sizes are located in ManyLabs: Adams and Nelson: _d_ = .02. Bernstein: _d_ = 0.07. Bocian and Frankowska: _d_ = .19 (Study 1). Bocian and Franowska: _d_ = -.22 (Study 2). Brandt et al.: _d_ = .21. Brumbaugh and Storbeck: _d_ = -.22 (Study 1). Brumbaugh and Storbeck: _d_ = .02 (Study 2). Cemalcilar: _d_ = .14. Cheong: _d_ = -.11. Davis and Hicks: _d_ = -.27 (Study 1). Davis and Hicks: _d_ =-.03 (Study 2). Devos: _d_ = -.11. Furrow and Thompson: _d_ = .09. Hovermale and Joy-Gaba: _d_ = -.07.  Hunt and Krueger: _d_ = .27.  Huntsinger and Mallett: _d_ = .06. John and Skorinko: _d_ = .08.  Kappes: _d_ = .04. Klein et al.: _d_ = -.11. Kurtz: _d_ =.04.  Levitan: _d_ = -.01. Morris: _d_ = .09 Nier: _d_ =  -.45. Packard: _d_ = .04. Pilati: _d_ = 0.00. Rutchick: _d_ = -.07. Schmidt and Nosek (PI): _d_ =.03.  Schmidt and Nosek (MTURK): _d_ = .09. Schmidt and Nosek (UVA): _d_ = -.15. Smith: _d_ = .27. Swol: _d_ =-.03.  Vaughn: _d_ = -.17. Vianello and Galliani: _d_ =.49.  Vranka: _d_ = -.03. Wichman: _d_ = .11. Woodzicska: _d_ =-.09. Average replication effect size: _d_ = 0.03.
 {{< /spoiler >}}
@@ -138,7 +138,7 @@ The full list of effects is in [this spreadsheet](https://docs.google.com/spread
 {{< spoiler text="Statistics" >}}
 * Status: not replicated
 * Original paper: ‘[Effects of Fluency on Psychological Distance and Mental Construal (or Why New York Is a Large City, but New York Is a Civilized Jungle)](https://doi.org/10.1111/j.1467-9280.2008.02062.x)’, Alter and Oppenheimer 2008; experimental design, 3 studies, 2 of which are split into Part A and Part B with n’s = 1A: 40 and 1B: 196; 2A: 32 and 2B: 230; Experiment 3: n = 70. [citations = 304 (GS,  October 2021)]. 
-* Critique: [Klein et al. 2014](https://doi.org/10.1027/1864-9335/a000178) [n=1146, citations = 957 (GS,October 2021)].
+* Critique: {{< cite key="Klein2014" bare="true" text="Klein et al. 2014" >}} [n=1146, citations = 957 (GS,October 2021)].
 * Original effect size: _r_ = 0.13/ _d_ = 0.26 [converted, using [escal](https://www.escal.site/)]. 
 * Replication effect size: Klein et al.: _r_ = .02/_d_ = 0.04 [converted, using [escal](https://www.escal.site/)].
 {{< /spoiler >}}
@@ -408,7 +408,7 @@ The full list of effects is in [this spreadsheet](https://docs.google.com/spread
 {{< spoiler text="Statistics" >}}
 * Status: replicated
 * Original paper:[ ‘Arousal of ingroup-outgroup bias by a chance win or loss’](https://doi.org/10.1037/h0028284), [Rabbie and  Horwitz 1969](https://doi.org/10.1037/h0028284); experimental study, n=112. [citations= 679 (GS, January 2023)]. 
-* Critiques: [Balliet et al. 2014 ](https://doi.org/10.1037/a0037737)[meta-analysis, _k_=212, citations= 930(GS, March 2023)]. [Billig and Tajfel 1973](https://doi.org/10.1002/ejsp.2420030103); experimental design, n=75. [citations=2232 (GS, January 2023)]. [Falk et al. 2014](https://doi.org/10.1177/0022022113492892) [Japanese: n1 = 324 Japanese and Americans: n2 = 594, Americans, citations= 58(GS, March 2023)]. [Fischer and Derham 2016](https://springerplus.springeropen.com/articles/10.1186/s40064-015-1663-6) [meta-analysis, n = 21,266, citations=70 (GS, March 2023)]. [Lazić et al. 2021 ](https://doi.org/10.1002/ijop.12791)[meta-analysis, _k_ = 69, _N_ = 5268, citations=5 (GS, March 2023)]. [Kerr et al., 2018](https://doi.org/10.1016/j.jesp.2018.05.001) [n_=_412, citations=21 (GS, January 2023)]. [Mullen et al. (1992](https://doi.org/10.1002/ejsp.2420220202)) [meta-analysis, _k_ = 137, citations= 1,867(GS, March 2023)]. [Tajfel 1970 [](http://web.mit.edu/curhan/www/docs/Articles/15341_Readings/Intergroup_Conflict/Tajfel_Experiments_in_Intergroup_Discrimination.PDF)n=64, citations= 4094 (GS, January 2023)]. [Tajfel et al. 1971](https://doi.org/10.1002/ejsp.2420010202) [n1=64, n2=48, citations=8126 (GS, January 2023)].
+* Critiques: [Balliet et al. 2014 ](https://doi.org/10.1037/a0037737)[meta-analysis, _k_=212, citations= 930(GS, March 2023)]. [Billig and Tajfel 1973](https://doi.org/10.1002/ejsp.2420030103); experimental design, n=75. [citations=2232 (GS, January 2023)]. [Falk et al. 2014](https://doi.org/10.1177/0022022113492892) [Japanese: n1 = 324 Japanese and Americans: n2 = 594, Americans, citations= 58(GS, March 2023)]. [Fischer and Derham 2016](https://springerplus.springeropen.com/articles/10.1186/s40064-015-1663-6) [meta-analysis, n = 21,266, citations=70 (GS, March 2023)]. [Lazić et al. 2021 ](https://doi.org/10.1002/ijop.12791)[meta-analysis, _k_ = 69, _N_ = 5268, citations=5 (GS, March 2023)]. {{< cite key="Kerr2018" bare="true" >}} [n_=_412, citations=21 (GS, January 2023)]. [Mullen et al. (1992](https://doi.org/10.1002/ejsp.2420220202)) [meta-analysis, _k_ = 137, citations= 1,867(GS, March 2023)]. [Tajfel 1970 [](http://web.mit.edu/curhan/www/docs/Articles/15341_Readings/Intergroup_Conflict/Tajfel_Experiments_in_Intergroup_Discrimination.PDF)n=64, citations= 4094 (GS, January 2023)]. [Tajfel et al. 1971](https://doi.org/10.1002/ejsp.2420010202) [n1=64, n2=48, citations=8126 (GS, January 2023)].
 * Original effect size: N/A
 * Replication effect size: Balliet et al.: _d_= 0.19 (for situations with no mutual interdependence between group members) and  _d_= 0.42 (for situations with strong mutual interdependence between group members). Fischer and Derham: _d_= 0.369 [0.33, 0.41]. Mullen et al.: _r_ = 0.264. The ingroup bias effect was obtained from a meta-analysis on 74 hypothesis tests derived from artificial groups. Lazić, Purić & Krstić: _d_ = 0.22 [0.07, 0.38]. Kerr et al.: comparing US vs Australian sample, highlights the importance of context-dependent factors (like differences in methodological approach) and cultural variation of MGE; significant main effects of categorization (Group vs. No-group) on allocation measures, _η<sub>p<sup>2</sup></sub>_ = 0.031 to 0.081; the ingroup favouritism effect was present in both Context conditions, but was stronger in the public (_η<sub>p<sup>2</sup></sub>_= 0.072) than in the private context (_η<sub>p<sup>2</sup></sub>_= 0.020). Falk et al. : culture was a significant predictor of resource allocation such that Americans chose more in-group favouring strategies than did Japanese, _b_ = 1.43, _z_ = 9.52, _p_ &lt; .00; American participants were also more likely to show an in-group bias in group identification (in-group vs. out-group comparison, _d _= .94), perceived group intelligence (_d_ = .44), and perceived group personality traits (_b_ = .15, _z_ = 17.51) then Japanese participants (_d_= .50, _d_ = -.003, _b_ = .04, _z_ = 2.75, respectively).
 {{< /spoiler >}}
@@ -480,7 +480,7 @@ The full list of effects is in [this spreadsheet](https://docs.google.com/spread
 {{< spoiler text="Statistics" >}}
 * Status: mixed
 * Original paper: ['Elaboration enhances the imagined contact effect'](https://doi.org/10.1016/j.jesp.2010.05.014), Husnu and  Crisp 2010; two experiments, Study 1:n = 33, Study 2: n = 60. [citations = 278 (GS, October 2022)].
-* Critiques: [Klein et al. 2014](https://econtent.hogrefe.com/doi/full/10.1027/1864-9335/a000178) Many Labs study [n = 6344, citations = 1082 (GS, June 2022)]; [Crisp et al. 2014](https://psycnet.apa.org/record/2014-38072-002) [citations = 16 (GS, October 2022] reply to Klein et al. stating that the effect size was significant and comparable to that obtained in the [Miles and Crisp 2014](https://doi.org/10.1177/1368430213510573) [citations = 450 (GS, October 2022)] meta-analysis for the relevant outgroup, suggesting that the Many Labs project may provide stronger evidence than originally thought.
+* Critiques: {{< cite key="Klein2014" bare="true" text="Klein et al. 2014" >}} Many Labs study [n = 6344, citations = 1082 (GS, June 2022)]; [Crisp et al. 2014](https://psycnet.apa.org/record/2014-38072-002) [citations = 16 (GS, October 2022] reply to Klein et al. stating that the effect size was significant and comparable to that obtained in the [Miles and Crisp 2014](https://doi.org/10.1177/1368430213510573) [citations = 450 (GS, October 2022)] meta-analysis for the relevant outgroup, suggesting that the Many Labs project may provide stronger evidence than originally thought.
 * Original effect size: Study 1: _d_= 0.86, Study 2: _d_= 1.13.
 * Replication effect size: Klein et al.: _d_= 0.13 [0.00, 0.19] (NB: original study focused on ‘British Muslims’ - this on Muslims across cultures). Miles and Crisp: _d_= 0.35 and estimate for religious groups, _d_= 0.22. Crisp et al.: the observed effect size of 0.13 in the Many Labs study is substantially different from the original Husnu and Crisp study, and from our overall estimate of 0.35, but not from the most appropriate comparison: The meta-analytic estimate for religious outgroups (0.22).
 {{< /spoiler >}}
@@ -543,8 +543,8 @@ The full list of effects is in [this spreadsheet](https://docs.google.com/spread
 {{< spoiler text="Statistics" >}}
 * Status: not replicated
 * Original paper: ‘[Power and Perspectives Not Taken](https://doi.org/10.1111/j.1467-9280.2006.01824.x)’, Galinsky et al. 2006; 3 between-subjects experiments, each with two conditions, Experiment 1: n = 57, Experiment 2a: n = 42, Experiment 2b: n = 51, Experiment 3: n = 70. [citations = 1550 (GS, June 2022)]. 
-* Critiques: Experiment 2a: [Ebersole et al. 2016  ](https://doi.org/10.1016/j.jesp.2015.10.012)[n = 2,969, citations = 438 (GS, June 2022)]. 
-* Original effect size: _d_ = .77 [0.12,1.41] obtained from Ebersole et al. (2016).
+* Critiques: Experiment 2a: {{< cite key="EbersoleEtAl2016" bare="true" text="Ebersole et al. 2016" >}} [n = 2,969, citations = 438 (GS, June 2022)]. 
+* Original effect size: _d_ = .77 [0.12,1.41] obtained from {{< cite key="EbersoleEtAl2016" narrative="true" >}}.
 * Replication effect size: Ebersole et al.: _d_ = .03 [− 0.04, 0.10]. 
 {{< /spoiler >}}
 
@@ -606,7 +606,7 @@ The full list of effects is in [this spreadsheet](https://docs.google.com/spread
 {{< spoiler text="Statistics" >}}
 * Status: not replicated
 * Original paper: ‘[It feels like yesterday: Self-esteem, valence of personal past experiences, and judgments of subjective distance](https://doi.org/10.1037/0022-3514.82.5.792)’, Ross and Wilson 2002; Three studies: Study 1: N = 557 was a correlational study; Study 2: N = 357 was an experiment with two main predictors: recalled grade condition (best vs. worst; between-subjects) and self-esteem (measured); Study 3: N = 107 was an experiment with three main predictors: agent (self vs. acquaintance; between-subjects), valence of recalled experience (positive vs. negative; between-subjects), and self-esteem (measured). [citations = 462 (GS, June 2022)]. Study 2 was the one Many Labs 3 replicated. 
-* Critiques: [Ebersole et al. 2016](https://doi.org/10.1016/j.jesp.2015.10.012) [n = 3433, citations = 438 (GS, June 2022)].
+* Critiques: {{< cite key="EbersoleEtAl2016" bare="true" text="Ebersole et al. 2016" >}} [n = 3433, citations = 438 (GS, June 2022)].
 * Original effect size: _η<sub>p<sup>2</sup></sub>_ = .0185 (based on transforming from beta of -.136). 
 * Replication effect size: Ebersole et al.: _η<sub>p<sup>2</sup></sub>_ = .0001.
 {{< /spoiler >}}
@@ -624,7 +624,7 @@ The full list of effects is in [this spreadsheet](https://docs.google.com/spread
 {{< spoiler text="Statistics" >}}
 * Status: not replicated
 * Original paper: ‘[A Single Exposure to the American Flag Shifts Support Toward Republicanism up to 8 Months Later](https://doi.org/10.1177/0956797611414726)’, Carter et al. 2011; two experiments; Experiment 1: N = 235 in Session 1 (exposure to prime), 197 in Session 2 (appx. two weeks later, right before the 2008 presidential election), 191 in Session 3 (the week after this election), 75 in Session 4 (eight months after this election); Experiment 2: N = 70. [citations = 197 (GS, June 2022)].
-* Critiques:​ [Klein et al. 2014 ](https://doi.org/10.1027/1864-9335/a000178)[n = 6344, citations = 1082 (GS, June 2022)]
+* Critiques:​ {{< cite key="Klein2014" bare="true" text="Klein et al. 2014" >}} [n = 6344, citations = 1082 (GS, June 2022)]
 * Original effect size: _d_= .50
 * Replication effect size: Klein et al.: median _d_ = .02.
 {{< /spoiler >}}
@@ -687,8 +687,8 @@ The full list of effects is in [this spreadsheet](https://docs.google.com/spread
 {{< spoiler text="Statistics" >}}
 * Status: not replicated
 * Original paper: ‘[Warmer hearts, warmer rooms: How positive communal traits increase estimates of ambient temperature](https://psycnet.apa.org/record/2013-08589-013)’, Szymkow et al. 2013; Experiment 1: N = 80, two between-subjects conditions; Experiment 2: N = 80, two between-subjects conditions; Experiment 3: N = 160, four between-subjects conditions. [citations = 66 (GS, June 2022)].
-* Critiques: [Ebersole et al. 2016](https://doi.org/10.1016/j.jesp.2015.10.012) [n = 3,119, citations = 438 (GS, June 2022)].
-* Original effect size: _d_ = .86 [.40, 1.33] obtained from Ebersole et al. 2016.
+* Critiques: {{< cite key="EbersoleEtAl2016" bare="true" text="Ebersole et al. 2016" >}} [n = 3,119, citations = 438 (GS, June 2022)].
+* Original effect size: _d_ = .86 [.40, 1.33] obtained from {{< cite key="EbersoleEtAl2016" bare="true" text="Ebersole et al. 2016" >}}.
 * Replication effect size: Ebersole et al.: _d_ = .06 [−.06, .08].
 {{< /spoiler >}}
 
@@ -813,8 +813,8 @@ The full list of effects is in [this spreadsheet](https://docs.google.com/spread
 {{< spoiler text="Statistics" >}}
 * Status: replicated
 * Original paper: [Math = male, me = female, therefore math ≠ me](https://doi.org/10.1037/0022-3514.83.1.44), Nosek et al.2002; study design = experiment, n = 170. [citations=1428 (GS, November 2022)]​.
-* Critiques: [Klein et al. 2014](https://econtent.hogrefe.com/doi/full/10.1027/1864-9335/a000178) [n=5842, citations=1129 (GS, November 2022)]. 
-* Original effect size: _d_=1.01[.54, 1.48] (reported in Klein et al. 2014). 
+* Critiques: {{< cite key="Klein2014" bare="true" text="Klein et al. 2014" >}} [n=5842, citations=1129 (GS, November 2022)]. 
+* Original effect size: _d_=1.01[.54, 1.48] (reported in {{< cite key="Klein2014" bare="true" text="Klein et al. 2014" >}}). 
 * Replication effect size: Klein et al.: _d_=0.56[0.45, 0.68]
 {{< /spoiler >}}
 
@@ -822,7 +822,7 @@ The full list of effects is in [this spreadsheet](https://docs.google.com/spread
 {{< spoiler text="Statistics" >}}
 * Status: replicated
 * Original paper: ‘[Response Scales: Effects of Category Range on Reported Behavior and Comparative Judgments](https://doi.org/10.3390/su172411310)’, Schwarz 1985; between-subjects design, sample size = 211. [citations=450(GS, November 2022)]​.
-* Critiques: [Klein et al. 2014](https://econtent.hogrefe.com/doi/full/10.1027/1864-9335/a000178) [n=5899, citations=1129 (GS, November 2022)]
+* Critiques: {{< cite key="Klein2014" bare="true" text="Klein et al. 2014" >}} [n=5899, citations=1129 (GS, November 2022)]
 * Original effect size: _d_=0.50[0.15, 0.84].
 * Replication effect size: Klein et al.: _d_=0.51[0.42, 0.61].
 {{< /spoiler >}}
@@ -831,7 +831,7 @@ The full list of effects is in [this spreadsheet](https://docs.google.com/spread
 {{< spoiler text="Statistics" >}}
 * Status: replicated 
 * Original paper: ‘[Prestige, Suggestion, and Attitudes](https://doi.org/10.1080/00224545.1936.9919891)’, Lorge and Curtiss 1936; experiment, sample size = 99. [citations=242(GS, November 2022)]​.
-* Critiques: [Klein et al. 2014](https://econtent.hogrefe.com/doi/full/10.1027/1864-9335/a000178) [n=6325, citations=1129 (GS, November 2022)].
+* Critiques: {{< cite key="Klein2014" bare="true" text="Klein et al. 2014" >}} [n=6325, citations=1129 (GS, November 2022)].
 * Original effect size: NA.
 * Replication effect size: Klein et al.: _d_ = 0.31[0.19, 0.42].
 {{< /spoiler >}}
@@ -858,7 +858,7 @@ The full list of effects is in [this spreadsheet](https://docs.google.com/spread
 {{< spoiler text="Statistics" >}}
 * Status: replicated
 * Original paper: ‘The Current Status of American Public Opinion’, Hyman and Sheatsley, 1950; experiment, n = NA. [citations=161(GS, November 2022)]​. Was not able to find the online version of the original paper.
-* Critiques: [Klein et al. 2014](https://econtent.hogrefe.com/doi/full/10.1027/1864-9335/a000178) [n=6276, citations=1129 (GS, November 2022)].
+* Critiques: {{< cite key="Klein2014" bare="true" text="Klein et al. 2014" >}} [n=6276, citations=1129 (GS, November 2022)].
 * Original effect size: _d_=0.16[0.06 0.27]. 
 * Replication effect size: _d_=0.27 [0.18, 0.36].
 {{< /spoiler >}}
@@ -2461,9 +2461,9 @@ The full list of effects is in [this spreadsheet](https://docs.google.com/spread
 {{< spoiler text="Statistics" >}}
 * Status: replicated
 * Original paper: ‘[The framing of decisions and the psychology of choice](https://doi.org/10.1007/978-1-4613-2391-4_2)’, Tversky & Kahnemann, 1981; experimental design, P1: 152; P2: 155; P3: 150; P4: 86; P5: 77; P6: 85; P7: 81; P8: 183; P9: 200; P10.1: 93; P10.2: 88; Total = 1350* (unclear if those samples are different samples) [citations = 24617 (GS, October 2022)]​.
-* Critiques: Meta-analysis: [Kühberger, 1998](https://doi.org/10.1006/obhd.1998.2781). [Total studies reviewed=136, citations=1554 (GS, June 2022)] The author finds that certain characteristics of framing studies are crucial to getting a consistent framing effect, but that the closer a methodology is to the original methodology, the better chance to replicate the original effect. Large scale replication in Klein et al., 2014 [Total replication studies = 36, citations=1082 (GS, June 2022)]
-* Original effect size: Kahneman and Tversky (1982): _d_ = 1.13, 95% CI [0.89, 1.37] (based on Klein et al., 2014 calculation) Meta-analytical effect size (many close and conceptual replications): Steiger & Kühberger (2018): d = 0.52 to 0.56.
-* Replication effect size: Kühberger, 1998: d = .308.; Revised in Steiger & Kühberger, 2018 to d = .522 with only 81 of the 136 studies; Klein et al., 2014 : d=.60 (95% CI 0.53-0.67); Steiger & Kühberger, 2018 : d=.56.
+* Critiques: Meta-analysis: [Kühberger, 1998](https://doi.org/10.1006/obhd.1998.2781). [Total studies reviewed=136, citations=1554 (GS, June 2022)] The author finds that certain characteristics of framing studies are crucial to getting a consistent framing effect, but that the closer a methodology is to the original methodology, the better chance to replicate the original effect. Large scale replication in {{< cite key="Klein2014" bare="true" text="Klein et al., 2014" >}} [Total replication studies = 36, citations=1082 (GS, June 2022)]
+* Original effect size: Kahneman and Tversky (1982): _d_ = 1.13, 95% CI [0.89, 1.37] (based on {{< cite key="Klein2014" bare="true" text="Klein et al., 2014" >}} calculation) Meta-analytical effect size (many close and conceptual replications): Steiger & Kühberger (2018): d = 0.52 to 0.56.
+* Replication effect size: Kühberger, 1998: d = .308.; Revised in Steiger & Kühberger, 2018 to d = .522 with only 81 of the 136 studies; {{< cite key="Klein2014" bare="true" text="Klein et al., 2014" >}} : d=.60 (95% CI 0.53-0.67); Steiger & Kühberger, 2018 : d=.56.
 {{< /spoiler >}}
 
 * **Risk and Goal Message Framing.** a) For illness detection behaviors, loss framing (presenting information of negative consequences with undesirable behaviors / without desirable behaviors) would be more effective than gain framing (presenting information of benefits through engaging in desirable behaviors) in encouraging healthy attitudes, intentions, and behaviors (perhaps because illness detection behaviors are riskier, Rothman & Salovey, 1997), whereas b) for health-affirming behaviors, gain framing would be more effective than loss framing in motivating healthy attitudes, intentions, behaviors (perhaps because health-affirming behaviors are less risky, Rothman & Salovey, 1997).
@@ -2585,7 +2585,7 @@ The full list of effects is in [this spreadsheet](https://docs.google.com/spread
 * **Conjunction bias** (conjunction fallacy). The fallacy consists of judging the conjunction of two events as more likely than any of the two specific events, violating one of the most fundamental tenets of probability theory.
 {{< spoiler text="Statistics" >}}
 * Status: mixed
-* Original paper: ‘[Do Frequency Representations Eliminate Conjunction Effects? An Exercise in Adversarial Collaboration](https://www.jstor.org/stable/40063630)’, [Mellers et al. 2001](https://doi.org/10.1111/1467-9280.00350); Essentially 6 between-subjects conditions, n=108 per experimental condition. [citations=562(GS, August 2022)]​.
+* Original paper: ‘[Do Frequency Representations Eliminate Conjunction Effects? An Exercise in Adversarial Collaboration](https://www.jstor.org/stable/40063630)’, {{< cite key="Mellers2001" bare="true" text="Mellers et al. 2001" >}}; Essentially 6 between-subjects conditions, n=108 per experimental condition. [citations=562(GS, August 2022)]​.
 * Critiques: [Chandrashekar et al. (2021)](https://open.lnu.se/index.php/metapsychology/article/view/2474) [n = 1026, citations = 1 (GS, July 2022)]. [Hertwig & Gigerenzer 1999](https://doi.org/10.1002/(SICI)1099-0771(199912)12:4%3C275::AID-BDM323%3E3.0.CO;2-M) [n1=18, n2=90, citations=653 (GS, Aug 2022)]. 
 * Original effect size: _d_=1.08 to 1.01​. 
 * Replication effect size: Chandrashekar et al.: Cohen’s _d_ = 0.49 to -0.17. Hertwig & Gigerenzer: people infer non mathematical meanings of the polysemous term ‘probability’ in the classic Linda conjunction problem; one can design contexts in which people infer mathematical meanings of the term and are therefore more likely to conform to the conjunction rule.
@@ -2962,9 +2962,9 @@ The full list of effects is in [this spreadsheet](https://docs.google.com/spread
 {{< spoiler text="Statistics" >}}
 * Status: mixed (duelling meta-analyses, mix of successful and failed replications). 
 * Original study: ‘[When choice is demotivating](https://doi.org/10.1037/0022-3514.79.6.995)’, Iyengar and Lepper, 2000; field experiment, 3 experiments, Study  1: n=502, Study 2: n=197, Study 3: 134. [citations = 2460(GS, April 2023)].
-* Critiques: [Chernev et al. 2010](https://doi.org/10.58052/neon0dz5s) [commentary, n=NA, citations=98 (GS, April 2023)].  [Chernev et al. 2015](https://doi.org/10.1016/j.jcps.2014.08.002) [meta-analysis of 99 observations, N = 7202, citations=717 (GS, April 2023)]. [Scheibehenne 2008](https://edoc.hu-berlin.de/handle/18452/16392) [three replications in the field and in the lab with a total of n= 850 participants and six laboratory experiments with n=595, citations=50 (GS, April 2023)]. Greifeneder 2008 [unpublished manuscript (link not available), n=NA, citations=4 (GS, April 2023)]. [Scheibehenne et al. 2010 ](https://doi.org/10.58052/neon0e00a)[meta-analysis of 63 conditions from 50 published and unpublished experiments, N = 5,036, citations=1241 (GS, April 2023)].  [Simonsohn et al. 2014](https://doi.org/10.1177/1745691614553988) [n=NA, citations=681 (GS, April 2023)].
+* Critiques: [Chernev et al. 2010](https://doi.org/10.58052/neon0dz5s) [commentary, n=NA, citations=98 (GS, April 2023)].  [Chernev et al. 2015](https://doi.org/10.1016/j.jcps.2014.08.002) [meta-analysis of 99 observations, N = 7202, citations=717 (GS, April 2023)]. [Scheibehenne 2008](https://edoc.hu-berlin.de/handle/18452/16392) [three replications in the field and in the lab with a total of n= 850 participants and six laboratory experiments with n=595, citations=50 (GS, April 2023)]. Greifeneder 2008 [unpublished manuscript (link not available), n=NA, citations=4 (GS, April 2023)]. [Scheibehenne et al. 2010 ](https://doi.org/10.58052/neon0e00a)[meta-analysis of 63 conditions from 50 published and unpublished experiments, N = 5,036, citations=1241 (GS, April 2023)].  {{< cite key="Simonsohn2014effect" bare="true" text="Simonsohn et al. 2014" >}} [n=NA, citations=681 (GS, April 2023)].
 * Original effect size: _d_=0.77 (study1) and _d_=0.29 (study2), and _d_=0.88 (study3) (as calculated from the χ<sup>2</sup> values in the text with [this](https://www.campbellcollaboration.org/calculator/) online calculator).
-* Replication effect sizes: Scheibehenne: failed to directly replicate Iyengar and Lepper (2000) jam study. Greifeneder: a lab experiment with chocolates and also failed to conceptually replicate. Scheibehenne et al. 2010: “We found a mean effect size of virtually zero” (_d_=.02). Chernev et al. 2010: That’s because many of the studies were designed to show instances when there is no effect. You need to split the data into “choice is good” vs. “choice is bad.” Simonsohn et al.: We agree with Chernev et al.: When we split it up, we found that the choice is bad studies (choice overload) lack collective evidential value (uniform _p_-curve). Chernev et al.: &lt;ignoring Simonsohn et al. 2014> Choice overload is a reliable effect under certain conditions (moderators).
+* Replication effect sizes: Scheibehenne: failed to directly replicate Iyengar and Lepper (2000) jam study. Greifeneder: a lab experiment with chocolates and also failed to conceptually replicate. Scheibehenne et al. 2010: “We found a mean effect size of virtually zero” (_d_=.02). Chernev et al. 2010: That’s because many of the studies were designed to show instances when there is no effect. You need to split the data into “choice is good” vs. “choice is bad.” Simonsohn et al.: We agree with Chernev et al.: When we split it up, we found that the choice is bad studies (choice overload) lack collective evidential value (uniform _p_-curve). Chernev et al.: &lt;ignoring {{< cite key="Simonsohn2014effect" bare="true" text="Simonsohn et al. 2014" >}}> Choice overload is a reliable effect under certain conditions (moderators).
 {{< /spoiler >}}
 
 * **Mate guarding**, Women use conspicuous luxurious goods to deter female rivals by signalling to other women they have a devoted partner.
@@ -3079,7 +3079,7 @@ The full list of effects is in [this spreadsheet](https://docs.google.com/spread
 {{< spoiler text="Statistics" >}}
 * Status: replicated
 * Original paper:[ ‘Less is better: When low-value options are valued more highly than high-value options](https://doi.org/10.1002/(SICI)1099-0771(199806)11:2%3C107::AID-BDM292%3E3.0.CO;2-Y)’, Hsee 1998; between-subjects manipulation of lower amount with more complete/full vs. higher amount with less complete/broken/full, Study 1 n=83, Study 2 n= 69, Study 3 n=98, Study 4 n=104. [citations=491(GS, January 2023)].
-* Critique: Study 1 was also replicated in [Klein et al. 2018](https://doi.org/10.1177/2515245918810225) [aggregate replication sample N=7,646, citations=779(GS, February 2023)].  [Vonasch et al 2023](https://osf.io/ubn2f) [preprint, Study 1 n=132, Study 2 n=133, Study 4 n = 131, citations=0(GS, January 2023)]. 
+* Critique: Study 1 was also replicated in {{< cite key="Klein2018ManyLabs2" bare="true" text="Klein et al. 2018" >}} [aggregate replication sample N=7,646, citations=779(GS, February 2023)].  [Vonasch et al 2023](https://osf.io/ubn2f) [preprint, Study 1 n=132, Study 2 n=133, Study 4 n = 131, citations=0(GS, January 2023)]. 
 * Original effect sizes: Study 1: _d_ = 0.70 [0.24, 1.15]; Study 2: _d_ = 0.74 [0.12, 1.35]; Study 4: _d_ = 0.97 [0.43, 1.50].
 * Replication effect sizes: Klein et al.: Study 1 also replicated with _d_=.78 [.74, .83]. Vonasch et al.: Study 1: _d_ = 0.99 [0.72, 1.25]; Study 2: _d_ = 0.32 [0.05, 0.56]; Study 4: _d_ = 76 [.50, 1.02]. 
 {{< /spoiler >}}
@@ -3718,7 +3718,7 @@ Critiques: [Gelman and Loken 2013](http://www.stat.columbia.edu/~gelman/research
 {{< spoiler text="Statistics" >}}
 * Status: mixed
 * Original paper: ‘[Production and comprehension of referential pointing by orangutans (Pongo pygmaeus)](https://doi.org/10.1037/0735-7036.108.4.307)’, Call and Tomasello 1995; experimental design, n = 2 (same animals in both studies). [citation = 464(GS, June 2023)]. 
-* Critiques: [Miklosi & Soproni 2005](https://doi.org/10.1007/s10071-005-0008-1). [systematic review, 24 studies on different species, citations=468 (GS, June 2023)]. [Clark et al. 2019](https://doi.org/10.1016/j.neubiorev.2019.06.001) [meta-analysis, n= 470, citations= 21 (GS, June 2023)].
+* Critiques: [Miklosi & Soproni 2005](https://doi.org/10.1007/s10071-005-0008-1). [systematic review, 24 studies on different species, citations=468 (GS, June 2023)]. {{< cite key="Clark2019" bare="true" text="Clark et al. 2019" >}} [meta-analysis, n= 470, citations= 21 (GS, June 2023)].
 * Original effect size: NA.
 * Replication effect size: Miklosi & Soproni: not reported (they only included some images in their review). Clark et al.: Temporal cue properties: _r_=.30; Ipsilateral pointing cues: _r_=.28.
 {{< /spoiler >}}
@@ -3736,7 +3736,7 @@ Critiques: [Gelman and Loken 2013](http://www.stat.columbia.edu/~gelman/research
 {{< spoiler text="Statistics" >}}
 * Status: mixed
 * Original paper: [’Use of experimenter-given cues in dogs’](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0021676#pone.0021676-Miklsi1), Miklosi et al. 1998; experimental design, Experiment 1: n=3, Experiment 2: n=6. [citations=554 (GS, June 2023)]. 
-* Critiques:  [McKinley & Sambrook 2000 ](https://doi.org/10.1007/s100710050046)[n=16 domesticated dogs, citations= 303 (GS, June 2023)]<span style="text-decoration:underline;">. [Miklosi and Soproni 2005](https://doi.org/10.1007/s10071-005-0008-1)</span> [systematic review, 24 studies on different species, citations=468 (GS, June 2023)]. [Schneider et al. 2011](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0021676#pone.0021676-Miklsi100710050046.pdf) [N=48 domesticated dogs, citations= 101(GS, June 2023)]. [Clark et al. 2019](https://doi.org/10.1016/j.neubiorev.2019.06.001) [meta-analysis, n= 470, citations= 21 (GS, June 2023)].  
+* Critiques:  [McKinley & Sambrook 2000 ](https://doi.org/10.1007/s100710050046)[n=16 domesticated dogs, citations= 303 (GS, June 2023)]<span style="text-decoration:underline;">. [Miklosi and Soproni 2005](https://doi.org/10.1007/s10071-005-0008-1)</span> [systematic review, 24 studies on different species, citations=468 (GS, June 2023)]. [Schneider et al. 2011](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0021676#pone.0021676-Miklsi100710050046.pdf) [N=48 domesticated dogs, citations= 101(GS, June 2023)]. {{< cite key="Clark2019" bare="true" text="Clark et al. 2019" >}} [meta-analysis, n= 470, citations= 21 (GS, June 2023)].  
 * Original effect size: NA.
 * Replication effect size: Miklosi & Soproni: NA. McKinley & Sambrook: NA. Clark et al.: Within dogs, those categorised as “close” (N = 174, Mdn _Z_ = 1.26) scored higher than those categorised as “seldom” (N = 14, Mdn _Z_ = -0.63) (Mann-Whitney _U_ = 13.97, _p_ &lt;.001). For contralateral pointing cues, in contrast, within nonhuman primates and dogs, those categorised as “occasional” (N = 95, Mdn _Z_ = 1.89) outperformed those categorised as “close” (N = 6, Mdn _z_  = 0.00), Mann-Whitney _U_ = 136.5, _p_ = 0.029. Subjects categorised as “close” (N = 356, Mdn _Z_ = 0.89) scored higher than those categorised as “seldom” (N = 22, Mdn _Z_ = -0.63), Mann-Whitney _U_ = 1235.5, _p_ &lt; 0.001. 
 {{< /spoiler >}}
@@ -4097,7 +4097,13 @@ Critiques: [Gelman and Loken 2013](http://www.stat.columbia.edu/~gelman/research
 
 ## **How to cite**
 
-Please cite this source as Hartmann H, Azevedo F, Röseler L, Wallrich L, Aldoh A, Elsherif MM, et al. Tracking and mainstreaming replications in the social, cognitive, and behavioral sciences. MetaArXiv. https://doi.org/10.31222/osf.io/ad2w6_v1. Contributors are listed at [forrt.org/contributors](/contributors/).
+Please cite this source as:
+
+{{< citation-card >}}
+Hartmann H, Azevedo F, Röseler L, Wallrich L, Aldoh A, Elsherif MM, et al. Tracking and mainstreaming replications in the social, cognitive, and behavioral sciences. MetaArXiv. https://doi.org/10.31222/osf.io/ad2w6_v1.
+{{< /citation-card >}}
+
+Contributors are listed at [forrt.org/contributors](/contributors/).
 
 {{< spoiler text="About this project: motivation, history and how to contribute" >}}
 
@@ -4298,3 +4304,5 @@ All **past or current project contributors** are listed at the [bottom of this p
 * Monika Nemcova
 * Max Korbmacher
 * Nigel Mantou Lou
+
+{{< references >}}

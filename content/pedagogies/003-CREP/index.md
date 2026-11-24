@@ -175,7 +175,9 @@ Regarding tips, **I don’t believe I have to be the ‘perfect’ teacher**. I 
 
 ## Suggested citation
 
-Wagge, J., Beltran, J., & Hernandez, A. (2023). *Open Science education through student participation: Integrating replication training into the classroom.* FORRT Pedagogies. [https://doi.org/10.17605/OSF.IO/4JRFA](https://doi.org/10.17605/OSF.IO/4JRFA) 
+{{< citation-card >}}
+Wagge, J., Beltran, J., & Hernandez, A. (2023). *Open Science education through student participation: Integrating replication training into the classroom.* FORRT Pedagogies. [https://doi.org/10.17605/OSF.IO/4JRFA](https://doi.org/10.17605/OSF.IO/4JRFA)
+{{< /citation-card >}}
 
 <br>
 

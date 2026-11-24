@@ -166,7 +166,9 @@ In my PhD, I just remember a lot of interactions between students and professors
 ***Suggested Citation***
 ________
 
+{{< citation-card >}}
 Feldman, G. (2022). Developing principled pedagogies - An Open Science journey: Insights from incorporating open science into teaching and mentoring. *FORRT Pedagogies*. https://doi.org/10.17605/OSF.IO/QNCBF
+{{< /citation-card >}}
 
 <br>
 

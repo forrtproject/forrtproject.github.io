@@ -43,7 +43,7 @@ GENERATED = re.compile(
 )
 
 # First outputs of generators, or of outputs newly added to a generator, on the branch; main has no copy yet.
-NEW_OUTPUTS = {"data/open_research_games.json", "data/scholar_citations.json"}
+NEW_OUTPUTS = {"data/open_research_games.json", "data/scholar_citations.json", "data/citation_oa.json"}
 # Retired generated files deliberately removed on the branch so they stop being served;
 # temporary until main removes them too (keep narrow, do not use for ordinary edits).
 REMOVED_OUTPUTS = {"static/data/open_research_games.json"}

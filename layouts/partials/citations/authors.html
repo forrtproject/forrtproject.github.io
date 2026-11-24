@@ -1,14 +1,17 @@
 {{/* Shortens a long author list in a full reference to its first three authors and "et al.", with a
-     button that shows the rest in place (assets/js/doors/references.js). Takes a reference as rendered
-     HTML, or a dict with `html` and `lang` (for translated pages). A reference with six authors or fewer
-     (which would hide three names or fewer), or whose authors aren't followed by a "(year" date, comes
-     back unchanged. The hidden authors stay in the page, so copying gives the full APA text, and without
-     JavaScript they show (layouts/partials/doors/assets.html). */}}
+     control that shows the rest in place (assets/js/doors/references.js). Takes either a reference
+     as rendered HTML, or a dict with `html`, optional `lang` (for translated pages), and optional
+     `limit` (default: 6 authors; e.g. 10 for suggested citations). References at or below the limit,
+     or whose authors aren't followed by a "(year" date, come back unchanged. The hidden authors stay
+     in the page, so copying gives the full APA text, and without JavaScript they show
+     (layouts/partials/doors/assets.html). */}}
 {{- $raw := . -}}
 {{- $lang := "english" -}}
+{{- $limit := 6 -}}
 {{- if reflect.IsMap . -}}
   {{- $raw = .html -}}
   {{- $lang = .lang | default "english" -}}
+  {{- with .limit -}}{{- $limit = int . -}}{{- end -}}
 {{- end -}}
 {{- $html := trim (string $raw) " \n\r\t" -}}
 {{- $i18n := dict
@@ -33,8 +36,11 @@
   {{- $marked := replaceRE `\bet al\.?|\bothers\b` "" (replaceRE $name "§" $plain) -}}
   {{/* Corporate authors such as "FORRT" are whatever is left between the separators. */}}
   {{- $count := add (len (findRE `§` $marked)) (len (findRE `[^\s,&…§.][^,&…§]*` $marked)) -}}
-  {{- /* Collapse only when at least four authors would be hidden: > 6 on a complete list, or >= 6 named authors plus "& others"/"et al."/"…" (7+ authors in total). */ -}}
+  {{- /* Collapse only when over the author limit: by default > 6 on a complete list, or >= 6 named authors plus "& others"/"et al."/"…" (7+ authors in total). */ -}}
   {{- $collapse := cond $complete (gt $count 6) (ge $count 6) -}}
+  {{- if ne $limit 6 -}}
+    {{- $collapse = cond $complete (gt $count $limit) (ge $count $limit) -}}
+  {{- end -}}
   {{- with and $collapse (findRE (printf `^(?:%s\s*,\s*(?:&(?:amp;)?\s*)?){2}%s` $name $name) $authors 1) -}}
     {{- $first := index . 0 -}}
     {{- $more := cond $complete (printf $t.all $count) $t.more -}}

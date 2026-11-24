@@ -259,8 +259,14 @@ class CitationTargetCheck(unittest.TestCase):
         return seo.check_citation_targets([seo.Page("example/index.html", parser)])
 
     def test_reference_after_citation(self):
-        self.assertEqual(self.check('<a class="cite" href="#ref-Key">Author, 2020</a>'
-                                    '<li id="ref-Key">Reference</li>'), [])
+        self.assertEqual(self.check('<a class="cite" href="#ref-Key" data-cite="Key">Author, 2020</a>'
+                                    '<li id="ref-Key" data-reference="Key">Reference</li>'), [])
+
+    def test_missing_data_reference_or_mismatched_key_fails(self):
+        self.assertTrue(self.check('<a class="cite" href="#ref-Key" data-cite="Key">Author, 2020</a>'
+                                   '<li id="ref-Key">Reference</li>'))
+        self.assertTrue(self.check('<a class="cite" href="#ref-Key" data-cite="Other">Author, 2020</a>'
+                                   '<li id="ref-Key" data-reference="Other">Reference</li>'))
 
     def test_missing_reference_or_nonlocal_link(self):
         for href in ('#ref-Unknown', '/other/#ref-Key', '#Key', ''):
@@ -270,6 +276,12 @@ class CitationTargetCheck(unittest.TestCase):
 
     def test_other_links_are_ignored(self):
         self.assertEqual(self.check('<a href="#elsewhere">Link</a>'), [])
+
+    def test_truncated_parenthetical_doi_in_data_source_fails(self):
+        self.assertEqual(self.check('<li id="ref-K" data-reference="K" data-source="https://doi.org/10.1002/(SICI)1099">Ref <a href="https://doi.org/10.1002/(SICI)1099">DOI</a></li>'), [])
+        self.assertTrue(self.check('<li id="ref-K" data-reference="K" data-source="https://doi.org/10.1002/(SICI">Ref</li>'))
+        self.assertTrue(self.check('<li id="ref-K" data-reference="K" data-source="https://doi.org/10.1002/">Ref <a href="https://doi.org/10.1002/(SICI)1099">DOI</a></li>'))
+        self.assertTrue(self.check('<li id="ref-K" data-reference="K" data-source="https://doi.org/10.1002/">Ref https://doi.org/10.1002/(SICI)1099</li>'))
 
 
 class GlossaryTitleMarkdownCheck(unittest.TestCase):

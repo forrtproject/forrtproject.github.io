@@ -83,6 +83,7 @@ HTML_TAG = re.compile(r"</?[A-Za-z][A-Za-z0-9]*(\s[^<>]*)?/?>")
 # Attribute values arrive already unescaped, so any entity left in them was
 # escaped twice in the HTML (e.g. `&amp;ldquo;`).
 DESCRIPTION_URL = re.compile(r"https?://|\bforrt\.org/", re.I)
+SOURCE_URL_TOKEN = re.compile(r'https?://[^\s<>"]+')
 LITERAL_ENTITY = re.compile(r"&(#\d+|#x[0-9a-fA-F]+|[A-Za-z][A-Za-z0-9]*);")
 
 
@@ -111,6 +112,9 @@ class PageParser(HTMLParser):
         self.largest_inline_script = 0
         self._inline_script = None
         self.ids = set()
+        self.references = set()
+        self.reference_sources = []
+        self._ref_source = None
         self.citations = []
         self.crumb_links = []
         self._in_crumbs = False
@@ -120,8 +124,15 @@ class PageParser(HTMLParser):
         self.takeaway_links = []
         self._in_takeaways = False
 
+    def _finish_ref_source(self):
+        if self._ref_source is not None:
+            self.reference_sources.append(self._ref_source)
+            self._ref_source = None
+
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
+        if tag == "li":
+            self._finish_ref_source()
         if tag == "ul" and "summary-takeaways" in (attrs.get("class") or "").split():
             self._in_takeaways = True
         if tag == "a" and self._in_takeaways:
@@ -133,6 +144,15 @@ class PageParser(HTMLParser):
             self._inline_script = 0
         if attrs.get("id"):
             self.ids.add(attrs["id"])
+        if attrs.get("data-reference"):
+            self.references.add(attrs["data-reference"])
+        if attrs.get("data-source"):
+            if tag == "li":
+                self._ref_source = (attrs["data-source"], [])
+            else:
+                self.reference_sources.append((attrs["data-source"], []))
+        if tag == "a" and self._ref_source is not None and attrs.get("href"):
+            self._ref_source[1].append(attrs["href"])
         if tag == "nav" and "crumbs" in (attrs.get("class") or "").split():
             self._in_crumbs = True
         if tag == "link" and attrs.get("rel") == "alternate" and attrs.get("hreflang") and attrs.get("href"):
@@ -144,7 +164,7 @@ class PageParser(HTMLParser):
         if tag == "a" and self._in_crumbs:
             self.crumb_links.append(attrs.get("href") or "")
         if tag == "a" and "cite" in attrs.get("class", "").split():
-            self.citations.append(attrs.get("href", ""))
+            self.citations.append((attrs.get("href", ""), attrs.get("data-cite", "")))
         if tag == "script" and attrs.get("type") == "application/ld+json":
             self._jsonld_buffer = []
         elif tag == "link" and attrs.get("rel") == "canonical":
@@ -179,6 +199,8 @@ class PageParser(HTMLParser):
             self.code_classes.append(attrs.get("class") or "")
 
     def handle_endtag(self, tag):
+        if tag in ("li", "ul"):
+            self._finish_ref_source()
         if tag == "div":
             self._whole_card_picture = None
         if tag == "ul":
@@ -207,12 +229,15 @@ class PageParser(HTMLParser):
 
     def close(self):
         super().close()
+        self._finish_ref_source()
         # A script left open at the end of the file still counts.
         if self._inline_script is not None:
             self.largest_inline_script = max(self.largest_inline_script, self._inline_script)
             self._inline_script = None
 
     def handle_data(self, data):
+        if self._ref_source is not None:
+            self._ref_source[1].extend(m.group(0) for m in SOURCE_URL_TOKEN.finditer(data))
         if self._in_title:
             self.title += data
         if self._inline_script is not None:
@@ -252,6 +277,8 @@ class Page:
         self.canonical = parser.canonical
         self.largest_inline_script = parser.largest_inline_script
         self.ids = parser.ids
+        self.references = parser.references
+        self.reference_sources = parser.reference_sources
         self.citations = parser.citations
         self.gloss_terms = parser.gloss_terms
         self.crumb_links = parser.crumb_links
@@ -435,9 +462,27 @@ def check_cluster_title_markup(public_dir):
 
 
 def check_citation_targets(pages):
-    return ["%s (%s)" % (p.path, href or "missing href")
-            for p in pages for href in p.citations
-            if not href.startswith("#ref-") or unquote(href[1:]) not in p.ids]
+    failures = []
+    for p in pages:
+        for href, key in p.citations:
+            if not href.startswith("#ref-") or unquote(href[1:]) not in p.ids:
+                failures.append("%s (%s)" % (p.path, href or "missing href"))
+            elif key and (href != "#ref-" + key or key not in p.references):
+                failures.append("%s (data-cite=%s)" % (p.path, key))
+        for src, inner_urls in p.reference_sources:
+            if src.count("(") != src.count(")"):
+                failures.append("%s (truncated data-source=%s)" % (p.path, src))
+                continue
+            for url in inner_urls:
+                url = url.rstrip(".,;]")
+                while url.endswith(")") and url.count(")") > url.count("("):
+                    url = url[:-1]
+                if url.startswith(src) and len(url) > len(src):
+                    tail = url[len(src):]
+                    if tail != "/" and not tail.startswith("#"):
+                        failures.append("%s (truncated data-source=%s)" % (p.path, src))
+                        break
+    return failures
 
 
 def breadcrumb_lists(page):

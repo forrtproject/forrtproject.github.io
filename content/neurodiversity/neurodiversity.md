@@ -134,11 +134,9 @@ Not all people conform to socially constructed norms, nor should they have to. N
 
 {{< spoiler text="Bibliographic reference — Phan et al. (2025)" >}}
 
-<div class="csl-bib-body">
-
+{{< citation-card >}}
 Phan, J.M., Middleton, S.L., Azevedo, F., Iley, B.J., Grose‐Hodge, M., Tyler, S.L., Kapp, S.K., Yeung, S.K., Shaw, J.J., Hartmann, H. and FORRT, 2025. Bridging Neurodiversity and Open Scholarship: How Shared Values Can Guide Best Practices for Research Integrity, Social Justice, and Principled Education. *Journal of Social Issues*, *81*(4), p.e70035.
-
-</div>
+{{< /citation-card >}}
 
 {{< /spoiler >}}
 
@@ -153,11 +151,9 @@ Our article in the BPS Cognitive Psychology Bulletin discusses how participatory
 
 {{< spoiler text="Bibliographic reference — Gourdon-Kanhukamwe et al. (2023)" >}}
 
-<div class="csl-bib-body">
-
+{{< citation-card >}}
 Gourdon-Kanhukamwe, A., Kalandadze, T., Yeung, S.K., Azevedo, F., Iley, B., Phan, J.M., Ramji, A.V., Shaw, J.J., Zaneva, M., Dokovova, M., Hartmann, H., Kapp, S.K., Warrington, K.L., Elsherif, M.M. (2023). Opening up understanding of neurodiversity: A call for applying participatory and open scholarship practices. *The Cognitive Psychology Bulletin*, *8*, 23-27. https://doi.org/10.53841/bpscog.2023.1.8.23
-
-</div>
+{{< /citation-card >}}
 
 {{< /spoiler >}}
 
