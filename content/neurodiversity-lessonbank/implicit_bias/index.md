@@ -49,21 +49,96 @@ Look below at fragments of [this article](https://www.jstor.org/stable/25119452?
   <p><strong>men / women / white people / people of races other than white / children / left-handed individuals / individuals suffering from mental health problems / individuals with criminal record?</strong></p>
 </div>
 
-<div class="lesson-activity-note">
-  <p><strong>Tip:</strong> Select the question-mark markers on both sides of the excerpt to view hints.</p>
-  <p><strong>Using a phone?</strong> This external H5P page is laid out for a wider screen. After opening it below, rotate your phone to landscape and pinch to zoom in on the excerpt and hints, open it on a tablet or laptop, or read the original <a href="https://www.jstor.org/stable/25119452?seq=1" target="_blank" rel="noopener">1903 article on JSTOR</a> directly while reflecting on the groups listed above.</p>
+<div class="lesson-annotated-excerpt">
+  <div class="lesson-excerpt-head">
+    <p class="lesson-excerpt-title">Left-handedness and left-sidedness</p>
+    <p class="lesson-excerpt-byline">By Professor Cesare Lombroso — The North American Review, 177(562), 440–444 (1903)</p>
+  </div>
+
+  <div class="lesson-passage">
+    <p>As is universally known, we use the right hand very much more commonly than the left, the number of persons who are more agile with the left hand being comparatively small. They are ordinarily found among women, children, and savages, and they were more numerous in ages past than they are now. Much has been written of these persons, but as no one has heretofore tried to determine their frequency by means of statistics, I decided to undertake that task with the aid of my friend Professor Marro.</p>
+    <details class="lesson-hint">
+      <summary>Hint 1</summary>
+      <div class="lesson-hint-body">
+        <p>What is the author implying here? Why is left-handedness found in the groups mentioned according to the author? What does the fact that it is becoming less common imply? Hint: think of evolution.</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="lesson-passage">
+    <p>Amongst 1029 operatives and soldiers I found a proportion of four per cent. in men and five to eight per cent. in women. Among lunatics the proportions are not much different. On the other hand, studying a certain number of criminals, the quota of left-handedness was found more than tripled in men, thirteen per cent., and nearly quintupled in women, twenty-two per cent. Some particular kinds of criminals, however, as, for example, swindlers, offered me again a much greater proportion, thirty-three per cent., while murderers and ravishers give less—from nine to ten per cent. At all events, this is a new characteristic, which connects criminals with savages, and differentiates them from sane people as well as lunatics.</p>
+    <p class="lesson-ellipsis" aria-hidden="true">[…]</p>
+    <details class="lesson-hint">
+      <summary>Hint 2</summary>
+      <div class="lesson-hint-body">
+        <p>So what is the author implying here? How have these claims been evidenced? You can refer to the paper — see the JSTOR link above.</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="lesson-passage">
+    <p>To understand the exact significance of these researches, it is necessary to know that a greater tendency to asymmetry is seen in the animal species the nearer they approach man and the more perfect they are.</p>
+    <p class="lesson-ellipsis" aria-hidden="true">[…]</p>
+    <details class="lesson-hint">
+      <summary>Hint 3</summary>
+      <div class="lesson-hint-body">
+        <p>So what does this say about left-handedness and evolution?</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="lesson-passage">
+    <p>As asymmetry always grows in proportion to the development, and as the brain is among the organs which develop the most, it becomes more asymmetric the more it works. Therefore, as man advances in civilization and culture, he shows an always greater right-sidedness as compared to savages, the masculine in this way outnumbering the feminine and adults outnumbering children. Thus women and savage races, even when they are not properly left-handed, have certain gestures and movements which are a species of left-handedness.</p>
+    <details class="lesson-hint">
+      <summary>Hint 4</summary>
+      <div class="lesson-hint-body">
+        <p>What are the author's beliefs regarding men and women? Who, do you think, is referred to as "savages" here? What does this tell you about the author's beliefs?</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="lesson-passage">
+    <p>Some time ago Delaunay observed that the man holds out the right arm, which the woman takes with the left; that the woman buttons her clothes from right to left, while the man does so from left to right, and that women and children, when they trace a line or turn a key, for instance, of a watch, initiate the movement from right to left, while the adult man does so always from left to right. This explains why, in early times, and still among people little civilized, such as Arabs, the writing was preferably from right to left, which is the habit of children until corrected.</p>
+    <details class="lesson-hint">
+      <summary>Hint 5</summary>
+      <div class="lesson-hint-body">
+        <p>So what else do we now know about the way the author perceives the world and the groups of people he has mentioned? If you hadn't looked at the name of the author — would you be able to infer the author's gender and ethnicity? Do you think the groups mentioned by the author have in any way been involved in his research?</p>
+      </div>
+    </details>
+  </div>
+
+  <p class="lesson-attribution">Excerpt from Lombroso, C. (1903), <a href="https://www.jstor.org/stable/25119452?seq=1">The North American Review (JSTOR)</a>. Reflection hints adapted from Magdalena Grose-Hodge's <a href="https://msgrose-hodge.github.io/ND/h5p-standalone-1.3.x/demo/content-example-2.html">H5P activity <i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="visually-hidden"> (another website)</span></a> (<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>).</p>
 </div>
 
-<div class="lesson-embed">
-{{< click_to_load src="https://msgrose-hodge.github.io/ND/h5p-standalone-1.3.x/demo/content-example-2.html" provider="GitHub Pages" label="This activity" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" >}}
+Read the statements about the text below. Are they true or false? Select each statement to reveal the answer.
+
+<div class="lesson-quiz">
+  <details class="spoiler">
+    <summary>The author implies left-handedness is an atavistic feature.</summary>
+    <div class="spoiler-body">
+      <p><strong>True.</strong> The author claims that left-handedness is more common in species that the author considers less advanced.</p>
+    </div>
+  </details>
+  <details class="spoiler">
+    <summary>The author says left-handedness is more common in criminal offenders.</summary>
+    <div class="spoiler-body">
+      <p><strong>True.</strong> According to the author, the proportion of left-handedness in operatives and soldiers is 4% in men and 5–8% in women while in offenders, it is 13% in men, and 22% in women.</p>
+    </div>
+  </details>
+  <details class="spoiler">
+    <summary>The author calls left-handed children savages.</summary>
+    <div class="spoiler-body">
+      <p><strong>False.</strong> The author uses this term to describe cultures other than white.</p>
+    </div>
+  </details>
+  <details class="spoiler">
+    <summary>The author concludes that there is no hope for left-handed children.</summary>
+    <div class="spoiler-body">
+      <p><strong>False.</strong> The author sees left-handedness as a "bad habit" that should be corrected.</p>
+    </div>
+  </details>
+  <p class="lesson-attribution">Statements and answers adapted from Magdalena Grose-Hodge's <a href="https://msgrose-hodge.github.io/ND/h5p-standalone-1.3.x/demo/lhquestions.html">H5P quiz <i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="visually-hidden"> (another website)</span></a> (<a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>).</p>
 </div>
-
-Open the quiz below to see statements about the text. Are they true or false? Select each statement to reveal the answer.
-
-<p class="lesson-action-row">
-  <a class="btn btn-primary" href="https://msgrose-hodge.github.io/ND/h5p-standalone-1.3.x/demo/lhquestions.html" target="_blank" rel="noopener" aria-describedby="host-statements-quiz">Decide if the statements are true</a>
-  <span class="lesson-action-host" id="host-statements-quiz">GitHub Pages, opens in a new tab</span>
-</p>
 
 ## Participatory research
 

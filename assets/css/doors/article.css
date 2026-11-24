@@ -407,9 +407,33 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .article-layout .article-style .lesson-prompt-box p:last-child,.article-layout .article-style .lesson-prompt-box ul:last-child{margin-bottom:0}
 .article-layout .article-style .lesson-excerpt{margin:20px 0;padding:18px 22px;background:var(--surface);border-radius:var(--r-large);max-width:31em}
 .article-layout .article-style .lesson-excerpt p:last-child{margin-bottom:0}
-.article-layout .article-style .lesson-activity-note{margin:18px 0 14px;padding:14px 18px;background:var(--jus-bg);border-radius:var(--r-small);font-size:16px;line-height:1.5;max-width:32em}
-.article-layout .article-style .lesson-activity-note p{margin:0 0 8px;font-size:16px}
-.article-layout .article-style .lesson-activity-note p:last-child{margin-bottom:0}
+.article-layout .article-style .lesson-annotated-excerpt{margin:20px 0 28px;padding:22px 24px;background:var(--surface);border-inline-start:4px solid var(--jus);border-radius:var(--r-large);max-width:31em}
+.article-layout .article-style .lesson-excerpt-head{margin:0 0 16px;padding:0 0 12px;border-bottom:1px solid var(--line)}
+.article-layout .article-style .lesson-excerpt-title{margin:0 0 4px;font:500 21px/1.25 var(--display);color:var(--ink)}
+.article-layout .article-style .lesson-excerpt-byline{margin:0;font-size:15px;color:var(--soft)}
+.article-layout .article-style .lesson-passage{margin:0 0 18px;padding:0 0 16px;border-bottom:1px solid color-mix(in srgb,var(--ink) 12%,transparent)}
+.article-layout .article-style .lesson-passage:last-of-type{margin-bottom:14px;padding-bottom:14px}
+.article-layout .article-style .lesson-passage p{margin:0 0 10px}
+.article-layout .article-style .lesson-passage .lesson-ellipsis{margin:0 0 10px;font-weight:600;color:var(--soft)}
+.article-layout .article-style .lesson-hint{margin:8px 0 0;background:var(--jus-bg);border-radius:var(--r-small)}
+.article-layout .article-style .lesson-hint>summary{display:flex;align-items:center;min-height:44px;padding:6px 14px;font-size:16px;font-weight:600;color:var(--jus);cursor:pointer;list-style:none}
+.article-layout .article-style .lesson-hint>summary::-webkit-details-marker{display:none}
+.article-layout .article-style .lesson-hint>summary::before{content:"▸";display:inline-block;flex:none;margin-inline-end:8px;transition:transform .15s}
+.article-layout .article-style .lesson-hint[open]>summary::before{transform:rotate(90deg)}
+.article-layout .article-style .lesson-hint>summary:hover{color:var(--ink)}
+.article-layout .article-style .lesson-hint-body{padding:0 14px 14px;font-size:16px;line-height:1.5;color:var(--ink)}
+.article-layout .article-style .lesson-hint-body p:last-child{margin-bottom:0}
+.article-layout .article-style .lesson-quiz{margin:16px 0 24px;max-width:31em}
+.article-layout .article-style .lesson-quiz .spoiler{margin:0 0 10px;background:var(--jus-bg);border-radius:var(--r-small)}
+.article-layout .article-style .lesson-quiz .spoiler>summary{display:flex;align-items:baseline;min-height:44px;padding:10px 16px;font-size:17px;color:var(--ink);list-style:none}
+.article-layout .article-style .lesson-quiz .spoiler>summary::-webkit-details-marker{display:none}
+.article-layout .article-style .lesson-quiz .spoiler>summary::before{content:"▸";display:inline-block;flex:none;margin-inline-end:10px;color:var(--jus);transition:transform .15s}
+.article-layout .article-style .lesson-quiz .spoiler[open]>summary::before{transform:rotate(90deg)}
+.article-layout .article-style .lesson-quiz .spoiler>summary:hover{color:var(--jus)}
+.article-layout .article-style .lesson-quiz .spoiler-body{padding:0 16px 14px;font-size:16px;line-height:1.5}
+.article-layout .article-style .lesson-attribution{margin:12px 0 0;font-size:15px;line-height:1.45;color:var(--soft);max-width:34em}
+.article-layout .article-style .lesson-attribution a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
+.article-layout .article-style .lesson-attribution .fa-external-link-alt{margin-inline-start:3px;font-size:.78em}
 .article-layout .article-style .lesson-action-row{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin:16px 0 22px;max-width:none}
 .article-layout .article-style .lesson-action-row .btn{min-height:44px;display:inline-flex;align-items:center;text-decoration:none}
 .article-layout .article-style .lesson-action-host{font-size:15px;color:var(--soft)}
