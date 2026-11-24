@@ -36,7 +36,7 @@
   {{ $rendered = $rendered | append (dict "id" $hash_id "title" (cond (gt $index 0) $title "") "subtitle" (cond (gt $index 0) ($st.Params.subtitle | default "") "") "body" $body "widget" $widget "tinted" $tinted) }}
 {{ end }}
 {{ $wide := in site.Params.doors.wide_pages .Path }}
-{{ $hasCard := and (not $wide) (gt (len $toc) 1) }}
+{{ $hasCard := and (not $wide) (gt (len $toc) 1) (ne .Params.toc false) }}
 {{ $hasCallouts = and $hasCallouts (not $wide) }}
 {{ $card := "" }}
 {{ if $hasCard }}{{ $card = partial "doors/toc_card" $toc }}{{ end }}
@@ -60,7 +60,7 @@
       {{ $nav := printf `<nav aria-label="On this page"><ul>%s</ul></nav>` $items }}
       {{/* A page whose first section is its point (toc_phone_after_first, e.g. About us with its introduction and
            video) puts the phone contents after that section, so the point comes first. */}}
-      {{ if not .Params.toc_phone_after_first }}{{ partial "doors/toc_phone" $nav }}{{ end }}
+      {{ if and (not .Params.toc_phone_after_first) (ne .Params.phone_toc false) }}{{ partial "doors/toc_phone" $nav }}{{ end }}
       {{ $page.Scratch.Set "doors_toc_phone" $nav }}
       {{ end }}
       <div class="article-style">
@@ -71,7 +71,7 @@
           {{ $r.body }}
         </section>
         {{/* There the reader has met the page's point, so the contents are one closed line they can open. */}}
-        {{ if and (eq $i 0) $hasCard $page.Params.toc_phone_after_first }}
+        {{ if and (eq $i 0) $hasCard $page.Params.toc_phone_after_first (ne $page.Params.phone_toc false) }}
         <details class="toc-phone toc-phone--closed"><summary class="toc-phone-label">On this page</summary><div class="article-toc">{{ $page.Scratch.Get "doors_toc_phone" | safeHTML }}</div></details>
         {{ end }}
         {{ end }}
