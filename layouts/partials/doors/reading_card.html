@@ -60,8 +60,22 @@
   <dl>
     {{ with $p.Params.contact }}
       {{ $contact := trim (string .) " " }}
+      {{ $pair := findRESubmatch `^(.+?)\s*[(\<]([^\s@()<>]+@[^\s@()<>]+\.[^\s@()<>]+)[)\>]$` $contact 1 }}
       {{ $contactProfile := site.GetPage (printf "/authors/%s" (urlize $contact)) }}
-      <dt>Contact</dt><dd>{{ if $contactProfile }}<a href="{{ $contactProfile.RelPermalink }}">{{ $contactProfile.Title }}</a>{{ else if findRE `^[^\s@]+@[^\s@]+\.[^\s@]+$` $contact }}<a href="mailto:{{ $contact }}">{{ $contact }}</a>{{ else }}{{ $contact | markdownify }}{{ end }}</dd>
+      <dt>Contact</dt><dd>
+        {{- if $pair -}}
+          {{- $name := trim (index (index $pair 0) 1) " " -}}
+          {{- $email := index (index $pair 0) 2 -}}
+          {{- $np := site.GetPage (printf "/authors/%s" (urlize $name)) -}}
+          {{- if $np }}<a href="{{ $np.RelPermalink }}">{{ $np.Title }}</a>{{ else }}{{ $name }}{{ end }}<br><a href="mailto:{{ $email }}">{{ $email }}</a>
+        {{- else if $contactProfile -}}
+          <a href="{{ $contactProfile.RelPermalink }}">{{ $contactProfile.Title }}</a>
+        {{- else if findRE `^[^\s@]+@[^\s@]+\.[^\s@]+$` $contact -}}
+          <a href="mailto:{{ $contact }}">{{ $contact }}</a>
+        {{- else -}}
+          {{ $contact | markdownify }}
+        {{- end -}}
+      </dd>
     {{ end }}
     {{ if .hasDates }}
     <dt>Published</dt><dd>{{ $p.Date.Format "2 January 2006" }}</dd>
