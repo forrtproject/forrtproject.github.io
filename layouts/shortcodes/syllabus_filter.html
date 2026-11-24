@@ -67,11 +67,13 @@
 
     var activeCat = 'all';
 
+    var pills = {};
     function makePill(key, label, count) {
       var btn = document.createElement('button');
       btn.type = 'button';
       btn.className = 'nx-syl-pill' + (key === 'all' ? ' is-active' : '');
       btn.dataset.cat = key;
+      btn.dataset.label = label;
       btn.setAttribute('aria-pressed', key === 'all' ? 'true' : 'false');
       btn.textContent = label + ' (' + count + ')';
       btn.addEventListener('click', function () {
@@ -83,6 +85,7 @@
         });
         apply();
       });
+      pills[key] = btn;
       return btn;
     }
 
@@ -95,11 +98,15 @@
       var q = fold(search.value.trim());
       clearBtn.hidden = !q;
       var shown = 0;
+      var queryTotal = 0;
       parsed.forEach(function (g) {
         var catOk = activeCat === 'all' || g.key === activeCat;
+        var groupQueryMatches = 0;
         var groupShown = 0;
         g.items.forEach(function (rec) {
-          var ok = catOk && (!q || rec.text.indexOf(q) !== -1);
+          var qOk = !q || rec.text.indexOf(q) !== -1;
+          if (qOk) { groupQueryMatches++; queryTotal++; }
+          var ok = catOk && qOk;
           rec.el.hidden = !ok;
           if (ok) { groupShown++; shown++; }
         });
@@ -107,7 +114,13 @@
         if (g.badge) {
           g.badge.textContent = groupShown + (groupShown === 1 ? ' syllabus' : ' syllabi');
         }
+        if (pills[g.key]) {
+          pills[g.key].textContent = pills[g.key].dataset.label + ' (' + groupQueryMatches + ')';
+        }
       });
+      if (pills.all) {
+        pills.all.textContent = pills.all.dataset.label + ' (' + queryTotal + ')';
+      }
       countEl.textContent = 'Showing ' + shown + ' of ' + total + ' syllabi';
       emptyEl.hidden = shown > 0;
       catalogue.hidden = shown === 0;

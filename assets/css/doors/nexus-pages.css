@@ -753,15 +753,17 @@
 .nx-page .article-style .nx-tips-nav ol {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 6px;
+  gap: 2px;
   margin: 0;
-  padding-inline-start: 1.4em;
+  padding: 0;
+  list-style: none;
+  counter-reset: tip-nav;
   max-width: none;
 }
 @media (min-width: 761px) and (max-width: 1000px) {
   .nx-page .article-style .nx-tips-nav ol {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 8px 28px;
+    gap: 4px 28px;
   }
 }
 .nx-page .article-style .nx-tips-nav-foot {
@@ -771,25 +773,43 @@
   font-size: 16px;
 }
 .nx-page .article-style .nx-tips-nav-foot a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   font-weight: 600;
 }
 .nx-page .article-style .nx-tips-nav li {
   margin: 0;
-  padding: 4px 0;
+  padding: 0;
+  counter-increment: tip-nav;
   font-size: 16px;
-  line-height: 1.45;
+  line-height: 1.4;
   max-width: 28em;
   min-width: 0;
   overflow-wrap: anywhere;
 }
-.nx-page .article-style .nx-tips-nav a {
-  display: inline;
+.nx-page .article-style .nx-tips-nav li a {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 6px 0;
+  max-width: 100%;
   color: var(--link);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
+.nx-page .article-style .nx-tips-nav li a::before {
+  content: counter(tip-nav) ".";
+  flex: none;
+  min-width: 1.3em;
+  font-weight: 600;
+  color: var(--edu);
+  text-decoration: none;
+}
 @media (max-width: 760px) {
-  .nx-page .article-style .nx-tips-nav li {
+  .nx-page .article-style .nx-tips-nav li a {
+    min-height: 44px;
+    align-items: center;
     padding: 8px 0;
   }
 }

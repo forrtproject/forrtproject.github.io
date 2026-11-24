@@ -53,7 +53,7 @@ This describes the available (empirical) evidence of the impact and importance o
 </figure>
 </div>
 
-<div class="nx-grid-3" aria-label="Three areas of student impact reviewed">
+<div class="nx-grid-3" role="group" aria-label="Three areas of student impact reviewed">
 <div class="nx-impact-pillar">
 
 ## Scientific literacy
