@@ -353,6 +353,10 @@ def check_description_entities(pages):
 
 
 FLORA_PAGE = "replication-hub/flora/index.html"
+# The dataset citation (static/data/fred_citation.txt, from FReD-data) names FLoRA and links its DOI. The DOI is
+# not fixed here: FReD-data moved it from OSF (10.17605/OSF.IO/9R62X) to Zenodo, and a later version will move it again.
+FLORA_CITATION = re.compile(
+    r"Library of Reproduction and Replication Attempts \(FLoRA\).{0,300}?href=[\"']?https://doi\.org/10\.\d{4,9}/", re.S)
 
 
 def check_flora_citation(public_dir):
@@ -361,7 +365,7 @@ def check_flora_citation(public_dir):
         return ["%s (page not found)" % FLORA_PAGE]
     with open(path, encoding="utf-8") as handle:
         html = handle.read()
-    if "doi.org/10.17605/OSF.IO/9R62X" not in html:
+    if not FLORA_CITATION.search(html):
         return ["%s (no FLoRA DOI in the citation)" % FLORA_PAGE]
     return []
 
