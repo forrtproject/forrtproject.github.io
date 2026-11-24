@@ -733,12 +733,14 @@ if (chatWidget) {
     }
   });
 
+  let pendingFallbackHref = '';
   const openOrToggleChat = ({ fallbackHref = '' } = {}) => {
     if (window.toggleJustOS) {
       window.toggleJustOS();
       syncExpanded();
       return;
     }
+    if (fallbackHref) pendingFallbackHref = fallbackHref;
     if (chatLoading) return;
     chatLoading = true;
     const styles = document.createElement('link');
@@ -750,15 +752,18 @@ if (chatWidget) {
     script.src = chatWidget.dataset.js;
     script.onload = () => {
       chatLoading = false;
+      pendingFallbackHref = '';
       window.toggleJustOS();
       syncExpanded();
     };
     script.onerror = () => {
       chatLoading = false;
       chatFailed = true;
+      const href = pendingFallbackHref;
+      pendingFallbackHref = '';
       document.getElementById('just-os-window')?.remove();
-      if (fallbackHref) {
-        location.href = fallbackHref;
+      if (href) {
+        location.href = href;
         return;
       }
       chatBubble.textContent = 'The chat did not load. Try again in a moment.';

@@ -628,10 +628,18 @@ def check_phone_reading(browser, base, failures):
       const el = document.querySelector('.hero-justos');
       if (!el) return null;
       const r = el.getBoundingClientRect();
+      const s = getComputedStyle(el);
       const img = el.querySelector('img');
-      return {text: el.textContent.trim(), h: r.height, w: r.width, icon: Boolean(img && img.complete && img.naturalWidth > 0)};
+      return {
+        text: el.textContent.trim(),
+        h: r.height,
+        w: r.width,
+        visible: s.display !== 'none' && s.visibility !== 'hidden' && parseFloat(s.opacity) >= 0.9,
+        icon: Boolean(img && img.complete && img.naturalWidth > 0),
+      };
     }""")
-    expect(bool(hero_btn and hero_btn["text"] == "Ask JUST-OS" and hero_btn["h"] >= 44 and hero_btn["icon"]),
+    expect(bool(hero_btn and hero_btn["text"] == "Ask JUST-OS" and hero_btn["visible"]
+                and page.locator(".hero-justos").is_visible() and hero_btn["h"] >= 44 and hero_btn["icon"]),
            f"on a phone the home page hero includes a visible 'Ask JUST-OS' button ({hero_btn})")
     page.locator(".hero-justos").tap()
     page.wait_for_function("document.getElementById('just-os-window')?.style.display === 'flex'", timeout=15000)
