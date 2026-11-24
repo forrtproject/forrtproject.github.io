@@ -8,7 +8,5 @@ gspread
 python-dotenv
 matplotlib
 pypinyin
-flask
-flask-cors
 pillow
 beautifulsoup4

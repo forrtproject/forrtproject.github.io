@@ -6,6 +6,7 @@
 {{ $arrowColors := .arrowColors }}
 {{ $link_mode := .link_mode | default "anchor" }}
 {{ $activeN := int (.active_cluster_number | default -1) }}
+{{ $lpLabel := "Has teaching materials" }}
 
 <div class="col-lg-4 col-xl-3 clusters-sidebar" id="clusters-sidebar">
   <div class="clusters-sidebar-inner">
@@ -16,11 +17,12 @@
       {{ $cn := int $cluster.number }}
       {{ $isActive := eq $cn $activeN }}
       {{ $clusterHref := cond (eq $link_mode "subpath") (printf "/clusters/cluster-%d/" (int $cluster.number) | relURL) (printf "#%s" $cid) }}
-      <div class="cluster-nav-group" data-cluster="{{ $cid }}">
+      {{ $lpSets := index (partialCached "clusters/lesson_plans.html" "lesson-plans") (printf "%d" $cn) | default dict }}
+      <div class="cluster-nav-group" data-cluster="{{ $cid }}"{{ if $lpSets }} data-lp{{ end }}>
         <a href="{{ $clusterHref }}" class="cluster-nav-heading"{{ if $isActive }} aria-current="page"{{ end }}>
           {{ $arrowColor := index $arrowColors (mod $ci (len $arrowColors)) }}
           <span class="cluster-nav-toggle" style="color:{{ $arrowColor | safeCSS }};" aria-hidden="true">{{ if $isActive }}&#9679;{{ else }}&#9656;{{ end }}</span>
-          <span class="cluster-nav-name">{{ $cluster.name }}</span>
+          <span class="cluster-nav-name">{{ $cluster.name }}</span>{{ if $lpSets }}<span class="lp-dot" role="img" title="{{ $lpLabel }}" aria-label="{{ $lpLabel }}"></span>{{ end }}
         </a>
         {{ if $isActive }}
         <ul class="cluster-nav-subs cluster-nav-subs--here" style="{{ printf "--here-colour:%s" $arrowColor | safeCSS }}" hidden>
@@ -51,8 +53,7 @@
           </li>
           {{ end }}
           {{ range $si, $sc := $cluster.sub_clusters }}
-          {{/* Slug must match cluster_section.html so the anchor target exists. */}}
-          {{ $slug := $sc.name | lower | replaceRE "[^a-z0-9]+" "-" | replaceRE "^-+|-+$" "" }}
+          {{ $slug := partial "clusters/sc_slug.html" $sc.name }}
           {{ $scid := printf "c%d-%s" (int $cluster.number) $slug }}
           {{ $subHref := printf "#%s" $cid }}
           {{ if and (eq $link_mode "subpath") (not $isActive) }}
@@ -60,10 +61,11 @@
           {{ else if $isActive }}
             {{ $subHref = printf "#%s" $scid }}
           {{ end }}
-          <li class="nav-item">
+          {{ $lp := index $lpSets $slug }}
+          <li class="nav-item"{{ if $lp }} data-lp{{ end }}>
             <a href="{{ $subHref }}" class="nav-link sc-nav-link" data-cluster="{{ $cid }}" data-tab="{{ $scid }}-tab">
               <span class="cluster-nav-name"{{ if $isActive }} title="{{ $sc.name }}"{{ end }}>{{ $sc.name }}</span>
-              <span class="badge badge-pill">{{ len $sc.publications }}</span>
+              <span class="badge badge-pill">{{ if $lp }}<span class="lp-dot" role="img" title="{{ $lpLabel }}" aria-label="{{ $lpLabel }}"></span>{{ end }}{{ len $sc.publications }}</span>
             </a>
           </li>
           {{ end }}

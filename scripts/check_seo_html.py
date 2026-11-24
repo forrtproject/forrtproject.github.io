@@ -59,6 +59,10 @@ Hard checks (exit 1 if any fails):
   27. Summary takeaway links have a destination and bypass Google's redirect (#1256).
   28. Summary pages exist and use the written credits expected from the build's data.
   29. External links on cluster pages do not swallow trailing sentence punctuation (#845).
+  30. List cards use a page's `image.alt_text` (#1203), tested on a post that
+     sets it.
+  31. No URL in sitemap.xml (or the sitemaps a sitemap index lists) is a page
+     with robots noindex. A missing sitemap, or one that lists no URLs, fails.
 
 Report-only sections (never fail): pages with no <h1>, the
 site-wide share of images that carry both width and height, pages whose
@@ -76,9 +80,11 @@ from html import unescape
 from html.entities import html5
 from html.parser import HTMLParser
 from urllib.parse import unquote, urljoin, urlparse
+from xml.etree import ElementTree
 
 MAX_LISTED = 20
 MAX_INLINE_SCRIPT = 200_000  # bytes in one inline <script> (#993)
+SITEMAP_NS = "http://www.sitemaps.org/schemas/sitemap/0.9"
 # Markup that survived flattening, e.g. an indented HTML block rendered as code.
 HTML_TAG = re.compile(r"</?[A-Za-z][A-Za-z0-9]*(\s[^<>]*)?/?>")
 # Attribute values arrive already unescaped, so any entity left in them was
@@ -266,10 +272,10 @@ class Page:
                           if (m.get("name") or "").lower() == "robots")
         refresh = any((m.get("http-equiv") or "").lower() == "refresh"
                       for m in parser.metas)
-        own = "/" + os.path.dirname(path).replace(os.sep, "/")
-        own = own.rstrip("/") + "/"
+        url_path = "/" + os.path.dirname(path).replace(os.sep, "/")
+        self.url_path = url_path.rstrip("/") + "/"
         elsewhere = (parser.canonical is not None and
-                     unquote(urlparse(parser.canonical).path) != unquote(own))
+                     unquote(urlparse(parser.canonical).path) != unquote(self.url_path))
         # Redirect stubs, noindexed pages and pages canonicalised to another URL
         # never reach search results as such.
         self.noindex = "noindex" in robots
@@ -742,6 +748,40 @@ def check_glossary_aka_filter(public_dir):
     return glossary_aka_failures(hub_html, term_pages)
 
 
+ALT_TEXT_CARD_IMAGE = "/educators-corner/025-active-learning-open-research-phd/featured"
+ALT_TEXT_CARD_START = "Bronfenbrenner"
+
+
+def check_card_alt_text(pages):
+    return [p.path for p in pages for img in p.imgs
+            if ALT_TEXT_CARD_IMAGE in (img.get("src") or "")
+            and not (img.get("alt") or "").startswith(ALT_TEXT_CARD_START)]
+
+
+def sitemap_paths(public_dir, name="sitemap.xml"):
+    """URL paths listed in a sitemap, following a sitemap index into its sitemaps (read
+    from public_dir by URL path, as Hugo writes them alongside the pages). Raises
+    FileNotFoundError for a missing sitemap, so a check never passes on no URLs."""
+    root = ElementTree.parse(os.path.join(public_dir, name)).getroot()
+    locs = [unquote(urlparse(loc.text.strip()).path)
+            for loc in root.iter("{%s}loc" % SITEMAP_NS) if loc.text]
+    if root.tag == "{%s}sitemapindex" % SITEMAP_NS:
+        return [p for loc in locs for p in sitemap_paths(public_dir, loc.lstrip("/"))]
+    return locs
+
+
+def check_sitemap_noindex(public_dir, pages):
+    """A sitemap URL that is noindexed sends search engines contradictory signals."""
+    try:
+        listed = sitemap_paths(public_dir)
+    except FileNotFoundError as missing:
+        return ["%s (not found)" % os.path.relpath(missing.filename, public_dir)]
+    if not listed:
+        return ["sitemap.xml (lists no URLs)"]
+    noindexed = {p.url_path for p in pages if p.noindex}
+    return [p for p in listed if p in noindexed]
+
+
 def description_report(pages, home):
     """Report-only: generic, duplicated and markup-containing descriptions on indexable pages."""
     described = [(p, p.descriptions[0].strip()) for p in pages
@@ -1027,6 +1067,8 @@ def main(public_dir, summaries=None):
         "27. summary takeaways link directly to their destinations": check_summary_takeaway_links(pages),
         "28. summaries show written credit without a raw author marker": check_summary_credit_marker(public_dir, summaries),
         "29. cluster links carry no trailing sentence punctuation": check_cluster_link_punctuation(public_dir),
+        "30. list cards use image.alt_text": check_card_alt_text(pages),
+        "31. no noindexed page is listed in the sitemap": check_sitemap_noindex(public_dir, pages),
     }
     conditional = check_conditional_assets(pages)
     results["3. conditional highlight.js / mermaid loading"] = [

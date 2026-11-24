@@ -639,6 +639,8 @@ html:has(.contributor-az:not([hidden])){scroll-padding-top:calc(var(--contributo
   .article-layout .article-style .lesson-plan-nd ul{grid-template-columns:repeat(20,minmax(0,1fr))}
   .article-layout .article-style .lesson-plan-nd li{grid-column:span 4}
   .article-layout .article-style .lesson-plan-nd li:has(.lesson-plan-kind){grid-column:span 5}
+  /* The PhD workshop plan stands alone in its group, so its card runs the width of the grid. */
+  .article-layout .article-style .lesson-plan-phd li{grid-column:1/-1}
 }
 /* On a phone a one-line plan makes a short card, still a 44 px target. */
 @media(max-width:760px){.article-layout .article-style .lesson-plan-group li{padding:6px 14px 8px}.article-layout .article-style .lesson-plan-group li>a:first-child{font-size:19px}.article-layout .article-style .lesson-plan-group ul{gap:8px}.article-layout .article-style .lesson-plan-group li:has(.lesson-plan-sample){padding-bottom:16px}}

@@ -318,12 +318,8 @@ plugins_js  = []
 ############################
 [cms]
   # Loads the Netlify Identity widget on the home page, as a render-blocking
-  # script. Turned off because it cannot work here: `static/admin/config.yml`
-  # uses the `git-gateway` backend, which authenticates through Netlify
-  # Identity, but the site is deployed to GitHub Pages (see
-  # `.github/workflows/deploy.yaml`) and `netlify.toml` is retained only as
-  # `netlify.toml.deprecated`. Set back to `true` if the admin panel is ever
-  # moved to a backend that needs the widget.
+  # script. Keep this off: the site has no CMS admin panel, and the templates
+  # treat a missing value as `true`.
   netlify_cms = false
 
 ############################

@@ -242,8 +242,7 @@ MODAL_TEMPLATE = r"""
                 </div>
                 <div class="sc-modal-main">
                     <h3 id="modal-{id}-name" class="sc-modal-name">{name}</h3>
-                    <p class="sc-modal-role">{role}</p>
-                    <div class="sc-modal-bio">{bio}</div>
+                    <p class="sc-modal-role">{role}</p>{bio_block}
                 </div>
             </div>
         </div>
@@ -263,20 +262,58 @@ def normalize_name(name):
     name = str(name).strip()
     name = re.sub(r'\b(Dr|Dr\.|Mr|Mr\.|Ms|Ms\.|Mrs|Prof|Prof\.)\s+', '', name, flags=re.IGNORECASE)
     name = re.sub(r'\*', '', name)
+    # Parenthesised notes such as "(gmail)" or "(Assist. Prof)" are not part of the name.
+    name = re.sub(r'\([^)]*\)', '', name)
     name = unicodedata.normalize('NFKD', name)
     name = name.encode('ascii', 'ignore').decode('ascii')
     name = re.sub(r'\s+', ' ', name).strip()
     return name.lower()
 
+def display_name(name):
+    """Name as supplied on the personal-details form, in one house style: 'Dr' without a
+    full stop (also for 'dr.'), and a trailing ', PhD' shown as a leading 'Dr'. Other
+    titles ('Prof', ', M.Sc.', ', PhD Student') stay as supplied."""
+    name = re.sub(r'\s+', ' ', str(name)).strip()
+    name = re.sub(r'^dr\.?\s+', 'Dr ', name, flags=re.IGNORECASE)
+    phd = re.match(r'^(.*?),\s*PhD$', name)
+    if phd:
+        name = phd.group(1).strip()
+        if not re.match(r'^(Dr|Prof)\b', name):
+            name = f"Dr {name}"
+    return name
+
+def strip_title(name):
+    """Drop a leading 'Dr'/'Prof', post-nominals and parenthesised titles such as
+    '(Assist. Prof)', so initials and folder names come from the names alone."""
+    name = re.sub(r'\([^)]*\)', ' ', name).split(',')[0]
+    name = re.sub(r'^(Dr|Prof)\.?\s+', '', name.strip(), flags=re.IGNORECASE)
+    return re.sub(r'\s+', ' ', name).strip()
+
+def render_bio(bio):
+    """Bio line for MODAL_TEMPLATE's {bio_block}, indented to sit under the role; an empty
+    string when no bio was supplied, so the modal has no bio line at all."""
+    if not bio:
+        return ""
+    return f'\n                    <div class="sc-modal-bio">{html.escape(bio)}</div>'
+
+def match_key(name):
+    """Key that identifies one person across the roster, the personal-details form and the
+    fallback sheet: normalize_name() of the name without post-nominals (', PhD') or
+    parenthesised notes ('(gmail)'). Notes go first, so a comma inside one cannot cut the
+    name short."""
+    if pd.isna(name): return ""
+    name = re.sub(r'\([^)]*\)', ' ', str(name)).split(',')[0]
+    return normalize_name(name)
+
 def similarity(a, b):
     return SequenceMatcher(None, a, b).ratio()
 
 def find_match(name, candidates, threshold=0.6):
-    normalized = normalize_name(name)
+    normalized = match_key(name)
     best_match = None
     best_score = threshold
     for candidate in candidates:
-        normalized_candidate = normalize_name(candidate)
+        normalized_candidate = match_key(candidate)
         score = similarity(normalized, normalized_candidate)
         if score > best_score:
             best_score = score
@@ -290,31 +327,28 @@ def find_existing_author_dir(personal_name, authors_dir):
     (extra/missing hyphen, "Dr" prefix, middle initial) — matching a fresh slug from
     sanitize_filename() alone would create a duplicate directory every time one of those
     sources disagrees with what's already on disk.
+
+    Returns None when no folder matches or the name fits more than one folder: a wrong
+    folder shows another person's photo, while a new folder at worst duplicates one.
     """
+    dirs = sorted(d.name for d in authors_dir.iterdir() if d.is_dir())
+    exact = sanitize_filename(personal_name)
+    if exact in dirs:
+        return exact
     normalized_target = normalize_name(personal_name)
-    # Some folders run the words together ("ruthvanderhallenphd"), which similarity undervalues.
+    # Folders slugged without separators (e.g. "ruthvanderhallenphd") only match once
+    # spaces and punctuation are ignored on both sides.
     compact_target = re.sub(r'[^a-z0-9]', '', normalized_target)
-    compact_matches = [
-        existing_dir.name for existing_dir in authors_dir.iterdir()
-        if existing_dir.is_dir() and re.sub(r'[^a-z0-9]', '', normalize_name(existing_dir.name)) == compact_target
-    ]
-    if len(compact_matches) == 1:
-        return compact_matches[0]
-    best_match = None
-    # 0.9 is deliberately strict: legitimate spelling variants of the SAME person
-    # (Dr prefix, missing middle initial, hyphen vs space in a surname) all score >=0.95
-    # against their existing folder, while two DIFFERENT people never do. A looser
-    # threshold risks collapsing distinct authors onto one folder (overwriting avatars).
-    best_score = 0.9
-    for existing_dir in authors_dir.iterdir():
-        if not existing_dir.is_dir():
-            continue
-        candidate = normalize_name(existing_dir.name.replace('-', ' '))
-        score = similarity(normalized_target, candidate)
-        if score > best_score:
-            best_score = score
-            best_match = existing_dir.name
-    return best_match
+    compact_matches = [d for d in dirs if re.sub(r'[^a-z0-9]', '', d.lower()) == compact_target]
+    if compact_matches:
+        return compact_matches[0] if len(compact_matches) == 1 else None
+    # 0.9 is deliberately strict. A typo or a missing middle initial in a longer name
+    # still clears it ('giorgia a andreolli' scores 0.94; 'jane a doe' only 0.89), while
+    # the two closest existing folders of different people score 0.75 (Nov 2026). A
+    # looser threshold risks giving one person another's folder and photo.
+    close = [d for d in dirs
+             if similarity(normalized_target, normalize_name(d.replace('-', ' '))) > 0.9]
+    return close[0] if len(close) == 1 else None
 
 def sanitize_filename(name):
     name = normalize_name(name)
@@ -440,7 +474,7 @@ def render_modal(member_id, name, role, bio, img_content_large, social_links="")
         id=html.escape(str(member_id), quote=True),
         name=html.escape(str(name)),
         role=html.escape(str(role)),
-        bio=html.escape(str(bio or "Bio coming soon.")),
+        bio_block=render_bio(bio),
         img_content_large=img_content_large,
         social_links=social_links,
     ).strip()
@@ -475,7 +509,7 @@ def main():
         full_name = row.get('Full Name (incl academic title)', '')
         if pd.isna(full_name) or str(full_name).strip() == '':
             return
-        normalized = normalize_name(str(full_name))
+        normalized = match_key(str(full_name))
         if not allow_overwrite and normalized in target:
             return
         target[normalized] = {
@@ -538,21 +572,29 @@ def main():
             team_name = section if pd.notna(section) else "General"
 
         # Try to find matching personal details
-        normalized_member = normalize_name(member_name)
+        normalized_member = match_key(member_name)
         personal_data = personal_dict.get(normalized_member)
         personal_name = member_name
 
         if personal_data is not None:
             personal_name = personal_data['Full Name']
         else:
-            matching_name = find_match(member_name, personal_dict.keys(), threshold=0.65)
+            # A wrong match gives this member another person's bio, photo and email. In the
+            # Nov 2026 sheets, spelling variants of one person score >= 0.80 and different
+            # people <= 0.62 (Tom Heyman vs Thomas Rhys Evan), so 0.75 keeps both margins.
+            matching_name = find_match(member_name, personal_dict.keys(), threshold=0.75)
             if matching_name:
                 personal_data = personal_dict[matching_name]
                 personal_name = personal_data['Full Name']
 
         # Handle image
         img_url = ""
-        sanitized_name = find_existing_author_dir(personal_name, AUTHORS_DIR) or sanitize_filename(personal_name)
+        bare_name = strip_title(display_name(personal_name))
+        sanitized_name = (
+            find_existing_author_dir(personal_name, AUTHORS_DIR)
+            or find_existing_author_dir(bare_name, AUTHORS_DIR)
+            or sanitize_filename(bare_name)
+        )
         author_dir = AUTHORS_DIR / sanitized_name
         author_dir.mkdir(parents=True, exist_ok=True)
         avatar_path = author_dir / "avatar.webp"
@@ -569,17 +611,18 @@ def main():
         # Build member object
         bio_text = ""
         if personal_data and personal_data.get('Bio'):
-            bio_text = str(personal_data.get('Bio'))
+            bio_text = str(personal_data.get('Bio')).strip()
             if bio_text.lower() == 'nan':
                 bio_text = ""
         
+        shown_name = display_name(personal_name)
         member_obj = {
             "id": sanitized_name,
-            "name": personal_name,
+            "name": shown_name,
             "role": role if pd.notna(role) else "",
             "role_title": role_title if pd.notna(role_title) else (role if pd.notna(role) else ""),
             "imgUrl": img_url,
-            "initials": get_initials(personal_name),
+            "initials": get_initials(strip_title(shown_name)),
             "bio": bio_text,
             "email": personal_data.get('Email', '') if personal_data else '',
             "website": normalize_website_url(personal_data.get('Weblink', '') if personal_data else ''),
@@ -652,7 +695,7 @@ def main():
                     render_id,
                     member["name"],
                     member["role_title"] or member["role"],
-                    member["bio"] or "Bio coming soon.",
+                    member["bio"],
                     img_content_large,
                     social_links=generate_social_links(member),
                 )

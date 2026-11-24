@@ -115,6 +115,14 @@ Each has suitable context: (e.g., entry-level/undergraduate/postgraduate), total
   <span class="lesson-plan-texts">Companion texts: [Psychological Science Agenda](https://web.archive.org/web/20210603040606/https://www.apa.org/science/about/psa/2019/02/open-science) · [Disability and Rehabilitation](https://doi.org/10.1080/09638288.2023.2173315)</span>
 
 </section>
+<section class="lesson-plan-group lesson-plan-phd" id="open-research-phd" aria-labelledby="for-phd-researchers">
+
+### For PhD researchers
+
+- [Open Research in Practice: Building Confidence to Act, Community to Thrive and Skills for Life](LessonPlan_OpenResearchPhD.pdf) <span class="lesson-plan-kind">Lesson plan (PDF)</span>
+  <span class="lesson-plan-texts">Also: [editable Word version](LessonPlan_OpenResearchPhD.docx) · [workshop slides on OSF](https://osf.io/82t9c/overview) · Abbie Cahoon describes how the workshop was designed and evaluated in [an Educators' Corner post](/educators-corner/025-active-learning-open-research-phd/)</span>
+
+</section>
 </div>
 </div>
 

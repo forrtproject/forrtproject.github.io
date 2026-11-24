@@ -1,0 +1,1040 @@
+{
+  "sets": {
+    "2": {
+      "effect-sizes-statistical-power-simulations-confidence-intervals": [
+        {
+          "title": "Effect sizes, statistical power, simulations, and confidence intervals",
+          "record": "https://zenodo.org/records/23090870",
+          "doi": "10.5281/zenodo.23090870",
+          "creators": [
+            "Yijing Wang"
+          ],
+          "reviewers": [
+            "Jaitshree Naik",
+            "Carolina Natel"
+          ],
+          "files": [
+            {
+              "label": "Slides",
+              "url": "https://zenodo.org/records/23090870/files/effect-sizes-power-slides.pptx?download=1",
+              "format": "PPTX"
+            },
+            {
+              "label": "Slides",
+              "url": "https://zenodo.org/records/23090870/files/effect-sizes-power-slides.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "Lesson plan L1",
+              "url": "https://zenodo.org/records/23090870/files/effect-sizes-power-lesson-plan-L1.docx?download=1",
+              "format": "DOCX"
+            },
+            {
+              "label": "Lesson plan L1",
+              "url": "https://zenodo.org/records/23090870/files/effect-sizes-power-lesson-plan-L1.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "Lesson plan L2",
+              "url": "https://zenodo.org/records/23090870/files/effect-sizes-power-lesson-plan-L2.docx?download=1",
+              "format": "DOCX"
+            },
+            {
+              "label": "Lesson plan L2",
+              "url": "https://zenodo.org/records/23090870/files/effect-sizes-power-lesson-plan-L2.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "Lesson plan L3",
+              "url": "https://zenodo.org/records/23090870/files/effect-sizes-power-lesson-plan-L3.docx?download=1",
+              "format": "DOCX"
+            },
+            {
+              "label": "Lesson plan L3",
+              "url": "https://zenodo.org/records/23090870/files/effect-sizes-power-lesson-plan-L3.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "Quarto exercise: power analysis",
+              "url": "https://zenodo.org/records/23090870/files/power_analysis.qmd?download=1",
+              "format": "QMD"
+            },
+            {
+              "label": "Quarto exercise: effect sizes for ANOVA",
+              "url": "https://zenodo.org/records/23090870/files/effect_size_ANOVA.qmd?download=1",
+              "format": "QMD"
+            },
+            {
+              "label": "Quarto exercise: effect sizes for mean differences",
+              "url": "https://zenodo.org/records/23090870/files/effect_size_mean_difference.qmd?download=1",
+              "format": "QMD"
+            }
+          ]
+        }
+      ],
+      "questionable-measurement-practices-qmps-validity-reliability-issues": [
+        {
+          "title": "Questionable measurement practices (QMPs), validity, and reliability",
+          "record": "https://zenodo.org/records/24287514",
+          "doi": "10.5281/zenodo.24287514",
+          "creators": [
+            "Hakile Resulbegoviq"
+          ],
+          "reviewers": [
+            "Ognjen Bobičić",
+            "Dhruv Aggarwal"
+          ],
+          "files": [
+            {
+              "label": "Slides",
+              "url": "https://zenodo.org/records/24287514/files/questionable-measurement-practices-slides.pptx?download=1",
+              "format": "PPTX"
+            },
+            {
+              "label": "Slides",
+              "url": "https://zenodo.org/records/24287514/files/questionable-measurement-practices-slides.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "Lesson plan L1",
+              "url": "https://zenodo.org/records/24287514/files/questionable-measurement-practices-lesson-plan-L1.docx?download=1",
+              "format": "DOCX"
+            },
+            {
+              "label": "Lesson plan L1",
+              "url": "https://zenodo.org/records/24287514/files/questionable-measurement-practices-lesson-plan-L1.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "Lesson plan L2",
+              "url": "https://zenodo.org/records/24287514/files/questionable-measurement-practices-lesson-plan-L2.docx?download=1",
+              "format": "DOCX"
+            },
+            {
+              "label": "Lesson plan L2",
+              "url": "https://zenodo.org/records/24287514/files/questionable-measurement-practices-lesson-plan-L2.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "Lesson plan L3",
+              "url": "https://zenodo.org/records/24287514/files/questionable-measurement-practices-lesson-plan-L3.docx?download=1",
+              "format": "DOCX"
+            },
+            {
+              "label": "Lesson plan L3",
+              "url": "https://zenodo.org/records/24287514/files/questionable-measurement-practices-lesson-plan-L3.pdf?download=1",
+              "format": "PDF"
+            }
+          ]
+        }
+      ],
+      "research-design-sampling-methods-its-implications-for-inferences": [
+        {
+          "title": "Research design, sampling methods, and their implications for inferences",
+          "record": "https://zenodo.org/records/24287519",
+          "doi": "10.5281/zenodo.24287519",
+          "creators": [
+            "Carolina Natel"
+          ],
+          "reviewers": [
+            "Lukas Röseler",
+            "Yijing Wang"
+          ],
+          "files": [
+            {
+              "label": "Slides",
+              "url": "https://zenodo.org/records/24287519/files/research-design-sampling-slides.pptx?download=1",
+              "format": "PPTX"
+            },
+            {
+              "label": "Slides",
+              "url": "https://zenodo.org/records/24287519/files/research-design-sampling-slides.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "Lesson plan L1",
+              "url": "https://zenodo.org/records/24287519/files/research-design-sampling-lesson-plan-L1.docx?download=1",
+              "format": "DOCX"
+            },
+            {
+              "label": "Lesson plan L1",
+              "url": "https://zenodo.org/records/24287519/files/research-design-sampling-lesson-plan-L1.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "Lesson plan L2",
+              "url": "https://zenodo.org/records/24287519/files/research-design-sampling-lesson-plan-L2.docx?download=1",
+              "format": "DOCX"
+            },
+            {
+              "label": "Lesson plan L2",
+              "url": "https://zenodo.org/records/24287519/files/research-design-sampling-lesson-plan-L2.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "Lesson plan L3",
+              "url": "https://zenodo.org/records/24287519/files/research-design-sampling-lesson-plan-L3.docx?download=1",
+              "format": "DOCX"
+            },
+            {
+              "label": "Lesson plan L3",
+              "url": "https://zenodo.org/records/24287519/files/research-design-sampling-lesson-plan-L3.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "L1 activity: anticipation guide",
+              "url": "https://zenodo.org/records/24287519/files/research-design-sampling-anticipation-guide.pptx?download=1",
+              "format": "PPTX"
+            },
+            {
+              "label": "L1 activity: anticipation guide",
+              "url": "https://zenodo.org/records/24287519/files/research-design-sampling-anticipation-guide.pdf?download=1",
+              "format": "PDF"
+            }
+          ]
+        }
+      ]
+    },
+    "3": {
+      "participatory-research": [
+        {
+          "title": "Participatory research",
+          "record": "https://zenodo.org/records/24287526",
+          "doi": "10.5281/zenodo.24287526",
+          "creators": [
+            "Angelos Konstantinidis"
+          ],
+          "reviewers": [
+            "Pablo Ezequiel Flores Kanter",
+            "Sarah Siddiqui"
+          ],
+          "files": [
+            {
+              "label": "Slides",
+              "url": "https://zenodo.org/records/24287526/files/participatory-research-slides.pptx?download=1",
+              "format": "PPTX"
+            },
+            {
+              "label": "Slides",
+              "url": "https://zenodo.org/records/24287526/files/participatory-research-slides.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "Lesson plan L1",
+              "url": "https://zenodo.org/records/24287526/files/participatory-research-lesson-plan-L1.docx?download=1",
+              "format": "DOCX"
+            },
+            {
+              "label": "Lesson plan L1",
+              "url": "https://zenodo.org/records/24287526/files/participatory-research-lesson-plan-L1.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "Lesson plan L2",
+              "url": "https://zenodo.org/records/24287526/files/participatory-research-lesson-plan-L2.docx?download=1",
+              "format": "DOCX"
+            },
+            {
+              "label": "Lesson plan L2",
+              "url": "https://zenodo.org/records/24287526/files/participatory-research-lesson-plan-L2.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "Lesson plan L3",
+              "url": "https://zenodo.org/records/24287526/files/participatory-research-lesson-plan-L3.docx?download=1",
+              "format": "DOCX"
+            },
+            {
+              "label": "Lesson plan L3",
+              "url": "https://zenodo.org/records/24287526/files/participatory-research-lesson-plan-L3.pdf?download=1",
+              "format": "PDF"
+            }
+          ]
+        }
+      ],
+      "research-with-students-under-and-graduate": [
+        {
+          "title": "Research with students (undergraduate and graduate)",
+          "record": "https://zenodo.org/records/24287530",
+          "doi": "10.5281/zenodo.24287530",
+          "creators": [
+            "Ognjen Bobičić"
+          ],
+          "reviewers": [
+            "Pablo Ezequiel Flores Kanter",
+            "Jaitshree Naik"
+          ],
+          "files": [
+            {
+              "label": "Slides",
+              "url": "https://zenodo.org/records/24287530/files/research-with-students-slides.pptx?download=1",
+              "format": "PPTX"
+            },
+            {
+              "label": "Slides",
+              "url": "https://zenodo.org/records/24287530/files/research-with-students-slides.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "Lesson plan L1",
+              "url": "https://zenodo.org/records/24287530/files/research-with-students-lesson-plan-L1.docx?download=1",
+              "format": "DOCX"
+            },
+            {
+              "label": "Lesson plan L1",
+              "url": "https://zenodo.org/records/24287530/files/research-with-students-lesson-plan-L1.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "Lesson plan L2",
+              "url": "https://zenodo.org/records/24287530/files/research-with-students-lesson-plan-L2.docx?download=1",
+              "format": "DOCX"
+            },
+            {
+              "label": "Lesson plan L2",
+              "url": "https://zenodo.org/records/24287530/files/research-with-students-lesson-plan-L2.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "Lesson plan L3",
+              "url": "https://zenodo.org/records/24287530/files/research-with-students-lesson-plan-L3.docx?download=1",
+              "format": "DOCX"
+            },
+            {
+              "label": "Lesson plan L3",
+              "url": "https://zenodo.org/records/24287530/files/research-with-students-lesson-plan-L3.pdf?download=1",
+              "format": "PDF"
+            }
+          ]
+        }
+      ]
+    },
+    "4": {
+      "preregistration": [
+        {
+          "title": "Preregistration",
+          "record": "https://zenodo.org/records/24287532",
+          "doi": "10.5281/zenodo.24287532",
+          "creators": [
+            "Radhika Srivastava"
+          ],
+          "reviewers": [
+            "Federica Stablum",
+            "Pablo Ezequiel Flores Kanter"
+          ],
+          "files": [
+            {
+              "label": "Slides",
+              "url": "https://zenodo.org/records/24287532/files/preregistration-slides.pptx?download=1",
+              "format": "PPTX"
+            },
+            {
+              "label": "Slides",
+              "url": "https://zenodo.org/records/24287532/files/preregistration-slides.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "Lesson plan L1",
+              "url": "https://zenodo.org/records/24287532/files/preregistration-lesson-plan-L1.docx?download=1",
+              "format": "DOCX"
+            },
+            {
+              "label": "Lesson plan L1",
+              "url": "https://zenodo.org/records/24287532/files/preregistration-lesson-plan-L1.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "Lesson plan L2",
+              "url": "https://zenodo.org/records/24287532/files/preregistration-lesson-plan-L2.docx?download=1",
+              "format": "DOCX"
+            },
+            {
+              "label": "Lesson plan L2",
+              "url": "https://zenodo.org/records/24287532/files/preregistration-lesson-plan-L2.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "Lesson plan L3",
+              "url": "https://zenodo.org/records/24287532/files/preregistration-lesson-plan-L3.docx?download=1",
+              "format": "DOCX"
+            },
+            {
+              "label": "Lesson plan L3",
+              "url": "https://zenodo.org/records/24287532/files/preregistration-lesson-plan-L3.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "L1 activity: anticipation guide",
+              "url": "https://zenodo.org/records/24287532/files/preregistration-L1-anticipation-guide.docx?download=1",
+              "format": "DOCX"
+            },
+            {
+              "label": "L1 activity: anticipation guide",
+              "url": "https://zenodo.org/records/24287532/files/preregistration-L1-anticipation-guide.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "L1 activity: pop quiz",
+              "url": "https://zenodo.org/records/24287532/files/preregistration-L1-pop-quiz.docx?download=1",
+              "format": "DOCX"
+            },
+            {
+              "label": "L1 activity: pop quiz",
+              "url": "https://zenodo.org/records/24287532/files/preregistration-L1-pop-quiz.pdf?download=1",
+              "format": "PDF"
+            }
+          ]
+        }
+      ]
+    },
+    "5": {
+      "computational-reproducibility": [
+        {
+          "title": "Computational reproducibility",
+          "record": "https://zenodo.org/records/24287536",
+          "doi": "10.5281/zenodo.24287536",
+          "creators": [
+            "Sofia Pelica"
+          ],
+          "reviewers": [
+            "Leticia R. Micheli",
+            "Federica Stablum",
+            "Flávio Azevedo"
+          ],
+          "files": [
+            {
+              "label": "Slides",
+              "url": "https://zenodo.org/records/24287536/files/computational-reproducibility-slides.pptx?download=1",
+              "format": "PPTX"
+            },
+            {
+              "label": "Slides",
+              "url": "https://zenodo.org/records/24287536/files/computational-reproducibility-slides.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "Lesson plan L1",
+              "url": "https://zenodo.org/records/24287536/files/computational-reproducibility-lesson-plan-L1.docx?download=1",
+              "format": "DOCX"
+            },
+            {
+              "label": "Lesson plan L1",
+              "url": "https://zenodo.org/records/24287536/files/computational-reproducibility-lesson-plan-L1.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "Lesson plan L2",
+              "url": "https://zenodo.org/records/24287536/files/computational-reproducibility-lesson-plan-L2.docx?download=1",
+              "format": "DOCX"
+            },
+            {
+              "label": "Lesson plan L2",
+              "url": "https://zenodo.org/records/24287536/files/computational-reproducibility-lesson-plan-L2.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "Lesson plan L3",
+              "url": "https://zenodo.org/records/24287536/files/computational-reproducibility-lesson-plan-L3.docx?download=1",
+              "format": "DOCX"
+            },
+            {
+              "label": "Lesson plan L3",
+              "url": "https://zenodo.org/records/24287536/files/computational-reproducibility-lesson-plan-L3.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "L1 materials: activity slides, handouts, R and Quarto scripts, example data",
+              "url": "https://zenodo.org/records/24287536/files/computational-reproducibility-lesson-plan-L1-materials.zip?download=1",
+              "format": "ZIP"
+            },
+            {
+              "label": "L2 materials: exercises with solutions, handouts, example data",
+              "url": "https://zenodo.org/records/24287536/files/computational-reproducibility-lesson-plan-L2-materials.zip?download=1",
+              "format": "ZIP"
+            },
+            {
+              "label": "L3 materials: example script and data",
+              "url": "https://zenodo.org/records/24287536/files/computational-reproducibility-lesson-plan-L3-materials.zip?download=1",
+              "format": "ZIP"
+            }
+          ]
+        }
+      ]
+    },
+    "7": {
+      "open-peer-review": [
+        {
+          "title": "Open peer review",
+          "record": "https://zenodo.org/records/24287539",
+          "doi": "10.5281/zenodo.24287539",
+          "creators": [
+            "Ebuka Ezeike"
+          ],
+          "reviewers": [
+            "Palmer Smith",
+            "Ognjen Bobičić"
+          ],
+          "files": [
+            {
+              "label": "Slides",
+              "url": "https://zenodo.org/records/24287539/files/open-peer-review-slides.pptx?download=1",
+              "format": "PPTX"
+            },
+            {
+              "label": "Slides",
+              "url": "https://zenodo.org/records/24287539/files/open-peer-review-slides.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "Lesson plan L1",
+              "url": "https://zenodo.org/records/24287539/files/open-peer-review-lesson-plan-L1.docx?download=1",
+              "format": "DOCX"
+            },
+            {
+              "label": "Lesson plan L1",
+              "url": "https://zenodo.org/records/24287539/files/open-peer-review-lesson-plan-L1.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "Lesson plan L2",
+              "url": "https://zenodo.org/records/24287539/files/open-peer-review-lesson-plan-L2.docx?download=1",
+              "format": "DOCX"
+            },
+            {
+              "label": "Lesson plan L2",
+              "url": "https://zenodo.org/records/24287539/files/open-peer-review-lesson-plan-L2.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "Lesson plan L3",
+              "url": "https://zenodo.org/records/24287539/files/open-peer-review-lesson-plan-L3.docx?download=1",
+              "format": "DOCX"
+            },
+            {
+              "label": "Lesson plan L3",
+              "url": "https://zenodo.org/records/24287539/files/open-peer-review-lesson-plan-L3.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "Instructor guide (L1 to L3)",
+              "url": "https://zenodo.org/records/24287539/files/open-peer-review-instructor-guide.docx?download=1",
+              "format": "DOCX"
+            },
+            {
+              "label": "Instructor guide (L1 to L3)",
+              "url": "https://zenodo.org/records/24287539/files/open-peer-review-instructor-guide.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "Case pack (L1 to L3)",
+              "url": "https://zenodo.org/records/24287539/files/open-peer-review-case-pack.docx?download=1",
+              "format": "DOCX"
+            },
+            {
+              "label": "Case pack (L1 to L3)",
+              "url": "https://zenodo.org/records/24287539/files/open-peer-review-case-pack.pdf?download=1",
+              "format": "PDF"
+            }
+          ]
+        }
+      ],
+      "preprints-and-postprints": [
+        {
+          "title": "Preprints and postprints",
+          "record": "https://zenodo.org/records/24287544",
+          "doi": "10.5281/zenodo.24287544",
+          "creators": [
+            "Femi Qudus Arogundade"
+          ],
+          "reviewers": [
+            "Lukas Röseler",
+            "Palmer Smith"
+          ],
+          "files": [
+            {
+              "label": "Slides",
+              "url": "https://zenodo.org/records/24287544/files/preprints-postprints-slides.pptx?download=1",
+              "format": "PPTX"
+            },
+            {
+              "label": "Slides",
+              "url": "https://zenodo.org/records/24287544/files/preprints-postprints-slides.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "Lesson plan L1",
+              "url": "https://zenodo.org/records/24287544/files/preprints-postprints-lesson-plan-L1.docx?download=1",
+              "format": "DOCX"
+            },
+            {
+              "label": "Lesson plan L1",
+              "url": "https://zenodo.org/records/24287544/files/preprints-postprints-lesson-plan-L1.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "Lesson plan L2",
+              "url": "https://zenodo.org/records/24287544/files/preprints-postprints-lesson-plan-L2.docx?download=1",
+              "format": "DOCX"
+            },
+            {
+              "label": "Lesson plan L2",
+              "url": "https://zenodo.org/records/24287544/files/preprints-postprints-lesson-plan-L2.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "Lesson plan L3",
+              "url": "https://zenodo.org/records/24287544/files/preprints-postprints-lesson-plan-L3.docx?download=1",
+              "format": "DOCX"
+            },
+            {
+              "label": "Lesson plan L3",
+              "url": "https://zenodo.org/records/24287544/files/preprints-postprints-lesson-plan-L3.pdf?download=1",
+              "format": "PDF"
+            }
+          ]
+        }
+      ],
+      "why-open-access": [
+        {
+          "title": "Why open access?",
+          "record": "https://zenodo.org/records/24287506",
+          "doi": "10.5281/zenodo.24287506",
+          "creators": [
+            "Ognjen Bobičić"
+          ],
+          "reviewers": [
+            "Ebuka Ezeike",
+            "Dhruv Aggarwal"
+          ],
+          "files": [
+            {
+              "label": "Slides",
+              "url": "https://zenodo.org/records/24287506/files/why-open-access-slides.pptx?download=1",
+              "format": "PPTX"
+            },
+            {
+              "label": "Slides",
+              "url": "https://zenodo.org/records/24287506/files/why-open-access-slides.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "Lesson plan L1",
+              "url": "https://zenodo.org/records/24287506/files/why-open-access-lesson-plan-L1.docx?download=1",
+              "format": "DOCX"
+            },
+            {
+              "label": "Lesson plan L1",
+              "url": "https://zenodo.org/records/24287506/files/why-open-access-lesson-plan-L1.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "Lesson plan L2",
+              "url": "https://zenodo.org/records/24287506/files/why-open-access-lesson-plan-L2.docx?download=1",
+              "format": "DOCX"
+            },
+            {
+              "label": "Lesson plan L2",
+              "url": "https://zenodo.org/records/24287506/files/why-open-access-lesson-plan-L2.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "Lesson plan L3",
+              "url": "https://zenodo.org/records/24287506/files/why-open-access-lesson-plan-L3.docx?download=1",
+              "format": "DOCX"
+            },
+            {
+              "label": "Lesson plan L3",
+              "url": "https://zenodo.org/records/24287506/files/why-open-access-lesson-plan-L3.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "Facilitator guide (L1 and L3)",
+              "url": "https://zenodo.org/records/24287506/files/why-open-access-facilitator-guide.docx?download=1",
+              "format": "DOCX"
+            },
+            {
+              "label": "Facilitator guide (L1 and L3)",
+              "url": "https://zenodo.org/records/24287506/files/why-open-access-facilitator-guide.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "Learner handouts (L1 and L3)",
+              "url": "https://zenodo.org/records/24287506/files/why-open-access-learner-handouts.docx?download=1",
+              "format": "DOCX"
+            },
+            {
+              "label": "Learner handouts (L1 and L3)",
+              "url": "https://zenodo.org/records/24287506/files/why-open-access-learner-handouts.pdf?download=1",
+              "format": "PDF"
+            }
+          ]
+        }
+      ]
+    },
+    "8": {
+      "conducting-replication-studies-challenges-limitations-and-comparisons-with-the-original-study": [
+        {
+          "title": "Conducting replication studies: challenges, limitations, and comparisons with the original study",
+          "record": "https://zenodo.org/records/24287552",
+          "doi": "10.5281/zenodo.24287552",
+          "creators": [
+            "Lukas Röseler"
+          ],
+          "reviewers": [
+            "Ann Sung-an Lee",
+            "Sarah Siddiqui"
+          ],
+          "files": [
+            {
+              "label": "Slides",
+              "url": "https://zenodo.org/records/24287552/files/conducting-replication-studies-slides.pptx?download=1",
+              "format": "PPTX"
+            },
+            {
+              "label": "Slides",
+              "url": "https://zenodo.org/records/24287552/files/conducting-replication-studies-slides.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "Lesson plan L1",
+              "url": "https://zenodo.org/records/24287552/files/conducting-replication-studies-lesson-plan-L1.docx?download=1",
+              "format": "DOCX"
+            },
+            {
+              "label": "Lesson plan L1",
+              "url": "https://zenodo.org/records/24287552/files/conducting-replication-studies-lesson-plan-L1.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "Lesson plan L2",
+              "url": "https://zenodo.org/records/24287552/files/conducting-replication-studies-lesson-plan-L2.docx?download=1",
+              "format": "DOCX"
+            },
+            {
+              "label": "Lesson plan L2",
+              "url": "https://zenodo.org/records/24287552/files/conducting-replication-studies-lesson-plan-L2.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "Lesson plan L3",
+              "url": "https://zenodo.org/records/24287552/files/conducting-replication-studies-lesson-plan-L3.docx?download=1",
+              "format": "DOCX"
+            },
+            {
+              "label": "Lesson plan L3",
+              "url": "https://zenodo.org/records/24287552/files/conducting-replication-studies-lesson-plan-L3.pdf?download=1",
+              "format": "PDF"
+            }
+          ]
+        }
+      ]
+    },
+    "9": {
+      "accessibility": [
+        {
+          "title": "Accessibility in research",
+          "record": "https://zenodo.org/records/24287557",
+          "doi": "10.5281/zenodo.24287557",
+          "creators": [
+            "Roksana Sobolak"
+          ],
+          "reviewers": [
+            "Leticia R. Micheli",
+            "Federica Stablum"
+          ],
+          "files": [
+            {
+              "label": "Slides",
+              "url": "https://zenodo.org/records/24287557/files/accessibility-slides.pptx?download=1",
+              "format": "PPTX"
+            },
+            {
+              "label": "Slides",
+              "url": "https://zenodo.org/records/24287557/files/accessibility-slides.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "Lesson plan L1",
+              "url": "https://zenodo.org/records/24287557/files/accessibility-lesson-plan-L1.docx?download=1",
+              "format": "DOCX"
+            },
+            {
+              "label": "Lesson plan L1",
+              "url": "https://zenodo.org/records/24287557/files/accessibility-lesson-plan-L1.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "Lesson plan L2",
+              "url": "https://zenodo.org/records/24287557/files/accessibility-lesson-plan-L2.docx?download=1",
+              "format": "DOCX"
+            },
+            {
+              "label": "Lesson plan L2",
+              "url": "https://zenodo.org/records/24287557/files/accessibility-lesson-plan-L2.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "Lesson plan L3",
+              "url": "https://zenodo.org/records/24287557/files/accessibility-lesson-plan-L3.docx?download=1",
+              "format": "DOCX"
+            },
+            {
+              "label": "Lesson plan L3",
+              "url": "https://zenodo.org/records/24287557/files/accessibility-lesson-plan-L3.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "L1 activity: accessibility barriers",
+              "url": "https://zenodo.org/records/24287557/files/accessibility-L1-activity-accessibility-barriers.pptx?download=1",
+              "format": "PPTX"
+            },
+            {
+              "label": "L1 activity: accessibility barriers",
+              "url": "https://zenodo.org/records/24287557/files/accessibility-L1-activity-accessibility-barriers.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "L1 activity: barrier theatre",
+              "url": "https://zenodo.org/records/24287557/files/accessibility-L1-activity-barrier-theatre.pptx?download=1",
+              "format": "PPTX"
+            },
+            {
+              "label": "L1 activity: barrier theatre",
+              "url": "https://zenodo.org/records/24287557/files/accessibility-L1-activity-barrier-theatre.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "L2 activity: redesigning poor academic environments",
+              "url": "https://zenodo.org/records/24287557/files/accessibility-L2-activity-redesigning-academic-environments.pptx?download=1",
+              "format": "PPTX"
+            },
+            {
+              "label": "L2 activity: redesigning poor academic environments",
+              "url": "https://zenodo.org/records/24287557/files/accessibility-L2-activity-redesigning-academic-environments.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "L2 activity: increasing accessibility in a dissertation",
+              "url": "https://zenodo.org/records/24287557/files/accessibility-L2-activity-accessible-dissertation.docx?download=1",
+              "format": "DOCX"
+            },
+            {
+              "label": "L2 activity: increasing accessibility in a dissertation",
+              "url": "https://zenodo.org/records/24287557/files/accessibility-L2-activity-accessible-dissertation.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "L3 worksheet: WCAG as a tool in practice",
+              "url": "https://zenodo.org/records/24287557/files/accessibility-L3-worksheet-WCAG.docx?download=1",
+              "format": "DOCX"
+            },
+            {
+              "label": "L3 worksheet: WCAG as a tool in practice",
+              "url": "https://zenodo.org/records/24287557/files/accessibility-L3-worksheet-WCAG.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "L3 activity: discussing open science practices and accessibility",
+              "url": "https://zenodo.org/records/24287557/files/accessibility-L3-activity-open-science-and-accessibility.pptx?download=1",
+              "format": "PPTX"
+            },
+            {
+              "label": "L3 activity: discussing open science practices and accessibility",
+              "url": "https://zenodo.org/records/24287557/files/accessibility-L3-activity-open-science-and-accessibility.pdf?download=1",
+              "format": "PDF"
+            }
+          ]
+        }
+      ],
+      "equity": [
+        {
+          "title": "Equity",
+          "record": "https://zenodo.org/records/24287560",
+          "doi": "10.5281/zenodo.24287560",
+          "creators": [
+            "Ann Sung-an Lee"
+          ],
+          "reviewers": [
+            "Dhruv Aggarwal",
+            "Angelos Konstantinidis"
+          ],
+          "files": [
+            {
+              "label": "Slides",
+              "url": "https://zenodo.org/records/24287560/files/equity-slides.pptx?download=1",
+              "format": "PPTX"
+            },
+            {
+              "label": "Slides",
+              "url": "https://zenodo.org/records/24287560/files/equity-slides.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "Lesson plan L1",
+              "url": "https://zenodo.org/records/24287560/files/equity-lesson-plan-L1.docx?download=1",
+              "format": "DOCX"
+            },
+            {
+              "label": "Lesson plan L1",
+              "url": "https://zenodo.org/records/24287560/files/equity-lesson-plan-L1.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "Lesson plan L2",
+              "url": "https://zenodo.org/records/24287560/files/equity-lesson-plan-L2.docx?download=1",
+              "format": "DOCX"
+            },
+            {
+              "label": "Lesson plan L2",
+              "url": "https://zenodo.org/records/24287560/files/equity-lesson-plan-L2.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "Lesson plan L3",
+              "url": "https://zenodo.org/records/24287560/files/equity-lesson-plan-L3.docx?download=1",
+              "format": "DOCX"
+            },
+            {
+              "label": "Lesson plan L3",
+              "url": "https://zenodo.org/records/24287560/files/equity-lesson-plan-L3.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "Lesson plan L4",
+              "url": "https://zenodo.org/records/24287560/files/equity-lesson-plan-L4.docx?download=1",
+              "format": "DOCX"
+            },
+            {
+              "label": "Lesson plan L4",
+              "url": "https://zenodo.org/records/24287560/files/equity-lesson-plan-L4.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "L2 worksheet: stakeholder mapping",
+              "url": "https://zenodo.org/records/24287560/files/equity-L2-stakeholder-mapping-worksheet.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "L3 and L4 handout: diagnostic framework",
+              "url": "https://zenodo.org/records/24287560/files/equity-L3-L4-diagnostic-framework-handout.pdf?download=1",
+              "format": "PDF"
+            }
+          ]
+        },
+        {
+          "title": "Inequities in higher education",
+          "record": "https://zenodo.org/records/23090912",
+          "doi": "10.5281/zenodo.23090912",
+          "creators": [
+            "Rachel Renbarger"
+          ],
+          "reviewers": [
+            "Flávio Azevedo",
+            "Leticia R. Micheli"
+          ],
+          "files": [
+            {
+              "label": "Slides",
+              "url": "https://zenodo.org/records/23090912/files/inequities-higher-education-slides.pptx?download=1",
+              "format": "PPTX"
+            },
+            {
+              "label": "Slides",
+              "url": "https://zenodo.org/records/23090912/files/inequities-higher-education-slides.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "Lesson plan L1",
+              "url": "https://zenodo.org/records/23090912/files/inequities-higher-education-lesson-plan-L1.docx?download=1",
+              "format": "DOCX"
+            },
+            {
+              "label": "Lesson plan L1",
+              "url": "https://zenodo.org/records/23090912/files/inequities-higher-education-lesson-plan-L1.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "Lesson plan L2",
+              "url": "https://zenodo.org/records/23090912/files/inequities-higher-education-lesson-plan-L2.docx?download=1",
+              "format": "DOCX"
+            },
+            {
+              "label": "Lesson plan L2",
+              "url": "https://zenodo.org/records/23090912/files/inequities-higher-education-lesson-plan-L2.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "Lesson plan L3",
+              "url": "https://zenodo.org/records/23090912/files/inequities-higher-education-lesson-plan-L3.docx?download=1",
+              "format": "DOCX"
+            },
+            {
+              "label": "Lesson plan L3",
+              "url": "https://zenodo.org/records/23090912/files/inequities-higher-education-lesson-plan-L3.pdf?download=1",
+              "format": "PDF"
+            }
+          ],
+          "heading": "Inequities in higher education"
+        }
+      ]
+    },
+    "10": {
+      "transparency-in-qualitative-research": [
+        {
+          "title": "Transparency in qualitative research",
+          "record": "https://zenodo.org/records/24287568",
+          "doi": "10.5281/zenodo.24287568",
+          "creators": [
+            "Pablo Ezequiel Flores Kanter"
+          ],
+          "reviewers": [
+            "Hakile Resulbegoviq",
+            "Radhika Srivastava"
+          ],
+          "files": [
+            {
+              "label": "Slides",
+              "url": "https://zenodo.org/records/24287568/files/transparency-qualitative-research-slides.pptx?download=1",
+              "format": "PPTX"
+            },
+            {
+              "label": "Slides",
+              "url": "https://zenodo.org/records/24287568/files/transparency-qualitative-research-slides.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "Lesson plan L1",
+              "url": "https://zenodo.org/records/24287568/files/transparency-qualitative-research-lesson-plan-L1.docx?download=1",
+              "format": "DOCX"
+            },
+            {
+              "label": "Lesson plan L1",
+              "url": "https://zenodo.org/records/24287568/files/transparency-qualitative-research-lesson-plan-L1.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "Lesson plan L2",
+              "url": "https://zenodo.org/records/24287568/files/transparency-qualitative-research-lesson-plan-L2.docx?download=1",
+              "format": "DOCX"
+            },
+            {
+              "label": "Lesson plan L2",
+              "url": "https://zenodo.org/records/24287568/files/transparency-qualitative-research-lesson-plan-L2.pdf?download=1",
+              "format": "PDF"
+            },
+            {
+              "label": "Lesson plan L3",
+              "url": "https://zenodo.org/records/24287568/files/transparency-qualitative-research-lesson-plan-L3.docx?download=1",
+              "format": "DOCX"
+            },
+            {
+              "label": "Lesson plan L3",
+              "url": "https://zenodo.org/records/24287568/files/transparency-qualitative-research-lesson-plan-L3.pdf?download=1",
+              "format": "PDF"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

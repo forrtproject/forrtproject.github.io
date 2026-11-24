@@ -184,6 +184,23 @@ def fetch_all_contributor_data(df_index):
     return merged_data, failed_sheets
 
 
+# FORRT's own organisational ORCID iD. Rows with it (or named "FORRT FORRT") record FORRT
+# as a consortium author in a Tenzing sheet; they are not a person to list or network.
+FORRT_ORG_ORCID = '0000-0002-7562-5342'
+
+
+def drop_organisation_rows(df):
+    """Remove rows that credit FORRT itself rather than an individual contributor."""
+    # Sheets give some iDs as full orcid.org URLs; compare the bare iD.
+    orcid = df['ORCID iD'].astype(str).str.strip().str.split('/').str[-1]
+    first = df['First name'].astype(str).str.strip().str.upper()
+    surname = df['Surname'].astype(str).str.strip().str.upper()
+    is_org = (orcid == FORRT_ORG_ORCID) | ((first == 'FORRT') & (surname == 'FORRT'))
+    if is_org.any():
+        print(f"✓ Dropped {int(is_org.sum())} organisational FORRT row(s)")
+    return df[~is_org].copy()
+
+
 def concatenate_true_columns(row, columns):
     true_columns = [col for col in columns if pd.notna(row[col]) and row[col]]
     
@@ -525,6 +542,7 @@ def main():
 
         # Fetch all contributor data from individual sheets (public URLs)
         merged_data, failed_sheets = fetch_all_contributor_data(df_index)
+        merged_data = drop_organisation_rows(merged_data)
         successful_projects = total_projects - len(failed_sheets)
 
         # Save cache for local development (only essential columns, no sensitive data)
@@ -569,6 +587,7 @@ def main():
             false_values=["FALSE", "False", "false", ""],
         )
         print(f"✓ Loaded {len(merged_data)} rows from cache")
+        merged_data = drop_organisation_rows(merged_data)
 
     # Load extra roles (always public)
     try:

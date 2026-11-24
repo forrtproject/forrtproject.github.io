@@ -145,16 +145,6 @@ Protected branches (never deleted): `main`, `gh-pages`
 
 > Note: `staging-aggregate-*` branches are auto-generated and cleaned up separately (keeping 2 most recent).
 
-## Disabled Workflows
-
-| File | Status | Reason |
-|------|--------|--------|
-| `reminder-check.yml_OLD` | Disabled | Not used, too many action runs |
-| `reminder-create.yml_OLD` | Disabled | Not used, too many action runs |
-| `mark-stale.yml_OLD` | Disabled | Not in use, can be restored with better rules |
-| `labeler.yaml_OLD` | Disabled | Not in use, can be restored with better rules |
-| `link-check.yaml_OLD` | Disabled | Broken, can be restored if fixed. |
-
 ## Manual Triggers
 
 All workflows support `workflow_dispatch` for manual execution via GitHub Actions UI.

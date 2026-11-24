@@ -376,14 +376,6 @@ jobs:
         run: python3 scripts/enrich_citation_oa.py
 
       #========================================
-      # Regenerate the glossary reference list page from apa_lookup.json so the
-      # public "List of References" stays in sync with the dynamic glossary.
-      #========================================
-      - name: Build glossary reference list
-        continue-on-error: true  # Continue even if this step fails
-        run: python3 content/glossary/_build_references.py
-
-      #========================================
       # Process and generate glossary files
       #========================================
       - name: Run Glossary Generation script
@@ -392,6 +384,14 @@ jobs:
         continue-on-error: true  # Continue even if this step fails
         run: python3 content/glossary/_create_glossaries.py
         # Execute the glossary script that generates glossary markdown files
+
+      #========================================
+      # Regenerate the glossary reference list page from the term files, so it
+      # lists the references the terms cite and links back to those terms.
+      #========================================
+      - name: Build glossary reference list
+        continue-on-error: true  # Continue even if this step fails
+        run: python3 content/glossary/_build_references.py
 
       - name: Check for missing references
         if: always()
@@ -576,6 +576,7 @@ jobs:
             content/curated_resources/
             content/glossary/
             data/
+            !data/lesson_plans.json
             !data/partners.json
             !data/publications.yaml
             static/data/

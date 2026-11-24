@@ -2672,3 +2672,34 @@ summary.clusters-overview__heading::before{content:"";width:0;height:0;border-le
    bar in the cluster's colour, and long names stop at three lines (the full name is the link's title and the main panel's heading). */
 .cluster-nav-subs--here .nav-link[aria-current]{background:none;box-shadow:inset 3px 0 0 var(--here-colour,var(--link));color:var(--ink);font-weight:600}
 .cluster-nav-subs--here .cluster-nav-name{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;line-clamp:3;overflow:hidden}
+
+/* ---- Teaching materials (data/lesson_plans.json) ----
+   The Educational Nexus colour marks teaching-material sets everywhere: the dot on sub-cluster headers, cluster
+   counts and sidebar entries, the filter toggle, and the strip of downloads inside a sub-cluster. */
+.lp-dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--edu);margin-left:8px;vertical-align:.08em;flex-shrink:0}
+.cluster-stats .lp-dot,.cluster-hero__counts .lp-dot{margin-left:0}
+/* Sidebar sub-cluster: the dot sits beside the reference count so it never wraps onto a line of its own. */
+.cluster-nav-subs .badge .lp-dot{margin:0 6px 0 0;vertical-align:.05em}
+.lp-filter-toggle .lp-dot{margin:0 6px 0 0}
+.lp-strip{background:#fff;border:1px solid var(--line);border-left:4px solid var(--edu);border-radius:var(--r-small);padding:10px 14px;margin:4px 0 14px;max-width:760px}
+.lp-strip__label{display:block;font:700 15px/1.35 var(--text);color:var(--edu);margin-bottom:6px}
+/* The set's topic, shown only when it differs from the sub-cluster it sits under (data: "heading"). */
+.lp-strip__heading{font-weight:600;color:var(--ink)}
+.lp-strip__chips{display:flex;flex-wrap:wrap;gap:6px 8px;margin-bottom:6px}
+.lp-chip{font:600 15px/1.4 var(--text);color:var(--ink);background:var(--edu-bg);border-radius:var(--r-small);padding:3px 10px;max-width:100%;overflow-wrap:anywhere}
+.lp-chip__formats{font-weight:400;color:var(--soft)}
+.lp-chip a{color:var(--edu);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.lp-chip a:hover{text-decoration-thickness:2px}
+.lp-strip__meta{font:400 15px/1.45 var(--text);color:var(--soft);margin:0}
+.lp-strip__meta a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
+
+/* Teaching-materials filter on (.lp-filter-on, set by featured-resources.js): everything without a set is hidden. */
+.lp-filter-on .cluster-section:not([data-lp]),
+.lp-filter-on .acc-section:not([data-lp]),
+.lp-filter-on .cluster-nav-group:not([data-lp]),
+.lp-filter-on .cluster-nav-subs .nav-item:not([data-lp]){display:none!important}
+/* The sub-clusters left lose their hidden neighbours, so only one shown after another keeps the divider. */
+.lp-filter-on .acc-section[data-lp]{border-top:0}
+.lp-filter-on .acc-section[data-lp] ~ .acc-section[data-lp]{border-top:1px solid var(--line)}
+.lp-filter-empty{display:none}
+.lp-filter-on .lp-filter-empty{display:block;font:400 16px/1.5 var(--text);color:var(--ink);padding:16px 0}
