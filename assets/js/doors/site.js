@@ -491,16 +491,49 @@ document.addEventListener('click', (event) => {
 });
 
 // The cookie banner covers the foot of the screen, so scrolling and side cards leave room for it.
+const bannerListeners = [];
+let bannerWatched = false;
+const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 function watchBanner() {
+  if (bannerWatched) return;
   const banner = document.querySelector('.cc-window');
   if (!banner) return;
+  bannerWatched = true;
   banner.lang = 'en';
   banner.dir = 'ltr';
+  let bannerShown = !banner.classList.contains('cc-invisible') && banner.offsetHeight > 0;
+  const hideIfReduced = () => {
+    const invisible = banner.classList.contains('cc-invisible');
+    if (!invisible) {
+      bannerShown = true;
+      return;
+    }
+    // base.css disables transitions under prefers-reduced-motion, so cookieconsent's transitionend
+    // listener never fires; collapse the banner once dismissed (not during its initial fade-in).
+    if (bannerShown && reducedMotion.matches) {
+      banner.style.display = 'none';
+    }
+  };
+  new MutationObserver(hideIfReduced).observe(banner, { attributes: true, attributeFilter: ['class'] });
+  hideIfReduced();
   new ResizeObserver(() => {
     document.documentElement.style.setProperty('--banner', `${banner.offsetHeight}px`);
+    bannerListeners.forEach((fn) => fn());
   }).observe(banner);
 }
-if (document.readyState === 'complete') watchBanner(); else addEventListener('load', () => setTimeout(watchBanner));
+if (document.readyState === 'complete') {
+  watchBanner();
+} else {
+  addEventListener('load', () => setTimeout(watchBanner));
+}
+if (!bannerWatched && document.body) {
+  const bannerWait = new MutationObserver(() => {
+    if (!document.querySelector('.cc-window')) return;
+    bannerWait.disconnect();
+    watchBanner();
+  });
+  bannerWait.observe(document.body, { childList: true });
+}
 
 // Whether nothing of the page's own lies under a box (with a 6 px margin): no text, control, image or card,
 // a card being anything with its own background, shadow or side borders that does not span the screen.
@@ -524,8 +557,15 @@ function emptyAt(el, x, y) {
   return true;
 }
 function overEmptySpace(box) {
-  for (let x = box.left - 6; x <= box.right + 6; x += 6) {
-    for (let y = box.top - 6; y <= box.bottom + 6; y += 6) {
+  if (!box || box.width <= 0 || box.height <= 0) return false;
+  const maxX = document.documentElement.clientWidth - 1;
+  const maxY = document.documentElement.clientHeight - 1;
+  const left = Math.max(0, box.left - 6);
+  const right = Math.min(maxX, box.right + 6);
+  const top = Math.max(0, box.top - 6);
+  const bottom = Math.min(maxY, box.bottom + 6);
+  for (let x = left; x <= right; x += 6) {
+    for (let y = top; y <= bottom; y += 6) {
       const el = document.elementsFromPoint(x, y).find((e) => !e.closest('#just-os-widget'));
       if (el && !emptyAt(el, x, y)) return false;
     }
@@ -537,62 +577,221 @@ function overEmptySpace(box) {
 const chatWidget = document.getElementById('just-os-widget');
 if (chatWidget) {
   const chatButton = chatWidget.querySelector('#just-os-btn');
+  const chatDismiss = chatWidget.querySelector('#just-os-dismiss');
   const chatBubble = chatWidget.querySelector('#just-os-bubble');
+  const navJustOs = document.getElementById('nav-just-os');
+  const extraJustOs = [...document.querySelectorAll('[data-open-just-os]')];
   let chatLoading = false;
   let chatFailed = false;
-  const dismissed = () => sessionStorage.getItem('just-os-dismissed');
-  if (dismissed()) chatWidget.hidden = true;
-  chatWidget.querySelector('#just-os-dismiss').addEventListener('click', () => {
-    chatWidget.hidden = true;
-    sessionStorage.setItem('just-os-dismissed', '1');
+  let lastOpener = null;
+  const dismissed = () => {
+    try { return Boolean(sessionStorage.getItem('just-os-dismissed')); } catch { return false; }
+  };
+  if (dismissed()) chatWidget.classList.add('is-dismissed');
+  chatDismiss.addEventListener('click', () => {
+    chatWidget.classList.add('is-dismissed');
+    chatBubble.classList.remove('bubble-visible');
+    try { sessionStorage.setItem('just-os-dismissed', '1'); } catch { /* storage blocked */ }
   });
-  // The invitation shows and hides on a slow cycle, as it always has, and rests while the chat is open.
-  // It shows only over empty space, so it never covers text, a card or a control.
-  // Where the launcher is a tab (launcher.css) the margin is too narrow for it: there it is offered once, at the top of the page.
   const chatOpen = () => document.getElementById('just-os-window')?.style.display === 'flex';
-  const tabbed = () => matchMedia('(max-width:1439px)').matches;
+  const mediumWidth = matchMedia('(min-width: 761px) and (max-width: 1439px)');
+  const belowDesktop = () => matchMedia('(max-width: 1439px)').matches;
+  const isVisibleControl = (el) => {
+    if (!el || !el.getClientRects().length) return false;
+    if (el.closest('#just-os-widget.is-covered, #just-os-widget.is-dismissed')) return false;
+    return getComputedStyle(el).visibility !== 'hidden';
+  };
+  const syncExpanded = () => {
+    const open = chatOpen();
+    if (chatButton.tagName === 'BUTTON') chatButton.setAttribute('aria-expanded', String(open));
+    if (navJustOs?.tagName === 'BUTTON') navJustOs.setAttribute('aria-expanded', String(open));
+    extraJustOs.forEach((btn) => btn.setAttribute('aria-expanded', String(open)));
+  };
+  const launcherFocused = () => {
+    try {
+      return chatButton.matches(':focus-visible') || chatDismiss.matches(':focus-visible');
+    } catch {
+      return false;
+    }
+  };
+  // Measure the launcher's resting footprint including its dismiss cross and any expanded touch tap target
+  // (valid even while .is-covered uses visibility: hidden).
+  const launcherFootprint = () => {
+    const btn = chatButton.getBoundingClientRect();
+    if (!btn.width || !btn.height) return null;
+    let { left, top, right, bottom } = btn;
+    const cross = chatDismiss.getBoundingClientRect();
+    if (cross.width > 0 && cross.height > 0) {
+      let cLeft = cross.left;
+      let cTop = cross.top;
+      let cRight = cross.right;
+      let cBottom = cross.bottom;
+      const after = getComputedStyle(chatDismiss, '::after');
+      if (after.content && after.content !== 'none') {
+        const aw = parseFloat(after.width) || 0;
+        const ah = parseFloat(after.height) || 0;
+        if (aw > cross.width) {
+          const cx = (cross.left + cross.right) / 2;
+          cLeft = Math.min(cLeft, cx - aw / 2);
+          cRight = Math.max(cRight, cx + aw / 2);
+        }
+        if (ah > cross.height) {
+          const cy = (cross.top + cross.bottom) / 2;
+          cTop = Math.min(cTop, cy - ah / 2);
+          cBottom = Math.max(cBottom, cy + ah / 2);
+        }
+      }
+      left = Math.min(left, cLeft);
+      top = Math.min(top, cTop);
+      right = Math.max(right, cRight);
+      bottom = Math.max(bottom, cBottom);
+    }
+    return { left, top, right, bottom, width: right - left, height: bottom - top };
+  };
+  // Between 761 and 1439 px, hide the floating launcher whenever text, a card or a control sits beneath it.
+  const updateLauncherVisibility = () => {
+    if (dismissed()) return;
+    if (!mediumWidth.matches) {
+      chatWidget.classList.remove('is-covered');
+      return;
+    }
+    if (chatOpen() || launcherFocused()) return;
+    const box = launcherFootprint();
+    if (!box) return;
+    const covered = !overEmptySpace(box);
+    chatWidget.classList.toggle('is-covered', covered);
+    if (covered) chatBubble.classList.remove('bubble-visible');
+  };
+  let settleTimer;
+  const scheduleLauncherCheck = (delay = 150) => {
+    if (!mediumWidth.matches) {
+      clearTimeout(settleTimer);
+      chatWidget.classList.remove('is-covered');
+      return;
+    }
+    clearTimeout(settleTimer);
+    settleTimer = setTimeout(updateLauncherVisibility, delay);
+  };
+  bannerListeners.push(updateLauncherVisibility);
+  updateLauncherVisibility();
+  addEventListener('load', updateLauncherVisibility);
+  document.fonts?.ready.then(updateLauncherVisibility);
+  const mainEl = document.querySelector('main');
+  const layoutObserver = new MutationObserver(() => scheduleLauncherCheck(80));
+  const syncObservers = () => {
+    layoutObserver.disconnect();
+    if (!mediumWidth.matches) return;
+    if (mainEl) layoutObserver.observe(mainEl, { childList: true, subtree: true, attributes: true, attributeFilter: ['hidden', 'class', 'open'] });
+    if (nav) layoutObserver.observe(nav, { attributes: true, attributeFilter: ['data-open'] });
+    if (head) layoutObserver.observe(head, { subtree: true, attributes: true, attributeFilter: ['hidden', 'aria-expanded'] });
+  };
+  syncObservers();
+  mediumWidth.addEventListener('change', () => {
+    syncObservers();
+    updateLauncherVisibility();
+  });
+  addEventListener('resize', () => scheduleLauncherCheck(120), { passive: true });
+  window.visualViewport?.addEventListener('resize', () => scheduleLauncherCheck(120), { passive: true });
+  if ('onscrollend' in window) {
+    addEventListener('scrollend', () => {
+      clearTimeout(settleTimer);
+      updateLauncherVisibility();
+    }, { passive: true });
+  }
+  document.addEventListener('toggle', () => scheduleLauncherCheck(50), true);
+  document.addEventListener('click', (event) => {
+    if (!event.target.closest('#just-os-widget')) scheduleLauncherCheck(80);
+  });
+  document.addEventListener('input', () => scheduleLauncherCheck(180));
+  chatWidget.addEventListener('focusout', () => scheduleLauncherCheck(0));
+
+  // The invitation shows and hides on a slow cycle, as it always has, and rests while the chat is open or hidden.
+  // It shows only over empty space, so it never covers text, a card or a control.
+  // Below 1440 px it is offered at most once, at the top of the page.
   let offered = false;
   const invitation = setInterval(() => {
     if (dismissed() || chatFailed) return clearInterval(invitation);
-    if (chatOpen()) return;
+    if (chatOpen() || !isVisibleControl(chatButton)) return;
     const shown = chatBubble.classList.contains('bubble-visible');
     chatBubble.classList.remove('bubble-visible');
-    if (tabbed() && (offered || scrollY > 0)) return clearInterval(invitation);
+    if (belowDesktop() && (offered || scrollY > 0)) return clearInterval(invitation);
     offered = true;
     if (!shown && overEmptySpace(chatBubble.getBoundingClientRect())) chatBubble.classList.add('bubble-visible');
   }, 10000);
-  // Any scroll hides it, and the message that the chat did not load, which replaces it after a click.
-  addEventListener('scroll', () => chatBubble.classList.remove('bubble-visible'), { passive: true });
-  if (chatButton.tagName === 'BUTTON') {
-    chatButton.addEventListener('click', () => {
-      if (window.toggleJustOS) {
-        window.toggleJustOS();
-        chatButton.setAttribute('aria-expanded', String(chatOpen()));
+  // Any scroll hides the invitation bubble, and schedules the overlap check once scrolling settles.
+  addEventListener('scroll', () => {
+    chatBubble.classList.remove('bubble-visible');
+    scheduleLauncherCheck(150);
+  }, { passive: true });
+
+  document.addEventListener('just-os:toggle', (event) => {
+    syncExpanded();
+    if (!event.detail?.open) {
+      updateLauncherVisibility();
+      const target = [lastOpener, chatButton, toggle, document.getElementById('main')].find(isVisibleControl);
+      if (target) target.focus({ preventScroll: true });
+    }
+  });
+
+  let pendingFallbackHref = '';
+  const openOrToggleChat = ({ fallbackHref = '' } = {}) => {
+    if (window.toggleJustOS) {
+      window.toggleJustOS();
+      syncExpanded();
+      return;
+    }
+    if (fallbackHref) pendingFallbackHref = fallbackHref;
+    if (chatLoading) return;
+    chatLoading = true;
+    const styles = document.createElement('link');
+    styles.rel = 'stylesheet';
+    styles.href = chatWidget.dataset.css;
+    document.head.append(styles);
+    chatWidget.append(document.getElementById('just-os-template').content.cloneNode(true));
+    const script = document.createElement('script');
+    script.src = chatWidget.dataset.js;
+    script.onload = () => {
+      chatLoading = false;
+      pendingFallbackHref = '';
+      window.toggleJustOS();
+      syncExpanded();
+    };
+    script.onerror = () => {
+      chatLoading = false;
+      chatFailed = true;
+      const href = pendingFallbackHref;
+      pendingFallbackHref = '';
+      document.getElementById('just-os-window')?.remove();
+      if (href) {
+        location.href = href;
         return;
       }
-      if (chatLoading) return;
-      chatLoading = true;
-      const styles = document.createElement('link');
-      styles.rel = 'stylesheet';
-      styles.href = chatWidget.dataset.css;
-      document.head.append(styles);
-      chatWidget.append(document.getElementById('just-os-template').content.cloneNode(true));
-      const script = document.createElement('script');
-      script.src = chatWidget.dataset.js;
-      script.onload = () => {
-        window.toggleJustOS();
-        chatButton.setAttribute('aria-expanded', 'true');
-      };
-      script.onerror = () => {
-        chatLoading = false;
-        chatFailed = true;
-        document.getElementById('just-os-window')?.remove();
-        chatBubble.textContent = 'The chat did not load. Try again in a moment.';
-        chatBubble.classList.add('bubble-visible');
-      };
-      document.head.append(script);
+      chatBubble.textContent = 'The chat did not load. Try again in a moment.';
+      chatBubble.classList.add('bubble-visible');
+    };
+    document.head.append(script);
+  };
+
+  if (chatButton.tagName === 'BUTTON') {
+    chatButton.addEventListener('click', () => {
+      lastOpener = chatButton;
+      openOrToggleChat();
     });
   }
+  if (navJustOs?.tagName === 'BUTTON') {
+    navJustOs.addEventListener('click', () => {
+      closeMenus();
+      closePhoneMenu();
+      lastOpener = toggle;
+      openOrToggleChat({ fallbackHref: navJustOs.dataset.href });
+    });
+  }
+  extraJustOs.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      lastOpener = btn;
+      openOrToggleChat({ fallbackHref: btn.dataset.href });
+    });
+  });
 }
 
 // Glossary pages: filter the list of terms, and show the current term inside its card.
