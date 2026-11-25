@@ -52,7 +52,7 @@ My students need more from me than validity and reliability and transparency and
 
 So, this semester I introduced a single class session focused on the importance of representation in science. I borrowed ideas from Jessica Remedios ([see her terrific Twitter thread, which ends with her slides](https://twitter.com/jdremedios/status/1303700486277812226?s=20)).  
 
-I had them read this work about [the diversity-innovation paradox by Hofstra and colleagues](https://www.pnas.org/content/117/17/9284).
+I had them read this work about [the diversity-innovation paradox by Hofstra and colleagues](https://doi.org/10.1073/pnas.1915378117).
 
 I also invited them to watch the [Picture a Scientist film](https://web.archive.org/web/20210529203210/https://www.pictureascientist.com/) and/or listen to the Everything Hertz podcast ([@hertzpodcast](https://twitter.com/hertzpodcast)) about Diversity in science [with Jess Wade](https://web.archive.org/web/20210116220326/https://everythinghertz.com/114). 
 
@@ -93,5 +93,5 @@ Meanwhile, [here are some of my slides minus film clips and the email](https://o
 ---
 <br>
 
-*Editor's note: The present text is an adapted version of widely shared [Twitter thread](https://twitter.com/HeatherUrry/status/1312104732308115457?s=20) which resonated with so many of us. We thought it is of general interest and deserved to be immortalized, and hence we approached Heather to adapt the thread to post it here. Importantly, in addition to writing extremely current and relevant threads, Heather has also inspired the creation of FORRT. Indeed, FORRT was initiated at the 2018 meeting of the [Society for the Improvement of Psychological Science (SIPS)](https://improvingpsych.org/) in Heather's [“Teaching replicable and reproducible science”](https://osf.io/x7d45/) hackathon with Kristen Lane.*  
+*Editor's note: The present text is an adapted version of widely shared [Twitter thread](https://twitter.com/HeatherUrry/status/1312104732308115457?s=20) which resonated with so many of us. We thought it is of general interest and deserved to be immortalized, and hence we approached Heather to adapt the thread to post it here. Importantly, in addition to writing extremely current and relevant threads, Heather has also inspired the creation of FORRT. Indeed, FORRT was initiated at the 2018 meeting of the [Society for the Improvement of Psychological Science (SIPS)](https://improvingpsych.org/) in Heather's [“Teaching replicable and reproducible science”](https://osf.io/x7d45/) hackathon with Kristin Lane.*  
 

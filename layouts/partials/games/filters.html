@@ -1,0 +1,40 @@
+{{/* The games portal's filter panel (layouts/games_portal/single.html), in the resources directory's filter style.
+     Input: the games. Each group is a fieldset[data-facet]; each button's data-value matches a token in a row's
+     data-facets (partials/games/list.html). site.js shows the panel and runs the buttons with the search. */}}
+{{ $games := . }}
+{{ $colors := (partialCached "clusters/colors.html" .).arrowColors }}
+{{ $clusterNames := slice "Replication Crisis and Credibility Revolution" "Conceptual and Statistical Knowledge" "Ways of Working" "Pre-analysis Planning" "Transparency and Reproducibility in Computation and Analysis" "FAIR Data and Materials" "Publication Sharing" "Replication and Meta-Research" "Academic Structures and Institutions" "Qualitative Research" "Research Integrity" }}
+{{/* Clusters in cluster order; the other groups most used first. */}}
+{{ $values := slice }}
+{{ range $i, $name := $clusterNames }}
+  {{ $count := 0 }}
+  {{ range $games }}{{ range .clusters }}{{ if eq (int .number) (add $i 1) }}{{ $count = add $count 1 }}{{ end }}{{ end }}{{ end }}
+  {{ if $count }}{{ $values = $values | append (dict "label" $name "value" (printf "cluster-%d" (add $i 1)) "count" $count "color" (index $colors $i)) }}{{ end }}
+{{ end }}
+{{ $facets := slice (dict "key" "cluster" "name" "FORRT cluster" "values" $values) }}
+{{ range partial "games/fields" . }}
+  {{ $field := .field }}{{ $key := .key }}
+  {{ $counts := dict }}
+  {{ range $games }}{{ range index . $field }}{{ $counts = merge $counts (dict . (add 1 (index $counts . | default 0))) }}{{ end }}{{ end }}
+  {{ $values := slice }}
+  {{ range $label, $count := $counts }}{{ $values = $values | append (dict "label" $label "value" (partial "games/token" (dict "key" $key "value" $label)) "count" $count) }}{{ end }}
+  {{ $facets = $facets | append (dict "key" .key "name" .name "values" (sort $values "count" "desc")) }}
+{{ end }}
+<section class="filters list-filter-facets" aria-label="Game filters" hidden>
+  <details class="filter-drawer" id="filterDrawer">
+    <summary>Filter the games</summary>
+    {{ range $facets }}
+    {{ $group := .name }}
+    <fieldset class="facet" data-facet="{{ .key }}">
+      <legend class="filter-title">{{ .name }}</legend>
+      <div class="chips">
+        {{/* The group's name leads each button's accessible name ("Format: Online"). */}}
+        {{ range .values }}<button class="chip" type="button" aria-pressed="false" data-value="{{ .value }}"><span class="visually-hidden">{{ $group }}: </span>{{ with .color }}<span class="games-dot" style="background:{{ . | safeCSS }}"></span>{{ end }}{{ .label }} <span class="chip-count">{{ .count }}</span></button>{{ end }}
+      </div>
+    </fieldset>
+    {{ end }}
+  </details>
+  <p class="games-reset"><button class="text-button list-filter-reset" type="button" hidden>Reset filters and search</button></p>
+  {{/* Open on wider screens before the first paint, so the page does not jump. */}}
+  <script>if(matchMedia('(min-width:761px)').matches)document.getElementById('filterDrawer').open=true</script>
+</section>

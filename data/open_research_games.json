@@ -1,0 +1,4229 @@
+{
+ "source": "https://docs.google.com/spreadsheets/d/1cmydWjD1OuyKxJVfDlv0N3T474zwymfB04yFDZQO-TY/edit",
+ "games": [
+  {
+   "id": "GID_001",
+   "anchor": "gid-001",
+   "title": "LEGO® Metadata for Reproducibility",
+   "url": "https://eprints.gla.ac.uk/196477/",
+   "clusters": [
+    {
+     "number": 1,
+     "name": "Replication Crisis and Credibility Revolution"
+    },
+    {
+     "number": 5,
+     "name": "Transparency and Reproducibility in Computation and Analysis"
+    },
+    {
+     "number": 6,
+     "name": "FAIR Data and Materials"
+    },
+    {
+     "number": 8,
+     "name": "Replication and Meta-Research"
+    }
+   ],
+   "topics": [
+    "Open Data",
+    "Open Code",
+    "Replication"
+   ],
+   "gameplay_style": [
+    "Cooperative/Collaborative"
+   ],
+   "tone": [],
+   "delivery_format": [
+    "In-person"
+   ],
+   "game_type": [
+    "Construction",
+    "Building with lego"
+   ],
+   "language": [
+    "English"
+   ],
+   "creators": [
+    "Matt Mahon and Mary Donaldson"
+   ],
+   "description": [
+    "The LEGO® Metadata for Reproducibility game is an interactive game for 4-24 players, using LEGO® to help researchers explore the metadata they might need to record to aid reproducibility. The game addresses issues including planning for metadata, formats of metadata recording, standards and automation. The game also draws multiple parallels between recording and communicating the research process and documenting and the creation of a LEGO® model. The process of playing the game draws researchers into discussions on how metadata is captured, recorded and disseminated, which in turn provides an opportunity for signposting to further resources in this area."
+   ],
+   "access_additional": [],
+   "number_of_players": [
+    "4-24"
+   ],
+   "target_audience": [
+    "Researchers"
+   ],
+   "last_updated": [
+    "2019"
+   ],
+   "licence": [
+    "CC-BY"
+   ],
+   "topic_area": [
+    "Open Data, Open Code, Replication"
+   ],
+   "learning_objectives": [
+    "The game addresses issues including planning for metadata, formats of metadata recording, standards and automation. The game also draws multiple parallels between recording and communicating the research process and documenting and the creation of a LEGO® model. The process of playing the game draws researchers into discussions on how metadata is captured, recorded and disseminated, which in turn provides an opportunity for signposting to further resources in this area."
+   ],
+   "formal_evaluation": [
+    "I do not know"
+   ],
+   "suggested_audience": [
+    "Researchers, research administrators and support staff including but not restricted to data managers and technicians.",
+    "Researchers, research administrators and support staff including but not restricted to data managers and technicians.  Highlights the importance of recording and communicating the research process to aid replication. The process of playing the game draws players into discussions on how metadata is captured, recorded and disseminated, which in turn provides an opportunity for signposting to further resources in this area."
+   ],
+   "prior_knowledge": [
+    "None"
+   ],
+   "playtime": [
+    "1 hour"
+   ],
+   "scalability": [
+    "It needs at least two people but one person could follow the logic and play alone.  It is possible to play with as many people as you can support playing it."
+   ],
+   "teaching_integration": [
+    "We run it as a regular offering to support data management training for postgraduate research students and academic staff."
+   ],
+   "context_specific_elements": [
+    "We do not think so but it is entirely possible to amend it."
+   ],
+   "preparation": [
+    "It is all described in the pack."
+   ],
+   "testimonials": [
+    "Many.  Just this week a colleague at Open Research Scotland said that this game and the publication trap were the best two games for teaching researchers about open research."
+   ]
+  },
+  {
+   "id": "GID_002",
+   "anchor": "gid-002",
+   "title": "Open Science Quest",
+   "url": "https://openscience.quest/?",
+   "clusters": [
+    {
+     "number": 6,
+     "name": "FAIR Data and Materials"
+    },
+    {
+     "number": 7,
+     "name": "Publication Sharing"
+    }
+   ],
+   "topics": [
+    "Open Access",
+    "General Open Research"
+   ],
+   "gameplay_style": [
+    "Solo"
+   ],
+   "tone": [
+    "Balanced"
+   ],
+   "delivery_format": [
+    "Online"
+   ],
+   "game_type": [
+    "Role-play",
+    "Storytelling/Narrative"
+   ],
+   "language": [
+    "English"
+   ],
+   "creators": [
+    "Jonathan England"
+   ],
+   "description": [
+    "Fictional interactive stories to learn about Open Science principles and practices. Set in a retro-futuristic universe, you make choices that impact the paths and outcomes of your story"
+   ],
+   "access_additional": [],
+   "number_of_players": [
+    "1-20"
+   ],
+   "target_audience": [],
+   "last_updated": [
+    "2023"
+   ],
+   "licence": [
+    "CC0"
+   ],
+   "topic_area": [
+    "Open Access, General Open Research, ORCID"
+   ],
+   "learning_objectives": [
+    "Recognizing the importance of open access to scientific articles and the usefulness of ORCID"
+   ],
+   "formal_evaluation": [],
+   "suggested_audience": [],
+   "prior_knowledge": [
+    "No prior knowledge required"
+   ],
+   "playtime": [
+    "5 minutes"
+   ],
+   "scalability": [],
+   "teaching_integration": [
+    "It can be used as an interactive, group based discussion activity to engage clasrooms in Open Science."
+   ],
+   "context_specific_elements": [],
+   "preparation": [],
+   "testimonials": []
+  },
+  {
+   "id": "GID_003",
+   "anchor": "gid-003",
+   "title": "Open Science Escape Room",
+   "url": "https://sites.google.com/vu.nl/open-science-escape-room",
+   "clusters": [
+    {
+     "number": 5,
+     "name": "Transparency and Reproducibility in Computation and Analysis"
+    },
+    {
+     "number": 6,
+     "name": "FAIR Data and Materials"
+    },
+    {
+     "number": 7,
+     "name": "Publication Sharing"
+    }
+   ],
+   "topics": [
+    "Open Data",
+    "Open Access",
+    "Open Code",
+    "Open Methods",
+    "General Open Research"
+   ],
+   "gameplay_style": [
+    "Solo"
+   ],
+   "tone": [
+    "Balanced"
+   ],
+   "delivery_format": [
+    "Online"
+   ],
+   "game_type": [
+    "Role-play",
+    "Escape room",
+    "Puzzle"
+   ],
+   "language": [
+    "English"
+   ],
+   "creators": [
+    "Elisa Rodenburg, Lena Karvovskaya, Eirini Zormpa, Anna Volkova"
+   ],
+   "description": [
+    "This game was made for the 2021 horror story week for Vrije University. It centers around the user aiding the cause of a repressed cyborg class. The user has to use external links which direct them to a GitHub page, where mock research notes made by the cyborgs are placed. Clues are embedded in these pages and in order to progress the player needs to answer questions on the OS practices of the cyborgs."
+   ],
+   "access_additional": [],
+   "number_of_players": [],
+   "target_audience": [],
+   "last_updated": [
+    "2021"
+   ],
+   "licence": [
+    "CC0 and GNU GPLv3 (source code)"
+   ],
+   "topic_area": [
+    "Open Data, Open Access, Open Code, Open Methods, General Open Research"
+   ],
+   "learning_objectives": [
+    "By having users directly scan mock research notes, the game likely aims to train them to identify similar elements in real research documents, thereby increasing their awareness of Open Science practices."
+   ],
+   "formal_evaluation": [],
+   "suggested_audience": [],
+   "prior_knowledge": [],
+   "playtime": [
+    "30 minutes"
+   ],
+   "scalability": [],
+   "teaching_integration": [],
+   "context_specific_elements": [],
+   "preparation": [],
+   "testimonials": []
+  },
+  {
+   "id": "GID_004",
+   "anchor": "gid-004",
+   "title": "The puzzling hunt for Open Access",
+   "url": "https://essex.libwizard.com/f/puzzling-hunt-for-OA",
+   "clusters": [
+    {
+     "number": 6,
+     "name": "FAIR Data and Materials"
+    },
+    {
+     "number": 7,
+     "name": "Publication Sharing"
+    }
+   ],
+   "topics": [
+    "Open Data",
+    "Open Access",
+    "General Open Research"
+   ],
+   "gameplay_style": [
+    "Solo"
+   ],
+   "tone": [
+    "Balanced"
+   ],
+   "delivery_format": [
+    "Online"
+   ],
+   "game_type": [
+    "Role-play",
+    "Escape room",
+    "Puzzle"
+   ],
+   "language": [
+    "English"
+   ],
+   "creators": [
+    "Hannah Crago"
+   ],
+   "description": [
+    "This game offers mixed media-based puzzles that can be completed by a single player. Its premise is that a villain has locked away all research of the University of Essex and is planning on locking up all the research of the world. The player has to solve various Open Science themed puzzles in order to regain access."
+   ],
+   "access_additional": [],
+   "number_of_players": [],
+   "target_audience": [],
+   "last_updated": [
+    "2020"
+   ],
+   "licence": [],
+   "topic_area": [
+    "Open Data, Open Access, General Open Research"
+   ],
+   "learning_objectives": [
+    "Through completing puzzles related to Open Science, the player is expected to gain a general understanding of Open Science principles."
+   ],
+   "formal_evaluation": [],
+   "suggested_audience": [],
+   "prior_knowledge": [],
+   "playtime": [
+    "25-30 minutes"
+   ],
+   "scalability": [],
+   "teaching_integration": [],
+   "context_specific_elements": [],
+   "preparation": [],
+   "testimonials": []
+  },
+  {
+   "id": "GID_005",
+   "anchor": "gid-005",
+   "title": "DANS Data game",
+   "url": "https://dans.knaw.nl/en/dans-data-game",
+   "clusters": [],
+   "topics": [
+    "General Open Research"
+   ],
+   "gameplay_style": [
+    "Team-Based Competition"
+   ],
+   "tone": [
+    "Balanced"
+   ],
+   "delivery_format": [
+    "Hybrid"
+   ],
+   "game_type": [
+    "Card game"
+   ],
+   "language": [
+    "English"
+   ],
+   "creators": [
+    "Ricarda Braukmann, Kim Ferguson, Maaike Verburg, Samantha Willemsen, Heidi Berkhout, Ellen Leenarts, Cees Hof, René van Horik."
+   ],
+   "description": [
+    "The DANS Data Game is a multiplayer card game designed for researchers to explore the research data landscape. Players to collect sets of four cards by asking others for specific cards which are related to the reseach data landscape."
+   ],
+   "access_additional": [],
+   "number_of_players": [
+    "3-4 players"
+   ],
+   "target_audience": [
+    "Researchers"
+   ],
+   "last_updated": [
+    "2024"
+   ],
+   "licence": [
+    "CC-BY-SA 4.0"
+   ],
+   "topic_area": [
+    "General Open Research"
+   ],
+   "learning_objectives": [
+    "The game aims to engage players in understanding the dynamics of research data sharing and discovery."
+   ],
+   "formal_evaluation": [],
+   "suggested_audience": [],
+   "prior_knowledge": [],
+   "playtime": [],
+   "scalability": [],
+   "teaching_integration": [],
+   "context_specific_elements": [],
+   "preparation": [
+    "Printing of cards"
+   ],
+   "testimonials": []
+  },
+  {
+   "id": "GID_007",
+   "anchor": "gid-007",
+   "title": "Open Science Alliance",
+   "url": "https://github.com/ghostCollective/open-science-alliance/",
+   "clusters": [
+    {
+     "number": 5,
+     "name": "Transparency and Reproducibility in Computation and Analysis"
+    },
+    {
+     "number": 6,
+     "name": "FAIR Data and Materials"
+    },
+    {
+     "number": 7,
+     "name": "Publication Sharing"
+    },
+    {
+     "number": 9,
+     "name": "Academic Structures and Institutions"
+    }
+   ],
+   "topics": [
+    "Open Data",
+    "General Open Research"
+   ],
+   "gameplay_style": [
+    "Competitive"
+   ],
+   "tone": [
+    "Balanced"
+   ],
+   "delivery_format": [
+    "In-person"
+   ],
+   "game_type": [
+    "Card game"
+   ],
+   "language": [
+    "English"
+   ],
+   "creators": [
+    "GHOST collective"
+   ],
+   "description": [
+    "A strategic card game where players build research teams and collaborate to produce open research outputs, emphasizing the importance of teamwork and open practices in science."
+   ],
+   "access_additional": [],
+   "number_of_players": [],
+   "target_audience": [],
+   "last_updated": [],
+   "licence": [],
+   "topic_area": [
+    "Open Data, General Open Research, FAIR, open research software, citizen science and societal engagement, open scholarly publishing"
+   ],
+   "learning_objectives": [
+    "To understand the importance of teamwork and open practices in science."
+   ],
+   "formal_evaluation": [],
+   "suggested_audience": [],
+   "prior_knowledge": [],
+   "playtime": [
+    "Printing of cards"
+   ],
+   "scalability": [],
+   "teaching_integration": [],
+   "context_specific_elements": [],
+   "preparation": [
+    "Printing of cards"
+   ],
+   "testimonials": []
+  },
+  {
+   "id": "GID_008",
+   "anchor": "gid-008",
+   "title": "Open up your research",
+   "url": "https://www.openscience.uzh.ch/en/open-science-at-uzh/training/game.html",
+   "clusters": [
+    {
+     "number": 5,
+     "name": "Transparency and Reproducibility in Computation and Analysis"
+    },
+    {
+     "number": 6,
+     "name": "FAIR Data and Materials"
+    },
+    {
+     "number": 7,
+     "name": "Publication Sharing"
+    },
+    {
+     "number": 8,
+     "name": "Replication and Meta-Research"
+    },
+    {
+     "number": 9,
+     "name": "Academic Structures and Institutions"
+    },
+    {
+     "number": 11,
+     "name": "Research Integrity"
+    }
+   ],
+   "topics": [
+    "Research Integrity",
+    "Open Data",
+    "Open Access",
+    "Pre-registration",
+    "General Open Research"
+   ],
+   "gameplay_style": [
+    "Cooperative/Collaborative",
+    "Solo"
+   ],
+   "tone": [
+    "Learning-intensive"
+   ],
+   "delivery_format": [
+    "Online"
+   ],
+   "game_type": [
+    "Role-play",
+    "Storytelling/Narrative"
+   ],
+   "language": [
+    "English"
+   ],
+   "creators": [
+    "Melanie Röthlisberger, Manuela Höfler, Katherine Hermans, Eva Furrer"
+   ],
+   "description": [
+    "The player follows Emma, a PhD student, on her way to publishing her research paper. Along the way she has to decide whether she will adopt traditional approaches or open science approaches to publishing. The game is accompanied with stylized art and a narrator which offers additional information on the reasoning of Emma behind her choices and their consequences."
+   ],
+   "access_additional": [],
+   "number_of_players": [],
+   "target_audience": [],
+   "last_updated": [
+    "2022"
+   ],
+   "licence": [
+    "Open Source: The Game can be used freely (also in a commercial context). Illustrations can be downloaded with: Creative Commons Attribution Non Commercial Share Alike 4.0 International."
+   ],
+   "topic_area": [
+    "Research Integrity, Open Data, Open Access, Pre-registration, General Open Research"
+   ],
+   "learning_objectives": [
+    "Each dilemma of whether Emma follows a traditional or open science approach is accompanied by information on the researcher’s reasoning and the consequences this choice has. This facilitates reflection upon the researcher’s journey of publishing and the value and impacts that adopting an open science approach has."
+   ],
+   "formal_evaluation": [],
+   "suggested_audience": [],
+   "prior_knowledge": [],
+   "playtime": [
+    "10-20 minutes"
+   ],
+   "scalability": [],
+   "teaching_integration": [
+    "Guidelines on how the game can be integrated into an educational context (\"teaching tool\") can be found here: https://teachingtools.uzh.ch/en/good-practice/what-is-open-scien"
+   ],
+   "context_specific_elements": [],
+   "preparation": [],
+   "testimonials": []
+  },
+  {
+   "id": "GID_010",
+   "anchor": "gid-010",
+   "title": "The Transparent and Open Science Game",
+   "url": "https://osf.io/t9ngd",
+   "clusters": [
+    {
+     "number": 1,
+     "name": "Replication Crisis and Credibility Revolution"
+    },
+    {
+     "number": 3,
+     "name": "Ways of Working"
+    },
+    {
+     "number": 5,
+     "name": "Transparency and Reproducibility in Computation and Analysis"
+    },
+    {
+     "number": 6,
+     "name": "FAIR Data and Materials"
+    },
+    {
+     "number": 9,
+     "name": "Academic Structures and Institutions"
+    },
+    {
+     "number": 11,
+     "name": "Research Integrity"
+    }
+   ],
+   "topics": [
+    "Research Integrity",
+    "General Open Research"
+   ],
+   "gameplay_style": [
+    "Cooperative/Collaborative"
+   ],
+   "tone": [
+    "Lighthearted/Playful"
+   ],
+   "delivery_format": [
+    "In-person"
+   ],
+   "game_type": [
+    "Board game",
+    "Debate/Discussion focused"
+   ],
+   "language": [
+    "English"
+   ],
+   "creators": [
+    "Stefan Pfattheicher"
+   ],
+   "description": [
+    "This is a relatively simple board game in which players use a die to progress to the final  field of “Science Heaven”. Each time they land on a field, they either draw an event card or an action card and follow its instructions. The game is played against an automated competitive researcher named Rasmus, who is played by the game itself."
+   ],
+   "access_additional": [],
+   "number_of_players": [
+    "3-6 players"
+   ],
+   "target_audience": [],
+   "last_updated": [
+    "2024"
+   ],
+   "licence": [
+    "CC-By Attribution 4.0 International"
+   ],
+   "topic_area": [
+    "Research Integrity, General Open Research"
+   ],
+   "learning_objectives": [
+    "The game is meant to initiate discussions on questionable research practices from the players. The event and action cards describe research dilemmas in a humorous way, and through a dice roll the player’s decision is made and a score for each decision is assigned. Usually, the game rewards higher points to the unethical option over the open and ethical option, illustrating the easier progress a researcher might have by ignoring OS protocols but also highlighting the ethical drawback in the event description itself. This is not meant to encourage unethical research practices but only reflects some cynical perspectives in academia."
+   ],
+   "formal_evaluation": [],
+   "suggested_audience": [],
+   "prior_knowledge": [],
+   "playtime": [
+    "45-60 minutes"
+   ],
+   "scalability": [
+    "More than 6 players possible, but might increase total playtime."
+   ],
+   "teaching_integration": [],
+   "context_specific_elements": [],
+   "preparation": [
+    "Printing of game board and cards, use of dice and two player pieces"
+   ],
+   "testimonials": []
+  },
+  {
+   "id": "GID_011",
+   "anchor": "gid-011",
+   "title": "Research Data Management Adventure",
+   "url": "https://rdm-games.gitlab.io/rdm-adventure",
+   "clusters": [
+    {
+     "number": 3,
+     "name": "Ways of Working"
+    },
+    {
+     "number": 6,
+     "name": "FAIR Data and Materials"
+    },
+    {
+     "number": 7,
+     "name": "Publication Sharing"
+    },
+    {
+     "number": 9,
+     "name": "Academic Structures and Institutions"
+    }
+   ],
+   "topics": [],
+   "gameplay_style": [
+    "Solo"
+   ],
+   "tone": [
+    "Balanced"
+   ],
+   "delivery_format": [
+    "Online"
+   ],
+   "game_type": [
+    "Role-play",
+    "Storytelling/Narrative"
+   ],
+   "language": [
+    "English"
+   ],
+   "creators": [
+    "Alex Ball, Samuel Simango, Nushrat Khan"
+   ],
+   "description": [
+    "A text-based role-playing game in which the player character, an early career researcher, navigates the data management challenges at each stage of a project, from writing the bid to publishing a paper."
+   ],
+   "access_additional": [],
+   "number_of_players": [],
+   "target_audience": [
+    "Early career researchers and PhD students"
+   ],
+   "last_updated": [
+    "2023"
+   ],
+   "licence": [
+    "CC BY-NC-SA 4.0 International"
+   ],
+   "topic_area": [
+    "Data Management"
+   ],
+   "learning_objectives": [
+    "By putting them in the shoes of a researcher working through the project lifecycle, the game lets players test their knowledge and understanding of research data management principles, and explore the practical consequences of the decisions they might make in the course of a project."
+   ],
+   "formal_evaluation": [],
+   "suggested_audience": [],
+   "prior_knowledge": [],
+   "playtime": [
+    "50-70 minutes, or 10-15 minutes per level"
+   ],
+   "scalability": [
+    "Can be played in a group setting."
+   ],
+   "teaching_integration": [
+    "The whole game can be played prior to training in order to identify gaps in knowledge, or after training to consolidate the principles taught (or both). An individual level can be played as part of a training session on the associated topic (e.g. archiving data). Brief feedback is given in-game to explain the score achieved, and a more detailed rationale is provided separately explaining the points awarded and raised."
+   ],
+   "context_specific_elements": [
+    "It is possible to add translations or institution-specific variants of the game."
+   ],
+   "preparation": [],
+   "testimonials": []
+  },
+  {
+   "id": "GID_012",
+   "anchor": "gid-012",
+   "title": "The Openscientometer",
+   "url": "https://christophedony.pubpub.org/pub/openscientometer/release/2",
+   "clusters": [
+    {
+     "number": 1,
+     "name": "Replication Crisis and Credibility Revolution"
+    },
+    {
+     "number": 3,
+     "name": "Ways of Working"
+    },
+    {
+     "number": 4,
+     "name": "Pre-analysis Planning"
+    },
+    {
+     "number": 6,
+     "name": "FAIR Data and Materials"
+    },
+    {
+     "number": 7,
+     "name": "Publication Sharing"
+    },
+    {
+     "number": 9,
+     "name": "Academic Structures and Institutions"
+    },
+    {
+     "number": 10,
+     "name": "Qualitative Research"
+    }
+   ],
+   "topics": [
+    "Open Access",
+    "Open Peer Review",
+    "General Open Research"
+   ],
+   "gameplay_style": [
+    "Cooperative/Collaborative"
+   ],
+   "tone": [
+    "Learning-intensive"
+   ],
+   "delivery_format": [
+    "Online"
+   ],
+   "game_type": [
+    "Puzzle",
+    "Debate/Discussion focused"
+   ],
+   "language": [
+    "English",
+    "French"
+   ],
+   "creators": [
+    "Christophe Dony"
+   ],
+   "description": [
+    "This game produces 4 prompts with information relating to Open Science and they correspond to a numerical value. The player can click on each prompt in order to find out more contextual information about it and use clues. They have to deduce which of the prompts corresponds to the lowest value and which to the highest value."
+   ],
+   "access_additional": [],
+   "number_of_players": [
+    "Solo/Collab mode available. 10-12 people recommended for collab mode."
+   ],
+   "target_audience": [
+    "Early career researchers and PhD students"
+   ],
+   "last_updated": [
+    "2025"
+   ],
+   "licence": [
+    "Creation Common Attribution 4.0 International Licence (CC BY 4.0)"
+   ],
+   "topic_area": [
+    "Open Access, General Open Research, Article Processing Charges prices, bibliodiversity, Open Access (OA) books and OA books publishing, open data and research data repositories, FAIR, open education, open peer review"
+   ],
+   "learning_objectives": [
+    "The player learns real world information about Open Science practices by having to use contextual information and deduce which prompt corresponds to the highest and lowest value."
+   ],
+   "formal_evaluation": [],
+   "suggested_audience": [],
+   "prior_knowledge": [
+    "Basic knowledge about research practices."
+   ],
+   "playtime": [
+    "60-90 minutes"
+   ],
+   "scalability": [],
+   "teaching_integration": [],
+   "context_specific_elements": [],
+   "preparation": [],
+   "testimonials": []
+  },
+  {
+   "id": "GID_013",
+   "anchor": "gid-013",
+   "title": "RGU Open Access Crossword",
+   "url": "https://puzzel.org/en/crossword/play?p=-MlEi3ylaChm0Yv-Uutd",
+   "clusters": [
+    {
+     "number": 7,
+     "name": "Publication Sharing"
+    },
+    {
+     "number": 9,
+     "name": "Academic Structures and Institutions"
+    }
+   ],
+   "topics": [
+    "Open Access"
+   ],
+   "gameplay_style": [
+    "Solo"
+   ],
+   "tone": [
+    "Balanced"
+   ],
+   "delivery_format": [
+    "Online"
+   ],
+   "game_type": [
+    "Puzzle",
+    "Crossword"
+   ],
+   "language": [
+    "English"
+   ],
+   "creators": [
+    "Robert Gordon University Aberdeen"
+   ],
+   "description": [
+    "As part of the Open Access Week 2021 of Robert Gordon University Aberdeen, a series of mini-games were created with overarching open science themes. This one is a crossword incorporating open access themes."
+   ],
+   "access_additional": [],
+   "number_of_players": [],
+   "target_audience": [],
+   "last_updated": [
+    "2021"
+   ],
+   "licence": [
+    "CC BY-NC"
+   ],
+   "topic_area": [
+    "Open Access"
+   ],
+   "learning_objectives": [
+    "A crossword incorporating open science themes could enhance engagement and improve the retention of key concepts by encouraging active recall in an enjoyable and interactive format."
+   ],
+   "formal_evaluation": [],
+   "suggested_audience": [],
+   "prior_knowledge": [
+    "Knowledge about Open Access"
+   ],
+   "playtime": [
+    "10-30 minutes"
+   ],
+   "scalability": [
+    "The crossword can be solved with the help of multiple people."
+   ],
+   "teaching_integration": [],
+   "context_specific_elements": [],
+   "preparation": [],
+   "testimonials": []
+  },
+  {
+   "id": "GID_014",
+   "anchor": "gid-014",
+   "title": "Memory: Open Research at RGU",
+   "url": "https://puzzel.org/en/memory/play?p=-Mk1eM3P1UQ7CC3G60dK",
+   "clusters": [
+    {
+     "number": 6,
+     "name": "FAIR Data and Materials"
+    },
+    {
+     "number": 7,
+     "name": "Publication Sharing"
+    },
+    {
+     "number": 9,
+     "name": "Academic Structures and Institutions"
+    }
+   ],
+   "topics": [
+    "Open Data",
+    "Open Access",
+    "General Open Research"
+   ],
+   "gameplay_style": [
+    "Solo"
+   ],
+   "tone": [
+    "Balanced"
+   ],
+   "delivery_format": [
+    "Online"
+   ],
+   "game_type": [
+    "Puzzle",
+    "Memory game"
+   ],
+   "language": [
+    "English"
+   ],
+   "creators": [
+    "Robert Gordon University Aberdeen"
+   ],
+   "description": [
+    "As part of the Open Access Week 2021 of Robert Gordon University Aberdeen, a series of mini-games were created with overarching open science themes. This is a memory game, in which the player has to match open research related images together."
+   ],
+   "access_additional": [],
+   "number_of_players": [],
+   "target_audience": [],
+   "last_updated": [
+    "2021"
+   ],
+   "licence": [
+    "CC BY-NC"
+   ],
+   "topic_area": [
+    "Open Data, Open Access, General Open Research"
+   ],
+   "learning_objectives": [
+    "To improve comprehension of open research concepts."
+   ],
+   "formal_evaluation": [],
+   "suggested_audience": [],
+   "prior_knowledge": [],
+   "playtime": [
+    "5-20 minutes"
+   ],
+   "scalability": [],
+   "teaching_integration": [],
+   "context_specific_elements": [],
+   "preparation": [],
+   "testimonials": []
+  },
+  {
+   "id": "GID_015",
+   "anchor": "gid-015",
+   "title": "RGU Open Access Scavenger Hunt",
+   "url": "https://puzzel.org/en/label-this/play?p=-Mk1LJMKgmOcS2nD0Ag6",
+   "clusters": [
+    {
+     "number": 7,
+     "name": "Publication Sharing"
+    }
+   ],
+   "topics": [
+    "Open Access"
+   ],
+   "gameplay_style": [
+    "Solo"
+   ],
+   "tone": [
+    "Balanced"
+   ],
+   "delivery_format": [
+    "Online"
+   ],
+   "game_type": [
+    "Puzzle",
+    "Scavenger Hunt"
+   ],
+   "language": [
+    "English"
+   ],
+   "creators": [
+    "Robert Gordon University Aberdeen"
+   ],
+   "description": [
+    "As part of the Open Access Week 2021 of Robert Gordon University Aberdeen, a series of mini-games were created with overarching open access themes. This games revolves around answering questions in a scavenger hunt format."
+   ],
+   "access_additional": [],
+   "number_of_players": [],
+   "target_audience": [],
+   "last_updated": [
+    "2021"
+   ],
+   "licence": [
+    "CC BY-NC"
+   ],
+   "topic_area": [
+    "Open Access"
+   ],
+   "learning_objectives": [
+    "This activity helps players learn more about Open Access by answering questions in a fun scavenger hunt format, encouraging exploration of key ideas."
+   ],
+   "formal_evaluation": [],
+   "suggested_audience": [],
+   "prior_knowledge": [],
+   "playtime": [
+    "5-15 minutes"
+   ],
+   "scalability": [],
+   "teaching_integration": [],
+   "context_specific_elements": [],
+   "preparation": [],
+   "testimonials": []
+  },
+  {
+   "id": "GID_016",
+   "anchor": "gid-016",
+   "title": "RGU Open Access Matching Pairs.",
+   "url": "https://puzzel.org/en/matching-pairs/play?p=-MlC6aYr8vX55gd5PVDM",
+   "clusters": [
+    {
+     "number": 7,
+     "name": "Publication Sharing"
+    }
+   ],
+   "topics": [
+    "Open Access"
+   ],
+   "gameplay_style": [
+    "Solo"
+   ],
+   "tone": [
+    "Balanced"
+   ],
+   "delivery_format": [
+    "Online"
+   ],
+   "game_type": [
+    "Puzzle",
+    "Matching Pairs"
+   ],
+   "language": [
+    "English"
+   ],
+   "creators": [
+    "Robert Gordon University Aberdeen"
+   ],
+   "description": [
+    "As part of the Open Access Week 2021 of Robert Gordon University Aberdeen, a series of mini-games were created with overarching open access themes. This game revolves around matching open access related concepts to their descriptions."
+   ],
+   "access_additional": [],
+   "number_of_players": [],
+   "target_audience": [],
+   "last_updated": [
+    "2021"
+   ],
+   "licence": [
+    "CC BY-NC"
+   ],
+   "topic_area": [
+    "Open Access"
+   ],
+   "learning_objectives": [
+    "This activity helps players learn about important Open Access concepts and databases by matching pictures with the correct descriptions, making it easier to remember and understand these ideas."
+   ],
+   "formal_evaluation": [],
+   "suggested_audience": [],
+   "prior_knowledge": [],
+   "playtime": [
+    "5-10 minutes"
+   ],
+   "scalability": [],
+   "teaching_integration": [],
+   "context_specific_elements": [],
+   "preparation": [],
+   "testimonials": []
+  },
+  {
+   "id": "GID_017",
+   "anchor": "gid-017",
+   "title": "Label the Benefits of Open Access",
+   "url": "https://puzzel.org/en/label-this/play?p=-Mk1LJMKgmOcS2nD0Ag6",
+   "clusters": [
+    {
+     "number": 7,
+     "name": "Publication Sharing"
+    }
+   ],
+   "topics": [
+    "Open Access"
+   ],
+   "gameplay_style": [
+    "Solo"
+   ],
+   "tone": [
+    "Balanced"
+   ],
+   "delivery_format": [
+    "Online"
+   ],
+   "game_type": [
+    "Puzzle",
+    "Labeling"
+   ],
+   "language": [
+    "English"
+   ],
+   "creators": [
+    "Robert Gordon University Aberdeen"
+   ],
+   "description": [
+    "As part of the Open Access Week 2021 of Robert Gordon University Aberdeen, a series of mini-games were created with overarching open access themes. This game revolves around matching icons to labels about the benefits of open access."
+   ],
+   "access_additional": [],
+   "number_of_players": [],
+   "target_audience": [],
+   "last_updated": [
+    "2021"
+   ],
+   "licence": [
+    "CC BY-NC"
+   ],
+   "topic_area": [
+    "Open Access"
+   ],
+   "learning_objectives": [
+    "This activity helps players understand the benefits of Open Access by matching icons with their correct labels, making it easier to remember each benefit through visual learning."
+   ],
+   "formal_evaluation": [],
+   "suggested_audience": [],
+   "prior_knowledge": [],
+   "playtime": [
+    "5-10 minutes"
+   ],
+   "scalability": [],
+   "teaching_integration": [],
+   "context_specific_elements": [],
+   "preparation": [],
+   "testimonials": []
+  },
+  {
+   "id": "GID_018",
+   "anchor": "gid-018",
+   "title": "Open Loves Science",
+   "url": "https://nlesc.github.io/open-loves-science/",
+   "clusters": [
+    {
+     "number": 1,
+     "name": "Replication Crisis and Credibility Revolution"
+    },
+    {
+     "number": 3,
+     "name": "Ways of Working"
+    },
+    {
+     "number": 5,
+     "name": "Transparency and Reproducibility in Computation and Analysis"
+    },
+    {
+     "number": 6,
+     "name": "FAIR Data and Materials"
+    },
+    {
+     "number": 7,
+     "name": "Publication Sharing"
+    },
+    {
+     "number": 8,
+     "name": "Replication and Meta-Research"
+    },
+    {
+     "number": 9,
+     "name": "Academic Structures and Institutions"
+    },
+    {
+     "number": 11,
+     "name": "Research Integrity"
+    }
+   ],
+   "topics": [
+    "Research Integrity",
+    "Open Data",
+    "Open Access",
+    "Pre-registration",
+    "Open Code",
+    "Big Team Science",
+    "Open Methods",
+    "Open Hardware",
+    "General Open Research"
+   ],
+   "gameplay_style": [
+    "Competitive"
+   ],
+   "tone": [
+    "Balanced"
+   ],
+   "delivery_format": [
+    "In-person"
+   ],
+   "game_type": [
+    "Card game",
+    "Debate/Discussion focused"
+   ],
+   "language": [
+    "English"
+   ],
+   "creators": [
+    "GHOST Collective which includes: Bjørn Bartholdy, Dafne Jansen, Dan Rudmann, Elisa Rodenburg, Eva Lekkerkerker, Lena Karvovskaya, Lieke de Boer, Meron Vermaas, Stefan Kirsch, Stephanie van de Sandt, Tycho Hofstra"
+   ],
+   "description": [
+    "This game revolves around matching core Open Science principles (white cards) with Open Science concepts (red cards). An Open Science Cupid is selected who decides upon the best fit, and the player who played that card earns one point. The role of Cupid then passes on the next player to their left. The game can be played in two variations, one in which the cupid selects the best fit and provides their rationale for their choice, and one in which the players first articulate an argument of why their card presents the best fit."
+   ],
+   "access_additional": [],
+   "number_of_players": [
+    "3-7 players"
+   ],
+   "target_audience": [
+    "Researchers"
+   ],
+   "last_updated": [],
+   "licence": [],
+   "topic_area": [
+    "Research Integrity, Open Data, Open Access, Pre-registration, Open Code, Big Team Science, Open Methods, Open Hardware, General Open Research, Inclusivity"
+   ],
+   "learning_objectives": [
+    "Through this interactive card game, players will reflect on their own perspectives, critically assess the values of Open Science, and engage in meaningful discussions. By articulating their choices and defending their reasoning, participants will not only strengthen their knowledge of key Open Science topics but also enhance their ability to collaborate, debate, and think critically about research practices and reform."
+   ],
+   "formal_evaluation": [],
+   "suggested_audience": [],
+   "prior_knowledge": [
+    "Knowledge about research practices"
+   ],
+   "playtime": [
+    "5 minutes - 24 hours"
+   ],
+   "scalability": [],
+   "teaching_integration": [],
+   "context_specific_elements": [],
+   "preparation": [
+    "Printing, instructor/moderator needed"
+   ],
+   "testimonials": []
+  },
+  {
+   "id": "GID_019",
+   "anchor": "gid-019",
+   "title": "Software Horror Escape Room",
+   "url": "https://nlesc.github.io/softwarehorrorgame/SoftwareHorrorGame.html",
+   "clusters": [],
+   "topics": [],
+   "gameplay_style": [
+    "Solo"
+   ],
+   "tone": [
+    "Balanced"
+   ],
+   "delivery_format": [
+    "Online"
+   ],
+   "game_type": [
+    "Role-play",
+    "Escape room",
+    "Puzzle",
+    "Storytelling/Narrative"
+   ],
+   "language": [
+    "English"
+   ],
+   "creators": [
+    "GHOST Collective"
+   ],
+   "description": [
+    "The Software Horror Game is an interactive narrative game developed by the Netherlands eScience Center that uses a horror theme to immerse players in the eerie experience of a researcher facing the consequences of poor software practices. After submitting a paper to the fictional Frontiers in Hell, players must navigate a series of unsettling scenarios that highlight common pitfalls in research software development, such as lack of documentation, improper licensing, and faulty version control."
+   ],
+   "access_additional": [],
+   "number_of_players": [],
+   "target_audience": [],
+   "last_updated": [
+    "2022"
+   ],
+   "licence": [
+    "Creative Common Attribution 4.0 International License (CC BY 4.0)"
+   ],
+   "topic_area": [
+    "Research Software Management"
+   ],
+   "learning_objectives": [
+    "Through its atmospheric storytelling and problem-solving elements, the game encourages players to reflect on the importance of sustainable and ethical research software practices. It aims to raise awareness about the value of open science principles and responsible coding, helping researchers recognize and avoid mistakes that can jeopardize the integrity and reproducibility of their work."
+   ],
+   "formal_evaluation": [],
+   "suggested_audience": [],
+   "prior_knowledge": [],
+   "playtime": [],
+   "scalability": [],
+   "teaching_integration": [],
+   "context_specific_elements": [],
+   "preparation": [],
+   "testimonials": []
+  },
+  {
+   "id": "GID_020",
+   "anchor": "gid-020",
+   "title": "Data Horror Escape Room",
+   "url": "https://sites.google.com/vu.nl/datahorror/home",
+   "clusters": [],
+   "topics": [],
+   "gameplay_style": [
+    "Solo"
+   ],
+   "tone": [
+    "Balanced"
+   ],
+   "delivery_format": [
+    "Online"
+   ],
+   "game_type": [
+    "Role-play",
+    "Escape room",
+    "Puzzle",
+    "Storytelling/Narrative"
+   ],
+   "language": [
+    "English"
+   ],
+   "creators": [
+    "GHOST collective"
+   ],
+   "description": [
+    "The Data Horror Escape Room is an interactive online game developed by Vrije Universiteit Amsterdam in collaboration with Leiden University and Eindhoven University of Technology. Set in a fictional professor’s office, players must solve six puzzles to “escape” by completing a data management plan. Each puzzle addresses a key topic in research data management (RDM), including FAIR data principles, metadata, personal data handling, archiving, persistent identifiers, and data sharing. The game uses a light horror theme to engage players in a fun, narrative-driven learning experience."
+   ],
+   "access_additional": [],
+   "number_of_players": [],
+   "target_audience": [],
+   "last_updated": [
+    "2022"
+   ],
+   "licence": [
+    "Creative Common Attribution 4.0 International License (CC BY 4.0)"
+   ],
+   "topic_area": [
+    "Data Management"
+   ],
+   "learning_objectives": [
+    "Through this game, players are expected to learn about essential RDM practices in an engaging and memorable way. By solving puzzles, they gain insights into the importance of proper data documentation, ethical considerations, and data sharing protocols. The escape room format encourages reflection on best practices for data stewardship, aiming to make RDM concepts more accessible and less intimidating."
+   ],
+   "formal_evaluation": [],
+   "suggested_audience": [],
+   "prior_knowledge": [],
+   "playtime": [],
+   "scalability": [],
+   "teaching_integration": [],
+   "context_specific_elements": [],
+   "preparation": [],
+   "testimonials": []
+  },
+  {
+   "id": "GID_021",
+   "anchor": "gid-021",
+   "title": "Open Science Against Humanity",
+   "url": "https://github.com/ubvu/OpenScienceAgainstHumanity",
+   "clusters": [],
+   "topics": [
+    "General Open Research"
+   ],
+   "gameplay_style": [
+    "Competitive"
+   ],
+   "tone": [
+    "Lighthearted/Playful"
+   ],
+   "delivery_format": [
+    "Hybrid"
+   ],
+   "game_type": [
+    "Card game",
+    "Party"
+   ],
+   "language": [
+    "English"
+   ],
+   "creators": [
+    "GHOST Collective"
+   ],
+   "description": [
+    "Open Science Against Humanity is a humorous card game inspired by Cards Against Humanity that uses Open Science–themed prompts to spark discussion, raise awareness, and encourage critical reflection on research practices."
+   ],
+   "access_additional": [],
+   "number_of_players": [
+    "3+ players"
+   ],
+   "target_audience": [
+    "Researcher friendly"
+   ],
+   "last_updated": [
+    "2023"
+   ],
+   "licence": [
+    "Creative Commons BY-NC-SA 2.0 license"
+   ],
+   "topic_area": [
+    "General Open Research"
+   ],
+   "learning_objectives": [],
+   "formal_evaluation": [],
+   "suggested_audience": [
+    "(Early carreer) researchers and people in research support. The game is very fun can be used to discuss very recognizable issues you will/have run in to during various stages of the research cycle."
+   ],
+   "prior_knowledge": [
+    "Some knowledge of the research cycle and some basic knowledge of open research principles make the game more fun. Different knowledge levels between players are OK!"
+   ],
+   "playtime": [
+    "Varies, you can technically end the game whenever you want."
+   ],
+   "scalability": [
+    "You could do it in (small) teams; this would mean that there would be discussion within the team to choose which card to play and the Reviewer team would discuss which card wins.\nI think it could work in a plenary setting but you would have to get a bit more creative."
+   ],
+   "teaching_integration": [
+    "I think the game is a nice ice-breaker or can be played as a closing activity. It is provides a low-threshold and fun way to discuss common issues and personal experiences."
+   ],
+   "context_specific_elements": [],
+   "preparation": [
+    "You can request a physical version of the game, otherwise there is no preparation required."
+   ],
+   "testimonials": [
+    "Mostly a very fun and engaging game! Many people are familiar with the gameplay since it is based on Cards Against Humanity, so that minimizes having to explain how it works. I greatly enjoy it, and I think it is very nice to play with people with varying expertise in research and open research knowledge."
+   ]
+  },
+  {
+   "id": "GID_022",
+   "anchor": "gid-022",
+   "title": "The Publishing Trap",
+   "url": "https://copyrightliteracy.org/resources/the-publishing-trap/the-publishing-trap-online",
+   "clusters": [
+    {
+     "number": 3,
+     "name": "Ways of Working"
+    },
+    {
+     "number": 6,
+     "name": "FAIR Data and Materials"
+    },
+    {
+     "number": 7,
+     "name": "Publication Sharing"
+    },
+    {
+     "number": 9,
+     "name": "Academic Structures and Institutions"
+    },
+    {
+     "number": 11,
+     "name": "Research Integrity"
+    }
+   ],
+   "topics": [
+    "Open Data",
+    "Open Access",
+    "Open Educational Resources",
+    "General Open Research"
+   ],
+   "gameplay_style": [
+    "Team-Based Competition"
+   ],
+   "tone": [],
+   "delivery_format": [
+    "Hybrid"
+   ],
+   "game_type": [
+    "Board game",
+    "Role-play",
+    "Storytelling/Narrative",
+    "Debate/Discussion focused"
+   ],
+   "language": [
+    "English"
+   ],
+   "creators": [
+    "UK Copyright team (Chris Morrison and Jane Secker)"
+   ],
+   "description": [
+    "The Publishing Trap is an educational board game (also playable online) where players act as academics making publishing and communication choices. Through career stages like thesis, conferences, journals, and books, teams explore how decisions affect impact, knowledge, and money, while learning about copyright and open access"
+   ],
+   "access_additional": [],
+   "number_of_players": [
+    "4 - 24 players."
+   ],
+   "target_audience": [
+    "Researchers, Academics, Doctoralstudents, Librarians"
+   ],
+   "last_updated": [
+    "2021"
+   ],
+   "licence": [
+    "Creative Commons, Attribution, ShareAlike 4.0"
+   ],
+   "topic_area": [
+    "Open Data, Open Access, Open Educational Resources, General Open Research"
+   ],
+   "learning_objectives": [
+    "Through playing the game and discussing your choices you will be able to:\nCritique and assess the publication and communication choices available to\nacademics at different stages in their career.\nCompare the implications of open and more closed publishing routes.\nCritically evaluate the relationship between knowledge, impact and money in\nacademic life."
+   ],
+   "formal_evaluation": [
+    "Product Review:\nhttps://www.researchgate.net/publication/328012753_The_Publishing_Trap_Product_Review"
+   ],
+   "suggested_audience": [
+    "Anyone interested in scholarly publishing and open access"
+   ],
+   "prior_knowledge": [
+    "Basic knowledge about research"
+   ],
+   "playtime": [
+    "1.5–2 hours"
+   ],
+   "scalability": [],
+   "teaching_integration": [],
+   "context_specific_elements": [],
+   "preparation": [
+    "Setting up online forms (e.g., Google Forms) with the decision questions for each round.\n\nPreparing the interactive PowerPoint slides, including scoreboard and branching choices.\n\nFamiliarizing facilitators (ideally two) with the slides, rules, and learning points.\n\nArranging breakout rooms (if played online) for team discussions.\n\nCutting and printing (if played in person)"
+   ],
+   "testimonials": []
+  },
+  {
+   "id": "GID_023",
+   "anchor": "gid-023",
+   "title": "The Publish or Perish Game",
+   "url": "https://publishorperish.games/products/the-publish-or-perish-game-all-3-expansions",
+   "clusters": [
+    {
+     "number": 3,
+     "name": "Ways of Working"
+    },
+    {
+     "number": 9,
+     "name": "Academic Structures and Institutions"
+    },
+    {
+     "number": 11,
+     "name": "Research Integrity"
+    }
+   ],
+   "topics": [
+    "Research Integrity",
+    "Open Peer Review",
+    "General Open Research"
+   ],
+   "gameplay_style": [
+    "Competitive"
+   ],
+   "tone": [
+    "Lighthearted/Playful"
+   ],
+   "delivery_format": [
+    "In-person"
+   ],
+   "game_type": [
+    "Card game",
+    "Strategy",
+    "Party"
+   ],
+   "language": [
+    "English",
+    "Chinese"
+   ],
+   "creators": [
+    "Max Blai"
+   ],
+   "description": [
+    "The Publish or Perish Game is a satirical, card-based game that immerses players in the competitive and chaotic world of academic publishing. Players try to gain citations by publishing questionable research, sabotaging rivals, and channeling their inner “Reviewer 2.” The aim is to maximize citations while keeping your sanity intact."
+   ],
+   "access_additional": [],
+   "number_of_players": [],
+   "target_audience": [],
+   "last_updated": [
+    "2025"
+   ],
+   "licence": [],
+   "topic_area": [
+    "Research Integrity, Open Peer Review, General Open Research"
+   ],
+   "learning_objectives": [
+    "Players are expected to learn or reflect on:\n\nThe pressures and absurdities of academic publishing, including how one might “publish nonsense” or sabotage others to accumulate citations—satirizing real academic incentives.\n\nThe chaotic dynamics of peer review and scholarly competition, embodied by the “Reviewer 2” trope and cutthroat citation-maximization gameplay.\n\nHow academic culture can reward quantity and impact over integrity, prompting players to consider questionable practices, even if only in a humorous way\n\nBroader insight into academic norms and structures through parody, making research culture more transparent and relatable to diverse audiences"
+   ],
+   "formal_evaluation": [],
+   "suggested_audience": [],
+   "prior_knowledge": [],
+   "playtime": [],
+   "scalability": [],
+   "teaching_integration": [],
+   "context_specific_elements": [],
+   "preparation": [],
+   "testimonials": []
+  },
+  {
+   "id": "GID_024",
+   "anchor": "gid-024",
+   "title": "Research Survival Game",
+   "url": "https://zenodo.org/records/14228197",
+   "clusters": [
+    {
+     "number": 3,
+     "name": "Ways of Working"
+    },
+    {
+     "number": 6,
+     "name": "FAIR Data and Materials"
+    },
+    {
+     "number": 7,
+     "name": "Publication Sharing"
+    },
+    {
+     "number": 9,
+     "name": "Academic Structures and Institutions"
+    }
+   ],
+   "topics": [
+    "Open Data",
+    "Open Access",
+    "Open Methods",
+    "General Open Research"
+   ],
+   "gameplay_style": [
+    "Competitive",
+    "Team-Based Competition"
+   ],
+   "tone": [
+    "Balanced"
+   ],
+   "delivery_format": [
+    "In-person"
+   ],
+   "game_type": [
+    "Board game",
+    "Role-play",
+    "Strategy",
+    "Storytelling/Narrative"
+   ],
+   "language": [
+    "English"
+   ],
+   "creators": [
+    "Laura Mesotten, Anouk D'Hont, and Hanne Heirman"
+   ],
+   "description": [
+    "In the Research Survival Game, players take on the role of researchers stranded on a deserted island. By navigating good and flawed research practices, they encounter key concepts in Open Access, Research Data Management, and Information Retrieval. Correct answers to multiple-choice and true/false questions earn knowledge cards, while pitfalls and even a thieving monkey can set them back. The winner is the player or team with the most cards at the endpoint, symbolizing readiness to conduct sound research and “escape the island."
+   ],
+   "access_additional": [],
+   "number_of_players": [
+    "2 to 6 players in individual mode or 2 to 4 teams in team mode."
+   ],
+   "target_audience": [
+    "Researchers and research support staff."
+   ],
+   "last_updated": [
+    "2024"
+   ],
+   "licence": [
+    "CC BY-NC-SA 4.0"
+   ],
+   "topic_area": [
+    "Open Data, Open Access, Open Methods, General Open Research"
+   ],
+   "learning_objectives": [
+    "• Be introduced to the various steps involved in the research process and start to recognize the differences between recommended and flawed approaches.",
+    "Explore different pathways for publishing in Open Access and begin to understand how to make decisions about sharing your work openly.",
+    "Receive a first overview of key concepts for managing research data, guiding you on how to ensure it is FAIR (Findable, Accessible, Interoperable, and Reusable) and compliant with relevant standards and guidelines.",
+    "Develop initial experience with systematically searching for information, helping you locate and evaluate relevant sources for your research",
+    "It is important to tailor the game to its audience. Depending on the focus of the training, questions can be limited to a single theme or include all themes. The cards are colour-coded by theme and stored in separate boxes, making it very easy to use only one box if you want to focus on a specific theme. Similarly, the questions vary in difficulty, making the game suitable for researchers at any career stage. When we guide a game session, we can also review the questions beforehand and filter some out if needed.\n\nThe game’s physical format encourages interactive engagement. By reading the questions out loud and allowing time for discussion, it stimulates interaction among researchers as well as between researchers and support staff. Researchers are prompted to share their experiences, making it possible for support staff to identify specific challenges researchers encounter. These insights not only allow us to refine the game itself but also inform the design of future training sessions. For instance, if researchers struggle to answer questions about metadata, this may indicate a need for additional training on that topic.\n\nA downside of the format is that it can only be played with small groups around one board. That’s why we have printed multiple copies. When we train a large group, we simply bring several boards and divide the participants among them. This way, the game can still be used for bigger groups.\n\nThe game concept is intentionally straightforward to ensure the rules are easy to understand. This way, we don’t lose too much time explaining how to play, and it allows researchers to borrow the game and play it on their own without a member of the research support team present.\n\nAnd we have also experienced that the game works well both as an introduction to key concepts (which could be followed by a more in-depth training session), and the other way around: you can first give a training and then end with the game as a way to see how much they understood and repeat some information. This not only helps participants repeat a bit what they have learned, but also new topics can be discussed that didn’t come up during the training."
+   ],
+   "formal_evaluation": [],
+   "suggested_audience": [],
+   "prior_knowledge": [],
+   "playtime": [
+    "30 minutes – 2 hours (depending on rounds, cards, and agreed endpoint)"
+   ],
+   "scalability": [],
+   "teaching_integration": [],
+   "context_specific_elements": [],
+   "preparation": [
+    "Printing and setting up gameboard or renting it from KU Leuven Libraries if you are based in Belgium, pawns, die, and Q&A cards.\nDecide on game endpoint (rounds, time, or number of cards). It's a"
+   ],
+   "testimonials": []
+  },
+  {
+   "id": "GID_025",
+   "anchor": "gid-025",
+   "title": "The Game of Open Access (UCLA)",
+   "url": "https://escholarship.org/uc/item/69t8150b",
+   "clusters": [
+    {
+     "number": 6,
+     "name": "FAIR Data and Materials"
+    },
+    {
+     "number": 7,
+     "name": "Publication Sharing"
+    },
+    {
+     "number": 9,
+     "name": "Academic Structures and Institutions"
+    }
+   ],
+   "topics": [
+    "Open Access",
+    "Open Peer Review",
+    "General Open Research"
+   ],
+   "gameplay_style": [
+    "Competitive"
+   ],
+   "tone": [
+    "Balanced"
+   ],
+   "delivery_format": [
+    "In-person"
+   ],
+   "game_type": [
+    "Board game"
+   ],
+   "language": [
+    "English"
+   ],
+   "creators": [
+    "Jennifer Chan, Rachel Green, Victoria Haindel, Simon Lee. Tranfield, Wynn M. Tranfield"
+   ],
+   "description": [
+    "The Game of Open Access is an educational board game that introduces and tests knowledge of Open Access publishing. Players move around the board, answer OA-related questions, and collect points through correct answers. The player with the most correct answers wins."
+   ],
+   "access_additional": [],
+   "number_of_players": [
+    "1-4 players"
+   ],
+   "target_audience": [],
+   "last_updated": [
+    "2019"
+   ],
+   "licence": [],
+   "topic_area": [
+    "Open Access, Open Peer Review, General Open Research"
+   ],
+   "learning_objectives": [
+    "Understand key concepts in Open Access (e.g., APCs, embargoes, repositories, preprints, peer review).\nBuild familiarity with tools and resources like DOAJ, OA Button, Unpaywall, and institutional repositories.\nReflect on how publishing choices affect accessibility of research"
+   ],
+   "formal_evaluation": [],
+   "suggested_audience": [],
+   "prior_knowledge": [],
+   "playtime": [
+    "25-45 minutes"
+   ],
+   "scalability": [],
+   "teaching_integration": [],
+   "context_specific_elements": [],
+   "preparation": [
+    "Printing of game board, 4 player pieces, 15 question cards, 1 acknowledgement card, 1 die"
+   ],
+   "testimonials": []
+  },
+  {
+   "id": "GID_026",
+   "anchor": "gid-026",
+   "title": "The Open Science Files",
+   "url": "https://figshare.com/articles/figure/The_Open_Science_Files/22109870?file=39285563",
+   "clusters": [
+    {
+     "number": 3,
+     "name": "Ways of Working"
+    },
+    {
+     "number": 6,
+     "name": "FAIR Data and Materials"
+    },
+    {
+     "number": 7,
+     "name": "Publication Sharing"
+    },
+    {
+     "number": 9,
+     "name": "Academic Structures and Institutions"
+    },
+    {
+     "number": 11,
+     "name": "Research Integrity"
+    }
+   ],
+   "topics": [
+    "Research Integrity",
+    "Open Data",
+    "Open Access",
+    "Open Peer Review",
+    "Open Methods",
+    "General Open Research"
+   ],
+   "gameplay_style": [
+    "Cooperative/Collaborative"
+   ],
+   "tone": [
+    "Balanced"
+   ],
+   "delivery_format": [
+    "Hybrid"
+   ],
+   "game_type": [
+    "Puzzle",
+    "Storytelling/Narrative",
+    "Debate/Discussion focused"
+   ],
+   "language": [
+    "English"
+   ],
+   "creators": [
+    "Hannah Crago, Thomas O'Toole-Mills"
+   ],
+   "description": [
+    "An interactive, case-based puzzle game where players act as open science investigators. They solve four interconnected “case files” (Licensing, Data, Choosing a Journal, Research Partners), each with tasks, codes, and DOIs leading to openly available research outputs. The final case reveals who is disrupting open science practices."
+   ],
+   "access_additional": [],
+   "number_of_players": [],
+   "target_audience": [],
+   "last_updated": [
+    "2023"
+   ],
+   "licence": [
+    "CC BY 4.0"
+   ],
+   "topic_area": [
+    "Research Integrity, Open Data, Open Access, Open Peer Review, Open Methods, General Open Research"
+   ],
+   "learning_objectives": [
+    "Check copyright and licensing for research outputs (CC BY, CC0, reuse).\n\nApply FAIR data principles and publish datasets openly.\n\nEvaluate journals for open access suitability (gold, hybrid, diamond, transformative agreements).\n\nIdentify suitable collaborators using ORCID and open science networks.\n\nReflect on broader open science workflows and institutional policies."
+   ],
+   "formal_evaluation": [],
+   "suggested_audience": [],
+   "prior_knowledge": [],
+   "playtime": [],
+   "scalability": [],
+   "teaching_integration": [],
+   "context_specific_elements": [],
+   "preparation": [],
+   "testimonials": []
+  },
+  {
+   "id": "GID_027",
+   "anchor": "gid-027",
+   "title": "Researchers, Impact & Publications (R.I.P.)",
+   "url": "https://data.bris.ac.uk/data/dataset/1nufzjw3m9ho72cwisj1pwc75h",
+   "clusters": [
+    {
+     "number": 3,
+     "name": "Ways of Working"
+    },
+    {
+     "number": 6,
+     "name": "FAIR Data and Materials"
+    },
+    {
+     "number": 7,
+     "name": "Publication Sharing"
+    },
+    {
+     "number": 9,
+     "name": "Academic Structures and Institutions"
+    },
+    {
+     "number": 11,
+     "name": "Research Integrity"
+    }
+   ],
+   "topics": [
+    "Research Integrity",
+    "Open Data",
+    "Open Access",
+    "Open Peer Review",
+    "General Open Research"
+   ],
+   "gameplay_style": [
+    "Competitive"
+   ],
+   "tone": [
+    "Lighthearted/Playful"
+   ],
+   "delivery_format": [
+    "In-person"
+   ],
+   "game_type": [
+    "Card game",
+    "Party",
+    "Debate/Discussion focused"
+   ],
+   "language": [
+    "English"
+   ],
+   "creators": [
+    "Kirsty Merrett, Christopher Warren"
+   ],
+   "description": [
+    "A parody-style card game, inspired by Cards Against Humanity, adapted for scholarly publishing and research data management. Players combine question and answer cards to create humorous or insightful takes on open research, impact, and academic life. It encourages discussion about research integrity, open access, open data, and scholarly communication in a light, social setting."
+   ],
+   "access_additional": [],
+   "number_of_players": [
+    "Minimum: 4 players, recommended 6-8 players"
+   ],
+   "target_audience": [],
+   "last_updated": [
+    "2020"
+   ],
+   "licence": [
+    "Creative Commons BY-NC-SA 2.0"
+   ],
+   "topic_area": [
+    "Research Integrity, Open Data, Open Access, Open Peer Review, General Open Research"
+   ],
+   "learning_objectives": [
+    "Reflect on challenges of publishing, data management, and open access.\n\nRecognize key concepts (e.g., DOIs, FAIR data, repositories, embargoes, APCs)"
+   ],
+   "formal_evaluation": [],
+   "suggested_audience": [],
+   "prior_knowledge": [],
+   "playtime": [
+    "Pedagogically speaking, we've found that - although able to run as a full-length game for as long as the cards hold out, or as a 'quickie' to fill in a half hour in a teaching day or conference break, it is the latter that is most popular. Once you get the concept (a 'clean' version of Cards Against Humanity, with plenty of scope to talk through concepts in research, impact or publishing from an academic view), then people can play as many or as few rounds as they want."
+   ],
+   "scalability": [],
+   "teaching_integration": [
+    "Printing a select subset of the cards  in a larger format - such as A5 or A4 - laminating them and putting Velcro on the back is a really good icebreaker for people to play with at stalls, fairs or other events where there is a presence from Research Support.  There is something quite striking about the black-and-white cards and it really served as a hook to draw people towards us which enabled us to open a conversation - it was fun for researchers/PGRs etc. be able to throw up silly answers on a large felt board."
+   ],
+   "context_specific_elements": [],
+   "preparation": [
+    "Printing of cards",
+    "Printing and cutting (& optionally laminating for replayability)."
+   ],
+   "testimonials": [
+    "The emphasis should always be on keeping the tone fairly light, to break-up the actually teaching part of what any given correct answer 'should' be. It is a lot of fun to break out though."
+   ]
+  },
+  {
+   "id": "GID_028",
+   "anchor": "gid-028",
+   "title": "Statcheck: The Game",
+   "url": "https://sachaepskamp.github.io/StatcheckTheGame",
+   "clusters": [
+    {
+     "number": 1,
+     "name": "Replication Crisis and Credibility Revolution"
+    },
+    {
+     "number": 2,
+     "name": "Conceptual and Statistical Knowledge"
+    },
+    {
+     "number": 9,
+     "name": "Academic Structures and Institutions"
+    },
+    {
+     "number": 11,
+     "name": "Research Integrity"
+    }
+   ],
+   "topics": [
+    "Research Integrity",
+    "Open Peer Review",
+    "Open Methods",
+    "Statistical Knowledge",
+    "General Open Research"
+   ],
+   "gameplay_style": [
+    "Competitive"
+   ],
+   "tone": [
+    "Lighthearted/Playful"
+   ],
+   "delivery_format": [
+    "In-person"
+   ],
+   "game_type": [
+    "Card game",
+    "Strategy",
+    "Party",
+    "Storytelling/Narrative"
+   ],
+   "language": [
+    "English"
+   ],
+   "creators": [
+    "Sacha Epskamp, Adela Isvoranu"
+   ],
+   "description": [
+    "Statcheck: The Game is a satirical card game where players rush to publish two papers. To succeed, they must combine test, statistic, and p-value cards to create publishable results, while navigating peer review and disruptive events. Players can bend the rules with questionable research practices, fraud, or post-hoc theorizing, but risk being caught by Open Science or the Statcheck! tool. The game humorously highlights the role of luck, integrity, and systemic flaws in scientific publishing."
+   ],
+   "access_additional": [],
+   "number_of_players": [],
+   "target_audience": [],
+   "last_updated": [
+    "2018"
+   ],
+   "licence": [
+    "Game materials do not use copyright-free images"
+   ],
+   "topic_area": [
+    "Research Integrity, Open Peer Review, Open Methods, Statistical Knowledge, General Open Research"
+   ],
+   "learning_objectives": [
+    "Experience gameplay reflecting publication pressure, competition, and statistical manipulation.\n\nLearn about questionable research practices.\n\nUnderstand the role of statcheck tools and open science in detecting inconsistencies and promoting integrity."
+   ],
+   "formal_evaluation": [],
+   "suggested_audience": [],
+   "prior_knowledge": [],
+   "playtime": [],
+   "scalability": [],
+   "teaching_integration": [],
+   "context_specific_elements": [],
+   "preparation": [
+    "Printing of cards, 8-sided die needed (could use digital die)"
+   ],
+   "testimonials": []
+  },
+  {
+   "id": "GID_029",
+   "anchor": "gid-029",
+   "title": "How to Fail Your Research Degree",
+   "url": "http://howtofailyourresearchdegree.com/",
+   "clusters": [
+    {
+     "number": 3,
+     "name": "Ways of Working"
+    },
+    {
+     "number": 6,
+     "name": "FAIR Data and Materials"
+    },
+    {
+     "number": 9,
+     "name": "Academic Structures and Institutions"
+    },
+    {
+     "number": 11,
+     "name": "Research Integrity"
+    }
+   ],
+   "topics": [
+    "Research Integrity",
+    "Open Data",
+    "General Open Research"
+   ],
+   "gameplay_style": [
+    "Competitive",
+    "Team-Based Competition"
+   ],
+   "tone": [
+    "Balanced"
+   ],
+   "delivery_format": [
+    "In-person"
+   ],
+   "game_type": [
+    "Board game",
+    "Puzzle",
+    "Strategy"
+   ],
+   "language": [
+    "English"
+   ],
+   "creators": [
+    "Daisy Abbott"
+   ],
+   "description": [
+    "An educational, tile-based board game where players take on the role of students trying to complete a master’s dissertation under time pressure. The aim is to score the best grade by linking as many thesis cards as possible. Events disrupt or support their progress during three main stages (CONTEXT, IMPLEMENTATION, WRITE-UP)."
+   ],
+   "access_additional": [],
+   "number_of_players": [
+    "1-12 players",
+    "4-12"
+   ],
+   "target_audience": [
+    "Students",
+    "postgraduate students, tutors of postgraduate students (including PGT and PGR)"
+   ],
+   "last_updated": [
+    "2022"
+   ],
+   "licence": [
+    "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License",
+    "CC-BY-SA"
+   ],
+   "topic_area": [
+    "Research Integrity, Open Data, General Open Research",
+    "Research Integrity, General Open Research, Research project management, risk mitigation, research processes"
+   ],
+   "learning_objectives": [
+    "Gain knowledge on the process of publishing a research paper.",
+    "Understand the various risks affecting research and their impact on projects\nRecognise dependencies between tasks at different stages of research\nUnderstand the interrelations of different risks with the activities to negate or mitigate them\nBe aware of the time-critical nature of short research projects"
+   ],
+   "formal_evaluation": [
+    "https://gamebasedlearninginhe.wordpress.com/2024/05/22/how-to-fail-your-research-degree-and-its-growing-impact",
+    "https://www.tandfonline.com/doi/full/10.1080/23752696.2019.1629825\n\nResearch skills are challenging to teach in a way that is meaningful to students and has ongoing impact in research practice. This paper investigates constructivist and experiential strategies for effective learning and deep understanding of postgraduate research skills and proposes a game-based learning (GBL) solution. A (non-digital) game called How to Fail Your Research Degree was designed and iteratively developed. Gameplay loop analysis identifies various learning and game mechanics and contextualises them in relation to GBL theory. Evaluation of gameplay (n = 127) demonstrates effective transmission of intended learning outcomes and positive game experience based on Keller’s Attention-Relevance-Confidence-Satisfaction (ARCS) model. Discussion proposes that the game has high cognitive authenticity, relies heavily on tutor facilitation, can create tension between knowledge and confidence, and is applicable to multiple domains and learning situations. GBL is proposed to be an original and effective approach to teaching high-level, functional learning outcomes such as academic research skills."
+   ],
+   "suggested_audience": [
+    "postgraduate students, final year undergraduate students, doctoral students, early career researchers"
+   ],
+   "prior_knowledge": [
+    "none"
+   ],
+   "playtime": [
+    "45–90 minutes",
+    "45 mins gameplay, up to 1 hour debrief"
+   ],
+   "scalability": [
+    "only works with up to 4 teams, of up to 3-4 people per team. Digital versions are available for demo play with individuals but this is not the recommended approach."
+   ],
+   "teaching_integration": [
+    "In a 2 hour seminar session, first hour for setup and play, second hour for debrief and discussion. Works very well as an icebreaker to a postgrade course."
+   ],
+   "context_specific_elements": [
+    "there are a couple of cards which are context-specific to PGT teaching, so these could be altered for PGR but otherwise it is very generically applicable to all topics."
+   ],
+   "preparation": [
+    "Facilitator for students needed, printing of tiles",
+    "Facilitator needs to learn how to run the game, if getting the free version cutting out the cards is needed, if buying as print-on-demand no prep."
+   ],
+   "testimonials": [
+    "\"The game taught various elements of research in a fun and interactive manner.\"\n\n\"I also felt I could relate to my own research process throughout the game.\"\n\n\"Really good tool to brainstorm process of research. \"\n\n\"Very positive experience as it is very well organised and didactic and present a clear framework for approaching research.\"\n\n\"Really excellent way into thinking through the mechanics of research!\"\n\n\"I remember at the time the game made me think about how carefully I had planned my research and prompted me to re-think the timescales required for things like ethical clearance. It also encouraged me to rethink my approach to backing up my work. I think overall the game had a positive impact on my approach to planning my research project, as I took a lot of it into consideration when planning the next stages of my project.\"\n\n\"I hope my classmates do this!\""
+   ]
+  },
+  {
+   "id": "GID_033",
+   "anchor": "gid-033",
+   "title": "CURATE! The Digital Curator Game",
+   "url": "https://zenodo.org/records/438694",
+   "clusters": [
+    {
+     "number": 6,
+     "name": "FAIR Data and Materials"
+    },
+    {
+     "number": 7,
+     "name": "Publication Sharing"
+    },
+    {
+     "number": 9,
+     "name": "Academic Structures and Institutions"
+    },
+    {
+     "number": 11,
+     "name": "Research Integrity"
+    }
+   ],
+   "topics": [
+    "Research Integrity",
+    "Open Data",
+    "General Open Research"
+   ],
+   "gameplay_style": [
+    "Competitive"
+   ],
+   "tone": [
+    "Balanced"
+   ],
+   "delivery_format": [
+    "In-person"
+   ],
+   "game_type": [
+    "Board game",
+    "Debate/Discussion focused"
+   ],
+   "language": [
+    "English"
+   ],
+   "creators": [
+    "Katie McCadden, Susan Schreibmann, Jennifer Edmond, Kate Fernie, Carol Usher"
+   ],
+   "description": [
+    "CURATE is a board game about digital curation and preservation. Players move through the stages of the digital curation lifecycle (Develop, Educate, and Manage) while facing events like funding cuts, staff changes, or successful preservation projects. Along the way, they draw cards that spark group discussion. The goal is to reach the final stage while avoiding the dreaded “Digital Curator Gap.”"
+   ],
+   "access_additional": [],
+   "number_of_players": [
+    "4 - 6 players, with one player appointed to act as a facilitator"
+   ],
+   "target_audience": [],
+   "last_updated": [
+    "2012"
+   ],
+   "licence": [],
+   "topic_area": [
+    "Research Integrity, Open Data, General Open Research"
+   ],
+   "learning_objectives": [
+    "Reflecting on issues and challenges that arise when institutions engage with digital curation and preservation."
+   ],
+   "formal_evaluation": [
+    "https://ceur-ws.org/Vol-1016/paper12.pdf"
+   ],
+   "suggested_audience": [],
+   "prior_knowledge": [],
+   "playtime": [
+    "45 minutes"
+   ],
+   "scalability": [],
+   "teaching_integration": [],
+   "context_specific_elements": [],
+   "preparation": [
+    "Printing of game board, cards and record sheets (Game board requires a large-format printer). Appointing a facilitator for guiding group discussions and ensuring contributions by all players. Provision of dice and game tokens."
+   ],
+   "testimonials": []
+  },
+  {
+   "id": "GID_034",
+   "anchor": "gid-034",
+   "title": "Copyright: The Card Game",
+   "url": "https://copyrightliteracy.org/resources/copyright-the-card-game",
+   "clusters": [
+    {
+     "number": 3,
+     "name": "Ways of Working"
+    },
+    {
+     "number": 6,
+     "name": "FAIR Data and Materials"
+    },
+    {
+     "number": 7,
+     "name": "Publication Sharing"
+    },
+    {
+     "number": 11,
+     "name": "Research Integrity"
+    }
+   ],
+   "topics": [
+    "Research Integrity",
+    "General Open Research"
+   ],
+   "gameplay_style": [
+    "Team-Based Competition"
+   ],
+   "tone": [
+    "Balanced"
+   ],
+   "delivery_format": [
+    "Hybrid"
+   ],
+   "game_type": [
+    "Card game",
+    "Debate/Discussion focused"
+   ],
+   "language": [
+    "English",
+    "French",
+    "Welsh"
+   ],
+   "creators": [
+    "Chris Morrison, Jane Secker, Copyright Literacy organization"
+   ],
+   "description": [
+    "Copyright: The Card Game is educational game designed to train educators, librarians, and support staff about UK copyright law. The game is designed to be played by up to 5 teams of up to 6 people and takes delegates from copyright basics through to real world scenarios which explore the relationship between licences and copyright fair dealing exceptions. The teams are sent into break-out rooms during each of the four rounds of the game to discuss their answers to common copyright scenarios. They respond using online forms (Google form or Microsoft Forms) which allows the trainer to collect in their answers from each team and respond accordingly in a group discussion."
+   ],
+   "access_additional": [],
+   "number_of_players": [
+    "Up to 5 teams of up to 6 people (30 participants in total)"
+   ],
+   "target_audience": [
+    "Educators, librarians and learning support staff."
+   ],
+   "last_updated": [
+    "2020"
+   ],
+   "licence": [
+    "CC BY-SA 4.0"
+   ],
+   "topic_area": [
+    "Research Integrity, General Open Research"
+   ],
+   "learning_objectives": [
+    "Understand how copyright really works in practice in your sector\nEncounter existing licences and the new legislative framework\nPractice using the exceptions and licences in sector specific examples\nDiscuss the role of risk management in making decisions"
+   ],
+   "formal_evaluation": [],
+   "suggested_audience": [],
+   "prior_knowledge": [],
+   "playtime": [
+    "1.5 – 3 hours"
+   ],
+   "scalability": [],
+   "teaching_integration": [],
+   "context_specific_elements": [],
+   "preparation": [
+    "Online meeting platform with breakout room functionality.\nPDF card decks.\nGoogle Forms or Microsoft Forms set up for each round to collect team answers."
+   ],
+   "testimonials": []
+  },
+  {
+   "id": "GID_035",
+   "anchor": "gid-035",
+   "title": "Open Science in Peril",
+   "url": "https://figshare.com/projects/Open_Science_in_Peril/194243",
+   "clusters": [
+    {
+     "number": 3,
+     "name": "Ways of Working"
+    },
+    {
+     "number": 6,
+     "name": "FAIR Data and Materials"
+    },
+    {
+     "number": 7,
+     "name": "Publication Sharing"
+    },
+    {
+     "number": 9,
+     "name": "Academic Structures and Institutions"
+    },
+    {
+     "number": 11,
+     "name": "Research Integrity"
+    }
+   ],
+   "topics": [
+    "Research Integrity",
+    "Open Data",
+    "Open Access",
+    "Open Peer Review",
+    "General Open Research"
+   ],
+   "gameplay_style": [
+    "Team-Based Competition"
+   ],
+   "tone": [
+    "Balanced"
+   ],
+   "delivery_format": [
+    "Online"
+   ],
+   "game_type": [
+    "Debate/Discussion focused",
+    "Quiz"
+   ],
+   "language": [
+    "English"
+   ],
+   "creators": [
+    "Katrine Sundsbø, Sarah Coombs, Aisling Coyne"
+   ],
+   "description": [
+    "Open Science in Peril game-show style educational game about open science and publishing. Played in teams with an audience acting as the “editorial board,” it follows a Jeopardy-style format where participants answer questions in categories such as FAIR data, open licences, acronyms, and research outputs. Teams compete for funds to “publish” in open access journals, while editorial board members accept or reject answers."
+   ],
+   "access_additional": [],
+   "number_of_players": [
+    "Teams of 3–5 players each (usually 2–3 teams). Additional audience as Editorial Board (no upper limit)"
+   ],
+   "target_audience": [],
+   "last_updated": [
+    "2023"
+   ],
+   "licence": [],
+   "topic_area": [
+    "Research Integrity, Open Data, Open Access, Open Peer Review, General Open Research"
+   ],
+   "learning_objectives": [
+    "Explore key concepts of open science\n\nReflect on equity issues in publishing and rising APC costs.\n\nRecognize risks like predatory publishers and questionable practices.\n\nDiscuss different routes to Open Access."
+   ],
+   "formal_evaluation": [],
+   "suggested_audience": [],
+   "prior_knowledge": [],
+   "playtime": [
+    "60–90 minutes"
+   ],
+   "scalability": [],
+   "teaching_integration": [],
+   "context_specific_elements": [],
+   "preparation": [
+    "Print and laminate cards, provide buzzers whiteboards/paper for final answers, scorekeeping tool."
+   ],
+   "testimonials": []
+  },
+  {
+   "id": "GID_036",
+   "anchor": "gid-036",
+   "title": "Jeu de l'OA",
+   "url": "https://zenodo.org/records/247148",
+   "clusters": [
+    {
+     "number": 6,
+     "name": "FAIR Data and Materials"
+    },
+    {
+     "number": 7,
+     "name": "Publication Sharing"
+    },
+    {
+     "number": 9,
+     "name": "Academic Structures and Institutions"
+    },
+    {
+     "number": 11,
+     "name": "Research Integrity"
+    }
+   ],
+   "topics": [
+    "Research Integrity",
+    "Open Access",
+    "General Open Research"
+   ],
+   "gameplay_style": [
+    "Competitive"
+   ],
+   "tone": [
+    "Balanced"
+   ],
+   "delivery_format": [
+    "In-person"
+   ],
+   "game_type": [
+    "Board game",
+    "Debate/Discussion focused",
+    "Quiz"
+   ],
+   "language": [
+    "French"
+   ],
+   "creators": [
+    "Romain Féret, Célia Guérineaud, Audrey Schmitt"
+   ],
+   "description": [
+    "The Open Access Board Game (Jeu de l’OA) was created for Open Access Week 2016 to raise awareness about open access publishing. Players move pawns across a 3-level board by answering Question cards and drawing Surprise cards that reflect real-world publishing scenarios. The goal of the game is to be the first to reach the finish line."
+   ],
+   "access_additional": [],
+   "number_of_players": [
+    "2 - 6 players"
+   ],
+   "target_audience": [],
+   "last_updated": [
+    "2016"
+   ],
+   "licence": [],
+   "topic_area": [
+    "Research Integrity, Open Access, General Open Research"
+   ],
+   "learning_objectives": [
+    "Understand key concepts of open access.\n\nReflect on challenges in publishing.\n\nEncourge critical discussion of real life OA challenges."
+   ],
+   "formal_evaluation": [],
+   "suggested_audience": [],
+   "prior_knowledge": [],
+   "playtime": [
+    "30 - 60 minutes"
+   ],
+   "scalability": [],
+   "teaching_integration": [],
+   "context_specific_elements": [],
+   "preparation": [
+    "Printing of game board and cards, provision of pawns and a die"
+   ],
+   "testimonials": []
+  },
+  {
+   "id": "GID_037",
+   "anchor": "gid-037",
+   "title": "Copyright Dough",
+   "url": "https://figshare.com/projects/Copyright_Dough/76128",
+   "clusters": [
+    {
+     "number": 3,
+     "name": "Ways of Working"
+    },
+    {
+     "number": 6,
+     "name": "FAIR Data and Materials"
+    },
+    {
+     "number": 11,
+     "name": "Research Integrity"
+    }
+   ],
+   "topics": [
+    "Research Integrity",
+    "General Open Research"
+   ],
+   "gameplay_style": [
+    "Competitive"
+   ],
+   "tone": [
+    "Balanced"
+   ],
+   "delivery_format": [
+    "In-person"
+   ],
+   "game_type": [
+    "Role-play",
+    "Creative (playdough-based)"
+   ],
+   "language": [
+    "English"
+   ],
+   "creators": [
+    "Hannah Crago, Katrine Sundsbø"
+   ],
+   "description": [
+    "Copyright Dough is role-play workshop game where players use play-dough to model objects under different roles. After making their creations, players reveal task cards (scenarios) and licence cards, then explain how they would use or share their work. The group discusses and votes using “OK”/“Not OK” cards, sparking reflection on copyright in practice."
+   ],
+   "access_additional": [],
+   "number_of_players": [],
+   "target_audience": [],
+   "last_updated": [
+    "2020"
+   ],
+   "licence": [
+    "CC BY-SA 4.0"
+   ],
+   "topic_area": [
+    "Research Integrity, General Open Research"
+   ],
+   "learning_objectives": [
+    "Understand how copyright licences (Creative Commons, All Rights Reserved, etc.) affect the reuse of creative works.\n\nExplore the role of exceptions (teaching, research, fair dealing)\n\nRecognize the perspectives of different stakeholders (creators, teachers, students, researchers).\n\nBuild confidence in making and justifying copyright decisions."
+   ],
+   "formal_evaluation": [],
+   "suggested_audience": [],
+   "prior_knowledge": [],
+   "playtime": [
+    "30–60 minutes"
+   ],
+   "scalability": [],
+   "teaching_integration": [],
+   "context_specific_elements": [],
+   "preparation": [
+    "Print role cards, task cards, licence cards, voting cards, and information sheets.\n\nProvide play-dough.\n\nAppoint a facilitator to explain copyright basics and guide discussion."
+   ],
+   "testimonials": []
+  },
+  {
+   "id": "GID_039",
+   "anchor": "gid-039",
+   "title": "Open Access Mystery",
+   "url": "https://figshare.com/projects/Open_Access_Mystery/94466",
+   "clusters": [
+    {
+     "number": 3,
+     "name": "Ways of Working"
+    },
+    {
+     "number": 7,
+     "name": "Publication Sharing"
+    },
+    {
+     "number": 9,
+     "name": "Academic Structures and Institutions"
+    },
+    {
+     "number": 11,
+     "name": "Research Integrity"
+    }
+   ],
+   "topics": [
+    "Research Integrity",
+    "Open Access",
+    "General Open Research"
+   ],
+   "gameplay_style": [
+    "Cooperative/Collaborative"
+   ],
+   "tone": [
+    "Balanced"
+   ],
+   "delivery_format": [
+    "Online"
+   ],
+   "game_type": [
+    "Role-play",
+    "Puzzle",
+    "Storytelling/Narrative",
+    "Debate/Discussion focused"
+   ],
+   "language": [
+    "English"
+   ],
+   "creators": [
+    "Katrine Sundsbø"
+   ],
+   "description": [
+    "Open Access Mystery is an online role-playing mystery game. Created in the context of COVID-19 lockdowns, it is designed to be played virtually via Zoom, Skype, Microsoft Teams or any other online platform. The Open Access Mystery follows eight very different characters who meet at a conference. During the conference disaster will strike, and it’s up to the players to figure out who’s behind what turns out to be a global lockdown of all research"
+   ],
+   "access_additional": [],
+   "number_of_players": [
+    "8 players"
+   ],
+   "target_audience": [],
+   "last_updated": [
+    "2020"
+   ],
+   "licence": [],
+   "topic_area": [
+    "Research Integrity, Open Access, General Open Research"
+   ],
+   "learning_objectives": [
+    "Explore the barriers to open access through interactive storytelling.\n\nReflect on systemic issues: reliance on prestige metrics, predatory publishing, and publisher restrictions.\n\nRecognize how flawed incentives can obstruct openness and integrity in research.\n\nEncourage teamwork and discussion about publishing equity"
+   ],
+   "formal_evaluation": [],
+   "suggested_audience": [],
+   "prior_knowledge": [],
+   "playtime": [],
+   "scalability": [
+    "Can be adapted for groups or classrooms"
+   ],
+   "teaching_integration": [],
+   "context_specific_elements": [],
+   "preparation": [
+    "Distribute role cards, presentation slides, magazine, and email reveal materials.\n\nA facilitator guides play and reveals the solution."
+   ],
+   "testimonials": []
+  },
+  {
+   "id": "GID_043",
+   "anchor": "gid-043",
+   "title": "Last Contact",
+   "url": "https://www.sherlocked.nl/last-contact",
+   "clusters": [
+    {
+     "number": 4,
+     "name": "Pre-analysis Planning"
+    },
+    {
+     "number": 5,
+     "name": "Transparency and Reproducibility in Computation and Analysis"
+    },
+    {
+     "number": 7,
+     "name": "Publication Sharing"
+    },
+    {
+     "number": 8,
+     "name": "Replication and Meta-Research"
+    }
+   ],
+   "topics": [
+    "Research Integrity",
+    "Open Data",
+    "Open Access",
+    "Pre-registration",
+    "Replication",
+    "General Open Research"
+   ],
+   "gameplay_style": [
+    "Cooperative/Collaborative"
+   ],
+   "tone": [
+    "Lighthearted/Playful"
+   ],
+   "delivery_format": [
+    "Online"
+   ],
+   "game_type": [
+    "Escape room",
+    "Puzzle"
+   ],
+   "language": [
+    "English"
+   ],
+   "creators": [
+    "This game was created by professional (escape) game developers and scientific researchers"
+   ],
+   "description": [
+    "Last Contact' is a free online Escape Room / Puzzle Game experience designed for researchers and scientists. Together with your team you need to figure out what happened to the crew of an abandoned space ship. The purpose of the game is to illustrate the advantages of Open Science practices in a playful way. This game is especially designed for people relatively new to the principles of Open Science but can be played by anyone."
+   ],
+   "access_additional": [],
+   "number_of_players": [
+    "2-5"
+   ],
+   "target_audience": [
+    "people with a background in scientific research"
+   ],
+   "last_updated": [
+    "2023"
+   ],
+   "licence": [
+    "unknown"
+   ],
+   "topic_area": [
+    "Research Integrity, Open Data, Open Access, Pre-registration, Replication, General Open Research"
+   ],
+   "learning_objectives": [
+    "Gaining a general understanding of open research principles"
+   ],
+   "formal_evaluation": [],
+   "suggested_audience": [
+    "People relatively new to Open Science principles"
+   ],
+   "prior_knowledge": [
+    "No prior knowledge is needed but the game has a science theme. Any knowledge about scientific research may come in handy (but is not required)."
+   ],
+   "playtime": [
+    "90 minutes"
+   ],
+   "scalability": [
+    "The game can be played with multiple teams of 2-5 people"
+   ],
+   "teaching_integration": [],
+   "context_specific_elements": [],
+   "preparation": [
+    "Each player needs their own laptop (phone or tablet is not sufficient).",
+    "Webcam, Microphone and Headphones",
+    "A computer mouse (not recommended to play it on a touchpad)"
+   ],
+   "testimonials": []
+  },
+  {
+   "id": "GID_045",
+   "anchor": "gid-045",
+   "title": "The Pentomino Reproducibility Game",
+   "url": "https://osip.mpdl.mpg.de/2025/10/28/the-pentomino-reproducibiliy-game/",
+   "clusters": [
+    {
+     "number": 5,
+     "name": "Transparency and Reproducibility in Computation and Analysis"
+    }
+   ],
+   "topics": [
+    "Open Data",
+    "Open Code",
+    "Replication"
+   ],
+   "gameplay_style": [
+    "Cooperative/Collaborative"
+   ],
+   "tone": [
+    "Lighthearted/Playful"
+   ],
+   "delivery_format": [
+    "In-person"
+   ],
+   "game_type": [
+    "Role-play",
+    "Puzzle"
+   ],
+   "language": [
+    "English"
+   ],
+   "creators": [
+    "Larissa Leiminger (ORCiD: 0000-0002-6491-3197)"
+   ],
+   "description": [
+    "The Pentomino Reproducibility Game is an interactive puzzle game for 1 game instructor and up to 4 players that illustrates the principles of scientific reproducibility through collaborative play."
+   ],
+   "access_additional": [],
+   "number_of_players": [
+    "up to 5"
+   ],
+   "target_audience": [
+    "The game was originally designed for PhD students and researchers at higher levels. Some prior understanding of the research publication workflow is required. The game instructor ideally has some prior knowledge of Open Science practices and elements of reproducibility."
+   ],
+   "last_updated": [
+    "2025"
+   ],
+   "licence": [
+    "CC-BY-SA 4.0"
+   ],
+   "topic_area": [
+    "Open Data, Open Code, Replication"
+   ],
+   "learning_objectives": [
+    "By participating in the game, players gain a deeper understanding of why transparent and consistent documentation is essential in scientific research. They also experience the common obstacles that can prevent reproducibility, such as missing details or unclear communication.\n\nBeyond these technical lessons, the game encourages reflection on the role of collaboration in science. Participants see how discussing methods, clarifying assumptions, and giving constructive feedback contribute to more reliable results. Finally, the game creates a tangible link between playful problem-solving and real-world scientific practice, helping researchers internalize abstract concepts in an engaging and memorable way."
+   ],
+   "formal_evaluation": [
+    "No"
+   ],
+   "suggested_audience": [
+    "It was developed for the Open Science Ambassadors initiative of the Max Planck Society and is therefore best used by those who try to bring the topic of Open Science and reproducibility into new groups."
+   ],
+   "prior_knowledge": [
+    "General knowledge about research/scientific publishing is helpful. The game instructor benefits from prior knowledge about the open research practices mentioned, but it is not strictly necessary."
+   ],
+   "playtime": [
+    "ca. 15 min (It very much depends on the enthusiasm of the group.)"
+   ],
+   "scalability": [
+    "The game could be played on it's own, but it would be hard to not spoil solutions for the puzzles. For bigger groups, I recommend printing more than one set and playing it in groups parallel to each other. Working with the pentomino blocks, especially in an A4 printed size, becomes difficult with more people."
+   ],
+   "teaching_integration": [
+    "It works well as an introduction to a workshop that covers the mentioned research practices (reproducibility, README, Codebook, reproducible workflow). It can also be used as more of a evening activity to foster team building or as a start into an open discussion about these practices in one's own field."
+   ],
+   "context_specific_elements": [],
+   "preparation": [
+    "The materials need to be printed (normal A4 paper, 5 pages) and cut to size. To improve the haptic of the pentomino blocks they could be glued on thicker carton and again cut out. Since we play the game frequently, we ordered the pentomino blocks as wooden building blocks, but that is not strictly necessary."
+   ],
+   "testimonials": [
+    "So far, all feedback was very positive. Players did say that they had a lot of fun. More feedback is however very welcome."
+   ]
+  },
+  {
+   "id": "GID_046",
+   "anchor": "gid-046",
+   "title": "Lord Schism Saga",
+   "url": "https://ericalevi.coventry.domains/lordSchism.html",
+   "clusters": [
+    {
+     "number": 6,
+     "name": "FAIR Data and Materials"
+    },
+    {
+     "number": 7,
+     "name": "Publication Sharing"
+    }
+   ],
+   "topics": [
+    "Open Access",
+    "Open Educational Resources"
+   ],
+   "gameplay_style": [
+    "Cooperative/Collaborative",
+    "Solo",
+    "Team-Based Competition"
+   ],
+   "tone": [
+    "Balanced"
+   ],
+   "delivery_format": [
+    "Online"
+   ],
+   "game_type": [
+    "Escape room",
+    "Storytelling/Narrative",
+    "Quiz",
+    "Branching scenario"
+   ],
+   "language": [
+    "English"
+   ],
+   "creators": [
+    "Erica Levi"
+   ],
+   "description": [
+    "This is an episodic, branching scenario adventure where online players explore a dystopian world inspired by the style of Dungeons & Dragons. Players encounter fantasy characters, make impactful choices, and progress through the story while learning about copyright, public domain, and licensing. The narrative unfolds in a world dominated by Lord Schism, who rose to power after the War of Supremacy and now enforces strict control over knowledge through his regime, The New Order. As a Resistance operative working with the secret group known as The Enlightened, players must disrupt plans to lock away knowledge and help restore freedom of information."
+   ],
+   "access_additional": [],
+   "number_of_players": [
+    "Two to three players per chat room - no limits on rooms"
+   ],
+   "target_audience": [
+    "Adults who need to learn about copyright and licences"
+   ],
+   "last_updated": [
+    "2025"
+   ],
+   "licence": [
+    "CC BY 4.0"
+   ],
+   "topic_area": [
+    "Open Access, Open Educational Resources, Copyright and Public Domain"
+   ],
+   "learning_objectives": [
+    "Understanding copyright principles (including duration and exceptions), open licences, Creative Commons licences, and institutional licences."
+   ],
+   "formal_evaluation": [
+    "No"
+   ],
+   "suggested_audience": [
+    "Any adults"
+   ],
+   "prior_knowledge": [
+    "None required"
+   ],
+   "playtime": [
+    "Each of the four episodes takes between 45 minutes to an hour"
+   ],
+   "scalability": [
+    "Yes"
+   ],
+   "teaching_integration": [
+    "Use the game as an engaging alternative to a traditional PowerPoint presentation to introduce copyright in a fun, interactive way, making complex concepts more accessible and memorable."
+   ],
+   "context_specific_elements": [
+    "No"
+   ],
+   "preparation": [
+    "Minimal preparation; optionally, have someone available to roam the virtual room and assist players if they get stuck, though this is not essential."
+   ],
+   "testimonials": [
+    "“This is a really useful tool and will help the audience understand the complexities of copyright. The game flows well, and you learn all aspects of the public domain and cc licences.”\n“I really enjoyed this, as I love puzzles! Learning about this all too. Thanks”\n“SUPERB! Invite me again if there is similar one!”\n“Brilliant! I thoroughly enjoyed learning in this way. It made me use my brain, and I was not bored at all.”"
+   ]
+  },
+  {
+   "id": "GID_047",
+   "anchor": "gid-047",
+   "title": "Copyright Heights Mystery",
+   "url": "https://ericalevi.coventry.domains/heightsMystery.html",
+   "clusters": [
+    {
+     "number": 6,
+     "name": "FAIR Data and Materials"
+    },
+    {
+     "number": 7,
+     "name": "Publication Sharing"
+    }
+   ],
+   "topics": [],
+   "gameplay_style": [
+    "Cooperative/Collaborative",
+    "Solo"
+   ],
+   "tone": [
+    "Balanced"
+   ],
+   "delivery_format": [
+    "Online"
+   ],
+   "game_type": [
+    "Escape room",
+    "Storytelling/Narrative"
+   ],
+   "language": [
+    "English"
+   ],
+   "creators": [
+    "Tim Riley (Erica Levi adapted it)"
+   ],
+   "description": [
+    "Copyright Heights is a short point-and-click visual novel that introduces players to key UK copyright concepts, including fair dealing, open licences, and the public domain. Players explore locations, meet characters, and solve a mystery about which university housemate has infringed copyright, learning how to legally reuse others’ work along the way."
+   ],
+   "access_additional": [],
+   "number_of_players": [
+    "Solo or a group of two or three per chat room"
+   ],
+   "target_audience": [
+    "Higher education students"
+   ],
+   "last_updated": [
+    "2025"
+   ],
+   "licence": [
+    "CC BY-NC-SA 4.0"
+   ],
+   "topic_area": [
+    "Basic concepts in UK copyright, including fair dealing, open licences, and the public domain"
+   ],
+   "learning_objectives": [
+    "Understanding the basic concepts in UK copyright, including fair dealing, open licences, and the public domain"
+   ],
+   "formal_evaluation": [
+    "No"
+   ],
+   "suggested_audience": [
+    "Higher education students"
+   ],
+   "prior_knowledge": [
+    "None"
+   ],
+   "playtime": [
+    "45-60 minutes"
+   ],
+   "scalability": [
+    "It can be played in multiple chat rooms"
+   ],
+   "teaching_integration": [
+    "Intro or closing activity"
+   ],
+   "context_specific_elements": [
+    "No"
+   ],
+   "preparation": [
+    "None"
+   ],
+   "testimonials": [
+    "No"
+   ]
+  },
+  {
+   "id": "GID_051",
+   "anchor": "gid-051",
+   "title": "Valentine's Day Copyright Quiz",
+   "url": "https://ericalevi.coventry.domains/games/valentine/valentine.html",
+   "clusters": [
+    {
+     "number": 6,
+     "name": "FAIR Data and Materials"
+    },
+    {
+     "number": 7,
+     "name": "Publication Sharing"
+    }
+   ],
+   "topics": [],
+   "gameplay_style": [
+    "Solo"
+   ],
+   "tone": [
+    "Balanced"
+   ],
+   "delivery_format": [
+    "Online"
+   ],
+   "game_type": [
+    "Quiz"
+   ],
+   "language": [
+    "English"
+   ],
+   "creators": [
+    "Erica Levi"
+   ],
+   "description": [
+    "The Valentine’s Day Copyright Quiz is a fun, themed knowledge challenge that explores how copyright law applies to creative works—even those inspired by love. Players answer questions to learn about permissions, licences, and copyright exceptions in the context of Valentine’s Day creations."
+   ],
+   "access_additional": [],
+   "number_of_players": [
+    "Solo"
+   ],
+   "target_audience": [
+    "Anybody wanting to learn about copyright"
+   ],
+   "last_updated": [
+    "2025"
+   ],
+   "licence": [
+    "CC BY NC 4.0"
+   ],
+   "topic_area": [
+    "Copyright and licences"
+   ],
+   "learning_objectives": [
+    "Understanding copyright basics and how to legally reuse others’ work."
+   ],
+   "formal_evaluation": [
+    "No"
+   ],
+   "suggested_audience": [
+    "Any adult"
+   ],
+   "prior_knowledge": [
+    "None"
+   ],
+   "playtime": [
+    "10 minutes"
+   ],
+   "scalability": [
+    "N/A"
+   ],
+   "teaching_integration": [
+    "As a closing activity or a teaser."
+   ],
+   "context_specific_elements": [
+    "No"
+   ],
+   "preparation": [
+    "None"
+   ],
+   "testimonials": [
+    "No"
+   ]
+  },
+  {
+   "id": "GID_052",
+   "anchor": "gid-052",
+   "title": "World Intellectual Property Day",
+   "url": "https://ericalevi.coventry.domains/games/IPday/IPday.html",
+   "clusters": [
+    {
+     "number": 6,
+     "name": "FAIR Data and Materials"
+    },
+    {
+     "number": 7,
+     "name": "Publication Sharing"
+    }
+   ],
+   "topics": [],
+   "gameplay_style": [
+    "Cooperative/Collaborative",
+    "Solo"
+   ],
+   "tone": [
+    "Balanced"
+   ],
+   "delivery_format": [
+    "Online"
+   ],
+   "game_type": [
+    "Quiz"
+   ],
+   "language": [
+    "English"
+   ],
+   "creators": [
+    "Erica Levi"
+   ],
+   "description": [
+    "An interactive quiz designed for World Intellectual Property Day in April, introducing participants to the fundamentals of intellectual property. The activity covers key concepts such as copyright, trademarks, patents, and open licences, helping learners understand how IP protects creativity and innovation."
+   ],
+   "access_additional": [],
+   "number_of_players": [
+    "Solo or in pairs"
+   ],
+   "target_audience": [
+    "Any adult"
+   ],
+   "last_updated": [
+    "2025"
+   ],
+   "licence": [
+    "CC BY 4.0"
+   ],
+   "topic_area": [
+    "Intellectual Property (copyright, patents, designs, trademarks and trade secrets)"
+   ],
+   "learning_objectives": [
+    "Understanding the different aspect of Intellectual Property in the UK."
+   ],
+   "formal_evaluation": [
+    "No"
+   ],
+   "suggested_audience": [
+    "Adults"
+   ],
+   "prior_knowledge": [
+    "None"
+   ],
+   "playtime": [
+    "15-20 minutes"
+   ],
+   "scalability": [
+    "N/A"
+   ],
+   "teaching_integration": [
+    "As an intro or closing activity or a teaser for World IP day"
+   ],
+   "context_specific_elements": [
+    "No"
+   ],
+   "preparation": [
+    "None"
+   ],
+   "testimonials": [
+    "No"
+   ]
+  },
+  {
+   "id": "GID_054",
+   "anchor": "gid-054",
+   "title": "National Writing Day",
+   "url": "https://ericalevi.coventry.domains/games/nationalWritingDay.mp4",
+   "clusters": [
+    {
+     "number": 6,
+     "name": "FAIR Data and Materials"
+    },
+    {
+     "number": 7,
+     "name": "Publication Sharing"
+    }
+   ],
+   "topics": [],
+   "gameplay_style": [
+    "Solo"
+   ],
+   "tone": [
+    "Learning-intensive"
+   ],
+   "delivery_format": [
+    "Online"
+   ],
+   "game_type": [
+    "Quiz"
+   ],
+   "language": [
+    "English"
+   ],
+   "creators": [
+    "Erica Levi"
+   ],
+   "description": [
+    "Understanding copyright principles"
+   ],
+   "access_additional": [],
+   "number_of_players": [
+    "Solo"
+   ],
+   "target_audience": [
+    "Adult writers"
+   ],
+   "last_updated": [
+    "2025"
+   ],
+   "licence": [
+    "CC BY"
+   ],
+   "topic_area": [
+    "Copyright"
+   ],
+   "learning_objectives": [
+    "Understanding the basic on copyright"
+   ],
+   "formal_evaluation": [
+    "No"
+   ],
+   "suggested_audience": [
+    "Adults writers"
+   ],
+   "prior_knowledge": [
+    "No"
+   ],
+   "playtime": [
+    "7 minutes"
+   ],
+   "scalability": [
+    "N/A"
+   ],
+   "teaching_integration": [
+    "The quiz is a fun, themed knowledge challenge that explores how copyright law applies to written creative works"
+   ],
+   "context_specific_elements": [
+    "No"
+   ],
+   "preparation": [
+    "None"
+   ],
+   "testimonials": [
+    "No"
+   ]
+  },
+  {
+   "id": "GID_055",
+   "anchor": "gid-055",
+   "title": "Chocolate Condrum",
+   "url": "https://ericalevi.coventry.domains/games/chocolate/chocolateConundrum.html",
+   "clusters": [
+    {
+     "number": 6,
+     "name": "FAIR Data and Materials"
+    },
+    {
+     "number": 7,
+     "name": "Publication Sharing"
+    }
+   ],
+   "topics": [],
+   "gameplay_style": [
+    "Cooperative/Collaborative",
+    "Solo"
+   ],
+   "tone": [
+    "Balanced"
+   ],
+   "delivery_format": [
+    "Online"
+   ],
+   "game_type": [
+    "Escape room",
+    "Storytelling/Narrative"
+   ],
+   "language": [
+    "English"
+   ],
+   "creators": [
+    "Erica Levi"
+   ],
+   "description": [
+    "An interactive quiz designed for World Chocolate Day (July), introducing participants to the fundamentals of intellectual property. The activity covers key concepts such as copyright, trademarks, patents, and open licences, helping learners understand how IP protects creativity and innovation."
+   ],
+   "access_additional": [],
+   "number_of_players": [
+    "Solo, or small team of tow /three people in chat rooms"
+   ],
+   "target_audience": [
+    "Adults"
+   ],
+   "last_updated": [
+    "2025"
+   ],
+   "licence": [
+    "CC BY 4.0"
+   ],
+   "topic_area": [
+    "Intellectual property, including copyright, trademarks, patents and trade secrets"
+   ],
+   "learning_objectives": [
+    "Understanding Intellectual property, including copyright, trademarks, patents and trade secrets"
+   ],
+   "formal_evaluation": [
+    "No"
+   ],
+   "suggested_audience": [
+    "Adults"
+   ],
+   "prior_knowledge": [
+    "None"
+   ],
+   "playtime": [
+    "40-45 minutes"
+   ],
+   "scalability": [
+    "As many chat rooms as required"
+   ],
+   "teaching_integration": [
+    "As an activity for introducing the topic of intellectual property"
+   ],
+   "context_specific_elements": [
+    "No"
+   ],
+   "preparation": [
+    "Minimal preparation: optionally, have someone available to roam the virtual room and assist players if they get stuck, though this is not essential."
+   ],
+   "testimonials": [
+    "No"
+   ]
+  },
+  {
+   "id": "GID_056",
+   "anchor": "gid-056",
+   "title": "Pirate’s Code of Creative Loot (UK Edition)",
+   "url": "https://ericalevi.coventry.domains/games/pirateDay.html",
+   "clusters": [
+    {
+     "number": 7,
+     "name": "Publication Sharing"
+    }
+   ],
+   "topics": [],
+   "gameplay_style": [
+    "Solo"
+   ],
+   "tone": [
+    "Balanced"
+   ],
+   "delivery_format": [
+    "Online"
+   ],
+   "game_type": [
+    "Quiz"
+   ],
+   "language": [
+    "English"
+   ],
+   "creators": [
+    "Erica levi"
+   ],
+   "description": [
+    "A quiz about copyright in occasion of International Talk Like a Pirate Day"
+   ],
+   "access_additional": [],
+   "number_of_players": [
+    "Solo"
+   ],
+   "target_audience": [
+    "No"
+   ],
+   "last_updated": [
+    "2025"
+   ],
+   "licence": [
+    "CC BY NC 4.0"
+   ],
+   "topic_area": [
+    "Copyright"
+   ],
+   "learning_objectives": [
+    "Understanding the basic of copyright"
+   ],
+   "formal_evaluation": [
+    "No"
+   ],
+   "suggested_audience": [
+    "Anyone"
+   ],
+   "prior_knowledge": [
+    "No"
+   ],
+   "playtime": [
+    "10 minutes"
+   ],
+   "scalability": [
+    "In a class, lecture"
+   ],
+   "teaching_integration": [
+    "Intro or closing activity for light-heart fun"
+   ],
+   "context_specific_elements": [
+    "No"
+   ],
+   "preparation": [
+    "None"
+   ],
+   "testimonials": [
+    "No"
+   ]
+  },
+  {
+   "id": "GID_057",
+   "anchor": "gid-057",
+   "title": "Halloween",
+   "url": "https://tinyurl.com/yk56sdze",
+   "clusters": [
+    {
+     "number": 6,
+     "name": "FAIR Data and Materials"
+    },
+    {
+     "number": 7,
+     "name": "Publication Sharing"
+    }
+   ],
+   "topics": [],
+   "gameplay_style": [
+    "Cooperative/Collaborative",
+    "Solo",
+    "Team-Based Competition"
+   ],
+   "tone": [
+    "Balanced"
+   ],
+   "delivery_format": [
+    "Online"
+   ],
+   "game_type": [
+    "Escape room"
+   ],
+   "language": [
+    "English"
+   ],
+   "creators": [
+    "Erica Levi"
+   ],
+   "description": [
+    "Halloween is a short, point-and-click visual game designed to introduce players to basic concepts in copyright law. In the game, players must navigate through a dilapidated house, uncovering clues to escape the spooky setting."
+   ],
+   "access_additional": [],
+   "number_of_players": [
+    "Solo or tow or three per chat room"
+   ],
+   "target_audience": [
+    "Older children and adults"
+   ],
+   "last_updated": [
+    "2025"
+   ],
+   "licence": [
+    "CC BY NC 4.0"
+   ],
+   "topic_area": [
+    "Intellectual property, including copyright and patents"
+   ],
+   "learning_objectives": [
+    "Understanding the basics of copyright, licensing and patents"
+   ],
+   "formal_evaluation": [
+    "No"
+   ],
+   "suggested_audience": [
+    "Anybody"
+   ],
+   "prior_knowledge": [
+    "No"
+   ],
+   "playtime": [
+    "45-60 minutes"
+   ],
+   "scalability": [
+    "Yes"
+   ],
+   "teaching_integration": [
+    "As a teasing activity to introduce the concept of copyright around Halloween"
+   ],
+   "context_specific_elements": [
+    "No"
+   ],
+   "preparation": [
+    "None"
+   ],
+   "testimonials": [
+    "“The graphics were really good”\n“This is so much fun. The fun bit is in noting down the numbers and arranging them to reach the final bit!! Super FUN. Thank you!!”\n“I enjoyed the activity of working as a group to solve the questions.”\n“It was great being interactive, but also educational.”\n“I arrived too late to the session, but I tried to play alone - very Interactive and fun - I loved how the game mixed spooky Halloween vibes with copyright challenges! It made learning about such a serious topic surprisingly fun and easy to understand.”\n“I liked the need to explore and find things. I loved the graphics and atmosphere, and I liked the fun facts given about relevant copyright infringement cases. I would be interested in seeing or exploring the platform you have used for these, as each game or activity you publish is better than the last!!! I really enjoy these games/escape rooms when you publish them, and believe this to be the most engaging way to learn about something that could otherwise be quite dry for many people. […]!”\n“The Halloween-themed online game was both engaging and informative. It provided a creative and enjoyable way to learn about copyright and intellectual property. The experience left me inspired to explore further.”"
+   ]
+  },
+  {
+   "id": "GID_058",
+   "anchor": "gid-058",
+   "title": "Christmas",
+   "url": "https://ericalevi.coventry.domains/games/xmas/xmas.html",
+   "clusters": [
+    {
+     "number": 6,
+     "name": "FAIR Data and Materials"
+    },
+    {
+     "number": 7,
+     "name": "Publication Sharing"
+    }
+   ],
+   "topics": [],
+   "gameplay_style": [
+    "Solo",
+    "Team-Based Competition"
+   ],
+   "tone": [
+    "Balanced"
+   ],
+   "delivery_format": [
+    "Online"
+   ],
+   "game_type": [
+    "Quiz"
+   ],
+   "language": [
+    "English"
+   ],
+   "creators": [
+    "Erica Levi"
+   ],
+   "description": [
+    "Help a little Bernie, a broonie, to decorate the Chrsitmas tree by answer a few questions on copyright."
+   ],
+   "access_additional": [],
+   "number_of_players": [
+    "Solo or two or three people in a chat room"
+   ],
+   "target_audience": [
+    "Any"
+   ],
+   "last_updated": [
+    "2025"
+   ],
+   "licence": [
+    "CC BY 4.0"
+   ],
+   "topic_area": [
+    "Copyright"
+   ],
+   "learning_objectives": [
+    "Understanding the basic of copyright"
+   ],
+   "formal_evaluation": [
+    "No"
+   ],
+   "suggested_audience": [
+    "Anybody wanting some Christmas cheer"
+   ],
+   "prior_knowledge": [
+    "None"
+   ],
+   "playtime": [
+    "5-10 minutes"
+   ],
+   "scalability": [
+    "As many chat rooms as required"
+   ],
+   "teaching_integration": [
+    "Intro or closing activity,"
+   ],
+   "context_specific_elements": [
+    "No"
+   ],
+   "preparation": [
+    "None - it could be circulated on Santa’s List Day which falls on December, 4th"
+   ],
+   "testimonials": [
+    "This was a big hit with my colleagues, and I know it will be shared (and credited) with others too. To quote one colleague – “Just completed it. What a great way to engage with a subject that I often find slightly terrifying. Thank you for sharing!!!'\"\n\n\"This is brilliant, I love your games \""
+   ]
+  },
+  {
+   "id": "GID_059",
+   "anchor": "gid-059",
+   "title": "Guide to Creative Commons licences",
+   "url": "https://ericalevi.coventry.domains/CClicences.html",
+   "clusters": [
+    {
+     "number": 6,
+     "name": "FAIR Data and Materials"
+    },
+    {
+     "number": 7,
+     "name": "Publication Sharing"
+    }
+   ],
+   "topics": [
+    "Open Access",
+    "Open Educational Resources",
+    "Open Methods",
+    "General Open Research"
+   ],
+   "gameplay_style": [
+    "Solo"
+   ],
+   "tone": [
+    "Learning-intensive"
+   ],
+   "delivery_format": [
+    "Online"
+   ],
+   "game_type": [
+    "Platform"
+   ],
+   "language": [
+    "English"
+   ],
+   "creators": [
+    "Erica Levi"
+   ],
+   "description": [
+    "A branching scenario activity to explore how the Creative Commons licences work, from an introduction to a deep dive into the intricacies of the licenses."
+   ],
+   "access_additional": [],
+   "number_of_players": [
+    "Solo, could be in pairs"
+   ],
+   "target_audience": [
+    "Adults"
+   ],
+   "last_updated": [
+    "2025"
+   ],
+   "licence": [
+    "CC BY 4.0"
+   ],
+   "topic_area": [
+    "Open Access, Open Educational Resources, Open Methods, General Open Research, Creative Commons Licences"
+   ],
+   "learning_objectives": [
+    "Gaining a deep understanding of the Creative Commons Licences."
+   ],
+   "formal_evaluation": [
+    "No"
+   ],
+   "suggested_audience": [
+    "Adults"
+   ],
+   "prior_knowledge": [
+    "None"
+   ],
+   "playtime": [
+    "45-60 minutes"
+   ],
+   "scalability": [
+    "N/A"
+   ],
+   "teaching_integration": [
+    "Connect to course content"
+   ],
+   "context_specific_elements": [
+    "No"
+   ],
+   "preparation": [
+    "None"
+   ],
+   "testimonials": [
+    "No"
+   ]
+  },
+  {
+   "id": "GID_060",
+   "anchor": "gid-060",
+   "title": "Licensing your work",
+   "url": "https://ericalevi.coventry.domains/licensing-your-work.html",
+   "clusters": [
+    {
+     "number": 6,
+     "name": "FAIR Data and Materials"
+    },
+    {
+     "number": 7,
+     "name": "Publication Sharing"
+    }
+   ],
+   "topics": [
+    "Open Data",
+    "Open Access",
+    "Open Educational Resources",
+    "Open Methods",
+    "Open Hardware",
+    "General Open Research",
+    "Open Software"
+   ],
+   "gameplay_style": [
+    "Solo"
+   ],
+   "tone": [
+    "Learning-intensive"
+   ],
+   "delivery_format": [
+    "Online"
+   ],
+   "game_type": [
+    "Platform"
+   ],
+   "language": [
+    "English"
+   ],
+   "creators": [
+    "Erica Levi"
+   ],
+   "description": [
+    "It is a branching scenario that guides players through learning how to license their work through questions."
+   ],
+   "access_additional": [],
+   "number_of_players": [
+    "Solo"
+   ],
+   "target_audience": [
+    "Adults"
+   ],
+   "last_updated": [
+    "2023"
+   ],
+   "licence": [
+    "CC BY 4.0"
+   ],
+   "topic_area": [
+    "Open Data, Open Access, Open Educational Resources, Open Methods, Open Hardware, General Open Research, Open Software, Creative Commons Lincences"
+   ],
+   "learning_objectives": [
+    "Understanding how to licence your work and how to choose a Creative Commons Licence suitable for your work to maximise its potential."
+   ],
+   "formal_evaluation": [
+    "No"
+   ],
+   "suggested_audience": [
+    "Adults"
+   ],
+   "prior_knowledge": [
+    "None"
+   ],
+   "playtime": [
+    "45-60 minutes"
+   ],
+   "scalability": [
+    "N/A"
+   ],
+   "teaching_integration": [
+    "Professional development"
+   ],
+   "context_specific_elements": [
+    "No"
+   ],
+   "preparation": [
+    "None"
+   ],
+   "testimonials": [
+    "No"
+   ]
+  },
+  {
+   "id": "GID_061",
+   "anchor": "gid-061",
+   "title": "Open Access Alchemy",
+   "url": "https://eprints.leedsbeckett.ac.uk/id/eprint/12035/",
+   "clusters": [
+    {
+     "number": 7,
+     "name": "Publication Sharing"
+    }
+   ],
+   "topics": [
+    "Open Access"
+   ],
+   "gameplay_style": [
+    "Cooperative/Collaborative",
+    "Competitive"
+   ],
+   "tone": [
+    "Balanced"
+   ],
+   "delivery_format": [
+    "In-person"
+   ],
+   "game_type": [
+    "Card game"
+   ],
+   "language": [
+    "English"
+   ],
+   "creators": [
+    "Rowe, L and Buller, A and Bento, T and Gower, A and Lagden, E"
+   ],
+   "description": [
+    "Open Access Alchemy is an interactive card game designed to help academics and research staff navigate the complexities of open-access publishing. Created by librarians at Leeds Beckett University in collaboration with licensing experts from Springer Nature, the game provides an engaging, hands-on approach to understanding different Open Access models, publishing choices, and real-world challenges researchers face in scholarly communication.  In this game, players take on the role of wizards competing to publish their arcane research. Throughout a series of rounds, they must strategise, manage publishing costs, and decide where to submit their work while encountering real-world-inspired scenarios that impact their journey. The game encourages discussion, problem-solving, and reflection on the intricacies of publishing open-access, making it a valuable tool for training and workshops.  This resource includes the full game pack, with printable cards, game rules, and a facilitator guide to support gameplay, allowing institutions worldwide to use it in their own Open Access training sessions."
+   ],
+   "access_additional": [],
+   "number_of_players": [
+    "2 to 4 players"
+   ],
+   "target_audience": [
+    "researchers, postgraduate students, academics, research support staff, librarians"
+   ],
+   "last_updated": [
+    "Apr. 2025"
+   ],
+   "licence": [
+    "CC BY-NC"
+   ],
+   "topic_area": [
+    "Open Access"
+   ],
+   "learning_objectives": [
+    "Differentiate between key types of open access publishing (e.g. Gold, Green, Hybrid, and Subscription-only); Recognise real-world factors that influence where and how research is published, including journal policies, institutional agreements, and funder requirements; Understand the role of Article Processing Charges (APCs) and funding routes in open access publishing; Identify common challenges and strategic trade-offs faced by researchers when choosing publication routes; Reflect on their own publishing decisions and how they relate to open access policies and practices; Engage in informed discussions about open access within their institutions and disciplines."
+   ],
+   "formal_evaluation": [
+    "Not yet"
+   ],
+   "suggested_audience": [
+    "Researchers, postgraduate students, academics"
+   ],
+   "prior_knowledge": [
+    "No prior knowledge"
+   ],
+   "playtime": [
+    "between 1h and 1h30m"
+   ],
+   "scalability": [],
+   "teaching_integration": [
+    "Open Access Alchemy is a flexible educational tool designed to support workshops and teaching sessions on open access and scholarly publishing. It works well as an engaging introduction or a reflective closing activity, prompting discussion on real-world publishing decisions. The game can be used standalone or embedded into broader training for researchers and staff, and its modular format allows facilitators to adapt it for time constraints or specific learning goals."
+   ],
+   "context_specific_elements": [
+    "No"
+   ],
+   "preparation": [
+    "Some light preparation is required: printing and cutting the card decks, score sheet, and a phases summary page (ideally in colour), and optionally providing tokens and dice (or using online alternatives).\nOpen Access Alchemy can be played without a facilitator, but having one is ideal to encourage discussion at the end. If a facilitator is present, we recommend they familiarise themselves with the game rules and the ‘Guidance for Facilitators’ document beforehand. This will help them lead participants smoothly, keep track of time, and use suggested prompts to support a reflective conversation afterwards."
+   ],
+   "testimonials": [
+    "\"An important topic that needs more coverage. Fun integration of boardgame and fantasy elements to keep players engaged.\" / \"Learned about predatory publishers and what to avoid\" (Playtester 1)\n\"No matter how prepared you may be, there's always a chance that something (wildcards -publisher's changing scenarios) will turn things on their head.\" (Playtester 2)\n\"I liked that it's a combination of fun, educational information and strategy. It was a great team building exercise and it really made me think about cost vs reach and prestige in real world publishing\" / \"It made me understand some of the pressures that researchers are under when deciding where to publish\" / \"It was great having [...] facilitators to help us understand how to play, what to do next, and to help us think about the implications of our choices.\" (Playtester 3)"
+   ]
+  },
+  {
+   "id": "GID_062",
+   "anchor": "gid-062",
+   "title": "QRP: Questionable Research Practices",
+   "url": "https://osf.io/4efqs/overview",
+   "clusters": [
+    {
+     "number": 1,
+     "name": "Replication Crisis and Credibility Revolution"
+    },
+    {
+     "number": 3,
+     "name": "Ways of Working"
+    },
+    {
+     "number": 4,
+     "name": "Pre-analysis Planning"
+    },
+    {
+     "number": 6,
+     "name": "FAIR Data and Materials"
+    },
+    {
+     "number": 8,
+     "name": "Replication and Meta-Research"
+    },
+    {
+     "number": 9,
+     "name": "Academic Structures and Institutions"
+    },
+    {
+     "number": 11,
+     "name": "Research Integrity"
+    }
+   ],
+   "topics": [
+    "Research Integrity",
+    "Open Data",
+    "Open Access",
+    "Pre-registration",
+    "Open Peer Review",
+    "Open Methods",
+    "Replication",
+    "Recognition and Rewards"
+   ],
+   "gameplay_style": [
+    "Competitive"
+   ],
+   "tone": [
+    "Balanced"
+   ],
+   "delivery_format": [
+    "In-person"
+   ],
+   "game_type": [
+    "Board game",
+    "Simulation",
+    "Strategy"
+   ],
+   "language": [
+    "English"
+   ],
+   "creators": [
+    "Roger Giner-Sorolla"
+   ],
+   "description": [
+    "An educational board game about the incentives to tell the truth in research reporting. Can be used for teaching undergraduates and postgraduates and sparking controversy about the need for, and means of, open science!"
+   ],
+   "access_additional": [],
+   "number_of_players": [
+    "3-6"
+   ],
+   "target_audience": [
+    "Members of the research community, and/or those interested in learning about research methods in sampling-based disciplines"
+   ],
+   "last_updated": [
+    "2025"
+   ],
+   "licence": [
+    "CC-BY-NC-ND"
+   ],
+   "topic_area": [
+    "Research Integrity, Open Data, Open Access, Pre-registration, Open Peer Review, Open Methods, Replication, Recognition and Rewards"
+   ],
+   "learning_objectives": [
+    "They experience a compressed version of the scientific discovery and reporting process, with initial scoring incentives that - familiarly - allow and reward selective reporting of positive results. The reforms that are introduced through the game also point players to practices that constrain selective reporting, with the feel of how they work."
+   ],
+   "formal_evaluation": [
+    "Not to my knowledge"
+   ],
+   "suggested_audience": [
+    "Research academics in sampling-based disciplines, and their research-interested students and trainees."
+   ],
+   "prior_knowledge": [
+    "Basic knowledge helps, not necessarily to learn the rules, but to contextualize what is happening in the game."
+   ],
+   "playtime": [
+    "The short version can be done in 60-90 minutes, the full version up to 3 hours."
+   ],
+   "scalability": [
+    "With bluff elements, not really suitable for solo play. I have scaled it up by having pairs of players act as \"collaborators\" which can re-enact some very familiar debates in teams!"
+   ],
+   "teaching_integration": [
+    "I would start with a lecture about the crisis and need to constrain QRPs, then launch into the game as an illustration of the points, so that the terms are familiar."
+   ],
+   "context_specific_elements": [
+    "I encourage players to imagine their own research topics based on their field. I think this is intrinsically a university or PhD level topic, reference set, and complexity."
+   ],
+   "preparation": [
+    "Printing, cutting, backing and sleeving cards, getting dice and player pawns from other games."
+   ],
+   "testimonials": [
+    "Not as such, but people who have played it have enjoyed it (mostly PhD students and other academics) and some have commented on its ability to model eerily familiar dilemmas."
+   ]
+  },
+  {
+   "id": "GID_063",
+   "anchor": "gid-063",
+   "title": "Tenure Run",
+   "url": "https://forrt.org/TenureRun/",
+   "clusters": [
+    {
+     "number": 1,
+     "name": "Replication Crisis and Credibility Revolution"
+    },
+    {
+     "number": 3,
+     "name": "Ways of Working"
+    },
+    {
+     "number": 6,
+     "name": "FAIR Data and Materials"
+    },
+    {
+     "number": 7,
+     "name": "Publication Sharing"
+    },
+    {
+     "number": 9,
+     "name": "Academic Structures and Institutions"
+    }
+   ],
+   "topics": [
+    "Research Integrity",
+    "Open Data",
+    "Open Access",
+    "Pre-registration",
+    "Recognition and Rewards"
+   ],
+   "gameplay_style": [
+    "Solo"
+   ],
+   "tone": [
+    "Lighthearted/Playful"
+   ],
+   "delivery_format": [
+    "Online"
+   ],
+   "game_type": [
+    "Platform",
+    "Mobile"
+   ],
+   "language": [
+    "English"
+   ],
+   "creators": [
+    "Lukas Röseler"
+   ],
+   "description": [
+    "Tenure Run is a browser-based endless runner game similar to Temple Run. It serves as a fun, satirical, and educational metaphor for the modern academic publishing landscape, specifically focusing on the pressure to publish, Questionable Research Practices (QRPs), Article Processing Charges (APCs), and the Open Science movement."
+   ],
+   "access_additional": [],
+   "number_of_players": [
+    "1"
+   ],
+   "target_audience": [
+    "Researchers who have to publish or perish"
+   ],
+   "last_updated": [
+    "2026"
+   ],
+   "licence": [
+    "CC-BY-4.0"
+   ],
+   "topic_area": [
+    "Research Integrity, Open Data, Open Access, Pre-registration, Recognition and Rewards, Research Assessment"
+   ],
+   "learning_objectives": [
+    "Reflecting on the academic publication culture"
+   ],
+   "formal_evaluation": [
+    "No"
+   ],
+   "suggested_audience": [
+    "Early career researchers - as a first step to reflect on academic careers and research assessment"
+   ],
+   "prior_knowledge": [
+    "No prior knowledge required"
+   ],
+   "playtime": [
+    "1-6 minutes"
+   ],
+   "scalability": [
+    "Everybody can play their own session and then compare high scores"
+   ],
+   "teaching_integration": [
+    "Use this as an ice-breaker to start a discussion of research culture, talk about SF DORA or CoARA, talk about reward systems in academia"
+   ],
+   "context_specific_elements": [
+    "Preregistration and p-hacking may not be known beyond psychology"
+   ],
+   "preparation": [
+    "Every player needs internet on their smartphone/computer"
+   ],
+   "testimonials": [
+    "\"I love this game so much ... So so so much\" - Flavio"
+   ]
+  },
+  {
+   "id": "GID_064",
+   "anchor": "gid-064",
+   "title": "Career and Conscience Board Game",
+   "url": "https://zenodo.org/records/19386634",
+   "clusters": [
+    {
+     "number": 1,
+     "name": "Replication Crisis and Credibility Revolution"
+    },
+    {
+     "number": 3,
+     "name": "Ways of Working"
+    },
+    {
+     "number": 4,
+     "name": "Pre-analysis Planning"
+    },
+    {
+     "number": 5,
+     "name": "Transparency and Reproducibility in Computation and Analysis"
+    },
+    {
+     "number": 6,
+     "name": "FAIR Data and Materials"
+    },
+    {
+     "number": 7,
+     "name": "Publication Sharing"
+    },
+    {
+     "number": 9,
+     "name": "Academic Structures and Institutions"
+    },
+    {
+     "number": 11,
+     "name": "Research Integrity"
+    }
+   ],
+   "topics": [
+    "Research Integrity",
+    "Open Data",
+    "Open Access",
+    "Pre-registration",
+    "Open Code",
+    "Open Educational Resources",
+    "Open Methods",
+    "General Open Research",
+    "Open Software",
+    "Recognition and Rewards",
+    "Citizen Science"
+   ],
+   "gameplay_style": [
+    "Competitive"
+   ],
+   "tone": [
+    "Balanced"
+   ],
+   "delivery_format": [
+    "In-person"
+   ],
+   "game_type": [
+    "Board game",
+    "Card game",
+    "Simulation"
+   ],
+   "language": [
+    "English",
+    "German"
+   ],
+   "creators": [
+    "Ilona Lipp (creator), Carolin Hundt (designer)"
+   ],
+   "description": [
+    "This is an educational board game with the following aims: informing about different Open Science practices; providing insights into conundrums of the academic career system; stimulating discussion into academic reward systems and inner dilemmas related to career decisions"
+   ],
+   "access_additional": [],
+   "number_of_players": [
+    "2"
+   ],
+   "target_audience": [
+    "Anyone interested in the academic system"
+   ],
+   "last_updated": [
+    "2026"
+   ],
+   "licence": [
+    "Creative Commons Attribution 4.0 International"
+   ],
+   "topic_area": [
+    "Research Integrity, Open Data, Open Access, Pre-registration, Open Code, Open Educational Resources, Open Methods, General Open Research, Open Software, Recognition and Rewards, Citizen Science"
+   ],
+   "learning_objectives": [
+    "Knowing about different Open Science practices, having reflected on academic career and incentive structures"
+   ],
+   "formal_evaluation": [],
+   "suggested_audience": [
+    "People who aspire academic careers (if combined with some discussion afterwards)"
+   ],
+   "prior_knowledge": [
+    "No knowledge required, but best suited for people with some academic background"
+   ],
+   "playtime": [
+    "20-30 minutes"
+   ],
+   "scalability": [
+    "You could play in teams"
+   ],
+   "teaching_integration": [
+    "Best used as an intro activity, with group reflection afterwards"
+   ],
+   "context_specific_elements": [
+    "Not necessarily, but it is possible to create your own dilemma cards to include additional research practices"
+   ],
+   "preparation": [
+    "Quite some preparation: Minimum printing, ideal also laminating, one needs paws and dice"
+   ],
+   "testimonials": [
+    "Not yet"
+   ]
+  },
+  {
+   "id": "GID_065",
+   "anchor": "gid-065",
+   "title": "PredEscape: a Game-Based Approach to Predatory Publishing Awareness",
+   "url": "https://predescape.netlify.app/",
+   "clusters": [
+    {
+     "number": 7,
+     "name": "Publication Sharing"
+    }
+   ],
+   "topics": [
+    "Open Access"
+   ],
+   "gameplay_style": [
+    "Solo"
+   ],
+   "tone": [
+    "Balanced"
+   ],
+   "delivery_format": [
+    "Online"
+   ],
+   "game_type": [
+    "Role-play"
+   ],
+   "language": [
+    "English"
+   ],
+   "creators": [
+    "Kevin Alistair McCormick; Khadija Mahsud; Esther K. Makumbe; Mohamed Owais Elahi; Muzan Abbas; Antonio Miguel III"
+   ],
+   "description": [
+    "PredEscape is an open educational resource developed by librarians and undergraduate researchers at the University of Doha for Science and Technology. Supported by a Qatar Research Development and Innovation–funded initiative, it aims to raise awareness among academic communities about the academic publishing ecosystem and the risks of predatory journals. Built using RPG Maker MV, the game combines interactive storytelling with puzzles, quizzes, and scenario-based challenges that reflect real-world academic situations. Players learn to recognize deceptive journal practices, assess credibility, and apply frameworks such as Think. Check. Submit. Through its engaging design, PredEscape promotes critical evaluation skills and increases awareness of risks in scholarly communication, demonstrating the effectiveness of gamification for research education. (Beta version, further development not anticipated at this time.)"
+   ],
+   "access_additional": [
+    "https://innolight.qrdi.org.qa/en/projects/41677"
+   ],
+   "number_of_players": [
+    "1"
+   ],
+   "target_audience": [
+    "Academic communities (students, researchers, professors, librarians, research offices, publishers)"
+   ],
+   "last_updated": [
+    "June 2026"
+   ],
+   "licence": [
+    "CC BY"
+   ],
+   "topic_area": [
+    "Open Access, Predatory Publishing"
+   ],
+   "learning_objectives": [
+    "Learners will differentiate between closed and open access publishing models (including gold and diamond open access) and recognize how these structures affect journal credibility. They will identify red flags of predatory journals and apply evaluation strategies—such as the Think.Check.Submit framework—to verify journal legitimacy, assess editorial transparency, and judge publisher credibility. Learners will also analyze submission emails and conference invitations to detect predatory practices, and recognize the key characteristics of reputable journals, including quality standards and transparency. Finally, they will understand the academic and professional consequences of publishing in predatory journals, including risks to reputation and research integrity."
+   ],
+   "formal_evaluation": [
+    "User-testing is ongoing as of June 2026"
+   ],
+   "suggested_audience": [
+    "Early career researchers"
+   ],
+   "prior_knowledge": [
+    "No prior knowledge is needed"
+   ],
+   "playtime": [
+    "<30 minutes"
+   ],
+   "scalability": [],
+   "teaching_integration": [],
+   "context_specific_elements": [],
+   "preparation": [],
+   "testimonials": []
+  }
+ ]
+}

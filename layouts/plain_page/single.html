@@ -1,17 +1,3 @@
 {{- define "main" -}}
-
-<article class="article">
-
-  {{ partial "page_header" . }}
-
-  <div class="article-container pt-3">
-
-    <div class="article-style pt-3">
-      {{ .Content }}
-    </div>
-
-
-  </div>
-</article>
-
+{{ partial "doors/reading" . }}
 {{- end -}}

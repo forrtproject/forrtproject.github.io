@@ -1,23 +1,33 @@
 {{- /* Every tagged page on the site, for the browser on /tags/.
 
        A dedicated index rather than the site search's `/index.json`, which
-       carries each page's full plain text and runs to ~5 MB; this is the four
-       fields the tag browser needs, for the pages that actually have tags.
+       carries each page's full plain text and runs to ~5 MB; these are the fields the tag browser needs, for the
+       pages that actually have tags.
 
+       From the resources directory (doors/resource_index.html), for a curated resource: `y`, its material types as the
+       directory groups them; `d`, the opening of its abstract, cut again at a word to about 140 characters, so a
+       visitor can tell a classroom activity from a paper; `c`, the numbers of its clusters on the clusters wheel,
+       for their colour marks (the names are on /tags/ itself). Empty fields are left out.
        Tags are lower-cased so the browser matches without repeating the casing
        rules. Keys are short because they repeat on every row. */ -}}
 {{- $rows := slice -}}
+{{- $resources := (partialCached "doors/resource_index" (site.GetPage "/resources") "resources").items -}}
+{{- $clusterNum := partialCached "doors/cluster_numbers.html" "n" -}}
 {{- range site.RegularPages -}}
   {{- $page := . -}}
   {{- $tags := partial "functions/page_tags.html" $page -}}
   {{- if $tags -}}
     {{- $lower := slice -}}
     {{- range $tags -}}{{- $lower = $lower | append (lower .) -}}{{- end -}}
-    {{- $rows = $rows | append (dict
-        "t" $page.Title
-        "u" $page.RelPermalink
-        "s" ($page.Section | default "")
-        "g" $lower) -}}
+    {{- $row := dict "t" $page.Title "u" $page.RelPermalink "s" ($page.Section | default "") "g" $lower -}}
+    {{- with index $resources $page.RelPermalink -}}
+      {{- with .types -}}{{- $row = merge $row (dict "y" .) -}}{{- end -}}
+      {{- with .desc -}}{{- $row = merge $row (dict "d" (truncate 140 "…" . | htmlUnescape)) -}}{{- end -}}
+      {{- $nums := slice -}}
+      {{- range .clusters -}}{{- with index $clusterNum (lower . | urlize) -}}{{- $nums = $nums | append . -}}{{- end -}}{{- end -}}
+      {{- with $nums -}}{{- $row = merge $row (dict "c" .) -}}{{- end -}}
+    {{- end -}}
+    {{- $rows = $rows | append $row -}}
   {{- end -}}
 {{- end -}}
 {{- $rows | jsonify -}}

@@ -1,0 +1,1230 @@
+/* Articles and plain content, every rule under .article-layout. Content here is Markdown written
+   for the old theme, so lists, tables and embeds are styled but not rebuilt. */
+.article-layout{display:grid;grid-template-columns:minmax(0,580px) 300px;justify-content:center;gap:64px;padding:32px 0 32px;align-items:start}
+.article-layout-single{grid-template-columns:minmax(0,580px)}
+.article-layout-wide{grid-template-columns:minmax(0,1fr)}
+.article-layout .reading{min-width:0}
+.article-layout .crumbs{margin-bottom:18px}
+.article-layout .article-head{margin-bottom:22px}
+.article-layout .article-head:has(.byline:empty){margin-bottom:0}
+.article-layout .article-meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;font-size:15px;font-weight:600}
+/* A category here filters nothing, so it is plain text, not a chip (DESIGN.md §5). */
+.article-layout .article-meta span{color:var(--soft)}
+.article-layout .reading h1{font-size:clamp(36px,4.2vw,58px);line-height:1.06;letter-spacing:-.01em;margin:0;text-wrap:balance}
+/* In the narrow column a bigger screen must not mean a taller stack of title lines. */
+.article-layout:not(.article-layout-wide) .reading h1{font-size:clamp(34px,3.2vw,44px);line-height:1.1}
+.article-layout .reading h1.long-title{font-size:clamp(28px,3vw,40px);line-height:1.12}
+/* For long compounds. Not in English, where Safari hyphenates any word at a line end. */
+.article-layout .reading h1:lang(de),.article-layout .reading h1:lang(tr){hyphens:auto}
+.article-layout .standfirst{font:500 clamp(21px,1.9vw,23px)/1.4 var(--display);margin:18px 0 0;max-width:30em;color:var(--ink)}
+/* A wide page (directories, programmes) runs its standfirst further, so a one-sentence line does not break halfway
+   across a page whose content fills the width; it stays under 80 characters a line (DESIGN.md §7). */
+.article-layout-wide .standfirst{max-width:32.5em}
+.article-layout .byline{display:flex;flex-wrap:wrap;gap:4px 18px;margin:16px 0 0;font-size:16px}
+.article-layout .byline a{color:var(--link);text-underline-offset:3px;text-decoration:underline}
+.article-layout .byline-authors>*{display:inline}
+.article-layout .article-image{margin:0 0 28px}
+/* At its own size or the column's width, whichever is smaller, and at most 480 px tall: square logos and portrait
+   covers no longer push the text below the first screen, and small images are not blown up. Phones cap it lower (below). */
+.article-layout .article-image img{display:block;width:auto;max-width:100%;height:auto;max-height:480px;border-radius:var(--r-small)}
+.article-layout figcaption{margin-top:10px;font-size:15px;text-align:center}
+.article-layout .article-style{font-size:18px;line-height:1.6;color:var(--ink);text-align:start;overflow-wrap:break-word}
+.article-layout .article-style p,.article-layout .article-style li{font-size:inherit;line-height:inherit}
+/* Wide pages keep the reading width for their prose, and give the rest of the page to tables and charts. */
+.article-layout-wide .article-style p,.article-layout-wide .article-style li{max-width:29em}
+.article-layout .article-style p{margin:0 0 16px;max-width:28.4em}
+/* Under 80 characters a line (checked by check_design.py). The column is wider so pictures, tables and
+   embeds get the room; plain lists and reference lists keep to the text's measure plus their indent. */
+.article-layout:not(.article-layout-wide) .article-style :is(ul:not([class]),ol:not([class]),.references-list){max-width:29.8em}
+/* Old pages put <br> on its own line between blocks to add space under the previous theme. Between
+   blocks it only opens a gap (up to 1,600px on a page), so drop it. A <br> inside a paragraph, or one that
+   clears floats (Awards), is untouched. */
+.article-layout .article-style>br:not([clear],[style*="clear"]),.article-layout .article-style>.doc-section>br:not([clear],[style*="clear"]){display:none}
+.article-layout .article-style ul,.article-layout .article-style ol{margin:0 0 18px;padding-inline-start:1.4em}
+.article-layout .article-style li{margin-bottom:6px}
+.article-layout .article-style :is(h2,h3,h4){line-height:1.15;margin:34px 0 12px;text-align:start}
+.article-layout .article-style h2{font-size:28px}
+.article-layout .article-style h3{font-size:23px}
+.article-layout .article-style h4{font-size:20px}
+.article-layout .article-style a:not([class]){color:var(--link);text-decoration:underline;text-underline-offset:3px}
+.article-layout .article-style a:not([class]):hover{color:var(--ink)}
+.article-layout .article-style blockquote{margin:28px 0;padding:18px 22px;background:var(--edu-bg);border:0;border-radius:var(--r-large);color:var(--ink);font-size:18px!important;max-width:600px}
+.article-layout .article-style blockquote p:last-child{margin-bottom:0}
+.article-layout .article-style figure{margin:28px 0}
+.article-layout .article-style img{max-width:100%;height:auto}
+.article-layout .article-style div[style*="display:flex"],.article-layout .article-style div[style*="display: flex"]{flex-wrap:wrap}
+.article-layout .article-style iframe,.article-layout .article-style video{max-width:100%}
+/* A hand-coloured red button in one lesson. Our red keeps its meaning and passes on the page. */
+.article-layout .article-style .btn[style*="color:red"]{color:var(--urgent)!important}
+.article-layout .article-style div.alert,.article-layout .article-style div.alert>div{font-size:inherit;color:var(--ink)}
+.article-layout .article-style div[style*="width"]{max-width:100%}
+.article-layout .article-style table{display:block;max-width:100%;overflow-x:auto;margin:0 0 18px;font-size:16px;line-height:1.45;border-collapse:collapse}
+.article-layout .article-style th,.article-layout .article-style td{padding:6px 10px;border-bottom:1px solid var(--line);text-align:start}
+.article-layout .article-style pre{max-width:100%;overflow-x:auto;font-size:15px}
+.article-layout .article-style code{font-size:max(15px,.9em)}
+main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .article-style p,main:lang(ar) .article-layout .article-style li{font-size:21px}
+/* The theme's root size shrinks on phones, so rem and small-text rules from it and from older
+   Markdown come out as low as 10 px. */
+.article-layout .article-style :is(small,.small,[style*="font-size:."],[style*="font-size:0."]),.article-layout .article-style .btn:not([style*="font-size"]),.article-layout .btn-links .btn{font-size:15px!important;line-height:1.35}
+.article-layout .article-foot{margin-top:32px;font-size:16px}
+/* Two or more buttons in one paragraph keep a gap between them when they wrap onto separate lines. */
+.article-layout .article-style p:has(>.btn~.btn){display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.article-layout .article-style p:has(>.btn~.btn)>.btn{margin:0}
+.article-layout .share-link{margin:0 0 18px}
+.article-layout .copy-link{background:#fff;border:1.5px solid var(--ink);border-radius:999px;padding:8px 12px;font:600 15px/1.3 var(--text);color:var(--ink);cursor:pointer}
+.article-layout .copy-link:hover{background:var(--ink);color:#fff}
+.article-layout .article-tags .badge{background:var(--surface);color:var(--ink);font:600 15px/1.4 var(--text);padding:3px 10px;border-radius:var(--r-small);margin:0 6px 6px 0}
+.article-layout .article-widget h3{font-size:24px;margin:28px 0 10px}
+.article-layout .article-foot .meta-nav{font-size:15px;font-weight:700;letter-spacing:0;text-transform:none;color:var(--soft)}
+.article-layout .article-foot .post-nav-item p,.article-layout .article-foot .article-widget li{font-size:16px;line-height:1.4;margin:0}
+.article-layout .article-foot :is(.card-subtitle,.card-text){font-size:16px;max-width:30em}
+.article-layout .article-widget a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
+/* Related links are 44 px targets (DESIGN.md §9). */
+.article-layout .article-foot .article-widget li>a{display:inline-flex;align-items:center;min-height:44px}
+.article-layout .article-card{position:sticky;top:24px;max-height:calc(100vh - 48px - var(--banner,0px));overflow-y:auto;background:var(--surface);border-radius:var(--r-large);padding:22px;font-size:16px;line-height:1.45}
+.article-layout .article-card h2{font-size:23px;line-height:1.15;margin:0 0 8px}
+.article-layout .article-card dl{margin:0 0 20px}
+.article-layout .article-card dl:last-child{margin-bottom:0}
+.article-layout .article-card dt{font-weight:700;font-size:15px;margin-top:10px}
+.article-layout .article-card dt:first-child{margin-top:0}
+.article-layout .article-card dd{margin:1px 0 0}
+.article-layout .article-toc ul{list-style:none;margin:0;padding:0}
+.article-layout .article-toc ul ul{padding-inline-start:12px}
+.article-layout .article-toc #TableOfContents a{display:block;padding:5px 0;font-size:16px;line-height:1.35;color:var(--link);text-underline-offset:3px;text-decoration:underline}
+/* On a desktop the side card (contents, date, term list, profile) sits to the left of the text and the
+   pair is centred, so spare width goes to the outer margins. It may come after the text in the page;
+   the grid places it all the same. */
+@media(min-width:1001px){
+  .article-layout:not(.article-layout-wide){grid-template-columns:minmax(0,640px)}
+  .article-layout:not(.article-layout-wide):has(>.article-card){grid-template-columns:220px minmax(0,640px);column-gap:48px}
+  .article-layout:not(.article-layout-wide):has(>.article-card)>.reading{grid-column:2;grid-row:1}
+  .article-layout:not(.article-layout-wide)>.article-card{grid-column:1;grid-row:1;box-sizing:border-box;width:220px;padding:18px}
+}
+@media(max-width:1000px){
+  .article-layout{grid-template-columns:minmax(0,640px);gap:36px}
+  .article-layout-wide{grid-template-columns:minmax(0,1fr)}
+  .article-layout .article-card{position:static;max-height:none}
+}
+@media(max-width:760px){
+  .article-layout{padding:20px 0 24px}
+  .article-layout .article-style{font-size:17px}
+  main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .article-style p,main:lang(ar) .article-layout .article-style li{font-size:20px}
+}
+/* Call-outs: in the text up to 1240px. On wider screens they float into a third column on the right,
+   where clear keeps them under each other; the contents card stays on the left and in view. */
+.article-layout .callout{box-sizing:border-box;margin:28px 0;padding:18px 20px;background:var(--res-bg);border-radius:var(--r-large);font-size:17px;line-height:1.5;color:var(--ink)}
+.article-layout .callout-example{background:var(--edu-bg)}
+.article-layout .callout-warning{background:var(--com-bg)}
+.article-layout .article-style .callout p,.article-layout .article-style .callout ul,.article-layout .article-style .callout ol{margin:0 0 10px;max-width:none}
+/* On a full-width page a call-out keeps to the reading width of the text around it. */
+.article-layout-wide .article-style .callout{max-width:34em}
+.article-layout .article-style .callout>:last-child{margin-bottom:0}
+.article-layout .article-style .callout-title{font:500 21px/1.2 var(--display)}
+@media(min-width:1240px){
+  .article-layout.article-layout-callouts{grid-template-columns:minmax(0,600px) 260px;column-gap:40px}
+  .article-layout.article-layout-callouts:has(>.article-card){grid-template-columns:220px minmax(0,600px) 260px}
+  .article-layout-callouts .callout{float:right;float:inline-end;clear:right;clear:inline-end;width:260px;margin:4px -300px 18px 0;margin-inline:0 -300px}
+  .article-layout-callouts .doc-section-tinted .callout{margin-inline-end:-324px}
+}
+@media(max-width:1000px){.article-layout .article-card{order:1}}
+/* Sections that open: the spoiler and expand shortcodes. */
+.article-layout .article-style .spoiler{margin:0 0 var(--box-gap);background:var(--surface);border-radius:var(--r-small)}
+.article-layout .article-style .spoiler>summary{padding:var(--box-pad-y) var(--box-pad);font-weight:600;font-size:18px;line-height:1.35;color:var(--link);cursor:pointer}
+.article-layout .article-style .spoiler>summary:hover{color:var(--ink)}
+.article-layout .article-style .spoiler-body{padding:2px var(--box-pad) var(--box-pad);font-size:18px;line-height:1.55}
+.article-layout .article-style .spoiler-body>:last-child{margin-bottom:0}
+/* Disclosures hold prose, so they stay at reading width unless a PDF is open inside one. */
+.article-layout-wide .article-style .spoiler:not([open]),.article-layout-wide .article-style .spoiler:not(:has(.pdf-viewer)){max-width:580px}
+.article-layout .article-style [style*="justify"]{text-align:start!important}
+/* A lesson's activity takes more room than the text around it, without growing to the full page. */
+.article-layout-wide .article-style>div[style*="padding-bottom"]:has(>.click-to-load,>iframe),.article-layout-wide .article-style :is(.video-poster,.video-frame){max-width:960px}
+.article-layout-wide .article-style>div[style*="padding-bottom"]:has(>iframe){height:auto!important;padding-bottom:0!important;aspect-ratio:3/2}
+/* Tables and text panels fit what they hold, so a wide page does not leave them mostly empty. */
+.article-layout-wide .article-style table{width:fit-content}
+.article-layout-wide .article-style>div[style*="border"]:not([style*="padding-bottom"]){max-width:640px;margin-inline:0!important;padding:14px 18px!important}
+.article-layout-wide .article-style blockquote{max-width:640px}
+.article-layout-wide .article-style>hr{max-width:580px;margin-inline:0}
+/* Buttons in Markdown keep their own colours, against the rule for links in text. */
+/* Glossary pages: the reading layout, with the list of terms in the side card. */
+.glossary-layout .language-switcher{margin:10px 0 14px;font-size:16px}
+.glossary-layout .language-switcher a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
+.glossary-layout .term-definition{padding:0 0 14px;border-bottom:1px solid var(--line)}
+.glossary-layout .article-style .term-line{margin-bottom:8px;font-size:18px;line-height:1.5}
+.glossary-layout .references-list,.glossary-layout .references-list li{font-size:18px!important}
+.glossary-layout .article-style .btn-group{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 18px}
+.glossary-layout .article-style .btn-group .btn{margin:0!important;padding:7px 14px!important;background:#fff;border-radius:999px!important;font-size:16px!important;color:var(--link)}
+.glossary-layout .article-style .btn-group .btn.active{background:var(--ink);border-color:var(--ink);color:#fff}
+.glossary-card{display:flex;flex-direction:column;overflow:hidden!important}
+.glossary-card .form-control{flex:none;margin-bottom:10px}
+.term-list{flex:1;min-height:0;overflow-y:auto;margin-inline:-6px;padding-inline:6px;font-size:16px;line-height:1.3}
+.term-list ul{margin:0;padding:0;list-style:none}
+.term-list a{display:block;padding:5px 0;color:var(--link);text-decoration:underline;text-underline-offset:3px}
+.term-list a:hover{color:var(--ink)}
+.term-list a[aria-current]{color:var(--ink);font-weight:700;text-decoration:none}
+@media(max-width:1000px){.term-list{max-height:340px}}
+.resource-open{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;margin:0 0 24px}
+.resource-open .btn{padding:10px 22px;font-size:17px}
+.resource-open .btn .fa-external-link-alt{margin-inline-start:4px;font-size:14px}
+.resource-host{font-size:16px;color:var(--soft);overflow-wrap:anywhere}
+/* The language takes its own line under the button, so it does not read as part of the host. */
+.resource-lang{flex-basis:100%}
+/* A resource entry: the entry, then its details card, then Previous and Next. On a desktop the card
+   sits in the left column beside both; the second row takes any extra height of a long card. */
+.article-layout .resource-kind{margin:0 0 12px;max-width:60ch;font-size:16px;font-weight:600;color:var(--soft)}
+.article-layout .byline-more{display:inline}
+.article-layout .byline-more>summary{display:inline-block;margin-inline-start:.3em;color:var(--link);font-weight:600;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.article-layout .byline-more>summary:hover{color:var(--ink)}
+.article-layout .byline-more>p{margin:6px 0 0}
+.article-layout.article-layout-resource .resource-keywords{margin-top:24px}
+.article-layout-resource .article-card dd a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
+.article-layout-resource>.article-foot{margin-top:0}
+@media(min-width:1001px){
+  .article-layout-resource:not(.article-layout-wide){grid-template-rows:auto 1fr;row-gap:32px}
+  .article-layout-resource:not(.article-layout-wide)>.article-card{grid-row:1/span 2}
+  .article-layout-resource>.article-foot{grid-column:2;grid-row:2}
+}
+@media(max-width:1000px){
+  .article-layout-resource .article-card{order:0}
+  .article-layout-resource .article-card .resource-type{display:none}
+  .article-layout-resource .article-card .resource-type+dd+dt{margin-top:0}
+  .article-layout .byline-more>summary{min-height:44px;display:inline-flex;align-items:center}
+}
+.article-layout .article-tags{margin:0 0 18px}
+.article-layout .resource-keywords{max-width:32em;margin:0 0 18px;font-size:16px;line-height:1.6;color:var(--soft)}
+.article-layout .resource-keywords strong{margin-inline-end:6px;color:var(--ink)}
+.article-layout .resource-keywords a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
+/* Author profiles: the person's details in the side card. */
+.profile-card .profile-photo{display:block;width:135px;height:135px;margin:0 0 12px;object-fit:cover;border-radius:50%}
+.profile-card .avatar-square{border-radius:var(--r-small)}
+.profile-card p{margin:0 0 6px}
+.profile-card .profile-role{font-weight:700}
+.profile-card a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
+.profile-card ul.network-icon a{text-decoration:none}
+.sc-page{padding:32px 0 40px}
+.sc-page h1{font-size:clamp(36px,4.2vw,58px);line-height:1.06;margin:0 0 18px}
+.sc-page .crumbs{margin-bottom:18px}
+.sc-page #sc-container{padding:0;font-family:var(--text);max-width:none}
+/* A team's name heads its own row, so it cannot end one row with its people starting the next. */
+.sc-page .sc-grid .sc-title-card{flex:0 0 100%;grid-column:1/-1;width:100%;aspect-ratio:auto;padding:var(--box-pad-y) var(--box-pad);flex-direction:row;align-items:baseline;justify-content:flex-start;gap:10px}
+.sc-page .sc-title-card :is(.sc-title-label,.sc-title-text){margin:0}
+.sc-page .sc-title-card .sc-title-text{font-size:17px}
+.sc-page .sc-title-card .sc-cbar{display:none}
+/* "Team" before every team's name says nothing the band doesn't, so only screen readers hear it; on a
+   desktop each name has room for two lines, so the photos of neighbouring teams start level. */
+.sc-page .sc-title-card .sc-title-label{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+@media(min-width:761px){.sc-page :is(.sc-team,.sc-grid)>.sc-title-card{min-height:72px;align-items:center}}
+/* Team bands: the four Strategic Focus Area teams in their own area colour, every other team in slate
+   (DESIGN.md §6: area colours only for areas). steering.js sets data-area from the team's name. */
+.sc-page :is(.sc-card,.sc-title-card){--team-color:var(--soft)!important}
+.sc-page :is(.sc-team,.sc-grid):has(>[data-area=com]) .sc-card,.sc-page .sc-title-card[data-area=com]{--team-color:var(--com)!important}
+.sc-page :is(.sc-team,.sc-grid):has(>[data-area=jus]) .sc-card,.sc-page .sc-title-card[data-area=jus]{--team-color:var(--jus)!important}
+.sc-page :is(.sc-team,.sc-grid):has(>[data-area=res]) .sc-card,.sc-page .sc-title-card[data-area=res]{--team-color:var(--res)!important}
+.sc-page :is(.sc-team,.sc-grid):has(>[data-area=edu]) .sc-card,.sc-page .sc-title-card[data-area=edu]{--team-color:var(--edu)!important}
+.sc-page .sc-section-title{margin:0 0 4px}
+/* 44 px targets (DESIGN.md §9). */
+.sc-page .sc-nav a{display:inline-flex;align-items:center;min-height:44px;padding:0}
+.sc-close-btn,.sc-social-links a{min-width:44px;min-height:44px;display:inline-flex;align-items:center;justify-content:center}
+.sc-team{display:contents}
+/* On a phone the cards and team names share one grid: the box gap between them, and a team's name further
+   from the cards of the team before it than from its own. */
+.sc-page .sc-grid{gap:var(--box-gap)}
+/* steering.js wraps each team in .sc-team, so its name card is then the first child of its own wrapper. */
+@media(max-width:760px){.sc-page .sc-grid>.sc-title-card:not(:first-child),.sc-page .sc-grid .sc-team:not(:first-child)>.sc-title-card{margin-top:var(--box-gap)}}
+@media(min-width:761px){
+  .sc-page .sc-grid{gap:28px 40px}
+  .sc-page .sc-team{display:flex;flex-wrap:wrap;align-content:flex-start;gap:1rem;width:calc(var(--sc-members)*190px + (var(--sc-members) - 1)*1rem);max-width:100%}
+  .sc-page .sc-grid .sc-card{width:190px}
+  .sc-page .sc-grid .sc-title-card{flex-wrap:wrap}
+}
+.article-layout .post-nav-scope{font-size:16px;line-height:1.4;margin:0 0 12px}
+.article-layout .post-nav-scope a{text-decoration:underline}
+.article-layout .post-nav{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;margin:0 0 18px}
+.article-layout .post-nav-item{max-width:calc(50% - 12px);min-width:0}
+.article-layout .post-nav-item:only-child{max-width:none}
+.article-layout .post-nav-item:last-child:not(:first-child){text-align:end}
+.article-logo{float:inline-end;width:96px;height:96px;margin:0 0 12px 18px;border-radius:var(--r-small)}
+/* FORWARD UNESCO Sustainable Development Goals card (shortcodes/forward_unesco_sdgs_card.html), shared by
+   /awards/ and Educators' Corner 023. */
+.forward-card-container{width:100%;padding:12px 0 0;box-sizing:border-box}
+.forward-sdg-card{border:1px solid var(--line);border-radius:var(--r-large);padding:20px 22px;background:var(--page);margin:0;max-width:900px;text-align:center;font-family:var(--text)}
+.article-layout .article-style .forward-header .forward-sdg-title{margin:0 0 4px;max-width:none;color:var(--ink);font:500 22px/1.2 var(--display)}
+.article-layout .article-style .forward-header .forward-sdg-sub{margin:0 0 16px;max-width:none;color:var(--soft);font-size:16px;line-height:1.4}
+.sdg-icons-wrapper{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:14px}
+.sdg-icons-wrapper a{position:relative;display:inline-block;text-decoration:none;border-radius:var(--r-small)}
+.sdg-icons-wrapper .sdg-ext{position:absolute;right:4px;bottom:4px;display:grid;place-items:center;width:20px;height:20px;border-radius:4px;background:rgba(255,255,255,.92);color:var(--ink);font-size:10px;line-height:1;box-shadow:0 1px 2px rgba(0,0,0,.18);pointer-events:none}
+.article-layout .article-style .sdg-icons-wrapper img{display:block;width:78px;height:78px;border-radius:var(--r-small);background:#fff;margin:0}
+@media(prefers-reduced-motion:no-preference){
+  .sdg-icons-wrapper a{transition:transform .16s ease}
+  .sdg-icons-wrapper a:is(:hover,:focus-visible){transform:translateY(-3px)}
+}
+@media(max-width:640px){
+  .forward-sdg-card{padding:16px}
+  .sdg-icons-wrapper{gap:10px}
+  .article-layout .article-style .sdg-icons-wrapper img{width:64px;height:64px}
+}
+@media print{
+  .site-head,.site-foot,.article-foot,.skip,.cc-window,.article-toc,.article-card h2{display:none!important}
+  body{background:#fff;color:#000;font-size:12pt}
+  .wrap{width:100%}
+  .article-layout{display:block;padding:0}
+  .article-layout .article-card{position:static;max-height:none;background:none;padding:0}
+  /* A printed page keeps its citation's heading (front matter cite_as). */
+  .article-layout .article-card .card-cite h2{display:block!important}
+  .article-layout .article-style,.article-layout .article-style :is(p,li){font-size:12pt}
+  a{color:#000}
+}
+/* A video before it plays, the player after, and a section of a long summaries page. */
+.video-poster{position:relative;display:block;margin:0 0 18px;aspect-ratio:16/9;overflow:hidden;background:var(--surface);border-radius:var(--r-small)}
+.article-layout .article-style .video-poster img{display:block;width:100%;height:100%;object-fit:cover}
+.video-play{position:absolute;inset:50% auto auto 50%;display:flex;align-items:center;justify-content:center;width:64px;height:64px;margin:-32px 0 0 -32px;background:var(--ink);border-radius:50%;color:#fff;font-size:24px}
+.video-poster:hover .video-play,.video-poster:focus-visible .video-play{background:var(--hot);color:var(--ink)}
+.video-frame{display:block;width:100%;aspect-ratio:16/9;margin:0 0 18px;border:0;border-radius:var(--r-small)}
+.video-poster:has(+ .video-note){margin-bottom:6px}
+.video-note,.article-layout .article-style .video-note{margin:0 0 18px;color:var(--soft);font-size:16px;line-height:1.4}
+.video-note a{text-decoration:underline}
+.article-layout .article-style .summary-entry{margin:0;border-bottom:1px solid var(--line)}
+.article-layout .article-style .summary-entry>summary{padding:12px 0;cursor:pointer}
+.article-layout .article-style .summary-entry>summary h3{display:inline;margin:0;font-size:22px;line-height:1.25}
+.article-layout .article-foot .article-widget li{margin-bottom:8px}
+.doi-link,.cite-us-text a{text-decoration:underline;text-underline-offset:3px}
+.toc-phone{display:none}
+@media(max-width:1000px){
+  .toc-phone{display:block;margin:0 0 20px;padding:var(--box-pad);background:var(--surface);border-radius:var(--r-small)}
+  .toc-phone .article-toc{max-inline-size:28em}
+  /* Sentence case in the heading face, as the side card's "On this page" on a desktop (DESIGN.md §1: no tracked capitals). */
+  .toc-phone-label{margin:0 0 6px;font:500 20px/1.2 var(--display);color:var(--ink)}
+  .toc-phone.is-short .toc-extra{display:none}
+  .toc-phone-more{margin:6px 0 0;padding:4px 0;border:0;background:none;font:600 16px/1.35 var(--text);color:var(--ink);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+  .toc-phone a{display:block;padding:5px 0;font-size:16px;line-height:1.35;color:var(--link);text-decoration:underline}
+  /* Each contents link and the copy button are 44 px targets on phones and tablets (DESIGN.md §9). */
+  .toc-phone a{display:flex;align-items:center;min-height:44px;box-sizing:border-box}
+  .article-layout .copy-link{min-height:44px}
+  .toc-phone-more{min-height:44px}
+  /* On phones and tablets the side card never repeats the contents: either the phone list above the text has
+     them, or the page left them out on purpose (summaries, phone_toc: false). */
+  .article-layout .article-card :is(h2:has(+ .article-toc),.article-toc){display:none}
+  .article-layout:has(.toc-phone) .article-card:not(:has(dl,.card-cite)){display:none}
+  .article-layout .article-card-repeats{display:none}
+  .glossary-index .reading{display:contents}
+  .glossary-index .article-head{order:-2;margin-bottom:0}
+  .glossary-index .term-list{max-height:220px}
+  .glossary-index .glossary-card{order:1}
+  .glossary-index .article-foot{order:2}
+}
+.summary-tools{margin:0 0 14px;padding:14px 18px;background:var(--surface);border-radius:var(--r-large)}
+.summary-tools label{display:block;margin:0;font-size:16px;font-weight:700}
+.summary-tools input{display:block;width:100%;min-height:44px;margin-top:6px;padding:8px 14px;background:#fff;border:1.5px solid var(--soft);border-radius:999px;font:400 16px/1.3 var(--text)}
+.article-layout .article-style .summary-count{margin:8px 0 0;font-size:16px}
+.summary-more{margin-top:14px;min-height:44px}
+.summary-more[hidden]{display:none}
+/* The list of entries is its own contents, so a second list beside it only repeats the titles. */
+.article-layout:has(.summary-entry) .article-card :is(h2,.article-toc){display:none}
+.dei-mark{margin-inline-start:.3em;padding:0 6px;background:var(--jus-bg);border-radius:var(--r-small);font:600 15px/1.3 var(--text);color:var(--ink);vertical-align:.1em}
+/* Inside an entry, its headings sit below the entry's own 22 px title (DESIGN.md §2). */
+.article-layout .article-style .summary-entry h4{font-size:19px}
+/* In the DEI collection every entry is DEI, so the mark tells nothing apart. */
+.article-layout:has(.summaries-dei) .dei-mark{display:none}
+@media print{.toc-phone{display:none!important}}
+.glossary-feedback-header>*{min-width:0;overflow-wrap:anywhere}
+.glossary-feedback-header>:lang(de),.glossary-feedback-header>:lang(tr){hyphens:auto}
+
+/* Catalogues (Syllabus): groups of links flow in columns across a wide page. */
+.article-style .catalogue{columns:3 300px;column-gap:48px;margin-top:28px}
+.article-style .catalogue-group{break-inside:avoid-column;margin-bottom:28px}
+.article-style .catalogue-group h3{margin:0 0 10px;font-size:23px;line-height:1.2}
+.article-style .catalogue-group ul{margin:0;padding-inline-start:1.1em}
+.article-style .catalogue-group li{margin-bottom:8px;font-size:17px;line-height:1.4}
+/* A long group may run on into the next column rather than leave a gap. */
+.article-style .catalogue-group:has(li:nth-child(15)){break-inside:auto}
+.article-style .catalogue-group:has(li:nth-child(15)) h3{break-after:avoid-column}
+
+/* Neurodiversity Lesson Bank: index cards, workshop layout, and Social Justice (--jus) lesson pages.
+   On phones and tablets the lessons follow the intro straight away (DESIGN.md §2) and the Team Neurodiversity
+   panel moves below them; on desktop the panel stands beside the intro above the grid. */
+.article-layout .article-style .lessonbank-flow{display:flex;flex-direction:column;gap:0;max-width:none}
+.article-layout .article-style .lessonbank-intro{order:0}
+.article-layout .article-style .lessonbank-lessons{order:1}
+.article-layout .article-style .lessonbank-aside{order:2;max-width:none;margin:0 0 28px;padding:24px 22px 20px;background:var(--jus-bg);box-shadow:inset 0 5px 0 var(--jus);border-radius:var(--r-large)}
+.article-layout .article-style .lessonbank-intro p{margin:0 0 14px}
+.article-layout .article-style .lessonbank-intro p:last-child{margin-bottom:0}
+.article-layout .article-style .lessonbank-aside h2{margin:0 0 8px;font-size:22px;line-height:1.2}
+.article-layout .article-style .lessonbank-aside p{margin:0 0 12px;font-size:17px;line-height:1.5;max-width:none}
+.article-layout .article-style .lessonbank-aside-links{display:flex;flex-direction:column;gap:6px;margin:0;padding:0;list-style:none}
+.article-layout .article-style .lessonbank-aside-links li{margin:0;max-width:none;font-size:16px}
+.article-layout .article-style .lessonbank-aside-links a{color:var(--jus);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.article-layout .article-style .lessonbank-aside-links a:hover{color:var(--ink)}
+@media(min-width:1001px){
+  .article-layout .article-style .lessonbank-flow{display:grid;grid-template-columns:minmax(0,580px) minmax(0,420px) minmax(0,1fr);grid-template-areas:"intro aside ." "lessons lessons lessons";column-gap:56px;align-items:start}
+  .article-layout .article-style .lessonbank-intro{grid-area:intro}
+  .article-layout .article-style .lessonbank-aside{grid-area:aside;margin:0}
+  .article-layout .article-style .lessonbank-lessons{grid-area:lessons}
+}
+.article-layout .article-style .lesson-grid-note{margin:0 0 18px;font-size:16px;color:var(--soft)}
+.article-layout .article-style .lesson-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:18px;margin:20px 0 40px;padding:0;list-style:none;max-width:none}
+.article-layout .article-style .lesson-grid>.lesson-card{display:flex;flex-direction:column;max-width:none;margin:0;padding:20px 22px;background:var(--surface);border-radius:var(--r-large)}
+.article-layout .article-style .lesson-grid>.lesson-card-online{background:var(--jus-bg);box-shadow:inset 0 5px 0 var(--jus);padding-top:24px}
+.article-layout .article-style .lesson-card .lesson-num{margin:0 0 6px;font-size:15px;font-weight:700;color:var(--soft);max-width:none}
+.article-layout .article-style .lesson-card-online .lesson-num{color:var(--jus)}
+.article-layout .article-style .lesson-card h3{margin:0 0 8px;font-size:22px;line-height:1.2}
+.article-layout .article-style .lesson-card-online h3 a{color:var(--jus);text-decoration-color:color-mix(in srgb,var(--jus) 55%,transparent)}
+.article-layout .article-style .lesson-card-online h3 a:hover{color:var(--ink);text-decoration-color:currentColor}
+.article-layout .article-style .lesson-card .lesson-summary{margin:0 0 14px;font-size:16px;line-height:1.45;color:var(--ink);max-width:none}
+.article-layout .article-style .lesson-card .lesson-materials{margin:auto 0 0;padding:12px 0 0;border-top:1px solid color-mix(in srgb,var(--ink) 14%,transparent);list-style:none;display:flex;flex-wrap:wrap;gap:6px 14px}
+.article-layout .article-style .lesson-card .lesson-materials li{margin:0;font-size:15px;max-width:none}
+.article-layout .article-style .lesson-card .lesson-materials a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
+.article-layout .article-style .lesson-card-online .lesson-materials a{color:var(--jus)}
+.article-layout .article-style .lesson-card-online .lesson-materials a:hover{color:var(--ink)}
+.article-style .lesson-card .lesson-note{margin:auto 0 0;padding-top:12px;border-top:1px solid color-mix(in srgb,var(--ink) 14%,transparent);font-size:15px;color:var(--soft);max-width:none}
+.article-layout .article-style .lessonbank-workshop{display:flex;flex-direction:column;gap:20px;margin:16px 0 0;max-width:none}
+.article-layout .article-style .lessonbank-workshop-media{min-width:0}
+.article-layout .article-style .lessonbank-workshop-links{display:flex;flex-wrap:wrap;gap:10px 18px;margin:16px 0 0;padding:0;list-style:none}
+.article-layout .article-style .lessonbank-workshop-links li{margin:0}
+@media(min-width:1001px){
+  .article-layout .article-style .lessonbank-workshop{display:grid;grid-template-columns:minmax(0,520px) minmax(0,560px);justify-content:start;column-gap:48px;align-items:start}
+}
+@media(max-width:1000px){
+  .article-layout .article-style .lesson-card .lesson-materials a,.article-layout .article-style .lessonbank-aside-links a{display:inline-flex;align-items:center;min-height:44px}
+  .article-layout .article-style .lesson-card .lesson-materials{gap:0 16px;padding-top:6px}
+}
+.article-layout :is(.lesson-materials,.lesson-card-feedback,.lesson-quick-bar) .fa-external-link-alt{margin-inline-start:4px;font-size:.78em}
+
+/* Individual lesson pages: Social Justice (--jus) side card, mobile bar, structured activity blocks and pager. */
+.article-layout .lesson-kicker{margin:0 0 8px;font-size:16px;font-weight:700;color:var(--jus)}
+.article-layout .article-card-jus{background:var(--jus-bg);box-shadow:inset 0 6px 0 var(--jus);padding-top:26px}
+.article-layout .article-card-jus .article-toc #TableOfContents a{color:var(--jus)}
+.article-layout .article-card-jus .article-toc #TableOfContents a:hover{color:var(--ink)}
+.article-type-neurodiversity-lessonbank .toc-phone{background:var(--jus-bg)}
+.article-type-neurodiversity-lessonbank .toc-phone a{color:var(--jus)}
+.article-layout .lesson-card-meta{margin:0 0 18px;padding:0 0 14px;border-bottom:1px solid color-mix(in srgb,var(--jus) 22%,transparent)}
+.article-layout .lesson-card-links{margin:0;padding:0;list-style:none}
+.article-layout .lesson-card-links li{margin:0 0 6px;font-size:15px}
+.article-layout .lesson-card-links a,.article-layout .lesson-card-feedback a,.article-layout .lesson-card-nav a{color:var(--jus);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.article-layout .lesson-card-links a:hover,.article-layout .lesson-card-feedback a:hover,.article-layout .lesson-card-nav a:hover{color:var(--ink)}
+.article-layout .lesson-card-feedback{margin:10px 0 0;font-size:15px}
+.article-layout .lesson-card-nav{display:flex;flex-direction:column;gap:6px;margin:18px 0 0;padding:14px 0 0;border-top:1px solid color-mix(in srgb,var(--jus) 22%,transparent);font-size:15px}
+.article-layout .lesson-quick-bar{display:none}
+@media(max-width:1000px){
+  .article-layout .article-card-jus{display:none}
+  .article-layout .lesson-quick-bar{display:flex;flex-wrap:wrap;gap:6px 14px;margin:14px 0 0;padding:10px 14px;background:var(--jus-bg);border-radius:var(--r-small)}
+  .article-layout .lesson-quick-link{display:inline-flex;align-items:center;min-height:44px;font-size:15px;font-weight:600;color:var(--jus);text-decoration:underline;text-underline-offset:3px}
+  .article-layout .lesson-quick-link:hover{color:var(--ink)}
+}
+.article-type-neurodiversity-lessonbank .article-style blockquote{background:var(--jus-bg)}
+.article-layout .article-style .lesson-objectives{margin:0 0 28px;padding:18px 22px;background:var(--jus-bg);border-inline-start:4px solid var(--jus);border-radius:var(--r-small)}
+.article-layout .article-style .lesson-objectives h2{margin:0 0 10px;font-size:22px;line-height:1.2}
+.article-layout .article-style .lesson-objectives ul{margin:0;padding-inline-start:1.3em}
+.article-layout .article-style .lesson-objectives li:last-child{margin-bottom:0}
+.article-layout .article-style .lesson-media-pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:16px;margin:24px 0}
+.article-layout .article-style .lesson-media-pair img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:contain;padding:8px;box-sizing:border-box;background:#fff;border:1px solid var(--line);border-radius:var(--r-small)}
+.article-layout .article-style .lesson-figure{margin:24px 0;max-width:580px}
+.article-layout .article-style .lesson-figure-sm{max-width:420px}
+.article-layout .article-style .lesson-figure img{display:block;width:100%;height:auto;border-radius:var(--r-small)}
+.article-layout .article-style .lesson-figure figcaption{margin-top:8px;font-size:15px;line-height:1.4;color:var(--soft);text-align:start}
+.article-layout .article-style .lesson-note-box{margin:24px 0;padding:16px 20px;background:var(--jus-bg);border-inline-start:4px solid var(--jus);border-radius:var(--r-small);max-width:31em}
+.article-layout .article-style .lesson-note-box p:last-child{margin-bottom:0}
+.article-layout .article-style .lesson-prompt-box{margin:20px 0;padding:16px 20px;background:var(--surface);border-inline-start:4px solid var(--soft);border-radius:var(--r-small);max-width:31em}
+.article-layout .article-style .lesson-prompt-box p:last-child,.article-layout .article-style .lesson-prompt-box ul:last-child{margin-bottom:0}
+.article-layout .article-style .lesson-excerpt{margin:20px 0;padding:18px 22px;background:var(--surface);border-radius:var(--r-large);max-width:31em}
+.article-layout .article-style .lesson-excerpt p:last-child{margin-bottom:0}
+.article-layout .article-style .lesson-annotated-excerpt{margin:20px 0 28px;padding:22px 24px;background:var(--surface);border-inline-start:4px solid var(--jus);border-radius:var(--r-large);max-width:31em}
+.article-layout .article-style .lesson-excerpt-head{margin:0 0 16px;padding:0 0 12px;border-bottom:1px solid var(--line)}
+.article-layout .article-style .lesson-excerpt-title{margin:0 0 4px;font:500 21px/1.25 var(--display);color:var(--ink)}
+.article-layout .article-style .lesson-excerpt-byline{margin:0;font-size:15px;color:var(--soft)}
+.article-layout .article-style .lesson-passage{margin:0 0 18px;padding:0 0 16px;border-bottom:1px solid color-mix(in srgb,var(--ink) 12%,transparent)}
+.article-layout .article-style .lesson-passage:last-of-type{margin-bottom:14px;padding-bottom:14px}
+.article-layout .article-style .lesson-passage p{margin:0 0 10px}
+.article-layout .article-style .lesson-passage .lesson-ellipsis{margin:0 0 10px;font-weight:600;color:var(--soft)}
+.article-layout .article-style .lesson-hint{margin:8px 0 0;background:var(--jus-bg);border-radius:var(--r-small)}
+.article-layout .article-style .lesson-hint>summary{display:flex;align-items:center;min-height:44px;padding:6px 14px;font-size:16px;font-weight:600;color:var(--jus);cursor:pointer;list-style:none}
+.article-layout .article-style .lesson-hint>summary::-webkit-details-marker{display:none}
+.article-layout .article-style .lesson-hint>summary::before{content:"▸";display:inline-block;flex:none;margin-inline-end:8px;transition:transform .15s}
+.article-layout .article-style .lesson-hint[open]>summary::before{transform:rotate(90deg)}
+.article-layout .article-style .lesson-hint>summary:hover{color:var(--ink)}
+.article-layout .article-style .lesson-hint-body{padding:0 14px 14px;font-size:16px;line-height:1.5;color:var(--ink)}
+.article-layout .article-style .lesson-hint-body p:last-child{margin-bottom:0}
+.article-layout .article-style .lesson-quiz{margin:16px 0 24px;max-width:31em}
+.article-layout .article-style .lesson-quiz .spoiler{margin:0 0 10px;background:var(--jus-bg);border-radius:var(--r-small)}
+.article-layout .article-style .lesson-quiz .spoiler>summary{display:flex;align-items:baseline;min-height:44px;padding:10px 16px;font-size:17px;color:var(--ink);list-style:none}
+.article-layout .article-style .lesson-quiz .spoiler>summary::-webkit-details-marker{display:none}
+.article-layout .article-style .lesson-quiz .spoiler>summary::before{content:"▸";display:inline-block;flex:none;margin-inline-end:10px;color:var(--jus);transition:transform .15s}
+.article-layout .article-style .lesson-quiz .spoiler[open]>summary::before{transform:rotate(90deg)}
+.article-layout .article-style .lesson-quiz .spoiler>summary:hover{color:var(--jus)}
+.article-layout .article-style .lesson-quiz .spoiler-body{padding:0 16px 14px;font-size:16px;line-height:1.5}
+.article-layout .article-style .lesson-attribution{margin:12px 0 0;font-size:15px;line-height:1.45;color:var(--soft);max-width:34em}
+.article-layout .article-style .lesson-attribution a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
+.article-layout .article-style .lesson-attribution .fa-external-link-alt{margin-inline-start:3px;font-size:.78em}
+.article-layout .article-style .lesson-action-row{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin:16px 0 22px;max-width:none}
+.article-layout .article-style .lesson-action-row .btn{min-height:44px;display:inline-flex;align-items:center;text-decoration:none}
+.article-layout .article-style .lesson-action-host{font-size:15px;color:var(--soft)}
+.article-layout .article-style .lesson-embed{position:relative;margin:20px 0 24px;border-radius:var(--r-small);overflow:hidden}
+.article-layout .article-style .lesson-embed:has(>iframe){aspect-ratio:4/3}
+.article-layout .article-style .lesson-embed-video:has(>iframe){aspect-ratio:16/9}
+.article-layout .article-style .lesson-embed-tall:has(>iframe){aspect-ratio:4/5;min-height:460px}
+.article-layout .article-style .lesson-options{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:16px;margin:20px 0}
+.article-layout .article-style .lesson-option-card{padding:18px 20px;background:var(--jus-bg);border-radius:var(--r-large)}
+.article-layout .article-style .lesson-option-card h3{margin:0 0 8px;font-size:19px;line-height:1.25;color:var(--ink)}
+.article-layout .article-style .lesson-option-card p{margin:0;font-size:16px;line-height:1.5;max-width:none}
+.article-layout .article-style .lesson-option-card ul{margin:10px 0 0;padding-inline-start:1.2em;font-size:16px;line-height:1.45}
+.article-layout .article-style .lesson-option-card li{margin-bottom:4px;max-width:none}
+.article-layout .article-style .lesson-option-card li:last-child{margin-bottom:0}
+.article-layout .article-style .lesson-quotes{counter-reset:lesson-quote;margin:18px 0 24px;padding:0;list-style:none;display:flex;flex-direction:column;gap:14px;max-width:30em}
+.article-layout .article-style .lesson-quotes li{counter-increment:lesson-quote;margin:0;padding:16px 20px;background:var(--jus-bg);border-inline-start:4px solid var(--jus);border-radius:var(--r-small)}
+.article-layout .article-style .lesson-quotes li::before{content:counter(lesson-quote) ". ";font-weight:700;color:var(--jus)}
+.article-layout .article-style .lesson-cases{margin:18px 0 24px;padding-inline-start:1.4em;max-width:29.8em}
+.article-layout .article-style .lesson-cases li{margin:0;padding:12px 0;border-bottom:1px solid var(--line)}
+.article-layout .article-style .lesson-cases li:last-child{border-bottom:0}
+.article-layout .article-style .lesson-reading{margin:32px 0 0;padding:20px 22px;background:var(--surface);border-radius:var(--r-large);max-width:31em}
+.article-layout .article-style .lesson-reading h2{margin:0 0 6px;font-size:24px}
+.article-layout .article-style .lesson-reading p,.article-layout .article-style .lesson-reading li{font-size:16px;line-height:1.5;overflow-wrap:anywhere}
+.article-layout .article-style .lesson-reading p:last-child,.article-layout .article-style .lesson-reading ul:last-child{margin-bottom:0}
+.article-layout .post-nav-lesson{margin-top:12px;padding-top:16px;border-top:1px solid var(--line)}
+
+/* A tool page's direct actions, under its title (doors/page_actions). */
+.article-layout .page-actions{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 28px}
+.article-layout .page-actions .btn{padding:10px 22px;font-size:17px}
+/* On phones a tall cover image pushed the page's contents a screen down, so it is held to part of the screen. */
+@media(max-width:760px){.article-layout .article-image img{width:auto;max-width:100%;max-height:280px;margin-inline:auto}}
+/* Old pages put a rule under each heading (### Title, then ---) and at the very end. The heading already
+   separates the section, and the rule pushed it away from its text, so neither rule is drawn. */
+.article-style :is(h2,h3,h4)+hr,.article-style>hr:last-child{display:none}
+.article-layout .post-nav-next{margin-inline-start:auto;text-align:end}
+.post-nav .meta-nav>span{display:inline-block;white-space:pre}
+/* The linked title under Previous and Next reads as a link at rest (DESIGN.md §5). */
+.post-nav-item a p{text-decoration:underline;text-underline-offset:3px}
+[dir=rtl] .post-nav .meta-nav>span{transform:scaleX(-1)}
+/* Author profiles on a narrow screen: portrait, role and links under the name, in place of the side card. */
+.profile-head{display:none}
+@media(max-width:1000px){
+  .article-layout .profile-card{display:none}
+  .profile-head{display:flex;align-items:center;gap:14px;margin-top:14px}
+  .profile-head .profile-photo{width:72px;height:72px;border-radius:50%;object-fit:cover;flex:none}
+  .profile-head .avatar-square{border-radius:var(--r-small)}
+  .profile-head p{margin:0 0 4px;font-weight:700}
+}
+/* One primary button: old pages give theirs inline sizes, corners and full widths; all take the "Open this resource" pill. */
+.article-layout .article-style .btn-primary,.article-layout .article-style .btn-lg{padding:10px 22px!important;border-radius:999px!important;font-size:17px!important;line-height:1.3!important}
+.article-layout .article-style .btn-block{display:inline-block;width:auto}
+@media(max-width:1000px){.profile-head .profile-org{font-weight:400}.profile-head ul.network-icon{margin:4px 0 0}.profile-head ul.network-icon a{text-decoration:none}}
+.article-layout .article-style .btn.btn-primary,.article-layout .article-style .btn.btn-lg{padding:10px 22px!important;font-size:17px!important}
+.byline-date{display:none}
+@media(max-width:1000px){.article-layout .byline-date{display:inline}}
+/* A search over a long list on the page (shortcodes/list_filter.html). */
+.article-layout :is(.article-style .list-filter,.list-filter-posts){max-width:520px;margin:8px 0 22px;padding:16px 18px;background:var(--surface);border-radius:var(--r-large)}
+.article-layout :is(.article-style .list-filter,.list-filter-posts) label{display:block;margin:0 0 8px;font:600 17px/1.3 var(--text)}
+.article-layout :is(.article-style .list-filter,.list-filter-posts) input{width:100%;box-sizing:border-box;padding:10px 16px;border:1.5px solid var(--ink);border-radius:999px;background:#fff;font:400 17px/1.3 var(--text);color:var(--ink)}
+.article-layout :is(.article-style,.list-filter-posts) .list-filter-count{margin:8px 0 0;font-size:16px;color:var(--soft)}
+.article-layout .article-style [hidden]{display:none!important}
+/* A licence note is a quiet line with its badge, as the site's other notes, not a bordered, centred box. */
+.article-layout .article-style .license-note{margin:28px 0 0!important;padding:14px 18px!important;border:0!important;border-radius:var(--r-large)!important;background:var(--surface)!important;text-align:start!important}
+.article-layout .article-style .license-note .license-content{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 18px}
+.article-layout .article-style .license-note p{margin:0!important;font-size:16px!important;text-align:start!important}
+/* AWoP: the supplemental materials read as a list: each title with its OSF link beside it, then what it is. */
+.article-layout .article-style .awop-material{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:16px;margin:0;padding:14px 0 4px;border-bottom:1px solid var(--line)}
+.article-layout .article-style p+.awop-material{border-top:1px solid var(--line);margin-top:12px}
+.article-layout .article-style .awop-material>*{grid-column:1/-1}
+.article-layout .article-style .awop-material>p:first-child{grid-column:1;grid-row:1}
+.article-layout .article-style .awop-material>p:nth-child(3){grid-column:2;grid-row:1;white-space:nowrap}
+.article-layout .article-style .awop-material p{margin:0 0 8px}
+.article-layout .article-style .awop-material .spoiler{margin:0 0 10px;background:none}
+.article-layout .article-style .awop-material .spoiler>summary{padding:4px 0;font-size:16px}
+
+/* Starting points (the action_cards shortcode and the Replication Hub's Start here): solid bricks with studs,
+   laid edge to edge like a short wall. The bricks are for a handful of actions; long lists are rows (hub.css). The welcome page numbers its bricks as steps (welcome.css).
+   A row runs through the four brick colours (--brick1 to --brick4 in tokens.css), which stay clear of the
+   area colours and carry no meaning. The Replication Hub's bricks take their stages' colours instead (hub.css).
+   Outside an article, a container with the class brick-row takes the same bricks (the resources directory, Tags). */
+.action-cards li:nth-child(4n+1){--tone:var(--brick1)}.action-cards li:nth-child(4n+2){--tone:var(--brick2)}
+.action-cards li:nth-child(4n+3){--tone:var(--brick3)}.action-cards li:nth-child(4n+4){--tone:var(--brick4)}
+:is(.article-layout .article-style,.article-layout .article-head,.hub-start,.welcome-start,.brick-row) .action-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:16px 5px;list-style:none;margin:26px 0 32px;padding:0;max-width:none}
+:is(.article-layout .article-style,.article-layout .article-head,.hub-start,.welcome-start,.brick-row) .action-cards li{position:relative;margin:0;--brick:var(--tone)}
+/* The studs: short blocks along the top edge, on a pseudo-element so the text sits on a plain fill. */
+:is(.article-layout .article-style,.article-layout .article-head,.hub-start,.welcome-start,.brick-row) .action-cards li::before{content:"";position:absolute;left:14px;right:14px;top:-8px;height:8px;background:linear-gradient(90deg,transparent 6px,var(--brick) 6px 28px,transparent 28px) left top/34px 8px space no-repeat;border-radius:3px 3px 0 0;pointer-events:none}
+:is(.article-layout .article-style,.article-layout .article-head,.hub-start,.welcome-start,.brick-row) .action-cards a{display:flex;flex-direction:column;gap:4px;height:100%;box-sizing:border-box;min-height:96px;padding:16px 18px 22px;background:var(--brick);border-radius:3px;box-shadow:inset 0 -6px 0 rgb(0 0 0/.24);color:#fff;text-decoration:none;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+:is(.article-layout .article-style,.article-layout .article-head,.hub-start,.welcome-start,.brick-row) .action-cards strong{font:500 24px/1.15 var(--display);color:#fff}
+:is(.article-layout .article-style,.article-layout .article-head,.hub-start,.welcome-start,.brick-row) .action-cards span{font:400 17px/1.4 var(--text);color:#fff}
+:is(.article-layout .article-style,.article-layout .article-head,.hub-start,.welcome-start,.brick-row) .action-cards a:hover strong{text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:4px}
+:is(.article-layout .article-style,.article-layout .article-head,.hub-start,.welcome-start,.brick-row) .action-cards a:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+@media(prefers-reduced-motion:no-preference){
+  :is(.article-layout .article-style,.article-layout .article-head,.hub-start,.welcome-start,.brick-row) .action-cards li{transition:transform .15s}
+  :is(.article-layout .article-style,.article-layout .article-head,.hub-start,.welcome-start,.brick-row) .action-cards li:hover{transform:translateY(-3px)}
+}
+/* A disclosure inside a list item (the effects on /reversals/) is a small toggle under the entry, not a full-width bar. */
+.article-layout .article-style li .spoiler{margin:4px 0 12px;background:none;border-radius:0}
+.article-layout .article-style li .spoiler>summary{display:inline-flex;padding:4px 0;font-size:15px;color:var(--link);text-decoration:underline;text-underline-offset:3px}
+.article-layout .article-style li .spoiler[open]{padding:4px var(--box-pad) 2px;background:var(--surface);border-radius:var(--r-small)}
+/* The open entry already pads its box, so its body adds no frame of its own. */
+.article-layout .article-style li .spoiler-body{padding:2px 0 12px}
+.article-layout .article-style li .spoiler[open]>summary{text-decoration:none}
+.article-layout .article-style li .spoiler{margin-top:0}
+.article-layout .article-style li .spoiler>summary::before{content:"▸";display:inline-block;margin-inline-end:6px;text-decoration:none;transition:transform .15s}
+.article-layout .article-style li .spoiler[open]>summary::before{transform:rotate(90deg)}
+.article-layout .article-style .btn.btn-outline-primary{padding:10px 22px!important;border-radius:999px!important;font-size:17px!important;line-height:1.3!important}
+/* Replication outcomes on /reversals/ (site.js), in the colours of --out-* in tokens.css. The strong colour marks an
+   entry's edge and its part of the outcome bar; the pale one is the chip, the button and the entry's ground. */
+.status-replicated,.outcome-replicated{--out:var(--out-replicated);--out-bg:var(--out-replicated-bg)}
+.status-mixed,.outcome-mixed{--out:var(--out-mixed);--out-bg:var(--out-mixed-bg)}
+.status-not-replicated,.outcome-not-replicated{--out:var(--out-not-replicated);--out-bg:var(--out-not-replicated-bg)}
+.status-reversed,.outcome-reversed{--out:var(--out-reversed);--out-bg:var(--out-reversed-bg)}
+.status-no-status,.outcome-no-status{--out:var(--out-no-status);--out-bg:var(--out-no-status-bg)}
+.status-chip{display:inline-block;margin:0 2px 0 0;padding:1px 9px;border-radius:999px;font:600 15px/1.4 var(--text);color:var(--ink);background:var(--out-bg,var(--surface));box-shadow:inset 0 0 0 1.5px var(--out,transparent);vertical-align:1px}
+/* A list with a search over it (the games portal, Educators' Corner) reads as rows: no bullets, a rule between entries. */
+.article-layout .article-style .list-filter~ul{list-style:none;padding-inline-start:0}
+.article-layout .article-style .list-filter~ul>li{margin:0;padding:12px 0 6px;border-bottom:1px solid var(--line)}
+.article-layout .article-style .list-filter~ul>li>p{margin:0 0 4px}
+.article-layout .article-style .list-filter-jump{display:flex;align-items:center;gap:8px;margin:10px 0 0;font:600 16px/1.3 var(--text)}
+.article-layout .article-style .list-filter-jump select{flex:1;padding:8px 10px;border:1.5px solid var(--line);border-radius:var(--r-small);background:#fff;font:400 16px/1.3 var(--text);color:var(--ink)}
+
+/* A page's opening with its picture in view (partials/doors/page_hero.html: the AWoP and citation wheels, a banner): on a
+   desktop the title, lede and actions sit beside a large image and span the side card and text below;
+   on a phone the image follows the actions at a size that keeps them on the first screen. */
+.article-layout .page-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,400px);column-gap:48px;align-items:center}
+/* A full-width page (AI in Metascience) gives a landscape banner the width of the cards below it. */
+.article-layout-wide .page-hero{grid-template-columns:minmax(0,1fr) minmax(0,520px);column-gap:56px}
+.article-layout .page-hero h1{font-size:clamp(34px,3.2vw,44px);line-height:1.1;letter-spacing:-.01em;margin:0;text-wrap:balance}
+.article-layout .page-hero .page-actions{margin-bottom:0}
+.article-layout .page-hero-media{margin:0;text-align:center}
+.article-layout .page-hero-media img{display:block;width:100%;height:auto}
+.article-layout .page-hero-media a{display:block;border-radius:var(--r-small);overflow:hidden}
+.article-layout .page-hero-media p{margin:6px 0 0;font-size:15px}
+.article-layout .page-hero-media p a{display:inline;color:var(--link);text-decoration:underline;text-underline-offset:3px}
+@media(min-width:1001px){
+  .article-layout:has(>.page-hero){row-gap:40px}
+  .article-layout:not(.article-layout-wide)>.page-hero{grid-column:1/-1;grid-row:1}
+  .article-layout:not(.article-layout-wide):has(>.page-hero)>:is(.article-card,.reading){grid-row:2}
+}
+@media(max-width:1000px){
+  .article-layout:has(>.page-hero){row-gap:24px}
+  .article-layout .page-hero{grid-template-columns:minmax(0,1fr);row-gap:24px}
+  .article-layout .page-hero-media{width:min(100%,340px)}
+  .article-layout .page-hero-landscape .page-hero-media{width:100%}
+}
+@media(max-width:600px){
+  .article-layout .page-hero{row-gap:18px}
+  .article-layout .page-hero:not(.page-hero-landscape) .page-hero-media{width:min(100%,280px)}
+}
+
+/* /reversals/ (site.js). The page is wider than an article: the contents card, with each discipline's mix of outcomes,
+   stays beside the list, and the board of outcomes opens it. */
+@media(min-width:1001px){
+  .article-layout:has(.list-filter[data-noun=effects]){grid-template-columns:256px minmax(0,1fr);gap:48px;max-width:1064px;margin-inline:auto}
+  .article-layout:not(.article-layout-wide):has(.list-filter[data-noun=effects])>.article-card{width:auto;padding:18px 14px 18px 18px}
+}
+/* With JavaScript enabled, the toolbar's Go to menu replaces the phone contents list (assets.html's <noscript>
+   style restores .toc-phone when JavaScript is off), avoiding a jump when site.js unhides the toolbar. */
+.reading:has(.list-filter[data-noun=effects]) .toc-phone{display:none}
+.article-layout:has(.list-filter[data-noun=effects]) .article-toc #TableOfContents a{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:8px;padding:3px 6px;border-radius:6px;font-size:16px;line-height:1.3;color:var(--ink);text-decoration:none}
+.article-layout:has(.list-filter[data-noun=effects]) .article-toc #TableOfContents a:hover{color:var(--link);text-decoration:underline}
+.article-layout:has(.list-filter[data-noun=effects]) .article-toc #TableOfContents a[aria-current]{background:#fff;font-weight:600}
+.article-layout:has(.list-filter[data-noun=effects]) .article-toc #TableOfContents a.is-empty{color:var(--soft)}
+.toc-many{font-size:15px;font-weight:400;text-align:end}
+/* The note that the project has ended is one band, its button beside the text. */
+@media(min-width:761px){
+  .article-layout:has(.list-filter[data-noun=effects]) .article-style div.alert{max-width:none}
+  .article-layout:has(.list-filter[data-noun=effects]) .article-style div.alert>div{display:flex;align-items:center;gap:24px}
+  .article-layout:has(.list-filter[data-noun=effects]) .article-style div.alert>div>p{margin:0}
+  .article-layout:has(.list-filter[data-noun=effects]) .article-style div.alert>div>p:has(>.btn){flex:none}
+}
+/* The board: a tile per outcome, its bricks one per effect. Once inserted, it replaces the static summary line. */
+.outcome-summary:has(+.outcome-board){display:none}
+.outcome-board{margin:30px 0 10px}
+.article-layout .article-style .outcome-board h2{margin:0 0 4px;font-size:clamp(25px,2.4vw,31px);line-height:1.15}
+.article-layout .article-style .outcome-hint{margin:0 0 14px;font-size:17px}
+.outcome-tiles{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+.article-layout .article-style .outcome-tile{display:flex;flex-wrap:wrap;align-content:flex-start;align-items:baseline;column-gap:8px;min-width:0;margin:0;padding:17px 12px 14px;border:0;border-radius:var(--r-small);background:var(--out-bg);box-shadow:inset 0 5px 0 var(--out);color:var(--ink);text-align:start;cursor:pointer}
+.outcome-tile .outcome-many{font:var(--display-weight) 44px/1 var(--display)}
+.outcome-tile .outcome-word{flex:1 1 100%;margin-top:2px;font:600 17px/1.2 var(--text)}
+.outcome-bricks{flex:1 1 100%;display:flex;flex-wrap:wrap;gap:2px;margin-top:10px}
+.outcome-bricks i{width:9px;height:6px;border-radius:1px;background:var(--out);transition:opacity .15s}
+.is-chosen .outcome-tile[aria-pressed=false] .outcome-bricks i{opacity:.3}
+.article-layout .article-style .outcome-tile[aria-pressed=true]{box-shadow:inset 0 5px 0 var(--out),inset 0 0 0 2px var(--ink)}
+.article-layout .article-style .outcome-tile:hover .outcome-word{text-decoration:underline;text-underline-offset:3px}
+.article-layout .article-style .outcome-tile:focus-visible,.article-layout .article-style .outcome-clear:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+/* Where "not replicated" takes two lines, every tile keeps two, so that the bricks start level. */
+@media(min-width:761px) and (max-width:1240px){.outcome-tile .outcome-word{min-height:2.4em}}
+.article-layout .article-style .outcome-note{max-width:31em;margin:12px 0 0;font-size:16px;line-height:1.45}
+/* The toolbar stays at the top of the screen while the effects scroll, up to the end of the list; on a phone only the
+   search row and count stay. Rows reached by Tab or Go to stop below it (the scroll padding is its measured height). */
+html:has(.list-filter-section){scroll-padding-top:calc(var(--list-filter-bar,0px) + 16px)}
+.article-layout .article-style .list-filter-section{max-width:none}
+.article-layout .article-style .list-filter-section>br{display:none}
+.article-layout .article-style .list-filter-section>.list-filter{position:sticky;top:0;z-index:6;display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;max-width:none;margin:22px 0 8px;padding:10px 14px;box-shadow:0 2px 0 var(--page)}
+/* The bar itself is square and page-coloured, with its rounded panel drawn behind the controls, so text scrolling
+   under the stuck bar does not show at its corners. */
+@media(min-width:601px){
+  .article-layout .article-style .list-filter-section>.list-filter{background:var(--page);border-radius:0}
+  .article-layout .article-style .list-filter-section>.list-filter::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:var(--r-large);background:var(--surface)}
+}
+.article-layout .article-style .list-filter-section .list-filter-search{flex:1 1 300px;display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;column-gap:12px}
+.article-layout .article-style .list-filter-section .list-filter label{grid-row:1;margin:0;font-size:16px;line-height:1.2}
+.article-layout .article-style .list-filter-section .list-filter-count{grid-row:2;margin:0;font-size:15px;line-height:1.2;white-space:nowrap}
+.article-layout .article-style .list-filter-section .list-filter input{grid-column:2;grid-row:1/3;padding:7px 14px;font-size:16px}
+.article-layout .article-style .list-filter-section .list-filter-jump{margin:0;font-size:16px}
+.article-layout .article-style .list-filter-section .list-filter-jump select{flex:none;max-width:130px;padding:6px 8px;font-size:15px}
+.article-layout .article-style .outcome-clear{grid-column:3;grid-row:1/3;min-height:36px;padding:4px 12px;border:1.5px solid var(--ink);border-radius:999px;background:#fff;font:600 16px/1.2 var(--text);color:var(--ink);cursor:pointer}
+.article-layout .article-style .outcome-clear[hidden]{display:none}
+/* With an outcome chosen the search row needs the full width, and the Go to menu takes a row of its own. */
+@media(min-width:601px) and (max-width:1000px){.article-layout .article-style .list-filter-section .list-filter-search:has(.outcome-clear:not([hidden])){flex-basis:100%}}
+/* Beside the "On this page" card, which lists every section, the toolbar needs no Go to menu. */
+@media(min-width:1001px){.article-layout:has(>.article-card) .article-style .list-filter-section .list-filter-jump{display:none}}
+/* A discipline opens with one brick per effect. Filtered by outcome, the others fade; during a search they step aside. */
+.article-layout .article-style .list-filter-section>h2{margin:44px 0 10px;font-size:clamp(28px,2.6vw,34px);line-height:1.15}
+.article-layout .article-style .list-filter-section>.section-mix{margin:0 0 12px}
+.article-layout .article-style .list-filter-section>h2[hidden]+.section-mix,.article-layout .article-style .list-filter-section.is-searching>.section-mix{display:none}
+.list-filter-section[data-outcome=replicated] .section-mix i:not(.status-replicated),.list-filter-section[data-outcome=mixed] .section-mix i:not(.status-mixed),.list-filter-section[data-outcome=not-replicated] .section-mix i:not(.status-not-replicated),.list-filter-section[data-outcome=reversed] .section-mix i:not(.status-reversed),.list-filter-section[data-outcome=no-status] .section-mix i:not(.status-no-status){opacity:.25}
+.article-layout .article-style .list-filter-none{margin:18px 0;font-size:18px}
+.article-layout .article-style .list-filter-none[hidden]{display:none}
+.article-layout .article-style .list-filter-none button{min-height:44px;margin-inline-start:8px;padding:4px 14px;border:1.5px solid var(--ink);border-radius:999px;background:#fff;font:600 16px/1.2 var(--text);color:var(--ink);cursor:pointer}
+.article-layout .article-style .list-filter-none button:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+/* The effects are rows, not cards (DESIGN.md §4): the outcome in a column of its own, so that the names line up, then
+   the name, the description and the statistics in the reading measure. */
+/* The doubled class outranks the reading-width cap on unclassed lists (top of this file). */
+.article-layout .article-style .list-filter-section.list-filter-section>ul{max-width:none;margin:0 0 20px;padding:0;border-top:2px solid var(--ink);list-style:none}
+/* A list whose entries are all filtered out leaves no rule or gap behind. */
+.article-layout .article-style .list-filter-section.list-filter-section>ul:not(:has(>li:not([hidden]))){display:none}
+.article-layout .article-style .list-filter-section>ul>li{display:grid;grid-template-columns:140px minmax(0,29em);column-gap:28px;align-items:start;margin:0;padding:16px 0 10px;border:0;border-bottom:1px solid var(--line)}
+.article-layout .article-style .list-filter-section>ul>li>*{grid-column:2}
+.article-layout .article-style .list-filter-section>ul>li>.status-chip{grid-column:1;grid-row:1/span 3;justify-self:start;margin:3px 0 0}
+.article-layout .article-style .list-filter-section>ul>li[hidden]{display:none}
+.article-layout .article-style .list-filter-section .entry-name{margin:0 0 3px;font:var(--display-weight) 23px/1.2 var(--display)}
+.article-layout .article-style .list-filter-section .entry-name strong{font-weight:inherit}
+.entry-also{display:inline-block;max-width:29em;font:400 16px/1.3 var(--text);color:var(--soft)}
+.article-layout .article-style .list-filter-section .entry-text{position:relative;max-width:none;margin:0}
+.article-layout .article-style .list-filter-section .entry-text:empty{display:none}
+/* DESIGN.md §4: the description shows in full; one that runs past six lines shows four and a "more" button, and while
+   a search is typed the matching effects show in full. */
+.article-layout .article-style .list-filter-section .is-long:not(.is-open)>.entry-text{max-height:calc(4 * 1.6em);max-height:calc(4 * 1lh);overflow:hidden}
+.article-layout .article-style .list-filter-section:is(.is-searching,.is-measuring) .entry-text{max-height:none!important}
+.article-layout .article-style .list-filter-section .entry-more{display:none}
+.article-layout .article-style .list-filter-section .is-long>.entry-text>.entry-more{display:block;position:absolute;bottom:0;inset-inline-end:0;padding:0;padding-inline-start:2.4em;border:0;background:linear-gradient(to right,transparent,var(--page) 2em);font:inherit;font-weight:600;color:var(--link);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+/* In right-to-left text the fade runs the other way. */
+.article-layout .article-style .list-filter-section .is-long>.entry-text>.entry-more:dir(rtl){background:linear-gradient(to left,transparent,var(--page) 2em)}
+.article-layout .article-style .list-filter-section .is-open>.entry-text>.entry-more{position:static;display:inline;padding:0 0 0 6px;background:none}
+.article-layout .article-style .list-filter-section.is-searching .entry-more{display:none!important}
+/* The statistics are a quiet toggle under the description; open, their rows are labelled. */
+.article-layout .article-style .list-filter-section li:has(>.entry-text)>.spoiler{margin:4px 0 0}
+.article-layout .article-style .list-filter-section li:has(>.entry-text)>.spoiler>summary{display:inline-flex;align-items:center;min-height:32px;padding:0;font-size:16px}
+.article-layout .article-style .list-filter-section li:has(>.entry-text)>.spoiler[open]{margin:8px 0 8px;padding:6px var(--box-pad) 10px}
+.article-layout .article-style .list-filter-section .spoiler-body ul{margin:4px 0 0;padding:0;list-style:none;font-size:16px;line-height:1.45}
+.article-layout .article-style .list-filter-section .spoiler-body li{margin:0 0 10px;overflow-wrap:anywhere}
+.stat-label{display:block;font-weight:700}
+/* On a phone the search row alone stays on screen; the band runs to the screen's edges and holds the other controls too. */
+@media(max-width:600px){
+  .article-layout .article-style .list-filter-section>.list-filter{display:contents}
+  .article-layout .article-style .list-filter-section .list-filter-search{position:sticky;top:0;z-index:6;grid-template-columns:1fr auto;align-items:baseline;gap:4px 10px;margin:18px -20px 0;padding:8px 20px;background:var(--surface);box-shadow:0 1px 0 var(--line)}
+  .article-layout .article-style .list-filter-section .list-filter label,.article-layout .article-style .list-filter-section .list-filter-count{grid-row:1}
+  .article-layout .article-style .list-filter-section .list-filter input{grid-column:1/-1;grid-row:2;padding:7px 14px}
+  .article-layout .article-style .list-filter-section .list-filter label.list-filter-jump{margin:0 -20px;padding:8px 20px;background:var(--surface)}
+  .article-layout .article-style .list-filter-section .list-filter-jump select{flex:1;min-height:44px;max-width:none}
+  /* With an outcome chosen, the count and the way back take the label's place on the row that stays on screen. */
+  .article-layout .article-style .list-filter-search:has(.outcome-clear:not([hidden]))>label{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+  .article-layout .article-style .outcome-clear{grid-column:2;grid-row:1;min-height:44px}
+}
+@media(max-width:760px){
+  /* A tile is a row: count and word, then its bricks. */
+  .outcome-tiles{grid-template-columns:minmax(0,1fr)}
+  .article-layout .article-style .outcome-tile{display:grid;grid-template-columns:112px minmax(0,1fr);column-gap:12px;align-items:center;padding:17px 12px 11px}
+  .outcome-tile .outcome-many{grid-column:1;font-size:36px}
+  .outcome-tile .outcome-word{grid-column:1;min-height:0;font-size:16px}
+  .outcome-bricks{grid-column:2;grid-row:1/span 2;margin:0}
+  .article-layout .article-style .list-filter-section>ul>li{grid-template-columns:minmax(0,29em);padding:14px 0 6px}
+  .article-layout .article-style .list-filter-section>ul>li>*{grid-column:1}
+  .article-layout .article-style .list-filter-section>ul>li>.status-chip{grid-row:auto;margin:0 0 6px}
+  .article-layout .article-style .list-filter-section li:has(>.entry-text)>.spoiler>summary{min-height:44px}
+  .article-layout .article-style .list-filter-section .is-long>.entry-text>.entry-more{min-height:1lh}
+}
+/* News cards with a picture (DESIGN.md §1): the news list (section/post.html) and the end of each article (doors/read_next). */
+.announcements-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,290px),1fr));gap:20px;margin:0;padding:0;list-style:none}
+.announcements-grid>li[hidden]{display:none}
+.announcement-card{position:relative;display:flex;flex-direction:column;height:100%;background:var(--surface);border-radius:var(--r-large);overflow:hidden}
+.ac-thumb img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+/* Logos and figures share the photo frame. Pale backgrounds blend into the card's tint. */
+.ec-thumb-whole{position:relative;aspect-ratio:16/9;background:var(--mat,#fff);border-bottom:1px solid var(--line)}
+.ec-thumb-whole[style],.ec-thumb-blend{border-bottom:0}
+.ec-thumb-blend:not([style]){background:transparent}
+.ec-thumb-blend img{mix-blend-mode:multiply}
+.ec-thumb-whole img{position:absolute;inset:14px 18px;width:calc(100% - 36px);height:calc(100% - 28px);aspect-ratio:auto;object-fit:contain}
+.ac-panel{display:flex;flex-direction:column;justify-content:flex-end;aspect-ratio:16/9;padding:18px 20px;color:#fff}
+.ac-panel span{font-size:15px;font-weight:600}
+.ac-panel strong{font:var(--display-weight) 30px/1.1 var(--display)}
+.ac-panel-1{background:var(--brick1)}.ac-panel-2{background:var(--brick2)}.ac-panel-3{background:var(--brick3)}.ac-panel-4{background:var(--brick4)}
+.ac-body{padding:14px 18px 20px}
+.ac-meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 6px;font-size:15px;color:var(--soft)}
+.ac-cat{padding:1px 8px;background:#fff;border-radius:var(--r-small);font-weight:600;color:var(--ink)}
+.article-layout .ac-body h2,.ac-body :is(h2,h3){margin:0 0 6px;font-size:22px;line-height:1.2}
+.ac-link{color:var(--link);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1.5px}
+.ac-link::after{content:"";position:absolute;inset:0}
+.announcement-card:hover .ac-link{color:var(--ink)}
+@supports selector(:has(*)){.ac-link:focus-visible{outline:none}.announcement-card:has(.ac-link:focus-visible){outline:3px solid var(--ink);outline-offset:3px}}
+/* The start of the summary: four lines, breaking between words rather than mid-word; the card leads to the rest. */
+.ac-summary{margin:0;overflow-wrap:break-word;font-size:17px;line-height:1.45;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4;line-clamp:4;overflow:hidden}
+/* Articles (news, Educators' Corner, Pedagogies). The side card names the authors, with their photos, and leads
+   back to the section; Educators' Corner and Pedagogies are education's, on its pale ground (DESIGN.md §6). */
+.article-layout .article-card-edu{background:var(--edu-bg);box-shadow:inset 0 6px 0 var(--edu);padding-top:26px}
+.article-layout .card-authors{display:grid;gap:14px;margin:0 0 18px;padding:0;list-style:none}
+/* Photo and name side by side, with the author's links on a row of their own beneath, where even six fit at full size. */
+.article-layout .card-authors>li{display:grid;grid-template-columns:56px minmax(0,1fr);column-gap:12px;align-items:start;margin:0}
+.article-layout .card-authors>li>div{display:contents}
+.article-layout .card-authors>li>div>*{grid-column:2}
+.article-layout .card-authors>li:not(:has(>img))>div>*{grid-column:1/-1}
+.article-layout .card-authors img{grid-row:1/span 3;width:56px;height:56px;border-radius:50%;object-fit:cover;background:#fff}
+.article-layout .card-author-name{font:500 19px/1.2 var(--display);color:var(--ink);overflow-wrap:anywhere}
+.article-layout a.card-author-name{color:var(--link);text-decoration:underline;text-underline-offset:3px}
+.article-layout a.card-author-name:hover{color:var(--ink)}
+.article-layout .card-author-role,.article-layout .card-author-bio{margin:3px 0 0;font-size:15px;line-height:1.4}
+.article-layout .card-authors>li>div>.network-icon{grid-column:1/-1;grid-row:4;display:flex;flex-wrap:nowrap;gap:0;width:max-content;margin:6px 0 0 -8px;padding:0;list-style:none}
+.article-layout .card-authors .network-icon li{flex:none;margin:0}
+.article-layout .card-authors .network-icon a{display:flex;align-items:center;justify-content:center;width:34px;height:34px;color:var(--link);font-size:17px}
+.article-layout .card-authors .network-icon a:hover{color:var(--ink)}
+.article-layout .card-authors .network-icon .ai-google-scholar{font-size:21px;line-height:1;-webkit-text-stroke:.35px currentColor}
+.article-layout .article-card .card-contact{display:flex;align-items:center;flex-wrap:wrap;gap:4px}
+.article-layout .article-card .card-contact-email{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;color:var(--link);font-size:16px;text-decoration:none}
+.article-layout .article-card .card-contact-email:hover{color:var(--ink)}
+.article-layout .card-more{margin:0 0 4px}
+.article-layout .card-more a{display:inline-block;padding:11px 0;font-weight:600;color:var(--link);text-decoration:underline;text-underline-offset:3px}
+.article-layout .card-more a::after{content:"\2192";margin-inline-start:6px;text-decoration:none}
+.article-layout .card-more+h2{margin-top:14px}
+/* How to cite (front matter cite_as), under the contents: set apart by a rule, the DOI free to break. */
+.article-layout .card-cite{margin:20px 0 0;padding:16px 0 0;border-top:1px solid var(--line)}
+.article-layout .card-cite:first-child{margin-top:0;padding-top:0;border-top:0}
+.article-layout .article-card .card-cite h2{font-size:21px;margin:0 0 6px}
+.article-layout .card-cite p{margin:0;font-size:15px;line-height:1.45;overflow-wrap:anywhere}
+.article-layout .card-cite a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
+/* Beside the text the citation sits just under the contents, so the contents' link to it is left out there. */
+.article-layout .article-card .toc-cite{display:none}
+/* Below 1000 px the card follows the text and leaves its contents out, so the citation needs no rule above it. */
+@media(max-width:1000px){.article-layout .card-cite{margin-top:0;padding-top:0;border-top:0}}
+@media(max-width:1000px){
+  .article-layout .card-authors>li>div>.network-icon{margin-inline-start:-13px}
+  .article-layout .card-authors .network-icon a{width:44px;height:44px}
+}
+/* On the narrowest phones six 44 px links are wider than the card. */
+@media(max-width:359px){.article-layout .card-authors>li>div>.network-icon{flex-wrap:wrap;width:auto}}
+/* A news post's single action: one brick with studs (doors/reading). A newsletter's takes the colour the news list
+   gives that issue (doors/post_panels). */
+.article-layout .article-style .post-brick{position:relative;display:inline-block;box-sizing:border-box;min-width:min(100%,280px);max-width:100%;min-height:76px;margin-top:10px;padding:20px 26px 26px;background:var(--brick);border-radius:3px;box-shadow:inset 0 -6px 0 rgb(0 0 0/.24);font:500 26px/1.15 var(--display);color:#fff;text-decoration:none;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.article-layout .article-style .post-brick::before{content:"";position:absolute;left:14px;right:14px;top:-8px;height:8px;background:linear-gradient(90deg,transparent 6px,var(--brick) 6px 28px,transparent 28px) left top/34px 8px space no-repeat;border-radius:3px 3px 0 0;pointer-events:none}
+.article-layout .article-style .post-brick::after{content:"\2192" / "";margin-inline-start:10px;font-family:var(--text);font-size:22px}
+.article-layout .article-style .post-brick:hover{text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:5px}
+.article-layout .article-style .post-brick:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.ac-panel-1{--brick:var(--brick1)}.ac-panel-2{--brick:var(--brick2)}.ac-panel-3{--brick:var(--brick3)}.ac-panel-4{--brick:var(--brick4)}
+.article-layout .article-style .post-action{margin:24px 0}
+/* The end of an article: previous, next and related as the news list's cards, across the page (doors/read_next). */
+.read-next{padding:8px 0 48px}
+.read-next h2{margin:0 0 18px;font-size:30px;line-height:1.15}
+.read-next .announcements-grid{grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr))}
+.read-next-edu .announcement-card{background:var(--edu-bg)}
+.read-next .ac-panel{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.read-next .ac-panel-title{margin:0;font-size:inherit;line-height:1.1}
+.read-next .ac-panel-title .ac-link,.read-next .announcement-card:hover .ac-panel-title .ac-link{display:flex;flex-direction:column;gap:2px;color:#fff;text-decoration:none}
+.read-next .ac-panel-title span{font:600 15px/1.25 var(--text)}
+.read-next .ac-panel-title strong{font:var(--display-weight) 28px/1.1 var(--display);text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:4px}
+.read-next .announcement-card:hover .ac-panel-title strong{text-decoration-thickness:2.5px}
+.read-next .ac-issue .ac-summary{font-size:16px;-webkit-line-clamp:3;line-clamp:3}
+@media(max-width:760px){
+  .read-next{padding-bottom:32px}
+  .read-next h2{font-size:26px}
+  .read-next .announcements-grid{gap:12px}
+  .read-next .announcement-card{flex-direction:row}
+  .read-next .ac-thumb{display:flex;flex:0 0 112px}
+  .read-next .ac-thumb:not(.ec-thumb-whole) img{width:112px;height:100%;min-height:112px;aspect-ratio:auto}
+  .read-next-edu .ac-thumb:not(.ec-thumb-whole,.ac-panel){align-items:center;padding:6px;box-sizing:border-box;background:#fff}
+  .read-next-edu .ac-thumb:not(.ec-thumb-whole,.ac-panel) img{width:100%;height:auto;min-height:0;object-fit:contain}
+  .read-next .ec-thumb-whole{aspect-ratio:auto;min-height:112px}
+  .read-next .ac-panel{aspect-ratio:auto;padding:12px}
+  .read-next .ac-panel span{font-size:15px;line-height:1.2}
+  .read-next .ac-panel strong,.read-next .ac-panel-title strong{font-size:19px}
+  .read-next .ac-body{padding:12px 14px 14px}
+  .read-next .ac-body h3{font-size:19px}
+}
+/* A pedagogy's interview: each question is a one-item numbered list of bold text in the Markdown. Shown as a stop
+   on the way down, in education's colour, so the eleven questions can be skimmed; the words are the authors'.
+   Text, not a box (DESIGN.md §4: cards are for things to pick between or act on). */
+.article-type-pedagogies .article-style ol:has(>li:only-child>strong:first-child){margin:44px 0 16px;padding:14px 0 0 2.6em;border-top:3px solid var(--edu)}
+.article-type-pedagogies .article-style ol:has(>li:only-child>strong:first-child)>li{margin:0;font:500 22px/1.3 var(--display);color:var(--ink)}
+.article-type-pedagogies .article-style ol:has(>li:only-child>strong:first-child)>li::marker{font:500 30px/1 var(--display);color:var(--edu)}
+.article-type-pedagogies .article-style ol:has(>li:only-child>strong:first-child)>li>strong{font-weight:500}
+.article-layout .article-head .material-cards{grid-auto-rows:1fr;margin:30px 0 8px}
+@media(max-width:760px){
+  .article-type-pedagogies .article-style ol:has(>li:only-child>strong:first-child){padding:12px 0 0 2.4em}
+  .article-type-pedagogies .article-style ol:has(>li:only-child>strong:first-child)>li{font-size:20px}
+}
+.article-layout .callout-justice{background:var(--jus-bg)}
+/* On a phone a pedagogy's materials go two to a row, so the interview is not pushed a screen down. */
+@media(max-width:760px){
+  .article-layout .article-head .material-cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 5px}
+  .article-layout .article-head .material-cards a{min-height:84px;padding:14px 14px 18px}
+  .article-layout .article-head .material-cards strong{font-size:20px;overflow-wrap:anywhere}
+  .article-layout .article-head .material-cards span{font-size:15px}
+}
+/* Several authors beside a contents list: their photos in a row and their names, so the contents stay in view. */
+.article-layout .card-authors-compact{margin:0 0 16px}
+.article-layout .card-author-photos{display:flex;margin:0 0 8px;padding-inline-start:8px}
+.article-layout .card-author-photos img{width:40px;height:40px;margin-inline-start:-8px;border:2px solid #fff;border-radius:50%;object-fit:cover;background:#fff}
+.article-layout .card-author-names{margin:0;font-size:15px;line-height:1.45}
+.article-layout .card-author-names a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
+/* An Educators' Corner or Pedagogies article without a picture, in the end band: education's colour, white text. */
+.ac-panel-edu{background:var(--edu)}
+/* The phone contents of an education article match its side card. */
+:is(.article-type-educators-corner,.article-type-pedagogies) .toc-phone{background:var(--edu-bg)}
+/* In the text column (below 1240 px) a call-out keeps its lines under 80 characters, as the text around it does. */
+.article-layout:not(.article-layout-wide) .article-style .callout{max-width:32em}
+/* The end band's heading leads to the whole section (doors/read_next). */
+.read-next h2 a{color:var(--ink);text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:5px}
+.read-next h2 a:hover{color:var(--link)}
+.read-next h2 a span{font-family:var(--text);font-size:.8em;margin-inline-start:4px}
+@media(max-width:760px){.read-next h2 a{display:inline-block;padding:8px 0}}
+/* A picture-less education article in the end band: a plain door on education's colour, saying nothing twice. */
+.ac-panel-door{position:relative}
+.ac-panel-door::after{content:"";position:absolute;left:50%;bottom:0;width:22%;height:62%;transform:translateX(-50%);border-radius:999px 999px 0 0;background:rgb(255 255 255/.16)}
+/* Where the side card sits beside the title (above 1000 px) it names every author, so the byline does not name them
+   again; below that the card comes after the text and the byline keeps the names. */
+@media(min-width:1001px){
+  .article-layout:has(>.article-card :is(.card-authors,.card-authors-compact)) .byline-authors{display:none}
+  /* The date is in the card too (byline-date is for narrow screens), so a byline with no reading time left is empty. */
+  .article-layout:has(>.article-card :is(.card-authors,.card-authors-compact)) .byline:not(:has(.byline-time)){display:none}
+}
+/* On a phone the byline gives the date under the title, so the card at the end gives only an update. */
+@media(max-width:1000px){.article-layout .article-card-article dl>:is(dt:first-child,dt:first-child+dd){display:none}.article-layout .article-card-article dl>dt:nth-child(3){margin-top:0}}
+@media(max-width:1000px){.article-layout .article-card-article dl:not(:has(>dt:nth-child(3))){display:none}}
+/* Below 1001 px the card comes after the text and the byline has already named every author. The compact block, and
+   any entry with no photo, role, bio or links, would only repeat those names, so they are left out there, and so is a
+   card with nothing else to show. */
+@media(max-width:1000px){
+  .article-layout :is(.card-authors-compact,.card-author-plain,.card-authors:not(:has(li:not(.card-author-plain)))){display:none}
+  .article-layout .article-card-article:not(:has(.card-authors li:not(.card-author-plain),.card-more,dl>dt:nth-child(3))){display:none}
+}
+/* A cluster's small mark in its colour from the clusters wheel (resource pages' "About this resource"; DESIGN.md §6). */
+.cl-mark{display:inline-block;flex:none;width:10px;height:10px;margin-inline-end:6px;border-radius:2px;background:var(--c,var(--soft));-webkit-print-color-adjust:exact;print-color-adjust:exact}
+/* A resource's card in its first cluster's pale colour, with that cluster's wheel icon in a small door
+   (curated_resources/single.html; the cluster page's head mark, clusters.css .cluster-hero__mark, at card size). */
+.article-layout .article-card--cluster{background:var(--c-bg)}
+@media(max-width:1000px){.article-layout .article-card--cluster{position:relative}}
+/* On a phone a little less padding keeps a long cluster name and its mark on one line from about 390 px. */
+@media(max-width:760px){.article-layout .article-card--cluster{padding-inline:18px}}
+.article-layout .article-card--cluster h2{padding-inline-end:52px}
+.article-card__door{position:absolute;top:18px;inset-inline-end:18px;display:grid;place-items:center;width:40px;height:48px;background:var(--c);border-radius:20px 20px 3px 3px;box-shadow:inset 0 -4px 0 rgb(0 0 0/.22);color:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.article-card__door svg{width:20px;height:20px;margin-top:5px}
+.article-card dd.cl-list{display:flex;flex-direction:column;gap:4px}
+.cl-item{display:flex;align-items:baseline}
+.cl-item .cl-mark{transform:translateY(-1px)}
+/* In print the card keeps the plain print styling above, without the cluster fill or door. */
+@media print{.article-layout .article-card--cluster{background:none;padding:0}.article-card__door{display:none}}
+/* Nowhere Lab (content/nowherelab/_index.md): on a wide screen, how to take part (the meetings, Slack and the
+   PhD Survival Guide) is a column beside the introduction and the story; on narrower ones it follows the
+   introduction. The meetings and Slack are plain text, not boxes: only the two meeting times are set large, in the
+   community area's colour, and the guide is a brick because it is something to open. */
+@media(min-width:1001px){
+  .article-layout-wide .article-style .nl-layout{display:grid;grid-template-columns:minmax(0,620px) minmax(320px,500px);grid-template-areas:"intro side" "story side";column-gap:64px;align-items:start}
+  .nl-intro{grid-area:intro}.nl-side{grid-area:side}.nl-story{grid-area:story}
+}
+.article-layout .article-style .nl-section{margin:0 0 8px}
+.article-layout .article-style .nl-section h2{margin:0 0 12px}
+.article-layout .article-style .nl-section~.nl-section h2{margin-top:36px}
+.article-layout .article-style .nl-times{display:flex;flex-wrap:wrap;gap:8px 36px;margin:0 0 14px}
+.nl-times>span{font-size:19px;font-weight:600;line-height:1.25}
+.nl-times strong{display:block;font:var(--display-weight) 30px/1.15 var(--display);color:var(--com)}
+.article-layout .article-style .nl-side .action-cards{margin:40px 0 8px}
+@media(max-width:1000px){.article-layout .article-style .nl-meetings h2{margin-top:36px}}
+/* A logo beside a page's title (header_logo, Nowhere Lab): on a wide page the heading runs the full width, so the
+   logo leads the title instead of sitting alone at the far edge. */
+@media(min-width:761px){.article-layout-wide .article-logo{float:inline-start;margin:6px 24px 8px 0}}
+/* Summaries overview (content/summaries/_index.md, a wide page): the two collections as bricks in their areas'
+   colours, each led by its name with its count in the action at its foot; a wall of one small brick per summary,
+   the DEI ones purple, to show that collection is part of the whole; one real summary on the research area's pale
+   ground; then the overview, with the two asks, "Join and help us" and Feedback, beside it, and the folded
+   background in a row of three below them. */
+.article-layout .article-style .summary-lead{margin:6px 0 0;font-size:19px}
+.article-layout .article-style .summary-hero{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:24px 6px;max-width:none;margin:34px 0 0;padding:0;list-style:none}
+.article-layout .article-style .summary-hero li{position:relative;max-width:none;margin:0}
+.summary-hero-res{--tone:var(--res)}.summary-hero-jus{--tone:var(--jus)}
+.summary-hero li::before{content:"";position:absolute;left:18px;right:18px;top:-10px;height:10px;background:linear-gradient(90deg,transparent 7px,var(--tone) 7px 34px,transparent 34px) left top/41px 10px space no-repeat;border-radius:3px 3px 0 0;pointer-events:none}
+.article-layout .article-style .summary-hero a{display:flex;flex-direction:column;align-items:flex-start;height:100%;box-sizing:border-box;padding:26px 30px 34px;background:var(--tone);border-radius:3px;box-shadow:inset 0 -8px 0 rgb(0 0 0/.24);color:#fff;text-decoration:none;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.article-layout .article-style .summary-hero strong{margin:0 0 8px;font:var(--display-weight) clamp(28px,2.6vw,36px)/1.12 var(--display);color:#fff;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:6px;text-decoration-color:rgb(255 255 255/.5)}
+.summary-hero-text{max-width:28em;font-size:18px;line-height:1.45}
+.summary-hero-go{margin-top:auto;padding-top:18px;font-weight:600;font-size:18px}
+.summary-hero-go>span{display:inline-block;margin-inline-start:6px;transition:transform .15s}
+.article-layout .article-style .summary-hero a:hover strong{text-decoration-color:#fff}
+.summary-hero a:hover .summary-hero-go>span{transform:translateX(4px)}
+.article-layout .article-style .summary-hero a:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.summary-hero-go>span{transition:none}}
+/* The wall: one small brick per summary, in a wrapping row. */
+.article-layout .article-style .summary-wall{max-width:none;margin:22px 0 0}
+.summary-wall-bricks{display:flex;flex-wrap:wrap;gap:3px;padding:0}
+.summary-wall-bricks span{flex:0 0 22px;height:10px;border-radius:2px;background:color-mix(in srgb,var(--res) 32%,var(--res-bg))}
+.summary-wall-bricks span.is-dei{background:var(--jus)}
+/* Once, when the wall comes into view: every brick shows in the research blue, then the DEI ones turn purple in
+   their order, within about a second and a half (DESIGN.md §11). Without JavaScript, or with reduced motion, the
+   wall shows its end state. */
+.summary-wall.is-waiting .summary-wall-bricks span.is-dei{background:color-mix(in srgb,var(--res) 32%,var(--res-bg))}
+.summary-wall.is-turning .summary-wall-bricks span.is-dei{background:var(--jus);transition:background-color .35s ease calc(var(--i,0) * 30ms)}
+.article-layout .article-style .summary-wall figcaption{max-width:30em;margin:10px 0 0;font-size:15px;line-height:1.4;color:var(--soft);text-align:start}
+/* The sample summary: its title and first takeaways in the reading measure, its reference and the link to the whole
+   summary beside them on a wide screen. */
+.article-layout .article-style .summary-sample{max-width:none;margin:44px 0 52px;padding:28px 32px 30px;background:var(--res-bg);border-radius:var(--r-large)}
+.article-layout .article-style .summary-sample>h2{margin:0 0 14px;font-size:clamp(24px,2.2vw,30px)}
+.summary-sample-body{display:grid;grid-template-columns:minmax(0,1fr);gap:8px 56px}
+@media(min-width:1001px){.summary-sample-body{grid-template-columns:minmax(0,520px) minmax(0,460px);column-gap:64px;justify-content:start;align-items:start}.summary-sample-main{display:contents}.summary-sample-main>h3{grid-column:1/-1}.summary-sample-main>:not(h3){grid-column:1}.summary-sample-side{grid-column:2;grid-row:2/span 2}}
+.article-layout .article-style .summary-sample h3{max-width:34em;margin:0 0 14px;font-size:clamp(22px,1.9vw,26px);line-height:1.25}
+.article-layout .article-style .summary-sample h3 a{color:var(--res)}
+.article-layout .article-style .summary-sample .summary-cite{display:block;margin-top:4px;font:400 17px/1.4 var(--text);color:var(--soft)}
+.article-layout .article-style .summary-sample-label{margin:0 0 6px;font-weight:600;font-size:17px}
+.article-layout .article-style .summary-sample ul{margin:0;padding-inline-start:22px}
+.article-layout .article-style .summary-sample li{max-width:none;margin:0 0 10px;font-size:17px;line-height:1.5}
+.article-layout .article-style .summary-sample p{max-width:none}
+/* The takeaways keep the reading measure (DESIGN.md §7: under 80 characters a line). */
+.article-layout .article-style .summary-sample ul{max-width:none}
+.article-layout .article-style .summary-sample-main li{max-width:28em}
+.article-layout .article-style .summary-sample-ref{max-width:30em;font-size:16px;line-height:1.5;overflow-wrap:break-word}
+.article-layout .article-style .summary-sample-more{margin:18px 0 6px}
+.article-layout .article-style .summary-sample-note{margin:0;font-size:15px;color:var(--soft)}
+
+@media(min-width:901px){
+  .article-layout-wide .article-style .sm-layout{display:grid;grid-template-columns:minmax(0,620px) minmax(340px,1fr);grid-template-areas:"overview help" "side side";column-gap:40px;align-items:start}
+  .sm-overview{grid-area:overview}.sm-help{grid-area:help}.sm-side{grid-area:side}
+  .article-layout .article-style :is(.sm-overview>h2,.sm-join>h3):first-child{margin-top:0}
+  .article-layout-wide .article-style .sm-side{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:start;max-width:none;margin-top:28px}
+  .article-layout .article-style .sm-side .spoiler{margin:0}
+}
+@media(min-width:1001px){.article-layout-wide .article-style .sm-layout{column-gap:64px}}
+.article-layout .article-style .sm-side .spoiler{max-width:none}
+.article-layout .article-style .sm-feedback h3{margin-top:32px}
+/* Inline, not the icon font's inline-block, so the icon never wraps away from the last word of its link. */
+.sm-feedback .fa-external-link-alt{display:inline;margin-inline-start:4px;font-size:.72em}
+@media(max-width:900px){.article-layout .article-style .sm-side{margin-top:28px}}
+.article-layout .article-style .sm-help .sm-feedback{max-width:none}
+@media(max-width:760px){.article-layout .article-style .summary-hero{margin:28px 0 0}.article-layout .article-style .summary-hero a{padding:20px 20px 28px}.summary-wall-bricks{gap:2px}.summary-wall-bricks span{flex-basis:12px;height:7px}.article-layout .article-style .summary-sample{margin:32px 0 40px;padding:22px 18px 24px}}
+/* A collection of summaries (layouts/_default/summaries.html): the header on the pale ground of the collection's
+   area with its count; the filter and the routes to the other collection beside the list on a wide screen (on a phone the
+   filter above the list and the routes after it); and each entry a
+   title with its citation below it. An open entry takes the area's pale ground. */
+.summaries-res{--area:var(--res);--area-bg:var(--res-bg)}
+.summaries-jus{--area:var(--jus);--area-bg:var(--jus-bg)}
+.summaries-band{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px 40px;padding:26px 32px 30px;background:var(--area-bg);border-radius:var(--r-large)}
+.summaries-band .article-head{flex:1 1 520px;margin:0}
+.article-layout .summaries-band .article-head h1{font-size:clamp(34px,3.6vw,52px)}
+.article-layout .summaries-band .standfirst{max-width:34em}
+.summaries-band .byline:empty{display:none}
+.summaries-count{margin:0;font-size:18px;font-weight:600;line-height:1.1}
+.summaries-count strong{display:block;font:var(--display-weight) clamp(48px,5vw,72px)/1 var(--display);color:var(--area)}
+.article-layout.summaries-layout{row-gap:28px}
+.summaries-body{display:grid;grid-template-columns:minmax(0,1fr);gap:20px}
+.summaries-side .summary-tools{margin:0}
+.summary-tools-slot:empty{display:none}
+.summaries-side .summary-tools p.summary-count{margin:8px 0 0;font-size:16px}
+.summaries-side .summary-tools p.summary-count:empty{margin:0}
+.summaries-routes ul{margin:0;padding:0;list-style:none;font-size:17px;line-height:1.35}
+/* The link is inline, so the count follows its last word; the padding keeps the tap target 44 px high. */
+.summaries-routes li{margin:0 0 4px;padding:11px 0}
+.summaries-routes a{padding:11px 0;color:var(--link);text-decoration:underline;text-underline-offset:3px}
+.summaries-routes span{color:var(--soft);font-size:15px}
+@media(min-width:1001px){.summaries-routes-foot{display:none}}
+/* The index of years: a row for each chapter, its bar as long as the share of summaries it holds (--t of --max).
+   While the filter is in use, site.js sets --n to the chapter's matches and the bar fills only that far; it also
+   marks the year on screen as current. */
+.article-layout .summary-years p{margin:0;font-size:16px;line-height:1.35}
+.summary-years-label{font-weight:700}
+.article-layout .summary-years .summary-years-note{color:var(--soft);font-size:15px}
+.summary-years ol{margin:8px 0;padding:0;list-style:none}
+.summary-years li{margin:0}
+.summary-years a{display:grid;grid-template-columns:5.6em minmax(0,1fr) 2.2em;align-items:center;gap:10px;min-height:34px;padding:0 8px;border-radius:var(--r-small);color:var(--ink);text-decoration:none;font-size:16px;font-variant-numeric:tabular-nums}
+.summary-years-year{color:var(--link);text-decoration:underline;text-underline-offset:3px}
+.summary-years-bar{--fill:color-mix(in srgb,var(--area) 55%,var(--area-bg));display:block;width:max(3px,calc(var(--t) / var(--max) * 100%));height:12px;background:linear-gradient(90deg,var(--fill) calc(var(--n) / var(--t) * 100%),color-mix(in srgb,var(--area) 14%,#fff) 0);border-radius:2px}
+.summary-years-n{color:var(--soft);font-size:15px;text-align:end}
+.summary-years a:hover,.summary-years a.is-current{background:#fff}
+.summary-years a:hover .summary-years-year{color:var(--ink)}
+.summary-years a.is-current .summary-years-year{color:var(--ink);font-weight:700}
+.summary-years a.is-current .summary-years-bar{--fill:var(--area)}
+.summary-years a.is-empty{pointer-events:none}
+.summary-years a.is-empty .summary-years-year{color:var(--soft);text-decoration:none}
+
+/* Chapters: the year in large type on a pale tab in the area's colour, standing on a rule across the list. */
+.article-layout .article-style .summary-chapter-head{margin:34px 0 4px;border-bottom:2px solid var(--area);color:var(--area);font:500 40px/1.1 var(--display)}
+.summary-chapter-head>span{display:inline-block;padding:6px 18px 2px;background:var(--area-bg);border-radius:var(--r-large) var(--r-large) 0 0}
+.article-layout .article-style .summary-chapter:first-of-type .summary-chapter-head{margin-top:6px}
+.summary-chapter{scroll-margin-top:16px}
+.summary-chapter[hidden]{display:none}
+/* Questions to start from (doors/summary_questions): each a brick, like those on the summaries overview, with
+   studs in the area's colour along its top and a shaded foot; white, so they stand apart from the pale filter panel
+   beside them. The question in display type, the answer, the citation at the foot. All the questions are in the
+   page in an order the script shuffles; three show on a wide screen, one on a phone. */
+.summary-questions{margin:0 0 28px}
+.summary-questions-head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:4px 16px;margin:0 0 18px}
+.article-layout .summary-questions h2{margin:0;font:700 17px/1.3 var(--text);color:var(--ink)}
+.summary-questions ul{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:22px 12px;margin:0;padding:0;list-style:none}
+.summary-questions li{position:relative;display:flex;flex-direction:column;margin:0;background:#fff;border:1.5px solid var(--area);border-radius:3px;box-shadow:inset 0 -7px 0 color-mix(in srgb,var(--area) 22%,#fff)}
+.summary-questions li:nth-child(n+4){display:none}
+.summary-questions li::before{content:"";position:absolute;left:12px;right:12px;top:-9.5px;height:8px;background:linear-gradient(90deg,transparent 5px,var(--area) 5px 27px,transparent 27px) left top/32px 8px space no-repeat;pointer-events:none}
+.summary-questions a{display:flex;flex-direction:column;gap:10px;flex:1;padding:16px 20px 24px;color:var(--ink);text-decoration:none}
+.summary-question{font:500 22px/1.2 var(--display);color:var(--area);text-wrap:pretty}
+.summary-question-gist{font-size:16px;line-height:1.5}
+/* A quoted answer may start mid-sentence in lower case. */
+.summary-question-gist::first-letter{text-transform:uppercase}
+.summary-question-foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:2px 12px;margin-top:auto}
+.summary-question-cite{font-size:15px;line-height:1.4;color:var(--soft)}
+.summary-question-go{margin-inline-start:auto;font-weight:600;font-size:15px;line-height:1.4;color:var(--area);white-space:nowrap}
+.summary-questions a:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+/* The whole card is the link; the question underlines when it is pointed at or focused. */
+.summary-questions a:is(:hover,:focus-visible) .summary-question{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px}
+/* "More questions" (one on a phone; the script shows it): a small outlined button in the area's colour on the heading
+   row, which brings the next questions without moving the heading. */
+.summary-questions-next{display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:0 14px;background:#fff;border:1.5px solid var(--area);border-radius:999px;color:var(--area);font:600 15px/1.2 var(--text);cursor:pointer}
+.summary-questions-next[hidden]{display:none}
+.summary-questions-next span[aria-hidden]{font-size:17px}
+.summary-questions-one{display:none}
+@media(hover:hover){.summary-questions-next:hover{background:var(--area);color:#fff}}
+.summary-questions-next:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+/* Topics to try (site.js): plain text buttons that fill in the filter, each with its number of matches. */
+.article-layout .summary-try{display:flex;flex-wrap:wrap;align-items:center;gap:4px 18px;margin:0 0 20px;font-weight:600;font-size:17px;line-height:1.4;color:var(--ink)}
+.summary-try button{min-height:36px;padding:0;background:none;border:0;color:var(--link);font:400 18px/1.3 var(--text);text-decoration:underline;text-underline-offset:4px;cursor:pointer}
+.summary-try-n{display:inline-block;margin-inline-start:5px;color:var(--soft);font-size:15px;text-decoration:none}
+.summary-try button:hover{color:var(--ink)}
+/* A retracted paper says so where the others preview their first takeaway. */
+.summary-gist.summary-retracted{display:inline-block;width:fit-content;padding:1px 8px;border:1.5px solid currentColor;border-radius:var(--r-small);font-weight:600;font-size:15px;line-height:1.35}
+/* The filter's label is read out but not shown: the field's placeholder says what it does, so that on a phone the
+   field and the menu of years fit one row. The menu shows only there (site.js). */
+.summary-tools-row .summary-tools-label{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.summary-tools-row input{margin-top:0}
+.summary-year-pick{display:none}
+@media(min-width:1001px){
+  .summaries-body{grid-template-columns:300px minmax(0,780px);column-gap:56px}
+  .summaries-body>.reading{grid-column:2;grid-row:1}
+  /* The filter, the years and the routes stay in view beside the list. */
+  .summaries-side{grid-column:1;grid-row:1;align-self:start;position:sticky;top:16px;max-height:calc(100vh - 32px);overflow-y:auto;display:flex;flex-direction:column;gap:14px}
+  .summaries-side .summary-tools,.summary-years{padding:14px 18px;background:var(--area-bg);border-radius:var(--r-large)}
+  .summaries-side .summary-tools{padding-bottom:4px;border-radius:var(--r-large) var(--r-large) 0 0}
+  .summaries-side .summary-tools-slot:not(:empty)+.summary-years{margin-top:-14px;padding-top:10px;border-radius:0 0 var(--r-large) var(--r-large)}
+  .summaries-side .summary-tools-slot:not(:empty)+.summary-years::before{content:"";display:block;margin:0 0 12px;border-top:1px solid color-mix(in srgb,var(--area) 25%,transparent)}
+}
+/* Phones and tablets: the filter and the years come above the list; the years are one row that scrolls sideways,
+   fades at its edge and stays at the top of the screen while the list scrolls (DESIGN.md §9: one row stays). The
+   routes to the other collection follow the list. The body is a flex column, so that the row can stay in view
+   along the whole list. */
+@media(max-width:1000px){
+  .summaries-body{display:flex;flex-direction:column;gap:12px}
+  .summaries-side,.summary-years{display:contents}
+  .summaries-body>.reading{order:1}
+  .summaries-routes{order:2}
+  .summaries-routes-side{display:none}
+  .summaries-side .summary-tools{background:var(--area-bg)}
+  .summary-years-label{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+  .summary-years nav{position:sticky;top:0;z-index:5;padding:6px 0;background:var(--page);box-shadow:0 1px 0 var(--line),0 6px 8px -6px rgb(0 0 0/.12)}
+  .summary-years ol{display:flex;gap:6px;margin:0;overflow-x:auto;padding-bottom:2px;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 28px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 28px),transparent)}
+  .summary-years li{flex:none}
+  .summary-years ol li:last-child{padding-inline-end:28px}
+  .summary-years ol.is-scrolled{-webkit-mask-image:linear-gradient(90deg,transparent,#000 28px,#000 calc(100% - 28px),transparent);mask-image:linear-gradient(90deg,transparent,#000 28px,#000 calc(100% - 28px),transparent)}
+  .summary-years a{grid-template-columns:auto auto;grid-template-rows:auto 6px;gap:3px 6px;min-height:44px;padding:5px 10px 7px;background:var(--area-bg)}
+  .summary-years a.is-current{background:var(--area)}
+  .summary-years a.is-current .summary-years-year,.summary-years a.is-current .summary-years-n{color:#fff}
+  .summary-years a.is-current .summary-years-bar{--fill:#fff}
+  .summary-years-bar{grid-column:1/-1;grid-row:2;width:max(3px,calc(var(--t) / var(--max) * 56px));height:6px}
+  .summary-years-n{text-align:start}
+  .article-layout .summary-years .summary-years-note{order:0;margin-top:-8px}
+  .article-layout .article-style .summary-chapter-head{margin-top:26px;font-size:28px}
+  .summary-chapter-head>span{padding:4px 14px 1px}
+  .summary-chapter{scroll-margin-top:64px}
+  /* With the menu of years in place, the filter row is what stays at the top of the screen, and the row of years
+     goes. */
+  .summaries-body:has(.summary-year-pick) .summary-tools-slot{display:contents}
+  /* A band of the page's colour around the stuck row hides the list scrolling under it; a hairline below marks its
+     edge once it is stuck (where the browser can tell; at rest it would look like a stray line). */
+  .summaries-side .summary-tools:has(.summary-year-pick){position:sticky;top:0;z-index:5;container-type:scroll-state;box-shadow:0 0 0 8px var(--page)}
+  @container scroll-state(stuck: top){.summary-tools-row::after{content:"";position:absolute;left:-8px;right:-8px;bottom:-9px;height:1px;background:var(--line)}}
+  .summaries-body:has(.summary-year-pick) .summary-years nav{display:none}
+  .summaries-body:has(.summary-year-pick) .summary-years-note{display:none}
+  .summary-tools-row{display:flex;gap:8px;align-items:center}
+  .summary-tools-row label{flex:1;min-width:0}
+  .summary-year-pick{display:block;flex:none;width:7.4em;min-height:44px;padding:8px 30px 8px 14px;text-overflow:ellipsis;-webkit-appearance:none;appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23222' stroke-width='2'/%3E%3C/svg%3E") no-repeat right 13px center;border:1.5px solid var(--area);border-radius:999px;color:var(--ink);font:600 16px/1.3 var(--text)}
+  .summaries-layout:has(.summary-year-pick) .summary-chapter{scroll-margin-top:84px}
+  .summaries-layout:has(.summary-year-pick) .summary-entry h3{scroll-margin-top:84px}
+}
+.summaries-layout .article-style>p:first-child{max-width:none;margin-bottom:12px;color:var(--soft);font-size:16px}
+.article-layout.summaries-layout .article-style .summary-entry{margin:0;padding:0 14px;border-bottom:1px solid var(--line)}
+.article-layout.summaries-layout .article-style .summary-entry[open]{border-radius:var(--r-small)}
+.article-layout.summaries-layout .article-style .summary-entry>summary{display:grid;grid-template-columns:30px minmax(0,1fr);gap:0 12px;align-items:start;padding:14px 0;list-style:none}
+.summaries-layout .summary-entry>summary::-webkit-details-marker{display:none}
+.summaries-layout .summary-entry>summary::before{content:"+";display:flex;align-items:center;justify-content:center;width:30px;height:30px;margin-top:1px;background:var(--area-bg);border-radius:50%;color:var(--area);font:700 20px/1 var(--text)}
+.summaries-layout .summary-entry[open]>summary::before{content:"−";background:#fff}
+.summaries-layout .summary-entry>summary:hover .summary-title{text-decoration:underline;text-underline-offset:3px}
+.article-layout.summaries-layout .article-style .summary-entry>summary h3{display:block;margin:0;font-size:22px;line-height:1.25}
+.article-layout.summaries-layout .article-style .summary-entry>summary>*{grid-column:2}
+/* The first takeaway under the citation, cut by length in doors/summary_entries (about two or three lines, a whole
+   first sentence where one fits); the open entry gives the takeaways in full. */
+.summary-gist{display:block;max-width:29em;text-wrap:pretty;margin-top:6px;font-size:17px;line-height:1.45;color:var(--ink)}
+.summary-gist-short{display:none}
+@media(max-width:760px){.summary-gist-long{display:none}.summary-gist-short{display:inline}}
+.summary-entry[open] .summary-gist{display:none}
+.article-layout.summaries-layout .article-style .summary-entry>summary h3{max-width:560px}
+.summary-title{text-wrap:pretty}
+/* Under the filter, a row whose match lies only in its hidden text shows the sentence it is in (site.js). */
+.summary-hit{display:block;margin-top:4px;font-size:15px;color:var(--soft)}
+.summary-entry[open] .summary-hit{display:none}
+.summary-hit-label{font-weight:600}
+.summary-hit-text{color:var(--ink)}
+/* Filter matches in the titles, citations and previews (site.js, through the CSS highlight API where the browser has it). */
+::highlight(summary-match){background:color-mix(in srgb,var(--hot) 30%,#fff);color:var(--ink)}
+.summaries-layout .article-style>p:first-child .dei-mark{margin-inline-start:0}
+/* Wide screens: the list takes the rest of the width, and each row's citation stands in a column of its own on the
+   right, so the authors, A to Z within each year, read down one edge. The title's heading spans the title and the
+   citation columns (subgrid), so the citation stays in the heading. */
+@media(min-width:1240px){
+  .summaries-body{grid-template-columns:300px minmax(0,1fr)}
+  .article-layout.summaries-layout .article-style .summary-entry>summary{grid-template-columns:30px minmax(0,560px) minmax(180px,1fr);column-gap:12px}
+  .article-layout.summaries-layout .article-style .summary-entry>summary h3{grid-column:2/4;display:grid;grid-template-columns:subgrid;max-width:none;column-gap:32px}
+  .article-layout.summaries-layout .article-style .summary-entry>summary .summary-gist{grid-column:2}
+  .summaries-layout .summary-entry>summary h3 .summary-cite{margin-top:4px;color:var(--ink)}
+}
+.summary-title,.summary-cite{display:block}
+.summary-tail{white-space:nowrap}
+/* The section's previous and next links would repeat the link to the other collection (.summaries-routes), which on
+   a phone sits right after them. */
+.summaries-layout .article-foot .post-nav{display:none}
+.summaries-layout .summary-cite{margin-top:3px;font:400 16px/1.35 var(--text);color:var(--soft)}
+.article-layout.summaries-layout .article-style .summary-entry[open]{margin:6px 0;padding-bottom:14px;background:var(--area-bg);border-bottom-color:transparent}
+.summaries-layout .summary-entry[open]>:not(summary){margin-inline-start:42px}
+@media(max-width:760px){
+  /* Phones: a compact head, filter and notes, and smaller titles, so the list starts in the first screen. */
+  .summaries-band{padding:14px 18px 16px;gap:6px}
+  .article-layout .summaries-band .article-head h1{font-size:30px}
+  .article-layout .summaries-band .standfirst{margin-top:10px;font-size:18px}
+  .summaries-side .summary-tools{padding:10px 14px}
+  /* Phones: one brick, tighter, so the list stays near the first screen; "Another question" moves on. */
+  .summary-questions{margin-bottom:12px}
+  .summary-questions-head{align-items:center;margin-bottom:20px}
+  .summary-questions-head .summary-questions-next{min-height:44px}
+  .summary-questions-one{display:inline}
+  .summary-questions-more{display:none}
+  .summary-questions li:nth-child(n+2){display:none}
+  .summary-questions a{gap:6px;padding:10px 14px 16px}
+  .summary-question{font-size:20px}
+  .summary-question-gist{font-size:15px;line-height:1.45}
+  .summaries-side .summary-tools input{margin-top:4px}
+  .summaries-layout .article-style>p:first-child{margin-bottom:8px;font-size:15px;line-height:1.45}
+  .article-layout.summaries-layout{row-gap:14px}
+  .summaries-band .standfirst+*,.summaries-count{margin-top:0}
+  .summary-years nav{padding:4px 0}
+  .article-layout.summaries-layout .article-style .summary-entry>summary h3{font-size:19px}
+  .article-layout.summaries-layout .article-style .summary-entry>summary{padding:12px 0}
+  .summaries-layout .summary-cite{font-size:15px}
+  .summary-gist{margin-top:4px;text-wrap:wrap}
+  .summary-try button{min-height:44px}
+  .article-layout .summary-try{row-gap:0;margin-bottom:10px}
+  .summaries-count{display:flex;align-items:baseline;gap:8px}
+  .summaries-count strong{display:inline;font-size:32px}
+  .article-layout.summaries-layout .article-style .summary-entry{padding:0 8px}
+  .summaries-layout .summary-entry[open]>:not(summary){margin-inline-start:0}
+}
+
+/* Reversals: choosing an outcome raises its bricks in each discipline's strip (site.js marks them .is-match) in
+   0.18 s, together with the list's filtering, and draws the chosen tile's outline. With reduced motion the change is
+   immediate (base.css). */
+.section-mix i{transform-origin:50% 100%;transition:opacity .18s ease-out,transform .18s ease-out}
+.section-mix i.is-match{transform:scaleY(1.5)}
+.article-layout .article-style .outcome-tile{transition:box-shadow .2s ease-out}
+/* Reversals: the first time the outcome board is in view, each tile lays its bricks at the same pace, 10 ms apart
+   (site.js), so 14 reversals are done at once while the common outcomes take about 1.4 s. Bricks still to come
+   wait unseen; with reduced motion they are all there from the start. */
+@media(prefers-reduced-motion:no-preference){
+  .outcome-board.is-previewing .outcome-tile .outcome-bricks i{animation:outcome-brick .14s ease-out calc(var(--n)*10ms) backwards paused}
+  .outcome-board.is-seen .outcome-tile .outcome-bricks i{animation-play-state:running}
+}
+@keyframes outcome-brick{from{opacity:0;transform:scale(.2)}}

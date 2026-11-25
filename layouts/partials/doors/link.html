@@ -1,0 +1,13 @@
+{{/* A link's address and label, from a front-matter entry with `url` and optional `label`. Without
+     a label it takes the name of the main-menu entry with that address, so renaming a menu entry
+     renames the link too. Returns a dict with `href` and `label`. */}}
+{{ $url := .url }}
+{{ $external := or (strings.HasPrefix $url "http") (strings.HasPrefix $url "#") (strings.HasPrefix $url "mailto:") }}
+{{ $href := $url }}
+{{ if not $external }}{{ $href = $url | relLangURL }}{{ end }}
+{{ $label := .label }}
+{{ if not $label }}
+  {{ $labels := partialCached "doors/menu_labels" . "menu-labels" }}
+  {{ $label = index $labels (strings.Trim $url "/") | default $url }}
+{{ end }}
+{{ return dict "href" $href "label" $label }}

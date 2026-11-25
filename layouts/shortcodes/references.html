@@ -1,0 +1,8 @@
+{{- with .Page.Store.Get "citations" -}}
+<h2 id="references">References</h2>
+<ul class="references-list">
+  {{- range sort . "sort" -}}
+    {{- partial "citations/entry" . -}}
+  {{- end -}}
+</ul>
+{{- end -}}

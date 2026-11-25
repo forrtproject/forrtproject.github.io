@@ -1,0 +1,43 @@
+{{/* /clusters/: the eleven clusters as a plain linked list, each with its number in its colour, the first
+     sentence of its description (left out where that sentence only counts sub-clusters), and its counts as
+     the label of a disclosure that lists its sub-clusters, linked to their places on its page, each with its
+     number of references. The map's info bar copies the name, sentence and counts from here.
+     From 942 px the overview above shows the same clusters, so the list is closed there; below that it is the
+     way in and is open (it is open in the HTML, so it also stays open without scripts). Crossing 942 px, by
+     resizing or turning the device, sets it again. A hidden h2 keeps it in the page's headings.
+     Expects dict: data (clusters_v4), arrowColors. */}}
+{{ $clusters := .data.clusters }}
+{{ $marks := .arrowColors }}
+<section aria-labelledby="clusters-overview-heading">
+<h2 class="visually-hidden" id="clusters-overview-heading">The {{ len $clusters }} clusters</h2>
+<details class="clusters-overview" id="clusters-overview" open>
+  <summary class="clusters-overview__heading">The {{ len $clusters }} clusters</summary>
+  <ol class="clusters-overview__list">
+    {{ range $ci, $c := $clusters }}
+    {{ $num := int $c.number }}
+    {{ $refs := 0 }}{{ range $c.sub_clusters }}{{ $refs = add $refs (len .publications) }}{{ end }}
+    {{ $text := $c.description | default "" | replaceRE "​" "" | strings.TrimSpace }}
+    {{ $first := replaceRE `^([\s\S]*?[.!?])(\s[\s\S]*)?$` "$1" $text }}
+    {{ if or (not (findRE `[.!?]$` $first)) (findRE `(?i)sub-clusters?` $first) }}{{ $first = "" }}{{ end }}
+    <li data-cluster="{{ $num }}" style="--c: {{ index $marks (mod $ci (len $marks)) | safeCSS }}">
+      <span class="clusters-overview__num" aria-hidden="true">{{ $num }}</span>
+      <div class="clusters-overview__text">
+        <a class="clusters-overview__name" href="{{ printf "/clusters/cluster-%d/" $num | relURL }}"><span class="visually-hidden">Cluster {{ $num }}: </span>{{ $c.name }}</a>
+        {{ with $first }}<p class="clusters-overview__desc">{{ . }}</p>{{ end }}
+        {{ $base := printf "/clusters/cluster-%d/" $num | relURL }}
+        <details class="clusters-overview__subs">
+          <summary class="clusters-overview__count">{{ len $c.sub_clusters }} sub-clusters · {{ $refs }} references</summary>
+          <ul>{{ range $c.sub_clusters }}<li>{{ partial "clusters/sub_link.html" (dict "base" $base "num" $num "sub" .) }}</li>{{ end }}</ul>
+        </details>
+      </div>
+    </li>
+    {{ end }}
+  </ol>
+</details>
+</section>
+<script>(function () {
+  var list = document.getElementById('clusters-overview'), wide = window.matchMedia('(min-width: 942px)');
+  var sync = function () { list.open = !wide.matches; };
+  sync();
+  if (wide.addEventListener) wide.addEventListener('change', sync); else wide.addListener(sync);
+})();</script>

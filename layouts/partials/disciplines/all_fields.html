@@ -16,14 +16,26 @@
 
   {{ partial "disciplines/controls.html" . }}
 
+  {{/* The key sits with the index whose labels it explains. */}}
+  <div class="disciplines-key">
+    {{/* A key to the labels on each resource (field_section.html), not filters: a swatch and a name, not pills. */}}
+    <p class="intro-paragraph" id="disc-key-h">Resources are of five kinds, each with its own colour:</p>
+    <ul class="disciplines-areas" aria-labelledby="disc-key-h">
+      {{ range $palette.kinds }}<li><span class="disc-key" style="--k:{{ .color | safeCSS }}">{{ .name }}</span></li>{{ end }}
+    </ul>
+  </div>
+
   <div class="row">
     {{ partial "disciplines/sidebar_nav.html" (dict "data" $data "arrowColors" $arrowColors "link_mode" "anchor") }}
 
-    <main class="col-12 col-lg-8 col-xl-9 clusters-content">
+    <div class="col-12 col-lg-8 col-xl-9 clusters-content">
+      {{/* The largest discipline sets the scale of the row bars, so a bar's length shows its size as well as its mix. The
+           length follows the square root of the count, so a small discipline's bar is still long enough to show its mix. */}}
+      {{ $most := 1 }}{{ range $data.fields }}{{ range .disciplines }}{{ if gt (len .resources) $most }}{{ $most = len .resources }}{{ end }}{{ end }}{{ end }}
       {{ range $fi, $field := $data.fields }}
-        {{ partial "disciplines/field_section.html" (dict "field" $field "fi" $fi "colors" $colors "show_leads" $showLeads) }}
+        {{ partial "disciplines/field_section.html" (dict "field" $field "fi" $fi "colors" $colors "show_leads" $showLeads "most" $most) }}
       {{ end }}
-    </main>
+    </div>
   </div>
 </div>
 

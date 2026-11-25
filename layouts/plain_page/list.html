@@ -1,13 +1,5 @@
 {{- define "main" -}}
-
-{{ partial "page_header.html" . }}
-
-<div class="universal-wrapper">
-  {{ with .Content }}
-  <div class="article-style">{{ . }}</div>
-  {{ end }}
-</div>
-
-{{ partial "pagination" . }}
-
+{{/* Its numbered list pages stay at their addresses, though this layout does not list them. */}}
+{{ $_ := .Paginate .Data.Pages }}
+{{ partial "doors/reading" . }}
 {{- end -}}

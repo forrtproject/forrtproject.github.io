@@ -1,0 +1,75 @@
+{
+ "404": {
+  "BreadcrumbList": 1,
+  "pages": 1
+ },
+ "article": {
+  "Article": 24,
+  "BlogPosting": 15,
+  "BreadcrumbList": 44,
+  "pages": 44
+ },
+ "author profile": {
+  "BreadcrumbList": 119,
+  "CollectionPage": 119,
+  "Person": 58,
+  "pages": 119
+ },
+ "clusters and disciplines": {
+  "BreadcrumbList": 12,
+  "CollectionPage": 2,
+  "ItemList": 2,
+  "WebPage": 13,
+  "pages": 13
+ },
+ "generated list": {
+  "BreadcrumbList": 391,
+  "CollectionPage": 391,
+  "pages": 391
+ },
+ "glossary list": {
+  "BreadcrumbList": 5,
+  "CollectionPage": 5,
+  "pages": 5
+ },
+ "glossary term": {
+  "BreadcrumbList": 1295,
+  "DefinedTerm": 1294,
+  "pages": 1295
+ },
+ "home": {
+  "EducationalOrganization": 1,
+  "WebSite": 1,
+  "pages": 1
+ },
+ "news and section list": {
+  "BreadcrumbList": 5,
+  "CollectionPage": 4,
+  "pages": 5
+ },
+ "redirect stub": {
+  "pages": 1988
+ },
+ "resource detail": {
+  "BreadcrumbList": 1485,
+  "pages": 1485
+ },
+ "section or plain page": {
+  "BreadcrumbList": 53,
+  "CollectionPage": 7,
+  "pages": 56
+ },
+ "standalone": {
+  "pages": 10
+ },
+ "summaries": {
+  "BreadcrumbList": 3,
+  "CollectionPage": 3,
+  "pages": 3
+ },
+ "tags browser": {
+  "BreadcrumbList": 1,
+  "CollectionPage": 1,
+  "pages": 1
+ }
+}

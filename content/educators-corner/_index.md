@@ -1,6 +1,7 @@
 ---
 title: Educators' Corner
-subtitle: Offering a platform for educators of all stripes to share their stories, experiences, successes and hardships in teaching and mentoring, as well as for sharing educational practices and initiatives that are of interest to the O&R community.
+subtitle: Articles by educators and researchers on teaching and mentoring in open and reproducible research.
+description: "A platform for educators of all stripes to share their stories, experiences, successes and hardships in teaching and mentoring, and educational practices and initiatives of interest to the open and reproducible research community."
 
 # View.
 #   1 = List
@@ -14,5 +15,12 @@ header:
   image: ""
 ---
 
-<br>
+To write for us, [email us your idea](mailto:info@forrt.org?subject=Educators%27%20Corner%3A%20article%20idea).
+
+<details class="list-about">
+<summary>About Educators' Corner</summary>
+
+Offering a platform for educators of all stripes to share their stories, experiences, successes and hardships in teaching and mentoring, as well as for sharing educational practices and initiatives that are of interest to the open and reproducible research community.
+
+</details>
 

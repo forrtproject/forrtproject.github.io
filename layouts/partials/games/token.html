@@ -1,0 +1,2 @@
+{{/* A filter value as a token for data-facets and data-value: "Lighthearted/Playful" in tone gives "tone-lighthearted-playful". */}}
+{{ return printf "%s-%s" .key (strings.Trim (replaceRE `[^a-z0-9]+` "-" (lower .value)) "-") }}

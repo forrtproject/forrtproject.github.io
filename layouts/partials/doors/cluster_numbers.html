@@ -1,0 +1,5 @@
+{{/* Each cluster's number on the clusters wheel (data/clusters_v4.json), keyed by its name in lower case and
+     urlized, so "FAIR Data and Materials" and "FAIR data and materials" match. Call with partialCached. */}}
+{{ $num := dict }}
+{{ with hugo.Data.clusters_v4 }}{{ range .clusters }}{{ $num = merge $num (dict (lower .name | urlize) (int .number)) }}{{ end }}{{ end }}
+{{ return $num }}

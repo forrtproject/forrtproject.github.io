@@ -1,0 +1,58 @@
+{{/* Page-local references (one APA reference per blank-line paragraph or Markdown bullet).
+     Merges any {{< cite >}} entries already collected on the page into one alphabetical list
+     so pages with both shared and page-local references have a single reference list, and
+     marks the list with data-local-references so citations.js links unambiguous in-text matches.
+     Pass heading="none" when the page already supplies its own References heading. */}}
+{{- $heading := "References" -}}
+{{- if .IsNamedParams -}}
+  {{- with .Get "heading" -}}{{- $heading = . -}}{{- end -}}
+{{- end -}}
+{{- $entries := dict -}}
+{{- with .Page.Store.Get "citations" -}}
+  {{- range $k, $v := . -}}
+    {{- $entries = merge $entries (dict $k $v) -}}
+  {{- end -}}
+{{- end -}}
+{{- $keys := partialCached "citations/keys" . "bibliography-keys" -}}
+{{- $raw := strings.TrimSpace (replace .Inner "\r\n" "\n") -}}
+{{- $items := slice -}}
+{{- if $raw -}}
+  {{- $lines := slice -}}
+  {{- range split $raw "\n" -}}
+    {{- $t := strings.TrimSpace . -}}
+    {{- if $t -}}{{- $lines = $lines | append $t -}}{{- end -}}
+  {{- end -}}
+  {{- $allBullets := gt (len $lines) 0 -}}
+  {{- range $lines -}}
+    {{- if not (findRE `^[-*]\s+` .) -}}{{- $allBullets = false -}}{{- end -}}
+  {{- end -}}
+  {{- if $allBullets -}}
+    {{- range $lines -}}
+      {{- $items = $items | append (strings.TrimSpace (replaceRE `^[-*]\s+` "" .)) -}}
+    {{- end -}}
+  {{- else -}}
+    {{- range split (replaceRE `\n[ \t]*\n+` "\n\n" $raw) "\n\n" -}}
+      {{- $clean := strings.TrimSpace (replaceRE `^[-*]\s+` "" (replaceRE `[ \t]*\n[ \t]*` " " (strings.TrimSpace .))) -}}
+      {{- if $clean -}}{{- $items = $items | append $clean -}}{{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- range $items -}}
+  {{- $apa := . -}}
+  {{- $key := index $keys $apa | default (printf "local-%s" (md5 $apa)) -}}
+  {{- $meta := partialCached "citations/metadata" $apa $apa -}}
+  {{- $item := dict "key" $key "apa" $apa "sort" (lower $meta.plain) -}}
+  {{- if not (isset $entries $key) -}}
+    {{- $entries = merge $entries (dict $key $item) -}}
+  {{- end -}}
+{{- end -}}
+{{- if gt (len $entries) 0 -}}
+  {{- if and $heading (ne $heading "none") -}}
+<h2 id="references">{{ $heading }}</h2>
+  {{- end -}}
+<ul class="references-list" data-local-references="true">
+  {{- range sort $entries "sort" -}}
+    {{- partial "citations/entry" . -}}
+  {{- end -}}
+</ul>
+{{- end -}}

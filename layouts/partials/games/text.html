@@ -1,0 +1,10 @@
+{{/* One answer field of a game (partials/games/list.html): a list of answers, one per form entry. One answer
+     shows as paragraphs, several as a list. Web addresses in the text become links; an escaped
+     character other than & (a quote, say) ends the address. */}}
+{{ $html := slice }}
+{{ range . }}
+  {{ $text := htmlEscape . | replaceRE `(https?://(?:[^\s<&]|&amp;)*[^\s<&.,;:!?)\]])` `<a href="$1" rel="noopener">$1</a>` }}
+  {{ $text = replaceRE `\n\n+` "</p><p>" $text | replaceRE `\n` "<br>" }}
+  {{ $html = $html | append (printf "<p>%s</p>" $text) }}
+{{ end }}
+{{ if gt (len $html) 1 }}<ul>{{ range $html }} <li>{{ . | safeHTML }}</li>{{ end }}</ul>{{ else }}{{ index $html 0 | safeHTML }}{{ end }}

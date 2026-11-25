@@ -1,0 +1,6 @@
+{{/* Reverse lookup for generated glossary pages, whose references are already expanded. */}}
+{{- $keys := dict -}}
+{{- range $key, $apa := partialCached "citations/bibliography" . "bibliography" -}}
+  {{- $keys = merge $keys (dict $apa $key) -}}
+{{- end -}}
+{{- return $keys -}}

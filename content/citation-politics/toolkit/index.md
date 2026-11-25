@@ -1,5 +1,6 @@
 ---
 type: citation_politics
+heading_title: "Citation Politics Toolkit"
 url: "/citation-politics/toolkit/"
 # Meta description: the page body is a shortcode whose HTML would otherwise
 # appear as text in the auto-generated summary.
@@ -9,9 +10,3 @@ sharing_image_alt: "Towards Citational Justice Across the Whole Research Cycle ‚
 ---
 
 {{< citation-politics-toolkit >}}
-
-
-{{< toolkit >}}
-
-***Cite as:***
-> Sauv√©, S. A., Middleton, S. L., Gellersen, H., & Azevedo, F. (2025, July 31). In Pursuit of Citational Justice: A Toolkit for Equitable Scholarship. https://doi.org/10.31222/osf.io/qjecy_v2

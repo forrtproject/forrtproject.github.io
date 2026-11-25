@@ -17,10 +17,15 @@ import os
 import re
 import html
 import json
+import unicodedata
+from urllib.parse import urlparse
 
-# Load environment variables from .env file (for local development)
-from dotenv import load_dotenv
-load_dotenv()
+# Load environment variables from .env file (optional, for local development)
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
 
 # Opt into future pandas behavior to silence FutureWarning about downcasting
 # This option may not exist in older pandas versions, so guard it
@@ -54,18 +59,6 @@ extra_roles_url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSCsxHTnSSjYq
 
 # Column mappings (defines which columns are roles)
 fields_url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vT_IaXiYtB3iAmtDZ_XiQKrToRkxOlkXNAeNU2SIT_J9PxvsQyptga6Gg9c8mSvDZpwY6d8skswIQYh/pub?output=csv&gid=277271370"
-
-# Fetch column mappings 
-try:
-    column_mappings = pd.read_csv(fields_url)
-    print(f"✓ Successfully loaded column mappings with {len(column_mappings)} fields")
-except Exception as e:
-    print(f"✗ FATAL: Failed to load column mappings: {str(e)}")
-    raise
-
-# Build cache columns: id + role columns from mappings
-ROLE_COLUMNS = column_mappings['Fields'].tolist()
-CACHE_COLUMNS = ID_COLUMNS + ROLE_COLUMNS
 
 
 def print_failures(failed_sheets):
@@ -208,82 +201,6 @@ def drop_organisation_rows(df):
     return df[~is_org].copy()
 
 
-# =============================================================================
-# MAIN DATA LOADING LOGIC
-# =============================================================================
-
-# Check for credentials
-gsheet_client = get_credentials()
-failed_sheets = []
-total_projects = 0
-successful_projects = 0
-
-if gsheet_client:
-    # WITH CREDENTIALS: Fetch fresh data from Google Sheets
-    print("🔐 Credentials found - fetching fresh data from Google Sheets")
-
-    # Fetch index sheet via API (private)
-    df_index = fetch_index_from_api(gsheet_client)
-    total_projects = len(df_index)
-    print(f"✓ Successfully loaded Tenzing source with {total_projects} projects")
-
-    # Fetch all contributor data from individual sheets (public URLs)
-    merged_data, failed_sheets = fetch_all_contributor_data(df_index)
-    merged_data = drop_organisation_rows(merged_data)
-    successful_projects = total_projects - len(failed_sheets)
-
-    # Save cache for local development (only essential columns, no sensitive data)
-    cache_columns_present = [col for col in CACHE_COLUMNS if col in merged_data.columns]
-    # Filter to only rows with actual contributor data (First name and Surname present)
-    cache_data = merged_data[cache_columns_present].copy()
-    cache_data = cache_data[
-        cache_data['First name'].notna() & (cache_data['First name'] != '') &
-        cache_data['Surname'].notna() & (cache_data['Surname'] != '')
-    ]
-    # Sanitize string columns: strip whitespace and control characters (newlines, CRs)
-    for col in ['First name', 'Middle name', 'Surname', 'ORCID iD', 'Project Name', 'Project URL']:
-        if col in cache_data.columns:
-            cache_data[col] = cache_data[col].astype(str).str.replace(r'[\r\n\t]+', '', regex=True).str.strip()
-            cache_data[col] = cache_data[col].replace('nan', '')
-    # Standardize names in cache by ORCID: when the same ORCID appears with different
-    # name variants across projects (e.g. swapped first/surname), use the first
-    # occurrence as the canonical name. Only affects the cache, not tenzing.md.
-    name_cols = ['First name', 'Middle name', 'Surname']
-    orcid_mask = cache_data['ORCID iD'] != ''
-    canonical = cache_data.loc[orcid_mask].groupby('ORCID iD')[name_cols].first()
-    for col in name_cols:
-        cache_data.loc[orcid_mask, col] = cache_data.loc[orcid_mask, 'ORCID iD'].map(canonical[col]).values
-    cache_data.to_csv(CACHE_FILE, index=False)
-    print(f"💾 Cache saved to {CACHE_FILE} ({len(cache_data)} rows, {len(cache_columns_present)} columns)")
-
-else:
-    # WITHOUT CREDENTIALS: Use cached data
-    print("🔓 No credentials found - using cached data for local development")
-
-    if not os.path.exists(CACHE_FILE):
-        raise RuntimeError(
-            f"No credentials and no cache file found at {CACHE_FILE}\n"
-            "Either:\n"
-            "  1. Set GSHEET_CREDENTIALS in .env file, or\n"
-            "  2. Pull latest from master to get the cache file"
-        )
-
-    merged_data = pd.read_csv(
-        CACHE_FILE,
-        true_values=["TRUE", "True", "true"],
-        false_values=["FALSE", "False", "false", ""],
-    )
-    print(f"✓ Loaded {len(merged_data)} rows from cache")
-    merged_data = drop_organisation_rows(merged_data)
-
-# Load extra roles (always public)
-try:
-    df_roles = pd.read_csv(extra_roles_url)
-    print(f"✓ Successfully loaded extra roles with {len(df_roles)} entries")
-except Exception as e:
-    print(f"✗ FATAL: Failed to load extra roles: {str(e)}")
-    raise
-
 def concatenate_true_columns(row, columns):
     true_columns = [col for col in columns if pd.notna(row[col]) and row[col]]
     
@@ -303,58 +220,22 @@ def concatenate_true_columns(row, columns):
     else:
         return 'with ' + ', '.join(f'*{col}*' for col in true_columns[:-1]) + (' and ' if len(true_columns) > 1 else '') + f'*{true_columns[-1]}*'
 
-# List of column names to check for TRUE values (column_mappings loaded earlier)
 
-# Extracting Column A (Fields) as columns_to_check
-columns_to_check = column_mappings['Fields'].tolist()
+# Letters that Unicode does not split into a base letter and an accent, so the ASCII fold below would drop them.
+UNFOLDED_LETTERS = str.maketrans({
+    'Ł': 'L', 'ł': 'l', 'Ø': 'O', 'ø': 'o', 'Đ': 'D', 'đ': 'd', 'Ð': 'D', 'ð': 'd', 'Æ': 'AE', 'æ': 'ae',
+    'Œ': 'OE', 'œ': 'oe', 'ß': 'ss', 'Þ': 'Th', 'þ': 'th', 'ı': 'i',
+})
 
-# Renaming columns in the dataframe based on Column B (Rename)
-rename_dict = column_mappings.set_index('Fields')['Rename'].to_dict()
-merged_data.rename(columns=rename_dict, inplace=True)
 
-# Filtering rows based on the updated columns_to_check list
-# Note: columns_to_check needs to be updated to the renamed columns for the filter to work correctly
-columns_to_check = [rename_dict[col] for col in columns_to_check if col in rename_dict]
+def name_key(name):
+    """A name as it sorts: letter by letter, ignoring case, accents, spaces, hyphens and apostrophes, so that
+    "Alarie" comes before "Al-Hoorie". A particle stays part of the surname as entered: "de Bruijn" files under D."""
+    if not isinstance(name, str):
+        return ''
+    plain = unicodedata.normalize('NFKD', name.translate(UNFOLDED_LETTERS)).encode('ascii', 'ignore').decode().casefold()
+    return ''.join(char for char in plain if char.isalnum())
 
-# Remove columns not present
-columns_present = [col for col in columns_to_check if col in merged_data.columns]
-columns_dropped = set(columns_to_check) - set(columns_present)
-if columns_dropped:
-    print(f"Note: The following columns were not found and thus ignored: {', '.join(columns_dropped)}")
-merged_data = merged_data[merged_data[columns_present].any(axis=1)]
-
-# Apply the function to each row
-merged_data['Contributions'] = merged_data.apply(concatenate_true_columns, axis=1, columns=columns_present)
-
-# Merge contributions with extra roles
-# Mapping of column names to Tenzing sheets
-rename_columns = {
-    'First name': 'First name',
-    'Middle name': 'Middle name',
-    'Surname': 'Surname',
-    'FORRT project(s)': 'Project Name',
-    'Role': 'Contributions',
-    'ORCID': 'ORCID iD',
-    'URL': 'Project URL'
-}
-df_roles.rename(columns=rename_columns, inplace=True)
-df_roles['special_role'] = True
-
-# Select only the columns needed for the final output
-selected_columns = ['Contributions', 'First name', 'Middle name', 'Surname', 'Project Name', 'Project URL', 'ORCID iD']
-merged_data = merged_data[selected_columns]
-merged_data['special_role'] = False
-
-merged_data = pd.concat([df_roles, merged_data], axis=0)
-merged_data.reset_index(drop=True, inplace=True)
-
-# Sort based on surname
-merged_data['sort_order'] = merged_data['Surname']
-merged_data = merged_data.sort_values(by='sort_order') 
-merged_data = merged_data.drop(columns='sort_order')
-
-# Strip spaces from 'ORCID iD' in merged data
-merged_data['ORCID iD'] = merged_data['ORCID iD'].str.strip()
 
 # Function to format the full name
 def format_name(row):
@@ -372,14 +253,6 @@ def format_name(row):
 
     return full_name
 
-# Apply name formatting
-merged_data['full_name'] = merged_data.apply(format_name, axis=1)
-
-# Propagate ORCID iD within each contributor's grouping
-merged_data['ORCID iD'] = merged_data.groupby('full_name')['ORCID iD'].transform(
-    lambda x: x.ffill().bfill()
-)
-
 
 # Helper function to normalize project/role names for data attributes
 def normalize_for_attribute(text):
@@ -388,7 +261,7 @@ def normalize_for_attribute(text):
         return ''
     
     # Lowercase + trim
-    name = text.lower().strip()
+    name = str(text).lower().strip()
 
     # Replace & with 'and'
     name = name.replace('&', 'and')
@@ -405,108 +278,224 @@ def normalize_for_attribute(text):
     return name
 
 
-# Group by 'ORCID iD' and concatenate the contributions
+def _canonical_label_key(label):
+    """Sort key to pick one deterministic display label among variants that share a normalized value.
+
+    Prefers sentence case (matching role_labels() and DESIGN.md §7, e.g. "Project manager" over
+    "Project Manager"), then fewer uppercase letters after the initial character, then lexicographical order.
+    """
+    is_sentence_case = label == label[:1].upper() + label[1:].lower()
+    extra_caps = sum(1 for ch in label[1:] if ch.isupper())
+    return (not is_sentence_case, extra_caps, label)
+
+
+def build_roles_list(role_names):
+    """Deduplicate and sort role filter options deterministically by normalized value."""
+    candidates = {}
+    for raw in role_names:
+        if raw is None or (isinstance(raw, float) and pd.isna(raw)):
+            continue
+        label = str(raw).strip()
+        if not label:
+            continue
+        normalized = normalize_for_attribute(label)
+        if not normalized:
+            continue
+        candidates.setdefault(normalized, set()).add(label)
+
+    roles_list = [
+        {"value": value, "label": min(labels, key=_canonical_label_key)}
+        for value, labels in candidates.items()
+    ]
+    roles_list.sort(key=lambda item: (item["label"].casefold(), item["label"], item["value"]))
+    return roles_list
+
+
+def build_projects_list(project_names):
+    """Deduplicate and sort project filter options deterministically by normalized value."""
+    candidates = {}
+    for raw in project_names:
+        if raw is None or (isinstance(raw, float) and pd.isna(raw)):
+            continue
+        label = str(raw).strip()
+        if not label:
+            continue
+        normalized = normalize_for_attribute(label)
+        if not normalized:
+            continue
+        candidates.setdefault(normalized, set()).add(label)
+
+    projects_list = [
+        # Deterministic choice among spellings sharing a normalized value (uppercase sorts before lowercase in
+        # Unicode code-point order, so "German Teaching Network Grant" beats "German teaching network grant").
+        {"value": value, "label": sorted(labels)[0]}
+        for value, labels in candidates.items()
+    ]
+    projects_list.sort(key=lambda item: (item["label"].casefold(), item["label"], item["value"]))
+    return projects_list
+
+
+# Group by 'ORCID iD' and build each contributor's row: the name as a heading (linked to ORCID where known),
+# then one line per project, the project linked and its roles after it in plain text. A contributor with
+# COLLAPSE_THRESHOLD or more distinct projects shows all entries for the first SHOWN_PROJECTS distinct projects
+# and the remaining projects behind a disclosure, so long lists never push rows tall while short lists (1–4
+# projects) show in full. The filter (static/js/contributor-filter.js) opens the disclosure when it narrows
+# the list. Keep the exact attribute class="contributor-group": layouts/partials/doors/home/about.html counts it.
+SHOWN_PROJECTS = 4
+COLLAPSE_THRESHOLD = 5
+
+
+def safe_project_url(raw_url):
+    """Return a trimmed URL if it uses an approved scheme (http/https) or a root-relative path, else ''."""
+    if raw_url is None or (isinstance(raw_url, float) and pd.isna(raw_url)):
+        return ''
+    url = str(raw_url).strip()
+    if not url:
+        return ''
+    try:
+        parsed = urlparse(url)
+    except ValueError:
+        return ''
+    if parsed.scheme in ('http', 'https') and parsed.netloc:
+        return url
+    if not parsed.scheme and not parsed.netloc and url.startswith('/') and not url.startswith('//'):
+        return url
+    return ''
+
+
+def partition_contributions(contribution_items, item_projects, shown_projects=SHOWN_PROJECTS, collapse_threshold=COLLAPSE_THRESHOLD):
+    """Split contribution rows into visible and disclosure lists based on distinct normalized projects.
+
+    Only collapses when a contributor has at least `collapse_threshold` distinct projects, and keeps all
+    records belonging to the first `shown_projects` distinct projects in the visible list so a single
+    project is never split across the boundary.
+    """
+    distinct_order = list(dict.fromkeys(item_projects))
+    if len(distinct_order) < collapse_threshold:
+        return list(contribution_items), [], 0
+    keep_projects = set(distinct_order[:shown_projects])
+    shown = [item for item, proj in zip(contribution_items, item_projects) if proj in keep_projects]
+    rest = [item for item, proj in zip(contribution_items, item_projects) if proj not in keep_projects]
+    new_projects = len(distinct_order) - len(keep_projects)
+    return shown, rest, new_projects
+
+
+def role_labels(row):
+    """The roles of one contribution as a list of labels, from its "Contributions" text."""
+    text = row['Contributions']
+    if pd.isna(text) or text == '':
+        return []
+    if row['special_role']:
+        return [text.strip()]
+    labels = []
+    if re.search(r'as\s+Project\s+Manager', text, re.IGNORECASE):
+        labels.append('Project manager')
+    labels.extend(match.strip() for match in re.findall(r'\*([^*]+)\*', text))
+    return labels
+
 
 def concatenate_contributions(group):
     # Minimum original order for sorting later
     min_order = group['original_order'].min()
 
-    # Format name once
-    full_name = format_name(group.iloc[0])
+    # A contributor's rows may spell the name differently (with or without a middle initial, a sheet's typo): the
+    # row shows the spelling most rows use, the earliest row breaking a tie, so the choice does not depend on row
+    # order. The letter is the surname's on the row that places the contributor in the list.
+    spellings = [format_name(row) for _, row in group.sort_values('original_order').iterrows()]
+    full_name = html.escape(max(spellings, key=lambda name: (spellings.count(name), -spellings.index(name))), quote=False)
+    letter = surname_letter(group.loc[group['original_order'].idxmin(), 'Surname'])
     # Sort: special roles first, then alphabetically by project name
     group = group.sort_values(by=['special_role', 'Project Name'], ascending=[False, True])
 
     orcid_id = group.iloc[0]['ORCID iD']
-    # NaN is truthy, so a missing iD stored as NaN would otherwise become an orcid.org/nan link.
-    if not (isinstance(orcid_id, str) and orcid_id.strip()):
-        orcid_id = None
+    orcid_id = orcid_id.strip() if isinstance(orcid_id, str) else ''
 
     # Build name HTML
     if orcid_id:
-        name_html = f'<strong><a href="https://orcid.org/{orcid_id.strip()}">{full_name}</a></strong>'
+        name_html = f'<h3 class="contributor-name"><a href="https://orcid.org/{orcid_id}">{full_name}</a></h3>'
     else:
-        name_html = f'<strong>{full_name}</strong>'
+        name_html = f'<h3 class="contributor-name">{full_name}</h3>'
 
     # Build individual contribution items
     contribution_items = []
-    
+    item_projects = []
+
     for _, row in group.iterrows():
         project_name = row['Project Name']
-        if pd.isna(project_name) or project_name == '':
+        if pd.isna(project_name) or str(project_name).strip() == '':
             continue
+        project_name = str(project_name).strip()
 
         # Normalize for data attributes
         normalized_project = normalize_for_attribute(project_name)
-        
-        # Extract roles for this specific contribution
+
+        # Roles for the filter: Project Manager, a special role, and the roles marked with *
+        labels = role_labels(row)
         contribution_roles = []
-        contributions_text = row['Contributions']
-        
-        if pd.notna(contributions_text):
-            # Extract "Project Manager" if present (regardless of special_role)
-            pm_match = re.search(r'as\s+Project\s+Manager(?:\s+and\s+with)?', contributions_text, re.IGNORECASE)
-            if pm_match:
-                if 'project-manager' not in contribution_roles:
-                    contribution_roles.append('project-manager')
-            
-            # Extract special roles (for special_role=True cases)
-            if row['special_role']:
-                special_role_match = re.search(r'(?:as\s+)?(.+?)(?:\s+and\s+with|\s+and|$)', contributions_text)
-                if special_role_match:
-                    special_role_text = special_role_match.group(1).strip()
-                    normalized_special = normalize_for_attribute(special_role_text)
-                    if normalized_special not in contribution_roles:
-                        contribution_roles.append(normalized_special)
-            
-            # Extract roles marked with *
-            role_matches = re.findall(r'\*([^*]+)\*', contributions_text)
-            for role_match in role_matches:
-                normalized_role = normalize_for_attribute(role_match)
-                if normalized_role not in contribution_roles:
-                    contribution_roles.append(normalized_role)
+        for label in labels:
+            normalized_role = normalize_for_attribute(label)
+            if normalized_role and normalized_role not in contribution_roles:
+                contribution_roles.append(normalized_role)
 
-        # Build project HTML
-        if pd.notna(row['Project URL']) and row['Project URL'] != '':
-            project_html = f'<a href="{row["Project URL"]}">{project_name}</a>'
+        # Build project HTML (only allow approved http/https or root-relative URLs)
+        escaped_project = html.escape(project_name, quote=False)
+        safe_url = safe_project_url(row['Project URL'])
+        if safe_url:
+            project_url = html.escape(safe_url, quote=True)
+            project_html = f'<a href="{project_url}">{escaped_project}</a>'
         else:
-            project_html = project_name
+            project_html = f'<span class="contribution-project">{escaped_project}</span>'
 
-        # Convert *role* → <em>role</em>
-        contrib_html = re.sub(r'\*([^*]+)\*', r'<em>\1</em>', contributions_text) if pd.notna(contributions_text) else ''
-
-        # Handle special role phrasing
-        if row['special_role']:
-            # Use the actual special role text from contributions_text
-            full_contrib = f'{project_html} as {contributions_text}'
-        else:
-            full_contrib = f'{project_html} {contrib_html}'
+        roles_html = f' <span class="contribution-roles">{html.escape(", ".join(labels), quote=False)}</span>' if labels else ''
 
         # Create data attributes for this contribution
         projects_attr = html.escape(normalized_project, quote=True)
         roles_attr = html.escape(','.join(contribution_roles), quote=True)
 
-        # Build the contribution <li>
-        contribution_items.append(
-            f'    <li class="contribution" data-projects="{projects_attr}" '
-            f'data-roles="{roles_attr}">{full_contrib}</li>'
-        )
+        # Build the contribution <li>; a sheet that lists the same project and roles twice shows them once
+        item = (f'    <li class="contribution" data-projects="{projects_attr}" '
+                f'data-roles="{roles_attr}">{project_html}{roles_html}</li>')
+        if item not in contribution_items:
+            contribution_items.append(item)
+            item_projects.append(normalized_project)
 
-        # Build the complete contributor group HTML
-        contributions_list = '\n'.join(contribution_items)
+    if not contribution_items:
+        return min_order, letter, '', []
 
-        # Add id attribute if ORCID exists
-        id_attr = f' id="{orcid_id.strip()}"' if orcid_id else ''
+    # Add id attribute if ORCID exists
+    id_attr = f' id="{orcid_id}"' if orcid_id else ''
 
-        final_html = (
-            f'<li class="contributor-group"{id_attr}>\n'
-            f'  {name_html} contributed to\n'
+    shown, rest, new_projects = partition_contributions(contribution_items, item_projects)
+    more = ''
+    if rest:
+        label = f'+{new_projects} more project{"" if new_projects == 1 else "s"}' if new_projects else 'More roles'
+        more = (
+            f'  <details class="contributions-more">\n'
+            f'  <summary>{label}</summary>\n'
             f'  <ul class="contributions-list">\n'
-            f'{contributions_list}\n'
+            + '\n'.join(rest) + '\n'
             f'  </ul>\n'
-            f'</li>\n'
+            f'  </details>\n'
         )
 
-    return min_order, final_html
+    final_html = (
+        f'<li class="contributor-group"{id_attr}>\n'
+        f'  {name_html}\n'
+        f'  <ul class="contributions-list">\n'
+        + '\n'.join(shown) + '\n'
+        f'  </ul>\n'
+        + more +
+        f'</li>\n'
+    )
+
+    # The projects this person is credited on, once each, for the board's counts.
+    return min_order, letter, final_html, sorted(set(item_projects))
+
+
+def surname_letter(surname):
+    """The letter a surname files under: the first letter of its sort key (name_key), or # for anything else."""
+    letter = name_key(surname)[:1].upper()
+    return letter if 'A' <= letter <= 'Z' else '#'
 
 
 def extract_orcid_id(value):
@@ -518,124 +507,309 @@ def extract_orcid_id(value):
     
     return value
 
-merged_data['ORCID iD'] = merged_data['ORCID iD'].apply(extract_orcid_id)
 
-# Creating a new column for the concatenated name
-merged_data['Name'] = merged_data.apply(format_name, axis=1)
+def main():
+    # Fetch column mappings
+    try:
+        column_mappings = pd.read_csv(fields_url)
+        print(f"✓ Successfully loaded column mappings with {len(column_mappings)} fields")
+    except Exception as e:
+        print(f"✗ FATAL: Failed to load column mappings: {str(e)}")
+        raise
 
-# Apply the function to each group and create a summary DataFrame
-merged_data['original_order'] = range(len(merged_data))
+    # Build cache columns: id + role columns from mappings
+    role_columns = column_mappings['Fields'].tolist()
+    cache_columns = ID_COLUMNS + role_columns
 
-# Move Flavio to the end of the list
-merged_data.loc[merged_data["ORCID iD"] == "0000-0001-9000-8513", 'original_order'] = 99999
+    # =========================================================================
+    # MAIN DATA LOADING LOGIC
+    # =========================================================================
 
-# Perform the groupby operation without sorting
-summary = (merged_data.groupby(merged_data['ORCID iD'].fillna(merged_data['Name']), sort=False)
-                       .apply(concatenate_contributions)
-                       .reset_index())
+    # Check for credentials
+    gsheet_client = get_credentials()
+    failed_sheets = []
+    total_projects = 0
+    successful_projects = 0
 
-# Separate the tuple into two columns
-summary[['original_order', 'Contributions']] = pd.DataFrame(summary[0].tolist(), index=summary.index)
+    if gsheet_client:
+        # WITH CREDENTIALS: Fetch fresh data from Google Sheets
+        print("🔐 Credentials found - fetching fresh data from Google Sheets")
 
-# Drop the old column
-summary.drop(columns=[0], inplace=True)
+        # Fetch index sheet via API (private)
+        df_index = fetch_index_from_api(gsheet_client)
+        total_projects = len(df_index)
+        print(f"✓ Successfully loaded Tenzing source with {total_projects} projects")
 
-# Sort by the original order and drop the helper column
-summary = summary.sort_values(by='original_order').drop(columns='original_order')
+        # Fetch all contributor data from individual sheets (public URLs)
+        merged_data, failed_sheets = fetch_all_contributor_data(df_index)
+        merged_data = drop_organisation_rows(merged_data)
+        successful_projects = total_projects - len(failed_sheets)
 
-# Reset the index if needed
-summary = summary.reset_index(drop=True)
-summary_string = '\n\n'.join(summary['Contributions'])
+        # Save cache for local development (only essential columns, no sensitive data)
+        cache_columns_present = [col for col in cache_columns if col in merged_data.columns]
+        # Filter to only rows with actual contributor data (First name and Surname present)
+        cache_data = merged_data[cache_columns_present].copy()
+        cache_data = cache_data[
+            cache_data['First name'].notna() & (cache_data['First name'] != '') &
+            cache_data['Surname'].notna() & (cache_data['Surname'] != '')
+        ]
+        # Sanitize string columns: strip whitespace and control characters (newlines, CRs)
+        for col in ['First name', 'Middle name', 'Surname', 'ORCID iD', 'Project Name', 'Project URL']:
+            if col in cache_data.columns:
+                cache_data[col] = cache_data[col].astype(str).str.replace(r'[\r\n\t]+', '', regex=True).str.strip()
+                cache_data[col] = cache_data[col].replace('nan', '')
+        # Standardize names in cache by ORCID: when the same ORCID appears with different
+        # name variants across projects (e.g. swapped first/surname), use the first
+        # occurrence as the canonical name. Only affects the cache, not tenzing.md.
+        name_cols = ['First name', 'Middle name', 'Surname']
+        orcid_mask = cache_data['ORCID iD'] != ''
+        canonical = cache_data.loc[orcid_mask].groupby('ORCID iD')[name_cols].first()
+        for col in name_cols:
+            cache_data.loc[orcid_mask, col] = cache_data.loc[orcid_mask, 'ORCID iD'].map(canonical[col]).values
+        cache_data.to_csv(CACHE_FILE, index=False)
+        print(f"💾 Cache saved to {CACHE_FILE} ({len(cache_data)} rows, {len(cache_columns_present)} columns)")
 
+    else:
+        # WITHOUT CREDENTIALS: Use cached data
+        print("🔓 No credentials found - using cached data for local development")
 
-# Get project and role names for dropdown filters
+        if not os.path.exists(CACHE_FILE):
+            raise RuntimeError(
+                f"No credentials and no cache file found at {CACHE_FILE}\n"
+                "Either:\n"
+                "  1. Set GSHEET_CREDENTIALS in .env file, or\n"
+                "  2. Pull latest from master to get the cache file"
+            )
 
-project_names = sorted(merged_data["Project Name"].dropna().unique())
+        merged_data = pd.read_csv(
+            CACHE_FILE,
+            true_values=["TRUE", "True", "true"],
+            false_values=["FALSE", "False", "false", ""],
+        )
+        print(f"✓ Loaded {len(merged_data)} rows from cache")
+        merged_data = drop_organisation_rows(merged_data)
 
+    # Load extra roles (always public)
+    try:
+        df_roles = pd.read_csv(extra_roles_url)
+        print(f"✓ Successfully loaded extra roles with {len(df_roles)} entries")
+    except Exception as e:
+        print(f"✗ FATAL: Failed to load extra roles: {str(e)}")
+        raise
 
-role_names = list(set(columns_to_check + df_roles["Contributions"].dropna().unique().tolist()))
+    # Extracting Column A (Fields) as columns_to_check
+    columns_to_check = column_mappings['Fields'].tolist()
 
-projects_list = sorted(
-    [
-        {"value": normalize_for_attribute(p), "label": p}
-        for p in project_names
-        if p not in (None, "")
-    ],
-    key=lambda x: x["label"]
-)
+    # Renaming columns in the dataframe based on Column B (Rename)
+    rename_dict = column_mappings.set_index('Fields')['Rename'].to_dict()
+    merged_data.rename(columns=rename_dict, inplace=True)
 
-# Deduplicate roles by 'value', keeping the first label encountered (for solving Project Manager / Project manager issue)
-roles_dict = {}
-for r in role_names:
-    if r not in (None, ""):
-        normalized = normalize_for_attribute(r)
-        if normalized not in roles_dict:
-            roles_dict[normalized] = r
+    # Filtering rows based on the updated columns_to_check list
+    columns_to_check = [rename_dict[col] for col in columns_to_check if col in rename_dict]
 
-roles_list = sorted(
-    [{"value": k, "label": v} for k, v in roles_dict.items()],
-    key=lambda x: x["label"]
-)
+    # Remove columns not present
+    columns_present = [col for col in columns_to_check if col in merged_data.columns]
+    columns_dropped = sorted(set(columns_to_check) - set(columns_present))
+    if columns_dropped:
+        print(f"Note: The following columns were not found and thus ignored: {', '.join(columns_dropped)}")
+    merged_data = merged_data[merged_data[columns_present].any(axis=1)]
 
-# Save in json format
-filter_data = {
-    "projects": projects_list,
-    "roles": roles_list
-}
+    # Apply the function to each row
+    merged_data['Contributions'] = merged_data.apply(concatenate_true_columns, axis=1, columns=columns_present)
 
-# Add closing tags and JavaScript include
-footer_content = f"""
-</ul>
+    # Merge contributions with extra roles
+    rename_columns = {
+        'First name': 'First name',
+        'Middle name': 'Middle name',
+        'Surname': 'Surname',
+        'FORRT project(s)': 'Project Name',
+        'Role': 'Contributions',
+        'ORCID': 'ORCID iD',
+        'URL': 'Project URL'
+    }
+    df_roles.rename(columns=rename_columns, inplace=True)
+    df_roles['special_role'] = True
+
+    # Select only the columns needed for the final output
+    selected_columns = ['Contributions', 'First name', 'Middle name', 'Surname', 'Project Name', 'Project URL', 'ORCID iD']
+    merged_data = merged_data[selected_columns]
+    merged_data['special_role'] = False
+
+    merged_data = pd.concat([df_roles, merged_data], axis=0)
+    merged_data.reset_index(drop=True, inplace=True)
+
+    # Sort by surname, then first name, so that each letter of the A–Z index is one run in alphabetical order
+    merged_data['sort_surname'] = merged_data['Surname'].map(name_key)
+    merged_data['sort_first'] = merged_data['First name'].map(name_key)
+    merged_data = merged_data.sort_values(by=['sort_surname', 'sort_first'], kind='stable')
+    merged_data = merged_data.drop(columns=['sort_surname', 'sort_first'])
+
+    # Strip spaces from 'ORCID iD' in merged data
+    merged_data['ORCID iD'] = merged_data['ORCID iD'].str.strip()
+
+    # Apply name formatting
+    merged_data['full_name'] = merged_data.apply(format_name, axis=1)
+
+    # Propagate ORCID iD within each contributor's grouping
+    merged_data['ORCID iD'] = merged_data.groupby('full_name')['ORCID iD'].transform(
+        lambda x: x.ffill().bfill()
+    )
+
+    merged_data['ORCID iD'] = merged_data['ORCID iD'].apply(extract_orcid_id)
+
+    # Creating a new column for the concatenated name
+    merged_data['Name'] = merged_data.apply(format_name, axis=1)
+
+    # Apply the function to each group and create a summary DataFrame
+    merged_data['original_order'] = range(len(merged_data))
+
+    # Move Flavio to the end of the list
+    merged_data.loc[merged_data["ORCID iD"] == "0000-0001-9000-8513", 'original_order'] = 99999
+
+    # Perform the groupby operation without sorting
+    summary = (merged_data.groupby(merged_data['ORCID iD'].fillna(merged_data['Name']), sort=False)
+                           .apply(concatenate_contributions)
+                           .reset_index())
+
+    # Separate the tuple into its columns
+    summary[['original_order', 'Letter', 'Contributions', 'Projects']] = pd.DataFrame(summary[0].tolist(), index=summary.index)
+    summary = summary[summary['Contributions'] != '']
+
+    # Drop the old column
+    summary.drop(columns=[0], inplace=True)
+
+    # Sort by the original order and drop the helper column
+    summary = summary.sort_values(by='original_order')
+
+    # Reset the index if needed
+    summary = summary.reset_index(drop=True)
+
+    # One section per letter of the surnames, with an index of the letters above the list. A contributor placed at
+    # the end out of order (above) stays at the end, in the last section.
+    sections = []
+    for _, people in summary.groupby((summary['Letter'] != summary['Letter'].shift()).cumsum(), sort=False):
+        first = people['Letter'].iloc[0]
+        if sections and len(people) == 1 and people['original_order'].iloc[0] == 99999:
+            sections[-1][1].append(people['Contributions'].iloc[0])
+            continue
+        sections.append((first, list(people['Contributions'])))
+
+    anchor = lambda letter: 'contributors-other' if letter == '#' else f'contributors-{letter.lower()}'
+    letter_index = (
+        '<nav class="contributor-az" aria-label="Contributors by surname">\n'
+        + '\n'.join(f'<a href="#{anchor(letter)}">{letter}</a>' for letter, _ in sections)
+        + '\n</nav>\n\n<div id="contributor-list">\n\n'
+    )
+    summary_string = letter_index + '\n\n'.join(
+        f'<section class="contributor-letter" id="{anchor(letter)}">\n'
+        f'<h2 class="contributor-letter-heading">{letter}</h2>\n'
+        f'<ul class="contributor-rows">\n\n'
+        + '\n'.join(people)
+        + '\n</ul>\n</section>'
+        for letter, people in sections
+    )
+
+    # Count unique contributors per project (including projects behind a row's disclosure)
+    project_counts = {}
+    for projects in summary['Projects']:
+        for value in projects:
+            project_counts[value] = project_counts.get(value, 0) + 1
+
+    # Get project and role names for filter controls (deterministic deduplication & sorting)
+    project_names = merged_data["Project Name"].dropna().unique().tolist()
+    projects_list = build_projects_list(project_names)
+
+    role_names = columns_to_check + df_roles["Contributions"].dropna().unique().tolist()
+    roles_list = build_roles_list(role_names)
+
+    # The board above the list: the projects with the most contributors, each a link that filters the list to it,
+    # with the number of people the filter then shows. People are counted once per project, also for projects behind
+    # a row's "+N more projects".
+    BOARD_PROJECTS = 12
+    project_labels = {p['value']: p['label'] for p in projects_list}
+    largest = sorted(project_counts.items(), key=lambda item: (-item[1], project_labels.get(item[0], item[0]).lower()))
+    largest = [(value, count) for value, count in largest if value in project_labels][:BOARD_PROJECTS]
+    if largest:
+        tiles = '\n'.join(
+            f'<li><a href="?project={html.escape(value, quote=True)}#contributor-results" data-project="{html.escape(value, quote=True)}">'
+            f'<span class="project-tile-many">{count}<span class="visually-hidden"> contributors to</span></span> '
+            f'<span class="project-tile-name">{html.escape(project_labels[value], quote=False)}</span>'
+            f'<span class="project-tile-bar" style="--share:{count / largest[0][1]:.3f}" aria-hidden="true"></span></a></li>'
+            for value, count in largest
+        )
+        board = (
+            '<section class="project-board" aria-labelledby="project-board-heading">\n'
+            f'<h2 id="project-board-heading">The {len(largest)} largest projects</h2>\n'
+            f'<p class="project-board-hint">By number of contributors. Choose one to see who worked on it, '
+            f'or search all {len(project_labels)} projects above.</p>\n'
+            f'<ul class="project-tiles">\n{tiles}\n</ul>\n'
+            '</section>\n\n'
+        )
+        summary_string = board + summary_string
+
+    # Save in json format
+    filter_data = {
+        "projects": projects_list,
+        "roles": roles_list
+    }
+
+    # Add closing tags and JavaScript include
+    footer_content = f"""
+</div>
 <script>
 // Value-labels for filtering menus 
 window.filterData = {json.dumps(filter_data, indent=2)};
 </script>
-<script src="/js/contributor-filter.js"></script>
+<script src="../js/contributor-filter.js"></script>
 """
 
-# Log the final deduplicated number of contributors
-print("\n--- Processing Complete ---")
-print(f"Total number of unique contributors after deduplication: {len(summary)}")
+    # Log the final deduplicated number of contributors
+    print("\n--- Processing Complete ---")
+    print(f"Total number of unique contributors after deduplication: {len(summary)}")
 
-# Construct the paths for the template and output files
-template_path = os.path.join(script_dir, 'tenzing_template.md')
-output_path = os.path.join(script_dir, 'tenzing.md')
+    # Construct the paths for the template and output files
+    template_path = os.path.join(script_dir, 'tenzing_template.md')
+    output_path = os.path.join(script_dir, 'tenzing.md')
 
-# Open the template file and read its contents
-with open(template_path, 'r') as file:
-    template_content = file.read()
+    # Open the template file and read its contents
+    with open(template_path, 'r') as file:
+        template_content = file.read()
 
-# Combine the template content with the new summary string and footer
-combined_content = template_content + summary_string + footer_content
+    # Combine the template content with the new summary string and footer
+    combined_content = template_content + summary_string + footer_content
 
-# Save the combined content to 'tenzing.md'
-with open(output_path, 'w') as file:
-    file.write(combined_content)
+    # Save the combined content to 'tenzing.md'
+    with open(output_path, 'w') as file:
+        file.write(combined_content)
 
-print(f"\nSuccessfully generated the file at: {output_path}")
-print("Note: Copy this file to content/contributors/tenzing.md before rendering the site:")
-print("cp scripts/forrt_contribs/tenzing.md content/contributors/tenzing.md")
+    print(f"\nSuccessfully generated the file at: {output_path}")
+    print("Note: Copy this file to content/contributors/tenzing.md before rendering the site:")
+    print("cp scripts/forrt_contribs/tenzing.md content/contributors/tenzing.md")
 
-# Save failure information to a JSON file for potential GitHub issue creation
-# Only when running with credentials (fetching fresh data)
-failure_report_path = os.path.join(script_dir, 'tenzing_failures.json')
-if gsheet_client:
-    if failed_sheets:
-        with open(failure_report_path, 'w') as f:
-            json.dump({
-                'timestamp': pd.Timestamp.now().isoformat(),
-                'total_projects': total_projects,
-                'successful_projects': successful_projects,
-                'failed_projects': len(failed_sheets),
-                'failures': failed_sheets
-            }, f, indent=2)
-        print(f"\n⚠ Failure report saved to: {failure_report_path}")
-        print(f"⚠ {len(failed_sheets)} project(s) failed - workflow should create an issue")
+    # Save failure information to a JSON file for potential GitHub issue creation
+    # Only when running with credentials (fetching fresh data)
+    failure_report_path = os.path.join(script_dir, 'tenzing_failures.json')
+    if gsheet_client:
+        if failed_sheets:
+            with open(failure_report_path, 'w') as f:
+                json.dump({
+                    'timestamp': pd.Timestamp.now().isoformat(),
+                    'total_projects': total_projects,
+                    'successful_projects': successful_projects,
+                    'failed_projects': len(failed_sheets),
+                    'failures': failed_sheets
+                }, f, indent=2)
+            print(f"\n⚠ Failure report saved to: {failure_report_path}")
+            print(f"⚠ {len(failed_sheets)} project(s) failed - workflow should create an issue")
+        else:
+            print("\n✓ All projects processed successfully!")
+            # Remove any existing failure report
+            if os.path.exists(failure_report_path):
+                os.remove(failure_report_path)
+                print("✓ Removed old failure report")
     else:
-        print("\n✓ All projects processed successfully!")
-        # Remove any existing failure report
-        if os.path.exists(failure_report_path):
-            os.remove(failure_report_path)
-            print("✓ Removed old failure report")
-else:
-    print("\n✓ Generated from cache (no failure tracking in local mode)")
+        print("\n✓ Generated from cache (no failure tracking in local mode)")
+
+
+if __name__ == "__main__":
+    main()

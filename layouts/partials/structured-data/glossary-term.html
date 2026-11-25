@@ -18,10 +18,14 @@
   {{- $term := dict
       "@context" "https://schema.org"
       "@type" "DefinedTerm"
-      "name" .Title
+      "name" (partial "functions/plain_title.html" (dict "page" . "text" .Title))
       "description" $desc
       "url" .Permalink
       "inLanguage" $lang
       "inDefinedTermSet" $set -}}
+  {{- with .Params.also_known_as -}}
+    {{- $alt := slice -}}{{- range . -}}{{- $alt = $alt | append (. | plainify | replaceRE `\*+` "") -}}{{- end -}}
+    {{- $term = merge $term (dict "alternateName" $alt) -}}
+  {{- end -}}
   <script type="application/ld+json">{{ $term | jsonify | safeJS }}</script>
 {{- end -}}

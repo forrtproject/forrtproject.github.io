@@ -1,4 +1,14 @@
-{{/* Shared color palettes for disciplines page — 11 fields */}}
-{{ $colors := slice "#cacfdc" "#eadce6" "#d4e4d9" "#BDC5CA" "#dce4ea" "#e8ddd4" "#c9dbcb" "#d9cfe0" "#cddde3" "#e0d8cc" "#d4dce8" }}
-{{ $arrowColors := slice "#6070a0" "#a05080" "#408060" "#607080" "#5080a0" "#a08060" "#509060" "#8060a0" "#5090a0" "#907050" "#6070a0" }}
-{{ return dict "colors" $colors "arrowColors" $arrowColors }}
+{{/* Colours for the disciplines page. Fields are not FORRT's areas, and their order means nothing, so they share one
+     neutral treatment (DESIGN.md §6): the panels are the site's surface and the bricks and arrows one brick colour (wine), apart from the resource kinds' colours.
+     Colour on the page means one thing: a resource's kind, in its label and in the bars of kinds, explained by the key above the index. */}}
+{{ $colors := slice "var(--surface)" }}
+{{ $arrowColors := slice "var(--brick1)" }}
+{{/* The five kinds of resource, in the key's order, with their colours: the one definition the key (all_fields.html)
+     and the labels and bars (field_section.html) share. */}}
+{{ $kinds := slice
+  (dict "name" "General" "color" "var(--soft)")
+  (dict "name" "Open Data" "color" "var(--res)")
+  (dict "name" "Open Methods" "color" "var(--edu)")
+  (dict "name" "Open Outputs" "color" "var(--com)")
+  (dict "name" "Open Education" "color" "var(--jus)") }}
+{{ return dict "colors" $colors "arrowColors" $arrowColors "kinds" $kinds }}

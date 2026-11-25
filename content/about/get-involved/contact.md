@@ -2,7 +2,7 @@
 # A Skills section created with the Featurette widget.
 widget = "featurette_welcome"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
-active = true  # Activate this widget? true/false
+active = false  # Off: its email, Slack and GitHub links repeat the cards at the top and the footer.
 weight = 70  # Order that this section will appear.
 
 title = "Get in touch"

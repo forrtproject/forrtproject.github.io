@@ -1,0 +1,26 @@
+{{/* Which news posts show a coloured brick instead of a picture, and in which brick colour: posts with no
+     picture of their own, or one several posts share (the newsletters' stock photo). A newsletter takes its
+     year's colour, as on the newsletter archive (layouts/newsletters/single.html), so a year's issues match;
+     other posts take the other brick colours in turn, newest first (DESIGN.md §6). One map, so the news list
+     and each post agree. Input: site. Returns a dict of a post's RelPermalink to 1–4. Call it with
+     partialCached. */}}
+{{ $tones := dict }}
+{{ $n := 0 }}
+{{ with site.GetPage "/post" }}
+  {{ range sort .Pages "Date" "desc" }}
+    {{ $img := (.Resources.ByType "image").GetMatch "*featured*" }}
+    {{ if or (not $img) (partial "doors/post_image_shared" .) }}
+      {{ $cat := "" }}{{ with .Params.categories }}{{ $cat = index . 0 | lower }}{{ end }}
+      {{ if eq $cat "newsletter" }}
+        {{ $tones = merge $tones (dict .RelPermalink (add (mod .Date.Year 4) 1)) }}
+      {{ else }}
+        {{/* Not the colour of that year's newsletters, so those keep a colour of their own. */}}
+        {{ $tone := add (mod $n 4) 1 }}
+        {{ if eq $tone (add (mod .Date.Year 4) 1) }}{{ $n = add $n 1 }}{{ $tone = add (mod $n 4) 1 }}{{ end }}
+        {{ $tones = merge $tones (dict .RelPermalink $tone) }}
+        {{ $n = add $n 1 }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+{{ return $tones }}

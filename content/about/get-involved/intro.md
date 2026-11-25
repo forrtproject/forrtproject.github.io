@@ -7,7 +7,7 @@ headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 10  # Order that this section will appear.
 
-title = "Get Involved"
+title = "Get involved"
 subtitle = "---"
 classtitle = ""
 
@@ -53,6 +53,8 @@ classtitle = ""
 
 +++
 
-The majority of FORRT's operations are done via our [Slack channel](https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ). We use Slack to keep everyone up-to-date, to share interesting resources, coordinate FORRT teams, announce FORRT projects, build community, and to provide a platform for ongoing discussions on our projects, organization, and mission. [***You can join FORRT's Slack here***.](https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ)
-
----
+{{< action_cards >}}
+Join FORRT's Slack | Where most of FORRT's work and conversation happens | https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ
+Find a project | Initiatives looking for collaborators right now | #get-involved
+Get the newsletter | News, events and opportunities, in your inbox | #newsletter
+{{< /action_cards >}}

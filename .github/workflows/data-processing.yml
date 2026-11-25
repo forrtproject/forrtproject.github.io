@@ -251,6 +251,15 @@ jobs:
         run: python3 scripts/build_get_involved.py
 
       #========================================
+      # Build the Open Research Games Portal list from the published games sheet
+      # Leaves the committed data/open_research_games.json as it is if the sheet is unreadable
+      #========================================
+      - name: Build Open Research Games Portal data
+        id: games-portal
+        continue-on-error: true
+        run: python3 scripts/build_games_portal.py
+
+      #========================================
       # Archive newsletter issues sent through EmailOctopus
       # Restores the earlier archive from build-resources first, so issues and
       # images already copied survive API outages; the script only adds new
@@ -351,6 +360,20 @@ jobs:
         run: |
           cd bibtex_to_apa
           node bibtex_to_apa.js -o '../content/glossary/apa_lookup.json'
+
+      #========================================
+      # Enrich cited DOIs with Open Access status and repository links (OpenAlex / Unpaywall)
+      # Restores the previous cache from build-resources so the 90-day cache persists across runs.
+      #========================================
+      - name: Restore previous citation OA cache
+        continue-on-error: true
+        run: |
+          git fetch origin +refs/heads/build-resources:refs/remotes/origin/build-resources || true
+          git archive origin/build-resources data/citation_oa.json | tar -x || true
+
+      - name: Enrich citation open-access metadata
+        continue-on-error: true  # Continue even if external OA APIs are unavailable
+        run: python3 scripts/enrich_citation_oa.py
 
       #========================================
       # Process and generate glossary files
@@ -557,6 +580,7 @@ jobs:
             !data/partners.json
             !data/publications.yaml
             static/data/
+            !static/data/open_research_games.json
             static/partials/
             static/newsletters/
             content/contributor-analysis/
@@ -583,7 +607,10 @@ jobs:
           cp data/ga_data.json /tmp/generated-resources/ga_data.json || true
           cp data/featured_resources.json /tmp/generated-resources/featured_resources.json || true
           cp data/pub_cards.json /tmp/generated-resources/pub_cards.json || true
+          cp data/scholar_citations.json /tmp/generated-resources/scholar_citations.json || true
           cp data/get_involved_projects.json /tmp/generated-resources/get_involved_projects.json || true
+          cp data/open_research_games.json /tmp/generated-resources/open_research_games.json || true
+          cp data/citation_oa.json /tmp/generated-resources/citation_oa.json || true
 
           # Copy FReD citation if it exists
           if [ -f static/data/fred_citation.txt ]; then
@@ -652,6 +679,11 @@ jobs:
           if [ -f /tmp/generated-resources/static/data/fred_citation.txt ]; then
             cp /tmp/generated-resources/static/data/fred_citation.txt static/data/fred_citation.txt
           fi
+          # Remove retired stale static games JSON (#1151); the portal now builds from data/open_research_games.json.
+          git rm -f --ignore-unmatch static/data/open_research_games.json || {
+            rm -f static/data/open_research_games.json
+            git add -A -- static/data/open_research_games.json
+          }
           if [ -f /tmp/generated-resources/summaries.json ]; then
             cp /tmp/generated-resources/summaries.json data/summaries.json
           fi
@@ -669,8 +701,17 @@ jobs:
           if [ -f /tmp/generated-resources/pub_cards.json ]; then
             cp /tmp/generated-resources/pub_cards.json data/pub_cards.json
           fi
+          if [ -f /tmp/generated-resources/scholar_citations.json ]; then
+            cp /tmp/generated-resources/scholar_citations.json data/scholar_citations.json
+          fi
           if [ -f /tmp/generated-resources/get_involved_projects.json ]; then
             cp /tmp/generated-resources/get_involved_projects.json data/get_involved_projects.json
+          fi
+          if [ -f /tmp/generated-resources/open_research_games.json ]; then
+            cp /tmp/generated-resources/open_research_games.json data/open_research_games.json
+          fi
+          if [ -f /tmp/generated-resources/citation_oa.json ]; then
+            cp /tmp/generated-resources/citation_oa.json data/citation_oa.json
           fi
           if [ -f /tmp/generated-resources/contributors_cache.csv ]; then
             mkdir -p scripts/forrt_contribs
@@ -706,7 +747,10 @@ jobs:
             git add data/ga_data.json 2>/dev/null || true
             git add data/featured_resources.json 2>/dev/null || true
             git add data/pub_cards.json 2>/dev/null || true
+            git add data/scholar_citations.json 2>/dev/null || true
             git add data/get_involved_projects.json 2>/dev/null || true
+            git add data/open_research_games.json 2>/dev/null || true
+            git add data/citation_oa.json 2>/dev/null || true
             git add static/data/fred_citation.txt 2>/dev/null || true
             git add data/summaries.json 2>/dev/null || true
             git add data/newsletters.json static/newsletters/ 2>/dev/null || true
@@ -861,6 +905,13 @@ jobs:
             echo "❌ Get Involved data build failed"
             FAILURES_FOUND=true
             python3 scripts/create_workflow_failure_issue.py "Get Involved Data Build" "The Get Involved projects list build step failed. Check that the published Google Sheet (FORRT — Get Involved Projects) is still shared with anyone-with-link." "$WORKFLOW_RUN_URL" || echo "Failed to create issue for Get Involved"
+          fi
+
+          # Open Research Games Portal data
+          if [ "${{ steps.games-portal.outcome }}" == "failure" ]; then
+            echo "❌ Games Portal data build failed"
+            FAILURES_FOUND=true
+            python3 scripts/create_workflow_failure_issue.py "Games Portal Data Build" "The Open Research Games Portal data build (scripts/build_games_portal.py) failed. Check that the games sheet is still published to the web as CSV and keeps its column names." "$WORKFLOW_RUN_URL" || echo "Failed to create issue for Games Portal"
           fi
 
           # Google Scholar

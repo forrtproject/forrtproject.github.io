@@ -20,7 +20,6 @@
   // Inline SVGs (stroke = currentColor, so they inherit the button's colour).
   const SVG_ATTRS = 'fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"';
   const COPY_ICON = '<svg viewBox="0 0 24 24" ' + SVG_ATTRS + '><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';
-  const CHECK_ICON = '<svg viewBox="0 0 24 24" ' + SVG_ATTRS + '><polyline points="20 6 9 17 4 12"/></svg>';
   const INFO_ICON = '<svg viewBox="0 0 24 24" ' + SVG_ATTRS + '><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>';
 
   const state = {
@@ -166,6 +165,7 @@
 
     const bubble = document.createElement('div');
     bubble.className = 'just-os-bubble-content';
+    bubble.dir = 'auto';
 
     if (msg.role === 'user') {
       bubble.textContent = msg.content;
@@ -531,12 +531,19 @@
 
   function openHistoryPanel(container) {
     renderHistoryList(container);
-    getHistoryPanel(container).style.display = 'flex';
+    const panel = getHistoryPanel(container);
+    panel.style.display = 'flex';
+    const back = panel.querySelector('.just-os-history-back');
+    if (back) back.focus();
   }
 
   function closeHistoryPanel(container) {
     const panel = container.querySelector('.just-os-history-panel');
-    if (panel) panel.style.display = 'none';
+    if (!panel) return;
+    const hadFocus = panel.contains(document.activeElement);
+    panel.style.display = 'none';
+    const opener = container.querySelector('.just-os-history-btn');
+    if (hadFocus && opener) opener.focus();
   }
 
   /* -------------------------------------------------- */
@@ -548,24 +555,9 @@
     if (refs && refs.length) {
       text += '\n\nReferences:\n' + formatReferencesText(refs);
     }
-    navigator.clipboard.writeText(text).then(function () {
-      const orig = btn.innerHTML;
-      btn.innerHTML = CHECK_ICON;
-      setTimeout(function () { btn.innerHTML = orig; }, 1500);
-    }).catch(function () {
-      // Fallback
-      const ta = document.createElement('textarea');
-      ta.value = text;
-      ta.style.position = 'fixed';
-      ta.style.opacity = '0';
-      document.body.appendChild(ta);
-      ta.select();
-      document.execCommand('copy');
-      document.body.removeChild(ta);
-      const orig = btn.innerHTML;
-      btn.innerHTML = CHECK_ICON;
-      setTimeout(function () { btn.innerHTML = orig; }, 1500);
-    });
+    // The site's copy feedback (assets/js/doors/references.js): a check in the icon's place, only once copied.
+    if (window.forrtCopy) { window.forrtCopy(btn, text, { said: 'Response copied.' }); return; }
+    navigator.clipboard.writeText(text).catch(function () {});
   }
 
   /* -------------------------------------------------- */
@@ -1065,19 +1057,66 @@
 
     if (win.style.display === 'flex') {
       win.style.display = 'none';
-      bubble.classList.add('bubble-visible');
       win.classList.remove('floating');
       // Reset any drag-resize inline styles
       win.style.width = '';
       win.style.height = '';
       updateFloatIcon(win);
+      document.dispatchEvent(new CustomEvent('just-os:toggle', { detail: { open: false } }));
     } else {
       win.style.display = 'flex';
       bubble.classList.remove('bubble-visible');
+      document.dispatchEvent(new CustomEvent('just-os:toggle', { detail: { open: true } }));
       var input = getInputEl(win);
       if (input) setTimeout(function () { input.focus(); }, 100);
     }
   };
+
+  // Escape closes the history panel and then the chat. Tab stays inside the history panel while it
+  // covers the chat, and inside the chat where it fills the screen.
+  document.addEventListener('keydown', function (event) {
+    const container = getContainer();
+    const history = container && container.querySelector('.just-os-history-panel');
+    const historyOpen = history && history.style.display === 'flex';
+    const win = document.getElementById('just-os-window');
+    const chatOpen = win && win.style.display === 'flex';
+    if (event.key === 'Escape') {
+      if (activeTooltipTeardown) return;
+      if (historyOpen) {
+        closeHistoryPanel(container);
+      } else if (chatOpen) {
+        window.toggleJustOS();
+        const launcher = document.getElementById('just-os-btn');
+        if (launcher) {
+          launcher.setAttribute('aria-expanded', 'false');
+          if (!document.activeElement || document.activeElement === document.body) {
+            if (!launcher.closest('#just-os-widget.is-covered, #just-os-widget.is-dismissed')
+                && launcher.getClientRects().length > 0 && getComputedStyle(launcher).visibility !== 'hidden') {
+              launcher.focus({ preventScroll: true });
+            }
+          }
+        }
+      }
+      return;
+    }
+    if (event.key !== 'Tab' || !(historyOpen || (chatOpen && win.offsetWidth >= window.innerWidth))) return;
+    const scope = historyOpen ? history : win;
+    const stops = Array.from(scope.querySelectorAll('button,textarea,a[href]')).filter(function (el) {
+      return el.getClientRects().length > 0 && !el.disabled;
+    });
+    const first = stops[0];
+    const last = stops[stops.length - 1];
+    if (!scope.contains(document.activeElement)) {
+      event.preventDefault();
+      (event.shiftKey ? last : first).focus();
+    } else if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  });
 
   function updateFloatIcon(win) {
     var btn = document.getElementById('just-os-float-btn');
@@ -1110,12 +1149,6 @@
     } else {
       openHistoryPanel(container);
     }
-  };
-
-  window.dismissJustOS = function () {
-    var widget = document.getElementById('just-os-widget');
-    if (widget) widget.style.display = 'none';
-    sessionStorage.setItem('just-os-dismissed', '1');
   };
 
   /* -------------------------------------------------- */
@@ -1177,14 +1210,6 @@
   /* -------------------------------------------------- */
 
   function init() {
-    // Hide widget if dismissed this session
-    if (sessionStorage.getItem('just-os-dismissed')) {
-      var widget = document.getElementById('just-os-widget');
-      if (widget) widget.style.display = 'none';
-      // The standalone page has its own container, so keep initializing there.
-      if (!document.getElementById('just-os-fullpage')) return;
-    }
-
     const container = getContainer();
     if (!container) return;
 
@@ -1203,19 +1228,6 @@
 
   // Save state before leaving
   window.addEventListener('beforeunload', saveState);
-
-  // Auto-toggle helper bubble every 10 seconds (widget only)
-  var bubbleInterval = setInterval(function () {
-    if (sessionStorage.getItem('just-os-dismissed')) {
-      clearInterval(bubbleInterval);
-      return;
-    }
-    const bubble = document.getElementById('just-os-bubble');
-    const win = document.getElementById('just-os-window');
-    if (bubble && win && win.style.display !== 'flex') {
-      bubble.classList.toggle('bubble-visible');
-    }
-  }, 10000);
 
   // Init on DOM ready
   if (document.readyState === 'loading') {

@@ -1,5 +1,6 @@
 ---
 title: "Visitors"
+summary: "Where forrt.org's visitors come from and which pages they read, over the past 30 days and the past year."
 type: "page"
 ---
 

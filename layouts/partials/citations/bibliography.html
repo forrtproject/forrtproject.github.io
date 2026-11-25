@@ -1,0 +1,3 @@
+{{/* Reads the generated apa_lookup.json. Edit its Glossary BibTeX source to change entries.
+     Call through partialCached with the "bibliography" variant to read once per build. */}}
+{{ return (os.ReadFile "content/glossary/apa_lookup.json" | transform.Unmarshal) }}

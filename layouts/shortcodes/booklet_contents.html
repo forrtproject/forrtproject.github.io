@@ -1,0 +1,43 @@
+{{/* What the FORRT booklet covers, as its table of contents: its pages on each of FORRT's four areas, in the area's
+     colour, each linked to its page on this site where there is one (a link that leaves forrt.org carries the
+     external-link icon, DESIGN.md §3), with the booklet's page number after a dotted leader. The page numbers, and
+     each area's range of pages, turn the flipbook (`book`, the id given to the dearflip shortcode) to that page;
+     without JavaScript, or before the flipbook has loaded, they open the PDF (`pdf`) at that page.
+     Data: `inside` in the booklet's front matter (content/about/booklet/_index.md). */}}
+{{ $pdf := .Get "pdf" | default "/files/FORRT_Booklet(A5).pdf" }}
+{{ $book := printf "flipbook-%s" (.Get "book" | default "default") }}
+{{ with .Page.Params.inside }}
+<p class="booklet-inside-note">Titles open the project's page; page numbers turn the booklet to that page.</p>
+<div class="booklet-inside" data-book="{{ $book }}">
+  {{ range . }}
+  {{ $first := 0 }}{{ $last := 0 }}
+  {{ range .pages }}{{ with .page }}{{ if or (eq $first 0) (lt . $first) }}{{ $first = . }}{{ end }}{{ if gt . $last }}{{ $last = . }}{{ end }}{{ end }}{{ end }}
+  <section class="booklet-area booklet-area-{{ .key }}" aria-labelledby="booklet-{{ .key }}">
+    <h3 id="booklet-{{ .key }}">{{ .title }}</h3>
+    {{ with $first }}<p class="booklet-area-pages"><a class="booklet-page" href="{{ $pdf }}#page={{ . }}" data-page="{{ . }}">Pages {{ . }}–{{ $last }}</a></p>{{ end }}
+    <ul>
+      {{ range .pages }}{{ $title := $.Page.RenderString .title }}
+      <li><span class="booklet-entry">{{ with .url }}{{ $host := strings.TrimPrefix "www." (urls.Parse .).Host }}{{ $away := and $host (ne $host site.Params.doors.host) }}<a href="{{ cond (hasPrefix . "http") . (relLangURL .) }}">{{ $title }}{{ if $away }} <i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="visually-hidden"> (another website)</span>{{ end }}</a>{{ else }}{{ $title }}{{ end }}</span>{{ with .page }}<span class="booklet-leader" aria-hidden="true"></span><a class="booklet-page" href="{{ $pdf }}#page={{ . }}" data-page="{{ . }}" aria-label="Page {{ . }} of the booklet">{{ . }}</a>{{ end }}</li>{{ end }}
+    </ul>
+  </section>
+  {{ end }}
+</div>
+<script>
+  // A page number turns the flipbook to its page, at the library's own page turn (none for reduced motion), and
+  // brings the flipbook into view when it is off the screen, as on a phone, where the contents follow it.
+  document.addEventListener('click', function(event) {
+    var link = event.target.closest('.booklet-inside .booklet-page');
+    if (!link || event.metaKey || event.ctrlKey || event.shiftKey) return;
+    var app = window[link.closest('.booklet-inside').dataset.book];
+    var frame = document.getElementById(link.closest('.booklet-inside').dataset.book);
+    // Until the flipbook has loaded its pages, the link opens the PDF at that page instead.
+    if (!app || typeof app.gotoPage !== 'function' || !app.target || !frame) return;
+    event.preventDefault();
+    var box = frame.getBoundingClientRect();
+    if (box.top < 0 || box.bottom > window.innerHeight) {
+      frame.scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'center'});
+    }
+    app.gotoPage(Number(link.dataset.page));
+  });
+</script>
+{{ end }}

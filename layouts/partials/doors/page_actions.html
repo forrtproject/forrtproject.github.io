@@ -1,0 +1,12 @@
+{{/* Direct actions under a tool page's title, from doors.page_actions in params.toml: the first is the
+     main one. A tool page leads with the tool rather than with its explanation. */}}
+{{ $path := .Path }}
+{{ range site.Params.doors.page_actions }}
+  {{ if eq .path $path }}
+  <p class="page-actions">
+    {{ range $i, $link := .links }}
+    <a class="btn{{ if eq $i 0 }} btn-primary{{ end }}" href="{{ if hasPrefix $link.url "/" }}{{ $link.url | relURL }}{{ else }}{{ $link.url }}{{ end }}">{{ $link.label }}</a>
+    {{ end }}
+  </p>
+  {{ end }}
+{{ end }}

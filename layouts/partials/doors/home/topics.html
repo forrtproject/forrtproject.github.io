@@ -1,0 +1,12 @@
+{{/* Topic buttons, which open the resources directory filtered. Context: content/home/3-topics.md. */}}
+{{ $count := len (where site.RegularPages "Type" "curated_resources") }}
+{{ $directory := "resources/" | relLangURL }}
+<section class="wrap topics-section" aria-labelledby="topics-h">
+  <h2 id="topics-h">{{ .Params.heading }}</h2>
+  <p class="section-note">{{ printf .Params.note (lang.FormatNumber 0 $count) }}</p>
+  <ul class="topics">
+    {{ range .Params.topic }}
+    <li><a class="topic" href="{{ $directory }}?cluster={{ .cluster }}">{{ .label }}</a></li>
+    {{ end }}
+  </ul>
+</section>

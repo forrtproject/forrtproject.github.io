@@ -70,14 +70,6 @@
     }
   }
 
-  function getNavbarStickyOffsetPx() {
-    var bodyTop = parseFloat(window.getComputedStyle(document.body).marginTop) || 0;
-    var navbar = document.getElementById('navbar-main');
-    if (!navbar) return bodyTop;
-    var bottom = Math.ceil(navbar.getBoundingClientRect().bottom);
-    return Math.max(bottom, bodyTop);
-  }
-
   function escapeHtml(s) {
     var d = document.createElement('div');
     d.textContent = s;
@@ -159,6 +151,17 @@
   /** Click/keyboard toggling for .acc-header sections and "Expand all" buttons.
    *  Shared by clusters and disciplines - both render the same accordion markup. */
   function initAccordionToggle() {
+    /* Whichever code opens or closes a section, its button reports it. */
+    var expanded = new MutationObserver(function (changes) {
+      changes.forEach(function (change) {
+        var trigger = change.target.previousElementSibling && change.target.previousElementSibling.querySelector('.acc-trigger');
+        if (trigger) trigger.setAttribute('aria-expanded', String(!change.target.classList.contains('acc-collapsed')));
+      });
+    });
+    document.querySelectorAll('.acc-body').forEach(function (body) {
+      expanded.observe(body, { attributes: true, attributeFilter: ['class'] });
+    });
+
     function toggleSection(header) {
       if (header.classList.contains('acc-disabled')) return;
       var body = header.nextElementSibling;
@@ -186,15 +189,6 @@
       if (header) { toggleSection(header); return; }
       var toggleBtn = e.target.closest('.acc-toggle-all');
       if (toggleBtn) { toggleAllSections(toggleBtn); }
-    });
-
-    document.addEventListener('keydown', function (e) {
-      if (e.key !== 'Enter' && e.key !== ' ') return;
-      if (e.target.closest('.acc-copy-link')) return;
-      var header = e.target.closest('.acc-header');
-      if (!header) return;
-      e.preventDefault();
-      toggleSection(header);
     });
 
     function toggleAllSections(btn) {
@@ -403,6 +397,47 @@
 
     initAccordionToggle();
 
+    /* On a cluster's own page the sidebar lists its sub-clusters only while one of them is open: closed, the
+       page's list beside it already shows them all; open, the page runs long and the sidebar jumps between them. */
+    var hereSubs = root.querySelector('.cluster-nav-subs--here');
+    if (hereSubs) {
+      /* Every section's body but Recommended's, told by its header. */
+      var subBodies = Array.prototype.filter.call(root.querySelectorAll('.acc-section > .acc-body'), function (body) {
+        var header = body.previousElementSibling;
+        return !(header && header.classList.contains('acc-header--rec'));
+      });
+      var syncHereSubs = function () {
+        hereSubs.hidden = !subBodies.some(function (body) { return !body.classList.contains('acc-collapsed'); });
+      };
+      /* The sub-cluster being read is marked in the list: the last open one whose heading has passed the
+         sticky filters. */
+      var hereLinks = Array.prototype.slice.call(hereSubs.querySelectorAll('a.sc-nav-link'));
+      var markHere = function () {
+        if (hereSubs.hidden) return;
+        var line = (controls ? controls.getBoundingClientRect().bottom : 72) + 40;
+        var currentId = null;
+        subBodies.forEach(function (body) {
+          var section = body.parentElement;
+          if (!body.classList.contains('acc-collapsed') && section.getBoundingClientRect().top <= line) currentId = section.id;
+        });
+        hereLinks.forEach(function (link) {
+          if (link.getAttribute('href') === '#' + currentId) link.setAttribute('aria-current', 'location');
+          else link.removeAttribute('aria-current');
+        });
+      };
+      var markPending = false;
+      window.addEventListener('scroll', function () {
+        if (markPending) return;
+        markPending = true;
+        requestAnimationFrame(function () { markPending = false; markHere(); });
+      }, { passive: true });
+      var hereObserver = new MutationObserver(function () { syncHereSubs(); markHere(); });
+      subBodies.forEach(function (body) {
+        hereObserver.observe(body, { attributes: true, attributeFilter: ['class'] });
+      });
+      syncHereSubs();
+    }
+
     var mobileToggle = document.getElementById('clusters-mobile-toggle');
     var sidebar = document.getElementById('clusters-sidebar');
     var backToTopBtn = document.getElementById('clusters-back-to-top');
@@ -433,7 +468,6 @@
     }
 
     function updateStickyLayoutMetrics() {
-      root.style.setProperty('--clusters-sticky-offset', getNavbarStickyOffsetPx() + 'px');
       root.style.setProperty(
         '--clusters-controls-height',
         controls ? controls.offsetHeight + 'px' : '0px'
@@ -447,6 +481,19 @@
     }
 
     scheduleStickyLayoutMetrics();
+
+    /* The desktop side list scrolls inside its own box: start it at the current cluster, without moving
+       the page (on a phone the list is a drawer, opened at the top). */
+    var currentNav = sidebar ? sidebar.querySelector('.cluster-nav-heading[aria-current]') : null;
+    var sideBox = sidebar ? sidebar.querySelector('.clusters-sidebar-inner') : null;
+    if (currentNav && sideBox && !clustersNavIsMobileWidth()) {
+      requestAnimationFrame(function () {
+        var header = sideBox.querySelector('.sidebar-header');
+        var offset = currentNav.getBoundingClientRect().top - sideBox.getBoundingClientRect().top + sideBox.scrollTop;
+        sideBox.scrollTop = Math.max(0, offset - (header ? header.offsetHeight : 0) - 8);
+      });
+    }
+
     window.addEventListener(
       'resize',
       function () {
@@ -510,6 +557,14 @@
       }, 80);
     }
 
+    /* The open drawer fills a phone's screen, so it carries its own way out. */
+    var sidebarClose = sidebar ? sidebar.querySelector('.sidebar-close') : null;
+    if (sidebarClose && mobileToggle) {
+      sidebarClose.addEventListener('click', function () {
+        mobileToggle.click();
+        mobileToggle.focus();
+      });
+    }
     if (mobileToggle && sidebar) {
       mobileToggle.addEventListener('click', function () {
         sidebar.classList.toggle('sidebar-open');
@@ -527,9 +582,11 @@
         var subList = group.querySelector('.cluster-nav-subs');
         var arrow = group.querySelector('.cluster-nav-toggle');
 
-        /* Arrow click: always toggle expand/collapse, never navigate */
+        /* Arrow click: always toggle expand/collapse, never navigate. The current cluster's list
+           follows its open sub-clusters instead (syncHereSubs). */
         if (clickedArrow) {
           e.preventDefault();
+          if (this.hasAttribute('aria-current')) return;
           if (!subList || !arrow) return;
           var isHidden = subList.style.display === 'none';
           subList.style.display = isHidden ? 'block' : 'none';
@@ -610,28 +667,6 @@
     window.addEventListener('hashchange', applyClusterUrlHash);
 
     /* Per-sub-cluster "copy link" buttons: copy a shareable URL to the section. */
-    function copyTextToClipboard(text) {
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        return navigator.clipboard.writeText(text);
-      }
-      return new Promise(function (resolve, reject) {
-        try {
-          var ta = document.createElement('textarea');
-          ta.value = text;
-          ta.setAttribute('readonly', '');
-          ta.style.position = 'absolute';
-          ta.style.left = '-9999px';
-          document.body.appendChild(ta);
-          ta.select();
-          var ok = document.execCommand('copy');
-          document.body.removeChild(ta);
-          ok ? resolve() : reject();
-        } catch (err) {
-          reject(err);
-        }
-      });
-    }
-
     root.addEventListener('click', function (e) {
       var btn = e.target.closest('.acc-copy-link');
       if (!btn) return;
@@ -646,14 +681,10 @@
       }
       /* Reflect the anchor in the address bar without re-scrolling (no hashchange). */
       try { window.history.replaceState(null, '', '#' + anchor); } catch (err) {}
-      copyTextToClipboard(url).then(function () {
-        btn.classList.add('is-copied');
-        if (btn._copiedTimer) clearTimeout(btn._copiedTimer);
-        btn._copiedTimer = setTimeout(function () { btn.classList.remove('is-copied'); }, 1600);
-      }).catch(function () {
-        /* Clipboard blocked (e.g. insecure context): prompt the user with the URL. */
-        window.prompt('Copy this link:', url);
-      });
+      /* The site's copy feedback (assets/js/doors/references.js): a check in the icon's place, only once copied;
+         if the clipboard is blocked, the link is offered to copy by hand. */
+      if (window.forrtCopy) window.forrtCopy(btn, url, { said: 'Link copied.', onFail: function () { window.prompt('Copy this link:', url); } });
+      else window.prompt('Copy this link:', url);
     });
 
     /* (Tab click handler removed — all sub-clusters are now visible sections) */
@@ -815,10 +846,16 @@
     }
 
     if (backToTopBtn) {
+      // Only beside the fields or clusters, whose margin holds it (clusters.css); elsewhere it would cover the page.
+      var backToTopBeside = document.querySelector('.cluster-full-width');
       function toggleBackToTop() {
-        backToTopBtn.classList.toggle('is-visible', window.scrollY > 500);
+        var section = backToTopBeside ? backToTopBeside.getBoundingClientRect() : null;
+        var button = backToTopBtn.getBoundingClientRect();
+        backToTopBtn.classList.toggle('is-visible', window.scrollY > 500 && !!section &&
+          section.top < button.top - 8 && section.bottom > button.bottom + 8);
       }
       window.addEventListener('scroll', toggleBackToTop, { passive: true });
+      window.addEventListener('resize', toggleBackToTop);
       toggleBackToTop();
       backToTopBtn.addEventListener('click', function () {
         window.scrollTo({ top: 0, behavior: 'smooth' });

@@ -2,38 +2,52 @@
 {{ define "main" }}
 
   {{ partial "disciplines/seo_jsonld.html" . }}
-  <div class="universal-wrapper pt-3 pb-3">
-    <div class="container">
-
-      {{/* Page header */}}
-      {{ if .Params.image }}
-      <div class="article-header d-print-none">
-        <img src="{{ .Params.image }}" alt="{{ .Params.heading_title | default .Title }}" class="article-banner" loading="lazy">
-      </div>
-      {{ end }}
-
-      <div class="article-container pt-3">
-        <h1 class="clusters-site-heading clusters-hub-page__title" itemprop="headline">{{ .Params.heading_title | default .Title }}</h1>
-
-        {{ if .Params.subtitle }}
-        <p class="page-subtitle">{{ .Params.subtitle | markdownify }}</p>
-        {{ end }}
-      </div>
-    </div>
+  <div class="wrap clusters-head">
+    {{ partial "doors/crumbs" (dict "page" .) }}
+    <h1 class="clusters-site-heading" itemprop="headline">{{ .Params.heading_title | default .Title }}</h1>
+    {{ with .Params.subtitle }}<p class="standfirst">{{ . | markdownify }}</p>{{ end }}
   </div>
+
+  {{/* The fields as the way in, in the first screen on a phone too: a brick for each, linking to its panel below, whose
+       head gives its counts. All bricks share one colour (disciplines/colors.html): fields are not areas. */}}
+  {{ $arrow := (partial "disciplines/colors.html").arrowColors }}
+  {{ with site.Data.disciplines }}
+  <nav class="wrap disc-fields brick-row" aria-labelledby="disc-fields-h">
+    <h2 id="disc-fields-h" class="disc-fields__h">Choose your field</h2>
+    <ul class="action-cards">
+      {{ range $fi, $f := .fields }}
+      {{ $res := 0 }}{{ range .disciplines }}{{ $res = add $res (len .resources) }}{{ end }}
+      <li style="--brick: {{ index $arrow (mod $fi (len $arrow)) | safeCSS }}"><a href="#field-{{ int .number }}"><strong>{{ .name }}</strong><span>{{ $res }} resources</span></a></li>
+      {{ end }}
+    </ul>
+  </nav>
+  {{ end }}
 
   {{/* INTRO SECTION */}}
   <section class="clusters-intro-section">
-    <div class="container">
+    <div class="wrap">
       {{ partial "disciplines/intro.html" . }}
     </div>
   </section>
 
   {{/* DISCIPLINES DISPLAY SECTION */}}
   <section class="cluster-full-width clusters-display-section">
-    <div class="container">
+    <div class="wrap">
       {{ partial "disciplines/all_fields.html" . }}
-      {{ partial "disciplines/citation.html" . }}
+      <div class="disciplines-foot">
+        <div class="disciplines-foot__main">
+          <p class="intro-paragraph disciplines-form">
+            If you have resources or disciplines to add, or spot errors, please <a href="https://docs.google.com/forms/d/e/1FAIpQLSfs-BCYWGet5QNZAWQ8IQVZ05TAUUwvD4mkc31Ehrm5tK8q3Q/viewform" target="_blank" rel="noopener">fill out this form</a>.
+          </p>
+          {{ partial "disciplines/citation.html" . }}
+        </div>
+        <div class="disciplines-partner">
+          <p class="disciplines-partner__caption">Supported by</p>
+          <a href="https://www.ukrn.org/" target="_blank" rel="noopener">
+            <img src="UKRN.webp" alt="UK Reproducibility Network (UKRN)" title="UK Reproducibility Network" width="275" height="275">
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 {{ end }}

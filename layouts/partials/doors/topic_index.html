@@ -1,0 +1,22 @@
+{{/* /forrt_clusters/: the seven earlier cluster names (the FORRT_clusters taxonomy) as bricks with their counts, largest
+     first, in the brick colours, which carry no meaning (DESIGN.md §6), laid as brickwork on a wide screen. Each brick
+     names its two largest groups by current cluster (each resource under the first current cluster it belongs to, as
+     on the term page, doors/topic_resources.html), with each one's colour mark, so the index maps the old clusters onto
+     the new.
+     The routes to the current clusters and the directory lead the page (_default/terms.html).
+     Input: the taxonomy page. */}}
+{{ $page := . }}
+{{ $index := partialCached "doors/resource_index" (site.GetPage "/resources") "resources" }}
+{{ $num := partialCached "doors/cluster_numbers.html" "n" }}
+<section class="brick-row topic-index topic-index--wall">
+  <h2 class="visually-hidden">Earlier clusters</h2>
+  <ul class="action-cards">{{ range $page.Data.Terms.ByCount }}
+    {{ $count := dict }}{{ $label := dict }}
+    {{ range .Pages }}{{ with index $index.items .RelPermalink }}{{ with .clusters }}{{ $c := index . 0 }}{{ $k := urlize $c }}{{ $count = merge $count (dict $k (add 1 (index $count $k | default 0))) }}{{ $label = merge $label (dict $k $c) }}{{ end }}{{ end }}{{ end }}
+    {{ $top := slice }}{{ range $k, $n := $count }}{{ $top = $top | append (dict "label" (index $label $k) "n" $n "sort" (sub 10000 $n)) }}{{ end }}
+    {{ $top = first 2 (sort $top "sort") }}
+    <li><a href="{{ .Page.RelPermalink }}"><strong>{{ .Page.Title }}</strong><span>{{ .Count }} resources</span>
+      {{ with $top }}<span class="topic-index__now">Largest groups:{{ range $i, $t := . }}{{ if $i }} and{{ end }} <span class="topic-index__cl">{{ with index $num (lower $t.label | urlize) }}<span class="cl-mark" style="--c: var(--cl{{ . }})" aria-hidden="true"></span>{{ end }}{{ $t.label }}</span>{{ end }}</span>{{ end }}
+    </a></li>
+  {{ end }}</ul>
+</section>
