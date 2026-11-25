@@ -319,7 +319,7 @@
   {{/* The site's alt text describes the default image, so other images fall back to the site title. */}}
   {{ $og_image_alt := site.Title }}
   {{ if $default_used }}{{ $og_image_alt = site.Params.sharing_image_alt | default site.Title }}{{ end }}
-  {{ if $tray_used }}{{ $og_image_alt = "The FORRT logo on a tray of studded bricks" }}{{ end }}
+  {{ if $tray_used }}{{ $og_image_alt = site.Params.sharing_tray_alt | default site.Title }}{{ end }}
   {{ if .Params.sharing_image_alt }}{{ $og_image_alt = .Params.sharing_image_alt }}{{ end }}
   <meta property="og:site_name" content="{{ site.Title }}">
   <meta property="og:url" content="{{ $metadata.url }}">
