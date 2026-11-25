@@ -1,7 +1,7 @@
 {
     "timestamp": "7/14/2025 8:05:22",
     "title": "Bacillus Calmette-Gu\u00e9rin vaccine to reduce COVID-19 infections and hospitalisations in healthcare workers \u2013 a living systematic review and prospective ALL-IN meta-analysis of individual participant data from randomised controlled trials",
-    "link_to_resource": "https://www.medrxiv.org/content/10.1101/2022.12.15.22283474v1#p-5",
+    "link_to_resource": "https://doi.org/10.1101/2022.12.15.22283474",
     "creators": [
         "Judith ter Schure",
         "Alexander Ly",
@@ -56,9 +56,9 @@
     ],
     "forrt_clusters_new": "FAIR data and materials",
     "forrt_sub_clusters": "Reasons to share data and materials, Repositories",
-    "doi": "10.1101/2022.12.15.22283474v1#p-5",
+    "doi": "10.1101/2022.12.15.22283474",
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-11-09"
+    "lastmod": "2026-11-25"
 }

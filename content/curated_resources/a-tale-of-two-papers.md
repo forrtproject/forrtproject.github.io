@@ -1,7 +1,7 @@
 {
     "timestamp": "2020-05-09T08:11:29.826Z",
     "title": "A tale of two papers",
-    "link_to_resource": "http://sometimesimwrong.typepad.com/wrong/2015/11/guest-post-a-tale-of-two-papers.html",
+    "link_to_resource": "https://web.archive.org/web/20250415093616/https://sometimesimwrong.typepad.com/wrong/2015/11/guest-post-a-tale-of-two-papers.html",
     "creators": [
         "Michael Inzlicht"
     ],
@@ -43,5 +43,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-05-09"
+    "lastmod": "2026-11-25"
 }

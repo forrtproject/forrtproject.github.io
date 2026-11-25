@@ -1,7 +1,7 @@
 {
     "timestamp": "01/01/2020",
     "title": "Reproducible and reusable research: are journal data sharing policies meeting the mark?",
-    "link_to_resource": "https://peerj.com/articles/3208/",
+    "link_to_resource": "https://doi.org/10.7717/peerj.3208",
     "creators": [
         "Jessica Minnier",
         "Melissa A. Haendel",
@@ -38,9 +38,9 @@
     ],
     "forrt_clusters_new": "Replication and meta-research, FAIR data and materials",
     "forrt_sub_clusters": "Reasons to share data and materials, Meta-research",
-    "doi": "",
-    "in-clusters": false,
+    "doi": "10.7717/peerj.3208",
+    "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-01-01"
+    "lastmod": "2026-11-25"
 }

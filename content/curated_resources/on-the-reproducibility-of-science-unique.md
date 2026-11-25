@@ -1,7 +1,7 @@
 {
     "timestamp": "01/01/2020",
     "title": "On the reproducibility of science: unique identification of research resources in the biomedical literature",
-    "link_to_resource": "https://peerj.com/articles/148/",
+    "link_to_resource": "https://doi.org/10.7717/peerj.148",
     "creators": [
         "Gregory M. LaRocca",
         "Holly Paddock",
@@ -39,9 +39,9 @@
     ],
     "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
     "forrt_sub_clusters": "Proposed science improvement initiatives on statistics, measurement, teaching, data sharing, code sharing, pre-registration, & replication",
-    "doi": "",
-    "in-clusters": false,
+    "doi": "10.7717/peerj.148",
+    "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-01-01"
+    "lastmod": "2026-11-25"
 }

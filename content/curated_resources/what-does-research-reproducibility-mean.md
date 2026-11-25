@@ -1,7 +1,7 @@
 {
     "timestamp": "2020-05-24T12:08:26.709Z",
     "title": "What does research reproducibility mean?",
-    "link_to_resource": "https://stm.sciencemag.org/content/8/341/341ps12/tab-pdf",
+    "link_to_resource": "https://doi.org/10.1126/scitranslmed.aaf5027",
     "creators": [
         "S. N. Goodman",
         "D. Fanelli",
@@ -38,9 +38,9 @@
     ],
     "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
     "forrt_sub_clusters": "History of the replication crisis & credibility revolution",
-    "doi": "",
-    "in-clusters": false,
+    "doi": "10.1126/scitranslmed.aaf5027",
+    "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-10-29"
+    "lastmod": "2026-11-25"
 }

@@ -1,7 +1,7 @@
 {
     "timestamp": "1/13/2025 7:07:23",
     "title": "Academic Fraud is a Waster of Taxpayer Dollars",
-    "link_to_resource": "https://www.bloomberg.com/opinion/articles/2024-05-01/academic-misconduct-and-fraud-hurt-public-trust-in-science?accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzb3VyY2UiOiJTdWJzY3JpYmVyR2lmdGVkQXJ0aWNsZSIsImlhdCI6MTcxNDU3MDQ4NSwiZXhwIjoxNzE1MTc1Mjg1LCJhcnRpY2xlSWQiOiJTQ1QyT1RUMVVNMFcwMCIsImJjb25uZWN0SWQiOiIzQzJBNjM2NzEwNzA0MDYzQkFCNERBQ0Y3QkI0QjlGNyJ9.e4KQNbKXuOjHL2toTdUmcTo0Ju7cEaVM16bmbE6FHPc",
+    "link_to_resource": "https://web.archive.org/web/20240504215732/https://www.bloomberg.com/opinion/articles/2024-05-01/academic-misconduct-and-fraud-hurt-public-trust-in-science",
     "creators": [
         "The Editorial Board"
     ],
@@ -38,5 +38,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2025-01-13"
+    "lastmod": "2026-11-25"
 }

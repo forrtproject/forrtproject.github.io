@@ -1,7 +1,7 @@
 {
     "timestamp": "2020-06-11T06:33:37.439Z",
     "title": "I Fooled Millions Into Thinking Chocolate Helps Weight Loss. Here's How.",
-    "link_to_resource": "https://io9.gizmodo.com/i-fooled-millions-into-thinking-chocolate-helps-weight-1707251800",
+    "link_to_resource": "https://gizmodo.com/i-fooled-millions-into-thinking-chocolate-helps-weight-1707251800",
     "creators": [
         "John Bohannon"
     ],
@@ -39,5 +39,5 @@
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-06-11"
+    "lastmod": "2026-11-25"
 }

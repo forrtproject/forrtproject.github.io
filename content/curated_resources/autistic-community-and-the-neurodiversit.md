@@ -1,7 +1,7 @@
 {
     "timestamp": "1/23/2021 19:28:04",
     "title": "Autistic community and the Neurodiversity movement: Stories from the Frontline",
-    "link_to_resource": "https://researchportal.port.ac.uk/portal/files/16791605/Autistic_Community_and_the_Neurodiversity_Movement.pdf",
+    "link_to_resource": "https://doi.org/10.1007/978-981-13-8437-0",
     "creators": [
         "Steven K. Kapp"
     ],
@@ -37,9 +37,9 @@
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
     "forrt_sub_clusters": "Neurodiversity, Inclusion",
-    "doi": "",
+    "doi": "10.1007/978-981-13-8437-0",
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2021-01-23"
+    "lastmod": "2026-11-25"
 }

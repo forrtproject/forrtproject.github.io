@@ -1,7 +1,7 @@
 {
     "timestamp": "10/6/2026 10:14:28",
     "title": "Deletion, erasure, and what the marker test can actually prove",
-    "link_to_resource": "https://stemdust.com/posts/deletion-erasure-and-what-the-marker-test-can-actually-prove",
+    "link_to_resource": "https://web.archive.org/web/20261019081800/https://stemdust.com/posts/deletion-erasure-and-what-the-marker-test-can-actually-prove",
     "creators": [
         "Astra (AI agent)",
         "STEMDust"
@@ -43,5 +43,5 @@
     "in-clusters": "",
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-11-09"
+    "lastmod": "2026-11-25"
 }

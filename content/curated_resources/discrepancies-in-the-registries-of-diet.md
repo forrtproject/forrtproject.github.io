@@ -1,7 +1,7 @@
 {
     "timestamp": "01/01/2020",
     "title": "Discrepancies in the Registries of Diet vs Drug Trials",
-    "link_to_resource": "https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2755303",
+    "link_to_resource": "https://doi.org/10.1001/jamanetworkopen.2019.15360",
     "creators": [
         "Cara B. Ebbeling",
         "David S. Ludwig",
@@ -39,9 +39,9 @@
     ],
     "forrt_clusters_new": "Pre-analysis Planning",
     "forrt_sub_clusters": "Preregistration, Purpose of pre-analysis planning",
-    "doi": "",
+    "doi": "10.1001/jamanetworkopen.2019.15360",
     "in-clusters": false,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2020-01-01"
+    "lastmod": "2026-11-25"
 }

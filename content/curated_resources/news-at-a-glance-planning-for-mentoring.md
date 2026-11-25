@@ -1,7 +1,7 @@
 {
     "timestamp": "1/9/2025 9:57:51",
     "title": "News at a glance: Planning for mentoring, tracking replications, and deracializing lung tests",
-    "link_to_resource": "https://www.science.org/content/article/news-glance-planning-mentoring-tracking-replications-and-deracializing-lung-tests",
+    "link_to_resource": "https://doi.org/10.1126/science.znb87gz",
     "creators": [
         "Science News Staff"
     ],
@@ -32,9 +32,9 @@
     ],
     "forrt_clusters_new": "Replication Crisis and Credibility Revolution",
     "forrt_sub_clusters": "Collection of large scale replications",
-    "doi": "",
-    "in-clusters": false,
+    "doi": "10.1126/science.znb87gz",
+    "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-11-09"
+    "lastmod": "2026-11-25"
 }

@@ -1,7 +1,7 @@
 {
     "timestamp": "01/01/2020",
     "title": "Use of the Journal Impact Factor in academic review, promotion, and tenure evaluations",
-    "link_to_resource": "https://peerj.com/preprints/27638/",
+    "link_to_resource": "https://doi.org/10.7287/peerj.preprints.27638v2",
     "creators": [
         "Carol Mu\u00f1oz Nieves",
         "Erin C. McKiernan",
@@ -44,9 +44,9 @@
     ],
     "forrt_clusters_new": "Academic Structures and Institutions",
     "forrt_sub_clusters": "Research assessment, proposals, and reforms, Structures and incentives in academia",
-    "doi": "",
-    "in-clusters": false,
+    "doi": "10.7287/peerj.preprints.27638v2",
+    "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-11-08"
+    "lastmod": "2026-11-25"
 }

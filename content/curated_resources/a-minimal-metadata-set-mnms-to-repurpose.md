@@ -1,7 +1,7 @@
 {
     "timestamp": "1/9/2025 9:30:58",
     "title": "A minimal metadata set (MNMS) to repurpose nonclinical in vivo data for biomedical research",
-    "link_to_resource": " https://doi.org/10.1038/s41684-024-01335-0",
+    "link_to_resource": "https://doi.org/10.1038/s41684-024-01335-0",
     "creators": [
         "Anastasios Moresis",
         "Leonardo Restivo",
@@ -51,5 +51,5 @@
     "in-clusters": true,
     "pdf name": "",
     "apa reference": "",
-    "lastmod": "2026-10-29"
+    "lastmod": "2026-11-25"
 }
