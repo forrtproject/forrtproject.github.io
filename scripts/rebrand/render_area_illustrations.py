@@ -8,6 +8,8 @@ assets/js/castle/illustrations-harness.html, with Three.js served from assets/th
 is trimmed to the model and its shadow and set 640 px wide. At that size their bricks match the
 justice plate's, which comes from the castle (assets/js/castle/README.md) and is not rendered here.
 
+Afterwards run scripts/rebrand/area_plate_bounds.py, so pages centre the new bricks.
+
 Needs Pillow and Playwright for Python with its Chromium (`python3 -m playwright install chromium`).
 """
 import base64

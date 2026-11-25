@@ -1,0 +1,7 @@
+{{/* An area plate, with where its bricks sit so CSS can centre them rather than bricks plus shadow.
+     Context: dict "image" (name in assets/images/doors/), "alt", optional "lazy".
+     Bounds come from scripts/rebrand/area_plate_bounds.py. */}}
+{{ $image := resources.Get (printf "images/doors/%s.webp" .image) }}
+{{ $b := index (resources.Get "images/doors/area-plates.json" | transform.Unmarshal) .image }}
+{{ $vars := printf "--cx:%.3f;--ow:%.3f;--oh:%.3f;--x0:%.3f;--y0:%.3f;--x1:%.3f;--y1:%.3f;--ar:%.4f" (div (add $b.x0 $b.x1) 2) (sub $b.x1 $b.x0) (sub $b.y1 $b.y0) $b.x0 $b.y0 $b.x1 $b.y1 (div (float $image.Width) $image.Height) }}
+<div class="area-plate" style="{{ $vars | safeCSS }}"><img src="{{ $image.RelPermalink }}" alt="{{ .alt }}" width="{{ $image.Width }}" height="{{ $image.Height }}"{{ if .lazy }} loading="lazy"{{ end }}></div>
