@@ -48,7 +48,7 @@
     {{/* An action, so a brick (DESIGN.md §4), in a brick colour rather than education's, which the door of a post
          without a picture already uses. */}}
     <div class="ec-write-card">
-      {{ with resources.Get "images/doors/area-education.webp" }}{{ $w := .Resize "440x webp q80" }}<div class="ec-write-plate"><img src="{{ $w.RelPermalink }}" width="{{ $w.Width }}" height="{{ $w.Height }}" alt="" loading="lazy"></div>{{ end }}
+      {{ with resources.Get "images/doors/area-education-bricks.webp" }}{{ $w := .Resize "440x webp q80" }}<div class="ec-write-plate"><img src="{{ $w.RelPermalink }}" width="{{ $w.Width }}" height="{{ $w.Height }}" alt="" loading="lazy"></div>{{ end }}
       <h2>Write for Educators' Corner</h2>
       <p>Share what you have learnt teaching or mentoring in open research.</p>
       <a class="ec-write-link" href="mailto:info@forrt.org?subject=Educators%27%20Corner%3A%20article%20idea">Email us your idea</a>

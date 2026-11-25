@@ -2,4 +2,6 @@
 <html lang="en"><meta charset="utf-8"><title>FORRT area plates</title>
 <style>html,body{margin:0;background:transparent}canvas{display:block}</style>
 <script type="importmap">{"imports":{"three":"/three/index.js","three/addons/":"/three/addons/"}}</script>
-<canvas></canvas><script type="module" src="illustrations-render.js"></script></html>
+<canvas></canvas>
+<!-- ?renderer= picks the renderer (default illustrations-render.js); ?kind= is read by the renderer. -->
+<script type="module">import("./" + (new URLSearchParams(location.search).get("renderer") || "illustrations-render.js"));</script></html>

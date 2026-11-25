@@ -8,7 +8,7 @@ The animated brick tower in the home page's arched door. Hugo bundles it with `j
 | `castle-geometry.js` | The bricks |
 | `castle-piles.js` | Baked resting poses of the two heaps. Generated, see below |
 | `bake-castle-piles.js` | Offline physics bake for those poses. Never part of the site's bundle |
-| `illustrations-render.js`, `illustrations-harness.html` | Offline renderer for the education, research and community area plates; `scripts/rebrand/render_area_illustrations.py` renders them. Never part of the site's bundle |
+| `illustrations-render.js`, `education-render.js`, `illustrations-harness.html` | Offline renderers for the research and community area plates (`illustrations-render.js`) and the education plate (`education-render.js`); `scripts/rebrand/render_area_illustrations.py` renders them. Never part of the site's bundle |
 | `../doors/castle.js` | Loads the bundle after paint and owns playback: pause, hover, tap, off-screen suspension. Also opens the tower game, see `../tower/README.md` |
 | `../doors/motion.js` | The pause state the castle shares with the home page's quotes, remembered between visits |
 

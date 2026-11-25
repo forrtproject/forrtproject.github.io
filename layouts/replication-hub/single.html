@@ -12,7 +12,7 @@
         <h1>{{ .Title }}</h1>
         <p class="lede">Completed and ongoing large-scale projects summarising replication and computational reproducibility efforts across sciences and humanities.</p>
       </div>
-      {{ with resources.Get "images/doors/area-research.webp" }}
+      {{ with resources.Get "images/doors/area-research-bricks.webp" }}
       {{ $w := .Resize "440x webp q80" }}
       <figure class="heading-plate heading-plate-research" aria-hidden="true"><img src="{{ $w.RelPermalink }}" width="{{ $w.Width }}" height="{{ $w.Height }}" alt=""></figure>
       {{ end }}
@@ -233,7 +233,7 @@
       <div>
         <h1>{{ .Title }}</h1>
       </div>
-      {{ with resources.Get "images/doors/area-research.webp" }}
+      {{ with resources.Get "images/doors/area-research-bricks.webp" }}
       {{ $w := .Resize "440x webp q80" }}
       <figure class="heading-plate heading-plate-research" aria-hidden="true"><img src="{{ $w.RelPermalink }}" width="{{ $w.Width }}" height="{{ $w.Height }}" alt=""></figure>
       {{ end }}
