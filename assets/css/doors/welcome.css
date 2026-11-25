@@ -49,5 +49,5 @@
 @media(max-width:760px){
   .welcome-areas .area{grid-template-columns:minmax(0,1fr);row-gap:10px}
   .welcome-areas .area-plate{width:176px;height:150px}
-  .welcome-areas .area-plate img{inset:20px 14px 4px;width:calc(100% - 28px);height:calc(100% - 24px)}
+  .welcome-areas .area-plate img{inset:30px 14px 10px;width:calc(100% - 28px);height:calc(100% - 40px)}
 }

@@ -26,7 +26,7 @@ areas:
   - key: edu
     title: "Education & Pedagogy"
     image: area-education
-    alt: "Two green brick towers joined by an arch rising from an open book."
+    alt: "A stack of brick books in different colours, topped with a mortarboard."
     links:
       - title: "Educational Nexus"
         text: "FORRT's teaching projects and resources in one place."

@@ -1,0 +1,5 @@
+{{/* An area plate without its ground shadow, so the bricks centre in their door.
+     Context: dict "image" (name in assets/images/doors/), "alt", optional "lazy".
+     The -bricks copies come from scripts/rebrand/area_plate_bricks.py. */}}
+{{ $image := resources.Get (printf "images/doors/%s-bricks.webp" .image) }}
+<div class="area-plate"><img src="{{ $image.RelPermalink }}" alt="{{ .alt }}" width="{{ $image.Width }}" height="{{ $image.Height }}"{{ if .lazy }} loading="lazy"{{ end }}></div>

@@ -44,7 +44,7 @@
 {{ $types := slice }}
 {{ range $index.facets }}{{ if eq .key "type" }}{{ range $v := .values }}{{ with index $typeCount $v.slug }}{{ $types = $types | append (dict "slug" $v.slug "label" $v.label "count" . "sort" (sub 10000 .)) }}{{ end }}{{ end }}{{ end }}{{ end }}
 {{ $types = sort $types "sort" }}
-{{ $plate := resources.Get "images/doors/area-education.webp" }}
+{{ $plate := resources.Get "images/doors/area-education-bricks.webp" }}
 <div class="article-style cluster-resources-list">
   <div class="topic-head">
     <section class="topic-now" aria-labelledby="topic-now-title">
@@ -58,7 +58,7 @@
         {{ end }}
       </ol>
     </section>
-    <figure class="heading-plate topic-plate"><img src="{{ $plate.RelPermalink }}" alt="Two green brick towers joined by an arch rising from an open book." width="{{ $plate.Width }}" height="{{ $plate.Height }}"></figure>
+    <figure class="heading-plate topic-plate"><img src="{{ $plate.RelPermalink }}" alt="A stack of brick books in different colours, topped with a mortarboard." width="{{ $plate.Width }}" height="{{ $plate.Height }}"></figure>
   </div>
   <div class="topic-toolbar">
   <div class="list-filter topic-tools" data-noun="resources" data-list="#now-{{ (index $groups 0).key }}" data-no-jump hidden>

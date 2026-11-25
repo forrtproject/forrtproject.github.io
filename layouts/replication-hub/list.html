@@ -14,7 +14,7 @@
         <p class="lede">FORRT's open, crowd-sourced library tracking replication and computational reproduction attempts across the sciences and humanities.</p>
         {{ partial "doors/page_actions" . }}
       </div>
-      {{ with resources.Get "images/doors/area-research.webp" }}
+      {{ with resources.Get "images/doors/area-research-bricks.webp" }}
       {{ $w := .Resize "440x webp q80" }}
       <figure class="heading-plate heading-plate-research" aria-hidden="true"><img src="{{ $w.RelPermalink }}" width="{{ $w.Width }}" height="{{ $w.Height }}" alt=""></figure>
       {{ end }}

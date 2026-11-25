@@ -28,9 +28,8 @@
     <h2 id="welcome-areas-h">FORRT's work in its four areas</h2>
     <div class="areas">
       {{ range . }}
-      {{ $image := resources.Get (printf "images/doors/%s.webp" .image) }}
       <article class="area area-{{ .key }}" aria-labelledby="welcome-area-{{ .key }}">
-        <div class="area-plate"><img src="{{ $image.RelPermalink }}" alt="{{ .alt }}" width="{{ $image.Width }}" height="{{ $image.Height }}"></div>
+        {{ partial "doors/area_plate" (dict "image" .image "alt" .alt) }}
         <div class="area-body">
           <h3 id="welcome-area-{{ .key }}">{{ .title }}</h3>
           <ul class="welcome-links">
