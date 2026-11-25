@@ -40,8 +40,7 @@
 .area-jus{--tone:var(--jus);--tint:var(--jus-bg)}
 .area-com{--tone:var(--com);--tint:var(--com-bg)}
 .area-plate{position:relative;height:clamp(176px,14.5vw,208px);min-height:0}
-/* Plates centre their bricks, not bricks plus shadow; the --cx, --ow… bounds come from doors/area_plate.html. */
-.area-plate img{position:absolute;left:50%;bottom:2%;width:auto;height:auto;max-width:78%;max-height:74%;transform:translateX(calc(var(--cx,.5) * -100%))}
+.area-plate img{position:absolute;inset:24% 11% 2%;width:78%;height:74%;max-width:none;object-fit:contain;object-position:50% 100%}
 .area-body{display:flex;flex-direction:column;flex:1;padding-top:12px}
 .area h3{font-size:clamp(26px,2.1vw,31px);line-height:1.12;color:var(--tone);min-height:2.3em;margin:0;overflow-wrap:anywhere}
 .area-body>p{margin:8px 0 0;font-size:16px;line-height:1.5}
@@ -130,8 +129,7 @@
   .areas{grid-template-columns:1fr;gap:12px;padding-top:18px}
   .area{display:grid;grid-template-columns:78px minmax(0,1fr);column-gap:14px;padding:14px;border-radius:var(--r-large)}
   .area-plate{height:92px;align-self:start;background:#ffffffb0;border-radius:999px 999px 0 0}
-  /* Icons show the bricks alone, cropped from their shadow and fitted into a --fit-w by --fit-h box. */
-  .area-plate img{--fit-w:64px;--fit-h:58px;top:calc(100% - 6px);bottom:auto;max-width:none;max-height:none;width:min(calc(var(--fit-w) / var(--ow,1)), calc(var(--fit-h) * var(--ar,1) / var(--oh,1)));transform:translate(calc(var(--cx,.5) * -100%), calc(var(--y1,1) * -100%));clip-path:inset(calc(var(--y0,0) * 100%) calc((1 - var(--x1,1)) * 100%) calc((1 - var(--y1,1)) * 100%) calc(var(--x0,0) * 100%))}
+  .area-plate img{inset:20px 8px 6px;width:calc(100% - 16px);height:calc(100% - 26px)}
   .area-body{display:block;padding-top:0}
   .area h3{font-size:23px}
   .area-body>p{margin-top:5px}
