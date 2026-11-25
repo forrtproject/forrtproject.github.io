@@ -152,9 +152,10 @@ show_related = {docs = true, page = true, post = true, project = true, publicati
 
 # Default image for social sharing and search engines. Place image in `static/` folder and specify 'img/[image name]' here.
 # Use a 1200x630 PNG or JPG: X and LinkedIn do not render WebP previews.
-sharing_image = "img/forrt-share.png"
+# Previews often crop to the centre square, so keep the logo there (scripts/render_share_images.py).
+sharing_image = "img/forrt-share-logo.png"
 # Alt text for the sharing image (accessibility and og:image:alt). Defaults to site title if unset.
-sharing_image_alt = "FORRT - Framework for Open and Reproducible Research Training"
+sharing_image_alt = "The FORRT logo: a black tower above the word FORRT"
 
 ############################
 ## Regional Settings
@@ -352,3 +353,21 @@ plugins_js  = []
   [[doors.page_actions]]
     path = "/nowherelab"
     links = [{label = "Join Nowhere Lab by email", url = "mailto:priyasilverstein@gmail.com"}, {label = "Open the Slack channel", url = "https://forrt.slack.com/archives/C0B0FKG3GH2"}]
+  # Share image for pages in each Doors area that set none of their own (see site_head.html for the order).
+  # `sections` are first URL segments; images come from scripts/render_share_images.py, alts from content/home/2-areas.md.
+  [[doors.share_areas]]
+    image = "images/doors/share/area-education.webp"
+    alt = "A brick pencil standing on an open green book, above the FORRT logo."
+    sections = ["resources", "curated_resources", "tags", "lesson-plans", "syllabus", "glossary", "educators-corner", "pedagogies", "teaching_os", "adopting", "nexus", "summaries", "games", "open-research-games-portal", "clusters", "forrt_clusters", "disciplines", "mapping_os"]
+  [[doors.share_areas]]
+    image = "images/doors/share/area-research.webp"
+    alt = "Two near-identical brick towers, one with a single orange brick, seen through a magnifying glass, above the FORRT logo."
+    sections = ["replication-hub", "reversals", "positive-changes-replication-crisis", "publications", "ai-metascience", "impact"]
+  [[doors.share_areas]]
+    image = "images/doors/share/area-justice.webp"
+    alt = "The FORRT tower with its upper courses built in Pride colours, above the FORRT logo."
+    sections = ["dei", "equityinos", "neurodiversity", "neurodiversity-lessonbank", "citation-politics", "awop", "OS-developing-world", "just_os_chatbot"]
+  [[doors.share_areas]]
+    image = "images/doors/share/area-community.webp"
+    alt = "Brick figures in many colours standing in a circle, with a gap and one more figure arriving, above the FORRT logo."
+    sections = ["about", "contributors", "contributor-analysis", "nowherelab", "community-map", "newsletters", "testimonials", "awards", "welcome", "authors"]
