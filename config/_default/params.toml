@@ -353,21 +353,3 @@ plugins_js  = []
   [[doors.page_actions]]
     path = "/nowherelab"
     links = [{label = "Join Nowhere Lab by email", url = "mailto:priyasilverstein@gmail.com"}, {label = "Open the Slack channel", url = "https://forrt.slack.com/archives/C0B0FKG3GH2"}]
-  # Share image for pages in each Doors area that set none of their own (see site_head.html for the order).
-  # `sections` are first URL segments; images come from scripts/render_share_images.py, alts from content/home/2-areas.md.
-  [[doors.share_areas]]
-    image = "images/doors/share/area-education.webp"
-    alt = "A brick pencil standing on an open green book, over the words Education & Pedagogy, FORRT."
-    sections = ["resources", "curated_resources", "tags", "lesson-plans", "syllabus", "glossary", "educators-corner", "pedagogies", "teaching_os", "adopting", "nexus", "summaries", "games", "open-research-games-portal", "clusters", "forrt_clusters", "disciplines", "mapping_os"]
-  [[doors.share_areas]]
-    image = "images/doors/share/area-research.webp"
-    alt = "Two near-identical brick towers, one with a single orange brick, seen through a magnifying glass, over the words Meta-Science & Research, FORRT."
-    sections = ["replication-hub", "reversals", "positive-changes-replication-crisis", "publications", "ai-metascience", "impact"]
-  [[doors.share_areas]]
-    image = "images/doors/share/area-justice.webp"
-    alt = "The FORRT tower with its upper courses built in Pride colours, over the words Social Justice & DEIA, FORRT."
-    sections = ["dei", "equityinos", "neurodiversity", "neurodiversity-lessonbank", "citation-politics", "awop", "OS-developing-world", "just_os_chatbot"]
-  [[doors.share_areas]]
-    image = "images/doors/share/area-community.webp"
-    alt = "Brick figures in many colours standing in a circle, with a gap and one more figure arriving, over the words Community & Sustainability, FORRT."
-    sections = ["about", "contributors", "contributor-analysis", "nowherelab", "community-map", "newsletters", "testimonials", "awards", "welcome", "authors"]

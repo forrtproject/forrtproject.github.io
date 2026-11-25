@@ -236,14 +236,12 @@
   {{ $featured_image := (.Resources.ByType "image").GetMatch "*featured*" }}
   {{ $avatar_image := (.Resources.ByType "image").GetMatch "avatar*" }}
   {{ $has_logo := fileExists "assets/images/logo.webp" | or (fileExists "assets/images/logo.svg") }}
-  {{/* Pages without an image of their own share their Doors area's (`doors.share_areas` in params.toml). */}}
-  {{/* First segment of the logical path, not `.Section`: top-level bundles such as content/dei/index.md have none. */}}
-  {{ $first_segment := index (split (strings.TrimPrefix "/" .Path) "/") 0 }}
-  {{ $area_share := false }}
-  {{ range site.Params.doors.share_areas }}
-    {{ if and (not $area_share) (in .sections $first_segment) (resources.Get .image) }}{{ $area_share = . }}{{ end }}
-  {{ end }}
-  {{ $area_alt := "" }}
+  {{/* Pages without an image of their own get one of 48 brick trays (scripts/render_share_images.py),
+       picked by a hash of the page's path, so a page keeps its tray and pages shared together differ.
+       `.Path` rather than the permalink, so staging's path prefix does not change the pick. */}}
+  {{ $tray := resources.Get (printf "images/doors/share/tray-%02d.webp" (mod (hash.FNV32a .Path) 48)) }}
+  {{ $tray_used := false }}
+  {{ $default_used := false }}
   {{ $og_image := "" }}
   {{ $og_resource := false }}
   {{ $og_image_width := 0 }}
@@ -275,11 +273,12 @@
     {{ end }}
   {{ else if .Params.header.image }}
     {{ $og_image = printf "%s/%s" $media_dir .Params.header.image | absURL }}
-  {{ else if $area_share }}
-    {{ $og_resource = resources.Get $area_share.image }}
-    {{ $og_image = $og_resource.Permalink }}
-    {{ $area_alt = $area_share.alt }}
+  {{ else if $tray }}
+    {{ $og_resource = $tray }}
+    {{ $og_image = $tray.Permalink }}
+    {{ $tray_used = true }}
   {{ else if site.Params.sharing_image }}
+    {{ $default_used = true }}
     {{ $og_image = site.Params.sharing_image | absURL }}
     {{ with images.Config (printf "/static/%s" site.Params.sharing_image) }}
       {{ $og_image_width = .Width }}
@@ -317,8 +316,10 @@
     {{ $og_image_height = $social.Height }}
   {{ end }}
   {{ $scr.Set "og_image" $og_image }}{{/* Set `og_image` globally for `rss.xml`. */}}
-  {{ $og_image_alt := site.Params.sharing_image_alt | default site.Title }}
-  {{ with $area_alt }}{{ $og_image_alt = . }}{{ end }}
+  {{/* The site's alt text describes the default image, so other images fall back to the site title. */}}
+  {{ $og_image_alt := site.Title }}
+  {{ if $default_used }}{{ $og_image_alt = site.Params.sharing_image_alt | default site.Title }}{{ end }}
+  {{ if $tray_used }}{{ $og_image_alt = "The FORRT logo on a tray of studded bricks" }}{{ end }}
   {{ if .Params.sharing_image_alt }}{{ $og_image_alt = .Params.sharing_image_alt }}{{ end }}
   <meta property="og:site_name" content="{{ site.Title }}">
   <meta property="og:url" content="{{ $metadata.url }}">
