@@ -152,9 +152,12 @@ show_related = {docs = true, page = true, post = true, project = true, publicati
 
 # Default image for social sharing and search engines. Place image in `static/` folder and specify 'img/[image name]' here.
 # Use a 1200x630 PNG or JPG: X and LinkedIn do not render WebP previews.
-sharing_image = "img/forrt-share.png"
+# Previews often crop to the centre square, so keep the logo there (scripts/render_share_images.py).
+sharing_image = "img/forrt-share-logo.png"
 # Alt text for the sharing image (accessibility and og:image:alt). Defaults to site title if unset.
-sharing_image_alt = "FORRT - Framework for Open and Reproducible Research Training"
+sharing_image_alt = "The FORRT logo: a black tower above the word FORRT"
+# Alt text for the brick trays that pages without an image of their own share (site_head.html).
+sharing_tray_alt = "The FORRT logo on a tray of studded bricks"
 
 ############################
 ## Regional Settings
