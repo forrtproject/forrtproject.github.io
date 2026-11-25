@@ -220,6 +220,9 @@ main:lang(ar) .article-layout .article-style,main:lang(ar) .article-layout .arti
 .sc-page :is(.sc-team,.sc-grid):has(>[data-area=jus]) .sc-card,.sc-page .sc-title-card[data-area=jus]{--team-color:var(--jus)!important}
 .sc-page :is(.sc-team,.sc-grid):has(>[data-area=res]) .sc-card,.sc-page .sc-title-card[data-area=res]{--team-color:var(--res)!important}
 .sc-page :is(.sc-team,.sc-grid):has(>[data-area=edu]) .sc-card,.sc-page .sc-title-card[data-area=edu]{--team-color:var(--edu)!important}
+/* People send their own photos and some are already black and white, so all of them are shown that way,
+   on the cards and in the profiles, to keep the grid even. */
+.sc-page :is(.sc-card-img,.sc-modal-img img){filter:grayscale(1)}
 .sc-page .sc-section-title{margin:0 0 4px}
 /* 44 px targets (DESIGN.md §9). */
 .sc-page .sc-nav a{display:inline-flex;align-items:center;min-height:44px;padding:0}
