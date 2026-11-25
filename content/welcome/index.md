@@ -26,7 +26,7 @@ areas:
   - key: edu
     title: "Education & Pedagogy"
     image: area-education
-    alt: "A brick pencil standing on an open green book."
+    alt: "Two green brick towers joined by an arch rising from an open book."
     links:
       - title: "Educational Nexus"
         text: "FORRT's teaching projects and resources in one place."
@@ -37,7 +37,7 @@ areas:
   - key: res
     title: "Meta-Science & Research"
     image: area-research
-    alt: "Two near-identical brick towers, one with a single orange brick, seen through a magnifying glass."
+    alt: "An open notebook whose two pages show the same bar chart built from bricks."
     links:
       - title: "Replication Hub"
         text: "Tools and guidance for reproduction and replication studies."
@@ -59,7 +59,7 @@ areas:
   - key: com
     title: "Community & Sustainability"
     image: area-community
-    alt: "Brick figures in many colours standing in a circle, with a gap and one more figure arriving."
+    alt: "Three brick figures working together at a table, with an empty stool for one more."
     links:
       - title: "Teams"
         text: "Find a team or project to join."
