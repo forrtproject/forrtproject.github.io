@@ -18,7 +18,9 @@ const cache = new Map();
 function brickGeometry(width, height, depth, studs = true) {
   const key = [width, height, depth, studs].map(v => typeof v === 'number' ? v.toFixed(4) : v).join('/');
   if (cache.has(key)) return cache.get(key);
-  const parts = [new RoundedBoxGeometry(width - GAP, height - GAP, depth - GAP, 2, .011)];
+  // The joint gap applies only to real bricks; thin detail strips (page lines) keep their size.
+  const inset = v => v > 2 * GAP ? v - GAP : v;
+  const parts = [new RoundedBoxGeometry(inset(width), inset(height), inset(depth), 2, Math.min(.011, Math.min(width, height, depth) / 3))];
   if (studs) {
     const columns = Math.max(1, Math.floor((width - .18) / PITCH) + 1);
     const rows = Math.max(1, Math.floor((depth - .18) / PITCH) + 1);
