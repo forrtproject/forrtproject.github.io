@@ -29,8 +29,22 @@
   {{ $heading := .Params.heading_title | default .Title }}
   {{ if .Params.hide_title }}<h1 class="sr-only">{{ $heading }}</h1>{{ else }}<h1>{{ $heading }}</h1>{{ end }}
   {{ with .Params.subtitle }}<p class="standfirst">{{ . | markdownify | emojify }}</p>{{ end }}
-  <div class="byline">
+  {{/* An education article by one author with a photo: on a phone or tablet the byline is a band on education's pale
+       ground with the photo, name, links and date, and the side card, which has them on a wide screen, is left out
+       there (article.css). */}}
+  {{ $profile := false }}{{ $photo := false }}
+  {{ if and (eq (len (.Params.authors | default slice)) 1) (in (slice "educators-corner" "pedagogies") .Type) }}
+    {{ with partialCached "doors/author_profile" (index .Params.authors 0) (index .Params.authors 0) }}{{ $profile = . }}{{ $photo = (.Resources.ByType "image").GetMatch "*avatar*" }}{{ end }}
+  {{ end }}
+  <div class="byline{{ if $photo }} byline-portrait{{ end }}">
+    {{ with $photo }}<img class="byline-photo" src="{{ (.Fill "192x192 Center webp q80").RelPermalink }}" width="96" height="96" alt="">{{ end }}
     {{ with .Params.authors }}<span class="byline-authors">{{ partial "page_metadata_authors" $page }}</span>{{ end }}
+    {{ if $photo }}
+      {{/* The card's role and bio come too, as the card is left out on these screens. */}}
+      {{ with $profile.Params.role }}<span class="byline-role">{{ . | markdownify | emojify }}</span>{{ end }}
+      {{ if $profile.Params.social }}{{ partial "social_links" $profile }}{{ end }}
+      {{ with $profile.Params.bio }}<span class="byline-bio">{{ . | markdownify | emojify }}</span>{{ end }}
+    {{ end }}
     {{/* The side card carries the date on a wide screen; on a narrow one it would come after the article. */}}
     {{ if and (in (slice "post" "educators-corner" "pedagogies") .Type) (not .Date.IsZero) }}<time class="byline-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time>{{ end }}
     {{ if and (eq .Type "post") (ge .ReadingTime 3) }}<span class="byline-time">{{ .ReadingTime }} {{ i18n "minute_read" }}</span>{{ end }}

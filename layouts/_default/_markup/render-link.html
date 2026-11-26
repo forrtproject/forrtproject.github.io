@@ -1,2 +1,6 @@
-{{- /* A Hugo Markdown render hook to parse links, opening external links in new tabs. Trimmed so no whitespace is emitted before the link. */ -}}
-<a href="{{ .Destination | safeURL }}"{{ with .Title}} title="{{ . }}"{{ end }}{{ if or (strings.HasPrefix .Destination "http://") (strings.HasPrefix .Destination "https://") (strings.HasPrefix .Destination "//") }} target="_blank" rel="noopener"{{ end }}>{{ .Text | safeHTML }}</a>
+{{- /* Markdown links, opening other sites in new tabs; a link to forrt.org itself (site.Params.doors.host, with or
+       without www.) stays in the tab, as in booklet_contents. Overrides the theme's hook, whose comment line left a
+       line break before every link: rendered as a space, it split "(" from a link that follows it. */ -}}
+{{- $host := strings.TrimPrefix "www." (urls.Parse .Destination).Host -}}
+{{- $away := and $host (ne $host site.Params.doors.host) -}}
+<a href="{{ .Destination | safeURL }}"{{ with .Title}} title="{{ . }}"{{ end }}{{ if $away }} target="_blank" rel="noopener"{{ end }}>{{ .Text | safeHTML }}</a>

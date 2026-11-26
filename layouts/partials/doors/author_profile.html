@@ -1,0 +1,16 @@
+{{/* The profile page (/authors/<slug>/) for a name as written in a page's `authors`, or false. The slug is usually the
+     name made into a URL; a title such as "Dr." in front, or a profile whose folder differs from the credited name
+     ("Patrick Forscher" at patrick-s-forscher), is found by the profile's own name. Call it with partialCached and
+     the name as the key. */}}
+{{ $raw := . }}
+{{ $found := site.GetPage (printf "/authors/%s" (urlize $raw)) }}
+{{ if not $found }}
+  {{ $plain := replaceRE `(?i)^(dr|prof|professor)\.?\s+` "" (trim $raw " ") }}
+  {{ $found = site.GetPage (printf "/authors/%s" (urlize $plain)) }}
+  {{ if not $found }}
+    {{ with site.GetPage "/authors" }}{{ range .Sections }}
+      {{ if and (not $found) (eq (lower (.Params.name | default .Title)) (lower $plain)) }}{{ $found = . }}{{ end }}
+    {{ end }}{{ end }}
+  {{ end }}
+{{ end }}
+{{ return $found }}

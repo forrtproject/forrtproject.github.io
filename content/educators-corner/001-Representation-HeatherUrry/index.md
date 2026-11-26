@@ -18,7 +18,7 @@ draft: false
 image:
   #caption: "Photo by Andrea Piacquadio from [Pexels](https://www.pexels.com/photo/happy-ethnic-woman-sitting-at-table-with-laptop-3769021/)"
   focal_point: "Center"
-  preview_only: false
+  preview_only: true
 
 # Projects (optional).
 #   Associate this post with one or more of your projects.
