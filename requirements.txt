@@ -9,3 +9,4 @@ python-dotenv
 matplotlib
 pypinyin
 pillow
+beautifulsoup4
