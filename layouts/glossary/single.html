@@ -257,8 +257,14 @@
 
             {{ with .Params.related_terms }}
             {{ $related_links := slice }}
+            {{ $glossary_pages := where site.RegularPages "Type" "glossary" }}
             {{ range $index, $term := . }}
             {{ $term_str := printf "%s" $term }} <!-- Ensure $term is treated as a string -->
+            {{/* Related terms are English entry titles (the sheet's related_terms tab). Find the page by its
+                 en_title, in this language first, then in English; the slug guess below is the fallback. */}}
+            {{ $term_page := false }}
+            {{ with first 1 (where (where $glossary_pages "Params.language" $lang) "Params.en_title" $term_str) }}{{ $term_page = index . 0 }}{{ end }}
+            {{ if not $term_page }}{{ with first 1 (where (where $glossary_pages "Params.language" "english") "Params.en_title" $term_str) }}{{ $term_page = index . 0 }}{{ end }}{{ end }}
             {{ $term_clean := replace $term_str "\u00a0" " " }} <!-- Replace non-breaking space with space -->
             {{ $term_clean = replaceRE `[*\\]` "" $term_clean }} <!-- Drop Markdown emphasis and escapes (*p*-value) so the slug matches the title's -->
             {{ $term_clean = replaceRE "\\s*\\(.*\\)" "" $term_clean }} <!-- Remove text in parentheses -->
@@ -266,7 +272,7 @@
             {{ $term_clean = replaceRE "[^a-zA-Z0-9_]" "_" $term_clean }} <!-- Replace all non-alphanumeric characters with underscores -->
             {{ $term_clean = lower $term_clean }} <!-- Convert to lowercase -->
             {{ $term_clean = trim $term_clean "_" }} <!-- Trim leading and trailing underscores -->
-            {{ $term_page := site.GetPage (printf "/glossary/%s/%s" $lang $term_clean) }}
+            {{ if not $term_page }}{{ $term_page = site.GetPage (printf "/glossary/%s/%s" $lang $term_clean) }}{{ end }}
             {{ if not $term_page }}
               {{ $term_page = site.GetPage (printf "/glossary/english/%s" $term_clean) }}
             {{ end }}
