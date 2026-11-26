@@ -15,8 +15,12 @@ subtitle = ""
   padding = ["60px", "0", "60px", "0"]
 +++
 
-These projects are looking for collaborators now. Most of them coordinate on
-FORRT's Slack: [join&nbsp;it](https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ), then contact the person named on the project.
+Most of these initiatives coordinate on FORRT's Slack: [join&nbsp;it](https://join.slack.com/t/forrt/shared_invite/zt-alobr3z7-NOR0mTBfD1vKXn9qlOKqaQ), then contact the person named on the project.
+
+<nav class="gi-jumps" aria-label="On this page">
+  <a href="#gi-teams">Teams running FORRT</a>
+  <a href="#calendar">Community calendar</a>
+</nav>
 
 {{% callout title="Getting Started with FORRT" %}}
 
