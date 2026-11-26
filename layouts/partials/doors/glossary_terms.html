@@ -8,7 +8,8 @@
   <h2>{{ .labels.list_of_terms }}</h2>
   {{ $label := strings.TrimRight ".…" .labels.filter_terms }}
   <label class="term-filter-label" for="glossary-search">{{ $label }}</label>
-  <input type="search" id="glossary-search" class="form-control" autocomplete="off">
+  {{/* The filter's count, no-match line and clear button in the page's language (site.js). */}}
+  <input type="search" id="glossary-search" class="form-control" autocomplete="off" data-single="{{ .labels.filter_one | default "%d term" }}" data-many="{{ .labels.filter_many | default "%d terms" }}"{{ with .labels.filter_two }} data-two="{{ . }}"{{ end }}{{ with .labels.filter_few }} data-few="{{ . }}"{{ end }}{{ with .labels.filter_other }} data-other="{{ . }}"{{ end }} data-none="{{ .labels.filter_none | default "No matching terms." }}" data-clear="{{ .labels.clear | default "Clear" }}">
   <nav class="term-list" aria-label="{{ .labels.list_of_terms }}">
     <ul>
       {{/* A term with other names carries them in data-term for the filter; the rest match on their text. */}}

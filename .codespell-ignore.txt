@@ -103,5 +103,6 @@ doubleclick
 
 # German glossary label
 Referenz
+passt
 pre-selected
 jus

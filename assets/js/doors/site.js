@@ -911,7 +911,7 @@ if (termFilter && termGrid) {
   const clearTerms = document.createElement('button');
   clearTerms.type = 'button';
   clearTerms.className = 'term-filter-clear';
-  clearTerms.textContent = 'Clear';
+  clearTerms.textContent = termFilter.dataset.clear || 'Clear';
   clearTerms.hidden = true;
   termFilter.after(status, clearTerms);
   clearTerms.addEventListener('click', () => { termFilter.value = ''; termFilter.dispatchEvent(new Event('input')); termFilter.focus(); });
@@ -920,7 +920,12 @@ if (termFilter && termGrid) {
     // data-term holds the term's name and its other names.
     terms.forEach((term) => { term.hidden = !foldTerm(term.dataset.term || term.textContent).includes(query); });
     const shown = terms.filter((term) => !term.hidden).length;
-    status.textContent = !query ? '' : shown ? `${shown} ${shown === 1 ? 'term' : 'terms'}` : 'No matching terms.';
+    // The page language's plural category picks the wording: Arabic has forms for 1, 2, 3–10, 11–99 and 100 and more.
+    const words = termFilter.dataset;
+    const category = new Intl.PluralRules(termFilter.closest('[lang]')?.lang || 'en').select(shown);
+    const wording = {one: words.single, two: words.two, few: words.few, many: words.many, other: words.other}[category]
+      || (shown === 1 ? words.single : words.many) || '%d terms';
+    status.textContent = !query ? '' : shown ? wording.replace('%d', shown) : words.none || 'No matching terms.';
     clearTerms.hidden = !query;
   });
   // On a phone the list moves up, into a disclosure right after the definition, keeping the same label as desktop.
