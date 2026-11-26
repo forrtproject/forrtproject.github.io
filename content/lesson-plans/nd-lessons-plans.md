@@ -141,15 +141,23 @@ Please consider [giving us your feedback (critical or otherwise) when using thes
 ### Contribute
 ---------------------
 
-You can still contribute to the collection of Lesson Plans by adding your ideas in the Google sheet below. Furthermore, if you would like your lesson plans to be included among the several others [in this OSF repository](https://osf.io/th254/), please use the [Lesson Plan's template](https://docs.google.com/document/d/1OMyhKBUUceJHvZRJ0lNSclDXBcoYpQQDCn-zJ_2teXI/edit) and contact Madeleine Pownall or Flavio Azevedo at FORRT's slack channel. Or feel free to email [info@forrt.org](mailto:info@forrt.org). 
+You can still contribute to the collection of Lesson Plans by adding your ideas to the [Activities tab of our Google sheet](https://docs.google.com/spreadsheets/d/1LGdBFlOCFqyfV7NUx11oUjkqR-aVZpWVGCn8RTiQQuk/edit#gid=0). We review suggestions before adding them to the activities below. Furthermore, if you would like your lesson plans to be included among the several others [in this OSF repository](https://osf.io/th254/), please use the [Lesson Plan's template](https://docs.google.com/document/d/1OMyhKBUUceJHvZRJ0lNSclDXBcoYpQQDCn-zJ_2teXI/edit) and contact Madeleine Pownall or Flavio Azevedo at FORRT's slack channel. Or feel free to email [info@forrt.org](mailto:info@forrt.org). 
 
 ### Pedagogical Activities
 
-{{< click_to_load src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRxqwa1rfgn-mB2hdCd3DzQHYMV7bOpQw6hRwXQodSnKjL1QvV4r5Aaf0kr-AVKc9zk60ejgDhZ-FLV/pubhtml?widget=true&headers=false" provider="Google" label="This document" style="border:0px; width:100%; height:100%;" >}}
+{{< lesson_activities >}}
 
 <br>
 
-Contribute to [FORRT's Lesson Plans (Google sheets)](https://docs.google.com/spreadsheets/d/1LGdBFlOCFqyfV7NUx11oUjkqR-aVZpWVGCn8RTiQQuk)
+#### Additional resources
+
+* [Course syllabi for open and reproducible methods](https://osf.io/vkhbt/)
+* [Introduction to preregistration lecture by SIOS](https://osf.io/p4g53/)
+* [Presentation with open science teaching formats](https://docs.google.com/presentation/d/1KbysZCt7C-RDE7v8Sa_aIB14ZQGTwhe5k2TZrJOHCM0/edit)
+* [FAIRsharing](https://fairsharing.org/), a registry of repositories, standards and data policies
+* Journals on teaching psychology: *Teaching of Psychology* (Scholarly Teaching Corner), *Scholarship of Teaching and Learning in Psychology*, *Psychology Teaching Review* and *Psychology Learning and Teaching*
+
+<br>
 
 These resources were created as part of the Society for Improving Psychological Science (SIPS) hackathon at the 2021 Annual Conference, and we detail this collaborative process in the [article](https://doi.org/10.1037/stl0000307). 
 
