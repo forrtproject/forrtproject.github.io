@@ -14,13 +14,63 @@
 .feature-rows img{width:96px;height:96px;object-fit:contain;padding:12px;background:var(--edu-bg);border-radius:50%}
 .article-layout .article-style .feature-rows h3{margin:0 0 4px;font-size:23px}
 .feature-rows p{margin:0 0 8px}
-/* Team descriptions are list summaries: 17 px at every width (DESIGN.md §7); "more" follows the text directly. */
-.article-layout .article-style ul.team-rows>li{font-size:17px}
-.article-layout .article-style .team-rows p.clamp-desc{margin-bottom:0}
-.feature-rows-small .feature-icon{width:96px;font-size:40px;text-align:center;color:var(--link)}
-/* Teams: picture, name, description, and a button to join. */
-.article-layout .article-style ul.team-rows{padding:0}
-.team-rows .team-join{margin:10px 0 0}
+/* Teams: grouped by FORRT's four Strategic Focus Areas, each with its area colour and legible white-on-colour icon disc. */
+.team-page{margin-top:4px}
+.team-area-nav{display:flex;flex-wrap:wrap;gap:2px 22px;margin:0 0 22px;padding:0 0 12px;border-bottom:1px solid var(--line)}
+.team-area-jump{display:inline-flex;align-items:center;gap:7px;min-height:44px;padding:4px 0;color:var(--link);font:600 16px/1.3 var(--text);text-decoration:none}
+.team-area-label{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1.5px}
+.team-area-jump:hover{color:var(--ink)}
+.team-area-jump:hover .team-area-label{text-decoration-thickness:2px}
+.team-area-dot{width:10px;height:10px;border-radius:2px;background:var(--area,var(--soft));flex:none}
+.team-area-count{color:var(--soft);font-weight:500}
+:is(.team-area-jump,.team-area-group)[data-area=edu]{--area:var(--edu);--area-bg:var(--edu-bg)}
+:is(.team-area-jump,.team-area-group)[data-area=res]{--area:var(--res);--area-bg:var(--res-bg)}
+:is(.team-area-jump,.team-area-group)[data-area=jus]{--area:var(--jus);--area-bg:var(--jus-bg)}
+:is(.team-area-jump,.team-area-group)[data-area=com]{--area:var(--com);--area-bg:var(--com-bg)}
+:is(.team-area-jump,.team-area-group)[data-area=other]{--area:var(--ink);--area-bg:var(--surface)}
+.team-top{display:grid;grid-template-columns:minmax(0,1fr);gap:14px;margin:0 0 28px;align-items:start}
+@media(min-width:1001px){.team-top{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:24px 48px}}
+.team-about>summary{display:inline-flex;align-items:center;gap:8px;min-height:44px;color:var(--link);font:600 16px/1.3 var(--text);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+@media(min-width:761px){.team-about>summary{display:none}}
+.team-intro>:first-child{margin-top:0}
+.team-intro>:last-child{margin-bottom:0}
+.team-join-panel{padding:20px 22px;background:var(--surface);border-inline-start:4px solid var(--link);border-radius:var(--r-large)}
+.article-layout .article-style .team-join-panel h2{margin:0 0 6px;font-size:22px;line-height:1.2}
+.article-layout .article-style .team-join-panel p{margin:0 0 12px;font-size:17px;line-height:1.5}
+.article-layout .article-style .team-join-panel .team-join-cta{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;margin:0}
+.team-join-panel .btn{display:inline-flex;align-items:center;min-height:44px;margin:0}
+.team-more-link{display:inline-flex;align-items:center;min-height:44px;color:var(--link);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.team-area-group{margin:0 0 40px;scroll-margin-top:20px}
+.team-area-group:last-child{margin-bottom:0}
+.team-area-head{display:grid;grid-template-columns:64px minmax(0,1fr);gap:14px 18px;align-items:center;margin:0 0 18px;padding-bottom:14px;border-bottom:2px solid var(--area)}
+.team-area-head:not(:has(.team-area-plate)){grid-template-columns:minmax(0,1fr)}
+.team-area-plate{display:flex;align-items:flex-end;justify-content:center;width:64px;height:60px;padding:8px 6px 2px;box-sizing:border-box;background:var(--area-bg);border-radius:999px 999px 6px 6px}
+.team-area-plate img{display:block;width:100%;height:100%;object-fit:contain;margin:0}
+.article-layout .article-style .team-area-head h2{margin:0 0 2px;font-size:28px;line-height:1.15;color:var(--area)}
+.article-layout .article-style .team-area-head p{margin:0;max-width:30em;font-size:17px;color:var(--soft)}
+.article-layout .article-style ul.team-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:16px;max-width:none;margin:0;padding:0;list-style:none}
+.article-layout .article-style ul.team-cards>li.team-card{display:flex;flex-direction:column;max-width:none;margin:0;padding:18px 20px;background:var(--area-bg);border-radius:var(--r-large);font-size:17px;line-height:1.45}
+.team-card-head{display:grid;grid-template-columns:46px minmax(0,1fr);gap:12px;align-items:center;margin:0 0 10px}
+.team-icon{display:flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:50%;background:var(--area);flex:none}
+.team-icon img{display:block;width:24px;height:24px;object-fit:contain;margin:0}
+.article-layout .article-style .team-card h3{margin:0;font:var(--display-weight) 21px/1.2 var(--display);color:var(--ink)}
+.article-layout .article-style .team-card p.clamp-desc{margin:0;font-size:17px;line-height:1.48}
+.team-card .team-join{margin:auto 0 0;padding-top:14px}
+.article-layout .article-style .team-card .btn.dir-btn{min-height:44px;padding:8px 16px!important;background:#fff!important;border:1.5px solid var(--link)!important;border-radius:999px!important;color:var(--link)!important;font:600 15px/1.2 var(--text)!important}
+.article-layout .article-style .team-card .btn.dir-btn:hover{background:var(--link)!important;color:#fff!important}
+@media(max-width:760px){
+  .team-area-nav{gap:0 16px;margin:0 0 12px;padding-bottom:8px}
+  .team-area-jump{font-size:15px}
+  .team-top{gap:8px;margin:0 0 18px}
+  .team-join-panel{padding:12px 14px}
+  .article-layout .article-style .team-join-panel h2{margin:0 0 4px;font-size:18px}
+  .article-layout .article-style .team-join-panel>p:not(.team-join-cta){margin:0 0 8px;font-size:15px;line-height:1.4}
+  .team-join-panel .btn{padding:8px 16px!important;font-size:15px!important}
+  .team-area-head{grid-template-columns:52px minmax(0,1fr);gap:12px;margin-bottom:14px;padding-bottom:10px}
+  .team-area-plate{width:52px;height:48px;padding:6px 4px 2px}
+  .article-layout .article-style .team-area-head h2{font-size:24px}
+  .article-layout .article-style ul.team-cards>li.team-card{padding:16px}
+}
 /* Directory buttons are small and quiet beside the card's text (DESIGN.md §3); an invisible margin around each
    makes a 44 px tap target (§9). */
 .article-layout .article-style .dir-btn{position:relative;display:inline-flex;align-items:center;min-height:34px;padding:4px 14px!important;font-size:15px!important;line-height:1.3!important}
@@ -533,8 +583,6 @@ html:has(.contributor-az:not([hidden])){scroll-padding-top:calc(var(--contributo
   .article-layout .article-style .people-layout .people-wall{display:block;margin:0}
   .article-layout .article-style .people-layout .people-wall li{display:inline-block;width:200px;margin:0 16px 18px 0;vertical-align:top}
   .article-layout .article-style .people-layout .people-wall li[hidden]{display:none}
-  .article-layout-wide .article-style .team-layout{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,420px),1fr));gap:28px 40px;margin:24px 0}
-  .article-layout-wide .article-style .team-layout>.feature-rows{display:contents}
   .team-intro>:first-child{margin-top:0}
   .team-intro>:last-child{margin-bottom:0}
 }
