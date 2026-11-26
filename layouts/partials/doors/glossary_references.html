@@ -54,7 +54,7 @@
              (/glossary/ redirects), so the trail leads to the English glossary, which these references serve. */}}
         <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ "" | relLangURL }}">Home</a> <span aria-hidden="true">/</span> <a href="{{ "glossary/english/" | relLangURL }}">Glossary</a> <span aria-hidden="true">/</span> <span aria-current="page">{{ .Title }}</span></nav>
         <h1>{{ .Title }}</h1>
-        <p class="standfirst">Every source the glossary terms cite, A to Z, with links to the terms that cite it.</p>
+        <p class="standfirst">Every source the glossary terms cite, A to Z, with links to the terms that cite it. <a href="{{ "glossary/english/" | relLangURL }}">Browse the English glossary</a>.</p>
       </header>
       <div class="glossary-tools">
         <div class="glossary-find">
@@ -75,7 +75,7 @@
             {{ range .items }}
             <li id="ref-{{ .key }}" data-term="{{ .sk }}">
               <div class="reference-apa">{{ partial "citations/authors" (.apa | markdownify) }}</div>
-              {{ with .terms }}<p class="reference-cited">Cited in {{ range $i, $t := . }}{{ if $i }}, {{ end }}<a href="{{ $t.page.RelPermalink }}">{{ partial "doors/term_title" $t.page.Title }}</a>{{ with $t.label }} ({{ . }}){{ end }}{{ end }}</p>{{ end }}
+              {{ with .terms }}<p class="reference-cited"><span class="reference-cited-label">Cited in</span> {{ range $i, $t := . }}{{ if $i }}, {{ end }}<a href="{{ $t.page.RelPermalink }}">{{ partial "doors/term_title" $t.page.Title }}</a>{{ with $t.label }} ({{ . }}){{ end }}{{ end }}</p>{{ end }}
             </li>
             {{ end }}
           </ul>

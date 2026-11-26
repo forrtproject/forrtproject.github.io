@@ -2,7 +2,7 @@
 
 Each term file (content/glossary/<language>/*.md, written by _create_glossaries.py)
 carries its references already formatted from apa_lookup.json. This script collects
-them into the public "List of References" page, listing only references that a term
+them into the public "Glossary references" page, listing only references that a term
 cites and linking each one back to the terms that cite it. Run it after the term
 files are regenerated:
 
@@ -123,7 +123,7 @@ def main():
     nav = "".join(f'<a href="#{l.lower() if l != "#" else "other"}">{l}</a>' for l in letters)
     # A description of its own, so the page's meta description is not the start of the body (the letter bar).
     header = f"""---
-title: List of References
+title: Glossary references
 description: "The {len(citations)} references cited in the FORRT Glossary, each linked to the terms that cite it."
 ---
 
