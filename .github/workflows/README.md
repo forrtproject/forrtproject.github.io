@@ -49,6 +49,14 @@ Features:
 - Queues builds instead of canceling (concurrency)
 - Auto-cleans old staging branches (keeps 2)
 
+### [generated-paths.yaml](generated-paths.yaml)
+
+Checks PRs into `main` and `rebrand-doors` for changed generator outputs since the merge
+base. Edit the upstream source and rerun its generator. Apply `generated-output` to PRs
+that intentionally commit regenerated files. Adding or removing the label reruns the
+check. Same-repository glossary and Google Analytics PRs opened by the data workflow's
+account on its automated branches are exempt.
+
 ## Data Workflows
 
 ### [data-processing.yml](workflows/data-processing.yml)
