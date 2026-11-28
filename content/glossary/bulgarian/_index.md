@@ -50,7 +50,7 @@ Parsons, S., Azevedo, F., Elsherif, M. M., Guay, S., Shahim, O. N., Govaart, G. 
 
 <br>
 
-[ <center> <p style="color:#38673F"> 🚨 <strong> Фаза 2 на проекта за Речника на FORRT вече е открита </strong>! 🚨 </p>  </center>](https://docs.google.com/document/d/1BKzztg7srUeC_2Yn0b7cMbxp_vYMDlOnEYpxg_S2hWs/)
+[ <center> <p style="color:#38673F"> 🚨 <strong> Фаза 2 на проекта за Речника на FORRT вече е открита!</strong> 🚨 </p>  </center>](https://docs.google.com/document/d/1BKzztg7srUeC_2Yn0b7cMbxp_vYMDlOnEYpxg_S2hWs/)
 
 <br>
 
