@@ -1295,6 +1295,113 @@ article.article:has(table) .article-container {
 }
 
 /* -------------------------------------------------- */
+/* Lesson Plans: teaching activity cards */
+/* -------------------------------------------------- */
+
+.activity-filters summary {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.activity-filters[open] summary {
+  margin-bottom: 0.75rem;
+}
+
+.activity-filters .pill-bar {
+  margin-bottom: 0.75rem;
+}
+
+.activity-filters .pill-bar:last-child {
+  margin-bottom: 0;
+}
+
+.activity-count {
+  margin: 0 0 0.75rem;
+  font-size: 0.9rem;
+  color: #495057;
+}
+
+.activity-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .activity-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.activity-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 1.25rem;
+  background: #FEFDF6;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  /* The theme fades in every <article>, which would replay on each filter change. */
+  animation: none;
+}
+
+.activity-card[hidden] {
+  display: none;
+}
+
+.activity-card .activity-card-title {
+  margin: 0 0 0.6rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.activity-card-text {
+  margin: 0 0 0.75rem;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: #343a40;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+
+.activity-card-details {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: #343a40;
+}
+
+.activity-card-details dt {
+  font-weight: 700;
+}
+
+.activity-card-details dd {
+  margin: 0 0 0.5rem;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+
+.activity-card-source {
+  margin: auto 0 0;
+  padding-top: 0.6rem;
+  border-top: 1px solid #e9ecef;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: #495057;
+}
+
+.dark .activity-card { background: #1a202c; border-color: #2d3748; }
+.dark .activity-card-source,
+.dark .activity-count { color: #a0aec0; }
+.dark .activity-card-text,
+.dark .activity-card-details { color: #e2e8f0; }
+.dark .activity-card-source { border-top-color: #2d3748; }
+.dark .activity-card .activity-card-title { color: #e2e8f0; }
+.dark .activity-card a { color: #90cdf4; }
+
+/* -------------------------------------------------- */
 /* intro pub texts */
 /* -------------------------------------------------- */
 
