@@ -3981,3 +3981,10 @@ code.tex {
     height: auto;
   }
 }
+
+/* Domine has no Cyrillic, so Bulgarian text fell back to Inter while Latin
+   names in the same sentence stayed in Domine. Bulgarian pages use Inter. */
+html:lang(bg),
+html:lang(bg) :is(h1, h2, h3, h4, h5, h6) {
+  font-family: 'Inter', sans-serif;
+}
