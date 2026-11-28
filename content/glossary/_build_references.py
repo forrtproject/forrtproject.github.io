@@ -72,19 +72,54 @@ def render(citation):
     return URL_RE.sub(lambda m: f'<a href="{m.group(1)}">{m.group(1)}</a>', citation)
 
 
-def collect():
-    """Map each reference string to the terms citing it, per language."""
-    cited_by = defaultdict(lambda: defaultdict(list))
+AUTHOR_YEAR_TITLE_RE = re.compile(r"\s*([^,(.]+).*?\((\d{4}|n\.d\.)[a-z]?\)\.\s*(.{8,40})")
+
+
+def work_key(citation):
+    """Identify the cited work, so renderings of it from older and newer lookups merge.
+
+    Term files store formatted references, and languages regenerated at different
+    times can carry different renderings of one work (e.g. "& others." vs "et al."
+    in the author list, or an updated URL). The first author, year and title opening
+    identify the work. DOIs are not used: the central bibliography has entries for
+    different works that share one DOI. References without that pattern stay apart.
+    """
+    text = re.sub(r"https?://\S+", "", re.sub(r"<[^>]+>", "", MD_LINK_RE.sub(r"\1", citation)))
+    match = AUTHOR_YEAR_TITLE_RE.match(text)
+    if not match:
+        return "text:" + citation
+    return "work:" + "|".join(part.strip().casefold() for part in match.groups())
+
+
+def collect(current=()):
+    """Map each cited work's reference string to the terms citing it, per language.
+
+    Renderings of the same work are merged under one string: the one in the current
+    apa_lookup.json (`current`) if any, otherwise the one cited by most terms.
+    """
+    by_string = defaultdict(lambda: defaultdict(list))
     for language in LANGUAGES:
         for path in sorted(glob.glob(os.path.join(script_dir, language, "*.md"))):
-            if os.path.basename(path).startswith("_"):
+            # Only the hand-written index is skipped: term files can start with "_"
+            # too (titles that open with a quotation mark).
+            if os.path.basename(path) == "_index.md":
                 continue
             with open(path, encoding="utf-8") as f:
                 term = json.load(f)
             slug = os.path.splitext(os.path.basename(path))[0]
             for ref in term.get("references") or []:
                 if ref and ref.strip():
-                    cited_by[ref.strip()][language].append((term["title"], f"/glossary/{language}/{slug}/"))
+                    by_string[ref.strip()][language].append((term["title"], f"/glossary/{language}/{slug}/"))
+    current = set(current)
+    groups = defaultdict(list)
+    for citation in by_string:
+        groups[work_key(citation)].append(citation)
+    cited_by = defaultdict(lambda: defaultdict(list))
+    for renderings in groups.values():
+        chosen = max(renderings, key=lambda c: (c in current, sum(map(len, by_string[c].values())), c))
+        for citation in renderings:
+            for language, terms in by_string[citation].items():
+                cited_by[chosen][language].extend(t for t in terms if t not in cited_by[chosen][language])
     return cited_by
 
 
@@ -101,7 +136,8 @@ def term_links(languages):
 
 
 def main():
-    cited_by = collect()
+    with open(os.path.join(script_dir, "apa_lookup.json"), encoding="utf-8") as f:
+        cited_by = collect(json.load(f).values())
     citations = sorted(cited_by, key=sort_key)
     letters = []
     body = []
