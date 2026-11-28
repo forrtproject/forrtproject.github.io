@@ -293,16 +293,11 @@ for language_code in languages_to_process:
             title = title.replace('*p*', 'p')
 
         # Process references: always combine the generic shared column with any
-        # language-specific column (e.g. AR_refs, CN_refs), generic first. Both use
+        # language-specific column (e.g. BG_refs), generic first. Both use
         # the same [@citekey] format resolved via apa_lookup; dedupe across them.
-        # The Bulgarian source supplies author/year notes, not citekeys. Keep
-        # those notes verbatim rather than silently dropping or rewriting them.
-        if language_code == 'BG' and safe_get(row, 'BG_refs'):
-            processed_references = [fix_bare_urls_in_parens(safe_get(row, 'BG_refs'))]
-        else:
-            processed_references = process_references(safe_get(row, "Reference"), apa_lookup, missing_refs, context=f"{title} (Reference)")
-            lang_refs = process_references(safe_get(row, f"{language_code}_refs"), apa_lookup, missing_refs, context=f"{title} ({language_code}_refs)")
-            processed_references = list(dict.fromkeys(processed_references + lang_refs))
+        processed_references = process_references(safe_get(row, "Reference"), apa_lookup, missing_refs, context=f"{title} (Reference)")
+        lang_refs = process_references(safe_get(row, f"{language_code}_refs"), apa_lookup, missing_refs, context=f"{title} ({language_code}_refs)")
+        processed_references = list(dict.fromkeys(processed_references + lang_refs))
 
         # Build entry
         definition = fix_bare_urls_in_parens(definition)
