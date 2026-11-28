@@ -44,8 +44,8 @@ from html import escape
 script_dir = os.path.dirname(os.path.abspath(__file__))
 out_path = os.path.join(script_dir, "references", "index.md")
 
-LANGUAGES = ["english", "german", "arabic", "chinese", "turkish"]
-LANGUAGE_LABELS = {"german": "DE", "arabic": "AR", "chinese": "ZH", "turkish": "TR"}
+LANGUAGES = ["english", "german", "arabic", "chinese", "turkish", "bulgarian"]
+LANGUAGE_LABELS = {"german": "DE", "arabic": "AR", "chinese": "ZH", "turkish": "TR", "bulgarian": "BG"}
 
 MD_LINK_RE = re.compile(r"\[([^\]]+)\]\(([^)\s]+)\)")
 URL_RE = re.compile(r"(?<![\"'>])(https?://[^\s<>]+[^\s<>.,;)])")
