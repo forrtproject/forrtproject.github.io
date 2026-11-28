@@ -1,0 +1,4 @@
+{{- /* Renders text segments from data/lesson_activities.json, linking those with a URL. */ -}}
+{{- range . -}}
+  {{- if .url -}}<a href="{{ .url }}" target="_blank" rel="noopener">{{ .text }}</a>{{- else -}}{{ .text }}{{- end -}}
+{{- end -}}
