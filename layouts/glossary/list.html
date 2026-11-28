@@ -1,5 +1,9 @@
 {{- define "main" -}}
 
+{{ $bulgarian := eq .Params.language "bulgarian" }}
+{{ $listLabel := cond $bulgarian "Списък на термините" "List of terms" }}
+{{ $filterLabel := cond $bulgarian "Филтриране на термините..." "Filter terms..." }}
+
 <style>
   .glossary-toc {
     order: 99;
@@ -31,12 +35,12 @@
   <div class="row flex-xl-nowrap">
     <div class="col-12 col-xl-3 docs-toc glossary-toc">
       <ul class="nav toc-top">
-        <li><a href="#" id="back_to_top" class="docs-toc-title">List of terms</a></li>
+        <li><a href="#" id="back_to_top" class="docs-toc-title">{{ $listLabel }}</a></li>
       </ul>
 
       <input type="text" id="glossary-search" class="form-control form-control-sm mb-2"
-             placeholder="Filter terms..."
-             aria-label="Filter terms">
+             placeholder="{{ $filterLabel }}"
+             aria-label="{{ $filterLabel }}">
 
       <nav id="TableOfContents" class="nav flex-column">
         <ul>
@@ -46,7 +50,7 @@
           {{ $sortedPages := sort $filteredPages "Params.sort_key" }}
           {{ range $index, $page := $sortedPages }}
           <li class="nav-item">
-            <a href="{{ .Permalink }}" class="nav-link">{{ .Title }}</a>
+            <a href="{{ .Permalink }}" class="nav-link">{{ partial "glossary_title" . }}</a>
           </li>
           {{ end }}
         </ul>
