@@ -37,6 +37,8 @@
     { pattern: /^\/summaries(\/|$)/, target: '/' },
     { pattern: /^\/reversals(\/|$)/, target: '/' },
     { pattern: /^\/re-searchterms\/?$/, target: '/apps/re-searchterms.html' },
+    // /flora/ and /FLoRA/ are aliases; this catches other capitalisations.
+    { pattern: /^\/flora\/?$/i, target: '/replication-hub/flora/' },
 
     // Repo rename redirects (kebab-case migration). Order: longer prefixes first.
     { pattern: /^\/FReD-apps(\/.*)?$/,                      target: '/fred-apps$1' },
